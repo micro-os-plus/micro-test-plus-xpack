@@ -41,5 +41,3 @@ jobs:
       run: |
         xpm run install
         xpm run test
-        env:
-          CI: true
