@@ -33,8 +33,10 @@ jobs:
         node --version
         npm --version
         env
-        npm install -g xpm@latest
-    
+
+    - name: Install xpm
+      run: sudo npm install -g xpm@latest
+
     - name: Run test
       run: |
         xpm run install
