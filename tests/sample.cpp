@@ -29,12 +29,16 @@
 
 using namespace os;
 
+// ----------------------------------------------------------------------------
+
 // Forward definitions of the test cases.
 void
 test_case_something (mtp::test& t);
 
 void
 test_case_exception (mtp::test& t);
+
+// ----------------------------------------------------------------------------
 
 // The test suite.
 int
@@ -50,6 +54,8 @@ main (int argc, char* argv[])
 
   return t.result ();
 }
+
+// ----------------------------------------------------------------------------
 
 // Simple examples of functions to be tested.
 int
@@ -69,6 +75,8 @@ compute_condition ()
 {
   return true;
 }
+
+// ----------------------------------------------------------------------------
 
 // Test equality or logical conditions.
 void
@@ -92,6 +100,9 @@ test_case_exception (mtp::test& t)
   try
     {
       // Do something that may throw
+      // ...
+
+      // If we reached here, everything is fine.
       MTP_PASS (t, "exception not thrown");
     }
   catch (...)
@@ -99,3 +110,5 @@ test_case_exception (mtp::test& t)
       MTP_FAIL (t, "exception thrown");
     }
 }
+
+// ----------------------------------------------------------------------------
