@@ -4,7 +4,8 @@
   "description": "A source xPack with <your-description-here>",
   "main": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install": "xpm run install -C tests",
+    "test": "xpm run test -C tests"
   },
   "repository": {
     "type": "git",

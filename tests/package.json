@@ -1,0 +1,16 @@
+{
+  "description": "Test µTest++ itself",
+  "scripts": {
+    "test": "xpm run build && xpm run execute",
+    "build": "mkdir -p build && cp -fv build.ninja build && ninja -C build -v",
+    "execute": "build/test && echo '---' && build/sample"
+  },
+  "license": "MIT",
+  "config": {},
+  "dependencies": {},
+  "devDependencies": {
+    "@xpack-dev-tools/cmake": "3.19.2-1.1",
+    "@xpack-dev-tools/ninja-build": "1.10.1-1.1"
+  },
+  "xpack": {}
+}
