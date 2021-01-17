@@ -108,7 +108,7 @@ namespace os
 
     protected:
       void
-      print_where_ (const char* file, int line, bool with_comma = true);
+      print_where_ (const char* format, const char* file, int line);
 
     protected:
       int argc;

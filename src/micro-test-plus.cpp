@@ -118,14 +118,9 @@ namespace os
     void
     test::fail (const char* message, const char* file, int line)
     {
-      if (file != nullptr)
-        {
-          printf ("    ✗ %s (in '%s:%d')\n", message, file, line);
-        }
-      else
-        {
-          printf ("    ✗ %s\n", message);
-        }
+      printf ("    ✗ %s", message);
+      print_where_ (" (in '%s:%d')", file, line);
+      printf ("\n");
 
       failed_++;
     }
@@ -141,9 +136,9 @@ namespace os
         }
       else
         {
-          printf ("    ✗ %s (", message);
-          print_where_ (file, line, false);
-          printf (")\n");
+          printf ("    ✗ %s", message);
+          print_where_ (" (in '%s:%d')", file, line);
+          printf ("\n");
           failed_++;
         }
     }
@@ -160,7 +155,7 @@ namespace os
       else
         {
           printf ("    ✗ %s (expected %d, got %d", message, expected, actual);
-          print_where_ (file, line);
+          print_where_ (", in '%s:%d'", file, line);
           printf (")\n");
           failed_++;
         }
@@ -179,7 +174,7 @@ namespace os
         {
           printf ("    ✗ %s (expected %ld, got %ld", message, expected,
                   actual);
-          print_where_ (file, line);
+          print_where_ (", in '%s:%d'", file, line);
           printf (")\n");
           failed_++;
         }
@@ -196,23 +191,20 @@ namespace os
         }
       else
         {
-          printf ("    ✗ %s (expected '%s', got '%s'", message, expected, actual);
-          print_where_ (file, line);
+          printf ("    ✗ %s (expected '%s', got '%s'", message, expected,
+                  actual);
+          print_where_ (", in '%s:%d'", file, line);
           printf (")\n");
           failed_++;
         }
     }
 
     void
-    test::print_where_ (const char* file, int line, bool with_comma)
+    test::print_where_ (const char* format, const char* file, int line)
     {
       if (file != nullptr)
         {
-          if (with_comma)
-            {
-              printf (", ");
-            }
-          printf ("in '%s:%d'", file, line);
+          printf (format, file, line);
         }
     }
 
