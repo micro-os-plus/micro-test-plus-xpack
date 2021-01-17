@@ -1,7 +1,7 @@
 {
   "name": "@micro-os-plus/micro-test-plus",
   "version": "0.1.0",
-  "description": "A source xPack with <your-description-here>",
+  "description": "A source xPack with µTest++",
   "main": "",
   "scripts": {
     "install-all": "xpm run install-all -C tests",

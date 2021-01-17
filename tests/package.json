@@ -1,5 +1,5 @@
 {
-  "description": "Test µTest++ itself",
+  "description": "A test for µTest++ itself",
   "scripts": {
     "install-all": "xpm install",
     "test": "xpm run build && xpm run execute",
