@@ -196,7 +196,7 @@ namespace os
         }
       else
         {
-          printf ("    ✗ %s (expected %s, got %s", message, expected, actual);
+          printf ("    ✗ %s (expected '%s', got '%s'", message, expected, actual);
           print_where_ (file, line);
           printf (")\n");
           failed_++;
