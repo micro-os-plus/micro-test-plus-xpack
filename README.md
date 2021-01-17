@@ -100,7 +100,7 @@ The file to be included is
 
 ### Compiler options
 
-- none needed
+- `-std=c++11` or higher
 
 ### Namespace
 
