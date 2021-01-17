@@ -69,7 +69,7 @@ The project includes unit tests.
 To run them, run:
 
 ```
-xpm run install
+xpm run install-all
 xpm run test
 ```
 

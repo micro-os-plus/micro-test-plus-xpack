@@ -4,7 +4,7 @@
   "description": "A source xPack with <your-description-here>",
   "main": "",
   "scripts": {
-    "install": "xpm run install -C tests",
+    "instal-all": "xpm run install-all -C tests",
     "test": "xpm run test -C tests"
   },
   "repository": {
