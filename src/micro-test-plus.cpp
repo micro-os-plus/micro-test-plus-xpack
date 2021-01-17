@@ -141,15 +141,9 @@ namespace os
         }
       else
         {
-          if (file != nullptr)
-            {
-              printf ("    ✗ %s (in '%s:%d')\n", message, file, line);
-            }
-          else
-            {
-              printf ("    ✗ %s\n", message);
-            }
-
+          printf ("    ✗ %s (", message);
+          print_where_ (file, line, false);
+          printf (")\n");
           failed_++;
         }
     }
@@ -165,16 +159,9 @@ namespace os
         }
       else
         {
-          if (file != nullptr)
-            {
-              printf ("    ✗ %s (expected %d, got %d, in '%s:%d')\n", message,
-                      expected, actual, file, line);
-            }
-          else
-            {
-              printf ("    ✗ %s (expected %d, got %d)\n", message, expected,
-                      actual);
-            }
+          printf ("    ✗ %s (expected %d, got %d", message, expected, actual);
+          print_where_ (file, line);
+          printf (")\n");
           failed_++;
         }
     }
@@ -190,16 +177,10 @@ namespace os
         }
       else
         {
-          if (file != nullptr)
-            {
-              printf ("    ✗ %s (expected %ld, got %ld, in '%s:%d')\n",
-                      message, expected, actual, file, line);
-            }
-          else
-            {
-              printf ("    ✗ %s (expected %ld, got %ld)\n", message, expected,
-                      actual);
-            }
+          printf ("    ✗ %s (expected %ld, got %ld", message, expected,
+                  actual);
+          print_where_ (file, line);
+          printf (")\n");
           failed_++;
         }
     }
@@ -215,17 +196,23 @@ namespace os
         }
       else
         {
-          if (file != nullptr)
-            {
-              printf ("    ✗ %s (expected %s, got %s, in '%s:%d')\n", message,
-                      expected, actual, file, line);
-            }
-          else
-            {
-              printf ("    ✗ %s (expected %s, got %s)\n", message, expected,
-                      actual);
-            }
+          printf ("    ✗ %s (expected %s, got %s", message, expected, actual);
+          print_where_ (file, line);
+          printf (")\n");
           failed_++;
+        }
+    }
+
+    void
+    test::print_where_ (const char* file, int line, bool with_comma)
+    {
+      if (file != nullptr)
+        {
+          if (with_comma)
+            {
+              printf (", ");
+            }
+          printf ("in '%s:%d'", file, line);
         }
     }
 

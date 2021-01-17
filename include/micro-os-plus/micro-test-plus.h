@@ -107,6 +107,10 @@ namespace os
       };
 
     protected:
+      void
+      print_where_ (const char* file, int line, bool with_comma = true);
+
+    protected:
       int argc;
       char** argv;
 
