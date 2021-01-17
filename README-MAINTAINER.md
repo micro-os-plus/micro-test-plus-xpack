@@ -30,11 +30,11 @@ CppStyle plug-in.
 
 ## Prepare a new blog post
 
-In the `xpack/web-jekyll` GitHub repo:
+In the `micro-os-plus/web-jekyll` GitHub repo:
 
 - select the `develop` branch
 - add a new file to `_posts/micro-test-plus/releases`
-- name the file like `2020-12-19micro-test-plus-v1-2-3-released.md`
+- name the file like `2020-12-19-micro-test-plus-v1-2-3-released.md`
 - name the post like: **xPack µTest++ v1.2.3 released**
 - update the `date:` field with the current date
 - update the GitHub Actions URLs using the actual test pages

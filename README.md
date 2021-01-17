@@ -88,6 +88,12 @@ To integrate this package into a build, consider the following details.
 
 - `include`
 
+The file to be included is
+
+```c++
+#include <micro-os-plus/micro-test-plus.h>
+```
+
 ### Preprocessor definitions
 
 - none needed
@@ -95,6 +101,14 @@ To integrate this package into a build, consider the following details.
 ### Compiler options
 
 - none needed
+
+### Namespace
+
+- `os::mtp`
+
+### Classes
+
+- `os::mtp::test`
 
 ## Example
 
