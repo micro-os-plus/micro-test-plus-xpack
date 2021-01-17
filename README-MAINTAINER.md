@@ -1,4 +1,5 @@
 [![license](https://img.shields.io/github/license/micro-os-plus/micro-test-plus-xpack)](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/LICENSE)
+[![CI on Push](https://github.com/micro-os-plus/micro-test-plus-xpack/workflows/CI%20on%20Push/badge.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/actions?query=workflow%3A%22CI+on+Push%22)
 [![GitHub issues](https://img.shields.io/github/issues/micro-os-plus/micro-test-plus-xpack.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/issues)
 [![GitHub pulls](https://img.shields.io/github/issues-pr/micro-os-plus/micro-test-plus-xpack.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/pulls)
 
@@ -21,7 +22,30 @@ git clone https://github.com/micro-os-plus/micro-test-plus-xpack.git micro-test-
 A recent [xpm](https://xpack.github.io/xpm/), which is a portable
 [Node.js](https://nodejs.org/) command line application.
 
-## Publish to npmjs.com
+## Code formatting
+
+Code formatting is done using `clang-format --style=file`, either manually
+from a script, or automatically from Visual Studio Code, or the Eclipse
+CppStyle plug-in.
+
+## Prepare a new blog post
+
+In the `xpack/web-jekyll` GitHub repo:
+
+- select the `develop` branch
+- add a new file to `_posts/micro-test-plus/releases`
+- name the file like `2020-12-19micro-test-plus-v1-2-3-released.md`
+- name the post like: **xPack µTest++ v1.2.3 released**
+- update the `date:` field with the current date
+- update the GitHub Actions URLs using the actual test pages
+
+If any, refer to closed
+[issues](https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/issues)
+as:
+
+- **[Issue:\[#1\]\(...\)]**.
+
+## Publish on the npmjs.com server
 
 - select the `xpack-develop` branch
 - commit all changes
@@ -38,9 +62,22 @@ The version is visible at:
 
 - https://www.npmjs.com/package/@micro-os-plus/micro-test-plus?activeTab=versions
 
-## Test
+## Testing
 
-Test the package.
+The project includes unit tests.
+
+To run them, run:
+
+```
+xpm run install
+xpm run test
+```
+
+## Continuous Integration
+
+The same tests are performed on GitHub Actions, as the
+[CI on Push](https://github.com/micro-os-plus/micro-test-plus-xpack/actions?query=workflow%3A%22CI+on+Push%22)
+workflow.
 
 ## Update the repo
 
@@ -60,4 +97,12 @@ When the release is considered stable, promote it as `latest`:
 
 ## Announce to the community
 
-Post an announcement to the forum or on Twitter.
+Post an announcement to the forum.
+
+## Share on Twitter
+
+- in a separate browser windows, open [TweetDeck](https://tweetdeck.twitter.com/)
+- using the `@micro_os_plus` account
+- paste the release name like **xPack µTest++ v1.2.3 released**
+- paste the link to the Web page release
+- click the **Tweet** button

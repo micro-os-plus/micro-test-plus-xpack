@@ -1,11 +1,15 @@
 [![license](https://img.shields.io/github/license/micro-os-plus/micro-test-plus-xpack)](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/LICENSE)
+[![CI on Push](https://github.com/micro-os-plus/micro-test-plus-xpack/workflows/CI%20on%20Push/badge.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/actions?query=workflow%3A%22CI+on+Push%22)
 
-# A source xPack with µTest++, a minimalistic testing framework
+# µTest++, a minimalistic testing framework
 
-The **µTest++** project provides a very simple testing framework,
-intended for running unit tests on embedded platforms.
+The **µTest++** project (_micro test plus_) provides a very simple
+testing framework, intended for running unit tests on embedded
+platforms.
 
-This README is addressed to developers who plan to include this package
+## Maintainer info
+
+This page is addressed to developers who plan to include this package
 into their own projects.
 
 For maintainer infos, please see the
@@ -13,17 +17,19 @@ For maintainer infos, please see the
 
 ## Easy install
 
-This package is available as
+Note: the package will be available from npmjs.com at a later date.
+
+When ready, this package will be available as
 [`@micro-os-plus/micro-test-plus`](https://www.npmjs.com/package/@micro-os-plus/micro-test-plus)
 from the `npmjs.com` registry; with [xpm](https://xpack.github.io/xpm/)
 available, installing the latest version of the package is quite easy:
 
 ```console
 $ cd <project>
+$ xpm init # Unless a package.json is already present
+
 $ xpm install @micro-os-plus/micro-test-plus@latest
 ```
-
-Note: the package will be available from npmjs.com at a later date.
 
 This package is also available from
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack):
@@ -50,18 +56,45 @@ into `xpack`.
 The **µTest++** framework is inspired by [Node tap](https://node-tap.org),
 but is way simpler and has only a limited number of primitives.
 
-- each test suite must be compiled as a separate application
+- test suites must be compiled as separate applications, one apllication
+  can return only the result og one test suite
 - a test suite may include any number of test cases
 - each test case may perform any number of tests checks
 - each test check either succeeds or fails
 - the main result of the test is passed back as the process exit code
-- the test progress is shown on STDOUT, with each test check on a separate line
+- the test progress is shown on STDOUT, with each test check on
+  a separate line
 
-The entire test suite is successful if there is
-at least one successful test and there are no failed tests.
+If there is at least one successful test and there are no failed tests,
+the entire test suite is successful and the process returns
+the 0 exit value.
 
-On embedded platforms, the test should be built with Arm semihosting
+On embedded platforms, the test should be built with **Arm semihosting**
 support.
+
+## Build info
+
+The project is written in C++, and the tests are expected to be
+written in C++ too (although there are no
+major reasons to prevent adding C wrappers).
+
+To integrate this package into a build, consider the following details.
+
+### Source folders
+
+- `src`
+
+### Include folders
+
+- `include`
+
+### Preprocessor definitions
+
+- none needed
+
+### Compiler options
+
+- none needed
 
 ## Example
 
@@ -148,6 +181,25 @@ test_case_exception (mtp::test& t)
     }
 }
 
+```
+
+The output of running such a test looks like:
+
+```console
+$ build/sample-test
+
+Built with clang Apple LLVM 12.0.0 (clang-1200.0.32.27), with exceptions.
+
+Sample test started
+  Check various conditions
+    ✓ compute_one() == 1
+    ✓ compute_aaa() == 'aaa'
+    ✓ condition() is true
+
+  Check if exceptions are thrown
+    ✓ exception not thrown
+
+Sample test passed (4 tests in 2 test cases)
 ```
 
 ## License
