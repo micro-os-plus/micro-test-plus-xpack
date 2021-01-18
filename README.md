@@ -84,13 +84,13 @@ To integrate this package into a build, consider the following details.
 
 - `src`
 
-The source file is: `micro-test-plus.cpp`.
+The source file to add to your project is: `micro-test-plus.cpp`.
 
 ### Include folders
 
 - `include`
 
-The file to be included is:
+The header file to include in your project is:
 
 ```c++
 #include <micro-os-plus/micro-test-plus.h>
@@ -108,15 +108,20 @@ The file to be included is:
 
 - `os::mtp`
 
+`os` is the top µOS++ namespace, and `mtp` is the shortcut for
+`micro-test-plus`.
+
 ### Classes
 
 - `os::mtp::test`
 
+The project includes only one class and several macros, to automate
+passing file name and line number.
+
 ## Example
 
 A simple example showing how to use the µTest++ framework is
-available below and in [tests/sample.cpp](tests/sample.cpp); it is
-also built as part of the CI test.
+presentes below and is also available in [tests/sample.cpp](tests/sample.cpp).
 
 ```c++
 #include <micro-os-plus/micro-test-plus.h>
