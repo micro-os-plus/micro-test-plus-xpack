@@ -69,28 +69,28 @@ If there is at least one successful test and there are no failed tests,
 the entire test suite is successful and the process returns
 the 0 exit value.
 
-On embedded platforms, the test should be built with **Arm semihosting**
-support.
-
-## Build info
+## Build & integration info
 
 The project is written in C++, and the tests are expected to be
 written in C++ too (although there are no
 major reasons to prevent adding C wrappers).
 
-To integrate this package into a build, consider the following details.
+On embedded platforms, the test applications should be built with
+**Arm semihosting** support.
+
+To integrate this package into user projects, consider the following details:
 
 ### Source folders
 
 - `src`
 
-The source file to add to your project is: `micro-test-plus.cpp`.
+The source file to be added to user projects is: `micro-test-plus.cpp`.
 
 ### Include folders
 
 - `include`
 
-The header file to include in your project is:
+The header file to be included in user project is:
 
 ```c++
 #include <micro-os-plus/micro-test-plus.h>
@@ -115,8 +115,8 @@ The header file to include in your project is:
 
 - `os::mtp::test`
 
-The project includes only one class and several macros, to automate
-passing file name and line number.
+The project includes only one class, `test`. To automate
+passing the file name and the line number, several macros were added.
 
 ## Example
 
