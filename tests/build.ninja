@@ -8,14 +8,14 @@ rule cppCompiler
 rule cppLinker
   command = g++ $ldflags $in -o $out
 
-build main.cpp.o: cppCompiler ../main.cpp
+build unit-test.cpp.o: cppCompiler ../unit-test.cpp
 
 build micro-test-plus.cpp.o: cppCompiler ../../src/micro-test-plus.cpp
 
-build test: cppLinker main.cpp.o micro-test-plus.cpp.o
+build unit-test: cppLinker unit-test.cpp.o micro-test-plus.cpp.o
 
-build sample.cpp.o: cppCompiler ../sample.cpp
+build sample-test.cpp.o: cppCompiler ../sample-test.cpp
 
-build sample: cppLinker sample.cpp.o micro-test-plus.cpp.o
+build sample-test: cppLinker sample-test.cpp.o micro-test-plus.cpp.o
 
-default test sample
+default unit-test sample-test

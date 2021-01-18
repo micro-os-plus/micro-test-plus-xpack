@@ -75,7 +75,7 @@ xpm run test
 
 ## Continuous Integration
 
-The same tests are performed on GitHub Actions, as the
+All available tests are also performed on GitHub Actions, as the
 [CI on Push](https://github.com/micro-os-plus/micro-test-plus-xpack/actions?query=workflow%3A%22CI+on+Push%22)
 workflow.
 

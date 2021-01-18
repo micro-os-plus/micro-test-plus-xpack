@@ -84,11 +84,13 @@ To integrate this package into a build, consider the following details.
 
 - `src`
 
+The source file is: `micro-test-plus.cpp`.
+
 ### Include folders
 
 - `include`
 
-The file to be included is
+The file to be included is:
 
 ```c++
 #include <micro-os-plus/micro-test-plus.h>
@@ -96,7 +98,7 @@ The file to be included is
 
 ### Preprocessor definitions
 
-- none needed
+- none required
 
 ### Compiler options
 
@@ -114,7 +116,7 @@ The file to be included is
 
 A simple example showing how to use the µTest++ framework is
 available below and in [tests/sample.cpp](tests/sample.cpp); it is
-built as part of the CI test.
+also built as part of the CI test.
 
 ```c++
 #include <micro-os-plus/micro-test-plus.h>
@@ -166,7 +168,7 @@ compute_condition ()
 void
 test_case_something (mtp::test& t)
 {
-  // Currently only int and long values can be compared.
+  // Currently only int and long values can be compared for equality.
   // For everything else use casts.
   MTP_EXPECT_EQ (t, compute_one (), 1, "compute_one() == 1");
 
@@ -177,7 +179,7 @@ test_case_something (mtp::test& t)
   MTP_EXPECT_TRUE (t, compute_condition (), "condition() is true");
 }
 
-// Test is something throws exceptions.
+// Test if something throws exceptions.
 void
 test_case_exception (mtp::test& t)
 {
@@ -200,7 +202,8 @@ test_case_exception (mtp::test& t)
 The output of running such a test looks like:
 
 ```console
-$ build/sample-test
+$ xpm run test-sample
+...
 
 Built with clang Apple LLVM 12.0.0 (clang-1200.0.32.27), with exceptions.
 
@@ -214,6 +217,8 @@ Sample test started
     ✓ exception not thrown
 
 Sample test passed (4 tests in 2 test cases)
+
+...
 ```
 
 ## License

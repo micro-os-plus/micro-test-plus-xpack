@@ -2,9 +2,13 @@
   "description": "A test for µTest++ itself",
   "scripts": {
     "install-all": "xpm install",
-    "test": "xpm run build && xpm run execute",
-    "build": "mkdir -p build && cp -fv build.ninja build && ninja -C build -v",
-    "execute": "build/test && echo '---' && build/sample"
+    "test-all": "xpm run test-unit && xpm run test-sample",
+    "test-unit": "xpm run build-unit && xpm run execute-unit",
+    "test-sample": "xpm run build-sample && xpm run execute-sample",
+    "build-unit": "mkdir -p build && cp -fv build.ninja build && ninja -C build -v unit-test",
+    "build-sample": "mkdir -p build && cp -fv build.ninja build && ninja -C build -v sample-test",
+    "execute-unit": "build/unit-test",
+    "execute-sample": "build/sample-test"
   },
   "license": "MIT",
   "config": {},

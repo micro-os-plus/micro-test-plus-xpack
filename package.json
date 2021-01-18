@@ -5,7 +5,8 @@
   "main": "",
   "scripts": {
     "install-all": "xpm run install-all -C tests",
-    "test": "xpm run test -C tests"
+    "test": "xpm run test-all -C tests",
+    "test-sample": "xpm run test-sample -C tests"
   },
   "repository": {
     "type": "git",
