@@ -121,7 +121,8 @@ passing the file name and the line number, several macros were added.
 ## Example
 
 A simple example showing how to use the µTest++ framework is
-presentes below and is also available in [tests/sample.cpp](tests/sample.cpp).
+presentes below and is also available in
+[tests/sample-test.cpp](tests/sample-test.cpp).
 
 ```c++
 #include <micro-os-plus/micro-test-plus.h>
