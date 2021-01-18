@@ -69,6 +69,7 @@ The project includes unit tests.
 To run them, run:
 
 ```
+cd micro-test-plus-xpack.git
 xpm run install-all
 xpm run test
 ```

@@ -207,6 +207,9 @@ test_case_exception (mtp::test& t)
 The output of running such a test looks like:
 
 ```console
+$ cd micro-test-plus-xpack.git
+$ xpm run install-all
+
 $ xpm run test-sample
 ...
 
