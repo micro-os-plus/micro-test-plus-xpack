@@ -102,7 +102,7 @@ The header file to be included in user project is:
 
 ### Compiler options
 
-- `-std=c++11` or higher
+- `-std=c++17` or higher
 
 ### Namespace
 
