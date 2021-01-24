@@ -12,6 +12,19 @@
 # https://cmake.org/cmake/help/v3.18/
 cmake_minimum_required(VERSION 3.18)
 
+# -----------------------------------------------------------------------------
+
+get_filename_component(xpack_tests_root_folder ${CMAKE_CURRENT_LIST_DIR} DIRECTORY)
+get_filename_component(xpack_root_folder ${xpack_tests_root_folder} DIRECTORY)
+
+# include("${xpack_tests_root_folder}/xpacks/micro-os-plus-build-helper/cmake/xpack-helper.cmake")
+include("xpack-helper.cmake")
+
+append_cmake_prefix_path("${xpack_tests_root_folder}")
+append_cmake_prefix_path("${xpack_root_folder}")
+
+# -----------------------------------------------------------------------------
+
 project(
 	xpack-test
 	DESCRIPTION "A blinky using the µOS++ RTOS"
@@ -31,13 +44,10 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 message(STATUS "Build configuration: ${BUILD_CONFIG}")
 message(STATUS "Project path: ${PROJECT_SOURCE_DIR}")
-
-get_filename_component(xpack_tests_root_folder ${CMAKE_CURRENT_LIST_DIR} DIRECTORY)
-get_filename_component(xpack_root_folder ${xpack_tests_root_folder} DIRECTORY)
+message(STATUS "Prefix path: ${CMAKE_PREFIX_PATH}")
 
 # Generate the compile_commands.json file to feed the indexer.
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
 
 if(BUILD_CONFIG STREQUAL "unit-test-native-release-cmake")
   set(CMAKE_BUILD_TYPE Release)
@@ -48,6 +58,13 @@ elseif(BUILD_CONFIG STREQUAL "sample-native-release-cmake")
 else()
   message(FATAL_ERROR, "Unsupported BUILD_CONFIG")
 endif()
+
+# -----------------------------------------------------------------------------
+
+# set(micro-os-plus-micro-test-plus_DIR "${xpack_root_folder}/meta")
+# list(APPEND CMAKE_PREFIX_PATH "${xpack_root_folder}/meta")
+
+find_package(micro-os-plus-micro-test-plus REQUIRED)
 
 # -----------------------------------------------------------------------------
 
