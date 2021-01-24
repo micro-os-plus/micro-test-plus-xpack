@@ -5,6 +5,7 @@
   "main": "",
   "scripts": {
     "install-all": "xpm run install-all -C tests",
+    "link-deps": "xpm run link-deps -C tests",
     "test": "xpm run test-all -C tests",
     "test-sample": "xpm run test-sample -C tests"
   },

@@ -1,7 +1,10 @@
 {
+  "name": "test",
+  "version": "0.0.0",
   "description": "A test for µTest++ itself",
   "scripts": {
     "install-all": "xpm install",
+    "link-deps": "xpm link @micro-os-plus/build-helper",
     "test-all": "xpm run test-unit-test && xpm run test-sample",
     "test-unit-test": "xpm run build-unit-test-cmake && xpm run execute-unit-test-cmake",
     "test-sample": "xpm run build-sample-cmake && xpm run execute-sample-cmake",
