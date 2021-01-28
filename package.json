@@ -11,14 +11,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/micro-os-plus/micro-test-plus-xpack.git"
+    "url": "git+https://github.com/micro-os-plus/micro-test-plus-xpack.git/"
   },
   "bugs": {
     "url": "https://github.com/micro-os-plus/micro-test-plus-xpack/issues/"
   },
   "homepage": "https://github.com/micro-os-plus/micro-test-plus-xpack/",
   "keywords": [
-    "xpack"
+    "xpack",
+    "c++",
+    "testing",
+    "framework",
+    "micro-os-plus"
   ],
   "author": {
     "name": "Liviu Ionescu",
