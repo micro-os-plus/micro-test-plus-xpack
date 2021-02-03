@@ -35,7 +35,7 @@ jobs:
         env
 
     - name: Install xpm
-      run: sudo npm install -g xpack/xpm-js#develop
+      run: sudo npm install -g xpm@latest
 
     - name: Run test
       run: |
