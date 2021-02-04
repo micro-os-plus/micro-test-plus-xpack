@@ -7,6 +7,9 @@ The **µTest++** project (_micro test plus_) provides a very simple
 testing framework, intended for running unit tests on embedded
 platforms.
 
+The project is hosted on GitHub as
+[micro-os-plus/micro-test-plus-xpack](https://github.com/micro-os-plus/micro-test-plus-xpack).
+
 ## Maintainer info
 
 This page is addressed to developers who plan to include this package
@@ -15,14 +18,35 @@ into their own projects.
 For maintainer infos, please see the
 [README-MAINTAINER](README-MAINTAINER.md) file.
 
-## Easy install
+## Install
+
+As a source xPacks, the easiest way to add it to a project is via **xpm**,
+but it can also be used as any Git project, for example as a submodule.
+
+### Prerequisites
+
+A recent [xpm](https://xpack.github.io/xpm/),
+which is a portable [Node.js](https://nodejs.org/) command line application.
+
+For details please follow the instructions in the
+[install](https://xpack.github.io/install/) page.
+
+### xpm
 
 Note: the package will be available from npmjs.com at a later date.
 
+For now, it can be installed from GitHub:
+
+```console
+$ cd <project>
+$ xpm init # Unless a package.json is already present
+
+$ xpm install github:micro-os-plus/micro-test-plus-xpack
+```
+
 When ready, this package will be available as
 [`@micro-os-plus/micro-test-plus`](https://www.npmjs.com/package/@micro-os-plus/micro-test-plus)
-from the `npmjs.com` registry; with [xpm](https://xpack.github.io/xpm/)
-available, installing the latest version of the package is quite easy:
+from the `npmjs.com` registry:
 
 ```console
 $ cd <project>
@@ -31,11 +55,18 @@ $ xpm init # Unless a package.json is already present
 $ xpm install @micro-os-plus/micro-test-plus@latest
 ```
 
-This package is also available from
-[GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack):
+### Git submodule
+
+If, for any reason, **xpm** is not available, the next recommended
+solution is to link it as a Git submodule below an `xpacks` folder.
 
 ```console
-$ git clone https://github.com/micro-os-plus/micro-test-plus-xpack.git micro-test-plus-xpack.git
+$ cd <project>
+$ git init # Unless already a Git project
+$ mkdir -p xpacks
+
+$ git submodule add https://github.com/micro-os-plus/micro-test-plus-xpack.git \
+  xpacks/micro-os-plus-micro-test-plus
 ```
 
 ## Branches
@@ -69,7 +100,7 @@ If there is at least one successful test and there are no failed tests,
 the entire test suite is successful and the process returns
 the 0 exit value.
 
-## Build & integration info
+### Build & integration info
 
 The project is written in C++, and the tests are expected to be
 written in C++ too (although there are no
@@ -80,13 +111,13 @@ On embedded platforms, the test applications should be built with
 
 To integrate this package into user projects, consider the following details:
 
-### Source folders
+#### Source folders
 
 - `src`
 
 The source file to be added to user projects is: `micro-test-plus.cpp`.
 
-### Include folders
+#### Include folders
 
 - `include`
 
@@ -96,29 +127,30 @@ The header file to be included in user project is:
 #include <micro-os-plus/micro-test-plus.h>
 ```
 
-### Preprocessor definitions
+#### Preprocessor definitions
 
 - none required
 
-### Compiler options
+#### Compiler options
 
-- `-std=c++17` or higher
+- `-std=c++17` or higher for C++ sources
+- `-std=c11` for C sources
 
-### Namespace
+#### Namespaces
 
 - `os::mtp`
 
 `os` is the top µOS++ namespace, and `mtp` is the shortcut for
 `micro-test-plus`.
 
-### Classes
+#### Classes
 
 - `os::mtp::test`
 
 The project includes only one class, `test`. To automate
 passing the file name and the line number, several macros were added.
 
-## Example
+### Examples
 
 A simple example showing how to use the µTest++ framework is
 presentes below and is also available in
@@ -230,8 +262,17 @@ Sample test passed (4 tests in 2 test cases)
 ...
 ```
 
+### Known problems
+
+- none
+
+### Tests
+
+TBD
+
 ## License
 
 The original content is released under the
-[MIT License](https://opensource.org/licenses/MIT), with all rights reserved to
-[Liviu Ionescu](https://github.com/ilg-ul).
+[MIT License](https://opensource.org/licenses/MIT/),
+with all rights reserved to
+[Liviu Ionescu](https://github.com/ilg-ul/).
