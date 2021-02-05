@@ -6,6 +6,10 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
-## v1.1.0 (2021-02-04)
+## 2021-02-05
 
-- first release
+- prepare v1.1.1
+
+## 2021-02-04
+
+- release preliminary v1.1.0
