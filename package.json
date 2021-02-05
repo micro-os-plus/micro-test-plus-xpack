@@ -4,10 +4,14 @@
   "description": "A source xPack with µTest++",
   "main": "",
   "scripts": {
-    "install-all": "xpm run install-all -C tests",
-    "link-deps": "xpm run link-deps -C tests",
-    "test": "xpm run test-all -C tests",
-    "test-sample": "xpm run test-sample -C tests"
+    "link-deps": "xpm link @micro-os-plus/build-helper",
+    "build-unit-test-cmake": "cmake -S tests/meta -B build/unit-test-release-cmake -GNinja -DBUILD_CONFIG=unit-test-native-release-cmake && cmake --build build/unit-test-release-cmake --verbose --target unit-test",
+    "build-sample-cmake": "cmake -S tests/meta -B build/sample-release-cmake -GNinja -DBUILD_CONFIG=sample-native-release-cmake && cmake --build build/sample-release-cmake --verbose --target sample-app",
+    "execute-unit-test-cmake": "build/unit-test-release-cmake/unit-test",
+    "execute-sample-cmake": "build/sample-release-cmake/sample-test",
+    "test-unit-test": "xpm run build-unit-test-cmake && xpm run execute-unit-test-cmake",
+    "test-sample": "xpm run build-sample-cmake && xpm run execute-sample-cmake",
+    "test": "xpm run test-unit-test && xpm run test-sample"
   },
   "repository": {
     "type": "git",
@@ -32,6 +36,9 @@
   "license": "MIT",
   "config": {},
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "@xpack-dev-tools/cmake": "3.19.2-1.1",
+    "@xpack-dev-tools/ninja-build": "1.10.1-1.1"
+  },
   "xpack": {}
 }

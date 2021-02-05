@@ -14,7 +14,7 @@ The `unit-test.cpp` file checks if the framework file counts
 the tests results (successes/failures) correctly.
 
 ```bash
-xpm run test-unit
+xpm run test-unit-test
 ```
 
 ## Sample

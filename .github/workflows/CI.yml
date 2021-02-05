@@ -39,5 +39,5 @@ jobs:
 
     - name: Run test
       run: |
-        xpm run install-all
+        xpm run install
         xpm run test
