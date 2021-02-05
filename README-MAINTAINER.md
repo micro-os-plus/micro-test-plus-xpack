@@ -70,7 +70,7 @@ To run them, run:
 
 ```sh
 cd micro-test-plus-xpack.git
-xpm run install
+xpm install
 xpm run test
 ```
 
