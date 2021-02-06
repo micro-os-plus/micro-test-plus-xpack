@@ -19,7 +19,7 @@ get_filename_component(xpack_root_folder ${xpack_tests_root_folder} DIRECTORY)
 
 include("${xpack_root_folder}/xpacks/micro-os-plus-build-helper/cmake/xpack-helper.cmake")
 
-append_cmake_prefix_path("${xpack_tests_root_folder}")
+# append_cmake_prefix_path("${xpack_tests_root_folder}")
 append_cmake_prefix_path("${xpack_root_folder}")
 
 # Leave the result in PACKAGE_JSON_VERSION[*]
@@ -29,7 +29,8 @@ parse_package_json_semver("${xpack_root_folder}/package.json")
 
 project(
 	xpack-test
-	DESCRIPTION "A blinky using the µOS++ RTOS"
+	DESCRIPTION "µTest++ tests"
+  VERSION "${PACKAGE_JSON_VERSION}"
 )
 
 enable_language(C)
@@ -44,22 +45,22 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-message(STATUS "Build configuration: ${BUILD_CONFIG}")
-message(STATUS "Project path: ${PROJECT_SOURCE_DIR}")
+message(STATUS "Platform name: ${PLATFORM_NAME}")
+message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
+message(STATUS "Project path: ${xpack_root_folder}")
 message(STATUS "Prefix path: ${CMAKE_PREFIX_PATH}")
 
 # Generate the compile_commands.json file to feed the indexer.
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-if(BUILD_CONFIG STREQUAL "unit-test-native-release-cmake")
-  set(CMAKE_BUILD_TYPE Release)
+if(PLATFORM_NAME STREQUAL "native")
   # ...
-elseif(BUILD_CONFIG STREQUAL "sample-native-release-cmake")
-  set(CMAKE_BUILD_TYPE Release)
+elseif(PLATFORM_NAME STREQUAL "stm32f4discovery")
   # ...
 else()
-  message(FATAL_ERROR, "Unsupported BUILD_CONFIG")
+  message(FATAL_ERROR, "Unsupported PLATFORM_NAME")
 endif()
+
 
 # -----------------------------------------------------------------------------
 
@@ -99,10 +100,10 @@ target_include_directories(
 
 # -----------------------------------------------------------------------------
 
-add_executable(sample-app)
+add_executable(sample-test-app)
 
 set_target_properties(
-  sample-app
+  sample-test-app
 
   PROPERTIES
     OUTPUT_NAME "sample-test"
@@ -111,7 +112,7 @@ set_target_properties(
 
 # Application sources.
 target_sources(
-  sample-app
+  sample-test-app
 
   PRIVATE
     ${xpack_tests_root_folder}/sample-test.cpp
@@ -120,7 +121,7 @@ target_sources(
 
 # Application includes.
 target_include_directories(
-  sample-app
+  sample-test-app
 
   PRIVATE
     ${xpack_root_folder}/include
@@ -128,7 +129,21 @@ target_include_directories(
 
 # -----------------------------------------------------------------------------
 
-message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
+enable_testing()
+
+add_test(
+  NAME "unit-test"
+  COMMAND "unit-test"
+)
+
+add_test(
+  NAME "sample-test"
+  COMMAND "sample-test"
+)
+
+# -----------------------------------------------------------------------------
+
+# Display an empty line, to better see the configuration output.
 message(STATUS "")
 
 # -----------------------------------------------------------------------------
