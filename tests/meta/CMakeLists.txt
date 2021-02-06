@@ -17,8 +17,7 @@ cmake_minimum_required(VERSION 3.18)
 get_filename_component(xpack_tests_root_folder ${CMAKE_CURRENT_LIST_DIR} DIRECTORY)
 get_filename_component(xpack_root_folder ${xpack_tests_root_folder} DIRECTORY)
 
-# include("${xpack_tests_root_folder}/xpacks/micro-os-plus-build-helper/cmake/xpack-helper.cmake")
-include("xpack-helper.cmake")
+include("${xpack_root_folder}/xpacks/micro-os-plus-build-helper/cmake/xpack-helper.cmake")
 
 append_cmake_prefix_path("${xpack_tests_root_folder}")
 append_cmake_prefix_path("${xpack_root_folder}")

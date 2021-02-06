@@ -38,7 +38,8 @@
   "dependencies": {},
   "devDependencies": {
     "@xpack-dev-tools/cmake": "3.19.2-1.1",
-    "@xpack-dev-tools/ninja-build": "1.10.1-1.1"
+    "@xpack-dev-tools/ninja-build": "1.10.1-1.1",
+    "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#xpack-develop"
   },
   "xpack": {}
 }
