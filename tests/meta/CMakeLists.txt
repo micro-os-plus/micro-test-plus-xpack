@@ -13,6 +13,9 @@
 cmake_minimum_required(VERSION 3.18)
 message(STATUS "CMake version: ${CMAKE_VERSION}")
 
+# Generate the compile_commands.json file to feed the indexer.
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 # -----------------------------------------------------------------------------
 
 get_filename_component(xpack_tests_root_folder ${CMAKE_CURRENT_LIST_DIR} DIRECTORY)
@@ -82,7 +85,17 @@ set_target_properties(
     CXX_EXTENSIONS OFF
 )
 
-# Application sources.
+# Bare-metal executables have the .elf extension.
+if(CMAKE_SYSTEM_NAME STREQUAL "Generic")
+  set_target_properties(
+    unit-test-app
+
+    PROPERTIES
+      SUFFIX ".elf"
+  )
+endif()
+
+# Source folders.
 target_sources(
   unit-test-app
 
@@ -91,12 +104,23 @@ target_sources(
     ${xpack_root_folder}/src/micro-test-plus.cpp
 )
 
-# Application includes.
+# Include folders.
 target_include_directories(
   unit-test-app
 
   PRIVATE
     ${xpack_root_folder}/include
+)
+
+target_compile_definitions(
+  unit-test-app
+
+  PRIVATE
+    # HAVE_MICRO_OS_PLUS_CONFIG_H
+
+    # NDEBUG provided by the toolchain definitions on release.
+    $<$<STREQUAL:"${CMAKE_BUILD_TYPE}","Debug">:DEBUG>
+    $<$<STREQUAL:"${CMAKE_BUILD_TYPE}","Debug">:TRACE>
 )
 
 # -----------------------------------------------------------------------------
@@ -111,6 +135,16 @@ set_target_properties(
     CXX_EXTENSIONS OFF
 )
 
+# Bare-metal executables have the .elf extension.
+if(CMAKE_SYSTEM_NAME STREQUAL "Generic")
+  set_target_properties(
+    sample-test-app
+
+    PROPERTIES
+      SUFFIX ".elf"
+  )
+endif()
+
 # Application sources.
 target_sources(
   sample-test-app
@@ -120,12 +154,23 @@ target_sources(
     ${xpack_root_folder}/src/micro-test-plus.cpp
 )
 
-# Application includes.
+# Include folders.
 target_include_directories(
   sample-test-app
 
   PRIVATE
     ${xpack_root_folder}/include
+)
+
+target_compile_definitions(
+  sample-test-app
+
+  PRIVATE
+    # HAVE_MICRO_OS_PLUS_CONFIG_H
+
+    # NDEBUG provided by the toolchain definitions on release.
+    $<$<STREQUAL:"${CMAKE_BUILD_TYPE}","Debug">:DEBUG>
+    $<$<STREQUAL:"${CMAKE_BUILD_TYPE}","Debug">:TRACE>
 )
 
 # -----------------------------------------------------------------------------
@@ -139,7 +184,7 @@ add_test(
 
 add_test(
   NAME "sample-test"
-  COMMAND "sample-test"
+  COMMAND "sample-test" 1 2 3
 )
 
 # -----------------------------------------------------------------------------
