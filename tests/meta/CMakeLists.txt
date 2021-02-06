@@ -22,6 +22,9 @@ include("${xpack_root_folder}/xpacks/micro-os-plus-build-helper/cmake/xpack-help
 append_cmake_prefix_path("${xpack_tests_root_folder}")
 append_cmake_prefix_path("${xpack_root_folder}")
 
+# Leave the result in PACKAGE_JSON_VERSION[*]
+parse_package_json_semver("${xpack_root_folder}/package.json")
+
 # -----------------------------------------------------------------------------
 
 project(
