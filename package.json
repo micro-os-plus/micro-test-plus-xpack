@@ -5,13 +5,21 @@
   "main": "",
   "scripts": {
     "link-deps": "xpm link @micro-os-plus/build-helper",
-    "build-unit-test-cmake": "cmake -S tests/meta -B build/unit-test-release-cmake -GNinja -DBUILD_CONFIG=unit-test-native-release-cmake && cmake --build build/unit-test-release-cmake --verbose --target unit-test",
-    "build-sample-cmake": "cmake -S tests/meta -B build/sample-release-cmake -GNinja -DBUILD_CONFIG=sample-native-release-cmake && cmake --build build/sample-release-cmake --verbose --target sample-app",
-    "execute-unit-test-cmake": "build/unit-test-release-cmake/unit-test",
-    "execute-sample-cmake": "build/sample-release-cmake/sample-test",
-    "test-unit-test": "xpm run build-unit-test-cmake && xpm run execute-unit-test-cmake",
-    "test-sample": "xpm run build-sample-cmake && xpm run execute-sample-cmake",
-    "test": "xpm run test-unit-test && xpm run test-sample"
+
+    "build-tests-native-debug-cmake": "cmake -S tests/meta -B build/tests-native-debug-cmake -GNinja -DPLATFORM_NAME=native -DCMAKE_BUILD_TYPE=Debug && cmake --build build/tests-native-debug-cmake --verbose",
+    "clean-tests-native-debug-cmake": "cmake --build build/tests-native-debug-cmake --verbose --target clean",
+    "execute-tests-native-debug-cmake": "cd build/tests-native-debug-cmake && ctest -V",
+    "test-native-debug-cmake": "xpm run build-tests-native-debug-cmake && xpm run execute-tests-native-debug-cmake",
+
+    "build-tests-native-release-cmake": "cmake -S tests/meta -B build/tests-native-release-cmake -GNinja -DPLATFORM_NAME=native -DCMAKE_BUILD_TYPE=release && cmake --build build/tests-native-release-cmake --verbose",
+    "clean-tests-native-release-cmake": "cmake --build build/tests-native-release-cmake --verbose --target clean",
+    "execute-tests-native-release-cmake": "cd build/tests-native-release-cmake && ctest -V",
+    "test-native-release-cmake": "xpm run build-tests-native-release-cmake && xpm run execute-tests-native-release-cmake",
+
+    "clean-tests-cmake": "xpm run clean-tests-native-debug-cmake",
+
+    "test-cmake": "xpm run test-native-debug-cmake && xpm run test-native-release-cmake",
+    "test": "xpm run test-cmake"
   },
   "repository": {
     "type": "git",
