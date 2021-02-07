@@ -138,16 +138,16 @@ The header file to be included in user project is:
 
 #### Namespaces
 
-- `os::mtp`
+- `os::micro-test-plus`
 
-`os` is the top µOS++ namespace, and `mtp` is the shortcut for
+`os` is the top µOS++ namespace, and `micro-test-plus` is the shortcut for
 `micro-test-plus`.
 
 #### Classes
 
-- `os::mtp::test`
+- `os::micro-test-plus::session`
 
-The project includes only one class, `test`. To automate
+The project includes only one class, `session`. To automate
 passing the file name and the line number, several macros were added.
 
 ### Examples
@@ -163,16 +163,16 @@ using namespace os;
 
 // Forward definitions of the test cases.
 void
-test_case_something (mtp::test& t);
+test_case_something (micro-test-plus::session& t);
 
 void
-test_case_exception (mtp::test& t);
+test_case_exception (micro-test-plus::session& t);
 
 // The test suite.
 int
 main (int argc, char* argv[])
 {
-  mtp::test t (argc, argv);
+  micro-test-plus::session t (argc, argv);
 
   t.start_suite ("Sample test");
 
@@ -204,7 +204,7 @@ compute_condition ()
 
 // Test equality or logical conditions.
 void
-test_case_something (mtp::test& t)
+test_case_something (micro-test-plus::session& t)
 {
   // Currently only int and long values can be compared for equality.
   // For everything else use casts.
@@ -219,7 +219,7 @@ test_case_something (mtp::test& t)
 
 // Test if something throws exceptions.
 void
-test_case_exception (mtp::test& t)
+test_case_exception (micro-test-plus::session& t)
 {
   try
     {
