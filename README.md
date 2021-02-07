@@ -140,8 +140,7 @@ The header file to be included in user project is:
 
 - `os::micro-test-plus`
 
-`os` is the top µOS++ namespace, and `micro-test-plus` is the shortcut for
-`micro-test-plus`.
+`os` is the top µOS++ namespace, and `micro-test-plus` is the µTest++ namespace.
 
 #### Classes
 
@@ -153,7 +152,7 @@ passing the file name and the line number, several macros were added.
 ### Examples
 
 A simple example showing how to use the µTest++ framework is
-presentes below and is also available in
+presented below and is also available in
 [tests/sample-test.cpp](tests/sample-test.cpp).
 
 ```c++
