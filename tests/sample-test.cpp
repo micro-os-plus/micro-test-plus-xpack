@@ -33,10 +33,10 @@ using namespace os;
 
 // Forward definitions of the test cases.
 void
-test_case_something (mtp::test& t);
+test_case_something (micro_test_plus::session& t);
 
 void
-test_case_exception (mtp::test& t);
+test_case_exception (micro_test_plus::session& t);
 
 // ----------------------------------------------------------------------------
 
@@ -44,13 +44,14 @@ test_case_exception (mtp::test& t);
 int
 main (int argc, char* argv[])
 {
-  mtp::test t (argc, argv);
+  micro_test_plus::session t (argc, argv);
 
   t.start_suite ("Sample test");
 
   t.run_test_case (test_case_something, "Check various conditions");
 
-  t.run_test_case (test_case_exception, "Check if exceptions are thrown");
+  t.run_test_case (test_case_exception,
+                   "Check if exceptions are thrown");
 
   return t.result ();
 }
@@ -80,7 +81,7 @@ compute_condition ()
 
 // Test equality or logical conditions.
 void
-test_case_something (mtp::test& t)
+test_case_something (micro_test_plus::session& t)
 {
   // Currently only int and long values can be compared.
   // For everything else use casts.
@@ -95,7 +96,7 @@ test_case_something (mtp::test& t)
 
 // Test is something throws exceptions.
 void
-test_case_exception (mtp::test& t)
+test_case_exception (micro_test_plus::session& t)
 {
   try
     {

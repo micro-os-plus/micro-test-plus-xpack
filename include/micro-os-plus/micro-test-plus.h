@@ -34,25 +34,25 @@
 
 namespace os
 {
-  namespace mtp // `micro-test-plus` is shortened to `mtp`.
+  namespace micro_test_plus // `micro-test-plus` is shortened to `mtp`.
   {
-    class test
+    class session
     {
     public:
-      test ();
+      session ();
 
-      test (int argc, char* argv[]);
+      session (int argc, char* argv[]);
 
-      test (const test&) = delete;
-      test (test&&) = delete;
-      test&
-      operator= (const test&)
+      session (const session&) = delete;
+      session (session&&) = delete;
+      session&
+      operator= (const session&)
           = delete;
-      test&
-      operator= (test&&)
+      session&
+      operator= (session&&)
           = delete;
 
-      ~test () = default;
+      ~session () = default;
 
       void
       init (int argc, char* argv[]);
@@ -61,7 +61,7 @@ namespace os
       start_suite (const char* name);
 
       void
-      run_test_case (void (*f) (test&), const char* name);
+      run_test_case (void (*f) (session&), const char* name);
 
       void
       pass (const char* message, const char* file = nullptr, int line = 0);
@@ -120,7 +120,7 @@ namespace os
       unsigned int failed_;
       unsigned int test_cases_;
     };
-  } // namespace mtp
+  } // namespace micro_test_plus
 } // namespace os
 
 // ----------------------------------------------------------------------------

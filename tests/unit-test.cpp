@@ -39,21 +39,21 @@ using namespace os;
 // passed/failed test cases.
 
 void
-test_case_pass (mtp::test& t)
+test_case_pass (micro_test_plus::session& t)
 {
   t.pass ("it passed");
   MTP_PASS (t, "it passed with macro");
 }
 
 void
-test_case_fail (mtp::test& t)
+test_case_fail (micro_test_plus::session& t)
 {
   t.fail ("it failed");
   MTP_FAIL (t, "it failed with macro");
 }
 
 void
-test_case_expect_true (mtp::test& t)
+test_case_expect_true (micro_test_plus::session& t)
 {
   t.expect_true (true, "true passed");
   t.expect_true (false, "false failed");
@@ -61,7 +61,7 @@ test_case_expect_true (mtp::test& t)
 }
 
 void
-test_case_expect_eq (mtp::test& t)
+test_case_expect_eq (micro_test_plus::session& t)
 {
   t.expect_eq (1, 1, "1 == 1");
   t.expect_eq (2, 1, "2 != 1");
@@ -73,7 +73,7 @@ test_case_expect_eq (mtp::test& t)
 }
 
 void
-test_case_expect_eq_strings (mtp::test& t)
+test_case_expect_eq_strings (micro_test_plus::session& t)
 {
   t.expect_eq ("aaa", "aaa", "'aaa' == 'aaa'");
   t.expect_eq ("aab", "aaa", "'aab' != 'aaa'");
@@ -91,11 +91,11 @@ test_case_expect_eq_strings (mtp::test& t)
 int
 main (int argc, char* argv[])
 {
-  mtp::test t (argc, argv);
+  micro_test_plus::session t (argc, argv);
 
   printf ("\nµTest++ self test started\n");
 
-  t.start_suite ("Inner test");
+  t.start_suite ("Inner test, expected to fail in various ways,");
 
   assert (t.passed () == 0);
   assert (t.failed () == 0);

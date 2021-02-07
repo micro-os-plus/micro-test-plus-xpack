@@ -33,12 +33,12 @@
 
 namespace os
 {
-  namespace mtp
+  namespace micro_test_plus
   {
 
     // ------------------------------------------------------------------------
 
-    test::test ()
+    session::session ()
     {
       this->argc = 0;
       this->argv = nullptr;
@@ -48,13 +48,13 @@ namespace os
       test_cases_ = 0;
     }
 
-    test::test (int argc, char* argv[])
+    session::session (int argc, char* argv[])
     {
       init (argc, argv);
     }
 
     void
-    test::init (int argc, char* argv[])
+    session::init (int argc, char* argv[])
     {
       this->argc = argc;
       this->argv = argv;
@@ -89,14 +89,14 @@ namespace os
     }
 
     void
-    test::start_suite (const char* name)
+    session::start_suite (const char* name)
     {
       name_ = name;
       printf ("\n%s started\n", name);
     }
 
     void
-    test::run_test_case (void (*func) (test&), const char* name)
+    session::run_test_case (void (*func) (session&), const char* name)
     {
       printf ("\n  %s\n", name);
 
@@ -105,8 +105,9 @@ namespace os
     }
 
     void
-    test::pass (const char* message, const char* file __attribute__ ((unused)),
-                int line __attribute__ ((unused)))
+    session::pass (const char* message,
+                   const char* file __attribute__ ((unused)),
+                   int line __attribute__ ((unused)))
     {
       // The file name and line number are unused in this version;
       // they are present only in case future versions will keep a
@@ -116,7 +117,7 @@ namespace os
     }
 
     void
-    test::fail (const char* message, const char* file, int line)
+    session::fail (const char* message, const char* file, int line)
     {
       printf ("    ✗ %s", message);
       print_where_ (" (in '%s:%d')", file, line);
@@ -126,8 +127,8 @@ namespace os
     }
 
     void
-    test::expect_true (bool condition, const char* message, const char* file,
-                       int line)
+    session::expect_true (bool condition, const char* message,
+                          const char* file, int line)
     {
       if (condition)
         {
@@ -144,8 +145,8 @@ namespace os
     }
 
     void
-    test::expect_eq (int actual, int expected, const char* message,
-                     const char* file, int line)
+    session::expect_eq (int actual, int expected, const char* message,
+                        const char* file, int line)
     {
       if (actual == expected)
         {
@@ -162,8 +163,8 @@ namespace os
     }
 
     void
-    test::expect_eq (long actual, long expected, const char* message,
-                     const char* file, int line)
+    session::expect_eq (long actual, long expected, const char* message,
+                        const char* file, int line)
     {
       if (actual == expected)
         {
@@ -181,8 +182,8 @@ namespace os
     }
 
     void
-    test::expect_eq (const char* actual, const char* expected,
-                     const char* message, const char* file, int line)
+    session::expect_eq (const char* actual, const char* expected,
+                        const char* message, const char* file, int line)
     {
       if (std::strcmp (actual, expected) == 0)
         {
@@ -200,7 +201,7 @@ namespace os
     }
 
     void
-    test::print_where_ (const char* format, const char* file, int line)
+    session::print_where_ (const char* format, const char* file, int line)
     {
       if (file != nullptr)
         {
@@ -209,7 +210,7 @@ namespace os
     }
 
     int
-    test::result (void)
+    session::result (void)
     {
       // Also fail if none passed.
       if (failed_ == 0 && passed_ != 0)
@@ -228,7 +229,7 @@ namespace os
     }
 
     // ------------------------------------------------------------------------
-  } // namespace mtp
+  } // namespace micro_test_plus
 } // namespace os
 
 // ----------------------------------------------------------------------------
