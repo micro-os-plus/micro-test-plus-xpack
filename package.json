@@ -1,24 +1,38 @@
 {
   "name": "@micro-os-plus/micro-test-plus",
   "version": "1.1.1-pre",
-  "description": "A source xPack with µTest++",
+  "description": "A source xPack with µTest++, a minimalistic testing infrastructure",
   "main": "",
   "scripts": {
-    "link-deps": "xpm link @micro-os-plus/build-helper",
-
-    "build-tests-native-debug-cmake": "cmake -S tests/meta -B build/tests-native-debug-cmake -GNinja -DPLATFORM_NAME=native -DCMAKE_BUILD_TYPE=Debug && cmake --build build/tests-native-debug-cmake --verbose",
+    "comment_": "echo ctest -V shows test output; cmake --verbose shows the build commands",
+    "link-deps": "xpm link @micro-os-plus/build-helper @micro-os-plus/platform-stm32f4discovery @micro-os-plus/devices-stm32f4 @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting @micro-os-plus/diag-trace @micro-os-plus/libs-c @micro-os-plus/libs-cpp @micro-os-plus/version",
+    "build-tests-native-debug-cmake": "cmake -S tests/meta -B build/tests-native-debug-cmake -GNinja -DPLATFORM_NAME=native -DCMAKE_BUILD_TYPE=Debug && cmake --build build/tests-native-debug-cmake",
+    "build-tests-native-debug-cmake-verbose": "cmake -S tests/meta -B build/tests-native-debug-cmake -GNinja -DPLATFORM_NAME=native -DCMAKE_BUILD_TYPE=Debug && cmake --build build/tests-native-debug-cmake --verbose",
     "clean-tests-native-debug-cmake": "cmake --build build/tests-native-debug-cmake --verbose --target clean",
     "execute-tests-native-debug-cmake": "cd build/tests-native-debug-cmake && ctest -V",
     "test-native-debug-cmake": "xpm run build-tests-native-debug-cmake && xpm run execute-tests-native-debug-cmake",
-
-    "build-tests-native-release-cmake": "cmake -S tests/meta -B build/tests-native-release-cmake -GNinja -DPLATFORM_NAME=native -DCMAKE_BUILD_TYPE=release && cmake --build build/tests-native-release-cmake --verbose",
+    "build-tests-native-release-cmake": "cmake -S tests/meta -B build/tests-native-release-cmake -GNinja -DPLATFORM_NAME=native -DCMAKE_BUILD_TYPE=release && cmake --build build/tests-native-release-cmake",
+    "build-tests-native-release-cmake-verbose": "cmake -S tests/meta -B build/tests-native-release-cmake -GNinja -DPLATFORM_NAME=native -DCMAKE_BUILD_TYPE=release && cmake --build build/tests-native-release-cmake --verbose",
     "clean-tests-native-release-cmake": "cmake --build build/tests-native-release-cmake --verbose --target clean",
     "execute-tests-native-release-cmake": "cd build/tests-native-release-cmake && ctest -V",
     "test-native-release-cmake": "xpm run build-tests-native-release-cmake && xpm run execute-tests-native-release-cmake",
-
-    "clean-tests-cmake": "xpm run clean-tests-native-debug-cmake",
-
-    "test-cmake": "xpm run test-native-debug-cmake && xpm run test-native-release-cmake",
+    "build-tests-stm32f4discovery-debug-cmake": "cmake -S tests/meta -B build/tests-stm32f4discovery-debug-cmake -GNinja -DCMAKE_TOOLCHAIN_FILE=../../xpacks/micro-os-plus-build-helper/cmake/toolchain-arm-none-eabi-gcc.cmake -DPLATFORM_NAME=stm32f4discovery -DCMAKE_BUILD_TYPE=Debug && cmake --build build/tests-stm32f4discovery-debug-cmake",
+    "build-tests-stm32f4discovery-debug-cmake-verbose": "cmake -S tests/meta -B build/tests-stm32f4discovery-debug-cmake -GNinja -DCMAKE_TOOLCHAIN_FILE=../../xpacks/micro-os-plus-build-helper/cmake/toolchain-arm-none-eabi-gcc.cmake -DPLATFORM_NAME=stm32f4discovery -DCMAKE_BUILD_TYPE=Debug && cmake --build build/tests-stm32f4discovery-debug-cmake --verbose",
+    "clean-tests-stm32f4discovery-debug-cmake": "cmake --build build/tests-stm32f4discovery-debug-cmake --verbose --target clean",
+    "execute-tests-stm32f4discovery-debug-cmake": "cd build/tests-stm32f4discovery-debug-cmake && ctest -V",
+    "test-stm32f4discovery-debug-cmake": "xpm run build-tests-stm32f4discovery-debug-cmake && xpm run execute-tests-stm32f4discovery-debug-cmake",
+    "build-tests-stm32f4discovery-release-cmake": "cmake -S tests/meta -B build/tests-stm32f4discovery-release-cmake -GNinja -DCMAKE_TOOLCHAIN_FILE=../../xpacks/micro-os-plus-build-helper/cmake/toolchain-arm-none-eabi-gcc.cmake -DPLATFORM_NAME=stm32f4discovery -DCMAKE_BUILD_TYPE=MinSizeRel && cmake --build build/tests-stm32f4discovery-release-cmake",
+    "build-tests-stm32f4discovery-release-cmake-verbose": "cmake -S tests/meta -B build/tests-stm32f4discovery-release-cmake -GNinja -DCMAKE_TOOLCHAIN_FILE=../../xpacks/micro-os-plus-build-helper/cmake/toolchain-arm-none-eabi-gcc.cmake -DPLATFORM_NAME=stm32f4discovery -DCMAKE_BUILD_TYPE=MinSizeRel && cmake --build build/tests-stm32f4discovery-release-cmake --verbose",
+    "clean-tests-stm32f4discovery-release-cmake": "cmake --build build/tests-stm32f4discovery-release-cmake --verbose --target clean",
+    "execute-tests-stm32f4discovery-release-cmake": "cd build/tests-stm32f4discovery-release-cmake && ctest -V",
+    "test-stm32f4discovery-release-cmake": "xpm run build-tests-stm32f4discovery-release-cmake && xpm run execute-tests-stm32f4discovery-release-cmake",
+    "clean-tests-native-cmake": "xpm run clean-tests-native-debug-cmake && xpm run clean-tests-native-release-cmake",
+    "clean-tests-stm32f4discovery-cmake": "xpm run clean-tests-stm32f4discovery-debug-cmake && xpm run clean-tests-stm32f4discovery-release-cmake",
+    "clean-tests-cmake": "xpm run clean-tests-native-debug-cmake && xpm run clean-stm32f4discovery-native-cmake",
+    "clean-tests": "xpm run clean-tests-cmake",
+    "test-native-cmake": "xpm run test-native-debug-cmake && xpm run test-native-release-cmake",
+    "test-stm32f4discovery-cmake": "xpm run test-stm32f4discovery-debug-cmake && xpm run test-stm32f4discovery-release-cmake",
+    "test-cmake": "xpm run test-native-cmake && xpm run test-stm32f4discovery-cmake",
     "test": "xpm run test-cmake"
   },
   "repository": {
@@ -47,7 +61,18 @@
   "devDependencies": {
     "@xpack-dev-tools/cmake": "3.19.2-1.1",
     "@xpack-dev-tools/ninja-build": "1.10.1-1.1",
-    "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#xpack-develop"
+    "@xpack-dev-tools/qemu-arm": "2.8.0-12.1",
+    "@xpack-dev-tools/arm-none-eabi-gcc": "10.2.1-1.1.2",
+    "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#xpack-develop",
+    "@micro-os-plus/platform-stm32f4discovery": "github:micro-os-plus/platform-stm32f4discovery-xpack#xpack-develop",
+    "@micro-os-plus/devices-stm32f4": "github:micro-os-plus/devices-stm32f4-xpack#xpack-develop",
+    "@micro-os-plus/architecture-cortexm": "github:micro-os-plus/architecture-cortexm-xpack#",
+    "@micro-os-plus/startup": "github:micro-os-plus/startup-xpack#xpack-develop",
+    "@micro-os-plus/semihosting": "github:micro-os-plus/semihosting-xpack#xpack-develop",
+    "@micro-os-plus/diag-trace": "github:micro-os-plus/diag-trace-xpack#xpack-develop",
+    "@micro-os-plus/libs-c": "github:micro-os-plus/libs-c-xpack#xpack-develop",
+    "@micro-os-plus/libs-cpp": "github:micro-os-plus/libs-cpp-xpack#xpack-develop",
+    "@micro-os-plus/version": "github:micro-os-plus/version#xpack-develop"
   },
   "xpack": {}
 }
