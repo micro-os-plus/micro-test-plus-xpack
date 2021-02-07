@@ -66,13 +66,13 @@
     "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#xpack-develop",
     "@micro-os-plus/platform-stm32f4discovery": "github:micro-os-plus/platform-stm32f4discovery-xpack#xpack-develop",
     "@micro-os-plus/devices-stm32f4": "github:micro-os-plus/devices-stm32f4-xpack#xpack-develop",
-    "@micro-os-plus/architecture-cortexm": "github:micro-os-plus/architecture-cortexm-xpack#",
+    "@micro-os-plus/architecture-cortexm": "github:micro-os-plus/architecture-cortexm-xpack#xpack-develop",
     "@micro-os-plus/startup": "github:micro-os-plus/startup-xpack#xpack-develop",
     "@micro-os-plus/semihosting": "github:micro-os-plus/semihosting-xpack#xpack-develop",
     "@micro-os-plus/diag-trace": "github:micro-os-plus/diag-trace-xpack#xpack-develop",
     "@micro-os-plus/libs-c": "github:micro-os-plus/libs-c-xpack#xpack-develop",
     "@micro-os-plus/libs-cpp": "github:micro-os-plus/libs-cpp-xpack#xpack-develop",
-    "@micro-os-plus/version": "github:micro-os-plus/version#xpack-develop"
+    "@micro-os-plus/version": "github:micro-os-plus/version-xpack#xpack-develop"
   },
   "xpack": {}
 }
