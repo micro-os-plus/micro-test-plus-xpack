@@ -35,8 +35,15 @@ using namespace os;
 void
 test_case_something (micro_test_plus::session& t);
 
+#if defined(__EXCEPTIONS)
+
 void
-test_case_exception (micro_test_plus::session& t);
+test_case_exception_thrown (micro_test_plus::session& t);
+
+void
+test_case_exception_not_thrown (micro_test_plus::session& t);
+
+#endif // defined(__EXCEPTIONS)
 
 // ----------------------------------------------------------------------------
 
@@ -50,8 +57,15 @@ main (int argc, char* argv[])
 
   t.run_test_case (test_case_something, "Check various conditions");
 
-  t.run_test_case (test_case_exception,
+#if defined(__EXCEPTIONS)
+
+  t.run_test_case (test_case_exception_thrown,
                    "Check if exceptions are thrown");
+
+  t.run_test_case (test_case_exception_not_thrown,
+                   "Check if exceptions are not thrown");
+
+#endif // defined(__EXCEPTIONS)
 
   return t.result ();
 }
@@ -77,6 +91,19 @@ compute_condition ()
   return true;
 }
 
+#if defined(__EXCEPTIONS)
+
+void
+exercise_throw (bool mustThrow)
+{
+  if (mustThrow)
+    {
+      throw "kaboom";
+    }
+}
+
+#endif // defined(__EXCEPTIONS)
+
 // ----------------------------------------------------------------------------
 
 // Test equality or logical conditions.
@@ -94,14 +121,36 @@ test_case_something (micro_test_plus::session& t)
   MTP_EXPECT_TRUE (t, compute_condition (), "condition() is true");
 }
 
+// ----------------------------------------------------------------------------
+
+#if defined(__EXCEPTIONS)
+
 // Test is something throws exceptions.
 void
-test_case_exception (micro_test_plus::session& t)
+test_case_exception_thrown (micro_test_plus::session& t)
 {
   try
     {
-      // Do something that may throw
-      // ...
+      // Do something that throws.
+      exercise_throw (true);
+
+      // If we reached here, the exception was not thrown.
+      MTP_FAIL (t, "exception not thrown");
+    }
+  catch (...)
+    {
+      // Got it.
+      MTP_PASS (t, "exception thrown");
+    }
+}
+
+void
+test_case_exception_not_thrown (micro_test_plus::session& t)
+{
+  try
+    {
+      // Do something that may throw, but it doesn't.
+      exercise_throw (false);
 
       // If we reached here, everything is fine.
       MTP_PASS (t, "exception not thrown");
@@ -111,5 +160,7 @@ test_case_exception (micro_test_plus::session& t)
       MTP_FAIL (t, "exception thrown");
     }
 }
+
+#endif // defined(__EXCEPTIONS)
 
 // ----------------------------------------------------------------------------
