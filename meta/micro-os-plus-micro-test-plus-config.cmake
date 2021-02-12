@@ -12,6 +12,13 @@
 # https://cmake.org/cmake/help/v3.18/
 # https://cmake.org/cmake/help/v3.18/manual/cmake-packages.7.html#package-configuration-file
 
-message(STATUS "Including micro-os-plus-micro-test-plus-config...")
+# message(STATUS "Including micro-os-plus-micro-test-plus-config...")
 
-# TODO
+# -----------------------------------------------------------------------------
+
+include("${CMAKE_CURRENT_LIST_DIR}/xpack-helper.cmake")
+
+add_libraries_micro_os_plus_micro_test_plus()
+
+# -----------------------------------------------------------------------------
+
