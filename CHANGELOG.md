@@ -6,6 +6,10 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2021-02-12
+
+- add support for CMake find_package()
+
 ## 2021-02-07
 
 - prepare v2.0.0-pre
