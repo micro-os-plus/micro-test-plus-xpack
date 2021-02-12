@@ -9,76 +9,90 @@
 #
 # -----------------------------------------------------------------------------
 
+if(platform-stm32f4discovery-included)
+  return()
+endif()
+
+set(platform-stm32f4discovery-included TRUE)
+
 message(STATUS "Including platform-stm32f4discovery...")
 
-# The preprocessor symbols are defined in micro-os-plus-platform-stm32f4discovery.
+# -----------------------------------------------------------------------------
 
-function(target_sources_micro_os_plus_platform target)
+function(target_sources_platform_stm32f4discovery target)
 
-  get_filename_component(xpack_this_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
+  get_filename_component(xpack_current_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
 
   target_sources(
     ${target}
 
     PRIVATE
-      ${xpack_this_folder}/src/initialize-hardware.cpp
-      ${xpack_this_folder}/src/interrupts-handlers.cpp
+      ${xpack_current_folder}/src/initialize-hardware.cpp
+      ${xpack_current_folder}/src/interrupts-handlers.cpp
   )
-
-  target_sources_micro_os_plus_platform_stm32f4discovery(${target})
 
 endfunction()
 
-function(target_include_directories_micro_os_plus_platform target)
 
-  get_filename_component(xpack_this_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
+function(target_include_directories_platform_stm32f4discovery target)
+
+  # None
+
+endfunction()
+
+
+function(target_compile_definitions_platform_stm32f4discovery target)
+
+  # None
+
+endfunction()
+
+# =============================================================================
+
+function(target_include_directories_micro_os_plus_common target)
+
+  get_filename_component(xpack_current_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
 
   target_include_directories(
     ${target}
 
-    PRIVATE
-      ${xpack_this_folder}/include
+    INTERFACE
+      ${xpack_current_folder}/include
   )
-
-  target_include_directories_micro_os_plus_platform_stm32f4discovery(${target})
 
 endfunction()
 
-function(target_compile_definitions_micro_os_plus_platform target)
 
-  get_filename_component(xpack_this_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
+function(target_compile_definitions_micro_os_plus_common target)
+
+  get_filename_component(xpack_current_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
 
   target_compile_definitions(
     ${target}
 
-    PRIVATE
-      ${xpack_platform_compile_definition}
-      ${xpack_device_compile_definition}
-      ${xpack_device_family_compile_definition}
-      
+    INTERFACE      
       OS_USE_SEMIHOSTING_SYSCALLS
+      # HAVE_MICRO_OS_PLUS_CONFIG_H
 
       $<$<STREQUAL:"${CMAKE_BUILD_TYPE}","Debug">:OS_USE_TRACE_SEMIHOSTING_DEBUG>
   )
 
-  target_compile_definitions_micro_os_plus_platform_stm32f4discovery(${target})
-
 endfunction()
 
-function(target_options_micro_os_plus_platform target)
 
-  get_filename_component(xpack_this_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
+function(target_options_micro_os_plus_common target)
 
-  get_target_property(target_output_name "${target}" "OUTPUT_NAME")
+  get_filename_component(xpack_current_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
 
-  set(platform_cpu_option 
+
+  set(common_cpu_options 
 
     -mcpu=cortex-m4
     -mthumb
     -mfloat-abi=soft
   )
 
-  set(platform_common_options
+  set(common_optimization_options
 
     -fmessage-length=0
     -fsigned-char
@@ -112,23 +126,22 @@ function(target_options_micro_os_plus_platform target)
   target_compile_options(
     ${target}
 
-    PRIVATE
-      ${platform_cpu_option}
-      ${platform_common_options}
+    INTERFACE
+      ${common_cpu_options}
+      ${common_optimization_options}
   )
 
   target_link_options(
     ${target}
 
-    PRIVATE
-      ${platform_cpu_option}
-      ${platform_common_options}
+    INTERFACE
+      ${common_cpu_options}
+      ${common_optimization_options}
 
       -nostartfiles
       # nano has no exceptions.
       # -specs=nano.specs
       -Xlinker --gc-sections
-      -Wl,-Map,${target_output_name}.map
 
       # Including files from other packages is not very nice, but functional.
       # Use absolute paths, otherwise set -L.
@@ -136,9 +149,82 @@ function(target_options_micro_os_plus_platform target)
       -T${xpack_project_folder}/xpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections.ld
   )
 
-  target_options_micro_os_plus_platform_stm32f4discovery(${target})
-
 endfunction()
 
 # -----------------------------------------------------------------------------
 
+function(add_libraries_platform_stm32f4discovery)
+
+  # ---------------------------------------------------------------------------
+
+  # This will also define the device.
+  find_package(micro-os-plus-platform-stm32f4discovery)
+  find_package(micro-os-plus-startup)
+
+  # ===========================================================================
+
+  if(NOT TARGET micro-os-plus-common-interface)
+
+    # Common definitions used across all dependencies.
+    add_library(micro-os-plus-common-interface INTERFACE EXCLUDE_FROM_ALL)
+
+    target_include_directories_micro_os_plus_common(micro-os-plus-common-interface)
+    target_compile_definitions_micro_os_plus_common(micro-os-plus-common-interface)
+    target_options_micro_os_plus_common(micro-os-plus-common-interface)
+
+    add_library(micro-os-plus::common ALIAS micro-os-plus-common-interface)
+    message(STATUS "micro-os-plus::common")
+
+  endif()
+
+  # ===========================================================================
+
+  if(NOT TARGET platform-stm32f4discovery-objects)
+
+    # Local platform definitions. Depend on device.
+    add_library(platform-stm32f4discovery-objects OBJECT EXCLUDE_FROM_ALL)
+
+    target_sources_platform_stm32f4discovery(platform-stm32f4discovery-objects)
+    target_include_directories_platform_stm32f4discovery(platform-stm32f4discovery-objects)
+    target_compile_definitions_platform_stm32f4discovery(platform-stm32f4discovery-objects)
+
+    add_library(micro-os-plus::platform ALIAS platform-stm32f4discovery-objects)
+    message(STATUS "micro-os-plus::platform")
+
+    target_link_libraries(
+      platform-stm32f4discovery-objects
+
+      PUBLIC
+        micro-os-plus::platform-stm32f4discovery
+        micro-os-plus::startup
+    )
+
+  endif()
+
+  # ---------------------------------------------------------------------------
+
+  if(NOT TARGET platform-stm32f4discovery-static)
+
+    add_library(platform-stm32f4discovery-static STATIC EXCLUDE_FROM_ALL)
+
+    target_sources_platform_stm32f4discovery(platform-stm32f4discovery-static)
+    target_include_directories_platform_stm32f4discovery(platform-stm32f4discovery-static)
+    target_compile_definitions_platform_stm32f4discovery(platform-stm32f4discovery-static)
+
+    add_library(micro-os-plus::platform-static ALIAS platform-stm32f4discovery-static)
+
+    target_link_libraries(
+      platform-stm32f4discovery-static
+      
+      PUBLIC
+        micro-os-plus::platform-stm32f4discovery-static
+        micro-os-plus::startup-static
+    )
+
+  endif()
+
+  # ---------------------------------------------------------------------------
+
+endfunction()
+
+# -----------------------------------------------------------------------------

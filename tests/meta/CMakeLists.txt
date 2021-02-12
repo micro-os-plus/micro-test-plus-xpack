@@ -13,6 +13,10 @@
 cmake_minimum_required(VERSION 3.18)
 message(STATUS "CMake version: ${CMAKE_VERSION}")
 
+if(CMAKE_BINARY_DIR STREQUAL CMAKE_SOURCE_DIR)
+  message(FATAL_ERROR "In-source builds are not supported. Please use separate folder for build.")
+endif()
+
 # Generate the compile_commands.json file to feed the indexer.
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
@@ -32,7 +36,7 @@ parse_package_json_semver("${xpack_project_folder}/package.json")
 # -----------------------------------------------------------------------------
 
 project(
-  xpack-test
+  tests
   DESCRIPTION "µTest++ tests"
   VERSION "${PACKAGE_JSON_VERSION}"
 )
@@ -58,29 +62,53 @@ message(STATUS "Prefix path: ${CMAKE_PREFIX_PATH}")
 # Generate the compile_commands.json file to feed the indexer.
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-if(PLATFORM_NAME STREQUAL "native")
-  # No platform specific definitions so far.
-elseif(PLATFORM_NAME STREQUAL "stm32f4discovery")
-  include("${xpack_current_folder}/platform-stm32f4discovery/meta/xpack-helper.cmake")
-  include("${xpack_project_folder}/xpacks/micro-os-plus-platform-stm32f4discovery/meta/xpack-helper.cmake")
-  include("${xpack_project_folder}/xpacks/micro-os-plus-devices-stm32f4/meta/xpack-helper.cmake")
-  include("${xpack_project_folder}/xpacks/micro-os-plus-architecture-cortexm/meta/xpack-helper.cmake")
+# -----------------------------------------------------------------------------
 
-  include("${xpack_project_folder}/xpacks/micro-os-plus-diag-trace/meta/xpack-helper.cmake")
-  include("${xpack_project_folder}/xpacks/micro-os-plus-libs-c/meta/xpack-helper.cmake")
-  include("${xpack_project_folder}/xpacks/micro-os-plus-libs-cpp/meta/xpack-helper.cmake")
-  include("${xpack_project_folder}/xpacks/micro-os-plus-semihosting/meta/xpack-helper.cmake")
-  include("${xpack_project_folder}/xpacks/micro-os-plus-startup/meta/xpack-helper.cmake")
-  include("${xpack_project_folder}/xpacks/micro-os-plus-version/meta/xpack-helper.cmake")
+add_library(micro-os-plus STATIC)
+
+find_package(micro-os-plus-micro-test-plus REQUIRED)
+
+target_link_libraries(
+  micro-os-plus
+
+  PUBLIC 
+    micro-os-plus::micro-test-plus
+)
+
+if(PLATFORM_NAME STREQUAL "native")
+
+  # bin is mandatory, but not used.
+  add_subdirectory("${xpack_tests_folder}/platform-native/meta" bin)
+
+elseif(PLATFORM_NAME STREQUAL "stm32f4discovery")
+
+  add_subdirectory("${xpack_tests_folder}/platform-stm32f4discovery/meta" bin)
+  
+  # list(APPEND CMAKE_PREFIX_PATH "${xpack_tests_folder}/platform-stm32f4discovery/meta")
+  # find_package(platform-stm32f4discovery REQUIRED)
+
+  find_package(micro-os-plus-libs-c REQUIRED)
+  find_package(micro-os-plus-libs-cpp REQUIRED)
+  find_package(micro-os-plus-semihosting REQUIRED)
+  find_package(micro-os-plus-startup REQUIRED)
+
+  # Collect all objects into a single library, and later link it
+  # to all tests.
+  target_link_libraries(
+    micro-os-plus
+
+    PUBLIC 
+      micro-os-plus::platform # Should bring device & architecture too.
+
+      micro-os-plus::libs-c
+      micro-os-plus::libs-cpp
+      micro-os-plus::semihosting
+      micro-os-plus::startup
+  )
+
 else()
   message(FATAL_ERROR, "Unsupported PLATFORM_NAME")
 endif()
-
-
-# -----------------------------------------------------------------------------
-
-# Not yet used.
-find_package(micro-os-plus-micro-test-plus REQUIRED)
 
 # -----------------------------------------------------------------------------
 
@@ -109,8 +137,7 @@ target_sources(
   unit-test-app
 
   PRIVATE
-    ${xpack_current_folder}/unit-test.cpp
-    ${xpack_project_folder}/src/micro-test-plus.cpp
+    ${xpack_current_folder}/src/unit-test.cpp
 )
 
 # Include folders.
@@ -118,55 +145,29 @@ target_include_directories(
   unit-test-app
 
   PRIVATE
-    ${xpack_project_folder}/include
+    ${xpack_current_folder}/include
 )
 
 target_compile_definitions(
   unit-test-app
 
   PRIVATE
-    # HAVE_MICRO_OS_PLUS_CONFIG_H
+    # ...
+)
 
-    # NDEBUG provided by the toolchain definitions on release.
-    $<$<STREQUAL:"${CMAKE_BUILD_TYPE}","Debug">:DEBUG>
-    $<$<STREQUAL:"${CMAKE_BUILD_TYPE}","Debug">:TRACE>
+target_link_libraries(unit-test-app 
+  PRIVATE 
+    micro-os-plus
 )
 
 if(PLATFORM_NAME STREQUAL "stm32f4discovery")
 
-  # Platform specific settings.
-  target_sources_micro_os_plus_platform(unit-test-app)
-  target_include_directories_micro_os_plus_platform(unit-test-app)
-  target_compile_definitions_micro_os_plus_platform(unit-test-app)
-  # Many interesting things come from the platfrom specific definitions.
-  target_options_micro_os_plus_platform(unit-test-app)
+  target_link_options(
+    unit-test-app
 
-  # Device specific settings.
-  target_sources_micro_os_plus_device(unit-test-app)
-  target_include_directories_micro_os_plus_device(unit-test-app)
-
-  # Architecture specific settings.
-  target_sources_micro_os_plus_architecture(unit-test-app)
-  target_include_directories_micro_os_plus_architecture(unit-test-app)
-
-  # Portable settings.
-  target_sources_micro_os_plus_diag_trace(unit-test-app)
-  target_include_directories_micro_os_plus_diag_trace(unit-test-app)
-
-  target_sources_micro_os_plus_libs_c(unit-test-app)
-  target_include_directories_micro_os_plus_libs_c(unit-test-app)
-
-  target_sources_micro_os_plus_libs_cpp(unit-test-app)
-  target_include_directories_micro_os_plus_libs_cpp(unit-test-app)
-
-  target_sources_micro_os_plus_semihosting(unit-test-app)
-  target_include_directories_micro_os_plus_semihosting(unit-test-app)
-
-  target_sources_micro_os_plus_startup(unit-test-app)
-  target_include_directories_micro_os_plus_startup(unit-test-app)
-
-  # Header only, no sources.
-  target_include_directories_micro_os_plus_version(unit-test-app)
+    PRIVATE
+      -Wl,-Map,unit-test.map
+  )
 
   add_custom_command(
     TARGET unit-test-app POST_BUILD
@@ -202,8 +203,7 @@ target_sources(
   sample-test-app
 
   PRIVATE
-    ${xpack_current_folder}/sample-test.cpp
-    ${xpack_project_folder}/src/micro-test-plus.cpp
+    ${xpack_current_folder}/src/sample-test.cpp
 )
 
 # Include folders.
@@ -211,55 +211,29 @@ target_include_directories(
   sample-test-app
 
   PRIVATE
-    ${xpack_project_folder}/include
+    ${xpack_current_folder}/include
 )
 
 target_compile_definitions(
   sample-test-app
 
   PRIVATE
-    # HAVE_MICRO_OS_PLUS_CONFIG_H
+    # ...
+)
 
-    # NDEBUG provided by the toolchain definitions on release.
-    $<$<STREQUAL:"${CMAKE_BUILD_TYPE}","Debug">:DEBUG>
-    $<$<STREQUAL:"${CMAKE_BUILD_TYPE}","Debug">:TRACE>
+target_link_libraries(sample-test-app 
+  PRIVATE 
+    micro-os-plus
 )
 
 if(PLATFORM_NAME STREQUAL "stm32f4discovery")
 
-  # Platform specific settings.
-  target_sources_micro_os_plus_platform(sample-test-app)
-  target_include_directories_micro_os_plus_platform(sample-test-app)
-  target_compile_definitions_micro_os_plus_platform(sample-test-app)
-  # Many interesting things come from the platfrom specific definitions.
-  target_options_micro_os_plus_platform(sample-test-app)
+  target_link_options(
+    sample-test-app
 
-  # Device specific settings.
-  target_sources_micro_os_plus_device(sample-test-app)
-  target_include_directories_micro_os_plus_device(sample-test-app)
-
-  # Architecture specific settings.
-  target_sources_micro_os_plus_architecture(sample-test-app)
-  target_include_directories_micro_os_plus_architecture(sample-test-app)
-
-  # Portable settings.
-  target_sources_micro_os_plus_diag_trace(sample-test-app)
-  target_include_directories_micro_os_plus_diag_trace(sample-test-app)
-
-  target_sources_micro_os_plus_libs_c(sample-test-app)
-  target_include_directories_micro_os_plus_libs_c(sample-test-app)
-
-  target_sources_micro_os_plus_libs_cpp(sample-test-app)
-  target_include_directories_micro_os_plus_libs_cpp(sample-test-app)
-
-  target_sources_micro_os_plus_semihosting(sample-test-app)
-  target_include_directories_micro_os_plus_semihosting(sample-test-app)
-
-  target_sources_micro_os_plus_startup(sample-test-app)
-  target_include_directories_micro_os_plus_startup(sample-test-app)
-
-  # Header only, no sources.
-  target_include_directories_micro_os_plus_version(sample-test-app)
+    PRIVATE
+      -Wl,-Map,sample-test.map
+  )
 
   add_custom_command(
     TARGET sample-test-app POST_BUILD
