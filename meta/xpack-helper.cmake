@@ -67,7 +67,7 @@ function(add_libraries_micro_os_plus_micro_test_plus)
   target_link_libraries(
     micro-os-plus-micro-test-plus-object
     
-    INTERFACE
+    PUBLIC
       micro-os-plus::common
   )
 
