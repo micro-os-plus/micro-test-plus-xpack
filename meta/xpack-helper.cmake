@@ -20,7 +20,7 @@ function(target_sources_micro_os_plus_micro_test_plus target)
   target_sources(
     ${target}
 
-    PUBLIC
+    PRIVATE
       ${xpack_current_folder}/src/micro-test-plus.cpp
   )
 
