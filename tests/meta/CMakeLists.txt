@@ -155,8 +155,10 @@ target_compile_definitions(
     # ...
 )
 
-target_link_libraries(unit-test-app 
-  PRIVATE 
+target_link_libraries(
+  unit-test-app 
+  
+  PUBLIC 
     micro-os-plus
 )
 
@@ -221,8 +223,10 @@ target_compile_definitions(
     # ...
 )
 
-target_link_libraries(sample-test-app 
-  PRIVATE 
+target_link_libraries(
+  sample-test-app
+  
+  PUBLIC 
     micro-os-plus
 )
 
