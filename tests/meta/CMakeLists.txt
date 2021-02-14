@@ -84,7 +84,8 @@ target_link_libraries(
 
 else()
 
-# target_sources(micro-os-plus PRIVATE dummy.c)
+# No SOURCES given to target: micro-os-plus (weird!)
+target_sources(micro-os-plus PRIVATE dummy.c)
 
 target_link_libraries(
   micro-os-plus
