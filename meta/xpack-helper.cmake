@@ -73,6 +73,7 @@ function(add_libraries_micro_os_plus_micro_test_plus)
 
   # ---------------------------------------------------------------------------
 
+if(true)
   add_library(micro-os-plus-micro-test-plus-static STATIC EXCLUDE_FROM_ALL)
 
   target_sources_micro_os_plus_micro_test_plus(micro-os-plus-micro-test-plus-static)
@@ -87,6 +88,7 @@ function(add_libraries_micro_os_plus_micro_test_plus)
     PUBLIC
       micro-os-plus::common
   )
+endif()
 
   # ---------------------------------------------------------------------------
 
