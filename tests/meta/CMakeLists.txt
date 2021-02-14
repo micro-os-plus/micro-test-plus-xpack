@@ -64,9 +64,16 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # -----------------------------------------------------------------------------
 
-add_library(micro-os-plus STATIC)
 
 find_package(micro-os-plus-micro-test-plus REQUIRED)
+
+# ---
+
+add_library(micro-os-plus STATIC)
+
+set(USE_STATIC_LIBS 1)
+
+if(NOT USE_STATIC_LIBS)
 
 target_link_libraries(
   micro-os-plus
@@ -74,6 +81,21 @@ target_link_libraries(
   PUBLIC 
     micro-os-plus::micro-test-plus
 )
+
+else()
+
+# target_sources(micro-os-plus PRIVATE dummy.c)
+
+target_link_libraries(
+  micro-os-plus
+
+  PUBLIC 
+    micro-os-plus::micro-test-plus-static
+)
+
+endif()
+
+# ---
 
 if(PLATFORM_NAME STREQUAL "native")
 
@@ -92,6 +114,8 @@ elseif(PLATFORM_NAME STREQUAL "stm32f4discovery")
   find_package(micro-os-plus-semihosting REQUIRED)
   find_package(micro-os-plus-startup REQUIRED)
 
+if(NOT USE_STATIC_LIBS)
+
   # Collect all objects into a single library, and later link it
   # to all tests.
   target_link_libraries(
@@ -105,6 +129,22 @@ elseif(PLATFORM_NAME STREQUAL "stm32f4discovery")
       micro-os-plus::semihosting
       micro-os-plus::startup
   )
+
+else()
+
+  target_link_libraries(
+    micro-os-plus
+
+    PUBLIC 
+      micro-os-plus::platform-static # Should bring device & architecture too.
+
+      micro-os-plus::libs-c-static
+      micro-os-plus::libs-cpp-static
+      micro-os-plus::semihosting-static
+      micro-os-plus::startup-static
+  )
+
+endif()
 
 else()
   message(FATAL_ERROR, "Unsupported PLATFORM_NAME")
