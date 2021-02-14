@@ -84,7 +84,6 @@ function(target_options_micro_os_plus_common target)
 
   get_filename_component(xpack_current_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
 
-
   set(common_cpu_options 
 
     -mcpu=cortex-m4
@@ -203,6 +202,7 @@ function(add_libraries_platform_stm32f4discovery)
 
   # ---------------------------------------------------------------------------
 
+if(true)
   if(NOT TARGET platform-stm32f4discovery-static)
 
     add_library(platform-stm32f4discovery-static STATIC EXCLUDE_FROM_ALL)
@@ -222,6 +222,7 @@ function(add_libraries_platform_stm32f4discovery)
     )
 
   endif()
+endif()
 
   # ---------------------------------------------------------------------------
 
