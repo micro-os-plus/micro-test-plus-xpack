@@ -210,6 +210,7 @@ if(PLATFORM_NAME STREQUAL "stm32f4discovery")
 
     PRIVATE
       -Wl,-Map,unit-test.map
+      # -Wl,--whole-archive $<TARGET_PROPERTY:LINK_INTERFACE_LIBRARIES> -Wl,--no-whole-archive
   )
 
   add_custom_command(

@@ -142,6 +142,12 @@ function(target_options_micro_os_plus_common target)
       # -specs=nano.specs
       -Xlinker --gc-sections
 
+      # -Wl,-u,Reset_Handler
+      # -Wl,-u,initialise_monitor_handles
+      -Wl,--whole-archive 
+      libmicro-os-plus.a  libmicro-os-plus-micro-test-plus-static.a  bin/libplatform-stm32f4discovery-static.a  bin/libmicro-os-plus-platform-stm32f4discovery-static.a  bin/libmicro-os-plus-device-static.a  bin/libmicro-os-plus-devices-stm32f4-extras-static.a  libmicro-os-plus-libs-c-static.a  libmicro-os-plus-libs-cpp-static.a  bin/libmicro-os-plus-semihosting-static.a  bin/libmicro-os-plus-startup-static.a  bin/libmicro-os-plus-diag-trace-static.a 
+      -Wl,--no-whole-archive
+
       # Including files from other packages is not very nice, but functional.
       # Use absolute paths, otherwise set -L.
       -T${xpack_project_folder}/xpacks/micro-os-plus-platform-stm32f4discovery/linker-scripts/mem.ld
