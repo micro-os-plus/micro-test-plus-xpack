@@ -201,7 +201,6 @@ function(add_libraries_platform_stm32f4discovery)
 
       PUBLIC
         micro-os-plus::platform-stm32f4discovery
-        micro-os-plus::startup
     )
 
   endif()
