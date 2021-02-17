@@ -30,16 +30,44 @@ git clone --branch xpack-develop https://github.com/micro-os-plus/micro-test-plu
 
 ## Development setup
 
-After cloning the repo, install dependencies:
+### Remove previous packages
+
+In this early development phase, package versions are not properly set, and
+if you have older versions of the xPack installed, sometimes updates may fail
+to get the latest version. To fix this remove all global packages by using
+
+```
+cd micro-test-plus-xpack.git
+xpm run rm-deps
+```
+
+and repeat the steps from `xpm install`.
+
+### Install dependencies
+
+With a clean slate, install dependencies:
 
 ```sh
 cd micro-test-plus-xpack.git
 xpm install --force
 ```
 
-This will bring the default read-only dependencies; for being only to
-contribute to the dependencies, also clone the `xpack-develop` branches
-of all µOS++ source xPacks
+## Run tests
+
+The project includes unit tests.
+
+To perform the tests, run the usual xpm sequence:
+
+```sh
+cd micro-test-plus-xpack.git
+xpm run test
+```
+
+### Clone writable dependencies
+
+The above procedure will allow to develop the project itself, but the
+dependencies will be read-only; to be able to contribute to them,
+also clone the `xpack-develop` branches of all µOS++ source xPacks
 into a folder of your choice and link them to the central xPacks
 folder by running `xpack link` in each folder.
 
@@ -51,7 +79,7 @@ curl -L https://raw.githubusercontent.com/micro-os-plus/helper-scripts/main/clon
 ```
 
 Note: If you prefer a different location, start the script with a first
-argument the destination folder path.
+argument as the destination folder path.
 
 After cloning all Git repos, link this project to the development packages,
 by running the `link-deps` actions:
@@ -59,22 +87,6 @@ by running the `link-deps` actions:
 ```sh
 cd micro-test-plus-xpack.git
 xpm run link-deps
-```
-
-In this early development phase, package versions are not properly set, and
-if you have older versions of the xPack installed, sometimes updates may fail
-to get the latest version. To fix this remove all global packages by using
-`xpm run rm-deps` and repeat the steps from `xpm install`.
-
-## Testing
-
-The project includes unit tests.
-
-To perform the tests, run the usual xpm sequence:
-
-```sh
-cd micro-test-plus-xpack.git
-xpm run test
 ```
 
 ## Continuous Integration
