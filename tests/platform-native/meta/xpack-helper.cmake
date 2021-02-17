@@ -120,21 +120,6 @@ function(add_libraries_micro_os_plus_platform_native)
 
   # ---------------------------------------------------------------------------
 
-  if(NOT TARGET micro-os-plus-common-interface)
-
-    add_library(micro-os-plus-common-interface INTERFACE EXCLUDE_FROM_ALL)
-
-    # target_include_directories_micro_os_plus_common(micro-os-plus-common-interface)
-    # target_compile_definitions_micro_os_plus_common(micro-os-plus-common-interface)
-    # target_options_micro_os_plus_common(micro-os-plus-common-interface)
-
-    add_library(micro-os-plus::common ALIAS micro-os-plus-common-interface)
-    message(STATUS "micro-os-plus::common")
-
-  endif()
-
-  # ---------------------------------------------------------------------------
-
 endfunction()
 
 # -----------------------------------------------------------------------------

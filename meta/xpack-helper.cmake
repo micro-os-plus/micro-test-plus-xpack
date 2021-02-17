@@ -64,13 +64,6 @@ function(add_libraries_micro_os_plus_micro_test_plus)
   add_library(micro-os-plus::micro-test-plus ALIAS micro-os-plus-micro-test-plus-object)
   message(STATUS "micro-os-plus::micro-test-plus")
 
-  target_link_libraries(
-    micro-os-plus-micro-test-plus-object
-    
-    PUBLIC
-      micro-os-plus::common
-  )
-
   # ---------------------------------------------------------------------------
 
 if(true)
@@ -81,13 +74,6 @@ if(true)
   target_compile_definitions_micro_os_plus_micro_test_plus(micro-os-plus-micro-test-plus-static)
 
   add_library(micro-os-plus::micro-test-plus-static ALIAS micro-os-plus-micro-test-plus-static)
-
-  target_link_libraries(
-    micro-os-plus-micro-test-plus-static
-    
-    PUBLIC
-      micro-os-plus::common
-  )
 endif()
 
   # ---------------------------------------------------------------------------

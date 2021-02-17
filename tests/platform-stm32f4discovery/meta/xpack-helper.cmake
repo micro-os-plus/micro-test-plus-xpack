@@ -169,24 +169,6 @@ function(add_libraries_platform_stm32f4discovery)
 
   # ===========================================================================
 
-if(1)
-  if(NOT TARGET micro-os-plus-common-interface)
-
-    # Common definitions used across all dependencies.
-    add_library(micro-os-plus-common-interface INTERFACE EXCLUDE_FROM_ALL)
-
-    # target_include_directories_micro_os_plus_common(micro-os-plus-common-interface)
-    # target_compile_definitions_micro_os_plus_common(micro-os-plus-common-interface)
-    # target_options_micro_os_plus_common(micro-os-plus-common-interface)
-
-    add_library(micro-os-plus::common ALIAS micro-os-plus-common-interface)
-    message(STATUS "micro-os-plus::common")
-
-  endif()
-endif()
-
-  # ===========================================================================
-
   if(NOT TARGET platform-stm32f4discovery-objects)
 
     # Local platform definitions. Depend on device.
