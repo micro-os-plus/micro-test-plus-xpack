@@ -72,6 +72,13 @@ add_compile_definitions(
 
 # -----------------------------------------------------------------------------
 
+# Bare-metal executables have the .elf extension.
+if(CMAKE_SYSTEM_NAME STREQUAL "Generic")
+  set(CMAKE_EXECUTABLE_SUFFIX ".elf")
+endif()
+
+# -----------------------------------------------------------------------------
+
 
 find_package(micro-os-plus-micro-test-plus REQUIRED)
 
@@ -175,16 +182,6 @@ set_target_properties(
     CXX_EXTENSIONS OFF
 )
 
-# Bare-metal executables have the .elf extension.
-if(CMAKE_SYSTEM_NAME STREQUAL "Generic")
-  set_target_properties(
-    unit-test-app
-
-    PROPERTIES
-      SUFFIX ".elf"
-  )
-endif()
-
 # Source folders.
 target_sources(
   unit-test-app
@@ -243,16 +240,6 @@ set_target_properties(
     OUTPUT_NAME "sample-test"
     CXX_EXTENSIONS OFF
 )
-
-# Bare-metal executables have the .elf extension.
-if(CMAKE_SYSTEM_NAME STREQUAL "Generic")
-  set_target_properties(
-    sample-test-app
-
-    PROPERTIES
-      SUFFIX ".elf"
-  )
-endif()
 
 # Application sources.
 target_sources(
