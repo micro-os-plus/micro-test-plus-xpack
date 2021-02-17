@@ -64,6 +64,14 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # -----------------------------------------------------------------------------
 
+add_compile_definitions(
+  # NDEBUG provided by the toolchain definitions on release.
+  $<$<STREQUAL:"${CMAKE_BUILD_TYPE}","Debug">:DEBUG>
+  $<$<STREQUAL:"${CMAKE_BUILD_TYPE}","Debug">:TRACE>
+)
+
+# -----------------------------------------------------------------------------
+
 
 find_package(micro-os-plus-micro-test-plus REQUIRED)
 
