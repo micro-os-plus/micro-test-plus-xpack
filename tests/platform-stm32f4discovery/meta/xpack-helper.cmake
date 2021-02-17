@@ -156,43 +156,12 @@ function(add_libraries_platform_stm32f4discovery)
 
   # ---------------------------------------------------------------------------
 
-  # These must be the very first, before creating any library.
-  include_directories_platform_stm32f4discovery()
-  add_compile_definitions_platform_stm32f4discovery()
-  add_common_options_platform_stm32f4discovery()
-
-  # ---------------------------------------------------------------------------
-
   # This will also define the device.
   find_package(micro-os-plus-platform-stm32f4discovery)
   find_package(micro-os-plus-startup)
 
-  # ===========================================================================
-
-  if(NOT TARGET platform-stm32f4discovery-objects)
-
-    # Local platform definitions. Depend on device.
-    add_library(platform-stm32f4discovery-objects OBJECT EXCLUDE_FROM_ALL)
-
-    target_sources_platform_stm32f4discovery(platform-stm32f4discovery-objects)
-    target_include_directories_platform_stm32f4discovery(platform-stm32f4discovery-objects)
-    target_compile_definitions_platform_stm32f4discovery(platform-stm32f4discovery-objects)
-
-    add_library(micro-os-plus::platform ALIAS platform-stm32f4discovery-objects)
-    message(STATUS "micro-os-plus::platform")
-
-    target_link_libraries(
-      platform-stm32f4discovery-objects
-
-      PUBLIC
-        micro-os-plus::platform-stm32f4discovery
-    )
-
-  endif()
-
   # ---------------------------------------------------------------------------
 
-if(true)
   if(NOT TARGET platform-stm32f4discovery-static)
 
     add_library(platform-stm32f4discovery-static STATIC EXCLUDE_FROM_ALL)
@@ -202,17 +171,16 @@ if(true)
     target_compile_definitions_platform_stm32f4discovery(platform-stm32f4discovery-static)
 
     add_library(micro-os-plus::platform-static ALIAS platform-stm32f4discovery-static)
+    message(STATUS "micro-os-plus::platform")
 
     target_link_libraries(
       platform-stm32f4discovery-static
       
       PUBLIC
         micro-os-plus::platform-stm32f4discovery-static
-        micro-os-plus::startup-static
     )
 
   endif()
-endif()
 
   # ---------------------------------------------------------------------------
 

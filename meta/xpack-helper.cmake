@@ -55,18 +55,6 @@ function(add_libraries_micro_os_plus_micro_test_plus)
 
   # ---------------------------------------------------------------------------
 
-  add_library(micro-os-plus-micro-test-plus-object OBJECT EXCLUDE_FROM_ALL)
-
-  target_sources_micro_os_plus_micro_test_plus(micro-os-plus-micro-test-plus-object)
-  target_include_directories_micro_os_plus_micro_test_plus(micro-os-plus-micro-test-plus-object)
-  target_compile_definitions_micro_os_plus_micro_test_plus(micro-os-plus-micro-test-plus-object)
-
-  add_library(micro-os-plus::micro-test-plus ALIAS micro-os-plus-micro-test-plus-object)
-  message(STATUS "micro-os-plus::micro-test-plus")
-
-  # ---------------------------------------------------------------------------
-
-if(true)
   add_library(micro-os-plus-micro-test-plus-static STATIC EXCLUDE_FROM_ALL)
 
   target_sources_micro_os_plus_micro_test_plus(micro-os-plus-micro-test-plus-static)
@@ -74,7 +62,7 @@ if(true)
   target_compile_definitions_micro_os_plus_micro_test_plus(micro-os-plus-micro-test-plus-static)
 
   add_library(micro-os-plus::micro-test-plus-static ALIAS micro-os-plus-micro-test-plus-static)
-endif()
+  message(STATUS "micro-os-plus::micro-test-plus")
 
   # ---------------------------------------------------------------------------
 

@@ -64,6 +64,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # -----------------------------------------------------------------------------
 
+# Common to all platforms.
 add_compile_definitions(
   # NDEBUG provided by the toolchain definitions on release.
   $<$<STREQUAL:"${CMAKE_BUILD_TYPE}","Debug">:DEBUG>
@@ -81,8 +82,11 @@ endif()
 
 if(PLATFORM_NAME STREQUAL "native")
 
-  # bin is mandatory, but not used.
-  add_subdirectory("${xpack_tests_folder}/platform-native/meta" bin)
+  include("${xpack_tests_folder}/platform-native/meta/xpack-helper.cmake")
+
+  # This must be the very first, before creating any library.
+  add_common_options_platform_native()
+  add_libraries_platform_native()
 
   # No SOURCES given to target: micro-os-plus (weird!)
   add_library(micro-os-plus STATIC dummy.c)
@@ -93,13 +97,14 @@ elseif(PLATFORM_NAME STREQUAL "stm32f4discovery")
   # missing the non-weak symbols, like the interrupt handlers.
   set(CMAKE_CXX_LINK_EXECUTABLE "<CMAKE_CXX_COMPILER>  <FLAGS> <CMAKE_CXX_LINK_FLAGS> <LINK_FLAGS> <OBJECTS> -o <TARGET> -Wl,--start-group -Wl,--whole-archive <LINK_LIBRARIES> -Wl,--no-whole-archive -Wl,--end-group")
 
-  # For unknown reasons, it requires the bin folder, where it puts all
-  # inner depndencies. find_package() prefered, since it puts all libraries
-  # directly in the build folder.
-  # add_subdirectory("${xpack_tests_folder}/platform-stm32f4discovery/meta" bin)
+  include("${xpack_tests_folder}/platform-stm32f4discovery/meta/xpack-helper.cmake")
+
+  # These must be the very first, before creating any library.
+  include_directories_platform_stm32f4discovery()
+  add_compile_definitions_platform_stm32f4discovery()
+  add_common_options_platform_stm32f4discovery()
   
-  list(APPEND CMAKE_PREFIX_PATH "${xpack_tests_folder}/platform-stm32f4discovery/meta")
-  find_package(platform-stm32f4discovery REQUIRED)
+  add_libraries_platform_stm32f4discovery()
 
   find_package(micro-os-plus-libs-c REQUIRED)
   find_package(micro-os-plus-libs-cpp REQUIRED)
@@ -138,117 +143,70 @@ target_link_libraries(
 
 # -----------------------------------------------------------------------------
 
-add_executable(unit-test-app)
+function(add_test_executable name)
 
-set_target_properties(
-  unit-test-app
+  add_executable(${name})
 
-  PROPERTIES
-    OUTPUT_NAME "unit-test"
-)
+  set_target_properties(
+    ${name}
 
-# Source folders.
-target_sources(
-  unit-test-app
+    PROPERTIES
+      OUTPUT_NAME "${name}"
+  )
 
-  PRIVATE
-    ${xpack_current_folder}/src/unit-test.cpp
-)
-
-# Include folders.
-target_include_directories(
-  unit-test-app
-
-  PRIVATE
-    ${xpack_current_folder}/include
-)
-
-target_compile_definitions(
-  unit-test-app
-
-  PRIVATE
-    # ...
-)
-
-target_link_libraries(
-  unit-test-app 
-  
-  PUBLIC 
-    micro-os-plus
-)
-
-if(PLATFORM_NAME STREQUAL "stm32f4discovery")
-
-  target_link_options(
-    unit-test-app
+  # Application sources.
+  target_sources(
+    ${name}
 
     PRIVATE
-      -Wl,-Map,unit-test.map
+      ${xpack_current_folder}/src/${name}.cpp
   )
 
-  add_custom_command(
-    TARGET unit-test-app POST_BUILD
-    COMMAND arm-none-eabi-size --format=berkeley "$<TARGET_FILE:unit-test-app>"
+  # Include folders.
+  target_include_directories(
+    ${name}
+
+    PRIVATE
+      ${xpack_current_folder}/include
   )
 
-endif()
+  target_compile_definitions(
+    ${name}
+
+    PRIVATE
+      # ...
+  )
+
+  target_link_libraries(
+    ${name}
+    
+    PUBLIC 
+      micro-os-plus
+  )
+
+  if(PLATFORM_NAME STREQUAL "stm32f4discovery")
+
+    target_link_options(
+      ${name}
+
+      PRIVATE
+        -Wl,-Map,${name}.map
+    )
+
+    add_custom_command(
+      TARGET ${name} POST_BUILD
+      COMMAND arm-none-eabi-size --format=berkeley "$<TARGET_FILE:${name}>"
+    )
+
+  endif()
+
+endfunction()
 
 # -----------------------------------------------------------------------------
 
-add_executable(sample-test-app)
+add_test_executable(unit-test)
 
-set_target_properties(
-  sample-test-app
-
-  PROPERTIES
-    OUTPUT_NAME "sample-test"
-)
-
-# Application sources.
-target_sources(
-  sample-test-app
-
-  PRIVATE
-    ${xpack_current_folder}/src/sample-test.cpp
-)
-
-# Include folders.
-target_include_directories(
-  sample-test-app
-
-  PRIVATE
-    ${xpack_current_folder}/include
-)
-
-target_compile_definitions(
-  sample-test-app
-
-  PRIVATE
-    # ...
-)
-
-target_link_libraries(
-  sample-test-app
-  
-  PUBLIC 
-    micro-os-plus
-)
-
-if(PLATFORM_NAME STREQUAL "stm32f4discovery")
-
-  target_link_options(
-    sample-test-app
-
-    PRIVATE
-      -Wl,-Map,sample-test.map
-  )
-
-  add_custom_command(
-    TARGET sample-test-app POST_BUILD
-    COMMAND arm-none-eabi-size --format=berkeley "$<TARGET_FILE:sample-test-app>"
-  )
-
-endif()
+add_test_executable(sample-test)
 
 # -----------------------------------------------------------------------------
 
