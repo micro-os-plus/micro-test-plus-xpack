@@ -20,6 +20,9 @@ endif()
 # Generate the compile_commands.json file to feed the indexer.
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+# Enable this to see the dependency graph.
+# set_property(GLOBAL PROPERTY GLOBAL_DEPENDS_DEBUG_MODE 1)
+
 # -----------------------------------------------------------------------------
 
 get_filename_component(xpack_tests_folder ${CMAKE_CURRENT_LIST_DIR} DIRECTORY)
