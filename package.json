@@ -6,6 +6,7 @@
   "scripts": {
     "comment_": "echo ctest -V shows test output; cmake --verbose shows the build commands",
     "link-deps": "xpm link @micro-os-plus/build-helper @micro-os-plus/platform-stm32f4discovery @micro-os-plus/devices-stm32f4-extras @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting @micro-os-plus/diag-trace @micro-os-plus/libs-c @micro-os-plus/libs-cpp @micro-os-plus/version",
+    "rm-deps": "xpm uninstall --global @micro-os-plus/build-helper @micro-os-plus/platform-stm32f4discovery @micro-os-plus/devices-stm32f4-extras @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting @micro-os-plus/diag-trace @micro-os-plus/libs-c @micro-os-plus/libs-cpp @micro-os-plus/version",
     "build-tests-native-debug-cmake": "cmake -S tests/meta -B build/tests-native-debug-cmake -GNinja -DPLATFORM_NAME=native -DCMAKE_BUILD_TYPE=Debug && cmake --build build/tests-native-debug-cmake",
     "build-tests-native-debug-cmake-verbose": "cmake -S tests/meta -B build/tests-native-debug-cmake -GNinja -DPLATFORM_NAME=native -DCMAKE_BUILD_TYPE=Debug && cmake --build build/tests-native-debug-cmake --verbose",
     "clean-tests-native-debug-cmake": "cmake --build build/tests-native-debug-cmake --verbose --target clean",
