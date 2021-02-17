@@ -5,22 +5,83 @@
 
 # Maintainer info
 
-## Project repository
-
-The project is hosted on GitHub:
-
-- https://github.com/micro-os-plus/micro-test-plus-xpack.git
-
-To clone it:
-
-```sh
-git clone https://github.com/micro-os-plus/micro-test-plus-xpack.git micro-test-plus-xpack.git
-```
-
 ## Prerequisites
 
 A recent [xpm](https://xpack.github.io/xpm/), which is a portable
 [Node.js](https://nodejs.org/) command line application.
+
+It is recommended to update to the latest version with:
+
+```sh
+npm install --global xpm@latest
+```
+
+## Project repository
+
+The project is hosted on GitHub as:
+
+- https://github.com/micro-os-plus/micro-test-plus-xpack.git
+
+To clone the development branch use:
+
+```sh
+git clone --branch xpack-develop https://github.com/micro-os-plus/micro-test-plus-xpack.git micro-test-plus-xpack.git
+```
+
+## Development setup
+
+After cloning the repo, install dependencies:
+
+```sh
+cd micro-test-plus-xpack.git
+xpm install --force
+```
+
+This will bring the default read-only dependencies; for being only to
+contribute to the dependencies, also clone the `xpack-develop` branches
+of all µOS++ source xPacks
+into a folder of your choice and link them to the central xPacks
+folder by running `xpack link` in each folder.
+
+To automate this, there is a helper script to clone these repos into
+`${HOME}/Work/micro-os-plus-xpack-repos`:
+
+```sh
+curl -L https://raw.githubusercontent.com/micro-os-plus/helper-scripts/main/clone-and-link-all-git-repos.sh | bash -
+```
+
+Note: If you prefer a different location, start the script with a first
+argument the destination folder path.
+
+After cloning all Git repos, link this project to the development packages,
+by running the `link-deps` actions:
+
+```sh
+cd micro-test-plus-xpack.git
+xpm run link-deps
+```
+
+In this early development phase, package versions are not properly set, and
+if you have older versions of the xPack installed, sometimes updates may fail
+to get the latest version. To fix this remove all global packages by using
+`xpm run rm-deps` and repeat the steps from `xpm install`.
+
+## Testing
+
+The project includes unit tests.
+
+To perform the tests, run the usual xpm sequence:
+
+```sh
+cd micro-test-plus-xpack.git
+xpm run test
+```
+
+## Continuous Integration
+
+All available tests are also performed on GitHub Actions, as the
+[CI on Push](https://github.com/micro-os-plus/micro-test-plus-xpack/actions?query=workflow%3A%22CI+on+Push%22)
+workflow.
 
 ## Code formatting
 
@@ -28,7 +89,9 @@ Code formatting is done using `clang-format --style=file`, either manually
 from a script, or automatically from Visual Studio Code, or the Eclipse
 CppStyle plug-in.
 
-## Prepare a new blog post
+## How to publish
+
+### Prepare a new blog post
 
 In the `micro-os-plus/web-jekyll` GitHub repo:
 
@@ -45,7 +108,7 @@ as:
 
 - **[Issue:\[#1\]\(...\)]**.
 
-## Publish on the npmjs.com server
+### Publish on the npmjs.com server
 
 - select the `xpack-develop` branch
 - commit all changes
@@ -61,24 +124,6 @@ as:
 The version is visible at:
 
 - https://www.npmjs.com/package/@micro-os-plus/micro-test-plus?activeTab=versions
-
-## Testing
-
-The project includes unit tests.
-
-To run them, run:
-
-```sh
-cd micro-test-plus-xpack.git
-xpm install
-xpm run test
-```
-
-## Continuous Integration
-
-All available tests are also performed on GitHub Actions, as the
-[CI on Push](https://github.com/micro-os-plus/micro-test-plus-xpack/actions?query=workflow%3A%22CI+on+Push%22)
-workflow.
 
 ## Update the repo
 
