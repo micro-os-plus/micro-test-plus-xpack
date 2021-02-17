@@ -19,6 +19,44 @@ message(STATUS "Including platform-native...")
 
 # -----------------------------------------------------------------------------
 
+function(add_common_options_platform_native)
+
+  set(common_optimization_options
+
+    -fmessage-length=0
+    -fsigned-char
+    -ffunction-sections
+    -fdata-sections
+
+    # -Wunused
+    # -Wuninitialized
+    # -Wall
+    # -Wextra
+    # -Wconversion
+    # -Wpointer-arith
+    # -Wshadow
+    # -Wlogical-op
+    # -Wfloat-equal
+
+    # $<$<COMPILE_LANGUAGE:CXX>:-Wctor-dtor-privacy>
+    # $<$<COMPILE_LANGUAGE:CXX>:-Wnoexcept>
+    # $<$<COMPILE_LANGUAGE:CXX>:-Wnon-virtual-dtor>
+    # $<$<COMPILE_LANGUAGE:CXX>:-Wstrict-null-sentinel>
+    # $<$<COMPILE_LANGUAGE:CXX>:-Wsign-promo>
+  )
+
+  add_compile_options(
+    ${common_optimization_options}
+  )
+
+  add_link_options(
+    ${common_optimization_options}
+  )
+
+endfunction()
+
+# -----------------------------------------------------------------------------
+
 function(target_options_micro_os_plus_common target)
 
   get_filename_component(xpack_current_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
@@ -77,13 +115,18 @@ function(add_libraries_micro_os_plus_platform_native)
 
   # ---------------------------------------------------------------------------
 
+  # This must be the very first, before creating any library.
+  add_common_options_platform_native()
+
+  # ---------------------------------------------------------------------------
+
   if(NOT TARGET micro-os-plus-common-interface)
 
     add_library(micro-os-plus-common-interface INTERFACE EXCLUDE_FROM_ALL)
 
     # target_include_directories_micro_os_plus_common(micro-os-plus-common-interface)
     # target_compile_definitions_micro_os_plus_common(micro-os-plus-common-interface)
-    target_options_micro_os_plus_common(micro-os-plus-common-interface)
+    # target_options_micro_os_plus_common(micro-os-plus-common-interface)
 
     add_library(micro-os-plus::common ALIAS micro-os-plus-common-interface)
     message(STATUS "micro-os-plus::common")

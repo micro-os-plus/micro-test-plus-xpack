@@ -19,70 +19,35 @@ message(STATUS "Including platform-stm32f4discovery...")
 
 # -----------------------------------------------------------------------------
 
-function(target_sources_platform_stm32f4discovery target)
+function(include_directories_platform_stm32f4discovery)
 
   get_filename_component(xpack_current_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
 
-  target_sources(
-    ${target}
+  include_directories(
 
-    PRIVATE
-      ${xpack_current_folder}/src/initialize-hardware.cpp
-      ${xpack_current_folder}/src/interrupts-handlers.cpp
+    ${xpack_current_folder}/include
   )
 
 endfunction()
 
 
-function(target_include_directories_platform_stm32f4discovery target)
+function(add_compile_definitions_platform_stm32f4discovery)
 
-  # None
+  # get_filename_component(xpack_current_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
 
-endfunction()
+  add_compile_definitions(
 
+    OS_USE_SEMIHOSTING_SYSCALLS
+    # HAVE_MICRO_OS_PLUS_CONFIG_H
 
-function(target_compile_definitions_platform_stm32f4discovery target)
-
-  # None
-
-endfunction()
-
-# =============================================================================
-
-function(target_include_directories_micro_os_plus_common target)
-
-  get_filename_component(xpack_current_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
-
-  target_include_directories(
-    ${target}
-
-    INTERFACE
-      ${xpack_current_folder}/include
+    $<$<STREQUAL:"${CMAKE_BUILD_TYPE}","Debug">:OS_USE_TRACE_SEMIHOSTING_DEBUG>
   )
 
 endfunction()
 
+function(add_common_options_platform_stm32f4discovery)
 
-function(target_compile_definitions_micro_os_plus_common target)
-
-  get_filename_component(xpack_current_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
-
-  target_compile_definitions(
-    ${target}
-
-    INTERFACE      
-      OS_USE_SEMIHOSTING_SYSCALLS
-      # HAVE_MICRO_OS_PLUS_CONFIG_H
-
-      $<$<STREQUAL:"${CMAKE_BUILD_TYPE}","Debug">:OS_USE_TRACE_SEMIHOSTING_DEBUG>
-  )
-
-endfunction()
-
-
-function(target_options_micro_os_plus_common target)
-
-  get_filename_component(xpack_current_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
+  # get_filename_component(xpack_current_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
 
   set(common_cpu_options 
 
@@ -122,21 +87,20 @@ function(target_options_micro_os_plus_common target)
     # $<$<COMPILE_LANGUAGE:CXX>:-Wsign-promo>
   )
 
-  target_compile_options(
-    ${target}
+  add_compile_options(
 
-    INTERFACE
       ${common_cpu_options}
       ${common_optimization_options}
   )
 
-  target_link_options(
-    ${target}
+  add_link_options(
 
-    INTERFACE
       ${common_cpu_options}
       ${common_optimization_options}
+  )
 
+  add_link_options(
+    
       -nostartfiles
       # nano has no exceptions.
       # -specs=nano.specs
@@ -158,7 +122,44 @@ endfunction()
 
 # -----------------------------------------------------------------------------
 
+function(target_sources_platform_stm32f4discovery target)
+
+  get_filename_component(xpack_current_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
+
+  target_sources(
+    ${target}
+
+    PRIVATE
+      ${xpack_current_folder}/src/initialize-hardware.cpp
+      ${xpack_current_folder}/src/interrupts-handlers.cpp
+  )
+
+endfunction()
+
+
+function(target_include_directories_platform_stm32f4discovery target)
+
+# The include folder was passed globally, to catch the global config.h.
+
+endfunction()
+
+
+function(target_compile_definitions_platform_stm32f4discovery target)
+
+# The preprocessor definitions were passed globally.
+
+endfunction()
+
+# =============================================================================
+
 function(add_libraries_platform_stm32f4discovery)
+
+  # ---------------------------------------------------------------------------
+
+  # These must be the very first, before creating any library.
+  include_directories_platform_stm32f4discovery()
+  add_compile_definitions_platform_stm32f4discovery()
+  add_common_options_platform_stm32f4discovery()
 
   # ---------------------------------------------------------------------------
 
@@ -168,19 +169,21 @@ function(add_libraries_platform_stm32f4discovery)
 
   # ===========================================================================
 
+if(1)
   if(NOT TARGET micro-os-plus-common-interface)
 
     # Common definitions used across all dependencies.
     add_library(micro-os-plus-common-interface INTERFACE EXCLUDE_FROM_ALL)
 
-    target_include_directories_micro_os_plus_common(micro-os-plus-common-interface)
-    target_compile_definitions_micro_os_plus_common(micro-os-plus-common-interface)
-    target_options_micro_os_plus_common(micro-os-plus-common-interface)
+    # target_include_directories_micro_os_plus_common(micro-os-plus-common-interface)
+    # target_compile_definitions_micro_os_plus_common(micro-os-plus-common-interface)
+    # target_options_micro_os_plus_common(micro-os-plus-common-interface)
 
     add_library(micro-os-plus::common ALIAS micro-os-plus-common-interface)
     message(STATUS "micro-os-plus::common")
 
   endif()
+endif()
 
   # ===========================================================================
 

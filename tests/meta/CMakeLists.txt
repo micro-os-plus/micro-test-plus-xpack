@@ -79,44 +79,13 @@ endif()
 
 # -----------------------------------------------------------------------------
 
-
-find_package(micro-os-plus-micro-test-plus REQUIRED)
-
-# ---
-
-add_library(micro-os-plus STATIC)
-
-set(USE_STATIC_LIBS 1)
-
-if(NOT USE_STATIC_LIBS)
-
-target_link_libraries(
-  micro-os-plus
-
-  PUBLIC 
-    micro-os-plus::micro-test-plus
-)
-
-else()
-
-# No SOURCES given to target: micro-os-plus (weird!)
-target_sources(micro-os-plus PRIVATE dummy.c)
-
-target_link_libraries(
-  micro-os-plus
-
-  PUBLIC 
-    micro-os-plus::micro-test-plus-static
-)
-
-endif()
-
-# ---
-
 if(PLATFORM_NAME STREQUAL "native")
 
   # bin is mandatory, but not used.
   add_subdirectory("${xpack_tests_folder}/platform-native/meta" bin)
+
+  # No SOURCES given to target: micro-os-plus (weird!)
+  add_library(micro-os-plus STATIC dummy.c)
 
 elseif(PLATFORM_NAME STREQUAL "stm32f4discovery")
 
@@ -124,33 +93,21 @@ elseif(PLATFORM_NAME STREQUAL "stm32f4discovery")
   # missing the non-weak symbols, like the interrupt handlers.
   set(CMAKE_CXX_LINK_EXECUTABLE "<CMAKE_CXX_COMPILER>  <FLAGS> <CMAKE_CXX_LINK_FLAGS> <LINK_FLAGS> <OBJECTS> -o <TARGET> -Wl,--start-group -Wl,--whole-archive <LINK_LIBRARIES> -Wl,--no-whole-archive -Wl,--end-group")
 
-  add_subdirectory("${xpack_tests_folder}/platform-stm32f4discovery/meta" bin)
+  # For unknown reasons, it requires the bin folder, where it puts all
+  # inner depndencies. find_package() prefered, since it puts all libraries
+  # directly in the build folder.
+  # add_subdirectory("${xpack_tests_folder}/platform-stm32f4discovery/meta" bin)
   
-  # list(APPEND CMAKE_PREFIX_PATH "${xpack_tests_folder}/platform-stm32f4discovery/meta")
-  # find_package(platform-stm32f4discovery REQUIRED)
+  list(APPEND CMAKE_PREFIX_PATH "${xpack_tests_folder}/platform-stm32f4discovery/meta")
+  find_package(platform-stm32f4discovery REQUIRED)
 
   find_package(micro-os-plus-libs-c REQUIRED)
   find_package(micro-os-plus-libs-cpp REQUIRED)
   find_package(micro-os-plus-semihosting REQUIRED)
   find_package(micro-os-plus-startup REQUIRED)
 
-if(NOT USE_STATIC_LIBS)
-
-  # Collect all objects into a single library, and later link it
-  # to all tests.
-  target_link_libraries(
-    micro-os-plus
-
-    PUBLIC 
-      micro-os-plus::platform # Should bring device & architecture too.
-
-      micro-os-plus::libs-c
-      micro-os-plus::libs-cpp
-      micro-os-plus::semihosting
-      micro-os-plus::startup
-  )
-
-else()
+  # No SOURCES given to target: micro-os-plus (weird!)
+  add_library(micro-os-plus STATIC dummy.c)
 
   target_link_libraries(
     micro-os-plus
@@ -164,11 +121,20 @@ else()
       micro-os-plus::startup-static
   )
 
-endif()
-
 else()
   message(FATAL_ERROR, "Unsupported PLATFORM_NAME")
 endif()
+
+# -----------------------------------------------------------------------------
+
+find_package(micro-os-plus-micro-test-plus REQUIRED)
+
+target_link_libraries(
+  micro-os-plus
+
+  PUBLIC 
+    micro-os-plus::micro-test-plus-static
+)
 
 # -----------------------------------------------------------------------------
 
@@ -218,7 +184,6 @@ if(PLATFORM_NAME STREQUAL "stm32f4discovery")
 
     PRIVATE
       -Wl,-Map,unit-test.map
-      # -Wl,--whole-archive $<TARGET_PROPERTY:LINK_INTERFACE_LIBRARIES> -Wl,--no-whole-archive
   )
 
   add_custom_command(
