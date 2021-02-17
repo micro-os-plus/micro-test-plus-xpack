@@ -105,6 +105,10 @@ if(PLATFORM_NAME STREQUAL "native")
 
 elseif(PLATFORM_NAME STREQUAL "stm32f4discovery")
 
+  # Brace libraries with --whole-archive and --start-group to avoid linker
+  # missing the non-weak symbols, like the interrupt handlers.
+  set(CMAKE_CXX_LINK_EXECUTABLE "<CMAKE_CXX_COMPILER>  <FLAGS> <CMAKE_CXX_LINK_FLAGS> <LINK_FLAGS> <OBJECTS> -o <TARGET> -Wl,--start-group -Wl,--whole-archive <LINK_LIBRARIES> -Wl,--no-whole-archive -Wl,--end-group")
+
   add_subdirectory("${xpack_tests_folder}/platform-stm32f4discovery/meta" bin)
   
   # list(APPEND CMAKE_PREFIX_PATH "${xpack_tests_folder}/platform-stm32f4discovery/meta")
