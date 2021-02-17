@@ -223,7 +223,7 @@ if(PLATFORM_NAME STREQUAL "stm32f4discovery")
 
   add_custom_command(
     TARGET unit-test-app POST_BUILD
-    COMMAND arm-none-eabi-size --format=berkeley "unit-test.elf"
+    COMMAND arm-none-eabi-size --format=berkeley "$<TARGET_FILE:unit-test-app>"
   )
 
 endif()
@@ -280,7 +280,7 @@ if(PLATFORM_NAME STREQUAL "stm32f4discovery")
 
   add_custom_command(
     TARGET sample-test-app POST_BUILD
-    COMMAND arm-none-eabi-size --format=berkeley "sample-test.elf"
+    COMMAND arm-none-eabi-size --format=berkeley "$<TARGET_FILE:sample-test-app>"
   )
 
 endif()
