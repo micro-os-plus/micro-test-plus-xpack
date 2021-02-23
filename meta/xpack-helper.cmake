@@ -13,56 +13,35 @@ message(STATUS "Including micro-os-plus-micro-test-plus...")
 
 # -----------------------------------------------------------------------------
 
-function(target_sources_micro_os_plus_micro_test_plus target)
-
-  get_filename_component(xpack_current_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
-
-  target_sources(
-    ${target}
-
-    PRIVATE
-      ${xpack_current_folder}/src/micro-test-plus.cpp
-  )
-
-endfunction()
-
-# -----------------------------------------------------------------------------
-
-function(target_include_directories_micro_os_plus_micro_test_plus target)
-
-  get_filename_component(xpack_current_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
-
-  target_include_directories(
-    ${target}
-
-    PUBLIC
-      ${xpack_current_folder}/include
-  )
-
-endfunction()
-
-# -----------------------------------------------------------------------------
-
-function(target_compile_definitions_micro_os_plus_micro_test_plus target)
-
-  # None
-
-endfunction()
-
-# -----------------------------------------------------------------------------
-
 function(add_libraries_micro_os_plus_micro_test_plus)
+
+  get_filename_component(xpack_current_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
 
   # ---------------------------------------------------------------------------
 
   add_library(micro-os-plus-micro-test-plus-static STATIC EXCLUDE_FROM_ALL)
 
-  target_sources_micro_os_plus_micro_test_plus(micro-os-plus-micro-test-plus-static)
-  target_include_directories_micro_os_plus_micro_test_plus(micro-os-plus-micro-test-plus-static)
-  target_compile_definitions_micro_os_plus_micro_test_plus(micro-os-plus-micro-test-plus-static)
+  # -------------------------------------------------------------------------
+
+  target_sources(
+    micro-os-plus-micro-test-plus-static
+
+    PRIVATE
+      ${xpack_current_folder}/src/micro-test-plus.cpp
+  )
+
+  target_include_directories(
+    micro-os-plus-micro-test-plus-static
+
+    PUBLIC
+      ${xpack_current_folder}/include
+  )
+
+  # -------------------------------------------------------------------------
+  # Aliases
 
   add_library(micro-os-plus::micro-test-plus-static ALIAS micro-os-plus-micro-test-plus-static)
-  message(STATUS "micro-os-plus::micro-test-plus")
+  message(STATUS "micro-os-plus::micro-test-plus-static")
 
   # ---------------------------------------------------------------------------
 

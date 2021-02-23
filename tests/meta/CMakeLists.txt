@@ -17,12 +17,6 @@ if(CMAKE_BINARY_DIR STREQUAL CMAKE_SOURCE_DIR)
   message(FATAL_ERROR "In-source builds are not supported. Please use separate folder for build.")
 endif()
 
-# Generate the compile_commands.json file to feed the indexer.
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
-# Enable this to see the dependency graph.
-# set_property(GLOBAL PROPERTY GLOBAL_DEPENDS_DEBUG_MODE 1)
-
 # -----------------------------------------------------------------------------
 
 get_filename_component(xpack_tests_folder ${CMAKE_CURRENT_LIST_DIR} DIRECTORY)
@@ -31,12 +25,12 @@ set(xpack_current_folder ${xpack_tests_folder})
 
 include("${xpack_project_folder}/xpacks/micro-os-plus-build-helper/cmake/xpack-helper.cmake")
 
-append_cmake_prefix_path("${xpack_project_folder}")
-
-# Leave the result in PACKAGE_JSON_VERSION[*]
-parse_package_json_semver("${xpack_project_folder}/package.json")
+xpack_append_cmake_prefix_path("${xpack_project_folder}")
 
 # -----------------------------------------------------------------------------
+
+# Informative. Leave the result in PACKAGE_JSON_VERSION[*]
+xpack_parse_package_json_semver("${xpack_project_folder}/package.json")
 
 project(
   tests
@@ -65,6 +59,9 @@ message(STATUS "Prefix path: ${CMAKE_PREFIX_PATH}")
 # Generate the compile_commands.json file to feed the indexer.
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+# Enable this to see the dependency graph.
+# set_property(GLOBAL PROPERTY GLOBAL_DEPENDS_DEBUG_MODE 1)
+
 # -----------------------------------------------------------------------------
 
 # Common to all platforms.
@@ -84,65 +81,32 @@ endif()
 # -----------------------------------------------------------------------------
 
 if(PLATFORM_NAME STREQUAL "native")
-
   include("${xpack_tests_folder}/platform-native/meta/xpack-helper.cmake")
-
-  # This must be the very first, before creating any library.
-  add_common_options_platform_native()
-  add_libraries_platform_native()
-
-  # No SOURCES given to target: micro-os-plus (weird!)
-  add_library(micro-os-plus STATIC dummy.c)
-
 elseif(PLATFORM_NAME STREQUAL "stm32f4discovery")
-
-  # Brace libraries with --whole-archive and --start-group to avoid linker
-  # missing the non-weak symbols, like the interrupt handlers.
-  set(CMAKE_CXX_LINK_EXECUTABLE "<CMAKE_CXX_COMPILER>  <FLAGS> <CMAKE_CXX_LINK_FLAGS> <LINK_FLAGS> <OBJECTS> -o <TARGET> -Wl,--start-group -Wl,--whole-archive <LINK_LIBRARIES> -Wl,--no-whole-archive -Wl,--end-group")
-
   include("${xpack_tests_folder}/platform-stm32f4discovery/meta/xpack-helper.cmake")
-
-  # These must be the very first, before creating any library.
-  include_directories_platform_stm32f4discovery()
-  add_compile_definitions_platform_stm32f4discovery()
-  add_common_options_platform_stm32f4discovery()
-  
-  add_libraries_platform_stm32f4discovery()
-
-  find_package(micro-os-plus-libs-c REQUIRED)
-  find_package(micro-os-plus-libs-cpp REQUIRED)
-  find_package(micro-os-plus-semihosting REQUIRED)
-  find_package(micro-os-plus-startup REQUIRED)
-
-  # No SOURCES given to target: micro-os-plus (weird!)
-  add_library(micro-os-plus STATIC dummy.c)
-
-  target_link_libraries(
-    micro-os-plus
-
-    PUBLIC 
-      micro-os-plus::platform-static # Should bring device & architecture too.
-
-      micro-os-plus::libs-c-static
-      micro-os-plus::libs-cpp-static
-      micro-os-plus::semihosting-static
-      micro-os-plus::startup-static
-  )
-
 else()
   message(FATAL_ERROR, "Unsupported PLATFORM_NAME")
 endif()
 
 # -----------------------------------------------------------------------------
 
+# The global settings must be defined before creating any library.
+add_global_settings()
+
+# Define the device & platform libraries.
+add_libraries_platform()
+
+# -----------------------------------------------------------------------------
+
 find_package(micro-os-plus-micro-test-plus REQUIRED)
 
-target_link_libraries(
-  micro-os-plus
-
-  PUBLIC 
-    micro-os-plus::micro-test-plus-static
-)
+# Bare-metal platforms have more dependencies.
+if(CMAKE_SYSTEM_NAME STREQUAL "Generic")
+  find_package(micro-os-plus-libs-c REQUIRED)
+  find_package(micro-os-plus-libs-cpp REQUIRED)
+  find_package(micro-os-plus-semihosting REQUIRED)
+  find_package(micro-os-plus-startup REQUIRED)
+endif()
 
 # -----------------------------------------------------------------------------
 
@@ -183,22 +147,32 @@ function(add_test_executable name)
   target_link_libraries(
     ${name}
     
-    PUBLIC 
-      micro-os-plus
+      micro-os-plus::micro-test-plus-static
   )
 
-  if(PLATFORM_NAME STREQUAL "stm32f4discovery")
+  if(CMAKE_SYSTEM_NAME STREQUAL "Generic")
+
+    target_link_libraries(
+      ${name}
+      
+        micro-os-plus::platform # Should bring device & architecture too.
+
+        micro-os-plus::libs-c
+        micro-os-plus::libs-cpp
+        micro-os-plus::semihosting-static
+        micro-os-plus::startup-static
+    )
 
     target_link_options(
       ${name}
 
       PRIVATE
-        -Wl,-Map,${name}.map
+        -Wl,-Map,${name}-map.txt
     )
 
     add_custom_command(
       TARGET ${name} POST_BUILD
-      COMMAND arm-none-eabi-size --format=berkeley "$<TARGET_FILE:${name}>"
+      COMMAND ${CMAKE_SIZE} --format=berkeley "$<TARGET_FILE:${name}>"
     )
 
   endif()

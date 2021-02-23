@@ -19,7 +19,7 @@ message(STATUS "Including platform-native...")
 
 # -----------------------------------------------------------------------------
 
-function(add_common_options_platform_native)
+function(add_global_settings)
 
   set(common_optimization_options
 
@@ -57,7 +57,7 @@ endfunction()
 
 # -----------------------------------------------------------------------------
 
-function(add_libraries_platform_native)
+function(add_libraries_platform)
 
 # None so far.
 

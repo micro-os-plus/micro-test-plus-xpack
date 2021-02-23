@@ -19,21 +19,16 @@ message(STATUS "Including platform-stm32f4discovery...")
 
 # -----------------------------------------------------------------------------
 
-function(include_directories_platform_stm32f4discovery)
+function(add_global_settings)
 
   get_filename_component(xpack_current_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
+
+  # ---------------------------------------------------------------------------
 
   include_directories(
 
     ${xpack_current_folder}/include
   )
-
-endfunction()
-
-
-function(add_compile_definitions_platform_stm32f4discovery)
-
-  # get_filename_component(xpack_current_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
 
   add_compile_definitions(
 
@@ -42,12 +37,6 @@ function(add_compile_definitions_platform_stm32f4discovery)
 
     $<$<STREQUAL:"${CMAKE_BUILD_TYPE}","Debug">:OS_USE_TRACE_SEMIHOSTING_DEBUG>
   )
-
-endfunction()
-
-function(add_common_options_platform_stm32f4discovery)
-
-  # get_filename_component(xpack_current_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
 
   set(common_cpu_options 
 
@@ -104,13 +93,7 @@ function(add_common_options_platform_stm32f4discovery)
       -nostartfiles
       # nano has no exceptions.
       # -specs=nano.specs
-      -Xlinker --gc-sections
-
-      # -Wl,-u,Reset_Handler
-      # -Wl,-u,initialise_monitor_handles
-      # -Wl,--whole-archive 
-      # libmicro-os-plus.a  libmicro-os-plus-micro-test-plus-static.a  bin/libplatform-stm32f4discovery-static.a  bin/libmicro-os-plus-platform-stm32f4discovery-static.a  bin/libmicro-os-plus-device-static.a  bin/libmicro-os-plus-devices-stm32f4-extras-static.a  libmicro-os-plus-libs-c-static.a  libmicro-os-plus-libs-cpp-static.a  bin/libmicro-os-plus-semihosting-static.a  bin/libmicro-os-plus-startup-static.a  bin/libmicro-os-plus-diag-trace-static.a 
-      # -Wl,--no-whole-archive
+      -Wl,--gc-sections
 
       # Including files from other packages is not very nice, but functional.
       # Use absolute paths, otherwise set -L.
@@ -120,39 +103,11 @@ function(add_common_options_platform_stm32f4discovery)
 
 endfunction()
 
-# -----------------------------------------------------------------------------
-
-function(target_sources_platform_stm32f4discovery target)
-
-  get_filename_component(xpack_current_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
-
-  target_sources(
-    ${target}
-
-    PRIVATE
-      ${xpack_current_folder}/src/initialize-hardware.cpp
-      ${xpack_current_folder}/src/interrupts-handlers.cpp
-  )
-
-endfunction()
-
-
-function(target_include_directories_platform_stm32f4discovery target)
-
-# The include folder was passed globally, to catch the global config.h.
-
-endfunction()
-
-
-function(target_compile_definitions_platform_stm32f4discovery target)
-
-# The preprocessor definitions were passed globally.
-
-endfunction()
-
 # =============================================================================
 
-function(add_libraries_platform_stm32f4discovery)
+function(add_libraries_platform)
+
+  get_filename_component(xpack_current_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
 
   # ---------------------------------------------------------------------------
 
@@ -162,23 +117,41 @@ function(add_libraries_platform_stm32f4discovery)
 
   # ---------------------------------------------------------------------------
 
-  if(NOT TARGET platform-stm32f4discovery-static)
+  if(NOT TARGET platform-stm32f4discovery-interface)
 
-    add_library(platform-stm32f4discovery-static STATIC EXCLUDE_FROM_ALL)
+    add_library(platform-stm32f4discovery-interface INTERFACE EXCLUDE_FROM_ALL)
 
-    target_sources_platform_stm32f4discovery(platform-stm32f4discovery-static)
-    target_include_directories_platform_stm32f4discovery(platform-stm32f4discovery-static)
-    target_compile_definitions_platform_stm32f4discovery(platform-stm32f4discovery-static)
+    # -------------------------------------------------------------------------
 
-    add_library(micro-os-plus::platform-static ALIAS platform-stm32f4discovery-static)
-    message(STATUS "micro-os-plus::platform")
+    target_sources(
+      platform-stm32f4discovery-interface
+  
+      INTERFACE
+        ${xpack_current_folder}/src/initialize-hardware.cpp
+        ${xpack_current_folder}/src/interrupts-handlers.cpp
+    )
+
+    target_include_directories(
+      platform-stm32f4discovery-interface
+  
+      INTERFACE
+        # The include folder was passed globally, to catch the global config.h.
+    )
+
+    # The preprocessor definitions were passed globally.
 
     target_link_libraries(
-      platform-stm32f4discovery-static
+      platform-stm32f4discovery-interface
       
-      PUBLIC
-        micro-os-plus::platform-stm32f4discovery-static
+      INTERFACE
+        micro-os-plus::platform-stm32f4discovery
     )
+
+    # -------------------------------------------------------------------------
+    # Aliases
+
+    add_library(micro-os-plus::platform ALIAS platform-stm32f4discovery-interface)
+    message(STATUS "micro-os-plus::platform")
 
   endif()
 
