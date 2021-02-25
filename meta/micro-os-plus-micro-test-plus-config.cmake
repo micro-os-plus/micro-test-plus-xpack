@@ -12,11 +12,44 @@
 # https://cmake.org/cmake/help/v3.18/
 # https://cmake.org/cmake/help/v3.18/manual/cmake-packages.7.html#package-configuration-file
 
-# message(STATUS "Including micro-os-plus-micro-test-plus-config...")
+if(micro-os-plus-micro-test-plus-included)
+  return()
+endif()
+
+set(micro-os-plus-micro-test-plus-included TRUE)
+
+message(STATUS "Including micro-os-plus-micro-test-plus...")
 
 # -----------------------------------------------------------------------------
+# The current folder.
 
-include("${CMAKE_CURRENT_LIST_DIR}/xpack-helper.cmake")
+get_filename_component(xpack_current_folder ${CMAKE_CURRENT_LIST_DIR} DIRECTORY)
+
+# ---------------------------------------------------------------------------
+
+add_library(micro-os-plus-micro-test-plus-static STATIC EXCLUDE_FROM_ALL)
+
+# -------------------------------------------------------------------------
+
+target_sources(
+  micro-os-plus-micro-test-plus-static
+
+  PRIVATE
+    ${xpack_current_folder}/src/micro-test-plus.cpp
+)
+
+target_include_directories(
+  micro-os-plus-micro-test-plus-static
+
+  PUBLIC
+    ${xpack_current_folder}/include
+)
+
+# -------------------------------------------------------------------------
+# Aliases.
+
+add_library(micro-os-plus::micro-test-plus-static ALIAS micro-os-plus-micro-test-plus-static)
+message(STATUS "micro-os-plus::micro-test-plus-static")
 
 # -----------------------------------------------------------------------------
 
