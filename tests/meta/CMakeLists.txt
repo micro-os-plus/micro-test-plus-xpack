@@ -21,7 +21,6 @@ endif()
 
 get_filename_component(xpack_tests_folder ${CMAKE_CURRENT_LIST_DIR} DIRECTORY)
 get_filename_component(xpack_project_folder ${xpack_tests_folder} DIRECTORY)
-set(xpack_current_folder ${xpack_tests_folder})
 
 include("${xpack_project_folder}/xpacks/micro-os-plus-build-helper/cmake/xpack-helper.cmake")
 
@@ -90,14 +89,6 @@ endif()
 
 # -----------------------------------------------------------------------------
 
-# The global settings must be defined before creating any library.
-add_global_settings()
-
-# Define the device & platform libraries.
-add_libraries_platform()
-
-# -----------------------------------------------------------------------------
-
 find_package(micro-os-plus-micro-test-plus REQUIRED)
 
 # Bare-metal platforms have more dependencies.
@@ -126,7 +117,7 @@ function(add_test_executable name)
     ${name}
 
     PRIVATE
-      ${xpack_current_folder}/src/${name}.cpp
+      ${xpack_tests_folder}/src/${name}.cpp
   )
 
   # Include folders.
@@ -134,7 +125,7 @@ function(add_test_executable name)
     ${name}
 
     PRIVATE
-      ${xpack_current_folder}/include
+      ${xpack_tests_folder}/include
   )
 
   target_compile_definitions(

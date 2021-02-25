@@ -12,39 +12,34 @@
 message(STATUS "Including micro-os-plus-micro-test-plus...")
 
 # -----------------------------------------------------------------------------
+# The current folder.
 
-function(add_libraries_micro_os_plus_micro_test_plus)
+get_filename_component(xpack_current_folder ${CMAKE_CURRENT_LIST_DIR} DIRECTORY)
 
-  get_filename_component(xpack_current_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
+# ---------------------------------------------------------------------------
 
-  # ---------------------------------------------------------------------------
+add_library(micro-os-plus-micro-test-plus-static STATIC EXCLUDE_FROM_ALL)
 
-  add_library(micro-os-plus-micro-test-plus-static STATIC EXCLUDE_FROM_ALL)
+# -------------------------------------------------------------------------
 
-  # -------------------------------------------------------------------------
+target_sources(
+  micro-os-plus-micro-test-plus-static
 
-  target_sources(
-    micro-os-plus-micro-test-plus-static
+  PRIVATE
+    ${xpack_current_folder}/src/micro-test-plus.cpp
+)
 
-    PRIVATE
-      ${xpack_current_folder}/src/micro-test-plus.cpp
-  )
+target_include_directories(
+  micro-os-plus-micro-test-plus-static
 
-  target_include_directories(
-    micro-os-plus-micro-test-plus-static
+  PUBLIC
+    ${xpack_current_folder}/include
+)
 
-    PUBLIC
-      ${xpack_current_folder}/include
-  )
+# -------------------------------------------------------------------------
+# Aliases.
 
-  # -------------------------------------------------------------------------
-  # Aliases
-
-  add_library(micro-os-plus::micro-test-plus-static ALIAS micro-os-plus-micro-test-plus-static)
-  message(STATUS "micro-os-plus::micro-test-plus-static")
-
-  # ---------------------------------------------------------------------------
-
-endfunction()
+add_library(micro-os-plus::micro-test-plus-static ALIAS micro-os-plus-micro-test-plus-static)
+message(STATUS "micro-os-plus::micro-test-plus-static")
 
 # -----------------------------------------------------------------------------

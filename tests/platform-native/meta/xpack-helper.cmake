@@ -18,49 +18,38 @@ set(platform-native-included TRUE)
 message(STATUS "Including platform-native...")
 
 # -----------------------------------------------------------------------------
+# Global definitions. Before any libraries.
 
-function(add_global_settings)
+set(common_optimization_options
 
-  set(common_optimization_options
+  -fmessage-length=0
+  -fsigned-char
+  -ffunction-sections
+  -fdata-sections
 
-    -fmessage-length=0
-    -fsigned-char
-    -ffunction-sections
-    -fdata-sections
+  # -Wunused
+  # -Wuninitialized
+  # -Wall
+  # -Wextra
+  # -Wconversion
+  # -Wpointer-arith
+  # -Wshadow
+  # -Wlogical-op
+  # -Wfloat-equal
 
-    # -Wunused
-    # -Wuninitialized
-    # -Wall
-    # -Wextra
-    # -Wconversion
-    # -Wpointer-arith
-    # -Wshadow
-    # -Wlogical-op
-    # -Wfloat-equal
+  # $<$<COMPILE_LANGUAGE:CXX>:-Wctor-dtor-privacy>
+  # $<$<COMPILE_LANGUAGE:CXX>:-Wnoexcept>
+  # $<$<COMPILE_LANGUAGE:CXX>:-Wnon-virtual-dtor>
+  # $<$<COMPILE_LANGUAGE:CXX>:-Wstrict-null-sentinel>
+  # $<$<COMPILE_LANGUAGE:CXX>:-Wsign-promo>
+)
 
-    # $<$<COMPILE_LANGUAGE:CXX>:-Wctor-dtor-privacy>
-    # $<$<COMPILE_LANGUAGE:CXX>:-Wnoexcept>
-    # $<$<COMPILE_LANGUAGE:CXX>:-Wnon-virtual-dtor>
-    # $<$<COMPILE_LANGUAGE:CXX>:-Wstrict-null-sentinel>
-    # $<$<COMPILE_LANGUAGE:CXX>:-Wsign-promo>
-  )
+add_compile_options(
+  ${common_optimization_options}
+)
 
-  add_compile_options(
-    ${common_optimization_options}
-  )
-
-  add_link_options(
-    ${common_optimization_options}
-  )
-
-endfunction()
-
-# -----------------------------------------------------------------------------
-
-function(add_libraries_platform)
-
-# None so far.
-
-endfunction()
+add_link_options(
+  ${common_optimization_options}
+)
 
 # -----------------------------------------------------------------------------
