@@ -80,9 +80,9 @@ endif()
 # -----------------------------------------------------------------------------
 
 if(PLATFORM_NAME STREQUAL "native")
-  include("${xpack_tests_folder}/platform-native/meta/xpack-helper.cmake")
+  include("${xpack_tests_folder}/platform-native/meta/config.cmake")
 elseif(PLATFORM_NAME STREQUAL "stm32f4discovery")
-  include("${xpack_tests_folder}/platform-stm32f4discovery/meta/xpack-helper.cmake")
+  include("${xpack_tests_folder}/platform-stm32f4discovery/meta/config.cmake")
 else()
   message(FATAL_ERROR, "Unsupported PLATFORM_NAME")
 endif()
