@@ -31,11 +31,13 @@ add_library(micro-os-plus-micro-test-plus-static STATIC EXCLUDE_FROM_ALL)
 
 # -------------------------------------------------------------------------
 
+file(GLOB_RECURSE source_files CONFIGURE_DEPENDS "${xpack_current_folder}/src/*.c*")
+
 target_sources(
   micro-os-plus-micro-test-plus-static
 
   PRIVATE
-    ${xpack_current_folder}/src/micro-test-plus.cpp
+    ${source_files}
 )
 
 target_include_directories(
