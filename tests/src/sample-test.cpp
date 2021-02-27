@@ -27,7 +27,7 @@
 
 #include <micro-os-plus/micro-test-plus.h>
 
-using namespace os;
+using namespace micro_os_plus;
 
 // ----------------------------------------------------------------------------
 

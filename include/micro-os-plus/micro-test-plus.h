@@ -32,7 +32,7 @@
 
 #ifdef __cplusplus
 
-namespace os
+namespace micro_os_plus
 {
   namespace micro_test_plus // `micro-test-plus` is shortened to `mtp`.
   {
@@ -121,7 +121,7 @@ namespace os
       unsigned int test_cases_;
     };
   } // namespace micro_test_plus
-} // namespace os
+} // namespace micro_os_plus
 
 // ----------------------------------------------------------------------------
 

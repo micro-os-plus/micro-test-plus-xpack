@@ -30,7 +30,7 @@
 #include <cassert>
 #include <stdio.h>
 
-using namespace os;
+using namespace micro_os_plus;
 
 // ----------------------------------------------------------------------------
 

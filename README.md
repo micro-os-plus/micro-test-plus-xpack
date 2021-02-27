@@ -138,13 +138,13 @@ The header file to be included in user project is:
 
 #### Namespaces
 
-- `os::micro-test-plus`
+- `micro_os_plus::micro-test-plus`
 
 `os` is the top µOS++ namespace, and `micro-test-plus` is the µTest++ namespace.
 
 #### Classes
 
-- `os::micro-test-plus::session`
+- `micro_os_plus::micro-test-plus::session`
 
 The project includes only one class, `session`. To automate
 passing the file name and the line number, several macros were added.
@@ -158,7 +158,7 @@ presented below and is also available in
 ```c++
 #include <micro-os-plus/micro-test-plus.h>
 
-using namespace os;
+using namespace micro_os_plus;
 
 // Forward definitions of the test cases.
 void

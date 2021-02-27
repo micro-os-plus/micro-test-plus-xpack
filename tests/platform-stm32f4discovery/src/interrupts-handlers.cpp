@@ -35,13 +35,15 @@
 
 // #include "sysclock.h"
 
-using namespace os;
+// ----------------------------------------------------------------------------
+
+using namespace micro_os_plus;
 
 // ----------------------------------------------------------------------------
 
 void __attribute__ ((section (".after_vectors"))) SysTick_Handler (void)
 {
-  // os::sysclock.internal_increment_count ();
+  // sysclock.internal_increment_count ();
   HAL_IncTick ();
 }
 
