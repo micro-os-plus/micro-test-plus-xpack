@@ -96,11 +96,11 @@ namespace micro_os_plus
     }
 
     void
-    session::run_test_case (void (*func) (session&), const char* name)
+    session::run_test_case (void (*function) (session&), const char* name)
     {
       printf ("\n  %s\n", name);
 
-      (*func) (*this);
+      (*function) (*this);
       test_cases_++;
     }
 
