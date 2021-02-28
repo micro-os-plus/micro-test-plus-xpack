@@ -38,7 +38,7 @@
 // Called early, before copying .data and clearing .bss.
 // Should initialize the clocks and possible other RAM areas.
 void
-os_startup_initialize_hardware_early (void)
+micro_os_plus_startup_initialize_hardware_early (void)
 {
   ; // None so far.
 }
@@ -57,7 +57,7 @@ extern "C"
 
 // Called before running the static constructors.
 void
-os_startup_initialize_hardware (void)
+micro_os_plus_startup_initialize_hardware (void)
 {
   // Initialise the HAL Library; it must be the first function
   // to be executed before the call of any HAL function.
