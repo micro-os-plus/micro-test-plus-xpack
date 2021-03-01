@@ -67,6 +67,10 @@
   },
   "devDependencies": {    
     "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#semver:2.0.0",
+    "@micro-os-plus/platform-stm32f4discovery": "github:micro-os-plus/platform-stm32f4discovery-xpack#semver:2.0.0"
+  },
+  "2devDependencies": {    
+    "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#semver:2.0.0",
     "@micro-os-plus/platform-stm32f4discovery": "github:micro-os-plus/platform-stm32f4discovery-xpack#semver:2.0.0",
     "@micro-os-plus/devices-stm32f4-extras": "github:micro-os-plus/devices-stm32f4-extras-xpack#semver:2.0.0",
     "@micro-os-plus/architecture-cortexm": "github:micro-os-plus/architecture-cortexm-xpack#semver:2.0.0",
