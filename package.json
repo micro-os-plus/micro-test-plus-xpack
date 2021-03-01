@@ -59,13 +59,11 @@
   "license": "MIT",
   "config": {},
   "dependencies": {},
-  "1devDependencies": {
+  "devDependencies": {
     "@xpack-dev-tools/cmake": "3.19.2-1.1",
     "@xpack-dev-tools/ninja-build": "1.10.1-1.1",
     "@xpack-dev-tools/qemu-arm": "2.8.0-12.1",
-    "@xpack-dev-tools/arm-none-eabi-gcc": "10.2.1-1.1.2"
-  },
-  "devDependencies": {    
+    "@xpack-dev-tools/arm-none-eabi-gcc": "10.2.1-1.1.2",
     "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#semver:2.0.0",
     "@micro-os-plus/platform-stm32f4discovery": "github:micro-os-plus/platform-stm32f4discovery-xpack#semver:2.0.0",
     "@micro-os-plus/devices-stm32f4-extras": "github:micro-os-plus/devices-stm32f4-extras-xpack#semver:2.0.0",
@@ -74,9 +72,7 @@
     "@micro-os-plus/semihosting": "github:micro-os-plus/semihosting-xpack#semver:3.0.0",
     "@micro-os-plus/diag-trace": "github:micro-os-plus/diag-trace-xpack#semver:2.0.0",
     "@micro-os-plus/libs-c": "github:micro-os-plus/libs-c-xpack#semver:2.0.0",
-    "@micro-os-plus/libs-cpp": "github:micro-os-plus/libs-cpp-xpack#semver:2.0.0"
-  },
-  "2devDependencies": {    
+    "@micro-os-plus/libs-cpp": "github:micro-os-plus/libs-cpp-xpack#semver:2.0.0",
     "@micro-os-plus/version": "github:micro-os-plus/version-xpack#semver:7.0.2"  
   },
   "xpack": {}
