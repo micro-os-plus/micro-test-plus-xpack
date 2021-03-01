@@ -24,7 +24,8 @@ get_filename_component(xpack_project_folder ${xpack_tests_folder} DIRECTORY)
 
 include("${xpack_project_folder}/xpacks/micro-os-plus-build-helper/cmake/xpack-helper.cmake")
 
-xpack_append_cmake_prefix_path("${xpack_project_folder}")
+list(APPEND CMAKE_PREFIX_PATH "${xpack_project_folder}/meta")
+xpack_append_cmake_prefix_path("${xpack_project_folder}/xpacks")
 
 # -----------------------------------------------------------------------------
 
