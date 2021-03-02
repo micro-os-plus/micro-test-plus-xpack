@@ -136,6 +136,41 @@ function(add_test_executable name)
       # ...
   )
 
+  target_compile_options(
+    ${name}
+
+    PRIVATE
+      -Wall
+      $<$<CXX_COMPILER_ID:Clang,AppleClang>:-Weverything>
+
+      $<$<CXX_COMPILER_ID:GNU>:-Wextra>
+
+      # For HAL
+      $<$<CXX_COMPILER_ID:GNU>:-Wno-unused-parameter>
+
+      # ... libs-c/src/stdlib/exit.c:132:46
+      $<$<CXX_COMPILER_ID:GNU>:-Wno-missing-attributes>
+
+      $<$<CXX_COMPILER_ID:GNU>:-Wunused>
+      $<$<CXX_COMPILER_ID:GNU>:-Wuninitialized>
+
+      # For HAL
+      # $<$<CXX_COMPILER_ID:GNU>:-Wconversion>
+
+      $<$<CXX_COMPILER_ID:GNU>:-Wpointer-arith>
+      $<$<CXX_COMPILER_ID:GNU>:-Wshadow>
+      $<$<CXX_COMPILER_ID:GNU>:-Wlogical-op>
+      $<$<CXX_COMPILER_ID:GNU>:-Wfloat-equal>
+
+      $<$<COMPILE_LANG_AND_ID:CXX,GNU>:-Wctor-dtor-privacy>
+      $<$<COMPILE_LANG_AND_ID:CXX,GNU>:-Wnoexcept>
+      $<$<COMPILE_LANG_AND_ID:CXX,GNU>:-Wnon-virtual-dtor>
+      $<$<COMPILE_LANG_AND_ID:CXX,GNU>:-Wstrict-null-sentinel>
+      $<$<COMPILE_LANG_AND_ID:CXX,GNU>:-Wsign-promo>
+
+      -Werror
+  )
+
   target_link_libraries(
     ${name}
     
