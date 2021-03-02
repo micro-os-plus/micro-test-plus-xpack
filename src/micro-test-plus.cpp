@@ -38,15 +38,22 @@ namespace micro_os_plus
 
     // ------------------------------------------------------------------------
 
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wc++98-compat"
+#endif
+
     session::session ()
     {
-      this->argc = 0;
-      this->argv = nullptr;
+      this->argc_ = 0;
+      this->argv_ = nullptr;
 
       passed_ = 0;
       failed_ = 0;
       test_cases_ = 0;
     }
+
+#pragma GCC diagnostic pop
 
     session::session (int argc, char* argv[])
     {
@@ -56,8 +63,8 @@ namespace micro_os_plus
     void
     session::init (int argc, char* argv[])
     {
-      this->argc = argc;
-      this->argv = argv;
+      this->argc_ = argc;
+      this->argv_ = argv;
 
       passed_ = 0;
       failed_ = 0;
@@ -200,6 +207,12 @@ namespace micro_os_plus
         }
     }
 
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wc++98-compat"
+#pragma clang diagnostic ignored "-Wformat-nonliteral"
+#endif
+
     void
     session::print_where_ (const char* format, const char* file, int line)
     {
@@ -208,6 +221,8 @@ namespace micro_os_plus
           printf (format, file, line);
         }
     }
+
+#pragma GCC diagnostic pop
 
     int
     session::result (void)

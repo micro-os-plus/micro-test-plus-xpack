@@ -36,12 +36,21 @@ namespace micro_os_plus
 {
   namespace micro_test_plus // `micro-test-plus` is shortened to `mtp`.
   {
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpadded"
+
     class session
     {
     public:
       session ();
 
       session (int argc, char* argv[]);
+
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wc++98-compat"
+#endif
 
       session (const session&) = delete;
       session (session&&) = delete;
@@ -85,6 +94,8 @@ namespace micro_os_plus
       expect_eq (const char* actual, const char* expected, const char* message,
                  const char* file = nullptr, int line = 0);
 
+#pragma GCC diagnostic pop
+
       int
       result (void);
 
@@ -92,34 +103,37 @@ namespace micro_os_plus
       passed (void)
       {
         return passed_;
-      };
+      }
 
       inline int
       failed (void)
       {
         return failed_;
-      };
+      }
 
       inline int
       test_cases (void)
       {
         return test_cases_;
-      };
+      }
 
     protected:
       void
       print_where_ (const char* format, const char* file, int line);
 
     protected:
-      int argc;
-      char** argv;
+      int argc_;
+      char** argv_;
 
       const char* name_;
 
-      unsigned int passed_;
-      unsigned int failed_;
-      unsigned int test_cases_;
+      int passed_;
+      int failed_;
+      int test_cases_;
     };
+
+#pragma GCC diagnostic pop
+
   } // namespace micro_test_plus
 } // namespace micro_os_plus
 

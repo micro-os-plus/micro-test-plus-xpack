@@ -28,9 +28,27 @@
 #include <micro-os-plus/micro-test-plus.h>
 
 #include <cassert>
+#include <cstring>
 #include <stdio.h>
 
 using namespace micro_os_plus;
+
+// ----------------------------------------------------------------------------
+
+void
+test_case_pass (micro_test_plus::session& t);
+
+void
+test_case_fail (micro_test_plus::session& t);
+
+void
+test_case_expect_true (micro_test_plus::session& t);
+
+void
+test_case_expect_eq (micro_test_plus::session& t);
+
+void
+test_case_expect_eq_strings (micro_test_plus::session& t);
 
 // ----------------------------------------------------------------------------
 
@@ -79,9 +97,10 @@ test_case_expect_eq_strings (micro_test_plus::session& t)
   t.expect_eq ("aab", "aaa", "'aab' != 'aaa'");
   MTP_EXPECT_EQ (t, "aac", "aaa", "'aac' != 'aaa'");
 
-  char* str = (char*)"aaa";
+  char str[10];
+  strcpy (str, "aaa");
   t.expect_eq (str, "aaa", "str == 'aaa' with aaa");
-  str = (char*)"aac";
+  strcpy (str, "aac");
   t.expect_eq (str, "aaa", "str == 'aaa' with aac");
   MTP_EXPECT_EQ (t, str, "aaa", "str == 'aaa' with aac");
 }

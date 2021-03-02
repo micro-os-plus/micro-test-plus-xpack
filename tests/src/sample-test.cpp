@@ -45,6 +45,22 @@ test_case_exception_not_thrown (micro_test_plus::session& t);
 
 #endif // defined(__EXCEPTIONS)
 
+int
+compute_one (void);
+
+const char*
+compute_aaa (void);
+
+bool
+compute_condition (void);
+
+#if defined(__EXCEPTIONS)
+
+void
+exercise_throw (bool mustThrow);
+
+#endif // defined(__EXCEPTIONS)
+
 // ----------------------------------------------------------------------------
 
 // The test suite.
@@ -74,19 +90,19 @@ main (int argc, char* argv[])
 
 // Simple examples of functions to be tested.
 int
-compute_one ()
+compute_one (void)
 {
   return 1;
 }
 
-char*
-compute_aaa ()
+const char*
+compute_aaa (void)
 {
-  return (char*)"aaa";
+  return "aaa";
 }
 
 bool
-compute_condition ()
+compute_condition (void)
 {
   return true;
 }
