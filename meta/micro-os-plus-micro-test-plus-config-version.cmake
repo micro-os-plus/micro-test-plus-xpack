@@ -14,6 +14,8 @@
 
 # message(STATUS "Including micro-os-plus-micro-test-plus-config-version...")
 
-# TODO
+# -----------------------------------------------------------------------------
+
+xpack_process_package_version()
 
 # -----------------------------------------------------------------------------
