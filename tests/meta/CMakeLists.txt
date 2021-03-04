@@ -182,6 +182,8 @@ function(add_test_executable name)
 
   endif()
 
+  message(STATUS "=> ${name}")
+  
 endfunction()
 
 # -----------------------------------------------------------------------------
