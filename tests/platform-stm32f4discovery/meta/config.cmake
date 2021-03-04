@@ -68,6 +68,14 @@ if(NOT TARGET platform-stm32f4discovery-interface)
 
   # The preprocessor definitions were passed globally.
 
+  target_compile_options(
+    platform-stm32f4discovery-static
+
+    INTERFACE
+      # ...
+
+  )
+
   target_link_libraries(
     platform-stm32f4discovery-interface
     
