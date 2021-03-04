@@ -48,30 +48,18 @@ target_include_directories(
     ${xpack_current_folder}/include
 )
 
-target_compile_options(
-  micro-os-plus-micro-test-plus-static
+  # A list of all imaginable warnings.
+  xpack_set_all_compiler_warnings(all_warnings)
 
-  PRIVATE
-    -Wall
-    $<$<CXX_COMPILER_ID:Clang,AppleClang>:-Weverything>
+  target_compile_options(
+    micro-os-plus-micro-test-plus-static
 
-    $<$<CXX_COMPILER_ID:GNU>:-Wextra>
-    $<$<CXX_COMPILER_ID:GNU>:-Wunused>
-    $<$<CXX_COMPILER_ID:GNU>:-Wuninitialized>
-    $<$<CXX_COMPILER_ID:GNU>:-Wconversion>
-    $<$<CXX_COMPILER_ID:GNU>:-Wpointer-arith>
-    $<$<CXX_COMPILER_ID:GNU>:-Wshadow>
-    $<$<CXX_COMPILER_ID:GNU>:-Wlogical-op>
-    $<$<CXX_COMPILER_ID:GNU>:-Wfloat-equal>
+    PRIVATE
+      ${all_warnings}
 
-    $<$<COMPILE_LANG_AND_ID:CXX,GNU>:-Wctor-dtor-privacy>
-    $<$<COMPILE_LANG_AND_ID:CXX,GNU>:-Wnoexcept>
-    $<$<COMPILE_LANG_AND_ID:CXX,GNU>:-Wnon-virtual-dtor>
-    $<$<COMPILE_LANG_AND_ID:CXX,GNU>:-Wstrict-null-sentinel>
-    $<$<COMPILE_LANG_AND_ID:CXX,GNU>:-Wsign-promo>
+      -Werror
+  )
 
-    -Werror
-)
 
 # -------------------------------------------------------------------------
 # Aliases.
