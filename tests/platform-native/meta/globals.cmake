@@ -19,36 +19,20 @@ get_filename_component(xpack_current_folder ${CMAKE_CURRENT_LIST_DIR} DIRECTORY)
 # -----------------------------------------------------------------------------
 # Global definitions. Before any libraries.
 
-set(common_optimization_options
+set(common_options
 
   -fmessage-length=0
   -fsigned-char
   -ffunction-sections
   -fdata-sections
-
-  # -Wunused
-  # -Wuninitialized
-  # -Wall
-  # -Wextra
-  # -Wconversion
-  # -Wpointer-arith
-  # -Wshadow
-  # -Wlogical-op
-  # -Wfloat-equal
-
-  # $<$<COMPILE_LANGUAGE:CXX>:-Wctor-dtor-privacy>
-  # $<$<COMPILE_LANGUAGE:CXX>:-Wnoexcept>
-  # $<$<COMPILE_LANGUAGE:CXX>:-Wnon-virtual-dtor>
-  # $<$<COMPILE_LANGUAGE:CXX>:-Wstrict-null-sentinel>
-  # $<$<COMPILE_LANGUAGE:CXX>:-Wsign-promo>
 )
 
 add_compile_options(
-  ${common_optimization_options}
+  ${common_options}
 )
 
 add_link_options(
-  ${common_optimization_options}
+  ${common_options}
 )
 
 # -----------------------------------------------------------------------------
