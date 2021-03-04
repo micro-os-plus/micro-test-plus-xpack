@@ -210,8 +210,8 @@ namespace micro_os_plus
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
-#pragma clang diagnostic ignored "-Wformat-nonliteral"
 #endif
+#pragma GCC diagnostic ignored "-Wformat-nonliteral"
 
     void
     session::print_where_ (const char* format, const char* file, int line)
