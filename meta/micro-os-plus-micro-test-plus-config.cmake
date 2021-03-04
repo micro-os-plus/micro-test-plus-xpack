@@ -75,9 +75,9 @@ target_compile_options(
 
 # -------------------------------------------------------------------------
 # Aliases.
+  message(STATUS "=> micro-os-plus::micro-test-plus-static")
 
 add_library(micro-os-plus::micro-test-plus-static ALIAS micro-os-plus-micro-test-plus-static)
-message(STATUS "micro-os-plus::micro-test-plus-static")
 
 # -----------------------------------------------------------------------------
 

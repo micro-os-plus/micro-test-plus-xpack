@@ -73,7 +73,7 @@ if(NOT TARGET platform-stm32f4discovery-interface)
   # Aliases.
 
   add_library(micro-os-plus::platform ALIAS platform-stm32f4discovery-interface)
-  message(STATUS "micro-os-plus::platform")
+  message(STATUS "=> micro-os-plus::platform")
 
 endif()
 
