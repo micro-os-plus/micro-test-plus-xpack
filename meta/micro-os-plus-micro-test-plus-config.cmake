@@ -27,26 +27,28 @@ get_filename_component(xpack_current_folder ${CMAKE_CURRENT_LIST_DIR} DIRECTORY)
 
 # ---------------------------------------------------------------------------
 
-add_library(micro-os-plus-micro-test-plus-static STATIC EXCLUDE_FROM_ALL)
+if(NOT TARGET micro-os-plus-micro-test-plus-static)
 
-# -------------------------------------------------------------------------
+  add_library(micro-os-plus-micro-test-plus-static STATIC EXCLUDE_FROM_ALL)
+
+  # -------------------------------------------------------------------------
 
   xpack_glob_recurse_cxx(source_files "${xpack_current_folder}/src")
   xpack_display_relative_paths("${source_files}" "${xpack_current_folder}")
 
-target_sources(
-  micro-os-plus-micro-test-plus-static
+  target_sources(
+    micro-os-plus-micro-test-plus-static
 
-  PRIVATE
-    ${source_files}
-)
+    PRIVATE
+      ${source_files}
+  )
 
-target_include_directories(
-  micro-os-plus-micro-test-plus-static
+  target_include_directories(
+    micro-os-plus-micro-test-plus-static
 
-  PUBLIC
-    ${xpack_current_folder}/include
-)
+    PUBLIC
+      ${xpack_current_folder}/include
+  )
 
   # A list of all imaginable warnings.
   xpack_set_all_compiler_warnings(all_warnings)
@@ -60,12 +62,13 @@ target_include_directories(
       -Werror
   )
 
+  # -------------------------------------------------------------------------
+  # Aliases.
 
-# -------------------------------------------------------------------------
-# Aliases.
+  add_library(micro-os-plus::micro-test-plus-static ALIAS micro-os-plus-micro-test-plus-static)
   message(STATUS "=> micro-os-plus::micro-test-plus-static")
 
-add_library(micro-os-plus::micro-test-plus-static ALIAS micro-os-plus-micro-test-plus-static)
+endif()
 
 # -----------------------------------------------------------------------------
 
