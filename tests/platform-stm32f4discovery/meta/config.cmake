@@ -80,7 +80,7 @@ if(NOT TARGET platform-stm32f4discovery-static)
     platform-stm32f4discovery-static
     
     INTERFACE
-      micro-os-plus::platform-stm32f4discovery-static
+      micro-os-plus::platform-stm32f4discovery
   )
 
   # -------------------------------------------------------------------------

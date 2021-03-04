@@ -153,7 +153,7 @@ function(add_test_executable name)
   target_link_libraries(
     ${name}
     
-      micro-os-plus::micro-test-plus-static
+      micro-os-plus::micro-test-plus
   )
 
   if(CMAKE_SYSTEM_NAME STREQUAL "Generic")
@@ -165,8 +165,8 @@ function(add_test_executable name)
 
         micro-os-plus::libs-c
         micro-os-plus::libs-cpp
-        micro-os-plus::semihosting-static
-        micro-os-plus::startup-static
+        micro-os-plus::semihosting
+        micro-os-plus::startup
     )
 
     target_link_options(
