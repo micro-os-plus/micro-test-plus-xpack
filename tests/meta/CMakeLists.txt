@@ -113,6 +113,7 @@ function(add_test_executable name)
       OUTPUT_NAME "${name}"
   )
 
+  message(STATUS "+ src/${name}.cpp")
   # Application sources.
   target_sources(
     ${name}
