@@ -45,12 +45,18 @@ if(NOT TARGET platform-stm32f4discovery-interface)
 
   # -------------------------------------------------------------------------
 
+  set(source_files
+    ${xpack_current_folder}/src/initialize-hardware.cpp
+    ${xpack_current_folder}/src/interrupts-handlers.cpp
+  )
+
+  xpack_display_relative_paths("${source_files}" "${xpack_current_folder}")
+
   target_sources(
     platform-stm32f4discovery-interface
 
     INTERFACE
-      ${xpack_current_folder}/src/initialize-hardware.cpp
-      ${xpack_current_folder}/src/interrupts-handlers.cpp
+      ${source_files}
   )
 
   target_include_directories(
