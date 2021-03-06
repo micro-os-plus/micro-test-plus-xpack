@@ -32,6 +32,9 @@ add_compile_definitions(
   $<$<STREQUAL:"${CMAKE_BUILD_TYPE}","Debug">:MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_DEBUG>
 )
 
+# A list of all imaginable warnings.
+xpack_set_all_compiler_warnings(all_warnings)
+
 set(common_options 
 
   -mcpu=cortex-m4
@@ -49,10 +52,12 @@ set(common_options
   $<$<COMPILE_LANGUAGE:CXX>:-fno-use-cxa-atexit>
   $<$<COMPILE_LANGUAGE:CXX>:-fno-threadsafe-statics>
 
-
   # ... libs-c/src/stdlib/exit.c:132:46
   # $<$<CXX_COMPILER_ID:GNU>:-Wno-missing-attributes>
   
+  ${all_warnings}
+
+  -Werror
 )
 
 add_compile_options(

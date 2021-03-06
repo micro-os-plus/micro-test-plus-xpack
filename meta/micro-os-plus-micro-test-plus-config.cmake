@@ -50,16 +50,11 @@ if(NOT TARGET micro-os-plus-micro-test-plus-static)
       ${xpack_current_folder}/include
   )
 
-  # A list of all imaginable warnings.
-  xpack_set_all_compiler_warnings(all_warnings)
-
   target_compile_options(
     micro-os-plus-micro-test-plus-static
 
     PRIVATE
-      ${all_warnings}
-
-      -Werror
+      # ...
   )
 
   # -------------------------------------------------------------------------

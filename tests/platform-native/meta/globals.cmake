@@ -19,12 +19,20 @@ get_filename_component(xpack_current_folder ${CMAKE_CURRENT_LIST_DIR} DIRECTORY)
 # -----------------------------------------------------------------------------
 # Global definitions. Before any libraries.
 
+# A list of all imaginable warnings.
+xpack_set_all_compiler_warnings(all_warnings)
+
 set(common_options
 
   -fmessage-length=0
   -fsigned-char
+
   -ffunction-sections
   -fdata-sections
+
+  ${all_warnings}
+
+  -Werror
 )
 
 add_compile_options(
