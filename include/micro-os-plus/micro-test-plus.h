@@ -32,6 +32,13 @@
 
 #ifdef __cplusplus
 
+// ----------------------------------------------------------------------------
+
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wc++98-compat"
+#endif
+
 namespace micro_os_plus
 {
   namespace micro_test_plus // `micro-test-plus` is shortened to `mtp`.
@@ -46,11 +53,6 @@ namespace micro_os_plus
       session ();
 
       session (int argc, char* argv[]);
-
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wc++98-compat"
-#endif
 
       session (const session&) = delete;
       session (session&&) = delete;
@@ -94,8 +96,6 @@ namespace micro_os_plus
       expect_eq (const char* actual, const char* expected, const char* message,
                  const char* file = nullptr, int line = 0);
 
-#pragma GCC diagnostic pop
-
       int
       result (void);
 
@@ -136,6 +136,8 @@ namespace micro_os_plus
 
   } // namespace micro_test_plus
 } // namespace micro_os_plus
+
+#pragma GCC diagnostic pop
 
 // ----------------------------------------------------------------------------
 

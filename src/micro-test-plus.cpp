@@ -31,17 +31,17 @@
 
 // ----------------------------------------------------------------------------
 
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wc++98-compat"
+#endif
+
 namespace micro_os_plus
 {
   namespace micro_test_plus
   {
 
     // ------------------------------------------------------------------------
-
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wc++98-compat"
-#endif
 
     session::session ()
     {
@@ -52,8 +52,6 @@ namespace micro_os_plus
       failed_ = 0;
       test_cases_ = 0;
     }
-
-#pragma GCC diagnostic pop
 
     session::session (int argc, char* argv[])
     {
@@ -208,9 +206,7 @@ namespace micro_os_plus
     }
 
 #pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wc++98-compat"
-#endif
+
 #pragma GCC diagnostic ignored "-Wformat-nonliteral"
 
     void
@@ -246,5 +242,7 @@ namespace micro_os_plus
     // ------------------------------------------------------------------------
   } // namespace micro_test_plus
 } // namespace micro_os_plus
+
+#pragma GCC diagnostic pop
 
 // ----------------------------------------------------------------------------
