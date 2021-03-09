@@ -6,6 +6,12 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2021-03-09
+
+- v2.0.2
+- fix/silence warnings
+- remove warning flags from cmake
+
 ## 2021-03-02
 
 - v2.0.1
