@@ -1,6 +1,6 @@
 {
   "name": "@micro-os-plus/micro-test-plus",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A source xPack with µTest++, a minimalistic testing infrastructure",
   "main": "",
   "scripts": {
@@ -62,7 +62,6 @@
   },
   "license": "MIT",
   "config": {},
-  "dependencies": {},
   "devDependencies": {
     "@xpack-dev-tools/cmake": "3.19.2-1.1",
     "@xpack-dev-tools/ninja-build": "1.10.1-1.1",
