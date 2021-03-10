@@ -13,9 +13,33 @@
 cmake_minimum_required(VERSION 3.18)
 message(STATUS "CMake version: ${CMAKE_VERSION}")
 
+# -----------------------------------------------------------------------------
+
 if(CMAKE_BINARY_DIR STREQUAL CMAKE_SOURCE_DIR)
   message(FATAL_ERROR "In-source builds are not supported. Please use separate folder for build.")
 endif()
+
+# -----------------------------------------------------------------------------
+
+enable_language(C)
+enable_language(CXX)
+enable_language(ASM)
+
+# Specify the C/C++ standards.
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+set(CMAKE_C_EXTENSIONS OFF)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+message(STATUS "Compiler: ${CMAKE_C_COMPILER_ID} ${CMAKE_C_COMPILER_VERSION}")
+
+# Generate the compile_commands.json file to feed the indexer.
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+# Enable this to see the dependency graph.
+# set_property(GLOBAL PROPERTY GLOBAL_DEPENDS_DEBUG_MODE 1)
 
 # -----------------------------------------------------------------------------
 
@@ -38,29 +62,11 @@ project(
   VERSION "${PACKAGE_JSON_VERSION}"
 )
 
-enable_language(C)
-enable_language(CXX)
-enable_language(ASM)
-
-# Specify the C/C++ standards.
-set(CMAKE_C_STANDARD 11)
-set(CMAKE_C_STANDARD_REQUIRED ON)
-set(CMAKE_C_EXTENSIONS OFF)
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
-
 message(STATUS "Platform name: ${PLATFORM_NAME}")
 # CMAKE_BUILD_TYPE: Debug, Release, RelWithDebInfo, MinSizeRel
 message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
 message(STATUS "Project path: ${xpack_project_folder}")
 message(STATUS "Prefix path: ${CMAKE_PREFIX_PATH}")
-
-# Generate the compile_commands.json file to feed the indexer.
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
-# Enable this to see the dependency graph.
-# set_property(GLOBAL PROPERTY GLOBAL_DEPENDS_DEBUG_MODE 1)
 
 # -----------------------------------------------------------------------------
 
@@ -137,17 +143,13 @@ function(add_test_executable name)
       # ...
   )
 
-  # A list of all imaginable warnings.
-  xpack_set_all_compiler_warnings(all_warnings)
-
   target_compile_options(
     ${name}
 
     PRIVATE
 
-      ${all_warnings}
-
       -Werror
+      -pedantic-errors
   )
 
   target_link_libraries(
