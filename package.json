@@ -1,6 +1,6 @@
 {
   "name": "@micro-os-plus/micro-test-plus",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A source xPack with µTest++, a minimalistic testing infrastructure",
   "main": "",
   "scripts": {
