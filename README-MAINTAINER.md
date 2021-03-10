@@ -110,7 +110,7 @@ In the `micro-os-plus/web-jekyll` GitHub repo:
 - select the `develop` branch
 - add a new file to `_posts/micro-test-plus/releases`
 - name the file like `2020-12-19-micro-test-plus-v1-1-1-released.md`
-- name the post like: **µOS++ µTest++ v2.0.2 released**
+- name the post like: **µOS++ µTest++ v2.0.3 released**
 - update the `date:` field with the current date
 - update the GitHub Actions URLs using the actual test pages
 
@@ -124,7 +124,7 @@ as:
 
 - select the `xpack-develop` branch
 - commit all changes
-- update `CHANGELOG.md`; commit with a message like _CHANGELOG: prepare v2.0.2_
+- update `CHANGELOG.md`; commit with a message like _CHANGELOG: prepare v2.0.3_
 - `npm pack` and check the content of the archive, which should list
   only the `package.json`, the `README.md`, `LICENSE` and `CHANGELOG.md`;
   possibly adjust `.npmignore`
@@ -151,7 +151,7 @@ When the package is considered stable:
 When the release is considered stable, promote it as `latest`:
 
 - `npm dist-tag ls @micro-os-plus/micro-test-plus`
-- `npm dist-tag add @micro-os-plus/micro-test-plus@2.0.2 latest`
+- `npm dist-tag add @micro-os-plus/micro-test-plus@2.0.3 latest`
 - `npm dist-tag ls @@micro-os-plus/micro-test-plus`
 
 ## Announce to the community
@@ -162,6 +162,6 @@ Post an announcement to the forum.
 
 - in a separate browser windows, open [TweetDeck](https://tweetdeck.twitter.com/)
 - using the `@micro_os_plus` account
-- paste the release name like **µOS++ µTest++ v2.0.2 released**
+- paste the release name like **µOS++ µTest++ v2.0.3 released**
 - paste the link to the Web page release
 - click the **Tweet** button

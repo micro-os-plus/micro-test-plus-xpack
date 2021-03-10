@@ -6,6 +6,11 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2021-03-10
+
+- v2.0.3
+- bump devDeps
+
 ## 2021-03-09
 
 - v2.0.2
