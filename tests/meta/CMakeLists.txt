@@ -48,7 +48,9 @@ get_filename_component(xpack_project_folder ${xpack_tests_folder} DIRECTORY)
 
 include("${xpack_project_folder}/xpacks/micro-os-plus-build-helper/cmake/xpack-helper.cmake")
 
+# Add the current project.
 list(APPEND CMAKE_PREFIX_PATH "${xpack_project_folder}/meta")
+# Add folders that have a *-config.cmake file.
 xpack_append_cmake_prefix_path("${xpack_project_folder}/xpacks")
 
 # -----------------------------------------------------------------------------
@@ -61,6 +63,8 @@ project(
   DESCRIPTION "µTest++ tests"
   VERSION "${PACKAGE_JSON_VERSION}"
 )
+
+# -----------------------------------------------------------------------------
 
 message(STATUS "Platform name: ${PLATFORM_NAME}")
 # CMAKE_BUILD_TYPE: Debug, Release, RelWithDebInfo, MinSizeRel
@@ -147,9 +151,7 @@ function(add_test_executable name)
     ${name}
 
     PRIVATE
-
       -Werror
-      -pedantic-errors
   )
 
   target_link_libraries(
