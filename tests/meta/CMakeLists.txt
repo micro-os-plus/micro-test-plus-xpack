@@ -147,12 +147,15 @@ function(add_test_executable name)
       # ...
   )
 
-  target_compile_options(
-    ${name}
+  # Bare-metal platforms should be warnings free.
+  if(CMAKE_SYSTEM_NAME STREQUAL "Generic")
+    target_compile_options(
+      ${name}
 
-    PRIVATE
-      -Werror
-  )
+      PRIVATE
+        -Werror
+    )
+  endif()
 
   target_link_libraries(
     ${name}
