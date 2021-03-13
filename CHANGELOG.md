@@ -6,6 +6,11 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2021-03-13
+
+- v2.0.4
+- remove -pedantic-errors, use -Werror only on bare-metal
+
 ## 2021-03-10
 
 - v2.0.3
