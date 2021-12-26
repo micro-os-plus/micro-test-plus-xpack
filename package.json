@@ -54,7 +54,8 @@
   "config": {},
   "devDependencies": {
     "@xpack-dev-tools/cmake": "3.20.6-2.1",
-    "@xpack-dev-tools/ninja-build": "1.10.2-5.1"
+    "@xpack-dev-tools/ninja-build": "1.10.2-5.1",
+    "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#semver:2.1.2"
   },
   "xpack": {
     "minimumXpmRequired": "0.11.0",
@@ -133,7 +134,6 @@
           "@xpack-dev-tools/arm-none-eabi-gcc": "10.2.1-1.1.2",
           "@xpack-dev-tools/qemu-arm": "2.8.0-13.1",
           "@micro-os-plus/architecture-cortexm": "github:micro-os-plus/architecture-cortexm-xpack#semver:3.0.1",
-          "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#semver:2.1.2",
           "@micro-os-plus/devices-stm32f4-extras": "github:micro-os-plus/devices-stm32f4-extras-xpack#semver:2.0.2",
           "@micro-os-plus/diag-trace": "github:micro-os-plus/diag-trace-xpack#semver:2.1.0",
           "@micro-os-plus/libs-c": "github:micro-os-plus/libs-c-xpack#semver:2.0.1",
