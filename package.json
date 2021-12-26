@@ -54,7 +54,7 @@
   "config": {},
   "devDependencies": {
     "@xpack-dev-tools/cmake": "3.20.6-2.1",
-    "@xpack-dev-tools/ninja-build": "1.10.2-5.1",
+    "@xpack-dev-tools/ninja-build": "1.10.2-5.1"
   },
   "xpack": {
     "minimumXpmRequired": "0.11.0",
