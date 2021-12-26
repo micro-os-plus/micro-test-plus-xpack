@@ -25,10 +25,11 @@ The project is hosted on GitHub as:
 To clone the development branch use:
 
 ```sh
+rm -rf ~/Downloads/micro-test-plus-xpack.git && \
 git clone \
   --branch xpack-develop \
   https://github.com/micro-os-plus/micro-test-plus-xpack.git \
-  micro-test-plus-xpack.git
+  ~/Downloads/micro-test-plus-xpack.git
 ```
 
 ## Development setup
@@ -52,7 +53,7 @@ With a clean slate, install dependencies:
 
 ```sh
 cd micro-test-plus-xpack.git
-xpm install --force
+xpm install
 ```
 
 ## Run tests
@@ -63,7 +64,7 @@ To perform the tests, run the usual xpm sequence:
 
 ```sh
 cd micro-test-plus-xpack.git
-xpm run test
+xpm run test-native
 ```
 
 ### Clone writable dependencies
