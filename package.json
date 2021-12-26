@@ -64,6 +64,10 @@
         "xpm run prepare --config native-cmake-release",
         "xpm run build --config native-cmake-release",
         "xpm run execute --config native-cmake-release"
+      ],
+      "clean-all": [
+        "xpm run clean --config native-cmake-debug",
+        "xpm run clean --config native-cmake-release"
       ]
     },
     "buildConfigurations": {
