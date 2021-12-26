@@ -1,5 +1,5 @@
 # https://help.github.com/en/actions
-
+# https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions
 # https://github.com/actions
 
 name: CI on Push
@@ -28,7 +28,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Show node & npm versions, environment
+    - name: Show environment
       run: |
         uname -a
         node --version
