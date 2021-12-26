@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         node-version: [14]
-        os: [ubuntu-20.04, macos-latest]
+        os: [ubuntu-latest, macos-latest]
 
     steps:
     - name: Checkout
@@ -30,14 +30,15 @@ jobs:
 
     - name: Show node & npm versions, environment
       run: |
+        uname -a
         node --version
         npm --version
         env
 
     - name: Install xpm
-      run: sudo npm install -g xpm@latest
+      run: sudo npm install -g xpm@next
 
     - name: Run test
       run: |
         xpm install
-        xpm run test
+        xpm run test-native
