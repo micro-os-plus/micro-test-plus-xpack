@@ -1,6 +1,6 @@
 [![license](https://img.shields.io/github/license/micro-os-plus/micro-test-plus-xpack)](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/LICENSE)
 [![CI on Push](https://github.com/micro-os-plus/micro-test-plus-xpack/workflows/CI%20on%20Push/badge.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/actions?query=workflow%3A%22CI+on+Push%22)
-[![GitHub issues](https://img.shields.io/github/issues/micro-os-plus/micro-test-plus-xpack.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/issues)
+[![GitHub issues](https://img.shields.io/github/issues/micro-os-plus/micro-test-plus-xpack.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 [![GitHub pulls](https://img.shields.io/github/issues-pr/micro-os-plus/micro-test-plus-xpack.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/pulls)
 
 # Maintainer info
@@ -36,7 +36,7 @@ In this early development phase, package versions are not properly set, and
 if you have older versions of the xPack installed, sometimes updates may fail
 to get the latest version. To fix this remove all global packages by using
 
-```
+```sh
 cd micro-test-plus-xpack.git
 xpm run rm-deps
 ```
@@ -115,7 +115,7 @@ In the `micro-os-plus/web-jekyll` GitHub repo:
 - update the GitHub Actions URLs using the actual test pages
 
 If any, refer to closed
-[issues](https://github.com/micro-os-plus/micro-test-plus/issues)
+[issues](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 as:
 
 - **[Issue:\[#1\]\(...\)]**.
