@@ -16,19 +16,7 @@
     "build-stm32f4discovery-cmake-release-verbose": "cmake -S tests/meta -B build/tests-stm32f4discovery-cmake-release -GNinja -DCMAKE_TOOLCHAIN_FILE=../../xpacks/micro-os-plus-build-helper/cmake/toolchain-arm-none-eabi-gcc.cmake -DPLATFORM_NAME=stm32f4discovery -DCMAKE_BUILD_TYPE=MinSizeRel && cmake --build build/tests-stm32f4discovery-cmake-release --verbose",
     "clean-stm32f4discovery-cmake-release": "cmake --build build/tests-stm32f4discovery-cmake-release --verbose --target clean",
     "execute-stm32f4discovery-cmake-release": "cd build/tests-stm32f4discovery-cmake-release && ctest -V",
-    "test-stm32f4discovery-cmake-release": "xpm run build-stm32f4discovery-cmake-release && xpm run execute-stm32f4discovery-cmake-release",
-    "build-native-cmake": "xpm run build-native-cmake-debug && xpm run build-native-cmake-release",
-    "build-stm32f4discovery-cmake": "xpm run build-stm32f4discovery-cmake-debug && xpm run build-stm32f4discovery-cmake-release",
-    "build-cmake": "xpm run build-native-cmake && xpm run build-stm32f4discovery-cmake",
-    "build": "xpm run build-cmake",
-    "clean-native-cmake": "xpm run clean-native-cmake-debug && xpm run clean-native-cmake-release",
-    "clean-stm32f4discovery-cmake": "xpm run clean-stm32f4discovery-cmake-debug && xpm run clean-stm32f4discovery-cmake-release",
-    "clean-cmake": "xpm run clean-native-cmake && xpm run clean-stm32f4discovery-cmake",
-    "clean": "xpm run clean-cmake",
-    "test-native-cmake": "xpm run test-native-cmake-debug && xpm run test-native-cmake-release",
-    "test-stm32f4discovery-cmake": "xpm run test-stm32f4discovery-cmake-debug && xpm run test-stm32f4discovery-cmake-release",
-    "test-cmake": "xpm run test-native-cmake && xpm run test-stm32f4discovery-cmake",
-    "test": "xpm run test-cmake"
+    "test-stm32f4discovery-cmake-release": "xpm run build-stm32f4discovery-cmake-release && xpm run execute-stm32f4discovery-cmake-release"
   },
   "repository": {
     "type": "git",
