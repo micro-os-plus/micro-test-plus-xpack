@@ -20,12 +20,15 @@ npm install --global xpm@latest
 
 The project is hosted on GitHub as:
 
-- https://github.com/micro-os-plus/micro-test-plus-xpack.git
+- <https://github.com/micro-os-plus/micro-test-plus-xpack.git>
 
 To clone the development branch use:
 
 ```sh
-git clone --branch xpack-develop https://github.com/micro-os-plus/micro-test-plus-xpack.git micro-test-plus-xpack.git
+git clone \
+  --branch xpack-develop \
+  https://github.com/micro-os-plus/micro-test-plus-xpack.git \
+  micro-test-plus-xpack.git
 ```
 
 ## Development setup

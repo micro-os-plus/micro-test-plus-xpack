@@ -37,22 +37,22 @@ Note: the package will be available from npmjs.com at a later date.
 
 For now, it can be installed from GitHub:
 
-```console
-$ cd <project>
-$ xpm init # Unless a package.json is already present
+```sh
+cd my-project
+xpm init # Unless a package.json is already present
 
-$ xpm install github:micro-os-plus/micro-test-plus-xpack
+xpm install github:micro-os-plus/micro-test-plus-xpack
 ```
 
 When ready, this package will be available as
 [`@micro-os-plus/micro-test-plus`](https://www.npmjs.com/package/@micro-os-plus/micro-test-plus)
 from the `npmjs.com` registry:
 
-```console
-$ cd <project>
-$ xpm init # Unless a package.json is already present
+```sh
+cd my-project
+xpm init # Unless a package.json is already present
 
-$ xpm install @micro-os-plus/micro-test-plus@latest
+xpm install @micro-os-plus/micro-test-plus@latest
 ```
 
 ### Git submodule
@@ -61,11 +61,11 @@ If, for any reason, **xpm** is not available, the next recommended
 solution is to link it as a Git submodule below an `xpacks` folder.
 
 ```console
-$ cd <project>
-$ git init # Unless already a Git project
-$ mkdir -p xpacks
+cd my-project
+git init # Unless already a Git project
+mkdir -p xpacks
 
-$ git submodule add https://github.com/micro-os-plus/micro-test-plus-xpack.git \
+git submodule add https://github.com/micro-os-plus/micro-test-plus-xpack.git \
   xpacks/micro-os-plus-micro-test-plus
 ```
 
@@ -238,26 +238,36 @@ test_case_exception (micro-test-plus::session& t)
 
 The output of running such a test looks like:
 
-```console
-$ cd micro-test-plus-xpack.git
-$ xpm run install-all
+```sh
+cd micro-test-plus-xpack.git
+xpm run install
 
-$ xpm run test-sample
+xpm run test-native
 ...
 
-Built with clang Apple LLVM 12.0.0 (clang-1200.0.32.27), with exceptions.
+1/2 Test #1: unit-test ........................   Passed    0.00 sec
+test 2
+    Start 2: sample-test
 
-Sample test started
-  Check various conditions
-    ✓ compute_one() == 1
-    ✓ compute_aaa() == 'aaa'
-    ✓ condition() is true
-
-  Check if exceptions are thrown
-    ✓ exception not thrown
-
-Sample test passed (4 tests in 2 test cases)
-
+2: Test command: /Users/ilg/My\ Files/WKS\ Projects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/build/native-cmake-release/sample-test "1" "2" "3"
+2: Test timeout computed to be: 10000000
+2: Built with clang Apple LLVM 13.0.0 (clang-1300.0.29.3), with exceptions.
+2:
+2: Sample test started
+2:
+2:   Check various conditions
+2:     ✓ compute_one() == 1
+2:     ✓ compute_aaa() == 'aaa'
+2:     ✓ condition() is true
+2:
+2:   Check if exceptions are thrown
+2:     ✓ exception thrown
+2:
+2:   Check if exceptions are not thrown
+2:     ✓ exception not thrown
+2:
+2: Sample test passed (5 tests in 3 test cases)
+2/2 Test #2: sample-test ......................   Passed    0.00 sec
 ...
 ```
 
