@@ -43,15 +43,20 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # -----------------------------------------------------------------------------
 
-get_filename_component(xpack_tests_folder ${CMAKE_CURRENT_LIST_DIR} DIRECTORY)
+# get_filename_component(xpack_tests_folder ${CMAKE_CURRENT_LIST_DIR} DIRECTORY)
+set(xpack_tests_folder ${CMAKE_CURRENT_LIST_DIR})
 get_filename_component(xpack_project_folder ${xpack_tests_folder} DIRECTORY)
 
+# Include the common xPacks CMake build helper functions.
 include("${xpack_project_folder}/xpacks/micro-os-plus-build-helper/cmake/xpack-helper.cmake")
 
 # Add the current project.
-list(APPEND CMAKE_PREFIX_PATH "${xpack_project_folder}/meta")
+# list(APPEND CMAKE_PREFIX_PATH "${xpack_project_folder}/meta")
+# Use include() since add_subdirectory() fails with non-child folder.
+include("${xpack_project_folder}/CMakeLists.txt")
+
 # Add folders that have a *-config.cmake file.
-xpack_append_cmake_prefix_path("${xpack_project_folder}/xpacks")
+# xpack_append_cmake_prefix_path("${xpack_project_folder}/xpacks")
 
 # -----------------------------------------------------------------------------
 
@@ -91,7 +96,7 @@ endif()
 # -----------------------------------------------------------------------------
 
 if(PLATFORM_NAME STREQUAL "native")
-  include("${xpack_tests_folder}/platform-native/meta/config.cmake")
+  # include("${xpack_tests_folder}/platform-native/meta/config.cmake")
 elseif(PLATFORM_NAME STREQUAL "stm32f4discovery")
   include("${xpack_tests_folder}/platform-stm32f4discovery/meta/config.cmake")
 else()
@@ -100,7 +105,7 @@ endif()
 
 # -----------------------------------------------------------------------------
 
-find_package(micro-os-plus-micro-test-plus REQUIRED)
+# find_package(micro-os-plus-micro-test-plus REQUIRED)
 
 # Bare-metal platforms have more dependencies.
 if(CMAKE_SYSTEM_NAME STREQUAL "Generic")
@@ -159,7 +164,8 @@ function(add_test_executable name)
 
   target_link_libraries(
     ${name}
-    
+
+    PUBLIC
       micro-os-plus::micro-test-plus
   )
 
@@ -167,7 +173,7 @@ function(add_test_executable name)
 
     target_link_libraries(
       ${name}
-      
+
         micro-os-plus::platform # Should bring device & architecture too.
 
         micro-os-plus::libs-c
@@ -191,7 +197,7 @@ function(add_test_executable name)
   endif()
 
   message(STATUS "=> ${name}")
-  
+
 endfunction()
 
 # -----------------------------------------------------------------------------

@@ -9,16 +9,43 @@
 #
 # -----------------------------------------------------------------------------
 
-if(platform-native-included)
+# Use targets as include markers (variables are not scope independent).
+if(TARGET platform-native-included)
   return()
+else()
+  add_custom_target(platform-native-included)
 endif()
-
-set(platform-native-included TRUE)
 
 message(STATUS "Including platform-native...")
 
 # -----------------------------------------------------------------------------
+# The current folder.
 
-include("${CMAKE_CURRENT_LIST_DIR}/globals.cmake")
+get_filename_component(xpack_current_folder ${CMAKE_CURRENT_LIST_DIR} DIRECTORY)
+
+# -----------------------------------------------------------------------------
+# Global definitions. Before any libraries.
+
+# A list of all imaginable warnings.
+xpack_set_all_compiler_warnings(all_warnings)
+
+set(common_options
+
+  -fmessage-length=0
+  -fsigned-char
+
+  -ffunction-sections
+  -fdata-sections
+
+  ${all_warnings}
+)
+
+add_compile_options(
+  ${common_options}
+)
+
+add_link_options(
+  ${common_options}
+)
 
 # -----------------------------------------------------------------------------
