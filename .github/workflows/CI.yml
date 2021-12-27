@@ -38,7 +38,11 @@ jobs:
     - name: Install xpm
       run: sudo npm install -g xpm@next
 
-    - name: Run test
-      run: |
-        xpm install --all-configs
-        xpm run test-native
+    - name: Satisfy dependencies
+      run: npm install --all-configs
+
+    - name: Run test-native-cmake
+      run: xpm run test-native-cmake
+
+    - name: Run test-native-cmake-gcc11
+      run: xpm run test-native-cmake-gcc11
