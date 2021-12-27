@@ -40,5 +40,5 @@ jobs:
 
     - name: Run test
       run: |
-        xpm install
+        xpm install --all-configs
         xpm run test-native
