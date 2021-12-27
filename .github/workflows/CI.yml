@@ -39,7 +39,7 @@ jobs:
       run: sudo npm install -g xpm@next
 
     - name: Satisfy dependencies
-      run: npm install --all-configs
+      run: xpm install --all-configs
 
     - name: Run test-native-cmake
       run: xpm run test-native-cmake
