@@ -49,15 +49,22 @@
     "minimumXpmRequired": "0.11.0",
     "properties": {
       "buildFolderRelativePath": "{{ 'build' | path_join: configuration.name | to_filename | downcase }}",
-      "commandPrepare": "cmake -S tests/meta -B {{ properties.buildFolderRelativePath }} -G Ninja -D CMAKE_BUILD_TYPE={{ properties.buildType }} -D PLATFORM_NAME={{ properties.platformName }} -D CMAKE_EXPORT_COMPILE_COMMANDS=ON",
-      "commandPrepareWithToolchain": "{{ properties.commandPrepare }} -D CMAKE_TOOLCHAIN_FILE={{ properties.toolchainFileName }}",
+      "commandPrepare": "cmake -S tests -B {{ properties.buildFolderRelativePath }} -G Ninja -D CMAKE_BUILD_TYPE={{ properties.buildType }} -D PLATFORM_NAME={{ properties.platformName }} -D CMAKE_EXPORT_COMPILE_COMMANDS=ON",
+      "commandPrepareWithToolchain": "{{ properties.commandPrepare }} -D CMAKE_TOOLCHAIN_FILE=../xpacks/micro-os-plus-build-helper/cmake/{{ properties.toolchainFileName }}",
       "commandReconfigure": "{{ properties.commandPrepare }}",
       "commandBuild": "cmake --build {{ properties.buildFolderRelativePath }} --verbose",
       "commandClean": "cmake --build {{ properties.buildFolderRelativePath }} --target clean",
       "commandExecute": "cd {{ properties.buildFolderRelativePath }} && ctest -V"
     },
     "actions": {
+      "install-all": [
+        "xpm install --all-configs"
+      ],
       "test-native": [
+        "xpm run test-native-cmake",
+        "xpm run test-native-cmake-gcc11"
+      ],
+      "test-native-cmake": [
         "xpm run prepare --config native-cmake-debug",
         "xpm run build --config native-cmake-debug",
         "xpm run execute --config native-cmake-debug",
@@ -65,9 +72,22 @@
         "xpm run build --config native-cmake-release",
         "xpm run execute --config native-cmake-release"
       ],
+      "test-native-cmake-gcc11": [
+        "xpm run prepare --config native-cmake-gcc11-debug",
+        "xpm run build --config native-cmake-gcc11-debug",
+        "xpm run execute --config native-cmake-gcc11-debug",
+        "xpm run prepare --config native-cmake-gcc11-release",
+        "xpm run build --config native-cmake-gcc11-release",
+        "xpm run execute --config native-cmake-gcc11-release"
+      ],
       "clean-all": [
         "xpm run clean --config native-cmake-debug",
-        "xpm run clean --config native-cmake-release"
+        "xpm run clean --config native-cmake-release",
+        "xpm run clean --config native-cmake-gcc11-debug",
+        "xpm run clean --config native-cmake-gcc11-release"
+      ],
+      "link-deps": [
+        "xpm link @micro-os-plus/build-helper"
       ]
     },
     "buildConfigurations": {
@@ -101,7 +121,40 @@
           "execute": "{{ properties.commandExecute }}"
         }
       },
+      "native-cmake-gcc11-debug": {
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "native",
+          "toolchainFileName": "toolchain-gcc.cmake"
+        },
+        "actions": {
+          "prepare": "{{ properties.commandPrepareWithToolchain }}",
+          "build": [
+            "{{ properties.commandReconfigure }}",
+            "{{ properties.commandBuild }}"
+          ],
+          "clean": "{{ properties.commandClean }}",
+          "execute": "{{ properties.commandExecute }}"
+        },
+        "devDependencies": {
+          "@xpack-dev-tools/gcc": "11.2.0-1.3"
+        }
+      },
       "native-cmake-gcc11-release": {
+        "properties": {
+          "buildType": "Release",
+          "platformName": "native",
+          "toolchainFileName": "toolchain-gcc.cmake"
+        },
+        "actions": {
+          "prepare": "{{ properties.commandPrepareWithToolchain }}",
+          "build": [
+            "{{ properties.commandReconfigure }}",
+            "{{ properties.commandBuild }}"
+          ],
+          "clean": "{{ properties.commandClean }}",
+          "execute": "{{ properties.commandExecute }}"
+        },
         "devDependencies": {
           "@xpack-dev-tools/gcc": "11.2.0-1.3"
         }
@@ -134,7 +187,7 @@
           "@micro-os-plus/semihosting": "github:micro-os-plus/semihosting-xpack#semver:3.0.1",
           "@micro-os-plus/startup": "github:micro-os-plus/startup-xpack#semver:2.0.1",
           "@micro-os-plus/version": "github:micro-os-plus/version-xpack#semver:7.0.3"
-              }
+        }
       },
       "stm32f4discovery-cmake-release": {
         "properties": {
