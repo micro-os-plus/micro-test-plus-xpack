@@ -62,7 +62,8 @@
       ],
       "test-native": [
         "xpm run test-native-cmake",
-        "xpm run test-native-cmake-gcc11"
+        "xpm run test-native-cmake-gcc11",
+        "xpm run test-native-cmake-clang12"
       ],
       "test-native-cmake": [
         "xpm run prepare --config native-cmake-debug",
@@ -80,11 +81,21 @@
         "xpm run build --config native-cmake-gcc11-release",
         "xpm run execute --config native-cmake-gcc11-release"
       ],
+      "test-native-cmake-clang12": [
+        "xpm run prepare --config native-cmake-clang12-debug",
+        "xpm run build --config native-cmake-clang12-debug",
+        "xpm run execute --config native-cmake-clang12-debug",
+        "xpm run prepare --config native-cmake-clang12-release",
+        "xpm run build --config native-cmake-clang12-release",
+        "xpm run execute --config native-cmake-clang12-release"
+      ],
       "clean-all": [
         "xpm run clean --config native-cmake-debug",
         "xpm run clean --config native-cmake-release",
         "xpm run clean --config native-cmake-gcc11-debug",
-        "xpm run clean --config native-cmake-gcc11-release"
+        "xpm run clean --config native-cmake-gcc11-release",
+        "xpm run clean --config native-cmake-clang12-debug",
+        "xpm run clean --config native-cmake-clang12-release"
       ],
       "link-deps": [
         "xpm link @micro-os-plus/build-helper"
@@ -157,6 +168,44 @@
         },
         "devDependencies": {
           "@xpack-dev-tools/gcc": "11.2.0-1.3"
+        }
+      },
+      "native-cmake-clang12-debug": {
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "native",
+          "toolchainFileName": "toolchain-clang.cmake"
+        },
+        "actions": {
+          "prepare": "{{ properties.commandPrepareWithToolchain }}",
+          "build": [
+            "{{ properties.commandReconfigure }}",
+            "{{ properties.commandBuild }}"
+          ],
+          "clean": "{{ properties.commandClean }}",
+          "execute": "{{ properties.commandExecute }}"
+        },
+        "devDependencies": {
+          "@xpack-dev-tools/clang": "12.0.1-1.2"
+        }
+      },
+      "native-cmake-clang12-release": {
+        "properties": {
+          "buildType": "Release",
+          "platformName": "native",
+          "toolchainFileName": "toolchain-clang.cmake"
+        },
+        "actions": {
+          "prepare": "{{ properties.commandPrepareWithToolchain }}",
+          "build": [
+            "{{ properties.commandReconfigure }}",
+            "{{ properties.commandBuild }}"
+          ],
+          "clean": "{{ properties.commandClean }}",
+          "execute": "{{ properties.commandExecute }}"
+        },
+        "devDependencies": {
+          "@xpack-dev-tools/clang": "12.0.1-1.2"
         }
       },
       "stm32f4discovery-cmake-debug": {
