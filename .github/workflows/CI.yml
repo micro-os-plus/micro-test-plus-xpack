@@ -35,8 +35,13 @@ jobs:
         npm --version
         env
 
-    - name: Install xpm
-      run: sudo npm install -g xpm@next
+    - name: Install xpm on Unix
+      if: runner.os != 'Windows'
+      run: sudo npm install -g xpm@latest
+
+    - name: Install xpm on Windows
+      if: runner.os == 'Windows'
+      run: npm install -g xpm@latest
 
     - name: Satisfy dependencies
       run: xpm install --all-configs
