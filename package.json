@@ -42,6 +42,7 @@
   "config": {},
   "devDependencies": {
     "@xpack-dev-tools/cmake": "3.20.6-2.1",
+    "@xpack-dev-tools/meson-build": "0.59.4-1.1",
     "@xpack-dev-tools/ninja-build": "1.10.2-5.1",
     "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#semver:2.1.4"
   },
@@ -54,7 +55,13 @@
       "commandCMakeReconfigure": "{{ properties.commandCMakePrepare }}",
       "commandCMakeBuild": "cmake --build {{ properties.buildFolderRelativePath }} --verbose",
       "commandCMakeClean": "cmake --build {{ properties.buildFolderRelativePath }} --target clean",
-      "commandCMakeExecuteTests": "cd {{ properties.buildFolderRelativePath }} && ctest -V"
+      "commandCMakePerformTests": "cd {{ properties.buildFolderRelativePath }} && ctest -V",
+      "commandMesonPrepare": "meson setup --backend ninja --buildtype {{ properties.buildType }} -D is-micro-os-plus-micro-test-plus-test=true {{ properties.buildFolderRelativePath }} .",
+      "commandMesonPrepareMesonWithToolchain": "meson setup --backend ninja --buildtype {{ properties.buildType }} -D is-micro-os-plus-micro-test-plus-test=true --native-file meta/{{ properties.toolchainFileName }} {{ properties.buildFolderRelativePath }} .",
+      "commandMesonReconfigure": "meson setup --reconfigure {{ properties.buildFolderRelativePath }} .",
+      "commandMesonBuild": "meson compile -C {{ properties.buildFolderRelativePath }} --verbose",
+      "commandMesonClean": "meson compile -C {{ properties.buildFolderRelativePath }} --clean",
+      "commandMesonPerformTests": "meson test -C {{ properties.buildFolderRelativePath }} --verbose"
     },
     "actions": {
       "install-all": [
@@ -91,6 +98,14 @@
         "xpm run prepare --config native-cmake-clang12-release",
         "xpm run build --config native-cmake-clang12-release",
         "xpm run test --config native-cmake-clang12-release"
+      ],
+      "test-native-meson": [
+        "xpm run prepare --config native-meson-debug",
+        "xpm run build --config native-meson-debug",
+        "xpm run test --config native-meson-debug",
+        "xpm run prepare --config native-meson-release",
+        "xpm run build --config native-meson-release",
+        "xpm run test --config native-meson-release"
       ],
       "clean-all": [
         "xpm run clean --config native-cmake-debug",
@@ -206,6 +221,36 @@
         },
         "devDependencies": {
           "@xpack-dev-tools/clang": "12.0.1-1.2"
+        }
+      },
+      "native-meson-debug": {
+        "properties": {
+          "buildType": "debug",
+          "platformName": "native"
+        },
+        "actions": {
+          "prepare": "{{ properties.commandMesonPrepare }}",
+          "build": [
+            "{{ properties.commandMesonReconfigure }}",
+            "{{ properties.commandMesonBuild }}"
+          ],
+          "clean": "{{ properties.commandMesonClean }}",
+          "test": "{{ properties.commandMesonPerformTests }}"
+        }
+      },
+      "native-meson-release": {
+        "properties": {
+          "buildType": "release",
+          "platformName": "native"
+        },
+        "actions": {
+          "prepare": "{{ properties.commandMesonPrepare }}",
+          "build": [
+            "{{ properties.commandMesonReconfigure }}",
+            "{{ properties.commandMesonBuild }}"
+          ],
+          "clean": "{{ properties.commandMesonClean }}",
+          "test": "{{ properties.commandMesonPerformTests }}"
         }
       },
       "stm32f4discovery-cmake-debug": {
