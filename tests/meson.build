@@ -59,7 +59,9 @@ application_sample_test = executable('sample-test',
   link_args: linker_options
 )
 
-test('unit-test', application_unit_test)
-test('sample-test', application_sample_test)
+nomalloc = environment({'MALLOC_PERTURB_': '0'})
+
+test('unit-test', application_unit_test, env: nomalloc)
+test('sample-test', application_sample_test, env: nomalloc)
 
 # -----------------------------------------------------------------------------
