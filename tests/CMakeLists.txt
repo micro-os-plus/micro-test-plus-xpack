@@ -223,14 +223,18 @@ if(PLATFORM_NAME STREQUAL "native")
 
 elseif(PLATFORM_NAME STREQUAL "stm32f4discovery")
 
+  if("${CMAKE_HOST_SYSTEM_NAME}" STREQUAL "Windows")
+    set(EXTENSION ".cmd")
+  endif()
+
   add_test(
     NAME "unit-test"
-    COMMAND qemu-system-gnuarmeclipse --verbose --board STM32F4-Discovery -d unimp,guest_errors --nographic --image unit-test.elf --semihosting-config enable=on,target=native --semihosting-cmdline unit-test
+    COMMAND qemu-system-gnuarmeclipse${EXTENSION} --verbose --board STM32F4-Discovery -d unimp,guest_errors --nographic --image unit-test.elf --semihosting-config enable=on,target=native --semihosting-cmdline unit-test
   )
 
   add_test(
     NAME "sample-test"
-    COMMAND qemu-system-gnuarmeclipse --verbose --board STM32F4-Discovery -d unimp,guest_errors --nographic --image sample-test.elf --semihosting-config enable=on,target=native --semihosting-cmdline sample-test 1 2 3
+    COMMAND qemu-system-gnuarmeclipse${EXTENSION} --verbose --board STM32F4-Discovery -d unimp,guest_errors --nographic --image sample-test.elf --semihosting-config enable=on,target=native --semihosting-cmdline sample-test 1 2 3
   )
 
 endif()
