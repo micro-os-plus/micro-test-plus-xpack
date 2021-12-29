@@ -71,26 +71,26 @@
       "test-native-cmake": [
         "xpm run prepare --config native-cmake-debug",
         "xpm run build --config native-cmake-debug",
-        "xpm run execute --config native-cmake-debug",
+        "xpm run test --config native-cmake-debug",
         "xpm run prepare --config native-cmake-release",
         "xpm run build --config native-cmake-release",
-        "xpm run execute --config native-cmake-release"
+        "xpm run test --config native-cmake-release"
       ],
       "test-native-cmake-gcc11": [
         "xpm run prepare --config native-cmake-gcc11-debug",
         "xpm run build --config native-cmake-gcc11-debug",
-        "xpm run execute --config native-cmake-gcc11-debug",
+        "xpm run test --config native-cmake-gcc11-debug",
         "xpm run prepare --config native-cmake-gcc11-release",
         "xpm run build --config native-cmake-gcc11-release",
-        "xpm run execute --config native-cmake-gcc11-release"
+        "xpm run test --config native-cmake-gcc11-release"
       ],
       "test-native-cmake-clang12": [
         "xpm run prepare --config native-cmake-clang12-debug",
         "xpm run build --config native-cmake-clang12-debug",
-        "xpm run execute --config native-cmake-clang12-debug",
+        "xpm run test --config native-cmake-clang12-debug",
         "xpm run prepare --config native-cmake-clang12-release",
         "xpm run build --config native-cmake-clang12-release",
-        "xpm run execute --config native-cmake-clang12-release"
+        "xpm run test --config native-cmake-clang12-release"
       ],
       "clean-all": [
         "xpm run clean --config native-cmake-debug",
@@ -114,7 +114,7 @@
             "{{ properties.commandCMakeBuild }}"
           ],
           "clean": "{{ properties.commandCMakeClean }}",
-          "execute": "{{ properties.commandCMakeExecuteTests }}"
+          "test": "{{ properties.commandCMakePerformTests }}"
         }
       },
       "native-cmake-release": {
@@ -129,7 +129,7 @@
             "{{ properties.commandCMakeBuild }}"
           ],
           "clean": "{{ properties.commandCMakeClean }}",
-          "execute": "{{ properties.commandCMakeExecuteTests }}"
+          "test": "{{ properties.commandCMakePerformTests }}"
         }
       },
       "native-cmake-gcc11-debug": {
@@ -145,7 +145,7 @@
             "{{ properties.commandCMakeBuild }}"
           ],
           "clean": "{{ properties.commandCMakeClean }}",
-          "execute": "{{ properties.commandCMakeExecuteTests }}"
+          "test": "{{ properties.commandCMakePerformTests }}"
         },
         "devDependencies": {
           "@xpack-dev-tools/gcc": "11.2.0-1.3"
@@ -164,7 +164,7 @@
             "{{ properties.commandCMakeBuild }}"
           ],
           "clean": "{{ properties.commandCMakeClean }}",
-          "execute": "{{ properties.commandCMakeExecuteTests }}"
+          "test": "{{ properties.commandCMakePerformTests }}"
         },
         "devDependencies": {
           "@xpack-dev-tools/gcc": "11.2.0-1.3"
@@ -183,7 +183,7 @@
             "{{ properties.commandCMakeBuild }}"
           ],
           "clean": "{{ properties.commandCMakeClean }}",
-          "execute": "{{ properties.commandCMakeExecuteTests }}"
+          "test": "{{ properties.commandCMakePerformTests }}"
         },
         "devDependencies": {
           "@xpack-dev-tools/clang": "12.0.1-1.2"
@@ -202,7 +202,7 @@
             "{{ properties.commandCMakeBuild }}"
           ],
           "clean": "{{ properties.commandCMakeClean }}",
-          "execute": "{{ properties.commandCMakeExecuteTests }}"
+          "test": "{{ properties.commandCMakePerformTests }}"
         },
         "devDependencies": {
           "@xpack-dev-tools/clang": "12.0.1-1.2"
@@ -222,7 +222,7 @@
             "{{ properties.commandCMakeBuild }}"
           ],
           "clean": "{{ properties.commandCMakeClean }}",
-          "execute": "{{ properties.commandExecuteHello }}"
+          "test": "{{ properties.commandExecuteHello }}"
         },
         "devDependencies": {
           "@xpack-dev-tools/arm-none-eabi-gcc": "10.2.1-1.1.2",
@@ -252,7 +252,7 @@
             "{{ properties.commandCMakeBuild }}"
           ],
           "clean": "{{ properties.commandCMakeClean }}",
-          "execute": "{{ properties.commandExecuteHello }}"
+          "test": "{{ properties.commandExecuteHello }}"
         },
         "devDependencies": {
           "@xpack-dev-tools/arm-none-eabi-gcc": "10.2.1-1.1.2"
