@@ -50,8 +50,8 @@
     "minimumXpmRequired": "0.11.0",
     "properties": {
       "buildFolderRelativePath": "{{ 'build' | path_join: configuration.name | to_filename | downcase }}",
-      "commandCMakePrepare": "cmake -S tests -B {{ properties.buildFolderRelativePath }} -G Ninja -D CMAKE_BUILD_TYPE={{ properties.buildType }} -D PLATFORM_NAME={{ properties.platformName }} -D CMAKE_EXPORT_COMPILE_COMMANDS=ON",
-      "commandCMakePrepareWithToolchain": "{{ properties.commandCMakePrepare }} -D CMAKE_TOOLCHAIN_FILE=../xpacks/micro-os-plus-build-helper/cmake/{{ properties.toolchainFileName }}",
+      "commandCMakePrepare": "cmake -S . -B {{ properties.buildFolderRelativePath }} -G Ninja -D CMAKE_BUILD_TYPE={{ properties.buildType }} -D PLATFORM_NAME={{ properties.platformName }} -D CMAKE_EXPORT_COMPILE_COMMANDS=ON",
+      "commandCMakePrepareWithToolchain": "{{ properties.commandCMakePrepare }} -D CMAKE_TOOLCHAIN_FILE=xpacks/micro-os-plus-build-helper/cmake/{{ properties.toolchainFileName }}",
       "commandCMakeReconfigure": "{{ properties.commandCMakePrepare }}",
       "commandCMakeBuild": "cmake --build {{ properties.buildFolderRelativePath }} --verbose",
       "commandCMakeClean": "cmake --build {{ properties.buildFolderRelativePath }} --target clean",

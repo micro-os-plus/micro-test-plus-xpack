@@ -9,8 +9,6 @@
 #
 # -----------------------------------------------------------------------------
 
-# https://cmake.org/cmake/help/v3.19/
-cmake_minimum_required(VERSION 3.19)
 message(STATUS "CMake version: ${CMAKE_VERSION}")
 
 # -----------------------------------------------------------------------------
@@ -46,8 +44,9 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(xpack_tests_folder ${CMAKE_CURRENT_LIST_DIR})
 get_filename_component(xpack_project_folder ${xpack_tests_folder} DIRECTORY)
 
-# Include the common xPacks CMake build helper functions. This is mandatory
-# for all projects that use the xPack CMake configurations.
+# Include the common xPacks CMake build helper
+# functions. This is required for all projects that use the xPack
+# CMake configurations.
 include("${xpack_project_folder}/xpacks/micro-os-plus-build-helper/cmake/xpack-helper.cmake")
 
 # To automate the inclusion of dependencies, prefer `find_package(name)`
@@ -63,12 +62,6 @@ xpack_append_cmake_prefix_path("${xpack_project_folder}/xpacks")
 
 # Informative. Leave the result in PACKAGE_JSON_VERSION[*]
 xpack_parse_package_json_semver("${xpack_project_folder}/package.json")
-
-project(
-  tests
-  DESCRIPTION "µTest++ tests"
-  VERSION "${PACKAGE_JSON_VERSION}"
-)
 
 # -----------------------------------------------------------------------------
 
@@ -97,9 +90,9 @@ endif()
 # -----------------------------------------------------------------------------
 
 if(PLATFORM_NAME STREQUAL "native")
-  include("${xpack_tests_folder}/platform-native/meta/config.cmake")
+  add_subdirectory("platform-native")
 elseif(PLATFORM_NAME STREQUAL "stm32f4discovery")
-  include("${xpack_tests_folder}/platform-stm32f4discovery/meta/config.cmake")
+  add_subdirectory("platform-stm32f4discovery")
 else()
   message(FATAL_ERROR, "Unsupported PLATFORM_NAME")
 endif()
@@ -210,8 +203,6 @@ add_test_executable(unit-test)
 add_test_executable(sample-test)
 
 # -----------------------------------------------------------------------------
-
-enable_testing()
 
 if(PLATFORM_NAME STREQUAL "native")
 

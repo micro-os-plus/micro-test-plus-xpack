@@ -26,7 +26,22 @@
 
 # -----------------------------------------------------------------------------
 
-# Reuse the package configuration.
-include("${CMAKE_CURRENT_LIST_DIR}/meta/micro-os-plus-micro-test-plus-config.cmake")
+# https://cmake.org/cmake/help/v3.19/
+cmake_minimum_required(VERSION 3.19)
+
+project(
+  micro-os-plus-micro-test-plus
+  DESCRIPTION "µTest++"
+)
+
+if ("${CMAKE_CURRENT_LIST_DIR}" STREQUAL "${CMAKE_SOURCE_DIR}")
+  # Building tests for the current project.
+  enable_testing() # Must be called from the project root folder.
+  add_subdirectory(tests)
+else()
+  # If not a standalone project, then a library included in a top project.
+  # Reuse the package configuration.
+  include("${CMAKE_CURRENT_LIST_DIR}/meta/micro-os-plus-micro-test-plus-config.cmake")
+endif()
 
 # -----------------------------------------------------------------------------
