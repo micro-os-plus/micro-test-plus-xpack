@@ -4,9 +4,6 @@
   "description": "A source xPack with µTest++, a minimalistic testing infrastructure",
   "main": "",
   "scripts": {
-    "comment_": "echo ctest -V shows test output; cmake --verbose shows the build commands",
-    "link-deps": "xpm link @micro-os-plus/build-helper @micro-os-plus/platform-stm32f4discovery @micro-os-plus/devices-stm32f4-extras @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting @micro-os-plus/diag-trace @micro-os-plus/libs-c @micro-os-plus/libs-cpp @micro-os-plus/version",
-    "rm-deps": "xpm uninstall --global @micro-os-plus/build-helper @micro-os-plus/platform-stm32f4discovery @micro-os-plus/devices-stm32f4-extras @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting @micro-os-plus/diag-trace @micro-os-plus/libs-c @micro-os-plus/libs-cpp @micro-os-plus/version"
   },
   "repository": {
     "type": "git",
@@ -119,7 +116,8 @@
         "xpm run clean --config native-cmake-clang12-release",
         "xpm run clean --config stm32f4discovery-cmake-debug",
         "xpm run clean --config stm32f4discovery-cmake-release"
-      ]
+      ],
+      "rm-deps": "xpm uninstall --global @micro-os-plus/build-helper @micro-os-plus/platform-stm32f4discovery @micro-os-plus/devices-stm32f4-extras @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting @micro-os-plus/diag-trace @micro-os-plus/libs-c @micro-os-plus/libs-cpp @micro-os-plus/version"
     },
     "buildConfigurations": {
       "native-cmake-debug": {
@@ -272,7 +270,8 @@
             "{{ properties.commandCMakeBuild }}"
           ],
           "clean": "{{ properties.commandCMakeClean }}",
-          "test": "{{ properties.commandCMakePerformTests }}"
+          "test": "{{ properties.commandCMakePerformTests }}",
+          "link-deps": "xpm link @micro-os-plus/platform-stm32f4discovery @micro-os-plus/devices-stm32f4-extras @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting @micro-os-plus/diag-trace @micro-os-plus/libs-c @micro-os-plus/libs-cpp @micro-os-plus/version"
         },
         "devDependencies": {
           "@xpack-dev-tools/arm-none-eabi-gcc": "10.2.1-1.1.2",
@@ -302,7 +301,8 @@
             "{{ properties.commandCMakeBuild }}"
           ],
           "clean": "{{ properties.commandCMakeClean }}",
-          "test": "{{ properties.commandCMakePerformTests }}"
+          "test": "{{ properties.commandCMakePerformTests }}",
+          "link-deps": "xpm link @micro-os-plus/platform-stm32f4discovery @micro-os-plus/devices-stm32f4-extras @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting @micro-os-plus/diag-trace @micro-os-plus/libs-c @micro-os-plus/libs-cpp @micro-os-plus/version"
         },
         "devDependencies": {
           "@xpack-dev-tools/arm-none-eabi-gcc": "10.2.1-1.1.2",
