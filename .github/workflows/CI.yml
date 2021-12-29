@@ -54,3 +54,6 @@ jobs:
 
     - name: Run test-native-cmake-clang12
       run: xpm run test-native-cmake-clang12
+
+    - name: Run test-native-meson
+      run: xpm run test-native-meson
