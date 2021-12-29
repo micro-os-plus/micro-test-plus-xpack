@@ -9,15 +9,24 @@
 #
 # -----------------------------------------------------------------------------
 
-# https://cmake.org/cmake/help/v3.19/
-cmake_minimum_required(VERSION 3.19)
-
 # This file is intended to be consumed by applications with:
 #
-# add_subdirectory("xpacks/micro-os-plus-micro-test-plus")
+# `find_package(micro-os-plus-micro-test-plus REQUIRED)`
 #
-# For testing, CMake should set the separate `tests` folder as root.
+# or, if CMake packages are not used, manually with:
+#
+# `add_subdirectory("xpacks/micro-os-plus-micro-test-plus")`
+#
+# The result is a static library that can be added to the linker with:
+#
+# `target_link_libraries(your-target PUBLIC micro-os-plus::micro-test-plus)`
+#
+# To avoid poluting this file with test related details, there is a separate
+# CMake configuration in the `tests` folder.
 
+# -----------------------------------------------------------------------------
+
+# Reuse the package configuration.
 include("${CMAKE_CURRENT_LIST_DIR}/meta/micro-os-plus-micro-test-plus-config.cmake")
 
 # -----------------------------------------------------------------------------

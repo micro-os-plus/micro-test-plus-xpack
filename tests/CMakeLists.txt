@@ -43,20 +43,21 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # -----------------------------------------------------------------------------
 
-# get_filename_component(xpack_tests_folder ${CMAKE_CURRENT_LIST_DIR} DIRECTORY)
 set(xpack_tests_folder ${CMAKE_CURRENT_LIST_DIR})
 get_filename_component(xpack_project_folder ${xpack_tests_folder} DIRECTORY)
 
-# Include the common xPacks CMake build helper functions.
+# Include the common xPacks CMake build helper functions. This is mandatory
+# for all projects that use the xPack CMake configurations.
 include("${xpack_project_folder}/xpacks/micro-os-plus-build-helper/cmake/xpack-helper.cmake")
 
-# Add the current project.
-# list(APPEND CMAKE_PREFIX_PATH "${xpack_project_folder}/meta")
-# Use include() since add_subdirectory() fails with non-child folder.
-include("${xpack_project_folder}/CMakeLists.txt")
-
-# Add folders that have a *-config.cmake file.
-# xpack_append_cmake_prefix_path("${xpack_project_folder}/xpacks")
+# To automate the inclusion of dependencies, prefer `find_package(name)`
+# over manual `add_subdirectory(path)`. For this to work, the path
+# must be aded to CMAKE_PREFIX_PATH.
+# Add the current project to the package search path.
+list(APPEND CMAKE_PREFIX_PATH "${xpack_project_folder}/meta")
+# Add all the xPack folders that have a *-config.cmake file
+# to the package search path.
+xpack_append_cmake_prefix_path("${xpack_project_folder}/xpacks")
 
 # -----------------------------------------------------------------------------
 
@@ -96,7 +97,7 @@ endif()
 # -----------------------------------------------------------------------------
 
 if(PLATFORM_NAME STREQUAL "native")
-  # include("${xpack_tests_folder}/platform-native/meta/config.cmake")
+  include("${xpack_tests_folder}/platform-native/meta/config.cmake")
 elseif(PLATFORM_NAME STREQUAL "stm32f4discovery")
   include("${xpack_tests_folder}/platform-stm32f4discovery/meta/config.cmake")
 else()
@@ -105,7 +106,7 @@ endif()
 
 # -----------------------------------------------------------------------------
 
-# find_package(micro-os-plus-micro-test-plus REQUIRED)
+find_package(micro-os-plus-micro-test-plus REQUIRED)
 
 # Bare-metal platforms have more dependencies.
 if(CMAKE_SYSTEM_NAME STREQUAL "Generic")
@@ -153,6 +154,8 @@ function(add_test_executable name)
   )
 
   # Bare-metal platforms should be warnings free.
+  # Native builds may use different toolchain versions, which
+  # may trigger unexpected warnings.
   if(CMAKE_SYSTEM_NAME STREQUAL "Generic")
     target_compile_options(
       ${name}

@@ -53,7 +53,7 @@ With a clean slate, install dependencies:
 
 ```sh
 cd micro-test-plus-xpack.git
-xpm install
+xpm install --all-configs
 ```
 
 ## Run tests
@@ -139,7 +139,7 @@ as:
 
 The version is visible at:
 
-- https://www.npmjs.com/package/@micro-os-plus/micro-test-plus?activeTab=versions
+- <https://www.npmjs.com/package/@micro-os-plus/micro-test-plus?activeTab=versions>
 
 ## Update the repo
 

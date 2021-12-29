@@ -11,6 +11,7 @@
 
 # https://cmake.org/cmake/help/v3.19/
 # https://cmake.org/cmake/help/v3.19/manual/cmake-packages.7.html#package-configuration-file
+cmake_minimum_required(VERSION 3.19)
 
 # Use targets as include markers (variables are not scope independent).
 if(TARGET micro-os-plus-micro-test-plus-included)
