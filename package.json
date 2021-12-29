@@ -49,16 +49,19 @@
     "minimumXpmRequired": "0.11.0",
     "properties": {
       "buildFolderRelativePath": "{{ 'build' | path_join: configuration.name | to_filename | downcase }}",
-      "commandPrepare": "cmake -S tests -B {{ properties.buildFolderRelativePath }} -G Ninja -D CMAKE_BUILD_TYPE={{ properties.buildType }} -D PLATFORM_NAME={{ properties.platformName }} -D CMAKE_EXPORT_COMPILE_COMMANDS=ON",
-      "commandPrepareWithToolchain": "{{ properties.commandPrepare }} -D CMAKE_TOOLCHAIN_FILE=../xpacks/micro-os-plus-build-helper/cmake/{{ properties.toolchainFileName }}",
-      "commandReconfigure": "{{ properties.commandPrepare }}",
-      "commandBuild": "cmake --build {{ properties.buildFolderRelativePath }} --verbose",
-      "commandClean": "cmake --build {{ properties.buildFolderRelativePath }} --target clean",
-      "commandExecute": "cd {{ properties.buildFolderRelativePath }} && ctest -V"
+      "commandCMakePrepare": "cmake -S tests -B {{ properties.buildFolderRelativePath }} -G Ninja -D CMAKE_BUILD_TYPE={{ properties.buildType }} -D PLATFORM_NAME={{ properties.platformName }} -D CMAKE_EXPORT_COMPILE_COMMANDS=ON",
+      "commandCMakePrepareWithToolchain": "{{ properties.commandCMakePrepare }} -D CMAKE_TOOLCHAIN_FILE=../xpacks/micro-os-plus-build-helper/cmake/{{ properties.toolchainFileName }}",
+      "commandCMakeReconfigure": "{{ properties.commandCMakePrepare }}",
+      "commandCMakeBuild": "cmake --build {{ properties.buildFolderRelativePath }} --verbose",
+      "commandCMakeClean": "cmake --build {{ properties.buildFolderRelativePath }} --target clean",
+      "commandCMakeExecuteTests": "cd {{ properties.buildFolderRelativePath }} && ctest -V"
     },
     "actions": {
       "install-all": [
         "xpm install --all-configs"
+      ],
+      "link-deps": [
+        "xpm link @micro-os-plus/build-helper"
       ],
       "test-native": [
         "xpm run test-native-cmake",
@@ -96,9 +99,6 @@
         "xpm run clean --config native-cmake-gcc11-release",
         "xpm run clean --config native-cmake-clang12-debug",
         "xpm run clean --config native-cmake-clang12-release"
-      ],
-      "link-deps": [
-        "xpm link @micro-os-plus/build-helper"
       ]
     },
     "buildConfigurations": {
@@ -108,13 +108,13 @@
           "platformName": "native"
         },
         "actions": {
-          "prepare": "{{ properties.commandPrepare }}",
+          "prepare": "{{ properties.commandCMakePrepare }}",
           "build": [
-            "{{ properties.commandReconfigure }}",
-            "{{ properties.commandBuild }}"
+            "{{ properties.commandCMakeReconfigure }}",
+            "{{ properties.commandCMakeBuild }}"
           ],
-          "clean": "{{ properties.commandClean }}",
-          "execute": "{{ properties.commandExecute }}"
+          "clean": "{{ properties.commandCMakeClean }}",
+          "execute": "{{ properties.commandCMakeExecuteTests }}"
         }
       },
       "native-cmake-release": {
@@ -123,13 +123,13 @@
           "platformName": "native"
         },
         "actions": {
-          "prepare": "{{ properties.commandPrepare }}",
+          "prepare": "{{ properties.commandCMakePrepare }}",
           "build": [
-            "{{ properties.commandReconfigure }}",
-            "{{ properties.commandBuild }}"
+            "{{ properties.commandCMakeReconfigure }}",
+            "{{ properties.commandCMakeBuild }}"
           ],
-          "clean": "{{ properties.commandClean }}",
-          "execute": "{{ properties.commandExecute }}"
+          "clean": "{{ properties.commandCMakeClean }}",
+          "execute": "{{ properties.commandCMakeExecuteTests }}"
         }
       },
       "native-cmake-gcc11-debug": {
@@ -139,13 +139,13 @@
           "toolchainFileName": "toolchain-gcc.cmake"
         },
         "actions": {
-          "prepare": "{{ properties.commandPrepareWithToolchain }}",
+          "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
           "build": [
-            "{{ properties.commandReconfigure }}",
-            "{{ properties.commandBuild }}"
+            "{{ properties.commandCMakeReconfigure }}",
+            "{{ properties.commandCMakeBuild }}"
           ],
-          "clean": "{{ properties.commandClean }}",
-          "execute": "{{ properties.commandExecute }}"
+          "clean": "{{ properties.commandCMakeClean }}",
+          "execute": "{{ properties.commandCMakeExecuteTests }}"
         },
         "devDependencies": {
           "@xpack-dev-tools/gcc": "11.2.0-1.3"
@@ -158,13 +158,13 @@
           "toolchainFileName": "toolchain-gcc.cmake"
         },
         "actions": {
-          "prepare": "{{ properties.commandPrepareWithToolchain }}",
+          "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
           "build": [
-            "{{ properties.commandReconfigure }}",
-            "{{ properties.commandBuild }}"
+            "{{ properties.commandCMakeReconfigure }}",
+            "{{ properties.commandCMakeBuild }}"
           ],
-          "clean": "{{ properties.commandClean }}",
-          "execute": "{{ properties.commandExecute }}"
+          "clean": "{{ properties.commandCMakeClean }}",
+          "execute": "{{ properties.commandCMakeExecuteTests }}"
         },
         "devDependencies": {
           "@xpack-dev-tools/gcc": "11.2.0-1.3"
@@ -177,13 +177,13 @@
           "toolchainFileName": "toolchain-clang.cmake"
         },
         "actions": {
-          "prepare": "{{ properties.commandPrepareWithToolchain }}",
+          "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
           "build": [
-            "{{ properties.commandReconfigure }}",
-            "{{ properties.commandBuild }}"
+            "{{ properties.commandCMakeReconfigure }}",
+            "{{ properties.commandCMakeBuild }}"
           ],
-          "clean": "{{ properties.commandClean }}",
-          "execute": "{{ properties.commandExecute }}"
+          "clean": "{{ properties.commandCMakeClean }}",
+          "execute": "{{ properties.commandCMakeExecuteTests }}"
         },
         "devDependencies": {
           "@xpack-dev-tools/clang": "12.0.1-1.2"
@@ -196,13 +196,13 @@
           "toolchainFileName": "toolchain-clang.cmake"
         },
         "actions": {
-          "prepare": "{{ properties.commandPrepareWithToolchain }}",
+          "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
           "build": [
-            "{{ properties.commandReconfigure }}",
-            "{{ properties.commandBuild }}"
+            "{{ properties.commandCMakeReconfigure }}",
+            "{{ properties.commandCMakeBuild }}"
           ],
-          "clean": "{{ properties.commandClean }}",
-          "execute": "{{ properties.commandExecute }}"
+          "clean": "{{ properties.commandCMakeClean }}",
+          "execute": "{{ properties.commandCMakeExecuteTests }}"
         },
         "devDependencies": {
           "@xpack-dev-tools/clang": "12.0.1-1.2"
@@ -216,12 +216,12 @@
           "qemuBoardName": "STM32F4-Discovery"
         },
         "actions": {
-          "prepare": "{{ properties.commandPrepareWithToolchain }}",
+          "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
           "build": [
-            "{{ properties.commandReconfigure }}",
-            "{{ properties.commandBuild }}"
+            "{{ properties.commandCMakeReconfigure }}",
+            "{{ properties.commandCMakeBuild }}"
           ],
-          "clean": "{{ properties.commandClean }}",
+          "clean": "{{ properties.commandCMakeClean }}",
           "execute": "{{ properties.commandExecuteHello }}"
         },
         "devDependencies": {
@@ -246,12 +246,12 @@
           "qemuBoardName": "STM32F4-Discovery"
         },
         "actions": {
-          "prepare": "{{ properties.commandPrepareWithToolchain }}",
+          "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
           "build": [
-            "{{ properties.commandReconfigure }}",
-            "{{ properties.commandBuild }}"
+            "{{ properties.commandCMakeReconfigure }}",
+            "{{ properties.commandCMakeBuild }}"
           ],
-          "clean": "{{ properties.commandClean }}",
+          "clean": "{{ properties.commandCMakeClean }}",
           "execute": "{{ properties.commandExecuteHello }}"
         },
         "devDependencies": {
