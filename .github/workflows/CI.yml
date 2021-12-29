@@ -57,3 +57,6 @@ jobs:
 
     - name: Run test-native-meson
       run: xpm run test-native-meson
+
+    - name: Run test-stm32f4discovery-cmake
+      run: xpm run test-stm32f4discovery-cmake
