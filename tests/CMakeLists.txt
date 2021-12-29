@@ -43,6 +43,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(xpack_tests_folder ${CMAKE_CURRENT_LIST_DIR})
 get_filename_component(xpack_project_folder ${xpack_tests_folder} DIRECTORY)
+set(xpack_build_folder ${CMAKE_BINARY_DIR})
 
 # Include the common xPacks CMake build helper
 # functions. This is required for all projects that use the xPack
@@ -56,6 +57,8 @@ include("${xpack_project_folder}/xpacks/micro-os-plus-build-helper/cmake/xpack-h
 list(APPEND CMAKE_PREFIX_PATH "${xpack_project_folder}/meta")
 # Add all the xPack folders that have a *-config.cmake file
 # to the package search path.
+# The order is important, configuration ones are first, then the project ones.
+xpack_append_cmake_prefix_path("${CMAKE_BINARY_DIR}/xpacks")
 xpack_append_cmake_prefix_path("${xpack_project_folder}/xpacks")
 
 # -----------------------------------------------------------------------------
@@ -69,6 +72,7 @@ message(STATUS "Platform name: ${PLATFORM_NAME}")
 # CMAKE_BUILD_TYPE: Debug, Release, RelWithDebInfo, MinSizeRel
 message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
 message(STATUS "Project path: ${xpack_project_folder}")
+message(STATUS "Build path: ${CMAKE_BINARY_DIR}")
 message(STATUS "Prefix path: ${CMAKE_PREFIX_PATH}")
 
 # -----------------------------------------------------------------------------
@@ -90,9 +94,9 @@ endif()
 # -----------------------------------------------------------------------------
 
 if(PLATFORM_NAME STREQUAL "native")
-  add_subdirectory("platform-native")
+  include("${xpack_tests_folder}/platform-native/meta/config.cmake")
 elseif(PLATFORM_NAME STREQUAL "stm32f4discovery")
-  add_subdirectory("platform-stm32f4discovery")
+  include("${xpack_tests_folder}/platform-stm32f4discovery/meta/config.cmake")
 else()
   message(FATAL_ERROR, "Unsupported PLATFORM_NAME")
 endif()
@@ -170,6 +174,7 @@ function(add_test_executable name)
     target_link_libraries(
       ${name}
 
+      PRIVATE
         micro-os-plus::platform # Should bring device & architecture too.
 
         micro-os-plus::libs-c

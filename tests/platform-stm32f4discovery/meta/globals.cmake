@@ -35,7 +35,7 @@ add_compile_definitions(
 # A list of all imaginable warnings.
 xpack_set_all_compiler_warnings(all_warnings)
 
-set(common_options 
+set(common_options
 
   -mcpu=cortex-m4
   -mthumb
@@ -54,7 +54,7 @@ set(common_options
 
   # ... libs-c/src/stdlib/exit.c:132:46
   # $<$<CXX_COMPILER_ID:GNU>:-Wno-missing-attributes>
-  
+
   ${all_warnings}
 
   -Werror
@@ -71,7 +71,7 @@ add_link_options(
 )
 
 add_link_options(
-  
+
     -nostartfiles
     # nano has no exceptions.
     # -specs=nano.specs
@@ -79,8 +79,8 @@ add_link_options(
 
     # Including files from other packages is not very nice, but functional.
     # Use absolute paths, otherwise set -L.
-    -T${xpack_project_folder}/xpacks/micro-os-plus-platform-stm32f4discovery/linker-scripts/mem.ld
-    -T${xpack_project_folder}/xpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections.ld
+    -T${xpack_build_folder}/xpacks/micro-os-plus-platform-stm32f4discovery/linker-scripts/mem.ld
+    -T${xpack_build_folder}/xpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections.ld
 )
 
 # -----------------------------------------------------------------------------

@@ -6,17 +6,7 @@
   "scripts": {
     "comment_": "echo ctest -V shows test output; cmake --verbose shows the build commands",
     "link-deps": "xpm link @micro-os-plus/build-helper @micro-os-plus/platform-stm32f4discovery @micro-os-plus/devices-stm32f4-extras @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting @micro-os-plus/diag-trace @micro-os-plus/libs-c @micro-os-plus/libs-cpp @micro-os-plus/version",
-    "rm-deps": "xpm uninstall --global @micro-os-plus/build-helper @micro-os-plus/platform-stm32f4discovery @micro-os-plus/devices-stm32f4-extras @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting @micro-os-plus/diag-trace @micro-os-plus/libs-c @micro-os-plus/libs-cpp @micro-os-plus/version",
-    "build-stm32f4discovery-cmake-debug": "cmake -S tests/meta -B build/tests-stm32f4discovery-cmake-debug -GNinja -DCMAKE_TOOLCHAIN_FILE=../../xpacks/micro-os-plus-build-helper/cmake/toolchain-arm-none-eabi-gcc.cmake -DPLATFORM_NAME=stm32f4discovery -DCMAKE_BUILD_TYPE=Debug && cmake --build build/tests-stm32f4discovery-cmake-debug",
-    "build-stm32f4discovery-cmake-debug-verbose": "cmake -S tests/meta -B build/tests-stm32f4discovery-cmake-debug -GNinja -DCMAKE_TOOLCHAIN_FILE=../../xpacks/micro-os-plus-build-helper/cmake/toolchain-arm-none-eabi-gcc.cmake -DPLATFORM_NAME=stm32f4discovery -DCMAKE_BUILD_TYPE=Debug && cmake --build build/tests-stm32f4discovery-cmake-debug --verbose",
-    "clean-stm32f4discovery-cmake-debug": "cmake --build build/tests-stm32f4discovery-cmake-debug --verbose --target clean",
-    "execute-stm32f4discovery-cmake-debug": "cd build/tests-stm32f4discovery-cmake-debug && ctest -V",
-    "test-stm32f4discovery-cmake-debug": "xpm run build-stm32f4discovery-cmake-debug && xpm run execute-stm32f4discovery-cmake-debug",
-    "build-stm32f4discovery-cmake-release": "cmake -S tests/meta -B build/tests-stm32f4discovery-cmake-release -GNinja -DCMAKE_TOOLCHAIN_FILE=../../xpacks/micro-os-plus-build-helper/cmake/toolchain-arm-none-eabi-gcc.cmake -DPLATFORM_NAME=stm32f4discovery -DCMAKE_BUILD_TYPE=MinSizeRel && cmake --build build/tests-stm32f4discovery-cmake-release",
-    "build-stm32f4discovery-cmake-release-verbose": "cmake -S tests/meta -B build/tests-stm32f4discovery-cmake-release -GNinja -DCMAKE_TOOLCHAIN_FILE=../../xpacks/micro-os-plus-build-helper/cmake/toolchain-arm-none-eabi-gcc.cmake -DPLATFORM_NAME=stm32f4discovery -DCMAKE_BUILD_TYPE=MinSizeRel && cmake --build build/tests-stm32f4discovery-cmake-release --verbose",
-    "clean-stm32f4discovery-cmake-release": "cmake --build build/tests-stm32f4discovery-cmake-release --verbose --target clean",
-    "execute-stm32f4discovery-cmake-release": "cd build/tests-stm32f4discovery-cmake-release && ctest -V",
-    "test-stm32f4discovery-cmake-release": "xpm run build-stm32f4discovery-cmake-release && xpm run execute-stm32f4discovery-cmake-release"
+    "rm-deps": "xpm uninstall --global @micro-os-plus/build-helper @micro-os-plus/platform-stm32f4discovery @micro-os-plus/devices-stm32f4-extras @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting @micro-os-plus/diag-trace @micro-os-plus/libs-c @micro-os-plus/libs-cpp @micro-os-plus/version"
   },
   "repository": {
     "type": "git",
@@ -70,10 +60,15 @@
       "link-deps": [
         "xpm link @micro-os-plus/build-helper"
       ],
+      "test-all": [
+        "xpm run test-native",
+        "xpm run test-stm32f4discovery-cmake"
+      ],
       "test-native": [
         "xpm run test-native-cmake",
         "xpm run test-native-cmake-gcc11",
-        "xpm run test-native-cmake-clang12"
+        "xpm run test-native-cmake-clang12",
+        "xpm run test-native-meson"
       ],
       "test-native-cmake": [
         "xpm run prepare --config native-cmake-debug",
@@ -107,13 +102,23 @@
         "xpm run build --config native-meson-release",
         "xpm run test --config native-meson-release"
       ],
+      "test-stm32f4discovery-cmake":[
+        "xpm run prepare --config stm32f4discovery-cmake-debug",
+        "xpm run build --config stm32f4discovery-cmake-debug",
+        "xpm run test --config stm32f4discovery-cmake-debug",
+        "xpm run prepare --config stm32f4discovery-cmake-release",
+        "xpm run build --config stm32f4discovery-cmake-release",
+        "xpm run test --config stm32f4discovery-cmake-release"
+      ],
       "clean-all": [
         "xpm run clean --config native-cmake-debug",
         "xpm run clean --config native-cmake-release",
         "xpm run clean --config native-cmake-gcc11-debug",
         "xpm run clean --config native-cmake-gcc11-release",
         "xpm run clean --config native-cmake-clang12-debug",
-        "xpm run clean --config native-cmake-clang12-release"
+        "xpm run clean --config native-cmake-clang12-release",
+        "xpm run clean --config stm32f4discovery-cmake-debug",
+        "xpm run clean --config stm32f4discovery-cmake-release"
       ]
     },
     "buildConfigurations": {
@@ -267,7 +272,7 @@
             "{{ properties.commandCMakeBuild }}"
           ],
           "clean": "{{ properties.commandCMakeClean }}",
-          "test": "{{ properties.commandExecuteHello }}"
+          "test": "{{ properties.commandCMakePerformTests }}"
         },
         "devDependencies": {
           "@xpack-dev-tools/arm-none-eabi-gcc": "10.2.1-1.1.2",
@@ -297,10 +302,20 @@
             "{{ properties.commandCMakeBuild }}"
           ],
           "clean": "{{ properties.commandCMakeClean }}",
-          "test": "{{ properties.commandExecuteHello }}"
+          "test": "{{ properties.commandCMakePerformTests }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/arm-none-eabi-gcc": "10.2.1-1.1.2"
+          "@xpack-dev-tools/arm-none-eabi-gcc": "10.2.1-1.1.2",
+          "@xpack-dev-tools/qemu-arm": "2.8.0-13.1",
+          "@micro-os-plus/architecture-cortexm": "github:micro-os-plus/architecture-cortexm-xpack#semver:3.0.1",
+          "@micro-os-plus/devices-stm32f4-extras": "github:micro-os-plus/devices-stm32f4-extras-xpack#semver:2.0.2",
+          "@micro-os-plus/diag-trace": "github:micro-os-plus/diag-trace-xpack#semver:2.1.0",
+          "@micro-os-plus/libs-c": "github:micro-os-plus/libs-c-xpack#semver:2.0.1",
+          "@micro-os-plus/libs-cpp": "github:micro-os-plus/libs-cpp-xpack#semver:2.0.2",
+          "@micro-os-plus/platform-stm32f4discovery": "github:micro-os-plus/platform-stm32f4discovery-xpack#semver:3.0.0",
+          "@micro-os-plus/semihosting": "github:micro-os-plus/semihosting-xpack#semver:3.0.1",
+          "@micro-os-plus/startup": "github:micro-os-plus/startup-xpack#semver:2.0.1",
+          "@micro-os-plus/version": "github:micro-os-plus/version-xpack#semver:7.0.3"
         }
       }
     }
