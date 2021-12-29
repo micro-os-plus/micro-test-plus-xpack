@@ -11,7 +11,7 @@
 
 # This file is intended to be consumed by applications with:
 #
-# `subdir('spacks/micro-os-plus-micro-test-plus')`
+# `subdir('xpacks/micro-os-plus-micro-test-plus')`
 #
 # The result is a static library that can be added to the linker with:
 #
