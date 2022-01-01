@@ -26,7 +26,7 @@
 # https://mesonbuild.com/Reference-manual.html#project
 project('µTest++',
   ['c', 'cpp'],
-  default_options: ['c_std=c11', 'cpp_std=gnu++17'],
+  default_options: ['c_std=c11', 'cpp_std=c++17'],
   meson_version: '>= 0.59'
 )
 
