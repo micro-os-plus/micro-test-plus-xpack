@@ -13,9 +13,11 @@
 
 // ----------------------------------------------------------------------------
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
+#endif
 #endif
 
 namespace micro_os_plus
@@ -52,8 +54,13 @@ namespace micro_os_plus
 
 #if defined(__clang__)
       printf ("Built with clang " __VERSION__);
-#else
+#elif defined(__GNUC__)
       printf ("Built with GCC " __VERSION__);
+#elif defined(_MSC_VER)
+      // https://docs.microsoft.com/en-us/cpp/preprocessor/predefined-macros?view=msvc-170
+      printf ("Built with MSVC %d", _MSC_VER);
+#else
+      printf ("Built with an unknown compiler");
 #endif
 #if defined(__EXCEPTIONS)
       printf (", with exceptions");
@@ -91,10 +98,12 @@ namespace micro_os_plus
       test_cases_++;
     }
 
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
     void
-    session::pass (const char* message,
-                   const char* file __attribute__ ((unused)),
-                   int line __attribute__ ((unused)))
+    session::pass (const char* message, const char* file, int line)
     {
       // The file name and line number are unused in this version;
       // they are present only in case future versions will keep a
@@ -102,6 +111,9 @@ namespace micro_os_plus
       printf ("    ✓ %s\n", message);
       passed_++;
     }
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
 
     void
     session::fail (const char* message, const char* file, int line)
@@ -187,9 +199,10 @@ namespace micro_os_plus
         }
     }
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
-
 #pragma GCC diagnostic ignored "-Wformat-nonliteral"
+#endif
 
     void
     session::print_where_ (const char* format, const char* file, int line)
@@ -200,7 +213,9 @@ namespace micro_os_plus
         }
     }
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
 
     int
     session::result (void)
@@ -225,6 +240,8 @@ namespace micro_os_plus
   } // namespace micro_test_plus
 } // namespace micro_os_plus
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
 
 // ----------------------------------------------------------------------------

@@ -16,9 +16,11 @@
 
 // ----------------------------------------------------------------------------
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
+#endif
 #endif
 
 namespace micro_os_plus
@@ -26,8 +28,10 @@ namespace micro_os_plus
   namespace micro_test_plus // `micro-test-plus` is shortened to `mtp`.
   {
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wpadded"
+#endif
 
     class session
     {
@@ -114,12 +118,16 @@ namespace micro_os_plus
       int test_cases_;
     };
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
 
   } // namespace micro_test_plus
 } // namespace micro_os_plus
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
 
 // ----------------------------------------------------------------------------
 
