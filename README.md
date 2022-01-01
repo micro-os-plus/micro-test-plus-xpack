@@ -88,17 +88,17 @@ The **µTest++** framework is inspired by [Node tap](https://node-tap.org),
 but is way simpler and has only a limited number of primitives.
 
 - test suites must be compiled as separate applications, one apllication
-  can return only the result og one test suite
+  can return only the result of one test suite
 - a test suite may include any number of test cases
 - each test case may perform any number of tests checks
 - each test check either succeeds or fails
+- the test progress is shown on STDOUT, with each test check on a separate
+  line, prefixed with either a check sign (✓) or a cross sign (✗)
 - the main result of the test is passed back as the process exit code
-- the test progress is shown on STDOUT, with each test check on
-  a separate line
 
 If there is at least one successful test and there are no failed tests,
 the entire test suite is successful and the process returns
-the 0 exit value.
+0 as exit value.
 
 ### Build & integration info
 
