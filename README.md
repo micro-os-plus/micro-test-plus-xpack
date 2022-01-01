@@ -138,13 +138,13 @@ The header file to be included in user project is:
 
 #### Namespaces
 
-- `micro_os_plus::micro-test-plus`
+- `micro_os_plus::micro_test_plus`
 
-`os` is the top µOS++ namespace, and `micro-test-plus` is the µTest++ namespace.
+`micro_os_plus` is the top µOS++ namespace, and `micro_test_plus` is the µTest++ namespace.
 
 #### Classes
 
-- `micro_os_plus::micro-test-plus::session`
+- `micro_os_plus::micro_test_plus::session`
 
 The project includes only one class, `session`. To automate
 passing the file name and the line number, several macros were added.
@@ -162,16 +162,16 @@ using namespace micro_os_plus;
 
 // Forward definitions of the test cases.
 void
-test_case_something (micro-test-plus::session& t);
+test_case_something (micro_test_plus::session& t);
 
 void
-test_case_exception (micro-test-plus::session& t);
+test_case_exception (micro_test_plus::session& t);
 
 // The test suite.
 int
 main (int argc, char* argv[])
 {
-  micro-test-plus::session t (argc, argv);
+  micro_test_plus::session t (argc, argv);
 
   t.start_suite ("Sample test");
 
@@ -203,7 +203,7 @@ compute_condition ()
 
 // Test equality or logical conditions.
 void
-test_case_something (micro-test-plus::session& t)
+test_case_something (micro_test_plus::session& t)
 {
   // Currently only int and long values can be compared for equality.
   // For everything else use casts.
@@ -218,7 +218,7 @@ test_case_something (micro-test-plus::session& t)
 
 // Test if something throws exceptions.
 void
-test_case_exception (micro-test-plus::session& t)
+test_case_exception (micro_test_plus::session& t)
 {
   try
     {
@@ -277,7 +277,11 @@ test 2
 
 ### Tests
 
-TBD
+The project is fully tested via GitHub
+[Actions](https://github.com/micro-os-plus/micro-test-plus-xpack/actions)
+on each push.
+The tests run on GNU/Linux, macOS and Windows, are compiled with GCC,
+clang and arm-none-eabi-gcc.
 
 ## License
 
