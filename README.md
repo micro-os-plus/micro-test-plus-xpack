@@ -240,7 +240,7 @@ The output of running such a test looks like:
 
 ```sh
 cd micro-test-plus-xpack.git
-xpm run install
+xpm install
 
 xpm run test-native
 ...
@@ -281,7 +281,7 @@ The project is fully tested via GitHub
 [Actions](https://github.com/micro-os-plus/micro-test-plus-xpack/actions)
 on each push.
 The tests run on GNU/Linux, macOS and Windows, are compiled with GCC,
-clang and arm-none-eabi-gcc.
+clang and arm-none-eabi-gcc and run natively or via QEMU.
 
 ## License
 
