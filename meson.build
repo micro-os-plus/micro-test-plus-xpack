@@ -95,6 +95,7 @@ if compiler.get_id() == 'gcc' or compiler.get_id().contains('clang')
   endif
 elif compiler.get_id() == 'msvc'
   common_options += [
+    '/utf-8'
     # Add MSVC options here.
   ]
 endif
