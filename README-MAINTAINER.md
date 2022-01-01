@@ -64,7 +64,7 @@ To perform the tests, run the usual xpm sequence:
 
 ```sh
 cd micro-test-plus-xpack.git
-xpm run test-native
+xpm run test-all
 ```
 
 ### Clone writable dependencies
