@@ -37,18 +37,19 @@
     "minimumXpmRequired": "0.11.0",
     "properties": {
       "buildFolderRelativePath": "{{ 'build' | path_join: configuration.name | to_filename | downcase }}",
-      "commandCMakePrepare": "cmake -S . -B {{ properties.buildFolderRelativePath }} -G Ninja -D CMAKE_BUILD_TYPE={{ properties.buildType }} -D PLATFORM_NAME={{ properties.platformName }} -D CMAKE_EXPORT_COMPILE_COMMANDS=ON",
+      "buildFolderRelativePathPosix": "{{ 'build' | path_posix_join: configuration.name | downcase }}",
+      "commandCMakePrepare": "cmake -S . -B {{ properties.buildFolderRelativePathPosix }} -G Ninja -D CMAKE_BUILD_TYPE={{ properties.buildType }} -D PLATFORM_NAME={{ properties.platformName }} -D CMAKE_EXPORT_COMPILE_COMMANDS=ON",
       "commandCMakePrepareWithToolchain": "{{ properties.commandCMakePrepare }} -D CMAKE_TOOLCHAIN_FILE=xpacks/micro-os-plus-build-helper/cmake/{{ properties.toolchainFileName }}",
       "commandCMakeReconfigure": "{{ properties.commandCMakePrepare }}",
-      "commandCMakeBuild": "cmake --build {{ properties.buildFolderRelativePath }} --verbose",
-      "commandCMakeClean": "cmake --build {{ properties.buildFolderRelativePath }} --target clean",
+      "commandCMakeBuild": "cmake --build {{ properties.buildFolderRelativePathPosix }} --verbose",
+      "commandCMakeClean": "cmake --build {{ properties.buildFolderRelativePathPosix }} --target clean",
       "commandCMakePerformTests": "cd {{ properties.buildFolderRelativePath }} && ctest -V",
-      "commandMesonPrepare": "meson setup --backend ninja --buildtype {{ properties.buildType }} -D is-micro-os-plus-micro-test-plus-test=true {{ properties.buildFolderRelativePath }} .",
-      "commandMesonPrepareMesonWithToolchain": "meson setup --backend ninja --buildtype {{ properties.buildType }} -D is-micro-os-plus-micro-test-plus-test=true --native-file meta/{{ properties.toolchainFileName }} {{ properties.buildFolderRelativePath }} .",
-      "commandMesonReconfigure": "meson setup --reconfigure {{ properties.buildFolderRelativePath }} .",
-      "commandMesonBuild": "meson compile -C {{ properties.buildFolderRelativePath }} --verbose",
-      "commandMesonClean": "meson compile -C {{ properties.buildFolderRelativePath }} --clean",
-      "commandMesonPerformTests": "meson test -C {{ properties.buildFolderRelativePath }} --verbose"
+      "commandMesonPrepare": "meson setup --backend ninja --buildtype {{ properties.buildType }} -D is-micro-os-plus-micro-test-plus-test=true {{ properties.buildFolderRelativePathPosix }} .",
+      "commandMesonPrepareMesonWithToolchain": "meson setup --backend ninja --buildtype {{ properties.buildType }} -D is-micro-os-plus-micro-test-plus-test=true --native-file meta/{{ properties.toolchainFileName }} {{ properties.buildFolderRelativePathPosix }} .",
+      "commandMesonReconfigure": "meson setup --reconfigure {{ properties.buildFolderRelativePathPosix }} .",
+      "commandMesonBuild": "meson compile -C {{ properties.buildFolderRelativePathPosix }} --verbose",
+      "commandMesonClean": "meson compile -C {{ properties.buildFolderRelativePathPosix }} --clean",
+      "commandMesonPerformTests": "meson test -C {{ properties.buildFolderRelativePathPosix }} --verbose"
     },
     "actions": {
       "install-all": [
