@@ -9,14 +9,14 @@ on:
   push:
     # tags-ignore:
     #   - '*.*'
-    # paths-ignore:
-    #   - '.vscode/**'
-    #   - 'LICENSE'
-    #   - '**.md'
+    paths-ignore:
+      - '.vscode/**'
+      - 'LICENSE'
+      - '**.md'
 
 jobs:
   ci-test:
-    name: 'Automated CI tests'
+    name: 'CI tests'
 
     runs-on: ${{ matrix.os }}
 
