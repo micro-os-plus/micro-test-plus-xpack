@@ -95,14 +95,18 @@ if compiler.get_id() == 'gcc' or compiler.get_id().contains('clang')
   endif
 elif compiler.get_id() == 'msvc'
   common_options += [
-    '/utf-8'
     # Add MSVC options here.
   ]
 endif
 
 c_compiler_options = compiler_definitions + common_options
 
-cpp_compiler_options=compiler_definitions + common_options
+cpp_compiler_options = compiler_definitions + common_options
+
+if compiler.get_id() == 'msvc'
+  c_compiler_options += '/utf-8'
+  cpp_compiler_options += '/utf-8'
+endif
 
 # -----------------------------------------------------------------------------
 
