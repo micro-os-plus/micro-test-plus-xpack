@@ -22,14 +22,25 @@ The project is hosted on GitHub as:
 
 - <https://github.com/micro-os-plus/micro-test-plus-xpack.git>
 
+To clone it:
+
+```sh
+rm -rf ~/Work/micro-test-plus-xpack.git && \
+mkdir -p ~/Work && \
+git clone \
+  https://github.com/micro-os-plus/micro-test-plus-xpack.git \
+  ~/Work/micro-test-plus-xpack.git
+```
+
 To clone the development branch use:
 
 ```sh
-rm -rf ~/Downloads/micro-test-plus-xpack.git && \
+rm -rf ~/Work/micro-test-plus-xpack.git && \
+mkdir -p ~/Work && \
 git clone \
   --branch xpack-develop \
   https://github.com/micro-os-plus/micro-test-plus-xpack.git \
-  ~/Downloads/micro-test-plus-xpack.git
+  ~/Work/micro-test-plus-xpack.git
 ```
 
 ## Development setup
