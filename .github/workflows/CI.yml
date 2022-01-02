@@ -15,7 +15,8 @@ on:
       - '**.md'
 
 jobs:
-  xpm-test:
+  automated-test:
+    name: 'Automated tests'
 
     runs-on: ${{ matrix.os }}
 
