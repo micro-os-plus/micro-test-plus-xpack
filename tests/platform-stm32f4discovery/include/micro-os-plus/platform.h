@@ -13,7 +13,9 @@
 #include <micro-os-plus/device.h>
 #include <micro-os-plus/platform-stm32f4discovery/defines.h>
 
+#if defined(USE_HAL_DRIVER)
 #include "stm32f4xx_hal.h"
+#endif
 
 // ----------------------------------------------------------------------------
 

@@ -8,11 +8,20 @@
 #
 # -----------------------------------------------------------------------------
 
-if(platform-stm32f4discovery-included)
+# https://cmake.org/cmake/help/v3.19/
+# https://cmake.org/cmake/help/v3.19/manual/cmake-packages.7.html#package-configuration-file
+cmake_minimum_required(VERSION 3.19)
+
+# Use targets as include markers (variables are not scope independent).
+if(TARGET platform-stm32f4discovery-included)
   return()
+else()
+  add_custom_target(platform-stm32f4discovery-included)
 endif()
 
-set(platform-stm32f4discovery-included TRUE)
+if(NOT TARGET micro-os-plus-build-helper-included)
+  message(FATAL_ERROR "Include the mandatory build-helper (xpacks/micro-os-plus-build-helper/cmake/xpack-helper.cmake)")
+endif()
 
 message(STATUS "Including platform-stm32f4discovery...")
 
@@ -44,19 +53,21 @@ if(NOT TARGET platform-stm32f4discovery-static)
 
   # -------------------------------------------------------------------------
 
-  set(source_files
-    ${xpack_current_folder}/src/initialize-hardware.cpp
-    ${xpack_current_folder}/src/interrupts-handlers.cpp
-  )
+  if(NOT PLATFORM_STM32F4DISCOVERY_WITHOUT_HAL)
+    set(source_files
+      ${xpack_current_folder}/src/initialize-hardware.cpp
+      ${xpack_current_folder}/src/interrupts-handlers.cpp
+    )
 
-  xpack_display_relative_paths("${source_files}" "${xpack_current_folder}")
+    xpack_display_relative_paths("${source_files}" "${xpack_current_folder}")
 
-  target_sources(
-    platform-stm32f4discovery-static
+    target_sources(
+      platform-stm32f4discovery-static
 
-    INTERFACE
-      ${source_files}
-  )
+      INTERFACE
+        ${source_files}
+    )
+  endif()
 
   target_include_directories(
     platform-stm32f4discovery-static
@@ -72,15 +83,14 @@ if(NOT TARGET platform-stm32f4discovery-static)
 
     INTERFACE
       # ...
-
   )
 
-  target_link_libraries(
-    platform-stm32f4discovery-static
+    target_link_libraries(
+      platform-stm32f4discovery-static
 
-    INTERFACE
-      micro-os-plus::platform-stm32f4discovery
-  )
+      INTERFACE
+        micro-os-plus::platform-stm32f4discovery
+    )
 
   # -------------------------------------------------------------------------
   # Aliases.

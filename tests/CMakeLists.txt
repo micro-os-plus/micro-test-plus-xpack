@@ -38,6 +38,9 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # Enable this to see the dependency graph.
 # set_property(GLOBAL PROPERTY GLOBAL_DEPENDS_DEBUG_MODE 1)
 
+# Instruct to skip HAL.
+set(PLATFORM_STM32F4DISCOVERY_WITHOUT_HAL ON)
+
 # -----------------------------------------------------------------------------
 
 set(xpack_tests_folder ${CMAKE_CURRENT_LIST_DIR})
