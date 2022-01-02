@@ -47,9 +47,6 @@ jobs:
     - name: Satisfy dependencies
       run: xpm install --all-configs
 
-    - name: Run test-native-cmake
-      run: xpm run test-native-cmake
-
     - name: Run test-native-cmake-gcc11
       run: xpm run test-native-cmake-gcc11
 
