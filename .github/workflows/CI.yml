@@ -6,6 +6,12 @@ name: CI on Push
 
 on:
   push:
+    tags-ignore:
+      - '*.*'
+    paths-ignore:
+      - '.vscode/**'
+      - 'LICENSE'
+      - '**.md'
 
 jobs:
   xpm-test:
