@@ -60,7 +60,7 @@ xpm install @micro-os-plus/micro-test-plus@latest
 If, for any reason, **xpm** is not available, the next recommended
 solution is to link it as a Git submodule below an `xpacks` folder.
 
-```console
+```sh
 cd my-project
 git init # Unless already a Git project
 mkdir -p xpacks

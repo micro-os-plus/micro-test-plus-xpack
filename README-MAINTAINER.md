@@ -128,7 +128,9 @@ as:
 
 - select the `xpack-develop` branch
 - commit all changes
-- update `CHANGELOG.md`; commit with a message like _CHANGELOG: prepare v2.0.4_
+- update versions in `README.md` and `README-MAINTAINER.md`
+- update `CHANGELOG.md`
+- commit with a message like _prepare v2.0.4_
 - `npm pack` and check the content of the archive, which should list
   only the `package.json`, the `README.md`, `LICENSE` and `CHANGELOG.md`;
   possibly adjust `.npmignore`
