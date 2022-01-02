@@ -7,12 +7,12 @@ name: CI on Push
 
 on:
   push:
-    # tags-ignore:
-    #   - '*.*'
+    # TODO: ignore tags only
     paths-ignore:
       - '.vscode/**'
       - 'LICENSE'
       - '**.md'
+      - '.clang-format'
 
 jobs:
   ci-test:
