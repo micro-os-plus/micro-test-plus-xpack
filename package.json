@@ -1,6 +1,6 @@
 {
   "name": "@micro-os-plus/micro-test-plus",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "A source xPack with µTest++, a minimalistic testing infrastructure",
   "main": "",
   "scripts": {
@@ -123,7 +123,7 @@
         "xpm run build --config native-meson-clang12-release",
         "xpm run test --config native-meson-clang12-release"
       ],
-      "test-stm32f4discovery-cmake":[
+      "test-stm32f4discovery-cmake": [
         "xpm run prepare --config stm32f4discovery-cmake-debug",
         "xpm run build --config stm32f4discovery-cmake-debug",
         "xpm run test --config stm32f4discovery-cmake-debug",
