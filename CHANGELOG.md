@@ -6,6 +6,35 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2022-01-03
+
+- v2.0.5
+
+## 2022-01-02
+
+- CI.yml: remove native-cmake
+- package.json: add meson gcc/clang
+- PLATFORM_STM32F4DISCOVERY_WITHOUT_HAL
+
+## 2022-01-01
+
+- meson.build: add /utf-8 to msvc options
+- [#4] add support for MSVC
+- package.json: use posix paths on windows
+
+## 2021-12-29
+
+- stm32f4discovery test functional
+- add native meson tests
+- package.json: add clang12 test
+- add explicit CMakeLists.txt
+
+## 2021-12-26
+
+- package.json: move devDeps to configs
+- CI.yml: test-native
+- package.json: migrate native to xpack actions
+
 ## 2021-03-13
 
 - v2.0.4
