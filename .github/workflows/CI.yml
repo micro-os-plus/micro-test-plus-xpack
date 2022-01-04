@@ -51,7 +51,7 @@ jobs:
 
     - name: Install xpm on Windows
       if: runner.os == 'Windows'
-      run: npm install -g xpm@0.11.2
+      run: npm install -g xpm@next
 
     - name: Satisfy project dependencies
       run: xpm install
