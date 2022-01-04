@@ -68,10 +68,10 @@
         "xpm run test-stm32f4discovery-cmake"
       ],
       "test-native": [
-        "xpm run test-native-cmake",
+        "{% if os.platform != 'win32' %}xpm run test-native-cmake{% endif %}",
         "xpm run test-native-cmake-gcc11",
         "xpm run test-native-cmake-clang12",
-        "xpm run test-native-meson",
+        "{% if os.platform != 'win32' %}xpm run test-native-meson{% endif %}",
         "xpm run test-native-meson-gcc11",
         "xpm run test-native-meson-clang12"
       ],
