@@ -53,17 +53,29 @@ jobs:
       if: runner.os == 'Windows'
       run: npm install -g xpm@next
 
-    - name: Satisfy dependencies
-      run: xpm install --all-configs
+    - name: Satisfy project dependencies
+      run: xpm install
 
     - name: Run test-native-cmake-gcc11
-      run: xpm run test-native-cmake-gcc11
+      run: |
+        xpm install --config native-cmake-gcc11-debug
+        xpm install --config native-cmake-gcc11-release
+        xpm run test-native-cmake-gcc11
 
     - name: Run test-native-cmake-clang12
-      run: xpm run test-native-cmake-clang12
+      run: |
+        xpm install --config native-cmake-clang12-debug
+        xpm install --config native-cmake-clang12-release
+        xpm run test-native-cmake-clang12
 
     - name: Run test-native-meson-gcc11
-      run: xpm run test-native-meson-gcc11
+      run: |
+        xpm install --config native-meson-gcc11-debug
+        xpm install --config native-meson-gcc11-release
+        xpm run test-native-meson-gcc11
 
     - name: Run test-stm32f4discovery-cmake
-      run: xpm run test-stm32f4discovery-cmake
+      run: |
+        xpm install --config stm32f4discovery-cmake-debug
+        xpm install --config stm32f4discovery-cmake-release
+        xpm run test-stm32f4discovery-cmake
