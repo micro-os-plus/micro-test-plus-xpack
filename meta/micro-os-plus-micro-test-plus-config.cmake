@@ -68,7 +68,7 @@ if(NOT TARGET micro-os-plus-micro-test-plus-static)
   # Aliases.
 
   add_library(micro-os-plus::micro-test-plus ALIAS micro-os-plus-micro-test-plus-static)
-  message(STATUS "=> micro-os-plus::micro-test-plus")
+  message(STATUS "=> micro-os-plus::micro-test-plus (STATIC)")
 
 endif()
 
