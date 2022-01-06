@@ -392,7 +392,7 @@
           "@micro-os-plus/libs-c": "github:micro-os-plus/libs-c-xpack#semver:2.0.2",
           "@micro-os-plus/libs-cpp": "github:micro-os-plus/libs-cpp-xpack#semver:2.0.3",
           "@micro-os-plus/platform-stm32f4discovery": "github:micro-os-plus/platform-stm32f4discovery-xpack#semver:3.0.1",
-          "@micro-os-plus/semihosting": "github:micro-os-plus/semihosting-xpack#semver:3.0.2",
+          "@micro-os-plus/semihosting": "github:micro-os-plus/semihosting-xpack#semver:3.0.3",
           "@micro-os-plus/startup": "github:micro-os-plus/startup-xpack#semver:2.0.2",
           "@micro-os-plus/version": "github:micro-os-plus/version-xpack#semver:7.0.4"
         }
@@ -423,7 +423,7 @@
           "@micro-os-plus/libs-c": "github:micro-os-plus/libs-c-xpack#semver:2.0.2",
           "@micro-os-plus/libs-cpp": "github:micro-os-plus/libs-cpp-xpack#semver:2.0.3",
           "@micro-os-plus/platform-stm32f4discovery": "github:micro-os-plus/platform-stm32f4discovery-xpack#semver:3.0.1",
-          "@micro-os-plus/semihosting": "github:micro-os-plus/semihosting-xpack#semver:3.0.2",
+          "@micro-os-plus/semihosting": "github:micro-os-plus/semihosting-xpack#semver:3.0.3",
           "@micro-os-plus/startup": "github:micro-os-plus/startup-xpack#semver:2.0.2",
           "@micro-os-plus/version": "github:micro-os-plus/version-xpack#semver:7.0.4"
         }
