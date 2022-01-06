@@ -172,8 +172,8 @@
             "{{ properties.commandCMakeReconfigure }}",
             "{{ properties.commandCMakeBuild }}"
           ],
-          "clean": "{{ properties.commandCMakeClean }}",
-          "test": "{{ properties.commandCMakePerformTests }}"
+          "test": "{{ properties.commandCMakePerformTests }}",
+          "clean": "{{ properties.commandCMakeClean }}"
         }
       },
       "native-cmake-release": {
@@ -187,8 +187,8 @@
             "{{ properties.commandCMakeReconfigure }}",
             "{{ properties.commandCMakeBuild }}"
           ],
-          "clean": "{{ properties.commandCMakeClean }}",
-          "test": "{{ properties.commandCMakePerformTests }}"
+          "test": "{{ properties.commandCMakePerformTests }}",
+          "clean": "{{ properties.commandCMakeClean }}"
         }
       },
       "native-cmake-gcc8-debug": {
@@ -203,8 +203,8 @@
             "{{ properties.commandCMakeReconfigure }}",
             "{{ properties.commandCMakeBuild }}"
           ],
-          "clean": "{{ properties.commandCMakeClean }}",
-          "test": "{{ properties.commandCMakePerformTests }}"
+          "test": "{{ properties.commandCMakePerformTests }}",
+          "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
           "@xpack-dev-tools/gcc": "8.5.0-1.1"
@@ -222,8 +222,8 @@
             "{{ properties.commandCMakeReconfigure }}",
             "{{ properties.commandCMakeBuild }}"
           ],
-          "clean": "{{ properties.commandCMakeClean }}",
-          "test": "{{ properties.commandCMakePerformTests }}"
+          "test": "{{ properties.commandCMakePerformTests }}",
+          "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
           "@xpack-dev-tools/gcc": "8.5.0-1.1"
@@ -241,8 +241,8 @@
             "{{ properties.commandCMakeReconfigure }}",
             "{{ properties.commandCMakeBuild }}"
           ],
-          "clean": "{{ properties.commandCMakeClean }}",
-          "test": "{{ properties.commandCMakePerformTests }}"
+          "test": "{{ properties.commandCMakePerformTests }}",
+          "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
           "@xpack-dev-tools/gcc": "11.2.0-1.3"
@@ -260,8 +260,8 @@
             "{{ properties.commandCMakeReconfigure }}",
             "{{ properties.commandCMakeBuild }}"
           ],
-          "clean": "{{ properties.commandCMakeClean }}",
-          "test": "{{ properties.commandCMakePerformTests }}"
+          "test": "{{ properties.commandCMakePerformTests }}",
+          "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
           "@xpack-dev-tools/gcc": "11.2.0-1.3"
@@ -279,8 +279,8 @@
             "{{ properties.commandCMakeReconfigure }}",
             "{{ properties.commandCMakeBuild }}"
           ],
-          "clean": "{{ properties.commandCMakeClean }}",
-          "test": "{{ properties.commandCMakePerformTests }}"
+          "test": "{{ properties.commandCMakePerformTests }}",
+          "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
           "@xpack-dev-tools/clang": "12.0.1-1.2"
@@ -298,8 +298,8 @@
             "{{ properties.commandCMakeReconfigure }}",
             "{{ properties.commandCMakeBuild }}"
           ],
-          "clean": "{{ properties.commandCMakeClean }}",
-          "test": "{{ properties.commandCMakePerformTests }}"
+          "test": "{{ properties.commandCMakePerformTests }}",
+          "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
           "@xpack-dev-tools/clang": "12.0.1-1.2"
@@ -316,8 +316,8 @@
             "{{ properties.commandMesonReconfigure }}",
             "{{ properties.commandMesonBuild }}"
           ],
-          "clean": "{{ properties.commandMesonClean }}",
-          "test": "{{ properties.commandMesonPerformTests }}"
+          "test": "{{ properties.commandMesonPerformTests }}",
+          "clean": "{{ properties.commandMesonClean }}"
         }
       },
       "native-meson-release": {
@@ -331,8 +331,8 @@
             "{{ properties.commandMesonReconfigure }}",
             "{{ properties.commandMesonBuild }}"
           ],
-          "clean": "{{ properties.commandMesonClean }}",
-          "test": "{{ properties.commandMesonPerformTests }}"
+          "test": "{{ properties.commandMesonPerformTests }}",
+          "clean": "{{ properties.commandMesonClean }}"
         }
       },
       "native-meson-gcc11-debug": {
@@ -348,8 +348,8 @@
             "{{ properties.commandMesonReconfigure }}",
             "{{ properties.commandMesonBuild }}"
           ],
-          "clean": "{{ properties.commandMesonClean }}",
-          "test": "{{ properties.commandMesonPerformTests }}"
+          "test": "{{ properties.commandMesonPerformTests }}",
+          "clean": "{{ properties.commandMesonClean }}"
         },
         "devDependencies": {
           "@xpack-dev-tools/gcc": "11.2.0-1.3"
@@ -368,8 +368,8 @@
             "{{ properties.commandMesonReconfigure }}",
             "{{ properties.commandMesonBuild }}"
           ],
-          "clean": "{{ properties.commandMesonClean }}",
-          "test": "{{ properties.commandMesonPerformTests }}"
+          "test": "{{ properties.commandMesonPerformTests }}",
+          "clean": "{{ properties.commandMesonClean }}"
         },
         "devDependencies": {
           "@xpack-dev-tools/gcc": "11.2.0-1.3"
@@ -388,8 +388,8 @@
             "{{ properties.commandMesonReconfigure }}",
             "{{ properties.commandMesonBuild }}"
           ],
-          "clean": "{{ properties.commandMesonClean }}",
-          "test": "{{ properties.commandMesonPerformTests }}"
+          "test": "{{ properties.commandMesonPerformTests }}",
+          "clean": "{{ properties.commandMesonClean }}"
         },
         "devDependencies": {
           "@xpack-dev-tools/clang": "12.0.1-1.2"
@@ -408,8 +408,8 @@
             "{{ properties.commandMesonReconfigure }}",
             "{{ properties.commandMesonBuild }}"
           ],
-          "clean": "{{ properties.commandMesonClean }}",
-          "test": "{{ properties.commandMesonPerformTests }}"
+          "test": "{{ properties.commandMesonPerformTests }}",
+          "clean": "{{ properties.commandMesonClean }}"
         },
         "devDependencies": {
           "@xpack-dev-tools/clang": "12.0.1-1.2"
@@ -428,8 +428,8 @@
             "{{ properties.commandCMakeReconfigure }}",
             "{{ properties.commandCMakeBuild }}"
           ],
-          "clean": "{{ properties.commandCMakeClean }}",
           "test": "{{ properties.commandCMakePerformTests }}",
+          "clean": "{{ properties.commandCMakeClean }}",
           "link-deps": "xpm link --config {{ configuration.name }} @micro-os-plus/platform-stm32f4discovery @micro-os-plus/devices-stm32f4-extras @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting @micro-os-plus/diag-trace @micro-os-plus/libs-c @micro-os-plus/libs-cpp @micro-os-plus/version"
         },
         "devDependencies": {
@@ -459,8 +459,8 @@
             "{{ properties.commandCMakeReconfigure }}",
             "{{ properties.commandCMakeBuild }}"
           ],
-          "clean": "{{ properties.commandCMakeClean }}",
           "test": "{{ properties.commandCMakePerformTests }}",
+          "clean": "{{ properties.commandCMakeClean }}",
           "link-deps": "xpm link --config {{ configuration.name }} @micro-os-plus/platform-stm32f4discovery @micro-os-plus/devices-stm32f4-extras @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting @micro-os-plus/diag-trace @micro-os-plus/libs-c @micro-os-plus/libs-cpp @micro-os-plus/version"
         },
         "devDependencies": {
