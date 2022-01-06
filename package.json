@@ -384,7 +384,7 @@
           "link-deps": "xpm link --config {{ configuration.name }} @micro-os-plus/platform-stm32f4discovery @micro-os-plus/devices-stm32f4-extras @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting @micro-os-plus/diag-trace @micro-os-plus/libs-c @micro-os-plus/libs-cpp @micro-os-plus/version"
         },
         "devDependencies": {
-          "@xpack-dev-tools/arm-none-eabi-gcc": "10.2.1-1.1.2",
+          "@xpack-dev-tools/arm-none-eabi-gcc": "10.3.1-2.3.1",
           "@xpack-dev-tools/qemu-arm": "2.8.0-13.1",
           "@micro-os-plus/architecture-cortexm": "github:micro-os-plus/architecture-cortexm-xpack#semver:3.0.2",
           "@micro-os-plus/devices-stm32f4-extras": "github:micro-os-plus/devices-stm32f4-extras-xpack#semver:2.0.3",
@@ -415,7 +415,7 @@
           "link-deps": "xpm link --config {{ configuration.name }} @micro-os-plus/platform-stm32f4discovery @micro-os-plus/devices-stm32f4-extras @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting @micro-os-plus/diag-trace @micro-os-plus/libs-c @micro-os-plus/libs-cpp @micro-os-plus/version"
         },
         "devDependencies": {
-          "@xpack-dev-tools/arm-none-eabi-gcc": "10.2.1-1.1.2",
+          "@xpack-dev-tools/arm-none-eabi-gcc": "10.3.1-2.3.1",
           "@xpack-dev-tools/qemu-arm": "2.8.0-13.1",
           "@micro-os-plus/architecture-cortexm": "github:micro-os-plus/architecture-cortexm-xpack#semver:3.0.2",
           "@micro-os-plus/devices-stm32f4-extras": "github:micro-os-plus/devices-stm32f4-extras-xpack#semver:2.0.3",
