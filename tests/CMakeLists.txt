@@ -97,6 +97,8 @@ endif()
 
 if(PLATFORM_NAME STREQUAL "native")
   include("${xpack_tests_folder}/platform-native/meta/config.cmake")
+elseif(PLATFORM_NAME STREQUAL "qemu-mps2-an386")
+  include("${xpack_tests_folder}/platform-qemu-mps2-an386/meta/config.cmake")
 elseif(PLATFORM_NAME STREQUAL "stm32f4discovery")
   include("${xpack_tests_folder}/platform-stm32f4discovery/meta/config.cmake")
 else()
@@ -221,6 +223,22 @@ if(PLATFORM_NAME STREQUAL "native")
   add_test(
     NAME "sample-test"
     COMMAND sample-test 1 2 3
+  )
+
+elseif(PLATFORM_NAME STREQUAL "qemu-mps2-an386")
+
+  if("${CMAKE_HOST_SYSTEM_NAME}" STREQUAL "Windows")
+    set(EXTENSION ".cmd")
+  endif()
+
+  add_test(
+    NAME "unit-test"
+    COMMAND qemu-system-arm${EXTENSION} --machine mps2-an386 -d unimp,guest_errors --nographic --kernel unit-test.elf --semihosting-config enable=on,target=native,arg=unit-test,arg=one,arg=two
+  )
+
+  add_test(
+    NAME "sample-test"
+    COMMAND qemu-system-arm${EXTENSION} --machine mps2-an386 -d unimp,guest_errors --nographic --kernel sample-test.elf --semihosting-config enable=on,target=native,arg=sample-test,arg=one,arg=two
   )
 
 elseif(PLATFORM_NAME STREQUAL "stm32f4discovery")
