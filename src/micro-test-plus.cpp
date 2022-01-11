@@ -62,6 +62,11 @@ namespace micro_os_plus
 #else
       printf ("Built with an unknown compiler");
 #endif
+#if defined(__ARM_PCS_VFP)
+      printf (", with FP");
+#else
+      printf (", no FP");
+#endif
 #if defined(__EXCEPTIONS)
       printf (", with exceptions");
 #else
