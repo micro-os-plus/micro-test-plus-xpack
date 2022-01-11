@@ -47,9 +47,9 @@ get_filename_component(xpack_current_folder ${CMAKE_CURRENT_LIST_DIR} DIRECTORY)
 
 # ---------------------------------------------------------------------------
 
-if(NOT TARGET platform-stm32f4discovery-static)
+if(NOT TARGET platform-stm32f4discovery-interface)
 
-  add_library(platform-stm32f4discovery-static INTERFACE EXCLUDE_FROM_ALL)
+  add_library(platform-stm32f4discovery-interface INTERFACE EXCLUDE_FROM_ALL)
 
   # -------------------------------------------------------------------------
 
@@ -62,7 +62,7 @@ if(NOT TARGET platform-stm32f4discovery-static)
     xpack_display_relative_paths("${source_files}" "${xpack_current_folder}")
 
     target_sources(
-      platform-stm32f4discovery-static
+      platform-stm32f4discovery-interface
 
       INTERFACE
         ${source_files}
@@ -70,7 +70,7 @@ if(NOT TARGET platform-stm32f4discovery-static)
   endif()
 
   target_include_directories(
-    platform-stm32f4discovery-static
+    platform-stm32f4discovery-interface
 
     INTERFACE
       # The include folder was passed globally, to catch the global config.h.
@@ -79,14 +79,14 @@ if(NOT TARGET platform-stm32f4discovery-static)
   # The preprocessor definitions were passed globally.
 
   target_compile_options(
-    platform-stm32f4discovery-static
+    platform-stm32f4discovery-interface
 
     INTERFACE
       # ...
   )
 
     target_link_libraries(
-      platform-stm32f4discovery-static
+      platform-stm32f4discovery-interface
 
       INTERFACE
         micro-os-plus::platform-stm32f4discovery
@@ -95,8 +95,8 @@ if(NOT TARGET platform-stm32f4discovery-static)
   # -------------------------------------------------------------------------
   # Aliases.
 
-  add_library(micro-os-plus::platform ALIAS platform-stm32f4discovery-static)
-  message(STATUS "=> micro-os-plus::platform")
+  add_library(micro-os-plus::platform ALIAS platform-stm32f4discovery-interface)
+  message(STATUS "=> micro-os-plus::platform (platform-stm32f4discovery-interface)")
 
 endif()
 
