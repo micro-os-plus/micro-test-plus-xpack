@@ -66,7 +66,7 @@
       ],
       "test-all": [
         "xpm run test-native",
-        "xpm run test-stm32f4discovery-cmake"
+        "xpm run test-qemu-mps2-an386-cmake"
       ],
       "test-native": [
         "{% if os.platform != 'win32' %}xpm run test-native-cmake{% endif %}",
@@ -133,6 +133,14 @@
         "xpm run build --config native-meson-clang12-release",
         "xpm run test --config native-meson-clang12-release"
       ],
+      "test-qemu-mps2-an386-cmake": [
+        "xpm run prepare --config qemu-mps2-an386-cmake-debug",
+        "xpm run build --config qemu-mps2-an386-cmake-debug",
+        "xpm run test --config qemu-mps2-an386-cmake-debug",
+        "xpm run prepare --config qemu-mps2-an386-cmake-release",
+        "xpm run build --config qemu-mps2-an386-cmake-release",
+        "xpm run test --config qemu-mps2-an386-cmake-release"
+      ],
       "test-stm32f4discovery-cmake": [
         "xpm run prepare --config stm32f4discovery-cmake-debug",
         "xpm run build --config stm32f4discovery-cmake-debug",
@@ -156,10 +164,23 @@
         "xpm run clean --config native-meson-gcc11-release",
         "xpm run clean --config native-meson-clang12-debug",
         "xpm run clean --config native-meson-clang12-release",
+        "xpm run clean --config qemu-mps2-an386-cmake-debug",
+        "xpm run clean --config qemu-mps2-an386-cmake-release",
         "xpm run clean --config stm32f4discovery-cmake-debug",
         "xpm run clean --config stm32f4discovery-cmake-release"
       ],
-      "rm-deps": "xpm uninstall --global @micro-os-plus/build-helper @micro-os-plus/platform-stm32f4discovery @micro-os-plus/devices-stm32f4-extras @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting @micro-os-plus/diag-trace @micro-os-plus/libs-c @micro-os-plus/libs-cpp @micro-os-plus/version"
+      "rm-global-deps": [
+        "xpm uninstall --global @micro-os-plus/build-helper",
+        "xpm uninstall --global @micro-os-plus/platform-stm32f4discovery",
+        "xpm uninstall --global @micro-os-plus/devices-stm32f4-extras",
+        "xpm uninstall --global @micro-os-plus/architecture-cortexm",
+        "xpm uninstall --global @micro-os-plus/startup",
+        "xpm uninstall --global @micro-os-plus/semihosting",
+        "xpm uninstall --global @micro-os-plus/diag-trace",
+        "xpm uninstall --global @micro-os-plus/libs-c",
+        "xpm uninstall --global @micro-os-plus/libs-cpp",
+        "xpm uninstall --global @micro-os-plus/version"
+      ]
     },
     "buildConfigurations": {
       "native-cmake-debug": {
@@ -439,12 +460,13 @@
             "xpm link --config {{ configuration.name }} @micro-os-plus/platform-qemu-cortexm",
             "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting",
             "xpm link --config {{ configuration.name }} @micro-os-plus/startup",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/version"
+            "xpm link --config {{ configuration.name }} @micro-os-plus/version",
+            "xpm link --config {{ configuration.name }} @xpack-3rd-party/arm-cmsis-core-m"
           ]
         },
         "devDependencies": {
           "@xpack-dev-tools/arm-none-eabi-gcc": "10.3.1-2.3.1",
-          "@xpack-dev-tools/qemu-arm": "2.8.0-13.1",
+          "@xpack-dev-tools/qemu-arm": "6.2.0-1.1",
           "@micro-os-plus/architecture-cortexm": "github:micro-os-plus/architecture-cortexm-xpack#semver:3.0.2",
           "@micro-os-plus/diag-trace": "github:micro-os-plus/diag-trace-xpack#semver:2.2.4",
           "@micro-os-plus/libs-c": "github:micro-os-plus/libs-c-xpack#semver:2.0.2",
@@ -452,7 +474,8 @@
           "@micro-os-plus/platform-qemu-cortexm": "github:micro-os-plus/platform-qemu-cortexm-xpack#semver:0.0.1",
           "@micro-os-plus/semihosting": "github:micro-os-plus/semihosting-xpack#semver:3.0.3",
           "@micro-os-plus/startup": "github:micro-os-plus/startup-xpack#semver:2.0.2",
-          "@micro-os-plus/version": "github:micro-os-plus/version-xpack#semver:7.0.4"
+          "@micro-os-plus/version": "github:micro-os-plus/version-xpack#semver:7.0.4",
+          "@xpack-3rd-party": "github:xpack-3rd-party/arm-cmsis-core-m-xpack#semver:5.4.0-1"
         }
       },
       "qemu-mps2-an386-cmake-release": {
@@ -478,12 +501,13 @@
             "xpm link --config {{ configuration.name }} @micro-os-plus/platform-qemu-cortexm",
             "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting",
             "xpm link --config {{ configuration.name }} @micro-os-plus/startup",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/version"
+            "xpm link --config {{ configuration.name }} @micro-os-plus/version",
+            "xpm link --config {{ configuration.name }} @xpack-3rd-party/arm-cmsis-core-m"
           ]
         },
         "devDependencies": {
           "@xpack-dev-tools/arm-none-eabi-gcc": "10.3.1-2.3.1",
-          "@xpack-dev-tools/qemu-arm": "2.8.0-13.1",
+          "@xpack-dev-tools/qemu-arm": "6.2.0-1.1",
           "@micro-os-plus/architecture-cortexm": "github:micro-os-plus/architecture-cortexm-xpack#semver:3.0.2",
           "@micro-os-plus/diag-trace": "github:micro-os-plus/diag-trace-xpack#semver:2.2.4",
           "@micro-os-plus/libs-c": "github:micro-os-plus/libs-c-xpack#semver:2.0.2",
@@ -513,7 +537,7 @@
         },
         "devDependencies": {
           "@xpack-dev-tools/arm-none-eabi-gcc": "10.3.1-2.3.1",
-          "@xpack-dev-tools/qemu-arm": "2.8.0-13.1",
+          "@xpack-dev-tools/qemu-arm": "6.2.0-1.1",
           "@micro-os-plus/architecture-cortexm": "github:micro-os-plus/architecture-cortexm-xpack#semver:3.0.2",
           "@micro-os-plus/devices-stm32f4-extras": "github:micro-os-plus/devices-stm32f4-extras-xpack#semver:2.0.3",
           "@micro-os-plus/diag-trace": "github:micro-os-plus/diag-trace-xpack#semver:2.2.4",
@@ -544,7 +568,7 @@
         },
         "devDependencies": {
           "@xpack-dev-tools/arm-none-eabi-gcc": "10.3.1-2.3.1",
-          "@xpack-dev-tools/qemu-arm": "2.8.0-13.1",
+          "@xpack-dev-tools/qemu-arm": "6.2.0-1.1",
           "@micro-os-plus/architecture-cortexm": "github:micro-os-plus/architecture-cortexm-xpack#semver:3.0.2",
           "@micro-os-plus/devices-stm32f4-extras": "github:micro-os-plus/devices-stm32f4-extras-xpack#semver:2.0.3",
           "@micro-os-plus/diag-trace": "github:micro-os-plus/diag-trace-xpack#semver:2.2.4",
