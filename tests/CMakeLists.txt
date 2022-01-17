@@ -56,7 +56,7 @@ include("${xpack_project_folder}/xpacks/micro-os-plus-build-helper/cmake/xpack-h
 # over manual `add_subdirectory(path)`. For this to work, the path
 # must be aded to CMAKE_PREFIX_PATH.
 # Add the current project to the package search path.
-list(APPEND CMAKE_PREFIX_PATH "${xpack_project_folder}/meta")
+list(APPEND CMAKE_PREFIX_PATH "${xpack_project_folder}/cmake")
 # Add all the xPack folders that have a *-config.cmake file
 # to the package search path.
 # The order is important, configuration ones are first, then the project ones.
@@ -96,11 +96,11 @@ endif()
 # -----------------------------------------------------------------------------
 
 if(PLATFORM_NAME STREQUAL "native")
-  include("${xpack_tests_folder}/platform-native/meta/config.cmake")
+  include("${xpack_tests_folder}/platform-native/cmake/config.cmake")
 elseif(PLATFORM_NAME STREQUAL "qemu-mps2-an386")
-  include("${xpack_tests_folder}/platform-qemu-mps2-an386/meta/config.cmake")
+  include("${xpack_tests_folder}/platform-qemu-mps2-an386/cmake/config.cmake")
 elseif(PLATFORM_NAME STREQUAL "stm32f4discovery")
-  include("${xpack_tests_folder}/platform-stm32f4discovery/meta/config.cmake")
+  include("${xpack_tests_folder}/platform-stm32f4discovery/cmake/config.cmake")
 else()
   message(FATAL_ERROR, "Unsupported PLATFORM_NAME")
 endif()
