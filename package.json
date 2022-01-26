@@ -171,17 +171,19 @@
         "xpm run clean --config stm32f4discovery-cmake-release"
       ],
       "rm-global-deps": [
-        "xpm uninstall --global @micro-os-plus/build-helper",
-        "xpm uninstall --global @micro-os-plus/platform-stm32f4discovery",
-        "xpm uninstall --global @micro-os-plus/devices-stm32f4-extras",
         "xpm uninstall --global @micro-os-plus/architecture-cortexm",
-        "xpm uninstall --global @micro-os-plus/startup",
-        "xpm uninstall --global @micro-os-plus/semihosting",
+        "xpm uninstall --global @micro-os-plus/build-helper",
+        "xpm uninstall --global @micro-os-plus/devices-stm32f4-extras",
         "xpm uninstall --global @micro-os-plus/diag-trace",
         "xpm uninstall --global @micro-os-plus/libs-c",
         "xpm uninstall --global @micro-os-plus/libs-cpp",
-        "xpm uninstall --global @micro-os-plus/version"
-      ]
+        "xpm uninstall --global @micro-os-plus/platform-qemu-cortexm",
+        "xpm uninstall --global @micro-os-plus/platform-stm32f4discovery",
+        "xpm uninstall --global @micro-os-plus/semihosting",
+        "xpm uninstall --global @micro-os-plus/startup",
+        "xpm uninstall --global @micro-os-plus/version",
+        "xpm uninstall --global @xpack-3rd-party/arm-cmsis-core-m"
+  ]
     },
     "buildConfigurations": {
       "native-cmake-debug": {
