@@ -446,13 +446,6 @@
           "qemuBoardName": "QEMU mps2-an386"
         },
         "actions": {
-          "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
-          "build": [
-            "{{ properties.commandCMakeReconfigure }}",
-            "{{ properties.commandCMakeBuild }}"
-          ],
-          "test": "{{ properties.commandCMakePerformTests }}",
-          "clean": "{{ properties.commandCMakeClean }}",
           "link-deps": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexm",
             "xpm link --config {{ configuration.name }} @micro-os-plus/diag-trace",
@@ -463,7 +456,14 @@
             "xpm link --config {{ configuration.name }} @micro-os-plus/startup",
             "xpm link --config {{ configuration.name }} @micro-os-plus/version",
             "xpm link --config {{ configuration.name }} @xpack-3rd-party/arm-cmsis-core-m"
-          ]
+          ],
+          "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
+          "build": [
+            "{{ properties.commandCMakeReconfigure }}",
+            "{{ properties.commandCMakeBuild }}"
+          ],
+          "test": "{{ properties.commandCMakePerformTests }}",
+          "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
           "@xpack-dev-tools/arm-none-eabi-gcc": "10.3.1-2.3.1",
@@ -487,13 +487,6 @@
           "qemuBoardName": "QEMU mps2-an386"
         },
         "actions": {
-          "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
-          "build": [
-            "{{ properties.commandCMakeReconfigure }}",
-            "{{ properties.commandCMakeBuild }}"
-          ],
-          "test": "{{ properties.commandCMakePerformTests }}",
-          "clean": "{{ properties.commandCMakeClean }}",
           "link-deps": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexm",
             "xpm link --config {{ configuration.name }} @micro-os-plus/diag-trace",
@@ -504,7 +497,14 @@
             "xpm link --config {{ configuration.name }} @micro-os-plus/startup",
             "xpm link --config {{ configuration.name }} @micro-os-plus/version",
             "xpm link --config {{ configuration.name }} @xpack-3rd-party/arm-cmsis-core-m"
-          ]
+          ],
+          "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
+          "build": [
+            "{{ properties.commandCMakeReconfigure }}",
+            "{{ properties.commandCMakeBuild }}"
+          ],
+          "test": "{{ properties.commandCMakePerformTests }}",
+          "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
           "@xpack-dev-tools/arm-none-eabi-gcc": "10.3.1-2.3.1",
@@ -528,14 +528,24 @@
           "qemuBoardName": "STM32F4-Discovery"
         },
         "actions": {
+          "link-deps": [
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexm",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/devices-stm32f4-extras",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/diag-trace",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/libs-c",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/libs-cpp",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/platform-stm32f4discovery",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/startup",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/version"
+          ],
           "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
           "build": [
             "{{ properties.commandCMakeReconfigure }}",
             "{{ properties.commandCMakeBuild }}"
           ],
           "test": "{{ properties.commandCMakePerformTests }}",
-          "clean": "{{ properties.commandCMakeClean }}",
-          "link-deps": "xpm link --config {{ configuration.name }} @micro-os-plus/platform-stm32f4discovery @micro-os-plus/devices-stm32f4-extras @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting @micro-os-plus/diag-trace @micro-os-plus/libs-c @micro-os-plus/libs-cpp @micro-os-plus/version"
+          "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
           "@xpack-dev-tools/arm-none-eabi-gcc": "10.3.1-2.3.1",
@@ -559,14 +569,24 @@
           "qemuBoardName": "STM32F4-Discovery"
         },
         "actions": {
+          "link-deps": [
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexm",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/devices-stm32f4-extras",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/diag-trace",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/libs-c",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/libs-cpp",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/platform-stm32f4discovery",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/startup",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/version"
+          ],
           "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
           "build": [
             "{{ properties.commandCMakeReconfigure }}",
             "{{ properties.commandCMakeBuild }}"
           ],
           "test": "{{ properties.commandCMakePerformTests }}",
-          "clean": "{{ properties.commandCMakeClean }}",
-          "link-deps": "xpm link --config {{ configuration.name }} @micro-os-plus/platform-stm32f4discovery @micro-os-plus/devices-stm32f4-extras @micro-os-plus/architecture-cortexm @micro-os-plus/startup @micro-os-plus/semihosting @micro-os-plus/diag-trace @micro-os-plus/libs-c @micro-os-plus/libs-cpp @micro-os-plus/version"
+          "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
           "@xpack-dev-tools/arm-none-eabi-gcc": "10.3.1-2.3.1",
