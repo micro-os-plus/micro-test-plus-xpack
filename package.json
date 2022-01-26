@@ -66,8 +66,8 @@
       ],
       "test-all": [
         "xpm run test-native",
-        "xpm run test-qemu-mps2-an386-cmake",
-        "xpm run test-stm32f4discovery-cmake"
+        "{% if os.platform != 'win32' %}xpm run test-qemu-mps2-an386-cmake{% endif %}",
+        "{% if os.platform != 'win32' %}xpm run test-stm32f4discovery-cmake{% endif %}"
       ],
       "test-native": [
         "{% if os.platform != 'win32' %}xpm run test-native-cmake{% endif %}",
