@@ -445,7 +445,10 @@
           "buildType": "Debug",
           "platformName": "qemu-mps2-an386",
           "toolchainFileName": "toolchain-arm-none-eabi-gcc.cmake",
-          "qemuBoardName": "QEMU mps2-an386"
+          "qemuBoardName": "QEMU mps2-an386",
+          "shortConfigurationName": "q1d",
+          "buildFolderRelativePath": "{% if os.platform != 'win32' %}{{ 'build' | path_join: configuration.name | to_filename | downcase }}{% else %}{{ 'build' | path_join: properties.shortConfigurationName | to_filename | downcase }}{% endif %}",
+          "buildFolderRelativePathPosix": "{% if os.platform != 'win32' %}{{ 'build' | path_posix_join: configuration.name | downcase }}{% else %}{{ 'build' | path_posix_join: properties.shortConfigurationName | downcase }}{% endif %}"
         },
         "actions": {
           "link-deps": [
@@ -486,7 +489,10 @@
           "buildType": "MinSizeRel",
           "platformName": "qemu-mps2-an386",
           "toolchainFileName": "toolchain-arm-none-eabi-gcc.cmake",
-          "qemuBoardName": "QEMU mps2-an386"
+          "qemuBoardName": "QEMU mps2-an386",
+          "shortConfigurationName": "q1r",
+          "buildFolderRelativePath": "{% if os.platform != 'win32' %}{{ 'build' | path_join: configuration.name | to_filename | downcase }}{% else %}{{ 'build' | path_join: properties.shortConfigurationName | to_filename | downcase }}{% endif %}",
+          "buildFolderRelativePathPosix": "{% if os.platform != 'win32' %}{{ 'build' | path_posix_join: configuration.name | downcase }}{% else %}{{ 'build' | path_posix_join: properties.shortConfigurationName | downcase }}{% endif %}"
         },
         "actions": {
           "link-deps": [
