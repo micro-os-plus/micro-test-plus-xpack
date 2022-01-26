@@ -9,17 +9,31 @@
 # -----------------------------------------------------------------------------
 
 # This file defines the global settings that apply to all targets.
+# Must be included with include() in the `tests` scope.
 
-# -----------------------------------------------------------------------------
-# The current folder.
+file(RELATIVE_PATH folder_relative_path "${CMAKE_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}")
+message(VERBOSE "Including platform-native globals in '${folder_relative_path}' scope...")
 
-get_filename_component(xpack_current_folder ${CMAKE_CURRENT_LIST_DIR} DIRECTORY)
-
-# -----------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
 # Global definitions. Before any libraries.
 
 # A list of all imaginable warnings.
 xpack_set_all_compiler_warnings(all_warnings)
+
+# The global configuration file and possibly other platform defines.
+include_directories(
+
+  # Folders are relative to `tests`.
+  "platform-native/include"
+)
+
+message(VERBOSE "+ platform-native/include")
+
+# Global compiler definitions.
+add_compile_definitions(
+
+  # ...
+)
 
 set(common_options
 

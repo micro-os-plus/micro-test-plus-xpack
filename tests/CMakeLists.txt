@@ -8,82 +8,37 @@
 #
 # -----------------------------------------------------------------------------
 
-message(STATUS "CMake version: ${CMAKE_VERSION}")
-
-# -----------------------------------------------------------------------------
-
 if(CMAKE_BINARY_DIR STREQUAL CMAKE_SOURCE_DIR)
   message(FATAL_ERROR "In-source builds are not supported. Please use separate folder for build.")
 endif()
 
 # -----------------------------------------------------------------------------
-
-enable_language(C)
-enable_language(CXX)
-enable_language(ASM)
-
-# Specify the C/C++ standards.
-set(CMAKE_C_STANDARD 11)
-set(CMAKE_C_STANDARD_REQUIRED ON)
-set(CMAKE_C_EXTENSIONS OFF)
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
-
-message(STATUS "Compiler: ${CMAKE_C_COMPILER_ID} ${CMAKE_C_COMPILER_VERSION}")
+## Project wide setup ##
 
 # Generate the compile_commands.json file to feed the indexer.
+# Highly recommended, to help IDEs construct the index.
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Enable this to see the dependency graph.
 # set_property(GLOBAL PROPERTY GLOBAL_DEPENDS_DEBUG_MODE 1)
 
-# Instruct to skip HAL.
-set(PLATFORM_STM32F4DISCOVERY_WITHOUT_HAL ON)
-
 # -----------------------------------------------------------------------------
 
-set(xpack_tests_folder ${CMAKE_CURRENT_LIST_DIR})
-get_filename_component(xpack_project_folder ${xpack_tests_folder} DIRECTORY)
-set(xpack_build_folder ${CMAKE_BINARY_DIR})
+# The build-helper is a devDependency, available only after `xpm install`.
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/xpacks/micro-os-plus-build-helper/cmake")
+include("micro-os-plus-build-helper")
 
-# Include the common xPacks CMake build helper
-# functions. This is required for all projects that use the xPack
-# CMake configurations.
-include("${xpack_project_folder}/xpacks/micro-os-plus-build-helper/cmake/xpack-helper.cmake")
-
-# To automate the inclusion of dependencies, prefer `find_package(name)`
-# over manual `add_subdirectory(path)`. For this to work, the path
-# must be aded to CMAKE_PREFIX_PATH.
-# Add the current project to the package search path.
-list(APPEND CMAKE_PREFIX_PATH "${xpack_project_folder}/cmake")
-# Add all the xPack folders that have a *-config.cmake file
-# to the package search path.
-# The order is important, configuration ones are first, then the project ones.
-xpack_append_cmake_prefix_path("${CMAKE_BINARY_DIR}/xpacks")
-xpack_append_cmake_prefix_path("${xpack_project_folder}/xpacks")
-
-# -----------------------------------------------------------------------------
-
-# Informative. Leave the result in PACKAGE_JSON_VERSION[*]
-xpack_parse_package_json_semver("${xpack_project_folder}/package.json")
-
-# -----------------------------------------------------------------------------
-
-message(STATUS "Platform name: ${PLATFORM_NAME}")
-# CMAKE_BUILD_TYPE: Debug, Release, RelWithDebInfo, MinSizeRel
-message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
-message(STATUS "Project path: ${xpack_project_folder}")
-message(STATUS "Build path: ${CMAKE_BINARY_DIR}")
-message(STATUS "Prefix path: ${CMAKE_PREFIX_PATH}")
+xpack_display_greetings()
 
 # -----------------------------------------------------------------------------
 
 # Common to all platforms.
 add_compile_definitions(
   # NDEBUG provided by the toolchain definitions on release.
-  $<$<STREQUAL:"${CMAKE_BUILD_TYPE}","Debug">:DEBUG>
-  $<$<STREQUAL:"${CMAKE_BUILD_TYPE}","Debug">:TRACE>
+
+  # DO NOT use CMAKE_BUILD_TYPE
+  $<$<CONFIG:Debug>:DEBUG>
+  $<$<CONFIG:Debug>:TRACE>
 )
 
 # -----------------------------------------------------------------------------
@@ -95,173 +50,19 @@ endif()
 
 # -----------------------------------------------------------------------------
 
-if(PLATFORM_NAME STREQUAL "native")
-  include("${xpack_tests_folder}/platform-native/cmake/config.cmake")
-elseif(PLATFORM_NAME STREQUAL "qemu-mps2-an386")
-  include("${xpack_tests_folder}/platform-qemu-mps2-an386/cmake/config.cmake")
-elseif(PLATFORM_NAME STREQUAL "stm32f4discovery")
-  include("${xpack_tests_folder}/platform-stm32f4discovery/cmake/config.cmake")
-else()
-  message(FATAL_ERROR, "Unsupported PLATFORM_NAME")
-endif()
+# The globals must be included in this scope, before any targets.
+include("platform-${PLATFORM_NAME}/cmake/globals.cmake")
 
-# -----------------------------------------------------------------------------
+# Build configuration dependencies.
+xpack_glob_add_subdirectories("${CMAKE_BINARY_DIR}/xpacks" "xpacks")
 
-find_package(micro-os-plus-micro-test-plus REQUIRED)
+# Project dependencies.
+xpack_glob_add_subdirectories("${CMAKE_SOURCE_DIR}/xpacks" "xpacks")
 
-# Bare-metal platforms have more dependencies.
-if(CMAKE_SYSTEM_NAME STREQUAL "Generic")
-  find_package(micro-os-plus-libs-c REQUIRED)
-  find_package(micro-os-plus-libs-cpp REQUIRED)
-  find_package(micro-os-plus-semihosting REQUIRED)
-  find_package(micro-os-plus-startup REQUIRED)
-endif()
+# The main library from the root folder.
+add_subdirectory("${CMAKE_SOURCE_DIR}/sources" "sources")
 
-# -----------------------------------------------------------------------------
-
-function(add_test_executable name)
-
-  add_executable(${name})
-
-  set_target_properties(
-    ${name}
-
-    PROPERTIES
-      OUTPUT_NAME "${name}"
-  )
-
-  message(STATUS "+ src/${name}.cpp")
-  # Application sources.
-  target_sources(
-    ${name}
-
-    PRIVATE
-      ${xpack_tests_folder}/src/${name}.cpp
-  )
-
-  # Include folders.
-  target_include_directories(
-    ${name}
-
-    PRIVATE
-      ${xpack_tests_folder}/include
-  )
-
-  target_compile_definitions(
-    ${name}
-
-    PRIVATE
-      # ...
-  )
-
-  # Bare-metal platforms should be warnings free.
-  # Native builds may use different toolchain versions, which
-  # may trigger unexpected warnings.
-  if(CMAKE_SYSTEM_NAME STREQUAL "Generic")
-    target_compile_options(
-      ${name}
-
-      PRIVATE
-        -Werror
-    )
-  endif()
-
-  target_link_libraries(
-    ${name}
-
-    PUBLIC
-      micro-os-plus::micro-test-plus
-  )
-
-  if(CMAKE_SYSTEM_NAME STREQUAL "Generic")
-
-    target_link_libraries(
-      ${name}
-
-      PRIVATE
-        micro-os-plus::platform # Should bring device & architecture too.
-
-        micro-os-plus::libs-c
-        micro-os-plus::libs-cpp
-        micro-os-plus::semihosting
-        micro-os-plus::startup
-    )
-
-    target_link_options(
-      ${name}
-
-      PRIVATE
-        -Wl,-Map,${name}-map.txt
-    )
-
-    add_custom_command(
-      TARGET ${name} POST_BUILD
-      COMMAND ${CMAKE_SIZE} --format=berkeley "$<TARGET_FILE:${name}>"
-    )
-
-  endif()
-
-  message(STATUS "=> ${name}")
-
-endfunction()
-
-# -----------------------------------------------------------------------------
-
-add_test_executable(unit-test)
-
-add_test_executable(sample-test)
-
-# -----------------------------------------------------------------------------
-
-if(PLATFORM_NAME STREQUAL "native")
-
-  add_test(
-    NAME "unit-test"
-    COMMAND unit-test
-  )
-
-  add_test(
-    NAME "sample-test"
-    COMMAND sample-test 1 2 3
-  )
-
-elseif(PLATFORM_NAME STREQUAL "qemu-mps2-an386")
-
-  if("${CMAKE_HOST_SYSTEM_NAME}" STREQUAL "Windows")
-    set(EXTENSION ".cmd")
-  endif()
-
-  add_test(
-    NAME "unit-test"
-    COMMAND qemu-system-arm${EXTENSION} --machine mps2-an386 -d unimp,guest_errors --nographic --kernel unit-test.elf --semihosting-config enable=on,target=native,arg=unit-test,arg=one,arg=two
-  )
-
-  add_test(
-    NAME "sample-test"
-    COMMAND qemu-system-arm${EXTENSION} --machine mps2-an386 -d unimp,guest_errors --nographic --kernel sample-test.elf --semihosting-config enable=on,target=native,arg=sample-test,arg=one,arg=two
-  )
-
-elseif(PLATFORM_NAME STREQUAL "stm32f4discovery")
-
-  if("${CMAKE_HOST_SYSTEM_NAME}" STREQUAL "Windows")
-    set(EXTENSION ".cmd")
-  endif()
-
-  add_test(
-    NAME "unit-test"
-    COMMAND qemu-system-gnuarmeclipse${EXTENSION} --verbose --board STM32F4-Discovery -d unimp,guest_errors --nographic --image unit-test.elf --semihosting-config enable=on,target=native --semihosting-cmdline unit-test
-  )
-
-  add_test(
-    NAME "sample-test"
-    COMMAND qemu-system-gnuarmeclipse${EXTENSION} --verbose --board STM32F4-Discovery -d unimp,guest_errors --nographic --image sample-test.elf --semihosting-config enable=on,target=native --semihosting-cmdline sample-test 1 2 3
-  )
-
-endif()
-
-# -----------------------------------------------------------------------------
-
-# Display an empty line, to better see the configuration output.
-message(STATUS "")
+# The platform specific configuration.
+add_subdirectory("platform-${PLATFORM_NAME}")
 
 # -----------------------------------------------------------------------------

@@ -9,30 +9,35 @@
 # -----------------------------------------------------------------------------
 
 # This file defines the global settings that apply to all targets.
+# Must be included with include() in the `tests` scope.
 
-# -----------------------------------------------------------------------------
-# The current folder.
-
-get_filename_component(xpack_current_folder ${CMAKE_CURRENT_LIST_DIR} DIRECTORY)
+file(RELATIVE_PATH folder_relative_path "${CMAKE_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}")
+message(VERBOSE "Including platform-qemu-mps2-an386 globals in '${folder_relative_path}' scope...")
 
 # ---------------------------------------------------------------------------
 # Global definitions. Before any libraries.
 
+# A list of all imaginable warnings.
+xpack_set_all_compiler_warnings(all_warnings)
+
+# The global configuration file and possibly other platform defines.
 include_directories(
 
-  ${xpack_current_folder}/include
+  # Folders are relative to `tests`.
+  "platform-qemu-mps2-an386/include"
 )
 
+message(VERBOSE "+ platform-qemu-mps2-an386/include")
+
+# Global compiler definitions.
 add_compile_definitions(
 
   MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS
   # HAVE_MICRO_OS_PLUS_CONFIG_H
 
-  $<$<STREQUAL:"${CMAKE_BUILD_TYPE}","Debug">:MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_DEBUG>
+  # Do not use CMAKE_BUILD_TYPE
+  $<$<CONFIG:Debug>:MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_DEBUG>
 )
-
-# A list of all imaginable warnings.
-xpack_set_all_compiler_warnings(all_warnings)
 
 set(common_options
 
@@ -83,8 +88,8 @@ add_link_options(
 
     # Including files from other packages is not very nice, but functional.
     # Use absolute paths, otherwise set -L.
-    -T${xpack_build_folder}/xpacks/micro-os-plus-platform-qemu-cortexm/linker-scripts/mem.ld
-    -T${xpack_build_folder}/xpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections.ld
+    -T${CMAKE_BINARY_DIR}/xpacks/micro-os-plus-platform-qemu-cortexm/linker-scripts/mem.ld
+    -T${CMAKE_BINARY_DIR}/xpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections.ld
 )
 
 # -----------------------------------------------------------------------------
