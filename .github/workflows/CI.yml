@@ -74,8 +74,8 @@ jobs:
         xpm install --config native-meson-gcc11-release
         xpm run test-native-meson-gcc11
 
-    - name: Run test-stm32f4discovery-cmake
+    - name: Run test-qemu-mps2-an386-cmake
       run: |
-        xpm install --config stm32f4discovery-cmake-debug
-        xpm install --config stm32f4discovery-cmake-release
-        xpm run test-stm32f4discovery-cmake
+        xpm install --config qemu-mps2-an386-cmake-debug
+        xpm install --config qemu-mps2-an386-cmake-release
+        xpm run test-qemu-mps2-an386-cmake
