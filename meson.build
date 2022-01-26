@@ -113,10 +113,10 @@ endif
 lib_micro_os_plus_micro_test_plus = static_library(
   'micro-os-plus-micro-test-plus',
   include_directories: include_directories(
-    'include',
+    'sources/include',
   ),
   sources: files(
-    'src/micro-test-plus.cpp',
+    'sources/src/micro-test-plus.cpp',
   ),
   c_args: c_compiler_options,
   cpp_args: cpp_compiler_options,
@@ -125,7 +125,7 @@ lib_micro_os_plus_micro_test_plus = static_library(
 # https://mesonbuild.com/Reference-manual.html#declare_dependency
 lib_micro_os_plus_micro_test_plus_dependency = declare_dependency(
   include_directories: include_directories(
-    'include',
+    'sources/include',
   ),
 )
 
