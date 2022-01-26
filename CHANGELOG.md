@@ -6,6 +6,11 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2022-01-26
+
+- v2.1.0
+- rework CMake
+
 ## 2022-01-03
 
 - v2.0.5
