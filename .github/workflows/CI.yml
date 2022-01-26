@@ -32,6 +32,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         fetch-depth: 3
+        path: 'a'
 
     - name: Setup Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
       uses: actions/setup-node@v2
