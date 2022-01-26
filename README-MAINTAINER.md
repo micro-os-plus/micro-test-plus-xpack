@@ -22,7 +22,8 @@ The project is hosted on GitHub as:
 
 - <https://github.com/micro-os-plus/micro-test-plus-xpack.git>
 
-To clone it:
+To clone the stable branch (`xpack`), run the following commands in a
+terminal (on Windows use the _Git Bash_ console):
 
 ```sh
 rm -rf ~/Work/micro-test-plus-xpack.git && \
@@ -32,7 +33,7 @@ git clone \
   ~/Work/micro-test-plus-xpack.git
 ```
 
-To clone the development branch use:
+For development purposes, clone the `xpack-develop` branch:
 
 ```sh
 rm -rf ~/Work/micro-test-plus-xpack.git && \
