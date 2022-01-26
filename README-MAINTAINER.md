@@ -52,8 +52,8 @@ if you have older versions of the xPack installed, sometimes updates may fail
 to get the latest version. To fix this remove all global packages by using
 
 ```sh
-cd micro-test-plus-xpack.git
-xpm run rm-deps
+cd ~/Work/micro-test-plus-xpack.git
+xpm run rm-global-deps
 ```
 
 and repeat the steps from `xpm install`.
@@ -63,8 +63,8 @@ and repeat the steps from `xpm install`.
 With a clean slate, install dependencies:
 
 ```sh
-cd micro-test-plus-xpack.git
-xpm install --all-configs
+cd ~/Work/micro-test-plus-xpack.git
+xpm run install-all
 ```
 
 ## Run tests
@@ -74,7 +74,7 @@ The project includes unit tests.
 To perform the tests, run the usual xpm sequence:
 
 ```sh
-cd micro-test-plus-xpack.git
+cd ~/Work/micro-test-plus-xpack.git
 xpm run test-all
 ```
 
