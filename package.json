@@ -34,7 +34,7 @@
   "license": "MIT",
   "config": {},
   "devDependencies": {
-    "@xpack-dev-tools/cmake": "3.19.8-1.1",
+    "@xpack-dev-tools/cmake": "3.20.6-2.1",
     "@xpack-dev-tools/meson-build": "0.59.4-1.1",
     "@xpack-dev-tools/ninja-build": "1.10.2-5.1",
     "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#semver:2.2.0"
