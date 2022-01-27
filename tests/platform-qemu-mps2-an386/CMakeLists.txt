@@ -101,7 +101,7 @@ function(add_test_executable name)
   target_link_libraries(
     ${name}
 
-    PUBLIC # Why public?
+    PRIVATE
       micro-os-plus::micro-test-plus
   )
 
