@@ -1,4 +1,4 @@
 # platform-native
 
-This folder is here only for completeness, and to show that
-native tests do not need any special support.
+This folder includes only the CMake and meson build configuration,
+otherwise native tests do not need any special support.

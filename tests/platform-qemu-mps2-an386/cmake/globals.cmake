@@ -11,8 +11,7 @@
 # This file defines the global settings that apply to all targets.
 # Must be included with include() in the `tests` scope.
 
-file(RELATIVE_PATH folder_relative_path "${CMAKE_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}")
-message(VERBOSE "Including platform-qemu-mps2-an386 globals in '${folder_relative_path}' scope...")
+message(VERBOSE "Including platform-qemu-mps2-an386 globals...")
 
 # ---------------------------------------------------------------------------
 # Global definitions. Before any libraries.
@@ -24,10 +23,10 @@ xpack_set_all_compiler_warnings(all_warnings)
 include_directories(
 
   # Folders are relative to `tests`.
-  "platform-qemu-mps2-an386/include"
+  "platform-qemu-mps2-an386/include-config"
 )
 
-message(VERBOSE "+ platform-qemu-mps2-an386/include")
+message(VERBOSE "+ tests/platform-qemu-mps2-an386/include-config")
 
 # Global compiler definitions.
 add_compile_definitions(

@@ -14,6 +14,10 @@ message(VERBOSE "Processing platform-native...")
 
 # -----------------------------------------------------------------------------
 
+# A `micro-os-plus::platform` is not really needed and is not created.
+
+# =============================================================================
+
 function(add_test_executable name)
 
   add_executable(${name})
@@ -36,6 +40,7 @@ function(add_test_executable name)
   message(VERBOSE "+ tests/src/${name}.cpp")
 
   # Include folders.
+  # `platform-native/include` was added globally.
   target_include_directories(
     ${name}
 
@@ -59,7 +64,7 @@ function(add_test_executable name)
       micro-os-plus::micro-test-plus
   )
 
-  message(VERBOSE "=> ${name}")
+  message(VERBOSE ">> ${name}")
 
 endfunction()
 

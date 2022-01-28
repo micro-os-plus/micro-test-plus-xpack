@@ -11,8 +11,7 @@
 # This file defines the global settings that apply to all targets.
 # Must be included with include() in the `tests` scope.
 
-file(RELATIVE_PATH folder_relative_path "${CMAKE_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}")
-message(VERBOSE "Including platform-stm32f4discovery globals in '${folder_relative_path}' scope...")
+message(VERBOSE "Including platform-stm32f4discovery globals...")
 
 # ---------------------------------------------------------------------------
 # Global definitions. Before any libraries.
@@ -24,10 +23,10 @@ xpack_set_all_compiler_warnings(all_warnings)
 include_directories(
 
   # Folders are relative to `tests`.
-  "platform-stm32f4discovery/include"
+  "platform-stm32f4discovery/include-config"
 )
 
-message(VERBOSE "+ platform-stm32f4discovery/include")
+message(VERBOSE "+ tests/platform-stm32f4discovery/include-config")
 
 add_compile_definitions(
 

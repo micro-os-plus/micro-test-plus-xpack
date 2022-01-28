@@ -15,9 +15,6 @@
 # The result is a library that can be added to the linker with:
 #
 # `target_link_libraries(your-target PUBLIC micro-os-plus::micro-test-plus)`
-#
-# To avoid poluting this file with test related details, there is a separate
-# CMake configuration in the `tests` folder.
 
 # -----------------------------------------------------------------------------
 ## Preamble ##
@@ -25,41 +22,78 @@
 # https://cmake.org/cmake/help/v3.20/
 cmake_minimum_required(VERSION 3.20)
 
-project(
-  micro-os-plus-micro-test-plus
-  DESCRIPTION "µTest++"
-)
+# PRIVATE: build definitions, used internally
+# INTERFACE: usage definitions, passed up to targets linking to it
+# PUBLIC: both
 
-# Must be called from the project root folder.
-enable_testing()
-
-# -----------------------------------------------------------------------------
-## Project wide setup ##
-
-enable_language(C)
-enable_language(CXX)
-enable_language(ASM)
-
-# Specify the C/C++ standards.
-set(CMAKE_C_STANDARD 11)
-set(CMAKE_C_STANDARD_REQUIRED ON)
-set(CMAKE_C_EXTENSIONS OFF)
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
-
-# -----------------------------------------------------------------------------
-
-if ("${CMAKE_CURRENT_LIST_DIR}" STREQUAL "${CMAKE_SOURCE_DIR}")
-
-  # Tests, only when not part of a parent application
-  add_subdirectory("tests")
-
-else()
-
-  # Main targets built by this project.
-  add_subdirectory("sources")
-
+if(COMMAND xpack_get_package_name_and_version)
+  xpack_get_package_name_and_version("${CMAKE_CURRENT_SOURCE_DIR}/package.json")
+  message(VERBOSE "Processing xPack ${PACKAGE_JSON_NAME}@${PACKAGE_JSON_VERSION}...")
 endif()
 
 # -----------------------------------------------------------------------------
+## The project library definitions ##
+
+# The STATIC library is built once and linked to multiple tests.
+# Using INTERFACE would compile the source code separately for each test.
+add_library(micro-os-plus-micro-test-plus-static STATIC)
+
+# -----------------------------------------------------------------------------
+
+target_sources(
+  micro-os-plus-micro-test-plus-static
+
+  PRIVATE
+    "src/micro-test-plus.cpp"
+)
+
+message(VERBOSE "+ src/micro-test-plus.cpp")
+
+target_include_directories(
+  micro-os-plus-micro-test-plus-static
+
+  PUBLIC
+    "include"
+)
+
+message(VERBOSE "+ include")
+
+target_compile_definitions(
+  micro-os-plus-micro-test-plus-static
+
+  PRIVATE
+    # ...
+
+  PUBLIC
+    # ...
+)
+
+target_compile_options(
+  micro-os-plus-micro-test-plus-static
+
+  PRIVATE
+    # ...
+)
+
+target_link_options(
+  micro-os-plus-micro-test-plus-static
+
+  PRIVATE
+    # ...
+)
+
+target_link_libraries(
+  micro-os-plus-micro-test-plus-static
+
+  PUBLIC
+    # ...
+)
+
+# -----------------------------------------------------------------------------
+# Aliases.
+
+add_library(micro-os-plus::micro-test-plus ALIAS micro-os-plus-micro-test-plus-static)
+message(VERBOSE "> micro-os-plus::micro-test-plus -> micro-os-plus-micro-test-plus-static")
+
+# -----------------------------------------------------------------------------
+

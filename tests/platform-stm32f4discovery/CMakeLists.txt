@@ -10,6 +10,8 @@
 
 message(VERBOSE "Adding 'tests/platform-stm32f4discovery'...")
 
+# -------------------------------------------------------------------------
+
 add_library(platform-stm32f4discovery-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # -------------------------------------------------------------------------
@@ -25,8 +27,21 @@ target_sources(
 message(VERBOSE "+ tests/platform-stm32f4discovery/src/initialize-hardware.cpp")
 message(VERBOSE "+ tests/platform-stm32f4discovery/src/interrupts-handlers.cpp")
 
-# The include folder was passed globally, to catch the global config.h.
-# The preprocessor definitions were passed globally.
+target_include_directories(
+  platform-stm32f4discovery-interface
+
+  INTERFACE
+    "include-platform"
+)
+
+message(VERBOSE "+ tests/platform-stm32f4discovery/include-platform")
+
+target_compile_definitions(
+  platform-stm32f4discovery-interface
+
+  INTERFACE
+    # ...
+)
 
 target_compile_options(
   platform-stm32f4discovery-interface
@@ -46,9 +61,9 @@ target_link_libraries(
 # Aliases.
 
 add_library(micro-os-plus::platform ALIAS platform-stm32f4discovery-interface)
-message(VERBOSE "micro-os-plus::platform -> platform-stm32f4discovery-interface")
+message(VERBOSE "> micro-os-plus::platform -> platform-stm32f4discovery-interface")
 
-# -------------------------------------------------------------------------
+# =============================================================================
 
 function(add_test_executable name)
 
@@ -72,6 +87,7 @@ function(add_test_executable name)
   message(VERBOSE "+ tests/src/${name}.cpp")
 
   # Include folders.
+  # `tests/platform-stm32f4discovery/include` was added globally.
   target_include_directories(
     ${name}
 
@@ -130,7 +146,7 @@ function(add_test_executable name)
     COMMAND ${CMAKE_SIZE} --format=berkeley "$<TARGET_FILE:${name}>"
   )
 
-  message(VERBOSE "=> ${name}")
+  message(VERBOSE ">> ${name}")
 
 endfunction()
 
