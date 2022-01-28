@@ -48,8 +48,8 @@ exercise_throw (bool mustThrow);
 
 // ----------------------------------------------------------------------------
 
-int g_argc;
-char** g_argv;
+static int g_argc;
+static char** g_argv;
 
 // The test suite.
 int
