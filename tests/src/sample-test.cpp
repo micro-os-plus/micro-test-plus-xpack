@@ -17,6 +17,9 @@ using namespace micro_os_plus;
 void
 test_case_something (micro_test_plus::session& t);
 
+void
+test_case_args (micro_test_plus::session& t);
+
 #if defined(__EXCEPTIONS)
 
 void
@@ -45,15 +48,23 @@ exercise_throw (bool mustThrow);
 
 // ----------------------------------------------------------------------------
 
+int g_argc;
+char** g_argv;
+
 // The test suite.
 int
 main (int argc, char* argv[])
 {
   micro_test_plus::session t (argc, argv);
 
+  g_argc = argc;
+  g_argv = argv;
+
   t.start_suite ("Sample test");
 
   t.run_test_case (test_case_something, "Check various conditions");
+
+  t.run_test_case (test_case_args, "Check args");
 
 #if defined(__EXCEPTIONS)
 
@@ -117,6 +128,22 @@ test_case_something (micro_test_plus::session& t)
 
   // More complex conditions are passed as booleans.
   MTP_EXPECT_TRUE (t, compute_condition (), "condition() is true");
+}
+
+void
+test_case_args (micro_test_plus::session& t)
+{
+  MTP_EXPECT_EQ (t, g_argc, 3, "argc == 3");
+
+  if (g_argc > 1)
+    {
+      MTP_EXPECT_EQ (t, g_argv[1], "one", "argv[1] == 'one'");
+    }
+
+  if (g_argc > 2)
+    {
+      MTP_EXPECT_EQ (t, g_argv[2], "two", "argv[2] == 'two'");
+    }
 }
 
 // ----------------------------------------------------------------------------
