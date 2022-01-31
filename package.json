@@ -45,14 +45,15 @@
       "buildFolderRelativePath": "{{ 'build' | path_join: configuration.name | to_filename | downcase }}",
       "buildFolderRelativePathPosix": "{{ 'build' | path_posix_join: configuration.name | downcase }}",
       "commandCMakePrepare": "{{ properties.commandCMakeReconfigure }} --log-level=VERBOSE",
-      "commandCMakePrepareWithToolchain": "{{ properties.commandCMakePrepare }} -D CMAKE_TOOLCHAIN_FILE=top/xpacks/micro-os-plus-build-helper/cmake/{{ properties.toolchainFileName }}",
+      "commandCMakePrepareWithToolchain": "{{ properties.commandCMakePrepare }} -D CMAKE_TOOLCHAIN_FILE=top/xpacks/micro-os-plus-build-helper/cmake/toolchains/{{ properties.toolchainFileName }}",
       "commandCMakeReconfigure": "cmake -S tests -B {{ properties.buildFolderRelativePathPosix }} -G Ninja -D CMAKE_BUILD_TYPE={{ properties.buildType }} -D PLATFORM_NAME={{ properties.platformName }} -D CMAKE_EXPORT_COMPILE_COMMANDS=ON",
       "commandCMakeBuild": "cmake --build {{ properties.buildFolderRelativePathPosix }} --verbose",
       "commandCMakeClean": "cmake --build {{ properties.buildFolderRelativePathPosix }} --target clean",
       "commandCMakePerformTests": "cd {{ properties.buildFolderRelativePath }} && ctest -V",
-      "commandMesonPrepare": "meson setup --backend ninja --buildtype {{ properties.buildType }} -D is-micro-os-plus-micro-test-plus-test=true {{ properties.buildFolderRelativePathPosix }} .",
-      "commandMesonPrepareMesonWithToolchain": "meson setup --backend ninja --buildtype {{ properties.buildType }} -D is-micro-os-plus-micro-test-plus-test=true --native-file xpacks/micro-os-plus-build-helper/meson/{% if os.platform == 'win32' %}{{ properties.toolchainWindowsFileName }}{% else %}{{ properties.toolchainFileName }}{% endif %} {{ properties.buildFolderRelativePathPosix }} .",
-      "commandMesonReconfigure": "meson setup --reconfigure {{ properties.buildFolderRelativePathPosix }} .",
+      "commandMesonPrepare": "meson setup --backend ninja --buildtype {{ properties.buildType }} -D platform-name={{ properties.platformName }} {{ properties.buildFolderRelativePathPosix }} tests",
+      "commandMesonPrepareWithToolchain": "meson setup --backend ninja --buildtype {{ properties.buildType }} -D platform-name={{ properties.platformName }} --native-file xpacks/micro-os-plus-build-helper/meson/toolchains/{% if os.platform == 'win32' %}{{ properties.toolchainWindowsFileName }}{% else %}{{ properties.toolchainFileName }}{% endif %} --native-file tests/platform-{{ properties.platformName }}/meson/native.ini {{ properties.buildFolderRelativePathPosix }} tests",
+      "commandMesonPrepareCross": "meson setup --backend ninja --buildtype {{ properties.buildType }} -D platform-name={{ properties.platformName }} --cross xpacks/micro-os-plus-build-helper/meson/toolchains/{% if os.platform == 'win32' %}{{ properties.toolchainWindowsFileName }}{% else %}{{ properties.toolchainFileName }}{% endif %} --cross tests/platform-{{ properties.platformName }}/meson/cross.ini {{ properties.buildFolderRelativePathPosix }} tests",
+      "commandMesonReconfigure": "meson setup --reconfigure {{ properties.buildFolderRelativePathPosix }} tests",
       "commandMesonBuild": "meson compile -C {{ properties.buildFolderRelativePathPosix }} --verbose",
       "commandMesonClean": "meson compile -C {{ properties.buildFolderRelativePathPosix }} --clean",
       "commandMesonPerformTests": "meson test -C {{ properties.buildFolderRelativePathPosix }} --verbose"
@@ -220,7 +221,7 @@
         "properties": {
           "buildType": "Debug",
           "platformName": "native",
-          "toolchainFileName": "toolchain-gcc.cmake"
+          "toolchainFileName": "gcc.cmake"
         },
         "actions": {
           "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
@@ -239,7 +240,7 @@
         "properties": {
           "buildType": "Release",
           "platformName": "native",
-          "toolchainFileName": "toolchain-gcc.cmake"
+          "toolchainFileName": "gcc.cmake"
         },
         "actions": {
           "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
@@ -258,7 +259,7 @@
         "properties": {
           "buildType": "Debug",
           "platformName": "native",
-          "toolchainFileName": "toolchain-gcc.cmake"
+          "toolchainFileName": "gcc.cmake"
         },
         "actions": {
           "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
@@ -277,7 +278,7 @@
         "properties": {
           "buildType": "Release",
           "platformName": "native",
-          "toolchainFileName": "toolchain-gcc.cmake"
+          "toolchainFileName": "gcc.cmake"
         },
         "actions": {
           "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
@@ -296,7 +297,7 @@
         "properties": {
           "buildType": "Debug",
           "platformName": "native",
-          "toolchainFileName": "toolchain-clang.cmake"
+          "toolchainFileName": "clang.cmake"
         },
         "actions": {
           "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
@@ -315,7 +316,7 @@
         "properties": {
           "buildType": "Release",
           "platformName": "native",
-          "toolchainFileName": "toolchain-clang.cmake"
+          "toolchainFileName": "clang.cmake"
         },
         "actions": {
           "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
@@ -364,11 +365,11 @@
         "properties": {
           "buildType": "debug",
           "platformName": "native",
-          "toolchainFileName": "toolchain-gcc.ini",
-          "toolchainWindowsFileName": "toolchain-gcc-cmd.ini"
+          "toolchainFileName": "gcc.ini",
+          "toolchainWindowsFileName": "gcc-cmd.ini"
         },
         "actions": {
-          "prepare": "{{ properties.commandMesonPrepareMesonWithToolchain }}",
+          "prepare": "{{ properties.commandMesonPrepareWithToolchain }}",
           "build": [
             "{{ properties.commandMesonReconfigure }}",
             "{{ properties.commandMesonBuild }}"
@@ -384,11 +385,11 @@
         "properties": {
           "buildType": "release",
           "platformName": "native",
-          "toolchainFileName": "toolchain-gcc.ini",
-          "toolchainWindowsFileName": "toolchain-gcc-cmd.ini"
+          "toolchainFileName": "gcc.ini",
+          "toolchainWindowsFileName": "gcc-cmd.ini"
         },
         "actions": {
-          "prepare": "{{ properties.commandMesonPrepareMesonWithToolchain }}",
+          "prepare": "{{ properties.commandMesonPrepareWithToolchain }}",
           "build": [
             "{{ properties.commandMesonReconfigure }}",
             "{{ properties.commandMesonBuild }}"
@@ -404,11 +405,11 @@
         "properties": {
           "buildType": "debug",
           "platformName": "native",
-          "toolchainFileName": "toolchain-clang.ini",
-          "toolchainWindowsFileName": "toolchain-clang-cmd.ini"
+          "toolchainFileName": "clang.ini",
+          "toolchainWindowsFileName": "clang-cmd.ini"
         },
         "actions": {
-          "prepare": "{{ properties.commandMesonPrepareMesonWithToolchain }}",
+          "prepare": "{{ properties.commandMesonPrepareWithToolchain }}",
           "build": [
             "{{ properties.commandMesonReconfigure }}",
             "{{ properties.commandMesonBuild }}"
@@ -424,11 +425,11 @@
         "properties": {
           "buildType": "release",
           "platformName": "native",
-          "toolchainFileName": "toolchain-clang.ini",
-          "toolchainWindowsFileName": "toolchain-clang-cmd.ini"
+          "toolchainFileName": "clang.ini",
+          "toolchainWindowsFileName": "clang-cmd.ini"
         },
         "actions": {
-          "prepare": "{{ properties.commandMesonPrepareMesonWithToolchain }}",
+          "prepare": "{{ properties.commandMesonPrepareWithToolchain }}",
           "build": [
             "{{ properties.commandMesonReconfigure }}",
             "{{ properties.commandMesonBuild }}"
@@ -444,7 +445,7 @@
         "properties": {
           "buildType": "Debug",
           "platformName": "qemu-mps2-an386",
-          "toolchainFileName": "toolchain-arm-none-eabi-gcc.cmake",
+          "toolchainFileName": "arm-none-eabi-gcc.cmake",
           "qemuBoardName": "QEMU mps2-an386",
           "shortConfigurationName": "q1d",
           "buildFolderRelativePath": "{% if os.platform != 'win32' %}{{ 'build' | path_join: configuration.name | to_filename | downcase }}{% else %}{{ 'build' | path_join: properties.shortConfigurationName | to_filename | downcase }}{% endif %}",
@@ -488,7 +489,7 @@
         "properties": {
           "buildType": "MinSizeRel",
           "platformName": "qemu-mps2-an386",
-          "toolchainFileName": "toolchain-arm-none-eabi-gcc.cmake",
+          "toolchainFileName": "arm-none-eabi-gcc.cmake",
           "qemuBoardName": "QEMU mps2-an386",
           "shortConfigurationName": "q1r",
           "buildFolderRelativePath": "{% if os.platform != 'win32' %}{{ 'build' | path_join: configuration.name | to_filename | downcase }}{% else %}{{ 'build' | path_join: properties.shortConfigurationName | to_filename | downcase }}{% endif %}",
@@ -532,7 +533,7 @@
         "properties": {
           "buildType": "Debug",
           "platformName": "stm32f4discovery",
-          "toolchainFileName": "toolchain-arm-none-eabi-gcc.cmake",
+          "toolchainFileName": "arm-none-eabi-gcc.cmake",
           "qemuBoardName": "STM32F4-Discovery"
         },
         "actions": {
@@ -573,7 +574,7 @@
         "properties": {
           "buildType": "MinSizeRel",
           "platformName": "stm32f4discovery",
-          "toolchainFileName": "toolchain-arm-none-eabi-gcc.cmake",
+          "toolchainFileName": "arm-none-eabi-gcc.cmake",
           "qemuBoardName": "STM32F4-Discovery"
         },
         "actions": {
