@@ -12,12 +12,14 @@ message(VERBOSE "Adding 'tests/platform-qemu-mps2-an386'...")
 
 # -----------------------------------------------------------------------------
 
-add_library(platform-qemu-cortexm-interface INTERFACE EXCLUDE_FROM_ALL)
+set(xpack_platform_compile_definition "PLATFORM_QEMU_MPS2_AN386")
+
+add_library(platform-qemu-mps2-an386-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # -----------------------------------------------------------------------------
 
 target_sources(
-  platform-qemu-cortexm-interface
+  platform-qemu-mps2-an386-interface
 
   INTERFACE
     "src/initialize-hardware.cpp"
@@ -28,7 +30,7 @@ message(VERBOSE "+ tests/platform-qemu-mps2-an386/src/initialize-hardware.cpp")
 message(VERBOSE "+ tests/platform-qemu-mps2-an386/src/interrupts-handlers.cpp")
 
 target_include_directories(
-  platform-qemu-cortexm-interface
+  platform-qemu-mps2-an386-interface
 
   INTERFACE
     "include-platform"
@@ -37,31 +39,33 @@ target_include_directories(
 message(VERBOSE "+ tests/platform-qemu-mps2-an386/include-platform")
 
 target_compile_definitions(
-  platform-qemu-cortexm-interface
+  platform-qemu-mps2-an386-interface
 
   INTERFACE
-    # ...
+    "${xpack_platform_compile_definition}"
 )
 
+message(VERBOSE "+ -D${xpack_platform_compile_definition}")
+
 target_compile_options(
-  platform-qemu-cortexm-interface
+  platform-qemu-mps2-an386-interface
 
   INTERFACE
     # ...
 )
 
 target_link_libraries(
-  platform-qemu-cortexm-interface
+  platform-qemu-mps2-an386-interface
 
   INTERFACE
-    micro-os-plus::platform-qemu-cortexm
+    micro-os-plus::device-qemu-cortexm
 )
 
 # -----------------------------------------------------------------------------
 # Aliases.
 
-add_library(micro-os-plus::platform ALIAS platform-qemu-cortexm-interface)
-message(VERBOSE "> micro-os-plus::platform -> platform-qemu-cortexm-interface")
+add_library(micro-os-plus::platform ALIAS platform-qemu-mps2-an386-interface)
+message(VERBOSE "> micro-os-plus::platform -> platform-qemu-mps2-an386-interface")
 
 # =============================================================================
 
