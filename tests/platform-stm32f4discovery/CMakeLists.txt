@@ -10,11 +10,11 @@
 
 message(VERBOSE "Adding 'tests/platform-stm32f4discovery'...")
 
-# -------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 add_library(platform-stm32f4discovery-interface INTERFACE EXCLUDE_FROM_ALL)
 
-# -------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 target_sources(
   platform-stm32f4discovery-interface
@@ -57,7 +57,7 @@ target_link_libraries(
     micro-os-plus::platform-stm32f4discovery
 )
 
-# -------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # Aliases.
 
 add_library(micro-os-plus::platform ALIAS platform-stm32f4discovery-interface)

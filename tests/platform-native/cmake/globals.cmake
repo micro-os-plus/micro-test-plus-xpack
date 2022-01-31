@@ -13,7 +13,7 @@
 
 message(VERBOSE "Including platform-native globals...")
 
-# ---------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # Global definitions. Before any libraries.
 
 # A list of all imaginable warnings.

@@ -13,7 +13,7 @@
 
 message(VERBOSE "Including platform-qemu-mps2-an386 globals...")
 
-# ---------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # Global definitions. Before any libraries.
 
 # A list of all imaginable warnings.

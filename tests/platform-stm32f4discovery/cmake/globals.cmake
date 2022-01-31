@@ -13,7 +13,7 @@
 
 message(VERBOSE "Including platform-stm32f4discovery globals...")
 
-# ---------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # Global definitions. Before any libraries.
 
 # A list of all imaginable warnings.

@@ -10,11 +10,11 @@
 
 message(VERBOSE "Adding 'tests/platform-qemu-mps2-an386'...")
 
-# -------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 add_library(platform-qemu-cortexm-interface INTERFACE EXCLUDE_FROM_ALL)
 
-# -------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 target_sources(
   platform-qemu-cortexm-interface
@@ -57,7 +57,7 @@ target_link_libraries(
     micro-os-plus::platform-qemu-cortexm
 )
 
-# -------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # Aliases.
 
 add_library(micro-os-plus::platform ALIAS platform-qemu-cortexm-interface)
