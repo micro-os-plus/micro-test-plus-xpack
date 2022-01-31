@@ -87,8 +87,10 @@ add_link_options(
 
     # Including files from other packages is not very nice, but functional.
     # Use absolute paths, otherwise set -L.
-    -T${CMAKE_BINARY_DIR}/xpacks/micro-os-plus-platform-qemu-cortexm/linker-scripts/mem.ld
+    -T${CMAKE_BINARY_DIR}/xpacks/micro-os-plus-device-qemu-cortexm/linker-scripts/mem.ld
     -T${CMAKE_BINARY_DIR}/xpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections.ld
 )
+
+set(xpack_device_compile_definition "DEVICE_QEMU_CORTEX_M4")
 
 # -----------------------------------------------------------------------------
