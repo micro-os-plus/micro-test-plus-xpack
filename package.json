@@ -523,10 +523,99 @@
           "@xpack-dev-tools/arm-none-eabi-gcc": "10.3.1-2.3.1",
           "@xpack-dev-tools/qemu-arm": "6.2.0-1.1",
           "@micro-os-plus/architecture-cortexm": "github:micro-os-plus/architecture-cortexm-xpack#semver:3.1.0",
+          "@micro-os-plus/device-cortexm": "github:micro-os-plus/device-cortexm-xpack#semver:2.3.0",
+          "@micro-os-plus/device-qemu-cortexm": "github:micro-os-plus/device-qemu-cortexm-xpack#semver:1.0.0",
           "@micro-os-plus/diag-trace": "github:micro-os-plus/diag-trace-xpack#semver:2.3.0",
           "@micro-os-plus/libs-c": "github:micro-os-plus/libs-c-xpack#semver:2.1.0",
           "@micro-os-plus/libs-cpp": "github:micro-os-plus/libs-cpp-xpack#semver:2.1.0",
-          "@micro-os-plus/platform-qemu-cortexm": "github:micro-os-plus/platform-qemu-cortexm-xpack#semver:1.0.0",
+          "@micro-os-plus/semihosting": "github:micro-os-plus/semihosting-xpack#semver:3.1.0",
+          "@micro-os-plus/startup": "github:micro-os-plus/startup-xpack#semver:2.1.0",
+          "@micro-os-plus/version": "github:micro-os-plus/version-xpack#semver:7.1.0",
+          "@xpack-3rd-party": "github:xpack-3rd-party/arm-cmsis-core-m-xpack#semver:5.4.0-3"
+        }
+      },
+      "qemu-mps2-an386-meson-debug": {
+        "properties": {
+          "buildType": "debug",
+          "platformName": "qemu-mps2-an386",
+          "toolchainFileName": "arm-none-eabi-gcc.ini",
+          "toolchainWindowsFileName": "arm-none-eabi-gcc-cmd.ini",
+          "qemuBoardName": "QEMU mps2-an386"
+        },
+        "actions": {
+          "link-deps": [
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexm",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/device-cortexm",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/device-qemu-cortexm",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/diag-trace",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/libs-c",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/libs-cpp",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/startup",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/version",
+            "xpm link --config {{ configuration.name }} @xpack-3rd-party/arm-cmsis-core-m"
+          ],
+          "prepare": "{{ properties.commandMesonPrepareCross }}",
+          "build": [
+            "{{ properties.commandMesonReconfigure }}",
+            "{{ properties.commandMesonBuild }}"
+          ],
+          "test": "{{ properties.commandMesonPerformTests }}",
+          "clean": "{{ properties.commandMesonClean }}"
+        },
+        "devDependencies": {
+          "@xpack-dev-tools/arm-none-eabi-gcc": "10.3.1-2.3.1",
+          "@xpack-dev-tools/qemu-arm": "6.2.0-1.1",
+          "@micro-os-plus/architecture-cortexm": "github:micro-os-plus/architecture-cortexm-xpack#semver:3.1.0",
+          "@micro-os-plus/device-cortexm": "github:micro-os-plus/device-cortexm-xpack#semver:2.3.0",
+          "@micro-os-plus/device-qemu-cortexm": "github:micro-os-plus/device-qemu-cortexm-xpack#semver:1.0.0",
+          "@micro-os-plus/diag-trace": "github:micro-os-plus/diag-trace-xpack#semver:2.3.0",
+          "@micro-os-plus/libs-c": "github:micro-os-plus/libs-c-xpack#semver:2.1.0",
+          "@micro-os-plus/libs-cpp": "github:micro-os-plus/libs-cpp-xpack#semver:2.1.0",
+          "@micro-os-plus/semihosting": "github:micro-os-plus/semihosting-xpack#semver:3.1.0",
+          "@micro-os-plus/startup": "github:micro-os-plus/startup-xpack#semver:2.1.0",
+          "@micro-os-plus/version": "github:micro-os-plus/version-xpack#semver:7.1.0",
+          "@xpack-3rd-party": "github:xpack-3rd-party/arm-cmsis-core-m-xpack#semver:5.4.0-3"
+        }
+      },
+      "qemu-mps2-an386-meson-release": {
+        "properties": {
+          "buildType": "release",
+          "platformName": "qemu-mps2-an386",
+          "toolchainFileName": "arm-none-eabi-gcc.ini",
+          "toolchainWindowsFileName": "arm-none-eabi-gcc-cmd.ini",
+          "qemuBoardName": "QEMU mps2-an386"
+        },
+        "actions": {
+          "link-deps": [
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexm",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/device-cortexm",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/device-qemu-cortexm",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/diag-trace",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/libs-c",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/libs-cpp",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/startup",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/version",
+            "xpm link --config {{ configuration.name }} @xpack-3rd-party/arm-cmsis-core-m"
+          ],
+          "prepare": "{{ properties.commandMesonPrepareCross }}",
+          "build": [
+            "{{ properties.commandMesonReconfigure }}",
+            "{{ properties.commandMesonBuild }}"
+          ],
+          "test": "{{ properties.commandMesonPerformTests }}",
+          "clean": "{{ properties.commandMesonClean }}"
+        },
+        "devDependencies": {
+          "@xpack-dev-tools/arm-none-eabi-gcc": "10.3.1-2.3.1",
+          "@xpack-dev-tools/qemu-arm": "6.2.0-1.1",
+          "@micro-os-plus/architecture-cortexm": "github:micro-os-plus/architecture-cortexm-xpack#semver:3.1.0",
+          "@micro-os-plus/device-cortexm": "github:micro-os-plus/device-cortexm-xpack#semver:2.3.0",
+          "@micro-os-plus/device-qemu-cortexm": "github:micro-os-plus/device-qemu-cortexm-xpack#semver:1.0.0",
+          "@micro-os-plus/diag-trace": "github:micro-os-plus/diag-trace-xpack#semver:2.3.0",
+          "@micro-os-plus/libs-c": "github:micro-os-plus/libs-c-xpack#semver:2.1.0",
+          "@micro-os-plus/libs-cpp": "github:micro-os-plus/libs-cpp-xpack#semver:2.1.0",
           "@micro-os-plus/semihosting": "github:micro-os-plus/semihosting-xpack#semver:3.1.0",
           "@micro-os-plus/startup": "github:micro-os-plus/startup-xpack#semver:2.1.0",
           "@micro-os-plus/version": "github:micro-os-plus/version-xpack#semver:7.1.0",
