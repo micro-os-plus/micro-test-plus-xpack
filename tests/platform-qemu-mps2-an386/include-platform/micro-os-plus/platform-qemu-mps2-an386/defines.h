@@ -7,8 +7,8 @@
  * for any purpose is hereby granted, under the terms of the MIT license.
  */
 
-#ifndef MICRO_OS_PLUS_PLATFORM_QEMU_CORTEXM_DEFINES_H_
-#define MICRO_OS_PLUS_PLATFORM_QEMU_CORTEXM_DEFINES_H_
+#ifndef MICRO_OS_PLUS_PLATFORM_QEMU_MPS2_AN386_DEFINES_H_
+#define MICRO_OS_PLUS_PLATFORM_QEMU_MPS2_AN386_DEFINES_H_
 
 // ----------------------------------------------------------------------------
 
@@ -16,6 +16,6 @@
 
 // ----------------------------------------------------------------------------
 
-#endif /* MICRO_OS_PLUS_PLATFORM_QEMU_CORTEXM_DEFINES_H_ */
+#endif /* MICRO_OS_PLUS_PLATFORM_QEMU_MPS2_AN386_DEFINES_H_ */
 
 // ----------------------------------------------------------------------------
