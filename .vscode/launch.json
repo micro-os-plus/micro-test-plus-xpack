@@ -2,6 +2,8 @@
   // Use IntelliSense to learn about possible attributes.
   // Hover to view descriptions of existing attributes.
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  // https://code.visualstudio.com/docs/cpp/launch-json-reference
+  // https://github.com/Marus/cortex-debug/blob/master/debug_attributes.md
   "version": "0.2.0",
   "configurations": [
     {
@@ -18,6 +20,42 @@
       "environment": [],
       "externalConsole": false,
       "MIMode": "lldb"
+    },
+    {
+      "name": "(arm-none-eabi-gdb) qemu-mps2-an386-cmake-debug sample-test",
+      "cwd": "${workspaceRoot}/build/qemu-mps2-an386-cmake-debug",
+      "executable": "platform/sample-test.elf",
+      "request": "launch",
+      "type": "cortex-debug",
+      "servertype": "qemu",
+      "serverpath": "${workspaceRoot}/build/qemu-mps2-an386-cmake-debug/xpacks/.bin/qemu-system-arm",
+      "serverArgs": [
+        "-d", "unimp,guest_errors",
+        "--semihosting-config", "arg=sample-test,arg=one,arg=two"
+      ],
+      "machine": "mps2-an386",
+      "cpu": "cortex-m4",
+      "objdumpPath": "${workspaceRoot}/build/qemu-mps2-an386-cmake-debug/xpacks/.bin/arm-none-eabi-objdump",
+      "gdbPath": "${workspaceRoot}/build/qemu-mps2-an386-cmake-debug/xpacks/.bin/arm-none-eabi-gdb",
+      "runToEntryPoint": "_start"
+    },
+    {
+      "name": "(arm-none-eabi-gdb) qemu-mps2-an386-meson-debug sample-test",
+      "cwd": "${workspaceRoot}/build/qemu-mps2-an386-meson-debug",
+      "executable": "meson-out/sample-test.elf",
+      "request": "launch",
+      "type": "cortex-debug",
+      "servertype": "qemu",
+      "serverpath": "${workspaceRoot}/build/qemu-mps2-an386-meson-debug/xpacks/.bin/qemu-system-arm",
+      "serverArgs": [
+        "-d", "unimp,guest_errors",
+        "--semihosting-config", "arg=sample-test,arg=one,arg=two"
+      ],
+      "machine": "mps2-an386",
+      "cpu": "cortex-m4",
+      "objdumpPath": "${workspaceRoot}/build/qemu-mps2-an386-meson-debug/xpacks/.bin/arm-none-eabi-objdump",
+      "gdbPath": "${workspaceRoot}/build/qemu-mps2-an386-meson-debug/xpacks/.bin/arm-none-eabi-gdb",
+      "runToEntryPoint": "_start"
     }
   ]
 }
