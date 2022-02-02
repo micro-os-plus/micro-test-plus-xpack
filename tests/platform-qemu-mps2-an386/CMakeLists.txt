@@ -13,6 +13,7 @@ message(VERBOSE "Adding 'tests/platform-qemu-mps2-an386'...")
 # -----------------------------------------------------------------------------
 
 set(xpack_platform_compile_definition "PLATFORM_QEMU_MPS2_AN386")
+# set(xpack_create_listing true)
 
 add_library(platform-qemu-mps2-an386-interface INTERFACE EXCLUDE_FROM_ALL)
 
@@ -149,6 +150,14 @@ function(add_test_executable name)
     TARGET ${name} POST_BUILD
     COMMAND ${CMAKE_SIZE} --format=berkeley "$<TARGET_FILE:${name}>"
   )
+
+  if(xpack_create_listing)
+    add_custom_command(
+      TARGET ${name} POST_BUILD
+      COMMAND ${CMAKE_OBJDUMP} --source --all-headers --demangle --line-numbers --wide "$<TARGET_FILE:${name}>" > ${name}-list.txt
+      VERBATIM
+    )
+  endif()
 
   message(VERBOSE ">> ${name}")
 
