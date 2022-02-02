@@ -6,13 +6,16 @@
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
 #
+# If a copy of the license was not distributed with this file, it can
+# be obtained from https://opensource.org/licenses/MIT/.
+#
 # -----------------------------------------------------------------------------
 
 # This file is intended to be consumed by applications with:
 #
 # `add_subdirectory("xpacks/micro-os-plus-micro-test-plus")`
 #
-# The result is a library that can be added to the linker with:
+# The result is an interface library that can be added to the linker with:
 #
 # `target_link_libraries(your-target PUBLIC micro-os-plus::micro-test-plus)`
 
@@ -21,6 +24,11 @@
 
 # https://cmake.org/cmake/help/v3.20/
 cmake_minimum_required(VERSION 3.20)
+
+project(
+  micro-os-plus-micro-test-plus
+  DESCRIPTION "µTest++"
+)
 
 if(COMMAND xpack_get_package_name_and_version)
   xpack_get_package_name_and_version("${CMAKE_CURRENT_SOURCE_DIR}/package.json")
@@ -35,67 +43,56 @@ endif()
 # INTERFACE: usage definitions, passed up to targets linking to it
 # PUBLIC: both
 
-# The STATIC library is built once and linked to multiple tests.
-# Using INTERFACE would compile the source code separately for each test.
-add_library(micro-os-plus-micro-test-plus-static STATIC)
+add_library(micro-os-plus-micro-test-plus-interface INTERFACE)
 
 # -----------------------------------------------------------------------------
 # Target settings.
 
-target_sources(
-  micro-os-plus-micro-test-plus-static
-
-  PRIVATE
-    "src/micro-test-plus.cpp"
-)
-
-message(VERBOSE "+ src/micro-test-plus.cpp")
-
 target_include_directories(
-  micro-os-plus-micro-test-plus-static
+  micro-os-plus-micro-test-plus-interface
 
-  PUBLIC
+  INTERFACE
     "include"
 )
 
 message(VERBOSE "+ include")
 
+target_sources(
+  micro-os-plus-micro-test-plus-interface
+
+  INTERFACE
+    "src/micro-test-plus.cpp"
+)
+
+message(VERBOSE "+ src/micro-test-plus.cpp")
+
 target_compile_definitions(
-  micro-os-plus-micro-test-plus-static
+  micro-os-plus-micro-test-plus-interface
 
-  PRIVATE
-    # ...
-
-  PUBLIC
+  INTERFACE
     # ...
 )
 
 target_compile_options(
-  micro-os-plus-micro-test-plus-static
+  micro-os-plus-micro-test-plus-interface
 
-  PRIVATE
-    # ...
-)
-
-target_link_options(
-  micro-os-plus-micro-test-plus-static
-
-  PRIVATE
+  INTERFACE
     # ...
 )
 
 target_link_libraries(
-  micro-os-plus-micro-test-plus-static
+  micro-os-plus-micro-test-plus-interface
 
-  PUBLIC
+  INTERFACE
     # ...
 )
 
 # -----------------------------------------------------------------------------
 # Aliases.
 
-add_library(micro-os-plus::micro-test-plus ALIAS micro-os-plus-micro-test-plus-static)
-message(VERBOSE "> micro-os-plus::micro-test-plus -> micro-os-plus-micro-test-plus-static")
+# https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
+add_library(micro-os-plus::micro-test-plus ALIAS micro-os-plus-micro-test-plus-interface)
+message(VERBOSE "> micro-os-plus::micro-test-plus -> micro-os-plus-micro-test-plus-interface")
 
 # -----------------------------------------------------------------------------
 

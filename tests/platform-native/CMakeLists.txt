@@ -6,6 +6,9 @@
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
 #
+# If a copy of the license was not distributed with this file, it can
+# be obtained from https://opensource.org/licenses/MIT/.
+#
 # -----------------------------------------------------------------------------
 
 # This file defines the global settings that apply to all targets.
@@ -21,6 +24,17 @@ message(VERBOSE "Processing platform-native...")
 function(add_test_executable name)
 
   add_executable(${name})
+
+  # Include folders.
+  # `platform-native/include` was added globally.
+  target_include_directories(
+    ${name}
+
+    PRIVATE
+      "../include"
+  )
+
+  message(VERBOSE "+ -I tests/include")
 
   set_target_properties(
     ${name}
@@ -38,17 +52,6 @@ function(add_test_executable name)
   )
 
   message(VERBOSE "+ tests/src/${name}.cpp")
-
-  # Include folders.
-  # `platform-native/include` was added globally.
-  target_include_directories(
-    ${name}
-
-    PRIVATE
-      "../include"
-  )
-
-  message(VERBOSE "+ tests/include")
 
   target_compile_definitions(
     ${name}

@@ -6,6 +6,9 @@
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
 #
+# If a copy of the license was not distributed with this file, it can
+# be obtained from https://opensource.org/licenses/MIT/.
+#
 # -----------------------------------------------------------------------------
 
 message(VERBOSE "Adding 'tests/platform-qemu-mps2-an386'...")
@@ -46,7 +49,7 @@ target_compile_definitions(
     "${xpack_platform_compile_definition}"
 )
 
-message(VERBOSE "+ -D${xpack_platform_compile_definition}")
+message(VERBOSE "+ -D ${xpack_platform_compile_definition}")
 
 target_compile_options(
   platform-qemu-mps2-an386-interface
@@ -81,6 +84,17 @@ function(add_test_executable name)
       OUTPUT_NAME "${name}"
   )
 
+  # Include folders.
+  # `tests/platform-qemu-mps2-an386/include` was added globally.
+  target_include_directories(
+    ${name}
+
+    PRIVATE
+      "../include"
+  )
+
+  message(VERBOSE "+ -I tests/include")
+
   # Application sources.
   target_sources(
     ${name}
@@ -91,16 +105,6 @@ function(add_test_executable name)
 
   message(VERBOSE "+ tests/src/${name}.cpp")
 
-  # Include folders.
-  # `tests/platform-qemu-mps2-an386/include` was added globally.
-  target_include_directories(
-    ${name}
-
-    PRIVATE
-      "../include"
-  )
-
-  message(VERBOSE "+ tests/include")
 
   target_compile_definitions(
     ${name}
@@ -142,7 +146,7 @@ function(add_test_executable name)
     ${name}
 
     PRIVATE
-      -Wl,-Map,${name}-map.txt
+      -Wl,-Map,platform/${name}-map.txt
       # -v
   )
 
