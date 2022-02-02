@@ -69,15 +69,11 @@ foreach name : test_names
       micro_os_plus_semihosting_dependency,
       micro_os_plus_startup_dependency,
     ],
-    link_with: [
-      micro_os_plus_micro_test_plus_static,
-
-    ],
     link_args: linker_options + [
       '-Wl,-Map,meson-out/'+ name + '-map.txt',
       '-nostartfiles',
       '-u_interrupt_vectors',
-      '-v',
+      # '-v',
       # Path are relative to the build folder.
       '-Txpacks/micro-os-plus-device-qemu-cortexm/linker-scripts/mem.ld',
       '-Txpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections.ld',
@@ -93,6 +89,7 @@ foreach name : test_names
   # Leave the result in a variable with the test name.
   set_variable(name.underscorify(), exe)
 
+  # https://mesonbuild.com/Reference-manual_functions.html#custom_target
   custom_target(
     name + '-size',
 
@@ -123,7 +120,7 @@ foreach name : test_names
       '@INPUT@'
     ],
     build_always_stale: true,
-    build_by_default: true,
+    build_by_default: true, # Enable it only when needed.
     capture: true,
   )
 
@@ -141,7 +138,7 @@ foreach name : test_names
       '@OUTPUT@',
     ],
     build_always_stale: true,
-    build_by_default: true,
+    # build_by_default: true, # Enable it only when needed.
   )
 
 
@@ -158,10 +155,12 @@ test(
   qemu,
   args: [
     '--machine', 'mps2-an386',
-    '-d', 'unimp,guest_errors',
-    '--nographic',
+    '--cpu', 'cortex-m4',
     '--kernel', unit_test,
-    '--semihosting-config', 'enable=on,target=native,arg=unit-test',
+    '--nographic',
+    '-d', 'unimp,guest_errors',
+    '--semihosting-config', 'enable=on,target=native',
+    '--semihosting-config', 'arg=unit-test',
   ],
   env: nomalloc
 )
@@ -171,10 +170,12 @@ test(
   qemu,
   args: [
     '--machine', 'mps2-an386',
-    '-d', 'unimp,guest_errors',
-    '--nographic',
+    '--cpu', 'cortex-m4',
     '--kernel', sample_test,
-    '--semihosting-config', 'enable=on,target=native,arg=unit-test,arg=one,arg=two',
+    '--nographic',
+    '-d', 'unimp,guest_errors',
+    '--semihosting-config', 'enable=on,target=native',
+    '--semihosting-config', 'arg=unit-test,arg=one,arg=two',
   ],
   env: nomalloc
 )

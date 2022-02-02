@@ -143,6 +143,14 @@
         "xpm run build --config qemu-mps2-an386-cmake-release",
         "xpm run test --config qemu-mps2-an386-cmake-release"
       ],
+      "test-qemu-mps2-an386-meson": [
+        "xpm run prepare --config qemu-mps2-an386-meson-debug",
+        "xpm run build --config qemu-mps2-an386-meson-debug",
+        "xpm run test --config qemu-mps2-an386-meson-debug",
+        "xpm run prepare --config qemu-mps2-an386-meson-release",
+        "xpm run build --config qemu-mps2-an386-meson-release",
+        "xpm run test --config qemu-mps2-an386-meson-release"
+      ],
       "test-stm32f4discovery-cmake": [
         "xpm run prepare --config stm32f4discovery-cmake-debug",
         "xpm run build --config stm32f4discovery-cmake-debug",
@@ -580,7 +588,7 @@
       },
       "qemu-mps2-an386-meson-release": {
         "properties": {
-          "buildType": "release",
+          "buildType": "minsize",
           "platformName": "qemu-mps2-an386",
           "toolchainFileName": "arm-none-eabi-gcc.ini",
           "toolchainWindowsFileName": "arm-none-eabi-gcc-cmd.ini",

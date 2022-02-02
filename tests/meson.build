@@ -12,7 +12,11 @@
 # https://mesonbuild.com/Reference-manual.html#project
 project('µTest++',
   ['c', 'cpp'],
-  default_options: ['c_std=c11', 'cpp_std=c++17'],
+  default_options: [
+    'c_std=c11',
+    'cpp_std=c++17',
+    'b_staticpic=false', # Mandatory, startup fails otherwise.
+  ],
   meson_version: '>= 0.59'
 )
 
@@ -51,10 +55,12 @@ message('Platform name: ' + xpack_platform_name)
 
 # -----------------------------------------------------------------------------
 
+
 # Compiler preprocessor definitions.
 compiler_definitions = []
 if get_option('buildtype').contains('debug')
   compiler_definitions += ['-DDEBUG']
+  compiler_definitions += ['-DTRACE']
 endif
 if get_option('buildtype') == 'release'
   compiler_definitions += ['-DNDEBUG']
@@ -65,6 +71,17 @@ endif
 # https://mesonbuild.com/Reference-tables.html#c_compiler-ids
 
 common_options = []
+if get_option('buildtype') == 'debug'
+  common_options += ['-O0']
+elif get_option('buildtype') == 'debugoptimized'
+  common_options += ['-Og'] # Override -O2
+elif get_option('buildtype') == 'minsize'
+  # common_options += ['-Os']
+elif get_option('buildtype') == 'release'
+  # common_options += ['-O3']
+else
+  common_options += ['-O']
+endif
 
 if c_compiler.get_id() == 'gcc' or c_compiler.get_id().contains('clang')
   common_options += [
@@ -158,7 +175,18 @@ endif
 config_dependencies = []
 if xpack_platform_name == 'qemu-mps2-an386'
 
-  common_flags = ['-mcpu=cortex-m4', '-mthumb', '-mfloat-abi=hard', '-fno-move-loop-invariants']
+  common_flags = [
+    '-mcpu=cortex-m4',
+    '-mthumb',
+    '-mfloat-abi=hard',
+    '-fno-move-loop-invariants',
+  ]
+
+  common_cpp_extra_flags = [
+    '-fno-rtti',
+    '-fno-use-cxa-atexit',
+    '-fno-threadsafe-statics'
+  ]
 
   add_global_arguments(
     common_flags,
@@ -166,10 +194,22 @@ if xpack_platform_name == 'qemu-mps2-an386'
     language: [ 'c', 'cpp' ]
   )
 
+  add_global_arguments(
+    common_cpp_extra_flags,
+
+    language: [ 'cpp' ]
+  )
+
   add_global_link_arguments(
     common_flags,
 
     language: [ 'c', 'cpp' ]
+  )
+
+  add_global_link_arguments(
+    common_cpp_extra_flags,
+
+    language: [ 'cpp' ]
   )
 
   add_global_arguments(
@@ -181,11 +221,11 @@ if xpack_platform_name == 'qemu-mps2-an386'
   message('+ -D MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS')
   if get_option('buildtype').contains('debug')
     add_global_arguments(
-      '-DMICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_DEBUG',
+      '-DMICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_STDOUT',
 
       language: [ 'c', 'cpp' ]
     )
-    message('+ -D MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_DEBUG')
+    message('+ -D MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_STDOUT')
   endif
 
   subdir('top/xpacks/micro-os-plus-build-helper/meson/enable-all-warnings')

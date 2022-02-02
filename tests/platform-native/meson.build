@@ -27,9 +27,6 @@ foreach name : test_names
     dependencies: [
       micro_os_plus_micro_test_plus_dependency
     ],
-    link_with: [
-      micro_os_plus_micro_test_plus_static
-    ],
     link_args: linker_options
   )
 
