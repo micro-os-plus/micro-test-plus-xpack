@@ -171,10 +171,12 @@ add_test(
 
   COMMAND qemu-system-arm${extension}
     --machine mps2-an386
-    -d unimp,guest_errors
-    --nographic
+    --cpu cortex-m4
     --kernel unit-test.elf
-    --semihosting-config enable=on,target=native,arg=unit-test
+    --nographic
+    -d unimp,guest_errors
+    --semihosting-config enable=on,target=native
+    --semihosting-config arg=unit-test
 )
 
 add_test(
@@ -182,10 +184,12 @@ add_test(
 
   COMMAND qemu-system-arm${extension}
     --machine mps2-an386
-    -d unimp,guest_errors
-    --nographic
+    --cpu cortex-m4
     --kernel sample-test.elf
-    --semihosting-config enable=on,target=native,arg=sample-test,arg=one,arg=two
+    --nographic
+    -d unimp,guest_errors
+    --semihosting-config enable=on,target=native
+    --semihosting-config arg=sample-test,arg=one,arg=two
 )
 
 # -----------------------------------------------------------------------------
