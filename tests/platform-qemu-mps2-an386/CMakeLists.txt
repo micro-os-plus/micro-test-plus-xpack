@@ -143,9 +143,11 @@ function(add_test_executable name)
 
     PRIVATE
       -Wl,-Map,${name}-map.txt
+      # -v
   )
 
   # TODO use add_custom_target()
+  # https://cmake.org/cmake/help/v3.20/command/add_custom_command.html
   add_custom_command(
     TARGET ${name} POST_BUILD
     COMMAND ${CMAKE_SIZE} --format=berkeley "$<TARGET_FILE:${name}>"
