@@ -15,9 +15,22 @@ message(VERBOSE "Adding 'tests/platform-stm32f4discovery'...")
 
 # -----------------------------------------------------------------------------
 
+# set(xpack_create_listing true)
+
+# -----------------------------------------------------------------------------
+
 add_library(platform-stm32f4discovery-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # -----------------------------------------------------------------------------
+
+target_include_directories(
+  platform-stm32f4discovery-interface
+
+  INTERFACE
+    "include-platform"
+)
+
+message(VERBOSE "+ -I tests/platform-stm32f4discovery/include-platform")
 
 target_sources(
   platform-stm32f4discovery-interface
@@ -30,27 +43,18 @@ target_sources(
 message(VERBOSE "+ tests/platform-stm32f4discovery/src/initialize-hardware.cpp")
 message(VERBOSE "+ tests/platform-stm32f4discovery/src/interrupts-handlers.cpp")
 
-target_include_directories(
-  platform-stm32f4discovery-interface
-
-  INTERFACE
-    "include-platform"
-)
-
-message(VERBOSE "+ tests/platform-stm32f4discovery/include-platform")
-
 target_compile_definitions(
   platform-stm32f4discovery-interface
 
   INTERFACE
-    # ...
+    # ... add preprocessor macro definitions.
 )
 
 target_compile_options(
   platform-stm32f4discovery-interface
 
   INTERFACE
-    # ...
+    # ... perhaps ignore some warnings.
 )
 
 target_link_libraries(
@@ -63,6 +67,7 @@ target_link_libraries(
 # -----------------------------------------------------------------------------
 # Aliases.
 
+# https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library(micro-os-plus::platform ALIAS platform-stm32f4discovery-interface)
 message(VERBOSE "> micro-os-plus::platform -> platform-stm32f4discovery-interface")
 
@@ -98,13 +103,13 @@ function(add_test_executable name)
       "../include"
   )
 
-  message(VERBOSE "+ tests/include")
+  message(VERBOSE "+ -I tests/include")
 
   target_compile_definitions(
     ${name}
 
     PRIVATE
-      # ...
+      # ... add preprocessor macro definitions.
   )
 
   # Bare-metal platforms should be warnings free.
@@ -122,12 +127,6 @@ function(add_test_executable name)
 
     PRIVATE
       micro-os-plus::micro-test-plus
-  )
-
-  target_link_libraries(
-    ${name}
-
-    PRIVATE
       micro-os-plus::platform # Should bring device & architecture too.
 
       micro-os-plus::libs-c
@@ -140,14 +139,24 @@ function(add_test_executable name)
     ${name}
 
     PRIVATE
-      -Wl,-Map,${name}-map.txt
+      -Wl,-Map,platform/${name}-map.txt
+      # -v
   )
 
   # TODO use add_custom_target()
+  # https://cmake.org/cmake/help/v3.20/command/add_custom_command.html
   add_custom_command(
     TARGET ${name} POST_BUILD
     COMMAND ${CMAKE_SIZE} --format=berkeley "$<TARGET_FILE:${name}>"
   )
+
+  if(xpack_create_listing)
+    add_custom_command(
+      TARGET ${name} POST_BUILD
+      COMMAND ${CMAKE_OBJDUMP} --source --all-headers --demangle --line-numbers --wide "$<TARGET_FILE:${name}>" > ${name}-list.txt
+      VERBATIM
+    )
+  endif()
 
   message(VERBOSE ">> ${name}")
 

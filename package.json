@@ -640,6 +640,7 @@
         "actions": {
           "link-deps": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexm",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/device-cortexm",
             "xpm link --config {{ configuration.name }} @micro-os-plus/devices-stm32f4-extras",
             "xpm link --config {{ configuration.name }} @micro-os-plus/diag-trace",
             "xpm link --config {{ configuration.name }} @micro-os-plus/libs-c",
@@ -661,6 +662,7 @@
           "@xpack-dev-tools/arm-none-eabi-gcc": "10.3.1-2.3.1",
           "@xpack-dev-tools/qemu-arm": "6.2.0-1.1",
           "@micro-os-plus/architecture-cortexm": "github:micro-os-plus/architecture-cortexm-xpack#semver:3.1.0",
+          "@micro-os-plus/device-cortexm": "github:micro-os-plus/device-cortexm-xpack#semver:2.3.0",
           "@micro-os-plus/devices-stm32f4-extras": "github:micro-os-plus/devices-stm32f4-extras-xpack#semver:2.1.0",
           "@micro-os-plus/diag-trace": "github:micro-os-plus/diag-trace-xpack#semver:2.3.0",
           "@micro-os-plus/libs-c": "github:micro-os-plus/libs-c-xpack#semver:2.1.0",
@@ -681,6 +683,7 @@
         "actions": {
           "link-deps": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexm",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/device-cortexm",
             "xpm link --config {{ configuration.name }} @micro-os-plus/devices-stm32f4-extras",
             "xpm link --config {{ configuration.name }} @micro-os-plus/diag-trace",
             "xpm link --config {{ configuration.name }} @micro-os-plus/libs-c",
@@ -702,6 +705,7 @@
           "@xpack-dev-tools/arm-none-eabi-gcc": "10.3.1-2.3.1",
           "@xpack-dev-tools/qemu-arm": "6.2.0-1.1",
           "@micro-os-plus/architecture-cortexm": "github:micro-os-plus/architecture-cortexm-xpack#semver:3.1.0",
+          "@micro-os-plus/device-cortexm": "github:micro-os-plus/device-cortexm-xpack#semver:2.3.0",
           "@micro-os-plus/devices-stm32f4-extras": "github:micro-os-plus/devices-stm32f4-extras-xpack#semver:2.1.0",
           "@micro-os-plus/diag-trace": "github:micro-os-plus/diag-trace-xpack#semver:2.3.0",
           "@micro-os-plus/libs-c": "github:micro-os-plus/libs-c-xpack#semver:2.1.0",
