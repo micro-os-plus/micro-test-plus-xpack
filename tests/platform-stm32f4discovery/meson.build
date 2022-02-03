@@ -10,7 +10,7 @@
 
 # Create the test applications.
 
-message('Processing tests/platform-qemu-mps2-an386...')
+message('Processing tests/platform-stm32f4discovery...')
 
 # -----------------------------------------------------------------------------
 
@@ -20,8 +20,11 @@ xpack_create_hex = false
 
 # -----------------------------------------------------------------------------
 
+# The final platform library can now be defined, with the
+# customised initialisation on top of the CubeMX library.
+
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
-platform_qemu_mps2_an386_dependency = declare_dependency(
+platform_stm32f4discovery_dependency = declare_dependency(
   include_directories: include_directories(
     'include-platform',
   ),
@@ -32,16 +35,16 @@ platform_qemu_mps2_an386_dependency = declare_dependency(
   compile_args: [
   ],
   dependencies: [
-    micro_os_plus_device_qemu_cortexm_dependency,
+    micro_os_plus_platform_stm32f4discovery_dependency,
   ]
 )
 
-message('+ -I tests/platform-qemu-mps2-an386/include-platform')
-message('+ tests/platform-qemu-mps2-an386/src/initialize-hardware.cpp')
-message('+ tests/platform-qemu-mps2-an386/src/interrupts-handlers.cpp')
-message('> platform_qemu_mps2_an386_dependency')
+message('+ -I tests/platform-stm32f4discovery/include-platform')
+message('+ tests/platform-stm32f4discovery/src/initialize-hardware.cpp')
+message('+ tests/platform-stm32f4discovery/src/interrupts-handlers.cpp')
+message('> platform_stm32f4discovery_dependency')
 
-# -----------------------------------------------------------------------------
+# =============================================================================
 
 # Get the command names from the toolchain file.
 size = find_program('size')
@@ -51,6 +54,7 @@ objcopy = find_program('objcopy')
 test_names = [ 'unit-test', 'sample-test' ]
 
 foreach name : test_names
+
   # https://mesonbuild.com/Reference-manual.html#executable
   exe = executable(
     name,
@@ -66,7 +70,7 @@ foreach name : test_names
       micro_os_plus_micro_test_plus_dependency,
 
       # Platform; it brings device and architecture too.
-      platform_qemu_mps2_an386_dependency,
+      platform_stm32f4discovery_dependency,
 
       # Other dependencies.
       micro_os_plus_libs_c_dependency,
@@ -77,11 +81,13 @@ foreach name : test_names
     link_args: [
       '-Wl,-Map,meson-out/'+ name + '-map.txt',
       '-nostartfiles',
+      # Ensure the linker will keep the interrupt vectors which otherwise
+      # are not refered from anywhere.
       '-u_interrupt_vectors',
       '-Wl,--gc-sections',
       # '-v',
       # Path are relative to the build folder.
-      '-Txpacks/micro-os-plus-device-qemu-cortexm/linker-scripts/mem.ld',
+      '-Txpacks/micro-os-plus-platform-stm32f4discovery/linker-scripts/mem.ld',
       '-Txpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections.ld',
     ],
     name_suffix: 'elf',
@@ -146,10 +152,9 @@ foreach name : test_names
     build_by_default: xpack_create_hex,
   )
 
-
 endforeach
 
-qemu = find_program('qemu-system-arm')
+qemu = find_program('qemu-system-gnuarmeclipse')
 
 # https://mesonbuild.com/Unit-tests.html#malloc_perturb_
 nomalloc = environment({'MALLOC_PERTURB_': '0'})
@@ -159,13 +164,13 @@ test(
   'unit-test',
   qemu,
   args: [
-    '--machine', 'mps2-an386',
-    '--cpu', 'cortex-m4',
-    '--kernel', unit_test,
+    '--board', 'STM32F4-Discovery',
+    '--image', unit_test,
     '--nographic',
+    '--verbose',
     '-d', 'unimp,guest_errors',
     '--semihosting-config', 'enable=on,target=native',
-    '--semihosting-config', 'arg=unit-test',
+    '--semihosting-cmdline', 'unit-test',
   ],
   env: nomalloc
 )
@@ -174,13 +179,13 @@ test(
   'sample-test',
   qemu,
   args: [
-    '--machine', 'mps2-an386',
-    '--cpu', 'cortex-m4',
-    '--kernel', sample_test,
+    '--board', 'STM32F4-Discovery',
+    '--image', sample_test,
     '--nographic',
+    '--verbose',
     '-d', 'unimp,guest_errors',
     '--semihosting-config', 'enable=on,target=native',
-    '--semihosting-config', 'arg=unit-test,arg=one,arg=two',
+    '--semihosting-cmdline', 'sample-test', 'one', 'two',
   ],
   env: nomalloc
 )
