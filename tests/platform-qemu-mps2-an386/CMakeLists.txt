@@ -18,6 +18,8 @@ message(VERBOSE "Adding 'tests/platform-qemu-mps2-an386'...")
 set(xpack_platform_compile_definition "PLATFORM_QEMU_MPS2_AN386")
 # set(xpack_create_listing true)
 
+# -----------------------------------------------------------------------------
+
 add_library(platform-qemu-mps2-an386-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # -----------------------------------------------------------------------------
@@ -40,7 +42,7 @@ target_include_directories(
     "include-platform"
 )
 
-message(VERBOSE "+ tests/platform-qemu-mps2-an386/include-platform")
+message(VERBOSE "+ -I tests/platform-qemu-mps2-an386/include-platform")
 
 target_compile_definitions(
   platform-qemu-mps2-an386-interface
@@ -55,7 +57,7 @@ target_compile_options(
   platform-qemu-mps2-an386-interface
 
   INTERFACE
-    # ...
+    # ... perhaps ignore some warnings.
 )
 
 target_link_libraries(
