@@ -95,12 +95,12 @@ function(add_test_executable name)
   message(VERBOSE "+ tests/src/${name}.cpp")
 
   # Include folders.
-  # `tests/platform-stm32f4discovery/include` was added globally.
   target_include_directories(
     ${name}
 
     PRIVATE
       "../include"
+      # 'include-config' # was added globally
   )
 
   message(VERBOSE "+ -I tests/include")

@@ -46,11 +46,13 @@ set(common_options
   -mthumb
   -mfloat-abi=soft
 
+  -fno-move-loop-invariants
+
   -fmessage-length=0
   -fsigned-char
+
   -ffunction-sections
   -fdata-sections
-  -fno-move-loop-invariants
 
   # $<$<COMPILE_LANGUAGE:CXX>:-fno-exceptions>
   $<$<COMPILE_LANGUAGE:CXX>:-fno-rtti>
@@ -82,9 +84,9 @@ add_link_options(
     # -specs=nano.specs
     -Wl,--gc-sections
 
-    # Force the linker to keep the interrupt vectors which otherwise
+    # Ensure the linker will keep the interrupt vectors which otherwise
     # are not refered from anywhere.
-    # -u_interrupt_vectors
+    -u_interrupt_vectors
 
     # Including files from other packages is not very nice, but functional.
     # Use absolute paths, otherwise set -L.
