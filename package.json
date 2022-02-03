@@ -67,8 +67,7 @@
       ],
       "test-all": [
         "xpm run test-native",
-        "{% if os.platform != 'win32' %}xpm run test-qemu-mps2-an386-cmake{% endif %}",
-        "{% if os.platform != 'win32' %}xpm run test-stm32f4discovery-cmake{% endif %}"
+        "xpm run test-cortexm"
       ],
       "test-native": [
         "{% if os.platform != 'win32' %}xpm run test-native-cmake{% endif %}",
@@ -78,6 +77,12 @@
         "{% if os.platform != 'win32' %}xpm run test-native-meson{% endif %}",
         "xpm run test-native-meson-gcc11",
         "xpm run test-native-meson-clang12"
+      ],
+      "test-cortexm": [
+        "{% if os.platform != 'win32' %}xpm run test-qemu-mps2-an386-cmake{% endif %}",
+        "{% if os.platform != 'win32' %}xpm run test-qemu-mps2-an386-meson{% endif %}",
+        "{% if os.platform != 'win32' %}xpm run test-stm32f4discovery-cmake{% endif %}",
+        "{% if os.platform != 'win32' %}xpm run test-stm32f4discovery-meson{% endif %}"
       ],
       "test-native-cmake": [
         "xpm run prepare --config native-cmake-debug",
@@ -159,6 +164,14 @@
         "xpm run build --config stm32f4discovery-cmake-release",
         "xpm run test --config stm32f4discovery-cmake-release"
       ],
+      "test-stm32f4discovery-meson": [
+        "xpm run prepare --config stm32f4discovery-meson-debug",
+        "xpm run build --config stm32f4discovery-meson-debug",
+        "xpm run test --config stm32f4discovery-meson-debug",
+        "xpm run prepare --config stm32f4discovery-meson-release",
+        "xpm run build --config stm32f4discovery-meson-release",
+        "xpm run test --config stm32f4discovery-meson-release"
+      ],
       "clean-all": [
         "xpm run clean --config native-cmake-debug",
         "xpm run clean --config native-cmake-release",
@@ -176,8 +189,12 @@
         "xpm run clean --config native-meson-clang12-release",
         "xpm run clean --config qemu-mps2-an386-cmake-debug",
         "xpm run clean --config qemu-mps2-an386-cmake-release",
+        "xpm run clean --config qemu-mps2-an386-meson-debug",
+        "xpm run clean --config qemu-mps2-an386-meson-release",
         "xpm run clean --config stm32f4discovery-cmake-debug",
-        "xpm run clean --config stm32f4discovery-cmake-release"
+        "xpm run clean --config stm32f4discovery-cmake-release",
+        "xpm run clean --config stm32f4discovery-meson-debug",
+        "xpm run clean --config stm32f4discovery-meson-release"
       ],
       "rm-global-deps": [
         "xpm uninstall --global @micro-os-plus/architecture-cortexm",
