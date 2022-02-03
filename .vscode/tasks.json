@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "xPack",
+      "actionName": "build",
+      "buildConfigurationName": "qemu-mps2-an386-meson-debug",
+      "problemMatcher": {
+        "base": "$gcc"
+      },
+      "label": "xPack: build qemu-mps2-an386-meson-debug",
+      "detail": "xpm run build --config qemu-mps2-an386-meson-debug"
+    }
+  ]
+}
