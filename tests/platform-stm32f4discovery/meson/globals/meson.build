@@ -81,7 +81,7 @@ add_global_arguments(
   language: [ 'c', 'cpp' ]
 )
 
-message('+ -D MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS')
+message('G+ -D MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS')
 
 if get_option('buildtype').contains('debug')
   add_global_arguments(
@@ -89,7 +89,7 @@ if get_option('buildtype').contains('debug')
 
     language: [ 'c', 'cpp' ]
   )
-  message('+ -D MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_STDOUT')
+  message('G+ -D MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_STDOUT')
 endif
 
 # -----------------------------------------------------------------------------

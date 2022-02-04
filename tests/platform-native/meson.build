@@ -59,9 +59,9 @@ foreach name : test_names
     link_args: linker_options
   )
 
-  message('+ -I tests/include')
-  message('+ tests/src/' + name + '.cpp')
-  message('>> ' + name)
+  message('A+ -I tests/include')
+  message('A+ tests/src/' + name + '.cpp')
+  message('A> ' + name)
 
   # Leave the result in a variable with the test name.
   set_variable(name.underscorify(), exe)
