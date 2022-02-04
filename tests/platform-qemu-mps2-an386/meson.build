@@ -35,7 +35,7 @@ platform_qemu_mps2_an386_dependency = declare_dependency(
   compile_args: [
   ],
   dependencies: [
-    micro_os_plus_device_qemu_cortexm_dependency,
+    micro_os_plus_devices_qemu_cortexm_dependency,
   ]
 )
 
@@ -84,7 +84,7 @@ foreach name : test_names
       '-Wl,--gc-sections',
       # '-v',
       # Path are relative to the build folder.
-      '-Txpacks/micro-os-plus-device-qemu-cortexm/linker-scripts/mem.ld',
+      '-Txpacks/micro-os-plus-devices-qemu-cortexm/linker-scripts/mem.ld',
       '-Txpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections.ld',
     ],
     name_suffix: 'elf',

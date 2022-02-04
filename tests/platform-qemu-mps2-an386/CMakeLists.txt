@@ -57,7 +57,7 @@ target_link_libraries(
   platform-qemu-mps2-an386-interface
 
   INTERFACE
-    micro-os-plus::device-qemu-cortexm
+    micro-os-plus::devices-qemu-cortexm
 )
 
 if (COMMAND xpack_display_target_lists)

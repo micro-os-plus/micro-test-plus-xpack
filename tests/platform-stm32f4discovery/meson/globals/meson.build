@@ -107,13 +107,13 @@ xpack_dependencies = [
 
   # +(diag_trace, architecture) >semihosting
   xpack_build_folder_relative_path + '/xpacks/micro-os-plus-semihosting',
-  # +(semihosting) >device_cortexm
-  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-device-cortexm',
+  # +(semihosting) >devices_cortexm
+  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-devices-cortexm',
 
   # +(architecture) >devices_stm32f4*_extra
   xpack_build_folder_relative_path + '/xpacks/micro-os-plus-devices-stm32f4-extras',
 
-  # +(device_cortexm, devices_stm32f4*_extra, startup) >device
+  # +(devices_cortexm, devices_stm32f4*_extra, startup) >device
   # +(device, diag_trace) >platform_stm32f4discovery
   xpack_build_folder_relative_path + '/xpacks/micro-os-plus-platform-stm32f4discovery',
 ]

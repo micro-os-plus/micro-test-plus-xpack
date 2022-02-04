@@ -93,7 +93,7 @@ add_link_options(
 
     # Including files from other packages is not very nice, but functional.
     # Use absolute paths, otherwise set -L.
-    -T${CMAKE_BINARY_DIR}/xpacks/micro-os-plus-device-qemu-cortexm/linker-scripts/mem.ld
+    -T${CMAKE_BINARY_DIR}/xpacks/micro-os-plus-devices-qemu-cortexm/linker-scripts/mem.ld
     -T${CMAKE_BINARY_DIR}/xpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections.ld
 )
 
