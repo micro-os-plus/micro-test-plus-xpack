@@ -480,8 +480,8 @@
         "actions": {
           "link-deps": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexm",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/device-cortexm",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/device-qemu-cortexm",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/devices-cortexm",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/devices-qemu-cortexm",
             "xpm link --config {{ configuration.name }} @micro-os-plus/diag-trace",
             "xpm link --config {{ configuration.name }} @micro-os-plus/libs-c",
             "xpm link --config {{ configuration.name }} @micro-os-plus/libs-cpp",
@@ -526,7 +526,7 @@
         "actions": {
           "link-deps": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexm",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/device-cortexm",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/devices-cortexm",
             "xpm link --config {{ configuration.name }} @micro-os-plus/device-qemu-cortexm",
             "xpm link --config {{ configuration.name }} @micro-os-plus/diag-trace",
             "xpm link --config {{ configuration.name }} @micro-os-plus/libs-c",
@@ -570,7 +570,7 @@
         "actions": {
           "link-deps": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexm",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/device-cortexm",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/devices-cortexm",
             "xpm link --config {{ configuration.name }} @micro-os-plus/device-qemu-cortexm",
             "xpm link --config {{ configuration.name }} @micro-os-plus/diag-trace",
             "xpm link --config {{ configuration.name }} @micro-os-plus/libs-c",
@@ -614,7 +614,7 @@
         "actions": {
           "link-deps": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexm",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/device-cortexm",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/devices-cortexm",
             "xpm link --config {{ configuration.name }} @micro-os-plus/device-qemu-cortexm",
             "xpm link --config {{ configuration.name }} @micro-os-plus/diag-trace",
             "xpm link --config {{ configuration.name }} @micro-os-plus/libs-c",
@@ -657,7 +657,7 @@
         "actions": {
           "link-deps": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexm",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/device-cortexm",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/devices-cortexm",
             "xpm link --config {{ configuration.name }} @micro-os-plus/devices-stm32f4-extras",
             "xpm link --config {{ configuration.name }} @micro-os-plus/diag-trace",
             "xpm link --config {{ configuration.name }} @micro-os-plus/libs-c",
@@ -684,7 +684,7 @@
           "@micro-os-plus/diag-trace": "github:micro-os-plus/diag-trace-xpack#semver:2.4.0",
           "@micro-os-plus/libs-c": "github:micro-os-plus/libs-c-xpack#semver:2.2.0",
           "@micro-os-plus/libs-cpp": "github:micro-os-plus/libs-cpp-xpack#semver:2.2.0",
-          "@micro-os-plus/platform-stm32f4discovery": "github:micro-os-plus/platform-stm32f4discovery-xpack#semver:3.2.0",
+          "@micro-os-plus/platform-stm32f4discovery": "github:micro-os-plus/platform-stm32f4discovery-xpack#semver:3.3.0",
           "@micro-os-plus/semihosting": "github:micro-os-plus/semihosting-xpack#semver:3.2.0",
           "@micro-os-plus/startup": "github:micro-os-plus/startup-xpack#semver:2.2.0",
           "@micro-os-plus/version": "github:micro-os-plus/version-xpack#semver:7.1.1"
@@ -700,7 +700,7 @@
         "actions": {
           "link-deps": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexm",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/device-cortexm",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/devices-cortexm",
             "xpm link --config {{ configuration.name }} @micro-os-plus/devices-stm32f4-extras",
             "xpm link --config {{ configuration.name }} @micro-os-plus/diag-trace",
             "xpm link --config {{ configuration.name }} @micro-os-plus/libs-c",
@@ -727,7 +727,7 @@
           "@micro-os-plus/diag-trace": "github:micro-os-plus/diag-trace-xpack#semver:2.4.0",
           "@micro-os-plus/libs-c": "github:micro-os-plus/libs-c-xpack#semver:2.2.0",
           "@micro-os-plus/libs-cpp": "github:micro-os-plus/libs-cpp-xpack#semver:2.2.0",
-          "@micro-os-plus/platform-stm32f4discovery": "github:micro-os-plus/platform-stm32f4discovery-xpack#semver:3.2.0",
+          "@micro-os-plus/platform-stm32f4discovery": "github:micro-os-plus/platform-stm32f4discovery-xpack#semver:3.3.0",
           "@micro-os-plus/semihosting": "github:micro-os-plus/semihosting-xpack#semver:3.2.0",
           "@micro-os-plus/startup": "github:micro-os-plus/startup-xpack#semver:2.2.0",
           "@micro-os-plus/version": "github:micro-os-plus/version-xpack#semver:7.1.1"
@@ -744,7 +744,7 @@
         "actions": {
           "link-deps": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexm",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/device-cortexm",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/devices-cortexm",
             "xpm link --config {{ configuration.name }} @micro-os-plus/devices-stm32f4-extras",
             "xpm link --config {{ configuration.name }} @micro-os-plus/diag-trace",
             "xpm link --config {{ configuration.name }} @micro-os-plus/libs-c",
@@ -771,7 +771,7 @@
           "@micro-os-plus/diag-trace": "github:micro-os-plus/diag-trace-xpack#semver:2.4.0",
           "@micro-os-plus/libs-c": "github:micro-os-plus/libs-c-xpack#semver:2.2.0",
           "@micro-os-plus/libs-cpp": "github:micro-os-plus/libs-cpp-xpack#semver:2.2.0",
-          "@micro-os-plus/platform-stm32f4discovery": "github:micro-os-plus/platform-stm32f4discovery-xpack#semver:3.2.0",
+          "@micro-os-plus/platform-stm32f4discovery": "github:micro-os-plus/platform-stm32f4discovery-xpack#semver:3.3.0",
           "@micro-os-plus/semihosting": "github:micro-os-plus/semihosting-xpack#semver:3.2.0",
           "@micro-os-plus/startup": "github:micro-os-plus/startup-xpack#semver:2.2.0",
           "@micro-os-plus/version": "github:micro-os-plus/version-xpack#semver:7.1.1"
@@ -788,7 +788,7 @@
         "actions": {
           "link-deps": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexm",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/device-cortexm",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/devices-cortexm",
             "xpm link --config {{ configuration.name }} @micro-os-plus/devices-stm32f4-extras",
             "xpm link --config {{ configuration.name }} @micro-os-plus/diag-trace",
             "xpm link --config {{ configuration.name }} @micro-os-plus/libs-c",
@@ -815,7 +815,7 @@
           "@micro-os-plus/diag-trace": "github:micro-os-plus/diag-trace-xpack#semver:2.4.0",
           "@micro-os-plus/libs-c": "github:micro-os-plus/libs-c-xpack#semver:2.2.0",
           "@micro-os-plus/libs-cpp": "github:micro-os-plus/libs-cpp-xpack#semver:2.2.0",
-          "@micro-os-plus/platform-stm32f4discovery": "github:micro-os-plus/platform-stm32f4discovery-xpack#semver:3.2.0",
+          "@micro-os-plus/platform-stm32f4discovery": "github:micro-os-plus/platform-stm32f4discovery-xpack#semver:3.3.0",
           "@micro-os-plus/semihosting": "github:micro-os-plus/semihosting-xpack#semver:3.2.0",
           "@micro-os-plus/startup": "github:micro-os-plus/startup-xpack#semver:2.2.0",
           "@micro-os-plus/version": "github:micro-os-plus/version-xpack#semver:7.1.1"
