@@ -29,7 +29,7 @@ include_directories(
   "platform-native/include-config"
 )
 
-message(VERBOSE "+ -I tests/platform-native/include-config")
+message(VERBOSE "G+ -I tests/platform-native/include-config")
 
 # Global compiler definitions.
 add_compile_definitions(

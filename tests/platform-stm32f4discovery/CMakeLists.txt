@@ -30,8 +30,6 @@ target_include_directories(
     "include-platform"
 )
 
-message(VERBOSE "+ -I tests/platform-stm32f4discovery/include-platform")
-
 target_sources(
   platform-stm32f4discovery-interface
 
@@ -39,9 +37,6 @@ target_sources(
     "src/initialize-hardware.cpp"
     "src/interrupts-handlers.cpp"
 )
-
-message(VERBOSE "+ tests/platform-stm32f4discovery/src/initialize-hardware.cpp")
-message(VERBOSE "+ tests/platform-stm32f4discovery/src/interrupts-handlers.cpp")
 
 target_compile_definitions(
   platform-stm32f4discovery-interface
@@ -63,6 +58,10 @@ target_link_libraries(
   INTERFACE
     micro-os-plus::platform-stm32f4discovery
 )
+
+if (COMMAND xpack_display_target_lists)
+  xpack_display_target_lists(platform-stm32f4discovery-interface)
+endif()
 
 # -----------------------------------------------------------------------------
 # Aliases.
@@ -92,7 +91,7 @@ function(add_test_executable name)
       "../src/${name}.cpp"
   )
 
-  message(VERBOSE "+ tests/src/${name}.cpp")
+  message(VERBOSE "A+ tests/src/${name}.cpp")
 
   # Include folders.
   target_include_directories(
@@ -103,7 +102,7 @@ function(add_test_executable name)
       # 'include-config' # was added globally
   )
 
-  message(VERBOSE "+ -I tests/include")
+  message(VERBOSE "A+ -I tests/include")
 
   target_compile_definitions(
     ${name}
@@ -158,7 +157,7 @@ function(add_test_executable name)
     )
   endif()
 
-  message(VERBOSE ">> ${name}")
+  message(VERBOSE "A> ${name}")
 
 endfunction()
 

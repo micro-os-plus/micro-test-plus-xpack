@@ -29,7 +29,7 @@ include_directories(
   "platform-qemu-mps2-an386/include-config"
 )
 
-message(VERBOSE "+ -I tests/platform-qemu-mps2-an386/include-config")
+message(VERBOSE "G+ -I tests/platform-qemu-mps2-an386/include-config")
 
 # Global compiler definitions.
 add_compile_definitions(
@@ -41,8 +41,8 @@ add_compile_definitions(
   $<$<CONFIG:Debug>:MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_DEBUG>
 )
 
-message(VERBOSE "+ -D MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS")
-message(VERBOSE "+ -D $<$<CONFIG:Debug>:MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_DEBUG>")
+message(VERBOSE "G+ -D MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS")
+message(VERBOSE "G+ -D $<$<CONFIG:Debug>:MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_DEBUG>")
 
 set(common_options
 

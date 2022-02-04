@@ -29,7 +29,7 @@ include_directories(
   "platform-stm32f4discovery/include-config"
 )
 
-message(VERBOSE "+ -I tests/platform-stm32f4discovery/include-config")
+message(VERBOSE "G+ -I tests/platform-stm32f4discovery/include-config")
 
 add_compile_definitions(
 
@@ -40,8 +40,8 @@ add_compile_definitions(
   $<$<CONFIG:Debug>:MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_DEBUG>
 )
 
-message(VERBOSE "+ -D MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS")
-message(VERBOSE "+ -D $<$<CONFIG:Debug>:MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_DEBUG>")
+message(VERBOSE "G+ -D MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS")
+message(VERBOSE "G+ -D $<$<CONFIG:Debug>:MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_DEBUG>")
 
 set(common_options
 

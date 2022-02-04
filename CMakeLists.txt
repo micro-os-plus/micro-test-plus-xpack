@@ -55,16 +55,12 @@ target_include_directories(
     "include"
 )
 
-message(VERBOSE "+ include")
-
 target_sources(
   micro-os-plus-micro-test-plus-interface
 
   INTERFACE
     "src/micro-test-plus.cpp"
 )
-
-message(VERBOSE "+ src/micro-test-plus.cpp")
 
 target_compile_definitions(
   micro-os-plus-micro-test-plus-interface
@@ -86,6 +82,10 @@ target_link_libraries(
   INTERFACE
     # ...
 )
+
+if (COMMAND xpack_display_target_lists)
+  xpack_display_target_lists(micro-os-plus-micro-test-plus-interface)
+endif()
 
 # -----------------------------------------------------------------------------
 # Aliases.

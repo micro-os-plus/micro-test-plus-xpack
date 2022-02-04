@@ -32,9 +32,6 @@ target_sources(
     "src/interrupts-handlers.cpp"
 )
 
-message(VERBOSE "+ tests/platform-qemu-mps2-an386/src/initialize-hardware.cpp")
-message(VERBOSE "+ tests/platform-qemu-mps2-an386/src/interrupts-handlers.cpp")
-
 target_include_directories(
   platform-qemu-mps2-an386-interface
 
@@ -42,16 +39,12 @@ target_include_directories(
     "include-platform"
 )
 
-message(VERBOSE "+ -I tests/platform-qemu-mps2-an386/include-platform")
-
 target_compile_definitions(
   platform-qemu-mps2-an386-interface
 
   INTERFACE
     "${xpack_platform_compile_definition}"
 )
-
-message(VERBOSE "+ -D ${xpack_platform_compile_definition}")
 
 target_compile_options(
   platform-qemu-mps2-an386-interface
@@ -66,6 +59,10 @@ target_link_libraries(
   INTERFACE
     micro-os-plus::device-qemu-cortexm
 )
+
+if (COMMAND xpack_display_target_lists)
+  xpack_display_target_lists(platform-qemu-mps2-an386-interface)
+endif()
 
 # -----------------------------------------------------------------------------
 # Aliases.
@@ -95,7 +92,7 @@ function(add_test_executable name)
       "../include"
   )
 
-  message(VERBOSE "+ -I tests/include")
+  message(VERBOSE "A+ -I tests/include")
 
   # Application sources.
   target_sources(
@@ -105,7 +102,7 @@ function(add_test_executable name)
       "../src/${name}.cpp"
   )
 
-  message(VERBOSE "+ tests/src/${name}.cpp")
+  message(VERBOSE "A+ tests/src/${name}.cpp")
 
 
   target_compile_definitions(
@@ -167,7 +164,7 @@ function(add_test_executable name)
     )
   endif()
 
-  message(VERBOSE ">> ${name}")
+  message(VERBOSE "A> ${name}")
 
 endfunction()
 

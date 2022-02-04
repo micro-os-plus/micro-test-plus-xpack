@@ -34,7 +34,7 @@ function(add_test_executable name)
       "../include"
   )
 
-  message(VERBOSE "+ -I tests/include")
+  message(VERBOSE "A+ -I tests/include")
 
   set_target_properties(
     ${name}
@@ -51,7 +51,7 @@ function(add_test_executable name)
       "../src/${name}.cpp"
   )
 
-  message(VERBOSE "+ tests/src/${name}.cpp")
+  message(VERBOSE "A+ tests/src/${name}.cpp")
 
   target_compile_definitions(
     ${name}
@@ -67,7 +67,7 @@ function(add_test_executable name)
       micro-os-plus::micro-test-plus
   )
 
-  message(VERBOSE ">> ${name}")
+  message(VERBOSE "A> ${name}")
 
 endfunction()
 
