@@ -6,8 +6,44 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2022-02-04
+
+- v2.2.0
+- 18219ef package.json: bump deps
+- d30ea7d updates for device-*cortexm
+- 33e2244 cmake: add xpack_display_target_lists
+- 4f7324b package.json: add stm32f4discovery meson
+
+## 2022-02-03
+
+- d64bd80 cmake update qemu-mps2
+- 18955fa cmake update stm32f4discovery
+- e4541e9 cmake update for interface
+
+## 2022-02-02
+
+- e703fa9 .vscode/launch.json: add qemu launchers
+- 3055967 cmake: rework test commands
+
+## 2022-02-01
+
+- 90e894f add meson qemu
+- 6f55a37 package.json: rename dependencies to device-*
+- fde47e6 package.json: move toolchain files to folder
+- 041c252 cmake: rename platform-qemu-mps2-an386
+- 1230c9b cmake: update for device-qemu-cortexm
+- 10304ab rename platform-qemu-mps2-an386
+
+## 2022-01-28
+
+- 829ffbd separate top CMake config for tests
+- 920a928 add top symbolic link
+- 9a5987e sample-test.cpp: static variables
+- 82c83d8 sample-test.cpp: test args
+
 ## 2022-01-26
 
+- 15d6fe9 package.json: skip qemu tests on windows
 - v2.1.0
 - rework CMake
 
