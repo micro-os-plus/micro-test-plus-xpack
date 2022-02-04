@@ -20,9 +20,14 @@ platform_common_flags = [
 ]
 
 if get_option('buildtype') == 'release' or get_option('buildtype') == 'minsize' or get_option('buildtype') == 'debugoptimized'
-  platform_common_flags += [
-    '-flto'
-  ]
+  # https://mesonbuild.com/Reference-tables.html#operating-system-names
+  if build_machine.system() == 'linux' and c_compiler.get_id().contains('clang')
+    # meson-out/sample-test.p/.._src_sample-test.cpp.o: file not recognized: file format not recognized
+  else
+    platform_common_flags += [
+      '-flto'
+    ]
+  endif
 endif
 
 platform_common_cpp_extra_flags = [
