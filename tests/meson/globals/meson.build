@@ -12,7 +12,8 @@
 # -----------------------------------------------------------------------------
 ## Common definitions for all platforms ##
 
-## Assume GCC or clang, for MSVC things are different
+# Assume GCC or clang, for MSVC things are different
+# https://mesonbuild.com/Reference-tables.html#c_compiler-ids
 if c_compiler.get_id() == 'gcc' or c_compiler.get_id().contains('clang')
 
   # Always add the `include-config` folder.
@@ -32,7 +33,6 @@ if c_compiler.get_id() == 'gcc' or c_compiler.get_id().contains('clang')
 
   # Options for both compilers and linkers. When using `-flto`, all options
   # must also be passed to the linker.
-  # https://mesonbuild.com/Reference-tables.html#c_compiler-ids
 
   common_options = []
   if get_option('buildtype') == 'debug'
