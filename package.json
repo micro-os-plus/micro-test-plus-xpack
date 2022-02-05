@@ -79,9 +79,9 @@
         "xpm run test-native-meson-clang12"
       ],
       "test-cortexm": [
-        "{% if os.platform != 'win32' %}xpm run test-qemu-mps2-an386-cmake{% endif %}",
-        "{% if os.platform != 'win32' %}xpm run test-qemu-mps2-an386-meson{% endif %}",
-        "{% if os.platform != 'win32' %}xpm run test-stm32f4discovery-cmake{% endif %}",
+        "xpm run test-qemu-mps2-an386-cmake",
+        "xpm run test-qemu-mps2-an386-meson",
+        "xpm run test-stm32f4discovery-cmake",
         "{% if os.platform != 'win32' %}xpm run test-stm32f4discovery-meson{% endif %}"
       ],
       "test-native-cmake": [
