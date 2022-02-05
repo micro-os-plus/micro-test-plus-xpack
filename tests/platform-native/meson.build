@@ -25,7 +25,16 @@ if build_machine.system() == 'darwin'
   linker_options += [
     '-Wl,-dead_strip'
   ]
-else # Linux or Windows
+elif build_machine.system() == 'linux'
+  linker_options += [
+    '-Wl,--gc-sections'
+  ]
+  if c_compiler.get_id().contains('clang')
+    linker_options += [
+      # '-Wl,-fuse-ld=ld.gold'
+    ]
+  endif
+else # Windows
   if c_compiler.get_id() == 'gcc'
     # TODO: clang with gold might need it too.
     linker_options += [

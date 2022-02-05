@@ -23,6 +23,9 @@ if get_option('buildtype') == 'release' or get_option('buildtype') == 'minsize' 
   # https://mesonbuild.com/Reference-tables.html#operating-system-names
   if build_machine.system() == 'linux' and c_compiler.get_id().contains('clang')
     # meson-out/sample-test.p/.._src_sample-test.cpp.o: file not recognized: file format not recognized
+    platform_common_flags += [
+      # '-flto',
+    ]
   else
     platform_common_flags += [
       '-flto'
