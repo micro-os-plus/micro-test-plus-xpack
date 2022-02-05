@@ -53,7 +53,6 @@ if(CMAKE_BINARY_DIR STREQUAL CMAKE_SOURCE_DIR)
   message(FATAL_ERROR "In-source builds are not supported. Please use separate folder for build.")
 endif()
 
-
 # The build-helper is a devDependency, available only after `xpm install`.
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/top/xpacks/micro-os-plus-build-helper/cmake")
 include("micro-os-plus-build-helper")
@@ -61,6 +60,8 @@ include("micro-os-plus-build-helper")
 xpack_display_greetings()
 
 # -----------------------------------------------------------------------------
+
+# CMAKE_BUILD_TYPE: Debug, Release, RelWithDebInfo, MinSizeRel
 
 # Common to all platforms.
 add_compile_definitions(
