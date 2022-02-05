@@ -11,8 +11,8 @@
 #
 # -----------------------------------------------------------------------------
 
-# This file defines the global settings that apply to all targets.
-# Must be included with include() in the `tests` scope.
+# This file defines the global compiler settings that apply to all targets.
+# Must be added with `include()` in the `tests` scope.
 
 message(VERBOSE "Including platform-native globals...")
 
@@ -45,6 +45,9 @@ set(common_options
   -ffunction-sections
   -fdata-sections
 
+  $<$<CONFIG:Release>:-flto>
+  $<$<CONFIG:MinSizeRel>:-flto>
+
   ${all_warnings}
 )
 
@@ -52,6 +55,7 @@ add_compile_options(
   ${common_options}
 )
 
+# When using -flto, the compiler options must be passed to the linker too.
 add_link_options(
   ${common_options}
 )
