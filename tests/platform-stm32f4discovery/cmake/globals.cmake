@@ -49,18 +49,22 @@ set(common_options
   -mthumb
   -mfloat-abi=soft
 
-  -fno-move-loop-invariants
-
   -fmessage-length=0
   -fsigned-char
 
   -ffunction-sections
   -fdata-sections
 
+  -fno-move-loop-invariants
+
   # $<$<COMPILE_LANGUAGE:CXX>:-fno-exceptions>
   $<$<COMPILE_LANGUAGE:CXX>:-fno-rtti>
   $<$<COMPILE_LANGUAGE:CXX>:-fno-use-cxa-atexit>
   $<$<COMPILE_LANGUAGE:CXX>:-fno-threadsafe-statics>
+
+  # -flto fails with undefined reference to `__assert_func'...
+  # $<$<CONFIG:Release>:-flto>
+  # $<$<CONFIG:MinSizeRel>:-flto>
 
   # ... libs-c/src/stdlib/exit.c:132:46
   # $<$<CXX_COMPILER_ID:GNU>:-Wno-missing-attributes>
