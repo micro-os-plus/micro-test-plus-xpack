@@ -75,8 +75,6 @@ jobs:
         xpm run test-native-meson-gcc11
 
     - name: Run test-qemu-mps2-an386-cmake
-      # On Windows it fails due to path limitations.
-      if: runner.os != 'Windows'
       run: |
         xpm install --config qemu-mps2-an386-cmake-debug
         xpm install --config qemu-mps2-an386-cmake-release
