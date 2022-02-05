@@ -13,40 +13,39 @@
 
 # Inclded in `tests/meson/globals`.
 # '-fmessage-length=0', '-fsigned-char',
-# '-ffunction-sections', '-fdata-sections',
-# '-flto'.
+# '-ffunction-sections', '-fdata-sections'.
 
-platform_common_flags = [
+with_linux_clang_lto = true
+
+platform_common_options = [
 ]
 
 if get_option('buildtype') == 'release' or get_option('buildtype') == 'minsize' or get_option('buildtype') == 'debugoptimized'
   # https://mesonbuild.com/Reference-tables.html#operating-system-names
-  if build_machine.system() == 'linux' and c_compiler.get_id().contains('clang')
+  if build_machine.system() == 'linux' and c_compiler.get_id().contains('clang') and with_linux_clang_lto
     # meson-out/sample-test.p/.._src_sample-test.cpp.o: file not recognized: file format not recognized
-    platform_common_flags += [
-      # '-flto',
+    platform_common_options += [
+      '-flto',
     ]
   else
-    platform_common_flags += [
+    platform_common_options += [
       '-flto'
     ]
   endif
 endif
 
-platform_common_cpp_extra_flags = [
-]
-
 add_global_arguments(
-  platform_common_flags,
+  platform_common_options,
 
   language: [ 'c', 'cpp' ]
 )
 
-add_global_arguments(
-  platform_common_cpp_extra_flags,
+add_global_link_arguments(
+  platform_common_options,
 
-  language: [ 'cpp' ]
+  language: [ 'c', 'cpp' ]
 )
+
 
 # -----------------------------------------------------------------------------
 
