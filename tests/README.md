@@ -2,8 +2,9 @@
 
 There are two tests available, a unit test and a sample test.
 
-The CI workflow runs all tests, both as a native process and as a
-semihosted applications running on STM32F4DISCOVERY (emulated by QEMU).
+The CI workflow runs several tests, both as native processes and as
+semihosted applications emulated by QEMU; for details see
+[CI.yml](../.github/workflows/CI.yml).
 
 Exactly the same source files are built on both platforms, without
 changes.
