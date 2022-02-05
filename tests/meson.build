@@ -47,7 +47,18 @@ xpack_build_folder_path = meson.project_build_root()
 
 xpack_platform_name = get_option('platform-name')
 
-xpack_build_folder_relative_path = xpack_build_folder_path.replace(xpack_project_folder_path + '/', '')
+# Create a symbolic link to project root; don't bother with errors,
+# without it the build will crash anyway.
+if build_machine.system() == 'windows'
+  run_command('cmd', '/C', 'mklink /J top ..')
+  xpack_path_separator = '\\'
+else
+  run_command('ln', '-s', '..', 'top')
+  xpack_path_separator = '/'
+endif
+
+# Hack to compute the build folder relative path.
+xpack_build_folder_relative_path = xpack_build_folder_path.replace(xpack_project_folder_path + xpack_path_separator, '')
 # message('Build relative folder: ' + xpack_build_folder_relative_path)
 
 # -----------------------------------------------------------------------------
