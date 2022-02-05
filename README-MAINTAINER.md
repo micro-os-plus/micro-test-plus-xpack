@@ -46,19 +46,6 @@ git clone \
 
 ## Development setup
 
-### Remove previous packages
-
-In this early development phase, package versions are not properly set, and
-if you have older versions of the xPack installed, sometimes updates may fail
-to get the latest version. To fix this remove all global packages by using
-
-```sh
-cd ~/Work/micro-test-plus-xpack.git
-xpm run rm-global-deps
-```
-
-and repeat the steps from `xpm install`.
-
 ### Install dependencies
 
 With a clean slate, install dependencies:
