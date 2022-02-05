@@ -6,6 +6,26 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2022-02-05
+
+- v2.2.1
+- 473d3f3 package.json: use npmjs.com deps
+- b88b767 CI.yml try to enable qemu-cmake on Windows
+- 518645c package.json: enable cortexm builds on windows
+- e342558 meson create symbolic link at build time
+- 00ff79d cmake revert to .. instead of top symlink
+- 68053a5 package.json: bump build-helper
+- 65918f6 cmake notice that -flto fails on embedded
+- 868c55d meson native with_linux_clang_lto
+- a223600 meson: notice that -flto fails on embedded
+- bb3628a meson always include warnings
+- 1d1e612 meson revert to warning_level = 0
+- cc41eac meson native without -flto
+- d562a5e cmake native add --gc-sections
+ 4bee003 cmake globals -flto for release
+- c2c7972 package.json: bump devices-stm32f4-extras
+- 6139edb meson: disable -flto for clang on linux
+
 ## 2022-02-04
 
 - v2.2.0
