@@ -1,6 +1,6 @@
 {
   "name": "@micro-os-plus/micro-test-plus",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "A source xPack with µTest++, a minimalistic testing infrastructure",
   "main": "",
   "scripts": {
@@ -210,7 +210,7 @@
         "xpm uninstall --global @micro-os-plus/startup",
         "xpm uninstall --global @micro-os-plus/version",
         "xpm uninstall --global @xpack-3rd-party/arm-cmsis-core-m"
-  ]
+      ]
     },
     "buildConfigurations": {
       "native-cmake-debug": {
