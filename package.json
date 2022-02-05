@@ -45,7 +45,7 @@
       "buildFolderRelativePath": "{{ 'build' | path_join: configuration.name | to_filename | downcase }}",
       "buildFolderRelativePathPosix": "{{ 'build' | path_posix_join: configuration.name | downcase }}",
       "commandCMakePrepare": "{{ properties.commandCMakeReconfigure }} --log-level=VERBOSE",
-      "commandCMakePrepareWithToolchain": "{{ properties.commandCMakePrepare }} -D CMAKE_TOOLCHAIN_FILE=top/xpacks/micro-os-plus-build-helper/cmake/toolchains/{{ properties.toolchainFileName }}",
+      "commandCMakePrepareWithToolchain": "{{ properties.commandCMakePrepare }} -D CMAKE_TOOLCHAIN_FILE=../xpacks/micro-os-plus-build-helper/cmake/toolchains/{{ properties.toolchainFileName }}",
       "commandCMakeReconfigure": "cmake -S tests -B {{ properties.buildFolderRelativePathPosix }} -G Ninja -D CMAKE_BUILD_TYPE={{ properties.buildType }} -D PLATFORM_NAME={{ properties.platformName }} -D CMAKE_EXPORT_COMPILE_COMMANDS=ON",
       "commandCMakeBuild": "cmake --build {{ properties.buildFolderRelativePathPosix }} --verbose",
       "commandCMakeClean": "cmake --build {{ properties.buildFolderRelativePathPosix }} --target clean",
