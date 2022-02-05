@@ -61,10 +61,7 @@ message('Platform name: ' + xpack_platform_name)
 
 # https://mesonbuild.com/Reference-manual.html#subdir
 subdir('meson/globals')
-if meson.is_cross_build()
-  # Bare-metal builds are very strict. Native builds may use any toolchain.
-  subdir('top/xpacks/micro-os-plus-build-helper/meson/enable-all-warnings')
-endif
+subdir('top/xpacks/micro-os-plus-build-helper/meson/enable-all-warnings')
 subdir('platform-'+ xpack_platform_name + '/meson/globals')
 
 # -----------------------------------------------------------------------------
