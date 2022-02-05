@@ -15,12 +15,12 @@
 # add_global_*() functions.
 # Must be called before creating any library or executable.
 
-# Note: -flto fails with undefined __assert_func, _write, etc.
-
 platform_common_flags = [
   '-mcpu=cortex-m4',
   '-mthumb',
   '-mfloat-abi=hard',
+
+  # '-flto' # fails with undefined __assert_func, _write, etc.
 
   '-fno-move-loop-invariants',
 ]

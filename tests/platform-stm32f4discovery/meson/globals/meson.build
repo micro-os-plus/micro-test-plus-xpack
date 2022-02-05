@@ -20,6 +20,8 @@ platform_common_flags = [
   '-mthumb',
   '-mfloat-abi=soft',
 
+  # '-flto' # fails with undefined __assert_func, _write, etc.
+
   '-fno-move-loop-invariants',
 ]
 
