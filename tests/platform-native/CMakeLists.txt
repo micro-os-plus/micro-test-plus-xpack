@@ -78,6 +78,8 @@ function(add_test_executable name)
 
       # For just in case -flto fails. lld is another choice.
       # $<$<C_COMPILER_ID:Clang>:-Wl,-fuse-ld=ld.gold>
+      # $<$<C_COMPILER_ID:Clang>:-Wl,-fuse-ld=lld>
+      # Note: ineffective on Linux armv7l.
   )
 
   target_link_libraries(

@@ -15,19 +15,23 @@
 # '-fmessage-length=0', '-fsigned-char',
 # '-ffunction-sections', '-fdata-sections'.
 
-with_linux_clang_lto = true
-
 platform_common_options = [
 ]
 
 if get_option('buildtype') == 'release' or get_option('buildtype') == 'minsize' or get_option('buildtype') == 'debugoptimized'
   # https://mesonbuild.com/Reference-tables.html#operating-system-names
-  if build_machine.system() == 'linux' and c_compiler.get_id().contains('clang') and with_linux_clang_lto
-    # meson-out/sample-test.p/.._src_sample-test.cpp.o: file not recognized: file format not recognized
-    platform_common_options += [
-      '-flto',
-    ]
+  if build_machine.system() == 'linux' and c_compiler.get_id().contains('clang')
+    if build_machine.cpu() == 'armv7l'
+      # clang-12: error: unable to execute command: Segmentation fault
+      # clang-12: error: linker command failed due to signal (use -v to see invocation)
+    else
+      # meson-out/sample-test.p/.._src_sample-test.cpp.o: file not recognized: file format not recognized
+      platform_common_options += [
+        '-flto',
+      ]
+    endif
   else
+    message('boo')
     platform_common_options += [
       '-flto'
     ]

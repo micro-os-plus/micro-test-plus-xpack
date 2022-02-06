@@ -44,10 +44,20 @@ set(common_options
 
   -ffunction-sections
   -fdata-sections
+)
 
-  $<$<CONFIG:Release>:-flto>
-  $<$<CONFIG:MinSizeRel>:-flto>
+if("${CMAKE_SYSTEM_NAME}" STREQUAL "Linux" AND "${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "armv7l")
+  # clang-12: error: unable to execute command: Segmentation fault
+  # clang-12: error: linker command failed due to signal (use -v to see invocation)
+  # Alternate linker was not effective.
+else()
+  list(APPEND common_options
+    $<$<CONFIG:Release>:-flto>
+    $<$<CONFIG:MinSizeRel>:-flto>
+  )
+endif()
 
+list(APPEND common_options
   ${all_warnings}
 )
 
