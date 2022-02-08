@@ -70,6 +70,7 @@ add_compile_definitions(
   # DO NOT use CMAKE_BUILD_TYPE
   $<$<CONFIG:Debug>:DEBUG>
   $<$<CONFIG:Debug>:TRACE>
+  $<$<CONFIG:Debug>:MICRO_OS_PLUS_TRACE>
 )
 
 # -----------------------------------------------------------------------------
