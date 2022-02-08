@@ -335,7 +335,7 @@
           "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/clang": "12.0.1-1.2"
+          "@xpack-dev-tools/clang": "12.0.1-2.2"
         }
       },
       "native-cmake-clang12-release": {
@@ -354,7 +354,7 @@
           "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/clang": "12.0.1-1.2"
+          "@xpack-dev-tools/clang": "12.0.1-2.2"
         }
       },
       "native-meson-debug": {
@@ -444,7 +444,7 @@
           "clean": "{{ properties.commandMesonClean }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/clang": "12.0.1-1.2"
+          "@xpack-dev-tools/clang": "12.0.1-2.2"
         }
       },
       "native-meson-clang12-release": {
@@ -464,7 +464,7 @@
           "clean": "{{ properties.commandMesonClean }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/clang": "12.0.1-1.2"
+          "@xpack-dev-tools/clang": "12.0.1-2.2"
         }
       },
       "qemu-mps2-an386-cmake-debug": {
