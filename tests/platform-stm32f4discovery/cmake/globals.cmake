@@ -34,7 +34,7 @@ message(VERBOSE "G+ -I tests/platform-stm32f4discovery/include-config")
 add_compile_definitions(
 
   MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS
-  # MICRO_OS_PLUS_HAS_CONFIG_H
+  # MICRO_OS_PLUS_INCLUDE_CONFIG_H
 
   # Do not use CMAKE_BUILD_TYPE
   $<$<CONFIG:Debug>:MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_DEBUG>
