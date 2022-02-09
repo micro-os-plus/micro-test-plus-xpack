@@ -72,12 +72,12 @@ namespace micro_os_plus
 #else
       printf (", no exceptions");
 #endif
-#if defined(DEBUG)
-      printf (", with DEBUG");
+#if defined(MICRO_OS_PLUS_DEBUG)
+      printf (", with MICRO_OS_PLUS_DEBUG");
 #endif
       puts (".");
 
-#if defined(DEBUG)
+#if defined(MICRO_OS_PLUS_DEBUG)
       printf ("argv[] = ");
       for (int i = 0; i < argc; ++i)
         {
