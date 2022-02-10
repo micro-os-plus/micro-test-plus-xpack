@@ -23,40 +23,25 @@ add_library(platform-stm32f4discovery-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # -----------------------------------------------------------------------------
 
-target_include_directories(
-  platform-stm32f4discovery-interface
-
-  INTERFACE
-    "include-platform"
+target_include_directories(platform-stm32f4discovery-interface INTERFACE
+  "include-platform"
 )
 
-target_sources(
-  platform-stm32f4discovery-interface
-
-  INTERFACE
-    "src/initialize-hardware.cpp"
-    "src/interrupts-handlers.cpp"
+target_sources(platform-stm32f4discovery-interface INTERFACE
+  "src/initialize-hardware.cpp"
+  "src/interrupts-handlers.cpp"
 )
 
-target_compile_definitions(
-  platform-stm32f4discovery-interface
-
-  INTERFACE
-    # ... add preprocessor macro definitions.
+target_compile_definitions(platform-stm32f4discovery-interface INTERFACE
+  # None.
 )
 
-target_compile_options(
-  platform-stm32f4discovery-interface
-
-  INTERFACE
-    # ... perhaps ignore some warnings.
+target_compile_options(platform-stm32f4discovery-interface INTERFACE
+  # None.
 )
 
-target_link_libraries(
-  platform-stm32f4discovery-interface
-
-  INTERFACE
-    micro-os-plus::platform-stm32f4discovery
+target_link_libraries(platform-stm32f4discovery-interface INTERFACE
+  micro-os-plus::platform-stm32f4discovery
 )
 
 if (COMMAND xpack_display_target_lists)
@@ -76,70 +61,50 @@ function(add_test_executable name)
 
   add_executable(${name})
 
-  set_target_properties(
-    ${name}
-
+  set_target_properties(${name}
     PROPERTIES
       OUTPUT_NAME "${name}"
   )
 
   # Application sources.
-  target_sources(
-    ${name}
-
-    PRIVATE
-      "../src/${name}.cpp"
+  target_sources(${name} PRIVATE
+    "../src/${name}.cpp"
   )
 
   message(VERBOSE "A+ tests/src/${name}.cpp")
 
   # Include folders.
-  target_include_directories(
-    ${name}
-
-    PRIVATE
-      "../include"
-      # 'include-config' # was added globally
+  target_include_directories(${name} PRIVATE
+    "../include"
+    # 'include-config' # was added globally
   )
 
   message(VERBOSE "A+ -I tests/include")
 
-  target_compile_definitions(
-    ${name}
-
-    PRIVATE
-      # ... add preprocessor macro definitions.
+  target_compile_definitions(${name} PRIVATE
+    # None.
   )
 
   # Bare-metal platforms should be warnings free.
   # Native builds may use different toolchain versions, which
   # may trigger unexpected warnings.
-  target_compile_options(
-    ${name}
-
-    PRIVATE
-      -Werror
+  target_compile_options(${name} PRIVATE
+    -Werror
   )
 
-  target_link_libraries(
-    ${name}
+  target_link_libraries(${name} PRIVATE
+    micro-os-plus::micro-test-plus
+    micro-os-plus::platform # Should bring device & architecture too.
 
-    PRIVATE
-      micro-os-plus::micro-test-plus
-      micro-os-plus::platform # Should bring device & architecture too.
-
-      micro-os-plus::libs-c
-      micro-os-plus::libs-cpp
-      micro-os-plus::semihosting
-      micro-os-plus::startup
+    micro-os-plus::libs-c
+    micro-os-plus::libs-cpp
+    micro-os-plus::semihosting
+    micro-os-plus::startup
   )
 
-  target_link_options(
-    ${name}
-
-    PRIVATE
-      -Wl,-Map,platform/${name}-map.txt
-      # -v
+  target_link_options(${name} PRIVATE
+    -Wl,-Map,platform/${name}-map.txt
+    # -v
   )
 
   # TODO use add_custom_target()
@@ -177,26 +142,26 @@ add_test(
   NAME "unit-test"
 
   COMMAND qemu-system-gnuarmeclipse${extension}
-      --verbose
-      --board STM32F4-Discovery
-      -d unimp,guest_errors
-      --nographic
-      --image unit-test.elf
-      --semihosting-config enable=on,target=native
-      --semihosting-cmdline unit-test
+    --verbose
+    --board STM32F4-Discovery
+    -d unimp,guest_errors
+    --nographic
+    --image unit-test.elf
+    --semihosting-config enable=on,target=native
+    --semihosting-cmdline unit-test
 )
 
 add_test(
   NAME "sample-test"
 
   COMMAND qemu-system-gnuarmeclipse${extension}
-      --verbose
-      --board STM32F4-Discovery
-      -d unimp,guest_errors
-      --nographic
-      --image sample-test.elf
-      --semihosting-config enable=on,target=native
-      --semihosting-cmdline sample-test one two
+    --verbose
+    --board STM32F4-Discovery
+    -d unimp,guest_errors
+    --nographic
+    --image sample-test.elf
+    --semihosting-config enable=on,target=native
+    --semihosting-cmdline sample-test one two
 )
 
 # -----------------------------------------------------------------------------

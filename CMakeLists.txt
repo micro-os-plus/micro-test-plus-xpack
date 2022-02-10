@@ -48,39 +48,24 @@ add_library(micro-os-plus-micro-test-plus-interface INTERFACE)
 # -----------------------------------------------------------------------------
 # Target settings.
 
-target_include_directories(
-  micro-os-plus-micro-test-plus-interface
-
-  INTERFACE
-    "include"
+target_include_directories(micro-os-plus-micro-test-plus-interface INTERFACE
+  "include"
 )
 
-target_sources(
-  micro-os-plus-micro-test-plus-interface
-
-  INTERFACE
-    "src/micro-test-plus.cpp"
+target_sources(micro-os-plus-micro-test-plus-interface INTERFACE
+  "src/micro-test-plus.cpp"
 )
 
-target_compile_definitions(
-  micro-os-plus-micro-test-plus-interface
-
-  INTERFACE
-    # ...
+target_compile_definitions(micro-os-plus-micro-test-plus-interface INTERFACE
+  # None.
 )
 
-target_compile_options(
-  micro-os-plus-micro-test-plus-interface
-
-  INTERFACE
-    # ...
+target_compile_options(micro-os-plus-micro-test-plus-interface INTERFACE
+  # None.
 )
 
-target_link_libraries(
-  micro-os-plus-micro-test-plus-interface
-
-  INTERFACE
-    # ...
+target_link_libraries(micro-os-plus-micro-test-plus-interface INTERFACE
+  # None.
 )
 
 if (COMMAND xpack_display_target_lists)

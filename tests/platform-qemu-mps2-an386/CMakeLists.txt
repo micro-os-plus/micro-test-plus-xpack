@@ -24,40 +24,25 @@ add_library(platform-qemu-mps2-an386-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # -----------------------------------------------------------------------------
 
-target_sources(
-  platform-qemu-mps2-an386-interface
-
-  INTERFACE
-    "src/initialize-hardware.cpp"
-    "src/interrupts-handlers.cpp"
+target_include_directories(platform-qemu-mps2-an386-interface INTERFACE
+  "include-platform"
 )
 
-target_include_directories(
-  platform-qemu-mps2-an386-interface
-
-  INTERFACE
-    "include-platform"
+target_sources(platform-qemu-mps2-an386-interface INTERFACE
+  "src/initialize-hardware.cpp"
+  "src/interrupts-handlers.cpp"
 )
 
-target_compile_definitions(
-  platform-qemu-mps2-an386-interface
-
-  INTERFACE
-    "${xpack_platform_compile_definition}"
+target_compile_definitions(platform-qemu-mps2-an386-interface INTERFACE
+  "${xpack_platform_compile_definition}"
 )
 
-target_compile_options(
-  platform-qemu-mps2-an386-interface
-
-  INTERFACE
-    # ... perhaps ignore some warnings.
+target_compile_options(platform-qemu-mps2-an386-interface INTERFACE
+  # None.
 )
 
-target_link_libraries(
-  platform-qemu-mps2-an386-interface
-
-  INTERFACE
-    micro-os-plus::devices-qemu-cortexm
+target_link_libraries(platform-qemu-mps2-an386-interface INTERFACE
+  micro-os-plus::devices-qemu-cortexm
 )
 
 if (COMMAND xpack_display_target_lists)
@@ -76,77 +61,53 @@ function(add_test_executable name)
 
   add_executable(${name})
 
-  set_target_properties(
-    ${name}
-
+  set_target_properties(${name}
     PROPERTIES
       OUTPUT_NAME "${name}"
   )
 
   # Include folders.
   # `tests/platform-qemu-mps2-an386/include` was added globally.
-  target_include_directories(
-    ${name}
-
-    PRIVATE
-      "../include"
+  target_include_directories(${name} PRIVATE
+    "../include"
   )
 
   message(VERBOSE "A+ -I tests/include")
 
   # Application sources.
-  target_sources(
-    ${name}
-
-    PRIVATE
-      "../src/${name}.cpp"
+  target_sources(${name} PRIVATE
+    "../src/${name}.cpp"
   )
 
   message(VERBOSE "A+ tests/src/${name}.cpp")
 
-
-  target_compile_definitions(
-    ${name}
-
-    PRIVATE
-      # ...
+  target_compile_definitions(${name} PRIVATE
+    # None.
   )
 
   # Bare-metal platforms should be warnings free.
   # Native builds may use different toolchain versions, which
   # may trigger unexpected warnings.
-  target_compile_options(
-    ${name}
-
-    PRIVATE
-      -Werror
+  target_compile_options(${name} PRIVATE
+    -Werror
   )
 
-  target_link_libraries(
-    ${name}
-
-    PRIVATE
-      micro-os-plus::micro-test-plus
+  target_link_libraries(${name} PRIVATE
+    micro-os-plus::micro-test-plus
   )
 
-  target_link_libraries(
-    ${name}
+  target_link_libraries(${name} PRIVATE
+    micro-os-plus::platform # Should bring device & architecture too.
 
-    PRIVATE
-      micro-os-plus::platform # Should bring device & architecture too.
-
-      micro-os-plus::libs-c
-      micro-os-plus::libs-cpp
-      micro-os-plus::semihosting
-      micro-os-plus::startup
+    micro-os-plus::libs-c
+    micro-os-plus::libs-cpp
+    micro-os-plus::semihosting
+    micro-os-plus::startup
   )
 
-  target_link_options(
-    ${name}
-
-    PRIVATE
-      -Wl,-Map,platform/${name}-map.txt
-      # -v
+  target_link_options(${name} PRIVATE
+    -Wl,-Map,platform/${name}-map.txt
+    # -v
   )
 
   # TODO use add_custom_target()

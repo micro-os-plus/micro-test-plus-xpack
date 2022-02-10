@@ -27,66 +27,46 @@ function(add_test_executable name)
 
   # Include folders.
   # `platform-native/include` was added globally.
-  target_include_directories(
-    ${name}
-
-    PRIVATE
-      "../include"
+  target_include_directories(${name} PRIVATE
+    "../include"
   )
 
   message(VERBOSE "A+ -I tests/include")
 
-  set_target_properties(
-    ${name}
-
+  set_target_properties(${name}
     PROPERTIES
       OUTPUT_NAME "${name}"
   )
 
   # Application sources.
-  target_sources(
-    ${name}
-
-    PRIVATE
-      "../src/${name}.cpp"
+  target_sources(${name} PRIVATE
+    "../src/${name}.cpp"
   )
 
   message(VERBOSE "A+ tests/src/${name}.cpp")
 
-  target_compile_definitions(
-    ${name}
-
-    PRIVATE
-      # ...
+  target_compile_definitions(${name} PRIVATE
+    # None.
   )
 
-  target_compile_options(
-    ${name}
-
-    PRIVATE
-      # The compile options were defined globally.
-      # ...
+  target_compile_options(${name} PRIVATE
+    # The compile options were defined globally.
+    # None.
   )
 
   # https://cmake.org/cmake/help/v3.20/manual/cmake-generator-expressions.7.html
-  target_link_options(
-    ${name}
+  target_link_options(${name} PRIVATE
+    $<$<PLATFORM_ID:Darwin>:-Wl,-dead_strip>
+    $<$<PLATFORM_ID:Linux,Windows>:-Wl,--gc-sections>
 
-    PRIVATE
-      $<$<PLATFORM_ID:Darwin>:-Wl,-dead_strip>
-      $<$<PLATFORM_ID:Linux,Windows>:-Wl,--gc-sections>
-
-      # For just in case -flto fails. lld is another choice.
-      # $<$<C_COMPILER_ID:Clang>:-Wl,-fuse-ld=ld.gold>
-      # $<$<C_COMPILER_ID:Clang>:-Wl,-fuse-ld=lld>
-      # Note: ineffective on Linux armv7l.
+    # For just in case -flto fails. lld is another choice.
+    # $<$<C_COMPILER_ID:Clang>:-Wl,-fuse-ld=ld.gold>
+    # $<$<C_COMPILER_ID:Clang>:-Wl,-fuse-ld=lld>
+    # Note: ineffective on Linux armv7l.
   )
 
-  target_link_libraries(
-    ${name}
-
-    PRIVATE
-      micro-os-plus::micro-test-plus
+  target_link_libraries(${name} PRIVATE
+    micro-os-plus::micro-test-plus
   )
 
   message(VERBOSE "A> ${name}")
@@ -97,14 +77,14 @@ endfunction()
 
 add_test_executable(unit-test)
 
-add_test_executable(sample-test)
-
-# -----------------------------------------------------------------------------
-
 add_test(
   NAME "unit-test"
   COMMAND unit-test
 )
+
+# -----------------------------------------------------------------------------
+
+add_test_executable(sample-test)
 
 add_test(
   NAME "sample-test"
