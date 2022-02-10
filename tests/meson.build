@@ -1,4 +1,3 @@
-
 #
 # This file is part of the µOS++ distribution.
 #   (https://github.com/micro-os-plus)
