@@ -26,7 +26,7 @@
 void
 micro_os_plus_startup_initialize_hardware_early (void)
 {
-  ; // None so far.
+  // None so far.
 }
 #endif
 
