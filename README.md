@@ -154,12 +154,9 @@ The result is an interface library that can be added as an application
 dependency with:
 
 ```cmake
-target_link_libraries(
-  your-target
-
-  PUBLIC
-    ...
-    micro-os-plus::micro-test-plus
+target_link_libraries(your-target PRIVATE
+  ...
+  micro-os-plus::micro-test-plus
 )
 ```
 
@@ -190,7 +187,7 @@ exe = executable(
 
 A simple example showing how to use the µTest++ framework is
 presented below and is also available in
-[tests/sample-test.cpp](tests/sample-test.cpp).
+[tests/src/sample-test.cpp](tests/src/sample-test.cpp).
 
 ```c++
 #include <micro-os-plus/micro-test-plus.h>
