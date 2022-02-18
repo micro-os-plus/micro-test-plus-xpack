@@ -11,29 +11,28 @@
 #
 # -----------------------------------------------------------------------------
 
-# Inclded in `tests/meson/globals`.
-# '-fmessage-length=0', '-fsigned-char',
-# '-ffunction-sections', '-fdata-sections'.
+# Definitions required for compiling all files, thus the use of
+# add_global_*() functions.
+# Must be added with subdir() before creating any library or executable.
+
+message('Including platform-native global definitions...')
+
+# -----------------------------------------------------------------------------
 
 platform_common_options = [
 ]
 
 if get_option('buildtype') == 'release' or get_option('buildtype') == 'minsize' or get_option('buildtype') == 'debugoptimized'
   # https://mesonbuild.com/Reference-tables.html#operating-system-names
-  if build_machine.system() == 'linux' and c_compiler.get_id().contains('clang')
-    if build_machine.cpu() == 'armv7l'
-      # clang-12: error: unable to execute command: Segmentation fault
-      # clang-12: error: linker command failed due to signal (use -v to see invocation)
-    else
-      # meson-out/sample-test.p/.._src_sample-test.cpp.o: file not recognized: file format not recognized
-      platform_common_options += [
-        '-flto',
-      ]
-    endif
+  # message(build_machine.cpu())
+  # Match armv[78]l.
+  if c_compiler.get_id().contains('clang') and build_machine.system() == 'linux' and build_machine.cpu().contains('armv')
+    # clang-12: error: unable to execute command: Segmentation fault
+    # clang-12: error: linker command failed due to signal (use -v to see invocation)
   else
-    message('boo')
+    # meson-out/sample-test.p/.._src_sample-test.cpp.o: file not recognized: file format not recognized
     platform_common_options += [
-      '-flto'
+      '-flto',
     ]
   endif
 endif
@@ -44,16 +43,19 @@ add_global_arguments(
   language: [ 'c', 'cpp' ]
 )
 
+# When `-flto` is used, the compile options must be passed to the linker too.
 add_global_link_arguments(
   platform_common_options,
 
   language: [ 'c', 'cpp' ]
 )
 
-
 # -----------------------------------------------------------------------------
 
-# Native builds do not have dependencies.
-xpack_dependencies = []
+# The base folder is root, via the `top` link.
+xpack_dependencies = [
+  'xpacks/micro-os-plus-diag-trace', # -
+  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-architecture-synthetic-posix', # (architecture) -
+]
 
 # -----------------------------------------------------------------------------

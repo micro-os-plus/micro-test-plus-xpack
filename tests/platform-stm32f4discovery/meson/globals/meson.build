@@ -13,7 +13,11 @@
 
 # Definitions required for compiling all files, thus the use of
 # add_global_*() functions.
-# Must be called before creating any library or executable.
+# Must be added with subdir() before creating any library or executable.
+
+message('Including platform-stm32f4discovery globals...')
+
+# -----------------------------------------------------------------------------
 
 platform_common_flags = [
   '-mcpu=cortex-m4',
@@ -33,7 +37,7 @@ platform_common_c_extra_flags = [
 platform_common_cpp_extra_flags = [
   '-fno-rtti',
   '-fno-use-cxa-atexit',
-  '-fno-threadsafe-statics'
+  '-fno-threadsafe-statics',
 ]
 
 if get_option('buildtype').contains('debug')
@@ -41,11 +45,6 @@ if get_option('buildtype').contains('debug')
     '-fno-omit-frame-pointer'
   ]
 endif
-
-# Inclded in common part.
-# '-fmessage-length=0', '-fsigned-char',
-# '-ffunction-sections', '-fdata-sections',
-# '-flto', '-fno-omit-frame-pointer'
 
 add_global_arguments(
   platform_common_flags,
@@ -77,22 +76,11 @@ add_global_link_arguments(
   language: [ 'cpp' ]
 )
 
-add_global_arguments(
-  '-DMICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS',
-
-  language: [ 'c', 'cpp' ]
-)
-
-message('G+ -D MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS')
-
-if get_option('buildtype').contains('debug')
-  add_global_arguments(
-    '-DMICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_STDOUT',
-
-    language: [ 'c', 'cpp' ]
-  )
-  message('G+ -D MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_STDOUT')
-endif
+xpack_linker_scripts = [
+    # Path are relative to the build folder.
+  '-Txpacks/micro-os-plus-platform-stm32f4discovery/linker-scripts/mem.ld',
+  '-Txpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections.ld',
+]
 
 # -----------------------------------------------------------------------------
 
@@ -100,9 +88,11 @@ endif
 # The order is relevant, each package must be included only after
 # all its dependencies were included.
 xpack_dependencies = [
+  'xpacks/micro-os-plus-diag-trace', # -
+
   xpack_build_folder_relative_path + '/xpacks/micro-os-plus-version', # -
-  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-diag-trace', # -
   xpack_build_folder_relative_path + '/xpacks/micro-os-plus-architecture-cortexm', # - >architecture
+
   xpack_build_folder_relative_path + '/xpacks/micro-os-plus-startup', # +(version, diag_trace, architecture) >startup
   xpack_build_folder_relative_path + '/xpacks/micro-os-plus-libs-c', # +(diag_trace, startup, architecture) >libs_c
   xpack_build_folder_relative_path + '/xpacks/micro-os-plus-libs-cpp', # +(diag_trace) >libs_cpp

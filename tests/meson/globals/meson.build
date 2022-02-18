@@ -16,60 +16,66 @@
 # https://mesonbuild.com/Reference-tables.html#c_compiler-ids
 if c_compiler.get_id() == 'gcc' or c_compiler.get_id().contains('clang')
 
+  includes = []
   # Always add the `include-config` folder.
-  includes = [ '-I../../tests/platform-' + xpack_platform_name + '/include-config' ]
+  includes += [ '-I../../tests/platform-' + xpack_platform_name + '/include-config' ]
   message('G+ -I tests/platform-' + xpack_platform_name + '/include-config')
 
   # Global compiler preprocessor definitions.
   # Native builds may not use them.
   compiler_definitions = []
   if get_option('buildtype').contains('debug')
-    compiler_definitions += ['-DDEBUG']
-    compiler_definitions += ['-DTRACE']
+    compiler_definitions += [ '-DDEBUG' ]
+    compiler_definitions += [ '-DMICRO_OS_PLUS_DEBUG' ]
+    compiler_definitions += [ '-DMICRO_OS_PLUS_TRACE' ]
   endif
   if get_option('buildtype') == 'release'
-    compiler_definitions += ['-DNDEBUG']
+    compiler_definitions += [ '-DNDEBUG' ]
   endif
+  compiler_definitions += [ '-DMICRO_OS_PLUS_INCLUDE_CONFIG_H' ]
+
+  # DO NOT define it globally, one test does not need it!
+  # compiler_definitions += ['-DMICRO_OS_PLUS_TRACE']
 
   # Options for both compilers and linkers. When using `-flto`, all options
   # must also be passed to the linker.
 
-  common_options = []
+  global_common_options = []
   if get_option('buildtype') == 'debug'
-    # common_options += ['-O0']
+    # global_common_options += [ '-O0' ]
   elif get_option('buildtype') == 'debugoptimized'
-    common_options += ['-Og'] # Override -O2
+    global_common_options += [ '-Og' ] # Override -O2
   elif get_option('buildtype') == 'minsize'
-    # common_options += ['-Os']
+    # global_common_options += [ '-Os' ]
   elif get_option('buildtype') == 'release'
-    # common_options += ['-O3']
+    # global_common_options += [ '-O3' ]
   else
-    common_options += ['-O']
+    global_common_options += [ '-O' ]
   endif
 
-  common_options += [
+  global_common_options += [
     '-fmessage-length=0',
-    '-fsigned-char'
-  ]
+    '-fsigned-char',
 
-  # This is used in conjunction with linker `--gc-sections`.
-  common_options += [
+    # These are used in conjunction with linker `--gc-sections`.
     '-ffunction-sections',
     '-fdata-sections'
   ]
 
   add_global_arguments(
-    includes + compiler_definitions + common_options,
+    includes + compiler_definitions + global_common_options,
 
     language: [ 'c', 'cpp' ]
   )
 
-  # When using -flto, the options must be passed to the linker too.
+  # When `-flto` is used, the compile options must be passed to the linker too.
   add_global_link_arguments(
-    common_options,
+    global_common_options,
 
     language: [ 'c', 'cpp' ]
   )
+
+  # Warnings must be included from the tests.
 
 else
   message('Unsupported compiler')

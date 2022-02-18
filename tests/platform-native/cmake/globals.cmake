@@ -14,60 +14,36 @@
 # This file defines the global compiler settings that apply to all targets.
 # Must be added with `include()` in the `tests` scope.
 
-message(VERBOSE "Including platform-native globals...")
+message(VERBOSE "Including platform-native global definitions...")
 
 # -----------------------------------------------------------------------------
-# Global definitions. Before any libraries.
 
-# A list of all imaginable warnings.
-xpack_set_all_compiler_warnings(all_warnings)
+# Global definitions.
+# add_compile_definitions()
+# include_directories()
 
-# The global configuration file and possibly other platform defines.
-include_directories(
-
-  # Folders are relative to `tests`.
-  "platform-native/include-config"
-)
-
-message(VERBOSE "G+ -I tests/platform-native/include-config")
-
-# Global compiler definitions.
-add_compile_definitions(
-
-  # ...
-)
-
-set(common_options
-
-  -fmessage-length=0
-  -fsigned-char
-
-  -ffunction-sections
-  -fdata-sections
-)
-
-if("${CMAKE_SYSTEM_NAME}" STREQUAL "Linux" AND "${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "armv7l")
+# https://cmake.org/cmake/help/v3.20/variable/CMAKE_LANG_COMPILER_ID.html
+# message("${CMAKE_C_COMPILER_ID} ${CMAKE_SYSTEM_NAME} ${CMAKE_SYSTEM_PROCESSOR}")
+# Unfortunatelly in a container it shows aarch64 instead of armv7l.
+if("${CMAKE_C_COMPILER_ID}" MATCHES "Clang" AND "${CMAKE_SYSTEM_NAME}" STREQUAL "Linux" AND ("${CMAKE_SYSTEM_PROCESSOR}" MATCHES "armv" OR ("${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "aarch64")))
   # clang-12: error: unable to execute command: Segmentation fault
   # clang-12: error: linker command failed due to signal (use -v to see invocation)
   # Alternate linker was not effective.
+  message(STATUS "Clang Linux arm - skip -flto")
 else()
-  list(APPEND common_options
+  set(platform_common_options
     $<$<CONFIG:Release>:-flto>
     $<$<CONFIG:MinSizeRel>:-flto>
   )
+
+  add_compile_options(
+    ${platform_common_options}
+  )
+
+  # When `-flto` is used, the compile options must be passed to the linker too.
+  add_link_options(
+    ${platform_common_options}
+  )
 endif()
-
-list(APPEND common_options
-  ${all_warnings}
-)
-
-add_compile_options(
-  ${common_options}
-)
-
-# When using -flto, the compiler options must be passed to the linker too.
-add_link_options(
-  ${common_options}
-)
 
 # -----------------------------------------------------------------------------

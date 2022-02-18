@@ -63,16 +63,6 @@ xpack_display_greetings()
 
 # CMAKE_BUILD_TYPE: Debug, Release, RelWithDebInfo, MinSizeRel
 
-# Common to all platforms.
-add_compile_definitions(
-  # NDEBUG provided by the toolchain definitions on release.
-
-  # DO NOT use CMAKE_BUILD_TYPE
-  $<$<CONFIG:Debug>:DEBUG>
-  $<$<CONFIG:Debug>:TRACE>
-  $<$<CONFIG:Debug>:MICRO_OS_PLUS_TRACE>
-)
-
 # -----------------------------------------------------------------------------
 
 # Bare-metal executables have the .elf extension.
@@ -81,22 +71,34 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Generic")
 endif()
 
 # -----------------------------------------------------------------------------
+## Non-target specific definitions ##
 
-# The globals must be included in this scope, before any targets.
+# The globals must be included in this scope, before creating any targets.
+# The compile options, symbols and include folders apply to all
+# compiled sources, from all libraries.
+include("cmake/globals.cmake")
 include("platform-${PLATFORM_NAME}/cmake/globals.cmake")
 
-# Build configuration dependencies.
+xpack_display_global_lists()
+
+# -----------------------------------------------------------------------------
+## Dependencies ##
+
+# Add build configuration dependencies.
 xpack_glob_add_subdirectories("${CMAKE_BINARY_DIR}/xpacks" "xpacks-bin")
 
-# Project dependencies.
+# Add project dependencies. Libraries already defined will fail.
 xpack_glob_add_subdirectories("../xpacks" "top-xpacks-bin")
 
-# The main library from the root folder.
-add_subdirectory(".." "top")
+# Add the main library from the root folder.
+message(VERBOSE "Adding top library...")
+add_subdirectory(".." "top-bin")
 
-# The platform specific configuration.
-add_subdirectory("platform-${PLATFORM_NAME}" "platform")
+# -----------------------------------------------------------------------------
+## The platform specific tests ##
 
-# The result will be in the `platform` folder.
+# Add the platform specific configuration.
+# The result will be in the `platform-bin` folder.
+add_subdirectory("platform-${PLATFORM_NAME}" "platform-bin")
 
 # -----------------------------------------------------------------------------

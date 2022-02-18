@@ -17,43 +17,19 @@
 message(VERBOSE "Including platform-stm32f4discovery globals...")
 
 # -----------------------------------------------------------------------------
-# Global definitions. Before any libraries.
 
-# A list of all imaginable warnings.
-xpack_set_all_compiler_warnings(all_warnings)
-
-# The global configuration file and possibly other platform defines.
-include_directories(
-
-  # Folders are relative to `tests`.
-  "platform-stm32f4discovery/include-config"
-)
-
-message(VERBOSE "G+ -I tests/platform-stm32f4discovery/include-config")
-
+# Global compiler definitions.
 add_compile_definitions(
 
-  MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS
-  # MICRO_OS_PLUS_INCLUDE_CONFIG_H
-
-  # Do not use CMAKE_BUILD_TYPE
-  $<$<CONFIG:Debug>:MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_DEBUG>
+  # Moved to config.h
 )
 
-message(VERBOSE "G+ -D MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS")
-message(VERBOSE "G+ -D $<$<CONFIG:Debug>:MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_DEBUG>")
-
-set(common_options
+set(platform_common_options
 
   -mcpu=cortex-m4
   -mthumb
   -mfloat-abi=soft
-
-  -fmessage-length=0
-  -fsigned-char
-
-  -ffunction-sections
-  -fdata-sections
+  # -mfloat-abi=hard
 
   -fno-move-loop-invariants
 
@@ -69,29 +45,25 @@ set(common_options
   # ... libs-c/src/stdlib/exit.c:132:46
   # $<$<CXX_COMPILER_ID:GNU>:-Wno-missing-attributes>
 
-  ${all_warnings}
-
+  # Embedded builds must be warning free.
   -Werror
 )
 
 add_compile_options(
-
-    ${common_options}
+    ${platform_common_options}
 )
 
 add_link_options(
-
-    ${common_options}
+    ${platform_common_options}
 )
 
 add_link_options(
-
     -nostartfiles
     # nano has no exceptions.
     # -specs=nano.specs
     -Wl,--gc-sections
 
-    # Ensure the linker will keep the interrupt vectors which otherwise
+    # Force the linker to keep the interrupt vectors which otherwise
     # are not refered from anywhere.
     -u_interrupt_vectors
 

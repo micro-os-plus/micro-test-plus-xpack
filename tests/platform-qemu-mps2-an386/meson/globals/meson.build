@@ -13,7 +13,11 @@
 
 # Definitions required for compiling all files, thus the use of
 # add_global_*() functions.
-# Must be called before creating any library or executable.
+# Must be added with subdir() before creating any library or executable.
+
+message('Including platform-qemu-mps2-an386 globals...')
+
+# -----------------------------------------------------------------------------
 
 platform_common_flags = [
   '-mcpu=cortex-m4',
@@ -23,6 +27,9 @@ platform_common_flags = [
   # '-flto' # fails with undefined __assert_func, _write, etc.
 
   '-fno-move-loop-invariants',
+]
+
+platform_common_c_extra_flags = [
 ]
 
 platform_common_cpp_extra_flags = [
@@ -44,6 +51,12 @@ add_global_arguments(
 )
 
 add_global_arguments(
+  platform_common_c_extra_flags,
+
+  language: [ 'c' ]
+)
+
+add_global_arguments(
   platform_common_cpp_extra_flags,
 
   language: [ 'cpp' ]
@@ -61,30 +74,26 @@ add_global_link_arguments(
   language: [ 'cpp' ]
 )
 
-add_global_arguments(
-  '-DMICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS',
+xpack_linker_scripts = [
+    # Path are relative to the build folder.
+  '-Txpacks/micro-os-plus-devices-qemu-cortexm/linker-scripts/mem.ld',
+  '-Txpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections.ld',
+]
 
-  language: [ 'c', 'cpp' ]
-)
-
-message('G+ -D MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS')
-if get_option('buildtype').contains('debug')
-  add_global_arguments(
-    '-DMICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_STDOUT',
-
-    language: [ 'c', 'cpp' ]
-  )
-  message('G+ -D MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_STDOUT')
-endif
-
-# The current folder is tests, we must include folders from the build folder.
+# The base folder is root, via the `top` link.
 xpack_dependencies = [
+  'xpacks/micro-os-plus-diag-trace', # -
+
   xpack_build_folder_relative_path + '/xpacks/micro-os-plus-version', # -
-  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-diag-trace', # -
   xpack_build_folder_relative_path + '/xpacks/xpack-3rd-party-arm-cmsis-core-m', # -
+
   xpack_build_folder_relative_path + '/xpacks/micro-os-plus-architecture-cortexm', # (architecture) -
-  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-semihosting', # diag-trace, architecture
-  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-devices-cortexm', # semihosting
+
+  # +(diag_trace, architecture) >semihosting
+  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-semihosting',
+  # +(semihosting) >devices_cortexm
+  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-devices-cortexm',
+
   xpack_build_folder_relative_path + '/xpacks/micro-os-plus-startup', # version, diag-trace, architecture
   xpack_build_folder_relative_path + '/xpacks/micro-os-plus-libs-c', # diag-trace, startup, architecture
   xpack_build_folder_relative_path + '/xpacks/micro-os-plus-libs-cpp', # diag-trace

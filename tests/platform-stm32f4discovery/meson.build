@@ -58,6 +58,25 @@ test_names = [ 'unit-test', 'sample-test' ]
 
 foreach name : test_names
 
+  compile_definitions = []
+
+  libs_dependencies = [
+    # Tested library.
+    micro_os_plus_micro_test_plus_dependency,
+
+    # Portable dependencies.
+    # micro_os_plus_diag_trace_dependency,
+
+    # Platform; it brings device and architecture too.
+    platform_stm32f4discovery_dependency,
+
+    # Other dependencies.
+    micro_os_plus_libs_c_dependency,
+    micro_os_plus_libs_cpp_dependency,
+    micro_os_plus_semihosting_dependency,
+    micro_os_plus_startup_dependency,
+  ]
+
   # https://mesonbuild.com/Reference-manual.html#executable
   exe = executable(
     name,
@@ -68,31 +87,18 @@ foreach name : test_names
     sources: files(
       '../src/' + name + '.cpp'
     ),
-    dependencies: [
-      # Tested library.
-      micro_os_plus_micro_test_plus_dependency,
-
-      # Platform; it brings device and architecture too.
-      platform_stm32f4discovery_dependency,
-
-      # Other dependencies.
-      micro_os_plus_libs_c_dependency,
-      micro_os_plus_libs_cpp_dependency,
-      micro_os_plus_semihosting_dependency,
-      micro_os_plus_startup_dependency,
-    ],
+    c_args: compile_definitions,
+    cpp_args: compile_definitions,
+    dependencies: libs_dependencies,
     link_args: [
-      '-Wl,-Map,meson-out/'+ name + '-map.txt',
       '-nostartfiles',
       # Ensure the linker will keep the interrupt vectors which otherwise
       # are not refered from anywhere.
       '-u_interrupt_vectors',
       '-Wl,--gc-sections',
+      '-Wl,-Map,'+ name + '-map.txt',
       # '-v',
-      # Path are relative to the build folder.
-      '-Txpacks/micro-os-plus-platform-stm32f4discovery/linker-scripts/mem.ld',
-      '-Txpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections.ld',
-    ],
+      ] + xpack_linker_scripts,
     name_suffix: 'elf',
   )
 

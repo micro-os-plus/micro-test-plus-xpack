@@ -11,13 +11,46 @@
 #
 # -----------------------------------------------------------------------------
 
-# This file defines the global settings that apply to all targets.
+# This file creates the platform specific test executables.
 
-message(VERBOSE "Processing platform-native...")
+message(VERBOSE "Processing 'tests/platform-native'...")
+
+# -----------------------------------------------------------------------------
+# Define the platform library.
+
+add_library(platform-native-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # -----------------------------------------------------------------------------
 
-# A `micro-os-plus::platform` is not really needed and is not created.
+target_include_directories(platform-native-interface INTERFACE
+  "include-platform"
+)
+
+target_sources(platform-native-interface INTERFACE
+  # None.
+)
+
+target_compile_definitions(platform-native-interface INTERFACE
+  # None.
+)
+
+target_compile_options(platform-native-interface INTERFACE
+  # None.
+)
+
+target_link_libraries(platform-native-interface INTERFACE
+  micro-os-plus::architecture-synthetic-posix
+)
+
+if (COMMAND xpack_display_target_lists)
+  xpack_display_target_lists(platform-native-interface)
+endif()
+
+# -----------------------------------------------------------------------------
+# Aliases.
+
+add_library(micro-os-plus::platform ALIAS platform-native-interface)
+message(VERBOSE "> micro-os-plus::platform -> platform-native-interface")
 
 # =============================================================================
 
@@ -33,10 +66,7 @@ function(add_test_executable name)
 
   message(VERBOSE "A+ -I tests/include")
 
-  set_target_properties(${name}
-    PROPERTIES
-      OUTPUT_NAME "${name}"
-  )
+  set_target_properties(${name} PROPERTIES OUTPUT_NAME "${name}")
 
   # Application sources.
   target_sources(${name} PRIVATE
@@ -49,8 +79,8 @@ function(add_test_executable name)
     # None.
   )
 
+  # The compile options were defined globally.
   target_compile_options(${name} PRIVATE
-    # The compile options were defined globally.
     # None.
   )
 
@@ -58,15 +88,19 @@ function(add_test_executable name)
   target_link_options(${name} PRIVATE
     $<$<PLATFORM_ID:Darwin>:-Wl,-dead_strip>
     $<$<PLATFORM_ID:Linux,Windows>:-Wl,--gc-sections>
-
-    # For just in case -flto fails. lld is another choice.
-    # $<$<C_COMPILER_ID:Clang>:-Wl,-fuse-ld=ld.gold>
-    # $<$<C_COMPILER_ID:Clang>:-Wl,-fuse-ld=lld>
-    # Note: ineffective on Linux armv7l.
+    $<$<PLATFORM_ID:Linux,Windows>:-Wl,-Map,platform-bin/${name}-map.txt>
+    # -v
   )
 
   target_link_libraries(${name} PRIVATE
+    # Tested library.
     micro-os-plus::micro-test-plus
+
+    # Portable dependencies.
+    micro-os-plus::diag-trace
+
+    # Platform specific dependencies.
+    micro-os-plus::platform
   )
 
   message(VERBOSE "A> ${name}")
@@ -75,20 +109,24 @@ endfunction()
 
 # -----------------------------------------------------------------------------
 
-add_test_executable(unit-test)
-
-add_test(
-  NAME "unit-test"
-  COMMAND unit-test
-)
-
-# -----------------------------------------------------------------------------
-
 add_test_executable(sample-test)
 
 add_test(
   NAME "sample-test"
   COMMAND sample-test one two
+)
+
+# -----------------------------------------------------------------------------
+
+add_test_executable(unit-test)
+
+target_link_libraries(unit-test PRIVATE
+  micro-os-plus::micro-test-plus
+)
+
+add_test(
+  NAME "unit-test"
+  COMMAND unit-test
 )
 
 # -----------------------------------------------------------------------------

@@ -103,7 +103,7 @@ function(add_test_executable name)
   )
 
   target_link_options(${name} PRIVATE
-    -Wl,-Map,platform/${name}-map.txt
+    -Wl,-Map,platform-bin/${name}-map.txt
     # -v
   )
 

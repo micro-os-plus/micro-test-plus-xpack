@@ -11,51 +11,25 @@
 #
 # -----------------------------------------------------------------------------
 
-# This file defines the global settings that apply to all targets.
+# This file defines the global compiler settings that apply to all targets.
 # Must be included with include() in the `tests` scope.
 
 message(VERBOSE "Including platform-qemu-mps2-an386 globals...")
 
 # -----------------------------------------------------------------------------
-# Global definitions. Before any libraries.
 
-# A list of all imaginable warnings.
-xpack_set_all_compiler_warnings(all_warnings)
+set(xpack_device_compile_definition "DEVICE_QEMU_CORTEX_M4")
 
-# The global configuration file and possibly other platform defines.
-include_directories(
+# Global definitions.
+# add_compile_definitions()
+# include_directories()
 
-  # Folders are relative to `tests`.
-  "platform-qemu-mps2-an386/include-config"
-)
-
-message(VERBOSE "G+ -I tests/platform-qemu-mps2-an386/include-config")
-
-# Global compiler definitions.
-add_compile_definitions(
-
-  MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS
-  # MICRO_OS_PLUS_INCLUDE_CONFIG_H
-
-  # Do not use CMAKE_BUILD_TYPE
-  $<$<CONFIG:Debug>:MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_DEBUG>
-)
-
-message(VERBOSE "G+ -D MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS")
-message(VERBOSE "G+ -D $<$<CONFIG:Debug>:MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_DEBUG>")
-
-set(common_options
+set(platform_common_options
 
   -mcpu=cortex-m4
   -mthumb
   # -mfloat-abi=soft
   -mfloat-abi=hard
-
-  -fmessage-length=0
-  -fsigned-char
-
-  -ffunction-sections
-  -fdata-sections
 
   -fno-move-loop-invariants
 
@@ -71,23 +45,19 @@ set(common_options
   # ... libs-c/src/stdlib/exit.c:132:46
   # $<$<CXX_COMPILER_ID:GNU>:-Wno-missing-attributes>
 
-  ${all_warnings}
-
+  # Embedded builds must be warning free.
   -Werror
 )
 
 add_compile_options(
-
-    ${common_options}
+    ${platform_common_options}
 )
 
 add_link_options(
-
-    ${common_options}
+    ${platform_common_options}
 )
 
 add_link_options(
-
     -nostartfiles
     # nano has no exceptions.
     # -specs=nano.specs
@@ -102,7 +72,5 @@ add_link_options(
     -T${CMAKE_BINARY_DIR}/xpacks/micro-os-plus-devices-qemu-cortexm/linker-scripts/mem.ld
     -T${CMAKE_BINARY_DIR}/xpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections.ld
 )
-
-set(xpack_device_compile_definition "DEVICE_QEMU_CORTEX_M4")
 
 # -----------------------------------------------------------------------------

@@ -22,6 +22,7 @@ xpack_create_listing = false
 xpack_create_hex = false
 
 # -----------------------------------------------------------------------------
+# Define the platform library.
 
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
 platform_qemu_mps2_an386_dependency = declare_dependency(
@@ -29,10 +30,10 @@ platform_qemu_mps2_an386_dependency = declare_dependency(
     'include-platform',
   ),
   sources: files(
-    'src/initialize-hardware.cpp',
-    'src/interrupts-handlers.cpp',
+    # None.
   ),
   compile_args: [
+    # None.
   ],
   dependencies: [
     micro_os_plus_devices_qemu_cortexm_dependency,
@@ -44,16 +45,36 @@ message('+ tests/platform-qemu-mps2-an386/src/initialize-hardware.cpp')
 message('+ tests/platform-qemu-mps2-an386/src/interrupts-handlers.cpp')
 message('> platform_qemu_mps2_an386_dependency')
 
-# -----------------------------------------------------------------------------
+# =============================================================================
+# Define the tests executables.
 
 # Get the command names from the toolchain file.
 size = find_program('size')
 objdump = find_program('objdump')
 objcopy = find_program('objcopy')
 
-test_names = [ 'unit-test', 'sample-test' ]
+test_names = [ 'sample-test', 'unit-test' ]
 
 foreach name : test_names
+
+  compile_definitions = []
+
+  libs_dependencies = [
+    # Tested library.
+    micro_os_plus_micro_test_plus_dependency,
+
+    # Portable dependencies.
+    # micro_os_plus_diag_trace_dependency,
+
+    # Platform specific dependencies.
+    platform_qemu_mps2_an386_dependency, # bring device & architecture too.
+
+    micro_os_plus_libs_c_dependency,
+    micro_os_plus_libs_cpp_dependency,
+    micro_os_plus_semihosting_dependency,
+    micro_os_plus_startup_dependency,
+  ]
+
   # https://mesonbuild.com/Reference-manual.html#executable
   exe = executable(
     name,
@@ -64,29 +85,18 @@ foreach name : test_names
     sources: files(
       '../src/' + name + '.cpp'
     ),
-    dependencies: [
-      # Tested library.
-      micro_os_plus_micro_test_plus_dependency,
-
-      # Platform; it brings device and architecture too.
-      platform_qemu_mps2_an386_dependency,
-
-      # Other dependencies.
-      micro_os_plus_libs_c_dependency,
-      micro_os_plus_libs_cpp_dependency,
-      micro_os_plus_semihosting_dependency,
-      micro_os_plus_startup_dependency,
-    ],
+    c_args: compile_definitions,
+    cpp_args: compile_definitions,
+    dependencies: libs_dependencies,
     link_args: [
-      '-Wl,-Map,meson-out/'+ name + '-map.txt',
       '-nostartfiles',
+      # Ensure the linker will keep the interrupt vectors which otherwise
+      # are not refered from anywhere.
       '-u_interrupt_vectors',
       '-Wl,--gc-sections',
+      '-Wl,-Map,'+ name + '-map.txt',
       # '-v',
-      # Path are relative to the build folder.
-      '-Txpacks/micro-os-plus-devices-qemu-cortexm/linker-scripts/mem.ld',
-      '-Txpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections.ld',
-    ],
+      ] + xpack_linker_scripts,
     name_suffix: 'elf',
   )
 
@@ -149,13 +159,28 @@ foreach name : test_names
     build_by_default: xpack_create_hex,
   )
 
-
 endforeach
 
 qemu = find_program('qemu-system-arm')
 
 # https://mesonbuild.com/Unit-tests.html#malloc_perturb_
 nomalloc = environment({'MALLOC_PERTURB_': '0'})
+
+# https://mesonbuild.com/Reference-manual_functions.html#test
+test(
+  'sample-test',
+  qemu,
+  args: [
+    '--machine', 'mps2-an386',
+    '--cpu', 'cortex-m4',
+    '--kernel', sample_test,
+    '--nographic',
+    '-d', 'unimp,guest_errors',
+    '--semihosting-config', 'enable=on,target=native',
+    '--semihosting-config', 'arg=sample-test,arg=one,arg=two',
+  ],
+  env: nomalloc
+)
 
 # https://mesonbuild.com/Reference-manual_functions.html#test
 test(
@@ -169,21 +194,6 @@ test(
     '-d', 'unimp,guest_errors',
     '--semihosting-config', 'enable=on,target=native',
     '--semihosting-config', 'arg=unit-test',
-  ],
-  env: nomalloc
-)
-
-test(
-  'sample-test',
-  qemu,
-  args: [
-    '--machine', 'mps2-an386',
-    '--cpu', 'cortex-m4',
-    '--kernel', sample_test,
-    '--nographic',
-    '-d', 'unimp,guest_errors',
-    '--semihosting-config', 'enable=on,target=native',
-    '--semihosting-config', 'arg=unit-test,arg=one,arg=two',
   ],
   env: nomalloc
 )
