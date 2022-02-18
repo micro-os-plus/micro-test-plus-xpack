@@ -127,10 +127,10 @@ test_case_something (micro_test_plus::session& t)
 {
   // Currently only int and long values can be compared.
   // For everything else use casts.
-  MTP_EXPECT_EQ (t, compute_one (), 1, "compute_one() == 1");
+  MTP_EXPECT_EQUAL (t, compute_one (), 1, "compute_one() == 1");
 
   // Strings can also be compared (via `strcmp()`).
-  MTP_EXPECT_EQ (t, compute_aaa (), "aaa", "compute_aaa() == 'aaa'");
+  MTP_EXPECT_EQUAL (t, compute_aaa (), "aaa", "compute_aaa() == 'aaa'");
 
   // More complex conditions are passed as booleans.
   MTP_EXPECT_TRUE (t, compute_condition (), "condition() is true");
@@ -139,16 +139,16 @@ test_case_something (micro_test_plus::session& t)
 void
 test_case_args (micro_test_plus::session& t)
 {
-  MTP_EXPECT_EQ (t, g_argc, 3, "argc == 3");
+  MTP_EXPECT_EQUAL (t, g_argc, 3, "argc == 3");
 
   if (g_argc > 1)
     {
-      MTP_EXPECT_EQ (t, g_argv[1], "one", "argv[1] == 'one'");
+      MTP_EXPECT_EQUAL (t, g_argv[1], "one", "argv[1] == 'one'");
     }
 
   if (g_argc > 2)
     {
-      MTP_EXPECT_EQ (t, g_argv[2], "two", "argv[2] == 'two'");
+      MTP_EXPECT_EQUAL (t, g_argv[2], "two", "argv[2] == 'two'");
     }
 }
 

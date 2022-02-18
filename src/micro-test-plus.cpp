@@ -154,62 +154,6 @@ namespace micro_os_plus
         }
     }
 
-    void
-    session::expect_eq (int actual, int expected, const char* message,
-                        const char* file, int line)
-    {
-      if (actual == expected)
-        {
-          printf ("    ✓ %s\n", message);
-          passed_++;
-        }
-      else
-        {
-          printf ("    ✗ %s (expected %d, got %d", message, expected, actual);
-          print_where_ (", in '%s:%d'", file, line);
-          printf (")\n");
-          failed_++;
-        }
-    }
-
-    void
-    session::expect_eq (long actual, long expected, const char* message,
-                        const char* file, int line)
-    {
-      if (actual == expected)
-        {
-          printf ("    ✓ %s\n", message);
-          passed_++;
-        }
-      else
-        {
-          printf ("    ✗ %s (expected %ld, got %ld", message, expected,
-                  actual);
-          print_where_ (", in '%s:%d'", file, line);
-          printf (")\n");
-          failed_++;
-        }
-    }
-
-    void
-    session::expect_eq (const char* actual, const char* expected,
-                        const char* message, const char* file, int line)
-    {
-      if (std::strcmp (actual, expected) == 0)
-        {
-          printf ("    ✓ %s\n", message);
-          passed_++;
-        }
-      else
-        {
-          printf ("    ✗ %s (expected '%s', got '%s'", message, expected,
-                  actual);
-          print_where_ (", in '%s:%d'", file, line);
-          printf (")\n");
-          failed_++;
-        }
-    }
-
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wformat-nonliteral"
