@@ -78,6 +78,9 @@ namespace micro_os_plus
       start_suite (const char* name);
 
       void
+      start_test_case (const char* name);
+
+      void
       run_test_case (void (*f) (session&), const char* name);
 
       void
