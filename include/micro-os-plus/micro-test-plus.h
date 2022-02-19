@@ -80,8 +80,12 @@ namespace micro_os_plus
       void
       start_test_case (const char* name);
 
+      [[deprecated ("Use `run_test_case(name, func);`")]] void
+      run_test_case (void (*func) (session&), const char* name);
+
       void
-      run_test_case (void (*f) (session&), const char* name);
+      run_test_case (const char* name, void (*func) (session&));
+
 
       void
       pass (const char* message, const char* file = nullptr, int line = 0);
