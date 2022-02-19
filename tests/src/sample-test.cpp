@@ -57,17 +57,11 @@ exercise_throw (bool mustThrow);
 
 // ----------------------------------------------------------------------------
 
-static int g_argc;
-static char** g_argv;
-
 // The test suite.
 int
 main (int argc, char* argv[])
 {
   micro_test_plus::session t (argc, argv);
-
-  g_argc = argc;
-  g_argv = argv;
 
   t.start_suite ("Sample test");
 
@@ -152,12 +146,12 @@ test_case_main_args (micro_test_plus::session& t, int argc, char* argv[])
 {
   MTP_EXPECT_EQUAL (t, argc, 3, "argc == 3");
 
-  if (g_argc > 1)
+  if (argc > 1)
     {
       MTP_EXPECT_EQUAL (t, argv[1], "one", "argv[1] == 'one'");
     }
 
-  if (g_argc > 2)
+  if (argc > 2)
     {
       MTP_EXPECT_EQUAL (t, argv[2], "two", "argv[2] == 'two'");
     }
