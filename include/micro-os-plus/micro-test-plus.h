@@ -40,184 +40,180 @@
 #endif
 #endif
 
-namespace micro_os_plus
+namespace micro_os_plus::micro_test_plus
 {
-  namespace micro_test_plus
-  {
+  // --------------------------------------------------------------------------
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wpadded"
 #endif
 
-    class session
+  class session
+  {
+  public:
+    session ();
+
+    /**
+     * @brief Create a session with parameters.
+     */
+    session (int argc, char* argv[]);
+
+    session (const session&) = delete;
+    session (session&&) = delete;
+    session&
+    operator= (const session&)
+        = delete;
+    session&
+    operator= (session&&)
+        = delete;
+
+    ~session () = default;
+
+    /**
+     * @brief Pass the
+     */
+    void
+    init (int argc, char* argv[]);
+
+    void
+    start_suite (const char* name);
+
+    void
+    start_test_case (const char* name);
+
+    [[deprecated ("Use `run_test_case(name, func);`")]] void
+    run_test_case (void (*func) (session&), const char* name);
+
+    void
+    run_test_case (const char* name, void (*func) (session&));
+
+    template <typename Callable_T, typename... Args_T>
+    void
+    run_test_case (const char* name, Callable_T&& func, Args_T&&... arguments);
+
+    void
+    pass (const char* message, const char* file = nullptr, int line = 0);
+
+    void
+    fail (const char* message, const char* file = nullptr, int line = 0);
+
+    void
+    expect_true (bool condition, const char* message,
+                 const char* file = nullptr, int line = 0);
+
+    template <typename T, typename U>
+    void
+    expect_equal (T actual, U expected, const char* message,
+                  const char* file = nullptr, int line = 0);
+
+    int
+    result (void);
+
+    inline int
+    passed (void)
     {
-    public:
-      session ();
+      return passed_;
+    }
 
-      /**
-       * @brief Create a session with parameters.
-       */
-      session (int argc, char* argv[]);
+    inline int
+    failed (void)
+    {
+      return failed_;
+    }
 
-      session (const session&) = delete;
-      session (session&&) = delete;
-      session&
-      operator= (const session&)
-          = delete;
-      session&
-      operator= (session&&)
-          = delete;
+    inline int
+    test_cases (void)
+    {
+      return test_cases_;
+    }
 
-      ~session () = default;
+  protected:
+    template <typename T>
+    void
+    print_value_ (T value);
 
-      /**
-       * @brief Pass the
-       */
-      void
-      init (int argc, char* argv[]);
+    void
+    print_where_ (const char* format, const char* file, int line);
 
-      void
-      start_suite (const char* name);
+  protected:
+    int argc_;
+    char** argv_;
 
-      void
-      start_test_case (const char* name);
+    const char* name_;
 
-      [[deprecated ("Use `run_test_case(name, func);`")]] void
-      run_test_case (void (*func) (session&), const char* name);
-
-      void
-      run_test_case (const char* name, void (*func) (session&));
-
-      template <typename Callable_T, typename... Args_T>
-      void
-      run_test_case (const char* name, Callable_T&& func,
-                     Args_T&&... arguments);
-
-      void
-      pass (const char* message, const char* file = nullptr, int line = 0);
-
-      void
-      fail (const char* message, const char* file = nullptr, int line = 0);
-
-      void
-      expect_true (bool condition, const char* message,
-                   const char* file = nullptr, int line = 0);
-
-      template <typename T, typename U>
-      void
-      expect_equal (T actual, U expected, const char* message,
-                    const char* file = nullptr, int line = 0);
-
-      int
-      result (void);
-
-      inline int
-      passed (void)
-      {
-        return passed_;
-      }
-
-      inline int
-      failed (void)
-      {
-        return failed_;
-      }
-
-      inline int
-      test_cases (void)
-      {
-        return test_cases_;
-      }
-
-    protected:
-      template <typename T>
-      void
-      print_value_ (T value);
-
-      void
-      print_where_ (const char* format, const char* file, int line);
-
-    protected:
-      int argc_;
-      char** argv_;
-
-      const char* name_;
-
-      int passed_;
-      int failed_;
-      int test_cases_;
-    };
+    int passed_;
+    int failed_;
+    int test_cases_;
+  };
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
 
-  } // namespace micro_test_plus
-} // namespace micro_os_plus
+  // --------------------------------------------------------------------------
+} // namespace micro_os_plus::micro_test_plus
 
 // ===== Inline & template implementations ====================================
 
-namespace micro_os_plus
+namespace micro_os_plus::micro_test_plus
 {
-  namespace micro_test_plus // `micro-test-plus` is shortened to `mtp`.
-  {
+  // --------------------------------------------------------------------------
 
-    template <typename T, typename U>
-    void
-    session::expect_equal ([[maybe_unused]] T actual,
-                           [[maybe_unused]] U expected, const char* message,
-                           const char* file, int line)
-    {
+  template <typename T, typename U>
+  void
+  session::expect_equal ([[maybe_unused]] T actual,
+                         [[maybe_unused]] U expected, const char* message,
+                         const char* file, int line)
+  {
 #if defined(MICRO_TEST_PLUS_DEBUG)
-      const char* type_part = std::strchr (__PRETTY_FUNCTION__, '[');
+    const char* type_part = std::strchr (__PRETTY_FUNCTION__, '[');
 #endif
-      if constexpr (!std::is_scalar_v<T>)
-        {
+    if constexpr (!std::is_scalar_v<T>)
+      {
 #if defined(MICRO_TEST_PLUS_DEBUG)
-          printf ("%s() %s\n", __func__, type_part);
+        printf ("%s() %s\n", __func__, type_part);
 #endif
-          printf ("    ✗ %s (non scalar <actual>", message);
-          print_where_ (" in '%s:%d'", file, line);
-          printf (")\n");
-          failed_++;
-          return;
-        }
-      else if constexpr (!std::is_scalar_v<U>)
-        {
+        printf ("    ✗ %s (non scalar <actual>", message);
+        print_where_ (" in '%s:%d'", file, line);
+        printf (")\n");
+        failed_++;
+        return;
+      }
+    else if constexpr (!std::is_scalar_v<U>)
+      {
 #if defined(MICRO_TEST_PLUS_DEBUG)
-          printf ("%s() %s\n", __func__, type_part);
+        printf ("%s() %s\n", __func__, type_part);
 #endif
-          printf ("    ✗ %s (non scalar <expected>", message);
-          print_where_ (" in '%s:%d'", file, line);
-          printf (")\n");
-          failed_++;
-          return;
-        }
-      else
-        {
-          bool is_equal = false;
-          if constexpr (std::is_pointer_v<T> && std::is_null_pointer_v<U>)
-            {
+        printf ("    ✗ %s (non scalar <expected>", message);
+        print_where_ (" in '%s:%d'", file, line);
+        printf (")\n");
+        failed_++;
+        return;
+      }
+    else
+      {
+        bool is_equal = false;
+        if constexpr (std::is_pointer_v<T> && std::is_null_pointer_v<U>)
+          {
 #if defined(MICRO_TEST_PLUS_DEBUG)
-              printf ("%s() %s compare pointers to null\n", __func__,
-                      type_part);
+            printf ("%s() %s compare pointers to null\n", __func__, type_part);
 #endif
-              is_equal = (actual == nullptr);
-            }
-          else if constexpr (
-              (std::is_same_v<T, char*> || std::is_same_v<T, const char*>)&&(
-                  std::is_same_v<U, char*> || std::is_same_v<U, const char*>))
-            {
+            is_equal = (actual == nullptr);
+          }
+        else if constexpr (
+            (std::is_same_v<T, char*> || std::is_same_v<T, const char*>)&&(
+                std::is_same_v<U, char*> || std::is_same_v<U, const char*>))
+          {
 #if defined(MICRO_TEST_PLUS_DEBUG)
-              printf ("%s() %s compare strings\n", __func__, type_part);
+            printf ("%s() %s compare strings\n", __func__, type_part);
 #endif
-              is_equal = (std::strcmp (actual, expected) == 0);
-            }
-          else if constexpr (std::is_pointer_v<T> && std::is_pointer_v<U>)
-            {
+            is_equal = (std::strcmp (actual, expected) == 0);
+          }
+        else if constexpr (std::is_pointer_v<T> && std::is_pointer_v<U>)
+          {
 #if defined(MICRO_TEST_PLUS_DEBUG)
-              printf ("%s() %s compare pointers\n", __func__, type_part);
+            printf ("%s() %s compare pointers\n", __func__, type_part);
 #endif
 
 #if defined(__GNUC__)
@@ -226,43 +222,43 @@ namespace micro_os_plus
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
 #endif
 #endif
-              is_equal = (reinterpret_cast<void*> (actual)
-                          == reinterpret_cast<void*> (expected));
+            is_equal = (reinterpret_cast<void*> (actual)
+                        == reinterpret_cast<void*> (expected));
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
-            }
-          else if constexpr (std::is_integral_v<T> && std::is_integral_v<U>)
-            {
+          }
+        else if constexpr (std::is_integral_v<T> && std::is_integral_v<U>)
+          {
 #if defined(MICRO_TEST_PLUS_DEBUG)
-              printf ("%s() %s compare integrals\n", __func__, type_part);
+            printf ("%s() %s compare integrals\n", __func__, type_part);
 #endif
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wsign-compare"
 #endif
-              is_equal = (actual == expected);
+            is_equal = (actual == expected);
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
-            }
-          else if constexpr (std::is_floating_point_v<
-                                 T> && std::is_floating_point_v<U>)
-            {
+          }
+        else if constexpr (std::is_floating_point_v<
+                               T> && std::is_floating_point_v<U>)
+          {
 #if defined(MICRO_TEST_PLUS_DEBUG)
-              printf ("%s() %s\n", __func__, type_part);
+            printf ("%s() %s\n", __func__, type_part);
 #endif
-              printf ("    ✗ %s (floating points not comparable", message);
-              print_where_ (" in '%s:%d'", file, line);
-              printf (")\n");
-              failed_++;
-              return;
-            }
-          else if constexpr (std::is_floating_point_v<
-                                 T> || std::is_floating_point_v<U>)
-            {
+            printf ("    ✗ %s (floating points not comparable", message);
+            print_where_ (" in '%s:%d'", file, line);
+            printf (")\n");
+            failed_++;
+            return;
+          }
+        else if constexpr (std::is_floating_point_v<
+                               T> || std::is_floating_point_v<U>)
+          {
 #if defined(MICRO_TEST_PLUS_DEBUG)
-              printf ("%s() %s\n", __func__, type_part);
+            printf ("%s() %s\n", __func__, type_part);
 #endif
 
 #if defined(__GNUC__)
@@ -273,97 +269,97 @@ namespace micro_os_plus
 #pragma GCC diagnostic ignored "-Wimplicit-int-float-conversion"
 #endif
 #endif
-              is_equal = (actual == expected);
+            is_equal = (actual == expected);
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
-            }
-          else
-            {
+          }
+        else
+          {
 #if defined(MICRO_TEST_PLUS_DEBUG)
-              printf ("%s() %s\n", __func__, type_part);
+            printf ("%s() %s\n", __func__, type_part);
 #endif
-              printf ("    ✗ %s (non comparable types", message);
-              print_where_ (" in '%s:%d'", file, line);
-              printf (")\n");
-              failed_++;
-              return;
-            }
-          // Else fail.
+            printf ("    ✗ %s (non comparable types", message);
+            print_where_ (" in '%s:%d'", file, line);
+            printf (")\n");
+            failed_++;
+            return;
+          }
+        // Else fail.
 
-          if (is_equal)
-            {
-              printf ("    ✓ %s\n", message);
-              passed_++;
-            }
-          else
-            {
-              printf ("    ✗ %s (expected ", message);
-              print_value_<U> (expected);
-              printf (", got ");
-              print_value_<T> (actual);
-              print_where_ (", in '%s:%d'", file, line);
-              printf (")\n");
-              failed_++;
-            }
-        }
-    }
+        if (is_equal)
+          {
+            printf ("    ✓ %s\n", message);
+            passed_++;
+          }
+        else
+          {
+            printf ("    ✗ %s (expected ", message);
+            print_value_<U> (expected);
+            printf (", got ");
+            print_value_<T> (actual);
+            print_where_ (", in '%s:%d'", file, line);
+            printf (")\n");
+            failed_++;
+          }
+      }
+  }
 
-    template <class T>
-    void
-    session::print_value_ ([[maybe_unused]] T value)
-    {
-      if constexpr (std::is_same_v<T, char*> || std::is_same_v<T, const char*>)
-        {
-          printf ("'%s'", value);
-        }
-      else if constexpr (std::is_null_pointer_v<T>)
-        {
-          printf ("nullptr");
-        }
-      else if constexpr (std::is_pointer_v<T>)
-        {
+  template <class T>
+  void
+  session::print_value_ ([[maybe_unused]] T value)
+  {
+    if constexpr (std::is_same_v<T, char*> || std::is_same_v<T, const char*>)
+      {
+        printf ("'%s'", value);
+      }
+    else if constexpr (std::is_null_pointer_v<T>)
+      {
+        printf ("nullptr");
+      }
+    else if constexpr (std::is_pointer_v<T>)
+      {
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
 #endif
 #endif
-          printf ("%p", reinterpret_cast<void*> (value));
+        printf ("%p", reinterpret_cast<void*> (value));
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
-        }
-      else if constexpr (std::is_integral_v<T>)
-        {
-          printf ("%ld", static_cast<long> (value));
-        }
-      else if constexpr (std::is_floating_point_v<T>)
-        {
-          printf ("%f", static_cast<double> (value));
-        }
-      else
-        {
-          printf ("(unsupported type)");
-        }
-    }
+      }
+    else if constexpr (std::is_integral_v<T>)
+      {
+        printf ("%ld", static_cast<long> (value));
+      }
+    else if constexpr (std::is_floating_point_v<T>)
+      {
+        printf ("%f", static_cast<double> (value));
+      }
+    else
+      {
+        printf ("(unsupported type)");
+      }
+  }
 
-    template <typename Callable_T, typename... Args_T>
-    void
-    session::run_test_case (const char* name, Callable_T&& f,
-                            Args_T&&... arguments)
-    {
+  template <typename Callable_T, typename... Args_T>
+  void
+  session::run_test_case (const char* name, Callable_T&& f,
+                          Args_T&&... arguments)
+  {
 #if defined(MICRO_TEST_PLUS_DEBUG)
-      printf ("%s\n", __PRETTY_FUNCTION__);
+    printf ("%s\n", __PRETTY_FUNCTION__);
 #endif
-      start_test_case (name);
+    start_test_case (name);
 
-      std::invoke (std::forward<Callable_T> (f), *this,
-                   std::forward<Args_T> (arguments)...);
-    }
+    std::invoke (std::forward<Callable_T> (f), *this,
+                 std::forward<Args_T> (arguments)...);
+  }
 
-  } // namespace micro_test_plus
-} // namespace micro_os_plus
+  // --------------------------------------------------------------------------
+} // namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop

@@ -24,182 +24,177 @@
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #endif
 
-namespace micro_os_plus
+namespace micro_os_plus::micro_test_plus
 {
-  namespace micro_test_plus
+  // --------------------------------------------------------------------------
+
+  session::session ()
   {
+    this->argc_ = 0;
+    this->argv_ = nullptr;
 
-    // ------------------------------------------------------------------------
+    passed_ = 0;
+    failed_ = 0;
+    test_cases_ = 0;
+  }
 
-    session::session ()
-    {
-      this->argc_ = 0;
-      this->argv_ = nullptr;
+  session::session (int argc, char* argv[])
+  {
+    init (argc, argv);
+  }
 
-      passed_ = 0;
-      failed_ = 0;
-      test_cases_ = 0;
-    }
+  void
+  session::init (int argc, char* argv[])
+  {
+    this->argc_ = argc;
+    this->argv_ = argv;
 
-    session::session (int argc, char* argv[])
-    {
-      init (argc, argv);
-    }
-
-    void
-    session::init (int argc, char* argv[])
-    {
-      this->argc_ = argc;
-      this->argv_ = argv;
-
-      passed_ = 0;
-      failed_ = 0;
-      test_cases_ = 0;
+    passed_ = 0;
+    failed_ = 0;
+    test_cases_ = 0;
 
 #if defined(__clang__)
-      printf ("Built with clang " __VERSION__);
+    printf ("Built with clang " __VERSION__);
 #elif defined(__GNUC__)
-      printf ("Built with GCC " __VERSION__);
+    printf ("Built with GCC " __VERSION__);
 #elif defined(_MSC_VER)
-      // https://docs.microsoft.com/en-us/cpp/preprocessor/predefined-macros?view=msvc-170
-      printf ("Built with MSVC %d", _MSC_VER);
+    // https://docs.microsoft.com/en-us/cpp/preprocessor/predefined-macros?view=msvc-170
+    printf ("Built with MSVC %d", _MSC_VER);
 #else
-      printf ("Built with an unknown compiler");
+    printf ("Built with an unknown compiler");
 #endif
 #if defined(__ARM_PCS_VFP)
-      printf (", with FP");
+    printf (", with FP");
 #else
-      printf (", no FP");
+    printf (", no FP");
 #endif
 #if defined(__EXCEPTIONS)
-      printf (", with exceptions");
+    printf (", with exceptions");
 #else
-      printf (", no exceptions");
+    printf (", no exceptions");
 #endif
 #if defined(MICRO_OS_PLUS_DEBUG)
-      printf (", with MICRO_OS_PLUS_DEBUG");
+    printf (", with MICRO_OS_PLUS_DEBUG");
 #endif
-      puts (".");
+    puts (".");
 
 #if defined(MICRO_OS_PLUS_DEBUG)
-      printf ("argv[] = ");
-      for (int i = 0; i < argc; ++i)
-        {
-          printf ("'%s' ", argv[i]);
-        }
-      puts ("");
+    printf ("argv[] = ");
+    for (int i = 0; i < argc; ++i)
+      {
+        printf ("'%s' ", argv[i]);
+      }
+    puts ("");
 #endif
-    }
+  }
 
-    void
-    session::start_suite (const char* name)
-    {
-      name_ = name;
-      printf ("\n%s started\n", name);
-    }
+  void
+  session::start_suite (const char* name)
+  {
+    name_ = name;
+    printf ("\n%s started\n", name);
+  }
 
-    void
-    session::start_test_case (const char* name)
-    {
-      printf ("\n  %s\n", name);
-    }
+  void
+  session::start_test_case (const char* name)
+  {
+    printf ("\n  %s\n", name);
+  }
 
-    void
-    session::run_test_case (void (*function) (session&), const char* name)
-    {
-      start_test_case (name);
+  void
+  session::run_test_case (void (*function) (session&), const char* name)
+  {
+    start_test_case (name);
 
-      (*function) (*this);
-      test_cases_++;
-    }
+    (*function) (*this);
+    test_cases_++;
+  }
 
-    void
-    session::run_test_case (const char* name, void (*function) (session&))
-    {
-      start_test_case (name);
+  void
+  session::run_test_case (const char* name, void (*function) (session&))
+  {
+    start_test_case (name);
 
-      (*function) (*this);
-      test_cases_++;
-    }
+    (*function) (*this);
+    test_cases_++;
+  }
 
-    void
-    session::pass (const char* message, [[maybe_unused]] const char* file,
-                   [[maybe_unused]] int line)
-    {
-      // The file name and line number are unused in this version;
-      // they are present only in case future versions will keep a
-      // log off all tests.
-      printf ("    ✓ %s\n", message);
-      passed_++;
-    }
+  void
+  session::pass (const char* message, [[maybe_unused]] const char* file,
+                 [[maybe_unused]] int line)
+  {
+    // The file name and line number are unused in this version;
+    // they are present only in case future versions will keep a
+    // log off all tests.
+    printf ("    ✓ %s\n", message);
+    passed_++;
+  }
 
-    void
-    session::fail (const char* message, const char* file, int line)
-    {
-      printf ("    ✗ %s", message);
-      print_where_ (" (in '%s:%d')", file, line);
-      printf ("\n");
+  void
+  session::fail (const char* message, const char* file, int line)
+  {
+    printf ("    ✗ %s", message);
+    print_where_ (" (in '%s:%d')", file, line);
+    printf ("\n");
 
-      failed_++;
-    }
+    failed_++;
+  }
 
-    void
-    session::expect_true (bool condition, const char* message,
-                          const char* file, int line)
-    {
-      if (condition)
-        {
-          printf ("    ✓ %s\n", message);
-          passed_++;
-        }
-      else
-        {
-          printf ("    ✗ %s", message);
-          print_where_ (" (in '%s:%d')", file, line);
-          printf ("\n");
-          failed_++;
-        }
-    }
+  void
+  session::expect_true (bool condition, const char* message, const char* file,
+                        int line)
+  {
+    if (condition)
+      {
+        printf ("    ✓ %s\n", message);
+        passed_++;
+      }
+    else
+      {
+        printf ("    ✗ %s", message);
+        print_where_ (" (in '%s:%d')", file, line);
+        printf ("\n");
+        failed_++;
+      }
+  }
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wformat-nonliteral"
 #endif
 
-    void
-    session::print_where_ (const char* format, const char* file, int line)
-    {
-      if (file != nullptr)
-        {
-          printf (format, file, line);
-        }
-    }
+  void
+  session::print_where_ (const char* format, const char* file, int line)
+  {
+    if (file != nullptr)
+      {
+        printf (format, file, line);
+      }
+  }
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
 
-    int
-    session::result (void)
-    {
-      // Also fail if none passed.
-      if (failed_ == 0 && passed_ != 0)
-        {
-          printf ("\n%s passed (%d tests in %d test cases)\n", name_, passed_,
-                  test_cases_);
-          return 0;
-        }
-      else
-        {
-          printf (
-              "\n%s failed (%d tests passed, %d failed, in %d test cases)\n",
-              name_, passed_, failed_, test_cases_);
-          return 1;
-        }
-    }
+  int
+  session::result (void)
+  {
+    // Also fail if none passed.
+    if (failed_ == 0 && passed_ != 0)
+      {
+        printf ("\n%s passed (%d tests in %d test cases)\n", name_, passed_,
+                test_cases_);
+        return 0;
+      }
+    else
+      {
+        printf ("\n%s failed (%d tests passed, %d failed, in %d test cases)\n",
+                name_, passed_, failed_, test_cases_);
+        return 1;
+      }
+  }
 
-    // ------------------------------------------------------------------------
-  } // namespace micro_test_plus
-} // namespace micro_os_plus
+  // --------------------------------------------------------------------------
+} // namespace micro_os_plus::micro_test_plus
 
 // ----------------------------------------------------------------------------
