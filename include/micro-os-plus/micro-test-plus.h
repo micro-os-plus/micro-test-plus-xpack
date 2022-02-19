@@ -25,6 +25,7 @@
 #endif
 
 #include <type_traits>
+#include <functional>
 #include <stdio.h>
 #include <cstring>
 
@@ -33,13 +34,15 @@
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
+// warning: deleted function definitions are incompatible with C++98
+// [-Wc++98-compat]
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #endif
 #endif
 
 namespace micro_os_plus
 {
-  namespace micro_test_plus // `micro-test-plus` is shortened to `mtp`.
+  namespace micro_test_plus
   {
 
 #if defined(__GNUC__)
@@ -86,6 +89,10 @@ namespace micro_os_plus
       void
       run_test_case (const char* name, void (*func) (session&));
 
+      template <typename Callable_T, typename... Args_T>
+      void
+      run_test_case (const char* name, Callable_T&& func,
+                     Args_T&&... arguments);
 
       void
       pass (const char* message, const char* file = nullptr, int line = 0);
@@ -174,6 +181,7 @@ namespace micro_os_plus
           print_where_ (" in '%s:%d'", file, line);
           printf (")\n");
           failed_++;
+          return;
         }
       else if constexpr (!std::is_scalar_v<U>)
         {
@@ -184,6 +192,7 @@ namespace micro_os_plus
           print_where_ (" in '%s:%d'", file, line);
           printf (")\n");
           failed_++;
+          return;
         }
       else
         {
@@ -211,26 +220,34 @@ namespace micro_os_plus
               printf ("%s() %s compare pointers\n", __func__, type_part);
 #endif
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
 #endif
+#endif
               is_equal = (reinterpret_cast<void*> (actual)
                           == reinterpret_cast<void*> (expected));
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
             }
           else if constexpr (std::is_integral_v<T> && std::is_integral_v<U>)
             {
 #if defined(MICRO_TEST_PLUS_DEBUG)
               printf ("%s() %s compare integrals\n", __func__, type_part);
 #endif
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wsign-compare"
+#endif
               is_equal = (actual == expected);
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
             }
           else if constexpr (std::is_floating_point_v<
-                                 T> || std::is_floating_point_v<U>)
+                                 T> && std::is_floating_point_v<U>)
             {
 #if defined(MICRO_TEST_PLUS_DEBUG)
               printf ("%s() %s\n", __func__, type_part);
@@ -239,6 +256,27 @@ namespace micro_os_plus
               print_where_ (" in '%s:%d'", file, line);
               printf (")\n");
               failed_++;
+              return;
+            }
+          else if constexpr (std::is_floating_point_v<
+                                 T> || std::is_floating_point_v<U>)
+            {
+#if defined(MICRO_TEST_PLUS_DEBUG)
+              printf ("%s() %s\n", __func__, type_part);
+#endif
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wfloat-equal"
+#pragma GCC diagnostic ignored "-Wconversion"
+#if defined(__clang__)
+#pragma GCC diagnostic ignored "-Wimplicit-int-float-conversion"
+#endif
+#endif
+              is_equal = (actual == expected);
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
             }
           else
             {
@@ -249,7 +287,9 @@ namespace micro_os_plus
               print_where_ (" in '%s:%d'", file, line);
               printf (")\n");
               failed_++;
+              return;
             }
+          // Else fail.
 
           if (is_equal)
             {
@@ -283,21 +323,43 @@ namespace micro_os_plus
         }
       else if constexpr (std::is_pointer_v<T>)
         {
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
 #endif
+#endif
           printf ("%p", reinterpret_cast<void*> (value));
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
         }
       else if constexpr (std::is_integral_v<T>)
         {
           printf ("%ld", static_cast<long> (value));
         }
+      else if constexpr (std::is_floating_point_v<T>)
+        {
+          printf ("%f", static_cast<double> (value));
+        }
       else
         {
           printf ("(unsupported type)");
         }
+    }
+
+    template <typename Callable_T, typename... Args_T>
+    void
+    session::run_test_case (const char* name, Callable_T&& f,
+                            Args_T&&... arguments)
+    {
+#if defined(MICRO_TEST_PLUS_DEBUG)
+      printf ("%s\n", __PRETTY_FUNCTION__);
+#endif
+      start_test_case (name);
+
+      std::invoke (std::forward<Callable_T> (f), *this,
+                   std::forward<Args_T> (arguments)...);
     }
 
   } // namespace micro_test_plus

@@ -14,16 +14,14 @@
 #endif // MICRO_OS_PLUS_INCLUDE_CONFIG_H
 
 #include <micro-os-plus/micro-test-plus.h>
-#include <stdio.h>
 #include <cstring>
+// <iostream> is too heavy for embedded, use printf().
+#include <stdio.h>
 
 // ----------------------------------------------------------------------------
 
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
-#endif
 #endif
 
 namespace micro_os_plus
@@ -124,12 +122,9 @@ namespace micro_os_plus
       test_cases_++;
     }
 
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wunused-parameter"
-#endif
     void
-    session::pass (const char* message, const char* file, int line)
+    session::pass (const char* message, [[maybe_unused]] const char* file,
+                   [[maybe_unused]] int line)
     {
       // The file name and line number are unused in this version;
       // they are present only in case future versions will keep a
@@ -137,9 +132,6 @@ namespace micro_os_plus
       printf ("    ✓ %s\n", message);
       passed_++;
     }
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif
 
     void
     session::fail (const char* message, const char* file, int line)
@@ -209,9 +201,5 @@ namespace micro_os_plus
     // ------------------------------------------------------------------------
   } // namespace micro_test_plus
 } // namespace micro_os_plus
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif
 
 // ----------------------------------------------------------------------------
