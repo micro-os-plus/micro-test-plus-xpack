@@ -18,30 +18,16 @@
 
 using namespace micro_os_plus;
 
-// ----------------------------------------------------------------------------
-
-void
-test_case_pass (micro_test_plus::session& t);
-
-void
-test_case_fail (micro_test_plus::session& t);
-
-void
-test_case_expect_true (micro_test_plus::session& t);
-
-void
-test_case_expect_eq_integrals (micro_test_plus::session& t);
-
-void
-test_case_expect_eq_pointers (micro_test_plus::session& t);
-
-void
-test_case_expect_eq_strings (micro_test_plus::session& t);
-
-void
-test_case_check_non_scalar (micro_test_plus::session& t);
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wc++98-compat"
+#pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
+#endif
 
 // ----------------------------------------------------------------------------
+
+// Each test case exercises a method or a family of methods.
+// After each test case, the caller checks if the counts of
+// passed/failed test cases matches the local counts.
 
 static struct local_counts_s
 {
@@ -50,11 +36,7 @@ static struct local_counts_s
   int failed;
 } local_counts;
 
-// Each test case exercises a method or a family of methods.
-// After each test case, the caller checks the counts of
-// passed/failed test cases.
-
-void
+static void
 test_case_pass (micro_test_plus::session& t)
 {
   t.pass ("it passed");
@@ -66,7 +48,7 @@ test_case_pass (micro_test_plus::session& t)
   local_counts.test_cases++;
 }
 
-void
+static void
 test_case_fail (micro_test_plus::session& t)
 {
   t.fail ("it failed");
@@ -78,7 +60,7 @@ test_case_fail (micro_test_plus::session& t)
   local_counts.test_cases++;
 }
 
-void
+static void
 test_case_expect_true (micro_test_plus::session& t)
 {
   t.expect_true (true, "true passed");
@@ -107,7 +89,7 @@ my_expected_integral (void)
   return 42;
 }
 
-void
+static void
 test_case_expect_eq_integrals (micro_test_plus::session& t)
 {
   t.expect_equal (1, 1, "1 == 1");
@@ -132,15 +114,9 @@ test_case_expect_eq_integrals (micro_test_plus::session& t)
 }
 
 template <typename T>
-void
+static void
 test_case_expect_eq_integrals_combinatoric (micro_test_plus::session& t)
 {
-
-#pragma GCC diagnostic push
-
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
-#endif
 
   t.expect_equal (my_actual_integral<T> (),
                   my_expected_integral<signed long long> (),
@@ -189,8 +165,6 @@ test_case_expect_eq_integrals_combinatoric (micro_test_plus::session& t)
                   "matches unsigned char");
   local_counts.passed++;
 
-#pragma GCC diagnostic pop
-
   local_counts.test_cases++;
 }
 
@@ -199,15 +173,9 @@ a_func (void)
 {
 }
 
-void
+static void
 test_case_expect_eq_pointers (micro_test_plus::session& t)
 {
-#pragma GCC diagnostic push
-
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wc++98-compat"
-#endif
-
   void* a_nullptr = nullptr;
 
   t.expect_equal (a_nullptr, nullptr, "a_nullptr == nullptr");
@@ -229,8 +197,6 @@ test_case_expect_eq_pointers (micro_test_plus::session& t)
   pfunc = a_func;
   t.expect_equal (pfunc, nullptr, "pfunc != nullptr");
   local_counts.failed++;
-
-#pragma GCC diagnostic pop
 
   int one = 1;
   int* ptr1 = &one;
@@ -257,7 +223,7 @@ test_case_expect_eq_pointers (micro_test_plus::session& t)
   local_counts.test_cases++;
 }
 
-void
+static void
 test_case_expect_eq_strings (micro_test_plus::session& t)
 {
   t.expect_equal ("aaa", "aaa", "'aaa' == 'aaa'");
@@ -284,23 +250,105 @@ test_case_expect_eq_strings (micro_test_plus::session& t)
   local_counts.test_cases++;
 }
 
-void
+template <typename T>
+T
+my_actual_float (void)
+{
+  return 42.0;
+}
+
+template <typename T>
+T
+my_expected_float (void)
+{
+  return 42.0;
+}
+
+template <typename T>
+static void
+test_case_expect_eq_floats_combinatoric (micro_test_plus::session& t)
+{
+  t.expect_equal (my_actual_float<T> (),
+                  my_expected_integral<signed long long> (),
+                  "42.0 == 42 signed long long");
+  local_counts.passed++;
+
+  t.expect_equal (my_actual_float<T> (),
+                  my_expected_integral<unsigned long long> (),
+                  "42.0 == 42 unsigned long long");
+  local_counts.passed++;
+
+  t.expect_equal (my_actual_float<T> (), my_expected_integral<signed long> (),
+                  "42.0 == 42 signed long");
+  local_counts.passed++;
+
+  t.expect_equal (my_actual_float<T> (),
+                  my_expected_integral<unsigned long> (),
+                  "42.0 == 42 unsigned long");
+  local_counts.passed++;
+
+  t.expect_equal (my_actual_float<T> (), my_expected_integral<signed int> (),
+                  "42.0 == 42 signed int");
+  local_counts.passed++;
+
+  t.expect_equal (my_actual_float<T> (), my_expected_integral<unsigned int> (),
+                  "42.0 == 42 unsigned int");
+  local_counts.passed++;
+
+  t.expect_equal (my_actual_float<T> (), my_expected_integral<signed short> (),
+                  "42.0 == 42 signed short");
+  local_counts.passed++;
+
+  t.expect_equal (my_actual_float<T> (),
+                  my_expected_integral<unsigned short> (),
+                  "42.0 == 42 unsigned short");
+  local_counts.passed++;
+
+  t.expect_equal (my_actual_float<T> (), my_expected_integral<signed char> (),
+                  "42.0 == 42 signed char");
+  local_counts.passed++;
+
+  t.expect_equal (my_actual_float<T> (),
+                  my_expected_integral<unsigned char> (),
+                  "42.0 == 42 unsigned char");
+  local_counts.passed++;
+
+  t.expect_equal (42, my_expected_float<T> (), "42 == 42.0");
+  local_counts.passed++;
+
+  local_counts.test_cases++;
+}
+
+static void
+test_case_check_floats (micro_test_plus::session& t)
+{
+  t.expect_equal (my_actual_float<float> (), my_expected_float<float> (),
+                  "both floats");
+  local_counts.failed++;
+
+  t.expect_equal (my_actual_float<float> (), my_expected_float<double> (),
+                  "float and double");
+  local_counts.failed++;
+
+  t.expect_equal (my_actual_float<double> (), my_expected_float<float> (),
+                  "both doubles");
+  local_counts.failed++;
+
+  t.expect_equal (my_actual_float<double> (), my_expected_float<double> (),
+                  "fail with double and float");
+  local_counts.failed++;
+
+  local_counts.test_cases++;
+}
+
+static void
 test_case_check_non_scalar (micro_test_plus::session& t)
 {
-
-#pragma GCC diagnostic push
-
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wc++98-compat"
-#endif
-
   MTP_EXPECT_EQUAL (t, local_counts, nullptr, "non-scalar T");
   local_counts.failed++;
 
   MTP_EXPECT_EQUAL (t, nullptr, local_counts, "non-scalar U");
   local_counts.failed++;
-
-#pragma GCC diagnostic pop
 
   local_counts.test_cases++;
 }
@@ -321,7 +369,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  t.run_test_case (test_case_pass, "Check if t.pass() always succeeds");
+  t.run_test_case ("Check if t.pass() always succeeds", test_case_pass);
 
   assert (t.passed () == local_counts.passed);
   assert (t.failed () == local_counts.failed);
@@ -329,7 +377,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  t.run_test_case (test_case_fail, "Check if t.fail() always fails");
+  t.run_test_case ("Check if t.fail() always fails", test_case_fail);
 
   assert (t.passed () == local_counts.passed);
   assert (t.failed () == local_counts.failed);
@@ -337,7 +385,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  t.run_test_case (test_case_expect_true, "Check t.expect_true(condition)");
+  t.run_test_case ("Check t.expect_true(condition)", test_case_expect_true);
 
   assert (t.passed () == local_counts.passed);
   assert (t.failed () == local_counts.failed);
@@ -345,99 +393,81 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  t.run_test_case (test_case_expect_eq_integrals,
-                   "Check t.expect_equal(actual, expected) with integers");
-
-  assert (t.passed () == local_counts.passed);
-  assert (t.failed () == local_counts.failed);
-  assert (t.test_cases () == local_counts.test_cases);
-
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
-#endif
-
-  t.run_test_case (
-      test_case_expect_eq_integrals_combinatoric<signed long long>,
-      "Check t.expect_equal(actual, expected) with signed long long");
+  t.run_test_case ("Check t.expect_equal(actual, expected) with integers",
+                   test_case_expect_eq_integrals);
 
   assert (t.passed () == local_counts.passed);
   assert (t.failed () == local_counts.failed);
   assert (t.test_cases () == local_counts.test_cases);
 
   t.run_test_case (
-      test_case_expect_eq_integrals_combinatoric<unsigned long long>,
-      "Check t.expect_equal(actual, expected) with unsigned long long");
-
-  assert (t.passed () == local_counts.passed);
-  assert (t.failed () == local_counts.failed);
-  assert (t.test_cases () == local_counts.test_cases);
-
-  t.run_test_case (test_case_expect_eq_integrals_combinatoric<signed long>,
-                   "Check t.expect_equal(actual, expected) with signed long");
+      "Check t.expect_equal(actual, expected) with signed long long",
+      test_case_expect_eq_integrals_combinatoric<signed long long>);
 
   assert (t.passed () == local_counts.passed);
   assert (t.failed () == local_counts.failed);
   assert (t.test_cases () == local_counts.test_cases);
 
   t.run_test_case (
-      test_case_expect_eq_integrals_combinatoric<unsigned long>,
-      "Check t.expect_equal(actual, expected) with unsigned long");
+      "Check t.expect_equal(actual, expected) with unsigned long long",
+      test_case_expect_eq_integrals_combinatoric<unsigned long long>);
 
   assert (t.passed () == local_counts.passed);
   assert (t.failed () == local_counts.failed);
   assert (t.test_cases () == local_counts.test_cases);
 
-  t.run_test_case (test_case_expect_eq_integrals_combinatoric<signed int>,
-                   "Check t.expect_equal(actual, expected) with signed int");
+  t.run_test_case ("Check t.expect_equal(actual, expected) with signed long",
+                   test_case_expect_eq_integrals_combinatoric<signed long>);
 
   assert (t.passed () == local_counts.passed);
   assert (t.failed () == local_counts.failed);
   assert (t.test_cases () == local_counts.test_cases);
 
-  t.run_test_case (test_case_expect_eq_integrals_combinatoric<unsigned int>,
-                   "Check t.expect_equal(actual, expected) with unsigned int");
+  t.run_test_case ("Check t.expect_equal(actual, expected) with unsigned long",
+                   test_case_expect_eq_integrals_combinatoric<unsigned long>);
 
   assert (t.passed () == local_counts.passed);
   assert (t.failed () == local_counts.failed);
   assert (t.test_cases () == local_counts.test_cases);
 
-  t.run_test_case (test_case_expect_eq_integrals_combinatoric<signed short>,
-                   "Check t.expect_equal(actual, expected) with signed short");
+  t.run_test_case ("Check t.expect_equal(actual, expected) with signed int",
+                   test_case_expect_eq_integrals_combinatoric<signed int>);
+
+  assert (t.passed () == local_counts.passed);
+  assert (t.failed () == local_counts.failed);
+  assert (t.test_cases () == local_counts.test_cases);
+
+  t.run_test_case ("Check t.expect_equal(actual, expected) with unsigned int",
+                   test_case_expect_eq_integrals_combinatoric<unsigned int>);
+
+  assert (t.passed () == local_counts.passed);
+  assert (t.failed () == local_counts.failed);
+  assert (t.test_cases () == local_counts.test_cases);
+
+  t.run_test_case ("Check t.expect_equal(actual, expected) with signed short",
+                   test_case_expect_eq_integrals_combinatoric<signed short>);
 
   assert (t.passed () == local_counts.passed);
   assert (t.failed () == local_counts.failed);
   assert (t.test_cases () == local_counts.test_cases);
 
   t.run_test_case (
-      test_case_expect_eq_integrals_combinatoric<unsigned short>,
-      "Check t.expect_equal(actual, expected) with unsigned short");
+      "Check t.expect_equal(actual, expected) with unsigned short",
+      test_case_expect_eq_integrals_combinatoric<unsigned short>);
 
   assert (t.passed () == local_counts.passed);
   assert (t.failed () == local_counts.failed);
   assert (t.test_cases () == local_counts.test_cases);
 
-  t.run_test_case (test_case_expect_eq_integrals_combinatoric<signed char>,
-                   "Check t.expect_equal(actual, expected) with signed char");
+  t.run_test_case ("Check t.expect_equal(actual, expected) with signed char",
+                   test_case_expect_eq_integrals_combinatoric<signed char>);
 
   assert (t.passed () == local_counts.passed);
   assert (t.failed () == local_counts.failed);
   assert (t.test_cases () == local_counts.test_cases);
 
-  t.run_test_case (
-      test_case_expect_eq_integrals_combinatoric<unsigned char>,
-      "Check t.expect_equal(actual, expected) with unsigned char");
-
-  assert (t.passed () == local_counts.passed);
-  assert (t.failed () == local_counts.failed);
-  assert (t.test_cases () == local_counts.test_cases);
-
-#pragma GCC diagnostic push
-
-  // --------------------------------------------------------------------------
-
-  t.run_test_case (test_case_expect_eq_pointers,
-                   "Check t.expect_equal(actual, expected) with pointers");
+  t.run_test_case ("Check t.expect_equal(actual, expected) with unsigned char",
+                   test_case_expect_eq_integrals_combinatoric<unsigned char>);
 
   assert (t.passed () == local_counts.passed);
   assert (t.failed () == local_counts.failed);
@@ -445,8 +475,8 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  t.run_test_case (test_case_expect_eq_strings,
-                   "Check t.expect_equal(actual, expected) with strings");
+  t.run_test_case ("Check t.expect_equal(actual, expected) with pointers",
+                   test_case_expect_eq_pointers);
 
   assert (t.passed () == local_counts.passed);
   assert (t.failed () == local_counts.failed);
@@ -454,8 +484,42 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  t.run_test_case (test_case_check_non_scalar,
-                   "Check if non-scalar parameters fail");
+  t.run_test_case ("Check t.expect_equal(actual, expected) with strings",
+                   test_case_expect_eq_strings);
+
+  assert (t.passed () == local_counts.passed);
+  assert (t.failed () == local_counts.failed);
+  assert (t.test_cases () == local_counts.test_cases);
+
+  // --------------------------------------------------------------------------
+
+  t.run_test_case (
+      "Check t.expect_equal(actual, expected) with float and integrals",
+      test_case_expect_eq_floats_combinatoric<float>);
+
+  assert (t.passed () == local_counts.passed);
+  assert (t.failed () == local_counts.failed);
+  assert (t.test_cases () == local_counts.test_cases);
+
+  t.run_test_case (
+      "Check t.expect_equal(actual, expected) with double and integrals",
+      test_case_expect_eq_floats_combinatoric<double>);
+
+  assert (t.passed () == local_counts.passed);
+  assert (t.failed () == local_counts.failed);
+  assert (t.test_cases () == local_counts.test_cases);
+
+  t.run_test_case ("Check t.expect_equal(actual, expected) with floats",
+                   test_case_check_floats);
+
+  assert (t.passed () == local_counts.passed);
+  assert (t.failed () == local_counts.failed);
+  assert (t.test_cases () == local_counts.test_cases);
+
+  // --------------------------------------------------------------------------
+
+  t.run_test_case ("Check if non-scalar parameters fail",
+                   test_case_check_non_scalar);
 
   assert (t.passed () == local_counts.passed);
   assert (t.failed () == local_counts.failed);

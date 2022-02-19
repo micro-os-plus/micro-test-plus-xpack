@@ -24,7 +24,10 @@ void
 test_case_something (micro_test_plus::session& t);
 
 void
-test_case_args (micro_test_plus::session& t);
+test_case_parameterised (micro_test_plus::session& t, int n);
+
+void
+test_case_main_args (micro_test_plus::session& t, int argc, char* argv[]);
 
 #if defined(__EXCEPTIONS)
 
@@ -68,17 +71,19 @@ main (int argc, char* argv[])
 
   t.start_suite ("Sample test");
 
-  t.run_test_case (test_case_something, "Check various conditions");
+  t.run_test_case ("Check various conditions", test_case_something);
 
-  t.run_test_case (test_case_args, "Check args");
+  t.run_test_case ("Check parameterised", test_case_parameterised, 42);
+
+  t.run_test_case ("Check args", test_case_main_args, argc, argv);
 
 #if defined(__EXCEPTIONS)
 
-  t.run_test_case (test_case_exception_thrown,
-                   "Check if exceptions are thrown");
+  t.run_test_case ("Check if exceptions are thrown",
+                   test_case_exception_thrown);
 
-  t.run_test_case (test_case_exception_not_thrown,
-                   "Check if exceptions are not thrown");
+  t.run_test_case ("Check if exceptions are not thrown",
+                   test_case_exception_not_thrown);
 
 #endif // defined(__EXCEPTIONS)
 
@@ -137,18 +142,24 @@ test_case_something (micro_test_plus::session& t)
 }
 
 void
-test_case_args (micro_test_plus::session& t)
+test_case_parameterised (micro_test_plus::session& t, int n)
 {
-  MTP_EXPECT_EQUAL (t, g_argc, 3, "argc == 3");
+  MTP_EXPECT_EQUAL (t, n, 42, "parameter is 42");
+}
+
+void
+test_case_main_args (micro_test_plus::session& t, int argc, char* argv[])
+{
+  MTP_EXPECT_EQUAL (t, argc, 3, "argc == 3");
 
   if (g_argc > 1)
     {
-      MTP_EXPECT_EQUAL (t, g_argv[1], "one", "argv[1] == 'one'");
+      MTP_EXPECT_EQUAL (t, argv[1], "one", "argv[1] == 'one'");
     }
 
   if (g_argc > 2)
     {
-      MTP_EXPECT_EQUAL (t, g_argv[2], "two", "argv[2] == 'two'");
+      MTP_EXPECT_EQUAL (t, argv[2], "two", "argv[2] == 'two'");
     }
 }
 
