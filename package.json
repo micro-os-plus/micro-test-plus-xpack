@@ -1,7 +1,7 @@
 {
   "name": "@micro-os-plus/micro-test-plus",
   "version": "2.1.1",
-  "description": "A source xPack with µTest++, a minimalistic testing infrastructure",
+  "description": "A source library xPack with µTest++, a minimalistic testing infrastructure",
   "main": "",
   "scripts": {
     "npm-install": "npm install",
