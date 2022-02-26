@@ -91,6 +91,17 @@ If there is at least one successful test and there are no failed tests,
 the entire test suite is successful and the process returns
 0 as exit value.
 
+### ISTQB Glossary
+
+The **International Software Testing Qualification Board** defines some terms
+used in testing frameworks:
+
+- test condition: A testable aspect of a component or system identified as a basis for testing.
+- test case: A set of preconditions, inputs, actions (where applicable), expected results and postconditions, developed based on test conditions.
+- test suite: A set of test scripts or test procedures to be executed in a specific test run.
+
+For more details see: <http://glossary.istqb.org/en/search/test%20case>.
+
 ### C++ API
 
 TBD
