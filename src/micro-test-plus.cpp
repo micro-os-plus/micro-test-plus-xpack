@@ -28,7 +28,7 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
-  session::session ()
+  test_session::test_session ()
   {
     this->argc_ = 0;
     this->argv_ = nullptr;
@@ -38,13 +38,13 @@ namespace micro_os_plus::micro_test_plus
     test_cases_ = 0;
   }
 
-  session::session (int argc, char* argv[])
+  test_session::test_session (int argc, char* argv[])
   {
     init (argc, argv);
   }
 
   void
-  session::init (int argc, char* argv[])
+  test_session::init (int argc, char* argv[])
   {
     this->argc_ = argc;
     this->argv_ = argv;
@@ -89,49 +89,52 @@ namespace micro_os_plus::micro_test_plus
   }
 
   void
-  session::start_suite (const char* name)
+  test_session::start_suite (const char* name)
   {
     name_ = name;
     printf ("\n%s started\n", name);
   }
 
   void
-  session::start_test_case (const char* name)
+  test_session::start_test_case (const char* name)
   {
     printf ("\n  %s\n", name);
   }
 
   void
-  session::run_test_case (void (*function) (session&), const char* name)
+  test_session::run_test_case (void (*function) (test_session&), const char* name)
   {
     start_test_case (name);
 
     (*function) (*this);
+
     test_cases_++;
   }
 
   void
-  session::run_test_case (const char* name, void (*function) (session&))
+  test_session::run_test_case (const char* name, void (*function) (test_session&))
   {
     start_test_case (name);
 
     (*function) (*this);
+
     test_cases_++;
   }
 
   void
-  session::pass (const char* message, [[maybe_unused]] const char* file,
+  test_session::pass (const char* message, [[maybe_unused]] const char* file,
                  [[maybe_unused]] int line)
   {
     // The file name and line number are unused in this version;
     // they are present only in case future versions will keep a
     // log off all tests.
     printf ("    ✓ %s\n", message);
+    
     passed_++;
   }
 
   void
-  session::fail (const char* message, const char* file, int line)
+  test_session::fail (const char* message, const char* file, int line)
   {
     printf ("    ✗ %s", message);
     print_where_ (" (in '%s:%d')", file, line);
@@ -141,7 +144,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   void
-  session::expect_true (bool condition, const char* message, const char* file,
+  test_session::expect_true (bool condition, const char* message, const char* file,
                         int line)
   {
     if (condition)
@@ -164,7 +167,7 @@ namespace micro_os_plus::micro_test_plus
 #endif
 
   void
-  session::print_where_ (const char* format, const char* file, int line)
+  test_session::print_where_ (const char* format, const char* file, int line)
   {
     if (file != nullptr)
       {
@@ -177,7 +180,7 @@ namespace micro_os_plus::micro_test_plus
 #endif
 
   int
-  session::result (void)
+  test_session::result (void)
   {
     // Also fail if none passed.
     if (failed_ == 0 && passed_ != 0)

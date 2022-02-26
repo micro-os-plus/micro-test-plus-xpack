@@ -49,29 +49,31 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic ignored "-Wpadded"
 #endif
 
-  class session
+  class test_session
   {
   public:
-    session ();
+    test_session ();
 
     /**
-     * @brief Create a session with parameters.
+     * @brief Create a test_session with parameters.
      */
-    session (int argc, char* argv[]);
+    test_session (int argc, char* argv[]);
 
-    session (const session&) = delete;
-    session (session&&) = delete;
-    session&
-    operator= (const session&)
+    // The rule of five.
+    test_session (const test_session&) = delete;
+    test_session (test_session&&) = delete;
+    test_session&
+    operator= (const test_session&)
         = delete;
-    session&
-    operator= (session&&)
+    test_session&
+    operator= (test_session&&)
         = delete;
 
-    ~session () = default;
+    ~test_session () = default;
 
     /**
-     * @brief Pass the
+     * @brief Pass the main arguments explicitly, if the default
+     * contructor was used.
      */
     void
     init (int argc, char* argv[]);
@@ -83,10 +85,10 @@ namespace micro_os_plus::micro_test_plus
     start_test_case (const char* name);
 
     [[deprecated ("Use `run_test_case(name, func);`")]] void
-    run_test_case (void (*func) (session&), const char* name);
+    run_test_case (void (*func) (test_session&), const char* name);
 
     void
-    run_test_case (const char* name, void (*func) (session&));
+    run_test_case (const char* name, void (*func) (test_session&));
 
     template <typename Callable_T, typename... Args_T>
     void
@@ -162,7 +164,7 @@ namespace micro_os_plus::micro_test_plus
 
   template <typename T, typename U>
   void
-  session::expect_equal ([[maybe_unused]] T actual,
+  test_session::expect_equal ([[maybe_unused]] T actual,
                          [[maybe_unused]] U expected, const char* message,
                          const char* file, int line)
   {
@@ -307,7 +309,7 @@ namespace micro_os_plus::micro_test_plus
 
   template <class T>
   void
-  session::print_value_ ([[maybe_unused]] T value)
+  test_session::print_value_ ([[maybe_unused]] T value)
   {
     if constexpr (std::is_same_v<T, char*> || std::is_same_v<T, const char*>)
       {
@@ -346,7 +348,7 @@ namespace micro_os_plus::micro_test_plus
 
   template <typename Callable_T, typename... Args_T>
   void
-  session::run_test_case (const char* name, Callable_T&& f,
+  test_session::run_test_case (const char* name, Callable_T&& f,
                           Args_T&&... arguments)
   {
 #if defined(MICRO_TEST_PLUS_DEBUG)
