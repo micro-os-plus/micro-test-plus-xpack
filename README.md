@@ -71,7 +71,9 @@ Pull Requests should be directed to this branch.
 When new releases are published, the `xpack-develop` branch is merged
 into `xpack`.
 
-## User info
+## Developer info
+
+### Overview
 
 The **µTest++** framework is inspired by [Node tap](https://node-tap.org),
 but is way simpler and has only a limited number of primitives.
@@ -89,6 +91,10 @@ If there is at least one successful test and there are no failed tests,
 the entire test suite is successful and the process returns
 0 as exit value.
 
+### C++ API
+
+TBD
+
 ### Build & integration info
 
 The project is written in C++, and the tests are expected to be
@@ -103,13 +109,9 @@ are already made CMake and meson configuration files (see below).
 
 For other build systems, consider the following details:
 
-#### Source folders
-
-- `src`
-
-The source file to be added to user projects is: `micro-test-plus.cpp`.
-
 #### Include folders
+
+The following folder should be used during the build:
 
 - `include`
 
@@ -118,6 +120,14 @@ The header file to be included in user project is:
 ```c++
 #include <micro-os-plus/micro-test-plus.h>
 ```
+
+#### Source folders
+
+- `src`
+
+The source file to be added to user projects is:
+
+- `micro-test-plus.cpp`.
 
 #### Preprocessor definitions
 
@@ -136,9 +146,9 @@ The header file to be included in user project is:
 
 #### C++ Classes
 
-- `micro_os_plus::micro_test_plus::session`
+- `micro_os_plus::micro_test_plus::test_session`
 
-The project includes only one class, `session`. To automate
+The project includes only one class, `test_session`. To automate
 passing the file name and the line number, several macros were added.
 
 #### CMake
@@ -155,7 +165,7 @@ dependency with:
 
 ```cmake
 target_link_libraries(your-target PRIVATE
-  ...
+
   micro-os-plus::micro-test-plus
 )
 ```
@@ -177,8 +187,7 @@ exe = executable(
   your-target,
 
   dependencies: [
-    ...
-    micro_os_plus_micro_test_plus_dependency
+    micro_os_plus_micro_test_plus_dependency,
   ]
 )
 ```
@@ -189,6 +198,8 @@ A simple example showing how to use the µTest++ framework is
 presented below and is also available in
 [tests/src/sample-test.cpp](tests/src/sample-test.cpp).
 
+Here are some excerpts:
+
 ```c++
 #include <micro-os-plus/micro-test-plus.h>
 
@@ -196,66 +207,29 @@ using namespace micro_os_plus;
 
 // ----------------------------------------------------------------------------
 
-// Forward definitions of the test cases.
-void
-test_case_something (micro_test_plus::session& t);
-
-void
-test_case_args (micro_test_plus::session& t);
-
-#if defined(__EXCEPTIONS)
-
-void
-test_case_exception_thrown (micro_test_plus::session& t);
-
-void
-test_case_exception_not_thrown (micro_test_plus::session& t);
-
-#endif // defined(__EXCEPTIONS)
-
-int
-compute_one (void);
-
-const char*
-compute_aaa (void);
-
-bool
-compute_condition (void);
-
-#if defined(__EXCEPTIONS)
-
-void
-exercise_throw (bool mustThrow);
-
-#endif // defined(__EXCEPTIONS)
-
-// ----------------------------------------------------------------------------
-
-static int g_argc;
-static char** g_argv;
+// ...
 
 // The test suite.
 int
 main (int argc, char* argv[])
 {
-  micro_test_plus::session t (argc, argv);
-
-  g_argc = argc;
-  g_argv = argv;
+  micro_test_plus::test_session t (argc, argv);
 
   t.start_suite ("Sample test");
 
-  t.run_test_case (test_case_something, "Check various conditions");
+  t.run_test_case ("Check various conditions", test_case_something);
 
-  t.run_test_case (test_case_args, "Check args");
+  t.run_test_case ("Check parameterised", test_case_parameterised, 42);
+
+  t.run_test_case ("Check args", test_case_main_args, argc, argv);
 
 #if defined(__EXCEPTIONS)
 
-  t.run_test_case (test_case_exception_thrown,
-                   "Check if exceptions are thrown");
+  t.run_test_case ("Check if exceptions are thrown",
+                   test_case_exception_thrown);
 
-  t.run_test_case (test_case_exception_not_thrown,
-                   "Check if exceptions are not thrown");
+  t.run_test_case ("Check if exceptions are not thrown",
+                   test_case_exception_not_thrown);
 
 #endif // defined(__EXCEPTIONS)
 
@@ -300,32 +274,38 @@ exercise_throw (bool mustThrow)
 
 // Test equality or logical conditions.
 void
-test_case_something (micro_test_plus::session& t)
+test_case_something (micro_test_plus::test_session& t)
 {
   // Currently only int and long values can be compared.
   // For everything else use casts.
-  MTP_EXPECT_EQ (t, compute_one (), 1, "compute_one() == 1");
+  MTP_EXPECT_EQUAL (t, compute_one (), 1, "compute_one() == 1");
 
   // Strings can also be compared (via `strcmp()`).
-  MTP_EXPECT_EQ (t, compute_aaa (), "aaa", "compute_aaa() == 'aaa'");
+  MTP_EXPECT_EQUAL (t, compute_aaa (), "aaa", "compute_aaa() == 'aaa'");
 
   // More complex conditions are passed as booleans.
   MTP_EXPECT_TRUE (t, compute_condition (), "condition() is true");
 }
 
 void
-test_case_args (micro_test_plus::session& t)
+test_case_parameterised (micro_test_plus::test_session& t, int n)
 {
-  MTP_EXPECT_EQ (t, g_argc, 3, "argc == 3");
+  MTP_EXPECT_EQUAL (t, n, 42, "parameter is 42");
+}
 
-  if (g_argc > 1)
+void
+test_case_main_args (micro_test_plus::test_session& t, int argc, char* argv[])
+{
+  MTP_EXPECT_EQUAL (t, argc, 3, "argc == 3");
+
+  if (argc > 1)
     {
-      MTP_EXPECT_EQ (t, g_argv[1], "one", "argv[1] == 'one'");
+      MTP_EXPECT_EQUAL (t, argv[1], "one", "argv[1] == 'one'");
     }
 
-  if (g_argc > 2)
+  if (argc > 2)
     {
-      MTP_EXPECT_EQ (t, g_argv[2], "two", "argv[2] == 'two'");
+      MTP_EXPECT_EQUAL (t, argv[2], "two", "argv[2] == 'two'");
     }
 }
 
@@ -335,7 +315,7 @@ test_case_args (micro_test_plus::session& t)
 
 // Test is something throws exceptions.
 void
-test_case_exception_thrown (micro_test_plus::session& t)
+test_case_exception_thrown (micro_test_plus::test_session& t)
 {
   try
     {
@@ -353,7 +333,7 @@ test_case_exception_thrown (micro_test_plus::session& t)
 }
 
 void
-test_case_exception_not_thrown (micro_test_plus::session& t)
+test_case_exception_not_thrown (micro_test_plus::test_session& t)
 {
   try
     {
@@ -383,10 +363,10 @@ $ xpm run test-native
 ...
 > Executing task: xpm run test --config native-cmake-debug <
 
-> cd build/native-cmake-debug && ctest -V
-UpdateCTestConfiguration  from :/Users/ilg/My Files/WKS Projects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/build/native-cmake-debug/DartConfiguration.tcl
-UpdateCTestConfiguration  from :/Users/ilg/My Files/WKS Projects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/build/native-cmake-debug/DartConfiguration.tcl
-Test project /Users/ilg/My Files/WKS Projects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/build/native-cmake-debug
+> cd build/native-cmake-release && ctest -V
+UpdateCTestConfiguration  from :/Users/ilg/My Files/WKS Projects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/build/native-cmake-release/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/Users/ilg/My Files/WKS Projects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/build/native-cmake-release/DartConfiguration.tcl
+Test project /Users/ilg/My Files/WKS Projects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/build/native-cmake-release
 Constructing a list of tests
 Done constructing a list of tests
 Updating test list for fixtures
@@ -394,43 +374,38 @@ Added 0 tests to meet fixture requirements
 Checking test dependency graph...
 Checking test dependency graph end
 test 1
-    Start 1: unit-test
+    Start 1: sample-test
 
-1: Test command: /Users/ilg/My\ Files/WKS\ Projects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/build/native-cmake-debug/platform/unit-test
-...
-1/2 Test #1: unit-test ........................   Passed    0.00 sec
+1: Test command: /Users/ilg/My\ Files/WKS\ Projects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/build/native-cmake-release/platform-bin/sample-test "one" "two"
+1: Test timeout computed to be: 10000000
+1: Built with clang Apple LLVM 13.0.0 (clang-1300.0.29.30), no FP, with exceptions.
+1:
+1: Sample test started
+1:
+1:   Check various conditions
+1:     ✓ compute_one() == 1
+1:     ✓ compute_aaa() == 'aaa'
+1:     ✓ condition() is true
+1:
+1:   Check parameterised
+1:     ✓ parameter is 42
+1:
+1:   Check args
+1:     ✓ argc == 3
+1:     ✓ argv[1] == 'one'
+1:     ✓ argv[2] == 'two'
+1:
+1:   Check if exceptions are thrown
+1:     ✓ exception thrown
+1:
+1:   Check if exceptions are not thrown
+1:     ✓ exception not thrown
+1:
+1: Sample test passed (9 tests in 3 test cases)
+1/2 Test #1: sample-test ......................   Passed    0.00 sec
 test 2
-    Start 2: sample-test
-
-2: Test command: /Users/ilg/My\ Files/WKS\ Projects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/build/native-cmake-debug/platform/sample-test "one" "two"
-2: Test timeout computed to be: 10000000
-2: Built with clang Apple LLVM 13.0.0 (clang-1300.0.29.30), no FP, with exceptions, with DEBUG.
-2: argv[] = '/Users/ilg/My Files/WKS Projects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/build/native-cmake-debug/platform/sample-test' 'one' 'two'
-2:
-2: Sample test started
-2:
-2:   Check various conditions
-2:     ✓ compute_one() == 1
-2:     ✓ compute_aaa() == 'aaa'
-2:     ✓ condition() is true
-2:
-2:   Check args
-2:     ✓ argc == 3
-2:     ✓ argv[1] == 'one'
-2:     ✓ argv[2] == 'two'
-2:
-2:   Check if exceptions are thrown
-2:     ✓ exception thrown
-2:
-2:   Check if exceptions are not thrown
-2:     ✓ exception not thrown
-2:
-2: Sample test passed (8 tests in 4 test cases)
-2/2 Test #2: sample-test ......................   Passed    0.00 sec
-
-100% tests passed, 0 tests failed out of 2
-
-Total Test time (real) =   0.01 sec
+    Start 2: unit-test
+...
 ```
 
 ### Known problems
@@ -442,8 +417,39 @@ Total Test time (real) =   0.01 sec
 The project is fully tested via GitHub
 [Actions](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/)
 on each push.
-The tests run on GNU/Linux, macOS and Windows, are compiled with GCC,
-clang and arm-none-eabi-gcc and run natively or via QEMU.
+
+The test platforms are GNU/Linux, macOS and Windows, the tests are
+compiled with GCC, clang and arm-none-eabi-gcc and run natively or
+via QEMU.
+
+There are two set of tests, one that runs on every push, with a
+limited number of tests, and a set that is triggered manually,
+usually before releases, and runs all tests on all supported
+platforms.
+
+The full set can be run manually with the following commands:
+
+```sh
+cd ~Work/micro-test-plus-xpack.git
+
+xpm run install-all
+xpm run test-all
+```
+
+## Change log - incompatible changes
+
+According to [semver](https://semver.org) rules:
+
+> Major version X (X.y.z | X > 0) MUST be incremented if any
+backwards incompatible changes are introduced to the public API.
+
+The incompatible changes, in reverse chronological order,
+are:
+
+- v2.3.x: deprecate `run_test_case(func, name)` in favour o
+ `run_test_case(name, func)`, to prepare for variadic templates
+- v2.x: the C++ namespace was renamed from `os` to `micro_os_plus`;
+- v1.x: the code was extracted from the mono-repo µOS++ project.
 
 ## License
 
