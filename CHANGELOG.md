@@ -6,6 +6,48 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2022-02-19
+
+- v2.3.0
+- 94b340c use nested namespaces
+- f921bf0 sample-test: cleanup globals
+- 66df97e add support for test-all
+- f6c19d2 cmake globals add -fdiagnostics-color=always
+- 28efe4b add parameterised tests and combinatorials
+- 560b678 add run_test_case variadic template
+- 436a1ae deprecate run_test_case(func, name)
+- 0a6a46b add start_test_case()
+
+## 2022-02-18
+
+- 5d0e9be package.json bump helper
+- 69d6dec rework expect_equal with templates
+
+## 2022-02-16
+
+- 9d97cb1 meson: remove utf-8 chars
+
+## 2022-02-10
+
+- 776845a .c* include <micro-os-plus/config.h>
+- 8f3e441 meson.build cosmetics
+
+## 2022-02-09
+
+- 4fcb75d MICRO_OS_PLUS_INCLUDE_CONFIG_H
+- 81186d0 rename MICRO_OS_PLUS_DEBUG
+
+## 2022-02-08
+
+- 9c23c7d package.json: disable stm32f4 on Apple Silicon
+- 3969095 package.json: bump clang
+- 623e72d rename MICRO_OS_PLUS_TRACE
+
+## 2022-02-06
+
+- f1a8f80 MICRO_OS_PLUS_HAS_CONFIG_H
+- 4d46a63 disable -flto on armv7l
+
 ## 2022-02-05
 
 - v2.2.1
