@@ -146,7 +146,7 @@ The source file to be added to user projects is:
 
 #### Compiler options
 
-- `-std=c++17` or higher for C++ sources
+- `-std=c++20` or higher for C++ sources
 - `-std=c11` for C sources
 
 #### C++ Namespaces
