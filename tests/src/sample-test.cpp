@@ -21,21 +21,21 @@ using namespace micro_os_plus;
 
 // Forward definitions of the test cases.
 void
-test_case_something (micro_test_plus::test_session& t);
+test_case_something (micro_test_plus::test_runner& t);
 
 void
-test_case_parameterised (micro_test_plus::test_session& t, int n);
+test_case_parameterised (micro_test_plus::test_runner& t, int n);
 
 void
-test_case_main_args (micro_test_plus::test_session& t, int argc, char* argv[]);
+test_case_main_args (micro_test_plus::test_runner& t, int argc, char* argv[]);
 
 #if defined(__EXCEPTIONS)
 
 void
-test_case_exception_thrown (micro_test_plus::test_session& t);
+test_case_exception_thrown (micro_test_plus::test_runner& t);
 
 void
-test_case_exception_not_thrown (micro_test_plus::test_session& t);
+test_case_exception_not_thrown (micro_test_plus::test_runner& t);
 
 #endif // defined(__EXCEPTIONS)
 
@@ -61,7 +61,7 @@ exercise_throw (bool mustThrow);
 int
 main (int argc, char* argv[])
 {
-  micro_test_plus::test_session t (argc, argv);
+  micro_test_plus::test_runner t (argc, argv);
 
   t.start_suite ("Sample test");
 
@@ -122,7 +122,7 @@ exercise_throw (bool mustThrow)
 
 // Test equality or logical conditions.
 void
-test_case_something (micro_test_plus::test_session& t)
+test_case_something (micro_test_plus::test_runner& t)
 {
   // Currently only int and long values can be compared.
   // For everything else use casts.
@@ -136,13 +136,13 @@ test_case_something (micro_test_plus::test_session& t)
 }
 
 void
-test_case_parameterised (micro_test_plus::test_session& t, int n)
+test_case_parameterised (micro_test_plus::test_runner& t, int n)
 {
   MTP_EXPECT_EQUAL (t, n, 42, "parameter is 42");
 }
 
 void
-test_case_main_args (micro_test_plus::test_session& t, int argc, char* argv[])
+test_case_main_args (micro_test_plus::test_runner& t, int argc, char* argv[])
 {
   MTP_EXPECT_EQUAL (t, argc, 3, "argc == 3");
 
@@ -163,7 +163,7 @@ test_case_main_args (micro_test_plus::test_session& t, int argc, char* argv[])
 
 // Test is something throws exceptions.
 void
-test_case_exception_thrown (micro_test_plus::test_session& t)
+test_case_exception_thrown (micro_test_plus::test_runner& t)
 {
   try
     {
@@ -181,7 +181,7 @@ test_case_exception_thrown (micro_test_plus::test_session& t)
 }
 
 void
-test_case_exception_not_thrown (micro_test_plus::test_session& t)
+test_case_exception_not_thrown (micro_test_plus::test_runner& t)
 {
   try
     {

@@ -37,7 +37,7 @@ static struct local_counts_s
 } local_counts;
 
 static void
-test_case_pass (micro_test_plus::test_session& t)
+test_case_pass (micro_test_plus::test_runner& t)
 {
   t.pass ("it passed");
   local_counts.passed++;
@@ -49,7 +49,7 @@ test_case_pass (micro_test_plus::test_session& t)
 }
 
 static void
-test_case_fail (micro_test_plus::test_session& t)
+test_case_fail (micro_test_plus::test_runner& t)
 {
   t.fail ("it failed");
   local_counts.failed++;
@@ -61,7 +61,7 @@ test_case_fail (micro_test_plus::test_session& t)
 }
 
 static void
-test_case_expect_true (micro_test_plus::test_session& t)
+test_case_expect_true (micro_test_plus::test_runner& t)
 {
   t.expect_true (true, "true passed");
   local_counts.passed++;
@@ -90,7 +90,7 @@ my_expected_integral (void)
 }
 
 static void
-test_case_expect_eq_integrals (micro_test_plus::test_session& t)
+test_case_expect_eq_integrals (micro_test_plus::test_runner& t)
 {
   t.expect_equal (1, 1, "1 == 1");
   local_counts.passed++;
@@ -115,7 +115,7 @@ test_case_expect_eq_integrals (micro_test_plus::test_session& t)
 
 template <typename T>
 static void
-test_case_expect_eq_integrals_combinatoric (micro_test_plus::test_session& t)
+test_case_expect_eq_integrals_combinatoric (micro_test_plus::test_runner& t)
 {
 
   t.expect_equal (my_actual_integral<T> (),
@@ -174,7 +174,7 @@ a_func (void)
 }
 
 static void
-test_case_expect_eq_pointers (micro_test_plus::test_session& t)
+test_case_expect_eq_pointers (micro_test_plus::test_runner& t)
 {
   void* a_nullptr = nullptr;
 
@@ -224,7 +224,7 @@ test_case_expect_eq_pointers (micro_test_plus::test_session& t)
 }
 
 static void
-test_case_expect_eq_strings (micro_test_plus::test_session& t)
+test_case_expect_eq_strings (micro_test_plus::test_runner& t)
 {
   t.expect_equal ("aaa", "aaa", "'aaa' == 'aaa'");
   local_counts.passed++;
@@ -266,7 +266,7 @@ my_expected_float (void)
 
 template <typename T>
 static void
-test_case_expect_eq_floats_combinatoric (micro_test_plus::test_session& t)
+test_case_expect_eq_floats_combinatoric (micro_test_plus::test_runner& t)
 {
   t.expect_equal (my_actual_float<T> (),
                   my_expected_integral<signed long long> (),
@@ -320,7 +320,7 @@ test_case_expect_eq_floats_combinatoric (micro_test_plus::test_session& t)
 }
 
 static void
-test_case_check_floats (micro_test_plus::test_session& t)
+test_case_check_floats (micro_test_plus::test_runner& t)
 {
   t.expect_equal (my_actual_float<float> (), my_expected_float<float> (),
                   "both floats");
@@ -342,7 +342,7 @@ test_case_check_floats (micro_test_plus::test_session& t)
 }
 
 static void
-test_case_check_non_scalar (micro_test_plus::test_session& t)
+test_case_check_non_scalar (micro_test_plus::test_runner& t)
 {
   MTP_EXPECT_EQUAL (t, local_counts, nullptr, "non-scalar T");
   local_counts.failed++;
@@ -357,7 +357,7 @@ test_case_check_non_scalar (micro_test_plus::test_session& t)
 int
 main (int argc, char* argv[])
 {
-  micro_test_plus::test_session t (argc, argv);
+  micro_test_plus::test_runner t (argc, argv);
 
   printf ("\nµTest++ self test started\n");
 
