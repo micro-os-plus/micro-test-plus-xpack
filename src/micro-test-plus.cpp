@@ -30,22 +30,18 @@ namespace micro_os_plus::micro_test_plus
 
   test_runner::test_runner ()
   {
-    this->argc_ = 0;
-    this->argv_ = nullptr;
-
-    passed_ = 0;
-    failed_ = 0;
-    test_cases_ = 0;
-  }
-
-  test_runner::test_runner (int argc, char* argv[])
-  {
-    init (argc, argv);
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    micro_os_plus::trace::printf ("%s()\n", __PRETTY_FUNCTION__);
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
   }
 
   void
   test_runner::init (int argc, char* argv[])
   {
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    micro_os_plus::trace::printf ("%s()\n", __PRETTY_FUNCTION__);
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+
     this->argc_ = argc;
     this->argv_ = argv;
 
@@ -91,7 +87,7 @@ namespace micro_os_plus::micro_test_plus
   void
   test_runner::start_suite (const char* name)
   {
-    name_ = name;
+    default_suite_name_ = name;
     printf ("\n%s started\n", name);
   }
 
@@ -99,66 +95,7 @@ namespace micro_os_plus::micro_test_plus
   test_runner::start_test_case (const char* name)
   {
     printf ("\n  %s\n", name);
-  }
-
-  void
-  test_runner::run_test_case (void (*function) (test_runner&), const char* name)
-  {
-    start_test_case (name);
-
-    (*function) (*this);
-
-    test_cases_++;
-  }
-
-  void
-  test_runner::run_test_case (const char* name, void (*function) (test_runner&))
-  {
-    start_test_case (name);
-
-    (*function) (*this);
-
-    test_cases_++;
-  }
-
-  void
-  test_runner::pass (const char* message, [[maybe_unused]] const char* file,
-                 [[maybe_unused]] int line)
-  {
-    // The file name and line number are unused in this version;
-    // they are present only in case future versions will keep a
-    // log off all tests.
-    printf ("    ✓ %s\n", message);
-
-    passed_++;
-  }
-
-  void
-  test_runner::fail (const char* message, const char* file, int line)
-  {
-    printf ("    ✗ %s", message);
-    print_where_ (" (in '%s:%d')", file, line);
-    printf ("\n");
-
-    failed_++;
-  }
-
-  void
-  test_runner::expect_true (bool condition, const char* message, const char* file,
-                        int line)
-  {
-    if (condition)
-      {
-        printf ("    ✓ %s\n", message);
-        passed_++;
-      }
-    else
-      {
-        printf ("    ✗ %s", message);
-        print_where_ (" (in '%s:%d')", file, line);
-        printf ("\n");
-        failed_++;
-      }
+    ++runner.test_cases_;
   }
 
 #if defined(__GNUC__)
@@ -185,17 +122,91 @@ namespace micro_os_plus::micro_test_plus
     // Also fail if none passed.
     if (failed_ == 0 && passed_ != 0)
       {
-        printf ("\n%s passed (%d tests in %d test cases)\n", name_, passed_,
-                test_cases_);
+        printf ("\n%s passed (%d checks in %d test cases)\n",
+                default_suite_name_, passed_, test_cases_);
         return 0;
       }
     else
       {
-        printf ("\n%s failed (%d tests passed, %d failed, in %d test cases)\n",
-                name_, passed_, failed_, test_cases_);
+        printf (
+            "\n%s failed (%d checks passed, %d failed, in %d test cases)\n",
+            default_suite_name_, passed_, failed_, test_cases_);
         return 1;
       }
   }
+  // --------------------------------------------------------------------------
+
+  void
+  init (int argc, char* argv[])
+  {
+#if defined(MICRO_TEST_PLUS_DEBUG)
+    trace::printf ("%s\n", __PRETTY_FUNCTION__);
+#endif
+    runner.init (argc, argv);
+  }
+
+  void
+  start_suite (const char* name)
+  {
+    runner.start_suite (name);
+  }
+
+  int
+  result (void)
+  {
+    return runner.result ();
+  }
+
+  void
+  pass (const char* message, [[maybe_unused]] const char* file,
+        [[maybe_unused]] int line)
+  {
+    // The file name and line number are unused in this version;
+    // they are present only in case future versions will keep a
+    // log off all tests.
+    printf ("    ✓ %s\n", message);
+
+    runner.pass ();
+  }
+
+  void
+  fail (const char* message, const char* file, int line)
+  {
+    printf ("    ✗ %s", message);
+    runner.print_where_ (" (in '%s:%d')", file, line);
+    printf ("\n");
+
+    runner.fail ();
+  }
+
+  void
+  expect_true (bool condition, const char* message, const char* file, int line)
+  {
+    if (condition)
+      {
+        printf ("    ✓ %s\n", message);
+        runner.pass ();
+      }
+    else
+      {
+        printf ("    ✗ %s", message);
+        runner.print_where_ (" (in '%s:%d')", file, line);
+        printf ("\n");
+        runner.fail ();
+      }
+  }
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wglobal-constructors"
+#endif
+
+  // Static instance;
+  test_runner runner;
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus

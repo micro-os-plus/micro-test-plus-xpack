@@ -17,89 +17,25 @@
 
 using namespace micro_os_plus;
 
-// ----------------------------------------------------------------------------
-
-// Forward definitions of the test cases.
-void
-test_case_something (micro_test_plus::test_runner& t);
-
-void
-test_case_parameterised (micro_test_plus::test_runner& t, int n);
-
-void
-test_case_main_args (micro_test_plus::test_runner& t, int argc, char* argv[]);
-
-#if defined(__EXCEPTIONS)
-
-void
-test_case_exception_thrown (micro_test_plus::test_runner& t);
-
-void
-test_case_exception_not_thrown (micro_test_plus::test_runner& t);
-
-#endif // defined(__EXCEPTIONS)
-
-static int
-compute_one (void);
-
-static const char*
-compute_aaa (void);
-
-static bool
-compute_condition (void);
-
-#if defined(__EXCEPTIONS)
-
-static void
-exercise_throw (bool mustThrow);
-
-#endif // defined(__EXCEPTIONS)
-
-// ----------------------------------------------------------------------------
-
-// The test suite.
-int
-main (int argc, char* argv[])
-{
-  micro_test_plus::test_runner t (argc, argv);
-
-  t.start_suite ("Sample test");
-
-  t.run_test_case ("Check various conditions", test_case_something);
-
-  t.run_test_case ("Check parameterised", test_case_parameterised, 42);
-
-  t.run_test_case ("Check args", test_case_main_args, argc, argv);
-
-#if defined(__EXCEPTIONS)
-
-  t.run_test_case ("Check if exceptions are thrown",
-                   test_case_exception_thrown);
-
-  t.run_test_case ("Check if exceptions are not thrown",
-                   test_case_exception_not_thrown);
-
-#endif // defined(__EXCEPTIONS)
-
-  return t.result ();
-}
+#pragma GCC diagnostic ignored "-Wc++98-compat"
+#pragma GCC diagnostic ignored "-Wshadow-uncaptured-local"
 
 // ----------------------------------------------------------------------------
 
 // Simple examples of functions to be tested.
-int
+static int
 compute_one (void)
 {
   return 1;
 }
 
-const char*
+static const char*
 compute_aaa (void)
 {
   return "aaa";
 }
 
-bool
+static bool
 compute_condition (void)
 {
   return true;
@@ -107,7 +43,7 @@ compute_condition (void)
 
 #if defined(__EXCEPTIONS)
 
-void
+static void
 exercise_throw (bool mustThrow)
 {
   if (mustThrow)
@@ -120,83 +56,96 @@ exercise_throw (bool mustThrow)
 
 // ----------------------------------------------------------------------------
 
-// Test equality or logical conditions.
-void
-test_case_something (micro_test_plus::test_runner& t)
+// The test suite.
+int
+main (int argc, char* argv[])
 {
-  // Currently only int and long values can be compared.
-  // For everything else use casts.
-  MTP_EXPECT_EQUAL (t, compute_one (), 1, "compute_one() == 1");
+  micro_test_plus::init (argc, argv);
 
-  // Strings can also be compared (via `strcmp()`).
-  MTP_EXPECT_EQUAL (t, compute_aaa (), "aaa", "compute_aaa() == 'aaa'");
+  micro_test_plus::start_suite ("Sample test");
 
-  // More complex conditions are passed as booleans.
-  MTP_EXPECT_TRUE (t, compute_condition (), "condition() is true");
-}
+  // --------------------------------------------------------------------------
 
-void
-test_case_parameterised (micro_test_plus::test_runner& t, int n)
-{
-  MTP_EXPECT_EQUAL (t, n, 42, "parameter is 42");
-}
+  // Test equality or logical conditions.
+  micro_test_plus::test_case ("Check various conditions", [] {
+    // Currently only int and long values can be compared.
+    // For everything else use casts.
+    micro_test_plus::expect_equal (compute_one (), 1, "compute_one() == 1");
 
-void
-test_case_main_args (micro_test_plus::test_runner& t, int argc, char* argv[])
-{
-  MTP_EXPECT_EQUAL (t, argc, 3, "argc == 3");
+    // Strings can also be compared (via `strcmp()`).
+    micro_test_plus::expect_equal (compute_aaa (), "aaa",
+                                   "compute_aaa() == 'aaa'");
 
-  if (argc > 1)
-    {
-      MTP_EXPECT_EQUAL (t, argv[1], "one", "argv[1] == 'one'");
-    }
+    // More complex conditions are passed as booleans.
+    micro_test_plus::expect_true (compute_condition (), "condition() is true");
 
-  if (argc > 2)
-    {
-      MTP_EXPECT_EQUAL (t, argv[2], "two", "argv[2] == 'two'");
-    }
-}
+    auto f = [] (int i) { return i + 42; };
 
-// ----------------------------------------------------------------------------
+    micro_test_plus::expect_equal (f (1), 43, "lambda == 43");
+
+    micro_test_plus::expect_true (f (2) == 44, "lambda == 44");
+  });
+
+  // --------------------------------------------------------------------------
+
+  // Check main arguments.
+  micro_test_plus::test_case (
+      "Check args",
+      [] (int argc, char* argv[]) {
+        micro_test_plus::expect_equal (argc, 3, "argc == 3");
+
+        if (argc > 1)
+          {
+            micro_test_plus::expect_equal (argv[1], "one", "argv[1] == 'one'");
+          }
+
+        if (argc > 2)
+          {
+            micro_test_plus::expect_equal (argv[2], "two", "argv[2] == 'two'");
+          }
+      },
+      argc, argv);
+
+  // --------------------------------------------------------------------------
 
 #if defined(__EXCEPTIONS)
 
-// Test is something throws exceptions.
-void
-test_case_exception_thrown (micro_test_plus::test_runner& t)
-{
-  try
-    {
-      // Do something that throws.
-      exercise_throw (true);
+  micro_test_plus::test_case ("Check if exceptions are thrown", [] {
+    try
+      {
+        // Do something that throws.
+        exercise_throw (true);
 
-      // If we reached here, the exception was not thrown.
-      MTP_FAIL (t, "exception not thrown");
-    }
-  catch (...)
-    {
-      // Got it.
-      MTP_PASS (t, "exception thrown");
-    }
-}
+        // If we reached here, the exception was not thrown.
+        micro_test_plus::fail ("exception not thrown");
+      }
+    catch (...)
+      {
+        // Got it.
+        micro_test_plus::pass ("exception thrown");
+      }
+  });
 
-void
-test_case_exception_not_thrown (micro_test_plus::test_runner& t)
-{
-  try
-    {
-      // Do something that may throw, but it doesn't.
-      exercise_throw (false);
+  micro_test_plus::test_case ("Check if exceptions are not thrown", [] {
+    try
+      {
+        // Do something that may throw, but it doesn'runner.
+        exercise_throw (false);
 
-      // If we reached here, everything is fine.
-      MTP_PASS (t, "exception not thrown");
-    }
-  catch (...)
-    {
-      MTP_FAIL (t, "exception thrown");
-    }
-}
+        // If we reached here, everything is fine.
+        micro_test_plus::pass ("exception not thrown");
+      }
+    catch (...)
+      {
+        micro_test_plus::fail ("exception thrown");
+      }
+  });
 
 #endif // defined(__EXCEPTIONS)
+
+  // --------------------------------------------------------------------------
+
+  return micro_test_plus::result ();
+}
 
 // ----------------------------------------------------------------------------

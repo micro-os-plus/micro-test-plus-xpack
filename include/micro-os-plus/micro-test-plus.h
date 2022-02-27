@@ -25,7 +25,7 @@
 #endif // MICRO_OS_PLUS_TRACE
 
 #if defined(MICRO_OS_PLUS_DEBUG)
-#define MICRO_TEST_PLUS_DEBUG
+#define MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 #endif
 
 #include <type_traits>
@@ -58,11 +58,6 @@ namespace micro_os_plus::micro_test_plus
   public:
     test_runner ();
 
-    /**
-     * @brief Create a test_runner with parameters.
-     */
-    test_runner (int argc, char* argv[]);
-
     // The rule of five.
     test_runner (const test_runner&) = delete;
     test_runner (test_runner&&) = delete;
@@ -88,30 +83,17 @@ namespace micro_os_plus::micro_test_plus
     void
     start_test_case (const char* name);
 
-    [[deprecated ("Use `run_test_case(name, func);`")]] void
-    run_test_case (void (*func) (test_runner&), const char* name);
+    inline void
+    pass (void)
+    {
+      ++passed_;
+    }
 
-    void
-    run_test_case (const char* name, void (*func) (test_runner&));
-
-    template <typename Callable_T, typename... Args_T>
-    void
-    run_test_case (const char* name, Callable_T&& func, Args_T&&... arguments);
-
-    void
-    pass (const char* message, const char* file = nullptr, int line = 0);
-
-    void
-    fail (const char* message, const char* file = nullptr, int line = 0);
-
-    void
-    expect_true (bool condition, const char* message,
-                 const char* file = nullptr, int line = 0);
-
-    template <typename T, typename U>
-    void
-    expect_equal (T actual, U expected, const char* message,
-                  const char* file = nullptr, int line = 0);
+    inline void
+    fail (void)
+    {
+      ++failed_;
+    }
 
     int
     result (void);
@@ -134,7 +116,7 @@ namespace micro_os_plus::micro_test_plus
       return test_cases_;
     }
 
-  protected:
+  public:
     template <typename T>
     void
     print_value_ (T value);
@@ -143,19 +125,56 @@ namespace micro_os_plus::micro_test_plus
     print_where_ (const char* format, const char* file, int line);
 
   protected:
-    int argc_;
-    char** argv_;
+    int argc_ = 0;
+    char** argv_ = nullptr;
 
-    const char* name_;
+    const char* default_suite_name_ = "Test";
 
-    int passed_;
-    int failed_;
-    int test_cases_;
+  public:
+    int passed_ = 0;
+    int failed_ = 0;
+    int test_cases_ = 0;
   };
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
+
+  // --------------------------------------------------------------------------
+
+  extern test_runner runner;
+
+  void
+  init (int argc, char* argv[]);
+
+  void
+  start_suite (const char* name);
+
+  template <typename Callable_T, typename... Args_T>
+  void
+  test_case (const char* name, Callable_T&& func, Args_T&&... arguments);
+
+  int
+  result (void);
+
+  void
+  pass (const char* message, const char* file = __builtin_FILE(),
+        int line = __builtin_LINE());
+
+  void
+  fail (const char* message, const char* file = __builtin_FILE(),
+        int line = __builtin_LINE());
+
+  void
+  expect_true (bool condition, const char* message,
+               const char* file = __builtin_FILE(),
+               int line = __builtin_LINE());
+
+  template <typename T, typename U>
+  void
+  expect_equal (T actual, U expected, const char* message,
+                const char* file = __builtin_FILE(),
+                int line = __builtin_LINE());
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
@@ -165,151 +184,6 @@ namespace micro_os_plus::micro_test_plus
 namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
-
-  template <typename T, typename U>
-  void
-  test_runner::expect_equal ([[maybe_unused]] T actual,
-                              [[maybe_unused]] U expected, const char* message,
-                              const char* file, int line)
-  {
-#if defined(MICRO_TEST_PLUS_DEBUG)
-    const char* type_part = std::strchr (__PRETTY_FUNCTION__, '[');
-#endif
-    if constexpr (!std::is_scalar_v<T>)
-      {
-#if defined(MICRO_TEST_PLUS_DEBUG)
-        printf ("%s() %s\n", __func__, type_part);
-#endif
-        printf ("    ✗ %s (non scalar <actual>", message);
-        print_where_ (" in '%s:%d'", file, line);
-        printf (")\n");
-        failed_++;
-        return;
-      }
-    else if constexpr (!std::is_scalar_v<U>)
-      {
-#if defined(MICRO_TEST_PLUS_DEBUG)
-        printf ("%s() %s\n", __func__, type_part);
-#endif
-        printf ("    ✗ %s (non scalar <expected>", message);
-        print_where_ (" in '%s:%d'", file, line);
-        printf (")\n");
-        failed_++;
-        return;
-      }
-    else
-      {
-        bool is_equal = false;
-        if constexpr (std::is_pointer_v<T> && std::is_null_pointer_v<U>)
-          {
-#if defined(MICRO_TEST_PLUS_DEBUG)
-            printf ("%s() %s compare pointers to null\n", __func__, type_part);
-#endif
-            is_equal = (actual == nullptr);
-          }
-        else if constexpr (
-            (std::is_same_v<T, char*> || std::is_same_v<T, const char*>)&&(
-                std::is_same_v<U, char*> || std::is_same_v<U, const char*>))
-          {
-#if defined(MICRO_TEST_PLUS_DEBUG)
-            printf ("%s() %s compare strings\n", __func__, type_part);
-#endif
-            is_equal = (std::strcmp (actual, expected) == 0);
-          }
-        else if constexpr (std::is_pointer_v<T> && std::is_pointer_v<U>)
-          {
-#if defined(MICRO_TEST_PLUS_DEBUG)
-            printf ("%s() %s compare pointers\n", __func__, type_part);
-#endif
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
-#endif
-#endif
-            is_equal = (reinterpret_cast<void*> (actual)
-                        == reinterpret_cast<void*> (expected));
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif
-          }
-        else if constexpr (std::is_integral_v<T> && std::is_integral_v<U>)
-          {
-#if defined(MICRO_TEST_PLUS_DEBUG)
-            printf ("%s() %s compare integrals\n", __func__, type_part);
-#endif
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wsign-compare"
-#endif
-            is_equal = (actual == expected);
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif
-          }
-        else if constexpr (std::is_floating_point_v<
-                               T> && std::is_floating_point_v<U>)
-          {
-#if defined(MICRO_TEST_PLUS_DEBUG)
-            printf ("%s() %s\n", __func__, type_part);
-#endif
-            printf ("    ✗ %s (floating points not comparable", message);
-            print_where_ (" in '%s:%d'", file, line);
-            printf (")\n");
-            failed_++;
-            return;
-          }
-        else if constexpr (std::is_floating_point_v<
-                               T> || std::is_floating_point_v<U>)
-          {
-#if defined(MICRO_TEST_PLUS_DEBUG)
-            printf ("%s() %s\n", __func__, type_part);
-#endif
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wfloat-equal"
-#pragma GCC diagnostic ignored "-Wconversion"
-#if defined(__clang__)
-#pragma GCC diagnostic ignored "-Wimplicit-int-float-conversion"
-#endif
-#endif
-            is_equal = (actual == expected);
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif
-          }
-        else
-          {
-#if defined(MICRO_TEST_PLUS_DEBUG)
-            printf ("%s() %s\n", __func__, type_part);
-#endif
-            printf ("    ✗ %s (non comparable types", message);
-            print_where_ (" in '%s:%d'", file, line);
-            printf (")\n");
-            failed_++;
-            return;
-          }
-        // Else fail.
-
-        if (is_equal)
-          {
-            printf ("    ✓ %s\n", message);
-            passed_++;
-          }
-        else
-          {
-            printf ("    ✗ %s (expected ", message);
-            print_value_<U> (expected);
-            printf (", got ");
-            print_value_<T> (actual);
-            print_where_ (", in '%s:%d'", file, line);
-            printf (")\n");
-            failed_++;
-          }
-      }
-  }
 
   template <class T>
   void
@@ -350,18 +224,165 @@ namespace micro_os_plus::micro_test_plus
       }
   }
 
+  // --------------------------------------------------------------------------
+
   template <typename Callable_T, typename... Args_T>
   void
-  test_runner::run_test_case (const char* name, Callable_T&& f,
-                               Args_T&&... arguments)
+  test_case (const char* name, Callable_T&& func, Args_T&&... arguments)
   {
-#if defined(MICRO_TEST_PLUS_DEBUG)
-    printf ("%s\n", __PRETTY_FUNCTION__);
-#endif
-    start_test_case (name);
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    micro_os_plus::trace::printf ("%s\n", __PRETTY_FUNCTION__);
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+    runner.start_test_case (name);
 
-    std::invoke (std::forward<Callable_T> (f), *this,
+    std::invoke (std::forward<Callable_T> (func),
                  std::forward<Args_T> (arguments)...);
+  }
+
+  template <typename T, typename U>
+  void
+  expect_equal ([[maybe_unused]] T actual, [[maybe_unused]] U expected,
+                const char* message, const char* file, int line)
+  {
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    const char* type_part = std::strchr (__PRETTY_FUNCTION__, '[');
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+    if constexpr (!std::is_scalar_v<T>)
+      {
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+        micro_os_plus::trace::printf ("%s() %s\n", __func__, type_part);
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+        printf ("    ✗ %s (non scalar <actual>", message);
+        runner.print_where_ (" in '%s:%d'", file, line);
+        printf (")\n");
+        runner.fail ();
+        return;
+      }
+    else if constexpr (!std::is_scalar_v<U>)
+      {
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+        micro_os_plus::trace::printf ("%s() %s\n", __func__, type_part);
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+        printf ("    ✗ %s (non scalar <expected>", message);
+        runner.print_where_ (" in '%s:%d'", file, line);
+        printf (")\n");
+        runner.fail ();
+        return;
+      }
+    else
+      {
+        bool is_equal = false;
+        if constexpr (std::is_pointer_v<T> && std::is_null_pointer_v<U>)
+          {
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+            printf ("%s() %s compare pointers to null\n", __func__, type_part);
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+            is_equal = (actual == nullptr);
+          }
+        else if constexpr (
+            (std::is_same_v<T, char*> || std::is_same_v<T, const char*>)&&(
+                std::is_same_v<U, char*> || std::is_same_v<U, const char*>))
+          {
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+            micro_os_plus::trace::printf ("%s() %s compare strings\n",
+                                          __func__, type_part);
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+            is_equal = (std::strcmp (actual, expected) == 0);
+          }
+        else if constexpr (std::is_pointer_v<T> && std::is_pointer_v<U>)
+          {
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+            printf ("%s() %s compare pointers\n", __func__, type_part);
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
+#endif
+#endif
+            is_equal = (reinterpret_cast<void*> (actual)
+                        == reinterpret_cast<void*> (expected));
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
+          }
+        else if constexpr (std::is_integral_v<T> && std::is_integral_v<U>)
+          {
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+            micro_os_plus::trace::printf ("%s() %s compare integrals\n",
+                                          __func__, type_part);
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsign-compare"
+#endif
+            is_equal = (actual == expected);
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
+          }
+        else if constexpr (std::is_floating_point_v<
+                               T> && std::is_floating_point_v<U>)
+          {
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+            micro_os_plus::trace::printf ("%s() %s\n", __func__, type_part);
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+            printf ("    ✗ %s (floating points not comparable", message);
+            runner.print_where_ (" in '%s:%d'", file, line);
+            printf (")\n");
+            runner.fail ();
+            return;
+          }
+        else if constexpr (std::is_floating_point_v<
+                               T> || std::is_floating_point_v<U>)
+          {
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+            micro_os_plus::trace::printf ("%s() %s\n", __func__, type_part);
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wfloat-equal"
+#pragma GCC diagnostic ignored "-Wconversion"
+#if defined(__clang__)
+#pragma GCC diagnostic ignored "-Wimplicit-int-float-conversion"
+#endif
+#endif
+            is_equal = (actual == expected);
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
+          }
+        else
+          {
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+            micro_os_plus::trace::printf ("%s() %s\n", __func__, type_part);
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+            printf ("    ✗ %s (non comparable types", message);
+            runner.print_where_ (" in '%s:%d'", file, line);
+            printf (")\n");
+            runner.fail ();
+            return;
+          }
+        // Else fail.
+
+        if (is_equal)
+          {
+            printf ("    ✓ %s\n", message);
+            runner.pass ();
+          }
+        else
+          {
+            printf ("    ✗ %s (expected ", message);
+            runner.print_value_<U> (expected);
+            printf (", got ");
+            runner.print_value_<T> (actual);
+            runner.print_where_ (", in '%s:%d'", file, line);
+            printf (")\n");
+            runner.fail ();
+          }
+      }
   }
 
   // --------------------------------------------------------------------------
@@ -370,19 +391,6 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
-
-// ----------------------------------------------------------------------------
-
-// Macros are only a convenience to pass the file name and line number,
-// otherwise the direct methods can be used as well, but please be aware that
-// if the file name is not passed, it will not be displayed.
-#define MTP_EXPECT_EQUAL(t, actual, expected, message) \
-  t.expect_equal (actual, expected, message, __FILE__, __LINE__)
-#define MTP_EXPECT_TRUE(t, condition, message) \
-  t.expect_true (condition, message, __FILE__, __LINE__)
-
-#define MTP_PASS(t, message) t.pass (message, __FILE__, __LINE__)
-#define MTP_FAIL(t, message) t.fail (message, __FILE__, __LINE__)
 
 // ----------------------------------------------------------------------------
 
