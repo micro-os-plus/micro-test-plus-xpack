@@ -20,6 +20,10 @@
 #include <micro-os-plus/config.h>
 #endif // MICRO_OS_PLUS_INCLUDE_CONFIG_H
 
+#if defined(MICRO_OS_PLUS_TRACE)
+#include <micro-os-plus/diag/trace.h>
+#endif // MICRO_OS_PLUS_TRACE
+
 #if defined(MICRO_OS_PLUS_DEBUG)
 #define MICRO_TEST_PLUS_DEBUG
 #endif
