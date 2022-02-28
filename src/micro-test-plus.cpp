@@ -36,18 +36,16 @@ namespace micro_os_plus::micro_test_plus
   }
 
   void
-  test_runner::init (int argc, char* argv[])
+  test_runner::init (const char* name, int argc, char* argv[])
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
     micro_os_plus::trace::printf ("%s()\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
+    default_suite_name_ = name;
+
     this->argc_ = argc;
     this->argv_ = argv;
-
-    passed_ = 0;
-    failed_ = 0;
-    test_cases_ = 0;
 
 #if defined(__clang__)
     printf ("Built with clang " __VERSION__);
@@ -82,20 +80,10 @@ namespace micro_os_plus::micro_test_plus
       }
     puts ("");
 #endif
-  }
 
-  void
-  test_runner::start_suite (const char* name)
-  {
-    default_suite_name_ = name;
-    printf ("\n%s started\n", name);
-  }
+    default_test_suite_ = new test_suite (default_suite_name_);
 
-  void
-  test_runner::start_test_case (const char* name)
-  {
-    printf ("\n  %s\n", name);
-    ++runner.test_cases_;
+    default_test_suite_->begin ();
   }
 
 #if defined(__GNUC__)
@@ -119,42 +107,83 @@ namespace micro_os_plus::micro_test_plus
   int
   test_runner::result (void)
   {
+    default_test_suite_->end ();
+
+    int result = default_test_suite_->result ();
+
+    if (suites_ != nullptr)
+      {
+        for (auto suite : *suites_)
+          {
+            default_test_suite_ = suite;
+            suite->run ();
+
+            result |= suite->result ();
+          }
+      }
+    return result;
+  }
+
+  void
+  test_suite::begin (void)
+  {
+    current_test_suite = this;
+
+    printf ("\n%s\n", name_);
+  }
+
+  void
+  test_suite::end (void)
+  {
     // Also fail if none passed.
     if (failed_ == 0 && passed_ != 0)
       {
-        printf ("\n%s passed (%d checks in %d test cases)\n",
-                default_suite_name_, passed_, test_cases_);
-        return 0;
+        printf ("\n%s passed (%d checks in %d test cases)\n", name_, passed_,
+                test_cases_);
       }
     else
       {
         printf (
             "\n%s failed (%d checks passed, %d failed, in %d test cases)\n",
-            default_suite_name_, passed_, failed_, test_cases_);
+            name_, passed_, failed_, test_cases_);
+      }
+  }
+
+  void
+  test_suite::begin_test_case (const char* name)
+  {
+    printf ("\n  %s\n", name);
+    ++test_cases_;
+  }
+
+  void
+  test_suite::end_test_case ([[maybe_unused]] const char* name)
+  {
+  }
+
+  int
+  test_suite::result (void)
+  {
+    // Also fail if none passed.
+    if (failed_ == 0 && passed_ != 0)
+      {
+        return 0;
+      }
+    else
+      {
         return 1;
       }
   }
+
   // --------------------------------------------------------------------------
 
   void
-  init (int argc, char* argv[])
+  init (const char* name, int argc, char* argv[])
   {
 #if defined(MICRO_TEST_PLUS_DEBUG)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif
-    runner.init (argc, argv);
-  }
-
-  void
-  start_suite (const char* name)
-  {
-    runner.start_suite (name);
-  }
-
-  int
-  result (void)
-  {
-    return runner.result ();
+    runner.init (name, argc, argv);
   }
 
   void
@@ -166,7 +195,7 @@ namespace micro_os_plus::micro_test_plus
     // log off all tests.
     printf ("    ✓ %s\n", message);
 
-    runner.pass ();
+    current_test_suite->pass ();
   }
 
   void
@@ -176,7 +205,7 @@ namespace micro_os_plus::micro_test_plus
     runner.print_where_ (" (in '%s:%d')", file, line);
     printf ("\n");
 
-    runner.fail ();
+    current_test_suite->fail ();
   }
 
   void
@@ -185,15 +214,21 @@ namespace micro_os_plus::micro_test_plus
     if (condition)
       {
         printf ("    ✓ %s\n", message);
-        runner.pass ();
+        current_test_suite->pass ();
       }
     else
       {
         printf ("    ✗ %s", message);
         runner.print_where_ (" (in '%s:%d')", file, line);
         printf ("\n");
-        runner.fail ();
+        current_test_suite->fail ();
       }
+  }
+
+  int
+  result (void)
+  {
+    return runner.result ();
   }
 
 #if defined(__GNUC__)
@@ -203,6 +238,7 @@ namespace micro_os_plus::micro_test_plus
 
   // Static instance;
   test_runner runner;
+  test_suite* current_test_suite;
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop

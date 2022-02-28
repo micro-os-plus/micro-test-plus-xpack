@@ -19,6 +19,8 @@ using namespace micro_os_plus;
 
 #pragma GCC diagnostic ignored "-Wc++98-compat"
 #pragma GCC diagnostic ignored "-Wshadow-uncaptured-local"
+#pragma GCC diagnostic ignored "-Wexit-time-destructors"
+#pragma GCC diagnostic ignored "-Wglobal-constructors"
 
 // ----------------------------------------------------------------------------
 
@@ -55,14 +57,28 @@ exercise_throw (bool mustThrow)
 #endif // defined(__EXCEPTIONS)
 
 // ----------------------------------------------------------------------------
+// Suite
+
+using namespace micro_test_plus;
+
+// clang-format off
+static test_suite ts = { "My test suite", [] {
+  test_case ("Check one", [] {
+    pass ("Passed");
+  });
+  test_case ("Check two", [] {
+    pass ("Passed");
+  });
+}};
+// clang-format on
+
+// ----------------------------------------------------------------------------
 
 // The test suite.
 int
 main (int argc, char* argv[])
 {
-  micro_test_plus::init (argc, argv);
-
-  micro_test_plus::start_suite ("Sample test");
+  micro_test_plus::init ("Sample Test", argc, argv);
 
   // --------------------------------------------------------------------------
 

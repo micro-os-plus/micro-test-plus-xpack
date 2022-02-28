@@ -30,6 +30,7 @@
 
 #include <type_traits>
 #include <functional>
+#include <vector>
 #include <stdio.h>
 #include <cstring>
 
@@ -53,6 +54,12 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic ignored "-Wpadded"
 #endif
 
+  class test_runner;
+  class test_suite;
+
+  extern test_runner runner;
+  extern test_suite* current_test_suite;
+
   class test_runner
   {
   public:
@@ -75,13 +82,98 @@ namespace micro_os_plus::micro_test_plus
      * contructor was used.
      */
     void
-    init (int argc, char* argv[]);
+    init (const char* name, int argc, char* argv[]);
+
+    int
+    result (void);
 
     void
-    start_suite (const char* name);
+    register_test_suite (test_suite* suite)
+    {
+      trace::printf ("%s\n", __PRETTY_FUNCTION__);
+
+      if (suites_ == nullptr)
+        {
+          suites_ = new std::vector<test_suite*> ();
+        }
+      suites_->push_back (suite);
+    }
+
+  public:
+    template <typename T>
+    void
+    print_value_ (T value);
 
     void
-    start_test_case (const char* name);
+    print_where_ (const char* format, const char* file, int line);
+
+  protected:
+    int argc_ = 0;
+    char** argv_ = nullptr;
+
+    const char* default_suite_name_ = "Test";
+
+    test_suite* default_test_suite_;
+
+    // Statically initialised to zero.
+    std::vector<test_suite*>* suites_;
+  };
+
+  class test_suite
+  {
+  public:
+    test_suite (const char* name)
+    {
+      trace::printf ("%s\n", __PRETTY_FUNCTION__);
+
+      name_ = name;
+      callable_ = [] {};
+
+      // The default test suite needs no registration.
+    }
+
+    template <class Callable_T>
+    test_suite (const char* name, Callable_T callable)
+    {
+      trace::printf ("%s\n", __PRETTY_FUNCTION__);
+
+      name_ = name;
+      callable_ = callable;
+
+      runner.register_test_suite (this);
+    }
+
+    constexpr auto
+    operator() ()
+    {
+      return callable_ ();
+    }
+
+    constexpr auto
+    operator() () const
+    {
+      return callable_ ();
+    }
+
+    inline void
+    run ()
+    {
+      begin ();
+      callable_ ();
+      end ();
+    }
+
+    void
+    begin_test_case (const char* name);
+
+    void
+    end_test_case ([[maybe_unused]] const char* name);
+
+    const char*
+    name ()
+    {
+      return name_;
+    }
 
     inline void
     pass (void)
@@ -94,9 +186,6 @@ namespace micro_os_plus::micro_test_plus
     {
       ++failed_;
     }
-
-    int
-    result (void);
 
     inline int
     passed (void)
@@ -116,21 +205,19 @@ namespace micro_os_plus::micro_test_plus
       return test_cases_;
     }
 
-  public:
-    template <typename T>
     void
-    print_value_ (T value);
+    begin (void);
 
     void
-    print_where_ (const char* format, const char* file, int line);
+    end (void);
 
-  protected:
-    int argc_ = 0;
-    char** argv_ = nullptr;
+    int
+    result (void);
 
-    const char* default_suite_name_ = "Test";
+  private:
+    const char* name_;
+    std::function<void ()> callable_;
 
-  public:
     int passed_ = 0;
     int failed_ = 0;
     int test_cases_ = 0;
@@ -142,13 +229,8 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
-  extern test_runner runner;
-
   void
-  init (int argc, char* argv[]);
-
-  void
-  start_suite (const char* name);
+  init (const char* name, int argc, char* argv[]);
 
   template <typename Callable_T, typename... Args_T>
   void
@@ -233,10 +315,11 @@ namespace micro_os_plus::micro_test_plus
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
     micro_os_plus::trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
-    runner.start_test_case (name);
 
+    current_test_suite->begin_test_case (name);
     std::invoke (std::forward<Callable_T> (func),
                  std::forward<Args_T> (arguments)...);
+    current_test_suite->end_test_case (name);
   }
 
   template <typename T, typename U>
@@ -255,7 +338,7 @@ namespace micro_os_plus::micro_test_plus
         printf ("    ✗ %s (non scalar <actual>", message);
         runner.print_where_ (" in '%s:%d'", file, line);
         printf (")\n");
-        runner.fail ();
+        current_test_suite->fail ();
         return;
       }
     else if constexpr (!std::is_scalar_v<U>)
@@ -266,7 +349,7 @@ namespace micro_os_plus::micro_test_plus
         printf ("    ✗ %s (non scalar <expected>", message);
         runner.print_where_ (" in '%s:%d'", file, line);
         printf (")\n");
-        runner.fail ();
+        current_test_suite->fail ();
         return;
       }
     else
@@ -331,7 +414,7 @@ namespace micro_os_plus::micro_test_plus
             printf ("    ✗ %s (floating points not comparable", message);
             runner.print_where_ (" in '%s:%d'", file, line);
             printf (")\n");
-            runner.fail ();
+            current_test_suite->fail ();
             return;
           }
         else if constexpr (std::is_floating_point_v<
@@ -362,7 +445,7 @@ namespace micro_os_plus::micro_test_plus
             printf ("    ✗ %s (non comparable types", message);
             runner.print_where_ (" in '%s:%d'", file, line);
             printf (")\n");
-            runner.fail ();
+            current_test_suite->fail ();
             return;
           }
         // Else fail.
@@ -370,7 +453,7 @@ namespace micro_os_plus::micro_test_plus
         if (is_equal)
           {
             printf ("    ✓ %s\n", message);
-            runner.pass ();
+            current_test_suite->pass ();
           }
         else
           {
@@ -380,7 +463,7 @@ namespace micro_os_plus::micro_test_plus
             runner.print_value_<T> (actual);
             runner.print_where_ (", in '%s:%d'", file, line);
             printf (")\n");
-            runner.fail ();
+            current_test_suite->fail ();
           }
       }
   }
