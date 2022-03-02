@@ -10,13 +10,13 @@
       "name": "(lldb) native-cmake-debug sample-test",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/native-cmake-debug/tests/sample-test",
+      "program": "${workspaceFolder}/build/native-cmake-debug/platform-bin/sample-test",
       "args": [
         "one",
         "two"
       ],
       "stopAtEntry": true,
-      "cwd": "${workspaceFolder}/build/native-cmake-debug/tests/",
+      "cwd": "${workspaceFolder}/build/native-cmake-debug/platform-bin/",
       "environment": [],
       "externalConsole": false,
       "MIMode": "lldb"
