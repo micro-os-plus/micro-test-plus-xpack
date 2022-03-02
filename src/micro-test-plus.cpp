@@ -17,6 +17,7 @@
 #include <cstring>
 // <iostream> is too heavy for embedded, use printf().
 #include <stdio.h>
+#include <unistd.h>
 
 // ----------------------------------------------------------------------------
 
@@ -27,19 +28,53 @@
 namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
+  // Public API.
+
+  void
+  initialize (const char* name, int argc, char* argv[])
+  {
+#if defined(MICRO_TEST_PLUS_DEBUG)
+    trace::printf ("%s\n", __PRETTY_FUNCTION__);
+#endif
+    runner.initialize (name, argc, argv);
+  }
+
+  int
+  exit_code (void)
+  {
+    return runner.exit_code ();
+  }
+
+  // --------------------------------------------------------------------------
+
+  namespace reflection
+  {
+    const char*
+    short_name (const char* name)
+    {
+      const char* p = strrchr (name, '/');
+      if (p != nullptr)
+        return p + 1;
+      else
+        return name;
+    }
+
+  } // namespace reflection
+
+  // --------------------------------------------------------------------------
 
   test_runner::test_runner ()
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-    micro_os_plus::trace::printf ("%s()\n", __PRETTY_FUNCTION__);
+    micro_os_plus::trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
   }
 
   void
-  test_runner::init (const char* name, int argc, char* argv[])
+  test_runner::initialize (const char* name, int argc, char* argv[])
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-    micro_os_plus::trace::printf ("%s()\n", __PRETTY_FUNCTION__);
+    micro_os_plus::trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
     default_suite_name_ = name;
@@ -86,13 +121,57 @@ namespace micro_os_plus::micro_test_plus
     default_test_suite_->begin ();
   }
 
+  int
+  test_runner::exit_code (void)
+  {
+    default_test_suite_->end ();
+
+    bool success = default_test_suite_->success ();
+
+    if (suites_ != nullptr)
+      {
+        for (auto suite : *suites_)
+          {
+            default_test_suite_ = suite;
+            suite->run ();
+
+            success &= suite->success ();
+          }
+      }
+    return success ? 0 : 1;
+  }
+
+  void
+  test_runner::register_test_suite (test_suite* suite)
+  {
+#if 0 // defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    micro_os_plus::trace::printf ("%s\n", __PRETTY_FUNCTION__);
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+
+    if (suites_ == nullptr)
+      {
+        suites_ = new std::vector<test_suite*> ();
+      }
+    suites_->push_back (suite);
+  }
+
+  // --------------------------------------------------------------------------
+
+  test_reporter&
+  endl (test_reporter& stream)
+  {
+    printf ("\n");
+    fflush (stdout);
+    return stream;
+  }
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wformat-nonliteral"
 #endif
 
   void
-  test_runner::print_where_ (const char* format, const char* file, int line)
+  test_reporter::print_where (const char* format, const char* file, int line)
   {
     if (file != nullptr)
       {
@@ -104,24 +183,37 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic pop
 #endif
 
-  int
-  test_runner::result (void)
+  void
+  test_reporter::flush (void)
   {
-    default_test_suite_->end ();
+    //#if !defined(__MINGW32__)
+    fflush (stdout); // Sync STDOUT.
+    //#endif
+  }
 
-    int result = default_test_suite_->result ();
+  // --------------------------------------------------------------------------
 
-    if (suites_ != nullptr)
+  test_suite::test_suite (const char* name)
+  {
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    micro_os_plus::trace::printf ("%s\n", __PRETTY_FUNCTION__);
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+
+    name_ = name;
+    callable_ = [] {};
+
+    // The default test suite needs no registration.
+  }
+
+  void
+  test_suite::run ()
+  {
+    if (callable_ != nullptr)
       {
-        for (auto suite : *suites_)
-          {
-            default_test_suite_ = suite;
-            suite->run ();
-
-            result |= suite->result ();
-          }
+        begin ();
+        callable_ ();
+        end ();
       }
-    return result;
   }
 
   void
@@ -153,91 +245,26 @@ namespace micro_os_plus::micro_test_plus
   test_suite::begin_test_case (const char* name)
   {
     printf ("\n  %s\n", name);
+    test_case_name_ = name;
     ++test_cases_;
   }
 
   void
-  test_suite::end_test_case ([[maybe_unused]] const char* name)
+  test_suite::end_test_case ()
   {
-  }
-
-  int
-  test_suite::result (void)
-  {
-    // Also fail if none passed.
-    if (failed_ == 0 && passed_ != 0)
-      {
-        return 0;
-      }
-    else
-      {
-        return 1;
-      }
   }
 
   // --------------------------------------------------------------------------
-
-  void
-  init (const char* name, int argc, char* argv[])
-  {
-#if defined(MICRO_TEST_PLUS_DEBUG)
-    trace::printf ("%s\n", __PRETTY_FUNCTION__);
-#endif
-    runner.init (name, argc, argv);
-  }
-
-  void
-  pass (const char* message, [[maybe_unused]] const char* file,
-        [[maybe_unused]] int line)
-  {
-    // The file name and line number are unused in this version;
-    // they are present only in case future versions will keep a
-    // log off all tests.
-    printf ("    ✓ %s\n", message);
-
-    current_test_suite->pass ();
-  }
-
-  void
-  fail (const char* message, const char* file, int line)
-  {
-    printf ("    ✗ %s", message);
-    runner.print_where_ (" (in '%s:%d')", file, line);
-    printf ("\n");
-
-    current_test_suite->fail ();
-  }
-
-  void
-  expect_true (bool condition, const char* message, const char* file, int line)
-  {
-    if (condition)
-      {
-        printf ("    ✓ %s\n", message);
-        current_test_suite->pass ();
-      }
-    else
-      {
-        printf ("    ✗ %s", message);
-        runner.print_where_ (" (in '%s:%d')", file, line);
-        printf ("\n");
-        current_test_suite->fail ();
-      }
-  }
-
-  int
-  result (void)
-  {
-    return runner.result ();
-  }
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wglobal-constructors"
 #endif
 
-  // Static instance;
+  // Static instances;
   test_runner runner;
+  test_reporter reporter;
+
   test_suite* current_test_suite;
 
 #if defined(__GNUC__)
