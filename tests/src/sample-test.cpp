@@ -14,13 +14,17 @@
 #endif // MICRO_OS_PLUS_INCLUDE_CONFIG_H
 
 #include <micro-os-plus/micro-test-plus.h>
+#include <stdexcept>
 
 using namespace micro_os_plus;
 
-#pragma GCC diagnostic ignored "-Wc++98-compat"
-#pragma GCC diagnostic ignored "-Wshadow-uncaptured-local"
-#pragma GCC diagnostic ignored "-Wexit-time-destructors"
-#pragma GCC diagnostic ignored "-Wglobal-constructors"
+#pragma GCC diagnostic ignored "-Waggregate-return"
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wc++98-compat"
+#pragma clang diagnostic ignored "-Wshadow-uncaptured-local"
+#pragma clang diagnostic ignored "-Wexit-time-destructors"
+#pragma clang diagnostic ignored "-Wglobal-constructors"
+#endif
 
 // ----------------------------------------------------------------------------
 
