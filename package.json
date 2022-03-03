@@ -75,7 +75,6 @@
       ],
       "test-native": [
         "{% if os.platform != 'win32' %}xpm run test-native-cmake{% endif %}",
-        "xpm run test-native-cmake-gcc8",
         "xpm run test-native-cmake-gcc11",
         "xpm run test-native-cmake-clang12",
         "{% if os.platform != 'win32' %}xpm run test-native-meson{% endif %}",
@@ -97,14 +96,6 @@
         "xpm run prepare --config native-cmake-release",
         "xpm run build --config native-cmake-release",
         "xpm run test --config native-cmake-release"
-      ],
-      "test-native-cmake-gcc8": [
-        "xpm run prepare --config native-cmake-gcc8-debug",
-        "xpm run build --config native-cmake-gcc8-debug",
-        "xpm run test --config native-cmake-gcc8-debug",
-        "xpm run prepare --config native-cmake-gcc8-release",
-        "xpm run build --config native-cmake-gcc8-release",
-        "xpm run test --config native-cmake-gcc8-release"
       ],
       "test-native-cmake-gcc11": [
         "xpm run prepare --config native-cmake-gcc11-debug",
@@ -181,8 +172,6 @@
       "clean-all": [
         "xpm run clean --config native-cmake-debug",
         "xpm run clean --config native-cmake-release",
-        "xpm run clean --config native-cmake-gcc8-debug",
-        "xpm run clean --config native-cmake-gcc8-release",
         "xpm run clean --config native-cmake-gcc11-debug",
         "xpm run clean --config native-cmake-gcc11-release",
         "xpm run clean --config native-cmake-clang12-debug",
@@ -260,52 +249,6 @@
           "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
-          "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
-        }
-      },
-      "native-cmake-gcc8-debug": {
-        "properties": {
-          "buildType": "Debug",
-          "platformName": "native",
-          "toolchainFileName": "gcc.cmake"
-        },
-        "actions": {
-          "link-deps": [
-            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-synthetic-posix"
-          ],
-          "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
-          "build": [
-            "{{ properties.commandCMakeReconfigure }}",
-            "{{ properties.commandCMakeBuild }}"
-          ],
-          "test": "{{ properties.commandCMakePerformTests }}",
-          "clean": "{{ properties.commandCMakeClean }}"
-        },
-        "devDependencies": {
-          "@xpack-dev-tools/gcc": "8.5.0-1.1",
-          "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
-        }
-      },
-      "native-cmake-gcc8-release": {
-        "properties": {
-          "buildType": "Release",
-          "platformName": "native",
-          "toolchainFileName": "gcc.cmake"
-        },
-        "actions": {
-          "link-deps": [
-            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-synthetic-posix"
-          ],
-          "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
-          "build": [
-            "{{ properties.commandCMakeReconfigure }}",
-            "{{ properties.commandCMakeBuild }}"
-          ],
-          "test": "{{ properties.commandCMakePerformTests }}",
-          "clean": "{{ properties.commandCMakeClean }}"
-        },
-        "devDependencies": {
-          "@xpack-dev-tools/gcc": "8.5.0-1.1",
           "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
         }
       },
