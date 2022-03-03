@@ -75,21 +75,29 @@ into `xpack`.
 
 ### Overview
 
-The **µTest++** framework is inspired by [Node tap](https://node-tap.org),
-but is way simpler and has only a limited number of primitives.
+The initial version of the **µTest++** framework was inspired by
+[Node tap](https://node-tap.org) and has only a limited number of primitives.
+The later v3.x was a full rework inspired by
+[Boost UT](https://boost-ext.github.io/ut/) and was the reason to raise the
+bar to C++ 20.
 
-- test suites must be compiled as separate applications, one apllication
-  can return only the result of one test suite
-- a test suite may include any number of test cases
-- each test case may perform any number of tests checks
-- each test check either succeeds or fails
-- the test progress is shown on STDOUT, with each test check on a separate
-  line, prefixed with either a check sign (✓) or a cross sign (✗)
+- for complex applications, test cases can be grouped in test suites
+- test suites can be located in separate compile units, and automatically
+  register themselves to the runner;
+- a test suite is a named sequence of test cases
+- a test case is a named sequence of expectations
+- test conditions are either common logical expressions, or check
+  if an exception was thrown
+- each test conditions either succeeds or fails
+- the test progress is shown on STDOUT, with each test expectation on a
+  separate line, prefixed with either a check sign (✓) or a cross sign (✗)
+- failed expectations display the location in the file and
+  the expected and actual values
 - the main result of the test is passed back as the process exit code
 
 If there is at least one successful test and there are no failed tests,
-the entire test suite is successful and the process returns
-0 as exit value.
+each test suite is successful; if all tests suites are successful,
+the process returns 0 as exit value.
 
 ### ISTQB Glossary
 
@@ -104,15 +112,102 @@ For more details see: <http://glossary.istqb.org/en/search/test%20case>.
 
 ### C++ API
 
-TBD
+The primitives used to check expectations are:
+
+```C++
+// Check logical expression.
+template <class Expr_T>
+bool expect(const TExpr& expr, const char *message);
+
+// Check if any exception is thrown.
+template <class TExpr>
+throws (const TExpr& expr);
+
+// Check if a specific exception is thrown.
+template <class TException, class TExpr>
+throws (const TExpr& expr);
+
+// Check if no exceptions are thrown.
+template <class TExpr>
+nothrow (const TExpr& expr);
+```
+
+For generic checks performed outside the testing framework, the results can
+reported with two functions:
+
+```C++
+// Passed check.
+bool pass(const char *message);
+// Failes check.
+bool fail(const char *message);
+```
+
+The comparators are:
+
+```c++
+template <class Lhs_T, class Rhs_T>
+eq(const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Lhs_T, class Rhs_T>
+ne(const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Lhs_T, class Rhs_T>
+lt(const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Lhs_T, class Rhs_T>
+le(const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Lhs_T, class Rhs_T>
+gt(const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Lhs_T, class Rhs_T>
+ge(const Lhs_T& lhs, const Rhs_T& rhs);
+```
+
+Similar templates are defined for traditional string comparators
+(`char*`).
+
+Each test case is performed via a function parametrised with a
+callable, usually a lambda:
+
+```C++
+template <typename Callable_T, typename... Args_T>
+void
+test_case (const char* name, Callable_T&& func, Args_T&&... arguments);
+```
+
+The test runner is initialised with a name and the process arguments:
+
+```C++
+void
+initialize (const char* name, int argc, char* argv[]);
+```
+
+The final test result (0 for pass, 1 for fail), to be returned
+to the system, is obtained with:
+
+```C++
+int
+exit_code (void);
+```
+
+Test suites are classes which can be constructed with a name and a callable:
+
+```C++
+class test_suite
+{
+public:
+  template <class Callable_T>
+  test_suite (const char* name, Callable_T callable);
+}
+```
 
 ### Build & integration info
 
 The project is written in C++, and the tests are expected to be
-written in C++ too (although there are no
-major reasons to prevent adding C wrappers).
+written in C++ too.
 
-On embedded platforms, the test applications should be built with
+On embedded platforms, the test applications can be built with
 **Arm semihosting** support.
 
 To ease the integration of this package into user projects, there
@@ -157,10 +252,8 @@ The source file to be added to user projects is:
 
 #### C++ Classes
 
-- `micro_os_plus::micro_test_plus::test_session`
-
-The project includes only one class, `test_session`. To automate
-passing the file name and the line number, several macros were added.
+- `micro_os_plus::micro_test_plus::test_suite`
+- `micro_os_plus::micro_test_plus::test_case`
 
 #### CMake
 
@@ -215,6 +308,7 @@ Here are some excerpts:
 #include <micro-os-plus/micro-test-plus.h>
 
 using namespace micro_os_plus;
+using namespace micro_os_plus::micro_test_plus;
 
 // ----------------------------------------------------------------------------
 
@@ -224,23 +318,26 @@ using namespace micro_os_plus;
 int
 main (int argc, char* argv[])
 {
-  micro_test_plus::test_session t (argc, argv);
+  initialize ("Sample Test", argc, argv);
 
-  t.start_suite ("Sample test");
+  test_case ("Check various conditions", [] {
+    expect (eq (compute_one (), 1), "compute_one() == 1");
+    expect (eq (compute_aaa (), "aaa"), "compute_aaa() == 'aaa' char*");
+    expect (compute_condition (), "condition() is true");
+  });
 
-  t.run_test_case ("Check various conditions", test_case_something);
-
-  t.run_test_case ("Check parameterised", test_case_parameterised, 42);
-
-  t.run_test_case ("Check args", test_case_main_args, argc, argv);
+  test_case ("Check parameterised", [] {
+    auto f = [] (int i) { return i + 42; };
+    expect (eq (f (1), 43), "lambda == 43");
+  });
 
 #if defined(__EXCEPTIONS)
 
-  t.run_test_case ("Check if exceptions are thrown",
-                   test_case_exception_thrown);
-
-  t.run_test_case ("Check if exceptions are not thrown",
-                   test_case_exception_not_thrown);
+  test_case ("Check exceptions", [] {
+    auto exercise_throw = [] { throw std::runtime_error{ "" }; }
+    expect (throws<std::runtime_error> (
+      exercise_throw), "std::runtime_error thrown");
+  });
 
 #endif // defined(__EXCEPTIONS)
 
@@ -248,120 +345,6 @@ main (int argc, char* argv[])
 }
 
 // ----------------------------------------------------------------------------
-
-// Simple examples of functions to be tested.
-int
-compute_one (void)
-{
-  return 1;
-}
-
-const char*
-compute_aaa (void)
-{
-  return "aaa";
-}
-
-bool
-compute_condition (void)
-{
-  return true;
-}
-
-#if defined(__EXCEPTIONS)
-
-void
-exercise_throw (bool mustThrow)
-{
-  if (mustThrow)
-    {
-      throw "kaboom";
-    }
-}
-
-#endif // defined(__EXCEPTIONS)
-
-// ----------------------------------------------------------------------------
-
-// Test equality or logical conditions.
-void
-test_case_something (micro_test_plus::test_session& t)
-{
-  // Currently only int and long values can be compared.
-  // For everything else use casts.
-  MTP_EXPECT_EQUAL (t, compute_one (), 1, "compute_one() == 1");
-
-  // Strings can also be compared (via `strcmp()`).
-  MTP_EXPECT_EQUAL (t, compute_aaa (), "aaa", "compute_aaa() == 'aaa'");
-
-  // More complex conditions are passed as booleans.
-  MTP_EXPECT_TRUE (t, compute_condition (), "condition() is true");
-}
-
-void
-test_case_parameterised (micro_test_plus::test_session& t, int n)
-{
-  MTP_EXPECT_EQUAL (t, n, 42, "parameter is 42");
-}
-
-void
-test_case_main_args (micro_test_plus::test_session& t, int argc, char* argv[])
-{
-  MTP_EXPECT_EQUAL (t, argc, 3, "argc == 3");
-
-  if (argc > 1)
-    {
-      MTP_EXPECT_EQUAL (t, argv[1], "one", "argv[1] == 'one'");
-    }
-
-  if (argc > 2)
-    {
-      MTP_EXPECT_EQUAL (t, argv[2], "two", "argv[2] == 'two'");
-    }
-}
-
-// ----------------------------------------------------------------------------
-
-#if defined(__EXCEPTIONS)
-
-// Test is something throws exceptions.
-void
-test_case_exception_thrown (micro_test_plus::test_session& t)
-{
-  try
-    {
-      // Do something that throws.
-      exercise_throw (true);
-
-      // If we reached here, the exception was not thrown.
-      MTP_FAIL (t, "exception not thrown");
-    }
-  catch (...)
-    {
-      // Got it.
-      MTP_PASS (t, "exception thrown");
-    }
-}
-
-void
-test_case_exception_not_thrown (micro_test_plus::test_session& t)
-{
-  try
-    {
-      // Do something that may throw, but it doesn't.
-      exercise_throw (false);
-
-      // If we reached here, everything is fine.
-      MTP_PASS (t, "exception not thrown");
-    }
-  catch (...)
-    {
-      MTP_FAIL (t, "exception thrown");
-    }
-}
-
-#endif // defined(__EXCEPTIONS)
-
 ```
 
 The output of running such a test looks like:
@@ -399,20 +382,12 @@ test 1
 1:     ✓ condition() is true
 1:
 1:   Check parameterised
-1:     ✓ parameter is 42
+1:     ✓ lambda == 43
 1:
-1:   Check args
-1:     ✓ argc == 3
-1:     ✓ argv[1] == 'one'
-1:     ✓ argv[2] == 'two'
+1:   Check exceptions
+1:     ✓ std::runtime_error thrown
 1:
-1:   Check if exceptions are thrown
-1:     ✓ exception thrown
-1:
-1:   Check if exceptions are not thrown
-1:     ✓ exception not thrown
-1:
-1: Sample test passed (9 tests in 3 test cases)
+1: Sample test passed (5 tests in 3 test cases)
 1/2 Test #1: sample-test ......................   Passed    0.00 sec
 test 2
     Start 2: unit-test
@@ -457,6 +432,8 @@ backwards incompatible changes are introduced to the public API.
 The incompatible changes, in reverse chronological order,
 are:
 
+- v3.x: major rework, with full set of comparators, exceptions,
+  function templates for test cases and class templates for test suites;
 - v2.3.x: deprecate `run_test_case(func, name)` in favour o
  `run_test_case(name, func)`, to prepare for variadic templates
 - v2.x: the C++ namespace was renamed from `os` to `micro_os_plus`;
@@ -468,3 +445,6 @@ The original content is released under the
 [MIT License](https://opensource.org/licenses/MIT/),
 with all rights reserved to
 [Liviu Ionescu](https://github.com/ilg-ul/).
+
+The code from Boost UT is released under the terms of the
+[Boost Version 1.0 Software License](https://www.boost.org/LICENSE_1_0.txt).
