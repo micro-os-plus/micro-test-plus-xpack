@@ -1,10 +1,13 @@
 /*
  * This file is part of the µOS++ distribution.
- *   (https://github.com/micro-os-plus)
+ *   (https://github.com/micro-os-plus/)
  * Copyright (c) 2021 Liviu Ionescu.
  *
  * Permission to use, copy, modify, and/or distribute this software
  * for any purpose is hereby granted, under the terms of the MIT license.
+ *
+ * If a copy of the license was not distributed with this file, it can
+ * be obtained from https://opensource.org/licenses/MIT/.
  */
 
 // ----------------------------------------------------------------------------
@@ -92,7 +95,7 @@ static test_suite ts = { "My test suite", [] {
 int
 main (int argc, char* argv[])
 {
-  micro_test_plus::initialize ("Sample Test", argc, argv);
+  initialize ("Sample Test", argc, argv);
 
   // --------------------------------------------------------------------------
 
