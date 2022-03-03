@@ -95,7 +95,6 @@ foreach name : test_names
   # xpack_c_args += micro_os_plus_micro_test_plus_dependency_c_args
   # xpack_cpp_args += micro_os_plus_micro_test_plus_dependency_cpp_args
 
-
   xpack_link_args += [
     '-nostartfiles',
 
