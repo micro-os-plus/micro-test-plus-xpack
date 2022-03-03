@@ -124,17 +124,17 @@ main (int argc, char* argv[])
   // Check main arguments.
   test_case (
       "Check args",
-      [] (int argc, char* argv[]) {
-        expect (eq (argc, 3), "argc == 3");
+      [] (int _argc, char* _argv[]) {
+        expect (eq (_argc, 3), "argc == 3");
 
-        if (argc > 1)
+        if (_argc > 1)
           {
-            expect (eq (argv[1], "one"), "argv[1] == 'one'");
+            expect (eq (_argv[1], "one"), "argv[1] == 'one'");
           }
 
-        if (argc > 2)
+        if (_argc > 2)
           {
-            expect (eq (argv[2], "two"), "argv[2] == 'two'");
+            expect (eq (_argv[2], "two"), "argv[2] == 'two'");
           }
       },
       argc, argv);
