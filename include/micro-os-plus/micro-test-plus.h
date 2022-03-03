@@ -49,6 +49,7 @@
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wpadded"
+#pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 // warning: deleted function definitions are incompatible with C++98
 // [-Wc++98-compat]

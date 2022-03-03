@@ -21,6 +21,7 @@
 
 // ----------------------------------------------------------------------------
 
+#pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #endif
@@ -200,7 +201,7 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
     name_ = name;
-    callable_ = [] {};
+    // callable_ = [] {};
 
     // The default test suite needs no registration.
   }
@@ -258,7 +259,9 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wglobal-constructors"
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wglobal-constructors"
+#endif
 #endif
 
   // Static instances;
