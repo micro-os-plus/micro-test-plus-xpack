@@ -12,7 +12,7 @@
 # -----------------------------------------------------------------------------
 
 # https://mesonbuild.com/Reference-manual.html#project
-project('µTest++',
+project('micro-os-plus-micro-test-plus',
   ['c', 'cpp'],
   default_options: [
     'c_std=c11',

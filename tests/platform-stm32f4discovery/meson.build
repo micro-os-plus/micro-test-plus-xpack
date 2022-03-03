@@ -18,7 +18,7 @@ message('Processing tests/platform-stm32f4discovery...')
 # -----------------------------------------------------------------------------
 
 # Enable them only when needed.
-xpack_create_listing = false
+xpack_create_listing = true
 xpack_create_hex = false
 
 # -----------------------------------------------------------------------------
@@ -26,49 +26,103 @@ xpack_create_hex = false
 # The final platform library can now be defined, with the
 # customised initialisation on top of the CubeMX library.
 
+xpack_common_args = []
+xpack_include_directories = []
+xpack_sources = []
+xpack_compile_definitions = []
+
+xpack_include_directories += [
+  'include-platform',
+]
+
+xpack_sources += [
+  'src/initialize-hardware.cpp',
+  'src/interrupts-handlers.cpp',
+]
+
+# xpack_compile_definitions += []
+
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
 platform_stm32f4discovery_dependency = declare_dependency(
-  include_directories: include_directories(
-    'include-platform',
-  ),
-  sources: files(
-    'src/initialize-hardware.cpp',
-    'src/interrupts-handlers.cpp',
-  ),
-  compile_args: [
-  ],
+  include_directories: include_directories(xpack_include_directories),
+  sources: files(xpack_sources),
+  compile_args: xpack_common_args + xpack_compile_definitions,
   dependencies: [
     micro_os_plus_platform_stm32f4discovery_dependency,
   ]
 )
 
-message('+ -I tests/platform-stm32f4discovery/include-platform')
-message('+ tests/platform-stm32f4discovery/src/initialize-hardware.cpp')
-message('+ tests/platform-stm32f4discovery/src/interrupts-handlers.cpp')
-message('> platform_stm32f4discovery_dependency')
+foreach xn : xpack_include_directories
+  message('+ -I ' + xn)
+endforeach
+# Note: depenedencies compile_args not shown.
+foreach xn : xpack_sources + xpack_common_args + xpack_compile_definitions
+  message('+ ' + xn)
+endforeach
+message('> platform_qemu_mps2_an386_dependency')
 
 # =============================================================================
+# Define the tests executables.
 
 # Get the command names from the toolchain file.
 size = find_program('size')
 objdump = find_program('objdump')
 objcopy = find_program('objcopy')
 
-test_names = [ 'unit-test', 'sample-test' ]
+test_names = [ 'sample-test', 'unit-test' ]
 
 foreach name : test_names
 
-  compile_definitions = []
+  xpack_common_args = []
+  xpack_c_args = []
+  xpack_cpp_args = []
+  xpack_include_directories = []
+  xpack_sources = []
+  xpack_compile_definitions = []
+  xpack_dependencies = []
+  xpack_link_args = []
+  xpack_link_with = []
 
-  libs_dependencies = [
+  xpack_include_directories += [
+    '../include',
+  ]
+
+  xpack_sources += [
+    '../src/' + name + '.cpp',
+  ]
+
+  # xpack_c_args += micro_os_plus_micro_test_plus_dependency_c_args
+  # xpack_cpp_args += micro_os_plus_micro_test_plus_dependency_cpp_args
+
+  xpack_link_args += [
+    '-nostartfiles',
+
+    # Ensure the linker will keep the interrupt vectors which otherwise
+    # are not refered from anywhere.
+    '-u_interrupt_vectors',
+
+    # nano has no exceptions.
+    # '-specs=nano.specs'
+
+    '-Wl,--gc-sections',
+
+    '-Wl,-Map,'+ name + '-map.txt',
+    # '-v',
+
+    # Path are relative to the build folder.
+    '-Txpacks/micro-os-plus-platform-stm32f4discovery/linker-scripts/mem.ld',
+    '-Txpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections.ld',
+  ]
+
+  xpack_dependencies = [
     # Tested library.
     micro_os_plus_micro_test_plus_dependency,
 
     # Portable dependencies.
-    # micro_os_plus_diag_trace_dependency,
+    micro_os_plus_diag_trace_dependency,
 
-    # Platform; it brings device and architecture too.
-    platform_stm32f4discovery_dependency,
+    # Platform specific dependencies.
+    platform_stm32f4discovery_dependency, # bring device & architecture too.
 
     # Other dependencies.
     micro_os_plus_libs_c_dependency,
@@ -77,33 +131,30 @@ foreach name : test_names
     micro_os_plus_startup_dependency,
   ]
 
+  xpack_link_with += [
+    # Tested library.
+  ]
+
   # https://mesonbuild.com/Reference-manual.html#executable
   exe = executable(
     name,
-    include_directories: include_directories(
-      '../include',
-      # 'include-config' # was added globally
-    ),
-    sources: files(
-      '../src/' + name + '.cpp'
-    ),
-    c_args: compile_definitions,
-    cpp_args: compile_definitions,
-    dependencies: libs_dependencies,
-    link_args: [
-      '-nostartfiles',
-      # Ensure the linker will keep the interrupt vectors which otherwise
-      # are not refered from anywhere.
-      '-u_interrupt_vectors',
-      '-Wl,--gc-sections',
-      '-Wl,-Map,'+ name + '-map.txt',
-      # '-v',
-      ] + xpack_linker_scripts,
+    include_directories: include_directories(xpack_include_directories),
+    sources: files(xpack_sources),
+    c_args: xpack_common_args + xpack_c_args + xpack_compile_definitions,
+    cpp_args: xpack_common_args + xpack_cpp_args + xpack_compile_definitions,
+    dependencies: xpack_dependencies,
+    link_args: xpack_link_args,
+    link_with: xpack_link_with,
     name_suffix: 'elf',
   )
 
-  message('A+ -I tests/include')
-  message('A+ tests/src/' + name + '.cpp')
+  foreach xn : xpack_include_directories
+    message('A+ -I ' + xn)
+  endforeach
+  # Note: depenedencies compile_args not shown.
+  foreach xn : xpack_sources + xpack_common_args + xpack_c_args + xpack_cpp_args + xpack_compile_definitions + xpack_link_args
+    message('A+ ' + xn)
+  endforeach
   message('A> ' + name)
 
   # Leave the result in a variable with the test name.
@@ -121,7 +172,7 @@ foreach name : test_names
       '@INPUT@'
     ],
     build_always_stale: true,
-    build_by_default: true,
+    build_by_default: xpack_create_hex,
   )
 
   # --source --all-headers --demangle --line-numbers --wide "xxx.elf"
@@ -168,6 +219,21 @@ qemu = find_program('qemu-system-gnuarmeclipse')
 # https://mesonbuild.com/Unit-tests.html#malloc_perturb_
 nomalloc = environment({'MALLOC_PERTURB_': '0'})
 
+test(
+  'sample-test',
+  qemu,
+  args: [
+    '--board', 'STM32F4-Discovery',
+    '--image', sample_test,
+    '--nographic',
+    '--verbose',
+    '-d', 'unimp,guest_errors',
+    '--semihosting-config', 'enable=on,target=native',
+    '--semihosting-cmdline', 'sample-test', 'one', 'two',
+  ],
+  env: nomalloc
+)
+
 # https://mesonbuild.com/Reference-manual_functions.html#test
 test(
   'unit-test',
@@ -180,21 +246,6 @@ test(
     '-d', 'unimp,guest_errors',
     '--semihosting-config', 'enable=on,target=native',
     '--semihosting-cmdline', 'unit-test',
-  ],
-  env: nomalloc
-)
-
-test(
-  'sample-test',
-  qemu,
-  args: [
-    '--board', 'STM32F4-Discovery',
-    '--image', sample_test,
-    '--nographic',
-    '--verbose',
-    '-d', 'unimp,guest_errors',
-    '--semihosting-config', 'enable=on,target=native',
-    '--semihosting-cmdline', 'sample-test', 'one', 'two',
   ],
   env: nomalloc
 )

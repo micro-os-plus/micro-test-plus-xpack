@@ -19,7 +19,17 @@ message('Including platform-stm32f4discovery globals...')
 
 # -----------------------------------------------------------------------------
 
-platform_common_flags = [
+xpack_platform_common_args = []
+xpack_platform_common_c_args = []
+xpack_platform_common_cpp_args = []
+xpack_platform_compile_definitions = []
+
+# Compiler definitions must passed as options.
+xpack_platform_compile_definitions += [
+  '-D_POSIX_C_SOURCE=200809L',
+]
+
+xpack_platform_common_args += [
   '-mcpu=cortex-m4',
   '-mthumb',
   '-mfloat-abi=soft',
@@ -27,60 +37,56 @@ platform_common_flags = [
   # '-flto' # fails with undefined __assert_func, _write, etc.
 
   '-fno-move-loop-invariants',
-]
 
-platform_common_c_extra_flags = [
-  # Normally should be in the HAL library.
-  '-Wno-bad-function-cast',
-]
-
-platform_common_cpp_extra_flags = [
-  '-fno-rtti',
-  '-fno-use-cxa-atexit',
-  '-fno-threadsafe-statics',
+  # Embedded builds must be warning free.
+  '-Werror',
 ]
 
 if get_option('buildtype').contains('debug')
-  platform_common_flags += [
+  xpack_platform_common_args += [
     '-fno-omit-frame-pointer'
   ]
 endif
 
-add_global_arguments(
-  platform_common_flags,
+xpack_platform_common_c_args += [
+  # Normally should be in the HAL library.
+  '-Wno-bad-function-cast',
+]
 
-  language: [ 'c', 'cpp' ]
-)
+xpack_platform_common_cpp_args += [
+  # '-fno-exceptions',
+  # '-fno-rtti',
+  '-fno-use-cxa-atexit',
+  '-fno-threadsafe-statics',
+]
 
 add_global_arguments(
-  platform_common_c_extra_flags,
+  xpack_platform_common_args + xpack_platform_common_c_args + xpack_platform_compile_definitions,
 
   language: [ 'c' ]
 )
 
 add_global_arguments(
-  platform_common_cpp_extra_flags,
+  xpack_platform_common_args + xpack_platform_common_cpp_args + xpack_platform_compile_definitions,
 
   language: [ 'cpp' ]
 )
 
-add_global_link_arguments(
-  platform_common_flags,
+foreach xn : xpack_platform_common_args + xpack_platform_common_c_args + xpack_platform_common_cpp_args + xpack_platform_compile_definitions
+  message('G+ ' + xn)
+endforeach
 
-  language: [ 'c', 'cpp' ]
+add_global_link_arguments(
+  xpack_platform_common_args + xpack_platform_common_c_args,
+
+  language: [ 'c' ]
 )
 
 add_global_link_arguments(
-  platform_common_cpp_extra_flags,
+  xpack_platform_common_args + xpack_platform_common_cpp_args,
 
   language: [ 'cpp' ]
 )
-
-xpack_linker_scripts = [
-    # Path are relative to the build folder.
-  '-Txpacks/micro-os-plus-platform-stm32f4discovery/linker-scripts/mem.ld',
-  '-Txpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections.ld',
-]
 
 # -----------------------------------------------------------------------------
 
@@ -90,12 +96,17 @@ xpack_linker_scripts = [
 xpack_dependencies = [
   'xpacks/micro-os-plus-diag-trace', # -
 
-  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-version', # -
-  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-architecture-cortexm', # - >architecture
+  # -
+  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-version',
+  # - >architecture
+  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-architecture-cortexm',
 
-  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-startup', # +(version, diag_trace, architecture) >startup
-  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-libs-c', # +(diag_trace, startup, architecture) >libs_c
-  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-libs-cpp', # +(diag_trace) >libs_cpp
+  # +(version, diag_trace, architecture) >startup
+  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-startup',
+  # +(diag_trace, startup, architecture) >libs_c
+  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-libs-c',
+  # +(diag_trace) >libs_cpp
+  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-libs-cpp',
 
   # +(diag_trace, architecture) >semihosting
   xpack_build_folder_relative_path + '/xpacks/micro-os-plus-semihosting',

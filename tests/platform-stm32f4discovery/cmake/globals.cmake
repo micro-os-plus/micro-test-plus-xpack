@@ -18,13 +18,11 @@ message(VERBOSE "Including platform-stm32f4discovery globals...")
 
 # -----------------------------------------------------------------------------
 
-# Global compiler definitions.
-add_compile_definitions(
+# Global definitions.
+# add_compile_definitions()
+# include_directories()
 
-  # Moved to config.h
-)
-
-set(platform_common_options
+set(xpack_platform_common_options
 
   -mcpu=cortex-m4
   -mthumb
@@ -33,44 +31,37 @@ set(platform_common_options
 
   -fno-move-loop-invariants
 
-  # $<$<COMPILE_LANGUAGE:CXX>:-fno-exceptions>
-  $<$<COMPILE_LANGUAGE:CXX>:-fno-rtti>
-  $<$<COMPILE_LANGUAGE:CXX>:-fno-use-cxa-atexit>
-  $<$<COMPILE_LANGUAGE:CXX>:-fno-threadsafe-statics>
+  # Embedded builds must be warning free.
+  -Werror
 
   # -flto fails with undefined reference to `__assert_func'...
   # $<$<CONFIG:Release>:-flto>
   # $<$<CONFIG:MinSizeRel>:-flto>
 
+  $<$<CONFIG:Debug>:-fno-omit-frame-pointer>
+
   # ... libs-c/src/stdlib/exit.c:132:46
   # $<$<CXX_COMPILER_ID:GNU>:-Wno-missing-attributes>
 
-  # Embedded builds must be warning free.
-  -Werror
+  # $<$<COMPILE_LANGUAGE:C>:-fxxx>
+
+  # $<$<COMPILE_LANGUAGE:CXX>:-fno-exceptions>
+  # $<$<COMPILE_LANGUAGE:CXX>:-fno-rtti>
+  $<$<COMPILE_LANGUAGE:CXX>:-fno-use-cxa-atexit>
+  $<$<COMPILE_LANGUAGE:CXX>:-fno-threadsafe-statics>
+)
+
+add_compile_definitions(
+  # ...
+  _POSIX_C_SOURCE=200809L
 )
 
 add_compile_options(
-    ${platform_common_options}
+  ${xpack_platform_common_options}
 )
 
 add_link_options(
-    ${platform_common_options}
-)
-
-add_link_options(
-    -nostartfiles
-    # nano has no exceptions.
-    # -specs=nano.specs
-    -Wl,--gc-sections
-
-    # Force the linker to keep the interrupt vectors which otherwise
-    # are not refered from anywhere.
-    -u_interrupt_vectors
-
-    # Including files from other packages is not very nice, but functional.
-    # Use absolute paths, otherwise set -L.
-    -T${CMAKE_BINARY_DIR}/xpacks/micro-os-plus-platform-stm32f4discovery/linker-scripts/mem.ld
-    -T${CMAKE_BINARY_DIR}/xpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections.ld
+  ${xpack_platform_common_options}
 )
 
 # -----------------------------------------------------------------------------

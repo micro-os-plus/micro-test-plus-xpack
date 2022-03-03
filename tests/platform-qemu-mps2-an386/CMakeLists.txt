@@ -1,7 +1,7 @@
 #
 # This file is part of the µOS++ distribution.
 #   (https://github.com/micro-os-plus)
-# Copyright (c) 2021 Liviu Ionescu
+# Copyright (c) 2022 Liviu Ionescu
 #
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
@@ -16,7 +16,9 @@ message(VERBOSE "Processing 'tests/platform-qemu-mps2-an386'...")
 # -----------------------------------------------------------------------------
 
 set(xpack_platform_compile_definition "PLATFORM_QEMU_MPS2_AN386")
+
 # set(xpack_create_listing true)
+# set(xpack_create_hex true)
 
 # -----------------------------------------------------------------------------
 # Define the platform library.
@@ -91,16 +93,29 @@ function(add_test_executable name)
     # None
   )
 
-  # Bare-metal platforms should be warnings free.
-  # Native builds may use different toolchain versions, which
-  # may trigger unexpected warnings.
   target_compile_options(${name} PRIVATE
-      -Werror
+    # None
   )
 
   target_link_options(${name} PRIVATE
+    -nostartfiles
+
+    # Force the linker to keep the interrupt vectors which otherwise
+    # are not refered from anywhere.
+    -u_interrupt_vectors
+
+    # nano has no exceptions.
+    # -specs=nano.specs
+
+    -Wl,--gc-sections
+
     -Wl,-Map,platform-bin/${name}-map.txt
     # -v
+
+    # Including files from other packages is not very nice, but functional.
+    # Use absolute paths, otherwise set -L.
+    -T${CMAKE_BINARY_DIR}/xpacks/micro-os-plus-devices-qemu-cortexm/linker-scripts/mem.ld
+    -T${CMAKE_BINARY_DIR}/xpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections.ld
   )
 
   target_link_libraries(${name}  PRIVATE
@@ -121,9 +136,11 @@ function(add_test_executable name)
 
   # TODO use add_custom_target()
   # https://cmake.org/cmake/help/v3.20/command/add_custom_command.html
-  add_custom_command(TARGET ${name} POST_BUILD
-    COMMAND ${CMAKE_SIZE} --format=berkeley "$<TARGET_FILE:${name}>"
-  )
+  if(xpack_create_hex)
+    add_custom_command(TARGET ${name} POST_BUILD
+      COMMAND ${CMAKE_SIZE} --format=berkeley "$<TARGET_FILE:${name}>"
+    )
+  endif()
 
   if(xpack_create_listing)
     add_custom_command(TARGET ${name} POST_BUILD
@@ -156,10 +173,6 @@ add_test(
 # -----------------------------------------------------------------------------
 
 add_test_executable(unit-test)
-
-target_link_libraries(unit-test  PRIVATE
-  micro-os-plus::micro-test-plus
-)
 
 add_test(
   NAME "unit-test"

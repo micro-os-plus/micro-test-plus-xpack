@@ -1,7 +1,7 @@
 #
 # This file is part of the µOS++ distribution.
 #   (https://github.com/micro-os-plus)
-# Copyright (c) 2021 Liviu Ionescu
+# Copyright (c) 2022 Liviu Ionescu
 #
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
@@ -58,6 +58,10 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../xpacks/micro-os-pl
 include("micro-os-plus-build-helper")
 
 xpack_display_greetings()
+
+message(VERBOSE "CMAKE_C_COMPILER_ID: ${CMAKE_C_COMPILER_ID}")
+message(VERBOSE "CMAKE_SYSTEM_NAME: ${CMAKE_SYSTEM_NAME}")
+message(VERBOSE "CMAKE_SYSTEM_PROCESSOR: ${CMAKE_SYSTEM_PROCESSOR}")
 
 # -----------------------------------------------------------------------------
 

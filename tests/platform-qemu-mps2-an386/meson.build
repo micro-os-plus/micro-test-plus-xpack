@@ -1,7 +1,7 @@
 #
 # This file is part of the µOS++ distribution.
 #   (https://github.com/micro-os-plus)
-# Copyright (c) 2021 Liviu Ionescu
+# Copyright (c) 2022 Liviu Ionescu
 #
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
@@ -17,32 +17,47 @@ message('Processing tests/platform-qemu-mps2-an386...')
 
 # -----------------------------------------------------------------------------
 
+xpack_platform_compile_definition = 'PLATFORM_QEMU_MPS2_AN386'
+
 # Enable them only when needed.
-xpack_create_listing = false
+xpack_create_listing = true
 xpack_create_hex = false
 
 # -----------------------------------------------------------------------------
 # Define the platform library.
 
+xpack_common_args = []
+xpack_include_directories = []
+xpack_sources = []
+xpack_compile_definitions = []
+
+xpack_include_directories += [
+  'include-platform',
+]
+
+# xpack_sources += []
+
+xpack_compile_definitions += [
+  '-D' + xpack_platform_compile_definition,
+]
+
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
 platform_qemu_mps2_an386_dependency = declare_dependency(
-  include_directories: include_directories(
-    'include-platform',
-  ),
-  sources: files(
-    # None.
-  ),
-  compile_args: [
-    # None.
-  ],
+  include_directories: include_directories(xpack_include_directories),
+  sources: files(xpack_sources),
+  compile_args: xpack_common_args + xpack_compile_definitions,
   dependencies: [
     micro_os_plus_devices_qemu_cortexm_dependency,
   ]
 )
 
-message('+ -I tests/platform-qemu-mps2-an386/include-platform')
-message('+ tests/platform-qemu-mps2-an386/src/initialize-hardware.cpp')
-message('+ tests/platform-qemu-mps2-an386/src/interrupts-handlers.cpp')
+foreach xn : xpack_include_directories
+  message('+ -I ' + xn)
+endforeach
+# Note: depenedencies compile_args not shown.
+foreach xn : xpack_sources + xpack_common_args + xpack_compile_definitions
+  message('+ ' + xn)
+endforeach
 message('> platform_qemu_mps2_an386_dependency')
 
 # =============================================================================
@@ -53,18 +68,60 @@ size = find_program('size')
 objdump = find_program('objdump')
 objcopy = find_program('objcopy')
 
-test_names = [ 'sample-test', 'unit-test' ]
+# -----------------------------------------------------------------------------
+
+test_names = [ 'sample-test', 'unit-test'  ]
 
 foreach name : test_names
 
-  compile_definitions = []
+  xpack_common_args = []
+  xpack_c_args = []
+  xpack_cpp_args = []
+  xpack_include_directories = []
+  xpack_sources = []
+  xpack_compile_definitions = []
+  xpack_dependencies = []
+  xpack_link_args = []
+  xpack_link_with = []
 
-  libs_dependencies = [
+  xpack_include_directories += [
+    '../include',
+  ]
+
+  xpack_sources += [
+    '../src/' + name + '.cpp',
+  ]
+
+  # xpack_c_args += micro_os_plus_micro_test_plus_dependency_c_args
+  # xpack_cpp_args += micro_os_plus_micro_test_plus_dependency_cpp_args
+
+
+  xpack_link_args += [
+    '-nostartfiles',
+
+    # Ensure the linker will keep the interrupt vectors which otherwise
+    # are not refered from anywhere.
+    '-u_interrupt_vectors',
+
+    # nano has no exceptions.
+    # '-specs=nano.specs'
+
+    '-Wl,--gc-sections',
+
+    '-Wl,-Map,'+ name + '-map.txt',
+    # '-v',
+
+    # Path are relative to the build folder.
+    '-Txpacks/micro-os-plus-devices-qemu-cortexm/linker-scripts/mem.ld',
+    '-Txpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections.ld',
+  ]
+
+  xpack_dependencies += [
     # Tested library.
     micro_os_plus_micro_test_plus_dependency,
 
     # Portable dependencies.
-    # micro_os_plus_diag_trace_dependency,
+    micro_os_plus_diag_trace_dependency,
 
     # Platform specific dependencies.
     platform_qemu_mps2_an386_dependency, # bring device & architecture too.
@@ -75,33 +132,30 @@ foreach name : test_names
     micro_os_plus_startup_dependency,
   ]
 
+  xpack_link_with += [
+    # Tested library.
+  ]
+
   # https://mesonbuild.com/Reference-manual.html#executable
   exe = executable(
     name,
-    include_directories: include_directories(
-      '../include',
-      # 'include-config' # was added globally
-    ),
-    sources: files(
-      '../src/' + name + '.cpp'
-    ),
-    c_args: compile_definitions,
-    cpp_args: compile_definitions,
-    dependencies: libs_dependencies,
-    link_args: [
-      '-nostartfiles',
-      # Ensure the linker will keep the interrupt vectors which otherwise
-      # are not refered from anywhere.
-      '-u_interrupt_vectors',
-      '-Wl,--gc-sections',
-      '-Wl,-Map,'+ name + '-map.txt',
-      # '-v',
-      ] + xpack_linker_scripts,
+    include_directories: include_directories(xpack_include_directories),
+    sources: files(xpack_sources),
+    c_args: xpack_common_args + xpack_c_args + xpack_compile_definitions,
+    cpp_args: xpack_common_args + xpack_cpp_args + xpack_compile_definitions,
+    dependencies: xpack_dependencies,
+    link_args: xpack_link_args,
+    link_with: xpack_link_with,
     name_suffix: 'elf',
   )
 
-  message('A+ -I tests/include')
-  message('A+ tests/src/' + name + '.cpp')
+  foreach xn : xpack_include_directories
+    message('A+ -I ' + xn)
+  endforeach
+  # Note: depenedencies compile_args not shown.
+  foreach xn : xpack_sources + xpack_common_args + xpack_c_args + xpack_cpp_args + xpack_compile_definitions + xpack_link_args
+    message('A+ ' + xn)
+  endforeach
   message('A> ' + name)
 
   # Leave the result in a variable with the test name.
@@ -119,7 +173,7 @@ foreach name : test_names
       '@INPUT@'
     ],
     build_always_stale: true,
-    build_by_default: true,
+    build_by_default: xpack_create_hex,
   )
 
   # --source --all-headers --demangle --line-numbers --wide "xxx.elf"

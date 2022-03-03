@@ -15,7 +15,7 @@ message(VERBOSE "Adding 'tests/platform-stm32f4discovery'...")
 
 # -----------------------------------------------------------------------------
 
-# set(xpack_create_listing true)
+set(xpack_create_listing true)
 
 # -----------------------------------------------------------------------------
 
@@ -57,6 +57,10 @@ message(VERBOSE "> micro-os-plus::platform -> platform-stm32f4discovery-interfac
 
 # =============================================================================
 
+if("${CMAKE_HOST_SYSTEM_NAME}" STREQUAL "Windows")
+  set(extension ".cmd")
+endif()
+
 function(add_test_executable name)
 
   add_executable(${name})
@@ -66,34 +70,55 @@ function(add_test_executable name)
       OUTPUT_NAME "${name}"
   )
 
-  # Application sources.
-  target_sources(${name} PRIVATE
+  # Include folders.
+  target_include_directories(${name} PRIVATE
+    "../include"
+  )
+
+  message(VERBOSE "A+ -I tests/include")
+
+    # Application sources.
+    target_sources(${name} PRIVATE
     "../src/${name}.cpp"
   )
 
   message(VERBOSE "A+ tests/src/${name}.cpp")
 
-  # Include folders.
-  target_include_directories(${name} PRIVATE
-    "../include"
-    # 'include-config' # was added globally
-  )
-
-  message(VERBOSE "A+ -I tests/include")
-
   target_compile_definitions(${name} PRIVATE
     # None.
   )
 
-  # Bare-metal platforms should be warnings free.
-  # Native builds may use different toolchain versions, which
-  # may trigger unexpected warnings.
   target_compile_options(${name} PRIVATE
-    -Werror
+    # None.
+  )
+
+  target_link_options(${name} PRIVATE
+    -nostartfiles
+    # nano has no exceptions.
+    # -specs=nano.specs
+    -Wl,--gc-sections
+
+    # Force the linker to keep the interrupt vectors which otherwise
+    # are not refered from anywhere.
+    -u_interrupt_vectors
+
+    # Including files from other packages is not very nice, but functional.
+    # Use absolute paths, otherwise set -L.
+    -T${CMAKE_BINARY_DIR}/xpacks/micro-os-plus-platform-stm32f4discovery/linker-scripts/mem.ld
+    -T${CMAKE_BINARY_DIR}/xpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections.ld
+
+    -Wl,-Map,platform-bin/${name}-map.txt
+    # -v
   )
 
   target_link_libraries(${name} PRIVATE
+    # Tested library.
     micro-os-plus::micro-test-plus
+
+    # Portable dependencies.
+    micro-os-plus::diag-trace
+
+    # Platform specific dependencies.
     micro-os-plus::platform # Should bring device & architecture too.
 
     micro-os-plus::libs-c
@@ -102,10 +127,6 @@ function(add_test_executable name)
     micro-os-plus::startup
   )
 
-  target_link_options(${name} PRIVATE
-    -Wl,-Map,platform-bin/${name}-map.txt
-    # -v
-  )
 
   # TODO use add_custom_target()
   # https://cmake.org/cmake/help/v3.20/command/add_custom_command.html
@@ -128,28 +149,7 @@ endfunction()
 
 # -----------------------------------------------------------------------------
 
-add_test_executable(unit-test)
-
 add_test_executable(sample-test)
-
-# -----------------------------------------------------------------------------
-
-if("${CMAKE_HOST_SYSTEM_NAME}" STREQUAL "Windows")
-  set(extension ".cmd")
-endif()
-
-add_test(
-  NAME "unit-test"
-
-  COMMAND qemu-system-gnuarmeclipse${extension}
-    --verbose
-    --board STM32F4-Discovery
-    -d unimp,guest_errors
-    --nographic
-    --image unit-test.elf
-    --semihosting-config enable=on,target=native
-    --semihosting-cmdline unit-test
-)
 
 add_test(
   NAME "sample-test"
@@ -162,6 +162,23 @@ add_test(
     --image sample-test.elf
     --semihosting-config enable=on,target=native
     --semihosting-cmdline sample-test one two
+)
+
+# -----------------------------------------------------------------------------
+
+add_test_executable(unit-test)
+
+add_test(
+  NAME "unit-test"
+
+  COMMAND qemu-system-gnuarmeclipse${extension}
+    --verbose
+    --board STM32F4-Discovery
+    -d unimp,guest_errors
+    --nographic
+    --image unit-test.elf
+    --semihosting-config enable=on,target=native
+    --semihosting-cmdline unit-test
 )
 
 # -----------------------------------------------------------------------------
