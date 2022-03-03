@@ -74,10 +74,10 @@
         "xpm run test-cortexm"
       ],
       "test-native": [
-        "{% if os.platform != 'win32' %}xpm run test-native-cmake{% endif %}",
+        "{% if os.platform == 'darwin' %}xpm run test-native-cmake{% endif %}",
         "xpm run test-native-cmake-gcc11",
         "xpm run test-native-cmake-clang12",
-        "{% if os.platform != 'win32' %}xpm run test-native-meson{% endif %}",
+        "{% if os.platform == 'darwin' %}xpm run test-native-meson{% endif %}",
         "xpm run test-native-meson-gcc11",
         "xpm run test-native-meson-clang12"
       ],
