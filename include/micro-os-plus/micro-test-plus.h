@@ -5,6 +5,10 @@
  *
  * Permission to use, copy, modify, and/or distribute this software
  * for any purpose is hereby granted, under the terms of the MIT license.
+ *
+ * Major parts of the code are inspired from v1.1.8 of the Boost UT project,
+ * released under the terms of the Boost Version 1.0 Software License,
+ * which can be obtained from <https://www.boost.org/LICENSE_1_0.txt>.
  */
 
 #ifndef MICRO_TEST_PLUS_MICRO_TEST_PLUS_H_
