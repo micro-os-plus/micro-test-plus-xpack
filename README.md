@@ -82,22 +82,22 @@ The later v3.x was a full rework inspired by
 bar to C++ 20.
 
 - for complex applications, test cases can be grouped in test suites
-- test suites can be located in separate compile units, and automatically
+- test suites can be located in separate compilation units, and automatically
   register themselves to the runner;
 - a test suite is a named sequence of test cases
-- a test case is a named sequence of expectations
-- test conditions are either common logical expressions, or check
-  if an exception was thrown
-- each test conditions either succeeds or fails
-- the test progress is shown on STDOUT, with each test expectation on a
+- a test case is a named sequence of conditions expected to be true
+- test conditions are either common logical expressions, or they check
+  if an exception was thrown (or no exception was thrown)
+- each test condition either succeeds or fails
+- the test progress is shown on STDOUT, with each test condition on a
   separate line, prefixed with either a check sign (✓) or a cross sign (✗)
 - failed expectations display the location in the file and
-  the expected and actual values
+  the actual values used in the expression evaluation
 - the main result of the test is passed back as the process exit code
 
-If there is at least one successful test and there are no failed tests,
-each test suite is successful; if all tests suites are successful,
-the process returns 0 as exit value.
+If there is at least one successful tested condition and there are no
+failed tests, each test suite is considered successful;
+if all tests suites are successful, the process returns 0 as exit value.
 
 ### ISTQB Glossary
 
@@ -112,28 +112,32 @@ For more details see: <http://glossary.istqb.org/en/search/test%20case>.
 
 ### C++ API
 
-The primitives used to check expectations are:
+At the limit of simplicity, µTest++ provides only one primitive used to check expectations defined as logical conditions:
 
 ```C++
-// Check logical expression.
 template <class Expr_T>
 bool expect(const TExpr& expr, const char *message);
+```
 
-// Check if any exception is thrown.
+To test exceptions, it is possible to check if any exception was thrown,
+if a specific exception was thrown, or no exception at all was thrown:
+
+```C++
+// Check if any exception was thrown.
 template <class TExpr>
-throws (const TExpr& expr);
+throws (const TExpr& expr, const char *message);
 
-// Check if a specific exception is thrown.
+// Check if a specific exception was thrown.
 template <class TException, class TExpr>
-throws (const TExpr& expr);
+throws (const TExpr& expr, const char *message);
 
 // Check if no exceptions are thrown.
 template <class TExpr>
-nothrow (const TExpr& expr);
+nothrow (const TExpr& expr, const char *message);
 ```
 
 For generic checks performed outside the testing framework, the results can
-reported with two functions:
+be reported with two functions:
 
 ```C++
 // Passed check.
@@ -142,7 +146,7 @@ bool pass(const char *message);
 bool fail(const char *message);
 ```
 
-The comparators are:
+The generic comparators available in the logical expression are:
 
 ```c++
 template <class Lhs_T, class Rhs_T>
@@ -167,8 +171,9 @@ ge(const Lhs_T& lhs, const Rhs_T& rhs);
 Similar templates are defined for traditional string comparators
 (`char*`).
 
-Each test case is performed via a function parametrised with a
-callable, usually a lambda:
+Also at the limit of simplicity, each test case is performed by invoking
+a function, parametrised with a name, a callable, usually a lambda,
+and optional arguments:
 
 ```C++
 template <typename Callable_T, typename... Args_T>
@@ -191,7 +196,11 @@ int
 exit_code (void);
 ```
 
-Test suites are classes which can be constructed with a name and a callable:
+This call also triggers the execution of all test suites.
+
+In order to make self-registration possible, test suites are classes,
+which can be constructed with a name and a callable, usually a lambda,
+which executes the test cases:
 
 ```C++
 class test_suite
@@ -201,6 +210,19 @@ public:
   test_suite (const char* name, Callable_T callable);
 }
 ```
+
+It is recommended to instantiate test suites as static objects.
+The self-registration to the runner is done in the constructor.
+For test suites defined in different compilation units, the order
+in which they are executed replicates the order in which the
+static constructors were invoked, and this order is not specified;
+thus, there should be no dependencies between test suites.
+
+The test cases defined in `main()` are considered the default test
+suite, and are executed when invoked.
+
+The test cases in the explicit test suites are executed when the
+final result is requested.
 
 ### Build & integration info
 
