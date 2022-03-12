@@ -1467,7 +1467,6 @@ namespace micro_os_plus::micro_test_plus
       return *this;
     }
 
-
     auto&
     operator<< (const char* s)
     {
@@ -1571,7 +1570,7 @@ namespace micro_os_plus::micro_test_plus
     auto&
     operator<< (float v)
     {
-      printf ("%f", static_cast<double>(v));
+      printf ("%f", static_cast<double> (v));
       return *this;
     }
 
