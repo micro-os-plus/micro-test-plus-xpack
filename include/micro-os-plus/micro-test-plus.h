@@ -284,6 +284,12 @@ namespace micro_os_plus::micro_test_plus
     void
     register_test_suite (test_suite* suite);
 
+    constexpr const char*
+    name (void)
+    {
+      return default_suite_name_;
+    }
+
   protected:
     int argc_ = 0;
     char** argv_ = nullptr;
