@@ -35,6 +35,7 @@
 #define MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 #endif
 
+#include <array>
 #include <type_traits>
 #include <functional>
 // #include <utility>
@@ -720,6 +721,57 @@ namespace micro_os_plus::micro_test_plus
       return get_impl (t, 0);
     }
 
+    template <class T>
+    struct type_ : op
+    {
+      template <class TOther>
+      [[nodiscard]] constexpr auto
+      operator() (const TOther&) const -> const type_<TOther>
+      {
+        return {};
+      }
+
+      [[nodiscard]] constexpr auto
+      operator== (type_<T>) -> bool
+      {
+        return true;
+      }
+
+      template <class TOther>
+      [[nodiscard]] constexpr auto
+      operator== (type_<TOther>) -> bool
+      {
+        return false;
+      }
+
+      template <class TOther>
+      [[nodiscard]] constexpr auto
+      operator== (const TOther&) -> bool
+      {
+        return std::is_same_v<TOther, T>;
+      }
+
+      [[nodiscard]] constexpr auto
+      operator!= (type_<T>) -> bool
+      {
+        return true;
+      }
+
+      template <class TOther>
+      [[nodiscard]] constexpr auto
+      operator!= (type_<TOther>) -> bool
+      {
+        return true;
+      }
+
+      template <class TOther>
+      [[nodiscard]] constexpr auto
+      operator!= (const TOther&) -> bool
+      {
+        return not std::is_same_v<TOther, T>;
+      }
+    };
+
     template <class T, class = int>
     struct value : op
     {
@@ -743,6 +795,93 @@ namespace micro_os_plus::micro_test_plus
       T value_{};
     };
 
+    template <class T>
+    struct value<T,
+                 type_traits::requires_t<type_traits::is_floating_point_v<T>>>
+        : op
+    {
+      using value_type = T;
+      static inline auto epsilon = T{};
+
+      constexpr value (const T& _value, const T precision) : value_{ _value }
+      {
+        epsilon = precision;
+      }
+
+      constexpr /*explicit(false)*/ value (const T& val)
+          : value{ val,
+                   T (1)
+                       / math::pow (T (10),
+                                    math::den_size<unsigned long long> (val)) }
+      {
+      }
+
+      [[nodiscard]] constexpr explicit operator T () const
+      {
+        return value_;
+      }
+
+      [[nodiscard]] constexpr decltype (auto)
+      get () const
+      {
+        return value_;
+      }
+
+      T value_{};
+    };
+
+    template <auto N>
+    struct integral_constant : op
+    {
+      using value_type = decltype (N);
+      static constexpr auto value = N;
+
+      [[nodiscard]] constexpr auto
+      operator- () const
+      {
+        return integral_constant<-N>{};
+      }
+
+      [[nodiscard]] constexpr explicit operator value_type () const
+      {
+        return N;
+      }
+
+      [[nodiscard]] constexpr auto
+      get () const
+      {
+        return N;
+      }
+    };
+
+    template <class T, auto N, auto D, auto Size, auto P = 1>
+    struct floating_point_constant : op
+    {
+      using value_type = T;
+
+      static constexpr auto epsilon = T (1) / math::pow (T (10), Size - 1);
+      static constexpr auto value
+          = T (P) * (T (N) + (T (D) / math::pow (T (10), Size)));
+
+      [[nodiscard]] constexpr auto
+      operator- () const
+      {
+        return floating_point_constant<T, N, D, Size, -1>{};
+      }
+
+      [[nodiscard]] constexpr explicit operator value_type () const
+      {
+        return value;
+      }
+
+      [[nodiscard]] constexpr auto
+      get () const
+      {
+        return value;
+      }
+    };
+
+    // Implementation of comparator operators.
     template <class TLhs, class TRhs>
     struct eq_ : op
     {
@@ -1710,6 +1849,179 @@ namespace micro_os_plus::micro_test_plus
     template <class T>
     inline constexpr auto is_op_v = __is_base_of(detail::op, T);
   } // namespace type_traits
+
+  // --------------------------------------------------------------------------
+
+  namespace literals
+  {
+    template <char... Cs>
+    [[nodiscard]] constexpr auto operator""_i ()
+    {
+      return detail::integral_constant<math::num<int, Cs...> ()>{};
+    }
+
+    template <char... Cs>
+    [[nodiscard]] constexpr auto operator""_s ()
+    {
+      return detail::integral_constant<math::num<short, Cs...> ()>{};
+    }
+
+    template <char... Cs>
+    [[nodiscard]] constexpr auto operator""_c ()
+    {
+      return detail::integral_constant<math::num<char, Cs...> ()>{};
+    }
+
+    template <char... Cs>
+    [[nodiscard]] constexpr auto operator""_sc ()
+    {
+      return detail::integral_constant<math::num<signed char, Cs...> ()>{};
+    }
+
+    template <char... Cs>
+    [[nodiscard]] constexpr auto operator""_l ()
+    {
+      return detail::integral_constant<math::num<long, Cs...> ()>{};
+    }
+
+    template <char... Cs>
+    [[nodiscard]] constexpr auto operator""_ll ()
+    {
+      return detail::integral_constant<math::num<long long, Cs...> ()>{};
+    }
+
+    template <char... Cs>
+    [[nodiscard]] constexpr auto operator""_u ()
+    {
+      return detail::integral_constant<math::num<unsigned, Cs...> ()>{};
+    }
+
+    template <char... Cs>
+    [[nodiscard]] constexpr auto operator""_uc ()
+    {
+      return detail::integral_constant<math::num<unsigned char, Cs...> ()>{};
+    }
+
+    template <char... Cs>
+    [[nodiscard]] constexpr auto operator""_us ()
+    {
+      return detail::integral_constant<math::num<unsigned short, Cs...> ()>{};
+    }
+
+    template <char... Cs>
+    [[nodiscard]] constexpr auto operator""_ul ()
+    {
+      return detail::integral_constant<math::num<unsigned long, Cs...> ()>{};
+    }
+
+    template <char... Cs>
+    [[nodiscard]] constexpr auto operator""_ull ()
+    {
+      return detail::integral_constant<
+          math::num<unsigned long long, Cs...> ()>{};
+    }
+
+    template <char... Cs>
+    [[nodiscard]] constexpr auto operator""_i8 ()
+    {
+      return detail::integral_constant<math::num<std::int8_t, Cs...> ()>{};
+    }
+
+    template <char... Cs>
+    [[nodiscard]] constexpr auto operator""_i16 ()
+    {
+      return detail::integral_constant<math::num<std::int16_t, Cs...> ()>{};
+    }
+
+    template <char... Cs>
+    [[nodiscard]] constexpr auto operator""_i32 ()
+    {
+      return detail::integral_constant<math::num<std::int32_t, Cs...> ()>{};
+    }
+
+    template <char... Cs>
+    [[nodiscard]] constexpr auto operator""_i64 ()
+    {
+      return detail::integral_constant<math::num<std::int64_t, Cs...> ()>{};
+    }
+
+    template <char... Cs>
+    [[nodiscard]] constexpr auto operator""_u8 ()
+    {
+      return detail::integral_constant<math::num<std::uint8_t, Cs...> ()>{};
+    }
+
+    template <char... Cs>
+    [[nodiscard]] constexpr auto operator""_u16 ()
+    {
+      return detail::integral_constant<math::num<std::uint16_t, Cs...> ()>{};
+    }
+
+    template <char... Cs>
+    [[nodiscard]] constexpr auto operator""_u32 ()
+    {
+      return detail::integral_constant<math::num<std::uint32_t, Cs...> ()>{};
+    }
+
+    template <char... Cs>
+    [[nodiscard]] constexpr auto operator""_u64 ()
+    {
+      return detail::integral_constant<math::num<std::uint64_t, Cs...> ()>{};
+    }
+
+    template <char... Cs>
+    [[nodiscard]] constexpr auto operator""_f ()
+    {
+      return detail::floating_point_constant<
+          float, math::num<unsigned long, Cs...> (),
+          math::den<unsigned long, Cs...> (),
+          math::den_size<unsigned long, Cs...> ()>{};
+    }
+
+    template <char... Cs>
+    [[nodiscard]] constexpr auto operator""_d ()
+    {
+      return detail::floating_point_constant<
+          double, math::num<unsigned long, Cs...> (),
+          math::den<unsigned long, Cs...> (),
+          math::den_size<unsigned long, Cs...> ()>{};
+    }
+
+    template <char... Cs>
+    [[nodiscard]] constexpr auto operator""_ld ()
+    {
+      return detail::floating_point_constant<
+          long double, math::num<unsigned long long, Cs...> (),
+          math::den<unsigned long long, Cs...> (),
+          math::den_size<unsigned long long, Cs...> ()>{};
+    }
+
+    constexpr auto operator""_b (const char* name, decltype (sizeof ("")) size)
+    {
+      struct named : std::string_view, detail::op
+      {
+        using value_type = bool;
+        [[nodiscard]] constexpr operator value_type () const
+        {
+          return true;
+        }
+
+        [[nodiscard]] constexpr auto
+        operator== (const named&) const
+        {
+          return true;
+        }
+
+        [[nodiscard]] constexpr auto
+        operator== (const bool other) const
+        {
+          return other;
+        }
+      };
+
+      return named{ { name, size }, {} };
+    }
+  } // namespace literals
 
   // --------------------------------------------------------------------------
   // Public API.
