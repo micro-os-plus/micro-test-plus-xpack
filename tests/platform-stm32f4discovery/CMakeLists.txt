@@ -136,6 +136,12 @@ function(add_test_executable name)
     COMMAND ${CMAKE_SIZE} --format=berkeley "$<TARGET_FILE:${name}>"
   )
 
+  if(xpack_create_hex)
+    add_custom_command(TARGET ${name} POST_BUILD
+      COMMAND ${CMAKE_OBJCOPY} -O ihex "$<TARGET_FILE:${name}>" "$<TARGET_FILE:${name}>.hex"
+    )
+  endif()
+
   if(xpack_create_listing)
     add_custom_command(
       TARGET ${name} POST_BUILD
