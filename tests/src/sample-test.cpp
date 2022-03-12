@@ -19,6 +19,8 @@
 #include <micro-os-plus/micro-test-plus.h>
 #include <stdexcept>
 
+using namespace std::literals;
+
 using namespace micro_os_plus;
 
 #pragma GCC diagnostic ignored "-Waggregate-return"
@@ -46,17 +48,6 @@ compute_aaa (void)
   static char str[10];
   strcpy (str, "aa");
   strcat (str, "a");
-  return str;
-}
-
-static char*
-compute_aaaa (void)
-{
-  // Construct it from parts, otherwise the compiler will coalesce strings
-  // and comparing addresses will match.
-  static char str[10];
-  strcpy (str, "aa");
-  strcat (str, "aa");
   return str;
 }
 
@@ -109,10 +100,8 @@ main (int argc, char* argv[])
     expect (eq (compute_one (), 1), "compute_one() == 1");
 
     // Strings can also be compared (via `strcmp()`).
-    expect (eq (std::string_view{ compute_aaa () }, std::string_view{ "aaa" }),
+    expect (eq (std::string_view{ compute_aaa () }, "aaa"sv),
             "compute_aaa() == 'aaa' string_view");
-    expect (eq (compute_aaa (), "aaa"), "compute_aaa() == 'aaa' char*");
-    expect (eq (compute_aaaa (), "aaaa"), "compute_aaaa() == 'aaaa' char*");
 
     // More complex conditions are passed as booleans.
     expect (compute_condition (), "condition() is true");
@@ -132,12 +121,14 @@ main (int argc, char* argv[])
 
         if (_argc > 1)
           {
-            expect (eq (_argv[1], "one"), "argv[1] == 'one'");
+            expect (eq (std::string_view{ _argv[1] }, "one"sv),
+                    "argv[1] == 'one'");
           }
 
         if (_argc > 2)
           {
-            expect (eq (_argv[2], "two"), "argv[2] == 'two'");
+            expect (eq (std::string_view{ _argv[2] }, "two"sv),
+                    "argv[2] == 'two'");
           }
       },
       argc, argv);
