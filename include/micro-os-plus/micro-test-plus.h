@@ -290,6 +290,12 @@ namespace micro_os_plus::micro_test_plus
       return default_suite_name_;
     }
 
+    [[noreturn]] void
+    abort (void)
+    {
+      ::abort ();
+    }
+
   protected:
     int argc_ = 0;
     char** argv_ = nullptr;
@@ -400,6 +406,7 @@ namespace micro_os_plus::micro_test_plus
     struct assertion
     {
       TExpr expr{};
+      bool abort; // True if called from assume(), false from expect()
       const char* message;
       reflection::source_location location{};
     };
@@ -411,6 +418,7 @@ namespace micro_os_plus::micro_test_plus
     struct assertion_pass
     {
       TExpr expr{};
+      bool abort; // True if called from assume(), false from expect()
       const char* message;
       reflection::source_location location{};
     };
@@ -422,6 +430,7 @@ namespace micro_os_plus::micro_test_plus
     struct assertion_fail
     {
       TExpr expr{};
+      bool abort; // True if called from assume(), false from expect()
       const char* message;
       reflection::source_location location{};
     };
@@ -1402,10 +1411,18 @@ namespace micro_os_plus::micro_test_plus
     fail (events::assertion_fail<TExpr> assertion) -> void
     {
       *this << colors_.fail << "    ✗ " << assertion.message << " FAILED"
-            << colors_.none << " ("
-            << reflection::short_name (assertion.location.file_name ()) << ":"
-            << assertion.location.line () << ", " << assertion.expr << ")"
-            << endl;
+            << colors_.none;
+      *this << " (" << reflection::short_name (assertion.location.file_name ())
+            << ":" << assertion.location.line ();
+      *this << ", " << assertion.expr;
+      if (assertion.abort)
+        {
+          *this << ", aborted";
+        }
+      *this << ")";
+      *this << endl;
+
+      flush ();
       current_test_suite->increment_failed ();
     }
 
@@ -1452,6 +1469,7 @@ namespace micro_os_plus::micro_test_plus
         {
           reporter.pass (
               events::assertion_pass<TExpr>{ .expr = assertion.expr,
+                                             .abort = assertion.abort,
                                              .message = assertion.message,
                                              .location = assertion.location });
           return true;
@@ -1459,8 +1477,14 @@ namespace micro_os_plus::micro_test_plus
 
       reporter.fail (
           events::assertion_fail<TExpr>{ .expr = assertion.expr,
+                                         .abort = assertion.abort,
                                          .message = assertion.message,
                                          .location = assertion.location });
+      if (assertion.abort)
+        {
+          current_test_suite->end ();
+          runner.abort ();
+        }
       return false;
     }
 
@@ -1481,7 +1505,7 @@ namespace micro_os_plus::micro_test_plus
                              = reflection::source_location::current ())
   {
     return detail::expect_<TExpr>{ detail::on<TExpr> (events::assertion<TExpr>{
-        .expr = true, .message = message, .location = sl }) };
+        .expr = true, .abort = false, .message = message, .location = sl }) };
   }
 
   template <class TExpr = bool>
@@ -1490,7 +1514,7 @@ namespace micro_os_plus::micro_test_plus
                              = reflection::source_location::current ())
   {
     return detail::expect_<TExpr>{ detail::on<TExpr> (events::assertion<TExpr>{
-        .expr = false, .message = message, .location = sl }) };
+        .expr = false, .abort = false, .message = message, .location = sl }) };
   }
 
   /**
@@ -1506,7 +1530,23 @@ namespace micro_os_plus::micro_test_plus
           = reflection::source_location::current ())
   {
     return detail::expect_<TExpr>{ detail::on<TExpr> (events::assertion<TExpr>{
-        .expr = expr, .message = message, .location = sl }) };
+        .expr = expr, .abort = false, .message = message, .location = sl }) };
+  }
+
+  /**
+   * @brief The generic evaluation function.
+   */
+  template <class TExpr,
+            type_traits::requires_t<
+                type_traits::is_op_v<
+                    TExpr> or type_traits::is_convertible_v<TExpr, bool>> = 0>
+  constexpr auto
+  assume (const TExpr& expr, const char* message,
+          const reflection::source_location& sl
+          = reflection::source_location::current ())
+  {
+    return detail::expect_<TExpr>{ detail::on<TExpr> (events::assertion<TExpr>{
+        .expr = expr, .abort = true, .message = message, .location = sl }) };
   }
 
 #if defined(__cpp_exceptions)
