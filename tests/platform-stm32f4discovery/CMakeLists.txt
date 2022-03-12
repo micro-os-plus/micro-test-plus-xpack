@@ -17,6 +17,7 @@ message(VERBOSE "Adding 'tests/platform-stm32f4discovery'...")
 # -----------------------------------------------------------------------------
 
 set(xpack_create_listing true)
+set(xpack_create_hex true)
 
 # -----------------------------------------------------------------------------
 
