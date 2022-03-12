@@ -220,35 +220,43 @@ qemu = find_program('qemu-system-gnuarmeclipse')
 # https://mesonbuild.com/Unit-tests.html#malloc_perturb_
 nomalloc = environment({'MALLOC_PERTURB_': '0'})
 
-test(
-  'sample-test',
-  qemu,
-  args: [
-    '--board', 'STM32F4-Discovery',
-    '--image', sample_test,
-    '--nographic',
-    '--verbose',
-    '-d', 'unimp,guest_errors',
-    '--semihosting-config', 'enable=on,target=native',
-    '--semihosting-cmdline', 'sample-test', 'one', 'two',
-  ],
-  env: nomalloc
-)
+if enable_sample_test
 
-# https://mesonbuild.com/Reference-manual_functions.html#test
-test(
-  'unit-test',
-  qemu,
-  args: [
-    '--board', 'STM32F4-Discovery',
-    '--image', unit_test,
-    '--nographic',
-    '--verbose',
-    '-d', 'unimp,guest_errors',
-    '--semihosting-config', 'enable=on,target=native',
-    '--semihosting-cmdline', 'unit-test',
-  ],
-  env: nomalloc
-)
+  test(
+    'sample-test',
+    qemu,
+    args: [
+      '--board', 'STM32F4-Discovery',
+      '--image', sample_test,
+      '--nographic',
+      '--verbose',
+      '-d', 'unimp,guest_errors',
+      '--semihosting-config', 'enable=on,target=native',
+      '--semihosting-cmdline', 'sample-test', 'one', 'two',
+    ],
+    env: nomalloc
+  )
+
+endif
+
+if enable_unit_test
+
+  # https://mesonbuild.com/Reference-manual_functions.html#test
+  test(
+    'unit-test',
+    qemu,
+    args: [
+      '--board', 'STM32F4-Discovery',
+      '--image', unit_test,
+      '--nographic',
+      '--verbose',
+      '-d', 'unimp,guest_errors',
+      '--semihosting-config', 'enable=on,target=native',
+      '--semihosting-cmdline', 'unit-test',
+    ],
+    env: nomalloc
+  )
+
+endif
 
 # -----------------------------------------------------------------------------

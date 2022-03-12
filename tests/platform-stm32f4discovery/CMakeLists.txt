@@ -150,37 +150,45 @@ endfunction()
 
 # -----------------------------------------------------------------------------
 
-add_test_executable(sample-test)
+if (ENABLE_SAMPLE_TEST)
 
-add_test(
-  NAME "sample-test"
+  add_test_executable(sample-test)
 
-  COMMAND qemu-system-gnuarmeclipse${extension}
-    --verbose
-    --board STM32F4-Discovery
-    -d unimp,guest_errors
-    --nographic
-    --image sample-test.elf
-    --semihosting-config enable=on,target=native
-    --semihosting-cmdline sample-test one two
-)
+  add_test(
+    NAME "sample-test"
+
+    COMMAND qemu-system-gnuarmeclipse${extension}
+      --verbose
+      --board STM32F4-Discovery
+      -d unimp,guest_errors
+      --nographic
+      --image sample-test.elf
+      --semihosting-config enable=on,target=native
+      --semihosting-cmdline sample-test one two
+  )
+
+endif()
 
 # -----------------------------------------------------------------------------
 
-add_test_executable(unit-test)
+if (ENABLE_UNIT_TEST)
 
-add_test(
-  NAME "unit-test"
+  add_test_executable(unit-test)
 
-  COMMAND qemu-system-gnuarmeclipse${extension}
-    --verbose
-    --board STM32F4-Discovery
-    -d unimp,guest_errors
-    --nographic
-    --image unit-test.elf
-    --semihosting-config enable=on,target=native
-    --semihosting-cmdline unit-test
-)
+  add_test(
+    NAME "unit-test"
+
+    COMMAND qemu-system-gnuarmeclipse${extension}
+      --verbose
+      --board STM32F4-Discovery
+      -d unimp,guest_errors
+      --nographic
+      --image unit-test.elf
+      --semihosting-config enable=on,target=native
+      --semihosting-cmdline unit-test
+  )
+  
+endif()
 
 # -----------------------------------------------------------------------------
 
