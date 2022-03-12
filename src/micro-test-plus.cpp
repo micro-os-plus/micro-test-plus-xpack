@@ -228,7 +228,7 @@ namespace micro_os_plus::micro_test_plus
   test_suite::begin (void)
   {
     current_test_suite = this;
-
+    fflush(stdout);
     printf ("\n%s\n", name_);
   }
 
@@ -247,12 +247,14 @@ namespace micro_os_plus::micro_test_plus
             "\n%s failed (%d checks passed, %d failed, in %d test cases)\n",
             name_, passed_, failed_, test_cases_);
       }
+    fflush(stdout);
   }
 
   void
   test_suite::begin_test_case (const char* name)
   {
     printf ("\n  %s\n", name);
+    fflush(stdout);
     test_case_name_ = name;
     ++test_cases_;
   }
@@ -260,6 +262,7 @@ namespace micro_os_plus::micro_test_plus
   void
   test_suite::end_test_case ()
   {
+    fflush(stdout);
   }
 
   // --------------------------------------------------------------------------

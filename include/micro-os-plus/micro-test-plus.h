@@ -1398,8 +1398,10 @@ namespace micro_os_plus::micro_test_plus
     auto
     pass (events::assertion_pass<TExpr> assertion) -> void
     {
-      *this << colors_.pass << "    ✓ " << assertion.message << colors_.none
-            << endl;
+      *this << colors_.pass << "    ✓ " << assertion.message << colors_.none;
+      *this << endl;
+
+      flush ();
       current_test_suite->increment_passed ();
     }
 
