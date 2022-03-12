@@ -951,11 +951,13 @@ namespace micro_os_plus::micro_test_plus
       {
         return value_;
       }
+
       [[nodiscard]] constexpr auto
       lhs () const
       {
         return get (lhs_);
       }
+
       [[nodiscard]] constexpr auto
       rhs () const
       {
@@ -1235,11 +1237,13 @@ namespace micro_os_plus::micro_test_plus
       {
         return value_;
       }
+
       [[nodiscard]] constexpr auto
       lhs () const
       {
         return get (lhs_);
       }
+
       [[nodiscard]] constexpr auto
       rhs () const
       {
@@ -1264,11 +1268,13 @@ namespace micro_os_plus::micro_test_plus
       {
         return value_;
       }
+
       [[nodiscard]] constexpr auto
       lhs () const
       {
         return get (lhs_);
       }
+
       [[nodiscard]] constexpr auto
       rhs () const
       {
