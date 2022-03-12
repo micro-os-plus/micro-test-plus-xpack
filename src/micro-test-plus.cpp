@@ -173,24 +173,6 @@ namespace micro_os_plus::micro_test_plus
     return stream;
   }
 
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wformat-nonliteral"
-#endif
-
-  void
-  test_reporter::print_where (const char* format, const char* file, int line)
-  {
-    if (file != nullptr)
-      {
-        printf (format, file, line);
-      }
-  }
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif
-
   void
   test_reporter::flush (void)
   {

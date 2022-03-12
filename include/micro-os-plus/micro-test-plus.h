@@ -1312,13 +1312,6 @@ namespace micro_os_plus::micro_test_plus
 
     template <typename T>
     void
-    print_value (T value);
-
-    void
-    print_where (const char* format, const char* file, int line);
-
-    template <typename T>
-    void
     print_expr (T expr);
 
     auto&
@@ -1329,6 +1322,14 @@ namespace micro_os_plus::micro_test_plus
     }
 
     auto&
+    operator<< (char c)
+    {
+      printf ("%c", c);
+      return *this;
+    }
+
+
+    auto&
     operator<< (const char* s)
     {
       printf ("%s", s);
@@ -1336,32 +1337,129 @@ namespace micro_os_plus::micro_test_plus
     }
 
     auto&
-    operator<< (int v)
+    operator<< (char* s)
     {
-      print_value (v);
+      printf ("%s", s);
       return *this;
     }
 
-    template <typename T>
     auto&
-    operator<< (T v)
+    operator<< (bool v)
     {
-      print_value (v);
+      printf ("%s", v ? "true" : "false");
+      return *this;
+    }
+
+    auto&
+    operator<< (std::nullptr_t)
+    {
+      printf ("nullptr");
+      return *this;
+    }
+
+#if 1
+    auto&
+    operator<< (signed char c)
+    {
+      printf ("%dc", c);
+      return *this;
+    }
+
+    auto&
+    operator<< (unsigned char c)
+    {
+      printf ("%duc", c);
+      return *this;
+    }
+#endif
+
+    auto&
+    operator<< (signed short c)
+    {
+      printf ("%ds", c);
+      return *this;
+    }
+
+    auto&
+    operator<< (unsigned short c)
+    {
+      printf ("%uus", c);
+      return *this;
+    }
+
+    auto&
+    operator<< (signed int v)
+    {
+      printf ("%di", v);
+      return *this;
+    }
+
+    auto&
+    operator<< (unsigned int v)
+    {
+      printf ("%uui", v);
+      return *this;
+    }
+
+    auto&
+    operator<< (signed long v)
+    {
+      printf ("%ldl", v);
+      return *this;
+    }
+
+    auto&
+    operator<< (unsigned long v)
+    {
+      printf ("%luul", v);
+      return *this;
+    }
+
+    auto&
+    operator<< (unsigned long long v)
+    {
+      printf ("%lluull", v);
+      return *this;
+    }
+
+    auto&
+    operator<< (signed long long v)
+    {
+      printf ("%lldll", v);
+      return *this;
+    }
+
+    auto&
+    operator<< (float v)
+    {
+      printf ("%f", static_cast<double>(v));
+      return *this;
+    }
+
+    auto&
+    operator<< (double v)
+    {
+      printf ("%f", v);
+      return *this;
+    }
+
+    auto&
+    operator<< (long double v)
+    {
+      printf ("%Lf", v);
       return *this;
     }
 
     // ------------------------------------------------------------------------
     // Specific operators.
 
-#if 0
     template <class T>
     auto&
     operator<< (const T& t)
     {
-      out_ << detail::get (t);
+      *this << detail::get (t);
       return *this;
     }
-#endif
 
     auto&
     operator<< (test_reporter& (*func) (test_reporter&))
@@ -1494,6 +1592,15 @@ namespace micro_os_plus::micro_test_plus
       return (*this << color (op) << "nothrow" << colors_.none);
     }
 #endif
+
+    // Any pointer.
+    template <typename T>
+    auto&
+    operator<< (T* v)
+    {
+      printf ("%p", reinterpret_cast<void*> (v));
+      return *this;
+    }
 
     // ------------------------------------------------------------------------
 
@@ -1984,42 +2091,6 @@ namespace micro_os_plus::micro_test_plus
       }
   }
 #endif
-
-  // --------------------------------------------------------------------------
-
-  template <typename T>
-  void
-  test_reporter::print_value ([[maybe_unused]] T value)
-  {
-    if constexpr (std::is_same_v<T, char*> || std::is_same_v<T, const char*>)
-      {
-        printf ("'%s'", value);
-      }
-    else if constexpr (std::is_same_v<T, bool>)
-      {
-        printf ("%s", value ? "true" : "false");
-      }
-    else if constexpr (std::is_null_pointer_v<T>)
-      {
-        printf ("nullptr");
-      }
-    else if constexpr (std::is_pointer_v<T>)
-      {
-        printf ("%p", reinterpret_cast<void*> (value));
-      }
-    else if constexpr (std::is_integral_v<T>)
-      {
-        printf ("%ld", static_cast<long> (value));
-      }
-    else if constexpr (std::is_floating_point_v<T>)
-      {
-        printf ("%f", static_cast<double> (value));
-      }
-    else
-      {
-        printf ("(unsupported type)");
-      }
-  }
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
