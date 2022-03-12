@@ -60,10 +60,6 @@ include("micro-os-plus-build-helper")
 
 xpack_display_greetings()
 
-message(VERBOSE "CMAKE_C_COMPILER_ID: ${CMAKE_C_COMPILER_ID}")
-message(VERBOSE "CMAKE_SYSTEM_NAME: ${CMAKE_SYSTEM_NAME}")
-message(VERBOSE "CMAKE_SYSTEM_PROCESSOR: ${CMAKE_SYSTEM_PROCESSOR}")
-
 # -----------------------------------------------------------------------------
 
 # CMAKE_BUILD_TYPE: Debug, Release, RelWithDebInfo, MinSizeRel
