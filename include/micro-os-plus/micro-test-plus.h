@@ -511,7 +511,14 @@ namespace micro_os_plus::micro_test_plus
     {
       constexpr const std::array cs{ Cs... };
       T i{};
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
       while (cs[i++] != '.')
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
         {
         }
 
@@ -528,7 +535,18 @@ namespace micro_os_plus::micro_test_plus
       do
         {
           value *= 10;
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#if !defined(__clang__)
+#pragma GCC diagnostic ignored "-Warith-conversion"
+#else
+#pragma GCC diagnostic ignored "-Wimplicit-int-float-conversion"
+#endif
+#endif
           tmp = value - T (value);
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
           ++result;
         }
       while (tmp > precision);
@@ -733,15 +751,19 @@ namespace micro_os_plus::micro_test_plus
               using std::operator==;
               using std::operator<;
 
-              if constexpr (
-                  (std::is_same_v<TLhs, char*> || std::is_same_v<TLhs, const char*>)&&(
-                      std::is_same_v<
-                          TRhs, char*> || std::is_same_v<TRhs, const char*>))
-                {
-                  return (std::strcmp (get (lhs), get (rhs)) == 0);
-                }
-              else if constexpr (type_traits::has_value_v<
-                                     TLhs> and type_traits::has_value_v<TRhs>)
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wfloat-equal"
+#pragma GCC diagnostic ignored "-Wconversion"
+#pragma GCC diagnostic ignored "-Wdouble-promotion"
+#pragma GCC diagnostic ignored "-Wsign-compare"
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wimplicit-int-float-conversion"
+#pragma clang diagnostic ignored "-Wpedantic"
+#endif
+#endif
+              if constexpr (type_traits::has_value_v<
+                                TLhs> and type_traits::has_value_v<TRhs>)
                 {
                   return TLhs::value == TRhs::value;
                 }
@@ -764,6 +786,9 @@ namespace micro_os_plus::micro_test_plus
                 {
                   return get (lhs) == get (rhs);
                 }
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
             }() }
       {
       }
@@ -797,6 +822,17 @@ namespace micro_os_plus::micro_test_plus
               using std::operator!=;
               using std::operator>;
 
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wfloat-equal"
+#pragma GCC diagnostic ignored "-Wconversion"
+#pragma GCC diagnostic ignored "-Wdouble-promotion"
+#pragma GCC diagnostic ignored "-Wsign-compare"
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wimplicit-int-float-conversion"
+#pragma clang diagnostic ignored "-Wpedantic"
+#endif
+#endif
               if constexpr (type_traits::has_value_v<
                                 TLhs> and type_traits::has_value_v<TRhs>)
                 {
@@ -821,6 +857,9 @@ namespace micro_os_plus::micro_test_plus
                 {
                   return get (lhs_) != get (rhs_);
                 }
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
             }() }
       {
       }
@@ -852,6 +891,16 @@ namespace micro_os_plus::micro_test_plus
           : lhs_{ lhs }, rhs_{ rhs }, value_{ [&] {
               using std::operator>;
 
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#pragma GCC diagnostic ignored "-Wdouble-promotion"
+#pragma GCC diagnostic ignored "-Wsign-compare"
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wimplicit-int-float-conversion"
+#pragma clang diagnostic ignored "-Wpedantic"
+#endif
+#endif
               if constexpr (type_traits::has_value_v<
                                 TLhs> and type_traits::has_value_v<TRhs>)
                 {
@@ -861,6 +910,9 @@ namespace micro_os_plus::micro_test_plus
                 {
                   return get (lhs_) > get (rhs_);
                 }
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
             }() }
       {
       }
@@ -892,6 +944,16 @@ namespace micro_os_plus::micro_test_plus
           : lhs_{ lhs }, rhs_{ rhs }, value_{ [&] {
               using std::operator>=;
 
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#pragma GCC diagnostic ignored "-Wdouble-promotion"
+#pragma GCC diagnostic ignored "-Wsign-compare"
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wimplicit-int-float-conversion"
+#pragma clang diagnostic ignored "-Wpedantic"
+#endif
+#endif
               if constexpr (type_traits::has_value_v<
                                 TLhs> and type_traits::has_value_v<TRhs>)
                 {
@@ -901,6 +963,9 @@ namespace micro_os_plus::micro_test_plus
                 {
                   return get (lhs_) >= get (rhs_);
                 }
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
             }() }
       {
       }
@@ -932,6 +997,16 @@ namespace micro_os_plus::micro_test_plus
           : lhs_{ lhs }, rhs_{ rhs }, value_{ [&] {
               using std::operator<;
 
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#pragma GCC diagnostic ignored "-Wdouble-promotion"
+#pragma GCC diagnostic ignored "-Wsign-compare"
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wimplicit-int-float-conversion"
+#pragma clang diagnostic ignored "-Wpedantic"
+#endif
+#endif
               if constexpr (type_traits::has_value_v<
                                 TLhs> and type_traits::has_value_v<TRhs>)
                 {
@@ -941,6 +1016,9 @@ namespace micro_os_plus::micro_test_plus
                 {
                   return get (lhs_) < get (rhs_);
                 }
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
             }() }
       {
       }
@@ -973,6 +1051,16 @@ namespace micro_os_plus::micro_test_plus
           : lhs_{ lhs }, rhs_{ rhs }, value_{ [&] {
               using std::operator<=;
 
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#pragma GCC diagnostic ignored "-Wdouble-promotion"
+#pragma GCC diagnostic ignored "-Wsign-compare"
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wimplicit-int-float-conversion"
+#pragma clang diagnostic ignored "-Wpedantic"
+#endif
+#endif
               if constexpr (type_traits::has_value_v<
                                 TLhs> and type_traits::has_value_v<TRhs>)
                 {
@@ -982,6 +1070,9 @@ namespace micro_os_plus::micro_test_plus
                 {
                   return get (lhs_) <= get (rhs_);
                 }
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
             }() }
       {
       }
