@@ -694,12 +694,6 @@ namespace micro_os_plus::micro_test_plus
     {
     };
 
-    struct cfg
-    {
-      static inline reflection::source_location location{};
-      static inline bool wip{};
-    };
-
     template <class T>
     [[nodiscard]] constexpr auto
     get_impl (const T& t, int) -> decltype (t.get ())
@@ -1805,7 +1799,6 @@ namespace micro_os_plus::micro_test_plus
     {
       constexpr explicit expect_ (bool value) : value_{ value }
       {
-        cfg::wip = {};
       }
 
       [[nodiscard]] constexpr operator bool () const
