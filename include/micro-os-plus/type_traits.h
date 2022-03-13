@@ -252,6 +252,9 @@ namespace micro_os_plus::micro_test_plus
       T value_{};
     };
 
+    template <class T>
+    inline constexpr auto is_op_v = __is_base_of(type_traits::op, T);
+
   } // namespace type_traits
 
   // --------------------------------------------------------------------------
