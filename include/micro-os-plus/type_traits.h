@@ -161,6 +161,97 @@ namespace micro_os_plus::micro_test_plus
 
     template <bool Cond>
     using requires_t = typename requires_<Cond>::type;
+
+    /**
+     * @brief Empty base class of all operators.
+     */
+    struct op
+    {
+    };
+
+    /**
+     * @brief A generic integral constant.
+     * It has a getter and a '-' operator to return the negative value.
+     */
+    template <auto N>
+    struct integral_constant : op
+    {
+      using value_type = decltype (N);
+      static constexpr auto value = N;
+
+      [[nodiscard]] constexpr auto
+      operator- () const
+      {
+        return integral_constant<-N>{};
+      }
+
+      [[nodiscard]] constexpr explicit operator value_type () const
+      {
+        return N;
+      }
+
+      [[nodiscard]] constexpr auto
+      get () const
+      {
+        return N;
+      }
+    };
+
+    /**
+     * @brief A generic floating point constant, with custom size
+     * and precision.
+     * It has a getter and a '-' operator to return the negative value.
+     */
+    template <class T, auto N, auto D, auto Size, auto P = 1>
+    struct floating_point_constant : op
+    {
+      using value_type = T;
+
+      static constexpr auto epsilon = T (1) / math::pow (T (10), Size - 1);
+      static constexpr auto value
+          = T (P) * (T (N) + (T (D) / math::pow (T (10), Size)));
+
+      [[nodiscard]] constexpr auto
+      operator- () const
+      {
+        return floating_point_constant<T, N, D, Size, -1>{};
+      }
+
+      [[nodiscard]] constexpr explicit operator value_type () const
+      {
+        return value;
+      }
+
+      [[nodiscard]] constexpr auto
+      get () const
+      {
+        return value;
+      }
+    };
+
+    template <class T>
+    struct genuine_integral_value : op
+    {
+      using value_type = T;
+
+      constexpr genuine_integral_value (const T& _value) : value_{ _value }
+      {
+      }
+
+      [[nodiscard]] constexpr explicit operator T () const
+      {
+        return value_;
+      }
+
+      [[nodiscard]] constexpr decltype (auto)
+      get () const
+      {
+        return value_;
+      }
+
+      T value_{};
+    };
+
   } // namespace type_traits
 
   // --------------------------------------------------------------------------

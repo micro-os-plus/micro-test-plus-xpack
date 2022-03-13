@@ -370,20 +370,15 @@ namespace micro_os_plus::micro_test_plus
       return get_impl (t, 0);
     }
 
-    /**
-     * @brief Empty base class of all operators.
-     */
-    struct op
-    {
-    };
 
+#if 0
     /**
      * @brief Class defining an internal type.
      * It has == and != operators to check if the type is the same
      * with other types.
      */
     template <class T>
-    struct type_ : op
+    struct type_ : type_traits::op
     {
       template <class Other_T>
       [[nodiscard]] constexpr auto
@@ -432,12 +427,13 @@ namespace micro_os_plus::micro_test_plus
         return not std::is_same_v<Other_T, T>;
       }
     };
+#endif
 
     /**
      * @brief Class defining a generic value, accessible via a getter.
      */
     template <class T, class = int>
-    struct value : op
+    struct value : type_traits::op
     {
       using value_type = T;
 
@@ -468,7 +464,7 @@ namespace micro_os_plus::micro_test_plus
     template <class T>
     struct value<T,
                  type_traits::requires_t<type_traits::is_floating_point_v<T>>>
-        : op
+        : type_traits::op
     {
       using value_type = T;
       static inline auto epsilon = T{}; // Why static?
@@ -500,96 +496,13 @@ namespace micro_os_plus::micro_test_plus
       T value_{};
     };
 
-    /**
-     * @brief A generic integral constant.
-     * It has a getter and a '-' operator to return the negative value.
-     */
-    template <auto N>
-    struct integral_constant : op
-    {
-      using value_type = decltype (N);
-      static constexpr auto value = N;
-
-      [[nodiscard]] constexpr auto
-      operator- () const
-      {
-        return integral_constant<-N>{};
-      }
-
-      [[nodiscard]] constexpr explicit operator value_type () const
-      {
-        return N;
-      }
-
-      [[nodiscard]] constexpr auto
-      get () const
-      {
-        return N;
-      }
-    };
-
-    /**
-     * @brief A generic floating point constant, with custom size
-     * and precision.
-     * It has a getter and a '-' operator to return the negative value.
-     */
-    template <class T, auto N, auto D, auto Size, auto P = 1>
-    struct floating_point_constant : op
-    {
-      using value_type = T;
-
-      static constexpr auto epsilon = T (1) / math::pow (T (10), Size - 1);
-      static constexpr auto value
-          = T (P) * (T (N) + (T (D) / math::pow (T (10), Size)));
-
-      [[nodiscard]] constexpr auto
-      operator- () const
-      {
-        return floating_point_constant<T, N, D, Size, -1>{};
-      }
-
-      [[nodiscard]] constexpr explicit operator value_type () const
-      {
-        return value;
-      }
-
-      [[nodiscard]] constexpr auto
-      get () const
-      {
-        return value;
-      }
-    };
-
-    template <class T>
-    struct genuine_integral_value : op
-    {
-      using value_type = T;
-
-      constexpr genuine_integral_value (const T& _value) : value_{ _value }
-      {
-      }
-
-      [[nodiscard]] constexpr explicit operator T () const
-      {
-        return value_;
-      }
-
-      [[nodiscard]] constexpr decltype (auto)
-      get () const
-      {
-        return value_;
-      }
-
-      T value_{};
-    };
-
     // ------------------------------------------------------------------------
 
     /**
      * @brief Equality comparator.
      */
     template <class Lhs_T, class Rhs_T>
-    struct eq_ : op
+    struct eq_ : type_traits::op
     {
       constexpr eq_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
           : lhs_{ lhs }, rhs_{ rhs }, value_{ [&] {
@@ -697,7 +610,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Non-equality comparator.
      */
     template <class Lhs_T, class Rhs_T>
-    struct ne_ : op
+    struct ne_ : type_traits::op
     {
       constexpr ne_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
           : lhs_{ lhs }, rhs_{ rhs }, value_{ [&] {
@@ -771,7 +684,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Greater than comparator.
      */
     template <class Lhs_T, class Rhs_T>
-    struct gt_ : op
+    struct gt_ : type_traits::op
     {
       constexpr gt_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
           : lhs_{ lhs }, rhs_{ rhs }, value_{ [&] {
@@ -827,7 +740,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Greater than or equal comparator.
      */
     template <class Lhs_T, class Rhs_T>
-    struct ge_ : op
+    struct ge_ : type_traits::op
     {
       constexpr ge_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
           : lhs_{ lhs }, rhs_{ rhs }, value_{ [&] {
@@ -883,7 +796,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Less than comparator.
      */
     template <class Lhs_T, class Rhs_T>
-    struct lt_ : op
+    struct lt_ : type_traits::op
     {
       constexpr lt_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
           : lhs_{ lhs }, rhs_{ rhs }, value_{ [&] {
@@ -940,7 +853,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Less than or equal comparator.
      */
     template <class Lhs_T, class Rhs_T>
-    struct le_ : op
+    struct le_ : type_traits::op
     {
       constexpr le_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
           : lhs_{ lhs }, rhs_{ rhs }, value_{ [&] {
@@ -998,7 +911,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Logical and operator.
      */
     template <class Lhs_T, class Rhs_T>
-    struct and_ : op
+    struct and_ : type_traits::op
     {
       constexpr and_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
           : lhs_{ lhs }, rhs_{ rhs }, value_{ static_cast<bool> (lhs)
@@ -1032,7 +945,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Logical or operator.
      */
     template <class Lhs_T, class Rhs_T>
-    struct or_ : op
+    struct or_ : type_traits::op
     {
       constexpr or_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
           : lhs_{ lhs }, rhs_{ rhs }, value_{ static_cast<bool> (lhs)
@@ -1064,7 +977,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Logical not operator.
      */
     template <class T>
-    struct not_ : op
+    struct not_ : type_traits::op
     {
       explicit constexpr not_ (const T& t = {})
           : t_{ t }, value_{ not static_cast<bool> (t) }
@@ -1090,7 +1003,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Operator to check if expression throws a specific exception.
      */
     template <class Expr_T, class Exception_T = void>
-    struct throws_ : op
+    struct throws_ : type_traits::op
     {
       constexpr explicit throws_ (const Expr_T& expr)
           : value_{ [&expr] {
@@ -1123,7 +1036,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Operator to check if expression throws any exception.
      */
     template <class Expr_T>
-    struct throws_<Expr_T, void> : op
+    struct throws_<Expr_T, void> : type_traits::op
     {
       constexpr explicit throws_ (const Expr_T& expr)
           : value_{ [&expr] {
@@ -1152,7 +1065,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Operator to check if expression does not throw any exception.
      */
     template <class Expr_T>
-    struct nothrow_ : op
+    struct nothrow_ : type_traits::op
     {
       constexpr explicit nothrow_ (const Expr_T& expr)
           : value_{ [&expr] {
@@ -1298,7 +1211,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T>
     test_reporter&
-    operator<< (const detail::genuine_integral_value<T>& v);
+    operator<< (const type_traits::genuine_integral_value<T>& v);
 
     /**
      * @brief Output operator to display containers. Iterate all members.
@@ -1449,7 +1362,7 @@ namespace micro_os_plus::micro_test_plus
   namespace type_traits
   {
     template <class T>
-    inline constexpr auto is_op_v = __is_base_of(detail::op, T);
+    inline constexpr auto is_op_v = __is_base_of(type_traits::op, T);
   } // namespace type_traits
 
   // --------------------------------------------------------------------------
@@ -1459,122 +1372,134 @@ namespace micro_os_plus::micro_test_plus
     template <char... Cs>
     [[nodiscard]] constexpr auto operator""_i ()
     {
-      return detail::integral_constant<math::num<int, Cs...> ()>{};
+      return type_traits::integral_constant<math::num<int, Cs...> ()>{};
     }
 
     template <char... Cs>
     [[nodiscard]] constexpr auto operator""_s ()
     {
-      return detail::integral_constant<math::num<short, Cs...> ()>{};
+      return type_traits::integral_constant<math::num<short, Cs...> ()>{};
     }
 
     template <char... Cs>
     [[nodiscard]] constexpr auto operator""_c ()
     {
-      return detail::integral_constant<math::num<char, Cs...> ()>{};
+      return type_traits::integral_constant<math::num<char, Cs...> ()>{};
     }
 
     template <char... Cs>
     [[nodiscard]] constexpr auto operator""_sc ()
     {
-      return detail::integral_constant<math::num<signed char, Cs...> ()>{};
+      return type_traits::integral_constant<
+          math::num<signed char, Cs...> ()>{};
     }
 
     template <char... Cs>
     [[nodiscard]] constexpr auto operator""_l ()
     {
-      return detail::integral_constant<math::num<long, Cs...> ()>{};
+      return type_traits::integral_constant<math::num<long, Cs...> ()>{};
     }
 
     template <char... Cs>
     [[nodiscard]] constexpr auto operator""_ll ()
     {
-      return detail::integral_constant<math::num<long long, Cs...> ()>{};
+      return type_traits::integral_constant<math::num<long long, Cs...> ()>{};
     }
 
     template <char... Cs>
     [[nodiscard]] constexpr auto operator""_u ()
     {
-      return detail::integral_constant<math::num<unsigned, Cs...> ()>{};
+      return type_traits::integral_constant<math::num<unsigned, Cs...> ()>{};
     }
 
     template <char... Cs>
     [[nodiscard]] constexpr auto operator""_uc ()
     {
-      return detail::integral_constant<math::num<unsigned char, Cs...> ()>{};
+      return type_traits::integral_constant<
+          math::num<unsigned char, Cs...> ()>{};
     }
 
     template <char... Cs>
     [[nodiscard]] constexpr auto operator""_us ()
     {
-      return detail::integral_constant<math::num<unsigned short, Cs...> ()>{};
+      return type_traits::integral_constant<
+          math::num<unsigned short, Cs...> ()>{};
     }
 
     template <char... Cs>
     [[nodiscard]] constexpr auto operator""_ul ()
     {
-      return detail::integral_constant<math::num<unsigned long, Cs...> ()>{};
+      return type_traits::integral_constant<
+          math::num<unsigned long, Cs...> ()>{};
     }
 
     template <char... Cs>
     [[nodiscard]] constexpr auto operator""_ull ()
     {
-      return detail::integral_constant<
+      return type_traits::integral_constant<
           math::num<unsigned long long, Cs...> ()>{};
     }
 
     template <char... Cs>
     [[nodiscard]] constexpr auto operator""_i8 ()
     {
-      return detail::integral_constant<math::num<std::int8_t, Cs...> ()>{};
+      return type_traits::integral_constant<
+          math::num<std::int8_t, Cs...> ()>{};
     }
 
     template <char... Cs>
     [[nodiscard]] constexpr auto operator""_i16 ()
     {
-      return detail::integral_constant<math::num<std::int16_t, Cs...> ()>{};
+      return type_traits::integral_constant<
+          math::num<std::int16_t, Cs...> ()>{};
     }
 
     template <char... Cs>
     [[nodiscard]] constexpr auto operator""_i32 ()
     {
-      return detail::integral_constant<math::num<std::int32_t, Cs...> ()>{};
+      return type_traits::integral_constant<
+          math::num<std::int32_t, Cs...> ()>{};
     }
 
     template <char... Cs>
     [[nodiscard]] constexpr auto operator""_i64 ()
     {
-      return detail::integral_constant<math::num<std::int64_t, Cs...> ()>{};
+      return type_traits::integral_constant<
+          math::num<std::int64_t, Cs...> ()>{};
     }
 
     template <char... Cs>
     [[nodiscard]] constexpr auto operator""_u8 ()
     {
-      return detail::integral_constant<math::num<std::uint8_t, Cs...> ()>{};
+      return type_traits::integral_constant<
+          math::num<std::uint8_t, Cs...> ()>{};
     }
 
     template <char... Cs>
     [[nodiscard]] constexpr auto operator""_u16 ()
     {
-      return detail::integral_constant<math::num<std::uint16_t, Cs...> ()>{};
+      return type_traits::integral_constant<
+          math::num<std::uint16_t, Cs...> ()>{};
     }
 
     template <char... Cs>
     [[nodiscard]] constexpr auto operator""_u32 ()
     {
-      return detail::integral_constant<math::num<std::uint32_t, Cs...> ()>{};
+      return type_traits::integral_constant<
+          math::num<std::uint32_t, Cs...> ()>{};
     }
 
     template <char... Cs>
     [[nodiscard]] constexpr auto operator""_u64 ()
     {
-      return detail::integral_constant<math::num<std::uint64_t, Cs...> ()>{};
+      return type_traits::integral_constant<
+          math::num<std::uint64_t, Cs...> ()>{};
     }
 
     template <char... Cs>
     [[nodiscard]] constexpr auto operator""_f ()
     {
-      return detail::floating_point_constant<
+      return type_traits::floating_point_constant<
           float, math::num<unsigned long, Cs...> (),
           math::den<unsigned long, Cs...> (),
           math::den_size<unsigned long, Cs...> ()>{};
@@ -1583,7 +1508,7 @@ namespace micro_os_plus::micro_test_plus
     template <char... Cs>
     [[nodiscard]] constexpr auto operator""_d ()
     {
-      return detail::floating_point_constant<
+      return type_traits::floating_point_constant<
           double, math::num<unsigned long, Cs...> (),
           math::den<unsigned long, Cs...> (),
           math::den_size<unsigned long, Cs...> ()>{};
@@ -1592,7 +1517,7 @@ namespace micro_os_plus::micro_test_plus
     template <char... Cs>
     [[nodiscard]] constexpr auto operator""_ld ()
     {
-      return detail::floating_point_constant<
+      return type_traits::floating_point_constant<
           long double, math::num<unsigned long long, Cs...> (),
           math::den<unsigned long long, Cs...> (),
           math::den_size<unsigned long long, Cs...> ()>{};
@@ -1600,7 +1525,7 @@ namespace micro_os_plus::micro_test_plus
 
     constexpr auto operator""_b (const char* name, decltype (sizeof ("")) size)
     {
-      struct named : std::string_view, detail::op
+      struct named : std::string_view, type_traits::op
       {
         using value_type = bool;
         [[nodiscard]] constexpr operator value_type () const
@@ -2086,7 +2011,7 @@ namespace micro_os_plus::micro_test_plus
 
   template <class T>
   test_reporter&
-  test_reporter::operator<< (const detail::genuine_integral_value<T>& v)
+  test_reporter::operator<< (const type_traits::genuine_integral_value<T>& v)
   {
     printf ("%lld", static_cast<long long> (v.get ()));
     return *this;
@@ -2242,7 +2167,7 @@ namespace micro_os_plus::micro_test_plus
     *this << colors_.none;
     *this << " (" << reflection::short_name (assertion.location.file_name ())
           << ":"
-          << detail::genuine_integral_value{ assertion.location.line () };
+          << type_traits::genuine_integral_value{ assertion.location.line () };
     *this << ", " << assertion.expr;
     if (assertion.abort)
       {
