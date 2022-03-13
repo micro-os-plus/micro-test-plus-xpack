@@ -210,6 +210,9 @@ main (int argc, char* argv[])
   // --------------------------------------------------------------------------
 
   test_case ("Check expect(true)", [] {
+    expect (true);
+    local_counts.passed++;
+
     expect (true, "true");
     local_counts.passed++;
 
@@ -223,6 +226,9 @@ main (int argc, char* argv[])
   // --------------------------------------------------------------------------
 
   test_case ("Check expect(false)", [] {
+    expect (false);
+    local_counts.failed++;
+
     expect (false, "false");
     local_counts.failed++;
 
