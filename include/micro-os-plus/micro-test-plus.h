@@ -319,7 +319,6 @@ namespace micro_os_plus::micro_test_plus
   };
 
   // --------------------------------------------------------------------------
-  // Copied from Boost:ut
 
   namespace reflection
   {
@@ -443,9 +442,18 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
-  // Local mathematical functions. Why not use the system ones?
+  /**
+   * @brief Local mathematical functions.
+   *
+   * Some may have equivalents in the standard library, but may be
+   * more complicated to use, or have only floating point variants, or
+   * not be constexpr.
+   */
   namespace math
   {
+    /**
+     * @brief Generic absolute of any value.
+     */
     template <class T>
     [[nodiscard]] constexpr auto
     abs (const T t) -> T
@@ -453,6 +461,9 @@ namespace micro_os_plus::micro_test_plus
       return t < T{} ? -t : t;
     }
 
+    /**
+     * @brief Generic minimum of two values.
+     */
     template <class T>
     [[nodiscard]] constexpr auto
     min_value (const T& lhs, const T& rhs) -> const T&
@@ -460,17 +471,26 @@ namespace micro_os_plus::micro_test_plus
       return (rhs < lhs) ? rhs : lhs;
     }
 
+    /**
+     * @brief Generic 'power of', to raise base to exponent (base ^ exp).
+     */
     template <class T, class TExp>
     [[nodiscard]] constexpr auto
     pow (const T base, const TExp exp) -> T
     {
+      // If the exponent is 0, return 1, otherwise recurse.
       return exp ? T (base * pow (base, exp - TExp (1))) : T (1);
     }
 
+    /**
+     * @brief Compute the integral value of a number represented as
+     * an array of characters.
+     */
     template <class T, char... Cs>
     [[nodiscard]] constexpr auto
     num () -> T
     {
+      // Assume all are digits or dot or apostrophe.
       static_assert (
           ((Cs == '.' or Cs == '\'' or (Cs >= '0' and Cs <= '9')) and ...));
       T result{};
@@ -488,6 +508,10 @@ namespace micro_os_plus::micro_test_plus
       return result;
     }
 
+    /**
+     * @brief Compute the decimals of a number represented as
+     * an array of characters.
+     */
     template <class T, char... Cs>
     [[nodiscard]] constexpr auto
     den () -> T
@@ -506,6 +530,10 @@ namespace micro_os_plus::micro_test_plus
       return result;
     }
 
+    /**
+     * @brief Compute the number of decimal places of a number represented as
+     * an array of characters.
+     */
     template <class T, char... Cs>
     [[nodiscard]] constexpr auto
     den_size () -> T
@@ -526,6 +554,10 @@ namespace micro_os_plus::micro_test_plus
       return T (sizeof...(Cs)) - i + T (1);
     }
 
+    /**
+     * @brief Compute the number of decimal places of a value,
+     * up to 7 digits.
+     */
     template <class T, class TValue>
     [[nodiscard]] constexpr auto
     den_size (TValue value) -> T
@@ -557,7 +589,12 @@ namespace micro_os_plus::micro_test_plus
 
   } // namespace math
 
-  // Local type traits. Why not use the system ones?
+  // --------------------------------------------------------------------------
+
+  /**
+   * @brief Local type traits. Some may have standard equivalents, but
+   * better keep them locally.
+   */
   namespace type_traits
   {
     template <class...>
@@ -688,12 +725,16 @@ namespace micro_os_plus::micro_test_plus
   {
   };
 
+  /**
+   * @brief Implementation details, not part of the public API.
+   */
   namespace detail
   {
-    struct op
-    {
-    };
-
+    /**
+     * @brief Generic getter implementation. If the type has
+     * a get() method, call it. It is recommended for custom types
+     * to define a get() method.
+     */
     template <class T>
     [[nodiscard]] constexpr auto
     get_impl (const T& t, int) -> decltype (t.get ())
@@ -701,6 +742,10 @@ namespace micro_os_plus::micro_test_plus
       return t.get ();
     }
 
+    /**
+     * @brief Variadic getter implementation that returns the
+     * first argument and discards the rest.
+     */
     template <class T>
     [[nodiscard]] constexpr auto
     get_impl (const T& t, ...) -> decltype (auto)
@@ -708,6 +753,9 @@ namespace micro_os_plus::micro_test_plus
       return t;
     }
 
+    /**
+     * @brief Generic getter, calling the getter implementation.
+     */
     template <class T>
     [[nodiscard]] constexpr auto
     get (const T& t)
@@ -715,6 +763,18 @@ namespace micro_os_plus::micro_test_plus
       return get_impl (t, 0);
     }
 
+    /**
+     * @brief Empty base class of all operators.
+     */
+    struct op
+    {
+    };
+
+    /**
+     * @brief Class defining an internal type.
+     * It has == and != operators to check if the type is the same
+     * with other types.
+     */
     template <class T>
     struct type_ : op
     {
@@ -766,6 +826,9 @@ namespace micro_os_plus::micro_test_plus
       }
     };
 
+    /**
+     * @brief Class defining a generic value, accessible via a getter.
+     */
     template <class T, class = int>
     struct value : op
     {
@@ -789,13 +852,19 @@ namespace micro_os_plus::micro_test_plus
       T value_{};
     };
 
+    /**
+     * @brief A generic value used to define floating points, which,
+     * in addition to the actual value, has an epsilon, to use the
+     * desired precision during comparisons.
+     * If missing, the default is 1 / (10^decimals).
+     */
     template <class T>
     struct value<T,
                  type_traits::requires_t<type_traits::is_floating_point_v<T>>>
         : op
     {
       using value_type = T;
-      static inline auto epsilon = T{};
+      static inline auto epsilon = T{}; // Why static?
 
       constexpr value (const T& _value, const T precision) : value_{ _value }
       {
@@ -824,6 +893,10 @@ namespace micro_os_plus::micro_test_plus
       T value_{};
     };
 
+    /**
+     * @brief A generic integral constant.
+     * It has a getter and a '-' operator to return the negative value.
+     */
     template <auto N>
     struct integral_constant : op
     {
@@ -848,6 +921,11 @@ namespace micro_os_plus::micro_test_plus
       }
     };
 
+    /**
+     * @brief A generic floating point constant, with custom size
+     * and precision.
+     * It has a getter and a '-' operator to return the negative value.
+     */
     template <class T, auto N, auto D, auto Size, auto P = 1>
     struct floating_point_constant : op
     {
@@ -899,6 +977,10 @@ namespace micro_os_plus::micro_test_plus
     };
 
     // ------------------------------------------------------------------------
+
+    /**
+     * @brief Equality comparator.
+     */
     template <class TLhs, class TRhs>
     struct eq_ : op
     {
@@ -925,6 +1007,9 @@ namespace micro_os_plus::micro_test_plus
                   micro_os_plus::trace::printf ("    eq_ %s\n",
                                                 "value == value");
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+
+                  // If both types have values (like numeric constants),
+                  // compare them directly.
                   return TLhs::value == TRhs::value;
                 }
               else if constexpr (
@@ -935,6 +1020,9 @@ namespace micro_os_plus::micro_test_plus
                   micro_os_plus::trace::printf ("    eq_ %s\n",
                                                 "abs < min epsilon LR");
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+
+                  // If both values have precision, compare them using
+                  // the smalles precision.
                   return math::abs (get (lhs) - get (rhs))
                          < math::min_value (TLhs::epsilon, TRhs::epsilon);
                 }
@@ -944,6 +1032,8 @@ namespace micro_os_plus::micro_test_plus
                   micro_os_plus::trace::printf ("    eq_ %s\n",
                                                 "abs < epsilon L");
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+
+                  // If only the left operand has precision, use it.
                   return math::abs (get (lhs) - get (rhs)) < TLhs::epsilon;
                 }
               else if constexpr (type_traits::has_epsilon_v<TRhs>)
@@ -952,6 +1042,8 @@ namespace micro_os_plus::micro_test_plus
                   micro_os_plus::trace::printf ("    eq_ %s\n",
                                                 "abs < epsilon R");
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+
+                  // If only the right operand has precision, use it.
                   return math::abs (get (lhs) - get (rhs)) < TRhs::epsilon;
                 }
               else
@@ -960,6 +1052,9 @@ namespace micro_os_plus::micro_test_plus
                   micro_os_plus::trace::printf ("    eq_ %s\n",
                                                 "get() == get()");
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+
+                  // Call the generic getters, which might
+                  // either call the type get() or return the value.
                   return get (lhs) == get (rhs);
                 }
 #if defined(__GNUC__)
@@ -991,6 +1086,9 @@ namespace micro_os_plus::micro_test_plus
       const bool value_{};
     };
 
+    /**
+     * @brief Non-equality comparator.
+     */
     template <class TLhs, class TRhs>
     struct ne_ : op
     {
@@ -1062,6 +1160,9 @@ namespace micro_os_plus::micro_test_plus
       const bool value_{};
     };
 
+    /**
+     * @brief Greater than comparator.
+     */
     template <class TLhs, class TRhs>
     struct gt_ : op
     {
@@ -1115,6 +1216,9 @@ namespace micro_os_plus::micro_test_plus
       const bool value_{};
     };
 
+    /**
+     * @brief Greater than or equal comparator.
+     */
     template <class TLhs, class TRhs>
     struct ge_ : op
     {
@@ -1168,6 +1272,9 @@ namespace micro_os_plus::micro_test_plus
       const bool value_{};
     };
 
+    /**
+     * @brief Less than comparator.
+     */
     template <class TLhs, class TRhs>
     struct lt_ : op
     {
@@ -1222,6 +1329,9 @@ namespace micro_os_plus::micro_test_plus
       const bool value_{};
     };
 
+    /**
+     * @brief Less than or equal comparator.
+     */
     template <class TLhs, class TRhs>
     struct le_ : op
     {
@@ -1277,6 +1387,9 @@ namespace micro_os_plus::micro_test_plus
       const bool value_{};
     };
 
+    /**
+     * @brief Logical and operator.
+     */
     template <class TLhs, class TRhs>
     struct and_ : op
     {
@@ -1308,6 +1421,9 @@ namespace micro_os_plus::micro_test_plus
       const bool value_{};
     };
 
+    /**
+     * @brief Logical or operator.
+     */
     template <class TLhs, class TRhs>
     struct or_ : op
     {
@@ -1337,6 +1453,9 @@ namespace micro_os_plus::micro_test_plus
       const bool value_{};
     };
 
+    /**
+     * @brief Logical not operator.
+     */
     template <class T>
     struct not_ : op
     {
@@ -1360,6 +1479,9 @@ namespace micro_os_plus::micro_test_plus
     };
 
 #if defined(__cpp_exceptions)
+    /**
+     * @brief Operator to check if expression throws a specific exception.
+     */
     template <class TExpr, class TException = void>
     struct throws_ : op
     {
@@ -1390,6 +1512,9 @@ namespace micro_os_plus::micro_test_plus
       const bool value_{};
     };
 
+    /**
+     * @brief Operator to check if expression throws any exception.
+     */
     template <class TExpr>
     struct throws_<TExpr, void> : op
     {
@@ -1416,6 +1541,9 @@ namespace micro_os_plus::micro_test_plus
       const bool value_{};
     };
 
+    /**
+     * @brief Operator to check if expression does not throw any exception.
+     */
     template <class TExpr>
     struct nothrow_ : op
     {
@@ -1447,10 +1575,6 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
-  // static inline test_reporter&;
-
-  // --------------------------------------------------------------------------
-
   struct colors
   {
     std::string_view none = "\033[0m";
@@ -1464,7 +1588,8 @@ namespace micro_os_plus::micro_test_plus
   // Requires events::assertion_* for  and detailed operators.
 
   /**
-   * @brief report the test results.
+   * @brief Reporter to display the test results. For failed
+   * tests it prints the actual values of the operands, with their types.
    */
   class test_reporter
   {
@@ -1627,9 +1752,13 @@ namespace micro_os_plus::micro_test_plus
       return *this;
     }
 
+    /**
+     * @brief Output operator to display the endl.
+     */
     auto&
     operator<< (test_reporter& (*func) (test_reporter&))
     {
+      // Call the endl function.
       (*func) (*this);
       return *this;
     }
@@ -1661,6 +1790,8 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
+     * @brief Output operator to display containers. Iterate all members.
+     */
     template <class T, type_traits::requires_t<
                            type_traits::is_container_v<
                                T> and not type_traits::has_npos_v<T>> = 0>
@@ -1689,6 +1820,9 @@ namespace micro_os_plus::micro_test_plus
                     << colors_.none);
     }
 
+    /**
+     * @brief Output operator to display ne() expressions.
+     */
     template <class TLhs, class TRhs>
     auto&
     operator<< (const detail::ne_<TLhs, TRhs>& op)
@@ -1697,6 +1831,9 @@ namespace micro_os_plus::micro_test_plus
                     << colors_.none);
     }
 
+    /**
+     * @brief Output operator to display gt() expressions.
+     */
     template <class TLhs, class TRhs>
     auto&
     operator<< (const detail::gt_<TLhs, TRhs>& op)
@@ -1705,6 +1842,9 @@ namespace micro_os_plus::micro_test_plus
                     << colors_.none);
     }
 
+    /**
+     * @brief Output operator to display ge() expressions.
+     */
     template <class TLhs, class TRhs>
     auto&
     operator<< (const detail::ge_<TLhs, TRhs>& op)
@@ -1713,6 +1853,9 @@ namespace micro_os_plus::micro_test_plus
                     << colors_.none);
     }
 
+    /**
+     * @brief Output operator to display lt() expressions.
+     */
     template <class TLhs, class TRhs>
     auto&
     operator<< (const detail::lt_<TRhs, TLhs>& op)
@@ -1721,6 +1864,9 @@ namespace micro_os_plus::micro_test_plus
                     << colors_.none);
     }
 
+    /**
+     * @brief Output operator to display le() expressions.
+     */
     template <class TLhs, class TRhs>
     auto&
     operator<< (const detail::le_<TRhs, TLhs>& op)
@@ -1729,6 +1875,9 @@ namespace micro_os_plus::micro_test_plus
                     << colors_.none);
     }
 
+    /**
+     * @brief Output operator to display and() expressions.
+     */
     template <class TLhs, class TRhs>
     auto&
     operator<< (const detail::and_<TLhs, TRhs>& op)
@@ -1737,6 +1886,9 @@ namespace micro_os_plus::micro_test_plus
                     << colors_.none << op.rhs () << ')');
     }
 
+    /**
+     * @brief Output operator to display or() expressions.
+     */
     template <class TLhs, class TRhs>
     auto&
     operator<< (const detail::or_<TLhs, TRhs>& op)
@@ -1745,6 +1897,9 @@ namespace micro_os_plus::micro_test_plus
                     << op.rhs () << ')');
     }
 
+    /**
+     * @brief Output operator to display not() expressions.
+     */
     template <class T>
     auto&
     operator<< (const detail::not_<T>& op)
@@ -1847,6 +2002,9 @@ namespace micro_os_plus::micro_test_plus
 
   namespace detail
   {
+    /**
+     * @brief Helper class to give each expectation a type and a boolean value.
+     */
     template <class T>
     struct expect_
     {
@@ -2153,7 +2311,7 @@ namespace micro_os_plus::micro_test_plus
 #endif
 
   /**
-   * @brief Equality comparator.
+   * @brief Generic equality comparator.
    */
   template <class TLhs, class TRhs>
   [[nodiscard]] constexpr auto
@@ -2162,13 +2320,19 @@ namespace micro_os_plus::micro_test_plus
     return detail::eq_{ lhs, rhs };
   }
 
-  template <class TLhs = char, class TRhs = char>
+  /**
+   * @brief Pointer equality comparator.
+   */
+  template <class TLhs, class TRhs>
   [[nodiscard]] constexpr auto
   eq (TLhs* lhs, TRhs* rhs)
   {
     return detail::eq_{ lhs, rhs };
   }
 
+  /**
+   * @brief Generic non-equality comparator.
+   */
   template <class TLhs, class TRhs>
   [[nodiscard]] constexpr auto
   ne (const TLhs& lhs, const TRhs& rhs)
@@ -2176,13 +2340,19 @@ namespace micro_os_plus::micro_test_plus
     return detail::ne_{ lhs, rhs };
   }
 
-  template <class TLhs = char, class TRhs = char>
+  /**
+   * @brief Pointer non-equality comparator.
+   */
+  template <class TLhs, class TRhs>
   [[nodiscard]] constexpr auto
   ne (TLhs* lhs, TRhs* rhs)
   {
     return detail::ne_{ lhs, rhs };
   }
 
+  /**
+   * @brief Generic greater than comparator.
+   */
   template <class TLhs, class TRhs>
   [[nodiscard]] constexpr auto
   gt (const TLhs& lhs, const TRhs& rhs)
@@ -2190,13 +2360,19 @@ namespace micro_os_plus::micro_test_plus
     return detail::gt_{ lhs, rhs };
   }
 
-  template <class TLhs = char, class TRhs = char>
+  /**
+   * @brief Pointer greater than comparator.
+   */
+  template <class TLhs, class TRhs>
   [[nodiscard]] constexpr auto
   gt (TLhs* lhs, TRhs* rhs)
   {
     return detail::gt_{ lhs, rhs };
   }
 
+  /**
+   * @brief Generic greater than or equal comparator.
+   */
   template <class TLhs, class TRhs>
   [[nodiscard]] constexpr auto
   ge (const TLhs& lhs, const TRhs& rhs)
@@ -2204,13 +2380,19 @@ namespace micro_os_plus::micro_test_plus
     return detail::ge_{ lhs, rhs };
   }
 
-  template <class TLhs = char, class TRhs = char>
+  /**
+   * @brief Pointer greater than or equal comparator.
+   */
+  template <class TLhs, class TRhs>
   [[nodiscard]] constexpr auto
   ge (TLhs* lhs, TRhs* rhs)
   {
     return detail::ge_{ lhs, rhs };
   }
 
+  /**
+   * @brief Generic less than comparator.
+   */
   template <class TLhs, class TRhs>
   [[nodiscard]] constexpr auto
   lt (const TLhs& lhs, const TRhs& rhs)
@@ -2218,13 +2400,19 @@ namespace micro_os_plus::micro_test_plus
     return detail::lt_{ lhs, rhs };
   }
 
-  template <class TLhs = char, class TRhs = char>
+  /**
+   * @brief Generic less than comparator.
+   */
+  template <class TLhs, class TRhs>
   [[nodiscard]] constexpr auto
   lt (TLhs* lhs, TRhs* rhs)
   {
     return detail::lt_{ lhs, rhs };
   }
 
+  /**
+   * @brief Generic less than or equal comparator.
+   */
   template <class TLhs, class TRhs>
   [[nodiscard]] constexpr auto
   le (const TLhs& lhs, const TRhs& rhs)
@@ -2232,13 +2420,19 @@ namespace micro_os_plus::micro_test_plus
     return detail::le_{ lhs, rhs };
   }
 
-  template <class TLhs = char, class TRhs = char>
+  /**
+   * @brief Generic less than or equal comparator.
+   */
+  template <class TLhs, class TRhs>
   [[nodiscard]] constexpr auto
   le (TLhs* lhs, TRhs* rhs)
   {
     return detail::le_{ lhs, rhs };
   }
 
+  /**
+   * @brief Generic mutator, to remove const from any type.
+   */
   template <class T>
   [[nodiscard]] constexpr auto
   mut (const T& t) noexcept -> T&
