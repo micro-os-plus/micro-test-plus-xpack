@@ -397,49 +397,6 @@ namespace micro_os_plus::micro_test_plus
 
   } // namespace reflection
 
-  /**
-   * @brief Types used as arguments to on() functions.
-   */
-  namespace events
-  {
-    template <class TExpr>
-    struct assertion
-    {
-      TExpr expr{};
-      bool abort; // True if called from assume(), false from expect()
-      const char* message;
-      reflection::source_location location{};
-    };
-
-    template <class TExpr>
-    assertion (TExpr, reflection::source_location) -> assertion<TExpr>;
-
-    template <class TExpr>
-    struct assertion_pass
-    {
-      TExpr expr{};
-      bool abort; // True if called from assume(), false from expect()
-      const char* message;
-      reflection::source_location location{};
-    };
-
-    template <class TExpr>
-    assertion_pass (TExpr) -> assertion_pass<TExpr>;
-
-    template <class TExpr>
-    struct assertion_fail
-    {
-      TExpr expr{};
-      bool abort; // True if called from assume(), false from expect()
-      const char* message;
-      reflection::source_location location{};
-    };
-
-    template <class TExpr>
-    assertion_fail (TExpr) -> assertion_fail<TExpr>;
-
-  } // namespace events
-
   // --------------------------------------------------------------------------
 
   /**
@@ -730,6 +687,15 @@ namespace micro_os_plus::micro_test_plus
    */
   namespace detail
   {
+    template <class TExpr>
+    struct assertion
+    {
+      TExpr expr{};
+      bool abort; // True if called from assume(), false from expect()
+      const char* message;
+      reflection::source_location location{};
+    };
+
     /**
      * @brief Generic getter implementation. If the type has
      * a get() method, call it. It is recommended for custom types
@@ -1939,7 +1905,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class TExpr>
     auto
-    pass (events::assertion_pass<TExpr> assertion) -> void
+    pass (detail::assertion<TExpr> assertion) -> void
     {
       *this << colors_.pass << "    ✓ ";
       if (strlen (assertion.message))
@@ -1964,7 +1930,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class TExpr>
     auto
-    fail (events::assertion_fail<TExpr> assertion) -> void
+    fail (detail::assertion<TExpr> assertion) -> void
     {
       *this << colors_.fail << "    ✗ ";
       if (strlen (assertion.message))
@@ -2022,17 +1988,21 @@ namespace micro_os_plus::micro_test_plus
 
     template <class TExpr>
     [[nodiscard]] auto
-    on (events::assertion<TExpr> assertion) -> bool
+    on (detail::assertion<TExpr> assertion) -> bool
     {
       // if (dry_run_)
       //   {
       //     return true;
       //   }
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+      // micro_os_plus::trace::printf ("on\n");
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
+      // This cast calls the bool operator, which evaluates the expression.
       if (static_cast<bool> (assertion.expr))
         {
           reporter.pass (
-              events::assertion_pass<TExpr>{ .expr = assertion.expr,
+              detail::assertion<TExpr>{ .expr = assertion.expr,
                                              .abort = assertion.abort,
                                              .message = assertion.message,
                                              .location = assertion.location });
@@ -2040,7 +2010,7 @@ namespace micro_os_plus::micro_test_plus
         }
 
       reporter.fail (
-          events::assertion_fail<TExpr>{ .expr = assertion.expr,
+          detail::assertion<TExpr>{ .expr = assertion.expr,
                                          .abort = assertion.abort,
                                          .message = assertion.message,
                                          .location = assertion.location });
@@ -2242,7 +2212,7 @@ namespace micro_os_plus::micro_test_plus
         const reflection::source_location& sl
         = reflection::source_location::current ())
   {
-    return detail::expect_<TExpr>{ detail::on<TExpr> (events::assertion<TExpr>{
+    return detail::expect_<TExpr>{ detail::on<TExpr> (detail::assertion<TExpr>{
         .expr = true, .abort = false, .message = message, .location = sl }) };
   }
 
@@ -2251,7 +2221,7 @@ namespace micro_os_plus::micro_test_plus
   fail (const char* message = "...", const reflection::source_location& sl
                                      = reflection::source_location::current ())
   {
-    return detail::expect_<TExpr>{ detail::on<TExpr> (events::assertion<TExpr>{
+    return detail::expect_<TExpr>{ detail::on<TExpr> (detail::assertion<TExpr>{
         .expr = false, .abort = false, .message = message, .location = sl }) };
   }
 
@@ -2267,7 +2237,7 @@ namespace micro_os_plus::micro_test_plus
           const reflection::source_location& sl
           = reflection::source_location::current ())
   {
-    return detail::expect_<TExpr>{ detail::on<TExpr> (events::assertion<TExpr>{
+    return detail::expect_<TExpr>{ detail::on<TExpr> (detail::assertion<TExpr>{
         .expr = expr, .abort = false, .message = message, .location = sl }) };
   }
 
@@ -2283,7 +2253,7 @@ namespace micro_os_plus::micro_test_plus
           const reflection::source_location& sl
           = reflection::source_location::current ())
   {
-    return detail::expect_<TExpr>{ detail::on<TExpr> (events::assertion<TExpr>{
+    return detail::expect_<TExpr>{ detail::on<TExpr> (detail::assertion<TExpr>{
         .expr = expr, .abort = true, .message = message, .location = sl }) };
   }
 
