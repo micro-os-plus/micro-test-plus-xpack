@@ -1634,6 +1634,20 @@ namespace micro_os_plus::micro_test_plus
       return *this;
     }
 
+    // ------------------------------------------------------------------------
+    // Specific operators.
+
+    /**
+     * @brief Output operator to types with a getter.
+     */
+    template <class T>
+    auto&
+    operator<< (const T& t)
+    {
+      *this << detail::get (t);
+      return *this;
+    }
+
     /**
      * @brief Output operator to display genuine integers,
      * without the type suffix.
@@ -1738,15 +1752,6 @@ namespace micro_os_plus::micro_test_plus
       return (*this << color (op) << "not " << op.value () << colors_.none);
     }
 
-#if 0
-    template <class T>
-    auto&
-    operator<< (const detail::fatal_<T>& fatal)
-    {
-      return (*this << fatal.get ());
-    }
-#endif
-
 #if defined(__cpp_exceptions)
     template <class TExpr, class TException>
     auto&
@@ -1771,15 +1776,6 @@ namespace micro_os_plus::micro_test_plus
       return (*this << color (op) << "nothrow" << colors_.none);
     }
 #endif
-
-    // Any pointer.
-    template <typename T>
-    auto&
-    operator<< (T* v)
-    {
-      printf ("%p", reinterpret_cast<void*> (v));
-      return *this;
-    }
 
     // ------------------------------------------------------------------------
 
