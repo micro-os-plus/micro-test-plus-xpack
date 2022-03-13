@@ -1507,7 +1507,7 @@ namespace micro_os_plus::micro_test_plus
     auto&
     operator<< (bool v)
     {
-      printf ("%s", v ? "true" : "false");
+      printf ("%s", v ? "true_b" : "false_b");
       return *this;
     }
 
@@ -1522,14 +1522,14 @@ namespace micro_os_plus::micro_test_plus
     auto&
     operator<< (signed char c)
     {
-      printf ("%dc", c);
+      printf ("%d_sc", c);
       return *this;
     }
 
     auto&
     operator<< (unsigned char c)
     {
-      printf ("%duc", c);
+      printf ("%d_uc", c);
       return *this;
     }
 #endif
@@ -1537,88 +1537,88 @@ namespace micro_os_plus::micro_test_plus
     auto&
     operator<< (signed short c)
     {
-      printf ("%ds", c);
+      printf ("%d_s", c);
       return *this;
     }
 
     auto&
     operator<< (unsigned short c)
     {
-      printf ("%uus", c);
+      printf ("%u_us", c);
       return *this;
     }
 
     auto&
     operator<< (signed int v)
     {
-      printf ("%di", v);
+      printf ("%d_i", v);
       return *this;
     }
 
     auto&
     operator<< (unsigned int v)
     {
-      printf ("%uui", v);
+      printf ("%u_u", v);
       return *this;
     }
 
     auto&
     operator<< (signed long v)
     {
-      printf ("%ldl", v);
+      printf ("%ld_l", v);
       return *this;
     }
 
     auto&
     operator<< (unsigned long v)
     {
-      printf ("%luul", v);
-      return *this;
-    }
-
-    auto&
-    operator<< (unsigned long long v)
-    {
-      printf ("%lluull", v);
+      printf ("%lu_ul", v);
       return *this;
     }
 
     auto&
     operator<< (signed long long v)
     {
-      printf ("%lldll", v);
+      printf ("%lld_ll", v);
+      return *this;
+    }
+
+    auto&
+    operator<< (unsigned long long v)
+    {
+      printf ("%llu_ull", v);
       return *this;
     }
 
     auto&
     operator<< (float v)
     {
-      printf ("%f", static_cast<double> (v));
+      printf ("%f_f", static_cast<double> (v));
       return *this;
     }
 
     auto&
     operator<< (double v)
     {
-      printf ("%f", v);
+      printf ("%f_d", v);
       return *this;
     }
 
     auto&
     operator<< (long double v)
     {
-      printf ("%Lf", v);
+      printf ("%Lf_ld", v);
       return *this;
     }
 
-    // ------------------------------------------------------------------------
-    // Specific operators.
-
-    template <class T>
+    /**
+     * @brief Output operator to display any pointer.
+     */
+    template <typename T>
     auto&
-    operator<< (const T& t)
+    operator<< (T* v)
     {
-      *this << detail::get (t);
+      printf ("%p", reinterpret_cast<void*> (v));
       return *this;
     }
 
