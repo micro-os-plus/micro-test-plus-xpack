@@ -318,19 +318,14 @@ namespace micro_os_plus::micro_test_plus
 
   // ==========================================================================
 
-  // --------------------------------------------------------------------------
-
-  // --------------------------------------------------------------------------
-
-  struct none
-  {
-  };
-
   /**
    * @brief Implementation details, not part of the public API.
    */
   namespace detail
   {
+    /**
+     * @brief An object used to pass assertion parameters to the evaluator.
+     */
     template <class Expr_T>
     struct assertion
     {
@@ -339,6 +334,8 @@ namespace micro_os_plus::micro_test_plus
       const char* message;
       reflection::source_location location{};
     };
+
+    // ------------------------------------------------------------------------
 
     /**
      * @brief Generic getter implementation. If the type has
