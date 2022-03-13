@@ -1215,162 +1215,74 @@ namespace micro_os_plus::micro_test_plus
     void
     print_expr (T expr);
 
-    auto&
-    operator<< (std::string_view sv)
-    {
-      printf ("%s", sv.data ());
-      return *this;
-    }
+    test_reporter&
+    operator<< (std::string_view sv);
 
-    auto&
-    operator<< (char c)
-    {
-      printf ("%c", c);
-      return *this;
-    }
+    test_reporter&
+    operator<< (char c);
 
-    auto&
-    operator<< (const char* s)
-    {
-      printf ("%s", s);
-      return *this;
-    }
+    test_reporter&
+    operator<< (const char* s);
 
-    auto&
-    operator<< (char* s)
-    {
-      printf ("%s", s);
-      return *this;
-    }
+    test_reporter&
+    operator<< (char* s);
 
-    auto&
-    operator<< (bool v)
-    {
-      printf ("%s", v ? "true_b" : "false_b");
-      return *this;
-    }
+    test_reporter&
+    operator<< (bool v);
 
-    auto&
-    operator<< (std::nullptr_t)
-    {
-      printf ("nullptr");
-      return *this;
-    }
+    test_reporter& operator<< (std::nullptr_t);
 
-#if 1
-    auto&
-    operator<< (signed char c)
-    {
-      printf ("%d_sc", c);
-      return *this;
-    }
+    test_reporter&
+    operator<< (signed char c);
 
-    auto&
-    operator<< (unsigned char c)
-    {
-      printf ("%d_uc", c);
-      return *this;
-    }
-#endif
+    test_reporter&
+    operator<< (unsigned char c);
 
-    auto&
-    operator<< (signed short c)
-    {
-      printf ("%d_s", c);
-      return *this;
-    }
+    test_reporter&
+    operator<< (signed short c);
 
-    auto&
-    operator<< (unsigned short c)
-    {
-      printf ("%u_us", c);
-      return *this;
-    }
+    test_reporter&
+    operator<< (unsigned short c);
 
-    auto&
-    operator<< (signed int v)
-    {
-      printf ("%d_i", v);
-      return *this;
-    }
+    test_reporter&
+    operator<< (signed int v);
 
-    auto&
-    operator<< (unsigned int v)
-    {
-      printf ("%u_u", v);
-      return *this;
-    }
+    test_reporter&
+    operator<< (unsigned int v);
 
-    auto&
-    operator<< (signed long v)
-    {
-      printf ("%ld_l", v);
-      return *this;
-    }
+    test_reporter&
+    operator<< (signed long v);
 
-    auto&
-    operator<< (unsigned long v)
-    {
-      printf ("%lu_ul", v);
-      return *this;
-    }
+    test_reporter&
+    operator<< (unsigned long v);
 
-    auto&
-    operator<< (signed long long v)
-    {
-      printf ("%lld_ll", v);
-      return *this;
-    }
+    test_reporter&
+    operator<< (signed long long v);
 
-    auto&
-    operator<< (unsigned long long v)
-    {
-      printf ("%llu_ull", v);
-      return *this;
-    }
+    test_reporter&
+    operator<< (unsigned long long v);
 
-    auto&
-    operator<< (float v)
-    {
-      printf ("%f_f", static_cast<double> (v));
-      return *this;
-    }
+    test_reporter&
+    operator<< (float v);
 
-    auto&
-    operator<< (double v)
-    {
-      printf ("%f_d", v);
-      return *this;
-    }
+    test_reporter&
+    operator<< (double v);
 
-    auto&
-    operator<< (long double v)
-    {
-      printf ("%Lf_ld", v);
-      return *this;
-    }
+    test_reporter&
+    operator<< (long double v);
 
     /**
      * @brief Output operator to display any pointer.
      */
     template <typename T>
-    auto&
-    operator<< (T* v)
-    {
-      printf ("%p", reinterpret_cast<void*> (v));
-      return *this;
-    }
+    test_reporter&
+    operator<< (T* v);
 
     /**
      * @brief Output operator to display the endl.
      */
-    auto&
-    operator<< (test_reporter& (*func) (test_reporter&))
-    {
-      // Call the endl function.
-      (*func) (*this);
-      return *this;
-    }
+    test_reporter&
+    operator<< (test_reporter& (*func) (test_reporter&));
 
     // ------------------------------------------------------------------------
     // Specific operators.
@@ -1379,24 +1291,16 @@ namespace micro_os_plus::micro_test_plus
      * @brief Output operator to types with a getter.
      */
     template <class T>
-    auto&
-    operator<< (const T& t)
-    {
-      *this << detail::get (t);
-      return *this;
-    }
+    test_reporter&
+    operator<< (const T& t);
 
     /**
      * @brief Output operator to display genuine integers,
      * without the type suffix.
      */
     template <class T>
-    auto&
-    operator<< (const detail::genuine_integral_value<T>& v)
-    {
-      printf ("%lld", static_cast<long long> (v.get ()));
-      return *this;
-    }
+    test_reporter&
+    operator<< (const detail::genuine_integral_value<T>& v);
 
     /**
      * @brief Output operator to display containers. Iterate all members.
@@ -1404,141 +1308,84 @@ namespace micro_os_plus::micro_test_plus
     template <class T, type_traits::requires_t<
                            type_traits::is_container_v<
                                T> and not type_traits::has_npos_v<T>> = 0>
-    auto&
-    operator<< (T&& t)
-    {
-      *this << '{';
-      auto first = true;
-      for (const auto& arg : t)
-        {
-          *this << (first ? "" : ", ") << arg;
-          first = false;
-        }
-      *this << '}';
-      return *this;
-    }
+    test_reporter&
+    operator<< (T&& t);
 
     /**
      * @brief Output operator to display eq() expressions.
      */
     template <class Lhs_T, class Rhs_T>
-    auto&
-    operator<< (const detail::eq_<Lhs_T, Rhs_T>& op)
-    {
-      return (*this << color (op) << op.lhs () << " == " << op.rhs ()
-                    << colors_.none);
-    }
+    test_reporter&
+    operator<< (const detail::eq_<Lhs_T, Rhs_T>& op);
 
     /**
      * @brief Output operator to display ne() expressions.
      */
     template <class Lhs_T, class Rhs_T>
-    auto&
-    operator<< (const detail::ne_<Lhs_T, Rhs_T>& op)
-    {
-      return (*this << color (op) << op.lhs () << " != " << op.rhs ()
-                    << colors_.none);
-    }
+    test_reporter&
+    operator<< (const detail::ne_<Lhs_T, Rhs_T>& op);
 
     /**
      * @brief Output operator to display gt() expressions.
      */
     template <class Lhs_T, class Rhs_T>
-    auto&
-    operator<< (const detail::gt_<Lhs_T, Rhs_T>& op)
-    {
-      return (*this << color (op) << op.lhs () << " > " << op.rhs ()
-                    << colors_.none);
-    }
+    test_reporter&
+    operator<< (const detail::gt_<Lhs_T, Rhs_T>& op);
 
     /**
      * @brief Output operator to display ge() expressions.
      */
     template <class Lhs_T, class Rhs_T>
-    auto&
-    operator<< (const detail::ge_<Lhs_T, Rhs_T>& op)
-    {
-      return (*this << color (op) << op.lhs () << " >= " << op.rhs ()
-                    << colors_.none);
-    }
+    test_reporter&
+    operator<< (const detail::ge_<Lhs_T, Rhs_T>& op);
 
     /**
      * @brief Output operator to display lt() expressions.
      */
     template <class Lhs_T, class Rhs_T>
-    auto&
-    operator<< (const detail::lt_<Rhs_T, Lhs_T>& op)
-    {
-      return (*this << color (op) << op.lhs () << " < " << op.rhs ()
-                    << colors_.none);
-    }
+    test_reporter&
+    operator<< (const detail::lt_<Rhs_T, Lhs_T>& op);
 
     /**
      * @brief Output operator to display le() expressions.
      */
     template <class Lhs_T, class Rhs_T>
-    auto&
-    operator<< (const detail::le_<Rhs_T, Lhs_T>& op)
-    {
-      return (*this << color (op) << op.lhs () << " <= " << op.rhs ()
-                    << colors_.none);
-    }
+    test_reporter&
+    operator<< (const detail::le_<Rhs_T, Lhs_T>& op);
 
     /**
      * @brief Output operator to display and() expressions.
      */
     template <class Lhs_T, class Rhs_T>
-    auto&
-    operator<< (const detail::and_<Lhs_T, Rhs_T>& op)
-    {
-      return (*this << '(' << op.lhs () << color (op) << " and "
-                    << colors_.none << op.rhs () << ')');
-    }
+    test_reporter&
+    operator<< (const detail::and_<Lhs_T, Rhs_T>& op);
 
     /**
      * @brief Output operator to display or() expressions.
      */
     template <class Lhs_T, class Rhs_T>
-    auto&
-    operator<< (const detail::or_<Lhs_T, Rhs_T>& op)
-    {
-      return (*this << '(' << op.lhs () << color (op) << " or " << colors_.none
-                    << op.rhs () << ')');
-    }
+    test_reporter&
+    operator<< (const detail::or_<Lhs_T, Rhs_T>& op);
 
     /**
      * @brief Output operator to display not() expressions.
      */
     template <class T>
-    auto&
-    operator<< (const detail::not_<T>& op)
-    {
-      return (*this << color (op) << "not " << op.value () << colors_.none);
-    }
+    test_reporter&
+    operator<< (const detail::not_<T>& op);
 
 #if defined(__cpp_exceptions)
     template <class Expr_T, class Exception_T>
-    auto&
-    operator<< (const detail::throws_<Expr_T, Exception_T>& op)
-    {
-      return (*this << color (op) << "throws<"
-                    << reflection::type_name<Exception_T> () << ">"
-                    << colors_.none);
-    }
+    test_reporter&
+    operator<< (const detail::throws_<Expr_T, Exception_T>& op);
 
     template <class Expr_T>
-    auto&
-    operator<< (const detail::throws_<Expr_T, void>& op)
-    {
-      return (*this << color (op) << "throws" << colors_.none);
-    }
+    test_reporter&
+    operator<< (const detail::throws_<Expr_T, void>& op);
 
     template <class Expr_T>
-    auto&
-    operator<< (const detail::nothrow_<Expr_T>& op)
-    {
-      return (*this << color (op) << "nothrow" << colors_.none);
-    }
+    test_reporter&
+    operator<< (const detail::nothrow_<Expr_T>& op);
 #endif
 
     // ------------------------------------------------------------------------
@@ -1547,55 +1394,15 @@ namespace micro_os_plus::micro_test_plus
      * @brief Report a passed condition.
      */
     template <class Expr_T>
-    auto
-    pass (detail::assertion<Expr_T> assertion) -> void
-    {
-      *this << colors_.pass << "    ✓ ";
-      if (strlen (assertion.message))
-        {
-          // If a non-empty message is provided, display it.
-          *this << assertion.message;
-        }
-      else
-        {
-          // Otherwise display the evaluated expression.
-          *this << assertion.expr;
-        }
-      *this << colors_.none;
-      *this << endl;
-
-      flush ();
-      current_test_suite->increment_passed ();
-    }
+    void
+    pass (detail::assertion<Expr_T> assertion);
 
     /**
      * @brief Report a failed condition.
      */
     template <class Expr_T>
-    auto
-    fail (detail::assertion<Expr_T> assertion) -> void
-    {
-      *this << colors_.fail << "    ✗ ";
-      if (strlen (assertion.message))
-        {
-          *this << assertion.message << " ";
-        }
-      *this << "FAILED";
-      *this << colors_.none;
-      *this << " (" << reflection::short_name (assertion.location.file_name ())
-            << ":"
-            << detail::genuine_integral_value{ assertion.location.line () };
-      *this << ", " << assertion.expr;
-      if (assertion.abort)
-        {
-          *this << ", aborted";
-        }
-      *this << ")";
-      *this << endl;
-
-      flush ();
-      current_test_suite->increment_failed ();
-    }
+    void
+    fail (detail::assertion<Expr_T> assertion);
 
     /**
      * @brief Flush the current buffered content.
@@ -2260,6 +2067,196 @@ namespace micro_os_plus::micro_test_plus
                  std::forward<Args_T> (arguments)...);
     current_test_suite->end_test_case ();
   }
+
+  // --------------------------------------------------------------------------
+
+  template <typename T>
+  test_reporter&
+  test_reporter::operator<< (T* v)
+  {
+    printf ("%p", reinterpret_cast<void*> (v));
+    return *this;
+  }
+
+  template <class T>
+  test_reporter&
+  test_reporter::operator<< (const T& t)
+  {
+    *this << detail::get (t);
+    return *this;
+  }
+
+  template <class T>
+  test_reporter&
+  test_reporter::operator<< (const detail::genuine_integral_value<T>& v)
+  {
+    printf ("%lld", static_cast<long long> (v.get ()));
+    return *this;
+  }
+
+  template <class T,
+            type_traits::requires_t<type_traits::is_container_v<
+                                        T> and not type_traits::has_npos_v<T>>>
+  test_reporter&
+  test_reporter::operator<< (T&& t)
+  {
+    *this << '{';
+    auto first = true;
+    for (const auto& arg : t)
+      {
+        *this << (first ? "" : ", ") << arg;
+        first = false;
+      }
+    *this << '}';
+    return *this;
+  }
+
+  template <class Lhs_T, class Rhs_T>
+  test_reporter&
+  test_reporter::operator<< (const detail::eq_<Lhs_T, Rhs_T>& op)
+  {
+    return (*this << color (op) << op.lhs () << " == " << op.rhs ()
+                  << colors_.none);
+  }
+
+  template <class Lhs_T, class Rhs_T>
+  test_reporter&
+  test_reporter::operator<< (const detail::ne_<Lhs_T, Rhs_T>& op)
+  {
+    return (*this << color (op) << op.lhs () << " != " << op.rhs ()
+                  << colors_.none);
+  }
+
+  template <class Lhs_T, class Rhs_T>
+  test_reporter&
+  test_reporter::operator<< (const detail::gt_<Lhs_T, Rhs_T>& op)
+  {
+    return (*this << color (op) << op.lhs () << " > " << op.rhs ()
+                  << colors_.none);
+  }
+
+  template <class Lhs_T, class Rhs_T>
+  test_reporter&
+  test_reporter::operator<< (const detail::ge_<Lhs_T, Rhs_T>& op)
+  {
+    return (*this << color (op) << op.lhs () << " >= " << op.rhs ()
+                  << colors_.none);
+  }
+
+  template <class Lhs_T, class Rhs_T>
+  test_reporter&
+  test_reporter::operator<< (const detail::lt_<Rhs_T, Lhs_T>& op)
+  {
+    return (*this << color (op) << op.lhs () << " < " << op.rhs ()
+                  << colors_.none);
+  }
+
+  template <class Lhs_T, class Rhs_T>
+  test_reporter&
+  test_reporter::operator<< (const detail::le_<Rhs_T, Lhs_T>& op)
+  {
+    return (*this << color (op) << op.lhs () << " <= " << op.rhs ()
+                  << colors_.none);
+  }
+
+  template <class Lhs_T, class Rhs_T>
+  test_reporter&
+  test_reporter::operator<< (const detail::and_<Lhs_T, Rhs_T>& op)
+  {
+    return (*this << '(' << op.lhs () << color (op) << " and " << colors_.none
+                  << op.rhs () << ')');
+  }
+
+  template <class Lhs_T, class Rhs_T>
+  test_reporter&
+  test_reporter::operator<< (const detail::or_<Lhs_T, Rhs_T>& op)
+  {
+    return (*this << '(' << op.lhs () << color (op) << " or " << colors_.none
+                  << op.rhs () << ')');
+  }
+
+  template <class T>
+  test_reporter&
+  test_reporter::operator<< (const detail::not_<T>& op)
+  {
+    return (*this << color (op) << "not " << op.value () << colors_.none);
+  }
+
+#if defined(__cpp_exceptions)
+  template <class Expr_T, class Exception_T>
+  test_reporter&
+  test_reporter::operator<< (const detail::throws_<Expr_T, Exception_T>& op)
+  {
+    return (*this << color (op) << "throws<"
+                  << reflection::type_name<Exception_T> () << ">"
+                  << colors_.none);
+  }
+
+  template <class Expr_T>
+  test_reporter&
+  test_reporter::operator<< (const detail::throws_<Expr_T, void>& op)
+  {
+    return (*this << color (op) << "throws" << colors_.none);
+  }
+
+  template <class Expr_T>
+  test_reporter&
+  test_reporter::operator<< (const detail::nothrow_<Expr_T>& op)
+  {
+    return (*this << color (op) << "nothrow" << colors_.none);
+  }
+#endif
+
+  template <class Expr_T>
+  void
+  test_reporter::pass (detail::assertion<Expr_T> assertion)
+
+  {
+    *this << colors_.pass << "    ✓ ";
+    if (strlen (assertion.message))
+      {
+        // If a non-empty message is provided, display it.
+        *this << assertion.message;
+      }
+    else
+      {
+        // Otherwise display the evaluated expression.
+        *this << assertion.expr;
+      }
+    *this << colors_.none;
+    *this << endl;
+
+    flush ();
+    current_test_suite->increment_passed ();
+  }
+
+  template <class Expr_T>
+  void
+  test_reporter::fail (detail::assertion<Expr_T> assertion)
+
+  {
+    *this << colors_.fail << "    ✗ ";
+    if (strlen (assertion.message))
+      {
+        *this << assertion.message << " ";
+      }
+    *this << "FAILED";
+    *this << colors_.none;
+    *this << " (" << reflection::short_name (assertion.location.file_name ())
+          << ":"
+          << detail::genuine_integral_value{ assertion.location.line () };
+    *this << ", " << assertion.expr;
+    if (assertion.abort)
+      {
+        *this << ", aborted";
+      }
+    *this << ")";
+    *this << endl;
+
+    flush ();
+    current_test_suite->increment_failed ();
+  }
+
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
 

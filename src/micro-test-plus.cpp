@@ -31,6 +31,7 @@
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
+#pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
 #endif
 
 namespace micro_os_plus::micro_test_plus
@@ -169,7 +170,7 @@ namespace micro_os_plus::micro_test_plus
     ::abort ();
   }
 
-  // --------------------------------------------------------------------------
+  // ==========================================================================
 
   test_reporter&
   endl (test_reporter& stream)
@@ -187,7 +188,148 @@ namespace micro_os_plus::micro_test_plus
     //#endif
   }
 
-  // --------------------------------------------------------------------------
+  test_reporter&
+  test_reporter::operator<< (std::string_view sv)
+  {
+    printf ("%s", sv.data ());
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (char c)
+  {
+    printf ("%c", c);
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (const char* s)
+  {
+    printf ("%s", s);
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (char* s)
+  {
+    printf ("%s", s);
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (bool v)
+  {
+    printf ("%s", v ? "true_b" : "false_b");
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (std::nullptr_t)
+  {
+    printf ("nullptr");
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (signed char c)
+  {
+    printf ("%d_sc", c);
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (unsigned char c)
+  {
+    printf ("%d_uc", c);
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (signed short c)
+  {
+    printf ("%d_s", c);
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (unsigned short c)
+  {
+    printf ("%u_us", c);
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (signed int v)
+  {
+    printf ("%d_i", v);
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (unsigned int v)
+  {
+    printf ("%u_u", v);
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (signed long v)
+  {
+    printf ("%ld_l", v);
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (unsigned long v)
+  {
+    printf ("%lu_ul", v);
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (signed long long v)
+  {
+    printf ("%lld_ll", v);
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (unsigned long long v)
+  {
+    printf ("%llu_ull", v);
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (float v)
+  {
+    printf ("%f_f", static_cast<double> (v));
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (double v)
+  {
+    printf ("%f_d", v);
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (long double v)
+  {
+    printf ("%Lf_ld", v);
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (test_reporter& (*func) (test_reporter&))
+  {
+    // Call the endl function.
+    (*func) (*this);
+    return *this;
+  }
+
+  // ==========================================================================
 
   test_suite::test_suite (const char* name)
   {
