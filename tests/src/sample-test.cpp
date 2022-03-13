@@ -17,6 +17,8 @@
 #endif // MICRO_OS_PLUS_INCLUDE_CONFIG_H
 
 #include <micro-os-plus/micro-test-plus.h>
+
+#include <string_view>
 #include <stdexcept>
 
 using namespace std::literals;
