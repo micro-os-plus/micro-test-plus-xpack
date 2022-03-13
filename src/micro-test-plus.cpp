@@ -163,6 +163,12 @@ namespace micro_os_plus::micro_test_plus
     suites_->push_back (suite);
   }
 
+  void
+  test_runner::abort (void)
+  {
+    ::abort ();
+  }
+
   // --------------------------------------------------------------------------
 
   test_reporter&

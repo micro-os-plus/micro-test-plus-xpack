@@ -52,6 +52,8 @@
 #include <source_location>
 #endif
 
+#include "reflection.h"
+
 // ----------------------------------------------------------------------------
 
 #if defined(__GNUC__)
@@ -292,10 +294,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     [[noreturn]] void
-    abort (void)
-    {
-      ::abort ();
-    }
+    abort (void);
 
   protected:
     int argc_ = 0;
@@ -318,86 +317,7 @@ namespace micro_os_plus::micro_test_plus
     std::vector<test_suite*>* suites_;
   };
 
-  // --------------------------------------------------------------------------
-
-  namespace reflection
-  {
-#if defined(__cpp_lib_source_location)
-    using source_location = std::source_location;
-#else
-    /**
-     * @brief Local implementation of the std::source_location.
-     */
-    class source_location
-    {
-    public:
-      [[nodiscard]] static constexpr auto
-      current (
-#if (__has_builtin(__builtin_FILE) and __has_builtin(__builtin_LINE))
-          const char* file = __builtin_FILE(), int line = __builtin_LINE()
-#else
-          const char* file = "unknown", int line = {}
-#endif
-              ) noexcept
-      {
-        source_location sl{};
-        sl.file_ = file;
-        sl.line_ = line;
-        return sl;
-      }
-
-      [[nodiscard]] constexpr auto
-      file_name () const noexcept
-      {
-        return file_;
-      }
-
-      [[nodiscard]] constexpr auto
-      line () const noexcept
-      {
-        return line_;
-      }
-
-    private:
-      const char* file_{ "unknown" };
-      int line_{};
-    };
-
-#endif
-
-    const char*
-    short_name (const char* name);
-
-    // TODO: update for the new namespaces.
-
-    /**
-     * @brief Parse the __PRETTY_FUNCTION__ macro to extract the type name.
-     */
-    template <class T>
-    [[nodiscard]] constexpr auto
-    type_name () -> std::string_view
-    {
-#if defined(_MSC_VER) and not defined(__clang__)
-      return { &__FUNCSIG__[120], sizeof (__FUNCSIG__) - 128 };
-#elif defined(__clang_analyzer__)
-      return { &__PRETTY_FUNCTION__[57], sizeof (__PRETTY_FUNCTION__) - 59 };
-#elif defined(__clang__) and (__clang_major__ >= 13) and defined(__APPLE__)
-      // TODO: find out why it fails to compute the length properly:
-      // throws<std::runtime_error]>
-      return { &__PRETTY_FUNCTION__[78],
-               2 /* sizeof (__PRETTY_FUNCTION__) - 80 */ };
-#elif defined(__clang__) and (__clang_major__ >= 12) and not defined(__APPLE__)
-      return { &__PRETTY_FUNCTION__[97], sizeof (__PRETTY_FUNCTION__) - 99 };
-#elif defined(__clang__)
-      return { &__PRETTY_FUNCTION__[70], sizeof (__PRETTY_FUNCTION__) - 72 };
-#elif defined(__GNUC__)
-      return { &__PRETTY_FUNCTION__[85], sizeof (__PRETTY_FUNCTION__) - 136 };
-#endif
-    }
-
-  } // namespace reflection
-
-  // --------------------------------------------------------------------------
+  // ==========================================================================
 
   /**
    * @brief Local mathematical functions.
