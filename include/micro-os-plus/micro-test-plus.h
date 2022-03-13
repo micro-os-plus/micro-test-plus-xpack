@@ -1968,52 +1968,26 @@ namespace micro_os_plus::micro_test_plus
 
   namespace detail
   {
-    /**
-     * @brief Helper class to give each expectation a type and a boolean value.
-     */
-    template <class T>
-    struct expect_
-    {
-      constexpr explicit expect_ (bool value) : value_{ value }
-      {
-      }
-
-      [[nodiscard]] constexpr operator bool () const
-      {
-        return value_;
-      }
-
-      bool value_{};
-    };
-
     template <class TExpr>
     [[nodiscard]] auto
-    on (detail::assertion<TExpr> assertion) -> bool
+    evaluate_and_report_ (detail::assertion<TExpr> assertion) -> bool
     {
-      // if (dry_run_)
-      //   {
-      //     return true;
-      //   }
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-      // micro_os_plus::trace::printf ("on\n");
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
-
       // This cast calls the bool operator, which evaluates the expression.
       if (static_cast<bool> (assertion.expr))
         {
           reporter.pass (
               detail::assertion<TExpr>{ .expr = assertion.expr,
-                                             .abort = assertion.abort,
-                                             .message = assertion.message,
-                                             .location = assertion.location });
+                                        .abort = assertion.abort,
+                                        .message = assertion.message,
+                                        .location = assertion.location });
           return true;
         }
 
       reporter.fail (
           detail::assertion<TExpr>{ .expr = assertion.expr,
-                                         .abort = assertion.abort,
-                                         .message = assertion.message,
-                                         .location = assertion.location });
+                                    .abort = assertion.abort,
+                                    .message = assertion.message,
+                                    .location = assertion.location });
       if (assertion.abort)
         {
           current_test_suite->end ();
@@ -2212,8 +2186,8 @@ namespace micro_os_plus::micro_test_plus
         const reflection::source_location& sl
         = reflection::source_location::current ())
   {
-    return detail::expect_<TExpr>{ detail::on<TExpr> (detail::assertion<TExpr>{
-        .expr = true, .abort = false, .message = message, .location = sl }) };
+    return detail::evaluate_and_report_<TExpr> (detail::assertion<TExpr>{
+        .expr = true, .abort = false, .message = message, .location = sl });
   }
 
   template <class TExpr = bool>
@@ -2221,8 +2195,8 @@ namespace micro_os_plus::micro_test_plus
   fail (const char* message = "...", const reflection::source_location& sl
                                      = reflection::source_location::current ())
   {
-    return detail::expect_<TExpr>{ detail::on<TExpr> (detail::assertion<TExpr>{
-        .expr = false, .abort = false, .message = message, .location = sl }) };
+    return detail::evaluate_and_report_<TExpr> (detail::assertion<TExpr>{
+        .expr = false, .abort = false, .message = message, .location = sl });
   }
 
   /**
@@ -2237,8 +2211,8 @@ namespace micro_os_plus::micro_test_plus
           const reflection::source_location& sl
           = reflection::source_location::current ())
   {
-    return detail::expect_<TExpr>{ detail::on<TExpr> (detail::assertion<TExpr>{
-        .expr = expr, .abort = false, .message = message, .location = sl }) };
+    return detail::evaluate_and_report_<TExpr> (detail::assertion<TExpr>{
+        .expr = expr, .abort = false, .message = message, .location = sl });
   }
 
   /**
@@ -2253,8 +2227,8 @@ namespace micro_os_plus::micro_test_plus
           const reflection::source_location& sl
           = reflection::source_location::current ())
   {
-    return detail::expect_<TExpr>{ detail::on<TExpr> (detail::assertion<TExpr>{
-        .expr = expr, .abort = true, .message = message, .location = sl }) };
+    return detail::evaluate_and_report_<TExpr> (detail::assertion<TExpr>{
+        .expr = expr, .abort = true, .message = message, .location = sl });
   }
 
 #if defined(__cpp_exceptions)
