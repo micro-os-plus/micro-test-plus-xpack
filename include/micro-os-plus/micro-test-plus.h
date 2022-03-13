@@ -875,7 +875,30 @@ namespace micro_os_plus::micro_test_plus
       }
     };
 
-    // Implementation of comparator operators.
+    template <class T>
+    struct genuine_integral_value : op
+    {
+      using value_type = T;
+
+      constexpr genuine_integral_value (const T& _value) : value_{ _value }
+      {
+      }
+
+      [[nodiscard]] constexpr explicit operator T () const
+      {
+        return value_;
+      }
+
+      [[nodiscard]] constexpr decltype (auto)
+      get () const
+      {
+        return value_;
+      }
+
+      T value_{};
+    };
+
+    // ------------------------------------------------------------------------
     template <class TLhs, class TRhs>
     struct eq_ : op
     {
@@ -1606,6 +1629,19 @@ namespace micro_os_plus::micro_test_plus
       return *this;
     }
 
+    /**
+     * @brief Output operator to display genuine integers,
+     * without the type suffix.
+     */
+    template <class T>
+    auto&
+    operator<< (const detail::genuine_integral_value<T>& v)
+    {
+      printf ("%lld", static_cast<long long> (v.get ()));
+      return *this;
+    }
+
+    /**
     template <class T, type_traits::requires_t<
                            type_traits::is_container_v<
                                T> and not type_traits::has_npos_v<T>> = 0>
@@ -1766,7 +1802,8 @@ namespace micro_os_plus::micro_test_plus
       *this << colors_.fail << "    ✗ " << assertion.message << " FAILED"
             << colors_.none;
       *this << " (" << reflection::short_name (assertion.location.file_name ())
-            << ":" << assertion.location.line ();
+            << ":"
+            << detail::genuine_integral_value{ assertion.location.line () };
       *this << ", " << assertion.expr;
       if (assertion.abort)
         {
