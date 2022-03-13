@@ -2460,6 +2460,199 @@ namespace micro_os_plus::micro_test_plus
     }
   };
 
+  namespace operators
+  {
+    [[nodiscard]] constexpr auto
+    operator== (std::string_view lhs, std::string_view rhs)
+    {
+      return detail::eq_{ lhs, rhs };
+    }
+
+    [[nodiscard]] constexpr auto
+    operator!= (std::string_view lhs, std::string_view rhs)
+    {
+      return detail::ne_{ lhs, rhs };
+    }
+
+    template <class T,
+              type_traits::requires_t<type_traits::is_container_v<T>> = 0>
+    [[nodiscard]] constexpr auto
+    operator== (T&& lhs, T&& rhs)
+    {
+      return detail::eq_{ static_cast<T&&> (lhs), static_cast<T&&> (rhs) };
+    }
+
+    template <class T,
+              type_traits::requires_t<type_traits::is_container_v<T>> = 0>
+    [[nodiscard]] constexpr auto
+    operator!= (T&& lhs, T&& rhs)
+    {
+      return detail::ne_{ static_cast<T&&> (lhs), static_cast<T&&> (rhs) };
+    }
+
+    template <
+        class TLhs, class TRhs,
+        type_traits::requires_t<
+            type_traits::is_op_v<TLhs> or type_traits::is_op_v<TRhs>> = 0>
+    [[nodiscard]] constexpr auto
+    operator== (const TLhs& lhs, const TRhs& rhs)
+    {
+      return detail::eq_{ lhs, rhs };
+    }
+
+    template <
+        class TLhs, class TRhs,
+        type_traits::requires_t<
+            type_traits::is_op_v<TLhs> or type_traits::is_op_v<TRhs>> = 0>
+    [[nodiscard]] constexpr auto
+    operator!= (const TLhs& lhs, const TRhs& rhs)
+    {
+      return detail::ne_{ lhs, rhs };
+    }
+
+    template <
+        class TLhs, class TRhs,
+        type_traits::requires_t<
+            type_traits::is_op_v<TLhs> or type_traits::is_op_v<TRhs>> = 0>
+    [[nodiscard]] constexpr auto
+    operator> (const TLhs& lhs, const TRhs& rhs)
+    {
+      return detail::gt_{ lhs, rhs };
+    }
+
+    template <
+        class TLhs, class TRhs,
+        type_traits::requires_t<
+            type_traits::is_op_v<TLhs> or type_traits::is_op_v<TRhs>> = 0>
+    [[nodiscard]] constexpr auto
+    operator>= (const TLhs& lhs, const TRhs& rhs)
+    {
+      return detail::ge_{ lhs, rhs };
+    }
+
+    template <
+        class TLhs, class TRhs,
+        type_traits::requires_t<
+            type_traits::is_op_v<TLhs> or type_traits::is_op_v<TRhs>> = 0>
+    [[nodiscard]] constexpr auto
+    operator< (const TLhs& lhs, const TRhs& rhs)
+    {
+      return detail::lt_{ lhs, rhs };
+    }
+
+    template <
+        class TLhs, class TRhs,
+        type_traits::requires_t<
+            type_traits::is_op_v<TLhs> or type_traits::is_op_v<TRhs>> = 0>
+    [[nodiscard]] constexpr auto
+    operator<= (const TLhs& lhs, const TRhs& rhs)
+    {
+      return detail::le_{ lhs, rhs };
+    }
+
+    template <
+        class TLhs, class TRhs,
+        type_traits::requires_t<
+            type_traits::is_op_v<TLhs> or type_traits::is_op_v<TRhs>> = 0>
+    [[nodiscard]] constexpr auto
+    operator and (const TLhs& lhs, const TRhs& rhs)
+    {
+      return detail::and_{ lhs, rhs };
+    }
+
+    template <
+        class TLhs, class TRhs,
+        type_traits::requires_t<
+            type_traits::is_op_v<TLhs> or type_traits::is_op_v<TRhs>> = 0>
+    [[nodiscard]] constexpr auto
+    operator or (const TLhs& lhs, const TRhs& rhs)
+    {
+      return detail::or_{ lhs, rhs };
+    }
+
+    template <class T, type_traits::requires_t<type_traits::is_op_v<T>> = 0>
+    [[nodiscard]] constexpr auto
+    operator not (const T& t)
+    {
+      return detail::not_{ t };
+    }
+
+#if 0
+    template <class T>
+    [[nodiscard]] inline auto
+    operator>> (const T& t, const detail::value_location<detail::fatal>&)
+    {
+      return detail::fatal_{ t };
+    }
+
+    template <class Test>
+    [[nodiscard]] auto
+    operator/ (const detail::tag& tag, Test test)
+    {
+      for (const auto& name : tag.name)
+        {
+          test.tag.push_back (name);
+        }
+      return test;
+    }
+
+    [[nodiscard]] inline auto
+    operator/ (const detail::tag& lhs, const detail::tag& rhs)
+    {
+      std::vector<std::string_view> tag{};
+      for (const auto& name : lhs.name)
+        {
+          tag.push_back (name);
+        }
+      for (const auto& name : rhs.name)
+        {
+          tag.push_back (name);
+        }
+      return detail::tag{ tag };
+    }
+
+    template <class F, class T,
+              type_traits::requires_t<type_traits::is_container_v<T>> = 0>
+    [[nodiscard]] constexpr auto
+    operator| (const F& f, const T& t)
+    {
+      return [f, t] (const auto name) {
+        for (const auto& arg : t)
+          {
+            detail::on<F> (
+                events::test<F, typename T::value_type>{ .type = "test",
+                                                         .name = name,
+                                                         .tag = {},
+                                                         .location = {},
+                                                         .arg = arg,
+                                                         .run = f });
+          }
+      };
+    }
+
+    template <
+        class F, template <class...> class T, class... Ts,
+        type_traits::requires_t<not type_traits::is_container_v<T<Ts...>>> = 0>
+    [[nodiscard]] constexpr auto
+    operator| (const F& f, const T<Ts...>& t)
+    {
+      return [f, t] (const auto name) {
+        apply (
+            [f, name] (const auto&... args) {
+              (detail::on<F> (events::test<F, Ts>{ .type = "test",
+                                                   .name = name,
+                                                   .tag = {},
+                                                   .location = {},
+                                                   .arg = args,
+                                                   .run = f }),
+               ...);
+            },
+            t);
+      };
+    }
+#endif
+  } // namespace operators
+
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
 

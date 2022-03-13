@@ -79,21 +79,21 @@ static struct local_counts_s
 // Mock functions used to simulate code computing various
 // integer/float/strings.
 
-template <typename T>
+template <typename T = int>
 T
 my_actual_integral ()
 {
   return 42;
 }
 
-template <typename T>
+template <typename T = int>
 T
 my_actual_integral_less (void)
 {
   return 41;
 }
 
-template <typename T>
+template <typename T = int>
 T
 my_actual_integral_more (void)
 {
@@ -242,7 +242,7 @@ main (int argc, char* argv[])
   // --------------------------------------------------------------------------
 
   test_case ("Check integer comparisons", [] {
-    expect (eq (my_actual_integral<int> (), 42), "actual == 42");
+    expect (eq (my_actual_integral (), 42), "actual == 42");
     local_counts.passed++;
 
     expect (ne (my_actual_integral_more<int> (), 42), "actual+1 != 42");
@@ -251,13 +251,13 @@ main (int argc, char* argv[])
     expect (lt (my_actual_integral_less<int> (), 42), "actual-1 < 42");
     local_counts.passed++;
 
-    expect (le (my_actual_integral<int> (), 42), "actual <= 42");
+    expect (le (my_actual_integral (), 42), "actual <= 42");
     local_counts.passed++;
 
     expect (gt (my_actual_integral_more<int> (), 42), "actual+1 > 42");
     local_counts.passed++;
 
-    expect (ge (my_actual_integral<int> (), 42), "actual >= 42");
+    expect (ge (my_actual_integral (), 42), "actual >= 42");
     local_counts.passed++;
 
     {
@@ -282,7 +282,7 @@ main (int argc, char* argv[])
   test_case ("Check failed integer comparisons", [] {
     local_counts.test_cases++;
 
-    expect (ne (my_actual_integral<int> (), 42), "actual != 42");
+    expect (ne (my_actual_integral (), 42), "actual != 42");
     local_counts.failed++;
 
     expect (eq (my_actual_integral_more<int> (), 42), "actual+1 == 42");
@@ -291,13 +291,13 @@ main (int argc, char* argv[])
     expect (ge (my_actual_integral_less<int> (), 42), "actual-1 >= 42");
     local_counts.failed++;
 
-    expect (gt (my_actual_integral<int> (), 42), "actual > 42");
+    expect (gt (my_actual_integral (), 42), "actual > 42");
     local_counts.failed++;
 
     expect (le (my_actual_integral_more<int> (), 42), "actual+1 <= 42");
     local_counts.failed++;
 
-    expect (lt (my_actual_integral<int> (), 42), "actual < 42");
+    expect (lt (my_actual_integral (), 42), "actual < 42");
     local_counts.failed++;
 
     {
@@ -766,39 +766,67 @@ main (int argc, char* argv[])
 #endif // __EXCEPTIONS
 
   test_case ("Logical operations", [] {
-    expect (_not (ne (my_actual_integral<int> (), 42)), "not (actual != 42)");
+    expect (_not (ne (my_actual_integral (), 42)), "not (actual != 42)");
     local_counts.passed++;
 
-    expect (_not (eq (my_actual_integral<int> (), 42)), "not (actual == 42)");
+    expect (_not (eq (my_actual_integral (), 42)), "not (actual == 42)");
     local_counts.failed++;
 
-    expect (_and (eq (my_actual_integral<int> (), 42),
+    expect (_and (eq (my_actual_integral (), 42),
                   eq (my_actual_float<float> (), 42.0)),
             "(actual == 42) and (actual == 42.0)");
     local_counts.passed++;
 
-    expect (_and (eq (my_actual_integral<int> (), 42),
+    expect (_and (eq (my_actual_integral (), 42),
                   ne (my_actual_float<float> (), 42.0)),
             "(actual == 42) and (actual != 42.0)");
     local_counts.failed++;
 
-    expect (_and (ne (my_actual_integral<int> (), 42),
+    expect (_and (ne (my_actual_integral (), 42),
                   eq (my_actual_float<float> (), 42.0)),
             "(actual != 42) and (actual == 42.0)");
     local_counts.failed++;
 
-    expect (_and (ne (my_actual_integral<int> (), 42),
+    expect (_and (ne (my_actual_integral (), 42),
                   ne (my_actual_float<float> (), 42.0)),
             "(actual != 42) and (actual != 42.0)");
     local_counts.failed++;
 
-    expect (_and (eq (my_actual_integral<int> (), 42),
+    expect (_and (eq (my_actual_integral (), 42),
                   eq (my_actual_float<float> (), 42.0)));
     local_counts.passed++;
 
-    expect (_and (eq (my_actual_integral<int> (), 42),
+    expect (_and (eq (my_actual_integral (), 42),
                   ne (my_actual_float<float> (), 42.0)));
     local_counts.failed++;
+
+    local_counts.test_cases++;
+  });
+
+  test_assert (current_test_suite->passed () == local_counts.passed);
+  test_assert (current_test_suite->failed () == local_counts.failed);
+  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+
+  test_case ("Operators", [] {
+    using namespace operators;
+
+    expect (my_actual_integral () == 42, "actual == 42");
+    local_counts.passed++;
+
+    expect (my_actual_integral_more<int> () != 42, "actual+1 != 42");
+    local_counts.passed++;
+
+    expect (my_actual_integral_less<int> () < 42, "actual-1 < 42");
+    local_counts.passed++;
+
+    expect (my_actual_integral () <= 42, "actual <= 42");
+    local_counts.passed++;
+
+    expect (my_actual_integral_more<int> () > 42, "actual+1 > 42");
+    local_counts.passed++;
+
+    expect (my_actual_integral () >= 42, "actual >= 42");
+    local_counts.passed++;
 
     local_counts.test_cases++;
   });

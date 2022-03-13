@@ -88,6 +88,8 @@ static test_suite ts = { "My test suite", [] {
 int
 main (int argc, char* argv[])
 {
+  using namespace operators;
+
   initialize ("Sample Test", argc, argv);
 
   // --------------------------------------------------------------------------
@@ -99,10 +101,10 @@ main (int argc, char* argv[])
 
     // Currently only int and long values can be compared.
     // For everything else use casts.
-    expect (eq (compute_one (), 1), "compute_one() == 1");
+    expect (compute_one () == 1, "compute_one() == 1");
 
     // Strings can also be compared (via `strcmp()`).
-    expect (eq (std::string_view{ compute_aaa () }, "aaa"sv),
+    expect (std::string_view{ compute_aaa () } == "aaa"sv,
             "compute_aaa() == 'aaa' string_view");
 
     // More complex conditions are passed as booleans.
@@ -110,7 +112,7 @@ main (int argc, char* argv[])
 
     auto f = [] (int i) { return i + 42; };
 
-    expect (eq (f (1), 43), "lambda == 43");
+    expect (f (1) == 43, "lambda == 43");
   });
 
   // --------------------------------------------------------------------------
@@ -123,13 +125,13 @@ main (int argc, char* argv[])
 
         if (_argc > 1)
           {
-            expect (eq (std::string_view{ _argv[1] }, "one"sv),
+            expect (std::string_view{ _argv[1] } == "one"sv,
                     "argv[1] == 'one'");
           }
 
         if (_argc > 2)
           {
-            expect (eq (std::string_view{ _argv[2] }, "two"sv),
+            expect (std::string_view{ _argv[2] } == "two"sv,
                     "argv[2] == 'two'");
           }
       },
