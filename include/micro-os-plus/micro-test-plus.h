@@ -1785,7 +1785,18 @@ namespace micro_os_plus::micro_test_plus
     auto
     pass (events::assertion_pass<TExpr> assertion) -> void
     {
-      *this << colors_.pass << "    ✓ " << assertion.message << colors_.none;
+      *this << colors_.pass << "    ✓ ";
+      if (strlen (assertion.message))
+        {
+          // If a non-empty message is provided, display it.
+          *this << assertion.message;
+        }
+      else
+        {
+          // Otherwise display the evaluated expression.
+          *this << assertion.expr;
+        }
+      *this << colors_.none;
       *this << endl;
 
       flush ();
@@ -1799,8 +1810,13 @@ namespace micro_os_plus::micro_test_plus
     auto
     fail (events::assertion_fail<TExpr> assertion) -> void
     {
-      *this << colors_.fail << "    ✗ " << assertion.message << " FAILED"
-            << colors_.none;
+      *this << colors_.fail << "    ✗ ";
+      if (strlen (assertion.message))
+        {
+          *this << assertion.message << " ";
+        }
+      *this << "FAILED";
+      *this << colors_.none;
       *this << " (" << reflection::short_name (assertion.location.file_name ())
             << ":"
             << detail::genuine_integral_value{ assertion.location.line () };
@@ -2063,8 +2079,9 @@ namespace micro_os_plus::micro_test_plus
 
   template <class TExpr = bool>
   constexpr auto
-  pass (const char* message, const reflection::source_location& sl
-                             = reflection::source_location::current ())
+  pass (const char* message = "passed",
+        const reflection::source_location& sl
+        = reflection::source_location::current ())
   {
     return detail::expect_<TExpr>{ detail::on<TExpr> (events::assertion<TExpr>{
         .expr = true, .abort = false, .message = message, .location = sl }) };
@@ -2072,8 +2089,8 @@ namespace micro_os_plus::micro_test_plus
 
   template <class TExpr = bool>
   constexpr auto
-  fail (const char* message, const reflection::source_location& sl
-                             = reflection::source_location::current ())
+  fail (const char* message = "...", const reflection::source_location& sl
+                                     = reflection::source_location::current ())
   {
     return detail::expect_<TExpr>{ detail::on<TExpr> (events::assertion<TExpr>{
         .expr = false, .abort = false, .message = message, .location = sl }) };
@@ -2087,7 +2104,7 @@ namespace micro_os_plus::micro_test_plus
                 type_traits::is_op_v<
                     TExpr> or type_traits::is_convertible_v<TExpr, bool>> = 0>
   constexpr auto
-  expect (const TExpr& expr, const char* message,
+  expect (const TExpr& expr, const char* message = "",
           const reflection::source_location& sl
           = reflection::source_location::current ())
   {
@@ -2103,7 +2120,7 @@ namespace micro_os_plus::micro_test_plus
                 type_traits::is_op_v<
                     TExpr> or type_traits::is_convertible_v<TExpr, bool>> = 0>
   constexpr auto
-  assume (const TExpr& expr, const char* message,
+  assume (const TExpr& expr, const char* message = "",
           const reflection::source_location& sl
           = reflection::source_location::current ())
   {
