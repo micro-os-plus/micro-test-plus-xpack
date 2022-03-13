@@ -2400,6 +2400,48 @@ namespace micro_os_plus::micro_test_plus
     return detail::le_{ lhs, rhs };
   }
 
+  template <class TExpr>
+  [[nodiscard]] constexpr auto
+  _not (const TExpr* expr)
+  {
+    return detail::not_{ expr };
+  }
+
+  template <class TExpr>
+  [[nodiscard]] constexpr auto
+  _not (const TExpr& expr)
+  {
+    return detail::not_{ expr };
+  }
+
+  template <class TLhs, class TRhs>
+  [[nodiscard]] constexpr auto
+  _and (const TLhs& lhs, const TRhs& rhs)
+  {
+    return detail::and_{ lhs, rhs };
+  }
+
+  template <class TLhs, class TRhs>
+  [[nodiscard]] constexpr auto
+  _and (const TLhs* lhs, const TRhs* rhs)
+  {
+    return detail::and_{ lhs, rhs };
+  }
+
+  template <class TLhs, class TRhs>
+  [[nodiscard]] constexpr auto
+  _or (const TLhs& lhs, const TRhs& rhs)
+  {
+    return detail::or_{ lhs, rhs };
+  }
+
+  template <class TLhs, class TRhs>
+  [[nodiscard]] constexpr auto
+  _or (const TLhs* lhs, const TRhs* rhs)
+  {
+    return detail::or_{ lhs, rhs };
+  }
+
   /**
    * @brief Generic mutator, to remove const from any type.
    */

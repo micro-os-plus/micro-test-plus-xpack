@@ -759,6 +759,48 @@ main (int argc, char* argv[])
 
 #endif // __EXCEPTIONS
 
+  test_case ("Logical operations", [] {
+    expect (_not (ne (my_actual_integral<int> (), 42)), "not (actual != 42)");
+    local_counts.passed++;
+
+    expect (_not (eq (my_actual_integral<int> (), 42)), "not (actual == 42)");
+    local_counts.failed++;
+
+    expect (_and (eq (my_actual_integral<int> (), 42),
+                  eq (my_actual_float<float> (), 42.0)),
+            "(actual == 42) and (actual == 42.0)");
+    local_counts.passed++;
+
+    expect (_and (eq (my_actual_integral<int> (), 42),
+                  ne (my_actual_float<float> (), 42.0)),
+            "(actual == 42) and (actual != 42.0)");
+    local_counts.failed++;
+
+    expect (_and (ne (my_actual_integral<int> (), 42),
+                  eq (my_actual_float<float> (), 42.0)),
+            "(actual != 42) and (actual == 42.0)");
+    local_counts.failed++;
+
+    expect (_and (ne (my_actual_integral<int> (), 42),
+                  ne (my_actual_float<float> (), 42.0)),
+            "(actual != 42) and (actual != 42.0)");
+    local_counts.failed++;
+
+    expect (_and (eq (my_actual_integral<int> (), 42),
+                  eq (my_actual_float<float> (), 42.0)));
+    local_counts.passed++;
+
+    expect (_and (eq (my_actual_integral<int> (), 42),
+                  ne (my_actual_float<float> (), 42.0)));
+    local_counts.failed++;
+
+    local_counts.test_cases++;
+  });
+
+  test_assert (current_test_suite->passed () == local_counts.passed);
+  test_assert (current_test_suite->failed () == local_counts.failed);
+  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+
   // --------------------------------------------------------------------------
   // The inner test should return failure.
   // exit_code() must be always called, otherwise the test suites
