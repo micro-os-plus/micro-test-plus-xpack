@@ -14,8 +14,8 @@
  * which can be obtained from <https://www.boost.org/LICENSE_1_0.txt>.
  */
 
-#ifndef MICRO_TEST_PLUS_TARITS_H_
-#define MICRO_TEST_PLUS_TARITS_H_
+#ifndef MICRO_TEST_PLUS_TYPE_TRAITS_H_
+#define MICRO_TEST_PLUS_TYPE_TRAITS_H_
 
 // ----------------------------------------------------------------------------
 
@@ -176,6 +176,6 @@ namespace micro_os_plus::micro_test_plus
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_TEST_PLUS_TARITS_H_
+#endif // MICRO_TEST_PLUS_TYPE_TRAITS_H_
 
 // ----------------------------------------------------------------------------
