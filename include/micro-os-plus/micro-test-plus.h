@@ -99,7 +99,8 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   /**
-   * @brief A named group of test cases which self registers to the runner.
+   * @brief Test suites are classes that represent a named group of
+   * test cases which self registers to the runner.
    */
   class test_suite
   {
