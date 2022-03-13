@@ -48,10 +48,6 @@
 #include <cstring>
 //#include <string.h>
 
-#if defined(__cpp_lib_source_location)
-#include <source_location>
-#endif
-
 #include "reflection.h"
 
 // ----------------------------------------------------------------------------
