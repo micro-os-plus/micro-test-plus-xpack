@@ -351,12 +351,12 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Generic 'power of', to raise base to exponent (base ^ exp).
      */
-    template <class T, class TExp>
+    template <class T, class Exp_T>
     [[nodiscard]] constexpr auto
-    pow (const T base, const TExp exp) -> T
+    pow (const T base, const Exp_T exp) -> T
     {
       // If the exponent is 0, return 1, otherwise recurse.
-      return exp ? T (base * pow (base, exp - TExp (1))) : T (1);
+      return exp ? T (base * pow (base, exp - Exp_T (1))) : T (1);
     }
 
     /**
@@ -435,13 +435,13 @@ namespace micro_os_plus::micro_test_plus
      * @brief Compute the number of decimal places of a value,
      * up to 7 digits.
      */
-    template <class T, class TValue>
+    template <class T, class Value_T>
     [[nodiscard]] constexpr auto
-    den_size (TValue value) -> T
+    den_size (Value_T value) -> T
     {
-      constexpr auto precision = TValue (1e-7);
+      constexpr auto precision = Value_T (1e-7);
       T result{};
-      TValue tmp{};
+      Value_T tmp{};
       do
         {
           value *= 10;
@@ -490,40 +490,40 @@ namespace micro_os_plus::micro_test_plus
     {
     };
 
-    template <class R, class... TArgs>
-    struct function_traits<R (*) (TArgs...)>
+    template <class R, class... Args_T>
+    struct function_traits<R (*) (Args_T...)>
     {
       using result_type = R;
-      using args = list<TArgs...>;
+      using args = list<Args_T...>;
     };
 
-    template <class R, class... TArgs>
-    struct function_traits<R (TArgs...)>
+    template <class R, class... Args_T>
+    struct function_traits<R (Args_T...)>
     {
       using result_type = R;
-      using args = list<TArgs...>;
+      using args = list<Args_T...>;
     };
 
-    template <class R, class T, class... TArgs>
-    struct function_traits<R (T::*) (TArgs...)>
+    template <class R, class T, class... Args_T>
+    struct function_traits<R (T::*) (Args_T...)>
     {
       using result_type = R;
-      using args = list<TArgs...>;
+      using args = list<Args_T...>;
     };
 
-    template <class R, class T, class... TArgs>
-    struct function_traits<R (T::*) (TArgs...) const>
+    template <class R, class T, class... Args_T>
+    struct function_traits<R (T::*) (Args_T...) const>
     {
       using result_type = R;
-      using args = list<TArgs...>;
+      using args = list<Args_T...>;
     };
 
     template <class T>
     T&&
     declval ();
-    template <class... Ts, class TExpr>
+    template <class... Ts, class Expr_T>
     constexpr auto
-    is_valid (TExpr expr) -> decltype (expr (declval<Ts...> ()), bool ())
+    is_valid (Expr_T expr) -> decltype (expr (declval<Ts...> ()), bool ())
     {
       return true;
     }
@@ -607,10 +607,10 @@ namespace micro_os_plus::micro_test_plus
    */
   namespace detail
   {
-    template <class TExpr>
+    template <class Expr_T>
     struct assertion
     {
-      TExpr expr{};
+      Expr_T expr{};
       bool abort; // True if called from assume(), false from expect()
       const char* message;
       reflection::source_location location{};
@@ -867,10 +867,10 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Equality comparator.
      */
-    template <class TLhs, class TRhs>
+    template <class Lhs_T, class Rhs_T>
     struct eq_ : op
     {
-      constexpr eq_ (const TLhs& lhs = {}, const TRhs& rhs = {})
+      constexpr eq_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
           : lhs_{ lhs }, rhs_{ rhs }, value_{ [&] {
               using std::operator==;
               using std::operator<;
@@ -887,7 +887,7 @@ namespace micro_os_plus::micro_test_plus
 #endif
 #endif
               if constexpr (type_traits::has_value_v<
-                                TLhs> and type_traits::has_value_v<TRhs>)
+                                Lhs_T> and type_traits::has_value_v<Rhs_T>)
                 {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
                   micro_os_plus::trace::printf ("    eq_ %s\n",
@@ -896,11 +896,11 @@ namespace micro_os_plus::micro_test_plus
 
                   // If both types have values (like numeric constants),
                   // compare them directly.
-                  return TLhs::value == TRhs::value;
+                  return Lhs_T::value == Rhs_T::value;
                 }
               else if constexpr (
                   type_traits::has_epsilon_v<
-                      TLhs> and type_traits::has_epsilon_v<TRhs>)
+                      Lhs_T> and type_traits::has_epsilon_v<Rhs_T>)
                 {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
                   micro_os_plus::trace::printf ("    eq_ %s\n",
@@ -910,9 +910,9 @@ namespace micro_os_plus::micro_test_plus
                   // If both values have precision, compare them using
                   // the smalles precision.
                   return math::abs (get (lhs) - get (rhs))
-                         < math::min_value (TLhs::epsilon, TRhs::epsilon);
+                         < math::min_value (Lhs_T::epsilon, Rhs_T::epsilon);
                 }
-              else if constexpr (type_traits::has_epsilon_v<TLhs>)
+              else if constexpr (type_traits::has_epsilon_v<Lhs_T>)
                 {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
                   micro_os_plus::trace::printf ("    eq_ %s\n",
@@ -920,9 +920,9 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
                   // If only the left operand has precision, use it.
-                  return math::abs (get (lhs) - get (rhs)) < TLhs::epsilon;
+                  return math::abs (get (lhs) - get (rhs)) < Lhs_T::epsilon;
                 }
-              else if constexpr (type_traits::has_epsilon_v<TRhs>)
+              else if constexpr (type_traits::has_epsilon_v<Rhs_T>)
                 {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
                   micro_os_plus::trace::printf ("    eq_ %s\n",
@@ -930,7 +930,7 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
                   // If only the right operand has precision, use it.
-                  return math::abs (get (lhs) - get (rhs)) < TRhs::epsilon;
+                  return math::abs (get (lhs) - get (rhs)) < Rhs_T::epsilon;
                 }
               else
                 {
@@ -967,18 +967,18 @@ namespace micro_os_plus::micro_test_plus
         return get (rhs_);
       }
 
-      const TLhs lhs_{};
-      const TRhs rhs_{};
+      const Lhs_T lhs_{};
+      const Rhs_T rhs_{};
       const bool value_{};
     };
 
     /**
      * @brief Non-equality comparator.
      */
-    template <class TLhs, class TRhs>
+    template <class Lhs_T, class Rhs_T>
     struct ne_ : op
     {
-      constexpr ne_ (const TLhs& lhs = {}, const TRhs& rhs = {})
+      constexpr ne_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
           : lhs_{ lhs }, rhs_{ rhs }, value_{ [&] {
               using std::operator==;
               using std::operator!=;
@@ -996,24 +996,24 @@ namespace micro_os_plus::micro_test_plus
 #endif
 #endif
               if constexpr (type_traits::has_value_v<
-                                TLhs> and type_traits::has_value_v<TRhs>)
+                                Lhs_T> and type_traits::has_value_v<Rhs_T>)
                 {
-                  return TLhs::value != TRhs::value;
+                  return Lhs_T::value != Rhs_T::value;
                 }
               else if constexpr (
                   type_traits::has_epsilon_v<
-                      TLhs> and type_traits::has_epsilon_v<TRhs>)
+                      Lhs_T> and type_traits::has_epsilon_v<Rhs_T>)
                 {
                   return math::abs (get (lhs_) - get (rhs_))
-                         > math::min_value (TLhs::epsilon, TRhs::epsilon);
+                         > math::min_value (Lhs_T::epsilon, Rhs_T::epsilon);
                 }
-              else if constexpr (type_traits::has_epsilon_v<TLhs>)
+              else if constexpr (type_traits::has_epsilon_v<Lhs_T>)
                 {
-                  return math::abs (get (lhs_) - get (rhs_)) > TLhs::epsilon;
+                  return math::abs (get (lhs_) - get (rhs_)) > Lhs_T::epsilon;
                 }
-              else if constexpr (type_traits::has_epsilon_v<TRhs>)
+              else if constexpr (type_traits::has_epsilon_v<Rhs_T>)
                 {
-                  return math::abs (get (lhs_) - get (rhs_)) > TRhs::epsilon;
+                  return math::abs (get (lhs_) - get (rhs_)) > Rhs_T::epsilon;
                 }
               else
                 {
@@ -1041,18 +1041,18 @@ namespace micro_os_plus::micro_test_plus
         return get (rhs_);
       }
 
-      const TLhs lhs_{};
-      const TRhs rhs_{};
+      const Lhs_T lhs_{};
+      const Rhs_T rhs_{};
       const bool value_{};
     };
 
     /**
      * @brief Greater than comparator.
      */
-    template <class TLhs, class TRhs>
+    template <class Lhs_T, class Rhs_T>
     struct gt_ : op
     {
-      constexpr gt_ (const TLhs& lhs = {}, const TRhs& rhs = {})
+      constexpr gt_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
           : lhs_{ lhs }, rhs_{ rhs }, value_{ [&] {
               using std::operator>;
 
@@ -1067,9 +1067,9 @@ namespace micro_os_plus::micro_test_plus
 #endif
 #endif
               if constexpr (type_traits::has_value_v<
-                                TLhs> and type_traits::has_value_v<TRhs>)
+                                Lhs_T> and type_traits::has_value_v<Rhs_T>)
                 {
-                  return TLhs::value > TRhs::value;
+                  return Lhs_T::value > Rhs_T::value;
                 }
               else
                 {
@@ -1097,18 +1097,18 @@ namespace micro_os_plus::micro_test_plus
         return get (rhs_);
       }
 
-      const TLhs lhs_{};
-      const TRhs rhs_{};
+      const Lhs_T lhs_{};
+      const Rhs_T rhs_{};
       const bool value_{};
     };
 
     /**
      * @brief Greater than or equal comparator.
      */
-    template <class TLhs, class TRhs>
+    template <class Lhs_T, class Rhs_T>
     struct ge_ : op
     {
-      constexpr ge_ (const TLhs& lhs = {}, const TRhs& rhs = {})
+      constexpr ge_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
           : lhs_{ lhs }, rhs_{ rhs }, value_{ [&] {
               using std::operator>=;
 
@@ -1123,9 +1123,9 @@ namespace micro_os_plus::micro_test_plus
 #endif
 #endif
               if constexpr (type_traits::has_value_v<
-                                TLhs> and type_traits::has_value_v<TRhs>)
+                                Lhs_T> and type_traits::has_value_v<Rhs_T>)
                 {
-                  return TLhs::value >= TRhs::value;
+                  return Lhs_T::value >= Rhs_T::value;
                 }
               else
                 {
@@ -1153,18 +1153,18 @@ namespace micro_os_plus::micro_test_plus
         return get (rhs_);
       }
 
-      const TLhs lhs_{};
-      const TRhs rhs_{};
+      const Lhs_T lhs_{};
+      const Rhs_T rhs_{};
       const bool value_{};
     };
 
     /**
      * @brief Less than comparator.
      */
-    template <class TLhs, class TRhs>
+    template <class Lhs_T, class Rhs_T>
     struct lt_ : op
     {
-      constexpr lt_ (const TLhs& lhs = {}, const TRhs& rhs = {})
+      constexpr lt_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
           : lhs_{ lhs }, rhs_{ rhs }, value_{ [&] {
               using std::operator<;
 
@@ -1179,9 +1179,9 @@ namespace micro_os_plus::micro_test_plus
 #endif
 #endif
               if constexpr (type_traits::has_value_v<
-                                TLhs> and type_traits::has_value_v<TRhs>)
+                                Lhs_T> and type_traits::has_value_v<Rhs_T>)
                 {
-                  return TLhs::value < TRhs::value;
+                  return Lhs_T::value < Rhs_T::value;
                 }
               else
                 {
@@ -1210,18 +1210,18 @@ namespace micro_os_plus::micro_test_plus
       }
 
     private:
-      const TLhs lhs_{};
-      const TRhs rhs_{};
+      const Lhs_T lhs_{};
+      const Rhs_T rhs_{};
       const bool value_{};
     };
 
     /**
      * @brief Less than or equal comparator.
      */
-    template <class TLhs, class TRhs>
+    template <class Lhs_T, class Rhs_T>
     struct le_ : op
     {
-      constexpr le_ (const TLhs& lhs = {}, const TRhs& rhs = {})
+      constexpr le_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
           : lhs_{ lhs }, rhs_{ rhs }, value_{ [&] {
               using std::operator<=;
 
@@ -1236,9 +1236,9 @@ namespace micro_os_plus::micro_test_plus
 #endif
 #endif
               if constexpr (type_traits::has_value_v<
-                                TLhs> and type_traits::has_value_v<TRhs>)
+                                Lhs_T> and type_traits::has_value_v<Rhs_T>)
                 {
-                  return TLhs::value <= TRhs::value;
+                  return Lhs_T::value <= Rhs_T::value;
                 }
               else
                 {
@@ -1268,18 +1268,18 @@ namespace micro_os_plus::micro_test_plus
         return get (rhs_);
       }
 
-      const TLhs lhs_{};
-      const TRhs rhs_{};
+      const Lhs_T lhs_{};
+      const Rhs_T rhs_{};
       const bool value_{};
     };
 
     /**
      * @brief Logical and operator.
      */
-    template <class TLhs, class TRhs>
+    template <class Lhs_T, class Rhs_T>
     struct and_ : op
     {
-      constexpr and_ (const TLhs& lhs = {}, const TRhs& rhs = {})
+      constexpr and_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
           : lhs_{ lhs }, rhs_{ rhs }, value_{ static_cast<bool> (lhs)
                                               and static_cast<bool> (rhs) }
       {
@@ -1302,18 +1302,18 @@ namespace micro_os_plus::micro_test_plus
         return get (rhs_);
       }
 
-      const TLhs lhs_{};
-      const TRhs rhs_{};
+      const Lhs_T lhs_{};
+      const Rhs_T rhs_{};
       const bool value_{};
     };
 
     /**
      * @brief Logical or operator.
      */
-    template <class TLhs, class TRhs>
+    template <class Lhs_T, class Rhs_T>
     struct or_ : op
     {
-      constexpr or_ (const TLhs& lhs = {}, const TRhs& rhs = {})
+      constexpr or_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
           : lhs_{ lhs }, rhs_{ rhs }, value_{ static_cast<bool> (lhs)
                                               or static_cast<bool> (rhs) }
       {
@@ -1334,8 +1334,8 @@ namespace micro_os_plus::micro_test_plus
         return get (rhs_);
       }
 
-      const TLhs lhs_{};
-      const TRhs rhs_{};
+      const Lhs_T lhs_{};
+      const Rhs_T rhs_{};
       const bool value_{};
     };
 
@@ -1368,16 +1368,16 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Operator to check if expression throws a specific exception.
      */
-    template <class TExpr, class TException = void>
+    template <class Expr_T, class Exception_T = void>
     struct throws_ : op
     {
-      constexpr explicit throws_ (const TExpr& expr)
+      constexpr explicit throws_ (const Expr_T& expr)
           : value_{ [&expr] {
               try
                 {
                   expr ();
                 }
-              catch (const TException&)
+              catch (const Exception_T&)
                 {
                   return true;
                 }
@@ -1401,10 +1401,10 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Operator to check if expression throws any exception.
      */
-    template <class TExpr>
-    struct throws_<TExpr, void> : op
+    template <class Expr_T>
+    struct throws_<Expr_T, void> : op
     {
-      constexpr explicit throws_ (const TExpr& expr)
+      constexpr explicit throws_ (const Expr_T& expr)
           : value_{ [&expr] {
               try
                 {
@@ -1430,10 +1430,10 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Operator to check if expression does not throw any exception.
      */
-    template <class TExpr>
+    template <class Expr_T>
     struct nothrow_ : op
     {
-      constexpr explicit nothrow_ (const TExpr& expr)
+      constexpr explicit nothrow_ (const Expr_T& expr)
           : value_{ [&expr] {
               try
                 {
@@ -1698,9 +1698,9 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Output operator to display eq() expressions.
      */
-    template <class TLhs, class TRhs>
+    template <class Lhs_T, class Rhs_T>
     auto&
-    operator<< (const detail::eq_<TLhs, TRhs>& op)
+    operator<< (const detail::eq_<Lhs_T, Rhs_T>& op)
     {
       return (*this << color (op) << op.lhs () << " == " << op.rhs ()
                     << colors_.none);
@@ -1709,9 +1709,9 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Output operator to display ne() expressions.
      */
-    template <class TLhs, class TRhs>
+    template <class Lhs_T, class Rhs_T>
     auto&
-    operator<< (const detail::ne_<TLhs, TRhs>& op)
+    operator<< (const detail::ne_<Lhs_T, Rhs_T>& op)
     {
       return (*this << color (op) << op.lhs () << " != " << op.rhs ()
                     << colors_.none);
@@ -1720,9 +1720,9 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Output operator to display gt() expressions.
      */
-    template <class TLhs, class TRhs>
+    template <class Lhs_T, class Rhs_T>
     auto&
-    operator<< (const detail::gt_<TLhs, TRhs>& op)
+    operator<< (const detail::gt_<Lhs_T, Rhs_T>& op)
     {
       return (*this << color (op) << op.lhs () << " > " << op.rhs ()
                     << colors_.none);
@@ -1731,9 +1731,9 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Output operator to display ge() expressions.
      */
-    template <class TLhs, class TRhs>
+    template <class Lhs_T, class Rhs_T>
     auto&
-    operator<< (const detail::ge_<TLhs, TRhs>& op)
+    operator<< (const detail::ge_<Lhs_T, Rhs_T>& op)
     {
       return (*this << color (op) << op.lhs () << " >= " << op.rhs ()
                     << colors_.none);
@@ -1742,9 +1742,9 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Output operator to display lt() expressions.
      */
-    template <class TLhs, class TRhs>
+    template <class Lhs_T, class Rhs_T>
     auto&
-    operator<< (const detail::lt_<TRhs, TLhs>& op)
+    operator<< (const detail::lt_<Rhs_T, Lhs_T>& op)
     {
       return (*this << color (op) << op.lhs () << " < " << op.rhs ()
                     << colors_.none);
@@ -1753,9 +1753,9 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Output operator to display le() expressions.
      */
-    template <class TLhs, class TRhs>
+    template <class Lhs_T, class Rhs_T>
     auto&
-    operator<< (const detail::le_<TRhs, TLhs>& op)
+    operator<< (const detail::le_<Rhs_T, Lhs_T>& op)
     {
       return (*this << color (op) << op.lhs () << " <= " << op.rhs ()
                     << colors_.none);
@@ -1764,9 +1764,9 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Output operator to display and() expressions.
      */
-    template <class TLhs, class TRhs>
+    template <class Lhs_T, class Rhs_T>
     auto&
-    operator<< (const detail::and_<TLhs, TRhs>& op)
+    operator<< (const detail::and_<Lhs_T, Rhs_T>& op)
     {
       return (*this << '(' << op.lhs () << color (op) << " and "
                     << colors_.none << op.rhs () << ')');
@@ -1775,9 +1775,9 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Output operator to display or() expressions.
      */
-    template <class TLhs, class TRhs>
+    template <class Lhs_T, class Rhs_T>
     auto&
-    operator<< (const detail::or_<TLhs, TRhs>& op)
+    operator<< (const detail::or_<Lhs_T, Rhs_T>& op)
     {
       return (*this << '(' << op.lhs () << color (op) << " or " << colors_.none
                     << op.rhs () << ')');
@@ -1794,25 +1794,25 @@ namespace micro_os_plus::micro_test_plus
     }
 
 #if defined(__cpp_exceptions)
-    template <class TExpr, class TException>
+    template <class Expr_T, class Exception_T>
     auto&
-    operator<< (const detail::throws_<TExpr, TException>& op)
+    operator<< (const detail::throws_<Expr_T, Exception_T>& op)
     {
       return (*this << color (op) << "throws<"
-                    << reflection::type_name<TException> () << ">"
+                    << reflection::type_name<Exception_T> () << ">"
                     << colors_.none);
     }
 
-    template <class TExpr>
+    template <class Expr_T>
     auto&
-    operator<< (const detail::throws_<TExpr, void>& op)
+    operator<< (const detail::throws_<Expr_T, void>& op)
     {
       return (*this << color (op) << "throws" << colors_.none);
     }
 
-    template <class TExpr>
+    template <class Expr_T>
     auto&
-    operator<< (const detail::nothrow_<TExpr>& op)
+    operator<< (const detail::nothrow_<Expr_T>& op)
     {
       return (*this << color (op) << "nothrow" << colors_.none);
     }
@@ -1823,9 +1823,9 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Report a passed condition.
      */
-    template <class TExpr>
+    template <class Expr_T>
     auto
-    pass (detail::assertion<TExpr> assertion) -> void
+    pass (detail::assertion<Expr_T> assertion) -> void
     {
       *this << colors_.pass << "    ✓ ";
       if (strlen (assertion.message))
@@ -1848,9 +1848,9 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Report a failed condition.
      */
-    template <class TExpr>
+    template <class Expr_T>
     auto
-    fail (detail::assertion<TExpr> assertion) -> void
+    fail (detail::assertion<Expr_T> assertion) -> void
     {
       *this << colors_.fail << "    ✗ ";
       if (strlen (assertion.message))
@@ -1888,26 +1888,26 @@ namespace micro_os_plus::micro_test_plus
 
   namespace detail
   {
-    template <class TExpr>
+    template <class Expr_T>
     [[nodiscard]] auto
-    evaluate_and_report_ (detail::assertion<TExpr> assertion) -> bool
+    evaluate_and_report_ (detail::assertion<Expr_T> assertion) -> bool
     {
       // This cast calls the bool operator, which evaluates the expression.
       if (static_cast<bool> (assertion.expr))
         {
           reporter.pass (
-              detail::assertion<TExpr>{ .expr = assertion.expr,
-                                        .abort = assertion.abort,
-                                        .message = assertion.message,
-                                        .location = assertion.location });
+              detail::assertion<Expr_T>{ .expr = assertion.expr,
+                                         .abort = assertion.abort,
+                                         .message = assertion.message,
+                                         .location = assertion.location });
           return true;
         }
 
       reporter.fail (
-          detail::assertion<TExpr>{ .expr = assertion.expr,
-                                    .abort = assertion.abort,
-                                    .message = assertion.message,
-                                    .location = assertion.location });
+          detail::assertion<Expr_T>{ .expr = assertion.expr,
+                                     .abort = assertion.abort,
+                                     .message = assertion.message,
+                                     .location = assertion.location });
       if (assertion.abort)
         {
           current_test_suite->end ();
@@ -2100,75 +2100,77 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
   // Public API.
 
-  template <class TExpr = bool>
+  template <class Expr_T = bool>
   constexpr auto
   pass (const char* message = "passed",
         const reflection::source_location& sl
         = reflection::source_location::current ())
   {
-    return detail::evaluate_and_report_<TExpr> (detail::assertion<TExpr>{
+    return detail::evaluate_and_report_<Expr_T> (detail::assertion<Expr_T>{
         .expr = true, .abort = false, .message = message, .location = sl });
   }
 
-  template <class TExpr = bool>
+  template <class Expr_T = bool>
   constexpr auto
   fail (const char* message = "...", const reflection::source_location& sl
                                      = reflection::source_location::current ())
   {
-    return detail::evaluate_and_report_<TExpr> (detail::assertion<TExpr>{
+    return detail::evaluate_and_report_<Expr_T> (detail::assertion<Expr_T>{
         .expr = false, .abort = false, .message = message, .location = sl });
   }
 
   /**
    * @brief The generic evaluation function.
    */
-  template <class TExpr,
-            type_traits::requires_t<
-                type_traits::is_op_v<
-                    TExpr> or type_traits::is_convertible_v<TExpr, bool>> = 0>
+  template <
+      class Expr_T,
+      type_traits::requires_t<
+          type_traits::is_op_v<
+              Expr_T> or type_traits::is_convertible_v<Expr_T, bool>> = 0>
   constexpr auto
-  expect (const TExpr& expr, const char* message = "",
+  expect (const Expr_T& expr, const char* message = "",
           const reflection::source_location& sl
           = reflection::source_location::current ())
   {
-    return detail::evaluate_and_report_<TExpr> (detail::assertion<TExpr>{
+    return detail::evaluate_and_report_<Expr_T> (detail::assertion<Expr_T>{
         .expr = expr, .abort = false, .message = message, .location = sl });
   }
 
   /**
    * @brief The generic evaluation function.
    */
-  template <class TExpr,
-            type_traits::requires_t<
-                type_traits::is_op_v<
-                    TExpr> or type_traits::is_convertible_v<TExpr, bool>> = 0>
+  template <
+      class Expr_T,
+      type_traits::requires_t<
+          type_traits::is_op_v<
+              Expr_T> or type_traits::is_convertible_v<Expr_T, bool>> = 0>
   constexpr auto
-  assume (const TExpr& expr, const char* message = "",
+  assume (const Expr_T& expr, const char* message = "",
           const reflection::source_location& sl
           = reflection::source_location::current ())
   {
-    return detail::evaluate_and_report_<TExpr> (detail::assertion<TExpr>{
+    return detail::evaluate_and_report_<Expr_T> (detail::assertion<Expr_T>{
         .expr = expr, .abort = true, .message = message, .location = sl });
   }
 
 #if defined(__cpp_exceptions)
-  template <class TException, class TExpr>
+  template <class Exception_T, class Expr_T>
   [[nodiscard]] constexpr auto
-  throws (const TExpr& expr)
+  throws (const Expr_T& expr)
   {
-    return detail::throws_<TExpr, TException>{ expr };
+    return detail::throws_<Expr_T, Exception_T>{ expr };
   }
 
-  template <class TExpr>
+  template <class Expr_T>
   [[nodiscard]] constexpr auto
-  throws (const TExpr& expr)
+  throws (const Expr_T& expr)
   {
-    return detail::throws_<TExpr>{ expr };
+    return detail::throws_<Expr_T>{ expr };
   }
 
-  template <class TExpr>
+  template <class Expr_T>
   [[nodiscard]] constexpr auto
-  nothrow (const TExpr& expr)
+  nothrow (const Expr_T& expr)
   {
     return detail::nothrow_{ expr };
   }
@@ -2177,9 +2179,9 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Generic equality comparator.
    */
-  template <class TLhs, class TRhs>
+  template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  eq (const TLhs& lhs, const TRhs& rhs)
+  eq (const Lhs_T& lhs, const Rhs_T& rhs)
   {
     return detail::eq_{ lhs, rhs };
   }
@@ -2187,9 +2189,9 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Pointer equality comparator.
    */
-  template <class TLhs, class TRhs>
+  template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  eq (TLhs* lhs, TRhs* rhs)
+  eq (Lhs_T* lhs, Rhs_T* rhs)
   {
     return detail::eq_{ lhs, rhs };
   }
@@ -2197,9 +2199,9 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Generic non-equality comparator.
    */
-  template <class TLhs, class TRhs>
+  template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  ne (const TLhs& lhs, const TRhs& rhs)
+  ne (const Lhs_T& lhs, const Rhs_T& rhs)
   {
     return detail::ne_{ lhs, rhs };
   }
@@ -2207,9 +2209,9 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Pointer non-equality comparator.
    */
-  template <class TLhs, class TRhs>
+  template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  ne (TLhs* lhs, TRhs* rhs)
+  ne (Lhs_T* lhs, Rhs_T* rhs)
   {
     return detail::ne_{ lhs, rhs };
   }
@@ -2217,9 +2219,9 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Generic greater than comparator.
    */
-  template <class TLhs, class TRhs>
+  template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  gt (const TLhs& lhs, const TRhs& rhs)
+  gt (const Lhs_T& lhs, const Rhs_T& rhs)
   {
     return detail::gt_{ lhs, rhs };
   }
@@ -2227,9 +2229,9 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Pointer greater than comparator.
    */
-  template <class TLhs, class TRhs>
+  template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  gt (TLhs* lhs, TRhs* rhs)
+  gt (Lhs_T* lhs, Rhs_T* rhs)
   {
     return detail::gt_{ lhs, rhs };
   }
@@ -2237,9 +2239,9 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Generic greater than or equal comparator.
    */
-  template <class TLhs, class TRhs>
+  template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  ge (const TLhs& lhs, const TRhs& rhs)
+  ge (const Lhs_T& lhs, const Rhs_T& rhs)
   {
     return detail::ge_{ lhs, rhs };
   }
@@ -2247,9 +2249,9 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Pointer greater than or equal comparator.
    */
-  template <class TLhs, class TRhs>
+  template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  ge (TLhs* lhs, TRhs* rhs)
+  ge (Lhs_T* lhs, Rhs_T* rhs)
   {
     return detail::ge_{ lhs, rhs };
   }
@@ -2257,9 +2259,9 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Generic less than comparator.
    */
-  template <class TLhs, class TRhs>
+  template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  lt (const TLhs& lhs, const TRhs& rhs)
+  lt (const Lhs_T& lhs, const Rhs_T& rhs)
   {
     return detail::lt_{ lhs, rhs };
   }
@@ -2267,9 +2269,9 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Generic less than comparator.
    */
-  template <class TLhs, class TRhs>
+  template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  lt (TLhs* lhs, TRhs* rhs)
+  lt (Lhs_T* lhs, Rhs_T* rhs)
   {
     return detail::lt_{ lhs, rhs };
   }
@@ -2277,9 +2279,9 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Generic less than or equal comparator.
    */
-  template <class TLhs, class TRhs>
+  template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  le (const TLhs& lhs, const TRhs& rhs)
+  le (const Lhs_T& lhs, const Rhs_T& rhs)
   {
     return detail::le_{ lhs, rhs };
   }
@@ -2287,51 +2289,51 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Generic less than or equal comparator.
    */
-  template <class TLhs, class TRhs>
+  template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  le (TLhs* lhs, TRhs* rhs)
+  le (Lhs_T* lhs, Rhs_T* rhs)
   {
     return detail::le_{ lhs, rhs };
   }
 
-  template <class TExpr>
+  template <class Expr_T>
   [[nodiscard]] constexpr auto
-  _not (const TExpr* expr)
+  _not (const Expr_T* expr)
   {
     return detail::not_{ expr };
   }
 
-  template <class TExpr>
+  template <class Expr_T>
   [[nodiscard]] constexpr auto
-  _not (const TExpr& expr)
+  _not (const Expr_T& expr)
   {
     return detail::not_{ expr };
   }
 
-  template <class TLhs, class TRhs>
+  template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  _and (const TLhs& lhs, const TRhs& rhs)
+  _and (const Lhs_T& lhs, const Rhs_T& rhs)
   {
     return detail::and_{ lhs, rhs };
   }
 
-  template <class TLhs, class TRhs>
+  template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  _and (const TLhs* lhs, const TRhs* rhs)
+  _and (const Lhs_T* lhs, const Rhs_T* rhs)
   {
     return detail::and_{ lhs, rhs };
   }
 
-  template <class TLhs, class TRhs>
+  template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  _or (const TLhs& lhs, const TRhs& rhs)
+  _or (const Lhs_T& lhs, const Rhs_T& rhs)
   {
     return detail::or_{ lhs, rhs };
   }
 
-  template <class TLhs, class TRhs>
+  template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  _or (const TLhs* lhs, const TRhs* rhs)
+  _or (const Lhs_T* lhs, const Rhs_T* rhs)
   {
     return detail::or_{ lhs, rhs };
   }
@@ -2411,81 +2413,81 @@ namespace micro_os_plus::micro_test_plus
     }
 
     template <
-        class TLhs, class TRhs,
+        class Lhs_T, class Rhs_T,
         type_traits::requires_t<
-            type_traits::is_op_v<TLhs> or type_traits::is_op_v<TRhs>> = 0>
+            type_traits::is_op_v<Lhs_T> or type_traits::is_op_v<Rhs_T>> = 0>
     [[nodiscard]] constexpr auto
-    operator== (const TLhs& lhs, const TRhs& rhs)
+    operator== (const Lhs_T& lhs, const Rhs_T& rhs)
     {
       return detail::eq_{ lhs, rhs };
     }
 
     template <
-        class TLhs, class TRhs,
+        class Lhs_T, class Rhs_T,
         type_traits::requires_t<
-            type_traits::is_op_v<TLhs> or type_traits::is_op_v<TRhs>> = 0>
+            type_traits::is_op_v<Lhs_T> or type_traits::is_op_v<Rhs_T>> = 0>
     [[nodiscard]] constexpr auto
-    operator!= (const TLhs& lhs, const TRhs& rhs)
+    operator!= (const Lhs_T& lhs, const Rhs_T& rhs)
     {
       return detail::ne_{ lhs, rhs };
     }
 
     template <
-        class TLhs, class TRhs,
+        class Lhs_T, class Rhs_T,
         type_traits::requires_t<
-            type_traits::is_op_v<TLhs> or type_traits::is_op_v<TRhs>> = 0>
+            type_traits::is_op_v<Lhs_T> or type_traits::is_op_v<Rhs_T>> = 0>
     [[nodiscard]] constexpr auto
-    operator> (const TLhs& lhs, const TRhs& rhs)
+    operator> (const Lhs_T& lhs, const Rhs_T& rhs)
     {
       return detail::gt_{ lhs, rhs };
     }
 
     template <
-        class TLhs, class TRhs,
+        class Lhs_T, class Rhs_T,
         type_traits::requires_t<
-            type_traits::is_op_v<TLhs> or type_traits::is_op_v<TRhs>> = 0>
+            type_traits::is_op_v<Lhs_T> or type_traits::is_op_v<Rhs_T>> = 0>
     [[nodiscard]] constexpr auto
-    operator>= (const TLhs& lhs, const TRhs& rhs)
+    operator>= (const Lhs_T& lhs, const Rhs_T& rhs)
     {
       return detail::ge_{ lhs, rhs };
     }
 
     template <
-        class TLhs, class TRhs,
+        class Lhs_T, class Rhs_T,
         type_traits::requires_t<
-            type_traits::is_op_v<TLhs> or type_traits::is_op_v<TRhs>> = 0>
+            type_traits::is_op_v<Lhs_T> or type_traits::is_op_v<Rhs_T>> = 0>
     [[nodiscard]] constexpr auto
-    operator< (const TLhs& lhs, const TRhs& rhs)
+    operator< (const Lhs_T& lhs, const Rhs_T& rhs)
     {
       return detail::lt_{ lhs, rhs };
     }
 
     template <
-        class TLhs, class TRhs,
+        class Lhs_T, class Rhs_T,
         type_traits::requires_t<
-            type_traits::is_op_v<TLhs> or type_traits::is_op_v<TRhs>> = 0>
+            type_traits::is_op_v<Lhs_T> or type_traits::is_op_v<Rhs_T>> = 0>
     [[nodiscard]] constexpr auto
-    operator<= (const TLhs& lhs, const TRhs& rhs)
+    operator<= (const Lhs_T& lhs, const Rhs_T& rhs)
     {
       return detail::le_{ lhs, rhs };
     }
 
     template <
-        class TLhs, class TRhs,
+        class Lhs_T, class Rhs_T,
         type_traits::requires_t<
-            type_traits::is_op_v<TLhs> or type_traits::is_op_v<TRhs>> = 0>
+            type_traits::is_op_v<Lhs_T> or type_traits::is_op_v<Rhs_T>> = 0>
     [[nodiscard]] constexpr auto
-    operator and (const TLhs& lhs, const TRhs& rhs)
+    operator and (const Lhs_T& lhs, const Rhs_T& rhs)
     {
       return detail::and_{ lhs, rhs };
     }
 
     template <
-        class TLhs, class TRhs,
+        class Lhs_T, class Rhs_T,
         type_traits::requires_t<
-            type_traits::is_op_v<TLhs> or type_traits::is_op_v<TRhs>> = 0>
+            type_traits::is_op_v<Lhs_T> or type_traits::is_op_v<Rhs_T>> = 0>
     [[nodiscard]] constexpr auto
-    operator or (const TLhs& lhs, const TRhs& rhs)
+    operator or (const Lhs_T& lhs, const Rhs_T& rhs)
     {
       return detail::or_{ lhs, rhs };
     }
