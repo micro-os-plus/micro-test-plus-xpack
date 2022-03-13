@@ -370,65 +370,6 @@ namespace micro_os_plus::micro_test_plus
       return get_impl (t, 0);
     }
 
-
-#if 0
-    /**
-     * @brief Class defining an internal type.
-     * It has == and != operators to check if the type is the same
-     * with other types.
-     */
-    template <class T>
-    struct type_ : type_traits::op
-    {
-      template <class Other_T>
-      [[nodiscard]] constexpr auto
-      operator() (const Other_T&) const -> const type_<Other_T>
-      {
-        return {};
-      }
-
-      [[nodiscard]] constexpr auto
-      operator== (type_<T>) -> bool
-      {
-        return true;
-      }
-
-      template <class Other_T>
-      [[nodiscard]] constexpr auto
-      operator== (type_<Other_T>) -> bool
-      {
-        return false;
-      }
-
-      template <class Other_T>
-      [[nodiscard]] constexpr auto
-      operator== (const Other_T&) -> bool
-      {
-        return std::is_same_v<Other_T, T>;
-      }
-
-      [[nodiscard]] constexpr auto
-      operator!= (type_<T>) -> bool
-      {
-        return true;
-      }
-
-      template <class Other_T>
-      [[nodiscard]] constexpr auto
-      operator!= (type_<Other_T>) -> bool
-      {
-        return true;
-      }
-
-      template <class Other_T>
-      [[nodiscard]] constexpr auto
-      operator!= (const Other_T&) -> bool
-      {
-        return not std::is_same_v<Other_T, T>;
-      }
-    };
-#endif
-
     /**
      * @brief Class defining a generic value, accessible via a getter.
      */
