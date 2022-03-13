@@ -191,7 +191,10 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
   // --------------------------------------------------------------------------
 
   test_case ("Check if pass() always succeeds", [] {
-    pass ("it passed");
+    pass ();
+    local_counts.passed++;
+
+    pass ("xyz passed");
     local_counts.passed++;
 
     local_counts.test_cases++;
@@ -204,7 +207,10 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
   // --------------------------------------------------------------------------
 
   test_case ("Check if fail() always fails", [] {
-    fail ("fail()...");
+    fail ();
+    local_counts.failed++;
+
+    fail ("xyz...");
     local_counts.failed++;
 
     local_counts.test_cases++;
@@ -264,7 +270,7 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     {
       using namespace literals;
 
-      expect (eq (42_i, 42_i), "42_i == 42_i");
+      expect (eq (42_i, 42_i));
       local_counts.passed++;
 
       expect (eq (42, 42_i), "42 == 42_i");
@@ -304,7 +310,7 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     {
       using namespace literals;
 
-      expect (ne (42_i, 42_i), "42_i != 42_i");
+      expect (ne (42_i, 42_i));
       local_counts.failed++;
 
       expect (ne (42, 42_i), "42 != 42_i");
@@ -1272,7 +1278,9 @@ static test_suite ts_misc = {
 
     test_case ("Vector passed", [] {
       expect (eq (std::vector<int>{}, std::vector<int>{}),
-              "vector{ } == vector{}");
+      local_counts.passed++;
+
+      expect (eq (std::vector<int>{}, std::vector<int>{}));
       local_counts.passed++;
 
       expect (eq (std::vector<int>{ 42 }, std::vector<int>{ 42 }),
@@ -1300,7 +1308,9 @@ static test_suite ts_misc = {
 
     test_case ("Vector failed", [] {
       expect (ne (std::vector<int>{}, std::vector<int>{}),
-              "vector{ } != vector{}");
+      local_counts.failed++;
+
+      expect (ne (std::vector<int>{}, std::vector<int>{}));
       local_counts.failed++;
 
       expect (ne (std::vector<int>{ 42 }, std::vector<int>{ 42 }),
