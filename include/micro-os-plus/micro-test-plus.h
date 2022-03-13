@@ -51,6 +51,7 @@
 #include "reflection.h"
 #include "math.h"
 #include "type_traits.h"
+#include "literals.h"
 
 // ----------------------------------------------------------------------------
 
@@ -369,73 +370,6 @@ namespace micro_os_plus::micro_test_plus
     {
       return get_impl (t, 0);
     }
-
-    /**
-     * @brief Class defining a generic value, accessible via a getter.
-     */
-    template <class T, class = int>
-    struct value : type_traits::op
-    {
-      using value_type = T;
-
-      constexpr value (const T& _value) : value_{ _value }
-      {
-      }
-
-      [[nodiscard]] constexpr explicit operator T () const
-      {
-        return value_;
-      }
-
-      [[nodiscard]] constexpr decltype (auto)
-      get () const
-      {
-        return value_;
-      }
-
-      T value_{};
-    };
-
-    /**
-     * @brief A generic value used to define floating points, which,
-     * in addition to the actual value, has an epsilon, to use the
-     * desired precision during comparisons.
-     * If missing, the default is 1 / (10^decimals).
-     */
-    template <class T>
-    struct value<T,
-                 type_traits::requires_t<type_traits::is_floating_point_v<T>>>
-        : type_traits::op
-    {
-      using value_type = T;
-      static inline auto epsilon = T{}; // Why static?
-
-      constexpr value (const T& _value, const T precision) : value_{ _value }
-      {
-        epsilon = precision;
-      }
-
-      constexpr /*explicit(false)*/ value (const T& val)
-          : value{ val,
-                   T (1)
-                       / math::pow (T (10),
-                                    math::den_size<unsigned long long> (val)) }
-      {
-      }
-
-      [[nodiscard]] constexpr explicit operator T () const
-      {
-        return value_;
-      }
-
-      [[nodiscard]] constexpr decltype (auto)
-      get () const
-      {
-        return value_;
-      }
-
-      T value_{};
-    };
 
     // ------------------------------------------------------------------------
 
@@ -1554,34 +1488,34 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
-  using _b = detail::value<bool>;
-  using _c = detail::value<char>;
-  using _sc = detail::value<signed char>;
-  using _s = detail::value<short>;
-  using _i = detail::value<int>;
-  using _l = detail::value<long>;
-  using _ll = detail::value<long long>;
-  using _u = detail::value<unsigned>;
-  using _uc = detail::value<unsigned char>;
-  using _us = detail::value<unsigned short>;
-  using _ul = detail::value<unsigned long>;
-  using _ull = detail::value<unsigned long long>;
-  using _i8 = detail::value<std::int8_t>;
-  using _i16 = detail::value<std::int16_t>;
-  using _i32 = detail::value<std::int32_t>;
-  using _i64 = detail::value<std::int64_t>;
-  using _u8 = detail::value<std::uint8_t>;
-  using _u16 = detail::value<std::uint16_t>;
-  using _u32 = detail::value<std::uint32_t>;
-  using _u64 = detail::value<std::uint64_t>;
-  using _f = detail::value<float>;
-  using _d = detail::value<double>;
-  using _ld = detail::value<long double>;
+  using _b = type_traits::value<bool>;
+  using _c = type_traits::value<char>;
+  using _sc = type_traits::value<signed char>;
+  using _s = type_traits::value<short>;
+  using _i = type_traits::value<int>;
+  using _l = type_traits::value<long>;
+  using _ll = type_traits::value<long long>;
+  using _u = type_traits::value<unsigned>;
+  using _uc = type_traits::value<unsigned char>;
+  using _us = type_traits::value<unsigned short>;
+  using _ul = type_traits::value<unsigned long>;
+  using _ull = type_traits::value<unsigned long long>;
+  using _i8 = type_traits::value<std::int8_t>;
+  using _i16 = type_traits::value<std::int16_t>;
+  using _i32 = type_traits::value<std::int32_t>;
+  using _i64 = type_traits::value<std::int64_t>;
+  using _u8 = type_traits::value<std::uint8_t>;
+  using _u16 = type_traits::value<std::uint16_t>;
+  using _u32 = type_traits::value<std::uint32_t>;
+  using _u64 = type_traits::value<std::uint64_t>;
+  using _f = type_traits::value<float>;
+  using _d = type_traits::value<double>;
+  using _ld = type_traits::value<long double>;
 
   template <class T>
-  struct _t : detail::value<T>
+  struct _t : type_traits::value<T>
   {
-    constexpr explicit _t (const T& t) : detail::value<T>{ t }
+    constexpr explicit _t (const T& t) : type_traits::value<T>{ t }
     {
     }
   };

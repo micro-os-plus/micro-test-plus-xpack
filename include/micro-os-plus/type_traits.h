@@ -23,11 +23,14 @@
 
 // ----------------------------------------------------------------------------
 
+#include "math.h"
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-c++11-c++14-compat"
+#pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
 #pragma clang diagnostic ignored "-Wc++98-compat-unnamed-type-template-args"
 #endif
 #endif
@@ -254,6 +257,73 @@ namespace micro_os_plus::micro_test_plus
 
     template <class T>
     inline constexpr auto is_op_v = __is_base_of(type_traits::op, T);
+
+    /**
+     * @brief Class defining a generic value, accessible via a getter.
+     */
+    template <class T, class = int>
+    struct value : type_traits::op
+    {
+      using value_type = T;
+
+      constexpr value (const T& _value) : value_{ _value }
+      {
+      }
+
+      [[nodiscard]] constexpr explicit operator T () const
+      {
+        return value_;
+      }
+
+      [[nodiscard]] constexpr decltype (auto)
+      get () const
+      {
+        return value_;
+      }
+
+      T value_{};
+    };
+
+    /**
+     * @brief A generic value used to define floating points, which,
+     * in addition to the actual value, has an epsilon, to use the
+     * desired precision during comparisons.
+     * If missing, the default is 1 / (10^decimals).
+     */
+    template <class T>
+    struct value<T,
+                 type_traits::requires_t<type_traits::is_floating_point_v<T>>>
+        : type_traits::op
+    {
+      using value_type = T;
+      static inline auto epsilon = T{}; // Why static?
+
+      constexpr value (const T& _value, const T precision) : value_{ _value }
+      {
+        epsilon = precision;
+      }
+
+      constexpr /*explicit(false)*/ value (const T& val)
+          : value{ val,
+                   T (1)
+                       / math::pow (T (10),
+                                    math::den_size<unsigned long long> (val)) }
+      {
+      }
+
+      [[nodiscard]] constexpr explicit operator T () const
+      {
+        return value_;
+      }
+
+      [[nodiscard]] constexpr decltype (auto)
+      get () const
+      {
+        return value_;
+      }
+
+      T value_{};
+    };
 
   } // namespace type_traits
 
