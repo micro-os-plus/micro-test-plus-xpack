@@ -1488,38 +1488,6 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
-  using _b = type_traits::value<bool>;
-  using _c = type_traits::value<char>;
-  using _sc = type_traits::value<signed char>;
-  using _s = type_traits::value<short>;
-  using _i = type_traits::value<int>;
-  using _l = type_traits::value<long>;
-  using _ll = type_traits::value<long long>;
-  using _u = type_traits::value<unsigned>;
-  using _uc = type_traits::value<unsigned char>;
-  using _us = type_traits::value<unsigned short>;
-  using _ul = type_traits::value<unsigned long>;
-  using _ull = type_traits::value<unsigned long long>;
-  using _i8 = type_traits::value<std::int8_t>;
-  using _i16 = type_traits::value<std::int16_t>;
-  using _i32 = type_traits::value<std::int32_t>;
-  using _i64 = type_traits::value<std::int64_t>;
-  using _u8 = type_traits::value<std::uint8_t>;
-  using _u16 = type_traits::value<std::uint16_t>;
-  using _u32 = type_traits::value<std::uint32_t>;
-  using _u64 = type_traits::value<std::uint64_t>;
-  using _f = type_traits::value<float>;
-  using _d = type_traits::value<double>;
-  using _ld = type_traits::value<long double>;
-
-  template <class T>
-  struct _t : type_traits::value<T>
-  {
-    constexpr explicit _t (const T& t) : type_traits::value<T>{ t }
-    {
-    }
-  };
-
   namespace operators
   {
     [[nodiscard]] constexpr auto
