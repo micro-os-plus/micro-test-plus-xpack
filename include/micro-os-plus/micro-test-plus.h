@@ -387,9 +387,9 @@ namespace micro_os_plus::micro_test_plus
     template <class T>
     struct type_ : op
     {
-      template <class TOther>
+      template <class Other_T>
       [[nodiscard]] constexpr auto
-      operator() (const TOther&) const -> const type_<TOther>
+      operator() (const Other_T&) const -> const type_<Other_T>
       {
         return {};
       }
@@ -400,18 +400,18 @@ namespace micro_os_plus::micro_test_plus
         return true;
       }
 
-      template <class TOther>
+      template <class Other_T>
       [[nodiscard]] constexpr auto
-      operator== (type_<TOther>) -> bool
+      operator== (type_<Other_T>) -> bool
       {
         return false;
       }
 
-      template <class TOther>
+      template <class Other_T>
       [[nodiscard]] constexpr auto
-      operator== (const TOther&) -> bool
+      operator== (const Other_T&) -> bool
       {
-        return std::is_same_v<TOther, T>;
+        return std::is_same_v<Other_T, T>;
       }
 
       [[nodiscard]] constexpr auto
@@ -420,18 +420,18 @@ namespace micro_os_plus::micro_test_plus
         return true;
       }
 
-      template <class TOther>
+      template <class Other_T>
       [[nodiscard]] constexpr auto
-      operator!= (type_<TOther>) -> bool
+      operator!= (type_<Other_T>) -> bool
       {
         return true;
       }
 
-      template <class TOther>
+      template <class Other_T>
       [[nodiscard]] constexpr auto
-      operator!= (const TOther&) -> bool
+      operator!= (const Other_T&) -> bool
       {
-        return not std::is_same_v<TOther, T>;
+        return not std::is_same_v<Other_T, T>;
       }
     };
 
