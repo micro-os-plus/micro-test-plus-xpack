@@ -168,8 +168,30 @@ template <class Lhs_T, class Rhs_T>
 ge(const Lhs_T& lhs, const Rhs_T& rhs);
 ```
 
-Similar templates are defined for traditional string comparators
-(`char*`).
+Similar templates are defined for pointer comparators.
+
+For string comparisons to use the lexicographical order, use `string_view`:
+
+```c++
+#include <string_view>
+using namespace std::literals; // To access the "sv" literal.
+// ...
+
+int
+main (int argc, char* argv[])
+{
+  initialize ("Sample Test", argc, argv);
+
+  test_case ("Check string", [] {
+    expect (eq (std::string_view{ compute_aaa () }, "aaa"sv),
+            "compute_aaa() == 'aaa'");
+  });
+
+  return exit_code ();
+}
+```
+
+
 
 Also at the limit of simplicity, each test case is performed by invoking
 a function, parametrised with a name, a callable, usually a lambda,
