@@ -922,7 +922,8 @@ namespace micro_os_plus::micro_test_plus
                                 TLhs> and type_traits::has_value_v<TRhs>)
                 {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-                  micro_os_plus::trace::printf ("eq_ %s\n", "value == value");
+                  micro_os_plus::trace::printf ("    eq_ %s\n",
+                                                "value == value");
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
                   return TLhs::value == TRhs::value;
                 }
@@ -931,7 +932,8 @@ namespace micro_os_plus::micro_test_plus
                       TLhs> and type_traits::has_epsilon_v<TRhs>)
                 {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-                  micro_os_plus::trace::printf ("eq_ %s\n", "epsilon LR");
+                  micro_os_plus::trace::printf ("    eq_ %s\n",
+                                                "abs < min epsilon LR");
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
                   return math::abs (get (lhs) - get (rhs))
                          < math::min_value (TLhs::epsilon, TRhs::epsilon);
@@ -939,21 +941,24 @@ namespace micro_os_plus::micro_test_plus
               else if constexpr (type_traits::has_epsilon_v<TLhs>)
                 {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-                  micro_os_plus::trace::printf ("eq_ %s\n", "epsilon L");
+                  micro_os_plus::trace::printf ("    eq_ %s\n",
+                                                "abs < epsilon L");
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
                   return math::abs (get (lhs) - get (rhs)) < TLhs::epsilon;
                 }
               else if constexpr (type_traits::has_epsilon_v<TRhs>)
                 {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-                  micro_os_plus::trace::printf ("eq_ %s\n", "epsilon R");
+                  micro_os_plus::trace::printf ("    eq_ %s\n",
+                                                "abs < epsilon R");
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
                   return math::abs (get (lhs) - get (rhs)) < TRhs::epsilon;
                 }
               else
                 {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-                  micro_os_plus::trace::printf ("eq_ %s\n", "get == get");
+                  micro_os_plus::trace::printf ("    eq_ %s\n",
+                                                "get() == get()");
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
                   return get (lhs) == get (rhs);
                 }
