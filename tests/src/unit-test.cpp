@@ -26,7 +26,7 @@
 using namespace std::literals;
 
 using namespace micro_os_plus;
-using namespace micro_test_plus;
+using namespace micro_os_plus::micro_test_plus;
 
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
@@ -41,7 +41,7 @@ using namespace micro_test_plus;
 // ----------------------------------------------------------------------------
 
 // The simple way of testing a testing framework without having to resort to
-// another testing framework, which might have clashing primitives,
+// another testing framework (which might have clashing primitives),
 // is to use traditional asserts. To have some minimal control and do not
 // depend on NDEBUG, define a custom assert locally.
 
@@ -65,7 +65,7 @@ __test_assert (const char* failedexpr, const char* file, int line)
 
 // Each test case exercises a method or a family of methods.
 // After each test case, the caller checks if the counts of
-// passed/failed test cases matches the local counts.
+// passed/failed test conditions matches the local counts.
 
 static struct local_counts_s
 {
@@ -73,6 +73,11 @@ static struct local_counts_s
   int passed;
   int failed;
 } local_counts;
+
+// ----------------------------------------------------------------------------
+
+// Mock functions used to simulate code computing various
+// integer/float/strings.
 
 template <typename T>
 T
@@ -109,22 +114,6 @@ my_actual_float (void)
   return 42.0;
 }
 
-#if 0
-template <typename T>
-T
-my_actual_float_less (void)
-{
-  return 41.0;
-}
-
-template <typename T>
-T
-my_actual_float_more (void)
-{
-  return 43.0;
-}
-#endif
-
 template <typename T>
 T
 my_expected_float (void)
@@ -135,8 +124,9 @@ my_expected_float (void)
 static const char*
 compute_abc (void)
 {
-  // Construct it from parts, otherwise the compiler will coalesce strings
-  // and comparing addresses will match.
+  // Construct it from parts, to catch cases when the comparison is
+  // not done via strcmp(), since the compiler will coalesce strings
+  // and use the same address.
   static char str[10];
   strcpy (str, "ab");
   strcat (str, "c");
@@ -164,12 +154,9 @@ exercise_throw (bool mustThrow)
 // ----------------------------------------------------------------------------
 
 int
-main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
+main (int argc, char* argv[])
 {
-  using namespace micro_test_plus;
-
-  fprintf (stdout,
-           "\nµTest++ unit tests; some checks are expected to fail.\n\n");
+  printf ("\nµTest++ unit tests; some checks are expected to fail.\n\n");
 
   initialize ("Main test suite", argc, argv);
 
@@ -1276,8 +1263,9 @@ static test_suite ts_misc = {
     test_assert (current_test_suite->failed () == local_counts.failed);
     test_assert (current_test_suite->test_cases () == local_counts.test_cases);
 
-    test_case ("Vector passed", [] {
+    test_case ("Vectors passed", [] {
       expect (eq (std::vector<int>{}, std::vector<int>{}),
+              "vector{ } == vector{ }");
       local_counts.passed++;
 
       expect (eq (std::vector<int>{}, std::vector<int>{}));
@@ -1306,8 +1294,9 @@ static test_suite ts_misc = {
     test_assert (current_test_suite->failed () == local_counts.failed);
     test_assert (current_test_suite->test_cases () == local_counts.test_cases);
 
-    test_case ("Vector failed", [] {
+    test_case ("Vectors failed", [] {
       expect (ne (std::vector<int>{}, std::vector<int>{}),
+              "vector{ } != vector{ }");
       local_counts.failed++;
 
       expect (ne (std::vector<int>{}, std::vector<int>{}));
