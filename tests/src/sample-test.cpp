@@ -94,8 +94,8 @@ main (int argc, char* argv[])
 
   // Test equality or logical conditions.
   test_case ("Check various conditions", [] {
-    pass ("Passed");
-    // fail("Failed");
+    pass ("xyz passed");
+    // fail("xyz...");
 
     // Currently only int and long values can be compared.
     // For everything else use casts.
