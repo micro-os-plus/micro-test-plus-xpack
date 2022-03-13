@@ -1257,7 +1257,6 @@ static test_suite ts_passed_floats
                       == local_counts.test_cases);
        } };
 
-#if 1
 static test_suite ts_misc = {
   "Check miscellaneous",
   [] {
@@ -1374,6 +1373,5 @@ static test_suite ts_misc = {
     test_assert (current_test_suite->test_cases () == local_counts.test_cases);
   }
 };
-#endif
 
 // ----------------------------------------------------------------------------
