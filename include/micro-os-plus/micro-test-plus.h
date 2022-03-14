@@ -51,8 +51,7 @@
 #pragma GCC diagnostic ignored "-Wpadded"
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
-// warning: deleted function definitions are incompatible with C++98
-// [-Wc++98-compat]
+#pragma clang diagnostic ignored "-Wmissing-include-dirs"
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
 #pragma clang diagnostic ignored "-Wctad-maybe-unsupported"
