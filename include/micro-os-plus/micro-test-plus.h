@@ -61,6 +61,8 @@
 
 namespace micro_os_plus::micro_test_plus
 {
+  // --------------------------------------------------------------------------
+
   class test_runner;
   class test_reporter;
   class test_suite;
@@ -68,8 +70,6 @@ namespace micro_os_plus::micro_test_plus
   extern test_runner runner;
   extern test_reporter reporter;
   extern test_suite* current_test_suite;
-
-  // --------------------------------------------------------------------------
 
   // --------------------------------------------------------------------------
   // Public API.

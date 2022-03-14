@@ -25,6 +25,8 @@
 
 #include "math.h"
 
+// ----------------------------------------------------------------------------
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -37,6 +39,7 @@
 
 namespace micro_os_plus::micro_test_plus
 {
+  // --------------------------------------------------------------------------
 
   /**
    * @brief Local type traits. Some may have standard equivalents, but

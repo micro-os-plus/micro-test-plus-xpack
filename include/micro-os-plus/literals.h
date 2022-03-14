@@ -26,6 +26,8 @@
 #include "type-traits.h"
 #include "math.h"
 
+// ----------------------------------------------------------------------------
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 //#pragma GCC diagnostic ignored "-Wpadded"
@@ -39,6 +41,8 @@
 
 namespace micro_os_plus::micro_test_plus
 {
+  // --------------------------------------------------------------------------
+
   /**
    * @brief User Defined Literals (UDL). Use them to suffix
    * constants and obtain specific explicit types, like `1_i`.

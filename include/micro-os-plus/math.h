@@ -25,6 +25,8 @@
 
 #include <array>
 
+// ----------------------------------------------------------------------------
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -36,6 +38,8 @@
 
 namespace micro_os_plus::micro_test_plus
 {
+  // --------------------------------------------------------------------------
+
   /**
    * @brief Local mathematical functions.
    *

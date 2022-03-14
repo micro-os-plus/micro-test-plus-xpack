@@ -29,6 +29,8 @@
 #include <source_location>
 #endif
 
+// ----------------------------------------------------------------------------
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wpadded"
@@ -41,6 +43,8 @@
 
 namespace micro_os_plus::micro_test_plus
 {
+  // --------------------------------------------------------------------------
+
   namespace reflection
   {
 #if defined(__cpp_lib_source_location)
