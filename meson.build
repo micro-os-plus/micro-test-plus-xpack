@@ -35,6 +35,7 @@ micro_os_plus_micro_test_plus_dependency = declare_dependency(
   sources: files(
     'src/micro-test-plus.cpp',
     'src/test-runner.cpp',
+    'src/test-reporter.cpp',
   ),
 )
 
