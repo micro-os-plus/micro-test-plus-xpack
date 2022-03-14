@@ -284,13 +284,10 @@ namespace micro_os_plus::micro_test_plus
     return detail::le_{ lhs, rhs };
   }
 
-  template <class Expr_T>
-  [[nodiscard]] constexpr auto
-  _not (const Expr_T* expr)
-  {
-    return detail::not_{ expr };
-  }
-
+  /**
+   * @brief Generic logical not. The underscore is intentional,
+   * to differentiate from the standard operator.
+   */
   template <class Expr_T>
   [[nodiscard]] constexpr auto
   _not (const Expr_T& expr)
@@ -298,6 +295,10 @@ namespace micro_os_plus::micro_test_plus
     return detail::not_{ expr };
   }
 
+  /**
+   * @brief Generic logical and. The underscore is intentional,
+   * to differentiate from the standard operator.
+   */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
   _and (const Lhs_T& lhs, const Rhs_T& rhs)
@@ -305,23 +306,13 @@ namespace micro_os_plus::micro_test_plus
     return detail::and_{ lhs, rhs };
   }
 
-  template <class Lhs_T, class Rhs_T>
-  [[nodiscard]] constexpr auto
-  _and (const Lhs_T* lhs, const Rhs_T* rhs)
-  {
-    return detail::and_{ lhs, rhs };
-  }
-
+  /**
+   * @brief Generic logical or. The underscore is intentional,
+   * to differentiate from the standard operator.
+   */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
   _or (const Lhs_T& lhs, const Rhs_T& rhs)
-  {
-    return detail::or_{ lhs, rhs };
-  }
-
-  template <class Lhs_T, class Rhs_T>
-  [[nodiscard]] constexpr auto
-  _or (const Lhs_T* lhs, const Rhs_T* rhs)
   {
     return detail::or_{ lhs, rhs };
   }
