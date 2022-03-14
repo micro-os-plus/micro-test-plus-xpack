@@ -50,7 +50,7 @@
 
 #include "reflection.h"
 #include "math.h"
-#include "type_traits.h"
+#include "type-traits.h"
 #include "literals.h"
 #include "test-suite.h"
 

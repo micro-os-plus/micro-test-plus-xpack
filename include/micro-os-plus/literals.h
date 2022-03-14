@@ -23,7 +23,7 @@
 
 // ----------------------------------------------------------------------------
 
-#include "type_traits.h"
+#include "type-traits.h"
 #include "math.h"
 
 #if defined(__GNUC__)
