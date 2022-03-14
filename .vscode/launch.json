@@ -22,6 +22,18 @@
       "MIMode": "lldb"
     },
     {
+      "name": "(lldb) native-cmake-debug unit-test",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/native-cmake-debug/platform-bin/unit-test",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}/build/native-cmake-debug/platform-bin/",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "lldb"
+    },
+    {
       "name": "(arm-none-eabi-gdb) qemu-mps2-an386-cmake-debug sample-test",
       "cwd": "${workspaceRoot}/build/qemu-mps2-an386-cmake-debug",
       "executable": "platform/sample-test.elf",
@@ -30,8 +42,10 @@
       "servertype": "qemu",
       "serverpath": "${workspaceRoot}/build/qemu-mps2-an386-cmake-debug/xpacks/.bin/qemu-system-arm",
       "serverArgs": [
-        "-d", "unimp,guest_errors",
-        "--semihosting-config", "arg=sample-test,arg=one,arg=two"
+        "-d",
+        "unimp,guest_errors",
+        "--semihosting-config",
+        "arg=sample-test,arg=one,arg=two"
       ],
       "machine": "mps2-an386",
       "cpu": "cortex-m4",
@@ -48,8 +62,10 @@
       "servertype": "qemu",
       "serverpath": "${workspaceRoot}/build/qemu-mps2-an386-meson-debug/xpacks/.bin/qemu-system-arm",
       "serverArgs": [
-        "-d", "unimp,guest_errors",
-        "--semihosting-config", "arg=sample-test,arg=one,arg=two"
+        "-d",
+        "unimp,guest_errors",
+        "--semihosting-config",
+        "arg=sample-test,arg=one,arg=two"
       ],
       "machine": "mps2-an386",
       "cpu": "cortex-m4",
