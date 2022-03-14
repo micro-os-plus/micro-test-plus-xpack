@@ -23,6 +23,8 @@
 
 // ----------------------------------------------------------------------------
 
+#include <array>
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)

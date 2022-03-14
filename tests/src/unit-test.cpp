@@ -18,6 +18,7 @@
 #include <cassert>
 #include <cstring>
 #include <stdio.h>
+#include <vector>
 
 #if defined(__EXCEPTIONS)
 #include <stdexcept>

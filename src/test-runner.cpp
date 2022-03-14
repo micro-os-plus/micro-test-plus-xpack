@@ -24,6 +24,10 @@
 
 // ----------------------------------------------------------------------------
 
+#include <vector>
+
+// ----------------------------------------------------------------------------
+
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"

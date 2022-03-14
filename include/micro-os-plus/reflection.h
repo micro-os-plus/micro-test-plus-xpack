@@ -23,6 +23,8 @@
 
 // ----------------------------------------------------------------------------
 
+#include <string_view>
+
 #if defined(__cpp_lib_source_location)
 #include <source_location>
 #endif
