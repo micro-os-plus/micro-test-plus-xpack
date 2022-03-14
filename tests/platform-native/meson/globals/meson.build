@@ -35,7 +35,7 @@ else
 endif
 
 if c_compiler.get_id().contains('clang') and build_machine.system() == 'windows'
-  xpack_platform_compile_definitions += [
+  xpack_platform_common_args += [
     '-Wno-used-but-marked-unused',
   ]
 endif
