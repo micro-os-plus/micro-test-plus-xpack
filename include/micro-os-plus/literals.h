@@ -39,6 +39,10 @@
 
 namespace micro_os_plus::micro_test_plus
 {
+  /**
+   * @brief User Defined Literals (UDL). Use them to suffix
+   * constants and obtain specific explicit types, like `1_i`.
+   */
   namespace literals
   {
     template <char... Cs>
@@ -224,6 +228,9 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
+  // Represent dynamic values.
+  // Use a function calls syntax to convert
+  // the result of expression to specific types (`_i(f())`).
   using _b = type_traits::value<bool>;
   using _c = type_traits::value<char>;
   using _sc = type_traits::value<signed char>;
