@@ -49,6 +49,10 @@ if get_option('buildtype') == 'release' or get_option('buildtype') == 'minsize' 
   endif
 endif
 
+xpack_platform_common_args += [
+  '-Werror',
+]
+
 add_global_arguments(
   xpack_platform_common_args + xpack_platform_common_c_args + xpack_platform_compile_definitions,
 

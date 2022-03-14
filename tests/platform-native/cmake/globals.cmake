@@ -20,8 +20,11 @@ message(VERBOSE "Including platform-native global definitions...")
 # -----------------------------------------------------------------------------
 
 # Global definitions.
-# add_compile_definitions()
 # include_directories()
+
+set(xpack_platform_common_args
+  -Werror
+)
 
 # https://cmake.org/cmake/help/v3.20/variable/CMAKE_LANG_COMPILER_ID.html
 # message("${CMAKE_C_COMPILER_ID} ${CMAKE_SYSTEM_NAME} ${CMAKE_SYSTEM_PROCESSOR}")
@@ -32,23 +35,24 @@ if("${CMAKE_C_COMPILER_ID}" MATCHES "Clang" AND "${CMAKE_SYSTEM_NAME}" STREQUAL 
   # Alternate linker was not effective.
   message(STATUS "Clang Linux arm - skip -flto")
 else()
-  set(xpack_platform_common_options
+  list(APPEND xpack_platform_common_args
     $<$<CONFIG:Release>:-flto>
     $<$<CONFIG:MinSizeRel>:-flto>
   )
-
-  add_compile_options(
-    ${xpack_platform_common_options}
-  )
-
-  add_compile_definitions(
-    $<$<NOT:$<C_COMPILER_ID:Clang,AppleClang>>:_POSIX_C_SOURCE=200809L>
-  )
-
-  # When `-flto` is used, the compile options must be passed to the linker too.
-  add_link_options(
-    ${xpack_platform_common_options}
-  )
 endif()
+
+add_compile_definitions(
+  # $<$<NOT:$<C_COMPILER_ID:Clang,AppleClang>>:_POSIX_C_SOURCE=200809L>
+  _POSIX_C_SOURCE=200809L
+)
+
+add_compile_options(
+  ${xpack_platform_common_args}
+)
+
+# When `-flto` is used, the compile options must be passed to the linker too.
+add_link_options(
+  ${xpack_platform_common_args}
+)
 
 # -----------------------------------------------------------------------------
