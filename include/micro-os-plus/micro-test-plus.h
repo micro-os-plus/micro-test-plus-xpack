@@ -997,10 +997,6 @@ namespace micro_os_plus::micro_test_plus
       return cond ? colors_.pass : colors_.fail;
     }
 
-    template <typename T>
-    void
-    print_expr (T expr);
-
     test_reporter&
     operator<< (std::string_view sv);
 
