@@ -12,7 +12,6 @@
 
 // ----------------------------------------------------------------------------
 
-// #include <micro-os-plus/config.h> in micro-test-plus.h
 #include <micro-os-plus/micro-test-plus.h>
 
 #include <cassert>
@@ -802,6 +801,26 @@ main (int argc, char* argv[])
                   ne (my_actual_float<float> (), 42.0)));
     local_counts.failed++;
 
+    expect (_or (eq (my_actual_integral (), 42),
+                 eq (my_actual_float<float> (), 42.0)),
+            "(actual == 42) or (actual == 42.0)");
+    local_counts.passed++;
+
+    expect (_or (eq (my_actual_integral (), 42),
+                 ne (my_actual_float<float> (), 42.0)),
+            "(actual == 42) or (actual != 42.0)");
+    local_counts.passed++;
+
+    expect (_or (ne (my_actual_integral (), 42),
+                 eq (my_actual_float<float> (), 42.0)),
+            "(actual != 42) or (actual == 42.0)");
+    local_counts.passed++;
+
+    expect (_or (ne (my_actual_integral (), 42),
+                 ne (my_actual_float<float> (), 42.0)),
+            "(actual != 42) or (actual != 42.0)");
+    local_counts.failed++;
+
     local_counts.test_cases++;
   });
 
@@ -811,24 +830,85 @@ main (int argc, char* argv[])
 
   test_case ("Operators", [] {
     using namespace operators;
+    using namespace literals;
 
-    expect (my_actual_integral () == 42, "actual == 42");
+    expect (my_actual_integral () == 42_i, "actual == 42");
     local_counts.passed++;
 
-    expect (my_actual_integral_more<int> () != 42, "actual+1 != 42");
+    expect (my_actual_integral_more<int> () == 42_i, "actual+1 == 42 with _i literal");
+    local_counts.failed++;
+
+    expect (_i(my_actual_integral_more<int> ()) == 42, "actual+1 == 42 with _i()");
+    local_counts.failed++;
+
+    expect (my_actual_integral_more<int> () != 42_i, "actual+1 != 42");
     local_counts.passed++;
 
-    expect (my_actual_integral_less<int> () < 42, "actual-1 < 42");
+    expect (my_actual_integral_less<int> () < 42_i, "actual-1 < 42");
     local_counts.passed++;
 
-    expect (my_actual_integral () <= 42, "actual <= 42");
+    expect (my_actual_integral () <= 42_i, "actual <= 42");
     local_counts.passed++;
 
-    expect (my_actual_integral_more<int> () > 42, "actual+1 > 42");
+    expect (my_actual_integral_more<int> () > 42_i, "actual+1 > 42");
     local_counts.passed++;
 
-    expect (my_actual_integral () >= 42, "actual >= 42");
+    expect (my_actual_integral () >= 42_i, "actual >= 42");
     local_counts.passed++;
+
+    expect (!(my_actual_integral () != 42_i), "not (actual != 42)");
+    local_counts.passed++;
+
+    expect (!(my_actual_integral () == 42_i), "not (actual == 42)");
+    local_counts.failed++;
+
+    expect (((my_actual_integral () == 42_i)
+             && (my_actual_float<float> () == 42.0_d)),
+            "(actual == 42) and (actual == 42.0)");
+    local_counts.passed++;
+
+    expect (((my_actual_integral () == 42_i)
+             && (my_actual_float<float> () != 42.0_d)),
+            "(actual == 42) and (actual != 42.0)");
+    local_counts.failed++;
+
+    expect (((my_actual_integral () != 42_i)
+             && (my_actual_float<float> () == 42.0_d)),
+            "(actual != 42) and (actual == 42.0)");
+    local_counts.failed++;
+
+    expect (((my_actual_integral () != 42_i)
+             && (my_actual_float<float> () != 42.0_d)),
+            "(actual != 42) and (actual != 42.0)");
+    local_counts.failed++;
+
+    expect (((my_actual_integral () == 42_i)
+             && (my_actual_float<float> () == 42.0_d)));
+    local_counts.passed++;
+
+    expect (((my_actual_integral () == 42_i)
+             && (my_actual_float<float> () != 42.0_d)));
+    local_counts.failed++;
+
+    expect (
+        ((my_actual_integral () == 42) || (my_actual_float<float> () == 42.0)),
+        "(actual == 42) or (actual == 42.0)");
+    local_counts.passed++;
+
+    expect (
+        ((my_actual_integral () == 42) || (my_actual_float<float> () != 42.0)),
+        "(actual == 42) or (actual != 42.0)");
+    local_counts.passed++;
+
+    expect (
+        ((my_actual_integral () != 42) || (my_actual_float<float> () == 42.0)),
+        "(actual != 42) or (actual == 42.0)");
+    local_counts.passed++;
+
+    expect (
+        (my_actual_integral () != 42_i || my_actual_float<float> () != 42.0_f),
+        "(actual != 42) or (actual != 42.0)");
+    local_counts.failed++;
 
     local_counts.test_cases++;
   });
