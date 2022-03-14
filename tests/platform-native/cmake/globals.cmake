@@ -27,6 +27,12 @@ set(xpack_platform_common_args
   $<$<PLATFORM_ID:Darwin>:-Wno-missing-include-dirs>
 )
 
+if("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
+  list(APPEND xpack_platform_common_args
+    $<$<C_COMPILER_ID:Clang,AppleClang>:-Wno-used-but-marked-unused>
+  )
+endif()
+
 # https://cmake.org/cmake/help/v3.20/variable/CMAKE_LANG_COMPILER_ID.html
 # message("${CMAKE_C_COMPILER_ID} ${CMAKE_SYSTEM_NAME} ${CMAKE_SYSTEM_PROCESSOR}")
 # Unfortunatelly in a container it shows aarch64 instead of armv7l.

@@ -34,6 +34,12 @@ else
   ]
 endif
 
+if c_compiler.get_id().contains('clang') and build_machine.system() == 'windows'
+  xpack_platform_compile_definitions += [
+    '-Wno-used-but-marked-unused',
+  ]
+endif
+
 if get_option('buildtype') == 'release' or get_option('buildtype') == 'minsize' or get_option('buildtype') == 'debugoptimized'
   # https://mesonbuild.com/Reference-tables.html#operating-system-names
   # message(build_machine.cpu())
