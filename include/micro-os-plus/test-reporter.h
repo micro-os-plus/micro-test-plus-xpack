@@ -47,14 +47,14 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
-  class test_reporter;
-
   struct colors
   {
     std::string_view none = "\033[0m";
     std::string_view pass = "\033[32m";
     std::string_view fail = "\033[31m";
   };
+
+  class test_reporter;
 
   test_reporter&
   endl (test_reporter& stream);

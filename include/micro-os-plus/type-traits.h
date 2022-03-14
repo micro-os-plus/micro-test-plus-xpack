@@ -158,8 +158,8 @@ namespace micro_os_plus::micro_test_plus
     struct requires_
     {
     };
-    template <>
 
+    template <>
     struct requires_<true>
     {
       using type = int;

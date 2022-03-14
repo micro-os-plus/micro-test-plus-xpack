@@ -183,7 +183,6 @@ namespace micro_os_plus::micro_test_plus
   template <class Expr_T>
   void
   test_reporter::pass (detail::assertion<Expr_T> assertion)
-
   {
     *this << colors_.pass << "    ✓ ";
     if (strlen (assertion.message))
@@ -206,7 +205,6 @@ namespace micro_os_plus::micro_test_plus
   template <class Expr_T>
   void
   test_reporter::fail (detail::assertion<Expr_T> assertion)
-
   {
     *this << colors_.fail << "    ✗ ";
     if (strlen (assertion.message))

@@ -29,7 +29,6 @@
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
-//#pragma clang diagnostic ignored "-Wc++98-c++11-compat"
 #endif
 #endif
 
@@ -86,6 +85,7 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] constexpr auto
     get (const T& t)
     {
+      // Call the variadic function, besically to force it return `t`.
       return get_impl (t, 0);
     }
 
@@ -99,6 +99,8 @@ namespace micro_os_plus::micro_test_plus
     {
       constexpr eq_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
           : lhs_{ lhs }, rhs_{ rhs }, value_{ [&] {
+              // This lambda is called in the constructor to
+              // evaluate the comparison.
               using std::operator==;
               using std::operator<;
 
@@ -551,11 +553,13 @@ namespace micro_os_plus::micro_test_plus
       {
         return value_;
       }
+
       [[nodiscard]] constexpr auto
       lhs () const
       {
         return get (lhs_);
       }
+
       [[nodiscard]] constexpr auto
       rhs () const
       {
@@ -582,6 +586,7 @@ namespace micro_os_plus::micro_test_plus
       {
         return value_;
       }
+
       [[nodiscard]] constexpr auto
       value () const
       {

@@ -85,9 +85,16 @@ namespace micro_os_plus::micro_test_plus
   void
   test_case (const char* name, Callable_T&& func, Args_T&&... arguments);
 
+  /**
+   * @brief Return the test result. Also trigger the execution of the
+   * globally registered test suites.
+   */
   [[nodiscard]] int
   exit_code (void);
 
+  /**
+   * @brief Mark a passed check.
+   */
   template <class Expr_T = bool>
   constexpr auto
   pass (const char* message = "passed",
@@ -98,6 +105,9 @@ namespace micro_os_plus::micro_test_plus
         .expr = true, .abort = false, .message = message, .location = sl });
   }
 
+  /**
+   * @brief Mark a failed check.
+   */
   template <class Expr_T = bool>
   constexpr auto
   fail (const char* message = "...", const reflection::source_location& sl
@@ -108,7 +118,11 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
-   * @brief The generic evaluation function.
+   * @brief Evaluate a generic condition. The expression must use
+   * the provided `eq(), ne(), lt(), le(), gt(), ge()` comparators,
+   * or, if the custom operators are used, to include custom type
+   * operands, otherwise support for identifying the failed check
+   * is not provided.
    */
   template <
       class Expr_T,
@@ -125,7 +139,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
-   * @brief The generic evaluation function.
+   * @brief Check a condition and, if false, abort.
    */
   template <
       class Expr_T,
@@ -338,6 +352,18 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
+  /**
+   * @brief Separate namespace with custom operators.
+   *
+   * @warning Please note that they are defined here
+   * only for completeness; their use is debatable, since they
+   * may interfere with other operators existing in the tested application.
+   *
+   * To minimise the interferences, these operators are recognised only
+   * for specific types, and generally require constants to be
+   * suffixed with literals (like `1_i`), or casted to the custom types
+   * (like `_i(...)`).
+   */
   namespace operators
   {
     [[nodiscard]] constexpr auto
