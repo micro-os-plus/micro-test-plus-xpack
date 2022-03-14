@@ -24,6 +24,7 @@ message(VERBOSE "Including platform-native global definitions...")
 
 set(xpack_platform_common_args
   -Werror
+  $<$<PLATFORM_ID:Darwin>:-Wno-missing-include-dirs>
 )
 
 # https://cmake.org/cmake/help/v3.20/variable/CMAKE_LANG_COMPILER_ID.html

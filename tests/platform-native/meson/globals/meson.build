@@ -53,6 +53,12 @@ xpack_platform_common_args += [
   '-Werror',
 ]
 
+if build_machine.system() == 'darwin'
+  xpack_platform_common_args += [
+    '-Wno-missing-include-dirs',
+  ]
+endif
+
 add_global_arguments(
   xpack_platform_common_args + xpack_platform_common_c_args + xpack_platform_compile_definitions,
 
