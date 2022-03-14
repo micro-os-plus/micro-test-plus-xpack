@@ -142,25 +142,34 @@ namespace micro_os_plus::micro_test_plus
   }
 
 #if defined(__cpp_exceptions)
-  template <class Exception_T, class Expr_T>
+  /**
+   * @brief Check if a callable throws a specific exception.
+   */
+  template <class Exception_T, class Callable_T>
   [[nodiscard]] constexpr auto
-  throws (const Expr_T& expr)
+  throws (const Callable_T& func)
   {
-    return detail::throws_<Expr_T, Exception_T>{ expr };
+    return detail::throws_<Callable_T, Exception_T>{ func };
   }
 
-  template <class Expr_T>
+  /**
+   * @brief Check if a callable throws an exception (any exception).
+   */
+  template <class Callable_T>
   [[nodiscard]] constexpr auto
-  throws (const Expr_T& expr)
+  throws (const Callable_T& func)
   {
-    return detail::throws_<Expr_T>{ expr };
+    return detail::throws_<Callable_T>{ func };
   }
 
-  template <class Expr_T>
+  /**
+   * @brief Check if a callable doesn't throw an exception.
+   */
+  template <class Callable_T>
   [[nodiscard]] constexpr auto
-  nothrow (const Expr_T& expr)
+  nothrow (const Callable_T& func)
   {
-    return detail::nothrow_{ expr };
+    return detail::nothrow_{ func };
   }
 #endif
 

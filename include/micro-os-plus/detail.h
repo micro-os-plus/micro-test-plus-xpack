@@ -594,16 +594,16 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(__cpp_exceptions)
     /**
-     * @brief Operator to check if expression throws a specific exception.
+     * @brief Operator to check if the expression throws a specific exception.
      */
-    template <class Expr_T, class Exception_T = void>
+    template <class Callable_T, class Exception_T = void>
     struct throws_ : type_traits::op
     {
-      constexpr explicit throws_ (const Expr_T& expr)
-          : value_{ [&expr] {
+      constexpr explicit throws_ (const Callable_T& func)
+          : value_{ [&func] {
               try
                 {
-                  expr ();
+                  func ();
                 }
               catch (const Exception_T&)
                 {
@@ -627,16 +627,16 @@ namespace micro_os_plus::micro_test_plus
     };
 
     /**
-     * @brief Operator to check if expression throws any exception.
+     * @brief Operator to check if the expression throws any exception.
      */
-    template <class Expr_T>
-    struct throws_<Expr_T, void> : type_traits::op
+    template <class Callable_T>
+    struct throws_<Callable_T, void> : type_traits::op
     {
-      constexpr explicit throws_ (const Expr_T& expr)
-          : value_{ [&expr] {
+      constexpr explicit throws_ (const Callable_T& func)
+          : value_{ [&func] {
               try
                 {
-                  expr ();
+                  func ();
                 }
               catch (...)
                 {
@@ -656,16 +656,16 @@ namespace micro_os_plus::micro_test_plus
     };
 
     /**
-     * @brief Operator to check if expression does not throw any exception.
+     * @brief Operator to check if the expression does not throw any exception.
      */
-    template <class Expr_T>
+    template <class Callable_T>
     struct nothrow_ : type_traits::op
     {
-      constexpr explicit nothrow_ (const Expr_T& expr)
-          : value_{ [&expr] {
+      constexpr explicit nothrow_ (const Callable_T& func)
+          : value_{ [&func] {
               try
                 {
-                  expr ();
+                  func ();
                 }
               catch (...)
                 {
