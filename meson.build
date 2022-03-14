@@ -36,12 +36,15 @@ micro_os_plus_micro_test_plus_dependency = declare_dependency(
     'src/micro-test-plus.cpp',
     'src/test-runner.cpp',
     'src/test-reporter.cpp',
+    'src/test-suite.cpp',
   ),
 )
 
 message('+ -I include')
 message('+ src/micro-test-plus.cpp')
 message('+ src/test-runner.cpp')
+message('+ src/test-reporter.cpp')
+message('+ src/test-suite.cpp')
 message('> micro_os_plus_micro_test_plus_dependency')
 
 # -----------------------------------------------------------------------------
