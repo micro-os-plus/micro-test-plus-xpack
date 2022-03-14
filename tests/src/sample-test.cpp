@@ -101,18 +101,27 @@ main (int argc, char* argv[])
 
     // Currently only int and long values can be compared.
     // For everything else use casts.
-    expect (compute_one () == 1, "compute_one() == 1");
+    expect (eq (compute_one (), 1), "compute_one() == 1");
 
-    // Strings can also be compared (via `strcmp()`).
-    expect (std::string_view{ compute_aaa () } == "aaa"sv,
+    // Strings can be compared lexicographically,
+    // but only as string_view objects, otherwise the
+    // pointer addresses are compared, not the content.
+    expect (eq (std::string_view{ compute_aaa () }, "aaa"sv),
             "compute_aaa() == 'aaa' string_view");
 
-    // More complex conditions are passed as booleans.
+    // Boolean expressions can be checked directly.
     expect (compute_condition (), "condition() is true");
 
-    auto f = [] (int i) { return i + 42; };
+    // More complex conditions can be constructed with _and(), _or(), _not()
+    // (the underscore is required to differentiate from the language
+    // and/or/not operators).
+    expect (_and (eq (compute_one (), 1),
+                  eq (std::string_view{ compute_aaa () }, "aaa"sv)),
+            "logical expression");
 
-    expect (f (1) == 43, "lambda == 43");
+    auto add = [] (int i) { return i + 42; };
+
+    expect (eq (add (1), 43), "lambda == 43");
   });
 
   // --------------------------------------------------------------------------
@@ -125,13 +134,13 @@ main (int argc, char* argv[])
 
         if (_argc > 1)
           {
-            expect (std::string_view{ _argv[1] } == "one"sv,
+            expect (eq (std::string_view{ _argv[1] }, "one"sv),
                     "argv[1] == 'one'");
           }
 
         if (_argc > 2)
           {
-            expect (std::string_view{ _argv[2] } == "two"sv,
+            expect (eq (std::string_view{ _argv[2] }, "two"sv),
                     "argv[2] == 'two'");
           }
       },
