@@ -55,6 +55,7 @@ target_include_directories(micro-os-plus-micro-test-plus-interface INTERFACE
 
 target_sources(micro-os-plus-micro-test-plus-interface INTERFACE
   "src/micro-test-plus.cpp"
+  "src/test-runner.cpp"
 )
 
 target_compile_definitions(micro-os-plus-micro-test-plus-interface INTERFACE
