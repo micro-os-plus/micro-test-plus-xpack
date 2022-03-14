@@ -53,6 +53,7 @@
 #include "type-traits.h"
 #include "literals.h"
 #include "test-suite.h"
+#include "test-runner.h"
 
 // ----------------------------------------------------------------------------
 
@@ -97,79 +98,6 @@ namespace micro_os_plus::micro_test_plus
 
   [[nodiscard]] int
   exit_code (void);
-
-  // --------------------------------------------------------------------------
-
-  /**
-   * @brief The test runner. It maintaines a list of test suites which
-   * automatically register themselves in their constructors.
-   */
-  class test_runner
-  {
-  public:
-    test_runner ();
-
-    // The rule of five.
-    test_runner (const test_runner&) = delete;
-    test_runner (test_runner&&) = delete;
-    test_runner&
-    operator= (const test_runner&)
-        = delete;
-    test_runner&
-    operator= (test_runner&&)
-        = delete;
-
-    ~test_runner () = default;
-
-    /**
-     * @brief Pass the main arguments explicitly, if the default
-     * contructor was used.
-     */
-    void
-    initialize (const char* name, int argc, char* argv[]);
-
-    /**
-     * @brief Return 0 if the all tests were successful, 1 otherwise.
-     */
-    int
-    exit_code (void);
-
-    /**
-     * @brief Called by test suite constructors to register them
-     * to the runner.
-     */
-    void
-    register_test_suite (test_suite* suite);
-
-    constexpr const char*
-    name (void)
-    {
-      return default_suite_name_;
-    }
-
-    [[noreturn]] void
-    abort (void);
-
-  protected:
-    int argc_ = 0;
-    char** argv_ = nullptr;
-
-    const char* default_suite_name_ = "Test";
-
-    /**
-     * @brief Pointer to the default test suite which groups
-     * the main tests.
-     */
-    test_suite* default_test_suite_;
-
-    /**
-     * @brief Pointer to array of registered test suites.
-     * Statically initialised to zero as BSS, such that
-     * test suites defined as static objects in different
-     * compilation units can  be automatically executed.
-     */
-    std::vector<test_suite*>* suites_;
-  };
 
   // ==========================================================================
 
