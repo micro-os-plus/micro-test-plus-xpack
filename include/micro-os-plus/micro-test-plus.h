@@ -1040,6 +1040,18 @@ namespace micro_os_plus::micro_test_plus
     void
     fail (detail::assertion<Expr_T> assertion);
 
+    void
+    begin_test_case (const char* name);
+
+    void
+    end_test_case (const char* name);
+
+    void
+    begin_test_suite (const char* name);
+
+    void
+    end_test_suite (test_suite& suite);
+
     /**
      * @brief Flush the current buffered content.
      */

@@ -37,16 +37,16 @@ namespace micro_os_plus::micro_test_plus
   endl (test_reporter& stream)
   {
     printf ("\n");
-    fflush (stdout);
+    reporter.flush ();
     return stream;
   }
+
+  // --------------------------------------------------------------------------
 
   void
   test_reporter::flush (void)
   {
-    //#if !defined(__MINGW32__)
     fflush (stdout); // Sync STDOUT.
-    //#endif
   }
 
   test_reporter&
@@ -188,6 +188,45 @@ namespace micro_os_plus::micro_test_plus
     // Call the endl function.
     (*func) (*this);
     return *this;
+  }
+
+  void
+  test_reporter::begin_test_case (const char* name)
+  {
+    printf ("\n  %s\n", name);
+    flush ();
+  }
+
+  void
+  test_reporter::end_test_case ([[maybe_unused]] const char* name)
+  {
+    flush ();
+  }
+
+  void
+  test_reporter::begin_test_suite (const char* name)
+  {
+    flush ();
+    printf ("\n%s\n", name);
+  }
+
+  void
+  test_reporter::end_test_suite (test_suite& suite)
+  {
+    // Also fail if none passed.
+    if (suite.failed () == 0 && suite.passed () != 0)
+      {
+        printf ("\n%s passed (%d checks in %d test cases)\n", suite.name (),
+                suite.passed (), suite.test_cases ());
+      }
+    else
+      {
+        printf (
+            "\n%s failed (%d checks passed, %d failed, in %d test cases)\n",
+            suite.name (), suite.passed (), suite.failed (),
+            suite.test_cases ());
+      }
+    flush ();
   }
 
   // --------------------------------------------------------------------------

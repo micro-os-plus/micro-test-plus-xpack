@@ -99,41 +99,29 @@ namespace micro_os_plus::micro_test_plus
   test_suite::begin (void)
   {
     current_test_suite = this;
-    fflush (stdout);
-    printf ("\n%s\n", name_);
+
+    reporter.begin_test_suite(name_);
   }
 
   void
   test_suite::end (void)
   {
-    // Also fail if none passed.
-    if (failed_ == 0 && passed_ != 0)
-      {
-        printf ("\n%s passed (%d checks in %d test cases)\n", name_, passed_,
-                test_cases_);
-      }
-    else
-      {
-        printf (
-            "\n%s failed (%d checks passed, %d failed, in %d test cases)\n",
-            name_, passed_, failed_, test_cases_);
-      }
-    fflush (stdout);
+    reporter.end_test_suite(*this);
   }
 
   void
   test_suite::begin_test_case (const char* name)
   {
-    printf ("\n  %s\n", name);
-    fflush (stdout);
     test_case_name_ = name;
     ++test_cases_;
+
+    reporter.begin_test_case (test_case_name_);
   }
 
   void
-  test_suite::end_test_case ()
+  test_suite::end_test_case (void)
   {
-    fflush (stdout);
+    reporter.end_test_case (test_case_name_);
   }
 
   // --------------------------------------------------------------------------
