@@ -232,10 +232,10 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
-  // Casts that can be used to convert dynamic values to specific types
+  // Wrappers that can be used to convert dynamic values to specific types
   // that are recognised by the comparators.
-  // The syntax is similar to function calls, like `_i(f())`, but the
-  // results are custom types.
+  // The syntax is similar to function calls, like `_i(expression)`, but the
+  // results have custom types expected by comparators.
   using _b = type_traits::value<bool>;
   using _c = type_traits::value<char>;
   using _sc = type_traits::value<signed char>;
@@ -260,6 +260,7 @@ namespace micro_os_plus::micro_test_plus
   using _d = type_traits::value<double>;
   using _ld = type_traits::value<long double>;
 
+  // Template for wrapping any other type.
   template <class T>
   struct _t : type_traits::value<T>
   {
