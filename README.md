@@ -85,7 +85,7 @@ The main characteristics of µTest++, basically inherited from Boost UT, are:
 - modern C++ code (this was also the reason
   to raise the bar to C++ 20 for the entire µOS++ project)
 - macro free (while preserving the nice feature of being able to report
-  the line number for failed tests)
+  the file name and line number for failed tests)
 - expectations, assumptions, exceptions
 - test cases, test suites
 - automatic test suites registration
@@ -330,6 +330,84 @@ expect (std::vector<int>{ 1, 2 } == std::vector<int>{ 1, 2 },
 
 expect (std::vector<int>{ 1, 2, 3 } != std::vector<int>{ 1, 2, 4 },
         "vector{ 1, 2, 3 } != vector{ 1, 2, 4 }");
+```
+
+#### Literals and casts
+
+For converting constants to recognised typed operands, the following
+literal operators are available in the separate namespace `literals`:
+
+```c++
+namespace literals {
+  auto operator""_i (); // int
+  auto operator""_s (); // short
+  auto operator""_c (); // char
+  auto operator""_sc () // signed char
+  auto operator""_l (); // long
+  auto operator""_ll (); // long long
+  auto operator""_u (); // unsigned
+  auto operator""_uc (); // unsigned char
+  auto operator""_us (); // unsigned short
+  auto operator""_ul (); // unsigned long
+  auto operator""_ull (); // unsigned long long
+  auto operator""_i8 (); // int8_t
+  auto operator""_i16 (); // int16_t
+  auto operator""_i32 (); // int32_t
+  auto operator""_i64 (); // int64_t
+  auto operator""_u8 (); // uint8_t
+  auto operator""_u16 (); // uint16_t
+  auto operator""_u32 (); // uint32_t
+  auto operator""_u64 (); // uint64_t
+  auto operator""_f (); // float
+  auto operator""_d (); // double
+  auto operator""_ld (); // long double
+  auto operator""_b (); // bool
+}
+```
+
+Similarly, for dynamic values, there are wrappers that converts them to
+recognised types:
+
+```c++
+  using _b = type_traits::value<bool>;
+  using _c = type_traits::value<char>;
+  using _sc = type_traits::value<signed char>;
+  using _s = type_traits::value<short>;
+  using _i = type_traits::value<int>;
+  using _l = type_traits::value<long>;
+  using _ll = type_traits::value<long long>;
+  using _u = type_traits::value<unsigned>;
+  using _uc = type_traits::value<unsigned char>;
+  using _us = type_traits::value<unsigned short>;
+  using _ul = type_traits::value<unsigned long>;
+  using _ull = type_traits::value<unsigned long long>;
+  using _i8 = type_traits::value<std::int8_t>;
+  using _i16 = type_traits::value<std::int16_t>;
+  using _i32 = type_traits::value<std::int32_t>;
+  using _i64 = type_traits::value<std::int64_t>;
+  using _u8 = type_traits::value<std::uint8_t>;
+  using _u16 = type_traits::value<std::uint16_t>;
+  using _u32 = type_traits::value<std::uint32_t>;
+  using _u64 = type_traits::value<std::uint64_t>;
+  using _f = type_traits::value<float>;
+  using _d = type_traits::value<double>;
+  using _ld = type_traits::value<long double>;
+
+  // Template for wrapping any other type.
+  template <class T>
+  struct _t : type_traits::value<T>
+  {
+    constexpr explicit _t (const T& t) : type_traits::value<T>{ t }
+    {
+    }
+  };
+```
+
+Examples:
+
+```c++
+expect(_i(answer) == 42_i);
+expect(_f(expression) == 42_f);
 ```
 
 #### Explicit namespace
