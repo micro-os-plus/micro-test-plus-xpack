@@ -51,6 +51,7 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
+#if 0
   template <class T>
   test_reporter&
   test_reporter::operator<< (const T& t)
@@ -58,6 +59,7 @@ namespace micro_os_plus::micro_test_plus
     *this << detail::get (t);
     return *this;
   }
+#endif
 
   template <class T>
   test_reporter&
