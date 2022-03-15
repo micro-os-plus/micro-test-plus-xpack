@@ -76,10 +76,18 @@ into `xpack`.
 ### Overview
 
 The initial version of the **µTest++** framework was inspired by
-[Node tap](https://node-tap.org) and has only a limited number of primitives.
+[Node tap](https://node-tap.org) and aims for simplicity.
 The later v3.x was a full rework inspired by
 [Boost UT](https://boost-ext.github.io/ut/) and was the reason to raise the
 bar to C++ 20.
+
+- modern C++ code
+- macro free
+- expectations, assumptions, exceptions
+- no streams dependencies
+- automatic test suites registration
+
+### Concepts and features
 
 - for complex applications, test cases can be grouped in test suites
 - test suites can be located in separate compilation units, and automatically
@@ -87,7 +95,7 @@ bar to C++ 20.
 - a test suite is a named sequence of test cases
 - a test case is a sequence of conditions expected to be true
 - test conditions are either common logical expressions, or they check
-  if an exception was thrown (or no exception was thrown)
+  if an exception was thrown (or if no exception was thrown)
 - each test condition either succeeds or fails
 - the test progress is shown on STDOUT, with each test condition on a
   separate line, prefixed with either a check sign (✓) or a cross sign (✗)
@@ -115,13 +123,13 @@ For more details see: <http://glossary.istqb.org/en/search/test%20case>.
 
 ### C++ API
 
-Aiming simplicity, µTest++ provides only a small number of primitives used
-to check expectations/assumptions defined as logical conditions:
+Aiming simplicity, µTest++ provides only a limited number of primitives used
+to check expectations/assumptions/exceptions.
 
 #### Expectations
 
 Expectations are checks whose results are counted and do not
-stop the fest (as opposed to assumptions, which abort the test).
+stop the test (as opposed to assumptions, which abort the test).
 
 ```C++
 template <class Expr_T, type_traits::requires_t<....>>
@@ -130,8 +138,7 @@ bool expect(const Expr_T& expr, const char *message = "");
 
 The template matches only expressions that evaluate to
 a boolean or use custom comparators/operators derived from a
-local `op` type; these expressions are guaranteed when using
-the provided comparators (see below).
+local `op` type.
 
 #### Assumptions
 
@@ -144,8 +151,7 @@ bool assume(const Expr_T& expr, const char *message = "");
 
 Similarly, the template matches only expressions that evaluate to
 a boolean or use custom comparators/operators derived from a
-local `op` type; these expressions are guaranteed when using
-the provided comparators (see below).
+local `op` type.
 
 #### Comparators
 
@@ -156,22 +162,22 @@ conditions, the following generic comparators are available:
 
 ```c++
 template <class Lhs_T, class Rhs_T>
-eq(const Lhs_T& lhs, const Rhs_T& rhs);
+auto eq(const Lhs_T& lhs, const Rhs_T& rhs);
 
 template <class Lhs_T, class Rhs_T>
-ne(const Lhs_T& lhs, const Rhs_T& rhs);
+auto ne(const Lhs_T& lhs, const Rhs_T& rhs);
 
 template <class Lhs_T, class Rhs_T>
-lt(const Lhs_T& lhs, const Rhs_T& rhs);
+auto lt(const Lhs_T& lhs, const Rhs_T& rhs);
 
 template <class Lhs_T, class Rhs_T>
-le(const Lhs_T& lhs, const Rhs_T& rhs);
+auto le(const Lhs_T& lhs, const Rhs_T& rhs);
 
 template <class Lhs_T, class Rhs_T>
-gt(const Lhs_T& lhs, const Rhs_T& rhs);
+auto gt(const Lhs_T& lhs, const Rhs_T& rhs);
 
 template <class Lhs_T, class Rhs_T>
-ge(const Lhs_T& lhs, const Rhs_T& rhs);
+auto ge(const Lhs_T& lhs, const Rhs_T& rhs);
 ```
 
 Similar templates are defined for pointer comparators.
@@ -202,7 +208,8 @@ actual values used during the test, for example:
 
 #### Comparing strings
 
-In C/C++, plain strings are actually pointers to characters, and comparing
+In C/C++, plain strings are actually pointers to characters, and
+simply comparing
 them does not compare the content, but the memory addresses.
 
 For string comparisons to compare the content, use `string_view`:
@@ -231,18 +238,18 @@ expect (ne (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 }),
 
 #### Operators
 
-As in most other C++ test frameworks,
-is also possible to overload the `==`, `!=`, `<`, `>`, `<=`, `>=` operators.
+As in most other C++ test frameworks, it is
+also possible to overload the `==`, `!=`, `<`, `>`, `<=`, `>=` operators.
 
-To avoid interferences with possible other operators
+To avoid possible interferences with other operators
 defined by the application, these operators are enabled only for
 specific types and are located in a separate namespace
 (`micro_test_plus::operators`).
 
-The following operators match only for operands derived from the local
+The following operators match only operands derived from the local
 `op` type, which can be enforced for constant values by using the
 provided literals (like `1_i`) or, for dynamic values, by using the
-provided casts (like `_i(expr)`):
+provided casts (like `_i(expression)`):
 
 ```c++
 template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
@@ -326,18 +333,18 @@ Example:
   namespace t = micro_test_plus;
 
   t::test_case ("Check answer", [] {
-    t::expect (t:eq(compute_answer(), 42), "answer is 42");
+    t::expect (t::eq(compute_answer(), 42), "answer is 42");
   });
 }
 ```
 
 #### Exceptions
 
-It is possible to check if any exception was thrown,
-if a specific exception was thrown, or no exception at all was thrown:
+It is possible to check if exceptions were thrown (any),
+if a specific exception was thrown, or no exceptions at all were thrown:
 
 ```C++
-// Check if any exception was thrown.
+// Check if exceptions were thrown (any).
 template <class Callable_T>
 throws (const Callable_T& expr, const char *message = "");
 
@@ -345,7 +352,7 @@ throws (const Callable_T& expr, const char *message = "");
 template <class Exception_T, class Callable_T>
 throws (const Callable_T& expr, const char *message = "");
 
-// Check if no exceptions are thrown.
+// Check if no exceptions were thrown.
 template <class Callable_T>
 nothrow (const Callable_T& expr, const char *message = "");
 ```
@@ -412,7 +419,7 @@ test_case ("Check various conditions with operators", [] {
 });
 ```
 
-#### Initialise the test runner
+#### Test runner initialization
 
 The test runner is initialised with a name and the process arguments:
 
@@ -421,10 +428,13 @@ void
 initialize (const char* name, int argc, char* argv[]);
 ```
 
+For now the arguments are not used, but future versions may accept
+command line options, for example for controlling the verbosity level.
+
 #### Return the test result
 
-The final test result to be returned to the system
-(0 for pass, 1 for fail), is obtained with:
+The final test result that must be returned to the system
+(0 for pass, 1 for fail), can be obtained with:
 
 ```C++
 int
@@ -456,15 +466,16 @@ main (int argc, char* argv[])
 
 Test suites are sequences of test cases.
 
-The test cases defined in `main()` are considered the default test
+The test cases defined in `main()` are considered to be part of
+the default test
 suite, and are executed when invoked.
 
 For complex applications it is also possible to define multiple test
 suites, possibly in separate source files.
 
 In order to make self-registration possible, test suites are classes,
-which can be constructed with a name and a callable (usually a lambda),
-which chaines the execution of the test cases:
+constructed with a name and a callable (usually a lambda),
+which chains the execution of the test cases:
 
 ```C++
 class test_suite
@@ -475,12 +486,12 @@ public:
 }
 ```
 
-It is recommended to instantiate the test suites as static objects.
-The self-registration to the runner is done in the constructor.
+It is recommended that test suites be instantiated as static objects.
+The self-registration is done in the constructor.
 For test suites defined in different compilation units, the order
-in which they are executed replicates the order in which the
-static constructors were invoked, and, since this order is not specified;
-there should be no dependencies between test suites, as they
+in which they are executed is not specified, since the order in which the
+static constructors are invoked is not specified;
+thus there should be no dependencies between test suites, as they
 can be executed in any order.
 
 The test cases in the separate test suites are executed when the
