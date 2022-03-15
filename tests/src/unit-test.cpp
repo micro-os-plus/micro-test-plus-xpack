@@ -835,6 +835,9 @@ main (int argc, char* argv[])
     expect (my_actual_integral () == 42_i, "actual == 42");
     local_counts.passed++;
 
+    expect (my_actual_integral_more<int> () == 42, "actual+1 == 42 with scalar");
+    local_counts.failed++;
+
     expect (my_actual_integral_more<int> () == 42_i, "actual+1 == 42 with _i literal");
     local_counts.failed++;
 

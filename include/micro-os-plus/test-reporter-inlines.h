@@ -216,7 +216,10 @@ namespace micro_os_plus::micro_test_plus
     *this << " (" << reflection::short_name (assertion.location.file_name ())
           << ":"
           << type_traits::genuine_integral_value{ assertion.location.line () };
-    *this << ", " << assertion.expr;
+    if constexpr (type_traits::is_op_v<Expr_T>)
+      {
+        *this << ", " << assertion.expr;
+      }
     if (assertion.abort)
       {
         *this << ", aborted";
