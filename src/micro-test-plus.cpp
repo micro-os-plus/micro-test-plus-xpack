@@ -42,8 +42,8 @@ namespace micro_os_plus::micro_test_plus
   void
   initialize (const char* name, int argc, char* argv[])
   {
-#if defined(MICRO_TEST_PLUS_DEBUG)
-    trace::printf ("%s\n", __PRETTY_FUNCTION__);
+#if defined(MICRO_TEST_PLUS_TRACE)
+    printf ("%s\n", __PRETTY_FUNCTION__);
 #endif
     runner.initialize (name, argc, argv);
   }

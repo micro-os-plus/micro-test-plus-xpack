@@ -27,14 +27,6 @@
 #include <micro-os-plus/config.h>
 #endif // MICRO_OS_PLUS_INCLUDE_CONFIG_H
 
-#if defined(MICRO_OS_PLUS_TRACE)
-#include <micro-os-plus/diag/trace.h>
-#endif // MICRO_OS_PLUS_TRACE
-
-#if defined(MICRO_OS_PLUS_DEBUG)
-#define MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
-#endif
-
 #include "reflection.h"
 #include "math.h"
 #include "type-traits.h"

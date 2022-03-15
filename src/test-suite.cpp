@@ -22,6 +22,8 @@
 
 #include <micro-os-plus/micro-test-plus.h>
 
+#include <stdio.h>
+
 // ----------------------------------------------------------------------------
 
 #if defined(__clang__)
@@ -35,9 +37,9 @@ namespace micro_os_plus::micro_test_plus
 
   test_suite::test_suite (const char* name)
   {
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-    micro_os_plus::trace::printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#if defined(MICRO_TEST_PLUS_TRACE)
+    printf ("%s\n", __PRETTY_FUNCTION__);
+#endif // MICRO_TEST_PLUS_TRACE
 
     name_ = name;
     // callable_ = [] {};

@@ -652,7 +652,7 @@ The source file to be added to user projects are:
 #### Preprocessor definitions
 
 - `MICRO_OS_PLUS_TRACE` - to include the trace
-- `MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS` to enable some tracing messages
+- `MICRO_TEST_PLUS_TRACE` to enable some tracing messages
 
 #### Compiler options
 

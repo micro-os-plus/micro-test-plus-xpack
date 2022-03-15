@@ -22,6 +22,8 @@
 
 #include <micro-os-plus/micro-test-plus.h>
 
+#include <stdio.h>
+
 // ----------------------------------------------------------------------------
 
 #include <vector>
@@ -40,17 +42,17 @@ namespace micro_os_plus::micro_test_plus
 
   test_runner::test_runner ()
   {
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-    micro_os_plus::trace::printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#if defined(MICRO_TEST_PLUS_TRACE)
+    printf ("%s\n", __PRETTY_FUNCTION__);
+#endif // MICRO_TEST_PLUS_TRACE
   }
 
   void
   test_runner::initialize (const char* name, int argc, char* argv[])
   {
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-    micro_os_plus::trace::printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#if defined(MICRO_TEST_PLUS_TRACE)
+    printf ("%s\n", __PRETTY_FUNCTION__);
+#endif // MICRO_TEST_PLUS_TRACE
 
     default_suite_name_ = name;
 
@@ -119,9 +121,9 @@ namespace micro_os_plus::micro_test_plus
   void
   test_runner::register_test_suite (test_suite* suite)
   {
-#if 0 // defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-    micro_os_plus::trace::printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#if 0 // defined(MICRO_TEST_PLUS_TRACE)
+    printf ("%s\n", __PRETTY_FUNCTION__);
+#endif // MICRO_TEST_PLUS_TRACE
 
     if (suites_ == nullptr)
       {

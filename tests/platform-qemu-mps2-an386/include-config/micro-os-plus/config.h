@@ -20,6 +20,7 @@
 
 #if defined(MICRO_OS_PLUS_TRACE)
 #define MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_STDOUT
+#define MICRO_TEST_PLUS_TRACE
 #endif // MICRO_OS_PLUS_TRACE
 
 // ----------------------------------------------------------------------------
