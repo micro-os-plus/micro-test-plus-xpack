@@ -134,6 +134,7 @@ foreach name : test_names
 
   xpack_link_with += [
     # Tested library.
+    micro_os_plus_micro_test_plus_static,
   ]
 
   # https://mesonbuild.com/Reference-manual.html#executable

@@ -27,24 +27,66 @@
 
 message('Processing xPack @micro-os-plus/micro-test-plus...')
 
-# https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
-micro_os_plus_micro_test_plus_dependency = declare_dependency(
-  include_directories: include_directories(
+xpack_common_args = []
+xpack_c_args = []
+xpack_cpp_args = []
+xpack_include_directories = []
+xpack_sources = []
+xpack_compile_definitions = []
+
+xpack_include_directories += [
     'include',
-  ),
-  sources: files(
+]
+
+xpack_sources += [
     'src/micro-test-plus.cpp',
     'src/test-runner.cpp',
     'src/test-reporter.cpp',
     'src/test-suite.cpp',
-  ),
+]
+
+# https://mesonbuild.com/Reference-manual_functions.html#static_library
+micro_os_plus_micro_test_plus_static = static_library(
+  'micro_os_plus_micro_test_plus',
+
+  include_directories: include_directories(xpack_include_directories),
+  sources: files(xpack_sources),
+  c_args: xpack_common_args + xpack_c_args + xpack_compile_definitions,
+  cpp_args: xpack_common_args + xpack_cpp_args + xpack_compile_definitions,
 )
 
-message('+ -I include')
-message('+ src/micro-test-plus.cpp')
-message('+ src/test-runner.cpp')
-message('+ src/test-reporter.cpp')
-message('+ src/test-suite.cpp')
+foreach name : xpack_include_directories
+  message('+ -I ' + name)
+endforeach
+foreach name : xpack_sources + xpack_common_args + xpack_c_args + xpack_cpp_args
+  message('+ ' + name)
+endforeach
+message('> micro_os_plus_micro_test_plus_static')
+
+# -----------------------------------------------------------------------------
+
+xpack_include_directories = []
+xpack_sources = []
+
+xpack_include_directories += [
+    'include',
+]
+
+# https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
+micro_os_plus_micro_test_plus_dependency = declare_dependency(
+  include_directories: include_directories(xpack_include_directories),
+  compile_args: xpack_common_args
+)
+
+# micro_os_plus_micro_test_plus_dependency_c_args = xpack_c_args
+# micro_os_plus_micro_test_plus_dependency_cpp_args = xpack_cpp_args
+
+foreach name : xpack_include_directories
+  message('+ -I ' + name)
+endforeach
+foreach name : xpack_sources + xpack_common_args
+  message('+ ' + name)
+endforeach
 message('> micro_os_plus_micro_test_plus_dependency')
 
 # -----------------------------------------------------------------------------
