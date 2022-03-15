@@ -61,10 +61,6 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
-  class test_runner;
-  class test_reporter;
-  class test_suite;
-
   extern test_runner runner;
   extern test_reporter reporter;
   extern test_suite* current_test_suite;
@@ -123,6 +119,10 @@ namespace micro_os_plus::micro_test_plus
    * or, if the custom operators are used, to include custom type
    * operands, otherwise support for identifying the failed check
    * is not provided.
+   *
+   * The template is usable only for expressions that evaluate to
+   * a boolean or use custom comparators/operators derived from the
+   * local `op` type.
    */
   template <
       class Expr_T,
@@ -140,6 +140,10 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @brief Check a condition and, if false, abort.
+   *
+   * The template is usable only for expressions that evaluate to
+   * a boolean or use custom comparators/operators derived from the
+   * local `op` type.
    */
   template <
       class Expr_T,
@@ -188,7 +192,8 @@ namespace micro_os_plus::micro_test_plus
 #endif
 
   /**
-   * @brief Generic equality comparator.
+   * @brief Generic equality comparator. Matches any
+   * non-pointer type.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -198,7 +203,8 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
-   * @brief Pointer equality comparator.
+   * @brief Pointer equality comparator. Matches pointers
+   * to any types.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -355,29 +361,37 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Separate namespace with custom operators.
    *
-   * @warning Please note that they are defined here
-   * only for completeness; their use is debatable, since they
+   * @warning Please note that they
    * may interfere with other operators existing in the tested application.
    *
    * To minimise the interferences, these operators are recognised only
    * for specific types, and generally require constants to be
-   * suffixed with literals (like `1_i`), or casted to the custom types
-   * (like `_i(...)`).
+   * suffixed with literals (like `1_i`), and dynamic values to be
+   * casted to the custom types (like `_i(...)`).
    */
   namespace operators
   {
+    /**
+     * @brief Equality operator for string_view objects.
+     */
     [[nodiscard]] constexpr auto
     operator== (std::string_view lhs, std::string_view rhs)
     {
       return detail::eq_{ lhs, rhs };
     }
 
+    /**
+     * @brief Non-equality operator for string_view objects.
+     */
     [[nodiscard]] constexpr auto
     operator!= (std::string_view lhs, std::string_view rhs)
     {
       return detail::ne_{ lhs, rhs };
     }
 
+    /**
+     * @brief Equality operator for containers.
+     */
     template <class T,
               type_traits::requires_t<type_traits::is_container_v<T>> = 0>
     [[nodiscard]] constexpr auto
@@ -386,6 +400,9 @@ namespace micro_os_plus::micro_test_plus
       return detail::eq_{ static_cast<T&&> (lhs), static_cast<T&&> (rhs) };
     }
 
+    /**
+     * @brief Non-equality operator for containers.
+     */
     template <class T,
               type_traits::requires_t<type_traits::is_container_v<T>> = 0>
     [[nodiscard]] constexpr auto
@@ -394,6 +411,10 @@ namespace micro_os_plus::micro_test_plus
       return detail::ne_{ static_cast<T&&> (lhs), static_cast<T&&> (rhs) };
     }
 
+    /**
+     * @brief Equality operator. It matches only if at least one
+     * operand is of local type (derived from local `op`).
+     */
     template <
         class Lhs_T, class Rhs_T,
         type_traits::requires_t<
@@ -404,6 +425,10 @@ namespace micro_os_plus::micro_test_plus
       return detail::eq_{ lhs, rhs };
     }
 
+    /**
+     * @brief Non-equality operator. It matches only if at least one
+     * operand is of local type (derived from local `op`).
+     */
     template <
         class Lhs_T, class Rhs_T,
         type_traits::requires_t<
@@ -414,6 +439,10 @@ namespace micro_os_plus::micro_test_plus
       return detail::ne_{ lhs, rhs };
     }
 
+    /**
+     * @brief Greater than operator. It matches only if at least one
+     * operand is of local type (derived from local `op`).
+     */
     template <
         class Lhs_T, class Rhs_T,
         type_traits::requires_t<
@@ -424,6 +453,10 @@ namespace micro_os_plus::micro_test_plus
       return detail::gt_{ lhs, rhs };
     }
 
+    /**
+     * @brief Greater than or equal operator. It matches only if at least one
+     * operand is of local type (derived from local `op`).
+     */
     template <
         class Lhs_T, class Rhs_T,
         type_traits::requires_t<
@@ -434,6 +467,10 @@ namespace micro_os_plus::micro_test_plus
       return detail::ge_{ lhs, rhs };
     }
 
+    /**
+     * @brief Less than operator. It matches only if at least one
+     * operand is of local type (derived from local `op`).
+     */
     template <
         class Lhs_T, class Rhs_T,
         type_traits::requires_t<
@@ -444,6 +481,10 @@ namespace micro_os_plus::micro_test_plus
       return detail::lt_{ lhs, rhs };
     }
 
+    /**
+     * @brief Less than or equal operator. It matches only if at least one
+     * operand is of local type (derived from local `op`).
+     */
     template <
         class Lhs_T, class Rhs_T,
         type_traits::requires_t<
@@ -454,6 +495,10 @@ namespace micro_os_plus::micro_test_plus
       return detail::le_{ lhs, rhs };
     }
 
+    /**
+     * @brief Logical `and` operator. It matches only if at least one
+     * operand is of local type (derived from local `op`).
+     */
     template <
         class Lhs_T, class Rhs_T,
         type_traits::requires_t<
@@ -464,6 +509,10 @@ namespace micro_os_plus::micro_test_plus
       return detail::and_{ lhs, rhs };
     }
 
+    /**
+     * @brief Logical `or` operator. It matches only if at least one
+     * operand is of local type (derived from local `op`).
+     */
     template <
         class Lhs_T, class Rhs_T,
         type_traits::requires_t<
@@ -474,6 +523,10 @@ namespace micro_os_plus::micro_test_plus
       return detail::or_{ lhs, rhs };
     }
 
+    /**
+     * @brief Logical `not` operator. It matches only if the
+     * operand is of local type (derived from local `op`).
+     */
     template <class T, type_traits::requires_t<type_traits::is_op_v<T>> = 0>
     [[nodiscard]] constexpr auto
     operator not (const T& t)

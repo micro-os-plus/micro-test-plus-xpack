@@ -1,9 +1,9 @@
 [![license](https://img.shields.io/github/license/micro-os-plus/micro-test-plus-xpack)](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/LICENSE)
 [![CI on Push](https://github.com/micro-os-plus/micro-test-plus-xpack/workflows/CI%20on%20Push/badge.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/actions?query=workflow%3A%22CI+on+Push%22)
 
-# A source library xPack with µTest++, a minimalistic testing framework
+# A source library xPack with µTest++, a testing framework for embedded platforms
 
-The **µTest++** project (_micro test plus_) provides a very simple
+The **µTest++** project (_micro test plus_) provides a relatively simple
 testing framework, intended for running unit tests on embedded
 platforms.
 
@@ -85,7 +85,7 @@ bar to C++ 20.
 - test suites can be located in separate compilation units, and automatically
   register themselves to the runner;
 - a test suite is a named sequence of test cases
-- a test case is a named sequence of conditions expected to be true
+- a test case is a sequence of conditions expected to be true
 - test conditions are either common logical expressions, or they check
   if an exception was thrown (or no exception was thrown)
 - each test condition either succeeds or fails
@@ -104,49 +104,55 @@ if all tests suites are successful, the process returns 0 as exit value.
 The **International Software Testing Qualification Board** defines some terms
 used in testing frameworks:
 
-- test condition: A testable aspect of a component or system identified as a basis for testing.
-- test case: A set of preconditions, inputs, actions (where applicable), expected results and postconditions, developed based on test conditions.
-- test suite: A set of test scripts or test procedures to be executed in a specific test run.
+- test condition: A testable aspect of a component or system identified
+  as a basis for testing.
+- test case: A set of preconditions, inputs, actions (where applicable),
+  expected results and postconditions, developed based on test conditions.
+- test suite: A set of test scripts or test procedures to be executed in
+  a specific test run.
 
 For more details see: <http://glossary.istqb.org/en/search/test%20case>.
 
 ### C++ API
 
-At the limit of simplicity, µTest++ provides only one primitive used to check expectations defined as logical conditions:
+Aiming simplicity, µTest++ provides only a small number of primitives used
+to check expectations/assumptions defined as logical conditions:
+
+#### Expectations
+
+Expectations are checks whose results are counted and do not
+stop the fest (as opposed to assumptions, which abort the test).
 
 ```C++
-template <class Expr_T>
-bool expect(const TExpr& expr, const char *message);
+template <class Expr_T, type_traits::requires_t<....>>
+bool expect(const Expr_T& expr, const char *message = "");
 ```
 
-To test exceptions, it is possible to check if any exception was thrown,
-if a specific exception was thrown, or no exception at all was thrown:
+The template matches only expressions that evaluate to
+a boolean or use custom comparators/operators derived from a
+local `op` type; these expressions are guaranteed when using
+the provided comparators (see below).
+
+#### Assumptions
+
+Assumptions are checks that abort the test if the results are false.
 
 ```C++
-// Check if any exception was thrown.
-template <class TExpr>
-throws (const TExpr& expr, const char *message);
-
-// Check if a specific exception was thrown.
-template <class TException, class TExpr>
-throws (const TExpr& expr, const char *message);
-
-// Check if no exceptions are thrown.
-template <class TExpr>
-nothrow (const TExpr& expr, const char *message);
+template <class Expr_T, type_traits::requires_t<....>>
+bool assume(const Expr_T& expr, const char *message = "");
 ```
 
-For generic checks performed outside the testing framework, the results can
-be reported with two functions:
+Similarly, the template matches only expressions that evaluate to
+a boolean or use custom comparators/operators derived from a
+local `op` type; these expressions are guaranteed when using
+the provided comparators (see below).
 
-```C++
-// Passed check.
-bool pass(const char *message);
-// Failes check.
-bool fail(const char *message);
-```
+#### Comparators
 
-The generic comparators available in the logical expression are:
+Expectations and assumptions may use any expression evaluating to a
+boolean value, but in order to nicely report the difference between expected
+and actual values in failed
+conditions, the following generic comparators are available:
 
 ```c++
 template <class Lhs_T, class Rhs_T>
@@ -170,31 +176,217 @@ ge(const Lhs_T& lhs, const Rhs_T& rhs);
 
 Similar templates are defined for pointer comparators.
 
-For string comparisons to use the lexicographical order, use `string_view`:
+Examples:
+
+```c++
+expect (eq (compute_answer (), 42), "answer is 42");
+expect (ne (compute_answer (), 43), "answer is not 43");
+expect (lt (compute_answer (), 43), "answer is < 43");
+expect (le (compute_answer (), 43), "answer is <= 42");
+expect (gt (compute_answer (), 41), "answer is > 43");
+expect (ge (compute_answer (), 42), "answer is >= 42");
+
+expect (compute_condition (), "condition is true");
+```
+
+When such comparators are used, failed checks also display the
+actual values used during the test, for example:
+
+```console
+  Check failed comparisons
+    ✗ actual != 42 FAILED (unit-test.cpp:286, 42 != 42)
+    ✗ FAILED (unit-test.cpp:307, 42 != 42)
+    ✗ 42 != 42_i FAILED (unit-test.cpp:310, 42 != 42)
+    ✗ (actual == 42) and (actual != 42.0) FAILED (unit-test.cpp:781, (42 == 42 and 42.000000 != 42.000000))
+```
+
+#### Comparing strings
+
+In C/C++, plain strings are actually pointers to characters, and comparing
+them does not compare the content, but the memory addresses.
+
+For string comparisons to compare the content, use `string_view`:
 
 ```c++
 #include <string_view>
-using namespace std::literals; // To access the "sv" literal.
+using namespace std::literals; // For the "sv" literal.
 // ...
 
-int
-main (int argc, char* argv[])
+expect (eq (std::string_view{ compute_ultimate_answer () }, "fortytwo"sv),
+        "ultimate_answer is 'fortytwo'");
+```
+
+#### Comparing containers
+
+It is possible to directly compare containers for equality. The comparison
+is done by iterating over the container and comparing each member.
+
+```c++
+expect (eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }),
+        "vector{ 1, 2 } eq vector{ 1, 2 }");
+
+expect (ne (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 }),
+        "vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }");
+```
+
+#### Operators
+
+As in most other C++ test frameworks,
+is also possible to overload the `==`, `!=`, `<`, `>`, `<=`, `>=` operators.
+
+To avoid interferences with possible other operators
+defined by the application, these operators are enabled only for
+specific types and are located in a separate namespace
+(`micro_test_plus::operators`).
+
+The following operators match only for operands derived from the local
+`op` type, which can be enforced for constant values by using the
+provided literals (like `1_i`) or, for dynamic values, by using the
+provided casts (like `_i(expr)`):
+
+```c++
+template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
+bool operator== (const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
+bool operator!= (const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
+bool operator< (const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
+bool operator<= (const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
+bool operator> (const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
+bool operator>= (const Lhs_T& lhs, const Rhs_T& rhs);
+```
+
+Examples:
+
+```c++
+using namespace micro_test_plus::operators;
+using namespace micro_test_plus::literals;
+
+expect (compute_answer () == 42_i, "answer is 42 (with literal)");
+expect (_i (compute_answer ()) == 42, "answer is 42 (with cast)");
+expect (compute_answer () != 43_i, "answer is not 43");
+expect (compute_answer () < 43_i, "answer is < 43");
+expect (compute_answer () <= 43_i, "answer is <= 42");
+expect (compute_answer () > 41_i, "answer is > 43");
+expect (compute_answer () >= 42_i, "answer is >= 42");
+```
+
+In addition, equality operators are also provided for `string_view`
+objects and for iterable containers:
+
+```c++
+bool operator== (std::string_view lhs, std::string_view rhs);
+bool operator!= (std::string_view lhs, std::string_view rhs);
+
+template <class T, type_traits::requires_t<type_traits::is_container_v<T>>>
+bool operator== (T&& lhs, T&& rhs);
+
+template <class T, type_traits::requires_t<type_traits::is_container_v<T>>>
+bool operator!= (T&& lhs, T&& rhs);
+```
+
+Examples:
+
+```c++
+#include <string_view>
+using namespace std::literals; // For the "sv" literal.
+// ...
+
+using namespace micro_test_plus::operators;
+
+expect (std::string_view{ compute_ultimate_answer () } == "fortytwo"sv,
+        "ultimate answer == 'fortytwo'");
+
+expect (std::vector<int>{ 1, 2 } == std::vector<int>{ 1, 2 },
+        "vector{ 1, 2 } == vector{ 1, 2 }");
+
+expect (std::vector<int>{ 1, 2, 3 } != std::vector<int>{ 1, 2, 4 },
+        "vector{ 1, 2, 3 } != vector{ 1, 2, 4 }");
+```
+
+#### Explicit namespace
+
+If the operators interfere with application operators, or even if functions
+interfere with application functions, it is recommended to
+use the comparator functions, which can be more easily invoked
+with explicit namespaces, possibly aliased to shorter names.
+
+Example:
+
+```c++
 {
-  initialize ("Sample Test", argc, argv);
+  namespace t = micro_test_plus;
 
-  test_case ("Check string", [] {
-    expect (eq (std::string_view{ compute_aaa () }, "aaa"sv),
-            "compute_aaa() == 'aaa'");
+  t::test_case ("Check answer", [] {
+    t::expect (t:eq(compute_answer(), 42), "answer is 42");
   });
-
-  return exit_code ();
 }
 ```
 
+#### Exceptions
 
+It is possible to check if any exception was thrown,
+if a specific exception was thrown, or no exception at all was thrown:
 
-Also at the limit of simplicity, each test case is performed by invoking
-a function, parametrised with a name, a callable, usually a lambda,
+```C++
+// Check if any exception was thrown.
+template <class Callable_T>
+throws (const Callable_T& expr, const char *message = "");
+
+// Check if a specific exception was thrown.
+template <class Exception_T, class Callable_T>
+throws (const Callable_T& expr, const char *message = "");
+
+// Check if no exceptions are thrown.
+template <class Callable_T>
+nothrow (const Callable_T& expr, const char *message = "");
+```
+
+Examples:
+
+```c++
+expect (throws ([] { exercise_throw (true); }), "exception thrown");
+
+expect (throws<std::runtime_error> ([] { throw std::runtime_error{ "" }; }),
+        "std::runtime_error thrown");
+
+expect (nothrow ([] { exercise_throw (false); }), "exception not thrown");
+```
+
+#### Pass/Fail reporters
+
+For generic checks performed outside the testing framework, the results can
+be reported with two functions:
+
+```C++
+// Passed check.
+bool pass(const char *message = "passed");
+// Failes check.
+bool fail(const char *message = "...");
+```
+
+Examples:
+
+```c++
+pass ("xyz passed");
+fail ("xyz...");
+```
+
+#### Test cases
+
+Test cases group several checks done in the same environment.
+
+There can be any number of test cases, and each test case is performed
+by invoking
+a function, parametrised with a name, a callable (usually a lambda),
 and optional arguments:
 
 ```C++
@@ -203,6 +395,25 @@ void
 test_case (const char* name, Callable_T&& func, Args_T&&... arguments);
 ```
 
+Examples:
+
+```c++
+test_case ("Check various conditions", [] {
+  expect (eq (compute_answer (), 42), "answer eq 42");
+  expect (ne (compute_answer (), 43), "answer ne 43");
+});
+
+test_case ("Check various conditions with operators", [] {
+  using namespace micro_test_plus::operators;
+  using namespace micro_test_plus::literals;
+
+  expect (compute_answer () == 42_i, "answer == 42 (with literal)");
+  expect (compute_answer () != 43_i, "answer != 43");
+});
+```
+
+#### Initialise the test runner
+
 The test runner is initialised with a name and the process arguments:
 
 ```C++
@@ -210,19 +421,50 @@ void
 initialize (const char* name, int argc, char* argv[]);
 ```
 
-The final test result (0 for pass, 1 for fail), to be returned
-to the system, is obtained with:
+#### Return the test result
+
+The final test result to be returned to the system
+(0 for pass, 1 for fail), is obtained with:
 
 ```C++
 int
 exit_code (void);
 ```
 
-This call also triggers the execution of all test suites.
+This call also triggers the execution of all global test suites.
+
+Examples:
+
+```c++
+int
+main (int argc, char* argv[])
+{
+  using namespace micro_test_plus;
+
+  // There is a default test suite automatically defined in main().
+  initialize ("Sample Test", argc, argv);
+
+  test_case ("Check various conditions", [] {
+    pass();
+  });
+
+  return exit_code ();
+}
+```
+
+#### Test suites
+
+Test suites are sequences of test cases.
+
+The test cases defined in `main()` are considered the default test
+suite, and are executed when invoked.
+
+For complex applications it is also possible to define multiple test
+suites, possibly in separate source files.
 
 In order to make self-registration possible, test suites are classes,
-which can be constructed with a name and a callable, usually a lambda,
-which executes the test cases:
+which can be constructed with a name and a callable (usually a lambda),
+which chaines the execution of the test cases:
 
 ```C++
 class test_suite
@@ -233,18 +475,41 @@ public:
 }
 ```
 
-It is recommended to instantiate test suites as static objects.
+It is recommended to instantiate the test suites as static objects.
 The self-registration to the runner is done in the constructor.
 For test suites defined in different compilation units, the order
 in which they are executed replicates the order in which the
-static constructors were invoked, and this order is not specified;
-thus, there should be no dependencies between test suites.
+static constructors were invoked, and, since this order is not specified;
+there should be no dependencies between test suites, as they
+can be executed in any order.
 
-The test cases defined in `main()` are considered the default test
-suite, and are executed when invoked.
+The test cases in the separate test suites are executed when the
+function `exit_code()` is invoked.
 
-The test cases in the explicit test suites are executed when the
-final result is requested.
+Examples:
+
+```c++
+static micro_test_plus::test_suite ts_1
+    = { "A test suite", [] {
+        using namespace micro_test_plus;
+
+        test_case ("Check one", [] {
+          pass ("Passed");
+        });
+
+        test_case ("Check two", [] {
+          pass ("Passed");
+        });
+      }};
+```
+
+#### Custom types
+
+It is possible to extend the comparators with templates matching custom
+types, but this is not a trivial task and requires a good knowledge of
+C++.
+
+TODO: add a test to show this.
 
 ### Build & integration info
 
@@ -275,29 +540,37 @@ The header file to be included in user project is:
 
 - `src`
 
-The source file to be added to user projects is:
+The source file to be added to user projects are:
 
-- `micro-test-plus.cpp`.
+- `micro-test-plus.cpp`
+- `test-reporter.cpp`
+- `test-runner.cpp`
+- `test-suite.cpp`
 
 #### Preprocessor definitions
 
-- none required
+- `MICRO_OS_PLUS_TRACE` - to include the trace
+- `MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS` to enable some tracing messages
 
 #### Compiler options
 
 - `-std=c++20` or higher for C++ sources
-- `-std=c11` for C sources
 
 #### C++ Namespaces
 
 - `micro_os_plus::micro_test_plus`
+- `micro_os_plus::micro_test_plus::operators`
+- `micro_os_plus::micro_test_plus::literals`
 
-`micro_os_plus` is the top µOS++ namespace, and `micro_test_plus` is the µTest++ namespace.
+`micro_os_plus` is the top µOS++ namespace, and `micro_test_plus` is the
+µTest++ namespace.
+
+The `operators` namespace defines the custom operators, and the `literals`
+namespace defines the literals (like `1_i`);
 
 #### C++ Classes
 
 - `micro_os_plus::micro_test_plus::test_suite`
-- `micro_os_plus::micro_test_plus::test_case`
 
 #### CMake
 
@@ -342,7 +615,7 @@ exe = executable(
 
 ### Examples
 
-A simple example showing how to use the µTest++ framework is
+An example showing how to use the µTest++ framework is
 presented below and is also available in
 [tests/src/sample-test.cpp](tests/src/sample-test.cpp).
 
@@ -365,9 +638,18 @@ main (int argc, char* argv[])
   initialize ("Sample Test", argc, argv);
 
   test_case ("Check various conditions", [] {
-    expect (eq (compute_one (), 1), "compute_one() == 1");
-    expect (eq (compute_aaa (), "aaa"), "compute_aaa() == 'aaa' char*");
+    expect (eq (compute_answer (), 42), "answer is 42");
+    expect (ne (compute_answer (), 43), "answer is not 43");
     expect (compute_condition (), "condition() is true");
+  });
+
+  test_case ("Check various conditions with operators", [] {
+    using namespace micro_test_plus::operators;
+    using namespace micro_test_plus::literals;
+
+    expect (compute_answer () == 42_i, "answer == 42 (with literal)");
+    expect (_i (compute_answer ()) == 42, "answer == 42 (with cast)");
+    expect (compute_answer () != 43_i, "answer != 43");
   });
 
   test_case ("Check parameterised", [] {

@@ -497,7 +497,7 @@ main (int argc, char* argv[])
   test_assert (current_test_suite->test_cases () == local_counts.test_cases);
 
   // As all pointers, 'char*' are compared by address.
-  // To compare lexicographically, use string_value{}.
+  // To compare by content, use string_value{}.
   test_case ("Check passed string comparisons", [] {
     expect (eq (std::string_view{ compute_abc () }, "abc"sv),
             "actual_sv == abc_sv");
