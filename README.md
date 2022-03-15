@@ -75,17 +75,26 @@ into `xpack`.
 
 ### Overview
 
-The initial version of the **µTest++** framework was inspired by
-[Node tap](https://node-tap.org) and aims for simplicity.
+The initial version of the **µTest++** framework was inspired mainly by
+[Node tap](https://node-tap.org) and aimed for simplicity.
 The later v3.x was a full rework inspired by
-[Boost UT](https://boost-ext.github.io/ut/) and was the reason to raise the
-bar to C++ 20.
+[Boost UT](https://boost-ext.github.io/ut/).
 
-- modern C++ code
-- macro free
+The main characteristics of µTest++, basically inherited from Boost UT, are:
+
+- modern C++ code (this was also the reason
+  to raise the bar to C++ 20 for the entire µOS++ project)
+- macro free (while preserving the nice feature of being able to report
+  the line number for failed tests)
 - expectations, assumptions, exceptions
-- no streams dependencies
+- test cases, test suites
 - automatic test suites registration
+
+As major differentiator from Boost UT:
+
+- reduced memory footprint, since there are no dependencies on
+  the standard C++ stream library
+- a slightly simplified API
 
 ### Concepts and features
 
@@ -97,14 +106,18 @@ bar to C++ 20.
 - test conditions are either common logical expressions, or they check
   if an exception was thrown (or if no exception was thrown)
 - each test condition either succeeds or fails
+- assumptions are hard conditions expected to be true for the test to run
+- failed assumptions abort the test;
+- expectations are conditions expected to be true, but the test can continue
+  even if they fail, and the runner keeps a count of them;
 - the test progress is shown on STDOUT, with each test condition on a
   separate line, prefixed with either a check sign (✓) or a cross sign (✗)
-- failed expectations display the location in the file and
+- failed conditions display the location in the file and
   the actual values used in the expression evaluation
 - the main result of the test is passed back as the process exit code
 
-If there is at least one successful tested condition and there are no
-failed tests, each test suite is considered successful;
+If there is at least one successful condition and there are no
+failed conditions, each test suite is considered successful;
 if all tests suites are successful, the process returns 0 as exit value.
 
 ### ISTQB Glossary
