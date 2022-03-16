@@ -122,10 +122,6 @@ namespace micro_os_plus::micro_test_plus
               if constexpr (type_traits::has_value_v<
                                 Lhs_T> and type_traits::has_value_v<Rhs_T>)
                 {
-#if defined(MICRO_TEST_PLUS_TRACE)
-                  printf ("    eq_ %s\n", "value == value");
-#endif // MICRO_TEST_PLUS_TRACE
-
                   // If both types have values (like numeric constants),
                   // compare them directly.
                   return Lhs_T::value == Rhs_T::value;
@@ -134,10 +130,6 @@ namespace micro_os_plus::micro_test_plus
                   type_traits::has_epsilon_v<
                       Lhs_T> and type_traits::has_epsilon_v<Rhs_T>)
                 {
-#if defined(MICRO_TEST_PLUS_TRACE)
-                  printf ("    eq_ %s\n", "abs < min epsilon LR");
-#endif // MICRO_TEST_PLUS_TRACE
-
                   // If both values have precision, compare them using
                   // the smalles precision.
                   return math::abs (get (lhs) - get (rhs))
@@ -145,28 +137,16 @@ namespace micro_os_plus::micro_test_plus
                 }
               else if constexpr (type_traits::has_epsilon_v<Lhs_T>)
                 {
-#if defined(MICRO_TEST_PLUS_TRACE)
-                  printf ("    eq_ %s\n", "abs < epsilon L");
-#endif // MICRO_TEST_PLUS_TRACE
-
                   // If only the left operand has precision, use it.
                   return math::abs (get (lhs) - get (rhs)) < Lhs_T::epsilon;
                 }
               else if constexpr (type_traits::has_epsilon_v<Rhs_T>)
                 {
-#if defined(MICRO_TEST_PLUS_TRACE)
-                  printf ("    eq_ %s\n", "abs < epsilon R");
-#endif // MICRO_TEST_PLUS_TRACE
-
                   // If only the right operand has precision, use it.
                   return math::abs (get (lhs) - get (rhs)) < Rhs_T::epsilon;
                 }
               else
                 {
-#if defined(MICRO_TEST_PLUS_TRACE)
-                  printf ("    eq_ %s\n", "get() == get()");
-#endif // MICRO_TEST_PLUS_TRACE
-
                   // Call the generic getters, which might
                   // either call the type get() or return the value.
                   return get (lhs) == get (rhs);
