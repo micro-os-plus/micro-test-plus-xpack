@@ -120,7 +120,22 @@ if (ENABLE_SAMPLE_TEST)
     NAME "sample-test"
     COMMAND sample-test one two
   )
-  
+
+  add_test(
+    NAME "sample-test --verbose"
+    COMMAND sample-test one two --verbose
+  )
+
+  add_test(
+    NAME "sample-test --quiet"
+    COMMAND sample-test one two --quiet
+  )
+
+  add_test(
+    NAME "sample-test --silent"
+    COMMAND sample-test one two --silent
+  )
+
 endif()
 
 # -----------------------------------------------------------------------------
@@ -136,6 +151,21 @@ if (ENABLE_UNIT_TEST)
   add_test(
     NAME "unit-test"
     COMMAND unit-test
+  )
+
+  add_test(
+    NAME "unit-test --verbose"
+    COMMAND unit-test --verbose
+  )
+
+  add_test(
+    NAME "unit-test --quiet"
+    COMMAND unit-test --quiet
+  )
+
+  add_test(
+    NAME "unit-test --silent"
+    COMMAND unit-test --silent
   )
 
 endif()

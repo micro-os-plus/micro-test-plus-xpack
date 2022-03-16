@@ -24,6 +24,7 @@
 
 // ----------------------------------------------------------------------------
 
+#pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
@@ -36,151 +37,11 @@ namespace micro_os_plus::micro_test_plus
   test_reporter&
   endl (test_reporter& stream)
   {
-    printf ("\n");
-    reporter.flush ();
+    reporter.endline ();
     return stream;
   }
 
   // --------------------------------------------------------------------------
-
-  void
-  test_reporter::flush (void)
-  {
-    fflush (stdout); // Sync STDOUT.
-  }
-
-  test_reporter&
-  test_reporter::operator<< (std::string_view sv)
-  {
-    printf ("%s", sv.data ());
-    return *this;
-  }
-
-  test_reporter&
-  test_reporter::operator<< (char c)
-  {
-    printf ("%c", c);
-    return *this;
-  }
-
-  test_reporter&
-  test_reporter::operator<< (const char* s)
-  {
-    printf ("%s", s);
-    return *this;
-  }
-
-  test_reporter&
-  test_reporter::operator<< (char* s)
-  {
-    printf ("%s", s);
-    return *this;
-  }
-
-  test_reporter&
-  test_reporter::operator<< (bool v)
-  {
-    printf ("%s", v ? "true" : "false");
-    return *this;
-  }
-
-  test_reporter&
-  test_reporter::operator<< (std::nullptr_t)
-  {
-    printf ("nullptr");
-    return *this;
-  }
-
-  test_reporter&
-  test_reporter::operator<< (signed char c)
-  {
-    printf ("%d%s", c, "c");
-    return *this;
-  }
-
-  test_reporter&
-  test_reporter::operator<< (unsigned char c)
-  {
-    printf ("%d%s", c, "uc");
-    return *this;
-  }
-
-  test_reporter&
-  test_reporter::operator<< (signed short c)
-  {
-    printf ("%d%s", c, "s");
-    return *this;
-  }
-
-  test_reporter&
-  test_reporter::operator<< (unsigned short c)
-  {
-    printf ("%u%s", c, "us");
-    return *this;
-  }
-
-  test_reporter&
-  test_reporter::operator<< (signed int v)
-  {
-    printf ("%d", v);
-    return *this;
-  }
-
-  test_reporter&
-  test_reporter::operator<< (unsigned int v)
-  {
-    printf ("%u%s", v, "u");
-    return *this;
-  }
-
-  test_reporter&
-  test_reporter::operator<< (signed long v)
-  {
-    printf ("%ld%s", v, "l");
-    return *this;
-  }
-
-  test_reporter&
-  test_reporter::operator<< (unsigned long v)
-  {
-    printf ("%lu%s", v, "ul");
-    return *this;
-  }
-
-  test_reporter&
-  test_reporter::operator<< (signed long long v)
-  {
-    printf ("%lld%s", v, "ll");
-    return *this;
-  }
-
-  test_reporter&
-  test_reporter::operator<< (unsigned long long v)
-  {
-    printf ("%llu%s", v, "ull");
-    return *this;
-  }
-
-  test_reporter&
-  test_reporter::operator<< (float v)
-  {
-    printf ("%f%s", static_cast<double> (v), "f");
-    return *this;
-  }
-
-  test_reporter&
-  test_reporter::operator<< (double v)
-  {
-    printf ("%f", v);
-    return *this;
-  }
-
-  test_reporter&
-  test_reporter::operator<< (long double v)
-  {
-    printf ("%Lf%s", v, "l");
-    return *this;
-  }
 
   test_reporter&
   test_reporter::operator<< (test_reporter& (*func) (test_reporter&))
@@ -191,40 +52,283 @@ namespace micro_os_plus::micro_test_plus
   }
 
   void
-  test_reporter::begin_test_case (const char* name)
+  test_reporter::endline (void)
   {
-    printf ("\n  %s\n", name);
+    out_.append ("\n");
+    flush ();
+  }
+
+  void
+  test_reporter::flush (void)
+  {
+    fflush (stdout); // Sync STDOUT.
+  }
+
+  test_reporter&
+  test_reporter::operator<< (std::string_view sv)
+  {
+    out_.append (sv);
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (char c)
+  {
+    out_.append (1, c);
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (const char* s)
+  {
+    out_.append (s);
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (char* s)
+  {
+    out_.append (s);
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (bool v)
+  {
+    out_.append (v ? "true" : "false");
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (std::nullptr_t)
+  {
+    out_.append ("nullptr");
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (signed char c)
+  {
+    out_.append (std::to_string (c));
+    out_.append ("c");
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (unsigned char c)
+  {
+    out_.append (std::to_string (static_cast<int> (c)));
+    out_.append ("uc");
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (signed short v)
+  {
+    out_.append (std::to_string (v));
+    out_.append ("s");
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (unsigned short v)
+  {
+    out_.append (std::to_string (static_cast<long> (v)));
+    out_.append ("us");
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (signed int v)
+  {
+    out_.append (std::to_string (v));
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (unsigned int v)
+  {
+    out_.append (std::to_string (v));
+    out_.append ("u");
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (signed long v)
+  {
+    out_.append (std::to_string (v));
+    out_.append ("l");
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (unsigned long v)
+  {
+    out_.append (std::to_string (v));
+    out_.append ("ul");
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (signed long long v)
+  {
+    out_.append (std::to_string (v));
+    out_.append ("ll");
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (unsigned long long v)
+  {
+    out_.append (std::to_string (v));
+    out_.append ("ull");
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (float v)
+  {
+    out_.append (std::to_string (v));
+    out_.append ("f");
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (double v)
+  {
+    out_.append (std::to_string (v));
+    return *this;
+  }
+
+  test_reporter&
+  test_reporter::operator<< (long double v)
+  {
+    out_.append (std::to_string (v));
+    out_.append ("l");
+    return *this;
+  }
+
+  void
+  test_reporter::begin_test_case ([[maybe_unused]] const char* name)
+  {
+    out_.clear ();
+
     flush ();
   }
 
   void
   test_reporter::end_test_case ([[maybe_unused]] const char* name)
   {
+    if (verbosity == verbosity::quiet || verbosity == verbosity::silent)
+      {
+        return;
+      }
+
+    if (current_test_suite->current_test_case.failed_checks > 0)
+      {
+        printf ("\n");
+        printf ("  - %s - test case\n", name);
+        printf ("%s", out_.c_str ());
+        printf ("  %s✗%s %s - test case %sFAILED%s (%d %s passed, %d "
+                "failed)\n",
+                colors_.fail.data (), colors_.none.data (), name,
+                colors_.fail.data (), colors_.none.data (),
+                current_test_suite->current_test_case.successful_checks,
+                current_test_suite->current_test_case.successful_checks == 1
+                    ? "check"
+                    : "checks",
+                current_test_suite->current_test_case.failed_checks);
+        add_empty_line = true;
+      }
+    else
+      {
+        if (add_empty_line)
+          {
+            printf ("\n");
+          }
+        if (verbosity == verbosity::verbose)
+          {
+            printf ("  - %s - test case\n", name);
+            printf ("%s", out_.c_str ());
+            printf ("  %s✓%s %s - test case passed (%d %s)\n",
+                    colors_.pass.data (), colors_.none.data (), name,
+                    current_test_suite->current_test_case.successful_checks,
+                    current_test_suite->current_test_case.successful_checks
+                            == 1
+                        ? "check"
+                        : "checks");
+
+            add_empty_line = true;
+          }
+        else
+          {
+            printf ("  %s✓%s %s - test case passed (%d %s)\n",
+                    colors_.pass.data (), colors_.none.data (), name,
+                    current_test_suite->current_test_case.successful_checks,
+                    current_test_suite->current_test_case.successful_checks
+                            == 1
+                        ? "check"
+                        : "checks");
+
+            add_empty_line = false;
+          }
+      }
+
     flush ();
   }
 
   void
   test_reporter::begin_test_suite (const char* name)
   {
-    flush ();
-    printf ("\n%s\n", name);
+    if (add_empty_line)
+      {
+        flush ();
+        printf ("\n");
+      }
+
+    if (verbosity == verbosity::silent || verbosity == verbosity::quiet)
+      {
+        add_empty_line = false;
+        return;
+      }
+
+    printf ("%s - test suite\n", name);
+
+    add_empty_line = true;
   }
 
   void
   test_reporter::end_test_suite (test_suite& suite)
   {
-    // Also fail if none passed.
-    if (suite.failed () == 0 && suite.passed () != 0)
+    if (verbosity == verbosity::silent)
       {
-        printf ("\n%s passed (%d checks in %d test cases)\n", suite.name (),
-                suite.passed (), suite.test_cases ());
+        return;
+      }
+
+    if (suite.test_cases () > 0 && verbosity != verbosity::quiet)
+      {
+        printf ("\n");
+        add_empty_line = true;
+      }
+
+    // Also fail if none passed.
+    if (suite.failed_checks () == 0 && suite.successful_checks () != 0)
+      {
+        printf ("%s - test suite passed (%d %s in %d test %s)\n",
+                suite.name (), suite.successful_checks (),
+                suite.successful_checks () == 1 ? "check" : "checks",
+                suite.test_cases (),
+                suite.test_cases () == 1 ? "case" : "cases");
       }
     else
       {
-        printf (
-            "\n%s failed (%d checks passed, %d failed, in %d test cases)\n",
-            suite.name (), suite.passed (), suite.failed (),
-            suite.test_cases ());
+        printf ("%s - test suite %sFAILED%s (%d %s passed, %d failed, "
+                "in %d test %s)\n",
+                suite.name (), colors_.fail.data (), colors_.none.data (),
+                suite.successful_checks (),
+                suite.successful_checks () == 1 ? "check" : "checks",
+                suite.failed_checks (), suite.test_cases (),
+                suite.test_cases () == 1 ? "case" : "cases");
       }
     flush ();
   }

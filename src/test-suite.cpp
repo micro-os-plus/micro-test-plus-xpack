@@ -78,6 +78,8 @@ namespace micro_os_plus::micro_test_plus
     test_case_name_ = name;
     ++test_cases_;
 
+    current_test_case = {};
+
     reporter.begin_test_case (test_case_name_);
   }
 
@@ -85,6 +87,20 @@ namespace micro_os_plus::micro_test_plus
   test_suite::end_test_case (void)
   {
     reporter.end_test_case (test_case_name_);
+  }
+
+  void
+  test_suite::increment_successful (void)
+  {
+    ++successful_checks_;
+    ++current_test_case.successful_checks;
+  }
+
+  void
+  test_suite::increment_failed (void)
+  {
+    ++failed_checks_;
+    ++current_test_case.failed_checks;
   }
 
   // --------------------------------------------------------------------------

@@ -23,9 +23,6 @@
 #include <micro-os-plus/micro-test-plus.h>
 
 #include <stdio.h>
-
-// ----------------------------------------------------------------------------
-
 #include <vector>
 
 // ----------------------------------------------------------------------------
@@ -93,6 +90,26 @@ namespace micro_os_plus::micro_test_plus
     puts ("");
 #endif
 
+    verbosity_t verbosity = verbosity::normal;
+    for (int i = 0; i < argc; ++i)
+      {
+        if (strcmp (argv[i], "--verbose") == 0)
+          {
+            verbosity = verbosity::verbose;
+          }
+        else if (strcmp (argv[i], "--quiet") == 0)
+          {
+            verbosity = verbosity::quiet;
+          }
+        else if (strcmp (argv[i], "--silent") == 0)
+          {
+            verbosity = verbosity::silent;
+          }
+      }
+
+    // Pass the verbosity to the reporter.
+    reporter.verbosity = verbosity;
+
     default_test_suite_ = new test_suite (default_suite_name_);
 
     default_test_suite_->begin ();
@@ -103,7 +120,7 @@ namespace micro_os_plus::micro_test_plus
   {
     default_test_suite_->end ();
 
-    bool success = default_test_suite_->success ();
+    bool was_successful = default_test_suite_->was_successful ();
 
     if (suites_ != nullptr)
       {
@@ -112,10 +129,10 @@ namespace micro_os_plus::micro_test_plus
             default_test_suite_ = suite;
             suite->run ();
 
-            success &= suite->success ();
+            was_successful &= suite->was_successful ();
           }
       }
-    return success ? 0 : 1;
+    return was_successful ? 0 : 1;
   }
 
   void

@@ -47,7 +47,10 @@ namespace micro_os_plus::micro_test_plus
   test_reporter&
   test_reporter::operator<< (T* v)
   {
-    printf ("%p", reinterpret_cast<void*> (v));
+    char buff[20];
+    snprintf (buff, sizeof (buff), "%p", reinterpret_cast<void*> (v));
+    out_.append (buff);
+
     return *this;
   }
 
@@ -65,7 +68,7 @@ namespace micro_os_plus::micro_test_plus
   test_reporter&
   test_reporter::operator<< (const type_traits::genuine_integral_value<T>& v)
   {
-    printf ("%lld", static_cast<long long> (v.get ()));
+    out_.append (std::to_string (static_cast<long long> (v.get ())));
     return *this;
   }
 
@@ -186,7 +189,7 @@ namespace micro_os_plus::micro_test_plus
   void
   test_reporter::pass (detail::assertion<Expr_T> assertion)
   {
-    *this << colors_.pass << "    ✓ ";
+    *this << colors_.pass << "    ✓ " << colors_.none;
     if (strlen (assertion.message))
       {
         // If a non-empty message is provided, display it.
@@ -197,24 +200,22 @@ namespace micro_os_plus::micro_test_plus
         // Otherwise display the evaluated expression.
         *this << assertion.expr;
       }
-    *this << colors_.none;
     *this << endl;
 
     flush ();
-    current_test_suite->increment_passed ();
+    current_test_suite->increment_successful ();
   }
 
   template <class Expr_T>
   void
   test_reporter::fail (detail::assertion<Expr_T> assertion)
   {
-    *this << colors_.fail << "    ✗ ";
+    *this << colors_.fail << "    ✗ " << colors_.none;
     if (strlen (assertion.message))
       {
         *this << assertion.message << " ";
       }
-    *this << "FAILED";
-    *this << colors_.none;
+    *this << colors_.fail << "FAILED" << colors_.none;
     *this << " (" << reflection::short_name (assertion.location.file_name ())
           << ":"
           << type_traits::genuine_integral_value{ assertion.location.line () };

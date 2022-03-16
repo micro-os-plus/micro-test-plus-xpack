@@ -25,6 +25,7 @@
 
 //#include <functional>
 #include <string_view>
+#include <string>
 
 #include "type-traits.h"
 #include "test-suite.h"
@@ -34,6 +35,7 @@
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpadded"
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
@@ -53,6 +55,16 @@ namespace micro_os_plus::micro_test_plus
     std::string_view pass = "\033[32m";
     std::string_view fail = "\033[31m";
   };
+
+  enum class verbosity
+  {
+    silent = 0, // Nothing, only return the exit code
+    quiet = 1, // Test suites results
+    normal = 2, // Test suites results and failed test cases
+    verbose = 3 // All, including passed checks
+  };
+
+  typedef verbosity verbosity_t;
 
   class test_reporter;
 
@@ -249,6 +261,9 @@ namespace micro_os_plus::micro_test_plus
     operator<< (const detail::nothrow_<Expr_T>& op);
 #endif
 
+    void
+    endline (void);
+
     // ------------------------------------------------------------------------
 
     /**
@@ -283,8 +298,15 @@ namespace micro_os_plus::micro_test_plus
     void
     flush (void);
 
+    // Used to nicely format the output, without empty lines
+    // between successful test cases.
+    bool add_empty_line{ true };
+
+    verbosity_t verbosity{};
+
   private:
     colors colors_{};
+    std::string out_{};
   };
 
   // --------------------------------------------------------------------------

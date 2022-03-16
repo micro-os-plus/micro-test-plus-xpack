@@ -90,43 +90,37 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Count one more passed test condition.
      */
-    constexpr void
-    increment_passed (void)
-    {
-      ++passed_;
-    }
+    void
+    increment_successful (void);
 
     /**
      * @brief Count one more failed test condition.
      */
-    constexpr void
-    increment_failed (void)
+    void
+    increment_failed (void);
+
+    /**
+     * @brief Get the number of conditions that passed.
+     */
+    [[nodiscard]] constexpr int
+    successful_checks (void)
     {
-      ++failed_;
+      return successful_checks_;
     }
 
     /**
-     * @brief Get the number of passed conditions.
+     * @brief Get the number of conditions that failed.
      */
-    constexpr int
-    passed (void)
+    [[nodiscard]] constexpr int
+    failed_checks (void)
     {
-      return passed_;
-    }
-
-    /**
-     * @brief Get the number of failed conditions.
-     */
-    constexpr int
-    failed (void)
-    {
-      return failed_;
+      return failed_checks_;
     }
 
     /**
      * @brief Get the number of test cases.
      */
-    constexpr int
+    [[nodiscard]] constexpr int
     test_cases (void)
     {
       return test_cases_;
@@ -148,10 +142,10 @@ namespace micro_os_plus::micro_test_plus
      * @brief Get the test suite result.
      */
     [[nodiscard]] constexpr bool
-    success (void)
+    was_successful (void)
     {
       // Also fail if none passed.
-      return (failed_ == 0 && passed_ != 0);
+      return (failed_checks_ == 0 && successful_checks_ != 0);
     }
 
   private:
@@ -171,19 +165,26 @@ namespace micro_os_plus::micro_test_plus
     std::function<void ()> callable_ = nullptr;
 
     /**
-     * @brief Count of passed test conditions.
+     * @brief Count of test conditions that passed.
      */
-    int passed_ = 0;
+    int successful_checks_ = 0;
 
     /**
-     * @brief Count of failed test conditions.
+     * @brief Count of test conditions that failed.
      */
-    int failed_ = 0;
+    int failed_checks_ = 0;
 
     /**
      * @brief Count of test cases in the test suite.
      */
     int test_cases_ = 0;
+
+  public:
+    struct
+    {
+      int successful_checks;
+      int failed_checks;
+    } current_test_case{};
   };
 
   // --------------------------------------------------------------------------

@@ -85,7 +85,7 @@ main (int argc, char* argv[])
   using namespace micro_test_plus;
 
   // There is a default test suite automatically defined in main().
-  initialize ("Sample Test", argc, argv);
+  initialize ("Sample", argc, argv);
 
   // --------------------------------------------------------------------------
 
@@ -93,6 +93,7 @@ main (int argc, char* argv[])
   test_case ("Check various conditions", [] {
     // There are functions with usual names for all comparisons.
 
+    expect (eq (compute_answer (), 42)); // << "baburiba";
     expect (eq (compute_answer (), 42), "answer eq 42");
     expect (ne (compute_answer (), 43), "answer ne 43");
     expect (lt (compute_answer (), 43), "answer lt 43");
@@ -275,7 +276,7 @@ main (int argc, char* argv[])
 // Aditional test suites. They may be located in separate source files.
 
 static micro_test_plus::test_suite ts_1
-    = { "A test suite", [] {
+    = { "Separate", [] {
          using namespace micro_test_plus;
 
          test_case ("Check one", [] { pass ("Passed"); });
@@ -283,7 +284,7 @@ static micro_test_plus::test_suite ts_1
        } };
 
 static micro_test_plus::test_suite ts_2
-    = { "Another test suite with explicit namespace", [] {
+    = { "Explicit namespace", [] {
          // In case the application has functions that conflict with
          // the test framework names, use explicit names, possibly
          // shortned to a single letter.
