@@ -82,7 +82,7 @@ The later v3.x was a full rework inspired by
 
 The main characteristics of µTest++, basically inherited from Boost UT, are:
 
-- modern C++ code (this was also the reason
+- modern C++ 20 code (this was also the reason
   to raise the bar to C++ 20 for the entire µOS++ project)
 - macro free (while preserving the nice feature of being able to report
   the file name and line number for failed tests)
@@ -101,20 +101,21 @@ As major differentiator from Boost UT:
 - for complex applications, test cases can be grouped in test suites
 - test suites can be located in separate compilation units, and automatically
   register themselves to the runner;
-- a test suite is a named sequence of test cases
-- a test case is a sequence of conditions expected to be true
+- a test suite is a named sequence of test cases;
+- a test case is a sequence of conditions expected to be true;
 - test conditions are either common logical expressions, or they check
-  if an exception was thrown (or if no exception was thrown)
-- each test condition either succeeds or fails
-- assumptions are hard conditions expected to be true for the test to run
+  if, while evaluating an expression, an exception is thrown;
+- each test condition either succeeds or fails;
+- assumptions are hard conditions expected to be true in order for the test
+  to continue to run;
 - failed assumptions abort the test;
 - expectations are conditions expected to be true, but the test can continue
   even if they fail, and the runner keeps a count of them;
 - the test progress is shown on STDOUT, with each test condition on a
-  separate line, prefixed with either a check sign (✓) or a cross sign (✗)
+  separate line, prefixed with either a check sign (✓) or a cross sign (✗);
 - failed conditions display the location in the file and
-  the actual values used in the expression evaluation
-- the main result of the test is passed back as the process exit code
+  the actual values used in the expression evaluation;
+- the main result of the test is passed back as the process exit code.
 
 If there is at least one successful condition and there are no
 failed conditions, each test suite is considered successful;
