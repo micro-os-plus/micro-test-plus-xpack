@@ -122,7 +122,6 @@ my_expected_float (void)
   return 42.0;
 }
 
-#if 0
 static const char*
 compute_abc (void)
 {
@@ -152,17 +151,20 @@ exercise_throw (bool mustThrow)
 }
 
 #endif // __EXCEPTIONS)
-#endif
+
 // ----------------------------------------------------------------------------
 
 int
 main (int argc, char* argv[])
 {
-  initialize ("Main test suite", argc, argv);
+  printf ("\nµTest++ unit tests; some checks are expected to fail.\n");
+
+  initialize ("Main", argc, argv);
 
   if (reporter.verbosity > verbosity::quiet)
     {
-      printf ("\nµTest++ unit tests; some checks are expected to fail.\n\n");
+      // On failure it aborts before reaching this point.
+      printf ("\nOverall, the µTest++ unit tests were successful!\n\n");
     }
 
   // Enable this to check that asserts trigger.
@@ -175,7 +177,7 @@ main (int argc, char* argv[])
                == local_counts.failed_checks);
   test_assert (current_test_suite->test_cases () == local_counts.test_cases);
 
-  test_case ("Check initial counters",
+  test_case ("Initial counters",
              [] () noexcept { local_counts.test_cases++; });
 
   test_assert (current_test_suite->successful_checks ()
@@ -185,8 +187,8 @@ main (int argc, char* argv[])
   test_assert (current_test_suite->test_cases () == local_counts.test_cases);
 
   // --------------------------------------------------------------------------
-#if 0
-  test_case ("Check if pass() always succeeds", [] {
+
+  test_case ("pass() always succeeds", [] {
     pass ();
     local_counts.successful_checks++;
 
@@ -204,7 +206,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  test_case ("Check if fail() always fails", [] {
+  test_case ("fail() always fails", [] {
     fail ();
     local_counts.failed_checks++;
 
@@ -222,7 +224,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  test_case ("Check expect(true)", [] {
+  test_case ("expect(true)", [] {
     expect (true);
     local_counts.successful_checks++;
 
@@ -240,7 +242,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  test_case ("Check expect(false)", [] {
+  test_case ("expect(false)", [] {
     expect (false);
     local_counts.failed_checks++;
 
@@ -258,7 +260,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  test_case ("Check integer comparisons", [] {
+  test_case ("Integer comparisons", [] {
     expect (eq (my_actual_integral (), 42), "actual == 42");
     local_counts.successful_checks++;
 
@@ -298,7 +300,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  test_case ("Check failed integer comparisons", [] {
+  test_case ("Failed integer comparisons", [] {
     local_counts.test_cases++;
 
     expect (ne (my_actual_integral (), 42), "actual != 42");
@@ -338,7 +340,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  test_case ("Check passed float comparisons", [] {
+  test_case ("Float comparisons", [] {
     expect (eq (my_actual_float<float> (), 42.0f), "actual == 42.0f");
     local_counts.successful_checks++;
 
@@ -438,7 +440,7 @@ main (int argc, char* argv[])
                == local_counts.failed_checks);
   test_assert (current_test_suite->test_cases () == local_counts.test_cases);
 
-  test_case ("Check failed float comparisons", [] {
+  test_case ("Failed float comparisons", [] {
     expect (ne (my_actual_float<float> (), 42.0f), "actual != 42.0");
     local_counts.failed_checks++;
 
@@ -522,7 +524,7 @@ main (int argc, char* argv[])
 
   // As all pointers, 'char*' are compared by address.
   // To compare by content, use string_value{}.
-  test_case ("Check passed string comparisons", [] {
+  test_case ("String comparisons", [] {
     expect (eq (std::string_view{ compute_abc () }, "abc"sv),
             "actual_sv == abc_sv");
     local_counts.successful_checks++;
@@ -556,7 +558,7 @@ main (int argc, char* argv[])
                == local_counts.failed_checks);
   test_assert (current_test_suite->test_cases () == local_counts.test_cases);
 
-  test_case ("Check failed string comparisons", [] {
+  test_case ("Failed string comparisons", [] {
     expect (ne (std::string_view{ compute_abc () }, "abc"sv),
             "actual_sv != abc_sv");
     local_counts.failed_checks++;
@@ -590,7 +592,7 @@ main (int argc, char* argv[])
                == local_counts.failed_checks);
   test_assert (current_test_suite->test_cases () == local_counts.test_cases);
 
-  test_case ("Check passed pointer comparisons", [] {
+  test_case ("Pointer comparisons", [] {
     int one = 1;
     int* ptr1 = &one;
     int* ptr2 = &one;
@@ -643,7 +645,7 @@ main (int argc, char* argv[])
                == local_counts.failed_checks);
   test_assert (current_test_suite->test_cases () == local_counts.test_cases);
 
-  test_case ("Check failed pointer comparisons", [] {
+  test_case ("Failed pointer comparisons", [] {
     int one = 1;
     int* ptr1 = &one;
     int* ptr2 = &one;
@@ -696,7 +698,7 @@ main (int argc, char* argv[])
                == local_counts.failed_checks);
   test_assert (current_test_suite->test_cases () == local_counts.test_cases);
 
-  test_case ("Check passed null pointer comparisons", [] {
+  test_case ("Null pointer comparisons", [] {
     void* a_nullptr = nullptr;
     void* a_non_nullptr = &a_nullptr;
     void (*pfunc) (void) = nullptr;
@@ -719,7 +721,7 @@ main (int argc, char* argv[])
                == local_counts.failed_checks);
   test_assert (current_test_suite->test_cases () == local_counts.test_cases);
 
-  test_case ("Check failed null pointer comparisons", [] {
+  test_case ("Failed null pointer comparisons", [] {
     void* a_nullptr = nullptr;
     void* a_non_nullptr = &a_nullptr;
     void (*pfunc) (void) = nullptr;
@@ -746,7 +748,7 @@ main (int argc, char* argv[])
 
 #if defined(__EXCEPTIONS)
 
-  test_case ("Check passed thrown exceptions", [] {
+  test_case ("thrown exceptions", [] {
     expect (throws ([] { exercise_throw (true); }), "exception thrown");
     local_counts.successful_checks++;
 
@@ -764,7 +766,7 @@ main (int argc, char* argv[])
                == local_counts.failed_checks);
   test_assert (current_test_suite->test_cases () == local_counts.test_cases);
 
-  test_case ("Check failed thrown exceptions", [] {
+  test_case ("Failed thrown exceptions", [] {
     expect (throws ([] { exercise_throw (false); }), "exception thrown");
     local_counts.failed_checks++;
 
@@ -782,7 +784,7 @@ main (int argc, char* argv[])
                == local_counts.failed_checks);
   test_assert (current_test_suite->test_cases () == local_counts.test_cases);
 
-  test_case ("Check passed not thrown exceptions", [] {
+  test_case ("Not thrown exceptions", [] {
     expect (nothrow ([] { exercise_throw (false); }), "exception not thrown");
     local_counts.successful_checks++;
 
@@ -795,7 +797,7 @@ main (int argc, char* argv[])
                == local_counts.failed_checks);
   test_assert (current_test_suite->test_cases () == local_counts.test_cases);
 
-  test_case ("Check failed not thrown exceptions", [] {
+  test_case ("Failed not thrown exceptions", [] {
     expect (nothrow ([] { exercise_throw (true); }), "exception not thrown");
     local_counts.failed_checks++;
 
@@ -873,7 +875,7 @@ main (int argc, char* argv[])
   test_assert (current_test_suite->failed_checks ()
                == local_counts.failed_checks);
   test_assert (current_test_suite->test_cases () == local_counts.test_cases);
-#endif
+
   test_case ("Operators", [] {
     using namespace operators;
     using namespace literals;
@@ -978,11 +980,9 @@ main (int argc, char* argv[])
   int code = exit_code ();
   test_assert (code != 0);
 
-  if (reporter.verbosity > verbosity::quiet)
-    {
-      // On failure it aborts before reaching this point.
-      printf ("\nOverall µTest++ unit tests passed!\n\n");
-    }
+  // On failure it aborts before reaching this point.
+  printf ("\nOverall, the µTest++ unit tests were successful!\n\n");
+
   return 0;
 }
 
@@ -1244,7 +1244,7 @@ test_case_expect_eq_floats_combinatorial (void)
 }
 
 static test_suite ts_passed_integrals = {
-  "Check passed combinatorial integrals",
+  "Combinatorial integrals",
   [] {
     local_counts = {};
 
@@ -1344,7 +1344,7 @@ static test_suite ts_passed_integrals = {
 };
 
 static test_suite ts_failed_integrals = {
-  "Check failed combinatorial integrals",
+  "Failed combinatorial integrals",
   [] {
     local_counts = {};
 
@@ -1444,7 +1444,7 @@ static test_suite ts_failed_integrals = {
 };
 
 static test_suite ts_passed_floats
-    = { "Check passed combinatorial floats", [] {
+    = { "Combinatorial floats", [] {
          local_counts = {};
 
          test_case ("Combinatorial floats",
@@ -1469,11 +1469,11 @@ static test_suite ts_passed_floats
        } };
 
 static test_suite ts_misc = {
-  "Check miscellaneous",
+  "Miscellaneous",
   [] {
     local_counts = {};
 
-    test_case ("Arrays passed", [] {
+    test_case ("Arrays", [] {
       expect (eq (std::array<int, 1>{ 42 }, std::array<int, 1>{ 42 }),
               "array{ 42 } == array{ 42 }");
       local_counts.successful_checks++;
@@ -1525,7 +1525,7 @@ static test_suite ts_misc = {
                  == local_counts.failed_checks);
     test_assert (current_test_suite->test_cases () == local_counts.test_cases);
 
-    test_case ("Vectors passed", [] {
+    test_case ("Vectors", [] {
       expect (eq (std::vector<int>{}, std::vector<int>{}),
               "vector{ } == vector{ }");
       local_counts.successful_checks++;
