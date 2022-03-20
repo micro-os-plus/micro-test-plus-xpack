@@ -1145,6 +1145,88 @@ main (int argc, char* argv[])
   test_assert (current_test_suite->test_cases () == local_counts.test_cases);
 
   // --------------------------------------------------------------------------
+
+  test_case ("Strings matches", [] {
+    expect (utility::is_match ("", ""), "empty strings");
+    local_counts.successful_checks++;
+
+    expect (utility::is_match ("", "*"), "empty matches *");
+    local_counts.successful_checks++;
+
+    expect (utility::is_match ("abc", "abc"), "abc matches abc");
+    local_counts.successful_checks++;
+
+    expect (utility::is_match ("abc", "a?c"), "abc matches a?c");
+    local_counts.successful_checks++;
+
+    expect (utility::is_match ("abc", "a*"), "abc matches a*");
+    local_counts.successful_checks++;
+
+    expect (utility::is_match ("abc", "a*c"), "abc matches a*c");
+    local_counts.successful_checks++;
+
+    local_counts.test_cases++;
+  });
+
+  test_assert (current_test_suite->successful_checks ()
+               == local_counts.successful_checks);
+  test_assert (current_test_suite->failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+
+  test_case ("Failed strings matches", [] {
+    expect (utility::is_match ("", "abc"), "empty matches abc");
+    local_counts.failed_checks++;
+
+    expect (utility::is_match ("abc", "b??"), "abc matches b??");
+    local_counts.failed_checks++;
+
+    expect (utility::is_match ("abc", "a*d"), "abc matches a*d");
+    local_counts.failed_checks++;
+
+    expect (utility::is_match ("abc", "*C"), "abc matches *C");
+    local_counts.failed_checks++;
+
+    local_counts.test_cases++;
+  });
+
+  test_assert (current_test_suite->successful_checks ()
+               == local_counts.successful_checks);
+  test_assert (current_test_suite->failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+
+  test_case ("Splits", [] {
+    expect (std::vector<std::string_view>{}
+                == utility::split<std::string_view> ("", "."),
+            "empty splits into []");
+    local_counts.successful_checks++;
+
+    expect (std::vector<std::string_view>{ "a" }
+                == utility::split<std::string_view> ("a.", "."),
+            "a. splits into [a]");
+    local_counts.successful_checks++;
+
+    expect (std::vector<std::string_view>{ "a", "b" }
+                == utility::split<std::string_view> ("a.b", "."),
+            "a.b splits into [a,b]");
+    local_counts.successful_checks++;
+
+    expect (std::vector<std::string_view>{ "a", "b", "cde" }
+                == utility::split<std::string_view> ("a.b.cde", "."),
+            "a.b.cde splits into [a, b, cde]");
+    local_counts.successful_checks++;
+
+    local_counts.test_cases++;
+  });
+
+  test_assert (current_test_suite->successful_checks ()
+               == local_counts.successful_checks);
+  test_assert (current_test_suite->failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+
+  // --------------------------------------------------------------------------
   // The inner test should return failure.
   // exit_code() must be always called, otherwise the test suites
   // are not executed.

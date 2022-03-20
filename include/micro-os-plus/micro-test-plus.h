@@ -527,6 +527,17 @@ namespace micro_os_plus::micro_test_plus
     }
   } // namespace operators
 
+  namespace utility
+  {
+    [[nodiscard]] bool
+    is_match (std::string_view input, std::string_view pattern);
+
+    template <class T, class Delim_T>
+    [[nodiscard]] auto
+    split (T input, Delim_T delim) -> std::vector<T>;
+
+  } // namespace utility
+
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
 

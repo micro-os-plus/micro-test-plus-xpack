@@ -72,6 +72,45 @@ namespace micro_os_plus::micro_test_plus
 
   } // namespace reflection
 
+  namespace utility
+  {
+    [[nodiscard]] bool
+    is_match (std::string_view input, std::string_view pattern)
+    {
+      if (std::empty (pattern))
+        {
+          return std::empty (input);
+        }
+
+      if (std::empty (input))
+        {
+          return pattern[0] == '*' ? is_match (input, pattern.substr (1))
+                                   : false;
+        }
+
+      if (pattern[0] != '?' and pattern[0] != '*' and pattern[0] != input[0])
+        {
+          return false;
+        }
+
+      if (pattern[0] == '*')
+        {
+          for (decltype (std::size (input)) i = 0u; i <= std::size (input);
+               ++i)
+            {
+              if (is_match (input.substr (i), pattern.substr (1)))
+                {
+                  return true;
+                }
+            }
+          return false;
+        }
+
+      return is_match (input.substr (1), pattern.substr (1));
+    }
+
+  } // namespace utility
+
   // ==========================================================================
 
 #if defined(__GNUC__)
