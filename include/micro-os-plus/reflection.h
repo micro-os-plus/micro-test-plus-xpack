@@ -103,9 +103,10 @@ namespace micro_os_plus::micro_test_plus
     type_name () -> std::string_view
     {
 #if defined(_MSC_VER) and not defined(__clang__)
+#warning "Check if correct!"
       return { &__FUNCSIG__[120], sizeof (__FUNCSIG__) - 128 };
-#elif defined(__clang_analyzer__)
-      return { &__PRETTY_FUNCTION__[57], sizeof (__PRETTY_FUNCTION__) - 59 };
+// #elif defined(__clang_analyzer__)
+//       return { &__PRETTY_FUNCTION__[57], sizeof (__PRETTY_FUNCTION__) - 59 };
 #elif defined(__clang__) and (__clang_major__ >= 13) and defined(__APPLE__)
       // TODO: find out why it fails to compute the length properly:
       // throws<std::runtime_error]>
@@ -117,9 +118,11 @@ namespace micro_os_plus::micro_test_plus
       return { &__PRETTY_FUNCTION__[70], sizeof (__PRETTY_FUNCTION__) - 72 };
 #elif defined(__GNUC__)
       return { &__PRETTY_FUNCTION__[85], sizeof (__PRETTY_FUNCTION__) - 136 };
+#else
+#error "Unsupported compiler"
+      return "Unsupported compiler";
 #endif
     }
-
   } // namespace reflection
 
   // --------------------------------------------------------------------------
