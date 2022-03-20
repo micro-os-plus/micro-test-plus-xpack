@@ -113,7 +113,7 @@ namespace micro_os_plus::micro_test_plus
       return { &__PRETTY_FUNCTION__[78],
                2 /* sizeof (__PRETTY_FUNCTION__) - 80 */ };
 #elif defined(__clang__) and (__clang_major__ >= 12) and not defined(__APPLE__)
-      return { &__PRETTY_FUNCTION__[97], sizeof (__PRETTY_FUNCTION__) - 99 };
+      return { &__PRETTY_FUNCTION__[78], sizeof (__PRETTY_FUNCTION__) - 80 };
 #elif defined(__clang__)
       return { &__PRETTY_FUNCTION__[70], sizeof (__PRETTY_FUNCTION__) - 72 };
 #elif defined(__GNUC__)
