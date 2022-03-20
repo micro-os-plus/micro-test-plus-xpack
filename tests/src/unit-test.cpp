@@ -18,6 +18,7 @@
 #include <cstring>
 #include <stdio.h>
 #include <vector>
+#include <string_view>
 
 #if defined(__EXCEPTIONS)
 #include <stdexcept>
@@ -746,6 +747,29 @@ main (int argc, char* argv[])
   test_assert (current_test_suite->test_cases () == local_counts.test_cases);
 
   // --------------------------------------------------------------------------
+
+  test_case ("reflection::type_name()", [] {
+    using namespace std::literals::string_view_literals;
+
+#if 0
+    std::string_view sv = reflection::type_name<void> ();
+    printf ("|%s|\n", sv.data ());
+#endif
+
+    expect (eq (reflection::type_name<void> (), "void"sv));
+    local_counts.successful_checks++;
+
+    expect (eq (reflection::type_name<int> (), "int"sv));
+    local_counts.successful_checks++;
+
+    local_counts.test_cases++;
+  });
+
+  test_assert (current_test_suite->successful_checks ()
+               == local_counts.successful_checks);
+  test_assert (current_test_suite->failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
 
 #if defined(__EXCEPTIONS)
 
