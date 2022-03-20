@@ -38,6 +38,7 @@ using namespace micro_os_plus::micro_test_plus;
 #pragma GCC diagnostic ignored "-Wfloat-equal"
 #pragma GCC diagnostic ignored "-Wsign-compare"
 #pragma GCC diagnostic ignored "-Wdouble-promotion"
+#pragma GCC diagnostic ignored "-Wconversion"
 
 // ----------------------------------------------------------------------------
 
