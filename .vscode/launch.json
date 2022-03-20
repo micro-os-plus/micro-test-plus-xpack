@@ -34,6 +34,18 @@
       "MIMode": "lldb"
     },
     {
+      "name": "(gdb) native-cmake-clang12-debug unit-test",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/native-cmake-clang12-debug/platform-bin/unit-test",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}/build/native-cmake-clang12-debug/platform-bin/",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb"
+    },
+    {
       "name": "(arm-none-eabi-gdb) qemu-mps2-an386-cmake-debug sample-test",
       "cwd": "${workspaceRoot}/build/qemu-mps2-an386-cmake-debug",
       "executable": "platform/sample-test.elf",
