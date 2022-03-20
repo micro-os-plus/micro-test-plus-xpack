@@ -82,12 +82,15 @@ namespace micro_os_plus::micro_test_plus
     puts (".");
 
 #if defined(MICRO_OS_PLUS_DEBUG)
-    printf ("argv[] = ");
+    printf ("argv[");
     for (int i = 0; i < argc; ++i)
       {
-        printf ("'%s' ", argv[i]);
+        if (i > 0) {
+          printf(", ");
+        }
+        printf ("'%s'", argv[i]);
       }
-    puts ("");
+    puts ("]");
 #endif
 
     verbosity_t verbosity = verbosity::normal;
