@@ -102,22 +102,14 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] constexpr auto
     type_name () -> std::string_view
     {
-#if defined(_MSC_VER) and not defined(__clang__)
-#warning "Check if correct!"
-      return { &__FUNCSIG__[120], sizeof (__FUNCSIG__) - 128 };
-// #elif defined(__clang_analyzer__)
-//       return { &__PRETTY_FUNCTION__[57], sizeof (__PRETTY_FUNCTION__) - 59 };
-#elif defined(__clang__) and (__clang_major__ >= 13) and defined(__APPLE__)
-      // TODO: find out why it fails to compute the length properly:
-      // throws<std::runtime_error]>
-      return { &__PRETTY_FUNCTION__[78],
-               2 /* sizeof (__PRETTY_FUNCTION__) - 80 */ };
-#elif defined(__clang__) and (__clang_major__ >= 12) and not defined(__APPLE__)
+#if defined(__clang__)
+      // printf("|%s|%zu|\n", __PRETTY_FUNCTION__, sizeof (__PRETTY_FUNCTION__));
+      // printf("|%s|\n", &__PRETTY_FUNCTION__[78]);
       return { &__PRETTY_FUNCTION__[78], sizeof (__PRETTY_FUNCTION__) - 80 };
-#elif defined(__clang__)
-      return { &__PRETTY_FUNCTION__[70], sizeof (__PRETTY_FUNCTION__) - 72 };
 #elif defined(__GNUC__)
-      return { &__PRETTY_FUNCTION__[85], sizeof (__PRETTY_FUNCTION__) - 136 };
+      // printf("|%s|%zu|\n", __PRETTY_FUNCTION__, sizeof (__PRETTY_FUNCTION__));
+      // printf("|%s|\n", &__PRETTY_FUNCTION__[93]);
+      return { &__PRETTY_FUNCTION__[93], sizeof (__PRETTY_FUNCTION__) - 144 };
 #else
 #error "Unsupported compiler"
       return "Unsupported compiler";
