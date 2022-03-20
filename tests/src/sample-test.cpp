@@ -213,16 +213,16 @@ main (int argc, char* argv[])
 
   test_case ("Check complex logic", [] {
     // Complex conditions can be tested with explicit tests, and
-    // the result passed to the test framework via pass()/fail().
+    // the results passed to the test framework.
 
     bool xyz = true;
     if (xyz)
       {
-        pass ("xyz passed");
+        expect (true, "xyz passed");
       }
     else
       {
-        fail ("xyz...");
+        expect (false, "xyz...");
       }
   });
 
@@ -279,8 +279,8 @@ static micro_test_plus::test_suite ts_1
     = { "Separate", [] {
          using namespace micro_test_plus;
 
-         test_case ("Check one", [] { pass ("Passed"); });
-         test_case ("Check two", [] { pass ("Passed"); });
+         test_case ("Check one", [] { expect (true, "Passed"); });
+         test_case ("Check two", [] { expect (true, "Passed"); });
        } };
 
 static micro_test_plus::test_suite ts_2
@@ -290,8 +290,8 @@ static micro_test_plus::test_suite ts_2
          // shortned to a single letter.
          namespace t = micro_test_plus;
 
-         t::test_case ("Check one", [] { t::pass ("Passed"); });
-         t::test_case ("Check two", [] { t::pass ("Passed"); });
+         t::test_case ("Check one", [] { t::expect (true, "Passed"); });
+         t::test_case ("Check two", [] { t::expect (true, "Passed"); });
        } };
 
 // ----------------------------------------------------------------------------

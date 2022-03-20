@@ -336,42 +336,6 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  test_case ("pass() always succeeds", [] {
-    pass ();
-    local_counts.successful_checks++;
-
-    pass ("xyz passed");
-    local_counts.successful_checks++;
-
-    local_counts.test_cases++;
-  });
-
-  test_assert (current_test_suite->successful_checks ()
-               == local_counts.successful_checks);
-  test_assert (current_test_suite->failed_checks ()
-               == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
-
-  // --------------------------------------------------------------------------
-
-  test_case ("fail() always fails", [] {
-    fail ();
-    local_counts.failed_checks++;
-
-    fail ("xyz...");
-    local_counts.failed_checks++;
-
-    local_counts.test_cases++;
-  });
-
-  test_assert (current_test_suite->successful_checks ()
-               == local_counts.successful_checks);
-  test_assert (current_test_suite->failed_checks ()
-               == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
-
-  // --------------------------------------------------------------------------
-
   test_case ("expect(true)", [] {
     expect (true);
     local_counts.successful_checks++;

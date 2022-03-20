@@ -154,6 +154,9 @@ The template matches only expressions that evaluate to
 a boolean or use custom comparators/operators derived from a
 local `op` type.
 
+For generic checks performed outside the testing framework, the results can
+be reported with `expect(true)` or `expect(false)`.
+
 #### Assumptions
 
 Assumptions are checks that abort the test if the results are false.
@@ -460,25 +463,6 @@ expect (throws<std::runtime_error> ([] { throw std::runtime_error{ "" }; }),
 expect (nothrow ([] { exercise_throw (false); }), "exception not thrown");
 ```
 
-#### Pass/Fail reporters
-
-For generic checks performed outside the testing framework, the results can
-be reported with two functions:
-
-```C++
-// Passed check.
-bool pass(const char *message = "passed");
-// Failes check.
-bool fail(const char *message = "...");
-```
-
-Examples:
-
-```c++
-pass ("xyz passed");
-fail ("xyz...");
-```
-
 #### Test cases
 
 Test cases group several checks done in the same environment.
@@ -547,7 +531,7 @@ main (int argc, char* argv[])
   initialize ("Sample Test", argc, argv);
 
   test_case ("Check various conditions", [] {
-    pass();
+    expect(true);
   });
 
   return exit_code ();
@@ -597,11 +581,11 @@ static micro_test_plus::test_suite ts_1
         using namespace micro_test_plus;
 
         test_case ("Check one", [] {
-          pass ("Passed");
+          expect (true, "Passed");
         });
 
         test_case ("Check two", [] {
-          pass ("Passed");
+          expect (true, "Passed");
         });
       }};
 ```

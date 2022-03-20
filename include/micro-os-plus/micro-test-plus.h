@@ -81,31 +81,6 @@ namespace micro_os_plus::micro_test_plus
   exit_code (void);
 
   /**
-   * @brief Mark a passed check.
-   */
-  template <class Expr_T = bool>
-  constexpr auto
-  pass (const char* message = "passed",
-        const reflection::source_location& sl
-        = reflection::source_location::current ())
-  {
-    return detail::evaluate_and_report_<Expr_T> (detail::assertion<Expr_T>{
-        .expr = true, .abort = false, .message = message, .location = sl });
-  }
-
-  /**
-   * @brief Mark a failed check.
-   */
-  template <class Expr_T = bool>
-  constexpr auto
-  fail (const char* message = "...", const reflection::source_location& sl
-                                     = reflection::source_location::current ())
-  {
-    return detail::evaluate_and_report_<Expr_T> (detail::assertion<Expr_T>{
-        .expr = false, .abort = false, .message = message, .location = sl });
-  }
-
-  /**
    * @brief Evaluate a generic condition. The expression must use
    * the provided `eq(), ne(), lt(), le(), gt(), ge()` comparators,
    * or, if the custom operators are used, to include custom type
