@@ -547,9 +547,10 @@ namespace micro_os_plus::micro_test_plus
 
 // ===== Inline & template implementations ====================================
 
-#include "test-suite-inlines.h"
 #include "test-reporter-inlines.h"
-#include "detail-inlines.h"
+
+// All other inlines.
+#include "inlines.h"
 
 // ----------------------------------------------------------------------------
 
