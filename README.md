@@ -135,10 +135,166 @@ used in testing frameworks:
 
 For more details see: <http://glossary.istqb.org/en/search/test%20case>.
 
+### Getting started
+
+The absolute minimal test has a single test case, with a single condition,
+for example:
+
+```c++
+#include <micro-os-plus/micro-test-plus.h>
+
+int
+main(int argc, char* argv[])
+{
+  using namespace micro_os_plus;
+
+  initialize(argc, argv, "Minimal");
+
+  test_case ("Check truth", []{
+    expect (true);
+  })
+
+  return exit_code ();
+}
+```
+
+When running this test, the output looks like this:
+
+```console
+Minimal - test suite
+
+  ✓ Check truth - test case passed (1 check)
+
+Minimal - test suite passed (1 check in 1 test case)
+```
+
+A slightly more useful example would check the result of a computed value,
+for example:
+
+```c++
+#include <micro-os-plus/micro-test-plus.h>
+
+static int
+compute_answer()
+{
+  return 42;
+}
+
+int
+main(int argc, char* argv[])
+{
+  using namespace micro_os_plus;
+
+  initialize(argc, argv, "The Answer");
+
+  test_case ("Check answer", [] {
+    expect (compute_answer() == 42, "answer is 42");
+  });
+
+  return exit_code ();
+}
+```
+
+```console
+The Answer - test suite
+
+  ✓ Check answer - test case passed (1 check)
+
+The Answer - test suite passed (1 check passed, 0 checks failed, in 1 test case)
+```
+
+But what happens if the function returns the wrong answer, for example:
+
+```c++
+static int
+compute_answer()
+{
+  return 42 + 1;
+}
+```
+
+In this case the test will fail with:
+
+```console
+The Answer - test suite
+
+  - Check answer - test case
+    ✗ answer is 42 FAILED (answer.cpp:17)
+  ✗ Check answer - test case FAILED (0 checks passed, 1 check failed)
+
+The Answer - test suite FAILED (0 checks passed, 1 check failed, in 1 test case)
+```
+
+The output identifies the failed test as located at line 17, but does not
+provide more details, for example what was the actual wrong answer.
+
+To also get this, the test should be slightly more elaborate, and must use
+some custom comparators or operators, for example:
+
+```c++
+// ...
+
+int
+main(int argc, char* argv[])
+{
+  using namespace micro_os_plus;
+
+  initialize(argc, argv, "The Answer");
+
+  test_case ("Check answer with comparator", [] {
+    expect (eq (compute_answer (), 42), "answer is 42");
+  });
+
+  test_case ("Check answer with operator", [] {
+    using namespace micro_os_plus::operators;
+    using namespace micro_os_plus::literals;
+
+    expect (compute_answer () == 42_i, "answer is 42");
+    expect (_i (compute_answer ()) == 42, "answer is 42");
+  });
+
+  return exit_code ();
+}
+```
+
+The result would look like:
+
+```console
+The Answer - test suite
+
+  - Check answer with comparator - test case
+    ✗ answer is 42 FAILED (answer.cpp:17, 43 == 42)
+  ✗ Check answer with comparator - test case FAILED (0 checks passed, 1 check failed)
+
+  - Check answer with operator - test case
+    ✗ answer is 42 FAILED (answer.cpp:24, 43 == 42)
+    ✗ answer is 42 FAILED (answer.cpp:25, 43 == 42)
+  ✗ Check answer with operator - test case FAILED (0 checks passed, 1 check failed)
+
+The Answer - test suite FAILED (0 checks passed, 2 checks failed, in 2 test cases)
+```
+
+In the first case, `eq()` is a custom comparator that basically compares almost
+everything and is able to keep track of the operands.
+
+In the second case, a custom operator is used. To avoid interferences
+with other operators, it is defined in a separate namespace (which must
+be explicitly refered, as shown) and matches only some specific types.
+
+To cast the integer constant `42` to this specific type, a custom literal
+is available (`_i`), which is also defined in a separate namespace.
+
+In addition to literals used to define constants, there are also definitions
+which can be used to cast expressions.
+
+For the operator fo match, it is necessary for at least one of the operands
+to be of the specific type, usually the constant using a literal, but if both
+are expression, at least one of them must be casted.
+
 ### C++ API
 
-Aiming simplicity, µTest++ provides only a limited number of primitives used
-to check expectations/assumptions/exceptions.
+Aiming simplicity, µTest++ provides only a very limited number of primitives
+used to check expectations/assumptions/exceptions.
 
 #### Expectations
 
@@ -151,8 +307,8 @@ bool expect(const Expr_T& expr, const char *message = "");
 ```
 
 The template matches only expressions that evaluate to
-a boolean or use custom comparators/operators derived from a
-local `op` type.
+a boolean or use custom comparators/operators derived from an
+internal `detail::op` type.
 
 For generic checks performed outside the testing framework, the results can
 be reported with `expect(true)` or `expect(false)`.
@@ -168,9 +324,9 @@ bool assume(const Expr_T& expr, const char *message = "");
 
 Similarly, the template matches only expressions that evaluate to
 a boolean or use custom comparators/operators derived from a
-local `op` type.
+internal `detail::op` type.
 
-#### Comparators
+#### Function comparators
 
 Expectations and assumptions may use any expression evaluating to a
 boolean value, but in order to nicely report the difference between expected
@@ -222,6 +378,10 @@ actual values used during the test, for example:
     ✗ 42 != 42_i FAILED (unit-test.cpp:310, 42 != 42)
     ✗ (actual == 42) and (actual != 42.0) FAILED (unit-test.cpp:781, (42 == 42 and 42.000000 != 42.000000))
 ```
+
+### Logical function operators
+
+TBD
 
 #### Comparing strings
 
@@ -336,6 +496,10 @@ expect (std::vector<int>{ 1, 2, 3 } != std::vector<int>{ 1, 2, 4 },
         "vector{ 1, 2, 3 } != vector{ 1, 2, 4 }");
 ```
 
+### Logical operators
+
+TBD
+
 #### Literals and casts
 
 For converting constants to recognised typed operands, the following
@@ -435,19 +599,22 @@ Example:
 
 #### Exceptions
 
-It is possible to check if exceptions were thrown (any),
-if a specific exception was thrown, or no exceptions at all were thrown:
+It is possible to check if an expression (usually
+a function call), throw or not an exception.
+
+It is possible to check for any exception, for a specific exception,
+or for no exception at all:
 
 ```C++
-// Check if exceptions were thrown (any).
+// Check for any exception.
 template <class Callable_T>
 throws (const Callable_T& expr, const char *message = "");
 
-// Check if a specific exception was thrown.
+// Check for a specific exception.
 template <class Exception_T, class Callable_T>
 throws (const Callable_T& expr, const char *message = "");
 
-// Check if no exceptions were thrown.
+// Check for no exception at all.
 template <class Callable_T>
 nothrow (const Callable_T& expr, const char *message = "");
 ```
@@ -530,7 +697,7 @@ main (int argc, char* argv[])
   // Pass the process arguments.
   initialize (argc, argv);
 
-  test_case ("Check various conditions", [] {
+  test_case ("Check truth", [] {
     expect(true);
   });
 
@@ -596,7 +763,7 @@ It is possible to extend the comparators with templates matching custom
 types, but this is not a trivial task and requires a good knowledge of
 C++.
 
-TODO: add a test to show this.
+TODO: add a test to show how to do this.
 
 ### Build & integration info
 
