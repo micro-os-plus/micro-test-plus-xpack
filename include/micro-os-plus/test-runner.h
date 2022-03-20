@@ -69,7 +69,7 @@ namespace micro_os_plus::micro_test_plus
      * contructor was used.
      */
     void
-    initialize (const char* name, int argc, char* argv[]);
+    initialize (int argc, char* argv[], const char* name);
 
     /**
      * @brief Return 0 if the all tests were successful, 1 otherwise.

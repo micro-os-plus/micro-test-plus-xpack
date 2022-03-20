@@ -85,7 +85,7 @@ main (int argc, char* argv[])
   using namespace micro_test_plus;
 
   // There is a default test suite automatically defined in main().
-  initialize ("Sample", argc, argv);
+  initialize (argc, argv, "Sample");
 
   // --------------------------------------------------------------------------
 

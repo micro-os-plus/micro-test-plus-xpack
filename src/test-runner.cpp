@@ -45,16 +45,16 @@ namespace micro_os_plus::micro_test_plus
   }
 
   void
-  test_runner::initialize (const char* name, int argc, char* argv[])
+  test_runner::initialize (int argc, char* argv[], const char* name)
   {
 #if defined(MICRO_TEST_PLUS_TRACE)
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_TEST_PLUS_TRACE
 
-    default_suite_name_ = name;
+    argc_ = argc;
+    argv_ = argv;
 
-    this->argc_ = argc;
-    this->argv_ = argv;
+    default_suite_name_ = name;
 
 #if defined(__clang__)
     printf ("Built with clang " __VERSION__);

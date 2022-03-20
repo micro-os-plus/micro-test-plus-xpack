@@ -64,7 +64,7 @@ namespace micro_os_plus::micro_test_plus
    * @brief Initialize the test framework.
    */
   void
-  initialize (const char* name, int argc, char* argv[]);
+  initialize (int argc, char* argv[], const char* name = "Main");
 
   /**
    * @brief Define a test case.

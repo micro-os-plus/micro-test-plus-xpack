@@ -501,7 +501,7 @@ The test runner is initialised with a name and the process arguments:
 
 ```C++
 void
-initialize (const char* name, int argc, char* argv[]);
+initialize (int argc, char* argv[], const char* name = "Main");
 ```
 
 For now the arguments are not used, but future versions may accept
@@ -527,8 +527,8 @@ main (int argc, char* argv[])
 {
   using namespace micro_test_plus;
 
-  // There is a default test suite automatically defined in main().
-  initialize ("Sample Test", argc, argv);
+  // Pass the process arguments.
+  initialize (argc, argv);
 
   test_case ("Check various conditions", [] {
     expect(true);
@@ -722,7 +722,7 @@ using namespace micro_os_plus::micro_test_plus;
 int
 main (int argc, char* argv[])
 {
-  initialize ("Sample Test", argc, argv);
+  initialize (argc, argv, "Sample");
 
   test_case ("Check various conditions", [] {
     expect (eq (compute_answer (), 42), "answer is 42");

@@ -161,7 +161,7 @@ main (int argc, char* argv[])
 {
   printf ("\nµTest++ unit tests; some checks are expected to fail.\n");
 
-  initialize ("Main", argc, argv);
+  initialize (argc, argv);
 
   if (reporter.verbosity > verbosity::quiet)
     {
