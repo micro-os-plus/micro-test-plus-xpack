@@ -669,7 +669,7 @@ namespace micro_os_plus::micro_test_plus
 #endif
 
     template <class Expr_T>
-    [[nodiscard]] bool
+    [[nodiscard]] constexpr bool
     evaluate_and_report_ (detail::assertion<Expr_T> assertion);
 
     // ----------------------------------------------------------------------
