@@ -28,7 +28,7 @@
 
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
-//#pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
+#pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
 #endif
 
 namespace micro_os_plus::micro_test_plus

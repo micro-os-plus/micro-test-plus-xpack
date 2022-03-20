@@ -32,8 +32,6 @@
 #pragma GCC diagnostic ignored "-Wpadded"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
-//#pragma clang diagnostic ignored "-Wc++98-c++11-compat"
-//#pragma clang diagnostic ignored "-Wc++98-c++11-c++14-compat"
 #endif
 #endif
 
