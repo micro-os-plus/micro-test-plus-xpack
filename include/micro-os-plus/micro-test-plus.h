@@ -67,15 +67,15 @@ namespace micro_os_plus::micro_test_plus
   initialize (int argc, char* argv[], const char* name = "Main");
 
   /**
-   * @brief Define a test case.
+   * @brief Define and execute a test case.
    */
   template <typename Callable_T, typename... Args_T>
   void
   test_case (const char* name, Callable_T&& func, Args_T&&... arguments);
 
   /**
-   * @brief Return the test result. Also trigger the execution of the
-   * globally registered test suites.
+   * @brief Trigger the execution of the globally registered test suites
+   * and return the test result.
    */
   [[nodiscard]] int
   exit_code (void);
@@ -126,6 +126,8 @@ namespace micro_os_plus::micro_test_plus
         .expr = expr, .abort = true, .message = message, .location = sl });
   }
 
+  // --------------------------------------------------------------------------
+
 #if defined(__cpp_exceptions)
   /**
    * @brief Check if a callable throws a specific exception.
@@ -157,6 +159,8 @@ namespace micro_os_plus::micro_test_plus
     return detail::nothrow_{ func };
   }
 #endif
+
+  // --------------------------------------------------------------------------
 
   /**
    * @brief Generic equality comparator. Matches any
