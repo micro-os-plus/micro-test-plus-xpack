@@ -872,15 +872,15 @@ TODO: add a test to show how to do this.
 
 #### Verbosity
 
-By default, the test reporter shows detailed results only for failed test
-cases; successful test cases are shown as a single line with passed/failed
-total counts.
+By default, the test reporter shows detailed results only for test cases
+that failed; successful test cases are shown as a single line with
+the total counts of passed/failed checks.
 
 It is possible to control the verbosity using several command line options:
 
 - `--verbose`: show all expectations, regardless of the result
-- `--quiet`: show only test suite totals
-- `--silent`: suppress all output and only return the exeit code
+- `--quiet`: show only the test suite totals
+- `--silent`: suppress all output and only return the exit code
 
 ### Memory footprint
 
