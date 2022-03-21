@@ -143,13 +143,14 @@ The **International Software Testing Qualification Board** defines some terms
 used in testing frameworks:
 
 - test condition: a testable aspect of a component or system identified
-  as a basis for testing (in µTest++ implemented as `expect()` or
+  as a basis for testing (implemented in µTest++ as calls to `expect()` or
   `assume()` functions);
 - test case: a set of preconditions, inputs, actions (where applicable),
   expected results and postconditions, developed based on test conditions
-  (in µTest++ implemented as `test_case()` functions)
+  (implemented in µTest++ as calls to the `test_case()` function)
 - test suite: a set of test scripts or test procedures to be executed in
-  a specific test run (in µTest++ implemented as `test_suite` classes).
+  a specific test run (implemented in µTest++ as instances of the
+  `test_suite` class).
 
 For more details see: <http://glossary.istqb.org/en/search/test%20case>.
 
