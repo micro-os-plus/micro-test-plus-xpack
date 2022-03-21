@@ -863,7 +863,7 @@ main (int argc, char* argv[])
 
 #if 0
     std::string_view sv = reflection::type_name<void> ();
-    printf ("|%s|\n", sv.data ());
+    printf ("|%*.s|\n", sv.length (), sv.data ());
 #endif
 
     expect (eq (reflection::type_name<void> (), "void"sv));
