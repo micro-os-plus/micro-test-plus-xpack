@@ -50,6 +50,8 @@ namespace micro_os_plus::micro_test_plus
   void
   test_suite::run ()
   {
+    current_test_suite = this;
+
     if (callable_ != nullptr)
       {
         begin ();
@@ -61,7 +63,7 @@ namespace micro_os_plus::micro_test_plus
   void
   test_suite::begin (void)
   {
-    current_test_suite = this;
+    process_deferred_begin = false;
 
     reporter.begin_test_suite (name_);
   }
@@ -69,12 +71,21 @@ namespace micro_os_plus::micro_test_plus
   void
   test_suite::end (void)
   {
+    if (process_deferred_begin)
+      {
+        begin ();
+      }
     reporter.end_test_suite (*this);
   }
 
   void
   test_suite::begin_test_case (const char* name)
   {
+    if (process_deferred_begin)
+      {
+        begin ();
+      }
+
     test_case_name_ = name;
     ++test_cases_;
 

@@ -178,6 +178,7 @@ namespace micro_os_plus::micro_test_plus
     int test_cases_ = 0;
 
   public:
+    bool process_deferred_begin = true;
     struct
     {
       int successful_checks;

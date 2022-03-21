@@ -56,38 +56,14 @@ namespace micro_os_plus::micro_test_plus
 
     default_suite_name_ = name;
 
-#if defined(__clang__)
-    printf ("Built with clang " __VERSION__);
-#elif defined(__GNUC__)
-    printf ("Built with GCC " __VERSION__);
-#elif defined(_MSC_VER)
-    // https://docs.microsoft.com/en-us/cpp/preprocessor/predefined-macros?view=msvc-170
-    printf ("Built with MSVC %d", _MSC_VER);
-#else
-    printf ("Built with an unknown compiler");
-#endif
-#if defined(__ARM_PCS_VFP)
-    printf (", with FP");
-#else
-    printf (", no FP");
-#endif
-#if defined(__EXCEPTIONS)
-    printf (", with exceptions");
-#else
-    printf (", no exceptions");
-#endif
-#if defined(MICRO_OS_PLUS_DEBUG)
-    printf (", with MICRO_OS_PLUS_DEBUG");
-#endif
-    puts (".");
-
 #if defined(MICRO_OS_PLUS_DEBUG)
     printf ("argv[");
     for (int i = 0; i < argc; ++i)
       {
-        if (i > 0) {
-          printf(", ");
-        }
+        if (i > 0)
+          {
+            printf (", ");
+          }
         printf ("'%s'", argv[i]);
       }
     puts ("]");
@@ -113,9 +89,44 @@ namespace micro_os_plus::micro_test_plus
     // Pass the verbosity to the reporter.
     reporter.verbosity = verbosity;
 
-    default_test_suite_ = new test_suite (default_suite_name_);
+    // ------------------------------------------------------------------------
 
-    default_test_suite_->begin ();
+    if (verbosity == verbosity::normal || verbosity == verbosity::verbose)
+      {
+#if defined(__clang__)
+        printf ("Built with clang " __VERSION__);
+#elif defined(__GNUC__)
+        printf ("Built with GCC " __VERSION__);
+#elif defined(_MSC_VER)
+        // https://docs.microsoft.com/en-us/cpp/preprocessor/predefined-macros?view=msvc-170
+        printf ("Built with MSVC %d", _MSC_VER);
+#else
+        printf ("Built with an unknown compiler");
+#endif
+#if defined(__ARM_PCS_VFP)
+        printf (", with FP");
+#else
+        printf (", no FP");
+#endif
+#if defined(__EXCEPTIONS)
+        printf (", with exceptions");
+#else
+        printf (", no exceptions");
+#endif
+#if defined(MICRO_OS_PLUS_DEBUG)
+        printf (", with MICRO_OS_PLUS_DEBUG");
+#endif
+        puts (".");
+      }
+
+    // ------------------------------------------------------------------------
+
+    default_test_suite_ = new test_suite (default_suite_name_);
+    current_test_suite = default_test_suite_;
+
+    // Deferred to first test case or test suite end, to allow various
+    // initialisations to display their messages.
+    // default_test_suite_->begin ();
   }
 
   int

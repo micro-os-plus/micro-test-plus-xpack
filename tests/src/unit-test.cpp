@@ -159,14 +159,11 @@ exercise_throw (bool mustThrow)
 int
 main (int argc, char* argv[])
 {
-  printf ("\nµTest++ unit tests; some checks are expected to fail.\n");
-
   initialize (argc, argv);
 
   if (reporter.verbosity > verbosity::quiet)
     {
-      // On failure it aborts before reaching this point.
-      printf ("\nOverall, the µTest++ unit tests were successful!\n\n");
+      printf ("\nµTest++ unit tests; some checks are expected to fail.\n");
     }
 
   // --------------------------------------------------------------------------
@@ -1197,8 +1194,11 @@ main (int argc, char* argv[])
   int code = exit_code ();
   test_assert (code != 0);
 
-  // On failure it aborts before reaching this point.
-  printf ("\nOverall, the µTest++ unit tests were successful!\n\n");
+  if (reporter.verbosity > verbosity::quiet)
+    {
+      // On failure it aborts before reaching this point.
+      printf ("\nOverall, the µTest++ unit tests were successful!\n\n");
+    }
 
   return 0;
 }
