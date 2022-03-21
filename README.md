@@ -295,7 +295,7 @@ is available (`_i`), which is also defined in a separate namespace.
 In addition to literals used to define constants, there are also definitions
 which can be used to cast expressions.
 
-For the operator fo match, it is necessary for at least one of the operands
+For the operator to match, it is necessary for at least one of the operands
 to be of the specific type, usually the constant using a literal, but if both
 are expression, at least one of them must be casted.
 
@@ -307,7 +307,7 @@ used to check expectations and assumptions.
 #### Expectations
 
 Expectations are checks whose results are counted and do not
-stop the test (as opposed to assumptions, which abort the test).
+break the test (as opposed to assumptions, which abort the test).
 
 ```C++
 template <class Expr_T, type_traits::requires_t<....>>
@@ -635,7 +635,7 @@ expect (_f (expression) == 42_f);
 #### Explicit namespace
 
 If, for any reasons, the definitions in the `micro-test-plus` namespace
-interfere with application opedefinitions, it is recommended to
+interfere with application definitions, it is recommended to
 use the comparator functions, which can be more easily invoked
 with explicit namespaces, possibly aliased to shorter names.
 
@@ -662,15 +662,15 @@ or for no exception at all:
 ```C++
 // Check for any exception.
 template <class Callable_T>
-throws (const Callable_T& expr, const char *message = "");
+auto throws (const Callable_T& expr, const char *message = "");
 
 // Check for a specific exception.
 template <class Exception_T, class Callable_T>
-throws (const Callable_T& expr, const char *message = "");
+auto throws (const Callable_T& expr, const char *message = "");
 
 // Check for no exception at all.
 template <class Callable_T>
-nothrow (const Callable_T& expr, const char *message = "");
+auto nothrow (const Callable_T& expr, const char *message = "");
 ```
 
 Examples:
@@ -718,8 +718,7 @@ and optional arguments:
 
 ```C++
 template <typename Callable_T, typename... Args_T>
-void
-test_case (const char* name, Callable_T&& func, Args_T&&... arguments);
+void test_case (const char* name, Callable_T&& func, Args_T&&... arguments);
 ```
 
 Examples:
@@ -745,8 +744,7 @@ The test runner is initialised with the process arguments and a
 name, which is used for the default test suite:
 
 ```C++
-void
-initialize (int argc, char* argv[], const char* name = "Main");
+void initialize (int argc, char* argv[], const char* name = "Main");
 ```
 
 The arguments are used for controlling the verbosity level.
@@ -757,8 +755,7 @@ The final test result that must be returned to the system
 (0 for pass, 1 for fail), can be obtained with:
 
 ```C++
-int
-exit_code (void);
+int exit_code (void);
 ```
 
 This call also triggers the execution of all global test suites.
