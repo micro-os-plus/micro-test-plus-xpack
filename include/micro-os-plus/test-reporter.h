@@ -49,9 +49,9 @@ namespace micro_os_plus::micro_test_plus
 
   struct colors
   {
-    std::string_view none = "\033[0m";
-    std::string_view pass = "\033[32m";
-    std::string_view fail = "\033[31m";
+    const char* none = "\033[0m";
+    const char* pass = "\033[32m";
+    const char* fail = "\033[31m";
   };
 
   enum class verbosity

@@ -231,8 +231,8 @@ namespace micro_os_plus::micro_test_plus
         printf ("%s", out_.c_str ());
         printf ("  %s✗%s %s - test case %sFAILED%s (%d %s passed, %d "
                 "failed)\n",
-                colors_.fail.data (), colors_.none.data (), name,
-                colors_.fail.data (), colors_.none.data (),
+                colors_.fail, colors_.none, name,
+                colors_.fail, colors_.none,
                 current_test_suite->current_test_case.successful_checks,
                 current_test_suite->current_test_case.successful_checks == 1
                     ? "check"
@@ -251,7 +251,7 @@ namespace micro_os_plus::micro_test_plus
             printf ("  - %s - test case\n", name);
             printf ("%s", out_.c_str ());
             printf ("  %s✓%s %s - test case passed (%d %s)\n",
-                    colors_.pass.data (), colors_.none.data (), name,
+                    colors_.pass, colors_.none, name,
                     current_test_suite->current_test_case.successful_checks,
                     current_test_suite->current_test_case.successful_checks
                             == 1
@@ -263,7 +263,7 @@ namespace micro_os_plus::micro_test_plus
         else
           {
             printf ("  %s✓%s %s - test case passed (%d %s)\n",
-                    colors_.pass.data (), colors_.none.data (), name,
+                    colors_.pass, colors_.none, name,
                     current_test_suite->current_test_case.successful_checks,
                     current_test_suite->current_test_case.successful_checks
                             == 1
@@ -324,7 +324,7 @@ namespace micro_os_plus::micro_test_plus
       {
         printf ("%s - test suite %sFAILED%s (%d %s passed, %d failed, "
                 "in %d test %s)\n",
-                suite.name (), colors_.fail.data (), colors_.none.data (),
+                suite.name (), colors_.fail, colors_.none,
                 suite.successful_checks (),
                 suite.successful_checks () == 1 ? "check" : "checks",
                 suite.failed_checks (), suite.test_cases (),
