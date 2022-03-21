@@ -814,8 +814,8 @@ static micro_test_plus::test_suite ts_1
 
 #### Utility functions
 
-For string tests, it is possible to check if the content matches usual
-patterns like `*` (for any characters) and `?` (for a single character):
+For tests comparing string, it is possible to check if the content matches
+usual patterns like `*` (for any characters) and `?` (for a single character):
 
 ```c++
 namespace utility {
@@ -898,14 +898,12 @@ The header file to be included is:
 
 #### Source folders
 
-- `src`
-
 The source files to be added are:
 
-- `micro-test-plus.cpp`
-- `test-reporter.cpp`
-- `test-runner.cpp`
-- `test-suite.cpp`
+- `src/micro-test-plus.cpp`
+- `src/test-reporter.cpp`
+- `src/test-runner.cpp`
+- `src/test-suite.cpp`
 
 #### Preprocessor definitions
 
