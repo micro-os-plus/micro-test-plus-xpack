@@ -16,8 +16,9 @@
 #
 # `subdir('xpacks/micro-os-plus-micro-test-plus')`
 #
-# The result is a dependency that can be refered as:
+# The result is a library and a dependency that can be refered as:
 #
+# `link_with: [micro_os_plus_micro_test_plus_static],`
 # `dependencies: [micro_os_plus_micro_test_plus_dependency],`
 
 # Note: the meson configuration is provided only as a proof of concept,
