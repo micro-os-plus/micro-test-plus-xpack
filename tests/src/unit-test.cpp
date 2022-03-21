@@ -1718,19 +1718,19 @@ static test_suite ts_misc = {
 
     test_case ("Arrays failed", [] {
       expect (ne (std::array<int, 1>{ 42 }, std::array<int, 1>{ 42 }),
-              "array{ 42 } == array{ 42 }");
+              "array{ 42 } ne array{ 42 }");
       local_counts.failed_checks++;
 
       expect (eq (std::array<int, 1>{ 42 }, std::array<int, 1>{ 43 }),
-              "array{ 42 } != array{ 43 }");
+              "array{ 42 } eq array{ 43 }");
       local_counts.failed_checks++;
 
       expect (ne (std::array{ 1, 2 }, std::array{ 1, 2 }),
-              "array{ 1, 2 } != array{ 1, 2 }");
+              "array{ 1, 2 } ne array{ 1, 2 }");
       local_counts.failed_checks++;
 
       expect (eq (std::array{ 1, 2, 3 }, std::array{ 1, 2, 4 }),
-              "array{ 1, 2, 3 } == array{ 1, 2, 4 }");
+              "array{ 1, 2, 3 } eq array{ 1, 2, 4 }");
       local_counts.failed_checks++;
 
       local_counts.test_cases++;
