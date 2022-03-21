@@ -164,7 +164,7 @@ main(int argc, char* argv[])
 }
 ```
 
-When running this test, the output looks like this:
+When running this test, the output looks like:
 
 ```console
 Minimal - test suite started
