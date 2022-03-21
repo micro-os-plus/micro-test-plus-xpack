@@ -75,6 +75,18 @@ into `xpack`.
 
 ## Developer info
 
+The xPack Build framework already includes several ready to use
+testing frameworks
+([Google Test](https://github.com/xpack-3rd-party/googletest-xpack),
+[Catch2](https://github.com/xpack-3rd-party/catch2-xpack) and
+[Boost UT](https://github.com/xpack-3rd-party/boost-ut-xpack)).
+
+However, they all are quite heavy in terms of memory resources, and the
+learning curve for mastering them is quite steep.
+
+Thus, for embedded projects, a simpler solution, with a smaller
+memory footprint, was considered a useful addition.
+
 ### Overview
 
 The initial version of the **µTest++** framework was inspired mainly by
@@ -869,6 +881,26 @@ It is possible to control the verbosity using several command line options:
 - `--verbose`: show all expectations, regardless of the result
 - `--quiet`: show only test suite totals
 - `--silent`: suppress all output and only return the exeit code
+
+### Memory footprint
+
+The memory footprint of unit tests based on µTest++ is definitely smaller than
+that of traditional C++ testing framework, since the `iostream` library is not
+used.
+
+However, the use of templates for implementing the comparators and
+operators should be carefully observed for platforms with really
+limited amounts of memory, since each pair of different operands
+contributes to the program size.
+
+At the limit, µTest++ can be used only with regular boolean expressions,
+without custom comparators and operators, and still be able to provide
+the basic functionality of testing various conditions, but without
+the optional features of displaying the actual values compared.
+
+Also please note that the memory footprint on debug, with `-O0`,
+is significantly larger than on release. If necessary, the optimization
+for the debug build can be increased to `-Og`, and save some memory.
 
 ### Build & integration info
 
