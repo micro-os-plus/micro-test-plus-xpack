@@ -786,7 +786,7 @@ public:
 }
 ```
 
-It is recommended that to instantiate the test suites as static objects.
+It is recommended to instantiate the test suites as static objects.
 The self-registration is done in the constructor.
 Test suites defined in different compilation units can be executed in any
 order (since the order in which the
