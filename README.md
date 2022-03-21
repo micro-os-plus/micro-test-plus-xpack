@@ -410,7 +410,7 @@ Examples:
 expect(_and (eq (compute_answer (), 42), eq (compute_float (), 42.0)));
 ```
 
-A slightly more readable syntax is available with the custom operators,
+A slightly more readable syntax is available with custom operators,
 as shown below.
 
 #### Comparing strings
@@ -539,7 +539,7 @@ template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
 bool operator and (const Lhs_T& lhs, const Rhs_T& rhs);
 
 template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
-bool operator and (const Lhs_T& lhs, const Rhs_T& rhs);
+bool operator or (const Lhs_T& lhs, const Rhs_T& rhs);
 
 template <class T, type_traits::requires_t<....>>
 bool operator not (const T& t);
@@ -643,10 +643,10 @@ Example:
 
 ```c++
 {
-  namespace t = micro_test_plus;
+  namespace mt = micro_test_plus;
 
-  t::test_case ("Check answer", [] {
-    t::expect (t::eq (compute_answer (), 42), "answer is 42");
+  mt::test_case ("Check answer", [] {
+    mt::expect (mt::eq (compute_answer (), 42), "answer is 42");
   });
 }
 ```
@@ -742,7 +742,7 @@ test_case ("Check various conditions with operators", [] {
 #### Test runner initialization
 
 The test runner is initialised with the process arguments and a
-name:
+name, which is used for the default test suite:
 
 ```C++
 void
@@ -767,7 +767,7 @@ For examples, see before.
 
 #### Test suites
 
-Test suites are sequences of test cases.
+Test suites are named sequences of test cases.
 
 The test cases defined in `main()` are considered to be part of
 the default (or main) test suite, and are executed immediately
@@ -822,8 +822,7 @@ patterns like `*` (for any characters) and `?` (for a single character):
 
 ```c++
 namespace utility {
-  bool
-  is_match (std::string_view input, std::string_view pattern);
+  bool is_match (std::string_view input, std::string_view pattern);
 }
 ```
 
@@ -1133,7 +1132,7 @@ are:
 ## Credits
 
 Many thanks to the [Boost UT](https://github.com/boost-ext/ut) project
-for the inspiration and major parts of the code.
+for the inspiration and for major parts of the code.
 
 ## License
 
