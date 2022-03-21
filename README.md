@@ -933,6 +933,10 @@ namespace defines the literals (like `1_i`);
 
 - `micro_os_plus::micro_test_plus::test_suite`
 
+#### Dependencies
+
+- none
+
 #### CMake
 
 To integrate the µTest++ source library into a CMake application, add this
