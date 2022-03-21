@@ -42,6 +42,8 @@ cd my-project
 xpm init # Unless a package.json is already present
 
 xpm install @micro-os-plus/micro-test-plus@latest
+
+ls -l xpacks/micro-os-plus-micro-test-plus
 ```
 
 ### Git submodule
