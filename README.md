@@ -102,23 +102,25 @@ As major differentiator from Boost UT:
 - test suites can be located in separate compilation units, and automatically
   register themselves to the runner;
 - a test suite is a named sequence of test cases;
-- a test case is a sequence of conditions expected to be true;
-- test conditions are either common logical expressions, or they check
-  if, while evaluating an expression, an exception is thrown;
-- each test condition either succeeds or fails;
+- a test case is a sequence of test conditions (or simply tests),
+  which are expected to be true;
+- tests are based on logical expressions, which usually
+  compute a result and compare it to an expected value
+- specific to C++, it is also possible to check if, while evaluating an
+  an expression, exceptions are thrown or not;
+- each test either succeeds or fails; the runner keeps counts of them;
 - assumptions are hard conditions expected to be true in order for the test
-  to continue to run;
+  to be able to run;
 - failed assumptions abort the test;
-- expectations are conditions expected to be true, but the test can continue
-  even if they fail, and the runner keeps a count of them;
-- the test progress is shown on STDOUT, with each test condition on a
+- the test progress is shown on STDOUT, with each tests on a
   separate line, prefixed with either a check sign (✓) or a cross sign (✗);
-- failed conditions display the location in the file and
+- failed tests display the location in the file and, if possible,
   the actual values used in the expression evaluation;
-- the main result of the test is passed back as the process exit code.
+- the main result of the test is passed back to the system as the process
+  exit code.
 
-If there is at least one successful condition and there are no
-failed conditions, each test suite is considered successful;
+If there is at least one successful tests and there are no
+failed tests, each test suite is considered successful;
 if all tests suites are successful, the process returns 0 as exit value.
 
 ### ISTQB Glossary
@@ -126,18 +128,20 @@ if all tests suites are successful, the process returns 0 as exit value.
 The **International Software Testing Qualification Board** defines some terms
 used in testing frameworks:
 
-- test condition: A testable aspect of a component or system identified
-  as a basis for testing.
-- test case: A set of preconditions, inputs, actions (where applicable),
-  expected results and postconditions, developed based on test conditions.
-- test suite: A set of test scripts or test procedures to be executed in
-  a specific test run.
+- test condition: a testable aspect of a component or system identified
+  as a basis for testing (in µTest++ implemented as `expect()` or
+  `assume()` functions);
+- test case: a set of preconditions, inputs, actions (where applicable),
+  expected results and postconditions, developed based on test conditions
+  (in µTest++ implemented as `test_case()` functions)
+- test suite: a set of test scripts or test procedures to be executed in
+  a specific test run (in µTest++ implemented as `test_suite` classes).
 
 For more details see: <http://glossary.istqb.org/en/search/test%20case>.
 
 ### Getting started
 
-The absolute minimal test has a single test case, with a single condition,
+The absolute minimal test has a single test case, with a single expectation,
 for example:
 
 ```c++
@@ -150,7 +154,7 @@ main(int argc, char* argv[])
 
   initialize(argc, argv, "Minimal");
 
-  test_case ("Check truth", []{
+  test_case ("Check truth", [] {
     expect (true);
   })
 
@@ -226,10 +230,11 @@ The Answer - test suite FAILED (0 checks passed, 1 check failed, in 1 test case)
 ```
 
 The output identifies the failed test as located at line 17, but does not
-provide more details, for example what was the actual wrong answer.
+provide more details, for example it does not tell what was the actual
+wrong answer.
 
-To also get this, the test should be slightly more elaborate, and must use
-some custom comparators or operators, for example:
+To get such useful information, the test should be slightly more elaborate,
+and must use some custom comparators or operators, for example:
 
 ```c++
 // ...
@@ -271,11 +276,12 @@ The Answer - test suite
     ✗ answer is 42 FAILED (answer.cpp:25, 43 == 42)
   ✗ Check answer with operator - test case FAILED (0 checks passed, 1 check failed)
 
-The Answer - test suite FAILED (0 checks passed, 2 checks failed, in 2 test cases)
+The Answer - test suite FAILED (0 checks passed, 3 checks failed, in 2 test cases)
 ```
 
-In the first case, `eq()` is a custom comparator that basically compares almost
-everything and is able to keep track of the operands.
+In the first case, `eq()` is a function that basically compares almost
+everything and is able to keep track of its operands. There are similar
+functions for all comparisons.
 
 In the second case, a custom operator is used. To avoid interferences
 with other operators, it is defined in a separate namespace (which must
@@ -294,7 +300,7 @@ are expression, at least one of them must be casted.
 ### C++ API
 
 Aiming simplicity, µTest++ provides only a very limited number of primitives
-used to check expectations/assumptions/exceptions.
+used to check expectations and assumptions.
 
 #### Expectations
 
@@ -381,13 +387,34 @@ actual values used during the test, for example:
 
 ### Logical function operators
 
-TBD
+Complex expressions can be checked in a single line, using the logical
+`_and()`, `_or()` and `_not()` functions. The names are prefixed since
+`and`, `or` and `not` are reserved words in C/C++.
+
+```c++
+template <class Lhs_T, class Rhs_T>
+auto _and (const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Lhs_T, class Rhs_T>
+auto _or (const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Expr_T>
+auto _not (const Expr_T& expr);
+```
+
+Examples:
+
+```c++
+expect(_and (eq (compute_answer (), 42), eq (compute_float (), 42.0)));
+```
+
+A slightly more readable syntax is available with the custom operators,
+as shown below.
 
 #### Comparing strings
 
-In C/C++, plain strings are actually pointers to characters, and
-simply comparing
-them does not compare the content, but the memory addresses.
+In C/C++, plain strings are actually pointers to characters, and simply
+comparing them does not compare the content, but the memory addresses.
 
 For string comparisons to compare the content, use `string_view`:
 
@@ -403,7 +430,7 @@ expect (eq (std::string_view{ compute_ultimate_answer () }, "fortytwo"sv),
 #### Comparing containers
 
 It is possible to directly compare containers for equality. The comparison
-is done by iterating over the container and comparing each member.
+is done by iterating and comparing each member.
 
 ```c++
 expect (eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }),
@@ -419,14 +446,15 @@ As in most other C++ test frameworks, it is
 also possible to overload the `==`, `!=`, `<`, `>`, `<=`, `>=` operators.
 
 To avoid possible interferences with other operators
-defined by the application, these operators are enabled only for
+defined by the application, these operators match only for operands of
 specific types and are located in a separate namespace
-(`micro_test_plus::operators`).
+(`micro_test_plus::operators`); when applied to regular values, the
+standard operands are used.
 
 The following operators match only operands derived from the local
-`op` type, which can be enforced for constant values by using the
+`detail::op` type, which can be enforced for constant values by using the
 provided literals (like `1_i`) or, for dynamic values, by using the
-provided casts (like `_i(expression)`):
+provided casts (like `_i (expression)`):
 
 ```c++
 template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
@@ -451,16 +479,18 @@ bool operator>= (const Lhs_T& lhs, const Rhs_T& rhs);
 Examples:
 
 ```c++
-using namespace micro_test_plus::operators;
-using namespace micro_test_plus::literals;
+test_case ("Operators", [] {
+  using namespace micro_test_plus::operators;
+  using namespace micro_test_plus::literals;
 
-expect (compute_answer () == 42_i, "answer is 42 (with literal)");
-expect (_i (compute_answer ()) == 42, "answer is 42 (with cast)");
-expect (compute_answer () != 43_i, "answer is not 43");
-expect (compute_answer () < 43_i, "answer is < 43");
-expect (compute_answer () <= 43_i, "answer is <= 42");
-expect (compute_answer () > 41_i, "answer is > 43");
-expect (compute_answer () >= 42_i, "answer is >= 42");
+  expect (compute_answer () == 42_i, "answer is 42 (with literal)");
+  expect (_i (compute_answer ()) == 42, "answer is 42 (with cast)");
+  expect (compute_answer () != 43_i, "answer is not 43");
+  expect (compute_answer () < 43_i, "answer is < 43");
+  expect (compute_answer () <= 43_i, "answer is <= 42");
+  expect (compute_answer () > 41_i, "answer is > 43");
+  expect (compute_answer () >= 42_i, "answer is >= 42");
+});
 ```
 
 In addition, equality operators are also provided for `string_view`
@@ -484,21 +514,43 @@ Examples:
 using namespace std::literals; // For the "sv" literal.
 // ...
 
-using namespace micro_test_plus::operators;
+test_case ("Operators", [] {
+  using namespace micro_test_plus::operators;
 
-expect (std::string_view{ compute_ultimate_answer () } == "fortytwo"sv,
-        "ultimate answer == 'fortytwo'");
+  expect (std::string_view{ compute_ultimate_answer () } == "fortytwo"sv,
+          "ultimate answer == 'fortytwo'");
 
-expect (std::vector<int>{ 1, 2 } == std::vector<int>{ 1, 2 },
-        "vector{ 1, 2 } == vector{ 1, 2 }");
+  expect (std::vector<int>{ 1, 2 } == std::vector<int>{ 1, 2 },
+          "vector{ 1, 2 } == vector{ 1, 2 }");
 
-expect (std::vector<int>{ 1, 2, 3 } != std::vector<int>{ 1, 2, 4 },
-        "vector{ 1, 2, 3 } != vector{ 1, 2, 4 }");
+  expect (std::vector<int>{ 1, 2, 3 } != std::vector<int>{ 1, 2, 4 },
+          "vector{ 1, 2, 3 } != vector{ 1, 2, 4 }");
+});
 ```
 
 ### Logical operators
 
-TBD
+Similarly, logical operators are defined:
+
+```c++
+template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
+bool operator and (const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
+bool operator and (const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class T, type_traits::requires_t<....>>
+bool operator not (const T& t);
+```
+
+They can be used in exactly the same way as standard operators, but the
+additional functionality is enabled only when matching the typed operands.
+
+Examples:
+
+```c++
+expect (compute_answer () == 42_i && compute_float () == 42.0_f);
+```
 
 #### Literals and casts
 
@@ -533,7 +585,7 @@ namespace literals {
 }
 ```
 
-Similarly, for dynamic values, there are wrappers that converts them to
+Similarly, for dynamic values, there are wrappers that convert them to
 recognised types:
 
 ```c++
@@ -574,14 +626,14 @@ recognised types:
 Examples:
 
 ```c++
-expect(_i(answer) == 42_i);
-expect(_f(expression) == 42_f);
+expect (_i (answer) == 42_i);
+expect (_f (expression) == 42_f);
 ```
 
 #### Explicit namespace
 
-If the operators interfere with application operators, or even if functions
-interfere with application functions, it is recommended to
+If, for any reasons, the definitions in the `micro-test-plus` namespace
+interfere with application opedefinitions, it is recommended to
 use the comparator functions, which can be more easily invoked
 with explicit namespaces, possibly aliased to shorter names.
 
@@ -592,15 +644,15 @@ Example:
   namespace t = micro_test_plus;
 
   t::test_case ("Check answer", [] {
-    t::expect (t::eq(compute_answer(), 42), "answer is 42");
+    t::expect (t::eq (compute_answer (), 42), "answer is 42");
   });
 }
 ```
 
 #### Exceptions
 
-It is possible to check if an expression (usually
-a function call), throw or not an exception.
+Specific to C++, a testing framework must be able check if an expression
+(usually a function call), throws or not an exception.
 
 It is possible to check for any exception, for a specific exception,
 or for no exception at all:
@@ -630,6 +682,29 @@ expect (throws<std::runtime_error> ([] { throw std::runtime_error{ "" }; }),
 expect (nothrow ([] { exercise_throw (false); }), "exception not thrown");
 ```
 
+If a more elaborate logic is required, for example for expecting multiple
+exceptions, use an explicit `try` with multiple `catch` statements and
+report the results with `expect(true)` or `expect(false)`.
+
+```c++
+try
+  {
+    compute_answer ();
+  }
+catch (const std::overflow_error& e)
+  {
+    expect (true, "std::overflow_error thrown");
+  }
+catch (const std::runtime_error& e)
+  {
+    expect (true, "std::runtime_error thrown");
+  }
+catch (...)
+  {
+    expect (false, "known exception thrown");
+  }
+```
+
 #### Test cases
 
 Test cases group several checks done in the same environment.
@@ -657,22 +732,22 @@ test_case ("Check various conditions with operators", [] {
   using namespace micro_test_plus::operators;
   using namespace micro_test_plus::literals;
 
-  expect (compute_answer () == 42_i, "answer == 42 (with literal)");
+  expect (compute_answer () == 42_i, "answer == 42");
   expect (compute_answer () != 43_i, "answer != 43");
 });
 ```
 
 #### Test runner initialization
 
-The test runner is initialised with a name and the process arguments:
+The test runner is initialised with the process arguments and a
+name:
 
 ```C++
 void
 initialize (int argc, char* argv[], const char* name = "Main");
 ```
 
-For now the arguments are not used, but future versions may accept
-command line options, for example for controlling the verbosity level.
+The arguments are used for controlling the verbosity level.
 
 #### Return the test result
 
@@ -686,35 +761,18 @@ exit_code (void);
 
 This call also triggers the execution of all global test suites.
 
-Examples:
-
-```c++
-int
-main (int argc, char* argv[])
-{
-  using namespace micro_test_plus;
-
-  // Pass the process arguments.
-  initialize (argc, argv);
-
-  test_case ("Check truth", [] {
-    expect(true);
-  });
-
-  return exit_code ();
-}
-```
+For examples, see before.
 
 #### Test suites
 
 Test suites are sequences of test cases.
 
 The test cases defined in `main()` are considered to be part of
-the default test
-suite, and are executed when invoked.
+the default (or main) test suite, and are executed immediately
+when invoked.
 
-For complex applications it is also possible to define multiple test
-suites, possibly in separate source files.
+For complex applications there can be multiple test
+suites, usually in separate source files.
 
 In order to make self-registration possible, test suites are classes,
 constructed with a name and a callable (usually a lambda),
@@ -729,22 +787,20 @@ public:
 }
 ```
 
-It is recommended that test suites be instantiated as static objects.
+It is recommended that to instantiate the test suites as static objects.
 The self-registration is done in the constructor.
-For test suites defined in different compilation units, the order
-in which they are executed is not specified, since the order in which the
-static constructors are invoked is not specified;
-thus there should be no dependencies between test suites, as they
-can be executed in any order.
+Test suites defined in different compilation units can be executed in any
+order (since the order in which the
+static constructors are invoked is not specified);
+thus there should be no dependencies between test suites.
 
-The test cases in the separate test suites are executed when the
-function `exit_code()` is invoked.
+Test suites are executed when the function `exit_code()` is invoked.
 
 Examples:
 
 ```c++
 static micro_test_plus::test_suite ts_1
-    = { "A test suite", [] {
+    = { "Separate", [] {
         using namespace micro_test_plus;
 
         test_case ("Check one", [] {
@@ -757,6 +813,43 @@ static micro_test_plus::test_suite ts_1
       }};
 ```
 
+#### Utility functions
+
+For string tests, it is possible to check if the content matches usual
+patterns like `*` (for any characters) and `?` (for a single character):
+
+```c++
+namespace utility {
+  bool
+  is_match (std::string_view input, std::string_view pattern);
+}
+```
+
+Examples:
+
+```c++
+expect (utility::is_match ("abc", "a?c"), "abc matches a?c");
+expect (utility::is_match ("abc", "a*c"), "abc matches a*c");
+```
+
+Also for string tests, it is possible to split a string into a vector of
+substrings, using a delimiter:
+
+```c++
+namespace utility {
+  template <class T, class Delim_T>
+  auto split (T input, Delim_T delim) -> std::vector<T>;
+}
+```
+
+Example:
+
+```c++
+expect (std::vector<std::string_view>{ "a", "b" }
+            == utility::split<std::string_view> ("a.b", "."),
+        "a.b splits into [a,b]");
+```
+
 #### Custom types
 
 It is possible to extend the comparators with templates matching custom
@@ -765,10 +858,25 @@ C++.
 
 TODO: add a test to show how to do this.
 
+### Command line options
+
+#### Verbosity
+
+By default, the test reporter shows detailed results only for failed test
+cases; successful test cases are shown as a single line with passed/failed
+total counts.
+
+It is possible to control the verbosity using several command line options:
+
+- `--verbose`: show all expectations, regardless of the result
+- `--quiet`: show only test suite totals
+- `--silent`: suppress all output and only return the exeit code
+
 ### Build & integration info
 
 The project is written in C++, and the tests are expected to be
-written in C++ too.
+written in C++ too. The source code was compiled with GCC 11, clang 12
+and arm-none-eabi-gcc 10, and should be warning free.
 
 On embedded platforms, the test applications can be built with
 **Arm semihosting** support.
@@ -784,7 +892,7 @@ The following folder should be used during the build:
 
 - `include`
 
-The header file to be included in user project is:
+The header file to be included is:
 
 ```c++
 #include <micro-os-plus/micro-test-plus.h>
@@ -794,7 +902,7 @@ The header file to be included in user project is:
 
 - `src`
 
-The source file to be added to user projects are:
+The source files to be added are:
 
 - `micro-test-plus.cpp`
 - `test-reporter.cpp`
@@ -815,6 +923,7 @@ The source file to be added to user projects are:
 - `micro_os_plus::micro_test_plus`
 - `micro_os_plus::micro_test_plus::operators`
 - `micro_os_plus::micro_test_plus::literals`
+- `micro_os_plus::micro_test_plus::utility`
 
 `micro_os_plus` is the top µOS++ namespace, and `micro_test_plus` is the
 µTest++ namespace.
@@ -854,13 +963,15 @@ folder to the build:
 subdir('xpacks/micro-os-plus-micro-test-plus')
 ```
 
-The result is a dependency object that can be added as an application
-dependency with:
+The result is a static library and a dependency object that can be added
+to an application with:
 
 ```meson
 exe = executable(
   your-target,
-
+  link_with: [
+    micro_os_plus_micro_test_plus_static
+  ],
   dependencies: [
     micro_os_plus_micro_test_plus_dependency,
   ]
@@ -870,7 +981,7 @@ exe = executable(
 ### Examples
 
 An example showing how to use the µTest++ framework is
-presented below and is also available in
+available in
 [tests/src/sample-test.cpp](tests/src/sample-test.cpp).
 
 Here are some excerpts:
@@ -879,7 +990,6 @@ Here are some excerpts:
 #include <micro-os-plus/micro-test-plus.h>
 
 using namespace micro_os_plus;
-using namespace micro_os_plus::micro_test_plus;
 
 // ----------------------------------------------------------------------------
 
@@ -889,6 +999,8 @@ using namespace micro_os_plus::micro_test_plus;
 int
 main (int argc, char* argv[])
 {
+  using namespace micro_os_plus::micro_test_plus;
+
   initialize (argc, argv, "Sample");
 
   test_case ("Check various conditions", [] {
@@ -938,39 +1050,31 @@ $ xpm run test-native
 > Executing task: xpm run test --config native-cmake-debug <
 
 > cd build/native-cmake-release && ctest -V
-UpdateCTestConfiguration  from :/Users/ilg/My Files/WKS Projects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/build/native-cmake-release/DartConfiguration.tcl
-UpdateCTestConfiguration  from :/Users/ilg/My Files/WKS Projects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/build/native-cmake-release/DartConfiguration.tcl
-Test project /Users/ilg/My Files/WKS Projects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/build/native-cmake-release
-Constructing a list of tests
-Done constructing a list of tests
-Updating test list for fixtures
-Added 0 tests to meet fixture requirements
-Checking test dependency graph...
-Checking test dependency graph end
-test 1
+...
     Start 1: sample-test
 
 1: Test command: /Users/ilg/My\ Files/WKS\ Projects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/build/native-cmake-release/platform-bin/sample-test "one" "two"
 1: Test timeout computed to be: 10000000
 1: Built with clang Apple LLVM 13.0.0 (clang-1300.0.29.30), no FP, with exceptions.
 1:
-1: Sample test started
+1: Sample - test suite
 1:
-1:   Check various conditions
+1:   - Check various conditions - test case
 1:     ✓ compute_one() == 1
 1:     ✓ compute_aaa() == 'aaa'
 1:     ✓ condition() is true
+1:   ✓ Check various conditions - test case passed (3 checks)
 1:
-1:   Check parameterised
+1:   - Check parameterised - test case
 1:     ✓ lambda == 43
+1:   ✓ Check parameterised - test case passed (1 check)
 1:
-1:   Check exceptions
+1:   - Check exceptions - test case
 1:     ✓ std::runtime_error thrown
+1:   ✓ Check exceptions - test case passed (1 check)
 1:
-1: Sample test passed (5 tests in 3 test cases)
+1: Sample - test suite passed (5 tests in 3 test cases)
 1/2 Test #1: sample-test ......................   Passed    0.00 sec
-test 2
-    Start 2: unit-test
 ...
 ```
 
@@ -984,9 +1088,9 @@ The project is fully tested via GitHub
 [Actions](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/)
 on each push.
 
-The test platforms are GNU/Linux, macOS and Windows, the tests are
-compiled with GCC, clang and arm-none-eabi-gcc and run natively or
-via QEMU.
+The test platforms are GNU/Linux, macOS and Windows; native tests are
+compiled with GCC and clang; tests for embedded platforms are compiled
+with arm-none-eabi-gcc and run via QEMU.
 
 There are two set of tests, one that runs on every push, with a
 limited number of tests, and a set that is triggered manually,
@@ -1018,6 +1122,11 @@ are:
  `run_test_case(name, func)`, to prepare for variadic templates
 - v2.x: the C++ namespace was renamed from `os` to `micro_os_plus`;
 - v1.x: the code was extracted from the mono-repo µOS++ project.
+
+## Credits
+
+Many thanks to the [Boost UT](https://github.com/boost-ext/ut) project
+for the inspiration and major parts of the code.
 
 ## License
 
