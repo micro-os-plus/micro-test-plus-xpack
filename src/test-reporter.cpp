@@ -227,7 +227,7 @@ namespace micro_os_plus::micro_test_plus
     if (current_test_suite->current_test_case.failed_checks > 0)
       {
         printf ("\n");
-        printf ("  - %s - test case\n", name);
+        printf ("  • %s - test case started\n", name);
         printf ("%s", out_.c_str ());
         printf ("  %s✗%s %s - test case %sFAILED%s (%d %s passed, %d "
                 "failed)\n",
@@ -248,7 +248,7 @@ namespace micro_os_plus::micro_test_plus
           }
         if (verbosity == verbosity::verbose)
           {
-            printf ("  - %s - test case\n", name);
+            printf ("  • %s - test case started\n", name);
             printf ("%s", out_.c_str ());
             printf ("  %s✓%s %s - test case passed (%d %s)\n",
                     colors_.pass, colors_.none, name,
@@ -292,7 +292,7 @@ namespace micro_os_plus::micro_test_plus
         return;
       }
 
-    printf ("%s - test suite\n", name);
+    printf ("%s - test suite started\n", name);
 
     add_empty_line = true;
   }

@@ -167,7 +167,7 @@ main(int argc, char* argv[])
 When running this test, the output looks like this:
 
 ```console
-Minimal - test suite
+Minimal - test suite started
 
   ✓ Check truth - test case passed (1 check)
 
@@ -202,7 +202,7 @@ main(int argc, char* argv[])
 ```
 
 ```console
-The Answer - test suite
+The Answer - test suite started
 
   ✓ Check answer - test case passed (1 check)
 
@@ -222,9 +222,9 @@ compute_answer()
 In this case the test will fail with:
 
 ```console
-The Answer - test suite
+The Answer - test suite started
 
-  - Check answer - test case
+  • Check answer - test case started
     ✗ answer is 42 FAILED (answer.cpp:17)
   ✗ Check answer - test case FAILED (0 checks passed, 1 check failed)
 
@@ -267,13 +267,13 @@ main(int argc, char* argv[])
 The result would look like:
 
 ```console
-The Answer - test suite
+The Answer - test suite started
 
-  - Check answer with comparator - test case
+  • Check answer with comparator - test case started
     ✗ answer is 42 FAILED (answer.cpp:17, 43 == 42)
   ✗ Check answer with comparator - test case FAILED (0 checks passed, 1 check failed)
 
-  - Check answer with operator - test case
+  • Check answer with operator - test case started
     ✗ answer is 42 FAILED (answer.cpp:24, 43 == 42)
     ✗ answer is 42 FAILED (answer.cpp:25, 43 == 42)
   ✗ Check answer with operator - test case FAILED (0 checks passed, 1 check failed)
@@ -1059,19 +1059,19 @@ $ xpm run test-native
 1: Test timeout computed to be: 10000000
 1: Built with clang Apple LLVM 13.0.0 (clang-1300.0.29.30), no FP, with exceptions.
 1:
-1: Sample - test suite
+1: Sample - test suite started
 1:
-1:   - Check various conditions - test case
+1:   • Check various conditions - test case started
 1:     ✓ compute_one() == 1
 1:     ✓ compute_aaa() == 'aaa'
 1:     ✓ condition() is true
 1:   ✓ Check various conditions - test case passed (3 checks)
 1:
-1:   - Check parameterised - test case
+1:   • Check parameterised - test case started
 1:     ✓ lambda == 43
 1:   ✓ Check parameterised - test case passed (1 check)
 1:
-1:   - Check exceptions - test case
+1:   • Check exceptions - test case started
 1:     ✓ std::runtime_error thrown
 1:   ✓ Check exceptions - test case passed (1 check)
 1:
@@ -1083,6 +1083,11 @@ $ xpm run test-native
 ### Known problems
 
 - none
+
+### TODO
+
+- add code to show how to define custom comparators
+- move documentation to future µOS++ web site
 
 ### Tests
 
