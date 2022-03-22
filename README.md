@@ -165,7 +165,7 @@ for example:
 int
 main(int argc, char* argv[])
 {
-  using namespace micro_os_plus;
+  using namespace micro_test_plus;
 
   initialize(argc, argv, "Minimal");
 
@@ -270,7 +270,7 @@ main(int argc, char* argv[])
     using namespace micro_os_plus::literals;
 
     expect (compute_answer () == 42_i, "answer is 42");
-    expect (_i (compute_answer ()) == 42, "answer is 42");
+    expect (_i {compute_answer ()} == 42, "answer is 42");
   });
 
   return exit_code ();
@@ -469,7 +469,8 @@ standard operands are used.
 The following operators match only operands derived from the local
 `detail::op` type, which can be enforced for constant values by using the
 provided literals (like `1_i`) or, for dynamic values, by using the
-provided casts (like `_i (expression)`):
+provided casts (like `_i {expression}`, which are actually the
+constructors of the internal classes):
 
 ```c++
 template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
@@ -499,7 +500,7 @@ test_case ("Operators", [] {
   using namespace micro_test_plus::literals;
 
   expect (compute_answer () == 42_i, "answer is 42 (with literal)");
-  expect (_i (compute_answer ()) == 42, "answer is 42 (with cast)");
+  expect (_i {compute_answer ()} == 42, "answer is 42 (with cast)");
   expect (compute_answer () != 43_i, "answer is not 43");
   expect (compute_answer () < 43_i, "answer is < 43");
   expect (compute_answer () <= 43_i, "answer is <= 42");
@@ -567,7 +568,7 @@ Examples:
 expect (compute_answer () == 42_i && compute_float () == 42.0_f);
 ```
 
-#### Literals and casts
+#### Literals and wrappers
 
 For converting constants to recognised typed operands, the following
 literal operators are available in the separate namespace `literals`:
@@ -641,9 +642,26 @@ recognised types:
 Examples:
 
 ```c++
-expect (_i (answer) == 42_i);
-expect (_f (expression) == 42_f);
+expect (_i {answer} == 42_i);
+expect (_f {expression} == 42_f);
 ```
+
+#### Function comparators vs. operators & literals
+
+A very good question is which to use, functions like `eq()` or the
+overloaded operators.
+
+Functions guarantee that the nice feature of showing the actual values
+when expectations fail is always available. Also the syntax is more on the
+traditional side, and for some it may look simpler and easier to read.
+
+Operators are generally easier to recognise than function calls,
+but require the hack with the type wrappers and literals to enforce the
+types, otherwise the actual values will not be displayed when the
+expectations fail.
+
+Both syntaxes are functional, and, once understood the differences,
+the issue is a matter of personal preferences.
 
 #### Explicit namespace
 
@@ -656,7 +674,7 @@ Example:
 
 ```c++
 {
-  namespace mt = micro_test_plus;
+  namespace mt = micro_os_plus::micro_test_plus;
 
   mt::test_case ("Check answer", [] {
     mt::expect (mt::eq (compute_answer (), 42), "answer is 42");
@@ -1047,7 +1065,7 @@ main (int argc, char* argv[])
     using namespace micro_test_plus::literals;
 
     expect (compute_answer () == 42_i, "answer == 42 (with literal)");
-    expect (_i (compute_answer ()) == 42, "answer == 42 (with cast)");
+    expect (_i {compute_answer ()} == 42, "answer == 42 (with cast)");
     expect (compute_answer () != 43_i, "answer != 43");
   });
 
