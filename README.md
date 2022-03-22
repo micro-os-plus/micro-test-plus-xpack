@@ -120,7 +120,7 @@ As major differentiator from Boost UT:
   which are expected to be true;
 - tests are based on logical expressions, which usually
   compute a result and compare it to an expected value
-- specific to C++, it is also possible to check if, while evaluating an
+- specific to C++: it is also possible to check if, while evaluating an
   an expression, exceptions are thrown or not;
 - each test either succeeds or fails; the runner keeps counts of them;
 - assumptions are hard conditions expected to be true in order for the test
@@ -133,7 +133,7 @@ As major differentiator from Boost UT:
 - the main result of the test is passed back to the system as the process
   exit code.
 
-If there is at least one successful tests and there are no
+If there is at least one successful test and there are no
 failed tests, each test suite is considered successful;
 if all tests suites are successful, the process returns 0 as exit value.
 
@@ -156,7 +156,7 @@ For more details see: <http://glossary.istqb.org/en/search/test%20case>.
 
 ### Getting started
 
-The absolute minimal test has a single test case, with a single expectation,
+The absolute minimal test has a single test case, with a single expectation;
 for example:
 
 ```c++
@@ -187,7 +187,7 @@ Minimal - test suite started
 Minimal - test suite passed (1 check in 1 test case)
 ```
 
-A slightly more useful example would check the result of a computed value,
+A slightly more useful example would check the result of a computed value;
 for example:
 
 ```c++
@@ -222,7 +222,7 @@ The Answer - test suite started
 The Answer - test suite passed (1 check passed, 0 checks failed, in 1 test case)
 ```
 
-But what happens if the function returns the wrong answer, for example:
+In case that the function returns the wrong answer, the test will also fail; for example:
 
 ```c++
 static int
@@ -249,7 +249,7 @@ provide more details, for example it does not tell what was the actual
 wrong answer.
 
 To get such useful information, the test should be slightly more elaborate,
-and must use some custom comparators or operators, for example:
+and must use some custom comparators or operators; for example:
 
 ```c++
 // ...
@@ -390,7 +390,7 @@ expect (compute_condition (), "condition is true");
 ```
 
 When such comparators are used, failed checks also display the
-actual values used during the test, for example:
+actual values used during the test; for example:
 
 ```console
   Check failed comparisons
@@ -429,7 +429,7 @@ as shown below.
 #### Comparing strings
 
 In C/C++, plain strings are actually pointers to characters, and simply
-comparing them does not compare the content, but the memory addresses.
+comparing them does not compare the content but the memory addresses.
 
 For string comparisons to compare the content, use `string_view`:
 
@@ -647,7 +647,7 @@ expect (_f (expression) == 42_f);
 
 #### Explicit namespace
 
-If, for any reasons, the definitions in the `micro-test-plus` namespace
+If for any reasons, the definitions in the `micro-test-plus` namespace
 interfere with application definitions, it is recommended to
 use the comparator functions, which can be more easily invoked
 with explicit namespaces, possibly aliased to shorter names.
@@ -827,7 +827,7 @@ static micro_test_plus::test_suite ts_1
 
 #### Utility functions
 
-For tests comparing string, it is possible to check if the content matches
+For tests comparing strings, it is possible to check if the content matches
 usual patterns like `*` (for any characters) and `?` (for a single character):
 
 ```c++
@@ -899,9 +899,9 @@ without custom comparators and operators, and still be able to provide
 the basic functionality of testing various conditions, but without
 the optional features of displaying the actual values compared.
 
-Also please note that the memory footprint on debug, with `-O0`,
-is significantly larger than on release. If necessary, the optimization
-for the debug build can be increased to `-Og`, and save some memory.
+Also, please note that the memory footprint on `debug`, built with `-O0`,
+is significantly larger than on `release`. If necessary, the optimization
+for the `debug` build can be increased to `-Og`, and save some memory.
 
 ### Build & integration info
 
@@ -957,7 +957,7 @@ The source files to be added are:
 `micro_os_plus` is the top µOS++ namespace, and `micro_test_plus` is the
 µTest++ namespace.
 
-The `operators` namespace defines the custom operators, and the `literals`
+The `operators` namespace defines the custom operators, and the `literals`
 namespace defines the literals (like `1_i`);
 
 #### C++ Classes
