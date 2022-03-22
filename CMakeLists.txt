@@ -44,44 +44,44 @@ endif()
 # INTERFACE: usage definitions, passed up to targets linking to it
 # PUBLIC: both
 
-add_library(micro-os-plus-micro-test-plus-static STATIC)
+add_library(micro-os-plus-micro-test-plus-interface INTERFACE)
 
 # -----------------------------------------------------------------------------
 # Target settings.
 
-target_include_directories(micro-os-plus-micro-test-plus-static PUBLIC
+target_include_directories(micro-os-plus-micro-test-plus-interface INTERFACE
   "include"
 )
 
-target_sources(micro-os-plus-micro-test-plus-static PRIVATE
+target_sources(micro-os-plus-micro-test-plus-interface INTERFACE
   "src/micro-test-plus.cpp"
   "src/test-runner.cpp"
   "src/test-reporter.cpp"
   "src/test-suite.cpp"
 )
 
-target_compile_definitions(micro-os-plus-micro-test-plus-static PRIVATE
+target_compile_definitions(micro-os-plus-micro-test-plus-interface INTERFACE
   # None.
 )
 
-target_compile_options(micro-os-plus-micro-test-plus-static PRIVATE
+target_compile_options(micro-os-plus-micro-test-plus-interface INTERFACE
   # None.
 )
 
-target_link_libraries(micro-os-plus-micro-test-plus-static PRIVATE
+target_link_libraries(micro-os-plus-micro-test-plus-interface INTERFACE
   # None.
 )
 
 if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists(micro-os-plus-micro-test-plus-static)
+  xpack_display_target_lists(micro-os-plus-micro-test-plus-interface)
 endif()
 
 # -----------------------------------------------------------------------------
 # Aliases.
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
-add_library(micro-os-plus::micro-test-plus ALIAS micro-os-plus-micro-test-plus-static)
-message(VERBOSE "> micro-os-plus::micro-test-plus -> micro-os-plus-micro-test-plus-static")
+add_library(micro-os-plus::micro-test-plus ALIAS micro-os-plus-micro-test-plus-interface)
+message(VERBOSE "> micro-os-plus::micro-test-plus -> micro-os-plus-micro-test-plus-interface")
 
 # -----------------------------------------------------------------------------
 

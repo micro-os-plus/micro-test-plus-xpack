@@ -135,7 +135,7 @@ if enable_sample_test
 
   xpack_link_with += [
     # Tested library.
-    micro_os_plus_micro_test_plus_static,
+    # None.
   ]
 
   # https://mesonbuild.com/Reference-manual.html#executable
@@ -214,7 +214,7 @@ if enable_unit_test
 
   xpack_link_with += [
     # Tested library.
-    micro_os_plus_micro_test_plus_static,
+    # None.
   ]
 
   # https://mesonbuild.com/Reference-manual.html#executable

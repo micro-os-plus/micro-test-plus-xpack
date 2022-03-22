@@ -996,14 +996,14 @@ folder to the build:
 subdir('xpacks/micro-os-plus-micro-test-plus')
 ```
 
-The result is a static library and a dependency object that can be added
+The result is a dependency object that can be added
 to an application with:
 
 ```meson
 exe = executable(
   your-target,
   link_with: [
-    micro_os_plus_micro_test_plus_static
+    # Nothing, not static.
   ],
   dependencies: [
     micro_os_plus_micro_test_plus_dependency,
