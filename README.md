@@ -444,7 +444,7 @@ expect (eq (std::string_view{ compute_ultimate_answer () }, "fortytwo"sv),
 
 #### Comparing containers
 
-It is possible to directly compare containers for equality. The comparison
+Containers can be compared for equality. The comparison
 is done by iterating and comparing each member.
 
 ```c++
@@ -687,8 +687,8 @@ Example:
 Specific to C++, a testing framework must be able check if an expression
 (usually a function call), throws or not an exception.
 
-It is possible to check for any exception, for a specific exception,
-or for no exception at all:
+The following function templates allow to check for any exception,
+for a specific exception, or for no exception at all:
 
 ```C++
 // Check for any exception.
@@ -845,8 +845,9 @@ static micro_test_plus::test_suite ts_1
 
 #### Utility functions
 
-For tests comparing strings, it is possible to check if the content matches
-usual patterns like `*` (for any characters) and `?` (for a single character):
+For tests comparing strings, in addition to exact matches, it is also possible
+to check matches with patterns like `*` (for any characters) and `?` (for a
+single character):
 
 ```c++
 namespace utility {
@@ -861,8 +862,8 @@ expect (utility::is_match ("abc", "a?c"), "abc matches a?c");
 expect (utility::is_match ("abc", "a*c"), "abc matches a*c");
 ```
 
-Also for string tests, it is possible to split a string into a vector of
-substrings, using a delimiter:
+Also for tests handling strings, the following function template allows to
+split a string into a vector of substrings, using a delimiter:
 
 ```c++
 namespace utility {
@@ -882,7 +883,7 @@ expect (std::vector<std::string_view>{ "a", "b" }
 #### Custom types
 
 It is possible to extend the comparators with templates matching custom
-types, but this is not a trivial task and requires a good knowledge of
+types, but this is a non-trivial task and requires a good knowledge of
 C++.
 
 TODO: add a test to show how to do this.
@@ -895,7 +896,7 @@ By default, the test reporter shows detailed results only for test cases
 that failed; successful test cases are shown as a single line with
 the total counts of passed/failed checks.
 
-It is possible to control the verbosity using several command line options:
+To control the verbosity use one of the following command line options:
 
 - `--verbose`: show all expectations, regardless of the result
 - `--quiet`: show only the test suite totals
