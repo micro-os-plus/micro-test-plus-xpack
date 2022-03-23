@@ -271,7 +271,7 @@
           "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/gcc": "11.2.0-1.3",
+          "@xpack-dev-tools/gcc": "11.2.0-3.3",
           "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
         }
       },
@@ -294,7 +294,7 @@
           "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/gcc": "11.2.0-1.3",
+          "@xpack-dev-tools/gcc": "11.2.0-3.3",
           "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
         }
       },
@@ -406,7 +406,7 @@
           "clean": "{{ properties.commandMesonClean }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/gcc": "11.2.0-1.3",
+          "@xpack-dev-tools/gcc": "11.2.0-3.3",
           "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
         }
       },
@@ -430,7 +430,7 @@
           "clean": "{{ properties.commandMesonClean }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/gcc": "11.2.0-1.3",
+          "@xpack-dev-tools/gcc": "11.2.0-3.3",
           "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
         }
       },
