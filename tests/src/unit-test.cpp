@@ -49,10 +49,10 @@ using namespace micro_os_plus::micro_test_plus;
 // depend on NDEBUG, define a custom assert locally.
 
 #define test_assert(EX) \
-  (void)((EX) || (__test_assert (#EX, __FILE__, __LINE__), 0))
+  (void)((EX) || (local_test_assert (#EX, __FILE__, __LINE__), 0))
 
 static void __attribute__ ((noreturn))
-__test_assert (const char* failedexpr, const char* file, int line)
+local_test_assert (const char* failedexpr, const char* file, int line)
 {
   fprintf (stdout, "\nassertion \"%s\" failed\n", failedexpr);
   fprintf (stdout, "file: \"%s\"\n", file);
