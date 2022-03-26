@@ -97,12 +97,11 @@ namespace micro_os_plus::micro_test_plus
           type_traits::is_op_v<
               Expr_T> or type_traits::is_convertible_v<Expr_T, bool>> = 0>
   constexpr auto
-  expect (const Expr_T& expr, const char* message = "",
-          const reflection::source_location& sl
-          = reflection::source_location::current ())
+  expect (const Expr_T& expr, const reflection::source_location& sl
+                              = reflection::source_location::current ())
   {
-    return detail::evaluate_and_report_<Expr_T> (detail::assertion<Expr_T>{
-        .expr = expr, .abort = false, .message = message, .location = sl });
+    return detail::evaluate_and_report<Expr_T>{ detail::assertion<Expr_T>{
+        .expr = expr, .location = sl } };
   }
 
   /**
@@ -118,12 +117,12 @@ namespace micro_os_plus::micro_test_plus
           type_traits::is_op_v<
               Expr_T> or type_traits::is_convertible_v<Expr_T, bool>> = 0>
   constexpr auto
-  assume (const Expr_T& expr, const char* message = "",
-          const reflection::source_location& sl
-          = reflection::source_location::current ())
+  assume (const Expr_T& expr, const reflection::source_location& sl
+                              = reflection::source_location::current ())
   {
-    return detail::evaluate_and_report_<Expr_T> (detail::assertion<Expr_T>{
-        .expr = expr, .abort = true, .message = message, .location = sl });
+    return detail::evaluate_and_report_abort<Expr_T>{
+      detail::assertion<Expr_T>{ .expr = expr, .location = sl }
+    };
   }
 
   // --------------------------------------------------------------------------

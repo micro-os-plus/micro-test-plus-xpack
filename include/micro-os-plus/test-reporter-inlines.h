@@ -186,13 +186,13 @@ namespace micro_os_plus::micro_test_plus
 
   template <class Expr_T>
   void
-  test_reporter::pass (detail::assertion<Expr_T> assertion)
+  test_reporter::pass (detail::assertion<Expr_T> assertion,
+                       std::string& message)
   {
     *this << colors_.pass << "    ✓ " << colors_.none;
-    if (strlen (assertion.message))
+    if (!message.empty ())
       {
-        // If a non-empty message is provided, display it.
-        *this << assertion.message;
+        *this << message.c_str ();
       }
     else
       {
@@ -207,12 +207,14 @@ namespace micro_os_plus::micro_test_plus
 
   template <class Expr_T>
   void
-  test_reporter::fail (detail::assertion<Expr_T> assertion)
+  test_reporter::fail (detail::assertion<Expr_T> assertion,
+                       std::string& message)
   {
     *this << colors_.fail << "    ✗ " << colors_.none;
-    if (strlen (assertion.message))
+    if (!message.empty ())
       {
-        *this << assertion.message << " ";
+        *this << message.c_str ();
+        *this << " ";
       }
     *this << colors_.fail << "FAILED" << colors_.none;
     *this << " (" << reflection::short_name (assertion.location.file_name ())
@@ -221,10 +223,6 @@ namespace micro_os_plus::micro_test_plus
     if constexpr (type_traits::is_op_v<Expr_T>)
       {
         *this << ", " << assertion.expr;
-      }
-    if (assertion.abort)
-      {
-        *this << ", aborted";
       }
     *this << ")";
     *this << endl;

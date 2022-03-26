@@ -52,8 +52,6 @@ namespace micro_os_plus::micro_test_plus
     struct assertion
     {
       Expr_T expr{};
-      bool abort; // True if called from assume(), false from expect()
-      const char* message;
       reflection::source_location location{};
     };
 
@@ -669,8 +667,39 @@ namespace micro_os_plus::micro_test_plus
 #endif
 
     template <class Expr_T>
-    [[nodiscard]] constexpr bool
-    evaluate_and_report_ (detail::assertion<Expr_T> assertion);
+    class evaluate_and_report
+    {
+    public:
+      constexpr explicit evaluate_and_report (
+          detail::assertion<Expr_T> assertion);
+
+      ~evaluate_and_report ();
+
+      template <class Msg_T>
+      auto&
+      operator<< (const Msg_T& msg);
+
+      [[nodiscard]] constexpr bool
+      value () const
+      {
+        return value_;
+      }
+
+    protected:
+      detail::assertion<Expr_T> assertion_;
+      bool value_{};
+      std::string message_{};
+    };
+
+    template <class Expr_T>
+    class evaluate_and_report_abort : public evaluate_and_report<Expr_T>
+    {
+    public:
+      constexpr explicit evaluate_and_report_abort (
+          detail::assertion<Expr_T> assertion);
+
+      ~evaluate_and_report_abort ();
+    };
 
     // ----------------------------------------------------------------------
   } // namespace detail

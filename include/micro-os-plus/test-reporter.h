@@ -269,14 +269,14 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class Expr_T>
     void
-    pass (detail::assertion<Expr_T> assertion);
+    pass (detail::assertion<Expr_T> assertion, std::string& message);
 
     /**
      * @brief Report a failed condition.
      */
     template <class Expr_T>
     void
-    fail (detail::assertion<Expr_T> assertion);
+    fail (detail::assertion<Expr_T> assertion, std::string& message);
 
     void
     begin_test_case (const char* name);

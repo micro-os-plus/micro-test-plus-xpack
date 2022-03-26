@@ -67,37 +67,62 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
   namespace detail
   {
-    /**
-     * @brief Internal function to evaluate the expression and
-     * report the result.
-     */
     template <class Expr_T>
-    [[nodiscard]] constexpr bool
-    evaluate_and_report_ (detail::assertion<Expr_T> assertion)
+    constexpr evaluate_and_report<Expr_T>::evaluate_and_report (
+        detail::assertion<Expr_T> assertion)
+        : assertion_{ assertion }, value_{ static_cast<bool> (assertion.expr) }
     {
-      // This cast calls the bool operator, which evaluates the expression.
-      if (static_cast<bool> (assertion.expr))
-        {
-          reporter.pass (
-              detail::assertion<Expr_T>{ .expr = assertion.expr,
-                                         .abort = assertion.abort,
-                                         .message = assertion.message,
-                                         .location = assertion.location });
-          return true;
-        }
-
-      reporter.fail (
-          detail::assertion<Expr_T>{ .expr = assertion.expr,
-                                     .abort = assertion.abort,
-                                     .message = assertion.message,
-                                     .location = assertion.location });
-      if (assertion.abort)
-        {
-          current_test_suite->end ();
-          runner.abort ();
-        }
-      return false;
     }
+
+    template <class Expr_T>
+    evaluate_and_report<Expr_T>::~evaluate_and_report ()
+    {
+      if (value_)
+        {
+          reporter.pass (assertion_, message_);
+        }
+      else
+        {
+          reporter.fail (assertion_, message_);
+        }
+    }
+
+    template <class Expr_T>
+    template <class Msg_T>
+    auto&
+    evaluate_and_report<Expr_T>::operator<< (const Msg_T& msg)
+    {
+      if constexpr (std::is_arithmetic_v<Msg_T>)
+        {
+          message_.append (std::to_string (msg));
+        }
+      else
+        {
+          message_.append (msg);
+        }
+      return *this;
+    }
+
+    template <class Expr_T>
+    constexpr evaluate_and_report_abort<Expr_T>::evaluate_and_report_abort (
+        detail::assertion<Expr_T> assertion)
+        : evaluate_and_report<Expr_T>{ assertion }
+    {
+      if (!evaluate_and_report<Expr_T>::value_)
+        {
+          reporter.fail (evaluate_and_report<Expr_T>::assertion_,
+                         evaluate_and_report<Expr_T>::message_);
+          abort ();
+        }
+    }
+
+    template <class Expr_T>
+    evaluate_and_report_abort<Expr_T>::~evaluate_and_report_abort ()
+    {
+      reporter.pass (evaluate_and_report<Expr_T>::assertion_,
+                     evaluate_and_report<Expr_T>::message_);
+    }
+
   } // namespace detail
 
   // --------------------------------------------------------------------------

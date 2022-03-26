@@ -13,7 +13,8 @@
       "program": "${workspaceFolder}/build/native-cmake-debug/platform-bin/sample-test",
       "args": [
         "one",
-        "two"
+        "two",
+        "--verbose"
       ],
       "stopAtEntry": true,
       "cwd": "${workspaceFolder}/build/native-cmake-debug/platform-bin/",
