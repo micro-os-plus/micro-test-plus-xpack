@@ -53,8 +53,8 @@
       "commandCMakeClean": "cmake --build {{ properties.buildFolderRelativePathPosix }} --target clean",
       "commandCMakePerformTests": "cd {{ properties.buildFolderRelativePath }} && ctest -V",
       "commandMesonPrepare": "meson setup --backend ninja --buildtype {{ properties.buildType }} -D platform-name={{ properties.platformName }} {{ properties.buildFolderRelativePathPosix }} tests",
-      "commandMesonPrepareWithToolchain": "meson setup --backend ninja --buildtype {{ properties.buildType }} -D platform-name={{ properties.platformName }} --native-file xpacks/micro-os-plus-build-helper/meson/toolchains/{% if os.platform == 'win32' %}{{ properties.toolchainWindowsFileName }}{% else %}{{ properties.toolchainFileName }}{% endif %} --native-file tests/platform-{{ properties.platformName }}/meson/native.ini {{ properties.buildFolderRelativePathPosix }} tests",
-      "commandMesonPrepareCross": "meson setup --backend ninja --buildtype {{ properties.buildType }} -D platform-name={{ properties.platformName }} --cross xpacks/micro-os-plus-build-helper/meson/toolchains/{% if os.platform == 'win32' %}{{ properties.toolchainWindowsFileName }}{% else %}{{ properties.toolchainFileName }}{% endif %} --cross tests/platform-{{ properties.platformName }}/meson/cross.ini {{ properties.buildFolderRelativePathPosix }} tests",
+      "commandMesonPrepareWithToolchain": "meson setup --backend ninja --buildtype {{ properties.buildType }} -D platform-name={{ properties.platformName }} --native-file xpacks/micro-os-plus-build-helper/meson/toolchains/{{ properties.toolchainFileName }} --native-file tests/platform-{{ properties.platformName }}/meson/native.ini {{ properties.buildFolderRelativePathPosix }} tests",
+      "commandMesonPrepareCross": "meson setup --backend ninja --buildtype {{ properties.buildType }} -D platform-name={{ properties.platformName }} --cross xpacks/micro-os-plus-build-helper/meson/toolchains/{{ properties.toolchainFileName }} --cross tests/platform-{{ properties.platformName }}/meson/cross.ini {{ properties.buildFolderRelativePathPosix }} tests",
       "commandMesonReconfigure": "meson setup --reconfigure {{ properties.buildFolderRelativePathPosix }} tests",
       "commandMesonBuild": "meson compile -C {{ properties.buildFolderRelativePathPosix }}",
       "commandMesonBuildVerbose": "meson compile -C {{ properties.buildFolderRelativePathPosix }} --verbose",
@@ -212,21 +212,6 @@
         "xpm run clean --config stm32f4discovery-cmake-release",
         "xpm run clean --config stm32f4discovery-meson-debug",
         "xpm run clean --config stm32f4discovery-meson-release"
-      ],
-      "rm-global-deps": [
-        "xpm uninstall --global @micro-os-plus/architecture-cortexm",
-        "xpm uninstall --global @micro-os-plus/build-helper",
-        "xpm uninstall --global @micro-os-plus/devices-stm32f4-extras",
-        "xpm uninstall --global @micro-os-plus/devices-cortexm",
-        "xpm uninstall --global @micro-os-plus/devices-qemu-cortexm",
-        "xpm uninstall --global @micro-os-plus/diag-trace",
-        "xpm uninstall --global @micro-os-plus/libs-c",
-        "xpm uninstall --global @micro-os-plus/libs-cpp",
-        "xpm uninstall --global @micro-os-plus/platform-stm32f4discovery",
-        "xpm uninstall --global @micro-os-plus/semihosting",
-        "xpm uninstall --global @micro-os-plus/startup",
-        "xpm uninstall --global @micro-os-plus/version",
-        "xpm uninstall --global @xpack-3rd-party/arm-cmsis-core-m"
       ],
       "deep-clean": "rm -rf build node_modules xpacks",
       "trigger-workflow-test-all": "bash tests/scripts/trigger-workflow-test-all.sh"
@@ -458,8 +443,7 @@
         "properties": {
           "buildType": "debug",
           "platformName": "native",
-          "toolchainFileName": "gcc.ini",
-          "toolchainWindowsFileName": "gcc-cmd.ini"
+          "toolchainFileName": "gcc-{{ os.platform }}.ini"
         },
         "actions": {
           "link-deps": [
@@ -482,8 +466,7 @@
         "properties": {
           "buildType": "release",
           "platformName": "native",
-          "toolchainFileName": "gcc.ini",
-          "toolchainWindowsFileName": "gcc-cmd.ini"
+          "toolchainFileName": "gcc-{{ os.platform }}.ini"
         },
         "actions": {
           "link-deps": [
@@ -506,8 +489,7 @@
         "properties": {
           "buildType": "debug",
           "platformName": "native",
-          "toolchainFileName": "clang.ini",
-          "toolchainWindowsFileName": "clang-cmd.ini"
+          "toolchainFileName": "clang-{{ os.platform }}.ini"
         },
         "actions": {
           "link-deps": [
@@ -530,8 +512,7 @@
         "properties": {
           "buildType": "release",
           "platformName": "native",
-          "toolchainFileName": "clang.ini",
-          "toolchainWindowsFileName": "clang-cmd.ini"
+          "toolchainFileName": "clang-{{ os.platform }}.ini"
         },
         "actions": {
           "link-deps": [
@@ -554,8 +535,7 @@
         "properties": {
           "buildType": "debug",
           "platformName": "native",
-          "toolchainFileName": "clang.ini",
-          "toolchainWindowsFileName": "clang-cmd.ini"
+          "toolchainFileName": "clang-{{ os.platform }}.ini"
         },
         "actions": {
           "link-deps": [
@@ -578,8 +558,7 @@
         "properties": {
           "buildType": "release",
           "platformName": "native",
-          "toolchainFileName": "clang.ini",
-          "toolchainWindowsFileName": "clang-cmd.ini"
+          "toolchainFileName": "clang-{{ os.platform }}.ini"
         },
         "actions": {
           "link-deps": [
@@ -656,7 +635,7 @@
           "link-deps": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexm",
             "xpm link --config {{ configuration.name }} @micro-os-plus/devices-cortexm",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/device-qemu-cortexm",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/devices-qemu-cortexm",
             "xpm link --config {{ configuration.name }} @micro-os-plus/libs-c",
             "xpm link --config {{ configuration.name }} @micro-os-plus/libs-cpp",
             "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting",
@@ -690,15 +669,14 @@
         "properties": {
           "buildType": "debug",
           "platformName": "qemu-mps2-an386",
-          "toolchainFileName": "arm-none-eabi-gcc.ini",
-          "toolchainWindowsFileName": "arm-none-eabi-gcc-cmd.ini",
+          "toolchainFileName": "arm-none-eabi-gcc-{{ os.platform }}.ini",
           "qemuBoardName": "QEMU mps2-an386"
         },
         "actions": {
           "link-deps": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexm",
             "xpm link --config {{ configuration.name }} @micro-os-plus/devices-cortexm",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/device-qemu-cortexm",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/devices-qemu-cortexm",
             "xpm link --config {{ configuration.name }} @micro-os-plus/libs-c",
             "xpm link --config {{ configuration.name }} @micro-os-plus/libs-cpp",
             "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting",
@@ -732,15 +710,14 @@
         "properties": {
           "buildType": "minsize",
           "platformName": "qemu-mps2-an386",
-          "toolchainFileName": "arm-none-eabi-gcc.ini",
-          "toolchainWindowsFileName": "arm-none-eabi-gcc-cmd.ini",
+          "toolchainFileName": "arm-none-eabi-gcc-{{ os.platform }}.ini",
           "qemuBoardName": "QEMU mps2-an386"
         },
         "actions": {
           "link-deps": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexm",
             "xpm link --config {{ configuration.name }} @micro-os-plus/devices-cortexm",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/device-qemu-cortexm",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/devices-qemu-cortexm",
             "xpm link --config {{ configuration.name }} @micro-os-plus/libs-c",
             "xpm link --config {{ configuration.name }} @micro-os-plus/libs-cpp",
             "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting",
