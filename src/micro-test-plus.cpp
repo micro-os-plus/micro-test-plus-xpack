@@ -31,6 +31,8 @@
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
+#pragma clang diagnostic ignored "-Wexit-time-destructors"
+#pragma clang diagnostic ignored "-Wglobal-constructors"
 #endif
 
 namespace micro_os_plus::micro_test_plus
@@ -108,6 +110,29 @@ namespace micro_os_plus::micro_test_plus
     }
 
   } // namespace utility
+
+  namespace detail
+  {
+    deferred_reporter_base::deferred_reporter_base (
+        bool value, const reflection::source_location location)
+        : value_{ value }, location_{ location }
+    {
+      if (value_)
+        {
+          current_test_suite->increment_successful ();
+        }
+      else
+        {
+          current_test_suite->increment_failed ();
+        }
+    }
+
+    deferred_reporter_base::~deferred_reporter_base ()
+    {
+    }
+
+
+  } // namespace detail
 
   // ==========================================================================
 

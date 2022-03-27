@@ -87,7 +87,7 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
 
     template <class Expr_T>
-    constexpr deferred_reporter<Expr_T>::deferred_reporter (
+    deferred_reporter<Expr_T>::deferred_reporter (
         const Expr_T& expr, const reflection::source_location& location)
         : deferred_reporter_base{ static_cast<bool> (expr), location }, expr_{
             expr
@@ -98,13 +98,25 @@ namespace micro_os_plus::micro_test_plus
     template <class Expr_T>
     deferred_reporter<Expr_T>::~deferred_reporter ()
     {
-      if (value_)
+      run ();
+    }
+
+    template <class Expr_T>
+    void
+    deferred_reporter<Expr_T>::run (void)
+    {
+      if (!deferred_reporter_base::reported_)
         {
-          reporter.pass (expr_, message_);
-        }
-      else
-        {
-          reporter.fail (expr_, message_, location_);
+          if (value_)
+            {
+              reporter.pass (expr_, message_);
+            }
+          else
+            {
+              reporter.fail (expr_, message_, location_);
+            }
+
+          deferred_reporter_base::reported_ = true;
         }
     }
 
@@ -127,8 +139,20 @@ namespace micro_os_plus::micro_test_plus
     template <class Expr_T>
     deferred_reporter_abort<Expr_T>::~deferred_reporter_abort ()
     {
-      reporter.pass (deferred_reporter<Expr_T>::expr_,
-                     deferred_reporter_base::message_);
+      run ();
+    }
+
+    template <class Expr_T>
+    void
+    deferred_reporter_abort<Expr_T>::run ()
+    {
+      if (!deferred_reporter_base::reported_)
+        {
+          reporter.pass (deferred_reporter<Expr_T>::expr_,
+                         deferred_reporter_base::message_);
+
+          deferred_reporter_base::reported_ = true;
+        }
     }
 
     // ------------------------------------------------------------------------

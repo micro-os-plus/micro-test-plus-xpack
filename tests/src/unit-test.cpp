@@ -312,9 +312,13 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  // Enable this to check that asserts trigger.
-  // test_assert (false);
-  // assume(false, "Check assume()");
+  // assume(true) << "Assumption";
+  // local_counts.successful_checks++;
+
+  // Enable this to check if the asserts trigger.
+#if 0
+  assume(false) << "Check assume()";
+#endif
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
@@ -337,7 +341,7 @@ main (int argc, char* argv[])
     expect (true);
     local_counts.successful_checks++;
 
-    expect (true) << "true";
+    expect (true) << "TRUE";
     local_counts.successful_checks++;
 
     local_counts.test_cases++;

@@ -59,7 +59,6 @@ namespace micro_os_plus::micro_test_plus
     *this << endl;
 
     flush ();
-    current_test_suite->increment_successful ();
   }
 
   void
@@ -84,7 +83,6 @@ namespace micro_os_plus::micro_test_plus
     *this << endl;
 
     flush ();
-    current_test_suite->increment_failed ();
   }
 
   test_reporter&

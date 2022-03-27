@@ -666,14 +666,15 @@ namespace micro_os_plus::micro_test_plus
     };
 #endif
 
+    // ------------------------------------------------------------------------
+
     class deferred_reporter_base
     {
     public:
-      inline deferred_reporter_base (
-          bool value, const reflection::source_location location)
-          : value_{ value }, location_{ location }
-      {
-      }
+      deferred_reporter_base (bool value,
+                              const reflection::source_location location);
+
+      ~deferred_reporter_base ();
 
       template <class T>
       auto&
@@ -685,7 +686,9 @@ namespace micro_os_plus::micro_test_plus
         return value_;
       }
 
+    protected:
       bool value_{};
+      bool reported_ = false;
 
       const reflection::source_location location_{};
 
@@ -700,10 +703,13 @@ namespace micro_os_plus::micro_test_plus
     class deferred_reporter : public deferred_reporter_base
     {
     public:
-      constexpr explicit deferred_reporter (
-          const Expr_T& expr, const reflection::source_location& location);
+      explicit deferred_reporter (const Expr_T& expr,
+                                  const reflection::source_location& location);
 
       ~deferred_reporter ();
+
+      void
+      run (void);
 
     protected:
       const Expr_T expr_{};
@@ -717,6 +723,9 @@ namespace micro_os_plus::micro_test_plus
           const Expr_T& expr, const reflection::source_location& location);
 
       ~deferred_reporter_abort ();
+
+      void
+      run (void);
     };
 
     // ----------------------------------------------------------------------
