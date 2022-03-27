@@ -67,32 +67,13 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
   namespace detail
   {
-    template <class Expr_T>
-    constexpr evaluate_and_report<Expr_T>::evaluate_and_report (
-        detail::assertion<Expr_T> assertion)
-        : assertion_{ assertion }, value_{ static_cast<bool> (assertion.expr) }
-    {
-    }
+    // ------------------------------------------------------------------------
 
-    template <class Expr_T>
-    evaluate_and_report<Expr_T>::~evaluate_and_report ()
-    {
-      if (value_)
-        {
-          reporter.pass (assertion_, message_);
-        }
-      else
-        {
-          reporter.fail (assertion_, message_);
-        }
-    }
-
-    template <class Expr_T>
-    template <class Msg_T>
+    template <class T>
     auto&
-    evaluate_and_report<Expr_T>::operator<< (const Msg_T& msg)
+    deferred_reporter_base::operator<< (const T& msg)
     {
-      if constexpr (std::is_arithmetic_v<Msg_T>)
+      if constexpr (std::is_arithmetic_v<T>)
         {
           message_.append (std::to_string (msg));
         }
@@ -103,26 +84,54 @@ namespace micro_os_plus::micro_test_plus
       return *this;
     }
 
+    // ------------------------------------------------------------------------
+
     template <class Expr_T>
-    constexpr evaluate_and_report_abort<Expr_T>::evaluate_and_report_abort (
-        detail::assertion<Expr_T> assertion)
-        : evaluate_and_report<Expr_T>{ assertion }
+    constexpr deferred_reporter<Expr_T>::deferred_reporter (
+        const Expr_T& expr, const reflection::source_location& location)
+        : deferred_reporter_base{ static_cast<bool> (expr), location }, expr_{
+            expr
+          }
     {
-      if (!evaluate_and_report<Expr_T>::value_)
+    }
+
+    template <class Expr_T>
+    deferred_reporter<Expr_T>::~deferred_reporter ()
+    {
+      if (value_)
         {
-          reporter.fail (evaluate_and_report<Expr_T>::assertion_,
-                         evaluate_and_report<Expr_T>::message_);
+          reporter.pass (expr_, message_);
+        }
+      else
+        {
+          reporter.fail (expr_, message_, location_);
+        }
+    }
+
+    // ------------------------------------------------------------------------
+
+    template <class Expr_T>
+    constexpr deferred_reporter_abort<Expr_T>::deferred_reporter_abort (
+        const Expr_T& expr, const reflection::source_location& location)
+        : deferred_reporter<Expr_T>{ expr, location }
+    {
+      if (!deferred_reporter_base::value_)
+        {
+          reporter.fail (deferred_reporter<Expr_T>::expr_,
+                         deferred_reporter_base::message_,
+                         deferred_reporter_base::location_);
           abort ();
         }
     }
 
     template <class Expr_T>
-    evaluate_and_report_abort<Expr_T>::~evaluate_and_report_abort ()
+    deferred_reporter_abort<Expr_T>::~deferred_reporter_abort ()
     {
-      reporter.pass (evaluate_and_report<Expr_T>::assertion_,
-                     evaluate_and_report<Expr_T>::message_);
+      reporter.pass (deferred_reporter<Expr_T>::expr_,
+                     deferred_reporter_base::message_);
     }
 
+    // ------------------------------------------------------------------------
   } // namespace detail
 
   // --------------------------------------------------------------------------

@@ -100,8 +100,7 @@ namespace micro_os_plus::micro_test_plus
   expect (const Expr_T& expr, const reflection::source_location& sl
                               = reflection::source_location::current ())
   {
-    return detail::evaluate_and_report<Expr_T>{ detail::assertion<Expr_T>{
-        .expr = expr, .location = sl } };
+    return detail::deferred_reporter<Expr_T>{ expr, sl };
   }
 
   /**
@@ -120,9 +119,7 @@ namespace micro_os_plus::micro_test_plus
   assume (const Expr_T& expr, const reflection::source_location& sl
                               = reflection::source_location::current ())
   {
-    return detail::evaluate_and_report_abort<Expr_T>{
-      detail::assertion<Expr_T>{ .expr = expr, .location = sl }
-    };
+    return detail::deferred_reporter_abort<Expr_T>{ expr, sl };
   }
 
   // --------------------------------------------------------------------------

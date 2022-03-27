@@ -43,6 +43,50 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
+  void
+  test_reporter::output_pass_prefix_ (std::string& message)
+  {
+    *this << colors_.pass << "    ✓ " << colors_.none;
+    if (!message.empty ())
+      {
+        *this << message.c_str ();
+      }
+  }
+
+  void
+  test_reporter::output_pass_suffix_ (void)
+  {
+    *this << endl;
+
+    flush ();
+    current_test_suite->increment_successful ();
+  }
+
+  void
+  test_reporter::output_fail_prefix_ (
+      std::string& message, const reflection::source_location& location)
+  {
+    *this << colors_.fail << "    ✗ " << colors_.none;
+    if (!message.empty ())
+      {
+        *this << message.c_str ();
+        *this << " ";
+      }
+    *this << colors_.fail << "FAILED" << colors_.none;
+    *this << " (" << reflection::short_name (location.file_name ()) << ":"
+          << type_traits::genuine_integral_value<int>{ location.line () };
+  }
+
+  void
+  test_reporter::output_fail_suffix_ ()
+  {
+    *this << ")";
+    *this << endl;
+
+    flush ();
+    current_test_suite->increment_failed ();
+  }
+
   test_reporter&
   test_reporter::operator<< (test_reporter& (*func) (test_reporter&))
   {
@@ -231,8 +275,7 @@ namespace micro_os_plus::micro_test_plus
         printf ("%s", out_.c_str ());
         printf ("  %s✗%s %s - test case %sFAILED%s (%d %s passed, %d "
                 "failed)\n",
-                colors_.fail, colors_.none, name,
-                colors_.fail, colors_.none,
+                colors_.fail, colors_.none, name, colors_.fail, colors_.none,
                 current_test_suite->current_test_case.successful_checks,
                 current_test_suite->current_test_case.successful_checks == 1
                     ? "check"
@@ -250,8 +293,8 @@ namespace micro_os_plus::micro_test_plus
           {
             printf ("  • %s - test case started\n", name);
             printf ("%s", out_.c_str ());
-            printf ("  %s✓%s %s - test case passed (%d %s)\n",
-                    colors_.pass, colors_.none, name,
+            printf ("  %s✓%s %s - test case passed (%d %s)\n", colors_.pass,
+                    colors_.none, name,
                     current_test_suite->current_test_case.successful_checks,
                     current_test_suite->current_test_case.successful_checks
                             == 1
@@ -262,8 +305,8 @@ namespace micro_os_plus::micro_test_plus
           }
         else
           {
-            printf ("  %s✓%s %s - test case passed (%d %s)\n",
-                    colors_.pass, colors_.none, name,
+            printf ("  %s✓%s %s - test case passed (%d %s)\n", colors_.pass,
+                    colors_.none, name,
                     current_test_suite->current_test_case.successful_checks,
                     current_test_suite->current_test_case.successful_checks
                             == 1

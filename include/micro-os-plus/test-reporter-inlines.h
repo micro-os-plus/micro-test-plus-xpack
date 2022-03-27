@@ -34,7 +34,6 @@
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
-#pragma clang diagnostic ignored "-Wctad-maybe-unsupported"
 #endif
 #endif
 
@@ -186,49 +185,32 @@ namespace micro_os_plus::micro_test_plus
 
   template <class Expr_T>
   void
-  test_reporter::pass (detail::assertion<Expr_T> assertion,
-                       std::string& message)
+  test_reporter::pass (Expr_T& expr, std::string& message)
   {
-    *this << colors_.pass << "    ✓ " << colors_.none;
-    if (!message.empty ())
-      {
-        *this << message.c_str ();
-      }
-    else
-      {
-        // Otherwise display the evaluated expression.
-        *this << assertion.expr;
-      }
-    *this << endl;
+    output_pass_prefix_ (message);
 
-    flush ();
-    current_test_suite->increment_successful ();
+    if (message.empty ())
+      {
+        // If there is no message, display the evaluated expression.
+        *this << expr;
+      }
+
+    output_pass_suffix_ ();
   }
 
   template <class Expr_T>
   void
-  test_reporter::fail (detail::assertion<Expr_T> assertion,
-                       std::string& message)
+  test_reporter::fail (Expr_T& expr, std::string& message,
+                       const reflection::source_location& location)
   {
-    *this << colors_.fail << "    ✗ " << colors_.none;
-    if (!message.empty ())
-      {
-        *this << message.c_str ();
-        *this << " ";
-      }
-    *this << colors_.fail << "FAILED" << colors_.none;
-    *this << " (" << reflection::short_name (assertion.location.file_name ())
-          << ":"
-          << type_traits::genuine_integral_value{ assertion.location.line () };
+    output_fail_prefix_ (message, location);
+
     if constexpr (type_traits::is_op_v<Expr_T>)
       {
-        *this << ", " << assertion.expr;
+        *this << ", " << expr;
       }
-    *this << ")";
-    *this << endl;
 
-    flush ();
-    current_test_suite->increment_failed ();
+    output_fail_suffix_ ();
   }
 
   // --------------------------------------------------------------------------

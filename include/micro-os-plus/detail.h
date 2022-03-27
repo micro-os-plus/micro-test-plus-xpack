@@ -666,18 +666,18 @@ namespace micro_os_plus::micro_test_plus
     };
 #endif
 
-    template <class Expr_T>
-    class evaluate_and_report
+    class deferred_reporter_base
     {
     public:
-      constexpr explicit evaluate_and_report (
-          detail::assertion<Expr_T> assertion);
+      inline deferred_reporter_base (
+          bool value, const reflection::source_location location)
+          : value_{ value }, location_{ location }
+      {
+      }
 
-      ~evaluate_and_report ();
-
-      template <class Msg_T>
+      template <class T>
       auto&
-      operator<< (const Msg_T& msg);
+      operator<< (const T& msg);
 
       [[nodiscard]] constexpr bool
       value () const
@@ -685,20 +685,38 @@ namespace micro_os_plus::micro_test_plus
         return value_;
       }
 
-    protected:
-      detail::assertion<Expr_T> assertion_;
       bool value_{};
+
+      const reflection::source_location location_{};
+
+      /**
+       * @brief String to collect the expectation message passed via
+       * `operator<<()`.
+       */
       std::string message_{};
     };
 
     template <class Expr_T>
-    class evaluate_and_report_abort : public evaluate_and_report<Expr_T>
+    class deferred_reporter : public deferred_reporter_base
     {
     public:
-      constexpr explicit evaluate_and_report_abort (
-          detail::assertion<Expr_T> assertion);
+      constexpr explicit deferred_reporter (
+          const Expr_T& expr, const reflection::source_location& location);
 
-      ~evaluate_and_report_abort ();
+      ~deferred_reporter ();
+
+    protected:
+      const Expr_T expr_{};
+    };
+
+    template <class Expr_T>
+    class deferred_reporter_abort : public deferred_reporter<Expr_T>
+    {
+    public:
+      constexpr explicit deferred_reporter_abort (
+          const Expr_T& expr, const reflection::source_location& location);
+
+      ~deferred_reporter_abort ();
     };
 
     // ----------------------------------------------------------------------
