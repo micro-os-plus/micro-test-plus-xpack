@@ -289,17 +289,18 @@ namespace micro_os_plus::micro_test_plus
   void
   test_reporter::end_test_case ([[maybe_unused]] const char* name)
   {
-    if (verbosity == verbosity::quiet || verbosity == verbosity::silent)
+    if (verbosity == verbosity::normal || verbosity == verbosity::verbose)
       {
-        return;
-      }
-
-    if (current_test_suite->current_test_case.failed_checks > 0)
-      {
-        printf ("\n");
-        printf ("  • %s - test case started\n", name);
-        printf ("%s", out_.c_str ());
-        printf ("  %s✗%s %s - test case %sFAILED%s (%d %s passed, %d "
+        if (current_test_suite->current_test_case.failed_checks > 0)
+          {
+            if (true /* add_empty_line */)
+              {
+                printf ("\n");
+              }
+            printf ("  • %s - test case started\n", name);
+            output ();
+            printf (
+                "  %s✗%s %s - test case %sFAILED%s (%d %s passed, %d "
                 "failed)\n",
                 colors_.fail, colors_.none, name, colors_.fail, colors_.none,
                 current_test_suite->current_test_case.successful_checks,
@@ -307,31 +308,20 @@ namespace micro_os_plus::micro_test_plus
                     ? "check"
                     : "checks",
                 current_test_suite->current_test_case.failed_checks);
-        add_empty_line = true;
-      }
-    else
-      {
-        if (add_empty_line)
-          {
-            printf ("\n");
-          }
-        if (verbosity == verbosity::verbose)
-          {
-            printf ("  • %s - test case started\n", name);
-            printf ("%s", out_.c_str ());
-            printf ("  %s✓%s %s - test case passed (%d %s)\n", colors_.pass,
-                    colors_.none, name,
-                    current_test_suite->current_test_case.successful_checks,
-                    current_test_suite->current_test_case.successful_checks
-                            == 1
-                        ? "check"
-                        : "checks");
-
             add_empty_line = true;
           }
         else
           {
-            printf ("  %s✓%s %s - test case passed (%d %s)\n", colors_.pass,
+            if (add_empty_line)
+              {
+                printf ("\n");
+              }
+            if (verbosity == verbosity::verbose)
+              {
+                printf ("  • %s - test case started\n", name);
+                output ();
+                printf (
+                    "  %s✓%s %s - test case passed (%d %s)\n", colors_.pass,
                     colors_.none, name,
                     current_test_suite->current_test_case.successful_checks,
                     current_test_suite->current_test_case.successful_checks
@@ -339,10 +329,25 @@ namespace micro_os_plus::micro_test_plus
                         ? "check"
                         : "checks");
 
-            add_empty_line = false;
+                add_empty_line = true;
+              }
+            else
+              {
+                printf (
+                    "  %s✓%s %s - test case passed (%d %s)\n", colors_.pass,
+                    colors_.none, name,
+                    current_test_suite->current_test_case.successful_checks,
+                    current_test_suite->current_test_case.successful_checks
+                            == 1
+                        ? "check"
+                        : "checks");
+
+                add_empty_line = false;
+              }
           }
       }
 
+    out_.clear ();
     flush ();
 
     is_in_test_case_ = false;
