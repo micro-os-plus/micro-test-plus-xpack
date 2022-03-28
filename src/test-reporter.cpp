@@ -89,9 +89,13 @@ namespace micro_os_plus::micro_test_plus
   }
 
   void
-  test_reporter::output_fail_suffix_ ()
+  test_reporter::output_fail_suffix_ (bool abort)
   {
     *this << ")";
+    if (abort)
+      {
+        *this << " aborted...";
+      }
     *this << endl;
 
     flush ();
@@ -266,6 +270,16 @@ namespace micro_os_plus::micro_test_plus
   test_reporter::begin_test_case ([[maybe_unused]] const char* name)
   {
     is_in_test_case_ = true;
+
+    if (!out_.empty () && (verbosity == verbosity::verbose))
+      {
+        if (add_empty_line)
+          {
+            printf ("\n");
+          }
+        output ();
+        add_empty_line = true;
+      }
 
     out_.clear ();
 

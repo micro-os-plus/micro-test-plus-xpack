@@ -688,8 +688,7 @@ namespace micro_os_plus::micro_test_plus
 
     protected:
       bool value_{};
-      bool reported_ = false;
-
+      bool abort_ = false;
       const reflection::source_location location_{};
 
       /**
@@ -703,29 +702,14 @@ namespace micro_os_plus::micro_test_plus
     class deferred_reporter : public deferred_reporter_base
     {
     public:
-      explicit deferred_reporter (const Expr_T& expr,
-                                  const reflection::source_location& location);
+      constexpr explicit deferred_reporter (
+          const Expr_T& expr, bool abort,
+          const reflection::source_location& location);
 
       ~deferred_reporter ();
 
-      void
-      run (void);
-
     protected:
       const Expr_T expr_{};
-    };
-
-    template <class Expr_T>
-    class deferred_reporter_abort : public deferred_reporter<Expr_T>
-    {
-    public:
-      constexpr explicit deferred_reporter_abort (
-          const Expr_T& expr, const reflection::source_location& location);
-
-      ~deferred_reporter_abort ();
-
-      void
-      run (void);
     };
 
     // ----------------------------------------------------------------------

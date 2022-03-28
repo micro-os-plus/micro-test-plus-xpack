@@ -276,7 +276,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class Expr_T>
     void
-    fail (Expr_T& expr, std::string& message,
+    fail (Expr_T& expr, bool abort, std::string& message,
           const reflection::source_location& location);
 
     void
@@ -321,7 +321,7 @@ namespace micro_os_plus::micro_test_plus
                          const reflection::source_location& location);
 
     void
-    output_fail_suffix_ (void);
+    output_fail_suffix_ (bool abort);
 
     colors colors_{};
     std::string out_{};

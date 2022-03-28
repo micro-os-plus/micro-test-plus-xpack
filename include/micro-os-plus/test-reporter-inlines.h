@@ -200,7 +200,7 @@ namespace micro_os_plus::micro_test_plus
 
   template <class Expr_T>
   void
-  test_reporter::fail (Expr_T& expr, std::string& message,
+  test_reporter::fail (Expr_T& expr, bool abort, std::string& message,
                        const reflection::source_location& location)
   {
     output_fail_prefix_ (message, location);
@@ -210,7 +210,7 @@ namespace micro_os_plus::micro_test_plus
         *this << ", " << expr;
       }
 
-    output_fail_suffix_ ();
+    output_fail_suffix_ (abort);
   }
 
   // --------------------------------------------------------------------------

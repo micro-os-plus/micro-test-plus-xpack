@@ -87,71 +87,29 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
 
     template <class Expr_T>
-    deferred_reporter<Expr_T>::deferred_reporter (
-        const Expr_T& expr, const reflection::source_location& location)
+    constexpr deferred_reporter<Expr_T>::deferred_reporter (
+        const Expr_T& expr, bool abort,
+        const reflection::source_location& location)
         : deferred_reporter_base{ static_cast<bool> (expr), location }, expr_{
             expr
           }
     {
+#if 0 // defined(MICRO_TEST_PLUS_TRACE)
+      printf ("%s\n", __PRETTY_FUNCTION__);
+#endif // MICRO_TEST_PLUS_TRACE
+      abort_ = abort;
     }
 
     template <class Expr_T>
     deferred_reporter<Expr_T>::~deferred_reporter ()
     {
-      run ();
-    }
-
-    template <class Expr_T>
-    void
-    deferred_reporter<Expr_T>::run (void)
-    {
-      if (!deferred_reporter_base::reported_)
+      if (value_)
         {
-          if (value_)
-            {
-              reporter.pass (expr_, message_);
-            }
-          else
-            {
-              reporter.fail (expr_, message_, location_);
-            }
-
-          deferred_reporter_base::reported_ = true;
+          reporter.pass (expr_, message_);
         }
-    }
-
-    // ------------------------------------------------------------------------
-
-    template <class Expr_T>
-    constexpr deferred_reporter_abort<Expr_T>::deferred_reporter_abort (
-        const Expr_T& expr, const reflection::source_location& location)
-        : deferred_reporter<Expr_T>{ expr, location }
-    {
-      if (!deferred_reporter_base::value_)
+      else
         {
-          reporter.fail (deferred_reporter<Expr_T>::expr_,
-                         deferred_reporter_base::message_,
-                         deferred_reporter_base::location_);
-          abort ();
-        }
-    }
-
-    template <class Expr_T>
-    deferred_reporter_abort<Expr_T>::~deferred_reporter_abort ()
-    {
-      run ();
-    }
-
-    template <class Expr_T>
-    void
-    deferred_reporter_abort<Expr_T>::run ()
-    {
-      if (!deferred_reporter_base::reported_)
-        {
-          reporter.pass (deferred_reporter<Expr_T>::expr_,
-                         deferred_reporter_base::message_);
-
-          deferred_reporter_base::reported_ = true;
+          reporter.fail (expr_, abort_, message_, location_);
         }
     }
 

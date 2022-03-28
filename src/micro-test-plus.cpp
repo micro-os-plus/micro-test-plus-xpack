@@ -129,8 +129,17 @@ namespace micro_os_plus::micro_test_plus
 
     deferred_reporter_base::~deferred_reporter_base ()
     {
-    }
+#if 0 // defined(MICRO_TEST_PLUS_TRACE)
+      printf ("%s\n", __PRETTY_FUNCTION__);
+#endif // MICRO_TEST_PLUS_TRACE
 
+      if (abort_ && !value_)
+        {
+          printf ("\n");
+          reporter.output ();
+          abort ();
+        }
+    }
 
   } // namespace detail
 
