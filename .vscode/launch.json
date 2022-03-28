@@ -27,7 +27,9 @@
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/build/native-cmake-debug/platform-bin/unit-test",
-      "args": [],
+      "args": [
+        "--verbose"
+      ],
       "stopAtEntry": true,
       "cwd": "${workspaceFolder}/build/native-cmake-debug/platform-bin/",
       "environment": [],
