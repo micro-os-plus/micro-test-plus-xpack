@@ -297,6 +297,9 @@ namespace micro_os_plus::micro_test_plus
     void
     flush (void);
 
+    void
+    output (void);
+
     // Used to nicely format the output, without empty lines
     // between successful test cases.
     bool add_empty_line{ true };

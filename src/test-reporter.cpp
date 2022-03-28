@@ -390,6 +390,13 @@ namespace micro_os_plus::micro_test_plus
     flush ();
   }
 
+  void
+  test_reporter::output (void)
+  {
+    printf ("%s", out_.c_str ()); // No `\n` here.
+    out_.clear ();
+  }
+
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
 
