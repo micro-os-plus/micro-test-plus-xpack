@@ -46,7 +46,13 @@ namespace micro_os_plus::micro_test_plus
   void
   test_reporter::output_pass_prefix_ (std::string& message)
   {
-    *this << colors_.pass << "    ✓ " << colors_.none;
+    *this << colors_.pass;
+    if (is_in_test_case_)
+      {
+        *this << "  ";
+      }
+    *this << "  ✓ ";
+    *this << colors_.none;
     if (!message.empty ())
       {
         *this << message.c_str ();
@@ -65,7 +71,13 @@ namespace micro_os_plus::micro_test_plus
   test_reporter::output_fail_prefix_ (
       std::string& message, const reflection::source_location& location)
   {
-    *this << colors_.fail << "    ✗ " << colors_.none;
+    *this << colors_.fail;
+    if (is_in_test_case_)
+      {
+        *this << "  ";
+      }
+    *this << "  ✗ ";
+    *this << colors_.none;
     if (!message.empty ())
       {
         *this << message.c_str ();
@@ -253,6 +265,8 @@ namespace micro_os_plus::micro_test_plus
   void
   test_reporter::begin_test_case ([[maybe_unused]] const char* name)
   {
+    is_in_test_case_ = true;
+
     out_.clear ();
 
     flush ();
@@ -316,6 +330,8 @@ namespace micro_os_plus::micro_test_plus
       }
 
     flush ();
+
+    is_in_test_case_ = false;
   }
 
   void

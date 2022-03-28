@@ -322,6 +322,8 @@ namespace micro_os_plus::micro_test_plus
 
     colors colors_{};
     std::string out_{};
+
+    bool is_in_test_case_ = false;
   };
 
   // --------------------------------------------------------------------------
