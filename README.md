@@ -76,10 +76,11 @@ into `xpack`.
 ## Developer info
 
 The xPack Build framework already includes several ready to use
-testing frameworks
-([Google Test](https://github.com/xpack-3rd-party/googletest-xpack),
-[Catch2](https://github.com/xpack-3rd-party/catch2-xpack) and
-[Boost UT](https://github.com/xpack-3rd-party/boost-ut-xpack)).
+testing frameworks:
+
+- [Google Test](https://github.com/xpack-3rd-party/googletest-xpack)
+- [Catch2](https://github.com/xpack-3rd-party/catch2-xpack)
+- [Boost UT](https://github.com/xpack-3rd-party/boost-ut-xpack))
 
 However, they all are quite heavy in terms of memory resources, and the
 learning curve for mastering them is quite steep.
@@ -96,6 +97,7 @@ The later v3.x was a full rework inspired by
 
 The main characteristics of µTest++, basically inherited from Boost UT, are:
 
+- intended to test both C and C++ projects
 - modern C++ 20 code (this was also the reason
   to raise the bar to C++ 20 for the entire µOS++ project)
 - macro free (while preserving the nice feature of being able to report
@@ -120,7 +122,7 @@ As major differentiator from Boost UT:
   which are expected to be true;
 - tests are based on logical expressions, which usually
   compute a result and compare it to an expected value
-- specific to C++: it is also possible to check if, while evaluating an
+- for C++ projects: it is also possible to check if, while evaluating
   an expression, exceptions are thrown or not;
 - each test either succeeds or fails; the runner keeps counts of them;
 - assumptions are hard conditions expected to be true in order for the test
@@ -133,9 +135,11 @@ As major differentiator from Boost UT:
 - the main result of the test is passed back to the system as the process
   exit code.
 
-If there is at least one successful test and there are no
-failed tests, each test suite is considered successful;
-if all tests suites are successful, the process returns 0 as exit value.
+A test suite is considered successful
+if there is at least one successful test (expectation or assumption)
+and there are no failed tests.
+
+If all tests suites are successful, the process returns 0 as exit value.
 
 ### ISTQB Glossary
 
@@ -165,7 +169,7 @@ for example:
 int
 main(int argc, char* argv[])
 {
-  using namespace micro_test_plus;
+  using namespace micro_os_plus::micro_test_plus;
 
   initialize(argc, argv, "Minimal");
 
@@ -202,7 +206,7 @@ compute_answer()
 int
 main(int argc, char* argv[])
 {
-  using namespace micro_os_plus;
+  using namespace micro_os_plus::micro_test_plus;
 
   initialize(argc, argv, "The Answer");
 
@@ -222,7 +226,8 @@ The Answer - test suite started
 The Answer - test suite passed (1 check passed, 0 checks failed, in 1 test case)
 ```
 
-In case that the function returns the wrong answer, the test will also fail; for example:
+In case that the function returns the wrong answer, the test will also fail;
+for example:
 
 ```c++
 static int
@@ -257,20 +262,20 @@ and must use some custom comparators or operators; for example:
 int
 main(int argc, char* argv[])
 {
-  using namespace micro_os_plus;
+  using namespace micro_os_plus::micro_test_plus;
 
   initialize(argc, argv, "The Answer");
 
   test_case ("Check answer with comparator", [] {
-    expect (eq (compute_answer (), 42), "answer is 42");
+    expect (eq (compute_answer (), 42)) << "answer is 42";
   });
 
   test_case ("Check answer with operator", [] {
-    using namespace micro_os_plus::operators;
-    using namespace micro_os_plus::literals;
+    using namespace micro_os_plus::micro_test_plus::operators;
+    using namespace micro_os_plus::micro_test_plus::literals;
 
-    expect (compute_answer () == 42_i, "answer is 42");
-    expect (_i {compute_answer ()} == 42, "answer is 42");
+    expect (compute_answer () == 42_i) << "answer is 42";
+    expect (_i {compute_answer ()} == 42) << "answer is 42";
   });
 
   return exit_code ();
@@ -324,7 +329,7 @@ break the test (as opposed to assumptions, which abort the test).
 
 ```C++
 template <class Expr_T, type_traits::requires_t<....>>
-bool expect(const Expr_T& expr, const char *message = "");
+bool expect(const Expr_T& expr);
 ```
 
 The template matches only expressions that evaluate to
@@ -340,7 +345,7 @@ Assumptions are checks that abort the test if the results are false.
 
 ```C++
 template <class Expr_T, type_traits::requires_t<....>>
-bool assume(const Expr_T& expr, const char *message = "");
+bool assume(const Expr_T& expr);
 ```
 
 Similarly, the template matches only expressions that evaluate to
@@ -379,18 +384,18 @@ Similar templates are defined for pointer comparators.
 Examples:
 
 ```c++
-expect (eq (compute_answer (), 42), "answer is 42");
-expect (ne (compute_answer (), 43), "answer is not 43");
-expect (lt (compute_answer (), 43), "answer is < 43");
-expect (le (compute_answer (), 43), "answer is <= 42");
-expect (gt (compute_answer (), 41), "answer is > 43");
-expect (ge (compute_answer (), 42), "answer is >= 42");
+expect (eq (compute_answer (), 42)) << "answer is 42";
+expect (ne (compute_answer (), 43)) << "answer is not 43";
+expect (lt (compute_answer (), 43)) << "answer is < 43";
+expect (le (compute_answer (), 43)) << "answer is <= 42";
+expect (gt (compute_answer (), 41)) << "answer is > 43";
+expect (ge (compute_answer (), 42)) << "answer is >= 42";
 
-expect (compute_condition (), "condition is true");
+expect (compute_condition ()) << "condition is true";
 ```
 
-When such comparators are used, failed checks also display the
-actual values used during the test; for example:
+When such comparator functions are used, failed checks also display the
+actual values compared during the test; for example:
 
 ```console
   Check failed comparisons
@@ -438,8 +443,8 @@ For string comparisons to compare the content, use `string_view`:
 using namespace std::literals; // For the "sv" literal.
 // ...
 
-expect (eq (std::string_view{ compute_ultimate_answer () }, "fortytwo"sv),
-        "ultimate_answer is 'fortytwo'");
+expect (eq (std::string_view{ compute_ultimate_answer () }, "fortytwo"sv))
+        << "ultimate_answer is 'fortytwo'";
 ```
 
 #### Comparing containers
@@ -448,11 +453,11 @@ Containers can be compared for equality. The comparison
 is done by iterating and comparing each member.
 
 ```c++
-expect (eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }),
-        "vector{ 1, 2 } eq vector{ 1, 2 }");
+expect (eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
+        << "vector{ 1, 2 } eq vector{ 1, 2 }";
 
-expect (ne (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 }),
-        "vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }");
+expect (ne (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 })
+        << "vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }";
 ```
 
 #### Operators
@@ -464,7 +469,8 @@ To avoid possible interferences with other operators
 defined by the application, these operators match only for operands of
 specific types and are located in a separate namespace
 (`micro_test_plus::operators`); when applied to regular values, the
-standard operands are used.
+standard operands are used; the comparisons are performed properly,
+but in case of failures the actual values are not shown.
 
 The following operators match only operands derived from the local
 `detail::op` type, which can be enforced for constant values by using the
@@ -499,13 +505,13 @@ test_case ("Operators", [] {
   using namespace micro_test_plus::operators;
   using namespace micro_test_plus::literals;
 
-  expect (compute_answer () == 42_i, "answer is 42 (with literal)");
-  expect (_i {compute_answer ()} == 42, "answer is 42 (with cast)");
-  expect (compute_answer () != 43_i, "answer is not 43");
-  expect (compute_answer () < 43_i, "answer is < 43");
-  expect (compute_answer () <= 43_i, "answer is <= 42");
-  expect (compute_answer () > 41_i, "answer is > 43");
-  expect (compute_answer () >= 42_i, "answer is >= 42");
+  expect (compute_answer () == 42_i) << "answer is 42 (with literal)";
+  expect (_i {compute_answer ()} == 42) << "answer is 42 (with cast)";
+  expect (compute_answer () != 43_i) << "answer is not 43";
+  expect (compute_answer () < 43_i) << "answer is < 43";
+  expect (compute_answer () <= 43_i) << "answer is <= 42";
+  expect (compute_answer () > 41_i) << "answer is > 43";
+  expect (compute_answer () >= 42_i) << "answer is >= 42";
 });
 ```
 
@@ -533,14 +539,14 @@ using namespace std::literals; // For the "sv" literal.
 test_case ("Operators", [] {
   using namespace micro_test_plus::operators;
 
-  expect (std::string_view{ compute_ultimate_answer () } == "fortytwo"sv,
-          "ultimate answer == 'fortytwo'");
+  expect (std::string_view{ compute_ultimate_answer () } == "fortytwo"sv)
+          << "ultimate answer == 'fortytwo'";
 
-  expect (std::vector<int>{ 1, 2 } == std::vector<int>{ 1, 2 },
-          "vector{ 1, 2 } == vector{ 1, 2 }");
+  expect (std::vector<int>{ 1, 2 } == std::vector<int>{ 1, 2 })
+          << "vector{ 1, 2 } == vector{ 1, 2 }";
 
-  expect (std::vector<int>{ 1, 2, 3 } != std::vector<int>{ 1, 2, 4 },
-          "vector{ 1, 2, 3 } != vector{ 1, 2, 4 }");
+  expect (std::vector<int>{ 1, 2, 3 } != std::vector<int>{ 1, 2, 4 })
+          << "vector{ 1, 2, 3 } != vector{ 1, 2, 4 }";
 });
 ```
 
@@ -665,7 +671,7 @@ the issue is a matter of personal preferences.
 
 #### Explicit namespace
 
-If for any reasons, the definitions in the `micro-test-plus` namespace
+If for any reasons, the definitions in the `micro_test_plus` namespace
 interfere with application definitions, it is recommended to
 use the comparator functions, which can be more easily invoked
 with explicit namespaces, possibly aliased to shorter names.
@@ -677,7 +683,7 @@ Example:
   namespace mt = micro_os_plus::micro_test_plus;
 
   mt::test_case ("Check answer", [] {
-    mt::expect (mt::eq (compute_answer (), 42), "answer is 42");
+    mt::expect (mt::eq (compute_answer (), 42)) << "answer is 42";
   });
 }
 ```
@@ -693,26 +699,26 @@ for a specific exception, or for no exception at all:
 ```C++
 // Check for any exception.
 template <class Callable_T>
-auto throws (const Callable_T& expr, const char *message = "");
+auto throws (const Callable_T& expr);
 
 // Check for a specific exception.
 template <class Exception_T, class Callable_T>
-auto throws (const Callable_T& expr, const char *message = "");
+auto throws (const Callable_T& expr);
 
 // Check for no exception at all.
 template <class Callable_T>
-auto nothrow (const Callable_T& expr, const char *message = "");
+auto nothrow (const Callable_T& expr);
 ```
 
 Examples:
 
 ```c++
-expect (throws ([] { exercise_throw (true); }), "exception thrown");
+expect (throws ([] { exercise_throw (true); })) << "exception thrown";
 
-expect (throws<std::runtime_error> ([] { throw std::runtime_error{ "" }; }),
-        "std::runtime_error thrown");
+expect (throws<std::runtime_error> ([] { throw std::runtime_error{ "" }; }))
+        << "std::runtime_error thrown";
 
-expect (nothrow ([] { exercise_throw (false); }), "exception not thrown");
+expect (nothrow ([] { exercise_throw (false); })) << "exception not thrown";
 ```
 
 If a more elaborate logic is required, for example for expecting multiple
@@ -726,15 +732,15 @@ try
   }
 catch (const std::overflow_error& e)
   {
-    expect (true, "std::overflow_error thrown");
+    expect (true) << "std::overflow_error thrown";
   }
 catch (const std::runtime_error& e)
   {
-    expect (true, "std::runtime_error thrown");
+    expect (true) << "std::runtime_error thrown";
   }
 catch (...)
   {
-    expect (false, "known exception thrown");
+    expect (false) << "known exception thrown";
   }
 ```
 
@@ -755,17 +761,19 @@ void test_case (const char* name, Callable_T&& func, Args_T&&... arguments);
 Examples:
 
 ```c++
+using namespace micro_os_plus::micro_test_plus;
+
 test_case ("Check various conditions", [] {
-  expect (eq (compute_answer (), 42), "answer eq 42");
-  expect (ne (compute_answer (), 43), "answer ne 43");
+  expect (eq (compute_answer (), 42)) << "answer eq 42";
+  expect (ne (compute_answer (), 43)) << "answer ne 43";
 });
 
 test_case ("Check various conditions with operators", [] {
-  using namespace micro_test_plus::operators;
-  using namespace micro_test_plus::literals;
+  using namespace micro_os_plus::micro_test_plus::operators;
+  using namespace micro_os_plus::micro_test_plus::literals;
 
-  expect (compute_answer () == 42_i, "answer == 42");
-  expect (compute_answer () != 43_i, "answer != 43");
+  expect (compute_answer () == 42_i) << "answer == 42";
+  expect (compute_answer () != 43_i) << "answer != 43";
 });
 ```
 
@@ -829,16 +837,17 @@ Test suites are executed when the function `exit_code()` is invoked.
 Examples:
 
 ```c++
-static micro_test_plus::test_suite ts_1
+using namespace micro_os_plus::micro_test_plus;
+
+static test_suite ts_1
     = { "Separate", [] {
-        using namespace micro_test_plus;
 
         test_case ("Check one", [] {
-          expect (true, "Passed");
+          expect (true) << "Passed";
         });
 
         test_case ("Check two", [] {
-          expect (true, "Passed");
+          expect (true) << "Passed";
         });
       }};
 ```
@@ -858,8 +867,8 @@ namespace utility {
 Examples:
 
 ```c++
-expect (utility::is_match ("abc", "a?c"), "abc matches a?c");
-expect (utility::is_match ("abc", "a*c"), "abc matches a*c");
+expect (utility::is_match ("abc", "a?c")) << "abc matches a?c";
+expect (utility::is_match ("abc", "a*c")) << "abc matches a*c";
 ```
 
 Also for tests handling strings, the following function template allows to
@@ -876,8 +885,8 @@ Example:
 
 ```c++
 expect (std::vector<std::string_view>{ "a", "b" }
-            == utility::split<std::string_view> ("a.b", "."),
-        "a.b splits into [a,b]");
+            == utility::split<std::string_view> ("a.b", "."))
+        << "a.b splits into [a,b]";
 ```
 
 #### Custom types
@@ -925,11 +934,14 @@ for the `debug` build can be increased to `-Og`, and save some memory.
 ### Build & integration info
 
 The project is written in C++, and the tests are expected to be
-written in C++ too. The source code was compiled with GCC 11, clang 12
+written in C++ too, but the tested code can also be written in plain C.
+The framework source code was compiled with GCC 11, clang 12
 and arm-none-eabi-gcc 10, and should be warning free.
 
-On embedded platforms, the test applications can be built with
-**Arm semihosting** support.
+To run on embedded platforms, the test framework requires a minimum
+of support from the system, like writing to the
+output stream. Any such environments are acceptable, but for standalone
+tests the most common solution is to use **Arm semihosting**.
 
 To ease the integration of this package into user projects, there
 are already made CMake and meson configuration files (see below).
@@ -1041,8 +1053,6 @@ Here are some excerpts:
 ```c++
 #include <micro-os-plus/micro-test-plus.h>
 
-using namespace micro_os_plus;
-
 // ----------------------------------------------------------------------------
 
 // ...
@@ -1056,36 +1066,36 @@ main (int argc, char* argv[])
   initialize (argc, argv, "Sample");
 
   test_case ("Check various conditions", [] {
-    expect (eq (compute_answer (), 42), "answer is 42");
-    expect (ne (compute_answer (), 43), "answer is not 43");
-    expect (compute_condition (), "condition() is true");
+    expect (eq (compute_answer (), 42)) << "answer is 42";
+    expect (ne (compute_answer (), 43)) << "answer is not 43";
+    expect (compute_condition ()) << "condition() is true";
   });
 
   test_case ("Check various conditions with operators", [] {
     using namespace micro_test_plus::operators;
     using namespace micro_test_plus::literals;
 
-    expect (compute_answer () == 42_i, "answer == 42 (with literal)");
-    expect (_i {compute_answer ()} == 42, "answer == 42 (with cast)");
-    expect (compute_answer () != 43_i, "answer != 43");
+    expect (compute_answer () == 42_i) << "answer == 42 (with literal)";
+    expect (_i {compute_answer ()} == 42) << "answer == 42 (with cast)";
+    expect (compute_answer () != 43_i) << "answer != 43";
   });
 
   test_case ("Check parameterised", [] {
     auto f = [] (int i) { return i + 42; };
-    expect (eq (f (1), 43), "lambda == 43");
+    expect (eq (f (1), 43)) << "lambda == 43";
   });
 
 #if defined(__EXCEPTIONS)
 
   test_case ("Check exceptions", [] {
     auto exercise_throw = [] { throw std::runtime_error{ "" }; }
-    expect (throws<std::runtime_error> (
-      exercise_throw), "std::runtime_error thrown");
+    expect (throws<std::runtime_error> (exercise_throw))
+            << "std::runtime_error thrown";
   });
 
 #endif // defined(__EXCEPTIONS)
 
-  return t.result ();
+  return exit_code ();
 }
 
 // ----------------------------------------------------------------------------
