@@ -146,7 +146,7 @@ namespace micro_os_plus::micro_test_plus
       return (failed_checks_ == 0 && successful_checks_ != 0);
     }
 
-  private:
+  protected:
     /**
      * @brief The test suite name.
      */
@@ -185,6 +185,17 @@ namespace micro_os_plus::micro_test_plus
       int failed_checks;
     } current_test_case{};
   };
+
+#if 0
+  // Experimental.
+  template <typename Callable_T, typename... Args_T>
+  class test_suite_args : public test_suite
+  {
+  public:
+    test_suite_args (const char* name, Callable_T&& func,
+                     Args_T&&... arguments);
+  };
+#endif
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus

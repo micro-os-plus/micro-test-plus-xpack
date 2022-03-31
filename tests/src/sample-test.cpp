@@ -297,3 +297,21 @@ static micro_os_plus::micro_test_plus::test_suite ts_2
        } };
 
 // ----------------------------------------------------------------------------
+
+#if 0
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wctad-maybe-unsupported"
+#endif
+
+// Experimental, parametrized test suite.
+static micro_os_plus::micro_test_plus::test_suite_args ts_3
+    = { "Args",
+        [] (int n) {
+          using namespace micro_os_plus::micro_test_plus;
+
+          test_case ("arg", [&] { expect (eq (n, 42)) << "arg is 42"; });
+        },
+        42 };
+#endif
+
+// ----------------------------------------------------------------------------

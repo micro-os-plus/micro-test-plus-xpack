@@ -26,6 +26,7 @@
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Waggregate-return"
+#pragma GCC diagnostic ignored "-Wpadded"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-c++11-c++14-c++17-compat-pedantic"
@@ -47,6 +48,31 @@ namespace micro_os_plus::micro_test_plus
 
     runner.register_test_suite (this);
   }
+
+#if 0
+  template <typename Callable_T, typename... Args_T>
+  test_suite_args<Callable_T, Args_T...>::test_suite_args (
+      const char* name, Callable_T&& func, Args_T&&... arguments)
+      : test_suite{ name }
+  {
+#if defined(MICRO_TEST_PLUS_TRACE)
+    printf ("%s\n", __PRETTY_FUNCTION__);
+#endif // MICRO_TEST_PLUS_TRACE
+
+#if 0
+    // For unknown reasons, the lambda with references does not pass
+    // the arguments correctly.
+    callable_ = [&] () {
+      std::invoke (std::forward<Callable_T> (func),
+                   std::forward<Args_T> (arguments)...);
+    };
+#else
+    callable_ = [=] () { std::invoke (func, arguments...); };
+#endif
+
+    runner.register_test_suite (this);
+  }
+#endif
 
   // --------------------------------------------------------------------------
 
