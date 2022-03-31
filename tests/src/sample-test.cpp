@@ -22,9 +22,11 @@
 #include <stdexcept>
 #include <vector>
 
+// ----------------------------------------------------------------------------
+
 using namespace std::literals;
 
-using namespace micro_os_plus;
+// ----------------------------------------------------------------------------
 
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
@@ -82,7 +84,7 @@ exercise_throw (bool mustThrow)
 int
 main (int argc, char* argv[])
 {
-  using namespace micro_test_plus;
+  using namespace micro_os_plus::micro_test_plus;
 
   // There is a default test suite automatically defined in main().
   initialize (argc, argv, "Sample");
@@ -111,8 +113,8 @@ main (int argc, char* argv[])
     // Even so, they require their operands to be typed, via literals
     // (like `1_i`) or casts (like `_i(expr)`).
 
-    using namespace micro_test_plus::operators;
-    using namespace micro_test_plus::literals;
+    using namespace micro_os_plus::micro_test_plus::operators;
+    using namespace micro_os_plus::micro_test_plus::literals;
 
     expect (compute_answer () == 42_i) << "answer == 42 (with literal)";
     expect (_i (compute_answer ()) == 42) << "answer == 42 (with cast)";
@@ -139,7 +141,7 @@ main (int argc, char* argv[])
   test_case ("Check strings with operators", [] {
     // There are also custom == and != operators for `string_view` comparisons.
 
-    using namespace micro_test_plus::operators;
+    using namespace micro_os_plus::micro_test_plus::operators;
 
     expect (std::string_view{ compute_ultimate_answer () } == "fortytwo"sv)
         << "ultimate answer == 'fortytwo'";
@@ -159,8 +161,8 @@ main (int argc, char* argv[])
   test_case ("Check compound conditions with operators", [] {
     // There are also operators for logical expressions.
 
-    using namespace micro_test_plus::operators;
-    using namespace micro_test_plus::literals;
+    using namespace micro_os_plus::micro_test_plus::operators;
+    using namespace micro_os_plus::micro_test_plus::literals;
 
     expect (
         (compute_answer () == 42_i)
@@ -256,7 +258,7 @@ main (int argc, char* argv[])
   test_case ("Check containers with operators", [] {
     // Containers are iterated and each value compared with `==` or `!=`.
 
-    using namespace micro_test_plus::operators;
+    using namespace micro_os_plus::micro_test_plus::operators;
 
     expect (std::vector<int>{ 1, 2 } == std::vector<int>{ 1, 2 })
         << "vector{ 1, 2 } == vector{ 1, 2 }";
@@ -275,20 +277,20 @@ main (int argc, char* argv[])
 // ----------------------------------------------------------------------------
 // Aditional test suites. They may be located in separate source files.
 
-static micro_test_plus::test_suite ts_1
+static micro_os_plus::micro_test_plus::test_suite ts_1
     = { "Separate", [] {
-         using namespace micro_test_plus;
+         using namespace micro_os_plus::micro_test_plus;
 
          test_case ("Check one", [] { expect (true) << "Passed"; });
          test_case ("Check two", [] { expect (true) << "Passed"; });
        } };
 
-static micro_test_plus::test_suite ts_2
+static micro_os_plus::micro_test_plus::test_suite ts_2
     = { "Explicit namespace", [] {
          // In case the application has functions that conflict with
          // the test framework names, use explicit names, possibly
          // shortned to a single letter.
-         namespace mt = micro_test_plus;
+         namespace mt = micro_os_plus::micro_test_plus;
 
          mt::test_case ("Check one", [] { mt::expect (true) << "Passed"; });
          mt::test_case ("Check two", [] { mt::expect (true) << "Passed"; });
