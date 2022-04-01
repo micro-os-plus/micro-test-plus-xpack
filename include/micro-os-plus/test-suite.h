@@ -146,6 +146,13 @@ namespace micro_os_plus::micro_test_plus
       return (failed_checks_ == 0 && successful_checks_ != 0);
     }
 
+    [[nodiscard]] constexpr bool
+    unused (void)
+    {
+      return (failed_checks_ == 0 && successful_checks_ == 0
+              && test_cases_ == 0);
+    }
+
   protected:
     /**
      * @brief The test suite name.

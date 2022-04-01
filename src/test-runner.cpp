@@ -132,9 +132,13 @@ namespace micro_os_plus::micro_test_plus
   int
   test_runner::exit_code (void)
   {
-    default_test_suite_->end ();
+    bool was_successful = true;
 
-    bool was_successful = default_test_suite_->was_successful ();
+    if (!default_test_suite_->unused ())
+      {
+        default_test_suite_->end ();
+        was_successful = default_test_suite_->was_successful ();
+      }
 
     if (suites_ != nullptr)
       {
