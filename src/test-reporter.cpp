@@ -368,7 +368,7 @@ namespace micro_os_plus::micro_test_plus
         return;
       }
 
-    printf ("%s - test suite started\n", name);
+    printf ("• %s - test suite started\n", name);
 
     add_empty_line = true;
   }
@@ -390,18 +390,19 @@ namespace micro_os_plus::micro_test_plus
     // Also fail if none passed.
     if (suite.failed_checks () == 0 && suite.successful_checks () != 0)
       {
-        printf ("%s - test suite passed (%d %s in %d test %s)\n",
-                suite.name (), suite.successful_checks (),
+        printf ("%s✓%s %s - test suite passed (%d %s in %d test %s)\n",
+                colors_.pass, colors_.none, suite.name (),
+                suite.successful_checks (),
                 suite.successful_checks () == 1 ? "check" : "checks",
                 suite.test_cases (),
                 suite.test_cases () == 1 ? "case" : "cases");
       }
     else
       {
-        printf ("%s - test suite %sFAILED%s (%d %s passed, %d failed, "
+        printf ("%s✗%s %s - test suite %sFAILED%s (%d %s passed, %d failed, "
                 "in %d test %s)\n",
-                suite.name (), colors_.fail, colors_.none,
-                suite.successful_checks (),
+                colors_.fail, colors_.none, suite.name (), colors_.fail,
+                colors_.none, suite.successful_checks (),
                 suite.successful_checks () == 1 ? "check" : "checks",
                 suite.failed_checks (), suite.test_cases (),
                 suite.test_cases () == 1 ? "case" : "cases");
