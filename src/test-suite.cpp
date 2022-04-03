@@ -35,33 +35,30 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
-  test_suite::test_suite (const char* name)
+  test_suite_base::test_suite_base (const char* name)
   {
 #if defined(MICRO_TEST_PLUS_TRACE)
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_TEST_PLUS_TRACE
 
     name_ = name;
-    // callable_ = [] {};
-
     // The default test suite needs no registration.
   }
 
-  void
-  test_suite::run ()
+  test_suite_base::~test_suite_base ()
   {
-    current_test_suite = this;
-
-    if (callable_ != nullptr)
-      {
-        begin ();
-        callable_ ();
-        end ();
-      }
   }
 
   void
-  test_suite::begin (void)
+  test_suite_base::run ()
+  {
+#if defined(MICRO_TEST_PLUS_TRACE)
+    printf ("%s\n", __PRETTY_FUNCTION__);
+#endif // MICRO_TEST_PLUS_TRACE
+  }
+
+  void
+  test_suite_base::begin_test_suite (void)
   {
     process_deferred_begin = false;
 
@@ -69,21 +66,21 @@ namespace micro_os_plus::micro_test_plus
   }
 
   void
-  test_suite::end (void)
+  test_suite_base::end_test_suite (void)
   {
     if (process_deferred_begin)
       {
-        begin ();
+        begin_test_suite ();
       }
     reporter.end_test_suite (*this);
   }
 
   void
-  test_suite::begin_test_case (const char* name)
+  test_suite_base::begin_test_case (const char* name)
   {
     if (process_deferred_begin)
       {
-        begin ();
+        begin_test_suite ();
       }
 
     test_case_name_ = name;
@@ -95,20 +92,20 @@ namespace micro_os_plus::micro_test_plus
   }
 
   void
-  test_suite::end_test_case (void)
+  test_suite_base::end_test_case (void)
   {
     reporter.end_test_case (test_case_name_);
   }
 
   void
-  test_suite::increment_successful (void)
+  test_suite_base::increment_successful (void)
   {
     ++successful_checks_;
     ++current_test_case.successful_checks;
   }
 
   void
-  test_suite::increment_failed (void)
+  test_suite_base::increment_failed (void)
   {
     ++failed_checks_;
     ++current_test_case.failed_checks;

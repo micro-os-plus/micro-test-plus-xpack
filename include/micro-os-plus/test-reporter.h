@@ -289,7 +289,7 @@ namespace micro_os_plus::micro_test_plus
     begin_test_suite (const char* name);
 
     void
-    end_test_suite (test_suite& suite);
+    end_test_suite (test_suite_base& suite);
 
     /**
      * @brief Flush the current buffered content.

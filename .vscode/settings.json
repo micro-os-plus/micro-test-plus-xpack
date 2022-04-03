@@ -1,3 +1,25 @@
 {
-  "cmake.configureOnEdit": false
+  "cmake.configureOnEdit": false,
+  "files.associations": {
+    "*.rb": "ruby",
+    "__tuple": "cpp",
+    "tuple": "cpp",
+    "__bit_reference": "cpp",
+    "__hash_table": "cpp",
+    "__split_buffer": "cpp",
+    "array": "cpp",
+    "functional": "cpp",
+    "initializer_list": "cpp",
+    "iterator": "cpp",
+    "locale": "cpp",
+    "string": "cpp",
+    "string_view": "cpp",
+    "unordered_map": "cpp",
+    "vector": "cpp",
+    "algorithm": "cpp",
+    "__config": "cpp",
+    "ios": "cpp",
+    "sstream": "cpp",
+    "utility": "cpp"
+  }
 }

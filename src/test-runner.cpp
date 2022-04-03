@@ -121,12 +121,12 @@ namespace micro_os_plus::micro_test_plus
 
     // ------------------------------------------------------------------------
 
-    default_test_suite_ = new test_suite (default_suite_name_);
+    default_test_suite_ = new test_suite_base (default_suite_name_);
     current_test_suite = default_test_suite_;
 
     // Deferred to first test case or test suite end, to allow various
     // initialisations to display their messages.
-    // default_test_suite_->begin ();
+    // default_test_suite_->begin_test_suite ();
   }
 
   int
@@ -136,7 +136,7 @@ namespace micro_os_plus::micro_test_plus
 
     if (!default_test_suite_->unused ())
       {
-        default_test_suite_->end ();
+        default_test_suite_->end_test_suite ();
         was_successful = default_test_suite_->was_successful ();
       }
 
@@ -149,12 +149,16 @@ namespace micro_os_plus::micro_test_plus
 
             was_successful &= suite->was_successful ();
           }
+        if (reporter.verbosity != verbosity::silent)
+          {
+            printf ("\n");
+          }
       }
     return was_successful ? 0 : 1;
   }
 
   void
-  test_runner::register_test_suite (test_suite* suite)
+  test_runner::register_test_suite (test_suite_base* suite)
   {
 #if 0 // defined(MICRO_TEST_PLUS_TRACE)
     printf ("%s\n", __PRETTY_FUNCTION__);
@@ -162,7 +166,7 @@ namespace micro_os_plus::micro_test_plus
 
     if (suites_ == nullptr)
       {
-        suites_ = new std::vector<test_suite*> ();
+        suites_ = new std::vector<test_suite_base*> ();
       }
     suites_->push_back (suite);
   }

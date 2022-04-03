@@ -157,7 +157,7 @@ namespace micro_os_plus::micro_test_plus
   test_runner runner;
   test_reporter reporter;
 
-  test_suite* current_test_suite;
+  test_suite_base* current_test_suite;
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop

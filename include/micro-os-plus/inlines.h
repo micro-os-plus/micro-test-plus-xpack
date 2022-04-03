@@ -35,44 +35,41 @@
 
 namespace micro_os_plus::micro_test_plus
 {
+  // --------------------------------------------------------------------------
 
-  template <class Callable_T>
-  test_suite::test_suite (const char* name, Callable_T callable)
-  {
-#if defined(MICRO_TEST_PLUS_TRACE)
-    printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_TEST_PLUS_TRACE
-
-    name_ = name;
-    callable_ = callable;
-
-    runner.register_test_suite (this);
-  }
-
-#if 0
   template <typename Callable_T, typename... Args_T>
-  test_suite_args<Callable_T, Args_T...>::test_suite_args (
-      const char* name, Callable_T&& func, Args_T&&... arguments)
-      : test_suite{ name }
+  test_suite<Callable_T, Args_T...>::test_suite (const char* name,
+                                                 Callable_T&& callable,
+                                                 Args_T&&... arguments)
+      : test_suite_base{ name }, callable_{ std::forward<Callable_T> (
+                                     callable) },
+        arguments_{ std::forward<Args_T> (arguments)... }
   {
 #if defined(MICRO_TEST_PLUS_TRACE)
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_TEST_PLUS_TRACE
 
-#if 0
-    // For unknown reasons, the lambda with references does not pass
-    // the arguments correctly.
-    callable_ = [&] () {
-      std::invoke (std::forward<Callable_T> (func),
-                   std::forward<Args_T> (arguments)...);
-    };
-#else
-    callable_ = [=] () { std::invoke (func, arguments...); };
-#endif
-
     runner.register_test_suite (this);
   }
-#endif
+
+  template <typename Callable_T, typename... Args_T>
+  test_suite<Callable_T, Args_T...>::~test_suite ()
+  {
+#if defined(MICRO_TEST_PLUS_TRACE)
+    printf ("%s\n", __PRETTY_FUNCTION__);
+#endif // MICRO_TEST_PLUS_TRACE
+  }
+
+  template <typename Callable_T, typename... Args_T>
+  void
+  test_suite<Callable_T, Args_T...>::run (void)
+  {
+    current_test_suite = this;
+
+    begin_test_suite ();
+    std::apply (callable_, arguments_);
+    end_test_suite ();
+  }
 
   // --------------------------------------------------------------------------
 

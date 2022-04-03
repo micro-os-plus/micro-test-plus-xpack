@@ -34,6 +34,7 @@ using namespace micro_os_plus::micro_test_plus;
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
 #pragma clang diagnostic ignored "-Wexit-time-destructors"
 #pragma clang diagnostic ignored "-Wglobal-constructors"
+#pragma clang diagnostic ignored "-Wctad-maybe-unsupported"
 #endif
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #pragma GCC diagnostic ignored "-Wfloat-equal"
@@ -1211,7 +1212,7 @@ main (int argc, char* argv[])
   if (reporter.verbosity > verbosity::quiet)
     {
       // On failure it aborts before reaching this point.
-      printf ("\nOverall, the µTest++ unit tests were successful!\n\n");
+      printf ("Overall, the µTest++ unit tests were successful!\n\n");
     }
 
   return 0;

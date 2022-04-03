@@ -374,7 +374,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   void
-  test_reporter::end_test_suite (test_suite& suite)
+  test_reporter::end_test_suite (test_suite_base& suite)
   {
     if (verbosity == verbosity::silent)
       {

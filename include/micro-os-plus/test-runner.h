@@ -39,7 +39,7 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
-  class test_suite;
+  class test_suite_base;
 
   // --------------------------------------------------------------------------
 
@@ -82,7 +82,7 @@ namespace micro_os_plus::micro_test_plus
      * to the runner.
      */
     void
-    register_test_suite (test_suite* suite);
+    register_test_suite (test_suite_base* suite);
 
     constexpr const char*
     name (void)
@@ -103,7 +103,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Pointer to the default test suite which groups
      * the main tests.
      */
-    test_suite* default_test_suite_;
+    test_suite_base* default_test_suite_;
 
     /**
      * @brief Pointer to array of registered test suites.
@@ -111,7 +111,7 @@ namespace micro_os_plus::micro_test_plus
      * test suites defined as static objects in different
      * compilation units can  be automatically executed.
      */
-    std::vector<test_suite*>* suites_;
+    std::vector<test_suite_base*>* suites_;
   };
 
   // --------------------------------------------------------------------------

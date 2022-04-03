@@ -167,10 +167,11 @@ namespace micro_os_plus::micro_test_plus
           value *= 10;
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
-#if !defined(__clang__)
+#if !defined(__clang__) // GCC only
 #pragma GCC diagnostic ignored "-Warith-conversion"
-#else
-#pragma GCC diagnostic ignored "-Wimplicit-int-float-conversion"
+#endif
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wimplicit-int-float-conversion"
 #endif
 #endif
           tmp = value - T (value);

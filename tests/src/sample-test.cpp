@@ -34,6 +34,7 @@ using namespace std::literals;
 #pragma clang diagnostic ignored "-Wshadow-uncaptured-local"
 #pragma clang diagnostic ignored "-Wexit-time-destructors"
 #pragma clang diagnostic ignored "-Wglobal-constructors"
+#pragma clang diagnostic ignored "-Wctad-maybe-unsupported"
 #endif
 
 // ----------------------------------------------------------------------------
@@ -298,20 +299,29 @@ static micro_os_plus::micro_test_plus::test_suite ts_2
 
 // ----------------------------------------------------------------------------
 
-#if 0
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wctad-maybe-unsupported"
-#endif
+static void
+ts_args (int iv, double fv)
+{
+  using namespace micro_os_plus::micro_test_plus;
+
+  test_case ("args", [&] {
+    expect (eq (iv, 42)) << "iv is 42";
+    expect (eq (fv, 42.0)) << "fv is 42.0";
+  });
+}
 
 // Experimental, parametrized test suite.
-static micro_os_plus::micro_test_plus::test_suite_args ts_3
-    = { "Args",
-        [] (int n) {
-          using namespace micro_os_plus::micro_test_plus;
+static micro_os_plus::micro_test_plus::test_suite ts_3
+    = { "Args const", ts_args, 42, 42.0 };
 
-          test_case ("arg", [&] { expect (eq (n, 42)) << "arg is 42"; });
-        },
-        42 };
+#if !defined(__clang__)
+static int n = 42;
+static double d = 42.0;
+
+static micro_os_plus::micro_test_plus::test_suite
+    // <void (int, double), int, double>
+    ts_4
+    = { "Args vars", ts_args, n, d };
 #endif
 
 // ----------------------------------------------------------------------------

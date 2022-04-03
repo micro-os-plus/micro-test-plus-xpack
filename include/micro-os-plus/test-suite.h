@@ -30,6 +30,10 @@
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wpadded"
+#if !defined(__clang__) // GCC only
+#pragma GCC diagnostic ignored "-Wsuggest-final-types"
+#pragma GCC diagnostic ignored "-Wsuggest-final-methods"
+#endif
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #endif
@@ -43,26 +47,31 @@ namespace micro_os_plus::micro_test_plus
    * @brief Test suites are classes that represent a named group of
    * test cases which self registers to the runner.
    */
-  class test_suite
+  class test_suite_base
   {
   public:
     /**
      * @brief Construct the default suite used in main().
      */
-    test_suite (const char* name);
+    test_suite_base (const char* name);
 
-    /**
-     * @brief Construct a suite in a separate compile unit, usually with
-     * a lambda.
-     */
-    template <class Callable_T>
-    test_suite (const char* name, Callable_T callable);
+    // The rule of five.
+    test_suite_base (const test_suite_base&) = delete;
+    test_suite_base (test_suite_base&&) = delete;
+    test_suite_base&
+    operator= (const test_suite_base&)
+        = delete;
+    test_suite_base&
+    operator= (test_suite_base&&)
+        = delete;
+
+    virtual ~test_suite_base ();
 
     /**
      * @brief Run the sequence of test cases in the suite.
      */
-    void
-    run ();
+    virtual void
+    run (void);
 
     /**
      * @brief Mark the begining of a named test case.
@@ -128,13 +137,13 @@ namespace micro_os_plus::micro_test_plus
      * @brief Begin the execution of the test suite.
      */
     void
-    begin (void);
+    begin_test_suite (void);
 
     /**
      * @brief Mark the end of the test suite.
      */
     void
-    end (void);
+    end_test_suite (void);
 
     /**
      * @brief Get the test suite result.
@@ -165,11 +174,6 @@ namespace micro_os_plus::micro_test_plus
     const char* test_case_name_;
 
     /**
-     * @brief The functions/lambda to perform the tests.
-     */
-    std::function<void ()> callable_ = nullptr;
-
-    /**
      * @brief Count of test conditions that passed.
      */
     int successful_checks_ = 0;
@@ -193,16 +197,32 @@ namespace micro_os_plus::micro_test_plus
     } current_test_case{};
   };
 
-#if 0
-  // Experimental.
   template <typename Callable_T, typename... Args_T>
-  class test_suite_args : public test_suite
+  class test_suite : public test_suite_base
   {
   public:
-    test_suite_args (const char* name, Callable_T&& func,
-                     Args_T&&... arguments);
+    test_suite (const char* name, Callable_T&& callable,
+                Args_T&&... arguments);
+
+    // The rule of five.
+    test_suite (const test_suite&) = delete;
+    test_suite (test_suite&&) = delete;
+    test_suite&
+    operator= (const test_suite&)
+        = delete;
+    test_suite&
+    operator= (test_suite&&)
+        = delete;
+
+    virtual ~test_suite () override;
+
+    virtual void
+    run (void) override;
+
+  protected:
+    Callable_T&& callable_;
+    std::tuple<Args_T...> arguments_;
   };
-#endif
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
