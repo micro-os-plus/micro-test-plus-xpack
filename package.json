@@ -1,6 +1,6 @@
 {
   "name": "@micro-os-plus/micro-test-plus",
-  "version": "3.0.0-pre",
+  "version": "3.0.0",
   "description": "A source library xPack with µTest++, a testing framework for embedded platforms",
   "main": "",
   "scripts": {
