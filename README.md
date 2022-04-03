@@ -817,12 +817,14 @@ constructed with a name and a callable (usually a lambda),
 which chains the execution of the test cases:
 
 ```C++
-class test_suite
-{
-public:
-  template <class Callable_T>
-  test_suite (const char* name, Callable_T callable);
-}
+  template <typename Callable_T, typename... Args_T>
+  class test_suite : public test_suite_base
+  {
+  public:
+    test_suite (const char* name, Callable_T&& callable,
+                Args_T&&... arguments);
+    // ...
+  }
 ```
 
 It is recommended to instantiate the test suites as static objects.
