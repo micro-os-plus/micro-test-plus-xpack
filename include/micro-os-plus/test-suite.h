@@ -197,10 +197,10 @@ namespace micro_os_plus::micro_test_plus
     } current_test_case{};
   };
 
-  template <typename Callable_T, typename... Args_T>
   class test_suite : public test_suite_base
   {
   public:
+    template <typename Callable_T, typename... Args_T>
     test_suite (const char* name, Callable_T&& callable,
                 Args_T&&... arguments);
 
@@ -220,8 +220,7 @@ namespace micro_os_plus::micro_test_plus
     run (void) override;
 
   protected:
-    Callable_T&& callable_;
-    std::tuple<Args_T...> arguments_;
+    std::function<void (void)> callable_;
   };
 
   // --------------------------------------------------------------------------

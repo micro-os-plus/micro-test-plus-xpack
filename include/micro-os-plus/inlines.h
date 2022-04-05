@@ -38,37 +38,16 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   template <typename Callable_T, typename... Args_T>
-  test_suite<Callable_T, Args_T...>::test_suite (const char* name,
-                                                 Callable_T&& callable,
-                                                 Args_T&&... arguments)
-      : test_suite_base{ name }, callable_{ std::forward<Callable_T> (
-                                     callable) },
-        arguments_{ std::forward<Args_T> (arguments)... }
+  test_suite::test_suite (const char* name, Callable_T&& callable,
+                          Args_T&&... arguments)
+      : test_suite_base{ name }, callable_{ std::bind (callable,
+                                                       arguments...) }
   {
 #if defined(MICRO_TEST_PLUS_TRACE)
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_TEST_PLUS_TRACE
 
     runner.register_test_suite (this);
-  }
-
-  template <typename Callable_T, typename... Args_T>
-  test_suite<Callable_T, Args_T...>::~test_suite ()
-  {
-#if defined(MICRO_TEST_PLUS_TRACE)
-    printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_TEST_PLUS_TRACE
-  }
-
-  template <typename Callable_T, typename... Args_T>
-  void
-  test_suite<Callable_T, Args_T...>::run (void)
-  {
-    current_test_suite = this;
-
-    begin_test_suite ();
-    std::apply (callable_, arguments_);
-    end_test_suite ();
   }
 
   // --------------------------------------------------------------------------

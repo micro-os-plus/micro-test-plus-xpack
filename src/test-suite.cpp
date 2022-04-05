@@ -111,6 +111,25 @@ namespace micro_os_plus::micro_test_plus
     ++current_test_case.failed_checks;
   }
 
+  // ==========================================================================
+  
+  void
+  test_suite::run (void)
+  {
+    current_test_suite = this;
+
+    begin_test_suite ();
+    callable_ ();
+    end_test_suite ();
+  }
+
+  test_suite::~test_suite ()
+  {
+#if defined(MICRO_TEST_PLUS_TRACE)
+    printf ("%s\n", __PRETTY_FUNCTION__);
+#endif // MICRO_TEST_PLUS_TRACE
+  }
+
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
 

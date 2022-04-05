@@ -278,7 +278,7 @@ main (int argc, char* argv[])
 // ----------------------------------------------------------------------------
 // Aditional test suites. They may be located in separate source files.
 
-static micro_os_plus::micro_test_plus::test_suite ts_1
+static micro_os_plus::micro_test_plus::test_suite ts_separate
     = { "Separate", [] {
          using namespace micro_os_plus::micro_test_plus;
 
@@ -286,7 +286,7 @@ static micro_os_plus::micro_test_plus::test_suite ts_1
          test_case ("Check two", [] { expect (true) << "Passed"; });
        } };
 
-static micro_os_plus::micro_test_plus::test_suite ts_2
+static micro_os_plus::micro_test_plus::test_suite ts_explicit
     = { "Explicit namespace", [] {
          // In case the application has functions that conflict with
          // the test framework names, use explicit names, possibly
@@ -299,29 +299,29 @@ static micro_os_plus::micro_test_plus::test_suite ts_2
 
 // ----------------------------------------------------------------------------
 
+// Parametrized test suite, with constants, values, references and pointers.
 static void
-ts_args (int iv, double fv)
+test_suite_args (int ic, int iv, int& ir, int* ip1, int* ip2)
 {
   using namespace micro_os_plus::micro_test_plus;
 
   test_case ("args", [&] {
-    expect (eq (iv, 42)) << "iv is 42";
-    expect (eq (fv, 42.0)) << "fv is 42.0";
+    expect (eq (ic, 42)) << "ic is 42";
+    expect (eq (iv, 43)) << "iv is 43";
+    expect (eq (ir, 44)) << "ir is 44";
+    expect (eq (*ip1, 45)) << "*ip1 is 45";
+    expect (eq (*ip2, 46)) << "*ip2 is 46";
   });
 }
 
-// Experimental, parametrized test suite.
-static micro_os_plus::micro_test_plus::test_suite ts_3
-    = { "Args const", ts_args, 42, 42.0 };
+static int in = 43;
+static int in44 = 44;
+static int& ir = in44;
+static int in45 = 45;
+static int in46 = 46;
+static int* ip2 = &in46;
 
-#if !defined(__clang__)
-static int n = 42;
-static double d = 42.0;
-
-static micro_os_plus::micro_test_plus::test_suite
-    // <void (int, double), int, double>
-    ts_4
-    = { "Args vars", ts_args, n, d };
-#endif
+static micro_os_plus::micro_test_plus::test_suite ts_args
+    = { "Args", test_suite_args, 42, in, ir, &in45, ip2 };
 
 // ----------------------------------------------------------------------------
