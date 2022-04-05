@@ -550,7 +550,7 @@ test_case ("Operators", [] {
 });
 ```
 
-### Logical operators
+#### Logical operators
 
 Similarly, logical operators are defined:
 
@@ -813,21 +813,23 @@ For complex applications there can be multiple test
 suites, usually in separate source files.
 
 In order to make self-registration possible, test suites are classes,
-constructed with a name and a callable (usually a lambda),
-which chains the execution of the test cases:
+constructed with a name, a callable (usually a lambda
+which chains the execution of the test cases) and optional
+arguments:
 
 ```C++
+class test_suite : public test_suite_base
+{
+public:
   template <typename Callable_T, typename... Args_T>
-  class test_suite : public test_suite_base
-  {
-  public:
-    test_suite (const char* name, Callable_T&& callable,
-                Args_T&&... arguments);
-    // ...
-  }
+  test_suite (const char* name, Callable_T&& callable,
+              Args_T&&... arguments);
+  // ...
+}
 ```
 
 It is recommended to instantiate the test suites as static objects.
+
 The self-registration is done in the constructor.
 Test suites defined in different compilation units can be executed in any
 order (since the order in which the
@@ -839,19 +841,29 @@ Test suites are executed when the function `exit_code()` is invoked.
 Examples:
 
 ```c++
-using namespace micro_os_plus::micro_test_plus;
+static void
+test_suite_args (int ic, int iv, int& ir, int* ip1, int* ip2)
+{
+  using namespace micro_os_plus::micro_test_plus;
 
-static test_suite ts_1
-    = { "Separate", [] {
+  test_case ("args", [&] {
+    expect (eq (ic, 42)) << "ic is 42";
+    expect (eq (iv, 43)) << "iv is 43";
+    expect (eq (ir, 44)) << "ir is 44";
+    expect (eq (*ip1, 45)) << "*ip1 is 45";
+    expect (eq (*ip2, 46)) << "*ip2 is 46";
+  });
+}
 
-        test_case ("Check one", [] {
-          expect (true) << "Passed";
-        });
+static int in = 43;
+static int in44 = 44;
+static int& ir = in44;
+static int in45 = 45;
+static int in46 = 46;
+static int* ip2 = &in46;
 
-        test_case ("Check two", [] {
-          expect (true) << "Passed";
-        });
-      }};
+static micro_os_plus::micro_test_plus::test_suite ts_args
+    = { "Args", test_suite_args, 42, in, ir, &in45, ip2 };
 ```
 
 #### Utility functions
@@ -962,7 +974,7 @@ The header file to be included is:
 #include <micro-os-plus/micro-test-plus.h>
 ```
 
-#### Source folders
+#### Source files
 
 The source files to be added are:
 
@@ -973,8 +985,9 @@ The source files to be added are:
 
 #### Preprocessor definitions
 
-- `MICRO_OS_PLUS_TRACE` - to include the trace
-- `MICRO_TEST_PLUS_TRACE` to enable some tracing messages
+- `MICRO_OS_PLUS_INCLUDE_CONFIG_H` - to include `<micro-os-plus/config.h>`
+- `MICRO_OS_PLUS_TRACE` - to include the trace calls
+- `MICRO_TEST_PLUS_TRACE` - to enable some tracing messages
 
 #### Compiler options
 
