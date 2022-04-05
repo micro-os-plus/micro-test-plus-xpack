@@ -112,15 +112,12 @@ namespace micro_os_plus::micro_test_plus
   }
 
   // ==========================================================================
-  
+
   void
   test_suite::run (void)
   {
-    current_test_suite = this;
-
-    begin_test_suite ();
+    // Run the test suite lambda, prepared with std::bin();
     callable_ ();
-    end_test_suite ();
   }
 
   test_suite::~test_suite ()

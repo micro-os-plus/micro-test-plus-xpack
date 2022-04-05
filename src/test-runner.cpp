@@ -144,9 +144,12 @@ namespace micro_os_plus::micro_test_plus
       {
         for (auto suite : *suites_)
           {
-            default_test_suite_ = suite;
-            suite->run ();
+            current_test_suite = suite;
 
+            suite->begin_test_suite ();
+            suite->run ();
+            suite->end_test_suite();
+            
             was_successful &= suite->was_successful ();
           }
         if (reporter.verbosity != verbosity::silent)
