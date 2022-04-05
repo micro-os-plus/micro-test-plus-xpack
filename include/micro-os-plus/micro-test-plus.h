@@ -40,6 +40,7 @@
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
+
 #pragma GCC diagnostic ignored "-Wpadded"
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
@@ -520,16 +521,16 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic pop
 #endif
 
+// ----------------------------------------------------------------------------
+
+#endif // __cplusplus
+
 // ===== Inline & template implementations ====================================
 
 #include "test-reporter-inlines.h"
 
 // All other inlines.
 #include "inlines.h"
-
-// ----------------------------------------------------------------------------
-
-#endif // __cplusplus
 
 // ----------------------------------------------------------------------------
 
