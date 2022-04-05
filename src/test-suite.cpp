@@ -116,7 +116,7 @@ namespace micro_os_plus::micro_test_plus
   void
   test_suite::run (void)
   {
-    // Run the test suite lambda, prepared with std::bin();
+    // Run the test suite function prepared with std::bin();
     callable_ ();
   }
 
