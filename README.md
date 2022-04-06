@@ -184,11 +184,11 @@ main(int argc, char* argv[])
 When running this test, the output looks like:
 
 ```console
-Minimal - test suite started
+• Minimal - test suite started
 
   ✓ Check truth - test case passed (1 check)
 
-Minimal - test suite passed (1 check in 1 test case)
+✓ Minimal - test suite passed (1 check in 1 test case)
 ```
 
 A slightly more useful example would check the result of a computed value;
@@ -219,11 +219,11 @@ main(int argc, char* argv[])
 ```
 
 ```console
-The Answer - test suite started
+• The Answer - test suite started
 
   ✓ Check answer - test case passed (1 check)
 
-The Answer - test suite passed (1 check passed, 0 checks failed, in 1 test case)
+✓ The Answer - test suite passed (1 check passed, 0 checks failed, in 1 test case)
 ```
 
 In case that the function returns the wrong answer, the test will also fail;
@@ -240,13 +240,13 @@ compute_answer()
 In this case the test will fail with:
 
 ```console
-The Answer - test suite started
+• The Answer - test suite started
 
   • Check answer - test case started
     ✗ answer is 42 FAILED (answer.cpp:17)
   ✗ Check answer - test case FAILED (0 checks passed, 1 check failed)
 
-The Answer - test suite FAILED (0 checks passed, 1 check failed, in 1 test case)
+✗ The Answer - test suite FAILED (0 checks passed, 1 check failed, in 1 test case)
 ```
 
 The output identifies the failed test as located at line 17, but does not
@@ -285,7 +285,7 @@ main(int argc, char* argv[])
 The result would look like:
 
 ```console
-The Answer - test suite started
+• The Answer - test suite started
 
   • Check answer with comparator - test case started
     ✗ answer is 42 FAILED (answer.cpp:17, 43 == 42)
@@ -296,7 +296,7 @@ The Answer - test suite started
     ✗ answer is 42 FAILED (answer.cpp:25, 43 == 42)
   ✗ Check answer with operator - test case FAILED (0 checks passed, 1 check failed)
 
-The Answer - test suite FAILED (0 checks passed, 3 checks failed, in 2 test cases)
+✗ The Answer - test suite FAILED (0 checks passed, 3 checks failed, in 2 test cases)
 ```
 
 In the first case, `eq()` is a function that basically compares almost
@@ -1134,7 +1134,7 @@ $ xpm run test-native
 1: Test timeout computed to be: 10000000
 1: Built with clang Apple LLVM 13.0.0 (clang-1300.0.29.30), no FP, with exceptions.
 1:
-1: Sample - test suite started
+1: • Sample - test suite started
 1:
 1:   • Check various conditions - test case started
 1:     ✓ compute_one() == 1
@@ -1150,7 +1150,7 @@ $ xpm run test-native
 1:     ✓ std::runtime_error thrown
 1:   ✓ Check exceptions - test case passed (1 check)
 1:
-1: Sample - test suite passed (5 tests in 3 test cases)
+1: ✓ Sample - test suite passed (5 tests in 3 test cases)
 1/2 Test #1: sample-test ......................   Passed    0.00 sec
 ...
 ```
