@@ -226,7 +226,7 @@ main(int argc, char* argv[])
 ✓ The Answer - test suite passed (1 check passed, 0 checks failed, in 1 test case)
 ```
 
-In case that the function returns the wrong answer, the test will also fail;
+In case the function returns the wrong answer, the test will fail;
 for example:
 
 ```c++
@@ -666,7 +666,7 @@ but require the hack with the type wrappers and literals to enforce the
 types, otherwise the actual values will not be displayed when the
 expectations fail.
 
-Both syntaxes are functional, and, once understood the differences,
+Both syntaxes are functional, and, once the differences understood,
 the issue is a matter of personal preferences.
 
 #### Explicit namespace
