@@ -305,7 +305,7 @@ functions for all comparisons.
 
 In the second case, a custom operator is used. To avoid interferences
 with other operators, it is defined in a separate namespace (which must
-be explicitly refered, as shown) and matches only some specific types.
+be explicitly refered to as shown) and matches only some specific types.
 
 To cast the integer constant `42` to this specific type, a custom literal
 is available (`_i`), which is also defined in a separate namespace.
