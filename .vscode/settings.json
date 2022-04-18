@@ -21,5 +21,22 @@
     "ios": "cpp",
     "sstream": "cpp",
     "utility": "cpp"
-  }
+  },
+  "cSpell.ignoreWords": [
+    "Delim_T",
+    "ISTQB",
+    "cmake",
+    "constexpr",
+    "ctest",
+    "delim",
+    "eabi",
+    "iostream",
+    "mkdir",
+    "nothrow",
+    "npmignore",
+    "npmjs",
+    "postversion",
+    "struct",
+    "subdir"
+  ]
 }

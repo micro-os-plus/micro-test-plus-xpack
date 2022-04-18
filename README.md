@@ -305,7 +305,7 @@ functions for all comparisons.
 
 In the second case, a custom operator is used. To avoid interferences
 with other operators, it is defined in a separate namespace (which must
-be explicitly refered to as shown) and matches only some specific types.
+be explicitly referred to as shown) and matches only some specific types.
 
 To cast the integer constant `42` to this specific type, a custom literal
 is available (`_i`), which is also defined in a separate namespace.
@@ -443,8 +443,8 @@ For string comparisons to compare the content, use `string_view`:
 using namespace std::literals; // For the "sv" literal.
 // ...
 
-expect (eq (std::string_view{ compute_ultimate_answer () }, "fortytwo"sv))
-        << "ultimate_answer is 'fortytwo'";
+expect (eq (std::string_view{ compute_ultimate_answer () }, "forty-two"sv))
+        << "ultimate_answer is 'forty-two'";
 ```
 
 #### Comparing containers
@@ -539,8 +539,8 @@ using namespace std::literals; // For the "sv" literal.
 test_case ("Operators", [] {
   using namespace micro_test_plus::operators;
 
-  expect (std::string_view{ compute_ultimate_answer () } == "fortytwo"sv)
-          << "ultimate answer == 'fortytwo'";
+  expect (std::string_view{ compute_ultimate_answer () } == "forty-two"sv)
+          << "ultimate answer == 'forty-two'";
 
   expect (std::vector<int>{ 1, 2 } == std::vector<int>{ 1, 2 })
           << "vector{ 1, 2 } == vector{ 1, 2 }";
@@ -1095,7 +1095,7 @@ main (int argc, char* argv[])
     expect (compute_answer () != 43_i) << "answer != 43";
   });
 
-  test_case ("Check parameterised", [] {
+  test_case ("Check parametrised", [] {
     auto f = [] (int i) { return i + 42; };
     expect (eq (f (1), 43)) << "lambda == 43";
   });
@@ -1142,9 +1142,9 @@ $ xpm run test-native
 1:     ✓ condition() is true
 1:   ✓ Check various conditions - test case passed (3 checks)
 1:
-1:   • Check parameterised - test case started
+1:   • Check parametrised - test case started
 1:     ✓ lambda == 43
-1:   ✓ Check parameterised - test case passed (1 check)
+1:   ✓ Check parametrised - test case passed (1 check)
 1:
 1:   • Check exceptions - test case started
 1:     ✓ std::runtime_error thrown
