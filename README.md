@@ -82,7 +82,7 @@ support for several testing frameworks:
 
 - [Google Test](https://github.com/xpack-3rd-party/googletest-xpack)
 - [Catch2](https://github.com/xpack-3rd-party/catch2-xpack)
-- [Boost UT](https://github.com/xpack-3rd-party/boost-ut-xpack))
+- [Boost UT](https://github.com/xpack-3rd-party/boost-ut-xpack)
 
 However, they all are quite heavy in terms of memory resources; also the
 learning curve for mastering them is quite steep.
