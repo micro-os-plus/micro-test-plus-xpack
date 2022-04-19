@@ -3,7 +3,7 @@
 
 # A source library xPack with µTest++, a lightweight testing framework for embedded platforms
 
-The **µTest++** project (_micro test plus_) provides a relatively simple
+The **µTest++** project (_micro test plus_) provides a small memory footprint
 testing framework, intended for running unit tests on embedded
 platforms.
 
@@ -49,14 +49,16 @@ ls -l xpacks/micro-os-plus-micro-test-plus
 ### Git submodule
 
 If, for any reason, **xpm** is not available, the next recommended
-solution is to link it as a Git submodule below an `xpacks` folder.
+solution is to link it as a Git submodule, preferably below an `xpacks`
+folder.
 
 ```sh
 cd my-project
 git init # Unless already a Git project
 mkdir -p xpacks
 
-git submodule add https://github.com/micro-os-plus/micro-test-plus-xpack.git \
+git submodule add \
+  https://github.com/micro-os-plus/micro-test-plus-xpack.git \
   xpacks/micro-os-plus-micro-test-plus
 ```
 
@@ -75,14 +77,14 @@ into `xpack`.
 
 ## Developer info
 
-The xPack Build framework already includes several ready to use
-testing frameworks:
+The xPack Build Framework already includes ready to use
+support for several testing frameworks:
 
 - [Google Test](https://github.com/xpack-3rd-party/googletest-xpack)
 - [Catch2](https://github.com/xpack-3rd-party/catch2-xpack)
 - [Boost UT](https://github.com/xpack-3rd-party/boost-ut-xpack))
 
-However, they all are quite heavy in terms of memory resources, and the
+However, they all are quite heavy in terms of memory resources; also the
 learning curve for mastering them is quite steep.
 
 Thus, for embedded projects, a simpler solution, with a smaller
@@ -97,35 +99,38 @@ The later v3.x was a full rework inspired by
 
 The main characteristics of µTest++, basically inherited from Boost UT, are:
 
-- intended to test both C and C++ projects
+- intended to test **both C and C++** projects
 - modern C++ 20 code (this was also the reason
   to raise the bar to C++ 20 for the entire µOS++ project)
-- macro free (while preserving the nice feature of being able to report
+- **macro free** (while preserving the nice feature of being able to report
   the file name and line number for failed tests)
-- expectations, assumptions, exceptions
-- test cases, test suites
+- **expectations**, **assumptions**, **exceptions**
+- **test cases**, **test suites**
 - automatic test suites registration
 
 As major differentiator from Boost UT:
 
-- reduced memory footprint, since there are no dependencies on
+- **reduced memory footprint**, since there are no dependencies on
   the standard C++ stream library
-- a slightly simplified API
+- a slightly **simplified API**
 
 ### Concepts and features
 
 - for complex applications, test cases can be grouped in test suites
-- test suites can be located in separate compilation units, and automatically
+- test suites can be located in separate compilation units; they automatically
   register themselves to the runner;
-- a test suite is a named sequence of test cases;
-- a test case is a sequence of test conditions (or simply tests),
-  which are expected to be true;
+- a **test suite** is a named sequence of test cases;
+- a **test case** is a sequence of **test conditions**
+  (or simply **tests**, or **checks**),
+  which are expectations/assumptions,
+  i.e. conditions expected to be true;
 - tests are based on logical expressions, which usually
   compute a result and compare it to an expected value
 - for C++ projects: it is also possible to check if, while evaluating
-  an expression, exceptions are thrown or not;
-- each test either succeeds or fails; the runner keeps counts of them;
-- assumptions are hard conditions expected to be true in order for the test
+  an expression, **exceptions** are thrown or not;
+- each test either succeeds or fails;
+- for **expectations**, the runner keeps counts of them;
+- **assumptions** are hard conditions expected to be true in order for the test
   to be able to run;
 - failed assumptions abort the test;
 - the test progress is shown on STDOUT, with each tests on a
@@ -136,7 +141,7 @@ As major differentiator from Boost UT:
   exit code.
 
 A test suite is considered successful
-if there is at least one successful test (expectation or assumption)
+if there is at least one successful expectation
 and there are no failed tests.
 
 If all tests suites are successful, the process returns 0 as exit value.
@@ -146,13 +151,13 @@ If all tests suites are successful, the process returns 0 as exit value.
 The **International Software Testing Qualification Board** defines some terms
 used in testing frameworks:
 
-- test condition: a testable aspect of a component or system identified
+- **test condition**: a testable aspect of a component or system identified
   as a basis for testing (implemented in µTest++ as calls to `expect()` or
   `assume()` functions);
-- test case: a set of preconditions, inputs, actions (where applicable),
+- **test case**: a set of preconditions, inputs, actions (where applicable),
   expected results and postconditions, developed based on test conditions
   (implemented in µTest++ as calls to the `test_case()` function)
-- test suite: a set of test scripts or test procedures to be executed in
+- **test suite**: a set of test scripts or test procedures to be executed in
   a specific test run (implemented in µTest++ as instances of the
   `test_suite` class).
 
@@ -211,7 +216,7 @@ main(int argc, char* argv[])
   initialize(argc, argv, "The Answer");
 
   test_case ("Check answer", [] {
-    expect (compute_answer() == 42, "answer is 42");
+    expect (compute_answer() == 42) << "answer is 42";
   });
 
   return exit_code ();
@@ -253,7 +258,7 @@ The output identifies the failed test as located at line 17, but does not
 provide more details, for example it does not tell what was the actual
 wrong answer.
 
-To get such useful information, the test should be slightly more elaborate,
+To get such a useful information, the test should be slightly more elaborate,
 and must use some custom comparators or operators; for example:
 
 ```c++
@@ -300,20 +305,23 @@ The result would look like:
 ```
 
 In the first case, `eq()` is a function that basically compares almost
-everything and is able to keep track of its operands. There are similar
-functions for all comparisons.
+everything and is able to keep track of the values of its operands.
+There are similar functions for all comparisons.
 
 In the second case, a custom operator is used. To avoid interferences
-with other operators, it is defined in a separate namespace (which must
-be explicitly referred to as shown) and matches only some specific types.
+with other operators, this custom operator is defined in a separate namespace
+(which must
+be explicitly referred to as shown) and matches only operands of
+some specific types.
 
-To cast the integer constant `42` to this specific type, a custom literal
+To cast the integer constant `42` to such a specific type, a custom literal
 is available (`_i`), which is also defined in a separate namespace.
 
 In addition to literals used to define constants, there are also definitions
 which can be used to cast expressions.
 
-For the operator to match, it is necessary for at least one of the operands
+For the custom operators to match, it is necessary for at least one of
+the operands
 to be of the specific type, usually the constant using a literal, but if both
 are expression, at least one of them must be casted.
 
@@ -337,7 +345,8 @@ a boolean or use custom comparators/operators derived from an
 internal `detail::op` type.
 
 For generic checks performed outside the testing framework, the results can
-be reported with `expect(true)` or `expect(false)`.
+be reported with `expect(true)` or `expect(false)` (see the example testing
+multiple exceptions below).
 
 #### Assumptions
 
@@ -349,12 +358,12 @@ bool assume(const Expr_T& expr);
 ```
 
 Similarly, the template matches only expressions that evaluate to
-a boolean or use custom comparators/operators derived from a
+a boolean and use custom comparators/operators derived from a
 internal `detail::op` type.
 
 #### Function comparators
 
-Expectations and assumptions may use any expression evaluating to a
+Expectations and assumptions can test any expression evaluating to a
 boolean value, but in order to nicely report the difference between expected
 and actual values in failed
 conditions, the following generic comparators are available:
@@ -408,7 +417,8 @@ actual values compared during the test; for example:
 ### Logical function operators
 
 Complex expressions can be checked in a single line, using the logical
-`_and()`, `_or()` and `_not()` functions. The names are prefixed since
+`_and()`, `_or()` and `_not()` functions. The names are prefixed with
+underscore since
 `and`, `or` and `not` are reserved words in C/C++.
 
 ```c++
@@ -436,7 +446,7 @@ as shown below.
 In C/C++, plain strings are actually pointers to characters, and simply
 comparing them does not compare the content but the memory addresses.
 
-For string comparisons to compare the content, use `string_view`:
+For string comparisons to compare the content, use `string_view` objects:
 
 ```c++
 #include <string_view>
@@ -654,8 +664,8 @@ expect (_f {expression} == 42_f);
 
 #### Function comparators vs. operators & literals
 
-A very good question is which to use, functions like `eq()` or the
-overloaded operators.
+Which to use, functions like `eq()` or the
+overloaded operators? A very good question!
 
 Functions guarantee that the nice feature of showing the actual values
 when expectations fail is always available. Also the syntax is more on the
@@ -668,6 +678,8 @@ expectations fail.
 
 Both syntaxes are functional, and, once the differences understood,
 the issue is a matter of personal preferences.
+
+For example, the µOS++ projects favour explicit comparator functions.
 
 #### Explicit namespace
 
@@ -690,11 +702,11 @@ Example:
 
 #### Exceptions
 
-Specific to C++, a testing framework must be able check if an expression
+A C++ testing framework must be able to check if an expression
 (usually a function call), throws or not an exception.
 
-The following function templates allow to check for any exception,
-for a specific exception, or for no exception at all:
+The following function templates allow to check various exceptions related
+conditions:
 
 ```C++
 // Check for any exception.
@@ -786,7 +798,7 @@ name, which is used for the default test suite:
 void initialize (int argc, char* argv[], const char* name = "Main");
 ```
 
-The arguments are used for controlling the verbosity level.
+The arguments can be used for controlling the verbosity level.
 
 #### Return the test result
 
@@ -836,11 +848,13 @@ order (since the order in which the
 static constructors are invoked is not specified);
 thus there should be no dependencies between test suites.
 
-Test suites are executed when the function `exit_code()` is invoked.
+The registered test suites are executed when the function
+`exit_code()` is invoked.
 
 Examples:
 
 ```c++
+// Test suite with generic parameters.
 static void
 test_suite_args (int ic, int iv, int& ir, int* ip1, int* ip2)
 {
@@ -915,35 +929,36 @@ TODO: add a test to show how to do this.
 
 #### Verbosity
 
-By default, the test reporter shows detailed results only for test cases
-that failed; successful test cases are shown as a single line with
+By default, the test reporter shows detailed results only for the failed
+test cases; successful test cases are shown as a single line with
 the total counts of passed/failed checks.
 
-To control the verbosity use one of the following command line options:
+To control the verbosity, use one of the following command line options:
 
-- `--verbose`: show all expectations, regardless of the result
-- `--quiet`: show only the test suite totals
-- `--silent`: suppress all output and only return the exit code
+- `--verbose` - show all expectations, regardless of the result
+- `--quiet` - show only the test suite totals
+- `--silent` - suppress all output and only return the exit code
 
 ### Memory footprint
 
 The memory footprint of unit tests based on µTest++ is definitely smaller than
-that of traditional C++ testing framework, since the `iostream` library is not
-used.
+that of traditional C++ testing framework, mainly because the `iostream`
+library is not used.
 
 However, the use of templates for implementing the comparators and
 operators should be carefully observed for platforms with really
 limited amounts of memory, since each pair of different operands
 contributes to the program size.
 
-At the limit, µTest++ can be used only with regular boolean expressions,
-without custom comparators and operators, and still be able to provide
+At the limit, µTest++ can be used
+without custom comparators and operators
+(only with regular boolean expressions), and still be able to provide
 the basic functionality of testing various conditions, but without
 the optional features of displaying the actual values compared.
 
-Also, please note that the memory footprint on `debug`, built with `-O0`,
+Also, please note that the memory footprint on `debug` (built with `-O0`),
 is significantly larger than on `release`. If necessary, the optimization
-for the `debug` build can be increased to `-Og`, and save some memory.
+for the `debug` build can be increased to `-Og`, to save some memory.
 
 ### Build & integration info
 
@@ -952,19 +967,19 @@ written in C++ too, but the tested code can also be written in plain C.
 The framework source code was compiled with GCC 11, clang 12
 and arm-none-eabi-gcc 10, and should be warning free.
 
-To run on embedded platforms, the test framework requires a minimum
+To run **on embedded platforms**, the test framework requires a minimum
 of support from the system, like writing to the
 output stream. Any such environments are acceptable, but for standalone
 tests the most common solution is to use **Arm semihosting**.
 
 To ease the integration of this package into user projects, there
-are already made CMake and meson configuration files (see below).
+are already made **CMake** and **meson** configuration files (see below).
 
 For other build systems, consider the following details:
 
 #### Include folders
 
-The following folder should be used during the build:
+The following folder should be passed to the compiler during the build:
 
 - `include`
 
@@ -976,7 +991,7 @@ The header file to be included is:
 
 #### Source files
 
-The source files to be added are:
+The source files to be added to the build are:
 
 - `src/micro-test-plus.cpp`
 - `src/test-reporter.cpp`
@@ -1170,9 +1185,9 @@ The project is fully tested via GitHub
 [Actions](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/)
 on each push.
 
-The test platforms are GNU/Linux, macOS and Windows; native tests are
-compiled with GCC and clang; tests for embedded platforms are compiled
-with arm-none-eabi-gcc and run via QEMU.
+The test platforms are **GNU/Linux**, **macOS** and **Windows**; native tests
+are compiled with GCC and clang; tests for embedded platforms are compiled
+with **arm-none-eabi-gcc** and run via **QEMU**.
 
 There are two sets of tests, one that runs on every push, with a
 limited number of tests, and a set that is triggered manually,
@@ -1198,12 +1213,12 @@ backwards incompatible changes are introduced to the public API.
 The incompatible changes, in reverse chronological order,
 are:
 
-- v3.x: major rework, with full set of comparators, exceptions,
+- **v3.x**: major rework, with full set of comparators, exceptions,
   function templates for test cases and class templates for test suites;
-- v2.3.x: deprecate `run_test_case(func, name)` in favour o
+- **v2.3.x**: deprecate `run_test_case(func, name)` in favour o
  `run_test_case(name, func)`, to prepare for variadic templates
-- v2.x: the C++ namespace was renamed from `os` to `micro_os_plus`;
-- v1.x: the code was extracted from the mono-repo µOS++ project.
+- **v2.x**: the C++ namespace was renamed from `os` to `micro_os_plus`;
+- **v1.x**: the code was extracted from the mono-repo µOS++ project.
 
 ## Credits
 
