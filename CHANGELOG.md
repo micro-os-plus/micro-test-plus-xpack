@@ -6,6 +6,19 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2022-04-19
+
+* 3.0.2
+* cd697a4 README reworks
+
+## 2022-04-10
+
+* d53ee24 package.json: bump build-helper 2.7.1
+
+## 2022-04-07
+
+* b43ce71 test-all.yml: remove Raspberry Pi OS test
+
 ## 2022-04-05
 
 * 3.0.1
