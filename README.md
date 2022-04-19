@@ -1,7 +1,7 @@
 [![license](https://img.shields.io/github/license/micro-os-plus/micro-test-plus-xpack)](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/LICENSE)
 [![CI on Push](https://github.com/micro-os-plus/micro-test-plus-xpack/workflows/CI%20on%20Push/badge.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/actions?query=workflow%3A%22CI+on+Push%22)
 
-# A source library xPack with µTest++, a testing framework for embedded platforms
+# A source library xPack with µTest++, a lightweight testing framework for embedded platforms
 
 The **µTest++** project (_micro test plus_) provides a relatively simple
 testing framework, intended for running unit tests on embedded
