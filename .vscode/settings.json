@@ -1,4 +1,7 @@
 {
+  "editor.rulers": [
+    80
+  ],
   "cSpell.ignoreWords": [
     "POSIX",
     "buildtype",
@@ -32,5 +35,6 @@
     "postversion",
     "struct",
     "subdir"
-  ]
+  ],
+  "cmake.configureOnOpen": false
 }
