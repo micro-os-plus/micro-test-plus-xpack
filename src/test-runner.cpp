@@ -103,10 +103,13 @@ namespace micro_os_plus::micro_test_plus
 #else
         printf ("Built with an unknown compiler");
 #endif
-#if defined(__ARM_PCS_VFP)
+#if !(defined(__APPLE__) || defined(__linux__) || defined(__unix__) || defined(WIN32))
+// This is relevant only on bare-metal.
+#if defined(__ARM_PCS_VFP) || defined(__ARM_FP)
         printf (", with FP");
 #else
         printf (", no FP");
+#endif
 #endif
 #if defined(__EXCEPTIONS)
         printf (", with exceptions");
@@ -149,7 +152,7 @@ namespace micro_os_plus::micro_test_plus
             suite->begin_test_suite ();
             suite->run ();
             suite->end_test_suite();
-            
+
             was_successful &= suite->was_successful ();
           }
         if (reporter.verbosity != verbosity::silent)
