@@ -6,6 +6,16 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2022-06-04
+
+* v3.1.0
+* b8994fb revert sections.ld
+
+## 2022-06-03
+
+* 1e30b5f tests: update for sections-flash.ld
+* 0e434ea test-runner.cpp: show FP only for non-native
+
 ## 2022-04-19
 
 * 3.0.2
@@ -64,7 +74,7 @@ and close existing issues and pull requests.
 ## 2022-03-23
 
 * 255d4e5 README updates
-* c837032 package.json: bump buld-helper 2.6.2
+* c837032 package.json: bump build-helper 2.6.2
 * 49a3129 package.json: bump gcc 11.2.0-3.3
 * 568d799 revert to interface library
 
@@ -150,7 +160,7 @@ and close existing issues and pull requests.
 * 2f5efdd move casts to literals.h
 * b1a0b55 move struct value to type_traits
 * a9ec726 split literals.h
-* bd64244 more type_triats moves
+* bd64244 more type_traits moves
 * 5a98f64 remove unused struct type_
 * 8176edc move op & _constants to type_traits.h
 * 658bf72 silence warnings
@@ -248,7 +258,7 @@ and close existing issues and pull requests.
 * f921bf0 sample-test: cleanup globals
 * 66df97e add support for test-all
 * f6c19d2 cmake globals add -fdiagnostics-color=always
-* 28efe4b add parameterised tests and combinatorials
+* 28efe4b add parametrised tests and combinatorics
 * 560b678 add run_test_case variadic template
 * 436a1ae deprecate run_test_case(func, name)
 * 0a6a46b add start_test_case()
