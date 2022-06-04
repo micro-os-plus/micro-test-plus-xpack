@@ -979,11 +979,11 @@ For other build systems, consider the following details:
 
 #### Include folders
 
-The following folder should be passed to the compiler during the build:
+The following folders should be passed to the compiler during the build:
 
 - `include`
 
-The header file to be included is:
+The header files to be included in user projects are:
 
 ```c++
 #include <micro-os-plus/micro-test-plus.h>
