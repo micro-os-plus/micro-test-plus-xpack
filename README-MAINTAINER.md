@@ -150,7 +150,7 @@ The version is visible at:
 
 When the package is considered stable:
 
-- with Sourcetree
+- with a Git client (VS Code is fine)
 - merge `xpack-develop` into `xpack`
 - push to GitHub
 - select `xpack-develop`
