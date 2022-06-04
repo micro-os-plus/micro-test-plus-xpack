@@ -113,7 +113,7 @@ foreach name : test_names
 
     # Path are relative to the build folder.
     '-Txpacks/micro-os-plus-devices-qemu-cortexm/linker-scripts/mem.ld',
-    '-Txpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections-flash.ld',
+    '-Txpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections.ld',
   ]
 
   xpack_dependencies += [
