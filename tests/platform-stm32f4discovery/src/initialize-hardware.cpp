@@ -55,7 +55,7 @@ micro_os_plus_startup_initialize_hardware (void)
   // Enable HSE Oscillator and activate PLL with HSE as source
   SystemClock_Config ();
 
-  // Call the CSMSIS system clock routine to store the clock frequency
+  // Call the CMSIS system clock routine to store the clock frequency
   // in the SystemCoreClock global RAM location.
   SystemCoreClockUpdate ();
 
