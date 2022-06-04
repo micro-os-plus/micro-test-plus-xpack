@@ -276,7 +276,7 @@ main (int argc, char* argv[])
 }
 
 // ----------------------------------------------------------------------------
-// Aditional test suites. They may be located in separate source files.
+// Additional test suites. They may be located in separate source files.
 
 static micro_os_plus::micro_test_plus::test_suite ts_separate
     = { "Separate", [] {
@@ -290,7 +290,7 @@ static micro_os_plus::micro_test_plus::test_suite ts_explicit
     = { "Explicit namespace", [] {
          // In case the application has functions that conflict with
          // the test framework names, use explicit names, possibly
-         // shortned to a single letter.
+         // shortened to a single letter.
          namespace mt = micro_os_plus::micro_test_plus;
 
          mt::test_case ("Check one", [] { mt::expect (true) << "Passed"; });
