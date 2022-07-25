@@ -338,7 +338,7 @@ and close existing issues and pull requests.
 * 6f55a37 package.json: rename dependencies to device-*
 * fde47e6 package.json: move toolchain files to folder
 * 041c252 cmake: rename platform-qemu-mps2-an386
-* 1230c9b cmake: update for device-qemu-cortexm
+* 1230c9b cmake: update for devices-qemu-cortexm
 * 10304ab rename platform-qemu-mps2-an386
 
 ## 2022-01-28
