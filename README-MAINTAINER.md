@@ -1,20 +1,9 @@
 [![license](https://img.shields.io/badge/license-MIT-blue)](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/LICENSE)
-[![CI on Push](https://github.com/micro-os-plus/micro-test-plus-xpack/workflows/CI%20on%20Push/badge.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/actions?query=workflow%3A%22CI+on+Push%22)
+[![CI on Push](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/CI.yml/badge.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/CI.yml)
 [![GitHub issues](https://img.shields.io/github/issues/micro-os-plus/micro-test-plus-xpack.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 [![GitHub pulls](https://img.shields.io/github/issues-pr/micro-os-plus/micro-test-plus-xpack.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/pulls)
 
 # Maintainer info
-
-## Prerequisites
-
-A recent [xpm](https://xpack.github.io/xpm/), which is a portable
-[Node.js](https://nodejs.org/) command line application.
-
-It is recommended to update to the latest version with:
-
-```sh
-npm install --global xpm@latest
-```
 
 ## Project repository
 
@@ -44,59 +33,10 @@ git clone \
   ~/Work/micro-test-plus-xpack.git
 ```
 
-## Development setup
+## Prerequisites
 
-### Install dependencies
-
-With a clean slate, install dependencies:
-
-```sh
-cd ~/Work/micro-test-plus-xpack.git
-xpm run install-all
-```
-
-## Run tests
-
-The project includes unit tests.
-
-To perform the tests, run the usual xpm sequence:
-
-```sh
-cd ~/Work/micro-test-plus-xpack.git
-xpm run test-all
-```
-
-### Clone writeable dependencies
-
-The above procedure will allow to develop the project itself, but the
-dependencies will be read-only; to be able to contribute to them,
-also clone the `xpack-develop` branches of all µOS++ source xPacks
-into a folder of your choice and link them to the central xPacks
-folder by running `xpack link` in each folder.
-
-To automate this, there is a helper script to clone these repos into
-`${HOME}/Work/micro-os-plus-xpack-repos`:
-
-```sh
-curl -L https://raw.githubusercontent.com/micro-os-plus/helper-scripts/main/clone-and-link-all-git-repos.sh | bash -
-```
-
-Note: If you prefer a different location, start the script with a first
-argument as the destination folder path.
-
-After cloning all Git repos, link this project to the development packages,
-by running the `link-deps` actions:
-
-```sh
-cd micro-test-plus-xpack.git
-xpm run link-deps
-```
-
-## Continuous Integration
-
-The CI tests are performed on GitHub Actions, as the
-[CI on Push](https://github.com/micro-os-plus/micro-test-plus-xpack/actions?query=workflow%3A%22CI+on+Push%22)
-workflow.
+A recent [xpm](https://xpack.github.io/xpm/), which is a portable
+[Node.js](https://nodejs.org/) command line application.
 
 ## Code formatting
 
@@ -104,32 +44,68 @@ Code formatting is done using `clang-format --style=file`, either manually
 from a script, or automatically from Visual Studio Code, or the Eclipse
 CppStyle plug-in.
 
-## How to publish
+Always reformat the source files that were changed.
 
-### Prepare a new blog post
+## How to make new releases
 
-In the `micro-os-plus/web-jekyll` GitHub repo:
+### Release schedule
 
-- select the `develop` branch
-- add a new file to `_posts/micro-test-plus/releases`
-- name the file like `2022-04-03-micro-test-plus-v3-0-0-released.md`
-- name the post like: **µOS++ µTest++ v3.1.0 released**
-- update the `date:` field with the current date
-- update the GitHub Actions URLs using the actual test pages
+There are no fixed releases.
 
-If any, refer to closed
-[issues](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
-as:
+### Check Git
 
-- **[Issue:\[#1\]\(...\)]**.
+In the `micro-os-plus/micro-test-plus-xpack` Git repo:
+
+- switch to the `xpack-develop` branch
+- if needed, merge the `xpack` branch
+
+No need to add a tag here, it'll be added when the release is created.
+
+### Increase the version
+
+Determine the upstream version (like `3.1.0`) and update the `package.json`
+file; the format is `3.1.0-pre`.
+
+### Fix possible open issues
+
+Check GitHub issues and pull requests:
+
+- <https://github.com/micro-os-plus/micro-test-plus-xpack/issues/>
+
+and fix them; assign them to a milestone (like `3.1.0`).
+
+### Update `README-MAINTAINER.md`
+
+Update the `README-MAINTAINER.md` file to reflect the changes
+related to the new version.
+
+### Update `CHANGELOG.md`
+
+- open the `CHANGELOG.md` file
+- check if all previous fixed issues are in
+- add a new entry like _- v3.1.0 prepared_
+- commit with a message like _prepare v3.1.0_
+
+### Push changes
+
+- reformat the source files that were changed
+- commit and push
+
+### Manual tests
+
+To run the tests manually on the local machine:
+
+```sh
+cd ~Work/micro-test-plus-xpack.git
+
+xpm run install-all
+xpm run test-all
+```
 
 ### Publish on the npmjs.com server
 
 - select the `xpack-develop` branch
 - commit all changes
-- update versions in `README.md` and `README-MAINTAINER.md`
-- update `CHANGELOG.md`
-- commit with a message like _prepare v3.1.0_
 - `npm pack` and check the content of the archive, which should list
   only `package.json`, `README.md`, `LICENSE`, `CHANGELOG.md`,
   the sources and CMake/meson files;
@@ -145,6 +121,17 @@ as:
 The version is visible at:
 
 - <https://www.npmjs.com/package/@micro-os-plus/micro-test-plus?activeTab=versions>
+
+### Test on all platforms
+
+In addition, it is possible to manually trigger a **test-all** job, that
+runs all available builds, on all supported platforms, including Linux Arm
+and macOS Apple Silicon.
+
+For this, run the `trigger-workflow-test-all` action before publishing.
+
+Wait for the **test-all** job to complete
+  (<https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/test-all.yml>)
 
 ## Update the repo
 
@@ -168,5 +155,5 @@ When the release is considered stable, promote it as `latest`:
 - in a separate browser windows, open [TweetDeck](https://tweetdeck.twitter.com/)
 - using the `@micro_os_plus` account
 - paste the release name like **µOS++ µTest++ v3.1.0 released**
-- paste the link to the Web page release
+- paste the link to the npmjs release
 - click the **Tweet** button

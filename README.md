@@ -1,5 +1,5 @@
 [![license](https://img.shields.io/badge/license-MIT-blue)](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/LICENSE)
-[![CI on Push](https://github.com/micro-os-plus/micro-test-plus-xpack/workflows/CI%20on%20Push/badge.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/actions?query=workflow%3A%22CI+on+Push%22)
+[![CI on Push](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/CI.yml/badge.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/CI.yml)
 
 # A source library xPack with µTest++, a lightweight testing framework for embedded platforms
 
@@ -20,7 +20,7 @@ For maintainer info, please see the
 
 ## Install
 
-As a source library xPacks, the easiest way to add it to a project is via
+As a source library xPack, the easiest way to add it to a project is via
 **xpm**, but it can also be used as any Git project, for example as a submodule.
 
 ### Prerequisites
@@ -33,7 +33,7 @@ For details please follow the instructions in the
 
 ### xpm
 
-This package is available as
+This package is available from npmjs.com as
 [`@micro-os-plus/micro-test-plus`](https://www.npmjs.com/package/@micro-os-plus/micro-test-plus)
 from the `npmjs.com` registry:
 
@@ -960,6 +960,11 @@ Also, please note that the memory footprint on `debug` (built with `-O0`),
 is significantly larger than on `release`. If necessary, the optimization
 for the `debug` build can be increased to `-Og`, to save some memory.
 
+### Status
+
+The **µTest++** source library is fully functional and is used to test the
+µOS++ packages.
+
 ### Build & integration info
 
 The project is written in C++, and the tests are expected to be
@@ -991,7 +996,7 @@ The header files to be included in user projects are:
 
 #### Source files
 
-The source files to be added to the build are:
+The source files to be added to user projects are:
 
 - `src/micro-test-plus.cpp`
 - `src/test-reporter.cpp`
@@ -1031,8 +1036,8 @@ namespace defines the literals (like `1_i`);
 
 #### CMake
 
-To integrate the µTest++ source library into a CMake application, add this
-folder to the build:
+To integrate the µTest++ source library into a CMake application,
+add this folder to the build:
 
 ```cmake
 add_subdirectory("xpacks/micro-os-plus-micro-test-plus")`
@@ -1050,8 +1055,8 @@ target_link_libraries(your-target PRIVATE
 
 #### meson
 
-To integrate the µTest++ source library into a meson application, add this
-folder to the build:
+To integrate the µTest++ source library into a meson application,
+add this folder to the build:
 
 ```meson
 subdir('xpacks/micro-os-plus-micro-test-plus')
