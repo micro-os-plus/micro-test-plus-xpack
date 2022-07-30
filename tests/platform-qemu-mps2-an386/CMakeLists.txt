@@ -115,8 +115,8 @@ function(add_test_executable name)
 
     # Including files from other packages is not very nice, but functional.
     # Use absolute paths, otherwise set -L.
-    -T${CMAKE_BINARY_DIR}/xpacks/micro-os-plus-devices-qemu-cortexm/linker-scripts/mem.ld
-    -T${CMAKE_BINARY_DIR}/xpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections.ld
+    -T${CMAKE_BINARY_DIR}/xpacks/micro-os-plus-devices-qemu-cortexm/linker-scripts/mem-mps2-an385.ld
+    -T${CMAKE_BINARY_DIR}/xpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections-flash.ld
   )
 
   target_link_libraries(${name}  PRIVATE
@@ -129,8 +129,8 @@ function(add_test_executable name)
     # Platform specific dependencies.
     micro-os-plus::platform # bring device & architecture too.
 
-    micro-os-plus::libs-c
-    micro-os-plus::libs-cpp
+    # micro-os-plus::libs-c
+    # micro-os-plus::libs-cpp
     micro-os-plus::semihosting
     micro-os-plus::startup
   )
