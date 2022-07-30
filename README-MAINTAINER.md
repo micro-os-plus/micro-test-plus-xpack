@@ -63,8 +63,8 @@ No need to add a tag here, it'll be added when the release is created.
 
 ### Increase the version
 
-Determine the upstream version (like `3.1.0`) and update the `package.json`
-file; the format is `3.1.0-pre`.
+Determine the upstream version (like `3.1.1`) and update the `package.json`
+file; the format is `3.1.1-pre`.
 
 ### Fix possible open issues
 
@@ -72,7 +72,7 @@ Check GitHub issues and pull requests:
 
 - <https://github.com/micro-os-plus/micro-test-plus-xpack/issues/>
 
-and fix them; assign them to a milestone (like `3.1.0`).
+and fix them; assign them to a milestone (like `3.1.1`).
 
 ### Update `README-MAINTAINER.md`
 
@@ -83,8 +83,8 @@ related to the new version.
 
 - open the `CHANGELOG.md` file
 - check if all previous fixed issues are in
-- add a new entry like _* v3.1.0_
-- commit with a message like _prepare v3.1.0_
+- add a new entry like _* v3.1.1_
+- commit with a message like _prepare v3.1.1_
 
 ### Push changes
 
@@ -147,13 +147,13 @@ When the package is considered stable:
 When the release is considered stable, promote it as `latest`:
 
 - `npm dist-tag ls @micro-os-plus/micro-test-plus`
-- `npm dist-tag add @micro-os-plus/micro-test-plus@3.1.0 latest`
+- `npm dist-tag add @micro-os-plus/micro-test-plus@3.1.1 latest`
 - `npm dist-tag ls @micro-os-plus/micro-test-plus`
 
 ## Share on Twitter
 
 - in a separate browser windows, open [TweetDeck](https://tweetdeck.twitter.com/)
 - using the `@micro_os_plus` account
-- paste the release name like **µOS++ µTest++ v3.1.0 released**
+- paste the release name like **µOS++ µTest++ v3.1.1 released**
 - paste the link to the npmjs release
 - click the **Tweet** button

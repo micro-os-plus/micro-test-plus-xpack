@@ -6,6 +6,28 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2022-07-30
+
+* v3.1.1
+* 41d0acf update mps2 config
+* 7c4cf61 #7: package.json: use inheritance
+* 736a885 bump deps
+* 6221d1f #6: remove STM32F4DISCOVERY test
+* b080101 test-runner.cpp: conditional verbosity
+
+## 2022-07-28
+
+* ec67074 CI.yml do not trigger on tags
+
+## 2022-07-25
+
+* af5ae81 package.json minimumXpmRequired
+
+## 2022-07-12
+
+* 2b15c56 CMake: xpack_display_greetings() with arg
+* 4459cc9 package.json: bump deps
+
 ## 2022-06-04
 
 * v3.1.0
