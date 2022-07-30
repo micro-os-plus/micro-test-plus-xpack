@@ -56,6 +56,7 @@ namespace micro_os_plus::micro_test_plus
 
     default_suite_name_ = name;
 
+#if !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
 #if defined(MICRO_OS_PLUS_DEBUG)
     printf ("argv[");
     for (int i = 0; i < argc; ++i)
@@ -67,7 +68,8 @@ namespace micro_os_plus::micro_test_plus
         printf ("'%s'", argv[i]);
       }
     puts ("]");
-#endif
+#endif // defined(MICRO_OS_PLUS_DEBUG)
+#endif // !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
 
     verbosity_t verbosity = verbosity::normal;
     for (int i = 0; i < argc; ++i)
@@ -91,6 +93,7 @@ namespace micro_os_plus::micro_test_plus
 
     // ------------------------------------------------------------------------
 
+#if !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
     if (verbosity == verbosity::normal || verbosity == verbosity::verbose)
       {
 #if defined(__clang__)
@@ -121,6 +124,7 @@ namespace micro_os_plus::micro_test_plus
 #endif
         puts (".");
       }
+#endif // !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
 
     // ------------------------------------------------------------------------
 
@@ -157,7 +161,7 @@ namespace micro_os_plus::micro_test_plus
           }
         if (reporter.verbosity != verbosity::silent)
           {
-            printf ("\n");
+            // printf ("\n");
           }
       }
     return was_successful ? 0 : 1;
