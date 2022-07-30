@@ -37,8 +37,8 @@
     "@xpack-dev-tools/cmake": "3.21.6-1.1",
     "@xpack-dev-tools/meson-build": "0.60.3-1.1",
     "@xpack-dev-tools/ninja-build": "1.10.2-5.1",
-    "@micro-os-plus/build-helper": "^2.10.1",
-    "@micro-os-plus/diag-trace": "^3.0.0"
+    "@micro-os-plus/build-helper": "^2.11.0",
+    "@micro-os-plus/diag-trace": "^4.1.1"
   },
   "xpack": {
     "minimumXpmRequired": "0.13.7",
@@ -584,15 +584,13 @@
           "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/arm-none-eabi-gcc": "10.3.1-2.3.1",
-          "@xpack-dev-tools/qemu-arm": "6.2.0-1.1",
-          "@micro-os-plus/architecture-cortexm": "5.0.0",
+          "@xpack-dev-tools/arm-none-eabi-gcc": "11.2.1-1.2.2",
+          "@xpack-dev-tools/qemu-arm": "7.0.0-1.1",
+          "@micro-os-plus/architecture-cortexm": "6.2.0",
           "@micro-os-plus/devices-cortexm": "3.0.0",
-          "@micro-os-plus/devices-qemu-cortexm": "3.0.0",
-          "@micro-os-plus/libs-c": "3.0.0",
-          "@micro-os-plus/libs-cpp": "3.0.0",
-          "@micro-os-plus/semihosting": "4.0.0",
-          "@micro-os-plus/startup": "3.0.0",
+          "@micro-os-plus/devices-qemu-cortexm": "4.1.1",
+          "@micro-os-plus/semihosting": "7.1.0",
+          "@micro-os-plus/startup": "5.2.0",
           "@micro-os-plus/version": "7.1.2",
           "@xpack-3rd-party/arm-cmsis-core": "5.4.0-6"
         }
@@ -628,15 +626,13 @@
           "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/arm-none-eabi-gcc": "10.3.1-2.3.1",
-          "@xpack-dev-tools/qemu-arm": "6.2.0-1.1",
-          "@micro-os-plus/architecture-cortexm": "5.0.0",
+          "@xpack-dev-tools/arm-none-eabi-gcc": "11.2.1-1.2.2",
+          "@xpack-dev-tools/qemu-arm": "7.0.0-1.1",
+          "@micro-os-plus/architecture-cortexm": "6.2.0",
           "@micro-os-plus/devices-cortexm": "3.0.0",
-          "@micro-os-plus/devices-qemu-cortexm": "3.0.0",
-          "@micro-os-plus/libs-c": "3.0.0",
-          "@micro-os-plus/libs-cpp": "3.0.0",
-          "@micro-os-plus/semihosting": "4.0.0",
-          "@micro-os-plus/startup": "3.0.0",
+          "@micro-os-plus/devices-qemu-cortexm": "4.1.1",
+          "@micro-os-plus/semihosting": "7.1.0",
+          "@micro-os-plus/startup": "5.2.0",
           "@micro-os-plus/version": "7.1.2",
           "@xpack-3rd-party/arm-cmsis-core": "5.4.0-6"
         }
@@ -669,15 +665,13 @@
           "clean": "{{ properties.commandMesonClean }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/arm-none-eabi-gcc": "10.3.1-2.3.1",
-          "@xpack-dev-tools/qemu-arm": "6.2.0-1.1",
-          "@micro-os-plus/architecture-cortexm": "5.0.0",
+          "@xpack-dev-tools/arm-none-eabi-gcc": "11.2.1-1.2.2",
+          "@xpack-dev-tools/qemu-arm": "7.0.0-1.1",
+          "@micro-os-plus/architecture-cortexm": "6.2.0",
           "@micro-os-plus/devices-cortexm": "3.0.0",
-          "@micro-os-plus/devices-qemu-cortexm": "3.0.0",
-          "@micro-os-plus/libs-c": "3.0.0",
-          "@micro-os-plus/libs-cpp": "3.0.0",
-          "@micro-os-plus/semihosting": "4.0.0",
-          "@micro-os-plus/startup": "3.0.0",
+          "@micro-os-plus/devices-qemu-cortexm": "4.1.1",
+          "@micro-os-plus/semihosting": "7.1.0",
+          "@micro-os-plus/startup": "5.2.0",
           "@micro-os-plus/version": "7.1.2",
           "@xpack-3rd-party/arm-cmsis-core": "5.4.0-6"
         }
