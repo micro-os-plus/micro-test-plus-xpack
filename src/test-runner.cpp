@@ -56,7 +56,7 @@ namespace micro_os_plus::micro_test_plus
 
     default_suite_name_ = name;
 
-#if !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
+#if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) && defined(MICRO_OS_PLUS_TRACE))
 #if defined(MICRO_OS_PLUS_DEBUG)
     printf ("argv[");
     for (int i = 0; i < argc; ++i)
@@ -93,7 +93,7 @@ namespace micro_os_plus::micro_test_plus
 
     // ------------------------------------------------------------------------
 
-#if !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
+#if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) && defined(MICRO_OS_PLUS_TRACE))
     if (verbosity == verbosity::normal || verbosity == verbosity::verbose)
       {
 #if defined(__clang__)
@@ -106,7 +106,8 @@ namespace micro_os_plus::micro_test_plus
 #else
         printf ("Built with an unknown compiler");
 #endif
-#if !(defined(__APPLE__) || defined(__linux__) || defined(__unix__) || defined(WIN32))
+#if !(defined(__APPLE__) || defined(__linux__) || defined(__unix__) \
+      || defined(WIN32))
 // This is relevant only on bare-metal.
 #if defined(__ARM_PCS_VFP) || defined(__ARM_FP)
         printf (", with FP");
@@ -155,7 +156,7 @@ namespace micro_os_plus::micro_test_plus
 
             suite->begin_test_suite ();
             suite->run ();
-            suite->end_test_suite();
+            suite->end_test_suite ();
 
             was_successful &= suite->was_successful ();
           }
