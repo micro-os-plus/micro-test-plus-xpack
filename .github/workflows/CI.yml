@@ -31,6 +31,7 @@ jobs:
         node-version: [14]
         # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners
         os: [ubuntu-18.04, macos-10.15, windows-2019]
+        xpm-version: ['0.14.0']
 
     steps:
     - name: Checkout
@@ -50,13 +51,13 @@ jobs:
         npm --version
         env
 
-    - name: Install xpm on Unix
+    - name: Install xpm@${{ matrix.xpm-version }} on Unix
       if: runner.os != 'Windows'
-      run: sudo npm install -g xpm@latest
+      run: sudo npm install -g xpm@${{ matrix.xpm-version }}
 
-    - name: Install xpm on Windows
+    - name: Install xpm@${{ matrix.xpm-version }} on Windows
       if: runner.os == 'Windows'
-      run: npm install -g xpm@latest
+      run: npm install -g xpm@${{ matrix.xpm-version }}
 
     - name: Satisfy project dependencies
       run: xpm install --quiet
