@@ -1229,10 +1229,11 @@ are:
 
 - **v3.x**: major rework, with full set of comparators, exceptions,
   function templates for test cases and class templates for test suites;
-- **v2.3.x**: deprecate `run_test_case(func, name)` in favour o
+- **v2.3.x**: deprecate `run_test_case(func, name)` in favour of
  `run_test_case(name, func)`, to prepare for variadic templates
 - **v2.x**: the C++ namespace was renamed from `os` to `micro_os_plus`;
-- **v1.x**: the code was extracted from the mono-repo µOS++ project.
+- **v1.x**: the initial code (inspired in its simplicity by node-tap)
+  was extracted from the mono-repo µOS++ project.
 
 ## Credits
 
