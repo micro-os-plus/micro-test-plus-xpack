@@ -1237,7 +1237,9 @@ are:
 ## Credits
 
 Many thanks to the [Boost UT](https://github.com/boost-ext/ut) project
-for the inspiration and for major parts of the code.
+for the inspiration and for major parts of the code, and to the
+[node-tap](https://github.com/tapjs/node-tap) project for the
+inspiration for the initial versions.
 
 ## License
 
