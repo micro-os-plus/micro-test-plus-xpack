@@ -42,7 +42,7 @@ For details please follow the instructions in the
 
 ### xpm
 
-This package is available from npmjs.com as
+This package is available as
 [`@micro-os-plus/micro-test-plus`](https://www.npmjs.com/package/@micro-os-plus/micro-test-plus)
 from the `npmjs.com` registry:
 
@@ -1149,7 +1149,7 @@ The output of running such a test looks like:
 
 ```console
 $ cd micro-test-plus-xpack.git
-$ xpm install-all
+$ xpm run install-all
 ...
 $ xpm run test-native
 ...
