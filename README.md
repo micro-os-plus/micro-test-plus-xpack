@@ -1211,10 +1211,8 @@ platforms.
 The full set can be run manually with the following commands:
 
 ```sh
-cd ~Work/micro-test-plus-xpack.git
-
-xpm run install-all
-xpm run test-all
+xpm run install-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git
+xpm run test-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git
 ```
 
 ## Change log - incompatible changes
