@@ -52,6 +52,7 @@ micro_os_plus_micro_test_plus_dependency = declare_dependency(
   include_directories: include_directories(xpack_include_directories),
   compile_args: xpack_common_args,
   sources: files(xpack_sources),
+  dependencies: []
 )
 
 # micro_os_plus_micro_test_plus_dependency_c_args = xpack_c_args
