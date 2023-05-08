@@ -45,4 +45,6 @@ README-*
 .travis.yml
 .clang-format
 
+.gitkeep
+
 # End
