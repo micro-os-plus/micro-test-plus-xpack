@@ -14,7 +14,7 @@
 
 # This file is intended to be consumed by applications with:
 #
-# `add_subdirectory("xpacks/micro-os-plus-micro-test-plus")`
+# `add_subdirectory("xpacks/@micro-os-plus/micro-test-plus")`
 #
 # The result is an interface library that can be added to the linker with:
 #

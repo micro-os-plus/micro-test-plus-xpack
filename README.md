@@ -52,7 +52,7 @@ xpm init # Unless a package.json is already present
 
 xpm install @micro-os-plus/micro-test-plus@latest
 
-ls -l xpacks/micro-os-plus-micro-test-plus
+ls -l xpacks/@micro-os-plus/micro-test-plus
 ```
 
 ### Git submodule
@@ -68,7 +68,7 @@ mkdir -p xpacks
 
 git submodule add \
   https://github.com/micro-os-plus/micro-test-plus-xpack.git \
-  xpacks/micro-os-plus-micro-test-plus
+  xpacks/@micro-os-plus/micro-test-plus
 ```
 
 ## Branches
@@ -1049,7 +1049,7 @@ To integrate the µTest++ source library into a CMake application,
 add this folder to the build:
 
 ```cmake
-add_subdirectory("xpacks/micro-os-plus-micro-test-plus")`
+add_subdirectory("xpacks/@micro-os-plus/micro-test-plus")`
 ```
 
 The result is an interface library that can be added as an application
@@ -1068,7 +1068,7 @@ To integrate the µTest++ source library into a meson application,
 add this folder to the build:
 
 ```meson
-subdir('xpacks/micro-os-plus-micro-test-plus')
+subdir('xpacks/@micro-os-plus/micro-test-plus')
 ```
 
 The result is a dependency object that can be added

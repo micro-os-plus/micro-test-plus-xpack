@@ -14,7 +14,7 @@
 
 # This file is intended to be consumed by applications with:
 #
-# `subdir('xpacks/micro-os-plus-micro-test-plus')`
+# `subdir('xpacks/@micro-os-plus/micro-test-plus')`
 #
 # The result is a library and a dependency that can be referred as:
 #

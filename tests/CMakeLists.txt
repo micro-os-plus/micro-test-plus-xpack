@@ -55,7 +55,7 @@ if(CMAKE_BINARY_DIR STREQUAL CMAKE_SOURCE_DIR)
 endif()
 
 # The build-helper is a devDependency, available only after `xpm install`.
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../xpacks/micro-os-plus-build-helper/cmake")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../xpacks/@micro-os-plus/build-helper/cmake")
 include("micro-os-plus-build-helper")
 
 xpack_display_greetings("${CMAKE_CURRENT_SOURCE_DIR}/../package.json")
@@ -92,7 +92,7 @@ xpack_display_global_lists()
 xpack_glob_add_subdirectories("${CMAKE_BINARY_DIR}/xpacks" "xpacks-bin")
 
 # Add project dependencies. Libraries already defined will fail.
-xpack_glob_add_subdirectories("../xpacks" "top-xpacks-bin")
+xpack_glob_add_subdirectories("${CMAKE_SOURCE_DIR}/../xpacks" "top-xpacks-bin")
 
 # Add the main library from the root folder.
 message(VERBOSE "Adding top library...")
