@@ -123,7 +123,7 @@ export LC_CTYPE=C.UTF-8
 # runners the build folders are presistent.
 run_verbose xpm run deep-clean
 
-xpm run install-all --quiet
+xpm run install-all
 run_verbose xpm run test-all
 
 # -----------------------------------------------------------------------------
