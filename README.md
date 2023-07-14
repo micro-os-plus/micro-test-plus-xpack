@@ -1245,7 +1245,7 @@ inspiration for the initial versions.
 The original content is released under the
 [MIT License](https://opensource.org/licenses/MIT/),
 with all rights reserved to
-[Liviu Ionescu](https://github.com/ilg-ul/).
+[Liviu Ionescu](https://github.com/ilg-ul).
 
 The code from Boost UT is released under the terms of the
 [Boost Version 1.0 Software License](https://www.boost.org/LICENSE_1_0.txt).
