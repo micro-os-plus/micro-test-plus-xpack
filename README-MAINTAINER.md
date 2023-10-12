@@ -96,8 +96,8 @@ related to the new version.
 To run the tests manually on the local machine:
 
 ```sh
-xpm run install-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git
-xpm run test-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git
+xpm run install-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run test-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 ```
 
 ### Publish on the npmjs.com server
