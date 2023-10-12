@@ -1148,14 +1148,14 @@ main (int argc, char* argv[])
 The output of running such a test looks like:
 
 ```console
-$ cd micro-test-plus-xpack.git
+$ cd micro-test-plus-xpack.git/tests
 $ xpm run install-all
 ...
 $ xpm run test-native
 ...
-> Executing task: xpm run test --config native-cmake-debug <
+> Executing task: xpm run test --config native-cmake-sys-release <
 
-> cd build/native-cmake-release && ctest -V
+> cd build/native-cmake-sys-release && ctest -V
 ...
     Start 1: sample-test
 
@@ -1211,8 +1211,8 @@ platforms.
 The full set can be run manually with the following commands:
 
 ```sh
-xpm run install-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git
-xpm run test-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git
+xpm run install-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run test-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 ```
 
 ## Change log - incompatible changes
