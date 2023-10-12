@@ -35,7 +35,9 @@
   "config": {},
   "dependencies": {},
   "bundleDependencies": [],
-  "devDependencies": {},
+  "devDependencies": {
+    "del-cli": "^5.1.0"
+  },
   "xpack": {
     "minimumXpmRequired": "0.16.2",
     "dependencies": {},
