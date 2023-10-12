@@ -51,10 +51,11 @@ xpack_platform_name = get_option('platform-name')
 # Create a symbolic link to project root; don't bother with errors,
 # without it the build will crash anyway.
 if build_machine.system() == 'windows'
-  run_command('cmd', '/C', 'mklink /J top ..')
+  # https://mesonbuild.com/Reference-manual_functions.html#run_command
+  run_command('cmd', '/C', 'mklink /J top ..', check: false)
   xpack_path_separator = '\\'
 else
-  run_command('ln', '-s', '..', 'top')
+  run_command('ln', '-s', '..', 'top', check: false)
   xpack_path_separator = '/'
 endif
 
