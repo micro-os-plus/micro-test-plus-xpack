@@ -1,7 +1,7 @@
 {
   "name": "@micro-os-plus/micro-test-plus",
   "version": "3.1.1",
-  "description": "A source library xPack with µTest++, a lightweight testing framework for embedded platforms",
+  "description": "A source code library with µTest++, a lightweight testing framework for embedded platforms",
   "main": "",
   "scripts": {
     "npm-install": "npm install",
