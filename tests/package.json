@@ -19,12 +19,16 @@
   "xpack": {
     "minimumXpmRequired": "0.16.2",
     "dependencies": {},
+    "$devDependenciesUrls": [
+      "https://github.com/micro-os-plus",
+      "https://github.com/xpack-dev-tools"
+    ],
     "devDependencies": {
-      "@xpack-dev-tools/cmake": "3.21.6-1.1",
-      "@xpack-dev-tools/meson-build": "0.60.3-1.1",
-      "@xpack-dev-tools/ninja-build": "1.10.2-5.1",
+      "@xpack-dev-tools/cmake": "3.26.5-1.1",
+      "@xpack-dev-tools/meson-build": "1.0.2-1.1",
+      "@xpack-dev-tools/ninja-build": "1.11.1-3.1",
       "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#xpack-develop",
-      "@micro-os-plus/diag-trace": "^4.1.1"
+      "@micro-os-plus/diag-trace": "^4.2.0"
     },
     "properties": {
       "buildFolderRelativePath": "{{ 'build' | path_join: configuration.name | to_filename | downcase }}",
@@ -221,7 +225,7 @@
           "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
-          "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
+          "@micro-os-plus/architecture-synthetic-posix": "4.0.2"
         }
       },
       "native-cmake-sys-release": {
@@ -251,8 +255,8 @@
           "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/gcc": "11.2.0-3.3",
-          "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
+          "@xpack-dev-tools/gcc": "11.3.0-1.1",
+          "@micro-os-plus/architecture-synthetic-posix": "4.0.2"
         }
       },
       "native-cmake-gcc11-release": {
@@ -283,7 +287,7 @@
         },
         "devDependencies": {
           "@xpack-dev-tools/clang": "12.0.1-2.2",
-          "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
+          "@micro-os-plus/architecture-synthetic-posix": "4.0.2"
         }
       },
       "native-cmake-clang12-release": {
@@ -314,7 +318,7 @@
         },
         "devDependencies": {
           "@xpack-dev-tools/clang": "13.0.1-1.1",
-          "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
+          "@micro-os-plus/architecture-synthetic-posix": "4.0.2"
         }
       },
       "native-cmake-clang13-release": {
@@ -343,7 +347,7 @@
           "clean": "{{ properties.commandMesonClean }}"
         },
         "devDependencies": {
-          "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
+          "@micro-os-plus/architecture-synthetic-posix": "4.0.2"
         }
       },
       "native-meson-sys-release": {
@@ -373,8 +377,8 @@
           "clean": "{{ properties.commandMesonClean }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/gcc": "11.2.0-3.3",
-          "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
+          "@xpack-dev-tools/gcc": "11.3.0-1.1",
+          "@micro-os-plus/architecture-synthetic-posix": "4.0.2"
         }
       },
       "native-meson-gcc11-release": {
@@ -405,7 +409,7 @@
         },
         "devDependencies": {
           "@xpack-dev-tools/clang": "12.0.1-2.2",
-          "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
+          "@micro-os-plus/architecture-synthetic-posix": "4.0.2"
         }
       },
       "native-meson-clang12-release": {
@@ -436,7 +440,7 @@
         },
         "devDependencies": {
           "@xpack-dev-tools/clang": "13.0.1-1.1",
-          "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
+          "@micro-os-plus/architecture-synthetic-posix": "4.0.2"
         }
       },
       "native-meson-clang13-release": {
@@ -476,12 +480,12 @@
           "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/arm-none-eabi-gcc": "11.2.1-1.2.2",
-          "@xpack-dev-tools/qemu-arm": "7.0.0-1.1",
-          "@micro-os-plus/architecture-cortexm": "6.2.0",
-          "@micro-os-plus/devices-cortexm": "3.0.0",
+          "@xpack-dev-tools/arm-none-eabi-gcc": "12.3.1-1.2.1",
+          "@xpack-dev-tools/qemu-arm": "7.2.5-1.1",
+          "@micro-os-plus/architecture-cortexm": "6.3.0",
+          "@micro-os-plus/devices-cortexm": "4.1.0",
           "@micro-os-plus/devices-qemu-cortexm": "4.1.1",
-          "@micro-os-plus/semihosting": "7.1.0",
+          "@micro-os-plus/semihosting": "8.0.0",
           "@micro-os-plus/startup": "5.2.0",
           "@micro-os-plus/version": "7.1.2",
           "@xpack-3rd-party/arm-cmsis-core": "5.4.0-6"
@@ -514,12 +518,12 @@
           "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/arm-none-eabi-gcc": "11.2.1-1.2.2",
-          "@xpack-dev-tools/qemu-arm": "7.0.0-1.1",
-          "@micro-os-plus/architecture-cortexm": "6.2.0",
-          "@micro-os-plus/devices-cortexm": "3.0.0",
+          "@xpack-dev-tools/arm-none-eabi-gcc": "12.3.1-1.2.1",
+          "@xpack-dev-tools/qemu-arm": "7.2.5-1.1",
+          "@micro-os-plus/architecture-cortexm": "6.3.0",
+          "@micro-os-plus/devices-cortexm": "4.1.0",
           "@micro-os-plus/devices-qemu-cortexm": "4.1.1",
-          "@micro-os-plus/semihosting": "7.1.0",
+          "@micro-os-plus/semihosting": "8.0.0",
           "@micro-os-plus/startup": "5.2.0",
           "@micro-os-plus/version": "7.1.2",
           "@xpack-3rd-party/arm-cmsis-core": "5.4.0-6"
@@ -551,12 +555,12 @@
           "clean": "{{ properties.commandMesonClean }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/arm-none-eabi-gcc": "11.2.1-1.2.2",
-          "@xpack-dev-tools/qemu-arm": "7.0.0-1.1",
-          "@micro-os-plus/architecture-cortexm": "6.2.0",
-          "@micro-os-plus/devices-cortexm": "3.0.0",
+          "@xpack-dev-tools/arm-none-eabi-gcc": "12.3.1-1.2.1",
+          "@xpack-dev-tools/qemu-arm": "7.2.5-1.1",
+          "@micro-os-plus/architecture-cortexm": "6.3.0",
+          "@micro-os-plus/devices-cortexm": "4.1.0",
           "@micro-os-plus/devices-qemu-cortexm": "4.1.1",
-          "@micro-os-plus/semihosting": "7.1.0",
+          "@micro-os-plus/semihosting": "8.0.0",
           "@micro-os-plus/startup": "5.2.0",
           "@micro-os-plus/version": "7.1.2",
           "@xpack-3rd-party/arm-cmsis-core": "5.4.0-6"
