@@ -4,7 +4,7 @@
 [![license](https://img.shields.io/badge/license-MIT-blue)](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/LICENSE)
 [![CI on Push](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/ci.yml/badge.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/ci.yml)
 
-# A source library xPack with µTest++, a lightweight testing framework for embedded platforms
+# A source code library with µTest++, a lightweight testing framework for embedded platforms
 
 The **µTest++** project (_micro test plus_) provides a small memory footprint
 testing framework, intended for running unit tests on embedded
@@ -1242,8 +1242,8 @@ inspiration for the initial versions.
 
 ## License
 
-The original content is released under the
-[MIT License](https://opensource.org/licenses/MIT/),
+Unless otherwise stated, the content is released under the terms of the
+[MIT License](https://opensource.org/licenses/mit/),
 with all rights reserved to
 [Liviu Ionescu](https://github.com/ilg-ul).
 
