@@ -87,7 +87,7 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] constexpr auto
     get (const T& t)
     {
-      // Call the variadic function, besically to force it return `t`.
+      // Call the variadic function, basically to force it return `t`.
       return get_impl (t, 0);
     }
 

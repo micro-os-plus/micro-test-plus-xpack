@@ -44,7 +44,7 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   /**
-   * @brief The test runner. It maintaines a list of test suites which
+   * @brief The test runner. It maintains a list of test suites which
    * automatically register themselves in their constructors.
    */
   class test_runner
@@ -66,7 +66,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Pass the main arguments explicitly, if the default
-     * contructor was used.
+     * constructor was used.
      */
     void
     initialize (int argc, char* argv[], const char* name);

@@ -74,7 +74,7 @@ namespace micro_os_plus::micro_test_plus
     run (void);
 
     /**
-     * @brief Mark the begining of a named test case.
+     * @brief Mark the beginning of a named test case.
      */
     void
     begin_test_case (const char* name);
