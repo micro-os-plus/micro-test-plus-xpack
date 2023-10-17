@@ -33,6 +33,7 @@
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wexit-time-destructors"
 #pragma clang diagnostic ignored "-Wglobal-constructors"
+#pragma clang diagnostic ignored "-Wunknown-warning-option"
 #endif
 
 namespace micro_os_plus::micro_test_plus
@@ -63,7 +64,12 @@ namespace micro_os_plus::micro_test_plus
     const char*
     short_name (const char* name)
     {
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
+#endif
       const char* p = strrchr (name, '/');
+#pragma GCC diagnostic pop
       if (p != nullptr)
         return p + 1;
       else

@@ -31,6 +31,7 @@
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-c++11-c++14-compat"
+#pragma clang diagnostic ignored "-Wunknown-warning-option"
 #endif
 
 namespace micro_os_plus::micro_test_plus
@@ -44,6 +45,10 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_TEST_PLUS_TRACE
   }
 
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
+#endif
   void
   test_runner::initialize (int argc, char* argv[], const char* name)
   {
@@ -136,6 +141,7 @@ namespace micro_os_plus::micro_test_plus
     // initialisations to display their messages.
     // default_test_suite_->begin_test_suite ();
   }
+#pragma GCC diagnostic pop
 
   int
   test_runner::exit_code (void)

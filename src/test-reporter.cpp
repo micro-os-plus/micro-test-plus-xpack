@@ -84,8 +84,16 @@ namespace micro_os_plus::micro_test_plus
         *this << " ";
       }
     *this << colors_.fail << "FAILED" << colors_.none;
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wsign-conversion"
+#elif defined(__GNUC__)
+#pragma GCC diagnostic ignored "-Wnarrowing"
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#endif
     *this << " (" << reflection::short_name (location.file_name ()) << ":"
-          << type_traits::genuine_integral_value<int>{ location.line () };
+          << type_traits::genuine_integral_value<unsigned int>{ location.line () };
+#pragma GCC diagnostic pop
   }
 
   void

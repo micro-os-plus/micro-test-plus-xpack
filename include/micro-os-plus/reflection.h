@@ -37,6 +37,7 @@
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
+#pragma clang diagnostic ignored "-Wunknown-warning-option"
 #endif
 #endif
 
@@ -102,9 +103,12 @@ namespace micro_os_plus::micro_test_plus
     type_name () -> std::string_view
     {
 #if defined(__clang__)
+#pragma GCC diagnostic push
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
       // printf("|%s|%zu|\n", __PRETTY_FUNCTION__, sizeof (__PRETTY_FUNCTION__));
       // printf("|%s|\n", &__PRETTY_FUNCTION__[78]);
       return { &__PRETTY_FUNCTION__[78], sizeof (__PRETTY_FUNCTION__) - 80 };
+#pragma GCC diagnostic pop
 #elif defined(__GNUC__)
       // printf("|%s|%zu|\n", __PRETTY_FUNCTION__, sizeof (__PRETTY_FUNCTION__));
       // printf("|%s|\n", &__PRETTY_FUNCTION__[93]);

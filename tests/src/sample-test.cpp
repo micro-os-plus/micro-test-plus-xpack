@@ -35,6 +35,7 @@ using namespace std::literals;
 #pragma clang diagnostic ignored "-Wexit-time-destructors"
 #pragma clang diagnostic ignored "-Wglobal-constructors"
 #pragma clang diagnostic ignored "-Wctad-maybe-unsupported"
+#pragma clang diagnostic ignored "-Wunknown-warning-option"
 #endif
 
 // ----------------------------------------------------------------------------
@@ -188,6 +189,10 @@ main (int argc, char* argv[])
   // Test case with arguments.
   // The lambdas are special functions, which may be passed arguments
   // or may automatically capture variables from their local scope.
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
+#endif
   test_case (
       "Check args",
       [] (int _argc, char* _argv[]) {
@@ -210,6 +215,7 @@ main (int argc, char* argv[])
       // An alternate solution is to capture them by value
       // since the lambda is also a closure.
       argc, argv);
+#pragma GCC diagnostic pop
 
   // --------------------------------------------------------------------------
 
