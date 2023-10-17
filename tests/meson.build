@@ -40,8 +40,8 @@ c_compiler = meson.get_compiler('c')
 
 # -----------------------------------------------------------------------------
 
-xpack_tests_folder_path = meson.current_source_dir()
 # https://mesonbuild.com/Reference-manual_builtin_meson.html#mesoncurrent_source_dir
+xpack_tests_folder_path = meson.current_source_dir()
 xpack_project_folder_path = fs.parent(xpack_tests_folder_path)
 # https://mesonbuild.com/Reference-manual_builtin_meson.html#mesonproject_build_root
 xpack_build_folder_path = meson.project_build_root()
