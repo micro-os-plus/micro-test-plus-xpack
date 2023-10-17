@@ -95,8 +95,9 @@ add_global_link_arguments(
   language: [ 'cpp' ]
 )
 
-# The base folder is root, via the `top` link.
+# The base folder is tests. The order is significative.
 xpack_dependencies = [
+  
   'xpacks/@micro-os-plus/diag-trace', # -
 
   # -
