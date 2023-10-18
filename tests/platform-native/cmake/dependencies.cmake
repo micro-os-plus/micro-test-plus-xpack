@@ -1,7 +1,7 @@
 # -----------------------------------------------------------------------------
 #
 # This file is part of the µOS++ distribution.
-#   (https://github.com/micro-os-plus/)
+# (https://github.com/micro-os-plus/)
 # Copyright (c) 2022 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software
@@ -12,9 +12,15 @@
 #
 # -----------------------------------------------------------------------------
 
-# This file adds the platform dependencies.
+# Add the platform dependencies.
 
+# -----------------------------------------------------------------------------
+
+set(xpack_platform_compile_definition "MICRO_OS_PLUS_PLATFORM_NATIVE")
+
+# -----------------------------------------------------------------------------
 set(xpack_dependencies_folders
+
   # Project dependencies.
   # The BINARY_DIR is the `build/<config>` folder.
   "${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/architecture-synthetic-posix"

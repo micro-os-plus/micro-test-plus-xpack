@@ -1,7 +1,7 @@
 # -----------------------------------------------------------------------------
 #
 # This file is part of the µOS++ distribution.
-#   (https://github.com/micro-os-plus/)
+# (https://github.com/micro-os-plus/)
 # Copyright (c) 2022 Liviu Ionescu
 #
 # Permission to use, copy, modify, and/or distribute this software
@@ -17,50 +17,13 @@
 message(VERBOSE "Processing 'tests/platform-native'...")
 
 # -----------------------------------------------------------------------------
-# Define the platform library.
-
-add_library(platform-native-interface INTERFACE EXCLUDE_FROM_ALL)
+include("cmake/platform.cmake")
 
 # -----------------------------------------------------------------------------
-
-target_include_directories(platform-native-interface INTERFACE
-  "include-platform"
-)
-
-target_sources(platform-native-interface INTERFACE
-  # None.
-)
-
-target_compile_definitions(platform-native-interface INTERFACE
-  # None.
-)
-
-target_compile_options(platform-native-interface INTERFACE
-  # None.
-)
-
-target_link_libraries(platform-native-interface INTERFACE
-  micro-os-plus::architecture-synthetic-posix
-)
-
-if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists(platform-native-interface)
-endif()
-
-# -----------------------------------------------------------------------------
-# Aliases.
-
-add_library(micro-os-plus::platform ALIAS platform-native-interface)
-message(VERBOSE "> micro-os-plus::platform -> platform-native-interface")
-
-# =============================================================================
-
 function(add_test_executable name)
-
   add_executable(${name})
 
-  # Include folders.
-  # `platform-native/include` was added globally.
+  # Application folders.
   target_include_directories(${name} PRIVATE
     "../include"
   )
@@ -77,25 +40,25 @@ function(add_test_executable name)
   message(VERBOSE "A+ tests/src/${name}.cpp")
 
   target_compile_definitions(${name} PRIVATE
+
     # None.
   )
 
   # The compile options were defined globally.
   target_compile_options(${name} PRIVATE
+
     # None.
   )
 
   # https://cmake.org/cmake/help/v3.20/manual/cmake-generator-expressions.7.html
   target_link_options(${name} PRIVATE
-    $<$<C_COMPILER_ID:GNU>:-static-libgcc>
-    $<$<C_COMPILER_ID:GNU>:-static-libstdc++>
-    $<$<PLATFORM_ID:Darwin>:-Wl,-dead_strip>
-    $<$<PLATFORM_ID:Linux,Windows>:-Wl,--gc-sections>
     $<$<PLATFORM_ID:Linux,Windows>:-Wl,-Map,platform-bin/${name}-map.txt>
+
     # -v
   )
 
   target_link_libraries(${name} PRIVATE
+
     # Tested library.
     micro-os-plus::micro-test-plus
 
@@ -107,13 +70,10 @@ function(add_test_executable name)
   )
 
   message(VERBOSE "A> ${name}")
-
 endfunction()
 
 # -----------------------------------------------------------------------------
-
-if (ENABLE_SAMPLE_TEST)
-
+if(ENABLE_SAMPLE_TEST)
   add_test_executable(sample-test)
 
   add_test(
@@ -135,13 +95,10 @@ if (ENABLE_SAMPLE_TEST)
     NAME "sample-test --silent"
     COMMAND sample-test one two --silent
   )
-
 endif()
 
 # -----------------------------------------------------------------------------
-
-if (ENABLE_UNIT_TEST)
-
+if(ENABLE_UNIT_TEST)
   add_test_executable(unit-test)
 
   target_link_libraries(unit-test PRIVATE
@@ -167,7 +124,6 @@ if (ENABLE_UNIT_TEST)
     NAME "unit-test --silent"
     COMMAND unit-test --silent
   )
-
 endif()
 
 # -----------------------------------------------------------------------------

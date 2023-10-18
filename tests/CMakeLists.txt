@@ -1,7 +1,7 @@
 # -----------------------------------------------------------------------------
 #
 # This file is part of the µOS++ distribution.
-#   (https://github.com/micro-os-plus/)
+# (https://github.com/micro-os-plus/)
 # Copyright (c) 2022 Liviu Ionescu
 #
 # Permission to use, copy, modify, and/or distribute this software
@@ -13,7 +13,7 @@
 # -----------------------------------------------------------------------------
 
 # -----------------------------------------------------------------------------
-## Preamble ##
+# Preamble #
 
 # https://cmake.org/cmake/help/v3.20/
 cmake_minimum_required(VERSION 3.20)
@@ -27,8 +27,7 @@ project(
 enable_testing()
 
 # -----------------------------------------------------------------------------
-## Project wide setup ##
-
+# Project wide setup #
 enable_language(C)
 enable_language(CXX)
 enable_language(ASM)
@@ -49,7 +48,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # set_property(GLOBAL PROPERTY GLOBAL_DEPENDS_DEBUG_MODE 1)
 
 # -----------------------------------------------------------------------------
-
 if(CMAKE_BINARY_DIR STREQUAL CMAKE_SOURCE_DIR)
   message(FATAL_ERROR "In-source builds are not supported. Please use a separate folder for build.")
 endif()
@@ -63,7 +61,6 @@ xpack_display_greetings("${CMAKE_CURRENT_SOURCE_DIR}/../package.json")
 # -----------------------------------------------------------------------------
 
 # CMAKE_BUILD_TYPE: Debug, Release, RelWithDebInfo, MinSizeRel
-
 set(ENABLE_SAMPLE_TEST true)
 set(ENABLE_UNIT_TEST true)
 
@@ -75,23 +72,19 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Generic")
 endif()
 
 # -----------------------------------------------------------------------------
-## Non-target specific definitions ##
+# Non-target specific definitions #
 
 # The globals must be included in this scope, before creating any targets.
 # The compile options, symbols and include folders apply to all
 # compiled sources, from all libraries.
 
-# Top global definitions, common to all platforms.
-include("cmake/globals.cmake")
-
-include("platform-${PLATFORM_NAME}/cmake/globals.cmake")
-
-xpack_display_global_lists()
+# Top definitions, common to all platforms.
+include("cmake/common.cmake")
 
 # -----------------------------------------------------------------------------
-## Dependencies ##
+# Dependencies #
 
-# Platform specific dependencies.
+# Platform specific definitions & dependencies.
 include("platform-${PLATFORM_NAME}/cmake/dependencies.cmake")
 
 # Add the main library from the root folder.
@@ -99,7 +92,7 @@ message(VERBOSE "Adding top library...")
 add_subdirectory(".." "top-bin")
 
 # -----------------------------------------------------------------------------
-## Platform specifics ##
+# Platform specifics #
 
 # Add the platform specific targets and tests.
 # For consistency, the binaries are created in the `platform-bin` folder.
