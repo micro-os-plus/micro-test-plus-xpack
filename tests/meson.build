@@ -36,6 +36,7 @@ project('micro-os-plus-micro-test-plus-tests',
 
 fs = import('fs')
 c_compiler = meson.get_compiler('c')
+cpp_compiler = meson.get_compiler('cpp')
 # message('Compiler ID: ' + c_compiler.get_id())
 
 # -----------------------------------------------------------------------------
@@ -83,8 +84,10 @@ subdir('platform-'+ xpack_platform_name + '/meson/globals')
 # -----------------------------------------------------------------------------
 ## Dependencies ##
 
-# xpack_dependencies[] must be set in the platform native globals.
-foreach dep: xpack_dependencies
+subdir('platform-'+ xpack_platform_name + '/meson/dependencies')
+
+# xpack_dependencies_folders[] must be set in the platform.
+foreach dep: xpack_dependencies_folders
   message('Adding ' + dep + '...')
   subdir(dep)
 endforeach

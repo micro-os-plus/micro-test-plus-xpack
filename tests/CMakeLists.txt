@@ -91,11 +91,8 @@ xpack_display_global_lists()
 # -----------------------------------------------------------------------------
 ## Dependencies ##
 
-# Add build configuration dependencies.
-xpack_glob_add_subdirectories("${CMAKE_BINARY_DIR}/xpacks" "xpacks-bin")
-
-# Add project dependencies. Libraries already defined will fail.
-xpack_glob_add_subdirectories("${CMAKE_SOURCE_DIR}/xpacks" "tests-xpacks-bin")
+# Platform specific dependencies.
+include("platform-${PLATFORM_NAME}/cmake/dependencies.cmake")
 
 # Add the main library from the root folder.
 message(VERBOSE "Adding top library...")
