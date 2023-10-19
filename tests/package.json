@@ -806,7 +806,7 @@
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/clang",
         "devDependencies": {
-          "@xpack-dev-tools/clang": "15.0.7-2.1"
+          "@xpack-dev-tools/clang": "15.0.7-4.1"
         }
       },
       "clang16-dependencies": {
