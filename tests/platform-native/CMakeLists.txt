@@ -20,6 +20,29 @@ message(VERBOSE "Processing 'tests/platform-native'...")
 include("cmake/platform.cmake")
 
 # -----------------------------------------------------------------------------
+
+if (CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+
+  # On non-Windows, get the actual libraries paths by asking the compiler.
+  execute_process(
+    COMMAND "${CMAKE_SOURCE_DIR}/xpacks/@micro-os-plus/build-helper/dev-scripts/get-libraries-paths.sh" ${CMAKE_CXX_COMPILER}
+    OUTPUT_VARIABLE cxx_library_path
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+  )
+  string(REPLACE ":" ";" cxx_library_path_list ${cxx_library_path})
+
+  set(rpath_options_list)
+  foreach(RPATH IN LISTS cxx_library_path_list)
+    cmake_path(SET normalized_path NORMALIZE ${RPATH})
+    list(APPEND rpath_options_list "-Wl,-rpath,${normalized_path}")
+  endforeach()
+
+  cmake_path(GET CMAKE_CXX_COMPILER FILENAME cxx_filename)
+  message(STATUS "${cxx_filename} RPATH_LIST: ${rpath_options_list}")
+
+endif()
+
+# -----------------------------------------------------------------------------
 function(add_test_executable name)
   add_executable(${name})
 
@@ -53,7 +76,8 @@ function(add_test_executable name)
   # https://cmake.org/cmake/help/v3.20/manual/cmake-generator-expressions.7.html
   target_link_options(${name} PRIVATE
     $<$<PLATFORM_ID:Linux,Windows>:-Wl,-Map,platform-bin/${name}-map.txt>
-
+    $<$<PLATFORM_ID:Linux,Darwin>:${rpath_options_list}>
+    
     # -v
   )
 
