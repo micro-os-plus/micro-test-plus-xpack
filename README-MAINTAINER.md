@@ -33,6 +33,12 @@ git clone \
   ~/Work/micro-os-plus/micro-test-plus-xpack.git
 ```
 
+Or, if the repo was already cloned:
+
+```sh
+git -C ~/Work/micro-os-plus/micro-test-plus-xpack.git pull
+```
+
 ## Prerequisites
 
 A recent [xpm](https://xpack.github.io/xpm/), which is a portable
@@ -96,6 +102,7 @@ related to the new version.
 To run the tests manually on the local machine:
 
 ```sh
+xpm run deep-clean -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 xpm run install-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 xpm run test-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 ```
