@@ -16,7 +16,11 @@
 # add_global_*() functions.
 # Must be added with subdir() before creating any library or executable.
 
-message('Including platform-native global definitions...')
+message('Including platform-native common definitions...')
+
+# -----------------------------------------------------------------------------
+
+xpack_platform_compile_definition = 'MICRO_OS_PLUS_PLATFORM_NATIVE'
 
 # -----------------------------------------------------------------------------
 
@@ -25,11 +29,17 @@ xpack_platform_common_c_args = []
 xpack_platform_common_cpp_args = []
 xpack_platform_compile_definitions = []
 
+xpack_platform_compile_definitions += [
+  '-D' + xpack_platform_compile_definition,
+]
+
 if c_compiler.get_id().contains('clang') and build_machine.system() == 'darwin'
   # On macOS enabling the macro fails with:
   # error: unknown type name 'u_int'
 else
   xpack_platform_compile_definitions += [
+    # Full POSIX conformance:
+    # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap02.html#tag_02_01_03
     '-D_POSIX_C_SOURCE=200809L',
   ]
 endif
@@ -99,7 +109,7 @@ add_global_link_arguments(
 
 # The base folder is tests. The order is significative.
 xpack_dependencies = [
-  
+
   'xpacks/@micro-os-plus/diag-trace', # -
 
   xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/architecture-synthetic-posix', # (architecture) -

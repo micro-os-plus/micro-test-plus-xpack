@@ -18,8 +18,6 @@ message('Processing tests/platform-qemu-cortex-a72...')
 
 # -----------------------------------------------------------------------------
 
-xpack_platform_compile_definition = 'PLATFORM_QEMU_CORTEX_A72'
-
 # Enable them only when needed.
 xpack_create_listing = false
 xpack_create_hex = false
@@ -35,7 +33,7 @@ xpack_compile_definitions = []
 # -----------------------------------------------------------------------------
 
 xpack_include_directories += [
-  'include-platform',
+  'include',
 ]
 
 xpack_sources += [
@@ -118,9 +116,9 @@ foreach name : test_names
     # '-v',
 
     # Path are relative to the build folder.
-    '-T', 'xpacks/@micro-os-plus/devices-qemu-aarch64/linker-scripts/mem-cortex-a72.ld',
-    # '-T', 'xpacks/@micro-os-plus/architecture-aarch64/linker-scripts/sections-flash.ld',
-    '-T', 'xpacks/@micro-os-plus/architecture-aarch64/linker-scripts/sections-ram.ld',
+    '-Txpacks/@micro-os-plus/devices-qemu-aarch64/linker-scripts/mem-cortex-a72.ld',
+    # '-Txpacks/@micro-os-plus/architecture-aarch64/linker-scripts/sections-flash.ld',
+    '-Txpacks/@micro-os-plus/architecture-aarch64/linker-scripts/sections-ram.ld',
   ]
 
   xpack_dependencies += [

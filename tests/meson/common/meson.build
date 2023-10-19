@@ -13,6 +13,8 @@
 # -----------------------------------------------------------------------------
 ## Common definitions for all platforms ##
 
+message('Including top common definitions...')
+
 xpack_global_common_args = []
 xpack_global_include_directories = []
 xpack_global_compile_definitions = []
@@ -20,10 +22,6 @@ xpack_global_compile_definitions = []
 # Assume GCC or clang, for MSVC things are different
 # https://mesonbuild.com/Reference-tables.html#c_compiler-ids
 if c_compiler.get_id() == 'gcc' or c_compiler.get_id().contains('clang')
-
-  # Always add the `include-config` folder.
-  # We are in the tests/build/<name> folder.
-  xpack_global_include_directories += [ '-I../../platform-' + xpack_platform_name + '/include-config' ]
 
   # Global compiler preprocessor definitions.
   # Native builds may not use them.

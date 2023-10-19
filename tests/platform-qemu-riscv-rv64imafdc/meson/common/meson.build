@@ -16,12 +16,14 @@
 # add_global_*() functions.
 # Must be added with subdir() before creating any library or executable.
 
-message('Including platform-qemu-riscv-rv64imafdc globals...')
+message('Including platform-qemu-riscv-rv64imafdc common definitions...')
 
 # -----------------------------------------------------------------------------
 
 # Required in devices-qemu-riscv.
-xpack_device_compile_definition='DEVICE_QEMU_RISCV_RV64IMAFDC'
+xpack_device_compile_definition='MICRO_OS_PLUS_DEVICE_QEMU_RISCV_RV64IMAFDC'
+
+xpack_platform_compile_definition = 'MICRO_OS_PLUS_PLATFORM_QEMU_RISCV_RV64IMAFDC'
 
 # -----------------------------------------------------------------------------
 
@@ -34,6 +36,8 @@ xpack_platform_compile_definitions = []
 
 # Compiler definitions must passed as options.
 xpack_platform_compile_definitions += [
+  '-D' + xpack_platform_compile_definition,
+
   # Full POSIX conformance:
   # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap02.html#tag_02_01_03
   '-D_POSIX_C_SOURCE=200809L',
@@ -66,7 +70,7 @@ else
 endif
 
 xpack_platform_common_cpp_args += [
-   '-fno-exceptions',
+  '-fno-exceptions',
   # '-fno-rtti',
   # '-fno-use-cxa-atexit',
 

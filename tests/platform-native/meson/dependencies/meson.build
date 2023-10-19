@@ -12,7 +12,7 @@
 #
 # -----------------------------------------------------------------------------
 
-# This file adds the platform dependencies.
+# Add the platform dependencies.
 
 # The base folder is tests. The order is significative.
 xpack_dependencies_folders = [

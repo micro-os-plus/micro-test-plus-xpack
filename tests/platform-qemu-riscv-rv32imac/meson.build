@@ -18,8 +18,6 @@ message('Processing tests/platform-qemu-riscv-rv32imac...')
 
 # -----------------------------------------------------------------------------
 
-xpack_platform_compile_definition = 'PLATFORM_QEMU_RISCV_RV32IMAC'
-
 # Enable them only when needed.
 xpack_create_listing = false
 xpack_create_hex = false
@@ -35,7 +33,7 @@ xpack_compile_definitions = []
 # -----------------------------------------------------------------------------
 
 xpack_include_directories += [
-  'include-platform',
+  'include',
 ]
 
 xpack_sources += [
@@ -117,9 +115,9 @@ foreach name : test_names
     # '-v',
 
     # Path are relative to the build folder.
-    '-T', 'xpacks/@micro-os-plus/devices-qemu-riscv/linker-scripts/mem-virt-rv32.ld',
-    # '-T', 'xpacks/@micro-os-plus/architecture-riscv/linker-scripts/sections-flash.ld',
-    '-T', 'xpacks/@micro-os-plus/architecture-riscv/linker-scripts/sections-ram.ld',
+    '-Txpacks/@micro-os-plus/devices-qemu-riscv/linker-scripts/mem-virt-rv32.ld',
+    # '-Txpacks/@micro-os-plus/architecture-riscv/linker-scripts/sections-flash.ld',
+    '-Txpacks/@micro-os-plus/architecture-riscv/linker-scripts/sections-ram.ld',
   ]
 
   xpack_dependencies += [

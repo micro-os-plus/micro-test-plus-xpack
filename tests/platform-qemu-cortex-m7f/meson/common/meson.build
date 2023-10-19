@@ -16,12 +16,14 @@
 # add_global_*() functions.
 # Must be added with subdir() before creating any library or executable.
 
-message('Including platform-qemu-cortex-m0 globals...')
+message('Including platform-qemu-cortex-m7f common definitions...')
 
 # -----------------------------------------------------------------------------
 
 # Required in devices-qemu-cortexm.
-xpack_device_compile_definition='DEVICE_QEMU_CORTEX_M0'
+xpack_device_compile_definition='MICRO_OS_PLUS_DEVICE_QEMU_CORTEX_M7'
+
+xpack_platform_compile_definition = 'MICRO_OS_PLUS_PLATFORM_QEMU_CORTEX_M7F'
 
 # -----------------------------------------------------------------------------
 
@@ -34,13 +36,18 @@ xpack_platform_compile_definitions = []
 
 # Compiler definitions must passed as options.
 xpack_platform_compile_definitions += [
+  '-D' + xpack_platform_compile_definition,
+
+  # Full POSIX conformance:
+  # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap02.html#tag_02_01_03
   '-D_POSIX_C_SOURCE=200809L',
 ]
 
 xpack_platform_common_args += [
-  '-mcpu=cortex-m0',
+  '-mcpu=cortex-m7',
   '-mthumb',
-  '-mfloat-abi=soft',
+  '-mfloat-abi=hard',
+  # '-mfloat-abi=soft',
 
   # '-fno-move-loop-invariants',
 

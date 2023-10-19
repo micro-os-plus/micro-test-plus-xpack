@@ -77,9 +77,9 @@ enable_sample_test = true
 enable_unit_test = true
 
 # https://mesonbuild.com/Reference-manual.html#subdir
-subdir('meson/globals')
+subdir('meson/common')
 subdir('xpacks/@micro-os-plus/build-helper/meson/enable-all-warnings')
-subdir('platform-'+ xpack_platform_name + '/meson/globals')
+subdir('platform-'+ xpack_platform_name + '/meson/common')
 
 # -----------------------------------------------------------------------------
 ## Dependencies ##

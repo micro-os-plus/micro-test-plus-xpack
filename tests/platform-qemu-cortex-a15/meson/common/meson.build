@@ -16,12 +16,14 @@
 # add_global_*() functions.
 # Must be added with subdir() before creating any library or executable.
 
-message('Including platform-qemu-cortex-a72 globals...')
+message('Including platform-qemu-cortex-a15 common definitions...')
 
 # -----------------------------------------------------------------------------
 
-# Required in devices-qemu-aarch64.
-xpack_device_compile_definition='DEVICE_QEMU_CORTEX_A72'
+# Required in devices-qemu-cortexa.
+xpack_device_compile_definition='MICRO_OS_PLUS_DEVICE_QEMU_CORTEX_A15'
+
+xpack_platform_compile_definition = 'MICRO_OS_PLUS_PLATFORM_QEMU_CORTEX_A15'
 
 # -----------------------------------------------------------------------------
 
@@ -34,14 +36,16 @@ xpack_platform_compile_definitions = []
 
 # Compiler definitions must passed as options.
 xpack_platform_compile_definitions += [
+  '-D' + xpack_platform_compile_definition,
+
   # Full POSIX conformance:
   # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap02.html#tag_02_01_03
   '-D_POSIX_C_SOURCE=200809L',
 ]
 
 xpack_platform_common_args += [
-  '-mcpu=cortex-a72',
-  '-mabi=lp64',
+  # https://gcc.gnu.org/onlinedocs/gcc-11.3.0/gcc/ARM-Options.html#ARM-Options
+  '-mcpu=cortex-a15',
 
   # '-fno-move-loop-invariants',
 
@@ -61,10 +65,9 @@ else
 endif
 
 xpack_platform_common_cpp_args += [
-   '-fno-exceptions',
+  # '-fno-exceptions',
   # '-fno-rtti',
   # '-fno-use-cxa-atexit',
-
   '-fno-threadsafe-statics',
 ]
 

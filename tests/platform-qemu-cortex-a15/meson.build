@@ -18,8 +18,6 @@ message('Processing tests/platform-qemu-cortex-a15...')
 
 # -----------------------------------------------------------------------------
 
-xpack_platform_compile_definition = 'PLATFORM_QEMU_CORTEX_A15'
-
 # Enable them only when needed.
 xpack_create_listing = false
 xpack_create_hex = false
@@ -35,14 +33,13 @@ xpack_compile_definitions = []
 # -----------------------------------------------------------------------------
 
 xpack_include_directories += [
-  'include-platform',
+  'include',
 ]
 
 xpack_sources += [
 ]
 
 xpack_compile_definitions += [
-  '-D' + xpack_platform_compile_definition,
 ]
 
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
@@ -118,9 +115,9 @@ foreach name : test_names
     # '-v',
 
     # Path are relative to the build folder.
-    '-T', 'xpacks/@micro-os-plus/devices-qemu-aarch32/linker-scripts/mem-cortex-a15.ld',
-    # '-T', 'xpacks/@micro-os-plus/architecture-aarch32/linker-scripts/sections-flash.ld',
-    '-T', 'xpacks/@micro-os-plus/architecture-aarch32/linker-scripts/sections-ram.ld',
+    '-Txpacks/@micro-os-plus/devices-qemu-aarch32/linker-scripts/mem-cortex-a15.ld',
+    # '-Txpacks/@micro-os-plus/architecture-aarch32/linker-scripts/sections-flash.ld',
+    '-Txpacks/@micro-os-plus/architecture-aarch32/linker-scripts/sections-ram.ld',
   ]
 
   xpack_dependencies += [
