@@ -108,19 +108,23 @@ target_compile_options(platform-native-interface INTERFACE
   ${xpack_platform_common_args}
 )
 
-# When `-flto` is used, the compile options must be passed to the linker too.
+# On macOS, GCC 11 gets confused.
+# dyld[72401]: Symbol not found: (__ZNKSt3_V214error_category10_M_messageB5cxx11Ei)
+
 target_link_options(platform-native-interface INTERFACE
 
   # -v
+
+  # When `-flto` is used, the compile options must be passed to the linker too.
   ${xpack_platform_common_args}
 
+  # On Windows configuring the path to access the compiler DLLs is tedious,
+  # it is much easier to build everything static.
   $<$<PLATFORM_ID:Windows>:-static>
 
-  # On Linux no need for statics, -rpath is fine.
-  # On macOS, GCC 11 gets confused
-  # dyld[72401]: Symbol not found: (__ZNKSt3_V214error_category10_M_messageB5cxx11Ei)
-  $<$<AND:$<C_COMPILER_ID:GNU>,$<PLATFORM_ID:Darwin>>:-static-libgcc>
-  $<$<AND:$<C_COMPILER_ID:GNU>,$<PLATFORM_ID:Darwin>>:-static-libstdc++>
+  # Once -rpath is configured properly, there is no need for statics.
+  # $<$<AND:$<C_COMPILER_ID:GNU>,$<PLATFORM_ID:Darwin>>:-static-libgcc>
+  # $<$<AND:$<C_COMPILER_ID:GNU>,$<PLATFORM_ID:Darwin>>:-static-libstdc++>
 
   $<$<PLATFORM_ID:Darwin>:-Wl,-dead_strip>
   $<$<PLATFORM_ID:Linux,Windows>:-Wl,--gc-sections>
@@ -130,8 +134,8 @@ if("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
   # https://clang.llvm.org/docs/Toolchain.html#compiler-runtime
   target_link_options(platform-native-interface INTERFACE
 
-    $<$<AND:$<PLATFORM_ID:Linux>,$<COMPILE_LANGUAGE:CXX>>:-stdlib=libc++>
-    $<$<PLATFORM_ID:Linux>:-rtlib=compiler-rt>
+    $<$<COMPILE_LANGUAGE:CXX>:-stdlib=libc++>
+    -rtlib=compiler-rt
     $<$<PLATFORM_ID:Linux>:-lunwind>
     $<$<PLATFORM_ID:Linux>:-fuse-ld=lld>
   )
