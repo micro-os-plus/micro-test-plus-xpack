@@ -130,8 +130,8 @@ if("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
   # https://clang.llvm.org/docs/Toolchain.html#compiler-runtime
   target_link_options(platform-native-interface INTERFACE
 
-    # Fails on Raspberry Pi (it hangs, even in Debug).
-    -rtlib=compiler-rt
+    $<$<AND:$<PLATFORM_ID:Linux>,$<COMPILE_LANGUAGE:CXX>>:-stdlib=libc++>
+    $<$<PLATFORM_ID:Linux>:-rtlib=compiler-rt>
     $<$<PLATFORM_ID:Linux>:-lunwind>
     $<$<PLATFORM_ID:Linux>:-fuse-ld=lld>
   )
