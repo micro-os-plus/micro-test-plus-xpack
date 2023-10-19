@@ -65,26 +65,32 @@ jobs:
       run: |
         xpm install -C tests
 
-    - name: Run test-native-cmake-gcc11
+    - name: Run test-native-cmake-gcc
       run: |
-        xpm install --config native-cmake-gcc11-debug -C tests
-        xpm install --config native-cmake-gcc11-release -C tests
-        xpm run test-native-cmake-gcc11 -C tests
+        xpm install --config native-cmake-gcc-debug -C tests
+        xpm install --config native-cmake-gcc-release -C tests
+        xpm run test-native-cmake-gcc -C tests
 
-    - name: Run test-native-cmake-clang13
+    - name: Run test-native-cmake-clang
       run: |
-        xpm install --config native-cmake-clang13-debug -C tests
-        xpm install --config native-cmake-clang13-release -C tests
-        xpm run test-native-cmake-clang13 -C tests
+        xpm install --config native-cmake-clang-debug -C tests
+        xpm install --config native-cmake-clang-release -C tests
+        xpm run test-native-cmake-clang -C tests
 
-    - name: Run test-native-meson-gcc11
+    - name: Run test-qemu-cortex-m0-cmake
       run: |
-        xpm install --config native-meson-gcc11-debug -C tests
-        xpm install --config native-meson-gcc11-release -C tests
-        xpm run test-native-meson-gcc11 -C tests
+        xpm install --config qemu-cortex-m0-cmake-debug -C tests
+        xpm install --config qemu-cortex-m0-cmake-release -C tests
+        xpm run test-qemu-cortex-m0-cmake -C tests
 
-    - name: Run test-qemu-mps2-an386-cmake
+    - name: Run test-qemu-cortex-m7f-cmake
       run: |
-        xpm install --config qemu-mps2-an386-cmake-debug -C tests
-        xpm install --config qemu-mps2-an386-cmake-release -C tests
-        xpm run test-qemu-mps2-an386-cmake -C tests
+        xpm install --config qemu-cortex-m7f-cmake-debug -C tests
+        xpm install --config qemu-cortex-m7f-cmake-release -C tests
+        xpm run test-qemu-cortex-m7f-cmake -C tests
+
+    - name: Run test-qemu-riscv-rv32imac-cmake
+      run: |
+        xpm install --config qemu-riscv-rv32imac-cmake-debug -C tests
+        xpm install --config qemu-riscv-rv32imac-cmake-release -C tests
+        xpm run test-qemu-riscv-rv32imac-cmake -C tests
