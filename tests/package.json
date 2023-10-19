@@ -694,7 +694,7 @@
         ],
         "devDependencies": {
           "@micro-os-plus/architecture-cortexm": "^6.3.0",
-          "@micro-os-plus/devices-qemu-cortexm": "^4.1.1"
+          "@micro-os-plus/devices-qemu-cortexm": "^5.0.0"
         }
       },
       "riscv-dependencies": {
@@ -1329,6 +1329,7 @@
           "cortexm-actions",
           "arm-cmsis-core-dependencies",
           "arm-none-eabi-gcc-dependencies",
+          "bare-metal-dependencies",
           "cortexm-dependencies",
           "qemu-arm-dependencies"
         ],
