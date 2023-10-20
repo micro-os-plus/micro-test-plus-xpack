@@ -1,7 +1,7 @@
 # -----------------------------------------------------------------------------
 #
 # This file is part of the µOS++ distribution.
-#   (https://github.com/micro-os-plus/)
+# (https://github.com/micro-os-plus/)
 # Copyright (c) 2022 Liviu Ionescu
 #
 # Permission to use, copy, modify, and/or distribute this software
@@ -19,11 +19,11 @@
 message(VERBOSE "Including top common compile & link definitions...")
 
 # -----------------------------------------------------------------------------
-
 add_library(micro-os-plus-common-options-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # https://cmake.org/cmake/help/v3.20/command/add_compile_definitions.html
 target_compile_definitions(micro-os-plus-common-options-interface INTERFACE
+
   # NDEBUG is provided by the toolchain definitions on release.
 
   # TODO: remove DEBUG
@@ -58,6 +58,7 @@ target_compile_options(micro-os-plus-common-options-interface INTERFACE
 )
 
 target_include_directories(micro-os-plus-common-options-interface INTERFACE
+
   # Folders are relative to `tests`.
   # None.
 )
@@ -67,7 +68,7 @@ target_link_options(micro-os-plus-common-options-interface INTERFACE
   ${global_common_options}
 )
 
-if (COMMAND xpack_display_target_lists)
+if(COMMAND xpack_display_target_lists)
   xpack_display_target_lists(micro-os-plus-common-options-interface)
 endif()
 

@@ -15,9 +15,11 @@
 message(VERBOSE "Including 'tests/platform-qemu-cortex-m7f/cmake/platform.cmake'...")
 
 # -----------------------------------------------------------------------------
-if(NOT DEFINED xpack_platform_compile_definition)
-  message(FATAL_ERROR "Define xpack_platform_compile_definition in platform*/cmake/dependencies.cmake")
-endif()
+
+# Required in devices-qemu-cortexm.
+set(xpack_device_compile_definition "MICRO_OS_PLUS_DEVICE_QEMU_CORTEX_M7")
+
+set(xpack_platform_compile_definition "MICRO_OS_PLUS_PLATFORM_QEMU_CORTEX_M7F")
 
 # -----------------------------------------------------------------------------
 # Define the platform library.
@@ -25,7 +27,9 @@ add_library(platform-qemu-cortex-m7f-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # -----------------------------------------------------------------------------
 target_include_directories(platform-qemu-cortex-m7f-interface INTERFACE
-  "include"
+
+  # This file is included from the tests folder.
+  "platform-${PLATFORM_NAME}/include"
 )
 
 target_sources(platform-qemu-cortex-m7f-interface INTERFACE

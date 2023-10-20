@@ -12,14 +12,7 @@
 #
 # -----------------------------------------------------------------------------
 
-# Add the platform dependencies.
-
-# -----------------------------------------------------------------------------
-
-# Required in devices-qemu-cortexm.
-set(xpack_device_compile_definition "MICRO_OS_PLUS_DEVICE_QEMU_CORTEX_M7")
-
-set(xpack_platform_compile_definition "MICRO_OS_PLUS_PLATFORM_QEMU_CORTEX_M7F")
+# Define a list of folders where the platform dependencies are located.
 
 # -----------------------------------------------------------------------------
 set(xpack_dependencies_folders
@@ -36,7 +29,5 @@ set(xpack_dependencies_folders
   # The SOURCE_DIR is the `tests` folder.
   "${CMAKE_SOURCE_DIR}/xpacks/@micro-os-plus/diag-trace"
 )
-
-xpack_add_dependencies_subdirectories("${xpack_dependencies_folders}" "xpacks-bin")
 
 # -----------------------------------------------------------------------------

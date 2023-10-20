@@ -17,8 +17,27 @@
 message(VERBOSE "Including 'tests/platform-native/cmake/platform.cmake'...")
 
 # -----------------------------------------------------------------------------
-if(NOT DEFINED xpack_platform_compile_definition)
-  message(FATAL_ERROR "Define xpack_platform_compile_definition in platform*/cmake/dependencies.cmake")
+set(xpack_platform_compile_definition "MICRO_OS_PLUS_PLATFORM_NATIVE")
+
+# -----------------------------------------------------------------------------
+if(CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+  # On non-Windows, get the actual libraries paths by asking the compiler.
+  execute_process(
+    COMMAND "${CMAKE_SOURCE_DIR}/xpacks/@micro-os-plus/build-helper/dev-scripts/get-libraries-paths.sh" ${CMAKE_CXX_COMPILER}
+    OUTPUT_VARIABLE cxx_library_path
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+  )
+  string(REPLACE ":" ";" cxx_library_path_list ${cxx_library_path})
+
+  set(rpath_options_list)
+
+  foreach(RPATH IN LISTS cxx_library_path_list)
+    cmake_path(SET normalized_path NORMALIZE ${RPATH})
+    list(APPEND rpath_options_list "-Wl,-rpath,${normalized_path}")
+  endforeach()
+
+  cmake_path(GET CMAKE_CXX_COMPILER FILENAME cxx_filename)
+  message(STATUS "${cxx_filename} RPATH_LIST: ${rpath_options_list}")
 endif()
 
 # -----------------------------------------------------------------------------
@@ -27,7 +46,9 @@ add_library(platform-native-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # -----------------------------------------------------------------------------
 target_include_directories(platform-native-interface INTERFACE
-  "include"
+
+  # This file is included from the tests folder.
+  "platform-${PLATFORM_NAME}/include"
 )
 
 target_sources(platform-native-interface INTERFACE
@@ -110,7 +131,6 @@ target_compile_options(platform-native-interface INTERFACE
 
 # On macOS, GCC 11 gets confused.
 # dyld[72401]: Symbol not found: (__ZNKSt3_V214error_category10_M_messageB5cxx11Ei)
-
 target_link_options(platform-native-interface INTERFACE
 
   # -v
@@ -125,9 +145,10 @@ target_link_options(platform-native-interface INTERFACE
   # Once -rpath is configured properly, there is no need for statics.
   # $<$<AND:$<C_COMPILER_ID:GNU>,$<PLATFORM_ID:Darwin>>:-static-libgcc>
   # $<$<AND:$<C_COMPILER_ID:GNU>,$<PLATFORM_ID:Darwin>>:-static-libstdc++>
-
   $<$<PLATFORM_ID:Darwin>:-Wl,-dead_strip>
   $<$<PLATFORM_ID:Linux,Windows>:-Wl,--gc-sections>
+
+  $<$<PLATFORM_ID:Linux,Darwin>:${rpath_options_list}>
 )
 
 if("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
@@ -142,6 +163,7 @@ if("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
 endif()
 
 target_link_libraries(platform-native-interface INTERFACE
+
   # The compile & link options common to all platforms.
   micro-os-plus::common-options
   micro-os-plus::architecture-synthetic-posix

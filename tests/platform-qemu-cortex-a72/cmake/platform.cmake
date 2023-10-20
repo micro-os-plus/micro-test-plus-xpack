@@ -16,12 +16,21 @@ message(VERBOSE "Including 'tests/platform-qemu-cortex-a72/cmake/platform.cmake'
 
 # -----------------------------------------------------------------------------
 
+# Required in devices-qemu-cortexa.
+set(xpack_device_compile_definition "MICRO_OS_PLUS_DEVICE_QEMU_CORTEX_A72")
+
+set(xpack_platform_compile_definition "MICRO_OS_PLUS_PLATFORM_QEMU_CORTEX_A72")
+
+# -----------------------------------------------------------------------------
+
 # Define the platform library.
 add_library(platform-qemu-cortex-a72-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # -----------------------------------------------------------------------------
 target_include_directories(platform-qemu-cortex-a72-interface INTERFACE
-  "include"
+
+  # This file is included from the tests folder.
+  "platform-${PLATFORM_NAME}/include"
 )
 
 target_sources(platform-qemu-cortex-a72-interface INTERFACE

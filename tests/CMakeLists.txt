@@ -77,15 +77,26 @@ endif()
 # The globals must be included in this scope, before creating any targets.
 # The compile options, symbols and include folders apply to all
 # compiled sources, from all libraries.
+if("${CMAKE_HOST_SYSTEM_NAME}" STREQUAL "Windows")
+  set(extension ".cmd")
+endif()
 
-# Top definitions, common to all platforms.
+# Define `micro-os-plus::common-options` with the compile & link options
+# common to all platforms.
 include("cmake/common-options.cmake")
+
+# Define `micro-os-plus::platform` with the plaform definitions,
+# common to all tests.
+include("platform-${PLATFORM_NAME}/cmake/platform.cmake")
 
 # -----------------------------------------------------------------------------
 # Dependencies #
 
-# Platform specific definitions & dependencies.
+# Return `xpack_dependencies_folders` with the platform specific dependencies.
 include("platform-${PLATFORM_NAME}/cmake/dependencies.cmake")
+
+# Iterate the platform dependencies and `add_subdirectory()`.
+xpack_add_dependencies_subdirectories("${xpack_dependencies_folders}" "xpacks-bin")
 
 # Add the main library from the root folder.
 message(VERBOSE "Adding top library...")

@@ -20,14 +20,7 @@ message(VERBOSE "Processing 'tests/platform-qemu-cortex-m0'...")
 # set(xpack_create_hex true)
 
 # -----------------------------------------------------------------------------
-include("cmake/platform.cmake")
-
-# -----------------------------------------------------------------------------
 # Define the tests executables.
-if("${CMAKE_HOST_SYSTEM_NAME}" STREQUAL "Windows")
-  set(extension ".cmd")
-endif()
-
 function(add_test_executable name)
   add_executable(${name})
 

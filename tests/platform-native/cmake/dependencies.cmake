@@ -12,23 +12,16 @@
 #
 # -----------------------------------------------------------------------------
 
-# Add the platform dependencies.
-
-# -----------------------------------------------------------------------------
-
-set(xpack_platform_compile_definition "MICRO_OS_PLUS_PLATFORM_NATIVE")
+# Define a list of folders where the platform dependencies are located.
 
 # -----------------------------------------------------------------------------
 set(xpack_dependencies_folders
 
-  # Project dependencies.
   # The BINARY_DIR is the `build/<config>` folder.
   "${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/architecture-synthetic-posix"
 
   # The SOURCE_DIR is the `tests` folder.
   "${CMAKE_SOURCE_DIR}/xpacks/@micro-os-plus/diag-trace"
 )
-
-xpack_add_dependencies_subdirectories("${xpack_dependencies_folders}" "xpacks-bin")
 
 # -----------------------------------------------------------------------------
