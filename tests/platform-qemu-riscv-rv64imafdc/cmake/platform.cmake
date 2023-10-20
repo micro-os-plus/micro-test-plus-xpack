@@ -106,7 +106,7 @@ target_link_options(platform-qemu-riscv-rv64imafdc-interface INTERFACE
 )
 
 target_link_libraries(platform-qemu-riscv-rv64imafdc-interface INTERFACE
-  micro-os-plus::common
+  micro-os-plus::common-options
   micro-os-plus::devices-qemu-riscv
 )
 

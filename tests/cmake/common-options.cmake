@@ -12,18 +12,18 @@
 #
 # -----------------------------------------------------------------------------
 
-# This file defines an interface library with the common settings that
-# apply to all targets. These definitions are extended by each platform.
+# This file defines an interface library with the common compile & link
+# options that apply to all platforms.
 # The library must be linked to the platform.
 
-message(VERBOSE "Including top common definitions...")
+message(VERBOSE "Including top common compile & link definitions...")
 
 # -----------------------------------------------------------------------------
 
-add_library(micro-os-plus-common-interface INTERFACE EXCLUDE_FROM_ALL)
+add_library(micro-os-plus-common-options-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # https://cmake.org/cmake/help/v3.20/command/add_compile_definitions.html
-target_compile_definitions(micro-os-plus-common-interface INTERFACE
+target_compile_definitions(micro-os-plus-common-options-interface INTERFACE
   # NDEBUG is provided by the toolchain definitions on release.
 
   # TODO: remove DEBUG
@@ -52,30 +52,30 @@ set(global_common_options
 # Targets may add options to disable some of them.
 xpack_set_all_compiler_warnings(all_warnings)
 
-target_compile_options(micro-os-plus-common-interface INTERFACE
+target_compile_options(micro-os-plus-common-options-interface INTERFACE
   ${global_common_options}
   ${all_warnings}
 )
 
-target_include_directories(micro-os-plus-common-interface INTERFACE
+target_include_directories(micro-os-plus-common-options-interface INTERFACE
   # Folders are relative to `tests`.
   # None.
 )
 
 # When `-flto` is used, the compile options must be passed to the linker too.
-target_link_options(micro-os-plus-common-interface INTERFACE
+target_link_options(micro-os-plus-common-options-interface INTERFACE
   ${global_common_options}
 )
 
 if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists(micro-os-plus-common-interface)
+  xpack_display_target_lists(micro-os-plus-common-options-interface)
 endif()
 
 # -----------------------------------------------------------------------------
 # Aliases.
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
-add_library(micro-os-plus::common ALIAS micro-os-plus-common-interface)
-message(VERBOSE "> micro-os-plus::common -> micro-os-plus-common-interface")
+add_library(micro-os-plus::common-options ALIAS micro-os-plus-common-options-interface)
+message(VERBOSE "> micro-os-plus::common-options -> micro-os-plus-common-options-interface")
 
 # -----------------------------------------------------------------------------

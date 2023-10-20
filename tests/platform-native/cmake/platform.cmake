@@ -18,7 +18,7 @@ message(VERBOSE "Including 'tests/platform-native/cmake/platform.cmake'...")
 
 # -----------------------------------------------------------------------------
 if(NOT DEFINED xpack_platform_compile_definition)
-  message(FATAL_ERROR "Define xpack_platform_compile_definition in platform*/cmake/common.cmake")
+  message(FATAL_ERROR "Define xpack_platform_compile_definition in platform*/cmake/dependencies.cmake")
 endif()
 
 # -----------------------------------------------------------------------------
@@ -142,7 +142,8 @@ if("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
 endif()
 
 target_link_libraries(platform-native-interface INTERFACE
-  micro-os-plus::common
+  # The compile & link options common to all platforms.
+  micro-os-plus::common-options
   micro-os-plus::architecture-synthetic-posix
 )
 

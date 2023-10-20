@@ -67,17 +67,18 @@ function(add_test_executable name)
     # None.
   )
 
-  # The compile options were defined globally.
+  # The compile options were defined in `platform-native-interface`.
   target_compile_options(${name} PRIVATE
 
     # None.
   )
 
   # https://cmake.org/cmake/help/v3.20/manual/cmake-generator-expressions.7.html
+  # The link options were defined in `platform-native-interface`.
   target_link_options(${name} PRIVATE
     $<$<PLATFORM_ID:Linux,Windows>:-Wl,-Map,platform-bin/${name}-map.txt>
     $<$<PLATFORM_ID:Linux,Darwin>:${rpath_options_list}>
-    
+
     # -v
   )
 
@@ -89,7 +90,7 @@ function(add_test_executable name)
     # Portable dependencies.
     micro-os-plus::diag-trace
 
-    # Platform specific dependencies.
+    # Platform specific dependencies and common compile/link options.
     micro-os-plus::platform
   )
 

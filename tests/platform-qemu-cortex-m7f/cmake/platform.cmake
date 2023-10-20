@@ -107,7 +107,7 @@ target_link_options(platform-qemu-cortex-m7f-interface INTERFACE
 )
 
 target_link_libraries(platform-qemu-cortex-m7f-interface INTERFACE
-  micro-os-plus::common
+  micro-os-plus::common-options
   micro-os-plus::devices-qemu-cortexm
 )
 

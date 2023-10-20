@@ -79,7 +79,7 @@ endif()
 # compiled sources, from all libraries.
 
 # Top definitions, common to all platforms.
-include("cmake/common.cmake")
+include("cmake/common-options.cmake")
 
 # -----------------------------------------------------------------------------
 # Dependencies #

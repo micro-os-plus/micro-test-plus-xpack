@@ -102,7 +102,7 @@ target_link_options(platform-qemu-cortex-a72-interface INTERFACE
 )
 
 target_link_libraries(platform-qemu-cortex-a72-interface INTERFACE
-  micro-os-plus::common
+  micro-os-plus::common-options
   micro-os-plus::devices-qemu-aarch64
 )
 
