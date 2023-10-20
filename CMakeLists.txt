@@ -31,6 +31,9 @@ project(
   DESCRIPTION "µTest++"
 )
 
+# To access the optional functions, add `@micro-os-plus/build-helper` as a
+# dependency and include the `cmake/micro-os-plus-build-helper.cmake` file.
+
 if(COMMAND xpack_get_package_name_and_version)
   xpack_get_package_name_and_version("${CMAKE_CURRENT_SOURCE_DIR}/package.json")
   message(VERBOSE "Processing xPack ${PACKAGE_JSON_NAME}@${PACKAGE_JSON_VERSION}...")
