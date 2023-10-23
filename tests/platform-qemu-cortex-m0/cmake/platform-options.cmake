@@ -18,6 +18,13 @@ message(VERBOSE "Including 'tests/platform-qemu-cortex-m0/cmake/platform.cmake'.
 
 # -----------------------------------------------------------------------------
 
+# Validate.
+if(NOT DEFINED xpack_platform_compile_definition)
+  message(FATAL_ERROR "Define xpack_platform_compile_definition in ${PLATFORM_NAME}/cmake/dependencies.cmake")
+endif()
+
+# -----------------------------------------------------------------------------
+
 # Define the platform library.
 add_library(platform-qemu-cortex-m0-interface INTERFACE EXCLUDE_FROM_ALL)
 

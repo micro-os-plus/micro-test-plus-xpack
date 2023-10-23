@@ -16,6 +16,13 @@ message(VERBOSE "Including 'tests/platform-qemu-riscv-rv64imafdc/cmake/platform.
 
 # -----------------------------------------------------------------------------
 
+# Validate.
+if(NOT DEFINED xpack_platform_compile_definition)
+  message(FATAL_ERROR "Define xpack_platform_compile_definition in ${PLATFORM_NAME}/cmake/dependencies.cmake")
+endif()
+
+# -----------------------------------------------------------------------------
+
 # Define the platform library.
 add_library(platform-qemu-riscv-rv64imafdc-interface INTERFACE EXCLUDE_FROM_ALL)
 

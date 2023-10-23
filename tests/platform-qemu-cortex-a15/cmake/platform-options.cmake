@@ -18,7 +18,7 @@ message(VERBOSE "Including 'tests/platform-qemu-cortex-a15/cmake/platform.cmake'
 
 # Validate.
 if(NOT DEFINED xpack_platform_compile_definition)
-  message(FATAL_ERROR "Define xpack_platform_compile_definition in platform*/cmake/dependencies.cmake")
+  message(FATAL_ERROR "Define xpack_platform_compile_definition in ${PLATFORM_NAME}/cmake/dependencies.cmake")
 endif()
 
 # -----------------------------------------------------------------------------
