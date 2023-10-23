@@ -120,12 +120,16 @@
       ],
       "test-cortex-cmake": [
         "xpm run test-qemu-cortex-m0-cmake",
+        "xpm run test-qemu-cortex-m3-cmake",
+        "xpm run test-qemu-cortex-m4f-cmake",
         "xpm run test-qemu-cortex-m7f-cmake",
         "xpm run test-qemu-cortex-a15-cmake",
         "xpm run test-qemu-cortex-a72-cmake"
       ],
       "test-cortex-meson": [
         "xpm run test-qemu-cortex-m0-meson",
+        "xpm run test-qemu-cortex-m3-meson",
+        "xpm run test-qemu-cortex-m4f-meson",
         "xpm run test-qemu-cortex-m7f-meson",
         "xpm run test-qemu-cortex-a15-meson",
         "xpm run test-qemu-cortex-a72-meson"
@@ -306,6 +310,22 @@
         "xpm run build --config qemu-cortex-m0-cmake-release",
         "xpm run test --config qemu-cortex-m0-cmake-release"
       ],
+      "test-qemu-cortex-m3-cmake": [
+        "xpm run prepare --config qemu-cortex-m3-cmake-debug",
+        "xpm run build --config qemu-cortex-m3-cmake-debug",
+        "xpm run test --config qemu-cortex-m3-cmake-debug",
+        "xpm run prepare --config qemu-cortex-m3-cmake-release",
+        "xpm run build --config qemu-cortex-m3-cmake-release",
+        "xpm run test --config qemu-cortex-m3-cmake-release"
+      ],
+      "test-qemu-cortex-m4f-cmake": [
+        "xpm run prepare --config qemu-cortex-m4f-cmake-debug",
+        "xpm run build --config qemu-cortex-m4f-cmake-debug",
+        "xpm run test --config qemu-cortex-m4f-cmake-debug",
+        "xpm run prepare --config qemu-cortex-m4f-cmake-release",
+        "xpm run build --config qemu-cortex-m4f-cmake-release",
+        "xpm run test --config qemu-cortex-m4f-cmake-release"
+      ],
       "test-qemu-cortex-m7f-cmake": [
         "xpm run prepare --config qemu-cortex-m7f-cmake-debug",
         "xpm run build --config qemu-cortex-m7f-cmake-debug",
@@ -346,14 +366,6 @@
         "xpm run build --config qemu-riscv-rv64imafdc-cmake-release",
         "xpm run test --config qemu-riscv-rv64imafdc-cmake-release"
       ],
-      "test-qemu-cortex-m7f-meson": [
-        "xpm run prepare --config qemu-cortex-m7f-meson-debug",
-        "xpm run build --config qemu-cortex-m7f-meson-debug",
-        "xpm run test --config qemu-cortex-m7f-meson-debug",
-        "xpm run prepare --config qemu-cortex-m7f-meson-release",
-        "xpm run build --config qemu-cortex-m7f-meson-release",
-        "xpm run test --config qemu-cortex-m7f-meson-release"
-      ],
       "test-qemu-cortex-m0-meson": [
         "xpm run prepare --config qemu-cortex-m0-meson-debug",
         "xpm run build --config qemu-cortex-m0-meson-debug",
@@ -361,6 +373,30 @@
         "xpm run prepare --config qemu-cortex-m0-meson-release",
         "xpm run build --config qemu-cortex-m0-meson-release",
         "xpm run test --config qemu-cortex-m0-meson-release"
+      ],
+      "test-qemu-cortex-m3-meson": [
+        "xpm run prepare --config qemu-cortex-m3-meson-debug",
+        "xpm run build --config qemu-cortex-m3-meson-debug",
+        "xpm run test --config qemu-cortex-m3-meson-debug",
+        "xpm run prepare --config qemu-cortex-m3-meson-release",
+        "xpm run build --config qemu-cortex-m3-meson-release",
+        "xpm run test --config qemu-cortex-m3-meson-release"
+      ],
+      "test-qemu-cortex-m4f-meson": [
+        "xpm run prepare --config qemu-cortex-m4f-meson-debug",
+        "xpm run build --config qemu-cortex-m4f-meson-debug",
+        "xpm run test --config qemu-cortex-m4f-meson-debug",
+        "xpm run prepare --config qemu-cortex-m4f-meson-release",
+        "xpm run build --config qemu-cortex-m4f-meson-release",
+        "xpm run test --config qemu-cortex-m4f-meson-release"
+      ],
+      "test-qemu-cortex-m7f-meson": [
+        "xpm run prepare --config qemu-cortex-m7f-meson-debug",
+        "xpm run build --config qemu-cortex-m7f-meson-debug",
+        "xpm run test --config qemu-cortex-m7f-meson-debug",
+        "xpm run prepare --config qemu-cortex-m7f-meson-release",
+        "xpm run build --config qemu-cortex-m7f-meson-release",
+        "xpm run test --config qemu-cortex-m7f-meson-release"
       ],
       "test-qemu-cortex-a72-meson": [
         "xpm run prepare --config qemu-cortex-a72-meson-debug",
@@ -437,6 +473,10 @@
       "link-deps-cortex-cmake": [
         "xpm run link-deps --config qemu-cortex-m7f-cmake-debug",
         "xpm run link-deps --config qemu-cortex-m7f-cmake-release",
+        "xpm run link-deps --config qemu-cortex-m4f-cmake-debug",
+        "xpm run link-deps --config qemu-cortex-m4f-cmake-release",
+        "xpm run link-deps --config qemu-cortex-m3-cmake-debug",
+        "xpm run link-deps --config qemu-cortex-m3-cmake-release",
         "xpm run link-deps --config qemu-cortex-m0-cmake-debug",
         "xpm run link-deps --config qemu-cortex-m0-cmake-release",
         "xpm run link-deps --config qemu-cortex-a72-cmake-debug",
@@ -447,6 +487,10 @@
       "link-deps-cortex-meson": [
         "xpm run link-deps --config qemu-cortex-m7f-meson-debug",
         "xpm run link-deps --config qemu-cortex-m7f-meson-release",
+        "xpm run link-deps --config qemu-cortex-m4f-meson-debug",
+        "xpm run link-deps --config qemu-cortex-m4f-meson-release",
+        "xpm run link-deps --config qemu-cortex-m3-meson-debug",
+        "xpm run link-deps --config qemu-cortex-m3-meson-release",
         "xpm run link-deps --config qemu-cortex-m0-meson-debug",
         "xpm run link-deps --config qemu-cortex-m0-meson-release",
         "xpm run link-deps --config qemu-cortex-a72-meson-debug",
@@ -513,6 +557,10 @@
       "clean-cortex-cmake": [
         "xpm run clean --config qemu-cortex-m7f-cmake-debug --ignore-errors",
         "xpm run clean --config qemu-cortex-m7f-cmake-release --ignore-errors",
+        "xpm run clean --config qemu-cortex-m4f-cmake-debug --ignore-errors",
+        "xpm run clean --config qemu-cortex-m4f-cmake-release --ignore-errors",
+        "xpm run clean --config qemu-cortex-m3-cmake-debug --ignore-errors",
+        "xpm run clean --config qemu-cortex-m3-cmake-release --ignore-errors",
         "xpm run clean --config qemu-cortex-m0-cmake-debug --ignore-errors",
         "xpm run clean --config qemu-cortex-m0-cmake-release --ignore-errors",
         "xpm run clean --config qemu-cortex-a72-cmake-debug --ignore-errors",
@@ -523,6 +571,10 @@
       "clean-cortex-meson": [
         "xpm run clean --config qemu-cortex-m7f-meson-debug --ignore-errors",
         "xpm run clean --config qemu-cortex-m7f-meson-release --ignore-errors",
+        "xpm run clean --config qemu-cortex-m4f-meson-debug --ignore-errors",
+        "xpm run clean --config qemu-cortex-m4f-meson-release --ignore-errors",
+        "xpm run clean --config qemu-cortex-m3-meson-debug --ignore-errors",
+        "xpm run clean --config qemu-cortex-m3-meson-release --ignore-errors",
         "xpm run clean --config qemu-cortex-m0-meson-debug --ignore-errors",
         "xpm run clean --config qemu-cortex-m0-meson-release --ignore-errors",
         "xpm run clean --config qemu-cortex-a72-meson-debug --ignore-errors",
@@ -1262,7 +1314,7 @@
           "buildType": "Debug",
           "platformName": "qemu-cortex-m7f",
           "toolchainFileName": "arm-none-eabi-gcc.cmake",
-          "shortConfigurationName": "q1d"
+          "shortConfigurationName": "m7d"
         }
       },
       "qemu-cortex-m7f-cmake-release": {
@@ -1271,7 +1323,61 @@
         ],
         "properties": {
           "buildType": "MinSizeRel",
-          "shortConfigurationName": "q1r"
+          "shortConfigurationName": "m7r"
+        }
+      },
+      "qemu-cortex-m4f-cmake-debug": {
+        "inherit": [
+          "short-win-paths-properties",
+          "cmake-actions",
+          "cortexm-actions",
+          "arm-cmsis-core-dependencies",
+          "arm-none-eabi-gcc-dependencies",
+          "bare-metal-dependencies",
+          "cortexm-dependencies",
+          "qemu-arm-dependencies"
+        ],
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "qemu-cortex-m4f",
+          "toolchainFileName": "arm-none-eabi-gcc.cmake",
+          "shortConfigurationName": "m4d"
+        }
+      },
+      "qemu-cortex-m4f-cmake-release": {
+        "inherit": [
+          "qemu-cortex-m4f-cmake-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "m4r"
+        }
+      },
+      "qemu-cortex-m3-cmake-debug": {
+        "inherit": [
+          "short-win-paths-properties",
+          "cmake-actions",
+          "cortexm-actions",
+          "arm-cmsis-core-dependencies",
+          "arm-none-eabi-gcc-dependencies",
+          "bare-metal-dependencies",
+          "cortexm-dependencies",
+          "qemu-arm-dependencies"
+        ],
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "qemu-cortex-m3",
+          "toolchainFileName": "arm-none-eabi-gcc.cmake",
+          "shortConfigurationName": "m3d"
+        }
+      },
+      "qemu-cortex-m3-cmake-release": {
+        "inherit": [
+          "qemu-cortex-m3-cmake-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "m3r"
         }
       },
       "qemu-cortex-m0-cmake-debug": {
@@ -1289,7 +1395,7 @@
           "buildType": "Debug",
           "platformName": "qemu-cortex-m0",
           "toolchainFileName": "arm-none-eabi-gcc.cmake",
-          "shortConfigurationName": "q2d"
+          "shortConfigurationName": "m0d"
         }
       },
       "qemu-cortex-m0-cmake-release": {
@@ -1298,7 +1404,7 @@
         ],
         "properties": {
           "buildType": "MinSizeRel",
-          "shortConfigurationName": "q2r"
+          "shortConfigurationName": "m0r"
         }
       },
       "qemu-cortex-a72-cmake-debug": {
@@ -1315,7 +1421,7 @@
           "buildType": "Debug",
           "platformName": "qemu-cortex-a72",
           "toolchainFileName": "aarch64-none-elf-gcc.cmake",
-          "shortConfigurationName": "q3d"
+          "shortConfigurationName": "a7d"
         }
       },
       "qemu-cortex-a72-cmake-release": {
@@ -1324,7 +1430,7 @@
         ],
         "properties": {
           "buildType": "MinSizeRel",
-          "shortConfigurationName": "q3r"
+          "shortConfigurationName": "a7r"
         }
       },
       "qemu-cortex-a15-cmake-debug": {
@@ -1341,7 +1447,7 @@
           "buildType": "Debug",
           "platformName": "qemu-cortex-a15",
           "toolchainFileName": "arm-none-eabi-gcc.cmake",
-          "shortConfigurationName": "q4d"
+          "shortConfigurationName": "a1d"
         }
       },
       "qemu-cortex-a15-cmake-release": {
@@ -1350,7 +1456,7 @@
         ],
         "properties": {
           "buildType": "MinSizeRel",
-          "shortConfigurationName": "q4r"
+          "shortConfigurationName": "a1r"
         }
       },
       "qemu-riscv-rv32imac-cmake-debug": {
@@ -1367,7 +1473,7 @@
           "buildType": "Debug",
           "platformName": "qemu-riscv-rv32imac",
           "toolchainFileName": "riscv-none-elf-gcc.cmake",
-          "shortConfigurationName": "q5d"
+          "shortConfigurationName": "v3d"
         }
       },
       "qemu-riscv-rv32imac-cmake-release": {
@@ -1376,7 +1482,7 @@
         ],
         "properties": {
           "buildType": "MinSizeRel",
-          "shortConfigurationName": "q5r"
+          "shortConfigurationName": "v3r"
         }
       },
       "qemu-riscv-rv64imafdc-cmake-debug": {
@@ -1393,7 +1499,7 @@
           "buildType": "Debug",
           "platformName": "qemu-riscv-rv64imafdc",
           "toolchainFileName": "riscv-none-elf-gcc.cmake",
-          "shortConfigurationName": "q6d"
+          "shortConfigurationName": "v6d"
         }
       },
       "qemu-riscv-rv64imafdc-cmake-release": {
@@ -1402,7 +1508,7 @@
         ],
         "properties": {
           "buildType": "MinSizeRel",
-          "shortConfigurationName": "q6r"
+          "shortConfigurationName": "v6r"
         }
       },
       "qemu-cortex-m7f-meson-debug": {
@@ -1424,6 +1530,54 @@
       "qemu-cortex-m7f-meson-release": {
         "inherit": [
           "qemu-cortex-m7f-meson-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-cortex-m4f-meson-debug": {
+        "inherit": [
+          "cortexm-actions",
+          "meson-cross-actions",
+          "arm-cmsis-core-dependencies",
+          "arm-none-eabi-gcc-dependencies",
+          "bare-metal-dependencies",
+          "cortexm-dependencies",
+          "qemu-arm-dependencies"
+        ],
+        "properties": {
+          "buildType": "debug",
+          "platformName": "qemu-cortex-m4f",
+          "toolchainFileName": "arm-none-eabi-gcc-{{ os.platform }}.ini"
+        }
+      },
+      "qemu-cortex-m4f-meson-release": {
+        "inherit": [
+          "qemu-cortex-m4f-meson-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-cortex-m3-meson-debug": {
+        "inherit": [
+          "cortexm-actions",
+          "meson-cross-actions",
+          "arm-cmsis-core-dependencies",
+          "arm-none-eabi-gcc-dependencies",
+          "bare-metal-dependencies",
+          "cortexm-dependencies",
+          "qemu-arm-dependencies"
+        ],
+        "properties": {
+          "buildType": "debug",
+          "platformName": "qemu-cortex-m3",
+          "toolchainFileName": "arm-none-eabi-gcc-{{ os.platform }}.ini"
+        }
+      },
+      "qemu-cortex-m3-meson-release": {
+        "inherit": [
+          "qemu-cortex-m3-meson-debug"
         ],
         "properties": {
           "buildType": "minsize"
