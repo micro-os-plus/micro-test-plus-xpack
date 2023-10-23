@@ -15,6 +15,13 @@
 # Define a list of folders where the platform dependencies are located.
 
 # -----------------------------------------------------------------------------
+
+# Required in devices-qemu-aarch32.
+set(xpack_device_compile_definition "MICRO_OS_PLUS_DEVICE_QEMU_CORTEX_A15")
+
+set(xpack_platform_compile_definition "MICRO_OS_PLUS_PLATFORM_QEMU_CORTEX_A15")
+
+# -----------------------------------------------------------------------------
 set(xpack_dependencies_folders
 
   # The BINARY_DIR is the `build/<config>` folder.

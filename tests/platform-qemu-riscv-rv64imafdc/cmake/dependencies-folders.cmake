@@ -15,6 +15,13 @@
 # Define a list of folders where the platform dependencies are located.
 
 # -----------------------------------------------------------------------------
+
+# Required in devices-qemu-riscv.
+set(xpack_device_compile_definition "MICRO_OS_PLUS_DEVICE_QEMU_RISCV_RV64IMAFDC")
+
+set(xpack_platform_compile_definition "MICRO_OS_PLUS_PLATFORM_QEMU_RISCV_RV64IMAFDC")
+
+# -----------------------------------------------------------------------------
 set(xpack_dependencies_folders
 
   # The BINARY_DIR is the `build/<config>` folder.

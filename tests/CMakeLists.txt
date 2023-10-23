@@ -24,13 +24,13 @@ project(
 
 # -----------------------------------------------------------------------------
 
-# CMAKE_BUILD_TYPE: Debug, Release, RelWithDebInfo, MinSizeRel
+# Global definitions.
 set(ENABLE_SAMPLE_TEST true)
 set(ENABLE_UNIT_TEST true)
 
 # -----------------------------------------------------------------------------
 
-# The main CMake script, common to all projects.
+# Include the main CMake script, common to all projects.
 include("cmake/tests-main.cmake")
 
 # -----------------------------------------------------------------------------

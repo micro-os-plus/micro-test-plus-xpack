@@ -20,6 +20,7 @@ message(VERBOSE "Processing 'tests/platform-qemu-riscv-rv32imac'...")
 # set(xpack_create_hex true)
 
 # -----------------------------------------------------------------------------
+
 # Define the tests executables.
 function(add_test_executable name)
   add_executable(${name})
@@ -99,6 +100,8 @@ function(add_test_executable name)
 endfunction()
 
 # -----------------------------------------------------------------------------
+
+# sample-test
 if(ENABLE_SAMPLE_TEST)
   add_test_executable(sample-test)
 
@@ -117,6 +120,8 @@ if(ENABLE_SAMPLE_TEST)
 endif()
 
 # -----------------------------------------------------------------------------
+
+# unit-test
 if(ENABLE_UNIT_TEST)
   add_test_executable(unit-test)
 

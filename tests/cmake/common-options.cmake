@@ -73,8 +73,8 @@ if(COMMAND xpack_display_target_lists)
 endif()
 
 # -----------------------------------------------------------------------------
-# Aliases.
 
+# Aliases.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library(micro-os-plus::common-options ALIAS micro-os-plus-common-options-interface)
 message(VERBOSE "> micro-os-plus::common-options -> micro-os-plus-common-options-interface")

@@ -21,7 +21,6 @@
 # `target_link_libraries(your-target PUBLIC micro-os-plus::micro-test-plus)`
 
 # -----------------------------------------------------------------------------
-# Preamble #
 
 # https://cmake.org/cmake/help/v3.20/
 cmake_minimum_required(VERSION 3.20)
@@ -40,16 +39,14 @@ if(COMMAND xpack_get_package_name_and_version)
 endif()
 
 # -----------------------------------------------------------------------------
-# The project library definitions #
+
+# The project library definitions.
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#normal-libraries
 # PRIVATE: build definitions, used internally
 # INTERFACE: usage definitions, passed up to targets linking to it
 # PUBLIC: both
 add_library(micro-os-plus-micro-test-plus-interface INTERFACE)
-
-# -----------------------------------------------------------------------------
-# Target settings #
 
 target_include_directories(micro-os-plus-micro-test-plus-interface INTERFACE
   "include"
@@ -82,8 +79,8 @@ if(COMMAND xpack_display_target_lists)
 endif()
 
 # -----------------------------------------------------------------------------
-# Aliases.
 
+# Aliases.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library(micro-os-plus::micro-test-plus ALIAS micro-os-plus-micro-test-plus-interface)
 message(VERBOSE "> micro-os-plus::micro-test-plus -> micro-os-plus-micro-test-plus-interface")

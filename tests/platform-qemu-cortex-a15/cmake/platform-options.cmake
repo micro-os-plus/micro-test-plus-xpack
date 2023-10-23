@@ -16,16 +16,16 @@ message(VERBOSE "Including 'tests/platform-qemu-cortex-a15/cmake/platform.cmake'
 
 # -----------------------------------------------------------------------------
 
-# Required in devices-qemu-aarch32.
-set(xpack_device_compile_definition "MICRO_OS_PLUS_DEVICE_QEMU_CORTEX_A15")
-
-set(xpack_platform_compile_definition "MICRO_OS_PLUS_PLATFORM_QEMU_CORTEX_A15")
+# Validate.
+if(NOT DEFINED xpack_platform_compile_definition)
+  message(FATAL_ERROR "Define xpack_platform_compile_definition in platform*/cmake/dependencies.cmake")
+endif()
 
 # -----------------------------------------------------------------------------
+
 # Define the platform library.
 add_library(platform-qemu-cortex-a15-interface INTERFACE EXCLUDE_FROM_ALL)
 
-# -----------------------------------------------------------------------------
 target_include_directories(platform-qemu-cortex-a15-interface INTERFACE
 
   # This file is included from the tests folder.
@@ -118,6 +118,7 @@ if(COMMAND xpack_display_target_lists)
 endif()
 
 # -----------------------------------------------------------------------------
+
 # Aliases.
 add_library(micro-os-plus::platform ALIAS platform-qemu-cortex-a15-interface)
 message(VERBOSE "> micro-os-plus::platform -> platform-qemu-cortex-a15-interface")

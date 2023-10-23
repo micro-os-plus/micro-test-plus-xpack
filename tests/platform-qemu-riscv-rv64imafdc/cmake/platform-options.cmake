@@ -16,16 +16,9 @@ message(VERBOSE "Including 'tests/platform-qemu-riscv-rv64imafdc/cmake/platform.
 
 # -----------------------------------------------------------------------------
 
-# Required in devices-qemu-riscv.
-set(xpack_device_compile_definition "MICRO_OS_PLUS_DEVICE_QEMU_RISCV_RV64IMAFDC")
-
-set(xpack_platform_compile_definition "MICRO_OS_PLUS_PLATFORM_QEMU_RISCV_RV64IMAFDC")
-
-# -----------------------------------------------------------------------------
 # Define the platform library.
 add_library(platform-qemu-riscv-rv64imafdc-interface INTERFACE EXCLUDE_FROM_ALL)
 
-# -----------------------------------------------------------------------------
 target_include_directories(platform-qemu-riscv-rv64imafdc-interface INTERFACE
 
   # This file is included from the tests folder.
@@ -124,6 +117,7 @@ if(COMMAND xpack_display_target_lists)
 endif()
 
 # -----------------------------------------------------------------------------
+
 # Aliases.
 add_library(micro-os-plus::platform ALIAS platform-qemu-riscv-rv64imafdc-interface)
 message(VERBOSE "> micro-os-plus::platform -> platform-qemu-riscv-rv64imafdc-interface")

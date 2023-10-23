@@ -15,6 +15,13 @@
 # Define a list of folders where the platform dependencies are located.
 
 # -----------------------------------------------------------------------------
+
+# Informative.
+set(xpack_device_compile_definition "MICRO_OS_PLUS_DEVICE_NATIVE")
+
+set(xpack_platform_compile_definition "MICRO_OS_PLUS_PLATFORM_NATIVE")
+
+# -----------------------------------------------------------------------------
 set(xpack_dependencies_folders
 
   # The BINARY_DIR is the `build/<config>` folder.

@@ -17,9 +17,15 @@
 message(VERBOSE "Including 'tests/platform-native/cmake/platform.cmake'...")
 
 # -----------------------------------------------------------------------------
-set(xpack_platform_compile_definition "MICRO_OS_PLUS_PLATFORM_NATIVE")
+
+# Validate.
+if(NOT DEFINED xpack_platform_compile_definition)
+  message(FATAL_ERROR "Define xpack_platform_compile_definition in platform*/cmake/dependencies.cmake")
+endif()
 
 # -----------------------------------------------------------------------------
+
+# Compute RPATH.
 if(CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "Darwin")
   # On non-Windows, get the actual libraries paths by asking the compiler.
   execute_process(
@@ -41,10 +47,10 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "Darwin")
 endif()
 
 # -----------------------------------------------------------------------------
+
 # Define the platform library.
 add_library(platform-native-interface INTERFACE EXCLUDE_FROM_ALL)
 
-# -----------------------------------------------------------------------------
 target_include_directories(platform-native-interface INTERFACE
 
   # This file is included from the tests folder.
@@ -80,13 +86,6 @@ if("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
   )
 endif()
 
-if("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
-  # https://libcxx.llvm.org/UsingLibcxx.html
-  list(APPEND xpack_platform_common_args
-    $<$<COMPILE_LANGUAGE:CXX>:-stdlib=libc++>
-  )
-endif()
-
 # https://cmake.org/cmake/help/v3.20/variable/CMAKE_LANG_COMPILER_ID.html
 # message("${CMAKE_C_COMPILER_ID} ${CMAKE_SYSTEM_NAME} ${CMAKE_SYSTEM_PROCESSOR}")
 # Unfortunatelly in a container it shows aarch64 instead of armv7l.
@@ -116,6 +115,13 @@ list(APPEND xpack_platform_common_args
 
   # $<$<AND:$<C_COMPILER_ID:GNU>,$<PLATFORM_ID:Darwin>>:-no-pie>
 )
+
+if("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
+  # https://libcxx.llvm.org/UsingLibcxx.html
+  list(APPEND xpack_platform_common_args
+    $<$<COMPILE_LANGUAGE:CXX>:-stdlib=libc++>
+  )
+endif()
 
 # With clang 12 & CLT 14.3.1:
 # /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/cstdlib:144:9: error: no member named 'at_quick_exit' in the global namespace
@@ -174,6 +180,7 @@ if(COMMAND xpack_display_target_lists)
 endif()
 
 # -----------------------------------------------------------------------------
+
 # Aliases.
 add_library(micro-os-plus::platform ALIAS platform-native-interface)
 message(VERBOSE "> micro-os-plus::platform -> platform-native-interface")

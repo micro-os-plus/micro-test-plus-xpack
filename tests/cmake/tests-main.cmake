@@ -72,20 +72,19 @@ endif()
 # common to all platforms.
 include("cmake/common-options.cmake")
 
+# Set `xpack_dependencies_folders` with the platform specific dependencies.
+include("platform-${PLATFORM_NAME}/cmake/dependencies-folders.cmake")
+
 # Define `micro-os-plus::platform` with the plaform definitions,
 # common to all tests.
 include("platform-${PLATFORM_NAME}/cmake/platform-options.cmake")
 
-# -----------------------------------------------------------------------------
-# Dependencies #
-
-# Return `xpack_dependencies_folders` with the platform specific dependencies.
-include("platform-${PLATFORM_NAME}/cmake/dependencies-folders.cmake")
-
 # Iterate the platform dependencies and `add_subdirectory()`.
 xpack_add_dependencies_subdirectories("${xpack_dependencies_folders}" "xpacks-bin")
 
-# Add the main library from the root folder.
+# -----------------------------------------------------------------------------
+
+# Add the project library, defined one level above.
 message(VERBOSE "Adding top library...")
 add_subdirectory(".." "top-bin")
 
