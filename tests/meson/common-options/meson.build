@@ -15,9 +15,15 @@
 
 message('Including top common definitions...')
 
-xpack_global_common_args = []
-xpack_global_include_directories = []
-xpack_global_compile_definitions = []
+_local_compile_args = [] # Common C/C++ args.
+_local_compile_c_args = []
+_local_compile_cpp_args = []
+_local_include_directories = []
+_local_sources = []
+_local_compile_definitions = []
+_local_dependencies = []
+_local_link_args = []
+_local_link_with = []
 
 # Assume GCC or clang, for MSVC things are different
 # https://mesonbuild.com/Reference-tables.html#c_compiler-ids
@@ -26,34 +32,34 @@ if c_compiler.get_id() == 'gcc' or c_compiler.get_id().contains('clang')
   # Global compiler preprocessor definitions.
   # Native builds may not use them.
   if get_option('buildtype').contains('debug')
-    xpack_global_compile_definitions += [ '-DDEBUG' ]
-    xpack_global_compile_definitions += [ '-DMICRO_OS_PLUS_DEBUG' ]
-    xpack_global_compile_definitions += [ '-DMICRO_OS_PLUS_TRACE' ]
+    _local_compile_definitions += [ '-DDEBUG' ]
+    _local_compile_definitions += [ '-DMICRO_OS_PLUS_DEBUG' ]
+    _local_compile_definitions += [ '-DMICRO_OS_PLUS_TRACE' ]
   endif
   if get_option('buildtype') == 'release'
-    xpack_global_compile_definitions += [ '-DNDEBUG' ]
+    _local_compile_definitions += [ '-DNDEBUG' ]
   endif
-  xpack_global_compile_definitions += [ '-DMICRO_OS_PLUS_INCLUDE_CONFIG_H' ]
+  _local_compile_definitions += [ '-DMICRO_OS_PLUS_INCLUDE_CONFIG_H' ]
 
   # DO NOT define it globally, one test does not need it!
-  # xpack_global_compile_definitions += ['-DMICRO_OS_PLUS_TRACE']
+  # _local_compile_definitions += ['-DMICRO_OS_PLUS_TRACE']
 
   # Options for both compilers and linkers. When using `-flto`, all options
   # must also be passed to the linker.
 
   if get_option('buildtype') == 'debug'
-    # xpack_global_common_args += [ '-O0' ]
+    # _local_compile_args += [ '-O0' ]
   elif get_option('buildtype') == 'debugoptimized'
-    xpack_global_common_args += [ '-Og' ] # Override -O2
+    _local_compile_args += [ '-Og' ] # Override -O2
   elif get_option('buildtype') == 'minsize'
-    # xpack_global_common_args += [ '-Os' ]
+    # _local_compile_args += [ '-Os' ]
   elif get_option('buildtype') == 'release'
-    # xpack_global_common_args += [ '-O3' ]
+    # _local_compile_args += [ '-O3' ]
   else
-    xpack_global_common_args += [ '-O' ]
+    _local_compile_args += [ '-O' ]
   endif
 
-  xpack_global_common_args += [
+  _local_compile_args += [
     '-fmessage-length=0',
     '-fsigned-char',
 
@@ -62,22 +68,24 @@ if c_compiler.get_id() == 'gcc' or c_compiler.get_id().contains('clang')
     '-fdata-sections'
   ]
 
-  add_global_arguments(
-    xpack_global_include_directories + xpack_global_common_args + xpack_global_compile_definitions,
-
-    language: [ 'c', 'cpp' ]
+  common_options_dependency = declare_dependency(
+    include_directories: include_directories(_local_include_directories),
+    sources: files(_local_sources),
+    compile_args: _local_compile_args + _local_compile_definitions,
+    # When `-flto` is used, the compile options must be passed to the linker too.
+    dependencies: _local_dependencies,
+    link_args: _local_compile_args + _local_link_args,
+    link_with: _local_link_with,
   )
+  common_options_dependency_compile_c_args = _local_compile_c_args
+  common_options_dependency_compile_cpp_args = _local_compile_cpp_args
 
-  foreach xn : xpack_global_include_directories + xpack_global_common_args + xpack_global_compile_definitions
+  foreach xn : _local_include_directories
+    message('G+ -I ' + xn)
+  endforeach
+  foreach xn : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args + _local_link_args
     message('G+ ' + xn)
   endforeach
-
-  # When `-flto` is used, the compile options must be passed to the linker too.
-  add_global_link_arguments(
-    xpack_global_common_args,
-
-    language: [ 'c', 'cpp' ]
-  )
 
   # Warnings must be included from the tests.
 

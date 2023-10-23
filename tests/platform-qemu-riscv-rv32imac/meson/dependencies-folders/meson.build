@@ -12,7 +12,16 @@
 #
 # -----------------------------------------------------------------------------
 
-# Add the platform dependencies.
+# Define a list of folders where the platform dependencies are located.
+
+# -----------------------------------------------------------------------------
+
+# Required in devices-qemu-riscv.
+xpack_device_compile_definition='MICRO_OS_PLUS_DEVICE_QEMU_RISCV_RV32IMAC'
+
+xpack_platform_compile_definition = 'MICRO_OS_PLUS_PLATFORM_QEMU_RISCV_RV32IMAC'
+
+# -----------------------------------------------------------------------------
 
 # The base folder is tests. The order is significative.
 xpack_dependencies_folders = [
@@ -21,10 +30,8 @@ xpack_dependencies_folders = [
   # -
   # 'xpacks/@micro-os-plus/version',
 
-  # -
-  xpack_build_folder_relative_path + '/xpacks/@xpack-3rd-party/arm-cmsis-core',
   # (architecture) -
-  xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/architecture-cortexm',
+  xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/architecture-riscv',
 
   # +(diag_trace, architecture) >semihosting
   xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/semihosting',
@@ -32,8 +39,10 @@ xpack_dependencies_folders = [
   # -
   xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/startup',
 
-  # +(arm_cmsis_core_m, devices_cortexm, startup) >devices_qemu_cortexm
-  xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/devices-qemu-cortexm',
+  # -
+  xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/devices-qemu-riscv',
+
+  'platform-qemu-riscv-rv32imac/meson/platform-options',
 ]
 
 # -----------------------------------------------------------------------------

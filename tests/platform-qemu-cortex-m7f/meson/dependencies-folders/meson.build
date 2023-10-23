@@ -12,7 +12,16 @@
 #
 # -----------------------------------------------------------------------------
 
-# Add the platform dependencies.
+# Define a list of folders where the platform dependencies are located.
+
+# -----------------------------------------------------------------------------
+
+# Required in devices-qemu-cortexm.
+xpack_device_compile_definition='MICRO_OS_PLUS_DEVICE_QEMU_CORTEX_M7'
+
+xpack_platform_compile_definition = 'MICRO_OS_PLUS_PLATFORM_QEMU_CORTEX_M7F'
+
+# -----------------------------------------------------------------------------
 
 # The base folder is tests. The order is significative.
 xpack_dependencies_folders = [
@@ -21,8 +30,10 @@ xpack_dependencies_folders = [
   # -
   # 'xpacks/@micro-os-plus/version',
 
+  # -
+  xpack_build_folder_relative_path + '/xpacks/@xpack-3rd-party/arm-cmsis-core',
   # (architecture) -
-  xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/architecture-riscv',
+  xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/architecture-cortexm',
 
   # +(diag_trace, architecture) >semihosting
   xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/semihosting',
@@ -30,8 +41,10 @@ xpack_dependencies_folders = [
   # -
   xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/startup',
 
-  # -
-  xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/devices-qemu-riscv',
+  # +(arm_cmsis_core_m, devices_cortexm, startup) >devices_qemu_cortexm
+  xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/devices-qemu-cortexm',
+
+  'platform-qemu-cortex-m7f/meson/platform-options',
 ]
 
 # -----------------------------------------------------------------------------

@@ -33,6 +33,12 @@ project('micro-os-plus-micro-test-plus-tests',
 # gnu++2a, gnu++20, vc++14, vc++17, vc++latest
 
 # -----------------------------------------------------------------------------
+# Global definitions #
+
+enable_sample_test = true
+enable_unit_test = true
+
+# -----------------------------------------------------------------------------
 
 fs = import('fs')
 c_compiler = meson.get_compiler('c')
@@ -71,22 +77,20 @@ message('Build type: ' + get_option('buildtype'))
 message('Platform name: ' + xpack_platform_name)
 
 # -----------------------------------------------------------------------------
-## Global definitions ##
-
-enable_sample_test = true
-enable_unit_test = true
 
 # https://mesonbuild.com/Reference-manual.html#subdir
-subdir('meson/common')
+subdir('meson/common-options')
 subdir('xpacks/@micro-os-plus/build-helper/meson/enable-all-warnings')
-subdir('platform-'+ xpack_platform_name + '/meson/common')
+
+# Since the order of processing is significative, include it in dependencies.
+# subdir('platform-'+ xpack_platform_name + '/meson/platform-options')
 
 # -----------------------------------------------------------------------------
-## Dependencies ##
+# Dependencies #
 
-subdir('platform-'+ xpack_platform_name + '/meson/dependencies')
+# Set `xpack_dependencies_folders` with the platform specific dependencies.
+subdir('platform-'+ xpack_platform_name + '/meson/dependencies-folders')
 
-# xpack_dependencies_folders[] must be set in the platform.
 foreach dep: xpack_dependencies_folders
   message('Adding ' + dep + '...')
   subdir(dep)
@@ -95,9 +99,13 @@ endforeach
 # -----------------------------------------------------------------------------
 
 # Include the project library, defined one level above.
+message('Adding top library...')
 subdir('top')
 
-# Include the platform specific code.
+# -----------------------------------------------------------------------------
+# Platform specifics #
+
+# Include the platform specific targets and tests.
 subdir('platform-' + xpack_platform_name)
 
 # -----------------------------------------------------------------------------

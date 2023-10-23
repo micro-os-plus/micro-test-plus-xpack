@@ -29,18 +29,21 @@ message('Processing xPack @micro-os-plus/micro-test-plus...')
 
 # -----------------------------------------------------------------------------
 
-xpack_common_args = []
-xpack_c_args = []
-xpack_cpp_args = []
-xpack_include_directories = []
-xpack_sources = []
-xpack_compile_definitions = []
+_local_compile_args = [] # Common C/C++ args.
+_local_compile_c_args = []
+_local_compile_cpp_args = []
+_local_include_directories = []
+_local_sources = []
+_local_compile_definitions = []
+_local_dependencies = []
+_local_link_args = []
+_local_link_with = []
 
-xpack_include_directories += [
+_local_include_directories += [
   'include',
 ]
 
-xpack_sources += [
+_local_sources += [
   'src/micro-test-plus.cpp',
   'src/test-runner.cpp',
   'src/test-reporter.cpp',
@@ -49,19 +52,21 @@ xpack_sources += [
 
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
 micro_os_plus_micro_test_plus_dependency = declare_dependency(
-  include_directories: include_directories(xpack_include_directories),
-  compile_args: xpack_common_args,
-  sources: files(xpack_sources),
-  dependencies: []
+  include_directories: include_directories(_local_include_directories),
+  compile_args: _local_compile_args,
+  sources: files(_local_sources),
+  dependencies: _local_dependencies,
+  link_args: _local_link_args,
+  link_with: _local_link_with,
 )
+# meson dependencies cannot differentiate c/cpp args; pass them separately.
+micro_os_plus_micro_test_plus_dependency_compile_c_args = _local_compile_c_args
+micro_os_plus_micro_test_plus_dependency_compile_cpp_args = _local_compile_cpp_args
 
-# micro_os_plus_micro_test_plus_dependency_c_args = xpack_c_args
-# micro_os_plus_micro_test_plus_dependency_cpp_args = xpack_cpp_args
-
-foreach name : xpack_include_directories
+foreach name : _local_include_directories
   message('+ -I ' + name)
 endforeach
-foreach name : xpack_sources + xpack_common_args
+foreach name : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args
   message('+ ' + name)
 endforeach
 message('> micro_os_plus_micro_test_plus_dependency')
