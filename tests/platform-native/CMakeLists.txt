@@ -12,7 +12,9 @@
 #
 # -----------------------------------------------------------------------------
 
-# This file creates the platform specific test executables.
+# Create the platform specific test executables.
+
+# -----------------------------------------------------------------------------
 
 message(VERBOSE "Processing 'tests/platform-native'...")
 
@@ -37,13 +39,11 @@ function(add_test_executable name)
   message(VERBOSE "A+ tests/src/${name}.cpp")
 
   target_compile_definitions(${name} PRIVATE
-
     # None.
   )
 
   # The compile options were defined in `platform-native-interface`.
   target_compile_options(${name} PRIVATE
-
     # None.
   )
 

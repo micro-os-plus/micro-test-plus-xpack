@@ -12,6 +12,10 @@
 #
 # -----------------------------------------------------------------------------
 
+# Create the platform specific library.
+
+# -----------------------------------------------------------------------------
+
 message(VERBOSE "Including 'tests/platform-qemu-cortex-a15/cmake/platform.cmake'...")
 
 # -----------------------------------------------------------------------------
@@ -33,7 +37,6 @@ target_include_directories(platform-qemu-cortex-a15-interface INTERFACE
 )
 
 target_sources(platform-qemu-cortex-a15-interface INTERFACE
-
   # None.
 )
 

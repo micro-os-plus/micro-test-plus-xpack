@@ -12,7 +12,9 @@
 #
 # -----------------------------------------------------------------------------
 
-# Create the test applications.
+# Create the platform specific test executables.
+
+# -----------------------------------------------------------------------------
 
 message('Processing tests/platform-qemu-cortex-m4f...')
 

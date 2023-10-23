@@ -12,7 +12,7 @@
 #
 # -----------------------------------------------------------------------------
 
-# Must be called from the project root folder.
+# Must be called from the top CMakeLists.txt.
 enable_testing()
 
 # -----------------------------------------------------------------------------

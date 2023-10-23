@@ -16,9 +16,13 @@
 # options that apply to all platforms.
 # The library must be linked to the platform.
 
+# -----------------------------------------------------------------------------
+
 message(VERBOSE "Including top common compile & link definitions...")
 
 # -----------------------------------------------------------------------------
+
+# A little interface library without source files or headers.
 add_library(micro-os-plus-common-options-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # https://cmake.org/cmake/help/v3.20/command/add_compile_definitions.html
@@ -58,8 +62,6 @@ target_compile_options(micro-os-plus-common-options-interface INTERFACE
 )
 
 target_include_directories(micro-os-plus-common-options-interface INTERFACE
-
-  # Folders are relative to `tests`.
   # None.
 )
 

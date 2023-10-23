@@ -7,14 +7,19 @@ QEMU "mps2-an385" emulated board (which is a Cortex-M3 board).
 
 The following folders should be passed to the compiler during the build:
 
-- `include-config`
-- `include-platform`
+- `include`
 
 The header files to be included in user projects are:
 
 ```cpp
-#include <micro-os-plus/config.h>
 #include <micro-os-plus/platform.h>
+```
+
+Internally, the following file with platform specific configurations
+is included in `micro-os-plus/platform.h`:
+
+```cpp
+#include <micro-os-plus/platform/config.h>
 ```
 
 ## Source files

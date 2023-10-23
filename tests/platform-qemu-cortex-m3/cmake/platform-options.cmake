@@ -12,7 +12,9 @@
 #
 # -----------------------------------------------------------------------------
 
-# This file creates the platform specific library.
+# Create the platform specific library.
+
+# -----------------------------------------------------------------------------
 
 message(VERBOSE "Including 'tests/platform-qemu-cortex-m3/cmake/platform.cmake'...")
 
@@ -35,7 +37,6 @@ target_include_directories(platform-qemu-cortex-m3-interface INTERFACE
 )
 
 target_sources(platform-qemu-cortex-m3-interface INTERFACE
-
   # None.
 )
 

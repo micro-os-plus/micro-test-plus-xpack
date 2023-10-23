@@ -12,6 +12,10 @@
 #
 # -----------------------------------------------------------------------------
 
+# Create the platform specific library.
+
+# -----------------------------------------------------------------------------
+
 message(VERBOSE "Including 'tests/platform-qemu-cortex-m4f/cmake/platform.cmake'...")
 
 # -----------------------------------------------------------------------------
@@ -33,7 +37,6 @@ target_include_directories(platform-qemu-cortex-m4f-interface INTERFACE
 )
 
 target_sources(platform-qemu-cortex-m4f-interface INTERFACE
-
   # None.
 )
 

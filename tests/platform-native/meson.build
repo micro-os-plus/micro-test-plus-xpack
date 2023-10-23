@@ -12,7 +12,9 @@
 #
 # -----------------------------------------------------------------------------
 
-# This file creates the platform specific test executables.
+# Create the platform specific test executables.
+
+# -----------------------------------------------------------------------------
 
 message('Processing tests/platform-native...')
 
@@ -84,7 +86,7 @@ foreach name : test_names
   set_variable(name.underscorify(), exe)
 
   # Native tests do not need size, list, hex targets.
-  
+
 endforeach
 
 # -----------------------------------------------------------------------------

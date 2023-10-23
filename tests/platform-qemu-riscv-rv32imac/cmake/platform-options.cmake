@@ -12,6 +12,10 @@
 #
 # -----------------------------------------------------------------------------
 
+# Create the platform specific library.
+
+# -----------------------------------------------------------------------------
+
 message(VERBOSE "Including 'tests/platform-qemu-riscv-rv32imac/cmake/platform.cmake'...")
 
 # -----------------------------------------------------------------------------
@@ -33,7 +37,6 @@ target_include_directories(platform-qemu-riscv-rv32imac-interface INTERFACE
 )
 
 target_sources(platform-qemu-riscv-rv32imac-interface INTERFACE
-
   # None.
 )
 

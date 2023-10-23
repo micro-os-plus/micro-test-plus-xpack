@@ -2,7 +2,27 @@
 
 Support files for building application to run as native processes.
 
-A few files, with minimal content, are added:
+## Include folders
 
-- `include/micro-os-plus/config.h`
-- `include/micro-os-plus/platform.h`
+The following folders should be passed to the compiler during the build:
+
+- `include`
+
+The header files to be included in user projects are:
+
+```cpp
+#include <micro-os-plus/platform.h>
+```
+
+Internally, the following file with platform specific configurations
+is included in `micro-os-plus/platform.h`:
+
+```cpp
+#include <micro-os-plus/platform/config.h>
+```
+
+## Source files
+
+The source files to be added to user projects are:
+
+- none

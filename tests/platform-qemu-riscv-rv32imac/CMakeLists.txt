@@ -12,6 +12,10 @@
 #
 # -----------------------------------------------------------------------------
 
+# Create the platform specific test executables.
+
+# -----------------------------------------------------------------------------
+
 message(VERBOSE "Processing 'tests/platform-qemu-riscv-rv32imac'...")
 
 # -----------------------------------------------------------------------------
@@ -47,12 +51,10 @@ function(add_test_executable name)
   message(VERBOSE "A+ tests/src/${name}.cpp")
 
   target_compile_definitions(${name} PRIVATE
-
     # None.
   )
 
   target_compile_options(${name} PRIVATE
-
     # None.
   )
 
