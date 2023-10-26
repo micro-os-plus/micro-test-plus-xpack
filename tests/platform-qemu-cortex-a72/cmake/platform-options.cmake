@@ -45,7 +45,7 @@ target_compile_definitions(platform-qemu-cortex-a72-interface INTERFACE
 
   # Full POSIX conformance:
   # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap02.html#tag_02_01_03
-  # _POSIX_C_SOURCE=200809L
+  _POSIX_C_SOURCE=200809L
 
   # For S_IREAD
   _GNU_SOURCE
