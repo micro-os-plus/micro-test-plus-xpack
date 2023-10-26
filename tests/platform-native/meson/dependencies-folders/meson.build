@@ -16,6 +16,9 @@
 
 # -----------------------------------------------------------------------------
 
+# Informative.
+xpack_device_compile_definition = 'MICRO_OS_PLUS_DEVICE_NATIVE'
+
 xpack_platform_compile_definition = 'MICRO_OS_PLUS_PLATFORM_NATIVE'
 
 # -----------------------------------------------------------------------------
