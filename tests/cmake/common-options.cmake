@@ -18,7 +18,7 @@
 
 # -----------------------------------------------------------------------------
 
-message(VERBOSE "Including top common compile & link definitions...")
+message(VERBOSE "Including tests/cmake/common-options.cmake...")
 
 # -----------------------------------------------------------------------------
 

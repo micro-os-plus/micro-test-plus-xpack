@@ -13,7 +13,7 @@
 # -----------------------------------------------------------------------------
 ## Common definitions for all platforms ##
 
-message('Including top common definitions...')
+message('Including tests/meson/common-options/meson.build...')
 
 _local_compile_args = [] # Common C/C++ args.
 _local_compile_c_args = []

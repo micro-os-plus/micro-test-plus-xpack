@@ -16,7 +16,7 @@
 
 # -----------------------------------------------------------------------------
 
-message('Including platform-qemu-cortex-a15 common definitions...')
+message('Including tests/' + xpack_platform_name + '/meson.build...')
 
 # -----------------------------------------------------------------------------
 

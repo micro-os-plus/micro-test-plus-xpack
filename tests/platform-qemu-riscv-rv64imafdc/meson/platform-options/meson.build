@@ -16,7 +16,7 @@
 
 # -----------------------------------------------------------------------------
 
-message('Including platform-qemu-riscv-rv64imafdc common definitions...')
+message('Including tests/' + xpack_platform_name + '/meson.build...')
 
 # -----------------------------------------------------------------------------
 

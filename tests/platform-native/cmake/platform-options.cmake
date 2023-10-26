@@ -16,7 +16,7 @@
 
 # -----------------------------------------------------------------------------
 
-message(VERBOSE "Including 'tests/platform-native/cmake/platform.cmake'...")
+message(VERBOSE "Including tests/${PLATFORM_NAME}/platform-options.cmake...")
 
 # -----------------------------------------------------------------------------
 

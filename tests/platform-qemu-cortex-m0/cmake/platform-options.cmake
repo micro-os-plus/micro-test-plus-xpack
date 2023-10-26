@@ -16,7 +16,7 @@
 
 # -----------------------------------------------------------------------------
 
-message(VERBOSE "Including 'tests/platform-qemu-cortex-m0/cmake/platform.cmake'...")
+message(VERBOSE "Including tests/${PLATFORM_NAME}/platform-options.cmake...")
 
 # -----------------------------------------------------------------------------
 

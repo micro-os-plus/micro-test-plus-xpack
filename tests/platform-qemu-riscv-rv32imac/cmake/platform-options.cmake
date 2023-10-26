@@ -16,7 +16,7 @@
 
 # -----------------------------------------------------------------------------
 
-message(VERBOSE "Including 'tests/platform-qemu-riscv-rv32imac/cmake/platform.cmake'...")
+message(VERBOSE "Including tests/${PLATFORM_NAME}/platform-options.cmake...")
 
 # -----------------------------------------------------------------------------
 

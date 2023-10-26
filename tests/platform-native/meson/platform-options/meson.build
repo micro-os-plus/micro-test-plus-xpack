@@ -16,7 +16,7 @@
 
 # -----------------------------------------------------------------------------
 
-message('Including platform-native common definitions...')
+message('Including tests/' + xpack_platform_name + '/meson.build...')
 
 # -----------------------------------------------------------------------------
 

@@ -16,7 +16,7 @@
 
 # -----------------------------------------------------------------------------
 
-message('Including platform-qemu-riscv-rv32imac common definitions...')
+message('Including tests/' + xpack_platform_name + '/meson.build...')
 
 # -----------------------------------------------------------------------------
 
