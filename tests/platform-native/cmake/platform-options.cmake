@@ -72,7 +72,7 @@ target_compile_definitions(platform-native-interface INTERFACE
   _POSIX_C_SOURCE=200809L
 )
 
-set(xpack_platform_common_args
+set(_local_common_options
   -Werror
 
   # Apple clang 13 does not support -Wunused-but-set-variable
@@ -82,7 +82,7 @@ set(xpack_platform_common_args
 )
 
 if("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
-  list(APPEND xpack_platform_common_args
+  list(APPEND _local_common_options
     $<$<C_COMPILER_ID:Clang,AppleClang>:-Wno-used-but-marked-unused>
   )
 endif()
@@ -92,7 +92,7 @@ endif()
 # Unfortunatelly in a container it shows aarch64 instead of armv7l.
 
 # -flto seems ok now with clang too, but on Linux it requires -fuse-ld=lld
-list(APPEND xpack_platform_common_args
+list(APPEND _local_common_options
   $<$<CONFIG:Release,MinSizeRel>:-flto>
 )
 
@@ -112,14 +112,14 @@ list(APPEND xpack_platform_common_args
 # 9  0x7ff8068c2c0f  _pthread_wqthread + 257
 # ld: Assertion failed: (resultIndex < sectData.atoms.size()), function findAtom, file Relocations.cpp, line 1336.
 # collect2: error: ld returned 1 exit status
-list(APPEND xpack_platform_common_args
+list(APPEND _local_common_options
 
   # $<$<AND:$<C_COMPILER_ID:GNU>,$<PLATFORM_ID:Darwin>>:-no-pie>
 )
 
 if("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
   # https://libcxx.llvm.org/UsingLibcxx.html
-  list(APPEND xpack_platform_common_args
+  list(APPEND _local_common_options
     $<$<COMPILE_LANGUAGE:CXX>:-stdlib=libc++>
   )
 endif()
@@ -133,7 +133,7 @@ endif()
 # ~~^
 # 2 errors generated.
 target_compile_options(platform-native-interface INTERFACE
-  ${xpack_platform_common_args}
+  ${_local_common_options}
 )
 
 # On macOS, GCC 11 gets confused.
@@ -143,7 +143,7 @@ target_link_options(platform-native-interface INTERFACE
   # -v
 
   # When `-flto` is used, the compile options must be passed to the linker too.
-  ${xpack_platform_common_args}
+  ${_local_common_options}
 
   # On Windows configuring the path to access the compiler DLLs is tedious,
   # it is much easier to build everything static.
