@@ -68,7 +68,6 @@ target_compile_definitions(platform-native-interface INTERFACE
 
   # Full POSIX conformance:
   # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap02.html#tag_02_01_03
-  # $<$<NOT:$<C_COMPILER_ID:Clang,AppleClang>>:_POSIX_C_SOURCE=200809L>
   _POSIX_C_SOURCE=200809L
 )
 
