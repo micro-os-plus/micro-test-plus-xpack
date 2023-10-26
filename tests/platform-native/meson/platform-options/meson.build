@@ -20,6 +20,10 @@ message('Including tests/' + xpack_platform_name + '/meson.build...')
 
 # -----------------------------------------------------------------------------
 
+assert(is_variable('xpack_platform_compile_definition'), 'Define xpack_platform_compile_definition in ' + xpack_platform_name + '/meson.build')
+
+# -----------------------------------------------------------------------------
+
 if build_machine.system() == 'linux' or build_machine.system() == 'darwin'
 
   _local_cxx_library_path = run_command(

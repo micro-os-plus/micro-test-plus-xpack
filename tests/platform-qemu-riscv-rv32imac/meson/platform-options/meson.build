@@ -20,6 +20,10 @@ message('Including tests/' + xpack_platform_name + '/meson.build...')
 
 # -----------------------------------------------------------------------------
 
+assert(is_variable('xpack_platform_compile_definition'), 'Define xpack_platform_compile_definition in ' + xpack_platform_name + '/meson.build')
+
+# -----------------------------------------------------------------------------
+
 _local_compile_args = [] # Common C/C++ args.
 _local_compile_c_args = []
 _local_compile_cpp_args = []
