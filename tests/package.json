@@ -105,8 +105,8 @@
         "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-cmake-gcc11",
         "xpm run test-native-cmake-clang16",
         "xpm run test-native-cmake-clang15",
-        "xpm run test-native-cmake-clang14",
-        "xpm run test-native-cmake-clang13"
+        "{% if os.platform == 'linux' %}echo {% endif %}xpm run test-native-cmake-clang14",
+        "{% if os.platform == 'linux' %}echo {% endif %}xpm run test-native-cmake-clang13"
       ],
       "test-native-meson": [
         "{% if os.platform == 'darwin' %}xpm run test-native-meson-sys{% endif %}",
@@ -115,8 +115,8 @@
         "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-meson-gcc11",
         "xpm run test-native-meson-clang16",
         "xpm run test-native-meson-clang15",
-        "xpm run test-native-meson-clang14",
-        "xpm run test-native-meson-clang13"
+        "{% if os.platform == 'linux' %}echo {% endif %}xpm run test-native-meson-clang14",
+        "{% if os.platform == 'linux' %}echo {% endif %}xpm run test-native-meson-clang13"
       ],
       "test-cortex-cmake": [
         "xpm run test-qemu-cortex-m0-cmake",
