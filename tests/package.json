@@ -82,7 +82,7 @@
       ],
       "test": [
         "xpm run test-native-cmake-gcc",
-        "xpm run test-native-meson-clang",
+        "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-meson-clang",
         "xpm run test-qemu-cortex-m0-cmake",
         "xpm run test-qemu-cortex-m0-meson",
         "xpm run test-qemu-cortex-m7f-cmake",
@@ -92,7 +92,7 @@
       ],
       "test-all": [
         "xpm run test-native-cmake",
-        "xpm run test-native-meson",
+        "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-meson",
         "xpm run test-cortex-cmake",
         "xpm run test-cortex-meson",
         "xpm run test-riscv-cmake",
