@@ -113,7 +113,7 @@ list(APPEND _local_common_options
 # collect2: error: ld returned 1 exit status
 list(APPEND _local_common_options
 
-  # $<$<AND:$<C_COMPILER_ID:GNU>,$<PLATFORM_ID:Darwin>>:-no-pie>
+  $<$<AND:$<C_COMPILER_ID:GNU>,$<PLATFORM_ID:Darwin>>:-no-pie>
 )
 
 if("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")

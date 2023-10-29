@@ -152,6 +152,14 @@ if build_machine.system() == 'darwin'
   _local_link_args += [
     '-Wl,-dead_strip'
   ]
+
+  # Workaround for new linker bug in CLT/Xcode 15.0.
+  # ld: Assertion failed: (resultIndex < sectData.atoms.size()), function findAtom, file Relocations.cpp, line 1336.
+  if c_compiler.get_id() == 'gcc'
+    _local_link_args += [
+      '-no-pie'
+    ]
+  endif
 elif build_machine.system() == 'linux'
   _local_link_args += _local_rpath_options_list
   _local_link_args += [
