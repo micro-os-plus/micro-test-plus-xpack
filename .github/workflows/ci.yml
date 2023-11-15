@@ -79,18 +79,25 @@ jobs:
 
     - name: Run test-qemu-cortex-m0-cmake
       run: |
-        xpm install --config qemu-cortex-m0-cmake-debug -C tests
-        xpm install --config qemu-cortex-m0-cmake-release -C tests
+        xpm install --config qemu-cortex-m0-cmake-gcc-debug -C tests
+        xpm install --config qemu-cortex-m0-cmake-gcc-release -C tests
         xpm run test-qemu-cortex-m0-cmake -C tests
 
     - name: Run test-qemu-cortex-m7f-cmake
       run: |
-        xpm install --config qemu-cortex-m7f-cmake-debug -C tests
-        xpm install --config qemu-cortex-m7f-cmake-release -C tests
+        xpm install --config qemu-cortex-m7f-cmake-gcc-debug -C tests
+        xpm install --config qemu-cortex-m7f-cmake-gcc-release -C tests
         xpm run test-qemu-cortex-m7f-cmake -C tests
 
     - name: Run test-qemu-riscv-rv32imac-cmake
       run: |
-        xpm install --config qemu-riscv-rv32imac-cmake-debug -C tests
-        xpm install --config qemu-riscv-rv32imac-cmake-release -C tests
+        xpm install --config qemu-riscv-rv32imac-cmake-gcc-debug -C tests
+        xpm install --config qemu-riscv-rv32imac-cmake-gcc-release -C tests
         xpm run test-qemu-riscv-rv32imac-cmake -C tests
+
+    - name: Run test-qemu-cortex-m0-meson
+      run: |
+        xpm install --config qemu-cortex-m0-meson-gcc-debug -C tests
+        xpm install --config qemu-cortex-m0-meson-gcc-release -C tests
+        xpm run test-qemu-cortex-m0-meson -C tests
+
