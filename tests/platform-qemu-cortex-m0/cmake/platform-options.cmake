@@ -100,9 +100,6 @@ target_link_options(platform-qemu-cortex-m0-interface INTERFACE
   # -specs=nano.specs
   -Wl,--gc-sections
 
-  # .elf has a LOAD segment with RWX permissions (GCC 12)
-  -Wl,--no-warn-rwx-segment
-
   # Including files from other packages is not very nice, but functional.
   # Use absolute paths, otherwise set -L.
   -T${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/devices-qemu-cortexm/linker-scripts/mem-mps2-an385.ld
@@ -110,6 +107,13 @@ target_link_options(platform-qemu-cortex-m0-interface INTERFACE
 
   # -T${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/architecture-cortexm/linker-scripts/sections-ram.ld
 )
+
+if("${CMAKE_C_COMPILER_VERSION}" VERSION_GREATER_EQUAL "12.0.0")
+  target_link_options(platform-qemu-cortex-m0-interface INTERFACE
+    # .elf has a LOAD segment with RWX permissions (GCC 12)
+    -Wl,--no-warn-rwx-segment
+  )
+endif()
 
 target_link_libraries(platform-qemu-cortex-m0-interface INTERFACE
   micro-os-plus::common-options
