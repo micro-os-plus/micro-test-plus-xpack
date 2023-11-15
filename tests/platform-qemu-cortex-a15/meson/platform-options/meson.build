@@ -103,14 +103,18 @@ _local_link_args += [
 
   '-Wl,--gc-sections',
 
-  # .elf has a LOAD segment with RWX permissions (GCC 12)
-  '-Wl,--no-warn-rwx-segments',
-
   # Path are relative to the build folder.
   '-Txpacks/@micro-os-plus/devices-qemu-aarch32/linker-scripts/mem-cortex-a15.ld',
   # '-Txpacks/@micro-os-plus/architecture-aarch32/linker-scripts/sections-flash.ld',
   '-Txpacks/@micro-os-plus/architecture-aarch32/linker-scripts/sections-ram.ld',
 ]
+
+if c_compiler.version().version_compare('>=12.0.0')
+  _local_link_args += [
+    # .elf has a LOAD segment with RWX permissions (GCC 12)
+    '-Wl,--no-warn-rwx-segments',
+  ]
+endif
 
 _local_dependencies += [
   common_options_dependency,
