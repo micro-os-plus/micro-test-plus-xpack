@@ -605,7 +605,8 @@ expectations fail.
 Both syntaxes are functional, and, once the differences understood,
 the issue is a matter of personal preferences.
 
-For example, the µOS++ projects favour explicit comparator functions.
+@note
+The µOS++ projects favour explicit comparator functions.
 
 ### Explicit namespace
 
@@ -891,6 +892,7 @@ without custom comparators and operators
 the basic functionality of testing various conditions, but without
 the optional features of displaying the actual values compared.
 
-Also, please note that the memory footprint on `debug` (built with `-O0`),
+@note
+The memory footprint on `debug` (built with `-O0`),
 is significantly larger than on `release`. If necessary, the optimization
 for the `debug` build can be increased to `-Og`, to save some memory.
