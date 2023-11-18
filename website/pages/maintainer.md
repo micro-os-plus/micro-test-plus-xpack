@@ -1,15 +1,17 @@
-[![license](https://img.shields.io/badge/license-MIT-blue)](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/LICENSE)
-[![CI on Push](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/ci.yml/badge.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/ci.yml)
-[![GitHub issues](https://img.shields.io/github/issues/micro-os-plus/micro-test-plus-xpack.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
-[![GitHub pulls](https://img.shields.io/github/issues-pr/micro-os-plus/micro-test-plus-xpack.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/pulls)
+# Maintainer Info
 
-# Maintainer info
+@tableofcontents
+
+[![license](https://img.shields.io/github/license/micro-os-plus/micro-test-plus-xpack)](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/LICENSE)
+[![CI on Push](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/ci.yml/badge.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/ci.yml)
+[![GitHub issues](https://img.shields.io/github/issues/micro-os-plus/micro-test-plus-xpack.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/issues)
+[![GitHub pulls](https://img.shields.io/github/issues-pr/micro-os-plus/micro-test-plus-xpack.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/pulls)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fmicro-os-plus.github.io%2Fmicro-test-plus-xpack%2F)](https://micro-os-plus.github.io/micro-test-plus-xpack/)
 
 ## Project repository
 
-The project is hosted on GitHub as:
-
-- <https://github.com/micro-os-plus/micro-test-plus-xpack.git>
+The project uses Git and is hosted on GitHub as
+<https://github.com/micro-os-plus/micro-test-plus-xpack.git>.
 
 To clone the stable branch (`xpack`), run the following commands in a
 terminal (on Windows use the _Git Bash_ console):
@@ -33,10 +35,10 @@ git clone \
   ~/Work/micro-os-plus/micro-test-plus-xpack.git
 ```
 
-Or, if the repo was already cloned:
+To link it to the central xPack store:
 
 ```sh
-git -C ~/Work/micro-os-plus/micro-test-plus-xpack.git pull
+xpm link -C ~/Work/micro-os-plus/micro-test-plus-xpack.git
 ```
 
 ## Get helper sources
@@ -74,7 +76,26 @@ Code formatting is done using `clang-format --style=file`, either manually
 from a script, or automatically from Visual Studio Code, or the Eclipse
 CppStyle plug-in.
 
-Always reformat the source files that were changed.
+@note
+Always reformat the source files that were changed before committing
+them to the repository.
+
+## How to update the website
+
+The project [website](https://micro-os-plus.github.io/micro-test-plus-xpack/)
+is automatically generated and published by the
+`publish-github-pages.yml` workflow on Git push. The GitHub Action that
+runs the workflow is
+<https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/publish-github-pages.yml>.
+
+@todo When ready, restrict the workflow to run only on pushes to the
+`xpack` branch.
+
+For development, there are two xPack actions that can be used
+to automate the workflow:
+
+- `doxygen` - to build the site with Doxygen locally
+- `browser` - to start the default browser with the `website/html` folder
 
 ## How to make new releases
 
@@ -100,16 +121,20 @@ Determine the upstream version (like `3.1.1`) and eventually update the
 
 Check GitHub issues and pull requests:
 
-- <https://github.com/micro-os-plus/micro-test-plus-xpack/issues/>
+- <https://github.com/micro-os-plus/micro-test-plus-xpack/issues>
 
-and fix them; assign them to a milestone (like `3.1.1`).
+and fix them; assign them to a milestone (like `3.1.1`, without **v**).
 
-### Update `README-MAINTAINER.md`
+### Update 'website/pages/maintainer.md'
 
-Update the `README-MAINTAINER.md` file to reflect the changes
+Update the `maintainer.md` file to reflect the changes
 related to the new version.
 
-### Update `CHANGELOG.md`
+### Update 'website/config.doxyfile'
+
+Update the `PROJECT_NUMBER` variable to the new version.
+
+### Update 'CHANGELOG.md'
 
 - open the `CHANGELOG.md` file
 - check if all previous fixed issues are in
@@ -123,15 +148,15 @@ related to the new version.
 
 ### Manual tests
 
-To run the tests manually on the local machine:
+To run the tests manually on the local development machine:
 
 ```sh
-xpm run deep-clean -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
-xpm run install-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
-xpm run test-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run deep-clean -C ~/Work/micro-os-plus/micro-test-plus-xpack.git
+xpm run install-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git
+xpm run test-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git
 ```
 
-### Publish on the npmjs.com server
+### Publish on the 'npmjs.com' server
 
 - select the `xpack-develop` branch
 - commit all changes
@@ -153,7 +178,8 @@ and macOS Apple Silicon.
 
 For this:
 
-- start the `~/actions-runners/micro-os-plus/run.sh &` runner on `xbbma` and `xbbla`
+- start the `~/actions-runners/micro-os-plus/run.sh &` runner on
+  `xbbma`, `xbbla64` and `xbbla32`
 - ensure that the `xpack-develop` branch is pushed
 - run the `trigger-workflow-test-all` action
 - wait for the **test-all** job to complete
@@ -168,7 +194,7 @@ The version is visible at:
 
 - <https://www.npmjs.com/package/@micro-os-plus/micro-test-plus?activeTab=versions>
 
-## Update the repo
+### Update the repo
 
 When the package is considered stable:
 
@@ -177,7 +203,7 @@ When the package is considered stable:
 - push to GitHub
 - select `xpack-develop`
 
-## Tag the npm package as `latest`
+### Tag the npm package as 'latest'
 
 When the release is considered stable, promote it as `latest`:
 
@@ -192,3 +218,9 @@ When the release is considered stable, promote it as `latest`:
 - paste the release name like **µOS++ µTest++ v3.1.1 released**
 - paste the link to the npmjs release
 - click the **Tweet** button
+
+## TODO
+
+@todo Possibly split the content into separate classes.
+
+@todo Make a new clang15 release to generate runnable binaries to silence meson.
