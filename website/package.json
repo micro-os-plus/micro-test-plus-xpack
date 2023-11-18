@@ -28,6 +28,9 @@
         "npm install",
         "xpm install"
       ],
+      "link-deps": [
+        "xpm link @micro-os-plus/build-helper"
+      ],
       "doxygen": [
         "del-cli html",
         "doxygen config.doxyfile"
