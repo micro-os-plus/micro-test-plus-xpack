@@ -9,8 +9,8 @@
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fmicro-os-plus.github.io%2Fmicro-test-plus-xpack%2F)](https://micro-os-plus.github.io/micro-test-plus-xpack/)
 
 The **µTest++** project (_micro test plus_) is a source code library that
-provides a small memory footprint
-testing framework, intended for running unit tests on embedded
+provides a **small memory footprint**
+testing framework, intended for running unit tests on **embedded**
 platforms.
 
 The **open-source** project is hosted on **GitHub** as
