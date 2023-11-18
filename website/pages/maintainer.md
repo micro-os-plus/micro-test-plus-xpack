@@ -138,8 +138,8 @@ Update the `PROJECT_NUMBER` variable to the new version.
 
 - open the `CHANGELOG.md` file
 - check if all previous fixed issues are in
-- add a new entry like _* v3.1.1_
-- commit with a message like _prepare v3.1.1_
+- add a new entry like `* v3.1.1`
+- commit with a message like `prepare v3.1.1`
 
 ### Push changes
 
