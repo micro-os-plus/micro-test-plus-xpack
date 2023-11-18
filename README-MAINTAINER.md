@@ -39,10 +39,34 @@ Or, if the repo was already cloned:
 git -C ~/Work/micro-os-plus/micro-test-plus-xpack.git pull
 ```
 
+## Get helper sources
+
+The project has a dependency to a common **helper**; clone the
+`xpack-develop` branch and link it to the central xPacks store:
+
+```sh
+rm -rf ~/Work/micro-os-plus/build-helper-xpack.git && \
+mkdir -p ~/Work/micro-os-plus && \
+git clone \
+  --branch xpack-develop \
+  https://github.com/micro-os-plus/build-helper-xpack.git \
+  ~/Work/micro-os-plus/build-helper-xpack.git
+```
+
+Or, if the repo was already cloned:
+
+```sh
+git -C ~/Work/micro-os-plus/build-helper-xpack.git pull
+xpm link -C ~/Work/micro-os-plus/build-helper-xpack.git
+```
+
 ## Prerequisites
 
 A recent [xpm](https://xpack.github.io/xpm/), which is a portable
 [Node.js](https://nodejs.org/) command line application.
+
+To run the native tests, a C++ development environment is required.
+On macOS install Command Line Tools, on Ubuntu `build-essential`.
 
 ## Code formatting
 
