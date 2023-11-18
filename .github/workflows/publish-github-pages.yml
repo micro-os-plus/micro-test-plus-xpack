@@ -73,9 +73,9 @@ jobs:
           curl https://www.doxygen.nl/files/doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz --output doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz
           tar xf doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz
           ls -l doxygen-$DOXYGEN_VERSION
-          mkdir -pv .local/bin
-          ln -sv $(pwd)/doxygen-$DOXYGEN_VERSION/bin/doxygen .local/bin/doxygen
-          ls -l
+          mkdir -pv website/.local/bin
+          ln -sv $(pwd)/doxygen-$DOXYGEN_VERSION/bin/doxygen website/.local/bin/doxygen
+          ls -l website
 
       - name: Install xpm@${{ matrix.xpm-version }}
         run: |
