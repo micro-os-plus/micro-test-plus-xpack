@@ -13,7 +13,7 @@ provides a small memory footprint
 testing framework, intended for running unit tests on embedded
 platforms.
 
-The **open-source** project is hosted on GitHub as
+The **open-source** project is hosted on **GitHub** as
 [micro-os-plus/micro-test-plus-xpack](https://github.com/micro-os-plus/micro-test-plus-xpack),
 and can be installed as an
 [xpm](https://xpack.github.io/xpm/)/[npm](https://docs.npmjs.com) dependency.
