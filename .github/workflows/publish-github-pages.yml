@@ -85,7 +85,7 @@ jobs:
       - name: Install dependencies
         # For the build helper and the Doxygen theme.
         run: |
-          xpm install
+          xpm install -C website
 
       - name: Build site with Doxygen
         run: .local/bin/doxygen website/config.doxyfile
