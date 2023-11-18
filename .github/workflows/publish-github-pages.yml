@@ -3,8 +3,8 @@ name: GitHub Pages
 
 # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
 
-# https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/publish-github-pages.yml
-# https://micro-os-plus.github.io/utils-lists-xpack/
+# https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/publish-github-pages.yml
+# https://micro-os-plus.github.io/micro-test-plus-xpack/
 
 # TODO: remove xpack-develop
 
