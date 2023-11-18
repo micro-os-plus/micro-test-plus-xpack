@@ -87,7 +87,7 @@ jobs:
           xpm install -C website
 
       - name: Build site with Doxygen
-        run: .local/bin/doxygen website/config.doxyfile
+        run: .local/bin/doxygen config.doxyfile
 
       - name: Configure Pages
         # https://github.com/actions/configure-pages
