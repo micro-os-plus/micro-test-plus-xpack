@@ -24,7 +24,6 @@ on:
       - 'src/**'
       - 'include/**'
       - '.github/workflows/publish-github-pages.yml'
-      - 'package.json'
 
 # Allow one concurrent deployment
 # https://docs.github.com/en/actions/using-jobs/using-concurrency
