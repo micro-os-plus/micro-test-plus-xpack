@@ -48,6 +48,17 @@ No `@example`.
 
 The project uses the custom <https://jothepro.github.io/doxygen-awesome-css/> theme.
 
+
 ## TODO
 
 - nothing
+
+## Pending issues
+
+### doxygen
+
+- [Detected potential recursive class relation](https://github.com/doxygen/doxygen/issues/9915)
+
+### doxygen-awesome-css
+
+- [Missing line numbers](https://github.com/jothepro/doxygen-awesome-css/issues/128)
