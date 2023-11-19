@@ -17,7 +17,7 @@ in reverse chronological order, are:
 Major rework, with full set of comparators, exceptions,
 function templates for test cases and class templates for test suites.
 
-### v2.3.x (2022-92-19)
+### v2.3.x (2022-02-19)
 
 Deprecate `run_test_case(func, name)` in favour of
 `run_test_case(name, func)`, to prepare for variadic templates.
