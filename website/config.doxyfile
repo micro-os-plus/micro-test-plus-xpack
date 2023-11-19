@@ -84,10 +84,9 @@ WARN_AS_ERROR = YES
 
 # The order is preserved in the side bar.
 
-# ../src \
-# ../include \
-
 INPUT = \
+../include \
+../src \
 pages/home.md \
 pages/install.md \
 pages/developer.md \
