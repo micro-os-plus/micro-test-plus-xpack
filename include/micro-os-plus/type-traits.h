@@ -56,10 +56,15 @@ namespace micro_os_plus::micro_test_plus
       using type = T;
     };
 
+#if defined(__DOXYGEN__)
+    // error: Detected potential recursive class relation between class micro_os_plus::micro_test_plus::type_traits::function_traits and base class micro_os_plus::micro_test_plus::type_traits::function_traits< decltype(&T::operator())>!
+    // https://github.com/doxygen/doxygen/issues/9915
+#else
     template <class T>
     struct function_traits : function_traits<decltype (&T::operator())>
     {
     };
+#endif
 
     template <class R, class... Args_T>
     struct function_traits<R (*) (Args_T...)>
