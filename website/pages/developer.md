@@ -609,10 +609,13 @@ The µOS++ projects favour explicit comparator functions.
 
 ### Explicit namespace
 
-If for any reasons, the definitions in the `micro_test_plus` namespace
-interfere with application definitions, it is recommended to
-use the comparator functions, which can be more easily invoked
-with explicit namespaces, possibly aliased to shorter names.
+In complex projects, the definitions in the
+`micro_test_plus` namespace might interfere with application definitions.
+
+@note
+To avoid names clashes, it is recommended to
+use the comparator functions with explicit namespaces,
+possibly aliased to shorter names.
 
 Example:
 
