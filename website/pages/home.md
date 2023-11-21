@@ -15,7 +15,7 @@ platforms.
 
 The **open-source** project is hosted on **GitHub** as
 [micro-os-plus/micro-test-plus-xpack](https://github.com/micro-os-plus/micro-test-plus-xpack),
-and can be installed as an
+and can be integrated as an
 [xpm](https://xpack.github.io/xpm/)/[npm](https://docs.npmjs.com) dependency.
 
 @htmlonly

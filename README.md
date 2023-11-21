@@ -13,7 +13,7 @@ platforms.
 
 ## [Project documentation](https://micro-os-plus.github.io/micro-test-plus-xpack/)
 
-For information on how to install and use this library, please refer to the
+For information on how to integrate and use this library, please refer to the
 [project documentation](https://micro-os-plus.github.io/micro-test-plus-xpack/) web site.
 
 ## License
