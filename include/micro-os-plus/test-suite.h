@@ -44,14 +44,14 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   /**
-   * @brief Test suites are classes that represent a named group of
-   * test cases which self registers to the runner.
+   * @brief Base class for all test suites.
    */
   class test_suite_base
   {
   public:
     /**
-     * @brief Construct the default suite used in main().
+     * @brief Construct a test suite.
+     * @param [in] name The test suite name.
      */
     test_suite_base (const char* name);
 
@@ -69,24 +69,38 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Run the sequence of test cases in the suite.
+     * @par Parameters
+     *	None.
+     * @par Returns
+     *  Nothing.
      */
     virtual void
     run (void);
 
     /**
      * @brief Mark the beginning of a named test case.
+     * @param [in] name The test case name.
+     * @par Returns
+     *  Nothing.
      */
     void
     begin_test_case (const char* name);
 
     /**
      * @brief Mark the end of a test case.
+     * @par Parameters
+     *	None.
+     * @par Returns
+     *  Nothing.
      */
     void
     end_test_case (void);
 
     /**
      * @brief Get the suite name.
+     * @par Parameters
+     *	None.
+     * @return A pointer to the null terminated test suite name.
      */
     [[nodiscard]] constexpr const char*
     name ()
@@ -95,19 +109,30 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @brief Count one more passed test condition.
+     * @brief Count one more passed test conditions.
+     * @par Parameters
+     *	None.
+     * @par Returns
+     *  Nothing.
      */
     void
     increment_successful (void);
 
     /**
-     * @brief Count one more failed test condition.
+     * @brief Count one more failed test conditions.
+     * @par Parameters
+     *	None.
+     * @par Returns
+     *  Nothing.
      */
     void
     increment_failed (void);
 
     /**
      * @brief Get the number of conditions that passed.
+     * @par Parameters
+     *	None.
+     * @return An integer with the number checks that passed.
      */
     [[nodiscard]] constexpr int
     successful_checks (void)
@@ -117,6 +142,9 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Get the number of conditions that failed.
+     * @par Parameters
+     *	None.
+     * @return An integer with the number checks that failed.
      */
     [[nodiscard]] constexpr int
     failed_checks (void)
@@ -126,6 +154,9 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Get the number of test cases.
+     * @par Parameters
+     *	None.
+     * @return An integer with the number of test cases.
      */
     [[nodiscard]] constexpr int
     test_cases (void)
@@ -135,18 +166,29 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Begin the execution of the test suite.
+     * @par Parameters
+     *	None.
+     * @par Returns
+     *  Nothing.
      */
     void
     begin_test_suite (void);
 
     /**
      * @brief Mark the end of the test suite.
+     * @par Parameters
+     *	None.
+     * @par Returns
+     *  Nothing.
      */
     void
     end_test_suite (void);
 
     /**
      * @brief Get the test suite result.
+     * @par Parameters
+     *	None.
+     * @return True if the test suite was successful.
      */
     [[nodiscard]] constexpr bool
     was_successful (void)
@@ -155,6 +197,12 @@ namespace micro_os_plus::micro_test_plus
       return (failed_checks_ == 0 && successful_checks_ != 0);
     }
 
+    /**
+     * @brief If all counter are null, it is unused.
+     * @par Parameters
+     *	None.
+     * @return True if the test suite is not used.
+     */
     [[nodiscard]] constexpr bool
     unused (void)
     {
@@ -197,9 +245,25 @@ namespace micro_os_plus::micro_test_plus
     } current_test_case{};
   };
 
+  /**
+   * @ingroup mtp-test-suites
+   * @brief Test suites are classes that represent a named group of
+   * test cases which self register to the runner.
+   */
   class test_suite : public test_suite_base
   {
   public:
+    /**
+     * @brief Construct a test suite.
+     * @tparam Callable_T The type of an object that can be called.
+     * @tparam Args_T The type of the callable arguments.
+     * @param [in] name The test case name or description.
+     * A short string used in the report.
+     * @param [in] callable A generic callable object,
+     * invoked to perform the test. Usually a lambda.
+     * @param [in] arguments A possibly empty list of arguments to be
+     * passed to the callable.
+     */
     template <typename Callable_T, typename... Args_T>
     test_suite (const char* name, Callable_T&& callable,
                 Args_T&&... arguments);

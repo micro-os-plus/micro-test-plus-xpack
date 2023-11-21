@@ -62,41 +62,79 @@ namespace micro_os_plus::micro_test_plus
   // Public API.
 
   /**
+   * @ingroup mtp-top
    * @brief Initialize the test framework.
+   * @param [in] argc The number of arguments.
+   * @param [in] argv Array of pointers to null terminated arguments.
+   * @param [in] name The name of the default test suite.
+   * @par Returns
+   *  Nothing.
    */
   void
   initialize (int argc, char* argv[], const char* name = "Main");
 
   /**
-   * @brief Define and execute a test case.
-   */
-  template <typename Callable_T, typename... Args_T>
-  void
-  test_case (const char* name, Callable_T&& func, Args_T&&... arguments);
-
-  /**
-   * @brief Trigger the execution of the globally registered test suites
-   * and return the test result.
+   * @ingroup mtp-top
+   * @brief Complete the test and return the exit code.
+   * @par Parameters
+   *	None.
+   * @return 0 for success, 1 for failure.
    */
   [[nodiscard]] int
   exit_code (void);
 
   /**
-   * @brief Evaluate a generic condition. The expression must use
-   * the provided `eq(), ne(), lt(), le(), gt(), ge()` comparators,
-   * or, if the custom operators are used, to include custom type
-   * operands, otherwise support for identifying the failed check
-   * is not provided.
-   *
-   * The template is usable only for expressions that evaluate to
-   * a boolean or use custom comparators/operators derived from the
-   * local `op` type.
+   * @ingroup mtp-test-case
+   * @brief Define and execute a test case.
+   * @tparam Callable_T The type of an object that can be called.
+   * @tparam Args_T The type of the callable arguments.
+   * @param [in] name The test case name or description.
+   * A short string used in the report.
+   * @param [in] callable A generic callable object,
+   * invoked to perform the test. Usually a lambda.
+   * @param [in] arguments A possibly empty list of arguments to be
+   * passed to the callable.
+   * @par Returns
+   *  Nothing.
    */
-  template <
-      class Expr_T,
-      type_traits::requires_t<
-          type_traits::is_op_v<
-              Expr_T> or type_traits::is_convertible_v<Expr_T, bool>> = 0>
+  template <typename Callable_T, typename... Args_T>
+  void
+  test_case (const char* name, Callable_T&& callable, Args_T&&... arguments);
+
+  /**
+   * @ingroup mtp-expectations
+   * @brief Evaluate a generic condition and report the results.
+   * @tparam Expr_T The type of the custom expression.
+   * @param [in] expr Logical expression to evaluate.
+   * @param [in] sl Optional source location, by default the current line.
+   * @return An output stream to write optional messages.
+   *
+   * @details
+   * The expression can be any logical expression, but, in order to
+   * allow the framework to help identify the reason why the check failed
+   * (by displaying the actual vs. the expected values), the expression
+   * should use the provided `eq()`, `ne()`, `lt()`, `le()`, `gt()`, `ge()`
+   * comparators, or, if the custom operators namespace is included,
+   * to use the custom type operands.
+   *
+   * The function template can be used only for expressions that evaluate to
+   * a boolean or use custom comparators/operators derived from the
+   * local `detail::op` type.
+   *
+   * For generic checks performed with standard C/C++
+   *`if` statements outside the `expect()` logical expression
+   * (like complex `try`/`catch` statements),
+   * the results can be reported with `expect(true)` or `expect(false)`.
+   *
+   * @par Example
+   * ```cpp
+   * expect (compute_answer () == 42) << "answer is 42";
+   * ```
+   */
+  template <class Expr_T, type_traits::requires_t<
+                              type_traits::is_op_v<Expr_T>
+                              or type_traits::is_convertible_v<Expr_T, bool>>
+                          = 0>
   constexpr auto
   expect (const Expr_T& expr, const reflection::source_location& sl
                               = reflection::source_location::current ())
@@ -105,17 +143,26 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
+   * @ingroup mtp-assumptions
    * @brief Check a condition and, if false, abort.
+   * @tparam Expr_T The type of the custom expression.
+   * @param [in] expr Logical expression to evaluate.
+   * @param [in] sl Optional source location, by default the current line.
+   * @return An output stream to write optional messages.
    *
    * The template is usable only for expressions that evaluate to
    * a boolean or use custom comparators/operators derived from the
-   * local `op` type.
+   * local `detail::op` type.
+   *
+   * @par Example
+   * ```cpp
+   * assert (compute_answer () == 42) << "answer is 42";
+   * ```
    */
-  template <
-      class Expr_T,
-      type_traits::requires_t<
-          type_traits::is_op_v<
-              Expr_T> or type_traits::is_convertible_v<Expr_T, bool>> = 0>
+  template <class Expr_T, type_traits::requires_t<
+                              type_traits::is_op_v<Expr_T>
+                              or type_traits::is_convertible_v<Expr_T, bool>>
+                          = 0>
   constexpr auto
   assume (const Expr_T& expr, const reflection::source_location& sl
                               = reflection::source_location::current ())
@@ -127,7 +174,12 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(__cpp_exceptions)
   /**
+   * @ingroup mtp-exceptions
    * @brief Check if a callable throws a specific exception.
+   * @tparam Exception_T Type of the exception.
+   * @tparam Callable_T The type of an object that can be called.
+   * @param [in] func Function to check.
+   * @return An output stream to write optional messages.
    */
   template <class Exception_T, class Callable_T>
   [[nodiscard]] constexpr auto
@@ -137,7 +189,11 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
+   * @ingroup mtp-exceptions
    * @brief Check if a callable throws an exception (any exception).
+   * @tparam Callable_T The type of an object that can be called.
+   * @param [in] func Function to check.
+   * @return An output stream to write optional messages.
    */
   template <class Callable_T>
   [[nodiscard]] constexpr auto
@@ -147,7 +203,11 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
+   * @ingroup mtp-exceptions
    * @brief Check if a callable doesn't throw an exception.
+   * @tparam Callable_T The type of an object that can be called.
+   * @param [in] func Function to check.
+   * @return An output stream to write optional messages.
    */
   template <class Callable_T>
   [[nodiscard]] constexpr auto
@@ -160,8 +220,14 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   /**
+   * @ingroup mtp-function-comparators
    * @brief Generic equality comparator. Matches any
    * non-pointer type.
+   * @tparam Lhs_T Type of the left hand side operand.
+   * @tparam Rhs_T Type of the right hand side operand.
+   * @param [in] lhs Left hand side operand.
+   * @param [in] rhs Right hand side operand.
+   * @return True if the operands are equal.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -171,8 +237,14 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
+   * @ingroup mtp-function-comparators
    * @brief Pointer equality comparator. Matches pointers
    * to any types.
+   * @tparam Lhs_T Type of the left hand side operand.
+   * @tparam Rhs_T Type of the right hand side operand.
+   * @param [in] lhs Left hand side operand.
+   * @param [in] rhs Right hand side operand.
+   * @return True if the pointers are equal.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -182,7 +254,13 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
+   * @ingroup mtp-function-comparators
    * @brief Generic non-equality comparator.
+   * @tparam Lhs_T Type of the left hand side operand.
+   * @tparam Rhs_T Type of the right hand side operand.
+   * @param [in] lhs Left hand side operand.
+   * @param [in] rhs Right hand side operand.
+   * @return True if the operands are not equal.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -192,7 +270,13 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
+   * @ingroup mtp-function-comparators
    * @brief Pointer non-equality comparator.
+   * @tparam Lhs_T Type of the left hand side operand.
+   * @tparam Rhs_T Type of the right hand side operand.
+   * @param [in] lhs Left hand side operand.
+   * @param [in] rhs Right hand side operand.
+   * @return True if the pointers are not equal.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -202,7 +286,13 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
+   * @ingroup mtp-function-comparators
    * @brief Generic greater than comparator.
+   * @tparam Lhs_T Type of the left hand side operand.
+   * @tparam Rhs_T Type of the right hand side operand.
+   * @param [in] lhs Left hand side operand.
+   * @param [in] rhs Right hand side operand.
+   * @return True if lhs > rhs.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -212,7 +302,13 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
+   * @ingroup mtp-function-comparators
    * @brief Pointer greater than comparator.
+   * @tparam Lhs_T Type of the left hand side operand.
+   * @tparam Rhs_T Type of the right hand side operand.
+   * @param [in] lhs Left hand side operand.
+   * @param [in] rhs Right hand side operand.
+   * @return True if the lhs pointer > rhs pointer.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -222,7 +318,13 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
+   * @ingroup mtp-function-comparators
    * @brief Generic greater than or equal comparator.
+   * @tparam Lhs_T Type of the left hand side operand.
+   * @tparam Rhs_T Type of the right hand side operand.
+   * @param [in] lhs Left hand side operand.
+   * @param [in] rhs Right hand side operand.
+   * @return True if lhs >= rhs.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -232,7 +334,13 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
+   * @ingroup mtp-function-comparators
    * @brief Pointer greater than or equal comparator.
+   * @tparam Lhs_T Type of the left hand side operand.
+   * @tparam Rhs_T Type of the right hand side operand.
+   * @param [in] lhs Left hand side operand.
+   * @param [in] rhs Right hand side operand.
+   * @return True if the lhs pointer >= rhs pointer.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -242,7 +350,13 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
+   * @ingroup mtp-function-comparators
    * @brief Generic less than comparator.
+   * @tparam Lhs_T Type of the left hand side operand.
+   * @tparam Rhs_T Type of the right hand side operand.
+   * @param [in] lhs Left hand side operand.
+   * @param [in] rhs Right hand side operand.
+   * @return True if lhs < rhs.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -252,7 +366,13 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
+   * @ingroup mtp-function-comparators
    * @brief Generic less than comparator.
+   * @tparam Lhs_T Type of the left hand side operand.
+   * @tparam Rhs_T Type of the right hand side operand.
+   * @param [in] lhs Left hand side operand.
+   * @param [in] rhs Right hand side operand.
+   * @return True if the lhs pointer < rhs pointer.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -262,7 +382,13 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
+   * @ingroup mtp-function-comparators
    * @brief Generic less than or equal comparator.
+   * @tparam Lhs_T Type of the left hand side operand.
+   * @tparam Rhs_T Type of the right hand side operand.
+   * @param [in] lhs Left hand side operand.
+   * @param [in] rhs Right hand side operand.
+   * @return True if lhs <= rhs.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -272,7 +398,13 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
+   * @ingroup mtp-function-comparators
    * @brief Generic less than or equal comparator.
+   * @tparam Lhs_T Type of the left hand side operand.
+   * @tparam Rhs_T Type of the right hand side operand.
+   * @param [in] lhs Left hand side operand.
+   * @param [in] rhs Right hand side operand.
+   * @return True if the lhs pointer <= rhs pointer.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -282,7 +414,14 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
-   * @brief Generic logical not. The underscore is intentional,
+   * @ingroup mtp-logical-function-operators
+   * @brief Generic logical **not**.
+   * @tparam Expr_T Type of the operand.
+   * @param [in] expr Logical expression.
+   * @return True if the operand is false.
+   *
+   * @note
+   * The underscore is intentional,
    * to differentiate from the standard operator.
    */
   template <class Expr_T>
@@ -293,7 +432,16 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
-   * @brief Generic logical and. The underscore is intentional,
+   * @ingroup mtp-logical-function-operators
+   * @brief Generic logical **and**.
+   * @tparam Lhs_T Type of the left hand side operand.
+   * @tparam Rhs_T Type of the right hand side operand.
+   * @param [in] lhs Left hand side operand.
+   * @param [in] rhs Right hand side operand.
+   * @return True if both operand expressions are true.
+   *
+   * @note
+   * The underscore is intentional,
    * to differentiate from the standard operator.
    */
   template <class Lhs_T, class Rhs_T>
@@ -304,7 +452,16 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
-   * @brief Generic logical or. The underscore is intentional,
+   * @ingroup mtp-logical-function-operators
+   * @brief Generic logical **or**.
+   * @tparam Lhs_T Type of the left hand side operand.
+   * @tparam Rhs_T Type of the right hand side operand.
+   * @param [in] lhs Left hand side operand.
+   * @param [in] rhs Right hand side operand.
+   * @return True if at least one of the operand expressions is true.
+   *
+   * @note
+   * The underscore is intentional,
    * to differentiate from the standard operator.
    */
   template <class Lhs_T, class Rhs_T>
@@ -340,7 +497,8 @@ namespace micro_os_plus::micro_test_plus
   namespace operators
   {
     /**
-     * @brief Equality operator for string_view objects.
+     * @ingroup mtp-comparing-strings
+     * @brief Equality operator for `string_view` objects.
      */
     [[nodiscard]] constexpr auto
     operator== (std::string_view lhs, std::string_view rhs)
@@ -349,7 +507,8 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @brief Non-equality operator for string_view objects.
+     * @ingroup mtp-comparing-strings
+     * @brief Non-equality operator for `string_view` objects.
      */
     [[nodiscard]] constexpr auto
     operator!= (std::string_view lhs, std::string_view rhs)
@@ -358,6 +517,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
+     * @ingroup mtp-comparing-containers
      * @brief Equality operator for containers.
      */
     template <class T,
@@ -369,6 +529,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
+     * @ingroup mtp-comparing-containers
      * @brief Non-equality operator for containers.
      */
     template <class T,
@@ -380,6 +541,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
+     * @ingroup mtp-operators
      * @brief Equality operator. It matches only if at least one
      * operand is of local type (derived from local `op`).
      */
@@ -394,6 +556,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
+     * @ingroup mtp-operators
      * @brief Non-equality operator. It matches only if at least one
      * operand is of local type (derived from local `op`).
      */
@@ -408,6 +571,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
+     * @ingroup mtp-operators
      * @brief Greater than operator. It matches only if at least one
      * operand is of local type (derived from local `op`).
      */
@@ -422,6 +586,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
+     * @ingroup mtp-operators
      * @brief Greater than or equal operator. It matches only if at least one
      * operand is of local type (derived from local `op`).
      */
@@ -436,6 +601,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
+     * @ingroup mtp-operators
      * @brief Less than operator. It matches only if at least one
      * operand is of local type (derived from local `op`).
      */
@@ -450,6 +616,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
+     * @ingroup mtp-operators
      * @brief Less than or equal operator. It matches only if at least one
      * operand is of local type (derived from local `op`).
      */
@@ -464,7 +631,8 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @brief Logical `and` operator. It matches only if at least one
+     * @ingroup mtp-operators
+     * @brief Logical `&&` (and) operator. It matches only if at least one
      * operand is of local type (derived from local `op`).
      */
     template <class Lhs_T, class Rhs_T,
@@ -478,7 +646,8 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @brief Logical `or` operator. It matches only if at least one
+     * @ingroup mtp-operators
+     * @brief Logical `||` (or) operator. It matches only if at least one
      * operand is of local type (derived from local `op`).
      */
     template <class Lhs_T, class Rhs_T,
@@ -492,7 +661,8 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @brief Logical `not` operator. It matches only if the
+     * @ingroup mtp-operators
+     * @brief Logical `!` (not) operator. It matches only if the
      * operand is of local type (derived from local `op`).
      */
     template <class T, type_traits::requires_t<type_traits::is_op_v<T>> = 0>
@@ -505,9 +675,25 @@ namespace micro_os_plus::micro_test_plus
 
   namespace utility
   {
+    /**
+     * @ingroup mtp-utility-functions
+     * @brief Check if a string matches a pattern.
+     * @param [in] input String view to check.
+     * @param [in] pattern Sting view with the pattern.
+     * @return True if the string matches the pattern.
+     */
     [[nodiscard]] bool
     is_match (std::string_view input, std::string_view pattern);
 
+    /**
+     * @ingroup mtp-utility-functions
+     * @brief Split a string into a vector of sub-strings.
+     * @tparam T Type of the input string.
+     * @tparam Delim_T Type of the delimiter.
+     * @param [in] input Input string to split.
+     * @param [in] delim Delimiter string.
+     * @return An array of strings.
+     */
     template <class T, class Delim_T>
     [[nodiscard]] auto
     split (T input, Delim_T delim) -> std::vector<T>;

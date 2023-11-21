@@ -52,6 +52,34 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
+  /**
+   * @details
+   * A test case is a sequence of test conditions (or simply tests,
+   * or checks), which are expectations/assumptions, i.e. conditions
+   * expected to be true.
+   *
+   * Tests are based on logical expressions, which usually compute
+   * a result and compare it to an expected value.
+   * For C++ projects, it is also possible to check if, while
+   * evaluating an expression, exceptions are thrown or not.
+   * Each test either succeeds or fails.
+   * For expectations, the runner keeps counts of successful
+   * and failed tests.
+   *
+   * A test case has a name, a function which performs the checks, and
+   * possibly arguments.
+   *
+   * The `test_case` implementation invokes the function with
+   * the provided arguments, and reports the results.
+   *
+   * @par Example
+   *
+   * ```cpp
+   *   test_case ("Check answer with comparator", [] {
+   *     expect (eq (compute_answer (), 42)) << "answer is 42";
+   *   });
+   * ```
+   */
   template <typename Callable_T, typename... Args_T>
   void
   test_case (const char* name, Callable_T&& callable, Args_T&&... arguments)
@@ -120,6 +148,18 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
   namespace utility
   {
+    /**
+     * @details
+     * For tests handling strings, this function template allows
+     * to split a string into a vector of substrings, using a delimiter.
+     *
+     * @par Example
+     * ```cpp
+     * expect (std::vector<std::string_view>{ "a", "b" }
+     *             == utility::split<std::string_view> ("a.b", "."))
+     *         << "a.b splits into [a,b]";
+     * ```
+     */
     template <class T = std::string_view, class Delim_T>
     [[nodiscard]] auto
     split (T input, Delim_T delim) -> std::vector<T>

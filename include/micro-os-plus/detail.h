@@ -41,7 +41,7 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   /**
-   * @brief Implementation details, not part of the public API.
+   * @brief Namespace with implementation details, not part of the public API.
    */
   namespace detail
   {
@@ -678,6 +678,10 @@ namespace micro_os_plus::micro_test_plus
 
     // ------------------------------------------------------------------------
 
+    /**
+     * @brief Base class for a deferred reporter, that collects the
+     * messages into a string.
+     */
     class deferred_reporter_base
     {
     public:
@@ -708,6 +712,10 @@ namespace micro_os_plus::micro_test_plus
       std::string message_{};
     };
 
+    /**
+     * @brief Class template for a deferred reporter specific
+     * to an expression.
+     */
     template <class Expr_T>
     class deferred_reporter : public deferred_reporter_base
     {

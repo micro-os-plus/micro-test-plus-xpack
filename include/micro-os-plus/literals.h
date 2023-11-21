@@ -48,6 +48,10 @@ namespace micro_os_plus::micro_test_plus
    */
   namespace literals
   {
+    /**
+     * @ingroup mtp-literals
+     * @brief Operator to convert to `int`.
+     */
     template <char... Cs>
     [[nodiscard]] constexpr auto
     operator""_i ()
@@ -55,6 +59,10 @@ namespace micro_os_plus::micro_test_plus
       return type_traits::integral_constant<math::num<int, Cs...> ()>{};
     }
 
+    /**
+     * @ingroup mtp-literals
+     * @brief Operator to convert to `short`.
+     */
     template <char... Cs>
     [[nodiscard]] constexpr auto
     operator""_s ()
@@ -62,6 +70,10 @@ namespace micro_os_plus::micro_test_plus
       return type_traits::integral_constant<math::num<short, Cs...> ()>{};
     }
 
+    /**
+     * @ingroup mtp-literals
+     * @brief Operator to convert to `char`.
+     */
     template <char... Cs>
     [[nodiscard]] constexpr auto
     operator""_c ()
@@ -69,6 +81,10 @@ namespace micro_os_plus::micro_test_plus
       return type_traits::integral_constant<math::num<char, Cs...> ()>{};
     }
 
+    /**
+     * @ingroup mtp-literals
+     * @brief Operator to convert to `signed char`.
+     */
     template <char... Cs>
     [[nodiscard]] constexpr auto
     operator""_sc ()
@@ -77,6 +93,10 @@ namespace micro_os_plus::micro_test_plus
           math::num<signed char, Cs...> ()>{};
     }
 
+    /**
+     * @ingroup mtp-literals
+     * @brief Operator to convert to `long`.
+     */
     template <char... Cs>
     [[nodiscard]] constexpr auto
     operator""_l ()
@@ -84,6 +104,10 @@ namespace micro_os_plus::micro_test_plus
       return type_traits::integral_constant<math::num<long, Cs...> ()>{};
     }
 
+    /**
+     * @ingroup mtp-literals
+     * @brief Operator to convert to `long long`.
+     */
     template <char... Cs>
     [[nodiscard]] constexpr auto
     operator""_ll ()
@@ -91,6 +115,10 @@ namespace micro_os_plus::micro_test_plus
       return type_traits::integral_constant<math::num<long long, Cs...> ()>{};
     }
 
+    /**
+     * @ingroup mtp-literals
+     * @brief Operator to convert to `unsigned`.
+     */
     template <char... Cs>
     [[nodiscard]] constexpr auto
     operator""_u ()
@@ -98,6 +126,10 @@ namespace micro_os_plus::micro_test_plus
       return type_traits::integral_constant<math::num<unsigned, Cs...> ()>{};
     }
 
+    /**
+     * @ingroup mtp-literals
+     * @brief Operator to convert to `unsigned char`.
+     */
     template <char... Cs>
     [[nodiscard]] constexpr auto
     operator""_uc ()
@@ -106,6 +138,10 @@ namespace micro_os_plus::micro_test_plus
           math::num<unsigned char, Cs...> ()>{};
     }
 
+    /**
+     * @ingroup mtp-literals
+     * @brief Operator to convert to `unsigned short`.
+     */
     template <char... Cs>
     [[nodiscard]] constexpr auto
     operator""_us ()
@@ -114,6 +150,10 @@ namespace micro_os_plus::micro_test_plus
           math::num<unsigned short, Cs...> ()>{};
     }
 
+    /**
+     * @ingroup mtp-literals
+     * @brief Operator to convert to `unsigned long`.
+     */
     template <char... Cs>
     [[nodiscard]] constexpr auto
     operator""_ul ()
@@ -122,6 +162,10 @@ namespace micro_os_plus::micro_test_plus
           math::num<unsigned long, Cs...> ()>{};
     }
 
+    /**
+     * @ingroup mtp-literals
+     * @brief Operator to convert to `unsigned long long`.
+     */
     template <char... Cs>
     [[nodiscard]] constexpr auto
     operator""_ull ()
@@ -130,6 +174,10 @@ namespace micro_os_plus::micro_test_plus
           math::num<unsigned long long, Cs...> ()>{};
     }
 
+    /**
+     * @ingroup mtp-literals
+     * @brief Operator to convert to `int8_t`.
+     */
     template <char... Cs>
     [[nodiscard]] constexpr auto
     operator""_i8 ()
@@ -138,6 +186,10 @@ namespace micro_os_plus::micro_test_plus
           math::num<std::int8_t, Cs...> ()>{};
     }
 
+    /**
+     * @ingroup mtp-literals
+     * @brief Operator to convert to `int16_t`.
+     */
     template <char... Cs>
     [[nodiscard]] constexpr auto
     operator""_i16 ()
@@ -146,6 +198,10 @@ namespace micro_os_plus::micro_test_plus
           math::num<std::int16_t, Cs...> ()>{};
     }
 
+    /**
+     * @ingroup mtp-literals
+     * @brief Operator to convert to `int32_t`.
+     */
     template <char... Cs>
     [[nodiscard]] constexpr auto
     operator""_i32 ()
@@ -154,6 +210,10 @@ namespace micro_os_plus::micro_test_plus
           math::num<std::int32_t, Cs...> ()>{};
     }
 
+    /**
+     * @ingroup mtp-literals
+     * @brief Operator to convert to `int64_t`.
+     */
     template <char... Cs>
     [[nodiscard]] constexpr auto
     operator""_i64 ()
@@ -162,6 +222,10 @@ namespace micro_os_plus::micro_test_plus
           math::num<std::int64_t, Cs...> ()>{};
     }
 
+    /**
+     * @ingroup mtp-literals
+     * @brief Operator to convert to `uint8_t`.
+     */
     template <char... Cs>
     [[nodiscard]] constexpr auto
     operator""_u8 ()
@@ -170,6 +234,10 @@ namespace micro_os_plus::micro_test_plus
           math::num<std::uint8_t, Cs...> ()>{};
     }
 
+    /**
+     * @ingroup mtp-literals
+     * @brief Operator to convert to `uint16_t`.
+     */
     template <char... Cs>
     [[nodiscard]] constexpr auto
     operator""_u16 ()
@@ -178,6 +246,10 @@ namespace micro_os_plus::micro_test_plus
           math::num<std::uint16_t, Cs...> ()>{};
     }
 
+    /**
+     * @ingroup mtp-literals
+     * @brief Operator to convert to `uint32_t`.
+     */
     template <char... Cs>
     [[nodiscard]] constexpr auto
     operator""_u32 ()
@@ -186,6 +258,10 @@ namespace micro_os_plus::micro_test_plus
           math::num<std::uint32_t, Cs...> ()>{};
     }
 
+    /**
+     * @ingroup mtp-literals
+     * @brief Operator to convert to `uint64_t`.
+     */
     template <char... Cs>
     [[nodiscard]] constexpr auto
     operator""_u64 ()
@@ -194,6 +270,10 @@ namespace micro_os_plus::micro_test_plus
           math::num<std::uint64_t, Cs...> ()>{};
     }
 
+    /**
+     * @ingroup mtp-literals
+     * @brief Operator to convert to `float`.
+     */
     template <char... Cs>
     [[nodiscard]] constexpr auto
     operator""_f ()
@@ -204,6 +284,10 @@ namespace micro_os_plus::micro_test_plus
           math::den_size<unsigned long, Cs...> ()>{};
     }
 
+    /**
+     * @ingroup mtp-literals
+     * @brief Operator to convert to `double`.
+     */
     template <char... Cs>
     [[nodiscard]] constexpr auto
     operator""_d ()
@@ -214,6 +298,10 @@ namespace micro_os_plus::micro_test_plus
           math::den_size<unsigned long, Cs...> ()>{};
     }
 
+    /**
+     * @ingroup mtp-literals
+     * @brief Operator to convert to `long double`.
+     */
     template <char... Cs>
     [[nodiscard]] constexpr auto
     operator""_ld ()
@@ -224,6 +312,10 @@ namespace micro_os_plus::micro_test_plus
           math::den_size<unsigned long long, Cs...> ()>{};
     }
 
+    /**
+     * @ingroup mtp-literals
+     * @brief Operator to convert to `bool`.
+     */
     constexpr auto
     operator""_b (const char* name, decltype (sizeof ("")) size)
     {
@@ -255,6 +347,11 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
+  /**
+   * @addtogroup mtp-literals
+   * @{
+   */
+
   // Wrappers that can be used to convert dynamic values to specific types
   // that are recognised by the comparators.
   // The syntax is similar to function calls, like `_i(expression)`, but the
@@ -283,7 +380,14 @@ namespace micro_os_plus::micro_test_plus
   using _d = type_traits::value<double>;
   using _ld = type_traits::value<long double>;
 
-  // Template for wrapping any other type.
+  /**
+   * @}
+   */
+
+  /**
+   * @ingroup mtp-literals
+   * @brief Template for wrapping any other type.
+   */
   template <class T>
   struct _t : type_traits::value<T>
   {

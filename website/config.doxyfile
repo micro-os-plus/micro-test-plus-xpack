@@ -95,6 +95,7 @@ pages/testing.md \
 pages/change-log.md \
 pages/credits.md \
 pages/license.md \
+topics.doxyfile \
 
 
 # If the USE_MDFILE_AS_MAINPAGE tag refers to the name of a markdown file that
@@ -241,6 +242,7 @@ xpacks/@jothepro/doxygen-awesome-css/doxygen-awesome-tabs.js \
 PREDEFINED = \
 __DOXYGEN__ \
 __cplusplus \
+__cpp_exceptions \
 
 #---------------------------------------------------------------------------
 

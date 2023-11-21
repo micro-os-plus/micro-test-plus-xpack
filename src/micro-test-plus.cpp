@@ -41,6 +41,18 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
   // Public API.
 
+  /**
+   * @details
+   * All tests include a default test suite, which runs the test cases
+   * defined in the main function.
+   *
+   * This function forwards the process arguments to the test framework
+   * and initialises the runner.
+   *
+   * The name is used to identify the default test suite.
+   *
+   * The arguments can be used to control the verbosity level.
+   */
   void
   initialize (int argc, char* argv[], const char* name)
   {
@@ -50,6 +62,18 @@ namespace micro_os_plus::micro_test_plus
     runner.initialize (argc, argv, name);
   }
 
+  /**
+   * @details
+   * In addition to the test cases defined in `main()`, there can be
+   * more separate **test suites**, defined as static objects in the same
+   * file or in other files,
+   * and self-registered via the static constructors mechanism.
+   *
+   * This function triggers the execution of the globally
+   * registered test suites
+   * (if any) and returns the test result as the process exit code
+   * (0 = success).
+   */
   int
   exit_code (void)
   {
@@ -80,6 +104,19 @@ namespace micro_os_plus::micro_test_plus
 
   namespace utility
   {
+    /**
+     * @details
+     * For tests comparing strings, in addition to exact matches,
+     * it is also possible to check matches with patterns like `*`
+     * (for any characters) and `?` (for a single character)
+     *
+     * @par Examples
+     *
+     * ```cpp
+     * expect (utility::is_match ("abc", "a?c")) << "abc matches a?c";
+     * expect (utility::is_match ("abc", "a*c")) << "abc matches a*c";
+     * ```
+     */
     [[nodiscard]] bool
     is_match (std::string_view input, std::string_view pattern)
     {

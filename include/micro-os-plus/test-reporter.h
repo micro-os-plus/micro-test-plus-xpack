@@ -47,6 +47,9 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
+  /**
+   * @brief Colours used to highlight pass vs. fail.
+   */
   struct colors
   {
     const char* none = "\033[0m";
@@ -54,6 +57,9 @@ namespace micro_os_plus::micro_test_plus
     const char* fail = "\033[31m";
   };
 
+  /**
+   * @brief The verbosity levels.
+   */
   enum class verbosity
   {
     silent = 0, // Nothing, only return the exit code
