@@ -49,134 +49,154 @@ namespace micro_os_plus::micro_test_plus
   namespace literals
   {
     template <char... Cs>
-    [[nodiscard]] constexpr auto operator""_i ()
+    [[nodiscard]] constexpr auto
+    operator""_i ()
     {
       return type_traits::integral_constant<math::num<int, Cs...> ()>{};
     }
 
     template <char... Cs>
-    [[nodiscard]] constexpr auto operator""_s ()
+    [[nodiscard]] constexpr auto
+    operator""_s ()
     {
       return type_traits::integral_constant<math::num<short, Cs...> ()>{};
     }
 
     template <char... Cs>
-    [[nodiscard]] constexpr auto operator""_c ()
+    [[nodiscard]] constexpr auto
+    operator""_c ()
     {
       return type_traits::integral_constant<math::num<char, Cs...> ()>{};
     }
 
     template <char... Cs>
-    [[nodiscard]] constexpr auto operator""_sc ()
+    [[nodiscard]] constexpr auto
+    operator""_sc ()
     {
       return type_traits::integral_constant<
           math::num<signed char, Cs...> ()>{};
     }
 
     template <char... Cs>
-    [[nodiscard]] constexpr auto operator""_l ()
+    [[nodiscard]] constexpr auto
+    operator""_l ()
     {
       return type_traits::integral_constant<math::num<long, Cs...> ()>{};
     }
 
     template <char... Cs>
-    [[nodiscard]] constexpr auto operator""_ll ()
+    [[nodiscard]] constexpr auto
+    operator""_ll ()
     {
       return type_traits::integral_constant<math::num<long long, Cs...> ()>{};
     }
 
     template <char... Cs>
-    [[nodiscard]] constexpr auto operator""_u ()
+    [[nodiscard]] constexpr auto
+    operator""_u ()
     {
       return type_traits::integral_constant<math::num<unsigned, Cs...> ()>{};
     }
 
     template <char... Cs>
-    [[nodiscard]] constexpr auto operator""_uc ()
+    [[nodiscard]] constexpr auto
+    operator""_uc ()
     {
       return type_traits::integral_constant<
           math::num<unsigned char, Cs...> ()>{};
     }
 
     template <char... Cs>
-    [[nodiscard]] constexpr auto operator""_us ()
+    [[nodiscard]] constexpr auto
+    operator""_us ()
     {
       return type_traits::integral_constant<
           math::num<unsigned short, Cs...> ()>{};
     }
 
     template <char... Cs>
-    [[nodiscard]] constexpr auto operator""_ul ()
+    [[nodiscard]] constexpr auto
+    operator""_ul ()
     {
       return type_traits::integral_constant<
           math::num<unsigned long, Cs...> ()>{};
     }
 
     template <char... Cs>
-    [[nodiscard]] constexpr auto operator""_ull ()
+    [[nodiscard]] constexpr auto
+    operator""_ull ()
     {
       return type_traits::integral_constant<
           math::num<unsigned long long, Cs...> ()>{};
     }
 
     template <char... Cs>
-    [[nodiscard]] constexpr auto operator""_i8 ()
+    [[nodiscard]] constexpr auto
+    operator""_i8 ()
     {
       return type_traits::integral_constant<
           math::num<std::int8_t, Cs...> ()>{};
     }
 
     template <char... Cs>
-    [[nodiscard]] constexpr auto operator""_i16 ()
+    [[nodiscard]] constexpr auto
+    operator""_i16 ()
     {
       return type_traits::integral_constant<
           math::num<std::int16_t, Cs...> ()>{};
     }
 
     template <char... Cs>
-    [[nodiscard]] constexpr auto operator""_i32 ()
+    [[nodiscard]] constexpr auto
+    operator""_i32 ()
     {
       return type_traits::integral_constant<
           math::num<std::int32_t, Cs...> ()>{};
     }
 
     template <char... Cs>
-    [[nodiscard]] constexpr auto operator""_i64 ()
+    [[nodiscard]] constexpr auto
+    operator""_i64 ()
     {
       return type_traits::integral_constant<
           math::num<std::int64_t, Cs...> ()>{};
     }
 
     template <char... Cs>
-    [[nodiscard]] constexpr auto operator""_u8 ()
+    [[nodiscard]] constexpr auto
+    operator""_u8 ()
     {
       return type_traits::integral_constant<
           math::num<std::uint8_t, Cs...> ()>{};
     }
 
     template <char... Cs>
-    [[nodiscard]] constexpr auto operator""_u16 ()
+    [[nodiscard]] constexpr auto
+    operator""_u16 ()
     {
       return type_traits::integral_constant<
           math::num<std::uint16_t, Cs...> ()>{};
     }
 
     template <char... Cs>
-    [[nodiscard]] constexpr auto operator""_u32 ()
+    [[nodiscard]] constexpr auto
+    operator""_u32 ()
     {
       return type_traits::integral_constant<
           math::num<std::uint32_t, Cs...> ()>{};
     }
 
     template <char... Cs>
-    [[nodiscard]] constexpr auto operator""_u64 ()
+    [[nodiscard]] constexpr auto
+    operator""_u64 ()
     {
       return type_traits::integral_constant<
           math::num<std::uint64_t, Cs...> ()>{};
     }
 
     template <char... Cs>
-    [[nodiscard]] constexpr auto operator""_f ()
+    [[nodiscard]] constexpr auto
+    operator""_f ()
     {
       return type_traits::floating_point_constant<
           float, math::num<unsigned long, Cs...> (),
@@ -185,7 +205,8 @@ namespace micro_os_plus::micro_test_plus
     }
 
     template <char... Cs>
-    [[nodiscard]] constexpr auto operator""_d ()
+    [[nodiscard]] constexpr auto
+    operator""_d ()
     {
       return type_traits::floating_point_constant<
           double, math::num<unsigned long, Cs...> (),
@@ -194,7 +215,8 @@ namespace micro_os_plus::micro_test_plus
     }
 
     template <char... Cs>
-    [[nodiscard]] constexpr auto operator""_ld ()
+    [[nodiscard]] constexpr auto
+    operator""_ld ()
     {
       return type_traits::floating_point_constant<
           long double, math::num<unsigned long long, Cs...> (),
@@ -202,12 +224,14 @@ namespace micro_os_plus::micro_test_plus
           math::den_size<unsigned long long, Cs...> ()>{};
     }
 
-    constexpr auto operator""_b (const char* name, decltype (sizeof ("")) size)
+    constexpr auto
+    operator""_b (const char* name, decltype (sizeof ("")) size)
     {
       struct named : std::string_view, type_traits::op
       {
         using value_type = bool;
-        [[nodiscard]] constexpr operator value_type () const
+        [[nodiscard]] constexpr
+        operator value_type () const
         {
           return true;
         }

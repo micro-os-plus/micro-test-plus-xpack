@@ -57,7 +57,10 @@ namespace micro_os_plus::micro_test_plus
     };
 
 #if defined(__DOXYGEN__)
-    // error: Detected potential recursive class relation between class micro_os_plus::micro_test_plus::type_traits::function_traits and base class micro_os_plus::micro_test_plus::type_traits::function_traits< decltype(&T::operator())>!
+    // error: Detected potential recursive class relation between class
+    // micro_os_plus::micro_test_plus::type_traits::function_traits and base
+    // class micro_os_plus::micro_test_plus::type_traits::function_traits<
+    // decltype(&T::operator())>!
     // https://github.com/doxygen/doxygen/issues/9915
 #else
     template <class T>
@@ -112,9 +115,8 @@ namespace micro_os_plus::micro_test_plus
     }
 
     template <class T>
-    static constexpr auto is_container_v
-        = is_valid<T> ([] (auto t) -> decltype (t.begin (), t.end (),
-                                                void ()) {});
+    static constexpr auto is_container_v = is_valid<T> (
+        [] (auto t) -> decltype (t.begin (), t.end (), void ()) {});
 
     template <class T>
     static constexpr auto has_npos_v
@@ -139,7 +141,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(__clang__) or defined(_MSC_VER)
     template <class From, class To>
-    static constexpr auto is_convertible_v = __is_convertible_to(From, To);
+    static constexpr auto is_convertible_v = __is_convertible_to (From, To);
 #else
     template <class From, class To>
     constexpr auto
@@ -194,7 +196,8 @@ namespace micro_os_plus::micro_test_plus
         return integral_constant<-N>{};
       }
 
-      [[nodiscard]] constexpr explicit operator value_type () const
+      [[nodiscard]] constexpr explicit
+      operator value_type () const
       {
         return N;
       }
@@ -226,7 +229,8 @@ namespace micro_os_plus::micro_test_plus
         return floating_point_constant<T, N, D, Size, -1>{};
       }
 
-      [[nodiscard]] constexpr explicit operator value_type () const
+      [[nodiscard]] constexpr explicit
+      operator value_type () const
       {
         return value;
       }
@@ -247,7 +251,8 @@ namespace micro_os_plus::micro_test_plus
       {
       }
 
-      [[nodiscard]] constexpr explicit operator T () const
+      [[nodiscard]] constexpr explicit
+      operator T () const
       {
         return value_;
       }
@@ -262,7 +267,7 @@ namespace micro_os_plus::micro_test_plus
     };
 
     template <class T>
-    inline constexpr auto is_op_v = __is_base_of(type_traits::op, T);
+    inline constexpr auto is_op_v = __is_base_of (type_traits::op, T);
 
     /**
      * @brief Class defining a generic value, accessible via a getter.
@@ -276,7 +281,8 @@ namespace micro_os_plus::micro_test_plus
       {
       }
 
-      [[nodiscard]] constexpr explicit operator T () const
+      [[nodiscard]] constexpr explicit
+      operator T () const
       {
         return value_;
       }
@@ -317,7 +323,8 @@ namespace micro_os_plus::micro_test_plus
       {
       }
 
-      [[nodiscard]] constexpr explicit operator T () const
+      [[nodiscard]] constexpr explicit
+      operator T () const
       {
         return value_;
       }

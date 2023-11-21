@@ -71,8 +71,8 @@ namespace micro_os_plus::micro_test_plus
   }
 
   template <class T,
-            type_traits::requires_t<type_traits::is_container_v<
-                                        T> and not type_traits::has_npos_v<T>>>
+            type_traits::requires_t<type_traits::is_container_v<T>
+                                    and not type_traits::has_npos_v<T>>>
   test_reporter&
   test_reporter::operator<< (T&& t)
   {

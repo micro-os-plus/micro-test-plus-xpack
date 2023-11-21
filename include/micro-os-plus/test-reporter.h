@@ -23,7 +23,7 @@
 
 // ----------------------------------------------------------------------------
 
-//#include <functional>
+// #include <functional>
 #include <string_view>
 #include <string>
 
@@ -176,9 +176,10 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Output operator to display containers. Iterate all members.
      */
-    template <class T, type_traits::requires_t<
-                           type_traits::is_container_v<
-                               T> and not type_traits::has_npos_v<T>> = 0>
+    template <class T,
+              type_traits::requires_t<type_traits::is_container_v<T>
+                                      and not type_traits::has_npos_v<T>>
+              = 0>
     test_reporter&
     operator<< (T&& t);
 

@@ -117,16 +117,15 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wpedantic"
 #endif
 #endif
-              if constexpr (type_traits::has_value_v<
-                                Lhs_T> and type_traits::has_value_v<Rhs_T>)
+              if constexpr (type_traits::has_value_v<Lhs_T>
+                            and type_traits::has_value_v<Rhs_T>)
                 {
                   // If both types have values (like numeric constants),
                   // compare them directly.
                   return Lhs_T::value == Rhs_T::value;
                 }
-              else if constexpr (
-                  type_traits::has_epsilon_v<
-                      Lhs_T> and type_traits::has_epsilon_v<Rhs_T>)
+              else if constexpr (type_traits::has_epsilon_v<Lhs_T>
+                                 and type_traits::has_epsilon_v<Rhs_T>)
                 {
                   // If both values have precision, compare them using
                   // the smalles precision.
@@ -156,7 +155,8 @@ namespace micro_os_plus::micro_test_plus
       {
       }
 
-      [[nodiscard]] constexpr operator bool () const
+      [[nodiscard]] constexpr
+      operator bool () const
       {
         return value_;
       }
@@ -201,14 +201,13 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wpedantic"
 #endif
 #endif
-              if constexpr (type_traits::has_value_v<
-                                Lhs_T> and type_traits::has_value_v<Rhs_T>)
+              if constexpr (type_traits::has_value_v<Lhs_T>
+                            and type_traits::has_value_v<Rhs_T>)
                 {
                   return Lhs_T::value != Rhs_T::value;
                 }
-              else if constexpr (
-                  type_traits::has_epsilon_v<
-                      Lhs_T> and type_traits::has_epsilon_v<Rhs_T>)
+              else if constexpr (type_traits::has_epsilon_v<Lhs_T>
+                                 and type_traits::has_epsilon_v<Rhs_T>)
                 {
                   return math::abs (get (lhs_) - get (rhs_))
                          > math::min_value (Lhs_T::epsilon, Rhs_T::epsilon);
@@ -232,7 +231,8 @@ namespace micro_os_plus::micro_test_plus
       {
       }
 
-      [[nodiscard]] constexpr operator bool () const
+      [[nodiscard]] constexpr
+      operator bool () const
       {
         return value_;
       }
@@ -272,8 +272,8 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wpedantic"
 #endif
 #endif
-              if constexpr (type_traits::has_value_v<
-                                Lhs_T> and type_traits::has_value_v<Rhs_T>)
+              if constexpr (type_traits::has_value_v<Lhs_T>
+                            and type_traits::has_value_v<Rhs_T>)
                 {
                   return Lhs_T::value > Rhs_T::value;
                 }
@@ -288,7 +288,8 @@ namespace micro_os_plus::micro_test_plus
       {
       }
 
-      [[nodiscard]] constexpr operator bool () const
+      [[nodiscard]] constexpr
+      operator bool () const
       {
         return value_;
       }
@@ -328,8 +329,8 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wpedantic"
 #endif
 #endif
-              if constexpr (type_traits::has_value_v<
-                                Lhs_T> and type_traits::has_value_v<Rhs_T>)
+              if constexpr (type_traits::has_value_v<Lhs_T>
+                            and type_traits::has_value_v<Rhs_T>)
                 {
                   return Lhs_T::value >= Rhs_T::value;
                 }
@@ -344,7 +345,8 @@ namespace micro_os_plus::micro_test_plus
       {
       }
 
-      [[nodiscard]] constexpr operator bool () const
+      [[nodiscard]] constexpr
+      operator bool () const
       {
         return value_;
       }
@@ -384,8 +386,8 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wpedantic"
 #endif
 #endif
-              if constexpr (type_traits::has_value_v<
-                                Lhs_T> and type_traits::has_value_v<Rhs_T>)
+              if constexpr (type_traits::has_value_v<Lhs_T>
+                            and type_traits::has_value_v<Rhs_T>)
                 {
                   return Lhs_T::value < Rhs_T::value;
                 }
@@ -400,7 +402,8 @@ namespace micro_os_plus::micro_test_plus
       {
       }
 
-      [[nodiscard]] constexpr operator bool () const
+      [[nodiscard]] constexpr
+      operator bool () const
       {
         return value_;
       }
@@ -441,8 +444,8 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wpedantic"
 #endif
 #endif
-              if constexpr (type_traits::has_value_v<
-                                Lhs_T> and type_traits::has_value_v<Rhs_T>)
+              if constexpr (type_traits::has_value_v<Lhs_T>
+                            and type_traits::has_value_v<Rhs_T>)
                 {
                   return Lhs_T::value <= Rhs_T::value;
                 }
@@ -457,7 +460,8 @@ namespace micro_os_plus::micro_test_plus
       {
       }
 
-      [[nodiscard]] constexpr operator bool () const
+      [[nodiscard]] constexpr
+      operator bool () const
       {
         return value_;
       }
@@ -486,12 +490,13 @@ namespace micro_os_plus::micro_test_plus
     struct and_ : type_traits::op
     {
       constexpr and_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
-          : lhs_{ lhs }, rhs_{ rhs }, value_{ static_cast<bool> (lhs)
-                                              and static_cast<bool> (rhs) }
+          : lhs_{ lhs }, rhs_{ rhs },
+            value_{ static_cast<bool> (lhs) and static_cast<bool> (rhs) }
       {
       }
 
-      [[nodiscard]] constexpr operator bool () const
+      [[nodiscard]] constexpr
+      operator bool () const
       {
         return value_;
       }
@@ -520,12 +525,13 @@ namespace micro_os_plus::micro_test_plus
     struct or_ : type_traits::op
     {
       constexpr or_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
-          : lhs_{ lhs }, rhs_{ rhs }, value_{ static_cast<bool> (lhs)
-                                              or static_cast<bool> (rhs) }
+          : lhs_{ lhs }, rhs_{ rhs },
+            value_{ static_cast<bool> (lhs) or static_cast<bool> (rhs) }
       {
       }
 
-      [[nodiscard]] constexpr operator bool () const
+      [[nodiscard]] constexpr
+      operator bool () const
       {
         return value_;
       }
@@ -558,7 +564,8 @@ namespace micro_os_plus::micro_test_plus
       {
       }
 
-      [[nodiscard]] constexpr operator bool () const
+      [[nodiscard]] constexpr
+      operator bool () const
       {
         return value_;
       }
@@ -599,7 +606,8 @@ namespace micro_os_plus::micro_test_plus
       {
       }
 
-      [[nodiscard]] constexpr operator bool () const
+      [[nodiscard]] constexpr
+      operator bool () const
       {
         return value_;
       }
@@ -628,7 +636,8 @@ namespace micro_os_plus::micro_test_plus
       {
       }
 
-      [[nodiscard]] constexpr operator bool () const
+      [[nodiscard]] constexpr
+      operator bool () const
       {
         return value_;
       }
@@ -657,7 +666,8 @@ namespace micro_os_plus::micro_test_plus
       {
       }
 
-      [[nodiscard]] constexpr operator bool () const
+      [[nodiscard]] constexpr
+      operator bool () const
       {
         return value_;
       }

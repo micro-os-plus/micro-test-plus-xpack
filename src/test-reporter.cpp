@@ -92,7 +92,9 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic ignored "-Wsign-conversion"
 #endif
     *this << " (" << reflection::short_name (location.file_name ()) << ":"
-          << type_traits::genuine_integral_value<unsigned int>{ location.line () };
+          << type_traits::genuine_integral_value<unsigned int>{
+               location.line ()
+             };
 #pragma GCC diagnostic pop
   }
 

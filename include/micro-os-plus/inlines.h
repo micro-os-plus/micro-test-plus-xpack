@@ -40,8 +40,8 @@ namespace micro_os_plus::micro_test_plus
   template <typename Callable_T, typename... Args_T>
   test_suite::test_suite (const char* name, Callable_T&& callable,
                           Args_T&&... arguments)
-      : test_suite_base{ name }, callable_{ std::bind (callable,
-                                                       arguments...) }
+      : test_suite_base{ name },
+        callable_{ std::bind (callable, arguments...) }
   {
 #if defined(MICRO_TEST_PLUS_TRACE)
     printf ("%s\n", __PRETTY_FUNCTION__);
@@ -54,14 +54,14 @@ namespace micro_os_plus::micro_test_plus
 
   template <typename Callable_T, typename... Args_T>
   void
-  test_case (const char* name, Callable_T&& func, Args_T&&... arguments)
+  test_case (const char* name, Callable_T&& callable, Args_T&&... arguments)
   {
 #if 0 // defined(MICRO_TEST_PLUS_TRACE)
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_TEST_PLUS_TRACE
 
     current_test_suite->begin_test_case (name);
-    std::invoke (std::forward<Callable_T> (func),
+    std::invoke (std::forward<Callable_T> (callable),
                  std::forward<Args_T> (arguments)...);
     current_test_suite->end_test_case ();
   }
@@ -92,9 +92,8 @@ namespace micro_os_plus::micro_test_plus
     constexpr deferred_reporter<Expr_T>::deferred_reporter (
         const Expr_T& expr, bool abort,
         const reflection::source_location& location)
-        : deferred_reporter_base{ static_cast<bool> (expr), location }, expr_{
-            expr
-          }
+        : deferred_reporter_base{ static_cast<bool> (expr), location },
+          expr_{ expr }
     {
 #if 0 // defined(MICRO_TEST_PLUS_TRACE)
       printf ("%s\n", __PRETTY_FUNCTION__);

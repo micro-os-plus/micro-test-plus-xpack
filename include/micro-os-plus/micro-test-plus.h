@@ -383,10 +383,10 @@ namespace micro_os_plus::micro_test_plus
      * @brief Equality operator. It matches only if at least one
      * operand is of local type (derived from local `op`).
      */
-    template <
-        class Lhs_T, class Rhs_T,
-        type_traits::requires_t<
-            type_traits::is_op_v<Lhs_T> or type_traits::is_op_v<Rhs_T>> = 0>
+    template <class Lhs_T, class Rhs_T,
+              type_traits::requires_t<type_traits::is_op_v<Lhs_T>
+                                      or type_traits::is_op_v<Rhs_T>>
+              = 0>
     [[nodiscard]] constexpr auto
     operator== (const Lhs_T& lhs, const Rhs_T& rhs)
     {
@@ -397,10 +397,10 @@ namespace micro_os_plus::micro_test_plus
      * @brief Non-equality operator. It matches only if at least one
      * operand is of local type (derived from local `op`).
      */
-    template <
-        class Lhs_T, class Rhs_T,
-        type_traits::requires_t<
-            type_traits::is_op_v<Lhs_T> or type_traits::is_op_v<Rhs_T>> = 0>
+    template <class Lhs_T, class Rhs_T,
+              type_traits::requires_t<type_traits::is_op_v<Lhs_T>
+                                      or type_traits::is_op_v<Rhs_T>>
+              = 0>
     [[nodiscard]] constexpr auto
     operator!= (const Lhs_T& lhs, const Rhs_T& rhs)
     {
@@ -411,10 +411,10 @@ namespace micro_os_plus::micro_test_plus
      * @brief Greater than operator. It matches only if at least one
      * operand is of local type (derived from local `op`).
      */
-    template <
-        class Lhs_T, class Rhs_T,
-        type_traits::requires_t<
-            type_traits::is_op_v<Lhs_T> or type_traits::is_op_v<Rhs_T>> = 0>
+    template <class Lhs_T, class Rhs_T,
+              type_traits::requires_t<type_traits::is_op_v<Lhs_T>
+                                      or type_traits::is_op_v<Rhs_T>>
+              = 0>
     [[nodiscard]] constexpr auto
     operator> (const Lhs_T& lhs, const Rhs_T& rhs)
     {
@@ -425,10 +425,10 @@ namespace micro_os_plus::micro_test_plus
      * @brief Greater than or equal operator. It matches only if at least one
      * operand is of local type (derived from local `op`).
      */
-    template <
-        class Lhs_T, class Rhs_T,
-        type_traits::requires_t<
-            type_traits::is_op_v<Lhs_T> or type_traits::is_op_v<Rhs_T>> = 0>
+    template <class Lhs_T, class Rhs_T,
+              type_traits::requires_t<type_traits::is_op_v<Lhs_T>
+                                      or type_traits::is_op_v<Rhs_T>>
+              = 0>
     [[nodiscard]] constexpr auto
     operator>= (const Lhs_T& lhs, const Rhs_T& rhs)
     {
@@ -439,10 +439,10 @@ namespace micro_os_plus::micro_test_plus
      * @brief Less than operator. It matches only if at least one
      * operand is of local type (derived from local `op`).
      */
-    template <
-        class Lhs_T, class Rhs_T,
-        type_traits::requires_t<
-            type_traits::is_op_v<Lhs_T> or type_traits::is_op_v<Rhs_T>> = 0>
+    template <class Lhs_T, class Rhs_T,
+              type_traits::requires_t<type_traits::is_op_v<Lhs_T>
+                                      or type_traits::is_op_v<Rhs_T>>
+              = 0>
     [[nodiscard]] constexpr auto
     operator< (const Lhs_T& lhs, const Rhs_T& rhs)
     {
@@ -453,10 +453,10 @@ namespace micro_os_plus::micro_test_plus
      * @brief Less than or equal operator. It matches only if at least one
      * operand is of local type (derived from local `op`).
      */
-    template <
-        class Lhs_T, class Rhs_T,
-        type_traits::requires_t<
-            type_traits::is_op_v<Lhs_T> or type_traits::is_op_v<Rhs_T>> = 0>
+    template <class Lhs_T, class Rhs_T,
+              type_traits::requires_t<type_traits::is_op_v<Lhs_T>
+                                      or type_traits::is_op_v<Rhs_T>>
+              = 0>
     [[nodiscard]] constexpr auto
     operator<= (const Lhs_T& lhs, const Rhs_T& rhs)
     {
@@ -467,10 +467,10 @@ namespace micro_os_plus::micro_test_plus
      * @brief Logical `and` operator. It matches only if at least one
      * operand is of local type (derived from local `op`).
      */
-    template <
-        class Lhs_T, class Rhs_T,
-        type_traits::requires_t<
-            type_traits::is_op_v<Lhs_T> or type_traits::is_op_v<Rhs_T>> = 0>
+    template <class Lhs_T, class Rhs_T,
+              type_traits::requires_t<type_traits::is_op_v<Lhs_T>
+                                      or type_traits::is_op_v<Rhs_T>>
+              = 0>
     [[nodiscard]] constexpr auto
     operator and (const Lhs_T& lhs, const Rhs_T& rhs)
     {
@@ -481,10 +481,10 @@ namespace micro_os_plus::micro_test_plus
      * @brief Logical `or` operator. It matches only if at least one
      * operand is of local type (derived from local `op`).
      */
-    template <
-        class Lhs_T, class Rhs_T,
-        type_traits::requires_t<
-            type_traits::is_op_v<Lhs_T> or type_traits::is_op_v<Rhs_T>> = 0>
+    template <class Lhs_T, class Rhs_T,
+              type_traits::requires_t<type_traits::is_op_v<Lhs_T>
+                                      or type_traits::is_op_v<Rhs_T>>
+              = 0>
     [[nodiscard]] constexpr auto
     operator or (const Lhs_T& lhs, const Rhs_T& rhs)
     {
@@ -497,7 +497,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T, type_traits::requires_t<type_traits::is_op_v<T>> = 0>
     [[nodiscard]] constexpr auto
-    operator not (const T& t)
+    operator not(const T& t)
     {
       return detail::not_{ t };
     }

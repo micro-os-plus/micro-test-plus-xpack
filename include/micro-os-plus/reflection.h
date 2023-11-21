@@ -59,7 +59,7 @@ namespace micro_os_plus::micro_test_plus
       [[nodiscard]] static constexpr auto
       current (
 #if (__has_builtin(__builtin_FILE) and __has_builtin(__builtin_LINE))
-          const char* file = __builtin_FILE(), int line = __builtin_LINE()
+          const char* file = __builtin_FILE (), int line = __builtin_LINE ()
 #else
           const char* file = "unknown", int line = {}
 #endif
@@ -105,13 +105,13 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma GCC diagnostic push
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
-      // printf("|%s|%zu|\n", __PRETTY_FUNCTION__, sizeof (__PRETTY_FUNCTION__));
-      // printf("|%s|\n", &__PRETTY_FUNCTION__[78]);
+      // printf("|%s|%zu|\n", __PRETTY_FUNCTION__, sizeof
+      // (__PRETTY_FUNCTION__)); printf("|%s|\n", &__PRETTY_FUNCTION__[78]);
       return { &__PRETTY_FUNCTION__[78], sizeof (__PRETTY_FUNCTION__) - 80 };
 #pragma GCC diagnostic pop
 #elif defined(__GNUC__)
-      // printf("|%s|%zu|\n", __PRETTY_FUNCTION__, sizeof (__PRETTY_FUNCTION__));
-      // printf("|%s|\n", &__PRETTY_FUNCTION__[93]);
+      // printf("|%s|%zu|\n", __PRETTY_FUNCTION__, sizeof
+      // (__PRETTY_FUNCTION__)); printf("|%s|\n", &__PRETTY_FUNCTION__[93]);
       return { &__PRETTY_FUNCTION__[93], sizeof (__PRETTY_FUNCTION__) - 144 };
 #else
 #error "Unsupported compiler"
