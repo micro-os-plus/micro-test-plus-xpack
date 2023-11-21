@@ -1,5 +1,5 @@
 
-# How to Use
+# Getting Started
 
 @tableofcontents
 
