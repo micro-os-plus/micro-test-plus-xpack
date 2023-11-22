@@ -62,7 +62,7 @@ namespace micro_os_plus::micro_test_plus
   // Public API.
 
   /**
-   * @ingroup mtp-top
+   * @ingroup micro-test-plus-top
    * @brief Initialize the test framework.
    * @param [in] argc The number of arguments.
    * @param [in] argv Array of pointers to null terminated arguments.
@@ -74,7 +74,7 @@ namespace micro_os_plus::micro_test_plus
   initialize (int argc, char* argv[], const char* name = "Main");
 
   /**
-   * @ingroup mtp-top
+   * @ingroup micro-test-plus-top
    * @brief Complete the test and return the exit code.
    * @par Parameters
    *	None.
@@ -84,7 +84,7 @@ namespace micro_os_plus::micro_test_plus
   exit_code (void);
 
   /**
-   * @ingroup mtp-test-case
+   * @ingroup micro-test-plus-test-case
    * @brief Define and execute a test case.
    * @tparam Callable_T The type of an object that can be called.
    * @tparam Args_T The type of the callable arguments.
@@ -102,7 +102,7 @@ namespace micro_os_plus::micro_test_plus
   test_case (const char* name, Callable_T&& callable, Args_T&&... arguments);
 
   /**
-   * @ingroup mtp-expectations
+   * @ingroup micro-test-plus-expectations
    * @brief Evaluate a generic condition and report the results.
    * @tparam Expr_T The type of the custom expression.
    * @param [in] expr Logical expression to evaluate.
@@ -143,7 +143,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
-   * @ingroup mtp-assumptions
+   * @ingroup micro-test-plus-assumptions
    * @brief Check a condition and, if false, abort.
    * @tparam Expr_T The type of the custom expression.
    * @param [in] expr Logical expression to evaluate.
@@ -174,7 +174,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(__cpp_exceptions)
   /**
-   * @ingroup mtp-exceptions
+   * @ingroup micro-test-plus-exceptions
    * @brief Check if a callable throws a specific exception.
    * @tparam Exception_T Type of the exception.
    * @tparam Callable_T The type of an object that can be called.
@@ -189,7 +189,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
-   * @ingroup mtp-exceptions
+   * @ingroup micro-test-plus-exceptions
    * @brief Check if a callable throws an exception (any exception).
    * @tparam Callable_T The type of an object that can be called.
    * @param [in] func Function to check.
@@ -203,7 +203,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
-   * @ingroup mtp-exceptions
+   * @ingroup micro-test-plus-exceptions
    * @brief Check if a callable doesn't throw an exception.
    * @tparam Callable_T The type of an object that can be called.
    * @param [in] func Function to check.
@@ -220,7 +220,7 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   /**
-   * @ingroup mtp-function-comparators
+   * @ingroup micro-test-plus-function-comparators
    * @brief Generic equality comparator. Matches any
    * non-pointer type.
    * @tparam Lhs_T Type of the left hand side operand.
@@ -237,7 +237,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
-   * @ingroup mtp-function-comparators
+   * @ingroup micro-test-plus-function-comparators
    * @brief Pointer equality comparator. Matches pointers
    * to any types.
    * @tparam Lhs_T Type of the left hand side operand.
@@ -254,7 +254,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
-   * @ingroup mtp-function-comparators
+   * @ingroup micro-test-plus-function-comparators
    * @brief Generic non-equality comparator.
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
@@ -270,7 +270,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
-   * @ingroup mtp-function-comparators
+   * @ingroup micro-test-plus-function-comparators
    * @brief Pointer non-equality comparator.
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
@@ -286,7 +286,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
-   * @ingroup mtp-function-comparators
+   * @ingroup micro-test-plus-function-comparators
    * @brief Generic greater than comparator.
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
@@ -302,7 +302,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
-   * @ingroup mtp-function-comparators
+   * @ingroup micro-test-plus-function-comparators
    * @brief Pointer greater than comparator.
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
@@ -318,7 +318,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
-   * @ingroup mtp-function-comparators
+   * @ingroup micro-test-plus-function-comparators
    * @brief Generic greater than or equal comparator.
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
@@ -334,7 +334,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
-   * @ingroup mtp-function-comparators
+   * @ingroup micro-test-plus-function-comparators
    * @brief Pointer greater than or equal comparator.
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
@@ -350,7 +350,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
-   * @ingroup mtp-function-comparators
+   * @ingroup micro-test-plus-function-comparators
    * @brief Generic less than comparator.
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
@@ -366,7 +366,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
-   * @ingroup mtp-function-comparators
+   * @ingroup micro-test-plus-function-comparators
    * @brief Generic less than comparator.
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
@@ -382,7 +382,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
-   * @ingroup mtp-function-comparators
+   * @ingroup micro-test-plus-function-comparators
    * @brief Generic less than or equal comparator.
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
@@ -398,7 +398,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
-   * @ingroup mtp-function-comparators
+   * @ingroup micro-test-plus-function-comparators
    * @brief Generic less than or equal comparator.
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
@@ -414,7 +414,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
-   * @ingroup mtp-logical-function-operators
+   * @ingroup micro-test-plus-logical-function-operators
    * @brief Generic logical **not**.
    * @tparam Expr_T Type of the operand.
    * @param [in] expr Logical expression.
@@ -432,7 +432,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
-   * @ingroup mtp-logical-function-operators
+   * @ingroup micro-test-plus-logical-function-operators
    * @brief Generic logical **and**.
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
@@ -452,7 +452,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
-   * @ingroup mtp-logical-function-operators
+   * @ingroup micro-test-plus-logical-function-operators
    * @brief Generic logical **or**.
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
@@ -497,7 +497,7 @@ namespace micro_os_plus::micro_test_plus
   namespace operators
   {
     /**
-     * @ingroup mtp-comparing-strings
+     * @ingroup micro-test-plus-comparing-strings
      * @brief Equality operator for `string_view` objects.
      */
     [[nodiscard]] constexpr auto
@@ -507,7 +507,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-comparing-strings
+     * @ingroup micro-test-plus-comparing-strings
      * @brief Non-equality operator for `string_view` objects.
      */
     [[nodiscard]] constexpr auto
@@ -517,7 +517,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-comparing-containers
+     * @ingroup micro-test-plus-comparing-containers
      * @brief Equality operator for containers.
      */
     template <class T,
@@ -529,7 +529,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-comparing-containers
+     * @ingroup micro-test-plus-comparing-containers
      * @brief Non-equality operator for containers.
      */
     template <class T,
@@ -541,7 +541,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-operators
+     * @ingroup micro-test-plus-operators
      * @brief Equality operator. It matches only if at least one
      * operand is of local type (derived from local `op`).
      */
@@ -556,7 +556,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-operators
+     * @ingroup micro-test-plus-operators
      * @brief Non-equality operator. It matches only if at least one
      * operand is of local type (derived from local `op`).
      */
@@ -571,7 +571,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-operators
+     * @ingroup micro-test-plus-operators
      * @brief Greater than operator. It matches only if at least one
      * operand is of local type (derived from local `op`).
      */
@@ -586,7 +586,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-operators
+     * @ingroup micro-test-plus-operators
      * @brief Greater than or equal operator. It matches only if at least one
      * operand is of local type (derived from local `op`).
      */
@@ -601,7 +601,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-operators
+     * @ingroup micro-test-plus-operators
      * @brief Less than operator. It matches only if at least one
      * operand is of local type (derived from local `op`).
      */
@@ -616,7 +616,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-operators
+     * @ingroup micro-test-plus-operators
      * @brief Less than or equal operator. It matches only if at least one
      * operand is of local type (derived from local `op`).
      */
@@ -631,7 +631,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-operators
+     * @ingroup micro-test-plus-operators
      * @brief Logical `&&` (and) operator. It matches only if at least one
      * operand is of local type (derived from local `op`).
      */
@@ -646,7 +646,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-operators
+     * @ingroup micro-test-plus-operators
      * @brief Logical `||` (or) operator. It matches only if at least one
      * operand is of local type (derived from local `op`).
      */
@@ -661,7 +661,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-operators
+     * @ingroup micro-test-plus-operators
      * @brief Logical `!` (not) operator. It matches only if the
      * operand is of local type (derived from local `op`).
      */
@@ -676,7 +676,7 @@ namespace micro_os_plus::micro_test_plus
   namespace utility
   {
     /**
-     * @ingroup mtp-utility-functions
+     * @ingroup micro-test-plus-utility-functions
      * @brief Check if a string matches a pattern.
      * @param [in] input String view to check.
      * @param [in] pattern Sting view with the pattern.
@@ -686,7 +686,7 @@ namespace micro_os_plus::micro_test_plus
     is_match (std::string_view input, std::string_view pattern);
 
     /**
-     * @ingroup mtp-utility-functions
+     * @ingroup micro-test-plus-utility-functions
      * @brief Split a string into a vector of sub-strings.
      * @tparam T Type of the input string.
      * @tparam Delim_T Type of the delimiter.

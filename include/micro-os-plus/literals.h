@@ -49,7 +49,7 @@ namespace micro_os_plus::micro_test_plus
   namespace literals
   {
     /**
-     * @ingroup mtp-literals
+     * @ingroup micro-test-plus-literals
      * @brief Operator to convert to `int`.
      */
     template <char... Cs>
@@ -60,7 +60,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-literals
+     * @ingroup micro-test-plus-literals
      * @brief Operator to convert to `short`.
      */
     template <char... Cs>
@@ -71,7 +71,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-literals
+     * @ingroup micro-test-plus-literals
      * @brief Operator to convert to `char`.
      */
     template <char... Cs>
@@ -82,7 +82,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-literals
+     * @ingroup micro-test-plus-literals
      * @brief Operator to convert to `signed char`.
      */
     template <char... Cs>
@@ -94,7 +94,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-literals
+     * @ingroup micro-test-plus-literals
      * @brief Operator to convert to `long`.
      */
     template <char... Cs>
@@ -105,7 +105,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-literals
+     * @ingroup micro-test-plus-literals
      * @brief Operator to convert to `long long`.
      */
     template <char... Cs>
@@ -116,7 +116,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-literals
+     * @ingroup micro-test-plus-literals
      * @brief Operator to convert to `unsigned`.
      */
     template <char... Cs>
@@ -127,7 +127,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-literals
+     * @ingroup micro-test-plus-literals
      * @brief Operator to convert to `unsigned char`.
      */
     template <char... Cs>
@@ -139,7 +139,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-literals
+     * @ingroup micro-test-plus-literals
      * @brief Operator to convert to `unsigned short`.
      */
     template <char... Cs>
@@ -151,7 +151,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-literals
+     * @ingroup micro-test-plus-literals
      * @brief Operator to convert to `unsigned long`.
      */
     template <char... Cs>
@@ -163,7 +163,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-literals
+     * @ingroup micro-test-plus-literals
      * @brief Operator to convert to `unsigned long long`.
      */
     template <char... Cs>
@@ -175,7 +175,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-literals
+     * @ingroup micro-test-plus-literals
      * @brief Operator to convert to `int8_t`.
      */
     template <char... Cs>
@@ -187,7 +187,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-literals
+     * @ingroup micro-test-plus-literals
      * @brief Operator to convert to `int16_t`.
      */
     template <char... Cs>
@@ -199,7 +199,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-literals
+     * @ingroup micro-test-plus-literals
      * @brief Operator to convert to `int32_t`.
      */
     template <char... Cs>
@@ -211,7 +211,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-literals
+     * @ingroup micro-test-plus-literals
      * @brief Operator to convert to `int64_t`.
      */
     template <char... Cs>
@@ -223,7 +223,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-literals
+     * @ingroup micro-test-plus-literals
      * @brief Operator to convert to `uint8_t`.
      */
     template <char... Cs>
@@ -235,7 +235,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-literals
+     * @ingroup micro-test-plus-literals
      * @brief Operator to convert to `uint16_t`.
      */
     template <char... Cs>
@@ -247,7 +247,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-literals
+     * @ingroup micro-test-plus-literals
      * @brief Operator to convert to `uint32_t`.
      */
     template <char... Cs>
@@ -259,7 +259,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-literals
+     * @ingroup micro-test-plus-literals
      * @brief Operator to convert to `uint64_t`.
      */
     template <char... Cs>
@@ -271,7 +271,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-literals
+     * @ingroup micro-test-plus-literals
      * @brief Operator to convert to `float`.
      */
     template <char... Cs>
@@ -285,7 +285,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-literals
+     * @ingroup micro-test-plus-literals
      * @brief Operator to convert to `double`.
      */
     template <char... Cs>
@@ -299,7 +299,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-literals
+     * @ingroup micro-test-plus-literals
      * @brief Operator to convert to `long double`.
      */
     template <char... Cs>
@@ -313,7 +313,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup mtp-literals
+     * @ingroup micro-test-plus-literals
      * @brief Operator to convert to `bool`.
      */
     constexpr auto
@@ -348,7 +348,7 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   /**
-   * @addtogroup mtp-literals
+   * @addtogroup micro-test-plus-literals
    * @{
    */
 
@@ -385,7 +385,7 @@ namespace micro_os_plus::micro_test_plus
    */
 
   /**
-   * @ingroup mtp-literals
+   * @ingroup micro-test-plus-literals
    * @brief Template for wrapping any other type.
    */
   template <class T>

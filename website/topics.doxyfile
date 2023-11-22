@@ -23,7 +23,7 @@
 -------------------------------------------------------------------------------
 /**
 
-@defgroup mtp-cpp-api C++ API
+@defgroup micro-test-plus-cpp-api C++ API
 @ingroup mtp
 @details
 
@@ -37,7 +37,7 @@ There are no preprocessor macros, all primitives are implemented in C++.
 -------------------------------------------------------------------------------
 /**
 
-@defgroup mtp-c-api C API
+@defgroup micro-test-plus-c-api C API
 @ingroup mtp
 @details
 
@@ -51,7 +51,7 @@ Thus, there are no C equivalents for the C++ definitions.
 -------------------------------------------------------------------------------
 /**
 
-@defgroup mtp-cli Command line options
+@defgroup micro-test-plus-cli Command line options
 @ingroup mtp
 @details
 
@@ -71,14 +71,14 @@ To control the verbosity, use one of the following command line options:
 -------------------------------------------------------------------------------
 /**
 
-@addtogroup mtp-cpp-api
+@addtogroup micro-test-plus-cpp-api
 @{
 
 */
 -------------------------------------------------------------------------------
 /**
 
-@defgroup mtp-top Initialisation & exit
+@defgroup micro-test-plus-top Initialisation & exit
 @brief Functions to initialise the framework and exit.
 @details
 
@@ -121,7 +121,7 @@ When running this test, the output looks like:
 -------------------------------------------------------------------------------
 /**
 
-@defgroup mtp-test-case Test cases
+@defgroup micro-test-plus-test-case Test cases
 @brief  Test cases are named sequences of checks.
 @details
 
@@ -154,7 +154,7 @@ test_case ("Check various conditions with operators", [] {
 -------------------------------------------------------------------------------
 /**
 
-@defgroup mtp-expectations Expectations
+@defgroup micro-test-plus-expectations Expectations
 @brief  Expectations are checks whose results are reported.
 @details
 
@@ -165,7 +165,7 @@ Failed expectations report the failure but do not break the test
 -------------------------------------------------------------------------------
 /**
 
-@defgroup mtp-assumptions Assumptions
+@defgroup micro-test-plus-assumptions Assumptions
 @brief  Assumptions are conditions that must be met for the test to continue.
 @details
 
@@ -175,7 +175,7 @@ On failed assumptions, the test cannot continue and it is aborted on the spot.
 -------------------------------------------------------------------------------
 /**
 
-@defgroup mtp-function-comparators Function comparators
+@defgroup micro-test-plus-function-comparators Function comparators
 @brief  Functions to compare the actual with expected values.
 @details
 
@@ -225,7 +225,7 @@ expect (ne (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 })
 -------------------------------------------------------------------------------
 /**
 
-@defgroup mtp-logical-function-operators Logical function operators
+@defgroup micro-test-plus-logical-function-operators Logical function operators
 @brief  Functions to be used in logical expressions.
 @details
 
@@ -252,7 +252,7 @@ in the `micro_test_plus::operators` namespace.
 -------------------------------------------------------------------------------
 /**
 
-@defgroup mtp-exceptions Checking exceptions
+@defgroup micro-test-plus-exceptions Checking exceptions
 @brief  Functions to check exceptions.
 @details
 
@@ -296,7 +296,7 @@ catch (...)
 -------------------------------------------------------------------------------
 /**
 
-@defgroup mtp-operators Operators
+@defgroup micro-test-plus-operators Operators
 @brief Overloaded operators
 @details
 
@@ -349,7 +349,7 @@ expect (compute_answer () == 42_i && compute_float () == 42.0_f);
 -------------------------------------------------------------------------------
 /**
 
-@defgroup mtp-comparing-strings Strings operators
+@defgroup micro-test-plus-comparing-strings Strings operators
 @brief Overloaded operators to compare strings.
 @details
 
@@ -376,7 +376,7 @@ test_case ("Operators", [] {
 -------------------------------------------------------------------------------
 /**
 
-@defgroup mtp-comparing-containers Container operators
+@defgroup micro-test-plus-comparing-containers Container operators
 @brief Overloaded operators to compare containers.
 @details
 
@@ -405,7 +405,7 @@ test_case ("Operators", [] {
 -------------------------------------------------------------------------------
 /**
 
-@defgroup mtp-literals Literals and wrappers
+@defgroup micro-test-plus-literals Literals and wrappers
 @brief Literals and wrappers.
 @details
 
@@ -426,7 +426,7 @@ expect (_f {expression} == 42_f);
 -------------------------------------------------------------------------------
 /**
 
-@defgroup mtp-functions-vs-operators Functions vs. operators & literals
+@defgroup micro-test-plus-functions-vs-operators Functions vs. operators & literals
 @details
 
 Which to use, functions like `eq()` or the
@@ -451,14 +451,14 @@ The µOS++ projects favour explicit comparator functions.
 -------------------------------------------------------------------------------
 /**
 
-@defgroup mtp-utility-functions Utility functions
+@defgroup micro-test-plus-utility-functions Utility functions
 @brief Functions to assist in string operations.
 
 */
 -------------------------------------------------------------------------------
 /**
 
-@defgroup mtp-custom-types Custom-types
+@defgroup micro-test-plus-custom-types Custom-types
 @details
 
 It is possible to extend the comparators with templates matching custom
@@ -471,7 +471,7 @@ C++.
 -------------------------------------------------------------------------------
 /**
 
-@defgroup mtp-test-suites Test suites
+@defgroup micro-test-plus-test-suites Test suites
 @brief Test suites are named sequences of test cases.
 @details
 
@@ -543,7 +543,7 @@ static micro_os_plus::micro_test_plus::test_suite ts_args
 -------------------------------------------------------------------------------
 /**
 
-@defgroup mtp-explicit-namespaces Explicit namespaces
+@defgroup micro-test-plus-explicit-namespaces Explicit namespaces
 @details
 
 In complex projects, the definitions in the
@@ -570,7 +570,7 @@ possibly aliased to shorter names.
 -------------------------------------------------------------------------------
 /**
 
-@defgroup mtp-memory-footprint Memory footprint
+@defgroup micro-test-plus-memory-footprint Memory footprint
 @details
 
 The memory footprint of unit tests based on µTest++ is definitely smaller than

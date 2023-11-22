@@ -246,7 +246,7 @@ namespace micro_os_plus::micro_test_plus
   };
 
   /**
-   * @ingroup mtp-test-suites
+   * @ingroup micro-test-plus-test-suites
    * @brief Test suites are classes that represent a named group of
    * test cases which self register to the runner.
    */
