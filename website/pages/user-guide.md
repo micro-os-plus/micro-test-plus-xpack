@@ -3,7 +3,7 @@
 
 @tableofcontents
 
-## Motivation
+## Rationale
 
 The xPack Build Framework already includes ready to use
 support for several testing frameworks
