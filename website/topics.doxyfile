@@ -78,11 +78,11 @@ To control the verbosity, use one of the following command line options:
 -------------------------------------------------------------------------------
 /**
 
-@defgroup mtp-top Top functions
-@brief Functions used at the application top level.
+@defgroup mtp-top Initialisation & exit
+@brief Functions to initialise the framework and exit.
 @details
 
-These are functions to initialise the test function, to define
+These are functions to initialise the test runner, to define
 test cases, and to
 return the test result as the process exit code.
 
