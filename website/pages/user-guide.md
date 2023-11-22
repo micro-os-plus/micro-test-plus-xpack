@@ -422,7 +422,7 @@ bool operator== (std::string_view lhs, std::string_view rhs);
 bool operator!= (std::string_view lhs, std::string_view rhs);
 ```
 
-See the reference [Strings operators](group__micro-test-plus-string-operators.html) page.
+See the reference [String operators](group__micro-test-plus-string-operators.html) page.
 
 ### Container operators
 
@@ -438,7 +438,7 @@ bool operator!= (T&& lhs, T&& rhs);
 
 See the reference [Container operators](group__micro-test-plus-container-operators.html) page.
 
-#### Literals and wrappers
+### Literals and wrappers
 
 For converting constants to recognised typed operands, the following
 literal operators are available in the separate namespace `literals`:

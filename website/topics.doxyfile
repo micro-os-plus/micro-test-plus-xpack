@@ -348,7 +348,7 @@ expect (compute_answer () == 42_i && compute_float () == 42.0_f);
 -------------------------------------------------------------------------------
 /**
 
-@defgroup micro-test-plus-strings-operators Strings operators
+@defgroup micro-test-plus-string-operators String operators
 @brief Overloaded operators to compare strings.
 @details
 
@@ -375,7 +375,7 @@ test_case ("Operators", [] {
 -------------------------------------------------------------------------------
 /**
 
-@defgroup micro-test-plus-comparing-containers Container operators
+@defgroup micro-test-plus-container-operators Container operators
 @brief Overloaded operators to compare containers.
 @details
 

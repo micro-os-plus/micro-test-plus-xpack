@@ -497,7 +497,7 @@ namespace micro_os_plus::micro_test_plus
   namespace operators
   {
     /**
-     * @ingroup micro-test-plus-strings-operators
+     * @ingroup micro-test-plus-string-operators
      * @brief Equality operator for `string_view` objects.
      */
     [[nodiscard]] constexpr auto
@@ -507,7 +507,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup micro-test-plus-strings-operators
+     * @ingroup micro-test-plus-string-operators
      * @brief Non-equality operator for `string_view` objects.
      */
     [[nodiscard]] constexpr auto
@@ -517,7 +517,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup micro-test-plus-comparing-containers
+     * @ingroup micro-test-plus-container-operators
      * @brief Equality operator for containers.
      */
     template <class T,
@@ -529,7 +529,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup micro-test-plus-comparing-containers
+     * @ingroup micro-test-plus-container-operators
      * @brief Non-equality operator for containers.
      */
     template <class T,
