@@ -37,7 +37,7 @@ and can be integrated as an
         <path d="M10.9 8.8L10.6577 8.66152C10.1418 8.36676 9.5 8.73922 9.5 9.33333L9.5 14.6667C9.5 15.2608 10.1418 15.6332 10.6577 15.3385L10.9 15.2L15.1 12.8C15.719 12.4463 15.719 11.5537 15.1 11.2L10.9 8.8Z" stroke="#323232" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       <h2>Integration Guide</h2>
-      <p>Instructions how to integrate the <b>micro-test-plus</b> library into a project.</p>
+      <p>Learn how to integrate the <b>micro-test-plus</b> library into a project.</p>
     </div>
     </a>
   </div>
