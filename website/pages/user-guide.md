@@ -252,3 +252,311 @@ the operands
 to be of the specific type, usually the constant using a literal, but if both
 are expression, at least one of them must be casted.
 
+## C++ API
+
+### Namespaces
+
+The definitions are grouped in several namespaces below `micro_os_plus`:
+
+- `micro_os_plus::micro_test_plus`
+- `micro_os_plus::micro_test_plus::operators`
+- `micro_os_plus::micro_test_plus::literals`
+- `micro_os_plus::micro_test_plus::utility`
+
+`micro_os_plus` is the top µOS++ namespace, and `micro_test_plus` is the
+µTest++ namespace.
+
+The `operators` namespace defines the custom operators, and the `literals`
+namespace defines the literals (like `1_i`);
+
+### Test runner initialisation & exit
+
+There are two functions to initialise the test runner and to
+return the test result as the process exit.
+
+```cpp
+void initialize (int argc, char* argv[], const char* name = "Main");
+
+int exit_code (void);
+```
+
+See the reference [Initialisation & exit](group__micro-test-plus-inits.html) page.
+
+### Test cases
+
+Test cases are groups of several checks to be executed in the same environment.
+
+```cpp
+template <typename Callable_T, typename... Args_T>
+void test_case (const char* name, Callable_T&& func, Args_T&&... arguments);
+```
+
+See the reference [Test cases](group__micro-test-plus-test-case.html) page.
+
+### Expectations & assumptions
+
+Expectations and assumptions are functions that check expressions
+evaluating to boolean values.
+
+```cpp
+template <class Expr_T, type_traits::requires_t<....>>
+bool expect(const Expr_T& expr);
+
+template <class Expr_T, type_traits::requires_t<....>>
+bool assume(const Expr_T& expr);
+```
+
+See the reference [Expectations](group__micro-test-plus-expectations.html)
+and [Assumptions](group__micro-test-plus-assumptions.html) pages.
+
+### Function comparators
+
+In order to nicely report the difference between expected
+and actual values in failed
+conditions, several generic comparators are provided.
+
+```cpp
+template <class Lhs_T, class Rhs_T>
+auto eq(const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Lhs_T, class Rhs_T>
+auto ne(const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Lhs_T, class Rhs_T>
+auto lt(const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Lhs_T, class Rhs_T>
+auto le(const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Lhs_T, class Rhs_T>
+auto gt(const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Lhs_T, class Rhs_T>
+auto ge(const Lhs_T& lhs, const Rhs_T& rhs);
+```
+
+See the reference [Function comparators](group__micro-test-plus-function-comparators.html) page.
+
+### Logical functions
+
+Complex expressions can be checked in a single line, using the logical
+`_and()`, `_or()` and `_not()` functions.
+
+```cpp
+template <class Lhs_T, class Rhs_T>
+auto _and (const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Lhs_T, class Rhs_T>
+auto _or (const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Expr_T>
+auto _not (const Expr_T& expr);
+```
+
+See the reference [Logical functions](group__micro-test-plus-logical-functions.html) page.
+
+### Checking exceptions
+
+It is also possible to check various
+exceptions related conditions.
+
+```cpp
+// Check for any exception.
+template <class Callable_T>
+auto throws (const Callable_T& expr);
+
+// Check for a specific exception.
+template <class Exception_T, class Callable_T>
+auto throws (const Callable_T& expr);
+
+// Check for no exception at all.
+template <class Callable_T>
+auto nothrow (const Callable_T& expr);
+```
+
+See the reference [Checking exceptions](group__micro-test-plus-exceptions.html) page.
+
+### Operators
+
+For convenience, it is
+also possible to overload the `==`, `!=`, `<`, `>`, `<=`, `>=` operators:
+
+```cpp
+template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
+bool operator== (const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
+bool operator!= (const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
+bool operator< (const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
+bool operator<= (const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
+bool operator> (const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
+bool operator>= (const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
+bool operator and (const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
+bool operator or (const Lhs_T& lhs, const Rhs_T& rhs);
+
+template <class T, type_traits::requires_t<....>>
+bool operator not (const T& t);
+```
+
+See the reference [Operators](group__micro-test-plus-operators.html) page.
+
+### String operators
+
+Equality operators are provided for `string_view`
+objects:
+
+```cpp
+bool operator== (std::string_view lhs, std::string_view rhs);
+bool operator!= (std::string_view lhs, std::string_view rhs);
+```
+
+See the reference [Strings operators](group__micro-test-plus-string-operators.html) page.
+
+### Container operators
+
+Equality operators are provided for iterable containers:
+
+```cpp
+template <class T, type_traits::requires_t<type_traits::is_container_v<T>>>
+bool operator== (T&& lhs, T&& rhs);
+
+template <class T, type_traits::requires_t<type_traits::is_container_v<T>>>
+bool operator!= (T&& lhs, T&& rhs);
+```
+
+See the reference [Container operators](group__micro-test-plus-container-operators.html) page.
+
+#### Literals and wrappers
+
+For converting constants to recognised typed operands, the following
+literal operators are available in the separate namespace `literals`:
+
+```cpp
+namespace literals {
+  auto operator""_i (); // int
+  auto operator""_s (); // short
+  auto operator""_c (); // char
+  auto operator""_sc () // signed char
+  auto operator""_l (); // long
+  auto operator""_ll (); // long long
+  auto operator""_u (); // unsigned
+  auto operator""_uc (); // unsigned char
+  auto operator""_us (); // unsigned short
+  auto operator""_ul (); // unsigned long
+  auto operator""_ull (); // unsigned long long
+  auto operator""_i8 (); // int8_t
+  auto operator""_i16 (); // int16_t
+  auto operator""_i32 (); // int32_t
+  auto operator""_i64 (); // int64_t
+  auto operator""_u8 (); // uint8_t
+  auto operator""_u16 (); // uint16_t
+  auto operator""_u32 (); // uint32_t
+  auto operator""_u64 (); // uint64_t
+  auto operator""_f (); // float
+  auto operator""_d (); // double
+  auto operator""_ld (); // long double
+  auto operator""_b (); // bool
+}
+```
+
+Similarly, for dynamic values, there are wrappers that convert them to
+recognised types:
+
+```cpp
+  using _b = type_traits::value<bool>;
+  using _c = type_traits::value<char>;
+  using _sc = type_traits::value<signed char>;
+  using _s = type_traits::value<short>;
+  using _i = type_traits::value<int>;
+  using _l = type_traits::value<long>;
+  using _ll = type_traits::value<long long>;
+  using _u = type_traits::value<unsigned>;
+  using _uc = type_traits::value<unsigned char>;
+  using _us = type_traits::value<unsigned short>;
+  using _ul = type_traits::value<unsigned long>;
+  using _ull = type_traits::value<unsigned long long>;
+  using _i8 = type_traits::value<std::int8_t>;
+  using _i16 = type_traits::value<std::int16_t>;
+  using _i32 = type_traits::value<std::int32_t>;
+  using _i64 = type_traits::value<std::int64_t>;
+  using _u8 = type_traits::value<std::uint8_t>;
+  using _u16 = type_traits::value<std::uint16_t>;
+  using _u32 = type_traits::value<std::uint32_t>;
+  using _u64 = type_traits::value<std::uint64_t>;
+  using _f = type_traits::value<float>;
+  using _d = type_traits::value<double>;
+  using _ld = type_traits::value<long double>;
+
+  // Template for wrapping any other type.
+  template <class T>
+  struct _t : type_traits::value<T>
+  {
+    constexpr explicit _t (const T& t) : type_traits::value<T>{ t }
+    {
+    }
+  };
+```
+
+See the reference [Literals and wrappers](group__micro-test-plus-literals.html) page.
+
+### Utility functions
+
+```cpp
+namespace utility {
+  bool is_match (std::string_view input, std::string_view pattern);
+}
+
+namespace utility {
+  template <class T, class Delim_T>
+  auto split (T input, Delim_T delim) -> std::vector<T>;
+}
+```
+
+See the reference [Utility functions](group__micro-test-plus-utility-functions.html) page.
+
+### Test suites
+
+Test suites are named sequences of test cases.
+
+```cpp
+class test_suite : public test_suite_base
+{
+public:
+  template <typename Callable_T, typename... Args_T>
+  test_suite (const char* name, Callable_T&& callable,
+              Args_T&&... arguments);
+  // ...
+}
+```
+
+See the reference [Test suites](group__micro-test-plus-test-suites.html) page.
+
+## C API
+
+There are no C equivalents for the C++ definitions.
+
+## Command line options
+
+To control the verbosity, use one of the following command line options:
+
+- `--verbose` - show all expectations, regardless of the result
+- `--quiet` - show only the test suite totals
+- `--silent` - suppress all output and only return the exit code
+
+See the reference [Command line options](group__micro-test-plus-cli.html) page.
+
+## Known problems
+
+- none
