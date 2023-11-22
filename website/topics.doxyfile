@@ -78,12 +78,11 @@ To control the verbosity, use one of the following command line options:
 -------------------------------------------------------------------------------
 /**
 
-@defgroup micro-test-plus-top Initialisation & exit
+@defgroup micro-test-plus-inits Initialisation & exit
 @brief Functions to initialise the framework and exit.
 @details
 
-These are functions to initialise the test runner, to define
-test cases, and to
+These are functions to initialise the test runner and to
 return the test result as the process exit code.
 
 The absolute minimal test has a single test case, with a single expectation;
@@ -125,7 +124,7 @@ When running this test, the output looks like:
 @brief  Test cases are named sequences of checks.
 @details
 
-Test cases group several checks done in the same environment.
+Test cases group several checks to be executed in the same environment.
 
 There can be any number of test cases, and each test case is performed
 by invoking a function, parametrised with a name/description,
@@ -225,7 +224,7 @@ expect (ne (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 })
 -------------------------------------------------------------------------------
 /**
 
-@defgroup micro-test-plus-logical-function-operators Logical function operators
+@defgroup micro-test-plus-logical-functions Logical functions
 @brief  Functions to be used in logical expressions.
 @details
 
@@ -349,7 +348,7 @@ expect (compute_answer () == 42_i && compute_float () == 42.0_f);
 -------------------------------------------------------------------------------
 /**
 
-@defgroup micro-test-plus-comparing-strings Strings operators
+@defgroup micro-test-plus-strings-operators Strings operators
 @brief Overloaded operators to compare strings.
 @details
 

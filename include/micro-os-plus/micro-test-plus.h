@@ -62,7 +62,7 @@ namespace micro_os_plus::micro_test_plus
   // Public API.
 
   /**
-   * @ingroup micro-test-plus-top
+   * @ingroup micro-test-plus-inits
    * @brief Initialize the test framework.
    * @param [in] argc The number of arguments.
    * @param [in] argv Array of pointers to null terminated arguments.
@@ -74,7 +74,7 @@ namespace micro_os_plus::micro_test_plus
   initialize (int argc, char* argv[], const char* name = "Main");
 
   /**
-   * @ingroup micro-test-plus-top
+   * @ingroup micro-test-plus-inits
    * @brief Complete the test and return the exit code.
    * @par Parameters
    *	None.
@@ -414,7 +414,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
-   * @ingroup micro-test-plus-logical-function-operators
+   * @ingroup micro-test-plus-logical-functions
    * @brief Generic logical **not**.
    * @tparam Expr_T Type of the operand.
    * @param [in] expr Logical expression.
@@ -432,7 +432,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
-   * @ingroup micro-test-plus-logical-function-operators
+   * @ingroup micro-test-plus-logical-functions
    * @brief Generic logical **and**.
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
@@ -452,7 +452,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   /**
-   * @ingroup micro-test-plus-logical-function-operators
+   * @ingroup micro-test-plus-logical-functions
    * @brief Generic logical **or**.
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
@@ -497,7 +497,7 @@ namespace micro_os_plus::micro_test_plus
   namespace operators
   {
     /**
-     * @ingroup micro-test-plus-comparing-strings
+     * @ingroup micro-test-plus-strings-operators
      * @brief Equality operator for `string_view` objects.
      */
     [[nodiscard]] constexpr auto
@@ -507,7 +507,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @ingroup micro-test-plus-comparing-strings
+     * @ingroup micro-test-plus-strings-operators
      * @brief Non-equality operator for `string_view` objects.
      */
     [[nodiscard]] constexpr auto
