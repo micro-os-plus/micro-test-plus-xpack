@@ -153,27 +153,6 @@ The following options must be passed to the compiler and linker:
 
 - `-std=c++20` or higher for C++ sources
 
-## C++ Namespaces
-
-The code is grouped in the following namespaces:
-
-- `micro_os_plus::micro_test_plus`
-- `micro_os_plus::micro_test_plus::operators`
-- `micro_os_plus::micro_test_plus::literals`
-- `micro_os_plus::micro_test_plus::utility`
-
-`micro_os_plus` is the top µOS++ namespace, and `micro_test_plus` is the
-µTest++ namespace.
-
-The `operators` namespace defines the custom operators, and the `literals`
-namespace defines the literals (like `1_i`);
-
-## C++ Classes
-
-The following classes are defined:
-
-- `micro_os_plus::micro_test_plus::test_suite`
-
 ## Dependencies
 
 The library has the following dependencies:
