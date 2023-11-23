@@ -202,7 +202,8 @@ wrong answer.
 
 ### More elaborate comparators
 
-To get such a useful information, the test should be slightly more elaborate,
+To get a more useful report, like the actual wrong answer,
+the test should be slightly more elaborate,
 and must use some custom comparators or operators; for example:
 
 ```cpp
