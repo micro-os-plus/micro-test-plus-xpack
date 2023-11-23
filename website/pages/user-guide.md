@@ -11,7 +11,7 @@ possibly using the standard `assert()` macro, or even some similar user
 defined mechanism.
 
 However, failed asserts usually abort the test, and in case of multiple
-test cases with multiple checks, it would be better to get a nice report.
+test cases with multiple checks, getting a nice report would be preferred.
 
 Test frameworks do exactly this, they provide convenient mechanisms to write
 various checks and to get a nice report.
@@ -25,8 +25,8 @@ support for several testing frameworks
 However, they all are quite heavy in terms of memory resources; also the
 learning curve for mastering them is quite steep.
 
-Thus, for embedded projects, a simpler solution, with a smaller
-memory footprint, was considered a useful addition.
+Thus, for embedded projects, a **simpler solution**, with a **smaller
+memory footprint**, was considered a useful addition.
 
 ## Overview
 
@@ -184,7 +184,7 @@ compute_answer()
 }
 ```
 
-In this case the test will fail with:
+In this case the test report will change to:
 
 ```console
 • The Answer - test suite started
@@ -204,7 +204,7 @@ wrong answer.
 
 To get a more useful report, like the actual wrong answer,
 the test should be slightly more elaborate,
-and must use some custom comparators or operators; for example:
+and use custom comparators or operators; for example:
 
 ```cpp
 // ...
