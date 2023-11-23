@@ -5,6 +5,17 @@
 
 ## Rationale
 
+At the very limit, the simplest testing framework is the no-framework at all!
+A test for a C/C++ project can be very well written without any framework,
+possibly using the standard `assert()` macro, or even some similar user
+defined mechanism.
+
+However, failed asserts usually abort the test, and in case of multiple
+test cases with multiple checks, it would be better to get a nice report.
+
+Test frameworks do exactly this, they provide convenient mechanisms to write
+various checks and to get a nice report.
+
 The xPack Build Framework already includes ready to use
 support for several testing frameworks
 ([Google Test](https://github.com/xpack-3rd-party/googletest-xpack),
@@ -92,6 +103,8 @@ For more details see: [ISTBQ](http://glossary.istqb.org/en/search/test%20case).
 
 ## Getting started
 
+### Minimal test
+
 The absolute minimal test has a single test case, with a single expectation;
 for example:
 
@@ -122,6 +135,8 @@ When running this test, the output looks like:
 
 ✓ Minimal - test suite passed (1 check in 1 test case)
 ```
+
+### Test a computed value
 
 A slightly more useful example would check the result of a computed value;
 for example:
@@ -184,6 +199,8 @@ In this case the test will fail with:
 The output identifies the failed test as located at line 17, but does not
 provide more details, for example it does not tell what was the actual
 wrong answer.
+
+### More elaborate comparators
 
 To get such a useful information, the test should be slightly more elaborate,
 and must use some custom comparators or operators; for example:
@@ -251,6 +268,95 @@ For the custom operators to match, it is necessary for at least one of
 the operands
 to be of the specific type, usually the constant using a literal, but if both
 are expression, at least one of them must be casted.
+
+### More complex tests
+
+For simple tests, invoking multiple test cases in `main()` might be enough.
+
+For more complex applications, test cases can be grouped in test suites,
+and invoked, possibly multiple times with different arguments.
+
+Test cases are best instantiated as static objects; they self-register
+automatically to the testing framework using the static constructors
+mechanism, and are execute when the `exit_code()` function is invoked.
+
+@par Examples
+
+```cpp
+// Define a function template to run the tests.
+template <class T>
+void
+check_double_list_links (void)
+{
+  using namespace micro_os_plus::micro_test_plus;
+
+  static T left_links;
+  static T links;
+  static T right_links;
+
+  test_case ("Initial", [&] {
+    if constexpr (T::is_statically_allocated::value)
+      {
+        // Check if the node is cleared.
+        expect (eq (links.previous (), nullptr)) << "prev is null";
+        expect (eq (links.next (), nullptr)) << "next is null";
+        expect (links.uninitialized ()) << "uninitialized";
+
+        left_links.initialize ();
+        links.initialize ();
+        right_links.initialize ();
+      }
+
+    expect (!left_links.linked ()) << "left unlinked";
+    expect (!links.linked ()) << "unlinked";
+    expect (!right_links.linked ()) << "right unlinked";
+  });
+
+  test_case ("Link", [&] {
+    // Link left as previous.
+    links.link_previous (&left_links);
+
+    // Link right as next.
+    links.link_next (&right_links);
+
+    // The node must appear as linked now.
+    expect (links.linked ()) << "linked";
+
+    expect (eq (left_links.next (), &links)) << "left linked";
+    expect (eq (right_links.previous (), &links)) << "right linked";
+  });
+
+  test_case ("Unlink", [&] {
+    // Unlink the central node.
+    links.unlink ();
+    expect (!links.linked ()) << "unlinked";
+
+    // Left and right must indeed point to each other.
+    expect (eq (left_links.next (), &right_links)) << "left -> right";
+    expect (eq (right_links.previous (), &left_links)) << "right <- right";
+  });
+
+  if constexpr (!T::is_statically_allocated::value)
+    {
+      test_case ("Allocated on stack", [] {
+        T stack_links;
+        expect (!stack_links.linked ()) << "unlinked";
+      });
+    }
+}
+
+// Instantiate the test for statically allocated lists.
+static micro_os_plus::micro_test_plus::test_suite ts_static_double_list_links
+    = {
+        "Static double list links",
+        check_double_list_links<micro_os_plus::utils::static_double_list_links>
+      };
+
+// Instantiate the same test for regular lists.
+static micro_os_plus::micro_test_plus::test_suite ts_double_list_links
+    = { "Double list links",
+        check_double_list_links<micro_os_plus::utils::double_list_links> };
+```
 
 ## C++ API
 
