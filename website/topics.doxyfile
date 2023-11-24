@@ -17,14 +17,14 @@
 -------------------------------------------------------------------------------
 /**
 
-@defgroup mtp µTest++
+@defgroup micro-test-plus µTest++
 
 */
 -------------------------------------------------------------------------------
 /**
 
 @defgroup micro-test-plus-cpp-api C++ API
-@ingroup mtp
+@ingroup micro-test-plus
 @details
 
 The µTest++ implementation uses extensively modern C++ features.
@@ -38,7 +38,7 @@ There are no preprocessor macros, all primitives are implemented in C++.
 /**
 
 @defgroup micro-test-plus-c-api C API
-@ingroup mtp
+@ingroup micro-test-plus
 @details
 
 The µTest++ can be used to test C code without problems, but
@@ -52,7 +52,7 @@ Thus, there are no C equivalents for the C++ definitions.
 /**
 
 @defgroup micro-test-plus-cli Command line options
-@ingroup mtp
+@ingroup micro-test-plus
 @details
 
 ### Verbosity
