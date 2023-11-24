@@ -53,7 +53,26 @@
       "deep-clean": "del-cli build node_modules xpacks package-lock.json",
       "install": [
         "npm install",
-        "xpm install"
+        "xpm install",
+        "xpm install --config native-cmake-sys-debug",
+        "xpm install --config native-cmake-sys-release"
+      ],
+      "install-selected": [
+        "npm install",
+        "xpm install --config native-cmake-gcc-debug",
+        "xpm install --config native-cmake-gcc-release",
+        "{% if os.platform == 'darwin' %}echo {% endif %}xpm install --config native-meson-gcc-debug",
+        "{% if os.platform == 'darwin' %}echo {% endif %}xpm install --config native-meson-gcc-release",
+        "xpm install --config qemu-cortex-m0-cmake-gcc-debug",
+        "xpm install --config qemu-cortex-m0-cmake-gcc-release",
+        "xpm install --config qemu-cortex-m7f-cmake-gcc-debug",
+        "xpm install --config qemu-cortex-m7f-cmake-gcc-release",
+        "xpm install --config qemu-cortex-m7f-meson-gcc-debug",
+        "xpm install --config qemu-cortex-m7f-meson-gcc-release",
+        "xpm install --config qemu-riscv-rv32imac-cmake-gcc-debug",
+        "xpm install --config qemu-riscv-rv32imac-cmake-gcc-release",
+        "xpm install --config qemu-riscv-rv32imac-meson-gcc-debug",
+        "xpm install --config qemu-riscv-rv32imac-meson-gcc-release"
       ],
       "install-all": [
         "npm install",
@@ -71,6 +90,9 @@
         "xpm run clean --all-configs --ignore-errors"
       ],
       "test": [
+        "xpm run test-native-cmake-sys"
+      ],
+      "test-selected": [
         "xpm run test-native-cmake-gcc",
         "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-meson-clang",
         "xpm run test-qemu-cortex-m0-cmake-gcc",
