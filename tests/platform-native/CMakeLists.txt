@@ -19,6 +19,10 @@
 message(VERBOSE "Processing 'tests/platform-native'...")
 
 # -----------------------------------------------------------------------------
+
+set(ENABLE_MINIMAL_TEST true)
+
+# -----------------------------------------------------------------------------
 function(add_test_executable name)
   add_executable(${name})
 
@@ -69,6 +73,33 @@ function(add_test_executable name)
 
   message(VERBOSE "A> ${name}")
 endfunction()
+
+# -----------------------------------------------------------------------------
+
+# minimal-test
+if(ENABLE_MINIMAL_TEST)
+  add_test_executable(minimal-test)
+
+  add_test(
+    NAME "minimal-test"
+    COMMAND minimal-test one two
+  )
+
+  add_test(
+    NAME "minimal-test --verbose"
+    COMMAND minimal-test one two --verbose
+  )
+
+  add_test(
+    NAME "minimal-test --quiet"
+    COMMAND minimal-test one two --quiet
+  )
+
+  add_test(
+    NAME "minimal-test --silent"
+    COMMAND minimal-test one two --silent
+  )
+endif()
 
 # -----------------------------------------------------------------------------
 
