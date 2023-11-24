@@ -35,6 +35,12 @@ git clone \
   ~/Work/micro-os-plus/micro-test-plus-xpack.git
 ```
 
+Or, if the repo was already cloned:
+
+```sh
+git -C ~/Work/micro-os-plus/micro-test-plus-xpack.git pull
+```
+
 To link it to the central xPack store:
 
 ```sh
@@ -148,12 +154,35 @@ Update the `PROJECT_NUMBER` variable to the new version.
 
 ### Manual tests
 
-To run the tests manually on the local development machine:
+There are predefined actions to manually run various tests
+on the local development machine.
+
+Start by doing some cleanups:
 
 ```sh
-xpm run deep-clean -C ~/Work/micro-os-plus/micro-test-plus-xpack.git
-xpm run install-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git
-xpm run test-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git
+xpm install -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run deep-clean -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+```
+
+Run the tests with the system compiler:
+
+```sh
+xpm run install -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run test -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+```
+
+Or run a selection of tests with the latest versions of toolchains:
+
+```sh
+xpm run install-selected -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run test-selected -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+```
+
+Or run all tests:
+
+```sh
+xpm run install-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run test-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 ```
 
 ### Publish on the 'npmjs.com' server
