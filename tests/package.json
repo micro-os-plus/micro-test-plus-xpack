@@ -65,8 +65,8 @@
         "xpm install",
         "xpm install --config native-cmake-gcc-debug",
         "xpm install --config native-cmake-gcc-release",
-        "{% if os.platform != 'darwin' or os.platform == 'darwin' %}echo {% endif %}xpm install --config native-meson-gcc-debug",
-        "{% if os.platform != 'darwin' or os.platform == 'darwin' %}echo {% endif %}xpm install --config native-meson-gcc-release",
+        "xpm install --config native-meson-gcc-debug",
+        "xpm install --config native-meson-gcc-release",
         "xpm install --config qemu-cortex-m0-cmake-gcc-debug",
         "xpm install --config qemu-cortex-m0-cmake-gcc-release",
         "xpm install --config qemu-cortex-m0-meson-gcc-debug",
@@ -100,7 +100,7 @@
       ],
       "test-selected": [
         "xpm run test-native-cmake-gcc",
-        "{% if os.platform != 'darwin' or os.platform == 'darwin' %}echo {% endif %}xpm run test-native-meson-clang",
+        "{% os.platform == 'darwin' %}echo {% endif %}xpm run test-native-meson-clang",
         "xpm run test-qemu-cortex-m0-cmake-gcc",
         "xpm run test-qemu-cortex-m0-meson-gcc",
         "xpm run test-qemu-cortex-m7f-cmake-gcc",
@@ -117,14 +117,14 @@
         "xpm run test-riscv-meson"
       ],
       "test-native-cmake": [
-        "{% if os.platform == 'darwin' %}xpm run test-native-cmake-sys{% endif %}",
+        "xpm run test-native-cmake-sys{% if os.platform != 'darwin' %} --ignore-errors{% endif %}",
         "xpm run test-native-cmake-gcc13",
         "xpm run test-native-cmake-gcc12",
         "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-cmake-gcc11",
         "xpm run test-native-cmake-clang16",
         "xpm run test-native-cmake-clang15",
-        "{% if os.platform == 'linux' %}echo {% endif %}xpm run test-native-cmake-clang14",
-        "{% if os.platform == 'linux' %}echo {% endif %}xpm run test-native-cmake-clang13"
+        "xpm run test-native-cmake-clang14",
+        "xpm run test-native-cmake-clang13"
       ],
       "test-native-cmake-sys": [
         "xpm run prepare --config native-cmake-sys-debug",
@@ -207,14 +207,14 @@
         "xpm run test --config native-cmake-clang16-release"
       ],
       "test-native-meson": [
-        "{% if os.platform == 'darwin' %}xpm run test-native-meson-sys{% endif %}",
+        "xpm run test-native-meson-sys{% if os.platform != 'darwin' %}--ignore-errors{% endif %}",
         "xpm run test-native-meson-gcc13",
         "xpm run test-native-meson-gcc12",
         "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-meson-gcc11",
         "xpm run test-native-meson-clang16",
         "xpm run test-native-meson-clang15",
-        "{% if os.platform == 'linux' %}echo {% endif %}xpm run test-native-meson-clang14",
-        "{% if os.platform == 'linux' %}echo {% endif %}xpm run test-native-meson-clang13"
+        "xpm run test-native-meson-clang14",
+        "xpm run test-native-meson-clang13"
       ],
       "test-native-meson-sys": [
         "xpm run prepare --config native-meson-sys-debug",
