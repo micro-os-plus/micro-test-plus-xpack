@@ -207,7 +207,7 @@
         "xpm run test --config native-cmake-clang16-release"
       ],
       "test-native-meson": [
-        "xpm run test-native-meson-sys{% if os.platform != 'darwin' %}--ignore-errors{% endif %}",
+        "xpm run test-native-meson-sys{% if os.platform != 'darwin' %} --ignore-errors{% endif %}",
         "xpm run test-native-meson-gcc13",
         "xpm run test-native-meson-gcc12",
         "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-meson-gcc11",
