@@ -126,6 +126,86 @@
         "{% if os.platform == 'linux' %}echo {% endif %}xpm run test-native-cmake-clang14",
         "{% if os.platform == 'linux' %}echo {% endif %}xpm run test-native-cmake-clang13"
       ],
+      "test-native-cmake-sys": [
+        "xpm run prepare --config native-cmake-sys-debug",
+        "xpm run build --config native-cmake-sys-debug",
+        "xpm run test --config native-cmake-sys-debug",
+        "xpm run prepare --config native-cmake-sys-release",
+        "xpm run build --config native-cmake-sys-release",
+        "xpm run test --config native-cmake-sys-release"
+      ],
+      "test-native-cmake-gcc": [
+        "xpm run prepare --config native-cmake-gcc-debug",
+        "xpm run build --config native-cmake-gcc-debug",
+        "xpm run test --config native-cmake-gcc-debug",
+        "xpm run prepare --config native-cmake-gcc-release",
+        "xpm run build --config native-cmake-gcc-release",
+        "xpm run test --config native-cmake-gcc-release"
+      ],
+      "test-native-cmake-gcc11": [
+        "xpm run prepare --config native-cmake-gcc11-debug",
+        "xpm run build --config native-cmake-gcc11-debug",
+        "xpm run test --config native-cmake-gcc11-debug",
+        "xpm run prepare --config native-cmake-gcc11-release",
+        "xpm run build --config native-cmake-gcc11-release",
+        "xpm run test --config native-cmake-gcc11-release"
+      ],
+      "test-native-cmake-gcc12": [
+        "xpm run prepare --config native-cmake-gcc12-debug",
+        "xpm run build --config native-cmake-gcc12-debug",
+        "xpm run test --config native-cmake-gcc12-debug",
+        "xpm run prepare --config native-cmake-gcc12-release",
+        "xpm run build --config native-cmake-gcc12-release",
+        "xpm run test --config native-cmake-gcc12-release"
+      ],
+      "test-native-cmake-gcc13": [
+        "xpm run prepare --config native-cmake-gcc13-debug",
+        "xpm run build --config native-cmake-gcc13-debug",
+        "xpm run test --config native-cmake-gcc13-debug",
+        "xpm run prepare --config native-cmake-gcc13-release",
+        "xpm run build --config native-cmake-gcc13-release",
+        "xpm run test --config native-cmake-gcc13-release"
+      ],
+      "test-native-cmake-clang": [
+        "xpm run prepare --config native-cmake-clang-debug",
+        "xpm run build --config native-cmake-clang-debug",
+        "xpm run test --config native-cmake-clang-debug",
+        "xpm run prepare --config native-cmake-clang-release",
+        "xpm run build --config native-cmake-clang-release",
+        "xpm run test --config native-cmake-clang-release"
+      ],
+      "test-native-cmake-clang13": [
+        "xpm run prepare --config native-cmake-clang13-debug",
+        "xpm run build --config native-cmake-clang13-debug",
+        "xpm run test --config native-cmake-clang13-debug",
+        "xpm run prepare --config native-cmake-clang13-release",
+        "xpm run build --config native-cmake-clang13-release",
+        "xpm run test --config native-cmake-clang13-release"
+      ],
+      "test-native-cmake-clang14": [
+        "xpm run prepare --config native-cmake-clang14-debug",
+        "xpm run build --config native-cmake-clang14-debug",
+        "xpm run test --config native-cmake-clang14-debug",
+        "xpm run prepare --config native-cmake-clang14-release",
+        "xpm run build --config native-cmake-clang14-release",
+        "xpm run test --config native-cmake-clang14-release"
+      ],
+      "test-native-cmake-clang15": [
+        "xpm run prepare --config native-cmake-clang15-debug",
+        "xpm run build --config native-cmake-clang15-debug",
+        "xpm run test --config native-cmake-clang15-debug",
+        "xpm run prepare --config native-cmake-clang15-release",
+        "xpm run build --config native-cmake-clang15-release",
+        "xpm run test --config native-cmake-clang15-release"
+      ],
+      "test-native-cmake-clang16": [
+        "xpm run prepare --config native-cmake-clang16-debug",
+        "xpm run build --config native-cmake-clang16-debug",
+        "xpm run test --config native-cmake-clang16-debug",
+        "xpm run prepare --config native-cmake-clang16-release",
+        "xpm run build --config native-cmake-clang16-release",
+        "xpm run test --config native-cmake-clang16-release"
+      ],
       "test-native-meson": [
         "{% if os.platform == 'darwin' %}xpm run test-native-meson-sys{% endif %}",
         "xpm run test-native-meson-gcc13",
@@ -135,6 +215,86 @@
         "xpm run test-native-meson-clang15",
         "{% if os.platform == 'linux' %}echo {% endif %}xpm run test-native-meson-clang14",
         "{% if os.platform == 'linux' %}echo {% endif %}xpm run test-native-meson-clang13"
+      ],
+      "test-native-meson-sys": [
+        "xpm run prepare --config native-meson-sys-debug",
+        "xpm run build --config native-meson-sys-debug",
+        "xpm run test --config native-meson-sys-debug",
+        "xpm run prepare --config native-meson-sys-release",
+        "xpm run build --config native-meson-sys-release",
+        "xpm run test --config native-meson-sys-release"
+      ],
+      "test-native-meson-gcc": [
+        "xpm run prepare --config native-meson-gcc-debug",
+        "xpm run build --config native-meson-gcc-debug",
+        "xpm run test --config native-meson-gcc-debug",
+        "xpm run prepare --config native-meson-gcc-release",
+        "xpm run build --config native-meson-gcc-release",
+        "xpm run test --config native-meson-gcc-release"
+      ],
+      "test-native-meson-gcc11": [
+        "xpm run prepare --config native-meson-gcc11-debug",
+        "xpm run build --config native-meson-gcc11-debug",
+        "xpm run test --config native-meson-gcc11-debug",
+        "xpm run prepare --config native-meson-gcc11-release",
+        "xpm run build --config native-meson-gcc11-release",
+        "xpm run test --config native-meson-gcc11-release"
+      ],
+      "test-native-meson-gcc12": [
+        "xpm run prepare --config native-meson-gcc12-debug",
+        "xpm run build --config native-meson-gcc12-debug",
+        "xpm run test --config native-meson-gcc12-debug",
+        "xpm run prepare --config native-meson-gcc12-release",
+        "xpm run build --config native-meson-gcc12-release",
+        "xpm run test --config native-meson-gcc12-release"
+      ],
+      "test-native-meson-gcc13": [
+        "xpm run prepare --config native-meson-gcc13-debug",
+        "xpm run build --config native-meson-gcc13-debug",
+        "xpm run test --config native-meson-gcc13-debug",
+        "xpm run prepare --config native-meson-gcc13-release",
+        "xpm run build --config native-meson-gcc13-release",
+        "xpm run test --config native-meson-gcc13-release"
+      ],
+      "test-native-meson-clang": [
+        "xpm run prepare --config native-meson-clang-debug",
+        "xpm run build --config native-meson-clang-debug",
+        "xpm run test --config native-meson-clang-debug",
+        "xpm run prepare --config native-meson-clang-release",
+        "xpm run build --config native-meson-clang-release",
+        "xpm run test --config native-meson-clang-release"
+      ],
+      "test-native-meson-clang13": [
+        "xpm run prepare --config native-meson-clang13-debug",
+        "xpm run build --config native-meson-clang13-debug",
+        "xpm run test --config native-meson-clang13-debug",
+        "xpm run prepare --config native-meson-clang13-release",
+        "xpm run build --config native-meson-clang13-release",
+        "xpm run test --config native-meson-clang13-release"
+      ],
+      "test-native-meson-clang14": [
+        "xpm run prepare --config native-meson-clang14-debug",
+        "xpm run build --config native-meson-clang14-debug",
+        "xpm run test --config native-meson-clang14-debug",
+        "xpm run prepare --config native-meson-clang14-release",
+        "xpm run build --config native-meson-clang14-release",
+        "xpm run test --config native-meson-clang14-release"
+      ],
+      "test-native-meson-clang15": [
+        "xpm run prepare --config native-meson-clang15-debug",
+        "xpm run build --config native-meson-clang15-debug",
+        "xpm run test --config native-meson-clang15-debug",
+        "xpm run prepare --config native-meson-clang15-release",
+        "xpm run build --config native-meson-clang15-release",
+        "xpm run test --config native-meson-clang15-release"
+      ],
+      "test-native-meson-clang16": [
+        "xpm run prepare --config native-meson-clang16-debug",
+        "xpm run build --config native-meson-clang16-debug",
+        "xpm run test --config native-meson-clang16-debug",
+        "xpm run prepare --config native-meson-clang16-release",
+        "xpm run build --config native-meson-clang16-release",
+        "xpm run test --config native-meson-clang16-release"
       ],
       "test-cortex-cmake": [
         "xpm run test-cortex-cmake-gcc13",
@@ -251,166 +411,6 @@
       "test-riscv-meson-gcc13": [
         "xpm run test-qemu-riscv-rv32imac-meson-gcc13",
         "xpm run test-qemu-riscv-rv64imafdc-meson-gcc13"
-      ],
-      "test-native-cmake-sys": [
-        "xpm run prepare --config native-cmake-sys-debug",
-        "xpm run build --config native-cmake-sys-debug",
-        "xpm run test --config native-cmake-sys-debug",
-        "xpm run prepare --config native-cmake-sys-release",
-        "xpm run build --config native-cmake-sys-release",
-        "xpm run test --config native-cmake-sys-release"
-      ],
-      "test-native-cmake-gcc": [
-        "xpm run prepare --config native-cmake-gcc-debug",
-        "xpm run build --config native-cmake-gcc-debug",
-        "xpm run test --config native-cmake-gcc-debug",
-        "xpm run prepare --config native-cmake-gcc-release",
-        "xpm run build --config native-cmake-gcc-release",
-        "xpm run test --config native-cmake-gcc-release"
-      ],
-      "test-native-cmake-gcc11": [
-        "xpm run prepare --config native-cmake-gcc11-debug",
-        "xpm run build --config native-cmake-gcc11-debug",
-        "xpm run test --config native-cmake-gcc11-debug",
-        "xpm run prepare --config native-cmake-gcc11-release",
-        "xpm run build --config native-cmake-gcc11-release",
-        "xpm run test --config native-cmake-gcc11-release"
-      ],
-      "test-native-cmake-gcc12": [
-        "xpm run prepare --config native-cmake-gcc12-debug",
-        "xpm run build --config native-cmake-gcc12-debug",
-        "xpm run test --config native-cmake-gcc12-debug",
-        "xpm run prepare --config native-cmake-gcc12-release",
-        "xpm run build --config native-cmake-gcc12-release",
-        "xpm run test --config native-cmake-gcc12-release"
-      ],
-      "test-native-cmake-gcc13": [
-        "xpm run prepare --config native-cmake-gcc13-debug",
-        "xpm run build --config native-cmake-gcc13-debug",
-        "xpm run test --config native-cmake-gcc13-debug",
-        "xpm run prepare --config native-cmake-gcc13-release",
-        "xpm run build --config native-cmake-gcc13-release",
-        "xpm run test --config native-cmake-gcc13-release"
-      ],
-      "test-native-cmake-clang": [
-        "xpm run prepare --config native-cmake-clang-debug",
-        "xpm run build --config native-cmake-clang-debug",
-        "xpm run test --config native-cmake-clang-debug",
-        "xpm run prepare --config native-cmake-clang-release",
-        "xpm run build --config native-cmake-clang-release",
-        "xpm run test --config native-cmake-clang-release"
-      ],
-      "test-native-cmake-clang13": [
-        "xpm run prepare --config native-cmake-clang13-debug",
-        "xpm run build --config native-cmake-clang13-debug",
-        "xpm run test --config native-cmake-clang13-debug",
-        "xpm run prepare --config native-cmake-clang13-release",
-        "xpm run build --config native-cmake-clang13-release",
-        "xpm run test --config native-cmake-clang13-release"
-      ],
-      "test-native-cmake-clang14": [
-        "xpm run prepare --config native-cmake-clang14-debug",
-        "xpm run build --config native-cmake-clang14-debug",
-        "xpm run test --config native-cmake-clang14-debug",
-        "xpm run prepare --config native-cmake-clang14-release",
-        "xpm run build --config native-cmake-clang14-release",
-        "xpm run test --config native-cmake-clang14-release"
-      ],
-      "test-native-cmake-clang15": [
-        "xpm run prepare --config native-cmake-clang15-debug",
-        "xpm run build --config native-cmake-clang15-debug",
-        "xpm run test --config native-cmake-clang15-debug",
-        "xpm run prepare --config native-cmake-clang15-release",
-        "xpm run build --config native-cmake-clang15-release",
-        "xpm run test --config native-cmake-clang15-release"
-      ],
-      "test-native-cmake-clang16": [
-        "xpm run prepare --config native-cmake-clang16-debug",
-        "xpm run build --config native-cmake-clang16-debug",
-        "xpm run test --config native-cmake-clang16-debug",
-        "xpm run prepare --config native-cmake-clang16-release",
-        "xpm run build --config native-cmake-clang16-release",
-        "xpm run test --config native-cmake-clang16-release"
-      ],
-      "test-native-meson-sys": [
-        "xpm run prepare --config native-meson-sys-debug",
-        "xpm run build --config native-meson-sys-debug",
-        "xpm run test --config native-meson-sys-debug",
-        "xpm run prepare --config native-meson-sys-release",
-        "xpm run build --config native-meson-sys-release",
-        "xpm run test --config native-meson-sys-release"
-      ],
-      "test-native-meson-gcc": [
-        "xpm run prepare --config native-meson-gcc-debug",
-        "xpm run build --config native-meson-gcc-debug",
-        "xpm run test --config native-meson-gcc-debug",
-        "xpm run prepare --config native-meson-gcc-release",
-        "xpm run build --config native-meson-gcc-release",
-        "xpm run test --config native-meson-gcc-release"
-      ],
-      "test-native-meson-gcc11": [
-        "xpm run prepare --config native-meson-gcc11-debug",
-        "xpm run build --config native-meson-gcc11-debug",
-        "xpm run test --config native-meson-gcc11-debug",
-        "xpm run prepare --config native-meson-gcc11-release",
-        "xpm run build --config native-meson-gcc11-release",
-        "xpm run test --config native-meson-gcc11-release"
-      ],
-      "test-native-meson-gcc12": [
-        "xpm run prepare --config native-meson-gcc12-debug",
-        "xpm run build --config native-meson-gcc12-debug",
-        "xpm run test --config native-meson-gcc12-debug",
-        "xpm run prepare --config native-meson-gcc12-release",
-        "xpm run build --config native-meson-gcc12-release",
-        "xpm run test --config native-meson-gcc12-release"
-      ],
-      "test-native-meson-gcc13": [
-        "xpm run prepare --config native-meson-gcc13-debug",
-        "xpm run build --config native-meson-gcc13-debug",
-        "xpm run test --config native-meson-gcc13-debug",
-        "xpm run prepare --config native-meson-gcc13-release",
-        "xpm run build --config native-meson-gcc13-release",
-        "xpm run test --config native-meson-gcc13-release"
-      ],
-      "test-native-meson-clang": [
-        "xpm run prepare --config native-meson-clang-debug",
-        "xpm run build --config native-meson-clang-debug",
-        "xpm run test --config native-meson-clang-debug",
-        "xpm run prepare --config native-meson-clang-release",
-        "xpm run build --config native-meson-clang-release",
-        "xpm run test --config native-meson-clang-release"
-      ],
-      "test-native-meson-clang13": [
-        "xpm run prepare --config native-meson-clang13-debug",
-        "xpm run build --config native-meson-clang13-debug",
-        "xpm run test --config native-meson-clang13-debug",
-        "xpm run prepare --config native-meson-clang13-release",
-        "xpm run build --config native-meson-clang13-release",
-        "xpm run test --config native-meson-clang13-release"
-      ],
-      "test-native-meson-clang14": [
-        "xpm run prepare --config native-meson-clang14-debug",
-        "xpm run build --config native-meson-clang14-debug",
-        "xpm run test --config native-meson-clang14-debug",
-        "xpm run prepare --config native-meson-clang14-release",
-        "xpm run build --config native-meson-clang14-release",
-        "xpm run test --config native-meson-clang14-release"
-      ],
-      "test-native-meson-clang15": [
-        "xpm run prepare --config native-meson-clang15-debug",
-        "xpm run build --config native-meson-clang15-debug",
-        "xpm run test --config native-meson-clang15-debug",
-        "xpm run prepare --config native-meson-clang15-release",
-        "xpm run build --config native-meson-clang15-release",
-        "xpm run test --config native-meson-clang15-release"
-      ],
-      "test-native-meson-clang16": [
-        "xpm run prepare --config native-meson-clang16-debug",
-        "xpm run build --config native-meson-clang16-debug",
-        "xpm run test --config native-meson-clang16-debug",
-        "xpm run prepare --config native-meson-clang16-release",
-        "xpm run build --config native-meson-clang16-release",
-        "xpm run test --config native-meson-clang16-release"
       ],
       "test-qemu-cortex-m0-cmake-gcc": [
         "xpm run prepare --config qemu-cortex-m0-cmake-gcc-debug",
