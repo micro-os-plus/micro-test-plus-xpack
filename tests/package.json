@@ -67,6 +67,10 @@
         "xpm install --config native-cmake-gcc-release",
         "xpm install --config native-meson-gcc-debug",
         "xpm install --config native-meson-gcc-release",
+        "xpm install --config native-cmake-clang-debug",
+        "xpm install --config native-cmake-clang-release",
+        "xpm install --config native-meson-clang-debug",
+        "xpm install --config native-meson-clang-release",
         "xpm install --config qemu-cortex-m0-cmake-gcc-debug",
         "xpm install --config qemu-cortex-m0-cmake-gcc-release",
         "xpm install --config qemu-cortex-m0-meson-gcc-debug",
@@ -78,7 +82,11 @@
         "xpm install --config qemu-riscv-rv32imac-cmake-gcc-debug",
         "xpm install --config qemu-riscv-rv32imac-cmake-gcc-release",
         "xpm install --config qemu-riscv-rv32imac-meson-gcc-debug",
-        "xpm install --config qemu-riscv-rv32imac-meson-gcc-release"
+        "xpm install --config qemu-riscv-rv32imac-meson-gcc-release",
+        "xpm install --config qemu-riscv-rv64imafdc-cmake-gcc-debug",
+        "xpm install --config qemu-riscv-rv64imafdc-cmake-gcc-release",
+        "xpm install --config qemu-riscv-rv64imafdc-meson-gcc-debug",
+        "xpm install --config qemu-riscv-rv64imafdc-meson-gcc-release"
       ],
       "install-all": [
         "npm install",
@@ -100,13 +108,17 @@
       ],
       "test-selected": [
         "xpm run test-native-cmake-gcc",
+        "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-meson-gcc",
+        "xpm run test-native-cmake-clang",
         "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-meson-clang",
         "xpm run test-qemu-cortex-m0-cmake-gcc",
         "xpm run test-qemu-cortex-m0-meson-gcc",
         "xpm run test-qemu-cortex-m7f-cmake-gcc",
         "xpm run test-qemu-cortex-m7f-meson-gcc",
         "xpm run test-qemu-riscv-rv32imac-cmake-gcc",
-        "xpm run test-qemu-riscv-rv32imac-meson-gcc"
+        "xpm run test-qemu-riscv-rv32imac-meson-gcc",
+        "xpm run test-qemu-riscv-rv64imafdc-cmake-gcc",
+        "xpm run test-qemu-riscv-rv64imafdc-meson-gcc"
       ],
       "test-all": [
         "xpm run test-native-cmake",
