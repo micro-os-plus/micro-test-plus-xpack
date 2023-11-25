@@ -49,6 +49,9 @@
       "commandMesonClean": "meson compile -C {{ properties.buildFolderRelativePathPosix }} --clean",
       "commandMesonPerformTests": "meson test -C {{ properties.buildFolderRelativePathPosix }} --verbose"
     },
+    "$actions": [
+      "meson fails with darwin new linker; upgrade meson to 1.3.0"
+    ],
     "actions": {
       "deep-clean": "del-cli build node_modules xpacks package-lock.json",
       "install": [
@@ -59,20 +62,23 @@
       ],
       "install-selected": [
         "npm install",
+        "xpm install",
         "xpm install --config native-cmake-gcc-debug",
         "xpm install --config native-cmake-gcc-release",
-        "{% if os.platform == 'darwin' %}echo {% endif %}xpm install --config native-meson-gcc-debug",
-        "{% if os.platform == 'darwin' %}echo {% endif %}xpm install --config native-meson-gcc-release",
+        "{% if os.platform != 'darwin' or os.platform == 'darwin' %}echo {% endif %}xpm install --config native-meson-gcc-debug",
+        "{% if os.platform != 'darwin' or os.platform == 'darwin' %}echo {% endif %}xpm install --config native-meson-gcc-release",
         "xpm install --config qemu-cortex-m0-cmake-gcc-debug",
         "xpm install --config qemu-cortex-m0-cmake-gcc-release",
+        "xpm install --config qemu-cortex-m0-meson-gcc-debug",
+        "xpm install --config qemu-cortex-m0-meson-gcc-release",
         "xpm install --config qemu-cortex-m7f-cmake-gcc-debug",
         "xpm install --config qemu-cortex-m7f-cmake-gcc-release",
-        "{% if os.platform == 'darwin' %}echo {% endif %}xpm install --config qemu-cortex-m7f-meson-gcc-debug",
-        "{% if os.platform == 'darwin' %}echo {% endif %}xpm install --config qemu-cortex-m7f-meson-gcc-release",
+        "xpm install --config qemu-cortex-m7f-meson-gcc-debug",
+        "xpm install --config qemu-cortex-m7f-meson-gcc-release",
         "xpm install --config qemu-riscv-rv32imac-cmake-gcc-debug",
         "xpm install --config qemu-riscv-rv32imac-cmake-gcc-release",
-        "{% if os.platform == 'darwin' %}echo {% endif %}xpm install --config qemu-riscv-rv32imac-meson-gcc-debug",
-        "{% if os.platform == 'darwin' %}echo {% endif %}xpm install --config qemu-riscv-rv32imac-meson-gcc-release"
+        "xpm install --config qemu-riscv-rv32imac-meson-gcc-debug",
+        "xpm install --config qemu-riscv-rv32imac-meson-gcc-release"
       ],
       "install-all": [
         "npm install",
@@ -94,13 +100,13 @@
       ],
       "test-selected": [
         "xpm run test-native-cmake-gcc",
-        "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-meson-clang",
+        "{% if os.platform != 'darwin' or os.platform == 'darwin' %}echo {% endif %}xpm run test-native-meson-clang",
         "xpm run test-qemu-cortex-m0-cmake-gcc",
-        "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-qemu-cortex-m0-meson-gcc",
+        "xpm run test-qemu-cortex-m0-meson-gcc",
         "xpm run test-qemu-cortex-m7f-cmake-gcc",
-        "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-qemu-cortex-m7f-meson-gcc",
+        "xpm run test-qemu-cortex-m7f-meson-gcc",
         "xpm run test-qemu-riscv-rv32imac-cmake-gcc",
-        "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-qemu-riscv-rv32imac-meson-gcc"
+        "xpm run test-qemu-riscv-rv32imac-meson-gcc"
       ],
       "test-all": [
         "xpm run test-native-cmake",
