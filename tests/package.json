@@ -100,7 +100,7 @@
       ],
       "test-selected": [
         "xpm run test-native-cmake-gcc",
-        "{% os.platform == 'darwin' %}echo {% endif %}xpm run test-native-meson-clang",
+        "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-meson-clang",
         "xpm run test-qemu-cortex-m0-cmake-gcc",
         "xpm run test-qemu-cortex-m0-meson-gcc",
         "xpm run test-qemu-cortex-m7f-cmake-gcc",
