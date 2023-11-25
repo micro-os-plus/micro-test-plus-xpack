@@ -157,10 +157,10 @@ Update the `PROJECT_NUMBER` variable to the new version.
 There are predefined actions to manually run various tests
 on the local development machine.
 
-Start by doing some cleanups:
+Start by doing some cleanups (not necessary after initial `git clone`):
 
 ```sh
-xpm install -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+npm install -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 xpm run deep-clean -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 ```
 
