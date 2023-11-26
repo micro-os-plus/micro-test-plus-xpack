@@ -594,23 +594,72 @@ organisation to be up and running.
 
 ## Manual runs
 
-The full set can also be run manually with the following commands:
+The tests can be executed manually with the following commands on any
+platform.
+
+### Prerequisites
+
+A recent [xpm](https://xpack.github.io/xpm/), which is a portable
+[Node.js](https://nodejs.org/) command line application.
+
+To run the native tests, a C++ development environment is required.
+On macOS install Command Line Tools, on Ubuntu `build-essential`.
+
+With npm available, install xpm:
 
 ```sh
 npm install --global xpm@latest
+```
 
+### Clone the project
+
+To clone the development branch (`xpack-develop`), run the following commands in a
+terminal (on Windows use the _Git Bash_ console):
+
+```sh
 rm -rf ~/Work/micro-os-plus/micro-test-plus-xpack.git && \
 mkdir -p ~/Work/micro-os-plus && \
 git clone \
   --branch xpack-develop \
   https://github.com/micro-os-plus/micro-test-plus-xpack.git \
   ~/Work/micro-os-plus/micro-test-plus-xpack.git
-
-xpm run install-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git
-xpm run test-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git
 ```
+
+### Run the tests
+
+There are multiple xPack actions, to run various selections of tests,
+from a single run with the system compiler, to all possible tests.
 
 @note
 On the first run, the install step might take quite some time,
 since it has to download the toolchain archives, which are relatively
 large, up to hundreds of MB.
+
+To run the tests with the system compiler:
+
+```sh
+xpm run install -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run test -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+```
+
+To run a selection of tests with the latest versions of toolchains:
+
+```sh
+xpm run install-selected -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run test-selected -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+```
+
+To run all tests with the latest versions of toolchains:
+
+```sh
+xpm run install-latest -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run test-latest -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+```
+
+To run all tests with all toolchain versions:
+
+```sh
+xpm run install-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run test-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+```
+
