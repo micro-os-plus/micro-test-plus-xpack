@@ -52,8 +52,45 @@ cd my-project
 xpm init # Unless a package.json is already present
 
 xpm install @micro-os-plus/micro-test-plus@latest
+```
 
-ls -l xpacks/@micro-os-plus/micro-test-plus
+After following the links, the result is a structure like this:
+
+```console
+% tree -l
+.
+├── LICENSE
+├── package.json
+└── xpacks
+    └── @micro-os-plus
+        └── micro-test-plus -> /Users/ilg/Library/xPacks/@micro-os-plus/micro-test-plus/3.1.1
+            ├── CHANGELOG.md
+            ├── CMakeLists.txt
+            ├── LICENSE
+            ├── LICENSE-Boost
+            ├── README.md
+            ├── include
+            │   └── micro-os-plus
+            │       ├── detail.h
+            │       ├── inlines.h
+            │       ├── literals.h
+            │       ├── math.h
+            │       ├── micro-test-plus.h
+            │       ├── reflection.h
+            │       ├── test-reporter-inlines.h
+            │       ├── test-reporter.h
+            │       ├── test-runner.h
+            │       ├── test-suite.h
+            │       └── type-traits.h
+            ├── meson.build
+            ├── package.json
+            └── src
+                ├── micro-test-plus.cpp
+                ├── test-reporter.cpp
+                ├── test-runner.cpp
+                └── test-suite.cpp
+
+7 directories, 24 files
 ```
 
 ### npm
