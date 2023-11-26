@@ -88,6 +88,6 @@ and can be integrated as an
 <a href="license.html"/>
 <a href="maintainer.html"/>
 <a href="testing.html"/>
-<a href="user-guide"/>
+<a href="user-guide.html"/>
 
 @endhtmlonly
