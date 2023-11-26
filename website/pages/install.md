@@ -50,7 +50,9 @@ This project can be installed as a package from the
 ```sh
 cd my-project
 xpm init # Unless a package.json is already present
+```
 
+```sh
 xpm install @micro-os-plus/micro-test-plus@latest
 ```
 
