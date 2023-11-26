@@ -48,7 +48,6 @@ No `@example`.
 
 The project uses the custom <https://jothepro.github.io/doxygen-awesome-css/> theme.
 
-
 ## TODO
 
 - nothing
@@ -62,3 +61,7 @@ The project uses the custom <https://jothepro.github.io/doxygen-awesome-css/> th
 ### doxygen-awesome-css
 
 - [Missing line numbers](https://github.com/jothepro/doxygen-awesome-css/issues/128)
+
+### doxygen
+
+- [Add explicit links to static pages](https://github.com/doxygen/doxygen/issues/10447)
