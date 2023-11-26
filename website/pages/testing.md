@@ -585,7 +585,7 @@ A second
 [workflow](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/test-all.yml)
 can be triggered manually before releases, and runs all available tests
 on all supported platforms; for details see
-[test-all.yml](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/test-all.yml)
+[test-all.yml](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/test-all.yml).
 
 @note
 Running these tests on Apple Silicon macOS and Arm GNU/Linux
@@ -627,7 +627,7 @@ git clone \
 
 ### Run the tests
 
-There are multiple xPack actions, to run various selections of tests,
+There are multiple predefined actions, to run various selections of tests,
 from a single run with the system compiler, to all possible tests.
 
 @note
@@ -663,3 +663,9 @@ xpm run install-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 xpm run test-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 ```
 
+To do a deep cleanup and restart tests from scratch:
+
+```sh
+npm install -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run deep-clean -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+```
