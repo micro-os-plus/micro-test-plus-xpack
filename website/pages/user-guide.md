@@ -84,10 +84,10 @@ and there are no failed tests.
 
 If all tests suites are successful, the process returns 0 as exit value.
 
-## ISTQB Glossary
+## Glossary
 
-The **International Software Testing Qualification Board** defines some terms
-used in testing frameworks:
+The **International Software Testing Qualification Board (ISTQB)**
+defines some terms used in testing frameworks:
 
 - **test condition**: a testable aspect of a component or system identified
   as a basis for testing (implemented in µTest++ as calls to `expect()` or
