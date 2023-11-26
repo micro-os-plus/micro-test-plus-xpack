@@ -27,7 +27,7 @@
       "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#xpack-develop",
       "@micro-os-plus/diag-trace": "^4.2.1",
       "@xpack-dev-tools/cmake": "3.26.5-1.1",
-      "@xpack-dev-tools/meson-build": "1.0.2-1.1",
+      "@xpack-dev-tools/meson-build": "1.3.0-1.1",
       "@xpack-dev-tools/ninja-build": "1.11.1-3.1"
     },
     "properties": {
@@ -140,9 +140,9 @@
       ],
       "test-selected": [
         "xpm run test-native-cmake-gcc",
-        "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-meson-gcc",
+        "xpm run test-native-meson-gcc",
         "xpm run test-native-cmake-clang",
-        "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-meson-clang",
+        "xpm run test-native-meson-clang",
         "xpm run test-qemu-cortex-m0-cmake-gcc",
         "xpm run test-qemu-cortex-m0-meson-gcc",
         "xpm run test-qemu-cortex-m4f-cmake-gcc",
@@ -152,9 +152,9 @@
       ],
       "test-latest": [
         "xpm run test-native-cmake-gcc",
-        "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-meson-gcc",
+        "xpm run test-native-meson-gcc",
         "xpm run test-native-cmake-clang",
-        "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-meson-clang",
+        "xpm run test-native-meson-clang",
         "xpm run test-qemu-cortex-m0-cmake-gcc",
         "xpm run test-qemu-cortex-m0-meson-gcc",
         "xpm run test-qemu-cortex-m3-cmake-gcc",
