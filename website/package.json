@@ -15,7 +15,8 @@
   "bundleDependencies": [],
   "$devDependenciesUrls": [
     "https://www.npmjs.com/package/del-cli",
-    "https://www.npmjs.com/package/open-cli"
+    "https://www.npmjs.com/package/open-cli",
+    "https://www.npmjs.com/package/broken-link-checker"
   ],
   "devDependencies": {
     "del-cli": "^5.0.0",
