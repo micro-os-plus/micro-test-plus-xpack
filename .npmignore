@@ -33,6 +33,7 @@ Release*/
 test*/
 build/
 docs/
+website/
 
 # Misc
 # patches/
