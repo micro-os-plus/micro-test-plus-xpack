@@ -171,14 +171,21 @@ xpm run install -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 xpm run test -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 ```
 
-Or run a selection of tests with the latest versions of toolchains:
+Run a selection of tests with the latest versions of toolchains:
 
 ```sh
 xpm run install-selected -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 xpm run test-selected -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 ```
 
-Or run all tests:
+Run all tests with the latest versions of toolchains:
+
+```sh
+xpm run install-latest -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run test-latest -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+```
+
+Run all tests with all toolchain versions:
 
 ```sh
 xpm run install-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
