@@ -249,7 +249,7 @@ When the release is considered stable, promote it as `latest`:
 
 ## Share on Twitter
 
-- in a separate browser windows, open [Tweeter](https://twitter.com/)
+- in a separate browser windows, open [Tweeter](https://twitter.com)
 - using the `@micro_os_plus` account
 - paste the release name like **µOS++ µTest++ v3.1.1 released**
 - paste the link to the npmjs release
