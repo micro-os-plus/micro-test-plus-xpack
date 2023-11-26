@@ -170,7 +170,7 @@
       ],
       "test-all": [
         "xpm run test-native-cmake",
-        "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-meson",
+        "xpm run test-native-meson",
         "xpm run test-cortex-cmake",
         "xpm run test-cortex-meson",
         "xpm run test-riscv-cmake",
