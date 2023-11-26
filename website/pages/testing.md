@@ -3,7 +3,6 @@
 @tableofcontents
 
 [![CI on Push](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/ci.yml/badge.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/ci.yml)
-[![Test on all platforms](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/test-all.yml/badge.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/test-all.yml)
 
 ## Overview
 
