@@ -39,7 +39,7 @@
         "doxygen config.doxyfile"
       ],
       "browser": "open-cli html/index.html",
-      "check-urls": "blc https://micro-os-plus.github.io/micro-test-plus-xpack/ --recursive --ordered --filter-level 2"
+      "check-urls": "blc https://micro-os-plus.github.io/micro-test-plus-xpack/ --recursive --ordered --filter-level 2 --exclude 'https://twitter.com*'"
     },
     "dependencies": {},
     "devDependencies": {
