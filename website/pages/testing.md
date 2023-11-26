@@ -39,8 +39,8 @@ The supported test platforms are:
 
 The tests are built and executed on:
 
-- GNU/Linux (Intel and Arm)
-- macOS (Intel and Apple Silicon)
+- GNU/Linux (Intel and Arm); require GLIBC 2.27 and
+- macOS (Intel and Apple Silicon); require Command Line Tools
 - Windows
 
 The build configurations use exactly the same source files on all platforms,
@@ -594,18 +594,26 @@ organisation to be up and running.
 
 ## Manual runs
 
-The tests can be executed manually with the following commands on any
-platform.
+The tests can be executed manually on any of the supported
+platforms:
+
+- GNU/Linux (Intel and Arm); require **GLIBC 2.27**; to run the native
+tests, a C++ development environment is required
+(on Ubuntu install `build-essential`)
+- macOS (Intel and Apple Silicon); as C++ development environment
+use **Command Line Tools**
+- Windows 7 with the Universal C Runtime (UCRT), Windows 8, Windows 10,
+Windows 11
 
 ### Prerequisites
 
-A recent [xpm](https://xpack.github.io/xpm/), which is a portable
-[Node.js](https://nodejs.org/) command line application.
+A recent **Node.js** (>=16) run environment. For instructions on how to
+install it, see the [prerequisites](https://xpack.github.io/install/) page.
 
 To run the native tests, a C++ development environment is required.
 On macOS install Command Line Tools, on Ubuntu `build-essential`.
 
-With npm available, install xpm:
+With **npm** available, install **xpm**:
 
 ```sh
 npm install --global xpm@latest
