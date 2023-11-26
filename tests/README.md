@@ -32,7 +32,10 @@ It is build only on native cmake configuration.
 ## Known issues
 
 - older meson fails on Darwin new linker, since it no longer supports
-`--version`
+`--version` -> 1.3.0 (<https://github.com/mesonbuild/meson/issues/12419>)
+- meson 1.3.0 still fails with gcc 11
+  (<https://github.com/mesonbuild/meson/issues/12552>)
+
 - `test-native-cmake-sys` and `test-native-meson-sys` are strict only on
 Darwin, which is known to have the toolchain; otherwise it is allowed to fail
 - `test-native-cmake-gcc11` and `test-native-meson-gcc11` fail on Darwin
