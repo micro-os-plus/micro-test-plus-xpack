@@ -89,5 +89,6 @@ and can be integrated as an
 <a href="maintainer.html"/>
 <a href="testing.html"/>
 <a href="user-guide.html"/>
+<a href="pages.html"/>
 
 @endhtmlonly
