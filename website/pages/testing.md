@@ -36,14 +36,16 @@ The supported test platforms are:
 - `platform-qemu-riscv-rv64imafdc` - run the tests as fully semihosted
   **RISC-V RV64IMAFDC** applications on a QEMU **virt** emulated board
 
-The tests are built and executed on:
+The tests can be executed on:
 
-- GNU/Linux (Intel and Arm); require GLIBC 2.27 and
-- macOS (Intel and Apple Silicon); require Command Line Tools
+- GNU/Linux (Intel and Arm)
+- macOS (Intel and Apple Silicon)
 - Windows
 
 The build configurations use exactly the same source files on all platforms,
-without changes.
+without changes. On embedded platforms, the applications interact with the
+host via the
+[Arm semihosting mechanism](https://github.com/ARM-software/abi-aa/blob/main/semihosting/semihosting.rst).
 
 ## Toolchains
 
