@@ -576,7 +576,7 @@ There is a GitHub Actions CI
 [workflow](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/ci.yml)
 that runs a selection of the
 tests on every push; for details see
-[ci.yml](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/ci.yml).
+[ci.yml](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/.github/workflows/ci.yml).
 
 ## Extensive testing
 
@@ -584,7 +584,7 @@ A second
 [workflow](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/test-all.yml)
 can be triggered manually before releases, and runs all available tests
 on all supported platforms; for details see
-[test-all.yml](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/test-all.yml).
+[test-all.yml](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/.github/workflows/test-all.yml).
 
 @note
 Running these tests on Apple Silicon macOS and Arm GNU/Linux
