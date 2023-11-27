@@ -596,11 +596,11 @@ organisation to be up and running.
 The tests can be executed manually on any of the supported
 platforms:
 
-- GNU/Linux (Intel and Arm); require **GLIBC>=2.27**; to run the native
+- GNU/Linux (Intel and Arm, **GLIBC>=2.27**); to run the native
 tests, a C++ development environment is required
 (on Ubuntu install `build-essential`)
-- macOS (Intel and Apple Silicon); as C++ development environment
-use **Command Line Tools**
+- macOS (Intel >= **10.13** and Apple Silicon > **11.1**);
+as C++ development environment use **Command Line Tools**
 - Windows 7 with the Universal C Runtime (UCRT), Windows 8, Windows 10,
 Windows 11
 
@@ -608,9 +608,6 @@ Windows 11
 
 A recent **Node.js** (>=16) run environment. For instructions on how to
 install it, see the [prerequisites](https://xpack.github.io/install/) page.
-
-To run the native tests, a C++ development environment is required.
-On macOS install Command Line Tools; on Ubuntu install `build-essential`.
 
 With **npm** available, install **xpm**:
 
@@ -673,7 +670,7 @@ xpm run test-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 To do a deep cleanup in order to free space or to restart the tests
 from scratch:
 
-### Free space
+### Cleanups
 
 ```sh
 npm install -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
