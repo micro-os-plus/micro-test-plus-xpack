@@ -673,6 +673,8 @@ xpm run test-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 To do a deep cleanup in order to free space or to restart the tests
 from scratch:
 
+### Free space
+
 ```sh
 npm install -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 xpm run deep-clean -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
