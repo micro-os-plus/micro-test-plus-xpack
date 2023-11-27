@@ -81,7 +81,7 @@ and can be integrated as an
   <p>Copyright © 2023 Liviu Ionescu. All rights reserved.</p>
 </div>
 
-<!-- Guarantee links to static pages, for crawlers use.
+<!-- Guarantee links to static pages, for crawlers use. -->
 <a href="change-log.html"/>
 <a href="credits.html"/>
 <a href="install.html"/>
@@ -90,6 +90,5 @@ and can be integrated as an
 <a href="testing.html"/>
 <a href="user-guide.html"/>
 <a href="pages.html"/>
--->
 
 @endhtmlonly
