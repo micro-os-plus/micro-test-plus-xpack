@@ -596,7 +596,7 @@ organisation to be up and running.
 The tests can be executed manually on any of the supported
 platforms:
 
-- GNU/Linux (Intel and Arm); require **GLIBC 2.27**; to run the native
+- GNU/Linux (Intel and Arm); require **GLIBC>=2.27**; to run the native
 tests, a C++ development environment is required
 (on Ubuntu install `build-essential`)
 - macOS (Intel and Apple Silicon); as C++ development environment
@@ -610,7 +610,7 @@ A recent **Node.js** (>=16) run environment. For instructions on how to
 install it, see the [prerequisites](https://xpack.github.io/install/) page.
 
 To run the native tests, a C++ development environment is required.
-On macOS install Command Line Tools, on Ubuntu `build-essential`.
+On macOS install Command Line Tools; on Ubuntu install `build-essential`.
 
 With **npm** available, install **xpm**:
 
@@ -649,14 +649,14 @@ xpm run install -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 xpm run test -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 ```
 
-To run a selection of tests with the latest versions of toolchains:
+To run a selection of tests with the latest versions of the toolchains:
 
 ```sh
 xpm run install-selected -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 xpm run test-selected -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 ```
 
-To run all tests with the latest versions of toolchains:
+To run all tests with the latest versions of the toolchains:
 
 ```sh
 xpm run install-latest -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
@@ -670,9 +670,14 @@ xpm run install-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 xpm run test-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 ```
 
-To do a deep cleanup and restart tests from scratch:
+To do a deep cleanup in order to free space or to restart the tests
+from scratch:
 
 ```sh
 npm install -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 xpm run deep-clean -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 ```
+
+@note
+All dependencies installed by xpm are located in the home folder and
+can be removed by simply removing the folders.
