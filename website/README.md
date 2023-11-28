@@ -60,7 +60,9 @@ The project uses the custom <https://jothepro.github.io/doxygen-awesome-css/> th
 
 ### doxygen-awesome-css
 
-- [Missing line numbers](https://github.com/jothepro/doxygen-awesome-css/issues/128)
+Missing line numbers (already reported by someone else)
+
+- [When two or more classes are in one header file, only the last class's code source with line number](https://github.com/jothepro/doxygen-awesome-css/issues/128)
 
 ### doxygen
 
