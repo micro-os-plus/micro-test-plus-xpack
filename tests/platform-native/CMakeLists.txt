@@ -20,6 +20,7 @@ message(VERBOSE "Processing 'tests/platform-native'...")
 
 # -----------------------------------------------------------------------------
 
+# set(xpack_create_listing true)
 set(ENABLE_MINIMAL_TEST true)
 
 # -----------------------------------------------------------------------------
@@ -70,6 +71,14 @@ function(add_test_executable name)
     # Platform specific dependencies and common compile/link options.
     micro-os-plus::platform
   )
+
+  if(xpack_create_listing)
+    add_custom_command(TARGET ${name} POST_BUILD
+      # --all-headers -> Invalid/Unsupported object file format
+      COMMAND ${CMAKE_OBJDUMP} --source --demangle --line-numbers --wide "$<TARGET_FILE:${name}>" > ${name}-list.txt
+      VERBATIM
+    )
+  endif()
 
   message(VERBOSE "A> ${name}")
 endfunction()
