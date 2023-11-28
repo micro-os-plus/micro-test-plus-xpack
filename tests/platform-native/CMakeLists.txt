@@ -112,7 +112,6 @@ endif()
 
 # -----------------------------------------------------------------------------
 
-# sample-test
 if(ENABLE_SAMPLE_TEST)
   add_test_executable(sample-test)
 
@@ -139,7 +138,6 @@ endif()
 
 # -----------------------------------------------------------------------------
 
-# unit-test
 if(ENABLE_UNIT_TEST)
   add_test_executable(unit-test)
 

@@ -51,10 +51,12 @@ function(add_test_executable name)
   message(VERBOSE "A+ tests/src/${name}.cpp")
 
   target_compile_definitions(${name} PRIVATE
+
     # None.
   )
 
   target_compile_options(${name} PRIVATE
+
     # None.
   )
 
@@ -103,7 +105,6 @@ endfunction()
 
 # -----------------------------------------------------------------------------
 
-# sample-test
 if(ENABLE_SAMPLE_TEST)
   add_test_executable(sample-test)
 
@@ -124,7 +125,6 @@ endif()
 
 # -----------------------------------------------------------------------------
 
-# unit-test
 if(ENABLE_UNIT_TEST)
   add_test_executable(unit-test)
 

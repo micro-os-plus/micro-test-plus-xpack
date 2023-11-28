@@ -21,7 +21,6 @@ message('Processing tests/platform-native...')
 # -----------------------------------------------------------------------------
 
 # Define the tests executables.
-
 test_names = [ 'sample-test', 'unit-test'  ]
 
 foreach name : test_names

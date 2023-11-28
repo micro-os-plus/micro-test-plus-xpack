@@ -103,7 +103,6 @@ endfunction()
 
 # -----------------------------------------------------------------------------
 
-# sample-test
 if(ENABLE_SAMPLE_TEST)
   add_test_executable(sample-test)
 

@@ -165,6 +165,8 @@ foreach name : test_names
 
 endforeach
 
+# -----------------------------------------------------------------------------
+
 qemu = find_program('qemu-system-arm')
 
 # https://mesonbuild.com/Unit-tests.html#malloc_perturb_

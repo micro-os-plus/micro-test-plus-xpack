@@ -34,7 +34,6 @@ objcopy = find_program('objcopy')
 # -----------------------------------------------------------------------------
 
 # Define the tests executables.
-
 test_names = [ 'sample-test', 'unit-test'  ]
 
 foreach name : test_names
@@ -164,6 +163,8 @@ foreach name : test_names
   )
 
 endforeach
+
+# -----------------------------------------------------------------------------
 
 qemu = find_program('qemu-system-riscv32')
 
