@@ -22,6 +22,9 @@ project(
   DESCRIPTION "µTest++ tests"
 )
 
+# Must be called from the top CMakeLists.txt.
+enable_testing()
+
 # -----------------------------------------------------------------------------
 
 # Global definitions.
