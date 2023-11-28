@@ -112,6 +112,7 @@ if(ENABLE_SAMPLE_TEST)
 
     COMMAND qemu-system-riscv32${extension}
     --machine virt
+    --cpu rv32
     --kernel sample-test.elf
     -smp 1
     -bios none
@@ -136,6 +137,7 @@ if(ENABLE_UNIT_TEST)
 
     COMMAND qemu-system-riscv32${extension}
     --machine virt
+    --cpu rv32
     --kernel unit-test.elf
     --nographic
     -smp 1

@@ -181,6 +181,7 @@ if enable_sample_test
     qemu,
     args: [
       '--machine', 'virt',
+      '--cpu', 'rv64',
       '--kernel', sample_test,
       '--nographic',
       '-smp', '1',
@@ -203,6 +204,7 @@ if enable_unit_test
     qemu,
     args: [
       '--machine', 'virt',
+      '--cpu', 'rv64',
       '--kernel', unit_test,
       '--nographic',
       '-smp', '1',
