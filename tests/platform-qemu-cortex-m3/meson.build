@@ -78,12 +78,6 @@ foreach name : test_names
     micro_os_plus_diag_trace_dependency,
   ]
 
-  if name == 'unit-test'
-    _local_dependencies += [
-      micro_os_plus_micro_test_plus_dependency,
-    ]
-  endif
-
   _local_dependencies += [
     # Platform specific dependencies.
     platform_qemu_cortex_m3_dependency, # bring device & architecture too
