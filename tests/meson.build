@@ -20,7 +20,7 @@ project('micro-os-plus-micro-test-plus-tests',
     'cpp_std=c++20',
     'b_staticpic=false', # Mandatory, startup fails otherwise.
   ],
-  meson_version: '>= 0.59'
+  meson_version: '>= 1.3'
 )
 
 # languages: {c, cpp}
