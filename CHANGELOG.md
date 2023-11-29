@@ -6,9 +6,311 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2023-11-28
+
+* 21393a5 ci.yml cosmetics
+* f1488f8 package.json: bump deps
+* ffd542a cosmetics
+* 8d6ca4f meson cross.ini fix cpu
+* 57bd3f0 explicit --cpu for risc-v qemu
+* b3dc45b meson: remove redundancy
+* d9ea278 Revert "home.md temporarily disable anchors hack"
+* 8483aff home.md temporarily disable anchors hack
+* 78b2426 config.doxyfile: enable sitemap.xml
+* eb53997 maintainer.md updates
+* a4d0807 README update
+* 43fadfa package.json: use latest commit theme
+* c5d87d6 home.md: remove ci & web badges
+* 93bb6e6 native/cmake: add listing
+* 45557b3 meson.build >=1.3
+* e16d922 meson_options.txt update
+* 261d337 move platform-native/include/.../platform.h
+* feedf64 move enable_testing() to top
+
+## 2023-11-27
+
+* f0713ca home.md: re-enable explicit links
+* ab49151 home.md: temporarily disable explicit links
+* f45769a home.md: update dummy links
+* 6f14fe4 testing.md update
+* 4679b05 testing.md update
+* 9cb0e18 testing.md update
+* d1a4af5 testing.md update
+* 12ee949 testing.md update
+* 7e2d82f testing.md update
+* a354eec testing.md update
+* faa17f6 testing.md update
+* 616bb45 testing.md update
+
+## 2023-11-26
+
+* 206e8a1 website/README update
+* c8e45ef website/package.json update actions
+* e2c9b2d maintainer.md: fix twitter
+* d53b93c maintainer.md: fix twitter
+* 94dd8a6 maintainer.md: shorten twitter url
+* cc8d0cb testing.md: fix links
+* 5b55edc home.md: fix url
+* c2c7bac home.md: add dummy links to static pages
+* d52ff26 markdown use @page
+* 6eaa27b user-guide.md update ISTQB
+* 2f357ce package.json: update homepage
+* 32ad598 package.json: update
+* 6e41039 package.json: add check urls
+* fd31269 maintainer.md: update twitter url
+* 7954a43 install.md: update
+* a49c1c6 install.md: show tree
+* ab75189 .npmignore website
+* c230d2d maintainer.md update
+* db8a023 tests/package.json update
+* 0156bf3 README update
+* f03584e package.json: bump meson-build
+
+## 2023-11-25
+
+* 509ff38 home.md: add Manual Pages
+2023-11-25 * eed0475 tests/package.json: add install/tes-latest
+2023-11-25 * d2a23dd tests/README update
+2023-11-25 * a755996 maintainer.md: update
+2023-11-25 * 17866f0 tests/package.json: add more selected
+2023-11-25 * 593b361 tests/package.json: fix syntax
+2023-11-25 * bbe15ab tests/package.json: fix syntax
+2023-11-25 * 1456260 tests/package.json: re-enable some tests
+2023-11-25 * c8f7c5a tests/package.json: reorder actions
+2023-11-25 * 68626be tests/package.json: fix install-selected
+2023-11-25 * 079df5c tests/package.json: cleanup actions
+
+## 2023-11-24
+
+* 3aba98d website/maintainer.md update
+* 42f60eb pacakge.json: disable some meson
+* fed45b3 package.json: add test selected
+* 265495e topics.doxyfile: examples to command line options
+* 4c5311e topics.doxyfile: rename group micro-test-plus
+* 7a71772 add minimal-test.cpp for native builds
+
+## 2023-11-23
+
+* 7d12935 user-guide.md: update
+* 5699ed8 user-guide.md: update
+* 31de282 user-guide.md: update
+
+## 2023-11-22
+
+* e3f4a8c user-guide.md update Rationale
+* 79a3a04 home.md: fix link
+* d4dbd85 rename some groups
+* fb83f9b user-guide.md update title
+* e20730a user-guide.md: add c++ api
+* 3d05656 rename some groups
+* 599121b install.md cleanups
+* f05590a rename user-guide.md
+* 8b3ce4c rename doxy groups micro-test-plus-*
+* 03225e6 topics.doxyfile update mtp-top
+* 2b83889 home.md update
+* cb4b8b8 rename 'integrate'
+
+## 2023-11-21
+
+* d87b685 home.md update
+* e15fa64 rename Integration Guide
+* 6e2c567 home.md update
+* 0419764 package-lock.json
+* c83e2c2 rename pages
+* 3b44a8c doxygen metadata
+* b7f2791 re-format
+
+## 2023-11-19
+
+* 4315e9c website README
+* e457fd2 config.doxyfile: include src && include
+* 123bb53 type-traits.h: avoid potential recursive error
+* 0fe11ff developer.md: update
+* 557bbdd home.md update
+* c676d6f change-log.md update
+* 198fadd home.md update
+* 496c308 developer.md: update
+* 9fe24b4 workflow update
+* c955d3d home.md: update
+* 3ff6614 home.md: update
+* d871a67 home.md: update
+* 6151bf8 add DoxygenLayout.xml for the GitHub link
+* 38f101a package.json: add link-deps
+
+## 2023-11-18
+
+* 3d67a79 developer.md update
+* a0bdd9a home.md update
+* 6df7e90 maintainer.md update
+* b096248 workflow update
+* 5f700a5 home.md update links
+* 9186c97 workflow update
+* 5e5cf7a workflow update
+* 3e784b0 workflow update
+* 844cee5 workflow update
+* 01ce2a2 workflows update
+* 36d36d4 add website
+* 440701a README update
+* 311c7ec package.json: remove some redundancy
+
+## 2023-11-17
+
+* 933ea5c ci.yml: bump xpm to 0.18.0
+* 04ad5c4 package.json: update npm actions
+* 6c0f0e5 tests/package.json: use xpm run --all-configs
+
+## 2023-11-16
+
+* ed8b3fd ci.yml: fix actions
+* 1fc00fc ci.yml: update; add meson
+* 63489b6 .vscode/settings.json: ignoreWords
+* e4bfe8e package.json: gccXX for cortex & riscv
+* 6003397 platform-*/meson.build: --no-warn-rwx-segment >=12
+
+## 2023-11-15
+
+* 801a305 platform-options.cmake: --no-warn-rwx-segment >=12
+
+## 2023-10-29
+
+* f0f6af7 package.json: disable clang 13/14 on linux
+* 8bc2250 disable meson on macos (due to ldd --version)
+* 8d6ea94 enable -no-pie for macos gcc
+
+## 2023-10-26
+
+* c124b2d native/cmake cosmetics
+* bfd6ef6 native/meson: informative MICRO_OS_PLUS_DEVICE_NATIVE
+* c076a8f cmake: enable _POSIX_C_SOURCE
+* 1d1054b meson: add asserts
+* 111a1c0 native/cmake: rename _local_*
+* 704cf89 verbose messages cosmetics
+
+## 2023-10-23
+
+* f175fe8 cosmetics
+* cc55c0a add platforms m3 m4f
+* 8949702 tests/package.json: bump deps
+* bd28efb cmake: validate xpack_platform_compile_definition
+* 4de3322 meson rework
+* 95ec308 move cmake _compile_definitions to dependencies
+
+## 2023-10-20
+
+* ce36d69 cmake renames & common-main.cmake
+* d9553a2 cmake cleanups
+* 54accd7 cmake add explanations
+* b59fbac rename micro-os-plus::common-options
+
+## 2023-10-19
+
+* 0638af7 tests/package.json: remove clang12
+* be8ea3f README update
+* 5f53e2c native/cmake: no need for statics
+* 71368ca native/cmake: add libc++ to link
+* ecb5705 native/cmake: compute -rpath
+* 3a4535b tests/package.json: bump deps
+* e0f050c ci.yml: test m0, m7f, rv32imac
+* b32f4bd tests/package.json: bump deps
+* 21f948b .vscode/settings.json: ignoreWords
+* 71bc722 cleanups
+* 94d507f rework meson
+
+## 2023-10-18
+
+* 785704e rework/simplify cmake
+* fc475bb add more cortex & riscv platforms
+* 4bf3531 package.json multiple toolchains
+* a804a2e .vscode/settings.json: ignoreWords
+* cedaed9 meson: add xpack_tests_folder_path
+* 0227c10 cosmetics
+* fdca222 -Wl,--no-warn-rwx-segments
+
+## 2023-10-17
+
+* 9ddcdd6 fix typos
+* c1e7f17 silence warnings
+* b8e417f literals.h: include cstdint
+
+## 2023-10-13
+
+* b9e132b package.json: bump deps
+* 60d5ab3 meson.build: add check: false
+
+## 2023-10-12
+
+* a38e3d2 README update
+* 852bfac package-lock.json update
+* de6024c tests: fix paths
+* 07a8b87 split tests/package.json
+* 7c6a7eb ci.yml: non-sudo npm install
+* 750e4ff ci.yml: try non-sudo
+* 26f4594 ci.yml: bump deps
+* 37a16d6 README update
+* 707fbc5 package.json: update description
+* 39d328e package.json: update scripts
+* 90b83f3 package.json: add del-cli to devDeps
+
+## 2023-07-14
+
+* cc2f4b7 ci.yml: xpm 0.16.2
+* 0c93537 README updates
+* 725da90 tests/CMakeLists.txt cosmetics
+* 03de509 package.json: cosmetise urls
+* 36b27c9 package.json: minXpm 0.16.2
+
+## 2023-06-04
+
+* 0ac4fd5 ci.yml: bump node 18
+* 650e786 ci.yml: bump matrix.os
+* 8f058ed package.json: build-helper-xpack#xpack-develop
+* 28f809c update for xpacks/@scope/name
+* 6d27fb8 ci.yml: bump xpm 0.16.1
+* 30e6aa3 remove --quiet
+
+## 2023-06-03
+
+* 4d446bb lower case ci.yml
+* 0be4b56 package.json min 0.16.0
+* 064eb46 lower case ci.yml
+
+## 2023-05-08
+
+* 8719abe .npmignore update
+* 843c811 READMEs updates
+* c1fb3e9 README updates
+* 46bb468 meson.build cosmetics
+
+## 2023-02-18
+
+* 5eb637f README update
+* 6894005 README update
+* f5db7d7 README update
+
+## 2022-08-16
+
+* cc2699b package.json min 0.14.0 & defaults
+* 9439094 CI.yml: explicit xpm version
+
+## 2022-08-04
+
+* a0739bb tests/cross.ini: add link to cpu-families
+
+## 2022-08-03
+
+* b1b8b28 README updates
+* 965008d .vscode/settings.json: cmake.ignoreCMakeListsMissing
+* ffb029c .vscode/settings.json: makefile.configureOnOpen
+
+## 2022-08-02
+
+* fa3cd23 READMEs updates
+
 ## 2022-07-30
 
-* v3.1.1
+* ceb6702 test-runner.cpp: conditional verbosity
+* 80a0d20 3.1.1
+* 8f35eb1 prepare v3.1.1
 * 41d0acf update mps2 config
 * 7c4cf61 #7: package.json: use inheritance
 * 736a885 bump deps
