@@ -83,13 +83,13 @@ subdir('meson/common-options')
 subdir('xpacks/@micro-os-plus/build-helper/meson/enable-all-warnings')
 
 # Since the order of processing is significative, include it in dependencies.
-# subdir('platform-'+ xpack_platform_name + '/meson/platform-options')
+# subdir('platforms/'+ xpack_platform_name + '/meson/platform-options')
 
 # -----------------------------------------------------------------------------
 # Dependencies #
 
 # Set `xpack_dependencies_folders` with the platform specific dependencies.
-subdir('platform-'+ xpack_platform_name + '/meson/dependencies-folders')
+subdir('platforms/'+ xpack_platform_name + '/meson/dependencies-folders')
 
 foreach dep: xpack_dependencies_folders
   message('Adding ' + dep + '...')
@@ -106,6 +106,6 @@ subdir('top')
 # Platform specifics #
 
 # Include the platform specific targets and tests.
-subdir('platform-' + xpack_platform_name)
+subdir('platforms/' + xpack_platform_name)
 
 # -----------------------------------------------------------------------------

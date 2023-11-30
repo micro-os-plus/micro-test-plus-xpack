@@ -70,11 +70,11 @@ endif()
 include("cmake/common-options.cmake")
 
 # Set `xpack_dependencies_folders` with the platform specific dependencies.
-include("platform-${PLATFORM_NAME}/cmake/dependencies-folders.cmake")
+include("platforms/${PLATFORM_NAME}/cmake/dependencies-folders.cmake")
 
 # Define `micro-os-plus::platform` with the plaform definitions,
 # common to all tests.
-include("platform-${PLATFORM_NAME}/cmake/platform-options.cmake")
+include("platforms/${PLATFORM_NAME}/cmake/platform-options.cmake")
 
 # Iterate the platform dependencies and `add_subdirectory()`.
 xpack_add_dependencies_subdirectories("${xpack_dependencies_folders}" "xpacks-bin")
@@ -90,6 +90,6 @@ add_subdirectory(".." "top-bin")
 
 # Add the platform specific targets and tests.
 # For consistency, the binaries are created in the `platform-bin` folder.
-add_subdirectory("platform-${PLATFORM_NAME}" "platform-bin")
+add_subdirectory("platforms/${PLATFORM_NAME}" "platform-bin")
 
 # -----------------------------------------------------------------------------

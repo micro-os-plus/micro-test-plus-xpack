@@ -20,7 +20,7 @@
 
 #if defined(MICRO_OS_PLUS_TRACE)
 
-// Defined in platform-native.
+// Defined in platforms/native.
 // #define MICRO_OS_PLUS_INTEGER_TRACE_PRINTF_BUFFER_ARRAY_SIZE 500
 
 // #define MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCT

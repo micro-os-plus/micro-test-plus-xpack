@@ -13,27 +13,27 @@ toolchains as possible, and run them on as many platforms as possible.
 
 The supported test platforms are:
 
-- `platform-native` - run the test applications as **native processes**
+- `platforms/native` - run the test applications as **native processes**
   on the development machine
-- `platform-qemu-cortex-m0` - run the tests as fully semihosted
+- `platforms/qemu-cortex-m0` - run the tests as fully semihosted
   **Cortex-M0** applications on a QEMU **mps2-an385** emulated board
   (an Arm Cortex-M3 development board)
-- `platform-qemu-cortex-m3` - run the tests as fully semihosted
+- `platforms/qemu-cortex-m3` - run the tests as fully semihosted
   **Cortex-M3** applications on a QEMU **mps2-an385** emulated board
   (an Arm Cortex-M3 development board)
-- `platform-qemu-cortex-m4f` - run the tests as fully semihosted
+- `platforms/qemu-cortex-m4f` - run the tests as fully semihosted
   **Cortex-M4** applications on a QEMU **mps2-an386** emulated board
   (an Arm Cortex-M4 development board)
-- `platform-qemu-cortex-m7f` - run the tests as fully semihosted
+- `platforms/qemu-cortex-m7f` - run the tests as fully semihosted
   **Cortex-M7** applications on a QEMU **mps2-an500** emulated board
   (an Arm Cortex-M7 development board)
-- `platform-qemu-cortex-a15` - run the tests as fully semihosted
+- `platforms/qemu-cortex-a15` - run the tests as fully semihosted
   **Cortex-A15** applications on a QEMU **virt** emulated board
-- `platform-qemu-cortex-a72` - run the tests as fully semihosted
+- `platforms/qemu-cortex-a72` - run the tests as fully semihosted
   **Cortex-A72** (64-bit) applications on a QEMU **virt** emulated board
-- `platform-qemu-riscv-rv32imac` - run the tests as fully semihosted
+- `platforms/qemu-riscv-rv32imac` - run the tests as fully semihosted
   **RISC-V RV32IMAC** applications on a QEMU **virt** emulated board
-- `platform-qemu-riscv-rv64imafdc` - run the tests as fully semihosted
+- `platforms/qemu-riscv-rv64imafdc` - run the tests as fully semihosted
   **RISC-V RV64IMAFDC** applications on a QEMU **virt** emulated board
 
 The tests can be executed on:
