@@ -93,11 +93,11 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
 #endif
       const char* p = strrchr (name, '/');
-#pragma GCC diagnostic pop
       if (p != nullptr)
         return p + 1;
       else
         return name;
+#pragma GCC diagnostic pop
     }
 
   } // namespace reflection
