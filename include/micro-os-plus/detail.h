@@ -47,6 +47,7 @@ namespace micro_os_plus::micro_test_plus
   {
     /**
      * @brief An object used to pass assertion parameters to the evaluator.
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class Expr_T>
     struct assertion
@@ -95,6 +96,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Equality comparator.
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class Lhs_T, class Rhs_T>
     struct eq_ : type_traits::op
@@ -180,6 +182,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Non-equality comparator.
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class Lhs_T, class Rhs_T>
     struct ne_ : type_traits::op
@@ -254,6 +257,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Greater than comparator.
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class Lhs_T, class Rhs_T>
     struct gt_ : type_traits::op
@@ -311,6 +315,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Greater than or equal comparator.
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class Lhs_T, class Rhs_T>
     struct ge_ : type_traits::op
@@ -368,6 +373,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Less than comparator.
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class Lhs_T, class Rhs_T>
     struct lt_ : type_traits::op
@@ -426,6 +432,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Less than or equal comparator.
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class Lhs_T, class Rhs_T>
     struct le_ : type_traits::op
@@ -485,6 +492,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Logical and operator.
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class Lhs_T, class Rhs_T>
     struct and_ : type_traits::op
@@ -520,6 +528,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Logical or operator.
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class Lhs_T, class Rhs_T>
     struct or_ : type_traits::op
@@ -555,6 +564,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Logical not operator.
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class T>
     struct not_ : type_traits::op
@@ -583,6 +593,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__cpp_exceptions)
     /**
      * @brief Operator to check if the expression throws a specific exception.
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class Callable_T, class Exception_T = void>
     struct throws_ : type_traits::op
@@ -617,6 +628,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Operator to check if the expression throws any exception.
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class Callable_T>
     struct throws_<Callable_T, void> : type_traits::op
@@ -647,6 +659,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Operator to check if the expression does not throw any exception.
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class Callable_T>
     struct nothrow_ : type_traits::op
@@ -681,6 +694,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Base class for a deferred reporter, that collects the
      * messages into a string.
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     class deferred_reporter_base
     {
@@ -715,6 +729,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Class template for a deferred reporter specific
      * to an expression.
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class Expr_T>
     class deferred_reporter : public deferred_reporter_base

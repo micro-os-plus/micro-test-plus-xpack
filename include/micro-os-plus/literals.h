@@ -396,12 +396,7 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @deprecated Use `to_t` (since 3.2.0).
-   * @}
-   */
-
-  /**
-   * @ingroup micro-test-plus-literals
-   * @brief Template for wrapping any other type.
+   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */
   template <class T>
   struct _t : type_traits::value<T>
@@ -410,7 +405,6 @@ namespace micro_os_plus::micro_test_plus
     {
     }
   };
-
 
   /**
    * @addtogroup micro-test-plus-literals
@@ -475,6 +469,7 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @ingroup micro-test-plus-literals
    * @brief Template for wrapping any other type.
+   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    * @since 3.2.0
    *
    * @details

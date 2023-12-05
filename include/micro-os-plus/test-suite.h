@@ -45,6 +45,7 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @brief Base class for all test suites.
+   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */
   class test_suite_base
   {
@@ -249,6 +250,7 @@ namespace micro_os_plus::micro_test_plus
    * @ingroup micro-test-plus-test-suites
    * @brief Test suites are classes that represent a named group of
    * test cases which self register to the runner.
+   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */
   class test_suite : public test_suite_base
   {

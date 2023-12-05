@@ -49,6 +49,7 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @brief Colours used to highlight pass vs. fail.
+   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */
   struct colors
   {
@@ -59,6 +60,7 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @brief The verbosity levels.
+   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */
   enum class verbosity
   {
@@ -80,6 +82,7 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief Reporter to display the test results. For failed
    * tests it prints the actual values of the operands, with their types.
+   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */
   class test_reporter
   {

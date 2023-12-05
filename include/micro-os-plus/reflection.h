@@ -52,6 +52,7 @@ namespace micro_os_plus::micro_test_plus
 #else
     /**
      * @brief Local implementation of the std::source_location.
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     class source_location
     {

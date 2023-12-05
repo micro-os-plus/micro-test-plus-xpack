@@ -45,11 +45,17 @@ namespace micro_os_plus::micro_test_plus
    */
   namespace type_traits
   {
+    /**
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     */
     template <class...>
     struct list
     {
     };
 
+    /**
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     */
     template <class T, class...>
     struct identity
     {
@@ -69,6 +75,9 @@ namespace micro_os_plus::micro_test_plus
     };
 #endif
 
+    /**
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     */
     template <class R, class... Args_T>
     struct function_traits<R (*) (Args_T...)>
     {
@@ -76,6 +85,9 @@ namespace micro_os_plus::micro_test_plus
       using args = list<Args_T...>;
     };
 
+    /**
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     */
     template <class R, class... Args_T>
     struct function_traits<R (Args_T...)>
     {
@@ -83,6 +95,9 @@ namespace micro_os_plus::micro_test_plus
       using args = list<Args_T...>;
     };
 
+    /**
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     */
     template <class R, class T, class... Args_T>
     struct function_traits<R (T::*) (Args_T...)>
     {
@@ -90,6 +105,9 @@ namespace micro_os_plus::micro_test_plus
       using args = list<Args_T...>;
     };
 
+    /**
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     */
     template <class R, class T, class... Args_T>
     struct function_traits<R (T::*) (Args_T...) const>
     {
@@ -159,11 +177,17 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto is_convertible_v = is_convertible<From, To> (0);
 #endif
 
+    /**
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     */
     template <bool>
     struct requires_
     {
     };
 
+    /**
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     */
     template <>
     struct requires_<true>
     {
@@ -175,6 +199,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Empty base class of all operators.
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     struct op
     {
@@ -183,6 +208,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief A generic integral constant.
      * It has a getter and a '-' operator to return the negative value.
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <auto N>
     struct integral_constant : op
@@ -213,6 +239,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief A generic floating point constant, with custom size
      * and precision.
      * It has a getter and a '-' operator to return the negative value.
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class T, auto N, auto D, auto Size, auto P = 1>
     struct floating_point_constant : op
@@ -242,6 +269,9 @@ namespace micro_os_plus::micro_test_plus
       }
     };
 
+    /**
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     */
     template <class T>
     struct genuine_integral_value : op
     {
@@ -271,6 +301,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Class defining a generic value, accessible via a getter.
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class T, class = int>
     struct value : type_traits::op
@@ -301,6 +332,7 @@ namespace micro_os_plus::micro_test_plus
      * in addition to the actual value, has an epsilon, to use the
      * desired precision during comparisons.
      * If missing, the default is 1 / (10^decimals).
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class T>
     struct value<T,

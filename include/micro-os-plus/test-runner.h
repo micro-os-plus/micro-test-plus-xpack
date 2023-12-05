@@ -46,6 +46,7 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @brief The test runner. It maintains a list of test suites which
    * automatically register themselves in their constructors.
+   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */
   class test_runner
   {
