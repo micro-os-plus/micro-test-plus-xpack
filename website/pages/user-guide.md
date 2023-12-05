@@ -225,7 +225,7 @@ main(int argc, char* argv[])
     using namespace mt::literals;
 
     mt::expect (compute_answer () == 42_i) << "answer is 42";
-    mt::expect (mt::_i {compute_answer ()} == 42) << "answer is 42";
+    mt::expect (mt::to_i {compute_answer ()} == 42) << "answer is 42";
   });
 
   return mt::exit_code ();

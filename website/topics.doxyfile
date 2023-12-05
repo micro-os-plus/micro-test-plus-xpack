@@ -408,7 +408,7 @@ mt::test_case ("Operators", [] {
   using namespace micro_test_plus::literals;
 
   mt::expect (compute_answer () == 42_i) << "answer is 42 (with literal)";
-  mt::expect (mt::_i {compute_answer ()} == 42) << "answer is 42 (with cast)";
+  mt::expect (mt::to_i {compute_answer ()} == 42) << "answer is 42 (with cast)";
   mt::expect (compute_answer () != 43_i) << "answer is not 43";
   mt::expect (compute_answer () < 43_i) << "answer is < 43";
   mt::expect (compute_answer () <= 43_i) << "answer is <= 42";
@@ -504,8 +504,8 @@ recognised types.
 @par Examples
 
 ```cpp
-mt::expect (mt::_i {answer} == 42_i);
-mt::expect (mt::_f {expression} == 42_f);
+mt::expect (mt::to_i {answer} == 42_i);
+mt::expect (mt::to_f {expression} == 42_f);
 ```
 
 */
