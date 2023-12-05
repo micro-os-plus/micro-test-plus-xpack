@@ -112,13 +112,13 @@ main (int argc, char* argv[])
     // interferences with other operators are possible, they are
     // located in a separate namespace.
     // Even so, they require their operands to be typed, via literals
-    // (like `1_i`) or casts (like `mt::_i(expr)`).
+    // (like `1_i`) or casts (like `mt::to_i(expr)`).
 
     using namespace mt::operators;
     using namespace mt::literals;
 
     mt::expect (compute_answer () == 42_i) << "answer == 42 (with literal)";
-    mt::expect (mt::_i (compute_answer ()) == 42)
+    mt::expect (mt::to_i (compute_answer ()) == 42)
         << "answer == 42 (with cast)";
     mt::expect (compute_answer () != 43_i) << "answer != 43";
     mt::expect (compute_answer () < 43_i) << "answer < 43";
