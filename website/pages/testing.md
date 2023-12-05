@@ -672,7 +672,7 @@ xpm run test-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 ### Known problems
 
 The native clang13 and clang14 tests fail on Arch & derivatives machines, with
-an error related to a missing symbol in libunwind.
+an error related to a missing symbol in `libunwind`.
 
 The issue is caused by older clang releases returning the
 paths in `-print-search-dirs` in a wrong order,
