@@ -347,6 +347,13 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wdocumentation-deprecated-sync"
+#endif
+#endif
+
   /** @deprecated Use `to_b` (since 3.2.0). */
   using _b = type_traits::value<bool>;
   /** @deprecated Use `to_c` (since 3.2.0). */
@@ -405,6 +412,10 @@ namespace micro_os_plus::micro_test_plus
     {
     }
   };
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
 
   /**
    * @addtogroup micro-test-plus-literals
