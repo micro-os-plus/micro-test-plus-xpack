@@ -6,6 +6,50 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2023-12-06
+
+* v3.2.0
+* 90963ce micro-test-plus.h cosmetics
+* c57c46e literals.h: silence clang deprecation warning
+* f776b18 doxygen metadata: add @headerfile
+* 94ff7d7 website: use to_*
+* 9d4f8bb tests/sample-test.cpp: use to_*
+* 24606d7 literals.h: add to_*, deprecate _*
+
+## 2023-12-05
+
+* 76ddc99 user-guide.md: use mt::
+* 86adedf doxygen metadata: use mt:: in examples
+* 71db099 tests: use explicit mt::
+* c508d4f testing.md: remove reference to test-all.yml
+* 11a1f31 testing.md: update
+* 1ee57a8 testing.md: fix typo
+* 749e2d6 testing.md: add clang 17
+* 221a630 rename xpack-development
+* 06419e5 tests/package.json: enable gcc11
+* 03cb2ed tests/package.json: bump deps
+
+## 2023-12-04
+
+* ebe7e55 package-lock.json updates
+* 17e8859 tests/package.json: add clang 17
+* 75e585a micro-test-plus.cpp: silence warning for clang 17
+
+## 2023-11-30
+
+* b4ff766 website/package.json: #v2.3.1
+* 19a43d6 testing.md update
+* 822e464 rework tests with platforms sub-folder
+* 2aef49a website/package.json: explicit #v2.3.0
+* 313fd41 website/package.json: explicit #2.3.0
+* 80d0fe8 testing.md: updates
+
+## 2023-11-29
+
+* 2227c94 3.1.2
+* 552865e prepare v3.1.2
+* 993d0f7 testing.md: updates
+
 ## 2023-11-28
 
 * 21393a5 ci.yml cosmetics
