@@ -111,18 +111,18 @@ for example:
 ```cpp
 #include <micro-os-plus/micro-test-plus.h>
 
+namespace mt = micro_os_plus::micro_test_plus;
+
 int
 main(int argc, char* argv[])
 {
-  using namespace micro_os_plus::micro_test_plus;
+  mt::initialize(argc, argv, "Minimal");
 
-  initialize(argc, argv, "Minimal");
-
-  test_case ("Check truth", [] {
-    expect (true);
+  mt::test_case ("Check truth", [] {
+    mt::expect (true);
   })
 
-  return exit_code ();
+  return mt::exit_code ();
 }
 ```
 
@@ -144,6 +144,8 @@ for example:
 ```cpp
 #include <micro-os-plus/micro-test-plus.h>
 
+namespace mt = micro_os_plus::micro_test_plus;
+
 static int
 compute_answer()
 {
@@ -153,15 +155,13 @@ compute_answer()
 int
 main(int argc, char* argv[])
 {
-  using namespace micro_os_plus::micro_test_plus;
+  mt::initialize(argc, argv, "The Answer");
 
-  initialize(argc, argv, "The Answer");
-
-  test_case ("Check answer", [] {
-    expect (compute_answer() == 42) << "answer is 42";
+  mt::test_case ("Check answer", [] {
+    mt::expect (compute_answer() == 42) << "answer is 42";
   });
 
-  return exit_code ();
+  return mt::exit_code ();
 }
 ```
 
@@ -207,28 +207,28 @@ the test should be slightly more elaborate,
 and use custom comparators or operators; for example:
 
 ```cpp
-// ...
+#include <micro-os-plus/micro-test-plus.h>
+
+namespace mt = micro_os_plus::micro_test_plus;
 
 int
 main(int argc, char* argv[])
 {
-  using namespace micro_os_plus::micro_test_plus;
+  mt::initialize(argc, argv, "The Answer");
 
-  initialize(argc, argv, "The Answer");
-
-  test_case ("Check answer with comparator", [] {
-    expect (eq (compute_answer (), 42)) << "answer is 42";
+  mt::test_case ("Check answer with comparator", [] {
+    mt::expect (mt::eq (compute_answer (), 42)) << "answer is 42";
   });
 
-  test_case ("Check answer with operator", [] {
-    using namespace micro_os_plus::micro_test_plus::operators;
-    using namespace micro_os_plus::micro_test_plus::literals;
+  mt::test_case ("Check answer with operator", [] {
+    using namespace mt::operators;
+    using namespace mt::literals;
 
-    expect (compute_answer () == 42_i) << "answer is 42";
-    expect (_i {compute_answer ()} == 42) << "answer is 42";
+    mt::expect (compute_answer () == 42_i) << "answer is 42";
+    mt::expect (mt::_i {compute_answer ()} == 42) << "answer is 42";
   });
 
-  return exit_code ();
+  return mt::exit_code ();
 }
 ```
 
@@ -260,7 +260,8 @@ be explicitly referred to as shown) and matches only operands of
 some specific types.
 
 To cast the integer constant `42` to such a specific type, a custom literal
-is available (`_i`), which is also defined in a separate namespace.
+is available (`_i`), which is also defined in the separate
+`micro_test_plus` namespace.
 
 In addition to literals used to define constants, there are also definitions
 which can be used to cast expressions.
@@ -284,36 +285,37 @@ mechanism, and are execute when the `exit_code()` function is invoked.
 @par Examples
 
 ```cpp
+namespace os = micro_os_plus;
+namespace mt = micro_os_plus::micro_test_plus;
+
 // Define a function template to run the tests.
 template <class T>
 void
 check_double_list_links (void)
 {
-  using namespace micro_os_plus::micro_test_plus;
-
   static T left_links;
   static T links;
   static T right_links;
 
-  test_case ("Initial", [&] {
+  mt::test_case ("Initial", [&] {
     if constexpr (T::is_statically_allocated::value)
       {
         // Check if the node is cleared.
-        expect (eq (links.previous (), nullptr)) << "prev is null";
-        expect (eq (links.next (), nullptr)) << "next is null";
-        expect (links.uninitialized ()) << "uninitialized";
+        mt::expect (mt::eq (links.previous (), nullptr)) << "prev is null";
+        mt::expect (mt::eq (links.next (), nullptr)) << "next is null";
+        mt::expect (links.uninitialized ()) << "uninitialized";
 
         left_links.initialize ();
         links.initialize ();
         right_links.initialize ();
       }
 
-    expect (!left_links.linked ()) << "left unlinked";
-    expect (!links.linked ()) << "unlinked";
-    expect (!right_links.linked ()) << "right unlinked";
+    mt::expect (!left_links.linked ()) << "left unlinked";
+    mt::expect (!links.linked ()) << "unlinked";
+    mt::expect (!right_links.linked ()) << "right unlinked";
   });
 
-  test_case ("Link", [&] {
+  mt::test_case ("Link", [&] {
     // Link left as previous.
     links.link_previous (&left_links);
 
@@ -321,42 +323,42 @@ check_double_list_links (void)
     links.link_next (&right_links);
 
     // The node must appear as linked now.
-    expect (links.linked ()) << "linked";
+    mt::expect (links.linked ()) << "linked";
 
-    expect (eq (left_links.next (), &links)) << "left linked";
-    expect (eq (right_links.previous (), &links)) << "right linked";
+    mt::expect (mt::eq (left_links.next (), &links)) << "left linked";
+    mt::expect (mt::eq (right_links.previous (), &links)) << "right linked";
   });
 
-  test_case ("Unlink", [&] {
+  mt::test_case ("Unlink", [&] {
     // Unlink the central node.
     links.unlink ();
-    expect (!links.linked ()) << "unlinked";
+    mt::expect (!links.linked ()) << "unlinked";
 
     // Left and right must indeed point to each other.
-    expect (eq (left_links.next (), &right_links)) << "left -> right";
-    expect (eq (right_links.previous (), &left_links)) << "right <- right";
+    mt::expect (mt::eq (left_links.next (), &right_links)) << "left -> right";
+    mt::expect (mt::eq (right_links.previous (), &left_links)) << "right <- right";
   });
 
   if constexpr (!T::is_statically_allocated::value)
     {
-      test_case ("Allocated on stack", [] {
+      mt::test_case ("Allocated on stack", [] {
         T stack_links;
-        expect (!stack_links.linked ()) << "unlinked";
+        mt::expect (!stack_links.linked ()) << "unlinked";
       });
     }
 }
 
 // Instantiate the test for statically allocated lists.
-static micro_os_plus::micro_test_plus::test_suite ts_static_double_list_links
+static mt::test_suite ts_static_double_list_links
     = {
         "Static double list links",
-        check_double_list_links<micro_os_plus::utils::static_double_list_links>
+        check_double_list_links<os::utils::static_double_list_links>
       };
 
 // Instantiate the same test for regular lists.
-static micro_os_plus::micro_test_plus::test_suite ts_double_list_links
+static mt::test_suite ts_double_list_links
     = { "Double list links",
-        check_double_list_links<micro_os_plus::utils::double_list_links> };
+        check_double_list_links<os::utils::double_list_links> };
 ```
 
 ## C++ API
@@ -365,7 +367,7 @@ static micro_os_plus::micro_test_plus::test_suite ts_double_list_links
 
 The definitions are grouped in several namespaces below `micro_os_plus`:
 
-- `micro_os_plus::micro_test_plus`
+- `micro_os_plus::micro_test_plus` (usually aliased to `mt`)
 - `micro_os_plus::micro_test_plus::operators`
 - `micro_os_plus::micro_test_plus::literals`
 - `micro_os_plus::micro_test_plus::utility`
