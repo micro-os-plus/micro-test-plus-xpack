@@ -40,7 +40,6 @@
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
-
 #pragma GCC diagnostic ignored "-Wpadded"
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
