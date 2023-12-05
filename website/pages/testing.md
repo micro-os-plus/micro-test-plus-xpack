@@ -619,14 +619,14 @@ npm install --global xpm@latest
 
 ### Clone the project
 
-To clone the development branch (`xpack-develop`), run the following commands in a
+To clone the development branch (`xpack-development`), run the following commands in a
 terminal (on Windows use the _Git Bash_ console):
 
 ```sh
 rm -rf ~/Work/micro-os-plus/micro-test-plus-xpack.git && \
 mkdir -p ~/Work/micro-os-plus && \
 git clone \
-  --branch xpack-develop \
+  --branch xpack-development \
   https://github.com/micro-os-plus/micro-test-plus-xpack.git \
   ~/Work/micro-os-plus/micro-test-plus-xpack.git
 ```
