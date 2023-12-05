@@ -24,6 +24,7 @@
 
 // ----------------------------------------------------------------------------
 
+namespace mt = micro_os_plus::micro_test_plus;
 using namespace std::literals;
 
 // ----------------------------------------------------------------------------
@@ -60,28 +61,26 @@ compute_condition (void)
 int
 main (int argc, char* argv[])
 {
-  using namespace micro_os_plus::micro_test_plus;
-
   // There is a default test suite automatically defined in main().
-  initialize (argc, argv, "Minimal");
+  mt::initialize (argc, argv, "Minimal");
 
   // --------------------------------------------------------------------------
 
   // Test comparison functions.
-  test_case ("Check various conditions", [] {
+  mt::test_case ("Check various conditions", [] {
     // There are functions with usual names for all comparisons.
 
-    expect (eq (compute_answer (), 42)) << "answer is 42";
+    mt::expect (mt::eq (compute_answer (), 42)) << "answer is 42";
 
     // Boolean expressions can be checked directly.
-    expect (compute_condition ()) << "condition is true";
+    mt::expect (compute_condition ()) << "condition is true";
   });
 
   // --------------------------------------------------------------------------
 
   // Trigger the execution of the separate test suites and
   // return the overall test result to the system.
-  return exit_code ();
+  return mt::exit_code ();
 }
 
 // ----------------------------------------------------------------------------

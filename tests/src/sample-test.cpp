@@ -24,6 +24,7 @@
 
 // ----------------------------------------------------------------------------
 
+namespace mt = micro_os_plus::micro_test_plus;
 using namespace std::literals;
 
 // ----------------------------------------------------------------------------
@@ -86,87 +87,87 @@ exercise_throw (bool mustThrow)
 int
 main (int argc, char* argv[])
 {
-  using namespace micro_os_plus::micro_test_plus;
-
   // There is a default test suite automatically defined in main().
-  initialize (argc, argv, "Sample");
+  mt::initialize (argc, argv, "Sample");
 
   // --------------------------------------------------------------------------
 
   // Test comparison functions.
-  test_case ("Check various conditions", [] {
+  mt::test_case ("Check various conditions", [] {
     // There are functions with usual names for all comparisons.
 
-    expect (eq (compute_answer (), 42)) << "answer eq 42";
-    expect (ne (compute_answer (), 43)) << "answer ne 43";
-    expect (lt (compute_answer (), 43)) << "answer lt 43";
-    expect (le (compute_answer (), 43)) << "answer le 42";
-    expect (gt (compute_answer (), 41)) << "answer gt 43";
-    expect (ge (compute_answer (), 42)) << "answer ge 42";
+    mt::expect (mt::eq (compute_answer (), 42)) << "answer eq 42";
+    mt::expect (mt::ne (compute_answer (), 43)) << "answer ne 43";
+    mt::expect (mt::lt (compute_answer (), 43)) << "answer lt 43";
+    mt::expect (mt::le (compute_answer (), 43)) << "answer le 42";
+    mt::expect (mt::gt (compute_answer (), 41)) << "answer gt 43";
+    mt::expect (mt::ge (compute_answer (), 42)) << "answer ge 42";
 
     // Boolean expressions can be checked directly.
-    expect (compute_condition ()) << "condition is true";
+    mt::expect (compute_condition ()) << "condition is true";
   });
 
-  test_case ("Check various conditions with operators", [] {
+  mt::test_case ("Check various conditions with operators", [] {
     // There are custom operators for all comparisons, but since
     // interferences with other operators are possible, they are
     // located in a separate namespace.
     // Even so, they require their operands to be typed, via literals
-    // (like `1_i`) or casts (like `_i(expr)`).
+    // (like `1_i`) or casts (like `mt::_i(expr)`).
 
-    using namespace micro_os_plus::micro_test_plus::operators;
-    using namespace micro_os_plus::micro_test_plus::literals;
+    using namespace mt::operators;
+    using namespace mt::literals;
 
-    expect (compute_answer () == 42_i) << "answer == 42 (with literal)";
-    expect (_i (compute_answer ()) == 42) << "answer == 42 (with cast)";
-    expect (compute_answer () != 43_i) << "answer != 43";
-    expect (compute_answer () < 43_i) << "answer < 43";
-    expect (compute_answer () <= 43_i) << "answer <= 42";
-    expect (compute_answer () > 41_i) << "answer > 43";
-    expect (compute_answer () >= 42_i) << "answer >= 42";
+    mt::expect (compute_answer () == 42_i) << "answer == 42 (with literal)";
+    mt::expect (mt::_i (compute_answer ()) == 42)
+        << "answer == 42 (with cast)";
+    mt::expect (compute_answer () != 43_i) << "answer != 43";
+    mt::expect (compute_answer () < 43_i) << "answer < 43";
+    mt::expect (compute_answer () <= 43_i) << "answer <= 42";
+    mt::expect (compute_answer () > 41_i) << "answer > 43";
+    mt::expect (compute_answer () >= 42_i) << "answer >= 42";
 
     // Note: if the operands are not typed, the test is still performed
     // correctly using the standard operators, as for any logical expression,
     // but in case of failures the actual values cannot be shown.
   });
 
-  test_case ("Check strings", [] {
+  mt::test_case ("Check strings", [] {
     // String can also be compared, but only as `string_view` objects,
     // otherwise the comparison is done on
     // the memory addresses, not on the content.
 
-    expect (eq (std::string_view{ compute_ultimate_answer () }, "fortytwo"sv))
+    mt::expect (
+        mt::eq (std::string_view{ compute_ultimate_answer () }, "fortytwo"sv))
         << "ultimate answer is 'fortytwo'";
   });
 
-  test_case ("Check strings with operators", [] {
+  mt::test_case ("Check strings with operators", [] {
     // There are also custom == and != operators for `string_view` comparisons.
 
-    using namespace micro_os_plus::micro_test_plus::operators;
+    using namespace mt::operators;
 
-    expect (std::string_view{ compute_ultimate_answer () } == "fortytwo"sv)
+    mt::expect (std::string_view{ compute_ultimate_answer () } == "fortytwo"sv)
         << "ultimate answer == 'fortytwo'";
   });
 
-  test_case ("Check compound conditions", [] {
+  mt::test_case ("Check compound conditions", [] {
     // More complex conditions can be constructed with _and(), _or(), _not()
     // (the underscore is required to differentiate the functions from the
     // language and/or/not operators).
 
-    expect (_and (
-        eq (compute_answer (), 42),
-        eq (std::string_view{ compute_ultimate_answer () }, "fortytwo"sv)))
+    mt::expect (mt::_and (
+        mt::eq (compute_answer (), 42),
+        mt::eq (std::string_view{ compute_ultimate_answer () }, "fortytwo"sv)))
         << "logical 'and' expression";
   });
 
-  test_case ("Check compound conditions with operators", [] {
+  mt::test_case ("Check compound conditions with operators", [] {
     // There are also operators for logical expressions.
 
-    using namespace micro_os_plus::micro_test_plus::operators;
-    using namespace micro_os_plus::micro_test_plus::literals;
+    using namespace mt::operators;
+    using namespace mt::literals;
 
-    expect (
+    mt::expect (
         (compute_answer () == 42_i)
         and (std::string_view{ compute_ultimate_answer () } == "fortytwo"sv))
         << "logical 'and' expression with operators";
@@ -174,14 +175,14 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  test_case ("Check multiple function invocations", [] {
+  mt::test_case ("Check multiple function invocations", [] {
     // The function does not need to be embedded in the test case,
     // it can be defined separately and called multiple times.
 
     auto add = [] (int i) { return i + 40; };
 
-    expect (eq (add (2), 42)) << "lambda returns 42";
-    expect (eq (add (3), 43)) << "lambda returns 43";
+    mt::expect (mt::eq (add (2), 42)) << "lambda returns 42";
+    mt::expect (mt::eq (add (3), 43)) << "lambda returns 43";
   });
 
   // --------------------------------------------------------------------------
@@ -193,20 +194,20 @@ main (int argc, char* argv[])
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
 #endif
-  test_case (
+  mt::test_case (
       "Check args",
       [] (int _argc, char* _argv[]) {
-        expect (ge (_argc, 2)) << "argc >= 2";
+        mt::expect (mt::ge (_argc, 2)) << "argc >= 2";
 
         if (_argc > 1)
           {
-            expect (eq (std::string_view{ _argv[1] }, "one"sv))
+            mt::expect (mt::eq (std::string_view{ _argv[1] }, "one"sv))
                 << "argv[1] is 'one'";
           }
 
         if (_argc > 2)
           {
-            expect (eq (std::string_view{ _argv[2] }, "two"sv))
+            mt::expect (mt::eq (std::string_view{ _argv[2] }, "two"sv))
                 << "argv[2] is 'two'";
           }
       },
@@ -219,18 +220,18 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  test_case ("Check complex logic", [] {
+  mt::test_case ("Check complex logic", [] {
     // Complex conditions can be tested with explicit tests, and
     // the results passed to the test framework.
 
     bool xyz = true;
     if (xyz)
       {
-        expect (true) << "xyz passed";
+        mt::expect (true) << "xyz passed";
       }
     else
       {
-        expect (false) << "xyz...";
+        mt::expect (false) << "xyz...";
       }
   });
 
@@ -238,39 +239,41 @@ main (int argc, char* argv[])
 
 #if defined(__EXCEPTIONS)
 
-  test_case ("Check if exceptions are thrown", [] {
-    expect (throws ([] { exercise_throw (true); })) << "exception thrown";
-    expect (throws<std::runtime_error> ([] {
+  mt::test_case ("Check if exceptions are thrown", [] {
+    mt::expect (mt::throws ([] { exercise_throw (true); }))
+        << "exception thrown";
+    mt::expect (mt::throws<std::runtime_error> ([] {
       throw std::runtime_error{ "" };
     })) << "std::runtime_error thrown";
   });
 
-  test_case ("Check if exceptions are not thrown", [] {
-    expect (nothrow ([] { exercise_throw (false); }))
+  mt::test_case ("Check if exceptions are not thrown", [] {
+    mt::expect (mt::nothrow ([] { exercise_throw (false); }))
         << "exception not thrown";
   });
 
 #endif // defined(__EXCEPTIONS)
 
-  test_case ("Check containers", [] {
+  mt::test_case ("Check containers", [] {
     // Containers are iterated and each value compared with `eq()` or `ne()`.
 
-    expect (eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
+    mt::expect (mt::eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
         << "vector{ 1, 2 } eq vector{ 1, 2 }";
 
-    expect (ne (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 }))
+    mt::expect (
+        mt::ne (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 }))
         << "vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }";
   });
 
-  test_case ("Check containers with operators", [] {
+  mt::test_case ("Check containers with operators", [] {
     // Containers are iterated and each value compared with `==` or `!=`.
 
-    using namespace micro_os_plus::micro_test_plus::operators;
+    using namespace mt::operators;
 
-    expect (std::vector<int>{ 1, 2 } == std::vector<int>{ 1, 2 })
+    mt::expect (std::vector<int>{ 1, 2 } == std::vector<int>{ 1, 2 })
         << "vector{ 1, 2 } == vector{ 1, 2 }";
 
-    expect (std::vector<int>{ 1, 2, 3 } != std::vector<int>{ 1, 2, 4 })
+    mt::expect (std::vector<int>{ 1, 2, 3 } != std::vector<int>{ 1, 2, 4 })
         << "vector{ 1, 2, 3 } != vector{ 1, 2, 4 }";
   });
 
@@ -278,29 +281,27 @@ main (int argc, char* argv[])
 
   // Trigger the execution of the separate test suites and
   // return the overall test result to the system.
-  return exit_code ();
+  return mt::exit_code ();
 }
 
 // ----------------------------------------------------------------------------
 // Additional test suites. They may be located in separate source files.
 
+static mt::test_suite ts_explicit
+    = { "Explicit namespace", [] {
+         mt::test_case ("Check one", [] { mt::expect (true) << "Passed"; });
+         mt::test_case ("Check two", [] { mt::expect (true) << "Passed"; });
+       } };
+
 static micro_os_plus::micro_test_plus::test_suite ts_separate
-    = { "Separate", [] {
+    = { "Implicit namespace", [] {
+         // For applications known to not conflict with the test
+         // framework names, it is possible to access the definitions
+         // directly, by including all namespace definitions.
          using namespace micro_os_plus::micro_test_plus;
 
          test_case ("Check one", [] { expect (true) << "Passed"; });
          test_case ("Check two", [] { expect (true) << "Passed"; });
-       } };
-
-static micro_os_plus::micro_test_plus::test_suite ts_explicit
-    = { "Explicit namespace", [] {
-         // In case the application has functions that conflict with
-         // the test framework names, use explicit names, possibly
-         // shortened to a single letter.
-         namespace mt = micro_os_plus::micro_test_plus;
-
-         mt::test_case ("Check one", [] { mt::expect (true) << "Passed"; });
-         mt::test_case ("Check two", [] { mt::expect (true) << "Passed"; });
        } };
 
 // ----------------------------------------------------------------------------
@@ -309,14 +310,12 @@ static micro_os_plus::micro_test_plus::test_suite ts_explicit
 static void
 test_suite_args (int ic, int iv, int& ir, int* ip1, int* ip2)
 {
-  using namespace micro_os_plus::micro_test_plus;
-
-  test_case ("args", [&] {
-    expect (eq (ic, 42)) << "ic is 42";
-    expect (eq (iv, 43)) << "iv is 43";
-    expect (eq (ir, 44)) << "ir is 44";
-    expect (eq (*ip1, 45)) << "*ip1 is 45";
-    expect (eq (*ip2, 46)) << "*ip2 is 46";
+  mt::test_case ("args", [&] {
+    mt::expect (mt::eq (ic, 42)) << "ic is 42";
+    mt::expect (mt::eq (iv, 43)) << "iv is 43";
+    mt::expect (mt::eq (ir, 44)) << "ir is 44";
+    mt::expect (mt::eq (*ip1, 45)) << "*ip1 is 45";
+    mt::expect (mt::eq (*ip2, 46)) << "*ip2 is 46";
   });
 }
 
@@ -327,7 +326,7 @@ static int in45 = 45;
 static int in46 = 46;
 static int* ip2 = &in46;
 
-static micro_os_plus::micro_test_plus::test_suite ts_args
+static mt::test_suite ts_args
     = { "Args", test_suite_args, 42, in, ir, &in45, ip2 };
 
 // ----------------------------------------------------------------------------

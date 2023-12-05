@@ -26,6 +26,7 @@
 
 using namespace std::literals;
 
+// For this test only, make the namespaces globally visible.
 using namespace micro_os_plus;
 using namespace micro_os_plus::micro_test_plus;
 
