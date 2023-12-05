@@ -113,8 +113,10 @@ namespace micro_os_plus::micro_test_plus
      * @par Examples
      *
      * ```cpp
-     * expect (utility::is_match ("abc", "a?c")) << "abc matches a?c";
-     * expect (utility::is_match ("abc", "a*c")) << "abc matches a*c";
+     * namespace mt = micro_os_plus::micro_test_plus;
+     *
+     * mt::expect (mt::utility::is_match ("abc", "a?c")) << "abc matches a?c";
+     * mt::expect (mt::utility::is_match ("abc", "a*c")) << "abc matches a*c";
      * ```
      */
     [[nodiscard]] bool

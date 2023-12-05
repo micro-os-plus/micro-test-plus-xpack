@@ -179,15 +179,15 @@ for example:
 int
 main(int argc, char* argv[])
 {
-  using namespace micro_os_plus::micro_test_plus;
+  namespace mt = micro_os_plus::micro_test_plus;
 
-  initialize(argc, argv, "Minimal");
+  mt::initialize(argc, argv, "Minimal");
 
-  test_case ("Check truth", [] {
-    expect (true);
+  mt::test_case ("Check truth", [] {
+    mt::expect (true);
   })
 
-  return exit_code ();
+  return mt::exit_code ();
 }
 ```
 
@@ -218,19 +218,19 @@ a callable (usually a lambda), and optional arguments.
 @par Examples
 
 ```cpp
-using namespace micro_os_plus::micro_test_plus;
+namespace mt = micro_os_plus::micro_test_plus;
 
-test_case ("Check various conditions", [] {
-  expect (eq (compute_answer (), 42)) << "answer eq 42";
-  expect (ne (compute_answer (), 43)) << "answer ne 43";
+mt::test_case ("Check various conditions", [] {
+  mt::expect (mt::eq (compute_answer (), 42)) << "answer eq 42";
+  mt::expect (mt::ne (compute_answer (), 43)) << "answer ne 43";
 });
 
-test_case ("Check various conditions with operators", [] {
-  using namespace micro_os_plus::micro_test_plus::operators;
-  using namespace micro_os_plus::micro_test_plus::literals;
+mt::test_case ("Check various conditions with operators", [] {
+  using namespace mt::operators;
+  using namespace mt::literals;
 
-  expect (compute_answer () == 42_i) << "answer == 42";
-  expect (compute_answer () != 43_i) << "answer != 43";
+  mt::expect (compute_answer () == 42_i) << "answer == 42";
+  mt::expect (compute_answer () != 43_i) << "answer != 43";
 });
 ```
 
@@ -270,14 +270,14 @@ must be used.
 
 @par Examples
 ```cpp
-expect (eq (compute_answer (), 42)) << "answer is 42";
-expect (ne (compute_answer (), 43)) << "answer is not 43";
-expect (lt (compute_answer (), 43)) << "answer is < 43";
-expect (le (compute_answer (), 43)) << "answer is <= 42";
-expect (gt (compute_answer (), 41)) << "answer is > 43";
-expect (ge (compute_answer (), 42)) << "answer is >= 42";
+mt::expect (mt::eq (compute_answer (), 42)) << "answer is 42";
+mt::expect (mt::ne (compute_answer (), 43)) << "answer is not 43";
+mt::expect (mt::lt (compute_answer (), 43)) << "answer is < 43";
+mt::expect (mt::le (compute_answer (), 43)) << "answer is <= 42";
+mt::expect (mt::gt (compute_answer (), 41)) << "answer is > 43";
+mt::expect (mt::ge (compute_answer (), 42)) << "answer is >= 42";
 
-expect (compute_condition ()) << "condition is true";
+mt::expect (compute_condition ()) << "condition is true";
 ```
 
 When such comparator functions are used, failed checks also display the
@@ -298,10 +298,10 @@ Containers can be compared for equality. The comparison is done by iterating and
 @par Examples
 
 ```cpp
-expect (eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
+mt::expect (mt::eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
         << "vector{ 1, 2 } eq vector{ 1, 2 }";
 
-expect (ne (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 })
+mt::expect (mt::ne (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 })
         << "vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }";
 ```
 
@@ -314,7 +314,7 @@ expect (ne (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 })
 @details
 
 Complex expressions can be checked in a single line, using the
-logical `_and()`, `_or()` and `_not()` functions.
+logical `mt::_and()`, `mt::_or()` and `mt::_not()` functions.
 
 @note
 The names are
@@ -324,7 +324,7 @@ in C/C++.
 @par Example
 
 ```cpp
-expect(_and (eq (compute_answer (), 42), eq (compute_float (), 42.0)));
+mt::expect(mt::_and (mt::eq (compute_answer (), 42), mt::eq (compute_float (), 42.0)));
 ```
 
 @note
@@ -345,12 +345,12 @@ A C++ testing framework must be able to check if an expression (usually a functi
 @par Examples
 
 ```cpp
-expect (throws ([] { exercise_throw (true); })) << "exception thrown";
+mt::expect (mt::throws ([] { exercise_throw (true); })) << "exception thrown";
 
-expect (throws<std::runtime_error> ([] { throw std::runtime_error{ "" }; }))
+mt::expect (mt::throws<std::runtime_error> ([] { throw std::runtime_error{ "" }; }))
         << "std::runtime_error thrown";
 
-expect (nothrow ([] { exercise_throw (false); })) << "exception not thrown";
+mt::expect (mt::nothrow ([] { exercise_throw (false); })) << "exception not thrown";
 ```
 
 If a more elaborate logic is required, for example for expecting multiple
@@ -364,15 +364,15 @@ try
   }
 catch (const std::overflow_error& e)
   {
-    expect (true) << "std::overflow_error thrown";
+    mt::expect (true) << "std::overflow_error thrown";
   }
 catch (const std::runtime_error& e)
   {
-    expect (true) << "std::runtime_error thrown";
+    mt::expect (true) << "std::runtime_error thrown";
   }
 catch (...)
   {
-    expect (false) << "known exception thrown";
+    mt::expect (false) << "known exception thrown";
   }
 ```
 
@@ -403,17 +403,17 @@ actually the constructors of the internal classes).
 @par Examples
 
 ```cpp
-test_case ("Operators", [] {
+mt::test_case ("Operators", [] {
   using namespace micro_test_plus::operators;
   using namespace micro_test_plus::literals;
 
-  expect (compute_answer () == 42_i) << "answer is 42 (with literal)";
-  expect (_i {compute_answer ()} == 42) << "answer is 42 (with cast)";
-  expect (compute_answer () != 43_i) << "answer is not 43";
-  expect (compute_answer () < 43_i) << "answer is < 43";
-  expect (compute_answer () <= 43_i) << "answer is <= 42";
-  expect (compute_answer () > 41_i) << "answer is > 43";
-  expect (compute_answer () >= 42_i) << "answer is >= 42";
+  mt::expect (compute_answer () == 42_i) << "answer is 42 (with literal)";
+  mt::expect (mt::_i {compute_answer ()} == 42) << "answer is 42 (with cast)";
+  mt::expect (compute_answer () != 43_i) << "answer is not 43";
+  mt::expect (compute_answer () < 43_i) << "answer is < 43";
+  mt::expect (compute_answer () <= 43_i) << "answer is <= 42";
+  mt::expect (compute_answer () > 41_i) << "answer is > 43";
+  mt::expect (compute_answer () >= 42_i) << "answer is >= 42";
 });
 ```
 
@@ -426,7 +426,7 @@ enabled only when matching the typed operands.
 @par Example
 
 ```cpp
-expect (compute_answer () == 42_i && compute_float () == 42.0_f);
+mt::expect (compute_answer () == 42_i && compute_float () == 42.0_f);
 ```
 
 */
@@ -446,12 +446,13 @@ objects.
 ```cpp
 #include <string_view>
 using namespace std::literals; // For the "sv" literal.
+namespace mt = micro_os_plus::micro_test_plus;
 // ...
 
-test_case ("Operators", [] {
+mt::test_case ("Operators", [] {
   using namespace micro_test_plus::operators;
 
-  expect (std::string_view{ compute_ultimate_answer () } == "forty-two"sv)
+  mt::expect (std::string_view{ compute_ultimate_answer () } == "forty-two"sv)
           << "ultimate answer == 'forty-two'";
 });
 ```
@@ -472,15 +473,16 @@ there are also equality operators for containers.
 ```cpp
 #include <string_view>
 using namespace std::literals; // For the "sv" literal.
+namespace mt = micro_os_plus::micro_test_plus;
 // ...
 
-test_case ("Operators", [] {
+mt::test_case ("Operators", [] {
   using namespace micro_test_plus::operators;
 
-  expect (std::vector<int>{ 1, 2 } == std::vector<int>{ 1, 2 })
+  mt::expect (std::vector<int>{ 1, 2 } == std::vector<int>{ 1, 2 })
           << "vector{ 1, 2 } == vector{ 1, 2 }";
 
-  expect (std::vector<int>{ 1, 2, 3 } != std::vector<int>{ 1, 2, 4 })
+  mt::expect (std::vector<int>{ 1, 2, 3 } != std::vector<int>{ 1, 2, 4 })
           << "vector{ 1, 2, 3 } != vector{ 1, 2, 4 }";
 });
 ```
@@ -502,8 +504,8 @@ recognised types.
 @par Examples
 
 ```cpp
-expect (_i {answer} == 42_i);
-expect (_f {expression} == 42_f);
+mt::expect (mt::_i {answer} == 42_i);
+mt::expect (mt::_f {expression} == 42_f);
 ```
 
 */
@@ -597,18 +599,18 @@ The registered test suites are executed when the function
 @par Examples
 
 ```cpp
+namespace mt = micro_os_plus::micro_test_plus;
+
 // Test suite with generic parameters.
 static void
 test_suite_args (int ic, int iv, int& ir, int* ip1, int* ip2)
 {
-  using namespace micro_os_plus::micro_test_plus;
-
-  test_case ("args", [&] {
-    expect (eq (ic, 42)) << "ic is 42";
-    expect (eq (iv, 43)) << "iv is 43";
-    expect (eq (ir, 44)) << "ir is 44";
-    expect (eq (*ip1, 45)) << "*ip1 is 45";
-    expect (eq (*ip2, 46)) << "*ip2 is 46";
+  mt::test_case ("args", [&] {
+    mt::expect (mt::eq (ic, 42)) << "ic is 42";
+    mt::expect (mt::eq (iv, 43)) << "iv is 43";
+    mt::expect (mt::eq (ir, 44)) << "ir is 44";
+    mt::expect (mt::eq (*ip1, 45)) << "*ip1 is 45";
+    mt::expect (mt::eq (*ip2, 46)) << "*ip2 is 46";
   });
 }
 
@@ -619,7 +621,7 @@ static int in45 = 45;
 static int in46 = 46;
 static int* ip2 = &in46;
 
-static micro_os_plus::micro_test_plus::test_suite ts_args
+static mt::test_suite ts_args
     = { "Args", test_suite_args, 42, in, ir, &in45, ip2 };
 ```
 
@@ -638,14 +640,18 @@ To avoid names clashes, it is recommended to
 use the comparator functions with explicit namespaces,
 possibly aliased to shorter names.
 
+However, for those who prefer brevity, it is also possible to
+declare the namespace `micro_os_plus::micro_test_plus` at scope level,
+and use all the definitions directly.
+
 @par Example
 
 ```cpp
 {
-  namespace mt = micro_os_plus::micro_test_plus;
+  using namespace micro_os_plus::micro_test_plus;
 
-  mt::test_case ("Check answer", [] {
-    mt::expect (mt::eq (compute_answer (), 42)) << "answer is 42";
+  test_case ("Check answer", [] {
+    expect (eq (compute_answer (), 42)) << "answer is 42";
   });
 }
 ```

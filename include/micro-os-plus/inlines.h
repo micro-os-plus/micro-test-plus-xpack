@@ -75,8 +75,10 @@ namespace micro_os_plus::micro_test_plus
    * @par Example
    *
    * ```cpp
-   *   test_case ("Check answer with comparator", [] {
-   *     expect (eq (compute_answer (), 42)) << "answer is 42";
+   *   namespace mt = micro_os_plus::micro_test_plus;
+   *
+   *   mt::test_case ("Check answer with comparator", [] {
+   *     mt::expect (mt::eq (compute_answer (), 42)) << "answer is 42";
    *   });
    * ```
    */
@@ -155,8 +157,10 @@ namespace micro_os_plus::micro_test_plus
      *
      * @par Example
      * ```cpp
-     * expect (std::vector<std::string_view>{ "a", "b" }
-     *             == utility::split<std::string_view> ("a.b", "."))
+     * namespace mt = micro_os_plus::micro_test_plus;
+     *
+     * mt::expect (std::vector<std::string_view>{ "a", "b" }
+     *             == mt::utility::split<std::string_view> ("a.b", "."))
      *         << "a.b splits into [a,b]";
      * ```
      */

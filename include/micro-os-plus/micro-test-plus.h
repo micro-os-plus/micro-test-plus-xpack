@@ -128,7 +128,9 @@ namespace micro_os_plus::micro_test_plus
    *
    * @par Example
    * ```cpp
-   * expect (compute_answer () == 42) << "answer is 42";
+   * namespace mt = micro_os_plus::micro_test_plus;
+   *
+   * mt::expect (compute_answer () == 42) << "answer is 42";
    * ```
    */
   template <class Expr_T, type_traits::requires_t<
@@ -156,7 +158,9 @@ namespace micro_os_plus::micro_test_plus
    *
    * @par Example
    * ```cpp
-   * assert (compute_answer () == 42) << "answer is 42";
+   * namespace mt = micro_os_plus::micro_test_plus;
+   *
+   * mt::assume (compute_answer () == 42) << "answer is 42";
    * ```
    */
   template <class Expr_T, type_traits::requires_t<
