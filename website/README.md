@@ -66,4 +66,4 @@ Missing line numbers (already reported by someone else)
 
 ### doxygen
 
-- [Add explicit links to static pages](https://github.com/doxygen/doxygen/issues/10447)
+- [Add explicit links to static pages](https://github.com/doxygen/doxygen/issues/10447) - fixed in 1.10.0
