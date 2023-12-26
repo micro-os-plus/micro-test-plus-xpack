@@ -85,7 +85,6 @@ endfunction()
 
 # -----------------------------------------------------------------------------
 
-# minimal-test
 if(ENABLE_MINIMAL_TEST)
   add_test_executable(minimal-test)
 
