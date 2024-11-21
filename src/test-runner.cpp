@@ -40,9 +40,9 @@ namespace micro_os_plus::micro_test_plus
 
   test_runner::test_runner ()
   {
-#if defined(MICRO_TEST_PLUS_TRACE)
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
     printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_TEST_PLUS_TRACE
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
   }
 
 #pragma GCC diagnostic push
@@ -52,9 +52,9 @@ namespace micro_os_plus::micro_test_plus
   void
   test_runner::initialize (int argc, char* argv[], const char* name)
   {
-#if defined(MICRO_TEST_PLUS_TRACE)
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
     printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_TEST_PLUS_TRACE
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
     argc_ = argc;
     argv_ = argv;
@@ -177,9 +177,9 @@ namespace micro_os_plus::micro_test_plus
   void
   test_runner::register_test_suite (test_suite_base* suite)
   {
-#if 0 // defined(MICRO_TEST_PLUS_TRACE)
+#if 0 // defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
     printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_TEST_PLUS_TRACE
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
     if (suites_ == nullptr)
       {

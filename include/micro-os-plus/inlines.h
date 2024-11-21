@@ -43,9 +43,9 @@ namespace micro_os_plus::micro_test_plus
       : test_suite_base{ name },
         callable_{ std::bind (callable, arguments...) }
   {
-#if defined(MICRO_TEST_PLUS_TRACE)
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
     printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_TEST_PLUS_TRACE
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
     runner.register_test_suite (this);
   }
@@ -86,9 +86,9 @@ namespace micro_os_plus::micro_test_plus
   void
   test_case (const char* name, Callable_T&& callable, Args_T&&... arguments)
   {
-#if 0 // defined(MICRO_TEST_PLUS_TRACE)
+#if 0 // defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
     printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_TEST_PLUS_TRACE
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
     current_test_suite->begin_test_case (name);
     std::invoke (std::forward<Callable_T> (callable),
@@ -125,9 +125,9 @@ namespace micro_os_plus::micro_test_plus
         : deferred_reporter_base{ static_cast<bool> (expr), location },
           expr_{ expr }
     {
-#if 0 // defined(MICRO_TEST_PLUS_TRACE)
+#if 0 // defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
       printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_TEST_PLUS_TRACE
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
       abort_ = abort;
     }
 

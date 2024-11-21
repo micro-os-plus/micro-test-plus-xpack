@@ -184,7 +184,7 @@ There are several preprocessor definitions used to configure the build:
 
 - `MICRO_OS_PLUS_INCLUDE_CONFIG_H` - to include `<micro-os-plus/config.h>`
 - `MICRO_OS_PLUS_TRACE` - to include the trace calls
-- `MICRO_TEST_PLUS_TRACE` - to enable some tracing messages
+- `MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS` - to enable some tracing messages
 
 ## Compiler options
 

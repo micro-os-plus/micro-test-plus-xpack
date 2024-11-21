@@ -27,7 +27,7 @@
 // #define MICRO_OS_PLUS_TRACE_UTILS_LISTS
 
 // Propagate TRACE to the library.
-#define MICRO_TEST_PLUS_TRACE
+#define MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
 #endif // MICRO_OS_PLUS_TRACE
 
