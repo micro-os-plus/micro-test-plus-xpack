@@ -1,12 +1,38 @@
-# https://help.github.com/en/actions
-# https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions
-# https://github.com/actions
+# -----------------------------------------------------------------------------
+# DO NOT EDIT!
+# Automatically generated from npm-packages-helper/templates/*.
+#
+# This file is part of the µOS++ project (http://micro-os-plus.github.io).
+# Copyright (c) 2021 Liviu Ionescu. All rights reserved.
+#
+# Permission to use, copy, modify, and/or distribute this software
+# for any purpose is hereby granted, under the terms of the MIT license.
+#
+# If a copy of the license was not distributed with this file, it can
+# be obtained from https://opensource.org/licenses/mit/.
+#
+# -----------------------------------------------------------------------------
 
-# https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/ci.yml
+# https://micro-os-plus.github.io/micro-test-plus-xpack/
+# https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/test-ci.yml
+
+# Workflow for running some tests on each Push.
 name: CI on Push
 
+# https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
+# https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
+
 on:
+  # Runs on pushes, if all conditions are met:
   push:
+    # ... on the active branches ...
+    branches:
+      - 'xpack-development'
+      - 'xpack'
+    # ... skip tags only ...
+    tags-ignore:
+      - '**'
+    # ... include everything except ...
     paths-ignore:
       - '.vscode/**'
       - 'LICENSE'
@@ -19,22 +45,17 @@ on:
       - 'tests/scripts/**'
       - '**/README**'
       - 'website/**'
-    # This should disable running the workflow on tags, according to the
-    # on.<push|pull_request>.<branches|tags> GitHub Actions docs.
-    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onpushbranchestagsbranches-ignoretags-ignore
-    branches:
-      - '*'
 
 jobs:
   ci-test:
     name: 'CI µTest++ tests'
 
-    runs-on: ${{ matrix.os }}
+    runs-on:  ${{ matrix.os }}
 
     strategy:
       matrix:
         # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners
-        os: [ 'ubuntu-24.04', 'macos-13', 'macos-14', 'windows-2019', 'windows-2022' ]
+        os: [ 'ubuntu-24.04', 'ubuntu-24.04-arm', 'macos-13', 'macos-14', 'windows-2019', 'windows-2022' ]
         # https://nodejs.org/en - use LTS
         node-version: [ '20' ]
         # https://www.npmjs.com/package/xpm

@@ -19,8 +19,8 @@
 # Workflow for deploying static content to GitHub Pages.
 name: GitHub Pages
 
-# https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
 # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
+# https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
 
 on:
   # Runs on pushes, if all conditions are met:
