@@ -104,6 +104,10 @@ namespace micro_os_plus::micro_test_plus
 
   namespace utility
   {
+#if defined(__clang__)
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdocumentation"
+#endif
     /**
      * @details
      * For tests comparing strings, in addition to exact matches,
@@ -111,7 +115,6 @@ namespace micro_os_plus::micro_test_plus
      * (for any characters) and `?` (for a single character)
      *
      * @par Examples
-     *
      * ```cpp
      * namespace mt = micro_os_plus::micro_test_plus;
      *
@@ -119,6 +122,9 @@ namespace micro_os_plus::micro_test_plus
      * mt::expect (mt::utility::is_match ("abc", "a*c")) << "abc matches a*c";
      * ```
      */
+#if defined(__clang__)
+#pragma clang diagnostic pop
+#endif
     [[nodiscard]] bool
     is_match (std::string_view input, std::string_view pattern)
     {

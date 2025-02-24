@@ -52,6 +52,10 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
+#if defined(__clang__)
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdocumentation"
+#endif
   /**
    * @details
    * A test case is a sequence of test conditions (or simply tests,
@@ -73,7 +77,6 @@ namespace micro_os_plus::micro_test_plus
    * the provided arguments, and reports the results.
    *
    * @par Example
-   *
    * ```cpp
    *   namespace mt = micro_os_plus::micro_test_plus;
    *
@@ -82,6 +85,9 @@ namespace micro_os_plus::micro_test_plus
    *   });
    * ```
    */
+#if defined(__clang__)
+#pragma clang diagnostic pop
+#endif
   template <typename Callable_T, typename... Args_T>
   void
   test_case (const char* name, Callable_T&& callable, Args_T&&... arguments)
