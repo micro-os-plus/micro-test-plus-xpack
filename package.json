@@ -54,5 +54,13 @@
     "devDependencies": {},
     "properties": {},
     "buildConfigurations": {}
+  },
+  "topConfig": {
+    "longName": "µTest++",
+    "shortName": "micro-test-plus",
+    "showTestsResults": "true"
+  },
+  "engines": {
+    "node": " >=18.0.0"
   }
 }
