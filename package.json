@@ -58,8 +58,8 @@
     "buildConfigurations": {}
   },
   "topConfig": {
-    "longName": "µTest++",
-    "shortName": "micro-test-plus",
+    "descriptiveName": "µTest++",
+    "permalinkName": "micro-test-plus",
     "showTestsResults": "true"
   },
   "engines": {
