@@ -66,7 +66,7 @@ jobs:
         env | sort
 
     - name: Satisfy project dependencies
-      run: xpm install-ci -C tests
+      run: xpm run install-ci -C tests
 
     - name: Run test
       run: xpm run test-ci -C tests
