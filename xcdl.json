@@ -1,0 +1,28 @@
+{
+  "minimumXcdlRequired": "2.0.0",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 Liviu Ionescu. All rights reserved.",
+  "cdlPackage": {
+    "name": "micro-test-plus",
+    "description": "µTest++",
+    "parent": "micro-os-plus",
+    "compilerIncludeFolders": [
+      "include"
+    ],
+    "compilerSourceFiles": [
+      "src/micro-test-plus.cpp",
+      "src/test-runner.cpp",
+      "src/test-reporter.cpp",
+      "src/test-suite.cpp"
+    ],
+    "compilerDefinitions": [],
+    "compilerOptions": [],
+    "dependencies": [],
+    "generatedDefinition": "MICRO_OS_PLUS_INCLUDE_MICRO_TEST_PLUS",
+    "cdlOptions": {
+      "trace-micro-test-plus": {
+        "generatedDefinition": "MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS"
+      }
+    }
+  }
+}

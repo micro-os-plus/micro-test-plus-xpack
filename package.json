@@ -4,13 +4,23 @@
   "description": "A source code library with µTest++, a lightweight testing framework for embedded platforms",
   "main": "",
   "scripts": {
+    "generate-top-commons": "bash node_modules/@xpack/npm-packages-helper/maintenance-scripts/generate-top-commons.sh --micro-os-plus",
+    "npm-install": "npm install",
+    "npm-link-helpers": "npm link @xpack/npm-packages-helper @xpack/docusaurus-template-liquid",
+    "npm-outdated": "npm outdated",
+    "npm-pack": "npm pack",
+    "npm-link": "npm link",
+    "npm-version-patch": "npm version patch",
+    "npm-version-minor": "npm version minor",
+    "git-log": "git log --pretty='%cd * %h %s' --date=short",
+    "deep-clean": "del-cli node_modules package-lock.json *.tgz",
     "postversion": "git push origin --all && git push origin --tags"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/micro-os-plus/micro-test-plus-xpack.git"
+    "url": "git+https://github.com/micro-os-plus/micro-test-plus-xpack.git"
   },
-  "homepage": "https://micro-os-plus.github.io/micro-test-plus-xpack",
+  "homepage": "https://micro-os-plus.github.io/micro-test-plus-xpack/",
   "bugs": {
     "url": "https://github.com/micro-os-plus/micro-test-plus-xpack/issues"
   },
@@ -34,49 +44,15 @@
     "https://www.npmjs.com/package/del-cli"
   ],
   "devDependencies": {
-    "del-cli": "^5.1.0"
+    "del-cli": "^6.0.0",
+    "json": "^11.0.0",
+    "liquidjs": "^10.19.1"
   },
   "xpack": {
-    "minimumXpmRequired": "0.16.2",
-    "actions": {
-      "deep-clean": "del-cli node_modules package-lock.json",
-      "npm-install": "npm install",
-      "git-log": "git log --pretty='%cd * %h %s' --date=short",
-      "npm-pack": "npm pack",
-      "npm-version-patch": "npm version patch",
-      "npm-version-minor": "npm version minor",
-      "npm-version": "echo $(which node) $(node --version) && echo $(which npm) $(npm --version)"
-    },
+    "minimumXpmRequired": "0.20.5",
     "dependencies": {},
     "devDependencies": {},
     "properties": {},
-    "buildConfigurations": {},
-    "minimumXcdlRequired": "2.0.0",
-    "license": "MIT",
-    "copyright": "Copyright (c) 2022 Liviu Ionescu. All rights reserved.",
-    "cdlComponents": {
-      "micro-test-plus": {
-        "description": "µTest++",
-        "parent": "micro-os-plus",
-        "compilerIncludeFolders": [
-          "include"
-        ],
-        "compilerSourceFiles": [
-          "src/micro-test-plus.cpp",
-          "src/test-runner.cpp",
-          "src/test-reporter.cpp",
-          "src/test-suite.cpp"
-        ],
-        "compilerDefinitions": [],
-        "compilerOptions": [],
-        "dependencies": [],
-        "generatedDefinition": "MICRO_OS_PLUS_INCLUDE_MICRO_TEST_PLUS",
-        "cdlOptions": {
-          "trace-micro-test-plus": {
-            "generatedDefinition": "MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS"
-          }
-        }
-      }
-    }
+    "buildConfigurations": {}
   }
 }
