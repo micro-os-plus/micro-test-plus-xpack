@@ -26,10 +26,10 @@
   "homepage": "https://micro-os-plus.github.io/micro-test-plus-xpack/",
   "keywords": [
     "xpack",
+    "micro-os-plus",
     "c++",
     "testing",
-    "framework",
-    "micro-os-plus"
+    "framework"
   ],
   "author": {
     "name": "Liviu Ionescu",
@@ -59,8 +59,7 @@
   },
   "topConfig": {
     "descriptiveName": "µTest++",
-    "permalinkName": "micro-test-plus",
-    "showTestsResults": "true"
+    "permalinkName": "micro-test-plus"
   },
   "engines": {
     "node": " >=18.0.0"
