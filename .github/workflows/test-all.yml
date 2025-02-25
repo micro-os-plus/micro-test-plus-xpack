@@ -68,7 +68,7 @@ jobs:
 
     - name: Satisfy project dependencies
       run: |
-        (cd tests; npm ci)
+        (cd tests && npm ci)
         xpm run install-all -C tests
 
     - name: Run test
