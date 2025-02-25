@@ -71,7 +71,7 @@ jobs:
         npm ci -C tests
         xpm run install-all -C tests
 
-    - name: Run test
+    - name: Run tests
       run: xpm run test-all -C tests
       env:
           CI: true
