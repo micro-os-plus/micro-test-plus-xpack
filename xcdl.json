@@ -4,7 +4,7 @@
   "copyright": "Copyright (c) 2022 Liviu Ionescu. All rights reserved.",
   "cdlPackage": {
     "name": "micro-test-plus",
-    "description": "µTest++",
+    "description": "µTest++, a lightweight testing framework for embedded platforms",
     "parent": "micro-os-plus",
     "compilerIncludeFolders": [
       "include"
@@ -18,9 +18,13 @@
     "compilerDefinitions": [],
     "compilerOptions": [],
     "dependencies": [],
-    "generatedDefinition": "MICRO_OS_PLUS_INCLUDE_MICRO_TEST_PLUS",
+    "generatedDefinition": "MICRO_OS_PLUS_HAS_MICRO_TEST_PLUS",
     "cdlOptions": {
-      "trace-micro-test-plus": {
+      "trace": {
+        "display": "Enable trace in µTest++",
+        "description": "Log trace diagnostics in the µTest++ testing framework when TRACE is enabled",
+        "valueType": "bool",
+        "requires": "isEnabled('diag-trace')",
         "generatedDefinition": "MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS"
       }
     }
