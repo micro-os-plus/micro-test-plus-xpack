@@ -36,7 +36,7 @@ if c_compiler.get_id() == 'gcc' or c_compiler.get_id().contains('clang')
     _local_compile_definitions += [ '-DDEBUG' ]
     _local_compile_definitions += [ '-DMICRO_OS_PLUS_DEBUG' ]
     _local_compile_definitions += [ '-DMICRO_OS_PLUS_TRACE' ]
-    _local_link_with += [ '-v' ]
+    _local_link_args += [ '-v' ]
   endif
   if get_option('buildtype') == 'release'
     _local_compile_definitions += [ '-DNDEBUG' ]
