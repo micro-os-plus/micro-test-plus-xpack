@@ -24,7 +24,7 @@
       "https://github.com/xpack-dev-tools"
     ],
     "devDependencies": {
-      "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#xpack-development",
+      "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#v2.16.0",
       "@micro-os-plus/diag-trace": "^4.2.1",
       "@xpack-dev-tools/cmake": "3.30.7-1.1",
       "@xpack-dev-tools/meson-build": "1.6.1-1.1",
