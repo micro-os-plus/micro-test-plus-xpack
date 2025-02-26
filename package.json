@@ -13,6 +13,7 @@
     "npm-version-patch": "npm version patch",
     "npm-version-minor": "npm version minor",
     "git-log": "git log --pretty='%cd * %h %s' --date=short",
+    "git-pull-helper": "git -C ${HOME}/Work/micro-os-plus/build-helper-xpack.git pull",
     "deep-clean": "del-cli node_modules package-lock.json *.tgz",
     "postversion": "git push origin --all && git push origin --tags"
   },
