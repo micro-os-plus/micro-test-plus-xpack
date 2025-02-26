@@ -145,7 +145,7 @@
         "xpm run clean --all-configs --ignore-errors"
       ],
       "test": [
-        "xpm install --config {% if os.platform == 'win32' %}test-native-cmake-gcc{% else %}test-native-cmake-sys{% endif %}"
+        "xpm run {% if os.platform == 'win32' %}test-native-cmake-gcc{% else %}test-native-cmake-sys{% endif %}"
       ],
       "test-ci": [
         "{% if os.platform != 'darwin' %}xpm run test-native-cmake-gcc{% endif %}",
