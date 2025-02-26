@@ -54,7 +54,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Install xpm@${{ matrix.xpm-version }}
+    - name: Install xpm@${{ matrix.xpm-version }} on ${{ matrix.os }}
       run: npm install -g xpm@${{ matrix.xpm-version }}
 
     - name: Show environment
@@ -66,12 +66,12 @@ jobs:
         xpm --version
         env | sort
 
-    - name: Satisfy project dependencies
+    - name: Satisfy project dependencies on ${{ matrix.os }}
       run: |
         npm ci -C tests
         xpm run install-all -C tests
 
-    - name: Run tests
+    - name: Run tests on ${{ matrix.os }}
       run: xpm run test-all -C tests
       env:
           CI: true
