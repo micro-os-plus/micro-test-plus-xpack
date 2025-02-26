@@ -17,7 +17,7 @@
     "del-cli": "^6.0.0"
   },
   "xpack": {
-    "minimumXpmRequired": "0.20.5",
+    "minimumXpmRequired": "0.20.7",
     "dependencies": {},
     "$devDependenciesUrls": [
       "https://github.com/micro-os-plus",
@@ -53,8 +53,8 @@
       "deep-clean": "del-cli build node_modules xpacks package-lock.json",
       "install": [
         "xpm install",
-        "xpm install --config native-cmake-sys-debug",
-        "xpm install --config native-cmake-sys-release"
+        "xpm install --config {% if os.platform == 'win32' %}native-cmake-gcc-debug{% else %}native-cmake-sys-debug{% endif %}",
+        "xpm install --config {% if os.platform == 'win32' %}native-cmake-gcc-release{% else %}native-cmake-sys-release{% endif %}"
       ],
       "install-ci": [
         "xpm install",
@@ -145,7 +145,7 @@
         "xpm run clean --all-configs --ignore-errors"
       ],
       "test": [
-        "xpm run test-native-cmake-sys"
+        "xpm install --config {% if os.platform == 'win32' %}test-native-cmake-gcc{% else %}test-native-cmake-sys{% endif %}"
       ],
       "test-ci": [
         "{% if os.platform != 'darwin' %}xpm run test-native-cmake-gcc{% endif %}",
@@ -1421,7 +1421,7 @@
         "devDependencies": {
           "@xpack-dev-tools/gcc": {
             "specifier": "11.5.0-2.1",
-            "platforms": "linux-x64, linux-arm64, win32-x64"
+            "platforms": "linux-x64,linux-arm64,win32-x64"
           }
         }
       },
@@ -1431,7 +1431,7 @@
         "devDependencies": {
           "@xpack-dev-tools/gcc": {
             "specifier": "12.4.0-2.1",
-            "platforms": "linux-x64, linux-arm64, win32-x64"
+            "platforms": "linux-x64,linux-arm64,win32-x64"
           }
         }
       },
@@ -1441,7 +1441,7 @@
         "devDependencies": {
           "@xpack-dev-tools/gcc": {
             "specifier": "13.3.0-2.1",
-            "platforms": "linux-x64, linux-arm64, win32-x64"
+            "platforms": "linux-x64,linux-arm64,win32-x64"
           }
         }
       },
@@ -1451,7 +1451,7 @@
         "devDependencies": {
           "@xpack-dev-tools/gcc": {
             "specifier": "14.2.0-2.1",
-            "platforms": "linux-x64, linux-arm64, win32-x64"
+            "platforms": "linux-x64,linux-arm64,win32-x64"
           }
         }
       },
