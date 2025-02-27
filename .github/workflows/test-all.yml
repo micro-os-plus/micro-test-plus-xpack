@@ -71,21 +71,20 @@ jobs:
         npm ci -C tests
         xpm run install-all -C tests
 
-    - name: Clean xPack cache
-      run:   |
-        if [ "$RUNNER_OS" == "Linux" ]
-        then
-          rm -rf "${HOME}/.cache/xPacks"
-        elif [ "$RUNNER_OS" == "macOS" ]
-        then
-          rm -rf "${HOME}/Library/Caches/xPacks"
-        elif [ "$RUNNER_OS" == "Windows" ]
-        then
-          rd /s "%LOCALAPPDATA%\Caches\xPacks"
-        else
-          echo "$RUNNER_OS not supported"
-          exit 1
-        fi
+    - name: Clean xPack cache Linux
+      if: runner.os == 'Linux'
+      run: |
+        rm -rf "${HOME}/.cache/xPacks"
+
+    - name: Clean xPack cache macOS
+      if: runner.os == 'macOS'
+      run: |
+        rm -rf "${HOME}/Library/Caches/xPacks"
+
+    - name: Clean xPack cache Windows
+      if: runner.os == 'macOS'
+      run: |
+        rd /s "%LOCALAPPDATA%\Caches\xPacks"
 
     - name: Run tests on ${{ matrix.os }}
       run: xpm run test-all -C tests
