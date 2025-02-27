@@ -60,9 +60,10 @@ namespace micro_os_plus::micro_test_plus
       [[nodiscard]] static constexpr auto
       current (
 #if (__has_builtin(__builtin_FILE) and __has_builtin(__builtin_LINE))
-          const char* file = __builtin_FILE (), int line = __builtin_LINE ()
+          const char* file = __builtin_FILE (),
+          unsigned int line = __builtin_LINE ()
 #else
-          const char* file = "unknown", int line = {}
+          const char* file = "unknown", unsigned int line = {}
 #endif
               ) noexcept
       {
@@ -86,7 +87,7 @@ namespace micro_os_plus::micro_test_plus
 
     private:
       const char* file_{ "unknown" };
-      int line_{};
+      unsigned int line_{};
     };
 
 #endif
