@@ -62,6 +62,8 @@
         "{% if os.platform != 'darwin' %}xpm install --config native-cmake-gcc-release{% endif %}",
         "xpm install --config native-cmake-clang-debug",
         "xpm install --config native-cmake-clang-release",
+        "xpm install --config native-meson-clang-debug",
+        "xpm install --config native-meson-clang-release",
         "xpm install --config qemu-cortex-m0-cmake-gcc-debug",
         "xpm install --config qemu-cortex-m0-cmake-gcc-release",
         "xpm install --config qemu-cortex-m7f-cmake-gcc-debug",
@@ -150,6 +152,7 @@
       "test-ci": [
         "{% if os.platform != 'darwin' %}xpm run test-native-cmake-gcc{% endif %}",
         "xpm run test-native-cmake-clang",
+        "xpm run test-native-meson-clang",
         "xpm run test-qemu-cortex-m0-cmake-gcc",
         "xpm run test-qemu-cortex-m7f-cmake-gcc",
         "xpm run test-qemu-riscv-rv32imac-cmake-gcc",
