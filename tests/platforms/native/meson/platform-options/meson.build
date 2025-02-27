@@ -121,6 +121,12 @@ if get_option('buildtype') == 'release' or get_option('buildtype') == 'minsize' 
   endif
 endif
 
+if c_compiler.get_id().contains('clang')
+  _local_compile_args += [
+    '-stdlib=libc++',
+  ]
+endif
+
 _local_compile_c_args += common_options_dependency_compile_c_args
 _local_compile_cpp_args += common_options_dependency_compile_cpp_args
 
@@ -131,10 +137,6 @@ if get_option('buildtype') == 'debug'
 endif
 
 if c_compiler.get_id().contains('clang')
-  _local_link_args += [
-    '-stdlib=libc++',
-    '-rtlib=compiler-rt'
-  ]
   if build_machine.system() == 'linux'
     _local_link_args += [
       '-lunwind',
