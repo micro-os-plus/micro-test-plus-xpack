@@ -164,7 +164,6 @@ if("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
   # https://clang.llvm.org/docs/Toolchain.html#compiler-runtime
   target_link_options(platform-native-interface INTERFACE
 
-    $<$<COMPILE_LANGUAGE:CXX>:-stdlib=libc++>
     -rtlib=compiler-rt
     $<$<PLATFORM_ID:Linux>:-lunwind>
     $<$<PLATFORM_ID:Linux,Darwin>:-fuse-ld=lld>
