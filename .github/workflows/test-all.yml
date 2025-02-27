@@ -85,7 +85,7 @@ jobs:
       if: runner.os == 'Windows'
       shell: pwsh
       run: |
-        Remove-Item -LiteralPath "%LOCALAPPDATA%\Caches\xPacks" -Force -Recurse
+        Remove-Item -LiteralPath "$env:LOCALAPPDATA\Caches\xPacks" -Force -Recurse
 
     - name: Run tests on ${{ matrix.os }}
       run: xpm run test-all -C tests
