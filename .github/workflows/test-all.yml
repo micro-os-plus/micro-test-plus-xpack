@@ -82,7 +82,7 @@ jobs:
         rm -rf "${HOME}/Library/Caches/xPacks"
 
     - name: Clean xPack cache Windows
-      if: runner.os == 'macOS'
+      if: runner.os == 'Windows'
       run: |
         rd /s "%LOCALAPPDATA%\Caches\xPacks"
 
