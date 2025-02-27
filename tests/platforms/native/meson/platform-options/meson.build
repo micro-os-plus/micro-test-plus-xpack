@@ -137,6 +137,9 @@ if get_option('buildtype') == 'debug'
 endif
 
 if c_compiler.get_id().contains('clang')
+  _local_link_args += [
+    '-rtlib=compiler-rt'
+  ]
   if build_machine.system() == 'linux'
     _local_link_args += [
       '-lunwind',
