@@ -1,17 +1,16 @@
 /*
- * This file is part of the µOS++ distribution.
- *   (https://github.com/micro-os-plus/)
+ * This file is part of the µOS++ project (https://micro-os-plus.github.io/).
  * Copyright (c) 2021 Liviu Ionescu. All rights reserved.
  *
  * Permission to use, copy, modify, and/or distribute this software
  * for any purpose is hereby granted, under the terms of the MIT license.
  *
  * If a copy of the license was not distributed with this file, it can
- * be obtained from <https://opensource.org/licenses/MIT/>.
+ * be obtained from https://opensource.org/licenses/mit.
  *
  * Major parts of the code are inspired from v1.1.8 of the Boost UT project,
  * released under the terms of the Boost Version 1.0 Software License,
- * which can be obtained from <https://www.boost.org/LICENSE_1_0.txt>.
+ * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
  */
 
 #ifndef MICRO_TEST_PLUS_REFLECTION_H_
