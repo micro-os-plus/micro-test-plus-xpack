@@ -1,7 +1,8 @@
 # -----------------------------------------------------------------------------
+# DO NOT EDIT!
+# Automatically generated from build-helper/templates/*.
 #
-# This file is part of the µOS++ distribution.
-# (https://github.com/micro-os-plus/)
+# This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2023 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software

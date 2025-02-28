@@ -3,7 +3,13 @@
   "version": "0.0.0",
   "description": "Tests",
   "main": "",
-  "scripts": {},
+  "scripts": {
+    "generate-tests-commons": "bash xpacks/@micro-os-plus/build-helper/maintenance-scripts/generate-commons.sh --micro-os-plus",
+    "npm-install": "npm install",
+    "npm-link-helpers": "npm link @xpack/npm-packages-helper",
+    "xpm-link-helpers": "xpm link @micro-os-plus/build-helper",
+    "deep-clean": "del-cli build node_modules xpacks package-json.json"
+  },
   "author": {
     "name": "Liviu Ionescu",
     "email": "ilg@livius.net",

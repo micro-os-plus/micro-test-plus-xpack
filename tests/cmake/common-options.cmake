@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------
 # DO NOT EDIT!
-# Automatically generated from npm-packages-helper/templates/*.
+# Automatically generated from build-helper/templates/*.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022 Liviu Ionescu. All rights reserved.
@@ -70,7 +70,7 @@ target_include_directories(micro-os-plus-common-options-interface INTERFACE
 # When `-flto` is used, the compile options must be passed to the linker too.
 target_link_options(micro-os-plus-common-options-interface INTERFACE
   ${global_common_options}
-  
+
   $<$<CONFIG:Debug>:-v>
 )
 
