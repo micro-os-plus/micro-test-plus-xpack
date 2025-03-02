@@ -10,8 +10,8 @@
     "npm-link-helpers": "npm link @xpack/docusaurus-template-liquid @xpack/npm-packages-helper npm link @micro-os-plus/build-helper",
     "npm-ci": "npm ci",
     "deep-clean": "del-cli node_modules html package-lock.json",
-    "doxygen": "del-cli html && doxygen config.doxyfile",
-    "browser": "open-cli html/index.html",
+    "doxygen": "(cd doxygen; del-cli html; doxygen config.doxyfile)",
+    "browser": "open-cli doxygen/html/index.html",
     "check-urls": "blc https://micro-os-plus.github.io/micro-test-plus-xpack/ --recursive --ordered --filter-level 2 --exclude 'https://twitter.com*'"
   },
   "author": {

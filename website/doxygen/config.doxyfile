@@ -25,8 +25,8 @@
 
 #---------------------------------------------------------------------------
 
-@INCLUDE = node_modules/@micro-os-plus/build-helper/doxygen/original-config.doxyfile
-@INCLUDE = node_modules/@micro-os-plus/build-helper/doxygen/common-config.doxyfile
+@INCLUDE = ../node_modules/@micro-os-plus/build-helper/doxygen/original-config.doxyfile
+@INCLUDE = ../node_modules/@micro-os-plus/build-helper/doxygen/common-config.doxyfile
 
 #---------------------------------------------------------------------------
 # Project related configuration options
@@ -97,8 +97,8 @@ WARN_AS_ERROR = YES
 # The order is preserved in the side bar.
 
 INPUT = \
-../include \
-../src \
+../../include \
+../../src \
 pages/home.md \
 pages/install.md \
 pages/user-guide.md \
@@ -201,7 +201,7 @@ HTML_OUTPUT            = html
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
 HTML_HEADER = \
-node_modules/@micro-os-plus/build-helper/doxygen/common-header-micro-os-plus.html
+../node_modules/@micro-os-plus/build-helper/doxygen/common-header-micro-os-plus.html
 
 # The HTML_EXTRA_STYLESHEET tag can be used to specify additional user-defined
 # cascading style sheets that are included after the standard style sheets
@@ -220,9 +220,9 @@ node_modules/@micro-os-plus/build-helper/doxygen/common-header-micro-os-plus.htm
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
 HTML_EXTRA_STYLESHEET = \
-node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome.css \
-node_modules/@micro-os-plus/build-helper/doxygen/common-custom.css \
-node_modules/@micro-os-plus/build-helper/doxygen/cards.css \
+../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome.css \
+../node_modules/@micro-os-plus/build-helper/doxygen/common-custom.css \
+../node_modules/@micro-os-plus/build-helper/doxygen/cards.css \
 
 # The HTML_EXTRA_FILES tag can be used to specify one or more extra images or
 # other source files which should be copied to the HTML output directory. Note
@@ -233,11 +233,11 @@ node_modules/@micro-os-plus/build-helper/doxygen/cards.css \
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
 HTML_EXTRA_FILES = \
-node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js \
-node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-fragment-copy-button.js \
-node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-paragraph-link.js \
-node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-interactive-toc.js \
-node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-tabs.js \
+../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js \
+../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-fragment-copy-button.js \
+../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-paragraph-link.js \
+../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-interactive-toc.js \
+../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-tabs.js \
 
 #---------------------------------------------------------------------------
 # Configuration options related to the preprocessor
@@ -273,3 +273,38 @@ __cpp_exceptions \
 LAYOUT_FILE = DoxygenLayout.xml
 
 #---------------------------------------------------------------------------
+# Configuration options related to the XML output
+#---------------------------------------------------------------------------
+
+# If the GENERATE_XML tag is set to YES, doxygen will generate an XML file that
+# captures the structure of the code including all documentation.
+# The default value is: NO.
+
+GENERATE_XML           = YES
+
+# The XML_OUTPUT tag is used to specify where the XML pages will be put. If a
+# relative path is entered the value of OUTPUT_DIRECTORY will be put in front of
+# it.
+# The default directory is: xml.
+# This tag requires that the tag GENERATE_XML is set to YES.
+
+XML_OUTPUT             = xml
+
+# If the XML_PROGRAMLISTING tag is set to YES, doxygen will dump the program
+# listings (including syntax highlighting and cross-referencing information) to
+# the XML output. Note that enabling this will significantly increase the size
+# of the XML output.
+# The default value is: YES.
+# This tag requires that the tag GENERATE_XML is set to YES.
+
+XML_PROGRAMLISTING     = YES
+
+# If the XML_NS_MEMB_FILE_SCOPE tag is set to YES, doxygen will include
+# namespace members in file scope as well, matching the HTML output.
+# The default value is: NO.
+# This tag requires that the tag GENERATE_XML is set to YES.
+
+XML_NS_MEMB_FILE_SCOPE = YES
+
+#---------------------------------------------------------------------------
+
