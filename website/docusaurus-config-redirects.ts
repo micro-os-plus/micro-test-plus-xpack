@@ -25,10 +25,6 @@ export const redirects = {
     //     to: '/docs/newDoc2',
     //     from: ['/docs/oldDocFrom2019', '/docs/legacyDocFrom2016'],
     //   },
-    {
-      to: '/reference/index.html',
-      from: ['/reference/'],
-    },
   ],
   createRedirects(existingPath) {
     console.log(existingPath);
