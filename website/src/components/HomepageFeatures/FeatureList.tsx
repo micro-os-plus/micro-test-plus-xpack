@@ -18,11 +18,11 @@ import type { FeatureItem } from './FeatureItem';
 
 export const FeatureList: FeatureItem[] = [
   {
-    title: 'Multi-language, cross-platform',
+    title: 'Modern, portable, configurable',
     Svg: require('@site/static/img/mosaic.svg').default,
     description: (
       <>
-        The module is compatible with <b>TypeScript</b> and <b>JavaScript</b> projects, and can be utilized across multiple platforms (<b>Windows</b>, <b>macOS</b>, <b>GNU/Linux</b>).
+        The modern <b>C++</b> code is highly portable and compiles seamlessly with the latest versions of <b>GCC</b> and <b>clang</b>. To facilitate integration, both <b>CMake</b> and <b>meson</b> configurations are provided.
       </>
     ),
   },
@@ -31,7 +31,7 @@ export const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/check-badge.svg').default,
     description: (
       <>
-        Projects refer to this module via an explicitly versioned <b>dependency</b>. This ensures reproducibility, which is especially beneficial in <b>CI/CD</b> environments.
+        Projects can reference this library through an explicitly versioned <b>dependency</b>. This guarantees reproducibility, which is particularly advantageous in <b>CI/CD</b> environments.
       </>
     ),
   },
@@ -40,7 +40,12 @@ export const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/globe.svg').default,
     description: (
       <>
-        The module can be installed with <b><Link to="https://docs.npmjs.com/cli/npm">npm</Link></b> from the <b>npmjs.com</b> public repository, just like millions of other packages.
+        The <b><Link to="https://xpack.github.io/xpm/">xpm</Link></b> CLI tool
+        complements <b><Link to="https://docs.npmjs.com/cli/">npm</Link></b> with
+        several additional features tailored for <b>C/C++ projects</b>.
+        This enables the
+        source package to integrate seamlessly into the Node.js ecosystem,
+        while still permitting manual installation of the library.
       </>
     ),
   },

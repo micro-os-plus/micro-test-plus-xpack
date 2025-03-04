@@ -28,7 +28,7 @@ const actualBaseUrl = process.env.DOCUSAURUS_BASEURL ??
 const config: Config = {
   title: 'µTest++' +
     ((process.env.DOCUSAURUS_IS_PREVIEW === 'true') ? ' (preview)' : ''),
-  tagline: 'A source code library with a lightweight testing framework for embedded systems',
+  tagline: 'A C++ source code library with a lightweight testing framework for embedded systems',
 
   // Explicitly set in headTags.
   // favicon: '/img/favicon.ico',
@@ -278,7 +278,7 @@ const config: Config = {
         },
         {
           to: 'pathname:///reference/',
-          label: 'Reference',
+          label: 'API',
           position: 'left',
         },
         {

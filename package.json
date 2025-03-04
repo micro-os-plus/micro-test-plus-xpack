@@ -39,9 +39,7 @@
     "url": "https://github.com/ilg-ul"
   },
   "license": "MIT",
-  "config": {},
   "dependencies": {},
-  "bundleDependencies": [],
   "$devDependenciesUrls": [
     "https://www.npmjs.com/package/del-cli",
     "https://www.npmjs.com/package/json",
