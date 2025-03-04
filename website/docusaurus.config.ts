@@ -45,7 +45,7 @@ const config: Config = {
   projectName: 'micro-test-plus-xpack', // Usually your repo name.
 
   onBrokenAnchors: 'throw',
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
 
   onDuplicateRoutes: 'throw',
@@ -277,7 +277,7 @@ const config: Config = {
           ],
         },
         {
-          to: '/reference',
+          to: 'pathname:///reference/',
           label: 'Reference',
           position: 'left',
         },
