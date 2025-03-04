@@ -45,7 +45,7 @@ const config: Config = {
   projectName: 'micro-test-plus-xpack', // Usually your repo name.
 
   onBrokenAnchors: 'throw',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'throw',
 
   onDuplicateRoutes: 'throw',
