@@ -1,0 +1,7 @@
+Sitemap: https://micro-os-plus.github.io/micro-test-plus-xpack/sitemap.xml
+
+User-agent: *
+Disallow: /micro-test-plus-xpack/blog/archive/
+Disallow: /micro-test-plus-xpack/blog/authors/
+Disallow: /micro-test-plus-xpack/blog/page/
+Disallow: /micro-test-plus-xpack/blog/tags/

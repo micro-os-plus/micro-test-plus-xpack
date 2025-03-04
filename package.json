@@ -25,6 +25,7 @@
     "url": "https://github.com/micro-os-plus/micro-test-plus-xpack/issues"
   },
   "homepage": "https://micro-os-plus.github.io/micro-test-plus-xpack/",
+  "homepagePreview": "https://micro-os-plus.github.io/micro-test-plus-xpack-webpreview/",
   "keywords": [
     "xpack",
     "micro-os-plus",
@@ -60,6 +61,7 @@
   },
   "topConfig": {
     "descriptiveName": "µTest++",
+    "descriptiveLongName": "µTest++ Testing Framework",
     "permalinkName": "micro-test-plus"
   },
   "engines": {

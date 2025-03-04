@@ -1,24 +1,25 @@
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/micro-os-plus/micro-test-plus-xpack)](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/package.json)
-[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/micro-os-plus/micro-test-plus-xpack)](https://github.com/micro-os-plus/micro-test-plus-xpack/tags/)
-[![npm (scoped)](https://img.shields.io/npm/v/@micro-os-plus/micro-test-plus.svg?color=blue)](https://www.npmjs.com/package/@micro-os-plus/micro-test-plus/)
-[![license](https://img.shields.io/badge/license-MIT-blue)](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/LICENSE)
-[![CI on Push](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/ci.yml/badge.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/ci.yml)
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fmicro-os-plus.github.io%2Fmicro-test-plus-xpack%2F)](https://micro-os-plus.github.io/micro-test-plus-xpack/)
+[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/micro-os-plus/micro-test-plus-xpack)](https://github.com/micro-os-plus/micro-test-plus-xpack/tags)
+[![NPM Version](https://img.shields.io/npm/v/@micro-os-plus/micro-test-plus?color=green)](https://www.npmjs.com/package/@micro-os-plus/micro-test-plus/)
+[![license](https://img.shields.io/github/license/micro-os-plus/micro-test-plus-xpack)](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/LICENSE)
 
-# A source code library with µTest++, a lightweight testing framework for embedded platforms
+# The µTest++ Testing Framework
 
-The **µTest++** project (_micro test plus_) provides a small memory footprint
-testing framework, intended for running unit tests on embedded
-platforms.
+A source code library with µTest++, a lightweight testing framework for embedded platforms.
 
-## [Project documentation](https://micro-os-plus.github.io/micro-test-plus-xpack/)
+## Project documentation
 
-For information on how to integrate and use this library, please refer to the
-[project documentation](https://micro-os-plus.github.io/micro-test-plus-xpack/) web site.
+For information on how to install and use this project, please refer to the
+[project website](https://micro-os-plus.github.io/micro-test-plus-xpack/).
+
+## Project source
+
+The source code of the current release is available on
+[GitHub tag v3.2.0 tree](https://github.com/micro-os-plus/micro-test-plus-xpack/tree/v3.2.0).
 
 ## License
 
-Unless otherwise stated, the content is released under the terms of the
+Unless otherwise stated, the original content is released under the terms of the
 [MIT License](https://opensource.org/licenses/mit),
 with all rights reserved to
 [Liviu Ionescu](https://github.com/ilg-ul).
