@@ -388,7 +388,7 @@ void initialize (int argc, char* argv[], const char* name = "Main");
 int exit_code (void);
 ```
 
-See the reference [Initialisation & exit](group__micro-test-plus-inits.html) page.
+See the reference [Initialisation & exit](pathname:///reference/group__micro-test-plus-inits.html) page.
 
 ### Test cases
 
@@ -399,7 +399,7 @@ template <typename Callable_T, typename... Args_T>
 void test_case (const char* name, Callable_T&& func, Args_T&&... arguments);
 ```
 
-See the reference [Test cases](group__micro-test-plus-test-case.html) page.
+See the reference [Test cases](pathname:///reference/group__micro-test-plus-test-case.html) page.
 
 ### Expectations & assumptions
 
@@ -414,8 +414,8 @@ template <class Expr_T, type_traits::requires_t<....>>
 bool assume(const Expr_T& expr);
 ```
 
-See the reference [Expectations](group__micro-test-plus-expectations.html)
-and [Assumptions](group__micro-test-plus-assumptions.html) pages.
+See the reference [Expectations](pathname:///reference/group__micro-test-plus-expectations.html)
+and [Assumptions](pathname:///reference/group__micro-test-plus-assumptions.html) pages.
 
 ### Function comparators
 
@@ -443,7 +443,7 @@ template <class Lhs_T, class Rhs_T>
 auto ge(const Lhs_T& lhs, const Rhs_T& rhs);
 ```
 
-See the reference [Function comparators](group__micro-test-plus-function-comparators.html) page.
+See the reference [Function comparators](pathname:///reference/group__micro-test-plus-function-comparators.html) page.
 
 ### Logical functions
 
@@ -461,7 +461,7 @@ template <class Expr_T>
 auto _not (const Expr_T& expr);
 ```
 
-See the reference [Logical functions](group__micro-test-plus-logical-functions.html) page.
+See the reference [Logical functions](pathname:///reference/group__micro-test-plus-logical-functions.html) page.
 
 ### Checking exceptions
 
@@ -482,7 +482,7 @@ template <class Callable_T>
 auto nothrow (const Callable_T& expr);
 ```
 
-See the reference [Checking exceptions](group__micro-test-plus-exceptions.html) page.
+See the reference [Checking exceptions](pathname:///reference/group__micro-test-plus-exceptions.html) page.
 
 ### Operators
 
@@ -518,7 +518,7 @@ template <class T, type_traits::requires_t<....>>
 bool operator not (const T& t);
 ```
 
-See the reference [Operators](group__micro-test-plus-operators.html) page.
+See the reference [Operators](pathname:///reference/group__micro-test-plus-operators.html) page.
 
 ### String operators
 
@@ -530,7 +530,7 @@ bool operator== (std::string_view lhs, std::string_view rhs);
 bool operator!= (std::string_view lhs, std::string_view rhs);
 ```
 
-See the reference [String operators](group__micro-test-plus-string-operators.html) page.
+See the reference [String operators](pathname:///reference/group__micro-test-plus-string-operators.html) page.
 
 ### Container operators
 
@@ -544,7 +544,7 @@ template <class T, type_traits::requires_t<type_traits::is_container_v<T>>>
 bool operator!= (T&& lhs, T&& rhs);
 ```
 
-See the reference [Container operators](group__micro-test-plus-container-operators.html) page.
+See the reference [Container operators](pathname:///reference/group__micro-test-plus-container-operators.html) page.
 
 ### Literals and wrappers
 
@@ -617,7 +617,7 @@ recognised types:
   };
 ```
 
-See the reference [Literals and wrappers](group__micro-test-plus-literals.html) page.
+See the reference [Literals and wrappers](pathname:///reference/group__micro-test-plus-literals.html) page.
 
 ### Utility functions
 
@@ -632,7 +632,7 @@ namespace utility {
 }
 ```
 
-See the reference [Utility functions](group__micro-test-plus-utility-functions.html) page.
+See the reference [Utility functions](pathname:///reference/group__micro-test-plus-utility-functions.html) page.
 
 ### Test suites
 
@@ -649,7 +649,7 @@ public:
 }
 ```
 
-See the reference [Test suites](group__micro-test-plus-test-suites.html) page.
+See the reference [Test suites](pathname:///reference/group__micro-test-plus-test-suites.html) page.
 
 ## C API
 
@@ -663,7 +663,7 @@ To control the verbosity, use one of the following command line options:
 - `--quiet` - show only the test suite totals
 - `--silent` - suppress all output and only return the exit code
 
-See the reference [Command line options](group__micro-test-plus-cli.html) page.
+See the reference [Command line options](pathname:///reference/group__micro-test-plus-cli.html) page.
 
 ## Known problems
 
