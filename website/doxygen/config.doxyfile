@@ -281,7 +281,9 @@ LAYOUT_FILE = DoxygenLayout.xml
 # captures the structure of the code including all documentation.
 # The default value is: NO.
 
-GENERATE_XML           = YES
+# GENERATE_XML           = YES
+# Disabled for now; to be re-enable for the Docusaurus integration.
+GENERATE_XML           = NO
 
 # The XML_OUTPUT tag is used to specify where the XML pages will be put. If a
 # relative path is entered the value of OUTPUT_DIRECTORY will be put in front of
