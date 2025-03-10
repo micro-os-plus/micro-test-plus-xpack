@@ -3,6 +3,76 @@
 
 ### Tests details
 
+#### minimal-test
+
+The [minimal-test.cpp](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/tests/src/minimal-test.cpp)
+file is a small application used to demonstrate
+how to write a simple test to check a condition.
+
+```console
+> xpm run test --config native-cmake-sys-release
+> cd build/native-cmake-sys-release && ctest -V
+UpdateCTestConfiguration  from :/home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/DartConfiguration.tcl
+Test project /home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+      Start  1: minimal-test
+
+1: Test command: /home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test "one" "two"
+1: Working Directory: /home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
+1: Test timeout computed to be: 10000000
+1: Built with GCC 12.2.0, with exceptions.
+1:
+1: • Minimal - test suite started
+1:
+1:   ✓ Check various conditions - test case passed (2 checks)
+1:
+1: ✓ Minimal - test suite passed (2 checks in 1 test case)
+ 1/12 Test  #1: minimal-test .....................   Passed    0.00 sec
+test 2
+      Start  2: minimal-test --verbose
+
+2: Test command: /home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test "one" "two" "--verbose"
+2: Working Directory: /home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
+2: Test timeout computed to be: 10000000
+2: Built with GCC 12.2.0, with exceptions.
+2:
+2: • Minimal - test suite started
+2:
+2:   • Check various conditions - test case started
+2:     ✓ answer is 42
+2:     ✓ condition is true
+2:   ✓ Check various conditions - test case passed (2 checks)
+2:
+2: ✓ Minimal - test suite passed (2 checks in 1 test case)
+ 2/12 Test  #2: minimal-test --verbose ...........   Passed    0.00 sec
+test 3
+      Start  3: minimal-test --quiet
+
+3: Test command: /home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test "one" "two" "--quiet"
+3: Working Directory: /home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
+3: Test timeout computed to be: 10000000
+3:
+3: ✓ Minimal - test suite passed (2 checks in 1 test case)
+ 3/12 Test  #3: minimal-test --quiet .............   Passed    0.00 sec
+test 4
+      Start  4: minimal-test --silent
+
+4: Test command: /home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test "one" "two" "--silent"
+4: Working Directory: /home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
+4: Test timeout computed to be: 10000000
+4:
+ 4/12 Test  #4: minimal-test --silent ............   Passed    0.00 sec
+```
+
+All possible verbosity modes are tested: default, verbose, quiet, and silent.
+
 #### sample-test
 
 The [sample-test.cpp](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/tests/src/sample-test.cpp)
@@ -13,54 +83,193 @@ to write a simple test.
 A typical run looks like:
 
 ```console
-test 1
-    Start 1: sample-test
+test 5
+      Start  5: sample-test
 
-1: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/sample-test "one" "two"
-1: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
-1: Test timeout computed to be: 10000000
-1: Built with clang Apple LLVM 15.0.0 (clang-1500.0.40.1), with exceptions.
-1:
-1: • Sample - test suite started
-1:
-1:   ✓ Check various conditions - test case passed (7 checks)
-1:   ✓ Check various conditions with operators - test case passed (7 checks)
-1:   ✓ Check strings - test case passed (1 check)
-1:   ✓ Check strings with operators - test case passed (1 check)
-1:   ✓ Check compound conditions - test case passed (1 check)
-1:   ✓ Check compound conditions with operators - test case passed (1 check)
-1:   ✓ Check multiple function invocations - test case passed (2 checks)
-1:   ✓ Check args - test case passed (3 checks)
-1:   ✓ Check complex logic - test case passed (1 check)
-1:   ✓ Check if exceptions are thrown - test case passed (2 checks)
-1:   ✓ Check if exceptions are not thrown - test case passed (1 check)
-1:   ✓ Check containers - test case passed (2 checks)
-1:   ✓ Check containers with operators - test case passed (2 checks)
-1:
-1: ✓ Sample - test suite passed (31 checks in 13 test cases)
-1:
-1: • Separate - test suite started
-1:
-1:   ✓ Check one - test case passed (1 check)
-1:   ✓ Check two - test case passed (1 check)
-1:
-1: ✓ Separate - test suite passed (2 checks in 2 test cases)
-1:
-1: • Explicit namespace - test suite started
-1:
-1:   ✓ Check one - test case passed (1 check)
-1:   ✓ Check two - test case passed (1 check)
-1:
-1: ✓ Explicit namespace - test suite passed (2 checks in 2 test cases)
-1:
-1: • Args - test suite started
-1:
-1:   ✓ args - test case passed (5 checks)
-1:
-1: ✓ Args - test suite passed (5 checks in 1 test case)
+5: Test command: /home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/sample-test "one" "two"
+5: Working Directory: /home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
+5: Test timeout computed to be: 10000000
+5: Built with GCC 12.2.0, with exceptions.
+5:
+5: • Sample - test suite started
+5:
+5:   ✓ Check various conditions - test case passed (7 checks)
+5:   ✓ Check various conditions with operators - test case passed (7 checks)
+5:   ✓ Check strings - test case passed (1 check)
+5:   ✓ Check strings with operators - test case passed (1 check)
+5:   ✓ Check compound conditions - test case passed (1 check)
+5:   ✓ Check compound conditions with operators - test case passed (1 check)
+5:   ✓ Check multiple function invocations - test case passed (2 checks)
+5:   ✓ Check args - test case passed (3 checks)
+5:   ✓ Check complex logic - test case passed (1 check)
+5:   ✓ Check if exceptions are thrown - test case passed (2 checks)
+5:   ✓ Check if exceptions are not thrown - test case passed (1 check)
+5:   ✓ Check containers - test case passed (2 checks)
+5:   ✓ Check containers with operators - test case passed (2 checks)
+5:
+5: ✓ Sample - test suite passed (31 checks in 13 test cases)
+5:
+5: • Explicit namespace - test suite started
+5:
+5:   ✓ Check one - test case passed (1 check)
+5:   ✓ Check two - test case passed (1 check)
+5:
+5: ✓ Explicit namespace - test suite passed (2 checks in 2 test cases)
+5:
+5: • Implicit namespace - test suite started
+5:
+5:   ✓ Check one - test case passed (1 check)
+5:   ✓ Check two - test case passed (1 check)
+5:
+5: ✓ Implicit namespace - test suite passed (2 checks in 2 test cases)
+5:
+5: • Args - test suite started
+5:
+5:   ✓ args - test case passed (5 checks)
+5:
+5: ✓ Args - test suite passed (5 checks in 1 test case)
+ 5/12 Test  #5: sample-test ......................   Passed    0.00 sec
+test 6
+      Start  6: sample-test --verbose
+
+6: Test command: /home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/sample-test "one" "two" "--verbose"
+6: Working Directory: /home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
+6: Test timeout computed to be: 10000000
+6: Built with GCC 12.2.0, with exceptions.
+6:
+6: • Sample - test suite started
+6:
+6:   • Check various conditions - test case started
+6:     ✓ answer eq 42
+6:     ✓ answer ne 43
+6:     ✓ answer lt 43
+6:     ✓ answer le 42
+6:     ✓ answer gt 43
+6:     ✓ answer ge 42
+6:     ✓ condition is true
+6:   ✓ Check various conditions - test case passed (7 checks)
+6:
+6:   • Check various conditions with operators - test case started
+6:     ✓ answer == 42 (with literal)
+6:     ✓ answer == 42 (with cast)
+6:     ✓ answer != 43
+6:     ✓ answer < 43
+6:     ✓ answer <= 42
+6:     ✓ answer > 43
+6:     ✓ answer >= 42
+6:   ✓ Check various conditions with operators - test case passed (7 checks)
+6:
+6:   • Check strings - test case started
+6:     ✓ ultimate answer is 'fortytwo'
+6:   ✓ Check strings - test case passed (1 check)
+6:
+6:   • Check strings with operators - test case started
+6:     ✓ ultimate answer == 'fortytwo'
+6:   ✓ Check strings with operators - test case passed (1 check)
+6:
+6:   • Check compound conditions - test case started
+6:     ✓ logical 'and' expression
+6:   ✓ Check compound conditions - test case passed (1 check)
+6:
+6:   • Check compound conditions with operators - test case started
+6:     ✓ logical 'and' expression with operators
+6:   ✓ Check compound conditions with operators - test case passed (1 check)
+6:
+6:   • Check multiple function invocations - test case started
+6:     ✓ lambda returns 42
+6:     ✓ lambda returns 43
+6:   ✓ Check multiple function invocations - test case passed (2 checks)
+6:
+6:   • Check args - test case started
+6:     ✓ argc >= 2
+6:     ✓ argv[1] is 'one'
+6:     ✓ argv[2] is 'two'
+6:   ✓ Check args - test case passed (3 checks)
+6:
+6:   • Check complex logic - test case started
+6:     ✓ xyz passed
+6:   ✓ Check complex logic - test case passed (1 check)
+6:
+6:   • Check if exceptions are thrown - test case started
+6:     ✓ exception thrown
+6:     ✓ std::runtime_error thrown
+6:   ✓ Check if exceptions are thrown - test case passed (2 checks)
+6:
+6:   • Check if exceptions are not thrown - test case started
+6:     ✓ exception not thrown
+6:   ✓ Check if exceptions are not thrown - test case passed (1 check)
+6:
+6:   • Check containers - test case started
+6:     ✓ vector{ 1, 2 } eq vector{ 1, 2 }
+6:     ✓ vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }
+6:   ✓ Check containers - test case passed (2 checks)
+6:
+6:   • Check containers with operators - test case started
+6:     ✓ vector{ 1, 2 } == vector{ 1, 2 }
+6:     ✓ vector{ 1, 2, 3 } != vector{ 1, 2, 4 }
+6:   ✓ Check containers with operators - test case passed (2 checks)
+6:
+6: ✓ Sample - test suite passed (31 checks in 13 test cases)
+6:
+6: • Explicit namespace - test suite started
+6:
+6:   • Check one - test case started
+6:     ✓ Passed
+6:   ✓ Check one - test case passed (1 check)
+6:
+6:   • Check two - test case started
+6:     ✓ Passed
+6:   ✓ Check two - test case passed (1 check)
+6:
+6: ✓ Explicit namespace - test suite passed (2 checks in 2 test cases)
+6:
+6: • Implicit namespace - test suite started
+6:
+6:   • Check one - test case started
+6:     ✓ Passed
+6:   ✓ Check one - test case passed (1 check)
+6:
+6:   • Check two - test case started
+6:     ✓ Passed
+6:   ✓ Check two - test case passed (1 check)
+6:
+6: ✓ Implicit namespace - test suite passed (2 checks in 2 test cases)
+6:
+6: • Args - test suite started
+6:
+6:   • args - test case started
+6:     ✓ ic is 42
+6:     ✓ iv is 43
+6:     ✓ ir is 44
+6:     ✓ *ip1 is 45
+6:     ✓ *ip2 is 46
+6:   ✓ args - test case passed (5 checks)
+6:
+6: ✓ Args - test suite passed (5 checks in 1 test case)
+ 6/12 Test  #6: sample-test --verbose ............   Passed    0.00 sec
+test 7
+      Start  7: sample-test --quiet
+
+7: Test command: /home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/sample-test "one" "two" "--quiet"
+7: Working Directory: /home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
+7: Test timeout computed to be: 10000000
+7:
+7: ✓ Sample - test suite passed (31 checks in 13 test cases)
+7: ✓ Explicit namespace - test suite passed (2 checks in 2 test cases)
+7: ✓ Implicit namespace - test suite passed (2 checks in 2 test cases)
+7: ✓ Args - test suite passed (5 checks in 1 test case)
+ 7/12 Test  #7: sample-test --quiet ..............   Passed    0.00 sec
+test 8
+      Start  8: sample-test --silent
+
+8: Test command: /home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/sample-test "one" "two" "--silent"
+8: Working Directory: /home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
+8: Test timeout computed to be: 10000000
+8:
+ 8/12 Test  #8: sample-test --silent .............   Passed    0.00 sec
 ```
 
-In addition to the default run, there are two additional modes: one more verbose and one silent, which only returns the test result.
+All possible verbosity modes are tested: default, verbose, quiet, and silent.
 
 #### unit-test
 
@@ -71,445 +280,524 @@ library functions operate as expected.
 A typical run looks like:
 
 ```console
-test 5
-    Start 5: unit-test
+test 9
+      Start  9: unit-test
 
-5: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/unit-test
-5: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
-5: Test timeout computed to be: 10000000
-5: Built with clang Apple LLVM 15.0.0 (clang-1500.0.40.1), with exceptions.
-5:
-5: µTest++ unit tests; some checks are expected to fail.
-5:
-5: • Main - test suite started
-5:
-5:   ✓ Initial counters - test case passed (0 checks)
-5:   ✓ expect(true) - test case passed (3 checks)
-5:
-5:   • expect(false) - test case started
-5:     ✗ FAILED (micro-test-plus.h:102)
-5:     ✗ false FAILED (micro-test-plus.h:102)
-5:   ✗ expect(false) - test case FAILED (0 checks passed, 2 failed)
-5:
-5:   ✓ Integer comparisons - test case passed (8 checks)
-5:
-5:   • Failed integer comparisons - test case started
-5:     ✗ actual != 42 FAILED (micro-test-plus.h:102, 42 != 42)
-5:     ✗ actual+1 == 42 FAILED (micro-test-plus.h:102, 43 == 42)
-5:     ✗ actual-1 >= 42 FAILED (micro-test-plus.h:102, 41 >= 42)
-5:     ✗ actual > 42 FAILED (micro-test-plus.h:102, 42 > 42)
-5:     ✗ actual+1 <= 42 FAILED (micro-test-plus.h:102, 43 <= 42)
-5:     ✗ actual < 42 FAILED (micro-test-plus.h:102, 42 < 42)
-5:     ✗ FAILED (micro-test-plus.h:102, 42 != 42)
-5:     ✗ 42 != 42_i FAILED (micro-test-plus.h:102, 42 != 42)
-5:   ✗ Failed integer comparisons - test case FAILED (0 checks passed, 8 failed)
-5:
-5:   ✓ Float comparisons - test case passed (27 checks)
-5:
-5:   • Failed float comparisons - test case started
-5:     ✗ actual != 42.0 FAILED (micro-test-plus.h:102, 42.000000f != 42.000000f)
-5:     ✗ actual == 43.0 FAILED (micro-test-plus.h:102, 42.000000f == 43.000000f)
-5:     ✗ actual != 42 FAILED (micro-test-plus.h:102, 42.000000f != 42)
-5:     ✗ actual == 43 FAILED (micro-test-plus.h:102, 42.000000f == 43)
-5:     ✗ 42.101f != 42.101_f FAILED (micro-test-plus.h:102, 42.101002f != 42.101002f)
-5:     ✗ 42.101f epsilon 0.01f != 42.10_f FAILED (micro-test-plus.h:102, 42.101002f != 42.099998f)
-5:     ✗ 42.101f epsilon 0.1f == 42.10_f FAILED (micro-test-plus.h:102, 42.101002f == 42.099998f)
-5:     ✗ 42.1010001f epsilon 0.1f != 42.1_f FAILED (micro-test-plus.h:102, 42.101002f != 42.099998f)
-5:     ✗ 42.101f == 42.10_f FAILED (micro-test-plus.h:102, 42.101002f == 42.099998f)
-5:     ✗ 42.101f == 42.100_f FAILED (micro-test-plus.h:102, 42.101002f == 42.099998f)
-5:     ✗ 42.10f == 42.1_f FAILED (micro-test-plus.h:102, 42.099998f != 42.099998f)
-5:     ✗ 42.42f == 42.42_f FAILED (micro-test-plus.h:102, 42.419998f != 42.419998f)
-5:     ✗ 42.42 == 42.420_d FAILED (micro-test-plus.h:102, 42.420000 != 42.420000)
-5:     ✗ 42.0 == 42.0_d FAILED (micro-test-plus.h:102, 42.000000 != 42.000000)
-5:     ✗ 42. == 42._d FAILED (micro-test-plus.h:102, 42.000000 != 42.000000)
-5:     ✗ 42.42 == 42.42_ld FAILED (micro-test-plus.h:102, 42.420000l != 42.420000l)
-5:     ✗ 1234._f == 1234.f FAILED (micro-test-plus.h:102, 1234.000000f != 1234.000000f)
-5:     ✗ 1234.56_f == 1234.56f FAILED (micro-test-plus.h:102, 1234.560059f != 1234.560059f)
-5:     ✗ 12345678.9f == 12345678.9_f FAILED (micro-test-plus.h:102, 12345679.000000f != 12345679.000000f)
-5:     ✗ 111111.42f == 111111.42_f FAILED (micro-test-plus.h:102, 111111.421875f != 111111.421875f)
-5:     ✗ 1111111111.42 == 1111111111.42_d FAILED (micro-test-plus.h:102, 1111111111.420000 != 1111111111.420000)
-5:   ✗ Failed float comparisons - test case FAILED (0 checks passed, 21 failed)
-5:
-5:   ✓ String comparisons - test case passed (6 checks)
-5:
-5:   • Failed string comparisons - test case started
-5:     ✗ actual_sv != abc_sv FAILED (micro-test-plus.h:102, abc != abc)
-5:     ✗ actual_sv == abx_sv FAILED (micro-test-plus.h:102, abc == abx)
-5:     ✗ actual_sv >= abd_sv FAILED (micro-test-plus.h:102, abc >= abd)
-5:     ✗ actual_sv > abc_sv FAILED (micro-test-plus.h:102, abc > abc)
-5:     ✗ actual_sv <= abb_sv FAILED (micro-test-plus.h:102, abc <= abb)
-5:     ✗ actual_sv < abc_sv FAILED (micro-test-plus.h:102, abc < abc)
-5:   ✗ Failed string comparisons - test case FAILED (0 checks passed, 6 failed)
-5:
-5:   ✓ Pointer comparisons - test case passed (9 checks)
-5:
-5:   • Failed pointer comparisons - test case started
-5:     ✗ ptr1 != &one FAILED (micro-test-plus.h:102, 0x7ff7b286ce2c != 0x7ff7b286ce2c)
-5:     ✗ ptr1 != ptr2 FAILED (micro-test-plus.h:102, 0x7ff7b286ce2c != 0x7ff7b286ce2c)
-5:     ✗ ptr1 > ptr2 FAILED (micro-test-plus.h:102, 0x7ff7b286ce2c > 0x7ff7b286ce2c)
-5:     ✗ ptr1 < ptr2 FAILED (micro-test-plus.h:102, 0x7ff7b286ce2c < 0x7ff7b286ce2c)
-5:     ✗ ptr1 == a_non_nullptr FAILED (micro-test-plus.h:102, 0x7ff7b286ce2c == 0x7ff7b286ce90)
-5:     ✗ pfunc != afunc FAILED (micro-test-plus.h:102, 0x10d6d2e30 != 0x10d6d2e30)
-5:     ✗ pfunc == a_non_nullptr FAILED (micro-test-plus.h:102, 0x10d6d2e30 == 0x7ff7b286ce90)
-5:     ✗ pone >= ptwo FAILED (micro-test-plus.h:102, 0x7ff7b286ce38 >= 0x7ff7b286ce3c)
-5:     ✗ ptwo <= pone FAILED (micro-test-plus.h:102, 0x7ff7b286ce3c <= 0x7ff7b286ce38)
-5:   ✗ Failed pointer comparisons - test case FAILED (0 checks passed, 9 failed)
-5:
-5:   ✓ Null pointer comparisons - test case passed (3 checks)
-5:
-5:   • Failed null pointer comparisons - test case started
-5:     ✗ a_nullptr != nullptr FAILED (micro-test-plus.h:102, 0x0 != nullptr)
-5:     ✗ a_non_nullptr == nullptr FAILED (micro-test-plus.h:102, 0x7ff7b286ce90 == nullptr)
-5:     ✗ pfunc != nullptr FAILED (micro-test-plus.h:102, 0x0 != nullptr)
-5:   ✗ Failed null pointer comparisons - test case FAILED (0 checks passed, 3 failed)
-5:
-5:   ✓ reflection::type_name() - test case passed (2 checks)
-5:   ✓ thrown exceptions - test case passed (2 checks)
-5:
-5:   • Failed thrown exceptions - test case started
-5:     ✗ exception thrown FAILED (micro-test-plus.h:102, throws)
-5:     ✗ std::runtime_error thrown FAILED (micro-test-plus.h:102, throws<std::runtime_error>)
-5:   ✗ Failed thrown exceptions - test case FAILED (0 checks passed, 2 failed)
-5:
-5:   ✓ Not thrown exceptions - test case passed (1 check)
-5:
-5:   • Failed not thrown exceptions - test case started
-5:     ✗ exception not thrown FAILED (micro-test-plus.h:102, nothrow)
-5:   ✗ Failed not thrown exceptions - test case FAILED (0 checks passed, 1 failed)
-5:
-5:   • Logical operations - test case started
-5:     ✓ not (actual != 42)
-5:     ✗ not (actual == 42) FAILED (micro-test-plus.h:102, not 42 == 42)
-5:     ✓ (actual == 42) and (actual == 42.0)
-5:     ✗ (actual == 42) and (actual != 42.0) FAILED (micro-test-plus.h:102, (42 == 42 and 42.000000f != 42.000000))
-5:     ✗ (actual != 42) and (actual == 42.0) FAILED (micro-test-plus.h:102, (42 != 42 and 42.000000f == 42.000000))
-5:     ✗ (actual != 42) and (actual != 42.0) FAILED (micro-test-plus.h:102, (42 != 42 and 42.000000f != 42.000000))
-5:     ✓ (42 == 42 and 42.000000f == 42.000000)
-5:     ✗ FAILED (micro-test-plus.h:102, (42 == 42 and 42.000000f != 42.000000))
-5:     ✓ (actual == 42) or (actual == 42.0)
-5:     ✓ (actual == 42) or (actual != 42.0)
-5:     ✓ (actual != 42) or (actual == 42.0)
-5:     ✗ (actual != 42) or (actual != 42.0) FAILED (micro-test-plus.h:102, (42 != 42 or 42.000000f != 42.000000))
-5:   ✗ Logical operations - test case FAILED (6 checks passed, 6 failed)
-5:
-5:   • Operators - test case started
-5:     ✓ actual == 42
-5:     ✗ actual+1 == 42 with scalar FAILED (micro-test-plus.h:102)
-5:     ✗ actual+1 == 42 with _i literal FAILED (micro-test-plus.h:102, 43 == 42)
-5:     ✗ actual+1 == 42 with _i() FAILED (micro-test-plus.h:102, 43 == 42)
-5:     ✓ actual+1 != 42
-5:     ✓ actual-1 < 42
-5:     ✓ actual <= 42
-5:     ✓ actual+1 > 42
-5:     ✓ actual >= 42
-5:     ✓ not (actual != 42)
-5:     ✗ not (actual == 42) FAILED (micro-test-plus.h:102, not 42 == 42)
-5:     ✓ (actual == 42) and (actual == 42.0)
-5:     ✗ (actual == 42) and (actual != 42.0) FAILED (micro-test-plus.h:102, (42 == 42 and 42.000000f != 42.000000))
-5:     ✗ (actual != 42) and (actual == 42.0) FAILED (micro-test-plus.h:102, (42 != 42 and 42.000000f == 42.000000))
-5:     ✗ (actual != 42) and (actual != 42.0) FAILED (micro-test-plus.h:102, (42 != 42 and 42.000000f != 42.000000))
-5:     ✓ (42 == 42 and 42.000000f == 42.000000)
-5:     ✗ FAILED (micro-test-plus.h:102, (42 == 42 and 42.000000f != 42.000000))
-5:     ✓ (actual == 42) or (actual == 42.0)
-5:     ✓ (actual == 42) or (actual != 42.0)
-5:     ✓ (actual != 42) or (actual == 42.0)
-5:     ✗ (actual != 42) or (actual != 42.0) FAILED (micro-test-plus.h:102, (42 != 42 or 42.000000f != 42.000000f))
-5:   ✗ Operators - test case FAILED (12 checks passed, 9 failed)
-5:
-5:   ✓ Strings matches - test case passed (6 checks)
-5:
-5:   • Failed strings matches - test case started
-5:     ✗ empty matches abc FAILED (micro-test-plus.h:102)
-5:     ✗ abc matches b?? FAILED (micro-test-plus.h:102)
-5:     ✗ abc matches a*d FAILED (micro-test-plus.h:102)
-5:     ✗ abc matches *C FAILED (micro-test-plus.h:102)
-5:   ✗ Failed strings matches - test case FAILED (0 checks passed, 4 failed)
-5:
-5:   ✓ Splits - test case passed (4 checks)
-5:
-5: ✗ Main - test suite FAILED (92 checks passed, 71 failed, in 23 test cases)
-5:
-5: • Combinatorial integrals - test suite started
-5:
-5:   ✓ Combinatorial integrals with signed long long - test case passed (20 checks)
-5:   ✓ Combinatorial integrals unsigned long long - test case passed (20 checks)
-5:   ✓ Combinatorial integrals with signed int - test case passed (20 checks)
-5:   ✓ Combinatorial integrals with unsigned int - test case passed (20 checks)
-5:   ✓ Combinatorial integrals with signed short - test case passed (20 checks)
-5:   ✓ Combinatorial integrals with unsigned short - test case passed (20 checks)
-5:   ✓ Combinatorial integrals with signed short - test case passed (20 checks)
-5:   ✓ Combinatorial integrals with unsigned short - test case passed (20 checks)
-5:   ✓ Combinatorial integrals with signed char - test case passed (20 checks)
-5:   ✓ Combinatorial integrals with unsigned char - test case passed (20 checks)
-5:
-5: ✓ Combinatorial integrals - test suite passed (200 checks in 10 test cases)
-5:
-5: • Failed combinatorial integrals - test suite started
-5:
-5:   • Combinatorial integrals with signed long long - test case started
-5:     ✗ ne matches signed long long FAILED (micro-test-plus.h:102, 42ll != 42ll)
-5:     ✗ ne matches unsigned long long FAILED (micro-test-plus.h:102, 42ll != 42ull)
-5:     ✗ ne matches signed long FAILED (micro-test-plus.h:102, 42ll != 42l)
-5:     ✗ ne matches unsigned long FAILED (micro-test-plus.h:102, 42ll != 42ul)
-5:     ✗ ne matches signed int FAILED (micro-test-plus.h:102, 42ll != 42)
-5:     ✗ ne matches unsigned int FAILED (micro-test-plus.h:102, 42ll != 42u)
-5:     ✗ ne matches signed short FAILED (micro-test-plus.h:102, 42ll != 42s)
-5:     ✗ ne matches unsigned short FAILED (micro-test-plus.h:102, 42ll != 42us)
-5:     ✗ ne matches signed char FAILED (micro-test-plus.h:102, 42ll != 42c)
-5:     ✗ ne matches unsigned char FAILED (micro-test-plus.h:102, 42ll != 42uc)
-5:     ✗ gt matches signed int FAILED (micro-test-plus.h:102, 42ll > 42)
-5:     ✗ lt matches signed int FAILED (micro-test-plus.h:102, 42ll < 42)
-5:     ✗ eq matches signed int FAILED (micro-test-plus.h:102, 43ll == 42)
-5:     ✗ ge matches signed int FAILED (micro-test-plus.h:102, 41ll >= 42)
-5:     ✗ le matches signed int FAILED (micro-test-plus.h:102, 43ll <= 42)
-5:     ✗ gt matches unsigned int FAILED (micro-test-plus.h:102, 42ll > 42u)
-5:     ✗ lt matches unsigned int FAILED (micro-test-plus.h:102, 42ll < 42u)
-5:     ✗ eq matches unsigned int FAILED (micro-test-plus.h:102, 43ll == 42u)
-5:     ✗ ge matches unsigned int FAILED (micro-test-plus.h:102, 41ll >= 42u)
-5:     ✗ le matches unsigned int FAILED (micro-test-plus.h:102, 43ll <= 42u)
-5:   ✗ Combinatorial integrals with signed long long - test case FAILED (0 checks passed, 20 failed)
-5:
-5:   • Combinatorial integrals unsigned long long - test case started
-5:     ✗ ne matches signed long long FAILED (micro-test-plus.h:102, 42ull != 42ll)
-5:     ✗ ne matches unsigned long long FAILED (micro-test-plus.h:102, 42ull != 42ull)
-5:     ✗ ne matches signed long FAILED (micro-test-plus.h:102, 42ull != 42l)
-5:     ✗ ne matches unsigned long FAILED (micro-test-plus.h:102, 42ull != 42ul)
-5:     ✗ ne matches signed int FAILED (micro-test-plus.h:102, 42ull != 42)
-5:     ✗ ne matches unsigned int FAILED (micro-test-plus.h:102, 42ull != 42u)
-5:     ✗ ne matches signed short FAILED (micro-test-plus.h:102, 42ull != 42s)
-5:     ✗ ne matches unsigned short FAILED (micro-test-plus.h:102, 42ull != 42us)
-5:     ✗ ne matches signed char FAILED (micro-test-plus.h:102, 42ull != 42c)
-5:     ✗ ne matches unsigned char FAILED (micro-test-plus.h:102, 42ull != 42uc)
-5:     ✗ gt matches signed int FAILED (micro-test-plus.h:102, 42ull > 42)
-5:     ✗ lt matches signed int FAILED (micro-test-plus.h:102, 42ull < 42)
-5:     ✗ eq matches signed int FAILED (micro-test-plus.h:102, 43ull == 42)
-5:     ✗ ge matches signed int FAILED (micro-test-plus.h:102, 41ull >= 42)
-5:     ✗ le matches signed int FAILED (micro-test-plus.h:102, 43ull <= 42)
-5:     ✗ gt matches unsigned int FAILED (micro-test-plus.h:102, 42ull > 42u)
-5:     ✗ lt matches unsigned int FAILED (micro-test-plus.h:102, 42ull < 42u)
-5:     ✗ eq matches unsigned int FAILED (micro-test-plus.h:102, 43ull == 42u)
-5:     ✗ ge matches unsigned int FAILED (micro-test-plus.h:102, 41ull >= 42u)
-5:     ✗ le matches unsigned int FAILED (micro-test-plus.h:102, 43ull <= 42u)
-5:   ✗ Combinatorial integrals unsigned long long - test case FAILED (0 checks passed, 20 failed)
-5:
-5:   • Combinatorial integrals with signed int - test case started
-5:     ✗ ne matches signed long long FAILED (micro-test-plus.h:102, 42 != 42ll)
-5:     ✗ ne matches unsigned long long FAILED (micro-test-plus.h:102, 42 != 42ull)
-5:     ✗ ne matches signed long FAILED (micro-test-plus.h:102, 42 != 42l)
-5:     ✗ ne matches unsigned long FAILED (micro-test-plus.h:102, 42 != 42ul)
-5:     ✗ ne matches signed int FAILED (micro-test-plus.h:102, 42 != 42)
-5:     ✗ ne matches unsigned int FAILED (micro-test-plus.h:102, 42 != 42u)
-5:     ✗ ne matches signed short FAILED (micro-test-plus.h:102, 42 != 42s)
-5:     ✗ ne matches unsigned short FAILED (micro-test-plus.h:102, 42 != 42us)
-5:     ✗ ne matches signed char FAILED (micro-test-plus.h:102, 42 != 42c)
-5:     ✗ ne matches unsigned char FAILED (micro-test-plus.h:102, 42 != 42uc)
-5:     ✗ gt matches signed int FAILED (micro-test-plus.h:102, 42 > 42)
-5:     ✗ lt matches signed int FAILED (micro-test-plus.h:102, 42 < 42)
-5:     ✗ eq matches signed int FAILED (micro-test-plus.h:102, 43 == 42)
-5:     ✗ ge matches signed int FAILED (micro-test-plus.h:102, 41 >= 42)
-5:     ✗ le matches signed int FAILED (micro-test-plus.h:102, 43 <= 42)
-5:     ✗ gt matches unsigned int FAILED (micro-test-plus.h:102, 42 > 42u)
-5:     ✗ lt matches unsigned int FAILED (micro-test-plus.h:102, 42 < 42u)
-5:     ✗ eq matches unsigned int FAILED (micro-test-plus.h:102, 43 == 42u)
-5:     ✗ ge matches unsigned int FAILED (micro-test-plus.h:102, 41 >= 42u)
-5:     ✗ le matches unsigned int FAILED (micro-test-plus.h:102, 43 <= 42u)
-5:   ✗ Combinatorial integrals with signed int - test case FAILED (0 checks passed, 20 failed)
-5:
-5:   • Combinatorial integrals with unsigned int - test case started
-5:     ✗ ne matches signed long long FAILED (micro-test-plus.h:102, 42u != 42ll)
-5:     ✗ ne matches unsigned long long FAILED (micro-test-plus.h:102, 42u != 42ull)
-5:     ✗ ne matches signed long FAILED (micro-test-plus.h:102, 42u != 42l)
-5:     ✗ ne matches unsigned long FAILED (micro-test-plus.h:102, 42u != 42ul)
-5:     ✗ ne matches signed int FAILED (micro-test-plus.h:102, 42u != 42)
-5:     ✗ ne matches unsigned int FAILED (micro-test-plus.h:102, 42u != 42u)
-5:     ✗ ne matches signed short FAILED (micro-test-plus.h:102, 42u != 42s)
-5:     ✗ ne matches unsigned short FAILED (micro-test-plus.h:102, 42u != 42us)
-5:     ✗ ne matches signed char FAILED (micro-test-plus.h:102, 42u != 42c)
-5:     ✗ ne matches unsigned char FAILED (micro-test-plus.h:102, 42u != 42uc)
-5:     ✗ gt matches signed int FAILED (micro-test-plus.h:102, 42u > 42)
-5:     ✗ lt matches signed int FAILED (micro-test-plus.h:102, 42u < 42)
-5:     ✗ eq matches signed int FAILED (micro-test-plus.h:102, 43u == 42)
-5:     ✗ ge matches signed int FAILED (micro-test-plus.h:102, 41u >= 42)
-5:     ✗ le matches signed int FAILED (micro-test-plus.h:102, 43u <= 42)
-5:     ✗ gt matches unsigned int FAILED (micro-test-plus.h:102, 42u > 42u)
-5:     ✗ lt matches unsigned int FAILED (micro-test-plus.h:102, 42u < 42u)
-5:     ✗ eq matches unsigned int FAILED (micro-test-plus.h:102, 43u == 42u)
-5:     ✗ ge matches unsigned int FAILED (micro-test-plus.h:102, 41u >= 42u)
-5:     ✗ le matches unsigned int FAILED (micro-test-plus.h:102, 43u <= 42u)
-5:   ✗ Combinatorial integrals with unsigned int - test case FAILED (0 checks passed, 20 failed)
-5:
-5:   • Combinatorial integrals with signed short - test case started
-5:     ✗ ne matches signed long long FAILED (micro-test-plus.h:102, 42 != 42ll)
-5:     ✗ ne matches unsigned long long FAILED (micro-test-plus.h:102, 42 != 42ull)
-5:     ✗ ne matches signed long FAILED (micro-test-plus.h:102, 42 != 42l)
-5:     ✗ ne matches unsigned long FAILED (micro-test-plus.h:102, 42 != 42ul)
-5:     ✗ ne matches signed int FAILED (micro-test-plus.h:102, 42 != 42)
-5:     ✗ ne matches unsigned int FAILED (micro-test-plus.h:102, 42 != 42u)
-5:     ✗ ne matches signed short FAILED (micro-test-plus.h:102, 42 != 42s)
-5:     ✗ ne matches unsigned short FAILED (micro-test-plus.h:102, 42 != 42us)
-5:     ✗ ne matches signed char FAILED (micro-test-plus.h:102, 42 != 42c)
-5:     ✗ ne matches unsigned char FAILED (micro-test-plus.h:102, 42 != 42uc)
-5:     ✗ gt matches signed int FAILED (micro-test-plus.h:102, 42 > 42)
-5:     ✗ lt matches signed int FAILED (micro-test-plus.h:102, 42 < 42)
-5:     ✗ eq matches signed int FAILED (micro-test-plus.h:102, 43 == 42)
-5:     ✗ ge matches signed int FAILED (micro-test-plus.h:102, 41 >= 42)
-5:     ✗ le matches signed int FAILED (micro-test-plus.h:102, 43 <= 42)
-5:     ✗ gt matches unsigned int FAILED (micro-test-plus.h:102, 42 > 42u)
-5:     ✗ lt matches unsigned int FAILED (micro-test-plus.h:102, 42 < 42u)
-5:     ✗ eq matches unsigned int FAILED (micro-test-plus.h:102, 43 == 42u)
-5:     ✗ ge matches unsigned int FAILED (micro-test-plus.h:102, 41 >= 42u)
-5:     ✗ le matches unsigned int FAILED (micro-test-plus.h:102, 43 <= 42u)
-5:   ✗ Combinatorial integrals with signed short - test case FAILED (0 checks passed, 20 failed)
-5:
-5:   • Combinatorial integrals with unsigned short - test case started
-5:     ✗ ne matches signed long long FAILED (micro-test-plus.h:102, 42u != 42ll)
-5:     ✗ ne matches unsigned long long FAILED (micro-test-plus.h:102, 42u != 42ull)
-5:     ✗ ne matches signed long FAILED (micro-test-plus.h:102, 42u != 42l)
-5:     ✗ ne matches unsigned long FAILED (micro-test-plus.h:102, 42u != 42ul)
-5:     ✗ ne matches signed int FAILED (micro-test-plus.h:102, 42u != 42)
-5:     ✗ ne matches unsigned int FAILED (micro-test-plus.h:102, 42u != 42u)
-5:     ✗ ne matches signed short FAILED (micro-test-plus.h:102, 42u != 42s)
-5:     ✗ ne matches unsigned short FAILED (micro-test-plus.h:102, 42u != 42us)
-5:     ✗ ne matches signed char FAILED (micro-test-plus.h:102, 42u != 42c)
-5:     ✗ ne matches unsigned char FAILED (micro-test-plus.h:102, 42u != 42uc)
-5:     ✗ gt matches signed int FAILED (micro-test-plus.h:102, 42u > 42)
-5:     ✗ lt matches signed int FAILED (micro-test-plus.h:102, 42u < 42)
-5:     ✗ eq matches signed int FAILED (micro-test-plus.h:102, 43u == 42)
-5:     ✗ ge matches signed int FAILED (micro-test-plus.h:102, 41u >= 42)
-5:     ✗ le matches signed int FAILED (micro-test-plus.h:102, 43u <= 42)
-5:     ✗ gt matches unsigned int FAILED (micro-test-plus.h:102, 42u > 42u)
-5:     ✗ lt matches unsigned int FAILED (micro-test-plus.h:102, 42u < 42u)
-5:     ✗ eq matches unsigned int FAILED (micro-test-plus.h:102, 43u == 42u)
-5:     ✗ ge matches unsigned int FAILED (micro-test-plus.h:102, 41u >= 42u)
-5:     ✗ le matches unsigned int FAILED (micro-test-plus.h:102, 43u <= 42u)
-5:   ✗ Combinatorial integrals with unsigned short - test case FAILED (0 checks passed, 20 failed)
-5:
-5:   • Combinatorial integrals with signed short - test case started
-5:     ✗ ne matches signed long long FAILED (micro-test-plus.h:102, 42s != 42ll)
-5:     ✗ ne matches unsigned long long FAILED (micro-test-plus.h:102, 42s != 42ull)
-5:     ✗ ne matches signed long FAILED (micro-test-plus.h:102, 42s != 42l)
-5:     ✗ ne matches unsigned long FAILED (micro-test-plus.h:102, 42s != 42ul)
-5:     ✗ ne matches signed int FAILED (micro-test-plus.h:102, 42s != 42)
-5:     ✗ ne matches unsigned int FAILED (micro-test-plus.h:102, 42s != 42u)
-5:     ✗ ne matches signed short FAILED (micro-test-plus.h:102, 42s != 42s)
-5:     ✗ ne matches unsigned short FAILED (micro-test-plus.h:102, 42s != 42us)
-5:     ✗ ne matches signed char FAILED (micro-test-plus.h:102, 42s != 42c)
-5:     ✗ ne matches unsigned char FAILED (micro-test-plus.h:102, 42s != 42uc)
-5:     ✗ gt matches signed int FAILED (micro-test-plus.h:102, 42s > 42)
-5:     ✗ lt matches signed int FAILED (micro-test-plus.h:102, 42s < 42)
-5:     ✗ eq matches signed int FAILED (micro-test-plus.h:102, 43s == 42)
-5:     ✗ ge matches signed int FAILED (micro-test-plus.h:102, 41s >= 42)
-5:     ✗ le matches signed int FAILED (micro-test-plus.h:102, 43s <= 42)
-5:     ✗ gt matches unsigned int FAILED (micro-test-plus.h:102, 42s > 42u)
-5:     ✗ lt matches unsigned int FAILED (micro-test-plus.h:102, 42s < 42u)
-5:     ✗ eq matches unsigned int FAILED (micro-test-plus.h:102, 43s == 42u)
-5:     ✗ ge matches unsigned int FAILED (micro-test-plus.h:102, 41s >= 42u)
-5:     ✗ le matches unsigned int FAILED (micro-test-plus.h:102, 43s <= 42u)
-5:   ✗ Combinatorial integrals with signed short - test case FAILED (0 checks passed, 20 failed)
-5:
-5:   • Combinatorial integrals with unsigned short - test case started
-5:     ✗ ne matches signed long long FAILED (micro-test-plus.h:102, 42us != 42ll)
-5:     ✗ ne matches unsigned long long FAILED (micro-test-plus.h:102, 42us != 42ull)
-5:     ✗ ne matches signed long FAILED (micro-test-plus.h:102, 42us != 42l)
-5:     ✗ ne matches unsigned long FAILED (micro-test-plus.h:102, 42us != 42ul)
-5:     ✗ ne matches signed int FAILED (micro-test-plus.h:102, 42us != 42)
-5:     ✗ ne matches unsigned int FAILED (micro-test-plus.h:102, 42us != 42u)
-5:     ✗ ne matches signed short FAILED (micro-test-plus.h:102, 42us != 42s)
-5:     ✗ ne matches unsigned short FAILED (micro-test-plus.h:102, 42us != 42us)
-5:     ✗ ne matches signed char FAILED (micro-test-plus.h:102, 42us != 42c)
-5:     ✗ ne matches unsigned char FAILED (micro-test-plus.h:102, 42us != 42uc)
-5:     ✗ gt matches signed int FAILED (micro-test-plus.h:102, 42us > 42)
-5:     ✗ lt matches signed int FAILED (micro-test-plus.h:102, 42us < 42)
-5:     ✗ eq matches signed int FAILED (micro-test-plus.h:102, 43us == 42)
-5:     ✗ ge matches signed int FAILED (micro-test-plus.h:102, 41us >= 42)
-5:     ✗ le matches signed int FAILED (micro-test-plus.h:102, 43us <= 42)
-5:     ✗ gt matches unsigned int FAILED (micro-test-plus.h:102, 42us > 42u)
-5:     ✗ lt matches unsigned int FAILED (micro-test-plus.h:102, 42us < 42u)
-5:     ✗ eq matches unsigned int FAILED (micro-test-plus.h:102, 43us == 42u)
-5:     ✗ ge matches unsigned int FAILED (micro-test-plus.h:102, 41us >= 42u)
-5:     ✗ le matches unsigned int FAILED (micro-test-plus.h:102, 43us <= 42u)
-5:   ✗ Combinatorial integrals with unsigned short - test case FAILED (0 checks passed, 20 failed)
-5:
-5:   • Combinatorial integrals with signed char - test case started
-5:     ✗ ne matches signed long long FAILED (micro-test-plus.h:102, 42c != 42ll)
-5:     ✗ ne matches unsigned long long FAILED (micro-test-plus.h:102, 42c != 42ull)
-5:     ✗ ne matches signed long FAILED (micro-test-plus.h:102, 42c != 42l)
-5:     ✗ ne matches unsigned long FAILED (micro-test-plus.h:102, 42c != 42ul)
-5:     ✗ ne matches signed int FAILED (micro-test-plus.h:102, 42c != 42)
-5:     ✗ ne matches unsigned int FAILED (micro-test-plus.h:102, 42c != 42u)
-5:     ✗ ne matches signed short FAILED (micro-test-plus.h:102, 42c != 42s)
-5:     ✗ ne matches unsigned short FAILED (micro-test-plus.h:102, 42c != 42us)
-5:     ✗ ne matches signed char FAILED (micro-test-plus.h:102, 42c != 42c)
-5:     ✗ ne matches unsigned char FAILED (micro-test-plus.h:102, 42c != 42uc)
-5:     ✗ gt matches signed int FAILED (micro-test-plus.h:102, 42c > 42)
-5:     ✗ lt matches signed int FAILED (micro-test-plus.h:102, 42c < 42)
-5:     ✗ eq matches signed int FAILED (micro-test-plus.h:102, 43c == 42)
-5:     ✗ ge matches signed int FAILED (micro-test-plus.h:102, 41c >= 42)
-5:     ✗ le matches signed int FAILED (micro-test-plus.h:102, 43c <= 42)
-5:     ✗ gt matches unsigned int FAILED (micro-test-plus.h:102, 42c > 42u)
-5:     ✗ lt matches unsigned int FAILED (micro-test-plus.h:102, 42c < 42u)
-5:     ✗ eq matches unsigned int FAILED (micro-test-plus.h:102, 43c == 42u)
-5:     ✗ ge matches unsigned int FAILED (micro-test-plus.h:102, 41c >= 42u)
-5:     ✗ le matches unsigned int FAILED (micro-test-plus.h:102, 43c <= 42u)
-5:   ✗ Combinatorial integrals with signed char - test case FAILED (0 checks passed, 20 failed)
-5:
-5:   • Combinatorial integrals with unsigned char - test case started
-5:     ✗ ne matches signed long long FAILED (micro-test-plus.h:102, 42uc != 42ll)
-5:     ✗ ne matches unsigned long long FAILED (micro-test-plus.h:102, 42uc != 42ull)
-5:     ✗ ne matches signed long FAILED (micro-test-plus.h:102, 42uc != 42l)
-5:     ✗ ne matches unsigned long FAILED (micro-test-plus.h:102, 42uc != 42ul)
-5:     ✗ ne matches signed int FAILED (micro-test-plus.h:102, 42uc != 42)
-5:     ✗ ne matches unsigned int FAILED (micro-test-plus.h:102, 42uc != 42u)
-5:     ✗ ne matches signed short FAILED (micro-test-plus.h:102, 42uc != 42s)
-5:     ✗ ne matches unsigned short FAILED (micro-test-plus.h:102, 42uc != 42us)
-5:     ✗ ne matches signed char FAILED (micro-test-plus.h:102, 42uc != 42c)
-5:     ✗ ne matches unsigned char FAILED (micro-test-plus.h:102, 42uc != 42uc)
-5:     ✗ gt matches signed int FAILED (micro-test-plus.h:102, 42uc > 42)
-5:     ✗ lt matches signed int FAILED (micro-test-plus.h:102, 42uc < 42)
-5:     ✗ eq matches signed int FAILED (micro-test-plus.h:102, 43uc == 42)
-5:     ✗ ge matches signed int FAILED (micro-test-plus.h:102, 41uc >= 42)
-5:     ✗ le matches signed int FAILED (micro-test-plus.h:102, 43uc <= 42)
-5:     ✗ gt matches unsigned int FAILED (micro-test-plus.h:102, 42uc > 42u)
-5:     ✗ lt matches unsigned int FAILED (micro-test-plus.h:102, 42uc < 42u)
-5:     ✗ eq matches unsigned int FAILED (micro-test-plus.h:102, 43uc == 42u)
-5:     ✗ ge matches unsigned int FAILED (micro-test-plus.h:102, 41uc >= 42u)
-5:     ✗ le matches unsigned int FAILED (micro-test-plus.h:102, 43uc <= 42u)
-5:   ✗ Combinatorial integrals with unsigned char - test case FAILED (0 checks passed, 20 failed)
-5:
-5: ✗ Failed combinatorial integrals - test suite FAILED (0 checks passed, 200 failed, in 10 test cases)
-5:
-5: • Combinatorial floats - test suite started
-5:
-5:   ✓ Combinatorial floats - test case passed (11 checks)
-5:   ✓ Combinatorial doubles - test case passed (11 checks)
-5:
-5: ✓ Combinatorial floats - test suite passed (22 checks in 2 test cases)
-5:
-5: • Miscellaneous - test suite started
-5:
-5:   ✓ Arrays - test case passed (4 checks)
-5:
-5:   • Arrays failed - test case started
-5:     ✗ array{ 42 } ne array{ 42 } FAILED (micro-test-plus.h:102, {42} != {42})
-5:     ✗ array{ 42 } eq array{ 43 } FAILED (micro-test-plus.h:102, {42} == {43})
-5:     ✗ array{ 1, 2 } ne array{ 1, 2 } FAILED (micro-test-plus.h:102, {1, 2} != {1, 2})
-5:     ✗ array{ 1, 2, 3 } eq array{ 1, 2, 4 } FAILED (micro-test-plus.h:102, {1, 2, 3} == {1, 2, 4})
-5:   ✗ Arrays failed - test case FAILED (0 checks passed, 4 failed)
-5:
-5:   ✓ Vectors - test case passed (6 checks)
-5:
-5:   • Vectors failed - test case started
-5:     ✗ vector{ } != vector{ } FAILED (micro-test-plus.h:102, {} != {})
-5:     ✗ FAILED (micro-test-plus.h:102, {} != {})
-5:     ✗ vector{ 42 } != vector{ 42 } FAILED (micro-test-plus.h:102, {42} != {42})
-5:     ✗ vector{ 42 } == vector{ 43 } FAILED (micro-test-plus.h:102, {42} == {43})
-5:     ✗ vector{ 1, 2 } != vector{ 1, 2 } FAILED (micro-test-plus.h:102, {1, 2} != {1, 2})
-5:     ✗ vector{ 1, 2, 3 } == vector{ 1, 2, 4 } FAILED (micro-test-plus.h:102, {1, 2, 3} == {1, 2, 4})
-5:   ✗ Vectors failed - test case FAILED (0 checks passed, 6 failed)
-5:
-5: ✗ Miscellaneous - test suite FAILED (10 checks passed, 10 failed, in 4 test cases)
-5: Overall, the µTest++ unit tests were successful!
-5:
-5/8 Test #5: unit-test ........................   Passed    0.01 sec
+9: Test command: /home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/unit-test
+9: Working Directory: /home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
+9: Test timeout computed to be: 10000000
+9: Built with GCC 12.2.0, with exceptions.
+9:
+9: µTest++ unit tests; some checks are expected to fail.
+9:
+9: • Main - test suite started
+9:
+9:   ✓ Initial counters - test case passed (0 checks)
+9:   ✓ expect(true) - test case passed (3 checks)
+9:
+9:   • expect(false) - test case started
+9:     ✗ FAILED (unit-test.cpp:369)
+9:     ✗ false FAILED (unit-test.cpp:372)
+9:   ✗ expect(false) - test case FAILED (0 checks passed, 2 failed)
+9:
+9:   ✓ Integer comparisons - test case passed (8 checks)
+9:
+9:   • Failed integer comparisons - test case started
+9:     ✗ actual != 42 FAILED (unit-test.cpp:429, 42 != 42)
+9:     ✗ actual+1 == 42 FAILED (unit-test.cpp:432, 43 == 42)
+9:     ✗ actual-1 >= 42 FAILED (unit-test.cpp:435, 41 >= 42)
+9:     ✗ actual > 42 FAILED (unit-test.cpp:438, 42 > 42)
+9:     ✗ actual+1 <= 42 FAILED (unit-test.cpp:441, 43 <= 42)
+9:     ✗ actual < 42 FAILED (unit-test.cpp:444, 42 < 42)
+9:     ✗ FAILED (unit-test.cpp:450, 42 != 42)
+9:     ✗ 42 != 42_i FAILED (unit-test.cpp:453, 42 != 42)
+9:   ✗ Failed integer comparisons - test case FAILED (0 checks passed, 8 failed)
+9:
+9:   ✓ Float comparisons - test case passed (27 checks)
+9:
+9:   • Failed float comparisons - test case started
+9:     ✗ actual != 42.0 FAILED (unit-test.cpp:567, 42.000000f != 42.000000f)
+9:     ✗ actual == 43.0 FAILED (unit-test.cpp:570, 42.000000f == 43.000000f)
+9:     ✗ actual != 42 FAILED (unit-test.cpp:573, 42.000000f != 42)
+9:     ✗ actual == 43 FAILED (unit-test.cpp:576, 42.000000f == 43)
+9:     ✗ 42.101f != 42.101_f FAILED (unit-test.cpp:582, 42.101002f != 42.101002f)
+9:     ✗ 42.101f epsilon 0.01f != 42.10_f FAILED (unit-test.cpp:585, 42.101002f != 42.099998f)
+9:     ✗ 42.101f epsilon 0.1f == 42.10_f FAILED (unit-test.cpp:589, 42.101002f == 42.099998f)
+9:     ✗ 42.1010001f epsilon 0.1f != 42.1_f FAILED (unit-test.cpp:593, 42.101002f != 42.099998f)
+9:     ✗ 42.101f == 42.10_f FAILED (unit-test.cpp:597, 42.101002f == 42.099998f)
+9:     ✗ 42.101f == 42.100_f FAILED (unit-test.cpp:600, 42.101002f == 42.099998f)
+9:     ✗ 42.10f == 42.1_f FAILED (unit-test.cpp:603, 42.099998f != 42.099998f)
+9:     ✗ 42.42f == 42.42_f FAILED (unit-test.cpp:606, 42.419998f != 42.419998f)
+9:     ✗ 42.42 == 42.420_d FAILED (unit-test.cpp:609, 42.420000 != 42.420000)
+9:     ✗ 42.0 == 42.0_d FAILED (unit-test.cpp:612, 42.000000 != 42.000000)
+9:     ✗ 42. == 42._d FAILED (unit-test.cpp:615, 42.000000 != 42.000000)
+9:     ✗ 42.42 == 42.42_ld FAILED (unit-test.cpp:618, 42.420000l != 42.420000l)
+9:     ✗ 1234._f == 1234.f FAILED (unit-test.cpp:622, 1234.000000f != 1234.000000f)
+9:     ✗ 1234.56_f == 1234.56f FAILED (unit-test.cpp:625, 1234.560059f != 1234.560059f)
+9:     ✗ 12345678.9f == 12345678.9_f FAILED (unit-test.cpp:628, 12345679.000000f != 12345679.000000f)
+9:     ✗ 111111.42f == 111111.42_f FAILED (unit-test.cpp:631, 111111.421875f != 111111.421875f)
+9:     ✗ 1111111111.42 == 1111111111.42_d FAILED (unit-test.cpp:634, 1111111111.420000 != 1111111111.420000)
+9:   ✗ Failed float comparisons - test case FAILED (0 checks passed, 21 failed)
+9:
+9:   ✓ String comparisons - test case passed (6 checks)
+9:
+9:   • Failed string comparisons - test case started
+9:     ✗ actual_sv != abc_sv FAILED (unit-test.cpp:685, abc != abc)
+9:     ✗ actual_sv == abx_sv FAILED (unit-test.cpp:689, abc == abx)
+9:     ✗ actual_sv >= abd_sv FAILED (unit-test.cpp:693, abc >= abd)
+9:     ✗ actual_sv > abc_sv FAILED (unit-test.cpp:697, abc > abc)
+9:     ✗ actual_sv <= abb_sv FAILED (unit-test.cpp:701, abc <= abb)
+9:     ✗ actual_sv < abc_sv FAILED (unit-test.cpp:705, abc < abc)
+9:   ✗ Failed string comparisons - test case FAILED (0 checks passed, 6 failed)
+9:
+9:   ✓ Pointer comparisons - test case passed (9 checks)
+9:
+9:   • Failed pointer comparisons - test case started
+9:     ✗ ptr1 != &one FAILED (unit-test.cpp:779, 0x7ffffbf6979c != 0x7ffffbf6979c)
+9:     ✗ ptr1 != ptr2 FAILED (unit-test.cpp:782, 0x7ffffbf6979c != 0x7ffffbf6979c)
+9:     ✗ ptr1 > ptr2 FAILED (unit-test.cpp:785, 0x7ffffbf6979c > 0x7ffffbf6979c)
+9:     ✗ ptr1 < ptr2 FAILED (unit-test.cpp:788, 0x7ffffbf6979c < 0x7ffffbf6979c)
+9:     ✗ ptr1 == a_non_nullptr FAILED (unit-test.cpp:791, 0x7ffffbf6979c == 0x7ffffbf697a0)
+9:     ✗ pfunc != afunc FAILED (unit-test.cpp:794, 0x55559b588620 != 0x55559b588620)
+9:     ✗ pfunc == a_non_nullptr FAILED (unit-test.cpp:797, 0x55559b588620 == 0x7ffffbf697a0)
+9:     ✗ pone >= ptwo FAILED (unit-test.cpp:809, 0x7ffffbf697a8 >= 0x7ffffbf697ac)
+9:     ✗ ptwo <= pone FAILED (unit-test.cpp:812, 0x7ffffbf697ac <= 0x7ffffbf697a8)
+9:   ✗ Failed pointer comparisons - test case FAILED (0 checks passed, 9 failed)
+9:
+9:   ✓ Null pointer comparisons - test case passed (3 checks)
+9:
+9:   • Failed null pointer comparisons - test case started
+9:     ✗ a_nullptr != nullptr FAILED (unit-test.cpp:852, (nil) != nullptr)
+9:     ✗ a_non_nullptr == nullptr FAILED (unit-test.cpp:855, 0x7ffffbf698a8 == nullptr)
+9:     ✗ pfunc != nullptr FAILED (unit-test.cpp:858, (nil) != nullptr)
+9:   ✗ Failed null pointer comparisons - test case FAILED (0 checks passed, 3 failed)
+9:
+9:   ✓ reflection::type_name() - test case passed (2 checks)
+9:   ✓ thrown exceptions - test case passed (2 checks)
+9:
+9:   • Failed thrown exceptions - test case started
+9:     ✗ exception thrown FAILED (unit-test.cpp:916, throws)
+9:     ✗ std::runtime_error thrown FAILED (unit-test.cpp:919, throws<std::runtime_error>)
+9:   ✗ Failed thrown exceptions - test case FAILED (0 checks passed, 2 failed)
+9:
+9:   ✓ Not thrown exceptions - test case passed (1 check)
+9:
+9:   • Failed not thrown exceptions - test case started
+9:     ✗ exception not thrown FAILED (unit-test.cpp:948, nothrow)
+9:   ✗ Failed not thrown exceptions - test case FAILED (0 checks passed, 1 failed)
+9:
+9:   • Logical operations - test case started
+9:     ✓ not (actual != 42)
+9:     ✗ not (actual == 42) FAILED (unit-test.cpp:966, not 42 == 42)
+9:     ✓ (actual == 42) and (actual == 42.0)
+9:     ✗ (actual == 42) and (actual != 42.0) FAILED (unit-test.cpp:974, (42 == 42 and 42.000000f != 42.000000))
+9:     ✗ (actual != 42) and (actual == 42.0) FAILED (unit-test.cpp:979, (42 != 42 and 42.000000f == 42.000000))
+9:     ✗ (actual != 42) and (actual != 42.0) FAILED (unit-test.cpp:984, (42 != 42 and 42.000000f != 42.000000))
+9:     ✓ (42 == 42 and 42.000000f == 42.000000)
+9:     ✗ FAILED (unit-test.cpp:993, (42 == 42 and 42.000000f != 42.000000))
+9:     ✓ (actual == 42) or (actual == 42.0)
+9:     ✓ (actual == 42) or (actual != 42.0)
+9:     ✓ (actual != 42) or (actual == 42.0)
+9:     ✗ (actual != 42) or (actual != 42.0) FAILED (unit-test.cpp:1012, (42 != 42 or 42.000000f != 42.000000))
+9:   ✗ Logical operations - test case FAILED (6 checks passed, 6 failed)
+9:
+9:   • Operators - test case started
+9:     ✓ actual == 42
+9:     ✗ actual+1 == 42 with scalar FAILED (unit-test.cpp:1033)
+9:     ✗ actual+1 == 42 with _i literal FAILED (unit-test.cpp:1037, 43 == 42)
+9:     ✗ actual+1 == 42 with _i() FAILED (unit-test.cpp:1041, 43 == 42)
+9:     ✓ actual+1 != 42
+9:     ✓ actual-1 < 42
+9:     ✓ actual <= 42
+9:     ✓ actual+1 > 42
+9:     ✓ actual >= 42
+9:     ✓ not (actual != 42)
+9:     ✗ not (actual == 42) FAILED (unit-test.cpp:1063, not 42 == 42)
+9:     ✓ (actual == 42) and (actual == 42.0)
+9:     ✗ (actual == 42) and (actual != 42.0) FAILED (unit-test.cpp:1071, (42 == 42 and 42.000000f != 42.000000))
+9:     ✗ (actual != 42) and (actual == 42.0) FAILED (unit-test.cpp:1076, (42 != 42 and 42.000000f == 42.000000))
+9:     ✗ (actual != 42) and (actual != 42.0) FAILED (unit-test.cpp:1081, (42 != 42 and 42.000000f != 42.000000))
+9:     ✓ (42 == 42 and 42.000000f == 42.000000)
+9:     ✗ FAILED (unit-test.cpp:1090, (42 == 42 and 42.000000f != 42.000000))
+9:     ✓ (actual == 42) or (actual == 42.0)
+9:     ✓ (actual == 42) or (actual != 42.0)
+9:     ✓ (actual != 42) or (actual == 42.0)
+9:     ✗ (actual != 42) or (actual != 42.0) FAILED (unit-test.cpp:1109, (42 != 42 or 42.000000f != 42.000000f))
+9:   ✗ Operators - test case FAILED (12 checks passed, 9 failed)
+9:
+9:   ✓ Strings matches - test case passed (6 checks)
+9:
+9:   • Failed strings matches - test case started
+9:     ✗ empty matches abc FAILED (unit-test.cpp:1154)
+9:     ✗ abc matches b?? FAILED (unit-test.cpp:1157)
+9:     ✗ abc matches a*d FAILED (unit-test.cpp:1160)
+9:     ✗ abc matches *C FAILED (unit-test.cpp:1163)
+9:   ✗ Failed strings matches - test case FAILED (0 checks passed, 4 failed)
+9:
+9:   ✓ Splits - test case passed (4 checks)
+9:
+9: ✗ Main - test suite FAILED (92 checks passed, 71 failed, in 23 test cases)
+9:
+9: • Combinatorial integrals - test suite started
+9:
+9:   ✓ Combinatorial integrals with signed long long - test case passed (20 checks)
+9:   ✓ Combinatorial integrals unsigned long long - test case passed (20 checks)
+9:   ✓ Combinatorial integrals with signed int - test case passed (20 checks)
+9:   ✓ Combinatorial integrals with unsigned int - test case passed (20 checks)
+9:   ✓ Combinatorial integrals with signed short - test case passed (20 checks)
+9:   ✓ Combinatorial integrals with unsigned short - test case passed (20 checks)
+9:   ✓ Combinatorial integrals with signed short - test case passed (20 checks)
+9:   ✓ Combinatorial integrals with unsigned short - test case passed (20 checks)
+9:   ✓ Combinatorial integrals with signed char - test case passed (20 checks)
+9:   ✓ Combinatorial integrals with unsigned char - test case passed (20 checks)
+9:
+9: ✓ Combinatorial integrals - test suite passed (200 checks in 10 test cases)
+9:
+9: • Failed combinatorial integrals - test suite started
+9:
+9:   • Combinatorial integrals with signed long long - test case started
+9:     ✗ ne matches signed long long FAILED (unit-test.cpp:1330, 42ll != 42ll)
+9:     ✗ ne matches unsigned long long FAILED (unit-test.cpp:1335, 42ll != 42ull)
+9:     ✗ ne matches signed long FAILED (unit-test.cpp:1340, 42ll != 42l)
+9:     ✗ ne matches unsigned long FAILED (unit-test.cpp:1344, 42ll != 42ul)
+9:     ✗ ne matches signed int FAILED (unit-test.cpp:1349, 42ll != 42)
+9:     ✗ ne matches unsigned int FAILED (unit-test.cpp:1353, 42ll != 42u)
+9:     ✗ ne matches signed short FAILED (unit-test.cpp:1357, 42ll != 42s)
+9:     ✗ ne matches unsigned short FAILED (unit-test.cpp:1361, 42ll != 42us)
+9:     ✗ ne matches signed char FAILED (unit-test.cpp:1366, 42ll != 42c)
+9:     ✗ ne matches unsigned char FAILED (unit-test.cpp:1370, 42ll != 42uc)
+9:     ✗ gt matches signed int FAILED (unit-test.cpp:1377, 42ll > 42)
+9:     ✗ lt matches signed int FAILED (unit-test.cpp:1381, 42ll < 42)
+9:     ✗ eq matches signed int FAILED (unit-test.cpp:1385, 43ll == 42)
+9:     ✗ ge matches signed int FAILED (unit-test.cpp:1390, 41ll >= 42)
+9:     ✗ le matches signed int FAILED (unit-test.cpp:1395, 43ll <= 42)
+9:     ✗ gt matches unsigned int FAILED (unit-test.cpp:1400, 42ll > 42u)
+9:     ✗ lt matches unsigned int FAILED (unit-test.cpp:1404, 42ll < 42u)
+9:     ✗ eq matches unsigned int FAILED (unit-test.cpp:1408, 43ll == 42u)
+9:     ✗ ge matches unsigned int FAILED (unit-test.cpp:1413, 41ll >= 42u)
+9:     ✗ le matches unsigned int FAILED (unit-test.cpp:1418, 43ll <= 42u)
+9:   ✗ Combinatorial integrals with signed long long - test case FAILED (0 checks passed, 20 failed)
+9:
+9:   • Combinatorial integrals unsigned long long - test case started
+9:     ✗ ne matches signed long long FAILED (unit-test.cpp:1330, 42ull != 42ll)
+9:     ✗ ne matches unsigned long long FAILED (unit-test.cpp:1335, 42ull != 42ull)
+9:     ✗ ne matches signed long FAILED (unit-test.cpp:1340, 42ull != 42l)
+9:     ✗ ne matches unsigned long FAILED (unit-test.cpp:1344, 42ull != 42ul)
+9:     ✗ ne matches signed int FAILED (unit-test.cpp:1349, 42ull != 42)
+9:     ✗ ne matches unsigned int FAILED (unit-test.cpp:1353, 42ull != 42u)
+9:     ✗ ne matches signed short FAILED (unit-test.cpp:1357, 42ull != 42s)
+9:     ✗ ne matches unsigned short FAILED (unit-test.cpp:1361, 42ull != 42us)
+9:     ✗ ne matches signed char FAILED (unit-test.cpp:1366, 42ull != 42c)
+9:     ✗ ne matches unsigned char FAILED (unit-test.cpp:1370, 42ull != 42uc)
+9:     ✗ gt matches signed int FAILED (unit-test.cpp:1377, 42ull > 42)
+9:     ✗ lt matches signed int FAILED (unit-test.cpp:1381, 42ull < 42)
+9:     ✗ eq matches signed int FAILED (unit-test.cpp:1385, 43ull == 42)
+9:     ✗ ge matches signed int FAILED (unit-test.cpp:1390, 41ull >= 42)
+9:     ✗ le matches signed int FAILED (unit-test.cpp:1395, 43ull <= 42)
+9:     ✗ gt matches unsigned int FAILED (unit-test.cpp:1400, 42ull > 42u)
+9:     ✗ lt matches unsigned int FAILED (unit-test.cpp:1404, 42ull < 42u)
+9:     ✗ eq matches unsigned int FAILED (unit-test.cpp:1408, 43ull == 42u)
+9:     ✗ ge matches unsigned int FAILED (unit-test.cpp:1413, 41ull >= 42u)
+9:     ✗ le matches unsigned int FAILED (unit-test.cpp:1418, 43ull <= 42u)
+9:   ✗ Combinatorial integrals unsigned long long - test case FAILED (0 checks passed, 20 failed)
+9:
+9:   • Combinatorial integrals with signed int - test case started
+9:     ✗ ne matches signed long long FAILED (unit-test.cpp:1330, 42 != 42ll)
+9:     ✗ ne matches unsigned long long FAILED (unit-test.cpp:1335, 42 != 42ull)
+9:     ✗ ne matches signed long FAILED (unit-test.cpp:1340, 42 != 42l)
+9:     ✗ ne matches unsigned long FAILED (unit-test.cpp:1344, 42 != 42ul)
+9:     ✗ ne matches signed int FAILED (unit-test.cpp:1349, 42 != 42)
+9:     ✗ ne matches unsigned int FAILED (unit-test.cpp:1353, 42 != 42u)
+9:     ✗ ne matches signed short FAILED (unit-test.cpp:1357, 42 != 42s)
+9:     ✗ ne matches unsigned short FAILED (unit-test.cpp:1361, 42 != 42us)
+9:     ✗ ne matches signed char FAILED (unit-test.cpp:1366, 42 != 42c)
+9:     ✗ ne matches unsigned char FAILED (unit-test.cpp:1370, 42 != 42uc)
+9:     ✗ gt matches signed int FAILED (unit-test.cpp:1377, 42 > 42)
+9:     ✗ lt matches signed int FAILED (unit-test.cpp:1381, 42 < 42)
+9:     ✗ eq matches signed int FAILED (unit-test.cpp:1385, 43 == 42)
+9:     ✗ ge matches signed int FAILED (unit-test.cpp:1390, 41 >= 42)
+9:     ✗ le matches signed int FAILED (unit-test.cpp:1395, 43 <= 42)
+9:     ✗ gt matches unsigned int FAILED (unit-test.cpp:1400, 42 > 42u)
+9:     ✗ lt matches unsigned int FAILED (unit-test.cpp:1404, 42 < 42u)
+9:     ✗ eq matches unsigned int FAILED (unit-test.cpp:1408, 43 == 42u)
+9:     ✗ ge matches unsigned int FAILED (unit-test.cpp:1413, 41 >= 42u)
+9:     ✗ le matches unsigned int FAILED (unit-test.cpp:1418, 43 <= 42u)
+9:   ✗ Combinatorial integrals with signed int - test case FAILED (0 checks passed, 20 failed)
+9:
+9:   • Combinatorial integrals with unsigned int - test case started
+9:     ✗ ne matches signed long long FAILED (unit-test.cpp:1330, 42u != 42ll)
+9:     ✗ ne matches unsigned long long FAILED (unit-test.cpp:1335, 42u != 42ull)
+9:     ✗ ne matches signed long FAILED (unit-test.cpp:1340, 42u != 42l)
+9:     ✗ ne matches unsigned long FAILED (unit-test.cpp:1344, 42u != 42ul)
+9:     ✗ ne matches signed int FAILED (unit-test.cpp:1349, 42u != 42)
+9:     ✗ ne matches unsigned int FAILED (unit-test.cpp:1353, 42u != 42u)
+9:     ✗ ne matches signed short FAILED (unit-test.cpp:1357, 42u != 42s)
+9:     ✗ ne matches unsigned short FAILED (unit-test.cpp:1361, 42u != 42us)
+9:     ✗ ne matches signed char FAILED (unit-test.cpp:1366, 42u != 42c)
+9:     ✗ ne matches unsigned char FAILED (unit-test.cpp:1370, 42u != 42uc)
+9:     ✗ gt matches signed int FAILED (unit-test.cpp:1377, 42u > 42)
+9:     ✗ lt matches signed int FAILED (unit-test.cpp:1381, 42u < 42)
+9:     ✗ eq matches signed int FAILED (unit-test.cpp:1385, 43u == 42)
+9:     ✗ ge matches signed int FAILED (unit-test.cpp:1390, 41u >= 42)
+9:     ✗ le matches signed int FAILED (unit-test.cpp:1395, 43u <= 42)
+9:     ✗ gt matches unsigned int FAILED (unit-test.cpp:1400, 42u > 42u)
+9:     ✗ lt matches unsigned int FAILED (unit-test.cpp:1404, 42u < 42u)
+9:     ✗ eq matches unsigned int FAILED (unit-test.cpp:1408, 43u == 42u)
+9:     ✗ ge matches unsigned int FAILED (unit-test.cpp:1413, 41u >= 42u)
+9:     ✗ le matches unsigned int FAILED (unit-test.cpp:1418, 43u <= 42u)
+9:   ✗ Combinatorial integrals with unsigned int - test case FAILED (0 checks passed, 20 failed)
+9:
+9:   • Combinatorial integrals with signed short - test case started
+9:     ✗ ne matches signed long long FAILED (unit-test.cpp:1330, 42 != 42ll)
+9:     ✗ ne matches unsigned long long FAILED (unit-test.cpp:1335, 42 != 42ull)
+9:     ✗ ne matches signed long FAILED (unit-test.cpp:1340, 42 != 42l)
+9:     ✗ ne matches unsigned long FAILED (unit-test.cpp:1344, 42 != 42ul)
+9:     ✗ ne matches signed int FAILED (unit-test.cpp:1349, 42 != 42)
+9:     ✗ ne matches unsigned int FAILED (unit-test.cpp:1353, 42 != 42u)
+9:     ✗ ne matches signed short FAILED (unit-test.cpp:1357, 42 != 42s)
+9:     ✗ ne matches unsigned short FAILED (unit-test.cpp:1361, 42 != 42us)
+9:     ✗ ne matches signed char FAILED (unit-test.cpp:1366, 42 != 42c)
+9:     ✗ ne matches unsigned char FAILED (unit-test.cpp:1370, 42 != 42uc)
+9:     ✗ gt matches signed int FAILED (unit-test.cpp:1377, 42 > 42)
+9:     ✗ lt matches signed int FAILED (unit-test.cpp:1381, 42 < 42)
+9:     ✗ eq matches signed int FAILED (unit-test.cpp:1385, 43 == 42)
+9:     ✗ ge matches signed int FAILED (unit-test.cpp:1390, 41 >= 42)
+9:     ✗ le matches signed int FAILED (unit-test.cpp:1395, 43 <= 42)
+9:     ✗ gt matches unsigned int FAILED (unit-test.cpp:1400, 42 > 42u)
+9:     ✗ lt matches unsigned int FAILED (unit-test.cpp:1404, 42 < 42u)
+9:     ✗ eq matches unsigned int FAILED (unit-test.cpp:1408, 43 == 42u)
+9:     ✗ ge matches unsigned int FAILED (unit-test.cpp:1413, 41 >= 42u)
+9:     ✗ le matches unsigned int FAILED (unit-test.cpp:1418, 43 <= 42u)
+9:   ✗ Combinatorial integrals with signed short - test case FAILED (0 checks passed, 20 failed)
+9:
+9:   • Combinatorial integrals with unsigned short - test case started
+9:     ✗ ne matches signed long long FAILED (unit-test.cpp:1330, 42u != 42ll)
+9:     ✗ ne matches unsigned long long FAILED (unit-test.cpp:1335, 42u != 42ull)
+9:     ✗ ne matches signed long FAILED (unit-test.cpp:1340, 42u != 42l)
+9:     ✗ ne matches unsigned long FAILED (unit-test.cpp:1344, 42u != 42ul)
+9:     ✗ ne matches signed int FAILED (unit-test.cpp:1349, 42u != 42)
+9:     ✗ ne matches unsigned int FAILED (unit-test.cpp:1353, 42u != 42u)
+9:     ✗ ne matches signed short FAILED (unit-test.cpp:1357, 42u != 42s)
+9:     ✗ ne matches unsigned short FAILED (unit-test.cpp:1361, 42u != 42us)
+9:     ✗ ne matches signed char FAILED (unit-test.cpp:1366, 42u != 42c)
+9:     ✗ ne matches unsigned char FAILED (unit-test.cpp:1370, 42u != 42uc)
+9:     ✗ gt matches signed int FAILED (unit-test.cpp:1377, 42u > 42)
+9:     ✗ lt matches signed int FAILED (unit-test.cpp:1381, 42u < 42)
+9:     ✗ eq matches signed int FAILED (unit-test.cpp:1385, 43u == 42)
+9:     ✗ ge matches signed int FAILED (unit-test.cpp:1390, 41u >= 42)
+9:     ✗ le matches signed int FAILED (unit-test.cpp:1395, 43u <= 42)
+9:     ✗ gt matches unsigned int FAILED (unit-test.cpp:1400, 42u > 42u)
+9:     ✗ lt matches unsigned int FAILED (unit-test.cpp:1404, 42u < 42u)
+9:     ✗ eq matches unsigned int FAILED (unit-test.cpp:1408, 43u == 42u)
+9:     ✗ ge matches unsigned int FAILED (unit-test.cpp:1413, 41u >= 42u)
+9:     ✗ le matches unsigned int FAILED (unit-test.cpp:1418, 43u <= 42u)
+9:   ✗ Combinatorial integrals with unsigned short - test case FAILED (0 checks passed, 20 failed)
+9:
+9:   • Combinatorial integrals with signed short - test case started
+9:     ✗ ne matches signed long long FAILED (unit-test.cpp:1330, 42s != 42ll)
+9:     ✗ ne matches unsigned long long FAILED (unit-test.cpp:1335, 42s != 42ull)
+9:     ✗ ne matches signed long FAILED (unit-test.cpp:1340, 42s != 42l)
+9:     ✗ ne matches unsigned long FAILED (unit-test.cpp:1344, 42s != 42ul)
+9:     ✗ ne matches signed int FAILED (unit-test.cpp:1349, 42s != 42)
+9:     ✗ ne matches unsigned int FAILED (unit-test.cpp:1353, 42s != 42u)
+9:     ✗ ne matches signed short FAILED (unit-test.cpp:1357, 42s != 42s)
+9:     ✗ ne matches unsigned short FAILED (unit-test.cpp:1361, 42s != 42us)
+9:     ✗ ne matches signed char FAILED (unit-test.cpp:1366, 42s != 42c)
+9:     ✗ ne matches unsigned char FAILED (unit-test.cpp:1370, 42s != 42uc)
+9:     ✗ gt matches signed int FAILED (unit-test.cpp:1377, 42s > 42)
+9:     ✗ lt matches signed int FAILED (unit-test.cpp:1381, 42s < 42)
+9:     ✗ eq matches signed int FAILED (unit-test.cpp:1385, 43s == 42)
+9:     ✗ ge matches signed int FAILED (unit-test.cpp:1390, 41s >= 42)
+9:     ✗ le matches signed int FAILED (unit-test.cpp:1395, 43s <= 42)
+9:     ✗ gt matches unsigned int FAILED (unit-test.cpp:1400, 42s > 42u)
+9:     ✗ lt matches unsigned int FAILED (unit-test.cpp:1404, 42s < 42u)
+9:     ✗ eq matches unsigned int FAILED (unit-test.cpp:1408, 43s == 42u)
+9:     ✗ ge matches unsigned int FAILED (unit-test.cpp:1413, 41s >= 42u)
+9:     ✗ le matches unsigned int FAILED (unit-test.cpp:1418, 43s <= 42u)
+9:   ✗ Combinatorial integrals with signed short - test case FAILED (0 checks passed, 20 failed)
+9:
+9:   • Combinatorial integrals with unsigned short - test case started
+9:     ✗ ne matches signed long long FAILED (unit-test.cpp:1330, 42us != 42ll)
+9:     ✗ ne matches unsigned long long FAILED (unit-test.cpp:1335, 42us != 42ull)
+9:     ✗ ne matches signed long FAILED (unit-test.cpp:1340, 42us != 42l)
+9:     ✗ ne matches unsigned long FAILED (unit-test.cpp:1344, 42us != 42ul)
+9:     ✗ ne matches signed int FAILED (unit-test.cpp:1349, 42us != 42)
+9:     ✗ ne matches unsigned int FAILED (unit-test.cpp:1353, 42us != 42u)
+9:     ✗ ne matches signed short FAILED (unit-test.cpp:1357, 42us != 42s)
+9:     ✗ ne matches unsigned short FAILED (unit-test.cpp:1361, 42us != 42us)
+9:     ✗ ne matches signed char FAILED (unit-test.cpp:1366, 42us != 42c)
+9:     ✗ ne matches unsigned char FAILED (unit-test.cpp:1370, 42us != 42uc)
+9:     ✗ gt matches signed int FAILED (unit-test.cpp:1377, 42us > 42)
+9:     ✗ lt matches signed int FAILED (unit-test.cpp:1381, 42us < 42)
+9:     ✗ eq matches signed int FAILED (unit-test.cpp:1385, 43us == 42)
+9:     ✗ ge matches signed int FAILED (unit-test.cpp:1390, 41us >= 42)
+9:     ✗ le matches signed int FAILED (unit-test.cpp:1395, 43us <= 42)
+9:     ✗ gt matches unsigned int FAILED (unit-test.cpp:1400, 42us > 42u)
+9:     ✗ lt matches unsigned int FAILED (unit-test.cpp:1404, 42us < 42u)
+9:     ✗ eq matches unsigned int FAILED (unit-test.cpp:1408, 43us == 42u)
+9:     ✗ ge matches unsigned int FAILED (unit-test.cpp:1413, 41us >= 42u)
+9:     ✗ le matches unsigned int FAILED (unit-test.cpp:1418, 43us <= 42u)
+9:   ✗ Combinatorial integrals with unsigned short - test case FAILED (0 checks passed, 20 failed)
+9:
+9:   • Combinatorial integrals with signed char - test case started
+9:     ✗ ne matches signed long long FAILED (unit-test.cpp:1330, 42c != 42ll)
+9:     ✗ ne matches unsigned long long FAILED (unit-test.cpp:1335, 42c != 42ull)
+9:     ✗ ne matches signed long FAILED (unit-test.cpp:1340, 42c != 42l)
+9:     ✗ ne matches unsigned long FAILED (unit-test.cpp:1344, 42c != 42ul)
+9:     ✗ ne matches signed int FAILED (unit-test.cpp:1349, 42c != 42)
+9:     ✗ ne matches unsigned int FAILED (unit-test.cpp:1353, 42c != 42u)
+9:     ✗ ne matches signed short FAILED (unit-test.cpp:1357, 42c != 42s)
+9:     ✗ ne matches unsigned short FAILED (unit-test.cpp:1361, 42c != 42us)
+9:     ✗ ne matches signed char FAILED (unit-test.cpp:1366, 42c != 42c)
+9:     ✗ ne matches unsigned char FAILED (unit-test.cpp:1370, 42c != 42uc)
+9:     ✗ gt matches signed int FAILED (unit-test.cpp:1377, 42c > 42)
+9:     ✗ lt matches signed int FAILED (unit-test.cpp:1381, 42c < 42)
+9:     ✗ eq matches signed int FAILED (unit-test.cpp:1385, 43c == 42)
+9:     ✗ ge matches signed int FAILED (unit-test.cpp:1390, 41c >= 42)
+9:     ✗ le matches signed int FAILED (unit-test.cpp:1395, 43c <= 42)
+9:     ✗ gt matches unsigned int FAILED (unit-test.cpp:1400, 42c > 42u)
+9:     ✗ lt matches unsigned int FAILED (unit-test.cpp:1404, 42c < 42u)
+9:     ✗ eq matches unsigned int FAILED (unit-test.cpp:1408, 43c == 42u)
+9:     ✗ ge matches unsigned int FAILED (unit-test.cpp:1413, 41c >= 42u)
+9:     ✗ le matches unsigned int FAILED (unit-test.cpp:1418, 43c <= 42u)
+9:   ✗ Combinatorial integrals with signed char - test case FAILED (0 checks passed, 20 failed)
+9:
+9:   • Combinatorial integrals with unsigned char - test case started
+9:     ✗ ne matches signed long long FAILED (unit-test.cpp:1330, 42uc != 42ll)
+9:     ✗ ne matches unsigned long long FAILED (unit-test.cpp:1335, 42uc != 42ull)
+9:     ✗ ne matches signed long FAILED (unit-test.cpp:1340, 42uc != 42l)
+9:     ✗ ne matches unsigned long FAILED (unit-test.cpp:1344, 42uc != 42ul)
+9:     ✗ ne matches signed int FAILED (unit-test.cpp:1349, 42uc != 42)
+9:     ✗ ne matches unsigned int FAILED (unit-test.cpp:1353, 42uc != 42u)
+9:     ✗ ne matches signed short FAILED (unit-test.cpp:1357, 42uc != 42s)
+9:     ✗ ne matches unsigned short FAILED (unit-test.cpp:1361, 42uc != 42us)
+9:     ✗ ne matches signed char FAILED (unit-test.cpp:1366, 42uc != 42c)
+9:     ✗ ne matches unsigned char FAILED (unit-test.cpp:1370, 42uc != 42uc)
+9:     ✗ gt matches signed int FAILED (unit-test.cpp:1377, 42uc > 42)
+9:     ✗ lt matches signed int FAILED (unit-test.cpp:1381, 42uc < 42)
+9:     ✗ eq matches signed int FAILED (unit-test.cpp:1385, 43uc == 42)
+9:     ✗ ge matches signed int FAILED (unit-test.cpp:1390, 41uc >= 42)
+9:     ✗ le matches signed int FAILED (unit-test.cpp:1395, 43uc <= 42)
+9:     ✗ gt matches unsigned int FAILED (unit-test.cpp:1400, 42uc > 42u)
+9:     ✗ lt matches unsigned int FAILED (unit-test.cpp:1404, 42uc < 42u)
+9:     ✗ eq matches unsigned int FAILED (unit-test.cpp:1408, 43uc == 42u)
+9:     ✗ ge matches unsigned int FAILED (unit-test.cpp:1413, 41uc >= 42u)
+9:     ✗ le matches unsigned int FAILED (unit-test.cpp:1418, 43uc <= 42u)
+9:   ✗ Combinatorial integrals with unsigned char - test case FAILED (0 checks passed, 20 failed)
+9:
+9: ✗ Failed combinatorial integrals - test suite FAILED (0 checks passed, 200 failed, in 10 test cases)
+9:
+9: • Combinatorial floats - test suite started
+9:
+9:   ✓ Combinatorial floats - test case passed (11 checks)
+9:   ✓ Combinatorial doubles - test case passed (11 checks)
+9:
+9: ✓ Combinatorial floats - test suite passed (22 checks in 2 test cases)
+9:
+9: • Miscellaneous - test suite started
+9:
+9:   ✓ Arrays - test case passed (4 checks)
+9:
+9:   • Arrays failed - test case started
+9:     ✗ array{ 42 } ne array{ 42 } FAILED (unit-test.cpp:1735, {42} != {42})
+9:     ✗ array{ 42 } eq array{ 43 } FAILED (unit-test.cpp:1739, {42} == {43})
+9:     ✗ array{ 1, 2 } ne array{ 1, 2 } FAILED (unit-test.cpp:1743, {1, 2} != {1, 2})
+9:     ✗ array{ 1, 2, 3 } eq array{ 1, 2, 4 } FAILED (unit-test.cpp:1747, {1, 2, 3} == {1, 2, 4})
+9:   ✗ Arrays failed - test case FAILED (0 checks passed, 4 failed)
+9:
+9:   ✓ Vectors - test case passed (6 checks)
+9:
+9:   • Vectors failed - test case started
+9:     ✗ vector{ } != vector{ } FAILED (unit-test.cpp:1794, {} != {})
+9:     ✗ FAILED (unit-test.cpp:1798, {} != {})
+9:     ✗ vector{ 42 } != vector{ 42 } FAILED (unit-test.cpp:1801, {42} != {42})
+9:     ✗ vector{ 42 } == vector{ 43 } FAILED (unit-test.cpp:1805, {42} == {43})
+9:     ✗ vector{ 1, 2 } != vector{ 1, 2 } FAILED (unit-test.cpp:1809, {1, 2} != {1, 2})
+9:     ✗ vector{ 1, 2, 3 } == vector{ 1, 2, 4 } FAILED (unit-test.cpp:1813, {1, 2, 3} == {1, 2, 4})
+9:   ✗ Vectors failed - test case FAILED (0 checks passed, 6 failed)
+9:
+9: ✗ Miscellaneous - test suite FAILED (10 checks passed, 10 failed, in 4 test cases)
+9: Overall, the µTest++ unit tests were successful!
+9:
+ 9/12 Test  #9: unit-test ........................   Passed    0.01 sec
+test 10
+      Start 10: unit-test --verbose
+
+10: Test command: /home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/unit-test "--verbose"
+10: Working Directory: /home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
+10: Test timeout computed to be: 10000000
+10: Built with GCC 12.2.0, with exceptions.
+10:
+10: µTest++ unit tests; some checks are expected to fail.
+10:
+10: • Main - test suite started
+10:
+10:   ✓ Assumption 1
+10:
+10:   • Initial counters - test case started
+10:   ✓ Initial counters - test case passed (0 checks)
+10:
+10:   • expect(true) - test case started
+10:     ✓ true
+10:     ✓ Assumption 2
+10:     ✓ TRUE
+10:   ✓ expect(true) - test case passed (3 checks)
+10:
+10:   ✓ Assumption 3
+10:   ✓ Assumption 4
+10:
+10:   • expect(false) - test case started
+10:     ✗ FAILED (unit-test.cpp:369)
+10:     ✗ false FAILED (unit-test.cpp:372)
+10:   ✗ expect(false) - test case FAILED (0 checks passed, 2 failed)
+10:
+10:   • Integer comparisons - test case started
+10:     ✓ actual == 42
+10:     ✓ actual+1 != 42
+10:     ✓ actual-1 < 42
+10:     ✓ actual <= 42
+10:     ✓ actual+1 > 42
+10:     ✓ actual >= 42
+10:     ✓ 42 == 42
+10:     ✓ 42 == 42_i
+10:   ✓ Integer comparisons - test case passed (8 checks)
+10:
+10:   • Failed integer comparisons - test case started
+10:     ✗ actual != 42 FAILED (unit-test.cpp:429, 42 != 42)
+10:     ✗ actual+1 == 42 FAILED (unit-test.cpp:432, 43 == 42)
+10:     ✗ actual-1 >= 42 FAILED (unit-test.cpp:435, 41 >= 42)
+10:     ✗ actual > 42 FAILED (unit-test.cpp:438, 42 > 42)
+10:     ✗ actual+1 <= 42 FAILED (unit-test.cpp:441, 43 <= 42)
+10:     ✗ actual < 42 FAILED (unit-test.cpp:444, 42 < 42)
+10:     ✗ FAILED (unit-test.cpp:450, 42 != 42)
+10:     ✗ 42 != 42_i FAILED (unit-test.cpp:453, 42 != 42)
+10:   ✗ Failed integer comparisons - test case FAILED (0 checks passed, 8 failed)
+... (output cut) ...
+10: Overall, the µTest++ unit tests were successful!
+10:
+10/12 Test #10: unit-test --verbose ..............   Passed    0.00 sec
+test 11
+      Start 11: unit-test --quiet
+
+11: Test command: /home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/unit-test "--quiet"
+11: Working Directory: /home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
+11: Test timeout computed to be: 10000000
+11:
+11: ✗ Main - test suite FAILED (92 checks passed, 71 failed, in 23 test cases)
+11: ✓ Combinatorial integrals - test suite passed (200 checks in 10 test cases)
+11: ✗ Failed combinatorial integrals - test suite FAILED (0 checks passed, 200 failed, in 10 test cases)
+11: ✓ Combinatorial floats - test suite passed (22 checks in 2 test cases)
+11: ✗ Miscellaneous - test suite FAILED (10 checks passed, 10 failed, in 4 test cases)
+11/12 Test #11: unit-test --quiet ................   Passed    0.00 sec
+test 12
+      Start 12: unit-test --silent
+
+12: Test command: /home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/unit-test "--silent"
+12: Working Directory: /home/ilg/Work/micro-os-plus/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
+12: Test timeout computed to be: 10000000
+12:
+12/12 Test #12: unit-test --silent ...............   Passed    0.00 sec
 ```
 
+All possible verbosity modes are tested: default, verbose, quiet, and silent
+(for brevity, the full verbose output is not shown here).

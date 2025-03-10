@@ -1,6 +1,8 @@
 {/* DO NOT EDIT! */}
 {/* Automatically generated from docusaurus-template-liquid/templates/docusaurus. */}
 
+import BranchesDetails from './_branches-details.mdx'
+
 {/* ------------------------------------------------------------------------ */}
 
 ## Get project sources
@@ -9,36 +11,33 @@ The project is hosted on GitHub:
 
 - https://github.com/micro-os-plus/micro-test-plus-xpack.git
 
-The project uses multiple branches:
-
-- `master`, not actively used
-- `xpack`, with the latest stable version (default)
-- `xpack-development`, with the current development version
-- `website`, with the current content of the website; pushes to this branch automatically trigger publishes the main website
-- `webpreview`, with the current content of the preview website; pushes to this branch automatically trigger publishes the preview website
+<BranchesDetails />
 
 To clone the stable branch (`xpack`), run the following commands in a
-terminal (on Windows use the Git Bash console):
+terminal (on Windows use the _Git Bash_ console):
 
 ```sh
-rm -f ~/Work/micro-os-plus/micro-test-plus-xpack.git && \
-mkdir ~/Work/micro-os-plus && \
+rm -rf ~/Work/micro-os-plus/micro-test-plus-xpack.git && \
+mkdir -p ~/Work/micro-os-plus && \
 git clone \
   --branch xpack \
   https://github.com/micro-os-plus/micro-test-plus-xpack.git \
   ~/Work/micro-os-plus/micro-test-plus-xpack.git
 ```
 
-For **development** purposes, clone the `xpack-development` branch:
+<details>
+<summary>For development purposes, clone the `xpack-development` branch.</summary>
 
 ```sh
-rm -f ~/Work/micro-os-plus/micro-test-plus-xpack.git && \
-mkdir ~/Work/micro-os-plus && \
+rm -rf ~/Work/micro-os-plus/micro-test-plus-xpack.git && \
+mkdir -p ~/Work/micro-os-plus && \
 git clone \
   --branch xpack-development \
   https://github.com/micro-os-plus/micro-test-plus-xpack.git \
   ~/Work/micro-os-plus/micro-test-plus-xpack.git
 ```
+
+</details>
 
 Or, if the repo was already cloned:
 
@@ -46,7 +45,16 @@ Or, if the repo was already cloned:
 git -C ~/Work/micro-os-plus/micro-test-plus-xpack.git pull
 ```
 
-To link it to the user global xPack store:
+:::tip
+
+To contribute Pull Requests, fork the project and be sure the **Copy the master branch only** is **disabled**.
+
+Use the `xpack-development` branch and be sure you contribute the
+Pull Requests back to the `xpack-development` branch.
+
+:::
+
+To add a link from the user global xPack store to it:
 
 ```sh
 xpm link -C ~/Work/micro-os-plus/micro-test-plus-xpack.git
