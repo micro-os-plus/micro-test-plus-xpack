@@ -1,72 +1,14 @@
-@page testing Testing
 
-@tableofcontents
+{/* ------------------------------------------------------------------------ */}
 
-[![CI on Push](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/ci.yml/badge.svg)](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/ci.yml)
+### Tests details
 
-## Overview
-
-The µOS++ testing strategy is to compile the sources with as many
-toolchains as possible, and run them on as many platforms as possible.
-
-## Platforms
-
-The supported test platforms are:
-
-- `platforms/native` - run the test applications as **native processes**
-  on the development machine
-- `platforms/qemu-cortex-m0` - run the tests as fully semihosted
-  **Cortex-M0** applications on a QEMU **mps2-an385** emulated board
-  (an Arm Cortex-M3 development board)
-- `platforms/qemu-cortex-m3` - run the tests as fully semihosted
-  **Cortex-M3** applications on a QEMU **mps2-an385** emulated board
-  (an Arm Cortex-M3 development board)
-- `platforms/qemu-cortex-m4f` - run the tests as fully semihosted
-  **Cortex-M4** applications on a QEMU **mps2-an386** emulated board
-  (an Arm Cortex-M4 development board)
-- `platforms/qemu-cortex-m7f` - run the tests as fully semihosted
-  **Cortex-M7** applications on a QEMU **mps2-an500** emulated board
-  (an Arm Cortex-M7 development board)
-- `platforms/qemu-cortex-a15` - run the tests as fully semihosted
-  **Cortex-A15** applications on a QEMU **virt** emulated board
-- `platforms/qemu-cortex-a72` - run the tests as fully semihosted
-  **Cortex-A72** (64-bit) applications on a QEMU **virt** emulated board
-- `platforms/qemu-riscv-rv32imac` - run the tests as fully semihosted
-  **RISC-V RV32IMAC** applications on a QEMU **virt** emulated board
-- `platforms/qemu-riscv-rv64imafdc` - run the tests as fully semihosted
-  **RISC-V RV64IMAFDC** applications on a QEMU **virt** emulated board
-
-The tests can be executed on:
-
-- GNU/Linux (Intel and Arm)
-- macOS (Intel and Apple Silicon)
-- Windows
-
-The build configurations use exactly the same source files on all platforms,
-without changes. On embedded platforms, the applications interact with the
-host via the
-[Arm semihosting mechanism](https://github.com/ARM-software/abi-aa/blob/main/semihosting/semihosting.rst).
-
-## Toolchains
-
-To improve source code portability, the builds are repeated with multiple
-toolchains, even with multiple versions of the same toolchain.
-
-The following toolchains are used:
-
-- gcc 11, 12, 13 (native)
-- clang 13, 14, 15, 16, 17 (native)
-- arm-none-eabi-gcc 11, 12, 13 (Cortex-M, AArch32)
-- aarch64-none-elf-gcc 11, 12, 13 (AArch64)
-- risc-none-elf-gcc 11, 12, 13 (RISC-V 32/64)
-
-## Tests details
-
-### sample-test
+#### sample-test
 
 The [sample-test.cpp](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/tests/src/sample-test.cpp)
-file is a simple application to demonstrate how to call some of the
-primitives available in the library to write a simple test.
+file is a straightforward application designed to demonstrate
+how to utilise some of the primitives available in the library
+to write a simple test.
 
 A typical run looks like:
 
@@ -118,14 +60,13 @@ test 1
 1: ✓ Args - test suite passed (5 checks in 1 test case)
 ```
 
-In addition to the default run, there are two more, one more verbose, and one
-silent, which only returns the test result.
+In addition to the default run, there are two additional modes: one more verbose and one silent, which only returns the test result.
 
-### unit-test
+#### unit-test
 
 The [unit-test.cpp](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/tests/src/unit-test.cpp)
-file is an exhaustive test trying to validate that all the library
-functions work as expected.
+file is an exhaustive test designed to validate that all the
+library functions operate as expected.
 
 A typical run looks like:
 
@@ -572,113 +513,3 @@ test 5
 5/8 Test #5: unit-test ........................   Passed    0.01 sec
 ```
 
-## Continuous Integration
-
-There is a GitHub Actions CI
-[workflow](https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/ci.yml)
-that runs a selection of the
-tests on every push; for details see
-[ci.yml](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/.github/workflows/ci.yml).
-
-## Manual runs
-
-The tests can be executed manually on any of the supported
-platforms:
-
-- GNU/Linux (Intel and Arm, **GLIBC>=2.27**); to run the native
-tests, a C++ development environment is required
-(on Ubuntu install `build-essential`)
-- macOS (Intel >= **10.13** and Apple Silicon > **11.1**);
-as C++ development environment use **Command Line Tools**
-- Windows 7 with the Universal C Runtime (UCRT), Windows 8, Windows 10,
-Windows 11
-
-### Prerequisites
-
-A recent **Node.js** (>=16) run environment. For instructions on how to
-install it, see the [prerequisites](https://xpack.github.io/install/) page.
-
-With **npm** available, install **xpm**:
-
-```sh
-npm install --global xpm@latest
-```
-
-### Clone the project
-
-To clone the development branch (`xpack-development`), run the following commands in a
-terminal (on Windows use the _Git Bash_ console):
-
-```sh
-rm -rf ~/Work/micro-os-plus/micro-test-plus-xpack.git && \
-mkdir -p ~/Work/micro-os-plus && \
-git clone \
-  --branch xpack-development \
-  https://github.com/micro-os-plus/micro-test-plus-xpack.git \
-  ~/Work/micro-os-plus/micro-test-plus-xpack.git
-```
-
-### Run the tests
-
-There are multiple predefined actions, to run various selections of tests,
-from a single run with the system compiler, to all possible tests.
-
-@note
-On the first run, the install step might take quite some time,
-since it has to download the toolchain archives, which are relatively
-large, up to hundreds of MB.
-
-To run the tests with the system compiler:
-
-```sh
-xpm run install -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
-xpm run test -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
-```
-
-To run a selection of tests with the latest versions of the toolchains:
-
-```sh
-xpm run install-selected -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
-xpm run test-selected -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
-```
-
-To run all tests with the latest versions of the toolchains:
-
-```sh
-xpm run install-latest -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
-xpm run test-latest -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
-```
-
-To run all tests with all toolchain versions:
-
-```sh
-xpm run install-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
-xpm run test-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
-```
-
-### Known problems
-
-The native clang13 and clang14 tests fail on Arch & derivatives machines, with
-an error related to a missing symbol in `libunwind`.
-
-The issue is caused by older clang releases returning the
-paths in `-print-search-dirs` in a wrong order,
-which results in including the wrong
-library from the system instead of the toolchain library.
-
-### Cleanups
-
-To do a deep cleanup in order to free space or to restart the tests
-from scratch:
-
-```sh
-npm install -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
-xpm run deep-clean -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
-```
-
-@note
-All dependencies installed by xpm are located in the home folder and
-can be uninstalled by simply removing the folders:
-- `~/.local/xPacks` and `~/.cache/xpacks` on GNU/Linux,
-- `~/Library/xPacks` and `~/Library/Caches/xPacks` on macOS,
-- `%%APPDATA%\xPacks` and `%%LOCALAPPDATA%\Caches\xPacks` on Windows.

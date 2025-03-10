@@ -2,6 +2,7 @@
 // Automatically generated from docusaurus-template-liquid/templates/docusaurus.
 
 import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+import {customDocsGettingStartedSidebarCategory} from "./sidebar-docs-getting-started-custom";
 
 /**
  * Creating a sidebar enables you to:
@@ -16,15 +17,11 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 const sidebars: SidebarsConfig = {
 
   docsSidebar: [
-    {
-      type: 'doc',
-      id: 'getting-started/index',
-      label: 'Getting Started'
-    },
+    customDocsGettingStartedSidebarCategory,
     {
       type: 'doc',
       id: 'install/index',
-      label: 'Install Guide'
+      label: 'Integration Guide'
     },
     {
       type: 'doc',

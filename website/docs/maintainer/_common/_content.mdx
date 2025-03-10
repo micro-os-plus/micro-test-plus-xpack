@@ -1,0 +1,86 @@
+{/* DO NOT EDIT! */}
+{/* Automatically generated from docusaurus-template-liquid/templates/docusaurus. */}
+
+{/* ------------------------------------------------------------------------ */}
+
+import CommonManualTests from '@site/docs/_common/_manual-tests.mdx';
+import CommonPrerequisites from '@site/docs/_common/_prerequisites.mdx';
+import CommonGetProjectSources from '@site/docs/_common/_get-project-sources.mdx';
+
+import CommonGetHelperSources from '../_common/_get-helper-sources.mdx';
+import CommonCodeFormatting from '../_common/_code-formatting.mdx';
+import CommonCheckGit from '../_common/_check-git.mdx';
+
+import CommonIncreaseVersionAndUpdateWebsite from '../_common/_increase-version-and-update-website.mdx';
+import CommonFixOpenIssues from '../_common/_fix-open-issues.mdx';
+import CommonUpdateChangelog from '../_common/_update-changelog.mdx';
+
+import CommonPrepareRelease from '../_common/_prepare-release.mdx'
+import CommonPrepareNewBlogPost from '../_common/_prepare-new-blog-post.mdx'
+import CommonPublishRelease from '../_common/_publish-release.mdx'
+import CommonPrepareAndPublishWebsite from '../_common/_prepare-and-publish-website.mdx'
+import CommonFinalUpdates from '../_common/_final-updates.mdx'
+import CommonShareOnTwitter from '../_common/_share-on-twitter.mdx'
+import CommonAnalytics from '../_common/_analytics.mdx';
+
+import ProjectMore from '../_project/_more.mdx';
+
+{/* ------------------------------------------------------------------------ */}
+
+<CommonPrerequisites nodeVersion="18.0.0" nodeVersionMajor="18"/>
+
+<CommonGetProjectSources />
+
+<CommonGetHelperSources helperProjectName="build-helper-xpack" />
+
+<CommonCodeFormatting />
+
+## Release schedule
+
+There are no fixed releases.
+
+## Prepare the new releases
+
+<CommonCheckGit />
+
+<CommonIncreaseVersionAndUpdateWebsite />
+
+<CommonFixOpenIssues />
+
+<CommonUpdateChangelog />
+
+### Push changes
+
+- reformat the source files that were changed
+- commit and push
+
+<CommonManualTests />
+
+<CommonPrepareRelease />
+
+### Test on all platforms
+
+In addition, it is possible to manually trigger a **test-all** job, that
+runs all available tests, on all supported platforms.
+
+For this:
+
+- ensure that the `xpack-development` branch is pushed
+- run the `trigger-workflow-test-all` action
+- wait for the **test-all** job to complete
+  (https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/test-all.yml)
+
+<CommonPrepareNewBlogPost />
+
+<CommonPublishRelease />
+
+<CommonPrepareAndPublishWebsite />
+
+<CommonFinalUpdates />
+
+<CommonShareOnTwitter />
+
+<CommonAnalytics />
+
+<ProjectMore />
+

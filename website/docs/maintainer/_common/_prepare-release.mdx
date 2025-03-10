@@ -1,0 +1,28 @@
+{/* DO NOT EDIT! */}
+{/* Automatically generated from docusaurus-template-liquid/templates/docusaurus. */}
+
+import CodeBlock from '@theme/CodeBlock';
+
+{/* ------------------------------------------------------------------------ */}
+
+### Prepare the release
+
+
+- switch to the `xpack-development` branch
+- if there are changes, **commit** all changes into the `xpack-development` branch
+- `npm run pack`; check the list of packaged files, possibly
+  update `.npmignore`
+
+### Set the new version
+
+<CodeBlock language="sh"> {
+`npm version 3.2.0
+`} </CodeBlock>
+
+- the `postversion` npm script should also update tags via
+  `git push origin --tags`; this should trigger CI
+
+### CI tests
+
+- **wait for CI tests to complete**
+- check https://github.com/micro-os-plus/micro-test-plus-xpack/actions

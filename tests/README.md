@@ -75,3 +75,11 @@ error: running 'xpm run build --config native-cmake-gcc11-release' failed
 ```
 /home/ilg/.local/xPacks/@xpack-dev-tools/gcc/13.2.0-1.1/.content/bin/../lib/gcc/aarch64-unknown-linux-gnu/13.2.0/../../../../aarch64-unknown-linux-gnu/bin/ld: warning: libpthread.so.0, needed by /home/ilg/.local/xPacks/@xpack-dev-tools/gcc/13.2.0-1.1/.content/bin/../lib/gcc/aarch64-unknown-linux-gnu/13.2.0/../../../../lib64/libstdc++.so, not found (try using -rpath or -rpath-link)
 ```
+
+- The native clang13 and clang14 tests fail on Arch & derivatives machines, with
+an error related to a missing symbol in `libunwind`.
+
+The issue is caused by older clang releases returning the
+paths in `-print-search-dirs` in a wrong order,
+which results in including the wrong
+library from the system instead of the toolchain library.

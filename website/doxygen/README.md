@@ -1,16 +1,16 @@
-# Website
+# Reference pages
 
-The project website is generated with [Doxygen](https://www.doxygen.nl).
+The project reference pages are generated with [Doxygen](https://www.doxygen.nl).
 
 ## Build
 
 To build the site, run the following from the top project folder:
 
 ```sh
-doxygen website/config.doxygen
+doxygen website/doxygen/config.doxygen
 ```
 
-The result is in `website/html`.
+The result is in `website/static/reference`.
 
 ## Content
 
@@ -18,7 +18,7 @@ The input folders are:
 
 - `src`
 - `include`
-- `website/pages/...`
+- `website/doxygen/pages/...`
 
 The order of listing the `pages` is also the order of rendering the
 entries in the sidebar.

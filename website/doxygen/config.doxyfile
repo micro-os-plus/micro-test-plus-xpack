@@ -1,3 +1,6 @@
+# DO NOT EDIT!
+# Automatically generated from docusaurus-template-liquid/templates/docusaurus.
+
 # Doxyfile 1.9.7 - project specific
 
 # This file describes the settings to be used by the documentation system
@@ -50,7 +53,7 @@ PROJECT_NUMBER = 3.2.0
 # for a project that appears at the top of each page and should give viewer a
 # quick idea about the purpose of the project. Keep the description short.
 
-PROJECT_BRIEF = "µTest++, a lightweight testing framework for embedded platforms"
+PROJECT_BRIEF = "The µTest++ Testing Framework"
 
 # With the PROJECT_LOGO tag one can specify a logo or an icon that is included
 # in the documentation. The maximum height of the logo should not exceed 55
@@ -99,11 +102,6 @@ WARN_AS_ERROR = YES
 INPUT = \
 ../../include \
 ../../src \
-pages/home.md \
-pages/testing.md \
-pages/change-log.md \
-pages/credits.md \
-pages/license.md \
 topics.doxyfile \
 
 
@@ -112,7 +110,7 @@ topics.doxyfile \
 # (index.html). This can be useful if you have a project on for instance GitHub
 # and want to reuse the introduction page also for the doxygen output.
 
-USE_MDFILE_AS_MAINPAGE = pages/home.md
+# USE_MDFILE_AS_MAINPAGE = pages/home.md
 
 # The INPUT_FILTER tag can be used to specify a program that doxygen should
 # invoke to filter for each input file. Doxygen will invoke the filter program
@@ -220,7 +218,6 @@ HTML_HEADER = \
 HTML_EXTRA_STYLESHEET = \
 ../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome.css \
 ../node_modules/@micro-os-plus/build-helper/doxygen/common-custom.css \
-../node_modules/@micro-os-plus/build-helper/doxygen/cards.css \
 
 # The HTML_EXTRA_FILES tag can be used to specify one or more extra images or
 # other source files which should be copied to the HTML output directory. Note

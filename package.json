@@ -60,7 +60,8 @@
   "topConfig": {
     "descriptiveName": "µTest++",
     "descriptiveLongName": "µTest++ Testing Framework",
-    "permalinkName": "micro-test-plus"
+    "permalinkName": "micro-test-plus",
+    "useDoxygen": "true"
   },
   "engines": {
     "node": " >=18.0.0"

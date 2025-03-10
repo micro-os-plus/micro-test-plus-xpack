@@ -5,13 +5,145 @@
 
 import CodeBlock from '@theme/CodeBlock';
 
-import Prerequisites from '../_common/_prerequisites.mdx';
-import GetProjectSources from '../_common/_get-project-sources.mdx';
+import CommonManualTests from '@site/docs/_common/_manual-tests.mdx';
+import CommonPrerequisites from '@site/docs/_common/_prerequisites.mdx';
+import CommonGetProjectSources from '@site/docs/_common/_get-project-sources.mdx';
 
-import TestResults from '../_project/_test-results.mdx';
-import StyleExceptions from '../_project/_style-exceptions.mdx';
-import CoverageExceptions from '../_project/_coverage-exceptions.mdx';
+import ProjectTestDetails from '../_project/_test-details.mdx';
 
 {/* ------------------------------------------------------------------------ */}
 
-TBD
+This project is written in modern C++ and, for reproducibility reasons,
+uses the xPack Framework tools during development.
+
+<CommonPrerequisites nodeVersion="18.0.0" nodeVersionMajor="18"/>
+
+<CommonGetProjectSources />
+
+:::tip
+
+To contribute Pull Requests, fork the project and be sure the **Copy the master branch only** is **disabled**.
+
+Use the `xpack-development` branch and be sure you contribute the
+Pull Requests back to the `xpack-development` branch.
+
+:::
+
+## Satisfy dependencies
+
+```sh
+npm install
+npm install -C tests
+xpm install -C tests
+```
+
+## Add links for development
+
+To facilitate the use of this library in other projects, add a link
+from the user global xPack store to this local development folder:
+
+```sh
+xpm link
+```
+
+And in the projects referring it:
+
+```sh
+xpm link xpm @micro-os-plus/micro-test-plus
+```
+
+## Language standard compliance
+
+The library is written in modern C++ and should be compiled with `-std=c++20`.
+
+As formatting style, the library uses a [.clang-format](https://clang.llvm.org/docs/ClangFormat.html) configuration file based on the GNU style.
+
+It is recommended to reformat the project before each commit.
+
+:::tip
+
+Visual Studio Code can directly utilise the `.clang-format` file in the
+**Format Document** command.
+
+:::
+
+
+## Tests
+
+The µOS++ testing strategy involves compiling the sources with
+as many toolchains as possible and executing them on a wide
+range of platforms.
+
+### Host Platforms
+
+The tests can be executed on any of the supported host
+platforms:
+
+- GNU/Linux (x64 and arm64, **GLIBC>=2.28**); to run the native
+tests, a C++ development environment is required
+(on Ubuntu install `build-essential`)
+- macOS (>= **11.0**);
+as C++ development environment use **Command Line Tools**
+- Windows 7 with the Universal C Runtime (UCRT), Windows 8, Windows 10,
+Windows 11
+
+### Target Platforms
+
+The supported target test platforms are:
+
+- `platforms/native` - run the test applications as **native processes**
+  on the development machine
+- `platforms/qemu-cortex-m0` - run the tests as fully semihosted
+  **Cortex-M0** applications on a QEMU **mps2-an385** emulated board
+  (an Arm Cortex-M3 development board)
+- `platforms/qemu-cortex-m3` - run the tests as fully semihosted
+  **Cortex-M3** applications on a QEMU **mps2-an385** emulated board
+  (an Arm Cortex-M3 development board)
+- `platforms/qemu-cortex-m4f` - run the tests as fully semihosted
+  **Cortex-M4** applications on a QEMU **mps2-an386** emulated board
+  (an Arm Cortex-M4 development board)
+- `platforms/qemu-cortex-m7f` - run the tests as fully semihosted
+  **Cortex-M7** applications on a QEMU **mps2-an500** emulated board
+  (an Arm Cortex-M7 development board)
+- `platforms/qemu-cortex-a15` - run the tests as fully semihosted
+  **Cortex-A15** applications on a QEMU **virt** emulated board
+- `platforms/qemu-cortex-a72` - run the tests as fully semihosted
+  **Cortex-A72** (64-bit) applications on a QEMU **virt** emulated board
+- `platforms/qemu-riscv-rv32imac` - run the tests as fully semihosted
+  **RISC-V RV32IMAC** applications on a QEMU **virt** emulated board
+- `platforms/qemu-riscv-rv64imafdc` - run the tests as fully semihosted
+  **RISC-V RV64IMAFDC** applications on a QEMU **virt** emulated board
+
+The build configurations use exactly the same source files on all platforms,
+without changes.
+
+### Semihosting
+
+On embedded platforms, the applications interact with the
+host via the
+[Arm semihosting mechanism](https://github.com/ARM-software/abi-aa/blob/main/semihosting/semihosting.rst).
+
+### Toolchains
+
+To enhance source code portability, the builds are repeatedly conducted
+using various toolchains, including multiple versions of the same toolchain.
+
+The following toolchains are used:
+
+- gcc (native)
+- clang (native)
+- arm-none-eabi-gcc (Cortex-M, AArch32)
+- aarch64-none-elf-gcc (AArch64)
+- risc-none-elf-gcc (RISC-V 32/64)
+
+<ProjectTestDetails />
+
+<CommonManualTests />
+
+
+### Continuous Integration (CI)
+
+The library is
+CI tested on every push via
+[GitHub Actions](https://github.com/micro-os-plus/micro-test-plus-xpack/actions),
+on Ubuntu, macOS, and Windows.

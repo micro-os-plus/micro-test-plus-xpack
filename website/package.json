@@ -80,17 +80,15 @@
   },
   "websiteConfig": {
     "tagline": "A C++ source code library with a lightweight testing framework for embedded systems",
-    "useDoxygen": "true",
     "hasDoxygenReference": "true",
     "skipAlgolia": "true",
     "isXpmDependency": "true",
-    "hasCustomDeveloper": "true",
-    "hasCustomGettingStarted": "true",
-    "customGettingStartedTitle": "Getting Started with the µTest++ Testing Framework",
+    "hasCustomGettingStartedSidebar": "true",
     "hasCustomInstall": "true",
-    "hasCustomMaintainer": "true",
-    "hasCustomAbout": "true",
-    "hasCustomUser": "true"
+    "customInstallLabel": "Integration Guide",
+    "customInstallTitle": "How to integrate the µTest++ Testing Framework into a project",
+    "hasCustomUser": "true",
+    "customUserTitle": "How to use the µTest++ Testing Framework"
   },
   "engines": {
     "node": ">=18.0"

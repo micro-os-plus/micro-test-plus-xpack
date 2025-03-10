@@ -243,7 +243,7 @@ const config: Config = {
               to: '/docs/getting-started'
             },
             {
-              label: 'Install Guide',
+              label: 'Integration Guide',
               to: '/docs/install'
             },
             {
@@ -277,7 +277,7 @@ const config: Config = {
           ],
         },
         {
-          to: 'pathname:///reference/',
+          to: 'pathname:///reference/topics.html',
           label: 'API',
           position: 'left',
         },

@@ -1,59 +1,52 @@
 
+import CodeBlock from '@theme/CodeBlock';
+
+import CommonXpmPackageRefresher from '../_common/_xpm-package-refresher.mdx';
+import CommonPrerequisites from '../_common/_prerequisites.mdx';
+import CommonInitialiseTheProject from '../_common/_initialise-the-project.mdx';
+import CommonInstallViaXpm from '../_common/_install-via-xpm.mdx';
+import CommonInstallViaNpm from '../_common/_install-via-npm.mdx';
+import CommonInstallationDetails from '../_common/_installation-details.mdx';
+import CommonReproducibilityAndDependencies from '../_common/_reproducibility-and-dependencies.mdx';
+import CommonUninstall from '../_common/_uninstall.mdx';
+import CommonManualInstall from '../_common/_manual-install.mdx';
+
 {/* ------------------------------------------------------------------------ */}
 
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/micro-os-plus/micro-test-plus-xpack)](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/package.json)
 [![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/micro-os-plus/micro-test-plus-xpack)](https://github.com/micro-os-plus/micro-test-plus-xpack/tags/)
 [![npm (scoped)](https://img.shields.io/npm/v/@micro-os-plus/micro-test-plus.svg?color=blue)](https://www.npmjs.com/package/@micro-os-plus/micro-test-plus/)
 
-As a source code library, this project can be integrated into another project
-in the traditional way,
-by either copying the relevant files into the target project, or by linking
-the entire project as a Git submodule.
+As an xpm package, the the most convenient way to integrate
+the **µTest++ Testing Framework** into a project is to
+**add it as a dependency** via **xpm**.
 
-However, things can be further automated and the most convenient way is
-to **add it as a dependency** to the project via **xpm**.
+However, as any source code library, this project can also be integrated into another project
+in the traditional manner,
+either by **copying the relevant files** into the target project, or by **linking**
+the entire project as a **Git submodule**.
 
-## Install with xpm/npm
+<CommonXpmPackageRefresher />
 
-Along with the source files, this project also includes a
-`package.json` file with the metadata that allows it to be identified as an
-**xpm/npm** package so that it can be directly installed from GitHub or
+## Automated install
+
+Alongside the source files, this project also includes a `package.json`
+file containing the metadata that identifies it as an **xpm**/**npm**
+package, enabling direct installation from GitHub or
 from the [npmjs.com](https://www.npmjs.com) registry as
 [`@micro-os-plus/micro-test-plus`](https://www.npmjs.com/package/@micro-os-plus/micro-test-plus).
 
-### Prerequisites
+<CommonPrerequisites />
 
-A recent [xpm](https://xpack.github.io/xpm/),
-which is a portable [Node.js](https://nodejs.org/) command line application
-that complements [npm](https://docs.npmjs.com)
-with several extra features specific to
-**C/C++ projects**.
+<CommonInitialiseTheProject />
 
-It is recommended to install/update to the latest version with:
+<CommonInstallViaXpm />
 
-```sh
-npm install --global xpm@latest
-```
+<CommonInstallationDetails />
 
-For details please follow the instructions in the
-[xPack install](https://xpack.github.io/install/) page.
+<CommonReproducibilityAndDependencies />
 
-@warning
-Be sure **xpm** is not installed with administrative rights.
-
-### xpm
-
-This project can be installed as a package from the
-`npmjs.com` registry with:
-
-```sh
-cd my-project
-xpm init # Unless a package.json is already present
-```
-
-```sh
-xpm install @micro-os-plus/micro-test-plus@latest
-```
+#### Install folder hierarchy
 
 After following the links, the result is a structure like this:
 
@@ -94,67 +87,32 @@ After following the links, the result is a structure like this:
 7 directories, 24 files
 ```
 
-### npm
+<CommonUninstall />
 
-The package can also be installed with [npm](https://docs.npmjs.com)
-or related, but
-the features specific to C/C++ projects will not be available;
-therefore, at least for consistency reasons, it is recommended
-to use **xpm**.
+<CommonInstallViaNpm />
 
-## Add as a Git submodule
-
-Besides manually copying the relevant files to the target
-project, which will later require extra maintenance efforts to keep the
-project up to date, a more convenient
-solution is to link the entire project as a **Git submodule**,
-for example below an `xpacks` folder:
-
-```sh
-cd my-project
-git init # Unless already a Git project
-mkdir -p xpacks
-
-git submodule add https://github.com/micro-os-plus/micro-test-plus-xpack.git \
-  xpacks/@micro-os-plus/micro-test-plus
-```
-
-## Project repository
-
-The project uses Git and is hosted on GitHub as
-https://github.com/micro-os-plus/micro-test-plus-xpack.git.
-
-## Branches
-
-Apart from the unused `master` branch, there are two active branches:
-
-- `xpack`, with the latest stable version (default)
-- `xpack-development`, with the current development version
-
-All development is done in the `xpack-development` branch, and contributions via
-Pull Requests should be directed to this branch.
-
-When new releases are published, the `xpack-development` branch is merged
-into the `xpack` branch.
+<CommonManualInstall />
 
 ## Build & integration info
 
 The project is written in C++, and the tests are expected to be
-written in C++ too, but the tested code can also be written in plain C.
+written in C++ as well, although the tested code can also be written
+in plain C.
 
-The source code was compiled natively with **GCC** and **LLVM/clang** and cross
-compiled on embedded **Arm** and **RISC-V** targets,
-and is expected to be warnings free.
+The source code has been compiled natively with **GCC** and **LLVM/clang**,
+and cross-compiled on embedded **Arm** and **RISC-V** targets,
+ensuring it is free from warnings.
 
-To run **on embedded platforms**, the test framework requires a minimum
-of support from the system, like writing to the
-output stream. Any such environments are acceptable, but for standalone
-tests the most common solution is to use **Arm semihosting**.
+To run on **embedded platforms**, the test framework requires
+minimal support from the system, such as writing to the output
+stream. Any such environment is acceptable, but for standalone
+tests, the most common solution is to use **Arm semihosting**.
 
-To ease the integration of this library into user projects, there
-are already made **CMake** and **meson** configuration files (see below).
+To facilitate the integration of this library into user projects,
+pre-made **CMake** and **meson** configuration files are provided
+(see below).
 
-For other build systems, consider the following details:
+For other build systems, please refer to the details provided below.
 
 ## Include folders
 
@@ -243,11 +201,9 @@ exe = executable(
 
 ## Status
 
-@note
 The **micro-test-plus** library is fully functional, and
 it is used to test several projects in the µOS++ framework.
-@n
-@n
+
 The project is CI tested on 32 and 64-bit bare-metal platforms (Arm Cortex-M0,
 Cortex-M3, Cortex-M4F, Cortex-M7F, Cortex-A15, Cortex-A72, RISC-V RV32IMAC,
 RV64IMAFDC), and natively, with GCC and LLVM/clang.
