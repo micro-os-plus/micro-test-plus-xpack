@@ -26,7 +26,7 @@ const actualBaseUrl = process.env.DOCUSAURUS_BASEURL ??
 // ----------------------------------------------------------------------------
 
 const config: Config = {
-  title: 'µTest++' +
+  title: 'µTest++ Testing Framework' +
     ((process.env.DOCUSAURUS_IS_PREVIEW === 'true') ? ' (preview)' : ''),
   tagline: 'A C++ source code library with a lightweight testing framework for embedded systems',
 

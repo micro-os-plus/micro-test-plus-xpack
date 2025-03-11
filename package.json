@@ -58,7 +58,7 @@
     "buildConfigurations": {}
   },
   "topConfig": {
-    "descriptiveName": "µTest++",
+    "descriptiveName": "µTest++ Testing Framework",
     "descriptiveLongName": "µTest++ Testing Framework",
     "permalinkName": "micro-test-plus",
     "useDoxygen": "true"
