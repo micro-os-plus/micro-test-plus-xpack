@@ -30,6 +30,9 @@ import CommonBuildWebsiteLocally from '../_common/_build-website-locally.mdx';
 import CommonCloseOpenIssues from '../_common/_close-open-issues.mdx';
 import CommonTagNpmLatest from '../_common/_tag-npm-latest.mdx';
 import CommonUpdateMainBranch from '../_common/_update-main-branch.mdx';
+import CommonPrepareWebsite from '../_common/_prepare-website.mdx';
+import CommonCloseMilestone from '../_common/_close-milestone.mdx';
+import CommonCiTests from '../_common/_ci-tests.mdx';
 
 import ProjectMore from '../_project/_more.mdx';
 
@@ -63,7 +66,7 @@ There are no fixed releases.
 
 <CommonUpdateChangelog />
 
-### Push changes
+### Reformat source files
 
 - reformat the source files that were changed
 - commit and push
@@ -74,10 +77,7 @@ There are no fixed releases.
 
 <CommonSetNewVersion />
 
-### CI tests
-
-- **wait for CI tests to complete**
-- check https://github.com/micro-os-plus/micro-test-plus-xpack/actions
+<CommonCiTests />
 
 ### Test on all platforms
 
@@ -110,18 +110,7 @@ npm run doxygen -C website
 
 The result is in the `website/static/reference` folder.
 
-### Prepare the website
-
-The documentation site is built with [Docusaurus](https://docusaurus.io) and
-published in the project
-[GitHub Pages](https://micro-os-plus.github.io/micro-test-plus-xpack/).
-
-- switch to the `xpack-development` branch
-- run the `website-generate-commons` npm script in the `website/package.json`
-  ```sh
-  npm run website-generate-commons -C website
-  ```
-- **commit** all changes
+<CommonPrepareWebsite />
 
 <CommonBuildWebsiteLocally />
 
@@ -133,11 +122,7 @@ published in the project
 
 <CommonCloseOpenIssues />
 
-### Close milestone
-
-In https://github.com/micro-os-plus/micro-test-plus-xpack/milestones:
-
-- close the current milestone.
+<CommonCloseMilestone />
 
 <CommonTagNpmLatest />
 
@@ -146,4 +131,3 @@ In https://github.com/micro-os-plus/micro-test-plus-xpack/milestones:
 <CommonAnalytics />
 
 <ProjectMore />
-
