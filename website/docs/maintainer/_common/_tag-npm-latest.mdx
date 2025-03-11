@@ -5,22 +5,6 @@ import CodeBlock from '@theme/CodeBlock';
 
 {/* ------------------------------------------------------------------------ */}
 
-## Final updates
-
-### Update the `master` branch
-
-In this Git repo:
-
-- select the `xpack` branch
-- **merge** the `xpack-development` branch into the `xpack` branch
-- **push** the `xpack` branch to GitHub
-
-### Close milestone
-
-In https://github.com/micro-os-plus/micro-test-plus-xpack/milestones:
-
-- close the current milestone.
-
 ### Check npm package tags
 
 ```sh
@@ -33,7 +17,16 @@ When the release is considered stable, promote it as `latest`:
 
 <CodeBlock language="sh"> {
 `npm dist-tag add @micro-os-plus/micro-test-plus@3.2.0 latest
-npm dist-tag ls @micro-os-plus/micro-test-plus
 `} </CodeBlock>
 
+Check the result:
 
+<CodeBlock language="sh"> {
+`npm dist-tag ls @micro-os-plus/micro-test-plus
+`} </CodeBlock>
+
+In case the release proves problematic and needs to be unpublished:
+
+<CodeBlock language="sh"> {
+`npm unpublish @micro-os-plus/micro-test-plus@3.2.0
+`} </CodeBlock>

@@ -7,21 +7,29 @@ import CommonManualTests from '@site/docs/_common/_manual-tests.mdx';
 import CommonPrerequisites from '@site/docs/_common/_prerequisites.mdx';
 import CommonGetProjectSources from '@site/docs/_common/_get-project-sources.mdx';
 import CommonGetHelperSources from '@site/docs/_common/_get-helper-sources-details.mdx';
+import CommonGenerateWebsiteCommons from '@site/docs/_common/_generate-website-commons.mdx';
 
 import CommonCodeFormatting from '../_common/_code-formatting.mdx';
 import CommonCheckGit from '../_common/_check-git.mdx';
 
-import CommonIncreaseVersionAndUpdateWebsite from '../_common/_increase-version-and-update-website.mdx';
+import CommonIncreaseVersion from '../_common/_increase-version.mdx';
+import CommonUpdateWebsiteConfig from '../_common/_update-website-config.mdx';
+import CommonStartLocalWebServer from '../_common/_start-local-web-server.mdx';
+
 import CommonFixOpenIssues from '../_common/_fix-open-issues.mdx';
 import CommonUpdateChangelog from '../_common/_update-changelog.mdx';
 
 import CommonPrepareRelease from '../_common/_prepare-release.mdx'
 import CommonPrepareNewBlogPost from '../_common/_prepare-new-blog-post.mdx'
 import CommonPublishRelease from '../_common/_publish-release.mdx'
-import CommonPrepareAndPublishWebsite from '../_common/_prepare-and-publish-website.mdx'
-import CommonFinalUpdates from '../_common/_final-updates.mdx'
 import CommonShareOnTwitter from '../_common/_share-on-twitter.mdx'
 import CommonAnalytics from '../_common/_analytics.mdx';
+import CommonSetNewVersion from '../_common/_set-new-version.mdx';
+import CommonPublishWebsite from '../_common/_publish-website.mdx';
+import CommonBuildWebsiteLocally from '../_common/_build-website-locally.mdx';
+import CommonCloseOpenIssues from '../_common/_close-open-issues.mdx';
+import CommonTagNpmLatest from '../_common/_tag-npm-latest.mdx';
+import CommonUpdateMainBranch from '../_common/_update-main-branch.mdx';
 
 import ProjectMore from '../_project/_more.mdx';
 
@@ -39,11 +47,17 @@ import ProjectMore from '../_project/_more.mdx';
 
 There are no fixed releases.
 
-## Prepare the new releases
+## Prepare a new release
 
 <CommonCheckGit />
 
-<CommonIncreaseVersionAndUpdateWebsite />
+<CommonIncreaseVersion />
+
+<CommonUpdateWebsiteConfig />
+
+<CommonGenerateWebsiteCommons />
+
+<CommonStartLocalWebServer />
 
 <CommonFixOpenIssues />
 
@@ -58,6 +72,13 @@ There are no fixed releases.
 
 <CommonPrepareRelease />
 
+<CommonSetNewVersion />
+
+### CI tests
+
+- **wait for CI tests to complete**
+- check https://github.com/micro-os-plus/micro-test-plus-xpack/actions
+
 ### Test on all platforms
 
 In addition, it is possible to manually trigger a **test-all** job, that
@@ -67,6 +88,9 @@ For this:
 
 - ensure that the `xpack-development` branch is pushed
 - run the `trigger-workflow-test-all` action
+  ```sh
+  xpm run trigger-workflow-test-all -C tests
+  ```
 - wait for the **test-all** job to complete
   (https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/test-all.yml)
 
@@ -74,9 +98,48 @@ For this:
 
 <CommonPublishRelease />
 
-<CommonPrepareAndPublishWebsite />
+## Publish the website
 
-<CommonFinalUpdates />
+### Re-generate the Doxygen pages
+
+Run the `doxygen` npm script:
+
+```sh
+npm run doxygen -C website
+```
+
+The result is in the `website/static/reference` folder.
+
+### Prepare the website
+
+The documentation site is built with [Docusaurus](https://docusaurus.io) and
+published in the project
+[GitHub Pages](https://micro-os-plus.github.io/micro-test-plus-xpack/).
+
+- switch to the `xpack-development` branch
+- run the `website-generate-commons` npm script in the `website/package.json`
+  ```sh
+  npm run website-generate-commons -C website
+  ```
+- **commit** all changes
+
+<CommonBuildWebsiteLocally />
+
+<CommonPublishWebsite />
+
+## Final updates
+
+<CommonUpdateMainBranch />
+
+<CommonCloseOpenIssues />
+
+### Close milestone
+
+In https://github.com/micro-os-plus/micro-test-plus-xpack/milestones:
+
+- close the current milestone.
+
+<CommonTagNpmLatest />
 
 <CommonShareOnTwitter />
 
