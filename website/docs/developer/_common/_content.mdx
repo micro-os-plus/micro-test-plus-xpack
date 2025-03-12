@@ -12,7 +12,7 @@ import ProjectTestDetails from '../_project/_test-details.mdx';
 
 {/* ------------------------------------------------------------------------ */}
 
-This project is written in modern C++ and, for reproducibility reasons,
+The project is written in modern C++ and, for reproducibility reasons,
 uses the xPack Framework tools during development.
 
 <CommonPrerequisites nodeVersion="18.0.0" nodeVersionMajor="18"/>
@@ -29,21 +29,6 @@ Run the following commands in the project folder:
 npm install
 npm install -C tests
 xpm install -C tests
-```
-
-## Add links for development
-
-To facilitate the use of this library in other projects, add a link
-from the user global xPack store to this local development folder:
-
-```sh
-xpm link
-```
-
-And in the projects referring it:
-
-```sh
-xpm link xpm @micro-os-plus/micro-test-plus
 ```
 
 ## Language standard compliance
@@ -133,7 +118,6 @@ The following toolchains are used:
 <ProjectTestDetails />
 
 <CommonManualTests />
-
 
 ### Continuous Integration (CI)
 
