@@ -84,9 +84,7 @@
     "skipAlgolia": "true",
     "isXpmDependency": "true",
     "hasCustomGettingStartedSidebar": "true",
-    "hasCustomInstall": "true",
     "customInstallLabel": "Integration Guide",
-    "customInstallTitle": "How to integrate the µTest++ Testing Framework into a project",
     "hasCustomUser": "true",
     "customUserTitle": "How to use the µTest++ Testing Framework"
   },

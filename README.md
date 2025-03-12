@@ -1,6 +1,6 @@
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/micro-os-plus/micro-test-plus-xpack)](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/package.json)
-[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/micro-os-plus/micro-test-plus-xpack)](https://github.com/micro-os-plus/micro-test-plus-xpack/tags)
-[![NPM Version](https://img.shields.io/npm/v/@micro-os-plus/micro-test-plus?color=green)](https://www.npmjs.com/package/@micro-os-plus/micro-test-plus/)
+[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/micro-os-plus/micro-test-plus-xpack?color=blue)](https://github.com/micro-os-plus/micro-test-plus-xpack/tags)
+[![NPM Version](https://img.shields.io/npm/v/@micro-os-plus/micro-test-plus?color=blue)](https://www.npmjs.com/package/@micro-os-plus/micro-test-plus/)
 [![license](https://img.shields.io/github/license/micro-os-plus/micro-test-plus-xpack)](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/LICENSE)
 
 # The µTest++ Testing Framework

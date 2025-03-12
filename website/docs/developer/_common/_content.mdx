@@ -7,6 +7,13 @@ import CommonManualTests from '@site/docs/_common/_manual-tests.mdx';
 import CommonPrerequisites from '@site/docs/_common/_prerequisites.mdx';
 import CommonGetProjectSources from '@site/docs/_common/_get-project-sources.mdx';
 import CommonGetHelperSources from '@site/docs/_common/_get-helper-sources-details.mdx';
+import CommonCodeFormatting from '@site/docs/_common/_code-formatting.mdx';
+import CommonPrepareWebsite from '@site/docs/_common/_prepare-website.mdx';
+import CommonBuildWebsiteLocally from '@site/docs/_common/_build-website-locally.mdx';
+import CommonRegenerateDoxygen from '@site/docs/_common/_regenerate-doxygen.mdx';
+import CommonPublishWebsite from '@site/docs/_common/_publish-website.mdx';
+import CommonStartLocalWebServer from '@site/docs/_common/_start-local-web-server.mdx';
+import CommonContinuousIntegration from '@site/docs/_common/_continuous-integration.mdx';
 
 import ProjectTestDetails from '../_project/_test-details.mdx';
 
@@ -35,17 +42,7 @@ xpm install -C tests
 
 The library is written in modern C++ and should be compiled with `-std=c++20`.
 
-As formatting style, the library uses a [.clang-format](https://clang.llvm.org/docs/ClangFormat.html) configuration file based on the GNU style.
-
-It is recommended to reformat the project before each commit.
-
-:::tip
-
-Visual Studio Code can directly utilise the `.clang-format` file in the
-**Format Document** command.
-
-:::
-
+<CommonCodeFormatting />
 
 ## Tests
 
@@ -121,7 +118,19 @@ The following toolchains are used:
 
 ### Continuous Integration (CI)
 
-The library is
-CI tested on every push via
-[GitHub Actions](https://github.com/micro-os-plus/micro-test-plus-xpack/actions),
-on Ubuntu, macOS, and Windows.
+<CommonContinuousIntegration />
+
+## The website
+
+The project includes the source files for its website. The main pages
+are generated with [Docusaurus](https://docusaurus.io/), and the
+reference pages are generated with [Doxygen](https://www.doxygen.nl/).
+
+<CommonRegenerateDoxygen />
+
+<CommonPrepareWebsite />
+
+<CommonBuildWebsiteLocally />
+
+<CommonStartLocalWebServer />
+

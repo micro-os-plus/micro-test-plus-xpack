@@ -12,7 +12,7 @@ The project has a dependency to a common helper, that is normally installed
 as a read-only dependency; for development purposes, to be able to make
 changes to the scripts located inside the helper, clone the
 <code>{props.helperBranchName}</code> branch and link it to the
-user global xPacks store:
+user's global xPacks store:
 
 <CodeBlock language="sh"> {
 `rm -rf ~/Work/${props.helperOrganizationName}/${props.helperProjectName}.git && \\
@@ -30,7 +30,7 @@ Or, if the repo was already cloned:
 `} </CodeBlock>
 
 If a writable instance of this library is needed in another project,
-add a link from the user'same global xPack store to it:
+add a link from the user's global xPacks store to it:
 
 <CodeBlock language="sh"> {
 `xpm link -C ~/Work/${props.helperOrganizationName}/${props.helperProjectName}.git

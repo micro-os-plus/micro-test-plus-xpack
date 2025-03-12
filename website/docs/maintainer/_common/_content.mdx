@@ -8,13 +8,17 @@ import CommonPrerequisites from '@site/docs/_common/_prerequisites.mdx';
 import CommonGetProjectSources from '@site/docs/_common/_get-project-sources.mdx';
 import CommonGetHelperSources from '@site/docs/_common/_get-helper-sources-details.mdx';
 import CommonGenerateWebsiteCommons from '@site/docs/_common/_generate-website-commons.mdx';
+import CommonCodeFormatting from '@site/docs/_common/_code-formatting.mdx';
+import CommonRegenerateDoxygen from '@site/docs/_common/_regenerate-doxygen.mdx';
+import CommonBuildWebsiteLocally from '@site/docs/_common/_build-website-locally.mdx';
+import CommonPrepareWebsite from '@site/docs/_common/_prepare-website.mdx';
+import CommonPublishWebsite from '@site/docs/_common/_publish-website.mdx';
+import CommonStartLocalWebServer from '@site/docs/_common/_start-local-web-server.mdx';
 
-import CommonCodeFormatting from '../_common/_code-formatting.mdx';
 import CommonCheckGit from '../_common/_check-git.mdx';
 
 import CommonIncreaseVersion from '../_common/_increase-version.mdx';
 import CommonUpdateWebsiteConfig from '../_common/_update-website-config.mdx';
-import CommonStartLocalWebServer from '../_common/_start-local-web-server.mdx';
 
 import CommonFixOpenIssues from '../_common/_fix-open-issues.mdx';
 import CommonUpdateChangelog from '../_common/_update-changelog.mdx';
@@ -25,12 +29,9 @@ import CommonPublishRelease from '../_common/_publish-release.mdx'
 import CommonShareOnTwitter from '../_common/_share-on-twitter.mdx'
 import CommonAnalytics from '../_common/_analytics.mdx';
 import CommonSetNewVersion from '../_common/_set-new-version.mdx';
-import CommonPublishWebsite from '../_common/_publish-website.mdx';
-import CommonBuildWebsiteLocally from '../_common/_build-website-locally.mdx';
 import CommonCloseOpenIssues from '../_common/_close-open-issues.mdx';
 import CommonTagNpmLatest from '../_common/_tag-npm-latest.mdx';
 import CommonUpdateMainBranch from '../_common/_update-main-branch.mdx';
-import CommonPrepareWebsite from '../_common/_prepare-website.mdx';
 import CommonCloseMilestone from '../_common/_close-milestone.mdx';
 import CommonCiTests from '../_common/_ci-tests.mdx';
 
@@ -100,15 +101,7 @@ For this:
 
 ## Publish the website
 
-### Re-generate the Doxygen pages
-
-Run the **doxygen** npm script:
-
-```sh
-npm run doxygen -C website
-```
-
-The result is in the `website/static/reference` folder.
+<CommonRegenerateDoxygen />
 
 <CommonPrepareWebsite />
 
