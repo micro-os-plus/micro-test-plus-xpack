@@ -28,7 +28,7 @@ on:
 
 jobs:
   ci-test:
-    name: 'All µTest++ tests'
+    name: 'All µTest++ Testing Framework tests'
 
     runs-on:  ${{ matrix.os }}
 
