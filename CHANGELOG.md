@@ -6,9 +6,19 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2025-03-15
+
+* v3.2.2 prepared
+* 771e589 re-generate commons
+
 ## 2025-03-14
 
-* v3.2.1 prepared
+* 1475002 re-generate top commons
+* 464a485 re-generate top commons
+* 632bcc8 publish-github-pages update
+* d89c851 website: blog post release 3.2.1 published
+* c70d3e0 3.2.1
+* 60103cd prepare v3.2.1
 * 8daa820 website: update post
 * 703dcf9 website: re-generate commons & blog posts
 * 564f37f tests: re-generate commons
