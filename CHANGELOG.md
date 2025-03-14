@@ -6,9 +6,139 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2025-03-14
+
+* v3.2.1 prepared
+* 8daa820 website: update post
+* 703dcf9 website: re-generate commons & blog posts
+* 564f37f tests: re-generate commons
+
+## 2025-03-12
+
+* a7dc192 re-generate commons with long description
+* ae24148 website: re-generate commons
+* 0c97d4e website: re-generate commons
+* 7c01414 website: re-generate commons
+* 31d25ac website: re-generate commons
+
+## 2025-03-11
+
+* e0db831 website: re-generate commons
+* e31417b website: re-generate commons
+* 0350fa2 website: re-generate with longer descriptiveName
+
+## 2025-03-10
+
+* f514bf6 website: re-generate commons
+* 3ba95c6 website: re-generate commons major
+
+## 2025-03-05
+
+* 30197db website: green
+
+## 2025-03-04
+
+* 57afe72 website: fix pathname:// links
+* 24e28c1 website: getting-started rework
+* 73abd63 config.doxyfile: disable XML for now
+* af1383f docusaurus*: use pathname:///
+* d963f3d docusaurus*: accept broken links
+* ba6a4e9 *redirect.ts remove '/reference'
+* d71fa22 re-generate commons
+* 2cc8dd6 website docusaurus test
+
+## 2025-03-03
+
+* 17fc2c5 doxygen/.gitignore
+
+## 2025-03-02
+
+* e233776 website: move doxygen files to separate folder
+* 32ff366 tests/package-lock.json update
+
+## 2025-02-28
+
+* 435d61f copyright notices cosmetics
+* c228aef tests: re-generate commons
+* d178ebe re-generate workflows
+* 5f78801 test-all: fix clear cache syntax
+
+## 2025-02-27
+
+* 9a6ecf5 test-all: fix clear cache syntax
+* 5a78a81 test-all: fix clear cache syntax
+* df341b9 test-all: fix clear cache syntax
+* 4c56913 test-all: clean xPack cache
+* 76606cb re-generate workflows
+* 6472bc0 tests/native/meson -rtlib=compiler-rt
+* e5bed09 tests/native/cmake remove duplicate -stdlib=libc++
+* 5425929 tests/package.json: add native-meson-clang to test-ci
+* 9babed3 tests/native meson -stdlib=libc++
+* 1fe540d reflection.h: unsigned int line
+
+## 2025-02-26
+
+* 4d46b66 package.json fix action test
+* c76db36 package.json add git-pull-helper
+* cac8c46 tests/package.json: bump helper
+* 8274320 tests/package-lock.json update
+* db0f79a re-generate commons
+* 052057d workflows: update
+
+## 2025-02-25
+
+* 808db36 workflows cosmetics
+* 6531845 meson/common-options: fix link_args
+* 241c368 workflows: npm -C
+* b867523 workflows: &&
+* 2636562 workflows: remove windows 2019
+* 8aca778 tests/package-local.json
+* 9650766 re-generate commons
+* 34695b1 xcdl.json update
+
+## 2025-02-24
+
+* cca99a3 package.json: update topConfig
+* 6b926ad package.json update
+* 66412e3 package.json: add topConfig
+* eab469f re-generate workflows
+* 5fc7f95 test-ci.yml: fix install-ci
+* de675ce test-ci.yml: fix install-ci
+* cf02869 rename test-ci.yml
+* 8a8431d ci.yml update
+* 94d8603 tests/package*.json: bump deps
+* 05e42b2 platforms/native: update RPATH
+* 00c2a30 publish-github-pages.yml: update from npm helper
+* 5a1770c website: update for node_modules
+* 328857c re-generate commons
+* a8a661e package*.json: use npm & extract xcdl.json
+* d3c7750 silence documentation warnings
+
+## 2024-11-21
+
+* c3847f1 rename xpack-development
+* e7b1d9b rename MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+* 459143c package.json: add cdlComponents
+* ffaf7b1 tests/package.json CMAKE_MAKE_PROGRAM only on windows
+* 5cf103a update copyright notice
+
+## 2024-02-14
+
+* a1b201a tests/package.json: add short win path to meson
+* 3269a0e tests/package.json: explicit CMAKE_MAKE_PROGRAM
+
+## 2023-12-26
+
+* 7c113ee README update
+* b534088 credits.md: remove macstadium.com opensource
+* 11ffc8b website/pages/home.md: cleanup dummy links
+* acefd31 publish-github-pages.yml: bump doxygen 1.10.0
+* b24ad6b cmake cosmetics
+
 ## 2023-12-06
 
-* v3.2.0
+* 7a2ee88 3.2.0
+* 2a6abf2 prepare v3.2.0
 * 90963ce micro-test-plus.h cosmetics
 * c57c46e literals.h: silence clang deprecation warning
 * f776b18 doxygen metadata: add @headerfile
@@ -113,16 +243,16 @@ and close existing issues and pull requests.
 ## 2023-11-25
 
 * 509ff38 home.md: add Manual Pages
-2023-11-25 * eed0475 tests/package.json: add install/tes-latest
-2023-11-25 * d2a23dd tests/README update
-2023-11-25 * a755996 maintainer.md: update
-2023-11-25 * 17866f0 tests/package.json: add more selected
-2023-11-25 * 593b361 tests/package.json: fix syntax
-2023-11-25 * bbe15ab tests/package.json: fix syntax
-2023-11-25 * 1456260 tests/package.json: re-enable some tests
-2023-11-25 * c8f7c5a tests/package.json: reorder actions
-2023-11-25 * 68626be tests/package.json: fix install-selected
-2023-11-25 * 079df5c tests/package.json: cleanup actions
+* eed0475 tests/package.json: add install/tes-latest
+* d2a23dd tests/README update
+* a755996 maintainer.md: update
+* 17866f0 tests/package.json: add more selected
+* 593b361 tests/package.json: fix syntax
+* bbe15ab tests/package.json: fix syntax
+* 1456260 tests/package.json: re-enable some tests
+* c8f7c5a tests/package.json: reorder actions
+* 68626be tests/package.json: fix install-selected
+* 079df5c tests/package.json: cleanup actions
 
 ## 2023-11-24
 
