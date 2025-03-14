@@ -51,7 +51,7 @@
     "liquidjs": "^10.19.1"
   },
   "xpack": {
-    "minimumXpmRequired": "0.20.7",
+    "minimumXpmRequired": "0.20.8",
     "dependencies": {},
     "devDependencies": {},
     "properties": {},
