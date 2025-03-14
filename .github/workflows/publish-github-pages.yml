@@ -91,12 +91,15 @@ jobs:
           curl https://www.doxygen.nl/files/doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz --output doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz
           tar xf doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz
           ls -l doxygen-$DOXYGEN_VERSION
-          mkdir -pv website/.local/bin
-          ln -sv $(pwd)/doxygen-$DOXYGEN_VERSION/bin/doxygen website/.local/bin/doxygen
-          ls -l website
+          mkdir -pv website/doxygen/.local/bin
+          ln -sv $(pwd)/doxygen-$DOXYGEN_VERSION/bin/doxygen website/doxygen/.local/bin/doxygen
+          ls -lLA website website/doxygen
 
       - name: Build the Doxygen site
         run: (cd website/doxygen; .local/bin/doxygen config.doxyfile)
+
+      - name: Build the Docusaurus site
+        run: npm run build -C website
 
       - name: Setup Pages
         # https://github.com/actions/configure-pages
@@ -107,7 +110,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: './website/doxygen/html'
+          path: './website/build'
 
       - name: Deploy to GitHub Pages
         id: deployment # referred by environment above, to get the URL.
