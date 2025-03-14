@@ -8,6 +8,7 @@ and close existing issues and pull requests.
 
 ## 2025-03-15
 
+* v3.2.2 published on npmjs.com
 * v3.2.2 prepared
 * 771e589 re-generate commons
 
