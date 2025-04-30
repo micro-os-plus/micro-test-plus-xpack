@@ -1,0 +1,897 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/micro-os-plus/micro-test-plus/test-reporter
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import Link from '@docusaurus/Link'
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+# The `test_reporter` Class Reference
+
+<DoxygenPage version="1.13.2">
+
+Reporter to display the test results. For failed tests it prints the actual values of the operands, with their types. <Link to="#details">More...</Link>
+
+## Declaration
+
+<CodeBlock>class micro_os_plus::micro_test_plus::test_reporter;</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem filePath="micro-os-plus/micro-test-plus.h" permalink="/docs/api/files/include/micro-os-plus/micro-test-plus-h" isLocal="false" />
+</IncludesList>
+
+## Public Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><Link to="#af313ab4b60fd3a19e3b1a9c2fbccbdb6">add&#95;empty&#95;line</Link> &#123; true &#125;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914b">verbosity&#95;t</Link></>}
+  name={<><Link to="#adc647f6da46704ba46dcb41a2ec95820">verbosity</Link> &#123;&#125;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Protected Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/colors">colors</Link></>}
+  name={<><Link to="#a0b4aa7bfcd35287fd9bb9370aeea2154">colors&#95;</Link> &#123;&#125;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><Link to="#a212349d52907ad1f05a89b5b4d49c0c3">is&#95;in&#95;test&#95;case&#95;</Link> = false</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="std::string"
+  name={<><Link to="#a22084218ef1a7005a96d9919587c09e2">out&#95;</Link> &#123;&#125;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="&nbsp;"
+  name={<><Link to="#a2e4113dbacfc7349545ddf6e5cca5268">test&#95;reporter</Link> ()=default</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><Link to="#ac6d43b057a1be46a895e11c81a9c7cfb">begin&#95;test&#95;case</Link> (const char &#42;name)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><Link to="#ad6375b4032aa02fd8258f77b7de5efdd">begin&#95;test&#95;suite</Link> (const char &#42;name)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="auto"
+  name={<><Link to="#aeab9d025989e57ed62ad0e701efc59ee">color</Link> (const bool cond)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><Link to="#ac0f25008c95f1ef27072df20d7668082">end&#95;test&#95;case</Link> (const char &#42;name)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><Link to="#ad01d404c3fe5a44cf7f10bfcd599e0f3">end&#95;test&#95;suite</Link> (test&#95;suite&#95;base &amp;suite)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><Link to="#a105cec33c0e4ed184d8db90df27a48d6">endline</Link> (void)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><Link to="#ab89536a4a5a82b658ca8282277c49f4b">fail</Link> (Expr&#95;T &amp;expr, bool abort, std::string &amp;message, const reflection::source&#95;location &amp;location)</>}>
+Report a failed condition. <Link to="#ab89536a4a5a82b658ca8282277c49f4b">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><Link to="#ab48b00f46755dd9a70cb39a42bfad7f6">flush</Link> (void)</>}>
+Flush the current buffered content. <Link to="#ab48b00f46755dd9a70cb39a42bfad7f6">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#a092ef277e46b408cd539de029429a1aa">operator&lt;&lt;</Link> (bool v)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#acfe54a05505f0081fcd13f31bd222fa5">operator&lt;&lt;</Link> (char &#42;s)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#a318db1ab66a5f2f63c39d58a3c8b2656">operator&lt;&lt;</Link> (char c)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#affa86db322653867cc9a82f2720d0b49">operator&lt;&lt;</Link> (const char &#42;s)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#a8327d747306728c83e673a9993ab933a">operator&lt;&lt;</Link> (const detail::and&#95;&lt; Lhs&#95;T, Rhs&#95;T &gt; &amp;op)</>}>
+Output operator to display and() expressions. <Link to="#a8327d747306728c83e673a9993ab933a">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#ae3c6e69e58215c20d2766ae6e454e2e0">operator&lt;&lt;</Link> (const detail::eq&#95;&lt; Lhs&#95;T, Rhs&#95;T &gt; &amp;op)</>}>
+Output operator to display <Link to="/docs/api/groups/micro-test-plus-function-comparators/#gae9dfca849300a917cb1c231d275baaa3">eq()</Link> expressions. <Link to="#ae3c6e69e58215c20d2766ae6e454e2e0">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#a248e333b17ace83dbfaf3db464520993">operator&lt;&lt;</Link> (const detail::ge&#95;&lt; Lhs&#95;T, Rhs&#95;T &gt; &amp;op)</>}>
+Output operator to display <Link to="/docs/api/groups/micro-test-plus-function-comparators/#ga34e03399670ec0b365b94b7bea788dd8">ge()</Link> expressions. <Link to="#a248e333b17ace83dbfaf3db464520993">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#abef6ddfab2ac750d9ec1a170873f6c3e">operator&lt;&lt;</Link> (const detail::gt&#95;&lt; Lhs&#95;T, Rhs&#95;T &gt; &amp;op)</>}>
+Output operator to display <Link to="/docs/api/groups/micro-test-plus-function-comparators/#gae2fb681444d8256f6bf827eea6b7c29e">gt()</Link> expressions. <Link to="#abef6ddfab2ac750d9ec1a170873f6c3e">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#a7e08a3a2f3b5ae49ac3b138f93951746">operator&lt;&lt;</Link> (const detail::le&#95;&lt; Rhs&#95;T, Lhs&#95;T &gt; &amp;op)</>}>
+Output operator to display <Link to="/docs/api/groups/micro-test-plus-function-comparators/#ga2b5263a5b3965855aa04971bba735a56">le()</Link> expressions. <Link to="#a7e08a3a2f3b5ae49ac3b138f93951746">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#a1f6ce3e6874d63ee7afe21f8301657c1">operator&lt;&lt;</Link> (const detail::lt&#95;&lt; Rhs&#95;T, Lhs&#95;T &gt; &amp;op)</>}>
+Output operator to display <Link to="/docs/api/groups/micro-test-plus-function-comparators/#gac162522dcad1a6ff7c869d52d376b3ed">lt()</Link> expressions. <Link to="#a1f6ce3e6874d63ee7afe21f8301657c1">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#a292fdf290a81a3321edde14c31dff1ed">operator&lt;&lt;</Link> (const detail::ne&#95;&lt; Lhs&#95;T, Rhs&#95;T &gt; &amp;op)</>}>
+Output operator to display <Link to="/docs/api/groups/micro-test-plus-function-comparators/#ga59e4cf59954e81bc868e62b1c5c8db1f">ne()</Link> expressions. <Link to="#a292fdf290a81a3321edde14c31dff1ed">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#a7f8caa4fbe97ef26ece7c5a37dc4ea9c">operator&lt;&lt;</Link> (const detail::not&#95;&lt; T &gt; &amp;op)</>}>
+Output operator to display not() expressions. <Link to="#a7f8caa4fbe97ef26ece7c5a37dc4ea9c">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#a15d2d453175a3ab377eb12cae6e81d2e">operator&lt;&lt;</Link> (const detail::nothrow&#95;&lt; Expr&#95;T &gt; &amp;op)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#a8167f599220c789c1044da084a119eb5">operator&lt;&lt;</Link> (const detail::or&#95;&lt; Lhs&#95;T, Rhs&#95;T &gt; &amp;op)</>}>
+Output operator to display or() expressions. <Link to="#a8167f599220c789c1044da084a119eb5">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#ac43d666b5a7824b7e91a1306094fdb1e">operator&lt;&lt;</Link> (const detail::throws&#95;&lt; Expr&#95;T, Exception&#95;T &gt; &amp;op)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#a46a7012a665e55c00e7a040588f0c83b">operator&lt;&lt;</Link> (const detail::throws&#95;&lt; Expr&#95;T, void &gt; &amp;op)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#afdfeff359bdc48955dacb5448706b297">operator&lt;&lt;</Link> (const T &amp;t)</>}>
+Output operator to types with a getter. <Link to="#afdfeff359bdc48955dacb5448706b297">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#ab6cd245bcdf58b3004430a76bc78abc8">operator&lt;&lt;</Link> (const type&#95;traits::genuine&#95;integral&#95;value&lt; T &gt; &amp;v)</>}>
+Output operator to display genuine integers, without the type suffix. <Link to="#ab6cd245bcdf58b3004430a76bc78abc8">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#a8d5212b37538ff11de36a1265b6f927b">operator&lt;&lt;</Link> (double v)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#a0cbaa9549a0929515cd1684cda27e209">operator&lt;&lt;</Link> (float v)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#a315aa52bed70671e66a7228d11452c93">operator&lt;&lt;</Link> (long double v)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#aa347f64332ee58823aeb25ed204a8c93">operator&lt;&lt;</Link> (signed char c)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#a6fbbfdde2f05c76aab0ea8ddc44495d7">operator&lt;&lt;</Link> (signed int v)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#a8c29379f197e555fb8cc6e5d7ca66c09">operator&lt;&lt;</Link> (signed long long v)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#a30306b9f0fb893ef89a0756a5025d0e2">operator&lt;&lt;</Link> (signed long v)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#a2522d95852ab3c644e85418369cc5441">operator&lt;&lt;</Link> (signed short c)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#a299c705a7e4ba728cdf236318222e234">operator&lt;&lt;</Link> (std::nullptr&#95;t)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#acade140484e4bdaab40a72bda0b42adb">operator&lt;&lt;</Link> (std::string&#95;view sv)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#a0db349234264801b1741a1502d83e286">operator&lt;&lt;</Link> (T &amp;&amp;t)</>}>
+Output operator to display containers. Iterate all members. <Link to="#a0db349234264801b1741a1502d83e286">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#a0bdeb24c644813f434c7373b62280700">operator&lt;&lt;</Link> (T &#42;v)</>}>
+Output operator to display any pointer. <Link to="#a0bdeb24c644813f434c7373b62280700">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#a91be9116b7ca4b8596cabb8690ea2c46">operator&lt;&lt;</Link> (test&#95;reporter &amp;(&#42;func)(test&#95;reporter &amp;))</>}>
+Output operator to display the endl. <Link to="#a91be9116b7ca4b8596cabb8690ea2c46">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#acb9db4f1a9c23eae20e74b55b4244747">operator&lt;&lt;</Link> (unsigned char c)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#a2df8fdfda10c3cdf9b5bdca00f377387">operator&lt;&lt;</Link> (unsigned int v)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#a9712e8adb7ab22c433b0acac1e18fd78">operator&lt;&lt;</Link> (unsigned long long v)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#a5a300e17b0498a54fa4724bee7a5bb58">operator&lt;&lt;</Link> (unsigned long v)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
+  name={<><Link to="#afd96a6cd1ad47187b050121d7650fa68">operator&lt;&lt;</Link> (unsigned short c)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><Link to="#aa37bb1803ea48be27bd42ace2c61aa13">output</Link> (void)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><Link to="#aa6ff8210496100842cf12b466195dcf7">pass</Link> (Expr&#95;T &amp;expr, std::string &amp;message)</>}>
+Report a passed condition. <Link to="#aa6ff8210496100842cf12b466195dcf7">More...</Link>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Protected Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><Link to="#ae2b0f0247a64d1d22e9db9b5f47653db">output&#95;fail&#95;prefix&#95;</Link> (std::string &amp;message, const reflection::source&#95;location &amp;location)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><Link to="#aaa1839530b6e8560711926613013312b">output&#95;fail&#95;suffix&#95;</Link> (bool abort)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><Link to="#af7b154289a09dddaa80e122100437876">output&#95;pass&#95;prefix&#95;</Link> (std::string &amp;message)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><Link to="#a8df0d7843bb268c9e91fb90219aded65">output&#95;pass&#95;suffix&#95;</Link> (void)</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+TODO: add <code>@details</code> to <code>@class micro_os_plus::micro_test_plus::test_reporter</code>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00086">86</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>.
+
+<SectionDefinition>
+
+## Public Member Attributes
+
+### add&#95;empty&#95;line {#af313ab4b60fd3a19e3b1a9c2fbccbdb6}
+
+<MemberDefinition
+  prototype={<>bool micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::add&#95;empty&#95;line &#123; true &#125;</>}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00314">314</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>.
+</MemberDefinition>
+
+### verbosity {#adc647f6da46704ba46dcb41a2ec95820}
+
+<MemberDefinition
+  prototype={<>verbosity&#95;t micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::verbosity &#123;&#125;</>}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00316">316</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Protected Member Attributes
+
+### colors&#95; {#a0b4aa7bfcd35287fd9bb9370aeea2154}
+
+<MemberDefinition
+  prototype={<>colors micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::colors&#95; &#123;&#125;</>}
+  labels = {["protected"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00335">335</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>.
+</MemberDefinition>
+
+### is&#95;in&#95;test&#95;case&#95; {#a212349d52907ad1f05a89b5b4d49c0c3}
+
+<MemberDefinition
+  prototype={<>bool micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::is&#95;in&#95;test&#95;case&#95; = false</>}
+  labels = {["protected"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00338">338</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>.
+</MemberDefinition>
+
+### out&#95; {#a22084218ef1a7005a96d9919587c09e2}
+
+<MemberDefinition
+  prototype={<>std::string micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::out&#95; &#123;&#125;</>}
+  labels = {["protected"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00336">336</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Constructors
+
+### test&#95;reporter() {#a2e4113dbacfc7349545ddf6e5cca5268}
+
+<MemberDefinition
+  prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::test&#95;reporter ()</>}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00089">89</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>.
+</MemberDefinition>
+
+## Public Member Functions
+
+### begin&#95;test&#95;case() {#ac6d43b057a1be46a895e11c81a9c7cfb}
+
+<MemberDefinition
+  prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::begin&#95;test&#95;case (const char &#42; name)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00292">292</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00279">279</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### begin&#95;test&#95;suite() {#ad6375b4032aa02fd8258f77b7de5efdd}
+
+<MemberDefinition
+  prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::begin&#95;test&#95;suite (const char &#42; name)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00298">298</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00366">366</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### color() {#aeab9d025989e57ed62ad0e701efc59ee}
+
+<MemberDefinition
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::color (const bool cond)</>}
+  labels = {["inline", "nodiscard"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00092">92</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>.
+</MemberDefinition>
+
+### end&#95;test&#95;case() {#ac0f25008c95f1ef27072df20d7668082}
+
+<MemberDefinition
+  prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::end&#95;test&#95;case (const char &#42; name)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00295">295</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00299">299</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### end&#95;test&#95;suite() {#ad01d404c3fe5a44cf7f10bfcd599e0f3}
+
+<MemberDefinition
+  prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::end&#95;test&#95;suite (<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">test&#95;suite&#95;base</Link> &amp; suite)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00301">301</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00386">386</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### endline() {#a105cec33c0e4ed184d8db90df27a48d6}
+
+<MemberDefinition
+  prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::endline (void)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00272">272</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00122">122</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### fail() {#ab89536a4a5a82b658ca8282277c49f4b}
+
+<MemberDefinition
+  template={<>template &lt;class Expr&#95;T&gt;</>}
+  prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::fail (Expr&#95;T &amp; expr, bool abort, std::string &amp; message, const <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source&#95;location</Link> &amp; location)</>}>
+Report a failed condition.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00288">288</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h/#l00202">202</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+</MemberDefinition>
+
+### flush() {#ab48b00f46755dd9a70cb39a42bfad7f6}
+
+<MemberDefinition
+  prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::flush (void)</>}>
+Flush the current buffered content.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00307">307</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00129">129</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#a092ef277e46b408cd539de029429a1aa}
+
+<MemberDefinition
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (bool v)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00109">109</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00163">163</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#acfe54a05505f0081fcd13f31bd222fa5}
+
+<MemberDefinition
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (char &#42; s)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00106">106</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00156">156</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#a318db1ab66a5f2f63c39d58a3c8b2656}
+
+<MemberDefinition
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (char c)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00100">100</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00142">142</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#affa86db322653867cc9a82f2720d0b49}
+
+<MemberDefinition
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (const char &#42; s)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00103">103</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00149">149</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#a8327d747306728c83e673a9993ab933a}
+
+<MemberDefinition
+  template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T&gt;</>}
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (const <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/and-">detail::and&#95;</Link>&lt; Lhs&#95;T, Rhs&#95;T &gt; &amp; op)</>}>
+Output operator to display and() expressions.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00240">240</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h/#l00139">139</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#ae3c6e69e58215c20d2766ae6e454e2e0}
+
+<MemberDefinition
+  template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T&gt;</>}
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (const <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-">detail::eq&#95;</Link>&lt; Lhs&#95;T, Rhs&#95;T &gt; &amp; op)</>}>
+Output operator to display <Link to="/docs/api/groups/micro-test-plus-function-comparators/#gae9dfca849300a917cb1c231d275baaa3">eq()</Link> expressions.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00198">198</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h/#l00091">91</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#a248e333b17ace83dbfaf3db464520993}
+
+<MemberDefinition
+  template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T&gt;</>}
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (const <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/ge-">detail::ge&#95;</Link>&lt; Lhs&#95;T, Rhs&#95;T &gt; &amp; op)</>}>
+Output operator to display <Link to="/docs/api/groups/micro-test-plus-function-comparators/#ga34e03399670ec0b365b94b7bea788dd8">ge()</Link> expressions.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00219">219</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h/#l00115">115</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#abef6ddfab2ac750d9ec1a170873f6c3e}
+
+<MemberDefinition
+  template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T&gt;</>}
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (const <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/gt-">detail::gt&#95;</Link>&lt; Lhs&#95;T, Rhs&#95;T &gt; &amp; op)</>}>
+Output operator to display <Link to="/docs/api/groups/micro-test-plus-function-comparators/#gae2fb681444d8256f6bf827eea6b7c29e">gt()</Link> expressions.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00212">212</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h/#l00107">107</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#a7e08a3a2f3b5ae49ac3b138f93951746}
+
+<MemberDefinition
+  template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T&gt;</>}
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (const <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/le-">detail::le&#95;</Link>&lt; Rhs&#95;T, Lhs&#95;T &gt; &amp; op)</>}>
+Output operator to display <Link to="/docs/api/groups/micro-test-plus-function-comparators/#ga2b5263a5b3965855aa04971bba735a56">le()</Link> expressions.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00233">233</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h/#l00131">131</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#a1f6ce3e6874d63ee7afe21f8301657c1}
+
+<MemberDefinition
+  template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T&gt;</>}
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (const <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/lt-">detail::lt&#95;</Link>&lt; Rhs&#95;T, Lhs&#95;T &gt; &amp; op)</>}>
+Output operator to display <Link to="/docs/api/groups/micro-test-plus-function-comparators/#gac162522dcad1a6ff7c869d52d376b3ed">lt()</Link> expressions.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00226">226</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h/#l00123">123</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#a292fdf290a81a3321edde14c31dff1ed}
+
+<MemberDefinition
+  template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T&gt;</>}
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (const <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-">detail::ne&#95;</Link>&lt; Lhs&#95;T, Rhs&#95;T &gt; &amp; op)</>}>
+Output operator to display <Link to="/docs/api/groups/micro-test-plus-function-comparators/#ga59e4cf59954e81bc868e62b1c5c8db1f">ne()</Link> expressions.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00205">205</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h/#l00099">99</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#a7f8caa4fbe97ef26ece7c5a37dc4ea9c}
+
+<MemberDefinition
+  template={<>template &lt;class T&gt;</>}
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (const <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/not-">detail::not&#95;</Link>&lt; T &gt; &amp; op)</>}>
+Output operator to display not() expressions.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00254">254</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h/#l00155">155</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#a15d2d453175a3ab377eb12cae6e81d2e}
+
+<MemberDefinition
+  template={<>template &lt;class Expr&#95;T&gt;</>}
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (const <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/nothrow-">detail::nothrow&#95;</Link>&lt; Expr&#95;T &gt; &amp; op)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00267">267</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h/#l00179">179</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#a8167f599220c789c1044da084a119eb5}
+
+<MemberDefinition
+  template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T&gt;</>}
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (const <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/or-">detail::or&#95;</Link>&lt; Lhs&#95;T, Rhs&#95;T &gt; &amp; op)</>}>
+Output operator to display or() expressions.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00247">247</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h/#l00147">147</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#ac43d666b5a7824b7e91a1306094fdb1e}
+
+<MemberDefinition
+  template={<>template &lt;class Expr&#95;T, class Exception&#95;T&gt;</>}
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (const <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-">detail::throws&#95;</Link>&lt; Expr&#95;T, Exception&#95;T &gt; &amp; op)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00259">259</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h/#l00163">163</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#a46a7012a665e55c00e7a040588f0c83b}
+
+<MemberDefinition
+  template={<>template &lt;class Expr&#95;T&gt;</>}
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (const <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-">detail::throws&#95;</Link>&lt; Expr&#95;T, void &gt; &amp; op)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00263">263</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h/#l00172">172</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#afdfeff359bdc48955dacb5448706b297}
+
+<MemberDefinition
+  template={<>template &lt;class T&gt;</>}
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (const T &amp; t)</>}>
+Output operator to types with a getter.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00173">173</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#ab6cd245bcdf58b3004430a76bc78abc8}
+
+<MemberDefinition
+  template={<>template &lt;class T&gt;</>}
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (const <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value">type&#95;traits::genuine&#95;integral&#95;value</Link>&lt; T &gt; &amp; v)</>}>
+Output operator to display genuine integers, without the type suffix.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00181">181</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h/#l00066">66</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#a8d5212b37538ff11de36a1265b6f927b}
+
+<MemberDefinition
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (double v)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00147">147</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00264">264</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#a0cbaa9549a0929515cd1684cda27e209}
+
+<MemberDefinition
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (float v)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00144">144</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00256">256</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#a315aa52bed70671e66a7228d11452c93}
+
+<MemberDefinition
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (long double v)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00150">150</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00271">271</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#aa347f64332ee58823aeb25ed204a8c93}
+
+<MemberDefinition
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (signed char c)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00114">114</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00177">177</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#a6fbbfdde2f05c76aab0ea8ddc44495d7}
+
+<MemberDefinition
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (signed int v)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00126">126</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00209">209</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#a8c29379f197e555fb8cc6e5d7ca66c09}
+
+<MemberDefinition
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (signed long long v)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00138">138</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00240">240</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#a30306b9f0fb893ef89a0756a5025d0e2}
+
+<MemberDefinition
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (signed long v)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00132">132</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00224">224</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#a2522d95852ab3c644e85418369cc5441}
+
+<MemberDefinition
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (signed short c)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00120">120</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00193">193</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#a299c705a7e4ba728cdf236318222e234}
+
+<MemberDefinition
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (std::nullptr&#95;t)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00112">112</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00170">170</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#acade140484e4bdaab40a72bda0b42adb}
+
+<MemberDefinition
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (std::string&#95;view sv)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00097">97</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00135">135</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#a0db349234264801b1741a1502d83e286}
+
+<MemberDefinition
+  template={<>template &lt;class T, type&#95;traits::requires&#95;t = 0&lt;  = 0type&#95;traits::is&#95;container&#95;v = 0&lt; T &gt; and not  = 0type&#95;traits::has&#95;npos&#95;v = 0&lt; T &gt; &gt; = 0&gt;</>}
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (T &amp;&amp; t)</>}>
+Output operator to display containers. Iterate all members.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00191">191</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h/#l00076">76</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#a0bdeb24c644813f434c7373b62280700}
+
+<MemberDefinition
+  template={<>template &lt;typename T&gt;</>}
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (T &#42; v)</>}>
+Output operator to display any pointer.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00157">157</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h/#l00045">45</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#a91be9116b7ca4b8596cabb8690ea2c46}
+
+<MemberDefinition
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;(&#42;)(<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;) func)</>}>
+Output operator to display the endl.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00163">163</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00114">114</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#acb9db4f1a9c23eae20e74b55b4244747}
+
+<MemberDefinition
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (unsigned char c)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00117">117</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00185">185</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#a2df8fdfda10c3cdf9b5bdca00f377387}
+
+<MemberDefinition
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (unsigned int v)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00129">129</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00216">216</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#a9712e8adb7ab22c433b0acac1e18fd78}
+
+<MemberDefinition
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (unsigned long long v)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00141">141</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00248">248</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#a5a300e17b0498a54fa4724bee7a5bb58}
+
+<MemberDefinition
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (unsigned long v)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00135">135</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00232">232</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### operator&lt;&lt;() {#afd96a6cd1ad47187b050121d7650fa68}
+
+<MemberDefinition
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (unsigned short c)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00123">123</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00201">201</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### output() {#aa37bb1803ea48be27bd42ace2c61aa13}
+
+<MemberDefinition
+  prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::output (void)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00310">310</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00423">423</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### pass() {#aa6ff8210496100842cf12b466195dcf7}
+
+<MemberDefinition
+  template={<>template &lt;class Expr&#95;T&gt;</>}
+  prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::pass (Expr&#95;T &amp; expr, std::string &amp; message)</>}>
+Report a passed condition.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00281">281</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h/#l00187">187</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Protected Member Functions
+
+### output&#95;fail&#95;prefix&#95; {#ae2b0f0247a64d1d22e9db9b5f47653db}
+
+<MemberDefinition
+  prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::output&#95;fail&#95;prefix&#95; (std::string &amp; message, const <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source&#95;location</Link> &amp; location)</>}
+  labels = {["protected"]}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00329">329</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00070">70</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### output&#95;fail&#95;suffix&#95; {#aaa1839530b6e8560711926613013312b}
+
+<MemberDefinition
+  prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::output&#95;fail&#95;suffix&#95; (bool abort)</>}
+  labels = {["protected"]}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00333">333</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00101">101</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### output&#95;pass&#95;prefix&#95; {#af7b154289a09dddaa80e122100437876}
+
+<MemberDefinition
+  prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::output&#95;pass&#95;prefix&#95; (std::string &amp; message)</>}
+  labels = {["protected"]}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00323">323</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00046">46</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+### output&#95;pass&#95;suffix&#95; {#a8df0d7843bb268c9e91fb90219aded65}
+
+<MemberDefinition
+  prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::output&#95;pass&#95;suffix&#95; (void)</>}
+  labels = {["protected"]}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00326">326</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00062">62</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h">test-reporter-inlines.h</Link></li>
+<li><Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link></li>
+<li><Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link></li>
+</ul>
+
+</DoxygenPage>

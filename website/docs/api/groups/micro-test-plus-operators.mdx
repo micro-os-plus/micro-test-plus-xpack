@@ -1,0 +1,243 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/groups/micro-test-plus-operators
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - group
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
+
+# The Operators Reference
+
+<DoxygenPage version="1.13.2">
+
+Overloaded operators. <Link to="#details">More...</Link>
+
+## Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="constexpr auto"
+  name={<><Link to="#ga6f792d4a05a9b4e2e5b15c21905639f4">operator and</Link> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
+Logical <code>&amp;&amp;</code> (and) operator. It matches only if at least one operand is of local type (derived from local <code>op</code>). <Link to="#ga6f792d4a05a9b4e2e5b15c21905639f4">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="constexpr auto"
+  name={<><Link to="#ga76287e126ef9eaf3039d970d70f3a436">operator not</Link> (const T &amp;t)</>}>
+Logical <code>!</code> (not) operator. It matches only if the operand is of local type (derived from local <code>op</code>). <Link to="#ga76287e126ef9eaf3039d970d70f3a436">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="constexpr auto"
+  name={<><Link to="#gaaad46363338988f9080425b0d327b779">operator or</Link> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
+Logical <code>||</code> (or) operator. It matches only if at least one operand is of local type (derived from local <code>op</code>). <Link to="#gaaad46363338988f9080425b0d327b779">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="constexpr auto"
+  name={<><Link to="#gae2090b8535bb7860e6104347b2d9f4e6">operator!=</Link> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
+Non-equality operator. It matches only if at least one operand is of local type (derived from local <code>op</code>). <Link to="#gae2090b8535bb7860e6104347b2d9f4e6">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="constexpr auto"
+  name={<><Link to="#gad934faf2be89b200f4d286c26c043a29">operator&lt;</Link> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
+Less than operator. It matches only if at least one operand is of local type (derived from local <code>op</code>). <Link to="#gad934faf2be89b200f4d286c26c043a29">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="constexpr auto"
+  name={<><Link to="#ga7862426cbe47cb764473e8bc9f49c0a9">operator&lt;=</Link> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
+Less than or equal operator. It matches only if at least one operand is of local type (derived from local <code>op</code>). <Link to="#ga7862426cbe47cb764473e8bc9f49c0a9">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="constexpr auto"
+  name={<><Link to="#ga26bc1232c48df9b79463025f66da5f1f">operator==</Link> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
+Equality operator. It matches only if at least one operand is of local type (derived from local <code>op</code>). <Link to="#ga26bc1232c48df9b79463025f66da5f1f">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="constexpr auto"
+  name={<><Link to="#gabd2a0c082adee2dbdd69043ba8d34dcd">operator&gt;</Link> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
+Greater than operator. It matches only if at least one operand is of local type (derived from local <code>op</code>). <Link to="#gabd2a0c082adee2dbdd69043ba8d34dcd">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="constexpr auto"
+  name={<><Link to="#ga676092b57233f1137778ee9c38e24a46">operator&gt;=</Link> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
+Greater than or equal operator. It matches only if at least one operand is of local type (derived from local <code>op</code>). <Link to="#ga676092b57233f1137778ee9c38e24a46">More...</Link>
+</MembersIndexItem>
+
+</MembersIndex>
+As in most other C++ test frameworks, it is also possible to overload the <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code> operators.
+
+To avoid possible interferences with other operators defined by the application, these operators match only for operands of specific types and are located in a separate namespace (<code>micro&#95;test&#95;plus::operators</code>); when applied to regular values, the standard operands are used; the comparisons are performed properly, but in case of failures the actual values are not shown.
+
+The operators match only operands derived from the local <code>detail::op</code> type, which can be enforced for constant values by using the provided literals (like <code>1&#95;i</code>) or, for dynamic values, by using the provided casts (like <code>&#95;i</code> &#123;expression&#125;, which are actually the constructors of the internal classes).
+
+<SectionUser title="Examples">
+
+</SectionUser>
+
+
+<ProgramListing extension="cpp">
+
+<CodeLine><Highlight kind="normal">mt::test&#95;case (</Highlight><Highlight kind="stringliteral">&quot;Operators&quot;</Highlight><Highlight kind="normal">, [] &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal">micro&#95;test&#95;plus::operators;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal">micro&#95;test&#95;plus::literals;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  mt::expect (compute&#95;answer () == 42&#95;i) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer is 42 (with literal)&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  mt::expect (mt::to&#95;i &#123;compute&#95;answer ()&#125; == 42) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer is 42 (with cast)&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  mt::expect (compute&#95;answer () != 43&#95;i) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer is not 43&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  mt::expect (compute&#95;answer () &lt; 43&#95;i) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer is &lt; 43&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  mt::expect (compute&#95;answer () &lt;= 43&#95;i) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer is &lt;= 42&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  mt::expect (compute&#95;answer () &gt; 41&#95;i) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer is &gt; 43&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  mt::expect (compute&#95;answer () &gt;= 42&#95;i) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer is &gt;= 42&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#125;);</Highlight></CodeLine>
+
+</ProgramListing>
+
+
+
+
+## Logical operators
+
+The logical operators can be used in exactly the same way as standard operators, but the additional functionality is enabled only when matching the typed operands.
+
+<SectionUser title="Example">
+
+</SectionUser>
+
+
+<ProgramListing extension="cpp">
+
+<CodeLine><Highlight kind="normal">mt::expect (compute&#95;answer () == 42&#95;i &amp;&amp; compute&#95;float () == 42.0&#95;f);</Highlight></CodeLine>
+
+</ProgramListing>
+
+<SectionDefinition>
+
+## Functions
+
+### operator and {#ga6f792d4a05a9b4e2e5b15c21905639f4}
+
+<MemberDefinition
+  template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;op&#95;v&lt; Lhs&#95;T &gt; or type&#95;traits::is&#95;op&#95;v&lt; Rhs&#95;T &gt; &gt; = 0&gt;</>}
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::operators::operator and (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
+  labels = {["nodiscard", "constexpr"]}>
+Logical <code>&amp;&amp;</code> (and) operator. It matches only if at least one operand is of local type (derived from local <code>op</code>).
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00645">645</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+</MemberDefinition>
+
+### operator not {#ga76287e126ef9eaf3039d970d70f3a436}
+
+<MemberDefinition
+  template={<>template &lt;class T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;op&#95;v&lt; T &gt; &gt; = 0&gt;</>}
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::operators::operator not (const T &amp; t)</>}
+  labels = {["nodiscard", "constexpr"]}>
+Logical <code>!</code> (not) operator. It matches only if the operand is of local type (derived from local <code>op</code>).
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00672">672</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+</MemberDefinition>
+
+### operator or {#gaaad46363338988f9080425b0d327b779}
+
+<MemberDefinition
+  template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;op&#95;v&lt; Lhs&#95;T &gt; or type&#95;traits::is&#95;op&#95;v&lt; Rhs&#95;T &gt; &gt; = 0&gt;</>}
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::operators::operator or (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
+  labels = {["nodiscard", "constexpr"]}>
+Logical <code>||</code> (or) operator. It matches only if at least one operand is of local type (derived from local <code>op</code>).
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00660">660</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+</MemberDefinition>
+
+### operator!= {#gae2090b8535bb7860e6104347b2d9f4e6}
+
+<MemberDefinition
+  template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;op&#95;v&lt; Lhs&#95;T &gt; or type&#95;traits::is&#95;op&#95;v&lt; Rhs&#95;T &gt; &gt; = 0&gt;</>}
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::operators::operator!= (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
+  labels = {["nodiscard", "constexpr"]}>
+Non-equality operator. It matches only if at least one operand is of local type (derived from local <code>op</code>).
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00570">570</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+</MemberDefinition>
+
+### operator&lt; {#gad934faf2be89b200f4d286c26c043a29}
+
+<MemberDefinition
+  template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;op&#95;v&lt; Lhs&#95;T &gt; or type&#95;traits::is&#95;op&#95;v&lt; Rhs&#95;T &gt; &gt; = 0&gt;</>}
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::operators::operator&lt; (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
+  labels = {["nodiscard", "constexpr"]}>
+Less than operator. It matches only if at least one operand is of local type (derived from local <code>op</code>).
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00614">614</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+</MemberDefinition>
+
+### operator&lt;= {#ga7862426cbe47cb764473e8bc9f49c0a9}
+
+<MemberDefinition
+  template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;op&#95;v&lt; Lhs&#95;T &gt; or type&#95;traits::is&#95;op&#95;v&lt; Rhs&#95;T &gt; &gt; = 0&gt;</>}
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::operators::operator&lt;= (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
+  labels = {["nodiscard", "constexpr"]}>
+Less than or equal operator. It matches only if at least one operand is of local type (derived from local <code>op</code>).
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00629">629</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+</MemberDefinition>
+
+### operator== {#ga26bc1232c48df9b79463025f66da5f1f}
+
+<MemberDefinition
+  template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;op&#95;v&lt; Lhs&#95;T &gt; or type&#95;traits::is&#95;op&#95;v&lt; Rhs&#95;T &gt; &gt; = 0&gt;</>}
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::operators::operator== (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
+  labels = {["nodiscard", "constexpr"]}>
+Equality operator. It matches only if at least one operand is of local type (derived from local <code>op</code>).
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00555">555</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+</MemberDefinition>
+
+### operator&gt; {#gabd2a0c082adee2dbdd69043ba8d34dcd}
+
+<MemberDefinition
+  template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;op&#95;v&lt; Lhs&#95;T &gt; or type&#95;traits::is&#95;op&#95;v&lt; Rhs&#95;T &gt; &gt; = 0&gt;</>}
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::operators::operator&gt; (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
+  labels = {["nodiscard", "constexpr"]}>
+Greater than operator. It matches only if at least one operand is of local type (derived from local <code>op</code>).
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00585">585</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+</MemberDefinition>
+
+### operator&gt;= {#ga676092b57233f1137778ee9c38e24a46}
+
+<MemberDefinition
+  template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;op&#95;v&lt; Lhs&#95;T &gt; or type&#95;traits::is&#95;op&#95;v&lt; Rhs&#95;T &gt; &gt; = 0&gt;</>}
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::operators::operator&gt;= (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
+  labels = {["nodiscard", "constexpr"]}>
+Greater than or equal operator. It matches only if at least one operand is of local type (derived from local <code>op</code>).
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00600">600</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+</DoxygenPage>

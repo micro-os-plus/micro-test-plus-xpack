@@ -1,0 +1,96 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/groups/micro-test-plus-expectations
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - group
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
+
+# The Expectations Reference
+
+<DoxygenPage version="1.13.2">
+
+Expectations are checks whose results are reported. <Link to="#details">More...</Link>
+
+## Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="constexpr auto"
+  name={<><Link to="#ga75c3f43663a5440d78231fe572fe4a22">expect</Link> (const Expr&#95;T &amp;expr, const reflection::source&#95;location &amp;sl=reflection::source&#95;location::current())</>}>
+Evaluate a generic condition and report the results. <Link to="#ga75c3f43663a5440d78231fe572fe4a22">More...</Link>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Failed expectations report the failure but do not break the test (as opposed to assumptions).
+
+<SectionDefinition>
+
+## Functions
+
+### expect {#ga75c3f43663a5440d78231fe572fe4a22}
+
+<MemberDefinition
+  template={<>template &lt;class Expr&#95;T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;op&#95;v&lt; Expr&#95;T &gt; or type&#95;traits::is&#95;convertible&#95;v&lt; Expr&#95;T, bool &gt; &gt; = 0&gt;</>}
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::expect (const Expr&#95;T &amp; expr, const reflection::source&#95;location &amp; sl=reflection::source&#95;location::current())</>}
+  labels = {["constexpr"]}>
+Evaluate a generic condition and report the results.
+<ParametersList title="Template Parameters">
+<ParametersListItem name="Expr&#95;T">The type of the custom expression.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] expr">Logical expression to evaluate.</ParametersListItem>
+<ParametersListItem name="[in] sl">Optional source location, by default the current line.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+An output stream to write optional messages.
+</SectionUser>
+
+The expression can be any logical expression, but, in order to allow the framework to help identify the reason why the check failed (by displaying the actual vs. the expected values), the expression should use the provided <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#gae9dfca849300a917cb1c231d275baaa3">eq()</Link></code>, <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#ga59e4cf59954e81bc868e62b1c5c8db1f">ne()</Link></code>, <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#gac162522dcad1a6ff7c869d52d376b3ed">lt()</Link></code>, <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#ga2b5263a5b3965855aa04971bba735a56">le()</Link></code>, <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#gae2fb681444d8256f6bf827eea6b7c29e">gt()</Link></code>, <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#ga34e03399670ec0b365b94b7bea788dd8">ge()</Link></code> comparators, or, if the custom operators namespace is included, to use the custom type operands.
+
+The function template can be used only for expressions that evaluate to a boolean or use custom comparators/operators derived from the local <code>detail::op</code> type.
+
+For generic checks performed with standard C/C++ <code>if</code> statements outside the <code><Link to="#ga75c3f43663a5440d78231fe572fe4a22">expect()</Link></code> logical expression (like complex <code>try</code>/<code>catch</code> statements), the results can be reported with <code>expect(true)</code> or <code>expect(false)</code>.
+
+<SectionUser title="Example">
+<ProgramListing extension="cpp">
+
+<CodeLine><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link>;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">mt::expect (compute&#95;answer () == 42) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer is 42&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+
+</ProgramListing>
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00139">139</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+</DoxygenPage>

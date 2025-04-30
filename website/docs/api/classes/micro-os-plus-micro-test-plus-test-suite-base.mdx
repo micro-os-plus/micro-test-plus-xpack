@@ -1,0 +1,626 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/micro-os-plus/micro-test-plus/test-suite-base
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import Link from '@docusaurus/Link'
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
+
+# The `test_suite_base` Class Reference
+
+<DoxygenPage version="1.13.2">
+
+Base class for all test suites. <Link to="#details">More...</Link>
+
+## Declaration
+
+<CodeBlock>class micro_os_plus::micro_test_plus::test_suite_base;</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem filePath="micro-os-plus/micro-test-plus.h" permalink="/docs/api/files/include/micro-os-plus/micro-test-plus-h" isLocal="false" />
+</IncludesList>
+
+## Derived Classes
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</Link>}>
+Test suites are classes that represent a named group of test cases which self register to the runner. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite#details">More...</Link>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Protected Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="int"
+  name={<><Link to="#a01c523aaf94e26eb4cd6727c5d74ab02">failed&#95;checks&#95;</Link> = 0</>}>
+Count of test conditions that failed. <Link to="#a01c523aaf94e26eb4cd6727c5d74ab02">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>const char &#42;</>}
+  name={<><Link to="#a76f1c1c39f8b2c8cc70688a47bf6eafd">name&#95;</Link></>}>
+The test suite name. <Link to="#a76f1c1c39f8b2c8cc70688a47bf6eafd">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="int"
+  name={<><Link to="#ad2736cdadc2ab917099cd0ad82d3fc18">successful&#95;checks&#95;</Link> = 0</>}>
+Count of test conditions that passed. <Link to="#ad2736cdadc2ab917099cd0ad82d3fc18">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>const char &#42;</>}
+  name={<><Link to="#ae369ec539219642f84aeb93b78269df0">test&#95;case&#95;name&#95;</Link></>}>
+The current test case name. <Link to="#ae369ec539219642f84aeb93b78269df0">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="int"
+  name={<><Link to="#a1e9205117a2373caf7346064e86afa03">test&#95;cases&#95;</Link> = 0</>}>
+Count of test cases in the test suite. <Link to="#a1e9205117a2373caf7346064e86afa03">More...</Link>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<>struct <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base</Link></>}
+  name={<><Link to="#ac1fa1bde706007efdf466c37ec4c9fe3">current&#95;test&#95;case</Link></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="int"
+  name={<><Link to="#a40cadb0a79f55c796b7e7aca4a847cfd">failed&#95;checks</Link></>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><Link to="#ac442c68973cd937aeaef7aa7fbc27d30">process&#95;deferred&#95;begin</Link> = true</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="int"
+  name={<><Link to="#a4851a70fd4a0c71b787e445b9766bacc">successful&#95;checks</Link></>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="&nbsp;"
+  name={<><Link to="#a1aea53994faf3a7f7a610a6c47a8ef4a">test&#95;suite&#95;base</Link> (const char &#42;name)</>}>
+Construct a test suite. <Link to="#a1aea53994faf3a7f7a610a6c47a8ef4a">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="&nbsp;"
+  name={<><Link to="#ac3d6caf07f5c38f8dc8d75d8ae7bb20c">test&#95;suite&#95;base</Link> (const test&#95;suite&#95;base &amp;)=delete</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="&nbsp;"
+  name={<><Link to="#ac66248be55f033bef1a32fb1204ce03b">test&#95;suite&#95;base</Link> (test&#95;suite&#95;base &amp;&amp;)=delete</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="&nbsp;"
+  name={<><Link to="#a8684c3b31ab07eaef800280bc172d6de">~test&#95;suite&#95;base</Link> ()</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><Link to="#a6bd8aa956f30c344c9ef79cf21c69cdc">begin&#95;test&#95;case</Link> (const char &#42;name)</>}>
+Mark the beginning of a named test case. <Link to="#a6bd8aa956f30c344c9ef79cf21c69cdc">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><Link to="#adfc3afd1432b2d093eef73a18ca9a242">begin&#95;test&#95;suite</Link> (void)</>}>
+Begin the execution of the test suite. <Link to="#adfc3afd1432b2d093eef73a18ca9a242">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><Link to="#ab2e1a6eadc56c54b45f9d21e450b0cbc">end&#95;test&#95;case</Link> (void)</>}>
+Mark the end of a test case. <Link to="#ab2e1a6eadc56c54b45f9d21e450b0cbc">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><Link to="#aa53f99054051136b3484a1664b5ee59f">end&#95;test&#95;suite</Link> (void)</>}>
+Mark the end of the test suite. <Link to="#aa53f99054051136b3484a1664b5ee59f">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="constexpr int"
+  name={<><Link to="#a4cd96949ef52b98b6c5e08bbd7900979">failed&#95;checks</Link> (void)</>}>
+Get the number of test conditions that failed. <Link to="#a4cd96949ef52b98b6c5e08bbd7900979">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><Link to="#a20051842d981b530746b4fb4dee00d01">increment&#95;failed</Link> (void)</>}>
+Count one more failed test conditions. <Link to="#a20051842d981b530746b4fb4dee00d01">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><Link to="#a81006378d0bebeadcd59266f57b4ef4b">increment&#95;successful</Link> (void)</>}>
+Count one more passed test conditions. <Link to="#a81006378d0bebeadcd59266f57b4ef4b">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>constexpr const char &#42;</>}
+  name={<><Link to="#a9125f8f20990c738078527f978c5988a">name</Link> ()</>}>
+Get the suite name. <Link to="#a9125f8f20990c738078527f978c5988a">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">test&#95;suite&#95;base</Link> &amp;</>}
+  name={<><Link to="#aba2b1e9fde84789ac9e1a78ae0a088f7">operator=</Link> (const test&#95;suite&#95;base &amp;)=delete</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">test&#95;suite&#95;base</Link> &amp;</>}
+  name={<><Link to="#ab80bbf61a4ff0a02f7a50ec2d305fee0">operator=</Link> (test&#95;suite&#95;base &amp;&amp;)=delete</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><Link to="#a134b2f92347ac243ccb310d5d0324c25">run</Link> (void)</>}>
+Run the sequence of test cases in the suite. <Link to="#a134b2f92347ac243ccb310d5d0324c25">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="constexpr int"
+  name={<><Link to="#acf56ac77830e630b5485248409c3b3f1">successful&#95;checks</Link> (void)</>}>
+Get the number of conditions that passed. <Link to="#acf56ac77830e630b5485248409c3b3f1">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="constexpr int"
+  name={<><Link to="#ae755b186f32e229e8d0bd5e02027b515">test&#95;cases</Link> (void)</>}>
+Get the number of test cases. <Link to="#ae755b186f32e229e8d0bd5e02027b515">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="constexpr bool"
+  name={<><Link to="#a20de3062a437e86955dd2917d7976cb3">unused</Link> (void)</>}>
+If all counters are null, the test suite was not unused. <Link to="#a20de3062a437e86955dd2917d7976cb3">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="constexpr bool"
+  name={<><Link to="#ae60536040204e7481b50dfde7b0a6600">was&#95;successful</Link> (void)</>}>
+Get the test suite result. <Link to="#ae60536040204e7481b50dfde7b0a6600">More...</Link>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+TODO: add <code>@details</code> to <code>@class micro_os_plus::micro_test_plus::test_suite_base</code>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00049">49</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>.
+
+<SectionDefinition>
+
+## Protected Member Attributes
+
+### failed&#95;checks&#95; {#a01c523aaf94e26eb4cd6727c5d74ab02}
+
+<MemberDefinition
+  prototype={<>int micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::failed&#95;checks&#95; = 0</>}
+  labels = {["protected"]}>
+Count of test conditions that failed.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00232">232</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>.
+</MemberDefinition>
+
+### name&#95; {#a76f1c1c39f8b2c8cc70688a47bf6eafd}
+
+<MemberDefinition
+  prototype={<>const char&#42; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::name&#95;</>}
+  labels = {["protected"]}>
+The test suite name.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00217">217</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>.
+</MemberDefinition>
+
+### successful&#95;checks&#95; {#ad2736cdadc2ab917099cd0ad82d3fc18}
+
+<MemberDefinition
+  prototype={<>int micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::successful&#95;checks&#95; = 0</>}
+  labels = {["protected"]}>
+Count of test conditions that passed.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00227">227</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>.
+</MemberDefinition>
+
+### test&#95;case&#95;name&#95; {#ae369ec539219642f84aeb93b78269df0}
+
+<MemberDefinition
+  prototype={<>const char&#42; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::test&#95;case&#95;name&#95;</>}
+  labels = {["protected"]}>
+The current test case name.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00222">222</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>.
+</MemberDefinition>
+
+### test&#95;cases&#95; {#a1e9205117a2373caf7346064e86afa03}
+
+<MemberDefinition
+  prototype={<>int micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::test&#95;cases&#95; = 0</>}
+  labels = {["protected"]}>
+Count of test cases in the test suite.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00237">237</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Attributes
+
+### current&#95;test&#95;case {#ac1fa1bde706007efdf466c37ec4c9fe3}
+
+<MemberDefinition
+  prototype={<>struct micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::current&#95;test&#95;case</>}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00245">245</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>.
+</MemberDefinition>
+
+### failed&#95;checks {#a40cadb0a79f55c796b7e7aca4a847cfd}
+
+<MemberDefinition
+  prototype={<>int micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::failed&#95;checks</>}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00244">244</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>.
+</MemberDefinition>
+
+### process&#95;deferred&#95;begin {#ac442c68973cd937aeaef7aa7fbc27d30}
+
+<MemberDefinition
+  prototype={<>bool micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::process&#95;deferred&#95;begin = true</>}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00240">240</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>.
+</MemberDefinition>
+
+### successful&#95;checks {#a4851a70fd4a0c71b787e445b9766bacc}
+
+<MemberDefinition
+  prototype={<>int micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::successful&#95;checks</>}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00243">243</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Constructors
+
+### test&#95;suite&#95;base() {#a1aea53994faf3a7f7a610a6c47a8ef4a}
+
+<MemberDefinition
+  prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::test&#95;suite&#95;base (const char &#42; name)</>}>
+Construct a test suite.
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] name">The test suite name.</ParametersListItem>
+</ParametersList>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00056">56</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00037">37</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
+</MemberDefinition>
+
+### test&#95;suite&#95;base() {#ac3d6caf07f5c38f8dc8d75d8ae7bb20c}
+
+<MemberDefinition
+  prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::test&#95;suite&#95;base (const <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">test&#95;suite&#95;base</Link> &amp;)</>}
+  labels = {["delete"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00059">59</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>.
+</MemberDefinition>
+
+### test&#95;suite&#95;base() {#ac66248be55f033bef1a32fb1204ce03b}
+
+<MemberDefinition
+  prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::test&#95;suite&#95;base (<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">test&#95;suite&#95;base</Link> &amp;&amp;)</>}
+  labels = {["delete"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00060">60</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>.
+</MemberDefinition>
+
+## Destructor
+
+### ~test&#95;suite&#95;base() {#a8684c3b31ab07eaef800280bc172d6de}
+
+<MemberDefinition
+  prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::~test&#95;suite&#95;base ()</>}
+  labels = {["virtual"]}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00068">68</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00047">47</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
+</MemberDefinition>
+
+## Public Member Functions
+
+### begin&#95;test&#95;case() {#a6bd8aa956f30c344c9ef79cf21c69cdc}
+
+<MemberDefinition
+  prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::begin&#95;test&#95;case (const char &#42; name)</>}>
+Mark the beginning of a named test case.
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] name">The test case name.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+Nothing.
+</SectionUser>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00087">87</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00078">78</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
+</MemberDefinition>
+
+### begin&#95;test&#95;suite() {#adfc3afd1432b2d093eef73a18ca9a242}
+
+<MemberDefinition
+  prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::begin&#95;test&#95;suite (void)</>}>
+Begin the execution of the test suite.
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+<SectionUser title="Returns">
+Nothing.
+</SectionUser>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00175">175</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00060">60</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
+</MemberDefinition>
+
+### end&#95;test&#95;case() {#ab2e1a6eadc56c54b45f9d21e450b0cbc}
+
+<MemberDefinition
+  prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::end&#95;test&#95;case (void)</>}>
+Mark the end of a test case.
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+<SectionUser title="Returns">
+Nothing.
+</SectionUser>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00097">97</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00094">94</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
+</MemberDefinition>
+
+### end&#95;test&#95;suite() {#aa53f99054051136b3484a1664b5ee59f}
+
+<MemberDefinition
+  prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::end&#95;test&#95;suite (void)</>}>
+Mark the end of the test suite.
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+<SectionUser title="Returns">
+Nothing.
+</SectionUser>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00185">185</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00068">68</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
+</MemberDefinition>
+
+### failed&#95;checks() {#a4cd96949ef52b98b6c5e08bbd7900979}
+
+<MemberDefinition
+  prototype={<>int micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::failed&#95;checks (void)</>}
+  labels = {["inline", "nodiscard", "constexpr"]}>
+Get the number of test conditions that failed.
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+<SectionUser title="Returns">
+An integer with the number checks that failed.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00150">150</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>.
+</MemberDefinition>
+
+### increment&#95;failed() {#a20051842d981b530746b4fb4dee00d01}
+
+<MemberDefinition
+  prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::increment&#95;failed (void)</>}>
+Count one more failed test conditions.
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+<SectionUser title="Returns">
+Nothing.
+</SectionUser>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00129">129</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00107">107</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
+</MemberDefinition>
+
+### increment&#95;successful() {#a81006378d0bebeadcd59266f57b4ef4b}
+
+<MemberDefinition
+  prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::increment&#95;successful (void)</>}>
+Count one more passed test conditions.
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+<SectionUser title="Returns">
+Nothing.
+</SectionUser>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00119">119</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00100">100</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
+</MemberDefinition>
+
+### name() {#a9125f8f20990c738078527f978c5988a}
+
+<MemberDefinition
+  prototype={<>const char &#42; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::name ()</>}
+  labels = {["inline", "nodiscard", "constexpr"]}>
+Get the suite name.
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+<SectionUser title="Returns">
+A pointer to the null terminated test suite name.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00106">106</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>.
+</MemberDefinition>
+
+### operator=() {#aba2b1e9fde84789ac9e1a78ae0a088f7}
+
+<MemberDefinition
+  prototype={<>test&#95;suite&#95;base &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::operator= (const <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">test&#95;suite&#95;base</Link> &amp;)</>}
+  labels = {["delete"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00062">62</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>.
+</MemberDefinition>
+
+### operator=() {#ab80bbf61a4ff0a02f7a50ec2d305fee0}
+
+<MemberDefinition
+  prototype={<>test&#95;suite&#95;base &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::operator= (<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">test&#95;suite&#95;base</Link> &amp;&amp;)</>}
+  labels = {["delete"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00065">65</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>.
+</MemberDefinition>
+
+### run() {#a134b2f92347ac243ccb310d5d0324c25}
+
+<MemberDefinition
+  prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::run (void)</>}
+  labels = {["virtual"]}>
+Run the sequence of test cases in the suite.
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+<SectionUser title="Returns">
+Nothing.
+</SectionUser>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00078">78</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00052">52</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
+</MemberDefinition>
+
+### successful&#95;checks() {#acf56ac77830e630b5485248409c3b3f1}
+
+<MemberDefinition
+  prototype={<>int micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::successful&#95;checks (void)</>}
+  labels = {["inline", "nodiscard", "constexpr"]}>
+Get the number of conditions that passed.
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+<SectionUser title="Returns">
+An integer with the number checks that passed.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00138">138</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>.
+</MemberDefinition>
+
+### test&#95;cases() {#ae755b186f32e229e8d0bd5e02027b515}
+
+<MemberDefinition
+  prototype={<>int micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::test&#95;cases (void)</>}
+  labels = {["inline", "nodiscard", "constexpr"]}>
+Get the number of test cases.
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+<SectionUser title="Returns">
+An integer with the number of test cases.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00162">162</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>.
+</MemberDefinition>
+
+### unused() {#a20de3062a437e86955dd2917d7976cb3}
+
+<MemberDefinition
+  prototype={<>bool micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::unused (void)</>}
+  labels = {["inline", "nodiscard", "constexpr"]}>
+If all counters are null, the test suite was not unused.
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+<SectionUser title="Returns">
+True if the test suite is not used.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00207">207</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>.
+</MemberDefinition>
+
+### was&#95;successful() {#ae60536040204e7481b50dfde7b0a6600}
+
+<MemberDefinition
+  prototype={<>bool micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::was&#95;successful (void)</>}
+  labels = {["inline", "nodiscard", "constexpr"]}>
+Get the test suite result.
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+<SectionUser title="Returns">
+True if the test suite was successful.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#l00194">194</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link></li>
+<li><Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link></li>
+</ul>
+
+</DoxygenPage>

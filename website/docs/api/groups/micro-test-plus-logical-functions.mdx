@@ -1,0 +1,171 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/groups/micro-test-plus-logical-functions
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - group
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
+
+# The Logical functions Reference
+
+<DoxygenPage version="1.13.2">
+
+Functions to be used in logical expressions. <Link to="#details">More...</Link>
+
+## Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="constexpr auto"
+  name={<><Link to="#ga8b43b7658b43fb76daf5efbb2e03d236">&#95;and</Link> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
+Generic logical <b>and</b>. <Link to="#ga8b43b7658b43fb76daf5efbb2e03d236">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="constexpr auto"
+  name={<><Link to="#gad9ad936174faf965cffe4493e2b64cf0">&#95;not</Link> (const Expr&#95;T &amp;expr)</>}>
+Generic logical <b>not</b>. <Link to="#gad9ad936174faf965cffe4493e2b64cf0">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="constexpr auto"
+  name={<><Link to="#gad32b40e4b0022b276fa3b357b98a33c5">&#95;or</Link> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
+Generic logical <b>or</b>. <Link to="#gad32b40e4b0022b276fa3b357b98a33c5">More...</Link>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Complex expressions can be checked in a single line, using the logical <code>mt::&#95;and()</code>, <code>mt::&#95;or()</code> and <code>mt::&#95;not()</code> functions.
+
+:::info
+The names are prefixed with underscore since <code>and</code>, <code>or</code> and <code>not</code> are reserved words in C/C++.
+:::
+
+<SectionUser title="Example">
+
+</SectionUser>
+
+
+<ProgramListing extension="cpp">
+
+<CodeLine><Highlight kind="normal">mt::expect(mt::&#95;and (mt::eq (compute&#95;answer (), 42), mt::eq (compute&#95;float (), 42.0)));</Highlight></CodeLine>
+
+</ProgramListing>
+
+
+:::info
+If operands are function comparators, it is recommended to use the overloaded logical operators <code>&amp;&amp;</code>, <code>||</code>, <code>!</code> available in the <code>micro&#95;test&#95;plus::operators</code> namespace.
+:::
+
+<SectionDefinition>
+
+## Functions
+
+### &#95;and {#ga8b43b7658b43fb76daf5efbb2e03d236}
+
+<MemberDefinition
+  template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T&gt;</>}
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;and (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
+  labels = {["nodiscard", "constexpr"]}>
+Generic logical <b>and</b>.
+<ParametersList title="Template Parameters">
+<ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
+<ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] lhs">Left hand side operand.</ParametersListItem>
+<ParametersListItem name="[in] rhs">Right hand side operand.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+True if both operand expressions are true.
+</SectionUser>
+
+:::info
+The underscore is intentional, to differentiate from the standard operator.
+:::
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00451">451</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+</MemberDefinition>
+
+### &#95;not {#gad9ad936174faf965cffe4493e2b64cf0}
+
+<MemberDefinition
+  template={<>template &lt;class Expr&#95;T&gt;</>}
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;not (const Expr&#95;T &amp; expr)</>}
+  labels = {["nodiscard", "constexpr"]}>
+Generic logical <b>not</b>.
+<ParametersList title="Template Parameters">
+<ParametersListItem name="Expr&#95;T">Type of the operand.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] expr">Logical expression.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+True if the operand is false.
+</SectionUser>
+
+:::info
+The underscore is intentional, to differentiate from the standard operator.
+:::
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00431">431</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+</MemberDefinition>
+
+### &#95;or {#gad32b40e4b0022b276fa3b357b98a33c5}
+
+<MemberDefinition
+  template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T&gt;</>}
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;or (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
+  labels = {["nodiscard", "constexpr"]}>
+Generic logical <b>or</b>.
+<ParametersList title="Template Parameters">
+<ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
+<ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] lhs">Left hand side operand.</ParametersListItem>
+<ParametersListItem name="[in] rhs">Right hand side operand.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+True if at least one of the operand expressions is true.
+</SectionUser>
+
+:::info
+The underscore is intentional, to differentiate from the standard operator.
+:::
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00471">471</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+</DoxygenPage>

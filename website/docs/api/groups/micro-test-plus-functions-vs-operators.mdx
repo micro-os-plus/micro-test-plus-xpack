@@ -1,0 +1,38 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/groups/micro-test-plus-functions-vs-operators
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - group
+
+---
+
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+
+# The Functions vs. operators & literals Reference
+
+<DoxygenPage version="1.13.2">
+
+TODO: add <code>@brief</code> to <code>@defgroup micro-test-plus-functions-vs-operators</code>
+
+## Description {#details}
+
+Which to use, functions like <code>eq()</code> or the overloaded operators? A very good question!
+
+Functions guarantee that the nice feature of showing the actual values when expectations fail is always available. Also the syntax is more on the traditional side, and for some it may look simpler and easier to read.
+
+Operators are generally easier to recognise than function calls, but require the hack with the type wrappers and literals to enforce the types, otherwise the actual values will not be displayed when the expectations fail.
+
+Both syntaxes are functional, and, once the differences understood, the issue is a matter of personal preferences.
+
+:::info
+The µOS++ projects favour explicit comparator functions.
+:::
+
+</DoxygenPage>

@@ -1,0 +1,108 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/groups/micro-test-plus-test-suites
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - group
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
+
+# The Test suites Reference
+
+<DoxygenPage version="1.13.2">
+
+Test suites are named sequences of test cases. <Link to="#details">More...</Link>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</Link>}>
+Test suites are classes that represent a named group of test cases which self register to the runner. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">More...</Link>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+The test cases defined in <code>main()</code> are considered to be part of the default (or main) test suite, and are executed immediately when invoked.
+
+For complex applications there can be multiple test suites, usually in separate source files.
+
+In order to make self-registration possible, test suites are classes, constructed with a name, a callable (usually a lambda which chains the execution of the test cases) and optional arguments:
+
+
+<ProgramListing extension="cpp">
+
+<CodeLine><Highlight kind="keyword">class </Highlight><Highlight kind="normal">test&#95;suite : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> test&#95;suite&#95;base</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> Callable&#95;T, </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal">... Args&#95;T&gt;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  test&#95;suite (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42; name, Callable&#95;T&amp;&amp; callable,</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">              Args&#95;T&amp;&amp;... arguments);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">// ...</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#125;</Highlight></CodeLine>
+
+</ProgramListing>
+
+
+:::info
+It is recommended to instantiate the test suites as static objects.
+:::
+
+The self-registration is done in the constructor. Test suites defined in different compilation units can be executed in any order (since the order in which the static constructors are invoked is not specified); thus there should be no dependencies between test suites.
+
+The registered test suites are executed when the function <code>exit&#95;code()</code> is invoked.
+
+<SectionUser title="Examples">
+
+</SectionUser>
+
+
+<ProgramListing extension="cpp">
+
+<CodeLine><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link>;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">// Test suite with generic parameters.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">test&#95;suite&#95;args (</Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> ic, </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> iv, </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal">&amp; ir, </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal">&#42; ip1, </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal">&#42; ip2)</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  mt::test&#95;case (</Highlight><Highlight kind="stringliteral">&quot;args&quot;</Highlight><Highlight kind="normal">, [&amp;] &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">    mt::expect (mt::eq (ic, 42)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;ic is 42&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">    mt::expect (mt::eq (iv, 43)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;iv is 43&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">    mt::expect (mt::eq (ir, 44)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;ir is 44&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">    mt::expect (mt::eq (&#42;ip1, 45)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;&#42;ip1 is 45&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">    mt::expect (mt::eq (&#42;ip2, 46)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;&#42;ip2 is 46&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  &#125;);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> in = 43;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> in44 = 44;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal">&amp; ir = in44;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> in45 = 45;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> in46 = 46;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal">&#42; ip2 = &amp;in46;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> mt::test&#95;suite ts&#95;args</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">    = &#123; </Highlight><Highlight kind="stringliteral">&quot;Args&quot;</Highlight><Highlight kind="normal">, test&#95;suite&#95;args, 42, in, ir, &amp;in45, ip2 &#125;;</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

@@ -1,0 +1,132 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/groups/micro-test-plus-utility-functions
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - group
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
+
+# The Utility functions Reference
+
+<DoxygenPage version="1.13.2">
+
+Functions to assist in string operations. <Link to="#details">More...</Link>
+
+## Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><Link to="#gaa2f0f4cff320a783ad2347c9ff3fc731">is&#95;match</Link> (std::string&#95;view input, std::string&#95;view pattern)</>}>
+Check if a string matches a pattern. <Link to="#gaa2f0f4cff320a783ad2347c9ff3fc731">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="auto "
+  name={<><Link to="#ga1b860aa64be17658d1664de447e6e125">split</Link> (T input, Delim&#95;T delim) -&gt; std::vector&lt; T &gt;</>}>
+Split a string into a vector of sub-strings. <Link to="#ga1b860aa64be17658d1664de447e6e125">More...</Link>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+TODO: add <code>@details</code> to <code>@defgroup micro-test-plus-utility-functions</code>
+
+<SectionDefinition>
+
+## Functions
+
+### is&#95;match {#gaa2f0f4cff320a783ad2347c9ff3fc731}
+
+<MemberDefinition
+  prototype={<>bool micro&#95;os&#95;plus::micro&#95;test&#95;plus::utility::is&#95;match (std::string&#95;view input, std::string&#95;view pattern)</>}
+  labels = {["nodiscard"]}>
+Check if a string matches a pattern.
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] input">String view to check.</ParametersListItem>
+<ParametersListItem name="[in] pattern">Sting view with the pattern.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+True if the string matches the pattern.
+</SectionUser>
+
+For tests comparing strings, in addition to exact matches, it is also possible to check matches with patterns like <code>&#42;</code> (for any characters) and <code>?</code> (for a single character)
+
+<SectionUser title="Examples">
+<ProgramListing extension="cpp">
+
+<CodeLine><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link>;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">mt::expect (mt::utility::is&#95;match (</Highlight><Highlight kind="stringliteral">&quot;abc&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="stringliteral">&quot;a?c&quot;</Highlight><Highlight kind="normal">)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;abc matches a?c&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">mt::expect (mt::utility::is&#95;match (</Highlight><Highlight kind="stringliteral">&quot;abc&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="stringliteral">&quot;a&#42;c&quot;</Highlight><Highlight kind="normal">)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;abc matches a&#42;c&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+
+</ProgramListing>
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00128">128</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
+</MemberDefinition>
+
+### split {#ga1b860aa64be17658d1664de447e6e125}
+
+<MemberDefinition
+  template={<>template &lt;class T = std::string&#95;view, class Delim&#95;T&gt;</>}
+  prototype={<>std::vector&lt; T &gt; micro&#95;os&#95;plus::micro&#95;test&#95;plus::utility::split (T input, Delim&#95;T delim)</>}
+  labels = {["nodiscard"]}>
+Split a string into a vector of sub-strings.
+For tests handling strings, this function template allows to split a string into a vector of substrings, using a delimiter.
+
+<SectionUser title="Example">
+<ProgramListing extension="cpp">
+
+<CodeLine><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link>;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">mt::expect (std::vector&lt;std::string&#95;view&gt;&#123; </Highlight><Highlight kind="stringliteral">&quot;a&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="stringliteral">&quot;b&quot;</Highlight><Highlight kind="normal"> &#125;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">            == mt::utility::split&lt;std::string&#95;view&gt; (</Highlight><Highlight kind="stringliteral">&quot;a.b&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="stringliteral">&quot;.&quot;</Highlight><Highlight kind="normal">))</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">        &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;a.b splits into [a,b]&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+
+</ProgramListing>
+</SectionUser>
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="T">Type of the input string.</ParametersListItem>
+<ParametersListItem name="Delim&#95;T">Type of the delimiter.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] input">Input string to split.</ParametersListItem>
+<ParametersListItem name="[in] delim">Delimiter string.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+An array of strings.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/inlines-h/#l00174">174</Link> of file <Link to="/docs/api/files/include/micro-os-plus/inlines-h">inlines.h</Link>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+</DoxygenPage>

@@ -1,0 +1,107 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/groups/micro-test-plus-container-operators
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - group
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
+
+# The Container operators Reference
+
+<DoxygenPage version="1.13.2">
+
+Overloaded operators to compare containers. <Link to="#details">More...</Link>
+
+## Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="constexpr auto"
+  name={<><Link to="#gac48b765b41388c3ebe1a996f9a05aaf8">operator!=</Link> (T &amp;&amp;lhs, T &amp;&amp;rhs)</>}>
+Non-equality operator for containers. <Link to="#gac48b765b41388c3ebe1a996f9a05aaf8">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="constexpr auto"
+  name={<><Link to="#gaac06b4166dbd6e2b62a744878903eee8">operator==</Link> (T &amp;&amp;lhs, T &amp;&amp;rhs)</>}>
+Equality operator for containers. <Link to="#gaac06b4166dbd6e2b62a744878903eee8">More...</Link>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+In addition to the generic operators, there are also equality operators for containers.
+
+<SectionUser title="Examples">
+
+</SectionUser>
+
+
+<ProgramListing extension="cpp">
+
+<CodeLine><Highlight kind="preprocessor">#include &lt;string&#95;view&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal">std::literals; </Highlight><Highlight kind="comment">// For the &quot;sv&quot; literal.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link>;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">// ...</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">mt::test&#95;case (</Highlight><Highlight kind="stringliteral">&quot;Operators&quot;</Highlight><Highlight kind="normal">, [] &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal">micro&#95;test&#95;plus::operators;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  mt::expect (std::vector&lt;int&gt;&#123; 1, 2 &#125; == std::vector&lt;int&gt;&#123; 1, 2 &#125;)</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">          &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;vector&#123; 1, 2 &#125; == vector&#123; 1, 2 &#125;&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  mt::expect (std::vector&lt;int&gt;&#123; 1, 2, 3 &#125; != std::vector&lt;int&gt;&#123; 1, 2, 4 &#125;)</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">          &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;vector&#123; 1, 2, 3 &#125; != vector&#123; 1, 2, 4 &#125;&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#125;);</Highlight></CodeLine>
+
+</ProgramListing>
+
+<SectionDefinition>
+
+## Functions
+
+### operator!= {#gac48b765b41388c3ebe1a996f9a05aaf8}
+
+<MemberDefinition
+  template={<>template &lt;class T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;container&#95;v&lt; T &gt; &gt; = 0&gt;</>}
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::operators::operator!= (T &amp;&amp; lhs, T &amp;&amp; rhs)</>}
+  labels = {["nodiscard", "constexpr"]}>
+Non-equality operator for containers.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00540">540</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+</MemberDefinition>
+
+### operator== {#gaac06b4166dbd6e2b62a744878903eee8}
+
+<MemberDefinition
+  template={<>template &lt;class T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;container&#95;v&lt; T &gt; &gt; = 0&gt;</>}
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::operators::operator== (T &amp;&amp; lhs, T &amp;&amp; rhs)</>}
+  labels = {["nodiscard", "constexpr"]}>
+Equality operator for containers.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00528">528</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+</DoxygenPage>

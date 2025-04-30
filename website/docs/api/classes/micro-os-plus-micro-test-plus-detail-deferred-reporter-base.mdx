@@ -1,0 +1,211 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import Link from '@docusaurus/Link'
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+# The `deferred_reporter_base` Class Reference
+
+<DoxygenPage version="1.13.2">
+
+Base class for a deferred reporter, that collects the messages into a string. <Link to="#details">More...</Link>
+
+## Declaration
+
+<CodeBlock>class micro_os_plus::micro_test_plus::detail::deferred_reporter_base;</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem filePath="micro-os-plus/micro-test-plus.h" permalink="/docs/api/files/include/micro-os-plus/micro-test-plus-h" isLocal="false" />
+</IncludesList>
+
+## Derived Classes
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter">deferred&#95;reporter</Link>}>
+Class template for a deferred reporter specific to an expression. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter#details">More...</Link>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Protected Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="bool"
+  name={<><Link to="#aa36fd4c36a94b04430599303e38a48bd">abort&#95;</Link> = false</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>const <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source&#95;location</Link></>}
+  name={<><Link to="#a025498d9b9376056c56042cc98ed7afd">location&#95;</Link> &#123;&#125;</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="std::string"
+  name={<><Link to="#aa12bdce872a0994d70be146507834cf1">message&#95;</Link> &#123;&#125;</>}>
+String to collect the expectation message passed via <code>operator&lt;&lt;()</code>. <Link to="#aa12bdce872a0994d70be146507834cf1">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="bool"
+  name={<><Link to="#af633053afa944173b47482786f9d9a7e">value&#95;</Link> &#123;&#125;</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="&nbsp;"
+  name={<><Link to="#aba23fdd1c24e8232712ba47b8e107a19">deferred&#95;reporter&#95;base</Link> (bool value, const reflection::source&#95;location location)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="&nbsp;"
+  name={<><Link to="#a3a8503e793c807cbb882033cc5ff2831">~deferred&#95;reporter&#95;base</Link> ()</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>auto &amp;</>}
+  name={<><Link to="#ae90dacdedb65168453056c0787f88567">operator&lt;&lt;</Link> (const T &amp;msg)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="constexpr bool"
+  name={<><Link to="#a0e4cca7c6f1d63789683f3b6a7f647ea">value</Link> () const</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+TODO: add <code>@details</code> to <code>@class micro_os_plus::micro_test_plus::detail::deferred_reporter_base</code>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/detail-h/#l00698">698</Link> of file <Link to="/docs/api/files/include/micro-os-plus/detail-h">detail.h</Link>.
+
+<SectionDefinition>
+
+## Protected Member Attributes
+
+### abort&#95; {#aa36fd4c36a94b04430599303e38a48bd}
+
+<MemberDefinition
+  prototype={<>bool micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::deferred&#95;reporter&#95;base::abort&#95; = false</>}
+  labels = {["protected"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/detail-h/#l00718">718</Link> of file <Link to="/docs/api/files/include/micro-os-plus/detail-h">detail.h</Link>.
+</MemberDefinition>
+
+### location&#95; {#a025498d9b9376056c56042cc98ed7afd}
+
+<MemberDefinition
+  prototype={<>const reflection::source&#95;location micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::deferred&#95;reporter&#95;base::location&#95; &#123;&#125;</>}
+  labels = {["protected"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/detail-h/#l00719">719</Link> of file <Link to="/docs/api/files/include/micro-os-plus/detail-h">detail.h</Link>.
+</MemberDefinition>
+
+### message&#95; {#aa12bdce872a0994d70be146507834cf1}
+
+<MemberDefinition
+  prototype={<>std::string micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::deferred&#95;reporter&#95;base::message&#95; &#123;&#125;</>}
+  labels = {["protected"]}>
+String to collect the expectation message passed via <code>operator&lt;&lt;()</code>.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/detail-h/#l00725">725</Link> of file <Link to="/docs/api/files/include/micro-os-plus/detail-h">detail.h</Link>.
+</MemberDefinition>
+
+### value&#95; {#af633053afa944173b47482786f9d9a7e}
+
+<MemberDefinition
+  prototype={<>bool micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::deferred&#95;reporter&#95;base::value&#95; &#123;&#125;</>}
+  labels = {["protected"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/detail-h/#l00717">717</Link> of file <Link to="/docs/api/files/include/micro-os-plus/detail-h">detail.h</Link>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Constructors
+
+### deferred&#95;reporter&#95;base() {#aba23fdd1c24e8232712ba47b8e107a19}
+
+<MemberDefinition
+  prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::deferred&#95;reporter&#95;base::deferred&#95;reporter&#95;base (bool value, const <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source&#95;location</Link> location)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/detail-h/#l00701">701</Link> of file <Link to="/docs/api/files/include/micro-os-plus/detail-h">detail.h</Link>, definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00166">166</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
+</MemberDefinition>
+
+## Destructor
+
+### ~deferred&#95;reporter&#95;base() {#a3a8503e793c807cbb882033cc5ff2831}
+
+<MemberDefinition
+  prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::deferred&#95;reporter&#95;base::~deferred&#95;reporter&#95;base ()</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/detail-h/#l00704">704</Link> of file <Link to="/docs/api/files/include/micro-os-plus/detail-h">detail.h</Link>, definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00180">180</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
+</MemberDefinition>
+
+## Public Member Functions
+
+### operator&lt;&lt;() {#ae90dacdedb65168453056c0787f88567}
+
+<MemberDefinition
+  template={<>template &lt;class T&gt;</>}
+  prototype={<>auto &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::deferred&#95;reporter&#95;base::operator&lt;&lt; (const T &amp; msg)</>}>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/detail-h/#l00707">707</Link> of file <Link to="/docs/api/files/include/micro-os-plus/detail-h">detail.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/inlines-h/#l00111">111</Link> of file <Link to="/docs/api/files/include/micro-os-plus/inlines-h">inlines.h</Link>.
+</MemberDefinition>
+
+### value() {#a0e4cca7c6f1d63789683f3b6a7f647ea}
+
+<MemberDefinition
+  prototype={<>bool micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::deferred&#95;reporter&#95;base::value () const</>}
+  labels = {["inline", "nodiscard", "constexpr"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/detail-h/#l00711">711</Link> of file <Link to="/docs/api/files/include/micro-os-plus/detail-h">detail.h</Link>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><Link to="/docs/api/files/include/micro-os-plus/detail-h">detail.h</Link></li>
+<li><Link to="/docs/api/files/include/micro-os-plus/inlines-h">inlines.h</Link></li>
+<li><Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link></li>
+</ul>
+
+</DoxygenPage>

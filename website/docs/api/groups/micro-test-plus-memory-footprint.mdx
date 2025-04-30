@@ -1,0 +1,36 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/groups/micro-test-plus-memory-footprint
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - group
+
+---
+
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+
+# The Memory footprint Reference
+
+<DoxygenPage version="1.13.2">
+
+TODO: add <code>@brief</code> to <code>@defgroup micro-test-plus-memory-footprint</code>
+
+## Description {#details}
+
+The memory footprint of unit tests based on µTest++ is definitely smaller than that of traditional C++ testing framework, mainly because the <code>iostream</code> library is not used.
+
+However, the use of templates for implementing the comparators and operators should be carefully observed for platforms with really limited amounts of memory, since each pair of different operands contributes to the program size.
+
+At the limit, µTest++ can be used without custom comparators and operators (only with regular boolean expressions), and still be able to provide the basic functionality of testing various conditions, but without the optional features of displaying the actual values compared.
+
+:::info
+The memory footprint on <code>debug</code> (built with <code>-O0</code>), is significantly larger than on <code>release</code>. If necessary, the optimization for the <code>debug</code> build can be increased to <code>-Og</code>, to save some memory.
+:::
+
+</DoxygenPage>

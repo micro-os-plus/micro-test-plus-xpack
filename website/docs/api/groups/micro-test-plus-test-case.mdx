@@ -1,0 +1,127 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/groups/micro-test-plus-test-case
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - group
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
+
+# The Test cases Reference
+
+<DoxygenPage version="1.13.2">
+
+Test cases are named sequences of checks. <Link to="#details">More...</Link>
+
+## Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="void"
+  name={<><Link to="#ga423b46709cca6072efe28a6dbf85e413">test&#95;case</Link> (const char &#42;name, Callable&#95;T &amp;&amp;callable, Args&#95;T &amp;&amp;... arguments)</>}>
+Define and execute a test case. <Link to="#ga423b46709cca6072efe28a6dbf85e413">More...</Link>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+Test cases group several checks to be executed in the same environment.
+
+There can be any number of test cases, and each test case is performed by invoking a function, parametrised with a name/description, a callable (usually a lambda), and optional arguments.
+
+<SectionUser title="Examples">
+
+</SectionUser>
+
+
+<ProgramListing extension="cpp">
+
+<CodeLine><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link>;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">mt::test&#95;case (</Highlight><Highlight kind="stringliteral">&quot;Check various conditions&quot;</Highlight><Highlight kind="normal">, [] &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  mt::expect (mt::eq (compute&#95;answer (), 42)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer eq 42&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  mt::expect (mt::ne (compute&#95;answer (), 43)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer ne 43&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#125;);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">mt::test&#95;case (</Highlight><Highlight kind="stringliteral">&quot;Check various conditions with operators&quot;</Highlight><Highlight kind="normal">, [] &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal">mt::operators;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal">mt::literals;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  mt::expect (compute&#95;answer () == 42&#95;i) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer == 42&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  mt::expect (compute&#95;answer () != 43&#95;i) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer != 43&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#125;);</Highlight></CodeLine>
+
+</ProgramListing>
+
+<SectionDefinition>
+
+## Functions
+
+### test&#95;case {#ga423b46709cca6072efe28a6dbf85e413}
+
+<MemberDefinition
+  template={<>template &lt;typename Callable&#95;T, typename... Args&#95;T&gt;</>}
+  prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;case (const char &#42; name, Callable&#95;T &amp;&amp; callable, Args&#95;T &amp;&amp;... arguments)</>}>
+Define and execute a test case.
+A test case is a sequence of test conditions (or simply tests, or checks), which are expectations/assumptions, i.e. conditions expected to be true.
+
+Tests are based on logical expressions, which usually compute a result and compare it to an expected value. For C++ projects, it is also possible to check if, while evaluating an expression, exceptions are thrown or not. Each test either succeeds or fails. For expectations, the runner keeps counts of successful and failed tests.
+
+A test case has a name, a function which performs the checks, and possibly arguments.
+
+The <code>test&#95;case</code> implementation invokes the function with the provided arguments, and reports the results.
+
+<SectionUser title="Example">
+<ProgramListing extension="cpp">
+
+<CodeLine><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link>;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">mt::test&#95;case (</Highlight><Highlight kind="stringliteral">&quot;Check answer with comparator&quot;</Highlight><Highlight kind="normal">, [] &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  mt::expect (mt::eq (compute&#95;answer (), 42)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer is 42&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#125;);</Highlight></CodeLine>
+
+</ProgramListing>
+</SectionUser>
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="Callable&#95;T">The type of an object that can be called.</ParametersListItem>
+<ParametersListItem name="Args&#95;T">The type of the callable arguments.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] name">The test case name or description. A short string used in the report.</ParametersListItem>
+<ParametersListItem name="[in] callable">A generic callable object, invoked to perform the test. Usually a lambda.</ParametersListItem>
+<ParametersListItem name="[in] arguments">A possibly empty list of arguments to be passed to the callable.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+Nothing.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/inlines-h/#l00092">92</Link> of file <Link to="/docs/api/files/include/micro-os-plus/inlines-h">inlines.h</Link>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+</DoxygenPage>

@@ -1,0 +1,268 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/files/include/micro-os-plus/test-suite-h
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - file
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+
+# The `test-suite.h` File Reference
+
+<DoxygenPage version="1.13.2">
+
+TODO: add <code>@brief</code> to <code>@file include/micro-os-plus/test-suite.h</code>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem filePath="functional" permalink="" isLocal="false" />
+</IncludesList>
+
+## Namespaces Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<Link to="/docs/api/namespaces/micro-os-plus">micro&#95;os&#95;plus</Link>}>
+The top µOS++ namespace. <Link to="/docs/api/namespaces/micro-os-plus">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="namespace"
+  name={<Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;test&#95;plus</Link>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Classes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="class"
+  name={<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</Link>}>
+Test suites are classes that represent a named group of test cases which self register to the runner. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="class"
+  name={<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">test&#95;suite&#95;base</Link>}>
+Base class for all test suites. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">More...</Link>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+TODO: add <code>@details</code> to <code>@file include/micro-os-plus/test-suite.h</code>
+
+## File Listing
+
+The file content with the documentation metadata removed is:
+
+<ProgramListing>
+
+<Link id="l00001"/><CodeLine lineNumber="1"><Highlight kind="comment">/&#42;</Highlight></CodeLine>
+<Link id="l00002"/><CodeLine lineNumber="2"><Highlight kind="comment"> &#42; This file is part of the µOS++ project (https://micro-os-plus.github.io/).</Highlight></CodeLine>
+<Link id="l00003"/><CodeLine lineNumber="3"><Highlight kind="comment"> &#42; Copyright (c) 2021 Liviu Ionescu. All rights reserved.</Highlight></CodeLine>
+<Link id="l00004"/><CodeLine lineNumber="4"><Highlight kind="comment"> &#42;</Highlight></CodeLine>
+<Link id="l00005"/><CodeLine lineNumber="5"><Highlight kind="comment"> &#42; Permission to use, copy, modify, and/or distribute this software</Highlight></CodeLine>
+<Link id="l00006"/><CodeLine lineNumber="6"><Highlight kind="comment"> &#42; for any purpose is hereby granted, under the terms of the MIT license.</Highlight></CodeLine>
+<Link id="l00007"/><CodeLine lineNumber="7"><Highlight kind="comment"> &#42;</Highlight></CodeLine>
+<Link id="l00008"/><CodeLine lineNumber="8"><Highlight kind="comment"> &#42; If a copy of the license was not distributed with this file, it can</Highlight></CodeLine>
+<Link id="l00009"/><CodeLine lineNumber="9"><Highlight kind="comment"> &#42; be obtained from https://opensource.org/licenses/mit.</Highlight></CodeLine>
+<Link id="l00010"/><CodeLine lineNumber="10"><Highlight kind="comment"> &#42;</Highlight></CodeLine>
+<Link id="l00011"/><CodeLine lineNumber="11"><Highlight kind="comment"> &#42; Major parts of the code are inspired from v1.1.8 of the Boost UT project,</Highlight></CodeLine>
+<Link id="l00012"/><CodeLine lineNumber="12"><Highlight kind="comment"> &#42; released under the terms of the Boost Version 1 Software License,</Highlight></CodeLine>
+<Link id="l00013"/><CodeLine lineNumber="13"><Highlight kind="comment"> &#42; which can be obtained from https://www.boost.org/LICENSE&#95;1&#95;0.txt.</Highlight></CodeLine>
+<Link id="l00014"/><CodeLine lineNumber="14"><Highlight kind="comment"> &#42;/</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00015"/><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00016"/><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef MICRO&#95;TEST&#95;PLUS&#95;TEST&#95;SUITE&#95;H&#95;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00017"/><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define MICRO&#95;TEST&#95;PLUS&#95;TEST&#95;SUITE&#95;H&#95;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00018"/><CodeLine lineNumber="18"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00019"/><CodeLine lineNumber="19"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00020"/><CodeLine lineNumber="20"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00021"/><CodeLine lineNumber="21"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef &#95;&#95;cplusplus</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00022"/><CodeLine lineNumber="22"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00023"/><CodeLine lineNumber="23"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00024"/><CodeLine lineNumber="24"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00025"/><CodeLine lineNumber="25"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;functional&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00026"/><CodeLine lineNumber="26"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00027"/><CodeLine lineNumber="27"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00028"/><CodeLine lineNumber="28"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00029"/><CodeLine lineNumber="29"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;GNUC&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00030"/><CodeLine lineNumber="30"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma GCC diagnostic push</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00031"/><CodeLine lineNumber="31"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma GCC diagnostic ignored &quot;-Wpadded&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00032"/><CodeLine lineNumber="32"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if !defined(&#95;&#95;clang&#95;&#95;) </Highlight><Highlight kind="comment">// GCC only</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00033"/><CodeLine lineNumber="33"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma GCC diagnostic ignored &quot;-Wsuggest-final-types&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00034"/><CodeLine lineNumber="34"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma GCC diagnostic ignored &quot;-Wsuggest-final-methods&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00035"/><CodeLine lineNumber="35"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00036"/><CodeLine lineNumber="36"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;clang&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00037"/><CodeLine lineNumber="37"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma clang diagnostic ignored &quot;-Wc++98-compat&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00038"/><CodeLine lineNumber="38"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00039"/><CodeLine lineNumber="39"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00040"/><CodeLine lineNumber="40"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00041"/><CodeLine lineNumber="41"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link></Highlight></CodeLine>
+<Link id="l00042"/><CodeLine lineNumber="42"><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00043"/><CodeLine lineNumber="43"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// --------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00044"/><CodeLine lineNumber="44"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00049"/><CodeLine lineNumber="49" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a1aea53994faf3a7f7a610a6c47a8ef4a">test&#95;suite&#95;base</Link></Highlight></CodeLine>
+<Link id="l00050"/><CodeLine lineNumber="50"><Highlight kind="normal">  &#123;</Highlight></CodeLine>
+<Link id="l00051"/><CodeLine lineNumber="51"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00056"/><CodeLine lineNumber="56"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a1aea53994faf3a7f7a610a6c47a8ef4a">test&#95;suite&#95;base</Link> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42; <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a9125f8f20990c738078527f978c5988a">name</Link>);</Highlight></CodeLine>
+<Link id="l00057"/><CodeLine lineNumber="57"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00058"/><CodeLine lineNumber="58"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// The rule of five.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00059"/><CodeLine lineNumber="59" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ac3d6caf07f5c38f8dc8d75d8ae7bb20c"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ac3d6caf07f5c38f8dc8d75d8ae7bb20c">test&#95;suite&#95;base</Link> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a1aea53994faf3a7f7a610a6c47a8ef4a">test&#95;suite&#95;base</Link>&amp;) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00060"/><CodeLine lineNumber="60" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ac66248be55f033bef1a32fb1204ce03b"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ac66248be55f033bef1a32fb1204ce03b">test&#95;suite&#95;base</Link> (<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a1aea53994faf3a7f7a610a6c47a8ef4a">test&#95;suite&#95;base</Link>&amp;&amp;) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00061"/><CodeLine lineNumber="61"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a1aea53994faf3a7f7a610a6c47a8ef4a">test&#95;suite&#95;base</Link>&amp;</Highlight></CodeLine>
+<Link id="l00062"/><CodeLine lineNumber="62" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#aba2b1e9fde84789ac9e1a78ae0a088f7"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#aba2b1e9fde84789ac9e1a78ae0a088f7">operator= </Link>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a1aea53994faf3a7f7a610a6c47a8ef4a">test&#95;suite&#95;base</Link>&amp;)</Highlight></CodeLine>
+<Link id="l00063"/><CodeLine lineNumber="63"><Highlight kind="normal">        = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00064"/><CodeLine lineNumber="64"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a1aea53994faf3a7f7a610a6c47a8ef4a">test&#95;suite&#95;base</Link>&amp;</Highlight></CodeLine>
+<Link id="l00065"/><CodeLine lineNumber="65" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ab80bbf61a4ff0a02f7a50ec2d305fee0"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#aba2b1e9fde84789ac9e1a78ae0a088f7">operator= </Link>(<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a1aea53994faf3a7f7a610a6c47a8ef4a">test&#95;suite&#95;base</Link>&amp;&amp;)</Highlight></CodeLine>
+<Link id="l00066"/><CodeLine lineNumber="66"><Highlight kind="normal">        = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00067"/><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00068"/><CodeLine lineNumber="68"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a8684c3b31ab07eaef800280bc172d6de">~test&#95;suite&#95;base</Link> ();</Highlight></CodeLine>
+<Link id="l00069"/><CodeLine lineNumber="69"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00077"/><CodeLine lineNumber="77"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00078"/><CodeLine lineNumber="78"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a134b2f92347ac243ccb310d5d0324c25">run</Link> (</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00079"/><CodeLine lineNumber="79"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00086"/><CodeLine lineNumber="86"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00087"/><CodeLine lineNumber="87"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a6bd8aa956f30c344c9ef79cf21c69cdc">begin&#95;test&#95;case</Link> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42; <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a9125f8f20990c738078527f978c5988a">name</Link>);</Highlight></CodeLine>
+<Link id="l00088"/><CodeLine lineNumber="88"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00096"/><CodeLine lineNumber="96"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00097"/><CodeLine lineNumber="97"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ab2e1a6eadc56c54b45f9d21e450b0cbc">end&#95;test&#95;case</Link> (</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00098"/><CodeLine lineNumber="98"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00105"/><CodeLine lineNumber="105"><Highlight kind="normal">    [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42;</Highlight></CodeLine>
+<Link id="l00106"/><CodeLine lineNumber="106" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a9125f8f20990c738078527f978c5988a"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a9125f8f20990c738078527f978c5988a">name</Link> ()</Highlight></CodeLine>
+<Link id="l00107"/><CodeLine lineNumber="107"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
+<Link id="l00108"/><CodeLine lineNumber="108"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a76f1c1c39f8b2c8cc70688a47bf6eafd">name&#95;</Link>;</Highlight></CodeLine>
+<Link id="l00109"/><CodeLine lineNumber="109"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00110"/><CodeLine lineNumber="110"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00118"/><CodeLine lineNumber="118"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00119"/><CodeLine lineNumber="119"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a81006378d0bebeadcd59266f57b4ef4b">increment&#95;successful</Link> (</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00120"/><CodeLine lineNumber="120"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00128"/><CodeLine lineNumber="128"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00129"/><CodeLine lineNumber="129"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a20051842d981b530746b4fb4dee00d01">increment&#95;failed</Link> (</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00130"/><CodeLine lineNumber="130"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00137"/><CodeLine lineNumber="137"><Highlight kind="normal">    [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00138"/><CodeLine lineNumber="138" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#acf56ac77830e630b5485248409c3b3f1"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#acf56ac77830e630b5485248409c3b3f1">successful&#95;checks</Link> (</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l00139"/><CodeLine lineNumber="139"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
+<Link id="l00140"/><CodeLine lineNumber="140"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ad2736cdadc2ab917099cd0ad82d3fc18">successful&#95;checks&#95;</Link>;</Highlight></CodeLine>
+<Link id="l00141"/><CodeLine lineNumber="141"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00142"/><CodeLine lineNumber="142"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00149"/><CodeLine lineNumber="149"><Highlight kind="normal">    [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00150"/><CodeLine lineNumber="150" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a4cd96949ef52b98b6c5e08bbd7900979"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a4cd96949ef52b98b6c5e08bbd7900979">failed&#95;checks</Link> (</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l00151"/><CodeLine lineNumber="151"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
+<Link id="l00152"/><CodeLine lineNumber="152"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a01c523aaf94e26eb4cd6727c5d74ab02">failed&#95;checks&#95;</Link>;</Highlight></CodeLine>
+<Link id="l00153"/><CodeLine lineNumber="153"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00154"/><CodeLine lineNumber="154"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00161"/><CodeLine lineNumber="161"><Highlight kind="normal">    [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00162"/><CodeLine lineNumber="162" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ae755b186f32e229e8d0bd5e02027b515"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ae755b186f32e229e8d0bd5e02027b515">test&#95;cases</Link> (</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l00163"/><CodeLine lineNumber="163"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
+<Link id="l00164"/><CodeLine lineNumber="164"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a1e9205117a2373caf7346064e86afa03">test&#95;cases&#95;</Link>;</Highlight></CodeLine>
+<Link id="l00165"/><CodeLine lineNumber="165"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00166"/><CodeLine lineNumber="166"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00174"/><CodeLine lineNumber="174"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00175"/><CodeLine lineNumber="175"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#adfc3afd1432b2d093eef73a18ca9a242">begin&#95;test&#95;suite</Link> (</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00176"/><CodeLine lineNumber="176"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00184"/><CodeLine lineNumber="184"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00185"/><CodeLine lineNumber="185"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#aa53f99054051136b3484a1664b5ee59f">end&#95;test&#95;suite</Link> (</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00186"/><CodeLine lineNumber="186"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00193"/><CodeLine lineNumber="193"><Highlight kind="normal">    [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00194"/><CodeLine lineNumber="194" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ae60536040204e7481b50dfde7b0a6600"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ae60536040204e7481b50dfde7b0a6600">was&#95;successful</Link> (</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l00195"/><CodeLine lineNumber="195"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
+<Link id="l00196"/><CodeLine lineNumber="196"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Also fail if none passed.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00197"/><CodeLine lineNumber="197"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> (<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a01c523aaf94e26eb4cd6727c5d74ab02">failed&#95;checks&#95;</Link> == 0 &amp;&amp; <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ad2736cdadc2ab917099cd0ad82d3fc18">successful&#95;checks&#95;</Link> != 0);</Highlight></CodeLine>
+<Link id="l00198"/><CodeLine lineNumber="198"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00199"/><CodeLine lineNumber="199"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00206"/><CodeLine lineNumber="206"><Highlight kind="normal">    [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00207"/><CodeLine lineNumber="207" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a20de3062a437e86955dd2917d7976cb3"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a20de3062a437e86955dd2917d7976cb3">unused</Link> (</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l00208"/><CodeLine lineNumber="208"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
+<Link id="l00209"/><CodeLine lineNumber="209"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> (<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a01c523aaf94e26eb4cd6727c5d74ab02">failed&#95;checks&#95;</Link> == 0 &amp;&amp; <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ad2736cdadc2ab917099cd0ad82d3fc18">successful&#95;checks&#95;</Link> == 0</Highlight></CodeLine>
+<Link id="l00210"/><CodeLine lineNumber="210"><Highlight kind="normal">              &amp;&amp; <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a1e9205117a2373caf7346064e86afa03">test&#95;cases&#95;</Link> == 0);</Highlight></CodeLine>
+<Link id="l00211"/><CodeLine lineNumber="211"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00212"/><CodeLine lineNumber="212"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00213"/><CodeLine lineNumber="213"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00217"/><CodeLine lineNumber="217" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a76f1c1c39f8b2c8cc70688a47bf6eafd"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42; <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a76f1c1c39f8b2c8cc70688a47bf6eafd">name&#95;</Link>;</Highlight></CodeLine>
+<Link id="l00218"/><CodeLine lineNumber="218"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00222"/><CodeLine lineNumber="222" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ae369ec539219642f84aeb93b78269df0"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42; <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ae369ec539219642f84aeb93b78269df0">test&#95;case&#95;name&#95;</Link>;</Highlight></CodeLine>
+<Link id="l00223"/><CodeLine lineNumber="223"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00227"/><CodeLine lineNumber="227" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ad2736cdadc2ab917099cd0ad82d3fc18"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ad2736cdadc2ab917099cd0ad82d3fc18">successful&#95;checks&#95;</Link> = 0;</Highlight></CodeLine>
+<Link id="l00228"/><CodeLine lineNumber="228"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00232"/><CodeLine lineNumber="232" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a01c523aaf94e26eb4cd6727c5d74ab02"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a01c523aaf94e26eb4cd6727c5d74ab02">failed&#95;checks&#95;</Link> = 0;</Highlight></CodeLine>
+<Link id="l00233"/><CodeLine lineNumber="233"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00237"/><CodeLine lineNumber="237" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a1e9205117a2373caf7346064e86afa03"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a1e9205117a2373caf7346064e86afa03">test&#95;cases&#95;</Link> = 0;</Highlight></CodeLine>
+<Link id="l00238"/><CodeLine lineNumber="238"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00239"/><CodeLine lineNumber="239"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00240"/><CodeLine lineNumber="240" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ac442c68973cd937aeaef7aa7fbc27d30"><Highlight kind="normal">    </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ac442c68973cd937aeaef7aa7fbc27d30">process&#95;deferred&#95;begin</Link> = </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00241"/><CodeLine lineNumber="241"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">struct</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00242"/><CodeLine lineNumber="242"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
+<Link id="l00243"/><CodeLine lineNumber="243" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a4851a70fd4a0c71b787e445b9766bacc"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a4851a70fd4a0c71b787e445b9766bacc">successful&#95;checks</Link>;</Highlight></CodeLine>
+<Link id="l00244"/><CodeLine lineNumber="244" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a40cadb0a79f55c796b7e7aca4a847cfd"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a40cadb0a79f55c796b7e7aca4a847cfd">failed&#95;checks</Link>;</Highlight></CodeLine>
+<Link id="l00245"/><CodeLine lineNumber="245" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ac1fa1bde706007efdf466c37ec4c9fe3"><Highlight kind="normal">    &#125; <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ac1fa1bde706007efdf466c37ec4c9fe3">current&#95;test&#95;case</Link>&#123;&#125;;</Highlight></CodeLine>
+<Link id="l00246"/><CodeLine lineNumber="246"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00247"/><CodeLine lineNumber="247"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00254"/><CodeLine lineNumber="254" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a824b38d21a3f4d0adb99827455f159cf">test&#95;suite</Link> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a1aea53994faf3a7f7a610a6c47a8ef4a">test&#95;suite&#95;base</Link></Highlight></CodeLine>
+<Link id="l00255"/><CodeLine lineNumber="255"><Highlight kind="normal">  &#123;</Highlight></CodeLine>
+<Link id="l00256"/><CodeLine lineNumber="256"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00268"/><CodeLine lineNumber="268"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> Callable&#95;T, </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal">... Args&#95;T&gt;</Highlight></CodeLine>
+<Link id="l00269"/><CodeLine lineNumber="269"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a824b38d21a3f4d0adb99827455f159cf">test&#95;suite</Link> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42; <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a9125f8f20990c738078527f978c5988a">name</Link>, Callable&#95;T&amp;&amp; callable,</Highlight></CodeLine>
+<Link id="l00270"/><CodeLine lineNumber="270"><Highlight kind="normal">                Args&#95;T&amp;&amp;... arguments);</Highlight></CodeLine>
+<Link id="l00271"/><CodeLine lineNumber="271"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00272"/><CodeLine lineNumber="272"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// The rule of five.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00273"/><CodeLine lineNumber="273" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a7c82c1d689d5b438a1ed6fd59244d8e3"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a7c82c1d689d5b438a1ed6fd59244d8e3">test&#95;suite</Link> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a824b38d21a3f4d0adb99827455f159cf">test&#95;suite</Link>&amp;) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00274"/><CodeLine lineNumber="274" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#acdbf1e957b2b5baae7d468820c8fc006"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#acdbf1e957b2b5baae7d468820c8fc006">test&#95;suite</Link> (<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a824b38d21a3f4d0adb99827455f159cf">test&#95;suite</Link>&amp;&amp;) = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00275"/><CodeLine lineNumber="275"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a824b38d21a3f4d0adb99827455f159cf">test&#95;suite</Link>&amp;</Highlight></CodeLine>
+<Link id="l00276"/><CodeLine lineNumber="276" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#aafe75ac5383b6981e1ed6e3c8e96249e"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#aafe75ac5383b6981e1ed6e3c8e96249e">operator= </Link>(</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a824b38d21a3f4d0adb99827455f159cf">test&#95;suite</Link>&amp;)</Highlight></CodeLine>
+<Link id="l00277"/><CodeLine lineNumber="277"><Highlight kind="normal">        = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00278"/><CodeLine lineNumber="278"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a824b38d21a3f4d0adb99827455f159cf">test&#95;suite</Link>&amp;</Highlight></CodeLine>
+<Link id="l00279"/><CodeLine lineNumber="279" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a00597bc0e72007bd92d370bb8cac9ff7"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#aafe75ac5383b6981e1ed6e3c8e96249e">operator= </Link>(<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a824b38d21a3f4d0adb99827455f159cf">test&#95;suite</Link>&amp;&amp;)</Highlight></CodeLine>
+<Link id="l00280"/><CodeLine lineNumber="280"><Highlight kind="normal">        = </Highlight><Highlight kind="keyword">delete</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00281"/><CodeLine lineNumber="281"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00282"/><CodeLine lineNumber="282"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#aed21554ac8fa83e61ce178f37b0cdac8">~test&#95;suite</Link> () </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00283"/><CodeLine lineNumber="283"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00284"/><CodeLine lineNumber="284"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">virtual</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00285"/><CodeLine lineNumber="285"><Highlight kind="normal">    <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#ab198909a0182672be8c741d3ad7f291d">run</Link> (</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">) </Highlight><Highlight kind="keyword">override</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00286"/><CodeLine lineNumber="286"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00287"/><CodeLine lineNumber="287"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00288"/><CodeLine lineNumber="288" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a4c9220da528e34d0b4f8d0980a30fe6a"><Highlight kind="normal">    std::function&lt;void (</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">)&gt; <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a4c9220da528e34d0b4f8d0980a30fe6a">callable&#95;</Link>;</Highlight></CodeLine>
+<Link id="l00289"/><CodeLine lineNumber="289"><Highlight kind="normal">  &#125;;</Highlight></CodeLine>
+<Link id="l00290"/><CodeLine lineNumber="290"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00291"/><CodeLine lineNumber="291"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// --------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00292"/><CodeLine lineNumber="292"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace micro&#95;os&#95;plus::micro&#95;test&#95;plus</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00293"/><CodeLine lineNumber="293"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00294"/><CodeLine lineNumber="294"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;GNUC&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00295"/><CodeLine lineNumber="295"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma GCC diagnostic pop</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00296"/><CodeLine lineNumber="296"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00297"/><CodeLine lineNumber="297"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00298"/><CodeLine lineNumber="298"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00299"/><CodeLine lineNumber="299"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00300"/><CodeLine lineNumber="300"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// &#95;&#95;cplusplus</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00301"/><CodeLine lineNumber="301"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00302"/><CodeLine lineNumber="302"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00303"/><CodeLine lineNumber="303"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00304"/><CodeLine lineNumber="304"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// MICRO&#95;TEST&#95;PLUS&#95;TEST&#95;SUITE&#95;H&#95;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00305"/><CodeLine lineNumber="305"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00306"/><CodeLine lineNumber="306"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

@@ -7,11 +7,12 @@
     "generate-website-commons": "bash node_modules/@xpack/docusaurus-template-liquid/maintenance-scripts/generate-website-commons.sh --micro-os-plus",
     "npm-outdated": "npm outdated",
     "npm-install": "npm install",
-    "npm-link-helpers": "npm link @xpack/docusaurus-template-liquid @xpack/npm-packages-helper @micro-os-plus/build-helper",
+    "npm-link-helpers": "npm link @xpack/docusaurus-template-liquid @xpack/npm-packages-helper @micro-os-plus/build-helper @xpack/docusaurus-plugin-doxygen",
     "npm-ci": "npm ci",
     "deep-clean": "del-cli .docusaurus build node_modules package-lock.json",
-    "doxygen": "del-cli static/reference doxygen/xml; (cd doxygen; doxygen config.doxyfile)",
-    "browser": "open-cli static/reference/index.html",
+    "doxygen": "del-cli static/doxygen doxygen/xml; (cd doxygen; doxygen config.doxyfile)",
+    "browser": "open-cli static/doxygen/index.html",
+    "generate-doxygen": "docusaurus generate-doxygen",
     "check-urls": "blc https://micro-os-plus.github.io/micro-test-plus-xpack/ --recursive --ordered --filter-level 2 --exclude 'https://twitter.com*'",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
@@ -63,6 +64,7 @@
     "@docusaurus/module-type-aliases": "3.6.3",
     "@docusaurus/tsconfig": "3.6.3",
     "@docusaurus/types": "3.6.3",
+    "@xpack/docusaurus-plugin-doxygen": "^0.1.4",
     "json": "^11.0.0",
     "liquidjs": "^10.20.1",
     "typescript": "~5.6.3"
@@ -87,7 +89,8 @@
     "hasCustomGettingStartedSidebar": "true",
     "customInstallLabel": "Integration Guide",
     "hasCustomUser": "true",
-    "customUserTitle": "How to use the µTest++ Testing Framework"
+    "customUserTitle": "How to use the µTest++ Testing Framework",
+    "hasDoxygenDocusaurusApi": "true"
   },
   "engines": {
     "node": ">=18.0"

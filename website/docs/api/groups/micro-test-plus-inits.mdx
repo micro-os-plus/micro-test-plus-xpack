@@ -1,0 +1,147 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/groups/micro-test-plus-inits
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - group
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
+
+# The Initialisation & exit Reference
+
+<DoxygenPage version="1.13.2">
+
+Functions to initialise the framework and exit. <Link to="#details">More...</Link>
+
+## Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="int"
+  name={<><Link to="#gaa790667969dc1a261c324e89a6ea4591">exit&#95;code</Link> (void)</>}>
+Complete the test and return the exit code. <Link to="#gaa790667969dc1a261c324e89a6ea4591">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="void"
+  name={<><Link to="#gac2c60d60578f668878957ec68a37538f">initialize</Link> (int argc, char &#42;argv[], const char &#42;name=&quot;Main&quot;)</>}>
+Initialize the test framework. <Link to="#gac2c60d60578f668878957ec68a37538f">More...</Link>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+These are functions to initialise the test runner and to return the test result as the process exit code.
+
+The absolute minimal test has a single test case, with a single expectation; for example:
+
+
+<ProgramListing extension="cpp">
+
+<CodeLine><Highlight kind="preprocessor">#include &lt;<Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</Link>&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">main(</Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> argc, </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42; argv[])</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link>;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  mt::initialize(argc, argv, </Highlight><Highlight kind="stringliteral">&quot;Minimal&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  mt::test&#95;case (</Highlight><Highlight kind="stringliteral">&quot;Check truth&quot;</Highlight><Highlight kind="normal">, [] &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">    mt::expect (</Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  &#125;)</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> mt::exit&#95;code ();</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#125;</Highlight></CodeLine>
+
+</ProgramListing>
+
+
+When running this test, the output looks like:
+
+
+<ProgramListing extension="console">
+
+<CodeLine><Highlight kind="normal">• Minimal - test suite started</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">  ✓ Check truth - test case passed (1 check)</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">✓ Minimal - test suite passed (1 check in 1 test case)</Highlight></CodeLine>
+
+</ProgramListing>
+
+<SectionDefinition>
+
+## Functions
+
+### exit&#95;code {#gaa790667969dc1a261c324e89a6ea4591}
+
+<MemberDefinition
+  prototype={<>int micro&#95;os&#95;plus::micro&#95;test&#95;plus::exit&#95;code (void)</>}
+  labels = {["nodiscard"]}>
+Complete the test and return the exit code.
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+<SectionUser title="Returns">
+0 for success, 1 for failure.
+</SectionUser>
+
+In addition to the test cases defined in <code>main()</code>, there can be more separate <b>test suites</b>, defined as static objects in the same file or in other files, and self-registered via the static constructors mechanism.
+
+This function triggers the execution of the globally registered test suites (if any) and returns the test result as the process exit code (0 = success).
+
+Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00077">77</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
+</MemberDefinition>
+
+### initialize {#gac2c60d60578f668878957ec68a37538f}
+
+<MemberDefinition
+  prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::initialize (int argc, char &#42; argv=[], const char &#42; name=&quot;Main&quot;)</>}>
+Initialize the test framework.
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] argc">The number of arguments.</ParametersListItem>
+<ParametersListItem name="[in] argv">Array of pointers to null terminated arguments.</ParametersListItem>
+<ParametersListItem name="[in] name">The name of the default test suite.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+Nothing.
+</SectionUser>
+
+All tests include a default test suite, which runs the test cases defined in the main function.
+
+This function forwards the process arguments to the test framework and initialises the runner.
+
+The name is used to identify the default test suite.
+
+The arguments can be used to control the verbosity level.
+
+Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00056">56</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+</DoxygenPage>

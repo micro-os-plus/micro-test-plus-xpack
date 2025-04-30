@@ -1,0 +1,156 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/groups/micro-test-plus-cli
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - group
+
+---
+
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
+
+# The Command Line Options Reference
+
+<DoxygenPage version="1.13.2">
+
+TODO: add <code>@brief</code> to <code>@defgroup micro-test-plus-cli</code>
+## Verbosity
+
+By default, the µTest++ reporter shows detailed results only for the failed test cases; successful test cases are shown as a single line with the total counts of passed/failed checks.
+
+<SectionUser title="Example">
+
+</SectionUser>
+
+
+<ProgramListing extension="console">
+
+<CodeLine><Highlight kind="normal">test 1</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">      Start  1: minimal-test</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">1: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test &quot;one&quot; &quot;two&quot;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">1: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">1: Test timeout computed to be: 10000000</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">1: Built with clang Apple LLVM 15.0.0 (clang-1500.0.40.1), with exceptions.</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">1:</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">1: • Minimal - test suite started</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">1:</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">1:   ✓ Check various conditions - test case passed (2 checks)</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">1:</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">1: ✓ Minimal - test suite passed (2 checks in 1 test case)</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"> 1/12 Test  #1: minimal-test .....................   Passed    0 sec</Highlight></CodeLine>
+
+</ProgramListing>
+
+
+To control the verbosity, one of the following command line options can be used:
+
+
+<ul>
+<li><code>--verbose</code> - show all expectations, regardless of the result</li>
+<li><code>--quiet</code> - show only the test suite totals</li>
+<li><code>--silent</code> - suppress all output and only return the exit code</li>
+</ul>
+
+
+
+:::info
+The source code of the test is in <code>tests/src/minimal-test.cpp</code>.
+:::
+
+
+
+
+### Verbose mode
+
+When in verbose mode, the µTest++ reporter shows all expectations, regardless of the result.
+
+<SectionUser title="Example">
+
+</SectionUser>
+
+
+<ProgramListing extension="console">
+
+<CodeLine><Highlight kind="normal">test 2</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">      Start  2: minimal-test --verbose</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">2: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test &quot;one&quot; &quot;two&quot; &quot;--verbose&quot;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">2: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">2: Test timeout computed to be: 10000000</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">2: Built with clang Apple LLVM 15.0.0 (clang-1500.0.40.1), with exceptions.</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">2:</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">2: • Minimal - test suite started</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">2:</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">2:   • Check various conditions - test case started</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">2:     ✓ answer is 42</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">2:     ✓ condition is true</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">2:   ✓ Check various conditions - test case passed (2 checks)</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">2:</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">2: ✓ Minimal - test suite passed (2 checks in 1 test case)</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"> 2/12 Test  #2: minimal-test --verbose ...........   Passed    0 sec</Highlight></CodeLine>
+
+</ProgramListing>
+
+
+
+
+### Quiet mode
+
+When in quiet mode, the µTest++ reporter shows only the test suite totals.
+
+<SectionUser title="Example">
+
+</SectionUser>
+
+
+<ProgramListing extension="console">
+
+<CodeLine><Highlight kind="normal">test 3</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">      Start  3: minimal-test --quiet</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">3: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test &quot;one&quot; &quot;two&quot; &quot;--quiet&quot;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">3: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">3: Test timeout computed to be: 10000000</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">3:</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">3: ✓ Minimal - test suite passed (2 checks in 1 test case)</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"> 3/12 Test  #3: minimal-test --quiet .............   Passed    0 sec</Highlight></CodeLine>
+
+</ProgramListing>
+
+
+
+
+### Silent mode
+
+When in silent mode, the µTest++ reporter suppresses all output and the framework only returns the exit code.
+
+<SectionUser title="Example">
+
+</SectionUser>
+
+
+<ProgramListing extension="console">
+
+<CodeLine><Highlight kind="normal">test 4</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">      Start  4: minimal-test --silent</Highlight></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><Highlight kind="normal">4: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test &quot;one&quot; &quot;two&quot; &quot;--silent&quot;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">4: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">4: Test timeout computed to be: 10000000</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">4:</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"> 4/12 Test  #4: minimal-test --silent ............   Passed    0 sec</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>

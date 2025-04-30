@@ -1,0 +1,183 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - struct
+toc_max_heading_level: 3
+
+---
+
+import Link from '@docusaurus/Link'
+import CodeBlock from '@theme/CodeBlock'
+
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+# The `floating_point_constant` Struct Template Reference
+
+<DoxygenPage version="1.13.2">
+
+A generic floating point constant, with custom size and precision. It has a getter and a &#39;-&#39; operator to return the negative value. <Link to="#details">More...</Link>
+
+## Declaration
+
+<CodeBlock>template &lt;class T, auto N, auto D, auto Size, auto P = 1&gt;
+struct micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt;T, N, D, Size, P&gt;;</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem filePath="micro-os-plus/micro-test-plus.h" permalink="/docs/api/files/include/micro-os-plus/micro-test-plus-h" isLocal="false" />
+</IncludesList>
+
+## Public Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="#a3538821b6929e9b13f6a3ea763e1627e">value&#95;type</Link> = T</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Static Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="auto"
+  name={<><Link to="#a5cab8e85fbee4a9314fc8a3e09e59eef">epsilon</Link> = T (1) / <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a5c22d85f0df63cc0504cbf4988173cd7">math::pow</Link> (T (10), Size - 1)</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="auto"
+  name={<><Link to="#ab0e05de518c208a6a762c7377d2f2332">value</Link> = T (P) &#42; (T (N) + (T (D) / <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a5c22d85f0df63cc0504cbf4988173cd7">math::pow</Link> (T (10), Size)))</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="constexpr auto"
+  name={<><Link to="#a3ee48433567db9886d9f99ab5e6d2864">get</Link> () const</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="constexpr"
+  name={<><Link to="#a0a877099bf7ee9fcde1446cac65511e6">operator value&#95;type</Link> () const</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="constexpr auto"
+  name={<><Link to="#adcc1ade20fd348fa653623ec6c378d72">operator-</Link> () const</>}>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+TODO: add <code>@details</code> to <code>@struct micro_os_plus::micro_test_plus::type_traits::floating_point_constant</code>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00244">244</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
+
+<SectionDefinition>
+
+## Public Member Typedefs
+
+### value&#95;type {#a3538821b6929e9b13f6a3ea763e1627e}
+
+<MemberDefinition
+  template={<>template &lt;class T, auto N, auto D, auto Size, auto P = 1&gt;</>}
+  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::floating&#95;point&#95;constant&lt; T, N, D, Size, P &gt;::value&#95;type =  T</>}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00246">246</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Static Attributes
+
+### epsilon {#a5cab8e85fbee4a9314fc8a3e09e59eef}
+
+<MemberDefinition
+  template={<>template &lt;class T, auto N, auto D, auto Size, auto P = 1&gt;</>}
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::floating&#95;point&#95;constant&lt; T, N, D, Size, P &gt;::epsilon = T (1) / <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a5c22d85f0df63cc0504cbf4988173cd7">math::pow</Link> (T (10), Size - 1)</>}
+  labels = {["constexpr", "static"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00248">248</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
+</MemberDefinition>
+
+### value {#ab0e05de518c208a6a762c7377d2f2332}
+
+<MemberDefinition
+  template={<>template &lt;class T, auto N, auto D, auto Size, auto P = 1&gt;</>}
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::floating&#95;point&#95;constant&lt; T, N, D, Size, P &gt;::value = T (P) &#42; (T (N) + (T (D) / <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a5c22d85f0df63cc0504cbf4988173cd7">math::pow</Link> (T (10), Size)))</>}
+  labels = {["constexpr", "static"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00249">249</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
+
+### get() {#a3ee48433567db9886d9f99ab5e6d2864}
+
+<MemberDefinition
+  template={<>template &lt;class T, auto N, auto D, auto Size, auto P = 1&gt;</>}
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::floating&#95;point&#95;constant&lt; T, N, D, Size, P &gt;::get () const</>}
+  labels = {["inline", "nodiscard", "constexpr"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00265">265</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
+</MemberDefinition>
+
+### operator value&#95;type() {#a0a877099bf7ee9fcde1446cac65511e6}
+
+<MemberDefinition
+  template={<>template &lt;class T, auto N, auto D, auto Size, auto P = 1&gt;</>}
+  prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::floating&#95;point&#95;constant&lt; T, N, D, Size, P &gt;::operator value&#95;type () const</>}
+  labels = {["inline", "explicit", "nodiscard", "constexpr"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00259">259</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
+</MemberDefinition>
+
+### operator-() {#adcc1ade20fd348fa653623ec6c378d72}
+
+<MemberDefinition
+  template={<>template &lt;class T, auto N, auto D, auto Size, auto P = 1&gt;</>}
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::floating&#95;point&#95;constant&lt; T, N, D, Size, P &gt;::operator- () const</>}
+  labels = {["inline", "nodiscard", "constexpr"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00253">253</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<hr/>
+
+The documentation for this struct was generated from the following file:
+
+<ul>
+<li><Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link></li>
+</ul>
+
+</DoxygenPage>

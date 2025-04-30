@@ -1,0 +1,177 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/groups/micro-test-plus-exceptions
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - group
+
+---
+
+import Link from '@docusaurus/Link'
+
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
+
+# The Checking exceptions Reference
+
+<DoxygenPage version="1.13.2">
+
+Functions to check exceptions. <Link to="#details">More...</Link>
+
+## Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="constexpr auto"
+  name={<><Link to="#ga798bd28001c3938784073e60dd904148">nothrow</Link> (const Callable&#95;T &amp;func)</>}>
+Check if a callable doesn&#39;t throw an exception. <Link to="#ga798bd28001c3938784073e60dd904148">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="constexpr auto"
+  name={<><Link to="#gaf8f7602f40119da514be2a0bfc4b70f5">throws</Link> (const Callable&#95;T &amp;func)</>}>
+Check if a callable throws a specific exception. <Link to="#gaf8f7602f40119da514be2a0bfc4b70f5">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="constexpr auto"
+  name={<><Link to="#ga8bf54756e4122c6a0bd123b4621e60e2">throws</Link> (const Callable&#95;T &amp;func)</>}>
+Check if a callable throws an exception (any exception). <Link to="#ga8bf54756e4122c6a0bd123b4621e60e2">More...</Link>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Description {#details}
+
+A C++ testing framework must be able to check if an expression (usually a function call), throws or not an exception.
+
+<SectionUser title="Examples">
+
+</SectionUser>
+
+
+<ProgramListing extension="cpp">
+
+<CodeLine><Highlight kind="normal">mt::expect (mt::throws ([] &#123; exercise&#95;throw (</Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">); &#125;)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;exception thrown&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">mt::expect (mt::throws&lt;std::runtime&#95;error&gt; ([] &#123; </Highlight><Highlight kind="keywordflow">throw</Highlight><Highlight kind="normal"> std::runtime&#95;error&#123; </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal"> &#125;; &#125;))</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">        &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;std::runtime&#95;error thrown&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">mt::expect (mt::nothrow ([] &#123; exercise&#95;throw (</Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">); &#125;)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;exception not thrown&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+
+</ProgramListing>
+
+
+If a more elaborate logic is required, for example for expecting multiple exceptions, use an explicit <code>try</code> with multiple <code>catch</code> statements and report the results with <code>expect(true)</code> or <code>expect(false)</code>.
+
+
+<ProgramListing extension="cpp">
+
+<CodeLine><Highlight kind="keywordflow">try</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">    compute&#95;answer ();</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keywordflow">catch</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::overflow&#95;error&amp; e)</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">    mt::expect (</Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;std::overflow&#95;error thrown&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keywordflow">catch</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> std::runtime&#95;error&amp; e)</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">    mt::expect (</Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;std::runtime&#95;error thrown&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keywordflow">catch</Highlight><Highlight kind="normal"> (...)</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">    mt::expect (</Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;known exception thrown&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  &#125;</Highlight></CodeLine>
+
+</ProgramListing>
+
+<SectionDefinition>
+
+## Functions
+
+### nothrow {#ga798bd28001c3938784073e60dd904148}
+
+<MemberDefinition
+  template={<>template &lt;class Callable&#95;T&gt;</>}
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::nothrow (const Callable&#95;T &amp; func)</>}
+  labels = {["nodiscard", "constexpr"]}>
+Check if a callable doesn&#39;t throw an exception.
+<ParametersList title="Template Parameters">
+<ParametersListItem name="Callable&#95;T">The type of an object that can be called.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] func">Function to check.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+An output stream to write optional messages.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00216">216</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+</MemberDefinition>
+
+### throws {#gaf8f7602f40119da514be2a0bfc4b70f5}
+
+<MemberDefinition
+  template={<>template &lt;class Exception&#95;T, class Callable&#95;T&gt;</>}
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::throws (const Callable&#95;T &amp; func)</>}
+  labels = {["nodiscard", "constexpr"]}>
+Check if a callable throws a specific exception.
+<ParametersList title="Template Parameters">
+<ParametersListItem name="Exception&#95;T">Type of the exception.</ParametersListItem>
+<ParametersListItem name="Callable&#95;T">The type of an object that can be called.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] func">Function to check.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+An output stream to write optional messages.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00188">188</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+</MemberDefinition>
+
+### throws {#ga8bf54756e4122c6a0bd123b4621e60e2}
+
+<MemberDefinition
+  template={<>template &lt;class Callable&#95;T&gt;</>}
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::throws (const Callable&#95;T &amp; func)</>}
+  labels = {["nodiscard", "constexpr"]}>
+Check if a callable throws an exception (any exception).
+<ParametersList title="Template Parameters">
+<ParametersListItem name="Callable&#95;T">The type of an object that can be called.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] func">Function to check.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+An output stream to write optional messages.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00202">202</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+</DoxygenPage>
