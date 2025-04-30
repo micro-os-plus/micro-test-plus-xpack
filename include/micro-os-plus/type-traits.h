@@ -39,7 +39,7 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   /**
-   * @brief Local type traits. Some may have standard equivalents, but
+   * @brief Local type traits; some may have standard equivalents, but
    * better keep them locally.
    */
   namespace type_traits

@@ -141,7 +141,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @brief Get the number of conditions that failed.
+     * @brief Get the number of test conditions that failed.
      * @par Parameters
      *	None.
      * @return An integer with the number checks that failed.
@@ -198,7 +198,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @brief If all counter are null, it is unused.
+     * @brief If all counters are null, the test suite was not unused.
      * @par Parameters
      *	None.
      * @return True if the test suite is not used.

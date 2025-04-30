@@ -63,10 +63,10 @@ namespace micro_os_plus::micro_test_plus
    */
   enum class verbosity
   {
-    silent = 0, // Nothing, only return the exit code
-    quiet = 1, // Test suites results
-    normal = 2, // Test suites results and failed test cases
-    verbose = 3 // All, including passed checks
+    silent = 0, ///< Nothing, only return the exit code
+    quiet = 1, ///< Test suites results
+    normal = 2, ///< Test suites results and failed test cases
+    verbose = 3 ///< All, including passed checks
   };
 
   typedef verbosity verbosity_t;

@@ -42,7 +42,9 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   /**
-   * @brief User Defined Literals (UDL). Use them to suffix
+   * @brief User Defined Literals (UDL).
+   *
+   * Use them to suffix
    * constants and obtain specific explicit types, like `1_i`.
    */
   namespace literals
