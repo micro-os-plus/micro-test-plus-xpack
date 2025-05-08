@@ -89,11 +89,15 @@ Greater than or equal operator. It matches only if at least one operand is of lo
 </MembersIndexItem>
 
 </MembersIndex>
+
+<Link id="#details" />
+
 As in most other C++ test frameworks, it is also possible to overload the <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code> operators.
 
 To avoid possible interferences with other operators defined by the application, these operators match only for operands of specific types and are located in a separate namespace (<code>micro&#95;test&#95;plus::operators</code>); when applied to regular values, the standard operands are used; the comparisons are performed properly, but in case of failures the actual values are not shown.
 
 The operators match only operands derived from the local <code>detail::op</code> type, which can be enforced for constant values by using the provided literals (like <code>1&#95;i</code>) or, for dynamic values, by using the provided casts (like <code>&#95;i</code> &#123;expression&#125;, which are actually the constructors of the internal classes).
+
 
 <SectionUser title="Examples">
 
@@ -119,10 +123,14 @@ The operators match only operands derived from the local <code>detail::op</code>
 
 
 
-
 ## Logical operators
 
+
+
 The logical operators can be used in exactly the same way as standard operators, but the additional functionality is enabled only when matching the typed operands.
+
+
+
 
 <SectionUser title="Example">
 

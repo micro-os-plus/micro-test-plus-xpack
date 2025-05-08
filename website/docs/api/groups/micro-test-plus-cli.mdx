@@ -12,6 +12,7 @@ keywords:
 
 ---
 
+import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
@@ -24,9 +25,17 @@ import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser
 <DoxygenPage version="1.13.2">
 
 TODO: add <code>@brief</code> to <code>@defgroup micro-test-plus-cli</code>
+
+<Link id="#details" />
+
 ## Verbosity
 
+
+
 By default, the µTest++ reporter shows detailed results only for the failed test cases; successful test cases are shown as a single line with the total counts of passed/failed checks.
+
+
+
 
 <SectionUser title="Example">
 
@@ -53,7 +62,10 @@ By default, the µTest++ reporter shows detailed results only for the failed tes
 </ProgramListing>
 
 
+
 To control the verbosity, one of the following command line options can be used:
+
+
 
 
 <ul>
@@ -64,6 +76,8 @@ To control the verbosity, one of the following command line options can be used:
 
 
 
+
+
 :::info
 The source code of the test is in <code>tests/src/minimal-test.cpp</code>.
 :::
@@ -71,9 +85,16 @@ The source code of the test is in <code>tests/src/minimal-test.cpp</code>.
 
 
 
+
+
 ### Verbose mode
 
+
+
 When in verbose mode, the µTest++ reporter shows all expectations, regardless of the result.
+
+
+
 
 <SectionUser title="Example">
 
@@ -105,9 +126,16 @@ When in verbose mode, the µTest++ reporter shows all expectations, regardless o
 
 
 
+
+
 ### Quiet mode
 
+
+
 When in quiet mode, the µTest++ reporter shows only the test suite totals.
+
+
+
 
 <SectionUser title="Example">
 
@@ -131,9 +159,16 @@ When in quiet mode, the µTest++ reporter shows only the test suite totals.
 
 
 
+
+
 ### Silent mode
 
+
+
 When in silent mode, the µTest++ reporter suppresses all output and the framework only returns the exit code.
+
+
+
 
 <SectionUser title="Example">
 

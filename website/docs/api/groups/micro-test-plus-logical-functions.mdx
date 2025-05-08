@@ -60,9 +60,11 @@ Generic logical <b>or</b>. <Link to="#gad32b40e4b0022b276fa3b357b98a33c5">More..
 
 Complex expressions can be checked in a single line, using the logical <code>mt::&#95;and()</code>, <code>mt::&#95;or()</code> and <code>mt::&#95;not()</code> functions.
 
+
 :::info
 The names are prefixed with underscore since <code>and</code>, <code>or</code> and <code>not</code> are reserved words in C/C++.
 :::
+
 
 <SectionUser title="Example">
 
@@ -91,6 +93,7 @@ If operands are function comparators, it is recommended to use the overloaded lo
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;and (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
 Generic logical <b>and</b>.
+
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
 <ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
@@ -104,6 +107,7 @@ Generic logical <b>and</b>.
 <SectionUser title="Returns">
 True if both operand expressions are true.
 </SectionUser>
+
 
 :::info
 The underscore is intentional, to differentiate from the standard operator.
@@ -119,6 +123,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;not (const Expr&#95;T &amp; expr)</>}
   labels = {["nodiscard", "constexpr"]}>
 Generic logical <b>not</b>.
+
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Expr&#95;T">Type of the operand.</ParametersListItem>
 </ParametersList>
@@ -130,6 +135,7 @@ Generic logical <b>not</b>.
 <SectionUser title="Returns">
 True if the operand is false.
 </SectionUser>
+
 
 :::info
 The underscore is intentional, to differentiate from the standard operator.
@@ -145,6 +151,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;or (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
 Generic logical <b>or</b>.
+
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
 <ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
@@ -158,6 +165,7 @@ Generic logical <b>or</b>.
 <SectionUser title="Returns">
 True if at least one of the operand expressions is true.
 </SectionUser>
+
 
 :::info
 The underscore is intentional, to differentiate from the standard operator.

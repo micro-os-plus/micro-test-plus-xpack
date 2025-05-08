@@ -64,6 +64,7 @@ TODO: add <code>@details</code> to <code>@defgroup micro-test-plus-utility-funct
   prototype={<>bool micro&#95;os&#95;plus::micro&#95;test&#95;plus::utility::is&#95;match (std::string&#95;view input, std::string&#95;view pattern)</>}
   labels = {["nodiscard"]}>
 Check if a string matches a pattern.
+
 <ParametersList title="Parameters">
 <ParametersListItem name="[in] input">String view to check.</ParametersListItem>
 <ParametersListItem name="[in] pattern">Sting view with the pattern.</ParametersListItem>
@@ -74,6 +75,7 @@ True if the string matches the pattern.
 </SectionUser>
 
 For tests comparing strings, in addition to exact matches, it is also possible to check matches with patterns like <code>&#42;</code> (for any characters) and <code>?</code> (for a single character)
+
 
 <SectionUser title="Examples">
 <ProgramListing extension="cpp">
@@ -96,7 +98,9 @@ Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00128">12
   prototype={<>std::vector&lt; T &gt; micro&#95;os&#95;plus::micro&#95;test&#95;plus::utility::split (T input, Delim&#95;T delim)</>}
   labels = {["nodiscard"]}>
 Split a string into a vector of sub-strings.
+
 For tests handling strings, this function template allows to split a string into a vector of substrings, using a delimiter.
+
 
 <SectionUser title="Example">
 <ProgramListing extension="cpp">
@@ -109,6 +113,7 @@ For tests handling strings, this function template allows to split a string into
 
 </ProgramListing>
 </SectionUser>
+
 
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">Type of the input string.</ParametersListItem>

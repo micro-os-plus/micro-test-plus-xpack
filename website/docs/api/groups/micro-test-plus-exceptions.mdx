@@ -60,6 +60,7 @@ Check if a callable throws an exception (any exception). <Link to="#ga8bf54756e4
 
 A C++ testing framework must be able to check if an expression (usually a function call), throws or not an exception.
 
+
 <SectionUser title="Examples">
 
 </SectionUser>
@@ -75,7 +76,6 @@ A C++ testing framework must be able to check if an expression (usually a functi
 <CodeLine><Highlight kind="normal">mt::expect (mt::nothrow ([] &#123; exercise&#95;throw (</Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">); &#125;)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;exception not thrown&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
 
 </ProgramListing>
-
 
 If a more elaborate logic is required, for example for expecting multiple exceptions, use an explicit <code>try</code> with multiple <code>catch</code> statements and report the results with <code>expect(true)</code> or <code>expect(false)</code>.
 
@@ -112,6 +112,7 @@ If a more elaborate logic is required, for example for expecting multiple except
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::nothrow (const Callable&#95;T &amp; func)</>}
   labels = {["nodiscard", "constexpr"]}>
 Check if a callable doesn&#39;t throw an exception.
+
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Callable&#95;T">The type of an object that can be called.</ParametersListItem>
 </ParametersList>
@@ -134,6 +135,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::throws (const Callable&#95;T &amp; func)</>}
   labels = {["nodiscard", "constexpr"]}>
 Check if a callable throws a specific exception.
+
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Exception&#95;T">Type of the exception.</ParametersListItem>
 <ParametersListItem name="Callable&#95;T">The type of an object that can be called.</ParametersListItem>
@@ -157,6 +159,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::throws (const Callable&#95;T &amp; func)</>}
   labels = {["nodiscard", "constexpr"]}>
 Check if a callable throws an exception (any exception).
+
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Callable&#95;T">The type of an object that can be called.</ParametersListItem>
 </ParametersList>

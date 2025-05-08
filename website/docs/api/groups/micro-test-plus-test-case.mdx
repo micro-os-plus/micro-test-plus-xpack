@@ -50,6 +50,7 @@ Test cases group several checks to be executed in the same environment.
 
 There can be any number of test cases, and each test case is performed by invoking a function, parametrised with a name/description, a callable (usually a lambda), and optional arguments.
 
+
 <SectionUser title="Examples">
 
 </SectionUser>
@@ -84,6 +85,7 @@ There can be any number of test cases, and each test case is performed by invoki
   template={<>template &lt;typename Callable&#95;T, typename... Args&#95;T&gt;</>}
   prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;case (const char &#42; name, Callable&#95;T &amp;&amp; callable, Args&#95;T &amp;&amp;... arguments)</>}>
 Define and execute a test case.
+
 A test case is a sequence of test conditions (or simply tests, or checks), which are expectations/assumptions, i.e. conditions expected to be true.
 
 Tests are based on logical expressions, which usually compute a result and compare it to an expected value. For C++ projects, it is also possible to check if, while evaluating an expression, exceptions are thrown or not. Each test either succeeds or fails. For expectations, the runner keeps counts of successful and failed tests.
@@ -91,6 +93,7 @@ Tests are based on logical expressions, which usually compute a result and compa
 A test case has a name, a function which performs the checks, and possibly arguments.
 
 The <code>test&#95;case</code> implementation invokes the function with the provided arguments, and reports the results.
+
 
 <SectionUser title="Example">
 <ProgramListing extension="cpp">
@@ -103,6 +106,7 @@ The <code>test&#95;case</code> implementation invokes the function with the prov
 
 </ProgramListing>
 </SectionUser>
+
 
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Callable&#95;T">The type of an object that can be called.</ParametersListItem>

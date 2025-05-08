@@ -35,7 +35,7 @@ Test suites are named sequences of test cases. <Link to="#details">More...</Link
 <MembersIndexItem
   type="class"
   name={<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</Link>}>
-Test suites are classes that represent a named group of test cases which self register to the runner. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">More...</Link>
+Test suites are classes that represent a named group of test cases which self register to the runner. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#details">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -70,6 +70,7 @@ It is recommended to instantiate the test suites as static objects.
 The self-registration is done in the constructor. Test suites defined in different compilation units can be executed in any order (since the order in which the static constructors are invoked is not specified); thus there should be no dependencies between test suites.
 
 The registered test suites are executed when the function <code>exit&#95;code()</code> is invoked.
+
 
 <SectionUser title="Examples">
 

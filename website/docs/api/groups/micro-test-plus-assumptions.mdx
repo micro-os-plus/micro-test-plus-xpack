@@ -59,6 +59,7 @@ On failed assumptions, the test cannot continue and it is aborted on the spot.
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::assume (const Expr&#95;T &amp; expr, const reflection::source&#95;location &amp; sl=reflection::source&#95;location::current())</>}
   labels = {["constexpr"]}>
 Check a condition and, if false, abort.
+
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Expr&#95;T">The type of the custom expression.</ParametersListItem>
 </ParametersList>
@@ -73,6 +74,7 @@ An output stream to write optional messages.
 </SectionUser>
 
 The template is usable only for expressions that evaluate to a boolean or use custom comparators/operators derived from the local <code>detail::op</code> type.
+
 
 <SectionUser title="Example">
 <ProgramListing extension="cpp">

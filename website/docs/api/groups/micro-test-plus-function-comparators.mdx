@@ -109,7 +109,11 @@ Pointer non-equality comparator. <Link to="#ga172f305bbeaf8b965681f76c16a39516">
 </MembersIndexItem>
 
 </MembersIndex>
+
+<Link id="#details" />
+
 Expectations and assumptions can test any expression evaluating to a boolean value, but in order to nicely report the difference between expected and actual values in failed conditions, special comparators must be used.
+
 
 <SectionUser title="Examples">
 <ProgramListing extension="cpp">
@@ -141,10 +145,14 @@ When such comparator functions are used, failed checks also display the actual v
 
 
 
-
 ## Comparing containers
 
+
+
 Containers can be compared for equality. The comparison is done by iterating and comparing each member.
+
+
+
 
 <SectionUser title="Examples">
 
@@ -172,6 +180,7 @@ Containers can be compared for equality. The comparison is done by iterating and
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::eq (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
 Generic equality comparator. Matches any non-pointer type.
+
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
 <ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
@@ -196,6 +205,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::eq (Lhs&#95;T &#42; lhs, Rhs&#95;T &#42; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
 Pointer equality comparator. Matches pointers to any types.
+
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
 <ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
@@ -220,6 +230,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::ge (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
 Generic greater than or equal comparator.
+
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
 <ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
@@ -244,6 +255,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::ge (Lhs&#95;T &#42; lhs, Rhs&#95;T &#42; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
 Pointer greater than or equal comparator.
+
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
 <ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
@@ -268,6 +280,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::gt (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
 Generic greater than comparator.
+
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
 <ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
@@ -292,6 +305,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::gt (Lhs&#95;T &#42; lhs, Rhs&#95;T &#42; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
 Pointer greater than comparator.
+
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
 <ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
@@ -316,6 +330,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::le (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
 Generic less than or equal comparator.
+
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
 <ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
@@ -340,6 +355,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::le (Lhs&#95;T &#42; lhs, Rhs&#95;T &#42; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
 Generic less than or equal comparator.
+
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
 <ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
@@ -364,6 +380,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::lt (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
 Generic less than comparator.
+
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
 <ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
@@ -388,6 +405,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::lt (Lhs&#95;T &#42; lhs, Rhs&#95;T &#42; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
 Generic less than comparator.
+
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
 <ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
@@ -412,6 +430,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::ne (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
 Generic non-equality comparator.
+
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
 <ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
@@ -436,6 +455,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::ne (Lhs&#95;T &#42; lhs, Rhs&#95;T &#42; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
 Pointer non-equality comparator.
+
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
 <ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>

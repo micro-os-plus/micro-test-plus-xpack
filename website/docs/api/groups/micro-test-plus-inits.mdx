@@ -77,7 +77,6 @@ The absolute minimal test has a single test case, with a single expectation; for
 
 </ProgramListing>
 
-
 When running this test, the output looks like:
 
 
@@ -101,9 +100,11 @@ When running this test, the output looks like:
   prototype={<>int micro&#95;os&#95;plus::micro&#95;test&#95;plus::exit&#95;code (void)</>}
   labels = {["nodiscard"]}>
 Complete the test and return the exit code.
+
 <SectionUser title="Parameters">
 None.
 </SectionUser>
+
 
 <SectionUser title="Returns">
 0 for success, 1 for failure.
@@ -121,6 +122,7 @@ Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00077">77
 <MemberDefinition
   prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::initialize (int argc, char &#42; argv=[], const char &#42; name=&quot;Main&quot;)</>}>
 Initialize the test framework.
+
 <ParametersList title="Parameters">
 <ParametersListItem name="[in] argc">The number of arguments.</ParametersListItem>
 <ParametersListItem name="[in] argv">Array of pointers to null terminated arguments.</ParametersListItem>

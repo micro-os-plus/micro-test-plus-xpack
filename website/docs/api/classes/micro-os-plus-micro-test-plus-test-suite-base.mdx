@@ -40,7 +40,10 @@ Base class for all test suites. <Link to="#details">More...</Link>
 ## Included Headers
 
 <IncludesList>
-<IncludesListItem filePath="micro-os-plus/micro-test-plus.h" permalink="/docs/api/files/include/micro-os-plus/micro-test-plus-h" isLocal="false" />
+<IncludesListItem
+  filePath="micro-os-plus/micro-test-plus.h"
+  permalink="/docs/api/files/include/micro-os-plus/micro-test-plus-h"
+  isLocal="false" />
 </IncludesList>
 
 ## Derived Classes
@@ -50,7 +53,7 @@ Base class for all test suites. <Link to="#details">More...</Link>
 <MembersIndexItem
   type="class"
   name={<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</Link>}>
-Test suites are classes that represent a named group of test cases which self register to the runner. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite#details">More...</Link>
+Test suites are classes that represent a named group of test cases which self register to the runner. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#details">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -341,6 +344,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/
 <MemberDefinition
   prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::test&#95;suite&#95;base (const char &#42; name)</>}>
 Construct a test suite.
+
 <ParametersList title="Parameters">
 <ParametersListItem name="[in] name">The test suite name.</ParametersListItem>
 </ParametersList>
@@ -384,6 +388,7 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h
 <MemberDefinition
   prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::begin&#95;test&#95;case (const char &#42; name)</>}>
 Mark the beginning of a named test case.
+
 <ParametersList title="Parameters">
 <ParametersListItem name="[in] name">The test case name.</ParametersListItem>
 </ParametersList>
@@ -400,9 +405,11 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h
 <MemberDefinition
   prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::begin&#95;test&#95;suite (void)</>}>
 Begin the execution of the test suite.
+
 <SectionUser title="Parameters">
 None.
 </SectionUser>
+
 
 <SectionUser title="Returns">
 Nothing.
@@ -416,9 +423,11 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h
 <MemberDefinition
   prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::end&#95;test&#95;case (void)</>}>
 Mark the end of a test case.
+
 <SectionUser title="Parameters">
 None.
 </SectionUser>
+
 
 <SectionUser title="Returns">
 Nothing.
@@ -432,9 +441,11 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h
 <MemberDefinition
   prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::end&#95;test&#95;suite (void)</>}>
 Mark the end of the test suite.
+
 <SectionUser title="Parameters">
 None.
 </SectionUser>
+
 
 <SectionUser title="Returns">
 Nothing.
@@ -449,9 +460,11 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h
   prototype={<>int micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::failed&#95;checks (void)</>}
   labels = {["inline", "nodiscard", "constexpr"]}>
 Get the number of test conditions that failed.
+
 <SectionUser title="Parameters">
 None.
 </SectionUser>
+
 
 <SectionUser title="Returns">
 An integer with the number checks that failed.
@@ -465,9 +478,11 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/
 <MemberDefinition
   prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::increment&#95;failed (void)</>}>
 Count one more failed test conditions.
+
 <SectionUser title="Parameters">
 None.
 </SectionUser>
+
 
 <SectionUser title="Returns">
 Nothing.
@@ -481,9 +496,11 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h
 <MemberDefinition
   prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::increment&#95;successful (void)</>}>
 Count one more passed test conditions.
+
 <SectionUser title="Parameters">
 None.
 </SectionUser>
+
 
 <SectionUser title="Returns">
 Nothing.
@@ -498,9 +515,11 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h
   prototype={<>const char &#42; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::name ()</>}
   labels = {["inline", "nodiscard", "constexpr"]}>
 Get the suite name.
+
 <SectionUser title="Parameters">
 None.
 </SectionUser>
+
 
 <SectionUser title="Returns">
 A pointer to the null terminated test suite name.
@@ -533,9 +552,11 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/
   prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::run (void)</>}
   labels = {["virtual"]}>
 Run the sequence of test cases in the suite.
+
 <SectionUser title="Parameters">
 None.
 </SectionUser>
+
 
 <SectionUser title="Returns">
 Nothing.
@@ -550,9 +571,11 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h
   prototype={<>int micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::successful&#95;checks (void)</>}
   labels = {["inline", "nodiscard", "constexpr"]}>
 Get the number of conditions that passed.
+
 <SectionUser title="Parameters">
 None.
 </SectionUser>
+
 
 <SectionUser title="Returns">
 An integer with the number checks that passed.
@@ -567,9 +590,11 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/
   prototype={<>int micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::test&#95;cases (void)</>}
   labels = {["inline", "nodiscard", "constexpr"]}>
 Get the number of test cases.
+
 <SectionUser title="Parameters">
 None.
 </SectionUser>
+
 
 <SectionUser title="Returns">
 An integer with the number of test cases.
@@ -584,9 +609,11 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/
   prototype={<>bool micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::unused (void)</>}
   labels = {["inline", "nodiscard", "constexpr"]}>
 If all counters are null, the test suite was not unused.
+
 <SectionUser title="Parameters">
 None.
 </SectionUser>
+
 
 <SectionUser title="Returns">
 True if the test suite is not used.
@@ -601,9 +628,11 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/
   prototype={<>bool micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::was&#95;successful (void)</>}
   labels = {["inline", "nodiscard", "constexpr"]}>
 Get the test suite result.
+
 <SectionUser title="Parameters">
 None.
 </SectionUser>
+
 
 <SectionUser title="Returns">
 True if the test suite was successful.
