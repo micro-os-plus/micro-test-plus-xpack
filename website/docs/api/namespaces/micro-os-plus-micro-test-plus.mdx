@@ -15,6 +15,8 @@ keywords:
 import Link from '@docusaurus/Link'
 
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import EnumerationList from '@xpack/docusaurus-plugin-doxygen/components/EnumerationList'
+import EnumerationListItem from '@xpack/docusaurus-plugin-doxygen/components/EnumerationListItem'
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
 import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
@@ -564,29 +566,30 @@ TODO: add <code>@details</code> to <code>@namespace micro_os_plus::micro_test_pl
  labels = {["strong"]}>
 The verbosity levels.
 
-<dl>
-<dt class="doxyEnumerationValues"><b>Enumeration values</b></dt>
-<dd>
-<table class="doxyEnumerationTable">
-  <tr>
-    <td class="doxyEnumerationField"><Link id="#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15"/>silent = 0</td>
-    <td class="doxyEnumerationDescription">Nothing, only return the exit code</td>
-  </tr>
-  <tr>
-    <td class="doxyEnumerationField"><Link id="#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d"/>quiet = 1</td>
-    <td class="doxyEnumerationDescription">Test suites results</td>
-  </tr>
-  <tr>
-    <td class="doxyEnumerationField"><Link id="#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555"/>normal = 2</td>
-    <td class="doxyEnumerationDescription">Test suites results and failed test cases</td>
-  </tr>
-  <tr>
-    <td class="doxyEnumerationField"><Link id="#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0"/>verbose = 3</td>
-    <td class="doxyEnumerationDescription">All, including passed checks</td>
-  </tr>
-</table>
-</dd>
-</dl>
+<EnumerationList title="Enumeration values">
+
+<EnumerationListItem
+  permalink="#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15"
+  name="silent">
+Nothing, only return the exit code (= 0)
+</EnumerationListItem>
+<EnumerationListItem
+  permalink="#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d"
+  name="quiet">
+Test suites results (= 1)
+</EnumerationListItem>
+<EnumerationListItem
+  permalink="#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555"
+  name="normal">
+Test suites results and failed test cases (= 2)
+</EnumerationListItem>
+<EnumerationListItem
+  permalink="#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0"
+  name="verbose">
+All, including passed checks (= 3)
+</EnumerationListItem>
+
+</EnumerationList>
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#l00064">64</Link> of file <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>.
 </MemberDefinition>
