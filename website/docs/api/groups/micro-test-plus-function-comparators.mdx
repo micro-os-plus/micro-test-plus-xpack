@@ -116,6 +116,10 @@ Expectations and assumptions can test any expression evaluating to a boolean val
 
 
 <SectionUser title="Examples">
+
+</SectionUser>
+
+
 <ProgramListing extension="cpp">
 
 <CodeLine><Highlight kind="normal">mt::expect (mt::eq (compute&#95;answer (), 42)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer is 42&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
@@ -128,7 +132,6 @@ Expectations and assumptions can test any expression evaluating to a boolean val
 <CodeLine><Highlight kind="normal">mt::expect (compute&#95;condition ()) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;condition is true&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
 
 </ProgramListing>
-</SectionUser>
 
 When such comparator functions are used, failed checks also display the actual values compared during the test; for example:
 
@@ -195,7 +198,7 @@ Generic equality comparator. Matches any non-pointer type.
 True if the operands are equal.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00236">236</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00238">238</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### eq {#gabdb021d3d6a5759cd2a5f502b2514dea}
@@ -220,7 +223,7 @@ Pointer equality comparator. Matches pointers to any types.
 True if the pointers are equal.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00253">253</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00255">255</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### ge {#ga34e03399670ec0b365b94b7bea788dd8}
@@ -245,7 +248,7 @@ Generic greater than or equal comparator.
 True if lhs &gt;= rhs.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00333">333</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00335">335</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### ge {#ga3957927d25a61348b639fe01aab11258}
@@ -270,7 +273,7 @@ Pointer greater than or equal comparator.
 True if the lhs pointer &gt;= rhs pointer.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00349">349</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00351">351</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### gt {#gae2fb681444d8256f6bf827eea6b7c29e}
@@ -295,7 +298,7 @@ Generic greater than comparator.
 True if lhs &gt; rhs.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00301">301</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00303">303</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### gt {#gae8a4dcd7ebf01cdfa7e46540cd6522fa}
@@ -320,7 +323,7 @@ Pointer greater than comparator.
 True if the lhs pointer &gt; rhs pointer.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00317">317</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00319">319</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### le {#ga2b5263a5b3965855aa04971bba735a56}
@@ -345,7 +348,7 @@ Generic less than or equal comparator.
 True if lhs &lt;= rhs.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00397">397</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00399">399</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### le {#gaf8716c55446af28b090eb49acd8cf131}
@@ -370,7 +373,7 @@ Generic less than or equal comparator.
 True if the lhs pointer &lt;= rhs pointer.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00413">413</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00415">415</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### lt {#gac162522dcad1a6ff7c869d52d376b3ed}
@@ -395,7 +398,7 @@ Generic less than comparator.
 True if lhs &lt; rhs.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00365">365</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00367">367</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### lt {#ga047738c301c4c6b6c7fdb535aecfe097}
@@ -420,7 +423,7 @@ Generic less than comparator.
 True if the lhs pointer &lt; rhs pointer.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00381">381</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00383">383</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### ne {#ga59e4cf59954e81bc868e62b1c5c8db1f}
@@ -445,7 +448,7 @@ Generic non-equality comparator.
 True if the operands are not equal.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00269">269</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00271">271</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### ne {#ga172f305bbeaf8b965681f76c16a39516}
@@ -470,7 +473,7 @@ Pointer non-equality comparator.
 True if the pointers are not equal.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00285">285</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00287">287</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
