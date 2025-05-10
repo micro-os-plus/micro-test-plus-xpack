@@ -142,7 +142,9 @@ const config: Config = {
     ],
     [
       '@xpack/docusaurus-plugin-doxygen',
-      {}
+      {
+        redirectsOutputFolderPath: 'reference'
+      }
     ],
 
     // Local plugins.
