@@ -76,6 +76,7 @@ namespace micro_os_plus::micro_test_plus
    * the provided arguments, and reports the results.
    *
    * @par Example
+   *
    * ```cpp
    *   namespace mt = micro_os_plus::micro_test_plus;
    *
@@ -161,6 +162,7 @@ namespace micro_os_plus::micro_test_plus
      * to split a string into a vector of substrings, using a delimiter.
      *
      * @par Example
+     * 
      * ```cpp
      * namespace mt = micro_os_plus::micro_test_plus;
      *

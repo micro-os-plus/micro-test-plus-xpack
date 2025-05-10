@@ -125,6 +125,7 @@ namespace micro_os_plus::micro_test_plus
    * the results can be reported with `expect(true)` or `expect(false)`.
    *
    * @par Example
+   * 
    * ```cpp
    * namespace mt = micro_os_plus::micro_test_plus;
    *
@@ -155,6 +156,7 @@ namespace micro_os_plus::micro_test_plus
    * local `detail::op` type.
    *
    * @par Example
+   *
    * ```cpp
    * namespace mt = micro_os_plus::micro_test_plus;
    *

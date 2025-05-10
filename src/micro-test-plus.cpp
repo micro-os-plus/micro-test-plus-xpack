@@ -114,6 +114,7 @@ namespace micro_os_plus::micro_test_plus
      * (for any characters) and `?` (for a single character)
      *
      * @par Examples
+     * 
      * ```cpp
      * namespace mt = micro_os_plus::micro_test_plus;
      *

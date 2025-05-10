@@ -232,6 +232,7 @@ expected and actual values in failed conditions, special comparators
 must be used.
 
 @par Examples
+
 ```cpp
 mt::expect (mt::eq (compute_answer (), 42)) << "answer is 42";
 mt::expect (mt::ne (compute_answer (), 43)) << "answer is not 43";
