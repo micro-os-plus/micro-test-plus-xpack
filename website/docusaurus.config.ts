@@ -10,6 +10,8 @@ import util from 'node:util';
 import {redirects} from './docusaurus-config-redirects';
 import {getCustomFields} from './customFields';
 
+import doxygenApiMenu from './docs/api/docusaurus-config-api-menu-dropdown.json'
+
 // The node.js modules cannot be used in modules imported in browser code:
 // webpack < 5 used to include polyfills for node.js core modules by default.
 // so the entire initialisation code must be in this file, that is
@@ -282,12 +284,7 @@ const config: Config = {
             },
           ],
         },
-        {
-          to: '/docs/api',
-          label: 'API',
-          position: 'left',
-        },
-
+        doxygenApiMenu,
         {
           type: 'dropdown',
           to: '/blog',
