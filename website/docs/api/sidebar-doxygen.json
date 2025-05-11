@@ -430,7 +430,7 @@
     "label": "Files",
     "link": {
       "type": "doc",
-      "id": "api/folders/index"
+      "id": "api/files/index"
     },
     "collapsed": true,
     "items": [
