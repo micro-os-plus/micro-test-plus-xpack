@@ -19,10 +19,6 @@
     {
       "label": "Files",
       "to": "/docs/api/files/"
-    },
-    {
-      "label": "Pages",
-      "to": "/docs/api/pages/"
     }
   ]
 }
