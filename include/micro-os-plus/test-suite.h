@@ -132,7 +132,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Get the number of conditions that passed.
      * @par Parameters
      *	None.
-     * @return An integer with the number checks that passed.
+     * @return An integer with the number of checks that passed.
      */
     [[nodiscard]] constexpr int
     successful_checks (void)
@@ -198,7 +198,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @brief If all counters are null, the test suite was not unused.
+     * @brief If all counters are null, the test suite was not used.
      * @par Parameters
      *	None.
      * @return True if the test suite is not used.
