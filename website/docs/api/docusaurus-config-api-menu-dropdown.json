@@ -5,7 +5,7 @@
   "position": "left",
   "items": [
     {
-      "label": "µOS++",
+      "label": "µOS++ Topics",
       "to": "/docs/api/groups/micro-os-plus/"
     },
     {

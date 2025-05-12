@@ -1,7 +1,7 @@
 [
   {
     "type": "category",
-    "label": "µOS++",
+    "label": "µOS++ Topics",
     "link": {
       "type": "doc",
       "id": "api/groups/micro-os-plus"
