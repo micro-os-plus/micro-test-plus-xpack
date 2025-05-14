@@ -145,7 +145,11 @@ const config: Config = {
     [
       '@xpack/docusaurus-plugin-doxygen',
       {
-        redirectsOutputFolderPath: 'reference'
+        outputFolderPath: 'docs/api', // doxygen/mdx
+        outputBaseUrl: 'api',
+        redirectsOutputFolderPath: 'reference',
+        verbose: true,
+        runOnStart: false
       }
     ],
 
@@ -284,7 +288,30 @@ const config: Config = {
             },
           ],
         },
-        doxygenApiMenu,
+{
+  "type": "dropdown",
+  "label": "API",
+  "to": "/docs/api/",
+  "position": "left",
+  "items": [
+    {
+      "label": "µOS++ Topics",
+      "to": "/docs/api/groups/micro-os-plus/"
+    },
+    {
+      "label": "Namespaces",
+      "to": "/docs/api/namespaces/"
+    },
+    {
+      "label": "Classes",
+      "to": "/docs/api/classes/"
+    },
+    {
+      "label": "Files",
+      "to": "/docs/api/files/"
+    }
+  ]
+},
         {
           type: 'dropdown',
           to: '/blog',
