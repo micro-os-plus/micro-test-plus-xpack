@@ -7,10 +7,9 @@ import type * as Preset from '@docusaurus/preset-classic';
 // import logger from '@docusaurus/logger';
 import util from 'node:util';
 
+import doxygenApiMenu from './docusaurus-config-api-menu-dropdown.json'
 import {redirects} from './docusaurus-config-redirects';
 import {getCustomFields} from './customFields';
-
-import doxygenApiMenu from './docs/api/docusaurus-config-api-menu-dropdown.json'
 
 // The node.js modules cannot be used in modules imported in browser code:
 // webpack < 5 used to include polyfills for node.js core modules by default.
@@ -288,30 +287,7 @@ const config: Config = {
             },
           ],
         },
-{
-  "type": "dropdown",
-  "label": "API",
-  "to": "/docs/api/",
-  "position": "left",
-  "items": [
-    {
-      "label": "µOS++ Topics",
-      "to": "/docs/api/groups/micro-os-plus/"
-    },
-    {
-      "label": "Namespaces",
-      "to": "/docs/api/namespaces/"
-    },
-    {
-      "label": "Classes",
-      "to": "/docs/api/classes/"
-    },
-    {
-      "label": "Files",
-      "to": "/docs/api/files/"
-    }
-  ]
-},
+        doxygenApiMenu,
         {
           type: 'dropdown',
           to: '/blog',
