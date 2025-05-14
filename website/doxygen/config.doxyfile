@@ -55,6 +55,15 @@ PROJECT_NUMBER = 3.2.2
 
 PROJECT_BRIEF = "The µTest++ Testing Framework"
 
+# If the REPEAT_BRIEF tag is set to YES, Doxygen will prepend the brief
+# description of a member or function before the detailed description
+#
+# Note: If both HIDE_UNDOC_MEMBERS and BRIEF_MEMBER_DESC are set to NO, the
+# brief descriptions will be completely suppressed.
+# The default value is: YES.
+
+REPEAT_BRIEF = NO
+
 # With the PROJECT_LOGO tag one can specify a logo or an icon that is included
 # in the documentation. The maximum height of the logo should not exceed 55
 # pixels and the maximum width should not exceed 200 pixels. Doxygen will copy
