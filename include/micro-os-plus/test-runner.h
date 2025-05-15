@@ -13,6 +13,28 @@
  * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
  */
 
+/**
+ * @file test-runner.h
+ * @brief Test runner management for the µTest++ testing framework.
+ * @details
+ * This header defines the `test_runner` class, which is responsible for
+ * managing the registration and execution of test suites within the µTest++
+ * framework.
+ *
+ * The `test_runner` maintains a list of test suites, each of which registers
+ * itself automatically upon construction. It provides methods for initialising
+ * the test environment, registering test suites, and determining the overall
+ * test result via an exit code.
+ *
+ * The file also includes supporting declarations and ensures that all
+ * definitions reside within the `micro_os_plus::micro_test_plus` namespace,
+ * maintaining a clear separation from user code and minimising the risk of
+ * naming conflicts.
+ *
+ * This file should be included by users who wish to customise or extend test
+ * execution within the µTest++ framework.
+ */
+
 #ifndef MICRO_TEST_PLUS_TEST_RUNNER_H_
 #define MICRO_TEST_PLUS_TEST_RUNNER_H_
 

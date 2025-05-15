@@ -53,7 +53,7 @@ Consequently, there are no C equivalents for the C++ definitions provided by µT
 @ingroup micro-test-plus
 @details
 
-## Verbosity
+## Description
 
 By default, the µTest++ reporter displays detailed results only for failed test cases; successful test cases are summarised in a single line, indicating the total number of passed and failed checks.
 
@@ -75,6 +75,8 @@ test 1
 1: ✓ Minimal - test suite passed (2 checks in 1 test case)
  1/12 Test  #1: minimal-test .....................   Passed    0.00 sec
 ```
+
+## Verbosity
 
 To adjust the verbosity, one of the following command-line options may be specified:
 

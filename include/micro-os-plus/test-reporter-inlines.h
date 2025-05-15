@@ -13,6 +13,29 @@
  * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
  */
 
+/**
+ * @file test-reporter-inlines.h
+ * @brief Inline implementations for the test reporter in the µTest++
+ * framework.
+ * @details
+ * This header provides inline definitions for the `test_reporter` class, which
+ * is responsible for formatting and outputting test results within the µTest++
+ * testing framework.
+ *
+ * The file includes operator overloads for reporting pointers, integral
+ * values, containers, and comparator operations, as well as logical and
+ * exception-related expressions. It also implements methods for handling pass
+ * and fail outcomes, ensuring that test results are presented in a clear and
+ * informative manner.
+ *
+ * All definitions reside within the `micro_os_plus::micro_test_plus`
+ * namespace, maintaining a clear separation from user code and minimising the
+ * risk of naming conflicts.
+ *
+ * This file is intended for internal use by the framework and should not be
+ * included directly by user code.
+ */
+
 #ifndef MICRO_TEST_PLUS_TEST_REPORTER_INLINES_H_
 #define MICRO_TEST_PLUS_TEST_REPORTER_INLINES_H_
 

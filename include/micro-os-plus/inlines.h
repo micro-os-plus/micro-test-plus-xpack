@@ -13,6 +13,28 @@
  * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
  */
 
+/**
+ * @file inlines.h
+ * @brief Inline implementations for the µTest++ testing framework.
+ * @details
+ * This header contains inline definitions for key components of the µTest++
+ * framework, including test suite and test case management, deferred
+ * reporting, and utility functions.
+ *
+ * The file provides template implementations for registering and executing
+ * test suites and test cases, as well as mechanisms for reporting test results
+ * in a deferred manner. It also includes utility functions, such as string
+ * splitting, to support test development.
+ *
+ * All definitions reside within the `micro_os_plus::micro_test_plus` namespace
+ * and its nested namespaces, ensuring clear separation between user-facing and
+ * internal components. This approach enhances maintainability, promotes
+ * modularity, and minimises the risk of name clashes.
+ *
+ * This file is intended for internal use within the framework and should not
+ * be included directly by user code.
+ */
+
 #ifndef MICRO_TEST_PLUS_INLINES_H_
 #define MICRO_TEST_PLUS_INLINES_H_
 
@@ -162,7 +184,7 @@ namespace micro_os_plus::micro_test_plus
      * to split a string into a vector of substrings, using a delimiter.
      *
      * @par Example
-     * 
+     *
      * ```cpp
      * namespace mt = micro_os_plus::micro_test_plus;
      *

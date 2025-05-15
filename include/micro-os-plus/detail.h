@@ -13,6 +13,25 @@
  * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
  */
 
+/**
+ * @file detail.h
+ * @brief Internal implementation details for the µTest++ framework.
+ * @details
+ * This header defines the internal components and helper structures used by
+ * the µTest++ testing framework. The contents of this file are not intended to
+ * form part of the public API and are subject to change without notice.
+ *
+ * It provides implementation details such as assertion handling, generic
+ * getter utilities, comparator structures for various logical and relational
+ * operations, as well as exception checking mechanisms. Additionally, it
+ * includes base classes for deferred reporting of test results.
+ *
+ * All definitions reside within the `micro_os_plus::micro_test_plus::detail`
+ * namespace to avoid polluting the public API and to maintain a clear
+ * separation between user-facing and internal components. This approach
+ * enhances maintainability and minimises the risk of name clashes.
+ */
+
 #ifndef MICRO_TEST_PLUS_DETAIL_H_
 #define MICRO_TEST_PLUS_DETAIL_H_
 
@@ -40,7 +59,26 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   /**
-   * @brief Namespace with implementation details, not part of the public API.
+   * @namespace micro_os_plus::micro_test_plus::detail
+   * @brief Internal implementation details for the µTest++ framework.
+   * @details
+   * The `detail` namespace encapsulates the internal mechanisms, helper
+   * structures, and implementation utilities used by the µTest++ testing
+   * framework. These components are not part of the public API and may change
+   * without notice.
+   *
+   * Within this namespace, you will find assertion handling, generic getter
+   * utilities, comparator structures for logical and relational operations,
+   * exception checking mechanisms, and base classes for deferred reporting of
+   * test results.
+   *
+   * All definitions within `detail` are intended solely for internal use,
+   * ensuring a clear separation between user-facing and internal components.
+   * This approach enhances maintainability, reduces the risk of name clashes,
+   * and keeps the public API concise.
+   *
+   * The relevant source files are organised within the `include/micro-os-plus`
+   * folder to maintain a structured and modular codebase.
    */
   namespace detail
   {

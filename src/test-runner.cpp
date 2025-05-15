@@ -13,6 +13,28 @@
  * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
  */
 
+/**
+ * @file test-runner.cpp
+ * @brief Implementation of test runner management for the µTest++ testing
+ * framework.
+ * @details
+ * This source file provides the implementation of the `test_runner` class and
+ * related functions, responsible for managing the registration and execution
+ * of test suites within the µTest++ framework.
+ *
+ * It includes routines for initialising the test environment, registering test
+ * suites, executing all registered suites, and determining the overall test
+ * result via an exit code. The implementation also handles command-line
+ * argument parsing for verbosity control and outputs relevant build and
+ * environment information.
+ *
+ * All definitions reside within the `micro_os_plus::micro_test_plus`
+ * namespace, ensuring clear separation from user code and minimising the risk
+ * of naming conflicts.
+ *
+ * This file must be included when building the µTest++ library.
+ */
+
 // ----------------------------------------------------------------------------
 
 #if defined(MICRO_OS_PLUS_INCLUDE_CONFIG_H)

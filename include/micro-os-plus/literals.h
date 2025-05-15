@@ -13,6 +13,33 @@
  * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
  */
 
+/**
+ * @file literals.h
+ * @brief User-defined literals and type wrappers for the µTest++ testing
+ * framework.
+ * @details
+ * This header defines a comprehensive set of user-defined literal operators
+ * and type wrappers, enabling the explicit specification of operand types for
+ * use with the µTest++ comparators and operators.
+ *
+ * The provided literals allow constants to be suffixed (e.g., `1_i`, `2_u16`)
+ * to produce strongly-typed values, thereby improving type safety and ensuring
+ * that comparator functions and operators can display actual values in test
+ * reports.
+ *
+ * In addition to literals, the file includes wrappers for converting dynamic
+ * values and expressions to recognised types, both via deprecated aliases
+ * (e.g., `_i`, `_u8`) and the preferred `to_*` forms (e.g., `to_i`, `to_u8`).
+ *
+ * The implementation draws significant inspiration from Boost UT, adapting and
+ * extending its approach to suit the requirements of embedded development and
+ * the µTest++ framework.
+ *
+ * All definitions reside within the `micro_os_plus::micro_test_plus::literals`
+ * namespace, ensuring clear separation from user code and minimising the risk
+ * of naming conflicts.
+ */
+
 #ifndef MICRO_TEST_PLUS_LITERALS_H_
 #define MICRO_TEST_PLUS_LITERALS_H_
 
@@ -42,10 +69,28 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   /**
-   * @brief User Defined Literals (UDL).
+   * @namespace micro_os_plus::micro_test_plus::literals
+   * @brief User-defined literals and type wrappers for the µTest++ testing
+   * framework.
+   * @details
+   * The `literals` namespace provides a comprehensive set of user-defined
+   * literal operators and type wrappers, enabling the explicit specification
+   * of operand types for use with the µTest++ comparators and operators.
    *
-   * Use them to suffix
-   * constants and obtain specific explicit types, like `1_i`.
+   * These operators allow constants to be suffixed (e.g., `1_i`, `2_u16`) to
+   * produce strongly-typed values, thereby improving type safety and ensuring
+   * that comparator functions and operators can display actual values in test
+   * reports.
+   *
+   * In addition to literals, the namespace includes wrappers for converting
+   * dynamic values and expressions to recognised types, both via deprecated
+   * aliases (such as `_i`, `_u8`) and the preferred `to_*` forms (such as
+   * `to_i`, `to_u8`).
+   *
+   * All definitions within this namespace are intended to facilitate clear and
+   * type-safe test expressions, and are implemented in the
+   * `include/micro-os-plus` folder to maintain a structured and modular
+   * codebase.
    */
   namespace literals
   {

@@ -13,6 +13,31 @@
  * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
  */
 
+/**
+ * @file micro-test-plus.cpp
+ * @brief Core implementation for the µTest++ testing framework.
+ * @details
+ * This source file contains the principal implementation for the µTest++
+ * testing framework, encompassing initialisation routines, management of test
+ * suites and test cases, utility functions, and internal mechanisms for
+ * reporting and reflection.
+ *
+ * It defines the primary entry points for initialising the test environment
+ * and obtaining the test result exit code. Additionally, it implements
+ * utilities for string pattern matching, source location handling, and the
+ * core logic for deferred reporting of test outcomes.
+ *
+ * All definitions are contained within the `micro_os_plus::micro_test_plus`
+ * namespace and its nested namespaces, ensuring clear separation from user
+ * code and minimising the risk of naming conflicts.
+ *
+ * The implementation is optimised for embedded environments, avoiding heavy
+ * dependencies and providing lightweight, efficient mechanisms for test
+ * execution and reporting.
+ *
+ * This file must be included when building the µTest++ library.
+ */
+
 // ----------------------------------------------------------------------------
 
 #if defined(MICRO_OS_PLUS_INCLUDE_CONFIG_H)
@@ -114,7 +139,7 @@ namespace micro_os_plus::micro_test_plus
      * (for any characters) and `?` (for a single character)
      *
      * @par Examples
-     * 
+     *
      * ```cpp
      * namespace mt = micro_os_plus::micro_test_plus;
      *

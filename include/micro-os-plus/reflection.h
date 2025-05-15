@@ -13,6 +13,27 @@
  * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
  */
 
+/**
+ * @file reflection.h
+ * @brief Reflection utilities for the µTest++ testing framework.
+ * @details
+ * This header provides facilities for obtaining source location information
+ * and type names at compile time, supporting enhanced reporting and
+ * diagnostics within the µTest++ framework.
+ *
+ * It defines a local implementation of `source_location` for environments
+ * lacking C++20 standard support, as well as utilities for extracting concise
+ * type names from compiler-specific macros such as `__PRETTY_FUNCTION__`.
+ *
+ * All definitions are contained within the
+ * `micro_os_plus::micro_test_plus::reflection` namespace, ensuring clear
+ * separation from user code and minimising the risk of naming conflicts.
+ *
+ * The implementation draws inspiration from Boost UT, adapting relevant
+ * concepts to suit the requirements of embedded development and the µTest++
+ * framework.
+ */
+
 #ifndef MICRO_TEST_PLUS_REFLECTION_H_
 #define MICRO_TEST_PLUS_REFLECTION_H_
 
@@ -44,6 +65,24 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
+  /**
+   * @namespace micro_os_plus::micro_test_plus::reflection
+   * @brief Reflection utilities for the µTest++ testing framework.
+   * @details
+   * The `reflection` namespace provides facilities for obtaining source
+   * location information and type names at compile time, supporting enhanced
+   * reporting and diagnostics within the µTest++ framework.
+   *
+   * It includes a local implementation of `source_location` for environments
+   * lacking C++20 standard support, as well as utilities for extracting
+   * concise type names from compiler-specific macros such as
+   * `__PRETTY_FUNCTION__`.
+   *
+   * All definitions within this namespace are intended to facilitate advanced
+   * reflection and reporting features, and are implemented in the
+   * `include/micro-os-plus` folder to maintain a structured and modular
+   * codebase.
+   */
   namespace reflection
   {
 #if defined(__cpp_lib_source_location)

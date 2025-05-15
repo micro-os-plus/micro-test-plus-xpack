@@ -13,6 +13,28 @@
  * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
  */
 
+/**
+ * @file test-reporter.cpp
+ * @brief Implementation of test result reporting for the µTest++ testing
+ * framework.
+ * @details
+ * This source file provides the implementation of the `test_reporter` class
+ * and related functions, responsible for formatting and outputting test
+ * results within the µTest++ framework.
+ *
+ * It includes operator overloads for various data types, containers, and
+ * comparator expressions, as well as methods for reporting the start and end
+ * of test cases and suites, and for handling pass and fail outcomes. The
+ * implementation supports multiple verbosity levels and colour-coded output to
+ * clearly distinguish between successful and failed tests.
+ *
+ * All definitions reside within the `micro_os_plus::micro_test_plus`
+ * namespace, ensuring clear separation from user code and minimising the risk
+ * of naming conflicts.
+ *
+ * This file must be included when building the µTest++ library.
+ */
+
 // ----------------------------------------------------------------------------
 
 #if defined(MICRO_OS_PLUS_INCLUDE_CONFIG_H)

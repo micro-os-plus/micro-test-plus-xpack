@@ -13,6 +13,28 @@
  * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
  */
 
+/**
+ * @file math.h
+ * @brief Mathematical utilities for the µTest++ testing framework.
+ * @details
+ * This header provides a collection of constexpr mathematical function
+ * templates and utilities for use within the µTest++ framework.
+ *
+ * The functions defined herein include generic implementations for absolute
+ * value, minimum value, exponentiation, and compile-time parsing of numeric
+ * values from character arrays. These utilities are designed to be lightweight
+ * and suitable for use in embedded environments, where standard library
+ * alternatives may be unavailable, less efficient, or not constexpr.
+ *
+ * All definitions reside within the `micro_os_plus::micro_test_plus::math`
+ * namespace, ensuring clear separation from user code and minimising the risk
+ * of naming conflicts.
+ *
+ * The implementation draws inspiration from Boost UT, adapting relevant
+ * concepts to meet the requirements of embedded development and the µTest++
+ * framework.
+ */
+
 #ifndef MICRO_TEST_PLUS_MATH_H_
 #define MICRO_TEST_PLUS_MATH_H_
 
@@ -39,16 +61,27 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   /**
-   * @brief Local mathematical functions.
+   * @namespace micro_os_plus::micro_test_plus::math
+   * @brief Mathematical utilities for the µTest++ testing framework.
+   * @details
+   * The `math` namespace provides a collection of constexpr mathematical
+   * function templates and utilities for use within the µTest++ framework.
    *
-   * Some may have equivalents in the standard library, but may be
-   * more complicated to use, or have only floating point variants, or
-   * not be constexpr.
+   * These functions include generic implementations for absolute value,
+   * minimum value, exponentiation, and compile-time parsing of numeric values
+   * from character arrays. The utilities are designed to be lightweight and
+   * suitable for embedded environments, where standard library alternatives
+   * may be unavailable, less efficient, or not constexpr.
+   *
+   * All definitions within this namespace are intended to facilitate
+   * mathematical operations in a type-safe and efficient manner, and are
+   * implemented in the `include/micro-os-plus` folder to maintain a structured
+   * and modular codebase.
    */
   namespace math
   {
     /**
-     * @brief Generic absolute of any value.
+     * @brief Generic absolute of any comparable value.
      */
     template <class T>
     [[nodiscard]] constexpr auto
@@ -58,7 +91,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @brief Generic minimum of two values.
+     * @brief Generic minimum of two comparable values.
      */
     template <class T>
     [[nodiscard]] constexpr auto

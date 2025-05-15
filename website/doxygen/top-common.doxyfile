@@ -20,16 +20,18 @@
 /**
 
 @defgroup micro-os-plus µOS++ Topics
-@brief The µOS++ Framework topics.
+@brief Topics pertaining to the µOS++ Framework.
 @details
 
-The [µOS++](https://micro-os-plus.github.io) Framework
-represents the primary project, encompassing multiple
-source libraries. These libraries are managed as separate repositories
-on GitHub and are collectively maintained under the
-[micro-os-plus](https://github.com/micro-os-plus) group.
+The [µOS++](https://micro-os-plus.github.io) Framework constitutes the principal project, comprising multiple source libraries. These libraries are maintained as separate repositories on GitHub and are collectively managed under the [micro-os-plus](https://github.com/micro-os-plus) group.
 
 @namespace micro_os_plus
-@brief The top µOS++ namespace.
+@brief The primary namespace for the µOS++ framework.
+@details
+The micro_os_plus namespace provides a dedicated scope for all µOS++ classes, functions, variables, enumerations, type definitions, and related entities.
+
+This namespace is further structured into additional nested namespaces. By encapsulating definitions within distinct namespaces, the framework achieves improved code organisation, reduced redundancy, and enhanced maintainability.
+
+Such an approach fosters modular development and ensures seamless integration within µOS++, thereby contributing to a more efficient and scalable system.
 
 */

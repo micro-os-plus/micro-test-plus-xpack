@@ -13,6 +13,32 @@
  * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
  */
 
+/**
+ * @file test-suite.h
+ * @brief Test suite management for the µTest++ testing framework.
+ * @details
+ * This header defines the `test_suite_base` and `test_suite` classes, which
+ * provide the mechanisms for grouping and executing related test cases within
+ * the µTest++ framework.
+ *
+ * The `test_suite_base` class offers the foundational interface for managing
+ * test suite state, including counters for successful and failed checks, test
+ * case tracking, and methods for marking the beginning and end of test cases
+ * and suites.
+ *
+ * The `test_suite` class extends this functionality, enabling the registration
+ * and execution of callable objects (such as lambdas or function pointers) as
+ * test suites. Test suites self-register with the test runner upon
+ * construction, facilitating automated test discovery and execution.
+ *
+ * All definitions reside within the `micro_os_plus::micro_test_plus`
+ * namespace, ensuring clear separation from user code and minimising the risk
+ * of naming conflicts.
+ *
+ * This file should be included by users who wish to define, register, or
+ * customise test suites within the µTest++ framework.
+ */
+
 #ifndef MICRO_TEST_PLUS_TEST_SUITE_H_
 #define MICRO_TEST_PLUS_TEST_SUITE_H_
 

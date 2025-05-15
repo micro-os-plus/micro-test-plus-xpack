@@ -13,6 +13,32 @@
  * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
  */
 
+/**
+ * @file test-reporter.h
+ * @brief Test result reporting for the µTest++ testing framework.
+ * @details
+ * This header defines the `test_reporter` class and associated types, which
+ * are responsible for formatting and outputting test results within the
+ * µTest++ framework.
+ *
+ * The `test_reporter` class provides a comprehensive set of output operators
+ * for various data types, containers, and comparator expressions, enabling
+ * detailed and informative reporting of test outcomes. It supports multiple
+ * verbosity levels and colour-coded output to distinguish between passed and
+ * failed tests.
+ *
+ * The file also defines supporting types such as `colors` and `verbosity`, and
+ * includes methods for reporting the start and end of test cases and suites,
+ * as well as for handling pass and fail conditions.
+ *
+ * All definitions reside within the `micro_os_plus::micro_test_plus`
+ * namespace, ensuring clear separation from user code and minimising the risk
+ * of naming conflicts.
+ *
+ * This file is intended to be included by users who wish to customise or
+ * extend test reporting within the µTest++ framework.
+ */
+
 #ifndef MICRO_TEST_PLUS_TEST_REPORTER_H_
 #define MICRO_TEST_PLUS_TEST_REPORTER_H_
 
@@ -63,10 +89,10 @@ namespace micro_os_plus::micro_test_plus
    */
   enum class verbosity
   {
-    silent = 0, ///< Nothing, only return the exit code
-    quiet = 1, ///< Test suites results
-    normal = 2, ///< Test suites results and failed test cases
-    verbose = 3 ///< All, including passed checks
+    silent = 0, /**< Nothing, only return the exit code */
+    quiet = 1, /**< Test suites results */
+    normal = 2, /**< Test suites results and failed test cases */
+    verbose = 3 /**< All, including passed checks */
   };
 
   typedef verbosity verbosity_t;

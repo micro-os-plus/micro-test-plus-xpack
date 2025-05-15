@@ -13,6 +13,28 @@
  * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
  */
 
+/**
+ * @file test-suite.cpp
+ * @brief Implementation of test suite management for the µTest++ testing
+ * framework.
+ * @details
+ * This source file provides the implementation of the `test_suite_base` and
+ * `test_suite` classes, which are responsible for grouping, registering, and
+ * executing related test cases within the µTest++ framework.
+ *
+ * It includes methods for managing test suite state, tracking successful and
+ * failed checks, handling the start and end of test cases and suites, and
+ * supporting deferred reporting. The implementation ensures that test suites
+ * are properly initialised, executed, and reported, facilitating automated
+ * test discovery and execution.
+ *
+ * All definitions reside within the `micro_os_plus::micro_test_plus`
+ * namespace, ensuring clear separation from user code and minimising the risk
+ * of naming conflicts.
+ *
+ * This file must be included when building the µTest++ library.
+ */
+
 // ----------------------------------------------------------------------------
 
 #if defined(MICRO_OS_PLUS_INCLUDE_CONFIG_H)
