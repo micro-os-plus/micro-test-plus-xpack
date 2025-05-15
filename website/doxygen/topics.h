@@ -38,6 +38,54 @@
  */
 
 /**
+ * @dir src
+ * @brief Source folder for the µTest++ testing framework implementation.
+ * @details
+ * The `src` folder contains the core implementation files for the µTest++ testing framework, including the primary logic for test suite management, test runner execution, result reporting, and supporting utilities.
+ *
+ * All source files within this folder are responsible for providing the runtime behaviour and internal mechanisms of the framework. These implementations are optimised for both embedded and general C++ environments, ensuring efficiency and reliability.
+ *
+ * The organisation of the `src` folder promotes maintainability and modularity, enabling clear separation between interface declarations (located in the `include` folder) and implementation details.
+ */
+
+/**
+ * @dir include
+ * @brief Public header folder for the µTest++ testing framework.
+ * @details
+ * The `include` folder contains all public header files for the µTest++ testing framework, providing the primary interface for users and integrators.
+ *
+ * This folder encompasses declarations for test suite management, test runner control, result reporting, mathematical utilities, type traits, literals, operators, and supporting utilities. All public API definitions are organised within this folder to ensure clear separation from implementation details, which reside in the `src` folder.
+ *
+ * The structure of the `include` folder promotes modularity, maintainability, and ease of integration, enabling users to access the full capabilities of the framework by including the appropriate headers in their projects.
+ */
+
+ /**
+ * @dir include/micro-os-plus
+ * @brief Core public header folder for the µTest++ testing framework.
+ * @details
+ * The `include/micro-os-plus` folder contains the principal public header files for the µTest++ testing framework, forming the main interface for users and integrators.
+ *
+ * This folder encompasses declarations for all essential framework components, including test suite and test case management, test runner control, result reporting, mathematical utilities, type traits, user-defined literals, operators, reflection utilities, and supporting internal mechanisms.
+ *
+ * By organising all public API definitions within this folder, the project ensures a clear separation from implementation details (which reside in the `src` folder), thereby promoting modularity, maintainability, and ease of integration.
+ *
+ * Users should include the relevant headers from this folder to access the full capabilities of the µTest++ framework in their projects.
+ */
+
+/**
+ * @dir include/micro-os-plus/micro-test-plus
+ * @brief Public header folder for the core components of the µTest++ testing framework.
+ * @details
+ * The `include/micro-os-plus/micro-test-plus` folder contains the principal public header files for the core functionality of the µTest++ testing framework.
+ *
+ * This folder provides declarations for essential framework components, including test suite and test case management, test runner and reporter classes, mathematical utilities, type traits, user-defined literals, operators, reflection utilities, and supporting internal mechanisms.
+ *
+ * By organising all public API definitions within this folder, the project ensures a clear separation from implementation details (which reside in the `src` folder), thereby promoting modularity, maintainability, and ease of integration.
+ *
+ * Users should include the relevant headers from this folder to access the full capabilities of the µTest++ framework in their projects.
+ */
+
+/**
 
 @defgroup micro-test-plus µTest++
 @ingroup micro-os-plus

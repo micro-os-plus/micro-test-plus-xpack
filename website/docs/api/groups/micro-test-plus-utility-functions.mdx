@@ -91,16 +91,30 @@ For tests comparing strings, in addition to exact matches, it is also possible t
 
 </ProgramListing>
 
-Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00154">154</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
+Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00156">156</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
 </MemberDefinition>
 
 ### split() {#ga1b860aa64be17658d1664de447e6e125}
 
 <MemberDefinition
-  template={<>template &lt;class T = std::string&#95;view, class Delim&#95;T&gt;</>}
+  template={<>template &lt;class T, class Delim&#95;T&gt;</>}
   prototype={<>std::vector&lt; T &gt; micro&#95;os&#95;plus::micro&#95;test&#95;plus::utility::split (T input, Delim&#95;T delim)</>}
   labels = {["nodiscard"]}>
 Split a string into a vector of sub-strings.
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="T">Type of the input string.</ParametersListItem>
+<ParametersListItem name="Delim&#95;T">Type of the delimiter.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] input">Input string to split.</ParametersListItem>
+<ParametersListItem name="[in] delim">Delimiter string.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+An array of strings.
+</SectionUser>
 
 For tests handling strings, this function template allows to split a string into a vector of substrings, using a delimiter.
 
@@ -120,22 +134,7 @@ For tests handling strings, this function template allows to split a string into
 
 </ProgramListing>
 
-
-<ParametersList title="Template Parameters">
-<ParametersListItem name="T">Type of the input string.</ParametersListItem>
-<ParametersListItem name="Delim&#95;T">Type of the delimiter.</ParametersListItem>
-</ParametersList>
-
-<ParametersList title="Parameters">
-<ParametersListItem name="[in] input">Input string to split.</ParametersListItem>
-<ParametersListItem name="[in] delim">Delimiter string.</ParametersListItem>
-</ParametersList>
-
-<SectionUser title="Returns">
-An array of strings.
-</SectionUser>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/inlines-h/#l00198">198</Link> of file <Link to="/docs/api/files/include/micro-os-plus/inlines-h">inlines.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines-h/#l00200">200</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

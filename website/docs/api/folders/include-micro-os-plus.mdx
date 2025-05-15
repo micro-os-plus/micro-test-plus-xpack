@@ -22,7 +22,19 @@ import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/Member
 
 <DoxygenPage version="1.13.2">
 
-TODO: add <code>@brief</code> to <code>@dir include/micro-os-plus</code>
+Core public header folder for the µTest++ testing framework. <Link to="#details">More...</Link>
+
+## Folders Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="folder"
+  name={<Link to="/docs/api/folders/include/micro-os-plus/micro-test-plus">micro-test-plus</Link>}>
+Public header folder for the core components of the µTest++ testing framework. <Link to="/docs/api/folders/include/micro-os-plus/micro-test-plus/#details">More...</Link>
+</MembersIndexItem>
+
+</MembersIndex>
 
 ## Files Index
 
@@ -30,74 +42,20 @@ TODO: add <code>@brief</code> to <code>@dir include/micro-os-plus</code>
 
 <MembersIndexItem
   type="file"
-  name={<Link to="/docs/api/files/include/micro-os-plus/detail-h">detail.h</Link>}>
-Internal implementation details for the µTest++ framework. <Link to="/docs/api/files/include/micro-os-plus/detail-h/#details">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="file"
-  name={<Link to="/docs/api/files/include/micro-os-plus/inlines-h">inlines.h</Link>}>
-Inline implementations for the µTest++ testing framework. <Link to="/docs/api/files/include/micro-os-plus/inlines-h/#details">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="file"
-  name={<Link to="/docs/api/files/include/micro-os-plus/literals-h">literals.h</Link>}>
-User-defined literals and type wrappers for the µTest++ testing framework. <Link to="/docs/api/files/include/micro-os-plus/literals-h/#details">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="file"
-  name={<Link to="/docs/api/files/include/micro-os-plus/math-h">math.h</Link>}>
-Mathematical utilities for the µTest++ testing framework. <Link to="/docs/api/files/include/micro-os-plus/math-h/#details">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="file"
   name={<Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>}>
 Primary public header for the µTest++ testing framework. <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#details">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="file"
-  name={<Link to="/docs/api/files/include/micro-os-plus/reflection-h">reflection.h</Link>}>
-Reflection utilities for the µTest++ testing framework. <Link to="/docs/api/files/include/micro-os-plus/reflection-h/#details">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="file"
-  name={<Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h">test-reporter-inlines.h</Link>}>
-Inline implementations for the test reporter in the µTest++ framework. <Link to="/docs/api/files/include/micro-os-plus/test-reporter-inlines-h/#details">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="file"
-  name={<Link to="/docs/api/files/include/micro-os-plus/test-reporter-h">test-reporter.h</Link>}>
-Test result reporting for the µTest++ testing framework. <Link to="/docs/api/files/include/micro-os-plus/test-reporter-h/#details">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="file"
-  name={<Link to="/docs/api/files/include/micro-os-plus/test-runner-h">test-runner.h</Link>}>
-Test runner management for the µTest++ testing framework. <Link to="/docs/api/files/include/micro-os-plus/test-runner-h/#details">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="file"
-  name={<Link to="/docs/api/files/include/micro-os-plus/test-suite-h">test-suite.h</Link>}>
-Test suite management for the µTest++ testing framework. <Link to="/docs/api/files/include/micro-os-plus/test-suite-h/#details">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="file"
-  name={<Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>}>
-Type trait utilities and metaprogramming support for the µTest++ testing framework. <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#details">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
 
 ## Description {#details}
 
-TODO: add <code>@details</code> to <code>@dir include/micro-os-plus</code>
+The <code>include/micro-os-plus</code> folder contains the principal public header files for the µTest++ testing framework, forming the main interface for users and integrators.
+
+This folder encompasses declarations for all essential framework components, including test suite and test case management, test runner control, result reporting, mathematical utilities, type traits, user-defined literals, operators, reflection utilities, and supporting internal mechanisms.
+
+By organising all public API definitions within this folder, the project ensures a clear separation from implementation details (which reside in the <code>src</code> folder), thereby promoting modularity, maintainability, and ease of integration.
+
+Users should include the relevant headers from this folder to access the full capabilities of the µTest++ framework in their projects.
 
 </DoxygenPage>

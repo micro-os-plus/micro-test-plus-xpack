@@ -441,59 +441,70 @@
               "collapsed": true,
               "items": [
                 {
-                  "type": "doc",
-                  "label": "detail.h",
-                  "id": "api/files/include-micro-os-plus-detail-h"
-                },
-                {
-                  "type": "doc",
-                  "label": "inlines.h",
-                  "id": "api/files/include-micro-os-plus-inlines-h"
-                },
-                {
-                  "type": "doc",
-                  "label": "literals.h",
-                  "id": "api/files/include-micro-os-plus-literals-h"
-                },
-                {
-                  "type": "doc",
-                  "label": "math.h",
-                  "id": "api/files/include-micro-os-plus-math-h"
+                  "type": "category",
+                  "label": "micro-test-plus",
+                  "link": {
+                    "type": "doc",
+                    "id": "api/folders/include-micro-os-plus-micro-test-plus"
+                  },
+                  "collapsed": true,
+                  "items": [
+                    {
+                      "type": "doc",
+                      "label": "detail.h",
+                      "id": "api/files/include-micro-os-plus-micro-test-plus-detail-h"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "inlines.h",
+                      "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-h"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "literals.h",
+                      "id": "api/files/include-micro-os-plus-micro-test-plus-literals-h"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "math.h",
+                      "id": "api/files/include-micro-os-plus-micro-test-plus-math-h"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "reflection.h",
+                      "id": "api/files/include-micro-os-plus-micro-test-plus-reflection-h"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "test-reporter-inlines.h",
+                      "id": "api/files/include-micro-os-plus-micro-test-plus-test-reporter-inlines-h"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "test-reporter.h",
+                      "id": "api/files/include-micro-os-plus-micro-test-plus-test-reporter-h"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "test-runner.h",
+                      "id": "api/files/include-micro-os-plus-micro-test-plus-test-runner-h"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "test-suite.h",
+                      "id": "api/files/include-micro-os-plus-micro-test-plus-test-suite-h"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "type-traits.h",
+                      "id": "api/files/include-micro-os-plus-micro-test-plus-type-traits-h"
+                    }
+                  ]
                 },
                 {
                   "type": "doc",
                   "label": "micro-test-plus.h",
                   "id": "api/files/include-micro-os-plus-micro-test-plus-h"
-                },
-                {
-                  "type": "doc",
-                  "label": "reflection.h",
-                  "id": "api/files/include-micro-os-plus-reflection-h"
-                },
-                {
-                  "type": "doc",
-                  "label": "test-reporter-inlines.h",
-                  "id": "api/files/include-micro-os-plus-test-reporter-inlines-h"
-                },
-                {
-                  "type": "doc",
-                  "label": "test-reporter.h",
-                  "id": "api/files/include-micro-os-plus-test-reporter-h"
-                },
-                {
-                  "type": "doc",
-                  "label": "test-runner.h",
-                  "id": "api/files/include-micro-os-plus-test-runner-h"
-                },
-                {
-                  "type": "doc",
-                  "label": "test-suite.h",
-                  "id": "api/files/include-micro-os-plus-test-suite-h"
-                },
-                {
-                  "type": "doc",
-                  "label": "type-traits.h",
-                  "id": "api/files/include-micro-os-plus-type-traits-h"
                 }
               ]
             }
