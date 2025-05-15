@@ -13,7 +13,9 @@
  * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
  */
 
-/**
+// ----------------------------------------------------------------------------
+
+ /**
  * @file literals.h
  * @brief User-defined literals and type wrappers for the µTest++ testing
  * framework.
@@ -38,6 +40,9 @@
  * All definitions reside within the `micro_os_plus::micro_test_plus::literals`
  * namespace, ensuring clear separation from user code and minimising the risk
  * of naming conflicts.
+ *
+ * This file is intended for internal use within the framework and should not
+ * be included directly by user code.
  */
 
 #ifndef MICRO_TEST_PLUS_LITERALS_H_

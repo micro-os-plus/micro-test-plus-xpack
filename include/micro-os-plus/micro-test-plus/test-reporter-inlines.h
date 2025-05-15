@@ -13,6 +13,8 @@
  * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
  */
 
+// ----------------------------------------------------------------------------
+
 /**
  * @file test-reporter-inlines.h
  * @brief Inline implementations for the test reporter in the µTest++
@@ -34,6 +36,9 @@
  *
  * This file is intended for internal use by the framework and should not be
  * included directly by user code.
+ *
+ * This file is intended for internal use within the framework and should not
+ * be included directly by user code.
  */
 
 #ifndef MICRO_TEST_PLUS_TEST_REPORTER_INLINES_H_

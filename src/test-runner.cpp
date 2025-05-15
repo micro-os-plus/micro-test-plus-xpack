@@ -13,6 +13,8 @@
  * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
  */
 
+// ----------------------------------------------------------------------------
+
 /**
  * @file test-runner.cpp
  * @brief Implementation of test runner management for the µTest++ testing

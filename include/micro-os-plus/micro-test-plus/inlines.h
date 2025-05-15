@@ -13,6 +13,8 @@
  * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
  */
 
+// ----------------------------------------------------------------------------
+
 /**
  * @file inlines.h
  * @brief Inline implementations for the µTest++ testing framework.

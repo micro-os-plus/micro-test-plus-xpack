@@ -13,7 +13,9 @@
  * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
  */
 
-/**
+// ----------------------------------------------------------------------------
+
+ /**
  * @file math.h
  * @brief Mathematical utilities for the µTest++ testing framework.
  * @details
@@ -33,6 +35,9 @@
  * The implementation draws inspiration from Boost UT, adapting relevant
  * concepts to meet the requirements of embedded development and the µTest++
  * framework.
+ *
+ * This file is intended for internal use within the framework and should not
+ * be included directly by user code.
  */
 
 #ifndef MICRO_TEST_PLUS_MATH_H_

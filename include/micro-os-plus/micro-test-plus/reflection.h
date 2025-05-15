@@ -13,6 +13,8 @@
  * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
  */
 
+// ----------------------------------------------------------------------------
+
 /**
  * @file reflection.h
  * @brief Reflection utilities for the µTest++ testing framework.
@@ -32,6 +34,9 @@
  * The implementation draws inspiration from Boost UT, adapting relevant
  * concepts to suit the requirements of embedded development and the µTest++
  * framework.
+ *
+ * This file is intended for internal use within the framework and should not
+ * be included directly by user code.
  */
 
 #ifndef MICRO_TEST_PLUS_REFLECTION_H_

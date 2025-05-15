@@ -13,6 +13,8 @@
  * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
  */
 
+// ----------------------------------------------------------------------------
+
 /**
  * @file micro-test-plus.h
  * @brief Primary public header for the µTest++ testing framework.
@@ -49,14 +51,14 @@
 #include <micro-os-plus/config.h>
 #endif // MICRO_OS_PLUS_INCLUDE_CONFIG_H
 
-#include "reflection.h"
-#include "math.h"
-#include "type-traits.h"
-#include "literals.h"
-#include "test-suite.h"
-#include "test-runner.h"
-#include "test-reporter.h"
-#include "detail.h"
+#include "micro-test-plus/reflection.h"
+#include "micro-test-plus/math.h"
+#include "micro-test-plus/type-traits.h"
+#include "micro-test-plus/literals.h"
+#include "micro-test-plus/test-suite.h"
+#include "micro-test-plus/test-runner.h"
+#include "micro-test-plus/test-reporter.h"
+#include "micro-test-plus/detail.h"
 
 // ----------------------------------------------------------------------------
 
@@ -794,10 +796,10 @@ namespace micro_os_plus::micro_test_plus
 
 // ===== Inline & template implementations ====================================
 
-#include "test-reporter-inlines.h"
+#include "micro-test-plus/test-reporter-inlines.h"
 
 // All other inlines.
-#include "inlines.h"
+#include "micro-test-plus/inlines.h"
 
 // ----------------------------------------------------------------------------
 

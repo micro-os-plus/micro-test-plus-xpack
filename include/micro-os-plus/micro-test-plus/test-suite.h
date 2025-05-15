@@ -13,6 +13,8 @@
  * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
  */
 
+// ----------------------------------------------------------------------------
+
 /**
  * @file test-suite.h
  * @brief Test suite management for the µTest++ testing framework.
@@ -35,8 +37,8 @@
  * namespace, ensuring clear separation from user code and minimising the risk
  * of naming conflicts.
  *
- * This file should be included by users who wish to define, register, or
- * customise test suites within the µTest++ framework.
+ * This file is intended for internal use within the framework and should not
+ * be included directly by user code.
  */
 
 #ifndef MICRO_TEST_PLUS_TEST_SUITE_H_

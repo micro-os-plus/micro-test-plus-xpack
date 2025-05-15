@@ -13,6 +13,8 @@
  * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
  */
 
+// ----------------------------------------------------------------------------
+
 /**
  * @file type-traits.h
  * @brief Type trait utilities and metaprogramming support for the µTest++
@@ -34,6 +36,9 @@
  * All definitions reside within the
  * `micro_os_plus::micro_test_plus::type_traits` namespace, ensuring clear
  * separation from user code and minimising the risk of naming conflicts.
+ *
+ * This file is intended for internal use within the framework and should not
+ * be included directly by user code.
  */
 
 #ifndef MICRO_TEST_PLUS_TYPE_TRAITS_H_

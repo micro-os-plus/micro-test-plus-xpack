@@ -13,6 +13,8 @@
  * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
  */
 
+// ----------------------------------------------------------------------------
+
 /**
  * @file micro-test-plus.cpp
  * @brief Core implementation for the µTest++ testing framework.

@@ -13,6 +13,8 @@
  * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
  */
 
+// ----------------------------------------------------------------------------
+
 /**
  * @file detail.h
  * @brief Internal implementation details for the µTest++ framework.
@@ -30,6 +32,9 @@
  * namespace to avoid polluting the public API and to maintain a clear
  * separation between user-facing and internal components. This approach
  * enhances maintainability and minimises the risk of name clashes.
+ *
+ * This file is intended for internal use within the framework and should not
+ * be included directly by user code.
  */
 
 #ifndef MICRO_TEST_PLUS_DETAIL_H_

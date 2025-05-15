@@ -13,6 +13,8 @@
  * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
  */
 
+// ----------------------------------------------------------------------------
+
 /**
  * @file test-reporter.h
  * @brief Test result reporting for the µTest++ testing framework.
@@ -35,8 +37,8 @@
  * namespace, ensuring clear separation from user code and minimising the risk
  * of naming conflicts.
  *
- * This file is intended to be included by users who wish to customise or
- * extend test reporting within the µTest++ framework.
+ * This file is intended for internal use within the framework and should not
+ * be included directly by user code.
  */
 
 #ifndef MICRO_TEST_PLUS_TEST_REPORTER_H_
