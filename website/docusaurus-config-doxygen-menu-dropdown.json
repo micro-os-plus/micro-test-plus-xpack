@@ -1,6 +1,6 @@
 {
   "type": "dropdown",
-  "label": "API",
+  "label": "Reference",
   "to": "/docs/api/",
   "position": "left",
   "items": [

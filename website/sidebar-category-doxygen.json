@@ -36,12 +36,12 @@
               "items": [
                 {
                   "type": "doc",
-                  "label": "Initialisation & exit",
+                  "label": "Initialisation & Exit",
                   "id": "api/groups/micro-test-plus-inits"
                 },
                 {
                   "type": "doc",
-                  "label": "Test cases",
+                  "label": "Test Cases",
                   "id": "api/groups/micro-test-plus-test-case"
                 },
                 {
@@ -56,17 +56,17 @@
                 },
                 {
                   "type": "doc",
-                  "label": "Function comparators",
+                  "label": "Function Comparators",
                   "id": "api/groups/micro-test-plus-function-comparators"
                 },
                 {
                   "type": "doc",
-                  "label": "Logical functions",
+                  "label": "Logical Functions",
                   "id": "api/groups/micro-test-plus-logical-functions"
                 },
                 {
                   "type": "doc",
-                  "label": "Checking exceptions",
+                  "label": "Checking Exceptions",
                   "id": "api/groups/micro-test-plus-exceptions"
                 },
                 {
@@ -76,48 +76,28 @@
                 },
                 {
                   "type": "doc",
-                  "label": "String operators",
+                  "label": "String Operators",
                   "id": "api/groups/micro-test-plus-string-operators"
                 },
                 {
                   "type": "doc",
-                  "label": "Container operators",
+                  "label": "Container Operators",
                   "id": "api/groups/micro-test-plus-container-operators"
                 },
                 {
                   "type": "doc",
-                  "label": "Literals and wrappers",
+                  "label": "Literals and Wrappers",
                   "id": "api/groups/micro-test-plus-literals"
                 },
                 {
                   "type": "doc",
-                  "label": "Functions vs. operators & literals",
-                  "id": "api/groups/micro-test-plus-functions-vs-operators"
-                },
-                {
-                  "type": "doc",
-                  "label": "Utility functions",
+                  "label": "Utility Functions",
                   "id": "api/groups/micro-test-plus-utility-functions"
-                },
-                {
-                  "type": "doc",
-                  "label": "Custom-types",
-                  "id": "api/groups/micro-test-plus-custom-types"
                 },
                 {
                   "type": "doc",
                   "label": "Test suites",
                   "id": "api/groups/micro-test-plus-test-suites"
-                },
-                {
-                  "type": "doc",
-                  "label": "Explicit namespaces",
-                  "id": "api/groups/micro-test-plus-explicit-namespaces"
-                },
-                {
-                  "type": "doc",
-                  "label": "Memory footprint",
-                  "id": "api/groups/micro-test-plus-memory-footprint"
                 }
               ]
             },
@@ -571,11 +551,6 @@
           "type": "doc",
           "label": "Deprecated List",
           "id": "api/pages/deprecated"
-        },
-        {
-          "type": "doc",
-          "label": "Todo List",
-          "id": "api/pages/todo"
         }
       ]
     }
