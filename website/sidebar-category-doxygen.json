@@ -532,13 +532,13 @@
         },
         {
           "type": "doc",
-          "label": "top-common.doxyfile",
-          "id": "api/files/top-common-doxyfile"
+          "label": "top-common.h",
+          "id": "api/files/top-common-h"
         },
         {
           "type": "doc",
-          "label": "topics.doxyfile",
-          "id": "api/files/topics-doxyfile"
+          "label": "topics.h",
+          "id": "api/files/topics-h"
         }
       ]
     },

@@ -124,8 +124,8 @@ WARN_AS_ERROR = YES
 INPUT = \
 ../../include \
 ../../src \
-top-common.doxyfile \
-topics.doxyfile \
+top-common.h \
+topics.h \
 
 # If the USE_MDFILE_AS_MAINPAGE tag refers to the name of a markdown file that
 # is part of the input, its contents will be placed on the main page

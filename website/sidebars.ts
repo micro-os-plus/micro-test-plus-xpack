@@ -82,7 +82,7 @@ const sidebars: SidebarsConfig = {
     },
   ],
 
-  doyygenSidebar: [
+  doxygenSidebar: [
     doxygenSidebarItems,
   ],
 };

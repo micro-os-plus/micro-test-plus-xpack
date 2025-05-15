@@ -12,10 +12,20 @@
  * be obtained from https://opensource.org/licenses/mit.
  */
 
-// The top common Doxygen definitions for the µOS++ project.
-// Not really a .doxyfile, since it does not define any variables.
-// But it cannot be .md either, since Doxygen renders markdown files
-// in the sidebar.
+/**
+ * @file top-common.h
+ * @brief Common Doxygen group and namespace definitions for the µOS++ project.
+ * @details
+ * This file provides the principal Doxygen group and namespace documentation for the µOS++ project.
+ *
+ * Although named as a header, this file is not included in the build process; it serves exclusively as a documentation resource for Doxygen. It cannot be provided as a Markdown file or .doxyfile due to Doxygen processing requirements.
+ *
+ * The file introduces the main documentation group for the framework and outlines the overall project structure, which comprises multiple source libraries maintained as separate repositories within the [micro-os-plus](https://github.com/micro-os-plus) group on GitHub.
+ *
+ * It also documents the `micro_os_plus` namespace, which serves as the primary scope for all µOS++ classes, functions, variables, enumerations, type definitions, and related entities. The namespace is further organised into nested namespaces to promote modularity, reduce redundancy, and enhance maintainability.
+ *
+ * All definitions and documentation topics in this file are maintained in the `website/doxygen` folder to ensure a consistent and modular structure across the project's documentation.
+ */
 
 /**
 

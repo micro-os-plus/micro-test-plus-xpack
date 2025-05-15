@@ -70,10 +70,12 @@ A C++ testing framework should be capable of determining whether an expression (
 
 <CodeLine><Highlight kind="normal">mt::expect (mt::throws ([] &#123; exercise&#95;throw (</Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">); &#125;)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;exception thrown&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">mt::expect (mt::throws&lt;std::runtime&#95;error&gt; ([] &#123; </Highlight><Highlight kind="keywordflow">throw</Highlight><Highlight kind="normal"> std::runtime&#95;error&#123; </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal"> &#125;; &#125;))</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">mt::expect (mt::throws&lt;std::runtime&#95;error&gt; ([] &#123; </Highlight><Highlight kind="keywordflow">throw</Highlight><Highlight kind="normal"> std::runtime&#95;error&#123; </Highlight><Highlight kind="stringliteral">&quot;&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#125;; &#125;))</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">        &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;std::runtime&#95;error thrown&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">mt::expect (mt::nothrow ([] &#123; exercise&#95;throw (</Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">); &#125;)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;exception not thrown&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">mt::expect (mt::nothrow ([] &#123; exercise&#95;throw (</Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">); &#125;)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;exception not</Highlight></CodeLine>
+<CodeLine><Highlight kind="stringliteral">thrown&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
 
 </ProgramListing>
 
