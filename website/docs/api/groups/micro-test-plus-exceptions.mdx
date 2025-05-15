@@ -26,11 +26,11 @@ import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramL
 import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
 import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
 
-# The Checking exceptions Reference
+# The Checking Exceptions Reference
 
 <DoxygenPage version="1.13.2">
 
-Functions to check exceptions. <Link to="#details">More...</Link>
+Functions for verifying exceptions. <Link to="#details">More...</Link>
 
 ## Functions Index
 
@@ -58,7 +58,7 @@ Check if a callable throws an exception (any exception). <Link to="#ga8bf54756e4
 
 ## Description {#details}
 
-A C++ testing framework must be able to check if an expression (usually a function call), throws or not an exception.
+A C++ testing framework should be capable of determining whether an expression (typically a function call) throws an exception.
 
 
 <SectionUser title="Examples">
@@ -77,7 +77,7 @@ A C++ testing framework must be able to check if an expression (usually a functi
 
 </ProgramListing>
 
-If a more elaborate logic is required, for example for expecting multiple exceptions, use an explicit <code>try</code> with multiple <code>catch</code> statements and report the results with <code>expect(true)</code> or <code>expect(false)</code>.
+If more sophisticated logic is required, such as expecting multiple exceptions, employ an explicit <code>try</code> block with multiple <code>catch</code> statements, and report the results using <code>expect(true)</code> or <code>expect(false)</code>.
 
 
 <ProgramListing extension="cpp">

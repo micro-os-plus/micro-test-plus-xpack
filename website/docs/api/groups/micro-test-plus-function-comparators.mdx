@@ -26,11 +26,11 @@ import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramL
 import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
 import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
 
-# The Function comparators Reference
+# The Function Comparators Reference
 
 <DoxygenPage version="1.13.2">
 
-Functions to compare the actual with expected values. <Link to="#details">More...</Link>
+Functions for comparing actual and expected values. <Link to="#details">More...</Link>
 
 ## Functions Index
 
@@ -109,10 +109,17 @@ Pointer non-equality comparator. <Link to="#ga172f305bbeaf8b965681f76c16a39516">
 </MembersIndexItem>
 
 </MembersIndex>
+<Link id="#details" />
 
 <Link id="#details" />
 
-Expectations and assumptions can test any expression evaluating to a boolean value, but in order to nicely report the difference between expected and actual values in failed conditions, special comparators must be used.
+## Description
+
+
+
+Expectations and assumptions may evaluate any expression yielding a boolean value; however, to provide clear reporting of differences between actual and expected values when checks fail, dedicated comparator functions should be employed.
+
+
 
 
 <SectionUser title="Examples">
@@ -133,7 +140,11 @@ Expectations and assumptions can test any expression evaluating to a boolean val
 
 </ProgramListing>
 
-When such comparator functions are used, failed checks also display the actual values compared during the test; for example:
+
+
+When such comparator functions are utilised, failed checks will also display the actual values compared during the test; for example:
+
+
 
 
 <ProgramListing extension="console">
@@ -148,11 +159,12 @@ When such comparator functions are used, failed checks also display the actual v
 
 
 
-## Comparing containers
+
+### Comparing containers
 
 
 
-Containers can be compared for equality. The comparison is done by iterating and comparing each member.
+Containers may be compared for equality. The comparison is performed by iterating through and comparing each element.
 
 
 

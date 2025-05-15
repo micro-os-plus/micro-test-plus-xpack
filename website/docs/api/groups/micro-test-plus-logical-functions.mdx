@@ -26,7 +26,7 @@ import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramL
 import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
 import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
 
-# The Logical functions Reference
+# The Logical Functions Reference
 
 <DoxygenPage version="1.13.2">
 
@@ -58,11 +58,11 @@ Generic logical <b>or</b>. <Link to="#gad32b40e4b0022b276fa3b357b98a33c5">More..
 
 ## Description {#details}
 
-Complex expressions can be checked in a single line, using the logical <code>mt::&#95;and()</code>, <code>mt::&#95;or()</code> and <code>mt::&#95;not()</code> functions.
+Complex expressions may be evaluated in a single statement using the logical functions <code>mt::&#95;and()</code>, <code>mt::&#95;or()</code>, and <code>mt::&#95;not()</code>.
 
 
 :::info
-The names are prefixed with underscore since <code>and</code>, <code>or</code> and <code>not</code> are reserved words in C/C++.
+These names are prefixed with an underscore, as <code>and</code>, <code>or</code>, and <code>not</code> are reserved keywords in C and C++.
 :::
 
 
@@ -79,7 +79,7 @@ The names are prefixed with underscore since <code>and</code>, <code>or</code> a
 
 
 :::info
-If operands are function comparators, it is recommended to use the overloaded logical operators <code>&amp;&amp;</code>, <code>||</code>, <code>!</code> available in the <code>micro&#95;test&#95;plus::operators</code> namespace.
+If the operands are function comparators, it is advisable to use the overloaded logical operators <code>&amp;&amp;</code>, <code>||</code>, and <code>!</code> available in the <code>micro&#95;test&#95;plus::operators</code> namespace.
 :::
 
 <SectionDefinition>

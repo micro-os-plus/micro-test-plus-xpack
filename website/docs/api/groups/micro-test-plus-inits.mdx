@@ -26,11 +26,11 @@ import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramL
 import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
 import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
 
-# The Initialisation & exit Reference
+# The Initialisation & Exit Reference
 
 <DoxygenPage version="1.13.2">
 
-Functions to initialise the framework and exit. <Link to="#details">More...</Link>
+Functions for initialising the framework and returning an exit code. <Link to="#details">More...</Link>
 
 ## Functions Index
 
@@ -52,9 +52,9 @@ Initialize the test framework. <Link to="#gac2c60d60578f668878957ec68a37538f">Mo
 
 ## Description {#details}
 
-These are functions to initialise the test runner and to return the test result as the process exit code.
+These functions are responsible for initialising the test runner and returning the test result as the process exit code.
 
-The absolute minimal test has a single test case, with a single expectation; for example:
+The most minimal test comprises a single test case with a single expectation; for example:
 
 
 <ProgramListing extension="cpp">
@@ -77,7 +77,7 @@ The absolute minimal test has a single test case, with a single expectation; for
 
 </ProgramListing>
 
-When running this test, the output looks like:
+When this test is executed, the output is as follows:
 
 
 <ProgramListing extension="console">
