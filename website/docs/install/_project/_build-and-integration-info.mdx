@@ -4,67 +4,56 @@ import CommonMesonIntegration from '../_common/_meson-integration.mdx';
 
 {/* ------------------------------------------------------------------------ */}
 
-## Build & integration info
+## Build & Integration Information
 
-The project is written in C++, and the tests are expected to be
-written in C++ as well, although the tested code can also be written
-in plain C.
+This project is implemented in C++, and it is expected that tests will also be written in C++, although the code under test may be written in standard C.
 
-The source code has been compiled natively with **GCC** and **LLVM/clang**,
-and cross-compiled on embedded **Arm** and **RISC-V** targets,
-ensuring it is free from warnings.
+The source code has been compiled natively using **GCC** and **LLVM/clang**, and cross-compiled for embedded **Arm** and **RISC-V** targets, ensuring that it is free from warnings.
 
-To run on **embedded platforms**, the test framework requires
-minimal support from the system, such as writing to the output
-stream. Any such environment is acceptable, but for standalone
-tests, the most common solution is to use **Arm semihosting**.
+For execution on **embedded platforms**, the test framework requires only minimal system support, such as the ability to write to an output stream. Any environment providing this capability is suitable; however, for standalone tests, the most common approach is to employ **Arm semihosting**.
 
-To facilitate the integration of this library into user projects,
-pre-made **CMake** and **meson** configuration files are provided
-(see below).
+To simplify integration into user projects, pre-configured **CMake** and **meson** build files are provided (see below).
 
-For other build systems, please refer to the details provided below.
+For alternative build systems, please consult the information provided below.
 
-### Include folders
+### Include Folders
 
-The following folders should be passed to the compiler during the build:
+The following folder should be specified to the compiler during the build process:
 
 - `include`
 
-The header files to be included in user projects are:
+The primary header file to include in user projects is:
 
 ```cpp
 #include <micro-os-plus/micro-test-plus.h>
 ```
 
-### Source files
+### Source Files
 
-The source files to be added to user projects are:
+The following source files should be incorporated into user projects:
 
 - `src/micro-test-plus.cpp`
 - `src/test-reporter.cpp`
 - `src/test-runner.cpp`
 - `src/test-suite.cpp`
 
-### Preprocessor definitions
+### Preprocessor Definitions
 
-There are several preprocessor definitions used to configure the build:
+The build can be configured using the following preprocessor definitions:
 
-- `MICRO_OS_PLUS_INCLUDE_CONFIG_H` - to include `<micro-os-plus/config.h>`
-- `MICRO_OS_PLUS_TRACE` - to include the trace calls
-- `MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS` - to enable some tracing messages
+- `MICRO_OS_PLUS_INCLUDE_CONFIG_H` – to include `<micro-os-plus/config.h>`
+- `MICRO_OS_PLUS_TRACE` – to enable trace calls
+- `MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS` – to activate specific tracing messages
 
-### Compiler options
+### Compiler Options
 
-The following options must be passed to the compiler and linker:
+The following options must be supplied to the compiler and linker:
 
-- `-std=c++20` or higher for C++ sources
+- `-std=c++20` or later for C++ source files
 
 ### Dependencies
 
-The library has the following dependencies:
-
-- none
+This library does not have any external dependencies.
 
 <CommonCmakeIntegration />
 

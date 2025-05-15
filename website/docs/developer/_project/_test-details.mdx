@@ -1,13 +1,13 @@
 
 {/* ------------------------------------------------------------------------ */}
 
-### Tests details
+### Test Details
 
 #### minimal-test
 
 The [minimal-test.cpp](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/tests/src/minimal-test.cpp)
-file is a small application used to demonstrate
-how to write a simple test to check a condition.
+file is a concise application intended to illustrate
+how to construct a simple test for verifying a condition.
 
 ```console
 > xpm run test --config native-cmake-sys-release
@@ -71,16 +71,16 @@ test 4
  4/12 Test  #4: minimal-test --silent ............   Passed    0.00 sec
 ```
 
-All possible verbosity modes are tested: default, verbose, quiet, and silent.
+All verbosity modes are exercised: default, verbose, quiet, and silent.
 
 #### sample-test
 
 The [sample-test.cpp](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/tests/src/sample-test.cpp)
-file is a straightforward application designed to demonstrate
-how to utilise some of the primitives available in the library
-to write a simple test.
+file is a straightforward application intended to demonstrate
+how to employ some of the primitives provided by the library
+to construct a simple test.
 
-A typical run looks like:
+A typical execution produces the following output:
 
 ```console
 test 5
@@ -269,15 +269,14 @@ test 8
  8/12 Test  #8: sample-test --silent .............   Passed    0.00 sec
 ```
 
-All possible verbosity modes are tested: default, verbose, quiet, and silent.
+All possible verbosity modes are exercised: default, verbose, quiet, and silent.
 
 #### unit-test
 
 The [unit-test.cpp](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/tests/src/unit-test.cpp)
-file is an exhaustive test designed to validate that all the
-library functions operate as expected.
+file constitutes a comprehensive test, designed to ensure that all library functions behave as intended.
 
-A typical run looks like:
+A typical execution produces the following output:
 
 ```console
 test 9
@@ -799,5 +798,5 @@ test 12
 12/12 Test #12: unit-test --silent ...............   Passed    0.00 sec
 ```
 
-All possible verbosity modes are tested: default, verbose, quiet, and silent
-(for brevity, the full verbose output is not shown here).
+All verbosity modes are evaluated: default, verbose, quiet, and silent
+(for conciseness, the complete verbose output is not presented here).
