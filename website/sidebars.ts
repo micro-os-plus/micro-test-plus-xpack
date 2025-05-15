@@ -3,7 +3,7 @@
 
 import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 import {customDocsGettingStartedSidebarCategory} from "./sidebar-docs-getting-started-custom";
-import doxygenSidebarCategory from './sidebar-category-doxygen.json';
+import doxygenSidebarItems from './sidebar-category-doxygen.json';
 
 /**
  * Creating a sidebar enables you to:
@@ -82,8 +82,8 @@ const sidebars: SidebarsConfig = {
     },
   ],
 
-  doxygenSidebar: [
-    doxygenSidebarCategory
+  doyygenSidebar: [
+    doxygenSidebarItems,
   ],
 };
 

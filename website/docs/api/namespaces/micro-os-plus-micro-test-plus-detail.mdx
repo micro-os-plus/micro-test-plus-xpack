@@ -25,7 +25,7 @@ import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/Secti
 
 <DoxygenPage version="1.13.2">
 
-Namespace with implementation details, not part of the public API. <Link to="#details">More...</Link>
+Internal implementation details for the µTest++ framework. <Link to="#details">More...</Link>
 
 ## Fully Qualified Name
 
@@ -153,7 +153,13 @@ Variadic getter implementation that returns the first argument and discards the 
 
 ## Description {#details}
 
-TODO: add <code>@details</code> to <code>@namespace micro_os_plus::micro_test_plus::detail</code>
+The <code>detail</code> namespace encapsulates the internal mechanisms, helper structures, and implementation utilities used by the µTest++ testing framework. These components are not part of the public API and may change without notice.
+
+Within this namespace, you will find assertion handling, generic getter utilities, comparator structures for logical and relational operations, exception checking mechanisms, and base classes for deferred reporting of test results.
+
+All definitions within <code>detail</code> are intended solely for internal use, ensuring a clear separation between user-facing and internal components. This approach enhances maintainability, reduces the risk of name clashes, and keeps the public API concise.
+
+The relevant source files are organised within the <code>include/micro-os-plus</code> folder to maintain a structured and modular codebase.
 
 <SectionDefinition>
 
@@ -167,7 +173,7 @@ TODO: add <code>@details</code> to <code>@namespace micro_os_plus::micro_test_pl
   labels = {["nodiscard", "constexpr"]}>
 Generic getter, calling the getter implementation.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/detail-h/#l00088">88</Link> of file <Link to="/docs/api/files/include/micro-os-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/detail-h/#l00126">126</Link> of file <Link to="/docs/api/files/include/micro-os-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 ### get&#95;impl() {#a2fa97961fad5cd659110b887731f94dd}
@@ -178,7 +184,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/detail-h/#l00
   labels = {["nodiscard", "constexpr"]}>
 Generic getter implementation. If the type has a <Link to="#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link> method, call it. It is recommended for custom types to define a <Link to="#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link> method.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/detail-h/#l00067">67</Link> of file <Link to="/docs/api/files/include/micro-os-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/detail-h/#l00105">105</Link> of file <Link to="/docs/api/files/include/micro-os-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 ### get&#95;impl() {#a95670c72316d5efa02f44ad11d13f662}
@@ -189,7 +195,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/detail-h/#l00
   labels = {["nodiscard", "constexpr"]}>
 Variadic getter implementation that returns the first argument and discards the rest.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/detail-h/#l00078">78</Link> of file <Link to="/docs/api/files/include/micro-os-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/detail-h/#l00116">116</Link> of file <Link to="/docs/api/files/include/micro-os-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

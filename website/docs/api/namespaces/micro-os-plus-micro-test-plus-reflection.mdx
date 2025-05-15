@@ -25,7 +25,7 @@ import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/Secti
 
 <DoxygenPage version="1.13.2">
 
-TODO: add <code>@brief</code> to <code>@namespace micro_os_plus::micro_test_plus::reflection</code>
+Reflection utilities for the µTest++ testing framework. <Link to="#details">More...</Link>
 
 ## Fully Qualified Name
 
@@ -62,7 +62,11 @@ Parse the <b>PRETTY&#95;FUNCTION</b> macro to extract the type name. <Link to="#
 
 ## Description {#details}
 
-TODO: add <code>@details</code> to <code>@namespace micro_os_plus::micro_test_plus::reflection</code>
+The <code>reflection</code> namespace provides facilities for obtaining source location information and type names at compile time, supporting enhanced reporting and diagnostics within the µTest++ framework.
+
+It includes a local implementation of <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">source&#95;location</Link></code> for environments lacking C++20 standard support, as well as utilities for extracting concise type names from compiler-specific macros such as <code>&#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;</code>.
+
+All definitions within this namespace are intended to facilitate advanced reflection and reporting features, and are implemented in the <code>include/micro-os-plus</code> folder to maintain a structured and modular codebase.
 
 <SectionDefinition>
 
@@ -73,7 +77,7 @@ TODO: add <code>@details</code> to <code>@namespace micro_os_plus::micro_test_pl
 <MemberDefinition
   prototype={<>const char &#42; micro&#95;os&#95;plus::micro&#95;test&#95;plus::reflection::short&#95;name (const char &#42; name)</>}>
 
-Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00088">88</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
+Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00113">113</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
 </MemberDefinition>
 
 ### type&#95;name() {#aaaad9b26021a442cdd7e634888e462d6}
@@ -84,7 +88,7 @@ Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00088">88
   labels = {["nodiscard", "constexpr"]}>
 Parse the <b>PRETTY&#95;FUNCTION</b> macro to extract the type name.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/reflection-h/#l00104">104</Link> of file <Link to="/docs/api/files/include/micro-os-plus/reflection-h">reflection.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/reflection-h/#l00143">143</Link> of file <Link to="/docs/api/files/include/micro-os-plus/reflection-h">reflection.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

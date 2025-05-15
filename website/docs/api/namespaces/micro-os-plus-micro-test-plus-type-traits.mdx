@@ -25,7 +25,7 @@ import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/Secti
 
 <DoxygenPage version="1.13.2">
 
-Local type traits; some may have standard equivalents, but better keep them locally. <Link to="#details">More...</Link>
+Type trait utilities and metaprogramming support for the µTest++ testing framework. <Link to="#details">More...</Link>
 
 ## Fully Qualified Name
 
@@ -213,7 +213,13 @@ A generic value used to define floating points, which, in addition to the actual
 
 ## Description {#details}
 
-TODO: add <code>@details</code> to <code>@namespace micro_os_plus::micro_test_plus::type_traits</code>
+The <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">type&#95;traits</Link></code> namespace provides a comprehensive collection of type trait templates and metaprogramming utilities used throughout the µTest++ framework.
+
+This includes templates for function traits, type lists, identity, value wrappers, and compile-time checks for container types, floating point types, and type convertibility. It also offers generic integral and floating point constant wrappers, as well as mechanisms for SFINAE and requirements checking.
+
+These utilities facilitate advanced template programming, type deduction, and compile-time introspection, supporting the flexible and type-safe design of the framework.
+
+All definitions within this namespace are implemented in the <code>include/micro-os-plus</code> folder to maintain a structured and modular codebase.
 
 <SectionDefinition>
 
@@ -225,7 +231,7 @@ TODO: add <code>@details</code> to <code>@namespace micro_os_plus::micro_test_pl
   template={<>template &lt;bool Cond&gt;</>}
   prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::requires&#95;t =  typename requires&#95;&lt;Cond&gt;::type</>}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00197">197</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00239">239</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -241,7 +247,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::has&#95;epsilon&#95;v = <Link to="#aa7389baefbefec0ece5df341187218e0">is&#95;valid</Link>&lt;T&gt; ([] (auto t) -&gt; decltype (void (t.epsilon)) &#123;&#125;)</>}
   labels = {["constexpr", "static"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00147">147</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00189">189</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### has&#95;npos&#95;v {#a0ff1a0846fe8d484f01d45df4e37dd94}
@@ -251,7 +257,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::has&#95;npos&#95;v = <Link to="#aa7389baefbefec0ece5df341187218e0">is&#95;valid</Link>&lt;T&gt; ([] (auto t) -&gt; decltype (void (t.npos)) &#123;&#125;)</>}
   labels = {["constexpr", "static"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00139">139</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00181">181</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### has&#95;value&#95;v {#a695b45e13f3ac3cd1cef1225fa0dfa01}
@@ -261,7 +267,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::has&#95;value&#95;v = <Link to="#aa7389baefbefec0ece5df341187218e0">is&#95;valid</Link>&lt;T&gt; ([] (auto t) -&gt; decltype (void (t.value)) &#123;&#125;)</>}
   labels = {["constexpr", "static"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00143">143</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00185">185</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;container&#95;v {#a8361ab7ff9d9c6343d97a99bdcb9feb2}
@@ -272,7 +278,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h
         [] (auto t) -&gt; decltype (t.begin (), t.end (), void ()) &#123;&#125;)</>}
   labels = {["constexpr", "static"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00135">135</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00177">177</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;convertible&#95;v {#a49a5bfe63d50b6fd1be0972586fbf590}
@@ -282,7 +288,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::is&#95;convertible&#95;v = <Link to="#ac8b2a4fa12ff6db8c40a51910af19589">is&#95;convertible</Link>&lt;From, To&gt; (0)</>}
   labels = {["constexpr"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00176">176</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00218">218</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;floating&#95;point&#95;v {#abfe0c2413694bb3a6dcdf1da303c38db}
@@ -292,7 +298,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::is&#95;floating&#95;point&#95;v = false</>}
   labels = {["constexpr"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00151">151</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00193">193</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;floating&#95;point&#95;v&lt; double &gt; {#a14941429632c41668220d59c1cd59541}
@@ -301,7 +307,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::is&#95;floating&#95;point&#95;v&lt; double &gt; = true</>}
   labels = {["constexpr"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00155">155</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00197">197</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;floating&#95;point&#95;v&lt; float &gt; {#aed0d377e4faa067bb6add65ebeb1a482}
@@ -310,7 +316,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::is&#95;floating&#95;point&#95;v&lt; float &gt; = true</>}
   labels = {["constexpr"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00153">153</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00195">195</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;floating&#95;point&#95;v&lt; long double &gt; {#a735eedc6f117908ddfb242f37e319b46}
@@ -319,7 +325,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::is&#95;floating&#95;point&#95;v&lt; long double &gt; = true</>}
   labels = {["constexpr"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00157">157</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00199">199</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;op&#95;v {#a814e7f004d5404f735737aabb90fa111}
@@ -329,7 +335,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::is&#95;op&#95;v = &#95;&#95;is&#95;base&#95;of (<Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">type&#95;traits::op</Link>, T)</>}
   labels = {["constexpr"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00299">299</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00341">341</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -344,7 +350,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h
   template={<>template &lt;class T&gt;</>}
   prototype={<>T &amp;&amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::declval ()</>}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00119">119</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00161">161</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;convertible() {#ab7dddbd4f0438826d71f55904594905d}
@@ -354,7 +360,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::is&#95;convertible (...)</>}
   labels = {["constexpr"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00171">171</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00213">213</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;convertible() {#ac8b2a4fa12ff6db8c40a51910af19589}
@@ -364,7 +370,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h
   prototype={<>decltype(bool(To(declval&lt; From &gt;()))) micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::is&#95;convertible (int)</>}
   labels = {["constexpr"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00165">165</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00207">207</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;valid() {#a3ee98aeecf4e9f3b23dfcda25434c4d2}
@@ -374,7 +380,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h
   prototype={<>bool micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::is&#95;valid (...)</>}
   labels = {["constexpr"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00129">129</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00171">171</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;valid() {#aa7389baefbefec0ece5df341187218e0}
@@ -384,7 +390,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h
   prototype={<>decltype(expr(declval&lt; Ts... &gt;()), bool()) micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::is&#95;valid (Expr&#95;T expr)</>}
   labels = {["constexpr"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00122">122</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/type-traits-h/#l00164">164</Link> of file <Link to="/docs/api/files/include/micro-os-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
