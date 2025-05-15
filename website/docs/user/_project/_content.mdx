@@ -1,78 +1,62 @@
-
 {/* ------------------------------------------------------------------------ */}
 
 ## Rationale
 
-At the very limit, the simplest testing framework is the no-framework at all!
-A test for a C/C++ project can be very well written without any framework,
-possibly using the standard `assert()` macro, or even some similar user
-defined mechanism.
+At its most basic, the simplest testing framework is, in fact, no framework at all.
+A test for a C or C++ project can readily be written without any framework,
+perhaps utilising the standard `assert()` macro or a similar user-defined mechanism.
 
-However, failed asserts usually abort the test, and in case of multiple
-test cases with multiple checks, getting a nice report would be preferred.
+However, failed assertions typically abort the test, and when dealing with multiple
+test cases containing numerous checks, it is preferable to obtain a comprehensive report.
 
-Test frameworks do exactly this, they provide convenient mechanisms to write
-various checks and to get a nice report.
+Testing frameworks address this need by providing convenient mechanisms for writing
+various checks and generating clear, structured reports.
 
-The xPack Framework already includes ready to use
-support for several testing frameworks
+The xPack Framework already includes ready-to-use
+support for several testing frameworks:
 ([Google Test](https://github.com/xpack-3rd-party/googletest-xpack),
 [Catch2](https://github.com/xpack-3rd-party/catch2-xpack),
 [Boost UT](https://github.com/xpack-3rd-party/boost-ut-xpack)).
 
-However, they all are quite heavy in terms of memory resources; also the
-learning curve for mastering them is quite steep.
+Nevertheless, these frameworks tend to be quite demanding in terms of memory resources, and
+the learning curve required to master them can be rather steep.
 
-Thus, for embedded projects, a **simpler solution**, with a **smaller
-memory footprint**, was considered a useful addition.
+Therefore, for embedded projects, a **simpler solution** with a **smaller
+memory footprint** was considered a valuable addition.
 
 ## Overview
 
-The initial version of the **µTest++ Testing Framework** was inspired mainly by
-[Node tap](https://node-tap.org) and aimed for simplicity.
-The later v3.x was a full rework inspired by
+The initial version of the **µTest++ Testing Framework** drew its primary inspiration from
+[Node tap](https://node-tap.org), with a strong emphasis on simplicity.
+Version 3.x represented a complete redesign, taking significant influence from
 [Boost UT](https://boost-ext.github.io/ut/).
-
 
 ## Concepts and features
 
-- For complex applications, test cases can be grouped into test suites.
-- Test suites can be located in separate compilation units; they
-  automatically register themselves to the runner.
-- A **test suite** is a named sequence of test cases.
-- A **test case** is a sequence of **test conditions**
-  (or simply **tests**, or **checks**),
-  which are expectations or assumptions,
-  i.e. conditions expected to be true.
-- Tests are based on logical expressions, which usually
-  compute a result and compare it to an expected value.
-- For C++ projects: it is also possible to check if, while evaluating
-  an expression, **exceptions** are thrown or not.
-- Each test either succeeds or fails.
-- For **expectations**, the runner keeps counts of them.
-- **Assumptions** are hard conditions expected to be true in order for the test
-  to be able to run.
-- Failed assumptions abort the test.
-- The test progress is shown on STDOUT, with each tests on a
-  separate line, prefixed with either a check sign (✓) or a cross sign (✗).
-- Failed tests display the location in the file and, if possible,
-  the actual values used in the expression evaluation.
-- The main result of the test is passed back to the system as the process
-  exit code.
+- For more complex applications, test cases may be organised into test suites.
+- Test suites can reside in separate compilation units and automatically register themselves with the test runner.
+- A **test suite** is a named collection of test cases.
+- A **test case** comprises a sequence of **test conditions** (also referred to as **tests** or **checks**), which are expectations or assumptions — conditions anticipated to be true.
+- Tests are based on logical expressions, typically evaluating a result and comparing it to an expected value.
+- For C++ projects, it is also possible to verify whether evaluating an expression results in an **exception** being thrown.
+- Each test either passes or fails.
+- For **expectations**, the runner maintains a count of occurrences.
+- **Assumptions** are critical conditions that must be satisfied for the test to proceed.
+- Failed assumptions result in the test being aborted.
+- Test progress is displayed on STDOUT, with each test on a separate line, prefixed by either a tick (✓) or a cross (✗).
+- Failed tests indicate the location within the file and, where possible, the actual values used in the evaluation.
+- The primary result of the test is returned to the system as the process exit code.
 
-A test suite is considered successful
-if there is at least one successful expectation
-and there are no failed tests.
+A test suite is deemed successful if there is at least one successful expectation and no failed tests.
 
-If all tests suites are successful, the process returns 0 as exit value.
+If all test suites are successful, the process returns an exit value of 0.
 
 
 ## Getting started
 
 ### Minimal test
 
-The absolute minimal test has a single test case, with a single expectation;
-for example:
+The most basic test comprises a single test case with a single expectation; for example:
 
 ```cpp showLineNumbers
 #include <micro-os-plus/micro-test-plus.h>
@@ -86,13 +70,13 @@ main(int argc, char* argv[])
 
   mt::test_case ("Check truth", [] {
     mt::expect (true);
-  })
+  });
 
   return mt::exit_code ();
 }
 ```
 
-When running this test, the output looks like:
+When this test is executed, the output is as follows:
 
 ```console
 • Minimal - test suite started
@@ -102,10 +86,9 @@ When running this test, the output looks like:
 ✓ Minimal - test suite passed (1 check in 1 test case)
 ```
 
-### Test a computed value
+### Testing a computed value
 
-A slightly more useful example would check the result of a computed value;
-for example:
+A slightly more practical example would verify the result of a computed value; for instance:
 
 ```cpp showLineNumbers
 #include <micro-os-plus/micro-test-plus.h>
@@ -139,8 +122,7 @@ main(int argc, char* argv[])
 ✓ The Answer - test suite passed (1 check passed, 0 checks failed, in 1 test case)
 ```
 
-In case the function returns the wrong answer, the test will fail;
-for example:
+If the function returns an incorrect value, the test will fail; for example:
 
 ```cpp
 static int
@@ -150,7 +132,7 @@ compute_answer()
 }
 ```
 
-In this case the test report will change to:
+In this case, the test report will be as follows:
 
 ```console
 • The Answer - test suite started
@@ -162,14 +144,11 @@ In this case the test report will change to:
 ✗ The Answer - test suite FAILED (0 checks passed, 1 check failed, in 1 test case)
 ```
 
-The output identifies the failed test as being located at line 17,
-but does not provide more details, such as the actual incorrect answer.
+The output identifies the failed test at line 17, but does not provide further details, such as the actual incorrect value.
 
-### More elaborate comparators
+### More advanced comparators
 
-To obtain a more informative report, such as the actual incorrect
-answer, the test should be slightly more detailed and utilise custom
-comparators or operators; for example:
+To obtain a more informative report, such as the actual incorrect value, the test should be slightly more detailed and employ custom comparators or operators; for example:
 
 ```cpp showLineNumbers
 #include <micro-os-plus/micro-test-plus.h>
@@ -203,7 +182,7 @@ main(int argc, char* argv[])
 }
 ```
 
-The result would look like:
+The output would be:
 
 ```console
 • The Answer - test suite started
@@ -220,35 +199,23 @@ The result would look like:
 ✗ The Answer - test suite FAILED (0 checks passed, 3 checks failed, in 2 test cases)
 ```
 
-In the first case, `eq()` is a function that can compare almost
-everything and is able to keep track of the values of its operands.
-There are similar functions for all types of comparisons.
+In the first case, `eq()` is a function capable of comparing almost any type and can record the values of its operands. Similar functions exist for all types of comparisons.
 
-In the second case, a custom operator is used. To avoid interference
-with other operators, this custom operator is defined in a separate
-namespace (which must be explicitly referred to as shown) and matches
-only operands of specific types.
+In the second case, a custom operator is used. To avoid conflicts with other operators, this custom operator is defined in a separate namespace (which must be explicitly referenced as shown) and matches only operands of specific types.
 
-To cast the integer constant `42` to such a specific type, a custom literal
-is available (`_i`), which is also defined in the separate
-`micro_test_plus` namespace.
+To cast the integer constant `42` to such a specific type, a custom literal (`_i`) is available, also defined in the separate `micro_test_plus` namespace.
 
-In addition to literals used to define constants, there are also
-definitions available to cast expressions.
+In addition to literals for constants, there are also definitions to cast expressions.
 
-For the custom operators to match, at least one of the operands must
-be of the specific type, usually the constant using a literal. If
-both are expressions, at least one of them must be cast.
+For the custom operators to match, at least one operand must be of the specific type, usually the constant via a literal. If both are expressions, at least one must be cast.
 
 ### More complex tests
 
-For simple tests, invoking multiple test cases in `main()` may suffice.
+For simple scenarios, invoking multiple test cases in `main()` may suffice.
 
-For more complex applications, test cases can be grouped into test suites and invoked, possibly multiple times with different arguments.
+For more complex applications, test cases can be grouped into test suites and invoked, potentially multiple times with different arguments.
 
-Test cases are best instantiated as static objects; they self-register
-automatically with the testing framework using the static constructors
-mechanism, and are executed when the `exit_code()` function is invoked.
+Test cases are best instantiated as static objects; they self-register automatically with the testing framework using static constructors, and are executed when the `exit_code()` function is called.
 
 ```cpp
 namespace os = micro_os_plus;
@@ -269,7 +236,7 @@ check_double_list_links (void)
         // Check if the node is cleared.
         mt::expect (mt::eq (links.previous (), nullptr)) << "prev is null";
         mt::expect (mt::eq (links.next (), nullptr)) << "next is null";
-        mt::expect (links.uninitialized ()) << "uninitialized";
+        mt::expect (links.uninitialized ()) << "uninitialised";
 
         left_links.initialize ();
         links.initialize ();
@@ -288,7 +255,7 @@ check_double_list_links (void)
     // Link right as next.
     links.link_next (&right_links);
 
-    // The node must appear as linked now.
+    // The node must now appear as linked.
     mt::expect (links.linked ()) << "linked";
 
     mt::expect (mt::eq (left_links.next (), &links)) << "left linked";
@@ -331,23 +298,23 @@ static mt::test_suite ts_double_list_links
 
 ### Namespaces
 
-The definitions are grouped in several namespaces below `micro_os_plus`:
+The definitions are organised within several namespaces under `micro_os_plus`:
 
-- `micro_os_plus::micro_test_plus` (usually aliased to `mt`)
+- `micro_os_plus::micro_test_plus` (commonly aliased as `mt`)
 - `micro_os_plus::micro_test_plus::operators`
 - `micro_os_plus::micro_test_plus::literals`
 - `micro_os_plus::micro_test_plus::utility`
 
-`micro_os_plus` is the top µOS++ namespace, and `micro_test_plus` is the
-µTest++ namespace.
+`micro_os_plus` is the primary µOS++ namespace, and `micro_test_plus` is the
+namespace for µTest++.
 
-The `operators` namespace defines the custom operators, and the `literals`
-namespace defines the literals (like `1_i`);
+The `operators` namespace provides custom operators, while the `literals`
+namespace defines user-defined literals (such as `1_i`).
 
-### Test runner initialisation & exit
+### Test runner initialisation and exit
 
-There are two functions to initialise the test runner and to
-return the test result as the process exit.
+Two functions are provided to initialise the test runner and to
+return the test result as the process exit code.
 
 ```cpp
 void initialize (int argc, char* argv[], const char* name = "Main");
@@ -355,23 +322,23 @@ void initialize (int argc, char* argv[], const char* name = "Main");
 int exit_code (void);
 ```
 
-See the reference [Initialisation & exit](pathname:///reference/group__micro-test-plus-inits.html) page.
+Refer to the [Initialisation & Exit](/docs/api/groups/micro-test-plus-inits/) reference page.
 
 ### Test cases
 
-Test cases are groups of several checks to be executed in the same environment.
+Test cases are collections of checks to be executed within the same environment.
 
 ```cpp
 template <typename Callable_T, typename... Args_T>
 void test_case (const char* name, Callable_T&& func, Args_T&&... arguments);
 ```
 
-See the reference [Test cases](pathname:///reference/group__micro-test-plus-test-case.html) page.
+Refer to the [Test Cases](/docs/api/groups/micro-test-plus-test-case/) reference page.
 
-### Expectations & assumptions
+### Expectations and assumptions
 
-Expectations and assumptions are functions that check expressions
-evaluating to boolean values.
+Expectations and assumptions are functions that evaluate expressions
+yielding boolean values.
 
 ```cpp
 template <class Expr_T, type_traits::requires_t<....>>
@@ -381,13 +348,13 @@ template <class Expr_T, type_traits::requires_t<....>>
 bool assume(const Expr_T& expr);
 ```
 
-See the reference [Expectations](pathname:///reference/group__micro-test-plus-expectations.html)
-and [Assumptions](pathname:///reference/group__micro-test-plus-assumptions.html) pages.
+Refer to the [Expectations](/docs/api/groups/micro-test-plus-expectations/)
+and [Assumptions](/docs/api/groups/micro-test-plus-assumptions/) reference pages.
 
 ### Function comparators
 
-To effectively report the difference between expected and
-actual values in failed conditions, several generic comparators
+To facilitate clear reporting of differences between expected and
+actual values in failed conditions, several generic comparator functions
 are provided.
 
 ```cpp
@@ -410,12 +377,12 @@ template <class Lhs_T, class Rhs_T>
 auto ge(const Lhs_T& lhs, const Rhs_T& rhs);
 ```
 
-See the reference [Function comparators](pathname:///reference/group__micro-test-plus-function-comparators.html) page.
+Refer to the [Function Comparators](/docs/api/groups/micro-test-plus-function-comparators/) reference page.
 
 ### Logical functions
 
-Complex expressions can be checked in a single line, using the logical
-`_and()`, `_or()` and `_not()` functions.
+Complex expressions may be evaluated in a single statement using the logical
+functions `_and()`, `_or()`, and `_not()`.
 
 ```cpp
 template <class Lhs_T, class Rhs_T>
@@ -428,12 +395,12 @@ template <class Expr_T>
 auto _not (const Expr_T& expr);
 ```
 
-See the reference [Logical functions](pathname:///reference/group__micro-test-plus-logical-functions.html) page.
+Refer to the [Logical Functions](/docs/api/groups/micro-test-plus-logical-functions/) reference page.
 
 ### Checking exceptions
 
 It is also possible to check various
-exceptions related conditions.
+exception-related conditions.
 
 ```cpp
 // Check for any exception.
@@ -449,12 +416,12 @@ template <class Callable_T>
 auto nothrow (const Callable_T& expr);
 ```
 
-See the reference [Checking exceptions](pathname:///reference/group__micro-test-plus-exceptions.html) page.
+Refer to the [Checking Exceptions](/docs/api/groups/micro-test-plus-exceptions/) reference page.
 
 ### Operators
 
 For convenience, it is
-also possible to overload the `==`, `!=`, `<`, `>`, `<=`, `>=` operators:
+also possible to overload the `==`, `!=`, `<`, `>`, `<=`, and `>=` operators:
 
 ```cpp
 template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
@@ -485,7 +452,7 @@ template <class T, type_traits::requires_t<....>>
 bool operator not (const T& t);
 ```
 
-See the reference [Operators](pathname:///reference/group__micro-test-plus-operators.html) page.
+Refer to the [Operators](/docs/api/groups/micro-test-plus-operators/) reference page.
 
 ### String operators
 
@@ -497,7 +464,7 @@ bool operator== (std::string_view lhs, std::string_view rhs);
 bool operator!= (std::string_view lhs, std::string_view rhs);
 ```
 
-See the reference [String operators](pathname:///reference/group__micro-test-plus-string-operators.html) page.
+Refer to the [String Operators](/docs/api/groups/micro-test-plus-string-operators/) reference page.
 
 ### Container operators
 
@@ -511,19 +478,19 @@ template <class T, type_traits::requires_t<type_traits::is_container_v<T>>>
 bool operator!= (T&& lhs, T&& rhs);
 ```
 
-See the reference [Container operators](pathname:///reference/group__micro-test-plus-container-operators.html) page.
+Refer to the [Container Operators](/docs/api/groups/micro-test-plus-container-operators/) reference page.
 
 ### Literals and wrappers
 
-For converting constants to recognised typed operands, the following
-literal operators are available in the separate namespace `literals`:
+To convert constants into recognised typed operands, the following
+literal operators are available in the separate `literals` namespace:
 
 ```cpp
 namespace literals {
   auto operator""_i (); // int
   auto operator""_s (); // short
   auto operator""_c (); // char
-  auto operator""_sc () // signed char
+  auto operator""_sc (); // signed char
   auto operator""_l (); // long
   auto operator""_ll (); // long long
   auto operator""_u (); // unsigned
@@ -546,7 +513,7 @@ namespace literals {
 }
 ```
 
-Similarly, for dynamic values, there are wrappers that convert them to
+Similarly, for dynamic values, wrappers are provided to convert them into
 recognised types:
 
 ```cpp
@@ -584,7 +551,21 @@ recognised types:
   };
 ```
 
-See the reference [Literals and wrappers](pathname:///reference/group__micro-test-plus-literals.html) page.
+Refer to the [Literals and Wrappers](/docs/api/groups/micro-test-plus-literals/) reference page.
+
+### Functions vs. Operators & Literals
+
+Should one utilise functions such as `eq()`, or the overloaded operators? This is a pertinent consideration.
+
+Employing functions ensures that the advantageous feature of displaying the actual values when expectations fail is always available. The syntax is also more conventional, which some may find clearer and easier to interpret.
+
+Operators are generally more immediately recognisable than function calls, but require the use of type wrappers and literals to enforce the correct types; otherwise, the actual values will not be displayed when expectations fail.
+
+Both syntaxes are fully supported, and once the distinctions are understood, the choice is largely a matter of personal preference.
+
+:::info
+The µOS++ projects favour the use of explicit comparator functions.
+:::
 
 ### Utility functions
 
@@ -599,7 +580,13 @@ namespace utility {
 }
 ```
 
-See the reference [Utility functions](pathname:///reference/group__micro-test-plus-utility-functions.html) page.
+Refer to the [Utility Functions](/docs/api/groups/micro-test-plus-utility-functions/) reference page.
+
+### Custom Types
+
+It is possible to extend the comparators using templates that match custom types; however, this is a non-trivial undertaking and requires a thorough understanding of C++.
+
+@todo Provide guidance on this process and include an example test.
 
 ### Test suites
 
@@ -616,23 +603,57 @@ public:
 }
 ```
 
-See the reference [Test suites](pathname:///reference/group__micro-test-plus-test-suites.html) page.
+Refer to the [Test Suites](/docs/api/groups/micro-test-plus-test-suites/) reference page.
+
+### Explicit Namespaces
+
+In complex projects, the definitions within the
+`micro_test_plus` namespace may conflict with those of the application.
+
+:::info
+To avoid naming conflicts, it is advisable to use comparator functions with explicit namespaces, which may be aliased to shorter names if preferred.
+:::
+
+For those who favour brevity, it is also possible to declare the `micro_os_plus::micro_test_plus` namespace at the appropriate scope level and use all definitions directly.
+
+```cpp
+{
+  using namespace micro_os_plus::micro_test_plus;
+
+  test_case ("Check answer", [] {
+    expect (eq (compute_answer (), 42)) << "answer is 42";
+  });
+}
+```
+
+### Memory Footprint
+
+The memory footprint of unit tests based on µTest++ is considerably smaller than that of traditional C++ testing frameworks, primarily because the `iostream` library is not utilised.
+
+However, the use of templates for implementing comparators and operators should be carefully considered on platforms with severely limited memory resources, as each unique pair of operand types contributes to the overall programme size.
+
+If necessary, µTest++ may be employed without custom comparators and operators—using only standard boolean expressions—while still providing the essential functionality for testing various conditions. In this configuration, the optional feature of displaying the actual values compared is not available.
+
+:::info
+The memory footprint in `debug` builds (compiled with `-O0`) is significantly larger than in `release` builds. If required, the optimisation level for the `debug` build may be increased to `-Og` to conserve memory.
+:::
 
 ## C API
 
-There are no C equivalents for the C++ definitions.
+Whilst µTest++ may be employed to test C code without difficulty, its implementation relies extensively on modern C++ features that cannot be replicated in C.
+
+Consequently, there are no C equivalents for the C++ definitions provided by µTest++.
 
 ## Command line options
 
-To control the verbosity, use one of the following command line options:
+To adjust the verbosity, one of the following command-line options may be specified:
 
-- `--verbose`: Show all expectations, regardless of the result.
-- `--quiet`: Show only the test suite totals.
-- `--silent`: Suppress all output and only return the exit code.
+- `--verbose` – display all expectations, irrespective of their outcome
+- `--quiet` – display only the test suite totals
+- `--silent` – suppress all output and return solely the exit code
 
-See the reference [Command line options](pathname:///reference/group__micro-test-plus-cli.html) page.
+Refer to the [Command Line Options](/docs/api/groups/micro-test-plus-cli/) reference page.
 
 ## Known problems
 
 - none
-

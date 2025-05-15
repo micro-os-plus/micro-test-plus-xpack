@@ -17,36 +17,45 @@
 
 @defgroup micro-test-plus µTest++
 @ingroup micro-os-plus
+@brief The µTest++ Testing Framework Topics.
+@details
+
+µTest++ is a C++ source code library that provides a lightweight testing framework, specifically tailored for embedded systems.
+
+It offers a modern C++ API.
+
+The verbosity of the test output may be adjusted using various command-line options.
+
 
 @defgroup micro-test-plus-cpp-api C++ API
+@brief The µTest++ C++ API Topics.
 @ingroup micro-test-plus
 @details
 
-The µTest++ implementation uses extensively modern C++ features.
-Aiming simplicity, µTest++ provides only a limited number of primitives
-used to check expectations and assumptions.
+The implementation of µTest++ makes extensive use of modern C++ features.
+With an emphasis on simplicity, µTest++ provides only a limited set of primitives for verifying expectations and assumptions.
 
-There are no preprocessor macros, all primitives are implemented in C++.
+No preprocessor macros are utilised; all primitives are implemented directly in C++.
+
 
 @defgroup micro-test-plus-c-api C API
+@brief µTest++ C API Topics (note: not available).
 @ingroup micro-test-plus
 @details
 
-The µTest++ can be used to test C code without problems, but
-its implementation uses extensively modern C++ features which
-cannot be implemented in C.
+Whilst µTest++ may be employed to test C code without difficulty, its implementation relies extensively on modern C++ features that cannot be replicated in C.
 
-Thus, there are no C equivalents for the C++ definitions.
+Consequently, there are no C equivalents for the C++ definitions provided by µTest++.
+
 
 @defgroup micro-test-plus-cli Command Line Options
+@brief Options for controlling verbosity at run-time.
 @ingroup micro-test-plus
 @details
 
 ## Verbosity
 
-By default, the µTest++ reporter shows detailed results only for the failed
-test cases; successful test cases are shown as a single line with
-the total counts of passed/failed checks.
+By default, the µTest++ reporter displays detailed results only for failed test cases; successful test cases are summarised in a single line, indicating the total number of passed and failed checks.
 
 @par Example
 
@@ -67,19 +76,18 @@ test 1
  1/12 Test  #1: minimal-test .....................   Passed    0.00 sec
 ```
 
-To control the verbosity, one of the following command line options can be used:
+To adjust the verbosity, one of the following command-line options may be specified:
 
-- `--verbose` - show all expectations, regardless of the result
-- `--quiet` - show only the test suite totals
-- `--silent` - suppress all output and only return the exit code
+- `--verbose` – display all expectations, irrespective of the result
+- `--quiet` – display only the test suite totals
+- `--silent` – suppress all output and return only the exit code
 
 @note
-The source code of the test is in `tests/src/minimal-test.cpp`.
+The source code for this test is located in `tests/src/minimal-test.cpp`.
 
 ### Verbose mode
 
-When in verbose mode, the µTest++ reporter shows all expectations,
-regardless of the result.
+In verbose mode, the µTest++ reporter displays all expectations, regardless of their outcome.
 
 @par Example
 
@@ -105,7 +113,7 @@ test 2
 
 ### Quiet mode
 
-When in quiet mode, the µTest++ reporter shows only the test suite totals.
+In quiet mode, the µTest++ reporter displays only the test suite totals.
 
 @par Example
 
@@ -123,8 +131,7 @@ test 3
 
 ### Silent mode
 
-When in silent mode, the µTest++ reporter suppresses all output
-and the framework only returns the exit code.
+In silent mode, the µTest++ reporter suppresses all output, and the framework returns only the exit code.
 
 @par Example
 
@@ -139,18 +146,18 @@ test 4
  4/12 Test  #4: minimal-test --silent ............   Passed    0.00 sec
 ```
 
+
 @addtogroup micro-test-plus-cpp-api
 @{
 
-@defgroup micro-test-plus-inits Initialisation & exit
-@brief Functions to initialise the framework and exit.
+
+@defgroup micro-test-plus-inits Initialisation & Exit
+@brief Functions for initialising the framework and returning an exit code.
 @details
 
-These are functions to initialise the test runner and to
-return the test result as the process exit code.
+These functions are responsible for initialising the test runner and returning the test result as the process exit code.
 
-The absolute minimal test has a single test case, with a single expectation;
-for example:
+The most minimal test comprises a single test case with a single expectation; for example:
 
 ```cpp
 #include <micro-os-plus/micro-test-plus.h>
@@ -170,7 +177,7 @@ main(int argc, char* argv[])
 }
 ```
 
-When running this test, the output looks like:
+When this test is executed, the output is as follows:
 
 ```console
 • Minimal - test suite started
@@ -180,15 +187,14 @@ When running this test, the output looks like:
 ✓ Minimal - test suite passed (1 check in 1 test case)
 ```
 
-@defgroup micro-test-plus-test-case Test cases
+
+@defgroup micro-test-plus-test-case Test Cases
 @brief  Test cases are named sequences of checks.
 @details
 
-Test cases group several checks to be executed in the same environment.
+Test cases consolidate multiple checks to be performed within the same environment.
 
-There can be any number of test cases, and each test case is performed
-by invoking a function, parametrised with a name/description,
-a callable (usually a lambda), and optional arguments.
+An arbitrary number of test cases may be defined, each invoked by calling a function parameterised with a name or description, a callable object (typically a lambda), and optional arguments.
 
 @par Examples
 
@@ -209,27 +215,28 @@ mt::test_case ("Check various conditions with operators", [] {
 });
 ```
 
+
 @defgroup micro-test-plus-expectations Expectations
-@brief  Expectations are checks whose results are reported.
+@brief  Expectations are checks whose outcomes are reported.
 @details
 
-Failed expectations report the failure but do not break the test
-(as opposed to assumptions).
+In contrast to assumptions, failed expectations are reported but do not cause the test to terminate.
+
 
 @defgroup micro-test-plus-assumptions Assumptions
-@brief  Assumptions are conditions that must be met for the test to continue.
+@brief  Assumptions are conditions that must be satisfied for the test to proceed.
 @details
 
-On failed assumptions, the test cannot continue and it is aborted on the spot.
+If an assumption fails, the test cannot continue and is immediately aborted.
 
-@defgroup micro-test-plus-function-comparators Function comparators
-@brief  Functions to compare the actual with expected values.
+
+@defgroup micro-test-plus-function-comparators Function Comparators
+@brief  Functions for comparing actual and expected values.
 @details
 
-Expectations and assumptions can test any expression evaluating to
-a boolean value, but in order to nicely report the difference between
-expected and actual values in failed conditions, special comparators
-must be used.
+## Description
+
+Expectations and assumptions may evaluate any expression yielding a boolean value; however, to provide clear reporting of differences between actual and expected values when checks fail, dedicated comparator functions should be employed.
 
 @par Examples
 
@@ -244,8 +251,7 @@ mt::expect (mt::ge (compute_answer (), 42)) << "answer is >= 42";
 mt::expect (compute_condition ()) << "condition is true";
 ```
 
-When such comparator functions are used, failed checks also display the
-actual values compared during the test; for example:
+When such comparator functions are utilised, failed checks will also display the actual values compared during the test; for example:
 
 ```console
   Check failed comparisons
@@ -255,9 +261,9 @@ actual values compared during the test; for example:
     ✗ (actual == 42) and (actual != 42.0) FAILED (unit-test.cpp:781, (42 == 42 and 42.000000 != 42.000000))
 ```
 
-## Comparing containers
+### Comparing containers
 
-Containers can be compared for equality. The comparison is done by iterating and comparing each member.
+Containers may be compared for equality. The comparison is performed by iterating through and comparing each element.
 
 @par Examples
 
@@ -269,17 +275,14 @@ mt::expect (mt::ne (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 })
         << "vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }";
 ```
 
-@defgroup micro-test-plus-logical-functions Logical functions
+@defgroup micro-test-plus-logical-functions Logical Functions
 @brief  Functions to be used in logical expressions.
 @details
 
-Complex expressions can be checked in a single line, using the
-logical `mt::_and()`, `mt::_or()` and `mt::_not()` functions.
+Complex expressions may be evaluated in a single statement using the logical functions `mt::_and()`, `mt::_or()`, and `mt::_not()`.
 
 @note
-The names are
-prefixed with underscore since `and`, `or` and `not` are reserved words
-in C/C++.
+These names are prefixed with an underscore, as `and`, `or`, and `not` are reserved keywords in C and C++.
 
 @par Example
 
@@ -288,15 +291,14 @@ mt::expect(mt::_and (mt::eq (compute_answer (), 42), mt::eq (compute_float (), 4
 ```
 
 @note
-If operands are function comparators, it is recommended to
-use the overloaded logical operators `&&`, `||`, `!` available
-in the `micro_test_plus::operators` namespace.
+If the operands are function comparators, it is advisable to use the overloaded logical operators `&&`, `||`, and `!` available in the `micro_test_plus::operators` namespace.
 
-@defgroup micro-test-plus-exceptions Checking exceptions
-@brief  Functions to check exceptions.
+
+@defgroup micro-test-plus-exceptions Checking Exceptions
+@brief  Functions for verifying exceptions.
 @details
 
-A C++ testing framework must be able to check if an expression (usually a function call), throws or not an exception.
+A C++ testing framework should be capable of determining whether an expression (typically a function call) throws an exception.
 
 @par Examples
 
@@ -309,9 +311,7 @@ mt::expect (mt::throws<std::runtime_error> ([] { throw std::runtime_error{ "" };
 mt::expect (mt::nothrow ([] { exercise_throw (false); })) << "exception not thrown";
 ```
 
-If a more elaborate logic is required, for example for expecting multiple
-exceptions, use an explicit `try` with multiple `catch` statements and
-report the results with `expect(true)` or `expect(false)`.
+If more sophisticated logic is required, such as expecting multiple exceptions, employ an explicit `try` block with multiple `catch` statements, and report the results using `expect(true)` or `expect(false)`.
 
 ```cpp
 try
@@ -332,25 +332,18 @@ catch (...)
   }
 ```
 
+
 @defgroup micro-test-plus-operators Operators
 @brief Overloaded operators
 @details
 
-As in most other C++ test frameworks, it is also possible to
-overload the `==`, `!=`, `<`, `>`, `<=`, `>=` operators.
+## Description
 
-To avoid possible interferences with other operators defined by the
-application, these operators match only for operands of specific
-types and are located in a separate namespace
-(`micro_test_plus::operators`); when applied to regular values,
-the standard operands are used; the comparisons are performed
-properly, but in case of failures the actual values are not shown.
+As with most other C++ testing frameworks, it is possible to overload the `==`, `!=`, `<`, `>`, `<=`, and `>=` operators.
 
-The operators match only operands derived from the local
-`detail::op` type, which can be enforced for constant values
-by using the provided literals (like `1_i`) or, for dynamic values,
-by using the provided casts (like `_i` {expression}, which are
-actually the constructors of the internal classes).
+To prevent potential conflicts with operators defined by the application, these operators are restricted to operands of specific types and are placed within a dedicated namespace (`micro_test_plus::operators`). When applied to standard values, the default operators are used; comparisons are performed correctly, but in the event of a failure, the actual values are not displayed.
+
+These operators only match operands derived from the local `detail::op` type. For constant values, this can be enforced using the provided literals (such as `1_i`), or for dynamic values, by using the provided casts (such as `mt::to_i{expression}`), which are in fact constructors of the internal classes.
 
 @par Examples
 
@@ -369,11 +362,9 @@ mt::test_case ("Operators", [] {
 });
 ```
 
-## Logical operators
+### Logical operators
 
-The logical operators can be used in exactly the same way as
-standard operators, but the additional functionality is
-enabled only when matching the typed operands.
+The logical operators may be used in exactly the same manner as standard operators; however, the enhanced functionality is available only when used with typed operands.
 
 @par Example
 
@@ -381,13 +372,12 @@ enabled only when matching the typed operands.
 mt::expect (compute_answer () == 42_i && compute_float () == 42.0_f);
 ```
 
-@defgroup micro-test-plus-string-operators String operators
-@brief Overloaded operators to compare strings.
+
+@defgroup micro-test-plus-string-operators String Operators
+@brief Overloaded operators for string comparison.
 @details
 
-In addition to the generic operators,
-there are also equality operators for `string_view`
-objects.
+In addition to the generic operators, dedicated equality operators are provided for `string_view` objects.
 
 @par Examples
 
@@ -405,12 +395,12 @@ mt::test_case ("Operators", [] {
 });
 ```
 
-@defgroup micro-test-plus-container-operators Container operators
-@brief Overloaded operators to compare containers.
+
+@defgroup micro-test-plus-container-operators Container Operators
+@brief Overloaded operators for comparing containers.
 @details
 
-In addition to the generic operators,
-there are also equality operators for containers.
+In addition to the generic operators, dedicated equality operators are also provided for containers.
 
 @par Examples
 
@@ -431,15 +421,14 @@ mt::test_case ("Operators", [] {
 });
 ```
 
-@defgroup micro-test-plus-literals Literals and wrappers
+
+@defgroup micro-test-plus-literals Literals and Wrappers
 @brief Literals and wrappers.
 @details
 
-For converting constants to recognised typed operands, the framework
-defines several literal operators in the separate namespace `literals`.
+To convert constants into recognised typed operands, the framework defines several literal operators within the separate `literals` namespace.
 
-Similarly, for dynamic values, there are wrappers that convert them to
-recognised types.
+Similarly, for dynamic values, wrappers are provided to convert them into recognised types.
 
 @par Examples
 
@@ -448,38 +437,13 @@ mt::expect (mt::to_i {answer} == 42_i);
 mt::expect (mt::to_f {expression} == 42_f);
 ```
 
-@defgroup micro-test-plus-functions-vs-operators Functions vs. operators & literals
-@details
 
-Which to use, functions like `eq()` or the
-overloaded operators? A very good question!
-
-Functions guarantee that the nice feature of showing the actual values
-when expectations fail is always available. Also the syntax is more on the
-traditional side, and for some it may look simpler and easier to read.
-
-Operators are generally easier to recognise than function calls,
-but require the hack with the type wrappers and literals to enforce the
-types, otherwise the actual values will not be displayed when the
-expectations fail.
-
-Both syntaxes are functional, and, once the differences understood,
-the issue is a matter of personal preferences.
-
-@note
-The µOS++ projects favour explicit comparator functions.
-
-@defgroup micro-test-plus-utility-functions Utility functions
+@defgroup micro-test-plus-utility-functions Utility Functions
 @brief Functions to assist in string operations.
-
-@defgroup micro-test-plus-custom-types Custom-types
 @details
 
-It is possible to extend the comparators with templates matching custom
-types, but this is a non-trivial task and requires a good knowledge of
-C++.
+When conducting string operations within tests, it is occasionally necessary to match partial strings or to split lengthy strings.
 
-@todo Explain how to do this and add a test.
 
 @defgroup micro-test-plus-test-suites Test suites
 @brief Test suites are named sequences of test cases.
@@ -549,57 +513,6 @@ static mt::test_suite ts_args
     = { "Args", test_suite_args, 42, in, ir, &in45, ip2 };
 ```
 
-@defgroup micro-test-plus-explicit-namespaces Explicit namespaces
-@details
-
-In complex projects, the definitions in the
-`micro_test_plus` namespace might interfere with application definitions.
-
-@note
-To avoid names clashes, it is recommended to
-use the comparator functions with explicit namespaces,
-possibly aliased to shorter names.
-
-However, for those who prefer brevity, it is also possible to
-declare the namespace `micro_os_plus::micro_test_plus` at scope level,
-and use all the definitions directly.
-
-@par Example
-
-```cpp
-{
-  using namespace micro_os_plus::micro_test_plus;
-
-  test_case ("Check answer", [] {
-    expect (eq (compute_answer (), 42)) << "answer is 42";
-  });
-}
-```
-
-@defgroup micro-test-plus-memory-footprint Memory footprint
-@details
-
-The memory footprint of unit tests based on µTest++ is definitely smaller than
-that of traditional C++ testing framework, mainly because the `iostream`
-library is not used.
-
-However, the use of templates for implementing the comparators and
-operators should be carefully observed for platforms with really
-limited amounts of memory, since each pair of different operands
-contributes to the program size.
-
-At the limit, µTest++ can be used
-without custom comparators and operators
-(only with regular boolean expressions), and still be able to provide
-the basic functionality of testing various conditions, but without
-the optional features of displaying the actual values compared.
-
-@note
-The memory footprint on `debug` (built with `-O0`),
-is significantly larger than on `release`. If necessary, the optimization
-for the `debug` build can be increased to `-Og`, to save some memory.
-
 @}
 
 */
-
