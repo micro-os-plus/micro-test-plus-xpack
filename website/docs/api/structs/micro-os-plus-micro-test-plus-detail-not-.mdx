@@ -22,13 +22,16 @@ import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/Includ
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
 import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
 import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
 
 # The `not_` Struct Template Reference
 
 <DoxygenPage version="1.13.2">
 
-Logical not operator. <Link to="#details">More...</Link>
+Logical NOT comparator struct template. <Link to="#details">More...</Link>
 
 ## Declaration
 
@@ -51,11 +54,13 @@ struct micro_os_plus::micro_test_plus::detail::not_&lt;T&gt;;</CodeBlock>
 <MembersIndexItem
   type="const T"
   name={<><Link to="#a91b44f2fca870036021c939bb87360ad">t&#95;</Link> &#123;&#125;</>}>
+Stores the operand. <Link to="#a91b44f2fca870036021c939bb87360ad">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="const bool"
   name={<><Link to="#af63f8f3af8a2522ae0911d9970ec9444">value&#95;</Link> &#123;&#125;</>}>
+Stores the result of the logical NOT operation. <Link to="#af63f8f3af8a2522ae0911d9970ec9444">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -67,6 +72,7 @@ struct micro_os_plus::micro_test_plus::detail::not_&lt;T&gt;;</CodeBlock>
 <MembersIndexItem
   type="constexpr"
   name={<><Link to="#ae04b89bc6cdf306487499875a635d301">not&#95;</Link> (const T &amp;t=&#123;&#125;)</>}>
+Constructs a logical NOT comparator for the given operand. <Link to="#ae04b89bc6cdf306487499875a635d301">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -78,20 +84,33 @@ struct micro_os_plus::micro_test_plus::detail::not_&lt;T&gt;;</CodeBlock>
 <MembersIndexItem
   type="constexpr"
   name={<><Link to="#a7d17fbb0ad2197265d7393c335c16018">operator bool</Link> () const</>}>
+Conversion operator to boolean. <Link to="#a7d17fbb0ad2197265d7393c335c16018">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="#a0a17757c49426642ef49eb7e6b1f8289">value</Link> () const</>}>
+Retrieves the value of the operand. <Link to="#a0a17757c49426642ef49eb7e6b1f8289">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
 
 ## Description {#details}
 
-TODO: add <code>@details</code> to <code>@struct micro_os_plus::micro_test_plus::detail::not_</code>
+The <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/not-">not&#95;</Link></code> struct template provides a type-safe mechanism for evaluating the logical negation (NOT) of an operand within the framework.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00613">613</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+This comparator supports a wide range of operand types, applying the generic getter to ensure correct value extraction for both custom and standard types. The result of the logical NOT operation is stored in the <code>value&#95;</code> member for efficient access.
+
+The implementation is optimised for use in embedded environments and supports both compile-time and run-time evaluation.
+
+All definitions are intended for internal use within the framework and are implemented in the <code>include/micro-os-plus/micro-test-plus</code> folder to maintain a structured and modular codebase.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="T">The type of the operand.</ParametersListItem>
+</ParametersList>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01327">1327</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 
 <SectionDefinition>
 
@@ -102,8 +121,9 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <MemberDefinition
   template={<>template &lt;class T&gt;</>}
   prototype={<>const T micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::not&#95;&lt; T &gt;::t&#95; &#123;&#125;</>}>
+Stores the operand.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00632">632</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01378">1378</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 ### value&#95; {#af63f8f3af8a2522ae0911d9970ec9444}
@@ -111,8 +131,9 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <MemberDefinition
   template={<>template &lt;class T&gt;</>}
   prototype={<>const bool micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::not&#95;&lt; T &gt;::value&#95; &#123;&#125;</>}>
+Stores the result of the logical NOT operation.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00633">633</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01383">1383</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -127,8 +148,16 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class T&gt;</>}
   prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::not&#95;&lt; T &gt;::not&#95; (const T &amp; t=&#123;&#125;)</>}
   labels = {["inline", "explicit", "constexpr"]}>
+Constructs a logical NOT comparator for the given operand.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00615">615</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Evaluates the logical negation of the provided operand at construction, supporting both custom and standard types. The result is stored in the <code>value&#95;</code> member for efficient access.
+
+
+<ParametersList title="Parameters">
+<ParametersListItem name="t">The operand to be negated.</ParametersListItem>
+</ParametersList>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01338">1338</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -143,8 +172,22 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class T&gt;</>}
   prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::not&#95;&lt; T &gt;::operator bool () const</>}
   labels = {["inline", "nodiscard", "constexpr"]}>
+Conversion operator to boolean.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00621">621</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Returns the result of the logical NOT operation.
+
+
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+
+<ParametersList title="Return Values">
+<ParametersListItem name="true">The operand evaluates to false.</ParametersListItem>
+<ParametersListItem name="false">The operand evaluates to true.</ParametersListItem>
+</ParametersList>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01354">1354</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 ### value() {#a0a17757c49426642ef49eb7e6b1f8289}
@@ -153,8 +196,21 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class T&gt;</>}
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::not&#95;&lt; T &gt;::value () const</>}
   labels = {["inline", "nodiscard", "constexpr"]}>
+Retrieves the value of the operand.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00627">627</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Returns the value of the operand, applying the generic getter to ensure correct extraction for both custom and standard types.
+
+
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+
+<SectionUser title="Returns">
+The extracted operand value.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01370">1370</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

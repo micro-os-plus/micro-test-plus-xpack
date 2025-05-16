@@ -22,13 +22,15 @@ import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/Includ
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
 import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
 import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
 
 # The `assertion` Struct Template Reference
 
 <DoxygenPage version="1.13.2">
 
-An object used to pass assertion parameters to the evaluator. <Link to="#details">More...</Link>
+Assertion struct template for parameter passing to the evaluator. <Link to="#details">More...</Link>
 
 ## Declaration
 
@@ -51,20 +53,29 @@ struct micro_os_plus::micro_test_plus::detail::assertion&lt;Expr&#95;T&gt;;</Cod
 <MembersIndexItem
   type={<>Expr&#95;T</>}
   name={<><Link to="#a3bda35bdd21c44124c7828c65ac3395f">expr</Link> &#123;&#125;</>}>
+The expression under evaluation. <Link to="#a3bda35bdd21c44124c7828c65ac3395f">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source&#95;location</Link></>}
   name={<><Link to="#acd2e0e20795f5a31ed3031ab51579dc0">location</Link> &#123;&#125;</>}>
+The source location associated with the assertion. <Link to="#acd2e0e20795f5a31ed3031ab51579dc0">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
 
 ## Description {#details}
 
-TODO: add <code>@details</code> to <code>@struct micro_os_plus::micro_test_plus::detail::assertion</code>
+The <code>assertion</code> struct template is used to encapsulate assertion parameters, including the expression under evaluation and its associated source location. This design enables precise reporting and diagnostics within the framework.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00096">96</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+The structure is intended exclusively for internal use and is implemented in the <code>include/micro-os-plus/micro-test-plus</code> folder to maintain a structured and modular codebase.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="Expr&#95;T">The type of the expression being asserted.</ParametersListItem>
+</ParametersList>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00108">108</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 
 <SectionDefinition>
 
@@ -75,8 +86,9 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <MemberDefinition
   template={<>template &lt;class Expr&#95;T&gt;</>}
   prototype={<>Expr&#95;T micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::assertion&lt; Expr&#95;T &gt;::expr &#123;&#125;</>}>
+The expression under evaluation.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00098">98</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00113">113</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 ### location {#acd2e0e20795f5a31ed3031ab51579dc0}
@@ -84,8 +96,9 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <MemberDefinition
   template={<>template &lt;class Expr&#95;T&gt;</>}
   prototype={<>reflection::source&#95;location micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::assertion&lt; Expr&#95;T &gt;::location &#123;&#125;</>}>
+The source location associated with the assertion.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00099">99</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00118">118</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

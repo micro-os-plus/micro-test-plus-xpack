@@ -22,13 +22,16 @@ import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/Includ
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
 import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
 import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
 
 # The `ne_` Struct Template Reference
 
 <DoxygenPage version="1.13.2">
 
-Non-equality comparator. <Link to="#details">More...</Link>
+Non-equality comparator struct template. <Link to="#details">More...</Link>
 
 ## Declaration
 
@@ -51,16 +54,19 @@ struct micro_os_plus::micro_test_plus::detail::ne_&lt;Lhs&#95;T, Rhs&#95;T&gt;;<
 <MembersIndexItem
   type={<>const Lhs&#95;T</>}
   name={<><Link to="#af16b36014bf8c36695f6acdb187cf005">lhs&#95;</Link> &#123;&#125;</>}>
+Stores the left-hand operand. <Link to="#af16b36014bf8c36695f6acdb187cf005">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type={<>const Rhs&#95;T</>}
   name={<><Link to="#a07b4d3b130d733eba891485316c89d1f">rhs&#95;</Link> &#123;&#125;</>}>
+Stores the right-hand operand. <Link to="#a07b4d3b130d733eba891485316c89d1f">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="const bool"
   name={<><Link to="#ae3facfdaf028c076a5a93c504745b9ae">value&#95;</Link> &#123;&#125;</>}>
+Stores the result of the non-equality comparison. <Link to="#ae3facfdaf028c076a5a93c504745b9ae">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -72,6 +78,7 @@ struct micro_os_plus::micro_test_plus::detail::ne_&lt;Lhs&#95;T, Rhs&#95;T&gt;;<
 <MembersIndexItem
   type="constexpr"
   name={<><Link to="#a6119b4adca8baf81aad4e2543b8902bc">ne&#95;</Link> (const Lhs&#95;T &amp;lhs=&#123;&#125;, const Rhs&#95;T &amp;rhs=&#123;&#125;)</>}>
+Constructs a non-equality comparator for the given operands. <Link to="#a6119b4adca8baf81aad4e2543b8902bc">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -83,25 +90,40 @@ struct micro_os_plus::micro_test_plus::detail::ne_&lt;Lhs&#95;T, Rhs&#95;T&gt;;<
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="#a9a1bc97deb66091e6ad7b8972d2653f2">lhs</Link> () const</>}>
+Retrieves the left-hand operand. <Link to="#a9a1bc97deb66091e6ad7b8972d2653f2">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr"
   name={<><Link to="#ae4aca210912ea4f95ab410d9a0bbdcd0">operator bool</Link> () const</>}>
+Conversion operator to boolean. <Link to="#ae4aca210912ea4f95ab410d9a0bbdcd0">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="#affca6650133c019d8bddd96ed50e6847">rhs</Link> () const</>}>
+Retrieves the right-hand operand. <Link to="#affca6650133c019d8bddd96ed50e6847">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
 
 ## Description {#details}
 
-TODO: add <code>@details</code> to <code>@struct micro_os_plus::micro_test_plus::detail::ne_</code>
+The <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-">ne&#95;</Link></code> struct template provides a type-safe mechanism for evaluating non-equality between two operands within the framework.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00231">231</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+This comparator supports a variety of operand types, including those with static values, types with precision (epsilon), and generic types. For types with static values, the comparison is performed directly. For types supporting precision, the comparison accounts for the smallest epsilon to ensure accuracy, particularly for floating-point types. For all other types, the generic getter is used to retrieve and compare the values.
+
+The implementation is optimised for use in embedded environments and supports both compile-time and run-time evaluation.
+
+All definitions are intended for internal use within the framework and are implemented in the <code>include/micro-os-plus</code> folder to maintain a structured and modular codebase.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="Lhs&#95;T">The type of the left-hand operand.</ParametersListItem>
+<ParametersListItem name="Rhs&#95;T">The type of the right-hand operand.</ParametersListItem>
+</ParametersList>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00407">407</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 
 <SectionDefinition>
 
@@ -112,8 +134,9 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <MemberDefinition
   template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T&gt;</>}
   prototype={<>const Lhs&#95;T micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::ne&#95;&lt; Lhs&#95;T, Rhs&#95;T &gt;::lhs&#95; &#123;&#125;</>}>
+Stores the left-hand operand.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00296">296</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00519">519</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 ### rhs&#95; {#a07b4d3b130d733eba891485316c89d1f}
@@ -121,8 +144,9 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <MemberDefinition
   template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T&gt;</>}
   prototype={<>const Rhs&#95;T micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::ne&#95;&lt; Lhs&#95;T, Rhs&#95;T &gt;::rhs&#95; &#123;&#125;</>}>
+Stores the right-hand operand.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00297">297</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00524">524</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 ### value&#95; {#ae3facfdaf028c076a5a93c504745b9ae}
@@ -130,8 +154,9 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <MemberDefinition
   template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T&gt;</>}
   prototype={<>const bool micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::ne&#95;&lt; Lhs&#95;T, Rhs&#95;T &gt;::value&#95; &#123;&#125;</>}>
+Stores the result of the non-equality comparison.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00298">298</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00529">529</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -146,8 +171,17 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T&gt;</>}
   prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::ne&#95;&lt; Lhs&#95;T, Rhs&#95;T &gt;::ne&#95; (const Lhs&#95;T &amp; lhs=&#123;&#125;, const Rhs&#95;T &amp; rhs=&#123;&#125;)</>}
   labels = {["inline", "constexpr"]}>
+Constructs a non-equality comparator for the given operands.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00233">233</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Evaluates the non-equality of the provided operands at construction, supporting static values, types with precision, and generic types. The result is stored in the <code>value&#95;</code> member for efficient access.
+
+
+<ParametersList title="Parameters">
+<ParametersListItem name="lhs">The left-hand operand.</ParametersListItem>
+<ParametersListItem name="rhs">The right-hand operand.</ParametersListItem>
+</ParametersList>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00419">419</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -162,8 +196,21 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T&gt;</>}
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::ne&#95;&lt; Lhs&#95;T, Rhs&#95;T &gt;::lhs () const</>}
   labels = {["inline", "nodiscard", "constexpr"]}>
+Retrieves the left-hand operand.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00286">286</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Returns the value of the left-hand operand, applying the generic getter to ensure correct extraction for both custom and standard types.
+
+
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+
+<SectionUser title="Returns">
+The extracted left-hand operand.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00494">494</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 ### operator bool() {#ae4aca210912ea4f95ab410d9a0bbdcd0}
@@ -172,8 +219,22 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T&gt;</>}
   prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::ne&#95;&lt; Lhs&#95;T, Rhs&#95;T &gt;::operator bool () const</>}
   labels = {["inline", "nodiscard", "constexpr"]}>
+Conversion operator to boolean.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00281">281</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Returns the result of the non-equality comparison.
+
+
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+
+<ParametersList title="Return Values">
+<ParametersListItem name="true">The operands are considered not equal.</ParametersListItem>
+<ParametersListItem name="false">The operands are considered equal.</ParametersListItem>
+</ParametersList>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00477">477</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 ### rhs() {#affca6650133c019d8bddd96ed50e6847}
@@ -182,8 +243,21 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T&gt;</>}
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::ne&#95;&lt; Lhs&#95;T, Rhs&#95;T &gt;::rhs () const</>}
   labels = {["inline", "nodiscard", "constexpr"]}>
+Retrieves the right-hand operand.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00291">291</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Returns the value of the right-hand operand, applying the generic getter to ensure correct extraction for both custom and standard types.
+
+
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+
+<SectionUser title="Returns">
+The extracted right-hand operand.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00511">511</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

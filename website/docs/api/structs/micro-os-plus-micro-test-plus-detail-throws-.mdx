@@ -22,13 +22,16 @@ import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/Includ
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
 import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
 import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
 
 # The `throws_` Struct Template Reference
 
 <DoxygenPage version="1.13.2">
 
-Operator to check if the expression throws a specific exception. <Link to="#details">More...</Link>
+Operator struct template to check if an expression throws a specific exception. <Link to="#details">More...</Link>
 
 ## Declaration
 
@@ -51,6 +54,7 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable&#95;T, Except
 <MembersIndexItem
   type="const bool"
   name={<><Link to="#ab92c281f0bbf04125e3fa9a8258dc1b9">value&#95;</Link> &#123;&#125;</>}>
+Stores the result of the exception check. <Link to="#ab92c281f0bbf04125e3fa9a8258dc1b9">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -62,6 +66,7 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable&#95;T, Except
 <MembersIndexItem
   type="constexpr"
   name={<><Link to="#ab482b144c355eb68638dc872331145e7">throws&#95;</Link> (const Callable&#95;T &amp;func)</>}>
+Constructs an exception checking operator for the given callable. <Link to="#ab482b144c355eb68638dc872331145e7">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -73,15 +78,28 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable&#95;T, Except
 <MembersIndexItem
   type="constexpr"
   name={<><Link to="#a84158f0b3d7719fe0929b49002c113b5">operator bool</Link> () const</>}>
+Conversion operator to boolean. <Link to="#a84158f0b3d7719fe0929b49002c113b5">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
 
 ## Description {#details}
 
-TODO: add <code>@details</code> to <code>@struct micro_os_plus::micro_test_plus::detail::throws_</code>
+The <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-">throws&#95;</Link></code> struct template provides a type-safe mechanism for verifying whether a callable expression throws a specified exception type during its execution within the framework.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00642">642</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+This comparator is designed to support both custom and standard callable types. The result of the exception check is stored in the <code>value&#95;</code> member for efficient access.
+
+The implementation is optimised for use in embedded environments and supports both compile-time and run-time evaluation.
+
+All definitions are intended for internal use within the framework and are implemented in the <code>include/micro-os-plus/micro-test-plus</code> folder to maintain a structured and modular codebase.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="Callable&#95;T">The type of the callable object to be invoked.</ParametersListItem>
+<ParametersListItem name="Exception&#95;T">The type of the exception to check for (defaults to <code>void</code> for any exception).</ParametersListItem>
+</ParametersList>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01416">1416</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 
 <SectionDefinition>
 
@@ -92,8 +110,9 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <MemberDefinition
   template={<>template &lt;class Callable&#95;T, class Exception&#95;T = void&gt;</>}
   prototype={<>const bool micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::throws&#95;&lt; Callable&#95;T, Exception&#95;T &gt;::value&#95; &#123;&#125;</>}>
+Stores the result of the exception check.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00669">669</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01467">1467</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -108,8 +127,16 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class Callable&#95;T, class Exception&#95;T = void&gt;</>}
   prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::throws&#95;&lt; Callable&#95;T, Exception&#95;T &gt;::throws&#95; (const Callable&#95;T &amp; func)</>}
   labels = {["inline", "explicit", "constexpr"]}>
+Constructs an exception checking operator for the given callable.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00644">644</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Invokes the provided callable and determines whether it throws an exception of the specified type. The result is stored in the <code>value&#95;</code> member for efficient access.
+
+
+<ParametersList title="Parameters">
+<ParametersListItem name="func">The callable object to be invoked.</ParametersListItem>
+</ParametersList>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01428">1428</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -124,8 +151,22 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class Callable&#95;T, class Exception&#95;T = void&gt;</>}
   prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::throws&#95;&lt; Callable&#95;T, Exception&#95;T &gt;::operator bool () const</>}
   labels = {["inline", "nodiscard", "constexpr"]}>
+Conversion operator to boolean.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00664">664</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Returns the result of the exception check.
+
+
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+
+<ParametersList title="Return Values">
+<ParametersListItem name="true">The callable throws the specified exception type.</ParametersListItem>
+<ParametersListItem name="false">The callable does not throw the specified exception type.</ParametersListItem>
+</ParametersList>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01459">1459</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

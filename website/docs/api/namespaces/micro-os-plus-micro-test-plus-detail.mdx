@@ -19,7 +19,10 @@ import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
 import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
 import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
 
 # The `detail` Namespace Reference
 
@@ -38,91 +41,91 @@ Internal implementation details for the µTest++ framework. <Link to="#details">
 <MembersIndexItem
   type="struct"
   name={<Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/and-">and&#95;&lt;Lhs&#95;T, Rhs&#95;T&gt;</Link>}>
-Logical and operator. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/and-/#details">More...</Link>
+Logical AND comparator struct template. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/and-/#details">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="struct"
   name={<Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/assertion">assertion&lt;Expr&#95;T&gt;</Link>}>
-An object used to pass assertion parameters to the evaluator. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/assertion/#details">More...</Link>
+Assertion struct template for parameter passing to the evaluator. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/assertion/#details">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="class"
   name={<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter">deferred&#95;reporter&lt;Expr&#95;T&gt;</Link>}>
-Class template for a deferred reporter specific to an expression. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter/#details">More...</Link>
+Deferred reporter class template for a specific expression. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter/#details">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="class"
   name={<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base">deferred&#95;reporter&#95;base</Link>}>
-Base class for a deferred reporter, that collects the messages into a string. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#details">More...</Link>
+Base class for a deferred reporter that collects messages into a string. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#details">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="struct"
   name={<Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-">eq&#95;&lt;Lhs&#95;T, Rhs&#95;T&gt;</Link>}>
-Equality comparator. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-/#details">More...</Link>
+Equality comparator struct template. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-/#details">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="struct"
   name={<Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/ge-">ge&#95;&lt;Lhs&#95;T, Rhs&#95;T&gt;</Link>}>
-Greater than or equal comparator. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/ge-/#details">More...</Link>
+Greater than or equal comparator struct template. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/ge-/#details">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="struct"
   name={<Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/gt-">gt&#95;&lt;Lhs&#95;T, Rhs&#95;T&gt;</Link>}>
-Greater than comparator. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/gt-/#details">More...</Link>
+Greater than comparator struct template. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/gt-/#details">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="struct"
   name={<Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/le-">le&#95;&lt;Lhs&#95;T, Rhs&#95;T&gt;</Link>}>
-Less than or equal comparator. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/le-/#details">More...</Link>
+Less than or equal comparator struct template. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/le-/#details">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="struct"
   name={<Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/lt-">lt&#95;&lt;Lhs&#95;T, Rhs&#95;T&gt;</Link>}>
-Less than comparator. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/lt-/#details">More...</Link>
+Less than comparator struct template. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/lt-/#details">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="struct"
   name={<Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-">ne&#95;&lt;Lhs&#95;T, Rhs&#95;T&gt;</Link>}>
-Non-equality comparator. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-/#details">More...</Link>
+Non-equality comparator struct template. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-/#details">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="struct"
   name={<Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/not-">not&#95;&lt;T&gt;</Link>}>
-Logical not operator. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/not-/#details">More...</Link>
+Logical NOT comparator struct template. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/not-/#details">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="struct"
   name={<Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/nothrow-">nothrow&#95;&lt;Callable&#95;T&gt;</Link>}>
-Operator to check if the expression does not throw any exception. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/nothrow-/#details">More...</Link>
+Operator struct template to check if an expression does not throw any exception. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/nothrow-/#details">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="struct"
   name={<Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/or-">or&#95;&lt;Lhs&#95;T, Rhs&#95;T&gt;</Link>}>
-Logical or operator. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/or-/#details">More...</Link>
+Logical OR comparator struct template. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/or-/#details">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="struct"
   name={<Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-">throws&#95;&lt;Callable&#95;T, Exception&#95;T&gt;</Link>}>
-Operator to check if the expression throws a specific exception. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-/#details">More...</Link>
+Operator struct template to check if an expression throws a specific exception. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-/#details">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="struct"
   name={<Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws--callable-t-void-">throws&#95;&lt;Callable&#95;T, void&gt;</Link>}>
-Operator to check if the expression throws any exception. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws--callable-t-void-/#details">More...</Link>
+Operator struct template to check if an expression throws any exception. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws--callable-t-void-/#details">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -134,19 +137,19 @@ Operator to check if the expression throws any exception. <Link to="/docs/api/st
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="#ac627271520bf2fe8a4c4774bcd9bf343">get</Link> (const T &amp;t)</>}>
-Generic getter, calling the getter implementation. <Link to="#ac627271520bf2fe8a4c4774bcd9bf343">More...</Link>
+Generic getter function template for value retrieval. <Link to="#ac627271520bf2fe8a4c4774bcd9bf343">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr auto "
   name={<><Link to="#a2fa97961fad5cd659110b887731f94dd">get&#95;impl</Link> (const T &amp;t, int) -&gt; decltype(t.get())</>}>
-Generic getter implementation. If the type has a <Link to="#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link> method, call it. It is recommended for custom types to define a <Link to="#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link> method. <Link to="#a2fa97961fad5cd659110b887731f94dd">More...</Link>
+Generic getter function template for value retrieval. <Link to="#a2fa97961fad5cd659110b887731f94dd">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr auto "
   name={<><Link to="#a95670c72316d5efa02f44ad11d13f662">get&#95;impl</Link> (const T &amp;t,...) -&gt; decltype(auto)</>}>
-Variadic getter implementation that returns the first argument and discards the rest. <Link to="#a95670c72316d5efa02f44ad11d13f662">More...</Link>
+Fallback variadic getter function template. <Link to="#a95670c72316d5efa02f44ad11d13f662">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -159,7 +162,7 @@ Within this namespace, one will find assertion handling, generic getter utilitie
 
 All definitions within <code>detail</code> are intended exclusively for internal use, ensuring a clear distinction between user-facing and internal components. This approach enhances maintainability, mitigates the risk of naming conflicts, and keeps the public API succinct.
 
-The relevant source files are organised within the <code>include/micro-os-plus</code> folder to maintain a structured and modular codebase.
+The relevant header files are organised within the <code>include/micro-os-plus</code> folder to maintain a structured and modular codebase.
 
 <SectionDefinition>
 
@@ -171,9 +174,30 @@ The relevant source files are organised within the <code>include/micro-os-plus</
   template={<>template &lt;class T&gt;</>}
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::get (const T &amp; t)</>}
   labels = {["nodiscard", "constexpr"]}>
-Generic getter, calling the getter implementation.
+Generic getter function template for value retrieval.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00132">132</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+The <code>get</code> function template invokes the appropriate getter implementation to retrieve the value from the provided object or type. This function ensures consistent access to values for both custom and standard types within the framework.
+
+The primary implementation attempts to invoke a <code><Link to="#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link></code> method if it exists, which is recommended for user-defined types to ensure consistent value access. If the type does not provide a <code><Link to="#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link></code> method, the fallback variadic implementation simply returns the original argument.
+
+The <code>get</code> function template delegates to these implementations, enabling seamless support for a wide range of types in test expressions and comparators.
+
+All definitions are intended for internal use within the framework and are implemented in the <code>include/micro-os-plus/micro-test-plus</code> folder to maintain a structured and modular codebase.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="T">The type from which the value is to be retrieved.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="t">The object or value to be accessed.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+The value obtained via the relevant getter implementation.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00209">209</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 ### get&#95;impl() {#a2fa97961fad5cd659110b887731f94dd}
@@ -182,9 +206,30 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class T&gt;</>}
   prototype={<>decltype(t.get()) micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::get&#95;impl (const T &amp; t, int)</>}
   labels = {["nodiscard", "constexpr"]}>
-Generic getter implementation. If the type has a <Link to="#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link> method, call it. It is recommended for custom types to define a <Link to="#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link> method.
+Generic getter function template for value retrieval.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00111">111</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+The <code>get</code> function template invokes the appropriate getter implementation to retrieve the value from the provided object or type. This function ensures consistent access to values for both custom and standard types within the framework.
+
+The primary implementation attempts to invoke a <code><Link to="#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link></code> method if it exists, which is recommended for user-defined types to ensure consistent value access. If the type does not provide a <code><Link to="#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link></code> method, the fallback variadic implementation simply returns the original argument.
+
+The <code>get</code> function template delegates to these implementations, enabling seamless support for a wide range of types in test expressions and comparators.
+
+All definitions are intended for internal use within the framework and are implemented in the <code>include/micro-os-plus/micro-test-plus</code> folder to maintain a structured and modular codebase.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="T">The type from which the value is to be retrieved.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="t">The object or value to be accessed.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+The value obtained via the relevant getter implementation.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00150">150</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 ### get&#95;impl() {#a95670c72316d5efa02f44ad11d13f662}
@@ -193,9 +238,28 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class T&gt;</>}
   prototype={<>decltype(auto) micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::get&#95;impl (const T &amp; t, ...)</>}
   labels = {["nodiscard", "constexpr"]}>
-Variadic getter implementation that returns the first argument and discards the rest.
+Fallback variadic getter function template.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00122">122</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+The <code>get&#95;impl</code> function template serves as a fallback mechanism for value retrieval when the provided type does not implement a <code><Link to="#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link></code> member function. It simply returns the first argument, discarding any additional parameters.
+
+This approach ensures that both custom types (with a <code><Link to="#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link></code> method) and standard types (without a <code><Link to="#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link></code> method) are supported seamlessly within the framework&#39;s generic getter utilities.
+
+All definitions are intended for internal use within the framework and are implemented in the <code>include/micro-os-plus/micro-test-plus</code> folder to maintain a structured and modular codebase.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="T">The type from which the value is to be retrieved.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="t">The object or value to be accessed.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+The original argument <code>t</code>.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00177">177</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
