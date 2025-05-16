@@ -101,13 +101,13 @@ namespace micro_os_plus::micro_test_plus
    *
    * @par Example
    *
-   * ```cpp
+   * @code{.cpp}
    *   namespace mt = micro_os_plus::micro_test_plus;
    *
    *   mt::test_case ("Check answer with comparator", [] {
    *     mt::expect (mt::eq (compute_answer (), 42)) << "answer is 42";
    *   });
-   * ```
+   * @endcode
    */
 #if defined(__clang__)
 #pragma clang diagnostic pop
@@ -187,13 +187,13 @@ namespace micro_os_plus::micro_test_plus
      *
      * @par Example
      *
-     * ```cpp
+     * @code{.cpp}
      * namespace mt = micro_os_plus::micro_test_plus;
      *
      * mt::expect (std::vector<std::string_view>{ "a", "b" }
      *             == mt::utility::split<std::string_view> ("a.b", "."))
      *         << "a.b splits into [a,b]";
-     * ```
+     * @endcode
      */
     template <class T = std::string_view, class Delim_T>
     [[nodiscard]] auto

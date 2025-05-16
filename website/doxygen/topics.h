@@ -173,7 +173,7 @@ the total number of passed and failed checks.
 
 @par Example
 
-```console
+@code{.console}
 test 1
       Start  1: minimal-test
 
@@ -190,7 +190,7 @@ test 1
 1:
 1: ✓ Minimal - test suite passed (2 checks in 1 test case)
  1/12 Test  #1: minimal-test .....................   Passed    0.00 sec
-```
+@endcode
 
 ## Verbosity
 
@@ -212,7 +212,7 @@ their result.
 
 @par Example
 
-```console
+@code{.console}
 test 2
       Start  2: minimal-test --verbose
 
@@ -232,7 +232,7 @@ test 2
 2:
 2: ✓ Minimal - test suite passed (2 checks in 1 test case)
  2/12 Test  #2: minimal-test --verbose ...........   Passed    0.00 sec
-```
+@endcode
 
 ### Quiet mode
 
@@ -240,7 +240,7 @@ In quiet mode, the µTest++ reporter outputs only the overall test suite totals.
 
 @par Example
 
-```console
+@code{.console}
 test 3
       Start  3: minimal-test --quiet
 
@@ -252,7 +252,7 @@ test 3
 3:
 3: ✓ Minimal - test suite passed (2 checks in 1 test case)
  3/12 Test  #3: minimal-test --quiet .............   Passed    0.00 sec
-```
+@endcode
 
 ### Silent mode
 
@@ -261,7 +261,7 @@ returns solely the exit code.
 
 @par Example
 
-```console
+@code{.console}
 test 4
       Start  4: minimal-test --silent
 
@@ -272,7 +272,7 @@ test 4
 4: Test timeout computed to be: 10000000
 4:
  4/12 Test  #4: minimal-test --silent ............   Passed    0.00 sec
-```
+@endcode
 
 
 @addtogroup micro-test-plus-cpp-api
@@ -289,7 +289,7 @@ the test result as the process exit code.
 The simplest test consists of a single test case containing a single
 expectation; for example:
 
-```cpp
+@code{.cpp}
 #include <micro-os-plus/micro-test-plus.h>
 
 int
@@ -305,17 +305,17 @@ main(int argc, char* argv[])
 
   return mt::exit_code ();
 }
-```
+@endcode
 
 When this test is executed, the output is as follows:
 
-```console
+@code{.console}
 • Minimal - test suite started
 
   ✓ Check truth - test case passed (1 check)
 
 ✓ Minimal - test suite passed (1 check in 1 test case)
-```
+@endcode
 
 
 @defgroup micro-test-plus-test-case Test Cases
@@ -331,7 +331,7 @@ lambda), and optional arguments.
 
 @par Examples
 
-```cpp
+@code{.cpp}
 namespace mt = micro_os_plus::micro_test_plus;
 
 mt::test_case ("Check various conditions", [] {
@@ -346,7 +346,7 @@ mt::test_case ("Check various conditions with operators", [] {
   mt::expect (compute_answer () == 42_i) << "answer == 42";
   mt::expect (compute_answer () != 43_i) << "answer != 43";
 });
-```
+@endcode
 
 
 @defgroup micro-test-plus-expectations Expectations
@@ -378,7 +378,7 @@ employed.
 
 @par Examples
 
-```cpp
+@code{.cpp}
 mt::expect (mt::eq (compute_answer (), 42)) << "answer is 42";
 mt::expect (mt::ne (compute_answer (), 43)) << "answer is not 43";
 mt::expect (mt::lt (compute_answer (), 43)) << "answer is < 43";
@@ -387,19 +387,19 @@ mt::expect (mt::gt (compute_answer (), 41)) << "answer is > 43";
 mt::expect (mt::ge (compute_answer (), 42)) << "answer is >= 42";
 
 mt::expect (compute_condition ()) << "condition is true";
-```
+@endcode
 
 When such comparator functions are employed, any failed checks will also
 present the actual values compared during the test; for example:
 
-```console
+@code{.console}
   Check failed comparisons
     ✗ actual != 42 FAILED (unit-test.cpp:286, 42 != 42)
     ✗ FAILED (unit-test.cpp:307, 42 != 42)
     ✗ 42 != 42_i FAILED (unit-test.cpp:310, 42 != 42)
     ✗ (actual == 42) and (actual != 42.0) FAILED (unit-test.cpp:781, (42 == 42
 and 42.000000 != 42.000000))
-```
+@endcode
 
 ### Comparing containers
 
@@ -408,13 +408,13 @@ iterating through each element and evaluating them individually.
 
 @par Examples
 
-```cpp
+@code{.cpp}
 mt::expect (mt::eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
         << "vector{ 1, 2 } eq vector{ 1, 2 }";
 
 mt::expect (mt::ne (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 })
         << "vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }";
-```
+@endcode
 
 @defgroup micro-test-plus-logical-functions Logical Functions
 @brief  Functions utilised in logical expressions.
@@ -429,10 +429,10 @@ reserved keywords in both C and C++.
 
 @par Example
 
-```cpp
+@code{.cpp}
 mt::expect(mt::_and (mt::eq (compute_answer (), 42), mt::eq (compute_float
 (), 42.0)));
-```
+@endcode
 
 @note
 When the operands are function comparators, it is recommended to utilise the
@@ -449,7 +449,7 @@ A C++ testing framework should be capable of determining whether an expression
 
 @par Examples
 
-```cpp
+@code{.cpp}
 mt::expect (mt::throws ([] { exercise_throw (true); })) << "exception thrown";
 
 mt::expect (mt::throws<std::runtime_error> ([] { throw std::runtime_error{ ""
@@ -458,13 +458,13 @@ mt::expect (mt::throws<std::runtime_error> ([] { throw std::runtime_error{ ""
 
 mt::expect (mt::nothrow ([] { exercise_throw (false); })) << "exception not
 thrown";
-```
+@endcode
 
 If more advanced logic is required, such as handling multiple expected
 exceptions, use an explicit `try` block with several `catch` statements, and
 report the outcomes using `expect(true)` or `expect(false)`.
 
-```cpp
+@code{.cpp}
 try
   {
     compute_answer ();
@@ -481,7 +481,7 @@ catch (...)
   {
     mt::expect (false) << "known exception thrown";
   }
-```
+@endcode
 
 
 @defgroup micro-test-plus-operators Operators
@@ -507,7 +507,7 @@ classes.
 
 @par Examples
 
-```cpp
+@code{.cpp}
 mt::test_case ("Operators", [] {
   using namespace micro_test_plus::operators;
   using namespace micro_test_plus::literals;
@@ -520,7 +520,7 @@ cast)"; mt::expect (compute_answer () != 43_i) << "answer is not 43";
   mt::expect (compute_answer () > 41_i) << "answer is > 43";
   mt::expect (compute_answer () >= 42_i) << "answer is >= 42";
 });
-```
+@endcode
 
 ### Logical operators
 
@@ -530,9 +530,9 @@ employed with typed operands.
 
 @par Example
 
-```cpp
+@code{.cpp}
 mt::expect (compute_answer () == 42_i && compute_float () == 42.0_f);
-```
+@endcode
 
 
 @defgroup micro-test-plus-string-operators String Operators
@@ -544,7 +544,7 @@ for `string_view` objects.
 
 @par Examples
 
-```cpp
+@code{.cpp}
 #include <string_view>
 using namespace std::literals; // For the "sv" literal.
 namespace mt = micro_os_plus::micro_test_plus;
@@ -556,7 +556,7 @@ mt::test_case ("Operators", [] {
   mt::expect (std::string_view{ compute_ultimate_answer () } == "forty-two"sv)
           << "ultimate answer == 'forty-two'";
 });
-```
+@endcode
 
 
 @defgroup micro-test-plus-container-operators Container Operators
@@ -568,7 +568,7 @@ provided for containers.
 
 @par Examples
 
-```cpp
+@code{.cpp}
 #include <string_view>
 using namespace std::literals; // For the "sv" literal.
 namespace mt = micro_os_plus::micro_test_plus;
@@ -583,7 +583,7 @@ mt::test_case ("Operators", [] {
   mt::expect (std::vector<int>{ 1, 2, 3 } != std::vector<int>{ 1, 2, 4 })
           << "vector{ 1, 2, 3 } != vector{ 1, 2, 4 }";
 });
-```
+@endcode
 
 
 @defgroup micro-test-plus-literals Literals and Wrappers
@@ -598,10 +598,10 @@ recognised types.
 
 @par Examples
 
-```cpp
+@code{.cpp}
 mt::expect (mt::to_i {answer} == 42_i);
 mt::expect (mt::to_f {expression} == 42_f);
-```
+@endcode
 
 
 @defgroup micro-test-plus-utility-functions Utility Functions
@@ -626,7 +626,7 @@ To facilitate self-registration, test suites are implemented as classes,
 constructed with a name, a callable (usually a lambda that chains the execution
 of the test cases), and optional arguments:
 
-```cpp
+@code{.cpp}
 class test_suite : public test_suite_base
 {
 public:
@@ -635,7 +635,7 @@ public:
               Args_T&&... arguments);
   // ...
 }
-```
+@endcode
 
 @note
 It is advisable to instantiate test suites as static objects.
@@ -650,7 +650,7 @@ called.
 
 @par Examples
 
-```cpp
+@code{.cpp}
 namespace mt = micro_os_plus::micro_test_plus;
 
 // Test suite with generic parameters.
@@ -675,7 +675,7 @@ static int* ip2 = &in46;
 
 static mt::test_suite ts_args
     = { "Args", test_suite_args, 42, in, ir, &in45, ip2 };
-```
+@endcode
 
 @}
 
