@@ -17,25 +17,26 @@
 
 /**
  * @file micro-test-plus.h
- * @brief Primary public header for the µTest++ testing framework.
+ * @brief Principal public header for the µTest++ testing framework.
  * @details
- * This header provides the main interface for the µTest++ testing framework,
- * designed for use in both embedded and general C++ projects.
+ * This header serves as the primary interface for the µTest++ testing
+ * framework, intended for use in both embedded and general C++ projects.
  *
- * It includes all essential declarations, such as test runner and reporter
- * objects, test suite and test case management, expectations, assumptions,
- * comparators, logical operators, exception checking, and utility functions.
+ * It encompasses all essential declarations, including test runner and
+ * reporter objects, management of test suites and test cases, expectations,
+ * assumptions, comparators, logical operators, exception verification, and
+ * utility functions.
  *
- * The file also imports all necessary dependencies and internal headers
- * required for the framework's operation.
+ * The file also imports all requisite dependencies and internal headers
+ * necessary for the operation of the framework.
  *
- * All public API definitions reside within the
+ * All public API definitions are contained within the
  * `micro_os_plus::micro_test_plus` namespace and its nested namespaces,
  * ensuring clear separation from user code and minimising the risk of naming
  * conflicts.
  *
- * Users should include this header in their test projects to access the full
- * functionality of the µTest++ framework.
+ * Users should include this header in their test projects to access the
+ * complete functionality of the µTest++ framework.
  */
 
 #ifndef MICRO_TEST_PLUS_MICRO_TEST_PLUS_H_
@@ -81,14 +82,14 @@
  * for all µTest++ functions, variables, enumerations, type definitions, and
  * related entities.
  *
- * This namespace is further organised into additional nested namespaces, each
- * encapsulating specific aspects of the framework such as mathematical
+ * This namespace is further organised into nested namespaces, each
+ * encapsulating specific aspects of the framework, such as mathematical
  * utilities, type traits, literals, test suite management, test runners, test
  * reporters, internal details, operators, and utility functions.
  *
  * By encapsulating definitions within distinct namespaces, the project
  * achieves improved code organisation, reduced redundancy, and enhanced
- * maintainability. This structured approach promotes modular development and
+ * maintainability. This structured approach encourages modular development and
  * ensures seamless integration within µOS++, thereby contributing to a more
  * efficient and scalable system.
  *
@@ -539,26 +540,27 @@ namespace micro_os_plus::micro_test_plus
    * @namespace micro_os_plus::micro_test_plus::operators
    * @brief Custom operator overloads for the µTest++ testing framework.
    * @details
-   * The `operators` namespace provides a suite of custom operator overloads to
-   * facilitate expressive and type-safe test expressions within the µTest++
-   * framework.
+   * The `operators` namespace provides a comprehensive set of custom operator
+   * overloads to enable expressive and type-safe test expressions within the
+   * µTest++ framework.
    *
-   * These operators include equality, non-equality, relational, and logical
-   * operations, specifically designed to work with the framework's custom
-   * types, containers, and string views. They enable concise and readable test
-   * assertions, supporting both strongly-typed constants (using user-defined
-   * literals) and dynamic values.
+   * These operators encompass equality, inequality, relational, and logical
+   * operations, specifically tailored to operate with the framework's custom
+   * types, containers, and string views. They facilitate concise and readable
+   * test assertions, supporting both strongly-typed constants (via
+   * user-defined literals) and dynamic values.
    *
-   * @warning Please note that these operators
-   * may interfere with other operators present in the application under test.
+   * @warning Please be aware that these operators
+   * may conflict with other operators defined within the application under
+   * test.
    *
-   * To minimise such interference, these operators are recognised only
-   * for specific types, and generally require constants to be
+   * To mitigate such conflicts, these operators are recognised only
+   * for specific types, and typically require constants to be
    * suffixed with literals (such as `1_i`), and dynamic values to be
    * cast to the custom types (such as `_i(...)`).
    *
    * All definitions within this namespace are implemented in the
-   * `include/micro-os-plus` folder to maintain a structured and modular
+   * `include/micro-os-plus` folder to ensure a structured and modular
    * codebase.
    */
   namespace operators
@@ -744,16 +746,16 @@ namespace micro_os_plus::micro_test_plus
    * @namespace micro_os_plus::micro_test_plus::utility
    * @brief Utility functions for the µTest++ testing framework.
    * @details
-   * The `utility` namespace provides a set of helper functions to support
-   * common operations within the µTest++ framework.
+   * The `utility` namespace provides a collection of helper functions to
+   * support common operations within the µTest++ framework.
    *
-   * These utilities include functions for pattern matching (such as checking
-   * if a string matches a given pattern) and for splitting strings into
-   * sub-strings. The implementations are designed to be efficient and suitable
-   * for use in both embedded and general C++ projects.
+   * These utilities include functions for pattern matching (such as verifying
+   * whether a string matches a specified pattern) and for splitting strings
+   * into sub-strings. The implementations are designed to be efficient and
+   * suitable for use in both embedded and general C++ projects.
    *
    * All definitions within this namespace are implemented in the
-   * `include/micro-os-plus` folder to maintain a structured and modular
+   * `include/micro-os-plus` folder to maintain a well-structured and modular
    * codebase.
    */
   namespace utility

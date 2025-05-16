@@ -25,10 +25,10 @@
  * executing related test cases within the µTest++ framework.
  *
  * It includes methods for managing test suite state, tracking successful and
- * failed checks, handling the start and end of test cases and suites, and
- * supporting deferred reporting. The implementation ensures that test suites
- * are properly initialised, executed, and reported, facilitating automated
- * test discovery and execution.
+ * failed checks, handling the commencement and completion of test cases and
+ * suites, and supporting deferred reporting. The implementation ensures that
+ * test suites are correctly initialised, executed, and reported, thereby
+ * facilitating automated test discovery and execution.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the risk

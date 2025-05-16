@@ -19,21 +19,24 @@
  * @file reflection.h
  * @brief Reflection utilities for the µTest++ testing framework.
  * @details
- * This header provides facilities for obtaining source location information
- * and type names at compile time, supporting enhanced reporting and
+ * This header provides facilities for retrieving source location information
+ * and type names at compile time, thereby supporting enhanced reporting and
  * diagnostics within the µTest++ framework.
  *
- * It defines a local implementation of `source_location` for environments
+ * It includes a local implementation of `source_location` for environments
  * lacking C++20 standard support, as well as utilities for extracting concise
  * type names from compiler-specific macros such as `__PRETTY_FUNCTION__`.
  *
- * All definitions are contained within the
+ * All definitions are placed within the
  * `micro_os_plus::micro_test_plus::reflection` namespace, ensuring clear
  * separation from user code and minimising the risk of naming conflicts.
  *
- * The implementation draws inspiration from Boost UT, adapting relevant
- * concepts to suit the requirements of embedded development and the µTest++
- * framework.
+ * The implementation is inspired by Boost UT, with adaptations to address the
+ * requirements of embedded development and the µTest++ framework.
+ *
+ * All related source files are organised
+ * within the `include/micro-os-plus` folder to maintain a structured and
+ * modular codebase.
  *
  * This file is intended for internal use within the framework and should not
  * be included directly by user code.
@@ -75,8 +78,8 @@ namespace micro_os_plus::micro_test_plus
    * @brief Reflection utilities for the µTest++ testing framework.
    * @details
    * The `reflection` namespace provides facilities for obtaining source
-   * location information and type names at compile time, supporting enhanced
-   * reporting and diagnostics within the µTest++ framework.
+   * location information and type names at compile time, thereby supporting
+   * advanced reporting and diagnostics within the µTest++ framework.
    *
    * It includes a local implementation of `source_location` for environments
    * lacking C++20 standard support, as well as utilities for extracting
@@ -84,7 +87,7 @@ namespace micro_os_plus::micro_test_plus
    * `__PRETTY_FUNCTION__`.
    *
    * All definitions within this namespace are intended to facilitate advanced
-   * reflection and reporting features, and are implemented in the
+   * reflection and reporting capabilities, and are implemented in the
    * `include/micro-os-plus` folder to maintain a structured and modular
    * codebase.
    */

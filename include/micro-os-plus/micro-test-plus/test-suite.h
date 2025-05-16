@@ -23,15 +23,16 @@
  * provide the mechanisms for grouping and executing related test cases within
  * the µTest++ framework.
  *
- * The `test_suite_base` class offers the foundational interface for managing
+ * The `test_suite_base` class supplies the foundational interface for managing
  * test suite state, including counters for successful and failed checks, test
- * case tracking, and methods for marking the beginning and end of test cases
- * and suites.
+ * case tracking, and methods for marking the commencement and completion of
+ * test cases and suites.
  *
  * The `test_suite` class extends this functionality, enabling the registration
  * and execution of callable objects (such as lambdas or function pointers) as
- * test suites. Test suites self-register with the test runner upon
- * construction, facilitating automated test discovery and execution.
+ * test suites. Test suites automatically register themselves with the test
+ * runner upon construction, thereby facilitating automated test discovery and
+ * execution.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the risk

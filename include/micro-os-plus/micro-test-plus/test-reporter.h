@@ -17,28 +17,28 @@
 
 /**
  * @file test-reporter.h
- * @brief Test result reporting for the µTest++ testing framework.
+ * @brief Reporting of test results for the µTest++ testing framework.
  * @details
- * This header defines the `test_reporter` class and associated types, which
- * are responsible for formatting and outputting test results within the
- * µTest++ framework.
+ * This header defines the `test_reporter` class and related types, which are
+ * responsible for formatting and presenting test results within the µTest++
+ * framework.
  *
- * The `test_reporter` class provides a comprehensive set of output operators
+ * The `test_reporter` class offers a comprehensive suite of output operators
  * for various data types, containers, and comparator expressions, enabling
  * detailed and informative reporting of test outcomes. It supports multiple
- * verbosity levels and colour-coded output to distinguish between passed and
- * failed tests.
+ * verbosity levels and colour-coded output to distinguish between successful
+ * and failed tests.
  *
  * The file also defines supporting types such as `colors` and `verbosity`, and
- * includes methods for reporting the start and end of test cases and suites,
- * as well as for handling pass and fail conditions.
+ * provides methods for reporting the commencement and completion of test cases
+ * and suites, as well as for handling pass and fail conditions.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the risk
  * of naming conflicts.
  *
- * This file is intended for internal use within the framework and should not
- * be included directly by user code.
+ * This file is intended solely for internal use within the framework and
+ * should not be included directly by user code.
  */
 
 #ifndef MICRO_TEST_PLUS_TEST_REPORTER_H_

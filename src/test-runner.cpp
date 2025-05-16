@@ -27,7 +27,7 @@
  * It includes routines for initialising the test environment, registering test
  * suites, executing all registered suites, and determining the overall test
  * result via an exit code. The implementation also handles command-line
- * argument parsing for verbosity control and outputs relevant build and
+ * argument parsing for verbosity control and outputs pertinent build and
  * environment information.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`

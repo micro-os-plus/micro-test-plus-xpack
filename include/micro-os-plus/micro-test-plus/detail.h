@@ -19,22 +19,23 @@
  * @file detail.h
  * @brief Internal implementation details for the µTest++ framework.
  * @details
- * This header defines the internal components and helper structures used by
- * the µTest++ testing framework. The contents of this file are not intended to
- * form part of the public API and are subject to change without notice.
+ * This header defines the internal components and auxiliary structures
+ * employed by the µTest++ testing framework. The contents of this file are not
+ * intended to constitute part of the public API and may be altered without
+ * prior notice.
  *
- * It provides implementation details such as assertion handling, generic
+ * It provides implementation specifics such as assertion handling, generic
  * getter utilities, comparator structures for various logical and relational
- * operations, as well as exception checking mechanisms. Additionally, it
+ * operations, as well as mechanisms for exception checking. Additionally, it
  * includes base classes for deferred reporting of test results.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus::detail`
- * namespace to avoid polluting the public API and to maintain a clear
- * separation between user-facing and internal components. This approach
- * enhances maintainability and minimises the risk of name clashes.
+ * namespace to prevent pollution of the public API and to maintain a clear
+ * distinction between user-facing and internal components. This approach
+ * enhances maintainability and minimises the risk of naming conflicts.
  *
- * This file is intended for internal use within the framework and should not
- * be included directly by user code.
+ * This file is intended solely for internal use within the framework and
+ * should not be included directly by user code.
  */
 
 #ifndef MICRO_TEST_PLUS_DETAIL_H_
@@ -68,19 +69,19 @@ namespace micro_os_plus::micro_test_plus
    * @brief Internal implementation details for the µTest++ framework.
    * @details
    * The `detail` namespace encapsulates the internal mechanisms, helper
-   * structures, and implementation utilities used by the µTest++ testing
-   * framework. These components are not part of the public API and may change
-   * without notice.
+   * structures, and implementation utilities employed by the µTest++ testing
+   * framework. These components do not form part of the public API and may be
+   * modified without prior notice.
    *
-   * Within this namespace, you will find assertion handling, generic getter
+   * Within this namespace, one will find assertion handling, generic getter
    * utilities, comparator structures for logical and relational operations,
-   * exception checking mechanisms, and base classes for deferred reporting of
-   * test results.
+   * mechanisms for exception checking, and base classes for deferred reporting
+   * of test results.
    *
-   * All definitions within `detail` are intended solely for internal use,
-   * ensuring a clear separation between user-facing and internal components.
-   * This approach enhances maintainability, reduces the risk of name clashes,
-   * and keeps the public API concise.
+   * All definitions within `detail` are intended exclusively for internal use,
+   * ensuring a clear distinction between user-facing and internal components.
+   * This approach enhances maintainability, mitigates the risk of naming
+   * conflicts, and keeps the public API succinct.
    *
    * The relevant source files are organised within the `include/micro-os-plus`
    * folder to maintain a structured and modular codebase.

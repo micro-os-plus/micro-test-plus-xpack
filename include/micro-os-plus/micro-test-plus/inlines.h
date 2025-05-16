@@ -19,22 +19,22 @@
  * @file inlines.h
  * @brief Inline implementations for the µTest++ testing framework.
  * @details
- * This header contains inline definitions for key components of the µTest++
- * framework, including test suite and test case management, deferred
+ * This header provides inline definitions for key components of the µTest++
+ * framework, including the management of test suites and test cases, deferred
  * reporting, and utility functions.
  *
- * The file provides template implementations for registering and executing
- * test suites and test cases, as well as mechanisms for reporting test results
- * in a deferred manner. It also includes utility functions, such as string
- * splitting, to support test development.
+ * The file offers template implementations for registering and executing test
+ * suites and test cases, as well as mechanisms for reporting test results in a
+ * deferred manner. It also includes utility functions, such as string
+ * splitting, to facilitate test development.
  *
- * All definitions reside within the `micro_os_plus::micro_test_plus` namespace
- * and its nested namespaces, ensuring clear separation between user-facing and
- * internal components. This approach enhances maintainability, promotes
- * modularity, and minimises the risk of name clashes.
+ * All definitions are contained within the `micro_os_plus::micro_test_plus`
+ * namespace and its nested namespaces, ensuring a clear distinction between
+ * user-facing and internal components. This approach enhances maintainability,
+ * encourages modularity, and reduces the risk of name clashes.
  *
- * This file is intended for internal use within the framework and should not
- * be included directly by user code.
+ * This file is intended solely for internal use within the framework and
+ * should not be included directly by user code.
  */
 
 #ifndef MICRO_TEST_PLUS_INLINES_H_

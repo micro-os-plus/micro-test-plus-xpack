@@ -15,31 +15,35 @@
 
 // ----------------------------------------------------------------------------
 
- /**
+/**
  * @file literals.h
  * @brief User-defined literals and type wrappers for the µTest++ testing
  * framework.
  * @details
- * This header defines a comprehensive set of user-defined literal operators
+ * This header defines a comprehensive suite of user-defined literal operators
  * and type wrappers, enabling the explicit specification of operand types for
  * use with the µTest++ comparators and operators.
  *
- * The provided literals allow constants to be suffixed (e.g., `1_i`, `2_u16`)
- * to produce strongly-typed values, thereby improving type safety and ensuring
- * that comparator functions and operators can display actual values in test
- * reports.
+ * The provided literals permit constants to be suffixed (for example, `1_i`,
+ * `2_u16`) to yield strongly-typed values, thereby enhancing type safety and
+ * ensuring that comparator functions and operators can display actual values
+ * in test reports.
  *
- * In addition to literals, the file includes wrappers for converting dynamic
+ * In addition to literals, this file includes wrappers for converting dynamic
  * values and expressions to recognised types, both via deprecated aliases
- * (e.g., `_i`, `_u8`) and the preferred `to_*` forms (e.g., `to_i`, `to_u8`).
+ * (such as `_i`, `_u8`) and the preferred `to_*` forms (such as `to_i`,
+ * `to_u8`).
  *
- * The implementation draws significant inspiration from Boost UT, adapting and
- * extending its approach to suit the requirements of embedded development and
- * the µTest++ framework.
+ * The implementation is significantly inspired by Boost UT, with adaptations
+ * and extensions to address the requirements of embedded development and the
+ * µTest++ framework.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus::literals`
  * namespace, ensuring clear separation from user code and minimising the risk
  * of naming conflicts.
+ *
+ * All relevant source files are organised within the `include/micro-os-plus`
+ * folder to maintain a structured and modular codebase.
  *
  * This file is intended for internal use within the framework and should not
  * be included directly by user code.
@@ -78,14 +82,14 @@ namespace micro_os_plus::micro_test_plus
    * @brief User-defined literals and type wrappers for the µTest++ testing
    * framework.
    * @details
-   * The `literals` namespace provides a comprehensive set of user-defined
-   * literal operators and type wrappers, enabling the explicit specification
+   * The `literals` namespace provides an extensive collection of user-defined
+   * literal operators and type wrappers, enabling explicit specification
    * of operand types for use with the µTest++ comparators and operators.
    *
-   * These operators allow constants to be suffixed (e.g., `1_i`, `2_u16`) to
-   * produce strongly-typed values, thereby improving type safety and ensuring
-   * that comparator functions and operators can display actual values in test
-   * reports.
+   * These operators allow constants to be suffixed (for example, `1_i`,
+   * `2_u16`) to produce strongly-typed values, thereby enhancing type safety
+   * and ensuring that comparator functions and operators can display actual
+   * values in test reports.
    *
    * In addition to literals, the namespace includes wrappers for converting
    * dynamic values and expressions to recognised types, both via deprecated

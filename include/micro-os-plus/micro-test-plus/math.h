@@ -15,26 +15,29 @@
 
 // ----------------------------------------------------------------------------
 
- /**
+/**
  * @file math.h
  * @brief Mathematical utilities for the µTest++ testing framework.
  * @details
- * This header provides a collection of constexpr mathematical function
- * templates and utilities for use within the µTest++ framework.
+ * This header provides a suite of constexpr mathematical function templates
+ * and utilities for use within the µTest++ framework.
  *
  * The functions defined herein include generic implementations for absolute
  * value, minimum value, exponentiation, and compile-time parsing of numeric
  * values from character arrays. These utilities are designed to be lightweight
- * and suitable for use in embedded environments, where standard library
- * alternatives may be unavailable, less efficient, or not constexpr.
+ * and suitable for embedded environments, where standard library alternatives
+ * may be unavailable, less efficient, or not constexpr.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus::math`
  * namespace, ensuring clear separation from user code and minimising the risk
  * of naming conflicts.
  *
  * The implementation draws inspiration from Boost UT, adapting relevant
- * concepts to meet the requirements of embedded development and the µTest++
+ * concepts to address the requirements of embedded development and the µTest++
  * framework.
+ *
+ * All related source files are organised within the `include/micro-os-plus`
+ * folder to maintain a structured and modular codebase.
  *
  * This file is intended for internal use within the framework and should not
  * be included directly by user code.
@@ -69,7 +72,7 @@ namespace micro_os_plus::micro_test_plus
    * @namespace micro_os_plus::micro_test_plus::math
    * @brief Mathematical utilities for the µTest++ testing framework.
    * @details
-   * The `math` namespace provides a collection of constexpr mathematical
+   * The `math` namespace offers a suite of constexpr mathematical
    * function templates and utilities for use within the µTest++ framework.
    *
    * These functions include generic implementations for absolute value,
