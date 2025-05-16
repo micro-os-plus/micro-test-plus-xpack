@@ -9,6 +9,8 @@
  * be obtained from https://opensource.org/licenses/mit.
  */
 
+// ----------------------------------------------------------------------------
+
 /**
  * @file topics.h
  * @brief Doxygen group definitions and documentation topics for the µTest++
@@ -18,99 +20,130 @@
  * the µTest++ testing framework, as part of the µOS++ project.
  *
  * Although named as a header, this file is not included in the build process;
- * it serves exclusively as a documentation resource for Doxygen. It cannot be
- * provided as a Markdown or .doxyfile due to Doxygen processing requirements.
+ * it serves solely as a documentation resource for Doxygen. It cannot be
+ * provided as a Markdown file or .doxyfile due to Doxygen processing
+ * requirements.
  *
  * The file introduces the main documentation groups for the framework,
- * including the C++ API, command-line options, expectations, assumptions,
+ * encompassing the C++ API, command-line options, expectations, assumptions,
  * comparators, operators, literals, utility functions, and test suite
  * management.
  *
- * The documentation is structured to provide a comprehensive overview of the
+ * The documentation is structured to deliver a comprehensive overview of the
  * framework's features, usage examples, and configuration options. It also
- * details the available verbosity modes and demonstrates typical output for
+ * details the available verbosity modes and provides representative output for
  * various scenarios.
  *
- * All documentation topics and group definitions are maintained in this file
- * to ensure a consistent and modular structure. The file is located in the
- * `website/doxygen` folder to facilitate integration with the Doxygen
+ * All documentation topics and group definitions are maintained within this
+ * file to ensure a consistent and modular structure. The file is located in
+ * the `website/doxygen` folder to facilitate integration with the Doxygen
  * documentation system.
  */
-
 /**
  * @dir src
- * @brief Source folder for the µTest++ testing framework implementation.
+ * @brief Source folder for the implementation of the µTest++ testing
+ * framework.
  * @details
- * The `src` folder contains the core implementation files for the µTest++ testing framework, including the primary logic for test suite management, test runner execution, result reporting, and supporting utilities.
+ * The `src` folder contains the core implementation files for the µTest++
+ * testing framework, including the primary logic for test suite management,
+ * test runner execution, result reporting, and supporting utilities.
  *
- * All source files within this folder are responsible for providing the runtime behaviour and internal mechanisms of the framework. These implementations are optimised for both embedded and general C++ environments, ensuring efficiency and reliability.
+ * All source files within this folder are responsible for providing the
+ * runtime behaviour and internal mechanisms of the framework. These
+ * implementations are optimised for both embedded and general C++
+ * environments, ensuring efficiency and reliability.
  *
- * The organisation of the `src` folder promotes maintainability and modularity, enabling clear separation between interface declarations (located in the `include` folder) and implementation details.
+ * The organisation of the `src` folder promotes maintainability and
+ * modularity, enabling a clear separation between interface declarations
+ * (located in the `include` folder) and implementation details.
  */
-
 /**
  * @dir include
  * @brief Public header folder for the µTest++ testing framework.
  * @details
- * The `include` folder contains all public header files for the µTest++ testing framework, providing the primary interface for users and integrators.
+ * The `include` folder contains all public header files for the µTest++
+ * testing framework, providing the primary interface for users and
+ * integrators.
  *
- * This folder encompasses declarations for test suite management, test runner control, result reporting, mathematical utilities, type traits, literals, operators, and supporting utilities. All public API definitions are organised within this folder to ensure clear separation from implementation details, which reside in the `src` folder.
+ * This folder comprises declarations for test suite management, test runner
+ * control, result reporting, mathematical utilities, type traits, literals,
+ * operators, and supporting utilities. All public API definitions are
+ * organised within this folder to ensure a clear separation from
+ * implementation details, which reside in the `src` folder.
  *
- * The structure of the `include` folder promotes modularity, maintainability, and ease of integration, enabling users to access the full capabilities of the framework by including the appropriate headers in their projects.
+ * The structure of the `include` folder promotes modularity, maintainability,
+ * and ease of integration, enabling users to access the full capabilities of
+ * the framework by including the appropriate headers in their projects.
  */
-
- /**
+/**
  * @dir include/micro-os-plus
  * @brief Core public header folder for the µTest++ testing framework.
  * @details
- * The `include/micro-os-plus` folder contains the principal public header files for the µTest++ testing framework, forming the main interface for users and integrators.
+ * The `include/micro-os-plus` folder contains the principal public header
+ * files for the µTest++ testing framework, forming the main interface for
+ * users and integrators.
  *
- * This folder encompasses declarations for all essential framework components, including test suite and test case management, test runner control, result reporting, mathematical utilities, type traits, user-defined literals, operators, reflection utilities, and supporting internal mechanisms.
+ * This folder includes declarations for all essential framework components,
+ * such as test suite and test case management, test runner control, result
+ * reporting, mathematical utilities, type traits, user-defined literals,
+ * operators, reflection utilities, and supporting internal mechanisms.
  *
- * By organising all public API definitions within this folder, the project ensures a clear separation from implementation details (which reside in the `src` folder), thereby promoting modularity, maintainability, and ease of integration.
+ * By organising all public API definitions within this folder, the project
+ * ensures a clear separation from implementation details (which reside in the
+ * `src` folder), thereby promoting modularity, maintainability, and ease of
+ * integration.
  *
- * Users should include the relevant headers from this folder to access the full capabilities of the µTest++ framework in their projects.
+ * Users are encouraged to include the relevant headers from this folder to
+ * access the full capabilities of the µTest++ framework in their projects.
  */
-
 /**
  * @dir include/micro-os-plus/micro-test-plus
- * @brief Public header folder for the core components of the µTest++ testing framework.
+ * @brief Public header folder for the core components of the µTest++ testing
+ * framework.
  * @details
- * The `include/micro-os-plus/micro-test-plus` folder contains the principal public header files for the core functionality of the µTest++ testing framework.
+ * The `include/micro-os-plus/micro-test-plus` folder contains the principal
+ * public header files for the core functionality of the µTest++ testing
+ * framework.
  *
- * This folder provides declarations for essential framework components, including test suite and test case management, test runner and reporter classes, mathematical utilities, type traits, user-defined literals, operators, reflection utilities, and supporting internal mechanisms.
+ * This folder provides declarations for essential framework components,
+ * including test suite and test case management, test runner and reporter
+ * classes, mathematical utilities, type traits, user-defined literals,
+ * operators, reflection utilities, and supporting internal mechanisms.
  *
- * By organising all public API definitions within this folder, the project ensures a clear separation from implementation details (which reside in the `src` folder), thereby promoting modularity, maintainability, and ease of integration.
+ * By consolidating all public API definitions within this folder, the project
+ * ensures a clear distinction from implementation details (which reside in the
+ * `src` folder), thereby promoting modularity, maintainability, and ease of
+ * integration.
  *
- * Users should include the relevant headers from this folder to access the full capabilities of the µTest++ framework in their projects.
+ * Users are advised to include the relevant headers from this folder to access
+ * the full capabilities of the µTest++ framework in their projects.
  */
-
 /**
 
 @defgroup micro-test-plus µTest++
 @ingroup micro-os-plus
-@brief The µTest++ Testing Framework Topics.
+@brief Topics relating to the µTest++ Testing Framework.
 @details
 
-µTest++ is a C++ source code library that provides a lightweight testing
-framework, specifically tailored for embedded systems.
+µTest++ is a C++ source code library that delivers a lightweight testing
+framework, specifically designed for embedded systems.
 
-It offers a modern C++ API.
+It provides a modern C++ API.
 
-The verbosity of the test output may be adjusted using various command-line
+The verbosity of the test output can be adjusted using various command-line
 options.
 
 
 @defgroup micro-test-plus-cpp-api C++ API
-@brief The µTest++ C++ API Topics.
+@brief Topics relating to the µTest++ C++ API.
 @ingroup micro-test-plus
 @details
 
-The implementation of µTest++ makes extensive use of modern C++ features.
-With an emphasis on simplicity, µTest++ provides only a limited set of
-primitives for verifying expectations and assumptions.
+The implementation of µTest++ makes extensive use of modern C++ features. With
+a focus on simplicity, µTest++ offers only a concise set of primitives for
+verifying expectations and assumptions.
 
-No preprocessor macros are utilised; all primitives are implemented directly in
+No preprocessor macros are employed; all primitives are implemented directly in
 C++.
 
 
@@ -119,11 +152,11 @@ C++.
 @ingroup micro-test-plus
 @details
 
-Whilst µTest++ may be employed to test C code without difficulty, its
+Whilst µTest++ can be used to test C code without difficulty, its
 implementation relies extensively on modern C++ features that cannot be
-replicated in C.
+reproduced in C.
 
-Consequently, there are no C equivalents for the C++ definitions provided by
+As a result, there are no C equivalents for the C++ definitions provided by
 µTest++.
 
 
@@ -134,9 +167,9 @@ Consequently, there are no C equivalents for the C++ definitions provided by
 
 ## Description
 
-By default, the µTest++ reporter displays detailed results only for failed test
-cases; successful test cases are summarised in a single line, indicating the
-total number of passed and failed checks.
+By default, the µTest++ reporter presents detailed results solely for failed
+test cases; successful test cases are summarised in a single line, indicating
+the total number of passed and failed checks.
 
 @par Example
 
@@ -161,20 +194,21 @@ test 1
 
 ## Verbosity
 
-To adjust the verbosity, one of the following command-line options may be
+To modify the verbosity, one of the following command-line options may be
 specified:
 
-- `--verbose` – display all expectations, irrespective of the result
+- `--verbose` – display all expectations, irrespective of the outcome
 - `--quiet` – display only the test suite totals
 - `--silent` – suppress all output and return only the exit code
 
 @note
-The source code for this test is located in `tests/src/minimal-test.cpp`.
+The source code for this test is located in the `tests/src/minimal-test.cpp`
+file.
 
 ### Verbose mode
 
 In verbose mode, the µTest++ reporter displays all expectations, regardless of
-their outcome.
+their result.
 
 @par Example
 
@@ -202,7 +236,7 @@ test 2
 
 ### Quiet mode
 
-In quiet mode, the µTest++ reporter displays only the test suite totals.
+In quiet mode, the µTest++ reporter outputs only the overall test suite totals.
 
 @par Example
 
@@ -223,7 +257,7 @@ test 3
 ### Silent mode
 
 In silent mode, the µTest++ reporter suppresses all output, and the framework
-returns only the exit code.
+returns solely the exit code.
 
 @par Example
 
@@ -252,8 +286,8 @@ test 4
 These functions are responsible for initialising the test runner and returning
 the test result as the process exit code.
 
-The most minimal test comprises a single test case with a single expectation;
-for example:
+The simplest test consists of a single test case containing a single
+expectation; for example:
 
 ```cpp
 #include <micro-os-plus/micro-test-plus.h>
@@ -288,12 +322,12 @@ When this test is executed, the output is as follows:
 @brief  Test cases are named sequences of checks.
 @details
 
-Test cases consolidate multiple checks to be performed within the same
+Test cases aggregate multiple checks to be performed within the same
 environment.
 
-An arbitrary number of test cases may be defined, each invoked by calling a
-function parameterised with a name or description, a callable object (typically
-a lambda), and optional arguments.
+Any number of test cases may be defined, each invoked by calling a function
+parameterised with a name or description, a callable object (typically a
+lambda), and optional arguments.
 
 @par Examples
 
@@ -319,8 +353,8 @@ mt::test_case ("Check various conditions with operators", [] {
 @brief  Expectations are checks whose outcomes are reported.
 @details
 
-In contrast to assumptions, failed expectations are reported but do not cause
-the test to terminate.
+Unlike assumptions, failed expectations are reported but do not cause the test
+to terminate.
 
 
 @defgroup micro-test-plus-assumptions Assumptions
@@ -328,7 +362,7 @@ the test to terminate.
 proceed.
 @details
 
-If an assumption fails, the test cannot continue and is immediately aborted.
+If an assumption fails, the test cannot continue and is terminated immediately.
 
 
 @defgroup micro-test-plus-function-comparators Function Comparators
@@ -355,8 +389,8 @@ mt::expect (mt::ge (compute_answer (), 42)) << "answer is >= 42";
 mt::expect (compute_condition ()) << "condition is true";
 ```
 
-When such comparator functions are utilised, failed checks will also display
-the actual values compared during the test; for example:
+When such comparator functions are employed, any failed checks will also
+present the actual values compared during the test; for example:
 
 ```console
   Check failed comparisons
@@ -369,8 +403,8 @@ and 42.000000 != 42.000000))
 
 ### Comparing containers
 
-Containers may be compared for equality. The comparison is performed by
-iterating through and comparing each element.
+Containers can be assessed for equality. The comparison is conducted by
+iterating through each element and evaluating them individually.
 
 @par Examples
 
@@ -383,15 +417,15 @@ mt::expect (mt::ne (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 })
 ```
 
 @defgroup micro-test-plus-logical-functions Logical Functions
-@brief  Functions to be used in logical expressions.
+@brief  Functions utilised in logical expressions.
 @details
 
-Complex expressions may be evaluated in a single statement using the logical
-functions `mt::_and()`, `mt::_or()`, and `mt::_not()`.
+Complex expressions may be evaluated within a single statement by employing the
+logical functions `mt::_and()`, `mt::_or()`, and `mt::_not()`.
 
 @note
 These names are prefixed with an underscore, as `and`, `or`, and `not` are
-reserved keywords in C and C++.
+reserved keywords in both C and C++.
 
 @par Example
 
@@ -401,8 +435,8 @@ mt::expect(mt::_and (mt::eq (compute_answer (), 42), mt::eq (compute_float
 ```
 
 @note
-If the operands are function comparators, it is advisable to use the overloaded
-logical operators `&&`, `||`, and `!` available in the
+When the operands are function comparators, it is recommended to utilise the
+overloaded logical operators `&&`, `||`, and `!` provided within the
 `micro_test_plus::operators` namespace.
 
 
@@ -426,9 +460,9 @@ mt::expect (mt::nothrow ([] { exercise_throw (false); })) << "exception not
 thrown";
 ```
 
-If more sophisticated logic is required, such as expecting multiple exceptions,
-employ an explicit `try` block with multiple `catch` statements, and report the
-results using `expect(true)` or `expect(false)`.
+If more advanced logic is required, such as handling multiple expected
+exceptions, use an explicit `try` block with several `catch` statements, and
+report the outcomes using `expect(true)` or `expect(false)`.
 
 ```cpp
 try
@@ -459,15 +493,15 @@ catch (...)
 As with most other C++ testing frameworks, it is possible to overload the `==`,
 `!=`, `<`, `>`, `<=`, and `>=` operators.
 
-To prevent potential conflicts with operators defined by the application, these
-operators are restricted to operands of specific types and are placed within a
+To avoid potential conflicts with operators defined by the application, these
+operators are limited to operands of specific types and are placed within a
 dedicated namespace (`micro_test_plus::operators`). When applied to standard
-values, the default operators are used; comparisons are performed correctly,
-but in the event of a failure, the actual values are not displayed.
+values, the default operators are utilised; comparisons are performed
+correctly, but in the event of a failure, the actual values are not displayed.
 
 These operators only match operands derived from the local `detail::op` type.
-For constant values, this can be enforced using the provided literals (such as
-`1_i`), or for dynamic values, by using the provided casts (such as
+For constant values, this can be achieved using the provided literals (such as
+`1_i`), or for dynamic values, by employing the provided casts (such as
 `mt::to_i{expression}`), which are in fact constructors of the internal
 classes.
 
@@ -490,9 +524,9 @@ cast)"; mt::expect (compute_answer () != 43_i) << "answer is not 43";
 
 ### Logical operators
 
-The logical operators may be used in exactly the same manner as standard
-operators; however, the enhanced functionality is available only when used with
-typed operands.
+Logical operators may be utilised in precisely the same manner as standard
+operators; however, the enhanced functionality is available exclusively when
+employed with typed operands.
 
 @par Example
 
@@ -505,7 +539,7 @@ mt::expect (compute_answer () == 42_i && compute_float () == 42.0_f);
 @brief Overloaded operators for string comparison.
 @details
 
-In addition to the generic operators, dedicated equality operators are provided
+In addition to the generic operators, specific equality operators are provided
 for `string_view` objects.
 
 @par Examples
@@ -526,10 +560,10 @@ mt::test_case ("Operators", [] {
 
 
 @defgroup micro-test-plus-container-operators Container Operators
-@brief Overloaded operators for comparing containers.
+@brief Overloaded operators for container comparison.
 @details
 
-In addition to the generic operators, dedicated equality operators are also
+In addition to the generic operators, specialised equality operators are also
 provided for containers.
 
 @par Examples
@@ -553,13 +587,13 @@ mt::test_case ("Operators", [] {
 
 
 @defgroup micro-test-plus-literals Literals and Wrappers
-@brief Literals and wrappers.
+@brief Literal operators and wrappers.
 @details
 
-To convert constants into recognised typed operands, the framework defines
-several literal operators within the separate `literals` namespace.
+To convert constants into recognised typed operands, the framework provides
+several literal operators within the dedicated `literals` namespace.
 
-Similarly, for dynamic values, wrappers are provided to convert them into
+Similarly, for dynamic values, wrappers are available to convert them into
 recognised types.
 
 @par Examples
@@ -571,28 +605,26 @@ mt::expect (mt::to_f {expression} == 42_f);
 
 
 @defgroup micro-test-plus-utility-functions Utility Functions
-@brief Functions to assist in string operations.
+@brief Functions to assist with string operations.
 @details
 
-When conducting string operations within tests, it is occasionally necessary to
+When performing string operations within tests, it is sometimes necessary to
 match partial strings or to split lengthy strings.
 
 
-@defgroup micro-test-plus-test-suites Test suites
+@defgroup micro-test-plus-test-suites Test Suites
 @brief Test suites are named sequences of test cases.
 @details
 
-The test cases defined in `main()` are considered to be part of
-the default (or main) test suite, and are executed immediately
-when invoked.
+The test cases defined in `main()` are regarded as part of the default (or
+main) test suite and are executed immediately upon invocation.
 
-For complex applications there can be multiple test
-suites, usually in separate source files.
+For more complex applications, multiple test suites may be defined, typically
+in separate source files.
 
-In order to make self-registration possible, test suites are classes,
-constructed with a name, a callable (usually a lambda
-which chains the execution of the test cases) and optional
-arguments:
+To facilitate self-registration, test suites are implemented as classes,
+constructed with a name, a callable (usually a lambda that chains the execution
+of the test cases), and optional arguments:
 
 ```cpp
 class test_suite : public test_suite_base
@@ -606,16 +638,15 @@ public:
 ```
 
 @note
-It is recommended to instantiate the test suites as static objects.
+It is advisable to instantiate test suites as static objects.
 
-The self-registration is done in the constructor.
-Test suites defined in different compilation units can be executed in any
-order (since the order in which the
-static constructors are invoked is not specified);
-thus there should be no dependencies between test suites.
+Self-registration is performed within the constructor. Test suites defined in
+separate compilation units may be executed in any order, as the sequence in
+which static constructors are invoked is not specified; consequently, there
+should be no dependencies between test suites.
 
-The registered test suites are executed when the function
-`exit_code()` is invoked.
+All registered test suites are executed when the `exit_code()` function is
+called.
 
 @par Examples
 

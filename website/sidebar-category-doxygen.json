@@ -96,7 +96,7 @@
                 },
                 {
                   "type": "doc",
-                  "label": "Test suites",
+                  "label": "Test Suites",
                   "id": "api/groups/micro-test-plus-test-suites"
                 }
               ]

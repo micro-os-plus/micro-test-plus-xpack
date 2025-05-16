@@ -22,7 +22,7 @@ import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/Member
 import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
 import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
 
-# The Test suites Reference
+# The Test Suites Reference
 
 <DoxygenPage version="1.13.2">
 
@@ -42,11 +42,11 @@ Test suites are classes that represent a named group of test cases which self re
 
 ## Description {#details}
 
-The test cases defined in <code>main()</code> are considered to be part of the default (or main) test suite, and are executed immediately when invoked.
+The test cases defined in <code>main()</code> are regarded as part of the default (or main) test suite and are executed immediately upon invocation.
 
-For complex applications there can be multiple test suites, usually in separate source files.
+For more complex applications, multiple test suites may be defined, typically in separate source files.
 
-In order to make self-registration possible, test suites are classes, constructed with a name, a callable (usually a lambda which chains the execution of the test cases) and optional arguments:
+To facilitate self-registration, test suites are implemented as classes, constructed with a name, a callable (usually a lambda that chains the execution of the test cases), and optional arguments:
 
 
 <ProgramListing extension="cpp">
@@ -64,12 +64,12 @@ In order to make self-registration possible, test suites are classes, constructe
 
 
 :::info
-It is recommended to instantiate the test suites as static objects.
+It is advisable to instantiate test suites as static objects.
 :::
 
-The self-registration is done in the constructor. Test suites defined in different compilation units can be executed in any order (since the order in which the static constructors are invoked is not specified); thus there should be no dependencies between test suites.
+Self-registration is performed within the constructor. Test suites defined in separate compilation units may be executed in any order, as the sequence in which static constructors are invoked is not specified; consequently, there should be no dependencies between test suites.
 
-The registered test suites are executed when the function <code>exit&#95;code()</code> is invoked.
+All registered test suites are executed when the <code>exit&#95;code()</code> function is called.
 
 
 <SectionUser title="Examples">

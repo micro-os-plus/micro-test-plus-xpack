@@ -115,17 +115,17 @@ Greater than or equal operator. It matches only if at least one operand is of lo
 
 ## Description {#details}
 
-The <code>operators</code> namespace provides a suite of custom operator overloads to facilitate expressive and type-safe test expressions within the µTest++ framework.
+The <code>operators</code> namespace provides a comprehensive set of custom operator overloads to enable expressive and type-safe test expressions within the µTest++ framework.
 
-These operators include equality, non-equality, relational, and logical operations, specifically designed to work with the framework&#39;s custom types, containers, and string views. They enable concise and readable test assertions, supporting both strongly-typed constants (using user-defined literals) and dynamic values.
+These operators encompass equality, inequality, relational, and logical operations, specifically tailored to operate with the framework&#39;s custom types, containers, and string views. They facilitate concise and readable test assertions, supporting both strongly-typed constants (via user-defined literals) and dynamic values.
 
 
 :::warning
-Please note that these operators may interfere with other operators present in the application under test.
+Please be aware that these operators may conflict with other operators defined within the application under test.
 :::
 
-To minimise such interference, these operators are recognised only for specific types, and generally require constants to be suffixed with literals (such as <code>1<Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/#a1613ccf081248c601bed0f3022fba652">&#95;i</Link></code>), and dynamic values to be cast to the custom types (such as <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/#a1613ccf081248c601bed0f3022fba652">&#95;i(...)</Link></code>).
+To mitigate such conflicts, these operators are recognised only for specific types, and typically require constants to be suffixed with literals (such as <code>1<Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/#a1613ccf081248c601bed0f3022fba652">&#95;i</Link></code>), and dynamic values to be cast to the custom types (such as <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/#a1613ccf081248c601bed0f3022fba652">&#95;i(...)</Link></code>).
 
-All definitions within this namespace are implemented in the <code>include/micro-os-plus</code> folder to maintain a structured and modular codebase.
+All definitions within this namespace are implemented in the <code>include/micro-os-plus</code> folder to ensure a structured and modular codebase.
 
 </DoxygenPage>
