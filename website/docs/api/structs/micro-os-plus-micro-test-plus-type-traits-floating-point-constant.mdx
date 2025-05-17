@@ -103,11 +103,6 @@ Unary minus operator. <Link to="#adcc1ade20fd348fa653623ec6c378d72">More...</Lin
 
 ## Description {#details}
 
-The <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">floating&#95;point&#95;constant</Link></code> struct template provides a compile-time constant value of a floating point type, supporting custom size and precision. It inherits from <code>op</code> to enable unified handling within the µTest++ framework&#39;s type traits and metaprogramming utilities.
-
-This struct template exposes the constant value via a static member, a getter method, and explicit conversion operators. It also provides a unary minus operator to obtain the negative value as a new <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">floating&#95;point&#95;constant</Link></code> instance. The <code>epsilon</code> member defines the precision used for floating point comparisons, calculated based on the specified size.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">The floating point type (e.g., float, double).</ParametersListItem>
 <ParametersListItem name="N">The integral part of the constant value.</ParametersListItem>
@@ -115,8 +110,11 @@ This struct template exposes the constant value via a static member, a getter me
 <ParametersListItem name="Size">The number of decimal digits for the fractional part.</ParametersListItem>
 <ParametersListItem name="P">The sign of the value (1 for positive, -1 for negative). Defaults to 1.</ParametersListItem>
 </ParametersList>
+The <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">floating&#95;point&#95;constant</Link></code> struct template provides a compile-time constant value of a floating point type, supporting custom size and precision. It inherits from <code>op</code> to enable unified handling within the µTest++ framework&#39;s type traits and metaprogramming utilities.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00788">788</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+This struct template exposes the constant value via a static member, a getter method, and explicit conversion operators. It also provides a unary minus operator to obtain the negative value as a new <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">floating&#95;point&#95;constant</Link></code> instance. The <code>epsilon</code> member defines the precision used for floating point comparisons, calculated based on the specified size.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00792">792</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 
 <SectionDefinition>
 
@@ -129,7 +127,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::floating&#95;point&#95;constant&lt; T, N, D, Size, P &gt;::value&#95;type =  T</>}>
 The type of the constant value.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00793">793</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00797">797</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -146,11 +144,9 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["constexpr", "static"]}>
 The epsilon value used for floating point comparisons.
 
----
-
 Calculated as 1 divided by 10 raised to the power of (Size - 1).
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00801">801</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00805">805</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### value {#ab0e05de518c208a6a762c7377d2f2332}
@@ -161,11 +157,9 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["constexpr", "static"]}>
 The constant value.
 
----
-
 Computed as <code>P &#42; (N + D / 10^Size)</code>.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00809">809</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00813">813</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -182,14 +176,13 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["inline", "nodiscard", "constexpr"]}>
 Getter for the constant value.
 
----
-
-Returns the compile-time floating point constant value. 
 <SectionUser title="Returns">
 The constant value.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00848">848</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Returns the compile-time floating point constant value.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00855">855</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### operator value&#95;type() {#a0a877099bf7ee9fcde1446cac65511e6}
@@ -200,14 +193,13 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["inline", "explicit", "nodiscard", "constexpr"]}>
 Explicit conversion operator to <Link to="#a3538821b6929e9b13f6a3ea763e1627e">value&#95;type</Link>.
 
----
-
-Allows explicit conversion to the underlying floating point value type. 
 <SectionUser title="Returns">
 The constant value as type <code><Link to="#a3538821b6929e9b13f6a3ea763e1627e">value&#95;type</Link></code>.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00835">835</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Allows explicit conversion to the underlying floating point value type.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00841">841</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### operator-() {#adcc1ade20fd348fa653623ec6c378d72}
@@ -218,14 +210,13 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["inline", "nodiscard", "constexpr"]}>
 Unary minus operator.
 
----
-
-Returns a new <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">floating&#95;point&#95;constant</Link></code> instance representing the negative of the current value. 
 <SectionUser title="Returns">
 A <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">floating&#95;point&#95;constant</Link></code> with value <code>-value</code>.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00821">821</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Returns a new <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">floating&#95;point&#95;constant</Link></code> instance representing the negative of the current value.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00826">826</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

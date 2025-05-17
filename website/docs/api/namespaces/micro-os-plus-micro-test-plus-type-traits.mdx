@@ -258,14 +258,10 @@ All definitions within this namespace are implemented in the <code>include/micro
   prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::requires&#95;t =  typename requires&#95;&lt;Cond&gt;::type</>}>
 Alias template for extracting the <code>type</code> member from <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires-">requires&#95;</Link></code>.
 
----
-
-The <code><Link to="#a1cbbf299a006b4692df250ef2a6fc7c2">requires&#95;t</Link></code> alias template simplifies the use of the <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires-">requires&#95;</Link></code> struct template by directly exposing the nested <code>type</code> member. It is commonly used to enforce compile-time requirements in template declarations.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Cond">The boolean condition to be checked at compile time.</ParametersListItem>
 </ParametersList>
+The <code><Link to="#a1cbbf299a006b4692df250ef2a6fc7c2">requires&#95;t</Link></code> alias template simplifies the use of the <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires-">requires&#95;</Link></code> struct template by directly exposing the nested <code>type</code> member. It is commonly used to enforce compile-time requirements in template declarations.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00664">664</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
@@ -284,11 +280,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["constexpr", "static"]}>
 Variable template to determine if a type provides an <code>epsilon</code> member.
 
----
-
-The <code>has&#95;epsilon&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> defines a member named <code>epsilon</code>. This trait is determined at compile time using SFINAE and the <code>is&#95;valid</code> utility, and is used throughout the µTest++ framework to enable generic handling of types that represent floating-point values or require precision control.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">The type to be checked for the presence of an <code>epsilon</code> member.</ParametersListItem>
 </ParametersList>
@@ -297,6 +288,7 @@ The <code>has&#95;epsilon&#95;v</code> variable template evaluates to <code>true
 <ParametersListItem name="true">if <code>T</code> has a member named <code>epsilon</code>.</ParametersListItem>
 <ParametersListItem name="false">otherwise.</ParametersListItem>
 </ParametersList>
+The <code>has&#95;epsilon&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> defines a member named <code>epsilon</code>. This trait is determined at compile time using SFINAE and the <code>is&#95;valid</code> utility, and is used throughout the µTest++ framework to enable generic handling of types that represent floating-point values or require precision control.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00442">442</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
@@ -309,11 +301,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["constexpr", "static"]}>
 Variable template to determine if a type provides a static <code>npos</code> member.
 
----
-
-The <code>has&#95;npos&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> defines a static member named <code>npos</code>. This trait is determined at compile time using SFINAE and the <code>is&#95;valid</code> utility, and is used throughout the µTest++ framework to enable generic handling of types that follow the standard string or container conventions.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">The type to be checked for the presence of a static <code>npos</code> member.</ParametersListItem>
 </ParametersList>
@@ -322,6 +309,7 @@ The <code>has&#95;npos&#95;v</code> variable template evaluates to <code>true</c
 <ParametersListItem name="true">if <code>T</code> has a static member named <code>npos</code>.</ParametersListItem>
 <ParametersListItem name="false">otherwise.</ParametersListItem>
 </ParametersList>
+The <code>has&#95;npos&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> defines a static member named <code>npos</code>. This trait is determined at compile time using SFINAE and the <code>is&#95;valid</code> utility, and is used throughout the µTest++ framework to enable generic handling of types that follow the standard string or container conventions.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00401">401</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
@@ -334,11 +322,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["constexpr", "static"]}>
 Variable template to determine if a type provides a <code>value</code> member.
 
----
-
-The <code>has&#95;value&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> defines a member named <code>value</code>. This trait is determined at compile time using SFINAE and the <code>is&#95;valid</code> utility, and is used throughout the µTest++ framework to enable generic handling of types that encapsulate a value, such as wrappers or constant types.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">The type to be checked for the presence of a <code>value</code> member.</ParametersListItem>
 </ParametersList>
@@ -347,6 +330,7 @@ The <code>has&#95;value&#95;v</code> variable template evaluates to <code>true</
 <ParametersListItem name="true">if <code>T</code> has a member named <code>value</code>.</ParametersListItem>
 <ParametersListItem name="false">otherwise.</ParametersListItem>
 </ParametersList>
+The <code>has&#95;value&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> defines a member named <code>value</code>. This trait is determined at compile time using SFINAE and the <code>is&#95;valid</code> utility, and is used throughout the µTest++ framework to enable generic handling of types that encapsulate a value, such as wrappers or constant types.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00421">421</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
@@ -360,11 +344,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["constexpr", "static"]}>
 Variable template to determine if a type models a container.
 
----
-
-The <code>is&#95;container&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> provides both <code>begin()</code> and <code>end()</code> member functions, indicating that it models a standard container concept. This trait is determined at compile time using SFINAE and is&#95;valid, and is used throughout the µTest++ framework to enable generic handling of container types in template metaprogramming.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">The type to be checked for container-like behaviour.</ParametersListItem>
 </ParametersList>
@@ -373,6 +352,7 @@ The <code>is&#95;container&#95;v</code> variable template evaluates to <code>tru
 <ParametersListItem name="true">if <code>T</code> has both <code>begin()</code> and <code>end()</code> member functions.</ParametersListItem>
 <ParametersListItem name="false">otherwise.</ParametersListItem>
 </ParametersList>
+The <code>is&#95;container&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> provides both <code>begin()</code> and <code>end()</code> member functions, indicating that it models a standard container concept. This trait is determined at compile time using SFINAE and is&#95;valid, and is used throughout the µTest++ framework to enable generic handling of container types in template metaprogramming.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00380">380</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
@@ -385,11 +365,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["constexpr"]}>
 Variable template to determine if one type is convertible to another.
 
----
-
-The <code>is&#95;convertible&#95;v</code> variable template evaluates to <code>true</code> if the type <code>From</code> is implicitly convertible to the type <code>To</code>, and <code>false</code> otherwise. This trait is determined at compile time and is used throughout the µTest++ framework to enable type-safe conversions and requirements checking in template metaprogramming.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="From">The source type to be checked for convertibility.</ParametersListItem>
 <ParametersListItem name="To">The target type to which conversion is tested.</ParametersListItem>
@@ -399,6 +374,7 @@ The <code>is&#95;convertible&#95;v</code> variable template evaluates to <code>t
 <ParametersListItem name="true">if <code>From</code> is convertible to <code>To</code>.</ParametersListItem>
 <ParametersListItem name="false">otherwise.</ParametersListItem>
 </ParametersList>
+The <code>is&#95;convertible&#95;v</code> variable template evaluates to <code>true</code> if the type <code>From</code> is implicitly convertible to the type <code>To</code>, and <code>false</code> otherwise. This trait is determined at compile time and is used throughout the µTest++ framework to enable type-safe conversions and requirements checking in template metaprogramming.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00607">607</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
@@ -411,13 +387,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["constexpr"]}>
 Variable template to determine if a type is a floating point type.
 
----
-
-The <code>is&#95;floating&#95;point&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> is a floating point type (<code>float</code>, <code>double</code>, or <code>long double</code>). For all other types, it evaluates to <code>false</code>. This trait is used throughout the µTest++ framework to enable type-safe handling and specialisation for floating point types in template metaprogramming.
-
-Specialisations are provided for <code>float</code>, <code>double</code>, and <code>long double</code>, each evaluating to <code>true</code>.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">The type to be checked for floating point classification.</ParametersListItem>
 </ParametersList>
@@ -426,6 +395,9 @@ Specialisations are provided for <code>float</code>, <code>double</code>, and <c
 <ParametersListItem name="true">if <code>T</code> is a floating point type.</ParametersListItem>
 <ParametersListItem name="false">otherwise.</ParametersListItem>
 </ParametersList>
+The <code>is&#95;floating&#95;point&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> is a floating point type (<code>float</code>, <code>double</code>, or <code>long double</code>). For all other types, it evaluates to <code>false</code>. This trait is used throughout the µTest++ framework to enable type-safe handling and specialisation for floating point types in template metaprogramming.
+
+Specialisations are provided for <code>float</code>, <code>double</code>, and <code>long double</code>, each evaluating to <code>true</code>.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00465">465</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
@@ -436,8 +408,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::is&#95;floating&#95;point&#95;v&lt; double &gt; = true</>}
   labels = {["constexpr"]}>
 Variable template specialisation indicating that <code>double</code> is a floating point type.
-
----
 
 This specialisation of the <code>is&#95;floating&#95;point&#95;v</code> variable template evaluates to <code>true</code> for the <code>double</code> type, confirming that it is recognised as a floating point type within the µTest++ framework. This enables type-safe handling and specialisation for floating point types in template metaprogramming.
 
@@ -456,8 +426,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["constexpr"]}>
 Variable template specialisation indicating that <code>float</code> is a floating point type.
 
----
-
 This specialisation of the <code>is&#95;floating&#95;point&#95;v</code> variable template evaluates to <code>true</code> for the <code>float</code> type, confirming that it is recognised as a floating point type within the µTest++ framework. This enables type-safe handling and specialisation for floating point types in template metaprogramming.
 
 
@@ -474,8 +442,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::is&#95;floating&#95;point&#95;v&lt; long double &gt; = true</>}
   labels = {["constexpr"]}>
 Variable template specialisation indicating that <code>long double</code> is a floating point type.
-
----
 
 This specialisation of the <code>is&#95;floating&#95;point&#95;v</code> variable template evaluates to <code>true</code> for the <code>long double</code> type, confirming that it is recognised as a floating point type within the µTest++ framework. This enables type-safe handling and specialisation for floating point types in template metaprogramming.
 
@@ -495,11 +461,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["constexpr"]}>
 Variable template to determine if a type derives from <code>op</code>.
 
----
-
-The <code>is&#95;op&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> is derived from the <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">type&#95;traits::op</Link></code> base struct, and <code>false</code> otherwise. This trait is determined at compile time using compiler intrinsics and is used throughout the µTest++ framework to enable generic handling and detection of operator-like or value wrapper types in template metaprogramming.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">The type to be checked for derivation from <code>op</code>.</ParametersListItem>
 </ParametersList>
@@ -508,8 +469,9 @@ The <code>is&#95;op&#95;v</code> variable template evaluates to <code>true</code
 <ParametersListItem name="true">if <code>T</code> is derived from <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">type&#95;traits::op</Link></code>.</ParametersListItem>
 <ParametersListItem name="false">otherwise.</ParametersListItem>
 </ParametersList>
+The <code>is&#95;op&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> is derived from the <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">type&#95;traits::op</Link></code> base struct, and <code>false</code> otherwise. This trait is determined at compile time using compiler intrinsics and is used throughout the µTest++ framework to enable generic handling and detection of operator-like or value wrapper types in template metaprogramming.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00939">939</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00948">948</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -525,11 +487,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>T &amp;&amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::declval (void)</>}>
 Utility function template to simulate std::declval for type deduction.
 
----
-
-The <code>declval</code> function template provides a mechanism for obtaining an rvalue reference to a type <code>T</code> without requiring an actual object. This is primarily used in unevaluated contexts, such as within <code>decltype</code>, to deduce types during template metaprogramming in the µTest++ framework.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">The type for which an rvalue reference is required.</ParametersListItem>
 </ParametersList>
@@ -543,6 +500,8 @@ None.
 An rvalue reference to type <code>T</code>.
 </SectionUser>
 
+The <code>declval</code> function template provides a mechanism for obtaining an rvalue reference to a type <code>T</code> without requiring an actual object. This is primarily used in unevaluated contexts, such as within <code>decltype</code>, to deduce types during template metaprogramming in the µTest++ framework.
+
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00335">335</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
@@ -554,11 +513,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["constexpr"]}>
 Fallback function template for is&#95;convertible, returns false if the conversion is not valid.
 
----
-
-This overload is selected when the primary <code>is&#95;convertible</code> template cannot be instantiated, providing a <code>false</code> result for invalid conversions.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="...Unused">Unused template parameters.</ParametersListItem>
 </ParametersList>
@@ -566,6 +520,7 @@ This overload is selected when the primary <code>is&#95;convertible</code> templ
 <ParametersList title="Return Values">
 <ParametersListItem name="false">indicating the conversion is not valid.</ParametersListItem>
 </ParametersList>
+This overload is selected when the primary <code>is&#95;convertible</code> template cannot be instantiated, providing a <code>false</code> result for invalid conversions.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00584">584</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
@@ -588,11 +543,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["constexpr"]}>
 Fallback function template for is&#95;valid, returns false if the expression is not valid.
 
----
-
-This overload is selected when the primary <code>is&#95;valid</code> template cannot be instantiated, providing a <code>false</code> result for invalid expressions.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="...Ts">The argument types to be tested.</ParametersListItem>
 </ParametersList>
@@ -600,6 +550,8 @@ This overload is selected when the primary <code>is&#95;valid</code> template ca
 <SectionUser title="Returns">
 <code>false</code> indicating the expression is not valid for the given argument types.
 </SectionUser>
+
+This overload is selected when the primary <code>is&#95;valid</code> template cannot be instantiated, providing a <code>false</code> result for invalid expressions.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00358">358</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>

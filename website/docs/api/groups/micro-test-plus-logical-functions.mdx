@@ -89,13 +89,6 @@ When the operands are function comparators, it is recommended to use the overloa
   labels = {["nodiscard", "constexpr"]}>
 Generic logical <b>and</b> operation.
 
----
-
-The <code>&#95;and</code> function template provides a generic logical conjunction for any expression types. It constructs a logical conjunction object that can be used within the µTest++ framework to assert that both given conditions are true. This function is typically used in test expectations and assertions to combine logical expressions or custom comparators.
-
-The underscore in the function name is intentional to differentiate it from the standard logical and operator.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
 <ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
@@ -110,7 +103,11 @@ The underscore in the function name is intentional to differentiate it from the 
 An object that evaluates to true if both operand expressions are true.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00707">707</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+The <code>&#95;and</code> function template provides a generic logical conjunction for any expression types. It constructs a logical conjunction object that can be used within the µTest++ framework to assert that both given conditions are true. This function is typically used in test expectations and assertions to combine logical expressions or custom comparators.
+
+The underscore in the function name is intentional to differentiate it from the standard logical and operator.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00686">686</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### &#95;not() {#gad9ad936174faf965cffe4493e2b64cf0}
@@ -120,13 +117,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;not (const Expr&#95;T &amp; expr)</>}
   labels = {["nodiscard", "constexpr"]}>
 Generic logical <b>not</b> operation.
-
----
-
-The <code>&#95;not</code> function template provides a generic logical negation for any expression type. It constructs a logical negator object that can be used within the µTest++ framework to assert that a given condition is false. This function is typically used in test expectations and assertions to invert logical expressions or custom comparators.
-
-The underscore in the function name is intentional to differentiate it from the standard logical not operator.
-
 
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Expr&#95;T">Type of the operand.</ParametersListItem>
@@ -140,7 +130,11 @@ The underscore in the function name is intentional to differentiate it from the 
 An object that evaluates to true if the operand is false.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00678">678</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+The <code>&#95;not</code> function template provides a generic logical negation for any expression type. It constructs a logical negator object that can be used within the µTest++ framework to assert that a given condition is false. This function is typically used in test expectations and assertions to invert logical expressions or custom comparators.
+
+The underscore in the function name is intentional to differentiate it from the standard logical not operator.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00657">657</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### &#95;or() {#gad32b40e4b0022b276fa3b357b98a33c5}
@@ -150,13 +144,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;or (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
 Generic logical <b>or</b> operation.
-
----
-
-The <code>&#95;or</code> function template provides a generic logical disjunction for any expression types. It constructs a logical disjunction object that can be used within the µTest++ framework to assert that at least one of the given conditions is true. This function is typically used in test expectations and assertions to combine logical expressions or custom comparators.
-
-The underscore in the function name is intentional to differentiate it from the standard logical or operator.
-
 
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
@@ -172,7 +159,11 @@ The underscore in the function name is intentional to differentiate it from the 
 An object that evaluates to true if at least one of the operand expressions is true.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00736">736</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+The <code>&#95;or</code> function template provides a generic logical disjunction for any expression types. It constructs a logical disjunction object that can be used within the µTest++ framework to assert that at least one of the given conditions is true. This function is typically used in test expectations and assertions to combine logical expressions or custom comparators.
+
+The underscore in the function name is intentional to differentiate it from the standard logical or operator.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00715">715</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

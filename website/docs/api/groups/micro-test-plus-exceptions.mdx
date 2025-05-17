@@ -119,13 +119,6 @@ If more advanced logic is required, such as handling multiple expected exception
   labels = {["nodiscard", "constexpr"]}>
 Check if a callable does not throw an exception.
 
----
-
-The <code>nothrow</code> function template verifies whether invoking the provided callable object does not result in the throwing of any exception within the µTest++ framework. This is useful for testing exception safety and ensuring that code under test does not unexpectedly signal error conditions.
-
-The function returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Callable&#95;T">The type of the callable object to be invoked.</ParametersListItem>
 </ParametersList>
@@ -138,7 +131,11 @@ The function returns an output stream, allowing optional messages to be appended
 An output stream to write optional messages.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00340">340</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+The <code>nothrow</code> function template verifies whether invoking the provided callable object does not result in the throwing of any exception within the µTest++ framework. This is useful for testing exception safety and ensuring that code under test does not unexpectedly signal error conditions.
+
+The function returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00319">319</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### throws() {#gaf8f7602f40119da514be2a0bfc4b70f5}
@@ -148,13 +145,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::throws (const Callable&#95;T &amp; func)</>}
   labels = {["nodiscard", "constexpr"]}>
 Check if a callable throws a specific exception.
-
----
-
-The <code>throws</code> function template verifies whether invoking the provided callable object results in the throwing of a specific exception type within the µTest++ framework. This is useful for testing error handling and exception safety in code under test.
-
-The function returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes.
-
 
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Exception&#95;T">The type of the exception expected to be thrown.</ParametersListItem>
@@ -169,7 +159,11 @@ The function returns an output stream, allowing optional messages to be appended
 An output stream to write optional messages.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00290">290</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+The <code>throws</code> function template verifies whether invoking the provided callable object results in the throwing of a specific exception type within the µTest++ framework. This is useful for testing error handling and exception safety in code under test.
+
+The function returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00269">269</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### throws() {#ga8bf54756e4122c6a0bd123b4621e60e2}
@@ -179,13 +173,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::throws (const Callable&#95;T &amp; func)</>}
   labels = {["nodiscard", "constexpr"]}>
 Check if a callable throws an exception (any exception).
-
----
-
-The <code>throws</code> function template verifies whether invoking the provided callable object results in the throwing of any exception within the µTest++ framework. This is useful for testing general exception safety and ensuring that code under test properly signals error conditions.
-
-The function returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes.
-
 
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Callable&#95;T">The type of the callable object to be invoked.</ParametersListItem>
@@ -199,7 +186,11 @@ The function returns an output stream, allowing optional messages to be appended
 An output stream to write optional messages.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00315">315</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+The <code>throws</code> function template verifies whether invoking the provided callable object results in the throwing of any exception within the µTest++ framework. This is useful for testing general exception safety and ensuring that code under test properly signals error conditions.
+
+The function returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00294">294</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

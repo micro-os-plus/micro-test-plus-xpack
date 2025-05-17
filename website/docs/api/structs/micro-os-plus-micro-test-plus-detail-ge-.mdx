@@ -109,6 +109,10 @@ Retrieves the right-hand operand. <Link to="#a4ff1ed92d8ed883866127c3fcab9c9f5">
 
 ## Description {#details}
 
+<ParametersList title="Template Parameters">
+<ParametersListItem name="Lhs&#95;T">The type of the left-hand operand.</ParametersListItem>
+<ParametersListItem name="Rhs&#95;T">The type of the right-hand operand.</ParametersListItem>
+</ParametersList>
 The <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/ge-">ge&#95;</Link></code> struct template provides a type-safe mechanism for evaluating whether the left-hand operand is greater than or equal to the right-hand operand within the framework.
 
 This comparator supports a variety of operand types, including those with static values and generic types. For types with static values, the comparison is performed directly. For all other types, the generic getter is used to retrieve and compare the values.
@@ -116,12 +120,6 @@ This comparator supports a variety of operand types, including those with static
 The implementation is optimised for use in embedded environments and supports both compile-time and run-time evaluation.
 
 All definitions are intended for internal use within the framework and are implemented in the <code>include/micro-os-plus</code> folder to maintain a structured and modular codebase.
-
-
-<ParametersList title="Template Parameters">
-<ParametersListItem name="Lhs&#95;T">The type of the left-hand operand.</ParametersListItem>
-<ParametersListItem name="Rhs&#95;T">The type of the right-hand operand.</ParametersListItem>
-</ParametersList>
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00720">720</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 
@@ -173,15 +171,11 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["inline", "constexpr"]}>
 Constructs a greater than or equal comparator for the given operands.
 
----
-
-Evaluates whether the left-hand operand is greater than or equal to the right-hand operand at construction, supporting static values and generic types. The result is stored in the <code>value&#95;</code> member for efficient access.
-
-
 <ParametersList title="Parameters">
 <ParametersListItem name="lhs">The left-hand operand.</ParametersListItem>
 <ParametersListItem name="rhs">The right-hand operand.</ParametersListItem>
 </ParametersList>
+Evaluates whether the left-hand operand is greater than or equal to the right-hand operand at construction, supporting static values and generic types. The result is stored in the <code>value&#95;</code> member for efficient access.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00735">735</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
@@ -200,11 +194,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["inline", "nodiscard", "constexpr"]}>
 Retrieves the left-hand operand.
 
----
-
-Returns the value of the left-hand operand, applying the generic getter to ensure correct extraction for both custom and standard types.
-
-
 <SectionUser title="Parameters">
 None.
 </SectionUser>
@@ -213,6 +202,8 @@ None.
 <SectionUser title="Returns">
 The extracted left-hand operand.
 </SectionUser>
+
+Returns the value of the left-hand operand, applying the generic getter to ensure correct extraction for both custom and standard types.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00796">796</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
@@ -225,11 +216,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["inline", "nodiscard", "constexpr"]}>
 Conversion operator to boolean.
 
----
-
-Returns the result of the greater than or equal comparison.
-
-
 <SectionUser title="Parameters">
 None.
 </SectionUser>
@@ -239,6 +225,7 @@ None.
 <ParametersListItem name="true">The left-hand operand is greater than or equal to the right-hand operand.</ParametersListItem>
 <ParametersListItem name="false">Otherwise.</ParametersListItem>
 </ParametersList>
+Returns the result of the greater than or equal comparison.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00778">778</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
@@ -251,11 +238,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["inline", "nodiscard", "constexpr"]}>
 Retrieves the right-hand operand.
 
----
-
-Returns the value of the right-hand operand, applying the generic getter to ensure correct extraction for both custom and standard types.
-
-
 <SectionUser title="Parameters">
 None.
 </SectionUser>
@@ -264,6 +246,8 @@ None.
 <SectionUser title="Returns">
 The extracted right-hand operand.
 </SectionUser>
+
+Returns the value of the right-hand operand, applying the generic getter to ensure correct extraction for both custom and standard types.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00814">814</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>

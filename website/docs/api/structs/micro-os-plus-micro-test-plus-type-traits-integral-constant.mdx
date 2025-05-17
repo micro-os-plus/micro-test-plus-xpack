@@ -83,8 +83,8 @@ Getter for the constant value. <Link to="#acb78deb0adea412045e1305280a443f1">Mor
 
 <MembersIndexItem
   type="constexpr"
-  name={<><Link to="#acb385717b4e9d0c6995cbec5e31b65e2">operator value&#95;type</Link> () const</>}>
-Explicit conversion operator to <Link to="#a30307d0cc6b010e9b42ec98753b6bec1">value&#95;type</Link>. <Link to="#acb385717b4e9d0c6995cbec5e31b65e2">More...</Link>
+  name={<><Link to="#a7fc0c3908f315982ce70d0439ea78a06">operator value&#95;type</Link> (void) const</>}>
+Explicit conversion operator to <Link to="#a30307d0cc6b010e9b42ec98753b6bec1">value&#95;type</Link>. <Link to="#a7fc0c3908f315982ce70d0439ea78a06">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
@@ -97,14 +97,12 @@ Unary minus operator. <Link to="#a7074d786704fd94b5342be3de7c86790">More...</Lin
 
 ## Description {#details}
 
-The <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">integral&#95;constant</Link></code> struct template provides a compile-time constant value of an integral type, with additional utility features. It inherits from <code>op</code> to enable unified handling within the µTest++ framework&#39;s type traits and metaprogramming utilities.
-
-This struct template exposes the constant value via a static member, a getter method, and explicit conversion operators. It also provides a unary minus operator to obtain the negative value as a new <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">integral&#95;constant</Link></code> instance.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="N">The compile-time constant value.</ParametersListItem>
 </ParametersList>
+The <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">integral&#95;constant</Link></code> struct template provides a compile-time constant value of an integral type, with additional utility features. It inherits from <code>op</code> to enable unified handling within the µTest++ framework&#39;s type traits and metaprogramming utilities.
+
+This struct template exposes the constant value via a static member, a getter method, and explicit conversion operators. It also provides a unary minus operator to obtain the negative value as a new <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">integral&#95;constant</Link></code> instance.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00705">705</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 
@@ -153,11 +151,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["inline", "nodiscard", "constexpr"]}>
 Getter for the constant value.
 
----
-
-Returns the compile-time constant value.
-
-
 <SectionUser title="Parameters">
 None.
 </SectionUser>
@@ -167,25 +160,31 @@ None.
 The constant value.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00755">755</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Returns the compile-time constant value.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00759">759</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
-### operator value&#95;type() {#acb385717b4e9d0c6995cbec5e31b65e2}
+### operator value&#95;type() {#a7fc0c3908f315982ce70d0439ea78a06}
 
 <MemberDefinition
   template={<>template &lt;auto N&gt;</>}
-  prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::integral&#95;constant&lt; N &gt;::operator value&#95;type () const</>}
+  prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::integral&#95;constant&lt; N &gt;::operator value&#95;type (void) const</>}
   labels = {["inline", "explicit", "nodiscard", "constexpr"]}>
 Explicit conversion operator to <Link to="#a30307d0cc6b010e9b42ec98753b6bec1">value&#95;type</Link>.
 
----
+<SectionUser title="Parameters">
+None.
+</SectionUser>
 
-Allows explicit conversion to the underlying value type. 
+
 <SectionUser title="Returns">
 The constant value as type <code><Link to="#a30307d0cc6b010e9b42ec98753b6bec1">value&#95;type</Link></code>.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00739">739</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Allows explicit conversion to the underlying value type.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00743">743</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### operator-() {#a7074d786704fd94b5342be3de7c86790}
@@ -196,14 +195,13 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["inline", "nodiscard", "constexpr"]}>
 Unary minus operator.
 
----
-
-Returns a new <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">integral&#95;constant</Link></code> instance representing the negative of the current value. 
 <SectionUser title="Returns">
 An <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">integral&#95;constant</Link></code> with value <code>-N</code>.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00726">726</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Returns a new <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">integral&#95;constant</Link></code> instance representing the negative of the current value.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00727">727</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

@@ -295,14 +295,10 @@ This file is intended for internal use within the framework and should not be in
   prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::requires&#95;t =  typename requires&#95;&lt;Cond&gt;::type</>}>
 Alias template for extracting the <code>type</code> member from <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires-">requires&#95;</Link></code>.
 
----
-
-The <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a1cbbf299a006b4692df250ef2a6fc7c2">requires&#95;t</Link></code> alias template simplifies the use of the <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires-">requires&#95;</Link></code> struct template by directly exposing the nested <code>type</code> member. It is commonly used to enforce compile-time requirements in template declarations.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Cond">The boolean condition to be checked at compile time.</ParametersListItem>
 </ParametersList>
+The <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a1cbbf299a006b4692df250ef2a6fc7c2">requires&#95;t</Link></code> alias template simplifies the use of the <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires-">requires&#95;</Link></code> struct template by directly exposing the nested <code>type</code> member. It is commonly used to enforce compile-time requirements in template declarations.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00664">664</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
@@ -321,11 +317,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["constexpr", "static"]}>
 Variable template to determine if a type provides an <code>epsilon</code> member.
 
----
-
-The <code>has&#95;epsilon&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> defines a member named <code>epsilon</code>. This trait is determined at compile time using SFINAE and the <code>is&#95;valid</code> utility, and is used throughout the µTest++ framework to enable generic handling of types that represent floating-point values or require precision control.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">The type to be checked for the presence of an <code>epsilon</code> member.</ParametersListItem>
 </ParametersList>
@@ -334,6 +325,7 @@ The <code>has&#95;epsilon&#95;v</code> variable template evaluates to <code>true
 <ParametersListItem name="true">if <code>T</code> has a member named <code>epsilon</code>.</ParametersListItem>
 <ParametersListItem name="false">otherwise.</ParametersListItem>
 </ParametersList>
+The <code>has&#95;epsilon&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> defines a member named <code>epsilon</code>. This trait is determined at compile time using SFINAE and the <code>is&#95;valid</code> utility, and is used throughout the µTest++ framework to enable generic handling of types that represent floating-point values or require precision control.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00442">442</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
@@ -346,11 +338,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["constexpr", "static"]}>
 Variable template to determine if a type provides a static <code>npos</code> member.
 
----
-
-The <code>has&#95;npos&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> defines a static member named <code>npos</code>. This trait is determined at compile time using SFINAE and the <code>is&#95;valid</code> utility, and is used throughout the µTest++ framework to enable generic handling of types that follow the standard string or container conventions.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">The type to be checked for the presence of a static <code>npos</code> member.</ParametersListItem>
 </ParametersList>
@@ -359,6 +346,7 @@ The <code>has&#95;npos&#95;v</code> variable template evaluates to <code>true</c
 <ParametersListItem name="true">if <code>T</code> has a static member named <code>npos</code>.</ParametersListItem>
 <ParametersListItem name="false">otherwise.</ParametersListItem>
 </ParametersList>
+The <code>has&#95;npos&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> defines a static member named <code>npos</code>. This trait is determined at compile time using SFINAE and the <code>is&#95;valid</code> utility, and is used throughout the µTest++ framework to enable generic handling of types that follow the standard string or container conventions.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00401">401</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
@@ -371,11 +359,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["constexpr", "static"]}>
 Variable template to determine if a type provides a <code>value</code> member.
 
----
-
-The <code>has&#95;value&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> defines a member named <code>value</code>. This trait is determined at compile time using SFINAE and the <code>is&#95;valid</code> utility, and is used throughout the µTest++ framework to enable generic handling of types that encapsulate a value, such as wrappers or constant types.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">The type to be checked for the presence of a <code>value</code> member.</ParametersListItem>
 </ParametersList>
@@ -384,6 +367,7 @@ The <code>has&#95;value&#95;v</code> variable template evaluates to <code>true</
 <ParametersListItem name="true">if <code>T</code> has a member named <code>value</code>.</ParametersListItem>
 <ParametersListItem name="false">otherwise.</ParametersListItem>
 </ParametersList>
+The <code>has&#95;value&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> defines a member named <code>value</code>. This trait is determined at compile time using SFINAE and the <code>is&#95;valid</code> utility, and is used throughout the µTest++ framework to enable generic handling of types that encapsulate a value, such as wrappers or constant types.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00421">421</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
@@ -397,11 +381,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["constexpr", "static"]}>
 Variable template to determine if a type models a container.
 
----
-
-The <code>is&#95;container&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> provides both <code>begin()</code> and <code>end()</code> member functions, indicating that it models a standard container concept. This trait is determined at compile time using SFINAE and is&#95;valid, and is used throughout the µTest++ framework to enable generic handling of container types in template metaprogramming.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">The type to be checked for container-like behaviour.</ParametersListItem>
 </ParametersList>
@@ -410,6 +389,7 @@ The <code>is&#95;container&#95;v</code> variable template evaluates to <code>tru
 <ParametersListItem name="true">if <code>T</code> has both <code>begin()</code> and <code>end()</code> member functions.</ParametersListItem>
 <ParametersListItem name="false">otherwise.</ParametersListItem>
 </ParametersList>
+The <code>is&#95;container&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> provides both <code>begin()</code> and <code>end()</code> member functions, indicating that it models a standard container concept. This trait is determined at compile time using SFINAE and is&#95;valid, and is used throughout the µTest++ framework to enable generic handling of container types in template metaprogramming.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00380">380</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
@@ -422,11 +402,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["constexpr"]}>
 Variable template to determine if one type is convertible to another.
 
----
-
-The <code>is&#95;convertible&#95;v</code> variable template evaluates to <code>true</code> if the type <code>From</code> is implicitly convertible to the type <code>To</code>, and <code>false</code> otherwise. This trait is determined at compile time and is used throughout the µTest++ framework to enable type-safe conversions and requirements checking in template metaprogramming.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="From">The source type to be checked for convertibility.</ParametersListItem>
 <ParametersListItem name="To">The target type to which conversion is tested.</ParametersListItem>
@@ -436,6 +411,7 @@ The <code>is&#95;convertible&#95;v</code> variable template evaluates to <code>t
 <ParametersListItem name="true">if <code>From</code> is convertible to <code>To</code>.</ParametersListItem>
 <ParametersListItem name="false">otherwise.</ParametersListItem>
 </ParametersList>
+The <code>is&#95;convertible&#95;v</code> variable template evaluates to <code>true</code> if the type <code>From</code> is implicitly convertible to the type <code>To</code>, and <code>false</code> otherwise. This trait is determined at compile time and is used throughout the µTest++ framework to enable type-safe conversions and requirements checking in template metaprogramming.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00607">607</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
@@ -448,13 +424,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["constexpr"]}>
 Variable template to determine if a type is a floating point type.
 
----
-
-The <code>is&#95;floating&#95;point&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> is a floating point type (<code>float</code>, <code>double</code>, or <code>long double</code>). For all other types, it evaluates to <code>false</code>. This trait is used throughout the µTest++ framework to enable type-safe handling and specialisation for floating point types in template metaprogramming.
-
-Specialisations are provided for <code>float</code>, <code>double</code>, and <code>long double</code>, each evaluating to <code>true</code>.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">The type to be checked for floating point classification.</ParametersListItem>
 </ParametersList>
@@ -463,6 +432,9 @@ Specialisations are provided for <code>float</code>, <code>double</code>, and <c
 <ParametersListItem name="true">if <code>T</code> is a floating point type.</ParametersListItem>
 <ParametersListItem name="false">otherwise.</ParametersListItem>
 </ParametersList>
+The <code>is&#95;floating&#95;point&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> is a floating point type (<code>float</code>, <code>double</code>, or <code>long double</code>). For all other types, it evaluates to <code>false</code>. This trait is used throughout the µTest++ framework to enable type-safe handling and specialisation for floating point types in template metaprogramming.
+
+Specialisations are provided for <code>float</code>, <code>double</code>, and <code>long double</code>, each evaluating to <code>true</code>.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00465">465</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
@@ -473,8 +445,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::is&#95;floating&#95;point&#95;v&lt; double &gt; = true</>}
   labels = {["constexpr"]}>
 Variable template specialisation indicating that <code>double</code> is a floating point type.
-
----
 
 This specialisation of the <code>is&#95;floating&#95;point&#95;v</code> variable template evaluates to <code>true</code> for the <code>double</code> type, confirming that it is recognised as a floating point type within the µTest++ framework. This enables type-safe handling and specialisation for floating point types in template metaprogramming.
 
@@ -493,8 +463,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["constexpr"]}>
 Variable template specialisation indicating that <code>float</code> is a floating point type.
 
----
-
 This specialisation of the <code>is&#95;floating&#95;point&#95;v</code> variable template evaluates to <code>true</code> for the <code>float</code> type, confirming that it is recognised as a floating point type within the µTest++ framework. This enables type-safe handling and specialisation for floating point types in template metaprogramming.
 
 
@@ -511,8 +479,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::is&#95;floating&#95;point&#95;v&lt; long double &gt; = true</>}
   labels = {["constexpr"]}>
 Variable template specialisation indicating that <code>long double</code> is a floating point type.
-
----
 
 This specialisation of the <code>is&#95;floating&#95;point&#95;v</code> variable template evaluates to <code>true</code> for the <code>long double</code> type, confirming that it is recognised as a floating point type within the µTest++ framework. This enables type-safe handling and specialisation for floating point types in template metaprogramming.
 
@@ -532,11 +498,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["constexpr"]}>
 Variable template to determine if a type derives from <code>op</code>.
 
----
-
-The <code>is&#95;op&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> is derived from the <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">type&#95;traits::op</Link></code> base struct, and <code>false</code> otherwise. This trait is determined at compile time using compiler intrinsics and is used throughout the µTest++ framework to enable generic handling and detection of operator-like or value wrapper types in template metaprogramming.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">The type to be checked for derivation from <code>op</code>.</ParametersListItem>
 </ParametersList>
@@ -545,8 +506,9 @@ The <code>is&#95;op&#95;v</code> variable template evaluates to <code>true</code
 <ParametersListItem name="true">if <code>T</code> is derived from <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">type&#95;traits::op</Link></code>.</ParametersListItem>
 <ParametersListItem name="false">otherwise.</ParametersListItem>
 </ParametersList>
+The <code>is&#95;op&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> is derived from the <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">type&#95;traits::op</Link></code> base struct, and <code>false</code> otherwise. This trait is determined at compile time using compiler intrinsics and is used throughout the µTest++ framework to enable generic handling and detection of operator-like or value wrapper types in template metaprogramming.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00939">939</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00948">948</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -562,11 +524,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>T &amp;&amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::declval (void)</>}>
 Utility function template to simulate std::declval for type deduction.
 
----
-
-The <code>declval</code> function template provides a mechanism for obtaining an rvalue reference to a type <code>T</code> without requiring an actual object. This is primarily used in unevaluated contexts, such as within <code>decltype</code>, to deduce types during template metaprogramming in the µTest++ framework.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">The type for which an rvalue reference is required.</ParametersListItem>
 </ParametersList>
@@ -580,6 +537,8 @@ None.
 An rvalue reference to type <code>T</code>.
 </SectionUser>
 
+The <code>declval</code> function template provides a mechanism for obtaining an rvalue reference to a type <code>T</code> without requiring an actual object. This is primarily used in unevaluated contexts, such as within <code>decltype</code>, to deduce types during template metaprogramming in the µTest++ framework.
+
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00335">335</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
@@ -591,11 +550,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["constexpr"]}>
 Fallback function template for is&#95;convertible, returns false if the conversion is not valid.
 
----
-
-This overload is selected when the primary <code>is&#95;convertible</code> template cannot be instantiated, providing a <code>false</code> result for invalid conversions.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="...Unused">Unused template parameters.</ParametersListItem>
 </ParametersList>
@@ -603,6 +557,7 @@ This overload is selected when the primary <code>is&#95;convertible</code> templ
 <ParametersList title="Return Values">
 <ParametersListItem name="false">indicating the conversion is not valid.</ParametersListItem>
 </ParametersList>
+This overload is selected when the primary <code>is&#95;convertible</code> template cannot be instantiated, providing a <code>false</code> result for invalid conversions.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00584">584</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
@@ -625,11 +580,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["constexpr"]}>
 Fallback function template for is&#95;valid, returns false if the expression is not valid.
 
----
-
-This overload is selected when the primary <code>is&#95;valid</code> template cannot be instantiated, providing a <code>false</code> result for invalid expressions.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="...Ts">The argument types to be tested.</ParametersListItem>
 </ParametersList>
@@ -637,6 +587,8 @@ This overload is selected when the primary <code>is&#95;valid</code> template ca
 <SectionUser title="Returns">
 <code>false</code> indicating the expression is not valid for the given argument types.
 </SectionUser>
+
+This overload is selected when the primary <code>is&#95;valid</code> template cannot be instantiated, providing a <code>false</code> result for invalid expressions.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00358">358</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
@@ -816,21 +768,21 @@ The file content with the documentation metadata removed is:
 <Link id="l00543" /><CodeLine lineNumber="543"><Highlight kind="comment">     &#42; @brief Function template to determine if one type is convertible to</Highlight></CodeLine>
 <Link id="l00544" /><CodeLine lineNumber="544"><Highlight kind="comment">     &#42; another.</Highlight></CodeLine>
 <Link id="l00545" /><CodeLine lineNumber="545"><Highlight kind="comment">     &#42;</Highlight></CodeLine>
-<Link id="l00546" /><CodeLine lineNumber="546"><Highlight kind="comment">     &#42; @details</Highlight></CodeLine>
-<Link id="l00547" /><CodeLine lineNumber="547"><Highlight kind="comment">     &#42; The &#96;is&#95;convertible&#96; function template checks, at compile time, whether</Highlight></CodeLine>
-<Link id="l00548" /><CodeLine lineNumber="548"><Highlight kind="comment">     &#42; a value of type &#96;From&#96; can be implicitly converted to type &#96;To&#96;. This is</Highlight></CodeLine>
-<Link id="l00549" /><CodeLine lineNumber="549"><Highlight kind="comment">     &#42; achieved using SFINAE and is primarily used as an implementation detail</Highlight></CodeLine>
-<Link id="l00550" /><CodeLine lineNumber="550"><Highlight kind="comment">     &#42; for the &#96;is&#95;convertible&#95;v&#96; variable template within the µTest++</Highlight></CodeLine>
-<Link id="l00551" /><CodeLine lineNumber="551"><Highlight kind="comment">     &#42; framework.</Highlight></CodeLine>
-<Link id="l00552" /><CodeLine lineNumber="552"><Highlight kind="comment">     &#42;</Highlight></CodeLine>
-<Link id="l00553" /><CodeLine lineNumber="553"><Highlight kind="comment">     &#42; If the conversion is valid, this overload is selected and returns</Highlight></CodeLine>
-<Link id="l00554" /><CodeLine lineNumber="554"><Highlight kind="comment">     &#42; &#96;true&#96;.</Highlight></CodeLine>
-<Link id="l00555" /><CodeLine lineNumber="555"><Highlight kind="comment">     &#42;</Highlight></CodeLine>
-<Link id="l00556" /><CodeLine lineNumber="556"><Highlight kind="comment">     &#42; @tparam From The source type to be checked for convertibility.</Highlight></CodeLine>
-<Link id="l00557" /><CodeLine lineNumber="557"><Highlight kind="comment">     &#42; @tparam To The target type to which conversion is tested.</Highlight></CodeLine>
+<Link id="l00546" /><CodeLine lineNumber="546"><Highlight kind="comment">     &#42; @tparam From The source type to be checked for convertibility.</Highlight></CodeLine>
+<Link id="l00547" /><CodeLine lineNumber="547"><Highlight kind="comment">     &#42; @tparam To The target type to which conversion is tested.</Highlight></CodeLine>
+<Link id="l00548" /><CodeLine lineNumber="548"><Highlight kind="comment">     &#42;</Highlight></CodeLine>
+<Link id="l00549" /><CodeLine lineNumber="549"><Highlight kind="comment">     &#42; @param (int) Dummy parameter used for overload resolution.</Highlight></CodeLine>
+<Link id="l00550" /><CodeLine lineNumber="550"><Highlight kind="comment">     &#42; @retval true if &#96;From&#96; is convertible to &#96;To&#96;.</Highlight></CodeLine>
+<Link id="l00551" /><CodeLine lineNumber="551"><Highlight kind="comment">     &#42;</Highlight></CodeLine>
+<Link id="l00552" /><CodeLine lineNumber="552"><Highlight kind="comment">     &#42; @details</Highlight></CodeLine>
+<Link id="l00553" /><CodeLine lineNumber="553"><Highlight kind="comment">     &#42; The &#96;is&#95;convertible&#96; function template checks, at compile time, whether</Highlight></CodeLine>
+<Link id="l00554" /><CodeLine lineNumber="554"><Highlight kind="comment">     &#42; a value of type &#96;From&#96; can be implicitly converted to type &#96;To&#96;. This is</Highlight></CodeLine>
+<Link id="l00555" /><CodeLine lineNumber="555"><Highlight kind="comment">     &#42; achieved using SFINAE and is primarily used as an implementation detail</Highlight></CodeLine>
+<Link id="l00556" /><CodeLine lineNumber="556"><Highlight kind="comment">     &#42; for the &#96;is&#95;convertible&#95;v&#96; variable template within the µTest++</Highlight></CodeLine>
+<Link id="l00557" /><CodeLine lineNumber="557"><Highlight kind="comment">     &#42; framework.</Highlight></CodeLine>
 <Link id="l00558" /><CodeLine lineNumber="558"><Highlight kind="comment">     &#42;</Highlight></CodeLine>
-<Link id="l00559" /><CodeLine lineNumber="559"><Highlight kind="comment">     &#42; @param (int) Dummy parameter used for overload resolution.</Highlight></CodeLine>
-<Link id="l00560" /><CodeLine lineNumber="560"><Highlight kind="comment">     &#42; @retval true if &#96;From&#96; is convertible to &#96;To&#96;.</Highlight></CodeLine>
+<Link id="l00559" /><CodeLine lineNumber="559"><Highlight kind="comment">     &#42; If the conversion is valid, this overload is selected and returns</Highlight></CodeLine>
+<Link id="l00560" /><CodeLine lineNumber="560"><Highlight kind="comment">     &#42; &#96;true&#96;.</Highlight></CodeLine>
 <Link id="l00561" /><CodeLine lineNumber="561"><Highlight kind="comment">     &#42;/</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <Link id="l00562" /><CodeLine lineNumber="562"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> From, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> To&gt;</Highlight></CodeLine>
 <Link id="l00563" /><CodeLine lineNumber="563"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
@@ -875,160 +827,160 @@ The file content with the documentation metadata removed is:
 <Link id="l00711" /><CodeLine lineNumber="711"><Highlight kind="normal"></Highlight></CodeLine>
 <Link id="l00715" /><CodeLine lineNumber="715" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant/#a53cb52e57c05eaf46f47352a77270993"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant/#a53cb52e57c05eaf46f47352a77270993">value</Link> = N;</Highlight></CodeLine>
 <Link id="l00716" /><CodeLine lineNumber="716"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00725" /><CodeLine lineNumber="725"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00726" /><CodeLine lineNumber="726" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant/#a7074d786704fd94b5342be3de7c86790"><Highlight kind="normal">      operator- ()</Highlight><Highlight kind="keyword"> const</Highlight></CodeLine>
-<Link id="l00727" /><CodeLine lineNumber="727"><Highlight kind="keyword">      </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00728" /><CodeLine lineNumber="728"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">integral&#95;constant</Link>&lt;-N&gt;&#123;&#125;;</Highlight></CodeLine>
-<Link id="l00729" /><CodeLine lineNumber="729"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00730" /><CodeLine lineNumber="730"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00738" /><CodeLine lineNumber="738"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00739" /><CodeLine lineNumber="739" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant/#acb385717b4e9d0c6995cbec5e31b65e2"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">operator</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant/#a30307d0cc6b010e9b42ec98753b6bec1">value&#95;type</Link> ()</Highlight><Highlight kind="keyword"> const</Highlight></CodeLine>
-<Link id="l00740" /><CodeLine lineNumber="740"><Highlight kind="keyword">      </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00741" /><CodeLine lineNumber="741"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> N;</Highlight></CodeLine>
-<Link id="l00742" /><CodeLine lineNumber="742"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00743" /><CodeLine lineNumber="743"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00754" /><CodeLine lineNumber="754"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00755" /><CodeLine lineNumber="755" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant/#acb78deb0adea412045e1305280a443f1"><Highlight kind="normal">      <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant/#acb78deb0adea412045e1305280a443f1">get</Link> (</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">)</Highlight><Highlight kind="keyword"> const</Highlight></CodeLine>
-<Link id="l00756" /><CodeLine lineNumber="756"><Highlight kind="keyword">      </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00757" /><CodeLine lineNumber="757"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> N;</Highlight></CodeLine>
-<Link id="l00758" /><CodeLine lineNumber="758"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00759" /><CodeLine lineNumber="759"><Highlight kind="normal">    &#125;;</Highlight></CodeLine>
-<Link id="l00760" /><CodeLine lineNumber="760"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00787" /><CodeLine lineNumber="787"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T, auto N, auto D, auto Size, auto P = 1&gt;</Highlight></CodeLine>
-<Link id="l00788" /><CodeLine lineNumber="788" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">floating&#95;point&#95;constant</Link> : <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">op</Link></Highlight></CodeLine>
-<Link id="l00789" /><CodeLine lineNumber="789"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
-<Link id="l00793" /><CodeLine lineNumber="793" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#a3538821b6929e9b13f6a3ea763e1627e"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#a3538821b6929e9b13f6a3ea763e1627e">value&#95;type</Link> = T;</Highlight></CodeLine>
-<Link id="l00794" /><CodeLine lineNumber="794"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00801" /><CodeLine lineNumber="801" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#a5cab8e85fbee4a9314fc8a3e09e59eef"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#a5cab8e85fbee4a9314fc8a3e09e59eef">epsilon</Link> = T (1) / <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a5c22d85f0df63cc0504cbf4988173cd7">math::pow</Link> (T (10), Size - 1);</Highlight></CodeLine>
-<Link id="l00802" /><CodeLine lineNumber="802"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00809" /><CodeLine lineNumber="809" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#ab0e05de518c208a6a762c7377d2f2332"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#ab0e05de518c208a6a762c7377d2f2332">value</Link></Highlight></CodeLine>
-<Link id="l00810" /><CodeLine lineNumber="810"><Highlight kind="normal">          = T (P) &#42; (T (N) + (T (D) / <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a5c22d85f0df63cc0504cbf4988173cd7">math::pow</Link> (T (10), Size)));</Highlight></CodeLine>
-<Link id="l00811" /><CodeLine lineNumber="811"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00820" /><CodeLine lineNumber="820"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00821" /><CodeLine lineNumber="821" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#adcc1ade20fd348fa653623ec6c378d72"><Highlight kind="normal">      <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#adcc1ade20fd348fa653623ec6c378d72">operator-</Link>()</Highlight><Highlight kind="keyword"> const</Highlight></CodeLine>
-<Link id="l00822" /><CodeLine lineNumber="822"><Highlight kind="keyword">      </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00823" /><CodeLine lineNumber="823"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">floating&#95;point&#95;constant</Link>&lt;T, N, D, Size, -1&gt;&#123;&#125;;</Highlight></CodeLine>
-<Link id="l00824" /><CodeLine lineNumber="824"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00825" /><CodeLine lineNumber="825"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00834" /><CodeLine lineNumber="834"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00835" /><CodeLine lineNumber="835" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#a0a877099bf7ee9fcde1446cac65511e6"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">operator</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#a3538821b6929e9b13f6a3ea763e1627e">value&#95;type</Link> ()</Highlight><Highlight kind="keyword"> const</Highlight></CodeLine>
-<Link id="l00836" /><CodeLine lineNumber="836"><Highlight kind="keyword">      </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00837" /><CodeLine lineNumber="837"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#ab0e05de518c208a6a762c7377d2f2332">value</Link>;</Highlight></CodeLine>
-<Link id="l00838" /><CodeLine lineNumber="838"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00839" /><CodeLine lineNumber="839"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00847" /><CodeLine lineNumber="847"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00848" /><CodeLine lineNumber="848" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#a3ee48433567db9886d9f99ab5e6d2864"><Highlight kind="normal">      <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#a3ee48433567db9886d9f99ab5e6d2864">get</Link> ()</Highlight><Highlight kind="keyword"> const</Highlight></CodeLine>
-<Link id="l00849" /><CodeLine lineNumber="849"><Highlight kind="keyword">      </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00850" /><CodeLine lineNumber="850"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#ab0e05de518c208a6a762c7377d2f2332">value</Link>;</Highlight></CodeLine>
-<Link id="l00851" /><CodeLine lineNumber="851"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00852" /><CodeLine lineNumber="852"><Highlight kind="normal">    &#125;;</Highlight></CodeLine>
-<Link id="l00853" /><CodeLine lineNumber="853"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00873" /><CodeLine lineNumber="873"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T&gt;</Highlight></CodeLine>
-<Link id="l00874" /><CodeLine lineNumber="874" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#afa29aa29cbc284a0147aa07db0d4891a">genuine&#95;integral&#95;value</Link> : <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">op</Link></Highlight></CodeLine>
-<Link id="l00875" /><CodeLine lineNumber="875"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
-<Link id="l00879" /><CodeLine lineNumber="879" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#a1b0fda5167fc47a474f0fad07d28fa8d"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#a1b0fda5167fc47a474f0fad07d28fa8d">value&#95;type</Link> = T;</Highlight></CodeLine>
-<Link id="l00880" /><CodeLine lineNumber="880"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00886" /><CodeLine lineNumber="886" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#afa29aa29cbc284a0147aa07db0d4891a"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#afa29aa29cbc284a0147aa07db0d4891a">genuine&#95;integral&#95;value</Link> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> T&amp; &#95;value) : <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#ab4f59f518a832369368c4502bf0c4d35">value&#95;</Link>&#123; &#95;value &#125;</Highlight></CodeLine>
-<Link id="l00887" /><CodeLine lineNumber="887"><Highlight kind="normal">      &#123;</Highlight></CodeLine>
-<Link id="l00888" /><CodeLine lineNumber="888"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00889" /><CodeLine lineNumber="889"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00897" /><CodeLine lineNumber="897"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00898" /><CodeLine lineNumber="898" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#a1474de7e4b8a14f1c97f2c1ba5d9212a"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">operator</Highlight><Highlight kind="normal"> T ()</Highlight><Highlight kind="keyword"> const</Highlight></CodeLine>
-<Link id="l00899" /><CodeLine lineNumber="899"><Highlight kind="keyword">      </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00900" /><CodeLine lineNumber="900"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#ab4f59f518a832369368c4502bf0c4d35">value&#95;</Link>;</Highlight></CodeLine>
-<Link id="l00901" /><CodeLine lineNumber="901"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00902" /><CodeLine lineNumber="902"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00910" /><CodeLine lineNumber="910"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">decltype</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
-<Link id="l00911" /><CodeLine lineNumber="911" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#ab2f53c63e86a887bccbadf0b7dbb8b4b"><Highlight kind="normal">      <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#ab2f53c63e86a887bccbadf0b7dbb8b4b">get</Link> () </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00912" /><CodeLine lineNumber="912"><Highlight kind="normal">      &#123;</Highlight></CodeLine>
-<Link id="l00913" /><CodeLine lineNumber="913"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#ab4f59f518a832369368c4502bf0c4d35">value&#95;</Link>;</Highlight></CodeLine>
-<Link id="l00914" /><CodeLine lineNumber="914"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00915" /><CodeLine lineNumber="915"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00919" /><CodeLine lineNumber="919" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#ab4f59f518a832369368c4502bf0c4d35"><Highlight kind="normal">      T <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#ab4f59f518a832369368c4502bf0c4d35">value&#95;</Link>&#123;&#125;;</Highlight></CodeLine>
-<Link id="l00920" /><CodeLine lineNumber="920"><Highlight kind="normal">    &#125;;</Highlight></CodeLine>
-<Link id="l00921" /><CodeLine lineNumber="921"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00938" /><CodeLine lineNumber="938"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T&gt;</Highlight></CodeLine>
-<Link id="l00939" /><CodeLine lineNumber="939" lineLink="/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a814e7f004d5404f735737aabb90fa111"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a814e7f004d5404f735737aabb90fa111">is&#95;op&#95;v</Link> = &#95;&#95;is&#95;base&#95;of (<Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">type&#95;traits::op</Link>, T);</Highlight></CodeLine>
-<Link id="l00940" /><CodeLine lineNumber="940"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00963" /><CodeLine lineNumber="963"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> = </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal">&gt;</Highlight></CodeLine>
-<Link id="l00964" /><CodeLine lineNumber="964" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#afebca698b3129c2eb1a86c4202a54d3c">value</Link> : <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">type&#95;traits::op</Link></Highlight></CodeLine>
-<Link id="l00965" /><CodeLine lineNumber="965"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
-<Link id="l00969" /><CodeLine lineNumber="969" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a26f470c3e6454a222fda0db2f01e044d"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a26f470c3e6454a222fda0db2f01e044d">value&#95;type</Link> = T;</Highlight></CodeLine>
-<Link id="l00970" /><CodeLine lineNumber="970"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00976" /><CodeLine lineNumber="976" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#afebca698b3129c2eb1a86c4202a54d3c"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#afebca698b3129c2eb1a86c4202a54d3c">value</Link> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> T&amp; &#95;value) : <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a5792dff99ce4e1bf2166db4dceecfd5e">value&#95;</Link>&#123; &#95;value &#125;</Highlight></CodeLine>
-<Link id="l00977" /><CodeLine lineNumber="977"><Highlight kind="normal">      &#123;</Highlight></CodeLine>
-<Link id="l00978" /><CodeLine lineNumber="978"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00726" /><CodeLine lineNumber="726"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00727" /><CodeLine lineNumber="727" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant/#a7074d786704fd94b5342be3de7c86790"><Highlight kind="normal">      operator- ()</Highlight><Highlight kind="keyword"> const</Highlight></CodeLine>
+<Link id="l00728" /><CodeLine lineNumber="728"><Highlight kind="keyword">      </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00729" /><CodeLine lineNumber="729"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">integral&#95;constant</Link>&lt;-N&gt;&#123;&#125;;</Highlight></CodeLine>
+<Link id="l00730" /><CodeLine lineNumber="730"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00731" /><CodeLine lineNumber="731"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00742" /><CodeLine lineNumber="742"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00743" /><CodeLine lineNumber="743" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant/#a7fc0c3908f315982ce70d0439ea78a06"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">operator</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant/#a30307d0cc6b010e9b42ec98753b6bec1">value&#95;type</Link> (</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">)</Highlight><Highlight kind="keyword"> const</Highlight></CodeLine>
+<Link id="l00744" /><CodeLine lineNumber="744"><Highlight kind="keyword">      </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00745" /><CodeLine lineNumber="745"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> N;</Highlight></CodeLine>
+<Link id="l00746" /><CodeLine lineNumber="746"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00747" /><CodeLine lineNumber="747"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00758" /><CodeLine lineNumber="758"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00759" /><CodeLine lineNumber="759" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant/#acb78deb0adea412045e1305280a443f1"><Highlight kind="normal">      <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant/#acb78deb0adea412045e1305280a443f1">get</Link> (</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">)</Highlight><Highlight kind="keyword"> const</Highlight></CodeLine>
+<Link id="l00760" /><CodeLine lineNumber="760"><Highlight kind="keyword">      </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00761" /><CodeLine lineNumber="761"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> N;</Highlight></CodeLine>
+<Link id="l00762" /><CodeLine lineNumber="762"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00763" /><CodeLine lineNumber="763"><Highlight kind="normal">    &#125;;</Highlight></CodeLine>
+<Link id="l00764" /><CodeLine lineNumber="764"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00791" /><CodeLine lineNumber="791"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T, auto N, auto D, auto Size, auto P = 1&gt;</Highlight></CodeLine>
+<Link id="l00792" /><CodeLine lineNumber="792" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">floating&#95;point&#95;constant</Link> : <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">op</Link></Highlight></CodeLine>
+<Link id="l00793" /><CodeLine lineNumber="793"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
+<Link id="l00797" /><CodeLine lineNumber="797" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#a3538821b6929e9b13f6a3ea763e1627e"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#a3538821b6929e9b13f6a3ea763e1627e">value&#95;type</Link> = T;</Highlight></CodeLine>
+<Link id="l00798" /><CodeLine lineNumber="798"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00805" /><CodeLine lineNumber="805" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#a5cab8e85fbee4a9314fc8a3e09e59eef"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#a5cab8e85fbee4a9314fc8a3e09e59eef">epsilon</Link> = T (1) / <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a5c22d85f0df63cc0504cbf4988173cd7">math::pow</Link> (T (10), Size - 1);</Highlight></CodeLine>
+<Link id="l00806" /><CodeLine lineNumber="806"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00813" /><CodeLine lineNumber="813" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#ab0e05de518c208a6a762c7377d2f2332"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#ab0e05de518c208a6a762c7377d2f2332">value</Link></Highlight></CodeLine>
+<Link id="l00814" /><CodeLine lineNumber="814"><Highlight kind="normal">          = T (P) &#42; (T (N) + (T (D) / <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a5c22d85f0df63cc0504cbf4988173cd7">math::pow</Link> (T (10), Size)));</Highlight></CodeLine>
+<Link id="l00815" /><CodeLine lineNumber="815"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00825" /><CodeLine lineNumber="825"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00826" /><CodeLine lineNumber="826" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#adcc1ade20fd348fa653623ec6c378d72"><Highlight kind="normal">      <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#adcc1ade20fd348fa653623ec6c378d72">operator-</Link>()</Highlight><Highlight kind="keyword"> const</Highlight></CodeLine>
+<Link id="l00827" /><CodeLine lineNumber="827"><Highlight kind="keyword">      </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00828" /><CodeLine lineNumber="828"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">floating&#95;point&#95;constant</Link>&lt;T, N, D, Size, -1&gt;&#123;&#125;;</Highlight></CodeLine>
+<Link id="l00829" /><CodeLine lineNumber="829"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00830" /><CodeLine lineNumber="830"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00840" /><CodeLine lineNumber="840"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00841" /><CodeLine lineNumber="841" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#a0a877099bf7ee9fcde1446cac65511e6"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">operator</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#a3538821b6929e9b13f6a3ea763e1627e">value&#95;type</Link> ()</Highlight><Highlight kind="keyword"> const</Highlight></CodeLine>
+<Link id="l00842" /><CodeLine lineNumber="842"><Highlight kind="keyword">      </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00843" /><CodeLine lineNumber="843"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#ab0e05de518c208a6a762c7377d2f2332">value</Link>;</Highlight></CodeLine>
+<Link id="l00844" /><CodeLine lineNumber="844"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00845" /><CodeLine lineNumber="845"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00854" /><CodeLine lineNumber="854"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00855" /><CodeLine lineNumber="855" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#a3ee48433567db9886d9f99ab5e6d2864"><Highlight kind="normal">      <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#a3ee48433567db9886d9f99ab5e6d2864">get</Link> ()</Highlight><Highlight kind="keyword"> const</Highlight></CodeLine>
+<Link id="l00856" /><CodeLine lineNumber="856"><Highlight kind="keyword">      </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00857" /><CodeLine lineNumber="857"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#ab0e05de518c208a6a762c7377d2f2332">value</Link>;</Highlight></CodeLine>
+<Link id="l00858" /><CodeLine lineNumber="858"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00859" /><CodeLine lineNumber="859"><Highlight kind="normal">    &#125;;</Highlight></CodeLine>
+<Link id="l00860" /><CodeLine lineNumber="860"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00880" /><CodeLine lineNumber="880"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T&gt;</Highlight></CodeLine>
+<Link id="l00881" /><CodeLine lineNumber="881" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#afa29aa29cbc284a0147aa07db0d4891a">genuine&#95;integral&#95;value</Link> : <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">op</Link></Highlight></CodeLine>
+<Link id="l00882" /><CodeLine lineNumber="882"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
+<Link id="l00886" /><CodeLine lineNumber="886" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#a1b0fda5167fc47a474f0fad07d28fa8d"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#a1b0fda5167fc47a474f0fad07d28fa8d">value&#95;type</Link> = T;</Highlight></CodeLine>
+<Link id="l00887" /><CodeLine lineNumber="887"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00893" /><CodeLine lineNumber="893" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#afa29aa29cbc284a0147aa07db0d4891a"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#afa29aa29cbc284a0147aa07db0d4891a">genuine&#95;integral&#95;value</Link> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> T&amp; &#95;value) : <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#ab4f59f518a832369368c4502bf0c4d35">value&#95;</Link>&#123; &#95;value &#125;</Highlight></CodeLine>
+<Link id="l00894" /><CodeLine lineNumber="894"><Highlight kind="normal">      &#123;</Highlight></CodeLine>
+<Link id="l00895" /><CodeLine lineNumber="895"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00896" /><CodeLine lineNumber="896"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00905" /><CodeLine lineNumber="905"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00906" /><CodeLine lineNumber="906" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#a1474de7e4b8a14f1c97f2c1ba5d9212a"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">operator</Highlight><Highlight kind="normal"> T ()</Highlight><Highlight kind="keyword"> const</Highlight></CodeLine>
+<Link id="l00907" /><CodeLine lineNumber="907"><Highlight kind="keyword">      </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00908" /><CodeLine lineNumber="908"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#ab4f59f518a832369368c4502bf0c4d35">value&#95;</Link>;</Highlight></CodeLine>
+<Link id="l00909" /><CodeLine lineNumber="909"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00910" /><CodeLine lineNumber="910"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00919" /><CodeLine lineNumber="919"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">decltype</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l00920" /><CodeLine lineNumber="920" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#ab2f53c63e86a887bccbadf0b7dbb8b4b"><Highlight kind="normal">      <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#ab2f53c63e86a887bccbadf0b7dbb8b4b">get</Link> () </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00921" /><CodeLine lineNumber="921"><Highlight kind="normal">      &#123;</Highlight></CodeLine>
+<Link id="l00922" /><CodeLine lineNumber="922"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#ab4f59f518a832369368c4502bf0c4d35">value&#95;</Link>;</Highlight></CodeLine>
+<Link id="l00923" /><CodeLine lineNumber="923"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00924" /><CodeLine lineNumber="924"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00928" /><CodeLine lineNumber="928" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#ab4f59f518a832369368c4502bf0c4d35"><Highlight kind="normal">      T <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#ab4f59f518a832369368c4502bf0c4d35">value&#95;</Link>&#123;&#125;;</Highlight></CodeLine>
+<Link id="l00929" /><CodeLine lineNumber="929"><Highlight kind="normal">    &#125;;</Highlight></CodeLine>
+<Link id="l00930" /><CodeLine lineNumber="930"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00947" /><CodeLine lineNumber="947"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T&gt;</Highlight></CodeLine>
+<Link id="l00948" /><CodeLine lineNumber="948" lineLink="/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a814e7f004d5404f735737aabb90fa111"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a814e7f004d5404f735737aabb90fa111">is&#95;op&#95;v</Link> = &#95;&#95;is&#95;base&#95;of (<Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">type&#95;traits::op</Link>, T);</Highlight></CodeLine>
+<Link id="l00949" /><CodeLine lineNumber="949"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00972" /><CodeLine lineNumber="972"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> = </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal">&gt;</Highlight></CodeLine>
+<Link id="l00973" /><CodeLine lineNumber="973" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#afebca698b3129c2eb1a86c4202a54d3c">value</Link> : <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">type&#95;traits::op</Link></Highlight></CodeLine>
+<Link id="l00974" /><CodeLine lineNumber="974"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
+<Link id="l00978" /><CodeLine lineNumber="978" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a26f470c3e6454a222fda0db2f01e044d"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a26f470c3e6454a222fda0db2f01e044d">value&#95;type</Link> = T;</Highlight></CodeLine>
 <Link id="l00979" /><CodeLine lineNumber="979"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00987" /><CodeLine lineNumber="987"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00988" /><CodeLine lineNumber="988" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a4d706032d92daabe8f8f5c2b88ced4df"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">operator</Highlight><Highlight kind="normal"> T ()</Highlight><Highlight kind="keyword"> const</Highlight></CodeLine>
-<Link id="l00989" /><CodeLine lineNumber="989"><Highlight kind="keyword">      </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00990" /><CodeLine lineNumber="990"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a5792dff99ce4e1bf2166db4dceecfd5e">value&#95;</Link>;</Highlight></CodeLine>
-<Link id="l00991" /><CodeLine lineNumber="991"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00992" /><CodeLine lineNumber="992"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01003" /><CodeLine lineNumber="1003"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">decltype</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
-<Link id="l01004" /><CodeLine lineNumber="1004" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a54a10058177255d3c430b27e3cb87eab"><Highlight kind="normal">      <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a54a10058177255d3c430b27e3cb87eab">get</Link> (</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01005" /><CodeLine lineNumber="1005"><Highlight kind="normal">      &#123;</Highlight></CodeLine>
-<Link id="l01006" /><CodeLine lineNumber="1006"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a5792dff99ce4e1bf2166db4dceecfd5e">value&#95;</Link>;</Highlight></CodeLine>
-<Link id="l01007" /><CodeLine lineNumber="1007"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l01008" /><CodeLine lineNumber="1008"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01012" /><CodeLine lineNumber="1012" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a5792dff99ce4e1bf2166db4dceecfd5e"><Highlight kind="normal">      T <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a5792dff99ce4e1bf2166db4dceecfd5e">value&#95;</Link>&#123;&#125;;</Highlight></CodeLine>
-<Link id="l01013" /><CodeLine lineNumber="1013"><Highlight kind="normal">    &#125;;</Highlight></CodeLine>
-<Link id="l01014" /><CodeLine lineNumber="1014"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01040" /><CodeLine lineNumber="1040"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T&gt;</Highlight></CodeLine>
-<Link id="l01041" /><CodeLine lineNumber="1041" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#ab84ad7a2b8027a68e0760109636044df">value</Link>&lt;T,</Highlight></CodeLine>
-<Link id="l01042" /><CodeLine lineNumber="1042"><Highlight kind="normal">                 <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">type&#95;traits</Link>::<Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a1cbbf299a006b4692df250ef2a6fc7c2">requires&#95;t</Link>&lt;type&#95;traits::is&#95;floating&#95;point&#95;v&lt;T&gt;&gt;&gt;</Highlight></CodeLine>
-<Link id="l01043" /><CodeLine lineNumber="1043"><Highlight kind="normal">        : <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">type&#95;traits::op</Link></Highlight></CodeLine>
-<Link id="l01044" /><CodeLine lineNumber="1044"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
-<Link id="l01048" /><CodeLine lineNumber="1048" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a108d4b1685f4283960cb9129e53acf2f"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a108d4b1685f4283960cb9129e53acf2f">value&#95;type</Link> = T;</Highlight></CodeLine>
-<Link id="l01049" /><CodeLine lineNumber="1049"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01058" /><CodeLine lineNumber="1058" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#aa597918c8b3e5b9d4d237c2566893f8f"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#aa597918c8b3e5b9d4d237c2566893f8f">epsilon</Link> = T&#123;&#125;; </Highlight><Highlight kind="comment">// Why static?</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00985" /><CodeLine lineNumber="985" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#afebca698b3129c2eb1a86c4202a54d3c"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#afebca698b3129c2eb1a86c4202a54d3c">value</Link> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> T&amp; &#95;value) : <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a5792dff99ce4e1bf2166db4dceecfd5e">value&#95;</Link>&#123; &#95;value &#125;</Highlight></CodeLine>
+<Link id="l00986" /><CodeLine lineNumber="986"><Highlight kind="normal">      &#123;</Highlight></CodeLine>
+<Link id="l00987" /><CodeLine lineNumber="987"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l00988" /><CodeLine lineNumber="988"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00997" /><CodeLine lineNumber="997"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00998" /><CodeLine lineNumber="998" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a4d706032d92daabe8f8f5c2b88ced4df"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">operator</Highlight><Highlight kind="normal"> T ()</Highlight><Highlight kind="keyword"> const</Highlight></CodeLine>
+<Link id="l00999" /><CodeLine lineNumber="999"><Highlight kind="keyword">      </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l01000" /><CodeLine lineNumber="1000"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a5792dff99ce4e1bf2166db4dceecfd5e">value&#95;</Link>;</Highlight></CodeLine>
+<Link id="l01001" /><CodeLine lineNumber="1001"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l01002" /><CodeLine lineNumber="1002"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01013" /><CodeLine lineNumber="1013"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">decltype</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l01014" /><CodeLine lineNumber="1014" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a54a10058177255d3c430b27e3cb87eab"><Highlight kind="normal">      <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a54a10058177255d3c430b27e3cb87eab">get</Link> (</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01015" /><CodeLine lineNumber="1015"><Highlight kind="normal">      &#123;</Highlight></CodeLine>
+<Link id="l01016" /><CodeLine lineNumber="1016"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a5792dff99ce4e1bf2166db4dceecfd5e">value&#95;</Link>;</Highlight></CodeLine>
+<Link id="l01017" /><CodeLine lineNumber="1017"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l01018" /><CodeLine lineNumber="1018"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01022" /><CodeLine lineNumber="1022" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a5792dff99ce4e1bf2166db4dceecfd5e"><Highlight kind="normal">      T <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a5792dff99ce4e1bf2166db4dceecfd5e">value&#95;</Link>&#123;&#125;;</Highlight></CodeLine>
+<Link id="l01023" /><CodeLine lineNumber="1023"><Highlight kind="normal">    &#125;;</Highlight></CodeLine>
+<Link id="l01024" /><CodeLine lineNumber="1024"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01050" /><CodeLine lineNumber="1050"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T&gt;</Highlight></CodeLine>
+<Link id="l01051" /><CodeLine lineNumber="1051" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#ab84ad7a2b8027a68e0760109636044df">value</Link>&lt;T,</Highlight></CodeLine>
+<Link id="l01052" /><CodeLine lineNumber="1052"><Highlight kind="normal">                 <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">type&#95;traits</Link>::<Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a1cbbf299a006b4692df250ef2a6fc7c2">requires&#95;t</Link>&lt;type&#95;traits::is&#95;floating&#95;point&#95;v&lt;T&gt;&gt;&gt;</Highlight></CodeLine>
+<Link id="l01053" /><CodeLine lineNumber="1053"><Highlight kind="normal">        : <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">type&#95;traits::op</Link></Highlight></CodeLine>
+<Link id="l01054" /><CodeLine lineNumber="1054"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
+<Link id="l01058" /><CodeLine lineNumber="1058" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a108d4b1685f4283960cb9129e53acf2f"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a108d4b1685f4283960cb9129e53acf2f">value&#95;type</Link> = T;</Highlight></CodeLine>
 <Link id="l01059" /><CodeLine lineNumber="1059"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01066" /><CodeLine lineNumber="1066" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#ab84ad7a2b8027a68e0760109636044df"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#ab84ad7a2b8027a68e0760109636044df">value</Link> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> T&amp; &#95;value, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> T precision) : <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a6e339e618808050e46eb71eecb8a1d85">value&#95;</Link>&#123; &#95;value &#125;</Highlight></CodeLine>
-<Link id="l01067" /><CodeLine lineNumber="1067"><Highlight kind="normal">      &#123;</Highlight></CodeLine>
-<Link id="l01068" /><CodeLine lineNumber="1068"><Highlight kind="normal">        <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#aa597918c8b3e5b9d4d237c2566893f8f">epsilon</Link> = precision;</Highlight></CodeLine>
-<Link id="l01069" /><CodeLine lineNumber="1069"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l01070" /><CodeLine lineNumber="1070"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01080" /><CodeLine lineNumber="1080" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a43ccaa9fd86190e5605605ceced840f7"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="comment">/&#42;explicit(false)&#42;/</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a43ccaa9fd86190e5605605ceced840f7">value</Link> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> T&amp; val)</Highlight></CodeLine>
-<Link id="l01081" /><CodeLine lineNumber="1081"><Highlight kind="normal">          : <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#ab84ad7a2b8027a68e0760109636044df">value</Link>&#123; val,</Highlight></CodeLine>
-<Link id="l01082" /><CodeLine lineNumber="1082"><Highlight kind="normal">                   T (1)</Highlight></CodeLine>
-<Link id="l01083" /><CodeLine lineNumber="1083"><Highlight kind="normal">                       / <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/math">math</Link>::pow (T (10),</Highlight></CodeLine>
-<Link id="l01084" /><CodeLine lineNumber="1084"><Highlight kind="normal">                                    <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/math">math</Link>::den&#95;size&lt;unsigned long long&gt; (val)) &#125;</Highlight></CodeLine>
-<Link id="l01085" /><CodeLine lineNumber="1085"><Highlight kind="normal">      &#123;</Highlight></CodeLine>
-<Link id="l01086" /><CodeLine lineNumber="1086"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l01087" /><CodeLine lineNumber="1087"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01095" /><CodeLine lineNumber="1095"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01096" /><CodeLine lineNumber="1096" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a5609792d50cef8d63061faee1af7bcf9"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">operator</Highlight><Highlight kind="normal"> T ()</Highlight><Highlight kind="keyword"> const</Highlight></CodeLine>
-<Link id="l01097" /><CodeLine lineNumber="1097"><Highlight kind="keyword">      </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l01098" /><CodeLine lineNumber="1098"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a6e339e618808050e46eb71eecb8a1d85">value&#95;</Link>;</Highlight></CodeLine>
-<Link id="l01099" /><CodeLine lineNumber="1099"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l01100" /><CodeLine lineNumber="1100"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01111" /><CodeLine lineNumber="1111"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">decltype</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
-<Link id="l01112" /><CodeLine lineNumber="1112" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a8d14413aec3672c392962a7b3419cb25"><Highlight kind="normal">      <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a8d14413aec3672c392962a7b3419cb25">get</Link> (</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01113" /><CodeLine lineNumber="1113"><Highlight kind="normal">      &#123;</Highlight></CodeLine>
-<Link id="l01114" /><CodeLine lineNumber="1114"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a6e339e618808050e46eb71eecb8a1d85">value&#95;</Link>;</Highlight></CodeLine>
-<Link id="l01115" /><CodeLine lineNumber="1115"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l01116" /><CodeLine lineNumber="1116"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01120" /><CodeLine lineNumber="1120" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a6e339e618808050e46eb71eecb8a1d85"><Highlight kind="normal">      T <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a6e339e618808050e46eb71eecb8a1d85">value&#95;</Link>&#123;&#125;;</Highlight></CodeLine>
-<Link id="l01121" /><CodeLine lineNumber="1121"><Highlight kind="normal">    &#125;;</Highlight></CodeLine>
-<Link id="l01122" /><CodeLine lineNumber="1122"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01123" /><CodeLine lineNumber="1123"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="comment">// namespace type&#95;traits</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01124" /><CodeLine lineNumber="1124"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01125" /><CodeLine lineNumber="1125"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// --------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01126" /><CodeLine lineNumber="1126"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace micro&#95;os&#95;plus::micro&#95;test&#95;plus</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01068" /><CodeLine lineNumber="1068" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#aa597918c8b3e5b9d4d237c2566893f8f"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">inline</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#aa597918c8b3e5b9d4d237c2566893f8f">epsilon</Link> = T&#123;&#125;; </Highlight><Highlight kind="comment">// Why static?</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01069" /><CodeLine lineNumber="1069"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01076" /><CodeLine lineNumber="1076" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#ab84ad7a2b8027a68e0760109636044df"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#ab84ad7a2b8027a68e0760109636044df">value</Link> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> T&amp; &#95;value, </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> T precision) : <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a6e339e618808050e46eb71eecb8a1d85">value&#95;</Link>&#123; &#95;value &#125;</Highlight></CodeLine>
+<Link id="l01077" /><CodeLine lineNumber="1077"><Highlight kind="normal">      &#123;</Highlight></CodeLine>
+<Link id="l01078" /><CodeLine lineNumber="1078"><Highlight kind="normal">        <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#aa597918c8b3e5b9d4d237c2566893f8f">epsilon</Link> = precision;</Highlight></CodeLine>
+<Link id="l01079" /><CodeLine lineNumber="1079"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l01080" /><CodeLine lineNumber="1080"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01090" /><CodeLine lineNumber="1090" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a43ccaa9fd86190e5605605ceced840f7"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="comment">/&#42;explicit(false)&#42;/</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a43ccaa9fd86190e5605605ceced840f7">value</Link> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> T&amp; val)</Highlight></CodeLine>
+<Link id="l01091" /><CodeLine lineNumber="1091"><Highlight kind="normal">          : <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#ab84ad7a2b8027a68e0760109636044df">value</Link>&#123; val,</Highlight></CodeLine>
+<Link id="l01092" /><CodeLine lineNumber="1092"><Highlight kind="normal">                   T (1)</Highlight></CodeLine>
+<Link id="l01093" /><CodeLine lineNumber="1093"><Highlight kind="normal">                       / <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/math">math</Link>::pow (T (10),</Highlight></CodeLine>
+<Link id="l01094" /><CodeLine lineNumber="1094"><Highlight kind="normal">                                    <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/math">math</Link>::den&#95;size&lt;unsigned long long&gt; (val)) &#125;</Highlight></CodeLine>
+<Link id="l01095" /><CodeLine lineNumber="1095"><Highlight kind="normal">      &#123;</Highlight></CodeLine>
+<Link id="l01096" /><CodeLine lineNumber="1096"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l01097" /><CodeLine lineNumber="1097"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01106" /><CodeLine lineNumber="1106"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01107" /><CodeLine lineNumber="1107" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a5609792d50cef8d63061faee1af7bcf9"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">operator</Highlight><Highlight kind="normal"> T ()</Highlight><Highlight kind="keyword"> const</Highlight></CodeLine>
+<Link id="l01108" /><CodeLine lineNumber="1108"><Highlight kind="keyword">      </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l01109" /><CodeLine lineNumber="1109"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a6e339e618808050e46eb71eecb8a1d85">value&#95;</Link>;</Highlight></CodeLine>
+<Link id="l01110" /><CodeLine lineNumber="1110"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l01111" /><CodeLine lineNumber="1111"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01122" /><CodeLine lineNumber="1122"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">decltype</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l01123" /><CodeLine lineNumber="1123" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a8d14413aec3672c392962a7b3419cb25"><Highlight kind="normal">      <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a8d14413aec3672c392962a7b3419cb25">get</Link> (</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01124" /><CodeLine lineNumber="1124"><Highlight kind="normal">      &#123;</Highlight></CodeLine>
+<Link id="l01125" /><CodeLine lineNumber="1125"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a6e339e618808050e46eb71eecb8a1d85">value&#95;</Link>;</Highlight></CodeLine>
+<Link id="l01126" /><CodeLine lineNumber="1126"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
 <Link id="l01127" /><CodeLine lineNumber="1127"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01128" /><CodeLine lineNumber="1128"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;GNUC&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01129" /><CodeLine lineNumber="1129"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma GCC diagnostic pop</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01130" /><CodeLine lineNumber="1130"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01131" /><CodeLine lineNumber="1131"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01132" /><CodeLine lineNumber="1132"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01131" /><CodeLine lineNumber="1131" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a6e339e618808050e46eb71eecb8a1d85"><Highlight kind="normal">      T <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a6e339e618808050e46eb71eecb8a1d85">value&#95;</Link>&#123;&#125;;</Highlight></CodeLine>
+<Link id="l01132" /><CodeLine lineNumber="1132"><Highlight kind="normal">    &#125;;</Highlight></CodeLine>
 <Link id="l01133" /><CodeLine lineNumber="1133"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01134" /><CodeLine lineNumber="1134"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// &#95;&#95;cplusplus</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01134" /><CodeLine lineNumber="1134"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="comment">// namespace type&#95;traits</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <Link id="l01135" /><CodeLine lineNumber="1135"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01136" /><CodeLine lineNumber="1136"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01137" /><CodeLine lineNumber="1137"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01138" /><CodeLine lineNumber="1138"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// MICRO&#95;TEST&#95;PLUS&#95;TYPE&#95;TRAITS&#95;H&#95;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01139" /><CodeLine lineNumber="1139"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01140" /><CodeLine lineNumber="1140"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01136" /><CodeLine lineNumber="1136"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// --------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01137" /><CodeLine lineNumber="1137"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace micro&#95;os&#95;plus::micro&#95;test&#95;plus</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01138" /><CodeLine lineNumber="1138"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01139" /><CodeLine lineNumber="1139"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;GNUC&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01140" /><CodeLine lineNumber="1140"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma GCC diagnostic pop</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01141" /><CodeLine lineNumber="1141"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01142" /><CodeLine lineNumber="1142"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01143" /><CodeLine lineNumber="1143"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01144" /><CodeLine lineNumber="1144"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01145" /><CodeLine lineNumber="1145"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// &#95;&#95;cplusplus</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01146" /><CodeLine lineNumber="1146"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01147" /><CodeLine lineNumber="1147"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01148" /><CodeLine lineNumber="1148"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01149" /><CodeLine lineNumber="1149"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// MICRO&#95;TEST&#95;PLUS&#95;TYPE&#95;TRAITS&#95;H&#95;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01150" /><CodeLine lineNumber="1150"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01151" /><CodeLine lineNumber="1151"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 
 </ProgramListing>
 

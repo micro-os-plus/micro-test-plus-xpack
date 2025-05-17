@@ -62,13 +62,6 @@ By clearly specifying assumptions, developers can ensure that tests are only run
   labels = {["constexpr"]}>
 Check a condition and, if false, abort test execution.
 
----
-
-The <code>assume</code> function template evaluates a logical condition or custom expression and, if the condition is false, aborts the current test case within the µTest++ framework. This mechanism is intended for preconditions or assumptions that must hold for the test to be meaningful. If the assumption fails, the test case is terminated early and reported as skipped or failed, depending on the framework configuration.
-
-The function template can be used with any expression that evaluates to a boolean or with custom comparators/operators derived from the local <code>detail::op</code> type. It returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Expr&#95;T">The type of the custom expression.</ParametersListItem>
 <ParametersListItem name="(SFINAE)">Enabled only if <code>Expr&#95;T</code> is derived from <code>detail::op</code> or is convertible to <code>bool</code>.</ParametersListItem>
@@ -83,6 +76,10 @@ The function template can be used with any expression that evaluates to a boolea
 An output stream to write optional messages.
 </SectionUser>
 
+The <code>assume</code> function template evaluates a logical condition or custom expression and, if the condition is false, aborts the current test case within the µTest++ framework. This mechanism is intended for preconditions or assumptions that must hold for the test to be meaningful. If the assumption fails, the test case is terminated early and reported as skipped or failed, depending on the framework configuration.
+
+The function template can be used with any expression that evaluates to a boolean or with custom comparators/operators derived from the local <code>detail::op</code> type. It returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes.
+
 
 <SectionUser title="Example">
 
@@ -96,7 +93,7 @@ An output stream to write optional messages.
 
 </ProgramListing>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00259">259</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00238">238</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

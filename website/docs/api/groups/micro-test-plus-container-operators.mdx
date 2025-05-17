@@ -93,13 +93,6 @@ In addition to the generic operators, specialised equality and inequality operat
   labels = {["nodiscard", "constexpr"]}>
 Non-equality operator for containers.
 
----
-
-This overload of the non-equality operator enables direct comparison of two container objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two containers are not equal in content or order.
-
-The operator is enabled only for types recognised as containers by the framework&#39;s type traits.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">The container type, constrained to recognised container types.</ParametersListItem>
 </ParametersList>
@@ -113,7 +106,11 @@ The operator is enabled only for types recognised as containers by the framework
 A comparator object that evaluates to true if the containers are not equal.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00893">893</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+This overload of the non-equality operator enables direct comparison of two container objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two containers are not equal in content or order.
+
+The operator is enabled only for types recognised as containers by the framework&#39;s type traits.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00872">872</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### operator==() {#gaac06b4166dbd6e2b62a744878903eee8}
@@ -123,13 +120,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::operators::operator== (T &amp;&amp; lhs, T &amp;&amp; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
 Equality operator for containers.
-
----
-
-This overload of the equality operator enables direct comparison of two container objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two containers are equal in content and order.
-
-The operator is enabled only for types recognised as containers by the framework&#39;s type traits.
-
 
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">The container type, constrained to recognised container types.</ParametersListItem>
@@ -144,7 +134,11 @@ The operator is enabled only for types recognised as containers by the framework
 A comparator object that evaluates to true if the containers are equal.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00865">865</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+This overload of the equality operator enables direct comparison of two container objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two containers are equal in content and order.
+
+The operator is enabled only for types recognised as containers by the framework&#39;s type traits.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00844">844</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

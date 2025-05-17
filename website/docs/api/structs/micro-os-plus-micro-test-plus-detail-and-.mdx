@@ -109,6 +109,10 @@ Retrieves the right-hand operand. <Link to="#a1983beb930b5dd5d463833c222352422">
 
 ## Description {#details}
 
+<ParametersList title="Template Parameters">
+<ParametersListItem name="Lhs&#95;T">The type of the left-hand operand.</ParametersListItem>
+<ParametersListItem name="Rhs&#95;T">The type of the right-hand operand.</ParametersListItem>
+</ParametersList>
 The <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/and-">and&#95;</Link></code> struct template provides a type-safe mechanism for evaluating the logical conjunction (AND) of two operands within the framework.
 
 This comparator supports a wide range of operand types, applying the generic getter to ensure correct value extraction for both custom and standard types. The result of the logical AND operation is stored in the <code>value&#95;</code> member for efficient access.
@@ -116,12 +120,6 @@ This comparator supports a wide range of operand types, applying the generic get
 The implementation is optimised for use in embedded environments and supports both compile-time and run-time evaluation.
 
 All definitions are intended for internal use within the framework and are implemented in the <code>include/micro-os-plus/micro-test-plus</code> folder to maintain a structured and modular codebase.
-
-
-<ParametersList title="Template Parameters">
-<ParametersListItem name="Lhs&#95;T">The type of the left-hand operand.</ParametersListItem>
-<ParametersListItem name="Rhs&#95;T">The type of the right-hand operand.</ParametersListItem>
-</ParametersList>
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01148">1148</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 
@@ -173,15 +171,11 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["inline", "constexpr"]}>
 Constructs a logical AND comparator for the given operands.
 
----
-
-Evaluates the logical conjunction of the provided operands at construction, supporting both custom and standard types. The result is stored in the <code>value&#95;</code> member for efficient access.
-
-
 <ParametersList title="Parameters">
 <ParametersListItem name="lhs">The left-hand operand.</ParametersListItem>
 <ParametersListItem name="rhs">The right-hand operand.</ParametersListItem>
 </ParametersList>
+Evaluates the logical conjunction of the provided operands at construction, supporting both custom and standard types. The result is stored in the <code>value&#95;</code> member for efficient access.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01161">1161</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
@@ -200,11 +194,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["inline", "nodiscard", "constexpr"]}>
 Retrieves the left-hand operand.
 
----
-
-Returns the value of the left-hand operand, applying the generic getter to ensure correct extraction for both custom and standard types.
-
-
 <SectionUser title="Parameters">
 None.
 </SectionUser>
@@ -213,6 +202,8 @@ None.
 <SectionUser title="Returns">
 The extracted left-hand operand.
 </SectionUser>
+
+Returns the value of the left-hand operand, applying the generic getter to ensure correct extraction for both custom and standard types.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01197">1197</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
@@ -225,11 +216,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["inline", "nodiscard", "constexpr"]}>
 Conversion operator to boolean.
 
----
-
-Returns the result of the logical AND operation.
-
-
 <SectionUser title="Parameters">
 None.
 </SectionUser>
@@ -239,6 +225,7 @@ None.
 <ParametersListItem name="true">Both operands evaluate to true.</ParametersListItem>
 <ParametersListItem name="false">At least one operand evaluates to false.</ParametersListItem>
 </ParametersList>
+Returns the result of the logical AND operation.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01179">1179</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
@@ -251,11 +238,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["inline", "nodiscard", "constexpr"]}>
 Retrieves the right-hand operand.
 
----
-
-Returns the value of the right-hand operand, applying the generic getter to ensure correct extraction for both custom and standard types.
-
-
 <SectionUser title="Parameters">
 None.
 </SectionUser>
@@ -264,6 +246,8 @@ None.
 <SectionUser title="Returns">
 The extracted right-hand operand.
 </SectionUser>
+
+Returns the value of the right-hand operand, applying the generic getter to ensure correct extraction for both custom and standard types.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01215">1215</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>

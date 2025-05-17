@@ -85,6 +85,9 @@ Conversion operator to boolean. <Link to="#adb5deb96eff8e73d2ac69f7516d984fb">Mo
 
 ## Description {#details}
 
+<ParametersList title="Template Parameters">
+<ParametersListItem name="Callable&#95;T">The type of the callable object to be invoked.</ParametersListItem>
+</ParametersList>
 The <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/nothrow-">nothrow&#95;</Link></code> struct template provides a type-safe mechanism for verifying whether a callable expression completes without throwing any exception during its execution within the framework.
 
 This comparator is designed to support both custom and standard callable types. The result of the exception check is stored in the <code>value&#95;</code> member for efficient access.
@@ -92,11 +95,6 @@ This comparator is designed to support both custom and standard callable types. 
 The implementation is optimised for use in embedded environments and supports both compile-time and run-time evaluation.
 
 All definitions are intended for internal use within the framework and are implemented in the <code>include/micro-os-plus/micro-test-plus</code> folder to maintain a structured and modular codebase.
-
-
-<ParametersList title="Template Parameters">
-<ParametersListItem name="Callable&#95;T">The type of the callable object to be invoked.</ParametersListItem>
-</ParametersList>
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01631">1631</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 
@@ -128,14 +126,10 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["inline", "explicit", "constexpr"]}>
 Constructs a nothrow checking operator for the given callable.
 
----
-
-Invokes the provided callable and determines whether it completes without throwing any exception. The result is stored in the <code>value&#95;</code> member for efficient access.
-
-
 <ParametersList title="Parameters">
 <ParametersListItem name="func">The callable object to be invoked.</ParametersListItem>
 </ParametersList>
+Invokes the provided callable and determines whether it completes without throwing any exception. The result is stored in the <code>value&#95;</code> member for efficient access.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01643">1643</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
@@ -154,11 +148,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["inline", "nodiscard", "constexpr"]}>
 Conversion operator to boolean.
 
----
-
-Returns the result of the nothrow check.
-
-
 <SectionUser title="Parameters">
 None.
 </SectionUser>
@@ -168,6 +157,7 @@ None.
 <ParametersListItem name="true">The callable does not throw any exception.</ParametersListItem>
 <ParametersListItem name="false">The callable throws an exception.</ParametersListItem>
 </ParametersList>
+Returns the result of the nothrow check.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01670">1670</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>

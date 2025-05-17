@@ -209,17 +209,6 @@ This file is intended solely for internal use within the framework and should no
   labels = {["nodiscard", "constexpr"]}>
 Generic getter function template for value retrieval.
 
----
-
-The <code>get</code> function template invokes the appropriate getter implementation to retrieve the value from the provided object or type. This function ensures consistent access to values for both custom and standard types within the framework.
-
-The primary implementation attempts to invoke a <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link></code> method if it exists, which is recommended for user-defined types to ensure consistent value access. If the type does not provide a <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link></code> method, the fallback variadic implementation simply returns the original argument.
-
-The <code>get</code> function template delegates to these implementations, enabling seamless support for a wide range of types in test expressions and comparators.
-
-All definitions are intended for internal use within the framework and are implemented in the <code>include/micro-os-plus/micro-test-plus</code> folder to maintain a structured and modular codebase.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">The type from which the value is to be retrieved.</ParametersListItem>
 </ParametersList>
@@ -232,7 +221,15 @@ All definitions are intended for internal use within the framework and are imple
 The value obtained via the relevant getter implementation.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00218">218</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+The <code>get</code> function template invokes the appropriate getter implementation to retrieve the value from the provided object or type. This function ensures consistent access to values for both custom and standard types within the framework.
+
+The primary implementation attempts to invoke a <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link></code> method if it exists, which is recommended for user-defined types to ensure consistent value access. If the type does not provide a <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link></code> method, the fallback variadic implementation simply returns the original argument.
+
+The <code>get</code> function template delegates to these implementations, enabling seamless support for a wide range of types in test expressions and comparators.
+
+All definitions are intended for internal use within the framework and are implemented in the <code>include/micro-os-plus/micro-test-plus</code> folder to maintain a structured and modular codebase.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00219">219</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 ### get&#95;impl() {#a2fa97961fad5cd659110b887731f94dd}
@@ -243,17 +240,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["nodiscard", "constexpr"]}>
 Generic getter function template for value retrieval.
 
----
-
-The <code>get</code> function template invokes the appropriate getter implementation to retrieve the value from the provided object or type. This function ensures consistent access to values for both custom and standard types within the framework.
-
-The primary implementation attempts to invoke a <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link></code> method if it exists, which is recommended for user-defined types to ensure consistent value access. If the type does not provide a <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link></code> method, the fallback variadic implementation simply returns the original argument.
-
-The <code>get</code> function template delegates to these implementations, enabling seamless support for a wide range of types in test expressions and comparators.
-
-All definitions are intended for internal use within the framework and are implemented in the <code>include/micro-os-plus/micro-test-plus</code> folder to maintain a structured and modular codebase.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">The type from which the value is to be retrieved.</ParametersListItem>
 </ParametersList>
@@ -266,7 +252,15 @@ All definitions are intended for internal use within the framework and are imple
 The value obtained via the relevant getter implementation.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00155">155</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+The <code>get</code> function template invokes the appropriate getter implementation to retrieve the value from the provided object or type. This function ensures consistent access to values for both custom and standard types within the framework.
+
+The primary implementation attempts to invoke a <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link></code> method if it exists, which is recommended for user-defined types to ensure consistent value access. If the type does not provide a <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link></code> method, the fallback variadic implementation simply returns the original argument.
+
+The <code>get</code> function template delegates to these implementations, enabling seamless support for a wide range of types in test expressions and comparators.
+
+All definitions are intended for internal use within the framework and are implemented in the <code>include/micro-os-plus/micro-test-plus</code> folder to maintain a structured and modular codebase.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00156">156</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 ### get&#95;impl() {#a95670c72316d5efa02f44ad11d13f662}
@@ -276,15 +270,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>decltype(auto) micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::get&#95;impl (const T &amp; t, ...)</>}
   labels = {["nodiscard", "constexpr"]}>
 Fallback variadic getter function template.
-
----
-
-The <code>get&#95;impl</code> function template serves as a fallback mechanism for value retrieval when the provided type does not implement a <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link></code> member function. It simply returns the first argument, discarding any additional parameters.
-
-This approach ensures that both custom types (with a <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link></code> method) and standard types (without a <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link></code> method) are supported seamlessly within the framework&#39;s generic getter utilities.
-
-All definitions are intended for internal use within the framework and are implemented in the <code>include/micro-os-plus/micro-test-plus</code> folder to maintain a structured and modular codebase.
-
 
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">The type from which the value is to be retrieved.</ParametersListItem>
@@ -298,7 +283,13 @@ All definitions are intended for internal use within the framework and are imple
 The original argument <code>t</code>.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00184">184</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+The <code>get&#95;impl</code> function template serves as a fallback mechanism for value retrieval when the provided type does not implement a <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link></code> member function. It simply returns the first argument, discarding any additional parameters.
+
+This approach ensures that both custom types (with a <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link></code> method) and standard types (without a <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">get()</Link></code> method) are supported seamlessly within the framework&#39;s generic getter utilities.
+
+All definitions are intended for internal use within the framework and are implemented in the <code>include/micro-os-plus/micro-test-plus</code> folder to maintain a structured and modular codebase.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00185">185</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -355,40 +346,40 @@ The file content with the documentation metadata removed is:
 <Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight></CodeLine>
 <Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">detail</Link></Highlight></CodeLine>
 <Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">  &#123;</Highlight></CodeLine>
-<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> Expr&#95;T&gt;</Highlight></CodeLine>
-<Link id="l00111" /><CodeLine lineNumber="111" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/detail/assertion"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/assertion">assertion</Link></Highlight></CodeLine>
-<Link id="l00112" /><CodeLine lineNumber="112"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
-<Link id="l00116" /><CodeLine lineNumber="116" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/detail/assertion/#a3bda35bdd21c44124c7828c65ac3395f"><Highlight kind="normal">      Expr&#95;T <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/assertion/#a3bda35bdd21c44124c7828c65ac3395f">expr</Link>&#123;&#125;;</Highlight></CodeLine>
-<Link id="l00117" /><CodeLine lineNumber="117"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00121" /><CodeLine lineNumber="121" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/detail/assertion/#acd2e0e20795f5a31ed3031ab51579dc0"><Highlight kind="normal">      <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source&#95;location</Link> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/assertion/#acd2e0e20795f5a31ed3031ab51579dc0">location</Link>&#123;&#125;;</Highlight></CodeLine>
-<Link id="l00122" /><CodeLine lineNumber="122"><Highlight kind="normal">    &#125;;</Highlight></CodeLine>
-<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// ------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T&gt;</Highlight></CodeLine>
-<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">    [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00155" /><CodeLine lineNumber="155" lineLink="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a2fa97961fad5cd659110b887731f94dd"><Highlight kind="normal">    <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a2fa97961fad5cd659110b887731f94dd">get&#95;impl</Link> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> T&amp; t, </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal">) -&gt; </Highlight><Highlight kind="keyword">decltype</Highlight><Highlight kind="normal"> (t.get ())</Highlight></CodeLine>
-<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
-<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> t.get ();</Highlight></CodeLine>
-<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
-<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00182" /><CodeLine lineNumber="182"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T&gt;</Highlight></CodeLine>
-<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">    [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00184" /><CodeLine lineNumber="184" lineLink="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a95670c72316d5efa02f44ad11d13f662"><Highlight kind="normal">    <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a2fa97961fad5cd659110b887731f94dd">get&#95;impl</Link> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> T&amp; t, ...) -&gt; </Highlight><Highlight kind="keyword">decltype</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
-<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
-<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> t;</Highlight></CodeLine>
-<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
-<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T&gt;</Highlight></CodeLine>
-<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">    [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00218" /><CodeLine lineNumber="218" lineLink="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343"><Highlight kind="normal">    <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">get</Link> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> T&amp; t)</Highlight></CodeLine>
-<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
-<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Call the variadic function, basically to force it return &#96;t&#96;.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a2fa97961fad5cd659110b887731f94dd">get&#95;impl</Link> (t, 0);</Highlight></CodeLine>
-<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
-<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// ------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> Expr&#95;T&gt;</Highlight></CodeLine>
+<Link id="l00112" /><CodeLine lineNumber="112" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/detail/assertion"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/assertion">assertion</Link></Highlight></CodeLine>
+<Link id="l00113" /><CodeLine lineNumber="113"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
+<Link id="l00117" /><CodeLine lineNumber="117" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/detail/assertion/#a3bda35bdd21c44124c7828c65ac3395f"><Highlight kind="normal">      Expr&#95;T <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/assertion/#a3bda35bdd21c44124c7828c65ac3395f">expr</Link>&#123;&#125;;</Highlight></CodeLine>
+<Link id="l00118" /><CodeLine lineNumber="118"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00122" /><CodeLine lineNumber="122" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/detail/assertion/#acd2e0e20795f5a31ed3031ab51579dc0"><Highlight kind="normal">      <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source&#95;location</Link> <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/assertion/#acd2e0e20795f5a31ed3031ab51579dc0">location</Link>&#123;&#125;;</Highlight></CodeLine>
+<Link id="l00123" /><CodeLine lineNumber="123"><Highlight kind="normal">    &#125;;</Highlight></CodeLine>
+<Link id="l00124" /><CodeLine lineNumber="124"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00125" /><CodeLine lineNumber="125"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// ------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00126" /><CodeLine lineNumber="126"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T&gt;</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">    [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00156" /><CodeLine lineNumber="156" lineLink="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a2fa97961fad5cd659110b887731f94dd"><Highlight kind="normal">    <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a2fa97961fad5cd659110b887731f94dd">get&#95;impl</Link> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> T&amp; t, </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal">) -&gt; </Highlight><Highlight kind="keyword">decltype</Highlight><Highlight kind="normal"> (t.get ())</Highlight></CodeLine>
+<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
+<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> t.get ();</Highlight></CodeLine>
+<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00183" /><CodeLine lineNumber="183"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T&gt;</Highlight></CodeLine>
+<Link id="l00184" /><CodeLine lineNumber="184"><Highlight kind="normal">    [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185" lineLink="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a95670c72316d5efa02f44ad11d13f662"><Highlight kind="normal">    <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a2fa97961fad5cd659110b887731f94dd">get&#95;impl</Link> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> T&amp; t, ...) -&gt; </Highlight><Highlight kind="keyword">decltype</Highlight><Highlight kind="normal"> (</Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal">)</Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> t;</Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T&gt;</Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal">    [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219" lineLink="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343"><Highlight kind="normal">    <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">get</Link> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> T&amp; t)</Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// Call the variadic function, basically to force it return &#96;t&#96;.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a2fa97961fad5cd659110b887731f94dd">get&#95;impl</Link> (t, 0);</Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// ------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal"></Highlight></CodeLine>
 <Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> Lhs&#95;T, </Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> Rhs&#95;T&gt;</Highlight></CodeLine>
 <Link id="l00254" /><CodeLine lineNumber="254" lineLink="/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">struct </Highlight><Highlight kind="normal"><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-/#a527ae62e9ed62a3ebbc3efd243d602c3">eq&#95;</Link> : <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">type&#95;traits::op</Link></Highlight></CodeLine>
 <Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
@@ -991,66 +982,66 @@ The file content with the documentation metadata removed is:
 <Link id="l01703" /><CodeLine lineNumber="1703" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#aba23fdd1c24e8232712ba47b8e107a19">deferred&#95;reporter&#95;base</Link></Highlight></CodeLine>
 <Link id="l01704" /><CodeLine lineNumber="1704"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
 <Link id="l01705" /><CodeLine lineNumber="1705"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l01716" /><CodeLine lineNumber="1716"><Highlight kind="normal">      <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#aba23fdd1c24e8232712ba47b8e107a19">deferred&#95;reporter&#95;base</Link> (</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#a0e4cca7c6f1d63789683f3b6a7f647ea">value</Link>,</Highlight></CodeLine>
-<Link id="l01717" /><CodeLine lineNumber="1717"><Highlight kind="normal">                              </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source&#95;location</Link> location);</Highlight></CodeLine>
-<Link id="l01718" /><CodeLine lineNumber="1718"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01722" /><CodeLine lineNumber="1722"><Highlight kind="normal">      <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#aba23fdd1c24e8232712ba47b8e107a19">~deferred&#95;reporter&#95;base</Link> ();</Highlight></CodeLine>
-<Link id="l01723" /><CodeLine lineNumber="1723"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01736" /><CodeLine lineNumber="1736"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T&gt;</Highlight></CodeLine>
-<Link id="l01737" /><CodeLine lineNumber="1737"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal">&amp;</Highlight></CodeLine>
-<Link id="l01738" /><CodeLine lineNumber="1738"><Highlight kind="normal">      operator&lt;&lt; (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> T&amp; msg);</Highlight></CodeLine>
-<Link id="l01739" /><CodeLine lineNumber="1739"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01751" /><CodeLine lineNumber="1751"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01752" /><CodeLine lineNumber="1752" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#a0e4cca7c6f1d63789683f3b6a7f647ea"><Highlight kind="normal">      <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#a0e4cca7c6f1d63789683f3b6a7f647ea">value</Link> ()</Highlight><Highlight kind="keyword"> const</Highlight></CodeLine>
-<Link id="l01753" /><CodeLine lineNumber="1753"><Highlight kind="keyword">      </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l01754" /><CodeLine lineNumber="1754"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#af633053afa944173b47482786f9d9a7e">value&#95;</Link>;</Highlight></CodeLine>
-<Link id="l01755" /><CodeLine lineNumber="1755"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l01756" /><CodeLine lineNumber="1756"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01757" /><CodeLine lineNumber="1757"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l01761" /><CodeLine lineNumber="1761" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#af633053afa944173b47482786f9d9a7e"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#af633053afa944173b47482786f9d9a7e">value&#95;</Link>&#123;&#125;;</Highlight></CodeLine>
-<Link id="l01762" /><CodeLine lineNumber="1762"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01767" /><CodeLine lineNumber="1767" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#aa36fd4c36a94b04430599303e38a48bd"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#aa36fd4c36a94b04430599303e38a48bd">abort&#95;</Link> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l01768" /><CodeLine lineNumber="1768"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01772" /><CodeLine lineNumber="1772" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#a025498d9b9376056c56042cc98ed7afd"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source&#95;location</Link> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#a025498d9b9376056c56042cc98ed7afd">location&#95;</Link>&#123;&#125;;</Highlight></CodeLine>
+<Link id="l01712" /><CodeLine lineNumber="1712"><Highlight kind="normal">      <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#aba23fdd1c24e8232712ba47b8e107a19">deferred&#95;reporter&#95;base</Link> (</Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#a0e4cca7c6f1d63789683f3b6a7f647ea">value</Link>,</Highlight></CodeLine>
+<Link id="l01713" /><CodeLine lineNumber="1713"><Highlight kind="normal">                              </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source&#95;location</Link> location);</Highlight></CodeLine>
+<Link id="l01714" /><CodeLine lineNumber="1714"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01718" /><CodeLine lineNumber="1718"><Highlight kind="normal">      <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#aba23fdd1c24e8232712ba47b8e107a19">~deferred&#95;reporter&#95;base</Link> ();</Highlight></CodeLine>
+<Link id="l01719" /><CodeLine lineNumber="1719"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01728" /><CodeLine lineNumber="1728"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T&gt;</Highlight></CodeLine>
+<Link id="l01729" /><CodeLine lineNumber="1729"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal">&amp;</Highlight></CodeLine>
+<Link id="l01730" /><CodeLine lineNumber="1730"><Highlight kind="normal">      operator&lt;&lt; (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> T&amp; msg);</Highlight></CodeLine>
+<Link id="l01731" /><CodeLine lineNumber="1731"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01744" /><CodeLine lineNumber="1744"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01745" /><CodeLine lineNumber="1745" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#a0e4cca7c6f1d63789683f3b6a7f647ea"><Highlight kind="normal">      <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#a0e4cca7c6f1d63789683f3b6a7f647ea">value</Link> ()</Highlight><Highlight kind="keyword"> const</Highlight></CodeLine>
+<Link id="l01746" /><CodeLine lineNumber="1746"><Highlight kind="keyword">      </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l01747" /><CodeLine lineNumber="1747"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#af633053afa944173b47482786f9d9a7e">value&#95;</Link>;</Highlight></CodeLine>
+<Link id="l01748" /><CodeLine lineNumber="1748"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
+<Link id="l01749" /><CodeLine lineNumber="1749"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01750" /><CodeLine lineNumber="1750"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l01754" /><CodeLine lineNumber="1754" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#af633053afa944173b47482786f9d9a7e"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#af633053afa944173b47482786f9d9a7e">value&#95;</Link>&#123;&#125;;</Highlight></CodeLine>
+<Link id="l01755" /><CodeLine lineNumber="1755"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01760" /><CodeLine lineNumber="1760" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#aa36fd4c36a94b04430599303e38a48bd"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#aa36fd4c36a94b04430599303e38a48bd">abort&#95;</Link> = </Highlight><Highlight kind="keyword">false</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l01761" /><CodeLine lineNumber="1761"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01765" /><CodeLine lineNumber="1765" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#a025498d9b9376056c56042cc98ed7afd"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source&#95;location</Link> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#a025498d9b9376056c56042cc98ed7afd">location&#95;</Link>&#123;&#125;;</Highlight></CodeLine>
+<Link id="l01766" /><CodeLine lineNumber="1766"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01771" /><CodeLine lineNumber="1771" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#aa12bdce872a0994d70be146507834cf1"><Highlight kind="normal">      std::string <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#aa12bdce872a0994d70be146507834cf1">message&#95;</Link>&#123;&#125;;</Highlight></CodeLine>
+<Link id="l01772" /><CodeLine lineNumber="1772"><Highlight kind="normal">    &#125;;</Highlight></CodeLine>
 <Link id="l01773" /><CodeLine lineNumber="1773"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01778" /><CodeLine lineNumber="1778" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#aa12bdce872a0994d70be146507834cf1"><Highlight kind="normal">      std::string <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#aa12bdce872a0994d70be146507834cf1">message&#95;</Link>&#123;&#125;;</Highlight></CodeLine>
-<Link id="l01779" /><CodeLine lineNumber="1779"><Highlight kind="normal">    &#125;;</Highlight></CodeLine>
-<Link id="l01780" /><CodeLine lineNumber="1780"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01781" /><CodeLine lineNumber="1781"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// ------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01782" /><CodeLine lineNumber="1782"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01801" /><CodeLine lineNumber="1801"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> Expr&#95;T&gt;</Highlight></CodeLine>
-<Link id="l01802" /><CodeLine lineNumber="1802" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter/#a3e7dc16ad866722075fc1b1ac8fa6701">deferred&#95;reporter</Link> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#aba23fdd1c24e8232712ba47b8e107a19">deferred&#95;reporter&#95;base</Link></Highlight></CodeLine>
-<Link id="l01803" /><CodeLine lineNumber="1803"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
-<Link id="l01804" /><CodeLine lineNumber="1804"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l01817" /><CodeLine lineNumber="1817"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter/#a3e7dc16ad866722075fc1b1ac8fa6701">deferred&#95;reporter</Link> (</Highlight></CodeLine>
-<Link id="l01818" /><CodeLine lineNumber="1818"><Highlight kind="normal">          </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Expr&#95;T&amp; expr, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> abort,</Highlight></CodeLine>
-<Link id="l01819" /><CodeLine lineNumber="1819"><Highlight kind="normal">          </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source&#95;location</Link>&amp; location);</Highlight></CodeLine>
-<Link id="l01820" /><CodeLine lineNumber="1820"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01824" /><CodeLine lineNumber="1824"><Highlight kind="normal">      <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter/#a3e7dc16ad866722075fc1b1ac8fa6701">~deferred&#95;reporter</Link> ();</Highlight></CodeLine>
+<Link id="l01774" /><CodeLine lineNumber="1774"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// ------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01775" /><CodeLine lineNumber="1775"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01794" /><CodeLine lineNumber="1794"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> Expr&#95;T&gt;</Highlight></CodeLine>
+<Link id="l01795" /><CodeLine lineNumber="1795" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter/#a3e7dc16ad866722075fc1b1ac8fa6701">deferred&#95;reporter</Link> : </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#aba23fdd1c24e8232712ba47b8e107a19">deferred&#95;reporter&#95;base</Link></Highlight></CodeLine>
+<Link id="l01796" /><CodeLine lineNumber="1796"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
+<Link id="l01797" /><CodeLine lineNumber="1797"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l01810" /><CodeLine lineNumber="1810"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">explicit</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter/#a3e7dc16ad866722075fc1b1ac8fa6701">deferred&#95;reporter</Link> (</Highlight></CodeLine>
+<Link id="l01811" /><CodeLine lineNumber="1811"><Highlight kind="normal">          </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Expr&#95;T&amp; expr, </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> abort,</Highlight></CodeLine>
+<Link id="l01812" /><CodeLine lineNumber="1812"><Highlight kind="normal">          </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source&#95;location</Link>&amp; location);</Highlight></CodeLine>
+<Link id="l01813" /><CodeLine lineNumber="1813"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01817" /><CodeLine lineNumber="1817"><Highlight kind="normal">      <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter/#a3e7dc16ad866722075fc1b1ac8fa6701">~deferred&#95;reporter</Link> ();</Highlight></CodeLine>
+<Link id="l01818" /><CodeLine lineNumber="1818"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01819" /><CodeLine lineNumber="1819"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l01823" /><CodeLine lineNumber="1823" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter/#a9535950f3f91d792f4347d08f8dd154e"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Expr&#95;T <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter/#a9535950f3f91d792f4347d08f8dd154e">expr&#95;</Link>&#123;&#125;;</Highlight></CodeLine>
+<Link id="l01824" /><CodeLine lineNumber="1824"><Highlight kind="normal">    &#125;;</Highlight></CodeLine>
 <Link id="l01825" /><CodeLine lineNumber="1825"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01826" /><CodeLine lineNumber="1826"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l01830" /><CodeLine lineNumber="1830" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter/#a9535950f3f91d792f4347d08f8dd154e"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> Expr&#95;T <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter/#a9535950f3f91d792f4347d08f8dd154e">expr&#95;</Link>&#123;&#125;;</Highlight></CodeLine>
-<Link id="l01831" /><CodeLine lineNumber="1831"><Highlight kind="normal">    &#125;;</Highlight></CodeLine>
-<Link id="l01832" /><CodeLine lineNumber="1832"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01833" /><CodeLine lineNumber="1833"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// ----------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01834" /><CodeLine lineNumber="1834"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="comment">// namespace detail</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01826" /><CodeLine lineNumber="1826"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// ----------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01827" /><CodeLine lineNumber="1827"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="comment">// namespace detail</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01828" /><CodeLine lineNumber="1828"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01829" /><CodeLine lineNumber="1829"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// --------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01830" /><CodeLine lineNumber="1830"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace micro&#95;os&#95;plus::micro&#95;test&#95;plus</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01831" /><CodeLine lineNumber="1831"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01832" /><CodeLine lineNumber="1832"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;GNUC&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01833" /><CodeLine lineNumber="1833"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma GCC diagnostic pop</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01834" /><CodeLine lineNumber="1834"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <Link id="l01835" /><CodeLine lineNumber="1835"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01836" /><CodeLine lineNumber="1836"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// --------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01837" /><CodeLine lineNumber="1837"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace micro&#95;os&#95;plus::micro&#95;test&#95;plus</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01838" /><CodeLine lineNumber="1838"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01839" /><CodeLine lineNumber="1839"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;GNUC&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01840" /><CodeLine lineNumber="1840"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma GCC diagnostic pop</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01841" /><CodeLine lineNumber="1841"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01842" /><CodeLine lineNumber="1842"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01843" /><CodeLine lineNumber="1843"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01844" /><CodeLine lineNumber="1844"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01845" /><CodeLine lineNumber="1845"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// &#95;&#95;cplusplus</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01846" /><CodeLine lineNumber="1846"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01847" /><CodeLine lineNumber="1847"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01848" /><CodeLine lineNumber="1848"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01849" /><CodeLine lineNumber="1849"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// MICRO&#95;TEST&#95;PLUS&#95;DETAIL&#95;H&#95;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01850" /><CodeLine lineNumber="1850"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l01851" /><CodeLine lineNumber="1851"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01836" /><CodeLine lineNumber="1836"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01837" /><CodeLine lineNumber="1837"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01838" /><CodeLine lineNumber="1838"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// &#95;&#95;cplusplus</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01839" /><CodeLine lineNumber="1839"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01840" /><CodeLine lineNumber="1840"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01841" /><CodeLine lineNumber="1841"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01842" /><CodeLine lineNumber="1842"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// MICRO&#95;TEST&#95;PLUS&#95;DETAIL&#95;H&#95;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01843" /><CodeLine lineNumber="1843"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l01844" /><CodeLine lineNumber="1844"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 
 </ProgramListing>
 

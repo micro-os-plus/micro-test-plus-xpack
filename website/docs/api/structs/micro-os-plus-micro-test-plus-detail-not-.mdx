@@ -97,6 +97,9 @@ Retrieves the value of the operand. <Link to="#a0a17757c49426642ef49eb7e6b1f8289
 
 ## Description {#details}
 
+<ParametersList title="Template Parameters">
+<ParametersListItem name="T">The type of the operand.</ParametersListItem>
+</ParametersList>
 The <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/not-">not&#95;</Link></code> struct template provides a type-safe mechanism for evaluating the logical negation (NOT) of an operand within the framework.
 
 This comparator supports a wide range of operand types, applying the generic getter to ensure correct value extraction for both custom and standard types. The result of the logical NOT operation is stored in the <code>value&#95;</code> member for efficient access.
@@ -104,11 +107,6 @@ This comparator supports a wide range of operand types, applying the generic get
 The implementation is optimised for use in embedded environments and supports both compile-time and run-time evaluation.
 
 All definitions are intended for internal use within the framework and are implemented in the <code>include/micro-os-plus/micro-test-plus</code> folder to maintain a structured and modular codebase.
-
-
-<ParametersList title="Template Parameters">
-<ParametersListItem name="T">The type of the operand.</ParametersListItem>
-</ParametersList>
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01377">1377</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 
@@ -150,14 +148,10 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["inline", "explicit", "constexpr"]}>
 Constructs a logical NOT comparator for the given operand.
 
----
-
-Evaluates the logical negation of the provided operand at construction, supporting both custom and standard types. The result is stored in the <code>value&#95;</code> member for efficient access.
-
-
 <ParametersList title="Parameters">
 <ParametersListItem name="t">The operand to be negated.</ParametersListItem>
 </ParametersList>
+Evaluates the logical negation of the provided operand at construction, supporting both custom and standard types. The result is stored in the <code>value&#95;</code> member for efficient access.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01389">1389</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
@@ -176,11 +170,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["inline", "nodiscard", "constexpr"]}>
 Conversion operator to boolean.
 
----
-
-Returns the result of the logical NOT operation.
-
-
 <SectionUser title="Parameters">
 None.
 </SectionUser>
@@ -190,6 +179,7 @@ None.
 <ParametersListItem name="true">The operand evaluates to false.</ParametersListItem>
 <ParametersListItem name="false">The operand evaluates to true.</ParametersListItem>
 </ParametersList>
+Returns the result of the logical NOT operation.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01406">1406</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
@@ -202,11 +192,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["inline", "nodiscard", "constexpr"]}>
 Retrieves the value of the operand.
 
----
-
-Returns the value of the operand, applying the generic getter to ensure correct extraction for both custom and standard types.
-
-
 <SectionUser title="Parameters">
 None.
 </SectionUser>
@@ -215,6 +200,8 @@ None.
 <SectionUser title="Returns">
 The extracted operand value.
 </SectionUser>
+
+Returns the value of the operand, applying the generic getter to ensure correct extraction for both custom and standard types.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01423">1423</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>

@@ -144,13 +144,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["inline", "nodiscard", "constexpr", "noexcept", "static"]}>
 Obtain the current source location.
 
----
-
-Returns a <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">source&#95;location</Link></code> instance representing the file name and line number at the point of invocation.
-
-If supported by the compiler, uses built-in macros to capture this information; otherwise, defaults to <code>&quot;unknown&quot;</code> and zero.
-
-
 <ParametersList title="Parameters">
 <ParametersListItem name="file">The file name (automatically provided by the compiler).</ParametersListItem>
 <ParametersListItem name="line">The line number (automatically provided by the compiler).</ParametersListItem>
@@ -159,6 +152,10 @@ If supported by the compiler, uses built-in macros to capture this information; 
 <SectionUser title="Returns">
 A <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">source&#95;location</Link></code> instance with the captured information.
 </SectionUser>
+
+Returns a <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">source&#95;location</Link></code> instance representing the file name and line number at the point of invocation.
+
+If supported by the compiler, uses built-in macros to capture this information; otherwise, defaults to <code>&quot;unknown&quot;</code> and zero.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h/#l00150">150</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">reflection.h</Link>.
 </MemberDefinition>
@@ -175,8 +172,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::reflection::source&#95;location::file&#95;name (void) const</>}
   labels = {["inline", "nodiscard", "constexpr", "noexcept"]}>
 Retrieve the file name associated with this source location.
-
----
 
 <SectionUser title="Parameters">
 None.
@@ -196,8 +191,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::reflection::source&#95;location::line (void) const</>}
   labels = {["inline", "nodiscard", "constexpr", "noexcept"]}>
 Retrieve the line number associated with this source location.
-
----
 
 <SectionUser title="Parameters">
 None.

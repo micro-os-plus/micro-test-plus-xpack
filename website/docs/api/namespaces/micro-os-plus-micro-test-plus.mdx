@@ -688,8 +688,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>typedef verbosity micro&#95;os&#95;plus::micro&#95;test&#95;plus::verbosity&#95;t</>}>
 Type alias for the verbosity enumeration used in test reporting.
 
----
-
 The <code><Link to="#a08e787c2c2f8365df2c9b372605535ac">verbosity&#95;t</Link></code> type alias provides a convenient shorthand for referring to the <code>verbosity</code> enumeration, which defines the available levels of detail for test output within the reporting system.
 
 Using this alias improves code readability and consistency throughout the framework, especially when specifying or configuring verbosity levels for test reporters.
@@ -709,11 +707,9 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>test&#95;suite&#95;base &#42; micro&#95;os&#95;plus::micro&#95;test&#95;plus::current&#95;test&#95;suite</>}>
 Global pointer references the currently active test suite.
 
----
-
 This global pointer references the currently active test suite within the µTest++ framework. It is used to track and update the state of the test suite during test execution, including recording test results and statistics. By maintaining a pointer to the current test suite, the framework ensures accurate association of test outcomes with their respective suites, supporting clear and organised reporting across all test cases and folders.
 
-Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00306">306</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
+Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00309">309</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
 </MemberDefinition>
 
 ### reporter {#aec46bdfdb22163bedab8e6b542191834}
@@ -722,11 +718,9 @@ Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00306">30
   prototype={<>test&#95;reporter micro&#95;os&#95;plus::micro&#95;test&#95;plus::reporter</>}>
 global instance of <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link></code>.
 
----
-
 This global instance of <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link></code> is responsible for collecting, formatting, and outputting the results of test execution within the µTest++ framework. It manages the reporting of test outcomes, including successes and failures, and ensures that all relevant information is presented clearly to the user. By maintaining a single shared reporter, the framework provides consistent and centralised reporting across all test cases and folders.
 
-Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00292">292</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
+Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00295">295</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
 </MemberDefinition>
 
 ### runner {#a469c0f5fefa0b4cea12a7d267dded831}
@@ -735,11 +729,9 @@ Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00292">29
   prototype={<>test&#95;runner micro&#95;os&#95;plus::micro&#95;test&#95;plus::runner</>}>
 Global instance of <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test&#95;runner</Link></code>.
 
----
-
 This global instance of <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test&#95;runner</Link></code> manages the lifecycle of test suites and test cases within the µTest++ framework. It is responsible for initialising the test environment, registering test suites, executing tests, and collecting results. By maintaining a single shared runner, the framework ensures consistent test execution and reporting across all test cases and folders.
 
-Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00278">278</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
+Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00281">281</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -753,13 +745,6 @@ Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00278">27
 <MemberDefinition
   prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::endl (<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp; stream)</>}>
 Output stream manipulator for ending a line in test reports.
-
----
-
-The <code>endl</code> function acts as a stream manipulator for the <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link></code>, inserting a line ending into the output buffer and flushing the current content if necessary. This ensures that test report output is clearly separated and formatted, improving readability and professionalism in the presentation of test results.
-
-Using <code>endl</code> in conjunction with the <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link></code> output operators provides a familiar and convenient mechanism for managing line breaks, similar to standard C++ stream manipulators.
-
 
 <ParametersList title="Parameters">
 <ParametersListItem name="stream">Reference to the <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link></code> instance.</ParametersListItem>

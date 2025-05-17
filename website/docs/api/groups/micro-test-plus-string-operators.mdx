@@ -89,11 +89,6 @@ By using these dedicated string operators, developers can write concise and read
   labels = {["nodiscard", "constexpr"]}>
 Non-equality operator for <code>string&#95;view</code> objects.
 
----
-
-This overload of the non-equality operator enables direct comparison of two <code>std::string&#95;view</code> objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two string views are not equal.
-
-
 <ParametersList title="Parameters">
 <ParametersListItem name="[in] lhs">The left hand side <code>std::string&#95;view</code> operand.</ParametersListItem>
 <ParametersListItem name="[in] rhs">The right hand side <code>std::string&#95;view</code> operand.</ParametersListItem>
@@ -103,7 +98,9 @@ This overload of the non-equality operator enables direct comparison of two <cod
 A comparator object that evaluates to true if the string views are not equal.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00837">837</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+This overload of the non-equality operator enables direct comparison of two <code>std::string&#95;view</code> objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two string views are not equal.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00816">816</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### operator==() {#gaabe34a842bf38ea2913a4164d2b0a9cb}
@@ -112,11 +109,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::operators::operator== (std::string&#95;view lhs, std::string&#95;view rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
 Equality operator for <code>string&#95;view</code> objects.
-
----
-
-This overload of the equality operator enables direct comparison of two <code>std::string&#95;view</code> objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two string views are equal.
-
 
 <ParametersList title="Parameters">
 <ParametersListItem name="[in] lhs">The left hand side <code>std::string&#95;view</code> operand.</ParametersListItem>
@@ -127,7 +119,9 @@ This overload of the equality operator enables direct comparison of two <code>st
 A comparator object that evaluates to true if the string views are equal.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00816">816</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+This overload of the equality operator enables direct comparison of two <code>std::string&#95;view</code> objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two string views are equal.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00795">795</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

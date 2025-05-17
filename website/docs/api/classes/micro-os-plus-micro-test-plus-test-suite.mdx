@@ -349,8 +349,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite::test&#95;suite (const char &#42; name, Callable&#95;T &amp;&amp; callable, Args&#95;T &amp;&amp;... arguments)</>}>
 Class template constructor for <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</Link>.
 
----
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Callable&#95;T">The type of a callable object.</ParametersListItem>
 <ParametersListItem name="Args&#95;T">The types of the callable arguments.</ParametersListItem>
@@ -403,8 +401,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["virtual"]}>
 Virtual destructor for the <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</Link> class.
 
----
-
 The destructor releases any resources associated with the <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</Link></code> instance. If tracing is enabled, it outputs the function signature for diagnostic purposes. This ensures that the test suite is properly cleaned up after execution, supporting robust and reliable test management across all files and folders within the µTest++ framework.
 
 Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00418">418</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00238">238</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
@@ -421,8 +417,6 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-p
 <MemberDefinition
   prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::begin&#95;test&#95;case (const char &#42; name)</>}>
 Marks the beginning of a named test case.
-
----
 
 <ParametersList title="Parameters">
 <ParametersListItem name="[in] name">The test case name.</ParametersListItem>
@@ -442,8 +436,6 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-p
 <MemberDefinition
   prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::begin&#95;test&#95;suite (void)</>}>
 Begins the execution of the test suite.
-
----
 
 <SectionUser title="Parameters">
 None.
@@ -465,8 +457,6 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-p
   prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::end&#95;test&#95;case (void)</>}>
 Marks the end of a test case.
 
----
-
 <SectionUser title="Parameters">
 None.
 </SectionUser>
@@ -486,8 +476,6 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-p
 <MemberDefinition
   prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::end&#95;test&#95;suite (void)</>}>
 Marks the end of the test suite.
-
----
 
 <SectionUser title="Parameters">
 None.
@@ -510,8 +498,6 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-p
   labels = {["inline", "nodiscard", "constexpr"]}>
 Gets the number of test conditions that failed.
 
----
-
 <SectionUser title="Parameters">
 None.
 </SectionUser>
@@ -529,8 +515,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <MemberDefinition
   prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::increment&#95;failed (void)</>}>
 Increments the count of failed test conditions.
-
----
 
 <SectionUser title="Parameters">
 None.
@@ -552,8 +536,6 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-p
   prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::increment&#95;successful (void)</>}>
 Increments the count of passed test conditions.
 
----
-
 <SectionUser title="Parameters">
 None.
 </SectionUser>
@@ -574,8 +556,6 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-p
   prototype={<>const char &#42; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::name (void)</>}
   labels = {["inline", "nodiscard", "constexpr"]}>
 Gets the suite name.
-
----
 
 <SectionUser title="Parameters">
 None.
@@ -616,8 +596,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["virtual"]}>
 Runs the sequence of test cases in the suite by invoking the stored callable.
 
----
-
 <SectionUser title="Parameters">
 None.
 </SectionUser>
@@ -639,8 +617,6 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-p
   labels = {["inline", "nodiscard", "constexpr"]}>
 Gets the number of conditions that passed.
 
----
-
 <SectionUser title="Parameters">
 None.
 </SectionUser>
@@ -659,8 +635,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>int micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::test&#95;cases (void)</>}
   labels = {["inline", "nodiscard", "constexpr"]}>
 Gets the number of test cases.
-
----
 
 <SectionUser title="Parameters">
 None.
@@ -681,8 +655,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["inline", "nodiscard", "constexpr"]}>
 Checks if the test suite was not used.
 
----
-
 <SectionUser title="Parameters">
 None.
 </SectionUser>
@@ -701,8 +673,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>bool micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::was&#95;successful (void)</>}
   labels = {["inline", "nodiscard", "constexpr"]}>
 Gets the test suite result.
-
----
 
 <SectionUser title="Parameters">
 None.
@@ -727,8 +697,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <MemberDefinition
   prototype={<>struct micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::current&#95;test&#95;case</>}>
 Structure holding the current test case&#39;s check counters.
-
----
 
 Tracks the number of successful and failed checks for the currently running test case.
 

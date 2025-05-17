@@ -139,16 +139,14 @@ Retrieves the result value. <Link to="/docs/api/classes/micro-os-plus/micro-test
 
 ## Description {#details}
 
+<ParametersList title="Template Parameters">
+<ParametersListItem name="Expr&#95;T">The type of the expression being reported.</ParametersListItem>
+</ParametersList>
 The <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter">deferred&#95;reporter</Link></code> class template extends <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base">deferred&#95;reporter&#95;base</Link></code> to provide deferred reporting functionality for a specific test expression within the framework.
 
 This class template is responsible for capturing the expression under evaluation, the abort status, and the source location. It is intended exclusively for internal use and is implemented in the <code>include/micro-os-plus/micro-test-plus</code> folder to ensure a structured and modular codebase.
 
-
-<ParametersList title="Template Parameters">
-<ParametersListItem name="Expr&#95;T">The type of the expression being reported.</ParametersListItem>
-</ParametersList>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01802">1802</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01795">1795</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 
 <SectionDefinition>
 
@@ -162,7 +160,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["protected"]}>
 Indicates whether the reporting should abort further processing.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01767">1767</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01760">1760</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 ### expr&#95; {#a9535950f3f91d792f4347d08f8dd154e}
@@ -173,7 +171,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["protected"]}>
 Stores the expression under evaluation.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01830">1830</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01823">1823</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 ### location&#95; {#a025498d9b9376056c56042cc98ed7afd}
@@ -184,7 +182,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["protected"]}>
 Stores the source location associated with the report.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01772">1772</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01765">1765</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 ### message&#95; {#aa12bdce872a0994d70be146507834cf1}
@@ -195,7 +193,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["protected"]}>
 String to collect the expectation message passed via <code>operator&lt;&lt;()</code>.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01778">1778</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01771">1771</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 ### value&#95; {#af633053afa944173b47482786f9d9a7e}
@@ -206,7 +204,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["protected"]}>
 Stores the result value of the report.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01761">1761</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01754">1754</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -223,21 +221,18 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["explicit", "constexpr"]}>
 Constructs a deferred reporter for a specific expression.
 
----
-
-Initialises the reporter with the given expression, abort status, and source location.
-
-
 <ParametersList title="Parameters">
 <ParametersListItem name="expr">The expression under evaluation.</ParametersListItem>
 <ParametersListItem name="abort">Indicates whether reporting should abort further processing.</ParametersListItem>
 <ParametersListItem name="location">The source location relevant to the report.</ParametersListItem>
 </ParametersList>
+Initialises the reporter with the given expression, abort status, and source location.
+
 This constructor initialises a deferred reporter for a specific expression, capturing the evaluation result, abort status, and source location.
 
 The expression is evaluated and its boolean result is passed to the base class. The abort flag determines whether further test execution should be halted if the expectation fails. The source location provides contextual information for reporting purposes.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01817">1817</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines-h/#l00182">182</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01810">1810</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines-h/#l00189">189</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -253,13 +248,11 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-p
   prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::deferred&#95;reporter&lt; Expr&#95;T &gt;::~deferred&#95;reporter ()</>}>
 Destructor for the deferred reporter.
 
----
-
 The destructor finalises the deferred reporting process for a test expression. If the evaluated expression is true, the reporter records a successful outcome along with any accumulated message. If the expression is false, the reporter records a failure, including the abort status, message, and source location for comprehensive reporting.
 
 This mechanism ensures that all relevant information about the test outcome is captured and reported accurately when the deferred reporter goes out of scope.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01824">1824</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines-h/#l00207">207</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01817">1817</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines-h/#l00214">214</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -274,11 +267,6 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-p
   template={<>template &lt;class T&gt;</>}
   prototype={<>auto &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::deferred&#95;reporter&#95;base::operator&lt;&lt; (const T &amp; msg)</>}>
 Appends a message to the reporter.
-
----
-
-Appends the provided message to the internal message string, enabling the accumulation of expectation details.
-
 
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">The type of the message to append.</ParametersListItem>
@@ -296,7 +284,7 @@ This operator overload enables the deferred reporter to accumulate expectation m
 
 If the argument is of an arithmetic type, it is first converted to a string using <code>std::to&#95;string</code> before being appended. For all other types, the value is appended directly. This ensures that both numeric and string-like messages are handled appropriately and consistently.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01737">1737</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines-h/#l00155">155</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01729">1729</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines-h/#l00162">162</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### value() {#a0e4cca7c6f1d63789683f3b6a7f647ea}
@@ -307,11 +295,6 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-p
   labels = {["inline", "nodiscard", "constexpr"]}>
 Retrieves the result value.
 
----
-
-Returns the result value associated with the report.
-
-
 <SectionUser title="Parameters">
 None.
 </SectionUser>
@@ -321,8 +304,9 @@ None.
 <ParametersListItem name="true">The reported condition was met.</ParametersListItem>
 <ParametersListItem name="false">The reported condition was not met.</ParametersListItem>
 </ParametersList>
+Returns the result value associated with the report.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01752">1752</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01745">1745</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

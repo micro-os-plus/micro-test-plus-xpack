@@ -88,13 +88,6 @@ By grouping checks in this way, it becomes easier to identify which functionalit
   prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;case (const char &#42; name, Callable&#95;T &amp;&amp; callable, Args&#95;T &amp;&amp;... arguments)</>}>
 Define and execute a test case.
 
----
-
-The <code>test&#95;case</code> function template registers and executes a test case within the µTest++ framework. It accepts a descriptive name, a callable object (such as a lambda or function pointer), and an optional list of arguments to be passed to the callable. The test case is reported using the provided name, and its execution is managed by the framework&#39;s test runner.
-
-This function template enables flexible and expressive test case definitions, supporting both parameterised and non-parameterised tests. It is typically invoked at global scope or within test suite definitions to ensure automatic registration and execution.
-
-
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Callable&#95;T">The type of the callable object to be executed as the test case.</ParametersListItem>
 <ParametersListItem name="Args&#95;T">The types of the arguments to be passed to the callable.</ParametersListItem>
@@ -110,13 +103,13 @@ This function template enables flexible and expressive test case definitions, su
 Nothing.
 </SectionUser>
 
-The <code>test&#95;case</code> function template defines a test case, which is a sequence of test conditions (also referred to as tests or checks) that represent expectations or assumptions—conditions expected to be true.
+The <code>test&#95;case</code> function template registers and executes a test case within the µTest++ framework. It accepts a descriptive name, a callable object (such as a lambda or function pointer), and an optional list of arguments to be passed to the callable. The test case is reported using the provided name, and its execution is managed by the framework&#39;s test runner.
 
-Each test is based on a logical expression, typically involving the computation of a result and its comparison to an expected value. For C++ projects, it is also possible to verify whether evaluating an expression throws exceptions. Each test either succeeds or fails. For expectations, the test runner maintains counts of successful and failed tests.
+Each test case typically involves evaluating a logical expression, such as comparing a computed result to an expected value. For C++ projects, it is also possible to verify whether evaluating an expression throws exceptions. Each test either succeeds or fails, and for expectations, the test runner maintains counts of successful and failed checks.
 
-A test case is characterised by a name, a function that performs the checks, and optionally, arguments to be passed to that function.
+This function template enables flexible and expressive test case definitions, supporting both parameterised and non-parameterised tests. It is typically invoked at global scope or within test suite definitions to ensure automatic registration and execution.
 
-The implementation of <code>test&#95;case</code> invokes the provided function with the given arguments and reports the results to the test runner.
+A test case is characterised by a name, a function that performs the checks, and optionally, arguments to be passed to that function. The implementation of <code>test&#95;case</code> invokes the provided function with the given arguments and reports the results to the test runner.
 
 
 <SectionUser title="Example">
@@ -134,7 +127,7 @@ The implementation of <code>test&#95;case</code> invokes the provided function w
 
 </ProgramListing>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines-h/#l00125">125</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines-h">inlines.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines-h/#l00132">132</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
