@@ -19,6 +19,7 @@
  * @file test-reporter-inlines.h
  * @brief Inline implementations for the test reporter in the µTest++
  * framework.
+ *
  * @details
  * This header provides inline definitions for the `test_reporter` class, which
  * is responsible for formatting and outputting test results within the µTest++
@@ -33,9 +34,6 @@
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, maintaining a clear separation from user code and minimising the
  * risk of naming conflicts.
- *
- * This file is intended for internal use by the framework and should not be
- * included directly by user code.
  *
  * This file is intended for internal use within the framework and should not
  * be included directly by user code.
@@ -68,6 +66,28 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
+  // error: argument 'v' from the argument list of
+  // micro_os_plus::micro_test_plus::test_reporter::operator<< has multiple
+  // @param documentation sections
+  /*
+   * @details
+   * This operator overload enables the `test_reporter` to output pointer
+   * values in a consistent and readable hexadecimal format.
+   *
+   * The pointer is formatted as a string using `snprintf` with the `%p` format
+   * specifier, ensuring portability across platforms. The resulting string is
+   * appended to the internal output buffer, allowing pointer values to be
+   * included in test reports and diagnostics.
+   *
+   * This approach provides clear and unambiguous representation of pointer
+   * addresses, which is particularly useful for debugging and verifying
+   * pointer-related test cases.
+   *
+   * @tparam T The type of the pointer being output.
+   * @param v The pointer value to be formatted and reported.
+   * @return A reference to the current `test_reporter` instance, enabling
+   * chaining of output operations.
+   */
   template <typename T>
   test_reporter&
   test_reporter::operator<< (T* v)
@@ -80,7 +100,15 @@ namespace micro_os_plus::micro_test_plus
   }
 
 #if 0
-  template <class T>
+/**
+  * @details
+  * This operator overload enables the `test_reporter` to output any type that is supported by the `detail::get` mechanism, ensuring consistent formatting and extensibility.
+  *
+  * By delegating to `detail::get`, the operator allows for custom formatting and extraction of values, supporting a wide range of types including user-defined and framework-specific types. The resulting value is then forwarded to the appropriate output handler, ensuring seamless integration into test reports and diagnostics.
+  *
+  * This approach promotes flexibility and maintainability, allowing new types to be supported with minimal changes to the reporting infrastructure.
+  */
+   template <class T>
   test_reporter&
   test_reporter::operator<< (const T& t)
   {
@@ -89,6 +117,20 @@ namespace micro_os_plus::micro_test_plus
   }
 #endif
 
+  /**
+   * @details
+   * This operator overload enables the `test_reporter` to output
+   * strongly-typed integral values in a clear and consistent decimal format.
+   *
+   * The value is converted to a string using `std::to_string` after being cast
+   * to `long long`, ensuring accurate formatting and compatibility across
+   * platforms. The resulting string is appended to the internal output buffer,
+   * allowing integral values to be included in test reports and diagnostics.
+   *
+   * This approach ensures precise and unambiguous representation of integral
+   * values, which is particularly advantageous for verifying test results and
+   * facilitating debugging.
+   */
   template <class T>
   test_reporter&
   test_reporter::operator<< (const type_traits::genuine_integral_value<T>& v)
@@ -97,6 +139,20 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
+  /**
+   * @details
+   * This operator overload enables the `test_reporter` to output container
+   * types in a structured and readable format.
+   *
+   * The contents of the container are enclosed in curly braces and each
+   * element is separated by a comma and a space. The operator iterates over
+   * the container, formatting each element in sequence, which ensures clarity
+   * and consistency in test reports and diagnostics.
+   *
+   * This approach provides a clear visual representation of container
+   * contents, making it easier to interpret test results and debug issues
+   * involving collections of values.
+   */
   template <class T,
             type_traits::requires_t<type_traits::is_container_v<T>
                                     and not type_traits::has_npos_v<T>>>
@@ -114,6 +170,17 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
+  /**
+   * @details
+   * This operator overload enables the `test_reporter` to output equality
+   * comparison expressions in a clear and expressive format.
+   *
+   * The left-hand side and right-hand side values are formatted and separated
+   * by the equality operator (`==`), with appropriate colour highlighting
+   * applied for improved readability in test reports and diagnostics. This
+   * structured output assists in quickly identifying the values involved in
+   * equality assertions and facilitates efficient debugging of test failures.
+   */
   template <class Lhs_T, class Rhs_T>
   test_reporter&
   test_reporter::operator<< (const detail::eq_<Lhs_T, Rhs_T>& op)
@@ -122,6 +189,18 @@ namespace micro_os_plus::micro_test_plus
                   << colors_.none);
   }
 
+  /**
+   * @details
+   * This operator overload enables the `test_reporter` to output inequality
+   * comparison expressions in a clear and expressive format.
+   *
+   * The left-hand side and right-hand side values are formatted and separated
+   * by the inequality operator (`!=`), with appropriate colour highlighting
+   * applied for improved readability in test reports and diagnostics. This
+   * structured output assists in quickly identifying the values involved in
+   * inequality assertions and facilitates efficient debugging of test
+   * failures.
+   */
   template <class Lhs_T, class Rhs_T>
   test_reporter&
   test_reporter::operator<< (const detail::ne_<Lhs_T, Rhs_T>& op)
@@ -130,6 +209,18 @@ namespace micro_os_plus::micro_test_plus
                   << colors_.none);
   }
 
+  /**
+   * @details
+   * This operator overload enables the `test_reporter` to output greater-than
+   * comparison expressions in a clear and expressive format.
+   *
+   * The left-hand side and right-hand side values are formatted and separated
+   * by the greater-than operator (`>`), with appropriate colour highlighting
+   * applied for improved readability in test reports and diagnostics. This
+   * structured output assists in quickly identifying the values involved in
+   * greater-than assertions and facilitates efficient debugging of test
+   * failures.
+   */
   template <class Lhs_T, class Rhs_T>
   test_reporter&
   test_reporter::operator<< (const detail::gt_<Lhs_T, Rhs_T>& op)
@@ -138,6 +229,19 @@ namespace micro_os_plus::micro_test_plus
                   << colors_.none);
   }
 
+  /**
+   * @details
+   * This operator overload enables the `test_reporter` to output
+   * greater-than-or-equal-to comparison expressions in a clear and expressive
+   * format.
+   *
+   * The left-hand side and right-hand side values are formatted and separated
+   * by the greater-than-or-equal-to operator (`>=`), with appropriate colour
+   * highlighting applied for improved readability in test reports and
+   * diagnostics. This structured output assists in quickly identifying the
+   * values involved in greater-than-or-equal-to assertions and facilitates
+   * efficient debugging of test failures.
+   */
   template <class Lhs_T, class Rhs_T>
   test_reporter&
   test_reporter::operator<< (const detail::ge_<Lhs_T, Rhs_T>& op)
@@ -146,6 +250,17 @@ namespace micro_os_plus::micro_test_plus
                   << colors_.none);
   }
 
+  /**
+   * @details
+   * This operator overload enables the `test_reporter` to output less-than
+   * comparison expressions in a clear and expressive format.
+   *
+   * The left-hand side and right-hand side values are formatted and separated
+   * by the less-than operator (`<`), with appropriate colour highlighting
+   * applied for improved readability in test reports and diagnostics. This
+   * structured output assists in quickly identifying the values involved in
+   * less-than assertions and facilitates efficient debugging of test failures.
+   */
   template <class Lhs_T, class Rhs_T>
   test_reporter&
   test_reporter::operator<< (const detail::lt_<Rhs_T, Lhs_T>& op)
@@ -154,6 +269,19 @@ namespace micro_os_plus::micro_test_plus
                   << colors_.none);
   }
 
+  /**
+   * @details
+   * This operator overload enables the `test_reporter` to output
+   * less-than-or-equal-to comparison expressions in a clear and expressive
+   * format.
+   *
+   * The left-hand side and right-hand side values are formatted and separated
+   * by the less-than-or-equal-to operator (`<=`), with appropriate colour
+   * highlighting applied for improved readability in test reports and
+   * diagnostics. This structured output assists in quickly identifying the
+   * values involved in less-than-or-equal-to assertions and facilitates
+   * efficient debugging of test failures.
+   */
   template <class Lhs_T, class Rhs_T>
   test_reporter&
   test_reporter::operator<< (const detail::le_<Rhs_T, Lhs_T>& op)
@@ -162,6 +290,18 @@ namespace micro_os_plus::micro_test_plus
                   << colors_.none);
   }
 
+  /**
+   * @details
+   * This operator overload enables the `test_reporter` to output logical
+   * conjunction (AND) expressions in a clear and structured format.
+   *
+   * The left-hand side and right-hand side expressions are enclosed in
+   * parentheses and separated by the word "and", with appropriate colour
+   * highlighting applied for improved readability in test reports and
+   * diagnostics. This presentation assists in quickly identifying the
+   * components of logical assertions and facilitates efficient debugging of
+   * test failures involving compound conditions.
+   */
   template <class Lhs_T, class Rhs_T>
   test_reporter&
   test_reporter::operator<< (const detail::and_<Lhs_T, Rhs_T>& op)
@@ -170,6 +310,18 @@ namespace micro_os_plus::micro_test_plus
                   << op.rhs () << ')');
   }
 
+  /**
+   * @details
+   * This operator overload enables the `test_reporter` to output logical
+   * disjunction (OR) expressions in a clear and structured format.
+   *
+   * The left-hand side and right-hand side expressions are enclosed in
+   * parentheses and separated by the word "or", with appropriate colour
+   * highlighting applied for improved readability in test reports and
+   * diagnostics. This presentation assists in quickly identifying the
+   * components of logical assertions and facilitates efficient debugging of
+   * test failures involving compound conditions.
+   */
   template <class Lhs_T, class Rhs_T>
   test_reporter&
   test_reporter::operator<< (const detail::or_<Lhs_T, Rhs_T>& op)
@@ -178,6 +330,14 @@ namespace micro_os_plus::micro_test_plus
                   << op.rhs () << ')');
   }
 
+  /**
+   * @details
+   * This operator overload enhances readability and clarity by formatting the
+   * output when handling negated expressions. It applies colour styling for
+   * improved distinction and appends the negated value accordingly, ensuring
+   * that logical negations are clearly represented in test reports and
+   * diagnostics.
+   */
   template <class T>
   test_reporter&
   test_reporter::operator<< (const detail::not_<T>& op)
@@ -186,6 +346,18 @@ namespace micro_os_plus::micro_test_plus
   }
 
 #if defined(__cpp_exceptions)
+  /**
+   * @details
+   * This operator overload provides structured output for expressions that may
+   * throw exceptions. It applies colour styling for clarity and includes the
+   * exception type name for precise identification.
+   *
+   * When invoked, the output highlights the `throws` qualifier along with the
+   * specific exception type, making it immediately apparent which exception is
+   * expected. This enhances the readability and professionalism of test
+   * reports, and assists in the precise identification and debugging of
+   * exception-related test cases.
+   */
   template <class Expr_T, class Exception_T>
   test_reporter&
   test_reporter::operator<< (const detail::throws_<Expr_T, Exception_T>& op)
@@ -195,6 +367,16 @@ namespace micro_os_plus::micro_test_plus
                   << colors_.none);
   }
 
+  /**
+   * @details
+   * This operator overload formats output for expressions that may throw
+   * exceptions. It applies colour styling for clarity and ensures a structured
+   * representation of the exception handling mechanism.
+   *
+   * When invoked, the output highlights the `throws` qualifier, making it
+   * immediately apparent when an expression is expected to throw, thereby
+   * improving the readability and professionalism of the test output.
+   */
   template <class Expr_T>
   test_reporter&
   test_reporter::operator<< (const detail::throws_<Expr_T, void>& op)
@@ -202,6 +384,16 @@ namespace micro_os_plus::micro_test_plus
     return (*this << color (op) << "throws" << colors_.none);
   }
 
+  /**
+   * @details
+   * This operator overload formats output for expressions that do not throw
+   * exceptions. It applies colour styling for clarity and ensures a structured
+   * and concise representation of exception safety within test reports.
+   *
+   * The output highlights the `nothrow` qualifier, making it immediately
+   * apparent when an expression is guaranteed not to throw, thereby improving
+   * the readability and professionalism of the test output.
+   */
   template <class Expr_T>
   test_reporter&
   test_reporter::operator<< (const detail::nothrow_<Expr_T>& op)
@@ -210,6 +402,19 @@ namespace micro_os_plus::micro_test_plus
   }
 #endif
 
+  /**
+   * @details
+   * This operator overload formats output for expressions that do not throw
+   * exceptions. It applies colour styling for clarity and ensures a structured
+   * representation of exception safety.
+   *
+   * When invoked, the function outputs a pass prefix, followed by either the
+   * provided message or, if the message is empty, the evaluated expression
+   * itself. It then appends a pass suffix to complete the output. This
+   * approach guarantees that successful test outcomes are presented in a clear
+   * and consistent manner, enhancing the readability and professionalism of
+   * test reports.
+   */
   template <class Expr_T>
   void
   test_reporter::pass (Expr_T& expr, std::string& message)
@@ -225,6 +430,15 @@ namespace micro_os_plus::micro_test_plus
     output_pass_suffix_ ();
   }
 
+  /**
+   * @details
+   * This function reports a test failure and formats the output in a clear and
+   * consistent manner. It provides contextual information, including the
+   * precise source location, and appends the evaluated expression when
+   * applicable. The failure handling process ensures uniformity in the
+   * presentation of unsuccessful test cases, aiding in the rapid
+   * identification and diagnosis of issues within test reports.
+   */
   template <class Expr_T>
   void
   test_reporter::fail (Expr_T& expr, bool abort, std::string& message,

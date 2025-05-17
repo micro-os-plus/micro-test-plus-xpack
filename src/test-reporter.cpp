@@ -19,6 +19,7 @@
  * @file test-reporter.cpp
  * @brief Implementation of test result reporting for the µTest++ testing
  * framework.
+ *
  * @details
  * This source file provides the implementation of the `test_reporter` class
  * and associated functions, which are responsible for formatting and
@@ -58,6 +59,14 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
+  /**
+   * @details
+   * The `endl` function inserts a newline character into the specified
+   * `test_reporter` stream and flushes its output buffer. This operation
+   * ensures that each test output line is clearly separated and immediately
+   * visible, facilitating the readability and clarity of test results across
+   * all test cases and folders within the µTest++ framework.
+   */
   test_reporter&
   endl (test_reporter& stream)
   {
@@ -67,6 +76,15 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
+  /**
+   * @details
+   * This method outputs the prefix for a passing test result, applying the
+   * appropriate colour formatting and symbols to clearly indicate success. If
+   * the output occurs within a test case, additional indentation is applied
+   * for readability. The prefix includes a tick symbol (`✓`) and, if provided,
+   * an associated message. Colour formatting is reset after the prefix to
+   * maintain consistent output style across all test cases and folders.
+   */
   void
   test_reporter::output_pass_prefix_ (std::string& message)
   {
@@ -83,6 +101,14 @@ namespace micro_os_plus::micro_test_plus
       }
   }
 
+  /**
+   * @details
+   * This method outputs the suffix for a passing test result by appending a
+   * newline to the test output and flushing the stream. This ensures that the
+   * result is clearly separated from subsequent output and is immediately
+   * visible, enhancing the readability and clarity of test results across all
+   * test cases and folders.
+   */
   void
   test_reporter::output_pass_suffix_ (void)
   {
@@ -91,6 +117,17 @@ namespace micro_os_plus::micro_test_plus
     flush ();
   }
 
+  /**
+   * @details
+   * This method outputs the prefix for a failing test result, applying the
+   * appropriate colour formatting and symbols to clearly indicate failure. If
+   * the output occurs within a test case, additional indentation is applied
+   * for readability. The prefix includes a cross symbol (`✗`), an optional
+   * message, and the label "FAILED". The source location is appended in
+   * parentheses, showing the file or folder name and line number where the
+   * failure occurred. Colour formatting is reset after the prefix to maintain
+   * consistent output style across all test cases and folders.
+   */
   void
   test_reporter::output_fail_prefix_ (
       std::string& message, const reflection::source_location& location)
@@ -122,6 +159,15 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic pop
   }
 
+  /**
+   * @details
+   * This method outputs the suffix for a failing test result by closing the
+   * location information, appending an "aborted..." message if the test was
+   * aborted, and then adding a newline to the test output. The output stream
+   * is flushed to ensure immediate visibility. This approach guarantees that
+   * failure results are clearly separated, promptly reported, and easily
+   * distinguishable across all test cases and folders.
+   */
   void
   test_reporter::output_fail_suffix_ (bool abort)
   {
@@ -135,6 +181,15 @@ namespace micro_os_plus::micro_test_plus
     flush ();
   }
 
+  /**
+   * @details
+   * This operator overload enables manipulators, such as `endl`, to be used
+   * with the `test_reporter` stream in a manner similar to standard C++
+   * streams. When a manipulator function is passed, it is invoked with the
+   * current `test_reporter` instance, allowing for seamless integration of
+   * stream operations and improved readability of test output across all test
+   * cases and folders.
+   */
   test_reporter&
   test_reporter::operator<< (test_reporter& (*func) (test_reporter&))
   {
@@ -143,6 +198,14 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
+  /**
+   * @details
+   * This method appends a newline character to the internal output buffer of
+   * the `test_reporter` and immediately flushes the stream. This ensures that
+   * each line of test output is clearly separated and promptly displayed,
+   * enhancing the readability and organisation of test results across all test
+   * cases and folders.
+   */
   void
   test_reporter::endline (void)
   {
@@ -150,12 +213,27 @@ namespace micro_os_plus::micro_test_plus
     flush ();
   }
 
+  /**
+   * @details
+   * This method flushes the output buffer of the `test_reporter` by
+   * synchronising it with the standard output stream. This guarantees that all
+   * pending test output is immediately written and visible, ensuring prompt
+   * and reliable reporting of test results across all test cases and folders.
+   */
   void
   test_reporter::flush (void)
   {
     fflush (stdout); // Sync STDOUT.
   }
 
+  /**
+   * @details
+   * This operator overload appends the contents of the provided
+   * `std::string_view` to the internal output buffer of the `test_reporter`.
+   * It enables seamless streaming of string data into the reporter, supporting
+   * clear and efficient formatting of test output across all test cases and
+   * folders.
+   */
   test_reporter&
   test_reporter::operator<< (std::string_view sv)
   {
@@ -163,6 +241,13 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
+  /**
+   * @details
+   * This operator overload appends the specified character to the internal
+   * output buffer of the `test_reporter`. It enables efficient streaming of
+   * individual characters into the reporter, supporting precise and flexible
+   * formatting of test output across all test cases and folders.
+   */
   test_reporter&
   test_reporter::operator<< (char c)
   {
@@ -170,6 +255,14 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
+  /**
+   * @details
+   * This operator overload appends the contents of the provided C-style string
+   * to the internal output buffer of the `test_reporter`. It enables efficient
+   * streaming of string literals and character arrays into the reporter,
+   * supporting clear and flexible formatting of test output across all test
+   * cases and folders.
+   */
   test_reporter&
   test_reporter::operator<< (const char* s)
   {
@@ -177,6 +270,14 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
+  /**
+   * @details
+   * This operator overload appends the contents of the provided modifiable
+   * C-style string to the internal output buffer of the `test_reporter`. It
+   * enables efficient streaming of mutable string data into the reporter,
+   * supporting clear and flexible formatting of test output across all test
+   * cases and folders.
+   */
   test_reporter&
   test_reporter::operator<< (char* s)
   {
@@ -184,6 +285,14 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
+  /**
+   * @details
+   * This operator overload appends the string representation of the specified
+   * boolean value to the internal output buffer of the `test_reporter`. It
+   * enables clear and direct streaming of boolean results into the reporter,
+   * supporting precise and readable formatting of test output across all test
+   * cases and folders.
+   */
   test_reporter&
   test_reporter::operator<< (bool v)
   {
@@ -191,6 +300,13 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
+  /**
+   * @details
+   * This operator overload appends the string "nullptr" to the internal output
+   * buffer of the `test_reporter`. It enables clear and explicit streaming of
+   * null pointer values into the reporter, supporting precise and readable
+   * formatting of test output across all test cases and folders.
+   */
   test_reporter&
   test_reporter::operator<< (std::nullptr_t)
   {
@@ -198,6 +314,14 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
+  /**
+   * @details
+   * This operator overload appends the string representation of the specified
+   * signed character to the internal output buffer of the `test_reporter`. It
+   * enables precise and readable streaming of character values into the
+   * reporter, supporting clear formatting of test output across all test cases
+   * and folders.
+   */
   test_reporter&
   test_reporter::operator<< (signed char c)
   {
@@ -206,6 +330,14 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
+  /**
+   * @details
+   * This operator overload appends the string representation of the specified
+   * unsigned character to the internal output buffer of the `test_reporter`.
+   * It enables precise and readable streaming of unsigned character values
+   * into the reporter, supporting clear formatting of test output across all
+   * test cases and folders.
+   */
   test_reporter&
   test_reporter::operator<< (unsigned char c)
   {
@@ -214,6 +346,16 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
+  // error: argument 'c' of command @param is not found in the argument list of
+  // micro_os_plus::micro_test_plus::test_reporter::operator<<(signed short v)
+  /*
+   * @details
+   * This operator overload appends the string representation of the specified
+   * signed short integer to the internal output buffer of the `test_reporter`.
+   * It enables precise and readable streaming of signed short values into the
+   * reporter, supporting clear formatting of test output across all test cases
+   * and folders.
+   */
   test_reporter&
   test_reporter::operator<< (signed short v)
   {
@@ -222,6 +364,17 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
+  // error: argument 'c' of command @param is not found in the argument list of
+  // micro_os_plus::micro_test_plus::test_reporter::operator<<(unsigned short
+  // v)
+  /*
+   * @details
+   * This operator overload appends the string representation of the specified
+   * unsigned short integer to the internal output buffer of the
+   * `test_reporter`. It enables precise and readable streaming of unsigned
+   * short values into the reporter, supporting clear formatting of test output
+   * across all test cases and folders.
+   */
   test_reporter&
   test_reporter::operator<< (unsigned short v)
   {
@@ -230,6 +383,14 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
+  /**
+   * @details
+   * This operator overload appends the string representation of the specified
+   * signed integer to the internal output buffer of the `test_reporter`. It
+   * enables precise and readable streaming of signed integer values into the
+   * reporter, supporting clear formatting of test output across all test cases
+   * and folders.
+   */
   test_reporter&
   test_reporter::operator<< (signed int v)
   {
@@ -237,6 +398,14 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
+  /**
+   * @details
+   * This operator overload appends the string representation of the specified
+   * unsigned integer to the internal output buffer of the `test_reporter`. It
+   * enables precise and readable streaming of unsigned integer values into the
+   * reporter, supporting clear formatting of test output across all test cases
+   * and folders.
+   */
   test_reporter&
   test_reporter::operator<< (unsigned int v)
   {
@@ -245,6 +414,14 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
+  /**
+   * @details
+   * This operator overload appends the string representation of the specified
+   * signed long integer to the internal output buffer of the `test_reporter`.
+   * It enables precise and readable streaming of signed long values into the
+   * reporter, supporting clear formatting of test output across all test cases
+   * and folders.
+   */
   test_reporter&
   test_reporter::operator<< (signed long v)
   {
@@ -253,6 +430,14 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
+  /**
+   * @details
+   * This operator overload appends the string representation of the specified
+   * unsigned long integer to the internal output buffer of the
+   * `test_reporter`. It enables precise and readable streaming of unsigned
+   * long values into the reporter, supporting clear formatting of test output
+   * across all test cases and folders.
+   */
   test_reporter&
   test_reporter::operator<< (unsigned long v)
   {
@@ -261,6 +446,14 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
+  /**
+   * @details
+   * This operator overload appends the string representation of the specified
+   * signed long long integer to the internal output buffer of the
+   * `test_reporter`. It enables precise and readable streaming of signed long
+   * long values into the reporter, supporting clear formatting of test output
+   * across all test cases and folders.
+   */
   test_reporter&
   test_reporter::operator<< (signed long long v)
   {
@@ -269,6 +462,14 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
+  /**
+   * @details
+   * This operator overload appends the string representation of the specified
+   * unsigned long long integer to the internal output buffer of the
+   * `test_reporter`. It enables precise and readable streaming of unsigned
+   * long long values into the reporter, supporting clear formatting of test
+   * output across all test cases and folders.
+   */
   test_reporter&
   test_reporter::operator<< (unsigned long long v)
   {
@@ -277,6 +478,14 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
+  /**
+   * @details
+   * This operator overload appends the string representation of the specified
+   * floating-point value to the internal output buffer of the `test_reporter`,
+   * followed by the character 'f' to indicate a float type. It enables precise
+   * and readable streaming of float values into the reporter, supporting clear
+   * formatting of test output across all test cases and folders.
+   */
   test_reporter&
   test_reporter::operator<< (float v)
   {
@@ -285,6 +494,14 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
+  /**
+   * @details
+   * This operator overload appends the string representation of the specified
+   * double-precision floating-point value to the internal output buffer of the
+   * `test_reporter`. It enables precise and readable streaming of double
+   * values into the reporter, supporting clear formatting of test output
+   * across all test cases and folders.
+   */
   test_reporter&
   test_reporter::operator<< (double v)
   {
@@ -292,6 +509,15 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
+  /**
+   * @details
+   * This operator overload appends the string representation of the specified
+   * long double-precision floating-point value to the internal output buffer
+   * of the `test_reporter`, followed by the character 'l' to indicate a long
+   * double type. It enables precise and readable streaming of long double
+   * values into the reporter, supporting clear formatting of test output
+   * across all test cases and folders.
+   */
   test_reporter&
   test_reporter::operator<< (long double v)
   {
@@ -300,6 +526,17 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
+  /**
+   * @details
+   * This method marks the beginning of a test case, setting the internal state
+   * to indicate that test output is now within a test case context. If there
+   * is pending output and the verbosity level is set to verbose, it ensures
+   * that output is properly separated and displayed, adding an empty line if
+   * necessary. The output buffer is cleared and the stream is flushed to
+   * guarantee that all previous output is visible before the new test case
+   * begins. This approach enhances the clarity and organisation of test
+   * results across all test cases and folders.
+   */
   void
   test_reporter::begin_test_case ([[maybe_unused]] const char* name)
   {
@@ -320,6 +557,18 @@ namespace micro_os_plus::micro_test_plus
     flush ();
   }
 
+  /**
+   * @details
+   * This method marks the end of a test case, summarising its outcome and
+   * outputting the results with appropriate formatting and colour coding. If
+   * any checks have failed, a failure message is displayed, including the
+   * number of successful and failed checks. For passing test cases, a success
+   * message is shown with the total number of checks. The output is adjusted
+   * according to the verbosity level, and additional spacing is managed for
+   * clarity. The output buffer is cleared and the stream is flushed to ensure
+   * all results are immediately visible, supporting clear and organised
+   * reporting across all test cases and folders.
+   */
   void
   test_reporter::end_test_case ([[maybe_unused]] const char* name)
   {
@@ -387,6 +636,16 @@ namespace micro_os_plus::micro_test_plus
     is_in_test_case_ = false;
   }
 
+  /**
+   * @details
+   * This method marks the beginning of a test suite, ensuring that output is
+   * properly separated and clearly presented. If there is pending output, the
+   * stream is flushed and an empty line is added for clarity. For silent or
+   * quiet verbosity levels, output is suppressed. Otherwise, a message
+   * indicating the start of the test suite is displayed. This approach
+   * enhances the organisation and readability of test results across all test
+   * cases and folders.
+   */
   void
   test_reporter::begin_test_suite (const char* name)
   {
@@ -407,6 +666,18 @@ namespace micro_os_plus::micro_test_plus
     add_empty_line = true;
   }
 
+  /**
+   * @details
+   * This method marks the end of a test suite, summarising the overall results
+   * and presenting them with appropriate formatting and colour coding. If the
+   * suite contains test cases and the verbosity is not set to quiet, an empty
+   * line is added for clarity. For suites with no failed checks and at least
+   * one successful check, a success message is displayed, including the number
+   * of checks and test cases. Otherwise, a failure message is shown, detailing
+   * the number of successful and failed checks, as well as the total number of
+   * test cases. The output is immediately flushed to ensure prompt and
+   * organised reporting across all test cases and folders.
+   */
   void
   test_reporter::end_test_suite (test_suite_base& suite)
   {
@@ -444,6 +715,15 @@ namespace micro_os_plus::micro_test_plus
     flush ();
   }
 
+  /**
+   * @details
+   * This method writes the contents of the internal output buffer to the
+   * standard output stream without appending a newline character. After
+   * outputting the buffer, it is cleared to prepare for subsequent output.
+   * This approach ensures that test results are presented promptly and
+   * efficiently, supporting clear and organised reporting across all test
+   * cases and folders.
+   */
   void
   test_reporter::output (void)
   {

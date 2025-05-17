@@ -18,6 +18,7 @@
 /**
  * @file micro-test-plus.cpp
  * @brief Core implementation of the µTest++ testing framework.
+ *
  * @details
  * This source file contains the principal implementation of the µTest++
  * testing framework, encompassing initialisation routines, management of test
@@ -69,15 +70,12 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * All tests include a default test suite, which runs the test cases
-   * defined in the main function.
-   *
-   * This function forwards the process arguments to the test framework
-   * and initialises the runner.
-   *
-   * The name is used to identify the default test suite.
-   *
-   * The arguments can be used to control the verbosity level.
+   * This function initialises the µTest++ framework by forwarding the process
+   * arguments and the specified test suite name to the test runner. It sets up
+   * the default test suite, which encompasses all test cases defined in the
+   * main function, and prepares the framework for subsequent test execution.
+   * The provided arguments may be used to configure the verbosity or other
+   * runtime options for the test session.
    */
   void
   initialize (int argc, char* argv[], const char* name)
@@ -90,15 +88,14 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * In addition to the test cases defined in `main()`, there can be
-   * more separate **test suites**, defined as static objects in the same
-   * file or in other files,
-   * and self-registered via the static constructors mechanism.
+   * In addition to the test cases defined in `main()`, additional test suites
+   * may be declared as static objects either within the same file or in other
+   * files, and are automatically registered via the static constructors
+   * mechanism.
    *
-   * This function triggers the execution of the globally
-   * registered test suites
-   * (if any) and returns the test result as the process exit code
-   * (0 = success).
+   * This function initiates the execution of all globally registered test
+   * suites (if present) and returns the overall test result as the process
+   * exit code (0 indicates success).
    */
   int
   exit_code (void)
@@ -111,6 +108,15 @@ namespace micro_os_plus::micro_test_plus
   namespace reflection
   {
 
+    /**
+     * @details
+     * This function extracts the short name from a given file path by locating
+     * the final folder separator ('/'). If a separator is found, it returns a
+     * pointer to the character immediately following it, effectively providing
+     * the file or folder name. If no separator is present, the original input
+     * string is returned. This utility is useful for reporting concise file or
+     * folder names in test output.
+     */
     const char*
     short_name (const char* name)
     {
@@ -134,21 +140,23 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdocumentation"
 #endif
-    /**
-     * @details
-     * For tests comparing strings, in addition to exact matches,
-     * it is also possible to check matches with patterns like `*`
-     * (for any characters) and `?` (for a single character)
-     *
-     * @par Examples
-     *
-     * @code{.cpp}
-     * namespace mt = micro_os_plus::micro_test_plus;
-     *
-     * mt::expect (mt::utility::is_match ("abc", "a?c")) << "abc matches a?c";
-     * mt::expect (mt::utility::is_match ("abc", "a*c")) << "abc matches a*c";
-     * @endcode
-     */
+/**
+ * @details
+ * This function enables pattern-based string comparison for tests, supporting
+ * both exact matches and wildcard patterns. The pattern may include `*` to
+ * match any sequence of characters and `?` to match any single character. This
+ * allows for flexible validation of string content in test assertions,
+ * accommodating variable or partially known values.
+ *
+ * @par Examples
+ *
+ * @code{.cpp}
+ * namespace mt = micro_os_plus::micro_test_plus;
+ *
+ * mt::expect (mt::utility::is_match ("abc", "a?c")) << "abc matches a?c";
+ * mt::expect (mt::utility::is_match ("abc", "a*c")) << "abc matches a*c";
+ * @endcode
+ */
 #if defined(__clang__)
 #pragma clang diagnostic pop
 #endif
@@ -191,6 +199,15 @@ namespace micro_os_plus::micro_test_plus
 
   namespace detail
   {
+    /**
+     * @details
+     * This constructor updates the current test suite's statistics based on
+     * the outcome of the test expression. If the evaluated value is true, the
+     * count of successful tests is incremented; otherwise, the count of failed
+     * tests is incremented. The source location is recorded for reporting
+     * purposes, enabling precise identification of the test case within the
+     * relevant file or folder.
+     */
     deferred_reporter_base::deferred_reporter_base (
         bool value, const reflection::source_location location)
         : value_{ value }, location_{ location }
@@ -205,6 +222,14 @@ namespace micro_os_plus::micro_test_plus
         }
     }
 
+    /**
+     * @details
+     * The destructor ensures that if an abort condition is set and the test
+     * expression has failed, the test output is flushed and the process is
+     * terminated. This mechanism guarantees immediate feedback and halts
+     * further execution upon critical test failures, aiding in rapid
+     * identification and resolution of issues during test runs.
+     */
     deferred_reporter_base::~deferred_reporter_base ()
     {
 #if 0 // defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
@@ -232,9 +257,45 @@ namespace micro_os_plus::micro_test_plus
 #endif
 
   // Static instances;
+  /**
+   * @brief Global instance of `test_runner`.
+   *
+   * @details
+   * This global instance of `test_runner` manages the lifecycle of test suites
+   * and test cases within the µTest++ framework. It is responsible for
+   * initialising the test environment, registering test suites, executing
+   * tests, and collecting results. By maintaining a single shared runner, the
+   * framework ensures consistent test execution and reporting across all test
+   * cases and folders.
+   */
   test_runner runner;
+
+  /**
+   * @brief global instance of `test_reporter`.
+   *
+   * @details
+   * This global instance of `test_reporter` is responsible for collecting,
+   * formatting, and outputting the results of test execution within the
+   * µTest++ framework. It manages the reporting of test outcomes, including
+   * successes and failures, and ensures that all relevant information is
+   * presented clearly to the user. By maintaining a single shared reporter,
+   * the framework provides consistent and centralised reporting across all
+   * test cases and folders.
+   */
   test_reporter reporter;
 
+  /**
+   * @brief Global pointer references the currently active test suite.
+   *
+   * @details
+   * This global pointer references the currently active test suite within the
+   * µTest++ framework. It is used to track and update the state of the test
+   * suite during test execution, including recording test results and
+   * statistics. By maintaining a pointer to the current test suite, the
+   * framework ensures accurate association of test outcomes with their
+   * respective suites, supporting clear and organised reporting across all
+   * test cases and folders.
+   */
   test_suite_base* current_test_suite;
 
 #if defined(__GNUC__)

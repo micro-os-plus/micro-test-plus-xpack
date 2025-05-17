@@ -19,6 +19,7 @@
  * @file test-runner.cpp
  * @brief Implementation of test runner management for the µTest++ testing
  * framework.
+ *
  * @details
  * This source file provides the implementation of the `test_runner` class and
  * related functions, responsible for managing the registration and execution
@@ -61,6 +62,15 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
+  /**
+   * @details
+   * The constructor initialises a new instance of the `test_runner` class,
+   * preparing the test runner for managing test suites and cases within the
+   * µTest++ framework. If tracing is enabled, it outputs the function
+   * signature for diagnostic purposes. This setup ensures the test runner is
+   * ready to coordinate the registration, execution, and reporting of tests
+   * across all test cases and folders.
+   */
   test_runner::test_runner ()
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
@@ -72,6 +82,18 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
 #endif
+  /**
+   * @details
+   * This method initialises the test runner by capturing the command-line
+   * arguments and the default test suite name, configuring the framework for
+   * subsequent test execution. It parses the arguments to determine the
+   * desired verbosity level (normal, verbose, quiet, or silent) and applies
+   * this setting to the test reporter. The method also outputs build and
+   * environment information when appropriate, aiding diagnostics and
+   * transparency. Finally, it creates and registers the default test suite,
+   * preparing the framework to manage and execute all test cases and suites
+   * across the project’s folders.
+   */
   void
   test_runner::initialize (int argc, char* argv[], const char* name)
   {
@@ -197,6 +219,14 @@ namespace micro_os_plus::micro_test_plus
     return was_successful ? 0 : 1;
   }
 
+  /**
+   * @details
+   * This method registers a new test suite with the test runner. If the
+   * internal collection of test suites has not yet been created, it is
+   * initialised at this point. The provided test suite is then added to the
+   * collection, enabling the framework to manage and execute multiple test
+   * suites across different files and folders within the project.
+   */
   void
   test_runner::register_test_suite (test_suite_base* suite)
   {
@@ -211,6 +241,15 @@ namespace micro_os_plus::micro_test_plus
     suites_->push_back (suite);
   }
 
+  /**
+   * @details
+   * This method immediately terminates the process by invoking the standard C
+   * library `abort()` function. It is used to halt test execution in critical
+   * failure scenarios, ensuring that no further tests are run and that the
+   * cause of the failure can be promptly investigated. This approach provides
+   * a robust mechanism for enforcing strict test outcomes across all test
+   * cases and folders.
+   */
   void
   test_runner::abort (void)
   {

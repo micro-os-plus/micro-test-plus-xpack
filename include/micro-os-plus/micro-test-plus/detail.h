@@ -18,6 +18,7 @@
 /**
  * @file detail.h
  * @brief Internal implementation details for the µTest++ framework.
+ *
  * @details
  * This header defines the internal components and auxiliary structures
  * employed by the µTest++ testing framework. The contents of this file are not
@@ -67,6 +68,7 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @namespace micro_os_plus::micro_test_plus::detail
    * @brief Internal implementation details for the µTest++ framework.
+   *
    * @details
    * The `detail` namespace encapsulates the internal mechanisms, helper
    * structures, and implementation utilities employed by the µTest++ testing
@@ -90,6 +92,7 @@ namespace micro_os_plus::micro_test_plus
   {
     /**
      * @brief Assertion struct template for parameter passing to the evaluator.
+     *
      * @details
      * The `assertion` struct template is used to encapsulate assertion
      * parameters, including the expression under evaluation and its associated
@@ -122,6 +125,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Generic getter function template for value retrieval.
+     *
      * @details
      * The `get` function template invokes the appropriate getter
      * implementation to retrieve the value from the provided object or type.
@@ -154,6 +158,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Fallback variadic getter function template.
+     *
      * @details
      * The `get_impl` function template serves as a fallback mechanism for
      * value retrieval when the provided type does not implement a `get()`
@@ -181,6 +186,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Generic getter function template for value retrieval.
+     *
      * @details
      * The `get` function template invokes the appropriate getter
      * implementation to retrieve the value from the provided object or type.
@@ -216,6 +222,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Equality comparator struct template.
+     *
      * @details
      * The `eq_` struct template provides a type-safe mechanism for evaluating
      * equality between two operands within the framework.
@@ -245,6 +252,7 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief Constructs an equality comparator for the given operands.
+       *
        * @details
        * Evaluates the equality of the provided operands at construction,
        * supporting static values, types with precision, and generic types. The
@@ -311,6 +319,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Conversion operator to boolean.
+       *
        * @details
        * Returns the result of the equality comparison.
        *
@@ -327,6 +336,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Retrieves the left-hand operand.
+       *
        * @details
        * Returns the value of the left-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
@@ -344,6 +354,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Retrieves the right-hand operand.
+       *
        * @details
        * Returns the value of the right-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
@@ -379,6 +390,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Non-equality comparator struct template.
+     *
      * @details
      * The `ne_` struct template provides a type-safe mechanism for evaluating
      * non-equality between two operands within the framework.
@@ -408,6 +420,7 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief Constructs a non-equality comparator for the given operands.
+       *
        * @details
        * Evaluates the non-equality of the provided operands at construction,
        * supporting static values, types with precision, and generic types. The
@@ -465,6 +478,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Conversion operator to boolean.
+       *
        * @details
        * Returns the result of the non-equality comparison.
        *
@@ -481,6 +495,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Retrieves the left-hand operand.
+       *
        * @details
        * Returns the value of the left-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
@@ -498,6 +513,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Retrieves the right-hand operand.
+       *
        * @details
        * Returns the value of the right-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
@@ -533,6 +549,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Greater than comparator struct template.
+     *
      * @details
      * The `gt_` struct template provides a type-safe mechanism for evaluating
      * whether the left-hand operand is greater than the right-hand operand
@@ -560,6 +577,7 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief Constructs a greater than comparator for the given operands.
+       *
        * @details
        * Evaluates whether the left-hand operand is greater than the right-hand
        * operand at construction, supporting static values and generic types.
@@ -600,6 +618,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Conversion operator to boolean.
+       *
        * @details
        * Returns the result of the greater than comparison.
        *
@@ -617,6 +636,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Retrieves the left-hand operand.
+       *
        * @details
        * Returns the value of the left-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
@@ -635,6 +655,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Retrieves the right-hand operand.
+       *
        * @details
        * Returns the value of the right-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
@@ -669,6 +690,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Greater than or equal comparator struct template.
+     *
      * @details
      * The `ge_` struct template provides a type-safe mechanism for evaluating
      * whether the left-hand operand is greater than or equal to the right-hand
@@ -697,6 +719,7 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Constructs a greater than or equal comparator for the given
        * operands.
+       *
        * @details
        * Evaluates whether the left-hand operand is greater than or equal to
        * the right-hand operand at construction, supporting static values and
@@ -738,6 +761,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Conversion operator to boolean.
+       *
        * @details
        * Returns the result of the greater than or equal comparison.
        *
@@ -755,6 +779,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Retrieves the left-hand operand.
+       *
        * @details
        * Returns the value of the left-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
@@ -772,6 +797,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Retrieves the right-hand operand.
+       *
        * @details
        * Returns the value of the right-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
@@ -807,6 +833,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Less than comparator struct template.
+     *
      * @details
      * The `lt_` struct template provides a type-safe mechanism for evaluating
      * whether the left-hand operand is less than the right-hand operand within
@@ -834,6 +861,7 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief Constructs a less than comparator for the given operands.
+       *
        * @details
        * Evaluates whether the left-hand operand is less than the right-hand
        * operand at construction, supporting static values and generic types.
@@ -874,6 +902,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Conversion operator to boolean.
+       *
        * @details
        * Returns the result of the less than comparison.
        *
@@ -891,6 +920,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Retrieves the left-hand operand.
+       *
        * @details
        * Returns the value of the left-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
@@ -908,6 +938,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Retrieves the right-hand operand.
+       *
        * @details
        * Returns the value of the right-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
@@ -944,6 +975,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Less than or equal comparator struct template.
+     *
      * @details
      * The `le_` struct template provides a type-safe mechanism for evaluating
      * whether the left-hand operand is less than or equal to the right-hand
@@ -972,6 +1004,7 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Constructs a less than or equal comparator for the given
        * operands.
+       *
        * @details
        * Evaluates whether the left-hand operand is less than or equal to the
        * right-hand operand at construction, supporting static values and
@@ -1013,6 +1046,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Conversion operator to boolean.
+       *
        * @details
        * Returns the result of the less than or equal comparison.
        *
@@ -1030,6 +1064,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Retrieves the left-hand operand.
+       *
        * @details
        * Returns the value of the left-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
@@ -1048,6 +1083,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Retrieves the right-hand operand.
+       *
        * @details
        * Returns the value of the right-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
@@ -1083,6 +1119,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Logical AND comparator struct template.
+     *
      * @details
      * The `and_` struct template provides a type-safe mechanism for evaluating
      * the logical conjunction (AND) of two operands within the framework.
@@ -1109,6 +1146,7 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief Constructs a logical AND comparator for the given operands.
+       *
        * @details
        * Evaluates the logical conjunction of the provided operands at
        * construction, supporting both custom and standard types. The result is
@@ -1125,6 +1163,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Conversion operator to boolean.
+       *
        * @details
        * Returns the result of the logical AND operation.
        *
@@ -1141,6 +1180,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Retrieves the left-hand operand.
+       *
        * @details
        * Returns the value of the left-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
@@ -1158,6 +1198,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Retrieves the right-hand operand.
+       *
        * @details
        * Returns the value of the right-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
@@ -1193,6 +1234,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Logical OR comparator struct template.
+     *
      * @details
      * The `or_` struct template provides a type-safe mechanism for evaluating
      * the logical disjunction (OR) of two operands within the framework.
@@ -1219,6 +1261,7 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief Constructs a logical OR comparator for the given operands.
+       *
        * @details
        * Evaluates the logical disjunction of the provided operands at
        * construction, supporting both custom and standard types. The result is
@@ -1235,6 +1278,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Conversion operator to boolean.
+       *
        * @details
        * Returns the result of the logical OR operation.
        *
@@ -1251,6 +1295,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Retrieves the left-hand operand.
+       *
        * @details
        * Returns the value of the left-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
@@ -1268,6 +1313,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Retrieves the right-hand operand.
+       *
        * @details
        * Returns the value of the right-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
@@ -1303,6 +1349,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Logical NOT comparator struct template.
+     *
      * @details
      * The `not_` struct template provides a type-safe mechanism for evaluating
      * the logical negation (NOT) of an operand within the framework.
@@ -1328,6 +1375,7 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief Constructs a logical NOT comparator for the given operand.
+       *
        * @details
        * Evaluates the logical negation of the provided operand at
        * construction, supporting both custom and standard types. The result is
@@ -1342,6 +1390,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Conversion operator to boolean.
+       *
        * @details
        * Returns the result of the logical NOT operation.
        *
@@ -1358,6 +1407,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Retrieves the value of the operand.
+       *
        * @details
        * Returns the value of the operand, applying the generic getter to
        * ensure correct extraction for both custom and standard types.
@@ -1390,6 +1440,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Operator struct template to check if an expression throws a
      * specific exception.
+     *
      * @details
      * The `throws_` struct template provides a type-safe mechanism for
      * verifying whether a callable expression throws a specified exception
@@ -1418,6 +1469,7 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Constructs an exception checking operator for the given
        * callable.
+       *
        * @details
        * Invokes the provided callable and determines whether it throws an
        * exception of the specified type. The result is stored in the `value_`
@@ -1446,6 +1498,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Conversion operator to boolean.
+       *
        * @details
        * Returns the result of the exception check.
        *
@@ -1472,6 +1525,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Operator struct template to check if an expression throws any
      * exception.
+     *
      * @details
      * The `throws_` struct template provides a type-safe mechanism for
      * verifying whether a callable expression throws any exception during its
@@ -1498,6 +1552,7 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Constructs an exception checking operator for the given
        * callable.
+       *
        * @details
        * Invokes the provided callable and determines whether it throws any
        * exception. The result is stored in the `value_` member for efficient
@@ -1522,6 +1577,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Conversion operator to boolean.
+       *
        * @details
        * Returns the result of the exception check.
        *
@@ -1547,6 +1603,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Operator struct template to check if an expression does not throw
      * any exception.
+     *
      * @details
      * The `nothrow_` struct template provides a type-safe mechanism for
      * verifying whether a callable expression completes without throwing any
@@ -1572,6 +1629,7 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief Constructs a nothrow checking operator for the given callable.
+       *
        * @details
        * Invokes the provided callable and determines whether it completes
        * without throwing any exception. The result is stored in the `value_`
@@ -1596,6 +1654,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Conversion operator to boolean.
+       *
        * @details
        * Returns the result of the nothrow check.
        *
@@ -1623,6 +1682,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Base class for a deferred reporter that collects messages into a
      * string.
+     *
      * @details
      * The `deferred_reporter_base` class serves as the foundational component
      * for deferred reporting within the framework. It is responsible for
@@ -1642,6 +1702,7 @@ namespace micro_os_plus::micro_test_plus
     public:
       /**
        * @brief Constructs a deferred reporter base.
+       *
        * @details
        * Initialises the reporter with the specified result value and source
        * location.
@@ -1659,6 +1720,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Appends a message to the reporter.
+       *
        * @details
        * Appends the provided message to the internal message string, enabling
        * the accumulation of expectation details.
@@ -1673,6 +1735,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Retrieves the result value.
+       *
        * @details
        * Returns the result value associated with the report.
        *
@@ -1715,6 +1778,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Deferred reporter class template for a specific expression.
+     *
      * @details
      * The `deferred_reporter` class template extends `deferred_reporter_base`
      * to provide deferred reporting functionality for a specific test
@@ -1736,6 +1800,7 @@ namespace micro_os_plus::micro_test_plus
     public:
       /**
        * @brief Constructs a deferred reporter for a specific expression.
+       *
        * @details
        * Initialises the reporter with the given expression, abort status, and
        * source location.

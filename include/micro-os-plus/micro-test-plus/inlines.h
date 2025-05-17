@@ -18,6 +18,7 @@
 /**
  * @file inlines.h
  * @brief Inline implementations for the µTest++ testing framework.
+ *
  * @details
  * This header provides inline definitions for key components of the µTest++
  * framework, including the management of test suites and test cases, deferred
@@ -60,6 +61,15 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
+  /**
+   * @details
+   * This constructor initialises a test suite by binding the provided callable
+   * and its arguments, and registers the suite with the test runner.
+   *
+   * The callable is bound using `std::bind`, allowing for flexible test suite
+   * definitions with arbitrary arguments. Upon construction, the test suite is
+   * automatically registered with the global runner for execution.
+   */
   template <typename Callable_T, typename... Args_T>
   test_suite::test_suite (const char* name, Callable_T&& callable,
                           Args_T&&... arguments)
@@ -81,23 +91,21 @@ namespace micro_os_plus::micro_test_plus
 #endif
   /**
    * @details
-   * A test case is a sequence of test conditions (or simply tests,
-   * or checks), which are expectations/assumptions, i.e. conditions
-   * expected to be true.
+   * The `test_case` function template defines a test case, which is a sequence
+   * of test conditions (also referred to as tests or checks) that represent
+   * expectations or assumptions—conditions expected to be true.
    *
-   * Tests are based on logical expressions, which usually compute
-   * a result and compare it to an expected value.
-   * For C++ projects, it is also possible to check if, while
-   * evaluating an expression, exceptions are thrown or not.
-   * Each test either succeeds or fails.
-   * For expectations, the runner keeps counts of successful
-   * and failed tests.
+   * Each test is based on a logical expression, typically involving the
+   * computation of a result and its comparison to an expected value. For C++
+   * projects, it is also possible to verify whether evaluating an expression
+   * throws exceptions. Each test either succeeds or fails. For expectations,
+   * the test runner maintains counts of successful and failed tests.
    *
-   * A test case has a name, a function which performs the checks, and
-   * possibly arguments.
+   * A test case is characterised by a name, a function that performs the
+   * checks, and optionally, arguments to be passed to that function.
    *
-   * The `test_case` implementation invokes the function with
-   * the provided arguments, and reports the results.
+   * The implementation of `test_case` invokes the provided function with the
+   * given arguments and reports the results to the test runner.
    *
    * @par Example
    *
@@ -131,6 +139,17 @@ namespace micro_os_plus::micro_test_plus
   {
     // ------------------------------------------------------------------------
 
+    /**
+     * @details
+     * This operator overload enables the deferred reporter to accumulate
+     * expectation messages by appending the provided value to the internal
+     * message string.
+     *
+     * If the argument is of an arithmetic type, it is first converted to a
+     * string using `std::to_string` before being appended. For all other
+     * types, the value is appended directly. This ensures that both numeric
+     * and string-like messages are handled appropriately and consistently.
+     */
     template <class T>
     auto&
     deferred_reporter_base::operator<< (const T& msg)
@@ -148,6 +167,17 @@ namespace micro_os_plus::micro_test_plus
 
     // ------------------------------------------------------------------------
 
+    /**
+     * @details
+     * This constructor initialises a deferred reporter for a specific
+     * expression, capturing the evaluation result, abort status, and source
+     * location.
+     *
+     * The expression is evaluated and its boolean result is passed to the base
+     * class. The abort flag determines whether further test execution should
+     * be halted if the expectation fails. The source location provides
+     * contextual information for reporting purposes.
+     */
     template <class Expr_T>
     constexpr deferred_reporter<Expr_T>::deferred_reporter (
         const Expr_T& expr, bool abort,
@@ -161,6 +191,18 @@ namespace micro_os_plus::micro_test_plus
       abort_ = abort;
     }
 
+    /**
+     * @details
+     * The destructor finalises the deferred reporting process for a test
+     * expression. If the evaluated expression is true, the reporter records a
+     * successful outcome along with any accumulated message. If the expression
+     * is false, the reporter records a failure, including the abort status,
+     * message, and source location for comprehensive reporting.
+     *
+     * This mechanism ensures that all relevant information about the test
+     * outcome is captured and reported accurately when the deferred reporter
+     * goes out of scope.
+     */
     template <class Expr_T>
     deferred_reporter<Expr_T>::~deferred_reporter ()
     {
@@ -182,8 +224,14 @@ namespace micro_os_plus::micro_test_plus
   {
     /**
      * @details
-     * For tests handling strings, this function template allows
-     * to split a string into a vector of substrings, using a delimiter.
+     * This function template facilitates string handling in tests by splitting
+     * a string into a vector of substrings, using the specified delimiter.
+     *
+     * The function iterates through the input string, identifying delimiter
+     * positions and extracting substrings between them. Each resulting
+     * substring is added to the output vector. This approach supports flexible
+     * parsing of delimited data, which is particularly useful for validating
+     * string processing logic in test cases.
      *
      * @par Example
      *

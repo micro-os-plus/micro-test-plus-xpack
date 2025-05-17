@@ -18,6 +18,7 @@
 /**
  * @file test-suite.h
  * @brief Test suite management for the µTest++ testing framework.
+ *
  * @details
  * This header defines the `test_suite_base` and `test_suite` classes, which
  * provide the mechanisms for grouping and executing related test cases within
@@ -73,31 +74,67 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @brief Base class for all test suites.
+   *
+   * @details
+   * The `test_suite_base` class provides the foundational interface for
+   * managing test suites within the µTest++ framework. It maintains counters
+   * for successful and failed checks, tracks test cases, and offers methods
+   * for marking the commencement and completion of test cases and suites.
+   *
+   * This class ensures consistent state management and reporting for all
+   * derived test suites. It also provides utility methods for querying the
+   * suite's name, the number of successful and failed checks, the number of
+   * test cases, and the overall result of the suite.
+   *
+   * All members and methods are defined within the
+   * `micro_os_plus::micro_test_plus` namespace, ensuring clear separation from
+   * user code and minimising the risk of naming conflicts.
+   *
    * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */
   class test_suite_base
   {
   public:
     /**
-     * @brief Construct a test suite.
+     * @brief Constructs a test suite.
      * @param [in] name The test suite name.
+     *
+     * @details
+     * The rule of five is enforced to prevent accidental copying or moving.
      */
     test_suite_base (const char* name);
 
-    // The rule of five.
+    /**
+     * @brief Deleted copy constructor to prevent copying.
+     */
     test_suite_base (const test_suite_base&) = delete;
+
+    /**
+     * @brief Deleted move constructor to prevent moving.
+     */
     test_suite_base (test_suite_base&&) = delete;
+
+    /**
+     * @brief Deleted copy assignment operator to prevent copying.
+     */
     test_suite_base&
     operator= (const test_suite_base&)
         = delete;
+
+    /**
+     * @brief Deleted move assignment operator to prevent moving.
+     */
     test_suite_base&
     operator= (test_suite_base&&)
         = delete;
 
+    /**
+     * @brief Virtual destructor for the test_suite_base class.
+     */
     virtual ~test_suite_base ();
 
     /**
-     * @brief Run the sequence of test cases in the suite.
+     * @brief Runs the sequence of test cases in the suite.
      * @par Parameters
      *	None.
      * @par Returns
@@ -107,7 +144,7 @@ namespace micro_os_plus::micro_test_plus
     run (void);
 
     /**
-     * @brief Mark the beginning of a named test case.
+     * @brief Marks the beginning of a named test case.
      * @param [in] name The test case name.
      * @par Returns
      *  Nothing.
@@ -116,20 +153,19 @@ namespace micro_os_plus::micro_test_plus
     begin_test_case (const char* name);
 
     /**
-     * @brief Mark the end of a test case.
+     * @brief Marks the end of a test case.
      * @par Parameters
      *	None.
      * @par Returns
-     *  Nothing.
-     */
+     *  Nothing.     */
     void
     end_test_case (void);
 
     /**
-     * @brief Get the suite name.
+     * @brief Gets the suite name.
      * @par Parameters
      *	None.
-     * @return A pointer to the null terminated test suite name.
+     * @return A pointer to the null-terminated test suite name.
      */
     [[nodiscard]] constexpr const char*
     name ()
@@ -138,17 +174,16 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @brief Count one more passed test conditions.
+     * @brief Increments the count of passed test conditions.
      * @par Parameters
      *	None.
      * @par Returns
-     *  Nothing.
-     */
+     *  Nothing.     */
     void
     increment_successful (void);
 
     /**
-     * @brief Count one more failed test conditions.
+     * @brief Increments the count of failed test conditions.
      * @par Parameters
      *	None.
      * @par Returns
@@ -158,9 +193,7 @@ namespace micro_os_plus::micro_test_plus
     increment_failed (void);
 
     /**
-     * @brief Get the number of conditions that passed.
-     * @par Parameters
-     *	None.
+     * @brief Gets the number of conditions that passed.
      * @return An integer with the number of checks that passed.
      */
     [[nodiscard]] constexpr int
@@ -170,10 +203,10 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @brief Get the number of test conditions that failed.
+     * @brief Gets the number of test conditions that failed.
      * @par Parameters
      *	None.
-     * @return An integer with the number checks that failed.
+     * @return An integer with the number of checks that failed.
      */
     [[nodiscard]] constexpr int
     failed_checks (void)
@@ -182,7 +215,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @brief Get the number of test cases.
+     * @brief Gets the number of test cases.
      * @par Parameters
      *	None.
      * @return An integer with the number of test cases.
@@ -194,7 +227,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @brief Begin the execution of the test suite.
+     * @brief Begins the execution of the test suite.
      * @par Parameters
      *	None.
      * @par Returns
@@ -204,7 +237,7 @@ namespace micro_os_plus::micro_test_plus
     begin_test_suite (void);
 
     /**
-     * @brief Mark the end of the test suite.
+     * @brief Marks the end of the test suite.
      * @par Parameters
      *	None.
      * @par Returns
@@ -214,7 +247,7 @@ namespace micro_os_plus::micro_test_plus
     end_test_suite (void);
 
     /**
-     * @brief Get the test suite result.
+     * @brief Gets the test suite result.
      * @par Parameters
      *	None.
      * @return True if the test suite was successful.
@@ -227,7 +260,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @brief If all counters are null, the test suite was not used.
+     * @brief Checks if the test suite was not used.
      * @par Parameters
      *	None.
      * @return True if the test suite is not used.
@@ -266,54 +299,115 @@ namespace micro_os_plus::micro_test_plus
     int test_cases_ = 0;
 
   public:
+    /**
+     * @brief Indicates whether to process deferred begin for test cases.
+     */
     bool process_deferred_begin = true;
+
+    /**
+     * @brief Structure holding the current test case's check counters.
+     *
+     * @details
+     * Tracks the number of successful and failed checks for the currently
+     * running test case.
+     */
     struct
     {
+      /**
+       * @brief Number of successful checks in the current test case.
+       */
       int successful_checks;
+      /**
+       * @brief Number of failed checks in the current test case.
+       */
       int failed_checks;
     } current_test_case{};
   };
 
   /**
    * @ingroup micro-test-plus-test-suites
-   * @brief Test suites are classes that represent a named group of
-   * test cases which self register to the runner.
+   * @brief Represents a named group of test cases that self-register to the
+   * runner.
+   *
+   * @details
+   * The `test_suite` class extends `test_suite_base` and enables the
+   * registration and execution of callable objects (such as lambdas or
+   * function pointers) as test suites. Upon construction, each test suite
+   * automatically registers itself with the test runner, facilitating
+   * automated test discovery and execution across different components and
+   * folders of a project.
+   *
+   * This class template provides a flexible mechanism for grouping related
+   * test cases and managing their execution within the µTest++ framework. It
+   * ensures that test suites are non-copyable and non-movable, maintaining
+   * unique ownership and consistent state.
+   *
+   * All members and methods are defined within the
+   * `micro_os_plus::micro_test_plus` namespace, ensuring clear separation from
+   * user code and minimising the risk of naming conflicts.
+   *
    * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */
   class test_suite : public test_suite_base
   {
   public:
     /**
-     * @brief Construct a test suite.
-     * @tparam Callable_T The type of an object that can be called.
-     * @tparam Args_T The type of the callable arguments.
-     * @param [in] name The test case name or description.
-     * A short string used in the report.
-     * @param [in] callable A generic callable object,
-     * invoked to perform the test. Usually a lambda.
-     * @param [in] arguments A possibly empty list of arguments to be
-     * passed to the callable.
+     * @brief Class template constructor for test_suite.
+     * @tparam Callable_T The type of a callable object.
+     * @tparam Args_T The types of the callable arguments.
+     * @param [in] name The test case name or description, used in reports.
+     * @param [in] callable A generic callable object, usually a lambda,
+     * invoked to perform the test.
+     * @param [in] arguments A possibly empty list of arguments to be passed to
+     * the callable.
+     *
+     * @details
+     * The rule of five is enforced to prevent accidental copying or moving.
      */
     template <typename Callable_T, typename... Args_T>
     test_suite (const char* name, Callable_T&& callable,
                 Args_T&&... arguments);
 
-    // The rule of five.
+    /**
+     * @brief Deleted copy constructor to prevent copying.
+     */
     test_suite (const test_suite&) = delete;
+
+    /**
+     * @brief Deleted move constructor to prevent moving.
+     */
     test_suite (test_suite&&) = delete;
+
+    /**
+     * @brief Deleted copy assignment operator to prevent copying.
+     */
     test_suite&
     operator= (const test_suite&)
         = delete;
+
+    /**
+     * @brief Deleted move assignment operator to prevent moving.
+     */
     test_suite&
     operator= (test_suite&&)
         = delete;
 
+    /**
+     * @brief Virtual destructor for the test_suite class.
+     */
     virtual ~test_suite () override;
 
+    /**
+     * @brief Runs the sequence of test cases in the suite by invoking the
+     * stored callable.
+     */
     virtual void
     run (void) override;
 
   protected:
+    /**
+     * @brief Callable object representing the test suite's execution logic.
+     */
     std::function<void (void)> callable_;
   };
 

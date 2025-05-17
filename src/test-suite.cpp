@@ -19,6 +19,7 @@
  * @file test-suite.cpp
  * @brief Implementation of test suite management for the µTest++ testing
  * framework.
+ *
  * @details
  * This source file provides the implementation of the `test_suite_base` and
  * `test_suite` classes, which are responsible for grouping, registering, and
@@ -58,6 +59,16 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
+  /**
+   * @details
+   * The constructor initialises a new instance of the `test_suite_base` class
+   * with the specified name. It sets up the internal state required for
+   * managing test cases within the suite. If tracing is enabled, the function
+   * signature is output for diagnostic purposes. The default test suite does
+   * not require explicit registration, ensuring seamless integration within
+   * the µTest++ framework and supporting organised test management across all
+   * files and folders.
+   */
   test_suite_base::test_suite_base (const char* name)
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
@@ -68,10 +79,26 @@ namespace micro_os_plus::micro_test_plus
     // The default test suite needs no registration.
   }
 
+  /**
+   * @details
+   * The destructor releases any resources associated with the
+   * `test_suite_base` instance. It ensures that the test suite is properly
+   * cleaned up after execution, supporting robust and reliable test management
+   * across all files and folders within the µTest++ framework.
+   */
   test_suite_base::~test_suite_base ()
   {
   }
 
+  /**
+   * @details
+   * This method executes the test suite by invoking its associated callable
+   * object. If tracing is enabled, the function signature is output for
+   * diagnostic purposes. The method ensures that all test cases grouped within
+   * the suite are executed in an organised manner, supporting comprehensive
+   * and structured testing across all files and folders within the µTest++
+   * framework.
+   */
   void
   test_suite_base::run ()
   {
@@ -80,6 +107,14 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
   }
 
+  /**
+   * @details
+   * This method marks the beginning of a test suite's execution. It resets the
+   * deferred begin flag and notifies the test reporter to start the suite,
+   * passing the suite's name. This ensures that test suite output is clearly
+   * delineated and properly initialised, supporting organised and readable
+   * reporting across all test cases and folders.
+   */
   void
   test_suite_base::begin_test_suite (void)
   {
@@ -88,6 +123,15 @@ namespace micro_os_plus::micro_test_plus
     reporter.begin_test_suite (name_);
   }
 
+  /**
+   * @details
+   * This method marks the end of a test suite's execution. If the suite's
+   * start was deferred, it ensures the suite is properly begun before
+   * finalising. The method then notifies the test reporter to conclude the
+   * suite, passing a reference to the suite instance. This guarantees that all
+   * results are accurately summarised and reported, supporting clear and
+   * organised test management across all test cases and folders.
+   */
   void
   test_suite_base::end_test_suite (void)
   {
@@ -98,6 +142,16 @@ namespace micro_os_plus::micro_test_plus
     reporter.end_test_suite (*this);
   }
 
+  /**
+   * @details
+   * This method marks the beginning of a test case within the suite. If the
+   * start of the suite was deferred, it ensures the suite is properly begun
+   * before proceeding. The method sets the current test case name, increments
+   * the total number of test cases, resets the current test case statistics,
+   * and notifies the test reporter to begin the test case. This approach
+   * guarantees that each test case is clearly identified, accurately tracked,
+   * and properly reported across all test cases and folders.
+   */
   void
   test_suite_base::begin_test_case (const char* name)
   {
@@ -114,12 +168,27 @@ namespace micro_os_plus::micro_test_plus
     reporter.begin_test_case (test_case_name_);
   }
 
+  /**
+   * @details
+   * This method marks the end of a test case within the suite. It notifies the
+   * test reporter to conclude the test case, passing the current test case
+   * name. This ensures that the results of the test case are accurately
+   * finalised and clearly reported, supporting organised and reliable test
+   * management across all test cases and folders.
+   */
   void
   test_suite_base::end_test_case (void)
   {
     reporter.end_test_case (test_case_name_);
   }
 
+  /**
+   * @details
+   * This method increments the count of successful checks for the test suite
+   * and the current test case. It ensures that each passing assertion is
+   * accurately recorded, supporting precise tracking and reporting of test
+   * outcomes across all test cases and folders.
+   */
   void
   test_suite_base::increment_successful (void)
   {
@@ -127,6 +196,13 @@ namespace micro_os_plus::micro_test_plus
     ++current_test_case.successful_checks;
   }
 
+  /**
+   * @details
+   * This method increments the count of failed checks for the test suite and
+   * the current test case. It ensures that each failing assertion is
+   * accurately recorded, supporting precise tracking and reporting of test
+   * outcomes across all test cases and folders.
+   */
   void
   test_suite_base::increment_failed (void)
   {
@@ -136,6 +212,14 @@ namespace micro_os_plus::micro_test_plus
 
   // ==========================================================================
 
+  /**
+   * @details
+   * This method executes the test suite by invoking the stored callable object
+   * associated with the suite. It ensures that all test cases registered
+   * within the suite are executed in sequence, supporting comprehensive and
+   * structured testing across all files and folders within the µTest++
+   * framework.
+   */
   void
   test_suite::run (void)
   {
@@ -143,6 +227,14 @@ namespace micro_os_plus::micro_test_plus
     callable_ ();
   }
 
+  /**
+   * @details
+   * The destructor releases any resources associated with the `test_suite`
+   * instance. If tracing is enabled, it outputs the function signature for
+   * diagnostic purposes. This ensures that the test suite is properly cleaned
+   * up after execution, supporting robust and reliable test management across
+   * all files and folders within the µTest++ framework.
+   */
   test_suite::~test_suite ()
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)

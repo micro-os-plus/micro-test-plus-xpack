@@ -18,6 +18,7 @@
 /**
  * @file math.h
  * @brief Mathematical utilities for the µTest++ testing framework.
+ *
  * @details
  * This header provides a suite of constexpr mathematical function templates
  * and utilities for use within the µTest++ framework.
@@ -71,6 +72,7 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @namespace micro_os_plus::micro_test_plus::math
    * @brief Mathematical utilities for the µTest++ testing framework.
+   *
    * @details
    * The `math` namespace offers a suite of constexpr mathematical
    * function templates and utilities for use within the µTest++ framework.
@@ -89,7 +91,26 @@ namespace micro_os_plus::micro_test_plus
   namespace math
   {
     /**
-     * @brief Generic absolute of any comparable value.
+     * @brief Computes the absolute value of a given comparable value.
+     *
+     * @details
+     * This function template provides a generic, constexpr implementation for
+     * obtaining the absolute value of any type that supports comparison and
+     * unary negation.
+     *
+     * The function returns the non-negative value of the input. If the input
+     * is less than the default-constructed value of its type (typically zero),
+     * the negated value is returned; otherwise, the original value is
+     * returned.
+     *
+     * This utility is designed to be lightweight and suitable for embedded
+     * environments, where standard library alternatives may be unavailable,
+     * less efficient, or not constexpr.
+     *
+     * @tparam T The type of the input value. Must support comparison and unary
+     * negation.
+     * @param t The value for which the absolute value is to be computed.
+     * @return The absolute value of the input.
      */
     template <class T>
     [[nodiscard]] constexpr auto
@@ -99,7 +120,26 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @brief Generic minimum of two comparable values.
+     * @brief Computes the minimum of two comparable values.
+     *
+     * @details
+     * This function template provides a generic, constexpr implementation for
+     * determining the minimum of two values of any type that supports
+     * comparison.
+     *
+     * The function returns a reference to the lesser of the two input values,
+     * as determined by the `<` operator. If the second argument is less than
+     * the first, it is returned; otherwise, the first argument is returned.
+     *
+     * This utility is designed to be lightweight and suitable for embedded
+     * environments, where standard library alternatives may be unavailable,
+     * less efficient, or not constexpr.
+     *
+     * @tparam T The type of the input values. Must support comparison via the
+     * `<` operator.
+     * @param lhs The first value to compare.
+     * @param rhs The second value to compare.
+     * @return A reference to the minimum of the two input values.
      */
     template <class T>
     [[nodiscard]] constexpr auto
@@ -109,7 +149,29 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @brief Generic 'power of', to raise base to exponent (base ^ exp).
+     * @brief Generic exponentiation function to compute the power of a base
+     * raised to an exponent.
+     *
+     * @details
+     * This function template provides a constexpr implementation for raising a
+     * base value to a given exponent, supporting any types that allow
+     * multiplication and subtraction.
+     *
+     * The function recursively multiplies the base by itself exponent times.
+     * If the exponent is zero, the function returns one (the multiplicative
+     * identity for the type).
+     *
+     * This utility is designed to be lightweight and suitable for embedded
+     * environments, where standard library alternatives may be unavailable,
+     * less efficient, or not constexpr.
+     *
+     * @tparam T The type of the base value. Must support multiplication and
+     * construction from an integer.
+     * @tparam Exp_T The type of the exponent. Must support subtraction and
+     * comparison to zero.
+     * @param base The base value to be raised to the power of \p exp.
+     * @param exp The exponent value.
+     * @return The result of raising \p base to the power of \p exp.
      */
     template <class T, class Exp_T>
     [[nodiscard]] constexpr auto
@@ -120,8 +182,25 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @brief Compute the integral value of a number represented as
-     * an array of characters.
+     * @brief Computes the integral value of a number represented as an array
+     * of characters.
+     *
+     * @details
+     * This function template performs compile-time parsing of a numeric value
+     * from a sequence of characters, typically provided as a template
+     * parameter pack.
+     *
+     * The function assumes that all characters are either digits, a dot (`.`),
+     * or an apostrophe (`'`). Parsing stops at the first dot, allowing the
+     * function to extract only the integral part of the number.
+     *
+     * This utility is particularly useful for user-defined literals and other
+     * compile-time constant expressions, enabling efficient and type-safe
+     * conversion from character sequences to integral values.
+     *
+     * @tparam T The target integral type for the result.
+     * @tparam Cs The character pack representing the numeric value.
+     * @return The parsed integral value of type \c T.
      */
     template <class T, char... Cs>
     [[nodiscard]] constexpr auto
@@ -146,8 +225,28 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @brief Compute the decimals of a number represented as
-     * an array of characters.
+     * @brief Computes the decimal part of a number represented as an array of
+     * characters.
+     *
+     * @details
+     * This function template performs compile-time extraction of the decimal
+     * (fractional) part from a sequence of characters, typically provided as a
+     * template parameter pack.
+     *
+     * The function expects the character sequence to represent a numeric
+     * value, where all characters are either digits, a dot (`.`), or an
+     * apostrophe (`'`). Parsing begins after the first dot, accumulating the
+     * decimal digits as an integer value, each weighted by its decimal
+     * position.
+     *
+     * This utility is particularly useful for user-defined literals and other
+     * compile-time constant expressions, enabling efficient and type-safe
+     * conversion from character sequences to the decimal part of numeric
+     * values.
+     *
+     * @tparam T The target integral type for the result.
+     * @tparam Cs The character pack representing the numeric value.
+     * @return The parsed decimal part as an integral value of type \c T.
      */
     template <class T, char... Cs>
     [[nodiscard]] constexpr auto
@@ -168,8 +267,26 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @brief Compute the number of decimal places of a number represented as
+     * @brief Computes the number of decimal places in a number represented as
      * an array of characters.
+     *
+     * @details
+     * This function template determines, at compile time, the number of
+     * decimal (fractional) digits present in a numeric value represented by a
+     * character sequence, typically provided as a template parameter pack.
+     *
+     * The function expects the character sequence to represent a numeric
+     * value, where all characters are either digits, a dot (`.`), or an
+     * apostrophe (`'`). It locates the first dot and counts the number of
+     * digits that follow, returning the count as the number of decimal places.
+     *
+     * This utility is particularly useful for user-defined literals and other
+     * compile-time constant expressions, enabling efficient and type-safe
+     * determination of decimal precision from character sequences.
+     *
+     * @tparam T The integral type for the result.
+     * @tparam Cs The character pack representing the numeric value.
+     * @return The number of decimal places as a value of type \c T.
      */
     template <class T, char... Cs>
     [[nodiscard]] constexpr auto
@@ -192,8 +309,29 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @brief Compute the number of decimal places of a value,
-     * up to 7 digits.
+     * @brief Computes the number of decimal places of a value, up to 7 digits.
+     *
+     * @details
+     * This function template determines, at compile time, the number of
+     * decimal (fractional) digits present in a floating-point value, up to a
+     * maximum of seven digits of precision.
+     *
+     * The function repeatedly multiplies the input value by ten, incrementing
+     * a counter until the fractional part is less than a defined precision
+     * threshold (1e-7). This approach provides a robust means of estimating
+     * decimal precision for values where exact representation is not possible
+     * due to floating-point limitations.
+     *
+     * This utility is particularly useful for user-defined literals and
+     * compile-time constant expressions, enabling efficient and type-safe
+     * determination of decimal precision from floating-point values.
+     *
+     * @tparam T The integral type for the result.
+     * @tparam Value_T The type of the input value, typically a floating-point
+     * type.
+     * @param value The value whose decimal precision is to be determined.
+     * @return The number of decimal places, as a value of type \c T, up to a
+     * maximum of seven.
      */
     template <class T, class Value_T>
     [[nodiscard]] constexpr auto

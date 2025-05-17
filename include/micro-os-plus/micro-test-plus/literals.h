@@ -19,6 +19,7 @@
  * @file literals.h
  * @brief User-defined literals and type wrappers for the µTest++ testing
  * framework.
+ *
  * @details
  * This header defines a comprehensive suite of user-defined literal operators
  * and type wrappers, enabling the explicit specification of operand types for
@@ -81,6 +82,7 @@ namespace micro_os_plus::micro_test_plus
    * @namespace micro_os_plus::micro_test_plus::literals
    * @brief User-defined literals and type wrappers for the µTest++ testing
    * framework.
+   *
    * @details
    * The `literals` namespace provides an extensive collection of user-defined
    * literal operators and type wrappers, enabling explicit specification
@@ -105,7 +107,22 @@ namespace micro_os_plus::micro_test_plus
   {
     /**
      * @ingroup micro-test-plus-literals
-     * @brief Operator to convert to `int`.
+     * @brief User-defined literal operator to convert to `int`.
+     *
+     * @details
+     * This user-defined literal operator enables the creation of
+     * strongly-typed integral constants of type `int` from character sequences
+     * at compile time.
+     *
+     * The operator is particularly useful in test expressions, allowing
+     * constants to be suffixed with `_i` (for example, `42_i`) to produce a
+     * type-safe value that integrates seamlessly with the µTest++ comparators
+     * and reporting mechanisms.
+     *
+     * @tparam Cs The character pack representing the digits of the integer
+     * constant.
+     * @return A `type_traits::integral_constant` instance holding the parsed
+     * `int` value.
      */
     template <char... Cs>
     [[nodiscard]] constexpr auto
@@ -116,7 +133,22 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-test-plus-literals
-     * @brief Operator to convert to `short`.
+     * @brief User-defined literal operator to convert to `short`.
+     *
+     * @details
+     * This user-defined literal operator enables the creation of
+     * strongly-typed integral constants of type `short` from character
+     * sequences at compile time.
+     *
+     * The operator is particularly useful in test expressions, allowing
+     * constants to be suffixed with `_s` (for example, `123_s`) to produce a
+     * type-safe value that integrates seamlessly with the µTest++ comparators
+     * and reporting mechanisms.
+     *
+     * @tparam Cs The character pack representing the digits of the integer
+     * constant.
+     * @return A `type_traits::integral_constant` instance holding the parsed
+     * `short` value.
      */
     template <char... Cs>
     [[nodiscard]] constexpr auto
@@ -127,7 +159,22 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-test-plus-literals
-     * @brief Operator to convert to `char`.
+     * @brief User-defined literal operator to convert to `char`.
+     *
+     * @details
+     * This user-defined literal operator enables the creation of
+     * strongly-typed integral constants of type `char` from character
+     * sequences at compile time.
+     *
+     * The operator is particularly useful in test expressions, allowing
+     * constants to be suffixed with `_c` (for example, <tt>'A'_c</tt>) to
+     * produce a type-safe value that integrates seamlessly with the µTest++
+     * comparators and reporting mechanisms.
+     *
+     * @tparam Cs The character pack representing the digits of the character
+     * constant.
+     * @return A `type_traits::integral_constant` instance holding the parsed
+     * `char` value.
      */
     template <char... Cs>
     [[nodiscard]] constexpr auto
@@ -138,7 +185,22 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-test-plus-literals
-     * @brief Operator to convert to `signed char`.
+     * @brief User-defined literal operator to convert to `signed char`.
+     *
+     * @details
+     * This user-defined literal operator enables the creation of
+     * strongly-typed integral constants of type `signed char` from character
+     * sequences at compile time.
+     *
+     * The operator is particularly useful in test expressions, allowing
+     * constants to be suffixed with `_sc` (for example, `65_sc`) to produce a
+     * type-safe value that integrates seamlessly with the µTest++ comparators
+     * and reporting mechanisms.
+     *
+     * @tparam Cs The character pack representing the digits of the signed
+     * character constant.
+     * @return A `type_traits::integral_constant` instance holding the parsed
+     * `signed char` value.
      */
     template <char... Cs>
     [[nodiscard]] constexpr auto
@@ -150,7 +212,22 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-test-plus-literals
-     * @brief Operator to convert to `long`.
+     * @brief User-defined literal operator to convert to `long`.
+     *
+     * @details
+     * This user-defined literal operator enables the creation of
+     * strongly-typed integral constants of type `long` from character
+     * sequences at compile time.
+     *
+     * The operator is particularly useful in test expressions, allowing
+     * constants to be suffixed with `_l` (for example, `123_l`) to produce a
+     * type-safe value that integrates seamlessly with the µTest++ comparators
+     * and reporting mechanisms.
+     *
+     * @tparam Cs The character pack representing the digits of the long
+     * integer constant.
+     * @return A `type_traits::integral_constant` instance holding the parsed
+     * `long` value.
      */
     template <char... Cs>
     [[nodiscard]] constexpr auto
@@ -161,7 +238,22 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-test-plus-literals
-     * @brief Operator to convert to `long long`.
+     * @brief User-defined literal operator to convert to `long long`.
+     *
+     * @details
+     * This user-defined literal operator enables the creation of
+     * strongly-typed integral constants of type `long long` from character
+     * sequences at compile time.
+     *
+     * The operator is particularly useful in test expressions, allowing
+     * constants to be suffixed with `_ll` (for example, `123_ll`) to produce a
+     * type-safe value that integrates seamlessly with the µTest++ comparators
+     * and reporting mechanisms.
+     *
+     * @tparam Cs The character pack representing the digits of the long long
+     * integer constant.
+     * @return A `type_traits::integral_constant` instance holding the parsed
+     * `long long` value.
      */
     template <char... Cs>
     [[nodiscard]] constexpr auto
@@ -172,7 +264,22 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-test-plus-literals
-     * @brief Operator to convert to `unsigned`.
+     * @brief User-defined literal operator to convert to `unsigned`.
+     *
+     * @details
+     * This user-defined literal operator enables the creation of
+     * strongly-typed integral constants of type `unsigned` from character
+     * sequences at compile time.
+     *
+     * The operator is particularly useful in test expressions, allowing
+     * constants to be suffixed with `_u` (for example, `123_u`) to produce a
+     * type-safe value that integrates seamlessly with the µTest++ comparators
+     * and reporting mechanisms.
+     *
+     * @tparam Cs The character pack representing the digits of the unsigned
+     * integer constant.
+     * @return A `type_traits::integral_constant` instance holding the parsed
+     * `unsigned` value.
      */
     template <char... Cs>
     [[nodiscard]] constexpr auto
@@ -183,7 +290,22 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-test-plus-literals
-     * @brief Operator to convert to `unsigned char`.
+     * @brief User-defined literal operator to convert to `unsigned char`.
+     *
+     * @details
+     * This user-defined literal operator enables the creation of
+     * strongly-typed integral constants of type `unsigned char` from character
+     * sequences at compile time.
+     *
+     * The operator is particularly useful in test expressions, allowing
+     * constants to be suffixed with `_uc` (for example, `65_uc`) to produce a
+     * type-safe value that integrates seamlessly with the µTest++ comparators
+     * and reporting mechanisms.
+     *
+     * @tparam Cs The character pack representing the digits of the unsigned
+     * character constant.
+     * @return A `type_traits::integral_constant` instance holding the parsed
+     * `unsigned char` value.
      */
     template <char... Cs>
     [[nodiscard]] constexpr auto
@@ -195,7 +317,22 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-test-plus-literals
-     * @brief Operator to convert to `unsigned short`.
+     * @brief User-defined literal operator to convert to `unsigned short`.
+     *
+     * @details
+     * This user-defined literal operator enables the creation of
+     * strongly-typed integral constants of type `unsigned short` from
+     * character sequences at compile time.
+     *
+     * The operator is particularly useful in test expressions, allowing
+     * constants to be suffixed with `_us` (for example, `123_us`) to produce a
+     * type-safe value that integrates seamlessly with the µTest++ comparators
+     * and reporting mechanisms.
+     *
+     * @tparam Cs The character pack representing the digits of the unsigned
+     * short constant.
+     * @return A `type_traits::integral_constant` instance holding the parsed
+     * `unsigned short` value.
      */
     template <char... Cs>
     [[nodiscard]] constexpr auto
@@ -207,7 +344,22 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-test-plus-literals
-     * @brief Operator to convert to `unsigned long`.
+     * @brief User-defined literal operator to convert to `unsigned long`.
+     *
+     * @details
+     * This user-defined literal operator enables the creation of
+     * strongly-typed integral constants of type `unsigned long` from character
+     * sequences at compile time.
+     *
+     * The operator is particularly useful in test expressions, allowing
+     * constants to be suffixed with `_ul` (for example, `123_ul`) to produce a
+     * type-safe value that integrates seamlessly with the µTest++ comparators
+     * and reporting mechanisms.
+     *
+     * @tparam Cs The character pack representing the digits of the unsigned
+     * long integer constant.
+     * @return A `type_traits::integral_constant` instance holding the parsed
+     * `unsigned long` value.
      */
     template <char... Cs>
     [[nodiscard]] constexpr auto
@@ -219,7 +371,22 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-test-plus-literals
-     * @brief Operator to convert to `unsigned long long`.
+     * @brief User-defined literal operator to convert to `unsigned long long`.
+     *
+     * @details
+     * This user-defined literal operator enables the creation of
+     * strongly-typed integral constants of type `unsigned long long` from
+     * character sequences at compile time.
+     *
+     * The operator is particularly useful in test expressions, allowing
+     * constants to be suffixed with `_ull` (for example, `123_ull`) to produce
+     * a type-safe value that integrates seamlessly with the µTest++
+     * comparators and reporting mechanisms.
+     *
+     * @tparam Cs The character pack representing the digits of the unsigned
+     * long long integer constant.
+     * @return A `type_traits::integral_constant` instance holding the parsed
+     * `unsigned long long` value.
      */
     template <char... Cs>
     [[nodiscard]] constexpr auto
@@ -231,7 +398,22 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-test-plus-literals
-     * @brief Operator to convert to `int8_t`.
+     * @brief User-defined literal operator to convert to `int8_t`.
+     *
+     * @details
+     * This user-defined literal operator enables the creation of
+     * strongly-typed integral constants of type `int8_t` from character
+     * sequences at compile time.
+     *
+     * The operator is particularly useful in test expressions, allowing
+     * constants to be suffixed with `_i8` (for example, `127_i8`) to produce a
+     * type-safe value that integrates seamlessly with the µTest++ comparators
+     * and reporting mechanisms.
+     *
+     * @tparam Cs The character pack representing the digits of the `int8_t`
+     * constant.
+     * @return A `type_traits::integral_constant` instance holding the parsed
+     * `int8_t` value.
      */
     template <char... Cs>
     [[nodiscard]] constexpr auto
@@ -243,7 +425,22 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-test-plus-literals
-     * @brief Operator to convert to `int16_t`.
+     * @brief User-defined literal operator to convert to `int16_t`.
+     *
+     * @details
+     * This user-defined literal operator enables the creation of
+     * strongly-typed integral constants of type `int16_t` from character
+     * sequences at compile time.
+     *
+     * The operator is particularly useful in test expressions, allowing
+     * constants to be suffixed with `_i16` (for example, `32767_i16`) to
+     * produce a type-safe value that integrates seamlessly with the µTest++
+     * comparators and reporting mechanisms.
+     *
+     * @tparam Cs The character pack representing the digits of the `int16_t`
+     * constant.
+     * @return A `type_traits::integral_constant` instance holding the parsed
+     * `int16_t` value.
      */
     template <char... Cs>
     [[nodiscard]] constexpr auto
@@ -255,7 +452,22 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-test-plus-literals
-     * @brief Operator to convert to `int32_t`.
+     * @brief User-defined literal operator to convert to `int32_t`.
+     *
+     * @details
+     * This user-defined literal operator enables the creation of
+     * strongly-typed integral constants of type `int32_t` from character
+     * sequences at compile time.
+     *
+     * The operator is particularly useful in test expressions, allowing
+     * constants to be suffixed with `_i32` (for example, `2147483647_i32`) to
+     * produce a type-safe value that integrates seamlessly with the µTest++
+     * comparators and reporting mechanisms.
+     *
+     * @tparam Cs The character pack representing the digits of the `int32_t`
+     * constant.
+     * @return A `type_traits::integral_constant` instance holding the parsed
+     * `int32_t` value.
      */
     template <char... Cs>
     [[nodiscard]] constexpr auto
@@ -267,7 +479,22 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-test-plus-literals
-     * @brief Operator to convert to `int64_t`.
+     * @brief User-defined literal operator to convert to `int64_t`.
+     *
+     * @details
+     * This user-defined literal operator enables the creation of
+     * strongly-typed integral constants of type `int64_t` from character
+     * sequences at compile time.
+     *
+     * The operator is particularly useful in test expressions, allowing
+     * constants to be suffixed with `_i64` (for example,
+     * `9223372036854775807_i64`) to produce a type-safe value that integrates
+     * seamlessly with the µTest++ comparators and reporting mechanisms.
+     *
+     * @tparam Cs The character pack representing the digits of the `int64_t`
+     * constant.
+     * @return A `type_traits::integral_constant` instance holding the parsed
+     * `int64_t` value.
      */
     template <char... Cs>
     [[nodiscard]] constexpr auto
@@ -279,7 +506,22 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-test-plus-literals
-     * @brief Operator to convert to `uint8_t`.
+     * @brief User-defined literal operator to convert to `uint8_t`.
+     *
+     * @details
+     * This user-defined literal operator enables the creation of
+     * strongly-typed integral constants of type `uint8_t` from character
+     * sequences at compile time.
+     *
+     * The operator is particularly useful in test expressions, allowing
+     * constants to be suffixed with `_u8` (for example, `255_u8`) to produce a
+     * type-safe value that integrates seamlessly with the µTest++ comparators
+     * and reporting mechanisms.
+     *
+     * @tparam Cs The character pack representing the digits of the `uint8_t`
+     * constant.
+     * @return A `type_traits::integral_constant` instance holding the parsed
+     * `uint8_t` value.
      */
     template <char... Cs>
     [[nodiscard]] constexpr auto
@@ -291,7 +533,22 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-test-plus-literals
-     * @brief Operator to convert to `uint16_t`.
+     * @brief User-defined literal operator to convert to `uint16_t`.
+     *
+     * @details
+     * This user-defined literal operator enables the creation of
+     * strongly-typed integral constants of type `uint16_t` from character
+     * sequences at compile time.
+     *
+     * The operator is particularly useful in test expressions, allowing
+     * constants to be suffixed with `_u16` (for example, `65535_u16`) to
+     * produce a type-safe value that integrates seamlessly with the µTest++
+     * comparators and reporting mechanisms.
+     *
+     * @tparam Cs The character pack representing the digits of the `uint16_t`
+     * constant.
+     * @return A `type_traits::integral_constant` instance holding the parsed
+     * `uint16_t` value.
      */
     template <char... Cs>
     [[nodiscard]] constexpr auto
@@ -303,7 +560,22 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-test-plus-literals
-     * @brief Operator to convert to `uint32_t`.
+     * @brief User-defined literal operator to convert to `uint32_t`.
+     *
+     * @details
+     * This user-defined literal operator enables the creation of
+     * strongly-typed integral constants of type `uint32_t` from character
+     * sequences at compile time.
+     *
+     * The operator is particularly useful in test expressions, allowing
+     * constants to be suffixed with `_u32` (for example, `4294967295_u32`) to
+     * produce a type-safe value that integrates seamlessly with the µTest++
+     * comparators and reporting mechanisms.
+     *
+     * @tparam Cs The character pack representing the digits of the `uint32_t`
+     * constant.
+     * @return A `type_traits::integral_constant` instance holding the parsed
+     * `uint32_t` value.
      */
     template <char... Cs>
     [[nodiscard]] constexpr auto
@@ -315,7 +587,22 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-test-plus-literals
-     * @brief Operator to convert to `uint64_t`.
+     * @brief User-defined literal operator to convert to `uint64_t`.
+     *
+     * @details
+     * This user-defined literal operator enables the creation of
+     * strongly-typed integral constants of type `uint64_t` from character
+     * sequences at compile time.
+     *
+     * The operator is particularly useful in test expressions, allowing
+     * constants to be suffixed with `_u64` (for example,
+     * `18446744073709551615_u64`) to produce a type-safe value that integrates
+     * seamlessly with the µTest++ comparators and reporting mechanisms.
+     *
+     * @tparam Cs The character pack representing the digits of the `uint64_t`
+     * constant.
+     * @return A `type_traits::integral_constant` instance holding the parsed
+     * `uint64_t` value.
      */
     template <char... Cs>
     [[nodiscard]] constexpr auto
@@ -327,7 +614,22 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-test-plus-literals
-     * @brief Operator to convert to `float`.
+     * @brief User-defined literal operator to convert to `float`.
+     *
+     * @details
+     * This user-defined literal operator enables the creation of
+     * strongly-typed floating-point constants of type `float` from character
+     * sequences at compile time.
+     *
+     * The operator is particularly useful in test expressions, allowing
+     * constants to be suffixed with `_f` (for example, `3.14_f`) to produce a
+     * type-safe value that integrates seamlessly with the µTest++ comparators
+     * and reporting mechanisms.
+     *
+     * @tparam Cs The character pack representing the digits of the
+     * floating-point constant.
+     * @return A `type_traits::floating_point_constant` instance holding the
+     * parsed `float` value.
      */
     template <char... Cs>
     [[nodiscard]] constexpr auto
@@ -341,7 +643,22 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-test-plus-literals
-     * @brief Operator to convert to `double`.
+     * @brief User-defined literal operator to convert to `double`.
+     *
+     * @details
+     * This user-defined literal operator enables the creation of
+     * strongly-typed floating-point constants of type `double` from character
+     * sequences at compile time.
+     *
+     * The operator is particularly useful in test expressions, allowing
+     * constants to be suffixed with `_d` (for example, `2.718_d`) to produce a
+     * type-safe value that integrates seamlessly with the µTest++ comparators
+     * and reporting mechanisms.
+     *
+     * @tparam Cs The character pack representing the digits of the
+     * floating-point constant.
+     * @return A `type_traits::floating_point_constant` instance holding the
+     * parsed `double` value.
      */
     template <char... Cs>
     [[nodiscard]] constexpr auto
@@ -355,7 +672,22 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-test-plus-literals
-     * @brief Operator to convert to `long double`.
+     * @brief User-defined literal operator to convert to `long double`.
+     *
+     * @details
+     * This user-defined literal operator enables the creation of
+     * strongly-typed floating-point constants of type `long double` from
+     * character sequences at compile time.
+     *
+     * The operator is particularly useful in test expressions, allowing
+     * constants to be suffixed with `_ld` (for example, `1.618_ld`) to produce
+     * a type-safe value that integrates seamlessly with the µTest++
+     * comparators and reporting mechanisms.
+     *
+     * @tparam Cs The character pack representing the digits of the
+     * floating-point constant.
+     * @return A `type_traits::floating_point_constant` instance holding the
+     * parsed `long double` value.
      */
     template <char... Cs>
     [[nodiscard]] constexpr auto
@@ -369,14 +701,58 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-test-plus-literals
-     * @brief Operator to convert to `bool`.
+     * @brief User-defined literal operator to convert to `bool`.
+     *
+     * @details
+     * This user-defined literal operator enables the creation of
+     * strongly-typed boolean constants from character sequences at compile
+     * time.
+     *
+     * The operator is particularly useful in test expressions, allowing string
+     * literals to be suffixed with `_b` (for example, `"feature_enabled"_b`)
+     * to produce a type-safe value that integrates seamlessly with the µTest++
+     * comparators and reporting mechanisms.
+     *
+     * The returned type is a lightweight wrapper that behaves as a `bool` and
+     * supports equality comparison with both other named instances and boolean
+     * values.
+     *
+     * @param name Pointer to the character sequence representing the literal.
+     * @param size The size of the character sequence.
+     * @return An instance of a wrapper type convertible to `bool` and
+     * supporting equality comparisons.
+     *
+     * @note This operator is intended to facilitate expressive and type-safe
+     * test conditions.
      */
     constexpr auto
     operator""_b (const char* name, decltype (sizeof ("")) size)
     {
+      /**
+       * @brief Wrapper type for named boolean literals.
+       *
+       * @details
+       * This structure inherits from `std::string_view` and a type trait base,
+       * providing a strongly-typed boolean value for use in test expressions.
+       *
+       * It defines conversion to `bool` and equality operators for comparison
+       * with other named instances and boolean values.
+       */
       struct named : std::string_view, type_traits::op
       {
+        /**
+         * @brief The underlying value type.
+         */
         using value_type = bool;
+
+        /**
+         * @brief Conversion operator to `bool`.
+         *
+         * @details
+         * Always returns `true`, representing the presence of the named
+         * literal in a test context.
+         * @return `true`
+         */
         [[nodiscard]] constexpr
         operator value_type () const
         {
@@ -409,60 +785,191 @@ namespace micro_os_plus::micro_test_plus
 #endif
 #endif
 
-  /** @deprecated Use `to_b` (since 3.2.0). */
+  /**
+   * @addtogroup micro-test-plus-literals
+   * @{
+   */
+
+  /**
+   * @name Deprecated Type Wrappers
+   * @brief Strongly-typed wrappers for explicit type conversion.
+   *
+   * @details
+   * These type aliases provide wrappers for converting values and expressions
+   * to specific types for use with µTest++ comparators and test expressions.
+   *
+   * The `_i`, `_u8`, etc. forms are now deprecated as of version 3.2.0. Please
+   * use the preferred `to_*` type wrappers for new code, as they offer
+   * improved clarity and consistency.
+   *
+   * @deprecated Use the corresponding `to_*` type wrappers instead
+   * (since 3.2.0).
+   */
+
+  /**
+   * @brief Strongly-typed wrapper for `bool` values.
+   * @deprecated Use @c to_b (since 3.2.0).
+   */
   using _b = type_traits::value<bool>;
-  /** @deprecated Use `to_c` (since 3.2.0). */
+
+  /**
+   * @brief Strongly-typed wrapper for `char` values.
+   * @deprecated Use @c to_c (since 3.2.0).
+   */
   using _c = type_traits::value<char>;
-  /** @deprecated Use `to_sc` (since 3.2.0). */
+
+  /**
+   * @brief Strongly-typed wrapper for `signed char` values.
+   * @deprecated Use @c to_sc (since 3.2.0).
+   */
   using _sc = type_traits::value<signed char>;
-  /** @deprecated Use `to_s` (since 3.2.0). */
+
+  /**
+   * @brief Strongly-typed wrapper for `short` values.
+   * @deprecated Use @c to_s (since 3.2.0).
+   */
   using _s = type_traits::value<short>;
-  /** @deprecated Use `to_i` (since 3.2.0). */
+
+  /**
+   * @brief Strongly-typed wrapper for `int` values.
+   * @deprecated Use @c to_i (since 3.2.0).
+   */
   using _i = type_traits::value<int>;
-  /** @deprecated Use `to_l` (since 3.2.0). */
+
+  /**
+   * @brief Strongly-typed wrapper for `long` values.
+   * @deprecated Use @c to_l (since 3.2.0).
+   */
   using _l = type_traits::value<long>;
-  /** @deprecated Use `to_ll` (since 3.2.0). */
+
+  /**
+   * @brief Strongly-typed wrapper for `long long` values.
+   * @deprecated Use @c to_ll (since 3.2.0).
+   */
   using _ll = type_traits::value<long long>;
-  /** @deprecated Use `to_u` (since 3.2.0). */
+
+  /**
+   * @brief Strongly-typed wrapper for `unsigned` values.
+   * @deprecated Use @c to_u (since 3.2.0).
+   */
   using _u = type_traits::value<unsigned>;
-  /** @deprecated Use `to_uc` (since 3.2.0). */
+
+  /**
+   * @brief Strongly-typed wrapper for `unsigned char` values.
+   * @deprecated Use @c to_uc (since 3.2.0).
+   */
   using _uc = type_traits::value<unsigned char>;
-  /** @deprecated Use `to_us` (since 3.2.0). */
+
+  /**
+   * @brief Strongly-typed wrapper for `unsigned short` values.
+   * @deprecated Use @c to_us (since 3.2.0).
+   */
   using _us = type_traits::value<unsigned short>;
-  /** @deprecated Use `to_ul` (since 3.2.0). */
+
+  /**
+   * @brief Strongly-typed wrapper for `unsigned long` values.
+   * @deprecated Use @c to_ul (since 3.2.0).
+   */
   using _ul = type_traits::value<unsigned long>;
-  /** @deprecated Use `to_ull` (since 3.2.0). */
+
+  /**
+   * @brief Strongly-typed wrapper for `unsigned long long` values.
+   * @deprecated Use @c to_ull (since 3.2.0).
+   */
   using _ull = type_traits::value<unsigned long long>;
-  /** @deprecated Use `to_i8` (since 3.2.0). */
+
+  /**
+   * @brief Strongly-typed wrapper for `std::int8_t` values.
+   * @deprecated Use @c to_i8 (since 3.2.0).
+   */
   using _i8 = type_traits::value<std::int8_t>;
-  /** @deprecated Use `to_i16` (since 3.2.0). */
+
+  /**
+   * @brief Strongly-typed wrapper for `std::int16_t` values.
+   * @deprecated Use @c to_i16 (since 3.2.0).
+   */
   using _i16 = type_traits::value<std::int16_t>;
-  /** @deprecated Use `to_i32` (since 3.2.0). */
+
+  /**
+   * @brief Strongly-typed wrapper for `std::int32_t` values.
+   * @deprecated Use @c to_i32 (since 3.2.0).
+   */
   using _i32 = type_traits::value<std::int32_t>;
-  /** @deprecated Use `to_i64` (since 3.2.0). */
+
+  /**
+   * @brief Strongly-typed wrapper for `std::int64_t` values.
+   * @deprecated Use @c to_i64 (since 3.2.0).
+   */
   using _i64 = type_traits::value<std::int64_t>;
-  /** @deprecated Use `to_u8` (since 3.2.0). */
+
+  /**
+   * @brief Strongly-typed wrapper for `std::uint8_t` values.
+   * @deprecated Use @c to_u8 (since 3.2.0).
+   */
   using _u8 = type_traits::value<std::uint8_t>;
-  /** @deprecated Use `to_u16` (since 3.2.0). */
+
+  /**
+   * @brief Strongly-typed wrapper for `std::uint16_t` values.
+   * @deprecated Use @c to_u16 (since 3.2.0).
+   */
   using _u16 = type_traits::value<std::uint16_t>;
-  /** @deprecated Use `to_u32` (since 3.2.0). */
+
+  /**
+   * @brief Strongly-typed wrapper for `std::uint32_t` values.
+   * @deprecated Use @c to_u32 (since 3.2.0).
+   */
   using _u32 = type_traits::value<std::uint32_t>;
-  /** @deprecated Use `to_u64` (since 3.2.0). */
+
+  /**
+   * @brief Strongly-typed wrapper for `std::uint64_t` values.
+   * @deprecated Use @c to_u64 (since 3.2.0).
+   */
   using _u64 = type_traits::value<std::uint64_t>;
-  /** @deprecated Use `to_f` (since 3.2.0). */
+
+  /**
+   * @brief Strongly-typed wrapper for `float` values. @deprecated
+   * Use @c to_f (since 3.2.0).
+   */
   using _f = type_traits::value<float>;
-  /** @deprecated Use `to_d` (since 3.2.0). */
+
+  /**
+   * @brief Strongly-typed wrapper for `double` values. @deprecated
+   * Use @c to_d (since 3.2.0).
+   */
   using _d = type_traits::value<double>;
-  /** @deprecated Use `to_ld` (since 3.2.0). */
+
+  /**
+   * @brief Strongly-typed wrapper for `long double` values.
+   * @deprecated Use @c to_ld (since 3.2.0).
+   */
   using _ld = type_traits::value<long double>;
 
   /**
+   * @brief Deprecated generic strongly-typed wrapper for explicit type
+   * conversion.
+   *
+   * @details
+   * The `_t` template provides a public, strongly-typed wrapper for any type
+   * `T`, enabling explicit conversion of dynamic values and expressions to a
+   * type recognised by the µTest++ comparators and reporting mechanisms.
+   *
+   * This wrapper inherits from `type_traits::value<T>`, ensuring that the
+   * encapsulated value is treated as the specified type within the framework.
+   *
    * @deprecated Use `to_t` (since 3.2.0).
    * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */
   template <class T>
   struct _t : type_traits::value<T>
   {
+    /**
+     * @brief Constructor for the deprecated strongly-typed wrapper.
+     *
+     * @details
+     * Constructs an `_t` instance by forwarding the provided value to the base
+     * `type_traits::value<T>` wrapper.
+     * @param t The value to be wrapped and explicitly converted.
+     */
     constexpr explicit _t (const T& t) : type_traits::value<T>{ t }
     {
     }
@@ -473,59 +980,167 @@ namespace micro_os_plus::micro_test_plus
 #endif
 
   /**
-   * @addtogroup micro-test-plus-literals
-   * @{
+   * @name Type Wrappers
+   * @brief Strongly-typed wrappers for converting dynamic values and
+   * expressions to specific types recognised by µTest++ comparators.
+   *
+   * @details
+   * These type aliases provide a modern, type-safe mechanism for explicitly
+   * converting values to the required types for µTest++ test expressions and
+   * comparators. Each alias is a wrapper around `type_traits::value<T>`,
+   * ensuring that the value is treated as the specified type within the
+   * framework.
+   *
+   * The `to_*` forms are the preferred approach since version 3.2.0,
+   * superseding the older `_i`, `_u8`, etc. aliases, which are now deprecated.
+   *
+   * @par Example
+   *
+   * @code
+   * int x = 42;
+   * auto wrapped = to_i{x}; // Explicitly treat x as an int for test
+   * comparison
+   * @endcode
+   *
+   * @since 3.2.0
    */
 
-  // Wrappers that can be used to convert dynamic values to specific types
-  // that are recognised by the comparators.
-  // The syntax is similar to function calls, like `_i(expression)`, but the
-  // results have custom types expected by comparators.
-  /** @since 3.2.0 */
+  /**
+   * @brief Strongly-typed wrapper for `bool` values.
+   * @since 3.2.0
+   */
   using to_b = type_traits::value<bool>;
-  /** @since 3.2.0 */
+
+  /**
+   * @brief Strongly-typed wrapper for `char` values.
+   * @since 3.2.0
+   */
   using to_c = type_traits::value<char>;
-  /** @since 3.2.0 */
+
+  /**
+   * @brief Strongly-typed wrapper for `signed char` values.
+   * @since 3.2.0
+   */
   using to_sc = type_traits::value<signed char>;
-  /** @since 3.2.0 */
+
+  /**
+   * @brief Strongly-typed wrapper for `short` values.
+   * @since 3.2.0
+   */
   using to_s = type_traits::value<short>;
-  /** @since 3.2.0 */
+
+  /**
+   * @brief Strongly-typed wrapper for `int` values.
+   * @since 3.2.0
+   */
   using to_i = type_traits::value<int>;
-  /** @since 3.2.0 */
+
+  /**
+   * @brief Strongly-typed wrapper for `long` values.
+   * @since 3.2.0
+   */
   using to_l = type_traits::value<long>;
-  /** @since 3.2.0 */
+
+  /**
+   * @brief Strongly-typed wrapper for `long long` values.
+   * @since 3.2.0
+   */
   using to_ll = type_traits::value<long long>;
-  /** @since 3.2.0 */
+
+  /**
+   * @brief Strongly-typed wrapper for `unsigned` values.
+   * @since 3.2.0
+   */
   using to_u = type_traits::value<unsigned>;
-  /** @since 3.2.0 */
+
+  /**
+   * @brief Strongly-typed wrapper for `unsigned char` values.
+   * @since 3.2.0
+   */
   using to_uc = type_traits::value<unsigned char>;
-  /** @since 3.2.0 */
+
+  /**
+   * @brief Strongly-typed wrapper for `unsigned short` values.
+   * @since 3.2.0
+   */
   using to_us = type_traits::value<unsigned short>;
-  /** @since 3.2.0 */
+
+  /**
+   * @brief Strongly-typed wrapper for `unsigned long` values.
+   * @since 3.2.0
+   */
   using to_ul = type_traits::value<unsigned long>;
-  /** @since 3.2.0 */
+
+  /**
+   * @brief Strongly-typed wrapper for `unsigned long long` values.
+   * @since 3.2.0
+   */
   using to_ull = type_traits::value<unsigned long long>;
-  /** @since 3.2.0 */
+
+  /**
+   * @brief Strongly-typed wrapper for `std::int8_t` values.
+   * @since 3.2.0
+   */
   using to_i8 = type_traits::value<std::int8_t>;
-  /** @since 3.2.0 */
+
+  /**
+   * @brief Strongly-typed wrapper for `std::int16_t` values.
+   * @since 3.2.0
+   */
   using to_i16 = type_traits::value<std::int16_t>;
-  /** @since 3.2.0 */
+
+  /**
+   * @brief Strongly-typed wrapper for `std::int32_t` values.
+   * @since 3.2.0
+   */
   using to_i32 = type_traits::value<std::int32_t>;
-  /** @since 3.2.0 */
+
+  /**
+   * @brief Strongly-typed wrapper for `std::int64_t` values.
+   * @since 3.2.0
+   */
   using to_i64 = type_traits::value<std::int64_t>;
-  /** @since 3.2.0 */
+
+  /**
+   * @brief Strongly-typed wrapper for `std::uint8_t` values.
+   * @since 3.2.0
+   */
   using to_u8 = type_traits::value<std::uint8_t>;
-  /** @since 3.2.0 */
+
+  /**
+   * @brief Strongly-typed wrapper for `std::uint16_t` values.
+   * @since 3.2.0
+   */
   using to_u16 = type_traits::value<std::uint16_t>;
-  /** @since 3.2.0 */
+
+  /**
+   * @brief Strongly-typed wrapper for `std::uint32_t` values.
+   * @since 3.2.0
+   */
   using to_u32 = type_traits::value<std::uint32_t>;
-  /** @since 3.2.0 */
+
+  /**
+   * @brief Strongly-typed wrapper for `std::uint64_t` values.
+   * @since 3.2.0
+   */
   using to_u64 = type_traits::value<std::uint64_t>;
-  /** @since 3.2.0 */
+
+  /**
+   * @brief Strongly-typed wrapper for `float` values.
+   * @since 3.2.0
+   */
   using to_f = type_traits::value<float>;
-  /** @since 3.2.0 */
+
+  /**
+   * @brief Strongly-typed wrapper for `double` values.
+   * @since 3.2.0
+   */
   using to_d = type_traits::value<double>;
-  /** @since 3.2.0 */
+
+  /**
+   * @brief Strongly-typed wrapper for `long double` values.
+   * @since 3.2.0
+   */
   using to_ld = type_traits::value<long double>;
 
   /**
@@ -534,17 +1149,40 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @ingroup micro-test-plus-literals
-   * @brief Template for wrapping any other type.
+   * @brief Generic strongly-typed wrapper for explicit type conversion.
    * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    * @since 3.2.0
    *
    * @details
-   * A public class used only to convert the type.
+   * The `to_t` template provides a public, strongly-typed wrapper for any type
+   * `T`, enabling explicit conversion of dynamic values and expressions to a
+   * type recognised by the µTest++ comparators and reporting mechanisms.
+   *
+   * This wrapper inherits from `type_traits::value<T>`, ensuring that the
+   * encapsulated value is treated as the specified type within the framework.
+   * It is particularly useful for enhancing type safety and clarity in test
+   * expressions, especially when working with user-defined or less common
+   * types.
+   *
+   * @par Example
+   *
+   * @code
+   * MyType obj;
+   * auto wrapped = to_t<MyType>{obj}; // Explicitly treat obj as MyType for
+   * test comparison
+   * @endcode
    */
   template <class T>
   struct to_t : type_traits::value<T>
   {
-    /** @brief Constructor. */
+    /**
+     * @brief Constructor for the strongly-typed wrapper.
+     *
+     * @details
+     * Constructs a `to_t` instance by forwarding the provided value to the
+     * base `type_traits::value<T>` wrapper.
+     * @param t The value to be wrapped and explicitly converted.
+     */
     constexpr explicit to_t (const T& t) : type_traits::value<T>{ t }
     {
     }
