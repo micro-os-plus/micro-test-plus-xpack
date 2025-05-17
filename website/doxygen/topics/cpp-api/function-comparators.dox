@@ -1,0 +1,48 @@
+@defgroup micro-test-plus-function-comparators Function Comparators
+@brief Functions for comparing actual and expected values in tests.
+
+@details
+Function comparators in µTest++ provide a clear and expressive way to compare actual and expected values within test cases. While any expression yielding a boolean value may be used in expectations and assumptions, dedicated comparator functions such as `eq`, `ne`, `lt`, `le`, `gt`, and `ge` offer enhanced reporting by explicitly showing the values involved when a check fails.
+
+Using these comparators ensures that, in the event of a failed check, the test output will include both the actual and expected values, making it easier to diagnose issues and understand the cause of the failure.
+
+Comparators are available for both fundamental types and standard containers. When comparing containers, each element is assessed individually, and the results are reported in detail.
+
+@par Examples
+
+@code{.cpp}
+mt::expect (mt::eq (compute_answer (), 42)) << "answer is 42";
+mt::expect (mt::ne (compute_answer (), 43)) << "answer is not 43";
+mt::expect (mt::lt (compute_answer (), 43)) << "answer is < 43";
+mt::expect (mt::le (compute_answer (), 43)) << "answer is <= 42";
+mt::expect (mt::gt (compute_answer (), 41)) << "answer is > 43";
+mt::expect (mt::ge (compute_answer (), 42)) << "answer is >= 42";
+
+mt::expect (compute_condition ()) << "condition is true";
+@endcode
+
+If a comparator check fails, the output will clearly indicate the actual and expected values:
+
+@code{.console}
+  Check failed comparisons
+    ✗ actual != 42 FAILED (unit-test.cpp:286, 42 != 42)
+    ✗ FAILED (unit-test.cpp:307, 42 != 42)
+    ✗ 42 != 42_i FAILED (unit-test.cpp:310, 42 != 42)
+    ✗ (actual == 42) and (actual != 42.0) FAILED (unit-test.cpp:781, (42 == 42
+and 42.000000 != 42.000000))
+@endcode
+
+### Comparing containers
+
+Containers can be compared for equality or inequality using the same comparator functions. The comparison is performed by iterating through each element and evaluating them individually.
+
+@par Examples
+
+@code{.cpp}
+mt::expect (mt::eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
+        << "vector{ 1, 2 } eq vector{ 1, 2 }";
+
+mt::expect (mt::ne (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 })
+        << "vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }";
+@endcode
+

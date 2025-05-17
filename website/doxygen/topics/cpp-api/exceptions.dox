@@ -1,0 +1,43 @@
+@defgroup micro-test-plus-exceptions Checking Exceptions
+@brief Functions for verifying exceptions in test cases.
+
+@details
+The µTest++ framework provides dedicated functions for verifying whether specific expressions or function calls throw exceptions, supporting robust testing of error handling and exceptional conditions in C++ code.
+
+These utilities enable developers to assert that exceptions are correctly thrown or not thrown as expected, improving the reliability and safety of software components. The framework supports both generic exception checks and type-specific exception verification, allowing for precise and expressive test cases.
+
+For more advanced scenarios, such as handling multiple expected exceptions, developers can use explicit `try` blocks with multiple `catch` statements and report the results using `expect(true)` or `expect(false)`. This approach ensures comprehensive coverage of exception handling logic.
+
+@par Examples
+
+@code{.cpp}
+mt::expect (mt::throws ([] { exercise_throw (true); })) << "exception thrown";
+
+mt::expect (mt::throws<std::runtime_error> ([] { throw std::runtime_error{ ""
+}; }))
+        << "std::runtime_error thrown";
+
+mt::expect (mt::nothrow ([] { exercise_throw (false); })) << "exception not
+thrown";
+@endcode
+
+If more advanced logic is required, such as handling multiple expected exceptions, use an explicit `try` block with several `catch` statements, and report the outcomes using `expect(true)` or `expect(false)`.
+
+@code{.cpp}
+try
+  {
+    compute_answer ();
+  }
+catch (const std::overflow_error& e)
+  {
+    mt::expect (true) << "std::overflow_error thrown";
+  }
+catch (const std::runtime_error& e)
+  {
+    mt::expect (true) << "std::runtime_error thrown";
+  }
+catch (...)
+  {
+    mt::expect (false) << "known exception thrown";
+  }
+@endcode

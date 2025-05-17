@@ -1,0 +1,9 @@
+@dir include
+@brief Public header folder for the µTest++ testing framework.
+
+@details
+The `include` folder contains all public header files for the µTest++ testing framework, serving as the main interface for users and integrators.
+
+Within this folder, you will find declarations for core framework components, including test suite and test case management, test runner control, result reporting, mathematical utilities, type traits, user-defined literals, operators, and supporting utilities. All public API definitions are organised here to ensure a clear distinction from implementation details, which are located in the `src` folder.
+
+The structure of the `include` folder promotes modularity, maintainability, and straightforward integration. By including the relevant headers from this folder, users can access the full range of features provided by the µTest++ framework in their projects.

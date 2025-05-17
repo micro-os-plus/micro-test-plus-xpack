@@ -1,0 +1,8 @@
+@defgroup micro-test-plus-c-api C API
+@brief Topics relating to the µTest++ C API.
+@ingroup micro-test-plus
+
+@details
+Although µTest++ is highly effective for testing C code, its implementation is based on modern C++ features that cannot be replicated in the C language. Consequently, µTest++ does not provide a dedicated C API or C equivalents for its C++ definitions.
+
+Developers can, however, use the µTest++ framework to organise and execute tests for C code by writing test cases in C++. This approach enables comprehensive testing of C modules while benefiting from the advanced capabilities and expressive syntax of the C++ API, supporting professional software quality assurance across all files and folders.

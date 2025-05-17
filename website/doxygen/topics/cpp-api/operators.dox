@@ -1,0 +1,38 @@
+@defgroup micro-test-plus-operators Operators
+@brief Overloaded operators for expressive test comparisons.
+
+@details
+The µTest++ framework provides overloaded comparison and logical operators to enable expressive and type-safe test assertions. These operators—such as `==`, `!=`, `<`, `>`, `<=`, and `>=`—are defined within the dedicated `micro_test_plus::operators` namespace to avoid conflicts with application-defined operators.
+
+For standard values, the default operators are used, ensuring correct comparisons. However, when using the specialised µTest++ operators with typed operands, failed checks will display both the actual and expected values, greatly improving the clarity of test reports.
+
+These operators are restricted to operands derived from the local `detail::op` type. For constant values, this is achieved using provided literals (e.g., `1_i`), while dynamic values can be wrapped using casts such as `mt::to_i{expression}`.
+
+Logical operators (`&&`, `||`, `!`) are also supported and provide enhanced functionality when used with typed operands, allowing for the composition of complex test conditions in a natural and readable manner.
+
+@par Examples
+
+@code{.cpp}
+mt::test_case ("Operators", [] {
+  using namespace micro_test_plus::operators;
+  using namespace micro_test_plus::literals;
+
+  mt::expect (compute_answer () == 42_i) << "answer is 42 (with literal)";
+  mt::expect (mt::to_i {compute_answer ()} == 42) << "answer is 42 (with
+cast)"; mt::expect (compute_answer () != 43_i) << "answer is not 43";
+  mt::expect (compute_answer () < 43_i) << "answer is < 43";
+  mt::expect (compute_answer () <= 43_i) << "answer is <= 42";
+  mt::expect (compute_answer () > 41_i) << "answer is > 43";
+  mt::expect (compute_answer () >= 42_i) << "answer is >= 42";
+});
+@endcode
+
+### Logical operators
+
+Logical operators may be used in the same way as standard operators, with enhanced reporting available when used with typed operands.
+
+@par Example
+
+@code{.cpp}
+mt::expect (compute_answer () == 42_i && compute_float () == 42.0_f);
+@endcode

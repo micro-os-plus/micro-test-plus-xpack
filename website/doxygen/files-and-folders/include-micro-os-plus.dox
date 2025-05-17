@@ -1,0 +1,11 @@
+@dir include/micro-os-plus
+@brief Core public header folder for the µTest++ testing framework.
+
+@details
+The `include/micro-os-plus` folder serves as the primary location for the public header files of the µTest++ testing framework, providing the main interface for users and integrators.
+
+This folder contains declarations for all fundamental components of the framework, including test suite and test case management, test runner control, result reporting, mathematical utilities, type traits, user-defined literals, operators, reflection utilities, and essential internal mechanisms.
+
+By consolidating all public API definitions within this folder, the project maintains a clear distinction from implementation details (located in the `src` folder), thereby supporting modularity, maintainability, and straightforward integration.
+
+To utilise the full functionality of the µTest++ framework, users should include the `micro-test-plus.h` header from this folder in their projects.

@@ -1,0 +1,26 @@
+@defgroup micro-test-plus-container-operators Container Operators
+@brief Overloaded operators for container comparison.
+
+@details
+The µTest++ framework provides overloaded operators to facilitate direct and expressive comparison of standard containers, such as vectors and strings, within test cases. These operators enable developers to write clear and concise assertions when verifying the equality or inequality of container contents.
+
+In addition to the generic operators, specialised equality and inequality operators are provided for containers, ensuring accurate and efficient comparison semantics that align with modern C++ practices.
+
+@par Examples
+
+@code{.cpp}
+#include <string_view>
+using namespace std::literals; // For the "sv" literal.
+namespace mt = micro_os_plus::micro_test_plus;
+// ...
+
+mt::test_case ("Operators", [] {
+  using namespace micro_test_plus::operators;
+
+  mt::expect (std::vector<int>{ 1, 2 } == std::vector<int>{ 1, 2 })
+          << "vector{ 1, 2 } == vector{ 1, 2 }";
+
+  mt::expect (std::vector<int>{ 1, 2, 3 } != std::vector<int>{ 1, 2, 4 })
+          << "vector{ 1, 2, 3 } != vector{ 1, 2, 4 }";
+});
+@endcode

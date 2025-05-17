@@ -1,0 +1,23 @@
+@defgroup micro-test-plus-string-operators String Operators
+@brief Overloaded operators for string comparison.
+
+@details
+The µTest++ framework provides overloaded operators specifically for comparing string types, such as `std::string_view`. These operators enable clear and expressive assertions when verifying string values within test cases, supporting both equality and inequality checks.
+
+By using these dedicated string operators, developers can write concise and readable tests that accurately reflect the intended logic. The framework ensures that string comparisons are performed correctly and that any failed checks are reported with both the actual and expected values for straightforward diagnostics.
+
+@par Examples
+
+@code{.cpp}
+#include <string_view>
+using namespace std::literals; // For the "sv" literal.
+namespace mt = micro_os_plus::micro_test_plus;
+// ...
+
+mt::test_case ("Operators", [] {
+  using namespace micro_test_plus::operators;
+
+  mt::expect (std::string_view{ compute_ultimate_answer () } == "forty-two"sv)
+          << "ultimate answer == 'forty-two'";
+});
+@endcode

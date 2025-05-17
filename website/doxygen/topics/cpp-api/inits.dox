@@ -1,0 +1,35 @@
+@defgroup micro-test-plus-inits Initialisation & Exit
+@brief Functions for initialising the framework and returning an exit code.
+
+@details
+These functions are responsible for initialising the test runner and returning the test result as the process exit code. Proper initialisation ensures that the µTest++ framework is correctly configured to manage and execute test cases, while the exit code reflects the overall outcome of the tests, supporting integration with automated build and continuous integration systems.
+
+The simplest test consists of a single test case containing a single expectation; for example:
+
+@code{.cpp}
+#include <micro-os-plus/micro-test-plus.h>
+
+int
+main(int argc, char* argv[])
+{
+  namespace mt = micro_os_plus::micro_test_plus;
+
+  mt::initialize(argc, argv, "Minimal");
+
+  mt::test_case ("Check truth", [] {
+    mt::expect (true);
+  })
+
+  return mt::exit_code ();
+}
+@endcode
+
+When this test is executed, the output is as follows:
+
+@code{.console}
+• Minimal - test suite started
+
+  ✓ Check truth - test case passed (1 check)
+
+✓ Minimal - test suite passed (1 check in 1 test case)
+@endcode
