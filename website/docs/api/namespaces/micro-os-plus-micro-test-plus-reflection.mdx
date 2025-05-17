@@ -58,8 +58,8 @@ Extract a short type or function name from a fully qualified name. <Link to="#ab
 
 <MembersIndexItem
   type={<>constexpr std::string&#95;view</>}
-  name={<><Link to="#aaaad9b26021a442cdd7e634888e462d6">type&#95;name</Link> ()</>}>
-Extract the type name from the <code>&#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;</code> macro. <Link to="#aaaad9b26021a442cdd7e634888e462d6">More...</Link>
+  name={<><Link to="#a6580ad54ad22a1d3ab43a1d9d49d1f26">type&#95;name</Link> (void)</>}>
+Extract the type name from the <code>&#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;</code> macro. <Link to="#a6580ad54ad22a1d3ab43a1d9d49d1f26">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -94,14 +94,14 @@ A pointer to the short name within the input string.
 
 This function extracts the short name from a given file path by locating the final folder separator (&#39;/&#39;). If a separator is found, it returns a pointer to the character immediately following it, effectively providing the file or folder name. If no separator is present, the original input string is returned. This utility is useful for reporting concise file or folder names in test output.
 
-Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00121">121</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
+Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00128">128</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
 </MemberDefinition>
 
-### type&#95;name() {#aaaad9b26021a442cdd7e634888e462d6}
+### type&#95;name() {#a6580ad54ad22a1d3ab43a1d9d49d1f26}
 
 <MemberDefinition
   template={<>template &lt;class T&gt;</>}
-  prototype={<>std::string&#95;view micro&#95;os&#95;plus::micro&#95;test&#95;plus::reflection::type&#95;name ()</>}
+  prototype={<>std::string&#95;view micro&#95;os&#95;plus::micro&#95;test&#95;plus::reflection::type&#95;name (void)</>}
   labels = {["nodiscard", "constexpr"]}>
 Extract the type name from the <code>&#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;</code> macro.
 
@@ -116,11 +116,16 @@ The implementation is compiler-dependent and may require adjustment for differen
 <ParametersListItem name="T">The type whose name is to be extracted.</ParametersListItem>
 </ParametersList>
 
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+
 <SectionUser title="Returns">
 A <code>std::string&#95;view</code> containing the extracted type name.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h/#l00225">225</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">reflection.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h/#l00237">237</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">reflection.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

@@ -46,20 +46,20 @@ Computes the absolute value of a given comparable value. <Link to="#a1dd33529640
 
 <MembersIndexItem
   type="constexpr T"
-  name={<><Link to="#a575d81fc3d63effaf1b00fcb1df701bc">den</Link> ()</>}>
-Computes the decimal part of a number represented as an array of characters. <Link to="#a575d81fc3d63effaf1b00fcb1df701bc">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="constexpr T"
-  name={<><Link to="#a78fdcc73346e80349f0d3026cc03b8cd">den&#95;size</Link> ()</>}>
-Computes the number of decimal places in a number represented as an array of characters. <Link to="#a78fdcc73346e80349f0d3026cc03b8cd">More...</Link>
+  name={<><Link to="#a1006429dba18038662409138f5754952">den</Link> (void)</>}>
+Computes the decimal part of a number represented as an array of characters. <Link to="#a1006429dba18038662409138f5754952">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr T"
   name={<><Link to="#a3e243d7f77b8435e1433ccad9c603f98">den&#95;size</Link> (Value&#95;T value)</>}>
 Computes the number of decimal places of a value, up to 7 digits. <Link to="#a3e243d7f77b8435e1433ccad9c603f98">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="constexpr T"
+  name={<><Link to="#a74757af775d3afa203b808e3f6642467">den&#95;size</Link> (void)</>}>
+Computes the number of decimal places in a number represented as an array of characters. <Link to="#a74757af775d3afa203b808e3f6642467">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
@@ -70,8 +70,8 @@ Computes the minimum of two comparable values. <Link to="#ae53dd62f6d82b8ccaa048
 
 <MembersIndexItem
   type="constexpr T"
-  name={<><Link to="#a60e755b1df92f6391368649b0ba97f97">num</Link> ()</>}>
-Computes the integral value of a number represented as an array of characters. <Link to="#a60e755b1df92f6391368649b0ba97f97">More...</Link>
+  name={<><Link to="#a98cbcae8bfc4a2d2f27487d1b2e641b7">num</Link> (void)</>}>
+Computes the integral value of a number represented as an array of characters. <Link to="#a98cbcae8bfc4a2d2f27487d1b2e641b7">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
@@ -123,14 +123,14 @@ This utility is designed to be lightweight and suitable for embedded environment
 The absolute value of the input.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00117">117</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00118">118</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
 </MemberDefinition>
 
-### den() {#a575d81fc3d63effaf1b00fcb1df701bc}
+### den() {#a1006429dba18038662409138f5754952}
 
 <MemberDefinition
   template={<>template &lt;class T, char... Cs&gt;</>}
-  prototype={<>T micro&#95;os&#95;plus::micro&#95;test&#95;plus::math::den ()</>}
+  prototype={<>T micro&#95;os&#95;plus::micro&#95;test&#95;plus::math::den (void)</>}
   labels = {["nodiscard", "constexpr"]}>
 Computes the decimal part of a number represented as an array of characters.
 
@@ -148,40 +148,16 @@ This utility is particularly useful for user-defined literals and other compile-
 <ParametersListItem name="Cs">The character pack representing the numeric value.</ParametersListItem>
 </ParametersList>
 
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+
 <SectionUser title="Returns">
 The parsed decimal part as an integral value of type <code>T</code>.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00253">253</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
-</MemberDefinition>
-
-### den&#95;size() {#a78fdcc73346e80349f0d3026cc03b8cd}
-
-<MemberDefinition
-  template={<>template &lt;class T, char... Cs&gt;</>}
-  prototype={<>T micro&#95;os&#95;plus::micro&#95;test&#95;plus::math::den&#95;size ()</>}
-  labels = {["nodiscard", "constexpr"]}>
-Computes the number of decimal places in a number represented as an array of characters.
-
----
-
-This function template determines, at compile time, the number of decimal (fractional) digits present in a numeric value represented by a character sequence, typically provided as a template parameter pack.
-
-The function expects the character sequence to represent a numeric value, where all characters are either digits, a dot (<code>.</code>), or an apostrophe (‘`&#96;). It locates the first dot and counts the number of digits that follow, returning the count as the number of decimal places.
-
-This utility is particularly useful for user-defined literals and other compile-time constant expressions, enabling efficient and type-safe determination of decimal precision from character sequences.
-
-
-<ParametersList title="Template Parameters">
-<ParametersListItem name="T">The integral type for the result.</ParametersListItem>
-<ParametersListItem name="Cs">The character pack representing the numeric value.</ParametersListItem>
-</ParametersList>
-
-<SectionUser title="Returns">
-The number of decimal places as a value of type <code>T</code>.
-</SectionUser>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00293">293</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00262">262</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
 </MemberDefinition>
 
 ### den&#95;size() {#a3e243d7f77b8435e1433ccad9c603f98}
@@ -214,7 +190,41 @@ This utility is particularly useful for user-defined literals and compile-time c
 The number of decimal places, as a value of type <code>T</code>, up to a maximum of seven.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00338">338</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00351">351</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
+</MemberDefinition>
+
+### den&#95;size() {#a74757af775d3afa203b808e3f6642467}
+
+<MemberDefinition
+  template={<>template &lt;class T, char... Cs&gt;</>}
+  prototype={<>T micro&#95;os&#95;plus::micro&#95;test&#95;plus::math::den&#95;size (void)</>}
+  labels = {["nodiscard", "constexpr"]}>
+Computes the number of decimal places in a number represented as an array of characters.
+
+---
+
+This function template determines, at compile time, the number of decimal (fractional) digits present in a numeric value represented by a character sequence, typically provided as a template parameter pack.
+
+The function expects the character sequence to represent a numeric value, where all characters are either digits, a dot (<code>.</code>), or an apostrophe (‘`&#96;). It locates the first dot and counts the number of digits that follow, returning the count as the number of decimal places.
+
+This utility is particularly useful for user-defined literals and other compile-time constant expressions, enabling efficient and type-safe determination of decimal precision from character sequences.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="T">The integral type for the result.</ParametersListItem>
+<ParametersListItem name="Cs">The character pack representing the numeric value.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+
+<SectionUser title="Returns">
+The number of decimal places as a value of type <code>T</code>.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00305">305</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
 </MemberDefinition>
 
 ### min&#95;value() {#ae53dd62f6d82b8ccaa048d90a7002826}
@@ -247,14 +257,14 @@ This utility is designed to be lightweight and suitable for embedded environment
 A reference to the minimum of the two input values.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00146">146</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00148">148</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
 </MemberDefinition>
 
-### num() {#a60e755b1df92f6391368649b0ba97f97}
+### num() {#a98cbcae8bfc4a2d2f27487d1b2e641b7}
 
 <MemberDefinition
   template={<>template &lt;class T, char... Cs&gt;</>}
-  prototype={<>T micro&#95;os&#95;plus::micro&#95;test&#95;plus::math::num ()</>}
+  prototype={<>T micro&#95;os&#95;plus::micro&#95;test&#95;plus::math::num (void)</>}
   labels = {["nodiscard", "constexpr"]}>
 Computes the integral value of a number represented as an array of characters.
 
@@ -272,11 +282,16 @@ This utility is particularly useful for user-defined literals and other compile-
 <ParametersListItem name="Cs">The character pack representing the numeric value.</ParametersListItem>
 </ParametersList>
 
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+
 <SectionUser title="Returns">
 The parsed integral value of type <code>T</code>.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00207">207</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00213">213</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
 </MemberDefinition>
 
 ### pow() {#a5c22d85f0df63cc0504cbf4988173cd7}
@@ -310,7 +325,7 @@ This utility is designed to be lightweight and suitable for embedded environment
 The result of raising <code>base</code> to the power of <code>exp</code>.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00178">178</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00181">181</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

@@ -77,8 +77,8 @@ The constant value. <Link to="#a53cb52e57c05eaf46f47352a77270993">More...</Link>
 
 <MembersIndexItem
   type="constexpr auto"
-  name={<><Link to="#a566dd7a41840b2b6f92e811a0daeb3d3">get</Link> () const</>}>
-Getter for the constant value. <Link to="#a566dd7a41840b2b6f92e811a0daeb3d3">More...</Link>
+  name={<><Link to="#acb78deb0adea412045e1305280a443f1">get</Link> (void) const</>}>
+Getter for the constant value. <Link to="#acb78deb0adea412045e1305280a443f1">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
@@ -106,7 +106,7 @@ This struct template exposes the constant value via a static member, a getter me
 <ParametersListItem name="N">The compile-time constant value.</ParametersListItem>
 </ParametersList>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00691">691</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00705">705</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 
 <SectionDefinition>
 
@@ -119,7 +119,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::integral&#95;constant&lt; N &gt;::value&#95;type =  decltype (N)</>}>
 The type of the constant value.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00696">696</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00710">710</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -136,7 +136,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["constexpr", "static"]}>
 The constant value.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00701">701</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00715">715</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -145,22 +145,29 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 
 ## Public Member Functions
 
-### get() {#a566dd7a41840b2b6f92e811a0daeb3d3}
+### get() {#acb78deb0adea412045e1305280a443f1}
 
 <MemberDefinition
   template={<>template &lt;auto N&gt;</>}
-  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::integral&#95;constant&lt; N &gt;::get () const</>}
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::integral&#95;constant&lt; N &gt;::get (void) const</>}
   labels = {["inline", "nodiscard", "constexpr"]}>
 Getter for the constant value.
 
 ---
 
-Returns the compile-time constant value. 
+Returns the compile-time constant value.
+
+
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+
 <SectionUser title="Returns">
 The constant value.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00738">738</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00755">755</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### operator value&#95;type() {#acb385717b4e9d0c6995cbec5e31b65e2}
@@ -178,7 +185,7 @@ Allows explicit conversion to the underlying value type.
 The constant value as type <code><Link to="#a30307d0cc6b010e9b42ec98753b6bec1">value&#95;type</Link></code>.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00725">725</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00739">739</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### operator-() {#a7074d786704fd94b5342be3de7c86790}
@@ -196,7 +203,7 @@ Returns a new <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/ty
 An <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">integral&#95;constant</Link></code> with value <code>-N</code>.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00712">712</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00726">726</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

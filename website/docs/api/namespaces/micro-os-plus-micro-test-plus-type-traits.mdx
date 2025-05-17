@@ -209,8 +209,8 @@ Variable template to determine if a type derives from <code>op</code>. <Link to=
 
 <MembersIndexItem
   type={<>T &amp;&amp;</>}
-  name={<><Link to="#a3e17c2628052b00139f20862ef74c54a">declval</Link> ()</>}>
-Utility function template to simulate std::declval for type deduction. <Link to="#a3e17c2628052b00139f20862ef74c54a">More...</Link>
+  name={<><Link to="#ae488d06debb38c5e638355cb462a1228">declval</Link> (void)</>}>
+Utility function template to simulate std::declval for type deduction. <Link to="#ae488d06debb38c5e638355cb462a1228">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
@@ -221,7 +221,7 @@ Fallback function template for is&#95;convertible, returns false if the conversi
 
 <MembersIndexItem
   type="constexpr auto "
-  name={<><Link to="#ac8b2a4fa12ff6db8c40a51910af19589">is&#95;convertible</Link> (int) -&gt; decltype(bool(To(<Link to="#a3e17c2628052b00139f20862ef74c54a">declval</Link>&lt; From &gt;())))</>}>
+  name={<><Link to="#ac8b2a4fa12ff6db8c40a51910af19589">is&#95;convertible</Link> (int) -&gt; decltype(bool(To(<Link to="#ae488d06debb38c5e638355cb462a1228">declval</Link>&lt; From &gt;())))</>}>
 </MembersIndexItem>
 
 <MembersIndexItem
@@ -232,7 +232,7 @@ Fallback function template for is&#95;valid, returns false if the expression is 
 
 <MembersIndexItem
   type="constexpr auto "
-  name={<><Link to="#aa7389baefbefec0ece5df341187218e0">is&#95;valid</Link> (Expr&#95;T expr) -&gt; decltype(expr(<Link to="#a3e17c2628052b00139f20862ef74c54a">declval</Link>&lt; Ts... &gt;()), bool())</>}>
+  name={<><Link to="#aa7389baefbefec0ece5df341187218e0">is&#95;valid</Link> (Expr&#95;T expr) -&gt; decltype(expr(<Link to="#ae488d06debb38c5e638355cb462a1228">declval</Link>&lt; Ts... &gt;()), bool())</>}>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -267,7 +267,7 @@ The <code><Link to="#a1cbbf299a006b4692df250ef2a6fc7c2">requires&#95;t</Link></c
 <ParametersListItem name="Cond">The boolean condition to be checked at compile time.</ParametersListItem>
 </ParametersList>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00651">651</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00664">664</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -298,7 +298,7 @@ The <code>has&#95;epsilon&#95;v</code> variable template evaluates to <code>true
 <ParametersListItem name="false">otherwise.</ParametersListItem>
 </ParametersList>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00431">431</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00442">442</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### has&#95;npos&#95;v {#a0ff1a0846fe8d484f01d45df4e37dd94}
@@ -323,7 +323,7 @@ The <code>has&#95;npos&#95;v</code> variable template evaluates to <code>true</c
 <ParametersListItem name="false">otherwise.</ParametersListItem>
 </ParametersList>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00390">390</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00401">401</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### has&#95;value&#95;v {#a695b45e13f3ac3cd1cef1225fa0dfa01}
@@ -348,7 +348,7 @@ The <code>has&#95;value&#95;v</code> variable template evaluates to <code>true</
 <ParametersListItem name="false">otherwise.</ParametersListItem>
 </ParametersList>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00410">410</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00421">421</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;container&#95;v {#a8361ab7ff9d9c6343d97a99bdcb9feb2}
@@ -374,7 +374,7 @@ The <code>is&#95;container&#95;v</code> variable template evaluates to <code>tru
 <ParametersListItem name="false">otherwise.</ParametersListItem>
 </ParametersList>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00369">369</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00380">380</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;convertible&#95;v {#a49a5bfe63d50b6fd1be0972586fbf590}
@@ -400,7 +400,7 @@ The <code>is&#95;convertible&#95;v</code> variable template evaluates to <code>t
 <ParametersListItem name="false">otherwise.</ParametersListItem>
 </ParametersList>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00594">594</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00607">607</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;floating&#95;point&#95;v {#abfe0c2413694bb3a6dcdf1da303c38db}
@@ -427,7 +427,7 @@ Specialisations are provided for <code>float</code>, <code>double</code>, and <c
 <ParametersListItem name="false">otherwise.</ParametersListItem>
 </ParametersList>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00454">454</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00465">465</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;floating&#95;point&#95;v&lt; double &gt; {#a14941429632c41668220d59c1cd59541}
@@ -446,7 +446,7 @@ This specialisation of the <code>is&#95;floating&#95;point&#95;v</code> variable
 <Link to="#abfe0c2413694bb3a6dcdf1da303c38db">is&#95;floating&#95;point&#95;v</Link>
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00486">486</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00497">497</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;floating&#95;point&#95;v&lt; float &gt; {#aed0d377e4faa067bb6add65ebeb1a482}
@@ -465,7 +465,7 @@ This specialisation of the <code>is&#95;floating&#95;point&#95;v</code> variable
 <Link to="#abfe0c2413694bb3a6dcdf1da303c38db">is&#95;floating&#95;point&#95;v</Link>
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00470">470</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00481">481</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;floating&#95;point&#95;v&lt; long double &gt; {#a735eedc6f117908ddfb242f37e319b46}
@@ -484,7 +484,7 @@ This specialisation of the <code>is&#95;floating&#95;point&#95;v</code> variable
 <Link to="#abfe0c2413694bb3a6dcdf1da303c38db">is&#95;floating&#95;point&#95;v</Link>
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00502">502</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00513">513</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;op&#95;v {#a814e7f004d5404f735737aabb90fa111}
@@ -509,7 +509,7 @@ The <code>is&#95;op&#95;v</code> variable template evaluates to <code>true</code
 <ParametersListItem name="false">otherwise.</ParametersListItem>
 </ParametersList>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00919">919</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00939">939</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -518,11 +518,11 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 
 ## Functions
 
-### declval() {#a3e17c2628052b00139f20862ef74c54a}
+### declval() {#ae488d06debb38c5e638355cb462a1228}
 
 <MemberDefinition
   template={<>template &lt;class T&gt;</>}
-  prototype={<>T &amp;&amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::declval ()</>}>
+  prototype={<>T &amp;&amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::declval (void)</>}>
 Utility function template to simulate std::declval for type deduction.
 
 ---
@@ -534,11 +534,16 @@ The <code>declval</code> function template provides a mechanism for obtaining an
 <ParametersListItem name="T">The type for which an rvalue reference is required.</ParametersListItem>
 </ParametersList>
 
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+
 <SectionUser title="Returns">
 An rvalue reference to type <code>T</code>.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00325">325</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00335">335</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;convertible() {#ab7dddbd4f0438826d71f55904594905d}
@@ -562,7 +567,7 @@ This overload is selected when the primary <code>is&#95;convertible</code> templ
 <ParametersListItem name="false">indicating the conversion is not valid.</ParametersListItem>
 </ParametersList>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00571">571</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00584">584</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;convertible() {#ac8b2a4fa12ff6db8c40a51910af19589}
@@ -572,7 +577,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>decltype(bool(To(declval&lt; From &gt;()))) micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::is&#95;convertible (int)</>}
   labels = {["constexpr"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00552">552</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00564">564</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;valid() {#a3ee98aeecf4e9f3b23dfcda25434c4d2}
@@ -596,7 +601,7 @@ This overload is selected when the primary <code>is&#95;valid</code> template ca
 <code>false</code> indicating the expression is not valid for the given argument types.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00347">347</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00358">358</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;valid() {#aa7389baefbefec0ece5df341187218e0}
@@ -606,7 +611,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>decltype(expr(declval&lt; Ts... &gt;()), bool()) micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::is&#95;valid (Expr&#95;T expr)</>}
   labels = {["constexpr"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00328">328</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00338">338</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

@@ -1,6 +1,6 @@
 @defgroup micro-test-plus-cpp-api C++ API
-@brief Topics relating to the µTest++ C++ API.
 @ingroup micro-test-plus
+@brief Topics relating to the µTest++ C++ API.
 
 @details
 The µTest++ framework is built upon modern C++ standards, providing a robust and expressive API for defining and managing tests. Its design prioritises clarity and maintainability, offering a concise set of core primitives for verifying expectations and assumptions within test cases.

@@ -103,9 +103,9 @@ Complete the test run and return the exit code.
 
 ---
 
-The <code>exit&#95;code</code> function finalises the execution of all registered test suites and test cases within the µTest++ framework, and returns an appropriate exit code to the operating system. This function should be called at the end of the test program, typically from the <code>main()</code> function, to ensure that all results are properly reported and the correct status is communicated.
-
-The returned value indicates the overall success or failure of the test run, allowing integration with build systems and continuous integration environments.
+<SectionUser title="Parameters">
+None.
+</SectionUser>
 
 
 <SectionUser title="Returns">
@@ -114,9 +114,11 @@ The returned value indicates the overall success or failure of the test run, all
 
 In addition to the test cases defined in <code>main()</code>, additional test suites may be declared as static objects either within the same file or in other files, and are automatically registered via the static constructors mechanism.
 
-This function initiates the execution of all globally registered test suites (if present) and returns the overall test result as the process exit code (0 indicates success).
+The <code>exit&#95;code</code> function finalises the execution of all registered test suites and test cases within the µTest++ framework, and returns an appropriate exit code to the operating system. This function should be called at the end of the test program, typically from the <code>main()</code> function, to ensure that all results are properly reported and the correct status is communicated.
 
-Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00101">101</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
+The returned value indicates the overall success or failure of the test run, allowing integration with build systems and continuous integration environments.
+
+Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00108">108</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
 </MemberDefinition>
 
 ### initialize() {#gac2c60d60578f668878957ec68a37538f}
