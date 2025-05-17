@@ -114,14 +114,6 @@ namespace micro_os_plus::micro_test_plus
    * @ingroup micro-test-plus-inits
    * @brief Initialise the µTest++ framework.
    *
-   * @details
-   * The `initialize` function sets up the µTest++ testing framework, preparing
-   * it for test execution. It processes command-line arguments, configures the
-   * test environment, and establishes the default test suite name. This
-   * function should be called at the beginning of the test program, typically
-   * from the `main()` function, to ensure proper initialisation of all
-   * framework components.
-   *
    * @param [in] argc The number of command-line arguments.
    * @param [in] argv Array of pointers to null-terminated argument strings.
    * @param [in] name The name of the default test suite. Defaults to `"Main"`
@@ -147,19 +139,6 @@ namespace micro_os_plus::micro_test_plus
    * @ingroup micro-test-plus-test-case
    * @brief Define and execute a test case.
    *
-   * @details
-   * The `test_case` function template registers and executes a test case
-   * within the µTest++ framework. It accepts a descriptive name, a callable
-   * object (such as a lambda or function pointer), and an optional list of
-   * arguments to be passed to the callable. The test case is reported using
-   * the provided name, and its execution is managed by the framework's test
-   * runner.
-   *
-   * This function template enables flexible and expressive test case
-   * definitions, supporting both parameterised and non-parameterised tests. It
-   * is typically invoked at global scope or within test suite definitions to
-   * ensure automatic registration and execution.
-   *
    * @tparam Callable_T The type of the callable object to be executed as the
    * test case.
    * @tparam Args_T The types of the arguments to be passed to the callable.
@@ -179,6 +158,13 @@ namespace micro_os_plus::micro_test_plus
    * @ingroup micro-test-plus-expectations
    * @brief Evaluate a generic condition and report the results.
    *
+   * @tparam Expr_T The type of the custom expression.
+   * @tparam (SFINAE) Enabled only if `Expr_T` is derived from `detail::op` or
+   * is convertible to `bool`.
+   * @param [in] expr Logical expression to evaluate.
+   * @param [in] sl Optional source location, defaulting to the current line.
+   * @return An output stream to write optional messages.
+   *
    * @details
    * The `expect` function template evaluates a logical condition or custom
    * expression and reports the result within the µTest++ framework. It is
@@ -194,13 +180,6 @@ namespace micro_os_plus::micro_test_plus
    *
    * The function returns an output stream, allowing optional messages to be
    * appended to the test report.
-   *
-   * @tparam Expr_T The type of the custom expression.
-   * @tparam (SFINAE) Enabled only if `Expr_T` is derived from `detail::op` or
-   * is convertible to `bool`.
-   * @param [in] expr Logical expression to evaluate.
-   * @param [in] sl Optional source location, defaulting to the current line.
-   * @return An output stream to write optional messages.
    *
    * @par Example
    *
@@ -224,6 +203,13 @@ namespace micro_os_plus::micro_test_plus
    * @ingroup micro-test-plus-assumptions
    * @brief Check a condition and, if false, abort test execution.
    *
+   * @tparam Expr_T The type of the custom expression.
+   * @tparam (SFINAE) Enabled only if `Expr_T` is derived from `detail::op` or
+   * is convertible to `bool`.
+   * @param [in] expr Logical expression to evaluate.
+   * @param [in] sl Optional source location, defaulting to the current line.
+   * @return An output stream to write optional messages.
+   *
    * @details
    * The `assume` function template evaluates a logical condition or custom
    * expression and, if the condition is false, aborts the current test case
@@ -236,13 +222,6 @@ namespace micro_os_plus::micro_test_plus
    * boolean or with custom comparators/operators derived from the local
    * `detail::op` type. It returns an output stream, allowing optional messages
    * to be appended to the test report for diagnostic purposes.
-   *
-   * @tparam Expr_T The type of the custom expression.
-   * @tparam (SFINAE) Enabled only if `Expr_T` is derived from `detail::op` or
-   * is convertible to `bool`.
-   * @param [in] expr Logical expression to evaluate.
-   * @param [in] sl Optional source location, defaulting to the current line.
-   * @return An output stream to write optional messages.
    *
    * @par Example
    *
@@ -270,6 +249,12 @@ namespace micro_os_plus::micro_test_plus
    * @ingroup micro-test-plus-exceptions
    * @brief Check if a callable throws a specific exception.
    *
+   * @tparam Exception_T The type of the exception expected to be thrown.
+   * @tparam Callable_T The type of the callable object to be invoked.
+   * @param [in] func The callable object to check for exception throwing
+   * behaviour.
+   * @return An output stream to write optional messages.
+   *
    * @details
    * The `throws` function template verifies whether invoking the provided
    * callable object results in the throwing of a specific exception type
@@ -278,12 +263,6 @@ namespace micro_os_plus::micro_test_plus
    *
    * The function returns an output stream, allowing optional messages to be
    * appended to the test report for diagnostic purposes.
-   *
-   * @tparam Exception_T The type of the exception expected to be thrown.
-   * @tparam Callable_T The type of the callable object to be invoked.
-   * @param [in] func The callable object to check for exception throwing
-   * behaviour.
-   * @return An output stream to write optional messages.
    */
   template <class Exception_T, class Callable_T>
   [[nodiscard]] constexpr auto
@@ -296,6 +275,11 @@ namespace micro_os_plus::micro_test_plus
    * @ingroup micro-test-plus-exceptions
    * @brief Check if a callable throws an exception (any exception).
    *
+   * @tparam Callable_T The type of the callable object to be invoked.
+   * @param [in] func The callable object to check for exception throwing
+   * behaviour.
+   * @return An output stream to write optional messages.
+   *
    * @details
    * The `throws` function template verifies whether invoking the provided
    * callable object results in the throwing of any exception within the
@@ -304,11 +288,6 @@ namespace micro_os_plus::micro_test_plus
    *
    * The function returns an output stream, allowing optional messages to be
    * appended to the test report for diagnostic purposes.
-   *
-   * @tparam Callable_T The type of the callable object to be invoked.
-   * @param [in] func The callable object to check for exception throwing
-   * behaviour.
-   * @return An output stream to write optional messages.
    */
   template <class Callable_T>
   [[nodiscard]] constexpr auto
@@ -321,6 +300,10 @@ namespace micro_os_plus::micro_test_plus
    * @ingroup micro-test-plus-exceptions
    * @brief Check if a callable does not throw an exception.
    *
+   * @tparam Callable_T The type of the callable object to be invoked.
+   * @param [in] func The callable object to check for exception safety.
+   * @return An output stream to write optional messages.
+   *
    * @details
    * The `nothrow` function template verifies whether invoking the provided
    * callable object does not result in the throwing of any exception within
@@ -330,10 +313,6 @@ namespace micro_os_plus::micro_test_plus
    *
    * The function returns an output stream, allowing optional messages to be
    * appended to the test report for diagnostic purposes.
-   *
-   * @tparam Callable_T The type of the callable object to be invoked.
-   * @param [in] func The callable object to check for exception safety.
-   * @return An output stream to write optional messages.
    */
   template <class Callable_T>
   [[nodiscard]] constexpr auto
@@ -350,19 +329,19 @@ namespace micro_os_plus::micro_test_plus
    * @ingroup micro-test-plus-function-comparators
    * @brief Generic equality comparator for non-pointer types.
    *
-   * @details
-   * The `eq` function template provides a generic equality comparator for any
-   * non-pointer types. It constructs a comparator object that can be used
-   * within the µTest++ framework to assert that two values are equal. This
-   * function is typically used in test expectations and assertions to compare
-   * the actual and expected values.
-   *
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
    * @param [in] lhs Left hand side operand.
    * @param [in] rhs Right hand side operand.
    * @return A comparator object that evaluates to true if the operands are
    * equal.
+   *
+   * @details
+   * The `eq` function template provides a generic equality comparator for any
+   * non-pointer types. It constructs a comparator object that can be used
+   * within the µTest++ framework to assert that two values are equal. This
+   * function is typically used in test expectations and assertions to compare
+   * the actual and expected values.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -375,19 +354,19 @@ namespace micro_os_plus::micro_test_plus
    * @ingroup micro-test-plus-function-comparators
    * @brief Pointer equality comparator for any pointer types.
    *
-   * @details
-   * The `eq` function template provides a pointer equality comparator for any
-   * pointer types. It constructs a comparator object that can be used within
-   * the µTest++ framework to assert that two pointers are equal. This function
-   * is typically used in test expectations and assertions to compare the
-   * addresses of objects or resources.
-   *
    * @tparam Lhs_T Type of the left hand side pointer operand.
    * @tparam Rhs_T Type of the right hand side pointer operand.
    * @param [in] lhs Left hand side pointer operand.
    * @param [in] rhs Right hand side pointer operand.
    * @return A comparator object that evaluates to true if the pointers are
    * equal.
+   *
+   * @details
+   * The `eq` function template provides a pointer equality comparator for any
+   * pointer types. It constructs a comparator object that can be used within
+   * the µTest++ framework to assert that two pointers are equal. This function
+   * is typically used in test expectations and assertions to compare the
+   * addresses of objects or resources.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -400,19 +379,19 @@ namespace micro_os_plus::micro_test_plus
    * @ingroup micro-test-plus-function-comparators
    * @brief Generic non-equality comparator.
    *
-   * @details
-   * The `ne` function template provides a generic non-equality comparator for
-   * any types. It constructs a comparator object that can be used within the
-   * µTest++ framework to assert that two values are not equal. This function
-   * is typically used in test expectations and assertions to compare the
-   * actual and expected values.
-   *
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
    * @param [in] lhs Left hand side operand.
    * @param [in] rhs Right hand side operand.
    * @return A comparator object that evaluates to true if the operands are not
    * equal.
+   *
+   * @details
+   * The `ne` function template provides a generic non-equality comparator for
+   * any types. It constructs a comparator object that can be used within the
+   * µTest++ framework to assert that two values are not equal. This function
+   * is typically used in test expectations and assertions to compare the
+   * actual and expected values.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -425,19 +404,19 @@ namespace micro_os_plus::micro_test_plus
    * @ingroup micro-test-plus-function-comparators
    * @brief Pointer non-equality comparator.
    *
-   * @details
-   * The `ne` function template provides a pointer non-equality comparator for
-   * any pointer types. It constructs a comparator object that can be used
-   * within the µTest++ framework to assert that two pointers are not equal.
-   * This function is typically used in test expectations and assertions to
-   * compare the addresses of objects or resources.
-   *
    * @tparam Lhs_T Type of the left hand side pointer operand.
    * @tparam Rhs_T Type of the right hand side pointer operand.
    * @param [in] lhs Left hand side pointer operand.
    * @param [in] rhs Right hand side pointer operand.
    * @return A comparator object that evaluates to true if the pointers are not
    * equal.
+   *
+   * @details
+   * The `ne` function template provides a pointer non-equality comparator for
+   * any pointer types. It constructs a comparator object that can be used
+   * within the µTest++ framework to assert that two pointers are not equal.
+   * This function is typically used in test expectations and assertions to
+   * compare the addresses of objects or resources.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -450,19 +429,19 @@ namespace micro_os_plus::micro_test_plus
    * @ingroup micro-test-plus-function-comparators
    * @brief Generic greater than comparator.
    *
-   * @details
-   * The `gt` function template provides a generic greater than comparator for
-   * any types. It constructs a comparator object that can be used within the
-   * µTest++ framework to assert that one value is greater than another. This
-   * function is typically used in test expectations and assertions to compare
-   * the actual and expected values.
-   *
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
    * @param [in] lhs Left hand side operand.
    * @param [in] rhs Right hand side operand.
    * @return A comparator object that evaluates to true if `lhs` is greater
    * than `rhs`.
+   *
+   * @details
+   * The `gt` function template provides a generic greater than comparator for
+   * any types. It constructs a comparator object that can be used within the
+   * µTest++ framework to assert that one value is greater than another. This
+   * function is typically used in test expectations and assertions to compare
+   * the actual and expected values.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -475,19 +454,19 @@ namespace micro_os_plus::micro_test_plus
    * @ingroup micro-test-plus-function-comparators
    * @brief Pointer greater than comparator.
    *
-   * @details
-   * The `gt` function template provides a pointer greater than comparator for
-   * any pointer types. It constructs a comparator object that can be used
-   * within the µTest++ framework to assert that one pointer is greater than
-   * another. This function is typically used in test expectations and
-   * assertions to compare the addresses of objects or resources.
-   *
    * @tparam Lhs_T Type of the left hand side pointer operand.
    * @tparam Rhs_T Type of the right hand side pointer operand.
    * @param [in] lhs Left hand side pointer operand.
    * @param [in] rhs Right hand side pointer operand.
    * @return A comparator object that evaluates to true if the left hand side
    * pointer is greater than the right hand side pointer.
+   *
+   * @details
+   * The `gt` function template provides a pointer greater than comparator for
+   * any pointer types. It constructs a comparator object that can be used
+   * within the µTest++ framework to assert that one pointer is greater than
+   * another. This function is typically used in test expectations and
+   * assertions to compare the addresses of objects or resources.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -500,13 +479,6 @@ namespace micro_os_plus::micro_test_plus
    * @ingroup micro-test-plus-function-comparators
    * @brief Generic greater than or equal comparator.
    *
-   * @details
-   * The `ge` function template provides a generic greater than or equal
-   * comparator for any types. It constructs a comparator object that can be
-   * used within the µTest++ framework to assert that one value is greater than
-   * or equal to another. This function is typically used in test expectations
-   * and assertions to compare the actual and expected values.
-   *
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
    *
@@ -514,6 +486,13 @@ namespace micro_os_plus::micro_test_plus
    * @param [in] rhs Right hand side operand.
    * @return A comparator object that evaluates to true if `lhs` is greater
    * than or equal to `rhs`.
+   *
+   * @details
+   * The `ge` function template provides a generic greater than or equal
+   * comparator for any types. It constructs a comparator object that can be
+   * used within the µTest++ framework to assert that one value is greater than
+   * or equal to another. This function is typically used in test expectations
+   * and assertions to compare the actual and expected values.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -526,14 +505,6 @@ namespace micro_os_plus::micro_test_plus
    * @ingroup micro-test-plus-function-comparators
    * @brief Pointer greater than or equal comparator.
    *
-   * @details
-   * The `ge` function template provides a pointer greater than or equal
-   * comparator for any pointer types. It constructs a comparator object that
-   * can be used within the µTest++ framework to assert that one pointer is
-   * greater than or equal to another. This function is typically used in test
-   * expectations and assertions to compare the addresses of objects or
-   * resources.
-   *
    * @tparam Lhs_T Type of the left hand side pointer operand.
    * @tparam Rhs_T Type of the right hand side pointer operand.
    *
@@ -541,6 +512,14 @@ namespace micro_os_plus::micro_test_plus
    * @param [in] rhs Right hand side pointer operand.
    * @return A comparator object that evaluates to true if the left hand side
    * pointer is greater than or equal to the right hand side pointer.
+   *
+   * @details
+   * The `ge` function template provides a pointer greater than or equal
+   * comparator for any pointer types. It constructs a comparator object that
+   * can be used within the µTest++ framework to assert that one pointer is
+   * greater than or equal to another. This function is typically used in test
+   * expectations and assertions to compare the addresses of objects or
+   * resources.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -553,13 +532,6 @@ namespace micro_os_plus::micro_test_plus
    * @ingroup micro-test-plus-function-comparators
    * @brief Generic less than comparator.
    *
-   * @details
-   * The `lt` function template provides a generic less than comparator for any
-   * types. It constructs a comparator object that can be used within the
-   * µTest++ framework to assert that one value is less than another. This
-   * function is typically used in test expectations and assertions to compare
-   * the actual and expected values.
-   *
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
    *
@@ -567,6 +539,13 @@ namespace micro_os_plus::micro_test_plus
    * @param [in] rhs Right hand side operand.
    * @return A comparator object that evaluates to true if `lhs` is less than
    * `rhs`.
+   *
+   * @details
+   * The `lt` function template provides a generic less than comparator for any
+   * types. It constructs a comparator object that can be used within the
+   * µTest++ framework to assert that one value is less than another. This
+   * function is typically used in test expectations and assertions to compare
+   * the actual and expected values.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -579,13 +558,6 @@ namespace micro_os_plus::micro_test_plus
    * @ingroup micro-test-plus-function-comparators
    * @brief Pointer less than comparator.
    *
-   * @details
-   * The `lt` function template provides a pointer less than comparator for any
-   * pointer types. It constructs a comparator object that can be used within
-   * the µTest++ framework to assert that one pointer is less than another.
-   * This function is typically used in test expectations and assertions to
-   * compare the addresses of objects or resources.
-   *
    * @tparam Lhs_T Type of the left hand side pointer operand.
    * @tparam Rhs_T Type of the right hand side pointer operand.
    *
@@ -593,6 +565,13 @@ namespace micro_os_plus::micro_test_plus
    * @param [in] rhs Right hand side pointer operand.
    * @return A comparator object that evaluates to true if the left hand side
    * pointer is less than the right hand side pointer.
+   *
+   * @details
+   * The `lt` function template provides a pointer less than comparator for any
+   * pointer types. It constructs a comparator object that can be used within
+   * the µTest++ framework to assert that one pointer is less than another.
+   * This function is typically used in test expectations and assertions to
+   * compare the addresses of objects or resources.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -605,13 +584,6 @@ namespace micro_os_plus::micro_test_plus
    * @ingroup micro-test-plus-function-comparators
    * @brief Generic less than or equal comparator.
    *
-   * @details
-   * The `le` function template provides a generic less than or equal
-   * comparator for any types. It constructs a comparator object that can be
-   * used within the µTest++ framework to assert that one value is less than or
-   * equal to another. This function is typically used in test expectations and
-   * assertions to compare the actual and expected values.
-   *
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
    *
@@ -619,6 +591,13 @@ namespace micro_os_plus::micro_test_plus
    * @param [in] rhs Right hand side operand.
    * @return A comparator object that evaluates to true if `lhs` is less than
    * or equal to `rhs`.
+   *
+   * @details
+   * The `le` function template provides a generic less than or equal
+   * comparator for any types. It constructs a comparator object that can be
+   * used within the µTest++ framework to assert that one value is less than or
+   * equal to another. This function is typically used in test expectations and
+   * assertions to compare the actual and expected values.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -631,14 +610,6 @@ namespace micro_os_plus::micro_test_plus
    * @ingroup micro-test-plus-function-comparators
    * @brief Pointer less than or equal comparator.
    *
-   * @details
-   * The `le` function template provides a pointer less than or equal
-   * comparator for any pointer types. It constructs a comparator object that
-   * can be used within the µTest++ framework to assert that one pointer is
-   * less than or equal to another. This function is typically used in test
-   * expectations and assertions to compare the addresses of objects or
-   * resources.
-   *
    * @tparam Lhs_T Type of the left hand side pointer operand.
    * @tparam Rhs_T Type of the right hand side pointer operand.
    *
@@ -646,6 +617,14 @@ namespace micro_os_plus::micro_test_plus
    * @param [in] rhs Right hand side pointer operand.
    * @return A comparator object that evaluates to true if the left hand side
    * pointer is less than or equal to the right hand side pointer.
+   *
+   * @details
+   * The `le` function template provides a pointer less than or equal
+   * comparator for any pointer types. It constructs a comparator object that
+   * can be used within the µTest++ framework to assert that one pointer is
+   * less than or equal to another. This function is typically used in test
+   * expectations and assertions to compare the addresses of objects or
+   * resources.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -658,6 +637,11 @@ namespace micro_os_plus::micro_test_plus
    * @ingroup micro-test-plus-logical-functions
    * @brief Generic logical **not** operation.
    *
+   * @tparam Expr_T Type of the operand.
+   *
+   * @param [in] expr Logical expression to be negated.
+   * @return An object that evaluates to true if the operand is false.
+   *
    * @details
    * The `_not` function template provides a generic logical negation for any
    * expression type. It constructs a logical negator object that can be used
@@ -667,11 +651,6 @@ namespace micro_os_plus::micro_test_plus
    *
    * The underscore in the function name is intentional to differentiate it
    * from the standard logical not operator.
-   *
-   * @tparam Expr_T Type of the operand.
-   *
-   * @param [in] expr Logical expression to be negated.
-   * @return An object that evaluates to true if the operand is false.
    */
   template <class Expr_T>
   [[nodiscard]] constexpr auto
@@ -684,6 +663,14 @@ namespace micro_os_plus::micro_test_plus
    * @ingroup micro-test-plus-logical-functions
    * @brief Generic logical **and** operation.
    *
+   * @tparam Lhs_T Type of the left hand side operand.
+   * @tparam Rhs_T Type of the right hand side operand.
+   *
+   * @param [in] lhs Left hand side operand.
+   * @param [in] rhs Right hand side operand.
+   * @return An object that evaluates to true if both operand expressions are
+   * true.
+   *
    * @details
    * The `_and` function template provides a generic logical conjunction for
    * any expression types. It constructs a logical conjunction object that can
@@ -693,14 +680,6 @@ namespace micro_os_plus::micro_test_plus
    *
    * The underscore in the function name is intentional to differentiate it
    * from the standard logical and operator.
-   *
-   * @tparam Lhs_T Type of the left hand side operand.
-   * @tparam Rhs_T Type of the right hand side operand.
-   *
-   * @param [in] lhs Left hand side operand.
-   * @param [in] rhs Right hand side operand.
-   * @return An object that evaluates to true if both operand expressions are
-   * true.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -713,6 +692,14 @@ namespace micro_os_plus::micro_test_plus
    * @ingroup micro-test-plus-logical-functions
    * @brief Generic logical **or** operation.
    *
+   * @tparam Lhs_T Type of the left hand side operand.
+   * @tparam Rhs_T Type of the right hand side operand.
+   *
+   * @param [in] lhs Left hand side operand.
+   * @param [in] rhs Right hand side operand.
+   * @return An object that evaluates to true if at least one of the operand
+   * expressions is true.
+   *
    * @details
    * The `_or` function template provides a generic logical disjunction for any
    * expression types. It constructs a logical disjunction object that can be
@@ -722,14 +709,6 @@ namespace micro_os_plus::micro_test_plus
    *
    * The underscore in the function name is intentional to differentiate it
    * from the standard logical or operator.
-   *
-   * @tparam Lhs_T Type of the left hand side operand.
-   * @tparam Rhs_T Type of the right hand side operand.
-   *
-   * @param [in] lhs Left hand side operand.
-   * @param [in] rhs Right hand side operand.
-   * @return An object that evaluates to true if at least one of the operand
-   * expressions is true.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
@@ -742,17 +721,17 @@ namespace micro_os_plus::micro_test_plus
    * @ingroup micro-test-plus-utility-functions
    * @brief Generic mutator to remove const qualification from any type.
    *
+   * @tparam T The type of the input object.
+   *
+   * @param [in] t The object from which to remove const qualification.
+   * @return A non-const reference to the input object.
+   *
    * @details
    * The `mut` function template provides a safe and generic mechanism to
    * remove the `const` qualifier from any type. It returns a non-const
    * reference to the input object, enabling modification of objects that were
    * originally declared as `const`. This utility is particularly useful in
    * testing scenarios where controlled mutation of test data is required.
-   *
-   * @tparam T The type of the input object.
-   *
-   * @param [in] t The object from which to remove const qualification.
-   * @return A non-const reference to the input object.
    */
   template <class T>
   [[nodiscard]] constexpr auto
@@ -801,16 +780,16 @@ namespace micro_os_plus::micro_test_plus
      * @ingroup micro-test-plus-string-operators
      * @brief Equality operator for `string_view` objects.
      *
+     * @param [in] lhs The left hand side `std::string_view` operand.
+     * @param [in] rhs The right hand side `std::string_view` operand.
+     * @return A comparator object that evaluates to true if the string views
+     * are equal.
+     *
      * @details
      * This overload of the equality operator enables direct comparison of two
      * `std::string_view` objects within the µTest++ framework. It constructs a
      * comparator object that can be used in test expectations and assertions
      * to verify that two string views are equal.
-     *
-     * @param [in] lhs The left hand side `std::string_view` operand.
-     * @param [in] rhs The right hand side `std::string_view` operand.
-     * @return A comparator object that evaluates to true if the string views
-     * are equal.
      */
     [[nodiscard]] constexpr auto
     operator== (std::string_view lhs, std::string_view rhs)
@@ -822,16 +801,16 @@ namespace micro_os_plus::micro_test_plus
      * @ingroup micro-test-plus-string-operators
      * @brief Non-equality operator for `string_view` objects.
      *
+     * @param [in] lhs The left hand side `std::string_view` operand.
+     * @param [in] rhs The right hand side `std::string_view` operand.
+     * @return A comparator object that evaluates to true if the string views
+     * are not equal.
+     *
      * @details
      * This overload of the non-equality operator enables direct comparison of
      * two `std::string_view` objects within the µTest++ framework. It
      * constructs a comparator object that can be used in test expectations and
      * assertions to verify that two string views are not equal.
-     *
-     * @param [in] lhs The left hand side `std::string_view` operand.
-     * @param [in] rhs The right hand side `std::string_view` operand.
-     * @return A comparator object that evaluates to true if the string views
-     * are not equal.
      */
     [[nodiscard]] constexpr auto
     operator!= (std::string_view lhs, std::string_view rhs)
@@ -843,6 +822,13 @@ namespace micro_os_plus::micro_test_plus
      * @ingroup micro-test-plus-container-operators
      * @brief Equality operator for containers.
      *
+     * @tparam T The container type, constrained to recognised container types.
+     *
+     * @param [in] lhs The left hand side container operand.
+     * @param [in] rhs The right hand side container operand.
+     * @return A comparator object that evaluates to true if the containers are
+     * equal.
+     *
      * @details
      * This overload of the equality operator enables direct comparison of two
      * container objects within the µTest++ framework. It constructs a
@@ -851,13 +837,6 @@ namespace micro_os_plus::micro_test_plus
      *
      * The operator is enabled only for types recognised as containers by the
      * framework's type traits.
-     *
-     * @tparam T The container type, constrained to recognised container types.
-     *
-     * @param [in] lhs The left hand side container operand.
-     * @param [in] rhs The right hand side container operand.
-     * @return A comparator object that evaluates to true if the containers are
-     * equal.
      */
     template <class T,
               type_traits::requires_t<type_traits::is_container_v<T>> = 0>
@@ -871,6 +850,13 @@ namespace micro_os_plus::micro_test_plus
      * @ingroup micro-test-plus-container-operators
      * @brief Non-equality operator for containers.
      *
+     * @tparam T The container type, constrained to recognised container types.
+     *
+     * @param [in] lhs The left hand side container operand.
+     * @param [in] rhs The right hand side container operand.
+     * @return A comparator object that evaluates to true if the containers are
+     * not equal.
+     *
      * @details
      * This overload of the non-equality operator enables direct comparison of
      * two container objects within the µTest++ framework. It constructs a
@@ -879,13 +865,6 @@ namespace micro_os_plus::micro_test_plus
      *
      * The operator is enabled only for types recognised as containers by the
      * framework's type traits.
-     *
-     * @tparam T The container type, constrained to recognised container types.
-     *
-     * @param [in] lhs The left hand side container operand.
-     * @param [in] rhs The right hand side container operand.
-     * @return A comparator object that evaluates to true if the containers are
-     * not equal.
      */
     template <class T,
               type_traits::requires_t<type_traits::is_container_v<T>> = 0>
@@ -900,6 +879,14 @@ namespace micro_os_plus::micro_test_plus
      * @brief Equality operator for custom types. Matches only if at least one
      * operand is of local type.
      *
+     * @tparam Lhs_T Type of the left hand side operand.
+     * @tparam Rhs_T Type of the right hand side operand.
+     *
+     * @param [in] lhs Left hand side operand.
+     * @param [in] rhs Right hand side operand.
+     * @return A comparator object that evaluates to true if the operands are
+     * equal.
+     *
      * @details
      * This overload of the equality operator enables comparison between two
      * operands, where at least one is a local type derived from the local `op`
@@ -908,14 +895,6 @@ namespace micro_os_plus::micro_test_plus
      * is intended for use with the framework's strongly-typed constants,
      * wrappers, or other custom types, ensuring type-safe and expressive test
      * assertions.
-     *
-     * @tparam Lhs_T Type of the left hand side operand.
-     * @tparam Rhs_T Type of the right hand side operand.
-     *
-     * @param [in] lhs Left hand side operand.
-     * @param [in] rhs Right hand side operand.
-     * @return A comparator object that evaluates to true if the operands are
-     * equal.
      */
     template <class Lhs_T, class Rhs_T,
               type_traits::requires_t<type_traits::is_op_v<Lhs_T>
@@ -932,6 +911,14 @@ namespace micro_os_plus::micro_test_plus
      * @brief Non-equality operator for custom types. Matches only if at least
      * one operand is of local type.
      *
+     * @tparam Lhs_T Type of the left hand side operand.
+     * @tparam Rhs_T Type of the right hand side operand.
+     *
+     * @param [in] lhs Left hand side operand.
+     * @param [in] rhs Right hand side operand.
+     * @return A comparator object that evaluates to true if the operands are
+     * not equal.
+     *
      * @details
      * This overload of the non-equality operator enables comparison between
      * two operands, where at least one is a local type derived from the local
@@ -940,14 +927,6 @@ namespace micro_os_plus::micro_test_plus
      * operator is intended for use with the framework's strongly-typed
      * constants, wrappers, or other custom types, ensuring type-safe and
      * expressive test assertions.
-     *
-     * @tparam Lhs_T Type of the left hand side operand.
-     * @tparam Rhs_T Type of the right hand side operand.
-     *
-     * @param [in] lhs Left hand side operand.
-     * @param [in] rhs Right hand side operand.
-     * @return A comparator object that evaluates to true if the operands are
-     * not equal.
      */
     template <class Lhs_T, class Rhs_T,
               type_traits::requires_t<type_traits::is_op_v<Lhs_T>
@@ -964,6 +943,14 @@ namespace micro_os_plus::micro_test_plus
      * @brief Greater than operator. Matches only if at least one operand is of
      * local type (derived from local `op`).
      *
+     * @tparam Lhs_T Type of the left hand side operand.
+     * @tparam Rhs_T Type of the right hand side operand.
+     *
+     * @param [in] lhs Left hand side operand.
+     * @param [in] rhs Right hand side operand.
+     * @return A comparator object that evaluates to true if the left hand side
+     * operand is greater than the right hand side operand.
+     *
      * @details
      * This overload of the greater than operator enables comparison between
      * two operands, where at least one is a local type derived from the local
@@ -972,14 +959,6 @@ namespace micro_os_plus::micro_test_plus
      * than the right hand side operand. This operator is intended for use with
      * the framework's strongly-typed constants, wrappers, or other custom
      * types, ensuring type-safe and expressive test assertions.
-     *
-     * @tparam Lhs_T Type of the left hand side operand.
-     * @tparam Rhs_T Type of the right hand side operand.
-     *
-     * @param [in] lhs Left hand side operand.
-     * @param [in] rhs Right hand side operand.
-     * @return A comparator object that evaluates to true if the left hand side
-     * operand is greater than the right hand side operand.
      */
     template <class Lhs_T, class Rhs_T,
               type_traits::requires_t<type_traits::is_op_v<Lhs_T>
@@ -996,6 +975,14 @@ namespace micro_os_plus::micro_test_plus
      * @brief Greater than or equal operator. Matches only if at least one
      * operand is of local type (derived from local `op`).
      *
+     * @tparam Lhs_T Type of the left hand side operand.
+     * @tparam Rhs_T Type of the right hand side operand.
+     *
+     * @param [in] lhs Left hand side operand.
+     * @param [in] rhs Right hand side operand.
+     * @return A comparator object that evaluates to true if the left hand side
+     * operand is greater than or equal to the right hand side operand.
+     *
      * @details
      * This overload of the greater than or equal operator enables comparison
      * between two operands, where at least one is a local type derived from
@@ -1005,14 +992,6 @@ namespace micro_os_plus::micro_test_plus
      * is intended for use with the framework's strongly-typed constants,
      * wrappers, or other custom types, ensuring type-safe and expressive test
      * assertions.
-     *
-     * @tparam Lhs_T Type of the left hand side operand.
-     * @tparam Rhs_T Type of the right hand side operand.
-     *
-     * @param [in] lhs Left hand side operand.
-     * @param [in] rhs Right hand side operand.
-     * @return A comparator object that evaluates to true if the left hand side
-     * operand is greater than or equal to the right hand side operand.
      */
     template <class Lhs_T, class Rhs_T,
               type_traits::requires_t<type_traits::is_op_v<Lhs_T>
@@ -1029,6 +1008,14 @@ namespace micro_os_plus::micro_test_plus
      * @brief Less than operator. Matches only if at least one operand is of
      * local type (derived from local `op`).
      *
+     * @tparam Lhs_T Type of the left hand side operand.
+     * @tparam Rhs_T Type of the right hand side operand.
+     *
+     * @param [in] lhs Left hand side operand.
+     * @param [in] rhs Right hand side operand.
+     * @return A comparator object that evaluates to true if the left hand side
+     * operand is less than the right hand side operand.
+     *
      * @details
      * This overload of the less than operator enables comparison between two
      * operands, where at least one is a local type derived from the local `op`
@@ -1037,14 +1024,6 @@ namespace micro_os_plus::micro_test_plus
      * the right hand side operand. This operator is intended for use with the
      * framework's strongly-typed constants, wrappers, or other custom types,
      * ensuring type-safe and expressive test assertions.
-     *
-     * @tparam Lhs_T Type of the left hand side operand.
-     * @tparam Rhs_T Type of the right hand side operand.
-     *
-     * @param [in] lhs Left hand side operand.
-     * @param [in] rhs Right hand side operand.
-     * @return A comparator object that evaluates to true if the left hand side
-     * operand is less than the right hand side operand.
      */
     template <class Lhs_T, class Rhs_T,
               type_traits::requires_t<type_traits::is_op_v<Lhs_T>
@@ -1061,6 +1040,14 @@ namespace micro_os_plus::micro_test_plus
      * @brief Less than or equal operator. Matches only if at least one operand
      * is of local type (derived from local `op`).
      *
+     * @tparam Lhs_T Type of the left hand side operand.
+     * @tparam Rhs_T Type of the right hand side operand.
+     *
+     * @param [in] lhs Left hand side operand.
+     * @param [in] rhs Right hand side operand.
+     * @return A comparator object that evaluates to true if the left hand side
+     * operand is less than or equal to the right hand side operand.
+     *
      * @details
      * This overload of the less than or equal operator enables comparison
      * between two operands, where at least one is a local type derived from
@@ -1070,14 +1057,6 @@ namespace micro_os_plus::micro_test_plus
      * intended for use with the framework's strongly-typed constants,
      * wrappers, or other custom types, ensuring type-safe and expressive test
      * assertions.
-     *
-     * @tparam Lhs_T Type of the left hand side operand.
-     * @tparam Rhs_T Type of the right hand side operand.
-     *
-     * @param [in] lhs Left hand side operand.
-     * @param [in] rhs Right hand side operand.
-     * @return A comparator object that evaluates to true if the left hand side
-     * operand is less than or equal to the right hand side operand.
      */
     template <class Lhs_T, class Rhs_T,
               type_traits::requires_t<type_traits::is_op_v<Lhs_T>
@@ -1094,6 +1073,14 @@ namespace micro_os_plus::micro_test_plus
      * @brief Logical `&&` (and) operator. Matches only if at least one operand
      * is of local type (derived from local `op`).
      *
+     * @tparam Lhs_T Type of the left hand side operand.
+     * @tparam Rhs_T Type of the right hand side operand.
+     *
+     * @param [in] lhs Left hand side operand.
+     * @param [in] rhs Right hand side operand.
+     * @return A logical conjunction object that evaluates to true if both
+     * operands are true.
+     *
      * @details
      * This overload of the logical `&&` (and) operator enables conjunction
      * between two operands, where at least one is a local type derived from
@@ -1102,14 +1089,6 @@ namespace micro_os_plus::micro_test_plus
      * evaluate to true. This operator is intended for use with the framework's
      * strongly-typed constants, wrappers, or other custom types, ensuring
      * type-safe and expressive test assertions.
-     *
-     * @tparam Lhs_T Type of the left hand side operand.
-     * @tparam Rhs_T Type of the right hand side operand.
-     *
-     * @param [in] lhs Left hand side operand.
-     * @param [in] rhs Right hand side operand.
-     * @return A logical conjunction object that evaluates to true if both
-     * operands are true.
      */
     template <class Lhs_T, class Rhs_T,
               type_traits::requires_t<type_traits::is_op_v<Lhs_T>
@@ -1126,6 +1105,14 @@ namespace micro_os_plus::micro_test_plus
      * @brief Logical `||` (or) operator. Matches only if at least one operand
      * is of local type (derived from local `op`).
      *
+     * @tparam Lhs_T Type of the left hand side operand.
+     * @tparam Rhs_T Type of the right hand side operand.
+     *
+     * @param [in] lhs Left hand side operand.
+     * @param [in] rhs Right hand side operand.
+     * @return A logical disjunction object that evaluates to true if at least
+     * one operand is true.
+     *
      * @details
      * This overload of the logical `||` (or) operator enables disjunction
      * between two operands, where at least one is a local type derived from
@@ -1134,14 +1121,6 @@ namespace micro_os_plus::micro_test_plus
      * evaluates to true. This operator is intended for use with the
      * framework's strongly-typed constants, wrappers, or other custom types,
      * ensuring type-safe and expressive test assertions.
-     *
-     * @tparam Lhs_T Type of the left hand side operand.
-     * @tparam Rhs_T Type of the right hand side operand.
-     *
-     * @param [in] lhs Left hand side operand.
-     * @param [in] rhs Right hand side operand.
-     * @return A logical disjunction object that evaluates to true if at least
-     * one operand is true.
      */
     template <class Lhs_T, class Rhs_T,
               type_traits::requires_t<type_traits::is_op_v<Lhs_T>
@@ -1158,6 +1137,13 @@ namespace micro_os_plus::micro_test_plus
      * @brief Logical `!` (not) operator. Matches only if the operand is of
      * local type (derived from local `op`).
      *
+     * @tparam T Type of the operand, constrained to types derived from the
+     * local `op` base.
+     *
+     * @param [in] t Operand to be logically negated.
+     * @return A logical negator object that evaluates to true if the operand
+     * is false.
+     *
      * @details
      * This overload of the logical `!` (not) operator enables logical negation
      * of an operand, provided it is a local type derived from the local `op`
@@ -1166,13 +1152,6 @@ namespace micro_os_plus::micro_test_plus
      * operator is intended for use with the framework's strongly-typed
      * constants, wrappers, or other custom types, ensuring type-safe and
      * expressive test assertions.
-     *
-     * @tparam T Type of the operand, constrained to types derived from the
-     * local `op` base.
-     *
-     * @param [in] t Operand to be logically negated.
-     * @return A logical negator object that evaluates to true if the operand
-     * is false.
      */
     template <class T, type_traits::requires_t<type_traits::is_op_v<T>> = 0>
     [[nodiscard]] constexpr auto
@@ -1206,12 +1185,6 @@ namespace micro_os_plus::micro_test_plus
      * @ingroup micro-test-plus-utility-functions
      * @brief Check if a string matches a pattern.
      *
-     * @details
-     * The `is_match` function determines whether the specified input string
-     * matches the given pattern. This utility is particularly useful for
-     * validating string content against wildcard or template patterns within
-     * test cases in the µTest++ framework.
-     *
      * @param [in] input The string view to be checked.
      * @param [in] pattern The string view containing the pattern to match.
      * @return `true` if the input string matches the pattern; otherwise,
@@ -1223,12 +1196,6 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @ingroup micro-test-plus-utility-functions
      * @brief Split a string into a vector of sub-strings.
-     *
-     * @details
-     * The `split` function template divides the input string into a vector of
-     * sub-strings, using the specified delimiter. This utility is particularly
-     * useful for parsing and processing delimited data within test cases in
-     * the µTest++ framework.
      *
      * @tparam T Type of the input string.
      * @tparam Delim_T Type of the delimiter.

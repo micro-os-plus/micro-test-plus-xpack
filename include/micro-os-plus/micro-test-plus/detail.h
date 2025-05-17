@@ -94,6 +94,9 @@ namespace micro_os_plus::micro_test_plus
      * @brief Assertion struct template for parameter passing to the evaluator.
      *
      * @details
+     *
+     * @tparam Expr_T The type of the expression being asserted.
+     *
      * The `assertion` struct template is used to encapsulate assertion
      * parameters, including the expression under evaluation and its associated
      * source location. This design enables precise reporting and diagnostics
@@ -102,8 +105,6 @@ namespace micro_os_plus::micro_test_plus
      * The structure is intended exclusively for internal use and is
      * implemented in the `include/micro-os-plus/micro-test-plus` folder to
      * maintain a structured and modular codebase.
-     *
-     * @tparam Expr_T The type of the expression being asserted.
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
@@ -126,6 +127,11 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Generic getter function template for value retrieval.
      *
+     * @tparam T The type from which the value is to be retrieved.
+     *
+     * @param t The object or value to be accessed.
+     * @return The value obtained via the relevant getter implementation.
+     *
      * @details
      * The `get` function template invokes the appropriate getter
      * implementation to retrieve the value from the provided object or type.
@@ -144,11 +150,6 @@ namespace micro_os_plus::micro_test_plus
      * All definitions are intended for internal use within the framework and
      * are implemented in the `include/micro-os-plus/micro-test-plus` folder to
      * maintain a structured and modular codebase.
-     *
-     * @tparam T The type from which the value is to be retrieved.
-     *
-     * @param t The object or value to be accessed.
-     * @return The value obtained via the relevant getter implementation.
      */
     template <class T>
     [[nodiscard]] constexpr auto
@@ -159,6 +160,11 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Fallback variadic getter function template.
+     *
+     * @tparam T The type from which the value is to be retrieved.
+     *
+     * @param t The object or value to be accessed.
+     * @return The original argument `t`.
      *
      * @details
      * The `get_impl` function template serves as a fallback mechanism for
@@ -173,11 +179,6 @@ namespace micro_os_plus::micro_test_plus
      * All definitions are intended for internal use within the framework and
      * are implemented in the `include/micro-os-plus/micro-test-plus` folder to
      * maintain a structured and modular codebase.
-     *
-     * @tparam T The type from which the value is to be retrieved.
-     *
-     * @param t The object or value to be accessed.
-     * @return The original argument `t`.
      */
     template <class T>
     [[nodiscard]] constexpr auto
@@ -188,6 +189,11 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Generic getter function template for value retrieval.
+     *
+     * @tparam T The type from which the value is to be retrieved.
+     *
+     * @param t The object or value to be accessed.
+     * @return The value obtained via the relevant getter implementation.
      *
      * @details
      * The `get` function template invokes the appropriate getter
@@ -207,11 +213,6 @@ namespace micro_os_plus::micro_test_plus
      * All definitions are intended for internal use within the framework and
      * are implemented in the `include/micro-os-plus/micro-test-plus` folder to
      * maintain a structured and modular codebase.
-     *
-     * @tparam T The type from which the value is to be retrieved.
-     *
-     * @param t The object or value to be accessed.
-     * @return The value obtained via the relevant getter implementation.
      */
     template <class T>
     [[nodiscard]] constexpr auto
@@ -225,6 +226,9 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Equality comparator struct template.
+     *
+     * @tparam Lhs_T The type of the left-hand operand.
+     * @tparam Rhs_T The type of the right-hand operand.
      *
      * @details
      * The `eq_` struct template provides a type-safe mechanism for evaluating
@@ -244,10 +248,6 @@ namespace micro_os_plus::micro_test_plus
      * All definitions are intended for internal use within the framework and
      * are implemented in the `include/micro-os-plus/micro-test-plus` folder to
      * maintain a structured and modular codebase.
-     *
-     * @tparam Lhs_T The type of the left-hand operand.
-     * @tparam Rhs_T The type of the right-hand operand.
-     *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class Lhs_T, class Rhs_T>
@@ -256,13 +256,13 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Constructs an equality comparator for the given operands.
        *
+       * @param lhs The left-hand operand.
+       * @param rhs The right-hand operand.
+       *
        * @details
        * Evaluates the equality of the provided operands at construction,
        * supporting static values, types with precision, and generic types. The
        * result is stored in the `value_` member for efficient access.
-       *
-       * @param lhs The left-hand operand.
-       * @param rhs The right-hand operand.
        */
       constexpr eq_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
           : lhs_{ lhs }, rhs_{ rhs }, value_{ [&] {
@@ -323,13 +323,13 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Conversion operator to boolean.
        *
-       * @details
-       * Returns the result of the equality comparison.
-       *
        * @par Parameters
        *	None.
        * @retval true  The operands are considered equal.
        * @retval false The operands are not equal.
+       *
+       * @details
+       * Returns the result of the equality comparison.
        */
       [[nodiscard]] constexpr
       operator bool () const
@@ -340,14 +340,14 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Retrieves the left-hand operand.
        *
+       * @par Parameters
+       *	None.
+       * @return The extracted left-hand operand.
+       *
        * @details
        * Returns the value of the left-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
        * types.
-       *
-       * @par Parameters
-       *	None.
-       * @return The extracted left-hand operand.
        */
       [[nodiscard]] constexpr auto
       lhs (void) const
@@ -358,14 +358,14 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Retrieves the right-hand operand.
        *
+       * @par Parameters
+       *	None.
+       * @return The extracted right-hand operand.
+       *
        * @details
        * Returns the value of the right-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
        * types.
-       *
-       * @par Parameters
-       *	None.
-       * @return The extracted right-hand operand.
        */
       [[nodiscard]] constexpr auto
       rhs (void) const
@@ -394,6 +394,9 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Non-equality comparator struct template.
      *
+     * @tparam Lhs_T The type of the left-hand operand.
+     * @tparam Rhs_T The type of the right-hand operand.
+     *
      * @details
      * The `ne_` struct template provides a type-safe mechanism for evaluating
      * non-equality between two operands within the framework.
@@ -413,9 +416,6 @@ namespace micro_os_plus::micro_test_plus
      * are implemented in the `include/micro-os-plus` folder to maintain a
      * structured and modular codebase.
      *
-     * @tparam Lhs_T The type of the left-hand operand.
-     * @tparam Rhs_T The type of the right-hand operand.
-     *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class Lhs_T, class Rhs_T>
@@ -424,13 +424,13 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Constructs a non-equality comparator for the given operands.
        *
+       * @param lhs The left-hand operand.
+       * @param rhs The right-hand operand.
+       *
        * @details
        * Evaluates the non-equality of the provided operands at construction,
        * supporting static values, types with precision, and generic types. The
        * result is stored in the `value_` member for efficient access.
-       *
-       * @param lhs The left-hand operand.
-       * @param rhs The right-hand operand.
        */
       constexpr ne_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
           : lhs_{ lhs }, rhs_{ rhs }, value_{ [&] {
@@ -482,13 +482,13 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Conversion operator to boolean.
        *
-       * @details
-       * Returns the result of the non-equality comparison.
-       *
        * @par Parameters
        *	None.
        * @retval true  The operands are considered not equal.
        * @retval false The operands are considered equal.
+       *
+       * @details
+       * Returns the result of the non-equality comparison.
        */
       [[nodiscard]] constexpr
       operator bool () const
@@ -499,14 +499,14 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Retrieves the left-hand operand.
        *
+       * @par Parameters
+       *	None.
+       * @return The extracted left-hand operand.
+       *
        * @details
        * Returns the value of the left-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
        * types.
-       *
-       * @par Parameters
-       *	None.
-       * @return The extracted left-hand operand.
        */
       [[nodiscard]] constexpr auto
       lhs (void) const
@@ -517,14 +517,14 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Retrieves the right-hand operand.
        *
+       * @par Parameters
+       *	None.
+       * @return The extracted right-hand operand.
+       *
        * @details
        * Returns the value of the right-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
        * types.
-       *
-       * @par Parameters
-       *	None.
-       * @return The extracted right-hand operand.
        */
       [[nodiscard]] constexpr auto
       rhs (void) const
@@ -553,6 +553,9 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Greater than comparator struct template.
      *
+     * @tparam Lhs_T The type of the left-hand operand.
+     * @tparam Rhs_T The type of the right-hand operand.
+     *
      * @details
      * The `gt_` struct template provides a type-safe mechanism for evaluating
      * whether the left-hand operand is greater than the right-hand operand
@@ -570,9 +573,6 @@ namespace micro_os_plus::micro_test_plus
      * are implemented in the `include/micro-os-plus` folder to maintain a
      * structured and modular codebase.
      *
-     * @tparam Lhs_T The type of the left-hand operand.
-     * @tparam Rhs_T The type of the right-hand operand.
-     *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class Lhs_T, class Rhs_T>
@@ -581,13 +581,13 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Constructs a greater than comparator for the given operands.
        *
+       * @param lhs The left-hand operand.
+       * @param rhs The right-hand operand.
+       *
        * @details
        * Evaluates whether the left-hand operand is greater than the right-hand
        * operand at construction, supporting static values and generic types.
        * The result is stored in the `value_` member for efficient access.
-       *
-       * @param lhs The left-hand operand.
-       * @param rhs The right-hand operand.
        */
       constexpr gt_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
           : lhs_{ lhs }, rhs_{ rhs }, value_{ [&] {
@@ -622,14 +622,14 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Conversion operator to boolean.
        *
-       * @details
-       * Returns the result of the greater than comparison.
-       *
        * @par Parameters
        *	None.
        * @retval true  The left-hand operand is greater than the right-hand
        * operand.
        * @retval false Otherwise.
+       *
+       * @details
+       * Returns the result of the greater than comparison.
        */
       [[nodiscard]] constexpr
       operator bool () const
@@ -640,14 +640,14 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Retrieves the left-hand operand.
        *
+       * @par Parameters
+       *	None.
+       * @return The extracted left-hand operand.
+       *
        * @details
        * Returns the value of the left-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
        * types.
-       *
-       * @par Parameters
-       *	None.
-       * @return The extracted left-hand operand.
        */
       [[nodiscard]] constexpr auto
       lhs (void) const
@@ -659,14 +659,14 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Retrieves the right-hand operand.
        *
+       * @par Parameters
+       *	None.
+       * @return The extracted right-hand operand.
+       *
        * @details
        * Returns the value of the right-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
        * types.
-       *
-       * @par Parameters
-       *	None.
-       * @return The extracted right-hand operand.
        */
       rhs (void) const
       {
@@ -694,6 +694,9 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Greater than or equal comparator struct template.
      *
+     * @tparam Lhs_T The type of the left-hand operand.
+     * @tparam Rhs_T The type of the right-hand operand.
+     *
      * @details
      * The `ge_` struct template provides a type-safe mechanism for evaluating
      * whether the left-hand operand is greater than or equal to the right-hand
@@ -711,9 +714,6 @@ namespace micro_os_plus::micro_test_plus
      * are implemented in the `include/micro-os-plus` folder to maintain a
      * structured and modular codebase.
      *
-     * @tparam Lhs_T The type of the left-hand operand.
-     * @tparam Rhs_T The type of the right-hand operand.
-     *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class Lhs_T, class Rhs_T>
@@ -723,14 +723,14 @@ namespace micro_os_plus::micro_test_plus
        * @brief Constructs a greater than or equal comparator for the given
        * operands.
        *
+       * @param lhs The left-hand operand.
+       * @param rhs The right-hand operand.
+       *
        * @details
        * Evaluates whether the left-hand operand is greater than or equal to
        * the right-hand operand at construction, supporting static values and
        * generic types. The result is stored in the `value_` member for
        * efficient access.
-       *
-       * @param lhs The left-hand operand.
-       * @param rhs The right-hand operand.
        */
       constexpr ge_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
           : lhs_{ lhs }, rhs_{ rhs }, value_{ [&] {
@@ -765,14 +765,14 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Conversion operator to boolean.
        *
-       * @details
-       * Returns the result of the greater than or equal comparison.
-       *
        * @par Parameters
        *	None.
        * @retval true  The left-hand operand is greater than or equal to the
        * right-hand operand.
        * @retval false Otherwise.
+       *
+       * @details
+       * Returns the result of the greater than or equal comparison.
        */
       [[nodiscard]] constexpr
       operator bool () const
@@ -783,14 +783,14 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Retrieves the left-hand operand.
        *
+       * @par Parameters
+       *	None.
+       * @return The extracted left-hand operand.
+       *
        * @details
        * Returns the value of the left-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
        * types.
-       *
-       * @par Parameters
-       *	None.
-       * @return The extracted left-hand operand.
        */
       [[nodiscard]] constexpr auto
       lhs (void) const
@@ -801,14 +801,14 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Retrieves the right-hand operand.
        *
+       * @par Parameters
+       *	None.
+       * @return The extracted right-hand operand.
+       *
        * @details
        * Returns the value of the right-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
        * types.
-       *
-       * @par Parameters
-       *	None.
-       * @return The extracted right-hand operand.
        */
       [[nodiscard]] constexpr auto
       rhs (void) const
@@ -837,6 +837,9 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Less than comparator struct template.
      *
+     * @tparam Lhs_T The type of the left-hand operand.
+     * @tparam Rhs_T The type of the right-hand operand.
+     *
      * @details
      * The `lt_` struct template provides a type-safe mechanism for evaluating
      * whether the left-hand operand is less than the right-hand operand within
@@ -854,9 +857,6 @@ namespace micro_os_plus::micro_test_plus
      * are implemented in the `include/micro-os-plus` folder to maintain a
      * structured and modular codebase.
      *
-     * @tparam Lhs_T The type of the left-hand operand.
-     * @tparam Rhs_T The type of the right-hand operand.
-     *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class Lhs_T, class Rhs_T>
@@ -865,13 +865,13 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Constructs a less than comparator for the given operands.
        *
+       * @param lhs The left-hand operand.
+       * @param rhs The right-hand operand.
+       *
        * @details
        * Evaluates whether the left-hand operand is less than the right-hand
        * operand at construction, supporting static values and generic types.
        * The result is stored in the `value_` member for efficient access.
-       *
-       * @param lhs The left-hand operand.
-       * @param rhs The right-hand operand.
        */
       constexpr lt_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
           : lhs_{ lhs }, rhs_{ rhs }, value_{ [&] {
@@ -906,14 +906,14 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Conversion operator to boolean.
        *
-       * @details
-       * Returns the result of the less than comparison.
-       *
        * @par Parameters
        *	None.
        * @retval true  The left-hand operand is less than the right-hand
        * operand.
        * @retval false Otherwise.
+       *
+       * @details
+       * Returns the result of the less than comparison.
        */
       [[nodiscard]] constexpr
       operator bool () const
@@ -924,14 +924,14 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Retrieves the left-hand operand.
        *
+       * @par Parameters
+       *	None.
+       * @return The extracted left-hand operand.
+       *
        * @details
        * Returns the value of the left-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
        * types.
-       *
-       * @par Parameters
-       *	None.
-       * @return The extracted left-hand operand.
        */
       [[nodiscard]] constexpr auto
       lhs (void) const
@@ -942,14 +942,14 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Retrieves the right-hand operand.
        *
+       * @par Parameters
+       *	None.
+       * @return The extracted right-hand operand.
+       *
        * @details
        * Returns the value of the right-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
        * types.
-       *
-       * @par Parameters
-       *	None.
-       * @return The extracted right-hand operand.
        */
       [[nodiscard]] constexpr auto
       rhs (void) const
@@ -979,6 +979,9 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Less than or equal comparator struct template.
      *
+     * @tparam Lhs_T The type of the left-hand operand.
+     * @tparam Rhs_T The type of the right-hand operand.
+     *
      * @details
      * The `le_` struct template provides a type-safe mechanism for evaluating
      * whether the left-hand operand is less than or equal to the right-hand
@@ -996,9 +999,6 @@ namespace micro_os_plus::micro_test_plus
      * are implemented in the `include/micro-os-plus/micro-test-plus` folder to
      * maintain a structured and modular codebase.
      *
-     * @tparam Lhs_T The type of the left-hand operand.
-     * @tparam Rhs_T The type of the right-hand operand.
-     *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class Lhs_T, class Rhs_T>
@@ -1008,14 +1008,14 @@ namespace micro_os_plus::micro_test_plus
        * @brief Constructs a less than or equal comparator for the given
        * operands.
        *
+       * @param lhs The left-hand operand.
+       * @param rhs The right-hand operand.
+       *
        * @details
        * Evaluates whether the left-hand operand is less than or equal to the
        * right-hand operand at construction, supporting static values and
        * generic types. The result is stored in the `value_` member for
        * efficient access.
-       *
-       * @param lhs The left-hand operand.
-       * @param rhs The right-hand operand.
        */
       constexpr le_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
           : lhs_{ lhs }, rhs_{ rhs }, value_{ [&] {
@@ -1050,14 +1050,14 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Conversion operator to boolean.
        *
-       * @details
-       * Returns the result of the less than or equal comparison.
-       *
        * @par Parameters
        *	None.
        * @retval true  The left-hand operand is less than or equal to the
        * right-hand operand.
        * @retval false Otherwise.
+       *
+       * @details
+       * Returns the result of the less than or equal comparison.
        */
       [[nodiscard]] constexpr
       operator bool () const
@@ -1068,14 +1068,14 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Retrieves the left-hand operand.
        *
+       * @par Parameters
+       *	None.
+       * @return The extracted left-hand operand.
+       *
        * @details
        * Returns the value of the left-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
        * types.
-       *
-       * @par Parameters
-       *	None.
-       * @return The extracted left-hand operand.
        */
 
       [[nodiscard]] constexpr auto
@@ -1087,14 +1087,14 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Retrieves the right-hand operand.
        *
+       * @par Parameters
+       *	None.
+       * @return The extracted right-hand operand.
+       *
        * @details
        * Returns the value of the right-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
        * types.
-       *
-       * @par Parameters
-       *	None.
-       * @return The extracted right-hand operand.
        */
       [[nodiscard]] constexpr auto
       rhs (void) const
@@ -1123,6 +1123,9 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Logical AND comparator struct template.
      *
+     * @tparam Lhs_T The type of the left-hand operand.
+     * @tparam Rhs_T The type of the right-hand operand.
+     *
      * @details
      * The `and_` struct template provides a type-safe mechanism for evaluating
      * the logical conjunction (AND) of two operands within the framework.
@@ -1139,9 +1142,6 @@ namespace micro_os_plus::micro_test_plus
      * are implemented in the `include/micro-os-plus/micro-test-plus` folder to
      * maintain a structured and modular codebase.
      *
-     * @tparam Lhs_T The type of the left-hand operand.
-     * @tparam Rhs_T The type of the right-hand operand.
-     *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class Lhs_T, class Rhs_T>
@@ -1150,13 +1150,13 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Constructs a logical AND comparator for the given operands.
        *
+       * @param lhs The left-hand operand.
+       * @param rhs The right-hand operand.
+       *
        * @details
        * Evaluates the logical conjunction of the provided operands at
        * construction, supporting both custom and standard types. The result is
        * stored in the `value_` member for efficient access.
-       *
-       * @param lhs The left-hand operand.
-       * @param rhs The right-hand operand.
        */
       constexpr and_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
           : lhs_{ lhs }, rhs_{ rhs },
@@ -1167,13 +1167,13 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Conversion operator to boolean.
        *
-       * @details
-       * Returns the result of the logical AND operation.
-       *
        * @par Parameters
        *	None.
        * @retval true  Both operands evaluate to true.
        * @retval false At least one operand evaluates to false.
+       *
+       * @details
+       * Returns the result of the logical AND operation.
        */
       [[nodiscard]] constexpr
       operator bool () const
@@ -1184,14 +1184,14 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Retrieves the left-hand operand.
        *
+       * @par Parameters
+       *	None.
+       * @return The extracted left-hand operand.
+       *
        * @details
        * Returns the value of the left-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
        * types.
-       *
-       * @par Parameters
-       *	None.
-       * @return The extracted left-hand operand.
        */
       [[nodiscard]] constexpr auto
       lhs (void) const
@@ -1202,14 +1202,14 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Retrieves the right-hand operand.
        *
+       * @par Parameters
+       *	None.
+       * @return The extracted right-hand operand.
+       *
        * @details
        * Returns the value of the right-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
        * types.
-       *
-       * @par Parameters
-       *	None.
-       * @return The extracted right-hand operand.
        */
       [[nodiscard]] constexpr auto
       rhs (void) const
@@ -1238,6 +1238,9 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Logical OR comparator struct template.
      *
+     * @tparam Lhs_T The type of the left-hand operand.
+     * @tparam Rhs_T The type of the right-hand operand.
+     *
      * @details
      * The `or_` struct template provides a type-safe mechanism for evaluating
      * the logical disjunction (OR) of two operands within the framework.
@@ -1253,9 +1256,6 @@ namespace micro_os_plus::micro_test_plus
      * All definitions are intended for internal use within the framework and
      * are implemented in the `include/micro-os-plus/micro-test-plus` folder to
      * maintain a structured and modular codebase.
-     *
-     * @tparam Lhs_T The type of the left-hand operand.
-     * @tparam Rhs_T The type of the right-hand operand.
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
@@ -1282,13 +1282,13 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Conversion operator to boolean.
        *
-       * @details
-       * Returns the result of the logical OR operation.
-       *
        * @par Parameters
        *	None.
        * @retval true  At least one operand evaluates to true.
        * @retval false Both operands evaluate to false.
+       *
+       * @details
+       * Returns the result of the logical OR operation.
        */
       [[nodiscard]] constexpr
       operator bool () const
@@ -1299,14 +1299,14 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Retrieves the left-hand operand.
        *
+       * @par Parameters
+       *	None.
+       * @return The extracted left-hand operand.
+       *
        * @details
        * Returns the value of the left-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
        * types.
-       *
-       * @par Parameters
-       *	None.
-       * @return The extracted left-hand operand.
        */
       [[nodiscard]] constexpr auto
       lhs (void) const
@@ -1317,14 +1317,14 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Retrieves the right-hand operand.
        *
+       * @par Parameters
+       *	None.
+       * @return The extracted right-hand operand.
+       *
        * @details
        * Returns the value of the right-hand operand, applying the generic
        * getter to ensure correct extraction for both custom and standard
        * types.
-       *
-       * @par Parameters
-       *	None.
-       * @return The extracted right-hand operand.
        */
       [[nodiscard]] constexpr auto
       rhs (void) const
@@ -1353,6 +1353,8 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Logical NOT comparator struct template.
      *
+     * @tparam T The type of the operand.
+     *
      * @details
      * The `not_` struct template provides a type-safe mechanism for evaluating
      * the logical negation (NOT) of an operand within the framework.
@@ -1369,8 +1371,6 @@ namespace micro_os_plus::micro_test_plus
      * are implemented in the `include/micro-os-plus/micro-test-plus` folder to
      * maintain a structured and modular codebase.
      *
-     * @tparam T The type of the operand.
-     *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class T>
@@ -1379,12 +1379,12 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Constructs a logical NOT comparator for the given operand.
        *
+       * @param t The operand to be negated.
+       *
        * @details
        * Evaluates the logical negation of the provided operand at
        * construction, supporting both custom and standard types. The result is
        * stored in the `value_` member for efficient access.
-       *
-       * @param t The operand to be negated.
        */
       explicit constexpr not_ (const T& t = {})
           : t_{ t }, value_{ not static_cast<bool> (t) }
@@ -1394,13 +1394,13 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Conversion operator to boolean.
        *
-       * @details
-       * Returns the result of the logical NOT operation.
-       *
        * @par Parameters
        *	None.
        * @retval true  The operand evaluates to false.
        * @retval false The operand evaluates to true.
+       *
+       * @details
+       * Returns the result of the logical NOT operation.
        */
       [[nodiscard]] constexpr
       operator bool () const
@@ -1411,13 +1411,13 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Retrieves the value of the operand.
        *
-       * @details
-       * Returns the value of the operand, applying the generic getter to
-       * ensure correct extraction for both custom and standard types.
-       *
        * @par Parameters
        *	None.
        * @return The extracted operand value.
+       *
+       * @details
+       * Returns the value of the operand, applying the generic getter to
+       * ensure correct extraction for both custom and standard types.
        */
       [[nodiscard]] constexpr auto
       value () const
@@ -1444,6 +1444,10 @@ namespace micro_os_plus::micro_test_plus
      * @brief Operator struct template to check if an expression throws a
      * specific exception.
      *
+     * @tparam Callable_T The type of the callable object to be invoked.
+     * @tparam Exception_T The type of the exception to check for (defaults to
+     * `void` for any exception).
+     *
      * @details
      * The `throws_` struct template provides a type-safe mechanism for
      * verifying whether a callable expression throws a specified exception
@@ -1460,10 +1464,6 @@ namespace micro_os_plus::micro_test_plus
      * are implemented in the `include/micro-os-plus/micro-test-plus` folder to
      * maintain a structured and modular codebase.
      *
-     * @tparam Callable_T The type of the callable object to be invoked.
-     * @tparam Exception_T The type of the exception to check for (defaults to
-     * `void` for any exception).
-     *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class Callable_T, class Exception_T = void>
@@ -1473,12 +1473,12 @@ namespace micro_os_plus::micro_test_plus
        * @brief Constructs an exception checking operator for the given
        * callable.
        *
+       * @param func The callable object to be invoked.
+       *
        * @details
        * Invokes the provided callable and determines whether it throws an
        * exception of the specified type. The result is stored in the `value_`
        * member for efficient access.
-       *
-       * @param func The callable object to be invoked.
        */
       constexpr explicit throws_ (const Callable_T& func)
           : value_{ [&func] {
@@ -1502,14 +1502,14 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Conversion operator to boolean.
        *
-       * @details
-       * Returns the result of the exception check.
-       *
        * @par Parameters
        *	None.
        * @retval true  The callable throws the specified exception type.
        * @retval false The callable does not throw the specified exception
        * type.
+       *
+       * @details
+       * Returns the result of the exception check.
        */
       [[nodiscard]] constexpr
       operator bool () const
@@ -1529,6 +1529,8 @@ namespace micro_os_plus::micro_test_plus
      * @brief Operator struct template to check if an expression throws any
      * exception.
      *
+     * @tparam Callable_T The type of the callable object to be invoked.
+     *
      * @details
      * The `throws_` struct template provides a type-safe mechanism for
      * verifying whether a callable expression throws any exception during its
@@ -1544,8 +1546,6 @@ namespace micro_os_plus::micro_test_plus
      * All definitions are intended for internal use within the framework and
      * are implemented in the `include/micro-os-plus/micro-test-plus` folder to
      * maintain a structured and modular codebase.
-     *
-     * @tparam Callable_T The type of the callable object to be invoked.
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
@@ -1581,12 +1581,12 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Conversion operator to boolean.
        *
-       * @details
-       * Returns the result of the exception check.
-       *
        * @par Parameters
        *	None.
        * @retval true  The callable throws an exception.
+       *
+       * @details
+       * Returns the result of the exception check.
        * @retval false The callable does not throw any exception.
        */
       [[nodiscard]] constexpr
@@ -1607,6 +1607,8 @@ namespace micro_os_plus::micro_test_plus
      * @brief Operator struct template to check if an expression does not throw
      * any exception.
      *
+     * @tparam Callable_T The type of the callable object to be invoked.
+     *
      * @details
      * The `nothrow_` struct template provides a type-safe mechanism for
      * verifying whether a callable expression completes without throwing any
@@ -1623,8 +1625,6 @@ namespace micro_os_plus::micro_test_plus
      * are implemented in the `include/micro-os-plus/micro-test-plus` folder to
      * maintain a structured and modular codebase.
      *
-     * @tparam Callable_T The type of the callable object to be invoked.
-     *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class Callable_T>
@@ -1633,12 +1633,12 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Constructs a nothrow checking operator for the given callable.
        *
+       * @param func The callable object to be invoked.
+       *
        * @details
        * Invokes the provided callable and determines whether it completes
        * without throwing any exception. The result is stored in the `value_`
        * member for efficient access.
-       *
-       * @param func The callable object to be invoked.
        */
       constexpr explicit nothrow_ (const Callable_T& func)
           : value_{ [&func] {
@@ -1658,13 +1658,13 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Conversion operator to boolean.
        *
-       * @details
-       * Returns the result of the nothrow check.
-       *
        * @par Parameters
        *	None.
        * @retval true  The callable does not throw any exception.
        * @retval false The callable throws an exception.
+       *
+       * @details
+       * Returns the result of the nothrow check.
        */
       [[nodiscard]] constexpr
       operator bool () const
@@ -1706,10 +1706,6 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Constructs a deferred reporter base.
        *
-       * @details
-       * Initialises the reporter with the specified result value and source
-       * location.
-       *
        * @param value The result value associated with the report.
        * @param location The source location relevant to the report.
        */
@@ -1724,10 +1720,6 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Appends a message to the reporter.
        *
-       * @details
-       * Appends the provided message to the internal message string, enabling
-       * the accumulation of expectation details.
-       *
        * @tparam T The type of the message to append.
        *
        * @param msg The message to append.
@@ -1740,13 +1732,14 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Retrieves the result value.
        *
-       * @details
-       * Returns the result value associated with the report.
        *
        * @par Parameters
        *	None.
        * @retval true  The reported condition was met.
        * @retval false The reported condition was not met.
+       *
+       * @details
+       * Returns the result value associated with the report.
        */
       [[nodiscard]] constexpr bool
       value () const
@@ -1783,6 +1776,8 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Deferred reporter class template for a specific expression.
      *
+     * @tparam Expr_T The type of the expression being reported.
+     *
      * @details
      * The `deferred_reporter` class template extends `deferred_reporter_base`
      * to provide deferred reporting functionality for a specific test
@@ -1794,8 +1789,6 @@ namespace micro_os_plus::micro_test_plus
      * `include/micro-os-plus/micro-test-plus` folder to ensure a structured
      * and modular codebase.
      *
-     * @tparam Expr_T The type of the expression being reported.
-     *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class Expr_T>
@@ -1805,14 +1798,14 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Constructs a deferred reporter for a specific expression.
        *
-       * @details
-       * Initialises the reporter with the given expression, abort status, and
-       * source location.
-       *
        * @param expr The expression under evaluation.
        * @param abort Indicates whether reporting should abort further
        * processing.
        * @param location The source location relevant to the report.
+       *
+       * @details
+       * Initialises the reporter with the given expression, abort status, and
+       * source location.
        */
       constexpr explicit deferred_reporter (
           const Expr_T& expr, bool abort,

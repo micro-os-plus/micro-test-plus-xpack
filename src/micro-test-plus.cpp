@@ -70,12 +70,15 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This function initialises the µTest++ framework by forwarding the process
-   * arguments and the specified test suite name to the test runner. It sets up
-   * the default test suite, which encompasses all test cases defined in the
-   * main function, and prepares the framework for subsequent test execution.
-   * The provided arguments may be used to configure the verbosity or other
-   * runtime options for the test session.
+   * The `initialize` function sets up the µTest++ testing framework, preparing
+   * it for test execution. It processes command-line arguments, configures the
+   * test environment, and establishes the default test suite name. This
+   * function should be called at the beginning of the test programme,
+   * typically from the `main()` function, to ensure proper initialisation of
+   * all framework components.
+   *
+   * The provided arguments may be used to configure verbosity or other
+   * run-time options for the test session.
    */
   void
   initialize (int argc, char* argv[], const char* name)

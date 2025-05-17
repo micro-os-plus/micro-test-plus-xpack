@@ -226,6 +226,9 @@ namespace micro_os_plus::micro_test_plus
    * initialised at this point. The provided test suite is then added to the
    * collection, enabling the framework to manage and execute multiple test
    * suites across different files and folders within the project.
+   *
+   * Called by test suite constructors to register themselves with the
+   * runner, enabling automatic management and execution.
    */
   void
   test_runner::register_test_suite (test_suite_base* suite)

@@ -135,16 +135,16 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Obtain the current source location.
        *
+       * @param file The file name (automatically provided by the compiler).
+       * @param line The line number (automatically provided by the compiler).
+       * @return A `source_location` instance with the captured information.
+       *
        * @details
        * Returns a `source_location` instance representing the file name and
        * line number at the point of invocation.
        *
        * If supported by the compiler, uses built-in macros to capture this
        * information; otherwise, defaults to `"unknown"` and zero.
-       *
-       * @param file The file name (automatically provided by the compiler).
-       * @param line The line number (automatically provided by the compiler).
-       * @return A `source_location` instance with the captured information.
        */
       [[nodiscard]] static constexpr auto
       current (
@@ -217,6 +217,12 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Extract the type name from the `__PRETTY_FUNCTION__` macro.
      *
+     * @tparam T The type whose name is to be extracted.
+     *
+     * @par Parameters
+     *	 None.
+     * @return A `std::string_view` containing the extracted type name.
+     *
      * @details
      * This function template parses the compiler-specific
      * `__PRETTY_FUNCTION__` macro to extract a concise type name for the
@@ -225,12 +231,6 @@ namespace micro_os_plus::micro_test_plus
      * The implementation is compiler-dependent and may require adjustment for
      * different toolchains. It is primarily intended for internal use within
      * the µTest++ framework to support improved diagnostics and reporting.
-     *
-     * @tparam T The type whose name is to be extracted.
-     *
-     * @par Parameters
-     *	 None.
-     * @return A `std::string_view` containing the extracted type name.
      */
     template <class T>
     [[nodiscard]] constexpr auto

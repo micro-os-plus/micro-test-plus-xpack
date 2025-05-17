@@ -155,10 +155,6 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Registers a test suite with the runner.
      *
-     * @details
-     * Called by test suite constructors to register themselves with the
-     * runner, enabling automatic management and execution.
-     *
      * @param suite Pointer to the test suite to register.
      * @par Returns
      *   Nothing.
@@ -182,10 +178,6 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Aborts test execution immediately.
-     *
-     * @details
-     * This function terminates the test process without returning, typically
-     * used in exceptional or fatal error conditions.
      *
      * @par Parameters
      *	 None.

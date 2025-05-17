@@ -91,21 +91,28 @@ namespace micro_os_plus::micro_test_plus
 #endif
   /**
    * @details
-   * The `test_case` function template defines a test case, which is a sequence
-   * of test conditions (also referred to as tests or checks) that represent
-   * expectations or assumptions—conditions expected to be true.
+   * The `test_case` function template registers and executes a test case
+   * within the µTest++ framework. It accepts a descriptive name, a callable
+   * object (such as a lambda or function pointer), and an optional list of
+   * arguments to be passed to the callable. The test case is reported using
+   * the provided name, and its execution is managed by the framework's test
+   * runner.
    *
-   * Each test is based on a logical expression, typically involving the
-   * computation of a result and its comparison to an expected value. For C++
-   * projects, it is also possible to verify whether evaluating an expression
-   * throws exceptions. Each test either succeeds or fails. For expectations,
-   * the test runner maintains counts of successful and failed tests.
+   * Each test case typically involves evaluating a logical expression, such as
+   * comparing a computed result to an expected value. For C++ projects, it is
+   * also possible to verify whether evaluating an expression throws
+   * exceptions. Each test either succeeds or fails, and for expectations, the
+   * test runner maintains counts of successful and failed checks.
+   *
+   * This function template enables flexible and expressive test case
+   * definitions, supporting both parameterised and non-parameterised tests. It
+   * is typically invoked at global scope or within test suite definitions to
+   * ensure automatic registration and execution.
    *
    * A test case is characterised by a name, a function that performs the
-   * checks, and optionally, arguments to be passed to that function.
-   *
-   * The implementation of `test_case` invokes the provided function with the
-   * given arguments and reports the results to the test runner.
+   * checks, and optionally, arguments to be passed to that function. The
+   * implementation of `test_case` invokes the provided function with the given
+   * arguments and reports the results to the test runner.
    *
    * @par Example
    *

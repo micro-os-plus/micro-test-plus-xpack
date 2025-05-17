@@ -99,6 +99,10 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Struct template representing a compile-time type list.
      *
+     * @tparam ...Types The types to be included in the list.
+     *
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     *
      * @details
      * The `list` struct template provides a mechanism for grouping an
      * arbitrary number of types into a single type list at compile time. This
@@ -109,10 +113,6 @@ namespace micro_os_plus::micro_test_plus
      * The type list is commonly used in conjunction with function traits and
      * other metaprogramming utilities to facilitate advanced type
      * manipulations and compile-time computations.
-     *
-     * @tparam ...Types The types to be included in the list.
-     *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class...>
     struct list
@@ -121,6 +121,9 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Struct template for compile-time type identity.
+     *
+     * @tparam T The type to be preserved.
+     * @tparam ...Unused Additional template parameters, ignored.
      *
      * @details
      * The `identity` struct template provides a mechanism for preserving a
@@ -131,9 +134,6 @@ namespace micro_os_plus::micro_test_plus
      * This utility is particularly useful in scenarios where type deduction or
      * SFINAE is required, as it allows the type to be carried through template
      * specialisations without modification.
-     *
-     * @tparam T The type to be preserved.
-     * @tparam ...Unused Additional template parameters, ignored.
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
@@ -157,6 +157,10 @@ namespace micro_os_plus::micro_test_plus
      * @brief Struct template for extracting function traits from callable
      * types.
      *
+     * @tparam T The callable type for which traits are to be extracted.
+     *
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     *
      * @details
      * The `function_traits` struct template provides compile-time
      * introspection of callable types, such as function pointers, member
@@ -168,10 +172,6 @@ namespace micro_os_plus::micro_test_plus
      * This mechanism allows the µTest++ framework to deduce argument types and
      * return types of arbitrary callables, supporting advanced template
      * metaprogramming and flexible test case registration.
-     *
-     * @tparam T The callable type for which traits are to be extracted.
-     *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class T>
     struct function_traits : function_traits<decltype (&T::operator())>
@@ -183,6 +183,9 @@ namespace micro_os_plus::micro_test_plus
      * @brief Struct template specialisation for extracting function traits
      * from function pointer types.
      *
+     * @tparam R The return type of the function.
+     * @tparam ...Args_T The argument types of the function.
+     *
      * @details
      * This specialisation of the `function_traits` struct template provides
      * compile-time introspection for function pointer types. It exposes the
@@ -192,9 +195,6 @@ namespace micro_os_plus::micro_test_plus
      *
      * The `result_type` member defines the return type of the function, while
      * the `args` member is a type list containing all argument types.
-     *
-     * @tparam R The return type of the function.
-     * @tparam ...Args_T The argument types of the function.
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
@@ -216,6 +216,9 @@ namespace micro_os_plus::micro_test_plus
      * @brief Struct template specialisation for extracting function traits
      * from plain function types.
      *
+     * @tparam R The return type of the function.
+     * @tparam ...Args_T The argument types of the function.
+     *
      * @details
      * This specialisation of the `function_traits` struct template provides
      * compile-time introspection for plain function types (i.e., non-pointer,
@@ -225,9 +228,6 @@ namespace micro_os_plus::micro_test_plus
      *
      * The `result_type` member defines the return type of the function, while
      * the `args` member is a type list containing all argument types.
-     *
-     * @tparam R The return type of the function.
-     * @tparam ...Args_T The argument types of the function.
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
@@ -249,6 +249,10 @@ namespace micro_os_plus::micro_test_plus
      * @brief Struct template specialisation for extracting function traits
      * from non-const member function types.
      *
+     * @tparam R The return type of the member function.
+     * @tparam T The class type to which the member function belongs.
+     * @tparam ...Args_T The argument types of the member function.
+     *
      * @details
      * This specialisation of the `function_traits` struct template provides
      * compile-time introspection for non-const member function types. It
@@ -258,10 +262,6 @@ namespace micro_os_plus::micro_test_plus
      *
      * The `result_type` member defines the return type of the member function,
      * while the `args` member is a type list containing all argument types.
-     *
-     * @tparam R The return type of the member function.
-     * @tparam T The class type to which the member function belongs.
-     * @tparam ...Args_T The argument types of the member function.
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
@@ -283,6 +283,10 @@ namespace micro_os_plus::micro_test_plus
      * @brief Struct template specialisation for extracting function traits
      * from const member function types.
      *
+     * @tparam R The return type of the const member function.
+     * @tparam T The class type to which the member function belongs.
+     * @tparam ...Args_T The argument types of the const member function.
+     *
      * @details
      * This specialisation of the `function_traits` struct template provides
      * compile-time introspection for const member function types. It exposes
@@ -293,10 +297,6 @@ namespace micro_os_plus::micro_test_plus
      * The `result_type` member defines the return type of the const member
      * function, while the `args` member is a type list containing all argument
      * types.
-     *
-     * @tparam R The return type of the const member function.
-     * @tparam T The class type to which the member function belongs.
-     * @tparam ...Args_T The argument types of the const member function.
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
@@ -318,17 +318,17 @@ namespace micro_os_plus::micro_test_plus
      * @brief Utility function template to simulate std::declval for type
      * deduction.
      *
-     * @details
-     * The `declval` function template provides a mechanism for obtaining an
-     * rvalue reference to a type `T` without requiring an actual object. This
-     * is primarily used in unevaluated contexts, such as within `decltype`, to
-     * deduce types during template metaprogramming in the µTest++ framework.
-     *
      * @tparam T The type for which an rvalue reference is required.
      *
      * @par Parameters
      *	 None.
      * @return An rvalue reference to type `T`.
+     *
+     * @details
+     * The `declval` function template provides a mechanism for obtaining an
+     * rvalue reference to a type `T` without requiring an actual object. This
+     * is primarily used in unevaluated contexts, such as within `decltype`, to
+     * deduce types during template metaprogramming in the µTest++ framework.
      */
     template <class T>
     T&&
@@ -344,14 +344,14 @@ namespace micro_os_plus::micro_test_plus
      * @brief Fallback function template for is_valid, returns false if the
      * expression is not valid.
      *
-     * @details
-     * This overload is selected when the primary `is_valid` template cannot be
-     * instantiated, providing a `false` result for invalid expressions.
-     *
      * @tparam ...Ts The argument types to be tested.
      *
      * @return `false` indicating the expression is not valid for the given
      * argument types.
+     *
+     * @details
+     * This overload is selected when the primary `is_valid` template cannot be
+     * instantiated, providing a `false` result for invalid expressions.
      */
     template <class...>
     constexpr auto
@@ -363,6 +363,11 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Variable template to determine if a type models a container.
      *
+     * @tparam T The type to be checked for container-like behaviour.
+     *
+     * @retval true if `T` has both `begin()` and `end()` member functions.
+     * @retval false otherwise.
+     *
      * @details
      * The `is_container_v` variable template evaluates to `true` if the given
      * type `T` provides both `begin()` and `end()` member functions,
@@ -370,11 +375,6 @@ namespace micro_os_plus::micro_test_plus
      * determined at compile time using SFINAE and is_valid, and is used
      * throughout the µTest++ framework to enable generic handling of container
      * types in template metaprogramming.
-     *
-     * @tparam T The type to be checked for container-like behaviour.
-     *
-     * @retval true if `T` has both `begin()` and `end()` member functions.
-     * @retval false otherwise.
      */
     template <class T>
     static constexpr auto is_container_v = is_valid<T> (
@@ -384,18 +384,18 @@ namespace micro_os_plus::micro_test_plus
      * @brief Variable template to determine if a type provides a static `npos`
      * member.
      *
+     * @tparam T The type to be checked for the presence of a static `npos`
+     * member.
+     *
+     * @retval true if `T` has a static member named `npos`.
+     * @retval false otherwise.
+     *
      * @details
      * The `has_npos_v` variable template evaluates to `true` if the given type
      * `T` defines a static member named `npos`. This trait is determined at
      * compile time using SFINAE and the `is_valid` utility, and is used
      * throughout the µTest++ framework to enable generic handling of types
      * that follow the standard string or container conventions.
-     *
-     * @tparam T The type to be checked for the presence of a static `npos`
-     * member.
-     *
-     * @retval true if `T` has a static member named `npos`.
-     * @retval false otherwise.
      */
     template <class T>
     static constexpr auto has_npos_v
@@ -405,17 +405,17 @@ namespace micro_os_plus::micro_test_plus
      * @brief Variable template to determine if a type provides a `value`
      * member.
      *
+     * @tparam T The type to be checked for the presence of a `value` member.
+     *
+     * @retval true if `T` has a member named `value`.
+     * @retval false otherwise.
+     *
      * @details
      * The `has_value_v` variable template evaluates to `true` if the given
      * type `T` defines a member named `value`. This trait is determined at
      * compile time using SFINAE and the `is_valid` utility, and is used
      * throughout the µTest++ framework to enable generic handling of types
      * that encapsulate a value, such as wrappers or constant types.
-     *
-     * @tparam T The type to be checked for the presence of a `value` member.
-     *
-     * @retval true if `T` has a member named `value`.
-     * @retval false otherwise.
      */
     template <class T>
     static constexpr auto has_value_v
@@ -425,18 +425,18 @@ namespace micro_os_plus::micro_test_plus
      * @brief Variable template to determine if a type provides an `epsilon`
      * member.
      *
+     * @tparam T The type to be checked for the presence of an `epsilon`
+     * member.
+     *
+     * @retval true if `T` has a member named `epsilon`.
+     * @retval false otherwise.
+     *
      * @details
      * The `has_epsilon_v` variable template evaluates to `true` if the given
      * type `T` defines a member named `epsilon`. This trait is determined at
      * compile time using SFINAE and the `is_valid` utility, and is used
      * throughout the µTest++ framework to enable generic handling of types
      * that represent floating-point values or require precision control.
-     *
-     * @tparam T The type to be checked for the presence of an `epsilon`
-     * member.
-     *
-     * @retval true if `T` has a member named `epsilon`.
-     * @retval false otherwise.
      */
     template <class T>
     static constexpr auto has_epsilon_v
@@ -445,6 +445,11 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Variable template to determine if a type is a floating point
      * type.
+     *
+     * @tparam T The type to be checked for floating point classification.
+     *
+     * @retval true if `T` is a floating point type.
+     * @retval false otherwise.
      *
      * @details
      * The `is_floating_point_v` variable template evaluates to `true` if the
@@ -455,11 +460,6 @@ namespace micro_os_plus::micro_test_plus
      *
      * Specialisations are provided for `float`, `double`, and `long double`,
      * each evaluating to `true`.
-     *
-     * @tparam T The type to be checked for floating point classification.
-     *
-     * @retval true if `T` is a floating point type.
-     * @retval false otherwise.
      */
     template <class T>
     inline constexpr auto is_floating_point_v = false;
@@ -517,6 +517,12 @@ namespace micro_os_plus::micro_test_plus
      * @brief Variable template to determine if one type is convertible to
      * another.
      *
+     * @tparam From The source type to be checked for convertibility.
+     * @tparam To The target type to which conversion is tested.
+     *
+     * @retval true if `From` is convertible to `To`.
+     * @retval false otherwise.
+     *
      * @details
      * The `is_convertible_v` variable template evaluates to `true` if the type
      * `From` is implicitly convertible to the type `To`, and `false`
@@ -526,12 +532,6 @@ namespace micro_os_plus::micro_test_plus
      *
      * On supported compilers, this trait leverages compiler intrinsics for
      * optimal performance and accuracy.
-     *
-     * @tparam From The source type to be checked for convertibility.
-     * @tparam To The target type to which conversion is tested.
-     *
-     * @retval true if `From` is convertible to `To`.
-     * @retval false otherwise.
      */
     template <class From, class To>
     static constexpr auto is_convertible_v = __is_convertible_to (From, To);
@@ -543,6 +543,12 @@ namespace micro_os_plus::micro_test_plus
      * @brief Function template to determine if one type is convertible to
      * another.
      *
+     * @tparam From The source type to be checked for convertibility.
+     * @tparam To The target type to which conversion is tested.
+     *
+     * @param (int) Dummy parameter used for overload resolution.
+     * @retval true if `From` is convertible to `To`.
+     *
      * @details
      * The `is_convertible` function template checks, at compile time, whether
      * a value of type `From` can be implicitly converted to type `To`. This is
@@ -552,12 +558,6 @@ namespace micro_os_plus::micro_test_plus
      *
      * If the conversion is valid, this overload is selected and returns
      * `true`.
-     *
-     * @tparam From The source type to be checked for convertibility.
-     * @tparam To The target type to which conversion is tested.
-     *
-     * @param (int) Dummy parameter used for overload resolution.
-     * @retval true if `From` is convertible to `To`.
      */
     template <class From, class To>
     constexpr auto
@@ -570,14 +570,14 @@ namespace micro_os_plus::micro_test_plus
      * @brief Fallback function template for is_convertible, returns false if
      * the conversion is not valid.
      *
+     * @tparam ...Unused Unused template parameters.
+     *
+     * @retval false indicating the conversion is not valid.
+     *
      * @details
      * This overload is selected when the primary `is_convertible` template
      * cannot be instantiated, providing a `false` result for invalid
      * conversions.
-     *
-     * @tparam ...Unused Unused template parameters.
-     *
-     * @retval false indicating the conversion is not valid.
      */
     template <class...>
     constexpr auto
@@ -590,18 +590,18 @@ namespace micro_os_plus::micro_test_plus
      * @brief Variable template to determine if one type is convertible to
      * another.
      *
+     * @tparam From The source type to be checked for convertibility.
+     * @tparam To The target type to which conversion is tested.
+     *
+     * @retval true if `From` is convertible to `To`.
+     * @retval false otherwise.
+     *
      * @details
      * The `is_convertible_v` variable template evaluates to `true` if the type
      * `From` is implicitly convertible to the type `To`, and `false`
      * otherwise. This trait is determined at compile time and is used
      * throughout the µTest++ framework to enable type-safe conversions and
      * requirements checking in template metaprogramming.
-     *
-     * @tparam From The source type to be checked for convertibility.
-     * @tparam To The target type to which conversion is tested.
-     *
-     * @retval true if `From` is convertible to `To`.
-     * @retval false otherwise.
      */
     template <class From, class To>
     constexpr auto is_convertible_v = is_convertible<From, To> (0);
@@ -609,6 +609,8 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Struct template for SFINAE requirements.
+     *
+     * @tparam Cond The boolean condition to be checked at compile time.
      *
      * @details
      * The `requires_` struct template is a utility for SFINAE (Substitution
@@ -620,8 +622,6 @@ namespace micro_os_plus::micro_test_plus
      * provides a nested `type` alias, which can be used in conjunction with
      * `typename` and `requires_t` to enforce requirements in template
      * declarations.
-     *
-     * @tparam Cond The boolean condition to be checked at compile time.
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
@@ -652,13 +652,13 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Alias template for extracting the `type` member from `requires_`.
      *
+     * @tparam Cond The boolean condition to be checked at compile time.
+     *
      * @details
      * The `requires_t` alias template simplifies the use of the `requires_`
      * struct template by directly exposing the nested `type` member. It is
      * commonly used to enforce compile-time requirements in template
      * declarations.
-     *
-     * @tparam Cond The boolean condition to be checked at compile time.
      */
     template <bool Cond>
     using requires_t = typename requires_<Cond>::type;
@@ -686,6 +686,8 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Struct template representing a generic integral constant.
      *
+     * @tparam N The compile-time constant value.
+     *
      * @details
      * The `integral_constant` struct template provides a compile-time constant
      * value of an integral type, with additional utility features. It inherits
@@ -696,8 +698,6 @@ namespace micro_os_plus::micro_test_plus
      * getter method, and explicit conversion operators. It also provides a
      * unary minus operator to obtain the negative value as a new
      * `integral_constant` instance.
-     *
-     * @tparam N The compile-time constant value.
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
@@ -717,10 +717,11 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Unary minus operator.
        *
+       * @return An `integral_constant` with value `-N`.
+       *
        * @details
        * Returns a new `integral_constant` instance representing the negative
        * of the current value.
-       * @return An `integral_constant` with value `-N`.
        */
       [[nodiscard]] constexpr auto
       operator- () const
@@ -731,12 +732,15 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Explicit conversion operator to value_type.
        *
+       * @par Parameters
+       *	 None.
+       * @return The constant value as type `value_type`.
+       *
        * @details
        * Allows explicit conversion to the underlying value type.
-       * @return The constant value as type `value_type`.
        */
       [[nodiscard]] constexpr explicit
-      operator value_type () const
+      operator value_type (void) const
       {
         return N;
       }
@@ -744,12 +748,12 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Getter for the constant value.
        *
-       * @details
-       * Returns the compile-time constant value.
-       *
        * @par Parameters
        *	 None.
        * @return The constant value.
+       *
+       * @details
+       * Returns the compile-time constant value.
        */
       [[nodiscard]] constexpr auto
       get (void) const
@@ -761,6 +765,13 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Struct template representing a generic floating point constant
      * with custom size and precision.
+     *
+     * @tparam T The floating point type (e.g., float, double).
+     * @tparam N The integral part of the constant value.
+     * @tparam D The fractional part of the constant value.
+     * @tparam Size The number of decimal digits for the fractional part.
+     * @tparam P The sign of the value (1 for positive, -1 for negative).
+     * Defaults to 1.
      *
      * @details
      * The `floating_point_constant` struct template provides a compile-time
@@ -774,13 +785,6 @@ namespace micro_os_plus::micro_test_plus
      * `floating_point_constant` instance. The `epsilon` member defines the
      * precision used for floating point comparisons, calculated based on the
      * specified size.
-     *
-     * @tparam T The floating point type (e.g., float, double).
-     * @tparam N The integral part of the constant value.
-     * @tparam D The fractional part of the constant value.
-     * @tparam Size The number of decimal digits for the fractional part.
-     * @tparam P The sign of the value (1 for positive, -1 for negative).
-     * Defaults to 1.
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
@@ -812,10 +816,11 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Unary minus operator.
        *
+       * @return A `floating_point_constant` with value `-value`.
+       *
        * @details
        * Returns a new `floating_point_constant` instance representing the
        * negative of the current value.
-       * @return A `floating_point_constant` with value `-value`.
        */
       [[nodiscard]] constexpr auto
       operator- () const
@@ -826,10 +831,11 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Explicit conversion operator to value_type.
        *
+       * @return The constant value as type `value_type`.
+       *
        * @details
        * Allows explicit conversion to the underlying floating point value
        * type.
-       * @return The constant value as type `value_type`.
        */
       [[nodiscard]] constexpr explicit
       operator value_type () const
@@ -840,9 +846,10 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Getter for the constant value.
        *
+       * @return The constant value.
+       *
        * @details
        * Returns the compile-time floating point constant value.
-       * @return The constant value.
        */
       [[nodiscard]] constexpr auto
       get () const
@@ -853,6 +860,8 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Struct template representing a genuine integral value.
+     *
+     * @tparam T The type of the integral value.
      *
      * @details
      * The `genuine_integral_value` struct template encapsulates a runtime
@@ -865,8 +874,6 @@ namespace micro_os_plus::micro_test_plus
      * cases where a value must be wrapped and treated generically within the
      * framework, supporting advanced template metaprogramming and type
      * introspection.
-     *
-     * @tparam T The type of the integral value.
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
@@ -890,9 +897,10 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Explicit conversion operator to the underlying value type.
        *
+       * @return The stored value as type `T`.
+       *
        * @details
        * Allows explicit conversion to the encapsulated value.
-       * @return The stored value as type `T`.
        */
       [[nodiscard]] constexpr explicit
       operator T () const
@@ -903,9 +911,10 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Getter for the encapsulated value.
        *
+       * @return The value of type `T`.
+       *
        * @details
        * Returns the stored integral value.
-       * @return The value of type `T`.
        */
       [[nodiscard]] constexpr decltype (auto)
       get () const
@@ -922,6 +931,11 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Variable template to determine if a type derives from `op`.
      *
+     * @tparam T The type to be checked for derivation from `op`.
+     *
+     * @retval true if `T` is derived from `type_traits::op`.
+     * @retval false otherwise.
+     *
      * @details
      * The `is_op_v` variable template evaluates to `true` if the given type
      * `T` is derived from the `type_traits::op` base struct, and `false`
@@ -929,11 +943,6 @@ namespace micro_os_plus::micro_test_plus
      * intrinsics and is used throughout the µTest++ framework to enable
      * generic handling and detection of operator-like or value wrapper types
      * in template metaprogramming.
-     *
-     * @tparam T The type to be checked for derivation from `op`.
-     *
-     * @retval true if `T` is derived from `type_traits::op`.
-     * @retval false otherwise.
      */
     template <class T>
     inline constexpr auto is_op_v = __is_base_of (type_traits::op, T);
@@ -941,6 +950,10 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Struct template representing a generic value, accessible via a
      * getter.
+     *
+     * @tparam T The type of the value to be encapsulated.
+     * @tparam Unused An optional parameter for SFINAE or specialisation,
+     * defaults to `int`.
      *
      * @details
      * The `value` struct template encapsulates a value of type `T`, providing
@@ -953,10 +966,6 @@ namespace micro_os_plus::micro_test_plus
      * cases where a value must be wrapped and treated generically within the
      * framework, supporting advanced template metaprogramming and type
      * introspection.
-     *
-     * @tparam T The type of the value to be encapsulated.
-     * @tparam Unused An optional parameter for SFINAE or specialisation,
-     * defaults to `int`.
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
@@ -980,9 +989,10 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Explicit conversion operator to the underlying value type.
        *
+       * @return The stored value as type `T`.
+       *
        * @details
        * Allows explicit conversion to the encapsulated value.
-       * @return The stored value as type `T`.
        */
       [[nodiscard]] constexpr explicit
       operator T () const
@@ -993,12 +1003,12 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Getter for the encapsulated value.
        *
-       * @details
-       * Returns the stored value.
-       *
        * @par Parameters
        *	 None.
        * @return The value of type `T`.
+       *
+       * @details
+       * Returns the stored value.
        */
       [[nodiscard]] constexpr decltype (auto)
       get (void) const
@@ -1016,6 +1026,8 @@ namespace micro_os_plus::micro_test_plus
      * @brief Struct template representing a floating point value with
      * precision control.
      *
+     * @tparam T The floating point type to be encapsulated.
+     *
      * @details
      * The `value` struct template specialisation for floating point types
      * encapsulates a value of type `T` and provides an associated `epsilon`
@@ -1032,8 +1044,6 @@ namespace micro_os_plus::micro_test_plus
      * This specialisation is intended for use cases where floating point
      * values require controlled precision, supporting advanced template
      * metaprogramming and type-safe comparisons within the framework.
-     *
-     * @tparam T The floating point type to be encapsulated.
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
@@ -1088,9 +1098,10 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Explicit conversion operator to the underlying value type.
        *
+       * @return The stored value as type `T`.
+       *
        * @details
        * Allows explicit conversion to the encapsulated floating point value.
-       * @return The stored value as type `T`.
        */
       [[nodiscard]] constexpr explicit
       operator T () const
@@ -1101,12 +1112,12 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Getter for the encapsulated value.
        *
-       * @details
-       * Returns the stored floating point value.
-       *
        * @par Parameters
        *	 None.
        * @return The value of type `T`.
+       *
+       * @details
+       * Returns the stored floating point value.
        */
       [[nodiscard]] constexpr decltype (auto)
       get (void) const
