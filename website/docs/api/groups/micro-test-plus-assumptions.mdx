@@ -30,7 +30,7 @@ import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser
 
 <DoxygenPage version="1.13.2">
 
-Assumptions are conditions that must be satisfied for the test to proceed. <Link to="#details">More...</Link>
+Assumptions are conditions that must be satisfied for a test to proceed. <Link to="#details">More...</Link>
 
 ## Functions Index
 
@@ -39,14 +39,16 @@ Assumptions are conditions that must be satisfied for the test to proceed. <Link
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="#ga0f5febbef70eb641691b98583410a1ca">assume</Link> (const Expr&#95;T &amp;expr, const reflection::source&#95;location &amp;sl=reflection::source&#95;location::current())</>}>
-Check a condition and, if false, abort. <Link to="#ga0f5febbef70eb641691b98583410a1ca">More...</Link>
+Check a condition and, if false, abort test execution. <Link to="#ga0f5febbef70eb641691b98583410a1ca">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
 
 ## Description {#details}
 
-If an assumption fails, the test cannot continue and is terminated immediately.
+Assumptions represent essential preconditions that must hold true for a test case to execute meaningfully. If an assumption fails, the test is immediately terminated, as continuing would render the results invalid or misleading.
+
+By clearly specifying assumptions, developers can ensure that tests are only run in appropriate contexts, improving the reliability and accuracy of test outcomes. This mechanism is particularly valuable for guarding against invalid input, incomplete initialisation, or unsupported environments.
 
 <SectionDefinition>
 
@@ -58,22 +60,28 @@ If an assumption fails, the test cannot continue and is terminated immediately.
   template={<>template &lt;class Expr&#95;T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;op&#95;v&lt; Expr&#95;T &gt; or type&#95;traits::is&#95;convertible&#95;v&lt; Expr&#95;T, bool &gt; &gt; = 0&gt;</>}
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::assume (const Expr&#95;T &amp; expr, const reflection::source&#95;location &amp; sl=reflection::source&#95;location::current())</>}
   labels = {["constexpr"]}>
-Check a condition and, if false, abort.
+Check a condition and, if false, abort test execution.
+
+---
+
+The <code>assume</code> function template evaluates a logical condition or custom expression and, if the condition is false, aborts the current test case within the µTest++ framework. This mechanism is intended for preconditions or assumptions that must hold for the test to be meaningful. If the assumption fails, the test case is terminated early and reported as skipped or failed, depending on the framework configuration.
+
+The function template can be used with any expression that evaluates to a boolean or with custom comparators/operators derived from the local <code>detail::op</code> type. It returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes.
+
 
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Expr&#95;T">The type of the custom expression.</ParametersListItem>
+<ParametersListItem name="(SFINAE)">Enabled only if <code>Expr&#95;T</code> is derived from <code>detail::op</code> or is convertible to <code>bool</code>.</ParametersListItem>
 </ParametersList>
 
 <ParametersList title="Parameters">
 <ParametersListItem name="[in] expr">Logical expression to evaluate.</ParametersListItem>
-<ParametersListItem name="[in] sl">Optional source location, by default the current line.</ParametersListItem>
+<ParametersListItem name="[in] sl">Optional source location, defaulting to the current line.</ParametersListItem>
 </ParametersList>
 
 <SectionUser title="Returns">
 An output stream to write optional messages.
 </SectionUser>
-
-The template is usable only for expressions that evaluate to a boolean or use custom comparators/operators derived from the local <code>detail::op</code> type.
 
 
 <SectionUser title="Example">
@@ -84,12 +92,11 @@ The template is usable only for expressions that evaluate to a boolean or use cu
 <ProgramListing extension="cpp">
 
 <CodeLine><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link>;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">mt::assume (compute&#95;answer () == 42) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer is 42&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">mt::assume(compute&#95;answer() == 42) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer is 42&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
 
 </ProgramListing>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00220">220</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00269">269</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

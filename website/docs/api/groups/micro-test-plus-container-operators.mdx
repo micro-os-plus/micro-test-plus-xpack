@@ -20,6 +20,8 @@ import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
 import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
 import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
 import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
 import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
@@ -50,7 +52,9 @@ Equality operator for containers. <Link to="#gaac06b4166dbd6e2b62a744878903eee8"
 
 ## Description {#details}
 
-In addition to the generic operators, specialised equality operators are also provided for containers.
+The µTest++ framework provides overloaded operators to facilitate direct and expressive comparison of standard containers, such as vectors and strings, within test cases. These operators enable developers to write clear and concise assertions when verifying the equality or inequality of container contents.
+
+In addition to the generic operators, specialised equality and inequality operators are provided for containers, ensuring accurate and efficient comparison semantics that align with modern C++ practices.
 
 
 <SectionUser title="Examples">
@@ -89,7 +93,27 @@ In addition to the generic operators, specialised equality operators are also pr
   labels = {["nodiscard", "constexpr"]}>
 Non-equality operator for containers.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00607">607</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+---
+
+This overload of the non-equality operator enables direct comparison of two container objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two containers are not equal in content or order.
+
+The operator is enabled only for types recognised as containers by the framework&#39;s type traits.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="T">The container type, constrained to recognised container types.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] lhs">The left hand side container operand.</ParametersListItem>
+<ParametersListItem name="[in] rhs">The right hand side container operand.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+A comparator object that evaluates to true if the containers are not equal.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00891">891</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### operator==() {#gaac06b4166dbd6e2b62a744878903eee8}
@@ -100,7 +124,27 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["nodiscard", "constexpr"]}>
 Equality operator for containers.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00595">595</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+---
+
+This overload of the equality operator enables direct comparison of two container objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two containers are equal in content and order.
+
+The operator is enabled only for types recognised as containers by the framework&#39;s type traits.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="T">The container type, constrained to recognised container types.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] lhs">The left hand side container operand.</ParametersListItem>
+<ParametersListItem name="[in] rhs">The right hand side container operand.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+A comparator object that evaluates to true if the containers are equal.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00864">864</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

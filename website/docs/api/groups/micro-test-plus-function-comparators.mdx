@@ -30,7 +30,7 @@ import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser
 
 <DoxygenPage version="1.13.2">
 
-Functions for comparing actual and expected values. <Link to="#details">More...</Link>
+Functions for comparing actual and expected values in tests. <Link to="#details">More...</Link>
 
 ## Functions Index
 
@@ -39,13 +39,13 @@ Functions for comparing actual and expected values. <Link to="#details">More...<
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="#gae9dfca849300a917cb1c231d275baaa3">eq</Link> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
-Generic equality comparator. Matches any non-pointer type. <Link to="#gae9dfca849300a917cb1c231d275baaa3">More...</Link>
+Generic equality comparator for non-pointer types. <Link to="#gae9dfca849300a917cb1c231d275baaa3">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="#gabdb021d3d6a5759cd2a5f502b2514dea">eq</Link> (Lhs&#95;T &#42;lhs, Rhs&#95;T &#42;rhs)</>}>
-Pointer equality comparator. Matches pointers to any types. <Link to="#gabdb021d3d6a5759cd2a5f502b2514dea">More...</Link>
+Pointer equality comparator for any pointer types. <Link to="#gabdb021d3d6a5759cd2a5f502b2514dea">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
@@ -81,7 +81,7 @@ Generic less than or equal comparator. <Link to="#ga2b5263a5b3965855aa04971bba73
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="#gaf8716c55446af28b090eb49acd8cf131">le</Link> (Lhs&#95;T &#42;lhs, Rhs&#95;T &#42;rhs)</>}>
-Generic less than or equal comparator. <Link to="#gaf8716c55446af28b090eb49acd8cf131">More...</Link>
+Pointer less than or equal comparator. <Link to="#gaf8716c55446af28b090eb49acd8cf131">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
@@ -93,7 +93,7 @@ Generic less than comparator. <Link to="#gac162522dcad1a6ff7c869d52d376b3ed">Mor
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="#ga047738c301c4c6b6c7fdb535aecfe097">lt</Link> (Lhs&#95;T &#42;lhs, Rhs&#95;T &#42;rhs)</>}>
-Generic less than comparator. <Link to="#ga047738c301c4c6b6c7fdb535aecfe097">More...</Link>
+Pointer less than comparator. <Link to="#ga047738c301c4c6b6c7fdb535aecfe097">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
@@ -110,13 +110,11 @@ Pointer non-equality comparator. <Link to="#ga172f305bbeaf8b965681f76c16a39516">
 
 </MembersIndex>
 
-## Description {#details}
+Function comparators in µTest++ provide a clear and expressive way to compare actual and expected values within test cases. While any expression yielding a boolean value may be used in expectations and assumptions, dedicated comparator functions such as <code>eq</code>, <code>ne</code>, <code>lt</code>, <code>le</code>, <code>gt</code>, and <code>ge</code> offer enhanced reporting by explicitly showing the values involved when a check fails.
 
+Using these comparators ensures that, in the event of a failed check, the test output will include both the actual and expected values, making it easier to diagnose issues and understand the cause of the failure.
 
-
-Expectations and assumptions may evaluate any expression yielding a boolean value; however, to provide clear reporting of differences between actual and expected values when checks fail, dedicated comparator functions should be employed.
-
-
+Comparators are available for both fundamental types and standard containers. When comparing containers, each element is assessed individually, and the results are reported in detail.
 
 
 <SectionUser title="Examples">
@@ -137,11 +135,7 @@ Expectations and assumptions may evaluate any expression yielding a boolean valu
 
 </ProgramListing>
 
-
-
-When such comparator functions are employed, any failed checks will also present the actual values compared during the test; for example:
-
-
+If a comparator check fails, the output will clearly indicate the actual and expected values:
 
 
 <ProgramListing extension="console">
@@ -162,7 +156,7 @@ When such comparator functions are employed, any failed checks will also present
 
 
 
-Containers can be assessed for equality. The comparison is conducted by iterating through each element and evaluating them individually.
+Containers can be compared for equality or inequality using the same comparator functions. The comparison is performed by iterating through each element and evaluating them individually.
 
 
 
@@ -192,7 +186,12 @@ Containers can be assessed for equality. The comparison is conducted by iteratin
   template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T&gt;</>}
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::eq (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
-Generic equality comparator. Matches any non-pointer type.
+Generic equality comparator for non-pointer types.
+
+---
+
+The <code>eq</code> function template provides a generic equality comparator for any non-pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that two values are equal. This function is typically used in test expectations and assertions to compare the actual and expected values.
+
 
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
@@ -205,10 +204,10 @@ Generic equality comparator. Matches any non-pointer type.
 </ParametersList>
 
 <SectionUser title="Returns">
-True if the operands are equal.
+A comparator object that evaluates to true if the operands are equal.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00287">287</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00379">379</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### eq() {#gabdb021d3d6a5759cd2a5f502b2514dea}
@@ -217,23 +216,28 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T&gt;</>}
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::eq (Lhs&#95;T &#42; lhs, Rhs&#95;T &#42; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
-Pointer equality comparator. Matches pointers to any types.
+Pointer equality comparator for any pointer types.
+
+---
+
+The <code>eq</code> function template provides a pointer equality comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that two pointers are equal. This function is typically used in test expectations and assertions to compare the addresses of objects or resources.
+
 
 <ParametersList title="Template Parameters">
-<ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
-<ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
+<ParametersListItem name="Lhs&#95;T">Type of the left hand side pointer operand.</ParametersListItem>
+<ParametersListItem name="Rhs&#95;T">Type of the right hand side pointer operand.</ParametersListItem>
 </ParametersList>
 
 <ParametersList title="Parameters">
-<ParametersListItem name="[in] lhs">Left hand side operand.</ParametersListItem>
-<ParametersListItem name="[in] rhs">Right hand side operand.</ParametersListItem>
+<ParametersListItem name="[in] lhs">Left hand side pointer operand.</ParametersListItem>
+<ParametersListItem name="[in] rhs">Right hand side pointer operand.</ParametersListItem>
 </ParametersList>
 
 <SectionUser title="Returns">
-True if the pointers are equal.
+A comparator object that evaluates to true if the pointers are equal.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00304">304</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00404">404</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### ge() {#ga34e03399670ec0b365b94b7bea788dd8}
@@ -244,6 +248,11 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["nodiscard", "constexpr"]}>
 Generic greater than or equal comparator.
 
+---
+
+The <code>ge</code> function template provides a generic greater than or equal comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is greater than or equal to another. This function is typically used in test expectations and assertions to compare the actual and expected values.
+
+
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
 <ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
@@ -255,10 +264,10 @@ Generic greater than or equal comparator.
 </ParametersList>
 
 <SectionUser title="Returns">
-True if lhs &gt;= rhs.
+A comparator object that evaluates to true if <code>lhs</code> is greater than or equal to <code>rhs</code>.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00384">384</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00529">529</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### ge() {#ga3957927d25a61348b639fe01aab11258}
@@ -269,21 +278,26 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["nodiscard", "constexpr"]}>
 Pointer greater than or equal comparator.
 
+---
+
+The <code>ge</code> function template provides a pointer greater than or equal comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is greater than or equal to another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources.
+
+
 <ParametersList title="Template Parameters">
-<ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
-<ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
+<ParametersListItem name="Lhs&#95;T">Type of the left hand side pointer operand.</ParametersListItem>
+<ParametersListItem name="Rhs&#95;T">Type of the right hand side pointer operand.</ParametersListItem>
 </ParametersList>
 
 <ParametersList title="Parameters">
-<ParametersListItem name="[in] lhs">Left hand side operand.</ParametersListItem>
-<ParametersListItem name="[in] rhs">Right hand side operand.</ParametersListItem>
+<ParametersListItem name="[in] lhs">Left hand side pointer operand.</ParametersListItem>
+<ParametersListItem name="[in] rhs">Right hand side pointer operand.</ParametersListItem>
 </ParametersList>
 
 <SectionUser title="Returns">
-True if the lhs pointer &gt;= rhs pointer.
+A comparator object that evaluates to true if the left hand side pointer is greater than or equal to the right hand side pointer.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00400">400</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00555">555</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### gt() {#gae2fb681444d8256f6bf827eea6b7c29e}
@@ -294,6 +308,11 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["nodiscard", "constexpr"]}>
 Generic greater than comparator.
 
+---
+
+The <code>gt</code> function template provides a generic greater than comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is greater than another. This function is typically used in test expectations and assertions to compare the actual and expected values.
+
+
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
 <ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
@@ -305,10 +324,10 @@ Generic greater than comparator.
 </ParametersList>
 
 <SectionUser title="Returns">
-True if lhs &gt; rhs.
+A comparator object that evaluates to true if <code>lhs</code> is greater than <code>rhs</code>.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00352">352</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00479">479</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### gt() {#gae8a4dcd7ebf01cdfa7e46540cd6522fa}
@@ -319,21 +338,26 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["nodiscard", "constexpr"]}>
 Pointer greater than comparator.
 
+---
+
+The <code>gt</code> function template provides a pointer greater than comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is greater than another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources.
+
+
 <ParametersList title="Template Parameters">
-<ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
-<ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
+<ParametersListItem name="Lhs&#95;T">Type of the left hand side pointer operand.</ParametersListItem>
+<ParametersListItem name="Rhs&#95;T">Type of the right hand side pointer operand.</ParametersListItem>
 </ParametersList>
 
 <ParametersList title="Parameters">
-<ParametersListItem name="[in] lhs">Left hand side operand.</ParametersListItem>
-<ParametersListItem name="[in] rhs">Right hand side operand.</ParametersListItem>
+<ParametersListItem name="[in] lhs">Left hand side pointer operand.</ParametersListItem>
+<ParametersListItem name="[in] rhs">Right hand side pointer operand.</ParametersListItem>
 </ParametersList>
 
 <SectionUser title="Returns">
-True if the lhs pointer &gt; rhs pointer.
+A comparator object that evaluates to true if the left hand side pointer is greater than the right hand side pointer.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00368">368</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00504">504</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### le() {#ga2b5263a5b3965855aa04971bba735a56}
@@ -344,6 +368,11 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["nodiscard", "constexpr"]}>
 Generic less than or equal comparator.
 
+---
+
+The <code>le</code> function template provides a generic less than or equal comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is less than or equal to another. This function is typically used in test expectations and assertions to compare the actual and expected values.
+
+
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
 <ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
@@ -355,10 +384,10 @@ Generic less than or equal comparator.
 </ParametersList>
 
 <SectionUser title="Returns">
-True if lhs &lt;= rhs.
+A comparator object that evaluates to true if <code>lhs</code> is less than or equal to <code>rhs</code>.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00448">448</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00630">630</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### le() {#gaf8716c55446af28b090eb49acd8cf131}
@@ -367,23 +396,28 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T&gt;</>}
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::le (Lhs&#95;T &#42; lhs, Rhs&#95;T &#42; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
-Generic less than or equal comparator.
+Pointer less than or equal comparator.
+
+---
+
+The <code>le</code> function template provides a pointer less than or equal comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is less than or equal to another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources.
+
 
 <ParametersList title="Template Parameters">
-<ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
-<ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
+<ParametersListItem name="Lhs&#95;T">Type of the left hand side pointer operand.</ParametersListItem>
+<ParametersListItem name="Rhs&#95;T">Type of the right hand side pointer operand.</ParametersListItem>
 </ParametersList>
 
 <ParametersList title="Parameters">
-<ParametersListItem name="[in] lhs">Left hand side operand.</ParametersListItem>
-<ParametersListItem name="[in] rhs">Right hand side operand.</ParametersListItem>
+<ParametersListItem name="[in] lhs">Left hand side pointer operand.</ParametersListItem>
+<ParametersListItem name="[in] rhs">Right hand side pointer operand.</ParametersListItem>
 </ParametersList>
 
 <SectionUser title="Returns">
-True if the lhs pointer &lt;= rhs pointer.
+A comparator object that evaluates to true if the left hand side pointer is less than or equal to the right hand side pointer.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00464">464</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00656">656</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### lt() {#gac162522dcad1a6ff7c869d52d376b3ed}
@@ -394,6 +428,11 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["nodiscard", "constexpr"]}>
 Generic less than comparator.
 
+---
+
+The <code>lt</code> function template provides a generic less than comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is less than another. This function is typically used in test expectations and assertions to compare the actual and expected values.
+
+
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
 <ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
@@ -405,10 +444,10 @@ Generic less than comparator.
 </ParametersList>
 
 <SectionUser title="Returns">
-True if lhs &lt; rhs.
+A comparator object that evaluates to true if <code>lhs</code> is less than <code>rhs</code>.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00416">416</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00580">580</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### lt() {#ga047738c301c4c6b6c7fdb535aecfe097}
@@ -417,23 +456,28 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T&gt;</>}
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::lt (Lhs&#95;T &#42; lhs, Rhs&#95;T &#42; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
-Generic less than comparator.
+Pointer less than comparator.
+
+---
+
+The <code>lt</code> function template provides a pointer less than comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is less than another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources.
+
 
 <ParametersList title="Template Parameters">
-<ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
-<ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
+<ParametersListItem name="Lhs&#95;T">Type of the left hand side pointer operand.</ParametersListItem>
+<ParametersListItem name="Rhs&#95;T">Type of the right hand side pointer operand.</ParametersListItem>
 </ParametersList>
 
 <ParametersList title="Parameters">
-<ParametersListItem name="[in] lhs">Left hand side operand.</ParametersListItem>
-<ParametersListItem name="[in] rhs">Right hand side operand.</ParametersListItem>
+<ParametersListItem name="[in] lhs">Left hand side pointer operand.</ParametersListItem>
+<ParametersListItem name="[in] rhs">Right hand side pointer operand.</ParametersListItem>
 </ParametersList>
 
 <SectionUser title="Returns">
-True if the lhs pointer &lt; rhs pointer.
+A comparator object that evaluates to true if the left hand side pointer is less than the right hand side pointer.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00432">432</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00605">605</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### ne() {#ga59e4cf59954e81bc868e62b1c5c8db1f}
@@ -444,6 +488,11 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["nodiscard", "constexpr"]}>
 Generic non-equality comparator.
 
+---
+
+The <code>ne</code> function template provides a generic non-equality comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that two values are not equal. This function is typically used in test expectations and assertions to compare the actual and expected values.
+
+
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
 <ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
@@ -455,10 +504,10 @@ Generic non-equality comparator.
 </ParametersList>
 
 <SectionUser title="Returns">
-True if the operands are not equal.
+A comparator object that evaluates to true if the operands are not equal.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00320">320</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00429">429</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### ne() {#ga172f305bbeaf8b965681f76c16a39516}
@@ -469,21 +518,26 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["nodiscard", "constexpr"]}>
 Pointer non-equality comparator.
 
+---
+
+The <code>ne</code> function template provides a pointer non-equality comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that two pointers are not equal. This function is typically used in test expectations and assertions to compare the addresses of objects or resources.
+
+
 <ParametersList title="Template Parameters">
-<ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
-<ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
+<ParametersListItem name="Lhs&#95;T">Type of the left hand side pointer operand.</ParametersListItem>
+<ParametersListItem name="Rhs&#95;T">Type of the right hand side pointer operand.</ParametersListItem>
 </ParametersList>
 
 <ParametersList title="Parameters">
-<ParametersListItem name="[in] lhs">Left hand side operand.</ParametersListItem>
-<ParametersListItem name="[in] rhs">Right hand side operand.</ParametersListItem>
+<ParametersListItem name="[in] lhs">Left hand side pointer operand.</ParametersListItem>
+<ParametersListItem name="[in] rhs">Right hand side pointer operand.</ParametersListItem>
 </ParametersList>
 
 <SectionUser title="Returns">
-True if the pointers are not equal.
+A comparator object that evaluates to true if the pointers are not equal.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00336">336</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00454">454</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

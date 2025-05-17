@@ -20,6 +20,8 @@ import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
 import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
 import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
 import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
 import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
@@ -28,7 +30,7 @@ import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser
 
 <DoxygenPage version="1.13.2">
 
-Overloaded operators. <Link to="#details">More...</Link>
+Overloaded operators for expressive test comparisons. <Link to="#details">More...</Link>
 
 ## Functions Index
 
@@ -37,74 +39,66 @@ Overloaded operators. <Link to="#details">More...</Link>
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="#ga6f792d4a05a9b4e2e5b15c21905639f4">operator and</Link> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
-Logical <code>&amp;&amp;</code> (and) operator. It matches only if at least one operand is of local type (derived from local <code>op</code>). <Link to="#ga6f792d4a05a9b4e2e5b15c21905639f4">More...</Link>
+Logical <code>&amp;&amp;</code> (and) operator. Matches only if at least one operand is of local type (derived from local <code>op</code>). <Link to="#ga6f792d4a05a9b4e2e5b15c21905639f4">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="#ga76287e126ef9eaf3039d970d70f3a436">operator not</Link> (const T &amp;t)</>}>
-Logical <code>!</code> (not) operator. It matches only if the operand is of local type (derived from local <code>op</code>). <Link to="#ga76287e126ef9eaf3039d970d70f3a436">More...</Link>
+Logical <code>!</code> (not) operator. Matches only if the operand is of local type (derived from local <code>op</code>). <Link to="#ga76287e126ef9eaf3039d970d70f3a436">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="#gaaad46363338988f9080425b0d327b779">operator or</Link> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
-Logical <code>||</code> (or) operator. It matches only if at least one operand is of local type (derived from local <code>op</code>). <Link to="#gaaad46363338988f9080425b0d327b779">More...</Link>
+Logical <code>||</code> (or) operator. Matches only if at least one operand is of local type (derived from local <code>op</code>). <Link to="#gaaad46363338988f9080425b0d327b779">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="#gae2090b8535bb7860e6104347b2d9f4e6">operator!=</Link> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
-Non-equality operator. It matches only if at least one operand is of local type (derived from local <code>op</code>). <Link to="#gae2090b8535bb7860e6104347b2d9f4e6">More...</Link>
+Non-equality operator for custom types. Matches only if at least one operand is of local type. <Link to="#gae2090b8535bb7860e6104347b2d9f4e6">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="#gad934faf2be89b200f4d286c26c043a29">operator&lt;</Link> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
-Less than operator. It matches only if at least one operand is of local type (derived from local <code>op</code>). <Link to="#gad934faf2be89b200f4d286c26c043a29">More...</Link>
+Less than operator. Matches only if at least one operand is of local type (derived from local <code>op</code>). <Link to="#gad934faf2be89b200f4d286c26c043a29">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="#ga7862426cbe47cb764473e8bc9f49c0a9">operator&lt;=</Link> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
-Less than or equal operator. It matches only if at least one operand is of local type (derived from local <code>op</code>). <Link to="#ga7862426cbe47cb764473e8bc9f49c0a9">More...</Link>
+Less than or equal operator. Matches only if at least one operand is of local type (derived from local <code>op</code>). <Link to="#ga7862426cbe47cb764473e8bc9f49c0a9">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="#ga26bc1232c48df9b79463025f66da5f1f">operator==</Link> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
-Equality operator. It matches only if at least one operand is of local type (derived from local <code>op</code>). <Link to="#ga26bc1232c48df9b79463025f66da5f1f">More...</Link>
+Equality operator for custom types. Matches only if at least one operand is of local type. <Link to="#ga26bc1232c48df9b79463025f66da5f1f">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="#gabd2a0c082adee2dbdd69043ba8d34dcd">operator&gt;</Link> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
-Greater than operator. It matches only if at least one operand is of local type (derived from local <code>op</code>). <Link to="#gabd2a0c082adee2dbdd69043ba8d34dcd">More...</Link>
+Greater than operator. Matches only if at least one operand is of local type (derived from local <code>op</code>). <Link to="#gabd2a0c082adee2dbdd69043ba8d34dcd">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="#ga676092b57233f1137778ee9c38e24a46">operator&gt;=</Link> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
-Greater than or equal operator. It matches only if at least one operand is of local type (derived from local <code>op</code>). <Link to="#ga676092b57233f1137778ee9c38e24a46">More...</Link>
+Greater than or equal operator. Matches only if at least one operand is of local type (derived from local <code>op</code>). <Link to="#ga676092b57233f1137778ee9c38e24a46">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
 
-## Description {#details}
+The µTest++ framework provides overloaded comparison and logical operators to enable expressive and type-safe test assertions. These operators—such as <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, and <code>&gt;=</code>—are defined within the dedicated <code>micro&#95;test&#95;plus::operators</code> namespace to avoid conflicts with application-defined operators.
 
+For standard values, the default operators are used, ensuring correct comparisons. However, when using the specialised µTest++ operators with typed operands, failed checks will display both the actual and expected values, greatly improving the clarity of test reports.
 
+These operators are restricted to operands derived from the local <code>detail::op</code> type. For constant values, this is achieved using provided literals (e.g., <code>1&#95;i</code>), while dynamic values can be wrapped using casts such as <code>mt::to&#95;i&#123;expression&#125;</code>.
 
-As with most other C++ testing frameworks, it is possible to overload the <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, and <code>&gt;=</code> operators.
-
-
-
-To avoid potential conflicts with operators defined by the application, these operators are limited to operands of specific types and are placed within a dedicated namespace (<code>micro&#95;test&#95;plus::operators</code>). When applied to standard values, the default operators are utilised; comparisons are performed correctly, but in the event of a failure, the actual values are not displayed.
-
-
-
-These operators only match operands derived from the local <code>detail::op</code> type. For constant values, this can be achieved using the provided literals (such as <code>1&#95;i</code>), or for dynamic values, by employing the provided casts (such as <code>mt::to&#95;i&#123;expression&#125;</code>), which are in fact constructors of the internal classes.
-
-
+Logical operators (<code>&amp;&amp;</code>, <code>||</code>, <code>!</code>) are also supported and provide enhanced functionality when used with typed operands, allowing for the composition of complex test conditions in a natural and readable manner.
 
 
 <SectionUser title="Examples">
@@ -136,7 +130,7 @@ These operators only match operands derived from the local <code>detail::op</cod
 
 
 
-Logical operators may be utilised in precisely the same manner as standard operators; however, the enhanced functionality is available exclusively when employed with typed operands.
+Logical operators may be used in the same way as standard operators, with enhanced reporting available when used with typed operands.
 
 
 
@@ -162,9 +156,28 @@ Logical operators may be utilised in precisely the same manner as standard opera
   template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;op&#95;v&lt; Lhs&#95;T &gt; or type&#95;traits::is&#95;op&#95;v&lt; Rhs&#95;T &gt; &gt; = 0&gt;</>}
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::operators::operator and (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
-Logical <code>&amp;&amp;</code> (and) operator. It matches only if at least one operand is of local type (derived from local <code>op</code>).
+Logical <code>&amp;&amp;</code> (and) operator. Matches only if at least one operand is of local type (derived from local <code>op</code>).
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00712">712</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+---
+
+This overload of the logical <code>&amp;&amp;</code> (and) operator enables conjunction between two operands, where at least one is a local type derived from the local <code>op</code> base. It constructs a logical conjunction object that can be used within the µTest++ framework to assert that both operands evaluate to true. This operator is intended for use with the framework&#39;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
+<ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] lhs">Left hand side operand.</ParametersListItem>
+<ParametersListItem name="[in] rhs">Right hand side operand.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+A logical conjunction object that evaluates to true if both operands are true.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l01110">1110</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### operator not() {#ga76287e126ef9eaf3039d970d70f3a436}
@@ -173,9 +186,26 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;op&#95;v&lt; T &gt; &gt; = 0&gt;</>}
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::operators::operator not (const T &amp; t)</>}
   labels = {["nodiscard", "constexpr"]}>
-Logical <code>!</code> (not) operator. It matches only if the operand is of local type (derived from local <code>op</code>).
+Logical <code>!</code> (not) operator. Matches only if the operand is of local type (derived from local <code>op</code>).
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00739">739</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+---
+
+This overload of the logical <code>!</code> (not) operator enables logical negation of an operand, provided it is a local type derived from the local <code>op</code> base. It constructs a logical negator object that can be used within the µTest++ framework to assert that a given condition is false. This operator is intended for use with the framework&#39;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="T">Type of the operand, constrained to types derived from the local <code>op</code> base.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] t">Operand to be logically negated.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+A logical negator object that evaluates to true if the operand is false.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l01168">1168</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### operator or() {#gaaad46363338988f9080425b0d327b779}
@@ -184,9 +214,28 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;op&#95;v&lt; Lhs&#95;T &gt; or type&#95;traits::is&#95;op&#95;v&lt; Rhs&#95;T &gt; &gt; = 0&gt;</>}
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::operators::operator or (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
-Logical <code>||</code> (or) operator. It matches only if at least one operand is of local type (derived from local <code>op</code>).
+Logical <code>||</code> (or) operator. Matches only if at least one operand is of local type (derived from local <code>op</code>).
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00727">727</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+---
+
+This overload of the logical <code>||</code> (or) operator enables disjunction between two operands, where at least one is a local type derived from the local <code>op</code> base. It constructs a logical disjunction object that can be used within the µTest++ framework to assert that at least one operand evaluates to true. This operator is intended for use with the framework&#39;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
+<ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] lhs">Left hand side operand.</ParametersListItem>
+<ParametersListItem name="[in] rhs">Right hand side operand.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+A logical disjunction object that evaluates to true if at least one operand is true.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l01141">1141</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### operator!=() {#gae2090b8535bb7860e6104347b2d9f4e6}
@@ -195,9 +244,28 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;op&#95;v&lt; Lhs&#95;T &gt; or type&#95;traits::is&#95;op&#95;v&lt; Rhs&#95;T &gt; &gt; = 0&gt;</>}
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::operators::operator!= (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
-Non-equality operator. It matches only if at least one operand is of local type (derived from local <code>op</code>).
+Non-equality operator for custom types. Matches only if at least one operand is of local type.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00637">637</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+---
+
+This overload of the non-equality operator enables comparison between two operands, where at least one is a local type derived from the local <code>op</code> base. It constructs a comparator object that can be used within the µTest++ framework to assert that the operands are not equal. This operator is intended for use with the framework&#39;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
+<ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] lhs">Left hand side operand.</ParametersListItem>
+<ParametersListItem name="[in] rhs">Right hand side operand.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+A comparator object that evaluates to true if the operands are not equal.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00953">953</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### operator&lt;() {#gad934faf2be89b200f4d286c26c043a29}
@@ -206,9 +274,28 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;op&#95;v&lt; Lhs&#95;T &gt; or type&#95;traits::is&#95;op&#95;v&lt; Rhs&#95;T &gt; &gt; = 0&gt;</>}
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::operators::operator&lt; (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
-Less than operator. It matches only if at least one operand is of local type (derived from local <code>op</code>).
+Less than operator. Matches only if at least one operand is of local type (derived from local <code>op</code>).
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00681">681</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+---
+
+This overload of the less than operator enables comparison between two operands, where at least one is a local type derived from the local <code>op</code> base. It constructs a comparator object that can be used within the µTest++ framework to assert that the left hand side operand is less than the right hand side operand. This operator is intended for use with the framework&#39;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
+<ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] lhs">Left hand side operand.</ParametersListItem>
+<ParametersListItem name="[in] rhs">Right hand side operand.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+A comparator object that evaluates to true if the left hand side operand is less than the right hand side operand.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l01046">1046</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### operator&lt;=() {#ga7862426cbe47cb764473e8bc9f49c0a9}
@@ -217,9 +304,28 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;op&#95;v&lt; Lhs&#95;T &gt; or type&#95;traits::is&#95;op&#95;v&lt; Rhs&#95;T &gt; &gt; = 0&gt;</>}
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::operators::operator&lt;= (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
-Less than or equal operator. It matches only if at least one operand is of local type (derived from local <code>op</code>).
+Less than or equal operator. Matches only if at least one operand is of local type (derived from local <code>op</code>).
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00696">696</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+---
+
+This overload of the less than or equal operator enables comparison between two operands, where at least one is a local type derived from the local <code>op</code> base. It constructs a comparator object that can be used within the µTest++ framework to assert that the left hand side operand is less than or equal to the right hand side operand. This operator is intended for use with the framework&#39;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
+<ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] lhs">Left hand side operand.</ParametersListItem>
+<ParametersListItem name="[in] rhs">Right hand side operand.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+A comparator object that evaluates to true if the left hand side operand is less than or equal to the right hand side operand.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l01078">1078</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### operator==() {#ga26bc1232c48df9b79463025f66da5f1f}
@@ -228,9 +334,28 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;op&#95;v&lt; Lhs&#95;T &gt; or type&#95;traits::is&#95;op&#95;v&lt; Rhs&#95;T &gt; &gt; = 0&gt;</>}
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::operators::operator== (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
-Equality operator. It matches only if at least one operand is of local type (derived from local <code>op</code>).
+Equality operator for custom types. Matches only if at least one operand is of local type.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00622">622</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+---
+
+This overload of the equality operator enables comparison between two operands, where at least one is a local type derived from the local <code>op</code> base. It constructs a comparator object that can be used within the µTest++ framework to assert that the operands are equal. This operator is intended for use with the framework&#39;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
+<ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] lhs">Left hand side operand.</ParametersListItem>
+<ParametersListItem name="[in] rhs">Right hand side operand.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+A comparator object that evaluates to true if the operands are equal.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00922">922</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### operator&gt;() {#gabd2a0c082adee2dbdd69043ba8d34dcd}
@@ -239,9 +364,28 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;op&#95;v&lt; Lhs&#95;T &gt; or type&#95;traits::is&#95;op&#95;v&lt; Rhs&#95;T &gt; &gt; = 0&gt;</>}
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::operators::operator&gt; (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
-Greater than operator. It matches only if at least one operand is of local type (derived from local <code>op</code>).
+Greater than operator. Matches only if at least one operand is of local type (derived from local <code>op</code>).
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00652">652</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+---
+
+This overload of the greater than operator enables comparison between two operands, where at least one is a local type derived from the local <code>op</code> base. It constructs a comparator object that can be used within the µTest++ framework to assert that the left hand side operand is greater than the right hand side operand. This operator is intended for use with the framework&#39;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
+<ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] lhs">Left hand side operand.</ParametersListItem>
+<ParametersListItem name="[in] rhs">Right hand side operand.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+A comparator object that evaluates to true if the left hand side operand is greater than the right hand side operand.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00984">984</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### operator&gt;=() {#ga676092b57233f1137778ee9c38e24a46}
@@ -250,9 +394,28 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;op&#95;v&lt; Lhs&#95;T &gt; or type&#95;traits::is&#95;op&#95;v&lt; Rhs&#95;T &gt; &gt; = 0&gt;</>}
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::operators::operator&gt;= (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
-Greater than or equal operator. It matches only if at least one operand is of local type (derived from local <code>op</code>).
+Greater than or equal operator. Matches only if at least one operand is of local type (derived from local <code>op</code>).
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00667">667</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+---
+
+This overload of the greater than or equal operator enables comparison between two operands, where at least one is a local type derived from the local <code>op</code> base. It constructs a comparator object that can be used within the µTest++ framework to assert that the left hand side operand is greater than or equal to the right hand side operand. This operator is intended for use with the framework&#39;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
+<ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] lhs">Left hand side operand.</ParametersListItem>
+<ParametersListItem name="[in] rhs">Right hand side operand.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+A comparator object that evaluates to true if the left hand side operand is greater than or equal to the right hand side operand.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l01016">1016</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

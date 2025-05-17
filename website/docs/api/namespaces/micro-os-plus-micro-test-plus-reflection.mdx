@@ -19,7 +19,10 @@ import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
 import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
 import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
 
 # The `reflection` Namespace Reference
 
@@ -38,7 +41,7 @@ Reflection utilities for the µTest++ testing framework. <Link to="#details">Mor
 <MembersIndexItem
   type="class"
   name={<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">source&#95;location</Link>}>
-Local implementation of the std::source&#95;location. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#details">More...</Link>
+Local implementation of source location information for diagnostics. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#details">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -50,12 +53,13 @@ Local implementation of the std::source&#95;location. <Link to="/docs/api/classe
 <MembersIndexItem
   type={<>const char &#42;</>}
   name={<><Link to="#ab4fa1159ebe60ce5fe073eefbe9a2446">short&#95;name</Link> (const char &#42;name)</>}>
+Extract a short type or function name from a fully qualified name. <Link to="#ab4fa1159ebe60ce5fe073eefbe9a2446">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type={<>constexpr std::string&#95;view</>}
   name={<><Link to="#aaaad9b26021a442cdd7e634888e462d6">type&#95;name</Link> ()</>}>
-Parse the <b>PRETTY&#95;FUNCTION</b> macro to extract the type name. <Link to="#aaaad9b26021a442cdd7e634888e462d6">More...</Link>
+Extract the type name from the <code>&#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;</code> macro. <Link to="#aaaad9b26021a442cdd7e634888e462d6">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -66,7 +70,7 @@ The <code>reflection</code> namespace provides facilities for obtaining source l
 
 It includes a local implementation of <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">source&#95;location</Link></code> for environments lacking C++20 standard support, as well as utilities for extracting concise type names from compiler-specific macros such as <code>&#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;</code>.
 
-All definitions within this namespace are intended to facilitate advanced reflection and reporting capabilities, and are implemented in the <code>include/micro-os-plus</code> folder to maintain a structured and modular codebase.
+All definitions within this namespace are intended to facilitate advanced reflection and reporting capabilities.
 
 <SectionDefinition>
 
@@ -76,8 +80,21 @@ All definitions within this namespace are intended to facilitate advanced reflec
 
 <MemberDefinition
   prototype={<>const char &#42; micro&#95;os&#95;plus::micro&#95;test&#95;plus::reflection::short&#95;name (const char &#42; name)</>}>
+Extract a short type or function name from a fully qualified name.
 
-Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00115">115</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
+---
+
+<ParametersList title="Parameters">
+<ParametersListItem name="name">The fully qualified name as a C-string.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+A pointer to the short name within the input string.
+</SectionUser>
+
+This function extracts the short name from a given file path by locating the final folder separator (&#39;/&#39;). If a separator is found, it returns a pointer to the character immediately following it, effectively providing the file or folder name. If no separator is present, the original input string is returned. This utility is useful for reporting concise file or folder names in test output.
+
+Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00121">121</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
 </MemberDefinition>
 
 ### type&#95;name() {#aaaad9b26021a442cdd7e634888e462d6}
@@ -86,9 +103,24 @@ Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00115">11
   template={<>template &lt;class T&gt;</>}
   prototype={<>std::string&#95;view micro&#95;os&#95;plus::micro&#95;test&#95;plus::reflection::type&#95;name ()</>}
   labels = {["nodiscard", "constexpr"]}>
-Parse the <b>PRETTY&#95;FUNCTION</b> macro to extract the type name.
+Extract the type name from the <code>&#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;</code> macro.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h/#l00151">151</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">reflection.h</Link>.
+---
+
+This function template parses the compiler-specific <code>&#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;</code> macro to extract a concise type name for the template parameter <code>T</code>.
+
+The implementation is compiler-dependent and may require adjustment for different toolchains. It is primarily intended for internal use within the µTest++ framework to support improved diagnostics and reporting.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="T">The type whose name is to be extracted.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+A <code>std::string&#95;view</code> containing the extracted type name.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h/#l00225">225</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">reflection.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

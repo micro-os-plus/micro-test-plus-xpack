@@ -22,13 +22,16 @@ import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/Includ
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
 import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
 import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
 
 # The `source_location` Class Reference
 
 <DoxygenPage version="1.13.2">
 
-Local implementation of the std::source&#95;location. <Link to="#details">More...</Link>
+Local implementation of source location information for diagnostics. <Link to="#details">More...</Link>
 
 ## Declaration
 
@@ -50,11 +53,13 @@ Local implementation of the std::source&#95;location. <Link to="#details">More..
 <MembersIndexItem
   type={<>const char &#42;</>}
   name={<><Link to="#ae648fa43322766fbeb3f9103b43bcc4b">file&#95;</Link> &#123; &quot;unknown&quot; &#125;</>}>
+The file name where the source location was captured. <Link to="#ae648fa43322766fbeb3f9103b43bcc4b">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="unsigned int"
   name={<><Link to="#a0e805c2ed2234f2c004fd7196b844fc5">line&#95;</Link> &#123;&#125;</>}>
+The line number where the source location was captured. <Link to="#a0e805c2ed2234f2c004fd7196b844fc5">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -66,6 +71,7 @@ Local implementation of the std::source&#95;location. <Link to="#details">More..
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="#a6e2ad380f42d7a7ec3c92268a5976e58">current</Link> (const char &#42;file=&quot;unknown&quot;, unsigned int line=&#123;&#125;) noexcept</>}>
+Obtain the current source location. <Link to="#a6e2ad380f42d7a7ec3c92268a5976e58">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -77,20 +83,31 @@ Local implementation of the std::source&#95;location. <Link to="#details">More..
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="#a2700e3553bfe1dc45979ccbadd1551d9">file&#95;name</Link> () const noexcept</>}>
+Retrieve the file name associated with this source location. <Link to="#a2700e3553bfe1dc45979ccbadd1551d9">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="#a8c92e0db786ddfee8b8e1eceb4398d01">line</Link> () const noexcept</>}>
+Retrieve the line number associated with this source location. <Link to="#a8c92e0db786ddfee8b8e1eceb4398d01">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
 
 ## Description {#details}
 
-TODO: add <code>@details</code> to <code>@class micro_os_plus::micro_test_plus::reflection::source_location</code>
+This class provides a lightweight, constexpr-compatible alternative to <code>std::source&#95;location</code> for environments lacking C++20 standard support.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h/#l00103">103</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">reflection.h</Link>.
+It enables retrieval of the file name and line number at the point of invocation, supporting enhanced diagnostics and reporting within the µTest++ framework.
+
+The static <code><Link to="#a6e2ad380f42d7a7ec3c92268a5976e58">current()</Link></code> method captures the current source location, using compiler built-ins where available, or defaulting to <code>&quot;unknown&quot;</code> and zero otherwise.
+
+
+<SectionUser title="Since">
+3.0.0
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h/#l00131">131</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">reflection.h</Link>.
 
 <SectionDefinition>
 
@@ -100,16 +117,18 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 
 <MemberDefinition
   prototype={<>const char&#42; micro&#95;os&#95;plus::micro&#95;test&#95;plus::reflection::source&#95;location::file&#95; &#123; &quot;unknown&quot; &#125;</>}>
+The file name where the source location was captured.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h/#l00135">135</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">reflection.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h/#l00188">188</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">reflection.h</Link>.
 </MemberDefinition>
 
 ### line&#95; {#a0e805c2ed2234f2c004fd7196b844fc5}
 
 <MemberDefinition
   prototype={<>unsigned int micro&#95;os&#95;plus::micro&#95;test&#95;plus::reflection::source&#95;location::line&#95; &#123;&#125;</>}>
+The line number where the source location was captured.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h/#l00136">136</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">reflection.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h/#l00192">192</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">reflection.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -123,8 +142,25 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <MemberDefinition
   prototype={<>static constexpr auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::reflection::source&#95;location::current (const char &#42; file=&quot;unknown&quot;, unsigned int line=&#123;&#125;)</>}
   labels = {["inline", "nodiscard", "constexpr", "noexcept", "static"]}>
+Obtain the current source location.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h/#l00107">107</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">reflection.h</Link>.
+---
+
+Returns a <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">source&#95;location</Link></code> instance representing the file name and line number at the point of invocation.
+
+If supported by the compiler, uses built-in macros to capture this information; otherwise, defaults to <code>&quot;unknown&quot;</code> and zero.
+
+
+<ParametersList title="Parameters">
+<ParametersListItem name="file">The file name (automatically provided by the compiler).</ParametersListItem>
+<ParametersListItem name="line">The line number (automatically provided by the compiler).</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+A <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">source&#95;location</Link></code> instance with the captured information.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h/#l00149">149</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">reflection.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -138,8 +174,15 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <MemberDefinition
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::reflection::source&#95;location::file&#95;name () const</>}
   labels = {["inline", "nodiscard", "constexpr", "noexcept"]}>
+Retrieve the file name associated with this source location.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h/#l00123">123</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">reflection.h</Link>.
+---
+
+<SectionUser title="Returns">
+The file name as a constant character pointer.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h/#l00169">169</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">reflection.h</Link>.
 </MemberDefinition>
 
 ### line() {#a8c92e0db786ddfee8b8e1eceb4398d01}
@@ -147,8 +190,15 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <MemberDefinition
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::reflection::source&#95;location::line () const</>}
   labels = {["inline", "nodiscard", "constexpr", "noexcept"]}>
+Retrieve the line number associated with this source location.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h/#l00129">129</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">reflection.h</Link>.
+---
+
+<SectionUser title="Returns">
+The line number as an unsigned integer.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h/#l00179">179</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">reflection.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

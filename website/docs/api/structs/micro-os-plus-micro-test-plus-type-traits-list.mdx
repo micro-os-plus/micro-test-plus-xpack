@@ -19,12 +19,14 @@ import CodeBlock from '@theme/CodeBlock'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
 
 # The `list` Struct Template Reference
 
 <DoxygenPage version="1.13.2">
 
-TODO: add <code>@brief</code> to <code>@struct micro_os_plus::micro_test_plus::type_traits::list</code>
+Struct template representing a compile-time type list. <Link to="#details">More...</Link>
 
 ## Declaration
 
@@ -42,8 +44,15 @@ struct micro_os_plus::micro_test_plus::type_traits::list&lt;class...&gt;;</CodeB
 
 ## Description {#details}
 
-TODO: add <code>@details</code> to <code>@struct micro_os_plus::micro_test_plus::type_traits::list</code>
+The <code>list</code> struct template provides a mechanism for grouping an arbitrary number of types into a single type list at compile time. This is a fundamental building block for template metaprogramming, enabling operations such as type iteration, transformation, and introspection within the µTest++ framework.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00101">101</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+The type list is commonly used in conjunction with function traits and other metaprogramming utilities to facilitate advanced type manipulations and compile-time computations.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="...Types">The types to be included in the list.</ParametersListItem>
+</ParametersList>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00117">117</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 
 </DoxygenPage>

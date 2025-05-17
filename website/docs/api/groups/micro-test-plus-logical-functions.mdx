@@ -30,7 +30,7 @@ import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser
 
 <DoxygenPage version="1.13.2">
 
-Functions utilised in logical expressions. <Link to="#details">More...</Link>
+Functions used to compose logical expressions in tests. <Link to="#details">More...</Link>
 
 ## Functions Index
 
@@ -39,31 +39,28 @@ Functions utilised in logical expressions. <Link to="#details">More...</Link>
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="#ga8b43b7658b43fb76daf5efbb2e03d236">&#95;and</Link> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
-Generic logical <b>and</b>. <Link to="#ga8b43b7658b43fb76daf5efbb2e03d236">More...</Link>
+Generic logical <b>and</b> operation. <Link to="#ga8b43b7658b43fb76daf5efbb2e03d236">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="#gad9ad936174faf965cffe4493e2b64cf0">&#95;not</Link> (const Expr&#95;T &amp;expr)</>}>
-Generic logical <b>not</b>. <Link to="#gad9ad936174faf965cffe4493e2b64cf0">More...</Link>
+Generic logical <b>not</b> operation. <Link to="#gad9ad936174faf965cffe4493e2b64cf0">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="#gad32b40e4b0022b276fa3b357b98a33c5">&#95;or</Link> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
-Generic logical <b>or</b>. <Link to="#gad32b40e4b0022b276fa3b357b98a33c5">More...</Link>
+Generic logical <b>or</b> operation. <Link to="#gad32b40e4b0022b276fa3b357b98a33c5">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
 
 ## Description {#details}
 
-Complex expressions may be evaluated within a single statement by employing the logical functions <code>mt::&#95;and()</code>, <code>mt::&#95;or()</code>, and <code>mt::&#95;not()</code>.
+The µTest++ framework provides logical functions for composing complex test expressions within a single statement. The functions <code>mt::&#95;and()</code>, <code>mt::&#95;or()</code>, and <code>mt::&#95;not()</code> enable the combination of multiple conditions, allowing for expressive and concise test logic.
 
-
-:::info
-These names are prefixed with an underscore, as <code>and</code>, <code>or</code>, and <code>not</code> are reserved keywords in both C and C++.
-:::
+These function names are prefixed with an underscore because <code>and</code>, <code>or</code>, and <code>not</code> are reserved keywords in both C and C++. By using these logical functions, developers can clearly express compound conditions and improve the readability of their test cases.
 
 
 <SectionUser title="Example">
@@ -78,10 +75,7 @@ These names are prefixed with an underscore, as <code>and</code>, <code>or</code
 
 </ProgramListing>
 
-
-:::info
-When the operands are function comparators, it is recommended to utilise the overloaded logical operators <code>&amp;&amp;</code>, <code>||</code>, and <code>!</code> provided within the <code>micro&#95;test&#95;plus::operators</code> namespace.
-:::
+When the operands are function comparators, it is recommended to use the overloaded logical operators <code>&amp;&amp;</code>, <code>||</code>, and <code>!</code> provided within the <code>micro&#95;test&#95;plus::operators</code> namespace for even more natural expression of logical conditions.
 
 <SectionDefinition>
 
@@ -93,7 +87,14 @@ When the operands are function comparators, it is recommended to utilise the ove
   template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T&gt;</>}
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;and (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
-Generic logical <b>and</b>.
+Generic logical <b>and</b> operation.
+
+---
+
+The <code>&#95;and</code> function template provides a generic logical conjunction for any expression types. It constructs a logical conjunction object that can be used within the µTest++ framework to assert that both given conditions are true. This function is typically used in test expectations and assertions to combine logical expressions or custom comparators.
+
+The underscore in the function name is intentional to differentiate it from the standard logical and operator.
+
 
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
@@ -106,15 +107,10 @@ Generic logical <b>and</b>.
 </ParametersList>
 
 <SectionUser title="Returns">
-True if both operand expressions are true.
+An object that evaluates to true if both operand expressions are true.
 </SectionUser>
 
-
-:::info
-The underscore is intentional, to differentiate from the standard operator.
-:::
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00502">502</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00709">709</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### &#95;not() {#gad9ad936174faf965cffe4493e2b64cf0}
@@ -123,26 +119,28 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class Expr&#95;T&gt;</>}
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;not (const Expr&#95;T &amp; expr)</>}
   labels = {["nodiscard", "constexpr"]}>
-Generic logical <b>not</b>.
+Generic logical <b>not</b> operation.
+
+---
+
+The <code>&#95;not</code> function template provides a generic logical negation for any expression type. It constructs a logical negator object that can be used within the µTest++ framework to assert that a given condition is false. This function is typically used in test expectations and assertions to invert logical expressions or custom comparators.
+
+The underscore in the function name is intentional to differentiate it from the standard logical not operator.
+
 
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Expr&#95;T">Type of the operand.</ParametersListItem>
 </ParametersList>
 
 <ParametersList title="Parameters">
-<ParametersListItem name="[in] expr">Logical expression.</ParametersListItem>
+<ParametersListItem name="[in] expr">Logical expression to be negated.</ParametersListItem>
 </ParametersList>
 
 <SectionUser title="Returns">
-True if the operand is false.
+An object that evaluates to true if the operand is false.
 </SectionUser>
 
-
-:::info
-The underscore is intentional, to differentiate from the standard operator.
-:::
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00482">482</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00681">681</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### &#95;or() {#gad32b40e4b0022b276fa3b357b98a33c5}
@@ -151,7 +149,14 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T&gt;</>}
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;or (const Lhs&#95;T &amp; lhs, const Rhs&#95;T &amp; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
-Generic logical <b>or</b>.
+Generic logical <b>or</b> operation.
+
+---
+
+The <code>&#95;or</code> function template provides a generic logical disjunction for any expression types. It constructs a logical disjunction object that can be used within the µTest++ framework to assert that at least one of the given conditions is true. This function is typically used in test expectations and assertions to combine logical expressions or custom comparators.
+
+The underscore in the function name is intentional to differentiate it from the standard logical or operator.
+
 
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
@@ -164,15 +169,10 @@ Generic logical <b>or</b>.
 </ParametersList>
 
 <SectionUser title="Returns">
-True if at least one of the operand expressions is true.
+An object that evaluates to true if at least one of the operand expressions is true.
 </SectionUser>
 
-
-:::info
-The underscore is intentional, to differentiate from the standard operator.
-:::
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00522">522</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00737">737</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

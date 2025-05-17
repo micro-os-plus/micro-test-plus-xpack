@@ -19,12 +19,14 @@ import CodeBlock from '@theme/CodeBlock'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
 
 # The `requires_` Struct Template Reference
 
 <DoxygenPage version="1.13.2">
 
-TODO: add <code>@brief</code> to <code>@struct micro_os_plus::micro_test_plus::type_traits::requires_</code>
+Struct template for SFINAE requirements. <Link to="#details">More...</Link>
 
 ## Declaration
 
@@ -42,8 +44,15 @@ struct micro_os_plus::micro_test_plus::type_traits::requires_&lt;bool&gt;;</Code
 
 ## Description {#details}
 
-TODO: add <code>@details</code> to <code>@struct micro_os_plus::micro_test_plus::type_traits::requires_</code>
+The <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires-">requires&#95;</Link></code> struct template is a utility for SFINAE (Substitution Failure Is Not An Error) in template metaprogramming. It is typically used to enable or disable template specialisations and function templates based on compile-time boolean conditions.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00233">233</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+When the boolean template parameter is <code>true</code>, the specialisation provides a nested <code>type</code> alias, which can be used in conjunction with <code>typename</code> and <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a1cbbf299a006b4692df250ef2a6fc7c2">requires&#95;t</Link></code> to enforce requirements in template declarations.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="Cond">The boolean condition to be checked at compile time.</ParametersListItem>
+</ParametersList>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00615">615</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 
 </DoxygenPage>

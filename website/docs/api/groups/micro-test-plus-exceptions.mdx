@@ -30,7 +30,7 @@ import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser
 
 <DoxygenPage version="1.13.2">
 
-Functions for verifying exceptions. <Link to="#details">More...</Link>
+Functions for verifying exceptions in test cases. <Link to="#details">More...</Link>
 
 ## Functions Index
 
@@ -39,7 +39,7 @@ Functions for verifying exceptions. <Link to="#details">More...</Link>
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="#ga798bd28001c3938784073e60dd904148">nothrow</Link> (const Callable&#95;T &amp;func)</>}>
-Check if a callable doesn&#39;t throw an exception. <Link to="#ga798bd28001c3938784073e60dd904148">More...</Link>
+Check if a callable does not throw an exception. <Link to="#ga798bd28001c3938784073e60dd904148">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
@@ -58,7 +58,11 @@ Check if a callable throws an exception (any exception). <Link to="#ga8bf54756e4
 
 ## Description {#details}
 
-A C++ testing framework should be capable of determining whether an expression (typically a function call) throws an exception.
+The µTest++ framework provides dedicated functions for verifying whether specific expressions or function calls throw exceptions, supporting robust testing of error handling and exceptional conditions in C++ code.
+
+These utilities enable developers to assert that exceptions are correctly thrown or not thrown as expected, improving the reliability and safety of software components. The framework supports both generic exception checks and type-specific exception verification, allowing for precise and expressive test cases.
+
+For more advanced scenarios, such as handling multiple expected exceptions, developers can use explicit <code>try</code> blocks with multiple <code>catch</code> statements and report the results using <code>expect(true)</code> or <code>expect(false)</code>. This approach ensures comprehensive coverage of exception handling logic.
 
 
 <SectionUser title="Examples">
@@ -113,21 +117,28 @@ If more advanced logic is required, such as handling multiple expected exception
   template={<>template &lt;class Callable&#95;T&gt;</>}
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::nothrow (const Callable&#95;T &amp; func)</>}
   labels = {["nodiscard", "constexpr"]}>
-Check if a callable doesn&#39;t throw an exception.
+Check if a callable does not throw an exception.
+
+---
+
+The <code>nothrow</code> function template verifies whether invoking the provided callable object does not result in the throwing of any exception within the µTest++ framework. This is useful for testing exception safety and ensuring that code under test does not unexpectedly signal error conditions.
+
+The function returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes.
+
 
 <ParametersList title="Template Parameters">
-<ParametersListItem name="Callable&#95;T">The type of an object that can be called.</ParametersListItem>
+<ParametersListItem name="Callable&#95;T">The type of the callable object to be invoked.</ParametersListItem>
 </ParametersList>
 
 <ParametersList title="Parameters">
-<ParametersListItem name="[in] func">Function to check.</ParametersListItem>
+<ParametersListItem name="[in] func">The callable object to check for exception safety.</ParametersListItem>
 </ParametersList>
 
 <SectionUser title="Returns">
 An output stream to write optional messages.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00267">267</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00350">350</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### throws() {#gaf8f7602f40119da514be2a0bfc4b70f5}
@@ -138,20 +149,27 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["nodiscard", "constexpr"]}>
 Check if a callable throws a specific exception.
 
+---
+
+The <code>throws</code> function template verifies whether invoking the provided callable object results in the throwing of a specific exception type within the µTest++ framework. This is useful for testing error handling and exception safety in code under test.
+
+The function returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes.
+
+
 <ParametersList title="Template Parameters">
-<ParametersListItem name="Exception&#95;T">Type of the exception.</ParametersListItem>
-<ParametersListItem name="Callable&#95;T">The type of an object that can be called.</ParametersListItem>
+<ParametersListItem name="Exception&#95;T">The type of the exception expected to be thrown.</ParametersListItem>
+<ParametersListItem name="Callable&#95;T">The type of the callable object to be invoked.</ParametersListItem>
 </ParametersList>
 
 <ParametersList title="Parameters">
-<ParametersListItem name="[in] func">Function to check.</ParametersListItem>
+<ParametersListItem name="[in] func">The callable object to check for exception throwing behaviour.</ParametersListItem>
 </ParametersList>
 
 <SectionUser title="Returns">
 An output stream to write optional messages.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00239">239</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00300">300</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### throws() {#ga8bf54756e4122c6a0bd123b4621e60e2}
@@ -162,19 +180,26 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["nodiscard", "constexpr"]}>
 Check if a callable throws an exception (any exception).
 
+---
+
+The <code>throws</code> function template verifies whether invoking the provided callable object results in the throwing of any exception within the µTest++ framework. This is useful for testing general exception safety and ensuring that code under test properly signals error conditions.
+
+The function returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes.
+
+
 <ParametersList title="Template Parameters">
-<ParametersListItem name="Callable&#95;T">The type of an object that can be called.</ParametersListItem>
+<ParametersListItem name="Callable&#95;T">The type of the callable object to be invoked.</ParametersListItem>
 </ParametersList>
 
 <ParametersList title="Parameters">
-<ParametersListItem name="[in] func">Function to check.</ParametersListItem>
+<ParametersListItem name="[in] func">The callable object to check for exception throwing behaviour.</ParametersListItem>
 </ParametersList>
 
 <SectionUser title="Returns">
 An output stream to write optional messages.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00253">253</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00325">325</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

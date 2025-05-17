@@ -30,7 +30,7 @@ import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser
 
 <DoxygenPage version="1.13.2">
 
-Functions to assist with string operations. <Link to="#details">More...</Link>
+Utility functions for advanced string handling in tests. <Link to="#details">More...</Link>
 
 ## Functions Index
 
@@ -43,6 +43,12 @@ Check if a string matches a pattern. <Link to="#gaa2f0f4cff320a783ad2347c9ff3fc7
 </MembersIndexItem>
 
 <MembersIndexItem
+  type={<>constexpr T &amp;</>}
+  name={<><Link to="#ga00ea8f3dfb7cb0ef39919065321cf62f">mut</Link> (const T &amp;t) noexcept</>}>
+Generic mutator to remove const qualification from any type. <Link to="#ga00ea8f3dfb7cb0ef39919065321cf62f">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
   type="auto "
   name={<><Link to="#ga1b860aa64be17658d1664de447e6e125">split</Link> (T input, Delim&#95;T delim) -&gt; std::vector&lt; T &gt;</>}>
 Split a string into a vector of sub-strings. <Link to="#ga1b860aa64be17658d1664de447e6e125">More...</Link>
@@ -52,7 +58,7 @@ Split a string into a vector of sub-strings. <Link to="#ga1b860aa64be17658d1664d
 
 ## Description {#details}
 
-When performing string operations within tests, it is sometimes necessary to match partial strings or to split lengthy strings.
+The µTest++ framework includes a collection of utility functions designed to simplify advanced string operations commonly required during test development. These functions support tasks such as partial string matching, splitting long strings for improved readability, and other manipulations that enhance the clarity and effectiveness of test code.
 
 <SectionDefinition>
 
@@ -65,16 +71,21 @@ When performing string operations within tests, it is sometimes necessary to mat
   labels = {["nodiscard"]}>
 Check if a string matches a pattern.
 
+---
+
+The <code>is&#95;match</code> function determines whether the specified input string matches the given pattern. This utility is particularly useful for validating string content against wildcard or template patterns within test cases in the µTest++ framework.
+
+
 <ParametersList title="Parameters">
-<ParametersListItem name="[in] input">String view to check.</ParametersListItem>
-<ParametersListItem name="[in] pattern">Sting view with the pattern.</ParametersListItem>
+<ParametersListItem name="[in] input">The string view to be checked.</ParametersListItem>
+<ParametersListItem name="[in] pattern">The string view containing the pattern to match.</ParametersListItem>
 </ParametersList>
 
 <SectionUser title="Returns">
-True if the string matches the pattern.
+<code>true</code> if the input string matches the pattern; otherwise, <code>false</code>.
 </SectionUser>
 
-For tests comparing strings, in addition to exact matches, it is also possible to check matches with patterns like <code>&#42;</code> (for any characters) and <code>?</code> (for a single character)
+This function enables pattern-based string comparison for tests, supporting both exact matches and wildcard patterns. The pattern may include <code>&#42;</code> to match any sequence of characters and <code>?</code> to match any single character. This allows for flexible validation of string content in test assertions, accommodating variable or partially known values.
 
 
 <SectionUser title="Examples">
@@ -91,7 +102,35 @@ For tests comparing strings, in addition to exact matches, it is also possible t
 
 </ProgramListing>
 
-Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00156">156</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
+Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00164">164</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
+</MemberDefinition>
+
+### mut() {#ga00ea8f3dfb7cb0ef39919065321cf62f}
+
+<MemberDefinition
+  template={<>template &lt;class T&gt;</>}
+  prototype={<>T &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::mut (const T &amp; t)</>}
+  labels = {["nodiscard", "constexpr", "noexcept"]}>
+Generic mutator to remove const qualification from any type.
+
+---
+
+The <code>mut</code> function template provides a safe and generic mechanism to remove the <code>const</code> qualifier from any type. It returns a non-const reference to the input object, enabling modification of objects that were originally declared as <code>const</code>. This utility is particularly useful in testing scenarios where controlled mutation of test data is required.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="T">The type of the input object.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] t">The object from which to remove const qualification.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+A non-const reference to the input object.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00759">759</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 ### split() {#ga1b860aa64be17658d1664de447e6e125}
@@ -101,6 +140,11 @@ Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00156">15
   prototype={<>std::vector&lt; T &gt; micro&#95;os&#95;plus::micro&#95;test&#95;plus::utility::split (T input, Delim&#95;T delim)</>}
   labels = {["nodiscard"]}>
 Split a string into a vector of sub-strings.
+
+---
+
+The <code>split</code> function template divides the input string into a vector of sub-strings, using the specified delimiter. This utility is particularly useful for parsing and processing delimited data within test cases in the µTest++ framework.
+
 
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">Type of the input string.</ParametersListItem>
@@ -113,10 +157,12 @@ Split a string into a vector of sub-strings.
 </ParametersList>
 
 <SectionUser title="Returns">
-An array of strings.
+A vector containing the resulting sub-strings.
 </SectionUser>
 
-For tests handling strings, this function template allows to split a string into a vector of substrings, using a delimiter.
+This function template facilitates string handling in tests by splitting a string into a vector of substrings, using the specified delimiter.
+
+The function iterates through the input string, identifying delimiter positions and extracting substrings between them. Each resulting substring is added to the output vector. This approach supports flexible parsing of delimited data, which is particularly useful for validating string processing logic in test cases.
 
 
 <SectionUser title="Example">
@@ -134,7 +180,7 @@ For tests handling strings, this function template allows to split a string into
 
 </ProgramListing>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines-h/#l00200">200</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines-h">inlines.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines-h/#l00248">248</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

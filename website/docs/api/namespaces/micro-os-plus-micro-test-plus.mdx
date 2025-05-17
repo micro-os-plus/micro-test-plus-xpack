@@ -21,8 +21,10 @@ import EnumerationListItem from '@xpack/docusaurus-plugin-doxygen/components/Enu
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
 import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
 import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
-import XrefSect from '@xpack/docusaurus-plugin-doxygen/components/XrefSect'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
 
 # The `micro_test_plus` Namespace Reference
 
@@ -59,7 +61,7 @@ Mathematical utilities for the µTest++ testing framework. <Link to="/docs/api/n
 <MembersIndexItem
   type="namespace"
   name={<Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/operators">operators</Link>}>
-Custom operator overloads for the µTest++ testing framework. <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/operators/#details">More...</Link>
+Custom operator overloads for expressive and type-safe test assertions. <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/operators/#details">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
@@ -89,30 +91,31 @@ Utility functions for the µTest++ testing framework. <Link to="/docs/api/namesp
 <MembersIndexItem
   type="struct"
   name={<Link to="/docs/api/structs/micro-os-plus/micro-test-plus/-t">&#95;t&lt;T&gt;</Link>}>
+Deprecated generic strongly-typed wrapper for explicit type conversion. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/-t/#details">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="struct"
   name={<Link to="/docs/api/structs/micro-os-plus/micro-test-plus/colors">colors</Link>}>
-Colours used to highlight pass vs. fail. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/colors/#details">More...</Link>
+Colours used to highlight pass and fail results in test reports. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/colors/#details">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="class"
   name={<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link>}>
-Reporter to display the test results. For failed tests it prints the actual values of the operands, with their types. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#details">More...</Link>
+Reporter to display test results, including operand values and types for failures. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#details">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="class"
   name={<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test&#95;runner</Link>}>
-The test runner. It maintains a list of test suites which automatically register themselves in their constructors. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#details">More...</Link>
+The test runner for the µTest++ framework. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#details">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="class"
   name={<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</Link>}>
-Test suites are classes that represent a named group of test cases which self register to the runner. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#details">More...</Link>
+Represents a named group of test cases that self-register to the runner. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#details">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
@@ -124,7 +127,295 @@ Base class for all test suites. <Link to="/docs/api/classes/micro-os-plus/micro-
 <MembersIndexItem
   type="struct"
   name={<Link to="/docs/api/structs/micro-os-plus/micro-test-plus/to-t">to&#95;t&lt;T&gt;</Link>}>
-Template for wrapping any other type. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/to-t/#details">More...</Link>
+Generic strongly-typed wrapper for explicit type conversion. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/to-t/#details">More...</Link>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Deprecated Type Wrappers Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga74e6e2bffc2fc2dea47f979b5b55ea64">&#95;b</Link> = type&#95;traits::value&lt; bool &gt;</>}>
+Strongly-typed wrapper for <code>bool</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga74e6e2bffc2fc2dea47f979b5b55ea64">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#gabd2f8b7401162835cb4735e4a7532c36">&#95;c</Link> = type&#95;traits::value&lt; char &gt;</>}>
+Strongly-typed wrapper for <code>char</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#gabd2f8b7401162835cb4735e4a7532c36">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga6ab8b464d71f15f55bd047dbfca50899">&#95;d</Link> = type&#95;traits::value&lt; double &gt;</>}>
+Strongly-typed wrapper for <code>double</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga6ab8b464d71f15f55bd047dbfca50899">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#gadcff4454bf86ea03c0c3d1be42b04e12">&#95;f</Link> = type&#95;traits::value&lt; float &gt;</>}>
+Strongly-typed wrapper for <code>float</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#gadcff4454bf86ea03c0c3d1be42b04e12">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga1613ccf081248c601bed0f3022fba652">&#95;i</Link> = type&#95;traits::value&lt; int &gt;</>}>
+Strongly-typed wrapper for <code>int</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga1613ccf081248c601bed0f3022fba652">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#gaec10ef24cb02dd0fb7f5e44227562d51">&#95;i16</Link> = type&#95;traits::value&lt; std::int16&#95;t &gt;</>}>
+Strongly-typed wrapper for <code>std::int16&#95;t</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#gaec10ef24cb02dd0fb7f5e44227562d51">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga5d6deb61637f1d7350a69f62d2971bc3">&#95;i32</Link> = type&#95;traits::value&lt; std::int32&#95;t &gt;</>}>
+Strongly-typed wrapper for <code>std::int32&#95;t</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga5d6deb61637f1d7350a69f62d2971bc3">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#gae98aa89157544638f775d2a90a3ec774">&#95;i64</Link> = type&#95;traits::value&lt; std::int64&#95;t &gt;</>}>
+Strongly-typed wrapper for <code>std::int64&#95;t</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#gae98aa89157544638f775d2a90a3ec774">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga3cb44c2b09802fbee17f324cbdf3f31e">&#95;i8</Link> = type&#95;traits::value&lt; std::int8&#95;t &gt;</>}>
+Strongly-typed wrapper for <code>std::int8&#95;t</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga3cb44c2b09802fbee17f324cbdf3f31e">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#gaaebf2b13e1742a894179deedf8ad82cc">&#95;l</Link> = type&#95;traits::value&lt; long &gt;</>}>
+Strongly-typed wrapper for <code>long</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#gaaebf2b13e1742a894179deedf8ad82cc">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga79572e6e73076a155927ff0c3888ce76">&#95;ld</Link> = type&#95;traits::value&lt; long double &gt;</>}>
+Strongly-typed wrapper for <code>long double</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga79572e6e73076a155927ff0c3888ce76">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga6b000cfa2a8a4c8b04cf6d6f142a76a6">&#95;ll</Link> = type&#95;traits::value&lt; long long &gt;</>}>
+Strongly-typed wrapper for <code>long long</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga6b000cfa2a8a4c8b04cf6d6f142a76a6">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga102b1f7c41452481e6be2bd8da63e4a0">&#95;s</Link> = type&#95;traits::value&lt; short &gt;</>}>
+Strongly-typed wrapper for <code>short</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga102b1f7c41452481e6be2bd8da63e4a0">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#gacf10cd5dca8066e1df77e668b68f3272">&#95;sc</Link> = type&#95;traits::value&lt; signed char &gt;</>}>
+Strongly-typed wrapper for <code>signed char</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#gacf10cd5dca8066e1df77e668b68f3272">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga74b4ecee40263c6b4ac8a60fc6480fac">&#95;u</Link> = type&#95;traits::value&lt; unsigned &gt;</>}>
+Strongly-typed wrapper for <code>unsigned</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga74b4ecee40263c6b4ac8a60fc6480fac">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga07f83438e4c0c85efdeacd78668f3543">&#95;u16</Link> = type&#95;traits::value&lt; std::uint16&#95;t &gt;</>}>
+Strongly-typed wrapper for <code>std::uint16&#95;t</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga07f83438e4c0c85efdeacd78668f3543">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#gaf66382b299dcf814298ae56b75b541d7">&#95;u32</Link> = type&#95;traits::value&lt; std::uint32&#95;t &gt;</>}>
+Strongly-typed wrapper for <code>std::uint32&#95;t</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#gaf66382b299dcf814298ae56b75b541d7">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#gac654508c2894db262cbd0335f76b02bf">&#95;u64</Link> = type&#95;traits::value&lt; std::uint64&#95;t &gt;</>}>
+Strongly-typed wrapper for <code>std::uint64&#95;t</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#gac654508c2894db262cbd0335f76b02bf">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga2e2ad62d8c5d6e3abcfca9a897ae61de">&#95;u8</Link> = type&#95;traits::value&lt; std::uint8&#95;t &gt;</>}>
+Strongly-typed wrapper for <code>std::uint8&#95;t</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga2e2ad62d8c5d6e3abcfca9a897ae61de">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga1ef97880cc5f2e13eea8b4ebb888886a">&#95;uc</Link> = type&#95;traits::value&lt; unsigned char &gt;</>}>
+Strongly-typed wrapper for <code>unsigned char</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga1ef97880cc5f2e13eea8b4ebb888886a">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga9cb69b5dc7c394a57e1b09c919b0f6ab">&#95;ul</Link> = type&#95;traits::value&lt; unsigned long &gt;</>}>
+Strongly-typed wrapper for <code>unsigned long</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga9cb69b5dc7c394a57e1b09c919b0f6ab">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga0b9d74a6595fe7fdefca21255ab59dc8">&#95;ull</Link> = type&#95;traits::value&lt; unsigned long long &gt;</>}>
+Strongly-typed wrapper for <code>unsigned long long</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga0b9d74a6595fe7fdefca21255ab59dc8">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga67992fcc21a60e3dd1fb4c9c5ebc814a">&#95;us</Link> = type&#95;traits::value&lt; unsigned short &gt;</>}>
+Strongly-typed wrapper for <code>unsigned short</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga67992fcc21a60e3dd1fb4c9c5ebc814a">More...</Link>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Type Wrappers Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga6bdfe5c187140ee99d0bcabd5bb65156">to&#95;b</Link> = type&#95;traits::value&lt; bool &gt;</>}>
+Strongly-typed wrapper for <code>bool</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga6bdfe5c187140ee99d0bcabd5bb65156">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga5d14217f53925b323f4236298e3dcc90">to&#95;c</Link> = type&#95;traits::value&lt; char &gt;</>}>
+Strongly-typed wrapper for <code>char</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga5d14217f53925b323f4236298e3dcc90">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga3b9d6825aa201bf1fdf9cbe8c0ad4bff">to&#95;d</Link> = type&#95;traits::value&lt; double &gt;</>}>
+Strongly-typed wrapper for <code>double</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga3b9d6825aa201bf1fdf9cbe8c0ad4bff">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga3c89dfb65d916dfc34dfdfcb10334b5c">to&#95;f</Link> = type&#95;traits::value&lt; float &gt;</>}>
+Strongly-typed wrapper for <code>float</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga3c89dfb65d916dfc34dfdfcb10334b5c">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#gab6ddb21470182cbdcf06436cde43718f">to&#95;i</Link> = type&#95;traits::value&lt; int &gt;</>}>
+Strongly-typed wrapper for <code>int</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#gab6ddb21470182cbdcf06436cde43718f">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#gaf22a7774a4b05de9779d9084ed41a02a">to&#95;i16</Link> = type&#95;traits::value&lt; std::int16&#95;t &gt;</>}>
+Strongly-typed wrapper for <code>std::int16&#95;t</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#gaf22a7774a4b05de9779d9084ed41a02a">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga9ca96b6c6d79560f8186c6206ac4f613">to&#95;i32</Link> = type&#95;traits::value&lt; std::int32&#95;t &gt;</>}>
+Strongly-typed wrapper for <code>std::int32&#95;t</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga9ca96b6c6d79560f8186c6206ac4f613">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga240591501696d181e105529c1f52b56c">to&#95;i64</Link> = type&#95;traits::value&lt; std::int64&#95;t &gt;</>}>
+Strongly-typed wrapper for <code>std::int64&#95;t</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga240591501696d181e105529c1f52b56c">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#gaa61c255757e915cb05132602baea088b">to&#95;i8</Link> = type&#95;traits::value&lt; std::int8&#95;t &gt;</>}>
+Strongly-typed wrapper for <code>std::int8&#95;t</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#gaa61c255757e915cb05132602baea088b">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#gaaf580ebebfba7cbe84a89db8574a6aa7">to&#95;l</Link> = type&#95;traits::value&lt; long &gt;</>}>
+Strongly-typed wrapper for <code>long</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#gaaf580ebebfba7cbe84a89db8574a6aa7">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga33a096960b5dddee322e36c689ecbf47">to&#95;ld</Link> = type&#95;traits::value&lt; long double &gt;</>}>
+Strongly-typed wrapper for <code>long double</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga33a096960b5dddee322e36c689ecbf47">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#gab9d11644d3b22e2a9932e64853b5a59d">to&#95;ll</Link> = type&#95;traits::value&lt; long long &gt;</>}>
+Strongly-typed wrapper for <code>long long</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#gab9d11644d3b22e2a9932e64853b5a59d">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga1b39571aeebcb8091bd410a9b247a571">to&#95;s</Link> = type&#95;traits::value&lt; short &gt;</>}>
+Strongly-typed wrapper for <code>short</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga1b39571aeebcb8091bd410a9b247a571">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#gadb22be8fe019b5cd1ad56cfadea5f4ec">to&#95;sc</Link> = type&#95;traits::value&lt; signed char &gt;</>}>
+Strongly-typed wrapper for <code>signed char</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#gadb22be8fe019b5cd1ad56cfadea5f4ec">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#gac8586b75498097cb06b404399c307960">to&#95;u</Link> = type&#95;traits::value&lt; unsigned &gt;</>}>
+Strongly-typed wrapper for <code>unsigned</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#gac8586b75498097cb06b404399c307960">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#gaa60006a01aa94a5fd755aebddd8ceec3">to&#95;u16</Link> = type&#95;traits::value&lt; std::uint16&#95;t &gt;</>}>
+Strongly-typed wrapper for <code>std::uint16&#95;t</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#gaa60006a01aa94a5fd755aebddd8ceec3">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga3bf9f9c946f16b5e02f9f2c45739df42">to&#95;u32</Link> = type&#95;traits::value&lt; std::uint32&#95;t &gt;</>}>
+Strongly-typed wrapper for <code>std::uint32&#95;t</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga3bf9f9c946f16b5e02f9f2c45739df42">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga5fba6fbb12941113aeff430609839ba4">to&#95;u64</Link> = type&#95;traits::value&lt; std::uint64&#95;t &gt;</>}>
+Strongly-typed wrapper for <code>std::uint64&#95;t</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga5fba6fbb12941113aeff430609839ba4">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga8b683d809d600f5c5210bb16546a832e">to&#95;u8</Link> = type&#95;traits::value&lt; std::uint8&#95;t &gt;</>}>
+Strongly-typed wrapper for <code>std::uint8&#95;t</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga8b683d809d600f5c5210bb16546a832e">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga9b60956f6c874e5597cdea6c0323fff1">to&#95;uc</Link> = type&#95;traits::value&lt; unsigned char &gt;</>}>
+Strongly-typed wrapper for <code>unsigned char</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga9b60956f6c874e5597cdea6c0323fff1">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga9f6f56950ba8bce6cc49037af83e443b">to&#95;ul</Link> = type&#95;traits::value&lt; unsigned long &gt;</>}>
+Strongly-typed wrapper for <code>unsigned long</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga9f6f56950ba8bce6cc49037af83e443b">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga595258f3c1b293284f79a88b2872d43d">to&#95;ull</Link> = type&#95;traits::value&lt; unsigned long long &gt;</>}>
+Strongly-typed wrapper for <code>unsigned long long</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#ga595258f3c1b293284f79a88b2872d43d">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="using"
+  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#gac9a34848b05859a18794ece696e37f26">to&#95;us</Link> = type&#95;traits::value&lt; unsigned short &gt;</>}>
+Strongly-typed wrapper for <code>unsigned short</code> values. <Link to="/docs/api/groups/micro-test-plus-literals/#gac9a34848b05859a18794ece696e37f26">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -136,7 +427,7 @@ Template for wrapping any other type. <Link to="/docs/api/structs/micro-os-plus/
 <MembersIndexItem
   type="enum class"
   name={<><Link to="#a809871d76f29309ed9c6fbd96d5a914b">verbosity</Link></>}>
-The verbosity levels. <Link to="#a809871d76f29309ed9c6fbd96d5a914b">More...</Link>
+The verbosity levels for test reporting. <Link to="#a809871d76f29309ed9c6fbd96d5a914b">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -147,237 +438,8 @@ The verbosity levels. <Link to="#a809871d76f29309ed9c6fbd96d5a914b">More...</Lin
 
 <MembersIndexItem
   type="using"
-  name={<><Link to="#a74e6e2bffc2fc2dea47f979b5b55ea64">&#95;b</Link> = <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type&#95;traits::value</Link>&lt; bool &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="#abd2f8b7401162835cb4735e4a7532c36">&#95;c</Link> = <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type&#95;traits::value</Link>&lt; char &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="#a6ab8b464d71f15f55bd047dbfca50899">&#95;d</Link> = <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type&#95;traits::value</Link>&lt; double &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="#adcff4454bf86ea03c0c3d1be42b04e12">&#95;f</Link> = <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type&#95;traits::value</Link>&lt; float &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="#a1613ccf081248c601bed0f3022fba652">&#95;i</Link> = <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type&#95;traits::value</Link>&lt; int &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="#aec10ef24cb02dd0fb7f5e44227562d51">&#95;i16</Link> = <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type&#95;traits::value</Link>&lt; std::int16&#95;t &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="#a5d6deb61637f1d7350a69f62d2971bc3">&#95;i32</Link> = <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type&#95;traits::value</Link>&lt; std::int32&#95;t &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="#ae98aa89157544638f775d2a90a3ec774">&#95;i64</Link> = <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type&#95;traits::value</Link>&lt; std::int64&#95;t &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="#a3cb44c2b09802fbee17f324cbdf3f31e">&#95;i8</Link> = <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type&#95;traits::value</Link>&lt; std::int8&#95;t &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="#aaebf2b13e1742a894179deedf8ad82cc">&#95;l</Link> = <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type&#95;traits::value</Link>&lt; long &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="#a79572e6e73076a155927ff0c3888ce76">&#95;ld</Link> = <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type&#95;traits::value</Link>&lt; long double &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="#a6b000cfa2a8a4c8b04cf6d6f142a76a6">&#95;ll</Link> = <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type&#95;traits::value</Link>&lt; long long &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="#a102b1f7c41452481e6be2bd8da63e4a0">&#95;s</Link> = <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type&#95;traits::value</Link>&lt; short &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="#acf10cd5dca8066e1df77e668b68f3272">&#95;sc</Link> = <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type&#95;traits::value</Link>&lt; signed char &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="#a74b4ecee40263c6b4ac8a60fc6480fac">&#95;u</Link> = <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type&#95;traits::value</Link>&lt; unsigned &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="#a07f83438e4c0c85efdeacd78668f3543">&#95;u16</Link> = <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type&#95;traits::value</Link>&lt; std::uint16&#95;t &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="#af66382b299dcf814298ae56b75b541d7">&#95;u32</Link> = <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type&#95;traits::value</Link>&lt; std::uint32&#95;t &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="#ac654508c2894db262cbd0335f76b02bf">&#95;u64</Link> = <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type&#95;traits::value</Link>&lt; std::uint64&#95;t &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="#a2e2ad62d8c5d6e3abcfca9a897ae61de">&#95;u8</Link> = <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type&#95;traits::value</Link>&lt; std::uint8&#95;t &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="#a1ef97880cc5f2e13eea8b4ebb888886a">&#95;uc</Link> = <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type&#95;traits::value</Link>&lt; unsigned char &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="#a9cb69b5dc7c394a57e1b09c919b0f6ab">&#95;ul</Link> = <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type&#95;traits::value</Link>&lt; unsigned long &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="#a0b9d74a6595fe7fdefca21255ab59dc8">&#95;ull</Link> = <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type&#95;traits::value</Link>&lt; unsigned long long &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="#a67992fcc21a60e3dd1fb4c9c5ebc814a">&#95;us</Link> = <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type&#95;traits::value</Link>&lt; unsigned short &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga6bdfe5c187140ee99d0bcabd5bb65156">to&#95;b</Link> = type&#95;traits::value&lt; bool &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga5d14217f53925b323f4236298e3dcc90">to&#95;c</Link> = type&#95;traits::value&lt; char &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga3b9d6825aa201bf1fdf9cbe8c0ad4bff">to&#95;d</Link> = type&#95;traits::value&lt; double &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga3c89dfb65d916dfc34dfdfcb10334b5c">to&#95;f</Link> = type&#95;traits::value&lt; float &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#gab6ddb21470182cbdcf06436cde43718f">to&#95;i</Link> = type&#95;traits::value&lt; int &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#gaf22a7774a4b05de9779d9084ed41a02a">to&#95;i16</Link> = type&#95;traits::value&lt; std::int16&#95;t &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga9ca96b6c6d79560f8186c6206ac4f613">to&#95;i32</Link> = type&#95;traits::value&lt; std::int32&#95;t &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga240591501696d181e105529c1f52b56c">to&#95;i64</Link> = type&#95;traits::value&lt; std::int64&#95;t &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#gaa61c255757e915cb05132602baea088b">to&#95;i8</Link> = type&#95;traits::value&lt; std::int8&#95;t &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#gaaf580ebebfba7cbe84a89db8574a6aa7">to&#95;l</Link> = type&#95;traits::value&lt; long &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga33a096960b5dddee322e36c689ecbf47">to&#95;ld</Link> = type&#95;traits::value&lt; long double &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#gab9d11644d3b22e2a9932e64853b5a59d">to&#95;ll</Link> = type&#95;traits::value&lt; long long &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga1b39571aeebcb8091bd410a9b247a571">to&#95;s</Link> = type&#95;traits::value&lt; short &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#gadb22be8fe019b5cd1ad56cfadea5f4ec">to&#95;sc</Link> = type&#95;traits::value&lt; signed char &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#gac8586b75498097cb06b404399c307960">to&#95;u</Link> = type&#95;traits::value&lt; unsigned &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#gaa60006a01aa94a5fd755aebddd8ceec3">to&#95;u16</Link> = type&#95;traits::value&lt; std::uint16&#95;t &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga3bf9f9c946f16b5e02f9f2c45739df42">to&#95;u32</Link> = type&#95;traits::value&lt; std::uint32&#95;t &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga5fba6fbb12941113aeff430609839ba4">to&#95;u64</Link> = type&#95;traits::value&lt; std::uint64&#95;t &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga8b683d809d600f5c5210bb16546a832e">to&#95;u8</Link> = type&#95;traits::value&lt; std::uint8&#95;t &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga9b60956f6c874e5597cdea6c0323fff1">to&#95;uc</Link> = type&#95;traits::value&lt; unsigned char &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga9f6f56950ba8bce6cc49037af83e443b">to&#95;ul</Link> = type&#95;traits::value&lt; unsigned long &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga595258f3c1b293284f79a88b2872d43d">to&#95;ull</Link> = type&#95;traits::value&lt; unsigned long long &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#gac9a34848b05859a18794ece696e37f26">to&#95;us</Link> = type&#95;traits::value&lt; unsigned short &gt;</>}>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="using"
   name={<><Link to="#a08e787c2c2f8365df2c9b372605535ac">verbosity&#95;t</Link> = <Link to="#a809871d76f29309ed9c6fbd96d5a914b">verbosity</Link></>}>
+Type alias for the verbosity enumeration used in test reporting. <Link to="#a08e787c2c2f8365df2c9b372605535ac">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -389,16 +451,19 @@ The verbosity levels. <Link to="#a809871d76f29309ed9c6fbd96d5a914b">More...</Lin
 <MembersIndexItem
   type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">test&#95;suite&#95;base</Link> &#42;</>}
   name={<><Link to="#a682fc3ce8c00ebe7c068d6299269655b">current&#95;test&#95;suite</Link></>}>
+Global pointer references the currently active test suite. <Link to="#a682fc3ce8c00ebe7c068d6299269655b">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link></>}
   name={<><Link to="#aec46bdfdb22163bedab8e6b542191834">reporter</Link></>}>
+global instance of <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link></code>. <Link to="#aec46bdfdb22163bedab8e6b542191834">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test&#95;runner</Link></>}
   name={<><Link to="#a469c0f5fefa0b4cea12a7d267dded831">runner</Link></>}>
+Global instance of <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test&#95;runner</Link></code>. <Link to="#a469c0f5fefa0b4cea12a7d267dded831">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -410,48 +475,49 @@ The verbosity levels. <Link to="#a809871d76f29309ed9c6fbd96d5a914b">More...</Lin
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="/docs/api/groups/micro-test-plus-logical-functions/#ga8b43b7658b43fb76daf5efbb2e03d236">&#95;and</Link> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
-Generic logical <b>and</b>. <Link to="/docs/api/groups/micro-test-plus-logical-functions/#ga8b43b7658b43fb76daf5efbb2e03d236">More...</Link>
+Generic logical <b>and</b> operation. <Link to="/docs/api/groups/micro-test-plus-logical-functions/#ga8b43b7658b43fb76daf5efbb2e03d236">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="/docs/api/groups/micro-test-plus-logical-functions/#gad9ad936174faf965cffe4493e2b64cf0">&#95;not</Link> (const Expr&#95;T &amp;expr)</>}>
-Generic logical <b>not</b>. <Link to="/docs/api/groups/micro-test-plus-logical-functions/#gad9ad936174faf965cffe4493e2b64cf0">More...</Link>
+Generic logical <b>not</b> operation. <Link to="/docs/api/groups/micro-test-plus-logical-functions/#gad9ad936174faf965cffe4493e2b64cf0">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="/docs/api/groups/micro-test-plus-logical-functions/#gad32b40e4b0022b276fa3b357b98a33c5">&#95;or</Link> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
-Generic logical <b>or</b>. <Link to="/docs/api/groups/micro-test-plus-logical-functions/#gad32b40e4b0022b276fa3b357b98a33c5">More...</Link>
+Generic logical <b>or</b> operation. <Link to="/docs/api/groups/micro-test-plus-logical-functions/#gad32b40e4b0022b276fa3b357b98a33c5">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="/docs/api/groups/micro-test-plus-assumptions/#ga0f5febbef70eb641691b98583410a1ca">assume</Link> (const Expr&#95;T &amp;expr, const reflection::source&#95;location &amp;sl=reflection::source&#95;location::current())</>}>
-Check a condition and, if false, abort. <Link to="/docs/api/groups/micro-test-plus-assumptions/#ga0f5febbef70eb641691b98583410a1ca">More...</Link>
+Check a condition and, if false, abort test execution. <Link to="/docs/api/groups/micro-test-plus-assumptions/#ga0f5febbef70eb641691b98583410a1ca">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
   name={<><Link to="#ac49ee935c294cb18a5a0e7f58b0b9fb4">endl</Link> (test&#95;reporter &amp;stream)</>}>
+Output stream manipulator for ending a line in test reports. <Link to="#ac49ee935c294cb18a5a0e7f58b0b9fb4">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="/docs/api/groups/micro-test-plus-function-comparators/#gae9dfca849300a917cb1c231d275baaa3">eq</Link> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
-Generic equality comparator. Matches any non-pointer type. <Link to="/docs/api/groups/micro-test-plus-function-comparators/#gae9dfca849300a917cb1c231d275baaa3">More...</Link>
+Generic equality comparator for non-pointer types. <Link to="/docs/api/groups/micro-test-plus-function-comparators/#gae9dfca849300a917cb1c231d275baaa3">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="/docs/api/groups/micro-test-plus-function-comparators/#gabdb021d3d6a5759cd2a5f502b2514dea">eq</Link> (Lhs&#95;T &#42;lhs, Rhs&#95;T &#42;rhs)</>}>
-Pointer equality comparator. Matches pointers to any types. <Link to="/docs/api/groups/micro-test-plus-function-comparators/#gabdb021d3d6a5759cd2a5f502b2514dea">More...</Link>
+Pointer equality comparator for any pointer types. <Link to="/docs/api/groups/micro-test-plus-function-comparators/#gabdb021d3d6a5759cd2a5f502b2514dea">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="int"
   name={<><Link to="/docs/api/groups/micro-test-plus-inits/#gaa790667969dc1a261c324e89a6ea4591">exit&#95;code</Link> (void)</>}>
-Complete the test and return the exit code. <Link to="/docs/api/groups/micro-test-plus-inits/#gaa790667969dc1a261c324e89a6ea4591">More...</Link>
+Complete the test run and return the exit code. <Link to="/docs/api/groups/micro-test-plus-inits/#gaa790667969dc1a261c324e89a6ea4591">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
@@ -487,7 +553,7 @@ Pointer greater than comparator. <Link to="/docs/api/groups/micro-test-plus-func
 <MembersIndexItem
   type="void"
   name={<><Link to="/docs/api/groups/micro-test-plus-inits/#gac2c60d60578f668878957ec68a37538f">initialize</Link> (int argc, char &#42;argv[], const char &#42;name=&quot;Main&quot;)</>}>
-Initialize the test framework. <Link to="/docs/api/groups/micro-test-plus-inits/#gac2c60d60578f668878957ec68a37538f">More...</Link>
+Initialise the µTest++ framework. <Link to="/docs/api/groups/micro-test-plus-inits/#gac2c60d60578f668878957ec68a37538f">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
@@ -499,7 +565,7 @@ Generic less than or equal comparator. <Link to="/docs/api/groups/micro-test-plu
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="/docs/api/groups/micro-test-plus-function-comparators/#gaf8716c55446af28b090eb49acd8cf131">le</Link> (Lhs&#95;T &#42;lhs, Rhs&#95;T &#42;rhs)</>}>
-Generic less than or equal comparator. <Link to="/docs/api/groups/micro-test-plus-function-comparators/#gaf8716c55446af28b090eb49acd8cf131">More...</Link>
+Pointer less than or equal comparator. <Link to="/docs/api/groups/micro-test-plus-function-comparators/#gaf8716c55446af28b090eb49acd8cf131">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
@@ -511,13 +577,13 @@ Generic less than comparator. <Link to="/docs/api/groups/micro-test-plus-functio
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="/docs/api/groups/micro-test-plus-function-comparators/#ga047738c301c4c6b6c7fdb535aecfe097">lt</Link> (Lhs&#95;T &#42;lhs, Rhs&#95;T &#42;rhs)</>}>
-Generic less than comparator. <Link to="/docs/api/groups/micro-test-plus-function-comparators/#ga047738c301c4c6b6c7fdb535aecfe097">More...</Link>
+Pointer less than comparator. <Link to="/docs/api/groups/micro-test-plus-function-comparators/#ga047738c301c4c6b6c7fdb535aecfe097">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type={<>constexpr T &amp;</>}
-  name={<><Link to="#a00ea8f3dfb7cb0ef39919065321cf62f">mut</Link> (const T &amp;t) noexcept</>}>
-Generic mutator, to remove const from any type. <Link to="#a00ea8f3dfb7cb0ef39919065321cf62f">More...</Link>
+  name={<><Link to="/docs/api/groups/micro-test-plus-utility-functions/#ga00ea8f3dfb7cb0ef39919065321cf62f">mut</Link> (const T &amp;t) noexcept</>}>
+Generic mutator to remove const qualification from any type. <Link to="/docs/api/groups/micro-test-plus-utility-functions/#ga00ea8f3dfb7cb0ef39919065321cf62f">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
@@ -535,7 +601,7 @@ Pointer non-equality comparator. <Link to="/docs/api/groups/micro-test-plus-func
 <MembersIndexItem
   type="constexpr auto"
   name={<><Link to="/docs/api/groups/micro-test-plus-exceptions/#ga798bd28001c3938784073e60dd904148">nothrow</Link> (const Callable&#95;T &amp;func)</>}>
-Check if a callable doesn&#39;t throw an exception. <Link to="/docs/api/groups/micro-test-plus-exceptions/#ga798bd28001c3938784073e60dd904148">More...</Link>
+Check if a callable does not throw an exception. <Link to="/docs/api/groups/micro-test-plus-exceptions/#ga798bd28001c3938784073e60dd904148">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
@@ -560,13 +626,13 @@ Check if a callable throws an exception (any exception). <Link to="/docs/api/gro
 
 ## Description {#details}
 
-The <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link></code> namespace provides a dedicated scope for all µTest++ functions, variables, enumerations, type definitions, and related entities.
+The <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link></code> namespace encapsulates all core components, types, and utilities of the µTest++ testing framework, providing a dedicated scope for its public API.
 
-This namespace is further organised into nested namespaces, each encapsulating specific aspects of the framework, such as mathematical utilities, type traits, literals, test suite management, test runners, test reporters, internal details, operators, and utility functions.
+This namespace is structured into several nested namespaces, each responsible for a specific aspect of the framework, such as mathematical utilities, type traits, literals, test suite and test case management, test runners, test reporters, internal details, operators, and utility functions.
 
-By encapsulating definitions within distinct namespaces, the project achieves improved code organisation, reduced redundancy, and enhanced maintainability. This structured approach encourages modular development and ensures seamless integration within µOS++, thereby contributing to a more efficient and scalable system.
+By grouping all definitions within this namespace and its sub-namespaces, the framework achieves clear code organisation, minimises naming conflicts, and enhances maintainability. This modular structure supports robust, scalable, and professional test development for both embedded and general C++ projects.
 
-All definitions within this namespace and its sub-namespaces are implemented in the <code>include/micro-os-plus</code> folder to maintain a structured and modular codebase.
+All public API definitions are implemented in the <code>include/micro-os-plus</code> folder, ensuring a clear separation from user code and facilitating straightforward integration with the wider µOS++ ecosystem.
 
 <SectionDefinition>
 
@@ -577,7 +643,7 @@ All definitions within this namespace and its sub-namespaces are implemented in 
 <MemberDefinition
   prototype={<>enum class micro&#95;os&#95;plus::micro&#95;test&#95;plus::verbosity</>}
  labels = {["strong"]}>
-The verbosity levels.
+The verbosity levels for test reporting.
 
 <EnumerationList title="Enumeration values">
 
@@ -603,7 +669,11 @@ The verbosity levels.
 
 </EnumerationList>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00092">92</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>.
+The <code>verbosity</code> enumeration defines the available levels of detail for test output produced by the reporting system. These levels control the amount and type of information displayed during test execution, allowing users to tailor the output to their specific requirements.
+
+Selecting an appropriate verbosity level enhances the usability of test reports, whether for concise summaries or comprehensive diagnostics.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00124">124</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -612,334 +682,19 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 
 ## Typedefs
 
-### &#95;b {#a74e6e2bffc2fc2dea47f979b5b55ea64}
-
-<MemberDefinition
-  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;b =  type&#95;traits::value&lt;bool&gt;</>}>
-
-<XrefSect
-  title="Deprecated"
-  permalink="/docs/api/pages/deprecated/#_deprecated000001">
-Use <code><Link to="/docs/api/groups/micro-test-plus-literals/#ga6bdfe5c187140ee99d0bcabd5bb65156">to&#95;b</Link></code> (since 3.2.0).
-</XrefSect>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00413">413</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</Link>.
-</MemberDefinition>
-
-### &#95;c {#abd2f8b7401162835cb4735e4a7532c36}
-
-<MemberDefinition
-  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;c =  type&#95;traits::value&lt;char&gt;</>}>
-
-<XrefSect
-  title="Deprecated"
-  permalink="/docs/api/pages/deprecated/#_deprecated000002">
-Use <code><Link to="/docs/api/groups/micro-test-plus-literals/#ga5d14217f53925b323f4236298e3dcc90">to&#95;c</Link></code> (since 3.2.0).
-</XrefSect>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00415">415</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</Link>.
-</MemberDefinition>
-
-### &#95;d {#a6ab8b464d71f15f55bd047dbfca50899}
-
-<MemberDefinition
-  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;d =  type&#95;traits::value&lt;double&gt;</>}>
-
-<XrefSect
-  title="Deprecated"
-  permalink="/docs/api/pages/deprecated/#_deprecated000022">
-Use <code><Link to="/docs/api/groups/micro-test-plus-literals/#ga3b9d6825aa201bf1fdf9cbe8c0ad4bff">to&#95;d</Link></code> (since 3.2.0).
-</XrefSect>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00455">455</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</Link>.
-</MemberDefinition>
-
-### &#95;f {#adcff4454bf86ea03c0c3d1be42b04e12}
-
-<MemberDefinition
-  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;f =  type&#95;traits::value&lt;float&gt;</>}>
-
-<XrefSect
-  title="Deprecated"
-  permalink="/docs/api/pages/deprecated/#_deprecated000021">
-Use <code><Link to="/docs/api/groups/micro-test-plus-literals/#ga3c89dfb65d916dfc34dfdfcb10334b5c">to&#95;f</Link></code> (since 3.2.0).
-</XrefSect>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00453">453</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</Link>.
-</MemberDefinition>
-
-### &#95;i {#a1613ccf081248c601bed0f3022fba652}
-
-<MemberDefinition
-  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;i =  type&#95;traits::value&lt;int&gt;</>}>
-
-<XrefSect
-  title="Deprecated"
-  permalink="/docs/api/pages/deprecated/#_deprecated000005">
-Use <code><Link to="/docs/api/groups/micro-test-plus-literals/#gab6ddb21470182cbdcf06436cde43718f">to&#95;i</Link></code> (since 3.2.0).
-</XrefSect>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00421">421</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</Link>.
-</MemberDefinition>
-
-### &#95;i16 {#aec10ef24cb02dd0fb7f5e44227562d51}
-
-<MemberDefinition
-  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;i16 =  type&#95;traits::value&lt;std::int16&#95;t&gt;</>}>
-
-<XrefSect
-  title="Deprecated"
-  permalink="/docs/api/pages/deprecated/#_deprecated000014">
-Use <code><Link to="/docs/api/groups/micro-test-plus-literals/#gaf22a7774a4b05de9779d9084ed41a02a">to&#95;i16</Link></code> (since 3.2.0).
-</XrefSect>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00439">439</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</Link>.
-</MemberDefinition>
-
-### &#95;i32 {#a5d6deb61637f1d7350a69f62d2971bc3}
-
-<MemberDefinition
-  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;i32 =  type&#95;traits::value&lt;std::int32&#95;t&gt;</>}>
-
-<XrefSect
-  title="Deprecated"
-  permalink="/docs/api/pages/deprecated/#_deprecated000015">
-Use <code><Link to="/docs/api/groups/micro-test-plus-literals/#ga9ca96b6c6d79560f8186c6206ac4f613">to&#95;i32</Link></code> (since 3.2.0).
-</XrefSect>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00441">441</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</Link>.
-</MemberDefinition>
-
-### &#95;i64 {#ae98aa89157544638f775d2a90a3ec774}
-
-<MemberDefinition
-  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;i64 =  type&#95;traits::value&lt;std::int64&#95;t&gt;</>}>
-
-<XrefSect
-  title="Deprecated"
-  permalink="/docs/api/pages/deprecated/#_deprecated000016">
-Use <code><Link to="/docs/api/groups/micro-test-plus-literals/#ga240591501696d181e105529c1f52b56c">to&#95;i64</Link></code> (since 3.2.0).
-</XrefSect>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00443">443</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</Link>.
-</MemberDefinition>
-
-### &#95;i8 {#a3cb44c2b09802fbee17f324cbdf3f31e}
-
-<MemberDefinition
-  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;i8 =  type&#95;traits::value&lt;std::int8&#95;t&gt;</>}>
-
-<XrefSect
-  title="Deprecated"
-  permalink="/docs/api/pages/deprecated/#_deprecated000013">
-Use <code><Link to="/docs/api/groups/micro-test-plus-literals/#gaa61c255757e915cb05132602baea088b">to&#95;i8</Link></code> (since 3.2.0).
-</XrefSect>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00437">437</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</Link>.
-</MemberDefinition>
-
-### &#95;l {#aaebf2b13e1742a894179deedf8ad82cc}
-
-<MemberDefinition
-  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;l =  type&#95;traits::value&lt;long&gt;</>}>
-
-<XrefSect
-  title="Deprecated"
-  permalink="/docs/api/pages/deprecated/#_deprecated000006">
-Use <code><Link to="/docs/api/groups/micro-test-plus-literals/#gaaf580ebebfba7cbe84a89db8574a6aa7">to&#95;l</Link></code> (since 3.2.0).
-</XrefSect>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00423">423</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</Link>.
-</MemberDefinition>
-
-### &#95;ld {#a79572e6e73076a155927ff0c3888ce76}
-
-<MemberDefinition
-  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;ld =  type&#95;traits::value&lt;long double&gt;</>}>
-
-<XrefSect
-  title="Deprecated"
-  permalink="/docs/api/pages/deprecated/#_deprecated000023">
-Use <code><Link to="/docs/api/groups/micro-test-plus-literals/#ga33a096960b5dddee322e36c689ecbf47">to&#95;ld</Link></code> (since 3.2.0).
-</XrefSect>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00457">457</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</Link>.
-</MemberDefinition>
-
-### &#95;ll {#a6b000cfa2a8a4c8b04cf6d6f142a76a6}
-
-<MemberDefinition
-  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;ll =  type&#95;traits::value&lt;long long&gt;</>}>
-
-<XrefSect
-  title="Deprecated"
-  permalink="/docs/api/pages/deprecated/#_deprecated000007">
-Use <code><Link to="/docs/api/groups/micro-test-plus-literals/#gab9d11644d3b22e2a9932e64853b5a59d">to&#95;ll</Link></code> (since 3.2.0).
-</XrefSect>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00425">425</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</Link>.
-</MemberDefinition>
-
-### &#95;s {#a102b1f7c41452481e6be2bd8da63e4a0}
-
-<MemberDefinition
-  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;s =  type&#95;traits::value&lt;short&gt;</>}>
-
-<XrefSect
-  title="Deprecated"
-  permalink="/docs/api/pages/deprecated/#_deprecated000004">
-Use <code><Link to="/docs/api/groups/micro-test-plus-literals/#ga1b39571aeebcb8091bd410a9b247a571">to&#95;s</Link></code> (since 3.2.0).
-</XrefSect>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00419">419</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</Link>.
-</MemberDefinition>
-
-### &#95;sc {#acf10cd5dca8066e1df77e668b68f3272}
-
-<MemberDefinition
-  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;sc =  type&#95;traits::value&lt;signed char&gt;</>}>
-
-<XrefSect
-  title="Deprecated"
-  permalink="/docs/api/pages/deprecated/#_deprecated000003">
-Use <code><Link to="/docs/api/groups/micro-test-plus-literals/#gadb22be8fe019b5cd1ad56cfadea5f4ec">to&#95;sc</Link></code> (since 3.2.0).
-</XrefSect>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00417">417</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</Link>.
-</MemberDefinition>
-
-### &#95;u {#a74b4ecee40263c6b4ac8a60fc6480fac}
-
-<MemberDefinition
-  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;u =  type&#95;traits::value&lt;unsigned&gt;</>}>
-
-<XrefSect
-  title="Deprecated"
-  permalink="/docs/api/pages/deprecated/#_deprecated000008">
-Use <code><Link to="/docs/api/groups/micro-test-plus-literals/#gac8586b75498097cb06b404399c307960">to&#95;u</Link></code> (since 3.2.0).
-</XrefSect>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00427">427</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</Link>.
-</MemberDefinition>
-
-### &#95;u16 {#a07f83438e4c0c85efdeacd78668f3543}
-
-<MemberDefinition
-  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;u16 =  type&#95;traits::value&lt;std::uint16&#95;t&gt;</>}>
-
-<XrefSect
-  title="Deprecated"
-  permalink="/docs/api/pages/deprecated/#_deprecated000018">
-Use <code><Link to="/docs/api/groups/micro-test-plus-literals/#gaa60006a01aa94a5fd755aebddd8ceec3">to&#95;u16</Link></code> (since 3.2.0).
-</XrefSect>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00447">447</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</Link>.
-</MemberDefinition>
-
-### &#95;u32 {#af66382b299dcf814298ae56b75b541d7}
-
-<MemberDefinition
-  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;u32 =  type&#95;traits::value&lt;std::uint32&#95;t&gt;</>}>
-
-<XrefSect
-  title="Deprecated"
-  permalink="/docs/api/pages/deprecated/#_deprecated000019">
-Use <code><Link to="/docs/api/groups/micro-test-plus-literals/#ga3bf9f9c946f16b5e02f9f2c45739df42">to&#95;u32</Link></code> (since 3.2.0).
-</XrefSect>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00449">449</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</Link>.
-</MemberDefinition>
-
-### &#95;u64 {#ac654508c2894db262cbd0335f76b02bf}
-
-<MemberDefinition
-  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;u64 =  type&#95;traits::value&lt;std::uint64&#95;t&gt;</>}>
-
-<XrefSect
-  title="Deprecated"
-  permalink="/docs/api/pages/deprecated/#_deprecated000020">
-Use <code><Link to="/docs/api/groups/micro-test-plus-literals/#ga5fba6fbb12941113aeff430609839ba4">to&#95;u64</Link></code> (since 3.2.0).
-</XrefSect>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00451">451</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</Link>.
-</MemberDefinition>
-
-### &#95;u8 {#a2e2ad62d8c5d6e3abcfca9a897ae61de}
-
-<MemberDefinition
-  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;u8 =  type&#95;traits::value&lt;std::uint8&#95;t&gt;</>}>
-
-<XrefSect
-  title="Deprecated"
-  permalink="/docs/api/pages/deprecated/#_deprecated000017">
-Use <code><Link to="/docs/api/groups/micro-test-plus-literals/#ga8b683d809d600f5c5210bb16546a832e">to&#95;u8</Link></code> (since 3.2.0).
-</XrefSect>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00445">445</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</Link>.
-</MemberDefinition>
-
-### &#95;uc {#a1ef97880cc5f2e13eea8b4ebb888886a}
-
-<MemberDefinition
-  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;uc =  type&#95;traits::value&lt;unsigned char&gt;</>}>
-
-<XrefSect
-  title="Deprecated"
-  permalink="/docs/api/pages/deprecated/#_deprecated000009">
-Use <code><Link to="/docs/api/groups/micro-test-plus-literals/#ga9b60956f6c874e5597cdea6c0323fff1">to&#95;uc</Link></code> (since 3.2.0).
-</XrefSect>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00429">429</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</Link>.
-</MemberDefinition>
-
-### &#95;ul {#a9cb69b5dc7c394a57e1b09c919b0f6ab}
-
-<MemberDefinition
-  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;ul =  type&#95;traits::value&lt;unsigned long&gt;</>}>
-
-<XrefSect
-  title="Deprecated"
-  permalink="/docs/api/pages/deprecated/#_deprecated000011">
-Use <code><Link to="/docs/api/groups/micro-test-plus-literals/#ga9f6f56950ba8bce6cc49037af83e443b">to&#95;ul</Link></code> (since 3.2.0).
-</XrefSect>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00433">433</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</Link>.
-</MemberDefinition>
-
-### &#95;ull {#a0b9d74a6595fe7fdefca21255ab59dc8}
-
-<MemberDefinition
-  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;ull =  type&#95;traits::value&lt;unsigned long long&gt;</>}>
-
-<XrefSect
-  title="Deprecated"
-  permalink="/docs/api/pages/deprecated/#_deprecated000012">
-Use <code><Link to="/docs/api/groups/micro-test-plus-literals/#ga595258f3c1b293284f79a88b2872d43d">to&#95;ull</Link></code> (since 3.2.0).
-</XrefSect>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00435">435</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</Link>.
-</MemberDefinition>
-
-### &#95;us {#a67992fcc21a60e3dd1fb4c9c5ebc814a}
-
-<MemberDefinition
-  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::&#95;us =  type&#95;traits::value&lt;unsigned short&gt;</>}>
-
-<XrefSect
-  title="Deprecated"
-  permalink="/docs/api/pages/deprecated/#_deprecated000010">
-Use <code><Link to="/docs/api/groups/micro-test-plus-literals/#gac9a34848b05859a18794ece696e37f26">to&#95;us</Link></code> (since 3.2.0).
-</XrefSect>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00431">431</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</Link>.
-</MemberDefinition>
-
 ### verbosity&#95;t {#a08e787c2c2f8365df2c9b372605535ac}
 
 <MemberDefinition
   prototype={<>typedef verbosity micro&#95;os&#95;plus::micro&#95;test&#95;plus::verbosity&#95;t</>}>
+Type alias for the verbosity enumeration used in test reporting.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00100">100</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>.
+---
+
+The <code><Link to="#a08e787c2c2f8365df2c9b372605535ac">verbosity&#95;t</Link></code> type alias provides a convenient shorthand for referring to the <code>verbosity</code> enumeration, which defines the available levels of detail for test output within the reporting system.
+
+Using this alias improves code readability and consistency throughout the framework, especially when specifying or configuring verbosity levels for test reporters.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00145">145</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -952,24 +707,39 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 
 <MemberDefinition
   prototype={<>test&#95;suite&#95;base &#42; micro&#95;os&#95;plus::micro&#95;test&#95;plus::current&#95;test&#95;suite</>}>
+Global pointer references the currently active test suite.
 
-Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00238">238</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
+---
+
+This global pointer references the currently active test suite within the µTest++ framework. It is used to track and update the state of the test suite during test execution, including recording test results and statistics. By maintaining a pointer to the current test suite, the framework ensures accurate association of test outcomes with their respective suites, supporting clear and organised reporting across all test cases and folders.
+
+Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00299">299</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
 </MemberDefinition>
 
 ### reporter {#aec46bdfdb22163bedab8e6b542191834}
 
 <MemberDefinition
   prototype={<>test&#95;reporter micro&#95;os&#95;plus::micro&#95;test&#95;plus::reporter</>}>
+global instance of <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link></code>.
 
-Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00236">236</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
+---
+
+This global instance of <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link></code> is responsible for collecting, formatting, and outputting the results of test execution within the µTest++ framework. It manages the reporting of test outcomes, including successes and failures, and ensures that all relevant information is presented clearly to the user. By maintaining a single shared reporter, the framework provides consistent and centralised reporting across all test cases and folders.
+
+Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00285">285</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
 </MemberDefinition>
 
 ### runner {#a469c0f5fefa0b4cea12a7d267dded831}
 
 <MemberDefinition
   prototype={<>test&#95;runner micro&#95;os&#95;plus::micro&#95;test&#95;plus::runner</>}>
+Global instance of <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test&#95;runner</Link></code>.
 
-Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00235">235</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
+---
+
+This global instance of <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test&#95;runner</Link></code> manages the lifecycle of test suites and test cases within the µTest++ framework. It is responsible for initialising the test environment, registering test suites, executing tests, and collecting results. By maintaining a single shared runner, the framework ensures consistent test execution and reporting across all test cases and folders.
+
+Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00271">271</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -982,19 +752,26 @@ Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00235">23
 
 <MemberDefinition
   prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::endl (<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp; stream)</>}>
+Output stream manipulator for ending a line in test reports.
 
-Definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00062">62</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
-</MemberDefinition>
+---
 
-### mut() {#a00ea8f3dfb7cb0ef39919065321cf62f}
+The <code>endl</code> function acts as a stream manipulator for the <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link></code>, inserting a line ending into the output buffer and flushing the current content if necessary. This ensures that test report output is clearly separated and formatted, improving readability and professionalism in the presentation of test results.
 
-<MemberDefinition
-  template={<>template &lt;class T&gt;</>}
-  prototype={<>T &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::mut (const T &amp; t)</>}
-  labels = {["nodiscard", "constexpr", "noexcept"]}>
-Generic mutator, to remove const from any type.
+Using <code>endl</code> in conjunction with the <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link></code> output operators provides a familiar and convenient mechanism for managing line breaks, similar to standard C++ stream manipulators.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00532">532</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+
+<ParametersList title="Parameters">
+<ParametersListItem name="stream">Reference to the <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link></code> instance.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+Reference to the same <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link></code> instance, enabling chaining of output operations.
+</SectionUser>
+
+The <code>endl</code> function inserts a newline character into the specified <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link></code> stream and flushes its output buffer. This operation ensures that each test output line is clearly separated and immediately visible, facilitating the readability and clarity of test results across all test cases and folders within the µTest++ framework.
+
+Definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00071">71</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -1004,8 +781,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 The documentation for this namespace was generated from the following files:
 
 <ul>
-<li><Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link></li>
-<li><Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</Link></li>
 <li><Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link></li>
 <li><Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link></li>
 <li><Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link></li>

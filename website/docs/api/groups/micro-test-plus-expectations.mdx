@@ -46,7 +46,9 @@ Evaluate a generic condition and report the results. <Link to="#ga75c3f43663a544
 
 ## Description {#details}
 
-Unlike assumptions, failed expectations are reported but do not cause the test to terminate.
+Expectations are conditions that are verified during test execution, with their outcomes—whether passing or failing—being explicitly reported in the test results. Unlike assumptions, a failed expectation does not cause the test to terminate; instead, execution continues, allowing multiple conditions to be checked within a single test case.
+
+This approach enables comprehensive validation of code behaviour, as all relevant expectations can be evaluated and reported in one run. By using expectations, developers gain detailed insight into which aspects of the code meet requirements and which do not, supporting thorough and efficient testing practices.
 
 <SectionDefinition>
 
@@ -60,24 +62,28 @@ Unlike assumptions, failed expectations are reported but do not cause the test t
   labels = {["constexpr"]}>
 Evaluate a generic condition and report the results.
 
+---
+
+The <code>expect</code> function template evaluates a logical condition or custom expression and reports the result within the µTest++ framework. It is designed to provide detailed diagnostics for test failures, including the actual and expected values, when using the provided comparators (<code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#gae9dfca849300a917cb1c231d275baaa3">eq()</Link></code>, <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#ga59e4cf59954e81bc868e62b1c5c8db1f">ne()</Link></code>, <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#gac162522dcad1a6ff7c869d52d376b3ed">lt()</Link></code>, <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#ga2b5263a5b3965855aa04971bba735a56">le()</Link></code>, <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#gae2fb681444d8256f6bf827eea6b7c29e">gt()</Link></code>, <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#ga34e03399670ec0b365b94b7bea788dd8">ge()</Link></code>) or custom operators.
+
+The function template can be used with any expression that evaluates to a boolean or with custom comparators/operators derived from the local <code>detail::op</code> type. For complex checks performed outside the <code><Link to="#ga75c3f43663a5440d78231fe572fe4a22">expect()</Link></code> logical expression (such as within <code>if</code> or <code>try</code>/<code>catch</code> statements), the result can be reported by calling <code>expect(true)</code> or <code>expect(false)</code>.
+
+The function returns an output stream, allowing optional messages to be appended to the test report.
+
+
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Expr&#95;T">The type of the custom expression.</ParametersListItem>
+<ParametersListItem name="(SFINAE)">Enabled only if <code>Expr&#95;T</code> is derived from <code>detail::op</code> or is convertible to <code>bool</code>.</ParametersListItem>
 </ParametersList>
 
 <ParametersList title="Parameters">
 <ParametersListItem name="[in] expr">Logical expression to evaluate.</ParametersListItem>
-<ParametersListItem name="[in] sl">Optional source location, by default the current line.</ParametersListItem>
+<ParametersListItem name="[in] sl">Optional source location, defaulting to the current line.</ParametersListItem>
 </ParametersList>
 
 <SectionUser title="Returns">
 An output stream to write optional messages.
 </SectionUser>
-
-The expression can be any logical expression, but, in order to allow the framework to help identify the reason why the check failed (by displaying the actual vs. the expected values), the expression should use the provided <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#gae9dfca849300a917cb1c231d275baaa3">eq()</Link></code>, <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#ga59e4cf59954e81bc868e62b1c5c8db1f">ne()</Link></code>, <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#gac162522dcad1a6ff7c869d52d376b3ed">lt()</Link></code>, <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#ga2b5263a5b3965855aa04971bba735a56">le()</Link></code>, <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#gae2fb681444d8256f6bf827eea6b7c29e">gt()</Link></code>, <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#ga34e03399670ec0b365b94b7bea788dd8">ge()</Link></code> comparators, or, if the custom operators namespace is included, to use the custom type operands.
-
-The function template can be used only for expressions that evaluate to a boolean or use custom comparators/operators derived from the local <code>detail::op</code> type.
-
-For generic checks performed with standard C/C++ <code>if</code> statements outside the <code><Link to="#ga75c3f43663a5440d78231fe572fe4a22">expect()</Link></code> logical expression (like complex <code>try</code>/<code>catch</code> statements), the results can be reported with <code>expect(true)</code> or <code>expect(false)</code>.
 
 
 <SectionUser title="Example">
@@ -88,12 +94,11 @@ For generic checks performed with standard C/C++ <code>if</code> statements outs
 <ProgramListing extension="cpp">
 
 <CodeLine><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link>;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">mt::expect (compute&#95;answer () == 42) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer is 42&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">mt::expect(compute&#95;answer() == 42) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer is 42&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
 
 </ProgramListing>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00189">189</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00227">227</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

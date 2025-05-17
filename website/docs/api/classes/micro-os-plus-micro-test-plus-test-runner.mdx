@@ -22,13 +22,16 @@ import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/Includ
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
 import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
 import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
 
 # The `test_runner` Class Reference
 
 <DoxygenPage version="1.13.2">
 
-The test runner. It maintains a list of test suites which automatically register themselves in their constructors. <Link to="#details">More...</Link>
+The test runner for the µTest++ framework. <Link to="#details">More...</Link>
 
 ## Declaration
 
@@ -50,16 +53,19 @@ The test runner. It maintains a list of test suites which automatically register
 <MembersIndexItem
   type="int"
   name={<><Link to="#a4caf0986c9b9fedb37ad486eabfa88fc">argc&#95;</Link> = 0</>}>
+Stores the argument count passed to the test runner. <Link to="#a4caf0986c9b9fedb37ad486eabfa88fc">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type={<>char &#42;&#42;</>}
   name={<><Link to="#a08b3a57d4f802d3aa1a1af02856c460d">argv&#95;</Link> = nullptr</>}>
+Stores the argument vector passed to the test runner. <Link to="#a08b3a57d4f802d3aa1a1af02856c460d">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type={<>const char &#42;</>}
   name={<><Link to="#af60fbb3e376f27b801c30ce6c7a01808">default&#95;suite&#95;name&#95;</Link> = &quot;Test&quot;</>}>
+The name of the default test suite. <Link to="#af60fbb3e376f27b801c30ce6c7a01808">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
@@ -71,7 +77,7 @@ Pointer to the default test suite which groups the main tests. <Link to="#a637b0
 <MembersIndexItem
   type={<>std::vector&lt; <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">test&#95;suite&#95;base</Link> &#42; &gt; &#42;</>}
   name={<><Link to="#a299cdb1bee2322ec60f4ebb463c1e513">suites&#95;</Link></>}>
-Pointer to array of registered test suites. Statically initialised to zero as BSS, such that test suites defined as static objects in different compilation units can be automatically executed. <Link to="#a299cdb1bee2322ec60f4ebb463c1e513">More...</Link>
+Pointer to the array of registered test suites. <Link to="#a299cdb1bee2322ec60f4ebb463c1e513">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -83,16 +89,19 @@ Pointer to array of registered test suites. Statically initialised to zero as BS
 <MembersIndexItem
   type="&nbsp;"
   name={<><Link to="#a3e2fdf09d6a1cbd52b2189fcdf12aabf">test&#95;runner</Link> ()</>}>
+Default constructor for the <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test&#95;runner</Link> class. <Link to="#a3e2fdf09d6a1cbd52b2189fcdf12aabf">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="&nbsp;"
   name={<><Link to="#a84abdee67279e9a07a68fa01c523ff14">test&#95;runner</Link> (const test&#95;runner &amp;)=delete</>}>
+Deleted copy constructor to prevent copying. <Link to="#a84abdee67279e9a07a68fa01c523ff14">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="&nbsp;"
   name={<><Link to="#a307ecef3a7db19a095ea3202fc5e9d65">test&#95;runner</Link> (test&#95;runner &amp;&amp;)=delete</>}>
+Deleted move constructor to prevent moving. <Link to="#a307ecef3a7db19a095ea3202fc5e9d65">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -104,6 +113,7 @@ Pointer to array of registered test suites. Statically initialised to zero as BS
 <MembersIndexItem
   type="&nbsp;"
   name={<><Link to="#a4e9d9c95479a6e8eab60c69a27f4ba91">~test&#95;runner</Link> ()=default</>}>
+Destructor for the <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test&#95;runner</Link> class. <Link to="#a4e9d9c95479a6e8eab60c69a27f4ba91">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -115,48 +125,56 @@ Pointer to array of registered test suites. Statically initialised to zero as BS
 <MembersIndexItem
   type="void"
   name={<><Link to="#a18956cfdcc2edfb043029a06e8d9c51a">abort</Link> (void)</>}>
+Aborts test execution immediately. <Link to="#a18956cfdcc2edfb043029a06e8d9c51a">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="int"
   name={<><Link to="#a86233d8241e398f9491d859b4097c851">exit&#95;code</Link> (void)</>}>
-Return 0 if the all tests were successful, 1 otherwise. <Link to="#a86233d8241e398f9491d859b4097c851">More...</Link>
+Returns 0 if all tests were successful, 1 otherwise. <Link to="#a86233d8241e398f9491d859b4097c851">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="void"
   name={<><Link to="#a882aa5687209359ae0313efe44f10053">initialize</Link> (int argc, char &#42;argv[], const char &#42;name)</>}>
-Pass the main arguments explicitly, if the default constructor was used. <Link to="#a882aa5687209359ae0313efe44f10053">More...</Link>
+Initialises the test runner with command-line arguments and an optional suite name. <Link to="#a882aa5687209359ae0313efe44f10053">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type={<>constexpr const char &#42;</>}
   name={<><Link to="#a44ee9f03f3d9a974ba36730eee6f9d9a">name</Link> (void)</>}>
+Retrieves the name of the default test suite. <Link to="#a44ee9f03f3d9a974ba36730eee6f9d9a">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test&#95;runner</Link> &amp;</>}
   name={<><Link to="#a287fcb294f40d116c6497efbc2c366c3">operator=</Link> (const test&#95;runner &amp;)=delete</>}>
+Deleted copy assignment operator to prevent copying. <Link to="#a287fcb294f40d116c6497efbc2c366c3">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test&#95;runner</Link> &amp;</>}
   name={<><Link to="#ab56971215ea9b94e854deb442c4c3a2e">operator=</Link> (test&#95;runner &amp;&amp;)=delete</>}>
+Deleted move assignment operator to prevent moving. <Link to="#ab56971215ea9b94e854deb442c4c3a2e">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="void"
   name={<><Link to="#aa71d653414cf5872a441d483fdf829c1">register&#95;test&#95;suite</Link> (test&#95;suite&#95;base &#42;suite)</>}>
-Called by test suite constructors to register them to the runner. <Link to="#aa71d653414cf5872a441d483fdf829c1">More...</Link>
+Registers a test suite with the runner. <Link to="#aa71d653414cf5872a441d483fdf829c1">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
 
 ## Description {#details}
 
-TODO: add <code>@details</code> to <code>@class micro_os_plus::micro_test_plus::test_runner</code>
+The <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test&#95;runner</Link></code> class is responsible for managing the registration and execution of test suites within the µTest++ framework. It maintains a collection of test suites, each of which registers itself automatically upon construction, enabling seamless integration and execution of tests across different components and folders of a project.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00074">74</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>.
+The test runner provides methods for initialising the test environment, registering test suites, retrieving the runner&#39;s name, and determining the overall test result via an exit code. It also offers an abort mechanism for terminating test execution in exceptional circumstances.
+
+All members and methods are defined within the <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link></code> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00105">105</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>.
 
 <SectionDefinition>
 
@@ -167,8 +185,9 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <MemberDefinition
   prototype={<>int micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;runner::argc&#95; = 0</>}
   labels = {["protected"]}>
+Stores the argument count passed to the test runner.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00121">121</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00198">198</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>.
 </MemberDefinition>
 
 ### argv&#95; {#a08b3a57d4f802d3aa1a1af02856c460d}
@@ -176,8 +195,9 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <MemberDefinition
   prototype={<>char&#42;&#42; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;runner::argv&#95; = nullptr</>}
   labels = {["protected"]}>
+Stores the argument vector passed to the test runner.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00122">122</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00203">203</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>.
 </MemberDefinition>
 
 ### default&#95;suite&#95;name&#95; {#af60fbb3e376f27b801c30ce6c7a01808}
@@ -185,8 +205,9 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <MemberDefinition
   prototype={<>const char&#42; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;runner::default&#95;suite&#95;name&#95; = &quot;Test&quot;</>}
   labels = {["protected"]}>
+The name of the default test suite.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00124">124</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00208">208</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>.
 </MemberDefinition>
 
 ### default&#95;test&#95;suite&#95; {#a637b06becc3677c2180f022cc4c363e8}
@@ -196,7 +217,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["protected"]}>
 Pointer to the default test suite which groups the main tests.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00130">130</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00213">213</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>.
 </MemberDefinition>
 
 ### suites&#95; {#a299cdb1bee2322ec60f4ebb463c1e513}
@@ -204,9 +225,13 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <MemberDefinition
   prototype={<>std::vector&lt;test&#95;suite&#95;base&#42;&gt;&#42; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;runner::suites&#95;</>}
   labels = {["protected"]}>
-Pointer to array of registered test suites. Statically initialised to zero as BSS, such that test suites defined as static objects in different compilation units can be automatically executed.
+Pointer to the array of registered test suites.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00138">138</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>.
+---
+
+Statically initialised to zero as BSS, such that test suites defined as static objects in different compilation units can be automatically executed.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00223">223</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -219,8 +244,15 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 
 <MemberDefinition
   prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;runner::test&#95;runner ()</>}>
+Default constructor for the <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test&#95;runner</Link> class.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00077">77</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>, definition at line <Link to="/docs/api/files/src/test-runner-cpp/#l00064">64</Link> of file <Link to="/docs/api/files/src/test-runner-cpp">test-runner.cpp</Link>.
+---
+
+The rule of five is enforced to prevent accidental copying or moving.
+
+The constructor initialises a new instance of the <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test&#95;runner</Link></code> class, preparing the test runner for managing test suites and cases within the µTest++ framework. If tracing is enabled, it outputs the function signature for diagnostic purposes. This setup ensures the test runner is ready to coordinate the registration, execution, and reporting of tests across all test cases and folders.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00114">114</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>, definition at line <Link to="/docs/api/files/src/test-runner-cpp/#l00074">74</Link> of file <Link to="/docs/api/files/src/test-runner-cpp">test-runner.cpp</Link>.
 </MemberDefinition>
 
 ### test&#95;runner() {#a84abdee67279e9a07a68fa01c523ff14}
@@ -228,8 +260,9 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-p
 <MemberDefinition
   prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;runner::test&#95;runner (const <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test&#95;runner</Link> &amp;)</>}
   labels = {["delete"]}>
+Deleted copy constructor to prevent copying.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00080">80</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00119">119</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>.
 </MemberDefinition>
 
 ### test&#95;runner() {#a307ecef3a7db19a095ea3202fc5e9d65}
@@ -237,8 +270,9 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <MemberDefinition
   prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;runner::test&#95;runner (<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test&#95;runner</Link> &amp;&amp;)</>}
   labels = {["delete"]}>
+Deleted move constructor to prevent moving.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00081">81</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00124">124</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -252,8 +286,9 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <MemberDefinition
   prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;runner::~test&#95;runner ()</>}
   labels = {["default"]}>
+Destructor for the <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test&#95;runner</Link> class.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00089">89</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00143">143</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -266,26 +301,48 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 
 <MemberDefinition
   prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;runner::abort (void)</>}>
+Aborts test execution immediately.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00118">118</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>, definition at line <Link to="/docs/api/files/src/test-runner-cpp/#l00215">215</Link> of file <Link to="/docs/api/files/src/test-runner-cpp">test-runner.cpp</Link>.
+---
+
+This function terminates the test process without returning, typically used in exceptional or fatal error conditions.
+
+This method immediately terminates the process by invoking the standard C library <code><Link to="#a18956cfdcc2edfb043029a06e8d9c51a">abort()</Link></code> function. It is used to halt test execution in critical failure scenarios, ensuring that no further tests are run and that the cause of the failure can be promptly investigated. This approach provides a robust mechanism for enforcing strict test outcomes across all test cases and folders.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00192">192</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>, definition at line <Link to="/docs/api/files/src/test-runner-cpp/#l00254">254</Link> of file <Link to="/docs/api/files/src/test-runner-cpp">test-runner.cpp</Link>.
 </MemberDefinition>
 
 ### exit&#95;code() {#a86233d8241e398f9491d859b4097c851}
 
 <MemberDefinition
   prototype={<>int micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;runner::exit&#95;code (void)</>}>
-Return 0 if the all tests were successful, 1 otherwise.
+Returns 0 if all tests were successful, 1 otherwise.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00102">102</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>, definition at line <Link to="/docs/api/files/src/test-runner-cpp/#l00170">170</Link> of file <Link to="/docs/api/files/src/test-runner-cpp">test-runner.cpp</Link>.
+---
+
+<SectionUser title="Returns">
+Integer exit code representing the overall test result.
+</SectionUser>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00160">160</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>, definition at line <Link to="/docs/api/files/src/test-runner-cpp/#l00192">192</Link> of file <Link to="/docs/api/files/src/test-runner-cpp">test-runner.cpp</Link>.
 </MemberDefinition>
 
 ### initialize() {#a882aa5687209359ae0313efe44f10053}
 
 <MemberDefinition
   prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;runner::initialize (int argc, char &#42; argv=[], const char &#42; name)</>}>
-Pass the main arguments explicitly, if the default constructor was used.
+Initialises the test runner with command-line arguments and an optional suite name.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00096">96</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>, definition at line <Link to="/docs/api/files/src/test-runner-cpp/#l00076">76</Link> of file <Link to="/docs/api/files/src/test-runner-cpp">test-runner.cpp</Link>.
+---
+
+<ParametersList title="Parameters">
+<ParametersListItem name="argc">The argument count from main().</ParametersListItem>
+<ParametersListItem name="argv">The argument vector from main().</ParametersListItem>
+<ParametersListItem name="name">The name of the default test suite.</ParametersListItem>
+</ParametersList>
+This method initialises the test runner by capturing the command-line arguments and the default test suite name, configuring the framework for subsequent test execution. It parses the arguments to determine the desired verbosity level (normal, verbose, quiet, or silent) and applies this setting to the test reporter. The method also outputs build and environment information when appropriate, aiding diagnostics and transparency. Finally, it creates and registers the default test suite, preparing the framework to manage and execute all test cases and suites across the project’s folders.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00153">153</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>, definition at line <Link to="/docs/api/files/src/test-runner-cpp/#l00098">98</Link> of file <Link to="/docs/api/files/src/test-runner-cpp">test-runner.cpp</Link>.
 </MemberDefinition>
 
 ### name() {#a44ee9f03f3d9a974ba36730eee6f9d9a}
@@ -293,8 +350,15 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-p
 <MemberDefinition
   prototype={<>const char &#42; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;runner::name (void)</>}
   labels = {["inline", "constexpr"]}>
+Retrieves the name of the default test suite.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00112">112</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>.
+---
+
+<SectionUser title="Returns">
+The name of the default test suite as a constant character pointer.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00179">179</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>.
 </MemberDefinition>
 
 ### operator=() {#a287fcb294f40d116c6497efbc2c366c3}
@@ -302,8 +366,9 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <MemberDefinition
   prototype={<>test&#95;runner &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;runner::operator= (const <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test&#95;runner</Link> &amp;)</>}
   labels = {["delete"]}>
+Deleted copy assignment operator to prevent copying.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00083">83</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00130">130</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>.
 </MemberDefinition>
 
 ### operator=() {#ab56971215ea9b94e854deb442c4c3a2e}
@@ -311,17 +376,26 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <MemberDefinition
   prototype={<>test&#95;runner &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;runner::operator= (<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test&#95;runner</Link> &amp;&amp;)</>}
   labels = {["delete"]}>
+Deleted move assignment operator to prevent moving.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00086">86</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00137">137</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>.
 </MemberDefinition>
 
 ### register&#95;test&#95;suite() {#aa71d653414cf5872a441d483fdf829c1}
 
 <MemberDefinition
   prototype={<>void micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;runner::register&#95;test&#95;suite (<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">test&#95;suite&#95;base</Link> &#42; suite)</>}>
-Called by test suite constructors to register them to the runner.
+Registers a test suite with the runner.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00109">109</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>, definition at line <Link to="/docs/api/files/src/test-runner-cpp/#l00201">201</Link> of file <Link to="/docs/api/files/src/test-runner-cpp">test-runner.cpp</Link>.
+---
+
+Called by test suite constructors to register themselves with the runner, enabling automatic management and execution. 
+<ParametersList title="Parameters">
+<ParametersListItem name="suite">Pointer to the test suite to register.</ParametersListItem>
+</ParametersList>
+This method registers a new test suite with the test runner. If the internal collection of test suites has not yet been created, it is initialised at this point. The provided test suite is then added to the collection, enabling the framework to manage and execute multiple test suites across different files and folders within the project.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00171">171</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>, definition at line <Link to="/docs/api/files/src/test-runner-cpp/#l00231">231</Link> of file <Link to="/docs/api/files/src/test-runner-cpp">test-runner.cpp</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

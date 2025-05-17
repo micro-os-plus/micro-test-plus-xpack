@@ -26,7 +26,7 @@ import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser
 
 <DoxygenPage version="1.13.2">
 
-Test suites are named sequences of test cases. <Link to="#details">More...</Link>
+Test suites are named collections of test cases. <Link to="#details">More...</Link>
 
 ## Classes Index
 
@@ -35,18 +35,20 @@ Test suites are named sequences of test cases. <Link to="#details">More...</Link
 <MembersIndexItem
   type="class"
   name={<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</Link>}>
-Test suites are classes that represent a named group of test cases which self register to the runner. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#details">More...</Link>
+Represents a named group of test cases that self-register to the runner. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#details">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
 
 ## Description {#details}
 
-The test cases defined in <code>main()</code> are regarded as part of the default (or main) test suite and are executed immediately upon invocation.
+Test suites in µTest++ are named groups of related test cases, allowing for structured organisation and execution of tests. By default, all test cases defined in <code>main()</code> are included in the default (main) test suite and are executed immediately.
 
-For more complex applications, multiple test suites may be defined, typically in separate source files.
+For more complex projects, multiple test suites can be defined, typically in separate source files. Test suites are implemented as classes, constructed with a name, a callable (usually a lambda that chains the execution of the test cases), and optional arguments. This design enables self-registration of test suites, ensuring they are automatically included in the test run.
 
-To facilitate self-registration, test suites are implemented as classes, constructed with a name, a callable (usually a lambda that chains the execution of the test cases), and optional arguments:
+It is advisable to instantiate test suites as static objects. Self-registration occurs within the constructor, and test suites defined in separate compilation units may be executed in any order, as the sequence of static constructor invocation is not specified. Therefore, test suites should not have dependencies on one another.
+
+All registered test suites are executed when the <code>exit&#95;code()</code> function is called, ensuring comprehensive test coverage across the project.
 
 
 <ProgramListing extension="cpp">
@@ -63,13 +65,13 @@ To facilitate self-registration, test suites are implemented as classes, constru
 </ProgramListing>
 
 
-:::info
-It is advisable to instantiate test suites as static objects.
+:::tip
+It is strongly recommended to instantiate test suites as static objects.
 :::
 
-Self-registration is performed within the constructor. Test suites defined in separate compilation units may be executed in any order, as the sequence in which static constructors are invoked is not specified; consequently, there should be no dependencies between test suites.
+Self-registration is performed within the constructor, ensuring that each test suite is automatically included in the test run. When test suites are defined in separate compilation units, they may be executed in any order, as the sequence in which static constructors are invoked is not specified. Consequently, test suites should be designed to be independent and must not rely on the execution order of other suites.
 
-All registered test suites are executed when the <code>exit&#95;code()</code> function is called.
+All registered test suites are executed when the <code>exit&#95;code()</code> function is called, guaranteeing that the entire test suite collection is run and reported in a consistent and reliable manner.
 
 
 <SectionUser title="Examples">

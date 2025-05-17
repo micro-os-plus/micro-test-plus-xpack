@@ -28,7 +28,7 @@ import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/Secti
 
 <DoxygenPage version="1.13.2">
 
-Colours used to highlight pass vs. fail. <Link to="#details">More...</Link>
+Colours used to highlight pass and fail results in test reports. <Link to="#details">More...</Link>
 
 ## Declaration
 
@@ -38,8 +38,8 @@ Colours used to highlight pass vs. fail. <Link to="#details">More...</Link>
 
 <IncludesList>
 <IncludesListItem
-  filePath="micro-os-plus/micro-test-plus.h"
-  permalink="/docs/api/files/include/micro-os-plus/micro-test-plus-h"
+  filePath="test-reporter.h"
+  permalink="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h"
   isLocal="false" />
 </IncludesList>
 
@@ -50,25 +50,30 @@ Colours used to highlight pass vs. fail. <Link to="#details">More...</Link>
 <MembersIndexItem
   type={<>const char &#42;</>}
   name={<><Link to="#a755efa80182dc14ff24a7780e758ee5c">fail</Link> = &quot;\\033[31m&quot;</>}>
+Red colour. <Link to="#a755efa80182dc14ff24a7780e758ee5c">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type={<>const char &#42;</>}
   name={<><Link to="#abe9df13299b6c193e7213879fa5fd408">none</Link> = &quot;\\033[0m&quot;</>}>
+Default colour. <Link to="#abe9df13299b6c193e7213879fa5fd408">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type={<>const char &#42;</>}
   name={<><Link to="#a54856b658d27bf3d3f3c23d5ed2823ca">pass</Link> = &quot;\\033[32m&quot;</>}>
+Green colour. <Link to="#a54856b658d27bf3d3f3c23d5ed2823ca">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
 
 ## Description {#details}
 
-TODO: add <code>@details</code> to <code>@struct micro_os_plus::micro_test_plus::colors</code>
+The <code>colors</code> structure defines ANSI escape sequences for terminal output, enabling colour-coded highlighting of test outcomes. The <code>pass</code> member specifies the colour for successful results (typically green), while the <code>fail</code> member specifies the colour for failed results (typically red). The <code>none</code> member resets the colour to the terminal default.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00081">81</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>.
+These colour codes enhance the clarity and professionalism of test reports by making it immediately apparent which tests have passed or failed, thereby improving the overall user experience when reviewing test results.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00103">103</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>.
 
 <SectionDefinition>
 
@@ -78,24 +83,39 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 
 <MemberDefinition
   prototype={<>const char&#42; micro&#95;os&#95;plus::micro&#95;test&#95;plus::colors::fail = &quot;\\033[31m&quot;</>}>
+Red colour.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00085">85</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>.
+---
+
+ANSI escape sequence to set the terminal colour for failing results (red).
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00107">107</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>.
 </MemberDefinition>
 
 ### none {#abe9df13299b6c193e7213879fa5fd408}
 
 <MemberDefinition
   prototype={<>const char&#42; micro&#95;os&#95;plus::micro&#95;test&#95;plus::colors::none = &quot;\\033[0m&quot;</>}>
+Default colour.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00083">83</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>.
+---
+
+ANSI escape sequence to reset the terminal colour to default.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00105">105</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>.
 </MemberDefinition>
 
 ### pass {#a54856b658d27bf3d3f3c23d5ed2823ca}
 
 <MemberDefinition
   prototype={<>const char&#42; micro&#95;os&#95;plus::micro&#95;test&#95;plus::colors::pass = &quot;\\033[32m&quot;</>}>
+Green colour.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00084">84</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>.
+---
+
+ANSI escape sequence to set the terminal colour for passing results (green).
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00106">106</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

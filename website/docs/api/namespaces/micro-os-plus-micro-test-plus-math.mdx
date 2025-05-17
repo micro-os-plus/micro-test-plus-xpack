@@ -19,7 +19,10 @@ import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
 import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
 import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
 
 # The `math` Namespace Reference
 
@@ -38,43 +41,43 @@ Mathematical utilities for the µTest++ testing framework. <Link to="#details">M
 <MembersIndexItem
   type="constexpr T"
   name={<><Link to="#a1dd33529640b959c531ca18c2e494c80">abs</Link> (const T t)</>}>
-Generic absolute of any comparable value. <Link to="#a1dd33529640b959c531ca18c2e494c80">More...</Link>
+Computes the absolute value of a given comparable value. <Link to="#a1dd33529640b959c531ca18c2e494c80">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr T"
   name={<><Link to="#a575d81fc3d63effaf1b00fcb1df701bc">den</Link> ()</>}>
-Compute the decimals of a number represented as an array of characters. <Link to="#a575d81fc3d63effaf1b00fcb1df701bc">More...</Link>
+Computes the decimal part of a number represented as an array of characters. <Link to="#a575d81fc3d63effaf1b00fcb1df701bc">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr T"
   name={<><Link to="#a78fdcc73346e80349f0d3026cc03b8cd">den&#95;size</Link> ()</>}>
-Compute the number of decimal places of a number represented as an array of characters. <Link to="#a78fdcc73346e80349f0d3026cc03b8cd">More...</Link>
+Computes the number of decimal places in a number represented as an array of characters. <Link to="#a78fdcc73346e80349f0d3026cc03b8cd">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr T"
   name={<><Link to="#a3e243d7f77b8435e1433ccad9c603f98">den&#95;size</Link> (Value&#95;T value)</>}>
-Compute the number of decimal places of a value, up to 7 digits. <Link to="#a3e243d7f77b8435e1433ccad9c603f98">More...</Link>
+Computes the number of decimal places of a value, up to 7 digits. <Link to="#a3e243d7f77b8435e1433ccad9c603f98">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type={<>constexpr const T &amp;</>}
   name={<><Link to="#ae53dd62f6d82b8ccaa048d90a7002826">min&#95;value</Link> (const T &amp;lhs, const T &amp;rhs)</>}>
-Generic minimum of two comparable values. <Link to="#ae53dd62f6d82b8ccaa048d90a7002826">More...</Link>
+Computes the minimum of two comparable values. <Link to="#ae53dd62f6d82b8ccaa048d90a7002826">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr T"
   name={<><Link to="#a60e755b1df92f6391368649b0ba97f97">num</Link> ()</>}>
-Compute the integral value of a number represented as an array of characters. <Link to="#a60e755b1df92f6391368649b0ba97f97">More...</Link>
+Computes the integral value of a number represented as an array of characters. <Link to="#a60e755b1df92f6391368649b0ba97f97">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr T"
   name={<><Link to="#a5c22d85f0df63cc0504cbf4988173cd7">pow</Link> (const T base, const Exp&#95;T exp)</>}>
-Generic &#39;power of&#39;, to raise base to exponent (base ^ exp). <Link to="#a5c22d85f0df63cc0504cbf4988173cd7">More...</Link>
+Generic exponentiation function to compute the power of a base raised to an exponent. <Link to="#a5c22d85f0df63cc0504cbf4988173cd7">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -97,9 +100,30 @@ All definitions within this namespace are intended to facilitate mathematical op
   template={<>template &lt;class T&gt;</>}
   prototype={<>T micro&#95;os&#95;plus::micro&#95;test&#95;plus::math::abs (const T t)</>}
   labels = {["nodiscard", "constexpr"]}>
-Generic absolute of any comparable value.
+Computes the absolute value of a given comparable value.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00096">96</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
+---
+
+This function template provides a generic, constexpr implementation for obtaining the absolute value of any type that supports comparison and unary negation.
+
+The function returns the non-negative value of the input. If the input is less than the default-constructed value of its type (typically zero), the negated value is returned; otherwise, the original value is returned.
+
+This utility is designed to be lightweight and suitable for embedded environments, where standard library alternatives may be unavailable, less efficient, or not constexpr.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="T">The type of the input value. Must support comparison and unary negation.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="t">The value for which the absolute value is to be computed.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+The absolute value of the input.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00117">117</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
 </MemberDefinition>
 
 ### den() {#a575d81fc3d63effaf1b00fcb1df701bc}
@@ -108,9 +132,27 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class T, char... Cs&gt;</>}
   prototype={<>T micro&#95;os&#95;plus::micro&#95;test&#95;plus::math::den ()</>}
   labels = {["nodiscard", "constexpr"]}>
-Compute the decimals of a number represented as an array of characters.
+Computes the decimal part of a number represented as an array of characters.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00154">154</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
+---
+
+This function template performs compile-time extraction of the decimal (fractional) part from a sequence of characters, typically provided as a template parameter pack.
+
+The function expects the character sequence to represent a numeric value, where all characters are either digits, a dot (<code>.</code>), or an apostrophe (‘`&#96;). Parsing begins after the first dot, accumulating the decimal digits as an integer value, each weighted by its decimal position.
+
+This utility is particularly useful for user-defined literals and other compile-time constant expressions, enabling efficient and type-safe conversion from character sequences to the decimal part of numeric values.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="T">The target integral type for the result.</ParametersListItem>
+<ParametersListItem name="Cs">The character pack representing the numeric value.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+The parsed decimal part as an integral value of type <code>T</code>.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00253">253</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
 </MemberDefinition>
 
 ### den&#95;size() {#a78fdcc73346e80349f0d3026cc03b8cd}
@@ -119,9 +161,27 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class T, char... Cs&gt;</>}
   prototype={<>T micro&#95;os&#95;plus::micro&#95;test&#95;plus::math::den&#95;size ()</>}
   labels = {["nodiscard", "constexpr"]}>
-Compute the number of decimal places of a number represented as an array of characters.
+Computes the number of decimal places in a number represented as an array of characters.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00176">176</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
+---
+
+This function template determines, at compile time, the number of decimal (fractional) digits present in a numeric value represented by a character sequence, typically provided as a template parameter pack.
+
+The function expects the character sequence to represent a numeric value, where all characters are either digits, a dot (<code>.</code>), or an apostrophe (‘`&#96;). It locates the first dot and counts the number of digits that follow, returning the count as the number of decimal places.
+
+This utility is particularly useful for user-defined literals and other compile-time constant expressions, enabling efficient and type-safe determination of decimal precision from character sequences.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="T">The integral type for the result.</ParametersListItem>
+<ParametersListItem name="Cs">The character pack representing the numeric value.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+The number of decimal places as a value of type <code>T</code>.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00293">293</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
 </MemberDefinition>
 
 ### den&#95;size() {#a3e243d7f77b8435e1433ccad9c603f98}
@@ -130,9 +190,31 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class T, class Value&#95;T&gt;</>}
   prototype={<>T micro&#95;os&#95;plus::micro&#95;test&#95;plus::math::den&#95;size (Value&#95;T value)</>}
   labels = {["nodiscard", "constexpr"]}>
-Compute the number of decimal places of a value, up to 7 digits.
+Computes the number of decimal places of a value, up to 7 digits.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00200">200</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
+---
+
+This function template determines, at compile time, the number of decimal (fractional) digits present in a floating-point value, up to a maximum of seven digits of precision.
+
+The function repeatedly multiplies the input value by ten, incrementing a counter until the fractional part is less than a defined precision threshold (1e-7). This approach provides a robust means of estimating decimal precision for values where exact representation is not possible due to floating-point limitations.
+
+This utility is particularly useful for user-defined literals and compile-time constant expressions, enabling efficient and type-safe determination of decimal precision from floating-point values.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="T">The integral type for the result.</ParametersListItem>
+<ParametersListItem name="Value&#95;T">The type of the input value, typically a floating-point type.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="value">The value whose decimal precision is to be determined.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+The number of decimal places, as a value of type <code>T</code>, up to a maximum of seven.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00338">338</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
 </MemberDefinition>
 
 ### min&#95;value() {#ae53dd62f6d82b8ccaa048d90a7002826}
@@ -141,9 +223,31 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class T&gt;</>}
   prototype={<>const T &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::math::min&#95;value (const T &amp; lhs, const T &amp; rhs)</>}
   labels = {["nodiscard", "constexpr"]}>
-Generic minimum of two comparable values.
+Computes the minimum of two comparable values.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00106">106</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
+---
+
+This function template provides a generic, constexpr implementation for determining the minimum of two values of any type that supports comparison.
+
+The function returns a reference to the lesser of the two input values, as determined by the <code>&lt;</code> operator. If the second argument is less than the first, it is returned; otherwise, the first argument is returned.
+
+This utility is designed to be lightweight and suitable for embedded environments, where standard library alternatives may be unavailable, less efficient, or not constexpr.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="T">The type of the input values. Must support comparison via the <code>&lt;</code> operator.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="lhs">The first value to compare.</ParametersListItem>
+<ParametersListItem name="rhs">The second value to compare.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+A reference to the minimum of the two input values.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00146">146</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
 </MemberDefinition>
 
 ### num() {#a60e755b1df92f6391368649b0ba97f97}
@@ -152,9 +256,27 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class T, char... Cs&gt;</>}
   prototype={<>T micro&#95;os&#95;plus::micro&#95;test&#95;plus::math::num ()</>}
   labels = {["nodiscard", "constexpr"]}>
-Compute the integral value of a number represented as an array of characters.
+Computes the integral value of a number represented as an array of characters.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00128">128</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
+---
+
+This function template performs compile-time parsing of a numeric value from a sequence of characters, typically provided as a template parameter pack.
+
+The function assumes that all characters are either digits, a dot (<code>.</code>), or an apostrophe (‘`&#96;). Parsing stops at the first dot, allowing the function to extract only the integral part of the number.
+
+This utility is particularly useful for user-defined literals and other compile-time constant expressions, enabling efficient and type-safe conversion from character sequences to integral values.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="T">The target integral type for the result.</ParametersListItem>
+<ParametersListItem name="Cs">The character pack representing the numeric value.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+The parsed integral value of type <code>T</code>.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00207">207</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
 </MemberDefinition>
 
 ### pow() {#a5c22d85f0df63cc0504cbf4988173cd7}
@@ -163,9 +285,32 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class T, class Exp&#95;T&gt;</>}
   prototype={<>T micro&#95;os&#95;plus::micro&#95;test&#95;plus::math::pow (const T base, const Exp&#95;T exp)</>}
   labels = {["nodiscard", "constexpr"]}>
-Generic &#39;power of&#39;, to raise base to exponent (base ^ exp).
+Generic exponentiation function to compute the power of a base raised to an exponent.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00116">116</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
+---
+
+This function template provides a constexpr implementation for raising a base value to a given exponent, supporting any types that allow multiplication and subtraction.
+
+The function recursively multiplies the base by itself exponent times. If the exponent is zero, the function returns one (the multiplicative identity for the type).
+
+This utility is designed to be lightweight and suitable for embedded environments, where standard library alternatives may be unavailable, less efficient, or not constexpr.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="T">The type of the base value. Must support multiplication and construction from an integer.</ParametersListItem>
+<ParametersListItem name="Exp&#95;T">The type of the exponent. Must support subtraction and comparison to zero.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="base">The base value to be raised to the power of <code>exp</code>.</ParametersListItem>
+<ParametersListItem name="exp">The exponent value.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+The result of raising <code>base</code> to the power of <code>exp</code>.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h/#l00178">178</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

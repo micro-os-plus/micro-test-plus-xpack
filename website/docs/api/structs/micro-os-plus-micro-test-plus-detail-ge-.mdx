@@ -123,7 +123,7 @@ All definitions are intended for internal use within the framework and are imple
 <ParametersListItem name="Rhs&#95;T">The type of the right-hand operand.</ParametersListItem>
 </ParametersList>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00695">695</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00717">717</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 
 <SectionDefinition>
 
@@ -136,7 +136,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>const Lhs&#95;T micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::ge&#95;&lt; Lhs&#95;T, Rhs&#95;T &gt;::lhs&#95; &#123;&#125;</>}>
 Stores the left-hand operand.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00793">793</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00819">819</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 ### rhs&#95; {#ac42617839c81070fed0e8960b3b5f980}
@@ -146,7 +146,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>const Rhs&#95;T micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::ge&#95;&lt; Lhs&#95;T, Rhs&#95;T &gt;::rhs&#95; &#123;&#125;</>}>
 Stores the right-hand operand.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00798">798</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00824">824</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 ### value&#95; {#afbc7c85bac94188bf478b9d88b12bb11}
@@ -156,7 +156,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>const bool micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::ge&#95;&lt; Lhs&#95;T, Rhs&#95;T &gt;::value&#95; &#123;&#125;</>}>
 Stores the result of the greater than or equal comparison.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00803">803</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00829">829</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -173,6 +173,8 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["inline", "constexpr"]}>
 Constructs a greater than or equal comparator for the given operands.
 
+---
+
 Evaluates whether the left-hand operand is greater than or equal to the right-hand operand at construction, supporting static values and generic types. The result is stored in the <code>value&#95;</code> member for efficient access.
 
 
@@ -181,7 +183,7 @@ Evaluates whether the left-hand operand is greater than or equal to the right-ha
 <ParametersListItem name="rhs">The right-hand operand.</ParametersListItem>
 </ParametersList>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00709">709</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00732">732</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -198,6 +200,8 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   labels = {["inline", "nodiscard", "constexpr"]}>
 Retrieves the left-hand operand.
 
+---
+
 Returns the value of the left-hand operand, applying the generic getter to ensure correct extraction for both custom and standard types.
 
 
@@ -210,7 +214,7 @@ None.
 The extracted left-hand operand.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00768">768</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00793">793</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 ### operator bool() {#ac44f473624560442bde250eb13dfdae6}
@@ -220,6 +224,8 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::ge&#95;&lt; Lhs&#95;T, Rhs&#95;T &gt;::operator bool () const</>}
   labels = {["inline", "nodiscard", "constexpr"]}>
 Conversion operator to boolean.
+
+---
 
 Returns the result of the greater than or equal comparison.
 
@@ -234,7 +240,7 @@ None.
 <ParametersListItem name="false">Otherwise.</ParametersListItem>
 </ParametersList>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00751">751</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00775">775</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 ### rhs() {#a5e784af1b6ac7ed4631b6239f7863303}
@@ -244,6 +250,8 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::ge&#95;&lt; Lhs&#95;T, Rhs&#95;T &gt;::rhs () const</>}
   labels = {["inline", "nodiscard", "constexpr"]}>
 Retrieves the right-hand operand.
+
+---
 
 Returns the value of the right-hand operand, applying the generic getter to ensure correct extraction for both custom and standard types.
 
@@ -257,7 +265,7 @@ None.
 The extracted right-hand operand.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00785">785</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00811">811</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

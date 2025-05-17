@@ -12,7 +12,6 @@ keywords:
 
 ---
 
-import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
@@ -24,13 +23,17 @@ import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser
 
 <DoxygenPage version="1.13.2">
 
-Options for controlling verbosity at run-time. <Link to="#details">More...</Link>
+Options for controlling test output verbosity at run-time.
 
 ## Description {#details}
 
 
 
-By default, the µTest++ reporter presents detailed results solely for failed test cases; successful test cases are summarised in a single line, indicating the total number of passed and failed checks.
+The µTest++ framework provides flexible command-line options to control the verbosity of test output, allowing users to tailor the level of detail to their specific requirements and workflow.
+
+
+
+By default, the reporter presents detailed results only for failed test cases, while successful test cases are summarised in a single line, indicating the total number of passed and failed checks.
 
 
 
@@ -69,13 +72,13 @@ By default, the µTest++ reporter presents detailed results solely for failed te
 
 
 
-To modify the verbosity, one of the following command-line options may be specified:
+To adjust the verbosity, the following command-line options are available:
 
 
 
 
 <ul>
-<li><code>--verbose</code> – display all expectations, irrespective of the outcome</li>
+<li><code>--verbose</code> – display all expectations, regardless of outcome</li>
 <li><code>--quiet</code> – display only the test suite totals</li>
 <li><code>--silent</code> – suppress all output and return only the exit code</li>
 </ul>
@@ -83,12 +86,15 @@ To modify the verbosity, one of the following command-line options may be specif
 
 
 
+These options enable developers to focus on the information most relevant to their needs, whether that is comprehensive diagnostics during development or succinct summaries for automated builds.
 
-:::info
+
+
+The examples provided illustrate the output produced in each mode, demonstrating how µTest++ adapts its reporting to support professional and efficient testing workflows across all files and folders.
+
+
+
 The source code for this test is located in the <code>tests/src/minimal-test.cpp</code> file.
-:::
-
-
 
 
 
@@ -97,7 +103,7 @@ The source code for this test is located in the <code>tests/src/minimal-test.cpp
 
 
 
-In verbose mode, the µTest++ reporter displays all expectations, regardless of their result.
+In verbose mode, the µTest++ reporter provides detailed output for every expectation, irrespective of whether it passes or fails.
 
 
 
@@ -140,7 +146,7 @@ In verbose mode, the µTest++ reporter displays all expectations, regardless of 
 
 
 
-In quiet mode, the µTest++ reporter outputs only the overall test suite totals.
+In quiet mode, the µTest++ reporter displays only the overall totals for the test suite.
 
 
 
@@ -175,7 +181,7 @@ In quiet mode, the µTest++ reporter outputs only the overall test suite totals.
 
 
 
-In silent mode, the µTest++ reporter suppresses all output, and the framework returns solely the exit code.
+In silent mode, the µTest++ reporter suppresses all output, and the framework returns only the exit code.
 
 
 

@@ -22,13 +22,15 @@ import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/Includ
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
 import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
 import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
 
 # The `function_traits` Struct Template Reference
 
 <DoxygenPage version="1.13.2">
 
-TODO: add <code>@brief</code> to <code>@struct micro_os_plus::micro_test_plus::type_traits::function_traits< R(*)(Args_T...)></code>
+Struct template specialisation for extracting function traits from function pointer types. <Link to="#details">More...</Link>
 
 ## Declaration
 
@@ -51,20 +53,30 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(&#42;)(
 <MembersIndexItem
   type="using"
   name={<><Link to="#a291ffb121545e9b52c3d1542f1612074">args</Link> = <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">list</Link>&lt; Args&#95;T... &gt;</>}>
+Type list of all argument types. <Link to="#a291ffb121545e9b52c3d1542f1612074">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="using"
   name={<><Link to="#a6e68b0f12d97490c730b3ee455887a75">result&#95;type</Link> = R</>}>
+The return type of the function. <Link to="#a6e68b0f12d97490c730b3ee455887a75">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
 
 ## Description {#details}
 
-TODO: add <code>@details</code> to <code>@struct micro_os_plus::micro_test_plus::type_traits::function_traits< R(*)(Args_T...)></code>
+This specialisation of the <code>function&#95;traits</code> struct template provides compile-time introspection for function pointer types. It exposes the return type and argument types of a function pointer, enabling advanced template metaprogramming and type deduction within the µTest++ framework.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00131">131</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+The <code><Link to="#a6e68b0f12d97490c730b3ee455887a75">result&#95;type</Link></code> member defines the return type of the function, while the <code>args</code> member is a type list containing all argument types.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="R">The return type of the function.</ParametersListItem>
+<ParametersListItem name="...Args&#95;T">The argument types of the function.</ParametersListItem>
+</ParametersList>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00198">198</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 
 <SectionDefinition>
 
@@ -75,8 +87,9 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <MemberDefinition
   template={<>template &lt;class R, class... Args&#95;T&gt;</>}
   prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::function&#95;traits&lt; R(&#42;)(Args&#95;T...)&gt;::args =  list&lt;Args&#95;T...&gt;</>}>
+Type list of all argument types.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00134">134</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00208">208</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### result&#95;type {#a6e68b0f12d97490c730b3ee455887a75}
@@ -84,8 +97,9 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <MemberDefinition
   template={<>template &lt;class R, class... Args&#95;T&gt;</>}
   prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::function&#95;traits&lt; R(&#42;)(Args&#95;T...)&gt;::result&#95;type =  R</>}>
+The return type of the function.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00133">133</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00203">203</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

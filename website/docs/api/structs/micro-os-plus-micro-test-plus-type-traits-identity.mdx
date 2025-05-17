@@ -22,13 +22,15 @@ import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/Includ
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
 import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
 import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
 
 # The `identity` Struct Template Reference
 
 <DoxygenPage version="1.13.2">
 
-TODO: add <code>@brief</code> to <code>@struct micro_os_plus::micro_test_plus::type_traits::identity</code>
+Struct template for compile-time type identity. <Link to="#details">More...</Link>
 
 ## Declaration
 
@@ -51,15 +53,24 @@ struct micro_os_plus::micro_test_plus::type_traits::identity&lt;T, class...&gt;;
 <MembersIndexItem
   type="using"
   name={<><Link to="#a8a488c6629ed310aa4fa5713e4e2e016">type</Link> = T</>}>
+Alias for the preserved type. <Link to="#a8a488c6629ed310aa4fa5713e4e2e016">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
 
 ## Description {#details}
 
-TODO: add <code>@details</code> to <code>@struct micro_os_plus::micro_test_plus::type_traits::identity</code>
+The <code>identity</code> struct template provides a mechanism for preserving a type <code>T</code> during template metaprogramming. It is commonly used to delay type evaluation or to forward types in complex template constructs within the µTest++ framework.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00109">109</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+This utility is particularly useful in scenarios where type deduction or SFINAE is required, as it allows the type to be carried through template specialisations without modification.
+
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="T">The type to be preserved.</ParametersListItem>
+<ParametersListItem name="...Unused">Additional template parameters, ignored.</ParametersListItem>
+</ParametersList>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00139">139</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 
 <SectionDefinition>
 
@@ -70,8 +81,9 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <MemberDefinition
   template={<>template &lt;class T, class...&gt;</>}
   prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::identity&lt; T,... &gt;::type =  T</>}>
+Alias for the preserved type.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00111">111</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00144">144</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
