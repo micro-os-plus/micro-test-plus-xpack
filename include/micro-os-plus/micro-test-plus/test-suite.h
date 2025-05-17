@@ -97,6 +97,7 @@ namespace micro_os_plus::micro_test_plus
   public:
     /**
      * @brief Constructs a test suite.
+     *
      * @param [in] name The test suite name.
      *
      * @details
@@ -135,6 +136,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Runs the sequence of test cases in the suite.
+     *
      * @par Parameters
      *	None.
      * @par Returns
@@ -145,6 +147,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Marks the beginning of a named test case.
+     *
      * @param [in] name The test case name.
      * @par Returns
      *  Nothing.
@@ -154,6 +157,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Marks the end of a test case.
+     *
      * @par Parameters
      *	None.
      * @par Returns
@@ -163,27 +167,31 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Gets the suite name.
+     *
      * @par Parameters
      *	None.
      * @return A pointer to the null-terminated test suite name.
      */
     [[nodiscard]] constexpr const char*
-    name ()
+    name (void)
     {
       return name_;
     }
 
     /**
      * @brief Increments the count of passed test conditions.
+     *
      * @par Parameters
      *	None.
      * @par Returns
-     *  Nothing.     */
+     *  Nothing.
+     */
     void
     increment_successful (void);
 
     /**
      * @brief Increments the count of failed test conditions.
+     *
      * @par Parameters
      *	None.
      * @par Returns
@@ -194,6 +202,9 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Gets the number of conditions that passed.
+     *
+     * @par Parameters
+     *	 None.
      * @return An integer with the number of checks that passed.
      */
     [[nodiscard]] constexpr int
@@ -204,6 +215,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Gets the number of test conditions that failed.
+     *
      * @par Parameters
      *	None.
      * @return An integer with the number of checks that failed.
@@ -216,6 +228,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Gets the number of test cases.
+     *
      * @par Parameters
      *	None.
      * @return An integer with the number of test cases.
@@ -228,6 +241,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Begins the execution of the test suite.
+     *
      * @par Parameters
      *	None.
      * @par Returns
@@ -238,6 +252,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Marks the end of the test suite.
+     *
      * @par Parameters
      *	None.
      * @par Returns
@@ -248,6 +263,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Gets the test suite result.
+     *
      * @par Parameters
      *	None.
      * @return True if the test suite was successful.
@@ -261,6 +277,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Checks if the test suite was not used.
+     *
      * @par Parameters
      *	None.
      * @return True if the test suite is not used.
@@ -317,6 +334,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Number of successful checks in the current test case.
        */
       int successful_checks;
+
       /**
        * @brief Number of failed checks in the current test case.
        */
@@ -353,8 +371,10 @@ namespace micro_os_plus::micro_test_plus
   public:
     /**
      * @brief Class template constructor for test_suite.
+     *
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
+     *
      * @param [in] name The test case name or description, used in reports.
      * @param [in] callable A generic callable object, usually a lambda,
      * invoked to perform the test.
@@ -400,6 +420,11 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Runs the sequence of test cases in the suite by invoking the
      * stored callable.
+     *
+     * @par Parameters
+     *	 None.
+     * @par Returns
+     *   Nothing.
      */
     virtual void
     run (void) override;

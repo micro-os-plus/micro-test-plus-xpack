@@ -125,8 +125,9 @@ namespace micro_os_plus::micro_test_plus
      * using compiler built-ins where available, or defaulting to `"unknown"`
      * and zero otherwise.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      * @since 3.0.0
+     *
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     class source_location
     {
@@ -163,20 +164,26 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Retrieve the file name associated with this source location.
+       *
+       * @par Parameters
+       *	 None.
        * @return The file name as a constant character pointer.
        */
       [[nodiscard]] constexpr auto
-      file_name () const noexcept
+      file_name (void) const noexcept
       {
         return file_;
       }
 
       /**
        * @brief Retrieve the line number associated with this source location.
+       *
+       * @par Parameters
+       *	 None.
        * @return The line number as an unsigned integer.
        */
       [[nodiscard]] constexpr auto
-      line () const noexcept
+      line (void) const noexcept
       {
         return line_;
       }
@@ -186,6 +193,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief The file name where the source location was captured.
        */
       const char* file_{ "unknown" };
+
       /**
        * @brief The line number where the source location was captured.
        */
@@ -197,6 +205,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Extract a short type or function name from a fully qualified
      * name.
+     *
      * @param name The fully qualified name as a C-string.
      * @return A pointer to the short name within the input string.
      */
@@ -218,11 +227,14 @@ namespace micro_os_plus::micro_test_plus
      * the µTest++ framework to support improved diagnostics and reporting.
      *
      * @tparam T The type whose name is to be extracted.
+     *
+     * @par Parameters
+     *	 None.
      * @return A `std::string_view` containing the extracted type name.
      */
     template <class T>
     [[nodiscard]] constexpr auto
-    type_name () -> std::string_view
+    type_name (void) -> std::string_view
     {
 #if defined(__clang__)
 #pragma GCC diagnostic push

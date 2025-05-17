@@ -111,6 +111,7 @@ namespace micro_os_plus::micro_test_plus
      * manipulations and compile-time computations.
      *
      * @tparam ...Types The types to be included in the list.
+     *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class...>
@@ -133,6 +134,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam T The type to be preserved.
      * @tparam ...Unused Additional template parameters, ignored.
+     *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class T, class...>
@@ -168,6 +170,7 @@ namespace micro_os_plus::micro_test_plus
      * metaprogramming and flexible test case registration.
      *
      * @tparam T The callable type for which traits are to be extracted.
+     *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class T>
@@ -192,6 +195,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam R The return type of the function.
      * @tparam ...Args_T The argument types of the function.
+     *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class R, class... Args_T>
@@ -224,6 +228,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam R The return type of the function.
      * @tparam ...Args_T The argument types of the function.
+     *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class R, class... Args_T>
@@ -257,6 +262,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam R The return type of the member function.
      * @tparam T The class type to which the member function belongs.
      * @tparam ...Args_T The argument types of the member function.
+     *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class R, class T, class... Args_T>
@@ -291,6 +297,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam R The return type of the const member function.
      * @tparam T The class type to which the member function belongs.
      * @tparam ...Args_T The argument types of the const member function.
+     *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class R, class T, class... Args_T>
@@ -318,11 +325,14 @@ namespace micro_os_plus::micro_test_plus
      * deduce types during template metaprogramming in the µTest++ framework.
      *
      * @tparam T The type for which an rvalue reference is required.
+     *
+     * @par Parameters
+     *	 None.
      * @return An rvalue reference to type `T`.
      */
     template <class T>
     T&&
-    declval ();
+    declval (void);
     template <class... Ts, class Expr_T>
     constexpr auto
     is_valid (Expr_T expr) -> decltype (expr (declval<Ts...> ()), bool ())
@@ -339,6 +349,7 @@ namespace micro_os_plus::micro_test_plus
      * instantiated, providing a `false` result for invalid expressions.
      *
      * @tparam ...Ts The argument types to be tested.
+     *
      * @return `false` indicating the expression is not valid for the given
      * argument types.
      */
@@ -361,9 +372,9 @@ namespace micro_os_plus::micro_test_plus
      * types in template metaprogramming.
      *
      * @tparam T The type to be checked for container-like behaviour.
+     *
      * @retval true if `T` has both `begin()` and `end()` member functions.
      * @retval false otherwise.
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class T>
     static constexpr auto is_container_v = is_valid<T> (
@@ -382,9 +393,9 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam T The type to be checked for the presence of a static `npos`
      * member.
+     *
      * @retval true if `T` has a static member named `npos`.
      * @retval false otherwise.
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class T>
     static constexpr auto has_npos_v
@@ -402,9 +413,9 @@ namespace micro_os_plus::micro_test_plus
      * that encapsulate a value, such as wrappers or constant types.
      *
      * @tparam T The type to be checked for the presence of a `value` member.
+     *
      * @retval true if `T` has a member named `value`.
      * @retval false otherwise.
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class T>
     static constexpr auto has_value_v
@@ -423,9 +434,9 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam T The type to be checked for the presence of an `epsilon`
      * member.
+     *
      * @retval true if `T` has a member named `epsilon`.
      * @retval false otherwise.
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class T>
     static constexpr auto has_epsilon_v
@@ -446,9 +457,9 @@ namespace micro_os_plus::micro_test_plus
      * each evaluating to `true`.
      *
      * @tparam T The type to be checked for floating point classification.
+     *
      * @retval true if `T` is a floating point type.
      * @retval false otherwise.
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class T>
     inline constexpr auto is_floating_point_v = false;
@@ -518,9 +529,9 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam From The source type to be checked for convertibility.
      * @tparam To The target type to which conversion is tested.
+     *
      * @retval true if `From` is convertible to `To`.
      * @retval false otherwise.
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class From, class To>
     static constexpr auto is_convertible_v = __is_convertible_to (From, To);
@@ -544,6 +555,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam From The source type to be checked for convertibility.
      * @tparam To The target type to which conversion is tested.
+     *
      * @param (int) Dummy parameter used for overload resolution.
      * @retval true if `From` is convertible to `To`.
      */
@@ -564,6 +576,7 @@ namespace micro_os_plus::micro_test_plus
      * conversions.
      *
      * @tparam ...Unused Unused template parameters.
+     *
      * @retval false indicating the conversion is not valid.
      */
     template <class...>
@@ -586,9 +599,9 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam From The source type to be checked for convertibility.
      * @tparam To The target type to which conversion is tested.
+     *
      * @retval true if `From` is convertible to `To`.
      * @retval false otherwise.
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class From, class To>
     constexpr auto is_convertible_v = is_convertible<From, To> (0);
@@ -609,6 +622,7 @@ namespace micro_os_plus::micro_test_plus
      * declarations.
      *
      * @tparam Cond The boolean condition to be checked at compile time.
+     *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <bool>
@@ -645,7 +659,6 @@ namespace micro_os_plus::micro_test_plus
      * declarations.
      *
      * @tparam Cond The boolean condition to be checked at compile time.
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <bool Cond>
     using requires_t = typename requires_<Cond>::type;
@@ -685,6 +698,7 @@ namespace micro_os_plus::micro_test_plus
      * `integral_constant` instance.
      *
      * @tparam N The compile-time constant value.
+     *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <auto N>
@@ -732,10 +746,13 @@ namespace micro_os_plus::micro_test_plus
        *
        * @details
        * Returns the compile-time constant value.
+       *
+       * @par Parameters
+       *	 None.
        * @return The constant value.
        */
       [[nodiscard]] constexpr auto
-      get () const
+      get (void) const
       {
         return N;
       }
@@ -764,6 +781,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Size The number of decimal digits for the fractional part.
      * @tparam P The sign of the value (1 for positive, -1 for negative).
      * Defaults to 1.
+     *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class T, auto N, auto D, auto Size, auto P = 1>
@@ -849,6 +867,7 @@ namespace micro_os_plus::micro_test_plus
      * introspection.
      *
      * @tparam T The type of the integral value.
+     *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class T>
@@ -861,6 +880,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Constructs a genuine_integral_value with the specified value.
+       *
        * @param _value The integral value to be stored.
        */
       constexpr genuine_integral_value (const T& _value) : value_{ _value }
@@ -911,9 +931,9 @@ namespace micro_os_plus::micro_test_plus
      * in template metaprogramming.
      *
      * @tparam T The type to be checked for derivation from `op`.
+     *
      * @retval true if `T` is derived from `type_traits::op`.
      * @retval false otherwise.
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class T>
     inline constexpr auto is_op_v = __is_base_of (type_traits::op, T);
@@ -937,6 +957,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam T The type of the value to be encapsulated.
      * @tparam Unused An optional parameter for SFINAE or specialisation,
      * defaults to `int`.
+     *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class T, class = int>
@@ -949,6 +970,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Constructs a value object with the specified value.
+       *
        * @param _value The value to be stored.
        */
       constexpr value (const T& _value) : value_{ _value }
@@ -973,10 +995,13 @@ namespace micro_os_plus::micro_test_plus
        *
        * @details
        * Returns the stored value.
+       *
+       * @par Parameters
+       *	 None.
        * @return The value of type `T`.
        */
       [[nodiscard]] constexpr decltype (auto)
-      get () const
+      get (void) const
       {
         return value_;
       }
@@ -1009,6 +1034,7 @@ namespace micro_os_plus::micro_test_plus
      * metaprogramming and type-safe comparisons within the framework.
      *
      * @tparam T The floating point type to be encapsulated.
+     *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class T>
@@ -1033,6 +1059,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Constructs a floating point value with a specified precision.
+       *
        * @param _value The floating point value to be stored.
        * @param precision The epsilon value to be used for comparisons.
        */
@@ -1043,6 +1070,7 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Constructs a floating point value with default precision.
+       *
        * @param val The floating point value to be stored.
        *
        * @details
@@ -1075,10 +1103,13 @@ namespace micro_os_plus::micro_test_plus
        *
        * @details
        * Returns the stored floating point value.
+       *
+       * @par Parameters
+       *	 None.
        * @return The value of type `T`.
        */
       [[nodiscard]] constexpr decltype (auto)
-      get () const
+      get (void) const
       {
         return value_;
       }

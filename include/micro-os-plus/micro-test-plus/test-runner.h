@@ -63,20 +63,7 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
-  /**
-   * @brief Abstract base class for test suites within the µTest++ framework.
-   *
-   * @details
-   * The `test_suite_base` class serves as the foundational interface for all
-   * test suites managed by the test runner. It enables polymorphic handling of
-   * test suites, allowing the test runner to register, organise, and execute
-   * multiple suites in a consistent manner.
-   *
-   * Each test suite derived from `test_suite_base` is automatically registered
-   * with the test runner upon construction, facilitating seamless integration
-   * and execution of tests across different components and folders of a
-   * project.
-   */
+  // Forward definition.
   class test_suite_base;
 
   // --------------------------------------------------------------------------
@@ -145,15 +132,21 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Initialises the test runner with command-line arguments and an
      * optional suite name.
+     *
      * @param argc The argument count from main().
      * @param argv The argument vector from main().
      * @param name The name of the default test suite.
+     * @par Returns
+     *   Nothing.
      */
     void
     initialize (int argc, char* argv[], const char* name);
 
     /**
      * @brief Returns 0 if all tests were successful, 1 otherwise.
+     *
+     * @par Parameters
+     *	 None.
      * @return Integer exit code representing the overall test result.
      */
     int
@@ -165,13 +158,19 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Called by test suite constructors to register themselves with the
      * runner, enabling automatic management and execution.
+     *
      * @param suite Pointer to the test suite to register.
+     * @par Returns
+     *   Nothing.
      */
     void
     register_test_suite (test_suite_base* suite);
 
     /**
      * @brief Retrieves the name of the default test suite.
+     *
+     * @par Parameters
+     *	 None.
      * @return The name of the default test suite as a constant character
      * pointer.
      */
@@ -187,6 +186,11 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * This function terminates the test process without returning, typically
      * used in exceptional or fatal error conditions.
+     *
+     * @par Parameters
+     *	 None.
+     * @par Returns
+     *   Nothing.
      */
     [[noreturn]] void
     abort (void);

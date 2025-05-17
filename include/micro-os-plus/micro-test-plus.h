@@ -136,18 +136,8 @@ namespace micro_os_plus::micro_test_plus
    * @ingroup micro-test-plus-inits
    * @brief Complete the test run and return the exit code.
    *
-   * @details
-   * The `exit_code` function finalises the execution of all registered test
-   * suites and test cases within the µTest++ framework, and returns an
-   * appropriate exit code to the operating system. This function should be
-   * called at the end of the test program, typically from the `main()`
-   * function, to ensure that all results are properly reported and the correct
-   * status is communicated.
-   *
-   * The returned value indicates the overall success or failure of the test
-   * run, allowing integration with build systems and continuous integration
-   * environments.
-   *
+   * @par Parameters
+   *	 None.
    * @return 0 if all tests were successful, 1 if any test failed.
    */
   [[nodiscard]] int
@@ -519,6 +509,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
+   *
    * @param [in] lhs Left hand side operand.
    * @param [in] rhs Right hand side operand.
    * @return A comparator object that evaluates to true if `lhs` is greater
@@ -545,6 +536,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @tparam Lhs_T Type of the left hand side pointer operand.
    * @tparam Rhs_T Type of the right hand side pointer operand.
+   *
    * @param [in] lhs Left hand side pointer operand.
    * @param [in] rhs Right hand side pointer operand.
    * @return A comparator object that evaluates to true if the left hand side
@@ -570,6 +562,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
+   *
    * @param [in] lhs Left hand side operand.
    * @param [in] rhs Right hand side operand.
    * @return A comparator object that evaluates to true if `lhs` is less than
@@ -595,6 +588,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @tparam Lhs_T Type of the left hand side pointer operand.
    * @tparam Rhs_T Type of the right hand side pointer operand.
+   *
    * @param [in] lhs Left hand side pointer operand.
    * @param [in] rhs Right hand side pointer operand.
    * @return A comparator object that evaluates to true if the left hand side
@@ -620,6 +614,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
+   *
    * @param [in] lhs Left hand side operand.
    * @param [in] rhs Right hand side operand.
    * @return A comparator object that evaluates to true if `lhs` is less than
@@ -646,6 +641,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @tparam Lhs_T Type of the left hand side pointer operand.
    * @tparam Rhs_T Type of the right hand side pointer operand.
+   *
    * @param [in] lhs Left hand side pointer operand.
    * @param [in] rhs Right hand side pointer operand.
    * @return A comparator object that evaluates to true if the left hand side
@@ -673,6 +669,7 @@ namespace micro_os_plus::micro_test_plus
    * from the standard logical not operator.
    *
    * @tparam Expr_T Type of the operand.
+   *
    * @param [in] expr Logical expression to be negated.
    * @return An object that evaluates to true if the operand is false.
    */
@@ -699,6 +696,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
+   *
    * @param [in] lhs Left hand side operand.
    * @param [in] rhs Right hand side operand.
    * @return An object that evaluates to true if both operand expressions are
@@ -727,6 +725,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
+   *
    * @param [in] lhs Left hand side operand.
    * @param [in] rhs Right hand side operand.
    * @return An object that evaluates to true if at least one of the operand
@@ -751,6 +750,7 @@ namespace micro_os_plus::micro_test_plus
    * testing scenarios where controlled mutation of test data is required.
    *
    * @tparam T The type of the input object.
+   *
    * @param [in] t The object from which to remove const qualification.
    * @return A non-const reference to the input object.
    */
@@ -853,6 +853,7 @@ namespace micro_os_plus::micro_test_plus
      * framework's type traits.
      *
      * @tparam T The container type, constrained to recognised container types.
+     *
      * @param [in] lhs The left hand side container operand.
      * @param [in] rhs The right hand side container operand.
      * @return A comparator object that evaluates to true if the containers are
@@ -880,6 +881,7 @@ namespace micro_os_plus::micro_test_plus
      * framework's type traits.
      *
      * @tparam T The container type, constrained to recognised container types.
+     *
      * @param [in] lhs The left hand side container operand.
      * @param [in] rhs The right hand side container operand.
      * @return A comparator object that evaluates to true if the containers are
@@ -909,6 +911,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
+     *
      * @param [in] lhs Left hand side operand.
      * @param [in] rhs Right hand side operand.
      * @return A comparator object that evaluates to true if the operands are
@@ -940,6 +943,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
+     *
      * @param [in] lhs Left hand side operand.
      * @param [in] rhs Right hand side operand.
      * @return A comparator object that evaluates to true if the operands are
@@ -971,6 +975,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
+     *
      * @param [in] lhs Left hand side operand.
      * @param [in] rhs Right hand side operand.
      * @return A comparator object that evaluates to true if the left hand side
@@ -1003,6 +1008,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
+     *
      * @param [in] lhs Left hand side operand.
      * @param [in] rhs Right hand side operand.
      * @return A comparator object that evaluates to true if the left hand side
@@ -1034,6 +1040,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
+     *
      * @param [in] lhs Left hand side operand.
      * @param [in] rhs Right hand side operand.
      * @return A comparator object that evaluates to true if the left hand side
@@ -1066,6 +1073,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
+     *
      * @param [in] lhs Left hand side operand.
      * @param [in] rhs Right hand side operand.
      * @return A comparator object that evaluates to true if the left hand side
@@ -1097,6 +1105,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
+     *
      * @param [in] lhs Left hand side operand.
      * @param [in] rhs Right hand side operand.
      * @return A logical conjunction object that evaluates to true if both
@@ -1128,6 +1137,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
+     *
      * @param [in] lhs Left hand side operand.
      * @param [in] rhs Right hand side operand.
      * @return A logical disjunction object that evaluates to true if at least
@@ -1159,6 +1169,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam T Type of the operand, constrained to types derived from the
      * local `op` base.
+     *
      * @param [in] t Operand to be logically negated.
      * @return A logical negator object that evaluates to true if the operand
      * is false.
@@ -1221,6 +1232,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam T Type of the input string.
      * @tparam Delim_T Type of the delimiter.
+     *
      * @param [in] input Input string to split.
      * @param [in] delim Delimiter string.
      * @return A vector containing the resulting sub-strings.

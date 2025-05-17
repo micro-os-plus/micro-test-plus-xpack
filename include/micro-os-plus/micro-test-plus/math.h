@@ -109,6 +109,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam T The type of the input value. Must support comparison and unary
      * negation.
+     *
      * @param t The value for which the absolute value is to be computed.
      * @return The absolute value of the input.
      */
@@ -137,6 +138,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam T The type of the input values. Must support comparison via the
      * `<` operator.
+     *
      * @param lhs The first value to compare.
      * @param rhs The second value to compare.
      * @return A reference to the minimum of the two input values.
@@ -169,6 +171,7 @@ namespace micro_os_plus::micro_test_plus
      * construction from an integer.
      * @tparam Exp_T The type of the exponent. Must support subtraction and
      * comparison to zero.
+     *
      * @param base The base value to be raised to the power of \p exp.
      * @param exp The exponent value.
      * @return The result of raising \p base to the power of \p exp.
@@ -200,11 +203,14 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam T The target integral type for the result.
      * @tparam Cs The character pack representing the numeric value.
+     *
+     * @par Parameters
+     *	 None.
      * @return The parsed integral value of type \c T.
      */
     template <class T, char... Cs>
     [[nodiscard]] constexpr auto
-    num () -> T
+    num (void) -> T
     {
       // Assume all are digits or dot or apostrophe.
       static_assert (
@@ -246,11 +252,14 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam T The target integral type for the result.
      * @tparam Cs The character pack representing the numeric value.
+     *
+     * @par Parameters
+     *	 None.
      * @return The parsed decimal part as an integral value of type \c T.
      */
     template <class T, char... Cs>
     [[nodiscard]] constexpr auto
-    den () -> T
+    den (void) -> T
     {
       constexpr const std::array cs{ Cs... };
       T result{};
@@ -286,11 +295,14 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam T The integral type for the result.
      * @tparam Cs The character pack representing the numeric value.
+     *
+     * @par Parameters
+     *	 None.
      * @return The number of decimal places as a value of type \c T.
      */
     template <class T, char... Cs>
     [[nodiscard]] constexpr auto
-    den_size () -> T
+    den_size (void) -> T
     {
       constexpr const std::array cs{ Cs... };
       T i{};
@@ -329,6 +341,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam T The integral type for the result.
      * @tparam Value_T The type of the input value, typically a floating-point
      * type.
+     *
      * @param value The value whose decimal precision is to be determined.
      * @return The number of decimal places, as a value of type \c T, up to a
      * maximum of seven.

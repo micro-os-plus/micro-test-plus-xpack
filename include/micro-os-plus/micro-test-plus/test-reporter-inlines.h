@@ -84,6 +84,7 @@ namespace micro_os_plus::micro_test_plus
    * pointer-related test cases.
    *
    * @tparam T The type of the pointer being output.
+   *
    * @param v The pointer value to be formatted and reported.
    * @return A reference to the current `test_reporter` instance, enabling
    * chaining of output operations.

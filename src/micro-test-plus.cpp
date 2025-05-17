@@ -93,9 +93,16 @@ namespace micro_os_plus::micro_test_plus
    * files, and are automatically registered via the static constructors
    * mechanism.
    *
-   * This function initiates the execution of all globally registered test
-   * suites (if present) and returns the overall test result as the process
-   * exit code (0 indicates success).
+   * The `exit_code` function finalises the execution of all registered test
+   * suites and test cases within the µTest++ framework, and returns an
+   * appropriate exit code to the operating system. This function should be
+   * called at the end of the test program, typically from the `main()`
+   * function, to ensure that all results are properly reported and the correct
+   * status is communicated.
+   *
+   * The returned value indicates the overall success or failure of the test
+   * run, allowing integration with build systems and continuous integration
+   * environments.
    */
   int
   exit_code (void)

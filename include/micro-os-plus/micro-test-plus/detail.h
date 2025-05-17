@@ -146,6 +146,7 @@ namespace micro_os_plus::micro_test_plus
      * maintain a structured and modular codebase.
      *
      * @tparam T The type from which the value is to be retrieved.
+     *
      * @param t The object or value to be accessed.
      * @return The value obtained via the relevant getter implementation.
      */
@@ -174,6 +175,7 @@ namespace micro_os_plus::micro_test_plus
      * maintain a structured and modular codebase.
      *
      * @tparam T The type from which the value is to be retrieved.
+     *
      * @param t The object or value to be accessed.
      * @return The original argument `t`.
      */
@@ -207,6 +209,7 @@ namespace micro_os_plus::micro_test_plus
      * maintain a structured and modular codebase.
      *
      * @tparam T The type from which the value is to be retrieved.
+     *
      * @param t The object or value to be accessed.
      * @return The value obtained via the relevant getter implementation.
      */
@@ -347,7 +350,7 @@ namespace micro_os_plus::micro_test_plus
        * @return The extracted left-hand operand.
        */
       [[nodiscard]] constexpr auto
-      lhs () const
+      lhs (void) const
       {
         return get (lhs_);
       }
@@ -365,7 +368,7 @@ namespace micro_os_plus::micro_test_plus
        * @return The extracted right-hand operand.
        */
       [[nodiscard]] constexpr auto
-      rhs () const
+      rhs (void) const
       {
         return get (rhs_);
       }
@@ -506,7 +509,7 @@ namespace micro_os_plus::micro_test_plus
        * @return The extracted left-hand operand.
        */
       [[nodiscard]] constexpr auto
-      lhs () const
+      lhs (void) const
       {
         return get (lhs_);
       }
@@ -524,7 +527,7 @@ namespace micro_os_plus::micro_test_plus
        * @return The extracted right-hand operand.
        */
       [[nodiscard]] constexpr auto
-      rhs () const
+      rhs (void) const
       {
         return get (rhs_);
       }
@@ -647,7 +650,7 @@ namespace micro_os_plus::micro_test_plus
        * @return The extracted left-hand operand.
        */
       [[nodiscard]] constexpr auto
-      lhs () const
+      lhs (void) const
       {
         return get (lhs_);
       }
@@ -665,7 +668,7 @@ namespace micro_os_plus::micro_test_plus
        *	None.
        * @return The extracted right-hand operand.
        */
-      rhs () const
+      rhs (void) const
       {
         return get (rhs_);
       }
@@ -790,7 +793,7 @@ namespace micro_os_plus::micro_test_plus
        * @return The extracted left-hand operand.
        */
       [[nodiscard]] constexpr auto
-      lhs () const
+      lhs (void) const
       {
         return get (lhs_);
       }
@@ -808,7 +811,7 @@ namespace micro_os_plus::micro_test_plus
        * @return The extracted right-hand operand.
        */
       [[nodiscard]] constexpr auto
-      rhs () const
+      rhs (void) const
       {
         return get (rhs_);
       }
@@ -931,7 +934,7 @@ namespace micro_os_plus::micro_test_plus
        * @return The extracted left-hand operand.
        */
       [[nodiscard]] constexpr auto
-      lhs () const
+      lhs (void) const
       {
         return get (lhs_);
       }
@@ -949,7 +952,7 @@ namespace micro_os_plus::micro_test_plus
        * @return The extracted right-hand operand.
        */
       [[nodiscard]] constexpr auto
-      rhs () const
+      rhs (void) const
       {
         return get (rhs_);
       }
@@ -1076,7 +1079,7 @@ namespace micro_os_plus::micro_test_plus
        */
 
       [[nodiscard]] constexpr auto
-      lhs () const
+      lhs (void) const
       {
         return get (lhs_);
       }
@@ -1094,7 +1097,7 @@ namespace micro_os_plus::micro_test_plus
        * @return The extracted right-hand operand.
        */
       [[nodiscard]] constexpr auto
-      rhs () const
+      rhs (void) const
       {
         return get (rhs_);
       }
@@ -1191,7 +1194,7 @@ namespace micro_os_plus::micro_test_plus
        * @return The extracted left-hand operand.
        */
       [[nodiscard]] constexpr auto
-      lhs () const
+      lhs (void) const
       {
         return get (lhs_);
       }
@@ -1209,7 +1212,7 @@ namespace micro_os_plus::micro_test_plus
        * @return The extracted right-hand operand.
        */
       [[nodiscard]] constexpr auto
-      rhs () const
+      rhs (void) const
       {
         return get (rhs_);
       }
@@ -1306,7 +1309,7 @@ namespace micro_os_plus::micro_test_plus
        * @return The extracted left-hand operand.
        */
       [[nodiscard]] constexpr auto
-      lhs () const
+      lhs (void) const
       {
         return get (lhs_);
       }
@@ -1324,7 +1327,7 @@ namespace micro_os_plus::micro_test_plus
        * @return The extracted right-hand operand.
        */
       [[nodiscard]] constexpr auto
-      rhs () const
+      rhs (void) const
       {
         return get (rhs_);
       }
@@ -1726,6 +1729,7 @@ namespace micro_os_plus::micro_test_plus
        * the accumulation of expectation details.
        *
        * @tparam T The type of the message to append.
+       *
        * @param msg The message to append.
        * @return Reference to the current reporter instance.
        */
