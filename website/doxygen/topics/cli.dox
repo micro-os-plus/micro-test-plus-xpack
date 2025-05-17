@@ -9,7 +9,6 @@ The µTest++ framework provides flexible command-line options to control the ver
 
 By default, the reporter presents detailed results only for failed test cases, while successful test cases are summarised in a single line, indicating the total number of passed and failed checks.
 
-
 @par Example
 
 @code{.console}

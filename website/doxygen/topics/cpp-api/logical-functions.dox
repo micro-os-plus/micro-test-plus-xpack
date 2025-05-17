@@ -15,4 +15,3 @@ mt::expect(mt::_and (mt::eq (compute_answer (), 42), mt::eq (compute_float
 
 
 When the operands are function comparators, it is recommended to use the overloaded logical operators `&&`, `||`, and `!` provided within the `micro_test_plus::operators` namespace for even more natural expression of logical conditions.
-
