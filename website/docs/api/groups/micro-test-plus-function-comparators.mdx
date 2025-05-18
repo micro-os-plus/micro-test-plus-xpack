@@ -110,11 +110,24 @@ Pointer non-equality comparator. <Link to="#ga172f305bbeaf8b965681f76c16a39516">
 
 </MembersIndex>
 
+<Link id="#details" />
+
+
+## Description
+
+
+
 Function comparators in µTest++ provide a clear and expressive way to compare actual and expected values within test cases. While any expression yielding a boolean value may be used in expectations and assumptions, dedicated comparator functions such as <code>eq</code>, <code>ne</code>, <code>lt</code>, <code>le</code>, <code>gt</code>, and <code>ge</code> offer enhanced reporting by explicitly showing the values involved when a check fails.
+
+
 
 Using these comparators ensures that, in the event of a failed check, the test output will include both the actual and expected values, making it easier to diagnose issues and understand the cause of the failure.
 
+
+
 Comparators are available for both fundamental types and standard containers. When comparing containers, each element is assessed individually, and the results are reported in detail.
+
+
 
 
 <SectionUser title="Examples">
@@ -135,7 +148,11 @@ Comparators are available for both fundamental types and standard containers. Wh
 
 </ProgramListing>
 
+
+
 If a comparator check fails, the output will clearly indicate the actual and expected values:
+
+
 
 
 <ProgramListing extension="console">

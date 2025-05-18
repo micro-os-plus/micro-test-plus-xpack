@@ -92,13 +92,28 @@ Greater than or equal operator. Matches only if at least one operand is of local
 
 </MembersIndex>
 
+<Link id="#details" />
+
+
+## Description
+
+
+
 The µTest++ framework provides overloaded comparison and logical operators to enable expressive and type-safe test assertions. These operators—such as <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, and <code>&gt;=</code>—are defined within the dedicated <code>micro&#95;test&#95;plus::operators</code> namespace to avoid conflicts with application-defined operators.
+
+
 
 For standard values, the default operators are used, ensuring correct comparisons. However, when using the specialised µTest++ operators with typed operands, failed checks will display both the actual and expected values, greatly improving the clarity of test reports.
 
+
+
 These operators are restricted to operands derived from the local <code>detail::op</code> type. For constant values, this is achieved using provided literals (e.g., <code>1&#95;i</code>), while dynamic values can be wrapped using casts such as <code>mt::to&#95;i&#123;expression&#125;</code>.
 
+
+
 Logical operators (<code>&amp;&amp;</code>, <code>||</code>, <code>!</code>) are also supported and provide enhanced functionality when used with typed operands, allowing for the composition of complex test conditions in a natural and readable manner.
+
+
 
 
 <SectionUser title="Examples">
