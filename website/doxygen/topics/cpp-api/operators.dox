@@ -2,6 +2,8 @@
 @brief Overloaded operators for expressive test comparisons.
 
 @details
+## Description
+
 The µTest++ framework provides overloaded comparison and logical operators to enable expressive and type-safe test assertions. These operators—such as `==`, `!=`, `<`, `>`, `<=`, and `>=`—are defined within the dedicated `micro_test_plus::operators` namespace to avoid conflicts with application-defined operators.
 
 For standard values, the default operators are used, ensuring correct comparisons. However, when using the specialised µTest++ operators with typed operands, failed checks will display both the actual and expected values, greatly improving the clarity of test reports.
