@@ -93,9 +93,9 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Assertion struct template for parameter passing to the evaluator.
      *
-     * @details
-     *
      * @tparam Expr_T The type of the expression being asserted.
+     *
+     * @details
      *
      * The `assertion` struct template is used to encapsulate assertion
      * parameters, including the expression under evaluation and its associated
