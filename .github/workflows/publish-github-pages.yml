@@ -96,10 +96,10 @@ jobs:
           ls -lLA website website/doxygen
 
       - name: Build the Doxygen site
-        run: (cd website/doxygen; .local/bin/doxygen config.doxyfile)
+        run: (cd website; npm run doxygen)
 
       - name: Build the Docusaurus site
-        run: (cd website; npm run build)
+        run: (cd website; npm run generate-doxygen; npm run build)
 
       - name: Setup Pages
         # https://github.com/actions/configure-pages
