@@ -9,7 +9,7 @@
 # for any purpose is hereby granted, under the terms of the MIT license.
 #
 # If a copy of the license was not distributed with this file, it can
-# be obtained from https://opensource.org/licenses/mit.
+# be obtained from https://opensource.org/licenses/MIT.
 #
 # -----------------------------------------------------------------------------
 
@@ -81,7 +81,7 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: (cd website; npm ci; npm list @xpack/docusaurus-plugin-doxygen)
+        run: (cd website; npm ci)
 
       - name: Install Doxygen
         # https://www.doxygen.nl/download.html
