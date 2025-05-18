@@ -853,7 +853,8 @@ namespace micro_os_plus::micro_test_plus
    * use the preferred `to_*` type wrappers for new code, as they offer
    * improved clarity and consistency.
    *
-   * @deprecated Use the corresponding `to_*` type wrappers instead
+   * @par Deprecated
+   * Use the corresponding `to_*` type wrappers instead
    * (since 3.2.0).
    */
 
