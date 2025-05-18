@@ -1,6 +1,8 @@
 # -----------------------------------------------------------------------------
+# DO NOT EDIT!
+# Automatically generated from build-helper/templates.
 #
-# This file is part of the µOS++ project (https://micro-os-plus.github.io/).
+# This file is part of the µOS++ project (https:///micro-os-plus.github.com/)
 # Copyright (c) 2022 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software
@@ -12,14 +14,14 @@
 # -----------------------------------------------------------------------------
 
 # -----------------------------------------------------------------------------
-# Preamble ##
+## Preamble ##
 
 # https://cmake.org/cmake/help/v3.20/
 cmake_minimum_required(VERSION 3.20)
 
 project(
   micro-os-plus-micro-test-plus-tests
-  DESCRIPTION "µTest++ tests"
+  DESCRIPTION "µTest++ Testing Framework tests"
 )
 
 # Must be called from the top CMakeLists.txt.
@@ -28,8 +30,7 @@ enable_testing()
 # -----------------------------------------------------------------------------
 
 # Global definitions.
-set(ENABLE_SAMPLE_TEST true)
-set(ENABLE_UNIT_TEST true)
+include("cmake/global-definitions.cmake")
 
 # -----------------------------------------------------------------------------
 

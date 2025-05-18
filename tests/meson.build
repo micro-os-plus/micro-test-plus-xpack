@@ -1,6 +1,8 @@
 # -----------------------------------------------------------------------------
+# DO NOT EDIT!
+# Automatically generated from build-helper/templates.
 #
-# This file is part of the µOS++ project (https://micro-os-plus.github.io/).
+# This file is part of the µOS++ project (https://micro-os-plus.github.com/).
 # Copyright (c) 2022 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software
@@ -34,12 +36,12 @@ project('micro-os-plus-micro-test-plus-tests',
 # -----------------------------------------------------------------------------
 # Global definitions #
 
-enable_sample_test = true
-enable_unit_test = true
+subdir('meson/global-definitions')
 
 # -----------------------------------------------------------------------------
 
 fs = import('fs')
+# https://mesonbuild.com/Reference-tables.html#language-arguments-parameter-names
 c_compiler = meson.get_compiler('c')
 cpp_compiler = meson.get_compiler('cpp')
 # message('Compiler ID: ' + c_compiler.get_id())

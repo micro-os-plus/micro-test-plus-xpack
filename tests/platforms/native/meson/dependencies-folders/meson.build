@@ -28,6 +28,7 @@ xpack_platform_compile_definition = 'MICRO_OS_PLUS_PLATFORM_NATIVE'
 xpack_dependencies_folders = [
 
   'xpacks/@micro-os-plus/diag-trace', # -
+  # 'xpacks/@micro-os-plus/micro-test-plus', # -
 
   # (architecture) -
   xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/architecture-synthetic-posix',

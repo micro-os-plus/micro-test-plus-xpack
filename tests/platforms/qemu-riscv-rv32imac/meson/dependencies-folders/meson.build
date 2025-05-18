@@ -28,6 +28,8 @@ xpack_platform_compile_definition = 'MICRO_OS_PLUS_PLATFORM_QEMU_RISCV_RV32IMAC'
 xpack_dependencies_folders = [
 
   'xpacks/@micro-os-plus/diag-trace', # -
+  # 'xpacks/@micro-os-plus/micro-test-plus', # -
+
   # -
   # 'xpacks/@micro-os-plus/version',
 

@@ -30,6 +30,7 @@ set(xpack_dependencies_folders
 
   # The SOURCE_DIR is the `tests` folder.
   "${CMAKE_SOURCE_DIR}/xpacks/@micro-os-plus/diag-trace"
+  # "${CMAKE_SOURCE_DIR}/xpacks/@micro-os-plus/micro-test-plus"
 )
 
 # -----------------------------------------------------------------------------
