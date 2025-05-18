@@ -81,7 +81,7 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: (cd website; npm ci)
+        run: (cd website; npm ci; npm list @xpack/docusaurus-plugin-doxygen)
 
       - name: Install Doxygen
         # https://www.doxygen.nl/download.html
