@@ -16,9 +16,8 @@
 // ----------------------------------------------------------------------------
 
 /**
- * @file test-reporter-inlines.h
- * @brief Inline implementations for the test reporter in the µTest++
- * framework.
+ * @file
+ * @brief C++ header file with inline implementations for the µTest++ test reporter methods.
  *
  * @details
  * This header provides inline definitions for the `test_reporter` class, which

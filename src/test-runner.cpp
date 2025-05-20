@@ -16,9 +16,8 @@
 // ----------------------------------------------------------------------------
 
 /**
- * @file test-runner.cpp
- * @brief Implementation of test runner management for the µTest++ testing
- * framework.
+ * @file
+ * @brief C++ source file with implementations for the µTest++ test runner methods.
  *
  * @details
  * This source file provides the implementation of the `test_runner` class and

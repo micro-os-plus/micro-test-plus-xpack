@@ -16,8 +16,8 @@
 // ----------------------------------------------------------------------------
 
 /**
- * @file test-reporter.h
- * @brief Reporting of test results for the µTest++ testing framework.
+ * @file
+ * @brief C++ header file with declarations for the µTest++ test reporter.
  *
  * @details
  * This header defines the `test_reporter` class and related types, which are

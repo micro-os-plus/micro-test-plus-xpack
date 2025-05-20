@@ -16,9 +16,8 @@
 // ----------------------------------------------------------------------------
 
 /**
- * @file type-traits.h
- * @brief Type trait utilities and metaprogramming support for the µTest++
- * testing framework.
+ * @file
+ * @brief C++ header file with declarations for the µTest++ type trait utilities and metaprogramming support.
  *
  * @details
  * This header provides a suite of type trait templates and metaprogramming
@@ -101,8 +100,6 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam ...Types The types to be included in the list.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
-     *
      * @details
      * The `list` struct template provides a mechanism for grouping an
      * arbitrary number of types into a single type list at compile time. This
@@ -113,6 +110,8 @@ namespace micro_os_plus::micro_test_plus
      * The type list is commonly used in conjunction with function traits and
      * other metaprogramming utilities to facilitate advanced type
      * manipulations and compile-time computations.
+     *
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class...>
     struct list
@@ -159,8 +158,6 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam T The callable type for which traits are to be extracted.
      *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
-     *
      * @details
      * The `function_traits` struct template provides compile-time
      * introspection of callable types, such as function pointers, member
@@ -172,6 +169,8 @@ namespace micro_os_plus::micro_test_plus
      * This mechanism allows the µTest++ framework to deduce argument types and
      * return types of arbitrary callables, supporting advanced template
      * metaprogramming and flexible test case registration.
+     *
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class T>
     struct function_traits : function_traits<decltype (&T::operator())>

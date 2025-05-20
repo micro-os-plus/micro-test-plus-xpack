@@ -1,5 +1,5 @@
 @file topics.h
-@brief Doxygen group definitions and documentation topics for the µTest++ testing framework.
+@brief Project specific Doxygen topics definitions.
 
 @details
 This file defines the principal Doxygen groups and documentation topics for the µTest++ testing framework, which forms part of the µOS++ project.

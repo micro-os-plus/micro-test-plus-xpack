@@ -1,5 +1,5 @@
 @dir include/micro-os-plus/micro-test-plus
-@brief Public header folder for the core components of the µTest++ testing framework.
+@brief Folder with C++ header files for the µTest++ Testing Framework.
 
 @details
 The `include/micro-os-plus/micro-test-plus` folder contains the primary public header files that define the core functionality of the µTest++ testing framework.

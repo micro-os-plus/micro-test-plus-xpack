@@ -12,8 +12,7 @@
 /**
 
 @include{doc} files-and-folders/topics-h.dox
-@include{doc} files-and-folders/include.dox
-@include{doc} files-and-folders/include-micro-os-plus.dox
+
 @include{doc} files-and-folders/include-micro-os-plus-micro-test-plus.dox
 @include{doc} files-and-folders/src.dox
 

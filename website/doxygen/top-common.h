@@ -1,4 +1,7 @@
 /*
+ * DO NOT EDIT!
+ * Automatically generated from docusaurus-template-liquid/templates/docusaurus.
+ *
  * This file is part of the µOS++ project (https://micro-os-plus.github.io/).
  * Copyright (c) 2021 Liviu Ionescu. All rights reserved.
  *
@@ -12,7 +15,7 @@
 /**
 
 @file top-common.h
-@brief Common Doxygen group and namespace documentation for the µOS++ project.
+@brief Common Doxygen definitions for the µOS++ project.
 
 @details
 This file provides the principal Doxygen group and namespace documentation for
@@ -40,24 +43,45 @@ All definitions and documentation topics in this file are maintained in the
 throughout the project's documentation.
 
 
+@dir include
+@brief Folder with C/C++ header files.
+
+@details
+The `include` folder contains all public header files for the µOS++ libraries.
+
+To provide isolation with other projects, the header files for the µOS++ libraries are located in the `micro-os-plus` folder.
+
+
+@dir include/micro-os-plus
+@brief Folder with C/C++ header files for the µOS++ libraries.
+
+@details
+The `include/micro-os-plus` folder contains the public C++ header files for the µOS++ libraries.
+
+These headers define the APIs, data structures, data types and inline implementations that are available to users of the libraries.
+All files in this directory are intended for inclusion in user projects and provide the main interface to the utilities functionality.
+
+
 @defgroup micro-os-plus µOS++ Topics
 @brief Topics related to the µOS++ framework.
 
 @details
 ## Description
 
-The [µOS++](https://micro-os-plus.github.io) framework is the principal project
-within the micro-os-plus ecosystem, providing a comprehensive suite of modern
+The [µOS++ Framework](https://micro-os-plus.github.io) is the principal project
+within the µOS++ (micro-os-plus) ecosystem, providing a comprehensive suite of modern
 C++ libraries for embedded systems development.
 
-µOS++ is organised as a collection of modular source libraries, each maintained
+µOS++ is organised as a **collection of modular source libraries**, each maintained
 in its own repository on GitHub and collectively managed under the
-[micro-os-plus](https://github.com/micro-os-plus) group. This modular structure
+[micro-os-plus](https://github.com/micro-os-plus) GitHub organization.
+This modular structure
 enables developers to select and integrate only the components relevant to
 their projects, promoting flexibility and maintainability.
 
-The framework covers a wide range of topics, including core operating system
-functionality, testing frameworks, utilities, and supporting tools. Detailed
+The framework covers a wide range of topics, including **core operating system**
+functionality, **POSIX I/O**, **testing** frameworks, **utilities**,
+and supporting **tools**. Detailed
 documentation is provided for each library, ensuring that users have access to
 clear guidance, usage examples, and best practices for professional embedded
 software development.

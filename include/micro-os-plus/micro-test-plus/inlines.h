@@ -16,8 +16,8 @@
 // ----------------------------------------------------------------------------
 
 /**
- * @file inlines.h
- * @brief Inline implementations for the µTest++ testing framework.
+ * @file
+ * @brief C++ header file with inline implementations for the µTest++ methods.
  *
  * @details
  * This header provides inline definitions for key components of the µTest++

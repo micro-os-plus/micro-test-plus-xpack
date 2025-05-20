@@ -16,28 +16,47 @@
 // ----------------------------------------------------------------------------
 
 /**
- * @file micro-test-plus.h
- * @brief Principal public header for the µTest++ testing framework.
+ * @file
+ * @brief Main C++ header with the declarations for the µTest++ Testing Framework.
  *
  * @details
- * This header serves as the primary interface for the µTest++ testing
- * framework, intended for use in both embedded and general C++ projects.
+ * This header is the main entry point for the µTest++ testing framework,
+ * designed for use in both embedded and general C++ projects.
  *
- * It encompasses all essential declarations, including test runner and
- * reporter objects, management of test suites and test cases, expectations,
- * assumptions, comparators, logical operators, exception verification, and
- * utility functions.
+ * It provides all essential declarations required to write and manage tests,
+ * including test runner and reporter objects, test suite and test case
+ * management, expectations, assumptions, comparators, logical operators,
+ * exception verification, and utility functions.
  *
- * The file also imports all requisite dependencies and internal headers
- * necessary for the operation of the framework.
+ * The header also includes all necessary dependencies and internal headers to
+ * ensure the framework operates correctly and efficiently.
  *
  * All public API definitions are contained within the
  * `micro_os_plus::micro_test_plus` namespace and its nested namespaces,
  * ensuring clear separation from user code and minimising the risk of naming
  * conflicts.
  *
- * Users should include this header in their test projects to access the
- * complete functionality of the µTest++ framework.
+ * To access the complete functionality of the µTest++ framework, users should
+ * include this header in their test projects.
+ */
+
+/**
+ * @mainpage
+ * µTest++ is a modern C++ library designed to provide a lightweight and
+ * efficient testing framework, purpose-built for embedded systems development.
+ *
+ * With its clean and expressive C++ API, µTest++ enables developers to write,
+ * organise, and execute unit tests with minimal overhead. The framework
+ * includes advanced features such as test suites, test cases, and detailed
+ * reporting, all tailored to meet the specific needs of embedded environments.
+ *
+ * Output verbosity is fully configurable via command-line options, allowing
+ * users to choose between concise summaries and comprehensive diagnostic
+ * information to best suit their workflow.
+ *
+ * By adopting µTest++, you can achieve robust and maintainable code through
+ * systematic and automated testing, supporting professional software
+ * engineering practices across your entire project.
  */
 
 #ifndef MICRO_TEST_PLUS_MICRO_TEST_PLUS_H_

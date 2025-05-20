@@ -16,8 +16,8 @@
 // ----------------------------------------------------------------------------
 
 /**
- * @file test-runner.h
- * @brief Management of the test runner for the µTest++ testing framework.
+ * @file
+ * @brief C++ header file with declarations for the µTest++ test runner.
  *
  * @details
  * This header defines the `test_runner` class, which is responsible for

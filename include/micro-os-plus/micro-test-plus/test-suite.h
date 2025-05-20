@@ -16,8 +16,8 @@
 // ----------------------------------------------------------------------------
 
 /**
- * @file test-suite.h
- * @brief Test suite management for the µTest++ testing framework.
+ * @file
+ * @brief C++ header file with declarations for the µTest++ test suite.
  *
  * @details
  * This header defines the `test_suite_base` and `test_suite` classes, which

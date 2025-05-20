@@ -16,9 +16,8 @@
 // ----------------------------------------------------------------------------
 
 /**
- * @file test-suite.cpp
- * @brief Implementation of test suite management for the µTest++ testing
- * framework.
+ * @file
+ * @brief C++ source file with implementations for the µTest++ test suite methods.
  *
  * @details
  * This source file provides the implementation of the `test_suite_base` and

@@ -16,8 +16,8 @@
 // ----------------------------------------------------------------------------
 
 /**
- * @file micro-test-plus.cpp
- * @brief Core implementation of the µTest++ testing framework.
+ * @file
+ * @brief C++ source file with implementations for the µTest++ methods.
  *
  * @details
  * This source file contains the principal implementation of the µTest++

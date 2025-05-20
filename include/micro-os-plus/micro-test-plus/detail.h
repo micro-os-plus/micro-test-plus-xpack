@@ -16,8 +16,8 @@
 // ----------------------------------------------------------------------------
 
 /**
- * @file detail.h
- * @brief Internal implementation details for the µTest++ framework.
+ * @file
+ * @brief C++ header file with declarations for the µTest++ internal implementation details.
  *
  * @details
  * This header defines the internal components and auxiliary structures
@@ -248,6 +248,7 @@ namespace micro_os_plus::micro_test_plus
      * All definitions are intended for internal use within the framework and
      * are implemented in the `include/micro-os-plus/micro-test-plus` folder to
      * maintain a structured and modular codebase.
+     *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class Lhs_T, class Rhs_T>

@@ -16,9 +16,8 @@
 // ----------------------------------------------------------------------------
 
 /**
- * @file test-reporter.cpp
- * @brief Implementation of test result reporting for the µTest++ testing
- * framework.
+ * @file
+ * @brief C++ source file with implementations for the µTest++ test reporter methods.
  *
  * @details
  * This source file provides the implementation of the `test_reporter` class
