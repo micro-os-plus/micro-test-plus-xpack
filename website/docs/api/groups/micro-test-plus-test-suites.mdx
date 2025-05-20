@@ -42,6 +42,8 @@ Represents a named group of test cases that self-register to the runner. <Link t
 
 ## Description {#details}
 
+Test suites are named collections of test cases.
+
 Test suites in µTest++ are named groups of related test cases, allowing for structured organisation and execution of tests. By default, all test cases defined in <code>main()</code> are included in the default (main) test suite and are executed immediately.
 
 For more complex projects, multiple test suites can be defined, typically in separate source files. Test suites are implemented as classes, constructed with a name, a callable (usually a lambda that chains the execution of the test cases), and optional arguments. This design enables self-registration of test suites, ensuring they are automatically included in the test run.

@@ -239,6 +239,8 @@ Fallback function template for is&#95;valid, returns false if the expression is 
 
 ## Description {#details}
 
+Type trait utilities and metaprogramming support for the µTest++ testing framework.
+
 The <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">type&#95;traits</Link></code> namespace offers a comprehensive suite of type trait templates and metaprogramming utilities employed throughout the µTest++ framework.
 
 This includes templates for function traits, type lists, identity, value wrappers, and compile-time checks for container types, floating point types, and type convertibility. It also provides generic integral and floating point constant wrappers, as well as mechanisms for SFINAE and requirements checking.
@@ -263,7 +265,7 @@ Alias template for extracting the <code>type</code> member from <code><Link to="
 </ParametersList>
 The <code><Link to="#a1cbbf299a006b4692df250ef2a6fc7c2">requires&#95;t</Link></code> alias template simplifies the use of the <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires-">requires&#95;</Link></code> struct template by directly exposing the nested <code>type</code> member. It is commonly used to enforce compile-time requirements in template declarations.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00664">664</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00663">663</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -290,7 +292,7 @@ Variable template to determine if a type provides an <code>epsilon</code> member
 </ParametersList>
 The <code>has&#95;epsilon&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> defines a member named <code>epsilon</code>. This trait is determined at compile time using SFINAE and the <code>is&#95;valid</code> utility, and is used throughout the µTest++ framework to enable generic handling of types that represent floating-point values or require precision control.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00442">442</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00441">441</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### has&#95;npos&#95;v {#a0ff1a0846fe8d484f01d45df4e37dd94}
@@ -311,7 +313,7 @@ Variable template to determine if a type provides a static <code>npos</code> mem
 </ParametersList>
 The <code>has&#95;npos&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> defines a static member named <code>npos</code>. This trait is determined at compile time using SFINAE and the <code>is&#95;valid</code> utility, and is used throughout the µTest++ framework to enable generic handling of types that follow the standard string or container conventions.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00401">401</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00400">400</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### has&#95;value&#95;v {#a695b45e13f3ac3cd1cef1225fa0dfa01}
@@ -332,7 +334,7 @@ Variable template to determine if a type provides a <code>value</code> member.
 </ParametersList>
 The <code>has&#95;value&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> defines a member named <code>value</code>. This trait is determined at compile time using SFINAE and the <code>is&#95;valid</code> utility, and is used throughout the µTest++ framework to enable generic handling of types that encapsulate a value, such as wrappers or constant types.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00421">421</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00420">420</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;container&#95;v {#a8361ab7ff9d9c6343d97a99bdcb9feb2}
@@ -354,7 +356,7 @@ Variable template to determine if a type models a container.
 </ParametersList>
 The <code>is&#95;container&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> provides both <code>begin()</code> and <code>end()</code> member functions, indicating that it models a standard container concept. This trait is determined at compile time using SFINAE and is&#95;valid, and is used throughout the µTest++ framework to enable generic handling of container types in template metaprogramming.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00380">380</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00379">379</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;convertible&#95;v {#a49a5bfe63d50b6fd1be0972586fbf590}
@@ -376,7 +378,7 @@ Variable template to determine if one type is convertible to another.
 </ParametersList>
 The <code>is&#95;convertible&#95;v</code> variable template evaluates to <code>true</code> if the type <code>From</code> is implicitly convertible to the type <code>To</code>, and <code>false</code> otherwise. This trait is determined at compile time and is used throughout the µTest++ framework to enable type-safe conversions and requirements checking in template metaprogramming.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00607">607</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00606">606</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;floating&#95;point&#95;v {#abfe0c2413694bb3a6dcdf1da303c38db}
@@ -399,7 +401,7 @@ The <code>is&#95;floating&#95;point&#95;v</code> variable template evaluates to 
 
 Specialisations are provided for <code>float</code>, <code>double</code>, and <code>long double</code>, each evaluating to <code>true</code>.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00465">465</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00464">464</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;floating&#95;point&#95;v&lt; double &gt; {#a14941429632c41668220d59c1cd59541}
@@ -416,7 +418,7 @@ This specialisation of the <code>is&#95;floating&#95;point&#95;v</code> variable
 <Link to="#abfe0c2413694bb3a6dcdf1da303c38db">is&#95;floating&#95;point&#95;v</Link>
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00497">497</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00496">496</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;floating&#95;point&#95;v&lt; float &gt; {#aed0d377e4faa067bb6add65ebeb1a482}
@@ -433,7 +435,7 @@ This specialisation of the <code>is&#95;floating&#95;point&#95;v</code> variable
 <Link to="#abfe0c2413694bb3a6dcdf1da303c38db">is&#95;floating&#95;point&#95;v</Link>
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00481">481</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00480">480</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;floating&#95;point&#95;v&lt; long double &gt; {#a735eedc6f117908ddfb242f37e319b46}
@@ -450,7 +452,7 @@ This specialisation of the <code>is&#95;floating&#95;point&#95;v</code> variable
 <Link to="#abfe0c2413694bb3a6dcdf1da303c38db">is&#95;floating&#95;point&#95;v</Link>
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00513">513</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00512">512</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;op&#95;v {#a814e7f004d5404f735737aabb90fa111}
@@ -471,7 +473,7 @@ Variable template to determine if a type derives from <code>op</code>.
 </ParametersList>
 The <code>is&#95;op&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> is derived from the <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">type&#95;traits::op</Link></code> base struct, and <code>false</code> otherwise. This trait is determined at compile time using compiler intrinsics and is used throughout the µTest++ framework to enable generic handling and detection of operator-like or value wrapper types in template metaprogramming.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00948">948</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00947">947</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -502,7 +504,7 @@ An rvalue reference to type <code>T</code>.
 
 The <code>declval</code> function template provides a mechanism for obtaining an rvalue reference to a type <code>T</code> without requiring an actual object. This is primarily used in unevaluated contexts, such as within <code>decltype</code>, to deduce types during template metaprogramming in the µTest++ framework.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00335">335</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00334">334</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;convertible() {#ab7dddbd4f0438826d71f55904594905d}
@@ -522,7 +524,7 @@ Fallback function template for is&#95;convertible, returns false if the conversi
 </ParametersList>
 This overload is selected when the primary <code>is&#95;convertible</code> template cannot be instantiated, providing a <code>false</code> result for invalid conversions.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00584">584</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00583">583</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;convertible() {#ac8b2a4fa12ff6db8c40a51910af19589}
@@ -532,7 +534,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>decltype(bool(To(declval&lt; From &gt;()))) micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::is&#95;convertible (int)</>}
   labels = {["constexpr"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00564">564</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00563">563</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;valid() {#a3ee98aeecf4e9f3b23dfcda25434c4d2}
@@ -553,7 +555,7 @@ Fallback function template for is&#95;valid, returns false if the expression is 
 
 This overload is selected when the primary <code>is&#95;valid</code> template cannot be instantiated, providing a <code>false</code> result for invalid expressions.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00358">358</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00357">357</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;valid() {#aa7389baefbefec0ece5df341187218e0}
@@ -563,7 +565,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>decltype(expr(declval&lt; Ts... &gt;()), bool()) micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::is&#95;valid (Expr&#95;T expr)</>}
   labels = {["constexpr"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00338">338</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00337">337</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

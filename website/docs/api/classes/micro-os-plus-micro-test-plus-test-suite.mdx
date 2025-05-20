@@ -264,6 +264,8 @@ Number of successful checks in the current test case. <Link to="/docs/api/classe
 
 ## Description {#details}
 
+Represents a named group of test cases that self-register to the runner.
+
 The <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</Link></code> class extends <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">test&#95;suite&#95;base</Link></code> and enables the registration and execution of callable objects (such as lambdas or function pointers) as test suites. Upon construction, each test suite automatically registers itself with the test runner, facilitating automated test discovery and execution across different components and folders of a project.
 
 This class template provides a flexible mechanism for grouping related test cases and managing their execution within the µTest++ framework. It ensures that test suites are non-copyable and non-movable, maintaining unique ownership and consistent state.
@@ -403,7 +405,7 @@ Virtual destructor for the <Link to="/docs/api/classes/micro-os-plus/micro-test-
 
 The destructor releases any resources associated with the <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</Link></code> instance. If tracing is enabled, it outputs the function signature for diagnostic purposes. This ensures that the test suite is properly cleaned up after execution, supporting robust and reliable test management across all files and folders within the µTest++ framework.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00418">418</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00238">238</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00418">418</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00237">237</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -428,7 +430,7 @@ Nothing.
 
 This method marks the beginning of a test case within the suite. If the start of the suite was deferred, it ensures the suite is properly begun before proceeding. The method sets the current test case name, increments the total number of test cases, resets the current test case statistics, and notifies the test reporter to begin the test case. This approach guarantees that each test case is clearly identified, accurately tracked, and properly reported across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00156">156</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00156">156</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00156">156</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00155">155</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
 </MemberDefinition>
 
 ### begin&#95;test&#95;suite() {#adfc3afd1432b2d093eef73a18ca9a242}
@@ -448,7 +450,7 @@ Nothing.
 
 This method marks the beginning of a test suite&#39;s execution. It resets the deferred begin flag and notifies the test reporter to start the suite, passing the suite&#39;s name. This ensures that test suite output is clearly delineated and properly initialised, supporting organised and readable reporting across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00251">251</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00119">119</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00251">251</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00118">118</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
 </MemberDefinition>
 
 ### end&#95;test&#95;case() {#ab2e1a6eadc56c54b45f9d21e450b0cbc}
@@ -468,7 +470,7 @@ Nothing.
 
 This method marks the end of a test case within the suite. It notifies the test reporter to conclude the test case, passing the current test case name. This ensures that the results of the test case are accurately finalised and clearly reported, supporting organised and reliable test management across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00166">166</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00180">180</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00166">166</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00179">179</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
 </MemberDefinition>
 
 ### end&#95;test&#95;suite() {#aa53f99054051136b3484a1664b5ee59f}
@@ -488,7 +490,7 @@ Nothing.
 
 This method marks the end of a test suite&#39;s execution. If the suite&#39;s start was deferred, it ensures the suite is properly begun before finalising. The method then notifies the test reporter to conclude the suite, passing a reference to the suite instance. This guarantees that all results are accurately summarised and reported, supporting clear and organised test management across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00262">262</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00136">136</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00262">262</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00135">135</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
 </MemberDefinition>
 
 ### failed&#95;checks() {#a4cd96949ef52b98b6c5e08bbd7900979}
@@ -527,7 +529,7 @@ Nothing.
 
 This method increments the count of failed checks for the test suite and the current test case. It ensures that each failing assertion is accurately recorded, supporting precise tracking and reporting of test outcomes across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00201">201</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00207">207</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00201">201</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00206">206</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
 </MemberDefinition>
 
 ### increment&#95;successful() {#a81006378d0bebeadcd59266f57b4ef4b}
@@ -547,7 +549,7 @@ Nothing.
 
 This method increments the count of successful checks for the test suite and the current test case. It ensures that each passing assertion is accurately recorded, supporting precise tracking and reporting of test outcomes across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00190">190</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00193">193</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00190">190</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00192">192</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
 </MemberDefinition>
 
 ### name() {#a3625fee07d796bf5c3d6b4c69a94182c}
@@ -607,7 +609,7 @@ Nothing.
 
 This method executes the test suite by invoking the stored callable object associated with the suite. It ensures that all test cases registered within the suite are executed in sequence, supporting comprehensive and structured testing across all files and folders within the µTest++ framework.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00430">430</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00224">224</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00430">430</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00223">223</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
 </MemberDefinition>
 
 ### successful&#95;checks() {#acf56ac77830e630b5485248409c3b3f1}

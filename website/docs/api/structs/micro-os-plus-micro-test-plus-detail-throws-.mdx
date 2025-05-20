@@ -85,6 +85,8 @@ Conversion operator to boolean. <Link to="#a84158f0b3d7719fe0929b49002c113b5">Mo
 
 ## Description {#details}
 
+Operator struct template to check if an expression throws a specific exception.
+
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Callable&#95;T">The type of the callable object to be invoked.</ParametersListItem>
 <ParametersListItem name="Exception&#95;T">The type of the exception to check for (defaults to <code>void</code> for any exception).</ParametersListItem>
@@ -97,7 +99,7 @@ The implementation is optimised for use in embedded environments and supports bo
 
 All definitions are intended for internal use within the framework and are implemented in the <code>include/micro-os-plus/micro-test-plus</code> folder to maintain a structured and modular codebase.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01470">1470</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01471">1471</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 
 <SectionDefinition>
 
@@ -110,7 +112,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>const bool micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::throws&#95;&lt; Callable&#95;T, Exception&#95;T &gt;::value&#95; &#123;&#125;</>}>
 Stores the result of the exception check.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01523">1523</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01524">1524</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -132,7 +134,7 @@ Constructs an exception checking operator for the given callable.
 </ParametersList>
 Invokes the provided callable and determines whether it throws an exception of the specified type. The result is stored in the <code>value&#95;</code> member for efficient access.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01483">1483</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01484">1484</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -160,7 +162,7 @@ None.
 </ParametersList>
 Returns the result of the exception check.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01515">1515</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01516">1516</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

@@ -168,6 +168,8 @@ Registers a test suite with the runner. <Link to="#aa71d653414cf5872a441d483fdf8
 
 ## Description {#details}
 
+The test runner for the µTest++ framework.
+
 The <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test&#95;runner</Link></code> class is responsible for managing the registration and execution of test suites within the µTest++ framework. It maintains a collection of test suites, each of which registers itself automatically upon construction, enabling seamless integration and execution of tests across different components and folders of a project.
 
 The test runner provides methods for initialising the test environment, registering test suites, retrieving the runner&#39;s name, and determining the overall test result via an exit code. It also offers an abort mechanism for terminating test execution in exceptional circumstances.
@@ -248,7 +250,7 @@ The rule of five is enforced to prevent accidental copying or moving.
 
 The constructor initialises a new instance of the <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test&#95;runner</Link></code> class, preparing the test runner for managing test suites and cases within the µTest++ framework. If tracing is enabled, it outputs the function signature for diagnostic purposes. This setup ensures the test runner is ready to coordinate the registration, execution, and reporting of tests across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00101">101</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>, definition at line <Link to="/docs/api/files/src/test-runner-cpp/#l00074">74</Link> of file <Link to="/docs/api/files/src/test-runner-cpp">test-runner.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00101">101</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>, definition at line <Link to="/docs/api/files/src/test-runner-cpp/#l00073">73</Link> of file <Link to="/docs/api/files/src/test-runner-cpp">test-runner.cpp</Link>.
 </MemberDefinition>
 
 ### test&#95;runner() {#a84abdee67279e9a07a68fa01c523ff14}
@@ -310,7 +312,7 @@ Nothing.
 
 This method immediately terminates the process by invoking the standard C library <code><Link to="#a18956cfdcc2edfb043029a06e8d9c51a">abort()</Link></code> function. It is used to halt test execution in critical failure scenarios, ensuring that no further tests are run and that the cause of the failure can be promptly investigated. This approach provides a robust mechanism for enforcing strict test outcomes across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00188">188</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>, definition at line <Link to="/docs/api/files/src/test-runner-cpp/#l00257">257</Link> of file <Link to="/docs/api/files/src/test-runner-cpp">test-runner.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00188">188</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>, definition at line <Link to="/docs/api/files/src/test-runner-cpp/#l00256">256</Link> of file <Link to="/docs/api/files/src/test-runner-cpp">test-runner.cpp</Link>.
 </MemberDefinition>
 
 ### exit&#95;code() {#a86233d8241e398f9491d859b4097c851}
@@ -328,7 +330,7 @@ None.
 Integer exit code representing the overall test result.
 </SectionUser>
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00153">153</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>, definition at line <Link to="/docs/api/files/src/test-runner-cpp/#l00192">192</Link> of file <Link to="/docs/api/files/src/test-runner-cpp">test-runner.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00153">153</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>, definition at line <Link to="/docs/api/files/src/test-runner-cpp/#l00191">191</Link> of file <Link to="/docs/api/files/src/test-runner-cpp">test-runner.cpp</Link>.
 </MemberDefinition>
 
 ### initialize() {#a882aa5687209359ae0313efe44f10053}
@@ -349,7 +351,7 @@ Nothing.
 
 This method initialises the test runner by capturing the command-line arguments and the default test suite name, configuring the framework for subsequent test execution. It parses the arguments to determine the desired verbosity level (normal, verbose, quiet, or silent) and applies this setting to the test reporter. The method also outputs build and environment information when appropriate, aiding diagnostics and transparency. Finally, it creates and registers the default test suite, preparing the framework to manage and execute all test cases and suites across the project’s folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00143">143</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>, definition at line <Link to="/docs/api/files/src/test-runner-cpp/#l00098">98</Link> of file <Link to="/docs/api/files/src/test-runner-cpp">test-runner.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00143">143</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>, definition at line <Link to="/docs/api/files/src/test-runner-cpp/#l00097">97</Link> of file <Link to="/docs/api/files/src/test-runner-cpp">test-runner.cpp</Link>.
 </MemberDefinition>
 
 ### name() {#a44ee9f03f3d9a974ba36730eee6f9d9a}
@@ -409,7 +411,7 @@ This method registers a new test suite with the test runner. If the internal col
 
 Called by test suite constructors to register themselves with the runner, enabling automatic management and execution.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00163">163</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>, definition at line <Link to="/docs/api/files/src/test-runner-cpp/#l00234">234</Link> of file <Link to="/docs/api/files/src/test-runner-cpp">test-runner.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h/#l00163">163</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</Link>, definition at line <Link to="/docs/api/files/src/test-runner-cpp/#l00233">233</Link> of file <Link to="/docs/api/files/src/test-runner-cpp">test-runner.cpp</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
