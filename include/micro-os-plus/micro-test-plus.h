@@ -306,20 +306,10 @@ namespace micro_os_plus::micro_test_plus
    * @param [in] rhs Right hand side operand.
    * @return A comparator object that evaluates to true if the operands are
    * equal.
-   *
-   * @details
-   * The `eq` function template provides a generic equality comparator for any
-   * non-pointer types. It constructs a comparator object that can be used
-   * within the µTest++ framework to assert that two values are equal. This
-   * function is typically used in test expectations and assertions to compare
-   * the actual and expected values.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  eq (const Lhs_T& lhs, const Rhs_T& rhs)
-  {
-    return detail::eq_{ lhs, rhs };
-  }
+  eq (const Lhs_T& lhs, const Rhs_T& rhs);
 
   /**
    * @ingroup micro-test-plus-function-comparators
@@ -331,20 +321,10 @@ namespace micro_os_plus::micro_test_plus
    * @param [in] rhs Right hand side pointer operand.
    * @return A comparator object that evaluates to true if the pointers are
    * equal.
-   *
-   * @details
-   * The `eq` function template provides a pointer equality comparator for any
-   * pointer types. It constructs a comparator object that can be used within
-   * the µTest++ framework to assert that two pointers are equal. This function
-   * is typically used in test expectations and assertions to compare the
-   * addresses of objects or resources.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  eq (Lhs_T* lhs, Rhs_T* rhs)
-  {
-    return detail::eq_{ lhs, rhs };
-  }
+  eq (Lhs_T* lhs, Rhs_T* rhs);
 
   /**
    * @ingroup micro-test-plus-function-comparators
@@ -356,20 +336,10 @@ namespace micro_os_plus::micro_test_plus
    * @param [in] rhs Right hand side operand.
    * @return A comparator object that evaluates to true if the operands are not
    * equal.
-   *
-   * @details
-   * The `ne` function template provides a generic non-equality comparator for
-   * any types. It constructs a comparator object that can be used within the
-   * µTest++ framework to assert that two values are not equal. This function
-   * is typically used in test expectations and assertions to compare the
-   * actual and expected values.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  ne (const Lhs_T& lhs, const Rhs_T& rhs)
-  {
-    return detail::ne_{ lhs, rhs };
-  }
+  ne (const Lhs_T& lhs, const Rhs_T& rhs);
 
   /**
    * @ingroup micro-test-plus-function-comparators
@@ -382,19 +352,10 @@ namespace micro_os_plus::micro_test_plus
    * @return A comparator object that evaluates to true if the pointers are not
    * equal.
    *
-   * @details
-   * The `ne` function template provides a pointer non-equality comparator for
-   * any pointer types. It constructs a comparator object that can be used
-   * within the µTest++ framework to assert that two pointers are not equal.
-   * This function is typically used in test expectations and assertions to
-   * compare the addresses of objects or resources.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  ne (Lhs_T* lhs, Rhs_T* rhs)
-  {
-    return detail::ne_{ lhs, rhs };
-  }
+  ne (Lhs_T* lhs, Rhs_T* rhs);
 
   /**
    * @ingroup micro-test-plus-function-comparators
@@ -406,20 +367,10 @@ namespace micro_os_plus::micro_test_plus
    * @param [in] rhs Right hand side operand.
    * @return A comparator object that evaluates to true if `lhs` is greater
    * than `rhs`.
-   *
-   * @details
-   * The `gt` function template provides a generic greater than comparator for
-   * any types. It constructs a comparator object that can be used within the
-   * µTest++ framework to assert that one value is greater than another. This
-   * function is typically used in test expectations and assertions to compare
-   * the actual and expected values.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  gt (const Lhs_T& lhs, const Rhs_T& rhs)
-  {
-    return detail::gt_{ lhs, rhs };
-  }
+  gt (const Lhs_T& lhs, const Rhs_T& rhs);
 
   /**
    * @ingroup micro-test-plus-function-comparators
@@ -431,20 +382,10 @@ namespace micro_os_plus::micro_test_plus
    * @param [in] rhs Right hand side pointer operand.
    * @return A comparator object that evaluates to true if the left hand side
    * pointer is greater than the right hand side pointer.
-   *
-   * @details
-   * The `gt` function template provides a pointer greater than comparator for
-   * any pointer types. It constructs a comparator object that can be used
-   * within the µTest++ framework to assert that one pointer is greater than
-   * another. This function is typically used in test expectations and
-   * assertions to compare the addresses of objects or resources.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  gt (Lhs_T* lhs, Rhs_T* rhs)
-  {
-    return detail::gt_{ lhs, rhs };
-  }
+  gt (Lhs_T* lhs, Rhs_T* rhs);
 
   /**
    * @ingroup micro-test-plus-function-comparators
@@ -457,20 +398,10 @@ namespace micro_os_plus::micro_test_plus
    * @param [in] rhs Right hand side operand.
    * @return A comparator object that evaluates to true if `lhs` is greater
    * than or equal to `rhs`.
-   *
-   * @details
-   * The `ge` function template provides a generic greater than or equal
-   * comparator for any types. It constructs a comparator object that can be
-   * used within the µTest++ framework to assert that one value is greater than
-   * or equal to another. This function is typically used in test expectations
-   * and assertions to compare the actual and expected values.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  ge (const Lhs_T& lhs, const Rhs_T& rhs)
-  {
-    return detail::ge_{ lhs, rhs };
-  }
+  ge (const Lhs_T& lhs, const Rhs_T& rhs);
 
   /**
    * @ingroup micro-test-plus-function-comparators
@@ -483,21 +414,10 @@ namespace micro_os_plus::micro_test_plus
    * @param [in] rhs Right hand side pointer operand.
    * @return A comparator object that evaluates to true if the left hand side
    * pointer is greater than or equal to the right hand side pointer.
-   *
-   * @details
-   * The `ge` function template provides a pointer greater than or equal
-   * comparator for any pointer types. It constructs a comparator object that
-   * can be used within the µTest++ framework to assert that one pointer is
-   * greater than or equal to another. This function is typically used in test
-   * expectations and assertions to compare the addresses of objects or
-   * resources.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  ge (Lhs_T* lhs, Rhs_T* rhs)
-  {
-    return detail::ge_{ lhs, rhs };
-  }
+  ge (Lhs_T* lhs, Rhs_T* rhs);
 
   /**
    * @ingroup micro-test-plus-function-comparators
@@ -510,20 +430,10 @@ namespace micro_os_plus::micro_test_plus
    * @param [in] rhs Right hand side operand.
    * @return A comparator object that evaluates to true if `lhs` is less than
    * `rhs`.
-   *
-   * @details
-   * The `lt` function template provides a generic less than comparator for any
-   * types. It constructs a comparator object that can be used within the
-   * µTest++ framework to assert that one value is less than another. This
-   * function is typically used in test expectations and assertions to compare
-   * the actual and expected values.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  lt (const Lhs_T& lhs, const Rhs_T& rhs)
-  {
-    return detail::lt_{ lhs, rhs };
-  }
+  lt (const Lhs_T& lhs, const Rhs_T& rhs);
 
   /**
    * @ingroup micro-test-plus-function-comparators
@@ -536,20 +446,10 @@ namespace micro_os_plus::micro_test_plus
    * @param [in] rhs Right hand side pointer operand.
    * @return A comparator object that evaluates to true if the left hand side
    * pointer is less than the right hand side pointer.
-   *
-   * @details
-   * The `lt` function template provides a pointer less than comparator for any
-   * pointer types. It constructs a comparator object that can be used within
-   * the µTest++ framework to assert that one pointer is less than another.
-   * This function is typically used in test expectations and assertions to
-   * compare the addresses of objects or resources.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  lt (Lhs_T* lhs, Rhs_T* rhs)
-  {
-    return detail::lt_{ lhs, rhs };
-  }
+  lt (Lhs_T* lhs, Rhs_T* rhs);
 
   /**
    * @ingroup micro-test-plus-function-comparators
@@ -562,20 +462,10 @@ namespace micro_os_plus::micro_test_plus
    * @param [in] rhs Right hand side operand.
    * @return A comparator object that evaluates to true if `lhs` is less than
    * or equal to `rhs`.
-   *
-   * @details
-   * The `le` function template provides a generic less than or equal
-   * comparator for any types. It constructs a comparator object that can be
-   * used within the µTest++ framework to assert that one value is less than or
-   * equal to another. This function is typically used in test expectations and
-   * assertions to compare the actual and expected values.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  le (const Lhs_T& lhs, const Rhs_T& rhs)
-  {
-    return detail::le_{ lhs, rhs };
-  }
+  le (const Lhs_T& lhs, const Rhs_T& rhs);
 
   /**
    * @ingroup micro-test-plus-function-comparators
@@ -588,21 +478,10 @@ namespace micro_os_plus::micro_test_plus
    * @param [in] rhs Right hand side pointer operand.
    * @return A comparator object that evaluates to true if the left hand side
    * pointer is less than or equal to the right hand side pointer.
-   *
-   * @details
-   * The `le` function template provides a pointer less than or equal
-   * comparator for any pointer types. It constructs a comparator object that
-   * can be used within the µTest++ framework to assert that one pointer is
-   * less than or equal to another. This function is typically used in test
-   * expectations and assertions to compare the addresses of objects or
-   * resources.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  le (Lhs_T* lhs, Rhs_T* rhs)
-  {
-    return detail::le_{ lhs, rhs };
-  }
+  le (Lhs_T* lhs, Rhs_T* rhs);
 
   /**
    * @ingroup micro-test-plus-logical-functions
@@ -612,23 +491,10 @@ namespace micro_os_plus::micro_test_plus
    *
    * @param [in] expr Logical expression to be negated.
    * @return An object that evaluates to true if the operand is false.
-   *
-   * @details
-   * The `_not` function template provides a generic logical negation for any
-   * expression type. It constructs a logical negator object that can be used
-   * within the µTest++ framework to assert that a given condition is false.
-   * This function is typically used in test expectations and assertions to
-   * invert logical expressions or custom comparators.
-   *
-   * The underscore in the function name is intentional to differentiate it
-   * from the standard logical not operator.
    */
   template <class Expr_T>
   [[nodiscard]] constexpr auto
-  _not (const Expr_T& expr)
-  {
-    return detail::not_{ expr };
-  }
+  _not (const Expr_T& expr);
 
   /**
    * @ingroup micro-test-plus-logical-functions
@@ -641,23 +507,10 @@ namespace micro_os_plus::micro_test_plus
    * @param [in] rhs Right hand side operand.
    * @return An object that evaluates to true if both operand expressions are
    * true.
-   *
-   * @details
-   * The `_and` function template provides a generic logical conjunction for
-   * any expression types. It constructs a logical conjunction object that can
-   * be used within the µTest++ framework to assert that both given conditions
-   * are true. This function is typically used in test expectations and
-   * assertions to combine logical expressions or custom comparators.
-   *
-   * The underscore in the function name is intentional to differentiate it
-   * from the standard logical and operator.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  _and (const Lhs_T& lhs, const Rhs_T& rhs)
-  {
-    return detail::and_{ lhs, rhs };
-  }
+  _and (const Lhs_T& lhs, const Rhs_T& rhs);
 
   /**
    * @ingroup micro-test-plus-logical-functions
@@ -670,23 +523,10 @@ namespace micro_os_plus::micro_test_plus
    * @param [in] rhs Right hand side operand.
    * @return An object that evaluates to true if at least one of the operand
    * expressions is true.
-   *
-   * @details
-   * The `_or` function template provides a generic logical disjunction for any
-   * expression types. It constructs a logical disjunction object that can be
-   * used within the µTest++ framework to assert that at least one of the given
-   * conditions is true. This function is typically used in test expectations
-   * and assertions to combine logical expressions or custom comparators.
-   *
-   * The underscore in the function name is intentional to differentiate it
-   * from the standard logical or operator.
    */
   template <class Lhs_T, class Rhs_T>
   [[nodiscard]] constexpr auto
-  _or (const Lhs_T& lhs, const Rhs_T& rhs)
-  {
-    return detail::or_{ lhs, rhs };
-  }
+  _or (const Lhs_T& lhs, const Rhs_T& rhs);
 
   /**
    * @ingroup micro-test-plus-utility-functions
@@ -696,20 +536,10 @@ namespace micro_os_plus::micro_test_plus
    *
    * @param [in] t The object from which to remove const qualification.
    * @return A non-const reference to the input object.
-   *
-   * @details
-   * The `mut` function template provides a safe and generic mechanism to
-   * remove the `const` qualifier from any type. It returns a non-const
-   * reference to the input object, enabling modification of objects that were
-   * originally declared as `const`. This utility is particularly useful in
-   * testing scenarios where controlled mutation of test data is required.
    */
   template <class T>
   [[nodiscard]] constexpr auto
-  mut (const T& t) noexcept -> T&
-  {
-    return const_cast<T&> (t);
-  }
+  mut (const T& t) noexcept -> T&;
 
   // --------------------------------------------------------------------------
 
