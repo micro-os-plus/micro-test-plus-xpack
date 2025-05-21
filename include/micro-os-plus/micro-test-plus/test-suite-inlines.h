@@ -41,15 +41,15 @@
 
 // ----------------------------------------------------------------------------
 
-// #include <stdio.h>
-// #include <cstring>
+#include <stdio.h>
+#include <cstring>
 #include "test-runner.h"
 
 // ----------------------------------------------------------------------------
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
-// #pragma GCC diagnostic ignored "-Waggregate-return"
+#pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
