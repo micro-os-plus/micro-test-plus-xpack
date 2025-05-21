@@ -117,6 +117,74 @@ namespace micro_os_plus::micro_test_plus
     current_test_suite->end_test_case ();
   }
 
+  /**
+   * @details
+   * The `expect` function template evaluates a logical condition or custom
+   * expression and reports the result within the µTest++ framework. It is
+   * designed to provide detailed diagnostics for test failures, including the
+   * actual and expected values, when using the provided comparators (`eq()`,
+   * `ne()`, `lt()`, `le()`, `gt()`, `ge()`) or custom operators.
+   *
+   * The function template can be used with any expression that evaluates to a
+   * boolean or with custom comparators/operators derived from the local
+   * `detail::op` type. For complex checks performed outside the `expect()`
+   * logical expression (such as within `if` or `try`/`catch` statements), the
+   * result can be reported by calling `expect(true)` or `expect(false)`.
+   *
+   * The function returns an output stream, allowing optional messages to be
+   * appended to the test report.
+   *
+   * @par Example
+   *
+   * @code{.cpp}
+   * namespace mt = micro_os_plus::micro_test_plus;
+   * mt::expect(compute_answer() == 42) << "answer is 42";
+   * @endcode
+   */
+
+  template <class Expr_T, type_traits::requires_t<
+                              type_traits::is_op_v<Expr_T>
+                              or type_traits::is_convertible_v<Expr_T, bool>>>
+  constexpr auto
+  expect (const Expr_T& expr, const reflection::source_location& sl)
+  {
+    return detail::deferred_reporter<Expr_T>{ expr, false, sl };
+  }
+
+  /**
+   * @details
+   * The `assume` function template evaluates a logical condition or custom
+   * expression and reports the result within the µTest++ framework. It is
+   * designed to provide detailed diagnostics for test failures, including the
+   * actual and expected values, when using the provided comparators (`eq()`,
+   * `ne()`, `lt()`, `le()`, `gt()`, `ge()`) or custom operators.
+   *
+   * The function template can be used with any expression that evaluates to a
+   * boolean or with custom comparators/operators derived from the local
+   * `detail::op` type. For complex checks performed outside the `expect()`
+   * logical expression (such as within `if` or `try`/`catch` statements), the
+   * result can be reported by calling `expect(true)` or `expect(false)`.
+   *
+   * The function returns an output stream, allowing optional messages to be
+   * appended to the test report.
+   *
+   * @par Example
+   *
+   * @code{.cpp}
+   * namespace mt = micro_os_plus::micro_test_plus;
+   * mt::assume(compute_answer() == 42) << "answer is 42";
+   * @endcode
+   */
+  template <class Expr_T, type_traits::requires_t<
+                              type_traits::is_op_v<Expr_T>
+                              or type_traits::is_convertible_v<Expr_T, bool>>>
+  constexpr auto
+  assume (const Expr_T& expr, const reflection::source_location& sl)
+  {
+    return detail::deferred_reporter<Expr_T>{ expr, true, sl };
+  }
+
+
   // --------------------------------------------------------------------------
   namespace detail
   {
