@@ -281,7 +281,7 @@ namespace micro_os_plus::micro_test_plus
   test_runner runner;
 
   /**
-   * @brief global instance of `test_reporter`.
+   * @brief Global instance of `test_reporter`.
    *
    * @details
    * This global instance of `test_reporter` is responsible for collecting,
