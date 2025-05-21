@@ -17,7 +17,8 @@
 
 /**
  * @file
- * @brief C++ header file with inline implementations for the µTest++ test reporter methods.
+ * @brief C++ header file with inline implementations for the µTest++ test
+ * reporter methods.
  *
  * @details
  * This header provides inline definitions for the `test_reporter` class, which

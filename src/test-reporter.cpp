@@ -17,7 +17,8 @@
 
 /**
  * @file
- * @brief C++ source file with implementations for the µTest++ test reporter methods.
+ * @brief C++ source file with implementations for the µTest++ test reporter
+ * methods.
  *
  * @details
  * This source file provides the implementation of the `test_reporter` class

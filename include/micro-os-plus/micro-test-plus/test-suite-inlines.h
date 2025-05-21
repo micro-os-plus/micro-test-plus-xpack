@@ -58,7 +58,9 @@
 
 namespace micro_os_plus::micro_test_plus
 {
-    extern test_runner runner;
+  // --------------------------------------------------------------------------
+
+  extern test_runner runner;
 
   // --------------------------------------------------------------------------
 
@@ -83,8 +85,6 @@ namespace micro_os_plus::micro_test_plus
 
     runner.register_test_suite (this);
   }
-
-  // --------------------------------------------------------------------------
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus

@@ -94,6 +94,8 @@ namespace micro_os_plus::micro_test_plus
    */
   namespace reflection
   {
+    // ------------------------------------------------------------------------
+
 #if defined(__cpp_lib_source_location)
     /**
      * @brief Alias for source location information.
@@ -139,13 +141,6 @@ namespace micro_os_plus::micro_test_plus
        * @param file The file name (automatically provided by the compiler).
        * @param line The line number (automatically provided by the compiler).
        * @return A `source_location` instance with the captured information.
-       *
-       * @details
-       * Returns a `source_location` instance representing the file name and
-       * line number at the point of invocation.
-       *
-       * If supported by the compiler, uses built-in macros to capture this
-       * information; otherwise, defaults to `"unknown"` and zero.
        */
       [[nodiscard]] static constexpr auto
       current (
@@ -155,13 +150,7 @@ namespace micro_os_plus::micro_test_plus
 #else
           const char* file = "unknown", unsigned int line = {}
 #endif
-              ) noexcept
-      {
-        source_location sl{};
-        sl.file_ = file;
-        sl.line_ = line;
-        return sl;
-      }
+              ) noexcept;
 
       /**
        * @brief Retrieve the file name associated with this source location.
@@ -171,10 +160,7 @@ namespace micro_os_plus::micro_test_plus
        * @return The file name as a constant character pointer.
        */
       [[nodiscard]] constexpr auto
-      file_name (void) const noexcept
-      {
-        return file_;
-      }
+      file_name (void) const noexcept;
 
       /**
        * @brief Retrieve the line number associated with this source location.
@@ -184,10 +170,7 @@ namespace micro_os_plus::micro_test_plus
        * @return The line number as an unsigned integer.
        */
       [[nodiscard]] constexpr auto
-      line (void) const noexcept
-      {
-        return line_;
-      }
+      line (void) const noexcept;
 
     private:
       /**
@@ -223,36 +206,12 @@ namespace micro_os_plus::micro_test_plus
      * @par Parameters
      *	 None.
      * @return A `std::string_view` containing the extracted type name.
-     *
-     * @details
-     * This function template parses the compiler-specific
-     * `__PRETTY_FUNCTION__` macro to extract a concise type name for the
-     * template parameter \c T.
-     *
-     * The implementation is compiler-dependent and may require adjustment for
-     * different toolchains. It is primarily intended for internal use within
-     * the µTest++ framework to support improved diagnostics and reporting.
      */
     template <class T>
     [[nodiscard]] constexpr auto
-    type_name (void) -> std::string_view
-    {
-#if defined(__clang__)
-#pragma GCC diagnostic push
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
-      // printf("|%s|%zu|\n", __PRETTY_FUNCTION__, sizeof
-      // (__PRETTY_FUNCTION__)); printf("|%s|\n", &__PRETTY_FUNCTION__[78]);
-      return { &__PRETTY_FUNCTION__[78], sizeof (__PRETTY_FUNCTION__) - 80 };
-#pragma GCC diagnostic pop
-#elif defined(__GNUC__)
-      // printf("|%s|%zu|\n", __PRETTY_FUNCTION__, sizeof
-      // (__PRETTY_FUNCTION__)); printf("|%s|\n", &__PRETTY_FUNCTION__[93]);
-      return { &__PRETTY_FUNCTION__[93], sizeof (__PRETTY_FUNCTION__) - 144 };
-#else
-#error "Unsupported compiler"
-      return "Unsupported compiler";
-#endif
-    }
+    type_name (void) -> std::string_view;
+
+    // ------------------------------------------------------------------------
   } // namespace reflection
 
   // --------------------------------------------------------------------------

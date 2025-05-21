@@ -50,6 +50,7 @@
 // ----------------------------------------------------------------------------
 
 #include <stdio.h>
+#include <string>
 
 // ----------------------------------------------------------------------------
 
@@ -97,7 +98,6 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Expr_T The type of the expression being asserted.
      *
      * @details
-     *
      * The `assertion` struct template is used to encapsulate assertion
      * parameters, including the expression under evaluation and its associated
      * source location. This design enables precise reporting and diagnostics
@@ -124,6 +124,10 @@ namespace micro_os_plus::micro_test_plus
     };
 
     // ------------------------------------------------------------------------
+
+    // in C++14/17/20, a function template with a deduced return type
+    // (auto) cannot be used before its definition is visible.
+    // Therefore it is not possible to split definitions.
 
     /**
      * @brief Generic getter function template for value retrieval.
@@ -220,7 +224,7 @@ namespace micro_os_plus::micro_test_plus
     get (const T& t)
     {
       // Call the variadic function, basically to force it return `t`.
-      return get_impl (t, 0);
+      return get_impl<T> (t, 0);
     }
 
     // ------------------------------------------------------------------------
@@ -391,6 +395,10 @@ namespace micro_os_plus::micro_test_plus
       const bool value_{};
     };
 
+    // Deduction guide.
+    template <typename Lhs_T, typename Rhs_T>
+    eq_ (const Lhs_T&, const Rhs_T&) -> eq_<Lhs_T, Rhs_T>;
+
     // ------------------------------------------------------------------------
 
     /**
@@ -550,6 +558,10 @@ namespace micro_os_plus::micro_test_plus
       const bool value_{};
     };
 
+    // Deduction guide.
+    template <typename Lhs_T, typename Rhs_T>
+    ne_ (const Lhs_T&, const Rhs_T&) -> ne_<Lhs_T, Rhs_T>;
+
     // ------------------------------------------------------------------------
 
     /**
@@ -690,6 +702,10 @@ namespace micro_os_plus::micro_test_plus
        */
       const bool value_{};
     };
+
+    // Deduction guide.
+    template <typename Lhs_T, typename Rhs_T>
+    gt_ (const Lhs_T&, const Rhs_T&) -> gt_<Lhs_T, Rhs_T>;
 
     // ------------------------------------------------------------------------
 
@@ -834,6 +850,10 @@ namespace micro_os_plus::micro_test_plus
       const bool value_{};
     };
 
+    // Deduction guide.
+    template <typename Lhs_T, typename Rhs_T>
+    ge_ (const Lhs_T&, const Rhs_T&) -> ge_<Lhs_T, Rhs_T>;
+
     // ------------------------------------------------------------------------
 
     /**
@@ -975,6 +995,10 @@ namespace micro_os_plus::micro_test_plus
        */
       const bool value_{};
     };
+
+    // Deduction guide.
+    template <typename Lhs_T, typename Rhs_T>
+    lt_ (const Lhs_T&, const Rhs_T&) -> lt_<Lhs_T, Rhs_T>;
 
     // ------------------------------------------------------------------------
 
@@ -1120,6 +1144,10 @@ namespace micro_os_plus::micro_test_plus
       const bool value_{};
     };
 
+    // Deduction guide.
+    template <typename Lhs_T, typename Rhs_T>
+    le_ (const Lhs_T&, const Rhs_T&) -> le_<Lhs_T, Rhs_T>;
+
     // ------------------------------------------------------------------------
 
     /**
@@ -1234,6 +1262,10 @@ namespace micro_os_plus::micro_test_plus
        */
       const bool value_{};
     };
+
+    // Deduction guide.
+    template <typename Lhs_T, typename Rhs_T>
+    and_ (const Lhs_T&, const Rhs_T&) -> and_<Lhs_T, Rhs_T>;
 
     // ------------------------------------------------------------------------
 
@@ -1350,6 +1382,10 @@ namespace micro_os_plus::micro_test_plus
       const bool value_{};
     };
 
+    // Deduction guide.
+    template <typename Lhs_T, typename Rhs_T>
+    or_ (const Lhs_T&, const Rhs_T&) -> or_<Lhs_T, Rhs_T>;
+
     // ------------------------------------------------------------------------
 
     /**
@@ -1437,6 +1473,10 @@ namespace micro_os_plus::micro_test_plus
        */
       const bool value_{};
     };
+
+    // Deduction guide.
+    template <typename T>
+    not_ (const T&) -> not_<T>;
 
     // ------------------------------------------------------------------------
 
@@ -1825,7 +1865,7 @@ namespace micro_os_plus::micro_test_plus
       const Expr_T expr_{};
     };
 
-    // ----------------------------------------------------------------------
+    // ------------------------------------------------------------------------
   } // namespace detail
 
   // --------------------------------------------------------------------------

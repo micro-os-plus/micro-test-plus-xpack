@@ -1,0 +1,155 @@
+/*
+ * This file is part of the µOS++ project (https://micro-os-plus.github.io/).
+ * Copyright (c) 2021 Liviu Ionescu. All rights reserved.
+ *
+ * Permission to use, copy, modify, and/or distribute this software
+ * for any purpose is hereby granted, under the terms of the MIT license.
+ *
+ * If a copy of the license was not distributed with this file, it can
+ * be obtained from https://opensource.org/licenses/mit.
+ *
+ * Major parts of the code are inspired from v1.1.8 of the Boost UT project,
+ * released under the terms of the Boost Version 1.0 Software License,
+ * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.
+ */
+
+// ----------------------------------------------------------------------------
+
+/**
+ * @file
+ * @brief C++ header file with inline implementations for the µTest++ details
+ * methods.
+ *
+ * @details
+ * This header provides inline definitions for the `test_suite` class, which
+ * ...
+ */
+
+#ifndef MICRO_TEST_PLUS_DETAILS_INLINES_H_
+#define MICRO_TEST_PLUS_DETAILS_INLINES_H_
+
+// ----------------------------------------------------------------------------
+
+#ifdef __cplusplus
+
+// ----------------------------------------------------------------------------
+
+#include <stdio.h>
+#include <cstring>
+// #include "test-reporter.h"
+
+// ----------------------------------------------------------------------------
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Waggregate-return"
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wc++98-compat"
+#pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
+#endif
+#endif
+
+namespace micro_os_plus::micro_test_plus
+{
+  // --------------------------------------------------------------------------
+
+  namespace detail
+  {
+    // ------------------------------------------------------------------------
+
+    /**
+     * @details
+     * This operator overload enables the deferred reporter to accumulate
+     * expectation messages by appending the provided value to the internal
+     * message string.
+     *
+     * If the argument is of an arithmetic type, it is first converted to a
+     * string using `std::to_string` before being appended. For all other
+     * types, the value is appended directly. This ensures that both numeric
+     * and string-like messages are handled appropriately and consistently.
+     */
+    template <class T>
+    auto&
+    deferred_reporter_base::operator<< (const T& msg)
+    {
+      if constexpr (std::is_arithmetic_v<T>)
+        {
+          message_.append (std::to_string (msg));
+        }
+      else
+        {
+          message_.append (msg);
+        }
+      return *this;
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * @details
+     * This constructor initialises a deferred reporter for a specific
+     * expression, capturing the evaluation result, abort status, and source
+     * location.
+     *
+     * The expression is evaluated and its boolean result is passed to the base
+     * class. The abort flag determines whether further test execution should
+     * be halted if the expectation fails. The source location provides
+     * contextual information for reporting purposes.
+     */
+    template <class Expr_T>
+    constexpr deferred_reporter<Expr_T>::deferred_reporter (
+        const Expr_T& expr, bool abort,
+        const reflection::source_location& location)
+        : deferred_reporter_base{ static_cast<bool> (expr), location },
+          expr_{ expr }
+    {
+#if 0 // defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+      printf ("%s\n", __PRETTY_FUNCTION__);
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+      abort_ = abort;
+    }
+
+    /**
+     * @details
+     * The destructor finalises the deferred reporting process for a test
+     * expression. If the evaluated expression is true, the reporter records a
+     * successful outcome along with any accumulated message. If the expression
+     * is false, the reporter records a failure, including the abort status,
+     * message, and source location for comprehensive reporting.
+     *
+     * This mechanism ensures that all relevant information about the test
+     * outcome is captured and reported accurately when the deferred reporter
+     * goes out of scope.
+     */
+    template <class Expr_T>
+    deferred_reporter<Expr_T>::~deferred_reporter ()
+    {
+      if (value_)
+        {
+          reporter.pass (expr_, message_);
+        }
+      else
+        {
+          reporter.fail (expr_, abort_, message_, location_);
+        }
+    }
+
+    // ------------------------------------------------------------------------
+  } // namespace detail
+
+  // --------------------------------------------------------------------------
+} // namespace micro_os_plus::micro_test_plus
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
+
+// ----------------------------------------------------------------------------
+
+#endif // __cplusplus
+
+// ----------------------------------------------------------------------------
+
+#endif // MICRO_TEST_PLUS_DETAILS_INLINES_H_
+
+// ----------------------------------------------------------------------------

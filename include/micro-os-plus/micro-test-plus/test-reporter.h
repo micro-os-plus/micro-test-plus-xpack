@@ -779,6 +779,7 @@ namespace micro_os_plus::micro_test_plus
      */
     bool is_in_test_case_ = false;
   };
+
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
 
@@ -789,10 +790,6 @@ namespace micro_os_plus::micro_test_plus
 // ----------------------------------------------------------------------------
 
 #endif // __cplusplus
-
-// ===== Inline & template implementations ====================================
-
-#include "test-reporter-inlines.h"
 
 // ----------------------------------------------------------------------------
 
