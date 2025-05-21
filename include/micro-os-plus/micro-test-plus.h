@@ -329,17 +329,17 @@ namespace micro_os_plus::micro_test_plus
 // ====================================
 
 // All inlines are included **after** all declarations.
-#include "micro-test-plus/details-inlines.h"
-#include "micro-test-plus/literals-inlines.h"
-#include "micro-test-plus/math-inlines.h"
+#include "micro-test-plus/inlines/details-inlines.h"
+#include "micro-test-plus/inlines/literals-inlines.h"
+#include "micro-test-plus/inlines/math-inlines.h"
 
-#include "micro-test-plus/reflection-inlines.h"
-#include "micro-test-plus/test-reporter-inlines.h"
+#include "micro-test-plus/inlines/reflection-inlines.h"
+#include "micro-test-plus/inlines/test-reporter-inlines.h"
 
-#include "micro-test-plus/function-comparators-inlines.h"
-#include "micro-test-plus/test-suite-inlines.h"
+#include "micro-test-plus/inlines/function-comparators-inlines.h"
+#include "micro-test-plus/inlines/test-suite-inlines.h"
 
-#include "micro-test-plus/micro-test-plus-inlines.h"
+#include "micro-test-plus/inlines/micro-test-plus-inlines.h"
 
 // ----------------------------------------------------------------------------
 
