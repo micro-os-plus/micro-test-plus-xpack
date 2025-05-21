@@ -17,7 +17,8 @@
 
 /**
  * @file
- * @brief C++ header file with declarations for the µTest++ type trait utilities and metaprogramming support.
+ * @brief C++ header file with declarations for the µTest++ type trait
+ * utilities and metaprogramming support.
  *
  * @details
  * This header provides a suite of type trait templates and metaprogramming

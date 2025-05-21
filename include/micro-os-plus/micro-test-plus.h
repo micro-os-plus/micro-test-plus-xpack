@@ -17,7 +17,8 @@
 
 /**
  * @file
- * @brief Main C++ header with the declarations for the µTest++ Testing Framework.
+ * @brief Main C++ header with the declarations for the µTest++ Testing
+ * Framework.
  *
  * @details
  * This header is the main entry point for the µTest++ testing framework,

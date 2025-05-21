@@ -17,7 +17,8 @@
 
 /**
  * @file
- * @brief C++ header file with declarations for the µTest++ mathematical utilities.
+ * @brief C++ header file with declarations for the µTest++ mathematical
+ * utilities.
  *
  * @details
  * This header provides a suite of constexpr mathematical function templates

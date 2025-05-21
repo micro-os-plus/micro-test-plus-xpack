@@ -17,7 +17,8 @@
 
 /**
  * @file
- * @brief C++ header file with declarations for the µTest++ reflection utilities.
+ * @brief C++ header file with declarations for the µTest++ reflection
+ * utilities.
  *
  * @details
  * This header provides facilities for retrieving source location information

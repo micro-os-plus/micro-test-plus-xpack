@@ -17,7 +17,8 @@
 
 /**
  * @file
- * @brief C++ header file with declarations for the µTest++ internal implementation details.
+ * @brief C++ header file with declarations for the µTest++ internal
+ * implementation details.
  *
  * @details
  * This header defines the internal components and auxiliary structures

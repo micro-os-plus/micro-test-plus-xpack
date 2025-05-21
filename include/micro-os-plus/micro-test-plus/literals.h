@@ -17,7 +17,8 @@
 
 /**
  * @file
- * @brief C++ header file with declarations for the µTest++ user-defined literals and type wrappers.
+ * @brief C++ header file with declarations for the µTest++ user-defined
+ * literals and type wrappers.
  *
  * @details
  * This header defines a comprehensive suite of user-defined literal operators
