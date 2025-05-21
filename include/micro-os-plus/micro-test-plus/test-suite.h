@@ -447,6 +447,10 @@ namespace micro_os_plus::micro_test_plus
 
 #endif // __cplusplus
 
+// ===== Inline & template implementations ====================================
+
+#include "test-suite-inlines.h"
+
 // ----------------------------------------------------------------------------
 
 #endif // MICRO_TEST_PLUS_TEST_SUITE_H_

@@ -61,30 +61,6 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
-  /**
-   * @details
-   * This constructor initialises a test suite by binding the provided callable
-   * and its arguments, and registers the suite with the test runner.
-   *
-   * The callable is bound using `std::bind`, allowing for flexible test suite
-   * definitions with arbitrary arguments. Upon construction, the test suite is
-   * automatically registered with the global runner for execution.
-   */
-  template <typename Callable_T, typename... Args_T>
-  test_suite::test_suite (const char* name, Callable_T&& callable,
-                          Args_T&&... arguments)
-      : test_suite_base{ name },
-        callable_{ std::bind (callable, arguments...) }
-  {
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-    printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
-
-    runner.register_test_suite (this);
-  }
-
-  // --------------------------------------------------------------------------
-
 #if defined(__clang__)
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdocumentation"
