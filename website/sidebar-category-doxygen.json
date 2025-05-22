@@ -450,14 +450,65 @@
                   "collapsed": true,
                   "items": [
                     {
+                      "type": "category",
+                      "label": "inlines",
+                      "link": {
+                        "type": "doc",
+                        "id": "api/folders/include-micro-os-plus-micro-test-plus-inlines"
+                      },
+                      "collapsed": true,
+                      "items": [
+                        {
+                          "type": "doc",
+                          "label": "details-inlines.h",
+                          "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-details-inlines-h"
+                        },
+                        {
+                          "type": "doc",
+                          "label": "function-comparators-inlines.h",
+                          "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-function-comparators-inlines-h"
+                        },
+                        {
+                          "type": "doc",
+                          "label": "literals-inlines.h",
+                          "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-literals-inlines-h"
+                        },
+                        {
+                          "type": "doc",
+                          "label": "math-inlines.h",
+                          "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-math-inlines-h"
+                        },
+                        {
+                          "type": "doc",
+                          "label": "micro-test-plus-inlines.h",
+                          "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-micro-test-plus-inlines-h"
+                        },
+                        {
+                          "type": "doc",
+                          "label": "reflection-inlines.h",
+                          "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-reflection-inlines-h"
+                        },
+                        {
+                          "type": "doc",
+                          "label": "test-reporter-inlines.h",
+                          "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-test-reporter-inlines-h"
+                        },
+                        {
+                          "type": "doc",
+                          "label": "test-suite-inlines.h",
+                          "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-test-suite-inlines-h"
+                        }
+                      ]
+                    },
+                    {
                       "type": "doc",
                       "label": "detail.h",
                       "id": "api/files/include-micro-os-plus-micro-test-plus-detail-h"
                     },
                     {
                       "type": "doc",
-                      "label": "inlines.h",
-                      "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-h"
+                      "label": "function-comparators.h",
+                      "id": "api/files/include-micro-os-plus-micro-test-plus-function-comparators-h"
                     },
                     {
                       "type": "doc",
@@ -471,13 +522,13 @@
                     },
                     {
                       "type": "doc",
-                      "label": "reflection.h",
-                      "id": "api/files/include-micro-os-plus-micro-test-plus-reflection-h"
+                      "label": "operators.h",
+                      "id": "api/files/include-micro-os-plus-micro-test-plus-operators-h"
                     },
                     {
                       "type": "doc",
-                      "label": "test-reporter-inlines.h",
-                      "id": "api/files/include-micro-os-plus-micro-test-plus-test-reporter-inlines-h"
+                      "label": "reflection.h",
+                      "id": "api/files/include-micro-os-plus-micro-test-plus-reflection-h"
                     },
                     {
                       "type": "doc",

@@ -78,9 +78,11 @@ Check a condition and, if false, abort test execution.
 An output stream to write optional messages.
 </SectionUser>
 
-The <code>assume</code> function template evaluates a logical condition or custom expression and, if the condition is false, aborts the current test case within the µTest++ framework. This mechanism is intended for preconditions or assumptions that must hold for the test to be meaningful. If the assumption fails, the test case is terminated early and reported as skipped or failed, depending on the framework configuration.
+The <code>assume</code> function template evaluates a logical condition or custom expression and reports the result within the µTest++ framework. It is designed to provide detailed diagnostics for test failures, including the actual and expected values, when using the provided comparators (<code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#gae9dfca849300a917cb1c231d275baaa3">eq()</Link></code>, <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#ga59e4cf59954e81bc868e62b1c5c8db1f">ne()</Link></code>, <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#gac162522dcad1a6ff7c869d52d376b3ed">lt()</Link></code>, <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#ga2b5263a5b3965855aa04971bba735a56">le()</Link></code>, <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#gae2fb681444d8256f6bf827eea6b7c29e">gt()</Link></code>, <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#ga34e03399670ec0b365b94b7bea788dd8">ge()</Link></code>) or custom operators.
 
-The function template can be used with any expression that evaluates to a boolean or with custom comparators/operators derived from the local <code>detail::op</code> type. It returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes.
+The function template can be used with any expression that evaluates to a boolean or with custom comparators/operators derived from the local <code>detail::op</code> type. For complex checks performed outside the <code><Link to="/docs/api/groups/micro-test-plus-expectations/#ga75c3f43663a5440d78231fe572fe4a22">expect()</Link></code> logical expression (such as within <code>if</code> or <code>try</code>/<code>catch</code> statements), the result can be reported by calling <code>expect(true)</code> or <code>expect(false)</code>.
+
+The function returns an output stream, allowing optional messages to be appended to the test report.
 
 
 <SectionUser title="Example">
@@ -95,7 +97,7 @@ The function template can be used with any expression that evaluates to a boolea
 
 </ProgramListing>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00257">257</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines-h/#l00188">188</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines-h">micro-test-plus-inlines.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

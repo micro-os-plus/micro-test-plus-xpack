@@ -2,4 +2,4 @@
 @brief Folder with C/C++ source files.
 
 @details
-The `src` folder contains the implementation files for the µTest++ library.
+The `src` folder contains the `.cpp` implementation files for the µTest++ library.

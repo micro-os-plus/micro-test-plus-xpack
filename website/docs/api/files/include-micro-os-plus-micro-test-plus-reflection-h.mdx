@@ -101,17 +101,15 @@ Extract the type name from the <code>&#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;</co
 
 C++ header file with declarations for the µTest++ reflection utilities.
 
-This header provides facilities for retrieving source location information and type names at compile time, thereby supporting enhanced reporting and diagnostics within the µTest++ framework.
+This header provides the declarations for the reflection utilities used within the µTest++ framework. It defines interfaces for obtaining source location information and extracting type names at compile time, supporting advanced diagnostics and reporting capabilities.
 
-It includes a local implementation of <code>source&#95;location</code> for environments lacking C++20 standard support, as well as utilities for extracting concise type names from compiler-specific macros such as <code>&#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;</code>.
+The reflection utilities include a local implementation of <code>source&#95;location</code> for environments lacking C++20 standard support, as well as functions for extracting concise type names using compiler-specific macros such as <code>&#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;</code>. These facilities enable precise identification of code locations and types in test reports, enhancing the clarity and professionalism of diagnostic output.
 
-All definitions are placed within the <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection">micro&#95;os&#95;plus::micro&#95;test&#95;plus::reflection</Link></code> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.
+All definitions reside within the <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection">micro&#95;os&#95;plus::micro&#95;test&#95;plus::reflection</Link></code> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.
 
-The implementation is inspired by Boost UT, with adaptations to address the requirements of embedded development and the µTest++ framework.
+The header files are organised within the <code>include/micro-os-plus/micro-test-plus</code> folder to maintain a structured and modular codebase.
 
-All related source files are organised within the <code>include/micro-os-plus</code> folder to maintain a structured and modular codebase.
-
-This file is intended for internal use within the framework and should not be included directly by user code.
+This file is intended solely for internal use within the framework and should not be included directly by user code.
 
 <SectionDefinition>
 
@@ -133,7 +131,7 @@ A pointer to the short name within the input string.
 
 This function extracts the short name from a given file path by locating the final folder separator (&#39;/&#39;). If a separator is found, it returns a pointer to the character immediately following it, effectively providing the file or folder name. If no separator is present, the original input string is returned. This utility is useful for reporting concise file or folder names in test output.
 
-Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00131">131</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
+Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00128">128</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
 </MemberDefinition>
 
 ### type&#95;name() {#a6580ad54ad22a1d3ab43a1d9d49d1f26}
@@ -143,6 +141,11 @@ Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00131">13
   prototype={<>std::string&#95;view micro&#95;os&#95;plus::micro&#95;test&#95;plus::reflection::type&#95;name (void)</>}
   labels = {["nodiscard", "constexpr"]}>
 Extract the type name from the <code>&#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;</code> macro.
+
+This function template parses the compiler-specific <code>&#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;</code> macro to extract a concise type name for the template parameter <code>T</code>.
+
+The implementation is compiler-dependent and may require adjustment for different toolchains. It is primarily intended for internal use within the µTest++ framework to support improved diagnostics and reporting.
+
 
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">The type whose name is to be extracted.</ParametersListItem>
@@ -157,11 +160,7 @@ None.
 A <code>std::string&#95;view</code> containing the extracted type name.
 </SectionUser>
 
-This function template parses the compiler-specific <code>&#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;</code> macro to extract a concise type name for the template parameter <code>T</code>.
-
-The implementation is compiler-dependent and may require adjustment for different toolchains. It is primarily intended for internal use within the µTest++ framework to support improved diagnostics and reporting.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h/#l00237">237</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">reflection.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines-h/#l00133">133</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines-h">reflection-inlines.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -189,125 +188,100 @@ The file content with the documentation metadata removed is:
 <Link id="l00015" /><CodeLine lineNumber="15"><Highlight kind="normal"></Highlight></CodeLine>
 <Link id="l00016" /><CodeLine lineNumber="16"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <Link id="l00017" /><CodeLine lineNumber="17"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00045" /><CodeLine lineNumber="45"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00046" /><CodeLine lineNumber="46"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef MICRO&#95;TEST&#95;PLUS&#95;REFLECTION&#95;H&#95;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define MICRO&#95;TEST&#95;PLUS&#95;REFLECTION&#95;H&#95;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00047" /><CodeLine lineNumber="47"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00048" /><CodeLine lineNumber="48"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifndef MICRO&#95;TEST&#95;PLUS&#95;REFLECTION&#95;H&#95;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00049" /><CodeLine lineNumber="49"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#define MICRO&#95;TEST&#95;PLUS&#95;REFLECTION&#95;H&#95;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <Link id="l00050" /><CodeLine lineNumber="50"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef &#95;&#95;cplusplus</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00051" /><CodeLine lineNumber="51"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <Link id="l00052" /><CodeLine lineNumber="52"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00053" /><CodeLine lineNumber="53"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#ifdef &#95;&#95;cplusplus</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <Link id="l00054" /><CodeLine lineNumber="54"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;string&#95;view&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00055" /><CodeLine lineNumber="55"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <Link id="l00056" /><CodeLine lineNumber="56"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;cpp&#95;lib&#95;source&#95;location)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;source&#95;location&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00057" /><CodeLine lineNumber="57"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;string&#95;view&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00058" /><CodeLine lineNumber="58"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00059" /><CodeLine lineNumber="59"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;cpp&#95;lib&#95;source&#95;location)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00060" /><CodeLine lineNumber="60"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#include &lt;source&#95;location&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00061" /><CodeLine lineNumber="61"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <Link id="l00062" /><CodeLine lineNumber="62"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;GNUC&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma GCC diagnostic push</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma GCC diagnostic ignored &quot;-Wpadded&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma GCC diagnostic ignored &quot;-Waggregate-return&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;clang&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma clang diagnostic ignored &quot;-Wc++98-compat&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma clang diagnostic ignored &quot;-Wunknown-warning-option&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link></Highlight></CodeLine>
-<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// --------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection">reflection</Link></Highlight></CodeLine>
-<Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal">  &#123;</Highlight></CodeLine>
-<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;cpp&#95;lib&#95;source&#95;location)</Highlight><Highlight kind="preprocessor"></Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00110" /><CodeLine lineNumber="110"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">source&#95;location</Link> = std::source&#95;location;</Highlight></CodeLine>
-<Link id="l00111" /><CodeLine lineNumber="111"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="preprocessor"></Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00132" /><CodeLine lineNumber="132" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">source&#95;location</Link></Highlight></CodeLine>
-<Link id="l00133" /><CodeLine lineNumber="133"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
-<Link id="l00134" /><CodeLine lineNumber="134"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00150" /><CodeLine lineNumber="150" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#a6e2ad380f42d7a7ec3c92268a5976e58"><Highlight kind="normal">      <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#a6e2ad380f42d7a7ec3c92268a5976e58">current</Link> (</Highlight></CodeLine>
-<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">#</Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (&#95;&#95;has&#95;builtin(&#95;&#95;builtin&#95;FILE) and &#95;&#95;has&#95;builtin(&#95;&#95;builtin&#95;LINE))</Highlight></CodeLine>
-<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">          </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42; file = &#95;&#95;builtin&#95;FILE (),</Highlight></CodeLine>
-<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal">          </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#aab9d006004611ac0526852a09f675c66">line</Link> = &#95;&#95;builtin&#95;LINE ()</Highlight></CodeLine>
-<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">#</Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal">          </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42; file = </Highlight><Highlight kind="stringliteral">&quot;unknown&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#aab9d006004611ac0526852a09f675c66">line</Link> = &#123;&#125;</Highlight></CodeLine>
-<Link id="l00156" /><CodeLine lineNumber="156"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00157" /><CodeLine lineNumber="157"><Highlight kind="normal">              ) </Highlight><Highlight kind="keyword">noexcept</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00158" /><CodeLine lineNumber="158"><Highlight kind="normal">      &#123;</Highlight></CodeLine>
-<Link id="l00159" /><CodeLine lineNumber="159"><Highlight kind="normal">        <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">source&#95;location</Link> sl&#123;&#125;;</Highlight></CodeLine>
-<Link id="l00160" /><CodeLine lineNumber="160"><Highlight kind="normal">        sl.<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#ae648fa43322766fbeb3f9103b43bcc4b">file&#95;</Link> = file;</Highlight></CodeLine>
-<Link id="l00161" /><CodeLine lineNumber="161"><Highlight kind="normal">        sl.line&#95; = <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#aab9d006004611ac0526852a09f675c66">line</Link>;</Highlight></CodeLine>
-<Link id="l00162" /><CodeLine lineNumber="162"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> sl;</Highlight></CodeLine>
-<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00172" /><CodeLine lineNumber="172"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00173" /><CodeLine lineNumber="173" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#a3df499675aacb7ab9192cfb9a5371874"><Highlight kind="normal">      <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#a3df499675aacb7ab9192cfb9a5371874">file&#95;name</Link> (</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">noexcept</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">      &#123;</Highlight></CodeLine>
-<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#ae648fa43322766fbeb3f9103b43bcc4b">file&#95;</Link>;</Highlight></CodeLine>
-<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00177" /><CodeLine lineNumber="177"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00185" /><CodeLine lineNumber="185"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00186" /><CodeLine lineNumber="186" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#aab9d006004611ac0526852a09f675c66"><Highlight kind="normal">      <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#aab9d006004611ac0526852a09f675c66">line</Link> (</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">noexcept</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal">      &#123;</Highlight></CodeLine>
-<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal">        </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#a0e805c2ed2234f2c004fd7196b844fc5">line&#95;</Link>;</Highlight></CodeLine>
-<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal">      &#125;</Highlight></CodeLine>
-<Link id="l00190" /><CodeLine lineNumber="190"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00191" /><CodeLine lineNumber="191"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
-<Link id="l00195" /><CodeLine lineNumber="195" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#ae648fa43322766fbeb3f9103b43bcc4b"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42; <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#ae648fa43322766fbeb3f9103b43bcc4b">file&#95;</Link>&#123; </Highlight><Highlight kind="stringliteral">&quot;unknown&quot;</Highlight><Highlight kind="normal"> &#125;;</Highlight></CodeLine>
-<Link id="l00196" /><CodeLine lineNumber="196"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00200" /><CodeLine lineNumber="200" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#a0e805c2ed2234f2c004fd7196b844fc5"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#a0e805c2ed2234f2c004fd7196b844fc5">line&#95;</Link>&#123;&#125;;</Highlight></CodeLine>
-<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal">    &#125;;</Highlight></CodeLine>
-<Link id="l00202" /><CodeLine lineNumber="202"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00203" /><CodeLine lineNumber="203"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00204" /><CodeLine lineNumber="204"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42;</Highlight></CodeLine>
-<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">    <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection/#ab4fa1159ebe60ce5fe073eefbe9a2446">short&#95;name</Link> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42; name);</Highlight></CodeLine>
+<Link id="l00063" /><CodeLine lineNumber="63"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00064" /><CodeLine lineNumber="64"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00065" /><CodeLine lineNumber="65"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;GNUC&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00066" /><CodeLine lineNumber="66"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma GCC diagnostic push</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma GCC diagnostic ignored &quot;-Wpadded&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma GCC diagnostic ignored &quot;-Waggregate-return&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;clang&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma clang diagnostic ignored &quot;-Wc++98-compat&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma clang diagnostic ignored &quot;-Wunknown-warning-option&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link></Highlight></CodeLine>
+<Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// --------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00078" /><CodeLine lineNumber="78"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection">reflection</Link></Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">  &#123;</Highlight></CodeLine>
+<Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// ------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;cpp&#95;lib&#95;source&#95;location)</Highlight><Highlight kind="preprocessor"></Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00114" /><CodeLine lineNumber="114"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal"><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">source&#95;location</Link> = std::source&#95;location;</Highlight></CodeLine>
+<Link id="l00115" /><CodeLine lineNumber="115"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="preprocessor"></Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00136" /><CodeLine lineNumber="136" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal"><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">source&#95;location</Link></Highlight></CodeLine>
+<Link id="l00137" /><CodeLine lineNumber="137"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
+<Link id="l00138" /><CodeLine lineNumber="138"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00146" /><CodeLine lineNumber="146"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00147" /><CodeLine lineNumber="147"><Highlight kind="normal">      <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#ac7bb1580b65709b94ad81ea3a5a900a0">current</Link> (</Highlight></CodeLine>
+<Link id="l00148" /><CodeLine lineNumber="148"><Highlight kind="normal">#</Highlight><Highlight kind="keywordflow">if</Highlight><Highlight kind="normal"> (&#95;&#95;has&#95;builtin(&#95;&#95;builtin&#95;FILE) and &#95;&#95;has&#95;builtin(&#95;&#95;builtin&#95;LINE))</Highlight></CodeLine>
+<Link id="l00149" /><CodeLine lineNumber="149"><Highlight kind="normal">          </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42; file = &#95;&#95;builtin&#95;FILE (),</Highlight></CodeLine>
+<Link id="l00150" /><CodeLine lineNumber="150"><Highlight kind="normal">          </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#aab9d006004611ac0526852a09f675c66">line</Link> = &#95;&#95;builtin&#95;LINE ()</Highlight></CodeLine>
+<Link id="l00151" /><CodeLine lineNumber="151"><Highlight kind="normal">#</Highlight><Highlight kind="keywordflow">else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00152" /><CodeLine lineNumber="152"><Highlight kind="normal">          </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42; file = </Highlight><Highlight kind="stringliteral">&quot;unknown&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#aab9d006004611ac0526852a09f675c66">line</Link> = &#123;&#125;</Highlight></CodeLine>
+<Link id="l00153" /><CodeLine lineNumber="153"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00154" /><CodeLine lineNumber="154"><Highlight kind="normal">              ) </Highlight><Highlight kind="keyword">noexcept</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00155" /><CodeLine lineNumber="155"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00163" /><CodeLine lineNumber="163"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00164" /><CodeLine lineNumber="164"><Highlight kind="normal">      <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#a3df499675aacb7ab9192cfb9a5371874">file&#95;name</Link> (</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">noexcept</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00165" /><CodeLine lineNumber="165"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00173" /><CodeLine lineNumber="173"><Highlight kind="normal">      [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00174" /><CodeLine lineNumber="174"><Highlight kind="normal">      <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#aab9d006004611ac0526852a09f675c66">line</Link> (</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">) </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">noexcept</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00175" /><CodeLine lineNumber="175"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00176" /><CodeLine lineNumber="176"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">private</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<Link id="l00180" /><CodeLine lineNumber="180" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#ae648fa43322766fbeb3f9103b43bcc4b"><Highlight kind="normal">      </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42; <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#ae648fa43322766fbeb3f9103b43bcc4b">file&#95;</Link>&#123; </Highlight><Highlight kind="stringliteral">&quot;unknown&quot;</Highlight><Highlight kind="normal"> &#125;;</Highlight></CodeLine>
+<Link id="l00181" /><CodeLine lineNumber="181"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00185" /><CodeLine lineNumber="185" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#a0e805c2ed2234f2c004fd7196b844fc5"><Highlight kind="normal">      </Highlight><Highlight kind="keywordtype">unsigned</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#a0e805c2ed2234f2c004fd7196b844fc5">line&#95;</Link>&#123;&#125;;</Highlight></CodeLine>
+<Link id="l00186" /><CodeLine lineNumber="186"><Highlight kind="normal">    &#125;;</Highlight></CodeLine>
+<Link id="l00187" /><CodeLine lineNumber="187"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00188" /><CodeLine lineNumber="188"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00189" /><CodeLine lineNumber="189"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00197" /><CodeLine lineNumber="197"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42;</Highlight></CodeLine>
+<Link id="l00198" /><CodeLine lineNumber="198"><Highlight kind="normal">    <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection/#ab4fa1159ebe60ce5fe073eefbe9a2446">short&#95;name</Link> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42; name);</Highlight></CodeLine>
+<Link id="l00199" /><CodeLine lineNumber="199"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00200" /><CodeLine lineNumber="200"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// TODO: update for the new namespaces.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00201" /><CodeLine lineNumber="201"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00211" /><CodeLine lineNumber="211"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T&gt;</Highlight></CodeLine>
+<Link id="l00212" /><CodeLine lineNumber="212"><Highlight kind="normal">    [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00213" /><CodeLine lineNumber="213"><Highlight kind="normal">    <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection/#a6580ad54ad22a1d3ab43a1d9d49d1f26">type&#95;name</Link> (</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">) -&gt; std::string&#95;view;</Highlight></CodeLine>
 <Link id="l00214" /><CodeLine lineNumber="214"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// TODO: update for the new namespaces.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00235" /><CodeLine lineNumber="235"><Highlight kind="normal">    </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">class</Highlight><Highlight kind="normal"> T&gt;</Highlight></CodeLine>
-<Link id="l00236" /><CodeLine lineNumber="236"><Highlight kind="normal">    [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00237" /><CodeLine lineNumber="237" lineLink="/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection/#a6580ad54ad22a1d3ab43a1d9d49d1f26"><Highlight kind="normal">    <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection/#a6580ad54ad22a1d3ab43a1d9d49d1f26">type&#95;name</Link> (</Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal">) -&gt; std::string&#95;view</Highlight></CodeLine>
-<Link id="l00238" /><CodeLine lineNumber="238"><Highlight kind="normal">    &#123;</Highlight></CodeLine>
-<Link id="l00239" /><CodeLine lineNumber="239"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;clang&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00240" /><CodeLine lineNumber="240"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma GCC diagnostic push</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00241" /><CodeLine lineNumber="241"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma clang diagnostic ignored &quot;-Wunsafe-buffer-usage&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00242" /><CodeLine lineNumber="242"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// printf(&quot;|%s|%zu|\\n&quot;, &#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;, sizeof</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00243" /><CodeLine lineNumber="243"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// (&#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;)); printf(&quot;|%s|\\n&quot;, &amp;&#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;[78]);</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00244" /><CodeLine lineNumber="244"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#123; &amp;&#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;[78], </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal"> (&#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;) - 80 &#125;;</Highlight></CodeLine>
-<Link id="l00245" /><CodeLine lineNumber="245"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma GCC diagnostic pop</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00246" /><CodeLine lineNumber="246"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#elif defined(&#95;&#95;GNUC&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00247" /><CodeLine lineNumber="247"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// printf(&quot;|%s|%zu|\\n&quot;, &#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;, sizeof</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00248" /><CodeLine lineNumber="248"><Highlight kind="normal">      </Highlight><Highlight kind="comment">// (&#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;)); printf(&quot;|%s|\\n&quot;, &amp;&#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;[93]);</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00249" /><CodeLine lineNumber="249"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> &#123; &amp;&#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;[93], </Highlight><Highlight kind="keyword">sizeof</Highlight><Highlight kind="normal"> (&#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;) - 144 &#125;;</Highlight></CodeLine>
-<Link id="l00250" /><CodeLine lineNumber="250"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#else</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00251" /><CodeLine lineNumber="251"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#error &quot;Unsupported compiler&quot;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00252" /><CodeLine lineNumber="252"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="stringliteral">&quot;Unsupported compiler&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00253" /><CodeLine lineNumber="253"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00254" /><CodeLine lineNumber="254"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
-<Link id="l00255" /><CodeLine lineNumber="255"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="comment">// namespace reflection</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00256" /><CodeLine lineNumber="256"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00257" /><CodeLine lineNumber="257"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// --------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00258" /><CodeLine lineNumber="258"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace micro&#95;os&#95;plus::micro&#95;test&#95;plus</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00259" /><CodeLine lineNumber="259"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00260" /><CodeLine lineNumber="260"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;GNUC&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00261" /><CodeLine lineNumber="261"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma GCC diagnostic pop</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00262" /><CodeLine lineNumber="262"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00263" /><CodeLine lineNumber="263"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00264" /><CodeLine lineNumber="264"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00265" /><CodeLine lineNumber="265"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00266" /><CodeLine lineNumber="266"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// &#95;&#95;cplusplus</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00267" /><CodeLine lineNumber="267"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00268" /><CodeLine lineNumber="268"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00269" /><CodeLine lineNumber="269"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00270" /><CodeLine lineNumber="270"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// MICRO&#95;TEST&#95;PLUS&#95;REFLECTION&#95;H&#95;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00271" /><CodeLine lineNumber="271"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00272" /><CodeLine lineNumber="272"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00215" /><CodeLine lineNumber="215"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// ------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00216" /><CodeLine lineNumber="216"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="comment">// namespace reflection</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00217" /><CodeLine lineNumber="217"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00218" /><CodeLine lineNumber="218"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// --------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00219" /><CodeLine lineNumber="219"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace micro&#95;os&#95;plus::micro&#95;test&#95;plus</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00220" /><CodeLine lineNumber="220"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00221" /><CodeLine lineNumber="221"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;GNUC&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00222" /><CodeLine lineNumber="222"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma GCC diagnostic pop</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00223" /><CodeLine lineNumber="223"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00224" /><CodeLine lineNumber="224"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00225" /><CodeLine lineNumber="225"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00226" /><CodeLine lineNumber="226"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00227" /><CodeLine lineNumber="227"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// &#95;&#95;cplusplus</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00228" /><CodeLine lineNumber="228"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00229" /><CodeLine lineNumber="229"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00230" /><CodeLine lineNumber="230"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00231" /><CodeLine lineNumber="231"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// MICRO&#95;TEST&#95;PLUS&#95;REFLECTION&#95;H&#95;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00232" /><CodeLine lineNumber="232"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00233" /><CodeLine lineNumber="233"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 
 </ProgramListing>
 
