@@ -73,10 +73,7 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
-  // error: argument 'v' from the argument list of
-  // micro_os_plus::micro_test_plus::test_reporter::operator<< has multiple
-  // @param documentation sections
-  /*
+  /**
    * @details
    * This operator overload enables the `test_reporter` to output pointer
    * values in a consistent and readable hexadecimal format.
@@ -89,12 +86,6 @@ namespace micro_os_plus::micro_test_plus
    * This approach provides clear and unambiguous representation of pointer
    * addresses, which is particularly useful for debugging and verifying
    * pointer-related test cases.
-   *
-   * @tparam T The type of the pointer being output.
-   *
-   * @param v The pointer value to be formatted and reported.
-   * @return A reference to the current `test_reporter` instance, enabling
-   * chaining of output operations.
    */
   template <typename T>
   test_reporter&

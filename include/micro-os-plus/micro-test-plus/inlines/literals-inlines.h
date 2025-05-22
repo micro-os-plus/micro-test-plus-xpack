@@ -549,14 +549,9 @@ namespace micro_os_plus::micro_test_plus
           return true;
         }
 
-        // error: argument 'other' of command @param is not found in the
-        // argument list of
-        // micro_os_plus::micro_test_plus::literals::operator""_b(const char
-        // *name, decltype(sizeof("")) size)
-        /*
+        /**
          * @brief Equality comparison with another named instance.
          *
-         * @param other Another named instance.
          * @return `true`
          *
          * @details
@@ -569,14 +564,9 @@ namespace micro_os_plus::micro_test_plus
           return true;
         }
 
-        // error: argument 'other' of command @param is not found in the
-        // argument list of
-        // micro_os_plus::micro_test_plus::literals::operator""_b(const char
-        // *name, decltype(sizeof("")) size)
-        /*
+        /**
          * @brief Equality comparison with a boolean value.
          *
-         * @param other Boolean value to compare with.
          * @return The value of @p other.
          *
          * @details

@@ -287,20 +287,20 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Output operator for signed short values.
      *
-     * @param c The signed short value to output.
+     * @param v The signed short value to output.
      * @return Reference to the current test_reporter instance.
      */
     test_reporter&
-    operator<< (signed short c);
+    operator<< (signed short v);
 
     /**
      * @brief Output operator for unsigned short values.
      *
-     * @param c The unsigned short value to output.
+     * @param v The unsigned short value to output.
      * @return Reference to the current test_reporter instance.
      */
     test_reporter&
-    operator<< (unsigned short c);
+    operator<< (unsigned short v);
 
     /**
      * @brief Output operator for signed int values.

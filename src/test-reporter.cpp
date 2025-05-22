@@ -358,9 +358,7 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
-  // error: argument 'c' of command @param is not found in the argument list of
-  // micro_os_plus::micro_test_plus::test_reporter::operator<<(signed short v)
-  /*
+  /**
    * @details
    * This operator overload appends the string representation of the specified
    * signed short integer to the internal output buffer of the `test_reporter`.
@@ -376,10 +374,7 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
-  // error: argument 'c' of command @param is not found in the argument list of
-  // micro_os_plus::micro_test_plus::test_reporter::operator<<(unsigned short
-  // v)
-  /*
+  /**
    * @details
    * This operator overload appends the string representation of the specified
    * unsigned short integer to the internal output buffer of the

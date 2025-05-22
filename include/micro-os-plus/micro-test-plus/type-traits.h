@@ -536,17 +536,14 @@ namespace micro_os_plus::micro_test_plus
     template <class From, class To>
     static constexpr auto is_convertible_v = __is_convertible_to (From, To);
 #else
-    // error: argument 'int' of command @param is not found in the argument
-    // list of micro_os_plus::micro_test_plus::type_traits::is_convertible(int)
-    // -> decltype(bool(To(declval< From >())))
-    /*
+    /**
      * @brief Function template to determine if one type is convertible to
      * another.
      *
      * @tparam From The source type to be checked for convertibility.
      * @tparam To The target type to which conversion is tested.
      *
-     * @param (int) Dummy parameter used for overload resolution.
+     * @param n Dummy parameter used for overload resolution.
      * @retval true if `From` is convertible to `To`.
      *
      * @details
@@ -561,7 +558,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class From, class To>
     constexpr auto
-    is_convertible (int) -> decltype (bool (To (declval<From> ())))
+    is_convertible (int n) -> decltype (bool (To (declval<From> ())))
     {
       return true;
     }
