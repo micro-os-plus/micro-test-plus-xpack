@@ -560,6 +560,7 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     is_convertible (int n) -> decltype (bool (To (declval<From> ())))
     {
+      (void)n; // Prevent the unused parameter warning.
       return true;
     }
 
