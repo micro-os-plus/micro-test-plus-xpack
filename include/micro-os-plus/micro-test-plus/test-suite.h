@@ -20,27 +20,29 @@
  * @brief C++ header file with declarations for the µTest++ test suite.
  *
  * @details
- * This header defines the `test_suite_base` and `test_suite` classes, which
- * provide the mechanisms for grouping and executing related test cases within
- * the µTest++ framework.
+ * This header provides the declarations for the test suite facilities used
+ * within the µTest++ framework. It defines the interfaces for constructing,
+ * registering, and managing test suites and their associated test cases. The
+ * core classes, `test_suite_base` and `test_suite`, offer mechanisms for
+ * tracking test case execution, managing counters for successful and failed
+ * checks, and supporting automated registration and discovery of test suites.
  *
- * The `test_suite_base` class supplies the foundational interface for managing
- * test suite state, including counters for successful and failed checks, test
- * case tracking, and methods for marking the commencement and completion of
- * test cases and suites.
- *
- * The `test_suite` class extends this functionality, enabling the registration
- * and execution of callable objects (such as lambdas or function pointers) as
- * test suites. Test suites automatically register themselves with the test
- * runner upon construction, thereby facilitating automated test discovery and
- * execution.
+ * The design ensures that test suites are non-copyable and non-movable,
+ * maintaining unique ownership and consistent state. Flexible support for
+ * callable objects enables a wide range of test suite definitions,
+ * facilitating expressive and maintainable test organisation across embedded
+ * and general C++ projects.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the risk
  * of naming conflicts.
  *
- * This file is intended for internal use within the framework and should not
- * be included directly by user code.
+ * The header files are organised within the
+ * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
+ * modular codebase.
+ *
+ * This file is intended solely for internal use within the framework and
+ * should not be included directly by user code.
  */
 
 #ifndef MICRO_TEST_PLUS_TEST_SUITE_H_

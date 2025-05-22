@@ -21,27 +21,28 @@
  * utilities.
  *
  * @details
- * This header provides facilities for retrieving source location information
- * and type names at compile time, thereby supporting enhanced reporting and
- * diagnostics within the µTest++ framework.
+ * This header provides the declarations for the reflection utilities used
+ * within the µTest++ framework. It defines interfaces for obtaining source
+ * location information and extracting type names at compile time, supporting
+ * advanced diagnostics and reporting capabilities.
  *
- * It includes a local implementation of `source_location` for environments
- * lacking C++20 standard support, as well as utilities for extracting concise
- * type names from compiler-specific macros such as `__PRETTY_FUNCTION__`.
+ * The reflection utilities include a local implementation of `source_location`
+ * for environments lacking C++20 standard support, as well as functions for
+ * extracting concise type names using compiler-specific macros such as
+ * `__PRETTY_FUNCTION__`. These facilities enable precise identification of
+ * code locations and types in test reports, enhancing the clarity and
+ * professionalism of diagnostic output.
  *
- * All definitions are placed within the
+ * All definitions reside within the
  * `micro_os_plus::micro_test_plus::reflection` namespace, ensuring clear
  * separation from user code and minimising the risk of naming conflicts.
  *
- * The implementation is inspired by Boost UT, with adaptations to address the
- * requirements of embedded development and the µTest++ framework.
- *
- * All related source files are organised
- * within the `include/micro-os-plus` folder to maintain a structured and
+ * The header files are organised within the
+ * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
  * modular codebase.
  *
- * This file is intended for internal use within the framework and should not
- * be included directly by user code.
+ * This file is intended solely for internal use within the framework and
+ * should not be included directly by user code.
  */
 
 #ifndef MICRO_TEST_PLUS_REFLECTION_H_

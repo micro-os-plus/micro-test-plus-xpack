@@ -21,28 +21,29 @@
  * utilities.
  *
  * @details
- * This header provides a suite of constexpr mathematical function templates
- * and utilities for use within the µTest++ framework.
+ * This header provides the declarations for the mathematical utility templates
+ * used within the µTest++ framework. It defines interfaces for a suite of
+ * constexpr mathematical functions, including absolute value, minimum value
+ * selection, exponentiation, and compile-time parsing of numeric values from
+ * character sequences.
  *
- * The functions defined herein include generic implementations for absolute
- * value, minimum value, exponentiation, and compile-time parsing of numeric
- * values from character arrays. These utilities are designed to be lightweight
- * and suitable for embedded environments, where standard library alternatives
- * may be unavailable, less efficient, or not constexpr.
+ * These utilities are designed to be lightweight and suitable for embedded
+ * environments, supporting both integral and floating-point types, and
+ * enabling expressive, type-safe, and efficient compile-time computations.
+ * Special attention is given to constexpr compatibility and minimal reliance
+ * on the standard library, ensuring portability and performance across a wide
+ * range of platforms.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus::math`
  * namespace, ensuring clear separation from user code and minimising the risk
  * of naming conflicts.
  *
- * The implementation draws inspiration from Boost UT, adapting relevant
- * concepts to address the requirements of embedded development and the µTest++
- * framework.
+ * The header files are organised within the
+ * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
+ * modular codebase.
  *
- * All related source files are organised within the `include/micro-os-plus`
- * folder to maintain a structured and modular codebase.
- *
- * This file is intended for internal use within the framework and should not
- * be included directly by user code.
+ * This file is intended solely for internal use within the framework and
+ * should not be included directly by user code.
  */
 
 #ifndef MICRO_TEST_PLUS_MATH_H_

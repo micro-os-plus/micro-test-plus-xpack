@@ -17,24 +17,23 @@
 
 /**
  * @file
- * @brief C++ header file with declarations for the µTest++ internal
- * implementation details.
+ * @brief C++ header file with declarations for the µTest++ internals.
  *
  * @details
- * This header defines the internal components and auxiliary structures
- * employed by the µTest++ testing framework. The contents of this file are not
- * intended to constitute part of the public API and may be altered without
- * prior notice.
- *
- * It provides implementation specifics such as assertion handling, generic
- * getter utilities, comparator structures for various logical and relational
- * operations, as well as mechanisms for exception checking. Additionally, it
- * includes base classes for deferred reporting of test results.
+ * This header provides the declarations for the internal components of the
+ * µTest++ framework, encapsulated within the
+ * `micro_os_plus::micro_test_plus::detail` namespace. It defines the core
+ * mechanisms, helper structures, and utility templates that underpin the
+ * framework's assertion handling, value retrieval, comparator logic, deferred
+ * reporting, and exception checking facilities.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus::detail`
- * namespace to prevent pollution of the public API and to maintain a clear
- * distinction between user-facing and internal components. This approach
- * enhances maintainability and minimises the risk of naming conflicts.
+ * namespace, ensuring clear separation from user code and minimising the risk
+ * of naming conflicts.
+ *
+ * The header files are organised within the
+ * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
+ * modular codebase.
  *
  * This file is intended solely for internal use within the framework and
  * should not be included directly by user code.

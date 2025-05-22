@@ -14,6 +14,8 @@
 @include{doc} files-and-folders/topics-h.dox
 
 @include{doc} files-and-folders/include-micro-os-plus-micro-test-plus.dox
+@include{doc} files-and-folders/include-micro-os-plus-micro-test-plus-inlines.dox
+
 @include{doc} files-and-folders/src.dox
 
 # Note: the order is important, it gives the order in the sidebar.

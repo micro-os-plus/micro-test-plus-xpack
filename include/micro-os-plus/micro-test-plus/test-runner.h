@@ -20,19 +20,23 @@
  * @brief C++ header file with declarations for the µTest++ test runner.
  *
  * @details
- * This header defines the `test_runner` class, which is responsible for
- * managing the registration and execution of test suites within the µTest++
- * framework.
+ * This header provides the declarations for the test runner facilities used
+ * within the µTest++ framework. It defines the interface for managing the
+ * registration and execution of test suites, supporting automated discovery
+ * and orchestration of tests across a project.
  *
- * The `test_runner` maintains a collection of test suites, each of which
- * registers itself automatically upon construction. It provides methods for
- * initialising the test environment, registering test suites, and determining
- * the overall test result via an exit code.
+ * The test runner is responsible for initialising the test environment,
+ * registering test suites, managing command-line arguments, and determining
+ * the overall test result via an exit code. It also provides mechanisms for
+ * aborting test execution and retrieving the default suite name.
  *
- * The file also includes supporting declarations and ensures that all
- * definitions reside within the `micro_os_plus::micro_test_plus` namespace,
- * maintaining a clear separation from user code and minimising the risk of
- * naming conflicts.
+ * All definitions reside within the
+ * `micro_os_plus::micro_test_plus` namespace, ensuring clear
+ * separation from user code and minimising the risk of naming conflicts.
+ *
+ * The header files are organised within the
+ * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
+ * modular codebase.
  *
  * This file is intended solely for internal use within the framework and
  * should not be included directly by user code.

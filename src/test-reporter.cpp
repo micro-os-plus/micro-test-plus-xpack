@@ -21,16 +21,18 @@
  * methods.
  *
  * @details
- * This source file provides the implementation of the `test_reporter` class
- * and associated functions, which are responsible for formatting and
- * presenting test results within the µTest++ framework.
+ * This source file contains the core implementations for the test reporting
+ * facilities of the µTest++ framework. It provides the logic for formatting
+ * and outputting test results, including operator overloads for a wide range
+ * of value types, containers, and comparison expressions, as well as
+ * structured output for logical and exception-related assertions.
  *
- * It includes operator overloads for a variety of data types, containers, and
- * comparator expressions, as well as methods for reporting the commencement
- * and completion of test cases and suites, and for handling both successful
- * and failed outcomes. The implementation supports multiple verbosity levels
- * and colour-coded output to clearly distinguish between passing and failing
- * tests.
+ * The test reporter is responsible for presenting test outcomes in a clear,
+ * consistent, and expressive manner, supporting both value and pointer
+ * semantics, and providing detailed diagnostics for both successful and failed
+ * test cases. Special attention is given to formatting, colour highlighting,
+ * and extensibility, enabling professional and readable test reports suitable
+ * for embedded and general C++ development.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the risk

@@ -18,25 +18,32 @@
 /**
  * @file
  * @brief C++ header file with inline implementations for the µTest++ test
- * reporter methods.
+ * reporter.
  *
  * @details
- * This header provides inline definitions for the `test_reporter` class, which
- * is responsible for formatting and outputting test results within the µTest++
- * testing framework.
+ * This header provides the inline implementations for the test reporting
+ * facilities used within the µTest++ framework. It defines the logic for
+ * formatting and outputting test results, including operator overloads for
+ * various value types, containers, and comparison expressions, as well as
+ * structured output for logical and exception-related assertions.
  *
- * The file includes operator overloads for reporting pointers, integral
- * values, containers, and comparator operations, as well as logical and
- * exception-related expressions. It also implements methods for handling pass
- * and fail outcomes, ensuring that test results are presented in a clear and
- * informative manner.
+ * The implementations ensure that test outcomes are presented in a clear,
+ * consistent, and expressive manner, supporting both value and pointer
+ * semantics, and providing detailed diagnostics for both successful and failed
+ * test cases. Special attention is given to formatting, colour highlighting,
+ * and extensibility, enabling professional and readable test reports suitable
+ * for embedded and general C++ development.
  *
- * All definitions reside within the `micro_os_plus::micro_test_plus`
- * namespace, maintaining a clear separation from user code and minimising the
- * risk of naming conflicts.
+ * All definitions reside within the `micro_os_plus::micro_test_plus::detail`
+ * namespace, ensuring clear separation from user code and minimising the risk
+ * of naming conflicts.
  *
- * This file is intended for internal use within the framework and should not
- * be included directly by user code.
+ * The header files are organised within the
+ * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
+ * modular codebase.
+ *
+ * This file is intended solely for internal use within the framework and
+ * should not be included directly by user code.
  */
 
 #ifndef MICRO_TEST_PLUS_TEST_REPORTER_INLINES_H_

@@ -21,15 +21,18 @@
  * methods.
  *
  * @details
- * This source file provides the implementation of the `test_suite_base` and
- * `test_suite` classes, which are responsible for grouping, registering, and
- * executing related test cases within the µTest++ framework.
+ * This source file contains the core implementations for the test suite
+ * facilities of the µTest++ framework. It provides the logic for constructing,
+ * registering, and managing test suites and their associated test cases. The
+ * implementation covers initialisation and clean-up routines, execution of
+ * test suites and test cases, tracking of successful and failed checks, and
+ * integration with the test reporter for structured output.
  *
- * It includes methods for managing test suite state, tracking successful and
- * failed checks, handling the commencement and completion of test cases and
- * suites, and supporting deferred reporting. The implementation ensures that
- * test suites are correctly initialised, executed, and reported, thereby
- * facilitating automated test discovery and execution.
+ * The design ensures that test suites are non-copyable and non-movable,
+ * maintaining unique ownership and consistent state. Flexible support for
+ * callable objects enables a wide range of test suite definitions,
+ * facilitating expressive and maintainable test organisation across embedded
+ * and general C++ projects.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the risk

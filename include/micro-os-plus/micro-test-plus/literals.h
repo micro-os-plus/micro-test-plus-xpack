@@ -21,30 +21,30 @@
  * literals and type wrappers.
  *
  * @details
- * This header defines a comprehensive suite of user-defined literal operators
- * and type wrappers, enabling the explicit specification of operand types for
- * use with the µTest++ comparators and operators.
+ * This header provides the declarations for the user-defined literal operators
+ * and type wrappers used within the µTest++ framework. It defines interfaces
+ * for generating strongly-typed integral, floating-point, and boolean
+ * constants at compile time, enabling expressive and type-safe test
+ * expressions.
  *
- * The provided literals permit constants to be suffixed (for example, `1_i`,
- * `2_u16`) to yield strongly-typed values, thereby enhancing type safety and
- * ensuring that comparator functions and operators can display actual values
- * in test reports.
+ * The declared literal operators support a wide range of C++ fundamental
+ * types, allowing constants to be suffixed with type-specific identifiers
+ * (such as `_i`, `_u16`, `_f`, `_d`, `_b`, etc.) to produce values that
+ * integrate seamlessly with the µTest++ comparators and reporting mechanisms.
  *
- * In addition to literals, this file includes wrappers for converting dynamic
- * values and expressions to recognised types, both via deprecated aliases
- * (such as `_i`, `_u8`) and the preferred `to_*` forms (such as `to_i`,
- * `to_u8`).
- *
- * The implementation is significantly inspired by Boost UT, with adaptations
- * and extensions to address the requirements of embedded development and the
- * µTest++ framework.
+ * In addition to literal operators, this header declares both deprecated and
+ * modern type wrappers for explicit type conversion, supporting enhanced
+ * clarity and type safety in test conditions. The preferred `to_*` forms are
+ * recommended for new code, while the older `_i`, `_u8`, etc. aliases are
+ * retained for backwards compatibility.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus::literals`
  * namespace, ensuring clear separation from user code and minimising the risk
  * of naming conflicts.
  *
- * All relevant source files are organised within the `include/micro-os-plus`
- * folder to maintain a structured and modular codebase.
+ * The header files are organised within the
+ * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
+ * modular codebase.
  *
  * This file is intended for internal use within the framework and should not
  * be included directly by user code.
@@ -871,6 +871,9 @@ namespace micro_os_plus::micro_test_plus
    * auto wrapped = to_t<MyType>{obj}; // Explicitly treat obj as MyType for
    * test comparison
    * @endcode
+   *
+   * This file is intended solely for internal use within the framework and
+   * should not be included directly by user code.
    *
    * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */

@@ -21,25 +21,25 @@
  * utilities and metaprogramming support.
  *
  * @details
- * This header provides a suite of type trait templates and metaprogramming
- * utilities employed throughout the µTest++ framework.
+ * This header provides the declarations for the type trait utilities and
+ * metaprogramming constructs used within the µTest++ framework. It defines
+ * templates and variable traits for function traits, type lists, identity,
+ * value wrappers, compile-time checks for container and floating-point types,
+ * and type convertibility.
  *
- * The file defines templates for function traits, type lists, identity, value
- * wrappers, and compile-time checks for container types, floating point types,
- * and type convertibility. It also includes generic integral and floating
- * point constant wrappers, as well as mechanisms for SFINAE and requirements
- * checking.
- *
- * These utilities facilitate advanced template programming, type deduction,
- * and compile-time introspection, supporting the flexible and type-safe design
- * of the µTest++ framework.
+ * These utilities underpin advanced template programming, type deduction, and
+ * compile-time introspection, supporting the flexible and type-safe design of
+ * the framework. The provided traits and wrappers enable expressive and
+ * generic handling of types, values, and callable objects, facilitating robust
+ * and maintainable test code.
  *
  * All definitions reside within the
  * `micro_os_plus::micro_test_plus::type_traits` namespace, ensuring clear
  * separation from user code and minimising the risk of naming conflicts.
  *
- * All relevant source files are organised within the `include/micro-os-plus`
- * folder to maintain a structured and modular codebase.
+ * All header files are organised within the
+ * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
+ * modular codebase.
  *
  * This file is intended for internal use within the framework and should not
  * be included directly by user code.

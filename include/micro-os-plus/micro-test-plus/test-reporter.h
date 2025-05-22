@@ -20,23 +20,26 @@
  * @brief C++ header file with declarations for the µTest++ test reporter.
  *
  * @details
- * This header defines the `test_reporter` class and related types, which are
- * responsible for formatting and presenting test results within the µTest++
- * framework.
+ * This header provides the declarations for the test reporting facilities used
+ * within the µTest++ framework. It defines the interfaces for formatting and
+ * outputting test results, including operator overloads for a wide range of
+ * value types, containers, and comparison expressions, as well as structured
+ * output for logical and exception-related assertions.
  *
- * The `test_reporter` class offers a comprehensive suite of output operators
- * for various data types, containers, and comparator expressions, enabling
- * detailed and informative reporting of test outcomes. It supports multiple
- * verbosity levels and colour-coded output to distinguish between successful
- * and failed tests.
- *
- * The file also defines supporting types such as `colors` and `verbosity`, and
- * provides methods for reporting the commencement and completion of test cases
- * and suites, as well as for handling pass and fail conditions.
+ * The test reporter is responsible for presenting test outcomes in a clear,
+ * consistent, and expressive manner, supporting both value and pointer
+ * semantics, and providing detailed diagnostics for both successful and failed
+ * test cases. Special attention is given to formatting, colour highlighting,
+ * and extensibility, enabling professional and readable test reports suitable
+ * for embedded and general C++ development.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the risk
  * of naming conflicts.
+ *
+ * The header files are organised within the
+ * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
+ * modular codebase.
  *
  * This file is intended solely for internal use within the framework and
  * should not be included directly by user code.

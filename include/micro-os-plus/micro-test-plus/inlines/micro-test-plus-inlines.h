@@ -17,22 +17,28 @@
 
 /**
  * @file
- * @brief C++ header file with inline implementations for the µTest++ methods.
+ * @brief C++ header file with inline implementations for the µTest++ Testing
+ * Framework.
  *
  * @details
- * This header provides inline definitions for key components of the µTest++
- * framework, including the management of test suites and test cases, deferred
- * reporting, and utility functions.
+ * This header provides the inline implementations for the principal public API
+ * functions and utilities of the µTest++ framework, including test case
+ * registration, expectation and assumption evaluation, exception verification,
+ * and utility helpers for string processing in tests.
  *
- * The file offers template implementations for registering and executing test
- * suites and test cases, as well as mechanisms for reporting test results in a
- * deferred manner. It also includes utility functions, such as string
- * splitting, to facilitate test development.
+ * It defines the logic for registering and executing test cases, evaluating
+ * logical conditions and custom comparators, and reporting test results with
+ * detailed diagnostics. The exception verification functions enable robust
+ * testing of error handling and exception safety, while utility functions such
+ * as string splitting support flexible validation of string processing logic.
  *
- * All definitions are contained within the `micro_os_plus::micro_test_plus`
- * namespace and its nested namespaces, ensuring a clear distinction between
- * user-facing and internal components. This approach enhances maintainability,
- * encourages modularity, and reduces the risk of name clashes.
+ * All definitions reside within the `micro_os_plus::micro_test_plus`
+ * namespace, ensuring clear separation from user code and minimising the risk
+ * of naming conflicts.
+ *
+ * The header files are organised within the
+ * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
+ * modular codebase.
  *
  * This file is intended solely for internal use within the framework and
  * should not be included directly by user code.

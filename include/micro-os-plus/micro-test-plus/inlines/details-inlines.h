@@ -17,12 +17,29 @@
 
 /**
  * @file
- * @brief C++ header file with inline implementations for the µTest++ details
- * methods.
+ * @brief C++ header file with inline implementations for the µTest++
+ * internals.
  *
  * @details
- * This header provides inline definitions for the `test_suite` class, which
- * ...
+ * This header provides the inline implementations for internal components of
+ * the µTest++ framework, including operator overloads and constructors for
+ * deferred reporting mechanisms.
+ *
+ * It defines the logic for accumulating expectation messages, handling both
+ * arithmetic and string-like types, as well as the construction and
+ * destruction behaviour of deferred reporters, ensuring that test outcomes are
+ * accurately captured and reported.
+ *
+ * All definitions reside within the `micro_os_plus::micro_test_plus::detail`
+ * namespace, ensuring clear separation from user code and minimising the risk
+ * of naming conflicts.
+ *
+ * The header files are organised within the
+ * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
+ * modular codebase.
+ *
+ * This file is intended solely for internal use within the framework and
+ * should not be included directly by user code.
  */
 
 #ifndef MICRO_TEST_PLUS_DETAILS_INLINES_H_

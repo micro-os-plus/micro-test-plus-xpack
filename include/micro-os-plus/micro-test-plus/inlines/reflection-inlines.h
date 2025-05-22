@@ -17,11 +17,32 @@
 
 /**
  * @file
- * @brief C++ header file with inline implementations for the µTest++ test
- * reporter methods.
+ * @brief C++ header file with inline implementations for the µTest++
+ * reflection utilities.
  *
  * @details
- * This header
+ * This header provides the inline implementations for the reflection utilities
+ * used within the µTest++ framework. It includes the logic for capturing and
+ * reporting source location information, such as file names and line numbers,
+ * as well as utilities for extracting type names at compile time using
+ * compiler-specific macros.
+ *
+ * The `source_location` implementation offers a lightweight,
+ * constexpr-compatible alternative to `std::source_location`, enabling
+ * enhanced diagnostics and reporting even in environments lacking C++20
+ * support. The `type_name` utility leverages compiler intrinsics to obtain
+ * human-readable type names for improved test output and debugging.
+ *
+ * All definitions reside within the
+ * `micro_os_plus::micro_test_plus::reflection` namespace, ensuring clear
+ * separation from user code and minimising the risk of naming conflicts.
+ *
+ * The header files are organised within the
+ * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
+ * modular codebase.
+ *
+ * This file is intended solely for internal use within the framework and
+ * should not be included directly by user code.
  */
 
 #ifndef MICRO_TEST_PLUS_REFLECTION_INLINES_H_

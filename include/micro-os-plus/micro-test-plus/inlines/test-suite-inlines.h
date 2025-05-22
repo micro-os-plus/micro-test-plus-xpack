@@ -18,18 +18,29 @@
 /**
  * @file
  * @brief C++ header file with inline implementations for the µTest++ test
- * suite methods.
+ * suite.
  *
  * @details
- * This header provides inline definitions for the `test_suite` class, which
- * ...
+ * This header provides the inline implementations for the test suite
+ * facilities used within the µTest++ framework. It defines the logic for
+ * constructing and registering test suites, including the binding of callable
+ * objects and their arguments for flexible test suite definitions.
+ *
+ * The implementation ensures that each test suite is automatically registered
+ * with the global test runner upon construction, enabling automated discovery
+ * and execution of test suites. The use of `std::bind` allows for versatile
+ * test suite initialisation with arbitrary callable types and arguments.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, maintaining a clear separation from user code and minimising the
  * risk of naming conflicts.
  *
- * This file is intended for internal use within the framework and should not
- * be included directly by user code.
+ * The header files are organised within the
+ * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
+ * modular codebase.
+ *
+ * This file is intended solely for internal use within the framework and
+ * should not be included directly by user code.
  */
 
 #ifndef MICRO_TEST_PLUS_TEST_SUITE_INLINES_H_

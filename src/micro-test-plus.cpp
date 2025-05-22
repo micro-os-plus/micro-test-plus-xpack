@@ -20,15 +20,12 @@
  * @brief C++ source file with implementations for the µTest++ methods.
  *
  * @details
- * This source file contains the principal implementation of the µTest++
- * testing framework, encompassing initialisation routines, management of test
- * suites and test cases, utility functions, and internal mechanisms for
- * reporting and reflection.
- *
- * It defines the primary entry points for initialising the test environment
- * and obtaining the test result exit code. Additionally, it implements
- * utilities for string pattern matching, source location handling, and the
- * core logic for deferred reporting of test outcomes.
+ * This source file contains the core implementations for the µTest++ testing
+ * framework, including initialisation and shutdown routines, utility
+ * functions, and the management of global framework state. It provides the
+ * logic for setting up the test environment, registering and executing test
+ * suites, reporting results, and supporting utility operations such as file
+ * name extraction and pattern-based string matching.
  *
  * All definitions are contained within the `micro_os_plus::micro_test_plus`
  * namespace and its nested namespaces, ensuring clear separation from user

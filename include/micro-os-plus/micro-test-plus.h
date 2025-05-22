@@ -21,24 +21,33 @@
  * Framework.
  *
  * @details
- * This header is the main entry point for the µTest++ testing framework,
- * designed for use in both embedded and general C++ projects.
+ * This header serves as the principal entry point for the µTest++ testing
+ * framework, purpose-built for both embedded and general C++ projects.
  *
  * It provides all essential declarations required to write and manage tests,
  * including test runner and reporter objects, test suite and test case
  * management, expectations, assumptions, comparators, logical operators,
  * exception verification, and utility functions.
  *
- * The header also includes all necessary dependencies and internal headers to
- * ensure the framework operates correctly and efficiently.
+ * The header also incorporates all necessary dependencies and internal headers
+ * to ensure the framework operates correctly and efficiently.
  *
- * All public API definitions are contained within the
+ * All public API definitions reside within the
  * `micro_os_plus::micro_test_plus` namespace and its nested namespaces,
  * ensuring clear separation from user code and minimising the risk of naming
  * conflicts.
  *
+ * This file is located in the top-level `include/micro-os-plus` directory; all
+ * other header files are organised within the
+ * `include/micro-os-plus/micro-test-plus` directory to maintain a structured
+ * and modular codebase.
+ *
  * To access the complete functionality of the µTest++ framework, users should
  * include this header in their test projects.
+ *
+ * The implementation is significantly inspired by Boost UT, with adaptations
+ * and extensions to address the requirements of embedded development and the
+ * µTest++ framework.
  */
 
 /**

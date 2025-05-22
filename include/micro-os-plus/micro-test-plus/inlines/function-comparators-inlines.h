@@ -17,11 +17,33 @@
 
 /**
  * @file
- * @brief C++ header file with inline implementations for the µTest++ test
- * reporter methods.
+ * @brief C++ header file with inline implementations for the µTest++ function
+ * comparators.
  *
  * @details
- * This header
+ * This header provides the inline implementations for the function comparator
+ * templates used within the µTest++ framework. It defines the logic for
+ * generic and pointer-based comparison operators, including equality,
+ * non-equality, greater than, less than, and their respective logical
+ * variants. Additionally, it implements logical combinators such as
+ * conjunction (_and), disjunction (_or), and negation (_not), as well as a
+ * utility for safely removing constness from objects.
+ *
+ * These comparators and logical operators enable expressive and type-safe test
+ * expectations and assertions, supporting both value and pointer semantics.
+ * The underscore-prefixed logical operators are intentionally named to avoid
+ * conflicts with standard operators.
+ *
+ * All definitions reside within the `micro_os_plus::micro_test_plus`
+ * namespace, ensuring clear separation from user code and minimising the risk
+ * of naming conflicts.
+ *
+ * The header files are organised within the
+ * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
+ * modular codebase.
+ *
+ * This file is intended solely for internal use within the framework and
+ * should not be included directly by user code.
  */
 
 #ifndef MICRO_TEST_PLUS_FUNCTION_COMPARATORS_INLINES_H_

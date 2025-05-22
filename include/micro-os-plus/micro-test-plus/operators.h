@@ -20,7 +20,27 @@
  * @brief C++ header file with declarations for the µTest++ operators.
  *
  * @details
- * ...
+ * This header provides the declarations for the custom operator overloads used
+ * within the µTest++ framework. It defines interfaces for equality,
+ * inequality, relational, and logical operators tailored for use with the
+ * framework’s strongly-typed constants, wrappers, containers, and string
+ * views.
+ *
+ * These operator overloads enable expressive, concise, and type-safe test
+ * assertions, supporting both compile-time and run-time evaluation. The
+ * operators are selectively enabled for types recognised by the framework,
+ * minimising the risk of conflicts with user-defined or standard operators.
+ *
+ * All definitions reside within the
+ * `micro_os_plus::micro_test_plus::operators` namespace, ensuring clear
+ * separation from user code and minimising the risk of naming conflicts.
+ *
+ * The header files are organised within the
+ * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
+ * modular codebase.
+ *
+ * This file is intended solely for internal use within the framework and
+ * should not be included directly by user code.
  */
 
 #ifndef MICRO_TEST_PLUS_OPERATORS_H_

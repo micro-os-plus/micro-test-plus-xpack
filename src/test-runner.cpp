@@ -21,15 +21,13 @@
  * methods.
  *
  * @details
- * This source file provides the implementation of the `test_runner` class and
- * related functions, responsible for managing the registration and execution
- * of test suites within the µTest++ framework.
- *
- * It includes routines for initialising the test environment, registering test
- * suites, executing all registered suites, and determining the overall test
- * result via an exit code. The implementation also handles command-line
- * argument parsing for verbosity control and outputs pertinent build and
- * environment information.
+ * This source file contains the core implementations for the test runner
+ * facilities of the µTest++ framework. It provides the logic for initialising
+ * the test environment, registering and managing test suites, handling
+ * command-line arguments, orchestrating test execution, and determining the
+ * overall test result. The implementation supports automated discovery and
+ * execution of test suites, flexible verbosity control, and robust mechanisms
+ * for aborting test execution in critical scenarios.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the risk

@@ -17,10 +17,34 @@
 
 /**
  * @file
- * @brief C++ header file with declarations for the µTest++ operators.
+ * @brief C++ header file with declarations for the µTest++ function
+ * comparators.
  *
  * @details
- * ...
+ * This header provides the declarations for the function comparator templates
+ * and logical operators used within the µTest++ framework. It defines the
+ * interfaces for generic and pointer-based comparison functions, including
+ * equality, non-equality, greater than, less than, and their respective
+ * logical variants. Additionally, it declares logical combinators such as
+ * conjunction (`_and`), disjunction (`_or`), and negation (`_not`), as well as
+ * a utility for safely removing constness from objects.
+ *
+ * These comparators and logical operators enable expressive and type-safe test
+ * expectations and assertions, supporting both value and pointer semantics.
+ * The underscore-prefixed logical operators are intentionally named to avoid
+ * conflicts with standard operators and provide clear, readable test
+ * expressions.
+ *
+ * All definitions reside within the `micro_os_plus::micro_test_plus`
+ * namespace, ensuring clear separation from user code and minimising the risk
+ * of naming conflicts.
+ *
+ * The header files are organised within the
+ * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
+ * modular codebase.
+ *
+ * This file is intended solely for internal use within the framework and
+ * should not be included directly by user code.
  */
 
 #ifndef MICRO_TEST_PLUS_FUNCTION_COMPARATORS_H_

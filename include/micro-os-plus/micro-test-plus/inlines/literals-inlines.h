@@ -17,11 +17,34 @@
 
 /**
  * @file
- * @brief C++ header file with inline implementations for the µTest++ test
- * reporter methods.
+ * @brief C++ header file with inline implementations for the µTest++ literals
+ * and type wrappers.
  *
  * @details
- * This header
+ * This header provides the inline implementations for the user-defined literal
+ * operators and type wrappers used within the µTest++ framework. It defines
+ * the logic for generating strongly-typed integral, floating-point, and
+ * boolean constants at compile time, enabling expressive and type-safe test
+ * expressions.
+ *
+ * The implemented literal operators support a wide range of C++ fundamental
+ * types, allowing constants to be suffixed with type-specific identifiers
+ * (such as `_i`, `_u16`, `_f`, `_d`, `_b`, etc.) to produce values that
+ * integrate seamlessly with the µTest++ comparators and reporting mechanisms.
+ *
+ * Specialised wrappers are provided for named boolean literals, supporting
+ * enhanced expressiveness and type safety in test conditions.
+ *
+ * All definitions reside within the `micro_os_plus::micro_test_plus::literals`
+ * namespace, ensuring clear separation from user code and minimising the risk
+ * of naming conflicts.
+ *
+ * The header files are organised within the
+ * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
+ * modular codebase.
+ *
+ * This file is intended solely for internal use within the framework and
+ * should not be included directly by user code.
  */
 
 #ifndef MICRO_TEST_PLUS_LITERALS_INLINES_H_
