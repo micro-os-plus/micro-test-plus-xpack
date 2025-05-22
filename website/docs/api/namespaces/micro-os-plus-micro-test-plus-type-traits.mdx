@@ -167,7 +167,7 @@ Variable template to determine if a type models a container. <Link to="#a8361ab7
 
 <MembersIndexItem
   type="auto"
-  name={<><Link to="#a49a5bfe63d50b6fd1be0972586fbf590">is&#95;convertible&#95;v</Link> = <Link to="#ac8b2a4fa12ff6db8c40a51910af19589">is&#95;convertible</Link>&lt;From, To&gt; (0)</>}>
+  name={<><Link to="#a49a5bfe63d50b6fd1be0972586fbf590">is&#95;convertible&#95;v</Link> = <Link to="#ae9b4b50700345f54b1c14c594e0637ba">is&#95;convertible</Link>&lt;From, To&gt; (0)</>}>
 Variable template to determine if one type is convertible to another. <Link to="#a49a5bfe63d50b6fd1be0972586fbf590">More...</Link>
 </MembersIndexItem>
 
@@ -221,7 +221,8 @@ Fallback function template for is&#95;convertible, returns false if the conversi
 
 <MembersIndexItem
   type="constexpr auto "
-  name={<><Link to="#ac8b2a4fa12ff6db8c40a51910af19589">is&#95;convertible</Link> (int) -&gt; decltype(bool(To(<Link to="#ae488d06debb38c5e638355cb462a1228">declval</Link>&lt; From &gt;())))</>}>
+  name={<><Link to="#ae9b4b50700345f54b1c14c594e0637ba">is&#95;convertible</Link> (int n) -&gt; decltype(bool(To(<Link to="#ae488d06debb38c5e638355cb462a1228">declval</Link>&lt; From &gt;())))</>}>
+Function template to determine if one type is convertible to another. <Link to="#ae9b4b50700345f54b1c14c594e0637ba">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
@@ -265,7 +266,7 @@ Alias template for extracting the <code>type</code> member from <code><Link to="
 </ParametersList>
 The <code><Link to="#a1cbbf299a006b4692df250ef2a6fc7c2">requires&#95;t</Link></code> alias template simplifies the use of the <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires-">requires&#95;</Link></code> struct template by directly exposing the nested <code>type</code> member. It is commonly used to enforce compile-time requirements in template declarations.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00664">664</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00661">661</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -363,7 +364,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 
 <MemberDefinition
   template={<>template &lt;class From, class To&gt;</>}
-  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::is&#95;convertible&#95;v = <Link to="#ac8b2a4fa12ff6db8c40a51910af19589">is&#95;convertible</Link>&lt;From, To&gt; (0)</>}
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::is&#95;convertible&#95;v = <Link to="#ae9b4b50700345f54b1c14c594e0637ba">is&#95;convertible</Link>&lt;From, To&gt; (0)</>}
   labels = {["constexpr"]}>
 Variable template to determine if one type is convertible to another.
 
@@ -378,7 +379,7 @@ Variable template to determine if one type is convertible to another.
 </ParametersList>
 The <code>is&#95;convertible&#95;v</code> variable template evaluates to <code>true</code> if the type <code>From</code> is implicitly convertible to the type <code>To</code>, and <code>false</code> otherwise. This trait is determined at compile time and is used throughout the µTest++ framework to enable type-safe conversions and requirements checking in template metaprogramming.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00607">607</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00604">604</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;floating&#95;point&#95;v {#abfe0c2413694bb3a6dcdf1da303c38db}
@@ -473,7 +474,7 @@ Variable template to determine if a type derives from <code>op</code>.
 </ParametersList>
 The <code>is&#95;op&#95;v</code> variable template evaluates to <code>true</code> if the given type <code>T</code> is derived from the <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">type&#95;traits::op</Link></code> base struct, and <code>false</code> otherwise. This trait is determined at compile time using compiler intrinsics and is used throughout the µTest++ framework to enable generic handling and detection of operator-like or value wrapper types in template metaprogramming.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00948">948</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00945">945</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -524,17 +525,34 @@ Fallback function template for is&#95;convertible, returns false if the conversi
 </ParametersList>
 This overload is selected when the primary <code>is&#95;convertible</code> template cannot be instantiated, providing a <code>false</code> result for invalid conversions.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00584">584</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00581">581</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
-### is&#95;convertible() {#ac8b2a4fa12ff6db8c40a51910af19589}
+### is&#95;convertible() {#ae9b4b50700345f54b1c14c594e0637ba}
 
 <MemberDefinition
   template={<>template &lt;class From, class To&gt;</>}
-  prototype={<>decltype(bool(To(declval&lt; From &gt;()))) micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::is&#95;convertible (int)</>}
+  prototype={<>decltype(bool(To(declval&lt; From &gt;()))) micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::is&#95;convertible (int n)</>}
   labels = {["constexpr"]}>
+Function template to determine if one type is convertible to another.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00564">564</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+<ParametersList title="Template Parameters">
+<ParametersListItem name="From">The source type to be checked for convertibility.</ParametersListItem>
+<ParametersListItem name="To">The target type to which conversion is tested.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Parameters">
+<ParametersListItem name="n">Dummy parameter used for overload resolution.</ParametersListItem>
+</ParametersList>
+
+<ParametersList title="Return Values">
+<ParametersListItem name="true">if <code>From</code> is convertible to <code>To</code>.</ParametersListItem>
+</ParametersList>
+The <code>is&#95;convertible</code> function template checks, at compile time, whether a value of type <code>From</code> can be implicitly converted to type <code>To</code>. This is achieved using SFINAE and is primarily used as an implementation detail for the <code>is&#95;convertible&#95;v</code> variable template within the µTest++ framework.
+
+If the conversion is valid, this overload is selected and returns <code>true</code>.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00561">561</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### is&#95;valid() {#a3ee98aeecf4e9f3b23dfcda25434c4d2}

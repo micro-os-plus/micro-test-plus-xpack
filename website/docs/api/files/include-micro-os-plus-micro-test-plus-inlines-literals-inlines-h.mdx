@@ -466,69 +466,41 @@ The file content with the documentation metadata removed is:
 <Link id="l00549" /><CodeLine lineNumber="549"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
 <Link id="l00550" /><CodeLine lineNumber="550"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
 <Link id="l00551" /><CodeLine lineNumber="551"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00552" /><CodeLine lineNumber="552"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// error: argument &#39;other&#39; of command @param is not found in the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00553" /><CodeLine lineNumber="553"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// argument list of</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00554" /><CodeLine lineNumber="554"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// micro&#95;os&#95;plus::micro&#95;test&#95;plus::literals::operator&quot;&quot;&#95;b(const char</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00555" /><CodeLine lineNumber="555"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// &#42;name, decltype(sizeof(&quot;&quot;)) size)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00556" /><CodeLine lineNumber="556"><Highlight kind="normal">        </Highlight><Highlight kind="comment">/&#42;</Highlight></CodeLine>
-<Link id="l00557" /><CodeLine lineNumber="557"><Highlight kind="comment">         &#42; @brief Equality comparison with another named instance.</Highlight></CodeLine>
-<Link id="l00558" /><CodeLine lineNumber="558"><Highlight kind="comment">         &#42;</Highlight></CodeLine>
-<Link id="l00559" /><CodeLine lineNumber="559"><Highlight kind="comment">         &#42; @param other Another named instance.</Highlight></CodeLine>
-<Link id="l00560" /><CodeLine lineNumber="560"><Highlight kind="comment">         &#42; @return &#96;true&#96;</Highlight></CodeLine>
-<Link id="l00561" /><CodeLine lineNumber="561"><Highlight kind="comment">         &#42;</Highlight></CodeLine>
-<Link id="l00562" /><CodeLine lineNumber="562"><Highlight kind="comment">         &#42; @details</Highlight></CodeLine>
-<Link id="l00563" /><CodeLine lineNumber="563"><Highlight kind="comment">         &#42; Always returns &#96;true&#96;, indicating that any two named literals are</Highlight></CodeLine>
-<Link id="l00564" /><CodeLine lineNumber="564"><Highlight kind="comment">         &#42; considered equal in this context.</Highlight></CodeLine>
-<Link id="l00565" /><CodeLine lineNumber="565"><Highlight kind="comment">         &#42;/</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00566" /><CodeLine lineNumber="566"><Highlight kind="normal">        [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00567" /><CodeLine lineNumber="567"><Highlight kind="normal">        operator== (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> named&amp;)</Highlight><Highlight kind="keyword"> const</Highlight></CodeLine>
-<Link id="l00568" /><CodeLine lineNumber="568"><Highlight kind="keyword">        </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00569" /><CodeLine lineNumber="569"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<Link id="l00570" /><CodeLine lineNumber="570"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
-<Link id="l00571" /><CodeLine lineNumber="571"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00572" /><CodeLine lineNumber="572"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// error: argument &#39;other&#39; of command @param is not found in the</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00573" /><CodeLine lineNumber="573"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// argument list of</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00574" /><CodeLine lineNumber="574"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// micro&#95;os&#95;plus::micro&#95;test&#95;plus::literals::operator&quot;&quot;&#95;b(const char</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00575" /><CodeLine lineNumber="575"><Highlight kind="normal">        </Highlight><Highlight kind="comment">// &#42;name, decltype(sizeof(&quot;&quot;)) size)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00576" /><CodeLine lineNumber="576"><Highlight kind="normal">        </Highlight><Highlight kind="comment">/&#42;</Highlight></CodeLine>
-<Link id="l00577" /><CodeLine lineNumber="577"><Highlight kind="comment">         &#42; @brief Equality comparison with a boolean value.</Highlight></CodeLine>
-<Link id="l00578" /><CodeLine lineNumber="578"><Highlight kind="comment">         &#42;</Highlight></CodeLine>
-<Link id="l00579" /><CodeLine lineNumber="579"><Highlight kind="comment">         &#42; @param other Boolean value to compare with.</Highlight></CodeLine>
-<Link id="l00580" /><CodeLine lineNumber="580"><Highlight kind="comment">         &#42; @return The value of @p other.</Highlight></CodeLine>
-<Link id="l00581" /><CodeLine lineNumber="581"><Highlight kind="comment">         &#42;</Highlight></CodeLine>
-<Link id="l00582" /><CodeLine lineNumber="582"><Highlight kind="comment">         &#42; @details</Highlight></CodeLine>
-<Link id="l00583" /><CodeLine lineNumber="583"><Highlight kind="comment">         &#42; Returns the value of the boolean operand, allowing the named literal</Highlight></CodeLine>
-<Link id="l00584" /><CodeLine lineNumber="584"><Highlight kind="comment">         &#42; to be compared directly with a boolean.</Highlight></CodeLine>
-<Link id="l00585" /><CodeLine lineNumber="585"><Highlight kind="comment">         &#42;/</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00586" /><CodeLine lineNumber="586"><Highlight kind="normal">        [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00587" /><CodeLine lineNumber="587"><Highlight kind="normal">        operator== (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> other)</Highlight><Highlight kind="keyword"> const</Highlight></CodeLine>
-<Link id="l00588" /><CodeLine lineNumber="588"><Highlight kind="keyword">        </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<Link id="l00589" /><CodeLine lineNumber="589"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> other;</Highlight></CodeLine>
-<Link id="l00590" /><CodeLine lineNumber="590"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
-<Link id="l00591" /><CodeLine lineNumber="591"><Highlight kind="normal">      &#125;;</Highlight></CodeLine>
-<Link id="l00592" /><CodeLine lineNumber="592"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00593" /><CodeLine lineNumber="593"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> named&#123; &#123; name, size &#125;, &#123;&#125; &#125;;</Highlight></CodeLine>
-<Link id="l00594" /><CodeLine lineNumber="594"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00561" /><CodeLine lineNumber="561"><Highlight kind="normal">        [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00562" /><CodeLine lineNumber="562"><Highlight kind="normal">        operator== (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> named&amp;)</Highlight><Highlight kind="keyword"> const</Highlight></CodeLine>
+<Link id="l00563" /><CodeLine lineNumber="563"><Highlight kind="keyword">        </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00564" /><CodeLine lineNumber="564"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<Link id="l00565" /><CodeLine lineNumber="565"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00566" /><CodeLine lineNumber="566"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00576" /><CodeLine lineNumber="576"><Highlight kind="normal">        [[nodiscard]] </Highlight><Highlight kind="keyword">constexpr</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00577" /><CodeLine lineNumber="577"><Highlight kind="normal">        operator== (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">bool</Highlight><Highlight kind="normal"> other)</Highlight><Highlight kind="keyword"> const</Highlight></CodeLine>
+<Link id="l00578" /><CodeLine lineNumber="578"><Highlight kind="keyword">        </Highlight><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<Link id="l00579" /><CodeLine lineNumber="579"><Highlight kind="normal">          </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> other;</Highlight></CodeLine>
+<Link id="l00580" /><CodeLine lineNumber="580"><Highlight kind="normal">        &#125;</Highlight></CodeLine>
+<Link id="l00581" /><CodeLine lineNumber="581"><Highlight kind="normal">      &#125;;</Highlight></CodeLine>
+<Link id="l00582" /><CodeLine lineNumber="582"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00583" /><CodeLine lineNumber="583"><Highlight kind="normal">      </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> named&#123; &#123; name, size &#125;, &#123;&#125; &#125;;</Highlight></CodeLine>
+<Link id="l00584" /><CodeLine lineNumber="584"><Highlight kind="normal">    &#125;</Highlight></CodeLine>
+<Link id="l00585" /><CodeLine lineNumber="585"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00586" /><CodeLine lineNumber="586"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// ------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00587" /><CodeLine lineNumber="587"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="comment">// namespace literals</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00588" /><CodeLine lineNumber="588"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00589" /><CodeLine lineNumber="589"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// --------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00590" /><CodeLine lineNumber="590"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace micro&#95;os&#95;plus::micro&#95;test&#95;plus</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00591" /><CodeLine lineNumber="591"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00592" /><CodeLine lineNumber="592"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;GNUC&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00593" /><CodeLine lineNumber="593"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma GCC diagnostic pop</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00594" /><CodeLine lineNumber="594"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <Link id="l00595" /><CodeLine lineNumber="595"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00596" /><CodeLine lineNumber="596"><Highlight kind="normal">    </Highlight><Highlight kind="comment">// ------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00597" /><CodeLine lineNumber="597"><Highlight kind="normal">  &#125; </Highlight><Highlight kind="comment">// namespace literals</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00598" /><CodeLine lineNumber="598"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00599" /><CodeLine lineNumber="599"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// --------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00600" /><CodeLine lineNumber="600"><Highlight kind="normal">&#125; </Highlight><Highlight kind="comment">// namespace micro&#95;os&#95;plus::micro&#95;test&#95;plus</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00596" /><CodeLine lineNumber="596"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00597" /><CodeLine lineNumber="597"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00598" /><CodeLine lineNumber="598"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// &#95;&#95;cplusplus</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00599" /><CodeLine lineNumber="599"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00600" /><CodeLine lineNumber="600"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <Link id="l00601" /><CodeLine lineNumber="601"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00602" /><CodeLine lineNumber="602"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(&#95;&#95;GNUC&#95;&#95;)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00603" /><CodeLine lineNumber="603"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#pragma GCC diagnostic pop</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00604" /><CodeLine lineNumber="604"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00605" /><CodeLine lineNumber="605"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00606" /><CodeLine lineNumber="606"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00607" /><CodeLine lineNumber="607"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00608" /><CodeLine lineNumber="608"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// &#95;&#95;cplusplus</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00609" /><CodeLine lineNumber="609"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00610" /><CodeLine lineNumber="610"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00611" /><CodeLine lineNumber="611"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00612" /><CodeLine lineNumber="612"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// MICRO&#95;TEST&#95;PLUS&#95;LITERALS&#95;INLINES&#95;H&#95;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00613" /><CodeLine lineNumber="613"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00614" /><CodeLine lineNumber="614"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00602" /><CodeLine lineNumber="602"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// MICRO&#95;TEST&#95;PLUS&#95;LITERALS&#95;INLINES&#95;H&#95;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00603" /><CodeLine lineNumber="603"><Highlight kind="normal"></Highlight></CodeLine>
+<Link id="l00604" /><CodeLine lineNumber="604"><Highlight kind="normal"></Highlight><Highlight kind="comment">// ----------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 
 </ProgramListing>
 

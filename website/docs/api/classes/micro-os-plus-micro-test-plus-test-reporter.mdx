@@ -304,8 +304,8 @@ Output operator for signed long values. <Link to="#a30306b9f0fb893ef89a0756a5025
 
 <MembersIndexItem
   type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
-  name={<><Link to="#a2522d95852ab3c644e85418369cc5441">operator&lt;&lt;</Link> (signed short c)</>}>
-Output operator for signed short values. <Link to="#a2522d95852ab3c644e85418369cc5441">More...</Link>
+  name={<><Link to="#af88660a913ae75160c1c88ffbb92830c">operator&lt;&lt;</Link> (signed short v)</>}>
+Output operator for signed short values. <Link to="#af88660a913ae75160c1c88ffbb92830c">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
@@ -364,8 +364,8 @@ Output operator for unsigned long values. <Link to="#a5a300e17b0498a54fa4724bee7
 
 <MembersIndexItem
   type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> &amp;</>}
-  name={<><Link to="#afd96a6cd1ad47187b050121d7650fa68">operator&lt;&lt;</Link> (unsigned short c)</>}>
-Output operator for unsigned short values. <Link to="#afd96a6cd1ad47187b050121d7650fa68">More...</Link>
+  name={<><Link to="#a4ef05fd23acfc0b4bcd5d95bf25b518d">operator&lt;&lt;</Link> (unsigned short v)</>}>
+Output operator for unsigned short values. <Link to="#a4ef05fd23acfc0b4bcd5d95bf25b518d">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
@@ -524,7 +524,7 @@ Nothing.
 
 This method marks the beginning of a test case, setting the internal state to indicate that test output is now within a test case context. If there is pending output and the verbosity level is set to verbose, it ensures that output is properly separated and displayed, adding an empty line if necessary. The output buffer is cleared and the stream is flushed to guarantee that all previous output is visible before the new test case begins. This approach enhances the clarity and organisation of test results across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00658">658</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00553">553</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00658">658</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00548">548</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
 </MemberDefinition>
 
 ### begin&#95;test&#95;suite() {#ad6375b4032aa02fd8258f77b7de5efdd}
@@ -543,7 +543,7 @@ Nothing.
 
 This method marks the beginning of a test suite, ensuring that output is properly separated and clearly presented. If there is pending output, the stream is flushed and an empty line is added for clarity. For silent or quiet verbosity levels, output is suppressed. Otherwise, a message indicating the start of the test suite is displayed. This approach enhances the organisation and readability of test results across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00678">678</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00662">662</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00678">678</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00657">657</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
 </MemberDefinition>
 
 ### color() {#aeab9d025989e57ed62ad0e701efc59ee}
@@ -582,7 +582,7 @@ Nothing.
 
 This method marks the end of a test case, summarising its outcome and outputting the results with appropriate formatting and colour coding. If any checks have failed, a failure message is displayed, including the number of successful and failed checks. For passing test cases, a success message is shown with the total number of checks. The output is adjusted according to the verbosity level, and additional spacing is managed for clarity. The output buffer is cleared and the stream is flushed to ensure all results are immediately visible, supporting clear and organised reporting across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00668">668</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00585">585</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00668">668</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00580">580</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
 </MemberDefinition>
 
 ### end&#95;test&#95;suite() {#ad01d404c3fe5a44cf7f10bfcd599e0f3}
@@ -601,7 +601,7 @@ Nothing.
 
 This method marks the end of a test suite, summarising the overall results and presenting them with appropriate formatting and colour coding. If the suite contains test cases and the verbosity is not set to quiet, an empty line is added for clarity. For suites with no failed checks and at least one successful check, a success message is displayed, including the number of checks and test cases. Otherwise, a failure message is shown, detailing the number of successful and failed checks, as well as the total number of test cases. The output is immediately flushed to ensure prompt and organised reporting across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00688">688</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00694">694</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00688">688</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00689">689</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
 </MemberDefinition>
 
 ### endline() {#a105cec33c0e4ed184d8db90df27a48d6}
@@ -648,7 +648,7 @@ Nothing.
 
 This function reports a test failure and formats the output in a clear and consistent manner. It provides contextual information, including the precise source location, and appends the evaluated expression when applicable. The failure handling process ensures uniformity in the presentation of unsuccessful test cases, aiding in the rapid identification and diagnosis of issues within test reports.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00647">647</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00452">452</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00647">647</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00443">443</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
 </MemberDefinition>
 
 ### flush() {#ab48b00f46755dd9a70cb39a42bfad7f6}
@@ -771,7 +771,7 @@ This operator overload enables the <code><Link to="/docs/api/classes/micro-os-pl
 
 The left-hand side and right-hand side expressions are enclosed in parentheses and separated by the word &quot;and&quot;, with appropriate colour highlighting applied for improved readability in test reports and diagnostics. This presentation assists in quickly identifying the components of logical assertions and facilitates efficient debugging of test failures involving compound conditions.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00538">538</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00315">315</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00538">538</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00306">306</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
 </MemberDefinition>
 
 ### operator&lt;&lt;() {#ae3c6e69e58215c20d2766ae6e454e2e0}
@@ -798,7 +798,7 @@ This operator overload enables the <code><Link to="/docs/api/classes/micro-os-pl
 
 The left-hand side and right-hand side values are formatted and separated by the equality operator (<code>==</code>), with appropriate colour highlighting applied for improved readability in test reports and diagnostics. This structured output assists in quickly identifying the values involved in equality assertions and facilitates efficient debugging of test failures.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00460">460</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00194">194</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00460">460</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00185">185</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
 </MemberDefinition>
 
 ### operator&lt;&lt;() {#a248e333b17ace83dbfaf3db464520993}
@@ -825,7 +825,7 @@ This operator overload enables the <code><Link to="/docs/api/classes/micro-os-pl
 
 The left-hand side and right-hand side values are formatted and separated by the greater-than-or-equal-to operator (<code>&gt;=</code>), with appropriate colour highlighting applied for improved readability in test reports and diagnostics. This structured output assists in quickly identifying the values involved in greater-than-or-equal-to assertions and facilitates efficient debugging of test failures.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00499">499</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00255">255</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00499">499</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00246">246</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
 </MemberDefinition>
 
 ### operator&lt;&lt;() {#abef6ddfab2ac750d9ec1a170873f6c3e}
@@ -852,7 +852,7 @@ This operator overload enables the <code><Link to="/docs/api/classes/micro-os-pl
 
 The left-hand side and right-hand side values are formatted and separated by the greater-than operator (<code>&gt;</code>), with appropriate colour highlighting applied for improved readability in test reports and diagnostics. This structured output assists in quickly identifying the values involved in greater-than assertions and facilitates efficient debugging of test failures.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00486">486</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00234">234</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00486">486</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00225">225</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
 </MemberDefinition>
 
 ### operator&lt;&lt;() {#a7e08a3a2f3b5ae49ac3b138f93951746}
@@ -879,7 +879,7 @@ This operator overload enables the <code><Link to="/docs/api/classes/micro-os-pl
 
 The left-hand side and right-hand side values are formatted and separated by the less-than-or-equal-to operator (<code>&lt;=</code>), with appropriate colour highlighting applied for improved readability in test reports and diagnostics. This structured output assists in quickly identifying the values involved in less-than-or-equal-to assertions and facilitates efficient debugging of test failures.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00525">525</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00295">295</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00525">525</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00286">286</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
 </MemberDefinition>
 
 ### operator&lt;&lt;() {#a1f6ce3e6874d63ee7afe21f8301657c1}
@@ -906,7 +906,7 @@ This operator overload enables the <code><Link to="/docs/api/classes/micro-os-pl
 
 The left-hand side and right-hand side values are formatted and separated by the less-than operator (<code>&lt;</code>), with appropriate colour highlighting applied for improved readability in test reports and diagnostics. This structured output assists in quickly identifying the values involved in less-than assertions and facilitates efficient debugging of test failures.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00512">512</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00274">274</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00512">512</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00265">265</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
 </MemberDefinition>
 
 ### operator&lt;&lt;() {#a292fdf290a81a3321edde14c31dff1ed}
@@ -933,7 +933,7 @@ This operator overload enables the <code><Link to="/docs/api/classes/micro-os-pl
 
 The left-hand side and right-hand side values are formatted and separated by the inequality operator (<code>!=</code>), with appropriate colour highlighting applied for improved readability in test reports and diagnostics. This structured output assists in quickly identifying the values involved in inequality assertions and facilitates efficient debugging of test failures.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00473">473</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00214">214</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00473">473</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00205">205</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
 </MemberDefinition>
 
 ### operator&lt;&lt;() {#a7f8caa4fbe97ef26ece7c5a37dc4ea9c}
@@ -957,7 +957,7 @@ Reference to the current <Link to="/docs/api/classes/micro-os-plus/micro-test-pl
 
 This operator overload enhances readability and clarity by formatting the output when handling negated expressions. It applies colour styling for improved distinction and appends the negated value accordingly, ensuring that logical negations are clearly represented in test reports and diagnostics.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00563">563</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00351">351</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00563">563</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00342">342</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
 </MemberDefinition>
 
 ### operator&lt;&lt;() {#a15d2d453175a3ab377eb12cae6e81d2e}
@@ -983,7 +983,7 @@ This operator overload formats output for expressions that do not throw exceptio
 
 The output highlights the <code>nothrow</code> qualifier, making it immediately apparent when an expression is guaranteed not to throw, thereby improving the readability and professionalism of the test output.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00602">602</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00407">407</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00602">602</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00398">398</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
 </MemberDefinition>
 
 ### operator&lt;&lt;() {#a8167f599220c789c1044da084a119eb5}
@@ -1010,7 +1010,7 @@ This operator overload enables the <code><Link to="/docs/api/classes/micro-os-pl
 
 The left-hand side and right-hand side expressions are enclosed in parentheses and separated by the word &quot;or&quot;, with appropriate colour highlighting applied for improved readability in test reports and diagnostics. This presentation assists in quickly identifying the components of logical assertions and facilitates efficient debugging of test failures involving compound conditions.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00551">551</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00335">335</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00551">551</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00326">326</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
 </MemberDefinition>
 
 ### operator&lt;&lt;() {#ac43d666b5a7824b7e91a1306094fdb1e}
@@ -1037,7 +1037,7 @@ This operator overload provides structured output for expressions that may throw
 
 When invoked, the output highlights the <code>throws</code> qualifier along with the specific exception type, making it immediately apparent which exception is expected. This enhances the readability and professionalism of test reports, and assists in the precise identification and debugging of exception-related test cases.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00578">578</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00371">371</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00578">578</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00362">362</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
 </MemberDefinition>
 
 ### operator&lt;&lt;() {#a46a7012a665e55c00e7a040588f0c83b}
@@ -1063,7 +1063,7 @@ This operator overload formats output for expressions that may throw exceptions.
 
 When invoked, the output highlights the <code>throws</code> qualifier, making it immediately apparent when an expression is expected to throw, thereby improving the readability and professionalism of the test output.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00590">590</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00390">390</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00590">590</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00381">381</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
 </MemberDefinition>
 
 ### operator&lt;&lt;() {#afdfeff359bdc48955dacb5448706b297}
@@ -1113,7 +1113,7 @@ The value is converted to a string using <code>std::to&#95;string</code> after b
 
 This approach ensures precise and unambiguous representation of integral values, which is particularly advantageous for verifying test results and facilitating debugging.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00432">432</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00144">144</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00432">432</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00135">135</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
 </MemberDefinition>
 
 ### operator&lt;&lt;() {#a8d5212b37538ff11de36a1265b6f927b}
@@ -1132,7 +1132,7 @@ Reference to the current <Link to="/docs/api/classes/micro-os-plus/micro-test-pl
 
 This operator overload appends the string representation of the specified double-precision floating-point value to the internal output buffer of the <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link></code>. It enables precise and readable streaming of double values into the reporter, supporting clear formatting of test output across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00374">374</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00518">518</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00374">374</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00513">513</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
 </MemberDefinition>
 
 ### operator&lt;&lt;() {#a0cbaa9549a0929515cd1684cda27e209}
@@ -1151,7 +1151,7 @@ Reference to the current <Link to="/docs/api/classes/micro-os-plus/micro-test-pl
 
 This operator overload appends the string representation of the specified floating-point value to the internal output buffer of the <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link></code>, followed by the character &#39;f&#39; to indicate a float type. It enables precise and readable streaming of float values into the reporter, supporting clear formatting of test output across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00365">365</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00502">502</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00365">365</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00497">497</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
 </MemberDefinition>
 
 ### operator&lt;&lt;() {#a315aa52bed70671e66a7228d11452c93}
@@ -1170,7 +1170,7 @@ Reference to the current <Link to="/docs/api/classes/micro-os-plus/micro-test-pl
 
 This operator overload appends the string representation of the specified long double-precision floating-point value to the internal output buffer of the <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link></code>, followed by the character &#39;l&#39; to indicate a long double type. It enables precise and readable streaming of long double values into the reporter, supporting clear formatting of test output across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00383">383</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00534">534</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00383">383</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00529">529</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
 </MemberDefinition>
 
 ### operator&lt;&lt;() {#aa347f64332ee58823aeb25ed204a8c93}
@@ -1208,7 +1208,7 @@ Reference to the current <Link to="/docs/api/classes/micro-os-plus/micro-test-pl
 
 This operator overload appends the string representation of the specified signed integer to the internal output buffer of the <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link></code>. It enables precise and readable streaming of signed integer values into the reporter, supporting clear formatting of test output across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00311">311</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00407">407</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00311">311</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00402">402</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
 </MemberDefinition>
 
 ### operator&lt;&lt;() {#a8c29379f197e555fb8cc6e5d7ca66c09}
@@ -1227,7 +1227,7 @@ Reference to the current <Link to="/docs/api/classes/micro-os-plus/micro-test-pl
 
 This operator overload appends the string representation of the specified signed long long integer to the internal output buffer of the <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link></code>. It enables precise and readable streaming of signed long long values into the reporter, supporting clear formatting of test output across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00347">347</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00470">470</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00347">347</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00465">465</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
 </MemberDefinition>
 
 ### operator&lt;&lt;() {#a30306b9f0fb893ef89a0756a5025d0e2}
@@ -1246,24 +1246,26 @@ Reference to the current <Link to="/docs/api/classes/micro-os-plus/micro-test-pl
 
 This operator overload appends the string representation of the specified signed long integer to the internal output buffer of the <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link></code>. It enables precise and readable streaming of signed long values into the reporter, supporting clear formatting of test output across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00329">329</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00438">438</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00329">329</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00433">433</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
 </MemberDefinition>
 
-### operator&lt;&lt;() {#a2522d95852ab3c644e85418369cc5441}
+### operator&lt;&lt;() {#af88660a913ae75160c1c88ffbb92830c}
 
 <MemberDefinition
-  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (signed short c)</>}>
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (signed short v)</>}>
 Output operator for signed short values.
 
 <ParametersList title="Parameters">
-<ParametersListItem name="c">The signed short value to output.</ParametersListItem>
+<ParametersListItem name="v">The signed short value to output.</ParametersListItem>
 </ParametersList>
 
 <SectionUser title="Returns">
 Reference to the current <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> instance.
 </SectionUser>
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00293">293</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00372">372</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+This operator overload appends the string representation of the specified signed short integer to the internal output buffer of the <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link></code>. It enables precise and readable streaming of signed short values into the reporter, supporting clear formatting of test output across all test cases and folders.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00293">293</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00370">370</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
 </MemberDefinition>
 
 ### operator&lt;&lt;() {#a299c705a7e4ba728cdf236318222e234}
@@ -1325,7 +1327,7 @@ The contents of the container are enclosed in curly braces and each element is s
 
 This approach provides a clear visual representation of container contents, making it easier to interpret test results and debug issues involving collections of values.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00447">447</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00168">168</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00447">447</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00159">159</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
 </MemberDefinition>
 
 ### operator&lt;&lt;() {#a0bdeb24c644813f434c7373b62280700}
@@ -1347,7 +1349,13 @@ Output operator to display any pointer.
 Reference to the current <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> instance.
 </SectionUser>
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00395">395</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00101">101</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+This operator overload enables the <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link></code> to output pointer values in a consistent and readable hexadecimal format.
+
+The pointer is formatted as a string using <code>snprintf</code> with the <code>p</code> format specifier, ensuring portability across platforms. The resulting string is appended to the internal output buffer, allowing pointer values to be included in test reports and diagnostics.
+
+This approach provides clear and unambiguous representation of pointer addresses, which is particularly useful for debugging and verifying pointer-related test cases.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00395">395</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00092">92</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
 </MemberDefinition>
 
 ### operator&lt;&lt;() {#a91be9116b7ca4b8596cabb8690ea2c46}
@@ -1404,7 +1412,7 @@ Reference to the current <Link to="/docs/api/classes/micro-os-plus/micro-test-pl
 
 This operator overload appends the string representation of the specified unsigned integer to the internal output buffer of the <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link></code>. It enables precise and readable streaming of unsigned integer values into the reporter, supporting clear formatting of test output across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00320">320</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00422">422</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00320">320</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00417">417</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
 </MemberDefinition>
 
 ### operator&lt;&lt;() {#a9712e8adb7ab22c433b0acac1e18fd78}
@@ -1423,7 +1431,7 @@ Reference to the current <Link to="/docs/api/classes/micro-os-plus/micro-test-pl
 
 This operator overload appends the string representation of the specified unsigned long long integer to the internal output buffer of the <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link></code>. It enables precise and readable streaming of unsigned long long values into the reporter, supporting clear formatting of test output across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00356">356</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00486">486</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00356">356</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00481">481</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
 </MemberDefinition>
 
 ### operator&lt;&lt;() {#a5a300e17b0498a54fa4724bee7a5bb58}
@@ -1442,24 +1450,26 @@ Reference to the current <Link to="/docs/api/classes/micro-os-plus/micro-test-pl
 
 This operator overload appends the string representation of the specified unsigned long integer to the internal output buffer of the <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link></code>. It enables precise and readable streaming of unsigned long values into the reporter, supporting clear formatting of test output across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00338">338</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00454">454</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00338">338</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00449">449</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
 </MemberDefinition>
 
-### operator&lt;&lt;() {#afd96a6cd1ad47187b050121d7650fa68}
+### operator&lt;&lt;() {#a4ef05fd23acfc0b4bcd5d95bf25b518d}
 
 <MemberDefinition
-  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (unsigned short c)</>}>
+  prototype={<>test&#95;reporter &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;reporter::operator&lt;&lt; (unsigned short v)</>}>
 Output operator for unsigned short values.
 
 <ParametersList title="Parameters">
-<ParametersListItem name="c">The unsigned short value to output.</ParametersListItem>
+<ParametersListItem name="v">The unsigned short value to output.</ParametersListItem>
 </ParametersList>
 
 <SectionUser title="Returns">
 Reference to the current <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link> instance.
 </SectionUser>
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00302">302</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00391">391</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+This operator overload appends the string representation of the specified unsigned short integer to the internal output buffer of the <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test&#95;reporter</Link></code>. It enables precise and readable streaming of unsigned short values into the reporter, supporting clear formatting of test output across all test cases and folders.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00302">302</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00386">386</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
 </MemberDefinition>
 
 ### output() {#aa37bb1803ea48be27bd42ace2c61aa13}
@@ -1479,7 +1489,7 @@ Nothing.
 
 This method writes the contents of the internal output buffer to the standard output stream without appending a newline character. After outputting the buffer, it is cleared to prepare for subsequent output. This approach ensures that test results are presented promptly and efficiently, supporting clear and organised reporting across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00710">710</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00740">740</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00710">710</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/src/test-reporter-cpp/#l00735">735</Link> of file <Link to="/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</Link>.
 </MemberDefinition>
 
 ### pass() {#aa6ff8210496100842cf12b466195dcf7}
@@ -1506,7 +1516,7 @@ This operator overload formats output for expressions that do not throw exceptio
 
 When invoked, the function outputs a pass prefix, followed by either the provided message or, if the message is empty, the evaluated expression itself. It then appends a pass suffix to complete the output. This approach guarantees that successful test outcomes are presented in a clear and consistent manner, enhancing the readability and professionalism of test reports.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00631">631</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00428">428</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h/#l00631">631</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h/#l00419">419</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">test-reporter-inlines.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
