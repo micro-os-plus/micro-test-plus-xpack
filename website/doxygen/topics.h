@@ -9,6 +9,10 @@
  * be obtained from https://opensource.org/licenses/mit.
  */
 
+/*
+ * Note: the order is important, it also gives the order in the sidebar.
+ */
+
 /**
 
 @include{doc} files-and-folders/topics-h.dox
@@ -18,7 +22,6 @@
 
 @include{doc} files-and-folders/src.dox
 
-# Note: the order is important, it gives the order in the sidebar.
 
 @include{doc} topics/micro-test-plus.dox
 
