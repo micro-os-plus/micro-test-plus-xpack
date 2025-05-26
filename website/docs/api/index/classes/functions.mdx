@@ -17,7 +17,9 @@ import Link from '@docusaurus/Link'
 
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
 
-<DoxygenPage version="1.13.2">
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
+<DoxygenPage pluginConfig={pluginConfig}>
 
 The class member functions used by this project are:
 
@@ -67,7 +69,7 @@ The class member functions used by this project are:
 - get(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#a3ee48433567db9886d9f99ab5e6d2864">micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::floating&#95;point&#95;constant::get() const</Link>
 - get(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#ab2f53c63e86a887bccbadf0b7dbb8b4b">micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::genuine&#95;integral&#95;value::get() const</Link>
 - get(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant/#acb78deb0adea412045e1305280a443f1">micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::integral&#95;constant::get(void) const</Link>
-- get(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a54a10058177255d3c430b27e3cb87eab">micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::value&lt; T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;floating&#95;point&#95;v&lt; T &gt; &gt; &gt;::get(void) const</Link>
+- get(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a54a10058177255d3c430b27e3cb87eab">micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::value::get(void) const</Link>
 - get(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a8d14413aec3672c392962a7b3419cb25">micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::value&lt; T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;floating&#95;point&#95;v&lt; T &gt; &gt; &gt;::get(void) const</Link>
 - gt&#95;(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/gt-/#a0d3eb79b0fd8cd986a18ac77abb98192">micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::gt&#95;::gt&#95;(const Lhs&#95;T &amp;lhs=&#123;&#125;, const Rhs&#95;T &amp;rhs=&#123;&#125;)</Link>
 
@@ -111,10 +113,10 @@ The class member functions used by this project are:
 - operator bool(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/not-/#a7d17fbb0ad2197265d7393c335c16018">micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::not&#95;::operator bool() const</Link>
 - operator bool(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/nothrow-/#adb5deb96eff8e73d2ac69f7516d984fb">micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::nothrow&#95;::operator bool() const</Link>
 - operator bool(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/or-/#ae7c74522aa7a512f9ad94b6be81c93f8">micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::or&#95;::operator bool() const</Link>
-- operator bool(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-/#a84158f0b3d7719fe0929b49002c113b5">micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::throws&#95;&lt; Callable&#95;T, void &gt;::operator bool() const</Link>
+- operator bool(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-/#a84158f0b3d7719fe0929b49002c113b5">micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::throws&#95;::operator bool() const</Link>
 - operator bool(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws--callable-t-void-/#a12c805c55b615482e942aef67e41cc05">micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::throws&#95;&lt; Callable&#95;T, void &gt;::operator bool() const</Link>
 - operator T(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#a1474de7e4b8a14f1c97f2c1ba5d9212a">micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::genuine&#95;integral&#95;value::operator T() const</Link>
-- operator T(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a4d706032d92daabe8f8f5c2b88ced4df">micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::value&lt; T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;floating&#95;point&#95;v&lt; T &gt; &gt; &gt;::operator T() const</Link>
+- operator T(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a4d706032d92daabe8f8f5c2b88ced4df">micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::value::operator T() const</Link>
 - operator T(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a5609792d50cef8d63061faee1af7bcf9">micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::value&lt; T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;floating&#95;point&#95;v&lt; T &gt; &gt; &gt;::operator T() const</Link>
 - operator value&#95;type(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#a0a877099bf7ee9fcde1446cac65511e6">micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::floating&#95;point&#95;constant::operator value&#95;type() const</Link>
 - operator value&#95;type(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant/#a7fc0c3908f315982ce70d0439ea78a06">micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::integral&#95;constant::operator value&#95;type(void) const</Link>
@@ -205,7 +207,7 @@ The class member functions used by this project are:
 - test&#95;suite(): <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a824b38d21a3f4d0adb99827455f159cf">micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite::test&#95;suite(const char &#42;name, Callable&#95;T &amp;&amp;callable, Args&#95;T &amp;&amp;... arguments)</Link>
 - test&#95;suite(): <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a7c82c1d689d5b438a1ed6fd59244d8e3">micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite::test&#95;suite(const test&#95;suite &amp;)=delete</Link>
 - test&#95;suite(): <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#acdbf1e957b2b5baae7d468820c8fc006">micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite::test&#95;suite(test&#95;suite &amp;&amp;)=delete</Link>
-- throws&#95;(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-/#ab482b144c355eb68638dc872331145e7">micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::throws&#95;&lt; Callable&#95;T, void &gt;::throws&#95;(const Callable&#95;T &amp;func)</Link>
+- throws&#95;(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-/#ab482b144c355eb68638dc872331145e7">micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::throws&#95;::throws&#95;(const Callable&#95;T &amp;func)</Link>
 - throws&#95;(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws--callable-t-void-/#a8e97e74a695e9758034855ba462c2839">micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::throws&#95;&lt; Callable&#95;T, void &gt;::throws&#95;(const Callable&#95;T &amp;func)</Link>
 
 ## - u -
@@ -216,8 +218,8 @@ The class member functions used by this project are:
 
 - value(): <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#a0e4cca7c6f1d63789683f3b6a7f647ea">micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::deferred&#95;reporter&#95;base::value() const</Link>
 - value(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/not-/#a0a17757c49426642ef49eb7e6b1f8289">micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::not&#95;::value() const</Link>
+- value(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#afebca698b3129c2eb1a86c4202a54d3c">micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::value::value(const T &amp;&#95;value)</Link>
 - value(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#ab84ad7a2b8027a68e0760109636044df">micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::value&lt; T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;floating&#95;point&#95;v&lt; T &gt; &gt; &gt;::value(const T &amp;&#95;value, const T precision)</Link>
-- value(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#afebca698b3129c2eb1a86c4202a54d3c">micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::value&lt; T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;floating&#95;point&#95;v&lt; T &gt; &gt; &gt;::value(const T &amp;&#95;value)</Link>
 - value(): <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---/#a43ccaa9fd86190e5605605ceced840f7">micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::value&lt; T, type&#95;traits::requires&#95;t&lt; type&#95;traits::is&#95;floating&#95;point&#95;v&lt; T &gt; &gt; &gt;::value(const T &amp;val)</Link>
 
 ## - w -

@@ -27,9 +27,11 @@ import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/Para
 import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
 import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
 
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
 # The `value` Struct Template Reference
 
-<DoxygenPage version="1.13.2">
+<DoxygenPage pluginConfig={pluginConfig}>
 
 Struct template representing a floating point value with precision control. <Link to="#details">More...</Link>
 
@@ -50,12 +52,6 @@ struct micro_os_plus::micro_test_plus::type_traits::value&lt;T, type&#95;traits:
 ## Public Member Typedefs Index
 
 <MembersIndex>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a26f470c3e6454a222fda0db2f01e044d">value&#95;type</Link> = T</>}>
-The type of the encapsulated value. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a26f470c3e6454a222fda0db2f01e044d">More...</Link>
-</MembersIndexItem>
 
 <MembersIndexItem
   type="using"
@@ -83,12 +79,6 @@ The epsilon value used for floating point comparisons. <Link to="#aa597918c8b3e5
 
 <MembersIndexItem
   type="T"
-  name={<><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a5792dff99ce4e1bf2166db4dceecfd5e">value&#95;</Link></>}>
-The encapsulated value. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a5792dff99ce4e1bf2166db4dceecfd5e">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="T"
   name={<><Link to="#a6e339e618808050e46eb71eecb8a1d85">value&#95;</Link> &#123;&#125;</>}>
 The encapsulated floating point value. <Link to="#a6e339e618808050e46eb71eecb8a1d85">More...</Link>
 </MembersIndexItem>
@@ -98,12 +88,6 @@ The encapsulated floating point value. <Link to="#a6e339e618808050e46eb71eecb8a1
 ## Public Constructors Index
 
 <MembersIndex>
-
-<MembersIndexItem
-  type="constexpr"
-  name={<><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#afebca698b3129c2eb1a86c4202a54d3c">value</Link> (const T &amp;&#95;value)</>}>
-Constructs a value object with the specified value. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#afebca698b3129c2eb1a86c4202a54d3c">More...</Link>
-</MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr"
@@ -125,20 +109,8 @@ Constructs a floating point value with default precision. <Link to="#a43ccaa9fd8
 
 <MembersIndexItem
   type="constexpr auto "
-  name={<><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a54a10058177255d3c430b27e3cb87eab">get</Link> (void) const -&gt; decltype(auto)</>}>
-Getter for the encapsulated value. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a54a10058177255d3c430b27e3cb87eab">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="constexpr auto "
   name={<><Link to="#a8d14413aec3672c392962a7b3419cb25">get</Link> (void) const -&gt; decltype(auto)</>}>
 Getter for the encapsulated value. <Link to="#a8d14413aec3672c392962a7b3419cb25">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="constexpr"
-  name={<><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a4d706032d92daabe8f8f5c2b88ced4df">operator T</Link> () const</>}>
-Explicit conversion operator to the underlying value type. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a4d706032d92daabe8f8f5c2b88ced4df">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
@@ -167,16 +139,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <SectionDefinition>
 
 ## Public Member Typedefs
-
-### value&#95;type {#a26f470c3e6454a222fda0db2f01e044d}
-
-<MemberDefinition
-  template={<>template &lt;class T&gt;</>}
-  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::value&lt; T, class &gt;::value&#95;type = </>}>
-The type of the encapsulated value.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00976">976</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
-</MemberDefinition>
 
 ### value&#95;type {#a108d4b1685f4283960cb9129e53acf2f}
 
@@ -213,16 +175,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 
 ## Public Member Attributes
 
-### value&#95; {#a5792dff99ce4e1bf2166db4dceecfd5e}
-
-<MemberDefinition
-  template={<>template &lt;class T&gt;</>}
-  prototype={<>T micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::value&lt; T, class &gt;::value&#95;</>}>
-The encapsulated value.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l01020">1020</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
-</MemberDefinition>
-
 ### value&#95; {#a6e339e618808050e46eb71eecb8a1d85}
 
 <MemberDefinition
@@ -238,21 +190,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <SectionDefinition>
 
 ## Public Constructors
-
-### value() {#afebca698b3129c2eb1a86c4202a54d3c}
-
-<MemberDefinition
-  template={<>template &lt;class T&gt;</>}
-  prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::value&lt; T, class &gt;::value (const T &amp; _value)</>}
-  labels = {["inline", "constexpr"]}>
-Constructs a value object with the specified value.
-
-<ParametersList title="Parameters">
-<ParametersListItem name="&#95;value">The value to be stored.</ParametersListItem>
-</ParametersList>
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00983">983</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
-</MemberDefinition>
 
 ### value() {#ab84ad7a2b8027a68e0760109636044df}
 
@@ -292,28 +229,6 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 
 ## Public Member Functions
 
-### get() {#a54a10058177255d3c430b27e3cb87eab}
-
-<MemberDefinition
-  template={<>template &lt;class T&gt;</>}
-  prototype={<>decltype(auto) micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::value&lt; T, class &gt;::get (void) const</>}
-  labels = {["inline", "nodiscard", "constexpr"]}>
-Getter for the encapsulated value.
-
-<SectionUser title="Parameters">
-None.
-</SectionUser>
-
-
-<SectionUser title="Returns">
-The value of type <code>T</code>.
-</SectionUser>
-
-Returns the stored value.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l01012">1012</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
-</MemberDefinition>
-
 ### get() {#a8d14413aec3672c392962a7b3419cb25}
 
 <MemberDefinition
@@ -334,23 +249,6 @@ The value of type <code>T</code>.
 Returns the stored floating point value.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l01121">1121</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
-</MemberDefinition>
-
-### operator T() {#a4d706032d92daabe8f8f5c2b88ced4df}
-
-<MemberDefinition
-  template={<>template &lt;class T&gt;</>}
-  prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::value&lt; T, class &gt;::operator T () const</>}
-  labels = {["inline", "explicit", "nodiscard", "constexpr"]}>
-Explicit conversion operator to the underlying value type.
-
-<SectionUser title="Returns">
-The stored value as type <code>T</code>.
-</SectionUser>
-
-Allows explicit conversion to the encapsulated value.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00996">996</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
 </MemberDefinition>
 
 ### operator T() {#a5609792d50cef8d63061faee1af7bcf9}

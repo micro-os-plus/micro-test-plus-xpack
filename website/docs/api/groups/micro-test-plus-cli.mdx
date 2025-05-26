@@ -20,9 +20,11 @@ import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
 import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
 
+import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
+
 # The Command Line Options Reference
 
-<DoxygenPage version="1.13.2">
+<DoxygenPage pluginConfig={pluginConfig}>
 
 Options for controlling test output verbosity at run-time.
 
