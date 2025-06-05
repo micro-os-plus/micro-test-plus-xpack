@@ -6,11 +6,11 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para>µTest++ is a modern C++ library designed to provide a lightweight and efficient testing framework, purpose-built for embedded systems development.</para>
-<para>With its clean and expressive C++ API, µTest++ enables developers to write, organise, and execute unit tests with minimal overhead. The framework includes advanced features such as test suites, test cases, and detailed reporting, all tailored to meet the specific needs of embedded environments.</para>
+<para>The <bold>µTest++</bold> project is a <bold>modern C++</bold> library designed to provide a <bold>lightweight and efficient</bold> testing framework, purpose-built for embedded systems development.</para>
+<para>With its clean and expressive C++ API, µTest++ enables developers to write, organise, and execute unit tests with minimal overhead. The framework includes advanced features such as <bold>test suites</bold>, <bold>test cases</bold>, and detailed reporting, all tailored to meet the specific needs of embedded environments.</para>
 <para>Output verbosity is fully configurable via command-line options, allowing users to choose between concise summaries and comprehensive diagnostic information to best suit their workflow.</para>
-<para>By adopting µTest++, you can achieve robust and maintainable code through systematic and automated testing, supporting professional software engineering practices across your entire project. </para>
+<para>By adopting µTest++, you can achieve robust and maintainable code through systematic and automated testing, supporting professional software engineering practices across your entire project.  </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h"/>
+    <location file="topics.h"/>
   </compounddef>
 </doxygen>
