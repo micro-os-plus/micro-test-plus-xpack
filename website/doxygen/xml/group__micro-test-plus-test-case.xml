@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="group__micro-test-plus-test-case" kind="group">
+    <compoundname>micro-test-plus-test-case</compoundname>
+    <title>Test Cases</title>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__micro-test-plus-test-case_1ga423b46709cca6072efe28a6dbf85e413" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Callable_T</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args_T</declname>
+            <defname>Args_T</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::test_case</definition>
+        <argsstring>(const char *name, Callable_T &amp;&amp;callable, Args_T &amp;&amp;... arguments)</argsstring>
+        <name>test_case</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_case</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>Callable_T &amp;&amp;</type>
+          <declname>callable</declname>
+        </param>
+        <param>
+          <type>Args_T &amp;&amp;...</type>
+          <declname>arguments</declname>
+        </param>
+        <briefdescription>
+<para>Define and execute a test case. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Callable_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the callable object to be executed as the test case. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Args_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The types of the arguments to be passed to the callable. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The test case name or description, used in test reports. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">callable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A generic callable object, usually a lambda, invoked to perform the test. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">arguments</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A possibly empty list of arguments to be passed to the callable. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+The <computeroutput>test_case</computeroutput> function template registers and executes a test case within the µTest++ framework. It accepts a descriptive name, a callable object (such as a lambda or function pointer), and an optional list of arguments to be passed to the callable. The test case is reported using the provided name, and its execution is managed by the framework&apos;s test runner.</para>
+<para>Each test case typically involves evaluating a logical expression, such as comparing a computed result to an expected value. For C++ projects, it is also possible to verify whether evaluating an expression throws exceptions. Each test either succeeds or fails, and for expectations, the test runner maintains counts of successful and failed checks.</para>
+<para>This function template enables flexible and expressive test case definitions, supporting both parameterised and non-parameterised tests. It is typically invoked at global scope or within test suite definitions to ensure automatic registration and execution.</para>
+<para>A test case is characterised by a name, a function that performs the checks, and optionally, arguments to be passed to that function. The implementation of <computeroutput>test_case</computeroutput> invokes the provided function with the given arguments and reports the results to the test runner.</para>
+<para><simplesect kind="par"><title>Example</title><para></para>
+</simplesect>
+<programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">mt::test_case<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>answer<sp/>with<sp/>comparator&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>mt::expect<sp/>(mt::eq<sp/>(compute_answer<sp/>(),<sp/>42))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">});</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines.h" line="114" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines.h" bodystart="114" bodyend="124" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" declline="189" declcolumn="3"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Test cases are named sequences of checks. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Test cases in µTest++ are named collections of checks that are executed within the same environment. Each test case is defined by providing a descriptive name and a callable object (typically a lambda), along with any optional arguments required for the test.</para>
+<para>Test cases enable developers to organise related checks together, improving the clarity and maintainability of the test suite. Any number of test cases may be defined, each focusing on a specific aspect of the code under test.</para>
+<para>By grouping checks in this way, it becomes easier to identify which functionality is being verified and to interpret the results in the context of the overall software quality.</para>
+<para><simplesect kind="par"><title>Examples</title><para></para>
+</simplesect>
+<programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">mt::test_case<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>various<sp/>conditions&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>mt::expect<sp/>(mt::eq<sp/>(compute_answer<sp/>(),<sp/>42))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>eq<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>mt::expect<sp/>(mt::ne<sp/>(compute_answer<sp/>(),<sp/>43))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>ne<sp/>43&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">});</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">mt::test_case<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>various<sp/>conditions<sp/>with<sp/>operators&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">mt::operators;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">mt::literals;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>mt::expect<sp/>(compute_answer<sp/>()<sp/>==<sp/>42_i)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>==<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>mt::expect<sp/>(compute_answer<sp/>()<sp/>!=<sp/>43_i)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>!=<sp/>43&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">});</highlight></codeline>
+</programlisting>  </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

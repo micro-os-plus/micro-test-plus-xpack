@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="group__micro-test-plus-test-suites" kind="group">
+    <compoundname>micro-test-plus-test-suites</compoundname>
+    <title>Test Suites</title>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite" prot="public">micro_os_plus::micro_test_plus::test_suite</innerclass>
+    <briefdescription>
+<para>Test suites are named collections of test cases. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Test suites in µTest++ are named groups of related test cases, allowing for structured organisation and execution of tests. By default, all test cases defined in <computeroutput>main()</computeroutput> are included in the default (main) test suite and are executed immediately.</para>
+<para>For more complex projects, multiple test suites can be defined, typically in separate source files. Test suites are implemented as classes, constructed with a name, a callable (usually a lambda that chains the execution of the test cases), and optional arguments. This design enables self-registration of test suites, ensuring they are automatically included in the test run.</para>
+<para>It is advisable to instantiate test suites as static objects. Self-registration occurs within the constructor, and test suites defined in separate compilation units may be executed in any order, as the sequence of static constructor invocation is not specified. Therefore, test suites should not have dependencies on one another.</para>
+<para>All registered test suites are executed when the <computeroutput>exit_code()</computeroutput> function is called, ensuring comprehensive test coverage across the project.</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="keyword">class<sp/></highlight><highlight class="normal">test_suite<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>test_suite_base</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Callable_T,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal">...<sp/>Args_T&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>test_suite<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name,<sp/>Callable_T&amp;&amp;<sp/>callable,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Args_T&amp;&amp;...<sp/>arguments);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>...</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="important"><para>It is strongly recommended to instantiate test suites as static objects.</para>
+</simplesect>
+Self-registration is performed within the constructor, ensuring that each test suite is automatically included in the test run. When test suites are defined in separate compilation units, they may be executed in any order, as the sequence in which static constructors are invoked is not specified. Consequently, test suites should be designed to be independent and must not rely on the execution order of other suites.</para>
+<para>All registered test suites are executed when the <computeroutput>exit_code()</computeroutput> function is called, guaranteeing that the entire test suite collection is run and reported in a consistent and reliable manner.</para>
+<para><simplesect kind="par"><title>Examples</title><para></para>
+</simplesect>
+<programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Test<sp/>suite<sp/>with<sp/>generic<sp/>parameters.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">test_suite_args<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ic,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iv,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>ir,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ip1,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ip2)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>mt::test_case<sp/>(</highlight><highlight class="stringliteral">&quot;args&quot;</highlight><highlight class="normal">,<sp/>[&amp;]<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mt::expect<sp/>(mt::eq<sp/>(ic,<sp/>42))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;ic<sp/>is<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mt::expect<sp/>(mt::eq<sp/>(iv,<sp/>43))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;iv<sp/>is<sp/>43&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mt::expect<sp/>(mt::eq<sp/>(ir,<sp/>44))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;ir<sp/>is<sp/>44&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mt::expect<sp/>(mt::eq<sp/>(*ip1,<sp/>45))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;*ip1<sp/>is<sp/>45&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mt::expect<sp/>(mt::eq<sp/>(*ip2,<sp/>46))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;*ip2<sp/>is<sp/>46&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>});</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>in<sp/>=<sp/>43;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>in44<sp/>=<sp/>44;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>ir<sp/>=<sp/>in44;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>in45<sp/>=<sp/>45;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>in46<sp/>=<sp/>46;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ip2<sp/>=<sp/>&amp;in46;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>mt::test_suite<sp/>ts_args</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>=<sp/>{<sp/></highlight><highlight class="stringliteral">&quot;Args&quot;</highlight><highlight class="normal">,<sp/>test_suite_args,<sp/>42,<sp/>in,<sp/>ir,<sp/>&amp;in45,<sp/>ip2<sp/>};</highlight></codeline>
+</programlisting>   </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

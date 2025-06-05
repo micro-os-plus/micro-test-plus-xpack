@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>src</compoundname>
+    <innerfile refid="micro-test-plus_8cpp">micro-test-plus.cpp</innerfile>
+    <innerfile refid="test-reporter_8cpp">test-reporter.cpp</innerfile>
+    <innerfile refid="test-runner_8cpp">test-runner.cpp</innerfile>
+    <innerfile refid="test-suite_8cpp">test-suite.cpp</innerfile>
+    <briefdescription>
+<para>Folder with C/C++ source files. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <computeroutput>src</computeroutput> folder contains the <computeroutput>.cpp</computeroutput> implementation files for the µTest++ library.  </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/"/>
+  </compounddef>
+</doxygen>

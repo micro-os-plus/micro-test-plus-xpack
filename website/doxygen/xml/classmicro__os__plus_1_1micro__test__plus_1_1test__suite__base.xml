@@ -1,0 +1,631 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base" kind="class" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::test_suite_base</compoundname>
+    <derivedcompoundref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::test_suite</derivedcompoundref>
+    <includes refid="micro-test-plus_8h" local="no">micro-os-plus/micro-test-plus.h</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a01c523aaf94e26eb4cd6727c5d74ab02" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int micro_os_plus::micro_test_plus::test_suite_base::failed_checks_</definition>
+        <argsstring></argsstring>
+        <name>failed_checks_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::failed_checks_</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Count of test conditions that failed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="313" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" bodystart="313" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a76f1c1c39f8b2c8cc70688a47bf6eafd" prot="protected" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* micro_os_plus::micro_test_plus::test_suite_base::name_</definition>
+        <argsstring></argsstring>
+        <name>name_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::name_</qualifiedname>
+        <briefdescription>
+<para>The test suite name. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="298" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" bodystart="298" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ad2736cdadc2ab917099cd0ad82d3fc18" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int micro_os_plus::micro_test_plus::test_suite_base::successful_checks_</definition>
+        <argsstring></argsstring>
+        <name>successful_checks_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::successful_checks_</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Count of test conditions that passed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="308" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" bodystart="308" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ae369ec539219642f84aeb93b78269df0" prot="protected" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* micro_os_plus::micro_test_plus::test_suite_base::test_case_name_</definition>
+        <argsstring></argsstring>
+        <name>test_case_name_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::test_case_name_</qualifiedname>
+        <briefdescription>
+<para>The current test case name. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="303" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" bodystart="303" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a1e9205117a2373caf7346064e86afa03" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int micro_os_plus::micro_test_plus::test_suite_base::test_cases_</definition>
+        <argsstring></argsstring>
+        <name>test_cases_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::test_cases_</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Count of test cases in the test suite. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="318" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" bodystart="318" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ac534b9501e09bf4f1f6ef1d118a5bcbe" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base" kindref="compound">micro_os_plus::micro_test_plus::test_suite_base</ref></type>
+        <definition>struct micro_os_plus::micro_test_plus::test_suite_base micro_os_plus::micro_test_plus::test_suite_base::current_test_case</definition>
+        <argsstring></argsstring>
+        <name>current_test_case</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::current_test_case</qualifiedname>
+        <briefdescription>
+<para>Structure holding the current test case&apos;s check counters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Tracks the number of successful and failed checks for the currently running test case. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="344" column="23"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a40cadb0a79f55c796b7e7aca4a847cfd" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int micro_os_plus::micro_test_plus::test_suite_base::failed_checks</definition>
+        <argsstring></argsstring>
+        <name>failed_checks</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::failed_checks</qualifiedname>
+        <briefdescription>
+<para>Number of failed checks in the current test case. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="343" column="11" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" bodystart="343" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ac442c68973cd937aeaef7aa7fbc27d30" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::test_suite_base::process_deferred_begin</definition>
+        <argsstring></argsstring>
+        <name>process_deferred_begin</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::process_deferred_begin</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+<para>Indicates whether to process deferred begin for test cases. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="324" column="10" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" bodystart="324" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a4851a70fd4a0c71b787e445b9766bacc" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int micro_os_plus::micro_test_plus::test_suite_base::successful_checks</definition>
+        <argsstring></argsstring>
+        <name>successful_checks</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::successful_checks</qualifiedname>
+        <briefdescription>
+<para>Number of successful checks in the current test case. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="338" column="11" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" bodystart="338" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a1aea53994faf3a7f7a610a6c47a8ef4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::micro_test_plus::test_suite_base::test_suite_base</definition>
+        <argsstring>(const char *name)</argsstring>
+        <name>test_suite_base</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::test_suite_base</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a test suite. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The test suite name.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+The rule of five is enforced to prevent accidental copying or moving.</para>
+<para>The constructor initialises a new instance of the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base" kindref="compound">test_suite_base</ref></computeroutput> class with the specified name. It sets up the internal state required for managing test cases within the suite. If tracing is enabled, the function signature is output for diagnostic purposes. The default test suite does not require explicit registration, ensuring seamless integration within the µTest++ framework and supporting organised test management across all files and folders. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="108" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/test-suite.cpp" bodystart="75" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ac3d6caf07f5c38f8dc8d75d8ae7bb20c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::micro_test_plus::test_suite_base::test_suite_base</definition>
+        <argsstring>(const test_suite_base &amp;)=delete</argsstring>
+        <name>test_suite_base</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::test_suite_base</qualifiedname>
+        <param>
+          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base" kindref="compound">test_suite_base</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted copy constructor to prevent copying. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="113" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ac66248be55f033bef1a32fb1204ce03b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::micro_test_plus::test_suite_base::test_suite_base</definition>
+        <argsstring>(test_suite_base &amp;&amp;)=delete</argsstring>
+        <name>test_suite_base</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::test_suite_base</qualifiedname>
+        <param>
+          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base" kindref="compound">test_suite_base</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted move constructor to prevent moving. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="118" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a8684c3b31ab07eaef800280bc172d6de" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>micro_os_plus::micro_test_plus::test_suite_base::~test_suite_base</definition>
+        <argsstring>()</argsstring>
+        <name>~test_suite_base</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::~test_suite_base</qualifiedname>
+        <briefdescription>
+<para>Virtual destructor for the <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base" kindref="compound">test_suite_base</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The destructor releases any resources associated with the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base" kindref="compound">test_suite_base</ref></computeroutput> instance. It ensures that the test suite is properly cleaned up after execution, supporting robust and reliable test management across all files and folders within the µTest++ framework. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="137" column="13" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/test-suite.cpp" bodystart="92" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a6bd8aa956f30c344c9ef79cf21c69cdc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::test_suite_base::begin_test_case</definition>
+        <argsstring>(const char *name)</argsstring>
+        <name>begin_test_case</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::begin_test_case</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Marks the beginning of a named test case. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The test case name. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+This method marks the beginning of a test case within the suite. If the start of the suite was deferred, it ensures the suite is properly begun before proceeding. The method sets the current test case name, increments the total number of test cases, resets the current test case statistics, and notifies the test reporter to begin the test case. This approach guarantees that each test case is clearly identified, accurately tracked, and properly reported across all test cases and folders. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="158" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/test-suite.cpp" bodystart="159" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1adfc3afd1432b2d093eef73a18ca9a242" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::test_suite_base::begin_test_suite</definition>
+        <argsstring>(void)</argsstring>
+        <name>begin_test_suite</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::begin_test_suite</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Begins the execution of the test suite. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+This method marks the beginning of a test suite&apos;s execution. It resets the deferred begin flag and notifies the test reporter to start the suite, passing the suite&apos;s name. This ensures that test suite output is clearly delineated and properly initialised, supporting organised and readable reporting across all test cases and folders. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="253" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/test-suite.cpp" bodystart="122" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ab2e1a6eadc56c54b45f9d21e450b0cbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::test_suite_base::end_test_case</definition>
+        <argsstring>(void)</argsstring>
+        <name>end_test_case</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::end_test_case</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Marks the end of a test case. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+This method marks the end of a test case within the suite. It notifies the test reporter to conclude the test case, passing the current test case name. This ensures that the results of the test case are accurately finalised and clearly reported, supporting organised and reliable test management across all test cases and folders. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="168" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/test-suite.cpp" bodystart="183" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1aa53f99054051136b3484a1664b5ee59f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::test_suite_base::end_test_suite</definition>
+        <argsstring>(void)</argsstring>
+        <name>end_test_suite</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::end_test_suite</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Marks the end of the test suite. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+This method marks the end of a test suite&apos;s execution. If the suite&apos;s start was deferred, it ensures the suite is properly begun before finalising. The method then notifies the test reporter to conclude the suite, passing a reference to the suite instance. This guarantees that all results are accurately summarised and reported, supporting clear and organised test management across all test cases and folders. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="264" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/test-suite.cpp" bodystart="139" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a4cd96949ef52b98b6c5e08bbd7900979" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int micro_os_plus::micro_test_plus::test_suite_base::failed_checks</definition>
+        <argsstring>(void)</argsstring>
+        <name>failed_checks</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::failed_checks</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Gets the number of test conditions that failed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>An integer with the number of checks that failed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="226" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" bodystart="226" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a20051842d981b530746b4fb4dee00d01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::test_suite_base::increment_failed</definition>
+        <argsstring>(void)</argsstring>
+        <name>increment_failed</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::increment_failed</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Increments the count of failed test conditions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+This method increments the count of failed checks for the test suite and the current test case. It ensures that each failing assertion is accurately recorded, supporting precise tracking and reporting of test outcomes across all test cases and folders. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="203" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/test-suite.cpp" bodystart="210" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a81006378d0bebeadcd59266f57b4ef4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::test_suite_base::increment_successful</definition>
+        <argsstring>(void)</argsstring>
+        <name>increment_successful</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::increment_successful</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Increments the count of passed test conditions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+This method increments the count of successful checks for the test suite and the current test case. It ensures that each passing assertion is accurately recorded, supporting precise tracking and reporting of test outcomes across all test cases and folders. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="192" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/test-suite.cpp" bodystart="196" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a3625fee07d796bf5c3d6b4c69a94182c" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * micro_os_plus::micro_test_plus::test_suite_base::name</definition>
+        <argsstring>(void)</argsstring>
+        <name>name</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::name</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Gets the suite name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>A pointer to the null-terminated test suite name. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="178" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" bodystart="178" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1aba2b1e9fde84789ac9e1a78ae0a088f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base" kindref="compound">test_suite_base</ref> &amp;</type>
+        <definition>test_suite_base &amp; micro_os_plus::micro_test_plus::test_suite_base::operator=</definition>
+        <argsstring>(const test_suite_base &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base" kindref="compound">test_suite_base</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted copy assignment operator to prevent copying. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="124" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ab80bbf61a4ff0a02f7a50ec2d305fee0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base" kindref="compound">test_suite_base</ref> &amp;</type>
+        <definition>test_suite_base &amp; micro_os_plus::micro_test_plus::test_suite_base::operator=</definition>
+        <argsstring>(test_suite_base &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base" kindref="compound">test_suite_base</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted move assignment operator to prevent moving. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="131" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a134b2f92347ac243ccb310d5d0324c25" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::test_suite_base::run</definition>
+        <argsstring>(void)</argsstring>
+        <name>run</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::run</qualifiedname>
+        <reimplementedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite_1ab198909a0182672be8c741d3ad7f291d">run</reimplementedby>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Runs the sequence of test cases in the suite. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+This method executes the test suite by invoking its associated callable object. If tracing is enabled, the function signature is output for diagnostic purposes. The method ensures that all test cases grouped within the suite are executed in an organised manner, supporting comprehensive and structured testing across all files and folders within the µTest++ framework. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="148" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/test-suite.cpp" bodystart="106" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1acf56ac77830e630b5485248409c3b3f1" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int micro_os_plus::micro_test_plus::test_suite_base::successful_checks</definition>
+        <argsstring>(void)</argsstring>
+        <name>successful_checks</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::successful_checks</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Gets the number of conditions that passed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>An integer with the number of checks that passed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="213" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" bodystart="213" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ae755b186f32e229e8d0bd5e02027b515" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int micro_os_plus::micro_test_plus::test_suite_base::test_cases</definition>
+        <argsstring>(void)</argsstring>
+        <name>test_cases</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::test_cases</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Gets the number of test cases. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>An integer with the number of test cases. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="239" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" bodystart="239" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a20de3062a437e86955dd2917d7976cb3" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::test_suite_base::unused</definition>
+        <argsstring>(void)</argsstring>
+        <name>unused</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::unused</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Checks if the test suite was not used. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>True if the test suite is not used. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="288" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" bodystart="288" bodyend="292"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ae60536040204e7481b50dfde7b0a6600" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::test_suite_base::was_successful</definition>
+        <argsstring>(void)</argsstring>
+        <name>was_successful</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_suite_base::was_successful</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Gets the test suite result. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>True if the test suite was successful. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="274" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" bodystart="274" bodyend="278"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Base class for all test suites. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base" kindref="compound">test_suite_base</ref></computeroutput> class provides the foundational interface for managing test suites within the µTest++ framework. It maintains counters for successful and failed checks, tracks test cases, and offers methods for marking the commencement and completion of test cases and suites.</para>
+<para>This class ensures consistent state management and reporting for all derived test suites. It also provides utility methods for querying the suite&apos;s name, the number of successful and failed checks, the number of test cases, and the overall result of the suite.</para>
+<para>All members and methods are defined within the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref></computeroutput> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>micro_os_plus::micro_test_plus::test_suite</label>
+        <link refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>micro_os_plus::micro_test_plus::test_suite_base</label>
+        <link refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base"/>
+      </node>
+    </inheritancegraph>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="97" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" bodystart="98" bodyend="345"/>
+    <listofallmembers>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a6bd8aa956f30c344c9ef79cf21c69cdc" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>begin_test_case</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1adfc3afd1432b2d093eef73a18ca9a242" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>begin_test_suite</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ac534b9501e09bf4f1f6ef1d118a5bcbe" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>current_test_case</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ab2e1a6eadc56c54b45f9d21e450b0cbc" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>end_test_case</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1aa53f99054051136b3484a1664b5ee59f" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>end_test_suite</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a40cadb0a79f55c796b7e7aca4a847cfd" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>failed_checks</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a4cd96949ef52b98b6c5e08bbd7900979" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>failed_checks</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a01c523aaf94e26eb4cd6727c5d74ab02" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>failed_checks_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a20051842d981b530746b4fb4dee00d01" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>increment_failed</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a81006378d0bebeadcd59266f57b4ef4b" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>increment_successful</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a3625fee07d796bf5c3d6b4c69a94182c" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>name</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a76f1c1c39f8b2c8cc70688a47bf6eafd" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>name_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1aba2b1e9fde84789ac9e1a78ae0a088f7" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>operator=</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ab80bbf61a4ff0a02f7a50ec2d305fee0" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>operator=</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ac442c68973cd937aeaef7aa7fbc27d30" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>process_deferred_begin</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a134b2f92347ac243ccb310d5d0324c25" prot="public" virt="virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>run</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a4851a70fd4a0c71b787e445b9766bacc" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>successful_checks</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1acf56ac77830e630b5485248409c3b3f1" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>successful_checks</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ad2736cdadc2ab917099cd0ad82d3fc18" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>successful_checks_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ae369ec539219642f84aeb93b78269df0" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>test_case_name_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ae755b186f32e229e8d0bd5e02027b515" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>test_cases</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a1e9205117a2373caf7346064e86afa03" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>test_cases_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a1aea53994faf3a7f7a610a6c47a8ef4a" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>test_suite_base</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ac3d6caf07f5c38f8dc8d75d8ae7bb20c" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>test_suite_base</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ac66248be55f033bef1a32fb1204ce03b" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>test_suite_base</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a20de3062a437e86955dd2917d7976cb3" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>unused</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ae60536040204e7481b50dfde7b0a6600" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>was_successful</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a8684c3b31ab07eaef800280bc172d6de" prot="public" virt="virtual"><scope>micro_os_plus::micro_test_plus::test_suite_base</scope><name>~test_suite_base</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="group__micro-test-plus-container-operators" kind="group">
+    <compoundname>micro-test-plus-container-operators</compoundname>
+    <title>Container Operators</title>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__micro-test-plus-container-operators_1gac48b765b41388c3ebe1a996f9a05aaf8" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>type_traits::requires_t&lt; type_traits::is_container_v&lt; T &gt; &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::operators::operator!=</definition>
+        <argsstring>(T &amp;&amp;lhs, T &amp;&amp;rhs)</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::operators::operator!=</qualifiedname>
+        <param>
+          <type>T &amp;&amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>T &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Non-equality operator for containers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The container type, constrained to recognised container types.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The left hand side container operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The right hand side container operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the containers are not equal.</para>
+</simplesect>
+This overload of the non-equality operator enables direct comparison of two container objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two containers are not equal in content or order.</para>
+<para>The operator is enabled only for types recognised as containers by the framework&apos;s type traits. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="205" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="205" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-container-operators_1gaac06b4166dbd6e2b62a744878903eee8" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>type_traits::requires_t&lt; type_traits::is_container_v&lt; T &gt; &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::operators::operator==</definition>
+        <argsstring>(T &amp;&amp;lhs, T &amp;&amp;rhs)</argsstring>
+        <name>operator==</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::operators::operator==</qualifiedname>
+        <param>
+          <type>T &amp;&amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>T &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Equality operator for containers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The container type, constrained to recognised container types.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The left hand side container operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The right hand side container operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the containers are equal.</para>
+</simplesect>
+This overload of the equality operator enables direct comparison of two container objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two containers are equal in content and order.</para>
+<para>The operator is enabled only for types recognised as containers by the framework&apos;s type traits. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="177" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="177" bodyend="180"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Overloaded operators for container comparison. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The µTest++ framework provides overloaded operators to facilitate direct and expressive comparison of standard containers, such as vectors and strings, within test cases. These operators enable developers to write clear and concise assertions when verifying the equality or inequality of container contents.</para>
+<para>In addition to the generic operators, specialised equality and inequality operators are provided for containers, ensuring accurate and efficient comparison semantics that align with modern C++ practices.</para>
+<para><simplesect kind="par"><title>Examples</title><para></para>
+</simplesect>
+<programlisting filename=".cpp"><codeline><highlight class="preprocessor">#include<sp/>&lt;string_view&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std::literals;<sp/></highlight><highlight class="comment">//<sp/>For<sp/>the<sp/>&quot;sv&quot;<sp/>literal.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>...</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">mt::test_case<sp/>(</highlight><highlight class="stringliteral">&quot;Operators&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">micro_test_plus::operators;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>mt::expect<sp/>(std::vector&lt;int&gt;{<sp/>1,<sp/>2<sp/>}<sp/>==<sp/>std::vector&lt;int&gt;{<sp/>1,<sp/>2<sp/>})</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;vector{<sp/>1,<sp/>2<sp/>}<sp/>==<sp/>vector{<sp/>1,<sp/>2<sp/>}&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>mt::expect<sp/>(std::vector&lt;int&gt;{<sp/>1,<sp/>2,<sp/>3<sp/>}<sp/>!=<sp/>std::vector&lt;int&gt;{<sp/>1,<sp/>2,<sp/>4<sp/>})</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;vector{<sp/>1,<sp/>2,<sp/>3<sp/>}<sp/>!=<sp/>vector{<sp/>1,<sp/>2,<sp/>4<sp/>}&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">});</highlight></codeline>
+</programlisting>  </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

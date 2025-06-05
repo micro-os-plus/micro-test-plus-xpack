@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1colors" kind="struct" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::colors</compoundname>
+    <includes refid="test-reporter_8h" local="no">test-reporter.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1colors_1a755efa80182dc14ff24a7780e758ee5c" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* micro_os_plus::micro_test_plus::colors::fail</definition>
+        <argsstring></argsstring>
+        <name>fail</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::colors::fail</qualifiedname>
+        <initializer>= &quot;\033[31m&quot;</initializer>
+        <briefdescription>
+<para>Red colour. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>ANSI escape sequence to set the terminal colour for failing results (red). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-reporter.h" line="110" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-reporter.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1colors_1abe9df13299b6c193e7213879fa5fd408" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* micro_os_plus::micro_test_plus::colors::none</definition>
+        <argsstring></argsstring>
+        <name>none</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::colors::none</qualifiedname>
+        <initializer>= &quot;\033[0m&quot;</initializer>
+        <briefdescription>
+<para>Default colour. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>ANSI escape sequence to reset the terminal colour to default. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-reporter.h" line="108" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-reporter.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1colors_1a54856b658d27bf3d3f3c23d5ed2823ca" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* micro_os_plus::micro_test_plus::colors::pass</definition>
+        <argsstring></argsstring>
+        <name>pass</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::colors::pass</qualifiedname>
+        <initializer>= &quot;\033[32m&quot;</initializer>
+        <briefdescription>
+<para>Green colour. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>ANSI escape sequence to set the terminal colour for passing results (green). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-reporter.h" line="109" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-reporter.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Colours used to highlight pass and fail results in test reports. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <computeroutput>colors</computeroutput> structure defines ANSI escape sequences for terminal output, enabling colour-coded highlighting of test outcomes. The <computeroutput>pass</computeroutput> member specifies the colour for successful results (typically green), while the <computeroutput>fail</computeroutput> member specifies the colour for failed results (typically red). The <computeroutput>none</computeroutput> member resets the colour to the terminal default.</para>
+<para>These colour codes enhance the clarity and professionalism of test reports by making it immediately apparent which tests have passed or failed, thereby improving the overall user experience when reviewing test results. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-reporter.h" line="106" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-reporter.h" bodystart="107" bodyend="111"/>
+    <listofallmembers>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1colors_1a755efa80182dc14ff24a7780e758ee5c" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::colors</scope><name>fail</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1colors_1abe9df13299b6c193e7213879fa5fd408" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::colors</scope><name>none</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1colors_1a54856b658d27bf3d3f3c23d5ed2823ca" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::colors</scope><name>pass</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

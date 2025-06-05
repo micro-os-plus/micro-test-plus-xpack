@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="group__micro-test-plus-string-operators" kind="group">
+    <compoundname>micro-test-plus-string-operators</compoundname>
+    <title>String Operators</title>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__micro-test-plus-string-operators_1ga179e971d5e37795c036ad66aa35f1654" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::operators::operator!=</definition>
+        <argsstring>(std::string_view lhs, std::string_view rhs)</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::operators::operator!=</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Non-equality operator for <computeroutput>string_view</computeroutput> objects. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The left hand side <computeroutput>std::string_view</computeroutput> operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The right hand side <computeroutput>std::string_view</computeroutput> operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the string views are not equal.</para>
+</simplesect>
+This overload of the non-equality operator enables direct comparison of two <computeroutput>std::string_view</computeroutput> objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two string views are not equal. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="149" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="149" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-string-operators_1gaabe34a842bf38ea2913a4164d2b0a9cb" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::operators::operator==</definition>
+        <argsstring>(std::string_view lhs, std::string_view rhs)</argsstring>
+        <name>operator==</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::operators::operator==</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Equality operator for <computeroutput>string_view</computeroutput> objects. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The left hand side <computeroutput>std::string_view</computeroutput> operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The right hand side <computeroutput>std::string_view</computeroutput> operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the string views are equal.</para>
+</simplesect>
+This overload of the equality operator enables direct comparison of two <computeroutput>std::string_view</computeroutput> objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two string views are equal. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="128" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="128" bodyend="131"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Overloaded operators for string comparison. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The µTest++ framework provides overloaded operators specifically for comparing string types, such as <computeroutput>std::string_view</computeroutput>. These operators enable clear and expressive assertions when verifying string values within test cases, supporting both equality and inequality checks.</para>
+<para>By using these dedicated string operators, developers can write concise and readable tests that accurately reflect the intended logic. The framework ensures that string comparisons are performed correctly and that any failed checks are reported with both the actual and expected values for straightforward diagnostics.</para>
+<para><simplesect kind="par"><title>Examples</title><para></para>
+</simplesect>
+<programlisting filename=".cpp"><codeline><highlight class="preprocessor">#include<sp/>&lt;string_view&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std::literals;<sp/></highlight><highlight class="comment">//<sp/>For<sp/>the<sp/>&quot;sv&quot;<sp/>literal.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>...</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">mt::test_case<sp/>(</highlight><highlight class="stringliteral">&quot;Operators&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">micro_test_plus::operators;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>mt::expect<sp/>(std::string_view{<sp/>compute_ultimate_answer<sp/>()<sp/>}<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;forty-two&quot;</highlight><highlight class="normal">sv)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;ultimate<sp/>answer<sp/>==<sp/>&apos;forty-two&apos;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">});</highlight></codeline>
+</programlisting>  </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

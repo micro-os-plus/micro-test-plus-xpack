@@ -1,0 +1,414 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="namespacemicro__os__plus_1_1micro__test__plus_1_1math" kind="namespace" language="C++">
+    <compoundname>micro_os_plus::micro_test_plus::math</compoundname>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a1dd33529640b959c531ca18c2e494c80" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T micro_os_plus::micro_test_plus::math::abs</definition>
+        <argsstring>(const T t)</argsstring>
+        <name>abs</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::math::abs</qualifiedname>
+        <param>
+          <type>const T</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Computes the absolute value of a given comparable value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function template provides a generic, constexpr implementation for obtaining the absolute value of any type that supports comparison and unary negation.</para>
+<para>The function returns the non-negative value of the input. If the input is less than the default-constructed value of its type (typically zero), the negated value is returned; otherwise, the original value is returned.</para>
+<para>This utility is designed to be lightweight and suitable for embedded environments, where standard library alternatives may be unavailable, less efficient, or not constexpr.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the input value. Must support comparison and unary negation.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value for which the absolute value is to be computed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The absolute value of the input. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="96" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="96" bodyend="99" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="106" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a1006429dba18038662409138f5754952" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>char...</type>
+            <declname>Cs</declname>
+            <defname>Cs</defname>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T micro_os_plus::micro_test_plus::math::den</definition>
+        <argsstring>(void)</argsstring>
+        <name>den</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::math::den</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Computes the decimal part of a number represented as an array of characters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function template performs compile-time extraction of the decimal (fractional) part from a sequence of characters, typically provided as a template parameter pack.</para>
+<para>The function expects the character sequence to represent a numeric value, where all characters are either digits, a dot (<computeroutput>.</computeroutput>), or an apostrophe (<lsquo/><rsquo/>`). Parsing begins after the first dot, accumulating the decimal digits as an integer value, each weighted by its decimal position.</para>
+<para>This utility is particularly useful for user-defined literals and other compile-time constant expressions, enabling efficient and type-safe conversion from character sequences to the decimal part of numeric values.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target integral type for the result. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Cs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character pack representing the numeric value.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The parsed decimal part as an integral value of type <computeroutput>T</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="200" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="200" bodyend="214" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="167" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a3e243d7f77b8435e1433ccad9c603f98" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class Value_T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T micro_os_plus::micro_test_plus::math::den_size</definition>
+        <argsstring>(Value_T value)</argsstring>
+        <name>den_size</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::math::den_size</qualifiedname>
+        <param>
+          <type>Value_T</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Computes the number of decimal places of a value, up to 7 digits. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function template determines, at compile time, the number of decimal (fractional) digits present in a floating-point value, up to a maximum of seven digits of precision.</para>
+<para>The function repeatedly multiplies the input value by ten, incrementing a counter until the fractional part is less than a defined precision threshold (1e-7). This approach provides a robust means of estimating decimal precision for values where exact representation is not possible due to floating-point limitations.</para>
+<para>This utility is particularly useful for user-defined literals and compile-time constant expressions, enabling efficient and type-safe determination of decimal precision from floating-point values.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The integral type for the result. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Value_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the input value, typically a floating-point type.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value whose decimal precision is to be determined. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of decimal places, as a value of type <computeroutput>T</computeroutput>, up to a maximum of seven. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="269" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="269" bodyend="295" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="197" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a74757af775d3afa203b808e3f6642467" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>char...</type>
+            <declname>Cs</declname>
+            <defname>Cs</defname>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T micro_os_plus::micro_test_plus::math::den_size</definition>
+        <argsstring>(void)</argsstring>
+        <name>den_size</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::math::den_size</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Computes the number of decimal places in a number represented as an array of characters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function template determines, at compile time, the number of decimal (fractional) digits present in a numeric value represented by a character sequence, typically provided as a template parameter pack.</para>
+<para>The function expects the character sequence to represent a numeric value, where all characters are either digits, a dot (<computeroutput>.</computeroutput>), or an apostrophe (<lsquo/><rsquo/>`). It locates the first dot and counts the number of digits that follow, returning the count as the number of decimal places.</para>
+<para>This utility is particularly useful for user-defined literals and other compile-time constant expressions, enabling efficient and type-safe determination of decimal precision from character sequences.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The integral type for the result. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Cs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character pack representing the numeric value.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The number of decimal places as a value of type <computeroutput>T</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="233" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="233" bodyend="249" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="182" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1ae53dd62f6d82b8ccaa048d90a7002826" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>const T &amp;</type>
+        <definition>const T &amp; micro_os_plus::micro_test_plus::math::min_value</definition>
+        <argsstring>(const T &amp;lhs, const T &amp;rhs)</argsstring>
+        <name>min_value</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::math::min_value</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Computes the minimum of two comparable values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function template provides a generic, constexpr implementation for determining the minimum of two values of any type that supports comparison.</para>
+<para>The function returns a reference to the lesser of the two input values, as determined by the <computeroutput>&lt;</computeroutput> operator. If the second argument is less than the first, it is returned; otherwise, the first argument is returned.</para>
+<para>This utility is designed to be lightweight and suitable for embedded environments, where standard library alternatives may be unavailable, less efficient, or not constexpr.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the input values. Must support comparison via the <computeroutput>&lt;</computeroutput> operator.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first value to compare. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second value to compare. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the minimum of the two input values. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="117" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="117" bodyend="120" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="120" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a98cbcae8bfc4a2d2f27487d1b2e641b7" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>char...</type>
+            <declname>Cs</declname>
+            <defname>Cs</defname>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T micro_os_plus::micro_test_plus::math::num</definition>
+        <argsstring>(void)</argsstring>
+        <name>num</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::math::num</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Computes the integral value of a number represented as an array of characters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function template performs compile-time parsing of a numeric value from a sequence of characters, typically provided as a template parameter pack.</para>
+<para>The function assumes that all characters are either digits, a dot (<computeroutput>.</computeroutput>), or an apostrophe (<lsquo/><rsquo/>`). Parsing stops at the first dot, allowing the function to extract only the integral part of the number.</para>
+<para>This utility is particularly useful for user-defined literals and other compile-time constant expressions, enabling efficient and type-safe conversion from character sequences to integral values.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target integral type for the result. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Cs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character pack representing the numeric value.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The parsed integral value of type <computeroutput>T</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="160" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="160" bodyend="179" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="152" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a5c22d85f0df63cc0504cbf4988173cd7" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class Exp_T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T micro_os_plus::micro_test_plus::math::pow</definition>
+        <argsstring>(const T base, const Exp_T exp)</argsstring>
+        <name>pow</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::math::pow</qualifiedname>
+        <param>
+          <type>const T</type>
+          <declname>base</declname>
+        </param>
+        <param>
+          <type>const Exp_T</type>
+          <declname>exp</declname>
+        </param>
+        <briefdescription>
+<para>Generic exponentiation function to compute the power of a base raised to an exponent. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function template provides a constexpr implementation for raising a base value to a given exponent, supporting any types that allow multiplication and subtraction.</para>
+<para>The function recursively multiplies the base by itself exponent times. If the exponent is zero, the function returns one (the multiplicative identity for the type).</para>
+<para>This utility is designed to be lightweight and suitable for embedded environments, where standard library alternatives may be unavailable, less efficient, or not constexpr.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the base value. Must support multiplication and construction from an integer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Exp_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the exponent. Must support subtraction and comparison to zero.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base value to be raised to the power of <computeroutput>exp</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>exp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exponent value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The result of raising <computeroutput>base</computeroutput> to the power of <computeroutput>exp</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="138" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="138" bodyend="142" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="137" declcolumn="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Mathematical utilities for the µTest++ testing framework. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <computeroutput>math</computeroutput> namespace offers a suite of constexpr mathematical function templates and utilities for use within the µTest++ framework.</para>
+<para>These functions include generic implementations for absolute value, minimum value, exponentiation, and compile-time parsing of numeric values from character arrays. The utilities are designed to be lightweight and suitable for embedded environments, where standard library alternatives may be unavailable, less efficient, or not constexpr.</para>
+<para>All definitions within this namespace are intended to facilitate mathematical operations in a type-safe and efficient manner, and are implemented in the <computeroutput>include/micro-os-plus</computeroutput> folder to maintain a structured and modular codebase. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="76" column="3"/>
+  </compounddef>
+</doxygen>

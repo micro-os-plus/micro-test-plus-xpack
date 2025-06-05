@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="test-suite-inlines_8h" kind="file" language="C++">
+    <compoundname>test-suite-inlines.h</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">cstring</includes>
+    <includedby refid="micro-test-plus_8h" local="yes">micro-test-plus.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>test-suite-inlines.h</label>
+        <link refid="test-suite-inlines_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>cstring</label>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>micro-test-plus.h</label>
+        <link refid="micro-test-plus_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>test-suite-inlines.h</label>
+        <link refid="test-suite-inlines_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>micro-test-plus.cpp</label>
+        <link refid="micro-test-plus_8cpp"/>
+      </node>
+      <node id="4">
+        <label>test-reporter.cpp</label>
+        <link refid="test-reporter_8cpp"/>
+      </node>
+      <node id="5">
+        <label>test-runner.cpp</label>
+        <link refid="test-runner_8cpp"/>
+      </node>
+      <node id="6">
+        <label>test-suite.cpp</label>
+        <link refid="test-suite_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacemicro__os__plus">micro_os_plus</innernamespace>
+    <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus">micro_os_plus::micro_test_plus</innernamespace>
+    <briefdescription>
+<para>C++ header file with inline implementations for the µTest++ test suite. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This header provides the inline implementations for the test suite facilities used within the µTest++ framework. It defines the logic for constructing and registering test suites, including the binding of callable objects and their arguments for flexible test suite definitions.</para>
+<para>The implementation ensures that each test suite is automatically registered with the global test runner upon construction, enabling automated discovery and execution of test suites. The use of <computeroutput>std::bind</computeroutput> allows for versatile test suite initialisation with arbitrary callable types and arguments.</para>
+<para>All definitions reside within the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref></computeroutput> namespace, maintaining a clear separation from user code and minimising the risk of naming conflicts.</para>
+<para>The header files are organised within the <computeroutput>include/micro-os-plus/micro-test-plus</computeroutput> folder to maintain a structured and modular codebase.</para>
+<para>This file is intended solely for internal use within the framework and should not be included directly by user code. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>µOS++<sp/>project<sp/>(https://micro-os-plus.github.io/).</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2021<sp/>Liviu<sp/>Ionescu.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Permission<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>and/or<sp/>distribute<sp/>this<sp/>software</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>for<sp/>any<sp/>purpose<sp/>is<sp/>hereby<sp/>granted,<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>MIT<sp/>license.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>If<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>license<sp/>was<sp/>not<sp/>distributed<sp/>with<sp/>this<sp/>file,<sp/>it<sp/>can</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>be<sp/>obtained<sp/>from<sp/>https://opensource.org/licenses/mit.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Major<sp/>parts<sp/>of<sp/>the<sp/>code<sp/>are<sp/>inspired<sp/>from<sp/>v1.1.8<sp/>of<sp/>the<sp/>Boost<sp/>UT<sp/>project,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>released<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>Boost<sp/>Version<sp/>1.0<sp/>Software<sp/>License,</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>which<sp/>can<sp/>be<sp/>obtained<sp/>from<sp/>https://www.boost.org/LICENSE_1_0.txt.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MICRO_TEST_PLUS_TEST_SUITE_INLINES_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MICRO_TEST_PLUS_TEST_SUITE_INLINES_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstring&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#include<sp/>&quot;test-runner.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>push</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>ignored<sp/>&quot;-Waggregate-return&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__clang__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>clang<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wc++98-compat&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>clang<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wc++98-compat-pedantic&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref></highlight></codeline>
+<codeline lineno="71"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="namespacemicro__os__plus_1_1micro__test__plus_1a469c0f5fefa0b4cea12a7d267dded831" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner" kindref="compound">test_runner</ref><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a469c0f5fefa0b4cea12a7d267dded831" kindref="member">runner</ref>;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Callable_T,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal">...<sp/>Args_T&gt;</highlight></codeline>
+<codeline lineno="88" refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite_1a824b38d21a3f4d0adb99827455f159cf" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite_1a824b38d21a3f4d0adb99827455f159cf" kindref="member">test_suite::test_suite</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a3625fee07d796bf5c3d6b4c69a94182c" kindref="member">name</ref>,<sp/>Callable_T&amp;&amp;<sp/>callable,</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Args_T&amp;&amp;...<sp/>arguments)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a1aea53994faf3a7f7a610a6c47a8ef4a" kindref="member">test_suite_base</ref>{<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a3625fee07d796bf5c3d6b4c69a94182c" kindref="member">name</ref><sp/>},</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite_1a4c9220da528e34d0b4f8d0980a30fe6a" kindref="member">callable_</ref>{<sp/>std::bind<sp/>(callable,<sp/>arguments...)<sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s\n&quot;</highlight><highlight class="normal">,<sp/>__PRETTY_FUNCTION__);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a469c0f5fefa0b4cea12a7d267dded831" kindref="member">runner</ref>.register_test_suite<sp/>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>micro_os_plus::micro_test_plus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>pop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_TEST_PLUS_TEST_SUITE_INLINES_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-suite-inlines.h"/>
+  </compounddef>
+</doxygen>

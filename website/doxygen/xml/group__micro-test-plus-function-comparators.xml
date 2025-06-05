@@ -1,0 +1,865 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="group__micro-test-plus-function-comparators" kind="group">
+    <compoundname>micro-test-plus-function-comparators</compoundname>
+    <title>Function Comparators</title>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__micro-test-plus-function-comparators_1gae9dfca849300a917cb1c231d275baaa3" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::eq</definition>
+        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <name>eq</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::eq</qualifiedname>
+        <param>
+          <type>const Lhs_T &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const Rhs_T &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Generic equality comparator for non-pointer types. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the operands are equal.</para>
+</simplesect>
+The <computeroutput>eq</computeroutput> function template provides a generic equality comparator for any non-pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that two values are equal. This function is typically used in test expectations and assertions to compare the actual and expected values. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="85" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="85" bodyend="88" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="86" declcolumn="3"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-function-comparators_1gabdb021d3d6a5759cd2a5f502b2514dea" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::eq</definition>
+        <argsstring>(Lhs_T *lhs, Rhs_T *rhs)</argsstring>
+        <name>eq</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::eq</qualifiedname>
+        <param>
+          <type>Lhs_T *</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>Rhs_T *</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Pointer equality comparator for any pointer types. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side pointer operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side pointer operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side pointer operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side pointer operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the pointers are equal.</para>
+</simplesect>
+The <computeroutput>eq</computeroutput> function template provides a pointer equality comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that two pointers are equal. This function is typically used in test expectations and assertions to compare the addresses of objects or resources. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="100" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="100" bodyend="103" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="101" declcolumn="3"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-function-comparators_1ga34e03399670ec0b365b94b7bea788dd8" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::ge</definition>
+        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <name>ge</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::ge</qualifiedname>
+        <param>
+          <type>const Lhs_T &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const Rhs_T &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Generic greater than or equal comparator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A comparator object that evaluates to true if <computeroutput>lhs</computeroutput> is greater than or equal to <computeroutput>rhs</computeroutput>.</para>
+</simplesect>
+The <computeroutput>ge</computeroutput> function template provides a generic greater than or equal comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is greater than or equal to another. This function is typically used in test expectations and assertions to compare the actual and expected values. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="175" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="175" bodyend="178" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="178" declcolumn="3"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-function-comparators_1ga3957927d25a61348b639fe01aab11258" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::ge</definition>
+        <argsstring>(Lhs_T *lhs, Rhs_T *rhs)</argsstring>
+        <name>ge</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::ge</qualifiedname>
+        <param>
+          <type>Lhs_T *</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>Rhs_T *</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Pointer greater than or equal comparator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side pointer operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side pointer operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side pointer operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side pointer operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side pointer is greater than or equal to the right hand side pointer.</para>
+</simplesect>
+The <computeroutput>ge</computeroutput> function template provides a pointer greater than or equal comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is greater than or equal to another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="191" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="191" bodyend="194" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="194" declcolumn="3"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-function-comparators_1gae2fb681444d8256f6bf827eea6b7c29e" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::gt</definition>
+        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <name>gt</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::gt</qualifiedname>
+        <param>
+          <type>const Lhs_T &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const Rhs_T &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Generic greater than comparator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A comparator object that evaluates to true if <computeroutput>lhs</computeroutput> is greater than <computeroutput>rhs</computeroutput>.</para>
+</simplesect>
+The <computeroutput>gt</computeroutput> function template provides a generic greater than comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is greater than another. This function is typically used in test expectations and assertions to compare the actual and expected values. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="145" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="145" bodyend="148" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="147" declcolumn="3"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-function-comparators_1gae8a4dcd7ebf01cdfa7e46540cd6522fa" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::gt</definition>
+        <argsstring>(Lhs_T *lhs, Rhs_T *rhs)</argsstring>
+        <name>gt</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::gt</qualifiedname>
+        <param>
+          <type>Lhs_T *</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>Rhs_T *</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Pointer greater than comparator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side pointer operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side pointer operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side pointer operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side pointer operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side pointer is greater than the right hand side pointer.</para>
+</simplesect>
+The <computeroutput>gt</computeroutput> function template provides a pointer greater than comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is greater than another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="160" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="160" bodyend="163" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="162" declcolumn="3"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-function-comparators_1ga2b5263a5b3965855aa04971bba735a56" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::le</definition>
+        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <name>le</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::le</qualifiedname>
+        <param>
+          <type>const Lhs_T &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const Rhs_T &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Generic less than or equal comparator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A comparator object that evaluates to true if <computeroutput>lhs</computeroutput> is less than or equal to <computeroutput>rhs</computeroutput>.</para>
+</simplesect>
+The <computeroutput>le</computeroutput> function template provides a generic less than or equal comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is less than or equal to another. This function is typically used in test expectations and assertions to compare the actual and expected values. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="236" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="236" bodyend="239" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="242" declcolumn="3"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-function-comparators_1gaf8716c55446af28b090eb49acd8cf131" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::le</definition>
+        <argsstring>(Lhs_T *lhs, Rhs_T *rhs)</argsstring>
+        <name>le</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::le</qualifiedname>
+        <param>
+          <type>Lhs_T *</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>Rhs_T *</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Pointer less than or equal comparator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side pointer operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side pointer operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side pointer operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side pointer operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side pointer is less than or equal to the right hand side pointer.</para>
+</simplesect>
+The <computeroutput>le</computeroutput> function template provides a pointer less than or equal comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is less than or equal to another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="252" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="252" bodyend="255" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="258" declcolumn="3"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-function-comparators_1gac162522dcad1a6ff7c869d52d376b3ed" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::lt</definition>
+        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <name>lt</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::lt</qualifiedname>
+        <param>
+          <type>const Lhs_T &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const Rhs_T &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Generic less than comparator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A comparator object that evaluates to true if <computeroutput>lhs</computeroutput> is less than <computeroutput>rhs</computeroutput>.</para>
+</simplesect>
+The <computeroutput>lt</computeroutput> function template provides a generic less than comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is less than another. This function is typically used in test expectations and assertions to compare the actual and expected values. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="206" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="206" bodyend="209" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="210" declcolumn="3"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-function-comparators_1ga047738c301c4c6b6c7fdb535aecfe097" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::lt</definition>
+        <argsstring>(Lhs_T *lhs, Rhs_T *rhs)</argsstring>
+        <name>lt</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::lt</qualifiedname>
+        <param>
+          <type>Lhs_T *</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>Rhs_T *</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Pointer less than comparator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side pointer operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side pointer operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side pointer operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side pointer operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side pointer is less than the right hand side pointer.</para>
+</simplesect>
+The <computeroutput>lt</computeroutput> function template provides a pointer less than comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is less than another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="221" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="221" bodyend="224" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="226" declcolumn="3"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-function-comparators_1ga59e4cf59954e81bc868e62b1c5c8db1f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::ne</definition>
+        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <name>ne</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::ne</qualifiedname>
+        <param>
+          <type>const Lhs_T &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const Rhs_T &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Generic non-equality comparator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the operands are not equal.</para>
+</simplesect>
+The <computeroutput>ne</computeroutput> function template provides a generic non-equality comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that two values are not equal. This function is typically used in test expectations and assertions to compare the actual and expected values. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="115" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="115" bodyend="118" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="116" declcolumn="3"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-function-comparators_1ga172f305bbeaf8b965681f76c16a39516" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::ne</definition>
+        <argsstring>(Lhs_T *lhs, Rhs_T *rhs)</argsstring>
+        <name>ne</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::ne</qualifiedname>
+        <param>
+          <type>Lhs_T *</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>Rhs_T *</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Pointer non-equality comparator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side pointer operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side pointer operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side pointer operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side pointer operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the pointers are not equal.</para>
+</simplesect>
+The <computeroutput>ne</computeroutput> function template provides a pointer non-equality comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that two pointers are not equal. This function is typically used in test expectations and assertions to compare the addresses of objects or resources. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="130" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="130" bodyend="133" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="132" declcolumn="3"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Functions for comparing actual and expected values in tests. </para>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="group__micro-test-plus-function-comparators_1autotoc_md6_1s1"><sect2 id="group__micro-test-plus-function-comparators_1autotoc_md6">
+<title>Description</title><para>Function comparators in µTest++ provide a clear and expressive way to compare actual and expected values within test cases. While any expression yielding a boolean value may be used in expectations and assumptions, dedicated comparator functions such as <computeroutput>eq</computeroutput>, <computeroutput>ne</computeroutput>, <computeroutput>lt</computeroutput>, <computeroutput>le</computeroutput>, <computeroutput>gt</computeroutput>, and <computeroutput>ge</computeroutput> offer enhanced reporting by explicitly showing the values involved when a check fails.</para>
+<para>Using these comparators ensures that, in the event of a failed check, the test output will include both the actual and expected values, making it easier to diagnose issues and understand the cause of the failure.</para>
+<para>Comparators are available for both fundamental types and standard containers. When comparing containers, each element is assessed individually, and the results are reported in detail.</para>
+<para><simplesect kind="par"><title>Examples</title><para></para>
+</simplesect>
+<programlisting filename=".cpp"><codeline><highlight class="normal">mt::expect<sp/>(mt::eq<sp/>(compute_answer<sp/>(),<sp/>42))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">mt::expect<sp/>(mt::ne<sp/>(compute_answer<sp/>(),<sp/>43))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>not<sp/>43&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">mt::expect<sp/>(mt::lt<sp/>(compute_answer<sp/>(),<sp/>43))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&lt;<sp/>43&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">mt::expect<sp/>(mt::le<sp/>(compute_answer<sp/>(),<sp/>43))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&lt;=<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">mt::expect<sp/>(mt::gt<sp/>(compute_answer<sp/>(),<sp/>41))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&gt;<sp/>43&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">mt::expect<sp/>(mt::ge<sp/>(compute_answer<sp/>(),<sp/>42))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&gt;=<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">mt::expect<sp/>(compute_condition<sp/>())<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;condition<sp/>is<sp/>true&quot;</highlight><highlight class="normal">;</highlight></codeline>
+</programlisting></para>
+<para>If a comparator check fails, the output will clearly indicate the actual and expected values:</para>
+<para><programlisting filename=".console"><codeline><highlight class="normal"><sp/><sp/>Check<sp/>failed<sp/>comparisons</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>✗<sp/>actual<sp/>!=<sp/>42<sp/>FAILED<sp/>(unit-test.cpp:286,<sp/>42<sp/>!=<sp/>42)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>✗<sp/>FAILED<sp/>(unit-test.cpp:307,<sp/>42<sp/>!=<sp/>42)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>✗<sp/>42<sp/>!=<sp/>42_i<sp/>FAILED<sp/>(unit-test.cpp:310,<sp/>42<sp/>!=<sp/>42)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>✗<sp/>(actual<sp/>==<sp/>42)<sp/>and<sp/>(actual<sp/>!=<sp/>42.0)<sp/>FAILED<sp/>(unit-test.cpp:781,<sp/>(42<sp/>==<sp/>42</highlight></codeline>
+<codeline><highlight class="normal">and<sp/>42.000000<sp/>!=<sp/>42.000000))</highlight></codeline>
+</programlisting></para>
+<sect3 id="group__micro-test-plus-function-comparators_1autotoc_md7">
+<title>Comparing containers</title><para>Containers can be compared for equality or inequality using the same comparator functions. The comparison is performed by iterating through each element and evaluating them individually.</para>
+<para><simplesect kind="par"><title>Examples</title><para></para>
+</simplesect>
+<programlisting filename=".cpp"><codeline><highlight class="normal">mt::expect<sp/>(mt::eq<sp/>(std::vector&lt;int&gt;{<sp/>1,<sp/>2<sp/>},<sp/>std::vector&lt;int&gt;{<sp/>1,<sp/>2<sp/>}))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;vector{<sp/>1,<sp/>2<sp/>}<sp/>eq<sp/>vector{<sp/>1,<sp/>2<sp/>}&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">mt::expect<sp/>(mt::ne<sp/>(std::vector&lt;int&gt;{<sp/>1,<sp/>2,<sp/>3<sp/>},<sp/>std::vector&lt;int&gt;{<sp/>1,<sp/>2,<sp/>4<sp/>})</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;vector{<sp/>1,<sp/>2,<sp/>3<sp/>}<sp/>ne<sp/>vector{<sp/>1,<sp/>2,<sp/>4<sp/>}&quot;</highlight><highlight class="normal">;</highlight></codeline>
+</programlisting></para>
+</sect3>
+</sect2></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

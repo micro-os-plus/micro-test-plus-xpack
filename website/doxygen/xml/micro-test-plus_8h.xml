@@ -1,0 +1,485 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="micro-test-plus_8h" kind="file" language="C++">
+    <compoundname>micro-test-plus.h</compoundname>
+    <includes refid="type-traits_8h" local="yes">micro-test-plus/type-traits.h</includes>
+    <includes refid="reflection_8h" local="yes">micro-test-plus/reflection.h</includes>
+    <includes refid="detail_8h" local="yes">micro-test-plus/detail.h</includes>
+    <includes refid="math_8h" local="yes">micro-test-plus/math.h</includes>
+    <includes refid="literals_8h" local="yes">micro-test-plus/literals.h</includes>
+    <includes refid="function-comparators_8h" local="yes">micro-test-plus/function-comparators.h</includes>
+    <includes refid="operators_8h" local="yes">micro-test-plus/operators.h</includes>
+    <includes refid="test-suite_8h" local="yes">micro-test-plus/test-suite.h</includes>
+    <includes refid="test-runner_8h" local="yes">micro-test-plus/test-runner.h</includes>
+    <includes refid="test-reporter_8h" local="yes">micro-test-plus/test-reporter.h</includes>
+    <includes refid="details-inlines_8h" local="yes">micro-test-plus/inlines/details-inlines.h</includes>
+    <includes refid="literals-inlines_8h" local="yes">micro-test-plus/inlines/literals-inlines.h</includes>
+    <includes refid="math-inlines_8h" local="yes">micro-test-plus/inlines/math-inlines.h</includes>
+    <includes refid="reflection-inlines_8h" local="yes">micro-test-plus/inlines/reflection-inlines.h</includes>
+    <includes refid="test-reporter-inlines_8h" local="yes">micro-test-plus/inlines/test-reporter-inlines.h</includes>
+    <includes refid="function-comparators-inlines_8h" local="yes">micro-test-plus/inlines/function-comparators-inlines.h</includes>
+    <includes refid="test-suite-inlines_8h" local="yes">micro-test-plus/inlines/test-suite-inlines.h</includes>
+    <includes refid="micro-test-plus-inlines_8h" local="yes">micro-test-plus/inlines/micro-test-plus-inlines.h</includes>
+    <includedby refid="micro-test-plus_8cpp" local="no">micro-test-plus.cpp</includedby>
+    <includedby refid="test-reporter_8cpp" local="no">test-reporter.cpp</includedby>
+    <includedby refid="test-runner_8cpp" local="no">test-runner.cpp</includedby>
+    <includedby refid="test-suite_8cpp" local="no">test-suite.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>micro-test-plus.h</label>
+        <link refid="micro-test-plus_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>micro-test-plus/detail.h</label>
+        <link refid="detail_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>micro-test-plus/function-comparators.h</label>
+        <link refid="function-comparators_8h"/>
+      </node>
+      <node id="18">
+        <label>micro-test-plus/inlines/details-inlines.h</label>
+        <link refid="details-inlines_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>micro-test-plus/inlines/function-comparators-inlines.h</label>
+        <link refid="function-comparators-inlines_8h"/>
+      </node>
+      <node id="20">
+        <label>micro-test-plus/inlines/literals-inlines.h</label>
+        <link refid="literals-inlines_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>micro-test-plus/inlines/math-inlines.h</label>
+        <link refid="math-inlines_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>micro-test-plus/inlines/micro-test-plus-inlines.h</label>
+        <link refid="micro-test-plus-inlines_8h"/>
+      </node>
+      <node id="22">
+        <label>micro-test-plus/inlines/reflection-inlines.h</label>
+        <link refid="reflection-inlines_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>micro-test-plus/inlines/test-reporter-inlines.h</label>
+        <link refid="test-reporter-inlines_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>micro-test-plus/inlines/test-suite-inlines.h</label>
+        <link refid="test-suite-inlines_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>micro-test-plus/literals.h</label>
+        <link refid="literals_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>math.h</label>
+        <link refid="math_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>micro-test-plus/operators.h</label>
+        <link refid="operators_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>micro-test-plus/reflection.h</label>
+        <link refid="reflection_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>micro-test-plus/test-reporter.h</label>
+        <link refid="test-reporter_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>micro-test-plus/test-runner.h</label>
+        <link refid="test-runner_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>micro-test-plus/test-suite.h</label>
+        <link refid="test-suite_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>micro-test-plus/type-traits.h</label>
+        <link refid="type-traits_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>array</label>
+      </node>
+      <node id="11">
+        <label>cstdint</label>
+      </node>
+      <node id="19">
+        <label>cstring</label>
+      </node>
+      <node id="15">
+        <label>functional</label>
+      </node>
+      <node id="8">
+        <label>stdio.h</label>
+      </node>
+      <node id="9">
+        <label>string</label>
+      </node>
+      <node id="6">
+        <label>string_view</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>micro-test-plus.h</label>
+        <link refid="micro-test-plus_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>micro-test-plus.cpp</label>
+        <link refid="micro-test-plus_8cpp"/>
+      </node>
+      <node id="3">
+        <label>test-reporter.cpp</label>
+        <link refid="test-reporter_8cpp"/>
+      </node>
+      <node id="4">
+        <label>test-runner.cpp</label>
+        <link refid="test-runner_8cpp"/>
+      </node>
+      <node id="5">
+        <label>test-suite.cpp</label>
+        <link refid="test-suite_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacemicro__os__plus">micro_os_plus</innernamespace>
+    <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus">micro_os_plus::micro_test_plus</innernamespace>
+    <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus_1_1utility">micro_os_plus::micro_test_plus::utility</innernamespace>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1a682fc3ce8c00ebe7c068d6299269655b" prot="public" static="no" mutable="no">
+        <type>test_suite_base *</type>
+        <definition>test_suite_base * micro_os_plus::micro_test_plus::current_test_suite</definition>
+        <argsstring></argsstring>
+        <name>current_test_suite</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::current_test_suite</qualifiedname>
+        <briefdescription>
+<para>Global pointer references the currently active test suite. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This global pointer references the currently active test suite within the µTest++ framework. It is used to track and update the state of the test suite during test execution, including recording test results and statistics. By maintaining a pointer to the current test suite, the framework ensures accurate association of test outcomes with their respective suites, supporting clear and organised reporting across all test cases and folders. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/micro-test-plus.cpp" line="306" column="19" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/micro-test-plus.cpp" bodystart="306" bodyend="-1" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" declline="142" declcolumn="26"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1aec46bdfdb22163bedab8e6b542191834" prot="public" static="no" mutable="no">
+        <type>test_reporter</type>
+        <definition>test_reporter micro_os_plus::micro_test_plus::reporter</definition>
+        <argsstring></argsstring>
+        <name>reporter</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::reporter</qualifiedname>
+        <briefdescription>
+<para>Global instance of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter" kindref="compound">test_reporter</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This global instance of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter" kindref="compound">test_reporter</ref></computeroutput> is responsible for collecting, formatting, and outputting the results of test execution within the µTest++ framework. It manages the reporting of test outcomes, including successes and failures, and ensures that all relevant information is presented clearly to the user. By maintaining a single shared reporter, the framework provides consistent and centralised reporting across all test cases and folders. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/micro-test-plus.cpp" line="292" column="17" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/micro-test-plus.cpp" bodystart="292" bodyend="-1" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" declline="141" declcolumn="24"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1a469c0f5fefa0b4cea12a7d267dded831" prot="public" static="no" mutable="no">
+        <type>test_runner</type>
+        <definition>test_runner micro_os_plus::micro_test_plus::runner</definition>
+        <argsstring></argsstring>
+        <name>runner</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::runner</qualifiedname>
+        <briefdescription>
+<para>Global instance of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner" kindref="compound">test_runner</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This global instance of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner" kindref="compound">test_runner</ref></computeroutput> manages the lifecycle of test suites and test cases within the µTest++ framework. It is responsible for initialising the test environment, registering test suites, executing tests, and collecting results. By maintaining a single shared runner, the framework ensures consistent test execution and reporting across all test cases and folders. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/micro-test-plus.cpp" line="278" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-suite-inlines.h" bodystart="74" bodyend="-1" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" declline="140" declcolumn="22"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <member refid="group__micro-test-plus-assumptions_1ga0f5febbef70eb641691b98583410a1ca" kind="function"><name>assume</name></member>
+      <member refid="group__micro-test-plus-inits_1gaa790667969dc1a261c324e89a6ea4591" kind="function"><name>exit_code</name></member>
+      <member refid="group__micro-test-plus-expectations_1ga75c3f43663a5440d78231fe572fe4a22" kind="function"><name>expect</name></member>
+      <member refid="group__micro-test-plus-inits_1gac2c60d60578f668878957ec68a37538f" kind="function"><name>initialize</name></member>
+      <member refid="group__micro-test-plus-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" kind="function"><name>is_match</name></member>
+      <member refid="group__micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" kind="function"><name>nothrow</name></member>
+      <member refid="group__micro-test-plus-utility-functions_1ga1b860aa64be17658d1664de447e6e125" kind="function"><name>split</name></member>
+      <member refid="group__micro-test-plus-test-case_1ga423b46709cca6072efe28a6dbf85e413" kind="function"><name>test_case</name></member>
+      <member refid="group__micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kind="function"><name>throws</name></member>
+      <member refid="group__micro-test-plus-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" kind="function"><name>throws</name></member>
+    </sectiondef>
+    <briefdescription>
+<para>Main C++ header with the declarations for the µTest++ Testing Framework. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This header serves as the principal entry point for the µTest++ testing framework, purpose-built for both embedded and general C++ projects.</para>
+<para>It provides all essential declarations required to write and manage tests, including test runner and reporter objects, test suite and test case management, expectations, assumptions, comparators, logical operators, exception verification, and utility functions.</para>
+<para>The header also incorporates all necessary dependencies and internal headers to ensure the framework operates correctly and efficiently.</para>
+<para>All public API definitions reside within the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref></computeroutput> namespace and its nested namespaces, ensuring clear separation from user code and minimising the risk of naming conflicts.</para>
+<para>This file is located in the top-level <computeroutput>include/micro-os-plus</computeroutput> directory; all other header files are organised within the <computeroutput>include/micro-os-plus/micro-test-plus</computeroutput> directory to maintain a structured and modular codebase.</para>
+<para>To access the complete functionality of the µTest++ framework, users should include this header in their test projects.</para>
+<para>The implementation is significantly inspired by Boost UT, with adaptations and extensions to address the requirements of embedded development and the µTest++ framework. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>µOS++<sp/>project<sp/>(https://micro-os-plus.github.io/).</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2021<sp/>Liviu<sp/>Ionescu.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Permission<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>and/or<sp/>distribute<sp/>this<sp/>software</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>for<sp/>any<sp/>purpose<sp/>is<sp/>hereby<sp/>granted,<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>MIT<sp/>license.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>If<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>license<sp/>was<sp/>not<sp/>distributed<sp/>with<sp/>this<sp/>file,<sp/>it<sp/>can</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>be<sp/>obtained<sp/>from<sp/>https://opensource.org/licenses/mit.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Major<sp/>parts<sp/>of<sp/>the<sp/>code<sp/>are<sp/>inspired<sp/>from<sp/>v1.1.8<sp/>of<sp/>the<sp/>Boost<sp/>UT<sp/>project,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>released<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>Boost<sp/>Version<sp/>1.0<sp/>Software<sp/>License,</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>which<sp/>can<sp/>be<sp/>obtained<sp/>from<sp/>https://www.boost.org/LICENSE_1_0.txt.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MICRO_TEST_PLUS_MICRO_TEST_PLUS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MICRO_TEST_PLUS_MICRO_TEST_PLUS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_INCLUDE_CONFIG_H)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;micro-os-plus/config.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_INCLUDE_CONFIG_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="type-traits_8h" kindref="compound">micro-test-plus/type-traits.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="reflection_8h" kindref="compound">micro-test-plus/reflection.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="detail_8h" kindref="compound">micro-test-plus/detail.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="math_8h" kindref="compound">micro-test-plus/math.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="literals_8h" kindref="compound">micro-test-plus/literals.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="function-comparators_8h" kindref="compound">micro-test-plus/function-comparators.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="operators_8h" kindref="compound">micro-test-plus/operators.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="test-suite_8h" kindref="compound">micro-test-plus/test-suite.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="test-runner_8h" kindref="compound">micro-test-plus/test-runner.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="test-reporter_8h" kindref="compound">micro-test-plus/test-reporter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>push</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wpadded&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>ignored<sp/>&quot;-Waggregate-return&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__clang__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>clang<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wc++98-compat&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>clang<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wc++98-compat-pedantic&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>clang<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wctad-maybe-unsupported&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref></highlight></codeline>
+<codeline lineno="137"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner" kindref="compound">test_runner</ref><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a469c0f5fefa0b4cea12a7d267dded831" kindref="member">runner</ref>;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter" kindref="compound">test_reporter</ref><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1aec46bdfdb22163bedab8e6b542191834" kindref="member">reporter</ref>;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base" kindref="compound">test_suite_base</ref>*<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a682fc3ce8c00ebe7c068d6299269655b" kindref="member">current_test_suite</ref>;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Public<sp/>API.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><ref refid="group__micro-test-plus-inits_1gac2c60d60578f668878957ec68a37538f" kindref="member">initialize</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>argv[],<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Main&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><ref refid="group__micro-test-plus-inits_1gaa790667969dc1a261c324e89a6ea4591" kindref="member">exit_code</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Callable_T,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal">...<sp/>Args_T&gt;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><ref refid="group__micro-test-plus-test-case_1ga423b46709cca6072efe28a6dbf85e413" kindref="member">test_case</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name,<sp/>Callable_T&amp;&amp;<sp/>callable,<sp/>Args_T&amp;&amp;...<sp/>arguments);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Expr_T,<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a1cbbf299a006b4692df250ef2a6fc7c2" kindref="member">type_traits::requires_t</ref>&lt;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a814e7f004d5404f735737aabb90fa111" kindref="member">type_traits::is_op_v&lt;Expr_T&gt;</ref></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>or<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a49a5bfe63d50b6fd1be0972586fbf590" kindref="member">type_traits::is_convertible_v&lt;Expr_T, bool&gt;</ref>&gt;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0&gt;</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><ref refid="group__micro-test-plus-expectations_1ga75c3f43663a5440d78231fe572fe4a22" kindref="member">expect</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Expr_T&amp;<sp/>expr,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" kindref="compound">reflection::source_location</ref>&amp;<sp/>sl</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1ac7bb1580b65709b94ad81ea3a5a900a0" kindref="member">reflection::source_location::current</ref><sp/>());</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Expr_T,<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a1cbbf299a006b4692df250ef2a6fc7c2" kindref="member">type_traits::requires_t</ref>&lt;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a814e7f004d5404f735737aabb90fa111" kindref="member">type_traits::is_op_v&lt;Expr_T&gt;</ref></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>or<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a49a5bfe63d50b6fd1be0972586fbf590" kindref="member">type_traits::is_convertible_v&lt;Expr_T, bool&gt;</ref>&gt;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0&gt;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><ref refid="group__micro-test-plus-assumptions_1ga0f5febbef70eb641691b98583410a1ca" kindref="member">assume</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Expr_T&amp;<sp/>expr,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" kindref="compound">reflection::source_location</ref>&amp;<sp/>sl</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1ac7bb1580b65709b94ad81ea3a5a900a0" kindref="member">reflection::source_location::current</ref><sp/>());</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__cpp_exceptions)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Exception_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Callable_T&gt;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throws</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Callable_T&amp;<sp/>func);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Callable_T&gt;</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throws</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Callable_T&amp;<sp/>func);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Callable_T&gt;</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><ref refid="group__micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" kindref="member">nothrow</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Callable_T&amp;<sp/>func);</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1utility" kindref="compound">utility</ref></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__micro-test-plus-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" kindref="member">is_match</ref><sp/>(std::string_view<sp/>input,<sp/>std::string_view<sp/>pattern);</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Delim_T&gt;</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__micro-test-plus-utility-functions_1ga1b860aa64be17658d1664de447e6e125" kindref="member">split</ref><sp/>(T<sp/>input,<sp/>Delim_T<sp/>delim)<sp/>-&gt;<sp/>std::vector&lt;T&gt;;</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>utility</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="327"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>micro_os_plus::micro_test_plus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>pop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight><highlight class="comment">//<sp/>=====<sp/>Inlines<sp/>&amp;<sp/>templates<sp/>implementations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight><highlight class="comment">//<sp/>====================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight><highlight class="comment">//<sp/>All<sp/>inlines<sp/>are<sp/>included<sp/>**after**<sp/>all<sp/>declarations.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="details-inlines_8h" kindref="compound">micro-test-plus/inlines/details-inlines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="literals-inlines_8h" kindref="compound">micro-test-plus/inlines/literals-inlines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="math-inlines_8h" kindref="compound">micro-test-plus/inlines/math-inlines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="reflection-inlines_8h" kindref="compound">micro-test-plus/inlines/reflection-inlines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="test-reporter-inlines_8h" kindref="compound">micro-test-plus/inlines/test-reporter-inlines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="function-comparators-inlines_8h" kindref="compound">micro-test-plus/inlines/function-comparators-inlines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="test-suite-inlines_8h" kindref="compound">micro-test-plus/inlines/test-suite-inlines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="micro-test-plus-inlines_8h" kindref="compound">micro-test-plus/inlines/micro-test-plus-inlines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"></highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_TEST_PLUS_MICRO_TEST_PLUS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"></highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" kind="class" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::reflection::source_location</compoundname>
+    <includes refid="micro-test-plus_8h" local="no">micro-os-plus/micro-test-plus.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1ae648fa43322766fbeb3f9103b43bcc4b" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* micro_os_plus::micro_test_plus::reflection::source_location::file_</definition>
+        <argsstring></argsstring>
+        <name>file_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::reflection::source_location::file_</qualifiedname>
+        <initializer>{ &quot;unknown&quot; }</initializer>
+        <briefdescription>
+<para>The file name where the source location was captured. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" line="180" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" bodystart="180" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1a0e805c2ed2234f2c004fd7196b844fc5" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int micro_os_plus::micro_test_plus::reflection::source_location::line_</definition>
+        <argsstring></argsstring>
+        <name>line_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::reflection::source_location::line_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+<para>The line number where the source location was captured. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" line="185" column="20" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" bodystart="185" bodyend="185"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1ac7bb1580b65709b94ad81ea3a5a900a0" prot="public" static="yes" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::reflection::source_location::current</definition>
+        <argsstring>(const char *file=&quot;unknown&quot;, unsigned int line={}) noexcept</argsstring>
+        <name>current</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::reflection::source_location::current</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>file</declname>
+          <defval>&quot;unknown&quot;</defval>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>line</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+<para>Obtain the current source location. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file name (automatically provided by the compiler). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The line number (automatically provided by the compiler). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" kindref="compound">source_location</ref></computeroutput> instance with the captured information.</para>
+</simplesect>
+Returns a <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" kindref="compound">source_location</ref></computeroutput> instance representing the file name and line number at the point of invocation.</para>
+<para>If supported by the compiler, uses built-in macros to capture this information; otherwise, defaults to <computeroutput>&quot;unknown&quot;</computeroutput> and zero. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" line="147" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" bodystart="91" bodyend="97"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1a3df499675aacb7ab9192cfb9a5371874" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::reflection::source_location::file_name</definition>
+        <argsstring>(void) const noexcept</argsstring>
+        <name>file_name</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::reflection::source_location::file_name</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Retrieve the file name associated with this source location. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The file name as a constant character pointer.</para>
+</simplesect>
+... </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" line="164" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" bodystart="104" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1aab9d006004611ac0526852a09f675c66" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::reflection::source_location::line</definition>
+        <argsstring>(void) const noexcept</argsstring>
+        <name>line</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::reflection::source_location::line</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Retrieve the line number associated with this source location. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The line number as an unsigned integer.</para>
+</simplesect>
+... </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" line="174" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" bodystart="114" bodyend="117"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Local implementation of source location information for diagnostics. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class provides a lightweight, constexpr-compatible alternative to <computeroutput>std::source_location</computeroutput> for environments lacking C++20 standard support.</para>
+<para>It enables retrieval of the file name and line number at the point of invocation, supporting enhanced diagnostics and reporting within the µTest++ framework.</para>
+<para>The static <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1ac7bb1580b65709b94ad81ea3a5a900a0" kindref="member">current()</ref></computeroutput> method captures the current source location, using compiler built-ins where available, or defaulting to <computeroutput>&quot;unknown&quot;</computeroutput> and zero otherwise.</para>
+<para><simplesect kind="since"><para>3.0.0 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" line="136" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" bodystart="137" bodyend="186"/>
+    <listofallmembers>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1ac7bb1580b65709b94ad81ea3a5a900a0" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::reflection::source_location</scope><name>current</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1ae648fa43322766fbeb3f9103b43bcc4b" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::reflection::source_location</scope><name>file_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1a3df499675aacb7ab9192cfb9a5371874" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::reflection::source_location</scope><name>file_name</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1aab9d006004611ac0526852a09f675c66" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::reflection::source_location</scope><name>line</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1a0e805c2ed2234f2c004fd7196b844fc5" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::reflection::source_location</scope><name>line_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

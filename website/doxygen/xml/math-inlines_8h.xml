@@ -1,0 +1,651 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="math-inlines_8h" kind="file" language="C++">
+    <compoundname>math-inlines.h</compoundname>
+    <includes local="no">cstdint</includes>
+    <includedby refid="micro-test-plus_8h" local="yes">micro-test-plus.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>math-inlines.h</label>
+        <link refid="math-inlines_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>cstdint</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>micro-test-plus.h</label>
+        <link refid="micro-test-plus_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>math-inlines.h</label>
+        <link refid="math-inlines_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>micro-test-plus.cpp</label>
+        <link refid="micro-test-plus_8cpp"/>
+      </node>
+      <node id="4">
+        <label>test-reporter.cpp</label>
+        <link refid="test-reporter_8cpp"/>
+      </node>
+      <node id="5">
+        <label>test-runner.cpp</label>
+        <link refid="test-runner_8cpp"/>
+      </node>
+      <node id="6">
+        <label>test-suite.cpp</label>
+        <link refid="test-suite_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacemicro__os__plus">micro_os_plus</innernamespace>
+    <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus">micro_os_plus::micro_test_plus</innernamespace>
+    <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math">micro_os_plus::micro_test_plus::math</innernamespace>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a1dd33529640b959c531ca18c2e494c80" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T micro_os_plus::micro_test_plus::math::abs</definition>
+        <argsstring>(const T t)</argsstring>
+        <name>abs</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::math::abs</qualifiedname>
+        <param>
+          <type>const T</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Computes the absolute value of a given comparable value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function template provides a generic, constexpr implementation for obtaining the absolute value of any type that supports comparison and unary negation.</para>
+<para>The function returns the non-negative value of the input. If the input is less than the default-constructed value of its type (typically zero), the negated value is returned; otherwise, the original value is returned.</para>
+<para>This utility is designed to be lightweight and suitable for embedded environments, where standard library alternatives may be unavailable, less efficient, or not constexpr.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the input value. Must support comparison and unary negation.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value for which the absolute value is to be computed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The absolute value of the input. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="96" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="96" bodyend="99" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="106" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a1006429dba18038662409138f5754952" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>char...</type>
+            <declname>Cs</declname>
+            <defname>Cs</defname>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T micro_os_plus::micro_test_plus::math::den</definition>
+        <argsstring>(void)</argsstring>
+        <name>den</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::math::den</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Computes the decimal part of a number represented as an array of characters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function template performs compile-time extraction of the decimal (fractional) part from a sequence of characters, typically provided as a template parameter pack.</para>
+<para>The function expects the character sequence to represent a numeric value, where all characters are either digits, a dot (<computeroutput>.</computeroutput>), or an apostrophe (<lsquo/><rsquo/>`). Parsing begins after the first dot, accumulating the decimal digits as an integer value, each weighted by its decimal position.</para>
+<para>This utility is particularly useful for user-defined literals and other compile-time constant expressions, enabling efficient and type-safe conversion from character sequences to the decimal part of numeric values.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target integral type for the result. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Cs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character pack representing the numeric value.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The parsed decimal part as an integral value of type <computeroutput>T</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="200" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="200" bodyend="214" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="167" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a3e243d7f77b8435e1433ccad9c603f98" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class Value_T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T micro_os_plus::micro_test_plus::math::den_size</definition>
+        <argsstring>(Value_T value)</argsstring>
+        <name>den_size</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::math::den_size</qualifiedname>
+        <param>
+          <type>Value_T</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Computes the number of decimal places of a value, up to 7 digits. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function template determines, at compile time, the number of decimal (fractional) digits present in a floating-point value, up to a maximum of seven digits of precision.</para>
+<para>The function repeatedly multiplies the input value by ten, incrementing a counter until the fractional part is less than a defined precision threshold (1e-7). This approach provides a robust means of estimating decimal precision for values where exact representation is not possible due to floating-point limitations.</para>
+<para>This utility is particularly useful for user-defined literals and compile-time constant expressions, enabling efficient and type-safe determination of decimal precision from floating-point values.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The integral type for the result. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Value_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the input value, typically a floating-point type.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value whose decimal precision is to be determined. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of decimal places, as a value of type <computeroutput>T</computeroutput>, up to a maximum of seven. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="269" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="269" bodyend="295" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="197" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a74757af775d3afa203b808e3f6642467" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>char...</type>
+            <declname>Cs</declname>
+            <defname>Cs</defname>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T micro_os_plus::micro_test_plus::math::den_size</definition>
+        <argsstring>(void)</argsstring>
+        <name>den_size</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::math::den_size</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Computes the number of decimal places in a number represented as an array of characters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function template determines, at compile time, the number of decimal (fractional) digits present in a numeric value represented by a character sequence, typically provided as a template parameter pack.</para>
+<para>The function expects the character sequence to represent a numeric value, where all characters are either digits, a dot (<computeroutput>.</computeroutput>), or an apostrophe (<lsquo/><rsquo/>`). It locates the first dot and counts the number of digits that follow, returning the count as the number of decimal places.</para>
+<para>This utility is particularly useful for user-defined literals and other compile-time constant expressions, enabling efficient and type-safe determination of decimal precision from character sequences.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The integral type for the result. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Cs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character pack representing the numeric value.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The number of decimal places as a value of type <computeroutput>T</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="233" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="233" bodyend="249" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="182" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1ae53dd62f6d82b8ccaa048d90a7002826" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>const T &amp;</type>
+        <definition>const T &amp; micro_os_plus::micro_test_plus::math::min_value</definition>
+        <argsstring>(const T &amp;lhs, const T &amp;rhs)</argsstring>
+        <name>min_value</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::math::min_value</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Computes the minimum of two comparable values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function template provides a generic, constexpr implementation for determining the minimum of two values of any type that supports comparison.</para>
+<para>The function returns a reference to the lesser of the two input values, as determined by the <computeroutput>&lt;</computeroutput> operator. If the second argument is less than the first, it is returned; otherwise, the first argument is returned.</para>
+<para>This utility is designed to be lightweight and suitable for embedded environments, where standard library alternatives may be unavailable, less efficient, or not constexpr.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the input values. Must support comparison via the <computeroutput>&lt;</computeroutput> operator.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first value to compare. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second value to compare. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the minimum of the two input values. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="117" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="117" bodyend="120" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="120" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a98cbcae8bfc4a2d2f27487d1b2e641b7" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>char...</type>
+            <declname>Cs</declname>
+            <defname>Cs</defname>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T micro_os_plus::micro_test_plus::math::num</definition>
+        <argsstring>(void)</argsstring>
+        <name>num</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::math::num</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Computes the integral value of a number represented as an array of characters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function template performs compile-time parsing of a numeric value from a sequence of characters, typically provided as a template parameter pack.</para>
+<para>The function assumes that all characters are either digits, a dot (<computeroutput>.</computeroutput>), or an apostrophe (<lsquo/><rsquo/>`). Parsing stops at the first dot, allowing the function to extract only the integral part of the number.</para>
+<para>This utility is particularly useful for user-defined literals and other compile-time constant expressions, enabling efficient and type-safe conversion from character sequences to integral values.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target integral type for the result. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Cs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character pack representing the numeric value.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The parsed integral value of type <computeroutput>T</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="160" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="160" bodyend="179" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="152" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a5c22d85f0df63cc0504cbf4988173cd7" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class Exp_T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T micro_os_plus::micro_test_plus::math::pow</definition>
+        <argsstring>(const T base, const Exp_T exp)</argsstring>
+        <name>pow</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::math::pow</qualifiedname>
+        <param>
+          <type>const T</type>
+          <declname>base</declname>
+        </param>
+        <param>
+          <type>const Exp_T</type>
+          <declname>exp</declname>
+        </param>
+        <briefdescription>
+<para>Generic exponentiation function to compute the power of a base raised to an exponent. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function template provides a constexpr implementation for raising a base value to a given exponent, supporting any types that allow multiplication and subtraction.</para>
+<para>The function recursively multiplies the base by itself exponent times. If the exponent is zero, the function returns one (the multiplicative identity for the type).</para>
+<para>This utility is designed to be lightweight and suitable for embedded environments, where standard library alternatives may be unavailable, less efficient, or not constexpr.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the base value. Must support multiplication and construction from an integer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Exp_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the exponent. Must support subtraction and comparison to zero.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>base</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The base value to be raised to the power of <computeroutput>exp</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>exp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exponent value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The result of raising <computeroutput>base</computeroutput> to the power of <computeroutput>exp</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="138" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="138" bodyend="142" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="137" declcolumn="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>C++ header file with inline implementations for the µTest++ mathematical utilities. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This header provides the inline implementations for the mathematical utility templates used within the µTest++ framework. It defines constexpr logic for common mathematical operations, including absolute value, minimum value selection, exponentiation, and compile-time parsing of numeric values from character sequences.</para>
+<para>These utilities are designed to be lightweight and suitable for embedded environments, supporting both integral and floating-point types, and enabling expressive, type-safe, and efficient compile-time computations. Special attention is given to constexpr compatibility and minimal reliance on the standard library, ensuring portability and performance.</para>
+<para>All definitions reside within the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math" kindref="compound">micro_os_plus::micro_test_plus::math</ref></computeroutput> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.</para>
+<para>The header files are organised within the <computeroutput>include/micro-os-plus/micro-test-plus</computeroutput> folder to maintain a structured and modular codebase.</para>
+<para>This file is intended solely for internal use within the framework and should not be included directly by user code. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>µOS++<sp/>project<sp/>(https://micro-os-plus.github.io/).</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2021<sp/>Liviu<sp/>Ionescu.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Permission<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>and/or<sp/>distribute<sp/>this<sp/>software</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>for<sp/>any<sp/>purpose<sp/>is<sp/>hereby<sp/>granted,<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>MIT<sp/>license.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>If<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>license<sp/>was<sp/>not<sp/>distributed<sp/>with<sp/>this<sp/>file,<sp/>it<sp/>can</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>be<sp/>obtained<sp/>from<sp/>https://opensource.org/licenses/mit.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Major<sp/>parts<sp/>of<sp/>the<sp/>code<sp/>are<sp/>inspired<sp/>from<sp/>v1.1.8<sp/>of<sp/>the<sp/>Boost<sp/>UT<sp/>project,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>released<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>Boost<sp/>Version<sp/>1.0<sp/>Software<sp/>License,</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>which<sp/>can<sp/>be<sp/>obtained<sp/>from<sp/>https://www.boost.org/LICENSE_1_0.txt.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MICRO_TEST_PLUS_MATH_INLINES_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MICRO_TEST_PLUS_MATH_INLINES_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#include<sp/>&quot;type-traits.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>push</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>ignored<sp/>&quot;-Waggregate-return&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__clang__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>clang<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wc++98-compat&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>clang<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wc++98-compat-pedantic&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref></highlight></codeline>
+<codeline lineno="73"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math" kindref="compound">math</ref></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a1dd33529640b959c531ca18c2e494c80" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a1dd33529640b959c531ca18c2e494c80" kindref="member">abs</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>t)<sp/>-&gt;<sp/>T</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>t<sp/>&lt;<sp/>T{}<sp/>?<sp/>-t<sp/>:<sp/>t;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1ae53dd62f6d82b8ccaa048d90a7002826" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1ae53dd62f6d82b8ccaa048d90a7002826" kindref="member">min_value</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>rhs)<sp/>-&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(rhs<sp/>&lt;<sp/>lhs)<sp/>?<sp/>rhs<sp/>:<sp/>lhs;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Exp_T&gt;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a5c22d85f0df63cc0504cbf4988173cd7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a5c22d85f0df63cc0504cbf4988173cd7" kindref="member">pow</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>base,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Exp_T<sp/>exp)<sp/>-&gt;<sp/>T</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>the<sp/>exponent<sp/>is<sp/>0,<sp/>return<sp/>1,<sp/>otherwise<sp/>recurse.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>exp<sp/>?<sp/>T<sp/>(base<sp/>*<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a5c22d85f0df63cc0504cbf4988173cd7" kindref="member">pow</ref><sp/>(base,<sp/>exp<sp/>-<sp/>Exp_T<sp/>(1)))<sp/>:<sp/>T<sp/>(1);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">T,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">...<sp/>Cs&gt;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160" refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a98cbcae8bfc4a2d2f27487d1b2e641b7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a98cbcae8bfc4a2d2f27487d1b2e641b7" kindref="member">num</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>-&gt;<sp/>T</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Assume<sp/>all<sp/>are<sp/>digits<sp/>or<sp/>dot<sp/>or<sp/>apostrophe.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal"><sp/>(</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((Cs<sp/>==<sp/></highlight><highlight class="charliteral">&apos;.&apos;</highlight><highlight class="normal"><sp/>or<sp/>Cs<sp/>==<sp/></highlight><highlight class="charliteral">&apos;\&apos;&apos;</highlight><highlight class="normal"><sp/>or<sp/>(Cs<sp/>&gt;=<sp/></highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal"><sp/>and<sp/>Cs<sp/>&lt;=<sp/></highlight><highlight class="charliteral">&apos;9&apos;</highlight><highlight class="normal">))<sp/>and<sp/>...));</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/>result{};</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>c<sp/>:<sp/>{<sp/>Cs...<sp/>})</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(c<sp/>==<sp/></highlight><highlight class="charliteral">&apos;.&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(c<sp/>&gt;=<sp/></highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal"><sp/>and<sp/>c<sp/>&lt;=<sp/></highlight><highlight class="charliteral">&apos;9&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">T</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal"><sp/>(result<sp/>*<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">T</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal"><sp/>(10)</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">T</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal"><sp/>(c<sp/>-<sp/></highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">T,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">...<sp/>Cs&gt;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200" refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a1006429dba18038662409138f5754952" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a1006429dba18038662409138f5754952" kindref="member">den</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>-&gt;<sp/>T</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array<sp/>cs{<sp/>Cs...<sp/>};</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/>result{};</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0u;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(cs[i++]<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;.&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>i;<sp/>j<sp/>&lt;<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">...(Cs);<sp/>++j)</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>+=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a5c22d85f0df63cc0504cbf4988173cd7" kindref="member">pow</ref><sp/>(T<sp/>(10),<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">...(Cs)<sp/>-<sp/>j)<sp/>*<sp/>T<sp/>(cs[j]<sp/>-<sp/></highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">T,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">...<sp/>Cs&gt;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233" refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a74757af775d3afa203b808e3f6642467" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a74757af775d3afa203b808e3f6642467" kindref="member">den_size</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>-&gt;<sp/>T</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array<sp/>cs{<sp/>Cs...<sp/>};</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/>i{};</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>push</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wconversion&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(cs[i++]<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;.&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>pop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>T<sp/>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">...(Cs))<sp/>-<sp/>i<sp/>+<sp/>T<sp/>(1);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Value_T&gt;</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="269" refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a3e243d7f77b8435e1433ccad9c603f98" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a74757af775d3afa203b808e3f6642467" kindref="member">den_size</ref><sp/>(Value_T<sp/>value)<sp/>-&gt;<sp/>T</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>precision<sp/>=<sp/>Value_T<sp/>(1e-7);</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/>result{};</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Value_T<sp/>tmp{};</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>*=<sp/>10;</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>push</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(__clang__)<sp/></highlight><highlight class="comment">//<sp/>GCC<sp/>only</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>ignored<sp/>&quot;-Warith-conversion&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__clang__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>clang<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wimplicit-int-float-conversion&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmp<sp/>=<sp/>value<sp/>-<sp/>T<sp/>(value);</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>pop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++result;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(tmp<sp/>&gt;<sp/>precision);</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>math</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>micro_os_plus::micro_test_plus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>pop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_TEST_PLUS_MATH_INLINES_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h"/>
+  </compounddef>
+</doxygen>

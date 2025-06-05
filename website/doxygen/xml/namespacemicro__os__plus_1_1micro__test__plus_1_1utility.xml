@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="namespacemicro__os__plus_1_1micro__test__plus_1_1utility" kind="namespace" language="C++">
+    <compoundname>micro_os_plus::micro_test_plus::utility</compoundname>
+    <sectiondef kind="func">
+      <member refid="group__micro-test-plus-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" kind="function"><name>is_match</name></member>
+      <member refid="group__micro-test-plus-utility-functions_1ga1b860aa64be17658d1664de447e6e125" kind="function"><name>split</name></member>
+    </sectiondef>
+    <briefdescription>
+<para>Utility functions for the µTest++ testing framework. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1utility" kindref="compound">micro_os_plus::micro_test_plus::utility</ref></computeroutput> namespace provides a suite of helper functions designed to support advanced string operations and other common tasks within the µTest++ framework.</para>
+<para>These utilities include functions for pattern matching—such as verifying whether a string matches a specified pattern—and for splitting strings into sub-strings based on delimiters. The implementations are efficient and suitable for both embedded and general C++ projects.</para>
+<para>By encapsulating these helper functions within a dedicated namespace, the framework maintains clear code organisation and minimises naming conflicts. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" line="277" column="1"/>
+  </compounddef>
+</doxygen>

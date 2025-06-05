@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="group__micro-test-plus-logical-functions" kind="group">
+    <compoundname>micro-test-plus-logical-functions</compoundname>
+    <title>Logical Functions</title>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__micro-test-plus-logical-functions_1ga8b43b7658b43fb76daf5efbb2e03d236" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::_and</definition>
+        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <name>_and</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_and</qualifiedname>
+        <param>
+          <type>const Lhs_T &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const Rhs_T &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Generic logical <bold>and</bold> operation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An object that evaluates to true if both operand expressions are true.</para>
+</simplesect>
+The <computeroutput>_and</computeroutput> function template provides a generic logical conjunction for any expression types. It constructs a logical conjunction object that can be used within the µTest++ framework to assert that both given conditions are true. This function is typically used in test expectations and assertions to combine logical expressions or custom comparators.</para>
+<para>The underscore in the function name is intentional to differentiate it from the standard logical and operator. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="288" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="288" bodyend="291" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="287" declcolumn="3"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-logical-functions_1gad9ad936174faf965cffe4493e2b64cf0" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Expr_T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::_not</definition>
+        <argsstring>(const Expr_T &amp;expr)</argsstring>
+        <name>_not</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_not</qualifiedname>
+        <param>
+          <type>const Expr_T &amp;</type>
+          <declname>expr</declname>
+        </param>
+        <briefdescription>
+<para>Generic logical <bold>not</bold> operation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Expr_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">expr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Logical expression to be negated. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An object that evaluates to true if the operand is false.</para>
+</simplesect>
+The <computeroutput>_not</computeroutput> function template provides a generic logical negation for any expression type. It constructs a logical negator object that can be used within the µTest++ framework to assert that a given condition is false. This function is typically used in test expectations and assertions to invert logical expressions or custom comparators.</para>
+<para>The underscore in the function name is intentional to differentiate it from the standard logical not operator. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="270" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="270" bodyend="273" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="271" declcolumn="3"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-logical-functions_1gad32b40e4b0022b276fa3b357b98a33c5" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::_or</definition>
+        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <name>_or</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_or</qualifiedname>
+        <param>
+          <type>const Lhs_T &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const Rhs_T &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Generic logical <bold>or</bold> operation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An object that evaluates to true if at least one of the operand expressions is true.</para>
+</simplesect>
+The <computeroutput>_or</computeroutput> function template provides a generic logical disjunction for any expression types. It constructs a logical disjunction object that can be used within the µTest++ framework to assert that at least one of the given conditions is true. This function is typically used in test expectations and assertions to combine logical expressions or custom comparators.</para>
+<para>The underscore in the function name is intentional to differentiate it from the standard logical or operator. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="306" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="306" bodyend="309" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="303" declcolumn="3"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Functions used to compose logical expressions in tests. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The µTest++ framework provides logical functions for composing complex test expressions within a single statement. The functions <computeroutput>mt::_and()</computeroutput>, <computeroutput>mt::_or()</computeroutput>, and <computeroutput>mt::_not()</computeroutput> enable the combination of multiple conditions, allowing for expressive and concise test logic.</para>
+<para>These function names are prefixed with an underscore because <computeroutput>and</computeroutput>, <computeroutput>or</computeroutput>, and <computeroutput>not</computeroutput> are reserved keywords in both C and C++. By using these logical functions, developers can clearly express compound conditions and improve the readability of their test cases.</para>
+<para><simplesect kind="par"><title>Example</title><para></para>
+</simplesect>
+<programlisting filename=".cpp"><codeline><highlight class="normal">mt::expect(mt::_and<sp/>(mt::eq<sp/>(compute_answer<sp/>(),<sp/>42),<sp/>mt::eq<sp/>(compute_float</highlight></codeline>
+<codeline><highlight class="normal">(),<sp/>42.0)));</highlight></codeline>
+</programlisting></para>
+<para>When the operands are function comparators, it is recommended to use the overloaded logical operators <computeroutput>&amp;&amp;</computeroutput>, <computeroutput>||</computeroutput>, and <computeroutput>!</computeroutput> provided within the <computeroutput>micro_test_plus::operators</computeroutput> namespace for even more natural expression of logical conditions.  </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

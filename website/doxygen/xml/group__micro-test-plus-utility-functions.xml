@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="group__micro-test-plus-utility-functions" kind="group">
+    <compoundname>micro-test-plus-utility-functions</compoundname>
+    <title>Utility Functions</title>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__micro-test-plus-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::utility::is_match</definition>
+        <argsstring>(std::string_view input, std::string_view pattern)</argsstring>
+        <name>is_match</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::utility::is_match</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>std::string_view</type>
+          <declname>pattern</declname>
+        </param>
+        <briefdescription>
+<para>Check if a string matches a pattern. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string view to be checked. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pattern</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string view containing the pattern to match. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if the input string matches the pattern; otherwise, <computeroutput>false</computeroutput>.</para>
+</simplesect>
+This function enables pattern-based string comparison for tests, supporting both exact matches and wildcard patterns. The pattern may include <computeroutput>*</computeroutput> to match any sequence of characters and <computeroutput>?</computeroutput> to match any single character. This allows for flexible validation of string content in test assertions, accommodating variable or partially known values.</para>
+<para><simplesect kind="par"><title>Examples</title><para></para>
+</simplesect>
+<programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">mt::expect<sp/>(mt::utility::is_match<sp/>(</highlight><highlight class="stringliteral">&quot;abc&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;a?c&quot;</highlight><highlight class="normal">))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;abc<sp/>matches<sp/>a?c&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">mt::expect<sp/>(mt::utility::is_match<sp/>(</highlight><highlight class="stringliteral">&quot;abc&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;a*c&quot;</highlight><highlight class="normal">))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;abc<sp/>matches<sp/>a*c&quot;</highlight><highlight class="normal">;</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/micro-test-plus.cpp" line="171" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/micro-test-plus.cpp" bodystart="171" bodyend="203" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" declline="306" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-utility-functions_1ga00ea8f3dfb7cb0ef39919065321cf62f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>T &amp;</type>
+        <definition>T &amp; micro_os_plus::micro_test_plus::mut</definition>
+        <argsstring>(const T &amp;t) noexcept</argsstring>
+        <name>mut</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::mut</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Generic mutator to remove const qualification from any type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the input object.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object from which to remove const qualification. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A non-const reference to the input object.</para>
+</simplesect>
+The <computeroutput>mut</computeroutput> function template provides a safe and generic mechanism to remove the <computeroutput>const</computeroutput> qualifier from any type. It returns a non-const reference to the input object, enabling modification of objects that were originally declared as <computeroutput>const</computeroutput>. This utility is particularly useful in testing scenarios where controlled mutation of test data is required. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="321" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="321" bodyend="324" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="316" declcolumn="3"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-utility-functions_1ga1b860aa64be17658d1664de447e6e125" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class Delim_T</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; T &gt;</type>
+        <definition>std::vector&lt; T &gt; micro_os_plus::micro_test_plus::utility::split</definition>
+        <argsstring>(T input, Delim_T delim)</argsstring>
+        <name>split</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::utility::split</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>Delim_T</type>
+          <declname>delim</declname>
+        </param>
+        <briefdescription>
+<para>Split a string into a vector of sub-strings. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the input string. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Delim_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the delimiter.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input string to split. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">delim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Delimiter string. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A vector containing the resulting sub-strings.</para>
+</simplesect>
+This function template facilitates string handling in tests by splitting a string into a vector of substrings, using the specified delimiter.</para>
+<para>The function iterates through the input string, identifying delimiter positions and extracting substrings between them. Each resulting substring is added to the output vector. This approach supports flexible parsing of delimited data, which is particularly useful for validating string processing logic in test cases.</para>
+<para><simplesect kind="par"><title>Example</title><para></para>
+</simplesect>
+<programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">mt::expect<sp/>(std::vector&lt;std::string_view&gt;{<sp/></highlight><highlight class="stringliteral">&quot;a&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;b&quot;</highlight><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>==<sp/>mt::utility::split&lt;std::string_view&gt;<sp/>(</highlight><highlight class="stringliteral">&quot;a.b&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;a.b<sp/>splits<sp/>into<sp/>[a,b]&quot;</highlight><highlight class="normal">;</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines.h" line="275" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines.h" bodystart="275" bodyend="293" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" declline="321" declcolumn="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Utility functions for advanced string handling in tests. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The µTest++ framework includes a collection of utility functions designed to simplify advanced string operations commonly required during test development. These functions support tasks such as partial string matching, splitting long strings for improved readability, and other manipulations that enhance the clarity and effectiveness of test code.  </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

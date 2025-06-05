@@ -1,0 +1,667 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="group__micro-test-plus-operators" kind="group">
+    <compoundname>micro-test-plus-operators</compoundname>
+    <title>Operators</title>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__micro-test-plus-operators_1ga6f792d4a05a9b4e2e5b15c21905639f4" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+          <param>
+            <type>type_traits::requires_t&lt; type_traits::is_op_v&lt; Lhs_T &gt; or type_traits::is_op_v&lt; Rhs_T &gt; &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::operators::operator and</definition>
+        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <name>operator and</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::operators::operator and</qualifiedname>
+        <param>
+          <type>const Lhs_T &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const Rhs_T &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Logical <computeroutput>&amp;&amp;</computeroutput> (and) operator. Matches only if at least one operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A logical conjunction object that evaluates to true if both operands are true.</para>
+</simplesect>
+This overload of the logical <computeroutput>&amp;&amp;</computeroutput> (and) operator enables conjunction between two operands, where at least one is a local type derived from the local <computeroutput>op</computeroutput> base. It constructs a logical conjunction object that can be used within the µTest++ framework to assert that both operands evaluate to true. This operator is intended for use with the framework&apos;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="431" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="431" bodyend="434"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-operators_1ga76287e126ef9eaf3039d970d70f3a436" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>type_traits::requires_t&lt; type_traits::is_op_v&lt; T &gt; &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::operators::operator not</definition>
+        <argsstring>(const T &amp;t)</argsstring>
+        <name>operator not</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::operators::operator not</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Logical <computeroutput>!</computeroutput> (not) operator. Matches only if the operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the operand, constrained to types derived from the local <computeroutput>op</computeroutput> base.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Operand to be logically negated. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A logical negator object that evaluates to true if the operand is false.</para>
+</simplesect>
+This overload of the logical <computeroutput>!</computeroutput> (not) operator enables logical negation of an operand, provided it is a local type derived from the local <computeroutput>op</computeroutput> base. It constructs a logical negator object that can be used within the µTest++ framework to assert that a given condition is false. This operator is intended for use with the framework&apos;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="491" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="491" bodyend="494"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-operators_1gaaad46363338988f9080425b0d327b779" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+          <param>
+            <type>type_traits::requires_t&lt; type_traits::is_op_v&lt; Lhs_T &gt; or type_traits::is_op_v&lt; Rhs_T &gt; &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::operators::operator or</definition>
+        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <name>operator or</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::operators::operator or</qualifiedname>
+        <param>
+          <type>const Lhs_T &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const Rhs_T &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Logical <computeroutput>||</computeroutput> (or) operator. Matches only if at least one operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A logical disjunction object that evaluates to true if at least one operand is true.</para>
+</simplesect>
+This overload of the logical <computeroutput>||</computeroutput> (or) operator enables disjunction between two operands, where at least one is a local type derived from the local <computeroutput>op</computeroutput> base. It constructs a logical disjunction object that can be used within the µTest++ framework to assert that at least one operand evaluates to true. This operator is intended for use with the framework&apos;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="463" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="463" bodyend="466"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-operators_1gae2090b8535bb7860e6104347b2d9f4e6" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+          <param>
+            <type>type_traits::requires_t&lt; type_traits::is_op_v&lt; Lhs_T &gt; or type_traits::is_op_v&lt; Rhs_T &gt; &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::operators::operator!=</definition>
+        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <name>operator!=</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::operators::operator!=</qualifiedname>
+        <param>
+          <type>const Lhs_T &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const Rhs_T &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Non-equality operator for custom types. Matches only if at least one operand is of local type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the operands are not equal.</para>
+</simplesect>
+This overload of the non-equality operator enables comparison between two operands, where at least one is a local type derived from the local <computeroutput>op</computeroutput> base. It constructs a comparator object that can be used within the µTest++ framework to assert that the operands are not equal. This operator is intended for use with the framework&apos;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="269" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="269" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-operators_1gad934faf2be89b200f4d286c26c043a29" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+          <param>
+            <type>type_traits::requires_t&lt; type_traits::is_op_v&lt; Lhs_T &gt; or type_traits::is_op_v&lt; Rhs_T &gt; &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::operators::operator&lt;</definition>
+        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <name>operator&lt;</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::operators::operator&lt;</qualifiedname>
+        <param>
+          <type>const Lhs_T &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const Rhs_T &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Less than operator. Matches only if at least one operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side operand is less than the right hand side operand.</para>
+</simplesect>
+This overload of the less than operator enables comparison between two operands, where at least one is a local type derived from the local <computeroutput>op</computeroutput> base. It constructs a comparator object that can be used within the µTest++ framework to assert that the left hand side operand is less than the right hand side operand. This operator is intended for use with the framework&apos;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="365" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="366" bodyend="369"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-operators_1ga7862426cbe47cb764473e8bc9f49c0a9" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+          <param>
+            <type>type_traits::requires_t&lt; type_traits::is_op_v&lt; Lhs_T &gt; or type_traits::is_op_v&lt; Rhs_T &gt; &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::operators::operator&lt;=</definition>
+        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <name>operator&lt;=</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::operators::operator&lt;=</qualifiedname>
+        <param>
+          <type>const Lhs_T &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const Rhs_T &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Less than or equal operator. Matches only if at least one operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side operand is less than or equal to the right hand side operand.</para>
+</simplesect>
+This overload of the less than or equal operator enables comparison between two operands, where at least one is a local type derived from the local <computeroutput>op</computeroutput> base. It constructs a comparator object that can be used within the µTest++ framework to assert that the left hand side operand is less than or equal to the right hand side operand. This operator is intended for use with the framework&apos;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="398" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="399" bodyend="402"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-operators_1ga26bc1232c48df9b79463025f66da5f1f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+          <param>
+            <type>type_traits::requires_t&lt; type_traits::is_op_v&lt; Lhs_T &gt; or type_traits::is_op_v&lt; Rhs_T &gt; &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::operators::operator==</definition>
+        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <name>operator==</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::operators::operator==</qualifiedname>
+        <param>
+          <type>const Lhs_T &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const Rhs_T &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Equality operator for custom types. Matches only if at least one operand is of local type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the operands are equal.</para>
+</simplesect>
+This overload of the equality operator enables comparison between two operands, where at least one is a local type derived from the local <computeroutput>op</computeroutput> base. It constructs a comparator object that can be used within the µTest++ framework to assert that the operands are equal. This operator is intended for use with the framework&apos;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="237" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="237" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-operators_1gabd2a0c082adee2dbdd69043ba8d34dcd" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+          <param>
+            <type>type_traits::requires_t&lt; type_traits::is_op_v&lt; Lhs_T &gt; or type_traits::is_op_v&lt; Rhs_T &gt; &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::operators::operator&gt;</definition>
+        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <name>operator&gt;</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::operators::operator&gt;</qualifiedname>
+        <param>
+          <type>const Lhs_T &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const Rhs_T &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Greater than operator. Matches only if at least one operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side operand is greater than the right hand side operand.</para>
+</simplesect>
+This overload of the greater than operator enables comparison between two operands, where at least one is a local type derived from the local <computeroutput>op</computeroutput> base. It constructs a comparator object that can be used within the µTest++ framework to assert that the left hand side operand is greater than the right hand side operand. This operator is intended for use with the framework&apos;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="301" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="301" bodyend="304"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-operators_1ga676092b57233f1137778ee9c38e24a46" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+          <param>
+            <type>type_traits::requires_t&lt; type_traits::is_op_v&lt; Lhs_T &gt; or type_traits::is_op_v&lt; Rhs_T &gt; &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::operators::operator&gt;=</definition>
+        <argsstring>(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</argsstring>
+        <name>operator&gt;=</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::operators::operator&gt;=</qualifiedname>
+        <param>
+          <type>const Lhs_T &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const Rhs_T &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Greater than or equal operator. Matches only if at least one operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side operand is greater than or equal to the right hand side operand.</para>
+</simplesect>
+This overload of the greater than or equal operator enables comparison between two operands, where at least one is a local type derived from the local <computeroutput>op</computeroutput> base. It constructs a comparator object that can be used within the µTest++ framework to assert that the left hand side operand is greater than or equal to the right hand side operand. This operator is intended for use with the framework&apos;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="334" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="334" bodyend="337"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Overloaded operators for expressive test comparisons. </para>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="group__micro-test-plus-operators_1autotoc_md8_1s1"><sect2 id="group__micro-test-plus-operators_1autotoc_md8">
+<title>Description</title><para>The µTest++ framework provides overloaded comparison and logical operators to enable expressive and type-safe test assertions. These operators—such as <computeroutput>==</computeroutput>, <computeroutput>!=</computeroutput>, <computeroutput>&lt;</computeroutput>, <computeroutput>&gt;</computeroutput>, <computeroutput>&lt;=</computeroutput>, and <computeroutput>&gt;=</computeroutput>—are defined within the dedicated <computeroutput>micro_test_plus::operators</computeroutput> namespace to avoid conflicts with application-defined operators.</para>
+<para>For standard values, the default operators are used, ensuring correct comparisons. However, when using the specialised µTest++ operators with typed operands, failed checks will display both the actual and expected values, greatly improving the clarity of test reports.</para>
+<para>These operators are restricted to operands derived from the local <computeroutput>detail::op</computeroutput> type. For constant values, this is achieved using provided literals (e.g., <computeroutput>1_i</computeroutput>), while dynamic values can be wrapped using casts such as <computeroutput>mt::to_i{expression}</computeroutput>.</para>
+<para>Logical operators (<computeroutput>&amp;&amp;</computeroutput>, <computeroutput>||</computeroutput>, <computeroutput>!</computeroutput>) are also supported and provide enhanced functionality when used with typed operands, allowing for the composition of complex test conditions in a natural and readable manner.</para>
+<para><simplesect kind="par"><title>Examples</title><para></para>
+</simplesect>
+<programlisting filename=".cpp"><codeline><highlight class="normal">mt::test_case<sp/>(</highlight><highlight class="stringliteral">&quot;Operators&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">micro_test_plus::operators;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">micro_test_plus::literals;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>mt::expect<sp/>(compute_answer<sp/>()<sp/>==<sp/>42_i)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>42<sp/>(with<sp/>literal)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>mt::expect<sp/>(mt::to_i<sp/>{compute_answer<sp/>()}<sp/>==<sp/>42)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>42<sp/>(with</highlight></codeline>
+<codeline><highlight class="stringliteral">cast)&quot;</highlight><highlight class="normal">;<sp/>mt::expect<sp/>(compute_answer<sp/>()<sp/>!=<sp/>43_i)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>not<sp/>43&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>mt::expect<sp/>(compute_answer<sp/>()<sp/>&lt;<sp/>43_i)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&lt;<sp/>43&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>mt::expect<sp/>(compute_answer<sp/>()<sp/>&lt;=<sp/>43_i)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&lt;=<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>mt::expect<sp/>(compute_answer<sp/>()<sp/>&gt;<sp/>41_i)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&gt;<sp/>43&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>mt::expect<sp/>(compute_answer<sp/>()<sp/>&gt;=<sp/>42_i)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&gt;=<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">});</highlight></codeline>
+</programlisting></para>
+<sect3 id="group__micro-test-plus-operators_1autotoc_md9">
+<title>Logical operators</title><para>Logical operators may be used in the same way as standard operators, with enhanced reporting available when used with typed operands.</para>
+<para><simplesect kind="par"><title>Example</title><para></para>
+</simplesect>
+<programlisting filename=".cpp"><codeline><highlight class="normal">mt::expect<sp/>(compute_answer<sp/>()<sp/>==<sp/>42_i<sp/>&amp;&amp;<sp/>compute_float<sp/>()<sp/>==<sp/>42.0_f);</highlight></codeline>
+</programlisting>  </para>
+</sect3>
+</sect2></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

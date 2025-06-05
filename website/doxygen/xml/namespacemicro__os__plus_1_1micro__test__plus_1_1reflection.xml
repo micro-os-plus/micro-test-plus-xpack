@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection" kind="namespace" language="C++">
+    <compoundname>micro_os_plus::micro_test_plus::reflection</compoundname>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" prot="public">micro_os_plus::micro_test_plus::reflection::source_location</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1ab4fa1159ebe60ce5fe073eefbe9a2446" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * micro_os_plus::micro_test_plus::reflection::short_name</definition>
+        <argsstring>(const char *name)</argsstring>
+        <name>short_name</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::reflection::short_name</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Extract a short type or function name from a fully qualified name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fully qualified name as a C-string. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to the short name within the input string.</para>
+</simplesect>
+This function extracts the short name from a given file path by locating the final folder separator (&apos;/&apos;). If a separator is found, it returns a pointer to the character immediately following it, effectively providing the file or folder name. If no separator is present, the original input string is returned. This utility is useful for reporting concise file or folder names in test output. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/micro-test-plus.cpp" line="128" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/micro-test-plus.cpp" bodystart="128" bodyend="140" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" declline="198" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>std::string_view</type>
+        <definition>std::string_view micro_os_plus::micro_test_plus::reflection::type_name</definition>
+        <argsstring>(void)</argsstring>
+        <name>type_name</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::reflection::type_name</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Extract the type name from the <computeroutput>__PRETTY_FUNCTION__</computeroutput> macro. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function template parses the compiler-specific <computeroutput>__PRETTY_FUNCTION__</computeroutput> macro to extract a concise type name for the template parameter <computeroutput>T</computeroutput>.</para>
+<para>The implementation is compiler-dependent and may require adjustment for different toolchains. It is primarily intended for internal use within the µTest++ framework to support improved diagnostics and reporting.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type whose name is to be extracted.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>A <computeroutput>std::string_view</computeroutput> containing the extracted type name. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" line="133" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" bodystart="133" bodyend="150" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" declline="213" declcolumn="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Reflection utilities for the µTest++ testing framework. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <computeroutput>reflection</computeroutput> namespace provides facilities for obtaining source location information and type names at compile time, thereby supporting advanced reporting and diagnostics within the µTest++ framework.</para>
+<para>It includes a local implementation of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" kindref="compound">source_location</ref></computeroutput> for environments lacking C++20 standard support, as well as utilities for extracting concise type names from compiler-specific macros such as <computeroutput>__PRETTY_FUNCTION__</computeroutput>.</para>
+<para>All definitions within this namespace are intended to facilitate advanced reflection and reporting capabilities. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" line="76" column="3"/>
+  </compounddef>
+</doxygen>

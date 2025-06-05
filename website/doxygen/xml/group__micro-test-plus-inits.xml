@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="group__micro-test-plus-inits" kind="group">
+    <compoundname>micro-test-plus-inits</compoundname>
+    <title>Initialisation &amp; Exit</title>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__micro-test-plus-inits_1gaa790667969dc1a261c324e89a6ea4591" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int micro_os_plus::micro_test_plus::exit_code</definition>
+        <argsstring>(void)</argsstring>
+        <name>exit_code</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::exit_code</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Complete the test run and return the exit code. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>0 if all tests were successful, 1 if any test failed.</para>
+</simplesect>
+In addition to the test cases defined in <computeroutput>main()</computeroutput>, additional test suites may be declared as static objects either within the same file or in other files, and are automatically registered via the static constructors mechanism.</para>
+<para>The <computeroutput>exit_code</computeroutput> function finalises the execution of all registered test suites and test cases within the µTest++ framework, and returns an appropriate exit code to the operating system. This function should be called at the end of the test program, typically from the <computeroutput>main()</computeroutput> function, to ensure that all results are properly reported and the correct status is communicated.</para>
+<para>The returned value indicates the overall success or failure of the test run, allowing integration with build systems and continuous integration environments. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/micro-test-plus.cpp" line="108" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/micro-test-plus.cpp" bodystart="108" bodyend="111" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" declline="170" declcolumn="3"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-inits_1gac2c60d60578f668878957ec68a37538f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::initialize</definition>
+        <argsstring>(int argc, char *argv[], const char *name=&quot;Main&quot;)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::initialize</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+          <defval>&quot;Main&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Initialise the µTest++ framework. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">argc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of command-line arguments. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">argv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of pointers to null-terminated argument strings. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the default test suite. Defaults to <computeroutput>&quot;Main&quot;</computeroutput> if not specified. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+The <computeroutput>initialize</computeroutput> function sets up the µTest++ testing framework, preparing it for test execution. It processes command-line arguments, configures the test environment, and establishes the default test suite name. This function should be called at the beginning of the test programme, typically from the <computeroutput>main()</computeroutput> function, to ensure proper initialisation of all framework components.</para>
+<para>The provided arguments may be used to configure verbosity or other run-time options for the test session. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/micro-test-plus.cpp" line="81" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/micro-test-plus.cpp" bodystart="81" bodyend="87" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" declline="159" declcolumn="3"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Functions for initialising the framework and returning an exit code. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>These functions are responsible for initialising the test runner and returning the test result as the process exit code. Proper initialisation ensures that the µTest++ framework is correctly configured to manage and execute test cases, while the exit code reflects the overall outcome of the tests, supporting integration with automated build and continuous integration systems.</para>
+<para>The simplest test consists of a single test case containing a single expectation; for example:</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="preprocessor">#include<sp/>&lt;<ref refid="micro-test-plus_8h" kindref="compound">micro-os-plus/micro-test-plus.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">main(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>argv[])</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>mt::initialize(argc,<sp/>argv,<sp/></highlight><highlight class="stringliteral">&quot;Minimal&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>mt::test_case<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>truth&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mt::expect<sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>})</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mt::exit_code<sp/>();</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para>When this test is executed, the output is as follows:</para>
+<para><programlisting filename=".console"><codeline><highlight class="normal">•<sp/>Minimal<sp/>-<sp/>test<sp/>suite<sp/>started</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>✓<sp/>Check<sp/>truth<sp/>-<sp/>test<sp/>case<sp/>passed<sp/>(1<sp/>check)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">✓<sp/>Minimal<sp/>-<sp/>test<sp/>suite<sp/>passed<sp/>(1<sp/>check<sp/>in<sp/>1<sp/>test<sp/>case)</highlight></codeline>
+</programlisting>  </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

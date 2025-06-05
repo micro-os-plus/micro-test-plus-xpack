@@ -1,0 +1,391 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classmicro__os__plus_1_1micro__test__plus_1_1test__runner" kind="class" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::test_runner</compoundname>
+    <includes refid="micro-test-plus_8h" local="no">micro-os-plus/micro-test-plus.h</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a4caf0986c9b9fedb37ad486eabfa88fc" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int micro_os_plus::micro_test_plus::test_runner::argc_</definition>
+        <argsstring></argsstring>
+        <name>argc_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_runner::argc_</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Stores the argument count passed to the test runner. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-runner.h" line="198" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-runner.h" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a08b3a57d4f802d3aa1a1af02856c460d" prot="protected" static="no" mutable="no">
+        <type>char **</type>
+        <definition>char** micro_os_plus::micro_test_plus::test_runner::argv_</definition>
+        <argsstring></argsstring>
+        <name>argv_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_runner::argv_</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>Stores the argument vector passed to the test runner. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-runner.h" line="203" column="10" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-runner.h" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1af60fbb3e376f27b801c30ce6c7a01808" prot="protected" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* micro_os_plus::micro_test_plus::test_runner::default_suite_name_</definition>
+        <argsstring></argsstring>
+        <name>default_suite_name_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_runner::default_suite_name_</qualifiedname>
+        <initializer>= &quot;Test&quot;</initializer>
+        <briefdescription>
+<para>The name of the default test suite. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-runner.h" line="208" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-runner.h" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a637b06becc3677c2180f022cc4c363e8" prot="protected" static="no" mutable="no">
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base" kindref="compound">test_suite_base</ref> *</type>
+        <definition>test_suite_base* micro_os_plus::micro_test_plus::test_runner::default_test_suite_</definition>
+        <argsstring></argsstring>
+        <name>default_test_suite_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_runner::default_test_suite_</qualifiedname>
+        <briefdescription>
+<para>Pointer to the default test suite which groups the main tests. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-runner.h" line="213" column="21" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-runner.h" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a299cdb1bee2322ec60f4ebb463c1e513" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base" kindref="compound">test_suite_base</ref> * &gt; *</type>
+        <definition>std::vector&lt;test_suite_base*&gt;* micro_os_plus::micro_test_plus::test_runner::suites_</definition>
+        <argsstring></argsstring>
+        <name>suites_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_runner::suites_</qualifiedname>
+        <briefdescription>
+<para>Pointer to the array of registered test suites. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Statically initialised to zero as BSS, such that test suites defined as static objects in different compilation units can be automatically executed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-runner.h" line="223" column="17" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-runner.h" bodystart="223" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a3e2fdf09d6a1cbd52b2189fcdf12aabf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::micro_test_plus::test_runner::test_runner</definition>
+        <argsstring>()</argsstring>
+        <name>test_runner</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_runner::test_runner</qualifiedname>
+        <briefdescription>
+<para>Default constructor for the <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner" kindref="compound">test_runner</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The rule of five is enforced to prevent accidental copying or moving.</para>
+<para>The constructor initialises a new instance of the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner" kindref="compound">test_runner</ref></computeroutput> class, preparing the test runner for managing test suites and cases within the µTest++ framework. If tracing is enabled, it outputs the function signature for diagnostic purposes. This setup ensures the test runner is ready to coordinate the registration, execution, and reporting of tests across all test cases and folders. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-runner.h" line="105" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/test-runner.cpp" bodystart="72" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a84abdee67279e9a07a68fa01c523ff14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::micro_test_plus::test_runner::test_runner</definition>
+        <argsstring>(const test_runner &amp;)=delete</argsstring>
+        <name>test_runner</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_runner::test_runner</qualifiedname>
+        <param>
+          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner" kindref="compound">test_runner</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted copy constructor to prevent copying. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-runner.h" line="110" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a307ecef3a7db19a095ea3202fc5e9d65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::micro_test_plus::test_runner::test_runner</definition>
+        <argsstring>(test_runner &amp;&amp;)=delete</argsstring>
+        <name>test_runner</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_runner::test_runner</qualifiedname>
+        <param>
+          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner" kindref="compound">test_runner</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted move constructor to prevent moving. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-runner.h" line="115" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a4e9d9c95479a6e8eab60c69a27f4ba91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::micro_test_plus::test_runner::~test_runner</definition>
+        <argsstring>()=default</argsstring>
+        <name>~test_runner</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_runner::~test_runner</qualifiedname>
+        <briefdescription>
+<para>Destructor for the <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner" kindref="compound">test_runner</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-runner.h" line="134" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a18956cfdcc2edfb043029a06e8d9c51a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::test_runner::abort</definition>
+        <argsstring>(void)</argsstring>
+        <name>abort</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_runner::abort</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Aborts test execution immediately. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+This method immediately terminates the process by invoking the standard C library <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a18956cfdcc2edfb043029a06e8d9c51a" kindref="member">abort()</ref></computeroutput> function. It is used to halt test execution in critical failure scenarios, ensuring that no further tests are run and that the cause of the failure can be promptly investigated. This approach provides a robust mechanism for enforcing strict test outcomes across all test cases and folders. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-runner.h" line="192" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/test-runner.cpp" bodystart="255" bodyend="258"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a86233d8241e398f9491d859b4097c851" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int micro_os_plus::micro_test_plus::test_runner::exit_code</definition>
+        <argsstring>(void)</argsstring>
+        <name>exit_code</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_runner::exit_code</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Returns 0 if all tests were successful, 1 otherwise. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>Integer exit code representing the overall test result. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-runner.h" line="157" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/test-runner.cpp" bodystart="190" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a882aa5687209359ae0313efe44f10053" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::test_runner::initialize</definition>
+        <argsstring>(int argc, char *argv[], const char *name)</argsstring>
+        <name>initialize</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_runner::initialize</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Initialises the test runner with command-line arguments and an optional suite name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>argc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The argument count from main(). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>argv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The argument vector from main(). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the default test suite. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+This method initialises the test runner by capturing the command-line arguments and the default test suite name, configuring the framework for subsequent test execution. It parses the arguments to determine the desired verbosity level (normal, verbose, quiet, or silent) and applies this setting to the test reporter. The method also outputs build and environment information when appropriate, aiding diagnostics and transparency. Finally, it creates and registers the default test suite, preparing the framework to manage and execute all test cases and suites across the project’s folders. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-runner.h" line="147" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/test-runner.cpp" bodystart="96" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a44ee9f03f3d9a974ba36730eee6f9d9a" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * micro_os_plus::micro_test_plus::test_runner::name</definition>
+        <argsstring>(void)</argsstring>
+        <name>name</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_runner::name</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Retrieves the name of the default test suite. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The name of the default test suite as a constant character pointer. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-runner.h" line="178" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-runner.h" bodystart="178" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a287fcb294f40d116c6497efbc2c366c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner" kindref="compound">test_runner</ref> &amp;</type>
+        <definition>test_runner &amp; micro_os_plus::micro_test_plus::test_runner::operator=</definition>
+        <argsstring>(const test_runner &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_runner::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner" kindref="compound">test_runner</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted copy assignment operator to prevent copying. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-runner.h" line="121" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1ab56971215ea9b94e854deb442c4c3a2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner" kindref="compound">test_runner</ref> &amp;</type>
+        <definition>test_runner &amp; micro_os_plus::micro_test_plus::test_runner::operator=</definition>
+        <argsstring>(test_runner &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_runner::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner" kindref="compound">test_runner</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted move assignment operator to prevent moving. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-runner.h" line="128" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1aa71d653414cf5872a441d483fdf829c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::test_runner::register_test_suite</definition>
+        <argsstring>(test_suite_base *suite)</argsstring>
+        <name>register_test_suite</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::test_runner::register_test_suite</qualifiedname>
+        <param>
+          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base" kindref="compound">test_suite_base</ref> *</type>
+          <declname>suite</declname>
+        </param>
+        <briefdescription>
+<para>Registers a test suite with the runner. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>suite</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the test suite to register. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+This method registers a new test suite with the test runner. If the internal collection of test suites has not yet been created, it is initialised at this point. The provided test suite is then added to the collection, enabling the framework to manage and execute multiple test suites across different files and folders within the project.</para>
+<para>Called by test suite constructors to register themselves with the runner, enabling automatic management and execution. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-runner.h" line="167" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/test-runner.cpp" bodystart="232" bodyend="243"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The test runner for the µTest++ framework. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner" kindref="compound">test_runner</ref></computeroutput> class is responsible for managing the registration and execution of test suites within the µTest++ framework. It maintains a collection of test suites, each of which registers itself automatically upon construction, enabling seamless integration and execution of tests across different components and folders of a project.</para>
+<para>The test runner provides methods for initialising the test environment, registering test suites, retrieving the runner&apos;s name, and determining the overall test result via an exit code. It also offers an abort mechanism for terminating test execution in exceptional circumstances.</para>
+<para>All members and methods are defined within the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref></computeroutput> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>micro_os_plus::micro_test_plus::test_runner</label>
+        <link refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>default_test_suite_</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>micro_os_plus::micro_test_plus::test_suite_base</label>
+        <link refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-runner.h" line="96" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-runner.h" bodystart="97" bodyend="224"/>
+    <listofallmembers>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a18956cfdcc2edfb043029a06e8d9c51a" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_runner</scope><name>abort</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a4caf0986c9b9fedb37ad486eabfa88fc" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_runner</scope><name>argc_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a08b3a57d4f802d3aa1a1af02856c460d" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_runner</scope><name>argv_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1af60fbb3e376f27b801c30ce6c7a01808" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_runner</scope><name>default_suite_name_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a637b06becc3677c2180f022cc4c363e8" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_runner</scope><name>default_test_suite_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a86233d8241e398f9491d859b4097c851" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_runner</scope><name>exit_code</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a882aa5687209359ae0313efe44f10053" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_runner</scope><name>initialize</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a44ee9f03f3d9a974ba36730eee6f9d9a" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_runner</scope><name>name</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a287fcb294f40d116c6497efbc2c366c3" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_runner</scope><name>operator=</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1ab56971215ea9b94e854deb442c4c3a2e" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_runner</scope><name>operator=</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1aa71d653414cf5872a441d483fdf829c1" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_runner</scope><name>register_test_suite</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a299cdb1bee2322ec60f4ebb463c1e513" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_runner</scope><name>suites_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a3e2fdf09d6a1cbd52b2189fcdf12aabf" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_runner</scope><name>test_runner</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a84abdee67279e9a07a68fa01c523ff14" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_runner</scope><name>test_runner</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a307ecef3a7db19a095ea3202fc5e9d65" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_runner</scope><name>test_runner</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a4e9d9c95479a6e8eab60c69a27f4ba91" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::test_runner</scope><name>~test_runner</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

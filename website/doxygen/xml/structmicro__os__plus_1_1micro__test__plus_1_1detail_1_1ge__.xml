@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge__" kind="struct" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::detail::ge_</compoundname>
+    <basecompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::type_traits::op</basecompoundref>
+    <includes refid="micro-test-plus_8h" local="no">micro-os-plus/micro-test-plus.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class Lhs_T</type>
+      </param>
+      <param>
+        <type>class Rhs_T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge___1a2418635d0546033776f5468fae9edd3d" prot="public" static="no" mutable="no">
+        <type>const Lhs_T</type>
+        <definition>const Lhs_T micro_os_plus::micro_test_plus::detail::ge_&lt; Lhs_T, Rhs_T &gt;::lhs_</definition>
+        <argsstring></argsstring>
+        <name>lhs_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::ge_::lhs_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+<para>Stores the left-hand operand. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="839" column="19" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="839" bodyend="839"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge___1ac42617839c81070fed0e8960b3b5f980" prot="public" static="no" mutable="no">
+        <type>const Rhs_T</type>
+        <definition>const Rhs_T micro_os_plus::micro_test_plus::detail::ge_&lt; Lhs_T, Rhs_T &gt;::rhs_</definition>
+        <argsstring></argsstring>
+        <name>rhs_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::ge_::rhs_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+<para>Stores the right-hand operand. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="844" column="19" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="844" bodyend="844"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge___1afbc7c85bac94188bf478b9d88b12bb11" prot="public" static="no" mutable="no">
+        <type>const bool</type>
+        <definition>const bool micro_os_plus::micro_test_plus::detail::ge_&lt; Lhs_T, Rhs_T &gt;::value_</definition>
+        <argsstring></argsstring>
+        <name>value_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::ge_::value_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+<para>Stores the result of the greater than or equal comparison. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="849" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="849" bodyend="849"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge___1a75e4626f1ff8024c4d90ab3e545be62f" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>micro_os_plus::micro_test_plus::detail::ge_&lt; Lhs_T, Rhs_T &gt;::ge_</definition>
+        <argsstring>(const Lhs_T &amp;lhs={}, const Rhs_T &amp;rhs={})</argsstring>
+        <name>ge_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::ge_::ge_</qualifiedname>
+        <param>
+          <type>const Lhs_T &amp;</type>
+          <declname>lhs</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
+          <type>const Rhs_T &amp;</type>
+          <declname>rhs</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+<para>Constructs a greater than or equal comparator for the given operands. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The left-hand operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The right-hand operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Evaluates whether the left-hand operand is greater than or equal to the right-hand operand at construction, supporting static values and generic types. The result is stored in the <computeroutput>value_</computeroutput> member for efficient access. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="752" column="17" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="752" bodyend="780"/>
+      </memberdef>
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge___1ae541f34511a2005eb12af8dda905e497" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::detail::ge_&lt; Lhs_T, Rhs_T &gt;::lhs</definition>
+        <argsstring>(void) const</argsstring>
+        <name>lhs</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::ge_::lhs</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Retrieves the left-hand operand. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The extracted left-hand operand.</para>
+</simplesect>
+Returns the value of the left-hand operand, applying the generic getter to ensure correct extraction for both custom and standard types. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="813" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="813" bodyend="816"/>
+      </memberdef>
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge___1ac44f473624560442bde250eb13dfdae6" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>micro_os_plus::micro_test_plus::detail::ge_&lt; Lhs_T, Rhs_T &gt;::operator bool</definition>
+        <argsstring>() const</argsstring>
+        <name>operator bool</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::ge_::operator bool</qualifiedname>
+        <briefdescription>
+<para>Conversion operator to boolean. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>true</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The left-hand operand is greater than or equal to the right-hand operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>false</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Otherwise.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Returns the result of the greater than or equal comparison. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="795" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="795" bodyend="798"/>
+      </memberdef>
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge___1a4ff1ed92d8ed883866127c3fcab9c9f5" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::detail::ge_&lt; Lhs_T, Rhs_T &gt;::rhs</definition>
+        <argsstring>(void) const</argsstring>
+        <name>rhs</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::ge_::rhs</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Retrieves the right-hand operand. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The extracted right-hand operand.</para>
+</simplesect>
+Returns the value of the right-hand operand, applying the generic getter to ensure correct extraction for both custom and standard types. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="831" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="831" bodyend="834"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Greater than or equal comparator struct template. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the left-hand operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the right-hand operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge__" kindref="compound">ge_</ref></computeroutput> struct template provides a type-safe mechanism for evaluating whether the left-hand operand is greater than or equal to the right-hand operand within the framework.</para>
+<para>This comparator supports a variety of operand types, including those with static values and generic types. For types with static values, the comparison is performed directly. For all other types, the generic getter is used to retrieve and compare the values.</para>
+<para>The implementation is optimised for use in embedded environments and supports both compile-time and run-time evaluation.</para>
+<para>All definitions are intended for internal use within the framework and are implemented in the <computeroutput>include/micro-os-plus</computeroutput> folder to maintain a structured and modular codebase. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>micro_os_plus::micro_test_plus::detail::ge_&lt; Lhs_T, Rhs_T &gt;</label>
+        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge__"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>micro_os_plus::micro_test_plus::type_traits::op</label>
+        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>micro_os_plus::micro_test_plus::detail::ge_&lt; Lhs_T, Rhs_T &gt;</label>
+        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge__"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>micro_os_plus::micro_test_plus::type_traits::op</label>
+        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="737" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="738" bodyend="850"/>
+    <listofallmembers>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge___1a75e4626f1ff8024c4d90ab3e545be62f" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::ge_</scope><name>ge_</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge___1ae541f34511a2005eb12af8dda905e497" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::ge_</scope><name>lhs</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge___1a2418635d0546033776f5468fae9edd3d" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::ge_</scope><name>lhs_</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge___1ac44f473624560442bde250eb13dfdae6" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::ge_</scope><name>operator bool</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge___1a4ff1ed92d8ed883866127c3fcab9c9f5" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::ge_</scope><name>rhs</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge___1ac42617839c81070fed0e8960b3b5f980" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::ge_</scope><name>rhs_</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge___1afbc7c85bac94188bf478b9d88b12bb11" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::ge_</scope><name>value_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

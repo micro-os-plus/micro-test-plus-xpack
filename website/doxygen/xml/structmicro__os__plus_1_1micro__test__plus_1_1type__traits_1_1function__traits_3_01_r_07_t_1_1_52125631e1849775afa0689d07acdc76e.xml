@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_52125631e1849775afa0689d07acdc76e" kind="struct" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(T::*)(Args_T...) const &gt;</compoundname>
+    <includes refid="micro-test-plus_8h" local="no">micro-os-plus/micro-test-plus.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class R</type>
+      </param>
+      <param>
+        <type>class T</type>
+      </param>
+      <param>
+        <type>class...</type>
+        <declname>Args_T</declname>
+        <defname>Args_T</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_52125631e1849775afa0689d07acdc76e_1a6a6bb2b3c72d75ae76a082278c7086da" prot="public" static="no">
+        <type><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1list" kindref="compound">list</ref>&lt; Args_T... &gt;</type>
+        <definition>using micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(T::*)(Args_T...) const &gt;::args =  list&lt;Args_T...&gt;</definition>
+        <argsstring></argsstring>
+        <name>args</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(T::*)(Args_T...) const &gt;::args</qualifiedname>
+        <briefdescription>
+<para>Type list of all argument types. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="314" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="314" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_52125631e1849775afa0689d07acdc76e_1a19bf7a6150e7a0a8615fd74fda001d97" prot="public" static="no">
+        <type>R</type>
+        <definition>using micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(T::*)(Args_T...) const &gt;::result_type =  R</definition>
+        <argsstring></argsstring>
+        <name>result_type</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(T::*)(Args_T...) const &gt;::result_type</qualifiedname>
+        <briefdescription>
+<para>The return type of the const member function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="309" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="309" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Struct template specialisation for extracting function traits from const member function types. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>R</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The return type of the const member function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The class type to which the member function belongs. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...Args_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The argument types of the const member function.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This specialisation of the <computeroutput>function_traits</computeroutput> struct template provides compile-time introspection for const member function types. It exposes the return type and argument types of a const member function, enabling advanced template metaprogramming and type deduction within the µTest++ framework.</para>
+<para>The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_52125631e1849775afa0689d07acdc76e_1a19bf7a6150e7a0a8615fd74fda001d97" kindref="member">result_type</ref></computeroutput> member defines the return type of the const member function, while the <computeroutput>args</computeroutput> member is a type list containing all argument types. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="304" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="305" bodyend="315"/>
+    <listofallmembers>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_52125631e1849775afa0689d07acdc76e_1a6a6bb2b3c72d75ae76a082278c7086da" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(T::*)(Args_T...) const &gt;</scope><name>args</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_52125631e1849775afa0689d07acdc76e_1a19bf7a6150e7a0a8615fd74fda001d97" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(T::*)(Args_T...) const &gt;</scope><name>result_type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

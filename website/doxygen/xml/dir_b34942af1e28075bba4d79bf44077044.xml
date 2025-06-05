@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="dir_b34942af1e28075bba4d79bf44077044" kind="dir">
+    <compoundname>inlines</compoundname>
+    <innerfile refid="details-inlines_8h">details-inlines.h</innerfile>
+    <innerfile refid="function-comparators-inlines_8h">function-comparators-inlines.h</innerfile>
+    <innerfile refid="literals-inlines_8h">literals-inlines.h</innerfile>
+    <innerfile refid="math-inlines_8h">math-inlines.h</innerfile>
+    <innerfile refid="micro-test-plus-inlines_8h">micro-test-plus-inlines.h</innerfile>
+    <innerfile refid="reflection-inlines_8h">reflection-inlines.h</innerfile>
+    <innerfile refid="test-reporter-inlines_8h">test-reporter-inlines.h</innerfile>
+    <innerfile refid="test-suite-inlines_8h">test-suite-inlines.h</innerfile>
+    <briefdescription>
+<para>Folder with C++ header files with inline implementations for the µTest++ Testing Framework. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <computeroutput>include/micro-os-plus/micro-test-plus/inlines</computeroutput> folder contains C++ header files providing the inline implementations for the µTest++ Testing Framework. These headers define the logic for core framework components, including function comparators, literals, mathematical utilities, reflection utilities, test reporters, test runners, and test suites.</para>
+<para>By separating inline implementations from their corresponding declarations, this structure promotes modularity, clarity, and maintainability within the codebase. All inline definitions are designed to be lightweight and efficient, supporting both embedded and general C++ development.</para>
+<para>The contents of this folder are intended solely for internal use within the framework and should not be included directly by user code.  </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/"/>
+  </compounddef>
+</doxygen>

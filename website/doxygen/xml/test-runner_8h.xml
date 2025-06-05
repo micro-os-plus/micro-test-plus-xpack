@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="test-runner_8h" kind="file" language="C++">
+    <compoundname>test-runner.h</compoundname>
+    <includes local="no">functional</includes>
+    <includedby refid="micro-test-plus_8h" local="yes">micro-test-plus.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>test-runner.h</label>
+        <link refid="test-runner_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>functional</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>micro-test-plus.h</label>
+        <link refid="micro-test-plus_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>test-runner.h</label>
+        <link refid="test-runner_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>micro-test-plus.cpp</label>
+        <link refid="micro-test-plus_8cpp"/>
+      </node>
+      <node id="4">
+        <label>test-reporter.cpp</label>
+        <link refid="test-reporter_8cpp"/>
+      </node>
+      <node id="5">
+        <label>test-runner.cpp</label>
+        <link refid="test-runner_8cpp"/>
+      </node>
+      <node id="6">
+        <label>test-suite.cpp</label>
+        <link refid="test-suite_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner" prot="public">micro_os_plus::micro_test_plus::test_runner</innerclass>
+    <innernamespace refid="namespacemicro__os__plus">micro_os_plus</innernamespace>
+    <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus">micro_os_plus::micro_test_plus</innernamespace>
+    <briefdescription>
+<para>C++ header file with declarations for the µTest++ test runner. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This header provides the declarations for the test runner facilities used within the µTest++ framework. It defines the interface for managing the registration and execution of test suites, supporting automated discovery and orchestration of tests across a project.</para>
+<para>The test runner is responsible for initialising the test environment, registering test suites, managing command-line arguments, and determining the overall test result via an exit code. It also provides mechanisms for aborting test execution and retrieving the default suite name.</para>
+<para>All definitions reside within the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref></computeroutput> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.</para>
+<para>The header files are organised within the <computeroutput>include/micro-os-plus/micro-test-plus</computeroutput> folder to maintain a structured and modular codebase.</para>
+<para>This file is intended solely for internal use within the framework and should not be included directly by user code. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>µOS++<sp/>project<sp/>(https://micro-os-plus.github.io/).</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2021<sp/>Liviu<sp/>Ionescu.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Permission<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>and/or<sp/>distribute<sp/>this<sp/>software</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>for<sp/>any<sp/>purpose<sp/>is<sp/>hereby<sp/>granted,<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>MIT<sp/>license.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>If<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>license<sp/>was<sp/>not<sp/>distributed<sp/>with<sp/>this<sp/>file,<sp/>it<sp/>can</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>be<sp/>obtained<sp/>from<sp/>https://opensource.org/licenses/mit.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Major<sp/>parts<sp/>of<sp/>the<sp/>code<sp/>are<sp/>inspired<sp/>from<sp/>v1.1.8<sp/>of<sp/>the<sp/>Boost<sp/>UT<sp/>project,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>released<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>Boost<sp/>Version<sp/>1.0<sp/>Software<sp/>License,</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>which<sp/>can<sp/>be<sp/>obtained<sp/>from<sp/>https://www.boost.org/LICENSE_1_0.txt.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MICRO_TEST_PLUS_TEST_RUNNER_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MICRO_TEST_PLUS_TEST_RUNNER_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>push</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wpadded&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__clang__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>clang<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wc++98-compat&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref></highlight></codeline>
+<codeline lineno="67"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Forward<sp/>definition.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base" kindref="compound">test_suite_base</ref>;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a3e2fdf09d6a1cbd52b2189fcdf12aabf" kindref="member">test_runner</ref></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a3e2fdf09d6a1cbd52b2189fcdf12aabf" kindref="member">test_runner</ref><sp/>();</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a84abdee67279e9a07a68fa01c523ff14" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a84abdee67279e9a07a68fa01c523ff14" kindref="member">test_runner</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a3e2fdf09d6a1cbd52b2189fcdf12aabf" kindref="member">test_runner</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a307ecef3a7db19a095ea3202fc5e9d65" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a307ecef3a7db19a095ea3202fc5e9d65" kindref="member">test_runner</ref><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a3e2fdf09d6a1cbd52b2189fcdf12aabf" kindref="member">test_runner</ref>&amp;&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a3e2fdf09d6a1cbd52b2189fcdf12aabf" kindref="member">test_runner</ref>&amp;</highlight></codeline>
+<codeline lineno="121" refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a287fcb294f40d116c6497efbc2c366c3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a287fcb294f40d116c6497efbc2c366c3" kindref="member">operator= </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a3e2fdf09d6a1cbd52b2189fcdf12aabf" kindref="member">test_runner</ref>&amp;)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a3e2fdf09d6a1cbd52b2189fcdf12aabf" kindref="member">test_runner</ref>&amp;</highlight></codeline>
+<codeline lineno="128" refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1ab56971215ea9b94e854deb442c4c3a2e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a287fcb294f40d116c6497efbc2c366c3" kindref="member">operator= </ref>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a3e2fdf09d6a1cbd52b2189fcdf12aabf" kindref="member">test_runner</ref>&amp;&amp;)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a4e9d9c95479a6e8eab60c69a27f4ba91" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a4e9d9c95479a6e8eab60c69a27f4ba91" kindref="member">~test_runner</ref><sp/>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a882aa5687209359ae0313efe44f10053" kindref="member">initialize</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>argv[],<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a44ee9f03f3d9a974ba36730eee6f9d9a" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a86233d8241e398f9491d859b4097c851" kindref="member">exit_code</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1aa71d653414cf5872a441d483fdf829c1" kindref="member">register_test_suite</ref><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base" kindref="compound">test_suite_base</ref>*<sp/>suite);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*</highlight></codeline>
+<codeline lineno="178" refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a44ee9f03f3d9a974ba36730eee6f9d9a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a44ee9f03f3d9a974ba36730eee6f9d9a" kindref="member">name</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1af60fbb3e376f27b801c30ce6c7a01808" kindref="member">default_suite_name_</ref>;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>[[noreturn]]<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a18956cfdcc2edfb043029a06e8d9c51a" kindref="member">abort</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="198" refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a4caf0986c9b9fedb37ad486eabfa88fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a4caf0986c9b9fedb37ad486eabfa88fc" kindref="member">argc_</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203" refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a08b3a57d4f802d3aa1a1af02856c460d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a08b3a57d4f802d3aa1a1af02856c460d" kindref="member">argv_</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208" refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1af60fbb3e376f27b801c30ce6c7a01808" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1af60fbb3e376f27b801c30ce6c7a01808" kindref="member">default_suite_name_</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Test&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213" refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a637b06becc3677c2180f022cc4c363e8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base" kindref="compound">test_suite_base</ref>*<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a637b06becc3677c2180f022cc4c363e8" kindref="member">default_test_suite_</ref>;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223" refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a299cdb1bee2322ec60f4ebb463c1e513" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;test_suite_base*&gt;*<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a299cdb1bee2322ec60f4ebb463c1e513" kindref="member">suites_</ref>;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>micro_os_plus::micro_test_plus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>pop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_TEST_PLUS_TEST_RUNNER_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-runner.h"/>
+  </compounddef>
+</doxygen>

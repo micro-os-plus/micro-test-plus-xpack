@@ -1,0 +1,311 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter" kind="class" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::detail::deferred_reporter</compoundname>
+    <basecompoundref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::detail::deferred_reporter_base</basecompoundref>
+    <includes refid="micro-test-plus_8h" local="no">micro-os-plus/micro-test-plus.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class Expr_T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aa36fd4c36a94b04430599303e38a48bd" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::detail::deferred_reporter_base::abort_</definition>
+        <argsstring></argsstring>
+        <name>abort_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::deferred_reporter_base::abort_</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Indicates whether the reporting should abort further processing. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1801" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1801" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1a9535950f3f91d792f4347d08f8dd154e" prot="protected" static="no" mutable="no">
+        <type>const Expr_T</type>
+        <definition>const Expr_T micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::expr_</definition>
+        <argsstring></argsstring>
+        <name>expr_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::deferred_reporter::expr_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+<para>Stores the expression under evaluation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1864" column="20" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1864" bodyend="1864"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a025498d9b9376056c56042cc98ed7afd" prot="protected" static="no" mutable="no">
+        <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" kindref="compound">reflection::source_location</ref></type>
+        <definition>const reflection::source_location micro_os_plus::micro_test_plus::detail::deferred_reporter_base::location_</definition>
+        <argsstring></argsstring>
+        <name>location_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::deferred_reporter_base::location_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+<para>Stores the source location associated with the report. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1806" column="41" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1806" bodyend="1806"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aa12bdce872a0994d70be146507834cf1" prot="protected" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string micro_os_plus::micro_test_plus::detail::deferred_reporter_base::message_</definition>
+        <argsstring></argsstring>
+        <name>message_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::deferred_reporter_base::message_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+<para>String to collect the expectation message passed via <computeroutput>operator&lt;&lt;()</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1812" column="19" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1812" bodyend="1812"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1af633053afa944173b47482786f9d9a7e" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::detail::deferred_reporter_base::value_</definition>
+        <argsstring></argsstring>
+        <name>value_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::deferred_reporter_base::value_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+<para>Stores the result value of the report. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1795" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1795" bodyend="1795"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1a3e7dc16ad866722075fc1b1ac8fa6701" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::deferred_reporter</definition>
+        <argsstring>(const Expr_T &amp;expr, bool abort, const reflection::source_location &amp;location)</argsstring>
+        <name>deferred_reporter</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::deferred_reporter::deferred_reporter</qualifiedname>
+        <param>
+          <type>const Expr_T &amp;</type>
+          <declname>expr</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>abort</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" kindref="compound">reflection::source_location</ref> &amp;</type>
+          <declname>location</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a deferred reporter for a specific expression. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>expr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The expression under evaluation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>abort</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Indicates whether reporting should abort further processing. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>location</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The source location relevant to the report.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Initialises the reporter with the given expression, abort status, and source location.</para>
+<para>This constructor initialises a deferred reporter for a specific expression, capturing the evaluation result, abort status, and source location.</para>
+<para>The expression is evaluated and its boolean result is passed to the base class. The abort flag determines whether further test execution should be halted if the expectation fails. The source location provides contextual information for reporting purposes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1851" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/details-inlines.h" bodystart="117" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1aa221de23c9bed6bc5844c077fbafa46b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::~deferred_reporter</definition>
+        <argsstring>()</argsstring>
+        <name>~deferred_reporter</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::deferred_reporter::~deferred_reporter</qualifiedname>
+        <briefdescription>
+<para>Destructor for the deferred reporter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The destructor finalises the deferred reporting process for a test expression. If the evaluated expression is true, the reporter records a successful outcome along with any accumulated message. If the expression is false, the reporter records a failure, including the abort status, message, and source location for comprehensive reporting.</para>
+<para>This mechanism ensures that all relevant information about the test outcome is captured and reported accurately when the deferred reporter goes out of scope. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1858" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/details-inlines.h" bodystart="142" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1ae90dacdedb65168453056c0787f88567" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>auto &amp;</type>
+        <definition>auto &amp; micro_os_plus::micro_test_plus::detail::deferred_reporter_base::operator&lt;&lt;</definition>
+        <argsstring>(const T &amp;msg)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::deferred_reporter_base::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+<para>Appends a message to the reporter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the message to append.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The message to append. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to the current reporter instance.</para>
+</simplesect>
+This operator overload enables the deferred reporter to accumulate expectation messages by appending the provided value to the internal message string.</para>
+<para>If the argument is of an arithmetic type, it is first converted to a string using <computeroutput>std::to_string</computeroutput> before being appended. For all other types, the value is appended directly. This ensures that both numeric and string-like messages are handled appropriately and consistently. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1770" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/details-inlines.h" bodystart="90" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a0e4cca7c6f1d63789683f3b6a7f647ea" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::detail::deferred_reporter_base::value</definition>
+        <argsstring>() const</argsstring>
+        <name>value</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::deferred_reporter_base::value</qualifiedname>
+        <briefdescription>
+<para>Retrieves the result value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>true</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reported condition was met. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>false</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reported condition was not met.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Returns the result value associated with the report. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1786" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1786" bodyend="1789"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Deferred reporter class template for a specific expression. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Expr_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the expression being reported.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+The <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter" kindref="compound">deferred_reporter</ref></computeroutput> class template extends <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base" kindref="compound">deferred_reporter_base</ref></computeroutput> to provide deferred reporting functionality for a specific test expression within the framework.</para>
+<para>This class template is responsible for capturing the expression under evaluation, the abort status, and the source location. It is intended exclusively for internal use and is implemented in the <computeroutput>include/micro-os-plus/micro-test-plus</computeroutput> folder to ensure a structured and modular codebase. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;</label>
+        <link refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>micro_os_plus::micro_test_plus::detail::deferred_reporter_base</label>
+        <link refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;</label>
+        <link refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>micro_os_plus::micro_test_plus::detail::deferred_reporter_base</label>
+        <link refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>location_</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>micro_os_plus::micro_test_plus::reflection::source_location</label>
+        <link refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location"/>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1836" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1837" bodyend="1865"/>
+    <listofallmembers>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aa36fd4c36a94b04430599303e38a48bd" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::deferred_reporter</scope><name>abort_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1a3e7dc16ad866722075fc1b1ac8fa6701" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::deferred_reporter</scope><name>deferred_reporter</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aba23fdd1c24e8232712ba47b8e107a19" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::deferred_reporter</scope><name>deferred_reporter_base</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1a9535950f3f91d792f4347d08f8dd154e" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::deferred_reporter</scope><name>expr_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a025498d9b9376056c56042cc98ed7afd" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::deferred_reporter</scope><name>location_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aa12bdce872a0994d70be146507834cf1" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::deferred_reporter</scope><name>message_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1ae90dacdedb65168453056c0787f88567" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::deferred_reporter</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a0e4cca7c6f1d63789683f3b6a7f647ea" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::deferred_reporter</scope><name>value</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1af633053afa944173b47482786f9d9a7e" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::deferred_reporter</scope><name>value_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1aa221de23c9bed6bc5844c077fbafa46b" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::deferred_reporter</scope><name>~deferred_reporter</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a3a8503e793c807cbb882033cc5ff2831" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::deferred_reporter</scope><name>~deferred_reporter_base</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

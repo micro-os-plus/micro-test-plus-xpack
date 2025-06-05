@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="group__micro-test-plus" kind="group">
+    <compoundname>micro-test-plus</compoundname>
+    <title>µTest++</title>
+    <innergroup refid="group__micro-test-plus-cpp-api">C++ API</innergroup>
+    <innergroup refid="group__micro-test-plus-c-api">C API</innergroup>
+    <innergroup refid="group__micro-test-plus-cli">Command Line Options</innergroup>
+    <briefdescription>
+<para>Topics related to the µTest++ testing framework. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>µTest++ is a modern C++ source code library that provides a lightweight and efficient testing framework, purpose-built for embedded systems development.</para>
+<para>The framework offers a clean and expressive C++ API, enabling developers to write, organise, and execute unit tests with minimal overhead. µTest++ supports advanced features such as test suites, test cases, and detailed reporting, all tailored to the unique requirements of embedded environments.</para>
+<para>Test output verbosity can be finely controlled via command-line options, allowing users to select the level of detail most appropriate for their workflow, from concise summaries to comprehensive diagnostic information.</para>
+<para>By integrating µTest++ into your project, you can ensure robust and maintainable code through systematic and automated testing, supporting professional software engineering practices across all files and folders.  </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d" kind="struct" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;</compoundname>
+    <basecompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::type_traits::op</basecompoundref>
+    <basecompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::type_traits::op</basecompoundref>
+    <includes refid="micro-test-plus_8h" local="no">micro-os-plus/micro-test-plus.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d_1a108d4b1685f4283960cb9129e53acf2f" prot="public" static="no">
+        <type>T</type>
+        <definition>using micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;::value_type =  T</definition>
+        <argsstring></argsstring>
+        <name>value_type</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;::value_type</qualifiedname>
+        <briefdescription>
+<para>The type of the encapsulated value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="1056" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="1056" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d_1aa597918c8b3e5b9d4d237c2566893f8f" prot="public" static="yes" mutable="no">
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;::epsilon</definition>
+        <argsstring></argsstring>
+        <name>epsilon</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;::epsilon</qualifiedname>
+        <initializer>= T{}</initializer>
+        <briefdescription>
+<para>The epsilon value used for floating point comparisons. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This static inline member defines the precision for comparisons. It can be set explicitly via the constructor or computed as a default based on the number of decimal digits in the value. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="1066" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="1066" bodyend="1066"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d_1a6e339e618808050e46eb71eecb8a1d85" prot="public" static="no" mutable="no">
+        <type>T</type>
+        <definition>T micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;::value_</definition>
+        <argsstring></argsstring>
+        <name>value_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;::value_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+<para>The encapsulated floating point value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="1129" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="1129" bodyend="1129"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d_1ab84ad7a2b8027a68e0760109636044df" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;::value</definition>
+        <argsstring>(const T &amp;_value, const T precision)</argsstring>
+        <name>value</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;::value</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>_value</declname>
+        </param>
+        <param>
+          <type>const T</type>
+          <declname>precision</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a floating point value with a specified precision. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The floating point value to be stored. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>precision</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The epsilon value to be used for comparisons. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="1074" column="17" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="1074" bodyend="1077"/>
+      </memberdef>
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d_1a43ccaa9fd86190e5605605ceced840f7" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;::value</definition>
+        <argsstring>(const T &amp;val)</argsstring>
+        <name>value</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;::value</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a floating point value with default precision. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The floating point value to be stored.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+The epsilon is computed as 1 divided by 10 raised to the number of decimal digits in the value. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="1088" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="1088" bodyend="1094"/>
+      </memberdef>
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d_1a8d14413aec3672c392962a7b3419cb25" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>decltype(auto)</type>
+        <definition>decltype(auto) micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;::get</definition>
+        <argsstring>(void) const</argsstring>
+        <name>get</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;::get</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Getter for the encapsulated value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The value of type <computeroutput>T</computeroutput>.</para>
+</simplesect>
+Returns the stored floating point value. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="1121" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="1121" bodyend="1124"/>
+      </memberdef>
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d_1a5609792d50cef8d63061faee1af7bcf9" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="yes" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;::operator T</definition>
+        <argsstring>() const</argsstring>
+        <name>operator T</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;::operator T</qualifiedname>
+        <briefdescription>
+<para>Explicit conversion operator to the underlying value type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The stored value as type <computeroutput>T</computeroutput>.</para>
+</simplesect>
+Allows explicit conversion to the encapsulated floating point value. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="1105" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="1105" bodyend="1108"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Struct template representing a floating point value with precision control. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The floating point type to be encapsulated.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+The <computeroutput>value</computeroutput> struct template specialisation for floating point types encapsulates a value of type <computeroutput>T</computeroutput> and provides an associated <computeroutput>epsilon</computeroutput> for precision control during comparisons. It inherits from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op" kindref="compound">type_traits::op</ref></computeroutput> to enable unified handling within the µTest++ framework&apos;s type traits and metaprogramming utilities.</para>
+<para>This struct template exposes the value via a member variable, a getter method, and an explicit conversion operator. The <computeroutput>epsilon</computeroutput> member defines the precision used for floating point comparisons and can be set explicitly or computed as a default based on the number of decimal digits in the value.</para>
+<para>This specialisation is intended for use cases where floating point values require controlled precision, supporting advanced template metaprogramming and type-safe comparisons within the framework. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>micro_os_plus::micro_test_plus::type_traits::op</label>
+        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op"/>
+      </node>
+      <node id="1">
+        <label>micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;</label>
+        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>micro_os_plus::micro_test_plus::type_traits::op</label>
+        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op"/>
+      </node>
+      <node id="1">
+        <label>micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;</label>
+        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="1049" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="1052" bodyend="1130"/>
+    <listofallmembers>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d_1aa597918c8b3e5b9d4d237c2566893f8f" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;</scope><name>epsilon</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d_1a8d14413aec3672c392962a7b3419cb25" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;</scope><name>get</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d_1a5609792d50cef8d63061faee1af7bcf9" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;</scope><name>operator T</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d_1ab84ad7a2b8027a68e0760109636044df" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;</scope><name>value</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d_1a43ccaa9fd86190e5605605ceced840f7" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;</scope><name>value</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d_1a6e339e618808050e46eb71eecb8a1d85" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;</scope><name>value_</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d_1a108d4b1685f4283960cb9129e53acf2f" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;</scope><name>value_type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

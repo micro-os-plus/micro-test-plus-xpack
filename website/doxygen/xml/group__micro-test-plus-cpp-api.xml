@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="group__micro-test-plus-cpp-api" kind="group">
+    <compoundname>micro-test-plus-cpp-api</compoundname>
+    <title>C++ API</title>
+    <innergroup refid="group__micro-test-plus-inits">Initialisation &amp; Exit</innergroup>
+    <innergroup refid="group__micro-test-plus-test-case">Test Cases</innergroup>
+    <innergroup refid="group__micro-test-plus-expectations">Expectations</innergroup>
+    <innergroup refid="group__micro-test-plus-assumptions">Assumptions</innergroup>
+    <innergroup refid="group__micro-test-plus-function-comparators">Function Comparators</innergroup>
+    <innergroup refid="group__micro-test-plus-logical-functions">Logical Functions</innergroup>
+    <innergroup refid="group__micro-test-plus-exceptions">Checking Exceptions</innergroup>
+    <innergroup refid="group__micro-test-plus-operators">Operators</innergroup>
+    <innergroup refid="group__micro-test-plus-string-operators">String Operators</innergroup>
+    <innergroup refid="group__micro-test-plus-container-operators">Container Operators</innergroup>
+    <innergroup refid="group__micro-test-plus-literals">Literals and Wrappers</innergroup>
+    <innergroup refid="group__micro-test-plus-utility-functions">Utility Functions</innergroup>
+    <innergroup refid="group__micro-test-plus-test-suites">Test Suites</innergroup>
+    <briefdescription>
+<para>Topics related to the µTest++ C++ API. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The µTest++ framework is built upon modern C++ standards, providing a robust and expressive API for defining and managing tests. Its design prioritises clarity and maintainability, offering a concise set of core primitives for verifying expectations and assumptions within test cases.</para>
+<para>Unlike many traditional frameworks, µTest++ avoids the use of preprocessor macros; all testing primitives are implemented directly in C++. This approach ensures type safety, improved readability, and seamless integration with contemporary C++ development practices.  </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

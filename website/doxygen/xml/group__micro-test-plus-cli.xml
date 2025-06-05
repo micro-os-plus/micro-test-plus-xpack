@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="group__micro-test-plus-cli" kind="group">
+    <compoundname>micro-test-plus-cli</compoundname>
+    <title>Command Line Options</title>
+    <briefdescription>
+<para>Options for controlling test output verbosity at run-time. </para>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="group__micro-test-plus-cli_1autotoc_md1_1s1"><sect2 id="group__micro-test-plus-cli_1autotoc_md1">
+<title>Description</title><para>The µTest++ framework provides flexible command-line options to control the verbosity of test output, allowing users to tailor the level of detail to their specific requirements and workflow.</para>
+<para>By default, the reporter presents detailed results only for failed test cases, while successful test cases are summarised in a single line, indicating the total number of passed and failed checks.</para>
+<para><simplesect kind="par"><title>Example</title><para></para>
+</simplesect>
+<programlisting filename=".console"><codeline><highlight class="normal">test<sp/>1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Start<sp/><sp/>1:<sp/>minimal-test</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1:<sp/>Test<sp/>command:</highlight></codeline>
+<codeline><highlight class="normal">/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test</highlight></codeline>
+<codeline><highlight class="normal">&quot;one&quot;<sp/>&quot;two&quot;<sp/>1:<sp/>Working<sp/>Directory:</highlight></codeline>
+<codeline><highlight class="normal">/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin</highlight></codeline>
+<codeline><highlight class="normal">1:<sp/>Test<sp/>timeout<sp/>computed<sp/>to<sp/>be:<sp/>10000000</highlight></codeline>
+<codeline><highlight class="normal">1:<sp/>Built<sp/>with<sp/>clang<sp/>Apple<sp/>LLVM<sp/>15.0.0<sp/>(clang-1500.0.40.1),<sp/>with<sp/>exceptions.</highlight></codeline>
+<codeline><highlight class="normal">1:</highlight></codeline>
+<codeline><highlight class="normal">1:<sp/>•<sp/>Minimal<sp/>-<sp/>test<sp/>suite<sp/>started</highlight></codeline>
+<codeline><highlight class="normal">1:</highlight></codeline>
+<codeline><highlight class="normal">1:<sp/><sp/><sp/>✓<sp/>Check<sp/>various<sp/>conditions<sp/>-<sp/>test<sp/>case<sp/>passed<sp/>(2<sp/>checks)</highlight></codeline>
+<codeline><highlight class="normal">1:</highlight></codeline>
+<codeline><highlight class="normal">1:<sp/>✓<sp/>Minimal<sp/>-<sp/>test<sp/>suite<sp/>passed<sp/>(2<sp/>checks<sp/>in<sp/>1<sp/>test<sp/>case)</highlight></codeline>
+<codeline><highlight class="normal"><sp/>1/12<sp/>Test<sp/><sp/>#1:<sp/>minimal-test<sp/>.....................<sp/><sp/><sp/>Passed<sp/><sp/><sp/><sp/>0.00<sp/>sec</highlight></codeline>
+</programlisting></para>
+</sect2></sect1>
+<sect1 id="group__micro-test-plus-cli_1autotoc_md2_1s1"><sect2 id="group__micro-test-plus-cli_1autotoc_md2">
+<title>Verbosity</title><para>To adjust the verbosity, the following command-line options are available:</para>
+<para><itemizedlist>
+<listitem><para><computeroutput>--verbose</computeroutput> – display all expectations, regardless of outcome</para>
+</listitem><listitem><para><computeroutput>--quiet</computeroutput> – display only the test suite totals</para>
+</listitem><listitem><para><computeroutput>--silent</computeroutput> – suppress all output and return only the exit code</para>
+</listitem></itemizedlist>
+</para>
+<para>These options enable developers to focus on the information most relevant to their needs, whether that is comprehensive diagnostics during development or succinct summaries for automated builds.</para>
+<para>The examples provided illustrate the output produced in each mode, demonstrating how µTest++ adapts its reporting to support professional and efficient testing workflows across all files and folders.</para>
+<para>The source code for this test is located in the <computeroutput>tests/src/minimal-test.cpp</computeroutput> file.</para>
+<sect3 id="group__micro-test-plus-cli_1autotoc_md3">
+<title>Verbose mode</title><para>In verbose mode, the µTest++ reporter provides detailed output for every expectation, irrespective of whether it passes or fails.</para>
+<para><simplesect kind="par"><title>Example</title><para></para>
+</simplesect>
+<programlisting filename=".console"><codeline><highlight class="normal">test<sp/>2</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Start<sp/><sp/>2:<sp/>minimal-test<sp/>--verbose</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2:<sp/>Test<sp/>command:</highlight></codeline>
+<codeline><highlight class="normal">/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test</highlight></codeline>
+<codeline><highlight class="normal">&quot;one&quot;<sp/>&quot;two&quot;<sp/>&quot;--verbose&quot;<sp/>2:<sp/>Working<sp/>Directory:</highlight></codeline>
+<codeline><highlight class="normal">/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin</highlight></codeline>
+<codeline><highlight class="normal">2:<sp/>Test<sp/>timeout<sp/>computed<sp/>to<sp/>be:<sp/>10000000</highlight></codeline>
+<codeline><highlight class="normal">2:<sp/>Built<sp/>with<sp/>clang<sp/>Apple<sp/>LLVM<sp/>15.0.0<sp/>(clang-1500.0.40.1),<sp/>with<sp/>exceptions.</highlight></codeline>
+<codeline><highlight class="normal">2:</highlight></codeline>
+<codeline><highlight class="normal">2:<sp/>•<sp/>Minimal<sp/>-<sp/>test<sp/>suite<sp/>started</highlight></codeline>
+<codeline><highlight class="normal">2:</highlight></codeline>
+<codeline><highlight class="normal">2:<sp/><sp/><sp/>•<sp/>Check<sp/>various<sp/>conditions<sp/>-<sp/>test<sp/>case<sp/>started</highlight></codeline>
+<codeline><highlight class="normal">2:<sp/><sp/><sp/><sp/><sp/>✓<sp/>answer<sp/>is<sp/>42</highlight></codeline>
+<codeline><highlight class="normal">2:<sp/><sp/><sp/><sp/><sp/>✓<sp/>condition<sp/>is<sp/>true</highlight></codeline>
+<codeline><highlight class="normal">2:<sp/><sp/><sp/>✓<sp/>Check<sp/>various<sp/>conditions<sp/>-<sp/>test<sp/>case<sp/>passed<sp/>(2<sp/>checks)</highlight></codeline>
+<codeline><highlight class="normal">2:</highlight></codeline>
+<codeline><highlight class="normal">2:<sp/>✓<sp/>Minimal<sp/>-<sp/>test<sp/>suite<sp/>passed<sp/>(2<sp/>checks<sp/>in<sp/>1<sp/>test<sp/>case)</highlight></codeline>
+<codeline><highlight class="normal"><sp/>2/12<sp/>Test<sp/><sp/>#2:<sp/>minimal-test<sp/>--verbose<sp/>...........<sp/><sp/><sp/>Passed<sp/><sp/><sp/><sp/>0.00<sp/>sec</highlight></codeline>
+</programlisting></para>
+</sect3>
+<sect3 id="group__micro-test-plus-cli_1autotoc_md4">
+<title>Quiet mode</title><para>In quiet mode, the µTest++ reporter displays only the overall totals for the test suite.</para>
+<para><simplesect kind="par"><title>Example</title><para></para>
+</simplesect>
+<programlisting filename=".console"><codeline><highlight class="normal">test<sp/>3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Start<sp/><sp/>3:<sp/>minimal-test<sp/>--quiet</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">3:<sp/>Test<sp/>command:</highlight></codeline>
+<codeline><highlight class="normal">/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test</highlight></codeline>
+<codeline><highlight class="normal">&quot;one&quot;<sp/>&quot;two&quot;<sp/>&quot;--quiet&quot;<sp/>3:<sp/>Working<sp/>Directory:</highlight></codeline>
+<codeline><highlight class="normal">/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin</highlight></codeline>
+<codeline><highlight class="normal">3:<sp/>Test<sp/>timeout<sp/>computed<sp/>to<sp/>be:<sp/>10000000</highlight></codeline>
+<codeline><highlight class="normal">3:</highlight></codeline>
+<codeline><highlight class="normal">3:<sp/>✓<sp/>Minimal<sp/>-<sp/>test<sp/>suite<sp/>passed<sp/>(2<sp/>checks<sp/>in<sp/>1<sp/>test<sp/>case)</highlight></codeline>
+<codeline><highlight class="normal"><sp/>3/12<sp/>Test<sp/><sp/>#3:<sp/>minimal-test<sp/>--quiet<sp/>.............<sp/><sp/><sp/>Passed<sp/><sp/><sp/><sp/>0.00<sp/>sec</highlight></codeline>
+</programlisting></para>
+</sect3>
+<sect3 id="group__micro-test-plus-cli_1autotoc_md5">
+<title>Silent mode</title><para>In silent mode, the µTest++ reporter suppresses all output, and the framework returns only the exit code.</para>
+<para><simplesect kind="par"><title>Example</title><para></para>
+</simplesect>
+<programlisting filename=".console"><codeline><highlight class="normal">test<sp/>4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Start<sp/><sp/>4:<sp/>minimal-test<sp/>--silent</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">4:<sp/>Test<sp/>command:</highlight></codeline>
+<codeline><highlight class="normal">/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test</highlight></codeline>
+<codeline><highlight class="normal">&quot;one&quot;<sp/>&quot;two&quot;<sp/>&quot;--silent&quot;<sp/>4:<sp/>Working<sp/>Directory:</highlight></codeline>
+<codeline><highlight class="normal">/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin</highlight></codeline>
+<codeline><highlight class="normal">4:<sp/>Test<sp/>timeout<sp/>computed<sp/>to<sp/>be:<sp/>10000000</highlight></codeline>
+<codeline><highlight class="normal">4:</highlight></codeline>
+<codeline><highlight class="normal"><sp/>4/12<sp/>Test<sp/><sp/>#4:<sp/>minimal-test<sp/>--silent<sp/>............<sp/><sp/><sp/>Passed<sp/><sp/><sp/><sp/>0.00<sp/>sec</highlight></codeline>
+</programlisting>   </para>
+</sect3>
+</sect2></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>
