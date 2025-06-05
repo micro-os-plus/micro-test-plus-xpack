@@ -1,8 +1,4 @@
-@defgroup micro-test-plus µTest++
-@ingroup micro-os-plus
-@brief Topics related to the µTest++ testing framework.
-
-@details
+@mainpage
 The @b µTest++ project is a **modern C++** library designed to provide a **lightweight and
 efficient** testing framework, purpose-built for embedded systems development.
 

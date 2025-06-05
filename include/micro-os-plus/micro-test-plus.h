@@ -50,25 +50,6 @@
  * µTest++ framework.
  */
 
-/**
- * @mainpage
- * µTest++ is a modern C++ library designed to provide a lightweight and
- * efficient testing framework, purpose-built for embedded systems development.
- *
- * With its clean and expressive C++ API, µTest++ enables developers to write,
- * organise, and execute unit tests with minimal overhead. The framework
- * includes advanced features such as test suites, test cases, and detailed
- * reporting, all tailored to meet the specific needs of embedded environments.
- *
- * Output verbosity is fully configurable via command-line options, allowing
- * users to choose between concise summaries and comprehensive diagnostic
- * information to best suit their workflow.
- *
- * By adopting µTest++, you can achieve robust and maintainable code through
- * systematic and automated testing, supporting professional software
- * engineering practices across your entire project.
- */
-
 #ifndef MICRO_TEST_PLUS_MICRO_TEST_PLUS_H_
 #define MICRO_TEST_PLUS_MICRO_TEST_PLUS_H_
 

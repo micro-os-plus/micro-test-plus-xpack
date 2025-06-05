@@ -15,6 +15,8 @@
 
 /**
 
+@include{doc} pages/mainpage.dox
+
 @include{doc} files-and-folders/topics-h.dox
 
 @include{doc} files-and-folders/include-micro-os-plus-micro-test-plus.dox
