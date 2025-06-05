@@ -12,7 +12,6 @@ keywords:
 
 ---
 
-import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
@@ -32,16 +31,17 @@ import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
 
 <DoxygenPage pluginConfig={pluginConfig}>
 
-Test cases are named sequences of checks. <Link to="#details">More...</Link>
+Test cases are named sequences of checks. <a href="#details">More...</a>
 
 ## Functions Index
 
 <MembersIndex>
 
 <MembersIndexItem
+  template={<>template &lt;typename Callable&#95;T, typename... Args&#95;T&gt;</>}
   type="void"
-  name={<><Link to="#ga423b46709cca6072efe28a6dbf85e413">test&#95;case</Link> (const char &#42;name, Callable&#95;T &amp;&amp;callable, Args&#95;T &amp;&amp;... arguments)</>}>
-Define and execute a test case. <Link to="#ga423b46709cca6072efe28a6dbf85e413">More...</Link>
+  name={<><a href="#ga423b46709cca6072efe28a6dbf85e413">test&#95;case</a> (const char &#42;name, Callable&#95;T &amp;&amp;callable, Args&#95;T &amp;&amp;... arguments)</>}>
+Define and execute a test case. <a href="#ga423b46709cca6072efe28a6dbf85e413">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -64,14 +64,14 @@ By grouping checks in this way, it becomes easier to identify which functionalit
 
 <ProgramListing extension="cpp">
 
-<CodeLine><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link>;</Highlight></CodeLine>
+<CodeLine><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</a>;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">mt::test&#95;case (</Highlight><Highlight kind="stringliteral">&quot;Check various conditions&quot;</Highlight><Highlight kind="normal">, [] &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">mt::test&#95;case (</Highlight><Highlight kind="stringliteral">&quot;Check various conditions&quot;</Highlight><Highlight kind="normal">, &#91;&#93; &#123;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">  mt::expect (mt::eq (compute&#95;answer (), 42)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer eq 42&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">  mt::expect (mt::ne (compute&#95;answer (), 43)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer ne 43&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">&#125;);</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">mt::test&#95;case (</Highlight><Highlight kind="stringliteral">&quot;Check various conditions with operators&quot;</Highlight><Highlight kind="normal">, [] &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">mt::test&#95;case (</Highlight><Highlight kind="stringliteral">&quot;Check various conditions with operators&quot;</Highlight><Highlight kind="normal">, &#91;&#93; &#123;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal">mt::operators;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal">mt::literals;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight></CodeLine>
@@ -93,8 +93,8 @@ By grouping checks in this way, it becomes easier to identify which functionalit
 Define and execute a test case.
 
 <ParametersList title="Template Parameters">
-<ParametersListItem name="Callable&#95;T">The type of the callable object to be executed as the test case.</ParametersListItem>
-<ParametersListItem name="Args&#95;T">The types of the arguments to be passed to the callable.</ParametersListItem>
+<ParametersListItem name="Callable_T">The type of the callable object to be executed as the test case.</ParametersListItem>
+<ParametersListItem name="Args_T">The types of the arguments to be passed to the callable.</ParametersListItem>
 </ParametersList>
 
 <ParametersList title="Parameters">
@@ -123,15 +123,15 @@ A test case is characterised by a name, a function that performs the checks, and
 
 <ProgramListing extension="cpp">
 
-<CodeLine><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link>;</Highlight></CodeLine>
+<CodeLine><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</a>;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">mt::test&#95;case (</Highlight><Highlight kind="stringliteral">&quot;Check answer with comparator&quot;</Highlight><Highlight kind="normal">, [] &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">mt::test&#95;case (</Highlight><Highlight kind="stringliteral">&quot;Check answer with comparator&quot;</Highlight><Highlight kind="normal">, &#91;&#93; &#123;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">  mt::expect (mt::eq (compute&#95;answer (), 42)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer is 42&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">&#125;);</Highlight></CodeLine>
 
 </ProgramListing>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines-h/#l00114">114</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines-h">micro-test-plus-inlines.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines-h/#l00114">114</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines-h">micro-test-plus-inlines.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>

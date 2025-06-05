@@ -12,7 +12,6 @@ keywords:
 
 ---
 
-import Link from '@docusaurus/Link'
 import CodeBlock from '@theme/CodeBlock'
 
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
@@ -30,11 +29,11 @@ import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
 
 <DoxygenPage pluginConfig={pluginConfig}>
 
-Reflection utilities for the µTest++ testing framework. <Link to="#details">More...</Link>
+Reflection utilities for the µTest++ testing framework. <a href="#details">More...</a>
 
 ## Definition
 
-<CodeBlock>namespace micro_os_plus::micro_test_plus::reflection</CodeBlock>
+<CodeBlock>namespace micro&#95;os&#95;plus::micro&#95;test&#95;plus::reflection &#123; ... &#125;</CodeBlock>
 
 ## Classes Index
 
@@ -42,8 +41,8 @@ Reflection utilities for the µTest++ testing framework. <Link to="#details">Mor
 
 <MembersIndexItem
   type="class"
-  name={<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">source&#95;location</Link>}>
-Local implementation of source location information for diagnostics. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#details">More...</Link>
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">source_location</a></>}>
+Local implementation of source location information for diagnostics. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#details">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -54,14 +53,15 @@ Local implementation of source location information for diagnostics. <Link to="/
 
 <MembersIndexItem
   type={<>const char &#42;</>}
-  name={<><Link to="#ab4fa1159ebe60ce5fe073eefbe9a2446">short&#95;name</Link> (const char &#42;name)</>}>
-Extract a short type or function name from a fully qualified name. <Link to="#ab4fa1159ebe60ce5fe073eefbe9a2446">More...</Link>
+  name={<><a href="#ab4fa1159ebe60ce5fe073eefbe9a2446">short&#95;name</a> (const char &#42;name)</>}>
+Extract a short type or function name from a fully qualified name. <a href="#ab4fa1159ebe60ce5fe073eefbe9a2446">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
+  template={<>template &lt;class T&gt;</>}
   type={<>constexpr std::string&#95;view</>}
-  name={<><Link to="#a6580ad54ad22a1d3ab43a1d9d49d1f26">type&#95;name</Link> (void)</>}>
-Extract the type name from the <code>&#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;</code> macro. <Link to="#a6580ad54ad22a1d3ab43a1d9d49d1f26">More...</Link>
+  name={<><a href="#a6580ad54ad22a1d3ab43a1d9d49d1f26">type&#95;name</a> (void)</>}>
+Extract the type name from the <code>&#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;</code> macro. <a href="#a6580ad54ad22a1d3ab43a1d9d49d1f26">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -72,7 +72,7 @@ Reflection utilities for the µTest++ testing framework.
 
 The <code>reflection</code> namespace provides facilities for obtaining source location information and type names at compile time, thereby supporting advanced reporting and diagnostics within the µTest++ framework.
 
-It includes a local implementation of <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">source&#95;location</Link></code> for environments lacking C++20 standard support, as well as utilities for extracting concise type names from compiler-specific macros such as <code>&#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;</code>.
+It includes a local implementation of <code><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">source&#95;location</a></code> for environments lacking C++20 standard support, as well as utilities for extracting concise type names from compiler-specific macros such as <code>&#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;</code>.
 
 All definitions within this namespace are intended to facilitate advanced reflection and reporting capabilities.
 
@@ -96,7 +96,7 @@ A pointer to the short name within the input string.
 
 This function extracts the short name from a given file path by locating the final folder separator (&#39;/&#39;). If a separator is found, it returns a pointer to the character immediately following it, effectively providing the file or folder name. If no separator is present, the original input string is returned. This utility is useful for reporting concise file or folder names in test output.
 
-Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00128">128</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/micro-test-plus-cpp/#l00128">128</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</a>.
 </MemberDefinition>
 
 ### type&#95;name() {#a6580ad54ad22a1d3ab43a1d9d49d1f26}
@@ -125,7 +125,7 @@ None.
 A <code>std::string&#95;view</code> containing the extracted type name.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines-h/#l00133">133</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines-h">reflection-inlines.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines-h/#l00133">133</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines-h">reflection-inlines.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -135,8 +135,8 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 The documentation for this namespace was generated from the following files:
 
 <ul>
-<li><Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines-h">reflection-inlines.h</Link></li>
-<li><Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link></li>
+<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines-h">reflection-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</a></li>
 </ul>
 
 </DoxygenPage>

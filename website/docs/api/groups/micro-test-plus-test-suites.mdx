@@ -12,7 +12,6 @@ keywords:
 
 ---
 
-import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
@@ -28,7 +27,7 @@ import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
 
 <DoxygenPage pluginConfig={pluginConfig}>
 
-Test suites are named collections of test cases. <Link to="#details">More...</Link>
+Test suites are named collections of test cases. <a href="#details">More...</a>
 
 ## Classes Index
 
@@ -36,8 +35,8 @@ Test suites are named collections of test cases. <Link to="#details">More...</Li
 
 <MembersIndexItem
   type="class"
-  name={<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</Link>}>
-Represents a named group of test cases that self-register to the runner. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#details">More...</Link>
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test_suite</a></>}>
+Represents a named group of test cases that self-register to the runner. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#details">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -85,13 +84,13 @@ All registered test suites are executed when the <code>exit&#95;code()</code> fu
 
 <ProgramListing extension="cpp">
 
-<CodeLine><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link>;</Highlight></CodeLine>
+<CodeLine><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</a>;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">// Test suite with generic parameters.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">static</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">void</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">test&#95;suite&#95;args (</Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> ic, </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> iv, </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal">&amp; ir, </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal">&#42; ip1, </Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal">&#42; ip2)</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  mt::test&#95;case (</Highlight><Highlight kind="stringliteral">&quot;args&quot;</Highlight><Highlight kind="normal">, [&amp;] &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  mt::test&#95;case (</Highlight><Highlight kind="stringliteral">&quot;args&quot;</Highlight><Highlight kind="normal">, &#91;&amp;&#93; &#123;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">    mt::expect (mt::eq (ic, 42)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;ic is 42&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">    mt::expect (mt::eq (iv, 43)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;iv is 43&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">    mt::expect (mt::eq (ir, 44)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;ir is 44&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>

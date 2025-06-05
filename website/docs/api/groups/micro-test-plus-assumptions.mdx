@@ -12,7 +12,6 @@ keywords:
 
 ---
 
-import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
@@ -32,16 +31,17 @@ import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
 
 <DoxygenPage pluginConfig={pluginConfig}>
 
-Assumptions are conditions that must be satisfied for a test to proceed. <Link to="#details">More...</Link>
+Assumptions are conditions that must be satisfied for a test to proceed. <a href="#details">More...</a>
 
 ## Functions Index
 
 <MembersIndex>
 
 <MembersIndexItem
+  template={<>template &lt; ... &gt;</>}
   type="constexpr auto"
-  name={<><Link to="#ga0f5febbef70eb641691b98583410a1ca">assume</Link> (const Expr&#95;T &amp;expr, const reflection::source&#95;location &amp;sl=reflection::source&#95;location::current())</>}>
-Check a condition and, if false, abort test execution. <Link to="#ga0f5febbef70eb641691b98583410a1ca">More...</Link>
+  name={<><a href="#ga0f5febbef70eb641691b98583410a1ca">assume</a> (const Expr&#95;T &amp;expr, const reflection::source&#95;location &amp;sl=reflection::source&#95;location::current())</>}>
+Check a condition and, if false, abort test execution. <a href="#ga0f5febbef70eb641691b98583410a1ca">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -67,7 +67,7 @@ By clearly specifying assumptions, developers can ensure that tests are only run
 Check a condition and, if false, abort test execution.
 
 <ParametersList title="Template Parameters">
-<ParametersListItem name="Expr&#95;T">The type of the custom expression.</ParametersListItem>
+<ParametersListItem name="Expr_T">The type of the custom expression.</ParametersListItem>
 <ParametersListItem name="(SFINAE)">Enabled only if <code>Expr&#95;T</code> is derived from <code>detail::op</code> or is convertible to <code>bool</code>.</ParametersListItem>
 </ParametersList>
 
@@ -80,9 +80,9 @@ Check a condition and, if false, abort test execution.
 An output stream to write optional messages.
 </SectionUser>
 
-The <code>assume</code> function template evaluates a logical condition or custom expression and reports the result within the µTest++ framework. It is designed to provide detailed diagnostics for test failures, including the actual and expected values, when using the provided comparators (<code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#gae9dfca849300a917cb1c231d275baaa3">eq()</Link></code>, <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#ga59e4cf59954e81bc868e62b1c5c8db1f">ne()</Link></code>, <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#gac162522dcad1a6ff7c869d52d376b3ed">lt()</Link></code>, <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#ga2b5263a5b3965855aa04971bba735a56">le()</Link></code>, <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#gae2fb681444d8256f6bf827eea6b7c29e">gt()</Link></code>, <code><Link to="/docs/api/groups/micro-test-plus-function-comparators/#ga34e03399670ec0b365b94b7bea788dd8">ge()</Link></code>) or custom operators.
+The <code>assume</code> function template evaluates a logical condition or custom expression and reports the result within the µTest++ framework. It is designed to provide detailed diagnostics for test failures, including the actual and expected values, when using the provided comparators (<code><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-function-comparators/#gae9dfca849300a917cb1c231d275baaa3">eq()</a></code>, <code><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-function-comparators/#ga59e4cf59954e81bc868e62b1c5c8db1f">ne()</a></code>, <code><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-function-comparators/#gac162522dcad1a6ff7c869d52d376b3ed">lt()</a></code>, <code><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-function-comparators/#ga2b5263a5b3965855aa04971bba735a56">le()</a></code>, <code><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-function-comparators/#gae2fb681444d8256f6bf827eea6b7c29e">gt()</a></code>, <code><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-function-comparators/#ga34e03399670ec0b365b94b7bea788dd8">ge()</a></code>) or custom operators.
 
-The function template can be used with any expression that evaluates to a boolean or with custom comparators/operators derived from the local <code>detail::op</code> type. For complex checks performed outside the <code><Link to="/docs/api/groups/micro-test-plus-expectations/#ga75c3f43663a5440d78231fe572fe4a22">expect()</Link></code> logical expression (such as within <code>if</code> or <code>try</code>/<code>catch</code> statements), the result can be reported by calling <code>expect(true)</code> or <code>expect(false)</code>.
+The function template can be used with any expression that evaluates to a boolean or with custom comparators/operators derived from the local <code>detail::op</code> type. For complex checks performed outside the <code><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-expectations/#ga75c3f43663a5440d78231fe572fe4a22">expect()</a></code> logical expression (such as within <code>if</code> or <code>try</code>/<code>catch</code> statements), the result can be reported by calling <code>expect(true)</code> or <code>expect(false)</code>.
 
 The function returns an output stream, allowing optional messages to be appended to the test report.
 
@@ -94,12 +94,12 @@ The function returns an output stream, allowing optional messages to be appended
 
 <ProgramListing extension="cpp">
 
-<CodeLine><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link>;</Highlight></CodeLine>
+<CodeLine><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</a>;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">mt::assume(compute&#95;answer() == 42) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer is 42&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
 
 </ProgramListing>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines-h/#l00188">188</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines-h">micro-test-plus-inlines.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines-h/#l00188">188</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines-h">micro-test-plus-inlines.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>

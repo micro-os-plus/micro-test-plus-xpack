@@ -12,7 +12,6 @@ keywords:
 
 ---
 
-import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
@@ -32,22 +31,24 @@ import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
 
 <DoxygenPage pluginConfig={pluginConfig}>
 
-Overloaded operators for container comparison. <Link to="#details">More...</Link>
+Overloaded operators for container comparison. <a href="#details">More...</a>
 
-## Functions Index
+## Operators Index
 
 <MembersIndex>
 
 <MembersIndexItem
+  template={<>template &lt; ... &gt;</>}
   type="constexpr auto"
-  name={<><Link to="#gac48b765b41388c3ebe1a996f9a05aaf8">operator!=</Link> (T &amp;&amp;lhs, T &amp;&amp;rhs)</>}>
-Non-equality operator for containers. <Link to="#gac48b765b41388c3ebe1a996f9a05aaf8">More...</Link>
+  name={<><a href="#gac48b765b41388c3ebe1a996f9a05aaf8">operator!=</a> (T &amp;&amp;lhs, T &amp;&amp;rhs)</>}>
+Non-equality operator for containers. <a href="#gac48b765b41388c3ebe1a996f9a05aaf8">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
+  template={<>template &lt; ... &gt;</>}
   type="constexpr auto"
-  name={<><Link to="#gaac06b4166dbd6e2b62a744878903eee8">operator==</Link> (T &amp;&amp;lhs, T &amp;&amp;rhs)</>}>
-Equality operator for containers. <Link to="#gaac06b4166dbd6e2b62a744878903eee8">More...</Link>
+  name={<><a href="#gaac06b4166dbd6e2b62a744878903eee8">operator==</a> (T &amp;&amp;lhs, T &amp;&amp;rhs)</>}>
+Equality operator for containers. <a href="#gaac06b4166dbd6e2b62a744878903eee8">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -70,10 +71,10 @@ In addition to the generic operators, specialised equality and inequality operat
 
 <CodeLine><Highlight kind="preprocessor">#include &lt;string&#95;view&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal">std::literals; </Highlight><Highlight kind="comment">// For the &quot;sv&quot; literal.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link>;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</a>;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">// ...</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">mt::test&#95;case (</Highlight><Highlight kind="stringliteral">&quot;Operators&quot;</Highlight><Highlight kind="normal">, [] &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">mt::test&#95;case (</Highlight><Highlight kind="stringliteral">&quot;Operators&quot;</Highlight><Highlight kind="normal">, &#91;&#93; &#123;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal">micro&#95;test&#95;plus::operators;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">  mt::expect (std::vector&lt;int&gt;&#123; 1, 2 &#125; == std::vector&lt;int&gt;&#123; 1, 2 &#125;)</Highlight></CodeLine>
@@ -87,7 +88,7 @@ In addition to the generic operators, specialised equality and inequality operat
 
 <SectionDefinition>
 
-## Functions
+## Operators
 
 ### operator!=() {#gac48b765b41388c3ebe1a996f9a05aaf8}
 
@@ -114,7 +115,7 @@ This overload of the non-equality operator enables direct comparison of two cont
 
 The operator is enabled only for types recognised as containers by the framework&#39;s type traits.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00205">205</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00205">205</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.
 </MemberDefinition>
 
 ### operator==() {#gaac06b4166dbd6e2b62a744878903eee8}
@@ -142,7 +143,7 @@ This overload of the equality operator enables direct comparison of two containe
 
 The operator is enabled only for types recognised as containers by the framework&#39;s type traits.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00177">177</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00177">177</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>

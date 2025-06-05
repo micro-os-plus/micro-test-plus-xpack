@@ -13,7 +13,6 @@ toc_max_heading_level: 3
 
 ---
 
-import Link from '@docusaurus/Link'
 import CodeBlock from '@theme/CodeBlock'
 
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
@@ -33,19 +32,19 @@ import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
 
 <DoxygenPage pluginConfig={pluginConfig}>
 
-Deferred reporter class template for a specific expression. <Link to="#details">More...</Link>
+Deferred reporter class template for a specific expression. <a href="#details">More...</a>
 
 ## Declaration
 
 <CodeBlock>template &lt;class Expr&#95;T&gt;
-class micro_os_plus::micro_test_plus::detail::deferred_reporter&lt;Expr&#95;T&gt;;</CodeBlock>
+class micro_os_plus::micro_test_plus::detail::deferred_reporter&lt;Expr&#95;T&gt;</CodeBlock>
 
 ## Included Headers
 
 <IncludesList>
 <IncludesListItem
   filePath="micro-os-plus/micro-test-plus.h"
-  permalink="/docs/api/files/include/micro-os-plus/micro-test-plus-h"
+  permalink="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h"
   isLocal="false" />
 </IncludesList>
 
@@ -55,44 +54,8 @@ class micro_os_plus::micro_test_plus::detail::deferred_reporter&lt;Expr&#95;T&gt
 
 <MembersIndexItem
   type="class"
-  name={<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base">deferred&#95;reporter&#95;base</Link>}>
-Base class for a deferred reporter that collects messages into a string. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#details">More...</Link>
-</MembersIndexItem>
-
-</MembersIndex>
-
-## Protected Member Attributes Index
-
-<MembersIndex>
-
-<MembersIndexItem
-  type="bool"
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#aa36fd4c36a94b04430599303e38a48bd">abort&#95;</Link> = false</>}>
-Indicates whether the reporting should abort further processing. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#aa36fd4c36a94b04430599303e38a48bd">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type={<>const Expr&#95;T</>}
-  name={<><Link to="#a9535950f3f91d792f4347d08f8dd154e">expr&#95;</Link> &#123;&#125;</>}>
-Stores the expression under evaluation. <Link to="#a9535950f3f91d792f4347d08f8dd154e">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type={<>const <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source&#95;location</Link></>}
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#a025498d9b9376056c56042cc98ed7afd">location&#95;</Link> &#123;&#125;</>}>
-Stores the source location associated with the report. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#a025498d9b9376056c56042cc98ed7afd">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="std::string"
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#aa12bdce872a0994d70be146507834cf1">message&#95;</Link> &#123;&#125;</>}>
-String to collect the expectation message passed via <code>operator&lt;&lt;()</code>. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#aa12bdce872a0994d70be146507834cf1">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="bool"
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#af633053afa944173b47482786f9d9a7e">value&#95;</Link> &#123;&#125;</>}>
-Stores the result value of the report. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#af633053afa944173b47482786f9d9a7e">More...</Link>
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base">deferred&#95;reporter&#95;base</a></>}>
+Base class for a deferred reporter that collects messages into a string. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#details">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -102,9 +65,10 @@ Stores the result value of the report. <Link to="/docs/api/classes/micro-os-plus
 <MembersIndex>
 
 <MembersIndexItem
+  template={<>template &lt;class Expr&#95;T&gt;</>}
   type="constexpr"
-  name={<><Link to="#a3e7dc16ad866722075fc1b1ac8fa6701">deferred&#95;reporter</Link> (const Expr&#95;T &amp;expr, bool abort, const reflection::source&#95;location &amp;location)</>}>
-Constructs a deferred reporter for a specific expression. <Link to="#a3e7dc16ad866722075fc1b1ac8fa6701">More...</Link>
+  name={<><a href="#a3e7dc16ad866722075fc1b1ac8fa6701">deferred&#95;reporter</a> (const Expr&#95;T &amp;expr, bool abort, const reflection::source&#95;location &amp;location)</>}>
+Constructs a deferred reporter for a specific expression. <a href="#a3e7dc16ad866722075fc1b1ac8fa6701">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -114,9 +78,22 @@ Constructs a deferred reporter for a specific expression. <Link to="#a3e7dc16ad8
 <MembersIndex>
 
 <MembersIndexItem
-  type="&nbsp;"
-  name={<><Link to="#aa221de23c9bed6bc5844c077fbafa46b">~deferred&#95;reporter</Link> ()</>}>
-Destructor for the deferred reporter. <Link to="#aa221de23c9bed6bc5844c077fbafa46b">More...</Link>
+  template={<>template &lt;class Expr&#95;T&gt;</>}
+  name={<><a href="#aa221de23c9bed6bc5844c077fbafa46b">~deferred&#95;reporter</a> ()</>}>
+Destructor for the deferred reporter. <a href="#aa221de23c9bed6bc5844c077fbafa46b">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Operators Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;class T&gt;</>}
+  type={<>auto &amp;</>}
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#ae90dacdedb65168453056c0787f88567">operator&lt;&lt;</a> (const T &amp;msg)</>}>
+Appends a message to the reporter. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#ae90dacdedb65168453056c0787f88567">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -126,15 +103,51 @@ Destructor for the deferred reporter. <Link to="#aa221de23c9bed6bc5844c077fbafa4
 <MembersIndex>
 
 <MembersIndexItem
-  type={<>auto &amp;</>}
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#ae90dacdedb65168453056c0787f88567">operator&lt;&lt;</Link> (const T &amp;msg)</>}>
-Appends a message to the reporter. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#ae90dacdedb65168453056c0787f88567">More...</Link>
+  template={<>template &lt;class Expr&#95;T&gt;</>}
+  type="constexpr bool"
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#a0e4cca7c6f1d63789683f3b6a7f647ea">value</a> () const</>}>
+Retrieves the result value. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#a0e4cca7c6f1d63789683f3b6a7f647ea">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Protected Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;class Expr&#95;T&gt;</>}
+  type="bool"
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#aa36fd4c36a94b04430599303e38a48bd">abort&#95;</a> = false</>}>
+Indicates whether the reporting should abort further processing. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#aa36fd4c36a94b04430599303e38a48bd">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
-  type="constexpr bool"
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#a0e4cca7c6f1d63789683f3b6a7f647ea">value</Link> () const</>}>
-Retrieves the result value. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#a0e4cca7c6f1d63789683f3b6a7f647ea">More...</Link>
+  template={<>template &lt;class Expr&#95;T&gt;</>}
+  type={<>const Expr&#95;T</>}
+  name={<><a href="#a9535950f3f91d792f4347d08f8dd154e">expr&#95;</a> &#123;&#125;</>}>
+Stores the expression under evaluation. <a href="#a9535950f3f91d792f4347d08f8dd154e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;class Expr&#95;T&gt;</>}
+  type={<>const <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source&#95;location</a></>}
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#a025498d9b9376056c56042cc98ed7afd">location&#95;</a> &#123;&#125;</>}>
+Stores the source location associated with the report. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#a025498d9b9376056c56042cc98ed7afd">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;class Expr&#95;T&gt;</>}
+  type="std::string"
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#aa12bdce872a0994d70be146507834cf1">message&#95;</a> &#123;&#125;</>}>
+String to collect the expectation message passed via <code>operator&lt;&lt;()</code>. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#aa12bdce872a0994d70be146507834cf1">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;class Expr&#95;T&gt;</>}
+  type="bool"
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#af633053afa944173b47482786f9d9a7e">value&#95;</a> &#123;&#125;</>}>
+Stores the result value of the report. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#af633053afa944173b47482786f9d9a7e">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -144,74 +157,13 @@ Retrieves the result value. <Link to="/docs/api/classes/micro-os-plus/micro-test
 Deferred reporter class template for a specific expression.
 
 <ParametersList title="Template Parameters">
-<ParametersListItem name="Expr&#95;T">The type of the expression being reported.</ParametersListItem>
+<ParametersListItem name="Expr_T">The type of the expression being reported.</ParametersListItem>
 </ParametersList>
-The <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter">deferred&#95;reporter</Link></code> class template extends <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base">deferred&#95;reporter&#95;base</Link></code> to provide deferred reporting functionality for a specific test expression within the framework.
+The <code><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter">deferred&#95;reporter</a></code> class template extends <code><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base">deferred&#95;reporter&#95;base</a></code> to provide deferred reporting functionality for a specific test expression within the framework.
 
 This class template is responsible for capturing the expression under evaluation, the abort status, and the source location. It is intended exclusively for internal use and is implemented in the <code>include/micro-os-plus/micro-test-plus</code> folder to ensure a structured and modular codebase.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01836">1836</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
-
-<SectionDefinition>
-
-## Protected Member Attributes
-
-### abort&#95; {#aa36fd4c36a94b04430599303e38a48bd}
-
-<MemberDefinition
-  template={<>template &lt;class Expr&#95;T&gt;</>}
-  prototype={<>bool micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::deferred&#95;reporter&#95;base::abort&#95; = false</>}
-  labels = {["protected"]}>
-Indicates whether the reporting should abort further processing.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01801">1801</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
-</MemberDefinition>
-
-### expr&#95; {#a9535950f3f91d792f4347d08f8dd154e}
-
-<MemberDefinition
-  template={<>template &lt;class Expr&#95;T&gt;</>}
-  prototype={<>const Expr&#95;T micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::deferred&#95;reporter&lt; Expr&#95;T &gt;::expr&#95; &#123;&#125;</>}
-  labels = {["protected"]}>
-Stores the expression under evaluation.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01864">1864</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
-</MemberDefinition>
-
-### location&#95; {#a025498d9b9376056c56042cc98ed7afd}
-
-<MemberDefinition
-  template={<>template &lt;class Expr&#95;T&gt;</>}
-  prototype={<>const reflection::source&#95;location micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::deferred&#95;reporter&#95;base::location&#95; &#123;&#125;</>}
-  labels = {["protected"]}>
-Stores the source location associated with the report.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01806">1806</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
-</MemberDefinition>
-
-### message&#95; {#aa12bdce872a0994d70be146507834cf1}
-
-<MemberDefinition
-  template={<>template &lt;class Expr&#95;T&gt;</>}
-  prototype={<>std::string micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::deferred&#95;reporter&#95;base::message&#95; &#123;&#125;</>}
-  labels = {["protected"]}>
-String to collect the expectation message passed via <code>operator&lt;&lt;()</code>.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01812">1812</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
-</MemberDefinition>
-
-### value&#95; {#af633053afa944173b47482786f9d9a7e}
-
-<MemberDefinition
-  template={<>template &lt;class Expr&#95;T&gt;</>}
-  prototype={<>bool micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::deferred&#95;reporter&#95;base::value&#95; &#123;&#125;</>}
-  labels = {["protected"]}>
-Stores the result value of the report.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01795">1795</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
-</MemberDefinition>
-
-</SectionDefinition>
+Definition at line 1836 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.
 
 <SectionDefinition>
 
@@ -221,7 +173,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 
 <MemberDefinition
   template={<>template &lt;class Expr&#95;T&gt;</>}
-  prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::deferred&#95;reporter&lt; Expr&#95;T &gt;::deferred&#95;reporter (const Expr&#95;T &amp; expr, bool abort, const <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source&#95;location</Link> &amp; location)</>}
+  prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::deferred&#95;reporter&lt; Expr&#95;T &gt;::deferred&#95;reporter (const Expr&#95;T &amp; expr, bool abort, const <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source&#95;location</a> &amp; location)</>}
   labels = {["explicit", "constexpr"]}>
 Constructs a deferred reporter for a specific expression.
 
@@ -236,7 +188,7 @@ This constructor initialises a deferred reporter for a specific expression, capt
 
 The expression is evaluated and its boolean result is passed to the base class. The abort flag determines whether further test execution should be halted if the expectation fails. The source location provides contextual information for reporting purposes.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01851">1851</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/details-inlines-h/#l00117">117</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/details-inlines-h">details-inlines.h</Link>.
+Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01851">1851</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/details-inlines-h/#l00117">117</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/details-inlines-h">details-inlines.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -256,14 +208,14 @@ The destructor finalises the deferred reporting process for a test expression. I
 
 This mechanism ensures that all relevant information about the test outcome is captured and reported accurately when the deferred reporter goes out of scope.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01858">1858</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/details-inlines-h/#l00142">142</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/details-inlines-h">details-inlines.h</Link>.
+Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01858">1858</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/details-inlines-h/#l00142">142</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/details-inlines-h">details-inlines.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>
 
 <SectionDefinition>
 
-## Public Member Functions
+## Public Operators
 
 ### operator&lt;&lt;() {#ae90dacdedb65168453056c0787f88567}
 
@@ -288,8 +240,14 @@ This operator overload enables the deferred reporter to accumulate expectation m
 
 If the argument is of an arithmetic type, it is first converted to a string using <code>std::to&#95;string</code> before being appended. For all other types, the value is appended directly. This ensures that both numeric and string-like messages are handled appropriately and consistently.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01770">1770</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/details-inlines-h/#l00090">90</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/details-inlines-h">details-inlines.h</Link>.
+Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01770">1770</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/details-inlines-h/#l00090">90</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/details-inlines-h">details-inlines.h</a>.
 </MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Functions
 
 ### value() {#a0e4cca7c6f1d63789683f3b6a7f647ea}
 
@@ -310,7 +268,68 @@ None.
 </ParametersList>
 Returns the result value associated with the report.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01786">1786</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01786">1786</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Protected Member Attributes
+
+### abort&#95; {#aa36fd4c36a94b04430599303e38a48bd}
+
+<MemberDefinition
+  template={<>template &lt;class Expr&#95;T&gt;</>}
+  prototype={<>bool micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::deferred&#95;reporter&#95;base::abort&#95; = false</>}
+  labels = {["protected"]}>
+Indicates whether the reporting should abort further processing.
+
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01801">1801</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.
+</MemberDefinition>
+
+### expr&#95; {#a9535950f3f91d792f4347d08f8dd154e}
+
+<MemberDefinition
+  template={<>template &lt;class Expr&#95;T&gt;</>}
+  prototype={<>const Expr&#95;T micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::deferred&#95;reporter&lt; Expr&#95;T &gt;::expr&#95; &#123;&#125;</>}
+  labels = {["protected"]}>
+Stores the expression under evaluation.
+
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01864">1864</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.
+</MemberDefinition>
+
+### location&#95; {#a025498d9b9376056c56042cc98ed7afd}
+
+<MemberDefinition
+  template={<>template &lt;class Expr&#95;T&gt;</>}
+  prototype={<>const reflection::source&#95;location micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::deferred&#95;reporter&#95;base::location&#95; &#123;&#125;</>}
+  labels = {["protected"]}>
+Stores the source location associated with the report.
+
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01806">1806</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.
+</MemberDefinition>
+
+### message&#95; {#aa12bdce872a0994d70be146507834cf1}
+
+<MemberDefinition
+  template={<>template &lt;class Expr&#95;T&gt;</>}
+  prototype={<>std::string micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::deferred&#95;reporter&#95;base::message&#95; &#123;&#125;</>}
+  labels = {["protected"]}>
+String to collect the expectation message passed via <code>operator&lt;&lt;()</code>.
+
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01812">1812</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.
+</MemberDefinition>
+
+### value&#95; {#af633053afa944173b47482786f9d9a7e}
+
+<MemberDefinition
+  template={<>template &lt;class Expr&#95;T&gt;</>}
+  prototype={<>bool micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::deferred&#95;reporter&#95;base::value&#95; &#123;&#125;</>}
+  labels = {["protected"]}>
+Stores the result value of the report.
+
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01795">1795</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -320,8 +339,8 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 The documentation for this class was generated from the following files:
 
 <ul>
-<li><Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link></li>
-<li><Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/details-inlines-h">details-inlines.h</Link></li>
+<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/details-inlines-h">details-inlines.h</a></li>
 </ul>
 
 </DoxygenPage>

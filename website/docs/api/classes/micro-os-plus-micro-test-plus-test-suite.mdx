@@ -13,7 +13,6 @@ toc_max_heading_level: 3
 
 ---
 
-import Link from '@docusaurus/Link'
 import CodeBlock from '@theme/CodeBlock'
 
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
@@ -33,18 +32,18 @@ import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
 
 <DoxygenPage pluginConfig={pluginConfig}>
 
-Represents a named group of test cases that self-register to the runner. <Link to="#details">More...</Link>
+Represents a named group of test cases that self-register to the runner. <a href="#details">More...</a>
 
 ## Declaration
 
-<CodeBlock>class micro_os_plus::micro_test_plus::test_suite;</CodeBlock>
+<CodeBlock>class micro_os_plus::micro_test_plus::test_suite</CodeBlock>
 
 ## Included Headers
 
 <IncludesList>
 <IncludesListItem
   filePath="micro-os-plus/micro-test-plus.h"
-  permalink="/docs/api/files/include/micro-os-plus/micro-test-plus-h"
+  permalink="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h"
   isLocal="false" />
 </IncludesList>
 
@@ -54,50 +53,8 @@ Represents a named group of test cases that self-register to the runner. <Link t
 
 <MembersIndexItem
   type="class"
-  name={<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">test&#95;suite&#95;base</Link>}>
-Base class for all test suites. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#details">More...</Link>
-</MembersIndexItem>
-
-</MembersIndex>
-
-## Protected Member Attributes Index
-
-<MembersIndex>
-
-<MembersIndexItem
-  type={<>std::function&lt; void(void)&gt;</>}
-  name={<><Link to="#a4c9220da528e34d0b4f8d0980a30fe6a">callable&#95;</Link></>}>
-Callable object representing the test suite&#39;s execution logic. <Link to="#a4c9220da528e34d0b4f8d0980a30fe6a">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="int"
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a01c523aaf94e26eb4cd6727c5d74ab02">failed&#95;checks&#95;</Link> = 0</>}>
-Count of test conditions that failed. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a01c523aaf94e26eb4cd6727c5d74ab02">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type={<>const char &#42;</>}
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a76f1c1c39f8b2c8cc70688a47bf6eafd">name&#95;</Link></>}>
-The test suite name. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a76f1c1c39f8b2c8cc70688a47bf6eafd">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="int"
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ad2736cdadc2ab917099cd0ad82d3fc18">successful&#95;checks&#95;</Link> = 0</>}>
-Count of test conditions that passed. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ad2736cdadc2ab917099cd0ad82d3fc18">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type={<>const char &#42;</>}
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ae369ec539219642f84aeb93b78269df0">test&#95;case&#95;name&#95;</Link></>}>
-The current test case name. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ae369ec539219642f84aeb93b78269df0">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="int"
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a1e9205117a2373caf7346064e86afa03">test&#95;cases&#95;</Link> = 0</>}>
-Count of test cases in the test suite. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a1e9205117a2373caf7346064e86afa03">More...</Link>
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">test&#95;suite&#95;base</a></>}>
+Base class for all test suites. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#details">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -107,21 +64,19 @@ Count of test cases in the test suite. <Link to="/docs/api/classes/micro-os-plus
 <MembersIndex>
 
 <MembersIndexItem
-  type="&nbsp;"
-  name={<><Link to="#a824b38d21a3f4d0adb99827455f159cf">test&#95;suite</Link> (const char &#42;name, Callable&#95;T &amp;&amp;callable, Args&#95;T &amp;&amp;... arguments)</>}>
-Class template constructor for <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</Link>. <Link to="#a824b38d21a3f4d0adb99827455f159cf">More...</Link>
+  template={<>template &lt;typename Callable&#95;T, typename... Args&#95;T&gt;</>}
+  name={<><a href="#a824b38d21a3f4d0adb99827455f159cf">test&#95;suite</a> (const char &#42;name, Callable&#95;T &amp;&amp;callable, Args&#95;T &amp;&amp;... arguments)</>}>
+Class template constructor for <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</a>. <a href="#a824b38d21a3f4d0adb99827455f159cf">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
-  type="&nbsp;"
-  name={<><Link to="#a7c82c1d689d5b438a1ed6fd59244d8e3">test&#95;suite</Link> (const test&#95;suite &amp;)=delete</>}>
-Deleted copy constructor to prevent copying. <Link to="#a7c82c1d689d5b438a1ed6fd59244d8e3">More...</Link>
+  name={<><a href="#a7c82c1d689d5b438a1ed6fd59244d8e3">test&#95;suite</a> (const test&#95;suite &amp;)=delete</>}>
+Deleted copy constructor to prevent copying. <a href="#a7c82c1d689d5b438a1ed6fd59244d8e3">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
-  type="&nbsp;"
-  name={<><Link to="#acdbf1e957b2b5baae7d468820c8fc006">test&#95;suite</Link> (test&#95;suite &amp;&amp;)=delete</>}>
-Deleted move constructor to prevent moving. <Link to="#acdbf1e957b2b5baae7d468820c8fc006">More...</Link>
+  name={<><a href="#acdbf1e957b2b5baae7d468820c8fc006">test&#95;suite</a> (test&#95;suite &amp;&amp;)=delete</>}>
+Deleted move constructor to prevent moving. <a href="#acdbf1e957b2b5baae7d468820c8fc006">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -131,9 +86,26 @@ Deleted move constructor to prevent moving. <Link to="#acdbf1e957b2b5baae7d46882
 <MembersIndex>
 
 <MembersIndexItem
-  type="&nbsp;"
-  name={<><Link to="#aed21554ac8fa83e61ce178f37b0cdac8">~test&#95;suite</Link> () override</>}>
-Virtual destructor for the <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</Link> class. <Link to="#aed21554ac8fa83e61ce178f37b0cdac8">More...</Link>
+  name={<><a href="#aed21554ac8fa83e61ce178f37b0cdac8">~test&#95;suite</a> () override</>}>
+Virtual destructor for the <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</a> class. <a href="#aed21554ac8fa83e61ce178f37b0cdac8">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Operators Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</a> &amp;</>}
+  name={<><a href="#aafe75ac5383b6981e1ed6e3c8e96249e">operator=</a> (const test&#95;suite &amp;)=delete</>}>
+Deleted copy assignment operator to prevent copying. <a href="#aafe75ac5383b6981e1ed6e3c8e96249e">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</a> &amp;</>}
+  name={<><a href="#a00597bc0e72007bd92d370bb8cac9ff7">operator=</a> (test&#95;suite &amp;&amp;)=delete</>}>
+Deleted move assignment operator to prevent moving. <a href="#a00597bc0e72007bd92d370bb8cac9ff7">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -144,92 +116,80 @@ Virtual destructor for the <Link to="/docs/api/classes/micro-os-plus/micro-test-
 
 <MembersIndexItem
   type="void"
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a6bd8aa956f30c344c9ef79cf21c69cdc">begin&#95;test&#95;case</Link> (const char &#42;name)</>}>
-Marks the beginning of a named test case. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a6bd8aa956f30c344c9ef79cf21c69cdc">More...</Link>
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a6bd8aa956f30c344c9ef79cf21c69cdc">begin&#95;test&#95;case</a> (const char &#42;name)</>}>
+Marks the beginning of a named test case. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a6bd8aa956f30c344c9ef79cf21c69cdc">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="void"
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#adfc3afd1432b2d093eef73a18ca9a242">begin&#95;test&#95;suite</Link> (void)</>}>
-Begins the execution of the test suite. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#adfc3afd1432b2d093eef73a18ca9a242">More...</Link>
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#adfc3afd1432b2d093eef73a18ca9a242">begin&#95;test&#95;suite</a> (void)</>}>
+Begins the execution of the test suite. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#adfc3afd1432b2d093eef73a18ca9a242">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="void"
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ab2e1a6eadc56c54b45f9d21e450b0cbc">end&#95;test&#95;case</Link> (void)</>}>
-Marks the end of a test case. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ab2e1a6eadc56c54b45f9d21e450b0cbc">More...</Link>
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ab2e1a6eadc56c54b45f9d21e450b0cbc">end&#95;test&#95;case</a> (void)</>}>
+Marks the end of a test case. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ab2e1a6eadc56c54b45f9d21e450b0cbc">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="void"
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#aa53f99054051136b3484a1664b5ee59f">end&#95;test&#95;suite</Link> (void)</>}>
-Marks the end of the test suite. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#aa53f99054051136b3484a1664b5ee59f">More...</Link>
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#aa53f99054051136b3484a1664b5ee59f">end&#95;test&#95;suite</a> (void)</>}>
+Marks the end of the test suite. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#aa53f99054051136b3484a1664b5ee59f">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr int"
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a4cd96949ef52b98b6c5e08bbd7900979">failed&#95;checks</Link> (void)</>}>
-Gets the number of test conditions that failed. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a4cd96949ef52b98b6c5e08bbd7900979">More...</Link>
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a4cd96949ef52b98b6c5e08bbd7900979">failed&#95;checks</a> (void)</>}>
+Gets the number of test conditions that failed. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a4cd96949ef52b98b6c5e08bbd7900979">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="void"
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a20051842d981b530746b4fb4dee00d01">increment&#95;failed</Link> (void)</>}>
-Increments the count of failed test conditions. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a20051842d981b530746b4fb4dee00d01">More...</Link>
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a20051842d981b530746b4fb4dee00d01">increment&#95;failed</a> (void)</>}>
+Increments the count of failed test conditions. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a20051842d981b530746b4fb4dee00d01">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="void"
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a81006378d0bebeadcd59266f57b4ef4b">increment&#95;successful</Link> (void)</>}>
-Increments the count of passed test conditions. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a81006378d0bebeadcd59266f57b4ef4b">More...</Link>
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a81006378d0bebeadcd59266f57b4ef4b">increment&#95;successful</a> (void)</>}>
+Increments the count of passed test conditions. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a81006378d0bebeadcd59266f57b4ef4b">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
   type={<>constexpr const char &#42;</>}
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a3625fee07d796bf5c3d6b4c69a94182c">name</Link> (void)</>}>
-Gets the suite name. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a3625fee07d796bf5c3d6b4c69a94182c">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</Link> &amp;</>}
-  name={<><Link to="#aafe75ac5383b6981e1ed6e3c8e96249e">operator=</Link> (const test&#95;suite &amp;)=delete</>}>
-Deleted copy assignment operator to prevent copying. <Link to="#aafe75ac5383b6981e1ed6e3c8e96249e">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</Link> &amp;</>}
-  name={<><Link to="#a00597bc0e72007bd92d370bb8cac9ff7">operator=</Link> (test&#95;suite &amp;&amp;)=delete</>}>
-Deleted move assignment operator to prevent moving. <Link to="#a00597bc0e72007bd92d370bb8cac9ff7">More...</Link>
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a3625fee07d796bf5c3d6b4c69a94182c">name</a> (void)</>}>
+Gets the suite name. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a3625fee07d796bf5c3d6b4c69a94182c">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="void"
-  name={<><Link to="#ab198909a0182672be8c741d3ad7f291d">run</Link> (void) override</>}>
-Runs the sequence of test cases in the suite by invoking the stored callable. <Link to="#ab198909a0182672be8c741d3ad7f291d">More...</Link>
+  name={<><a href="#ab198909a0182672be8c741d3ad7f291d">run</a> (void) override</>}>
+Runs the sequence of test cases in the suite by invoking the stored callable. <a href="#ab198909a0182672be8c741d3ad7f291d">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr int"
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#acf56ac77830e630b5485248409c3b3f1">successful&#95;checks</Link> (void)</>}>
-Gets the number of conditions that passed. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#acf56ac77830e630b5485248409c3b3f1">More...</Link>
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#acf56ac77830e630b5485248409c3b3f1">successful&#95;checks</a> (void)</>}>
+Gets the number of conditions that passed. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#acf56ac77830e630b5485248409c3b3f1">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr int"
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ae755b186f32e229e8d0bd5e02027b515">test&#95;cases</Link> (void)</>}>
-Gets the number of test cases. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ae755b186f32e229e8d0bd5e02027b515">More...</Link>
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ae755b186f32e229e8d0bd5e02027b515">test&#95;cases</a> (void)</>}>
+Gets the number of test cases. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ae755b186f32e229e8d0bd5e02027b515">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr bool"
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a20de3062a437e86955dd2917d7976cb3">unused</Link> (void)</>}>
-Checks if the test suite was not used. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a20de3062a437e86955dd2917d7976cb3">More...</Link>
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a20de3062a437e86955dd2917d7976cb3">unused</a> (void)</>}>
+Checks if the test suite was not used. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a20de3062a437e86955dd2917d7976cb3">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr bool"
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ae60536040204e7481b50dfde7b0a6600">was&#95;successful</Link> (void)</>}>
-Gets the test suite result. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ae60536040204e7481b50dfde7b0a6600">More...</Link>
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ae60536040204e7481b50dfde7b0a6600">was&#95;successful</a> (void)</>}>
+Gets the test suite result. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ae60536040204e7481b50dfde7b0a6600">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -239,27 +199,69 @@ Gets the test suite result. <Link to="/docs/api/classes/micro-os-plus/micro-test
 <MembersIndex>
 
 <MembersIndexItem
-  type={<>struct <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base</Link></>}
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ac534b9501e09bf4f1f6ef1d118a5bcbe">current&#95;test&#95;case</Link></>}>
-Structure holding the current test case&#39;s check counters. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ac534b9501e09bf4f1f6ef1d118a5bcbe">More...</Link>
+  type={<>struct &#123; ... &#125;</>}
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ac534b9501e09bf4f1f6ef1d118a5bcbe">current&#95;test&#95;case</a></>}>
+Structure holding the current test case&#39;s check counters. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ac534b9501e09bf4f1f6ef1d118a5bcbe">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="int"
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a40cadb0a79f55c796b7e7aca4a847cfd">failed&#95;checks</Link></>}>
-Number of failed checks in the current test case. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a40cadb0a79f55c796b7e7aca4a847cfd">More...</Link>
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a40cadb0a79f55c796b7e7aca4a847cfd">failed&#95;checks</a></>}>
+Number of failed checks in the current test case. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a40cadb0a79f55c796b7e7aca4a847cfd">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="bool"
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ac442c68973cd937aeaef7aa7fbc27d30">process&#95;deferred&#95;begin</Link> = true</>}>
-Indicates whether to process deferred begin for test cases. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ac442c68973cd937aeaef7aa7fbc27d30">More...</Link>
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ac442c68973cd937aeaef7aa7fbc27d30">process&#95;deferred&#95;begin</a> = true</>}>
+Indicates whether to process deferred begin for test cases. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ac442c68973cd937aeaef7aa7fbc27d30">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="int"
-  name={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a4851a70fd4a0c71b787e445b9766bacc">successful&#95;checks</Link></>}>
-Number of successful checks in the current test case. <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a4851a70fd4a0c71b787e445b9766bacc">More...</Link>
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a4851a70fd4a0c71b787e445b9766bacc">successful&#95;checks</a></>}>
+Number of successful checks in the current test case. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a4851a70fd4a0c71b787e445b9766bacc">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Protected Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<>std::function&lt; void(void)&gt;</>}
+  name={<><a href="#a4c9220da528e34d0b4f8d0980a30fe6a">callable&#95;</a></>}>
+Callable object representing the test suite&#39;s execution logic. <a href="#a4c9220da528e34d0b4f8d0980a30fe6a">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="int"
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a01c523aaf94e26eb4cd6727c5d74ab02">failed&#95;checks&#95;</a> = 0</>}>
+Count of test conditions that failed. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a01c523aaf94e26eb4cd6727c5d74ab02">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>const char &#42;</>}
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a76f1c1c39f8b2c8cc70688a47bf6eafd">name&#95;</a></>}>
+The test suite name. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a76f1c1c39f8b2c8cc70688a47bf6eafd">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="int"
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ad2736cdadc2ab917099cd0ad82d3fc18">successful&#95;checks&#95;</a> = 0</>}>
+Count of test conditions that passed. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ad2736cdadc2ab917099cd0ad82d3fc18">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<>const char &#42;</>}
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ae369ec539219642f84aeb93b78269df0">test&#95;case&#95;name&#95;</a></>}>
+The current test case name. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ae369ec539219642f84aeb93b78269df0">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="int"
+  name={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a1e9205117a2373caf7346064e86afa03">test&#95;cases&#95;</a> = 0</>}>
+Count of test cases in the test suite. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a1e9205117a2373caf7346064e86afa03">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -268,79 +270,13 @@ Number of successful checks in the current test case. <Link to="/docs/api/classe
 
 Represents a named group of test cases that self-register to the runner.
 
-The <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</Link></code> class extends <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">test&#95;suite&#95;base</Link></code> and enables the registration and execution of callable objects (such as lambdas or function pointers) as test suites. Upon construction, each test suite automatically registers itself with the test runner, facilitating automated test discovery and execution across different components and folders of a project.
+The <code><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</a></code> class extends <code><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">test&#95;suite&#95;base</a></code> and enables the registration and execution of callable objects (such as lambdas or function pointers) as test suites. Upon construction, each test suite automatically registers itself with the test runner, facilitating automated test discovery and execution across different components and folders of a project.
 
 This class template provides a flexible mechanism for grouping related test cases and managing their execution within the µTest++ framework. It ensures that test suites are non-copyable and non-movable, maintaining unique ownership and consistent state.
 
-All members and methods are defined within the <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link></code> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.
+All members and methods are defined within the <code><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</a></code> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00371">371</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>.
-
-<SectionDefinition>
-
-## Protected Member Attributes
-
-### callable&#95; {#a4c9220da528e34d0b4f8d0980a30fe6a}
-
-<MemberDefinition
-  prototype={<>std::function&lt;void (void)&gt; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite::callable&#95;</>}
-  labels = {["protected"]}>
-Callable object representing the test suite&#39;s execution logic.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00438">438</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>.
-</MemberDefinition>
-
-### failed&#95;checks&#95; {#a01c523aaf94e26eb4cd6727c5d74ab02}
-
-<MemberDefinition
-  prototype={<>int micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::failed&#95;checks&#95; = 0</>}
-  labels = {["protected"]}>
-Count of test conditions that failed.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00313">313</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>.
-</MemberDefinition>
-
-### name&#95; {#a76f1c1c39f8b2c8cc70688a47bf6eafd}
-
-<MemberDefinition
-  prototype={<>const char&#42; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::name&#95;</>}
-  labels = {["protected"]}>
-The test suite name.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00298">298</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>.
-</MemberDefinition>
-
-### successful&#95;checks&#95; {#ad2736cdadc2ab917099cd0ad82d3fc18}
-
-<MemberDefinition
-  prototype={<>int micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::successful&#95;checks&#95; = 0</>}
-  labels = {["protected"]}>
-Count of test conditions that passed.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00308">308</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>.
-</MemberDefinition>
-
-### test&#95;case&#95;name&#95; {#ae369ec539219642f84aeb93b78269df0}
-
-<MemberDefinition
-  prototype={<>const char&#42; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::test&#95;case&#95;name&#95;</>}
-  labels = {["protected"]}>
-The current test case name.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00303">303</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>.
-</MemberDefinition>
-
-### test&#95;cases&#95; {#a1e9205117a2373caf7346064e86afa03}
-
-<MemberDefinition
-  prototype={<>int micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::test&#95;cases&#95; = 0</>}
-  labels = {["protected"]}>
-Count of test cases in the test suite.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00318">318</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>.
-</MemberDefinition>
-
-</SectionDefinition>
+Definition at line 371 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.
 
 <SectionDefinition>
 
@@ -351,11 +287,11 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <MemberDefinition
   template={<>template &lt;typename Callable&#95;T, typename... Args&#95;T&gt;</>}
   prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite::test&#95;suite (const char &#42; name, Callable&#95;T &amp;&amp; callable, Args&#95;T &amp;&amp;... arguments)</>}>
-Class template constructor for <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</Link>.
+Class template constructor for <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</a>.
 
 <ParametersList title="Template Parameters">
-<ParametersListItem name="Callable&#95;T">The type of a callable object.</ParametersListItem>
-<ParametersListItem name="Args&#95;T">The types of the callable arguments.</ParametersListItem>
+<ParametersListItem name="Callable_T">The type of a callable object.</ParametersListItem>
+<ParametersListItem name="Args_T">The types of the callable arguments.</ParametersListItem>
 </ParametersList>
 
 <ParametersList title="Parameters">
@@ -369,27 +305,27 @@ This constructor initialises a test suite by binding the provided callable and i
 
 The callable is bound using <code>std::bind</code>, allowing for flexible test suite definitions with arbitrary arguments. Upon construction, the test suite is automatically registered with the global runner for execution.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00390">390</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-suite-inlines-h/#l00088">88</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-suite-inlines-h">test-suite-inlines.h</Link>.
+Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00390">390</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-suite-inlines-h/#l00088">88</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-suite-inlines-h">test-suite-inlines.h</a>.
 </MemberDefinition>
 
 ### test&#95;suite() {#a7c82c1d689d5b438a1ed6fd59244d8e3}
 
 <MemberDefinition
-  prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite::test&#95;suite (const <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</Link> &amp;)</>}
+  prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite::test&#95;suite (const <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</a> &amp;)</>}
   labels = {["delete"]}>
 Deleted copy constructor to prevent copying.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00396">396</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00396">396</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.
 </MemberDefinition>
 
 ### test&#95;suite() {#acdbf1e957b2b5baae7d468820c8fc006}
 
 <MemberDefinition
-  prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite::test&#95;suite (<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</Link> &amp;&amp;)</>}
+  prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite::test&#95;suite (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</a> &amp;&amp;)</>}
   labels = {["delete"]}>
 Deleted move constructor to prevent moving.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00401">401</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00401">401</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -403,11 +339,37 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 <MemberDefinition
   prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite::~test&#95;suite ()</>}
   labels = {["virtual"]}>
-Virtual destructor for the <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</Link> class.
+Virtual destructor for the <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</a> class.
 
-The destructor releases any resources associated with the <code><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</Link></code> instance. If tracing is enabled, it outputs the function signature for diagnostic purposes. This ensures that the test suite is properly cleaned up after execution, supporting robust and reliable test management across all files and folders within the µTest++ framework.
+The destructor releases any resources associated with the <code><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</a></code> instance. If tracing is enabled, it outputs the function signature for diagnostic purposes. This ensures that the test suite is properly cleaned up after execution, supporting robust and reliable test management across all files and folders within the µTest++ framework.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00420">420</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00241">241</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
+Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00420">420</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp/#l00241">241</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Operators
+
+### operator=() {#aafe75ac5383b6981e1ed6e3c8e96249e}
+
+<MemberDefinition
+  prototype={<>test&#95;suite &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite::operator= (const <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</a> &amp;)</>}
+  labels = {["delete"]}>
+Deleted copy assignment operator to prevent copying.
+
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00407">407</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.
+</MemberDefinition>
+
+### operator=() {#a00597bc0e72007bd92d370bb8cac9ff7}
+
+<MemberDefinition
+  prototype={<>test&#95;suite &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite::operator= (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</a> &amp;&amp;)</>}
+  labels = {["delete"]}>
+Deleted move assignment operator to prevent moving.
+
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00414">414</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -432,7 +394,7 @@ Nothing.
 
 This method marks the beginning of a test case within the suite. If the start of the suite was deferred, it ensures the suite is properly begun before proceeding. The method sets the current test case name, increments the total number of test cases, resets the current test case statistics, and notifies the test reporter to begin the test case. This approach guarantees that each test case is clearly identified, accurately tracked, and properly reported across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00158">158</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00159">159</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
+Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00158">158</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp/#l00159">159</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a>.
 </MemberDefinition>
 
 ### begin&#95;test&#95;suite() {#adfc3afd1432b2d093eef73a18ca9a242}
@@ -452,7 +414,7 @@ Nothing.
 
 This method marks the beginning of a test suite&#39;s execution. It resets the deferred begin flag and notifies the test reporter to start the suite, passing the suite&#39;s name. This ensures that test suite output is clearly delineated and properly initialised, supporting organised and readable reporting across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00253">253</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00122">122</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
+Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00253">253</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp/#l00122">122</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a>.
 </MemberDefinition>
 
 ### end&#95;test&#95;case() {#ab2e1a6eadc56c54b45f9d21e450b0cbc}
@@ -472,7 +434,7 @@ Nothing.
 
 This method marks the end of a test case within the suite. It notifies the test reporter to conclude the test case, passing the current test case name. This ensures that the results of the test case are accurately finalised and clearly reported, supporting organised and reliable test management across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00168">168</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00183">183</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
+Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00168">168</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp/#l00183">183</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a>.
 </MemberDefinition>
 
 ### end&#95;test&#95;suite() {#aa53f99054051136b3484a1664b5ee59f}
@@ -492,7 +454,7 @@ Nothing.
 
 This method marks the end of a test suite&#39;s execution. If the suite&#39;s start was deferred, it ensures the suite is properly begun before finalising. The method then notifies the test reporter to conclude the suite, passing a reference to the suite instance. This guarantees that all results are accurately summarised and reported, supporting clear and organised test management across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00264">264</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00139">139</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
+Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00264">264</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp/#l00139">139</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a>.
 </MemberDefinition>
 
 ### failed&#95;checks() {#a4cd96949ef52b98b6c5e08bbd7900979}
@@ -511,7 +473,7 @@ None.
 An integer with the number of checks that failed.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00226">226</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00226">226</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.
 </MemberDefinition>
 
 ### increment&#95;failed() {#a20051842d981b530746b4fb4dee00d01}
@@ -531,7 +493,7 @@ Nothing.
 
 This method increments the count of failed checks for the test suite and the current test case. It ensures that each failing assertion is accurately recorded, supporting precise tracking and reporting of test outcomes across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00203">203</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00210">210</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
+Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00203">203</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp/#l00210">210</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a>.
 </MemberDefinition>
 
 ### increment&#95;successful() {#a81006378d0bebeadcd59266f57b4ef4b}
@@ -551,7 +513,7 @@ Nothing.
 
 This method increments the count of successful checks for the test suite and the current test case. It ensures that each passing assertion is accurately recorded, supporting precise tracking and reporting of test outcomes across all test cases and folders.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00192">192</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00196">196</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
+Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00192">192</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp/#l00196">196</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a>.
 </MemberDefinition>
 
 ### name() {#a3625fee07d796bf5c3d6b4c69a94182c}
@@ -570,27 +532,7 @@ None.
 A pointer to the null-terminated test suite name.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00178">178</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>.
-</MemberDefinition>
-
-### operator=() {#aafe75ac5383b6981e1ed6e3c8e96249e}
-
-<MemberDefinition
-  prototype={<>test&#95;suite &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite::operator= (const <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</Link> &amp;)</>}
-  labels = {["delete"]}>
-Deleted copy assignment operator to prevent copying.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00407">407</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>.
-</MemberDefinition>
-
-### operator=() {#a00597bc0e72007bd92d370bb8cac9ff7}
-
-<MemberDefinition
-  prototype={<>test&#95;suite &amp; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite::operator= (<Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test&#95;suite</Link> &amp;&amp;)</>}
-  labels = {["delete"]}>
-Deleted move assignment operator to prevent moving.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00414">414</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00178">178</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.
 </MemberDefinition>
 
 ### run() {#ab198909a0182672be8c741d3ad7f291d}
@@ -611,7 +553,7 @@ Nothing.
 
 This method executes the test suite by invoking the stored callable object associated with the suite. It ensures that all test cases registered within the suite are executed in sequence, supporting comprehensive and structured testing across all files and folders within the µTest++ framework.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00432">432</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>, definition at line <Link to="/docs/api/files/src/test-suite-cpp/#l00227">227</Link> of file <Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link>.
+Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00432">432</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp/#l00227">227</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a>.
 </MemberDefinition>
 
 ### successful&#95;checks() {#acf56ac77830e630b5485248409c3b3f1}
@@ -630,7 +572,7 @@ None.
 An integer with the number of checks that passed.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00213">213</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00213">213</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.
 </MemberDefinition>
 
 ### test&#95;cases() {#ae755b186f32e229e8d0bd5e02027b515}
@@ -649,7 +591,7 @@ None.
 An integer with the number of test cases.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00239">239</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00239">239</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.
 </MemberDefinition>
 
 ### unused() {#a20de3062a437e86955dd2917d7976cb3}
@@ -668,7 +610,7 @@ None.
 True if the test suite is not used.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00288">288</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00288">288</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.
 </MemberDefinition>
 
 ### was&#95;successful() {#ae60536040204e7481b50dfde7b0a6600}
@@ -687,7 +629,7 @@ None.
 True if the test suite was successful.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00274">274</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00274">274</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -704,7 +646,7 @@ Structure holding the current test case&#39;s check counters.
 
 Tracks the number of successful and failed checks for the currently running test case.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00344">344</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00344">344</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.
 </MemberDefinition>
 
 ### failed&#95;checks {#a40cadb0a79f55c796b7e7aca4a847cfd}
@@ -713,7 +655,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>int micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::failed&#95;checks</>}>
 Number of failed checks in the current test case.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00343">343</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00343">343</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.
 </MemberDefinition>
 
 ### process&#95;deferred&#95;begin {#ac442c68973cd937aeaef7aa7fbc27d30}
@@ -722,7 +664,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>bool micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::process&#95;deferred&#95;begin = true</>}>
 Indicates whether to process deferred begin for test cases.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00324">324</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00324">324</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.
 </MemberDefinition>
 
 ### successful&#95;checks {#a4851a70fd4a0c71b787e445b9766bacc}
@@ -731,7 +673,73 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>int micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::successful&#95;checks</>}>
 Number of successful checks in the current test case.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00338">338</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00338">338</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Protected Member Attributes
+
+### callable&#95; {#a4c9220da528e34d0b4f8d0980a30fe6a}
+
+<MemberDefinition
+  prototype={<>std::function&lt;void (void)&gt; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite::callable&#95;</>}
+  labels = {["protected"]}>
+Callable object representing the test suite&#39;s execution logic.
+
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00438">438</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.
+</MemberDefinition>
+
+### failed&#95;checks&#95; {#a01c523aaf94e26eb4cd6727c5d74ab02}
+
+<MemberDefinition
+  prototype={<>int micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::failed&#95;checks&#95; = 0</>}
+  labels = {["protected"]}>
+Count of test conditions that failed.
+
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00313">313</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.
+</MemberDefinition>
+
+### name&#95; {#a76f1c1c39f8b2c8cc70688a47bf6eafd}
+
+<MemberDefinition
+  prototype={<>const char&#42; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::name&#95;</>}
+  labels = {["protected"]}>
+The test suite name.
+
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00298">298</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.
+</MemberDefinition>
+
+### successful&#95;checks&#95; {#ad2736cdadc2ab917099cd0ad82d3fc18}
+
+<MemberDefinition
+  prototype={<>int micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::successful&#95;checks&#95; = 0</>}
+  labels = {["protected"]}>
+Count of test conditions that passed.
+
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00308">308</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.
+</MemberDefinition>
+
+### test&#95;case&#95;name&#95; {#ae369ec539219642f84aeb93b78269df0}
+
+<MemberDefinition
+  prototype={<>const char&#42; micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::test&#95;case&#95;name&#95;</>}
+  labels = {["protected"]}>
+The current test case name.
+
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00303">303</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.
+</MemberDefinition>
+
+### test&#95;cases&#95; {#a1e9205117a2373caf7346064e86afa03}
+
+<MemberDefinition
+  prototype={<>int micro&#95;os&#95;plus::micro&#95;test&#95;plus::test&#95;suite&#95;base::test&#95;cases&#95; = 0</>}
+  labels = {["protected"]}>
+Count of test cases in the test suite.
+
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00318">318</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -741,9 +749,9 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 The documentation for this class was generated from the following files:
 
 <ul>
-<li><Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-suite-inlines-h">test-suite-inlines.h</Link></li>
-<li><Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</Link></li>
-<li><Link to="/docs/api/files/src/test-suite-cpp">test-suite.cpp</Link></li>
+<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-suite-inlines-h">test-suite-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a></li>
 </ul>
 
 </DoxygenPage>

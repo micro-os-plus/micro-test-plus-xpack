@@ -65,8 +65,15 @@ const config: Config = {
 
   plugins: [
     [
-      // '@docusaurus/plugin-content-docs',
-      './src/plugins/DocusaurusContentDocsWithDoxygenWrapper.js',
+      '@xpack/docusaurus-plugin-doxygen',
+      {
+        // redirectsOutputFolderPath: 'reference',
+        verbose: false,
+        suggestToDoDescriptions: false
+      }
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
       {
         sidebarPath: './sidebars.ts',
         // Please change this to your repo.
@@ -74,14 +81,6 @@ const config: Config = {
         editUrl: 'https://github.com/micro-os-plus/micro-test-plus-xpack/edit/website/website/',
         // showLastUpdateAuthor: true,
         showLastUpdateTime: true,
-
-        doxygenPluginOptions: {
-          outputFolderPath: 'docs/api', // doxygen/mdx
-          outputBaseUrl: 'api',
-          redirectsOutputFolderPath: 'reference',
-          verbose: false,
-          runOnStart: true
-        }
       },
     ],
     [

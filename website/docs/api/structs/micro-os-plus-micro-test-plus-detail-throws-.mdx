@@ -13,7 +13,6 @@ toc_max_heading_level: 3
 
 ---
 
-import Link from '@docusaurus/Link'
 import CodeBlock from '@theme/CodeBlock'
 
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
@@ -33,54 +32,57 @@ import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
 
 <DoxygenPage pluginConfig={pluginConfig}>
 
-Operator struct template to check if an expression throws a specific exception. <Link to="#details">More...</Link>
+Operator struct template to check if an expression throws a specific exception. <a href="#details">More...</a>
 
 ## Declaration
 
 <CodeBlock>template &lt;class Callable&#95;T, class Exception&#95;T = void&gt;
-struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable&#95;T, Exception&#95;T&gt;;</CodeBlock>
+struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable&#95;T, Exception&#95;T&gt;</CodeBlock>
 
 ## Included Headers
 
 <IncludesList>
 <IncludesListItem
   filePath="micro-os-plus/micro-test-plus.h"
-  permalink="/docs/api/files/include/micro-os-plus/micro-test-plus-h"
+  permalink="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h"
   isLocal="false" />
 </IncludesList>
-
-## Public Member Attributes Index
-
-<MembersIndex>
-
-<MembersIndexItem
-  type="const bool"
-  name={<><Link to="#ab92c281f0bbf04125e3fa9a8258dc1b9">value&#95;</Link> &#123;&#125;</>}>
-Stores the result of the exception check. <Link to="#ab92c281f0bbf04125e3fa9a8258dc1b9">More...</Link>
-</MembersIndexItem>
-
-</MembersIndex>
 
 ## Public Constructors Index
 
 <MembersIndex>
 
 <MembersIndexItem
+  template={<>template &lt;class Callable&#95;T, class Exception&#95;T = void&gt;</>}
   type="constexpr"
-  name={<><Link to="#ab482b144c355eb68638dc872331145e7">throws&#95;</Link> (const Callable&#95;T &amp;func)</>}>
-Constructs an exception checking operator for the given callable. <Link to="#ab482b144c355eb68638dc872331145e7">More...</Link>
+  name={<><a href="#ab482b144c355eb68638dc872331145e7">throws&#95;</a> (const Callable&#95;T &amp;func)</>}>
+Constructs an exception checking operator for the given callable. <a href="#ab482b144c355eb68638dc872331145e7">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
 
-## Public Member Functions Index
+## Public Operators Index
 
 <MembersIndex>
 
 <MembersIndexItem
+  template={<>template &lt;class Callable&#95;T, class Exception&#95;T = void&gt;</>}
   type="constexpr"
-  name={<><Link to="#a84158f0b3d7719fe0929b49002c113b5">operator bool</Link> () const</>}>
-Conversion operator to boolean. <Link to="#a84158f0b3d7719fe0929b49002c113b5">More...</Link>
+  name={<><a href="#a84158f0b3d7719fe0929b49002c113b5">operator bool</a> () const</>}>
+Conversion operator to boolean. <a href="#a84158f0b3d7719fe0929b49002c113b5">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Member Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;class Callable&#95;T, class Exception&#95;T = void&gt;</>}
+  type="const bool"
+  name={<><a href="#ab92c281f0bbf04125e3fa9a8258dc1b9">value&#95;</a> &#123;&#125;</>}>
+Stores the result of the exception check. <a href="#ab92c281f0bbf04125e3fa9a8258dc1b9">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -90,10 +92,10 @@ Conversion operator to boolean. <Link to="#a84158f0b3d7719fe0929b49002c113b5">Mo
 Operator struct template to check if an expression throws a specific exception.
 
 <ParametersList title="Template Parameters">
-<ParametersListItem name="Callable&#95;T">The type of the callable object to be invoked.</ParametersListItem>
-<ParametersListItem name="Exception&#95;T">The type of the exception to check for (defaults to <code>void</code> for any exception).</ParametersListItem>
+<ParametersListItem name="Callable_T">The type of the callable object to be invoked.</ParametersListItem>
+<ParametersListItem name="Exception_T">The type of the exception to check for (defaults to <code>void</code> for any exception).</ParametersListItem>
 </ParametersList>
-The <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-">throws&#95;</Link></code> struct template provides a type-safe mechanism for verifying whether a callable expression throws a specified exception type during its execution within the framework.
+The <code><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-">throws&#95;</a></code> struct template provides a type-safe mechanism for verifying whether a callable expression throws a specified exception type during its execution within the framework.
 
 This comparator is designed to support both custom and standard callable types. The result of the exception check is stored in the <code>value&#95;</code> member for efficient access.
 
@@ -101,23 +103,7 @@ The implementation is optimised for use in embedded environments and supports bo
 
 All definitions are intended for internal use within the framework and are implemented in the <code>include/micro-os-plus/micro-test-plus</code> folder to maintain a structured and modular codebase.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01511">1511</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
-
-<SectionDefinition>
-
-## Public Member Attributes
-
-### value&#95; {#ab92c281f0bbf04125e3fa9a8258dc1b9}
-
-<MemberDefinition
-  template={<>template &lt;class Callable&#95;T, class Exception&#95;T = void&gt;</>}
-  prototype={<>const bool micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::throws&#95;&lt; Callable&#95;T, Exception&#95;T &gt;::value&#95; &#123;&#125;</>}>
-Stores the result of the exception check.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01564">1564</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
-</MemberDefinition>
-
-</SectionDefinition>
+Definition at line 1511 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.
 
 <SectionDefinition>
 
@@ -136,14 +122,14 @@ Constructs an exception checking operator for the given callable.
 </ParametersList>
 Invokes the provided callable and determines whether it throws an exception of the specified type. The result is stored in the <code>value&#95;</code> member for efficient access.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01524">1524</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01524">1524</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>
 
 <SectionDefinition>
 
-## Public Member Functions
+## Public Operators
 
 ### operator bool() {#a84158f0b3d7719fe0929b49002c113b5}
 
@@ -164,7 +150,23 @@ None.
 </ParametersList>
 Returns the result of the exception check.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01556">1556</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01556">1556</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Attributes
+
+### value&#95; {#ab92c281f0bbf04125e3fa9a8258dc1b9}
+
+<MemberDefinition
+  template={<>template &lt;class Callable&#95;T, class Exception&#95;T = void&gt;</>}
+  prototype={<>const bool micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::throws&#95;&lt; Callable&#95;T, Exception&#95;T &gt;::value&#95; &#123;&#125;</>}>
+Stores the result of the exception check.
+
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01564">1564</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -174,7 +176,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 The documentation for this struct was generated from the following file:
 
 <ul>
-<li><Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link></li>
+<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a></li>
 </ul>
 
 </DoxygenPage>

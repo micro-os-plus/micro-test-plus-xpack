@@ -12,7 +12,6 @@ keywords:
 
 ---
 
-import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
@@ -32,22 +31,22 @@ import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
 
 <DoxygenPage pluginConfig={pluginConfig}>
 
-Overloaded operators for string comparison. <Link to="#details">More...</Link>
+Overloaded operators for string comparison. <a href="#details">More...</a>
 
-## Functions Index
+## Operators Index
 
 <MembersIndex>
 
 <MembersIndexItem
   type="constexpr auto"
-  name={<><Link to="#ga179e971d5e37795c036ad66aa35f1654">operator!=</Link> (std::string&#95;view lhs, std::string&#95;view rhs)</>}>
-Non-equality operator for <code>string&#95;view</code> objects. <Link to="#ga179e971d5e37795c036ad66aa35f1654">More...</Link>
+  name={<><a href="#ga179e971d5e37795c036ad66aa35f1654">operator!=</a> (std::string&#95;view lhs, std::string&#95;view rhs)</>}>
+Non-equality operator for <code>string&#95;view</code> objects. <a href="#ga179e971d5e37795c036ad66aa35f1654">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr auto"
-  name={<><Link to="#gaabe34a842bf38ea2913a4164d2b0a9cb">operator==</Link> (std::string&#95;view lhs, std::string&#95;view rhs)</>}>
-Equality operator for <code>string&#95;view</code> objects. <Link to="#gaabe34a842bf38ea2913a4164d2b0a9cb">More...</Link>
+  name={<><a href="#gaabe34a842bf38ea2913a4164d2b0a9cb">operator==</a> (std::string&#95;view lhs, std::string&#95;view rhs)</>}>
+Equality operator for <code>string&#95;view</code> objects. <a href="#gaabe34a842bf38ea2913a4164d2b0a9cb">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -70,10 +69,10 @@ By using these dedicated string operators, developers can write concise and read
 
 <CodeLine><Highlight kind="preprocessor">#include &lt;string&#95;view&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal">std::literals; </Highlight><Highlight kind="comment">// For the &quot;sv&quot; literal.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link>;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</a>;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">// ...</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">mt::test&#95;case (</Highlight><Highlight kind="stringliteral">&quot;Operators&quot;</Highlight><Highlight kind="normal">, [] &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">mt::test&#95;case (</Highlight><Highlight kind="stringliteral">&quot;Operators&quot;</Highlight><Highlight kind="normal">, &#91;&#93; &#123;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal">micro&#95;test&#95;plus::operators;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">  mt::expect (std::string&#95;view&#123; compute&#95;ultimate&#95;answer () &#125; == </Highlight><Highlight kind="stringliteral">&quot;forty-two&quot;</Highlight><Highlight kind="normal">sv)</Highlight></CodeLine>
@@ -84,7 +83,7 @@ By using these dedicated string operators, developers can write concise and read
 
 <SectionDefinition>
 
-## Functions
+## Operators
 
 ### operator!=() {#ga179e971d5e37795c036ad66aa35f1654}
 
@@ -104,7 +103,7 @@ A comparator object that evaluates to true if the string views are not equal.
 
 This overload of the non-equality operator enables direct comparison of two <code>std::string&#95;view</code> objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two string views are not equal.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00149">149</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00149">149</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.
 </MemberDefinition>
 
 ### operator==() {#gaabe34a842bf38ea2913a4164d2b0a9cb}
@@ -125,7 +124,7 @@ A comparator object that evaluates to true if the string views are equal.
 
 This overload of the equality operator enables direct comparison of two <code>std::string&#95;view</code> objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two string views are equal.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00128">128</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00128">128</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>

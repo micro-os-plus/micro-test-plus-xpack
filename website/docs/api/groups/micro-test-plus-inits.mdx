@@ -12,7 +12,6 @@ keywords:
 
 ---
 
-import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
@@ -32,7 +31,7 @@ import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
 
 <DoxygenPage pluginConfig={pluginConfig}>
 
-Functions for initialising the framework and returning an exit code. <Link to="#details">More...</Link>
+Functions for initialising the framework and returning an exit code. <a href="#details">More...</a>
 
 ## Functions Index
 
@@ -40,14 +39,14 @@ Functions for initialising the framework and returning an exit code. <Link to="#
 
 <MembersIndexItem
   type="int"
-  name={<><Link to="#gaa790667969dc1a261c324e89a6ea4591">exit&#95;code</Link> (void)</>}>
-Complete the test run and return the exit code. <Link to="#gaa790667969dc1a261c324e89a6ea4591">More...</Link>
+  name={<><a href="#gaa790667969dc1a261c324e89a6ea4591">exit&#95;code</a> (void)</>}>
+Complete the test run and return the exit code. <a href="#gaa790667969dc1a261c324e89a6ea4591">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="void"
-  name={<><Link to="#gac2c60d60578f668878957ec68a37538f">initialize</Link> (int argc, char &#42;argv[], const char &#42;name=&quot;Main&quot;)</>}>
-Initialise the µTest++ framework. <Link to="#gac2c60d60578f668878957ec68a37538f">More...</Link>
+  name={<><a href="#gac2c60d60578f668878957ec68a37538f">initialize</a> (int argc, char &#42;argv&#91;&#93;, const char &#42;name=&quot;Main&quot;)</>}>
+Initialise the µTest++ framework. <a href="#gac2c60d60578f668878957ec68a37538f">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -63,16 +62,16 @@ The simplest test consists of a single test case containing a single expectation
 
 <ProgramListing extension="cpp">
 
-<CodeLine><Highlight kind="preprocessor">#include &lt;<Link to="/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</Link>&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="preprocessor">#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">main(</Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> argc, </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42; argv[])</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">main(</Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> argc, </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42; argv&#91;&#93;)</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link>;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</a>;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">  mt::initialize(argc, argv, </Highlight><Highlight kind="stringliteral">&quot;Minimal&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  mt::test&#95;case (</Highlight><Highlight kind="stringliteral">&quot;Check truth&quot;</Highlight><Highlight kind="normal">, [] &#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  mt::test&#95;case (</Highlight><Highlight kind="stringliteral">&quot;Check truth&quot;</Highlight><Highlight kind="normal">, &#91;&#93; &#123;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">    mt::expect (</Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">  &#125;)</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight></CodeLine>
@@ -120,7 +119,7 @@ The <code>exit&#95;code</code> function finalises the execution of all registere
 
 The returned value indicates the overall success or failure of the test run, allowing integration with build systems and continuous integration environments.
 
-Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00108">108</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/micro-test-plus-cpp/#l00108">108</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</a>.
 </MemberDefinition>
 
 ### initialize() {#gac2c60d60578f668878957ec68a37538f}
@@ -143,7 +142,7 @@ The <code>initialize</code> function sets up the µTest++ testing framework, pre
 
 The provided arguments may be used to configure verbosity or other run-time options for the test session.
 
-Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00081">81</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/micro-test-plus-cpp/#l00081">81</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</a>.
 </MemberDefinition>
 
 </SectionDefinition>

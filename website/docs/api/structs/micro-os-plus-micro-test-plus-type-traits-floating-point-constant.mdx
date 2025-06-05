@@ -13,7 +13,6 @@ toc_max_heading_level: 3
 
 ---
 
-import Link from '@docusaurus/Link'
 import CodeBlock from '@theme/CodeBlock'
 
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
@@ -33,19 +32,19 @@ import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
 
 <DoxygenPage pluginConfig={pluginConfig}>
 
-Struct template representing a generic floating point constant with custom size and precision. <Link to="#details">More...</Link>
+Struct template representing a generic floating point constant with custom size and precision. <a href="#details">More...</a>
 
 ## Declaration
 
 <CodeBlock>template &lt;class T, auto N, auto D, auto Size, auto P = 1&gt;
-struct micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt;T, N, D, Size, P&gt;;</CodeBlock>
+struct micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt;T, N, D, Size, P&gt;</CodeBlock>
 
 ## Included Headers
 
 <IncludesList>
 <IncludesListItem
   filePath="micro-os-plus/micro-test-plus.h"
-  permalink="/docs/api/files/include/micro-os-plus/micro-test-plus-h"
+  permalink="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h"
   isLocal="false" />
 </IncludesList>
 
@@ -54,27 +53,30 @@ struct micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt;T
 <MembersIndex>
 
 <MembersIndexItem
+  template={<>template &lt;class T, auto N, auto D, auto Size, auto P = 1&gt;</>}
   type="using"
-  name={<><Link to="#a3538821b6929e9b13f6a3ea763e1627e">value&#95;type</Link> = T</>}>
-The type of the constant value. <Link to="#a3538821b6929e9b13f6a3ea763e1627e">More...</Link>
+  name={<><a href="#a3538821b6929e9b13f6a3ea763e1627e">value&#95;type</a> = T</>}>
+The type of the constant value. <a href="#a3538821b6929e9b13f6a3ea763e1627e">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
 
-## Public Static Attributes Index
+## Public Operators Index
 
 <MembersIndex>
 
 <MembersIndexItem
-  type="auto"
-  name={<><Link to="#a5cab8e85fbee4a9314fc8a3e09e59eef">epsilon</Link> = T (1) / <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a5c22d85f0df63cc0504cbf4988173cd7">math::pow</Link> (T (10), Size - 1)</>}>
-The epsilon value used for floating point comparisons. <Link to="#a5cab8e85fbee4a9314fc8a3e09e59eef">More...</Link>
+  template={<>template &lt;class T, auto N, auto D, auto Size, auto P = 1&gt;</>}
+  type="constexpr"
+  name={<><a href="#a0a877099bf7ee9fcde1446cac65511e6">operator value&#95;type</a> () const</>}>
+Explicit conversion operator to <a href="#a3538821b6929e9b13f6a3ea763e1627e">value&#95;type</a>. <a href="#a0a877099bf7ee9fcde1446cac65511e6">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
-  type="auto"
-  name={<><Link to="#ab0e05de518c208a6a762c7377d2f2332">value</Link> = T (P) &#42; (T (N) + (T (D) / <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a5c22d85f0df63cc0504cbf4988173cd7">math::pow</Link> (T (10), Size)))</>}>
-The constant value. <Link to="#ab0e05de518c208a6a762c7377d2f2332">More...</Link>
+  template={<>template &lt;class T, auto N, auto D, auto Size, auto P = 1&gt;</>}
+  type="constexpr auto"
+  name={<><a href="#adcc1ade20fd348fa653623ec6c378d72">operator-</a> () const</>}>
+Unary minus operator. <a href="#adcc1ade20fd348fa653623ec6c378d72">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -84,21 +86,30 @@ The constant value. <Link to="#ab0e05de518c208a6a762c7377d2f2332">More...</Link>
 <MembersIndex>
 
 <MembersIndexItem
+  template={<>template &lt;class T, auto N, auto D, auto Size, auto P = 1&gt;</>}
   type="constexpr auto"
-  name={<><Link to="#a3ee48433567db9886d9f99ab5e6d2864">get</Link> () const</>}>
-Getter for the constant value. <Link to="#a3ee48433567db9886d9f99ab5e6d2864">More...</Link>
+  name={<><a href="#a3ee48433567db9886d9f99ab5e6d2864">get</a> () const</>}>
+Getter for the constant value. <a href="#a3ee48433567db9886d9f99ab5e6d2864">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Static Attributes Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;class T, auto N, auto D, auto Size, auto P = 1&gt;</>}
+  type="auto"
+  name={<><a href="#a5cab8e85fbee4a9314fc8a3e09e59eef">epsilon</a> = T (1) / <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a5c22d85f0df63cc0504cbf4988173cd7">math::pow</a> (T (10), Size - 1)</>}>
+The epsilon value used for floating point comparisons. <a href="#a5cab8e85fbee4a9314fc8a3e09e59eef">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
-  type="constexpr"
-  name={<><Link to="#a0a877099bf7ee9fcde1446cac65511e6">operator value&#95;type</Link> () const</>}>
-Explicit conversion operator to <Link to="#a3538821b6929e9b13f6a3ea763e1627e">value&#95;type</Link>. <Link to="#a0a877099bf7ee9fcde1446cac65511e6">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="constexpr auto"
-  name={<><Link to="#adcc1ade20fd348fa653623ec6c378d72">operator-</Link> () const</>}>
-Unary minus operator. <Link to="#adcc1ade20fd348fa653623ec6c378d72">More...</Link>
+  template={<>template &lt;class T, auto N, auto D, auto Size, auto P = 1&gt;</>}
+  type="auto"
+  name={<><a href="#ab0e05de518c208a6a762c7377d2f2332">value</a> = T (P) &#42; (T (N) + (T (D) / <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a5c22d85f0df63cc0504cbf4988173cd7">math::pow</a> (T (10), Size)))</>}>
+The constant value. <a href="#ab0e05de518c208a6a762c7377d2f2332">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -114,11 +125,11 @@ Struct template representing a generic floating point constant with custom size 
 <ParametersListItem name="Size">The number of decimal digits for the fractional part.</ParametersListItem>
 <ParametersListItem name="P">The sign of the value (1 for positive, -1 for negative). Defaults to 1.</ParametersListItem>
 </ParametersList>
-The <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">floating&#95;point&#95;constant</Link></code> struct template provides a compile-time constant value of a floating point type, supporting custom size and precision. It inherits from <code>op</code> to enable unified handling within the µTest++ framework&#39;s type traits and metaprogramming utilities.
+The <code><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">floating&#95;point&#95;constant</a></code> struct template provides a compile-time constant value of a floating point type, supporting custom size and precision. It inherits from <code>op</code> to enable unified handling within the µTest++ framework&#39;s type traits and metaprogramming utilities.
 
-This struct template exposes the constant value via a static member, a getter method, and explicit conversion operators. It also provides a unary minus operator to obtain the negative value as a new <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">floating&#95;point&#95;constant</Link></code> instance. The <code>epsilon</code> member defines the precision used for floating point comparisons, calculated based on the specified size.
+This struct template exposes the constant value via a static member, a getter method, and explicit conversion operators. It also provides a unary minus operator to obtain the negative value as a new <code><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">floating&#95;point&#95;constant</a></code> instance. The <code>epsilon</code> member defines the precision used for floating point comparisons, calculated based on the specified size.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00790">790</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line 790 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
 
 <SectionDefinition>
 
@@ -131,39 +142,47 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::floating&#95;point&#95;constant&lt; T, N, D, Size, P &gt;::value&#95;type =  T</>}>
 The type of the constant value.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00795">795</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00795">795</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>
 
 <SectionDefinition>
 
-## Public Static Attributes
+## Public Operators
 
-### epsilon {#a5cab8e85fbee4a9314fc8a3e09e59eef}
+### operator value&#95;type() {#a0a877099bf7ee9fcde1446cac65511e6}
 
 <MemberDefinition
   template={<>template &lt;class T, auto N, auto D, auto Size, auto P = 1&gt;</>}
-  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::floating&#95;point&#95;constant&lt; T, N, D, Size, P &gt;::epsilon = T (1) / <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a5c22d85f0df63cc0504cbf4988173cd7">math::pow</Link> (T (10), Size - 1)</>}
-  labels = {["constexpr", "static"]}>
-The epsilon value used for floating point comparisons.
+  prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::floating&#95;point&#95;constant&lt; T, N, D, Size, P &gt;::operator value&#95;type () const</>}
+  labels = {["inline", "explicit", "nodiscard", "constexpr"]}>
+Explicit conversion operator to <a href="#a3538821b6929e9b13f6a3ea763e1627e">value&#95;type</a>.
 
-Calculated as 1 divided by 10 raised to the power of (Size - 1).
+<SectionUser title="Returns">
+The constant value as type <code><a href="#a3538821b6929e9b13f6a3ea763e1627e">value&#95;type</a></code>.
+</SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00803">803</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Allows explicit conversion to the underlying floating point value type.
+
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00839">839</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
 </MemberDefinition>
 
-### value {#ab0e05de518c208a6a762c7377d2f2332}
+### operator-() {#adcc1ade20fd348fa653623ec6c378d72}
 
 <MemberDefinition
   template={<>template &lt;class T, auto N, auto D, auto Size, auto P = 1&gt;</>}
-  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::floating&#95;point&#95;constant&lt; T, N, D, Size, P &gt;::value = T (P) &#42; (T (N) + (T (D) / <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a5c22d85f0df63cc0504cbf4988173cd7">math::pow</Link> (T (10), Size)))</>}
-  labels = {["constexpr", "static"]}>
-The constant value.
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::floating&#95;point&#95;constant&lt; T, N, D, Size, P &gt;::operator- () const</>}
+  labels = {["inline", "nodiscard", "constexpr"]}>
+Unary minus operator.
 
-Computed as <code>P &#42; (N + D / 10^Size)</code>.
+<SectionUser title="Returns">
+A <code><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">floating&#95;point&#95;constant</a></code> with value <code>-value</code>.
+</SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00811">811</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Returns a new <code><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">floating&#95;point&#95;constant</a></code> instance representing the negative of the current value.
+
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00824">824</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -186,41 +205,39 @@ The constant value.
 
 Returns the compile-time floating point constant value.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00853">853</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00853">853</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
 </MemberDefinition>
 
-### operator value&#95;type() {#a0a877099bf7ee9fcde1446cac65511e6}
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Static Attributes
+
+### epsilon {#a5cab8e85fbee4a9314fc8a3e09e59eef}
 
 <MemberDefinition
   template={<>template &lt;class T, auto N, auto D, auto Size, auto P = 1&gt;</>}
-  prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::floating&#95;point&#95;constant&lt; T, N, D, Size, P &gt;::operator value&#95;type () const</>}
-  labels = {["inline", "explicit", "nodiscard", "constexpr"]}>
-Explicit conversion operator to <Link to="#a3538821b6929e9b13f6a3ea763e1627e">value&#95;type</Link>.
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::floating&#95;point&#95;constant&lt; T, N, D, Size, P &gt;::epsilon = T (1) / <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a5c22d85f0df63cc0504cbf4988173cd7">math::pow</a> (T (10), Size - 1)</>}
+  labels = {["constexpr", "static"]}>
+The epsilon value used for floating point comparisons.
 
-<SectionUser title="Returns">
-The constant value as type <code><Link to="#a3538821b6929e9b13f6a3ea763e1627e">value&#95;type</Link></code>.
-</SectionUser>
+Calculated as 1 divided by 10 raised to the power of (Size - 1).
 
-Allows explicit conversion to the underlying floating point value type.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00839">839</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00803">803</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
 </MemberDefinition>
 
-### operator-() {#adcc1ade20fd348fa653623ec6c378d72}
+### value {#ab0e05de518c208a6a762c7377d2f2332}
 
 <MemberDefinition
   template={<>template &lt;class T, auto N, auto D, auto Size, auto P = 1&gt;</>}
-  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::floating&#95;point&#95;constant&lt; T, N, D, Size, P &gt;::operator- () const</>}
-  labels = {["inline", "nodiscard", "constexpr"]}>
-Unary minus operator.
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::floating&#95;point&#95;constant&lt; T, N, D, Size, P &gt;::value = T (P) &#42; (T (N) + (T (D) / <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a5c22d85f0df63cc0504cbf4988173cd7">math::pow</a> (T (10), Size)))</>}
+  labels = {["constexpr", "static"]}>
+The constant value.
 
-<SectionUser title="Returns">
-A <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">floating&#95;point&#95;constant</Link></code> with value <code>-value</code>.
-</SectionUser>
+Computed as <code>P &#42; (N + D / 10^Size)</code>.
 
-Returns a new <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">floating&#95;point&#95;constant</Link></code> instance representing the negative of the current value.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00824">824</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00811">811</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -230,7 +247,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 The documentation for this struct was generated from the following file:
 
 <ul>
-<li><Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link></li>
+<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a></li>
 </ul>
 
 </DoxygenPage>

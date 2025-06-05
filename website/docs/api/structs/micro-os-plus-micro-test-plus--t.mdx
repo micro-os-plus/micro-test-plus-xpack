@@ -13,7 +13,6 @@ toc_max_heading_level: 3
 
 ---
 
-import Link from '@docusaurus/Link'
 import CodeBlock from '@theme/CodeBlock'
 
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
@@ -32,21 +31,34 @@ import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
 
 <DoxygenPage pluginConfig={pluginConfig}>
 
-Deprecated generic strongly-typed wrapper for explicit type conversion. <Link to="#details">More...</Link>
+Deprecated generic strongly-typed wrapper for explicit type conversion. <a href="#details">More...</a>
 
 ## Declaration
 
 <CodeBlock>template &lt;class T&gt;
-struct micro_os_plus::micro_test_plus::_t&lt;T&gt;;</CodeBlock>
+struct micro_os_plus::micro_test_plus::_t&lt;T&gt;</CodeBlock>
 
 ## Included Headers
 
 <IncludesList>
 <IncludesListItem
   filePath="micro-os-plus/micro-test-plus.h"
-  permalink="/docs/api/files/include/micro-os-plus/micro-test-plus-h"
+  permalink="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h"
   isLocal="false" />
 </IncludesList>
+
+## Public Member Typedefs Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;class T&gt;</>}
+  type="using"
+  name={<><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a26f470c3e6454a222fda0db2f01e044d">value&#95;type</a> = T</>}>
+The type of the encapsulated value. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a26f470c3e6454a222fda0db2f01e044d">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
 
 ## Public Constructors Index
 
@@ -54,20 +66,21 @@ struct micro_os_plus::micro_test_plus::_t&lt;T&gt;;</CodeBlock>
 
 <MembersIndexItem
   type="constexpr"
-  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga6195961d9ece2c2c91e8946d47d84a79">&#95;t</Link> (const T &amp;t)</>}>
-Constructor for the deprecated strongly-typed wrapper. <Link to="/docs/api/groups/micro-test-plus-literals/#ga6195961d9ece2c2c91e8946d47d84a79">More...</Link>
+  name={<><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga6195961d9ece2c2c91e8946d47d84a79">&#95;t</a> (const T &amp;t)</>}>
+Constructor for the deprecated strongly-typed wrapper. <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga6195961d9ece2c2c91e8946d47d84a79">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
 
-## Public Destructor Index
+## Public Operators Index
 
 <MembersIndex>
 
 <MembersIndexItem
+  template={<>template &lt;class T&gt;</>}
   type="constexpr"
-  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga6195961d9ece2c2c91e8946d47d84a79">&#95;t</Link> (const T &amp;t)</>}>
-Constructor for the deprecated strongly-typed wrapper. <Link to="/docs/api/groups/micro-test-plus-literals/#ga6195961d9ece2c2c91e8946d47d84a79">More...</Link>
+  name={<><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a4d706032d92daabe8f8f5c2b88ced4df">operator T</a> () const</>}>
+Explicit conversion operator to the underlying value type. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a4d706032d92daabe8f8f5c2b88ced4df">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -77,33 +90,10 @@ Constructor for the deprecated strongly-typed wrapper. <Link to="/docs/api/group
 <MembersIndex>
 
 <MembersIndexItem
-  type="constexpr"
-  name={<><Link to="/docs/api/groups/micro-test-plus-literals/#ga6195961d9ece2c2c91e8946d47d84a79">&#95;t</Link> (const T &amp;t)</>}>
-Constructor for the deprecated strongly-typed wrapper. <Link to="/docs/api/groups/micro-test-plus-literals/#ga6195961d9ece2c2c91e8946d47d84a79">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
+  template={<>template &lt;class T&gt;</>}
   type="constexpr auto "
-  name={<><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a54a10058177255d3c430b27e3cb87eab">get</Link> (void) const -&gt; decltype(auto)</>}>
-Getter for the encapsulated value. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a54a10058177255d3c430b27e3cb87eab">More...</Link>
-</MembersIndexItem>
-
-<MembersIndexItem
-  type="constexpr"
-  name={<><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a4d706032d92daabe8f8f5c2b88ced4df">operator T</Link> () const</>}>
-Explicit conversion operator to the underlying value type. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a4d706032d92daabe8f8f5c2b88ced4df">More...</Link>
-</MembersIndexItem>
-
-</MembersIndex>
-
-## Public Member Typedefs Index
-
-<MembersIndex>
-
-<MembersIndexItem
-  type="using"
-  name={<><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a26f470c3e6454a222fda0db2f01e044d">value&#95;type</Link> = T</>}>
-The type of the encapsulated value. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a26f470c3e6454a222fda0db2f01e044d">More...</Link>
+  name={<><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a54a10058177255d3c430b27e3cb87eab">get</a> (void) const -&gt; decltype(auto)</>}>
+Getter for the encapsulated value. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a54a10058177255d3c430b27e3cb87eab">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -113,9 +103,10 @@ The type of the encapsulated value. <Link to="/docs/api/structs/micro-os-plus/mi
 <MembersIndex>
 
 <MembersIndexItem
+  template={<>template &lt;class T&gt;</>}
   type="T"
-  name={<><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a5792dff99ce4e1bf2166db4dceecfd5e">value&#95;</Link> &#123;&#125;</>}>
-The encapsulated value. <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a5792dff99ce4e1bf2166db4dceecfd5e">More...</Link>
+  name={<><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a5792dff99ce4e1bf2166db4dceecfd5e">value&#95;</a> &#123;&#125;</>}>
+The encapsulated value. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a5792dff99ce4e1bf2166db4dceecfd5e">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -124,18 +115,57 @@ The encapsulated value. <Link to="/docs/api/structs/micro-os-plus/micro-test-plu
 
 Deprecated generic strongly-typed wrapper for explicit type conversion.
 
-The <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/-t">&#95;t</Link></code> template provides a public, strongly-typed wrapper for any type <code>T</code>, enabling explicit conversion of dynamic values and expressions to a type recognised by the µTest++ comparators and reporting mechanisms.
+The <code><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/-t">&#95;t</a></code> template provides a public, strongly-typed wrapper for any type <code>T</code>, enabling explicit conversion of dynamic values and expressions to a type recognised by the µTest++ comparators and reporting mechanisms.
 
-This wrapper inherits from <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type&#95;traits::value</Link>&lt;T&gt;</code>, ensuring that the encapsulated value is treated as the specified type within the framework.
+This wrapper inherits from <code><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">type&#95;traits::value</a>&lt;T&gt;</code>, ensuring that the encapsulated value is treated as the specified type within the framework.
 
 
 <XrefSect
   title="Deprecated"
-  permalink="/docs/api/pages/deprecated/#_deprecated000024">
-Use <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/to-t">to&#95;t</Link></code> (since 3.2.0).
+  permalink="/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000024">
+Use <code><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/to-t">to&#95;t</a></code> (since 3.2.0).
 </XrefSect>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h/#l00639">639</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</Link>.
+Definition at line 639 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a>.
+
+<SectionDefinition>
+
+## Public Member Typedefs
+
+### value&#95;type {#a26f470c3e6454a222fda0db2f01e044d}
+
+<MemberDefinition
+  template={<>template &lt;class T&gt;</>}
+  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::value&lt; T, class &gt;::value&#95;type =  T</>}>
+The type of the encapsulated value.
+
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00976">976</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Operators
+
+### operator T() {#a4d706032d92daabe8f8f5c2b88ced4df}
+
+<MemberDefinition
+  template={<>template &lt;class T&gt;</>}
+  prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::value&lt; T, class &gt;::operator T () const</>}
+  labels = {["inline", "explicit", "nodiscard", "constexpr"]}>
+Explicit conversion operator to the underlying value type.
+
+<SectionUser title="Returns">
+The stored value as type <code>T</code>.
+</SectionUser>
+
+Allows explicit conversion to the encapsulated value.
+
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00996">996</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
 
 <SectionDefinition>
 
@@ -160,40 +190,7 @@ The value of type <code>T</code>.
 
 Returns the stored value.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l01012">1012</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
-</MemberDefinition>
-
-### operator T() {#a4d706032d92daabe8f8f5c2b88ced4df}
-
-<MemberDefinition
-  template={<>template &lt;class T&gt;</>}
-  prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::value&lt; T, class &gt;::operator T () const</>}
-  labels = {["inline", "explicit", "nodiscard", "constexpr"]}>
-Explicit conversion operator to the underlying value type.
-
-<SectionUser title="Returns">
-The stored value as type <code>T</code>.
-</SectionUser>
-
-Allows explicit conversion to the encapsulated value.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00996">996</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
-</MemberDefinition>
-
-</SectionDefinition>
-
-<SectionDefinition>
-
-## Public Member Typedefs
-
-### value&#95;type {#a26f470c3e6454a222fda0db2f01e044d}
-
-<MemberDefinition
-  template={<>template &lt;class T&gt;</>}
-  prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::value&lt; T, class &gt;::value&#95;type =  T</>}>
-The type of the encapsulated value.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00976">976</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l01012">1012</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -209,7 +206,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>T micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::value&lt; T, class &gt;::value&#95; &#123;&#125;</>}>
 The encapsulated value.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l01020">1020</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l01020">1020</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -219,7 +216,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 The documentation for this struct was generated from the following file:
 
 <ul>
-<li><Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link></li>
+<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a></li>
 </ul>
 
 </DoxygenPage>

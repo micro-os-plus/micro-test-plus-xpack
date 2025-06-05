@@ -13,7 +13,6 @@ toc_max_heading_level: 3
 
 ---
 
-import Link from '@docusaurus/Link'
 import CodeBlock from '@theme/CodeBlock'
 
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
@@ -28,19 +27,19 @@ import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
 
 <DoxygenPage pluginConfig={pluginConfig}>
 
-Struct template for SFINAE requirements. <Link to="#details">More...</Link>
+Struct template for SFINAE requirements. <a href="#details">More...</a>
 
 ## Declaration
 
 <CodeBlock>template &lt;bool&gt;
-struct micro_os_plus::micro_test_plus::type_traits::requires_&lt;bool&gt;;</CodeBlock>
+struct micro_os_plus::micro_test_plus::type_traits::requires_&lt;bool&gt;</CodeBlock>
 
 ## Included Headers
 
 <IncludesList>
 <IncludesListItem
   filePath="micro-os-plus/micro-test-plus.h"
-  permalink="/docs/api/files/include/micro-os-plus/micro-test-plus-h"
+  permalink="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h"
   isLocal="false" />
 </IncludesList>
 
@@ -51,10 +50,10 @@ Struct template for SFINAE requirements.
 <ParametersList title="Template Parameters">
 <ParametersListItem name="Cond">The boolean condition to be checked at compile time.</ParametersListItem>
 </ParametersList>
-The <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires-">requires&#95;</Link></code> struct template is a utility for SFINAE (Substitution Failure Is Not An Error) in template metaprogramming. It is typically used to enable or disable template specialisations and function templates based on compile-time boolean conditions.
+The <code><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires-">requires&#95;</a></code> struct template is a utility for SFINAE (Substitution Failure Is Not An Error) in template metaprogramming. It is typically used to enable or disable template specialisations and function templates based on compile-time boolean conditions.
 
-When the boolean template parameter is <code>true</code>, the specialisation provides a nested <code>type</code> alias, which can be used in conjunction with <code>typename</code> and <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a1cbbf299a006b4692df250ef2a6fc7c2">requires&#95;t</Link></code> to enforce requirements in template declarations.
+When the boolean template parameter is <code>true</code>, the specialisation provides a nested <code>type</code> alias, which can be used in conjunction with <code>typename</code> and <code><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a1cbbf299a006b4692df250ef2a6fc7c2">requires&#95;t</a></code> to enforce requirements in template declarations.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00627">627</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line 627 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
 
 </DoxygenPage>

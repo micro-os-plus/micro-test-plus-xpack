@@ -13,7 +13,6 @@ toc_max_heading_level: 3
 
 ---
 
-import Link from '@docusaurus/Link'
 import CodeBlock from '@theme/CodeBlock'
 
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
@@ -32,19 +31,19 @@ import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
 
 <DoxygenPage pluginConfig={pluginConfig}>
 
-Struct template specialisation for extracting function traits from function pointer types. <Link to="#details">More...</Link>
+Struct template specialisation for extracting function traits from function pointer types. <a href="#details">More...</a>
 
 ## Declaration
 
 <CodeBlock>template &lt;class R, class... Args&#95;T&gt;
-struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(&#42;)(Args&#95;T...)&gt;;</CodeBlock>
+struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(&#42;)(Args&#95;T...)&gt;</CodeBlock>
 
 ## Included Headers
 
 <IncludesList>
 <IncludesListItem
   filePath="micro-os-plus/micro-test-plus.h"
-  permalink="/docs/api/files/include/micro-os-plus/micro-test-plus-h"
+  permalink="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h"
   isLocal="false" />
 </IncludesList>
 
@@ -53,15 +52,17 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(&#42;)(
 <MembersIndex>
 
 <MembersIndexItem
+  template={<>template &lt;class R, class... Args&#95;T&gt;</>}
   type="using"
-  name={<><Link to="#a291ffb121545e9b52c3d1542f1612074">args</Link> = <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">list</Link>&lt; Args&#95;T... &gt;</>}>
-Type list of all argument types. <Link to="#a291ffb121545e9b52c3d1542f1612074">More...</Link>
+  name={<><a href="#a291ffb121545e9b52c3d1542f1612074">args</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">list</a>&lt; Args&#95;T... &gt;</>}>
+Type list of all argument types. <a href="#a291ffb121545e9b52c3d1542f1612074">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
+  template={<>template &lt;class R, class... Args&#95;T&gt;</>}
   type="using"
-  name={<><Link to="#a6e68b0f12d97490c730b3ee455887a75">result&#95;type</Link> = R</>}>
-The return type of the function. <Link to="#a6e68b0f12d97490c730b3ee455887a75">More...</Link>
+  name={<><a href="#a6e68b0f12d97490c730b3ee455887a75">result&#95;type</a> = R</>}>
+The return type of the function. <a href="#a6e68b0f12d97490c730b3ee455887a75">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -72,13 +73,13 @@ Struct template specialisation for extracting function traits from function poin
 
 <ParametersList title="Template Parameters">
 <ParametersListItem name="R">The return type of the function.</ParametersListItem>
-<ParametersListItem name="...Args&#95;T">The argument types of the function.</ParametersListItem>
+<ParametersListItem name="...Args_T">The argument types of the function.</ParametersListItem>
 </ParametersList>
 This specialisation of the <code>function&#95;traits</code> struct template provides compile-time introspection for function pointer types. It exposes the return type and argument types of a function pointer, enabling advanced template metaprogramming and type deduction within the µTest++ framework.
 
-The <code><Link to="#a6e68b0f12d97490c730b3ee455887a75">result&#95;type</Link></code> member defines the return type of the function, while the <code>args</code> member is a type list containing all argument types.
+The <code><a href="#a6e68b0f12d97490c730b3ee455887a75">result&#95;type</a></code> member defines the return type of the function, while the <code>args</code> member is a type list containing all argument types.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00202">202</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line 202 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
 
 <SectionDefinition>
 
@@ -91,7 +92,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::function&#95;traits&lt; R(&#42;)(Args&#95;T...)&gt;::args =  list&lt;Args&#95;T...&gt;</>}>
 Type list of all argument types.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00212">212</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00212">212</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
 </MemberDefinition>
 
 ### result&#95;type {#a6e68b0f12d97490c730b3ee455887a75}
@@ -101,7 +102,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::function&#95;traits&lt; R(&#42;)(Args&#95;T...)&gt;::result&#95;type =  R</>}>
 The return type of the function.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00207">207</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00207">207</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -111,7 +112,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 The documentation for this struct was generated from the following file:
 
 <ul>
-<li><Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link></li>
+<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a></li>
 </ul>
 
 </DoxygenPage>

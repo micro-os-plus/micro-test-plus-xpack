@@ -29,7 +29,7 @@ import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
 
 <DoxygenPage pluginConfig={pluginConfig}>
 
-C++ header file with inline implementations for the µTest++ test suite. <Link to="#details">More...</Link>
+C++ header file with inline implementations for the µTest++ test suite. <a href="#details">More...</a>
 
 ## Included Headers
 
@@ -50,14 +50,14 @@ C++ header file with inline implementations for the µTest++ test suite. <Link t
 
 <MembersIndexItem
   type="namespace"
-  name={<Link to="/docs/api/namespaces/micro-os-plus">micro&#95;os&#95;plus</Link>}>
-The primary namespace for the µOS++ framework. <Link to="/docs/api/namespaces/micro-os-plus/#details">More...</Link>
+  name={<><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus">micro_os_plus</a></>}>
+The primary namespace for the µOS++ framework. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/#details">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="namespace"
-  name={<Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link>}>
-Primary namespace for the µTest++ testing framework. <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/#details">More...</Link>
+  name={<><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></>}>
+Primary namespace for the µTest++ testing framework. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#details">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -70,7 +70,7 @@ This header provides the inline implementations for the test suite facilities us
 
 The implementation ensures that each test suite is automatically registered with the global test runner upon construction, enabling automated discovery and execution of test suites. The use of <code>std::bind</code> allows for versatile test suite initialisation with arbitrary callable types and arguments.
 
-All definitions reside within the <code><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link></code> namespace, maintaining a clear separation from user code and minimising the risk of naming conflicts.
+All definitions reside within the <code><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</a></code> namespace, maintaining a clear separation from user code and minimising the risk of naming conflicts.
 
 The header files are organised within the <code>include/micro-os-plus/micro-test-plus</code> folder to maintain a structured and modular codebase.
 
@@ -124,25 +124,25 @@ The file content with the documentation metadata removed is:
 <Link id="l00067" /><CodeLine lineNumber="67"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <Link id="l00068" /><CodeLine lineNumber="68"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <Link id="l00069" /><CodeLine lineNumber="69"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link></Highlight></CodeLine>
+<Link id="l00070" /><CodeLine lineNumber="70"><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</a></Highlight></CodeLine>
 <Link id="l00071" /><CodeLine lineNumber="71"><Highlight kind="normal">&#123;</Highlight></CodeLine>
 <Link id="l00072" /><CodeLine lineNumber="72"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// --------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <Link id="l00073" /><CodeLine lineNumber="73"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00074" /><CodeLine lineNumber="74" lineLink="/docs/api/namespaces/micro-os-plus/micro-test-plus/#a469c0f5fefa0b4cea12a7d267dded831"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">extern</Highlight><Highlight kind="normal"> <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test&#95;runner</Link> <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/#a469c0f5fefa0b4cea12a7d267dded831">runner</Link>;</Highlight></CodeLine>
+<Link id="l00074" /><CodeLine lineNumber="74" lineLink="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a469c0f5fefa0b4cea12a7d267dded831"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">extern</Highlight><Highlight kind="normal"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test&#95;runner</a> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a469c0f5fefa0b4cea12a7d267dded831">runner</a>;</Highlight></CodeLine>
 <Link id="l00075" /><CodeLine lineNumber="75"><Highlight kind="normal"></Highlight></CodeLine>
 <Link id="l00076" /><CodeLine lineNumber="76"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// --------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <Link id="l00077" /><CodeLine lineNumber="77"><Highlight kind="normal"></Highlight></CodeLine>
 <Link id="l00087" /><CodeLine lineNumber="87"><Highlight kind="normal">  </Highlight><Highlight kind="keyword">template</Highlight><Highlight kind="normal"> &lt;</Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal"> Callable&#95;T, </Highlight><Highlight kind="keyword">typename</Highlight><Highlight kind="normal">... Args&#95;T&gt;</Highlight></CodeLine>
-<Link id="l00088" /><CodeLine lineNumber="88" lineLink="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a824b38d21a3f4d0adb99827455f159cf"><Highlight kind="normal">  <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a824b38d21a3f4d0adb99827455f159cf">test&#95;suite::test&#95;suite</Link> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42; <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a3625fee07d796bf5c3d6b4c69a94182c">name</Link>, Callable&#95;T&amp;&amp; callable,</Highlight></CodeLine>
+<Link id="l00088" /><CodeLine lineNumber="88" lineLink="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a824b38d21a3f4d0adb99827455f159cf"><Highlight kind="normal">  <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a824b38d21a3f4d0adb99827455f159cf">test&#95;suite::test&#95;suite</a> (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42; <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a3625fee07d796bf5c3d6b4c69a94182c">name</a>, Callable&#95;T&amp;&amp; callable,</Highlight></CodeLine>
 <Link id="l00089" /><CodeLine lineNumber="89"><Highlight kind="normal">                          Args&#95;T&amp;&amp;... arguments)</Highlight></CodeLine>
-<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">      : <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a1aea53994faf3a7f7a610a6c47a8ef4a">test&#95;suite&#95;base</Link>&#123; <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a3625fee07d796bf5c3d6b4c69a94182c">name</Link> &#125;,</Highlight></CodeLine>
-<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">        <Link to="/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a4c9220da528e34d0b4f8d0980a30fe6a">callable&#95;</Link>&#123; std::bind (callable, arguments...) &#125;</Highlight></CodeLine>
+<Link id="l00090" /><CodeLine lineNumber="90"><Highlight kind="normal">      : <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a1aea53994faf3a7f7a610a6c47a8ef4a">test&#95;suite&#95;base</a>&#123; <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a3625fee07d796bf5c3d6b4c69a94182c">name</a> &#125;,</Highlight></CodeLine>
+<Link id="l00091" /><CodeLine lineNumber="91"><Highlight kind="normal">        <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a4c9220da528e34d0b4f8d0980a30fe6a">callable&#95;</a>&#123; std::bind (callable, arguments...) &#125;</Highlight></CodeLine>
 <Link id="l00092" /><CodeLine lineNumber="92"><Highlight kind="normal">  &#123;</Highlight></CodeLine>
 <Link id="l00093" /><CodeLine lineNumber="93"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#if defined(MICRO&#95;OS&#95;PLUS&#95;TRACE&#95;MICRO&#95;TEST&#95;PLUS)</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <Link id="l00094" /><CodeLine lineNumber="94"><Highlight kind="normal">    printf (</Highlight><Highlight kind="stringliteral">&quot;%s\\n&quot;</Highlight><Highlight kind="normal">, &#95;&#95;PRETTY&#95;FUNCTION&#95;&#95;);</Highlight></CodeLine>
 <Link id="l00095" /><CodeLine lineNumber="95"><Highlight kind="normal"></Highlight><Highlight kind="preprocessor">#endif </Highlight><Highlight kind="comment">// MICRO&#95;OS&#95;PLUS&#95;TRACE&#95;MICRO&#95;TEST&#95;PLUS</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <Link id="l00096" /><CodeLine lineNumber="96"><Highlight kind="normal"></Highlight></CodeLine>
-<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">    <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus/#a469c0f5fefa0b4cea12a7d267dded831">runner</Link>.register&#95;test&#95;suite (</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
+<Link id="l00097" /><CodeLine lineNumber="97"><Highlight kind="normal">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a469c0f5fefa0b4cea12a7d267dded831">runner</a>.register&#95;test&#95;suite (</Highlight><Highlight kind="keyword">this</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
 <Link id="l00098" /><CodeLine lineNumber="98"><Highlight kind="normal">  &#125;</Highlight></CodeLine>
 <Link id="l00099" /><CodeLine lineNumber="99"><Highlight kind="normal"></Highlight></CodeLine>
 <Link id="l00100" /><CodeLine lineNumber="100"><Highlight kind="normal">  </Highlight><Highlight kind="comment">// --------------------------------------------------------------------------</Highlight><Highlight kind="normal"></Highlight></CodeLine>

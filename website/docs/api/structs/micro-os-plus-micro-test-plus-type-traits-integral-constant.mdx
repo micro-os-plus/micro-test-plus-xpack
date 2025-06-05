@@ -13,7 +13,6 @@ toc_max_heading_level: 3
 
 ---
 
-import Link from '@docusaurus/Link'
 import CodeBlock from '@theme/CodeBlock'
 
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
@@ -33,19 +32,19 @@ import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
 
 <DoxygenPage pluginConfig={pluginConfig}>
 
-Struct template representing a generic integral constant. <Link to="#details">More...</Link>
+Struct template representing a generic integral constant. <a href="#details">More...</a>
 
 ## Declaration
 
 <CodeBlock>template &lt;auto N&gt;
-struct micro_os_plus::micro_test_plus::type_traits::integral_constant&lt;N&gt;;</CodeBlock>
+struct micro_os_plus::micro_test_plus::type_traits::integral_constant&lt;N&gt;</CodeBlock>
 
 ## Included Headers
 
 <IncludesList>
 <IncludesListItem
   filePath="micro-os-plus/micro-test-plus.h"
-  permalink="/docs/api/files/include/micro-os-plus/micro-test-plus-h"
+  permalink="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h"
   isLocal="false" />
 </IncludesList>
 
@@ -54,21 +53,30 @@ struct micro_os_plus::micro_test_plus::type_traits::integral_constant&lt;N&gt;;<
 <MembersIndex>
 
 <MembersIndexItem
+  template={<>template &lt;auto N&gt;</>}
   type="using"
-  name={<><Link to="#a30307d0cc6b010e9b42ec98753b6bec1">value&#95;type</Link> = decltype(N)</>}>
-The type of the constant value. <Link to="#a30307d0cc6b010e9b42ec98753b6bec1">More...</Link>
+  name={<><a href="#a30307d0cc6b010e9b42ec98753b6bec1">value&#95;type</a> = decltype(N)</>}>
+The type of the constant value. <a href="#a30307d0cc6b010e9b42ec98753b6bec1">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
 
-## Public Static Attributes Index
+## Public Operators Index
 
 <MembersIndex>
 
 <MembersIndexItem
-  type="auto"
-  name={<><Link to="#a53cb52e57c05eaf46f47352a77270993">value</Link> = N</>}>
-The constant value. <Link to="#a53cb52e57c05eaf46f47352a77270993">More...</Link>
+  template={<>template &lt;auto N&gt;</>}
+  type="constexpr"
+  name={<><a href="#a7fc0c3908f315982ce70d0439ea78a06">operator value&#95;type</a> (void) const</>}>
+Explicit conversion operator to <a href="#a30307d0cc6b010e9b42ec98753b6bec1">value&#95;type</a>. <a href="#a7fc0c3908f315982ce70d0439ea78a06">More...</a>
+</MembersIndexItem>
+
+<MembersIndexItem
+  template={<>template &lt;auto N&gt;</>}
+  type="constexpr auto"
+  name={<><a href="#a7074d786704fd94b5342be3de7c86790">operator-</a> () const</>}>
+Unary minus operator. <a href="#a7074d786704fd94b5342be3de7c86790">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -78,21 +86,23 @@ The constant value. <Link to="#a53cb52e57c05eaf46f47352a77270993">More...</Link>
 <MembersIndex>
 
 <MembersIndexItem
+  template={<>template &lt;auto N&gt;</>}
   type="constexpr auto"
-  name={<><Link to="#acb78deb0adea412045e1305280a443f1">get</Link> (void) const</>}>
-Getter for the constant value. <Link to="#acb78deb0adea412045e1305280a443f1">More...</Link>
+  name={<><a href="#acb78deb0adea412045e1305280a443f1">get</a> (void) const</>}>
+Getter for the constant value. <a href="#acb78deb0adea412045e1305280a443f1">More...</a>
 </MembersIndexItem>
 
-<MembersIndexItem
-  type="constexpr"
-  name={<><Link to="#a7fc0c3908f315982ce70d0439ea78a06">operator value&#95;type</Link> (void) const</>}>
-Explicit conversion operator to <Link to="#a30307d0cc6b010e9b42ec98753b6bec1">value&#95;type</Link>. <Link to="#a7fc0c3908f315982ce70d0439ea78a06">More...</Link>
-</MembersIndexItem>
+</MembersIndex>
+
+## Public Static Attributes Index
+
+<MembersIndex>
 
 <MembersIndexItem
-  type="constexpr auto"
-  name={<><Link to="#a7074d786704fd94b5342be3de7c86790">operator-</Link> () const</>}>
-Unary minus operator. <Link to="#a7074d786704fd94b5342be3de7c86790">More...</Link>
+  template={<>template &lt;auto N&gt;</>}
+  type="auto"
+  name={<><a href="#a53cb52e57c05eaf46f47352a77270993">value</a> = N</>}>
+The constant value. <a href="#a53cb52e57c05eaf46f47352a77270993">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -104,11 +114,11 @@ Struct template representing a generic integral constant.
 <ParametersList title="Template Parameters">
 <ParametersListItem name="N">The compile-time constant value.</ParametersListItem>
 </ParametersList>
-The <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">integral&#95;constant</Link></code> struct template provides a compile-time constant value of an integral type, with additional utility features. It inherits from <code>op</code> to enable unified handling within the µTest++ framework&#39;s type traits and metaprogramming utilities.
+The <code><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">integral&#95;constant</a></code> struct template provides a compile-time constant value of an integral type, with additional utility features. It inherits from <code>op</code> to enable unified handling within the µTest++ framework&#39;s type traits and metaprogramming utilities.
 
-This struct template exposes the constant value via a static member, a getter method, and explicit conversion operators. It also provides a unary minus operator to obtain the negative value as a new <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">integral&#95;constant</Link></code> instance.
+This struct template exposes the constant value via a static member, a getter method, and explicit conversion operators. It also provides a unary minus operator to obtain the negative value as a new <code><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">integral&#95;constant</a></code> instance.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00703">703</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line 703 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
 
 <SectionDefinition>
 
@@ -121,24 +131,52 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::integral&#95;constant&lt; N &gt;::value&#95;type =  decltype (N)</>}>
 The type of the constant value.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00708">708</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00708">708</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>
 
 <SectionDefinition>
 
-## Public Static Attributes
+## Public Operators
 
-### value {#a53cb52e57c05eaf46f47352a77270993}
+### operator value&#95;type() {#a7fc0c3908f315982ce70d0439ea78a06}
 
 <MemberDefinition
   template={<>template &lt;auto N&gt;</>}
-  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::integral&#95;constant&lt; N &gt;::value = N</>}
-  labels = {["constexpr", "static"]}>
-The constant value.
+  prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::integral&#95;constant&lt; N &gt;::operator value&#95;type (void) const</>}
+  labels = {["inline", "explicit", "nodiscard", "constexpr"]}>
+Explicit conversion operator to <a href="#a30307d0cc6b010e9b42ec98753b6bec1">value&#95;type</a>.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00713">713</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+
+<SectionUser title="Returns">
+The constant value as type <code><a href="#a30307d0cc6b010e9b42ec98753b6bec1">value&#95;type</a></code>.
+</SectionUser>
+
+Allows explicit conversion to the underlying value type.
+
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00741">741</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
+</MemberDefinition>
+
+### operator-() {#a7074d786704fd94b5342be3de7c86790}
+
+<MemberDefinition
+  template={<>template &lt;auto N&gt;</>}
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::integral&#95;constant&lt; N &gt;::operator- () const</>}
+  labels = {["inline", "nodiscard", "constexpr"]}>
+Unary minus operator.
+
+<SectionUser title="Returns">
+An <code><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">integral&#95;constant</a></code> with value <code>-N</code>.
+</SectionUser>
+
+Returns a new <code><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">integral&#95;constant</a></code> instance representing the negative of the current value.
+
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00725">725</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -166,46 +204,24 @@ The constant value.
 
 Returns the compile-time constant value.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00757">757</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00757">757</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
 </MemberDefinition>
 
-### operator value&#95;type() {#a7fc0c3908f315982ce70d0439ea78a06}
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Static Attributes
+
+### value {#a53cb52e57c05eaf46f47352a77270993}
 
 <MemberDefinition
   template={<>template &lt;auto N&gt;</>}
-  prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::integral&#95;constant&lt; N &gt;::operator value&#95;type (void) const</>}
-  labels = {["inline", "explicit", "nodiscard", "constexpr"]}>
-Explicit conversion operator to <Link to="#a30307d0cc6b010e9b42ec98753b6bec1">value&#95;type</Link>.
+  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::integral&#95;constant&lt; N &gt;::value = N</>}
+  labels = {["constexpr", "static"]}>
+The constant value.
 
-<SectionUser title="Parameters">
-None.
-</SectionUser>
-
-
-<SectionUser title="Returns">
-The constant value as type <code><Link to="#a30307d0cc6b010e9b42ec98753b6bec1">value&#95;type</Link></code>.
-</SectionUser>
-
-Allows explicit conversion to the underlying value type.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00741">741</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
-</MemberDefinition>
-
-### operator-() {#a7074d786704fd94b5342be3de7c86790}
-
-<MemberDefinition
-  template={<>template &lt;auto N&gt;</>}
-  prototype={<>auto micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::integral&#95;constant&lt; N &gt;::operator- () const</>}
-  labels = {["inline", "nodiscard", "constexpr"]}>
-Unary minus operator.
-
-<SectionUser title="Returns">
-An <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">integral&#95;constant</Link></code> with value <code>-N</code>.
-</SectionUser>
-
-Returns a new <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">integral&#95;constant</Link></code> instance representing the negative of the current value.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00725">725</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00713">713</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -215,7 +231,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 The documentation for this struct was generated from the following file:
 
 <ul>
-<li><Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link></li>
+<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a></li>
 </ul>
 
 </DoxygenPage>

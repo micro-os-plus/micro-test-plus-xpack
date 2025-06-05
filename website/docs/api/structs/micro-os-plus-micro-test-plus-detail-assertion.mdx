@@ -13,7 +13,6 @@ toc_max_heading_level: 3
 
 ---
 
-import Link from '@docusaurus/Link'
 import CodeBlock from '@theme/CodeBlock'
 
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
@@ -32,19 +31,19 @@ import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
 
 <DoxygenPage pluginConfig={pluginConfig}>
 
-Assertion struct template for parameter passing to the evaluator. <Link to="#details">More...</Link>
+Assertion struct template for parameter passing to the evaluator. <a href="#details">More...</a>
 
 ## Declaration
 
 <CodeBlock>template &lt;class Expr&#95;T&gt;
-struct micro_os_plus::micro_test_plus::detail::assertion&lt;Expr&#95;T&gt;;</CodeBlock>
+struct micro_os_plus::micro_test_plus::detail::assertion&lt;Expr&#95;T&gt;</CodeBlock>
 
 ## Included Headers
 
 <IncludesList>
 <IncludesListItem
   filePath="micro-os-plus/micro-test-plus.h"
-  permalink="/docs/api/files/include/micro-os-plus/micro-test-plus-h"
+  permalink="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h"
   isLocal="false" />
 </IncludesList>
 
@@ -53,15 +52,17 @@ struct micro_os_plus::micro_test_plus::detail::assertion&lt;Expr&#95;T&gt;;</Cod
 <MembersIndex>
 
 <MembersIndexItem
+  template={<>template &lt;class Expr&#95;T&gt;</>}
   type={<>Expr&#95;T</>}
-  name={<><Link to="#a3bda35bdd21c44124c7828c65ac3395f">expr</Link> &#123;&#125;</>}>
-The expression under evaluation. <Link to="#a3bda35bdd21c44124c7828c65ac3395f">More...</Link>
+  name={<><a href="#a3bda35bdd21c44124c7828c65ac3395f">expr</a> &#123;&#125;</>}>
+The expression under evaluation. <a href="#a3bda35bdd21c44124c7828c65ac3395f">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
-  type={<><Link to="/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source&#95;location</Link></>}
-  name={<><Link to="#acd2e0e20795f5a31ed3031ab51579dc0">location</Link> &#123;&#125;</>}>
-The source location associated with the assertion. <Link to="#acd2e0e20795f5a31ed3031ab51579dc0">More...</Link>
+  template={<>template &lt;class Expr&#95;T&gt;</>}
+  type={<><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source&#95;location</a></>}
+  name={<><a href="#acd2e0e20795f5a31ed3031ab51579dc0">location</a> &#123;&#125;</>}>
+The source location associated with the assertion. <a href="#acd2e0e20795f5a31ed3031ab51579dc0">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -71,13 +72,13 @@ The source location associated with the assertion. <Link to="#acd2e0e20795f5a31e
 Assertion struct template for parameter passing to the evaluator.
 
 <ParametersList title="Template Parameters">
-<ParametersListItem name="Expr&#95;T">The type of the expression being asserted.</ParametersListItem>
+<ParametersListItem name="Expr_T">The type of the expression being asserted.</ParametersListItem>
 </ParametersList>
 The <code>assertion</code> struct template is used to encapsulate assertion parameters, including the expression under evaluation and its associated source location. This design enables precise reporting and diagnostics within the framework.
 
 The structure is intended exclusively for internal use and is implemented in the <code>include/micro-os-plus/micro-test-plus</code> folder to maintain a structured and modular codebase.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00112">112</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line 112 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.
 
 <SectionDefinition>
 
@@ -90,7 +91,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>Expr&#95;T micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::assertion&lt; Expr&#95;T &gt;::expr &#123;&#125;</>}>
 The expression under evaluation.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00117">117</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00117">117</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.
 </MemberDefinition>
 
 ### location {#acd2e0e20795f5a31ed3031ab51579dc0}
@@ -100,7 +101,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>reflection::source&#95;location micro&#95;os&#95;plus::micro&#95;test&#95;plus::detail::assertion&lt; Expr&#95;T &gt;::location &#123;&#125;</>}>
 The source location associated with the assertion.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00122">122</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00122">122</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -110,7 +111,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 The documentation for this struct was generated from the following file:
 
 <ul>
-<li><Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</Link></li>
+<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a></li>
 </ul>
 
 </DoxygenPage>

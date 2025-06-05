@@ -12,7 +12,6 @@ keywords:
 
 ---
 
-import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
@@ -32,28 +31,31 @@ import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
 
 <DoxygenPage pluginConfig={pluginConfig}>
 
-Functions used to compose logical expressions in tests. <Link to="#details">More...</Link>
+Functions used to compose logical expressions in tests. <a href="#details">More...</a>
 
 ## Functions Index
 
 <MembersIndex>
 
 <MembersIndexItem
+  template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T&gt;</>}
   type="constexpr auto"
-  name={<><Link to="#ga8b43b7658b43fb76daf5efbb2e03d236">&#95;and</Link> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
-Generic logical <b>and</b> operation. <Link to="#ga8b43b7658b43fb76daf5efbb2e03d236">More...</Link>
+  name={<><a href="#ga8b43b7658b43fb76daf5efbb2e03d236">&#95;and</a> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
+Generic logical <b>and</b> operation. <a href="#ga8b43b7658b43fb76daf5efbb2e03d236">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
+  template={<>template &lt;class Expr&#95;T&gt;</>}
   type="constexpr auto"
-  name={<><Link to="#gad9ad936174faf965cffe4493e2b64cf0">&#95;not</Link> (const Expr&#95;T &amp;expr)</>}>
-Generic logical <b>not</b> operation. <Link to="#gad9ad936174faf965cffe4493e2b64cf0">More...</Link>
+  name={<><a href="#gad9ad936174faf965cffe4493e2b64cf0">&#95;not</a> (const Expr&#95;T &amp;expr)</>}>
+Generic logical <b>not</b> operation. <a href="#gad9ad936174faf965cffe4493e2b64cf0">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
+  template={<>template &lt;class Lhs&#95;T, class Rhs&#95;T&gt;</>}
   type="constexpr auto"
-  name={<><Link to="#gad32b40e4b0022b276fa3b357b98a33c5">&#95;or</Link> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
-Generic logical <b>or</b> operation. <Link to="#gad32b40e4b0022b276fa3b357b98a33c5">More...</Link>
+  name={<><a href="#gad32b40e4b0022b276fa3b357b98a33c5">&#95;or</a> (const Lhs&#95;T &amp;lhs, const Rhs&#95;T &amp;rhs)</>}>
+Generic logical <b>or</b> operation. <a href="#gad32b40e4b0022b276fa3b357b98a33c5">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -94,8 +96,8 @@ When the operands are function comparators, it is recommended to use the overloa
 Generic logical <b>and</b> operation.
 
 <ParametersList title="Template Parameters">
-<ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
-<ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
+<ParametersListItem name="Lhs_T">Type of the left hand side operand.</ParametersListItem>
+<ParametersListItem name="Rhs_T">Type of the right hand side operand.</ParametersListItem>
 </ParametersList>
 
 <ParametersList title="Parameters">
@@ -111,7 +113,7 @@ The <code>&#95;and</code> function template provides a generic logical conjuncti
 
 The underscore in the function name is intentional to differentiate it from the standard logical and operator.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00288">288</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00288">288</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.
 </MemberDefinition>
 
 ### &#95;not() {#gad9ad936174faf965cffe4493e2b64cf0}
@@ -123,7 +125,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 Generic logical <b>not</b> operation.
 
 <ParametersList title="Template Parameters">
-<ParametersListItem name="Expr&#95;T">Type of the operand.</ParametersListItem>
+<ParametersListItem name="Expr_T">Type of the operand.</ParametersListItem>
 </ParametersList>
 
 <ParametersList title="Parameters">
@@ -138,7 +140,7 @@ The <code>&#95;not</code> function template provides a generic logical negation 
 
 The underscore in the function name is intentional to differentiate it from the standard logical not operator.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00270">270</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00270">270</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.
 </MemberDefinition>
 
 ### &#95;or() {#gad32b40e4b0022b276fa3b357b98a33c5}
@@ -150,8 +152,8 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 Generic logical <b>or</b> operation.
 
 <ParametersList title="Template Parameters">
-<ParametersListItem name="Lhs&#95;T">Type of the left hand side operand.</ParametersListItem>
-<ParametersListItem name="Rhs&#95;T">Type of the right hand side operand.</ParametersListItem>
+<ParametersListItem name="Lhs_T">Type of the left hand side operand.</ParametersListItem>
+<ParametersListItem name="Rhs_T">Type of the right hand side operand.</ParametersListItem>
 </ParametersList>
 
 <ParametersList title="Parameters">
@@ -167,7 +169,7 @@ The <code>&#95;or</code> function template provides a generic logical disjunctio
 
 The underscore in the function name is intentional to differentiate it from the standard logical or operator.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00306">306</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00306">306</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>

@@ -12,7 +12,6 @@ keywords:
 
 ---
 
-import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
@@ -32,7 +31,7 @@ import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
 
 <DoxygenPage pluginConfig={pluginConfig}>
 
-Utility functions for advanced string handling in tests. <Link to="#details">More...</Link>
+Utility functions for advanced string handling in tests. <a href="#details">More...</a>
 
 ## Functions Index
 
@@ -40,20 +39,22 @@ Utility functions for advanced string handling in tests. <Link to="#details">Mor
 
 <MembersIndexItem
   type="bool"
-  name={<><Link to="#gaa2f0f4cff320a783ad2347c9ff3fc731">is&#95;match</Link> (std::string&#95;view input, std::string&#95;view pattern)</>}>
-Check if a string matches a pattern. <Link to="#gaa2f0f4cff320a783ad2347c9ff3fc731">More...</Link>
+  name={<><a href="#gaa2f0f4cff320a783ad2347c9ff3fc731">is&#95;match</a> (std::string&#95;view input, std::string&#95;view pattern)</>}>
+Check if a string matches a pattern. <a href="#gaa2f0f4cff320a783ad2347c9ff3fc731">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
+  template={<>template &lt;class T&gt;</>}
   type={<>constexpr T &amp;</>}
-  name={<><Link to="#ga00ea8f3dfb7cb0ef39919065321cf62f">mut</Link> (const T &amp;t) noexcept</>}>
-Generic mutator to remove const qualification from any type. <Link to="#ga00ea8f3dfb7cb0ef39919065321cf62f">More...</Link>
+  name={<><a href="#ga00ea8f3dfb7cb0ef39919065321cf62f">mut</a> (const T &amp;t) noexcept</>}>
+Generic mutator to remove const qualification from any type. <a href="#ga00ea8f3dfb7cb0ef39919065321cf62f">More...</a>
 </MembersIndexItem>
 
 <MembersIndexItem
+  template={<>template &lt;class T, class Delim&#95;T&gt;</>}
   type="auto "
-  name={<><Link to="#ga1b860aa64be17658d1664de447e6e125">split</Link> (T input, Delim&#95;T delim) -&gt; std::vector&lt; T &gt;</>}>
-Split a string into a vector of sub-strings. <Link to="#ga1b860aa64be17658d1664de447e6e125">More...</Link>
+  name={<><a href="#ga1b860aa64be17658d1664de447e6e125">split</a> (T input, Delim&#95;T delim) -&gt; std::vector&lt; T &gt;</>}>
+Split a string into a vector of sub-strings. <a href="#ga1b860aa64be17658d1664de447e6e125">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -94,14 +95,14 @@ This function enables pattern-based string comparison for tests, supporting both
 
 <ProgramListing extension="cpp">
 
-<CodeLine><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link>;</Highlight></CodeLine>
+<CodeLine><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</a>;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">mt::expect (mt::utility::is&#95;match (</Highlight><Highlight kind="stringliteral">&quot;abc&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="stringliteral">&quot;a?c&quot;</Highlight><Highlight kind="normal">)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;abc matches a?c&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">mt::expect (mt::utility::is&#95;match (</Highlight><Highlight kind="stringliteral">&quot;abc&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="stringliteral">&quot;a&#42;c&quot;</Highlight><Highlight kind="normal">)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;abc matches a&#42;c&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
 
 </ProgramListing>
 
-Definition at line <Link to="/docs/api/files/src/micro-test-plus-cpp/#l00171">171</Link> of file <Link to="/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/micro-test-plus-cpp/#l00171">171</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</a>.
 </MemberDefinition>
 
 ### mut() {#ga00ea8f3dfb7cb0ef39919065321cf62f}
@@ -126,7 +127,7 @@ A non-const reference to the input object.
 
 The <code>mut</code> function template provides a safe and generic mechanism to remove the <code>const</code> qualifier from any type. It returns a non-const reference to the input object, enabling modification of objects that were originally declared as <code>const</code>. This utility is particularly useful in testing scenarios where controlled mutation of test data is required.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00321">321</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00321">321</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.
 </MemberDefinition>
 
 ### split() {#ga1b860aa64be17658d1664de447e6e125}
@@ -139,7 +140,7 @@ Split a string into a vector of sub-strings.
 
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">Type of the input string.</ParametersListItem>
-<ParametersListItem name="Delim&#95;T">Type of the delimiter.</ParametersListItem>
+<ParametersListItem name="Delim_T">Type of the delimiter.</ParametersListItem>
 </ParametersList>
 
 <ParametersList title="Parameters">
@@ -163,15 +164,15 @@ The function iterates through the input string, identifying delimiter positions 
 
 <ProgramListing extension="cpp">
 
-<CodeLine><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <Link to="/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</Link>;</Highlight></CodeLine>
+<CodeLine><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</a>;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">mt::expect (std::vector&lt;std::string&#95;view&gt;&#123; </Highlight><Highlight kind="stringliteral">&quot;a&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="stringliteral">&quot;b&quot;</Highlight><Highlight kind="normal"> &#125;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">            == mt::utility::split&lt;std::string&#95;view&gt; (</Highlight><Highlight kind="stringliteral">&quot;a.b&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="stringliteral">&quot;.&quot;</Highlight><Highlight kind="normal">))</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">        &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;a.b splits into [a,b]&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">        &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;a.b splits into &#91;a,b&#93;&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
 
 </ProgramListing>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines-h/#l00275">275</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines-h">micro-test-plus-inlines.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines-h/#l00275">275</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines-h">micro-test-plus-inlines.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>

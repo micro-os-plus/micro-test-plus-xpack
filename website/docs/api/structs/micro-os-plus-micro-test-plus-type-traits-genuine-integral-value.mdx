@@ -13,7 +13,6 @@ toc_max_heading_level: 3
 
 ---
 
-import Link from '@docusaurus/Link'
 import CodeBlock from '@theme/CodeBlock'
 
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
@@ -33,19 +32,19 @@ import pluginConfig from '@site/docusaurus-plugin-doxygen-config.json'
 
 <DoxygenPage pluginConfig={pluginConfig}>
 
-Struct template representing a genuine integral value. <Link to="#details">More...</Link>
+Struct template representing a genuine integral value. <a href="#details">More...</a>
 
 ## Declaration
 
 <CodeBlock>template &lt;class T&gt;
-struct micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt;T&gt;;</CodeBlock>
+struct micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt;T&gt;</CodeBlock>
 
 ## Included Headers
 
 <IncludesList>
 <IncludesListItem
   filePath="micro-os-plus/micro-test-plus.h"
-  permalink="/docs/api/files/include/micro-os-plus/micro-test-plus-h"
+  permalink="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h"
   isLocal="false" />
 </IncludesList>
 
@@ -54,21 +53,10 @@ struct micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt;T&
 <MembersIndex>
 
 <MembersIndexItem
+  template={<>template &lt;class T&gt;</>}
   type="using"
-  name={<><Link to="#a1b0fda5167fc47a474f0fad07d28fa8d">value&#95;type</Link> = T</>}>
-The type of the encapsulated value. <Link to="#a1b0fda5167fc47a474f0fad07d28fa8d">More...</Link>
-</MembersIndexItem>
-
-</MembersIndex>
-
-## Public Member Attributes Index
-
-<MembersIndex>
-
-<MembersIndexItem
-  type="T"
-  name={<><Link to="#ab4f59f518a832369368c4502bf0c4d35">value&#95;</Link> &#123;&#125;</>}>
-The encapsulated integral value. <Link to="#ab4f59f518a832369368c4502bf0c4d35">More...</Link>
+  name={<><a href="#a1b0fda5167fc47a474f0fad07d28fa8d">value&#95;type</a> = T</>}>
+The type of the encapsulated value. <a href="#a1b0fda5167fc47a474f0fad07d28fa8d">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -78,9 +66,23 @@ The encapsulated integral value. <Link to="#ab4f59f518a832369368c4502bf0c4d35">M
 <MembersIndex>
 
 <MembersIndexItem
+  template={<>template &lt;class T&gt;</>}
   type="constexpr"
-  name={<><Link to="#afa29aa29cbc284a0147aa07db0d4891a">genuine&#95;integral&#95;value</Link> (const T &amp;&#95;value)</>}>
-Constructs a <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value">genuine&#95;integral&#95;value</Link> with the specified value. <Link to="#afa29aa29cbc284a0147aa07db0d4891a">More...</Link>
+  name={<><a href="#afa29aa29cbc284a0147aa07db0d4891a">genuine&#95;integral&#95;value</a> (const T &amp;&#95;value)</>}>
+Constructs a <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value">genuine&#95;integral&#95;value</a> with the specified value. <a href="#afa29aa29cbc284a0147aa07db0d4891a">More...</a>
+</MembersIndexItem>
+
+</MembersIndex>
+
+## Public Operators Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  template={<>template &lt;class T&gt;</>}
+  type="constexpr"
+  name={<><a href="#a1474de7e4b8a14f1c97f2c1ba5d9212a">operator T</a> () const</>}>
+Explicit conversion operator to the underlying value type. <a href="#a1474de7e4b8a14f1c97f2c1ba5d9212a">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -90,15 +92,23 @@ Constructs a <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-trai
 <MembersIndex>
 
 <MembersIndexItem
+  template={<>template &lt;class T&gt;</>}
   type="constexpr auto "
-  name={<><Link to="#ab2f53c63e86a887bccbadf0b7dbb8b4b">get</Link> () const -&gt; decltype(auto)</>}>
-Getter for the encapsulated value. <Link to="#ab2f53c63e86a887bccbadf0b7dbb8b4b">More...</Link>
+  name={<><a href="#ab2f53c63e86a887bccbadf0b7dbb8b4b">get</a> () const -&gt; decltype(auto)</>}>
+Getter for the encapsulated value. <a href="#ab2f53c63e86a887bccbadf0b7dbb8b4b">More...</a>
 </MembersIndexItem>
 
+</MembersIndex>
+
+## Public Member Attributes Index
+
+<MembersIndex>
+
 <MembersIndexItem
-  type="constexpr"
-  name={<><Link to="#a1474de7e4b8a14f1c97f2c1ba5d9212a">operator T</Link> () const</>}>
-Explicit conversion operator to the underlying value type. <Link to="#a1474de7e4b8a14f1c97f2c1ba5d9212a">More...</Link>
+  template={<>template &lt;class T&gt;</>}
+  type="T"
+  name={<><a href="#ab4f59f518a832369368c4502bf0c4d35">value&#95;</a> &#123;&#125;</>}>
+The encapsulated integral value. <a href="#ab4f59f518a832369368c4502bf0c4d35">More...</a>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -110,11 +120,11 @@ Struct template representing a genuine integral value.
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">The type of the integral value.</ParametersListItem>
 </ParametersList>
-The <code><Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value">genuine&#95;integral&#95;value</Link></code> struct template encapsulates a runtime integral value, providing a consistent interface for value access and conversion. It inherits from <code>op</code> to enable unified handling within the µTest++ framework&#39;s type traits and metaprogramming utilities.
+The <code><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value">genuine&#95;integral&#95;value</a></code> struct template encapsulates a runtime integral value, providing a consistent interface for value access and conversion. It inherits from <code>op</code> to enable unified handling within the µTest++ framework&#39;s type traits and metaprogramming utilities.
 
 This struct template exposes the value via a member variable, a getter method, and an explicit conversion operator. It is intended for use cases where a value must be wrapped and treated generically within the framework, supporting advanced template metaprogramming and type introspection.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00879">879</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line 879 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
 
 <SectionDefinition>
 
@@ -127,23 +137,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   prototype={<>using micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::genuine&#95;integral&#95;value&lt; T &gt;::value&#95;type =  T</>}>
 The type of the encapsulated value.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00884">884</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
-</MemberDefinition>
-
-</SectionDefinition>
-
-<SectionDefinition>
-
-## Public Member Attributes
-
-### value&#95; {#ab4f59f518a832369368c4502bf0c4d35}
-
-<MemberDefinition
-  template={<>template &lt;class T&gt;</>}
-  prototype={<>T micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::genuine&#95;integral&#95;value&lt; T &gt;::value&#95; &#123;&#125;</>}>
-The encapsulated integral value.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00926">926</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00884">884</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -158,13 +152,36 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
   template={<>template &lt;class T&gt;</>}
   prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::genuine&#95;integral&#95;value&lt; T &gt;::genuine&#95;integral&#95;value (const T &amp; _value)</>}
   labels = {["inline", "constexpr"]}>
-Constructs a <Link to="/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value">genuine&#95;integral&#95;value</Link> with the specified value.
+Constructs a <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value">genuine&#95;integral&#95;value</a> with the specified value.
 
 <ParametersList title="Parameters">
-<ParametersListItem name="&#95;value">The integral value to be stored.</ParametersListItem>
+<ParametersListItem name="_value">The integral value to be stored.</ParametersListItem>
 </ParametersList>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00891">891</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00891">891</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Operators
+
+### operator T() {#a1474de7e4b8a14f1c97f2c1ba5d9212a}
+
+<MemberDefinition
+  template={<>template &lt;class T&gt;</>}
+  prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::genuine&#95;integral&#95;value&lt; T &gt;::operator T () const</>}
+  labels = {["inline", "explicit", "nodiscard", "constexpr"]}>
+Explicit conversion operator to the underlying value type.
+
+<SectionUser title="Returns">
+The stored value as type <code>T</code>.
+</SectionUser>
+
+Allows explicit conversion to the encapsulated value.
+
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00904">904</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -187,24 +204,23 @@ The value of type <code>T</code>.
 
 Returns the stored integral value.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00918">918</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00918">918</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
 </MemberDefinition>
 
-### operator T() {#a1474de7e4b8a14f1c97f2c1ba5d9212a}
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Public Member Attributes
+
+### value&#95; {#ab4f59f518a832369368c4502bf0c4d35}
 
 <MemberDefinition
   template={<>template &lt;class T&gt;</>}
-  prototype={<>micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::genuine&#95;integral&#95;value&lt; T &gt;::operator T () const</>}
-  labels = {["inline", "explicit", "nodiscard", "constexpr"]}>
-Explicit conversion operator to the underlying value type.
+  prototype={<>T micro&#95;os&#95;plus::micro&#95;test&#95;plus::type&#95;traits::genuine&#95;integral&#95;value&lt; T &gt;::value&#95; &#123;&#125;</>}>
+The encapsulated integral value.
 
-<SectionUser title="Returns">
-The stored value as type <code>T</code>.
-</SectionUser>
-
-Allows explicit conversion to the encapsulated value.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00904">904</Link> of file <Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link>.
+Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00926">926</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -214,7 +230,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/micro-test-pl
 The documentation for this struct was generated from the following file:
 
 <ul>
-<li><Link to="/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</Link></li>
+<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a></li>
 </ul>
 
 </DoxygenPage>
