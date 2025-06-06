@@ -26,6 +26,11 @@ const actualBaseUrl = process.env.DOCUSAURUS_BASEURL ??
 // ----------------------------------------------------------------------------
 
 const config: Config = {
+  future: {
+    v4: true,
+    experimental_faster: true,
+  },
+
   title: 'µTest++ Testing Framework' +
     ((process.env.DOCUSAURUS_IS_PREVIEW === 'true') ? ' (preview)' : ''),
   tagline: 'A C++ source code library with a lightweight testing framework for embedded systems',
@@ -63,6 +68,7 @@ const config: Config = {
   },
 
   plugins: [
+    ['@docusaurus/plugin-svgr',{}],
     [
       '@docusaurus/plugin-content-docs',
       {
