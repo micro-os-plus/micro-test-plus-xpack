@@ -73,71 +73,9 @@ const config: Config = {
       }
     ],
     [
-      '@docusaurus/plugin-content-docs',
-      {
-        sidebarPath: './sidebars.ts',
-        // Please change this to your repo.
-        // Remove this to remove the "edit this page" links.
-        editUrl: 'https://github.com/micro-os-plus/micro-test-plus-xpack/edit/website/website/',
-        // showLastUpdateAuthor: true,
-        showLastUpdateTime: true,
-      },
-    ],
-    [
-      // https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog
-      '@docusaurus/plugin-content-blog',
-      {
-        showReadingTime: true,
-        blogSidebarCount: 8,
-        feedOptions: {
-          type: ['rss', 'atom'],
-          xslt: true,
-        },
-        // Please change this to your repo.
-        // Remove this to remove the "edit this page" links.
-        editUrl: 'https://github.com/micro-os-plus/micro-test-plus-xpack/edit/website/website/',
-        // Useful options to enforce blogging best practices
-        onInlineTags: 'warn',
-        onInlineAuthors: 'warn',
-        onUntruncatedBlogPosts: 'warn',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-pages',
-      {}
-    ],
-    [
       // https://docusaurus.io/docs/next/api/plugins/@docusaurus/plugin-client-redirects#redirects
       '@docusaurus/plugin-client-redirects',
       redirects,
-    ],
-    [
-      '@docusaurus/plugin-debug',
-      {}
-    ],
-    [
-      // https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-google-gtag
-      // https://tagassistant.google.com
-      '@docusaurus/plugin-google-gtag',
-      {
-        trackingID: 'G-E9T84WD3CK',
-        anonymizeIP: false,
-      }
-    ],
-    [
-      // https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-sitemap
-      '@docusaurus/plugin-sitemap',
-      {
-        lastmod: 'date',
-        changefreq: 'weekly',
-        priority: 0.5,
-        ignorePatterns: [
-          actualBaseUrl + 'blog/archive/**',
-          actualBaseUrl + 'blog/authors/**',
-          actualBaseUrl + 'blog/tags/**'
-        ],
-        filename: 'sitemap.xml',
-      }
     ],
     [
       '@docusaurus/plugin-ideal-image',
@@ -154,12 +92,61 @@ const config: Config = {
     './src/plugins/SelectReleasesPlugin',
   ],
 
-  themes: [
+  presets: [
     [
-      '@docusaurus/theme-classic',
+      'classic',
       {
-        customCss: './src/css/custom.css',
-      }
+        docs: {
+          sidebarPath: './sidebars.ts',
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl: 'https://github.com/micro-os-plus/micro-test-plus-xpack/edit/website/website/',
+          // showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
+        },
+        // https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog
+        blog: {
+          showReadingTime: true,
+          blogSidebarCount: 8,
+          feedOptions: {
+            type: ['rss', 'atom'],
+            xslt: true,
+          },
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl: 'https://github.com/micro-os-plus/micro-test-plus-xpack/edit/website/website/',
+          // Useful options to enforce blogging best practices
+          onInlineTags: 'warn',
+          onInlineAuthors: 'warn',
+          onUntruncatedBlogPosts: 'warn',
+        },
+        pages: {},
+        // https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-google-gtag
+        // https://tagassistant.google.com
+        gtag: {
+          trackingID: 'G-E9T84WD3CK',
+          anonymizeIP: false,
+        },
+        // https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-sitemap
+        sitemap: {
+          lastmod: 'date',
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: [
+            actualBaseUrl + 'blog/archive/**',
+            actualBaseUrl + 'blog/authors/**',
+            actualBaseUrl + 'blog/tags/**'
+          ],
+          filename: 'sitemap.xml',
+        },
+
+        debug: true,
+
+        theme: {
+          customCss: './src/css/custom.css',
+        },
+
+      } satisfies Preset.Options,
     ],
   ],
 
