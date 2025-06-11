@@ -257,22 +257,22 @@
         {
           "type": "doc",
           "label": "function_traits",
-          "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-function-traits-r----args-t-----"
+          "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-function-traits-c8ae4832b74f8fe701e29e20410c0d5a"
         },
         {
           "type": "doc",
           "label": "function_traits",
-          "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-function-traits-r-args-t-----"
+          "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-function-traits-567248e3f9c17aff751ce83e3c5b4d55"
         },
         {
           "type": "doc",
           "label": "function_traits",
-          "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-function-traits-r-t-----args-t----const-"
+          "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-function-traits-05ab90b3270445bd2304511210cefdc8"
         },
         {
           "type": "doc",
           "label": "function_traits",
-          "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-function-traits-r-t-----args-t-----"
+          "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-function-traits-aa0970b0a1efa305c0cfd55ce14bb11b"
         },
         {
           "type": "doc",
@@ -366,12 +366,7 @@
             {
               "type": "doc",
               "label": "throws_",
-              "id": "api/structs/micro-os-plus-micro-test-plus-detail-throws--callable-t-void-"
-            },
-            {
-              "type": "doc",
-              "label": "throws_",
-              "id": "api/structs/micro-os-plus-micro-test-plus-detail-throws--callable-t-void-"
+              "id": "api/structs/micro-os-plus-micro-test-plus-detail-throws--6ce6a9ac7588b533a253fd8d8638e6be"
             },
             {
               "type": "category",
@@ -397,12 +392,7 @@
             {
               "type": "doc",
               "label": "value",
-              "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---"
-            },
-            {
-              "type": "doc",
-              "label": "value",
-              "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-value-t-type-traits--requires-t-type-traits--is-floating-point-v-t---"
+              "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-value-dae7771377f0087abbec46abf87b329e"
             }
           ]
         },
@@ -414,7 +404,7 @@
         {
           "type": "doc",
           "label": "requires_",
-          "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-requires--true-"
+          "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-requires--d4cc09ec8cf7793e85cd7a9c044686e1"
         },
         {
           "type": "doc",

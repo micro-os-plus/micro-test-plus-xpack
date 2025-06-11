@@ -137,7 +137,7 @@
   <option  id='INPUT_ENCODING' default='yes' type='string'><value><![CDATA[UTF-8]]></value></option>
   <option  id='INPUT_FILE_ENCODING' default='yes' type='stringlist'>
   </option>
-  <option  id='FILE_PATTERNS' default='no' type='stringlist'>
+  <option  id='FILE_PATTERNS' default='yes' type='stringlist'>
     <value><![CDATA[*.c]]></value>
     <value><![CDATA[*.cc]]></value>
     <value><![CDATA[*.cxx]]></value>
@@ -161,7 +161,6 @@
     <value><![CDATA[*.hxx]]></value>
     <value><![CDATA[*.hpp]]></value>
     <value><![CDATA[*.h++]]></value>
-    <value><![CDATA[*.ixx]]></value>
     <value><![CDATA[*.l]]></value>
     <value><![CDATA[*.cs]]></value>
     <value><![CDATA[*.d]]></value>
