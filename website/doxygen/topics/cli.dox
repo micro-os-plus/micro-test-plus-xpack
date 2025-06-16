@@ -3,7 +3,6 @@
 @ingroup micro-test-plus
 
 @details
-## Description
 
 The µTest++ framework provides flexible command-line options to control the verbosity of test output, allowing users to tailor the level of detail to their specific requirements and workflow.
 
@@ -30,7 +29,7 @@ test 1
  1/12 Test  #1: minimal-test .....................   Passed    0.00 sec
 @endcode
 
-## Verbosity
+@section cli-verbosity Verbosity
 
 To adjust the verbosity, the following command-line options are available:
 
@@ -45,7 +44,7 @@ The examples provided illustrate the output produced in each mode, demonstrating
 The source code for this test is located in the `tests/src/minimal-test.cpp`
 file.
 
-### Verbose mode
+@subsection cli-verbosity-verbose Verbose mode
 
 In verbose mode, the µTest++ reporter provides detailed output for every expectation, irrespective of whether it passes or fails.
 
@@ -73,7 +72,7 @@ test 2
  2/12 Test  #2: minimal-test --verbose ...........   Passed    0.00 sec
 @endcode
 
-### Quiet mode
+@subsection cli-verbosity-quiet Quiet mode
 
 In quiet mode, the µTest++ reporter displays only the overall totals for the test suite.
 
@@ -93,7 +92,7 @@ test 3
  3/12 Test  #3: minimal-test --quiet .............   Passed    0.00 sec
 @endcode
 
-### Silent mode
+@subsection cli-verbosity-silent Silent mode
 
 In silent mode, the µTest++ reporter suppresses all output, and the framework returns only the exit code.
 
