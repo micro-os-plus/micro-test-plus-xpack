@@ -12,11 +12,9 @@ keywords:
 
 ---
 
-import Link from '@docusaurus/Link'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
 import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
@@ -124,24 +122,15 @@ Pointer non-equality comparator. <a href="#ga172f305bbeaf8b965681f76c16a39516">M
 
 </MembersIndex>
 
-<Link id="details" />
+## Description {#details}
 
-
-## Description
-
-
+Functions for comparing actual and expected values in tests.
 
 Function comparators in µTest++ provide a clear and expressive way to compare actual and expected values within test cases. While any expression yielding a boolean value may be used in expectations and assumptions, dedicated comparator functions such as <code>eq</code>, <code>ne</code>, <code>lt</code>, <code>le</code>, <code>gt</code>, and <code>ge</code> offer enhanced reporting by explicitly showing the values involved when a check fails.
 
-
-
 Using these comparators ensures that, in the event of a failed check, the test output will include both the actual and expected values, making it easier to diagnose issues and understand the cause of the failure.
 
-
-
 Comparators are available for both fundamental types and standard containers. When comparing containers, each element is assessed individually, and the results are reported in detail.
-
-
 
 
 <SectionUser title="Examples">
@@ -151,32 +140,29 @@ Comparators are available for both fundamental types and standard containers. Wh
 
 <ProgramListing extension="cpp">
 
-<CodeLine><Highlight kind="normal">mt::expect (mt::eq (compute&#95;answer (), 42)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer is 42&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">mt::expect (mt::ne (compute&#95;answer (), 43)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer is not 43&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">mt::expect (mt::lt (compute&#95;answer (), 43)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer is &lt; 43&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">mt::expect (mt::le (compute&#95;answer (), 43)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer is &lt;= 42&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">mt::expect (mt::gt (compute&#95;answer (), 41)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer is &gt; 43&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">mt::expect (mt::ge (compute&#95;answer (), 42)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;answer is &gt;= 42&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">mt::expect (compute&#95;condition ()) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;condition is true&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight">mt::expect (mt::eq (compute&#95;answer (), 42)) &lt;&lt; </span><span class="doxyHighlightStringLiteral">&quot;answer is 42&quot;</span><span class="doxyHighlight">;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">mt::expect (mt::ne (compute&#95;answer (), 43)) &lt;&lt; </span><span class="doxyHighlightStringLiteral">&quot;answer is not 43&quot;</span><span class="doxyHighlight">;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">mt::expect (mt::lt (compute&#95;answer (), 43)) &lt;&lt; </span><span class="doxyHighlightStringLiteral">&quot;answer is &lt; 43&quot;</span><span class="doxyHighlight">;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">mt::expect (mt::le (compute&#95;answer (), 43)) &lt;&lt; </span><span class="doxyHighlightStringLiteral">&quot;answer is &lt;= 42&quot;</span><span class="doxyHighlight">;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">mt::expect (mt::gt (compute&#95;answer (), 41)) &lt;&lt; </span><span class="doxyHighlightStringLiteral">&quot;answer is &gt; 43&quot;</span><span class="doxyHighlight">;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">mt::expect (mt::ge (compute&#95;answer (), 42)) &lt;&lt; </span><span class="doxyHighlightStringLiteral">&quot;answer is &gt;= 42&quot;</span><span class="doxyHighlight">;</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlight">mt::expect (compute&#95;condition ()) &lt;&lt; </span><span class="doxyHighlightStringLiteral">&quot;condition is true&quot;</span><span class="doxyHighlight">;</span></CodeLine>
 
 </ProgramListing>
-
 
 
 If a comparator check fails, the output will clearly indicate the actual and expected values:
 
 
-
-
 <ProgramListing extension="console">
 
-<CodeLine><Highlight kind="normal">  Check failed comparisons</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    ✗ actual != 42 FAILED (unit-test.cpp:286, 42 != 42)</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    ✗ FAILED (unit-test.cpp:307, 42 != 42)</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    ✗ 42 != 42&#95;i FAILED (unit-test.cpp:310, 42 != 42)</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    ✗ (actual == 42) and (actual != 42.0) FAILED (unit-test.cpp:781, (42 == 42</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">and 42 != 42.000000))</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight">  Check failed comparisons</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    ✗ actual != 42 FAILED (unit-test.cpp:286, 42 != 42)</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    ✗ FAILED (unit-test.cpp:307, 42 != 42)</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    ✗ 42 != 42&#95;i FAILED (unit-test.cpp:310, 42 != 42)</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    ✗ (actual == 42) and (actual != 42.0) FAILED (unit-test.cpp:781, (42 == 42</span></CodeLine>
+<CodeLine><span class="doxyHighlight">and 42 != 42.000000))</span></CodeLine>
 
 </ProgramListing>
 
@@ -199,11 +185,11 @@ Containers can be compared for equality or inequality using the same comparator 
 
 <ProgramListing extension="cpp">
 
-<CodeLine><Highlight kind="normal">mt::expect (mt::eq (std::vector&lt;int&gt;&#123; 1, 2 &#125;, std::vector&lt;int&gt;&#123; 1, 2 &#125;))</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">        &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;vector&#123; 1, 2 &#125; eq vector&#123; 1, 2 &#125;&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">mt::expect (mt::ne (std::vector&lt;int&gt;&#123; 1, 2, 3 &#125;, std::vector&lt;int&gt;&#123; 1, 2, 4 &#125;)</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">        &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;vector&#123; 1, 2, 3 &#125; ne vector&#123; 1, 2, 4 &#125;&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight">mt::expect (mt::eq (std::vector&lt;int&gt;&#123; 1, 2 &#125;, std::vector&lt;int&gt;&#123; 1, 2 &#125;))</span></CodeLine>
+<CodeLine><span class="doxyHighlight">        &lt;&lt; </span><span class="doxyHighlightStringLiteral">&quot;vector&#123; 1, 2 &#125; eq vector&#123; 1, 2 &#125;&quot;</span><span class="doxyHighlight">;</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlight">mt::expect (mt::ne (std::vector&lt;int&gt;&#123; 1, 2, 3 &#125;, std::vector&lt;int&gt;&#123; 1, 2, 4 &#125;)</span></CodeLine>
+<CodeLine><span class="doxyHighlight">        &lt;&lt; </span><span class="doxyHighlightStringLiteral">&quot;vector&#123; 1, 2, 3 &#125; ne vector&#123; 1, 2, 4 &#125;&quot;</span><span class="doxyHighlight">;</span></CodeLine>
 
 </ProgramListing>
 

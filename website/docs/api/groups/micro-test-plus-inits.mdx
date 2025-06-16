@@ -15,7 +15,6 @@ keywords:
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
 import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
@@ -62,34 +61,35 @@ The simplest test consists of a single test case containing a single expectation
 
 <ProgramListing extension="cpp">
 
-<CodeLine><Highlight kind="preprocessor">#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">main(</Highlight><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> argc, </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42; argv&#91;&#93;)</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">&#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</a>;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  mt::initialize(argc, argv, </Highlight><Highlight kind="stringliteral">&quot;Minimal&quot;</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  mt::test&#95;case (</Highlight><Highlight kind="stringliteral">&quot;Check truth&quot;</Highlight><Highlight kind="normal">, &#91;&#93; &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">    mt::expect (</Highlight><Highlight kind="keyword">true</Highlight><Highlight kind="normal">);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  &#125;)</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keywordflow">return</Highlight><Highlight kind="normal"> mt::exit&#95;code ();</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">&#125;</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlightPreprocessor">#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlightKeywordType">int</span></CodeLine>
+<CodeLine><span class="doxyHighlight">main(</span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> argc, </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">&#42; argv&#91;&#93;)</span></CodeLine>
+<CodeLine><span class="doxyHighlight">&#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight">mt = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</a>;</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlight">  mt::initialize(argc, argv, </span><span class="doxyHighlightStringLiteral">&quot;Minimal&quot;</span><span class="doxyHighlight">);</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlight">  mt::test&#95;case (</span><span class="doxyHighlightStringLiteral">&quot;Check truth&quot;</span><span class="doxyHighlight">, &#91;&#93; &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">    mt::expect (</span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">);</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  &#125;)</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> mt::exit&#95;code ();</span></CodeLine>
+<CodeLine><span class="doxyHighlight">&#125;</span></CodeLine>
 
 </ProgramListing>
+
 
 When this test is executed, the output is as follows:
 
 
 <ProgramListing extension="console">
 
-<CodeLine><Highlight kind="normal">• Minimal - test suite started</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight">• Minimal - test suite started</span></CodeLine>
 <CodeLine></CodeLine>
-<CodeLine><Highlight kind="normal">  ✓ Check truth - test case passed (1 check)</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight">  ✓ Check truth - test case passed (1 check)</span></CodeLine>
 <CodeLine></CodeLine>
-<CodeLine><Highlight kind="normal">✓ Minimal - test suite passed (1 check in 1 test case)</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight">✓ Minimal - test suite passed (1 check in 1 test case)</span></CodeLine>
 
 </ProgramListing>
 

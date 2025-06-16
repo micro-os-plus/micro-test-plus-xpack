@@ -15,7 +15,6 @@ keywords:
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
 import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
@@ -542,8 +541,8 @@ This approach ensures that both compile-time constants and run-time values can b
 
 <ProgramListing extension="cpp">
 
-<CodeLine><Highlight kind="normal">mt::expect (mt::to&#95;i &#123;answer&#125; == 42<a href="#ga1613ccf081248c601bed0f3022fba652">&#95;i</a>);</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">mt::expect (mt::to&#95;f &#123;expression&#125; == 42<a href="#gadcff4454bf86ea03c0c3d1be42b04e12">&#95;f</a>);</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight">mt::expect (mt::to&#95;i &#123;answer&#125; == 42<a href="#ga1613ccf081248c601bed0f3022fba652">&#95;i</a>);</span></CodeLine>
+<CodeLine><span class="doxyHighlight">mt::expect (mt::to&#95;f &#123;expression&#125; == 42<a href="#gadcff4454bf86ea03c0c3d1be42b04e12">&#95;f</a>);</span></CodeLine>
 
 </ProgramListing>
 
@@ -1530,11 +1529,12 @@ The <code>to&#95;&#42;</code> forms are the preferred approach since version 3.2
 
 <ProgramListing>
 
-<CodeLine><Highlight kind="keywordtype">int</Highlight><Highlight kind="normal"> x = 42;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> wrapped = <a href="#gab6ddb21470182cbdcf06436cde43718f">to&#95;i</a>&#123;x&#125;; </Highlight><Highlight kind="comment">// Explicitly treat x as an int for test</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">comparison</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> x = 42;</span></CodeLine>
+<CodeLine><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> wrapped = <a href="#gab6ddb21470182cbdcf06436cde43718f">to&#95;i</a>&#123;x&#125;; </span><span class="doxyHighlightComment">// Explicitly treat x as an int for test</span></CodeLine>
+<CodeLine><span class="doxyHighlight">comparison</span></CodeLine>
 
 </ProgramListing>
+
 
 
 <SectionUser title="Since">

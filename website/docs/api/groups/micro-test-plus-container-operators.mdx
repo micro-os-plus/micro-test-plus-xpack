@@ -15,7 +15,6 @@ keywords:
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
 import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
@@ -69,20 +68,20 @@ In addition to the generic operators, specialised equality and inequality operat
 
 <ProgramListing extension="cpp">
 
-<CodeLine><Highlight kind="preprocessor">#include &lt;string&#95;view&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal">std::literals; </Highlight><Highlight kind="comment">// For the &quot;sv&quot; literal.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</a>;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">// ...</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">mt::test&#95;case (</Highlight><Highlight kind="stringliteral">&quot;Operators&quot;</Highlight><Highlight kind="normal">, &#91;&#93; &#123;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">using namespace </Highlight><Highlight kind="normal">micro&#95;test&#95;plus::operators;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  mt::expect (std::vector&lt;int&gt;&#123; 1, 2 &#125; == std::vector&lt;int&gt;&#123; 1, 2 &#125;)</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">          &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;vector&#123; 1, 2 &#125; == vector&#123; 1, 2 &#125;&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">  mt::expect (std::vector&lt;int&gt;&#123; 1, 2, 3 &#125; != std::vector&lt;int&gt;&#123; 1, 2, 4 &#125;)</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">          &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;vector&#123; 1, 2, 3 &#125; != vector&#123; 1, 2, 4 &#125;&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">&#125;);</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlightPreprocessor">#include &lt;string&#95;view&gt;</span></CodeLine>
+<CodeLine><span class="doxyHighlightKeyword">using namespace </span><span class="doxyHighlight">std::literals; </span><span class="doxyHighlightComment">// For the &quot;sv&quot; literal.</span></CodeLine>
+<CodeLine><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight">mt = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</a>;</span></CodeLine>
+<CodeLine><span class="doxyHighlightComment">// ...</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlight">mt::test&#95;case (</span><span class="doxyHighlightStringLiteral">&quot;Operators&quot;</span><span class="doxyHighlight">, &#91;&#93; &#123;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using namespace </span><span class="doxyHighlight">micro&#95;test&#95;plus::operators;</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlight">  mt::expect (std::vector&lt;int&gt;&#123; 1, 2 &#125; == std::vector&lt;int&gt;&#123; 1, 2 &#125;)</span></CodeLine>
+<CodeLine><span class="doxyHighlight">          &lt;&lt; </span><span class="doxyHighlightStringLiteral">&quot;vector&#123; 1, 2 &#125; == vector&#123; 1, 2 &#125;&quot;</span><span class="doxyHighlight">;</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlight">  mt::expect (std::vector&lt;int&gt;&#123; 1, 2, 3 &#125; != std::vector&lt;int&gt;&#123; 1, 2, 4 &#125;)</span></CodeLine>
+<CodeLine><span class="doxyHighlight">          &lt;&lt; </span><span class="doxyHighlightStringLiteral">&quot;vector&#123; 1, 2, 3 &#125; != vector&#123; 1, 2, 4 &#125;&quot;</span><span class="doxyHighlight">;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">&#125;);</span></CodeLine>
 
 </ProgramListing>
 

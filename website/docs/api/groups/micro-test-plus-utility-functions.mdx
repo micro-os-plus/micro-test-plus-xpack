@@ -15,7 +15,6 @@ keywords:
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
 import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
 import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
@@ -95,10 +94,10 @@ This function enables pattern-based string comparison for tests, supporting both
 
 <ProgramListing extension="cpp">
 
-<CodeLine><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</a>;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">mt::expect (mt::utility::is&#95;match (</Highlight><Highlight kind="stringliteral">&quot;abc&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="stringliteral">&quot;a?c&quot;</Highlight><Highlight kind="normal">)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;abc matches a?c&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">mt::expect (mt::utility::is&#95;match (</Highlight><Highlight kind="stringliteral">&quot;abc&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="stringliteral">&quot;a&#42;c&quot;</Highlight><Highlight kind="normal">)) &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;abc matches a&#42;c&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight">mt = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</a>;</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlight">mt::expect (mt::utility::is&#95;match (</span><span class="doxyHighlightStringLiteral">&quot;abc&quot;</span><span class="doxyHighlight">, </span><span class="doxyHighlightStringLiteral">&quot;a?c&quot;</span><span class="doxyHighlight">)) &lt;&lt; </span><span class="doxyHighlightStringLiteral">&quot;abc matches a?c&quot;</span><span class="doxyHighlight">;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">mt::expect (mt::utility::is&#95;match (</span><span class="doxyHighlightStringLiteral">&quot;abc&quot;</span><span class="doxyHighlight">, </span><span class="doxyHighlightStringLiteral">&quot;a&#42;c&quot;</span><span class="doxyHighlight">)) &lt;&lt; </span><span class="doxyHighlightStringLiteral">&quot;abc matches a&#42;c&quot;</span><span class="doxyHighlight">;</span></CodeLine>
 
 </ProgramListing>
 
@@ -164,11 +163,11 @@ The function iterates through the input string, identifying delimiter positions 
 
 <ProgramListing extension="cpp">
 
-<CodeLine><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">mt = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</a>;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">mt::expect (std::vector&lt;std::string&#95;view&gt;&#123; </Highlight><Highlight kind="stringliteral">&quot;a&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="stringliteral">&quot;b&quot;</Highlight><Highlight kind="normal"> &#125;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">            == mt::utility::split&lt;std::string&#95;view&gt; (</Highlight><Highlight kind="stringliteral">&quot;a.b&quot;</Highlight><Highlight kind="normal">, </Highlight><Highlight kind="stringliteral">&quot;.&quot;</Highlight><Highlight kind="normal">))</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">        &lt;&lt; </Highlight><Highlight kind="stringliteral">&quot;a.b splits into &#91;a,b&#93;&quot;</Highlight><Highlight kind="normal">;</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight">mt = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro&#95;os&#95;plus::micro&#95;test&#95;plus</a>;</span></CodeLine>
+<CodeLine></CodeLine>
+<CodeLine><span class="doxyHighlight">mt::expect (std::vector&lt;std::string&#95;view&gt;&#123; </span><span class="doxyHighlightStringLiteral">&quot;a&quot;</span><span class="doxyHighlight">, </span><span class="doxyHighlightStringLiteral">&quot;b&quot;</span><span class="doxyHighlight"> &#125;</span></CodeLine>
+<CodeLine><span class="doxyHighlight">            == mt::utility::split&lt;std::string&#95;view&gt; (</span><span class="doxyHighlightStringLiteral">&quot;a.b&quot;</span><span class="doxyHighlight">, </span><span class="doxyHighlightStringLiteral">&quot;.&quot;</span><span class="doxyHighlight">))</span></CodeLine>
+<CodeLine><span class="doxyHighlight">        &lt;&lt; </span><span class="doxyHighlightStringLiteral">&quot;a.b splits into &#91;a,b&#93;&quot;</span><span class="doxyHighlight">;</span></CodeLine>
 
 </ProgramListing>
 

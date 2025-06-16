@@ -17,7 +17,6 @@ import CodeBlock from '@theme/CodeBlock'
 
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
@@ -145,11 +144,12 @@ This wrapper inherits from <code><a href="/micro-test-plus-xpack/docs/api/struct
 
 <ProgramListing>
 
-<CodeLine><Highlight kind="normal">MyType obj;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">auto</Highlight><Highlight kind="normal"> wrapped = <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gaad9720f2d1e443d77cdfd1eb1151e924">to&#95;t&lt;MyType&gt;</a>&#123;obj&#125;; </Highlight><Highlight kind="comment">// Explicitly treat obj as MyType for</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">test comparison</Highlight></CodeLine>
+<CodeLine><span class="doxyHighlight">MyType obj;</span></CodeLine>
+<CodeLine><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> wrapped = <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gaad9720f2d1e443d77cdfd1eb1151e924">to&#95;t&lt;MyType&gt;</a>&#123;obj&#125;; </span><span class="doxyHighlightComment">// Explicitly treat obj as MyType for</span></CodeLine>
+<CodeLine><span class="doxyHighlight">test comparison</span></CodeLine>
 
 </ProgramListing>
+
 
 This file is intended solely for internal use within the framework and should not be included directly by user code.
 
