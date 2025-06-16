@@ -7,8 +7,7 @@
 <para>Options for controlling test output verbosity at run-time. </para>
     </briefdescription>
     <detaileddescription>
-<sect1 id="group__micro-test-plus-cli_1autotoc_md1_1s1"><sect2 id="group__micro-test-plus-cli_1autotoc_md1">
-<title>Description</title><para>The µTest++ framework provides flexible command-line options to control the verbosity of test output, allowing users to tailor the level of detail to their specific requirements and workflow.</para>
+<para>The µTest++ framework provides flexible command-line options to control the verbosity of test output, allowing users to tailor the level of detail to their specific requirements and workflow.</para>
 <para>By default, the reporter presents detailed results only for failed test cases, while successful test cases are summarised in a single line, indicating the total number of passed and failed checks.</para>
 <para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
@@ -29,8 +28,7 @@
 <codeline><highlight class="normal">1:<sp/>✓<sp/>Minimal<sp/>-<sp/>test<sp/>suite<sp/>passed<sp/>(2<sp/>checks<sp/>in<sp/>1<sp/>test<sp/>case)</highlight></codeline>
 <codeline><highlight class="normal"><sp/>1/12<sp/>Test<sp/><sp/>#1:<sp/>minimal-test<sp/>.....................<sp/><sp/><sp/>Passed<sp/><sp/><sp/><sp/>0.00<sp/>sec</highlight></codeline>
 </programlisting></para>
-</sect2></sect1>
-<sect1 id="group__micro-test-plus-cli_1autotoc_md2_1s1"><sect2 id="group__micro-test-plus-cli_1autotoc_md2">
+<sect1 id="group__micro-test-plus-cli_1cli-verbosity">
 <title>Verbosity</title><para>To adjust the verbosity, the following command-line options are available:</para>
 <para><itemizedlist>
 <listitem><para><computeroutput>--verbose</computeroutput> – display all expectations, regardless of outcome</para>
@@ -41,7 +39,7 @@
 <para>These options enable developers to focus on the information most relevant to their needs, whether that is comprehensive diagnostics during development or succinct summaries for automated builds.</para>
 <para>The examples provided illustrate the output produced in each mode, demonstrating how µTest++ adapts its reporting to support professional and efficient testing workflows across all files and folders.</para>
 <para>The source code for this test is located in the <computeroutput>tests/src/minimal-test.cpp</computeroutput> file.</para>
-<sect3 id="group__micro-test-plus-cli_1autotoc_md3">
+<sect2 id="group__micro-test-plus-cli_1cli-verbosity-verbose">
 <title>Verbose mode</title><para>In verbose mode, the µTest++ reporter provides detailed output for every expectation, irrespective of whether it passes or fails.</para>
 <para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
@@ -65,8 +63,8 @@
 <codeline><highlight class="normal">2:<sp/>✓<sp/>Minimal<sp/>-<sp/>test<sp/>suite<sp/>passed<sp/>(2<sp/>checks<sp/>in<sp/>1<sp/>test<sp/>case)</highlight></codeline>
 <codeline><highlight class="normal"><sp/>2/12<sp/>Test<sp/><sp/>#2:<sp/>minimal-test<sp/>--verbose<sp/>...........<sp/><sp/><sp/>Passed<sp/><sp/><sp/><sp/>0.00<sp/>sec</highlight></codeline>
 </programlisting></para>
-</sect3>
-<sect3 id="group__micro-test-plus-cli_1autotoc_md4">
+</sect2>
+<sect2 id="group__micro-test-plus-cli_1cli-verbosity-quiet">
 <title>Quiet mode</title><para>In quiet mode, the µTest++ reporter displays only the overall totals for the test suite.</para>
 <para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
@@ -82,8 +80,8 @@
 <codeline><highlight class="normal">3:<sp/>✓<sp/>Minimal<sp/>-<sp/>test<sp/>suite<sp/>passed<sp/>(2<sp/>checks<sp/>in<sp/>1<sp/>test<sp/>case)</highlight></codeline>
 <codeline><highlight class="normal"><sp/>3/12<sp/>Test<sp/><sp/>#3:<sp/>minimal-test<sp/>--quiet<sp/>.............<sp/><sp/><sp/>Passed<sp/><sp/><sp/><sp/>0.00<sp/>sec</highlight></codeline>
 </programlisting></para>
-</sect3>
-<sect3 id="group__micro-test-plus-cli_1autotoc_md5">
+</sect2>
+<sect2 id="group__micro-test-plus-cli_1cli-verbosity-silent">
 <title>Silent mode</title><para>In silent mode, the µTest++ reporter suppresses all output, and the framework returns only the exit code.</para>
 <para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
@@ -98,8 +96,8 @@
 <codeline><highlight class="normal">4:</highlight></codeline>
 <codeline><highlight class="normal"><sp/>4/12<sp/>Test<sp/><sp/>#4:<sp/>minimal-test<sp/>--silent<sp/>............<sp/><sp/><sp/>Passed<sp/><sp/><sp/><sp/>0.00<sp/>sec</highlight></codeline>
 </programlisting>   </para>
-</sect3>
-</sect2></sect1>
+</sect2>
+</sect1>
     </detaileddescription>
   </compounddef>
 </doxygen>

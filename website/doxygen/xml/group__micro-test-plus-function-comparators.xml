@@ -825,8 +825,7 @@ The <computeroutput>ne</computeroutput> function template provides a pointer non
 <para>Functions for comparing actual and expected values in tests. </para>
     </briefdescription>
     <detaileddescription>
-<sect1 id="group__micro-test-plus-function-comparators_1autotoc_md6_1s1"><sect2 id="group__micro-test-plus-function-comparators_1autotoc_md6">
-<title>Description</title><para>Function comparators in µTest++ provide a clear and expressive way to compare actual and expected values within test cases. While any expression yielding a boolean value may be used in expectations and assumptions, dedicated comparator functions such as <computeroutput>eq</computeroutput>, <computeroutput>ne</computeroutput>, <computeroutput>lt</computeroutput>, <computeroutput>le</computeroutput>, <computeroutput>gt</computeroutput>, and <computeroutput>ge</computeroutput> offer enhanced reporting by explicitly showing the values involved when a check fails.</para>
+<para>Function comparators in µTest++ provide a clear and expressive way to compare actual and expected values within test cases. While any expression yielding a boolean value may be used in expectations and assumptions, dedicated comparator functions such as <computeroutput>eq</computeroutput>, <computeroutput>ne</computeroutput>, <computeroutput>lt</computeroutput>, <computeroutput>le</computeroutput>, <computeroutput>gt</computeroutput>, and <computeroutput>ge</computeroutput> offer enhanced reporting by explicitly showing the values involved when a check fails.</para>
 <para>Using these comparators ensures that, in the event of a failed check, the test output will include both the actual and expected values, making it easier to diagnose issues and understand the cause of the failure.</para>
 <para>Comparators are available for both fundamental types and standard containers. When comparing containers, each element is assessed individually, and the results are reported in detail.</para>
 <para><simplesect kind="par"><title>Examples</title><para></para>
@@ -848,7 +847,7 @@ The <computeroutput>ne</computeroutput> function template provides a pointer non
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>✗<sp/>(actual<sp/>==<sp/>42)<sp/>and<sp/>(actual<sp/>!=<sp/>42.0)<sp/>FAILED<sp/>(unit-test.cpp:781,<sp/>(42<sp/>==<sp/>42</highlight></codeline>
 <codeline><highlight class="normal">and<sp/>42.000000<sp/>!=<sp/>42.000000))</highlight></codeline>
 </programlisting></para>
-<sect3 id="group__micro-test-plus-function-comparators_1autotoc_md7">
+<sect1 id="group__micro-test-plus-function-comparators_1autotoc_md0_1s1"><sect2 id="group__micro-test-plus-function-comparators_1autotoc_md0">
 <title>Comparing containers</title><para>Containers can be compared for equality or inequality using the same comparator functions. The comparison is performed by iterating through each element and evaluating them individually.</para>
 <para><simplesect kind="par"><title>Examples</title><para></para>
 </simplesect>
@@ -858,7 +857,6 @@ The <computeroutput>ne</computeroutput> function template provides a pointer non
 <codeline><highlight class="normal">mt::expect<sp/>(mt::ne<sp/>(std::vector&lt;int&gt;{<sp/>1,<sp/>2,<sp/>3<sp/>},<sp/>std::vector&lt;int&gt;{<sp/>1,<sp/>2,<sp/>4<sp/>})</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;vector{<sp/>1,<sp/>2,<sp/>3<sp/>}<sp/>ne<sp/>vector{<sp/>1,<sp/>2,<sp/>4<sp/>}&quot;</highlight><highlight class="normal">;</highlight></codeline>
 </programlisting></para>
-</sect3>
 </sect2></sect1>
     </detaileddescription>
   </compounddef>

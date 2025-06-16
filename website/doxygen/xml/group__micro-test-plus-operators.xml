@@ -634,8 +634,7 @@ This overload of the greater than or equal operator enables comparison between t
 <para>Overloaded operators for expressive test comparisons. </para>
     </briefdescription>
     <detaileddescription>
-<sect1 id="group__micro-test-plus-operators_1autotoc_md8_1s1"><sect2 id="group__micro-test-plus-operators_1autotoc_md8">
-<title>Description</title><para>The µTest++ framework provides overloaded comparison and logical operators to enable expressive and type-safe test assertions. These operators—such as <computeroutput>==</computeroutput>, <computeroutput>!=</computeroutput>, <computeroutput>&lt;</computeroutput>, <computeroutput>&gt;</computeroutput>, <computeroutput>&lt;=</computeroutput>, and <computeroutput>&gt;=</computeroutput>—are defined within the dedicated <computeroutput>micro_test_plus::operators</computeroutput> namespace to avoid conflicts with application-defined operators.</para>
+<para>The µTest++ framework provides overloaded comparison and logical operators to enable expressive and type-safe test assertions. These operators—such as <computeroutput>==</computeroutput>, <computeroutput>!=</computeroutput>, <computeroutput>&lt;</computeroutput>, <computeroutput>&gt;</computeroutput>, <computeroutput>&lt;=</computeroutput>, and <computeroutput>&gt;=</computeroutput>—are defined within the dedicated <computeroutput>micro_test_plus::operators</computeroutput> namespace to avoid conflicts with application-defined operators.</para>
 <para>For standard values, the default operators are used, ensuring correct comparisons. However, when using the specialised µTest++ operators with typed operands, failed checks will display both the actual and expected values, greatly improving the clarity of test reports.</para>
 <para>These operators are restricted to operands derived from the local <computeroutput>detail::op</computeroutput> type. For constant values, this is achieved using provided literals (e.g., <computeroutput>1_i</computeroutput>), while dynamic values can be wrapped using casts such as <computeroutput>mt::to_i{expression}</computeroutput>.</para>
 <para>Logical operators (<computeroutput>&amp;&amp;</computeroutput>, <computeroutput>||</computeroutput>, <computeroutput>!</computeroutput>) are also supported and provide enhanced functionality when used with typed operands, allowing for the composition of complex test conditions in a natural and readable manner.</para>
@@ -654,13 +653,12 @@ This overload of the greater than or equal operator enables comparison between t
 <codeline><highlight class="normal"><sp/><sp/>mt::expect<sp/>(compute_answer<sp/>()<sp/>&gt;=<sp/>42_i)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&gt;=<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal">});</highlight></codeline>
 </programlisting></para>
-<sect3 id="group__micro-test-plus-operators_1autotoc_md9">
+<sect1 id="group__micro-test-plus-operators_1autotoc_md1_1s1"><sect2 id="group__micro-test-plus-operators_1autotoc_md1">
 <title>Logical operators</title><para>Logical operators may be used in the same way as standard operators, with enhanced reporting available when used with typed operands.</para>
 <para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
 <programlisting filename=".cpp"><codeline><highlight class="normal">mt::expect<sp/>(compute_answer<sp/>()<sp/>==<sp/>42_i<sp/>&amp;&amp;<sp/>compute_float<sp/>()<sp/>==<sp/>42.0_f);</highlight></codeline>
 </programlisting>  </para>
-</sect3>
 </sect2></sect1>
     </detaileddescription>
   </compounddef>
