@@ -1,0 +1,377 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/classes/micro-os-plus/micro-test-plus/reflection/source-location
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+<div class="doxyPage">
+
+# The `source_location` Class Reference
+
+<p>Local implementation of source location information for diagnostics. <a href="#details">More...</a></p>
+
+## Declaration
+
+<div class="doxyDeclaration">
+class micro_os_plus::micro_test_plus::reflection::source_location
+</div>
+
+## Included Headers
+
+<div class="doxyIncludesList">
+#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;
+<br/>
+</div>
+
+## Public Member Functions Index
+
+<table class="doxyMembersIndex">
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="right" valign="top">constexpr auto</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a3df499675aacb7ab9192cfb9a5371874">file_name</a> (void) const noexcept</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Retrieve the file name associated with this source location. <a href="#a3df499675aacb7ab9192cfb9a5371874">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="right" valign="top">constexpr auto</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aab9d006004611ac0526852a09f675c66">line</a> (void) const noexcept</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Retrieve the line number associated with this source location. <a href="#aab9d006004611ac0526852a09f675c66">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+</table>
+
+## Private Member Attributes Index
+
+<table class="doxyMembersIndex">
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="right" valign="top">const char *</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae648fa43322766fbeb3f9103b43bcc4b">file_</a> { "unknown" }</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>The file name where the source location was captured. <a href="#ae648fa43322766fbeb3f9103b43bcc4b">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="right" valign="top">unsigned int</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a0e805c2ed2234f2c004fd7196b844fc5">line_</a> {}</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>The line number where the source location was captured. <a href="#a0e805c2ed2234f2c004fd7196b844fc5">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+</table>
+
+## Public Static Functions Index
+
+<table class="doxyMembersIndex">
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="right" valign="top">constexpr auto</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac7bb1580b65709b94ad81ea3a5a900a0">current</a> (const char *file="unknown", unsigned int line={}) noexcept</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Obtain the current source location. <a href="#ac7bb1580b65709b94ad81ea3a5a900a0">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+</table>
+
+## Description {#details}
+
+<p>Local implementation of source location information for diagnostics.</p>
+
+
+<p>This class provides a lightweight, constexpr-compatible alternative to <span class="doxyComputerOutput">std::source_location</span> for environments lacking C++20 standard support.</p>
+
+<p>It enables retrieval of the file name and line number at the point of invocation, supporting enhanced diagnostics and reporting within the µTest++ framework.</p>
+
+<p>The static <span class="doxyComputerOutput"><a href="#ac7bb1580b65709b94ad81ea3a5a900a0">current()</a></span> method captures the current source location, using compiler built-ins where available, or defaulting to <span class="doxyComputerOutput">"unknown"</span> and zero otherwise.</p>
+
+<dl class="doxySectionUser">
+<dt><b>Since</b></dt>
+<dd>
+<p>3.0.0</p>
+</dd>
+</dl>
+
+
+<p>Definition at line 136 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">reflection.h</a>.</p>
+
+<div class="doxySectionDef">
+
+## Public Member Functions
+
+### file_name() {#a3df499675aacb7ab9192cfb9a5371874}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::reflection::source_location::file_name (void) const</td>
+</tr>
+</table>
+</td>
+<td class="doxyMemberLabelsRight">
+<span class="doxyMemberLabels">
+<span class="doxyMemberLabel nodiscard">nodiscard</span>
+<span class="doxyMemberLabel constexpr">constexpr</span>
+<span class="doxyMemberLabel noexcept">noexcept</span>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+<p>Retrieve the file name associated with this source location.</p>
+
+
+<dl class="doxySectionUser">
+<dt><b>Parameters</b></dt>
+<dd>
+<p>None.</p>
+</dd>
+</dl>
+
+
+<dl class="doxySectionUser">
+<dt><b>Returns</b></dt>
+<dd>
+<p>The file name as a constant character pointer.</p>
+</dd>
+</dl>
+
+
+<p>...</p>
+
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h/#l00164">164</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">reflection.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines-h/#l00104">104</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines-h">reflection-inlines.h</a>.</p>
+</div>
+</div>
+
+### line() {#aab9d006004611ac0526852a09f675c66}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::reflection::source_location::line (void) const</td>
+</tr>
+</table>
+</td>
+<td class="doxyMemberLabelsRight">
+<span class="doxyMemberLabels">
+<span class="doxyMemberLabel nodiscard">nodiscard</span>
+<span class="doxyMemberLabel constexpr">constexpr</span>
+<span class="doxyMemberLabel noexcept">noexcept</span>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+<p>Retrieve the line number associated with this source location.</p>
+
+
+<dl class="doxySectionUser">
+<dt><b>Parameters</b></dt>
+<dd>
+<p>None.</p>
+</dd>
+</dl>
+
+
+<dl class="doxySectionUser">
+<dt><b>Returns</b></dt>
+<dd>
+<p>The line number as an unsigned integer.</p>
+</dd>
+</dl>
+
+
+<p>...</p>
+
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h/#l00174">174</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">reflection.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines-h/#l00114">114</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines-h">reflection-inlines.h</a>.</p>
+</div>
+</div>
+
+</div>
+
+<div class="doxySectionDef">
+
+## Private Member Attributes
+
+### file_ {#ae648fa43322766fbeb3f9103b43bcc4b}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">const char* micro_os_plus::micro_test_plus::reflection::source_location::file_ { "unknown" }</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+<p>The file name where the source location was captured.</p>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h/#l00180">180</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">reflection.h</a>.</p>
+</div>
+</div>
+
+### line_ {#a0e805c2ed2234f2c004fd7196b844fc5}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">unsigned int micro_os_plus::micro_test_plus::reflection::source_location::line_ {}</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+<p>The line number where the source location was captured.</p>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h/#l00185">185</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">reflection.h</a>.</p>
+</div>
+</div>
+
+</div>
+
+<div class="doxySectionDef">
+
+## Public Static Functions
+
+### current() {#ac7bb1580b65709b94ad81ea3a5a900a0}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::reflection::source_location::current (const char * file="unknown", unsigned int line={})</td>
+</tr>
+</table>
+</td>
+<td class="doxyMemberLabelsRight">
+<span class="doxyMemberLabels">
+<span class="doxyMemberLabel nodiscard">nodiscard</span>
+<span class="doxyMemberLabel constexpr">constexpr</span>
+<span class="doxyMemberLabel noexcept">noexcept</span>
+<span class="doxyMemberLabel static">static</span>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+<p>Obtain the current source location.</p>
+
+
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">file</td>
+<td class="doxyParamItemDescription"><p>The file name (automatically provided by the compiler).</p></td>
+</tr>
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">line</td>
+<td class="doxyParamItemDescription"><p>The line number (automatically provided by the compiler).</p></td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<dl class="doxySectionUser">
+<dt><b>Returns</b></dt>
+<dd>
+<p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">source_location</a></span> instance with the captured information.</p>
+</dd>
+</dl>
+
+
+<p>Returns a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">source_location</a></span> instance representing the file name and line number at the point of invocation.</p>
+
+<p>If supported by the compiler, uses built-in macros to capture this information; otherwise, defaults to <span class="doxyComputerOutput">"unknown"</span> and zero.</p>
+
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h/#l00147">147</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">reflection.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines-h/#l00091">91</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines-h">reflection-inlines.h</a>.</p>
+</div>
+</div>
+
+</div>
+
+<hr/>
+
+<p>The documentation for this class was generated from the following files:</p>
+
+<ul>
+<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines-h">reflection-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">reflection.h</a></li>
+</ul>
+
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+
+</div>

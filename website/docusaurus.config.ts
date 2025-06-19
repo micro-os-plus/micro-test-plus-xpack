@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 // import logger from '@docusaurus/logger';
 import util from 'node:util';
 
-import doxygenApiMenu from './docusaurus-config-doxygen-menu-dropdown.json'
+import doxygenApiMenu from './docusaurus-config-menu-docusaurus-plugin-doxygen.json'
 import { redirects } from './docusaurus-config-redirects';
 import { getCustomFields } from './customFields';
 
@@ -61,6 +61,10 @@ const config: Config = {
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
+  },
+
+  markdown: {
+    format: 'detect'
   },
 
   plugins: [
@@ -143,7 +147,10 @@ const config: Config = {
         debug: true,
 
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: [
+            './src/css/custom.css',
+            './src/css/custom-docusaurus-plugin-doxygen.css'
+          ],
         },
 
       } satisfies Preset.Options,

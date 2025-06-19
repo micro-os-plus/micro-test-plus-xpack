@@ -1,0 +1,72 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+slug: /api/folders/include/micro-os-plus
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - dir
+
+---
+
+<div class="doxyPage">
+
+# The `micro-os-plus` Folder Reference
+
+<p>Folder with C/C++ header files for the µOS++ libraries. <a href="#details">More...</a></p>
+
+## Folders Index
+
+<table class="doxyMembersIndex">
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="right" valign="top">folder</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/folders/include/micro-os-plus/micro-test-plus">micro-test-plus</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Folder with C++ header files for the µTest++ Testing Framework. <a href="/micro-test-plus-xpack/docs/api/folders/include/micro-os-plus/micro-test-plus/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+</table>
+
+## Files Index
+
+<table class="doxyMembersIndex">
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="right" valign="top">file</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Main C++ header with the declarations for the µTest++ Testing Framework. <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+</table>
+
+## Description {#details}
+
+<p>Folder with C/C++ header files for the µOS++ libraries.</p>
+
+
+<p>The <span class="doxyComputerOutput">include/micro-os-plus</span> folder contains the public C++ header files for the µOS++ libraries.</p>
+
+<p>These headers define the APIs, data structures, data types and inline implementations that are available to users of the libraries. All files in this directory are intended for inclusion in user projects and provide the main interface to the utilities functionality.</p>
+
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+
+</div>
