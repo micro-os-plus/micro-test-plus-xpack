@@ -67,7 +67,6 @@
     "json": "^11.0.0",
     "liquidjs": "^10.20.1",
     "open-cli": "^8.0.0",
-    "react-markdown": "^10.1.0",
     "typescript": "~5.6.3"
   },
   "browserslist": {
