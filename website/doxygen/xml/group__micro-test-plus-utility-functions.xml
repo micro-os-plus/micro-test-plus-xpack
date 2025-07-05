@@ -53,6 +53,8 @@ This function enables pattern-based string comparison for tests, supporting both
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/micro-test-plus.cpp" line="171" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/micro-test-plus.cpp" bodystart="171" bodyend="203" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" declline="287" declcolumn="5"/>
+        <references refid="group__micro-test-plus-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" compoundref="micro-test-plus_8cpp" startline="171" endline="203">micro_os_plus::micro_test_plus::utility::is_match</references>
+        <referencedby refid="group__micro-test-plus-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" compoundref="micro-test-plus_8cpp" startline="171" endline="203">micro_os_plus::micro_test_plus::utility::is_match</referencedby>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-utility-functions_1ga00ea8f3dfb7cb0ef39919065321cf62f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>

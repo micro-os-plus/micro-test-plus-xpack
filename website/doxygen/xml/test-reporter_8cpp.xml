@@ -229,6 +229,9 @@ The <computeroutput>endl</computeroutput> function inserts a newline character i
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/test-reporter.cpp" line="73" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/test-reporter.cpp" bodystart="73" bodyend="77" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-reporter.h" declline="161" declcolumn="3"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1aec46bdfdb22163bedab8e6b542191834" compoundref="micro-test-plus_8cpp" startline="292">micro_os_plus::micro_test_plus::reporter</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1aaa1839530b6e8560711926613013312b" compoundref="test-reporter_8cpp" startline="184" endline="194">micro_os_plus::micro_test_plus::test_reporter::output_fail_suffix_</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a8df0d7843bb268c9e91fb90219aded65" compoundref="test-reporter_8cpp" startline="125" endline="130">micro_os_plus::micro_test_plus::test_reporter::output_pass_suffix_</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

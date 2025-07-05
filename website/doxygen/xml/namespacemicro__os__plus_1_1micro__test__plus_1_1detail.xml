@@ -149,6 +149,24 @@ The <computeroutput>get</computeroutput> function template invokes the appropria
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="223" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="223" bodyend="227"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a2fa97961fad5cd659110b887731f94dd" compoundref="detail_8h" startline="160" endline="163">get_impl</references>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___1aad8256dcf3cddf9a83eda4879d550695" compoundref="detail_8h" startline="1226" endline="1229">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::lhs</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq___1a94c9f6919d84eba1763de39f7624c34a" compoundref="detail_8h" startline="358" endline="361">micro_os_plus::micro_test_plus::detail::eq_&lt; Lhs_T, Rhs_T &gt;::lhs</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge___1ae541f34511a2005eb12af8dda905e497" compoundref="detail_8h" startline="813" endline="816">micro_os_plus::micro_test_plus::detail::ge_&lt; Lhs_T, Rhs_T &gt;::lhs</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1gt___1a47cce8ae50c6613355157d57f2f96d36" compoundref="detail_8h" startline="666" endline="669">micro_os_plus::micro_test_plus::detail::gt_&lt; Lhs_T, Rhs_T &gt;::lhs</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1le___1afa0ff05a441550959f86b078e457f856" compoundref="detail_8h" startline="1107" endline="1110">micro_os_plus::micro_test_plus::detail::le_&lt; Lhs_T, Rhs_T &gt;::lhs</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1lt___1a86329a6da9b505f1c11108ff4155f1f2" compoundref="detail_8h" startline="958" endline="961">micro_os_plus::micro_test_plus::detail::lt_&lt; Lhs_T, Rhs_T &gt;::lhs</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne___1aab1827128a987da4c198b7f3e359c7e3" compoundref="detail_8h" startline="521" endline="524">micro_os_plus::micro_test_plus::detail::ne_&lt; Lhs_T, Rhs_T &gt;::lhs</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or___1ade57fa3ad2c060e1606858f7363a78fb" compoundref="detail_8h" startline="1345" endline="1348">micro_os_plus::micro_test_plus::detail::or_&lt; Lhs_T, Rhs_T &gt;::lhs</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___1a1983beb930b5dd5d463833c222352422" compoundref="detail_8h" startline="1244" endline="1247">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::rhs</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq___1a5399e6059752043a3a5db6d35ec1a3e2" compoundref="detail_8h" startline="376" endline="379">micro_os_plus::micro_test_plus::detail::eq_&lt; Lhs_T, Rhs_T &gt;::rhs</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge___1a4ff1ed92d8ed883866127c3fcab9c9f5" compoundref="detail_8h" startline="831" endline="834">micro_os_plus::micro_test_plus::detail::ge_&lt; Lhs_T, Rhs_T &gt;::rhs</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1gt___1a6f7f79fc0225f471f801f27367586395" compoundref="detail_8h" startline="684" endline="687">micro_os_plus::micro_test_plus::detail::gt_&lt; Lhs_T, Rhs_T &gt;::rhs</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1le___1a01d7b63048ab7ccab1c2d669272bf6ef" compoundref="detail_8h" startline="1125" endline="1128">micro_os_plus::micro_test_plus::detail::le_&lt; Lhs_T, Rhs_T &gt;::rhs</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1lt___1ab2c485c148f49633dbd5ceecdc361947" compoundref="detail_8h" startline="976" endline="979">micro_os_plus::micro_test_plus::detail::lt_&lt; Lhs_T, Rhs_T &gt;::rhs</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne___1a8972754d2f78a43e0f6d32f08fec9552" compoundref="detail_8h" startline="539" endline="542">micro_os_plus::micro_test_plus::detail::ne_&lt; Lhs_T, Rhs_T &gt;::rhs</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or___1ad20450caccc16905bb9ec2b6852dbe15" compoundref="detail_8h" startline="1363" endline="1366">micro_os_plus::micro_test_plus::detail::or_&lt; Lhs_T, Rhs_T &gt;::rhs</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not___1a0a17757c49426642ef49eb7e6b1f8289" compoundref="detail_8h" startline="1460" endline="1463">micro_os_plus::micro_test_plus::detail::not_&lt; T &gt;::value</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a2fa97961fad5cd659110b887731f94dd" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -200,6 +218,7 @@ The <computeroutput>get</computeroutput> function template invokes the appropria
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="160" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="160" bodyend="163"/>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ac627271520bf2fe8a4c4774bcd9bf343" compoundref="detail_8h" startline="223" endline="227">get</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a95670c72316d5efa02f44ad11d13f662" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>

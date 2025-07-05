@@ -28,6 +28,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1252" column="19" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1252" bodyend="1252"/>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___1aad8256dcf3cddf9a83eda4879d550695" compoundref="detail_8h" startline="1226" endline="1229">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::lhs</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___1a48cc924bcb7bc335839d92a1cc28c37a" prot="public" static="no" mutable="no">
         <type>const Rhs_T</type>
@@ -44,6 +45,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1257" column="19" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1257" bodyend="1257"/>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___1a1983beb930b5dd5d463833c222352422" compoundref="detail_8h" startline="1244" endline="1247">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::rhs</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___1a42a5101a98ee6466bc1078796e0d81fe" prot="public" static="no" mutable="no">
         <type>const bool</type>
@@ -60,6 +62,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1262" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1262" bodyend="1262"/>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___1a3961120202cf573b2e26307871d3f981" compoundref="detail_8h" startline="1208" endline="1211">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::operator bool</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -105,6 +108,7 @@ Evaluates the logical conjunction of the provided operands at construction, supp
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1190" column="17" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1190" bodyend="1194"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___1aad8256dcf3cddf9a83eda4879d550695" compoundref="detail_8h" startline="1226" endline="1229">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::lhs</references>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___1aad8256dcf3cddf9a83eda4879d550695" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>auto</type>
@@ -128,6 +132,10 @@ Returns the value of the left-hand operand, applying the generic getter to ensur
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1226" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1226" bodyend="1229"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ac627271520bf2fe8a4c4774bcd9bf343" compoundref="detail_8h" startline="223" endline="227">micro_os_plus::micro_test_plus::detail::get</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___1aec1e7482f95320014e7ad8f4a59e22ba" compoundref="detail_8h" startline="1252" endline="1252">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::lhs_</references>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___1acbcbff7fd569478a832ad3b18e94164f" compoundref="detail_8h" startline="1190" endline="1194">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::and_</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a8327d747306728c83e673a9993ab933a" compoundref="test-reporter-inlines_8h" startline="306" endline="310">micro_os_plus::micro_test_plus::test_reporter::operator&lt;&lt;</referencedby>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___1a3961120202cf573b2e26307871d3f981" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -163,6 +171,7 @@ Returns the result of the logical AND operation. </para>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1208" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1208" bodyend="1211"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___1a42a5101a98ee6466bc1078796e0d81fe" compoundref="detail_8h" startline="1262" endline="1262">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::value_</references>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___1a1983beb930b5dd5d463833c222352422" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>auto</type>
@@ -186,6 +195,9 @@ Returns the value of the right-hand operand, applying the generic getter to ensu
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1244" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1244" bodyend="1247"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ac627271520bf2fe8a4c4774bcd9bf343" compoundref="detail_8h" startline="223" endline="227">micro_os_plus::micro_test_plus::detail::get</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___1a48cc924bcb7bc335839d92a1cc28c37a" compoundref="detail_8h" startline="1257" endline="1257">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::rhs_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a8327d747306728c83e673a9993ab933a" compoundref="test-reporter-inlines_8h" startline="306" endline="310">micro_os_plus::micro_test_plus::test_reporter::operator&lt;&lt;</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

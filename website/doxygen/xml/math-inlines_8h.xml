@@ -155,6 +155,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="200" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="200" bodyend="214" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="167" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a5c22d85f0df63cc0504cbf4988173cd7" compoundref="math-inlines_8h" startline="138" endline="142">micro_os_plus::micro_test_plus::math::pow</references>
+        <referencedby refid="group__micro-test-plus-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" compoundref="literals-inlines_8h" startline="470" endline="476">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_d</referencedby>
+        <referencedby refid="group__micro-test-plus-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" compoundref="literals-inlines_8h" startline="449" endline="455">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_f</referencedby>
+        <referencedby refid="group__micro-test-plus-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" compoundref="literals-inlines_8h" startline="491" endline="497">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ld</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a3e243d7f77b8435e1433ccad9c603f98" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -267,6 +271,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="233" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="233" bodyend="249" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="182" declcolumn="5"/>
+        <referencedby refid="group__micro-test-plus-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" compoundref="literals-inlines_8h" startline="470" endline="476">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_d</referencedby>
+        <referencedby refid="group__micro-test-plus-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" compoundref="literals-inlines_8h" startline="449" endline="455">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_f</referencedby>
+        <referencedby refid="group__micro-test-plus-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" compoundref="literals-inlines_8h" startline="491" endline="497">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ld</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1ae53dd62f6d82b8ccaa048d90a7002826" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -380,6 +387,28 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="160" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="160" bodyend="179" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="152" declcolumn="5"/>
+        <referencedby refid="group__micro-test-plus-literals_1gae521cebfd48332f44d01e4f880b4aafa" compoundref="literals-inlines_8h" startline="130" endline="133">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_c</referencedby>
+        <referencedby refid="group__micro-test-plus-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" compoundref="literals-inlines_8h" startline="470" endline="476">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_d</referencedby>
+        <referencedby refid="group__micro-test-plus-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" compoundref="literals-inlines_8h" startline="449" endline="455">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_f</referencedby>
+        <referencedby refid="group__micro-test-plus-literals_1ga366a0d47aec3241e659816067c94fcdf" compoundref="literals-inlines_8h" startline="94" endline="97">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i</referencedby>
+        <referencedby refid="group__micro-test-plus-literals_1gabce6e838737bf25be6e7527f69e75590" compoundref="literals-inlines_8h" startline="316" endline="320">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i16</referencedby>
+        <referencedby refid="group__micro-test-plus-literals_1ga6a192d3dfff5a4a98aa7532d36d1b1bd" compoundref="literals-inlines_8h" startline="335" endline="339">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i32</referencedby>
+        <referencedby refid="group__micro-test-plus-literals_1gab0bb5d1e37cbe8de6477c11ecd60956d" compoundref="literals-inlines_8h" startline="354" endline="358">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i64</referencedby>
+        <referencedby refid="group__micro-test-plus-literals_1ga9ca6fecc72b6da90acee52977eb077d7" compoundref="literals-inlines_8h" startline="297" endline="301">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_i8</referencedby>
+        <referencedby refid="group__micro-test-plus-literals_1ga96e891b439024e116cb845bc65bc9c4f" compoundref="literals-inlines_8h" startline="167" endline="170">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_l</referencedby>
+        <referencedby refid="group__micro-test-plus-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" compoundref="literals-inlines_8h" startline="491" endline="497">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ld</referencedby>
+        <referencedby refid="group__micro-test-plus-literals_1gaf5ab66b00c9486ade5d49f34a83783f5" compoundref="literals-inlines_8h" startline="185" endline="188">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ll</referencedby>
+        <referencedby refid="group__micro-test-plus-literals_1ga812816a2e9b23de1f8d8b2d86553d96d" compoundref="literals-inlines_8h" startline="112" endline="115">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_s</referencedby>
+        <referencedby refid="group__micro-test-plus-literals_1ga57d27f1a76de2d2b2a067134cbe61457" compoundref="literals-inlines_8h" startline="148" endline="152">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_sc</referencedby>
+        <referencedby refid="group__micro-test-plus-literals_1gaf45bf641153a462a1ba7c12b908e667f" compoundref="literals-inlines_8h" startline="203" endline="206">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u</referencedby>
+        <referencedby refid="group__micro-test-plus-literals_1ga96d12d563093f297a73a8b984ae7a3a5" compoundref="literals-inlines_8h" startline="392" endline="396">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u16</referencedby>
+        <referencedby refid="group__micro-test-plus-literals_1ga3171e605b5c2e1d9a0e55ae34e904674" compoundref="literals-inlines_8h" startline="411" endline="415">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u32</referencedby>
+        <referencedby refid="group__micro-test-plus-literals_1ga622b4808b7ebfc26ddf9db9128533f28" compoundref="literals-inlines_8h" startline="430" endline="434">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u64</referencedby>
+        <referencedby refid="group__micro-test-plus-literals_1ga80f43260f6a1afd8260355136858df48" compoundref="literals-inlines_8h" startline="373" endline="377">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_u8</referencedby>
+        <referencedby refid="group__micro-test-plus-literals_1ga6c1b46d4b967bdbc573e3192c2d9f98a" compoundref="literals-inlines_8h" startline="221" endline="225">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_uc</referencedby>
+        <referencedby refid="group__micro-test-plus-literals_1gaef96b19b140b5007ec33a944c3b72cae" compoundref="literals-inlines_8h" startline="259" endline="263">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ul</referencedby>
+        <referencedby refid="group__micro-test-plus-literals_1ga01adcd3866da43c393b7fba8a5e72bb2" compoundref="literals-inlines_8h" startline="278" endline="282">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ull</referencedby>
+        <referencedby refid="group__micro-test-plus-literals_1ga9017debdc1eafd64e3c53c80157ad6f5" compoundref="literals-inlines_8h" startline="240" endline="244">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_us</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a5c22d85f0df63cc0504cbf4988173cd7" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -451,6 +480,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="138" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="138" bodyend="142" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="137" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a5c22d85f0df63cc0504cbf4988173cd7" compoundref="math-inlines_8h" startline="138" endline="142">micro_os_plus::micro_test_plus::math::pow</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a1006429dba18038662409138f5754952" compoundref="math-inlines_8h" startline="200" endline="214">micro_os_plus::micro_test_plus::math::den</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a5c22d85f0df63cc0504cbf4988173cd7" compoundref="math-inlines_8h" startline="138" endline="142">micro_os_plus::micro_test_plus::math::pow</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

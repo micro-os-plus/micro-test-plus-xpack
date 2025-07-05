@@ -13,8 +13,7 @@ For more advanced scenarios, such as handling multiple expected exceptions, deve
 @code{.cpp}
 mt::expect (mt::throws ([] { exercise_throw (true); })) << "exception thrown";
 
-mt::expect (mt::throws<std::runtime_error> ([] { throw std::runtime_error{ ""
-}; }))
+mt::expect (mt::throws<std::runtime_error> ([] { throw std::runtime_error{ "" }; }))
         << "std::runtime_error thrown";
 
 mt::expect (mt::nothrow ([] { exercise_throw (false); })) << "exception not

@@ -165,8 +165,7 @@ The <computeroutput>throws</computeroutput> function template verifies whether i
 </simplesect>
 <programlisting filename=".cpp"><codeline><highlight class="normal">mt::expect<sp/>(mt::throws<sp/>([]<sp/>{<sp/>exercise_throw<sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);<sp/>}))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;exception<sp/>thrown&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">mt::expect<sp/>(mt::throws&lt;std::runtime_error&gt;<sp/>([]<sp/>{<sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error{<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">};<sp/>}))</highlight></codeline>
+<codeline><highlight class="normal">mt::expect<sp/>(mt::throws&lt;std::runtime_error&gt;<sp/>([]<sp/>{<sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error{<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>};<sp/>}))</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;std::runtime_error<sp/>thrown&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal">mt::expect<sp/>(mt::nothrow<sp/>([]<sp/>{<sp/>exercise_throw<sp/>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);<sp/>}))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;exception<sp/>not</highlight></codeline>

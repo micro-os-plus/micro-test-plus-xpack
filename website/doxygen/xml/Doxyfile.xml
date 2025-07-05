@@ -215,10 +215,10 @@
   <option  id='IMPLICIT_DIR_DOCS' default='yes' type='bool'><value>YES</value></option>
   <option  id='FORTRAN_COMMENT_AFTER' default='yes' type='int'><value>72</value></option>
   <option  id='SOURCE_BROWSER' default='no' type='bool'><value>YES</value></option>
-  <option  id='INLINE_SOURCES' default='yes' type='bool'><value>NO</value></option>
+  <option  id='INLINE_SOURCES' default='no' type='bool'><value>YES</value></option>
   <option  id='STRIP_CODE_COMMENTS' default='yes' type='bool'><value>YES</value></option>
-  <option  id='REFERENCED_BY_RELATION' default='yes' type='bool'><value>NO</value></option>
-  <option  id='REFERENCES_RELATION' default='yes' type='bool'><value>NO</value></option>
+  <option  id='REFERENCED_BY_RELATION' default='no' type='bool'><value>YES</value></option>
+  <option  id='REFERENCES_RELATION' default='no' type='bool'><value>YES</value></option>
   <option  id='REFERENCES_LINK_SOURCE' default='yes' type='bool'><value>YES</value></option>
   <option  id='SOURCE_TOOLTIPS' default='yes' type='bool'><value>YES</value></option>
   <option  id='USE_HTAGS' default='yes' type='bool'><value>NO</value></option>

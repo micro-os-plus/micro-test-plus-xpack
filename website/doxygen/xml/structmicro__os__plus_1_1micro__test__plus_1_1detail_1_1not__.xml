@@ -25,6 +25,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1468" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1468" bodyend="1468"/>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not___1a0a17757c49426642ef49eb7e6b1f8289" compoundref="detail_8h" startline="1460" endline="1463">micro_os_plus::micro_test_plus::detail::not_&lt; T &gt;::value</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not___1af63f8f3af8a2522ae0911d9970ec9444" prot="public" static="no" mutable="no">
         <type>const bool</type>
@@ -41,6 +42,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1473" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1473" bodyend="1473"/>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not___1a7d17fbb0ad2197265d7393c335c16018" compoundref="detail_8h" startline="1443" endline="1446">micro_os_plus::micro_test_plus::detail::not_&lt; T &gt;::operator bool</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -108,6 +110,7 @@ Returns the result of the logical NOT operation. </para>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1443" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1443" bodyend="1446"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not___1af63f8f3af8a2522ae0911d9970ec9444" compoundref="detail_8h" startline="1473" endline="1473">micro_os_plus::micro_test_plus::detail::not_&lt; T &gt;::value_</references>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not___1a0a17757c49426642ef49eb7e6b1f8289" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>auto</type>
@@ -128,6 +131,9 @@ Returns the value of the operand, applying the generic getter to ensure correct 
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1460" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1460" bodyend="1463"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ac627271520bf2fe8a4c4774bcd9bf343" compoundref="detail_8h" startline="223" endline="227">micro_os_plus::micro_test_plus::detail::get</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not___1a91b44f2fca870036021c939bb87360ad" compoundref="detail_8h" startline="1468" endline="1468">micro_os_plus::micro_test_plus::detail::not_&lt; T &gt;::t_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a7f8caa4fbe97ef26ece7c5a37dc4ea9c" compoundref="test-reporter-inlines_8h" startline="342" endline="345">micro_os_plus::micro_test_plus::test_reporter::operator&lt;&lt;</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

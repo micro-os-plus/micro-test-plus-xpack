@@ -86,6 +86,7 @@ This function extracts the short name from a given file path by locating the fin
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/micro-test-plus.cpp" line="128" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/micro-test-plus.cpp" bodystart="128" bodyend="140" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" declline="198" declcolumn="5"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ae2b0f0247a64d1d22e9db9b5f47653db" compoundref="test-reporter_8cpp" startline="144" endline="172">micro_os_plus::micro_test_plus::test_reporter::output_fail_prefix_</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -125,6 +126,7 @@ This function extracts the short name from a given file path by locating the fin
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" line="133" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" bodystart="133" bodyend="150" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" declline="213" declcolumn="5"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ac43d666b5a7824b7e91a1306094fdb1e" compoundref="test-reporter-inlines_8h" startline="362" endline="367">micro_os_plus::micro_test_plus::test_reporter::operator&lt;&lt;</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

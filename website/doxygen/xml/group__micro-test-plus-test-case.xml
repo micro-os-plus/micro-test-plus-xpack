@@ -96,6 +96,7 @@ The <computeroutput>test_case</computeroutput> function template registers and e
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines.h" line="114" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines.h" bodystart="114" bodyend="124" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" declline="170" declcolumn="3"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a682fc3ce8c00ebe7c068d6299269655b" compoundref="micro-test-plus_8cpp" startline="306">micro_os_plus::micro_test_plus::current_test_suite</references>
       </memberdef>
     </sectiondef>
     <briefdescription>

@@ -865,6 +865,7 @@ Constructs an <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="650" column="24" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="650" bodyend="652"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1afebca698b3129c2eb1a86c4202a54d3c" compoundref="type-traits_8h" startline="983" endline="985">micro_os_plus::micro_test_plus::type_traits::value&lt; T, class &gt;::value</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1gaad9720f2d1e443d77cdfd1eb1151e924" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -894,6 +895,7 @@ Constructs a <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__p
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="892" column="24" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="892" bodyend="894"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1afebca698b3129c2eb1a86c4202a54d3c" compoundref="type-traits_8h" startline="983" endline="985">micro_os_plus::micro_test_plus::type_traits::value&lt; T, class &gt;::value</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1gaa2bfc74376f8c110053bfa6e06e40772" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>auto</type>
@@ -994,6 +996,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="130" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="130" bodyend="133" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="148" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a98cbcae8bfc4a2d2f27487d1b2e641b7" compoundref="math-inlines_8h" startline="160" endline="179">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1030,6 +1033,9 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="470" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="470" bodyend="476" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="401" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a1006429dba18038662409138f5754952" compoundref="math-inlines_8h" startline="200" endline="214">micro_os_plus::micro_test_plus::math::den</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a74757af775d3afa203b808e3f6642467" compoundref="math-inlines_8h" startline="233" endline="249">micro_os_plus::micro_test_plus::math::den_size</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a98cbcae8bfc4a2d2f27487d1b2e641b7" compoundref="math-inlines_8h" startline="160" endline="179">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1066,6 +1072,9 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="449" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="449" bodyend="455" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="387" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a1006429dba18038662409138f5754952" compoundref="math-inlines_8h" startline="200" endline="214">micro_os_plus::micro_test_plus::math::den</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a74757af775d3afa203b808e3f6642467" compoundref="math-inlines_8h" startline="233" endline="249">micro_os_plus::micro_test_plus::math::den_size</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a98cbcae8bfc4a2d2f27487d1b2e641b7" compoundref="math-inlines_8h" startline="160" endline="179">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1ga366a0d47aec3241e659816067c94fcdf" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1102,6 +1111,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="94" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="94" bodyend="97" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="120" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a98cbcae8bfc4a2d2f27487d1b2e641b7" compoundref="math-inlines_8h" startline="160" endline="179">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1gabce6e838737bf25be6e7527f69e75590" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1138,6 +1148,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="316" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="316" bodyend="320" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="288" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a98cbcae8bfc4a2d2f27487d1b2e641b7" compoundref="math-inlines_8h" startline="160" endline="179">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1ga6a192d3dfff5a4a98aa7532d36d1b1bd" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1174,6 +1185,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="335" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="335" bodyend="339" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="302" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a98cbcae8bfc4a2d2f27487d1b2e641b7" compoundref="math-inlines_8h" startline="160" endline="179">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1gab0bb5d1e37cbe8de6477c11ecd60956d" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1210,6 +1222,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="354" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="354" bodyend="358" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="316" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a98cbcae8bfc4a2d2f27487d1b2e641b7" compoundref="math-inlines_8h" startline="160" endline="179">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1ga9ca6fecc72b6da90acee52977eb077d7" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1246,6 +1259,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="297" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="297" bodyend="301" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="274" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a98cbcae8bfc4a2d2f27487d1b2e641b7" compoundref="math-inlines_8h" startline="160" endline="179">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1ga96e891b439024e116cb845bc65bc9c4f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1282,6 +1296,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="167" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="167" bodyend="170" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="176" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a98cbcae8bfc4a2d2f27487d1b2e641b7" compoundref="math-inlines_8h" startline="160" endline="179">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1318,6 +1333,9 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="491" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="491" bodyend="497" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="415" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a1006429dba18038662409138f5754952" compoundref="math-inlines_8h" startline="200" endline="214">micro_os_plus::micro_test_plus::math::den</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a74757af775d3afa203b808e3f6642467" compoundref="math-inlines_8h" startline="233" endline="249">micro_os_plus::micro_test_plus::math::den_size</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a98cbcae8bfc4a2d2f27487d1b2e641b7" compoundref="math-inlines_8h" startline="160" endline="179">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1gaf5ab66b00c9486ade5d49f34a83783f5" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1354,6 +1372,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="185" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="185" bodyend="188" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="190" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a98cbcae8bfc4a2d2f27487d1b2e641b7" compoundref="math-inlines_8h" startline="160" endline="179">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1ga812816a2e9b23de1f8d8b2d86553d96d" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1390,6 +1409,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="112" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="112" bodyend="115" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="134" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a98cbcae8bfc4a2d2f27487d1b2e641b7" compoundref="math-inlines_8h" startline="160" endline="179">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1ga57d27f1a76de2d2b2a067134cbe61457" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1426,6 +1446,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="148" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="148" bodyend="152" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="162" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a98cbcae8bfc4a2d2f27487d1b2e641b7" compoundref="math-inlines_8h" startline="160" endline="179">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1gaf45bf641153a462a1ba7c12b908e667f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1462,6 +1483,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="203" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="203" bodyend="206" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="204" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a98cbcae8bfc4a2d2f27487d1b2e641b7" compoundref="math-inlines_8h" startline="160" endline="179">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1ga96d12d563093f297a73a8b984ae7a3a5" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1498,6 +1520,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="392" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="392" bodyend="396" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="345" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a98cbcae8bfc4a2d2f27487d1b2e641b7" compoundref="math-inlines_8h" startline="160" endline="179">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1ga3171e605b5c2e1d9a0e55ae34e904674" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1534,6 +1557,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="411" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="411" bodyend="415" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="359" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a98cbcae8bfc4a2d2f27487d1b2e641b7" compoundref="math-inlines_8h" startline="160" endline="179">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1ga622b4808b7ebfc26ddf9db9128533f28" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1570,6 +1594,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="430" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="430" bodyend="434" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="373" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a98cbcae8bfc4a2d2f27487d1b2e641b7" compoundref="math-inlines_8h" startline="160" endline="179">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1ga80f43260f6a1afd8260355136858df48" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1606,6 +1631,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="373" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="373" bodyend="377" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="331" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a98cbcae8bfc4a2d2f27487d1b2e641b7" compoundref="math-inlines_8h" startline="160" endline="179">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1ga6c1b46d4b967bdbc573e3192c2d9f98a" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1642,6 +1668,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="221" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="221" bodyend="225" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="218" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a98cbcae8bfc4a2d2f27487d1b2e641b7" compoundref="math-inlines_8h" startline="160" endline="179">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1gaef96b19b140b5007ec33a944c3b72cae" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1678,6 +1705,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="259" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="259" bodyend="263" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="246" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a98cbcae8bfc4a2d2f27487d1b2e641b7" compoundref="math-inlines_8h" startline="160" endline="179">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1ga01adcd3866da43c393b7fba8a5e72bb2" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1714,6 +1742,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="278" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="278" bodyend="282" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="260" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a98cbcae8bfc4a2d2f27487d1b2e641b7" compoundref="math-inlines_8h" startline="160" endline="179">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1ga9017debdc1eafd64e3c53c80157ad6f5" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1750,6 +1779,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="240" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="240" bodyend="244" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="232" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a98cbcae8bfc4a2d2f27487d1b2e641b7" compoundref="math-inlines_8h" startline="160" endline="179">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
     </sectiondef>
     <briefdescription>

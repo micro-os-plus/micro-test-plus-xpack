@@ -29,6 +29,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1564" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1564" bodyend="1564"/>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___1ab482b144c355eb68638dc872331145e7" compoundref="detail_8h" startline="1524" endline="1541">micro_os_plus::micro_test_plus::detail::throws_&lt; Callable_T, Exception_T &gt;::throws_</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___1a84158f0b3d7719fe0929b49002c113b5" compoundref="detail_8h" startline="1556" endline="1559">micro_os_plus::micro_test_plus::detail::throws_&lt; Callable_T, Exception_T &gt;::operator bool</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -60,6 +62,7 @@ Invokes the provided callable and determines whether it throws an exception of t
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1524" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1524" bodyend="1541"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___1ab92c281f0bbf04125e3fa9a8258dc1b9" compoundref="detail_8h" startline="1564" endline="1564">micro_os_plus::micro_test_plus::detail::throws_&lt; Callable_T, Exception_T &gt;::value_</references>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___1a84158f0b3d7719fe0929b49002c113b5" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -95,6 +98,7 @@ Returns the result of the exception check. </para>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1556" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1556" bodyend="1559"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___1ab92c281f0bbf04125e3fa9a8258dc1b9" compoundref="detail_8h" startline="1564" endline="1564">micro_os_plus::micro_test_plus::detail::throws_&lt; Callable_T, Exception_T &gt;::value_</references>
       </memberdef>
     </sectiondef>
     <briefdescription>

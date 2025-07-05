@@ -222,6 +222,7 @@ The <computeroutput>has_npos_v</computeroutput> variable template evaluates to <
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="401" column="27" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="402" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1afdfeff359bdc48955dacb5448706b297">micro_os_plus::micro_test_plus::test_reporter::operator&lt;&lt;</referencedby>
       </memberdef>
       <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a695b45e13f3ac3cd1cef1225fa0dfa01" prot="public" static="yes" constexpr="yes" mutable="no">
         <templateparamlist>
@@ -541,6 +542,7 @@ The <computeroutput>is_op_v</computeroutput> variable template evaluates to <com
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="946" column="27" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="946" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ab89536a4a5a82b658ca8282277c49f4b" compoundref="test-reporter-inlines_8h" startline="443" endline="454">micro_os_plus::micro_test_plus::test_reporter::fail</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
@@ -580,6 +582,8 @@ The <computeroutput>declval</computeroutput> function template provides a mechan
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="335" column="5" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" declline="335" declcolumn="5"/>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1ae9b4b50700345f54b1c14c594e0637ba" compoundref="type-traits_8h" startline="561" endline="565">micro_os_plus::micro_test_plus::type_traits::is_convertible</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1aa7389baefbefec0ece5df341187218e0" compoundref="type-traits_8h" startline="338" endline="341">micro_os_plus::micro_test_plus::type_traits::is_valid</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1ab7dddbd4f0438826d71f55904594905d" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -686,6 +690,7 @@ The <computeroutput>is_convertible</computeroutput> function template checks, at
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="561" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="561" bodyend="565"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1ae488d06debb38c5e638355cb462a1228">micro_os_plus::micro_test_plus::type_traits::declval</references>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a3ee98aeecf4e9f3b23dfcda25434c4d2" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -749,6 +754,7 @@ This overload is selected when the primary <computeroutput>is_valid</computerout
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="338" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="338" bodyend="341"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1ae488d06debb38c5e638355cb462a1228">micro_os_plus::micro_test_plus::type_traits::declval</references>
       </memberdef>
     </sectiondef>
     <briefdescription>

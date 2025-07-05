@@ -81,6 +81,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="811" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="812" bodyend="-1"/>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a3ee48433567db9886d9f99ab5e6d2864" compoundref="type-traits_8h" startline="853" endline="856">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;::get</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a0a877099bf7ee9fcde1446cac65511e6" compoundref="type-traits_8h" startline="839" endline="842">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;::operator value_type</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -101,6 +103,7 @@ Returns the compile-time floating point constant value. </para>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="853" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="853" bodyend="856"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1ab0e05de518c208a6a762c7377d2f2332" compoundref="type-traits_8h" startline="812">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;::value</references>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a0a877099bf7ee9fcde1446cac65511e6" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="yes" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -119,6 +122,7 @@ Allows explicit conversion to the underlying floating point value type. </para>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="839" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="839" bodyend="842"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1ab0e05de518c208a6a762c7377d2f2332" compoundref="type-traits_8h" startline="812">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;::value</references>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1adcc1ade20fd348fa653623ec6c378d72" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>auto</type>

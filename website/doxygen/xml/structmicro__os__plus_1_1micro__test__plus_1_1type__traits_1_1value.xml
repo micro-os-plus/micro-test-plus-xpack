@@ -79,6 +79,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="983" column="17" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="983" bodyend="985"/>
+        <referencedby refid="group__micro-test-plus-literals_1ga6195961d9ece2c2c91e8946d47d84a79" compoundref="literals_8h" startline="650" endline="652">micro_os_plus::micro_test_plus::_t&lt; T &gt;::_t</referencedby>
+        <referencedby refid="group__micro-test-plus-literals_1gaad9720f2d1e443d77cdfd1eb1151e924" compoundref="literals_8h" startline="892" endline="894">micro_os_plus::micro_test_plus::to_t&lt; T &gt;::to_t</referencedby>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a54a10058177255d3c430b27e3cb87eab" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>decltype(auto)</type>
