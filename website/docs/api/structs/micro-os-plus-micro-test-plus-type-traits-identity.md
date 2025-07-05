@@ -5,11 +5,11 @@
 
 slug: /api/structs/micro-os-plus/micro-test-plus/type-traits/identity
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
   - struct
-toc_max_heading_level: 3
 
 ---
 
@@ -22,15 +22,13 @@ toc_max_heading_level: 3
 ## Declaration
 
 <div class="doxyDeclaration">
-template &lt;class T, class...&gt;<br/>
-struct micro_os_plus::micro_test_plus::type_traits::identity&lt;T, class...&gt;
+template &lt;class T, class...&gt;
+struct micro_os_plus::micro_test_plus::type_traits::identity&lt;T, class...&gt; { ... }
 </div>
 
 ## Included Headers
 
-<div class="doxyIncludesList">
-#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;
-<br/>
+<div class="doxyIncludesList">#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;
 </div>
 
 ## Public Member Typedefs Index
@@ -79,9 +77,12 @@ struct micro_os_plus::micro_test_plus::type_traits::identity&lt;T, class...&gt;
 
 <p>The <span class="doxyComputerOutput">identity</span> struct template provides a mechanism for preserving a type <span class="doxyComputerOutput">T</span> during template metaprogramming. It is commonly used to delay type evaluation or to forward types in complex template constructs within the µTest++ framework.</p>
 
+
 <p>This utility is particularly useful in scenarios where type deduction or SFINAE is required, as it allows the type to be carried through template specialisations without modification.</p>
 
+
 <p>Definition at line 141 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+
 
 <div class="doxySectionDef">
 
@@ -105,9 +106,18 @@ struct micro_os_plus::micro_test_plus::type_traits::identity&lt;T, class...&gt;
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Alias for the preserved type.</p>
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00146">146</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a8a488c6629ed310aa4fa5713e4e2e016">146</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a8a488c6629ed310aa4fa5713e4e2e016">type</a> = T;</span></span></div>
+
+</div>
+
 </div>
 </div>
 
@@ -115,11 +125,13 @@ struct micro_os_plus::micro_test_plus::type_traits::identity&lt;T, class...&gt;
 
 <hr/>
 
-<p>The documentation for this struct was generated from the following file:</p>
+The documentation for this struct was generated from the following file:
 
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a></li>
 </ul>
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

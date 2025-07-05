@@ -5,6 +5,7 @@
 
 slug: /api/groups/micro-test-plus-cli
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
@@ -25,10 +26,12 @@ keywords:
 
 <p>The µTest++ framework provides flexible command-line options to control the verbosity of test output, allowing users to tailor the level of detail to their specific requirements and workflow.</p>
 
+
 <p>By default, the reporter presents detailed results only for failed test cases, while successful test cases are summarised in a single line, indicating the total number of passed and failed checks.</p>
 
+
 <dl class="doxySectionUser">
-<dt><b>Example</b></dt>
+<dt>Example</dt>
 <dd></dd>
 </dl>
 
@@ -55,12 +58,13 @@ keywords:
 </div>
 
 
-## Verbosity
+## Verbosity {#cli-verbosity}
 
 
 <p>To adjust the verbosity, the following command-line options are available:</p>
 
-<ul>
+
+<ul class="doxyList ">
 <li><span class="doxyComputerOutput">--verbose</span> – display all expectations, regardless of outcome</li>
 <li><span class="doxyComputerOutput">--quiet</span> – display only the test suite totals</li>
 <li><span class="doxyComputerOutput">--silent</span> – suppress all output and return only the exit code</li>
@@ -68,17 +72,21 @@ keywords:
 
 <p>These options enable developers to focus on the information most relevant to their needs, whether that is comprehensive diagnostics during development or succinct summaries for automated builds.</p>
 
+
 <p>The examples provided illustrate the output produced in each mode, demonstrating how µTest++ adapts its reporting to support professional and efficient testing workflows across all files and folders.</p>
+
 
 <p>The source code for this test is located in the <span class="doxyComputerOutput">tests/src/minimal-test.cpp</span> file.</p>
 
-### Verbose mode
+
+### Verbose mode {#cli-verbosity-verbose}
 
 
 <p>In verbose mode, the µTest++ reporter provides detailed output for every expectation, irrespective of whether it passes or fails.</p>
 
+
 <dl class="doxySectionUser">
-<dt><b>Example</b></dt>
+<dt>Example</dt>
 <dd></dd>
 </dl>
 
@@ -108,13 +116,14 @@ keywords:
 </div>
 
 
-### Quiet mode
+### Quiet mode {#cli-verbosity-quiet}
 
 
 <p>In quiet mode, the µTest++ reporter displays only the overall totals for the test suite.</p>
 
+
 <dl class="doxySectionUser">
-<dt><b>Example</b></dt>
+<dt>Example</dt>
 <dd></dd>
 </dl>
 
@@ -136,13 +145,14 @@ keywords:
 </div>
 
 
-### Silent mode
+### Silent mode {#cli-verbosity-silent}
 
 
 <p>In silent mode, the µTest++ reporter suppresses all output, and the framework returns only the exit code.</p>
 
+
 <dl class="doxySectionUser">
-<dt><b>Example</b></dt>
+<dt>Example</dt>
 <dd></dd>
 </dl>
 
@@ -162,6 +172,8 @@ keywords:
 
 </div>
 
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

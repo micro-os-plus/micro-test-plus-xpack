@@ -5,11 +5,11 @@
 
 slug: /api/structs/micro-os-plus/micro-test-plus/detail/and-
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
   - struct
-toc_max_heading_level: 3
 
 ---
 
@@ -22,15 +22,13 @@ toc_max_heading_level: 3
 ## Declaration
 
 <div class="doxyDeclaration">
-template &lt;class Lhs_T, class Rhs_T&gt;<br/>
-struct micro_os_plus::micro_test_plus::detail::and_&lt;Lhs_T, Rhs_T&gt;
+template &lt;class Lhs_T, class Rhs_T&gt;
+struct micro_os_plus::micro_test_plus::detail::and_&lt;Lhs_T, Rhs_T&gt; { ... }
 </div>
 
 ## Included Headers
 
-<div class="doxyIncludesList">
-#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;
-<br/>
+<div class="doxyIncludesList">#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;
 </div>
 
 ## Base struct
@@ -38,7 +36,7 @@ struct micro_os_plus::micro_test_plus::detail::and_&lt;Lhs_T, Rhs_T&gt;
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">op</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -219,19 +217,24 @@ struct micro_os_plus::micro_test_plus::detail::and_&lt;Lhs_T, Rhs_T&gt;
 
 <p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/and-">and_</a></span> struct template provides a type-safe mechanism for evaluating the logical conjunction (AND) of two operands within the framework.</p>
 
+
 <p>This comparator supports a wide range of operand types, applying the generic getter to ensure correct value extraction for both custom and standard types. The result of the logical AND operation is stored in the <span class="doxyComputerOutput">value_</span> member for efficient access.</p>
+
 
 <p>The implementation is optimised for use in embedded environments and supports both compile-time and run-time evaluation.</p>
 
+
 <p>All definitions are intended for internal use within the framework and are implemented in the <span class="doxyComputerOutput">include/micro-os-plus/micro-test-plus</span> folder to maintain a structured and modular codebase.</p>
 
+
 <p>Definition at line 1177 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+
 
 <div class="doxySectionDef">
 
 ## Public Constructors
 
-### and_() {#acbcbff7fd569478a832ad3b18e94164f}
+### and\_() {#acbcbff7fd569478a832ad3b18e94164f}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -255,6 +258,7 @@ struct micro_os_plus::micro_test_plus::detail::and_&lt;Lhs_T, Rhs_T&gt;
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Constructs a logical AND comparator for the given operands.</p>
 
 
@@ -276,7 +280,23 @@ struct micro_os_plus::micro_test_plus::detail::and_&lt;Lhs_T, Rhs_T&gt;
 
 <p>Evaluates the logical conjunction of the provided operands at construction, supporting both custom and standard types. The result is stored in the <span class="doxyComputerOutput">value_</span> member for efficient access.</p>
 
+
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01190">1190</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#acbcbff7fd569478a832ad3b18e94164f">1190</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> <a href="#acbcbff7fd569478a832ad3b18e94164f">and_</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; <a href="#aad8256dcf3cddf9a83eda4879d550695">lhs</a> = {}, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs = {})</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1191</span><span class="doxyLineContent"><span class="doxyHighlight">          : lhs_{ lhs }, rhs_{ rhs },</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1192</span><span class="doxyLineContent"><span class="doxyHighlight">            value_{ static_cast&lt;bool&gt; (lhs) and static_cast&lt;bool&gt; (rhs) }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1193</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1194</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+
+</div>
+
+
+<p>Reference <a href="#aad8256dcf3cddf9a83eda4879d550695">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::lhs</a>.</p>
+
 </div>
 </div>
 
@@ -296,7 +316,7 @@ struct micro_os_plus::micro_test_plus::detail::and_&lt;Lhs_T, Rhs_T&gt;
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::operator bool () const</td>
+<td class="doxyMemberName">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::operator bool ()</td>
 </tr>
 </table>
 </td>
@@ -311,14 +331,13 @@ struct micro_os_plus::micro_test_plus::detail::and_&lt;Lhs_T, Rhs_T&gt;
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Conversion operator to boolean.</p>
 
 
 <dl class="doxySectionUser">
-<dt><b>Parameters</b></dt>
-<dd>
-<p>None.</p>
-</dd>
+<dt>Parameters</dt>
+<dd><p>None.</p></dd>
 </dl>
 
 
@@ -340,7 +359,22 @@ struct micro_os_plus::micro_test_plus::detail::and_&lt;Lhs_T, Rhs_T&gt;
 
 <p>Returns the result of the logical AND operation.</p>
 
+
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01208">1208</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a3961120202cf573b2e26307871d3f981">1208</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlight"> bool ()</span><span class="doxyHighlightKeyword"> const</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1209</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">      </span><span class="doxyHighlight">{</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1210</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a42a5101a98ee6466bc1078796e0d81fe">value_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1211</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+
+</div>
+
+
+<p>Reference <a href="#a42a5101a98ee6466bc1078796e0d81fe">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::value_</a>.</p>
+
 </div>
 </div>
 
@@ -360,7 +394,7 @@ struct micro_os_plus::micro_test_plus::detail::and_&lt;Lhs_T, Rhs_T&gt;
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::lhs (void) const</td>
+<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::lhs (void)</td>
 </tr>
 </table>
 </td>
@@ -375,28 +409,43 @@ struct micro_os_plus::micro_test_plus::detail::and_&lt;Lhs_T, Rhs_T&gt;
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Retrieves the left-hand operand.</p>
 
 
 <dl class="doxySectionUser">
-<dt><b>Parameters</b></dt>
-<dd>
-<p>None.</p>
-</dd>
+<dt>Parameters</dt>
+<dd><p>None.</p></dd>
 </dl>
 
 
 <dl class="doxySectionUser">
-<dt><b>Returns</b></dt>
-<dd>
-<p>The extracted left-hand operand.</p>
-</dd>
+<dt>Returns</dt>
+<dd><p>The extracted left-hand operand.</p></dd>
 </dl>
 
 
 <p>Returns the value of the left-hand operand, applying the generic getter to ensure correct extraction for both custom and standard types.</p>
 
+
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01226">1226</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aad8256dcf3cddf9a83eda4879d550695">1226</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="#aad8256dcf3cddf9a83eda4879d550695">lhs</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">)</span><span class="doxyHighlightKeyword"> const</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1227</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">      </span><span class="doxyHighlight">{</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1228</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">get</a> (<a href="#aec1e7482f95320014e7ad8f4a59e22ba">lhs_</a>);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1229</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+
+</div>
+
+
+<p>References <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">micro_os_plus::micro_test_plus::detail::get</a> and <a href="#aec1e7482f95320014e7ad8f4a59e22ba">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::lhs_</a>.</p>
+
+
+<p>Referenced by <a href="#acbcbff7fd569478a832ad3b18e94164f">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::and_</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a8327d747306728c83e673a9993ab933a">micro_os_plus::micro_test_plus::test_reporter::operator&lt;&lt;</a>.</p>
+
 </div>
 </div>
 
@@ -410,7 +459,7 @@ struct micro_os_plus::micro_test_plus::detail::and_&lt;Lhs_T, Rhs_T&gt;
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::rhs (void) const</td>
+<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::rhs (void)</td>
 </tr>
 </table>
 </td>
@@ -425,28 +474,43 @@ struct micro_os_plus::micro_test_plus::detail::and_&lt;Lhs_T, Rhs_T&gt;
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Retrieves the right-hand operand.</p>
 
 
 <dl class="doxySectionUser">
-<dt><b>Parameters</b></dt>
-<dd>
-<p>None.</p>
-</dd>
+<dt>Parameters</dt>
+<dd><p>None.</p></dd>
 </dl>
 
 
 <dl class="doxySectionUser">
-<dt><b>Returns</b></dt>
-<dd>
-<p>The extracted right-hand operand.</p>
-</dd>
+<dt>Returns</dt>
+<dd><p>The extracted right-hand operand.</p></dd>
 </dl>
 
 
 <p>Returns the value of the right-hand operand, applying the generic getter to ensure correct extraction for both custom and standard types.</p>
 
+
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01244">1244</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a1983beb930b5dd5d463833c222352422">1244</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="#a1983beb930b5dd5d463833c222352422">rhs</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">)</span><span class="doxyHighlightKeyword"> const</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1245</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">      </span><span class="doxyHighlight">{</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1246</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">get</a> (<a href="#a48cc924bcb7bc335839d92a1cc28c37a">rhs_</a>);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1247</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+
+</div>
+
+
+<p>References <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">micro_os_plus::micro_test_plus::detail::get</a> and <a href="#a48cc924bcb7bc335839d92a1cc28c37a">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::rhs_</a>.</p>
+
+
+<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a8327d747306728c83e673a9993ab933a">micro_os_plus::micro_test_plus::test_reporter::operator&lt;&lt;</a>.</p>
+
 </div>
 </div>
 
@@ -456,7 +520,7 @@ struct micro_os_plus::micro_test_plus::detail::and_&lt;Lhs_T, Rhs_T&gt;
 
 ## Public Member Attributes
 
-### lhs_ {#aec1e7482f95320014e7ad8f4a59e22ba}
+### lhs\_ {#aec1e7482f95320014e7ad8f4a59e22ba}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -474,13 +538,25 @@ struct micro_os_plus::micro_test_plus::detail::and_&lt;Lhs_T, Rhs_T&gt;
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Stores the left-hand operand.</p>
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01252">1252</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aec1e7482f95320014e7ad8f4a59e22ba">1252</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T <a href="#aec1e7482f95320014e7ad8f4a59e22ba">lhs_</a>{};</span></span></div>
+
+</div>
+
+
+<p>Referenced by <a href="#aad8256dcf3cddf9a83eda4879d550695">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::lhs</a>.</p>
+
 </div>
 </div>
 
-### rhs_ {#a48cc924bcb7bc335839d92a1cc28c37a}
+### rhs\_ {#a48cc924bcb7bc335839d92a1cc28c37a}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -498,13 +574,25 @@ struct micro_os_plus::micro_test_plus::detail::and_&lt;Lhs_T, Rhs_T&gt;
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Stores the right-hand operand.</p>
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01257">1257</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a48cc924bcb7bc335839d92a1cc28c37a">1257</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T <a href="#a48cc924bcb7bc335839d92a1cc28c37a">rhs_</a>{};</span></span></div>
+
+</div>
+
+
+<p>Referenced by <a href="#a1983beb930b5dd5d463833c222352422">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::rhs</a>.</p>
+
 </div>
 </div>
 
-### value_ {#a42a5101a98ee6466bc1078796e0d81fe}
+### value\_ {#a42a5101a98ee6466bc1078796e0d81fe}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -522,9 +610,21 @@ struct micro_os_plus::micro_test_plus::detail::and_&lt;Lhs_T, Rhs_T&gt;
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Stores the result of the logical AND operation.</p>
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01262">1262</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a42a5101a98ee6466bc1078796e0d81fe">1262</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#a42a5101a98ee6466bc1078796e0d81fe">value_</a>{};</span></span></div>
+
+</div>
+
+
+<p>Referenced by <a href="#a3961120202cf573b2e26307871d3f981">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::operator bool</a>.</p>
+
 </div>
 </div>
 
@@ -532,11 +632,13 @@ struct micro_os_plus::micro_test_plus::detail::and_&lt;Lhs_T, Rhs_T&gt;
 
 <hr/>
 
-<p>The documentation for this struct was generated from the following file:</p>
+The documentation for this struct was generated from the following file:
 
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a></li>
 </ul>
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

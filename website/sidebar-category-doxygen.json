@@ -120,66 +120,108 @@
       "label": "Namespaces",
       "link": {
         "type": "doc",
-        "id": "api/namespaces/index"
+        "id": "api/indices/namespaces/index"
       },
       "collapsed": true,
       "items": [
         {
           "type": "category",
-          "label": "micro_os_plus",
-          "link": {
-            "type": "doc",
-            "id": "api/namespaces/micro-os-plus"
-          },
+          "label": "Hierarchy",
           "collapsed": true,
           "items": [
             {
               "type": "category",
-              "label": "micro_test_plus",
+              "label": "micro_os_plus",
               "link": {
                 "type": "doc",
-                "id": "api/namespaces/micro-os-plus-micro-test-plus"
+                "id": "api/namespaces/micro-os-plus"
               },
               "collapsed": true,
               "items": [
                 {
-                  "type": "doc",
-                  "label": "detail",
-                  "id": "api/namespaces/micro-os-plus-micro-test-plus-detail"
-                },
-                {
-                  "type": "doc",
-                  "label": "literals",
-                  "id": "api/namespaces/micro-os-plus-micro-test-plus-literals"
-                },
-                {
-                  "type": "doc",
-                  "label": "math",
-                  "id": "api/namespaces/micro-os-plus-micro-test-plus-math"
-                },
-                {
-                  "type": "doc",
-                  "label": "operators",
-                  "id": "api/namespaces/micro-os-plus-micro-test-plus-operators"
-                },
-                {
-                  "type": "doc",
-                  "label": "reflection",
-                  "id": "api/namespaces/micro-os-plus-micro-test-plus-reflection"
-                },
-                {
-                  "type": "doc",
-                  "label": "type_traits",
-                  "id": "api/namespaces/micro-os-plus-micro-test-plus-type-traits"
-                },
-                {
-                  "type": "doc",
-                  "label": "utility",
-                  "id": "api/namespaces/micro-os-plus-micro-test-plus-utility"
+                  "type": "category",
+                  "label": "micro_test_plus",
+                  "link": {
+                    "type": "doc",
+                    "id": "api/namespaces/micro-os-plus-micro-test-plus"
+                  },
+                  "collapsed": true,
+                  "items": [
+                    {
+                      "type": "doc",
+                      "label": "detail",
+                      "id": "api/namespaces/micro-os-plus-micro-test-plus-detail"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "literals",
+                      "id": "api/namespaces/micro-os-plus-micro-test-plus-literals"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "math",
+                      "id": "api/namespaces/micro-os-plus-micro-test-plus-math"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "operators",
+                      "id": "api/namespaces/micro-os-plus-micro-test-plus-operators"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "reflection",
+                      "id": "api/namespaces/micro-os-plus-micro-test-plus-reflection"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "type_traits",
+                      "id": "api/namespaces/micro-os-plus-micro-test-plus-type-traits"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "utility",
+                      "id": "api/namespaces/micro-os-plus-micro-test-plus-utility"
+                    }
+                  ]
                 }
               ]
             }
           ]
+        },
+        {
+          "type": "doc",
+          "label": "All",
+          "id": "api/indices/namespaces/all"
+        },
+        {
+          "type": "doc",
+          "label": "Classes",
+          "id": "api/indices/namespaces/classes"
+        },
+        {
+          "type": "doc",
+          "label": "Functions",
+          "id": "api/indices/namespaces/functions"
+        },
+        {
+          "type": "doc",
+          "label": "Variables",
+          "id": "api/indices/namespaces/variables"
+        },
+        {
+          "type": "doc",
+          "label": "Typedefs",
+          "id": "api/indices/namespaces/typedefs"
+        },
+        {
+          "type": "doc",
+          "label": "Enums",
+          "id": "api/indices/namespaces/enums"
+        },
+        {
+          "type": "doc",
+          "label": "Enum Values",
+          "id": "api/indices/namespaces/enumvalues"
         }
       ]
     },
@@ -188,7 +230,7 @@
       "label": "Classes",
       "link": {
         "type": "doc",
-        "id": "api/classes/index"
+        "id": "api/indices/classes/index"
       },
       "collapsed": true,
       "items": [
@@ -411,27 +453,27 @@
         {
           "type": "doc",
           "label": "All",
-          "id": "api/index/classes/all"
+          "id": "api/indices/classes/all"
         },
         {
           "type": "doc",
           "label": "Classes",
-          "id": "api/index/classes/classes"
+          "id": "api/indices/classes/classes"
         },
         {
           "type": "doc",
           "label": "Functions",
-          "id": "api/index/classes/functions"
+          "id": "api/indices/classes/functions"
         },
         {
           "type": "doc",
           "label": "Variables",
-          "id": "api/index/classes/variables"
+          "id": "api/indices/classes/variables"
         },
         {
           "type": "doc",
           "label": "Typedefs",
-          "id": "api/index/classes/typedefs"
+          "id": "api/indices/classes/typedefs"
         }
       ]
     },
@@ -440,189 +482,236 @@
       "label": "Files",
       "link": {
         "type": "doc",
-        "id": "api/files/index"
+        "id": "api/indices/files/index"
       },
       "collapsed": true,
       "items": [
         {
           "type": "category",
-          "label": "include",
-          "link": {
-            "type": "doc",
-            "id": "api/folders/include"
-          },
+          "label": "Hierarchy",
           "collapsed": true,
           "items": [
             {
               "type": "category",
-              "label": "micro-os-plus",
+              "label": "include",
               "link": {
                 "type": "doc",
-                "id": "api/folders/include-micro-os-plus"
+                "id": "api/folders/include"
               },
               "collapsed": true,
               "items": [
                 {
                   "type": "category",
-                  "label": "micro-test-plus",
+                  "label": "micro-os-plus",
                   "link": {
                     "type": "doc",
-                    "id": "api/folders/include-micro-os-plus-micro-test-plus"
+                    "id": "api/folders/include-micro-os-plus"
                   },
                   "collapsed": true,
                   "items": [
                     {
                       "type": "category",
-                      "label": "inlines",
+                      "label": "micro-test-plus",
                       "link": {
                         "type": "doc",
-                        "id": "api/folders/include-micro-os-plus-micro-test-plus-inlines"
+                        "id": "api/folders/include-micro-os-plus-micro-test-plus"
                       },
                       "collapsed": true,
                       "items": [
                         {
-                          "type": "doc",
-                          "label": "details-inlines.h",
-                          "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-details-inlines-h"
+                          "type": "category",
+                          "label": "inlines",
+                          "link": {
+                            "type": "doc",
+                            "id": "api/folders/include-micro-os-plus-micro-test-plus-inlines"
+                          },
+                          "collapsed": true,
+                          "items": [
+                            {
+                              "type": "doc",
+                              "label": "details-inlines.h",
+                              "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-details-inlines-h"
+                            },
+                            {
+                              "type": "doc",
+                              "label": "function-comparators-inlines.h",
+                              "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-function-comparators-inlines-h"
+                            },
+                            {
+                              "type": "doc",
+                              "label": "literals-inlines.h",
+                              "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-literals-inlines-h"
+                            },
+                            {
+                              "type": "doc",
+                              "label": "math-inlines.h",
+                              "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-math-inlines-h"
+                            },
+                            {
+                              "type": "doc",
+                              "label": "micro-test-plus-inlines.h",
+                              "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-micro-test-plus-inlines-h"
+                            },
+                            {
+                              "type": "doc",
+                              "label": "reflection-inlines.h",
+                              "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-reflection-inlines-h"
+                            },
+                            {
+                              "type": "doc",
+                              "label": "test-reporter-inlines.h",
+                              "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-test-reporter-inlines-h"
+                            },
+                            {
+                              "type": "doc",
+                              "label": "test-suite-inlines.h",
+                              "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-test-suite-inlines-h"
+                            }
+                          ]
                         },
                         {
                           "type": "doc",
-                          "label": "function-comparators-inlines.h",
-                          "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-function-comparators-inlines-h"
+                          "label": "detail.h",
+                          "id": "api/files/include-micro-os-plus-micro-test-plus-detail-h"
                         },
                         {
                           "type": "doc",
-                          "label": "literals-inlines.h",
-                          "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-literals-inlines-h"
+                          "label": "function-comparators.h",
+                          "id": "api/files/include-micro-os-plus-micro-test-plus-function-comparators-h"
                         },
                         {
                           "type": "doc",
-                          "label": "math-inlines.h",
-                          "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-math-inlines-h"
+                          "label": "literals.h",
+                          "id": "api/files/include-micro-os-plus-micro-test-plus-literals-h"
                         },
                         {
                           "type": "doc",
-                          "label": "micro-test-plus-inlines.h",
-                          "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-micro-test-plus-inlines-h"
+                          "label": "math.h",
+                          "id": "api/files/include-micro-os-plus-micro-test-plus-math-h"
                         },
                         {
                           "type": "doc",
-                          "label": "reflection-inlines.h",
-                          "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-reflection-inlines-h"
+                          "label": "operators.h",
+                          "id": "api/files/include-micro-os-plus-micro-test-plus-operators-h"
                         },
                         {
                           "type": "doc",
-                          "label": "test-reporter-inlines.h",
-                          "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-test-reporter-inlines-h"
+                          "label": "reflection.h",
+                          "id": "api/files/include-micro-os-plus-micro-test-plus-reflection-h"
                         },
                         {
                           "type": "doc",
-                          "label": "test-suite-inlines.h",
-                          "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-test-suite-inlines-h"
+                          "label": "test-reporter.h",
+                          "id": "api/files/include-micro-os-plus-micro-test-plus-test-reporter-h"
+                        },
+                        {
+                          "type": "doc",
+                          "label": "test-runner.h",
+                          "id": "api/files/include-micro-os-plus-micro-test-plus-test-runner-h"
+                        },
+                        {
+                          "type": "doc",
+                          "label": "test-suite.h",
+                          "id": "api/files/include-micro-os-plus-micro-test-plus-test-suite-h"
+                        },
+                        {
+                          "type": "doc",
+                          "label": "type-traits.h",
+                          "id": "api/files/include-micro-os-plus-micro-test-plus-type-traits-h"
                         }
                       ]
                     },
                     {
                       "type": "doc",
-                      "label": "detail.h",
-                      "id": "api/files/include-micro-os-plus-micro-test-plus-detail-h"
-                    },
-                    {
-                      "type": "doc",
-                      "label": "function-comparators.h",
-                      "id": "api/files/include-micro-os-plus-micro-test-plus-function-comparators-h"
-                    },
-                    {
-                      "type": "doc",
-                      "label": "literals.h",
-                      "id": "api/files/include-micro-os-plus-micro-test-plus-literals-h"
-                    },
-                    {
-                      "type": "doc",
-                      "label": "math.h",
-                      "id": "api/files/include-micro-os-plus-micro-test-plus-math-h"
-                    },
-                    {
-                      "type": "doc",
-                      "label": "operators.h",
-                      "id": "api/files/include-micro-os-plus-micro-test-plus-operators-h"
-                    },
-                    {
-                      "type": "doc",
-                      "label": "reflection.h",
-                      "id": "api/files/include-micro-os-plus-micro-test-plus-reflection-h"
-                    },
-                    {
-                      "type": "doc",
-                      "label": "test-reporter.h",
-                      "id": "api/files/include-micro-os-plus-micro-test-plus-test-reporter-h"
-                    },
-                    {
-                      "type": "doc",
-                      "label": "test-runner.h",
-                      "id": "api/files/include-micro-os-plus-micro-test-plus-test-runner-h"
-                    },
-                    {
-                      "type": "doc",
-                      "label": "test-suite.h",
-                      "id": "api/files/include-micro-os-plus-micro-test-plus-test-suite-h"
-                    },
-                    {
-                      "type": "doc",
-                      "label": "type-traits.h",
-                      "id": "api/files/include-micro-os-plus-micro-test-plus-type-traits-h"
+                      "label": "micro-test-plus.h",
+                      "id": "api/files/include-micro-os-plus-micro-test-plus-h"
                     }
                   ]
+                }
+              ]
+            },
+            {
+              "type": "category",
+              "label": "src",
+              "link": {
+                "type": "doc",
+                "id": "api/folders/src"
+              },
+              "collapsed": true,
+              "items": [
+                {
+                  "type": "doc",
+                  "label": "micro-test-plus.cpp",
+                  "id": "api/files/src-micro-test-plus-cpp"
                 },
                 {
                   "type": "doc",
-                  "label": "micro-test-plus.h",
-                  "id": "api/files/include-micro-os-plus-micro-test-plus-h"
+                  "label": "test-reporter.cpp",
+                  "id": "api/files/src-test-reporter-cpp"
+                },
+                {
+                  "type": "doc",
+                  "label": "test-runner.cpp",
+                  "id": "api/files/src-test-runner-cpp"
+                },
+                {
+                  "type": "doc",
+                  "label": "test-suite.cpp",
+                  "id": "api/files/src-test-suite-cpp"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "type": "category",
-          "label": "src",
-          "link": {
-            "type": "doc",
-            "id": "api/folders/src"
-          },
-          "collapsed": true,
-          "items": [
-            {
-              "type": "doc",
-              "label": "micro-test-plus.cpp",
-              "id": "api/files/src-micro-test-plus-cpp"
             },
             {
               "type": "doc",
-              "label": "test-reporter.cpp",
-              "id": "api/files/src-test-reporter-cpp"
+              "label": "top-common.h",
+              "id": "api/files/top-common-h"
             },
             {
               "type": "doc",
-              "label": "test-runner.cpp",
-              "id": "api/files/src-test-runner-cpp"
-            },
-            {
-              "type": "doc",
-              "label": "test-suite.cpp",
-              "id": "api/files/src-test-suite-cpp"
+              "label": "topics.h",
+              "id": "api/files/topics-h"
             }
           ]
         },
         {
           "type": "doc",
-          "label": "top-common.h",
-          "id": "api/files/top-common-h"
+          "label": "All",
+          "id": "api/indices/files/all"
         },
         {
           "type": "doc",
-          "label": "topics.h",
-          "id": "api/files/topics-h"
+          "label": "Classes",
+          "id": "api/indices/files/classes"
+        },
+        {
+          "type": "doc",
+          "label": "Namespaces",
+          "id": "api/indices/files/namespaces"
+        },
+        {
+          "type": "doc",
+          "label": "Functions",
+          "id": "api/indices/files/functions"
+        },
+        {
+          "type": "doc",
+          "label": "Variables",
+          "id": "api/indices/files/variables"
+        },
+        {
+          "type": "doc",
+          "label": "Typedefs",
+          "id": "api/indices/files/typedefs"
+        },
+        {
+          "type": "doc",
+          "label": "Enums",
+          "id": "api/indices/files/enums"
+        },
+        {
+          "type": "doc",
+          "label": "Enum Values",
+          "id": "api/indices/files/enumvalues"
         }
       ]
     },

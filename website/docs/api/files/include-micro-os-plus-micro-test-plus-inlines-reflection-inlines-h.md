@@ -5,6 +5,7 @@
 
 slug: /api/files/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines-h
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
@@ -20,9 +21,7 @@ keywords:
 
 ## Included Headers
 
-<div class="doxyIncludesList">
-#include &lt;cstdint&gt;
-<br/>
+<div class="doxyIncludesList">#include &lt;cstdint&gt;
 </div>
 
 ## Namespaces Index
@@ -30,7 +29,7 @@ keywords:
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">namespace</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus">micro_os_plus</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -44,8 +43,8 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">namespace</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_test_plus</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -58,8 +57,8 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">namespace</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection">micro_os_plus::micro_test_plus::reflection</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection">reflection</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -103,19 +102,24 @@ keywords:
 
 <p>This header provides the inline implementations for the reflection utilities used within the µTest++ framework. It includes the logic for capturing and reporting source location information, such as file names and line numbers, as well as utilities for extracting type names at compile time using compiler-specific macros.</p>
 
+
 <p>The <span class="doxyComputerOutput">source_location</span> implementation offers a lightweight, constexpr-compatible alternative to <span class="doxyComputerOutput">std::source_location</span>, enabling enhanced diagnostics and reporting even in environments lacking C++20 support. The <span class="doxyComputerOutput">type_name</span> utility leverages compiler intrinsics to obtain human-readable type names for improved test output and debugging.</p>
+
 
 <p>All definitions reside within the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection">micro_os_plus::micro_test_plus::reflection</a></span> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.</p>
 
+
 <p>The header files are organised within the <span class="doxyComputerOutput">include/micro-os-plus/micro-test-plus</span> folder to maintain a structured and modular codebase.</p>
 
+
 <p>This file is intended solely for internal use within the framework and should not be included directly by user code.</p>
+
 
 <div class="doxySectionDef">
 
 ## Functions
 
-### type_name() {#a6580ad54ad22a1d3ab43a1d9d49d1f26}
+### type\_name() {#a6580ad54ad22a1d3ab43a1d9d49d1f26}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -139,12 +143,15 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Extract the type name from the <span class="doxyComputerOutput">__PRETTY_FUNCTION__</span> macro.</p>
 
 
 <p>This function template parses the compiler-specific <span class="doxyComputerOutput">__PRETTY_FUNCTION__</span> macro to extract a concise type name for the template parameter <span class="doxyComputerOutput">T</span>.</p>
 
+
 <p>The implementation is compiler-dependent and may require adjustment for different toolchains. It is primarily intended for internal use within the µTest++ framework to support improved diagnostics and reporting.</p>
+
 
 <dl class="doxyParamsList">
 <dt class="doxyParamsTableTitle">Template Parameters</dt>
@@ -159,22 +166,46 @@ keywords:
 </dl>
 
 <dl class="doxySectionUser">
-<dt><b>Parameters</b></dt>
-<dd>
-<p>None.</p>
-</dd>
+<dt>Parameters</dt>
+<dd><p>None.</p></dd>
 </dl>
 
 
 <dl class="doxySectionUser">
-<dt><b>Returns</b></dt>
-<dd>
-<p>A <span class="doxyComputerOutput">std::string_view</span> containing the extracted type name.</p>
-</dd>
+<dt>Returns</dt>
+<dd><p>A <span class="doxyComputerOutput">std::string_view</span> containing the extracted type name.</p></dd>
 </dl>
 
 
 <p>Definition at line <a href="#l00133">133</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines-h">reflection-inlines.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection/#a6580ad54ad22a1d3ab43a1d9d49d1f26">133</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection/#a6580ad54ad22a1d3ab43a1d9d49d1f26">type_name</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) -&gt; std::string_view</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">134</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">135</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#if defined(__clang__)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">136</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#pragma GCC diagnostic push</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">137</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">138</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// printf("|%s|%zu|\n", __PRETTY_FUNCTION__, sizeof</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">139</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// (__PRETTY_FUNCTION__)); printf("|%s|\n", &amp;__PRETTY_FUNCTION__[78]);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">140</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> { &amp;__PRETTY_FUNCTION__[78], </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight"> (__PRETTY_FUNCTION__) - 80 };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">141</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#pragma GCC diagnostic pop</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">142</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#elif defined(__GNUC__)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">143</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// printf("|%s|%zu|\n", __PRETTY_FUNCTION__, sizeof</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">144</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// (__PRETTY_FUNCTION__)); printf("|%s|\n", &amp;__PRETTY_FUNCTION__[93]);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">145</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> { &amp;__PRETTY_FUNCTION__[93], </span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight"> (__PRETTY_FUNCTION__) - 144 };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">146</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#else</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">147</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#error "Unsupported compiler"</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">148</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> </span><span class="doxyHighlightStringLiteral">"Unsupported compiler"</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">149</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">150</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+
+</div>
+
+
+<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ac43d666b5a7824b7e91a1306094fdb1e">micro_os_plus::micro_test_plus::test_reporter::operator&lt;&lt;</a>.</p>
+
 </div>
 </div>
 
@@ -182,7 +213,7 @@ keywords:
 
 ## File Listing
 
-<p>The file content with the documentation metadata removed is:</p>
+The file content with the documentation metadata removed is:
 
 <div class="doxyProgramListing">
 
@@ -304,6 +335,8 @@ keywords:
 
 </div>
 
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

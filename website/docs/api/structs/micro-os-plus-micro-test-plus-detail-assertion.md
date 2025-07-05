@@ -5,11 +5,11 @@
 
 slug: /api/structs/micro-os-plus/micro-test-plus/detail/assertion
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
   - struct
-toc_max_heading_level: 3
 
 ---
 
@@ -22,15 +22,13 @@ toc_max_heading_level: 3
 ## Declaration
 
 <div class="doxyDeclaration">
-template &lt;class Expr_T&gt;<br/>
-struct micro_os_plus::micro_test_plus::detail::assertion&lt;Expr_T&gt;
+template &lt;class Expr_T&gt;
+struct micro_os_plus::micro_test_plus::detail::assertion&lt;Expr_T&gt; { ... }
 </div>
 
 ## Included Headers
 
-<div class="doxyIncludesList">
-#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;
-<br/>
+<div class="doxyIncludesList">#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;
 </div>
 
 ## Public Member Attributes Index
@@ -92,9 +90,12 @@ struct micro_os_plus::micro_test_plus::detail::assertion&lt;Expr_T&gt;
 
 <p>The <span class="doxyComputerOutput">assertion</span> struct template is used to encapsulate assertion parameters, including the expression under evaluation and its associated source location. This design enables precise reporting and diagnostics within the framework.</p>
 
+
 <p>The structure is intended exclusively for internal use and is implemented in the <span class="doxyComputerOutput">include/micro-os-plus/micro-test-plus</span> folder to maintain a structured and modular codebase.</p>
 
+
 <p>Definition at line 112 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+
 
 <div class="doxySectionDef">
 
@@ -118,9 +119,18 @@ struct micro_os_plus::micro_test_plus::detail::assertion&lt;Expr_T&gt;
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>The expression under evaluation.</p>
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00117">117</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a3bda35bdd21c44124c7828c65ac3395f">117</a></span><span class="doxyLineContent"><span class="doxyHighlight">      Expr_T <a href="#a3bda35bdd21c44124c7828c65ac3395f">expr</a>{};</span></span></div>
+
+</div>
+
 </div>
 </div>
 
@@ -142,9 +152,18 @@ struct micro_os_plus::micro_test_plus::detail::assertion&lt;Expr_T&gt;
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>The source location associated with the assertion.</p>
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l00122">122</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#acd2e0e20795f5a31ed3031ab51579dc0">122</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a> <a href="#acd2e0e20795f5a31ed3031ab51579dc0">location</a>{};</span></span></div>
+
+</div>
+
 </div>
 </div>
 
@@ -152,11 +171,13 @@ struct micro_os_plus::micro_test_plus::detail::assertion&lt;Expr_T&gt;
 
 <hr/>
 
-<p>The documentation for this struct was generated from the following file:</p>
+The documentation for this struct was generated from the following file:
 
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a></li>
 </ul>
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

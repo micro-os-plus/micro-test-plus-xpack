@@ -5,6 +5,7 @@
 
 slug: /api/files/include/micro-os-plus/micro-test-plus/type-traits-h
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
@@ -20,9 +21,7 @@ keywords:
 
 ## Included Headers
 
-<div class="doxyIncludesList">
-#include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</a>"
-<br/>
+<div class="doxyIncludesList">#include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</a>"
 </div>
 
 ## Namespaces Index
@@ -30,7 +29,7 @@ keywords:
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">namespace</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus">micro_os_plus</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -44,8 +43,8 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">namespace</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_test_plus</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -58,8 +57,8 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">namespace</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">micro_os_plus::micro_test_plus::type_traits</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">type_traits</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -78,7 +77,7 @@ keywords:
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">floating_point_constant&lt;T, N, D, Size, P&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -92,7 +91,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-c8ae4832b74f8fe701e29e20410c0d5a">function_traits&lt;R(*)(Args_T...)&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -106,7 +105,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-567248e3f9c17aff751ce83e3c5b4d55">function_traits&lt;R(Args_T...)&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -120,8 +119,8 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-05ab90b3270445bd2304511210cefdc8">function_traits&lt;R(T::*)(Args_T...) const&gt;</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-05ab90b3270445bd2304511210cefdc8">function_traits&lt;...&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -134,7 +133,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-aa0970b0a1efa305c0cfd55ce14bb11b">function_traits&lt;R(T::*)(Args_T...)&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -148,7 +147,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value">genuine_integral_value&lt;T&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -162,7 +161,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/identity">identity&lt;T, class...&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -176,7 +175,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">integral_constant&lt;N&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -190,7 +189,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">list&lt;class...&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -204,7 +203,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">op</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -218,7 +217,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires-">requires_&lt;bool&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -232,7 +231,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires--d4cc09ec8cf7793e85cd7a9c044686e1">requires_&lt;true&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -246,7 +245,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, class&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -260,8 +259,8 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-dae7771377f0087abbec46abf87b329e">value&lt;T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt;&gt;</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-dae7771377f0087abbec46abf87b329e">value&lt;...&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -396,7 +395,7 @@ keywords:
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">auto</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">static constexpr auto</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a341b3a4a7cb9bea974449355bf7095d8">has_epsilon_v</a> = is_valid&lt;T&gt; ([] (auto t) -&gt; decltype (void (t.epsilon)) {})</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -413,7 +412,7 @@ keywords:
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">auto</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">static constexpr auto</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a0ff1a0846fe8d484f01d45df4e37dd94">has_npos_v</a> = is_valid&lt;T&gt; ([] (auto t) -&gt; decltype (void (t.npos)) {})</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -430,7 +429,7 @@ keywords:
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">auto</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">static constexpr auto</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a695b45e13f3ac3cd1cef1225fa0dfa01">has_value_v</a> = is_valid&lt;T&gt; ([] (auto t) -&gt; decltype (void (t.value)) {})</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -447,9 +446,8 @@ keywords:
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a8361ab7ff9d9c6343d97a99bdcb9feb2">is_container_v</a> = is_valid&lt;T&gt; (
-        [] (auto t) -&gt; decltype (t.begin (), t.end (), void ()) {})</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">static constexpr auto</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a8361ab7ff9d9c6343d97a99bdcb9feb2">is_container_v</a> = ...</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -465,7 +463,7 @@ keywords:
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class From, class To&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">auto</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a49a5bfe63d50b6fd1be0972586fbf590">is_convertible_v</a> = is_convertible&lt;From, To&gt; (0)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -482,7 +480,7 @@ keywords:
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">auto</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#abfe0c2413694bb3a6dcdf1da303c38db">is_floating_point_v</a> = false</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -496,7 +494,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">auto</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">constexpr auto</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a14941429632c41668220d59c1cd59541">is_floating_point_v&lt; double &gt;</a> = true</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -510,7 +508,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">auto</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">constexpr auto</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#aed0d377e4faa067bb6add65ebeb1a482">is_floating_point_v&lt; float &gt;</a> = true</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -524,7 +522,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">auto</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">constexpr auto</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a735eedc6f117908ddfb242f37e319b46">is_floating_point_v&lt; long double &gt;</a> = true</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -541,7 +539,7 @@ keywords:
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">auto</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a814e7f004d5404f735737aabb90fa111">is_op_v</a> = __is_base_of (type_traits::op, T)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -563,19 +561,24 @@ keywords:
 
 <p>This header provides the declarations for the type trait utilities and metaprogramming constructs used within the µTest++ framework. It defines templates and variable traits for function traits, type lists, identity, value wrappers, compile-time checks for container and floating-point types, and type convertibility.</p>
 
+
 <p>These utilities underpin advanced template programming, type deduction, and compile-time introspection, supporting the flexible and type-safe design of the framework. The provided traits and wrappers enable expressive and generic handling of types, values, and callable objects, facilitating robust and maintainable test code.</p>
+
 
 <p>All definitions reside within the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">micro_os_plus::micro_test_plus::type_traits</a></span> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.</p>
 
+
 <p>All header files are organised within the <span class="doxyComputerOutput">include/micro-os-plus/micro-test-plus</span> folder to maintain a structured and modular codebase.</p>
 
+
 <p>This file is intended for internal use within the framework and should not be included directly by user code.</p>
+
 
 <div class="doxySectionDef">
 
 ## Typedefs
 
-### requires_t {#a1cbbf299a006b4692df250ef2a6fc7c2}
+### requires\_t {#a1cbbf299a006b4692df250ef2a6fc7c2}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -593,6 +596,7 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Alias template for extracting the <span class="doxyComputerOutput">type</span> member from <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires-">requires_</a></span>.</p>
 
 
@@ -610,7 +614,16 @@ keywords:
 
 <p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a1cbbf299a006b4692df250ef2a6fc7c2">requires_t</a></span> alias template simplifies the use of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires-">requires_</a></span> struct template by directly exposing the nested <span class="doxyComputerOutput">type</span> member. It is commonly used to enforce compile-time requirements in template declarations.</p>
 
+
 <p>Definition at line <a href="#l00662">662</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a1cbbf299a006b4692df250ef2a6fc7c2">662</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a1cbbf299a006b4692df250ef2a6fc7c2">requires_t</a> = </span><span class="doxyHighlightKeyword">typename</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires-">requires_&lt;Cond&gt;::type</a>;</span></span></div>
+
+</div>
+
 </div>
 </div>
 
@@ -638,6 +651,7 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Utility function template to simulate std::declval for type deduction.</p>
 
 
@@ -654,28 +668,29 @@ keywords:
 </dl>
 
 <dl class="doxySectionUser">
-<dt><b>Parameters</b></dt>
-<dd>
-<p>None.</p>
-</dd>
+<dt>Parameters</dt>
+<dd><p>None.</p></dd>
 </dl>
 
 
 <dl class="doxySectionUser">
-<dt><b>Returns</b></dt>
-<dd>
-<p>An rvalue reference to type <span class="doxyComputerOutput">T</span>.</p>
-</dd>
+<dt>Returns</dt>
+<dd><p>An rvalue reference to type <span class="doxyComputerOutput">T</span>.</p></dd>
 </dl>
 
 
 <p>The <span class="doxyComputerOutput">declval</span> function template provides a mechanism for obtaining an rvalue reference to a type <span class="doxyComputerOutput">T</span> without requiring an actual object. This is primarily used in unevaluated contexts, such as within <span class="doxyComputerOutput">decltype</span>, to deduce types during template metaprogramming in the µTest++ framework.</p>
 
+
 <p>Definition at line <a href="#l00335">335</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+
+
+<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#ae9b4b50700345f54b1c14c594e0637ba">micro_os_plus::micro_test_plus::type_traits::is_convertible</a> and <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#aa7389baefbefec0ece5df341187218e0">micro_os_plus::micro_test_plus::type_traits::is_valid</a>.</p>
+
 </div>
 </div>
 
-### is_convertible() {#ab7dddbd4f0438826d71f55904594905d}
+### is\_convertible() {#ab7dddbd4f0438826d71f55904594905d}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -698,6 +713,7 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Fallback function template for is_convertible, returns false if the conversion is not valid.</p>
 
 
@@ -727,11 +743,23 @@ keywords:
 
 <p>This overload is selected when the primary <span class="doxyComputerOutput">is_convertible</span> template cannot be instantiated, providing a <span class="doxyComputerOutput">false</span> result for invalid conversions.</p>
 
+
 <p>Definition at line <a href="#l00582">582</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#ab7dddbd4f0438826d71f55904594905d">582</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#ae9b4b50700345f54b1c14c594e0637ba">is_convertible</a> (...)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">583</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">584</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">585</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+
+</div>
+
 </div>
 </div>
 
-### is_convertible() {#ae9b4b50700345f54b1c14c594e0637ba}
+### is\_convertible() {#ae9b4b50700345f54b1c14c594e0637ba}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -754,6 +782,7 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Function template to determine if one type is convertible to another.</p>
 
 
@@ -799,13 +828,30 @@ keywords:
 
 <p>The <span class="doxyComputerOutput">is_convertible</span> function template checks, at compile time, whether a value of type <span class="doxyComputerOutput">From</span> can be implicitly converted to type <span class="doxyComputerOutput">To</span>. This is achieved using SFINAE and is primarily used as an implementation detail for the <span class="doxyComputerOutput">is_convertible_v</span> variable template within the µTest++ framework.</p>
 
+
 <p>If the conversion is valid, this overload is selected and returns <span class="doxyComputerOutput">true</span>.</p>
 
+
 <p>Definition at line <a href="#l00561">561</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#ae9b4b50700345f54b1c14c594e0637ba">561</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#ae9b4b50700345f54b1c14c594e0637ba">is_convertible</a> (</span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> n) -&gt; </span><span class="doxyHighlightKeyword">decltype</span><span class="doxyHighlight"> (bool (To (<a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#ae488d06debb38c5e638355cb462a1228">declval&lt;From&gt;</a> ())))</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">562</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">563</span><span class="doxyLineContent"><span class="doxyHighlight">      (void)n; </span><span class="doxyHighlightComment">// Prevent the unused parameter warning.</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">564</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">565</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+
+</div>
+
+
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#ae488d06debb38c5e638355cb462a1228">micro_os_plus::micro_test_plus::type_traits::declval</a>.</p>
+
 </div>
 </div>
 
-### is_valid() {#a3ee98aeecf4e9f3b23dfcda25434c4d2}
+### is\_valid() {#a3ee98aeecf4e9f3b23dfcda25434c4d2}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -828,6 +874,7 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Fallback function template for is_valid, returns false if the expression is not valid.</p>
 
 
@@ -844,20 +891,30 @@ keywords:
 </dl>
 
 <dl class="doxySectionUser">
-<dt><b>Returns</b></dt>
-<dd>
-<p><span class="doxyComputerOutput">false</span> indicating the expression is not valid for the given argument types.</p>
-</dd>
+<dt>Returns</dt>
+<dd><p><span class="doxyComputerOutput">false</span> indicating the expression is not valid for the given argument types.</p></dd>
 </dl>
 
 
 <p>This overload is selected when the primary <span class="doxyComputerOutput">is_valid</span> template cannot be instantiated, providing a <span class="doxyComputerOutput">false</span> result for invalid expressions.</p>
 
+
 <p>Definition at line <a href="#l00358">358</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a3ee98aeecf4e9f3b23dfcda25434c4d2">358</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#aa7389baefbefec0ece5df341187218e0">is_valid</a> (...) -&gt; </span><span class="doxyHighlightKeywordType">bool</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">359</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">360</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">361</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+
+</div>
+
 </div>
 </div>
 
-### is_valid() {#aa7389baefbefec0ece5df341187218e0}
+### is\_valid() {#aa7389baefbefec0ece5df341187218e0}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -881,7 +938,23 @@ keywords:
 </div>
 <div class="doxyMemberDoc">
 
+
+
 <p>Definition at line <a href="#l00338">338</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#aa7389baefbefec0ece5df341187218e0">338</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#aa7389baefbefec0ece5df341187218e0">is_valid</a> (Expr_T expr) -&gt; </span><span class="doxyHighlightKeyword">decltype</span><span class="doxyHighlight"> (expr (<a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#ae488d06debb38c5e638355cb462a1228">declval&lt;Ts...&gt;</a> ()), bool ())</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">339</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">340</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">341</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+
+</div>
+
+
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#ae488d06debb38c5e638355cb462a1228">micro_os_plus::micro_test_plus::type_traits::declval</a>.</p>
+
 </div>
 </div>
 
@@ -891,7 +964,7 @@ keywords:
 
 ## Variables
 
-### has_epsilon_v {#a341b3a4a7cb9bea974449355bf7095d8}
+### has\_epsilon\_v {#a341b3a4a7cb9bea974449355bf7095d8}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -915,6 +988,7 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Variable template to determine if a type provides an <span class="doxyComputerOutput">epsilon</span> member.</p>
 
 
@@ -948,11 +1022,20 @@ keywords:
 
 <p>The <span class="doxyComputerOutput">has_epsilon_v</span> variable template evaluates to <span class="doxyComputerOutput">true</span> if the given type <span class="doxyComputerOutput">T</span> defines a member named <span class="doxyComputerOutput">epsilon</span>. This trait is determined at compile time using SFINAE and the <span class="doxyComputerOutput">is_valid</span> utility, and is used throughout the µTest++ framework to enable generic handling of types that represent floating-point values or require precision control.</p>
 
+
 <p>Definition at line <a href="#l00442">442</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber">443</span><span class="doxyLineContent"><span class="doxyHighlight">        = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#aa7389baefbefec0ece5df341187218e0">is_valid&lt;T&gt;</a> ([] (</span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> t) -&gt; </span><span class="doxyHighlightKeyword">decltype</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> (t.epsilon)) {});</span></span></div>
+
+</div>
+
 </div>
 </div>
 
-### has_npos_v {#a0ff1a0846fe8d484f01d45df4e37dd94}
+### has\_npos\_v {#a0ff1a0846fe8d484f01d45df4e37dd94}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -976,6 +1059,7 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Variable template to determine if a type provides a static <span class="doxyComputerOutput">npos</span> member.</p>
 
 
@@ -1009,11 +1093,23 @@ keywords:
 
 <p>The <span class="doxyComputerOutput">has_npos_v</span> variable template evaluates to <span class="doxyComputerOutput">true</span> if the given type <span class="doxyComputerOutput">T</span> defines a static member named <span class="doxyComputerOutput">npos</span>. This trait is determined at compile time using SFINAE and the <span class="doxyComputerOutput">is_valid</span> utility, and is used throughout the µTest++ framework to enable generic handling of types that follow the standard string or container conventions.</p>
 
+
 <p>Definition at line <a href="#l00401">401</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber">402</span><span class="doxyLineContent"><span class="doxyHighlight">        = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#aa7389baefbefec0ece5df341187218e0">is_valid&lt;T&gt;</a> ([] (</span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> t) -&gt; </span><span class="doxyHighlightKeyword">decltype</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> (t.npos)) {});</span></span></div>
+
+</div>
+
+
+<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#afdfeff359bdc48955dacb5448706b297">micro_os_plus::micro_test_plus::test_reporter::operator&lt;&lt;</a>.</p>
+
 </div>
 </div>
 
-### has_value_v {#a695b45e13f3ac3cd1cef1225fa0dfa01}
+### has\_value\_v {#a695b45e13f3ac3cd1cef1225fa0dfa01}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1037,6 +1133,7 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Variable template to determine if a type provides a <span class="doxyComputerOutput">value</span> member.</p>
 
 
@@ -1070,11 +1167,20 @@ keywords:
 
 <p>The <span class="doxyComputerOutput">has_value_v</span> variable template evaluates to <span class="doxyComputerOutput">true</span> if the given type <span class="doxyComputerOutput">T</span> defines a member named <span class="doxyComputerOutput">value</span>. This trait is determined at compile time using SFINAE and the <span class="doxyComputerOutput">is_valid</span> utility, and is used throughout the µTest++ framework to enable generic handling of types that encapsulate a value, such as wrappers or constant types.</p>
 
+
 <p>Definition at line <a href="#l00421">421</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber">422</span><span class="doxyLineContent"><span class="doxyHighlight">        = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#aa7389baefbefec0ece5df341187218e0">is_valid&lt;T&gt;</a> ([] (</span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> t) -&gt; </span><span class="doxyHighlightKeyword">decltype</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight"> (t.value)) {});</span></span></div>
+
+</div>
+
 </div>
 </div>
 
-### is_container_v {#a8361ab7ff9d9c6343d97a99bdcb9feb2}
+### is\_container\_v {#a8361ab7ff9d9c6343d97a99bdcb9feb2}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1084,8 +1190,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::type_traits::is_container_v = is_valid&lt;T&gt; (
-        [] (auto t) -&gt; decltype (t.begin (), t.end (), void ()) {})</td>
+<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::type_traits::is_container_v</td>
 </tr>
 </table>
 </td>
@@ -1099,7 +1204,17 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Variable template to determine if a type models a container.</p>
+
+<dl class="doxySectionUser">
+<dt>Initialiser</dt>
+<dd>
+<div class="doxyVerbatim">= is_valid&lt;T&gt; (
+        [] (auto t) -&gt; decltype (t.begin (), t.end (), void ()) {})
+</div>
+</dd>
+</dl>
 
 
 <dl class="doxyParamsList">
@@ -1132,11 +1247,20 @@ keywords:
 
 <p>The <span class="doxyComputerOutput">is_container_v</span> variable template evaluates to <span class="doxyComputerOutput">true</span> if the given type <span class="doxyComputerOutput">T</span> provides both <span class="doxyComputerOutput">begin()</span> and <span class="doxyComputerOutput">end()</span> member functions, indicating that it models a standard container concept. This trait is determined at compile time using SFINAE and is_valid, and is used throughout the µTest++ framework to enable generic handling of container types in template metaprogramming.</p>
 
+
 <p>Definition at line <a href="#l00380">380</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a8361ab7ff9d9c6343d97a99bdcb9feb2">380</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a8361ab7ff9d9c6343d97a99bdcb9feb2">is_container_v</a> = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#aa7389baefbefec0ece5df341187218e0">is_valid&lt;T&gt;</a> (</span></span></div>
+
+</div>
+
 </div>
 </div>
 
-### is_convertible_v {#a49a5bfe63d50b6fd1be0972586fbf590}
+### is\_convertible\_v {#a49a5bfe63d50b6fd1be0972586fbf590}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1159,6 +1283,7 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Variable template to determine if one type is convertible to another.</p>
 
 
@@ -1196,11 +1321,20 @@ keywords:
 
 <p>The <span class="doxyComputerOutput">is_convertible_v</span> variable template evaluates to <span class="doxyComputerOutput">true</span> if the type <span class="doxyComputerOutput">From</span> is implicitly convertible to the type <span class="doxyComputerOutput">To</span>, and <span class="doxyComputerOutput">false</span> otherwise. This trait is determined at compile time and is used throughout the µTest++ framework to enable type-safe conversions and requirements checking in template metaprogramming.</p>
 
+
 <p>Definition at line <a href="#l00605">605</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a49a5bfe63d50b6fd1be0972586fbf590">605</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a49a5bfe63d50b6fd1be0972586fbf590">is_convertible_v</a> = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#ae9b4b50700345f54b1c14c594e0637ba">is_convertible&lt;From, To&gt;</a> (0);</span></span></div>
+
+</div>
+
 </div>
 </div>
 
-### is_floating_point_v {#abfe0c2413694bb3a6dcdf1da303c38db}
+### is\_floating\_point\_v {#abfe0c2413694bb3a6dcdf1da303c38db}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1223,6 +1357,7 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Variable template to determine if a type is a floating point type.</p>
 
 
@@ -1256,13 +1391,23 @@ keywords:
 
 <p>The <span class="doxyComputerOutput">is_floating_point_v</span> variable template evaluates to <span class="doxyComputerOutput">true</span> if the given type <span class="doxyComputerOutput">T</span> is a floating point type (<span class="doxyComputerOutput">float</span>, <span class="doxyComputerOutput">double</span>, or <span class="doxyComputerOutput">long double</span>). For all other types, it evaluates to <span class="doxyComputerOutput">false</span>. This trait is used throughout the µTest++ framework to enable type-safe handling and specialisation for floating point types in template metaprogramming.</p>
 
+
 <p>Specialisations are provided for <span class="doxyComputerOutput">float</span>, <span class="doxyComputerOutput">double</span>, and <span class="doxyComputerOutput">long double</span>, each evaluating to <span class="doxyComputerOutput">true</span>.</p>
 
+
 <p>Definition at line <a href="#l00465">465</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#abfe0c2413694bb3a6dcdf1da303c38db">465</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#abfe0c2413694bb3a6dcdf1da303c38db">is_floating_point_v</a> = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">;</span></span></div>
+
+</div>
+
 </div>
 </div>
 
-### is_floating_point_v< double > {#a14941429632c41668220d59c1cd59541}
+### is\_floating\_point\_v&lt; double &gt; {#a14941429632c41668220d59c1cd59541}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1284,24 +1429,32 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Variable template specialisation indicating that <span class="doxyComputerOutput">double</span> is a floating point type.</p>
 
 
 <p>This specialisation of the <span class="doxyComputerOutput">is_floating_point_v</span> variable template evaluates to <span class="doxyComputerOutput">true</span> for the <span class="doxyComputerOutput">double</span> type, confirming that it is recognised as a floating point type within the µTest++ framework. This enables type-safe handling and specialisation for floating point types in template metaprogramming.</p>
 
+
 <dl class="doxySectionUser">
-<dt><b>See Also</b></dt>
-<dd>
-<p><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#abfe0c2413694bb3a6dcdf1da303c38db">is_floating_point_v</a></p>
-</dd>
+<dt>See Also</dt>
+<dd><p><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#abfe0c2413694bb3a6dcdf1da303c38db">is_floating_point_v</a></p></dd>
 </dl>
 
 
 <p>Definition at line <a href="#l00497">497</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a14941429632c41668220d59c1cd59541">497</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#abfe0c2413694bb3a6dcdf1da303c38db">is_floating_point_v&lt;double&gt;</a> = </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">;</span></span></div>
+
+</div>
+
 </div>
 </div>
 
-### is_floating_point_v< float > {#aed0d377e4faa067bb6add65ebeb1a482}
+### is\_floating\_point\_v&lt; float &gt; {#aed0d377e4faa067bb6add65ebeb1a482}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1323,24 +1476,32 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Variable template specialisation indicating that <span class="doxyComputerOutput">float</span> is a floating point type.</p>
 
 
 <p>This specialisation of the <span class="doxyComputerOutput">is_floating_point_v</span> variable template evaluates to <span class="doxyComputerOutput">true</span> for the <span class="doxyComputerOutput">float</span> type, confirming that it is recognised as a floating point type within the µTest++ framework. This enables type-safe handling and specialisation for floating point types in template metaprogramming.</p>
 
+
 <dl class="doxySectionUser">
-<dt><b>See Also</b></dt>
-<dd>
-<p><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#abfe0c2413694bb3a6dcdf1da303c38db">is_floating_point_v</a></p>
-</dd>
+<dt>See Also</dt>
+<dd><p><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#abfe0c2413694bb3a6dcdf1da303c38db">is_floating_point_v</a></p></dd>
 </dl>
 
 
 <p>Definition at line <a href="#l00481">481</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#aed0d377e4faa067bb6add65ebeb1a482">481</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#abfe0c2413694bb3a6dcdf1da303c38db">is_floating_point_v&lt;float&gt;</a> = </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">;</span></span></div>
+
+</div>
+
 </div>
 </div>
 
-### is_floating_point_v< long double > {#a735eedc6f117908ddfb242f37e319b46}
+### is\_floating\_point\_v&lt; long double &gt; {#a735eedc6f117908ddfb242f37e319b46}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1362,24 +1523,32 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Variable template specialisation indicating that <span class="doxyComputerOutput">long double</span> is a floating point type.</p>
 
 
 <p>This specialisation of the <span class="doxyComputerOutput">is_floating_point_v</span> variable template evaluates to <span class="doxyComputerOutput">true</span> for the <span class="doxyComputerOutput">long double</span> type, confirming that it is recognised as a floating point type within the µTest++ framework. This enables type-safe handling and specialisation for floating point types in template metaprogramming.</p>
 
+
 <dl class="doxySectionUser">
-<dt><b>See Also</b></dt>
-<dd>
-<p><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#abfe0c2413694bb3a6dcdf1da303c38db">is_floating_point_v</a></p>
-</dd>
+<dt>See Also</dt>
+<dd><p><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#abfe0c2413694bb3a6dcdf1da303c38db">is_floating_point_v</a></p></dd>
 </dl>
 
 
 <p>Definition at line <a href="#l00513">513</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a735eedc6f117908ddfb242f37e319b46">513</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#abfe0c2413694bb3a6dcdf1da303c38db">is_floating_point_v&lt;long double&gt;</a> = </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">;</span></span></div>
+
+</div>
+
 </div>
 </div>
 
-### is_op_v {#a814e7f004d5404f735737aabb90fa111}
+### is\_op\_v {#a814e7f004d5404f735737aabb90fa111}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1402,6 +1571,7 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Variable template to determine if a type derives from <span class="doxyComputerOutput">op</span>.</p>
 
 
@@ -1435,7 +1605,19 @@ keywords:
 
 <p>The <span class="doxyComputerOutput">is_op_v</span> variable template evaluates to <span class="doxyComputerOutput">true</span> if the given type <span class="doxyComputerOutput">T</span> is derived from the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">type_traits::op</a></span> base struct, and <span class="doxyComputerOutput">false</span> otherwise. This trait is determined at compile time using compiler intrinsics and is used throughout the µTest++ framework to enable generic handling and detection of operator-like or value wrapper types in template metaprogramming.</p>
 
+
 <p>Definition at line <a href="#l00946">946</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a814e7f004d5404f735737aabb90fa111">946</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a814e7f004d5404f735737aabb90fa111">is_op_v</a> = __is_base_of (<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">type_traits::op</a>, T);</span></span></div>
+
+</div>
+
+
+<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ab89536a4a5a82b658ca8282277c49f4b">micro_os_plus::micro_test_plus::test_reporter::fail</a>.</p>
+
 </div>
 </div>
 
@@ -1443,7 +1625,7 @@ keywords:
 
 ## File Listing
 
-<p>The file content with the documentation metadata removed is:</p>
+The file content with the documentation metadata removed is:
 
 <div class="doxyProgramListing">
 
@@ -1799,6 +1981,8 @@ keywords:
 
 </div>
 
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

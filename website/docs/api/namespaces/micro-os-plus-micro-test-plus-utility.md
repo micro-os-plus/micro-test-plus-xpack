@@ -5,6 +5,7 @@
 
 slug: /api/namespaces/micro-os-plus/micro-test-plus/utility
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
@@ -29,7 +30,7 @@ namespace micro_os_plus::micro_test_plus::utility { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">bool</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">bool</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-utility-functions/#gaa2f0f4cff320a783ad2347c9ff3fc731">is_match</a> (std::string_view input, std::string_view pattern)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -68,9 +69,14 @@ namespace micro_os_plus::micro_test_plus::utility { ... }
 
 <p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/utility">micro_os_plus::micro_test_plus::utility</a></span> namespace provides a suite of helper functions designed to support advanced string operations and other common tasks within the µTest++ framework.</p>
 
+
 <p>These utilities include functions for pattern matching—such as verifying whether a string matches a specified pattern—and for splitting strings into sub-strings based on delimiters. The implementations are efficient and suitable for both embedded and general C++ projects.</p>
 
+
 <p>By encapsulating these helper functions within a dedicated namespace, the framework maintains clear code organisation and minimises naming conflicts.</p>
+
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

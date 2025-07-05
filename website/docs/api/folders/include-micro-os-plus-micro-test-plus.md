@@ -5,6 +5,7 @@
 
 slug: /api/folders/include/micro-os-plus/micro-test-plus
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
@@ -23,7 +24,7 @@ keywords:
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">folder</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">folder</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/folders/include/micro-os-plus/micro-test-plus/inlines">inlines</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -43,7 +44,7 @@ keywords:
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">file</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">file</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -57,7 +58,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">file</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">file</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">function-comparators.h</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -71,7 +72,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">file</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">file</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">literals.h</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -85,7 +86,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">file</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">file</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">math.h</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -99,7 +100,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">file</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">file</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -113,7 +114,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">file</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">file</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">reflection.h</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -127,7 +128,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">file</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">file</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -141,7 +142,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">file</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">file</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">test-runner.h</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -155,7 +156,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">file</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">file</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -169,7 +170,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">file</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">file</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -191,11 +192,17 @@ keywords:
 
 <p>The <span class="doxyComputerOutput">include/micro-os-plus/micro-test-plus</span> folder contains the primary public header files that define the core functionality of the µTest++ testing framework.</p>
 
+
 <p>This folder provides declarations for all essential framework components, including test suite and test case management, the test runner and reporter classes, mathematical utilities, type traits, user-defined literals, operators, reflection utilities, and supporting internal mechanisms.</p>
+
 
 <p>By consolidating all public API definitions within this folder, the project maintains a clear separation from implementation details (located in the <span class="doxyComputerOutput">src</span> folder), thereby promoting modularity, maintainability, and straightforward integration.</p>
 
+
 <p>To access the full capabilities of the µTest++ framework, users should include the relevant headers from this folder in their projects.</p>
+
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

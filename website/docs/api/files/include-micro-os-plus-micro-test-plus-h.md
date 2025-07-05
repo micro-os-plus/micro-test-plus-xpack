@@ -5,6 +5,7 @@
 
 slug: /api/files/include/micro-os-plus/micro-test-plus-h
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
@@ -20,43 +21,24 @@ keywords:
 
 ## Included Headers
 
-<div class="doxyIncludesList">
-#include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">micro-test-plus/type-traits.h</a>"
-<br/>
+<div class="doxyIncludesList">#include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">micro-test-plus/type-traits.h</a>"
 #include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">micro-test-plus/reflection.h</a>"
-<br/>
 #include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">micro-test-plus/detail.h</a>"
-<br/>
 #include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">micro-test-plus/math.h</a>"
-<br/>
 #include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/literals-h">micro-test-plus/literals.h</a>"
-<br/>
 #include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">micro-test-plus/function-comparators.h</a>"
-<br/>
 #include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">micro-test-plus/operators.h</a>"
-<br/>
 #include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">micro-test-plus/test-suite.h</a>"
-<br/>
 #include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-runner-h">micro-test-plus/test-runner.h</a>"
-<br/>
 #include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">micro-test-plus/test-reporter.h</a>"
-<br/>
 #include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/details-inlines-h">micro-test-plus/inlines/details-inlines.h</a>"
-<br/>
 #include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/literals-inlines-h">micro-test-plus/inlines/literals-inlines.h</a>"
-<br/>
 #include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/math-inlines-h">micro-test-plus/inlines/math-inlines.h</a>"
-<br/>
 #include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines-h">micro-test-plus/inlines/reflection-inlines.h</a>"
-<br/>
 #include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-reporter-inlines-h">micro-test-plus/inlines/test-reporter-inlines.h</a>"
-<br/>
 #include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">micro-test-plus/inlines/function-comparators-inlines.h</a>"
-<br/>
 #include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-suite-inlines-h">micro-test-plus/inlines/test-suite-inlines.h</a>"
-<br/>
 #include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines-h">micro-test-plus/inlines/micro-test-plus-inlines.h</a>"
-<br/>
 </div>
 
 ## Namespaces Index
@@ -64,7 +46,7 @@ keywords:
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">namespace</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus">micro_os_plus</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -78,8 +60,8 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">namespace</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_test_plus</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -92,8 +74,8 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">namespace</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/utility">micro_os_plus::micro_test_plus::utility</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/utility">utility</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -129,7 +111,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">int</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">int</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-inits/#gaa790667969dc1a261c324e89a6ea4591">exit_code</a> (void)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -160,7 +142,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">void</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">void</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-inits/#gac2c60d60578f668878957ec68a37538f">initialize</a> (int argc, char *argv[], const char *name="Main")</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -174,7 +156,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">bool</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">bool</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-utility-functions/#gaa2f0f4cff320a783ad2347c9ff3fc731">is_match</a> (std::string_view input, std::string_view pattern)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -279,7 +261,7 @@ keywords:
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">test_suite_base *</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">test_suite_base *</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a682fc3ce8c00ebe7c068d6299269655b">current_test_suite</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -293,7 +275,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">test_reporter</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">test_reporter</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#aec46bdfdb22163bedab8e6b542191834">reporter</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -307,7 +289,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">test_runner</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">test_runner</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a469c0f5fefa0b4cea12a7d267dded831">runner</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -329,23 +311,30 @@ keywords:
 
 <p>This header serves as the principal entry point for the µTest++ testing framework, purpose-built for both embedded and general C++ projects.</p>
 
+
 <p>It provides all essential declarations required to write and manage tests, including test runner and reporter objects, test suite and test case management, expectations, assumptions, comparators, logical operators, exception verification, and utility functions.</p>
+
 
 <p>The header also incorporates all necessary dependencies and internal headers to ensure the framework operates correctly and efficiently.</p>
 
+
 <p>All public API definitions reside within the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></span> namespace and its nested namespaces, ensuring clear separation from user code and minimising the risk of naming conflicts.</p>
+
 
 <p>This file is located in the top-level <span class="doxyComputerOutput">include/micro-os-plus</span> directory; all other header files are organised within the <span class="doxyComputerOutput">include/micro-os-plus/micro-test-plus</span> directory to maintain a structured and modular codebase.</p>
 
+
 <p>To access the complete functionality of the µTest++ framework, users should include this header in their test projects.</p>
 
+
 <p>The implementation is significantly inspired by Boost UT, with adaptations and extensions to address the requirements of embedded development and the µTest++ framework.</p>
+
 
 <div class="doxySectionDef">
 
 ## Variables
 
-### current_test_suite {#a682fc3ce8c00ebe7c068d6299269655b}
+### current\_test\_suite {#a682fc3ce8c00ebe7c068d6299269655b}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -362,12 +351,25 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Global pointer references the currently active test suite.</p>
 
 
 <p>This global pointer references the currently active test suite within the µTest++ framework. It is used to track and update the state of the test suite during test execution, including recording test results and statistics. By maintaining a pointer to the current test suite, the framework ensures accurate association of test outcomes with their respective suites, supporting clear and organised reporting across all test cases and folders.</p>
 
+
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/micro-test-plus-cpp/#l00306">306</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a682fc3ce8c00ebe7c068d6299269655b">306</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">test_suite_base</a>* <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a682fc3ce8c00ebe7c068d6299269655b">current_test_suite</a>;</span></span></div>
+
+</div>
+
+
+<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#aba23fdd1c24e8232712ba47b8e107a19">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::deferred_reporter_base</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ac0f25008c95f1ef27072df20d7668082">micro_os_plus::micro_test_plus::test_reporter::end_test_case</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a86233d8241e398f9491d859b4097c851">micro_os_plus::micro_test_plus::test_runner::exit_code</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a882aa5687209359ae0313efe44f10053">micro_os_plus::micro_test_plus::test_runner::initialize</a> and <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-test-case/#ga423b46709cca6072efe28a6dbf85e413">micro_os_plus::micro_test_plus::test_case</a>.</p>
+
 </div>
 </div>
 
@@ -388,12 +390,25 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Global instance of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test_reporter</a></span>.</p>
 
 
 <p>This global instance of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test_reporter</a></span> is responsible for collecting, formatting, and outputting the results of test execution within the µTest++ framework. It manages the reporting of test outcomes, including successes and failures, and ensures that all relevant information is presented clearly to the user. By maintaining a single shared reporter, the framework provides consistent and centralised reporting across all test cases and folders.</p>
 
+
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/micro-test-plus-cpp/#l00292">292</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#aec46bdfdb22163bedab8e6b542191834">292</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test_reporter</a> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#aec46bdfdb22163bedab8e6b542191834">reporter</a>;</span></span></div>
+
+</div>
+
+
+<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter/#aa221de23c9bed6bc5844c077fbafa46b">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::~deferred_reporter</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#a3a8503e793c807cbb882033cc5ff2831">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::~deferred_reporter_base</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a6bd8aa956f30c344c9ef79cf21c69cdc">micro_os_plus::micro_test_plus::test_suite_base::begin_test_case</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#adfc3afd1432b2d093eef73a18ca9a242">micro_os_plus::micro_test_plus::test_suite_base::begin_test_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ab2e1a6eadc56c54b45f9d21e450b0cbc">micro_os_plus::micro_test_plus::test_suite_base::end_test_case</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#aa53f99054051136b3484a1664b5ee59f">micro_os_plus::micro_test_plus::test_suite_base::end_test_suite</a>, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#ac49ee935c294cb18a5a0e7f58b0b9fb4">micro_os_plus::micro_test_plus::endl</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a86233d8241e398f9491d859b4097c851">micro_os_plus::micro_test_plus::test_runner::exit_code</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a882aa5687209359ae0313efe44f10053">micro_os_plus::micro_test_plus::test_runner::initialize</a>.</p>
+
 </div>
 </div>
 
@@ -414,12 +429,25 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Global instance of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test_runner</a></span>.</p>
 
 
 <p>This global instance of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test_runner</a></span> manages the lifecycle of test suites and test cases within the µTest++ framework. It is responsible for initialising the test environment, registering test suites, executing tests, and collecting results. By maintaining a single shared runner, the framework ensures consistent test execution and reporting across all test cases and folders.</p>
 
+
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/src/micro-test-plus-cpp/#l00278">278</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-suite-inlines-h/#l00074">74</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-suite-inlines-h">test-suite-inlines.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a469c0f5fefa0b4cea12a7d267dded831">74</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">extern</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test_runner</a> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a469c0f5fefa0b4cea12a7d267dded831">runner</a>;</span></span></div>
+
+</div>
+
+
+<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a824b38d21a3f4d0adb99827455f159cf">micro_os_plus::micro_test_plus::test_suite::test_suite</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-inits/#gaa790667969dc1a261c324e89a6ea4591">micro_os_plus::micro_test_plus::exit_code</a> and <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-inits/#gac2c60d60578f668878957ec68a37538f">micro_os_plus::micro_test_plus::initialize</a>.</p>
+
 </div>
 </div>
 
@@ -427,7 +455,7 @@ keywords:
 
 ## File Listing
 
-<p>The file content with the documentation metadata removed is:</p>
+The file content with the documentation metadata removed is:
 
 <div class="doxyProgramListing">
 
@@ -593,6 +621,8 @@ keywords:
 
 </div>
 
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

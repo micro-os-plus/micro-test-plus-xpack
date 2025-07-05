@@ -5,6 +5,7 @@
 
 slug: /api/files/include/micro-os-plus/micro-test-plus/function-comparators-h
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
@@ -23,7 +24,7 @@ keywords:
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">namespace</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus">micro_os_plus</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -37,8 +38,8 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">namespace</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_test_plus</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -337,17 +338,22 @@ keywords:
 
 <p>This header provides the declarations for the function comparator templates and logical operators used within the µTest++ framework. It defines the interfaces for generic and pointer-based comparison functions, including equality, non-equality, greater than, less than, and their respective logical variants. Additionally, it declares logical combinators such as conjunction (<span class="doxyComputerOutput">_and</span>), disjunction (<span class="doxyComputerOutput">_or</span>), and negation (<span class="doxyComputerOutput">_not</span>), as well as a utility for safely removing constness from objects.</p>
 
+
 <p>These comparators and logical operators enable expressive and type-safe test expectations and assertions, supporting both value and pointer semantics. The underscore-prefixed logical operators are intentionally named to avoid conflicts with standard operators and provide clear, readable test expressions.</p>
+
 
 <p>All definitions reside within the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></span> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.</p>
 
+
 <p>The header files are organised within the <span class="doxyComputerOutput">include/micro-os-plus/micro-test-plus</span> folder to maintain a structured and modular codebase.</p>
+
 
 <p>This file is intended solely for internal use within the framework and should not be included directly by user code.</p>
 
+
 ## File Listing
 
-<p>The file content with the documentation metadata removed is:</p>
+The file content with the documentation metadata removed is:
 
 <div class="doxyProgramListing">
 
@@ -475,6 +481,8 @@ keywords:
 
 </div>
 
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

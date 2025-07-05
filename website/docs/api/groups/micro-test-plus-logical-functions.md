@@ -5,6 +5,7 @@
 
 slug: /api/groups/micro-test-plus-logical-functions
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
@@ -82,10 +83,12 @@ keywords:
 
 <p>The µTest++ framework provides logical functions for composing complex test expressions within a single statement. The functions <span class="doxyComputerOutput">mt::_and()</span>, <span class="doxyComputerOutput">mt::_or()</span>, and <span class="doxyComputerOutput">mt::_not()</span> enable the combination of multiple conditions, allowing for expressive and concise test logic.</p>
 
+
 <p>These function names are prefixed with an underscore because <span class="doxyComputerOutput">and</span>, <span class="doxyComputerOutput">or</span>, and <span class="doxyComputerOutput">not</span> are reserved keywords in both C and C++. By using these logical functions, developers can clearly express compound conditions and improve the readability of their test cases.</p>
 
+
 <dl class="doxySectionUser">
-<dt><b>Example</b></dt>
+<dt>Example</dt>
 <dd></dd>
 </dl>
 
@@ -100,11 +103,12 @@ keywords:
 
 <p>When the operands are function comparators, it is recommended to use the overloaded logical operators <span class="doxyComputerOutput">&amp;&amp;</span>, <span class="doxyComputerOutput">||</span>, and <span class="doxyComputerOutput">!</span> provided within the <span class="doxyComputerOutput">micro_test_plus::operators</span> namespace for even more natural expression of logical conditions.</p>
 
+
 <div class="doxySectionDef">
 
 ## Functions
 
-### _and() {#ga8b43b7658b43fb76daf5efbb2e03d236}
+### \_and() {#ga8b43b7658b43fb76daf5efbb2e03d236}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -128,6 +132,7 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Generic logical <b>and</b> operation.</p>
 
 
@@ -164,22 +169,33 @@ keywords:
 </dl>
 
 <dl class="doxySectionUser">
-<dt><b>Returns</b></dt>
-<dd>
-<p>An object that evaluates to true if both operand expressions are true.</p>
-</dd>
+<dt>Returns</dt>
+<dd><p>An object that evaluates to true if both operand expressions are true.</p></dd>
 </dl>
 
 
 <p>The <span class="doxyComputerOutput">_and</span> function template provides a generic logical conjunction for any expression types. It constructs a logical conjunction object that can be used within the µTest++ framework to assert that both given conditions are true. This function is typically used in test expectations and assertions to combine logical expressions or custom comparators.</p>
 
+
 <p>The underscore in the function name is intentional to differentiate it from the standard logical and operator.</p>
 
+
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00288">288</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga8b43b7658b43fb76daf5efbb2e03d236">288</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga8b43b7658b43fb76daf5efbb2e03d236">_and</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">289</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">290</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/and-">detail::and_&lt;Lhs_T, Rhs_T&gt;</a>{ lhs, rhs };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">291</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+
+</div>
+
 </div>
 </div>
 
-### _not() {#gad9ad936174faf965cffe4493e2b64cf0}
+### \_not() {#gad9ad936174faf965cffe4493e2b64cf0}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -203,6 +219,7 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Generic logical <b>not</b> operation.</p>
 
 
@@ -231,22 +248,33 @@ keywords:
 </dl>
 
 <dl class="doxySectionUser">
-<dt><b>Returns</b></dt>
-<dd>
-<p>An object that evaluates to true if the operand is false.</p>
-</dd>
+<dt>Returns</dt>
+<dd><p>An object that evaluates to true if the operand is false.</p></dd>
 </dl>
 
 
 <p>The <span class="doxyComputerOutput">_not</span> function template provides a generic logical negation for any expression type. It constructs a logical negator object that can be used within the µTest++ framework to assert that a given condition is false. This function is typically used in test expectations and assertions to invert logical expressions or custom comparators.</p>
 
+
 <p>The underscore in the function name is intentional to differentiate it from the standard logical not operator.</p>
 
+
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00270">270</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gad9ad936174faf965cffe4493e2b64cf0">270</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#gad9ad936174faf965cffe4493e2b64cf0">_not</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Expr_T&amp; expr)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">271</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">272</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/not-">detail::not_&lt;Expr_T&gt;</a>{ expr };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">273</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+
+</div>
+
 </div>
 </div>
 
-### _or() {#gad32b40e4b0022b276fa3b357b98a33c5}
+### \_or() {#gad32b40e4b0022b276fa3b357b98a33c5}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -270,6 +298,7 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Generic logical <b>or</b> operation.</p>
 
 
@@ -306,22 +335,35 @@ keywords:
 </dl>
 
 <dl class="doxySectionUser">
-<dt><b>Returns</b></dt>
-<dd>
-<p>An object that evaluates to true if at least one of the operand expressions is true.</p>
-</dd>
+<dt>Returns</dt>
+<dd><p>An object that evaluates to true if at least one of the operand expressions is true.</p></dd>
 </dl>
 
 
 <p>The <span class="doxyComputerOutput">_or</span> function template provides a generic logical disjunction for any expression types. It constructs a logical disjunction object that can be used within the µTest++ framework to assert that at least one of the given conditions is true. This function is typically used in test expectations and assertions to combine logical expressions or custom comparators.</p>
 
+
 <p>The underscore in the function name is intentional to differentiate it from the standard logical or operator.</p>
 
+
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00306">306</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gad32b40e4b0022b276fa3b357b98a33c5">306</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#gad32b40e4b0022b276fa3b357b98a33c5">_or</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">307</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">308</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/or-">detail::or_&lt;Lhs_T, Rhs_T&gt;</a>{ lhs, rhs };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">309</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+
+</div>
+
 </div>
 </div>
 
 </div>
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

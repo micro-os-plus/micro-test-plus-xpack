@@ -5,6 +5,7 @@
 
 slug: /api/folders/src
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
@@ -23,7 +24,7 @@ keywords:
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">file</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">file</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/src/micro-test-plus-cpp">micro-test-plus.cpp</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -37,7 +38,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">file</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">file</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -51,7 +52,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">file</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">file</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/src/test-runner-cpp">test-runner.cpp</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -65,7 +66,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">file</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">file</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -86,6 +87,9 @@ keywords:
 
 
 <p>The <span class="doxyComputerOutput">src</span> folder contains the <span class="doxyComputerOutput">.cpp</span> implementation files for the µTest++ library.</p>
+
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

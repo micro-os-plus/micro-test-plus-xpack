@@ -5,6 +5,7 @@
 
 slug: /api/files/include/micro-os-plus/micro-test-plus/test-reporter-h
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
@@ -20,17 +21,11 @@ keywords:
 
 ## Included Headers
 
-<div class="doxyIncludesList">
-#include &lt;string_view&gt;
-<br/>
+<div class="doxyIncludesList">#include &lt;string_view&gt;
 #include &lt;string&gt;
-<br/>
 #include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>"
-<br/>
 #include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>"
-<br/>
 #include "<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>"
-<br/>
 </div>
 
 ## Namespaces Index
@@ -38,7 +33,7 @@ keywords:
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">namespace</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus">micro_os_plus</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -52,8 +47,8 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">namespace</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_test_plus</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -72,7 +67,7 @@ keywords:
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/colors">colors</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -86,7 +81,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">class</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test_reporter</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -106,7 +101,7 @@ keywords:
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">typedef</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">typedef</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top">verbosity <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a08e787c2c2f8365df2c9b372605535ac">verbosity_t</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -126,8 +121,8 @@ keywords:
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">enum class</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top">:  { <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914b">...</a> }</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">enum class</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top">verbosity { <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914b">...</a> }</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -146,7 +141,7 @@ keywords:
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">test_reporter &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">test_reporter &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#ac49ee935c294cb18a5a0e7f58b0b9fb4">endl</a> (test_reporter &amp;stream)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -168,19 +163,24 @@ keywords:
 
 <p>This header provides the declarations for the test reporting facilities used within the µTest++ framework. It defines the interfaces for formatting and outputting test results, including operator overloads for a wide range of value types, containers, and comparison expressions, as well as structured output for logical and exception-related assertions.</p>
 
+
 <p>The test reporter is responsible for presenting test outcomes in a clear, consistent, and expressive manner, supporting both value and pointer semantics, and providing detailed diagnostics for both successful and failed test cases. Special attention is given to formatting, colour highlighting, and extensibility, enabling professional and readable test reports suitable for embedded and general C++ development.</p>
+
 
 <p>All definitions reside within the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></span> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.</p>
 
+
 <p>The header files are organised within the <span class="doxyComputerOutput">include/micro-os-plus/micro-test-plus</span> folder to maintain a structured and modular codebase.</p>
 
+
 <p>This file is intended solely for internal use within the framework and should not be included directly by user code.</p>
+
 
 <div class="doxySectionDef">
 
 ## Typedefs
 
-### verbosity_t {#a08e787c2c2f8365df2c9b372605535ac}
+### verbosity\_t {#a08e787c2c2f8365df2c9b372605535ac}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -197,14 +197,25 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Type alias for the verbosity enumeration used in test reporting.</p>
 
 
 <p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a08e787c2c2f8365df2c9b372605535ac">verbosity_t</a></span> type alias provides a convenient shorthand for referring to the <span class="doxyComputerOutput">verbosity</span> enumeration, which defines the available levels of detail for test output within the reporting system.</p>
 
+
 <p>Using this alias improves code readability and consistency throughout the framework, especially when specifying or configuring verbosity levels for test reporters.</p>
 
+
 <p>Definition at line <a href="#l00148">148</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a08e787c2c2f8365df2c9b372605535ac">148</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">typedef</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914b">verbosity</a> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a08e787c2c2f8365df2c9b372605535ac">verbosity_t</a>;</span></span></div>
+
+</div>
+
 </div>
 </div>
 
@@ -214,7 +225,7 @@ keywords:
 
 ## Enumerations
 
-### enum class  {#a809871d76f29309ed9c6fbd96d5a914b}
+### verbosity {#a809871d76f29309ed9c6fbd96d5a914b}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -236,6 +247,7 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>The verbosity levels for test reporting.</p>
 
 <dl class="doxyEnumList">
@@ -270,9 +282,24 @@ keywords:
 
 <p>The <span class="doxyComputerOutput">verbosity</span> enumeration defines the available levels of detail for test output produced by the reporting system. These levels control the amount and type of information displayed during test execution, allowing users to tailor the output to their specific requirements.</p>
 
+
 <p>Selecting an appropriate verbosity level enhances the usability of test reports, whether for concise summaries or comprehensive diagnostics.</p>
 
+
 <p>Definition at line <a href="#l00127">127</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h">test-reporter.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber">128</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">129</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">silent</a> = 0, </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">130</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">quiet</a> = 1, </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">131</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">normal</a> = 2, </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">132</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbose</a> = 3 </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">134</span><span class="doxyLineContent"><span class="doxyHighlight">  };</span></span></div>
+
+</div>
+
 </div>
 </div>
 
@@ -299,6 +326,7 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Output stream manipulator for ending a line in test reports.</p>
 
 
@@ -315,16 +343,33 @@ keywords:
 </dl>
 
 <dl class="doxySectionUser">
-<dt><b>Returns</b></dt>
-<dd>
-<p>Reference to the same <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test_reporter</a></span> instance, enabling chaining of output operations.</p>
-</dd>
+<dt>Returns</dt>
+<dd><p>Reference to the same <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test_reporter</a></span> instance, enabling chaining of output operations.</p></dd>
 </dl>
 
 
 <p>The <span class="doxyComputerOutput">endl</span> function inserts a newline character into the specified <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test_reporter</a></span> stream and flushes its output buffer. This operation ensures that each test output line is clearly separated and immediately visible, facilitating the readability and clarity of test results across all test cases and folders within the µTest++ framework.</p>
 
+
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-reporter-cpp/#l00073">73</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-reporter-cpp">test-reporter.cpp</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#ac49ee935c294cb18a5a0e7f58b0b9fb4">73</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#ac49ee935c294cb18a5a0e7f58b0b9fb4">endl</a> (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test_reporter</a>&amp; stream)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">74</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">75</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#aec46bdfdb22163bedab8e6b542191834">reporter</a>.endline ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">76</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> stream;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">77</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+
+</div>
+
+
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#aec46bdfdb22163bedab8e6b542191834">micro_os_plus::micro_test_plus::reporter</a>.</p>
+
+
+<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#aaa1839530b6e8560711926613013312b">micro_os_plus::micro_test_plus::test_reporter::output_fail_suffix_</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a8df0d7843bb268c9e91fb90219aded65">micro_os_plus::micro_test_plus::test_reporter::output_pass_suffix_</a>.</p>
+
 </div>
 </div>
 
@@ -332,7 +377,7 @@ keywords:
 
 ## File Listing
 
-<p>The file content with the documentation metadata removed is:</p>
+The file content with the documentation metadata removed is:
 
 <div class="doxyProgramListing">
 
@@ -630,6 +675,8 @@ keywords:
 
 </div>
 
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

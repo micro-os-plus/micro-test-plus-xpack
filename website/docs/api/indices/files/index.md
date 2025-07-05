@@ -16,7 +16,7 @@ keywords:
 
 <div class="doxyPage">
 
-<p>The files & folders that contributed content to this site are:</p>
+The files & folders that contributed content to this site are:
 
 <table class="doxyTreeTable">
 
@@ -302,7 +302,7 @@ C++ source file with implementations for the µTest++ test suite methods
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 12px; display: inline-block;"></span>
+<span style="width: 0px; display: inline-block;"></span>
 <a href="/micro-test-plus-xpack/docs/api/files/top-common-h"><span class="doxyIconFile">top-common.h</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
@@ -312,7 +312,7 @@ Common Doxygen definitions for the µOS++ project
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 12px; display: inline-block;"></span>
+<span style="width: 0px; display: inline-block;"></span>
 <a href="/micro-test-plus-xpack/docs/api/files/topics-h"><span class="doxyIconFile">topics.h</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
@@ -321,6 +321,8 @@ Project specific Doxygen topics definitions
 </tr>
 
 </table>
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

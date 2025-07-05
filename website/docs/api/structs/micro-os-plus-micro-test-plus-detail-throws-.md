@@ -5,11 +5,11 @@
 
 slug: /api/structs/micro-os-plus/micro-test-plus/detail/throws-
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
   - struct
-toc_max_heading_level: 3
 
 ---
 
@@ -22,15 +22,13 @@ toc_max_heading_level: 3
 ## Declaration
 
 <div class="doxyDeclaration">
-template &lt;class Callable_T, class Exception_T = void&gt;<br/>
-struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, Exception_T&gt;
+template &lt;class Callable_T, class Exception_T = void&gt;
+struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, Exception_T&gt; { ... }
 </div>
 
 ## Included Headers
 
-<div class="doxyIncludesList">
-#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;
-<br/>
+<div class="doxyIncludesList">#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;
 </div>
 
 ## Base struct
@@ -38,7 +36,7 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, Exception_
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">op</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -145,19 +143,24 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, Exception_
 
 <p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-">throws_</a></span> struct template provides a type-safe mechanism for verifying whether a callable expression throws a specified exception type during its execution within the framework.</p>
 
+
 <p>This comparator is designed to support both custom and standard callable types. The result of the exception check is stored in the <span class="doxyComputerOutput">value_</span> member for efficient access.</p>
+
 
 <p>The implementation is optimised for use in embedded environments and supports both compile-time and run-time evaluation.</p>
 
+
 <p>All definitions are intended for internal use within the framework and are implemented in the <span class="doxyComputerOutput">include/micro-os-plus/micro-test-plus</span> folder to maintain a structured and modular codebase.</p>
 
+
 <p>Definition at line 1511 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+
 
 <div class="doxySectionDef">
 
 ## Public Constructors
 
-### throws_() {#ab482b144c355eb68638dc872331145e7}
+### throws\_() {#ab482b144c355eb68638dc872331145e7}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -182,6 +185,7 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, Exception_
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Constructs an exception checking operator for the given callable.</p>
 
 
@@ -199,7 +203,36 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, Exception_
 
 <p>Invokes the provided callable and determines whether it throws an exception of the specified type. The result is stored in the <span class="doxyComputerOutput">value_</span> member for efficient access.</p>
 
+
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01524">1524</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ab482b144c355eb68638dc872331145e7">1524</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">explicit</span><span class="doxyHighlight"> <a href="#ab482b144c355eb68638dc872331145e7">throws_</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Callable_T&amp; func)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1525</span><span class="doxyLineContent"><span class="doxyHighlight">          : <a href="#ab92c281f0bbf04125e3fa9a8258dc1b9">value_</a>{ [&amp;func] {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1526</span><span class="doxyLineContent"><span class="doxyHighlight">              </span><span class="doxyHighlightKeywordFlow">try</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1527</span><span class="doxyLineContent"><span class="doxyHighlight">                {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1528</span><span class="doxyLineContent"><span class="doxyHighlight">                  func ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1529</span><span class="doxyLineContent"><span class="doxyHighlight">                }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1530</span><span class="doxyLineContent"><span class="doxyHighlight">              </span><span class="doxyHighlightKeywordFlow">catch</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Exception_T&amp;)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1531</span><span class="doxyLineContent"><span class="doxyHighlight">                {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1532</span><span class="doxyLineContent"><span class="doxyHighlight">                  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1533</span><span class="doxyLineContent"><span class="doxyHighlight">                }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1534</span><span class="doxyLineContent"><span class="doxyHighlight">              </span><span class="doxyHighlightKeywordFlow">catch</span><span class="doxyHighlight"> (...)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1535</span><span class="doxyLineContent"><span class="doxyHighlight">                {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1536</span><span class="doxyLineContent"><span class="doxyHighlight">                  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1537</span><span class="doxyLineContent"><span class="doxyHighlight">                }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1538</span><span class="doxyLineContent"><span class="doxyHighlight">              </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1539</span><span class="doxyLineContent"><span class="doxyHighlight">            }() }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1540</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1541</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+
+</div>
+
+
+<p>Reference <a href="#ab92c281f0bbf04125e3fa9a8258dc1b9">micro_os_plus::micro_test_plus::detail::throws_&lt; Callable_T, Exception_T &gt;::value_</a>.</p>
+
 </div>
 </div>
 
@@ -219,7 +252,7 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, Exception_
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">micro_os_plus::micro_test_plus::detail::throws_&lt; Callable_T, Exception_T &gt;::operator bool () const</td>
+<td class="doxyMemberName">micro_os_plus::micro_test_plus::detail::throws_&lt; Callable_T, Exception_T &gt;::operator bool ()</td>
 </tr>
 </table>
 </td>
@@ -234,14 +267,13 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, Exception_
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Conversion operator to boolean.</p>
 
 
 <dl class="doxySectionUser">
-<dt><b>Parameters</b></dt>
-<dd>
-<p>None.</p>
-</dd>
+<dt>Parameters</dt>
+<dd><p>None.</p></dd>
 </dl>
 
 
@@ -263,7 +295,22 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, Exception_
 
 <p>Returns the result of the exception check.</p>
 
+
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01556">1556</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a84158f0b3d7719fe0929b49002c113b5">1556</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlight"> bool ()</span><span class="doxyHighlightKeyword"> const</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1557</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">      </span><span class="doxyHighlight">{</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1558</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#ab92c281f0bbf04125e3fa9a8258dc1b9">value_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1559</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+
+</div>
+
+
+<p>Reference <a href="#ab92c281f0bbf04125e3fa9a8258dc1b9">micro_os_plus::micro_test_plus::detail::throws_&lt; Callable_T, Exception_T &gt;::value_</a>.</p>
+
 </div>
 </div>
 
@@ -273,7 +320,7 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, Exception_
 
 ## Public Member Attributes
 
-### value_ {#ab92c281f0bbf04125e3fa9a8258dc1b9}
+### value\_ {#ab92c281f0bbf04125e3fa9a8258dc1b9}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -291,9 +338,21 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, Exception_
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Stores the result of the exception check.</p>
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01564">1564</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ab92c281f0bbf04125e3fa9a8258dc1b9">1564</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#ab92c281f0bbf04125e3fa9a8258dc1b9">value_</a>{};</span></span></div>
+
+</div>
+
+
+<p>Referenced by <a href="#ab482b144c355eb68638dc872331145e7">micro_os_plus::micro_test_plus::detail::throws_&lt; Callable_T, Exception_T &gt;::throws_</a> and <a href="#a84158f0b3d7719fe0929b49002c113b5">micro_os_plus::micro_test_plus::detail::throws_&lt; Callable_T, Exception_T &gt;::operator bool</a>.</p>
+
 </div>
 </div>
 
@@ -301,11 +360,13 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, Exception_
 
 <hr/>
 
-<p>The documentation for this struct was generated from the following file:</p>
+The documentation for this struct was generated from the following file:
 
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a></li>
 </ul>
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

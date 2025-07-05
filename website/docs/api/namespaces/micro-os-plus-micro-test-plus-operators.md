@@ -5,6 +5,7 @@
 
 slug: /api/namespaces/micro-os-plus/micro-test-plus/operators
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
@@ -97,7 +98,7 @@ namespace micro_os_plus::micro_test_plus::operators { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">constexpr auto</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">constexpr auto</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-string-operators/#ga179e971d5e37795c036ad66aa35f1654">operator!=</a> (std::string_view lhs, std::string_view rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -179,7 +180,7 @@ namespace micro_os_plus::micro_test_plus::operators { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">constexpr auto</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">constexpr auto</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-string-operators/#gaabe34a842bf38ea2913a4164d2b0a9cb">operator==</a> (std::string_view lhs, std::string_view rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -252,7 +253,10 @@ namespace micro_os_plus::micro_test_plus::operators { ... }
 
 <p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/operators">micro_os_plus::micro_test_plus::operators</a></span> namespace provides a comprehensive set of custom operator overloads designed to enable expressive, concise, and type-safe test assertions within the µTest++ framework.</p>
 
+
 <p>This namespace includes equality, inequality, relational, and logical operators tailored for use with the framework’s custom types, containers, and string views. These operators facilitate the creation of clear and readable test expressions, supporting both strongly-typed constants (via user-defined literals) and dynamic values (via wrappers).</p>
+
+
 
 :::warning
 <p>Please be aware that these operators may conflict with other operators defined within the application under test.</p>
@@ -261,7 +265,11 @@ namespace micro_os_plus::micro_test_plus::operators { ... }
 
 <p>To minimise conflicts with application-defined operators, these overloads are enabled only for specific types recognised by the framework, such as those derived from the local <span class="doxyComputerOutput">op</span> base type or identified as containers or string views. Constants typically require a literal suffix (e.g., <span class="doxyComputerOutput">1<a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga1613ccf081248c601bed0f3022fba652">_i</a></span>), while dynamic values should be wrapped using the provided casting utilities (e.g., <span class="doxyComputerOutput">mt::to_i{...}</span>).</p>
 
+
 <p>All definitions within this namespace are implemented in the <span class="doxyComputerOutput">include/micro-os-plus/micro-test-plus</span> folder, ensuring a modular and maintainable codebase.</p>
+
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

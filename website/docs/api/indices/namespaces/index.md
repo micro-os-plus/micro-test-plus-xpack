@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-<p>The namespaces used by this project are:</p>
+The namespaces used by this project are:
 
 <table class="doxyTreeTable">
 
@@ -119,6 +119,8 @@ Utility functions for the µTest++ testing framework
 </tr>
 
 </table>
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

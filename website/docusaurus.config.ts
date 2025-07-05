@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 // import logger from '@docusaurus/logger';
 import util from 'node:util';
 
-import doxygenApiMenu from './docusaurus-config-menu-docusaurus-plugin-doxygen.json'
+import doxygenApiMenu from './docusaurus-config-menu-doxygen.json'
 import { redirects } from './docusaurus-config-redirects';
 import { getCustomFields } from './customFields';
 
@@ -73,7 +73,8 @@ const config: Config = {
       {
         // redirectsOutputFolderPath: 'reference',
         verbose: false,
-        suggestToDoDescriptions: false
+        suggestToDoDescriptions: false,
+        originalPagesNote: 'For comparison, the original Doxygen html pages, styled with the <a href="https://jothepro.github.io/doxygen-awesome-css/">doxygen-awesome-css</a> plugin, continue to be available via the <a href="pathname:///doxygen/topics.html"><code>.../doxygen/*.html</b></code> URLs.'
       }
     ],
     [

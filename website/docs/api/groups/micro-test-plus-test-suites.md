@@ -5,6 +5,7 @@
 
 slug: /api/groups/micro-test-plus-test-suites
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
@@ -23,7 +24,7 @@ keywords:
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">class</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">class</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test_suite</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -45,11 +46,15 @@ keywords:
 
 <p>Test suites in µTest++ are named groups of related test cases, allowing for structured organisation and execution of tests. By default, all test cases defined in <span class="doxyComputerOutput">main()</span> are included in the default (main) test suite and are executed immediately.</p>
 
+
 <p>For more complex projects, multiple test suites can be defined, typically in separate source files. Test suites are implemented as classes, constructed with a name, a callable (usually a lambda that chains the execution of the test cases), and optional arguments. This design enables self-registration of test suites, ensuring they are automatically included in the test run.</p>
+
 
 <p>It is advisable to instantiate test suites as static objects. Self-registration occurs within the constructor, and test suites defined in separate compilation units may be executed in any order, as the sequence of static constructor invocation is not specified. Therefore, test suites should not have dependencies on one another.</p>
 
+
 <p>All registered test suites are executed when the <span class="doxyComputerOutput">exit_code()</span> function is called, ensuring comprehensive test coverage across the project.</p>
+
 
 <div class="doxyProgramListing">
 
@@ -65,6 +70,7 @@ keywords:
 </div>
 
 
+
 :::tip
 <p>It is strongly recommended to instantiate test suites as static objects.</p>
 :::
@@ -72,10 +78,12 @@ keywords:
 
 <p>Self-registration is performed within the constructor, ensuring that each test suite is automatically included in the test run. When test suites are defined in separate compilation units, they may be executed in any order, as the sequence in which static constructors are invoked is not specified. Consequently, test suites should be designed to be independent and must not rely on the execution order of other suites.</p>
 
+
 <p>All registered test suites are executed when the <span class="doxyComputerOutput">exit_code()</span> function is called, guaranteeing that the entire test suite collection is run and reported in a consistent and reliable manner.</p>
 
+
 <dl class="doxySectionUser">
-<dt><b>Examples</b></dt>
+<dt>Examples</dt>
 <dd></dd>
 </dl>
 
@@ -109,6 +117,8 @@ keywords:
 
 </div>
 
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

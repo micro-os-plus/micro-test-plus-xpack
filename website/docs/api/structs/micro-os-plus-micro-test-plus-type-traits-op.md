@@ -5,11 +5,11 @@
 
 slug: /api/structs/micro-os-plus/micro-test-plus/type-traits/op
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
   - struct
-toc_max_heading_level: 3
 
 ---
 
@@ -22,14 +22,12 @@ toc_max_heading_level: 3
 ## Declaration
 
 <div class="doxyDeclaration">
-struct micro_os_plus::micro_test_plus::type_traits::op
+struct micro_os_plus::micro_test_plus::type_traits::op { ... }
 </div>
 
 ## Included Headers
 
-<div class="doxyIncludesList">
-#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;
-<br/>
+<div class="doxyIncludesList">#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;
 </div>
 
 ## Derived Structs
@@ -37,7 +35,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws--6ce6a9ac7588b533a253fd8d8638e6be">throws_&lt;Callable_T, void&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -51,7 +49,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, class&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -65,7 +63,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, class&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -79,7 +77,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, class&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -93,7 +91,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, class&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -107,7 +105,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, class&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -121,7 +119,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, class&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -135,7 +133,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, class&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -149,7 +147,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, class&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -163,7 +161,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, class&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -177,7 +175,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, class&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -191,7 +189,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, class&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -205,7 +203,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, class&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -219,7 +217,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, class&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -233,7 +231,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, class&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -247,7 +245,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, class&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -261,7 +259,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, class&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -275,7 +273,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, class&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -289,7 +287,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, class&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -303,7 +301,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, class&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -317,7 +315,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, class&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -331,7 +329,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, class&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -345,7 +343,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, class&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -359,7 +357,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, class&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -373,8 +371,8 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-dae7771377f0087abbec46abf87b329e">value&lt;T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt;&gt;</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-dae7771377f0087abbec46abf87b329e">value&lt;...&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -387,7 +385,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/and-">and_&lt;Lhs_T, Rhs_T&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -401,7 +399,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-">eq_&lt;Lhs_T, Rhs_T&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -415,7 +413,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ge-">ge_&lt;Lhs_T, Rhs_T&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -429,7 +427,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/gt-">gt_&lt;Lhs_T, Rhs_T&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -443,7 +441,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/le-">le_&lt;Lhs_T, Rhs_T&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -457,7 +455,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/lt-">lt_&lt;Lhs_T, Rhs_T&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -471,7 +469,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-">ne_&lt;Lhs_T, Rhs_T&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -485,7 +483,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/not-">not_&lt;T&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -499,7 +497,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/nothrow-">nothrow_&lt;Callable_T&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -513,7 +511,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/or-">or_&lt;Lhs_T, Rhs_T&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -527,8 +525,8 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-">throws_&lt;Callable_T, Exception_T&gt;</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-">throws_&lt;...&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -541,7 +539,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws--6ce6a9ac7588b533a253fd8d8638e6be">throws_&lt;Callable_T, void&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -555,7 +553,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">floating_point_constant&lt;T, N, D, Size, P&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -569,7 +567,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value">genuine_integral_value&lt;T&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -583,7 +581,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">integral_constant&lt;N&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -597,7 +595,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, class&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -611,8 +609,8 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-dae7771377f0087abbec46abf87b329e">value&lt;T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt;&gt;</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-dae7771377f0087abbec46abf87b329e">value&lt;...&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -633,9 +631,14 @@ struct micro_os_plus::micro_test_plus::type_traits::op
 
 <p>The <span class="doxyComputerOutput">op</span> struct serves as a common base for all operator and value wrapper types used in the µTest++ framework's type traits and metaprogramming utilities. It provides a unified type hierarchy, enabling compile-time detection and generic handling of operator-like types within the framework.</p>
 
+
 <p>This struct is intended for internal use as a base for integral constants, floating point constants, and other value wrappers, supporting advanced template metaprogramming and type introspection.</p>
 
+
 <p>Definition at line 680 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

@@ -5,11 +5,11 @@
 
 slug: /api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
   - struct
-toc_max_heading_level: 3
 
 ---
 
@@ -22,15 +22,13 @@ toc_max_heading_level: 3
 ## Declaration
 
 <div class="doxyDeclaration">
-template &lt;class T&gt;<br/>
-struct micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt;T&gt;
+template &lt;class T&gt;
+struct micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt;T&gt; { ... }
 </div>
 
 ## Included Headers
 
-<div class="doxyIncludesList">
-#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;
-<br/>
+<div class="doxyIncludesList">#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;
 </div>
 
 ## Base struct
@@ -38,7 +36,7 @@ struct micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt;T&
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">struct</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">op</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -187,15 +185,18 @@ struct micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt;T&
 
 <p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value">genuine_integral_value</a></span> struct template encapsulates a runtime integral value, providing a consistent interface for value access and conversion. It inherits from <span class="doxyComputerOutput">op</span> to enable unified handling within the µTest++ framework's type traits and metaprogramming utilities.</p>
 
+
 <p>This struct template exposes the value via a member variable, a getter method, and an explicit conversion operator. It is intended for use cases where a value must be wrapped and treated generically within the framework, supporting advanced template metaprogramming and type introspection.</p>
 
+
 <p>Definition at line 879 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+
 
 <div class="doxySectionDef">
 
 ## Public Member Typedefs
 
-### value_type {#a1b0fda5167fc47a474f0fad07d28fa8d}
+### value\_type {#a1b0fda5167fc47a474f0fad07d28fa8d}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -213,9 +214,18 @@ struct micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt;T&
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>The type of the encapsulated value.</p>
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00884">884</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a1b0fda5167fc47a474f0fad07d28fa8d">884</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a1b0fda5167fc47a474f0fad07d28fa8d">value_type</a> = T;</span></span></div>
+
+</div>
+
 </div>
 </div>
 
@@ -225,7 +235,7 @@ struct micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt;T&
 
 ## Public Constructors
 
-### genuine_integral_value() {#afa29aa29cbc284a0147aa07db0d4891a}
+### genuine\_integral\_value() {#afa29aa29cbc284a0147aa07db0d4891a}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -249,6 +259,7 @@ struct micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt;T&
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Constructs a <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value">genuine_integral_value</a> with the specified value.</p>
 
 
@@ -265,6 +276,19 @@ struct micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt;T&
 </dl>
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00891">891</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#afa29aa29cbc284a0147aa07db0d4891a">891</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> <a href="#afa29aa29cbc284a0147aa07db0d4891a">genuine_integral_value</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; _value) : <a href="#ab4f59f518a832369368c4502bf0c4d35">value_</a>{ _value }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">892</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">893</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+
+</div>
+
+
+<p>Reference <a href="#ab4f59f518a832369368c4502bf0c4d35">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt; T &gt;::value_</a>.</p>
+
 </div>
 </div>
 
@@ -284,7 +308,7 @@ struct micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt;T&
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt; T &gt;::operator T () const</td>
+<td class="doxyMemberName">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt; T &gt;::operator T ()</td>
 </tr>
 </table>
 </td>
@@ -300,20 +324,34 @@ struct micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt;T&
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Explicit conversion operator to the underlying value type.</p>
 
 
 <dl class="doxySectionUser">
-<dt><b>Returns</b></dt>
-<dd>
-<p>The stored value as type <span class="doxyComputerOutput">T</span>.</p>
-</dd>
+<dt>Returns</dt>
+<dd><p>The stored value as type <span class="doxyComputerOutput">T</span>.</p></dd>
 </dl>
 
 
 <p>Allows explicit conversion to the encapsulated value.</p>
 
+
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00904">904</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a1474de7e4b8a14f1c97f2c1ba5d9212a">904</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlight"> T ()</span><span class="doxyHighlightKeyword"> const</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">905</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">      </span><span class="doxyHighlight">{</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">906</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#ab4f59f518a832369368c4502bf0c4d35">value_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">907</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+
+</div>
+
+
+<p>Reference <a href="#ab4f59f518a832369368c4502bf0c4d35">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt; T &gt;::value_</a>.</p>
+
 </div>
 </div>
 
@@ -333,7 +371,7 @@ struct micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt;T&
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">decltype(auto) micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt; T &gt;::get () const</td>
+<td class="doxyMemberName">decltype(auto) micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt; T &gt;::get ()</td>
 </tr>
 </table>
 </td>
@@ -348,20 +386,37 @@ struct micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt;T&
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Getter for the encapsulated value.</p>
 
 
 <dl class="doxySectionUser">
-<dt><b>Returns</b></dt>
-<dd>
-<p>The value of type <span class="doxyComputerOutput">T</span>.</p>
-</dd>
+<dt>Returns</dt>
+<dd><p>The value of type <span class="doxyComputerOutput">T</span>.</p></dd>
 </dl>
 
 
 <p>Returns the stored integral value.</p>
 
+
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00918">918</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ab2f53c63e86a887bccbadf0b7dbb8b4b">918</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="#ab2f53c63e86a887bccbadf0b7dbb8b4b">get</a> () </span><span class="doxyHighlightKeyword">const</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">919</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">920</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#ab4f59f518a832369368c4502bf0c4d35">value_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">921</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+
+</div>
+
+
+<p>References <a href="#ab2f53c63e86a887bccbadf0b7dbb8b4b">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt; T &gt;::get</a> and <a href="#ab4f59f518a832369368c4502bf0c4d35">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt; T &gt;::value_</a>.</p>
+
+
+<p>Referenced by <a href="#ab2f53c63e86a887bccbadf0b7dbb8b4b">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt; T &gt;::get</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ab6cd245bcdf58b3004430a76bc78abc8">micro_os_plus::micro_test_plus::test_reporter::operator&lt;&lt;</a>.</p>
+
 </div>
 </div>
 
@@ -371,7 +426,7 @@ struct micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt;T&
 
 ## Public Member Attributes
 
-### value_ {#ab4f59f518a832369368c4502bf0c4d35}
+### value\_ {#ab4f59f518a832369368c4502bf0c4d35}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -389,9 +444,21 @@ struct micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt;T&
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>The encapsulated integral value.</p>
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00926">926</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ab4f59f518a832369368c4502bf0c4d35">926</a></span><span class="doxyLineContent"><span class="doxyHighlight">      T <a href="#ab4f59f518a832369368c4502bf0c4d35">value_</a>{};</span></span></div>
+
+</div>
+
+
+<p>Referenced by <a href="#afa29aa29cbc284a0147aa07db0d4891a">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt; T &gt;::genuine_integral_value</a>, <a href="#ab2f53c63e86a887bccbadf0b7dbb8b4b">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt; T &gt;::get</a> and <a href="#a1474de7e4b8a14f1c97f2c1ba5d9212a">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt; T &gt;::operator T</a>.</p>
+
 </div>
 </div>
 
@@ -399,11 +466,13 @@ struct micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt;T&
 
 <hr/>
 
-<p>The documentation for this struct was generated from the following file:</p>
+The documentation for this struct was generated from the following file:
 
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a></li>
 </ul>
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

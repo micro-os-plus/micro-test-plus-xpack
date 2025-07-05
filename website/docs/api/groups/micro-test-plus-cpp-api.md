@@ -5,6 +5,7 @@
 
 slug: /api/groups/micro-test-plus-cpp-api
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
@@ -23,7 +24,7 @@ keywords:
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">&nbsp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">&nbsp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-inits">Initialisation &amp; Exit</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -37,7 +38,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">&nbsp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">&nbsp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-test-case">Test Cases</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -51,7 +52,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">&nbsp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">&nbsp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-expectations">Expectations</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -65,7 +66,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">&nbsp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">&nbsp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-assumptions">Assumptions</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -79,7 +80,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">&nbsp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">&nbsp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-function-comparators">Function Comparators</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -93,7 +94,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">&nbsp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">&nbsp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-logical-functions">Logical Functions</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -107,7 +108,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">&nbsp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">&nbsp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-exceptions">Checking Exceptions</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -121,7 +122,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">&nbsp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">&nbsp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-operators">Operators</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -135,7 +136,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">&nbsp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">&nbsp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-string-operators">String Operators</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -149,7 +150,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">&nbsp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">&nbsp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-container-operators">Container Operators</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -163,7 +164,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">&nbsp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">&nbsp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals">Literals and Wrappers</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -177,7 +178,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">&nbsp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">&nbsp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-utility-functions">Utility Functions</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -191,7 +192,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">&nbsp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">&nbsp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-test-suites">Test Suites</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -213,7 +214,11 @@ keywords:
 
 <p>The µTest++ framework is built upon modern C++ standards, providing a robust and expressive API for defining and managing tests. Its design prioritises clarity and maintainability, offering a concise set of core primitives for verifying expectations and assumptions within test cases.</p>
 
+
 <p>Unlike many traditional frameworks, µTest++ avoids the use of preprocessor macros; all testing primitives are implemented directly in C++. This approach ensures type safety, improved readability, and seamless integration with contemporary C++ development practices.</p>
+
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

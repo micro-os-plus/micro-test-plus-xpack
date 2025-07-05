@@ -5,6 +5,7 @@
 
 slug: /api/namespaces/micro-os-plus/micro-test-plus/literals
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
@@ -29,7 +30,7 @@ namespace micro_os_plus::micro_test_plus::literals { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">constexpr auto</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">constexpr auto</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gaa2bfc74376f8c110053bfa6e06e40772">operator""_b</a> (const char *name, decltype(sizeof("")) size)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -425,11 +426,17 @@ namespace micro_os_plus::micro_test_plus::literals { ... }
 
 <p>The <span class="doxyComputerOutput">literals</span> namespace provides an extensive collection of user-defined literal operators and type wrappers, enabling explicit specification of operand types for use with the µTest++ comparators and operators.</p>
 
+
 <p>These operators allow constants to be suffixed (for example, <span class="doxyComputerOutput">1<a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga1613ccf081248c601bed0f3022fba652">_i</a></span>, <span class="doxyComputerOutput">2<a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga07f83438e4c0c85efdeacd78668f3543">_u16</a></span>) to produce strongly-typed values, thereby enhancing type safety and ensuring that comparator functions and operators can display actual values in test reports.</p>
+
 
 <p>In addition to literals, the namespace includes wrappers for converting dynamic values and expressions to recognised types, both via deprecated aliases (such as <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga1613ccf081248c601bed0f3022fba652">_i</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga2e2ad62d8c5d6e3abcfca9a897ae61de">_u8</a></span>) and the preferred <span class="doxyComputerOutput">to_*</span> forms (such as <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#gab6ddb21470182cbdcf06436cde43718f">to_i</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga8b683d809d600f5c5210bb16546a832e">to_u8</a></span>).</p>
 
+
 <p>All definitions within this namespace are intended to facilitate clear and type-safe test expressions, and are implemented in the <span class="doxyComputerOutput">include/micro-os-plus</span> folder to maintain a structured and modular codebase.</p>
+
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

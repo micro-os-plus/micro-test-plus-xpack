@@ -5,6 +5,7 @@
 
 slug: /api/groups/micro-test-plus-container-operators
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
@@ -65,10 +66,12 @@ keywords:
 
 <p>The µTest++ framework provides overloaded operators to facilitate direct and expressive comparison of standard containers, such as vectors and strings, within test cases. These operators enable developers to write clear and concise assertions when verifying the equality or inequality of container contents.</p>
 
+
 <p>In addition to the generic operators, specialised equality and inequality operators are provided for containers, ensuring accurate and efficient comparison semantics that align with modern C++ practices.</p>
 
+
 <dl class="doxySectionUser">
-<dt><b>Examples</b></dt>
+<dt>Examples</dt>
 <dd></dd>
 </dl>
 
@@ -121,6 +124,7 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Non-equality operator for containers.</p>
 
 
@@ -153,18 +157,29 @@ keywords:
 </dl>
 
 <dl class="doxySectionUser">
-<dt><b>Returns</b></dt>
-<dd>
-<p>A comparator object that evaluates to true if the containers are not equal.</p>
-</dd>
+<dt>Returns</dt>
+<dd><p>A comparator object that evaluates to true if the containers are not equal.</p></dd>
 </dl>
 
 
 <p>This overload of the non-equality operator enables direct comparison of two container objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two containers are not equal in content or order.</p>
 
+
 <p>The operator is enabled only for types recognised as containers by the framework's type traits.</p>
 
+
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00205">205</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gac48b765b41388c3ebe1a996f9a05aaf8">205</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-string-operators/#ga179e971d5e37795c036ad66aa35f1654">operator!=</a>(T&amp;&amp; lhs, T&amp;&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">206</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">207</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-">detail::ne_</a>{ </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight">T&amp;&amp;</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (lhs), </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight">T&amp;&amp;</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (rhs) };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">208</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+
+</div>
+
 </div>
 </div>
 
@@ -192,6 +207,7 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Equality operator for containers.</p>
 
 
@@ -224,22 +240,35 @@ keywords:
 </dl>
 
 <dl class="doxySectionUser">
-<dt><b>Returns</b></dt>
-<dd>
-<p>A comparator object that evaluates to true if the containers are equal.</p>
-</dd>
+<dt>Returns</dt>
+<dd><p>A comparator object that evaluates to true if the containers are equal.</p></dd>
 </dl>
 
 
 <p>This overload of the equality operator enables direct comparison of two container objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two containers are equal in content and order.</p>
 
+
 <p>The operator is enabled only for types recognised as containers by the framework's type traits.</p>
 
+
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00177">177</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaac06b4166dbd6e2b62a744878903eee8">177</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-string-operators/#gaabe34a842bf38ea2913a4164d2b0a9cb">operator==</a>(T&amp;&amp; lhs, T&amp;&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">178</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">179</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-">detail::eq_</a>{ </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight">T&amp;&amp;</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (lhs), </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight">T&amp;&amp;</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (rhs) };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">180</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+
+</div>
+
 </div>
 </div>
 
 </div>
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

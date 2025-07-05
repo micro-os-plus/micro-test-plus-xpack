@@ -5,6 +5,7 @@
 
 slug: /api/groups/micro-test-plus-c-api
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
@@ -25,7 +26,11 @@ keywords:
 
 <p>Although µTest++ is highly effective for testing C code, its implementation is based on modern C++ features that cannot be replicated in the C language. Consequently, µTest++ does not provide a dedicated C API or C equivalents for its C++ definitions.</p>
 
+
 <p>Developers can, however, use the µTest++ framework to organise and execute tests for C code by writing test cases in C++. This approach enables comprehensive testing of C modules while benefiting from the advanced capabilities and expressive syntax of the C++ API, supporting professional software quality assurance across all files and folders.</p>
+
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

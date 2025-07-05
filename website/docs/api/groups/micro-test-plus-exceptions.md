@@ -5,6 +5,7 @@
 
 slug: /api/groups/micro-test-plus-exceptions
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
@@ -82,12 +83,15 @@ keywords:
 
 <p>The µTest++ framework provides dedicated functions for verifying whether specific expressions or function calls throw exceptions, supporting robust testing of error handling and exceptional conditions in C++ code.</p>
 
+
 <p>These utilities enable developers to assert that exceptions are correctly thrown or not thrown as expected, improving the reliability and safety of software components. The framework supports both generic exception checks and type-specific exception verification, allowing for precise and expressive test cases.</p>
+
 
 <p>For more advanced scenarios, such as handling multiple expected exceptions, developers can use explicit <span class="doxyComputerOutput">try</span> blocks with multiple <span class="doxyComputerOutput">catch</span> statements and report the results using <span class="doxyComputerOutput">expect(true)</span> or <span class="doxyComputerOutput">expect(false)</span>. This approach ensures comprehensive coverage of exception handling logic.</p>
 
+
 <dl class="doxySectionUser">
-<dt><b>Examples</b></dt>
+<dt>Examples</dt>
 <dd></dd>
 </dl>
 
@@ -96,8 +100,7 @@ keywords:
 
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">mt::expect (mt::throws ([] { exercise_throw (</span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">); })) &lt;&lt; </span><span class="doxyHighlightStringLiteral">"exception thrown"</span><span class="doxyHighlight">;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">mt::expect (mt::throws&lt;std::runtime_error&gt; ([] { </span><span class="doxyHighlightKeywordFlow">throw</span><span class="doxyHighlight"> std::runtime_error{ </span><span class="doxyHighlightStringLiteral">""</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">}; }))</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">mt::expect (mt::throws&lt;std::runtime_error&gt; ([] { </span><span class="doxyHighlightKeywordFlow">throw</span><span class="doxyHighlight"> std::runtime_error{ </span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"> }; }))</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">        &lt;&lt; </span><span class="doxyHighlightStringLiteral">"std::runtime_error thrown"</span><span class="doxyHighlight">;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">mt::expect (mt::nothrow ([] { exercise_throw (</span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">); })) &lt;&lt; </span><span class="doxyHighlightStringLiteral">"exception not</span></span></div>
@@ -107,6 +110,7 @@ keywords:
 
 
 <p>If more advanced logic is required, such as handling multiple expected exceptions, use an explicit <span class="doxyComputerOutput">try</span> block with several <span class="doxyComputerOutput">catch</span> statements, and report the outcomes using <span class="doxyComputerOutput">expect(true)</span> or <span class="doxyComputerOutput">expect(false)</span>.</p>
+
 
 <div class="doxyProgramListing">
 
@@ -158,6 +162,7 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Check if a callable does not throw an exception.</p>
 
 
@@ -186,18 +191,29 @@ keywords:
 </dl>
 
 <dl class="doxySectionUser">
-<dt><b>Returns</b></dt>
-<dd>
-<p>An output stream to write optional messages.</p>
-</dd>
+<dt>Returns</dt>
+<dd><p>An output stream to write optional messages.</p></dd>
 </dl>
 
 
 <p>The <span class="doxyComputerOutput">nothrow</span> function template verifies whether invoking the provided callable object does not result in the throwing of any exception within the µTest++ framework. This is useful for testing exception safety and ensuring that code under test does not unexpectedly signal error conditions.</p>
 
+
 <p>The function returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes.</p>
 
+
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines-h/#l00242">242</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines-h">micro-test-plus-inlines.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga798bd28001c3938784073e60dd904148">242</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga798bd28001c3938784073e60dd904148">nothrow</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Callable_T&amp; func)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">243</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">244</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/nothrow-">detail::nothrow_&lt;Callable_T&gt;</a>{ func };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">245</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+
+</div>
+
 </div>
 </div>
 
@@ -225,6 +241,7 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Check if a callable throws a specific exception.</p>
 
 
@@ -257,18 +274,29 @@ keywords:
 </dl>
 
 <dl class="doxySectionUser">
-<dt><b>Returns</b></dt>
-<dd>
-<p>An output stream to write optional messages.</p>
-</dd>
+<dt>Returns</dt>
+<dd><p>An output stream to write optional messages.</p></dd>
 </dl>
 
 
 <p>The <span class="doxyComputerOutput">throws</span> function template verifies whether invoking the provided callable object results in the throwing of a specific exception type within the µTest++ framework. This is useful for testing error handling and exception safety in code under test.</p>
 
+
 <p>The function returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes.</p>
 
+
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines-h/#l00207">207</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines-h">micro-test-plus-inlines.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaf8f7602f40119da514be2a0bfc4b70f5">207</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">throws</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Callable_T&amp; func)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">208</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">209</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-">detail::throws_&lt;Callable_T, Exception_T&gt;</a>{ func };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">210</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+
+</div>
+
 </div>
 </div>
 
@@ -296,6 +324,7 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Check if a callable throws an exception (any exception).</p>
 
 
@@ -324,22 +353,35 @@ keywords:
 </dl>
 
 <dl class="doxySectionUser">
-<dt><b>Returns</b></dt>
-<dd>
-<p>An output stream to write optional messages.</p>
-</dd>
+<dt>Returns</dt>
+<dd><p>An output stream to write optional messages.</p></dd>
 </dl>
 
 
 <p>The <span class="doxyComputerOutput">throws</span> function template verifies whether invoking the provided callable object results in the throwing of any exception within the µTest++ framework. This is useful for testing general exception safety and ensuring that code under test properly signals error conditions.</p>
 
+
 <p>The function returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes.</p>
 
+
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines-h/#l00224">224</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines-h">micro-test-plus-inlines.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga8bf54756e4122c6a0bd123b4621e60e2">224</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">throws</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Callable_T&amp; func)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">225</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">226</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-">detail::throws_&lt;Callable_T&gt;</a>{ func };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">227</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+
+</div>
+
 </div>
 </div>
 
 </div>
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

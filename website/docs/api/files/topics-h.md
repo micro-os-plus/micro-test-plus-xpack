@@ -5,6 +5,7 @@
 
 slug: /api/files/topics-h
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
@@ -25,17 +26,22 @@ keywords:
 
 <p>This file defines the principal Doxygen groups and documentation topics for the µTest++ testing framework, which forms part of the µOS++ project.</p>
 
+
 <p>Although named as a header, this file is not included in the build process; it is intended exclusively as a documentation resource for Doxygen. Due to Doxygen processing requirements, it cannot be provided as a Markdown file or a .doxyfile.</p>
+
 
 <p>The file introduces and organises the main documentation groups for the framework, covering the C++ API, command-line options, expectations, assumptions, comparators, operators, literals, utility functions, and test suite management.</p>
 
+
 <p>The documentation is structured to provide a comprehensive overview of the framework’s features, usage patterns, and configuration options. It includes detailed explanations, usage examples, and descriptions of the available verbosity modes, along with representative output for various scenarios.</p>
+
 
 <p>All documentation topics and group definitions are maintained within this file to ensure a consistent and modular structure. The file is located in the <span class="doxyComputerOutput">website/doxygen</span> folder to facilitate seamless integration with the Doxygen documentation system.</p>
 
+
 ## File Listing
 
-<p>The file content with the documentation metadata removed is:</p>
+The file content with the documentation metadata removed is:
 
 <div class="doxyProgramListing">
 
@@ -57,6 +63,8 @@ keywords:
 
 </div>
 
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

@@ -5,6 +5,7 @@
 
 slug: /api/namespaces/micro-os-plus
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
@@ -29,8 +30,8 @@ namespace micro_os_plus { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">namespace</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">namespace</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_test_plus</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -51,9 +52,14 @@ namespace micro_os_plus { ... }
 
 <p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus">micro_os_plus</a></span> namespace serves as the main scope for all components of the µOS++ framework, encompassing classes, functions, variables, enumerations, type definitions, and related entities.</p>
 
+
 <p>This namespace is further structured into nested namespaces, each dedicated to specific modules or subsystems. By encapsulating all definitions within well-defined namespaces, the framework achieves clear code organisation, minimises naming conflicts, and enhances overall maintainability.</p>
 
+
 <p>This approach promotes modular development, facilitates code reuse, and ensures seamless integration of components within the µOS++ ecosystem, supporting the creation of efficient, robust, and scalable embedded systems.</p>
+
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

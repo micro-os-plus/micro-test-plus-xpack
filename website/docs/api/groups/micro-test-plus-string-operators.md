@@ -5,6 +5,7 @@
 
 slug: /api/groups/micro-test-plus-string-operators
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
@@ -23,7 +24,7 @@ keywords:
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">constexpr auto</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">constexpr auto</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga179e971d5e37795c036ad66aa35f1654">operator!=</a> (std::string_view lhs, std::string_view rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -37,7 +38,7 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">constexpr auto</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">constexpr auto</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gaabe34a842bf38ea2913a4164d2b0a9cb">operator==</a> (std::string_view lhs, std::string_view rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -59,10 +60,12 @@ keywords:
 
 <p>The µTest++ framework provides overloaded operators specifically for comparing string types, such as <span class="doxyComputerOutput">std::string_view</span>. These operators enable clear and expressive assertions when verifying string values within test cases, supporting both equality and inequality checks.</p>
 
+
 <p>By using these dedicated string operators, developers can write concise and readable tests that accurately reflect the intended logic. The framework ensures that string comparisons are performed correctly and that any failed checks are reported with both the actual and expected values for straightforward diagnostics.</p>
 
+
 <dl class="doxySectionUser">
-<dt><b>Examples</b></dt>
+<dt>Examples</dt>
 <dd></dd>
 </dl>
 
@@ -111,6 +114,7 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Non-equality operator for <span class="doxyComputerOutput">string_view</span> objects.</p>
 
 
@@ -131,16 +135,26 @@ keywords:
 </dl>
 
 <dl class="doxySectionUser">
-<dt><b>Returns</b></dt>
-<dd>
-<p>A comparator object that evaluates to true if the string views are not equal.</p>
-</dd>
+<dt>Returns</dt>
+<dd><p>A comparator object that evaluates to true if the string views are not equal.</p></dd>
 </dl>
 
 
 <p>This overload of the non-equality operator enables direct comparison of two <span class="doxyComputerOutput">std::string_view</span> objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two string views are not equal.</p>
 
+
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00149">149</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga179e971d5e37795c036ad66aa35f1654">149</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#ga179e971d5e37795c036ad66aa35f1654">operator!=</a>(std::string_view lhs, std::string_view rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">150</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">151</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-">detail::ne_</a>{ lhs, rhs };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">152</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+
+</div>
+
 </div>
 </div>
 
@@ -167,6 +181,7 @@ keywords:
 </table>
 </div>
 <div class="doxyMemberDoc">
+
 <p>Equality operator for <span class="doxyComputerOutput">string_view</span> objects.</p>
 
 
@@ -187,20 +202,32 @@ keywords:
 </dl>
 
 <dl class="doxySectionUser">
-<dt><b>Returns</b></dt>
-<dd>
-<p>A comparator object that evaluates to true if the string views are equal.</p>
-</dd>
+<dt>Returns</dt>
+<dd><p>A comparator object that evaluates to true if the string views are equal.</p></dd>
 </dl>
 
 
 <p>This overload of the equality operator enables direct comparison of two <span class="doxyComputerOutput">std::string_view</span> objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two string views are equal.</p>
 
+
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00128">128</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaabe34a842bf38ea2913a4164d2b0a9cb">128</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#gaabe34a842bf38ea2913a4164d2b0a9cb">operator==</a>(std::string_view lhs, std::string_view rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">129</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">130</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-">detail::eq_</a>{ lhs, rhs };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">131</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+
+</div>
+
 </div>
 </div>
 
 </div>
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 

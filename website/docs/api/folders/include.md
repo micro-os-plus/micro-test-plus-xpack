@@ -5,6 +5,7 @@
 
 slug: /api/folders/include
 custom_edit_url: null
+toc_max_heading_level: 4
 keywords:
   - doxygen
   - reference
@@ -23,7 +24,7 @@ keywords:
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="right" valign="top">folder</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">folder</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/folders/include/micro-os-plus">micro-os-plus</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -45,7 +46,11 @@ keywords:
 
 <p>The <span class="doxyComputerOutput">include</span> folder contains all public header files for the µOS++ libraries.</p>
 
+
 <p>To provide isolation with other projects, the header files for the µOS++ libraries are located in the <span class="doxyComputerOutput">micro-os-plus</span> folder.</p>
+
+
+<hr/>
 
 <p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 
