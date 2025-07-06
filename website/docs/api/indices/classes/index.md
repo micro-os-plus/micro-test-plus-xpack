@@ -90,7 +90,7 @@ Struct template specialisation for extracting function traits from plain functio
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-05ab90b3270445bd2304511210cefdc8">function_traits&lt;...&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-05ab90b3270445bd2304511210cefdc8">function_traits&lt;R(T::*)(Args_T...) const&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Struct template specialisation for extracting function traits from const member function types
@@ -288,7 +288,7 @@ Logical OR comparator struct template
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-">throws_&lt;...&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-">throws_&lt;Callable_T, Exception_T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Operator struct template to check if an expression throws a specific exception

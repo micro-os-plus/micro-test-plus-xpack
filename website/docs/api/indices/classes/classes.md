@@ -55,9 +55,9 @@ keywords:
 
 <ul>
 <li><b>floating_point_constant&lt;T, N, D, Size, P&gt;</b>: struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt;T, N, D, Size, P&gt;</a></li>
-<li><b>function_traits&lt;...&gt;</b>: struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-05ab90b3270445bd2304511210cefdc8">micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(T::*)(Args_T...) const&gt;</a></li>
 <li><b>function_traits&lt;R(*)(Args_T...)&gt;</b>: struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-c8ae4832b74f8fe701e29e20410c0d5a">micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(*)(Args_T...)&gt;</a></li>
 <li><b>function_traits&lt;R(Args_T...)&gt;</b>: struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-567248e3f9c17aff751ce83e3c5b4d55">micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(Args_T...)&gt;</a></li>
+<li><b>function_traits&lt;R(T::*)(Args_T...) const&gt;</b>: struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-05ab90b3270445bd2304511210cefdc8">micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(T::*)(Args_T...) const&gt;</a></li>
 <li><b>function_traits&lt;R(T::*)(Args_T...)&gt;</b>: struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-aa0970b0a1efa305c0cfd55ce14bb11b">micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(T::*)(Args_T...)&gt;</a></li>
 </ul>
 <p>5 entries</p>
@@ -126,7 +126,7 @@ keywords:
 <li><b>test_runner</b>: class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">micro_os_plus::micro_test_plus::test_runner</a></li>
 <li><b>test_suite</b>: class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">micro_os_plus::micro_test_plus::test_suite</a></li>
 <li><b>test_suite_base</b>: class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">micro_os_plus::micro_test_plus::test_suite_base</a></li>
-<li><b>throws_&lt;...&gt;</b>: struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-">micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, Exception_T&gt;</a></li>
+<li><b>throws_&lt;Callable_T, Exception_T&gt;</b>: struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-">micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, Exception_T&gt;</a></li>
 <li><b>throws_&lt;Callable_T, void&gt;</b>: struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws--6ce6a9ac7588b533a253fd8d8638e6be">micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, void&gt;</a></li>
 <li><b>to_t&lt;T&gt;</b>: struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/to-t">micro_os_plus::micro_test_plus::to_t&lt;T&gt;</a></li>
 </ul>

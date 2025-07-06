@@ -20,7 +20,7 @@ keywords:
 ## - V -
 
 <ul>
-<li><b>verbosity</b>: file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914b">test-reporter.h</a></li>
+<li><b>verbosity</b>: file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914b">include/micro-os-plus/micro-test-plus/test-reporter.h</a></li>
 </ul>
 <br/>
 <p>Total: 1 entries.</p>

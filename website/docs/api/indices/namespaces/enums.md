@@ -20,7 +20,7 @@ keywords:
 ## - V -
 
 <ul>
-<li><b>verbosity</b>: namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914b">micro_test_plus</a></li>
+<li><b>verbosity</b>: namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914b">micro_os_plus::micro_test_plus</a></li>
 </ul>
 <br/>
 <p>Total: 1 entries.</p>
