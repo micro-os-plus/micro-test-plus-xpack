@@ -69,11 +69,13 @@ keywords:
 <li><b>default_suite_name_</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#af60fbb3e376f27b801c30ce6c7a01808">micro_os_plus::micro_test_plus::test_runner</a></li>
 <li><b>default_test_suite_</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a637b06becc3677c2180f022cc4c363e8">micro_os_plus::micro_test_plus::test_runner</a></li>
 <li><b>deferred_reporter_base</b>: as class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base">micro_os_plus::micro_test_plus::detail::deferred_reporter_base</a></li>
+<li><b>~deferred_reporter_base()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#a3a8503e793c807cbb882033cc5ff2831">micro_os_plus::micro_test_plus::detail::deferred_reporter_base</a></li>
 <li><b>deferred_reporter_base()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#aba23fdd1c24e8232712ba47b8e107a19">micro_os_plus::micro_test_plus::detail::deferred_reporter_base</a></li>
+<li><b>~deferred_reporter()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter/#aa221de23c9bed6bc5844c077fbafa46b">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt;Expr_T&gt;</a></li>
 <li><b>deferred_reporter()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter/#a3e7dc16ad866722075fc1b1ac8fa6701">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt;Expr_T&gt;</a></li>
 <li><b>deferred_reporter&lt;Expr_T&gt;</b>: as class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt;Expr_T&gt;</a></li>
 </ul>
-<p>6 entries</p>
+<p>8 entries</p>
 
 ## - E -
 
@@ -332,14 +334,17 @@ keywords:
 <li><b>test_reporter</b>: as class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">micro_os_plus::micro_test_plus::test_reporter</a></li>
 <li><b>test_reporter()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a2e4113dbacfc7349545ddf6e5cca5268">micro_os_plus::micro_test_plus::test_reporter</a></li>
 <li><b>test_runner</b>: as class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">micro_os_plus::micro_test_plus::test_runner</a></li>
+<li><b>~test_runner()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a4e9d9c95479a6e8eab60c69a27f4ba91">micro_os_plus::micro_test_plus::test_runner</a></li>
 <li><b>test_runner()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a3e2fdf09d6a1cbd52b2189fcdf12aabf">micro_os_plus::micro_test_plus::test_runner</a></li>
 <li><b>test_runner()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a84abdee67279e9a07a68fa01c523ff14">micro_os_plus::micro_test_plus::test_runner</a></li>
 <li><b>test_runner()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a307ecef3a7db19a095ea3202fc5e9d65">micro_os_plus::micro_test_plus::test_runner</a></li>
 <li><b>test_suite</b>: as class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">micro_os_plus::micro_test_plus::test_suite</a></li>
 <li><b>test_suite_base</b>: as class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">micro_os_plus::micro_test_plus::test_suite_base</a></li>
+<li><b>~test_suite_base()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a8684c3b31ab07eaef800280bc172d6de">micro_os_plus::micro_test_plus::test_suite_base</a></li>
 <li><b>test_suite_base()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a1aea53994faf3a7f7a610a6c47a8ef4a">micro_os_plus::micro_test_plus::test_suite_base</a></li>
 <li><b>test_suite_base()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ac3d6caf07f5c38f8dc8d75d8ae7bb20c">micro_os_plus::micro_test_plus::test_suite_base</a></li>
 <li><b>test_suite_base()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ac66248be55f033bef1a32fb1204ce03b">micro_os_plus::micro_test_plus::test_suite_base</a></li>
+<li><b>~test_suite()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#aed21554ac8fa83e61ce178f37b0cdac8">micro_os_plus::micro_test_plus::test_suite</a></li>
 <li><b>test_suite()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a824b38d21a3f4d0adb99827455f159cf">micro_os_plus::micro_test_plus::test_suite</a></li>
 <li><b>test_suite()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a7c82c1d689d5b438a1ed6fd59244d8e3">micro_os_plus::micro_test_plus::test_suite</a></li>
 <li><b>test_suite()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#acdbf1e957b2b5baae7d468820c8fc006">micro_os_plus::micro_test_plus::test_suite</a></li>
@@ -351,7 +356,7 @@ keywords:
 <li><b>type</b>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/identity/#a8a488c6629ed310aa4fa5713e4e2e016">micro_os_plus::micro_test_plus::type_traits::identity&lt;T, class...&gt;</a></li>
 <li><b>type</b>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires--d4cc09ec8cf7793e85cd7a9c044686e1/#a39b51e229ec854866a430875e6f5fd10">micro_os_plus::micro_test_plus::type_traits::requires_&lt;true&gt;</a></li>
 </ul>
-<p>25 entries</p>
+<p>28 entries</p>
 
 ## - U -
 
@@ -401,17 +406,6 @@ keywords:
 <ul>
 <li><b>was_successful()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ae60536040204e7481b50dfde7b0a6600">micro_os_plus::micro_test_plus::test_suite_base</a></li>
 </ul>
-
-## - ~ -
-
-<ul>
-<li><b>~deferred_reporter_base()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#a3a8503e793c807cbb882033cc5ff2831">micro_os_plus::micro_test_plus::detail::deferred_reporter_base</a></li>
-<li><b>~deferred_reporter()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter/#aa221de23c9bed6bc5844c077fbafa46b">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt;Expr_T&gt;</a></li>
-<li><b>~test_runner()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a4e9d9c95479a6e8eab60c69a27f4ba91">micro_os_plus::micro_test_plus::test_runner</a></li>
-<li><b>~test_suite_base()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a8684c3b31ab07eaef800280bc172d6de">micro_os_plus::micro_test_plus::test_suite_base</a></li>
-<li><b>~test_suite()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#aed21554ac8fa83e61ce178f37b0cdac8">micro_os_plus::micro_test_plus::test_suite</a></li>
-</ul>
-<p>5 entries</p>
 <br/>
 <p>Total: 274 entries.</p>
 
