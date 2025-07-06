@@ -20,13 +20,13 @@ keywords:
 ## - R -
 
 <ul>
-<li><b>requires_t</b>: namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a1cbbf299a006b4692df250ef2a6fc7c2">micro_os_plus::micro_test_plus::type_traits</a></li>
+<li><b>requires_t</b>: as typedef in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a1cbbf299a006b4692df250ef2a6fc7c2">micro_os_plus::micro_test_plus::type_traits</a></li>
 </ul>
 
 ## - V -
 
 <ul>
-<li><b>verbosity_t</b>: namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a08e787c2c2f8365df2c9b372605535ac">micro_os_plus::micro_test_plus</a></li>
+<li><b>verbosity_t</b>: as typedef in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a08e787c2c2f8365df2c9b372605535ac">micro_os_plus::micro_test_plus</a></li>
 </ul>
 <br/>
 <p>Total: 2 entries.</p>
