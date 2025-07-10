@@ -12,7 +12,7 @@
     "deep-clean": "del-cli .docusaurus build node_modules package-lock.json",
     "doxygen": "del-cli static/doxygen doxygen/xml; (cd doxygen; doxygen config.doxyfile)",
     "browser": "open-cli static/doxygen/index.html",
-    "generate-doxygen": "docusaurus generate-doxygen",
+    "convert-doxygen": "doxygen2docusaurus",
     "check-urls": "blc https://micro-os-plus.github.io/micro-test-plus-xpack/ --recursive --ordered --filter-level 2 --exclude 'https://twitter.com*'",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
@@ -80,6 +80,12 @@
       "last 3 firefox version",
       "last 5 safari version"
     ]
+  },
+  "doxygen2docusaurus": {
+    "baseUrl": "/micro-test-plus-xpack/",
+    "suggestToDoDescriptions": false,
+    "originalPagesNote": "For comparison, the original Doxygen html pages, styled with the <a href=\"https://jothepro.github.io/doxygen-awesome-css/\">doxygen-awesome-css</a> plugin, continue to be available via the <a href=\"pathname:///doxygen/topics.html\"><code>.../doxygen/*.html</b></code> URLs.",
+    "verbose": false
   },
   "websiteConfig": {
     "tagline": "A C++ source code library with a lightweight testing framework for embedded systems",

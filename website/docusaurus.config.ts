@@ -69,15 +69,6 @@ const config: Config = {
 
   plugins: [
     [
-      '@xpack/docusaurus-plugin-doxygen',
-      {
-        // redirectsOutputFolderPath: 'reference',
-        verbose: false,
-        suggestToDoDescriptions: false,
-        originalPagesNote: 'For comparison, the original Doxygen html pages, styled with the <a href="https://jothepro.github.io/doxygen-awesome-css/">doxygen-awesome-css</a> plugin, continue to be available via the <a href="pathname:///doxygen/topics.html"><code>.../doxygen/*.html</b></code> URLs.'
-      }
-    ],
-    [
       // https://docusaurus.io/docs/next/api/plugins/@docusaurus/plugin-client-redirects#redirects
       '@docusaurus/plugin-client-redirects',
       redirects,

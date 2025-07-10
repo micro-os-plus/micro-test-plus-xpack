@@ -1,7 +1,7 @@
 ---
 
 # DO NOT EDIT!
-# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+# Automatically generated via doxygen2docusaurus by Doxygen.
 
 slug: /api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-c8ae4832b74f8fe701e29e20410c0d5a
 custom_edit_url: null
@@ -183,6 +183,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 
 </div>

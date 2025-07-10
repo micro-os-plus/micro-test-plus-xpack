@@ -1,7 +1,7 @@
 ---
 
 # DO NOT EDIT!
-# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+# Automatically generated via doxygen2docusaurus by Doxygen.
 
 slug: /api/groups/micro-test-plus-cli
 custom_edit_url: null
@@ -20,8 +20,6 @@ keywords:
 <p>Options for controlling test output verbosity at run-time.</p>
 
 ## Description {#details}
-
-<p>Options for controlling test output verbosity at run-time.</p>
 
 
 <p>The µTest++ framework provides flexible command-line options to control the verbosity of test output, allowing users to tailor the level of detail to their specific requirements and workflow.</p>
@@ -175,6 +173,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 
 </div>

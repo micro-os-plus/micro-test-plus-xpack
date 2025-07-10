@@ -1,7 +1,7 @@
 ---
 
 # DO NOT EDIT!
-# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+# Automatically generated via doxygen2docusaurus by Doxygen.
 
 slug: /api/groups/micro-test-plus-c-api
 custom_edit_url: null
@@ -21,8 +21,6 @@ keywords:
 
 ## Description {#details}
 
-<p>Topics related to the µTest++ C API.</p>
-
 
 <p>Although µTest++ is highly effective for testing C code, its implementation is based on modern C++ features that cannot be replicated in the C language. Consequently, µTest++ does not provide a dedicated C API or C equivalents for its C++ definitions.</p>
 
@@ -32,6 +30,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/docusaurus-plugin-doxygen">docusaurus-plugin-doxygen</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 
 </div>
