@@ -243,7 +243,7 @@
           "items": [
             {
               "type": "doc",
-              "label": "assertion",
+              "label": "assertion<Expr_T>",
               "className": "doxyEllipsis",
               "id": "api/structs/micro-os-plus-micro-test-plus-detail-assertion"
             },
@@ -265,7 +265,7 @@
               "items": [
                 {
                   "type": "doc",
-                  "label": "deferred_reporter",
+                  "label": "deferred_reporter<Expr_T>",
                   "className": "doxyEllipsis",
                   "id": "api/classes/micro-os-plus-micro-test-plus-detail-deferred-reporter"
                 }
@@ -273,37 +273,37 @@
             },
             {
               "type": "doc",
-              "label": "function_traits",
+              "label": "function_traits<R(*)(Args_T...)>",
               "className": "doxyEllipsis",
               "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-function-traits-c8ae4832b74f8fe701e29e20410c0d5a"
             },
             {
               "type": "doc",
-              "label": "function_traits",
+              "label": "function_traits<R(Args_T...)>",
               "className": "doxyEllipsis",
               "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-function-traits-567248e3f9c17aff751ce83e3c5b4d55"
             },
             {
               "type": "doc",
-              "label": "function_traits",
+              "label": "function_traits<R(T::*)(Args_T...) const>",
               "className": "doxyEllipsis",
               "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-function-traits-05ab90b3270445bd2304511210cefdc8"
             },
             {
               "type": "doc",
-              "label": "function_traits",
+              "label": "function_traits<R(T::*)(Args_T...)>",
               "className": "doxyEllipsis",
               "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-function-traits-aa0970b0a1efa305c0cfd55ce14bb11b"
             },
             {
               "type": "doc",
-              "label": "identity",
+              "label": "identity<T, class...>",
               "className": "doxyEllipsis",
               "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-identity"
             },
             {
               "type": "doc",
-              "label": "list",
+              "label": "list<class...>",
               "className": "doxyEllipsis",
               "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-list"
             },
@@ -319,97 +319,97 @@
               "items": [
                 {
                   "type": "doc",
-                  "label": "and_",
+                  "label": "and_<Lhs_T, Rhs_T>",
                   "className": "doxyEllipsis",
                   "id": "api/structs/micro-os-plus-micro-test-plus-detail-and-"
                 },
                 {
                   "type": "doc",
-                  "label": "eq_",
+                  "label": "eq_<Lhs_T, Rhs_T>",
                   "className": "doxyEllipsis",
                   "id": "api/structs/micro-os-plus-micro-test-plus-detail-eq-"
                 },
                 {
                   "type": "doc",
-                  "label": "floating_point_constant",
+                  "label": "floating_point_constant<T, N, D, Size, P>",
                   "className": "doxyEllipsis",
                   "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-floating-point-constant"
                 },
                 {
                   "type": "doc",
-                  "label": "ge_",
+                  "label": "ge_<Lhs_T, Rhs_T>",
                   "className": "doxyEllipsis",
                   "id": "api/structs/micro-os-plus-micro-test-plus-detail-ge-"
                 },
                 {
                   "type": "doc",
-                  "label": "genuine_integral_value",
+                  "label": "genuine_integral_value<T>",
                   "className": "doxyEllipsis",
                   "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-genuine-integral-value"
                 },
                 {
                   "type": "doc",
-                  "label": "gt_",
+                  "label": "gt_<Lhs_T, Rhs_T>",
                   "className": "doxyEllipsis",
                   "id": "api/structs/micro-os-plus-micro-test-plus-detail-gt-"
                 },
                 {
                   "type": "doc",
-                  "label": "integral_constant",
+                  "label": "integral_constant<N>",
                   "className": "doxyEllipsis",
                   "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-integral-constant"
                 },
                 {
                   "type": "doc",
-                  "label": "le_",
+                  "label": "le_<Lhs_T, Rhs_T>",
                   "className": "doxyEllipsis",
                   "id": "api/structs/micro-os-plus-micro-test-plus-detail-le-"
                 },
                 {
                   "type": "doc",
-                  "label": "lt_",
+                  "label": "lt_<Lhs_T, Rhs_T>",
                   "className": "doxyEllipsis",
                   "id": "api/structs/micro-os-plus-micro-test-plus-detail-lt-"
                 },
                 {
                   "type": "doc",
-                  "label": "ne_",
+                  "label": "ne_<Lhs_T, Rhs_T>",
                   "className": "doxyEllipsis",
                   "id": "api/structs/micro-os-plus-micro-test-plus-detail-ne-"
                 },
                 {
                   "type": "doc",
-                  "label": "not_",
+                  "label": "not_<T>",
                   "className": "doxyEllipsis",
                   "id": "api/structs/micro-os-plus-micro-test-plus-detail-not-"
                 },
                 {
                   "type": "doc",
-                  "label": "nothrow_",
+                  "label": "nothrow_<Callable_T>",
                   "className": "doxyEllipsis",
                   "id": "api/structs/micro-os-plus-micro-test-plus-detail-nothrow-"
                 },
                 {
                   "type": "doc",
-                  "label": "or_",
+                  "label": "or_<Lhs_T, Rhs_T>",
                   "className": "doxyEllipsis",
                   "id": "api/structs/micro-os-plus-micro-test-plus-detail-or-"
                 },
                 {
                   "type": "doc",
-                  "label": "throws_",
+                  "label": "throws_<Callable_T, Exception_T>",
                   "className": "doxyEllipsis",
                   "id": "api/structs/micro-os-plus-micro-test-plus-detail-throws-"
                 },
                 {
                   "type": "doc",
-                  "label": "throws_",
+                  "label": "throws_<Callable_T, void>",
                   "className": "doxyEllipsis",
                   "id": "api/structs/micro-os-plus-micro-test-plus-detail-throws--6ce6a9ac7588b533a253fd8d8638e6be"
                 },
                 {
                   "type": "category",
-                  "label": "value",
+                  "label": "value<T, class>",
                   "link": {
                     "type": "doc",
                     "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-value"
@@ -419,13 +419,13 @@
                   "items": [
                     {
                       "type": "doc",
-                      "label": "_t",
+                      "label": "_t<T>",
                       "className": "doxyEllipsis",
                       "id": "api/structs/micro-os-plus-micro-test-plus--t"
                     },
                     {
                       "type": "doc",
-                      "label": "to_t",
+                      "label": "to_t<T>",
                       "className": "doxyEllipsis",
                       "id": "api/structs/micro-os-plus-micro-test-plus-to-t"
                     }
@@ -433,7 +433,7 @@
                 },
                 {
                   "type": "doc",
-                  "label": "value",
+                  "label": "value<T, type_traits::requires_t< type_traits::is_floating_point_v< T > >>",
                   "className": "doxyEllipsis",
                   "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-value-dae7771377f0087abbec46abf87b329e"
                 }
@@ -441,13 +441,13 @@
             },
             {
               "type": "doc",
-              "label": "requires_",
+              "label": "requires_<bool>",
               "className": "doxyEllipsis",
               "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-requires-"
             },
             {
               "type": "doc",
-              "label": "requires_",
+              "label": "requires_<true>",
               "className": "doxyEllipsis",
               "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-requires--d4cc09ec8cf7793e85cd7a9c044686e1"
             },
