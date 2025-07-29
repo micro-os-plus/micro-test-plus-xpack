@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `reflection` Namespace Reference
+# `reflection` Namespace
 
 <p>Reflection utilities for the µTest++ testing framework. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `requires_` Struct Template Reference
+# `requires_` Struct Template
 
 <p>Struct template for SFINAE requirements. <a href="#details">More...</a></p>
 

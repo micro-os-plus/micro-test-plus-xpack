@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `src` Folder Reference
+# `src` Folder
 
 <p>Folder with C/C++ source files. <a href="#details">More...</a></p>
 

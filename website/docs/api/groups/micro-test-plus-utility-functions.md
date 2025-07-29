@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Utility Functions Reference
+# Utility Functions
 
 <p>Utility functions for advanced string handling in tests. <a href="#details">More...</a></p>
 

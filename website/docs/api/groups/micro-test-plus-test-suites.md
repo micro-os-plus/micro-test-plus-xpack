@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Test Suites Reference
+# Test Suites
 
 <p>Test suites are named collections of test cases. <a href="#details">More...</a></p>
 

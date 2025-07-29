@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `micro-test-plus.cpp` File Reference
+# `micro-test-plus.cpp` File
 
 <p>C++ source file with implementations for the µTest++ methods. <a href="#details">More...</a></p>
 

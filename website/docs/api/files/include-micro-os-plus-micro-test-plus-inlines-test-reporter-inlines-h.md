@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `test-reporter-inlines.h` File Reference
+# `test-reporter-inlines.h` File
 
 <p>C++ header file with inline implementations for the µTest++ test reporter. <a href="#details">More...</a></p>
 

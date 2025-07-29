@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `topics.h` File Reference
+# `topics.h` File
 
 <p>Project specific Doxygen topics definitions. <a href="#details">More...</a></p>
 

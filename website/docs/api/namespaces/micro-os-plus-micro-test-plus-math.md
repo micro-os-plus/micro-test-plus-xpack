@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `math` Namespace Reference
+# `math` Namespace
 
 <p>Mathematical utilities for the µTest++ testing framework. <a href="#details">More...</a></p>
 

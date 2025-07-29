@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `operators` Namespace Reference
+# `operators` Namespace
 
 <p>Custom operator overloads for expressive and type-safe test assertions. <a href="#details">More...</a></p>
 

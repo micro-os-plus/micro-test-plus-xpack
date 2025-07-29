@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `include` Folder Reference
+# `include` Folder
 
 <p>Folder with C/C++ header files. <a href="#details">More...</a></p>
 

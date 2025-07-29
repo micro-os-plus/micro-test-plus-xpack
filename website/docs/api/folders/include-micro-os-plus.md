@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `micro-os-plus` Folder Reference
+# `micro-os-plus` Folder
 
 <p>Folder with C/C++ header files for the µOS++ libraries. <a href="#details">More...</a></p>
 

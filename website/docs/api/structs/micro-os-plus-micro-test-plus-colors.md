@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `colors` Struct Reference
+# `colors` Struct
 
 <p>Colours used to highlight pass and fail results in test reports. <a href="#details">More...</a></p>
 

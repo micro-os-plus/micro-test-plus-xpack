@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `floating_point_constant` Struct Template Reference
+# `floating_point_constant` Struct Template
 
 <p>Struct template representing a generic floating point constant with custom size and precision. <a href="#details">More...</a></p>
 

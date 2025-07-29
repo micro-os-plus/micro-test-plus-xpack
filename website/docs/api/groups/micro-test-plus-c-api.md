@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The C API Reference
+# C API
 
 <p>Topics related to the µTest++ C API.</p>
 

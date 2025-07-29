@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `list` Struct Template Reference
+# `list` Struct Template
 
 <p>Struct template representing a compile-time type list. <a href="#details">More...</a></p>
 

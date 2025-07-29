@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Expectations Reference
+# Expectations
 
 <p>Expectations are checks whose outcomes are reported. <a href="#details">More...</a></p>
 

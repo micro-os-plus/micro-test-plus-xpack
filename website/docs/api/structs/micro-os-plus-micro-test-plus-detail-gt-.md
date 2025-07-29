@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `gt_` Struct Template Reference
+# `gt_` Struct Template
 
 <p>Greater than comparator struct template. <a href="#details">More...</a></p>
 

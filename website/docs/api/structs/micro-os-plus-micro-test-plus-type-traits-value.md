@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `value` Struct Template Reference
+# `value` Struct Template
 
 <p>Struct template representing a generic value, accessible via a getter. <a href="#details">More...</a></p>
 

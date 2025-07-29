@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The µOS++ Topics Reference
+# µOS++ Topics
 
 <p>Topics related to the µOS++ framework. <a href="#details">More...</a></p>
 

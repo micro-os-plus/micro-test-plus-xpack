@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `identity` Struct Template Reference
+# `identity` Struct Template
 
 <p>Struct template for compile-time type identity. <a href="#details">More...</a></p>
 

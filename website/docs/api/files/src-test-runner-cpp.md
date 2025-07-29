@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `test-runner.cpp` File Reference
+# `test-runner.cpp` File
 
 <p>C++ source file with implementations for the µTest++ test runner methods. <a href="#details">More...</a></p>
 

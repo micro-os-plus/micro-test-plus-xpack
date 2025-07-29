@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ne_` Struct Template Reference
+# `ne_` Struct Template
 
 <p>Non-equality comparator struct template. <a href="#details">More...</a></p>
 

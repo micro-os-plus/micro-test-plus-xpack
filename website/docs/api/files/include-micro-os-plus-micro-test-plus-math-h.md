@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `math.h` File Reference
+# `math.h` File
 
 <p>C++ header file with declarations for the µTest++ mathematical utilities. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `type-traits.h` File Reference
+# `type-traits.h` File
 
 <p>C++ header file with declarations for the µTest++ type trait utilities and metaprogramming support. <a href="#details">More...</a></p>
 

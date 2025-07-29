@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `math-inlines.h` File Reference
+# `math-inlines.h` File
 
 <p>C++ header file with inline implementations for the µTest++ mathematical utilities. <a href="#details">More...</a></p>
 

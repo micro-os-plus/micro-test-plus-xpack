@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `micro_os_plus` Namespace Reference
+# `micro_os_plus` Namespace
 
 <p>The primary namespace for the µOS++ framework. <a href="#details">More...</a></p>
 

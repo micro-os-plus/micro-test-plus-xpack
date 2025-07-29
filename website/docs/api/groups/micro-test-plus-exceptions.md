@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Checking Exceptions Reference
+# Checking Exceptions
 
 <p>Functions for verifying exceptions in test cases. <a href="#details">More...</a></p>
 

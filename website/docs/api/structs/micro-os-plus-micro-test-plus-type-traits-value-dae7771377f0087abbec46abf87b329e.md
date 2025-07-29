@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `value` Struct Template Reference
+# `value` Struct Template
 
 <p>Struct template representing a floating point value with precision control. <a href="#details">More...</a></p>
 

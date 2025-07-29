@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `literals.h` File Reference
+# `literals.h` File
 
 <p>C++ header file with declarations for the µTest++ user-defined literals and type wrappers. <a href="#details">More...</a></p>
 

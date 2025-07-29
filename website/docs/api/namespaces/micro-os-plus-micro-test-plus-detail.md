@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `detail` Namespace Reference
+# `detail` Namespace
 
 <p>Internal implementation details for the µTest++ framework. <a href="#details">More...</a></p>
 

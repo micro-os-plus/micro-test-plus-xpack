@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `reflection.h` File Reference
+# `reflection.h` File
 
 <p>C++ header file with declarations for the µTest++ reflection utilities. <a href="#details">More...</a></p>
 

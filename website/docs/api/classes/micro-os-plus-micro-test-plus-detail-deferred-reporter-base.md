@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `deferred_reporter_base` Class Reference
+# `deferred_reporter_base` Class
 
 <p>Base class for a deferred reporter that collects messages into a string. <a href="#details">More...</a></p>
 

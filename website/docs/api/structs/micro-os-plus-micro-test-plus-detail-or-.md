@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `or_` Struct Template Reference
+# `or_` Struct Template
 
 <p>Logical OR comparator struct template. <a href="#details">More...</a></p>
 

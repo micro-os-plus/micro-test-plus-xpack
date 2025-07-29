@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Test Cases Reference
+# Test Cases
 
 <p>Test cases are named sequences of checks. <a href="#details">More...</a></p>
 

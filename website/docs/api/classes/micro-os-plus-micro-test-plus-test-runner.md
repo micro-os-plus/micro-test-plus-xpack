@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `test_runner` Class Reference
+# `test_runner` Class
 
 <p>The test runner for the µTest++ framework. <a href="#details">More...</a></p>
 

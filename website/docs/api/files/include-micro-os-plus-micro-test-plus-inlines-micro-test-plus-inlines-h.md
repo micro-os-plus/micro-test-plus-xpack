@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `micro-test-plus-inlines.h` File Reference
+# `micro-test-plus-inlines.h` File
 
 <p>C++ header file with inline implementations for the µTest++ Testing Framework. <a href="#details">More...</a></p>
 

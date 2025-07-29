@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `details-inlines.h` File Reference
+# `details-inlines.h` File
 
 <p>C++ header file with inline implementations for the µTest++ internals. <a href="#details">More...</a></p>
 

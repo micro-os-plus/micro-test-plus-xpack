@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `deferred_reporter` Class Template Reference
+# `deferred_reporter` Class Template
 
 <p>Deferred reporter class template for a specific expression. <a href="#details">More...</a></p>
 

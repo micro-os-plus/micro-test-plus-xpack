@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `test-suite.h` File Reference
+# `test-suite.h` File
 
 <p>C++ header file with declarations for the µTest++ test suite. <a href="#details">More...</a></p>
 

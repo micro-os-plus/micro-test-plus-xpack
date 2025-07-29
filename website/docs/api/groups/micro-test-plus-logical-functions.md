@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Logical Functions Reference
+# Logical Functions
 
 <p>Functions used to compose logical expressions in tests. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `to_t` Struct Template Reference
+# `to_t` Struct Template
 
 <p>Generic strongly-typed wrapper for explicit type conversion. <a href="#details">More...</a></p>
 

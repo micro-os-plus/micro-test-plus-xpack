@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `test-reporter.h` File Reference
+# `test-reporter.h` File
 
 <p>C++ header file with declarations for the µTest++ test reporter. <a href="#details">More...</a></p>
 

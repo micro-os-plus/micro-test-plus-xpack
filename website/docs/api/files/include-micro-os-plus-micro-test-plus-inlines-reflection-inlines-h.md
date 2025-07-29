@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `reflection-inlines.h` File Reference
+# `reflection-inlines.h` File
 
 <p>C++ header file with inline implementations for the µTest++ reflection utilities. <a href="#details">More...</a></p>
 

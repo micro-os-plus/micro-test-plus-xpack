@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `micro_test_plus` Namespace Reference
+# `micro_test_plus` Namespace
 
 <p>Primary namespace for the µTest++ testing framework. <a href="#details">More...</a></p>
 

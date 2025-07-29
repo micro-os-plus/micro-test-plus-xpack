@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `op` Struct Reference
+# `op` Struct
 
 <p>Empty base struct for all operator types. <a href="#details">More...</a></p>
 

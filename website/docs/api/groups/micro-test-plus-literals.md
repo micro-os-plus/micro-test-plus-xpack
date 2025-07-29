@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Literals and Wrappers Reference
+# Literals and Wrappers
 
 <p>Literal operators and wrappers for typed operands. <a href="#details">More...</a></p>
 

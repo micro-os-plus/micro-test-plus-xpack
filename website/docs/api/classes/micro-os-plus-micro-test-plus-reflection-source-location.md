@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `source_location` Class Reference
+# `source_location` Class
 
 <p>Local implementation of source location information for diagnostics. <a href="#details">More...</a></p>
 

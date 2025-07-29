@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `requires_` Struct Template Reference
+# `requires_` Struct Template
 
 <p>Specialisation of the requirements struct template for <span class="doxyComputerOutput">true</span>. <a href="#details">More...</a></p>
 

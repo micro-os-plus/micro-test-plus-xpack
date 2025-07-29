@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `test_suite_base` Class Reference
+# `test_suite_base` Class
 
 <p>Base class for all test suites. <a href="#details">More...</a></p>
 

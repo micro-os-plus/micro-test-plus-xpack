@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `nothrow_` Struct Template Reference
+# `nothrow_` Struct Template
 
 <p>Operator struct template to check if an expression does not throw any exception. <a href="#details">More...</a></p>
 

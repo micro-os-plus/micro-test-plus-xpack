@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `integral_constant` Struct Template Reference
+# `integral_constant` Struct Template
 
 <p>Struct template representing a generic integral constant. <a href="#details">More...</a></p>
 

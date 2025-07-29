@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `not_` Struct Template Reference
+# `not_` Struct Template
 
 <p>Logical NOT comparator struct template. <a href="#details">More...</a></p>
 

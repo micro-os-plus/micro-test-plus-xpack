@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `utility` Namespace Reference
+# `utility` Namespace
 
 <p>Utility functions for the µTest++ testing framework. <a href="#details">More...</a></p>
 

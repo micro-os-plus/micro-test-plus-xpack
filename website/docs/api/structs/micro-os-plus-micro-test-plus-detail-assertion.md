@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `assertion` Struct Template Reference
+# `assertion` Struct Template
 
 <p>Assertion struct template for parameter passing to the evaluator. <a href="#details">More...</a></p>
 

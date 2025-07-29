@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Initialisation & Exit Reference
+# Initialisation & Exit
 
 <p>Functions for initialising the framework and returning an exit code. <a href="#details">More...</a></p>
 

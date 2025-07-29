@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The String Operators Reference
+# String Operators
 
 <p>Overloaded operators for string comparison. <a href="#details">More...</a></p>
 

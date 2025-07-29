@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `micro-test-plus.h` File Reference
+# `micro-test-plus.h` File
 
 <p>Main C++ header with the declarations for the µTest++ Testing Framework. <a href="#details">More...</a></p>
 

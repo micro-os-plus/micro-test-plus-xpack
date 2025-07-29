@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `and_` Struct Template Reference
+# `and_` Struct Template
 
 <p>Logical AND comparator struct template. <a href="#details">More...</a></p>
 

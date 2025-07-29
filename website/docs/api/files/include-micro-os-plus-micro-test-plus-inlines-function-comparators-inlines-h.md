@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `function-comparators-inlines.h` File Reference
+# `function-comparators-inlines.h` File
 
 <p>C++ header file with inline implementations for the µTest++ function comparators. <a href="#details">More...</a></p>
 

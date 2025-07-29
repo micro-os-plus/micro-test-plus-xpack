@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Function Comparators Reference
+# Function Comparators
 
 <p>Functions for comparing actual and expected values in tests. <a href="#details">More...</a></p>
 

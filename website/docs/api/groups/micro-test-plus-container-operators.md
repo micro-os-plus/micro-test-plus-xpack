@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Container Operators Reference
+# Container Operators
 
 <p>Overloaded operators for container comparison. <a href="#details">More...</a></p>
 

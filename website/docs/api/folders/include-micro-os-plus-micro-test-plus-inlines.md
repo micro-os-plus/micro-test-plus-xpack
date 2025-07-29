@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `inlines` Folder Reference
+# `inlines` Folder
 
 <p>Folder with C++ header files with inline implementations for the µTest++ Testing Framework. <a href="#details">More...</a></p>
 

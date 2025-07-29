@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `top-common.h` File Reference
+# `top-common.h` File
 
 <p>Common Doxygen definitions for the µOS++ project. <a href="#details">More...</a></p>
 

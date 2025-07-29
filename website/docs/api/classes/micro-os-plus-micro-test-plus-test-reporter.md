@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `test_reporter` Class Reference
+# `test_reporter` Class
 
 <p>Reporter to display test results, including operand values and types for failures. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `literals-inlines.h` File Reference
+# `literals-inlines.h` File
 
 <p>C++ header file with inline implementations for the µTest++ literals and type wrappers. <a href="#details">More...</a></p>
 

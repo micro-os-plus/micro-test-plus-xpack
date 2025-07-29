@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `genuine_integral_value` Struct Template Reference
+# `genuine_integral_value` Struct Template
 
 <p>Struct template representing a genuine integral value. <a href="#details">More...</a></p>
 

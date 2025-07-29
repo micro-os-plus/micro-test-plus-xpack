@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `micro-test-plus` Folder Reference
+# `micro-test-plus` Folder
 
 <p>Folder with C++ header files for the µTest++ Testing Framework. <a href="#details">More...</a></p>
 

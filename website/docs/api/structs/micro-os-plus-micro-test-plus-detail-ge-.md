@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `ge_` Struct Template Reference
+# `ge_` Struct Template
 
 <p>Greater than or equal comparator struct template. <a href="#details">More...</a></p>
 

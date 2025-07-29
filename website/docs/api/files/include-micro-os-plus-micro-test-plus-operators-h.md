@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `operators.h` File Reference
+# `operators.h` File
 
 <p>C++ header file with declarations for the µTest++ operators. <a href="#details">More...</a></p>
 

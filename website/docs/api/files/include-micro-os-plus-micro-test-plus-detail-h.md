@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `detail.h` File Reference
+# `detail.h` File
 
 <p>C++ header file with declarations for the µTest++ internals. <a href="#details">More...</a></p>
 

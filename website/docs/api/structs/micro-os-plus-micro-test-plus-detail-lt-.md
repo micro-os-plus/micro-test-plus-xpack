@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `lt_` Struct Template Reference
+# `lt_` Struct Template
 
 <p>Less than comparator struct template. <a href="#details">More...</a></p>
 

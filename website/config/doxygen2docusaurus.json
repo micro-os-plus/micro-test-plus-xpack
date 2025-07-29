@@ -1,0 +1,8 @@
+{
+    "baseUrl": "/micro-test-plus-xpack/",
+    "suggestToDoDescriptions": false,
+    "originalPagesNote": "For comparison, the original Doxygen html pages, styled with the <a href=\"https://jothepro.github.io/doxygen-awesome-css/\">doxygen-awesome-css</a> plugin, continue to be available via the <a href=\"pathname:///doxygen/topics.html\"><code>.../doxygen/*.html</b></code> URLs.",
+    "verbose": false,
+    "debug": false
+}
+        

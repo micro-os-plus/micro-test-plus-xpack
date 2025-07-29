@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `test_suite` Class Reference
+# `test_suite` Class
 
 <p>Represents a named group of test cases that self-register to the runner. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Command Line Options Reference
+# Command Line Options
 
 <p>Options for controlling test output verbosity at run-time.</p>
 

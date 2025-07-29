@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `literals` Namespace Reference
+# `literals` Namespace
 
 <p>User-defined literals and type wrappers for the µTest++ testing framework. <a href="#details">More...</a></p>
 

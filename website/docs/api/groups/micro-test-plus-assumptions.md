@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Assumptions Reference
+# Assumptions
 
 <p>Assumptions are conditions that must be satisfied for a test to proceed. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `test-runner.h` File Reference
+# `test-runner.h` File
 
 <p>C++ header file with declarations for the µTest++ test runner. <a href="#details">More...</a></p>
 

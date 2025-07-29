@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The µTest++ Reference
+# µTest++
 
 <p>Topics related to the µTest++ testing framework. <a href="#details">More...</a></p>
 

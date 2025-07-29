@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `eq_` Struct Template Reference
+# `eq_` Struct Template
 
 <p>Equality comparator struct template. <a href="#details">More...</a></p>
 

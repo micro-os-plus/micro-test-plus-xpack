@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The Operators Reference
+# Operators
 
 <p>Overloaded operators for expressive test comparisons. <a href="#details">More...</a></p>
 

@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `function_traits` Struct Template Reference
+# `function_traits` Struct Template
 
 <p>Struct template specialisation for extracting function traits from function pointer types. <a href="#details">More...</a></p>
 

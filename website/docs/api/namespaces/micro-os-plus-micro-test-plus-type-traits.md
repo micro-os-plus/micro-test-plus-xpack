@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# The `type_traits` Namespace Reference
+# `type_traits` Namespace
 
 <p>Type trait utilities and metaprogramming support for the µTest++ testing framework. <a href="#details">More...</a></p>
 
