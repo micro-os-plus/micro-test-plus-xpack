@@ -1,0 +1,34 @@
+var group__micro_test_plus_test_suites =
+[
+    [ "micro_os_plus::micro_test_plus::test_suite", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html", [
+      [ "test_suite", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#a824b38d21a3f4d0adb99827455f159cf", null ],
+      [ "test_suite", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#a7c82c1d689d5b438a1ed6fd59244d8e3", null ],
+      [ "test_suite", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#acdbf1e957b2b5baae7d468820c8fc006", null ],
+      [ "~test_suite", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#aed21554ac8fa83e61ce178f37b0cdac8", null ],
+      [ "begin_test_case", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#a6bd8aa956f30c344c9ef79cf21c69cdc", null ],
+      [ "begin_test_suite", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#adfc3afd1432b2d093eef73a18ca9a242", null ],
+      [ "end_test_case", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#ab2e1a6eadc56c54b45f9d21e450b0cbc", null ],
+      [ "end_test_suite", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#aa53f99054051136b3484a1664b5ee59f", null ],
+      [ "failed_checks", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#a4cd96949ef52b98b6c5e08bbd7900979", null ],
+      [ "increment_failed", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#a20051842d981b530746b4fb4dee00d01", null ],
+      [ "increment_successful", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#a81006378d0bebeadcd59266f57b4ef4b", null ],
+      [ "name", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#a3625fee07d796bf5c3d6b4c69a94182c", null ],
+      [ "operator=", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#aafe75ac5383b6981e1ed6e3c8e96249e", null ],
+      [ "operator=", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#a00597bc0e72007bd92d370bb8cac9ff7", null ],
+      [ "run", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#ab198909a0182672be8c741d3ad7f291d", null ],
+      [ "successful_checks", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#acf56ac77830e630b5485248409c3b3f1", null ],
+      [ "test_cases", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#ae755b186f32e229e8d0bd5e02027b515", null ],
+      [ "unused", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#a20de3062a437e86955dd2917d7976cb3", null ],
+      [ "was_successful", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#ae60536040204e7481b50dfde7b0a6600", null ],
+      [ "callable_", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#a4c9220da528e34d0b4f8d0980a30fe6a", null ],
+      [ "current_test_case", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#ac534b9501e09bf4f1f6ef1d118a5bcbe", null ],
+      [ "failed_checks", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#a40cadb0a79f55c796b7e7aca4a847cfd", null ],
+      [ "failed_checks_", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#a01c523aaf94e26eb4cd6727c5d74ab02", null ],
+      [ "name_", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#a76f1c1c39f8b2c8cc70688a47bf6eafd", null ],
+      [ "process_deferred_begin", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#ac442c68973cd937aeaef7aa7fbc27d30", null ],
+      [ "successful_checks", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#a4851a70fd4a0c71b787e445b9766bacc", null ],
+      [ "successful_checks_", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#ad2736cdadc2ab917099cd0ad82d3fc18", null ],
+      [ "test_case_name_", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#ae369ec539219642f84aeb93b78269df0", null ],
+      [ "test_cases_", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#a1e9205117a2373caf7346064e86afa03", null ]
+    ] ]
+];

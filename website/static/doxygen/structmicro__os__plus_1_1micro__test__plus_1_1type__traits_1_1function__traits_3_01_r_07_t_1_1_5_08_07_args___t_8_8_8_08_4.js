@@ -1,0 +1,5 @@
+var structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_5_08_07_args___t_8_8_8_08_4 =
+[
+    [ "args", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_5_08_07_args___t_8_8_8_08_4.html#abe3052f92aa798f6a80a6e9250fc76b4", null ],
+    [ "result_type", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_5_08_07_args___t_8_8_8_08_4.html#a1f21557f758a46166726e0c6e01ee8bc", null ]
+];
