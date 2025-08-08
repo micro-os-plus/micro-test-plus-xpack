@@ -58,7 +58,7 @@ keywords:
 <p>Functions for initialising the framework and returning an exit code.</p>
 
 
-<p>These functions are responsible for initialising the test runner and returning the test result as the process exit code. Proper initialisation ensures that the µTest++ framework is correctly configured to manage and execute test cases, while the exit code reflects the overall outcome of the tests, supporting integration with automated build and continuous integration systems.</p>
+<p>These functions are responsible for <b>initialising the test runner</b> and <b>returning the test result</b> as the process exit code. Proper initialisation ensures that the µTest++ framework is correctly configured to manage and execute test cases, while the exit code reflects the overall outcome of the tests, supporting integration with automated build and continuous integration systems.</p>
 
 
 <p>The simplest test consists of a single test case containing a single expectation; for example:</p>
@@ -246,6 +246,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://github.com/xpack/doxygen2docusaurus">doxygen2docusaurus</a> by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 1.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 
 </div>

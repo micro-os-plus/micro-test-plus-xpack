@@ -94,7 +94,7 @@ The <computeroutput>initialize</computeroutput> function sets up the µTest++ te
 <para>Functions for initialising the framework and returning an exit code. </para>
     </briefdescription>
     <detaileddescription>
-<para>These functions are responsible for initialising the test runner and returning the test result as the process exit code. Proper initialisation ensures that the µTest++ framework is correctly configured to manage and execute test cases, while the exit code reflects the overall outcome of the tests, supporting integration with automated build and continuous integration systems.</para>
+<para>These functions are responsible for <bold>initialising the test runner</bold> and <bold>returning the test result</bold> as the process exit code. Proper initialisation ensures that the µTest++ framework is correctly configured to manage and execute test cases, while the exit code reflects the overall outcome of the tests, supporting integration with automated build and continuous integration systems.</para>
 <para>The simplest test consists of a single test case containing a single expectation; for example:</para>
 <para><programlisting filename=".cpp"><codeline><highlight class="preprocessor">#include<sp/>&lt;<ref refid="micro-test-plus_8h" kindref="compound">micro-os-plus/micro-test-plus.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>

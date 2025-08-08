@@ -2,7 +2,7 @@
 @brief Functions for initialising the framework and returning an exit code.
 
 @details
-These functions are responsible for initialising the test runner and returning the test result as the process exit code. Proper initialisation ensures that the µTest++ framework is correctly configured to manage and execute test cases, while the exit code reflects the overall outcome of the tests, supporting integration with automated build and continuous integration systems.
+These functions are responsible for **initialising the test runner** and **returning the test result** as the process exit code. Proper initialisation ensures that the µTest++ framework is correctly configured to manage and execute test cases, while the exit code reflects the overall outcome of the tests, supporting integration with automated build and continuous integration systems.
 
 The simplest test consists of a single test case containing a single expectation; for example:
 
