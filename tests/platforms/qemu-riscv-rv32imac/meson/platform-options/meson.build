@@ -141,7 +141,7 @@ platform_qemu_riscv_rv32imac_dependency_compile_cpp_args = _local_compile_cpp_ar
 foreach xn : _local_include_directories
   message('+ -I ' + xn)
 endforeach
-# Note: depenedencies compile_args not shown.
+# Note: dependencies compile_args not shown.
 foreach xn : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args + _local_link_args
   message('+ ' + xn)
 endforeach
