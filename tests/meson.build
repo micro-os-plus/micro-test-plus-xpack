@@ -83,14 +83,14 @@ message('Platform name: ' + xpack_platform_name)
 subdir('meson/common-options')
 subdir('xpacks/@micro-os-plus/build-helper/meson/enable-all-warnings')
 
-# Since the order of processing is significative, include it in dependencies.
-# subdir('platforms/'+ xpack_platform_name + '/meson/platform-options')
+subdir('platforms/'+ xpack_platform_name + '/meson/definitions')
 
 # -----------------------------------------------------------------------------
 # Dependencies #
 
 # Set `xpack_dependencies_folders` with the platform specific dependencies.
 subdir('platforms/'+ xpack_platform_name + '/meson/dependencies-folders')
+# The platform library is included in the dependencies, at the end.
 
 foreach dep: xpack_dependencies_folders
   message('Adding ' + dep + '...')
