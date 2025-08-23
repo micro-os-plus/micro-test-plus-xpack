@@ -17,7 +17,7 @@
 
 # -----------------------------------------------------------------------------
 
-message(VERBOSE "Including tests/platforms/${PLATFORM_NAME}/platform-options.cmake...")
+message(VERBOSE "Including tests/platforms/${PLATFORM_NAME}/platform-library.cmake...")
 
 # -----------------------------------------------------------------------------
 
@@ -28,7 +28,7 @@ endif()
 
 # -----------------------------------------------------------------------------
 
-# Compute RPATH.
+# Compute RPATH; return result in `rpath_options_list`.
 if(CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "Darwin")
   # On non-Windows, get the actual libraries paths by asking the compiler.
   execute_process(
@@ -61,10 +61,11 @@ add_library(platform-native-interface INTERFACE EXCLUDE_FROM_ALL)
 target_include_directories(platform-native-interface INTERFACE
 
   # This file is included from the tests folder.
-  "platforms/${PLATFORM_NAME}/include"
+  "include"
 )
 
 target_sources(platform-native-interface INTERFACE
+
   # None.
 )
 

@@ -1,9 +1,7 @@
 # -----------------------------------------------------------------------------
-# DO NOT EDIT!
-# Automatically generated from build-helper/templates.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
-# Copyright (c) 2022 Liviu Ionescu. All rights reserved.
+# Copyright (c) 2022-2025 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
@@ -13,26 +11,17 @@
 #
 # -----------------------------------------------------------------------------
 
-# Define a list of folders where the platform dependencies are located.
+# Platform specific definitions.
 
 # -----------------------------------------------------------------------------
 
-message(VERBOSE "Including tests/platforms/${PLATFORM_NAME}/cmake/dependencies-folders.cmake...")
+message(VERBOSE "Including tests/platforms/${PLATFORM_NAME}/cmake/definitions.cmake...")
 
 # -----------------------------------------------------------------------------
-set(xpack_dependencies_folders
 
-  "${CMAKE_SOURCE_DIR}/minimal-test"
-  "${CMAKE_SOURCE_DIR}/sample-test"
-  "${CMAKE_SOURCE_DIR}/unit-test"
+# Informative.
+set(xpack_device_compile_definition "MICRO_OS_PLUS_DEVICE_NATIVE")
 
-  # The BINARY_DIR is the `build/<config>` folder.
-  "${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/architecture-synthetic-posix"
-
-  # The SOURCE_DIR is the `tests` folder.
-  "${CMAKE_SOURCE_DIR}/xpacks/@micro-os-plus/diag-trace"
-
-  # "${CMAKE_SOURCE_DIR}/xpacks/@micro-os-plus/micro-test-plus"
-)
+set(xpack_platform_compile_definition "MICRO_OS_PLUS_PLATFORM_NATIVE")
 
 # -----------------------------------------------------------------------------

@@ -9,22 +9,29 @@
  * be obtained from https://opensource.org/licenses/mit.
  */
 
-#ifndef MICRO_OS_PLUS_PLATFORM_CONFIG_H_
-#define MICRO_OS_PLUS_PLATFORM_CONFIG_H_
+#ifndef MICRO_OS_PLUS_CONFIG_H_
+#define MICRO_OS_PLUS_CONFIG_H_
 
 // ----------------------------------------------------------------------------
+// Platform configuration definitions.
+// Assembly files should define `#define __ASSEMBLY__ 1` before including
+// this file. If so, this file should define only preprocessor macros.
 
 #if defined(MICRO_OS_PLUS_TRACE)
 #define MICRO_OS_PLUS_USE_TRACE_POSIX_STDOUT
 // #define MICRO_OS_PLUS_USE_TRACE_POSIX_STDERR
 
+// #define MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCT
+// #define MICRO_OS_PLUS_TRACE_UTILS_LISTS
+
 #define MICRO_OS_PLUS_INTEGER_TRACE_PRINTF_BUFFER_ARRAY_SIZE 500
 
+// Propagate TRACE to the library.
 #define MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 #endif // MICRO_OS_PLUS_TRACE
 
 // ----------------------------------------------------------------------------
 
-#endif /* MICRO_OS_PLUS_PLATFORM_CONFIG_H_ */
+#endif /* MICRO_OS_PLUS_CONFIG_H_ */
 
 // ----------------------------------------------------------------------------

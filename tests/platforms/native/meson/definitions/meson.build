@@ -13,30 +13,17 @@
 #
 # -----------------------------------------------------------------------------
 
-# Define a list of folders where the platform dependencies are located.
+# Platform specific definitions.
 
 # -----------------------------------------------------------------------------
 
-message('Including tests/platforms/' + xpack_platform_name + '/meson/dependencies-folders/meson.build...')
+message('Including tests/platforms/' + xpack_platform_name + '/meson/definitions/meson.build...')
 
 # -----------------------------------------------------------------------------
 
-# The base folder is `tests`. The order is significant.
-xpack_dependencies_folders = [
+# Informative.
+xpack_device_compile_definition = 'MICRO_OS_PLUS_DEVICE_NATIVE'
 
-  # Each test has its own library.
-  'minimal-test',
-  'sample-test',
-  'unit-test',
-
-  'xpacks/@micro-os-plus/diag-trace', # -
-  # 'xpacks/@micro-os-plus/micro-test-plus', # -
-
-  # (architecture) -
-  xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/architecture-synthetic-posix',
-
-  # (platform) architecture-synthetic-posix
-  'platforms/native/meson/platform-library',
-]
+xpack_platform_compile_definition = 'MICRO_OS_PLUS_PLATFORM_NATIVE'
 
 # -----------------------------------------------------------------------------

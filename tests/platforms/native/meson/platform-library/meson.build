@@ -17,7 +17,8 @@
 
 # -----------------------------------------------------------------------------
 
-message('Including tests/platforms/' + xpack_platform_name + '/meson.build...')
+# Included from dependencies-folders.
+message('Including tests/platforms/' + xpack_platform_name + '/meson/platform-library/meson.build...')
 
 # -----------------------------------------------------------------------------
 
@@ -67,7 +68,7 @@ _local_link_args = []
 _local_link_with = []
 
 _local_include_directories += [
-  # Go back to the platform include.
+  # Go up to the platform include.
   '../../include',
 ]
 
@@ -82,14 +83,6 @@ _local_compile_definitions += [
   # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap02.html#tag_02_01_03
   '-D_POSIX_C_SOURCE=200809L',
 ]
-
-# if c_compiler.get_id().contains('clang') and build_machine.system() == 'darwin'
-#   # On macOS enabling the macro fails with:
-#   # error: unknown type name 'u_int'
-# else
-#   _local_compile_definitions += [
-#   ]
-# endif
 
 _local_compile_args += [
   '-Werror',
@@ -107,8 +100,18 @@ if c_compiler.get_id().contains('clang') and build_machine.system() == 'windows'
   ]
 endif
 
+if c_compiler.get_id().contains('clang') and build_machine.system() == 'darwin'
+  _local_compile_args += [
+    '-Wno-#warnings'
+  ]
+  _local_compile_cpp_args += [
+    '-Wno-pre-c++17-compat'
+  ]
+endif
+
 if c_compiler.get_id().contains('clang')
   _local_compile_args += [
+    '-Wno-unknown-warning-option',
     '-Wno-documentation',
   ]
 endif
@@ -152,7 +155,8 @@ if c_compiler.get_id().contains('clang')
       '-lunwind',
     ]
   endif
-  if build_machine.system() == 'linux' or build_machine.system() == 'darwin'
+  # if build_machine.system() == 'linux' or build_machine.system() == 'darwin'
+  if build_machine.system() == 'linux'
     _local_link_args += [
       '-fuse-ld=lld'
     ]
