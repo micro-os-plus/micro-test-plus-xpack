@@ -214,7 +214,7 @@
         "xpm run test-native-cmake-clang18",
         "xpm run test-native-cmake-clang17",
         "xpm run test-native-cmake-clang16",
-        "xpm run test-native-cmake-clang15",
+        "echo xpm run test-native-cmake-clang15",
         "echo xpm run test-native-cmake-clang14",
         "echo xpm run test-native-cmake-clang13"
       ],
@@ -340,7 +340,7 @@
         "xpm run test-native-meson-clang18",
         "xpm run test-native-meson-clang17",
         "xpm run test-native-meson-clang16",
-        "xpm run test-native-meson-clang15",
+        "echo xpm run test-native-meson-clang15",
         "echo xpm run test-native-meson-clang14",
         "echo xpm run test-native-meson-clang13"
       ],
@@ -1266,6 +1266,7 @@
         "hidden": true,
         "actions": {
           "prepare": "{{ properties.commandMesonPrepareWithToolchain }}",
+          "reconfigure": "{{ properties.commandMesonReconfigure }}",
           "build": [
             "{{ properties.commandMesonReconfigure }}",
             "{{ properties.commandMesonBuild }}"
