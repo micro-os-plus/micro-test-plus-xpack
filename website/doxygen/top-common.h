@@ -3,7 +3,7 @@
  * Automatically generated from docusaurus-template-liquid/templates/docusaurus.
  *
  * This file is part of the µOS++ project (https://micro-os-plus.github.com).
- * Copyright (c) 2021 Liviu Ionescu. All rights reserved.
+ * Copyright (c) 2021-2025 Liviu Ionescu. All rights reserved.
  *
  * Permission to use, copy, modify, and/or distribute this software
  * for any purpose is hereby granted, under the terms of the MIT license.
