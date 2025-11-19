@@ -53,6 +53,7 @@
 
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunknown-warning-option"
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
 #endif
@@ -587,6 +588,10 @@ namespace micro_os_plus::micro_test_plus
               {
                 printf ("\n");
               }
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
             printf ("  • %s - test case started\n", name);
             output ();
             printf (
@@ -598,6 +603,7 @@ namespace micro_os_plus::micro_test_plus
                     ? "check"
                     : "checks",
                 current_test_suite->current_test_case.failed_checks);
+#pragma GCC diagnostic pop
             add_empty_line = true;
           }
         else
@@ -608,6 +614,10 @@ namespace micro_os_plus::micro_test_plus
               }
             if (verbosity == verbosity::verbose)
               {
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
                 printf ("  • %s - test case started\n", name);
                 output ();
                 printf (
@@ -618,11 +628,15 @@ namespace micro_os_plus::micro_test_plus
                             == 1
                         ? "check"
                         : "checks");
-
+#pragma GCC diagnostic pop
                 add_empty_line = true;
               }
             else
               {
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
                 printf (
                     "  %s✓%s %s - test case passed (%d %s)\n", colors_.pass,
                     colors_.none, name,
@@ -631,6 +645,7 @@ namespace micro_os_plus::micro_test_plus
                             == 1
                         ? "check"
                         : "checks");
+#pragma GCC diagnostic pop
 
                 add_empty_line = false;
               }
@@ -668,7 +683,12 @@ namespace micro_os_plus::micro_test_plus
         return;
       }
 
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
     printf ("• %s - test suite started\n", name);
+#pragma GCC diagnostic pop
 
     add_empty_line = true;
   }
@@ -702,15 +722,24 @@ namespace micro_os_plus::micro_test_plus
     // Also fail if none passed.
     if (suite.failed_checks () == 0 && suite.successful_checks () != 0)
       {
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
         printf ("%s✓%s %s - test suite passed (%d %s in %d test %s)\n",
                 colors_.pass, colors_.none, suite.name (),
                 suite.successful_checks (),
                 suite.successful_checks () == 1 ? "check" : "checks",
                 suite.test_cases (),
                 suite.test_cases () == 1 ? "case" : "cases");
+#pragma GCC diagnostic pop
       }
     else
       {
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
         printf ("%s✗%s %s - test suite %sFAILED%s (%d %s passed, %d failed, "
                 "in %d test %s)\n",
                 colors_.fail, colors_.none, suite.name (), colors_.fail,
@@ -718,6 +747,7 @@ namespace micro_os_plus::micro_test_plus
                 suite.successful_checks () == 1 ? "check" : "checks",
                 suite.failed_checks (), suite.test_cases (),
                 suite.test_cases () == 1 ? "case" : "cases");
+#pragma GCC diagnostic pop
       }
     flush ();
   }
