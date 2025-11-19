@@ -87,7 +87,7 @@ namespace micro_os_plus::micro_test_plus
      * If supported by the compiler, uses built-in macros to capture this
      * information; otherwise, defaults to `"unknown"` and zero.
      */
-    [[nodiscard]] constexpr auto
+    [[nodiscard]] constexpr source_location
     source_location::current (const char* file, unsigned int line) noexcept
     {
       source_location sl{};

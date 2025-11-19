@@ -143,7 +143,7 @@ namespace micro_os_plus::micro_test_plus
        * @param line The line number (automatically provided by the compiler).
        * @return A `source_location` instance with the captured information.
        */
-      [[nodiscard]] static constexpr auto
+      [[nodiscard]] static constexpr source_location
       current (
 #if (__has_builtin(__builtin_FILE) and __has_builtin(__builtin_LINE))
           const char* file = __builtin_FILE (),
