@@ -17,15 +17,13 @@
 
 # -----------------------------------------------------------------------------
 
-# Required in devices-qemu-cortexm.
-xpack_device_compile_definition='MICRO_OS_PLUS_DEVICE_QEMU_CORTEX_M4'
-
-xpack_platform_compile_definition = 'MICRO_OS_PLUS_PLATFORM_QEMU_CORTEX_M4F'
-
-# -----------------------------------------------------------------------------
-
 # The base folder is `tests`. The order is significant.
 xpack_dependencies_folders = [
+
+  # Each test has its own library.
+  'minimal-test',
+  'sample-test',
+  'unit-test',
 
   'xpacks/@micro-os-plus/diag-trace', # -
   # 'xpacks/@micro-os-plus/micro-test-plus', # -
@@ -47,7 +45,7 @@ xpack_dependencies_folders = [
   # +(arm_cmsis_core_m, devices_cortexm, startup) >devices_qemu_cortexm
   xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/devices-qemu-cortexm',
 
-  'platforms/qemu-cortex-m4f/meson/platform-options',
+  'platforms/qemu-cortex-m4f/meson/platform-library',
 ]
 
 # -----------------------------------------------------------------------------

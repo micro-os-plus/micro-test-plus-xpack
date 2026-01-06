@@ -17,15 +17,13 @@
 
 # -----------------------------------------------------------------------------
 
-# Required in devices-qemu-aarch64.
-xpack_device_compile_definition='MICRO_OS_PLUS_DEVICE_QEMU_CORTEX_A72'
-
-xpack_platform_compile_definition = 'MICRO_OS_PLUS_PLATFORM_QEMU_CORTEX_A72'
-
-# -----------------------------------------------------------------------------
-
 # The base folder is `tests`. The order is significant.
 xpack_dependencies_folders = [
+
+  # Each test has its own library.
+  'minimal-test',
+  'sample-test',
+  'unit-test',
 
   'xpacks/@micro-os-plus/diag-trace', # -
   # 'xpacks/@micro-os-plus/micro-test-plus', # -
@@ -47,7 +45,7 @@ xpack_dependencies_folders = [
   # +(arm_cmsis_core_m, devices_cortexa, startup) >devices_qemu_aarch64
   xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/devices-qemu-aarch64',
 
-  'platforms/qemu-cortex-a72/meson/platform-options',
+  'platforms/qemu-cortex-a72/meson/platform-library',
 ]
 
 # -----------------------------------------------------------------------------

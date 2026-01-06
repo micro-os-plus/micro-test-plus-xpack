@@ -1,15 +1,14 @@
 # -----------------------------------------------------------------------------
-# DO NOT EDIT!
-# Automatically generated from build-helper/templates.
+# DO NOT EDIT! Automatically generated from build-helper/templates.
 #
 # This file is part of the µOS++ project (https:///micro-os-plus.github.com/)
 # Copyright (c) 2022-2025 Liviu Ionescu. All rights reserved.
 #
-# Permission to use, copy, modify, and/or distribute this software
-# for any purpose is hereby granted, under the terms of the MIT license.
+# Permission to use, copy, modify, and/or distribute this software for any
+# purpose is hereby granted, under the terms of the MIT license.
 #
-# If a copy of the license was not distributed with this file, it can
-# be obtained from https://opensource.org/licenses/mit.
+# If a copy of the license was not distributed with this file, it can be
+# obtained from https://opensource.org/licenses/mit.
 #
 # -----------------------------------------------------------------------------
 
@@ -19,9 +18,8 @@
 # https://cmake.org/cmake/help/v3.20/
 cmake_minimum_required(VERSION 3.20)
 
-project(
-  micro-os-plus-micro-test-plus-tests
-  DESCRIPTION "µTest++ Testing Framework tests"
+project(micro-os-plus-micro-test-plus-tests
+        DESCRIPTION "µTest++ Testing Framework tests"
 )
 
 # -----------------------------------------------------------------------------
@@ -49,11 +47,16 @@ enable_testing()
 
 # Protect against in-source builds.
 if(CMAKE_BINARY_DIR STREQUAL CMAKE_SOURCE_DIR)
-  message(FATAL_ERROR "In-source builds are not supported. Please use a separate folder for build.")
+  message(
+    FATAL_ERROR
+      "In-source builds are not supported. Please use a separate folder for build."
+  )
 endif()
 
 # The build-helper is a devDependency, available only after `xpm install`.
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/xpacks/@micro-os-plus/build-helper/cmake")
+list(APPEND CMAKE_MODULE_PATH
+     "${CMAKE_CURRENT_SOURCE_DIR}/xpacks/@micro-os-plus/build-helper/cmake"
+)
 include("micro-os-plus-build-helper")
 
 xpack_display_greetings("${CMAKE_CURRENT_SOURCE_DIR}/../package.json")

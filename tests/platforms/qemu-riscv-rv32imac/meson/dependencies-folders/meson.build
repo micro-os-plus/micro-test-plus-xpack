@@ -17,15 +17,13 @@
 
 # -----------------------------------------------------------------------------
 
-# Required in devices-qemu-riscv.
-xpack_device_compile_definition='MICRO_OS_PLUS_DEVICE_QEMU_RISCV_RV32IMAC'
-
-xpack_platform_compile_definition = 'MICRO_OS_PLUS_PLATFORM_QEMU_RISCV_RV32IMAC'
-
-# -----------------------------------------------------------------------------
-
 # The base folder is `tests`. The order is significant.
 xpack_dependencies_folders = [
+
+  # Each test has its own library.
+  'minimal-test',
+  'sample-test',
+  'unit-test',
 
   'xpacks/@micro-os-plus/diag-trace', # -
   # 'xpacks/@micro-os-plus/micro-test-plus', # -
@@ -45,7 +43,7 @@ xpack_dependencies_folders = [
   # -
   xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/devices-qemu-riscv',
 
-  'platforms/qemu-riscv-rv32imac/meson/platform-options',
+  'platforms/qemu-riscv-rv32imac/meson/platform-library',
 ]
 
 # -----------------------------------------------------------------------------

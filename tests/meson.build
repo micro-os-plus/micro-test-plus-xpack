@@ -80,7 +80,7 @@ message('Platform name: ' + xpack_platform_name)
 # -----------------------------------------------------------------------------
 
 # https://mesonbuild.com/Reference-manual.html#subdir
-subdir('meson/common-options')
+subdir('meson/common-options-library')
 subdir('xpacks/@micro-os-plus/build-helper/meson/enable-all-warnings')
 
 subdir('platforms/'+ xpack_platform_name + '/meson/definitions')

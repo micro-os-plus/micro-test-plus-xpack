@@ -3,11 +3,11 @@
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2021-2025 Liviu Ionescu. All rights reserved.
 #
-# Permission to use, copy, modify, and/or distribute this software
-# for any purpose is hereby granted, under the terms of the MIT license.
+# Permission to use, copy, modify, and/or distribute this software for any
+# purpose is hereby granted, under the terms of the MIT license.
 #
-# If a copy of the license was not distributed with this file, it can
-# be obtained from https://opensource.org/licenses/mit.
+# If a copy of the license was not distributed with this file, it can be
+# obtained from https://opensource.org/licenses/mit.
 #
 # -----------------------------------------------------------------------------
 
@@ -27,33 +27,21 @@ message(VERBOSE "Processing 'tests/sample-test'...")
 # The test library definitions.
 add_library(test-sample-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_include_directories(test-sample-interface INTERFACE
-
-  # None.
+target_include_directories(test-sample-interface INTERFACE # None.
 )
 
-target_sources(test-sample-interface INTERFACE
-  src/main.cpp
+target_sources(test-sample-interface INTERFACE src/main.cpp)
+
+target_compile_definitions(test-sample-interface INTERFACE # None.
 )
 
-target_compile_definitions(test-sample-interface INTERFACE
-
-  # None.
+target_compile_options(test-sample-interface INTERFACE # None.
 )
 
-target_compile_options(test-sample-interface INTERFACE
-
-  # None.
+target_link_options(test-sample-interface INTERFACE # None.
 )
 
-target_link_options(test-sample-interface INTERFACE
-
-  # None.
-)
-
-target_link_libraries(test-sample-interface INTERFACE
-
-  # None.
+target_link_libraries(test-sample-interface INTERFACE # None.
 )
 
 if(COMMAND xpack_display_target_lists)

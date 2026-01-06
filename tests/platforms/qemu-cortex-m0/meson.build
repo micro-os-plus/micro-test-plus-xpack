@@ -20,6 +20,7 @@ message('Processing tests/platforms/qemu-cortex-m0...')
 # -----------------------------------------------------------------------------
 
 # Enable them only when needed.
+xpack_report_size = true
 xpack_create_listing = false
 xpack_create_hex = false
 
@@ -32,12 +33,22 @@ objcopy = find_program('objcopy')
 
 # -----------------------------------------------------------------------------
 
+qemu = find_program('qemu-system-arm')
+
+# https://mesonbuild.com/Unit-tests.html#malloc_perturb_
+xpack_environment = environment()
+xpack_environment.set('MALLOC_PERTURB_', '0')
+
+# -----------------------------------------------------------------------------
+
 # Define the tests executables.
 
-test_names = [ 'sample-test', 'unit-test'  ]
+if enable_sample_test
 
-foreach name : test_names
+  test_name = 'sample-test'
+  test_dependency = test_sample_dependency
 
+  # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   _local_compile_args = [] # Common C/C++ args.
   _local_compile_c_args = []
   _local_compile_cpp_args = []
@@ -50,44 +61,45 @@ foreach name : test_names
 
   # ---------------------------------------------------------------------------
 
-  _local_include_directories += [
-    '../../include',
-  ]
+  _local_compile_c_args += common_options_dependency_compile_c_args
+  _local_compile_cpp_args += common_options_dependency_compile_cpp_args
 
-  _local_sources += [
-    '../../src/' + name + '.cpp',
-  ]
-
-  _local_compile_c_args += platform_qemu_cortex_m0_dependency_compile_c_args
-  _local_compile_cpp_args += platform_qemu_cortex_m0_dependency_compile_cpp_args
+  _local_compile_c_args += test_sample_dependency_compile_c_args
+  _local_compile_cpp_args += test_sample_dependency_compile_cpp_args
 
   _local_compile_c_args += micro_os_plus_micro_test_plus_dependency_compile_c_args
   _local_compile_cpp_args += micro_os_plus_micro_test_plus_dependency_compile_cpp_args
 
+  _local_compile_c_args += platform_qemu_cortex_m0_dependency_compile_c_args
+  _local_compile_cpp_args += platform_qemu_cortex_m0_dependency_compile_cpp_args
+
+
   _local_link_args += [
-    '-Wl,-Map,'+ name + '-map.txt',
+    '-Wl,-Map,'+ test_name + '-map.txt',
     # '-v',
   ]
 
   _local_dependencies += [
+
+    common_options_dependency,
+
+    test_dependency, # <--- 
+
     # Tested library.
     micro_os_plus_micro_test_plus_dependency,
 
     # Portable dependencies.
     micro_os_plus_diag_trace_dependency,
-  ]
 
-  _local_dependencies += [
     # Platform specific dependencies.
     platform_qemu_cortex_m0_dependency, # bring device & architecture too
 
     micro_os_plus_semihosting_dependency,
-    micro_os_plus_startup_dependency,
   ]
 
   # https://mesonbuild.com/Reference-manual.html#executable
-  exe = executable(
-    name,
+  test_executable = executable(
+    test_name,
     include_directories: include_directories(_local_include_directories),
     sources: files(_local_sources),
     c_args: _local_compile_args + _local_compile_c_args + _local_compile_definitions,
@@ -105,76 +117,69 @@ foreach name : test_names
   foreach xn : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args + _local_link_args
     message('A+ ' + xn)
   endforeach
-  message('A> ' + name)
-
-  # Leave the result in a variable with the test name.
-  set_variable(name.underscorify(), exe)
+  message('A> ' + test_name)
 
   # https://mesonbuild.com/Reference-manual_functions.html#custom_target
-  custom_target(
-    name + '-size',
+  if xpack_report_size
+    custom_target(
+      test_name + '-size',
 
-    input: exe,
-    output: name + '.size',
-    command: [
-      size,
-      '--format=berkeley',
-      '@INPUT@'
-    ],
-    build_always_stale: true,
-    build_by_default: true,
-  )
+      input: test_executable,
+      output: test_name + '.size',
+      command: [
+        size,
+        '--format=berkeley',
+        '@INPUT@'
+      ],
+      build_always_stale: true,
+      build_by_default: true,
+    )
+  endif
 
-  # --source --all-headers --demangle --line-numbers --wide "xxx.elf"
-  custom_target(
-    name + '-list',
+  if xpack_create_listing
+    # --source --all-headers --demangle --line-numbers --wide "xxx.elf"
+    custom_target(
+      test_name + '-list',
 
-    input: exe,
-    output: name + '-list.txt',
-    command: [
-      objdump,
-      '--source',
-      '--all-headers',
-      '--demangle',
-      '--line-numbers',
-      '--wide',
-      '@INPUT@'
-    ],
-    build_always_stale: true,
-    build_by_default: xpack_create_listing,
-    capture: true,
-  )
+      input: test_executable,
+      output: test_name + '-list.txt',
+      command: [
+        objdump,
+        '--source',
+        '--all-headers',
+        '--demangle',
+        '--line-numbers',
+        '--wide',
+        '@INPUT@'
+      ],
+      build_always_stale: true,
+      build_by_default: xpack_create_listing,
+      capture: true,
+    )
+  endif
 
-  # -O ihex "xxx.elf"
-  custom_target(
-    name + '-hex',
+  if xpack_create_hex
+    # -O ihex "xxx.elf"
+    custom_target(
+      test_name + '-hex',
 
-    input: exe,
-    output: name + '.hex',
-    command: [
-      objcopy,
-      '-O',
-      'ihex',
-      '@INPUT@',
-      '@OUTPUT@',
-    ],
-    build_always_stale: true,
-    build_by_default: xpack_create_hex,
-  )
+      input: test_executable,
+      output: test_name + '.hex',
+      command: [
+        objcopy,
+        '-O',
+        'ihex',
+        '@INPUT@',
+        '@OUTPUT@',
+      ],
+      build_always_stale: true,
+      build_by_default: xpack_create_hex,
+    )
+  endif
 
-endforeach
-
-# -----------------------------------------------------------------------------
-
-qemu = find_program('qemu-system-arm')
-
-# https://mesonbuild.com/Unit-tests.html#malloc_perturb_
-xpack_environment = environment()
-xpack_environment.set('MALLOC_PERTURB_', '0')
-
-# -----------------------------------------------------------------------------
-
-if enable_sample_test
+  # Create a variable with the test test_name and assign it the executable object.
+  set_variable(test_name.underscorify(), test_executable)
+  # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
   # https://mesonbuild.com/Reference-manual_functions.html#test
   test(
@@ -196,6 +201,142 @@ endif
 # -----------------------------------------------------------------------------
 
 if enable_unit_test
+
+  test_name = 'unit-test'
+  test_dependency = test_unit_dependency
+
+  # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+  _local_compile_args = [] # Common C/C++ args.
+  _local_compile_c_args = []
+  _local_compile_cpp_args = []
+  _local_include_directories = []
+  _local_sources = []
+  _local_compile_definitions = []
+  _local_dependencies = []
+  _local_link_args = []
+  _local_link_with = []
+
+  # ---------------------------------------------------------------------------
+
+  _local_compile_c_args += common_options_dependency_compile_c_args
+  _local_compile_cpp_args += common_options_dependency_compile_cpp_args
+
+  _local_compile_c_args += test_unit_dependency_compile_c_args
+  _local_compile_cpp_args += test_unit_dependency_compile_cpp_args
+
+  _local_compile_c_args += micro_os_plus_micro_test_plus_dependency_compile_c_args
+  _local_compile_cpp_args += micro_os_plus_micro_test_plus_dependency_compile_cpp_args
+
+  _local_compile_c_args += platform_qemu_cortex_m0_dependency_compile_c_args
+  _local_compile_cpp_args += platform_qemu_cortex_m0_dependency_compile_cpp_args
+
+
+  _local_link_args += [
+    '-Wl,-Map,'+ test_name + '-map.txt',
+    # '-v',
+  ]
+
+  _local_dependencies += [
+
+    common_options_dependency,
+
+    test_dependency, # <--- 
+
+    # Tested library.
+    micro_os_plus_micro_test_plus_dependency,
+
+    # Portable dependencies.
+    micro_os_plus_diag_trace_dependency,
+
+    # Platform specific dependencies.
+    platform_qemu_cortex_m0_dependency, # bring device & architecture too
+
+    micro_os_plus_semihosting_dependency,
+  ]
+
+  # https://mesonbuild.com/Reference-manual.html#executable
+  test_executable = executable(
+    test_name,
+    include_directories: include_directories(_local_include_directories),
+    sources: files(_local_sources),
+    c_args: _local_compile_args + _local_compile_c_args + _local_compile_definitions,
+    cpp_args: _local_compile_args + _local_compile_cpp_args + _local_compile_definitions,
+    dependencies: _local_dependencies,
+    link_args: _local_link_args,
+    link_with: _local_link_with,
+    name_suffix: 'elf',
+  )
+
+  foreach xn : _local_include_directories
+    message('A+ -I ' + xn)
+  endforeach
+  # Note: dependencies compile_args not shown.
+  foreach xn : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args + _local_link_args
+    message('A+ ' + xn)
+  endforeach
+  message('A> ' + test_name)
+
+  # https://mesonbuild.com/Reference-manual_functions.html#custom_target
+  if xpack_report_size
+    custom_target(
+      test_name + '-size',
+
+      input: test_executable,
+      output: test_name + '.size',
+      command: [
+        size,
+        '--format=berkeley',
+        '@INPUT@'
+      ],
+      build_always_stale: true,
+      build_by_default: true,
+    )
+  endif
+
+  if xpack_create_listing
+    # --source --all-headers --demangle --line-numbers --wide "xxx.elf"
+    custom_target(
+      test_name + '-list',
+
+      input: test_executable,
+      output: test_name + '-list.txt',
+      command: [
+        objdump,
+        '--source',
+        '--all-headers',
+        '--demangle',
+        '--line-numbers',
+        '--wide',
+        '@INPUT@'
+      ],
+      build_always_stale: true,
+      build_by_default: xpack_create_listing,
+      capture: true,
+    )
+  endif
+
+  if xpack_create_hex
+    # -O ihex "xxx.elf"
+    custom_target(
+      test_name + '-hex',
+
+      input: test_executable,
+      output: test_name + '.hex',
+      command: [
+        objcopy,
+        '-O',
+        'ihex',
+        '@INPUT@',
+        '@OUTPUT@',
+      ],
+      build_always_stale: true,
+      build_by_default: xpack_create_hex,
+    )
+  endif
+
+  # Create a variable with the test test_name and assign it the executable object.
+  set_variable(test_name.underscorify(), test_executable)
+  # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
   # https://mesonbuild.com/Reference-manual_functions.html#test
   test(

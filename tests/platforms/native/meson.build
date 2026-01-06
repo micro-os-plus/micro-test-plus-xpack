@@ -27,6 +27,7 @@ xpack_environment = environment({'MALLOC_PERTURB_': '0'})
 if enable_minimal_test
 
   name = 'minimal-test'
+  test_dependency = test_minimal_dependency
 
   # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   _local_compile_args = [] # Common C/C++ args.
@@ -58,7 +59,7 @@ if enable_minimal_test
 
     common_options_dependency,
 
-    test_minimal_dependency, # <---
+    test_dependency, # <---
 
     # Tested library.
     micro_os_plus_micro_test_plus_dependency,
@@ -71,7 +72,7 @@ if enable_minimal_test
   ]
 
   # https://mesonbuild.com/Reference-manual.html#executable
-  exe = executable(
+  test_executable = executable(
     name,
     include_directories: include_directories(_local_include_directories),
     sources: files(_local_sources),
@@ -92,7 +93,7 @@ if enable_minimal_test
   message('A> ' + name)
 
   # Leave the result in a variable with the test name.
-  set_variable(name.underscorify(), exe)
+  set_variable(name.underscorify(), test_executable)
 
   # Native tests do not need size, list, hex targets.
   # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -148,6 +149,7 @@ endif
 if enable_sample_test
 
   name = 'sample-test'
+  test_dependency = test_sample_dependency
 
   # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   _local_compile_args = [] # Common C/C++ args.
@@ -163,8 +165,8 @@ if enable_sample_test
   _local_compile_c_args += common_options_dependency_compile_c_args
   _local_compile_cpp_args += common_options_dependency_compile_cpp_args
 
-  _local_compile_c_args += test_minimal_dependency_compile_c_args
-  _local_compile_cpp_args += test_minimal_dependency_compile_cpp_args
+  _local_compile_c_args += test_sample_dependency_compile_c_args
+  _local_compile_cpp_args += test_sample_dependency_compile_cpp_args
 
   _local_compile_c_args += micro_os_plus_micro_test_plus_dependency_compile_c_args
   _local_compile_cpp_args += micro_os_plus_micro_test_plus_dependency_compile_cpp_args
@@ -179,7 +181,7 @@ if enable_sample_test
 
     common_options_dependency,
 
-    test_sample_dependency, # <---
+    test_dependency, # <---
 
     # Tested library.
     micro_os_plus_micro_test_plus_dependency,
@@ -192,7 +194,7 @@ if enable_sample_test
   ]
 
   # https://mesonbuild.com/Reference-manual.html#executable
-  exe = executable(
+  test_executable = executable(
     name,
     include_directories: include_directories(_local_include_directories),
     sources: files(_local_sources),
@@ -213,7 +215,7 @@ if enable_sample_test
   message('A> ' + name)
 
   # Leave the result in a variable with the test name.
-  set_variable(name.underscorify(), exe)
+  set_variable(name.underscorify(), test_executable)
 
   # Native tests do not need size, list, hex targets.
   # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -269,6 +271,7 @@ endif
 if enable_unit_test
 
   name = 'unit-test'
+  test_dependency = test_unit_dependency
 
   # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   _local_compile_args = [] # Common C/C++ args.
@@ -300,7 +303,7 @@ if enable_unit_test
 
     common_options_dependency,
 
-    test_unit_dependency, # <---
+    test_dependency, # <---
 
     # Tested library.
     micro_os_plus_micro_test_plus_dependency,
@@ -313,7 +316,7 @@ if enable_unit_test
   ]
 
   # https://mesonbuild.com/Reference-manual.html#executable
-  exe = executable(
+  test_executable = executable(
     name,
     include_directories: include_directories(_local_include_directories),
     sources: files(_local_sources),
@@ -334,7 +337,7 @@ if enable_unit_test
   message('A> ' + name)
 
   # Leave the result in a variable with the test name.
-  set_variable(name.underscorify(), exe)
+  set_variable(name.underscorify(), test_executable)
 
   # Native tests do not need size, list, hex targets.
   # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

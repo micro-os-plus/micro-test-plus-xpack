@@ -3,11 +3,11 @@
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2025 Liviu Ionescu. All rights reserved.
 #
-# Permission to use, copy, modify, and/or distribute this software
-# for any purpose is hereby granted, under the terms of the MIT license.
+# Permission to use, copy, modify, and/or distribute this software for any
+# purpose is hereby granted, under the terms of the MIT license.
 #
-# If a copy of the license was not distributed with this file, it can
-# be obtained from https://opensource.org/licenses/mit.
+# If a copy of the license was not distributed with this file, it can be
+# obtained from https://opensource.org/licenses/mit.
 #
 # -----------------------------------------------------------------------------
 
@@ -17,127 +17,99 @@
 
 message(VERBOSE "Processing 'tests/platforms/qemu-cortex-m3'...")
 
-# -----------------------------------------------------------------------------
-
-# set(xpack_create_listing true)
-# set(xpack_create_hex true)
+include("cmake/platform-library.cmake")
 
 # -----------------------------------------------------------------------------
 
-# Define the tests executables.
-function(add_test_executable name)
-  add_executable(${name})
+# set(xpack_create_listing true) set(xpack_create_hex true)
 
-  set_target_properties(${name}
+# -----------------------------------------------------------------------------
 
-    PROPERTIES
-    OUTPUT_NAME "${name}"
+if(ENABLE_MINIMAL_TEST)
+  add_cross_test_executable(minimal-test)
+
+  target_link_libraries(
+    minimal-test
+    PRIVATE micro-os-plus::common-options
+            # Library with the current test.
+            test::minimal
+            # Tested library.
+            micro-os-plus::micro-test-plus
+            # Portable dependencies.
+            micro-os-plus::diag-trace
+            # Platform specific dependencies.
+            micro-os-plus::platform # bring device & architecture too
+            micro-os-plus::semihosting
   )
 
-  # Include folders.
-  # `tests/platforms/qemu-cortex-m3/include` was added globally.
-  target_include_directories(${name} PRIVATE
-    "../../include"
+  message(VERBOSE "A> minimal-test")
+
+  add_test(
+    NAME "minimal-test"
+    COMMAND
+      qemu-system-arm${extension} --machine mps2-an385 --cpu cortex-m3 --kernel
+      minimal-test.elf --nographic -d unimp,guest_errors --semihosting-config
+      enable=on,target=native,arg=minimal-test,arg=one,arg=two
   )
-
-  message(VERBOSE "A+ -I tests/include")
-
-  # Application sources.
-  target_sources(${name} PRIVATE
-    "../../src/${name}.cpp"
-  )
-
-  message(VERBOSE "A+ tests/src/${name}.cpp")
-
-  target_compile_definitions(${name} PRIVATE
-    # None.
-  )
-
-  target_compile_options(${name} PRIVATE
-    # None.
-  )
-
-  target_link_options(${name} PRIVATE
-    -Wl,-Map,platform-bin/${name}-map.txt
-
-    # -v
-  )
-
-  target_link_libraries(${name} PRIVATE
-
-    # Tested library.
-    micro-os-plus::micro-test-plus
-
-    # Portable dependencies.
-    micro-os-plus::diag-trace
-
-    # Platform specific dependencies.
-    micro-os-plus::platform # bring device & architecture too
-
-    micro-os-plus::semihosting
-    micro-os-plus::startup
-  )
-
-  # TODO use add_custom_target()
-  # https://cmake.org/cmake/help/v3.20/command/add_custom_command.html
-  add_custom_command(TARGET ${name} POST_BUILD
-    COMMAND ${CMAKE_SIZE} --format=berkeley "$<TARGET_FILE:${name}>"
-  )
-
-  if(xpack_create_hex)
-    add_custom_command(TARGET ${name} POST_BUILD
-      COMMAND ${CMAKE_OBJCOPY} -O ihex "$<TARGET_FILE:${name}>" "$<TARGET_FILE:${name}>.hex"
-    )
-  endif()
-
-  if(xpack_create_listing)
-    add_custom_command(TARGET ${name} POST_BUILD
-      COMMAND ${CMAKE_OBJDUMP} --source --all-headers --demangle --line-numbers --wide "$<TARGET_FILE:${name}>" > ${name}-list.txt
-      VERBATIM
-    )
-  endif()
-
-  message(VERBOSE "A> ${name}")
-endfunction()
+endif()
 
 # -----------------------------------------------------------------------------
 
 if(ENABLE_SAMPLE_TEST)
-  add_test_executable(sample-test)
+  add_cross_test_executable(sample-test)
+
+  target_link_libraries(
+    sample-test
+    PRIVATE micro-os-plus::common-options
+            # Library with the current test.
+            test::sample
+            # Tested library.
+            micro-os-plus::micro-test-plus
+            # Portable dependencies.
+            micro-os-plus::diag-trace
+            # Platform specific dependencies.
+            micro-os-plus::platform # bring device & architecture too
+            micro-os-plus::semihosting
+  )
+
+  message(VERBOSE "A> sample-test")
 
   add_test(
     NAME "sample-test"
-
-    COMMAND qemu-system-arm${extension}
-    --machine mps2-an385
-    --cpu cortex-m3
-    --kernel sample-test.elf
-    --nographic
-    -d unimp,guest_errors
-    --semihosting-config enable=on,target=native,arg=sample-test,arg=one,arg=two
+    COMMAND
+      qemu-system-arm${extension} --machine mps2-an385 --cpu cortex-m3 --kernel
+      sample-test.elf --nographic -d unimp,guest_errors --semihosting-config
+      enable=on,target=native,arg=sample-test,arg=one,arg=two
   )
 endif()
 
 # -----------------------------------------------------------------------------
 
 if(ENABLE_UNIT_TEST)
-  add_test_executable(unit-test)
+  add_cross_test_executable(unit-test)
 
-  target_link_libraries(unit-test PRIVATE
-    micro-os-plus::micro-test-plus
+  target_link_libraries(
+    unit-test
+    PRIVATE micro-os-plus::common-options
+            # Library with the current test.
+            test::unit
+            # Tested library.
+            micro-os-plus::micro-test-plus
+            # Portable dependencies.
+            micro-os-plus::diag-trace
+            # Platform specific dependencies.
+            micro-os-plus::platform # bring device & architecture too
+            micro-os-plus::semihosting
   )
+
+  message(VERBOSE "A> unit-test")
 
   add_test(
     NAME "unit-test"
-
-    COMMAND qemu-system-arm${extension}
-    --machine mps2-an385
-    --cpu cortex-m3
-    --kernel unit-test.elf
-    --nographic
-    -d unimp,guest_errors
-    --semihosting-config enable=on,target=native,arg=unit-test
-
+    COMMAND
+      qemu-system-arm${extension} --machine mps2-an385 --cpu cortex-m3 --kernel
+      unit-test.elf --nographic -d unimp,guest_errors --semihosting-config
+      enable=on,target=native,arg=unit-test
     # --semihosting-config arg=--verbose
   )
 endif()
