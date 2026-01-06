@@ -99,7 +99,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Struct template representing a compile-time type list.
      *
-     * @tparam ...Types The types to be included in the list.
+     * @tparam Types The types to be included in the list.
      *
      * @details
      * The `list` struct template provides a mechanism for grouping an
@@ -114,7 +114,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
-    template <class...>
+    template <class... Types>
     struct list
     {
     };
@@ -123,7 +123,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Struct template for compile-time type identity.
      *
      * @tparam T The type to be preserved.
-     * @tparam ...Unused Additional template parameters, ignored.
+     * @tparam Extra Additional template parameters, ignored.
      *
      * @details
      * The `identity` struct template provides a mechanism for preserving a
@@ -137,7 +137,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
-    template <class T, class...>
+    template <class T, class... Extra>
     struct identity
     {
       /**
@@ -184,7 +184,7 @@ namespace micro_os_plus::micro_test_plus
      * from function pointer types.
      *
      * @tparam R The return type of the function.
-     * @tparam ...Args_T The argument types of the function.
+     * @tparam Args_T The argument types of the function.
      *
      * @details
      * This specialisation of the `function_traits` struct template provides
@@ -217,7 +217,7 @@ namespace micro_os_plus::micro_test_plus
      * from plain function types.
      *
      * @tparam R The return type of the function.
-     * @tparam ...Args_T The argument types of the function.
+     * @tparam Args_T The argument types of the function.
      *
      * @details
      * This specialisation of the `function_traits` struct template provides
@@ -251,7 +251,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam R The return type of the member function.
      * @tparam T The class type to which the member function belongs.
-     * @tparam ...Args_T The argument types of the member function.
+     * @tparam Args_T The argument types of the member function.
      *
      * @details
      * This specialisation of the `function_traits` struct template provides
@@ -285,7 +285,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam R The return type of the const member function.
      * @tparam T The class type to which the member function belongs.
-     * @tparam ...Args_T The argument types of the const member function.
+     * @tparam Args_T The argument types of the const member function.
      *
      * @details
      * This specialisation of the `function_traits` struct template provides
@@ -344,7 +344,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Fallback function template for is_valid, returns false if the
      * expression is not valid.
      *
-     * @tparam ...Ts The argument types to be tested.
+     * @tparam Ts The argument types to be tested.
      *
      * @return `false` indicating the expression is not valid for the given
      * argument types.
@@ -353,7 +353,7 @@ namespace micro_os_plus::micro_test_plus
      * This overload is selected when the primary `is_valid` template cannot be
      * instantiated, providing a `false` result for invalid expressions.
      */
-    template <class...>
+    template <class... Ts>
     constexpr auto
     is_valid (...) -> bool
     {
@@ -608,8 +608,6 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Struct template for SFINAE requirements.
      *
-     * @tparam Cond The boolean condition to be checked at compile time.
-     *
      * @details
      * The `requires_` struct template is a utility for SFINAE (Substitution
      * Failure Is Not An Error) in template metaprogramming. It is typically
@@ -623,7 +621,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
-    template <bool>
+    template <bool Cond>
     struct requires_
     {
     };
@@ -950,7 +948,7 @@ namespace micro_os_plus::micro_test_plus
      * getter.
      *
      * @tparam T The type of the value to be encapsulated.
-     * @tparam Unused An optional parameter for SFINAE or specialisation,
+     * @tparam Opt An optional parameter for SFINAE or specialisation,
      * defaults to `int`.
      *
      * @details
@@ -967,7 +965,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
-    template <class T, class = int>
+    template <class T, class Opt = int>
     struct value : type_traits::op
     {
       /**

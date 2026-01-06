@@ -174,8 +174,12 @@ namespace micro_os_plus::micro_test_plus
    * @brief Evaluate a generic condition and report the results.
    *
    * @tparam Expr_T The type of the custom expression.
-   * @tparam (SFINAE) Enabled only if `Expr_T` is derived from `detail::op` or
+   *
+   * @par SFINAE
+   * Enabled only if `Expr_T` is derived from `detail::op` or
    * is convertible to `bool`.
+   * 
+
    * @param [in] expr Logical expression to evaluate.
    * @param [in] sl Optional source location, defaulting to the current line.
    * @return An output stream to write optional messages.
@@ -193,8 +197,11 @@ namespace micro_os_plus::micro_test_plus
    * @brief Check a condition and, if false, abort test execution.
    *
    * @tparam Expr_T The type of the custom expression.
-   * @tparam (SFINAE) Enabled only if `Expr_T` is derived from `detail::op` or
+   *
+   * @par SFINAE
+   * Enabled only if `Expr_T` is derived from `detail::op` or
    * is convertible to `bool`.
+   *
    * @param [in] expr Logical expression to evaluate.
    * @param [in] sl Optional source location, defaulting to the current line.
    * @return An output stream to write optional messages.

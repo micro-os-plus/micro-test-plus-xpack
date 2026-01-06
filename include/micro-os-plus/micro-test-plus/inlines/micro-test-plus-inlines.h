@@ -140,7 +140,7 @@ namespace micro_os_plus::micro_test_plus
    * The function returns an output stream, allowing optional messages to be
    * appended to the test report.
    *
-   * @par Example
+   * **Example**
    *
    * @code{.cpp}
    * namespace mt = micro_os_plus::micro_test_plus;
@@ -174,7 +174,7 @@ namespace micro_os_plus::micro_test_plus
    * The function returns an output stream, allowing optional messages to be
    * appended to the test report.
    *
-   * @par Example
+   * **Example**
    *
    * @code{.cpp}
    * namespace mt = micro_os_plus::micro_test_plus;
@@ -260,7 +260,7 @@ namespace micro_os_plus::micro_test_plus
      * parsing of delimited data, which is particularly useful for validating
      * string processing logic in test cases.
      *
-     * @par Example
+     * **Example**
      *
      * @code{.cpp}
      * namespace mt = micro_os_plus::micro_test_plus;

@@ -864,7 +864,7 @@ namespace micro_os_plus::micro_test_plus
    * expressions, especially when working with user-defined or less common
    * types.
    *
-   * @par Example
+   * **Example**
    *
    * @code
    * MyType obj;
