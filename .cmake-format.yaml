@@ -1,0 +1,11 @@
+# .cmake-format.yaml
+# https://cmake-format.readthedocs.io/en/latest/configuration.html
+
+tab_size: 2
+use_tabchars: false
+line_width: 80
+
+# Put closing parens on a dedicated line for multi-line calls.
+dangle_parens: true
+
+enable_markup: true
