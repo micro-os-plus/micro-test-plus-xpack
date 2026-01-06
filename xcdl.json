@@ -1,7 +1,7 @@
 {
   "minimumXcdlRequired": "2.0.0",
   "license": "MIT",
-  "copyright": "Copyright (c) 2022 Liviu Ionescu. All rights reserved.",
+  "copyright": "Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.",
   "cdlPackage": {
     "name": "micro-test-plus",
     "description": "µTest++, a lightweight testing framework for embedded platforms",
