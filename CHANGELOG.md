@@ -6,10 +6,272 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2026-01-06
+
+* dafef2a copyright reformat following cmake
+* c1bb7e4 Copyright 2026
+* 9543dc5 package*.json bump deps
+* cdb7c12 CMakeLists.txt reformat
+* 55d1500 add .cmake-format.yaml
+* b127ac5 settings.json update
+* 578d545 include: fix doxygen
+* 710c8ff tests rework & reformat cmake
+
+## 2025-11-20
+
+* c1459d7 npm --prefix
+* 414f4da npm --prefix
+* 5460362 silence warnings
+* d2032d5 replace auto -> source_location
+
+## 2025-10-07
+
+* f099ea9 update copyright notices
+
+## 2025-08-23
+
+* 6e09fe5 tests/package.json disable clang 15
+* caba436 tests native rework
+* 1ba174e tests top meson.build
+* e6ce35c tests global-definitions add minimal test
+* db8a14b no need for top config.h
+* 1c926ff move tests to folders
+* 858b92d move code from test-main.cmake to top
+
+## 2025-08-22
+
+* 8dbfa79 fix typo
+
+## 2025-08-08
+
+* ab3b7ab website update Generated via
+* 7d69688 website update Generated via links
+
+## 2025-07-30
+
+* 31ed4de add doxygen back to git
+
+## 2025-07-29
+
+* 621040d website update sidebar
+* 53124cc website update without The ... Reference
+
+## 2025-07-14
+
+* b878ad9 website update for tree tables
+
+## 2025-07-10
+
+* 38442a1 website/package.json update d2d config
+* fb828ce website package.json update link-helpers
+* e9132f8 website update for doxygen2docusaurus
+
+## 2025-07-06
+
+* 897d07e website reorder index without ~
+* f571fce website rework index files
+* 9da3278 website update with treeEntryName
+* ea87f50 fix broken links in test/md
+* be89733 publish-github-pages.yml update
+* 48f427d website update
+* b016885 website/doxygen update
+* 25fddfa reflection-inlines.h update doxy metadata
+
+## 2025-06-19
+
+* afa713d publish-github-pages without doxygen
+* a65e1f8 website package.json cleanup
+* d0fbaf3 website re-generate as html
+
+## 2025-06-16
+
+* 4593547 website docs api update
+* 99e639a website doxygen xml update
+* b8132ed website doxygen update
+
+## 2025-06-11
+
+* c2f2863 website update
+
+## 2025-06-06
+
+* c9ae57b website docusaurus.config.ts comment out faster
+* 3e913cb website docusaurus.config.ts enable faster
+* e8e05e4 website package*.json add faster
+* b518e57 website docusaurus.config.ts revert to using preset
+* c43d1a9 website package*.json 3.8.1
+* 2a5c0f3 website regenerate
+* e66973e move @mainpage to doxygen folder
+
+## 2025-06-05
+
+* 4154858 update package*.json
+* 3c7a543 website package*.json update
+* 16888c7 website add doxygen/xml
+* e37c3fb website update config and docs/api
+
+## 2025-05-26
+
+* 1ede877 website re-generate commons 1.14.0
+* a6be438 package*.json update
+* 35df5ab re-generate commons doxygen 1.14.0
+
+## 2025-05-24
+
+* d29b5dc website doxygen cosmetics
+* 8f90d06 website re-generate docs api
+* efe9e95 website re-generate commons
+* a1f8d68 website re-generate docs api
+* 1b170fd package*.json bump deps
+* c8c0efd add Docs wrapper
+
+## 2025-05-23
+
+* bebad3d website re-generate commons runOnStart
+* 9861c51 re-generate top commons (no generate-doxygen)
+* 3bfb114 fix topics.h H1
+
+## 2025-05-22
+
+* f0fa84f website re-generate docs api
+* 22af156 type-traits.h fix warning
+* 6ca4410 website re-generate docs api
+* 054114e code fix doxygen errors
+* ee4beec website re-generate docs
+* dd2d262 code update doxygen for files & folders
+* 8f4a2ad cosmetics
+* 2db30dc move *-inlines.h to separate folder
+* 08065b2 code split inlines into separate files
+
+## 2025-05-21
+
+* 6ace7d6 move throws & nothrow to inlines
+* 00a29fb move function comparators to inlines
+* 8b05ae6 test-suite-inlines.h fixes
+* 38399a7 move expect & assume to inlines.h
+* cf74ace move include inlines to test-reporter.h
+* 62f00e7 move test_suite::test_suite to separate inline
+* af7231f doxygen cosmetics
+* a0aba61 website re-generate commons
+* 8278aec re-generate commons
+* 746e991 website cosmetics licenses/mit
+
+## 2025-05-20
+
+* 2209a6d website package-lock.json update
+* 13daa54 website re-generate commons, bump deps
+* 9b80736 website re-generate doxygen docs
+* 44ee8dc doxygen updates
+
+## 2025-05-18
+
+* b4716ec re-generate top commons
+* e897e3c tests re-generate commons
+* 2a2d633 detail.h: fix doxygen
+* 52c5636 website package.json bump deps
+* 925e2c7 publish-github-pages.yml update
+* 867fb72 website package.json bump deps
+* dbed476 website package-lock.json update
+* 7425379 website package.json use github deps
+* 64825e3 website package.json bump deps
+* 387961f publish-github-pages.yml update GITHUB_PATH
+* 0fc37eb publish-github-pages.yml update build
+* 590a68b website update
+* 664e2a6 doxygen topics add ##Description
+* 526405d literals.h replace @deprecated with @par
+* 06b1ac9 website reorder @details
+* fd2f81c sources move @details at the end
+
+## 2025-05-17
+
+* 987479c website updates
+* 329fcc9 explicit void and cosmetics
+* e1d4b86 website namespaces with full name
+* 500f2e0 website docs api update with full doxygen metadata
+* 64d1b71 website doxygen configuration split into separate files
+* 44b464a source code full doxygen
+
+## 2025-05-16
+
+* 4199543 use @code/@endcode
+* 42e258b website update with fully documented detail.h
+* 2822be3 detail.h fully documented
+* c75d146 website update doxygen
+* 499b31f doxygen rephrase in british english
+* 1639668 website faq update
+* b70fef2 website update for moved headers; add documentation for folders
+* 88a3163 move headers to include/micro-os-plus/micro-test-plus
+* 6f6144a website rename doxygen topics files as .h
+
+## 2025-05-15
+
+* d2b8232 website @file @namespace updates
+* 8706045 doxygen @file @namespace updates
+* 142c64e website update
+* 68c26b1 website rephrase all project files
+* 20d2371 website api update topics
+* 16fdd97 website update docusaurus config, sidebar and menu
+* 8503518 website update topics and user's guide
+
+## 2025-05-14
+
+* ef6cb40 website re-generate commons
+* ea4ed37 doxygen REPEAT_BRIEF = NO
+* 3d93c1d website re-generate commons
+* e884791 website move docusaurus jsons to top
+
+## 2025-05-12
+
+* 835d5e5 website fix index template parameters
+* c6f4b98 website sort members
+* 03ba6ee website update () for functions & Constructors sections
+* f5050c0 website rename top topics
+* 3ffd64a website update indices
+
+## 2025-05-11
+
+* bf33de1 website: add docusaurus-config-api-menu-dropdown.json
+* 02f9451 website move folders index to files
+* c903886 doxygen fix @par empty line
+
+## 2025-05-10
+
+* 80283a5 website update for default constructors & destructor
+* c4c31b3 website: add redirectsOutputFolderPath to plugin
+* 4350132 website update for @par Example
+* b394f2b add an empty line after @par Example
+* 99967a3 website update pages h1
+* b7470b3 website namespaces add fqn
+
+## 2025-05-09
+
+* f42a5bf website update EnumerationListItem & Reference
+
+## 2025-05-08
+
+* a692dc5 website update enumeration
+* 654a4ae website update docs/api
+
+## 2025-04-30
+
+* e54b9b8 add website api pages
+* f302a91 update doxygen metadata
+
+## 2025-04-25
+
+* 75cfaa6 website re-generate commons
+
+## 2025-03-16
+
+* e9f4d19 website: re-generate commons
+* b80ae62 website: blog post update
+
 ## 2025-03-15
 
-* v3.2.2 published on npmjs.com
-* v3.2.2 prepared
+* ed2ee93 website: blog post release 3.2.2 published
+* 32950dc 3.2.2
+* 10cf3b9 CHANGELOG: publish npm v3.2.2
+* 234724a prepare v3.2.2
 * 771e589 re-generate commons
 
 ## 2025-03-14
