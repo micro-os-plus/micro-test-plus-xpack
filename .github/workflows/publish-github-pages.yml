@@ -62,7 +62,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{steps.deployment.outputs.page_url}}
-    # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
+    # https://github.com/actions/runner-images
     runs-on: ubuntu-24.04
 
     steps:
