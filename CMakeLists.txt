@@ -3,11 +3,11 @@
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2021-2025 Liviu Ionescu. All rights reserved.
 #
-# Permission to use, copy, modify, and/or distribute this software
-# for any purpose is hereby granted, under the terms of the MIT license.
+# Permission to use, copy, modify, and/or distribute this software for any
+# purpose is hereby granted, under the terms of the MIT license.
 #
-# If a copy of the license was not distributed with this file, it can
-# be obtained from https://opensource.org/licenses/mit.
+# If a copy of the license was not distributed with this file, it can be
+# obtained from https://opensource.org/licenses/mit.
 #
 # -----------------------------------------------------------------------------
 
@@ -24,17 +24,16 @@
 # https://cmake.org/cmake/help/v3.20/
 cmake_minimum_required(VERSION 3.20)
 
-project(
-  micro-os-plus-micro-test-plus
-  DESCRIPTION "µTest++"
-)
+project(micro-os-plus-micro-test-plus DESCRIPTION "µTest++")
 
 # To access the optional functions, add `@micro-os-plus/build-helper` as a
 # dependency and include the `cmake/micro-os-plus-build-helper.cmake` file.
 
 if(COMMAND xpack_get_package_name_and_version)
   xpack_get_package_name_and_version("${CMAKE_CURRENT_SOURCE_DIR}/package.json")
-  message(VERBOSE "Processing xPack ${PACKAGE_JSON_NAME}@${PACKAGE_JSON_VERSION}...")
+  message(VERBOSE
+          "Processing xPack ${PACKAGE_JSON_NAME}@${PACKAGE_JSON_VERSION}..."
+  )
 endif()
 
 # -----------------------------------------------------------------------------
@@ -42,32 +41,29 @@ endif()
 # The project library definitions.
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#normal-libraries
-# PRIVATE: build definitions, used internally
-# INTERFACE: usage definitions, passed up to targets linking to it
-# PUBLIC: both
+# PRIVATE: build definitions, used internally INTERFACE: usage definitions,
+# passed up to targets linking to it PUBLIC: both
 add_library(micro-os-plus-micro-test-plus-interface INTERFACE)
 
-target_include_directories(micro-os-plus-micro-test-plus-interface INTERFACE
-  "include"
+target_include_directories(
+  micro-os-plus-micro-test-plus-interface INTERFACE "include"
 )
 
-target_sources(micro-os-plus-micro-test-plus-interface INTERFACE
-  "src/micro-test-plus.cpp"
-  "src/test-runner.cpp"
-  "src/test-reporter.cpp"
-  "src/test-suite.cpp"
+target_sources(
+  micro-os-plus-micro-test-plus-interface
+  INTERFACE "src/micro-test-plus.cpp" "src/test-runner.cpp"
+            "src/test-reporter.cpp" "src/test-suite.cpp"
 )
 
-target_compile_definitions(micro-os-plus-micro-test-plus-interface INTERFACE
-  # None.
+target_compile_definitions(
+  micro-os-plus-micro-test-plus-interface INTERFACE # None.
 )
 
-target_compile_options(micro-os-plus-micro-test-plus-interface INTERFACE
-  # None.
+target_compile_options(
+  micro-os-plus-micro-test-plus-interface INTERFACE # None.
 )
 
-target_link_libraries(micro-os-plus-micro-test-plus-interface INTERFACE
-  # None.
+target_link_libraries(micro-os-plus-micro-test-plus-interface INTERFACE # None.
 )
 
 if(COMMAND xpack_display_target_lists)
@@ -78,7 +74,12 @@ endif()
 
 # Aliases.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
-add_library(micro-os-plus::micro-test-plus ALIAS micro-os-plus-micro-test-plus-interface)
-message(VERBOSE "> micro-os-plus::micro-test-plus -> micro-os-plus-micro-test-plus-interface")
+add_library(
+  micro-os-plus::micro-test-plus ALIAS micro-os-plus-micro-test-plus-interface
+)
+message(
+  VERBOSE
+  "> micro-os-plus::micro-test-plus -> micro-os-plus-micro-test-plus-interface"
+)
 
 # -----------------------------------------------------------------------------
