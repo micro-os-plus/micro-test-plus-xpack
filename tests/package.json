@@ -539,7 +539,7 @@
       },
       "meson-cross-actions": {
         "hidden": true,
-        "inherit": [
+        "inherits": [
           "meson-native-actions"
         ],
         "actions": {
@@ -685,7 +685,7 @@
       },
       "native-gcc-latest-dependencies": {
         "hidden": true,
-        "inherit": [
+        "inherits": [
           "native-gcc14-dependencies"
         ]
       },
@@ -731,7 +731,7 @@
       },
       "native-clang-latest-dependencies": {
         "hidden": true,
-        "inherit": [
+        "inherits": [
           "native-clang19-dependencies"
         ]
       },
@@ -793,7 +793,7 @@
       },
       "cross-arm-none-eabi-gcc-dependencies": {
         "hidden": true,
-        "inherit": [
+        "inherits": [
           "cross-arm-none-eabi-gcc14-dependencies"
         ]
       },
@@ -827,7 +827,7 @@
       },
       "cross-aarch64-none-elf-gcc-dependencies": {
         "hidden": true,
-        "inherit": [
+        "inherits": [
           "cross-aarch64-none-elf-gcc14-dependencies"
         ]
       },
@@ -861,7 +861,7 @@
       },
       "cross-riscv-none-elf-gcc-dependencies": {
         "hidden": true,
-        "inherit": [
+        "inherits": [
           "cross-riscv-none-elf-gcc14-dependencies"
         ]
       },
@@ -922,7 +922,7 @@
         }
       },
       "native-cmake-sys-debug": {
-        "inherit": [
+        "inherits": [
           "cmake-actions",
           "native-actions",
           "native-dependencies"
@@ -936,7 +936,7 @@
         }
       },
       "native-cmake-sys-release": {
-        "inherit": [
+        "inherits": [
           "native-cmake-sys-debug"
         ],
         "properties": {
@@ -945,7 +945,7 @@
       },
       "native-cmake-gcc": {
         "hidden": true,
-        "inherit": [
+        "inherits": [
           "cmake-actions",
           "native-actions",
           "native-dependencies"
@@ -957,13 +957,13 @@
         }
       },
       "native-cmake-gcc-debug": {
-        "inherit": [
+        "inherits": [
           "native-cmake-gcc",
           "native-gcc-latest-dependencies"
         ]
       },
       "native-cmake-gcc-release": {
-        "inherit": [
+        "inherits": [
           "native-cmake-gcc-debug"
         ],
         "properties": {
@@ -971,13 +971,13 @@
         }
       },
       "native-cmake-gcc11-debug": {
-        "inherit": [
+        "inherits": [
           "native-cmake-gcc",
           "native-gcc11-dependencies"
         ]
       },
       "native-cmake-gcc11-release": {
-        "inherit": [
+        "inherits": [
           "native-cmake-gcc11-debug"
         ],
         "properties": {
@@ -985,13 +985,13 @@
         }
       },
       "native-cmake-gcc12-debug": {
-        "inherit": [
+        "inherits": [
           "native-cmake-gcc",
           "native-gcc12-dependencies"
         ]
       },
       "native-cmake-gcc12-release": {
-        "inherit": [
+        "inherits": [
           "native-cmake-gcc12-debug"
         ],
         "properties": {
@@ -999,13 +999,13 @@
         }
       },
       "native-cmake-gcc13-debug": {
-        "inherit": [
+        "inherits": [
           "native-cmake-gcc",
           "native-gcc13-dependencies"
         ]
       },
       "native-cmake-gcc13-release": {
-        "inherit": [
+        "inherits": [
           "native-cmake-gcc13-debug"
         ],
         "properties": {
@@ -1013,13 +1013,13 @@
         }
       },
       "native-cmake-gcc14-debug": {
-        "inherit": [
+        "inherits": [
           "native-cmake-gcc",
           "native-gcc14-dependencies"
         ]
       },
       "native-cmake-gcc14-release": {
-        "inherit": [
+        "inherits": [
           "native-cmake-gcc14-debug"
         ],
         "properties": {
@@ -1028,7 +1028,7 @@
       },
       "native-cmake-clang": {
         "hidden": true,
-        "inherit": [
+        "inherits": [
           "cmake-actions",
           "native-actions",
           "native-dependencies"
@@ -1040,13 +1040,13 @@
         }
       },
       "native-cmake-clang-debug": {
-        "inherit": [
+        "inherits": [
           "native-cmake-clang",
           "native-clang-latest-dependencies"
         ]
       },
       "native-cmake-clang-release": {
-        "inherit": [
+        "inherits": [
           "native-cmake-clang-debug"
         ],
         "properties": {
@@ -1054,13 +1054,13 @@
         }
       },
       "native-cmake-clang13-debug": {
-        "inherit": [
+        "inherits": [
           "native-cmake-clang",
           "native-clang13-dependencies"
         ]
       },
       "native-cmake-clang13-release": {
-        "inherit": [
+        "inherits": [
           "native-cmake-clang13-debug"
         ],
         "properties": {
@@ -1068,13 +1068,13 @@
         }
       },
       "native-cmake-clang14-debug": {
-        "inherit": [
+        "inherits": [
           "native-cmake-clang",
           "native-clang14-dependencies"
         ]
       },
       "native-cmake-clang14-release": {
-        "inherit": [
+        "inherits": [
           "native-cmake-clang14-debug"
         ],
         "properties": {
@@ -1082,13 +1082,13 @@
         }
       },
       "native-cmake-clang15-debug": {
-        "inherit": [
+        "inherits": [
           "native-cmake-clang",
           "native-clang15-dependencies"
         ]
       },
       "native-cmake-clang15-release": {
-        "inherit": [
+        "inherits": [
           "native-cmake-clang15-debug"
         ],
         "properties": {
@@ -1096,13 +1096,13 @@
         }
       },
       "native-cmake-clang16-debug": {
-        "inherit": [
+        "inherits": [
           "native-cmake-clang",
           "native-clang16-dependencies"
         ]
       },
       "native-cmake-clang16-release": {
-        "inherit": [
+        "inherits": [
           "native-cmake-clang16-debug"
         ],
         "properties": {
@@ -1110,13 +1110,13 @@
         }
       },
       "native-cmake-clang17-debug": {
-        "inherit": [
+        "inherits": [
           "native-cmake-clang",
           "native-clang17-dependencies"
         ]
       },
       "native-cmake-clang17-release": {
-        "inherit": [
+        "inherits": [
           "native-cmake-clang17-debug"
         ],
         "properties": {
@@ -1124,13 +1124,13 @@
         }
       },
       "native-cmake-clang18-debug": {
-        "inherit": [
+        "inherits": [
           "native-cmake-clang",
           "native-clang18-dependencies"
         ]
       },
       "native-cmake-clang18-release": {
-        "inherit": [
+        "inherits": [
           "native-cmake-clang18-debug"
         ],
         "properties": {
@@ -1138,13 +1138,13 @@
         }
       },
       "native-cmake-clang19-debug": {
-        "inherit": [
+        "inherits": [
           "native-cmake-clang",
           "native-clang19-dependencies"
         ]
       },
       "native-cmake-clang19-release": {
-        "inherit": [
+        "inherits": [
           "native-cmake-clang19-debug"
         ],
         "properties": {
@@ -1152,13 +1152,13 @@
         }
       },
       "native-cmake-clang20-debug": {
-        "inherit": [
+        "inherits": [
           "native-cmake-clang",
           "native-clang20-dependencies"
         ]
       },
       "native-cmake-clang20-release": {
-        "inherit": [
+        "inherits": [
           "native-cmake-clang20-debug"
         ],
         "properties": {
@@ -1166,7 +1166,7 @@
         }
       },
       "native-meson-sys-debug": {
-        "inherit": [
+        "inherits": [
           "native-actions",
           "meson-native-actions",
           "native-dependencies"
@@ -1180,7 +1180,7 @@
         }
       },
       "native-meson-sys-release": {
-        "inherit": [
+        "inherits": [
           "native-meson-sys-debug"
         ],
         "properties": {
@@ -1189,7 +1189,7 @@
       },
       "native-meson-gcc": {
         "hidden": true,
-        "inherit": [
+        "inherits": [
           "native-actions",
           "meson-native-actions",
           "native-dependencies"
@@ -1201,13 +1201,13 @@
         }
       },
       "native-meson-gcc-debug": {
-        "inherit": [
+        "inherits": [
           "native-meson-gcc",
           "native-gcc-latest-dependencies"
         ]
       },
       "native-meson-gcc-release": {
-        "inherit": [
+        "inherits": [
           "native-meson-gcc-debug"
         ],
         "properties": {
@@ -1215,13 +1215,13 @@
         }
       },
       "native-meson-gcc11-debug": {
-        "inherit": [
+        "inherits": [
           "native-meson-gcc",
           "native-gcc11-dependencies"
         ]
       },
       "native-meson-gcc11-release": {
-        "inherit": [
+        "inherits": [
           "native-meson-gcc11-debug"
         ],
         "properties": {
@@ -1229,13 +1229,13 @@
         }
       },
       "native-meson-gcc12-debug": {
-        "inherit": [
+        "inherits": [
           "native-meson-gcc",
           "native-gcc12-dependencies"
         ]
       },
       "native-meson-gcc12-release": {
-        "inherit": [
+        "inherits": [
           "native-meson-gcc12-debug"
         ],
         "properties": {
@@ -1243,13 +1243,13 @@
         }
       },
       "native-meson-gcc13-debug": {
-        "inherit": [
+        "inherits": [
           "native-meson-gcc",
           "native-gcc13-dependencies"
         ]
       },
       "native-meson-gcc13-release": {
-        "inherit": [
+        "inherits": [
           "native-meson-gcc13-debug"
         ],
         "properties": {
@@ -1257,13 +1257,13 @@
         }
       },
       "native-meson-gcc14-debug": {
-        "inherit": [
+        "inherits": [
           "native-meson-gcc",
           "native-gcc14-dependencies"
         ]
       },
       "native-meson-gcc14-release": {
-        "inherit": [
+        "inherits": [
           "native-meson-gcc14-debug"
         ],
         "properties": {
@@ -1272,7 +1272,7 @@
       },
       "native-meson-clang": {
         "hidden": true,
-        "inherit": [
+        "inherits": [
           "native-actions",
           "meson-native-actions",
           "native-dependencies"
@@ -1284,13 +1284,13 @@
         }
       },
       "native-meson-clang-debug": {
-        "inherit": [
+        "inherits": [
           "native-meson-clang",
           "native-clang-latest-dependencies"
         ]
       },
       "native-meson-clang-release": {
-        "inherit": [
+        "inherits": [
           "native-meson-clang-debug"
         ],
         "properties": {
@@ -1298,13 +1298,13 @@
         }
       },
       "native-meson-clang13-debug": {
-        "inherit": [
+        "inherits": [
           "native-meson-clang",
           "native-clang13-dependencies"
         ]
       },
       "native-meson-clang13-release": {
-        "inherit": [
+        "inherits": [
           "native-meson-clang13-debug"
         ],
         "properties": {
@@ -1312,13 +1312,13 @@
         }
       },
       "native-meson-clang14-debug": {
-        "inherit": [
+        "inherits": [
           "native-meson-clang",
           "native-clang14-dependencies"
         ]
       },
       "native-meson-clang14-release": {
-        "inherit": [
+        "inherits": [
           "native-meson-clang14-debug"
         ],
         "properties": {
@@ -1326,13 +1326,13 @@
         }
       },
       "native-meson-clang15-debug": {
-        "inherit": [
+        "inherits": [
           "native-meson-clang",
           "native-clang15-dependencies"
         ]
       },
       "native-meson-clang15-release": {
-        "inherit": [
+        "inherits": [
           "native-meson-clang15-debug"
         ],
         "properties": {
@@ -1340,13 +1340,13 @@
         }
       },
       "native-meson-clang16-debug": {
-        "inherit": [
+        "inherits": [
           "native-meson-clang",
           "native-clang16-dependencies"
         ]
       },
       "native-meson-clang16-release": {
-        "inherit": [
+        "inherits": [
           "native-meson-clang16-debug"
         ],
         "properties": {
@@ -1354,13 +1354,13 @@
         }
       },
       "native-meson-clang17-debug": {
-        "inherit": [
+        "inherits": [
           "native-meson-clang",
           "native-clang17-dependencies"
         ]
       },
       "native-meson-clang17-release": {
-        "inherit": [
+        "inherits": [
           "native-meson-clang17-debug"
         ],
         "properties": {
@@ -1368,13 +1368,13 @@
         }
       },
       "native-meson-clang18-debug": {
-        "inherit": [
+        "inherits": [
           "native-meson-clang",
           "native-clang18-dependencies"
         ]
       },
       "native-meson-clang18-release": {
-        "inherit": [
+        "inherits": [
           "native-meson-clang18-debug"
         ],
         "properties": {
@@ -1382,13 +1382,13 @@
         }
       },
       "native-meson-clang19-debug": {
-        "inherit": [
+        "inherits": [
           "native-meson-clang",
           "native-clang19-dependencies"
         ]
       },
       "native-meson-clang19-release": {
-        "inherit": [
+        "inherits": [
           "native-meson-clang19-debug"
         ],
         "properties": {
@@ -1396,13 +1396,13 @@
         }
       },
       "native-meson-clang20-debug": {
-        "inherit": [
+        "inherits": [
           "native-meson-clang",
           "native-clang20-dependencies"
         ]
       },
       "native-meson-clang20-release": {
-        "inherit": [
+        "inherits": [
           "native-meson-clang20-debug"
         ],
         "properties": {
@@ -1411,7 +1411,7 @@
       },
       "qemu-cortex-m0-cmake-gcc": {
         "hidden": true,
-        "inherit": [
+        "inherits": [
           "short-win-paths-properties",
           "cmake-actions",
           "cortexm-actions",
@@ -1427,7 +1427,7 @@
         }
       },
       "qemu-cortex-m0-cmake-gcc-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m0-cmake-gcc",
           "cross-arm-none-eabi-gcc-dependencies"
         ],
@@ -1436,7 +1436,7 @@
         }
       },
       "qemu-cortex-m0-cmake-gcc-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m0-cmake-gcc-debug"
         ],
         "properties": {
@@ -1445,7 +1445,7 @@
         }
       },
       "qemu-cortex-m0-cmake-gcc11-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m0-cmake-gcc",
           "cross-arm-none-eabi-gcc11-dependencies"
         ],
@@ -1454,7 +1454,7 @@
         }
       },
       "qemu-cortex-m0-cmake-gcc11-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m0-cmake-gcc11-debug"
         ],
         "properties": {
@@ -1463,7 +1463,7 @@
         }
       },
       "qemu-cortex-m0-cmake-gcc12-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m0-cmake-gcc",
           "cross-arm-none-eabi-gcc12-dependencies"
         ],
@@ -1472,7 +1472,7 @@
         }
       },
       "qemu-cortex-m0-cmake-gcc12-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m0-cmake-gcc12-debug"
         ],
         "properties": {
@@ -1481,7 +1481,7 @@
         }
       },
       "qemu-cortex-m0-cmake-gcc13-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m0-cmake-gcc",
           "cross-arm-none-eabi-gcc13-dependencies"
         ],
@@ -1490,7 +1490,7 @@
         }
       },
       "qemu-cortex-m0-cmake-gcc13-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m0-cmake-gcc13-debug"
         ],
         "properties": {
@@ -1499,7 +1499,7 @@
         }
       },
       "qemu-cortex-m0-cmake-gcc14-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m0-cmake-gcc",
           "cross-arm-none-eabi-gcc14-dependencies"
         ],
@@ -1508,7 +1508,7 @@
         }
       },
       "qemu-cortex-m0-cmake-gcc14-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m0-cmake-gcc14-debug"
         ],
         "properties": {
@@ -1518,7 +1518,7 @@
       },
       "qemu-cortex-m3-cmake-gcc": {
         "hidden": true,
-        "inherit": [
+        "inherits": [
           "short-win-paths-properties",
           "cmake-actions",
           "cortexm-actions",
@@ -1534,7 +1534,7 @@
         }
       },
       "qemu-cortex-m3-cmake-gcc-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m3-cmake-gcc",
           "cross-arm-none-eabi-gcc-dependencies"
         ],
@@ -1543,7 +1543,7 @@
         }
       },
       "qemu-cortex-m3-cmake-gcc-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m3-cmake-gcc-debug"
         ],
         "properties": {
@@ -1552,7 +1552,7 @@
         }
       },
       "qemu-cortex-m3-cmake-gcc11-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m3-cmake-gcc",
           "cross-arm-none-eabi-gcc11-dependencies"
         ],
@@ -1561,7 +1561,7 @@
         }
       },
       "qemu-cortex-m3-cmake-gcc11-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m3-cmake-gcc11-debug"
         ],
         "properties": {
@@ -1570,7 +1570,7 @@
         }
       },
       "qemu-cortex-m3-cmake-gcc12-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m3-cmake-gcc",
           "cross-arm-none-eabi-gcc12-dependencies"
         ],
@@ -1579,7 +1579,7 @@
         }
       },
       "qemu-cortex-m3-cmake-gcc12-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m3-cmake-gcc12-debug"
         ],
         "properties": {
@@ -1588,7 +1588,7 @@
         }
       },
       "qemu-cortex-m3-cmake-gcc13-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m3-cmake-gcc",
           "cross-arm-none-eabi-gcc13-dependencies"
         ],
@@ -1597,7 +1597,7 @@
         }
       },
       "qemu-cortex-m3-cmake-gcc13-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m3-cmake-gcc13-debug"
         ],
         "properties": {
@@ -1606,7 +1606,7 @@
         }
       },
       "qemu-cortex-m3-cmake-gcc14-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m3-cmake-gcc",
           "cross-arm-none-eabi-gcc14-dependencies"
         ],
@@ -1615,7 +1615,7 @@
         }
       },
       "qemu-cortex-m3-cmake-gcc14-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m3-cmake-gcc14-debug"
         ],
         "properties": {
@@ -1625,7 +1625,7 @@
       },
       "qemu-cortex-m4f-cmake-gcc": {
         "hidden": true,
-        "inherit": [
+        "inherits": [
           "short-win-paths-properties",
           "cmake-actions",
           "cortexm-actions",
@@ -1641,7 +1641,7 @@
         }
       },
       "qemu-cortex-m4f-cmake-gcc-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m4f-cmake-gcc",
           "cross-arm-none-eabi-gcc-dependencies"
         ],
@@ -1650,7 +1650,7 @@
         }
       },
       "qemu-cortex-m4f-cmake-gcc-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m4f-cmake-gcc-debug"
         ],
         "properties": {
@@ -1659,7 +1659,7 @@
         }
       },
       "qemu-cortex-m4f-cmake-gcc11-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m4f-cmake-gcc",
           "cross-arm-none-eabi-gcc11-dependencies"
         ],
@@ -1668,7 +1668,7 @@
         }
       },
       "qemu-cortex-m4f-cmake-gcc11-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m4f-cmake-gcc11-debug"
         ],
         "properties": {
@@ -1677,7 +1677,7 @@
         }
       },
       "qemu-cortex-m4f-cmake-gcc12-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m4f-cmake-gcc",
           "cross-arm-none-eabi-gcc12-dependencies"
         ],
@@ -1686,7 +1686,7 @@
         }
       },
       "qemu-cortex-m4f-cmake-gcc12-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m4f-cmake-gcc12-debug"
         ],
         "properties": {
@@ -1695,7 +1695,7 @@
         }
       },
       "qemu-cortex-m4f-cmake-gcc13-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m4f-cmake-gcc",
           "cross-arm-none-eabi-gcc13-dependencies"
         ],
@@ -1704,7 +1704,7 @@
         }
       },
       "qemu-cortex-m4f-cmake-gcc13-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m4f-cmake-gcc13-debug"
         ],
         "properties": {
@@ -1713,7 +1713,7 @@
         }
       },
       "qemu-cortex-m4f-cmake-gcc14-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m4f-cmake-gcc",
           "cross-arm-none-eabi-gcc14-dependencies"
         ],
@@ -1722,7 +1722,7 @@
         }
       },
       "qemu-cortex-m4f-cmake-gcc14-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m4f-cmake-gcc14-debug"
         ],
         "properties": {
@@ -1732,7 +1732,7 @@
       },
       "qemu-cortex-m7f-cmake-gcc": {
         "hidden": true,
-        "inherit": [
+        "inherits": [
           "short-win-paths-properties",
           "cmake-actions",
           "cortexm-actions",
@@ -1748,7 +1748,7 @@
         }
       },
       "qemu-cortex-m7f-cmake-gcc-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m7f-cmake-gcc",
           "cross-arm-none-eabi-gcc-dependencies"
         ],
@@ -1757,7 +1757,7 @@
         }
       },
       "qemu-cortex-m7f-cmake-gcc-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m7f-cmake-gcc-debug"
         ],
         "properties": {
@@ -1766,7 +1766,7 @@
         }
       },
       "qemu-cortex-m7f-cmake-gcc11-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m7f-cmake-gcc",
           "cross-arm-none-eabi-gcc11-dependencies"
         ],
@@ -1775,7 +1775,7 @@
         }
       },
       "qemu-cortex-m7f-cmake-gcc11-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m7f-cmake-gcc11-debug"
         ],
         "properties": {
@@ -1784,7 +1784,7 @@
         }
       },
       "qemu-cortex-m7f-cmake-gcc12-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m7f-cmake-gcc",
           "cross-arm-none-eabi-gcc12-dependencies"
         ],
@@ -1793,7 +1793,7 @@
         }
       },
       "qemu-cortex-m7f-cmake-gcc12-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m7f-cmake-gcc12-debug"
         ],
         "properties": {
@@ -1802,7 +1802,7 @@
         }
       },
       "qemu-cortex-m7f-cmake-gcc13-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m7f-cmake-gcc",
           "cross-arm-none-eabi-gcc13-dependencies"
         ],
@@ -1811,7 +1811,7 @@
         }
       },
       "qemu-cortex-m7f-cmake-gcc13-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m7f-cmake-gcc13-debug"
         ],
         "properties": {
@@ -1820,7 +1820,7 @@
         }
       },
       "qemu-cortex-m7f-cmake-gcc14-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m7f-cmake-gcc",
           "cross-arm-none-eabi-gcc14-dependencies"
         ],
@@ -1829,7 +1829,7 @@
         }
       },
       "qemu-cortex-m7f-cmake-gcc14-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m7f-cmake-gcc14-debug"
         ],
         "properties": {
@@ -1839,7 +1839,7 @@
       },
       "qemu-aarch32-a15-cmake-gcc": {
         "hidden": true,
-        "inherit": [
+        "inherits": [
           "short-win-paths-properties",
           "aarch32-actions",
           "cmake-actions",
@@ -1854,7 +1854,7 @@
         }
       },
       "qemu-aarch32-a15-cmake-gcc-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch32-a15-cmake-gcc",
           "cross-arm-none-eabi-gcc-dependencies"
         ],
@@ -1863,7 +1863,7 @@
         }
       },
       "qemu-aarch32-a15-cmake-gcc-release": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch32-a15-cmake-gcc-debug"
         ],
         "properties": {
@@ -1872,7 +1872,7 @@
         }
       },
       "qemu-aarch32-a15-cmake-gcc11-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch32-a15-cmake-gcc",
           "cross-arm-none-eabi-gcc11-dependencies"
         ],
@@ -1881,7 +1881,7 @@
         }
       },
       "qemu-aarch32-a15-cmake-gcc11-release": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch32-a15-cmake-gcc11-debug"
         ],
         "properties": {
@@ -1890,7 +1890,7 @@
         }
       },
       "qemu-aarch32-a15-cmake-gcc12-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch32-a15-cmake-gcc",
           "cross-arm-none-eabi-gcc12-dependencies"
         ],
@@ -1899,7 +1899,7 @@
         }
       },
       "qemu-aarch32-a15-cmake-gcc12-release": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch32-a15-cmake-gcc12-debug"
         ],
         "properties": {
@@ -1908,7 +1908,7 @@
         }
       },
       "qemu-aarch32-a15-cmake-gcc13-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch32-a15-cmake-gcc",
           "cross-arm-none-eabi-gcc13-dependencies"
         ],
@@ -1917,7 +1917,7 @@
         }
       },
       "qemu-aarch32-a15-cmake-gcc13-release": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch32-a15-cmake-gcc13-debug"
         ],
         "properties": {
@@ -1926,7 +1926,7 @@
         }
       },
       "qemu-aarch32-a15-cmake-gcc14-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch32-a15-cmake-gcc",
           "cross-arm-none-eabi-gcc14-dependencies"
         ],
@@ -1935,7 +1935,7 @@
         }
       },
       "qemu-aarch32-a15-cmake-gcc14-release": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch32-a15-cmake-gcc14-debug"
         ],
         "properties": {
@@ -1945,7 +1945,7 @@
       },
       "qemu-aarch64-a72-cmake-gcc": {
         "hidden": true,
-        "inherit": [
+        "inherits": [
           "short-win-paths-properties",
           "aarch64-actions",
           "cmake-actions",
@@ -1960,7 +1960,7 @@
         }
       },
       "qemu-aarch64-a72-cmake-gcc-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch64-a72-cmake-gcc",
           "cross-aarch64-none-elf-gcc-dependencies"
         ],
@@ -1969,7 +1969,7 @@
         }
       },
       "qemu-aarch64-a72-cmake-gcc-release": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch64-a72-cmake-gcc-debug"
         ],
         "properties": {
@@ -1978,7 +1978,7 @@
         }
       },
       "qemu-aarch64-a72-cmake-gcc11-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch64-a72-cmake-gcc",
           "cross-aarch64-none-elf-gcc11-dependencies"
         ],
@@ -1987,7 +1987,7 @@
         }
       },
       "qemu-aarch64-a72-cmake-gcc11-release": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch64-a72-cmake-gcc11-debug"
         ],
         "properties": {
@@ -1996,7 +1996,7 @@
         }
       },
       "qemu-aarch64-a72-cmake-gcc12-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch64-a72-cmake-gcc",
           "cross-aarch64-none-elf-gcc12-dependencies"
         ],
@@ -2005,7 +2005,7 @@
         }
       },
       "qemu-aarch64-a72-cmake-gcc12-release": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch64-a72-cmake-gcc12-debug"
         ],
         "properties": {
@@ -2014,7 +2014,7 @@
         }
       },
       "qemu-aarch64-a72-cmake-gcc13-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch64-a72-cmake-gcc",
           "cross-aarch64-none-elf-gcc13-dependencies"
         ],
@@ -2023,7 +2023,7 @@
         }
       },
       "qemu-aarch64-a72-cmake-gcc13-release": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch64-a72-cmake-gcc13-debug"
         ],
         "properties": {
@@ -2032,7 +2032,7 @@
         }
       },
       "qemu-aarch64-a72-cmake-gcc14-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch64-a72-cmake-gcc",
           "cross-aarch64-none-elf-gcc14-dependencies"
         ],
@@ -2041,7 +2041,7 @@
         }
       },
       "qemu-aarch64-a72-cmake-gcc14-release": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch64-a72-cmake-gcc14-debug"
         ],
         "properties": {
@@ -2051,7 +2051,7 @@
       },
       "qemu-riscv-rv32imac-cmake-gcc": {
         "hidden": true,
-        "inherit": [
+        "inherits": [
           "short-win-paths-properties",
           "cmake-actions",
           "riscv-actions",
@@ -2066,7 +2066,7 @@
         }
       },
       "qemu-riscv-rv32imac-cmake-gcc-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv32imac-cmake-gcc",
           "cross-riscv-none-elf-gcc-dependencies"
         ],
@@ -2075,7 +2075,7 @@
         }
       },
       "qemu-riscv-rv32imac-cmake-gcc-release": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv32imac-cmake-gcc-debug"
         ],
         "properties": {
@@ -2084,7 +2084,7 @@
         }
       },
       "qemu-riscv-rv32imac-cmake-gcc11-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv32imac-cmake-gcc",
           "cross-riscv-none-elf-gcc11-dependencies"
         ],
@@ -2093,7 +2093,7 @@
         }
       },
       "qemu-riscv-rv32imac-cmake-gcc11-release": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv32imac-cmake-gcc11-debug"
         ],
         "properties": {
@@ -2102,7 +2102,7 @@
         }
       },
       "qemu-riscv-rv32imac-cmake-gcc12-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv32imac-cmake-gcc",
           "cross-riscv-none-elf-gcc12-dependencies"
         ],
@@ -2111,7 +2111,7 @@
         }
       },
       "qemu-riscv-rv32imac-cmake-gcc12-release": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv32imac-cmake-gcc12-debug"
         ],
         "properties": {
@@ -2120,7 +2120,7 @@
         }
       },
       "qemu-riscv-rv32imac-cmake-gcc13-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv32imac-cmake-gcc",
           "cross-riscv-none-elf-gcc13-dependencies"
         ],
@@ -2129,7 +2129,7 @@
         }
       },
       "qemu-riscv-rv32imac-cmake-gcc13-release": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv32imac-cmake-gcc13-debug"
         ],
         "properties": {
@@ -2138,7 +2138,7 @@
         }
       },
       "qemu-riscv-rv32imac-cmake-gcc14-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv32imac-cmake-gcc",
           "cross-riscv-none-elf-gcc14-dependencies"
         ],
@@ -2147,7 +2147,7 @@
         }
       },
       "qemu-riscv-rv32imac-cmake-gcc14-release": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv32imac-cmake-gcc14-debug"
         ],
         "properties": {
@@ -2156,7 +2156,7 @@
         }
       },
       "qemu-riscv-rv32imac-cmake-gcc15-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv32imac-cmake-gcc",
           "riscv-none-elf-gcc15-dependencies"
         ],
@@ -2165,7 +2165,7 @@
         }
       },
       "qemu-riscv-rv32imac-cmake-gcc15-release": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv32imac-cmake-gcc15-debug"
         ],
         "properties": {
@@ -2175,7 +2175,7 @@
       },
       "qemu-riscv-rv64imafdc-cmake-gcc": {
         "hidden": true,
-        "inherit": [
+        "inherits": [
           "short-win-paths-properties",
           "cmake-actions",
           "riscv-actions",
@@ -2190,7 +2190,7 @@
         }
       },
       "qemu-riscv-rv64imafdc-cmake-gcc-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv64imafdc-cmake-gcc",
           "cross-riscv-none-elf-gcc-dependencies"
         ],
@@ -2199,7 +2199,7 @@
         }
       },
       "qemu-riscv-rv64imafdc-cmake-gcc-release": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv64imafdc-cmake-gcc-debug"
         ],
         "properties": {
@@ -2208,7 +2208,7 @@
         }
       },
       "qemu-riscv-rv64imafdc-cmake-gcc11-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv64imafdc-cmake-gcc",
           "cross-riscv-none-elf-gcc11-dependencies"
         ],
@@ -2217,7 +2217,7 @@
         }
       },
       "qemu-riscv-rv64imafdc-cmake-gcc11-release": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv64imafdc-cmake-gcc11-debug"
         ],
         "properties": {
@@ -2226,7 +2226,7 @@
         }
       },
       "qemu-riscv-rv64imafdc-cmake-gcc12-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv64imafdc-cmake-gcc",
           "cross-riscv-none-elf-gcc12-dependencies"
         ],
@@ -2235,7 +2235,7 @@
         }
       },
       "qemu-riscv-rv64imafdc-cmake-gcc12-release": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv64imafdc-cmake-gcc12-debug"
         ],
         "properties": {
@@ -2244,7 +2244,7 @@
         }
       },
       "qemu-riscv-rv64imafdc-cmake-gcc13-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv64imafdc-cmake-gcc",
           "cross-riscv-none-elf-gcc13-dependencies"
         ],
@@ -2253,7 +2253,7 @@
         }
       },
       "qemu-riscv-rv64imafdc-cmake-gcc13-release": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv64imafdc-cmake-gcc13-debug"
         ],
         "properties": {
@@ -2262,7 +2262,7 @@
         }
       },
       "qemu-riscv-rv64imafdc-cmake-gcc14-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv64imafdc-cmake-gcc",
           "cross-riscv-none-elf-gcc14-dependencies"
         ],
@@ -2271,7 +2271,7 @@
         }
       },
       "qemu-riscv-rv64imafdc-cmake-gcc14-release": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv64imafdc-cmake-gcc14-debug"
         ],
         "properties": {
@@ -2280,7 +2280,7 @@
         }
       },
       "qemu-riscv-rv64imafdc-cmake-gcc15-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv64imafdc-cmake-gcc",
           "riscv-none-elf-gcc15-dependencies"
         ],
@@ -2289,7 +2289,7 @@
         }
       },
       "qemu-riscv-rv64imafdc-cmake-gcc15-release": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv64imafdc-cmake-gcc15-debug"
         ],
         "properties": {
@@ -2299,7 +2299,7 @@
       },
       "qemu-cortex-m0-meson-gcc": {
         "hidden": true,
-        "inherit": [
+        "inherits": [
           "short-win-paths-properties",
           "cortexm-actions",
           "meson-cross-actions",
@@ -2315,7 +2315,7 @@
         }
       },
       "qemu-cortex-m0-meson-gcc-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m0-meson-gcc",
           "cross-arm-none-eabi-gcc-dependencies"
         ],
@@ -2324,7 +2324,7 @@
         }
       },
       "qemu-cortex-m0-meson-gcc-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m0-meson-gcc-debug"
         ],
         "properties": {
@@ -2333,7 +2333,7 @@
         }
       },
       "qemu-cortex-m0-meson-gcc11-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m0-meson-gcc",
           "cross-arm-none-eabi-gcc11-dependencies"
         ],
@@ -2342,7 +2342,7 @@
         }
       },
       "qemu-cortex-m0-meson-gcc11-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m0-meson-gcc11-debug"
         ],
         "properties": {
@@ -2351,7 +2351,7 @@
         }
       },
       "qemu-cortex-m0-meson-gcc12-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m0-meson-gcc",
           "cross-arm-none-eabi-gcc12-dependencies"
         ],
@@ -2360,7 +2360,7 @@
         }
       },
       "qemu-cortex-m0-meson-gcc12-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m0-meson-gcc12-debug"
         ],
         "properties": {
@@ -2369,7 +2369,7 @@
         }
       },
       "qemu-cortex-m0-meson-gcc13-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m0-meson-gcc",
           "cross-arm-none-eabi-gcc13-dependencies"
         ],
@@ -2378,7 +2378,7 @@
         }
       },
       "qemu-cortex-m0-meson-gcc13-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m0-meson-gcc13-debug"
         ],
         "properties": {
@@ -2387,7 +2387,7 @@
         }
       },
       "qemu-cortex-m0-meson-gcc14-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m0-meson-gcc",
           "cross-arm-none-eabi-gcc14-dependencies"
         ],
@@ -2396,7 +2396,7 @@
         }
       },
       "qemu-cortex-m0-meson-gcc14-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m0-meson-gcc14-debug"
         ],
         "properties": {
@@ -2406,7 +2406,7 @@
       },
       "qemu-cortex-m3-meson-gcc": {
         "hidden": true,
-        "inherit": [
+        "inherits": [
           "short-win-paths-properties",
           "cortexm-actions",
           "meson-cross-actions",
@@ -2422,7 +2422,7 @@
         }
       },
       "qemu-cortex-m3-meson-gcc-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m3-meson-gcc",
           "cross-arm-none-eabi-gcc-dependencies"
         ],
@@ -2431,7 +2431,7 @@
         }
       },
       "qemu-cortex-m3-meson-gcc-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m3-meson-gcc-debug"
         ],
         "properties": {
@@ -2440,7 +2440,7 @@
         }
       },
       "qemu-cortex-m3-meson-gcc11-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m3-meson-gcc",
           "cross-arm-none-eabi-gcc11-dependencies"
         ],
@@ -2449,7 +2449,7 @@
         }
       },
       "qemu-cortex-m3-meson-gcc11-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m3-meson-gcc11-debug"
         ],
         "properties": {
@@ -2458,7 +2458,7 @@
         }
       },
       "qemu-cortex-m3-meson-gcc12-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m3-meson-gcc",
           "cross-arm-none-eabi-gcc12-dependencies"
         ],
@@ -2467,7 +2467,7 @@
         }
       },
       "qemu-cortex-m3-meson-gcc12-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m3-meson-gcc12-debug"
         ],
         "properties": {
@@ -2476,7 +2476,7 @@
         }
       },
       "qemu-cortex-m3-meson-gcc13-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m3-meson-gcc",
           "cross-arm-none-eabi-gcc13-dependencies"
         ],
@@ -2485,7 +2485,7 @@
         }
       },
       "qemu-cortex-m3-meson-gcc13-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m3-meson-gcc13-debug"
         ],
         "properties": {
@@ -2494,7 +2494,7 @@
         }
       },
       "qemu-cortex-m3-meson-gcc14-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m3-meson-gcc",
           "cross-arm-none-eabi-gcc14-dependencies"
         ],
@@ -2503,7 +2503,7 @@
         }
       },
       "qemu-cortex-m3-meson-gcc14-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m3-meson-gcc14-debug"
         ],
         "properties": {
@@ -2513,7 +2513,7 @@
       },
       "qemu-cortex-m4f-meson-gcc": {
         "hidden": true,
-        "inherit": [
+        "inherits": [
           "short-win-paths-properties",
           "cortexm-actions",
           "meson-cross-actions",
@@ -2529,7 +2529,7 @@
         }
       },
       "qemu-cortex-m4f-meson-gcc-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m4f-meson-gcc",
           "cross-arm-none-eabi-gcc-dependencies"
         ],
@@ -2538,7 +2538,7 @@
         }
       },
       "qemu-cortex-m4f-meson-gcc-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m4f-meson-gcc-debug"
         ],
         "properties": {
@@ -2547,7 +2547,7 @@
         }
       },
       "qemu-cortex-m4f-meson-gcc11-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m4f-meson-gcc",
           "cross-arm-none-eabi-gcc11-dependencies"
         ],
@@ -2556,7 +2556,7 @@
         }
       },
       "qemu-cortex-m4f-meson-gcc11-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m4f-meson-gcc11-debug"
         ],
         "properties": {
@@ -2565,7 +2565,7 @@
         }
       },
       "qemu-cortex-m4f-meson-gcc12-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m4f-meson-gcc",
           "cross-arm-none-eabi-gcc12-dependencies"
         ],
@@ -2574,7 +2574,7 @@
         }
       },
       "qemu-cortex-m4f-meson-gcc12-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m4f-meson-gcc12-debug"
         ],
         "properties": {
@@ -2583,7 +2583,7 @@
         }
       },
       "qemu-cortex-m4f-meson-gcc13-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m4f-meson-gcc",
           "cross-arm-none-eabi-gcc13-dependencies"
         ],
@@ -2592,7 +2592,7 @@
         }
       },
       "qemu-cortex-m4f-meson-gcc13-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m4f-meson-gcc13-debug"
         ],
         "properties": {
@@ -2601,7 +2601,7 @@
         }
       },
       "qemu-cortex-m4f-meson-gcc14-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m4f-meson-gcc",
           "cross-arm-none-eabi-gcc14-dependencies"
         ],
@@ -2610,7 +2610,7 @@
         }
       },
       "qemu-cortex-m4f-meson-gcc14-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m4f-meson-gcc14-debug"
         ],
         "properties": {
@@ -2620,7 +2620,7 @@
       },
       "qemu-cortex-m7f-meson-gcc": {
         "hidden": true,
-        "inherit": [
+        "inherits": [
           "short-win-paths-properties",
           "cortexm-actions",
           "meson-cross-actions",
@@ -2636,7 +2636,7 @@
         }
       },
       "qemu-cortex-m7f-meson-gcc-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m7f-meson-gcc",
           "cross-arm-none-eabi-gcc-dependencies"
         ],
@@ -2645,7 +2645,7 @@
         }
       },
       "qemu-cortex-m7f-meson-gcc-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m7f-meson-gcc-debug"
         ],
         "properties": {
@@ -2654,7 +2654,7 @@
         }
       },
       "qemu-cortex-m7f-meson-gcc11-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m7f-meson-gcc",
           "cross-arm-none-eabi-gcc11-dependencies"
         ],
@@ -2663,7 +2663,7 @@
         }
       },
       "qemu-cortex-m7f-meson-gcc11-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m7f-meson-gcc11-debug"
         ],
         "properties": {
@@ -2672,7 +2672,7 @@
         }
       },
       "qemu-cortex-m7f-meson-gcc12-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m7f-meson-gcc",
           "cross-arm-none-eabi-gcc12-dependencies"
         ],
@@ -2681,7 +2681,7 @@
         }
       },
       "qemu-cortex-m7f-meson-gcc12-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m7f-meson-gcc12-debug"
         ],
         "properties": {
@@ -2690,7 +2690,7 @@
         }
       },
       "qemu-cortex-m7f-meson-gcc13-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m7f-meson-gcc",
           "cross-arm-none-eabi-gcc13-dependencies"
         ],
@@ -2699,7 +2699,7 @@
         }
       },
       "qemu-cortex-m7f-meson-gcc13-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m7f-meson-gcc13-debug"
         ],
         "properties": {
@@ -2708,7 +2708,7 @@
         }
       },
       "qemu-cortex-m7f-meson-gcc14-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m7f-meson-gcc",
           "cross-arm-none-eabi-gcc14-dependencies"
         ],
@@ -2717,7 +2717,7 @@
         }
       },
       "qemu-cortex-m7f-meson-gcc14-release": {
-        "inherit": [
+        "inherits": [
           "qemu-cortex-m7f-meson-gcc14-debug"
         ],
         "properties": {
@@ -2727,7 +2727,7 @@
       },
       "qemu-aarch32-a15-meson-gcc": {
         "hidden": true,
-        "inherit": [
+        "inherits": [
           "short-win-paths-properties",
           "aarch32-actions",
           "meson-cross-actions",
@@ -2742,7 +2742,7 @@
         }
       },
       "qemu-aarch32-a15-meson-gcc-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch32-a15-meson-gcc",
           "cross-arm-none-eabi-gcc-dependencies"
         ],
@@ -2751,7 +2751,7 @@
         }
       },
       "qemu-aarch32-a15-meson-gcc-release": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch32-a15-meson-gcc-debug"
         ],
         "properties": {
@@ -2760,7 +2760,7 @@
         }
       },
       "qemu-aarch32-a15-meson-gcc11-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch32-a15-meson-gcc",
           "cross-arm-none-eabi-gcc11-dependencies"
         ],
@@ -2769,7 +2769,7 @@
         }
       },
       "qemu-aarch32-a15-meson-gcc11-release": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch32-a15-meson-gcc11-debug"
         ],
         "properties": {
@@ -2778,7 +2778,7 @@
         }
       },
       "qemu-aarch32-a15-meson-gcc12-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch32-a15-meson-gcc",
           "cross-arm-none-eabi-gcc12-dependencies"
         ],
@@ -2787,7 +2787,7 @@
         }
       },
       "qemu-aarch32-a15-meson-gcc12-release": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch32-a15-meson-gcc12-debug"
         ],
         "properties": {
@@ -2796,7 +2796,7 @@
         }
       },
       "qemu-aarch32-a15-meson-gcc13-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch32-a15-meson-gcc",
           "cross-arm-none-eabi-gcc13-dependencies"
         ],
@@ -2805,7 +2805,7 @@
         }
       },
       "qemu-aarch32-a15-meson-gcc13-release": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch32-a15-meson-gcc13-debug"
         ],
         "properties": {
@@ -2814,7 +2814,7 @@
         }
       },
       "qemu-aarch32-a15-meson-gcc14-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch32-a15-meson-gcc",
           "cross-arm-none-eabi-gcc14-dependencies"
         ],
@@ -2823,7 +2823,7 @@
         }
       },
       "qemu-aarch32-a15-meson-gcc14-release": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch32-a15-meson-gcc14-debug"
         ],
         "properties": {
@@ -2833,7 +2833,7 @@
       },
       "qemu-aarch64-a72-meson-gcc": {
         "hidden": true,
-        "inherit": [
+        "inherits": [
           "short-win-paths-properties",
           "aarch64-actions",
           "meson-cross-actions",
@@ -2848,7 +2848,7 @@
         }
       },
       "qemu-aarch64-a72-meson-gcc-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch64-a72-meson-gcc",
           "cross-aarch64-none-elf-gcc-dependencies"
         ],
@@ -2857,7 +2857,7 @@
         }
       },
       "qemu-aarch64-a72-meson-gcc-release": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch64-a72-meson-gcc-debug"
         ],
         "properties": {
@@ -2866,7 +2866,7 @@
         }
       },
       "qemu-aarch64-a72-meson-gcc11-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch64-a72-meson-gcc",
           "cross-aarch64-none-elf-gcc11-dependencies"
         ],
@@ -2875,7 +2875,7 @@
         }
       },
       "qemu-aarch64-a72-meson-gcc11-release": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch64-a72-meson-gcc11-debug"
         ],
         "properties": {
@@ -2884,7 +2884,7 @@
         }
       },
       "qemu-aarch64-a72-meson-gcc12-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch64-a72-meson-gcc",
           "cross-aarch64-none-elf-gcc12-dependencies"
         ],
@@ -2893,7 +2893,7 @@
         }
       },
       "qemu-aarch64-a72-meson-gcc12-release": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch64-a72-meson-gcc12-debug"
         ],
         "properties": {
@@ -2902,7 +2902,7 @@
         }
       },
       "qemu-aarch64-a72-meson-gcc13-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch64-a72-meson-gcc",
           "cross-aarch64-none-elf-gcc13-dependencies"
         ],
@@ -2911,7 +2911,7 @@
         }
       },
       "qemu-aarch64-a72-meson-gcc13-release": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch64-a72-meson-gcc13-debug"
         ],
         "properties": {
@@ -2920,7 +2920,7 @@
         }
       },
       "qemu-aarch64-a72-meson-gcc14-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch64-a72-meson-gcc",
           "cross-aarch64-none-elf-gcc14-dependencies"
         ],
@@ -2929,7 +2929,7 @@
         }
       },
       "qemu-aarch64-a72-meson-gcc14-release": {
-        "inherit": [
+        "inherits": [
           "qemu-aarch64-a72-meson-gcc14-debug"
         ],
         "properties": {
@@ -2939,7 +2939,7 @@
       },
       "qemu-riscv-rv32imac-meson-gcc": {
         "hidden": true,
-        "inherit": [
+        "inherits": [
           "short-win-paths-properties",
           "meson-cross-actions",
           "riscv-actions",
@@ -2954,7 +2954,7 @@
         }
       },
       "qemu-riscv-rv32imac-meson-gcc-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv32imac-meson-gcc",
           "cross-riscv-none-elf-gcc-dependencies"
         ],
@@ -2963,7 +2963,7 @@
         }
       },
       "qemu-riscv-rv32imac-meson-gcc-release": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv32imac-meson-gcc-debug"
         ],
         "properties": {
@@ -2972,7 +2972,7 @@
         }
       },
       "qemu-riscv-rv32imac-meson-gcc11-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv32imac-meson-gcc",
           "cross-riscv-none-elf-gcc11-dependencies"
         ],
@@ -2981,7 +2981,7 @@
         }
       },
       "qemu-riscv-rv32imac-meson-gcc11-release": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv32imac-meson-gcc11-debug"
         ],
         "properties": {
@@ -2990,7 +2990,7 @@
         }
       },
       "qemu-riscv-rv32imac-meson-gcc12-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv32imac-meson-gcc",
           "cross-riscv-none-elf-gcc12-dependencies"
         ],
@@ -2999,7 +2999,7 @@
         }
       },
       "qemu-riscv-rv32imac-meson-gcc12-release": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv32imac-meson-gcc12-debug"
         ],
         "properties": {
@@ -3008,7 +3008,7 @@
         }
       },
       "qemu-riscv-rv32imac-meson-gcc13-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv32imac-meson-gcc",
           "cross-riscv-none-elf-gcc13-dependencies"
         ],
@@ -3017,7 +3017,7 @@
         }
       },
       "qemu-riscv-rv32imac-meson-gcc13-release": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv32imac-meson-gcc13-debug"
         ],
         "properties": {
@@ -3026,7 +3026,7 @@
         }
       },
       "qemu-riscv-rv32imac-meson-gcc14-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv32imac-meson-gcc",
           "cross-riscv-none-elf-gcc14-dependencies"
         ],
@@ -3035,7 +3035,7 @@
         }
       },
       "qemu-riscv-rv32imac-meson-gcc14-release": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv32imac-meson-gcc14-debug"
         ],
         "properties": {
@@ -3044,7 +3044,7 @@
         }
       },
       "qemu-riscv-rv32imac-meson-gcc15-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv32imac-meson-gcc",
           "riscv-none-elf-gcc15-dependencies"
         ],
@@ -3053,7 +3053,7 @@
         }
       },
       "qemu-riscv-rv32imac-meson-gcc15-release": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv32imac-meson-gcc15-debug"
         ],
         "properties": {
@@ -3063,7 +3063,7 @@
       },
       "qemu-riscv-rv64imafdc-meson-gcc": {
         "hidden": true,
-        "inherit": [
+        "inherits": [
           "short-win-paths-properties",
           "meson-cross-actions",
           "riscv-actions",
@@ -3078,7 +3078,7 @@
         }
       },
       "qemu-riscv-rv64imafdc-meson-gcc-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv64imafdc-meson-gcc",
           "cross-riscv-none-elf-gcc-dependencies"
         ],
@@ -3087,7 +3087,7 @@
         }
       },
       "qemu-riscv-rv64imafdc-meson-gcc-release": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv64imafdc-meson-gcc-debug"
         ],
         "properties": {
@@ -3096,7 +3096,7 @@
         }
       },
       "qemu-riscv-rv64imafdc-meson-gcc11-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv64imafdc-meson-gcc",
           "cross-riscv-none-elf-gcc11-dependencies"
         ],
@@ -3105,7 +3105,7 @@
         }
       },
       "qemu-riscv-rv64imafdc-meson-gcc11-release": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv64imafdc-meson-gcc11-debug"
         ],
         "properties": {
@@ -3114,7 +3114,7 @@
         }
       },
       "qemu-riscv-rv64imafdc-meson-gcc12-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv64imafdc-meson-gcc",
           "cross-riscv-none-elf-gcc12-dependencies"
         ],
@@ -3123,7 +3123,7 @@
         }
       },
       "qemu-riscv-rv64imafdc-meson-gcc12-release": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv64imafdc-meson-gcc12-debug"
         ],
         "properties": {
@@ -3132,7 +3132,7 @@
         }
       },
       "qemu-riscv-rv64imafdc-meson-gcc13-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv64imafdc-meson-gcc",
           "cross-riscv-none-elf-gcc13-dependencies"
         ],
@@ -3141,7 +3141,7 @@
         }
       },
       "qemu-riscv-rv64imafdc-meson-gcc13-release": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv64imafdc-meson-gcc13-debug"
         ],
         "properties": {
@@ -3150,7 +3150,7 @@
         }
       },
       "qemu-riscv-rv64imafdc-meson-gcc14-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv64imafdc-meson-gcc",
           "cross-riscv-none-elf-gcc14-dependencies"
         ],
@@ -3159,7 +3159,7 @@
         }
       },
       "qemu-riscv-rv64imafdc-meson-gcc14-release": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv64imafdc-meson-gcc14-debug"
         ],
         "properties": {
@@ -3168,7 +3168,7 @@
         }
       },
       "qemu-riscv-rv64imafdc-meson-gcc15-debug": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv64imafdc-meson-gcc",
           "riscv-none-elf-gcc15-dependencies"
         ],
@@ -3177,7 +3177,7 @@
         }
       },
       "qemu-riscv-rv64imafdc-meson-gcc15-release": {
-        "inherit": [
+        "inherits": [
           "qemu-riscv-rv64imafdc-meson-gcc15-debug"
         ],
         "properties": {
