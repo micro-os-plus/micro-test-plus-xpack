@@ -683,13 +683,13 @@
           "@xpack-3rd-party/arm-cmsis-core": "5.4.0-6"
         }
       },
-      "gcc-latest-dependencies": {
+      "native-gcc-latest-dependencies": {
         "hidden": true,
         "inherit": [
-          "gcc14-dependencies"
+          "native-gcc14-dependencies"
         ]
       },
-      "gcc11-dependencies": {
+      "native-gcc11-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/gcc",
         "devDependencies": {
@@ -699,7 +699,7 @@
           }
         }
       },
-      "gcc12-dependencies": {
+      "native-gcc12-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/gcc",
         "devDependencies": {
@@ -709,7 +709,7 @@
           }
         }
       },
-      "gcc13-dependencies": {
+      "native-gcc13-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/gcc",
         "devDependencies": {
@@ -719,7 +719,7 @@
           }
         }
       },
-      "gcc14-dependencies": {
+      "native-gcc14-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/gcc",
         "devDependencies": {
@@ -729,164 +729,164 @@
           }
         }
       },
-      "clang-latest-dependencies": {
+      "native-clang-latest-dependencies": {
         "hidden": true,
         "inherit": [
-          "clang19-dependencies"
+          "native-clang19-dependencies"
         ]
       },
-      "clang13-dependencies": {
+      "native-clang13-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/clang",
         "devDependencies": {
           "@xpack-dev-tools/clang": "13.0.1-1.1"
         }
       },
-      "clang14-dependencies": {
+      "native-clang14-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/clang",
         "devDependencies": {
           "@xpack-dev-tools/clang": "14.0.6-2.1"
         }
       },
-      "clang15-dependencies": {
+      "native-clang15-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/clang",
         "devDependencies": {
           "@xpack-dev-tools/clang": "15.0.7-4.1"
         }
       },
-      "clang16-dependencies": {
+      "native-clang16-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/clang",
         "devDependencies": {
           "@xpack-dev-tools/clang": "16.0.6-1.1"
         }
       },
-      "clang17-dependencies": {
+      "native-clang17-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/clang",
         "devDependencies": {
           "@xpack-dev-tools/clang": "17.0.6-3.1"
         }
       },
-      "clang18-dependencies": {
+      "native-clang18-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/clang",
         "devDependencies": {
           "@xpack-dev-tools/clang": "18.1.8-2.1"
         }
       },
-      "clang19-dependencies": {
+      "native-clang19-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/clang",
         "devDependencies": {
           "@xpack-dev-tools/clang": "19.1.7-1.1"
         }
       },
-      "clang20-dependencies": {
+      "native-clang20-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/clang",
         "devDependencies": {
           "@xpack-dev-tools/clang": "20.1.8-1.1"
         }
       },
-      "arm-none-eabi-gcc-dependencies": {
+      "cross-arm-none-eabi-gcc-dependencies": {
         "hidden": true,
         "inherit": [
-          "arm-none-eabi-gcc14-dependencies"
+          "cross-arm-none-eabi-gcc14-dependencies"
         ]
       },
-      "arm-none-eabi-gcc11-dependencies": {
+      "cross-arm-none-eabi-gcc11-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/arm-none-eabi-gcc",
         "devDependencies": {
           "@xpack-dev-tools/arm-none-eabi-gcc": "11.3.1-1.1.2"
         }
       },
-      "arm-none-eabi-gcc12-dependencies": {
+      "cross-arm-none-eabi-gcc12-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/arm-none-eabi-gcc",
         "devDependencies": {
           "@xpack-dev-tools/arm-none-eabi-gcc": "12.3.1-1.2.1"
         }
       },
-      "arm-none-eabi-gcc13-dependencies": {
+      "cross-arm-none-eabi-gcc13-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/arm-none-eabi-gcc",
         "devDependencies": {
           "@xpack-dev-tools/arm-none-eabi-gcc": "13.3.1-1.1.1"
         }
       },
-      "arm-none-eabi-gcc14-dependencies": {
+      "cross-arm-none-eabi-gcc14-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/arm-none-eabi-gcc",
         "devDependencies": {
           "@xpack-dev-tools/arm-none-eabi-gcc": "14.2.1-1.1.1"
         }
       },
-      "aarch64-none-elf-gcc-dependencies": {
+      "cross-aarch64-none-elf-gcc-dependencies": {
         "hidden": true,
         "inherit": [
-          "aarch64-none-elf-gcc14-dependencies"
+          "cross-aarch64-none-elf-gcc14-dependencies"
         ]
       },
-      "aarch64-none-elf-gcc11-dependencies": {
+      "cross-aarch64-none-elf-gcc11-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/aarch64-none-elf-gcc",
         "devDependencies": {
           "@xpack-dev-tools/aarch64-none-elf-gcc": "11.3.1-1.2.1"
         }
       },
-      "aarch64-none-elf-gcc12-dependencies": {
+      "cross-aarch64-none-elf-gcc12-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/aarch64-none-elf-gcc",
         "devDependencies": {
           "@xpack-dev-tools/aarch64-none-elf-gcc": "12.3.1-2.1.1"
         }
       },
-      "aarch64-none-elf-gcc13-dependencies": {
+      "cross-aarch64-none-elf-gcc13-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/aarch64-none-elf-gcc",
         "devDependencies": {
           "@xpack-dev-tools/aarch64-none-elf-gcc": "13.3.1-1.1.2"
         }
       },
-      "aarch64-none-elf-gcc14-dependencies": {
+      "cross-aarch64-none-elf-gcc14-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/aarch64-none-elf-gcc",
         "devDependencies": {
           "@xpack-dev-tools/aarch64-none-elf-gcc": "14.2.1-1.1.1"
         }
       },
-      "riscv-none-elf-gcc-dependencies": {
+      "cross-riscv-none-elf-gcc-dependencies": {
         "hidden": true,
         "inherit": [
-          "riscv-none-elf-gcc14-dependencies"
+          "cross-riscv-none-elf-gcc14-dependencies"
         ]
       },
-      "riscv-none-elf-gcc11-dependencies": {
+      "cross-riscv-none-elf-gcc11-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/riscv-none-elf-gcc",
         "devDependencies": {
           "@xpack-dev-tools/riscv-none-elf-gcc": "11.5.0-2.1"
         }
       },
-      "riscv-none-elf-gcc12-dependencies": {
+      "cross-riscv-none-elf-gcc12-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/riscv-none-elf-gcc",
         "devDependencies": {
           "@xpack-dev-tools/riscv-none-elf-gcc": "12.5.0-1.1"
         }
       },
-      "riscv-none-elf-gcc13-dependencies": {
+      "cross-riscv-none-elf-gcc13-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/riscv-none-elf-gcc",
         "devDependencies": {
           "@xpack-dev-tools/riscv-none-elf-gcc": "13.4.0-1.1"
         }
       },
-      "riscv-none-elf-gcc14-dependencies": {
+      "cross-riscv-none-elf-gcc14-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/riscv-none-elf-gcc",
         "devDependencies": {
@@ -959,7 +959,7 @@
       "native-cmake-gcc-debug": {
         "inherit": [
           "native-cmake-gcc",
-          "gcc-latest-dependencies"
+          "native-gcc-latest-dependencies"
         ]
       },
       "native-cmake-gcc-release": {
@@ -973,7 +973,7 @@
       "native-cmake-gcc11-debug": {
         "inherit": [
           "native-cmake-gcc",
-          "gcc11-dependencies"
+          "native-gcc11-dependencies"
         ]
       },
       "native-cmake-gcc11-release": {
@@ -987,7 +987,7 @@
       "native-cmake-gcc12-debug": {
         "inherit": [
           "native-cmake-gcc",
-          "gcc12-dependencies"
+          "native-gcc12-dependencies"
         ]
       },
       "native-cmake-gcc12-release": {
@@ -1001,7 +1001,7 @@
       "native-cmake-gcc13-debug": {
         "inherit": [
           "native-cmake-gcc",
-          "gcc13-dependencies"
+          "native-gcc13-dependencies"
         ]
       },
       "native-cmake-gcc13-release": {
@@ -1015,7 +1015,7 @@
       "native-cmake-gcc14-debug": {
         "inherit": [
           "native-cmake-gcc",
-          "gcc14-dependencies"
+          "native-gcc14-dependencies"
         ]
       },
       "native-cmake-gcc14-release": {
@@ -1042,7 +1042,7 @@
       "native-cmake-clang-debug": {
         "inherit": [
           "native-cmake-clang",
-          "clang-latest-dependencies"
+          "native-clang-latest-dependencies"
         ]
       },
       "native-cmake-clang-release": {
@@ -1056,7 +1056,7 @@
       "native-cmake-clang13-debug": {
         "inherit": [
           "native-cmake-clang",
-          "clang13-dependencies"
+          "native-clang13-dependencies"
         ]
       },
       "native-cmake-clang13-release": {
@@ -1070,7 +1070,7 @@
       "native-cmake-clang14-debug": {
         "inherit": [
           "native-cmake-clang",
-          "clang14-dependencies"
+          "native-clang14-dependencies"
         ]
       },
       "native-cmake-clang14-release": {
@@ -1084,7 +1084,7 @@
       "native-cmake-clang15-debug": {
         "inherit": [
           "native-cmake-clang",
-          "clang15-dependencies"
+          "native-clang15-dependencies"
         ]
       },
       "native-cmake-clang15-release": {
@@ -1098,7 +1098,7 @@
       "native-cmake-clang16-debug": {
         "inherit": [
           "native-cmake-clang",
-          "clang16-dependencies"
+          "native-clang16-dependencies"
         ]
       },
       "native-cmake-clang16-release": {
@@ -1112,7 +1112,7 @@
       "native-cmake-clang17-debug": {
         "inherit": [
           "native-cmake-clang",
-          "clang17-dependencies"
+          "native-clang17-dependencies"
         ]
       },
       "native-cmake-clang17-release": {
@@ -1126,7 +1126,7 @@
       "native-cmake-clang18-debug": {
         "inherit": [
           "native-cmake-clang",
-          "clang18-dependencies"
+          "native-clang18-dependencies"
         ]
       },
       "native-cmake-clang18-release": {
@@ -1140,7 +1140,7 @@
       "native-cmake-clang19-debug": {
         "inherit": [
           "native-cmake-clang",
-          "clang19-dependencies"
+          "native-clang19-dependencies"
         ]
       },
       "native-cmake-clang19-release": {
@@ -1154,7 +1154,7 @@
       "native-cmake-clang20-debug": {
         "inherit": [
           "native-cmake-clang",
-          "clang20-dependencies"
+          "native-clang20-dependencies"
         ]
       },
       "native-cmake-clang20-release": {
@@ -1203,7 +1203,7 @@
       "native-meson-gcc-debug": {
         "inherit": [
           "native-meson-gcc",
-          "gcc-latest-dependencies"
+          "native-gcc-latest-dependencies"
         ]
       },
       "native-meson-gcc-release": {
@@ -1217,7 +1217,7 @@
       "native-meson-gcc11-debug": {
         "inherit": [
           "native-meson-gcc",
-          "gcc11-dependencies"
+          "native-gcc11-dependencies"
         ]
       },
       "native-meson-gcc11-release": {
@@ -1231,7 +1231,7 @@
       "native-meson-gcc12-debug": {
         "inherit": [
           "native-meson-gcc",
-          "gcc12-dependencies"
+          "native-gcc12-dependencies"
         ]
       },
       "native-meson-gcc12-release": {
@@ -1245,7 +1245,7 @@
       "native-meson-gcc13-debug": {
         "inherit": [
           "native-meson-gcc",
-          "gcc13-dependencies"
+          "native-gcc13-dependencies"
         ]
       },
       "native-meson-gcc13-release": {
@@ -1259,7 +1259,7 @@
       "native-meson-gcc14-debug": {
         "inherit": [
           "native-meson-gcc",
-          "gcc14-dependencies"
+          "native-gcc14-dependencies"
         ]
       },
       "native-meson-gcc14-release": {
@@ -1286,7 +1286,7 @@
       "native-meson-clang-debug": {
         "inherit": [
           "native-meson-clang",
-          "clang-latest-dependencies"
+          "native-clang-latest-dependencies"
         ]
       },
       "native-meson-clang-release": {
@@ -1300,7 +1300,7 @@
       "native-meson-clang13-debug": {
         "inherit": [
           "native-meson-clang",
-          "clang13-dependencies"
+          "native-clang13-dependencies"
         ]
       },
       "native-meson-clang13-release": {
@@ -1314,7 +1314,7 @@
       "native-meson-clang14-debug": {
         "inherit": [
           "native-meson-clang",
-          "clang14-dependencies"
+          "native-clang14-dependencies"
         ]
       },
       "native-meson-clang14-release": {
@@ -1328,7 +1328,7 @@
       "native-meson-clang15-debug": {
         "inherit": [
           "native-meson-clang",
-          "clang15-dependencies"
+          "native-clang15-dependencies"
         ]
       },
       "native-meson-clang15-release": {
@@ -1342,7 +1342,7 @@
       "native-meson-clang16-debug": {
         "inherit": [
           "native-meson-clang",
-          "clang16-dependencies"
+          "native-clang16-dependencies"
         ]
       },
       "native-meson-clang16-release": {
@@ -1356,7 +1356,7 @@
       "native-meson-clang17-debug": {
         "inherit": [
           "native-meson-clang",
-          "clang17-dependencies"
+          "native-clang17-dependencies"
         ]
       },
       "native-meson-clang17-release": {
@@ -1370,7 +1370,7 @@
       "native-meson-clang18-debug": {
         "inherit": [
           "native-meson-clang",
-          "clang18-dependencies"
+          "native-clang18-dependencies"
         ]
       },
       "native-meson-clang18-release": {
@@ -1384,7 +1384,7 @@
       "native-meson-clang19-debug": {
         "inherit": [
           "native-meson-clang",
-          "clang19-dependencies"
+          "native-clang19-dependencies"
         ]
       },
       "native-meson-clang19-release": {
@@ -1398,7 +1398,7 @@
       "native-meson-clang20-debug": {
         "inherit": [
           "native-meson-clang",
-          "clang20-dependencies"
+          "native-clang20-dependencies"
         ]
       },
       "native-meson-clang20-release": {
@@ -1429,7 +1429,7 @@
       "qemu-cortex-m0-cmake-gcc-debug": {
         "inherit": [
           "qemu-cortex-m0-cmake-gcc",
-          "arm-none-eabi-gcc-dependencies"
+          "cross-arm-none-eabi-gcc-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "m0d"
@@ -1447,7 +1447,7 @@
       "qemu-cortex-m0-cmake-gcc11-debug": {
         "inherit": [
           "qemu-cortex-m0-cmake-gcc",
-          "arm-none-eabi-gcc11-dependencies"
+          "cross-arm-none-eabi-gcc11-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "m0da"
@@ -1465,7 +1465,7 @@
       "qemu-cortex-m0-cmake-gcc12-debug": {
         "inherit": [
           "qemu-cortex-m0-cmake-gcc",
-          "arm-none-eabi-gcc12-dependencies"
+          "cross-arm-none-eabi-gcc12-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "m0db"
@@ -1483,7 +1483,7 @@
       "qemu-cortex-m0-cmake-gcc13-debug": {
         "inherit": [
           "qemu-cortex-m0-cmake-gcc",
-          "arm-none-eabi-gcc13-dependencies"
+          "cross-arm-none-eabi-gcc13-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "m0dc"
@@ -1501,7 +1501,7 @@
       "qemu-cortex-m0-cmake-gcc14-debug": {
         "inherit": [
           "qemu-cortex-m0-cmake-gcc",
-          "arm-none-eabi-gcc14-dependencies"
+          "cross-arm-none-eabi-gcc14-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "m0dd"
@@ -1536,7 +1536,7 @@
       "qemu-cortex-m3-cmake-gcc-debug": {
         "inherit": [
           "qemu-cortex-m3-cmake-gcc",
-          "arm-none-eabi-gcc-dependencies"
+          "cross-arm-none-eabi-gcc-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "m3d"
@@ -1554,7 +1554,7 @@
       "qemu-cortex-m3-cmake-gcc11-debug": {
         "inherit": [
           "qemu-cortex-m3-cmake-gcc",
-          "arm-none-eabi-gcc11-dependencies"
+          "cross-arm-none-eabi-gcc11-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "m3da"
@@ -1572,7 +1572,7 @@
       "qemu-cortex-m3-cmake-gcc12-debug": {
         "inherit": [
           "qemu-cortex-m3-cmake-gcc",
-          "arm-none-eabi-gcc12-dependencies"
+          "cross-arm-none-eabi-gcc12-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "m3db"
@@ -1590,7 +1590,7 @@
       "qemu-cortex-m3-cmake-gcc13-debug": {
         "inherit": [
           "qemu-cortex-m3-cmake-gcc",
-          "arm-none-eabi-gcc13-dependencies"
+          "cross-arm-none-eabi-gcc13-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "m3dc"
@@ -1608,7 +1608,7 @@
       "qemu-cortex-m3-cmake-gcc14-debug": {
         "inherit": [
           "qemu-cortex-m3-cmake-gcc",
-          "arm-none-eabi-gcc14-dependencies"
+          "cross-arm-none-eabi-gcc14-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "m3dd"
@@ -1643,7 +1643,7 @@
       "qemu-cortex-m4f-cmake-gcc-debug": {
         "inherit": [
           "qemu-cortex-m4f-cmake-gcc",
-          "arm-none-eabi-gcc-dependencies"
+          "cross-arm-none-eabi-gcc-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "m4d"
@@ -1661,7 +1661,7 @@
       "qemu-cortex-m4f-cmake-gcc11-debug": {
         "inherit": [
           "qemu-cortex-m4f-cmake-gcc",
-          "arm-none-eabi-gcc11-dependencies"
+          "cross-arm-none-eabi-gcc11-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "m4da"
@@ -1679,7 +1679,7 @@
       "qemu-cortex-m4f-cmake-gcc12-debug": {
         "inherit": [
           "qemu-cortex-m4f-cmake-gcc",
-          "arm-none-eabi-gcc12-dependencies"
+          "cross-arm-none-eabi-gcc12-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "m4db"
@@ -1697,7 +1697,7 @@
       "qemu-cortex-m4f-cmake-gcc13-debug": {
         "inherit": [
           "qemu-cortex-m4f-cmake-gcc",
-          "arm-none-eabi-gcc13-dependencies"
+          "cross-arm-none-eabi-gcc13-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "m4dc"
@@ -1715,7 +1715,7 @@
       "qemu-cortex-m4f-cmake-gcc14-debug": {
         "inherit": [
           "qemu-cortex-m4f-cmake-gcc",
-          "arm-none-eabi-gcc14-dependencies"
+          "cross-arm-none-eabi-gcc14-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "m4dd"
@@ -1750,7 +1750,7 @@
       "qemu-cortex-m7f-cmake-gcc-debug": {
         "inherit": [
           "qemu-cortex-m7f-cmake-gcc",
-          "arm-none-eabi-gcc-dependencies"
+          "cross-arm-none-eabi-gcc-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "m7d"
@@ -1768,7 +1768,7 @@
       "qemu-cortex-m7f-cmake-gcc11-debug": {
         "inherit": [
           "qemu-cortex-m7f-cmake-gcc",
-          "arm-none-eabi-gcc11-dependencies"
+          "cross-arm-none-eabi-gcc11-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "m7da"
@@ -1786,7 +1786,7 @@
       "qemu-cortex-m7f-cmake-gcc12-debug": {
         "inherit": [
           "qemu-cortex-m7f-cmake-gcc",
-          "arm-none-eabi-gcc12-dependencies"
+          "cross-arm-none-eabi-gcc12-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "m7db"
@@ -1804,7 +1804,7 @@
       "qemu-cortex-m7f-cmake-gcc13-debug": {
         "inherit": [
           "qemu-cortex-m7f-cmake-gcc",
-          "arm-none-eabi-gcc13-dependencies"
+          "cross-arm-none-eabi-gcc13-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "m7dc"
@@ -1822,7 +1822,7 @@
       "qemu-cortex-m7f-cmake-gcc14-debug": {
         "inherit": [
           "qemu-cortex-m7f-cmake-gcc",
-          "arm-none-eabi-gcc14-dependencies"
+          "cross-arm-none-eabi-gcc14-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "m7dd"
@@ -1856,7 +1856,7 @@
       "qemu-aarch32-a15-cmake-gcc-debug": {
         "inherit": [
           "qemu-aarch32-a15-cmake-gcc",
-          "arm-none-eabi-gcc-dependencies"
+          "cross-arm-none-eabi-gcc-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "a1d"
@@ -1874,7 +1874,7 @@
       "qemu-aarch32-a15-cmake-gcc11-debug": {
         "inherit": [
           "qemu-aarch32-a15-cmake-gcc",
-          "arm-none-eabi-gcc11-dependencies"
+          "cross-arm-none-eabi-gcc11-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "a1da"
@@ -1892,7 +1892,7 @@
       "qemu-aarch32-a15-cmake-gcc12-debug": {
         "inherit": [
           "qemu-aarch32-a15-cmake-gcc",
-          "arm-none-eabi-gcc12-dependencies"
+          "cross-arm-none-eabi-gcc12-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "a1db"
@@ -1910,7 +1910,7 @@
       "qemu-aarch32-a15-cmake-gcc13-debug": {
         "inherit": [
           "qemu-aarch32-a15-cmake-gcc",
-          "arm-none-eabi-gcc13-dependencies"
+          "cross-arm-none-eabi-gcc13-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "a1dc"
@@ -1928,7 +1928,7 @@
       "qemu-aarch32-a15-cmake-gcc14-debug": {
         "inherit": [
           "qemu-aarch32-a15-cmake-gcc",
-          "arm-none-eabi-gcc14-dependencies"
+          "cross-arm-none-eabi-gcc14-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "a1dd"
@@ -1962,7 +1962,7 @@
       "qemu-aarch64-a72-cmake-gcc-debug": {
         "inherit": [
           "qemu-aarch64-a72-cmake-gcc",
-          "aarch64-none-elf-gcc-dependencies"
+          "cross-aarch64-none-elf-gcc-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "a7d"
@@ -1980,7 +1980,7 @@
       "qemu-aarch64-a72-cmake-gcc11-debug": {
         "inherit": [
           "qemu-aarch64-a72-cmake-gcc",
-          "aarch64-none-elf-gcc11-dependencies"
+          "cross-aarch64-none-elf-gcc11-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "a7da"
@@ -1998,7 +1998,7 @@
       "qemu-aarch64-a72-cmake-gcc12-debug": {
         "inherit": [
           "qemu-aarch64-a72-cmake-gcc",
-          "aarch64-none-elf-gcc12-dependencies"
+          "cross-aarch64-none-elf-gcc12-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "a7db"
@@ -2016,7 +2016,7 @@
       "qemu-aarch64-a72-cmake-gcc13-debug": {
         "inherit": [
           "qemu-aarch64-a72-cmake-gcc",
-          "aarch64-none-elf-gcc13-dependencies"
+          "cross-aarch64-none-elf-gcc13-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "a7dc"
@@ -2034,7 +2034,7 @@
       "qemu-aarch64-a72-cmake-gcc14-debug": {
         "inherit": [
           "qemu-aarch64-a72-cmake-gcc",
-          "aarch64-none-elf-gcc14-dependencies"
+          "cross-aarch64-none-elf-gcc14-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "a7dd"
@@ -2068,7 +2068,7 @@
       "qemu-riscv-rv32imac-cmake-gcc-debug": {
         "inherit": [
           "qemu-riscv-rv32imac-cmake-gcc",
-          "riscv-none-elf-gcc-dependencies"
+          "cross-riscv-none-elf-gcc-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "v3d"
@@ -2086,7 +2086,7 @@
       "qemu-riscv-rv32imac-cmake-gcc11-debug": {
         "inherit": [
           "qemu-riscv-rv32imac-cmake-gcc",
-          "riscv-none-elf-gcc11-dependencies"
+          "cross-riscv-none-elf-gcc11-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "v3da"
@@ -2104,7 +2104,7 @@
       "qemu-riscv-rv32imac-cmake-gcc12-debug": {
         "inherit": [
           "qemu-riscv-rv32imac-cmake-gcc",
-          "riscv-none-elf-gcc12-dependencies"
+          "cross-riscv-none-elf-gcc12-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "v3db"
@@ -2122,7 +2122,7 @@
       "qemu-riscv-rv32imac-cmake-gcc13-debug": {
         "inherit": [
           "qemu-riscv-rv32imac-cmake-gcc",
-          "riscv-none-elf-gcc13-dependencies"
+          "cross-riscv-none-elf-gcc13-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "v3dc"
@@ -2140,7 +2140,7 @@
       "qemu-riscv-rv32imac-cmake-gcc14-debug": {
         "inherit": [
           "qemu-riscv-rv32imac-cmake-gcc",
-          "riscv-none-elf-gcc14-dependencies"
+          "cross-riscv-none-elf-gcc14-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "v3dd"
@@ -2192,7 +2192,7 @@
       "qemu-riscv-rv64imafdc-cmake-gcc-debug": {
         "inherit": [
           "qemu-riscv-rv64imafdc-cmake-gcc",
-          "riscv-none-elf-gcc-dependencies"
+          "cross-riscv-none-elf-gcc-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "v6d"
@@ -2210,7 +2210,7 @@
       "qemu-riscv-rv64imafdc-cmake-gcc11-debug": {
         "inherit": [
           "qemu-riscv-rv64imafdc-cmake-gcc",
-          "riscv-none-elf-gcc11-dependencies"
+          "cross-riscv-none-elf-gcc11-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "v6da"
@@ -2228,7 +2228,7 @@
       "qemu-riscv-rv64imafdc-cmake-gcc12-debug": {
         "inherit": [
           "qemu-riscv-rv64imafdc-cmake-gcc",
-          "riscv-none-elf-gcc12-dependencies"
+          "cross-riscv-none-elf-gcc12-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "v6db"
@@ -2246,7 +2246,7 @@
       "qemu-riscv-rv64imafdc-cmake-gcc13-debug": {
         "inherit": [
           "qemu-riscv-rv64imafdc-cmake-gcc",
-          "riscv-none-elf-gcc13-dependencies"
+          "cross-riscv-none-elf-gcc13-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "v6dc"
@@ -2264,7 +2264,7 @@
       "qemu-riscv-rv64imafdc-cmake-gcc14-debug": {
         "inherit": [
           "qemu-riscv-rv64imafdc-cmake-gcc",
-          "riscv-none-elf-gcc14-dependencies"
+          "cross-riscv-none-elf-gcc14-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "v6dd"
@@ -2317,7 +2317,7 @@
       "qemu-cortex-m0-meson-gcc-debug": {
         "inherit": [
           "qemu-cortex-m0-meson-gcc",
-          "arm-none-eabi-gcc-dependencies"
+          "cross-arm-none-eabi-gcc-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "n0d"
@@ -2335,7 +2335,7 @@
       "qemu-cortex-m0-meson-gcc11-debug": {
         "inherit": [
           "qemu-cortex-m0-meson-gcc",
-          "arm-none-eabi-gcc11-dependencies"
+          "cross-arm-none-eabi-gcc11-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "n0da"
@@ -2353,7 +2353,7 @@
       "qemu-cortex-m0-meson-gcc12-debug": {
         "inherit": [
           "qemu-cortex-m0-meson-gcc",
-          "arm-none-eabi-gcc12-dependencies"
+          "cross-arm-none-eabi-gcc12-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "n0db"
@@ -2371,7 +2371,7 @@
       "qemu-cortex-m0-meson-gcc13-debug": {
         "inherit": [
           "qemu-cortex-m0-meson-gcc",
-          "arm-none-eabi-gcc13-dependencies"
+          "cross-arm-none-eabi-gcc13-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "n0dc"
@@ -2389,7 +2389,7 @@
       "qemu-cortex-m0-meson-gcc14-debug": {
         "inherit": [
           "qemu-cortex-m0-meson-gcc",
-          "arm-none-eabi-gcc14-dependencies"
+          "cross-arm-none-eabi-gcc14-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "n0dd"
@@ -2424,7 +2424,7 @@
       "qemu-cortex-m3-meson-gcc-debug": {
         "inherit": [
           "qemu-cortex-m3-meson-gcc",
-          "arm-none-eabi-gcc-dependencies"
+          "cross-arm-none-eabi-gcc-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "n3d"
@@ -2442,7 +2442,7 @@
       "qemu-cortex-m3-meson-gcc11-debug": {
         "inherit": [
           "qemu-cortex-m3-meson-gcc",
-          "arm-none-eabi-gcc11-dependencies"
+          "cross-arm-none-eabi-gcc11-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "n3da"
@@ -2460,7 +2460,7 @@
       "qemu-cortex-m3-meson-gcc12-debug": {
         "inherit": [
           "qemu-cortex-m3-meson-gcc",
-          "arm-none-eabi-gcc12-dependencies"
+          "cross-arm-none-eabi-gcc12-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "n3db"
@@ -2478,7 +2478,7 @@
       "qemu-cortex-m3-meson-gcc13-debug": {
         "inherit": [
           "qemu-cortex-m3-meson-gcc",
-          "arm-none-eabi-gcc13-dependencies"
+          "cross-arm-none-eabi-gcc13-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "n3dc"
@@ -2496,7 +2496,7 @@
       "qemu-cortex-m3-meson-gcc14-debug": {
         "inherit": [
           "qemu-cortex-m3-meson-gcc",
-          "arm-none-eabi-gcc14-dependencies"
+          "cross-arm-none-eabi-gcc14-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "n3dd"
@@ -2531,7 +2531,7 @@
       "qemu-cortex-m4f-meson-gcc-debug": {
         "inherit": [
           "qemu-cortex-m4f-meson-gcc",
-          "arm-none-eabi-gcc-dependencies"
+          "cross-arm-none-eabi-gcc-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "n4d"
@@ -2549,7 +2549,7 @@
       "qemu-cortex-m4f-meson-gcc11-debug": {
         "inherit": [
           "qemu-cortex-m4f-meson-gcc",
-          "arm-none-eabi-gcc11-dependencies"
+          "cross-arm-none-eabi-gcc11-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "n4da"
@@ -2567,7 +2567,7 @@
       "qemu-cortex-m4f-meson-gcc12-debug": {
         "inherit": [
           "qemu-cortex-m4f-meson-gcc",
-          "arm-none-eabi-gcc12-dependencies"
+          "cross-arm-none-eabi-gcc12-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "n4db"
@@ -2585,7 +2585,7 @@
       "qemu-cortex-m4f-meson-gcc13-debug": {
         "inherit": [
           "qemu-cortex-m4f-meson-gcc",
-          "arm-none-eabi-gcc13-dependencies"
+          "cross-arm-none-eabi-gcc13-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "n4dc"
@@ -2603,7 +2603,7 @@
       "qemu-cortex-m4f-meson-gcc14-debug": {
         "inherit": [
           "qemu-cortex-m4f-meson-gcc",
-          "arm-none-eabi-gcc14-dependencies"
+          "cross-arm-none-eabi-gcc14-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "n4dd"
@@ -2638,7 +2638,7 @@
       "qemu-cortex-m7f-meson-gcc-debug": {
         "inherit": [
           "qemu-cortex-m7f-meson-gcc",
-          "arm-none-eabi-gcc-dependencies"
+          "cross-arm-none-eabi-gcc-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "n7d"
@@ -2656,7 +2656,7 @@
       "qemu-cortex-m7f-meson-gcc11-debug": {
         "inherit": [
           "qemu-cortex-m7f-meson-gcc",
-          "arm-none-eabi-gcc11-dependencies"
+          "cross-arm-none-eabi-gcc11-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "n7da"
@@ -2674,7 +2674,7 @@
       "qemu-cortex-m7f-meson-gcc12-debug": {
         "inherit": [
           "qemu-cortex-m7f-meson-gcc",
-          "arm-none-eabi-gcc12-dependencies"
+          "cross-arm-none-eabi-gcc12-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "n7db"
@@ -2692,7 +2692,7 @@
       "qemu-cortex-m7f-meson-gcc13-debug": {
         "inherit": [
           "qemu-cortex-m7f-meson-gcc",
-          "arm-none-eabi-gcc13-dependencies"
+          "cross-arm-none-eabi-gcc13-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "n7dc"
@@ -2710,7 +2710,7 @@
       "qemu-cortex-m7f-meson-gcc14-debug": {
         "inherit": [
           "qemu-cortex-m7f-meson-gcc",
-          "arm-none-eabi-gcc14-dependencies"
+          "cross-arm-none-eabi-gcc14-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "n7dd"
@@ -2744,7 +2744,7 @@
       "qemu-aarch32-a15-meson-gcc-debug": {
         "inherit": [
           "qemu-aarch32-a15-meson-gcc",
-          "arm-none-eabi-gcc-dependencies"
+          "cross-arm-none-eabi-gcc-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "b1d"
@@ -2762,7 +2762,7 @@
       "qemu-aarch32-a15-meson-gcc11-debug": {
         "inherit": [
           "qemu-aarch32-a15-meson-gcc",
-          "arm-none-eabi-gcc11-dependencies"
+          "cross-arm-none-eabi-gcc11-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "b1da"
@@ -2780,7 +2780,7 @@
       "qemu-aarch32-a15-meson-gcc12-debug": {
         "inherit": [
           "qemu-aarch32-a15-meson-gcc",
-          "arm-none-eabi-gcc12-dependencies"
+          "cross-arm-none-eabi-gcc12-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "b1db"
@@ -2798,7 +2798,7 @@
       "qemu-aarch32-a15-meson-gcc13-debug": {
         "inherit": [
           "qemu-aarch32-a15-meson-gcc",
-          "arm-none-eabi-gcc13-dependencies"
+          "cross-arm-none-eabi-gcc13-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "b1dc"
@@ -2816,7 +2816,7 @@
       "qemu-aarch32-a15-meson-gcc14-debug": {
         "inherit": [
           "qemu-aarch32-a15-meson-gcc",
-          "arm-none-eabi-gcc14-dependencies"
+          "cross-arm-none-eabi-gcc14-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "b1dd"
@@ -2850,7 +2850,7 @@
       "qemu-aarch64-a72-meson-gcc-debug": {
         "inherit": [
           "qemu-aarch64-a72-meson-gcc",
-          "aarch64-none-elf-gcc-dependencies"
+          "cross-aarch64-none-elf-gcc-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "b7d"
@@ -2868,7 +2868,7 @@
       "qemu-aarch64-a72-meson-gcc11-debug": {
         "inherit": [
           "qemu-aarch64-a72-meson-gcc",
-          "aarch64-none-elf-gcc11-dependencies"
+          "cross-aarch64-none-elf-gcc11-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "b7da"
@@ -2886,7 +2886,7 @@
       "qemu-aarch64-a72-meson-gcc12-debug": {
         "inherit": [
           "qemu-aarch64-a72-meson-gcc",
-          "aarch64-none-elf-gcc12-dependencies"
+          "cross-aarch64-none-elf-gcc12-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "b7db"
@@ -2904,7 +2904,7 @@
       "qemu-aarch64-a72-meson-gcc13-debug": {
         "inherit": [
           "qemu-aarch64-a72-meson-gcc",
-          "aarch64-none-elf-gcc13-dependencies"
+          "cross-aarch64-none-elf-gcc13-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "b7dc"
@@ -2922,7 +2922,7 @@
       "qemu-aarch64-a72-meson-gcc14-debug": {
         "inherit": [
           "qemu-aarch64-a72-meson-gcc",
-          "aarch64-none-elf-gcc14-dependencies"
+          "cross-aarch64-none-elf-gcc14-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "b7dd"
@@ -2956,7 +2956,7 @@
       "qemu-riscv-rv32imac-meson-gcc-debug": {
         "inherit": [
           "qemu-riscv-rv32imac-meson-gcc",
-          "riscv-none-elf-gcc-dependencies"
+          "cross-riscv-none-elf-gcc-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "w3d"
@@ -2974,7 +2974,7 @@
       "qemu-riscv-rv32imac-meson-gcc11-debug": {
         "inherit": [
           "qemu-riscv-rv32imac-meson-gcc",
-          "riscv-none-elf-gcc11-dependencies"
+          "cross-riscv-none-elf-gcc11-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "w3da"
@@ -2992,7 +2992,7 @@
       "qemu-riscv-rv32imac-meson-gcc12-debug": {
         "inherit": [
           "qemu-riscv-rv32imac-meson-gcc",
-          "riscv-none-elf-gcc12-dependencies"
+          "cross-riscv-none-elf-gcc12-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "w3db"
@@ -3010,7 +3010,7 @@
       "qemu-riscv-rv32imac-meson-gcc13-debug": {
         "inherit": [
           "qemu-riscv-rv32imac-meson-gcc",
-          "riscv-none-elf-gcc13-dependencies"
+          "cross-riscv-none-elf-gcc13-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "w3dc"
@@ -3028,7 +3028,7 @@
       "qemu-riscv-rv32imac-meson-gcc14-debug": {
         "inherit": [
           "qemu-riscv-rv32imac-meson-gcc",
-          "riscv-none-elf-gcc14-dependencies"
+          "cross-riscv-none-elf-gcc14-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "w3dd"
@@ -3080,7 +3080,7 @@
       "qemu-riscv-rv64imafdc-meson-gcc-debug": {
         "inherit": [
           "qemu-riscv-rv64imafdc-meson-gcc",
-          "riscv-none-elf-gcc-dependencies"
+          "cross-riscv-none-elf-gcc-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "w6d"
@@ -3098,7 +3098,7 @@
       "qemu-riscv-rv64imafdc-meson-gcc11-debug": {
         "inherit": [
           "qemu-riscv-rv64imafdc-meson-gcc",
-          "riscv-none-elf-gcc11-dependencies"
+          "cross-riscv-none-elf-gcc11-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "w6da"
@@ -3116,7 +3116,7 @@
       "qemu-riscv-rv64imafdc-meson-gcc12-debug": {
         "inherit": [
           "qemu-riscv-rv64imafdc-meson-gcc",
-          "riscv-none-elf-gcc12-dependencies"
+          "cross-riscv-none-elf-gcc12-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "w6db"
@@ -3134,7 +3134,7 @@
       "qemu-riscv-rv64imafdc-meson-gcc13-debug": {
         "inherit": [
           "qemu-riscv-rv64imafdc-meson-gcc",
-          "riscv-none-elf-gcc13-dependencies"
+          "cross-riscv-none-elf-gcc13-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "w6dc"
@@ -3152,7 +3152,7 @@
       "qemu-riscv-rv64imafdc-meson-gcc14-debug": {
         "inherit": [
           "qemu-riscv-rv64imafdc-meson-gcc",
-          "riscv-none-elf-gcc14-dependencies"
+          "cross-riscv-none-elf-gcc14-dependencies"
         ],
         "properties": {
           "shortConfigurationName": "w6dd"
