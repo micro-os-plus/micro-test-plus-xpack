@@ -618,7 +618,7 @@
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@micro-os-plus/architecture-synthetic-posix",
         "devDependencies": {
-          "@micro-os-plus/architecture-synthetic-posix": "4.0.2"
+          "@micro-os-plus/architecture-synthetic-posix": "^4.0.2"
         }
       },
       "cortexm-dependencies": {
@@ -651,7 +651,7 @@
         ],
         "devDependencies": {
           "@micro-os-plus/architecture-aarch32": "^3.2.0",
-          "@micro-os-plus/devices-qemu-aarch32": "4.0.0"
+          "@micro-os-plus/devices-qemu-aarch32": "^4.0.0"
         }
       },
       "aarch64-dependencies": {
@@ -662,7 +662,7 @@
         ],
         "devDependencies": {
           "@micro-os-plus/architecture-aarch64": "^3.2.0",
-          "@micro-os-plus/devices-qemu-aarch64": "4.0.0"
+          "@micro-os-plus/devices-qemu-aarch64": "^4.0.0"
         }
       },
       "bare-metal-dependencies": {
@@ -683,13 +683,13 @@
           "@xpack-3rd-party/arm-cmsis-core": "5.4.0-6"
         }
       },
-      "native-gcc-latest-dependencies": {
+      "native-gcc-dependencies": {
         "hidden": true,
         "inherits": [
-          "native-gcc14-dependencies"
+          "native-gcc{{ properties.native-gcc-releases | keys | reverse | first }}-dependencies"
         ]
       },
-      "native-gcc{{ matrix.native-gcc-version}}-dependencies": {
+      "native-gcc{{ matrix.native-gcc-version }}-dependencies": {
         "matrix": {
           "native-gcc-version": [
             "{{ properties.native-gcc-versions | join_lines }}"
@@ -706,7 +706,7 @@
       "native-clang-dependencies": {
         "hidden": true,
         "inherits": [
-          "native-clang19-dependencies"
+          "native-clang{{ properties.native-clang-releases | keys | reverse | first }}-dependencies"
         ]
       },
       "native-clang{{ matrix.native-clang-version }}-dependencies": {
@@ -726,10 +726,10 @@
       "cross-arm-none-eabi-gcc-dependencies": {
         "hidden": true,
         "inherits": [
-          "cross-arm-none-eabi-gcc14-dependencies"
+          "cross-arm-none-eabi-gcc{{ properties.arm-none-eabi-gcc-releases | keys | reverse | first }}-dependencies"
         ]
       },
-      "cross-arm-none-eabi-gcc{{ matrix.arm-none-eabi-gcc-version}}-dependencies": {
+      "cross-arm-none-eabi-gcc{{ matrix.arm-none-eabi-gcc-version }}-dependencies": {
         "matrix": {
           "arm-none-eabi-gcc-version": [
             "{{ properties.arm-none-eabi-gcc-versions | join_lines }}"
@@ -746,7 +746,7 @@
       "cross-aarch64-none-elf-gcc-dependencies": {
         "hidden": true,
         "inherits": [
-          "cross-aarch64-none-elf-gcc14-dependencies"
+          "cross-aarch64-none-elf-gcc{{ properties.aarch64-none-elf-gcc-releases | keys | reverse | first }}-dependencies"
         ]
       },
       "cross-aarch64-none-elf-gcc{{ matrix.aarch64-none-elf-gcc-version}}-dependencies": {
@@ -766,7 +766,7 @@
       "cross-riscv-none-elf-gcc-dependencies": {
         "hidden": true,
         "inherits": [
-          "cross-riscv-none-elf-gcc14-dependencies"
+          "cross-riscv-none-elf-gcc{{ properties.riscv-none-elf-gcc-releases | keys | reverse | first }}-dependencies"
         ]
       },
       "cross-riscv-none-elf-gcc{{ matrix.riscv-none-elf-gcc-version }}-dependencies": {
