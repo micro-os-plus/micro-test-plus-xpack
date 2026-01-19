@@ -47,7 +47,7 @@
       "commandCMakeBuild": "cmake --build {{ properties.buildFolderRelativePathPosix }}",
       "commandCMakeBuildVerbose": "cmake --build {{ properties.buildFolderRelativePathPosix }} --verbose",
       "commandCMakeClean": "cmake --build {{ properties.buildFolderRelativePathPosix }} --target clean",
-      "commandCMakePerformTests": "cd {{ properties.buildFolderRelativePath }} && ctest -V",
+      "commandCMakePerformTests": "ctest -V --test-dir {{ properties.buildFolderRelativePath }}",
       "commandMesonPrepare": "meson setup --backend ninja --buildtype {{ properties.buildType }} -D platform-name={{ properties.platformName }} {{ properties.buildFolderRelativePathPosix }} .",
       "commandMesonPrepareWithToolchain": "meson setup --backend ninja --buildtype {{ properties.buildType }} -D platform-name={{ properties.platformName }} --native-file xpacks/@micro-os-plus/build-helper/meson/toolchains/{{ properties.toolchainFileName }} --native-file platforms/{{ properties.platformName }}/meson/native.ini {{ properties.buildFolderRelativePathPosix }} .",
       "commandMesonPrepareCross": "meson setup --backend ninja --buildtype {{ properties.buildType }} -D platform-name={{ properties.platformName }} --cross xpacks/@micro-os-plus/build-helper/meson/toolchains/{{ properties.toolchainFileName }} --cross platforms/{{ properties.platformName }}/meson/cross.ini {{ properties.buildFolderRelativePathPosix }} .",
