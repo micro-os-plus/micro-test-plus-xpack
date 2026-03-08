@@ -52,6 +52,10 @@ using namespace micro_os_plus::micro_test_plus;
 #define test_assert(EX) \
   (void)((EX) || (local_test_assert (#EX, __FILE__, __LINE__), 0))
 
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
 static void __attribute__ ((noreturn))
 local_test_assert (const char* failedexpr, const char* file, int line)
 {
@@ -64,6 +68,7 @@ local_test_assert (const char* failedexpr, const char* file, int line)
   abort ();
   /* NOTREACHED */
 }
+#pragma GCC diagnostic pop
 
 // ----------------------------------------------------------------------------
 
@@ -132,9 +137,15 @@ compute_abc (void)
   // not done via strcmp(), since the compiler will coalesce strings
   // and use the same address.
   static char str[10];
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
   strcpy (str, "ab");
   strcat (str, "c");
-  return str;
+#pragma GCC diagnostic pop
+
+return str;
 }
 
 static void
@@ -898,9 +909,15 @@ main (int argc, char* argv[])
     expect (throws ([] { exercise_throw (true); })) << "exception thrown";
     local_counts.successful_checks++;
 
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wmissing-noreturn"
+#endif
     expect (throws<std::runtime_error> ([] {
       throw std::runtime_error{ "" };
     })) << "std::runtime_error thrown";
+#pragma GCC diagnostic pop
+
     local_counts.successful_checks++;
 
     local_counts.test_cases++;
@@ -916,9 +933,15 @@ main (int argc, char* argv[])
     expect (throws ([] { exercise_throw (false); })) << "exception thrown";
     local_counts.failed_checks++;
 
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wmissing-noreturn"
+#endif
     expect (throws<std::runtime_error> ([] {
       throw std::invalid_argument{ "" };
     })) << "std::runtime_error thrown";
+#pragma GCC diagnostic pop
+
     local_counts.failed_checks++;
 
     local_counts.test_cases++;
