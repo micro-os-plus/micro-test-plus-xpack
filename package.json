@@ -51,11 +51,7 @@
     "liquidjs": "^10.24.0"
   },
   "xpack": {
-    "minimumXpmRequired": "0.20.8",
-    "dependencies": {},
-    "devDependencies": {},
-    "properties": {},
-    "buildConfigurations": {}
+    "minimumXpmRequired": "0.20.8"
   },
   "topConfig": {
     "descriptiveName": "µTest++ Testing Framework",
@@ -63,6 +59,6 @@
     "useDoxygen": "true"
   },
   "engines": {
-    "node": " >=18.0.0"
+    "node": ">=20.0.0"
   }
 }
