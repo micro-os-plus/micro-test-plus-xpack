@@ -5,11 +5,11 @@
 # This file is part of the µOS++ project (http://micro-os-plus.github.io).
 # Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
 #
-# Permission to use, copy, modify, and/or distribute this software for any
-# purpose is hereby granted, under the terms of the MIT license.
+# Permission to use, copy, modify, and/or distribute this software
+# for any purpose is hereby granted, under the terms of the MIT license.
 #
-# If a copy of the license was not distributed with this file, it can be
-# obtained from https://opensource.org/licenses/mit.
+# If a copy of the license was not distributed with this file, it can
+# be obtained from https://opensource.org/licenses/mit.
 #
 # -----------------------------------------------------------------------------
 
@@ -26,6 +26,11 @@ on:
   # Runs on manual triggering.
   workflow_dispatch:
 
+# Allow one concurrent run.
+concurrency:
+  group: 'test'
+  cancel-in-progress: true
+
 jobs:
   ci-test:
     name: 'All µTest++ Testing Framework tests'
@@ -35,22 +40,22 @@ jobs:
     strategy:
       matrix:
         # https://github.com/actions/runner-images
-        os: [ 'ubuntu-24.04', 'ubuntu-22.04', 'ubuntu-24.04-arm', 'ubuntu-22.04-arm', 'macos-15-intel', 'macos-15', 'macos-14', 'windows-2019', 'windows-2022', 'windows-2025' ]
+        os: [ 'ubuntu-24.04', 'ubuntu-22.04', 'ubuntu-24.04-arm', 'ubuntu-22.04-arm', 'macos-15-intel', 'macos-15', 'windows-2025', 'windows-2022' ]
         # https://nodejs.org/en - use LTS
-        node-version: [ '20' ]
+        node-version: [ '24' ]
         # https://www.npmjs.com/package/xpm
-        xpm-version: [ '0.20.8' ]
+        xpm-version: [ '0.23.1' ]
 
     steps:
     - name: Checkout
       # https://github.com/actions/checkout/
-      uses: actions/checkout@v6.0.1
+      uses: actions/checkout@v6.0.2
       with:
         fetch-depth: 3
 
     - name: Setup Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
       # https://github.com/actions/setup-node
-      uses: actions/setup-node@v6.1.0
+      uses: actions/setup-node@v6.3.0
       with:
         node-version: ${{ matrix.node-version }}
 
