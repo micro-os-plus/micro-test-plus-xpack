@@ -721,7 +721,10 @@
         "template": {
           "hidden": true,
           "devDependencies": {
-            "@xpack-dev-tools/gcc": "{{ properties.native-gcc-releases[matrix.native-gcc-version] }}"
+            "@xpack-dev-tools/gcc": {
+              "specifier": "{{ properties.native-gcc-releases[matrix.native-gcc-version].specifier }}",
+              "platforms": "{{ properties.native-gcc-releases[matrix.native-gcc-version].platforms }}"
+            }
           }
         }
       },
