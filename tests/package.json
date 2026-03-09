@@ -192,15 +192,15 @@
         "@micro-os-plus/architecture-riscv": "^4.1.0",
         "@micro-os-plus/devices-qemu-riscv": "^1.0.1",
         "@micro-os-plus/architecture-aarch32": "^3.2.0",
-        "@micro-os-plus/devices-qemu-aarch32": "^4.0.0",
+        "@micro-os-plus/devices-qemu-aarch32": "^4.1.0",
         "@micro-os-plus/architecture-aarch64": "^3.2.0",
-        "@micro-os-plus/devices-qemu-aarch64": "^4.0.0",
-        "@micro-os-plus/semihosting": "^7.1.0",
-        "@micro-os-plus/startup": "^5.1.0",
+        "@micro-os-plus/devices-qemu-aarch64": "^4.1.0",
+        "@micro-os-plus/semihosting": "^8.0.0",
+        "@micro-os-plus/startup": "^5.2.0",
         "@xpack-3rd-party/arm-cmsis-core": "5.4.0-6",
-        "@xpack-dev-tools/qemu-arm": "8.2.6-1.1",
-        "@xpack-dev-tools/qemu-riscv": "8.2.6-1.1",
-        "@xpack-dev-tools/openocd": "0.12.0-6.1"
+        "@xpack-dev-tools/qemu-arm": "9.2.4-1.1",
+        "@xpack-dev-tools/qemu-riscv": "9.2.4-1.1",
+        "@xpack-dev-tools/openocd": "0.12.0-7.1"
       },
       "native-dependencies": [
         "@micro-os-plus/architecture-synthetic-posix"
@@ -238,7 +238,7 @@
       "compute-latest-configs": "{% assign configs = 'native-cmake-clang,native-meson-clang' | split: ',' %}{% for variant in properties.qemu-cortexm-variants %}{% for builder in properties.builders %}{% assign config = 'qemu-cortex-' | append: variant | append: '-' | append: builder | append: '-gcc' %}{% assign configs = configs | push: config %}{% endfor %}{% endfor %}{% for variant in properties.qemu-aarch32-variants %}{% for builder in properties.builders %}{% assign config = 'qemu-aarch32-' | append: variant | append: '-' | append: builder | append: '-gcc' %}{% assign configs = configs | push: config %}{% endfor %}{% endfor %}{% for variant in properties.qemu-aarch64-variants %}{% for builder in properties.builders %}{% assign config = 'qemu-aarch64-' | append: variant | append: '-' | append: builder | append: '-gcc' %}{% assign configs = configs | push: config %}{% endfor %}{% endfor %}{% for variant in properties.qemu-riscv-variants %}{% for builder in properties.builders %}{% assign config = 'qemu-riscv-' | append: variant | append: '-' | append: builder | append: '-gcc' %}{% assign configs = configs | push: config %}{% endfor %}{% endfor %}",
       "compute-all-non-darwin-configs": "{% assign configs = '' | split: '' %}{% assign native-gcc-versions = properties.native-gcc-versions | split_lines  %}{% for builder in properties.builders %}{% for version in native-gcc-versions %}{% assign config = 'native-' | append: builder | append: '-gcc' | append: version %}{% assign configs = configs | push: config %}{% endfor %}{% endfor %}",
       "compute-all-configs": "{% assign configs = '' | split: '' %}{% assign native-clang-versions = properties.native-clang-versions | split_lines %}{% assign arm-none-eabi-gcc-versions = properties.arm-none-eabi-gcc-versions | split_lines %}{% assign riscv-none-elf-gcc-versions = properties.riscv-none-elf-gcc-versions | split_lines %}{% for builder in properties.builders %}{% for version in native-clang-versions %}{% assign config = 'native-' | append: builder | append: '-clang' | append: version %}{% assign configs = configs | push: config %}{% endfor %}{% endfor %}{% for variant in properties.qemu-cortexm-variants %}{% for builder in properties.builders %}{% for version in arm-none-eabi-gcc-versions %}{% assign config = 'qemu-cortex-' | append: variant | append: '-' | append: builder | append: '-gcc' | append: version %}{% assign configs = configs | push: config %}{% endfor %}{% endfor %}{% endfor %}{% for variant in properties.qemu-aarch32-variants %}{% for builder in properties.builders %}{% for version in arm-none-eabi-gcc-versions %}{% assign config = 'qemu-aarch32-' | append: variant | append: '-' | append: builder | append: '-gcc' | append: version %}{% assign configs = configs | push: config %}{% endfor %}{% endfor %}{% endfor %}{% for variant in properties.qemu-aarch64-variants %}{% for builder in properties.builders %}{% for version in arm-none-eabi-gcc-versions %}{% assign config = 'qemu-aarch64-' | append: variant | append: '-' | append: builder | append: '-gcc' | append: version %}{% assign configs = configs | push: config %}{% endfor %}{% endfor %}{% endfor %}{% for variant in properties.qemu-riscv-variants %}{% for builder in properties.builders %}{% for version in riscv-none-elf-gcc-versions %}{% assign config = 'qemu-riscv-' | append: variant | append: '-' | append: builder | append: '-gcc' | append: version %}{% assign configs = configs | push: config %}{% endfor %}{% endfor %}{% endfor %}",
-      "actions-install-for-configs": "{% for config in configs %}{% for build-type in properties.build-types %}xpm install --config {{ config }}-{{ build-type }} -dd{{ os.EOL }}{% endfor %}{% endfor %}",
+      "actions-install-for-configs": "{% for config in configs %}{% for build-type in properties.build-types %}xpm install --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}",
       "actions-link-dependencies-for-configs": "{% for config in configs %}{% for build-type in properties.build-types %}xpm run link-dependencies --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}",
       "actions-prepare-build-test-for-configs": "{% for config in configs %}{{ properties.actions-prepare-build-test-for-config }}{% endfor %}",
       "actions-prepare-build-test-for-config": "{% for build-type in properties.build-types %}{% for test-action in properties.test-actions %}xpm run {{ test-action }} --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}",
@@ -595,7 +595,7 @@
         "hidden": true,
         "actions": {
           "install": [
-            "xpm install --config {{ configuration.name }} -dd"
+            "xpm install --config {{ configuration.name }}"
           ],
           "link-deps": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-synthetic-posix"
