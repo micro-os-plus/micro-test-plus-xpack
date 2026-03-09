@@ -595,7 +595,7 @@
         "hidden": true,
         "actions": {
           "install": [
-            "xpm install --config {{ configuration.name }}"
+            "xpm install --config {{ configuration.name }} -dd"
           ],
           "link-deps": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-synthetic-posix"
