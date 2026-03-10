@@ -7,8 +7,8 @@
     "generate-tests-commons": "bash xpacks/@micro-os-plus/build-helper/maintenance-scripts/generate-tests-commons.sh --micro-os-plus",
     "npm-install": "npm install",
     "npm-link-helpers": "npm link @xpack/npm-packages-helper",
-    "xpm-link-helpers": "xpm link @micro-os-plus/build-helper",
-    "deep-clean": "del-cli build node_modules xpacks package-json.json"
+    "npm-outdated": "npm outdated",
+    "deep-clean": "del-cli build node_modules xpacks package-lock.json"
   },
   "author": {
     "name": "Liviu Ionescu",
@@ -20,9 +20,9 @@
   "dependencies": {},
   "bundleDependencies": [],
   "devDependencies": {
-    "del-cli": "^6.0.0",
+    "del-cli": "^7.0.0",
     "json": "^11.0.0",
-    "liquidjs": "^10.20.1"
+    "liquidjs": "^10.25.0"
   },
   "xpack": {
     "minimumXpmRequired": "0.20.7",
@@ -248,11 +248,13 @@
       "actions-clean-for-configs": "{% for config in configs %}{% for build-type in properties.build-types %}xpm run clean --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}"
     },
     "actions": {
-      "deep-clean": "del-cli build node_modules xpacks package-lock.json",
       "install": [
         "xpm install",
         "xpm install --config {% if os.platform == 'win32' %}native-cmake-gcc-debug{% else %}native-cmake-sys-debug{% endif %}",
         "xpm install --config {% if os.platform == 'win32' %}native-cmake-gcc-release{% else %}native-cmake-sys-release{% endif %}"
+      ],
+      "link-helpers": [
+        "xpm link @micro-os-plus/build-helper"
       ],
       "link-dependencies": [
         "xpm link @micro-os-plus/build-helper",
