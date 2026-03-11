@@ -1,3 +1,8 @@
+# -----------------------------------------------------------------------------
+# DO NOT EDIT!
+# Automatically generated from npm-packages-helper/templates/*.
+# -----------------------------------------------------------------------------
+
 # https://docs.npmjs.com/files/package.json#files
 # Certain files are always included, regardless of settings:
 # - package.json
@@ -82,7 +87,8 @@ wrappers/
 extras/
 inspiration/
 maintenance-scripts/
-config
+
+# config
 
 .prettierignore
 .prettierrc.json

@@ -2,28 +2,10 @@
   "name": "@micro-os-plus/micro-test-plus",
   "version": "3.2.3-pre",
   "description": "A source code library with µTest++, a lightweight testing framework for embedded platforms",
-  "main": "",
-  "scripts": {
-    "generate-top-commons": "bash node_modules/@xpack/npm-packages-helper/maintenance-scripts/generate-top-commons.sh --micro-os-plus",
-    "npm-install": "npm install",
-    "npm-link-helpers": "npm link @xpack/npm-packages-helper @xpack/docusaurus-template-liquid",
-    "npm-outdated": "npm outdated",
-    "npm-pack": "npm pack",
-    "npm-link": "npm link",
-    "git-log": "git log --pretty='%cd * %h %s' --date=short",
-    "git-pull-helper": "git -C ${HOME}/Work/micro-os-plus/build-helper-xpack.git pull",
-    "deep-clean": "del-cli node_modules package-lock.json *.tgz",
-    "postversion": "git push origin --all && git push origin --tags"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/micro-os-plus/micro-test-plus-xpack.git"
   },
-  "bugs": {
-    "url": "https://github.com/micro-os-plus/micro-test-plus-xpack/issues"
-  },
-  "homepage": "https://micro-os-plus.github.io/micro-test-plus-xpack/",
-  "homepagePreview": "https://micro-os-plus.github.io/micro-test-plus-xpack-webpreview/",
   "keywords": [
     "xpack",
     "micro-os-plus",
@@ -37,16 +19,34 @@
     "url": "https://github.com/ilg-ul"
   },
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/micro-os-plus/micro-test-plus-xpack/issues"
+  },
+  "homepage": "https://micro-os-plus.github.io/micro-test-plus-xpack/",
+  "homepagePreview": "https://micro-os-plus.github.io/micro-test-plus-xpack-webpreview/",
+  "$dependenciesUrls": {
+    "del-cli": "https://www.npmjs.com/package/del-cli",
+    "json": "https://www.npmjs.com/package/json",
+    "liquidjs": "https://www.npmjs.com/package/liquidjs"
+  },
   "dependencies": {},
-  "$devDependenciesUrls": [
-    "https://www.npmjs.com/package/del-cli",
-    "https://www.npmjs.com/package/json",
-    "https://www.npmjs.com/package/liquidjs"
-  ],
   "devDependencies": {
+    "@xpack/npm-packages-helper": "github:xpack/npm-packages-helper",
     "del-cli": "^7.0.0",
     "json": "^11.0.0",
     "liquidjs": "^10.25.0"
+  },
+  "scripts": {
+    "generate-top-commons": "bash node_modules/@xpack/npm-packages-helper/maintenance-scripts/generate-top-commons.sh --micro-os-plus",
+    "npm-install": "npm install",
+    "npm-link-helpers": "npm link @xpack/npm-packages-helper",
+    "npm-outdated": "npm outdated",
+    "npm-pack": "npm pack",
+    "npm-link": "npm link",
+    "git-log": "git log --pretty='%cd * %h %s' --date=short",
+    "git-pull-helper": "git -C ${HOME}/Work/micro-os-plus/build-helper-xpack.git pull",
+    "deep-clean": "del-cli node_modules package-lock.json *.tgz",
+    "postversion": "git push origin --all && git push origin --tags"
   },
   "xpack": {
     "minimumXpmRequired": "0.20.8"

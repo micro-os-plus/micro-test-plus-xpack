@@ -27,51 +27,51 @@ on:
   push:
     # ... on the active branches ...
     branches:
-      - "xpack-development"
-      - "xpack"
+      - 'xpack-development'
+      - 'xpack'
     # ... skip tags only ...
     tags-ignore:
-      - "**"
+      - '**'
     # ... include everything except ...
     paths-ignore:
-      - ".vscode/**"
-      - "LICENSE"
-      - "**.md"
-      - ".clang-format"
-      - ".gitignore"
-      - ".npmignore"
-      - ".github/workflows/publish-github-pages.yml"
-      - ".github/workflows/test-all.yml"
-      - "tests/scripts/**"
-      - "**/README**"
-      - "website/**"
+      - '.vscode/**'
+      - 'LICENSE'
+      - '**.md'
+      - '.clang-format'
+      - '.gitignore'
+      - '.npmignore'
+      - '.github/workflows/publish-github-pages.yml'
+      - '.github/workflows/test-all.yml'
+      - 'tests/scripts/**'
+      - '**/README**'
+      - 'website/**'
 
 # Allow one concurrent run.
 concurrency:
-  group: "test"
+  group: 'test'
   cancel-in-progress: true
 
 jobs:
   ci-test:
-    name: "µTest++ Testing Framework tests"
+    name: 'µTest++ Testing Framework tests'
 
     runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
         # https://github.com/actions/runner-images
-        os:
-          [
-            "ubuntu-24.04",
-            "ubuntu-24.04-arm",
-            "macos-15-intel",
-            "macos-15",
-            "windows-2025",
+        os: 
+          [ 
+            'ubuntu-24.04', 
+            'ubuntu-24.04-arm', 
+            'macos-15-intel', 
+            'macos-15', 
+            'windows-2025' 
           ]
         # https://nodejs.org/en - use LTS
-        node-version: ["24"]
+        node-version: [ '24' ]
         # https://www.npmjs.com/package/xpm
-        xpm-version: ["0.23.2"]
+        xpm-version: [ '0.23.2' ]
 
     steps:
       - name: Checkout
@@ -106,4 +106,4 @@ jobs:
       - name: Run tests on ${{ matrix.os }}
         run: xpm run test-ci -C tests
         env:
-          CI: true
+            CI: true
