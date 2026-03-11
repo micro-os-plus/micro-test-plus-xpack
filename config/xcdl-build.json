@@ -7,13 +7,13 @@
     "description": "µTest++, a lightweight testing framework for embedded platforms",
     "parent": "micro-os-plus",
     "compilerIncludeFolders": [
-      "include"
+      "../include"
     ],
     "compilerSourceFiles": [
-      "src/micro-test-plus.cpp",
-      "src/test-runner.cpp",
-      "src/test-reporter.cpp",
-      "src/test-suite.cpp"
+      "../src/micro-test-plus.cpp",
+      "../src/test-runner.cpp",
+      "../src/test-reporter.cpp",
+      "../src/test-suite.cpp"
     ],
     "compilerDefinitions": [],
     "compilerOptions": [],
