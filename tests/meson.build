@@ -34,9 +34,9 @@ project('micro-os-plus-micro-test-plus-tests',
 # gnu++2a, gnu++20, vc++14, vc++17, vc++latest
 
 # -----------------------------------------------------------------------------
-# Global definitions #
+# Project specific definitions #
 
-subdir('meson/global-definitions')
+subdir('meson/project-definitions')
 
 # -----------------------------------------------------------------------------
 

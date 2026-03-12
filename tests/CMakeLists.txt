@@ -72,8 +72,8 @@ xpack_display_greetings("${CMAKE_CURRENT_SOURCE_DIR}/../package.json")
 
 # -----------------------------------------------------------------------------
 
-# Global definitions.
-include("cmake/global-definitions.cmake")
+# Project specific definitions.
+include("cmake/project-definitions.cmake")
 
 # -----------------------------------------------------------------------------
 
