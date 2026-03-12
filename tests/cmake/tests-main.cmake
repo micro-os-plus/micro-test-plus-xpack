@@ -14,15 +14,6 @@
 
 # -----------------------------------------------------------------------------
 
-# Generate the compile_commands.json file to feed the indexer. Highly
-# recommended, to help IDEs construct the index.
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
-# Enable this to see the dependency graph. set_property(GLOBAL PROPERTY
-# GLOBAL_DEPENDS_DEBUG_MODE 1)
-
-# -----------------------------------------------------------------------------
-
 # Bare-metal executables have the .elf extension.
 if(CMAKE_SYSTEM_NAME STREQUAL "Generic")
   set(CMAKE_EXECUTABLE_SUFFIX ".elf")
