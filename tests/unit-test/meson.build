@@ -65,6 +65,6 @@ endforeach
 foreach name : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args
   message('+ ' + name)
 endforeach
-message('> test_unit_dependency_compile_c_args')
+message('> test_unit_dependency')
 
 # -----------------------------------------------------------------------------
