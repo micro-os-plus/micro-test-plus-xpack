@@ -30,7 +30,8 @@ if(ENABLE_MINIMAL_TEST)
 
   target_link_libraries(
     minimal-test
-    PRIVATE micro-os-plus::common-options
+    PRIVATE # The compile & link options common to all platforms.
+            micro-os-plus::common-options
             # Library with the current test.
             test::minimal
             # Tested library.
@@ -60,7 +61,8 @@ if(ENABLE_SAMPLE_TEST)
 
   target_link_libraries(
     sample-test
-    PRIVATE micro-os-plus::common-options
+    PRIVATE # The compile & link options common to all platforms.
+            micro-os-plus::common-options
             # Library with the current test.
             test::sample
             # Tested library.
@@ -90,7 +92,8 @@ if(ENABLE_UNIT_TEST)
 
   target_link_libraries(
     unit-test
-    PRIVATE micro-os-plus::common-options
+    PRIVATE # The compile & link options common to all platforms.
+            micro-os-plus::common-options
             # Library with the current test.
             test::unit
             # Tested library.

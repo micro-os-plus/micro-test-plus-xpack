@@ -24,6 +24,7 @@ message(
 # -----------------------------------------------------------------------------
 
 set(xpack_dependencies_folders
+    # Project dependencies.
     ${xpack_dependencies_project_folders}
     # The BINARY_DIR is the `build/<config>` folder.
     "${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/architecture-synthetic-posix"

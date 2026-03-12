@@ -24,10 +24,22 @@ xpack_environment = environment({'MALLOC_PERTURB_': '0'})
 
 # -----------------------------------------------------------------------------
 
+tested_library_dependency = micro_os_plus_micro_test_plus_dependency
+tested_library_dependency_compile_c_args = micro_os_plus_micro_test_plus_dependency_compile_c_args
+tested_library_dependency_compile_cpp_args = micro_os_plus_micro_test_plus_dependency_compile_cpp_args
+
+platform_dependency = platform_native_dependency
+platform_dependency_compile_c_args = platform_native_dependency_compile_c_args
+platform_dependency_compile_cpp_args = platform_native_dependency_compile_cpp_args
+
+# -----------------------------------------------------------------------------
+
 if enable_minimal_test
 
   name = 'minimal-test'
   test_dependency = test_minimal_dependency
+  test_dependency_compile_c_args = test_minimal_dependency_compile_c_args
+  test_dependency_compile_cpp_args = test_minimal_dependency_compile_cpp_args
 
   # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   _local_compile_args = [] # Common C/C++ args.
@@ -43,17 +55,17 @@ if enable_minimal_test
   _local_compile_c_args += common_options_dependency_compile_c_args
   _local_compile_cpp_args += common_options_dependency_compile_cpp_args
 
-  _local_compile_c_args += test_minimal_dependency_compile_c_args
-  _local_compile_cpp_args += test_minimal_dependency_compile_cpp_args
+  _local_compile_c_args += test_dependency_compile_c_args
+  _local_compile_cpp_args += test_dependency_compile_cpp_args
 
-  _local_compile_c_args += micro_os_plus_micro_test_plus_dependency_compile_c_args
-  _local_compile_cpp_args += micro_os_plus_micro_test_plus_dependency_compile_cpp_args
+  _local_compile_c_args += tested_library_dependency_compile_c_args
+  _local_compile_cpp_args += tested_library_dependency_compile_cpp_args
 
   # _local_compile_c_args += micro_os_plus_diag_trace_dependency_compile_c_args
   # _local_compile_cpp_args += micro_os_plus_diag_trace_dependency_compile_cpp_args
 
-  _local_compile_c_args += platform_native_dependency_compile_c_args
-  _local_compile_cpp_args += platform_native_dependency_compile_cpp_args
+  _local_compile_c_args += platform_dependency_compile_c_args
+  _local_compile_cpp_args += platform_dependency_compile_cpp_args
 
   _local_dependencies += [
 
@@ -62,13 +74,13 @@ if enable_minimal_test
     test_dependency, # <---
 
     # Tested library.
-    micro_os_plus_micro_test_plus_dependency,
+    tested_library_dependency,
 
     # Portable dependencies.
     micro_os_plus_diag_trace_dependency,
 
     # Platform specific dependencies.
-    platform_native_dependency,
+    platform_dependency,
   ]
 
   # https://mesonbuild.com/Reference-manual.html#executable
@@ -150,6 +162,8 @@ if enable_sample_test
 
   name = 'sample-test'
   test_dependency = test_sample_dependency
+  test_dependency_compile_c_args = test_sample_dependency_compile_c_args
+  test_dependency_compile_cpp_args = test_sample_dependency_compile_cpp_args
 
   # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   _local_compile_args = [] # Common C/C++ args.
@@ -165,17 +179,17 @@ if enable_sample_test
   _local_compile_c_args += common_options_dependency_compile_c_args
   _local_compile_cpp_args += common_options_dependency_compile_cpp_args
 
-  _local_compile_c_args += test_sample_dependency_compile_c_args
-  _local_compile_cpp_args += test_sample_dependency_compile_cpp_args
+  _local_compile_c_args += test_dependency_compile_c_args
+  _local_compile_cpp_args += test_dependency_compile_cpp_args
 
-  _local_compile_c_args += micro_os_plus_micro_test_plus_dependency_compile_c_args
-  _local_compile_cpp_args += micro_os_plus_micro_test_plus_dependency_compile_cpp_args
+  _local_compile_c_args += tested_library_dependency_compile_c_args
+  _local_compile_cpp_args += tested_library_dependency_compile_cpp_args
 
   # _local_compile_c_args += micro_os_plus_diag_trace_dependency_compile_c_args
   # _local_compile_cpp_args += micro_os_plus_diag_trace_dependency_compile_cpp_args
 
-  _local_compile_c_args += platform_native_dependency_compile_c_args
-  _local_compile_cpp_args += platform_native_dependency_compile_cpp_args
+  _local_compile_c_args += platform_dependency_compile_c_args
+  _local_compile_cpp_args += platform_dependency_compile_cpp_args
 
   _local_dependencies += [
 
@@ -184,13 +198,13 @@ if enable_sample_test
     test_dependency, # <---
 
     # Tested library.
-    micro_os_plus_micro_test_plus_dependency,
+    tested_library_dependency,
 
     # Portable dependencies.
     micro_os_plus_diag_trace_dependency,
 
     # Platform specific dependencies.
-    platform_native_dependency,
+    platform_dependency,
   ]
 
   # https://mesonbuild.com/Reference-manual.html#executable
@@ -272,6 +286,8 @@ if enable_unit_test
 
   name = 'unit-test'
   test_dependency = test_unit_dependency
+  test_dependency_compile_c_args = test_unit_dependency_compile_c_args
+  test_dependency_compile_cpp_args = test_unit_dependency_compile_cpp_args
 
   # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   _local_compile_args = [] # Common C/C++ args.
@@ -287,17 +303,17 @@ if enable_unit_test
   _local_compile_c_args += common_options_dependency_compile_c_args
   _local_compile_cpp_args += common_options_dependency_compile_cpp_args
 
-  _local_compile_c_args += test_minimal_dependency_compile_c_args
-  _local_compile_cpp_args += test_minimal_dependency_compile_cpp_args
+  _local_compile_c_args += test_dependency_compile_c_args
+  _local_compile_cpp_args += test_dependency_compile_cpp_args
 
-  _local_compile_c_args += micro_os_plus_micro_test_plus_dependency_compile_c_args
-  _local_compile_cpp_args += micro_os_plus_micro_test_plus_dependency_compile_cpp_args
+  _local_compile_c_args += tested_library_dependency_compile_c_args
+  _local_compile_cpp_args += tested_library_dependency_compile_cpp_args
 
   # _local_compile_c_args += micro_os_plus_diag_trace_dependency_compile_c_args
   # _local_compile_cpp_args += micro_os_plus_diag_trace_dependency_compile_cpp_args
 
-  _local_compile_c_args += platform_native_dependency_compile_c_args
-  _local_compile_cpp_args += platform_native_dependency_compile_cpp_args
+  _local_compile_c_args += platform_dependency_compile_c_args
+  _local_compile_cpp_args += platform_dependency_compile_cpp_args
 
   _local_dependencies += [
 
@@ -306,13 +322,13 @@ if enable_unit_test
     test_dependency, # <---
 
     # Tested library.
-    micro_os_plus_micro_test_plus_dependency,
+    tested_library_dependency,
 
     # Portable dependencies.
     micro_os_plus_diag_trace_dependency,
 
     # Platform specific dependencies.
-    platform_native_dependency,
+    platform_dependency,
   ]
 
   # https://mesonbuild.com/Reference-manual.html#executable

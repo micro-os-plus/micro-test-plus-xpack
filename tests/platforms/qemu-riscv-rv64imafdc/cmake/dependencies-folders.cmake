@@ -23,9 +23,8 @@ message(
 
 # -----------------------------------------------------------------------------
 set(xpack_dependencies_folders
-    "${CMAKE_SOURCE_DIR}/minimal-test"
-    "${CMAKE_SOURCE_DIR}/sample-test"
-    "${CMAKE_SOURCE_DIR}/unit-test"
+    # Project dependencies.
+    ${xpack_dependencies_project_folders}
     # The BINARY_DIR is the `build/<config>` folder.
     "${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/architecture-riscv"
     "${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/devices-qemu-riscv"

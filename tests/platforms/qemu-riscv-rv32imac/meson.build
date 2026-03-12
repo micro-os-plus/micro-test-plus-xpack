@@ -41,11 +41,23 @@ xpack_environment.set('MALLOC_PERTURB_', '0')
 
 # -----------------------------------------------------------------------------
 
+tested_library_dependency = micro_os_plus_micro_test_plus_dependency
+tested_library_dependency_compile_c_args = micro_os_plus_micro_test_plus_dependency_compile_c_args
+tested_library_dependency_compile_cpp_args = micro_os_plus_micro_test_plus_dependency_compile_cpp_args
+
+platform_dependency = platform_qemu_riscv_rv32imac_dependency
+platform_dependency_compile_c_args = platform_qemu_riscv_rv32imac_dependency_compile_c_args
+platform_dependency_compile_cpp_args = platform_qemu_riscv_rv32imac_dependency_compile_cpp_args
+
+# -----------------------------------------------------------------------------
+
 # Define the tests executables.
 if enable_sample_test
 
   test_name = 'sample-test'
   test_dependency = test_sample_dependency
+  test_dependency_compile_c_args = test_sample_dependency_compile_c_args
+  test_dependency_compile_cpp_args = test_sample_dependency_compile_cpp_args
 
   # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   _local_compile_args = [] # Common C/C++ args.
@@ -61,14 +73,20 @@ if enable_sample_test
   _local_compile_c_args += common_options_dependency_compile_c_args
   _local_compile_cpp_args += common_options_dependency_compile_cpp_args
 
-  _local_compile_c_args += test_sample_dependency_compile_c_args
-  _local_compile_cpp_args += test_sample_dependency_compile_cpp_args
+  _local_compile_c_args += test_dependency_compile_c_args
+  _local_compile_cpp_args += test_dependency_compile_cpp_args
 
-  _local_compile_c_args += micro_os_plus_micro_test_plus_dependency_compile_c_args
-  _local_compile_cpp_args += micro_os_plus_micro_test_plus_dependency_compile_cpp_args
+  _local_compile_c_args += tested_library_dependency_compile_c_args
+  _local_compile_cpp_args += tested_library_dependency_compile_cpp_args
 
-  _local_compile_c_args += platform_qemu_riscv_rv32imac_dependency_compile_c_args
-  _local_compile_cpp_args += platform_qemu_riscv_rv32imac_dependency_compile_cpp_args
+  # _local_compile_c_args += micro_os_plus_diag_trace_dependency_compile_c_args
+  # _local_compile_cpp_args += micro_os_plus_diag_trace_dependency_compile_cpp_args
+
+  _local_compile_c_args += platform_dependency_compile_c_args
+  _local_compile_cpp_args += platform_dependency_compile_cpp_args
+
+  # _local_compile_c_args += micro_os_plus_semihosting_dependency_compile_c_args
+  # _local_compile_cpp_args += micro_os_plus_semihosting_dependency_compile_cpp_args
 
   _local_link_args += [
     '-Wl,-Map,'+ test_name + '-map.txt',
@@ -85,10 +103,10 @@ if enable_sample_test
     micro_os_plus_micro_test_plus_dependency,
 
     # Portable dependencies.
-    micro_os_plus_diag_trace_dependency,
+    tested_library_dependency,
 
     # Platform specific dependencies.
-    platform_qemu_riscv_rv32imac_dependency, # bring device & architecture too
+    platform_dependency, # bring device & architecture too
 
     micro_os_plus_semihosting_dependency,
   ]
@@ -202,6 +220,8 @@ if enable_unit_test
 
   test_name = 'unit-test'
   test_dependency = test_unit_dependency
+  test_dependency_compile_c_args = test_unit_dependency_compile_c_args
+  test_dependency_compile_cpp_args = test_unit_dependency_compile_cpp_args
 
   # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   _local_compile_args = [] # Common C/C++ args.
@@ -217,14 +237,20 @@ if enable_unit_test
   _local_compile_c_args += common_options_dependency_compile_c_args
   _local_compile_cpp_args += common_options_dependency_compile_cpp_args
 
-  _local_compile_c_args += test_unit_dependency_compile_c_args
-  _local_compile_cpp_args += test_unit_dependency_compile_cpp_args
+  _local_compile_c_args += test_dependency_compile_c_args
+  _local_compile_cpp_args += test_dependency_compile_cpp_args
 
-  _local_compile_c_args += micro_os_plus_micro_test_plus_dependency_compile_c_args
-  _local_compile_cpp_args += micro_os_plus_micro_test_plus_dependency_compile_cpp_args
+  _local_compile_c_args += tested_library_dependency_compile_c_args
+  _local_compile_cpp_args += tested_library_dependency_compile_cpp_args
 
-  _local_compile_c_args += platform_qemu_riscv_rv32imac_dependency_compile_c_args
-  _local_compile_cpp_args += platform_qemu_riscv_rv32imac_dependency_compile_cpp_args
+  # _local_compile_c_args += micro_os_plus_diag_trace_dependency_compile_c_args
+  # _local_compile_cpp_args += micro_os_plus_diag_trace_dependency_compile_cpp_args
+
+  _local_compile_c_args += platform_dependency_compile_c_args
+  _local_compile_cpp_args += platform_dependency_compile_cpp_args
+
+  # _local_compile_c_args += micro_os_plus_semihosting_dependency_compile_c_args
+  # _local_compile_cpp_args += micro_os_plus_semihosting_dependency_compile_cpp_args
 
   _local_link_args += [
     '-Wl,-Map,'+ test_name + '-map.txt',
@@ -241,10 +267,10 @@ if enable_unit_test
     micro_os_plus_micro_test_plus_dependency,
 
     # Portable dependencies.
-    micro_os_plus_diag_trace_dependency,
+    tested_library_dependency,
 
     # Platform specific dependencies.
-    platform_qemu_riscv_rv32imac_dependency, # bring device & architecture too
+    platform_dependency, # bring device & architecture too
 
     micro_os_plus_semihosting_dependency,
   ]
