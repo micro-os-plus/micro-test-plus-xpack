@@ -22,12 +22,7 @@ message('Including tests/platforms/' + xpack_platform_name + '/meson/dependencie
 # -----------------------------------------------------------------------------
 
 # The base folder is `tests`. The order is significant.
-xpack_dependencies_folders = [
-
-  # Each test has its own library.
-  'minimal-test',
-  'sample-test',
-  'unit-test',
+xpack_dependencies_folders = xpack_dependencies_project_folders + [
 
   'xpacks/@micro-os-plus/diag-trace', # -
   # 'xpacks/@micro-os-plus/micro-test-plus', # -

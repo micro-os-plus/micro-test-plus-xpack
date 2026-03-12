@@ -24,10 +24,7 @@ message(
 # -----------------------------------------------------------------------------
 
 set(xpack_dependencies_folders
-    # Project dependencies.
-    "${CMAKE_SOURCE_DIR}/minimal-test"
-    "${CMAKE_SOURCE_DIR}/sample-test"
-    "${CMAKE_SOURCE_DIR}/unit-test"
+    ${xpack_dependencies_project_folders}
     # The BINARY_DIR is the `build/<config>` folder.
     "${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/architecture-synthetic-posix"
     # The SOURCE_DIR is the `tests` folder.
