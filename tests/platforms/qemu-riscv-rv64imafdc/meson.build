@@ -101,10 +101,10 @@ if enable_sample_test
     test_dependency, # <--- 
 
     # Tested library.
-    micro_os_plus_micro_test_plus_dependency,
+    tested_library_dependency,
 
     # Portable dependencies.
-    tested_library_dependency,
+    # micro_os_plus_micro_test_plus_dependency,
 
     # Platform specific dependencies.
     platform_dependency, # bring device & architecture too
@@ -265,10 +265,10 @@ if enable_unit_test
     test_dependency, # <--- 
 
     # Tested library.
-    micro_os_plus_micro_test_plus_dependency,
+    tested_library_dependency,
 
     # Portable dependencies.
-    tested_library_dependency,
+    # micro_os_plus_micro_test_plus_dependency,
 
     # Platform specific dependencies.
     platform_dependency, # bring device & architecture too

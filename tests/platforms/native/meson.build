@@ -77,6 +77,7 @@ if enable_minimal_test
     tested_library_dependency,
 
     # Portable dependencies.
+    # micro_os_plus_micro_test_plus_dependency,
     micro_os_plus_diag_trace_dependency,
 
     # Platform specific dependencies.
