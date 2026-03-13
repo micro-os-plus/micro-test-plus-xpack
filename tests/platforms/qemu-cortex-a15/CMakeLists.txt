@@ -37,8 +37,7 @@ if(ENABLE_MINIMAL_TEST)
       qemu-system-arm${extension} --machine virt --cpu cortex-a15 --kernel
       minimal-test.elf --nographic -smp 1 -d unimp,guest_errors
       --semihosting-config
-      enable=on,target=native,arg=minimal-test,arg=one,arg=two
-  )
+      enable=on,target=native,arg=minimal-test,arg=one,arg=two)
 endif()
 
 # -----------------------------------------------------------------------------
@@ -55,8 +54,7 @@ if(ENABLE_SAMPLE_TEST)
       qemu-system-arm${extension} --machine virt --cpu cortex-a15 --kernel
       sample-test.elf --nographic -smp 1 -d unimp,guest_errors
       --semihosting-config
-      enable=on,target=native,arg=sample-test,arg=one,arg=two
-  )
+      enable=on,target=native,arg=sample-test,arg=one,arg=two)
 endif()
 
 # -----------------------------------------------------------------------------
@@ -72,8 +70,7 @@ if(ENABLE_UNIT_TEST)
     COMMAND
       qemu-system-arm${extension} --machine virt --cpu cortex-a15 --kernel
       unit-test.elf --nographic -smp 1 -d unimp,guest_errors
-      --semihosting-config enable=on,target=native,arg=unit-test
-  )
+      --semihosting-config enable=on,target=native,arg=unit-test)
 endif()
 
 # -----------------------------------------------------------------------------

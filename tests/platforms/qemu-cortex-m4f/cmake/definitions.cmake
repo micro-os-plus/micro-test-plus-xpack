@@ -17,8 +17,7 @@
 # -----------------------------------------------------------------------------
 
 message(VERBOSE
-        "Including tests/platforms/${PLATFORM_NAME}/cmake/definitions.cmake..."
-)
+        "Including tests/platforms/${PLATFORM_NAME}/cmake/definitions.cmake...")
 
 # -----------------------------------------------------------------------------
 

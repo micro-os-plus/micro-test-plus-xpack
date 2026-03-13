@@ -43,9 +43,8 @@ include("platforms/${PLATFORM_NAME}/cmake/definitions.cmake")
 include("platforms/${PLATFORM_NAME}/cmake/dependencies-folders.cmake")
 
 # Iterate the platform dependencies and `add_subdirectory()`.
-xpack_add_dependencies_subdirectories(
-  "${xpack_dependencies_folders}" "xpacks-bin"
-)
+xpack_add_dependencies_subdirectories("${xpack_dependencies_folders}"
+                                      "xpacks-bin")
 
 # -----------------------------------------------------------------------------
 

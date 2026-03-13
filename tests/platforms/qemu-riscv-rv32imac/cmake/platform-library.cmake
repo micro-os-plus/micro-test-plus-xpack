@@ -17,8 +17,7 @@
 # -----------------------------------------------------------------------------
 
 message(VERBOSE
-        "Including tests/platforms/${PLATFORM_NAME}/platform-library.cmake..."
-)
+        "Including tests/platforms/${PLATFORM_NAME}/platform-library.cmake...")
 
 # -----------------------------------------------------------------------------
 
@@ -35,9 +34,8 @@ endif()
 # Define the platform library.
 add_library(platform-qemu-riscv-rv32imac-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_include_directories(
-  platform-qemu-riscv-rv32imac-interface INTERFACE "include"
-)
+target_include_directories(platform-qemu-riscv-rv32imac-interface
+                           INTERFACE "include")
 
 target_sources(platform-qemu-riscv-rv32imac-interface INTERFACE # None.
 )
@@ -50,8 +48,7 @@ target_compile_definitions(
     # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap02.html#tag_02_01_03
     _POSIX_C_SOURCE=200809L
     # For S_IREAD
-    _GNU_SOURCE
-)
+    _GNU_SOURCE)
 
 set(xpack_platform_common_args
     # https://gcc.gnu.org/onlinedocs/gcc/RISC-V-Options.html
@@ -61,8 +58,10 @@ set(xpack_platform_common_args
     -mcmodel=medany
     -msmall-data-limit=8
     # -mno-save-restore
-    -fno-exceptions # !
+    -fno-exceptions
+    #
     # -fno-move-loop-invariants
+    #
     # Embedded builds must be warning free.
     -Werror
     # (.text._write_r+0x14): undefined reference to `_write'
@@ -77,23 +76,28 @@ set(xpack_platform_common_args
     # $<$<COMPILE_LANGUAGE:CXX>:-fno-exceptions>
     # $<$<COMPILE_LANGUAGE:CXX>:-fno-rtti>
     # $<$<COMPILE_LANGUAGE:CXX>:-fno-use-cxa-atexit>
-    $<$<COMPILE_LANGUAGE:CXX>:-fno-threadsafe-statics>
-)
+    $<$<COMPILE_LANGUAGE:CXX>:-fno-threadsafe-statics>)
 
-target_compile_options(
-  platform-qemu-riscv-rv32imac-interface
-  INTERFACE ${xpack_platform_common_args}
-)
+target_compile_options(platform-qemu-riscv-rv32imac-interface
+                       INTERFACE ${xpack_platform_common_args})
 
 # When `-flto` is used, the compile options must be passed to the linker too.
 target_link_options(
   platform-qemu-riscv-rv32imac-interface
   INTERFACE
+  #
   # -v
+  #
   -nostartfiles
+  #
   # Force the linker to keep the interrupt vectors which otherwise are not
-  # referred from anywhere. -u_interrupt_vectors
-  # nano has no exceptions. -specs=nano.specs
+  # referred from anywhere.
+  #
+  # -u_interrupt_vectors
+  #
+  # nano has no exceptions.
+  #
+  # -specs=nano.specs
   -Wl,--gc-sections
   # Including files from other packages is not very nice, but functional. Use
   # absolute paths, otherwise set -L.
@@ -106,14 +110,12 @@ if("${CMAKE_C_COMPILER_VERSION}" VERSION_GREATER_EQUAL "12.0.0")
   target_link_options(
     platform-qemu-riscv-rv32imac-interface INTERFACE
     # .elf has a LOAD segment with RWX permissions (GCC 12)
-    -Wl,--no-warn-rwx-segment
-  )
+    -Wl,--no-warn-rwx-segment)
 endif()
 
 target_link_libraries(
   platform-qemu-riscv-rv32imac-interface
-  INTERFACE micro-os-plus::devices-qemu-riscv micro-os-plus::startup
-)
+  INTERFACE micro-os-plus::devices-qemu-riscv micro-os-plus::startup)
 
 if(COMMAND xpack_display_target_lists)
   xpack_display_target_lists(platform-qemu-riscv-rv32imac-interface)
@@ -122,11 +124,9 @@ endif()
 # -----------------------------------------------------------------------------
 
 # Aliases.
-add_library(
-  micro-os-plus::platform ALIAS platform-qemu-riscv-rv32imac-interface
-)
+add_library(micro-os-plus::platform ALIAS
+            platform-qemu-riscv-rv32imac-interface)
 message(VERBOSE
-        "> micro-os-plus::platform -> platform-qemu-riscv-rv32imac-interface"
-)
+        "> micro-os-plus::platform -> platform-qemu-riscv-rv32imac-interface")
 
 # -----------------------------------------------------------------------------

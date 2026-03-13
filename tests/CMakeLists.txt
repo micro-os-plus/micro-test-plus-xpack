@@ -19,8 +19,7 @@
 cmake_minimum_required(VERSION 3.20)
 
 project(micro-os-plus-micro-test-plus-tests
-        DESCRIPTION "µTest++ Testing Framework tests"
-)
+        DESCRIPTION "µTest++ Testing Framework tests")
 
 # -----------------------------------------------------------------------------
 # Project wide setup #
@@ -64,8 +63,7 @@ endif()
 
 # The build-helper is a devDependency, available only after `xpm install`.
 list(APPEND CMAKE_MODULE_PATH
-     "${CMAKE_CURRENT_SOURCE_DIR}/xpacks/@micro-os-plus/build-helper/cmake"
-)
+     "${CMAKE_CURRENT_SOURCE_DIR}/xpacks/@micro-os-plus/build-helper/cmake")
 include("micro-os-plus-build-helper")
 
 xpack_display_greetings("${CMAKE_CURRENT_SOURCE_DIR}/../package.json")

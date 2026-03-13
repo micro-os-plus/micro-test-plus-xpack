@@ -36,8 +36,7 @@ if(ENABLE_MINIMAL_TEST)
     COMMAND
       qemu-system-arm${extension} --machine mps2-an386 --cpu cortex-m4 --kernel
       minimal-test.elf --nographic -d unimp,guest_errors --semihosting-config
-      enable=on,target=native,arg=minimal-test,arg=one,arg=two
-  )
+      enable=on,target=native,arg=minimal-test,arg=one,arg=two)
 endif()
 
 # -----------------------------------------------------------------------------
@@ -53,8 +52,7 @@ if(ENABLE_SAMPLE_TEST)
     COMMAND
       qemu-system-arm${extension} --machine mps2-an386 --cpu cortex-m4 --kernel
       sample-test.elf --nographic -d unimp,guest_errors --semihosting-config
-      enable=on,target=native,arg=sample-test,arg=one,arg=two
-  )
+      enable=on,target=native,arg=sample-test,arg=one,arg=two)
 endif()
 
 # -----------------------------------------------------------------------------

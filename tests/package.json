@@ -8,7 +8,8 @@
     "npm-install": "npm install",
     "npm-link-helpers": "npm link @xpack/npm-packages-helper",
     "npm-outdated": "npm outdated",
-    "deep-clean": "del-cli build node_modules xpacks package-lock.json"
+    "deep-clean": "del-cli build node_modules xpacks package-lock.json",
+    "npm-ci": "npm ci"
   },
   "author": {
     "name": "Liviu Ionescu",
@@ -16,23 +17,32 @@
     "url": "https://github.com/ilg-ul"
   },
   "license": "MIT",
-  "config": {},
+  "$dependenciesUrls": {
+    "del-cli": "https://www.npmjs.com/package/del-cli",
+    "json": "https://www.npmjs.com/package/json",
+    "liquidjs": "https://www.npmjs.com/package/liquidjs"
+  },
   "dependencies": {},
-  "bundleDependencies": [],
   "devDependencies": {
+    "@xpack/npm-packages-helper": "github:xpack/npm-packages-helper",
     "del-cli": "^7.0.0",
     "json": "^11.0.0",
     "liquidjs": "^10.25.0"
   },
   "xpack": {
-    "minimumXpmRequired": "0.20.7",
+    "minimumXpmRequired": "0.23.2",
+    "$dependenciesUrls": {
+      "micro-os-plus": "https://github.com/micro-os-plus",
+      "build-helper": "https://www.npmjs.com/package/@micro-os-plus/build-helper",
+      "diag-trace": "https://www.npmjs.com/package/@micro-os-plus/diag-trace",
+      "xpack-dev-tools": "https://github.com/xpack-dev-tools",
+      "cmake": "https://www.npmjs.com/package/@xpack-dev-tools/cmake",
+      "meson-build": "https://www.npmjs.com/package/@xpack-dev-tools/meson-build",
+      "ninja-build": "https://www.npmjs.com/package/@xpack-dev-tools/ninja-build"
+    },
     "dependencies": {},
-    "$devDependenciesUrls": [
-      "https://github.com/micro-os-plus",
-      "https://github.com/xpack-dev-tools"
-    ],
     "devDependencies": {
-      "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#v2.16.0",
+      "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#v2.17.0",
       "@micro-os-plus/diag-trace": "^4.2.2",
       "@xpack-dev-tools/cmake": "3.31.9-1.1",
       "@xpack-dev-tools/meson-build": "1.8.5-1.1",
@@ -99,24 +109,24 @@
       ],
       "$native-gcc-url": "https://www.npmjs.com/package/@xpack-dev-tools/gcc",
       "native-gcc-releases": {
-        "15": {
-          "specifier": "15.2.0-1.1",
-          "platforms": "linux-x64,linux-arm64,win32-x64"
-        },
-        "14": {
-          "specifier": "14.3.0-1.1",
-          "platforms": "linux-x64,linux-arm64,win32-x64"
-        },
-        "13": {
-          "specifier": "13.4.0-1.1",
+        "11": {
+          "specifier": "11.5.0-2.1",
           "platforms": "linux-x64,linux-arm64,win32-x64"
         },
         "12": {
           "specifier": "12.5.0-1.1",
           "platforms": "linux-x64,linux-arm64,win32-x64"
         },
-        "11": {
-          "specifier": "11.5.0-2.1",
+        "13": {
+          "specifier": "13.4.0-1.1",
+          "platforms": "linux-x64,linux-arm64,win32-x64"
+        },
+        "14": {
+          "specifier": "14.3.0-1.1",
+          "platforms": "linux-x64,linux-arm64,win32-x64"
+        },
+        "15": {
+          "specifier": "15.2.0-1.1",
           "platforms": "linux-x64,linux-arm64,win32-x64"
         }
       },
@@ -125,45 +135,45 @@
       ],
       "$native-clang-url": "https://www.npmjs.com/package/@xpack-dev-tools/clang",
       "native-clang-releases": {
-        "21": "21.1.8-1.1",
-        "20": "20.1.8-1.1",
-        "19": "19.1.7-1.1",
-        "18": "18.1.8-2.1",
+        "16": "16.0.6-1.1",
         "17": "17.0.6-3.1",
-        "16": "16.0.6-1.1"
+        "18": "18.1.8-2.1",
+        "19": "19.1.7-1.1",
+        "20": "20.1.8-1.1",
+        "21": "21.1.8-1.1"
       },
       "native-clang-versions": [
         "{{ properties.native-clang-releases | keys | reverse | join_lines }}"
       ],
       "$arm-none-eabi-gcc-url": "https://www.npmjs.com/package/@xpack-dev-tools/arm-none-eabi-gcc",
       "arm-none-eabi-gcc-releases": {
-        "15": "15.2.1-1.1.1",
-        "14": "14.2.1-1.1.1",
-        "13": "13.3.1-1.1.1",
+        "11": "11.3.1-1.1.2",
         "12": "12.3.1-1.2.1",
-        "11": "11.3.1-1.1.2"
+        "13": "13.3.1-1.1.1",
+        "14": "14.2.1-1.1.1",
+        "15": "15.2.1-1.1.1"
       },
       "arm-none-eabi-gcc-versions": [
         "{{ properties.arm-none-eabi-gcc-releases | keys | reverse | join_lines }}"
       ],
       "$aarch64-none-elf-gcc-url": "https://www.npmjs.com/package/@xpack-dev-tools/aarch64-none-elf-gcc",
       "aarch64-none-elf-gcc-releases": {
-        "15": "15.2.1-1.1.1",
-        "14": "14.2.1-1.1.1",
-        "13": "13.3.1-1.1.2",
+        "11": "11.3.1-1.2.1",
         "12": "12.3.1-2.1.1",
-        "11": "11.3.1-1.2.1"
+        "13": "13.3.1-1.1.2",
+        "14": "14.2.1-1.1.1",
+        "15": "15.2.1-1.1.1"
       },
       "aarch64-none-elf-gcc-versions": [
         "{{ properties.aarch64-none-elf-gcc-releases | keys | reverse | join_lines }}"
       ],
       "$riscv-none-elf-gcc-url": "https://www.npmjs.com/package/@xpack-dev-tools/riscv-none-elf-gcc",
       "riscv-none-elf-gcc-releases": {
-        "15": "15.2.0-1.1",
-        "14": "14.3.0-1.1",
-        "13": "13.4.0-1.1",
+        "11": "11.5.0-2.1",
         "12": "12.5.0-1.1",
-        "11": "11.5.0-2.1"
+        "13": "13.4.0-1.1",
+        "14": "14.3.0-1.1",
+        "15": "15.2.0-1.1"
       },
       "riscv-none-elf-gcc-versions": [
         "{{ properties.riscv-none-elf-gcc-releases | keys | reverse | join_lines }}"
@@ -257,8 +267,7 @@
         "xpm link @micro-os-plus/build-helper"
       ],
       "link-dependencies": [
-        "xpm link @micro-os-plus/build-helper",
-        "xpm link @micro-os-plus/diag-trace"
+        "xpm link @micro-os-plus/build-helper @micro-os-plus/diag-trace"
       ],
       "test": [
         "xpm run {% if os.platform == 'win32' %}test-native-cmake-gcc{% else %}test-native-cmake-sys{% endif %}"
@@ -270,7 +279,7 @@
       ],
       "link-dependencies-ci": [
         "xpm run link-dependencies",
-        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-ci-non-darwin %}{{ properties.actions-install-for-configs }}{% endif %}",
+        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-ci-non-darwin %}{{ properties.actions-link-dependencies-for-configs }}{% endif %}",
         "{% assign configs = properties.configs-ci %}{{ properties.actions-link-dependencies-for-configs }}"
       ],
       "test-ci": [
@@ -288,8 +297,8 @@
       ],
       "link-dependencies-selected": [
         "xpm run link-dependencies",
-        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-selected-non-darwin %}{{ properties.actions-install-for-configs }}{% endif %}",
-        "{% assign configs = properties.configs-selected %}{{ properties.actions-install-for-configs }}"
+        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-selected-non-darwin %}{{ properties.actions-link-dependencies-for-configs }}{% endif %}",
+        "{% assign configs = properties.configs-selected %}{{ properties.actions-link-dependencies-for-configs }}"
       ],
       "test-selected": [
         "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-selected-non-darwin %}{{ properties.actions-test-for-configs }}{% endif %}",
@@ -306,8 +315,8 @@
       ],
       "link-dependencies-latest": [
         "xpm run link-dependencies",
-        "{% if os.platform != 'darwin' %}{{ properties.compute-latest-non-darwin-configs }}{{ properties.actions-install-for-configs }}{% endif %}",
-        "{{ properties.compute-latest-configs }}{{ properties.actions-install-for-configs }}"
+        "{% if os.platform != 'darwin' %}{{ properties.compute-latest-non-darwin-configs }}{{ properties.actions-link-dependencies-for-configs }}{% endif %}",
+        "{{ properties.compute-latest-configs }}{{ properties.actions-link-dependencies-for-configs }}"
       ],
       "test-latest": [
         "{% if os.platform != 'darwin' %}{{ properties.compute-latest-non-darwin-configs }}{{ properties.actions-test-for-configs }}{% endif %}",
@@ -324,8 +333,8 @@
       ],
       "link-dependencies-all": [
         "xpm run link-dependencies",
-        "{% if os.platform != 'darwin' %}{{ properties.compute-all-non-darwin-configs }}{{ properties.actions-install-for-configs }}{% endif %}",
-        "{{ properties.compute-all-configs }}{{ properties.actions-install-for-configs }}"
+        "{% if os.platform != 'darwin' %}{{ properties.compute-all-non-darwin-configs }}{{ properties.actions-link-dependencies-for-configs }}{% endif %}",
+        "{{ properties.compute-all-configs }}{{ properties.actions-link-dependencies-for-configs }}"
       ],
       "test-all": [
         "{% if os.platform != 'darwin' %}{{ properties.compute-all-non-darwin-configs }}{{ properties.actions-test-for-configs }}{% endif %}",
@@ -599,7 +608,7 @@
           "install": [
             "xpm install --config {{ configuration.name }}"
           ],
-          "link-deps": [
+          "link-dependencies": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-synthetic-posix"
           ]
         }
@@ -616,6 +625,9 @@
             "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting",
             "xpm link --config {{ configuration.name }} @micro-os-plus/startup",
             "xpm link --config {{ configuration.name }} @xpack-3rd-party/arm-cmsis-core"
+          ],
+          "link-dependencies": [
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexm @micro-os-plus/devices-qemu-cortexm @micro-os-plus/semihosting @micro-os-plus/startup @xpack-3rd-party/arm-cmsis-core"
           ]
         }
       },
@@ -630,6 +642,9 @@
             "xpm link --config {{ configuration.name }} @micro-os-plus/devices-qemu-aarch32",
             "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting",
             "xpm link --config {{ configuration.name }} @micro-os-plus/startup"
+          ],
+          "link-dependencies": [
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-aarch32 @micro-os-plus/devices-qemu-aarch32 @micro-os-plus/semihosting @micro-os-plus/startup"
           ]
         }
       },
@@ -644,6 +659,9 @@
             "xpm link --config {{ configuration.name }} @micro-os-plus/devices-qemu-aarch64",
             "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting",
             "xpm link --config {{ configuration.name }} @micro-os-plus/startup"
+          ],
+          "link-dependencies": [
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-aarch64 @micro-os-plus/devices-qemu-aarch64 @micro-os-plus/semihosting @micro-os-plus/startup"
           ]
         }
       },
@@ -658,6 +676,9 @@
             "xpm link --config {{ configuration.name }} @micro-os-plus/devices-qemu-riscv",
             "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting",
             "xpm link --config {{ configuration.name }} @micro-os-plus/startup"
+          ],
+          "link-dependencies": [
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-riscv @micro-os-plus/devices-qemu-riscv @micro-os-plus/semihosting @micro-os-plus/startup"
           ]
         }
       },
@@ -1500,8 +1521,7 @@
       }
     }
   },
-  "testsConfig": {},
   "engines": {
-    "node": ">=18.0"
+    "node": ">=20.0"
   }
 }

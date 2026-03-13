@@ -40,8 +40,7 @@ if(ENABLE_MINIMAL_TEST)
             micro-os-plus::diag-trace
             # Platform specific dependencies.
             micro-os-plus::platform # bring device & architecture too
-            micro-os-plus::semihosting
-  )
+            micro-os-plus::semihosting)
 
   message(VERBOSE "A> minimal-test")
 
@@ -50,8 +49,7 @@ if(ENABLE_MINIMAL_TEST)
     COMMAND
       qemu-system-arm${extension} --machine mps2-an500 --cpu cortex-m7 --kernel
       minimal-test.elf --nographic -d unimp,guest_errors --semihosting-config
-      enable=on,target=native,arg=minimal-test,arg=one,arg=two
-  )
+      enable=on,target=native,arg=minimal-test,arg=one,arg=two)
 endif()
 
 # -----------------------------------------------------------------------------
@@ -71,8 +69,7 @@ if(ENABLE_SAMPLE_TEST)
             micro-os-plus::diag-trace
             # Platform specific dependencies.
             micro-os-plus::platform # bring device & architecture too
-            micro-os-plus::semihosting
-  )
+            micro-os-plus::semihosting)
 
   message(VERBOSE "A> sample-test")
 
@@ -81,8 +78,7 @@ if(ENABLE_SAMPLE_TEST)
     COMMAND
       qemu-system-arm${extension} --machine mps2-an500 --cpu cortex-m7 --kernel
       sample-test.elf --nographic -d unimp,guest_errors --semihosting-config
-      enable=on,target=native,arg=sample-test,arg=one,arg=two
-  )
+      enable=on,target=native,arg=sample-test,arg=one,arg=two)
 endif()
 
 # -----------------------------------------------------------------------------
@@ -102,8 +98,7 @@ if(ENABLE_UNIT_TEST)
             micro-os-plus::diag-trace
             # Platform specific dependencies.
             micro-os-plus::platform # bring device & architecture too
-            micro-os-plus::semihosting
-  )
+            micro-os-plus::semihosting)
 
   message(VERBOSE "A> unit-test")
 

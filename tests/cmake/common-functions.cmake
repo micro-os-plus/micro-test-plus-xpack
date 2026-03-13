@@ -39,8 +39,7 @@ function(add_native_test_executable name)
       # --all-headers -> Invalid/Unsupported object file format
       COMMAND ${CMAKE_OBJDUMP} --source --demangle --line-numbers --wide
               "$<TARGET_FILE:${name}>" > ${name}-list.txt
-      VERBATIM
-    )
+      VERBATIM)
   endif()
 endfunction()
 
@@ -60,16 +59,14 @@ function(add_cross_test_executable name)
   add_custom_command(
     TARGET ${name}
     POST_BUILD
-    COMMAND ${CMAKE_SIZE} --format=berkeley "$<TARGET_FILE:${name}>"
-  )
+    COMMAND ${CMAKE_SIZE} --format=berkeley "$<TARGET_FILE:${name}>")
 
   if(xpack_create_hex)
     add_custom_command(
       TARGET ${name}
       POST_BUILD
       COMMAND ${CMAKE_OBJCOPY} -O ihex "$<TARGET_FILE:${name}>"
-              "$<TARGET_FILE:${name}>.hex"
-    )
+              "$<TARGET_FILE:${name}>.hex")
   endif()
 
   if(xpack_create_listing)
@@ -78,8 +75,7 @@ function(add_cross_test_executable name)
       POST_BUILD
       COMMAND ${CMAKE_OBJDUMP} --source --all-headers --demangle --line-numbers
               --wide "$<TARGET_FILE:${name}>" > ${name}-list.txt
-      VERBATIM
-    )
+      VERBATIM)
   endif()
 endfunction()
 
