@@ -20,7 +20,32 @@ message(VERBOSE "Including tests/cmake/common-functions.cmake...")
 
 # -----------------------------------------------------------------------------
 
-# Define the cross tests executables.
+function(add_native_test_executable name)
+  add_executable(${name})
+
+  set_target_properties(${name} PROPERTIES OUTPUT_NAME "${name}")
+
+  # https://cmake.org/cmake/help/v3.20/manual/cmake-generator-expressions.7.html
+  # The link options were defined in `platform-native-interface`.
+  target_link_options(
+    ${name} PRIVATE
+    $<$<PLATFORM_ID:Linux,Windows>:-Wl,-Map,platform-bin/${name}-map.txt> # -v
+  )
+
+  if(xpack_create_listing)
+    add_custom_command(
+      TARGET ${name}
+      POST_BUILD
+      # --all-headers -> Invalid/Unsupported object file format
+      COMMAND ${CMAKE_OBJDUMP} --source --demangle --line-numbers --wide
+              "$<TARGET_FILE:${name}>" > ${name}-list.txt
+      VERBATIM
+    )
+  endif()
+endfunction()
+
+# -----------------------------------------------------------------------------
+
 function(add_cross_test_executable name)
   add_executable(${name})
 
@@ -53,32 +78,6 @@ function(add_cross_test_executable name)
       POST_BUILD
       COMMAND ${CMAKE_OBJDUMP} --source --all-headers --demangle --line-numbers
               --wide "$<TARGET_FILE:${name}>" > ${name}-list.txt
-      VERBATIM
-    )
-  endif()
-endfunction()
-
-# -----------------------------------------------------------------------------
-
-function(add_native_test_executable name)
-  add_executable(${name})
-
-  set_target_properties(${name} PROPERTIES OUTPUT_NAME "${name}")
-
-  # https://cmake.org/cmake/help/v3.20/manual/cmake-generator-expressions.7.html
-  # The link options were defined in `platform-native-interface`.
-  target_link_options(
-    ${name} PRIVATE
-    $<$<PLATFORM_ID:Linux,Windows>:-Wl,-Map,platform-bin/${name}-map.txt> # -v
-  )
-
-  if(xpack_create_listing)
-    add_custom_command(
-      TARGET ${name}
-      POST_BUILD
-      # --all-headers -> Invalid/Unsupported object file format
-      COMMAND ${CMAKE_OBJDUMP} --source --demangle --line-numbers --wide
-              "$<TARGET_FILE:${name}>" > ${name}-list.txt
       VERBATIM
     )
   endif()

@@ -72,8 +72,9 @@ xpack_display_greetings("${CMAKE_CURRENT_SOURCE_DIR}/../package.json")
 
 # -----------------------------------------------------------------------------
 
-# Project specific definitions.
+# Project specific definitions and functions.
 include("cmake/project-definitions.cmake")
+include("cmake/project-functions.cmake")
 
 # -----------------------------------------------------------------------------
 

@@ -27,29 +27,13 @@ include("cmake/platform-library.cmake")
 
 if(ENABLE_MINIMAL_TEST)
   add_native_test_executable(minimal-test)
-
-  target_link_libraries(
-    minimal-test
-    PRIVATE # The compile & link options common to all platforms.
-            micro-os-plus::common-options
-            # Library with the current test.
-            test::minimal
-            # Tested library.
-            micro-os-plus::micro-test-plus
-            # Portable dependencies.
-            micro-os-plus::diag-trace
-            # Platform specific dependencies and common compile/link options.
-            micro-os-plus::platform
-  )
+  target_link_native_test_libraries(minimal-test test::minimal)
 
   message(VERBOSE "A> minimal-test")
 
   add_test(NAME "minimal-test" COMMAND minimal-test one two)
-
   add_test(NAME "minimal-test --verbose" COMMAND minimal-test one two --verbose)
-
   add_test(NAME "minimal-test --quiet" COMMAND minimal-test one two --quiet)
-
   add_test(NAME "minimal-test --silent" COMMAND minimal-test one two --silent)
 endif()
 
@@ -57,29 +41,13 @@ endif()
 
 if(ENABLE_SAMPLE_TEST)
   add_native_test_executable(sample-test)
-
-  target_link_libraries(
-    sample-test
-    PRIVATE # The compile & link options common to all platforms.
-            micro-os-plus::common-options
-            # Library with the current test.
-            test::sample
-            # Tested library.
-            micro-os-plus::micro-test-plus
-            # Portable dependencies.
-            micro-os-plus::diag-trace
-            # Platform specific dependencies and common compile/link options.
-            micro-os-plus::platform
-  )
+  target_link_native_test_libraries(sample-test test::sample)
 
   message(VERBOSE "A> sample-test")
 
   add_test(NAME "sample-test" COMMAND sample-test one two)
-
   add_test(NAME "sample-test --verbose" COMMAND sample-test one two --verbose)
-
   add_test(NAME "sample-test --quiet" COMMAND sample-test one two --quiet)
-
   add_test(NAME "sample-test --silent" COMMAND sample-test one two --silent)
 endif()
 
@@ -87,29 +55,13 @@ endif()
 
 if(ENABLE_UNIT_TEST)
   add_native_test_executable(unit-test)
-
-  target_link_libraries(
-    unit-test
-    PRIVATE # The compile & link options common to all platforms.
-            micro-os-plus::common-options
-            # Library with the current test.
-            test::unit
-            # Tested library.
-            micro-os-plus::micro-test-plus
-            # Portable dependencies.
-            micro-os-plus::diag-trace
-            # Platform specific dependencies and common compile/link options.
-            micro-os-plus::platform
-  )
+  target_link_native_test_libraries(unit-test test::unit)
 
   message(VERBOSE "A> unit-test")
 
   add_test(NAME "unit-test" COMMAND unit-test)
-
   add_test(NAME "unit-test --verbose" COMMAND unit-test --verbose)
-
   add_test(NAME "unit-test --quiet" COMMAND unit-test --quiet)
-
   add_test(NAME "unit-test --silent" COMMAND unit-test --silent)
 endif()
 

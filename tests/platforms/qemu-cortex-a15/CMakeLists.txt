@@ -27,21 +27,7 @@ include("cmake/platform-library.cmake")
 
 if(ENABLE_MINIMAL_TEST)
   add_cross_test_executable(minimal-test)
-
-  target_link_libraries(
-    minimal-test
-    PRIVATE # The compile & link options common to all platforms.
-            micro-os-plus::common-options
-            # Library with the current test.
-            test::minimal
-            # Tested library.
-            micro-os-plus::micro-test-plus
-            # Portable dependencies.
-            micro-os-plus::diag-trace
-            # Platform specific dependencies.
-            micro-os-plus::platform # bring device & architecture too
-            micro-os-plus::semihosting
-  )
+  target_link_cross_test_libraries(minimal-test test::minimal)
 
   message(VERBOSE "A> minimal-test")
 
@@ -59,21 +45,7 @@ endif()
 
 if(ENABLE_SAMPLE_TEST)
   add_cross_test_executable(sample-test)
-
-  target_link_libraries(
-    sample-test
-    PRIVATE # The compile & link options common to all platforms.
-            micro-os-plus::common-options
-            # Library with the current test.
-            test::sample
-            # Tested library.
-            micro-os-plus::micro-test-plus
-            # Portable dependencies.
-            micro-os-plus::diag-trace
-            # Platform specific dependencies.
-            micro-os-plus::platform # bring device & architecture too
-            micro-os-plus::semihosting
-  )
+  target_link_cross_test_libraries(sample-test test::sample)
 
   message(VERBOSE "A> sample-test")
 
@@ -91,21 +63,7 @@ endif()
 
 if(ENABLE_UNIT_TEST)
   add_cross_test_executable(unit-test)
-
-  target_link_libraries(
-    unit-test
-    PRIVATE # The compile & link options common to all platforms.
-            micro-os-plus::common-options
-            # Library with the current test.
-            test::unit
-            # Tested library.
-            micro-os-plus::micro-test-plus
-            # Portable dependencies.
-            micro-os-plus::diag-trace
-            # Platform specific dependencies.
-            micro-os-plus::platform # bring device & architecture too
-            micro-os-plus::semihosting
-  )
+  target_link_cross_test_libraries(unit-test test::unit)
 
   message(VERBOSE "A> unit-test")
 
