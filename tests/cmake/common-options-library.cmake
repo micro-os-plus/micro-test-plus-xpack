@@ -27,8 +27,8 @@ add_library(micro-os-plus-common-options-interface INTERFACE EXCLUDE_FROM_ALL)
 # https://cmake.org/cmake/help/v3.20/command/add_compile_definitions.html
 target_compile_definitions(
   micro-os-plus-common-options-interface
-  INTERFACE # NDEBUG is provided by the toolchain definitions on release.
-            # TODO: remove DEBUG
+  INTERFACE # NDEBUG is provided by the toolchain definitions on release. TODO:
+            # remove DEBUG
             $<$<CONFIG:Debug>:DEBUG>
             $<$<CONFIG:Debug>:MICRO_OS_PLUS_DEBUG>
             $<$<CONFIG:Debug>:MICRO_OS_PLUS_TRACE>
