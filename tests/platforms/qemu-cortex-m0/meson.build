@@ -19,13 +19,6 @@ message('Processing tests/platforms/qemu-cortex-m0...')
 
 # -----------------------------------------------------------------------------
 
-# Enable them only when needed.
-xpack_report_size = true
-xpack_create_listing = false
-xpack_create_hex = false
-
-# -----------------------------------------------------------------------------
-
 # Get the command names from the toolchain file.
 size = find_program('size')
 objdump = find_program('objdump')
@@ -42,7 +35,7 @@ tested_library_dependency_compile_cpp_args = micro_os_plus_micro_test_plus_depen
 tests = []
 
 # Each test has its own library. Add only those enabled.
-if enable_sample_test
+if xpack_enable_sample_test
 
   tests += {
     'name': 'sample-test',
@@ -53,7 +46,7 @@ if enable_sample_test
 
 endif
 
-if enable_unit_test
+if xpack_enable_unit_test
 
   tests += {
     'name': 'unit-test',
@@ -153,7 +146,7 @@ foreach test : tests
   message('A> ' + test_name)
 
   # https://mesonbuild.com/Reference-manual_functions.html#custom_target
-  if xpack_report_size
+  if xpack_enable_report_size
     custom_target(
       test_name + '-size',
 
@@ -169,7 +162,7 @@ foreach test : tests
     )
   endif
 
-  if xpack_create_listing
+  if xpack_enable_create_listing
     # --source --all-headers --demangle --line-numbers --wide "xxx.elf"
     custom_target(
       test_name + '-list',
@@ -186,12 +179,12 @@ foreach test : tests
         '@INPUT@'
       ],
       build_always_stale: true,
-      build_by_default: xpack_create_listing,
+      build_by_default: xpack_enable_create_listing,
       capture: true,
     )
   endif
 
-  if xpack_create_hex
+  if xpack_enable_create_hex
     # -O ihex "xxx.elf"
     custom_target(
       test_name + '-hex',
@@ -206,7 +199,7 @@ foreach test : tests
         '@OUTPUT@',
       ],
       build_always_stale: true,
-      build_by_default: xpack_create_hex,
+      build_by_default: xpack_enable_create_hex,
     )
   endif
 
@@ -229,7 +222,7 @@ xpack_environment.set('MALLOC_PERTURB_', '0')
 
 # Define the tests executables.
 
-if enable_sample_test
+if xpack_enable_sample_test
 
   # https://mesonbuild.com/Reference-manual_functions.html#test
   test(
@@ -250,7 +243,7 @@ endif
 
 # -----------------------------------------------------------------------------
 
-if enable_unit_test
+if xpack_enable_unit_test
 
   # https://mesonbuild.com/Reference-manual_functions.html#test
   test(
