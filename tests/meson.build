@@ -50,6 +50,8 @@ cpp_compiler = meson.get_compiler('cpp')
 
 # https://mesonbuild.com/Reference-manual_builtin_meson.html#mesoncurrent_source_dir
 xpack_tests_folder_path = meson.current_source_dir()
+
+xpack_project_name = 'micro-test-plus'
 xpack_project_folder_path = fs.parent(xpack_tests_folder_path)
 # https://mesonbuild.com/Reference-manual_builtin_meson.html#mesonproject_build_root
 xpack_build_folder_path = meson.project_build_root()
@@ -102,6 +104,14 @@ endforeach
 # Include the project library, defined one level above.
 message('Adding top library...')
 subdir('top')
+
+# -----------------------------------------------------------------------------
+
+xpack_tested_library_dependency = micro_os_plus_micro_test_plus_dependency
+xpack_tested_library_dependency_compile_c_args = micro_os_plus_micro_test_plus_dependency_compile_c_args
+xpack_tested_library_dependency_compile_cpp_args = micro_os_plus_micro_test_plus_dependency_compile_cpp_args
+
+subdir('meson/define-executables')
 
 # -----------------------------------------------------------------------------
 # Platform specifics #
