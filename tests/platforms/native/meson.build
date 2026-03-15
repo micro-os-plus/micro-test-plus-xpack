@@ -20,17 +20,14 @@ message('Processing tests/platforms/native...')
 # -----------------------------------------------------------------------------
 
 # https://mesonbuild.com/Unit-tests.html#malloc_perturb_
-xpack_environment = environment({'MALLOC_PERTURB_': '0'})
+xpack_environment = environment()
+xpack_environment.set('MALLOC_PERTURB_', '0')
 
 # -----------------------------------------------------------------------------
 
 tested_library_dependency = micro_os_plus_micro_test_plus_dependency
 tested_library_dependency_compile_c_args = micro_os_plus_micro_test_plus_dependency_compile_c_args
 tested_library_dependency_compile_cpp_args = micro_os_plus_micro_test_plus_dependency_compile_cpp_args
-
-platform_dependency = platform_native_dependency
-platform_dependency_compile_c_args = platform_native_dependency_compile_c_args
-platform_dependency_compile_cpp_args = platform_native_dependency_compile_cpp_args
 
 # -----------------------------------------------------------------------------
 
@@ -186,11 +183,17 @@ if enable_sample_test
   _local_compile_c_args += tested_library_dependency_compile_c_args
   _local_compile_cpp_args += tested_library_dependency_compile_cpp_args
 
+  # _local_compile_c_args += micro_os_plus_micro_test_plus_dependency_compile_c_args
+  # _local_compile_cpp_args += micro_os_plus_micro_test_plus_dependency_compile_cpp_args
+
   # _local_compile_c_args += micro_os_plus_diag_trace_dependency_compile_c_args
   # _local_compile_cpp_args += micro_os_plus_diag_trace_dependency_compile_cpp_args
 
   _local_compile_c_args += platform_dependency_compile_c_args
   _local_compile_cpp_args += platform_dependency_compile_cpp_args
+
+  # _local_compile_c_args += micro_os_plus_semihosting_dependency_compile_c_args
+  # _local_compile_cpp_args += micro_os_plus_semihosting_dependency_compile_cpp_args
 
   _local_dependencies += [
 
@@ -207,6 +210,8 @@ if enable_sample_test
 
     # Platform specific dependencies.
     platform_dependency,
+
+    # micro_os_plus_semihosting_dependency,
   ]
 
   # https://mesonbuild.com/Reference-manual.html#executable
@@ -327,6 +332,7 @@ if enable_unit_test
     tested_library_dependency,
 
     # Portable dependencies.
+    # micro_os_plus_micro_test_plus_dependency,
     micro_os_plus_diag_trace_dependency,
 
     # Platform specific dependencies.
