@@ -22,7 +22,7 @@
     "react": "^19.2.3",
     "react-dom": "^19.2.3"
   },
-  "$devDependenciesUrls": {
+  "$dependenciesUrls": {
     "del-cli": "https://www.npmjs.com/package/del-cli",
     "json": "https://www.npmjs.com/package/json",
     "liquidjs": "https://www.npmjs.com/package/liquidjs",

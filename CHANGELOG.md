@@ -6,8 +6,95 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2026-03-17
+
+* v3.2.3 prepared
+* 7943290 package.json update
+* d40573b settings.json update
+* 6eaed82 re-generate website
+* 6c53c08 re-generate tests commons
+
+## 2026-03-15
+
+* f785a0d re-generate tests commons with define-executables
+* 28700b7 re-generate tests commons; xpacks_enable_*
+* 87c04ad settings.json update cmake defaultFormatter
+* fa4719e tests: update to simplified platform aliases
+
+## 2026-03-13
+
+* 1df6029 package-lovk.json update
+* c94b7cf re-generate tests commons
+* b3ec2a9 tests meson cosmetics
+* 4045da4 tests cmake reformat
+* 42e6f65 tests add DO NOT EDIT
+* 0c2c517 ad and use project-functions.cmake
+
+## 2026-03-12
+
+* 9f3eba2 tests infrastructure update
+* 9270993 dependencies-folders use project folders
+* a3d23f4 tests: project-definitions
+* b080e20 *-test: fix message > dependency
+* acf22f4 cmake: move CMAKE_EXPORT_COMPILE_COMMANDS up
+
+## 2026-03-11
+
+* 861b4ca move xcdl-build.json
+* 8e0540a re-generate top commons
+
+## 2026-03-10
+
+* f16de5e README update
+* f68a8d9 package*.json updates
+* 3a0bd1a workflows update to 0.23.2
+
+## 2026-03-09
+
+* 85aca94 tests/package*.json bump deps
+* 9a7ccbf tests/package.json: explicit dependencies specifier & platforms
+* fd40e7b try xpm install -dd
+* e29a752 try xpm install -dd
+* 3641e20 re-generate top commons
+* a42b3d8 package*.json update
+* fc922bf test-ci.yml: bump deps
+* 250ddb4 test-ci.yml: bump deps
+
+## 2026-03-08
+
+* 9356141 package.json cosmetics
+* 4ffc072 website copyright 2026 update
+* 6060eb9 tests/package.json: bump deps
+* 42a0eaf silence warnings
+
+## 2026-01-19
+
+* 27d753f package.json update ctest --test-dir
+
+## 2026-01-18
+
+* 7f5dd8c package.json: group deps releases
+* 8ac2c5b package.json compute latest release
+
+## 2026-01-17
+
+* 2ac5ca4 package.json update with templates
+
+## 2026-01-16
+
+* efd0b74 package.json: update inherits
+* a5ad31e package.json: update toochain names
+* a6e7fb6 package.json template actions
+
+## 2026-01-15
+
+* 92a7d78 settings.json: configure meson false
+
 ## 2026-01-06
 
+* 489d204 workflows update
+* c149bda package.json 3.2.3-pre
+* 5f2f0cc CHANGELOG update
 * dafef2a copyright reformat following cmake
 * c1bb7e4 Copyright 2026
 * 9543dc5 package*.json bump deps
