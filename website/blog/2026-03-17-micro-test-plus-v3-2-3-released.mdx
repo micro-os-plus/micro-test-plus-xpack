@@ -1,0 +1,79 @@
+---
+
+title: µTest++ Testing Framework v3.2.3 released
+seo_title: Version 3.2.3 released
+description: Version v3.2.3 is a maintenance release
+keywords:
+  - micro-os-plus
+  - xpack
+  - micro-test-plus
+  - release
+
+date: 2026-03-17 18:59:01 +0200
+
+authors: ilg-ul
+
+# To be listed in the Releases page.
+tags:
+  - releases
+
+# ----- Custom properties -----------------------------------------------------
+
+version: "3.2.3"
+
+release_tag_url: "https://github.com/micro-os-plus/micro-test-plus-xpack/tree/v3.2.3"
+
+---
+
+import {PageMetadata} from '@docusaurus/theme-common';
+import Image from '@theme/IdealImage';
+import CodeBlock from '@theme/CodeBlock';
+import Link from '@docusaurus/Link';
+
+import CommonPrerequisites from './_common/_prerequisites.mdx';
+import CommonDownloadAnalytics from './_common/_download-analytics.mdx';
+
+Version **3.2.3** is a maintenance release, after adding full documentation and updating to most recent compilers.
+
+<!-- truncate -->
+
+<PageMetadata title={frontMatter.seo_title} />
+
+The [µTest++ Testing Framework](https://micro-os-plus.github.io/micro-test-plus-xpack/)
+project is a C++ source code library that provides a lightweight testing framework specifically designed for embedded systems.
+
+<CommonPrerequisites nodeVersion="18.0.0"/>
+
+## Installation
+
+The most straightforward method to incorporate the `@micro-os-plus/micro-test-plus`
+package into a project is to declare it as a dependency using **xpm**.
+
+<CodeBlock language="console"> {
+`xpm install @micro-os-plus/micro-test-plus@${frontMatter.version} -verbose
+`} </CodeBlock>
+
+Comprehensive instructions are available in the [Install Guide](/docs/install/).
+
+## Source code
+
+- <Link to={frontMatter.release_tag_url}>GitHub tag v{frontMatter.version} tree</Link>
+
+## Bug fixes
+
+- None.
+
+## Enhancements
+
+- None.
+
+## Known issues
+
+- None.
+
+## Continuous Integration tests
+
+Prior to publication, a suite of tests was executed.
+The results can be reviewed at:
+
+- [GitHub Actions](https://github.com/micro-os-plus/micro-test-plus-xpack/actions)
