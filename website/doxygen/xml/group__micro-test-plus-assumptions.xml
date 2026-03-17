@@ -37,18 +37,12 @@
 <parametername>Expr_T</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The type of the custom expression. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>(SFINAE)</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Enabled only if <computeroutput>Expr_T</computeroutput> is derived from <computeroutput>detail::op</computeroutput> or is convertible to <computeroutput>bool</computeroutput>. </para>
+<para>The type of the custom expression.</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
+<simplesect kind="par"><title>SFINAE</title><para>Enabled only if <computeroutput>Expr_T</computeroutput> is derived from <computeroutput>detail::op</computeroutput> or is convertible to <computeroutput>bool</computeroutput>.</para>
+</simplesect>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">expr</parametername>
@@ -71,15 +65,14 @@
 The <computeroutput>assume</computeroutput> function template evaluates a logical condition or custom expression and reports the result within the µTest++ framework. It is designed to provide detailed diagnostics for test failures, including the actual and expected values, when using the provided comparators (<computeroutput><ref refid="group__micro-test-plus-function-comparators_1gae9dfca849300a917cb1c231d275baaa3" kindref="member">eq()</ref></computeroutput>, <computeroutput><ref refid="group__micro-test-plus-function-comparators_1ga59e4cf59954e81bc868e62b1c5c8db1f" kindref="member">ne()</ref></computeroutput>, <computeroutput><ref refid="group__micro-test-plus-function-comparators_1gac162522dcad1a6ff7c869d52d376b3ed" kindref="member">lt()</ref></computeroutput>, <computeroutput><ref refid="group__micro-test-plus-function-comparators_1ga2b5263a5b3965855aa04971bba735a56" kindref="member">le()</ref></computeroutput>, <computeroutput><ref refid="group__micro-test-plus-function-comparators_1gae2fb681444d8256f6bf827eea6b7c29e" kindref="member">gt()</ref></computeroutput>, <computeroutput><ref refid="group__micro-test-plus-function-comparators_1ga34e03399670ec0b365b94b7bea788dd8" kindref="member">ge()</ref></computeroutput>) or custom operators.</para>
 <para>The function template can be used with any expression that evaluates to a boolean or with custom comparators/operators derived from the local <computeroutput>detail::op</computeroutput> type. For complex checks performed outside the <computeroutput><ref refid="group__micro-test-plus-expectations_1ga75c3f43663a5440d78231fe572fe4a22" kindref="member">expect()</ref></computeroutput> logical expression (such as within <computeroutput>if</computeroutput> or <computeroutput>try</computeroutput>/<computeroutput>catch</computeroutput> statements), the result can be reported by calling <computeroutput>expect(true)</computeroutput> or <computeroutput>expect(false)</computeroutput>.</para>
 <para>The function returns an output stream, allowing optional messages to be appended to the test report.</para>
-<para><simplesect kind="par"><title>Example</title><para></para>
-</simplesect>
-<programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
+<para><bold>Example</bold></para>
+<para><programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
 <codeline><highlight class="normal">mt::assume(compute_answer()<sp/>==<sp/>42)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
 </programlisting> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines.h" line="188" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines.h" bodystart="188" bodyend="191" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" declline="207" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines.h" line="188" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/micro-test-plus-inlines.h" bodystart="188" bodyend="191" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" declline="214" declcolumn="3"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

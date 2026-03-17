@@ -42,7 +42,7 @@
     <derivedcompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;</derivedcompoundref>
     <derivedcompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1genuine__integral__value" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt; T &gt;</derivedcompoundref>
     <derivedcompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::type_traits::integral_constant&lt; N &gt;</derivedcompoundref>
-    <derivedcompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::type_traits::value&lt; T, class &gt;</derivedcompoundref>
+    <derivedcompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::type_traits::value&lt; T, Opt &gt;</derivedcompoundref>
     <derivedcompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;</derivedcompoundref>
     <includes refid="micro-test-plus_8h" local="no">micro-os-plus/micro-test-plus.h</includes>
     <briefdescription>
@@ -162,7 +162,7 @@
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op"/>
       </node>
       <node id="41">
-        <label>micro_os_plus::micro_test_plus::type_traits::value&lt; T, class &gt;</label>
+        <label>micro_os_plus::micro_test_plus::type_traits::value&lt; T, Opt &gt;</label>
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
@@ -314,7 +314,7 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="680" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="681" bodyend="682"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="678" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="679" bodyend="680"/>
     <listofallmembers>
     </listofallmembers>
   </compounddef>

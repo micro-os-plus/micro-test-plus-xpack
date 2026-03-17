@@ -6,25 +6,18 @@
     <templateparamlist>
       <param>
         <type>bool</type>
+        <declname>Cond</declname>
+        <defname>Cond</defname>
       </param>
     </templateparamlist>
     <briefdescription>
 <para>Struct template for SFINAE requirements. </para>
     </briefdescription>
     <detaileddescription>
-<para><parameterlist kind="templateparam"><parameteritem>
-<parameternamelist>
-<parametername>Cond</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The boolean condition to be checked at compile time.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1requires__" kindref="compound">requires_</ref></computeroutput> struct template is a utility for SFINAE (Substitution Failure Is Not An Error) in template metaprogramming. It is typically used to enable or disable template specialisations and function templates based on compile-time boolean conditions.</para>
+<para>The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1requires__" kindref="compound">requires_</ref></computeroutput> struct template is a utility for SFINAE (Substitution Failure Is Not An Error) in template metaprogramming. It is typically used to enable or disable template specialisations and function templates based on compile-time boolean conditions.</para>
 <para>When the boolean template parameter is <computeroutput>true</computeroutput>, the specialisation provides a nested <computeroutput>type</computeroutput> alias, which can be used in conjunction with <computeroutput>typename</computeroutput> and <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a1cbbf299a006b4692df250ef2a6fc7c2" kindref="member">requires_t</ref></computeroutput> to enforce requirements in template declarations. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="627" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="628" bodyend="629"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="625" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="626" bodyend="627"/>
     <listofallmembers>
     </listofallmembers>
   </compounddef>

@@ -297,13 +297,13 @@
             },
             {
               "type": "doc",
-              "label": "identity<T, class...>",
+              "label": "identity<T, Extra>",
               "className": "doxyEllipsis",
               "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-identity"
             },
             {
               "type": "doc",
-              "label": "list<class...>",
+              "label": "list<Types>",
               "className": "doxyEllipsis",
               "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-list"
             },
@@ -409,7 +409,7 @@
                 },
                 {
                   "type": "category",
-                  "label": "value<T, class>",
+                  "label": "value<T, Opt>",
                   "link": {
                     "type": "doc",
                     "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-value"
@@ -441,7 +441,7 @@
             },
             {
               "type": "doc",
-              "label": "requires_<bool>",
+              "label": "requires_<Cond>",
               "className": "doxyEllipsis",
               "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-requires-"
             },

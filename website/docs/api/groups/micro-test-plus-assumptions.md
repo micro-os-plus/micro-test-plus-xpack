@@ -92,13 +92,15 @@ keywords:
 <td class="doxyParamItemName">Expr_T</td>
 <td class="doxyParamItemDescription"><p>The type of the custom expression.</p></td>
 </tr>
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">(SFINAE)</td>
-<td class="doxyParamItemDescription"><p>Enabled only if <span class="doxyComputerOutput">Expr_T</span> is derived from <span class="doxyComputerOutput">detail::op</span> or is convertible to <span class="doxyComputerOutput">bool</span>.</p></td>
-</tr>
 </table>
 </dd>
 </dl>
+
+<dl class="doxySectionUser">
+<dt>SFINAE</dt>
+<dd><p>Enabled only if <span class="doxyComputerOutput">Expr_T</span> is derived from <span class="doxyComputerOutput">detail::op</span> or is convertible to <span class="doxyComputerOutput">bool</span>.</p></dd>
+</dl>
+
 
 <dl class="doxyParamsList">
 <dt class="doxyParamsTableTitle">Parameters</dt>
@@ -131,10 +133,7 @@ keywords:
 <p>The function returns an output stream, allowing optional messages to be appended to the test report.</p>
 
 
-<dl class="doxySectionUser">
-<dt>Example</dt>
-<dd></dd>
-</dl>
+<p><b>Example</b></p>
 
 
 <div class="doxyProgramListing">

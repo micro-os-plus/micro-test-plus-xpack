@@ -39,7 +39,7 @@ keywords:
 
 <ul>
 <li><b>color()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#aeab9d025989e57ed62ad0e701efc59ee">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>current()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#ac7bb1580b65709b94ad81ea3a5a900a0">micro_os_plus::micro_test_plus::reflection::source_location</a></li>
+<li><b>current()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#af2ee3ac5db96f13680291736d58fe327">micro_os_plus::micro_test_plus::reflection::source_location</a></li>
 </ul>
 <p>2 entries</p>
 
@@ -84,7 +84,7 @@ keywords:
 <li><b>get()</b>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#a3ee48433567db9886d9f99ab5e6d2864">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt;T, N, D, Size, P&gt;</a></li>
 <li><b>get()</b>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#ab2f53c63e86a887bccbadf0b7dbb8b4b">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt;T&gt;</a></li>
 <li><b>get()</b>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant/#acb78deb0adea412045e1305280a443f1">micro_os_plus::micro_test_plus::type_traits::integral_constant&lt;N&gt;</a></li>
-<li><b>get()</b>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a54a10058177255d3c430b27e3cb87eab">micro_os_plus::micro_test_plus::type_traits::value&lt;T, class&gt;</a></li>
+<li><b>get()</b>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a95a80f6f273c5ab49571ceddd3b17a74">micro_os_plus::micro_test_plus::type_traits::value&lt;T, Opt&gt;</a></li>
 <li><b>get()</b>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-dae7771377f0087abbec46abf87b329e/#a8d14413aec3672c392962a7b3419cb25">micro_os_plus::micro_test_plus::type_traits::value&lt;T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt;&gt;</a></li>
 <li><b>gt_()</b>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/gt-/#a0d3eb79b0fd8cd986a18ac77abb98192">micro_os_plus::micro_test_plus::detail::gt_&lt;Lhs_T, Rhs_T&gt;</a></li>
 </ul>
@@ -143,7 +143,7 @@ keywords:
 <li><b>operator bool()</b>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-/#a84158f0b3d7719fe0929b49002c113b5">micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, Exception_T&gt;</a></li>
 <li><b>operator bool()</b>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws--6ce6a9ac7588b533a253fd8d8638e6be/#a12c805c55b615482e942aef67e41cc05">micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, void&gt;</a></li>
 <li><b>operator T()</b>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#a1474de7e4b8a14f1c97f2c1ba5d9212a">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt;T&gt;</a></li>
-<li><b>operator T()</b>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a4d706032d92daabe8f8f5c2b88ced4df">micro_os_plus::micro_test_plus::type_traits::value&lt;T, class&gt;</a></li>
+<li><b>operator T()</b>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#ae25aa47f118b4b4a3444f197d995390c">micro_os_plus::micro_test_plus::type_traits::value&lt;T, Opt&gt;</a></li>
 <li><b>operator T()</b>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-dae7771377f0087abbec46abf87b329e/#a5609792d50cef8d63061faee1af7bcf9">micro_os_plus::micro_test_plus::type_traits::value&lt;T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt;&gt;</a></li>
 <li><b>operator value_type()</b>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#a0a877099bf7ee9fcde1446cac65511e6">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt;T, N, D, Size, P&gt;</a></li>
 <li><b>operator value_type()</b>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant/#a7fc0c3908f315982ce70d0439ea78a06">micro_os_plus::micro_test_plus::type_traits::integral_constant&lt;N&gt;</a></li>
@@ -263,7 +263,7 @@ keywords:
 <ul>
 <li><b>value()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#a0e4cca7c6f1d63789683f3b6a7f647ea">micro_os_plus::micro_test_plus::detail::deferred_reporter_base</a></li>
 <li><b>value()</b>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/not-/#a0a17757c49426642ef49eb7e6b1f8289">micro_os_plus::micro_test_plus::detail::not_&lt;T&gt;</a></li>
-<li><b>value()</b>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#afebca698b3129c2eb1a86c4202a54d3c">micro_os_plus::micro_test_plus::type_traits::value&lt;T, class&gt;</a></li>
+<li><b>value()</b>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#aa5bc4ce1701aca5de01108521887db90">micro_os_plus::micro_test_plus::type_traits::value&lt;T, Opt&gt;</a></li>
 <li><b>value()</b>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-dae7771377f0087abbec46abf87b329e/#ab84ad7a2b8027a68e0760109636044df">micro_os_plus::micro_test_plus::type_traits::value&lt;T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt;&gt;</a></li>
 <li><b>value()</b>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-dae7771377f0087abbec46abf87b329e/#a43ccaa9fd86190e5605605ceced840f7">micro_os_plus::micro_test_plus::type_traits::value&lt;T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt;&gt;</a></li>
 </ul>

@@ -220,7 +220,7 @@ keywords:
 
 
 
-### Logical operators {#autotoc_md1}
+### Logical operators {#autotoc_md2}
 
 
 <p>Logical operators may be used in the same way as standard operators, with enhanced reporting available when used with typed operands.</p>

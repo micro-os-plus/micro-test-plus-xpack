@@ -218,7 +218,7 @@ Options for controlling test output verbosity at run-time
 
 
 :::note
-For comparison, the original Doxygen html pages, styled with the <a href="https://jothepro.github.io/doxygen-awesome-css/">doxygen-awesome-css</a> plugin, continue to be available via the <a href="pathname:///doxygen/topics.html"><code>.../doxygen/*.html</b></code> URLs.
+For comparison, the original Doxygen html pages continue to be available via the <a href="pathname:///doxygen/topics.html">.../doxygen/*.html</b></a> URLs.
 :::
 
 <hr/>

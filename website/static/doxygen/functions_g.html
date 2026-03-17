@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.9.7-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -10,6 +9,7 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -18,30 +18,6 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
-<link href="common-custom.css" rel="stylesheet" type="text/css"/>
-<!-- Awesome Theme Begin -->
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
-<script type="text/javascript">
-DoxygenAwesomeDarkModeToggle.init()
-DoxygenAwesomeFragmentCopyButton.init()
-DoxygenAwesomeParagraphLink.init()
-DoxygenAwesomeInteractiveToc.init()
-DoxygenAwesomeTabs.init()
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-E9T84WD3CK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-E9T84WD3CK');
-</script>
-<!-- Awesome Theme End -->
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -51,7 +27,7 @@ DoxygenAwesomeTabs.init()
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;3.2.2</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;3.2.3</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -119,7 +95,7 @@ $(function(){initNavTree('functions_g.html','',''); });
 <h3 class="doxsection"><a id="index_g" name="index_g"></a>- g -</h3><ul>
 <li>ge_()&#160;:&#160;<a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge__.html#a75e4626f1ff8024c4d90ab3e545be62f">micro_os_plus::micro_test_plus::detail::ge_&lt; Lhs_T, Rhs_T &gt;</a></li>
 <li>genuine_integral_value()&#160;:&#160;<a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1genuine__integral__value.html#afa29aa29cbc284a0147aa07db0d4891a">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt; T &gt;</a></li>
-<li>get()&#160;:&#160;<a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#a3ee48433567db9886d9f99ab5e6d2864">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;</a>, <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1genuine__integral__value.html#ab2f53c63e86a887bccbadf0b7dbb8b4b">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt; T &gt;</a>, <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html#acb78deb0adea412045e1305280a443f1">micro_os_plus::micro_test_plus::type_traits::integral_constant&lt; N &gt;</a>, <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html#a54a10058177255d3c430b27e3cb87eab">micro_os_plus::micro_test_plus::type_traits::value&lt; T, class &gt;</a>, <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d.html#a8d14413aec3672c392962a7b3419cb25">micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;</a></li>
+<li>get()&#160;:&#160;<a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#a3ee48433567db9886d9f99ab5e6d2864">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;</a>, <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1genuine__integral__value.html#ab2f53c63e86a887bccbadf0b7dbb8b4b">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt; T &gt;</a>, <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html#acb78deb0adea412045e1305280a443f1">micro_os_plus::micro_test_plus::type_traits::integral_constant&lt; N &gt;</a>, <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html#a95a80f6f273c5ab49571ceddd3b17a74">micro_os_plus::micro_test_plus::type_traits::value&lt; T, Opt &gt;</a>, <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d.html#a8d14413aec3672c392962a7b3419cb25">micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;</a></li>
 <li>gt_()&#160;:&#160;<a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1gt__.html#a0d3eb79b0fd8cd986a18ac77abb98192">micro_os_plus::micro_test_plus::detail::gt_&lt; Lhs_T, Rhs_T &gt;</a></li>
 </ul>
 </div><!-- contents -->

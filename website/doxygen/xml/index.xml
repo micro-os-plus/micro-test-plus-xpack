@@ -2,10 +2,10 @@
 <doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.14.0" xml:lang="en-US">
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1__t" kind="struct"><name>micro_os_plus::micro_test_plus::_t</name>
     <member refid="group__micro-test-plus-literals_1ga6195961d9ece2c2c91e8946d47d84a79" kind="function"><name>_t</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a54a10058177255d3c430b27e3cb87eab" kind="function"><name>get</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a4d706032d92daabe8f8f5c2b88ced4df" kind="function"><name>operator T</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a26f470c3e6454a222fda0db2f01e044d" kind="typedef"><name>value_type</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a5792dff99ce4e1bf2166db4dceecfd5e" kind="variable"><name>value_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a95a80f6f273c5ab49571ceddd3b17a74" kind="function"><name>get</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1ae25aa47f118b4b4a3444f197d995390c" kind="function"><name>operator T</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1ad315e68dc7624b22a2c810c2865025da" kind="typedef"><name>value_type</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a1b2cf36b40e92a1249179c033894eb4d" kind="variable"><name>value_</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__" kind="struct"><name>micro_os_plus::micro_test_plus::detail::and_</name>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___1aec1e7482f95320014e7ad8f4a59e22ba" kind="variable"><name>lhs_</name></member>
@@ -105,7 +105,7 @@
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1gt___1a6f7f79fc0225f471f801f27367586395" kind="function"><name>rhs</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity" kind="struct"><name>micro_os_plus::micro_test_plus::type_traits::identity</name>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity_1a8a488c6629ed310aa4fa5713e4e2e016" kind="typedef"><name>type</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity_1a6399364a09c1004ebbaab36b2d5dc0c8" kind="typedef"><name>type</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant" kind="struct"><name>micro_os_plus::micro_test_plus::type_traits::integral_constant</name>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant_1a30307d0cc6b010e9b42ec98753b6bec1" kind="typedef"><name>value_type</name></member>
@@ -174,7 +174,7 @@
   <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" kind="class"><name>micro_os_plus::micro_test_plus::reflection::source_location</name>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1ae648fa43322766fbeb3f9103b43bcc4b" kind="variable"><name>file_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1a0e805c2ed2234f2c004fd7196b844fc5" kind="variable"><name>line_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1ac7bb1580b65709b94ad81ea3a5a900a0" kind="function"><name>current</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1af2ee3ac5db96f13680291736d58fe327" kind="function"><name>current</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1a3df499675aacb7ab9192cfb9a5371874" kind="function"><name>file_name</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1aab9d006004611ac0526852a09f675c66" kind="function"><name>line</name></member>
   </compound>
@@ -327,17 +327,17 @@
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t" kind="struct"><name>micro_os_plus::micro_test_plus::to_t</name>
     <member refid="group__micro-test-plus-literals_1gaad9720f2d1e443d77cdfd1eb1151e924" kind="function"><name>to_t</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a54a10058177255d3c430b27e3cb87eab" kind="function"><name>get</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a4d706032d92daabe8f8f5c2b88ced4df" kind="function"><name>operator T</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a26f470c3e6454a222fda0db2f01e044d" kind="typedef"><name>value_type</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a5792dff99ce4e1bf2166db4dceecfd5e" kind="variable"><name>value_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a95a80f6f273c5ab49571ceddd3b17a74" kind="function"><name>get</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1ae25aa47f118b4b4a3444f197d995390c" kind="function"><name>operator T</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1ad315e68dc7624b22a2c810c2865025da" kind="typedef"><name>value_type</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a1b2cf36b40e92a1249179c033894eb4d" kind="variable"><name>value_</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kind="struct"><name>micro_os_plus::micro_test_plus::type_traits::value</name>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a26f470c3e6454a222fda0db2f01e044d" kind="typedef"><name>value_type</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a5792dff99ce4e1bf2166db4dceecfd5e" kind="variable"><name>value_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1afebca698b3129c2eb1a86c4202a54d3c" kind="function"><name>value</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a54a10058177255d3c430b27e3cb87eab" kind="function"><name>get</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a4d706032d92daabe8f8f5c2b88ced4df" kind="function"><name>operator T</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1ad315e68dc7624b22a2c810c2865025da" kind="typedef"><name>value_type</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a1b2cf36b40e92a1249179c033894eb4d" kind="variable"><name>value_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1aa5bc4ce1701aca5de01108521887db90" kind="function"><name>value</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a95a80f6f273c5ab49571ceddd3b17a74" kind="function"><name>get</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1ae25aa47f118b4b4a3444f197d995390c" kind="function"><name>operator T</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d" kind="struct"><name>micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;</name>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d_1a108d4b1685f4283960cb9129e53acf2f" kind="typedef"><name>value_type</name></member>

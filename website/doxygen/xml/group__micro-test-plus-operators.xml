@@ -653,7 +653,7 @@ This overload of the greater than or equal operator enables comparison between t
 <codeline><highlight class="normal"><sp/><sp/>mt::expect<sp/>(compute_answer<sp/>()<sp/>&gt;=<sp/>42_i)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&gt;=<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal">});</highlight></codeline>
 </programlisting></para>
-<sect1 id="group__micro-test-plus-operators_1autotoc_md1_1s1"><sect2 id="group__micro-test-plus-operators_1autotoc_md1">
+<sect1 id="group__micro-test-plus-operators_1autotoc_md2_1s1"><sect2 id="group__micro-test-plus-operators_1autotoc_md2">
 <title>Logical operators</title><para>Logical operators may be used in the same way as standard operators, with enhanced reporting available when used with typed operands.</para>
 <para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>

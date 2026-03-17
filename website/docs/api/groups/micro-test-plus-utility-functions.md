@@ -350,10 +350,7 @@ keywords:
 <p>The function iterates through the input string, identifying delimiter positions and extracting substrings between them. Each resulting substring is added to the output vector. This approach supports flexible parsing of delimited data, which is particularly useful for validating string processing logic in test cases.</p>
 
 
-<dl class="doxySectionUser">
-<dt>Example</dt>
-<dd></dd>
-</dl>
+<p><b>Example</b></p>
 
 
 <div class="doxyProgramListing">

@@ -59,7 +59,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>...Args_T</parametername>
+<parametername>Args_T</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The argument types of the function.</para>

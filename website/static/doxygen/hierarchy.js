@@ -9,8 +9,8 @@ var hierarchy =
     [ "micro_os_plus::micro_test_plus::type_traits::function_traits< R(Args_T...)>", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_args___t_8_8_8_08_4.html", null ],
     [ "micro_os_plus::micro_test_plus::type_traits::function_traits< R(T::*)(Args_T...) const >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_52125631e1849775afa0689d07acdc76e.html", null ],
     [ "micro_os_plus::micro_test_plus::type_traits::function_traits< R(T::*)(Args_T...)>", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_5_08_07_args___t_8_8_8_08_4.html", null ],
-    [ "micro_os_plus::micro_test_plus::type_traits::identity< T,... >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity.html", null ],
-    [ "micro_os_plus::micro_test_plus::type_traits::list<... >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1list.html", null ],
+    [ "micro_os_plus::micro_test_plus::type_traits::identity< T, Extra >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity.html", null ],
+    [ "micro_os_plus::micro_test_plus::type_traits::list< Types >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1list.html", null ],
     [ "micro_os_plus::micro_test_plus::type_traits::op", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html", [
       [ "micro_os_plus::micro_test_plus::detail::throws_< Callable_T, void >", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4.html", null ],
       [ "micro_os_plus::micro_test_plus::type_traits::value< bool >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html", null ],
@@ -52,13 +52,13 @@ var hierarchy =
       [ "micro_os_plus::micro_test_plus::type_traits::floating_point_constant< T, N, D, Size, P >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html", null ],
       [ "micro_os_plus::micro_test_plus::type_traits::genuine_integral_value< T >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1genuine__integral__value.html", null ],
       [ "micro_os_plus::micro_test_plus::type_traits::integral_constant< N >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html", null ],
-      [ "micro_os_plus::micro_test_plus::type_traits::value< T, class >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html", [
+      [ "micro_os_plus::micro_test_plus::type_traits::value< T, Opt >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html", [
         [ "micro_os_plus::micro_test_plus::_t< T >", "structmicro__os__plus_1_1micro__test__plus_1_1__t.html", null ],
         [ "micro_os_plus::micro_test_plus::to_t< T >", "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html", null ]
       ] ],
       [ "micro_os_plus::micro_test_plus::type_traits::value< T, type_traits::requires_t< type_traits::is_floating_point_v< T > > >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d.html", null ]
     ] ],
-    [ "micro_os_plus::micro_test_plus::type_traits::requires_< bool >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1requires__.html", null ],
+    [ "micro_os_plus::micro_test_plus::type_traits::requires_< Cond >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1requires__.html", null ],
     [ "micro_os_plus::micro_test_plus::type_traits::requires_< true >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1requires___3_01true_01_4.html", null ],
     [ "micro_os_plus::micro_test_plus::reflection::source_location", "classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html", null ],
     [ "micro_os_plus::micro_test_plus::test_reporter", "classmicro__os__plus_1_1micro__test__plus_1_1test__reporter.html", null ],

@@ -2036,3 +2036,22 @@ details[open]>summary::before {
 	font-size: 80%;
 }
 
+:root {
+    scrollbar-width: thin;
+    scrollbar-color: #8DC8FF #F3F9FE;
+}
+
+::-webkit-scrollbar {
+        background-color: #F3F9FE;
+        height: 12px;
+        width: 12px;
+}
+::-webkit-scrollbar-thumb {
+        border-radius: 6px;
+        box-shadow: inset 0 0 12px 12px #8DC8FF;
+        border: solid 2px transparent;
+}
+::-webkit-scrollbar-corner {
+        background-color: #F3F9FE;
+}
+

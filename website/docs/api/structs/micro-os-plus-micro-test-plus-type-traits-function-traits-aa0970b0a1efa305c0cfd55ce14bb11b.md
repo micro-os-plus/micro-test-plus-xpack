@@ -89,7 +89,7 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(T::*)(A
 <td class="doxyParamItemDescription"><p>The class type to which the member function belongs.</p></td>
 </tr>
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">...Args_T</td>
+<td class="doxyParamItemName">Args_T</td>
 <td class="doxyParamItemDescription"><p>The argument types of the member function.</p></td>
 </tr>
 </table>

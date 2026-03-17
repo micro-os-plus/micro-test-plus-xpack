@@ -1,4 +1,3 @@
-<!-- HTML header for doxygen 1.9.7-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -10,6 +9,7 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -18,30 +18,6 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
-<link href="common-custom.css" rel="stylesheet" type="text/css"/>
-<!-- Awesome Theme Begin -->
-<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
-<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
-<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
-<script type="text/javascript">
-DoxygenAwesomeDarkModeToggle.init()
-DoxygenAwesomeFragmentCopyButton.init()
-DoxygenAwesomeParagraphLink.init()
-DoxygenAwesomeInteractiveToc.init()
-DoxygenAwesomeTabs.init()
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-E9T84WD3CK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-E9T84WD3CK');
-</script>
-<!-- Awesome Theme End -->
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -51,7 +27,7 @@ DoxygenAwesomeTabs.init()
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;3.2.2</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;3.2.3</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -132,8 +108,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ac7bb1580b65709b94ad81ea3a5a900a0" id="r_ac7bb1580b65709b94ad81ea3a5a900a0"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7bb1580b65709b94ad81ea3a5a900a0">current</a> (const char *file=&quot;unknown&quot;, unsigned int <a class="el" href="#aab9d006004611ac0526852a09f675c66">line</a>={}) noexcept</td></tr>
-<tr class="memdesc:ac7bb1580b65709b94ad81ea3a5a900a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain the current source location.  <br /></td></tr>
+<tr class="memitem:af2ee3ac5db96f13680291736d58fe327" id="r_af2ee3ac5db96f13680291736d58fe327"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html">source_location</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2ee3ac5db96f13680291736d58fe327">current</a> (const char *file=&quot;unknown&quot;, unsigned int <a class="el" href="#aab9d006004611ac0526852a09f675c66">line</a>={}) noexcept</td></tr>
+<tr class="memdesc:af2ee3ac5db96f13680291736d58fe327"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain the current source location.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -145,13 +121,13 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class provides a lightweight, constexpr-compatible alternative to <span class="tt">std::source_location</span> for environments lacking C++20 standard support.</p>
 <p>It enables retrieval of the file name and line number at the point of invocation, supporting enhanced diagnostics and reporting within the µTest++ framework.</p>
-<p>The static <span class="tt"><a class="el" href="#ac7bb1580b65709b94ad81ea3a5a900a0" title="Obtain the current source location.">current()</a></span> method captures the current source location, using compiler built-ins where available, or defaulting to <span class="tt">"unknown"</span> and zero otherwise.</p>
+<p>The static <span class="tt"><a class="el" href="#af2ee3ac5db96f13680291736d58fe327" title="Obtain the current source location.">current()</a></span> method captures the current source location, using compiler built-ins where available, or defaulting to <span class="tt">"unknown"</span> and zero otherwise.</p>
 <dl class="section since"><dt>Since</dt><dd>3.0.0 </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="reflection_8h_source.html#l00136">136</a> of file <a class="el" href="reflection_8h_source.html">reflection.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="ac7bb1580b65709b94ad81ea3a5a900a0" name="ac7bb1580b65709b94ad81ea3a5a900a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7bb1580b65709b94ad81ea3a5a900a0">&#9670;&#160;</a></span>current()</h2>
+<a id="af2ee3ac5db96f13680291736d58fe327" name="af2ee3ac5db96f13680291736d58fe327"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2ee3ac5db96f13680291736d58fe327">&#9670;&#160;</a></span>current()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,7 +136,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto micro_os_plus::micro_test_plus::reflection::source_location::current </td>
+          <td class="memname"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html">source_location</a> micro_os_plus::micro_test_plus::reflection::source_location::current </td>
           <td>(</td>
           <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>file</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;unknown&quot;</span>, </td>
         </tr>
@@ -234,7 +210,7 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="reflection_8h_source.html#l00180">file_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-reporter_8cpp_source.html#l00144">micro_os_plus::micro_test_plus::test_reporter::output_fail_prefix_()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-reporter_8cpp_source.html#l00145">micro_os_plus::micro_test_plus::test_reporter::output_fail_prefix_()</a>.</p>
 
 </div>
 </div>
@@ -272,7 +248,7 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="reflection_8h_source.html#l00185">line_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="reflection-inlines_8h_source.html#l00091">current()</a>, and <a class="el" href="test-reporter_8cpp_source.html#l00144">micro_os_plus::micro_test_plus::test_reporter::output_fail_prefix_()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reflection-inlines_8h_source.html#l00091">current()</a>, and <a class="el" href="test-reporter_8cpp_source.html#l00145">micro_os_plus::micro_test_plus::test_reporter::output_fail_prefix_()</a>.</p>
 
 </div>
 </div>

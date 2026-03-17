@@ -85,7 +85,7 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(*)(Args
 <td class="doxyParamItemDescription"><p>The return type of the function.</p></td>
 </tr>
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">...Args_T</td>
+<td class="doxyParamItemName">Args_T</td>
 <td class="doxyParamItemDescription"><p>The argument types of the function.</p></td>
 </tr>
 </table>

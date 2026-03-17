@@ -1,8 +1,8 @@
 var structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value =
 [
-    [ "value_type", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html#a26f470c3e6454a222fda0db2f01e044d", null ],
-    [ "value", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html#afebca698b3129c2eb1a86c4202a54d3c", null ],
-    [ "get", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html#a54a10058177255d3c430b27e3cb87eab", null ],
-    [ "operator T", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html#a4d706032d92daabe8f8f5c2b88ced4df", null ],
-    [ "value_", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html#a5792dff99ce4e1bf2166db4dceecfd5e", null ]
+    [ "value_type", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html#ad315e68dc7624b22a2c810c2865025da", null ],
+    [ "value", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html#aa5bc4ce1701aca5de01108521887db90", null ],
+    [ "get", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html#a95a80f6f273c5ab49571ceddd3b17a74", null ],
+    [ "operator T", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html#ae25aa47f118b4b4a3444f197d995390c", null ],
+    [ "value_", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html#a1b2cf36b40e92a1249179c033894eb4d", null ]
 ];

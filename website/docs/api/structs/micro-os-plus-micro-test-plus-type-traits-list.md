@@ -22,8 +22,8 @@ keywords:
 ## Declaration
 
 <div class="doxyDeclaration">
-template &lt;class...&gt;
-struct micro_os_plus::micro_test_plus::type_traits::list&lt;class...&gt; { ... }
+template &lt;class... Types&gt;
+struct micro_os_plus::micro_test_plus::type_traits::list&lt;Types&gt; { ... }
 </div>
 
 ## Included Headers
@@ -41,7 +41,7 @@ struct micro_os_plus::micro_test_plus::type_traits::list&lt;class...&gt; { ... }
 <dd>
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">...Types</td>
+<td class="doxyParamItemName">Types</td>
 <td class="doxyParamItemDescription"><p>The types to be included in the list.</p></td>
 </tr>
 </table>

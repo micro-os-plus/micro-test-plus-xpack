@@ -112,7 +112,7 @@ Struct template specialisation for extracting function traits from non-const mem
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/identity">identity&lt;T, class...&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/identity">identity&lt;T, Extra&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Struct template for compile-time type identity
@@ -123,7 +123,7 @@ Struct template for compile-time type identity
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">list&lt;class...&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">list&lt;Types&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Struct template representing a compile-time type list
@@ -310,7 +310,7 @@ Operator struct template to check if an expression throws any exception
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, class&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, Opt&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Struct template representing a generic value, accessible via a getter
@@ -354,7 +354,7 @@ Struct template representing a floating point value with precision control
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires-">requires_&lt;bool&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires-">requires_&lt;Cond&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Struct template for SFINAE requirements

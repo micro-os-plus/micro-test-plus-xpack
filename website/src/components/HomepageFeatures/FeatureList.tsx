@@ -5,11 +5,11 @@
  * This file is part of the xPack project (http://xpack.github.io).
  * Copyright (c) 2024-2026 Liviu Ionescu. All rights reserved.
  *
- * Permission to use, copy, modify, and/or distribute this software for any
- * purpose is hereby granted, under the terms of the MIT license.
+ * Permission to use, copy, modify, and/or distribute this software
+ * for any purpose is hereby granted, under the terms of the MIT license.
  *
- * If a copy of the license was not distributed with this file, it can be
- * obtained from https://opensource.org/licenses/mit.
+ * If a copy of the license was not distributed with this file, it can
+ * be obtained from https://opensource.org/licenses/mit.
  */
 
 import Link from '@docusaurus/Link';
@@ -27,11 +27,11 @@ export const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Easy to Use & Reproducible',
+    title: 'Easy to use & reproducible',
     Svg: require('@site/static/img/check-badge.svg').default,
     description: (
       <>
-        Projects can reference this library through an explicitly versioned <b>dependency</b>. This guarantees reproducibility, which is particularly advantageous in <b>CI/CD</b> environments.
+        Projects can reference this library through an explicitly versioned <b>dependency</b>. This ensures reproducibility, which is particularly advantageous in <b>CI/CD</b> environments.
       </>
     ),
   },
@@ -45,7 +45,7 @@ export const FeatureList: FeatureItem[] = [
         several additional features tailored for <b>C/C++ projects</b>.
         This enables the
         source package to integrate seamlessly into the Node.js ecosystem,
-        while still permitting manual installation of the library.
+        whilst still permitting manual installation of the library.
       </>
     ),
   },

@@ -74,7 +74,7 @@ keywords:
 ## - I -
 
 <ul>
-<li><b>identity&lt;T, class...&gt;</b>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/identity">micro_os_plus::micro_test_plus::type_traits::identity&lt;T, class...&gt;</a></li>
+<li><b>identity&lt;T, Extra&gt;</b>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/identity">micro_os_plus::micro_test_plus::type_traits::identity&lt;T, Extra&gt;</a></li>
 <li><b>integral_constant&lt;N&gt;</b>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">micro_os_plus::micro_test_plus::type_traits::integral_constant&lt;N&gt;</a></li>
 </ul>
 <p>2 entries</p>
@@ -83,7 +83,7 @@ keywords:
 
 <ul>
 <li><b>le_&lt;Lhs_T, Rhs_T&gt;</b>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/le-">micro_os_plus::micro_test_plus::detail::le_&lt;Lhs_T, Rhs_T&gt;</a></li>
-<li><b>list&lt;class...&gt;</b>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">micro_os_plus::micro_test_plus::type_traits::list&lt;class...&gt;</a></li>
+<li><b>list&lt;Types&gt;</b>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">micro_os_plus::micro_test_plus::type_traits::list&lt;Types&gt;</a></li>
 <li><b>lt_&lt;Lhs_T, Rhs_T&gt;</b>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/lt-">micro_os_plus::micro_test_plus::detail::lt_&lt;Lhs_T, Rhs_T&gt;</a></li>
 </ul>
 <p>3 entries</p>
@@ -108,7 +108,7 @@ keywords:
 ## - R -
 
 <ul>
-<li><b>requires_&lt;bool&gt;</b>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires-">micro_os_plus::micro_test_plus::type_traits::requires_&lt;bool&gt;</a></li>
+<li><b>requires_&lt;Cond&gt;</b>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires-">micro_os_plus::micro_test_plus::type_traits::requires_&lt;Cond&gt;</a></li>
 <li><b>requires_&lt;true&gt;</b>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires--d4cc09ec8cf7793e85cd7a9c044686e1">micro_os_plus::micro_test_plus::type_traits::requires_&lt;true&gt;</a></li>
 </ul>
 <p>2 entries</p>
@@ -136,7 +136,7 @@ keywords:
 
 <ul>
 <li><b>value&lt;...&gt;</b>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-dae7771377f0087abbec46abf87b329e">micro_os_plus::micro_test_plus::type_traits::value&lt;T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt;&gt;</a></li>
-<li><b>value&lt;T, class&gt;</b>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">micro_os_plus::micro_test_plus::type_traits::value&lt;T, class&gt;</a></li>
+<li><b>value&lt;T, Opt&gt;</b>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">micro_os_plus::micro_test_plus::type_traits::value&lt;T, Opt&gt;</a></li>
 </ul>
 <p>2 entries</p>
 <br/>

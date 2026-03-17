@@ -8,6 +8,7 @@ var searchData=
   ['den_5',['den',['../namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a1006429dba18038662409138f5754952',1,'micro_os_plus::micro_test_plus::math']]],
   ['den_5fsize_6',['den_size',['../namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a74757af775d3afa203b808e3f6642467',1,'micro_os_plus::micro_test_plus::math::den_size(void) -&gt; T'],['../namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a3e243d7f77b8435e1433ccad9c603f98',1,'micro_os_plus::micro_test_plus::math::den_size(Value_T value) -&gt; T']]],
   ['deprecated_20list_7',['Deprecated List',['../deprecated.html',1,'']]],
-  ['detail_2eh_8',['detail.h',['../detail_8h.html',1,'']]],
-  ['details_2dinlines_2eh_9',['details-inlines.h',['../details-inlines_8h.html',1,'']]]
+  ['description_8',['Description',['../group__micro-os-plus.html#autotoc_md0',1,'']]],
+  ['detail_2eh_9',['detail.h',['../detail_8h.html',1,'']]],
+  ['details_2dinlines_2eh_10',['details-inlines.h',['../details-inlines_8h.html',1,'']]]
 ];

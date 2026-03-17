@@ -2,7 +2,7 @@
 <doxyfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="doxyfile.xsd" version="1.14.0" xml:lang="en-US">
   <option  id='DOXYFILE_ENCODING' default='yes' type='string'><value><![CDATA[UTF-8]]></value></option>
   <option  id='PROJECT_NAME' default='no' type='string'><value><![CDATA[micro-test-plus]]></value></option>
-  <option  id='PROJECT_NUMBER' default='no' type='string'><value><![CDATA[3.2.2]]></value></option>
+  <option  id='PROJECT_NUMBER' default='no' type='string'><value><![CDATA[3.2.3]]></value></option>
   <option  id='PROJECT_BRIEF' default='no' type='string'><value><![CDATA["µTest++ Testing Framework"]]></value></option>
   <option  id='PROJECT_LOGO' default='no' type='string'><value><![CDATA[assets/wall-e-icon-64.png]]></value></option>
   <option  id='PROJECT_ICON' default='yes' type='string'><value><![CDATA[]]></value></option>
@@ -111,7 +111,7 @@
   <option  id='SHOW_FILES' default='yes' type='bool'><value>YES</value></option>
   <option  id='SHOW_NAMESPACES' default='yes' type='bool'><value>YES</value></option>
   <option  id='FILE_VERSION_FILTER' default='yes' type='string'><value><![CDATA[]]></value></option>
-  <option  id='LAYOUT_FILE' default='no' type='string'><value><![CDATA[DoxygenLayout.xml]]></value></option>
+  <option  id='LAYOUT_FILE' default='yes' type='string'><value><![CDATA[]]></value></option>
   <option  id='CITE_BIB_FILES' default='yes' type='stringlist'>
   </option>
   <option  id='EXTERNAL_TOOL_PATH' default='yes' type='stringlist'>
@@ -234,19 +234,12 @@
   <option  id='GENERATE_HTML' default='yes' type='bool'><value>YES</value></option>
   <option  id='HTML_OUTPUT' default='no' type='string'><value><![CDATA[../static/doxygen]]></value></option>
   <option  id='HTML_FILE_EXTENSION' default='yes' type='string'><value><![CDATA[.html]]></value></option>
-  <option  id='HTML_HEADER' default='no' type='string'><value><![CDATA[../node_modules/@micro-os-plus/build-helper/doxygen/common-header-micro-os-plus.html]]></value></option>
+  <option  id='HTML_HEADER' default='yes' type='string'><value><![CDATA[]]></value></option>
   <option  id='HTML_FOOTER' default='yes' type='string'><value><![CDATA[]]></value></option>
   <option  id='HTML_STYLESHEET' default='yes' type='string'><value><![CDATA[]]></value></option>
-  <option  id='HTML_EXTRA_STYLESHEET' default='no' type='stringlist'>
-    <value><![CDATA[../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome.css]]></value>
-    <value><![CDATA[../node_modules/@micro-os-plus/build-helper/doxygen/common-custom.css]]></value>
+  <option  id='HTML_EXTRA_STYLESHEET' default='yes' type='stringlist'>
   </option>
-  <option  id='HTML_EXTRA_FILES' default='no' type='stringlist'>
-    <value><![CDATA[../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js]]></value>
-    <value><![CDATA[../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-fragment-copy-button.js]]></value>
-    <value><![CDATA[../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-paragraph-link.js]]></value>
-    <value><![CDATA[../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-interactive-toc.js]]></value>
-    <value><![CDATA[../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-tabs.js]]></value>
+  <option  id='HTML_EXTRA_FILES' default='yes' type='stringlist'>
   </option>
   <option  id='HTML_COLORSTYLE' default='no' type='string'><value>LIGHT</value></option>
   <option  id='HTML_COLORSTYLE_HUE' default='no' type='int'><value>209</value></option>

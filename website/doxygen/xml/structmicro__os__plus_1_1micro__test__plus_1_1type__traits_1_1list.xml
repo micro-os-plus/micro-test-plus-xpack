@@ -6,6 +6,8 @@
     <templateparamlist>
       <param>
         <type>class...</type>
+        <declname>Types</declname>
+        <defname>Types</defname>
       </param>
     </templateparamlist>
     <briefdescription>
@@ -14,7 +16,7 @@
     <detaileddescription>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
-<parametername>...Types</parametername>
+<parametername>Types</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The types to be included in the list.</para>

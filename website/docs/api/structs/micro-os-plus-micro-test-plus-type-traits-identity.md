@@ -22,8 +22,8 @@ keywords:
 ## Declaration
 
 <div class="doxyDeclaration">
-template &lt;class T, class...&gt;
-struct micro_os_plus::micro_test_plus::type_traits::identity&lt;T, class...&gt; { ... }
+template &lt;class T, class... Extra&gt;
+struct micro_os_plus::micro_test_plus::type_traits::identity&lt;T, Extra&gt; { ... }
 </div>
 
 ## Included Headers
@@ -36,16 +36,16 @@ struct micro_os_plus::micro_test_plus::type_traits::identity&lt;T, class...&gt; 
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexTemplate">
-<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T, class...&gt;</div></td>
+<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T, class... Extra&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a8a488c6629ed310aa4fa5713e4e2e016">type</a> = T</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a6399364a09c1004ebbaab36b2d5dc0c8">type</a> = T</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Alias for the preserved type. <a href="#a8a488c6629ed310aa4fa5713e4e2e016">More...</a></p>
+<p>Alias for the preserved type. <a href="#a6399364a09c1004ebbaab36b2d5dc0c8">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -68,7 +68,7 @@ struct micro_os_plus::micro_test_plus::type_traits::identity&lt;T, class...&gt; 
 <td class="doxyParamItemDescription"><p>The type to be preserved.</p></td>
 </tr>
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">...Unused</td>
+<td class="doxyParamItemName">Extra</td>
 <td class="doxyParamItemDescription"><p>Additional template parameters, ignored.</p></td>
 </tr>
 </table>
@@ -88,17 +88,17 @@ struct micro_os_plus::micro_test_plus::type_traits::identity&lt;T, class...&gt; 
 
 ## Public Member Typedefs
 
-### type {#a8a488c6629ed310aa4fa5713e4e2e016}
+### type {#a6399364a09c1004ebbaab36b2d5dc0c8}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
-<div class="doxyMemberTemplate">template &lt;class T, class...&gt;</div>
+<div class="doxyMemberTemplate">template &lt;class T, class... Extra&gt;</div>
 <table class="doxyMemberLabels">
 <tr class="doxyMemberLabels">
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::type_traits::identity&lt; T,... &gt;::type =  T</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::type_traits::identity&lt; T, Extra &gt;::type =  T</td>
 </tr>
 </table>
 </td>
@@ -114,7 +114,7 @@ struct micro_os_plus::micro_test_plus::type_traits::identity&lt;T, class...&gt; 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a8a488c6629ed310aa4fa5713e4e2e016">146</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a8a488c6629ed310aa4fa5713e4e2e016">type</a> = T;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a6399364a09c1004ebbaab36b2d5dc0c8">146</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a6399364a09c1004ebbaab36b2d5dc0c8">type</a> = T;</span></span></div>
 
 </div>
 

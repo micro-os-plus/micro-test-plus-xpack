@@ -103,13 +103,13 @@ class micro_os_plus::micro_test_plus::reflection::source_location { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">static constexpr auto</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac7bb1580b65709b94ad81ea3a5a900a0">current</a> (const char *file="unknown", unsigned int line={}) noexcept</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">static constexpr <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">source_location</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af2ee3ac5db96f13680291736d58fe327">current</a> (const char *file="unknown", unsigned int line={}) noexcept</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Obtain the current source location. <a href="#ac7bb1580b65709b94ad81ea3a5a900a0">More...</a></p>
+<p>Obtain the current source location. <a href="#af2ee3ac5db96f13680291736d58fe327">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -129,7 +129,7 @@ class micro_os_plus::micro_test_plus::reflection::source_location { ... }
 <p>It enables retrieval of the file name and line number at the point of invocation, supporting enhanced diagnostics and reporting within the µTest++ framework.</p>
 
 
-<p>The static <span class="doxyComputerOutput"><a href="#ac7bb1580b65709b94ad81ea3a5a900a0">current()</a></span> method captures the current source location, using compiler built-ins where available, or defaulting to <span class="doxyComputerOutput">"unknown"</span> and zero otherwise.</p>
+<p>The static <span class="doxyComputerOutput"><a href="#af2ee3ac5db96f13680291736d58fe327">current()</a></span> method captures the current source location, using compiler built-ins where available, or defaulting to <span class="doxyComputerOutput">"unknown"</span> and zero otherwise.</p>
 
 
 <dl class="doxySectionUser">
@@ -268,7 +268,7 @@ class micro_os_plus::micro_test_plus::reflection::source_location { ... }
 <p>Reference <a href="#a0e805c2ed2234f2c004fd7196b844fc5">line_</a>.</p>
 
 
-<p>Referenced by <a href="#ac7bb1580b65709b94ad81ea3a5a900a0">current</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ae2b0f0247a64d1d22e9db9b5f47653db">micro_os_plus::micro_test_plus::test_reporter::output_fail_prefix_</a>.</p>
+<p>Referenced by <a href="#af2ee3ac5db96f13680291736d58fe327">current</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ae2b0f0247a64d1d22e9db9b5f47653db">micro_os_plus::micro_test_plus::test_reporter::output_fail_prefix_</a>.</p>
 
 </div>
 </div>
@@ -309,7 +309,7 @@ class micro_os_plus::micro_test_plus::reflection::source_location { ... }
 </div>
 
 
-<p>Referenced by <a href="#ac7bb1580b65709b94ad81ea3a5a900a0">current</a> and <a href="#a3df499675aacb7ab9192cfb9a5371874">file_name</a>.</p>
+<p>Referenced by <a href="#af2ee3ac5db96f13680291736d58fe327">current</a> and <a href="#a3df499675aacb7ab9192cfb9a5371874">file_name</a>.</p>
 
 </div>
 </div>
@@ -344,7 +344,7 @@ class micro_os_plus::micro_test_plus::reflection::source_location { ... }
 </div>
 
 
-<p>Referenced by <a href="#ac7bb1580b65709b94ad81ea3a5a900a0">current</a> and <a href="#aab9d006004611ac0526852a09f675c66">line</a>.</p>
+<p>Referenced by <a href="#af2ee3ac5db96f13680291736d58fe327">current</a> and <a href="#aab9d006004611ac0526852a09f675c66">line</a>.</p>
 
 </div>
 </div>
@@ -355,7 +355,7 @@ class micro_os_plus::micro_test_plus::reflection::source_location { ... }
 
 ## Public Static Functions
 
-### current() {#ac7bb1580b65709b94ad81ea3a5a900a0}
+### current() {#af2ee3ac5db96f13680291736d58fe327}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -364,7 +364,7 @@ class micro_os_plus::micro_test_plus::reflection::source_location { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::reflection::source_location::current (const char * file="unknown", unsigned int line={})</td>
+<td class="doxyMemberName">source_location micro_os_plus::micro_test_plus::reflection::source_location::current (const char * file="unknown", unsigned int line={})</td>
 </tr>
 </table>
 </td>
@@ -417,7 +417,7 @@ class micro_os_plus::micro_test_plus::reflection::source_location { ... }
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ac7bb1580b65709b94ad81ea3a5a900a0">91</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#ac7bb1580b65709b94ad81ea3a5a900a0">source_location::current</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* file, </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="#aab9d006004611ac0526852a09f675c66">line</a>) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#af2ee3ac5db96f13680291736d58fe327">91</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#af2ee3ac5db96f13680291736d58fe327">source_location::current</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* file, </span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="#aab9d006004611ac0526852a09f675c66">line</a>) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">92</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">93</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">source_location</a> sl{};</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">94</span><span class="doxyLineContent"><span class="doxyHighlight">      sl.<a href="#ae648fa43322766fbeb3f9103b43bcc4b">file_</a> = file;</span></span></div>

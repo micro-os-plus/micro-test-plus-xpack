@@ -16,7 +16,7 @@ var searchData=
   ['location_13',['location',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1assertion.html#acd2e0e20795f5a31ed3031ab51579dc0',1,'micro_os_plus::micro_test_plus::detail::assertion']]],
   ['location_5f_14',['location_',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base.html#a025498d9b9376056c56042cc98ed7afd',1,'micro_os_plus::micro_test_plus::detail::deferred_reporter_base']]],
   ['logical_20functions_15',['Logical Functions',['../group__micro-test-plus-logical-functions.html',1,'']]],
-  ['logical_20operators_16',['Logical operators',['../group__micro-test-plus-operators.html#autotoc_md1',1,'']]],
+  ['logical_20operators_16',['Logical operators',['../group__micro-test-plus-operators.html#autotoc_md2',1,'']]],
   ['lt_17',['lt',['../group__micro-test-plus-function-comparators.html#gac162522dcad1a6ff7c869d52d376b3ed',1,'micro_os_plus::micro_test_plus::lt(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)'],['../group__micro-test-plus-function-comparators.html#ga047738c301c4c6b6c7fdb535aecfe097',1,'micro_os_plus::micro_test_plus::lt(Lhs_T *lhs, Rhs_T *rhs)']]],
   ['lt_5f_18',['lt_',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1lt__.html',1,'micro_os_plus::micro_test_plus::detail::lt_&lt; Lhs_T, Rhs_T &gt;'],['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1lt__.html#ad710000ff9a19e330f1fb33fdb236696',1,'micro_os_plus::micro_test_plus::detail::lt_::lt_()'],['../namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ac93b3c5d42203345061f87bf2e794b07',1,'micro_os_plus::micro_test_plus::detail::lt_()']]]
 ];

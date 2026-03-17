@@ -479,7 +479,7 @@ This method increments the count of successful checks for the test suite and the
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite_1a824b38d21a3f4d0adb99827455f159cf" compoundref="test-suite-inlines_8h" startline="88" endline="98">test_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a1aea53994faf3a7f7a610a6c47a8ef4a" compoundref="test-suite_8cpp" startline="75" endline="83">micro_os_plus::micro_test_plus::test_suite_base::test_suite_base</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a6bd8aa956f30c344c9ef79cf21c69cdc" compoundref="test-suite_8cpp" startline="159" endline="172">micro_os_plus::micro_test_plus::test_suite_base::begin_test_case</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ad01d404c3fe5a44cf7f10bfcd599e0f3" compoundref="test-reporter_8cpp" startline="689" endline="723">micro_os_plus::micro_test_plus::test_reporter::end_test_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ad01d404c3fe5a44cf7f10bfcd599e0f3" compoundref="test-reporter_8cpp" startline="709" endline="753">micro_os_plus::micro_test_plus::test_reporter::end_test_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ab80bbf61a4ff0a02f7a50ec2d305fee0">micro_os_plus::micro_test_plus::test_suite_base::operator=</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite_1aafe75ac5383b6981e1ed6e3c8e96249e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -592,7 +592,7 @@ This method executes the test suite by invoking the stored callable object assoc
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="239" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" bodystart="239" bodyend="242"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a1e9205117a2373caf7346064e86afa03" compoundref="test-suite_8h" startline="318">micro_os_plus::micro_test_plus::test_suite_base::test_cases_</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ad01d404c3fe5a44cf7f10bfcd599e0f3" compoundref="test-reporter_8cpp" startline="689" endline="723">micro_os_plus::micro_test_plus::test_reporter::end_test_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ad01d404c3fe5a44cf7f10bfcd599e0f3" compoundref="test-reporter_8cpp" startline="709" endline="753">micro_os_plus::micro_test_plus::test_reporter::end_test_suite</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a20de3062a437e86955dd2917d7976cb3" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -680,7 +680,7 @@ This method executes the test suite by invoking the stored callable object assoc
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="343" column="11" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" bodystart="343" bodyend="-1"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ad01d404c3fe5a44cf7f10bfcd599e0f3" compoundref="test-reporter_8cpp" startline="689" endline="723">micro_os_plus::micro_test_plus::test_reporter::end_test_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ad01d404c3fe5a44cf7f10bfcd599e0f3" compoundref="test-reporter_8cpp" startline="709" endline="753">micro_os_plus::micro_test_plus::test_reporter::end_test_suite</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ac442c68973cd937aeaef7aa7fbc27d30" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -715,7 +715,7 @@ This method executes the test suite by invoking the stored callable object assoc
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" line="338" column="11" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-suite.h" bodystart="338" bodyend="-1"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ad01d404c3fe5a44cf7f10bfcd599e0f3" compoundref="test-reporter_8cpp" startline="689" endline="723">micro_os_plus::micro_test_plus::test_reporter::end_test_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ad01d404c3fe5a44cf7f10bfcd599e0f3" compoundref="test-reporter_8cpp" startline="709" endline="753">micro_os_plus::micro_test_plus::test_reporter::end_test_suite</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

@@ -1,18 +1,18 @@
 var group__micro_test_plus_literals =
 [
     [ "micro_os_plus::micro_test_plus::_t< T >", "structmicro__os__plus_1_1micro__test__plus_1_1__t.html", [
-      [ "value_type", "structmicro__os__plus_1_1micro__test__plus_1_1__t.html#a26f470c3e6454a222fda0db2f01e044d", null ],
+      [ "value_type", "structmicro__os__plus_1_1micro__test__plus_1_1__t.html#ad315e68dc7624b22a2c810c2865025da", null ],
       [ "_t", "group__micro-test-plus-literals.html#ga6195961d9ece2c2c91e8946d47d84a79", null ],
-      [ "get", "structmicro__os__plus_1_1micro__test__plus_1_1__t.html#a54a10058177255d3c430b27e3cb87eab", null ],
-      [ "operator T", "structmicro__os__plus_1_1micro__test__plus_1_1__t.html#a4d706032d92daabe8f8f5c2b88ced4df", null ],
-      [ "value_", "structmicro__os__plus_1_1micro__test__plus_1_1__t.html#a5792dff99ce4e1bf2166db4dceecfd5e", null ]
+      [ "get", "structmicro__os__plus_1_1micro__test__plus_1_1__t.html#a95a80f6f273c5ab49571ceddd3b17a74", null ],
+      [ "operator T", "structmicro__os__plus_1_1micro__test__plus_1_1__t.html#ae25aa47f118b4b4a3444f197d995390c", null ],
+      [ "value_", "structmicro__os__plus_1_1micro__test__plus_1_1__t.html#a1b2cf36b40e92a1249179c033894eb4d", null ]
     ] ],
     [ "micro_os_plus::micro_test_plus::to_t< T >", "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html", [
-      [ "value_type", "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html#a26f470c3e6454a222fda0db2f01e044d", null ],
+      [ "value_type", "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html#ad315e68dc7624b22a2c810c2865025da", null ],
       [ "to_t", "group__micro-test-plus-literals.html#gaad9720f2d1e443d77cdfd1eb1151e924", null ],
-      [ "get", "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html#a54a10058177255d3c430b27e3cb87eab", null ],
-      [ "operator T", "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html#a4d706032d92daabe8f8f5c2b88ced4df", null ],
-      [ "value_", "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html#a5792dff99ce4e1bf2166db4dceecfd5e", null ]
+      [ "get", "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html#a95a80f6f273c5ab49571ceddd3b17a74", null ],
+      [ "operator T", "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html#ae25aa47f118b4b4a3444f197d995390c", null ],
+      [ "value_", "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html#a1b2cf36b40e92a1249179c033894eb4d", null ]
     ] ],
     [ "micro_os_plus::micro_test_plus::_b", "group__micro-test-plus-literals.html#ga74e6e2bffc2fc2dea47f979b5b55ea64", null ],
     [ "micro_os_plus::micro_test_plus::_c", "group__micro-test-plus-literals.html#gabd2f8b7401162835cb4735e4a7532c36", null ],

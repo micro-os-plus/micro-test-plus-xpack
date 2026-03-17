@@ -58,7 +58,7 @@ struct micro_os_plus::micro_test_plus::type_traits::requires_&lt;true&gt; { ... 
 <p>When the condition is <span class="doxyComputerOutput">true</span>, this specialisation provides a nested <span class="doxyComputerOutput">type</span> alias, typically used for SFINAE and requirements checking in template metaprogramming.</p>
 
 
-<p>Definition at line 642 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line 640 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -85,12 +85,12 @@ struct micro_os_plus::micro_test_plus::type_traits::requires_&lt;true&gt; { ... 
 
 <p>Alias type provided when the requirement is satisfied.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00647">647</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00645">645</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a39b51e229ec854866a430875e6f5fd10">647</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a39b51e229ec854866a430875e6f5fd10">type</a> = int;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a39b51e229ec854866a430875e6f5fd10">645</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a39b51e229ec854866a430875e6f5fd10">type</a> = int;</span></span></div>
 
 </div>
 

@@ -9,7 +9,7 @@
  * for any purpose is hereby granted, under the terms of the MIT license.
  *
  * If a copy of the license was not distributed with this file, it can
- * be obtained from https://opensource.org/licenses/MIT.
+ * be obtained from https://opensource.org/licenses/mit.
  */
 
 /**
@@ -64,6 +64,7 @@ All files in this directory are intended for inclusion in user projects and prov
 @brief Topics related to the µOS++ framework.
 
 @details
+## Description
 
 The [µOS++ Framework](https://micro-os-plus.github.io) is the principal project
 within the µOS++ (micro-os-plus) ecosystem, providing a comprehensive suite of modern

@@ -100,7 +100,7 @@ keywords:
 ## - I -
 
 <ul>
-<li><b>identity&lt;T, class...&gt;</b>: as struct in namespace <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/identity">micro_os_plus::micro_test_plus::type_traits</a></li>
+<li><b>identity&lt;T, Extra&gt;</b>: as struct in namespace <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/identity">micro_os_plus::micro_test_plus::type_traits</a></li>
 <li><b>integral_constant&lt;N&gt;</b>: as struct in namespace <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">micro_os_plus::micro_test_plus::type_traits</a></li>
 <li><b>is_container_v</b>: as variable in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a8361ab7ff9d9c6343d97a99bdcb9feb2">micro_os_plus::micro_test_plus::type_traits</a></li>
 <li><b>is_convertible_v</b>: as variable in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a49a5bfe63d50b6fd1be0972586fbf590">micro_os_plus::micro_test_plus::type_traits</a></li>
@@ -121,7 +121,7 @@ keywords:
 <ul>
 <li><b>le_()</b>: as function in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a1046941e8fddcb180ce30cc9efd2fb07">micro_os_plus::micro_test_plus::detail</a></li>
 <li><b>le_&lt;Lhs_T, Rhs_T&gt;</b>: as struct in namespace <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/le-">micro_os_plus::micro_test_plus::detail</a></li>
-<li><b>list&lt;class...&gt;</b>: as struct in namespace <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">micro_os_plus::micro_test_plus::type_traits</a></li>
+<li><b>list&lt;Types&gt;</b>: as struct in namespace <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">micro_os_plus::micro_test_plus::type_traits</a></li>
 <li><b>literals</b>: as namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/literals">micro_os_plus::micro_test_plus::literals</a></li>
 <li><b>lt_()</b>: as function in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac93b3c5d42203345061f87bf2e794b07">micro_os_plus::micro_test_plus::detail</a></li>
 <li><b>lt_&lt;Lhs_T, Rhs_T&gt;</b>: as struct in namespace <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/lt-">micro_os_plus::micro_test_plus::detail</a></li>
@@ -178,7 +178,7 @@ keywords:
 <ul>
 <li><b>reflection</b>: as namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection">micro_os_plus::micro_test_plus::reflection</a></li>
 <li><b>reporter</b>: as variable in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#aec46bdfdb22163bedab8e6b542191834">micro_os_plus::micro_test_plus</a></li>
-<li><b>requires_&lt;bool&gt;</b>: as struct in namespace <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires-">micro_os_plus::micro_test_plus::type_traits</a></li>
+<li><b>requires_&lt;Cond&gt;</b>: as struct in namespace <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires-">micro_os_plus::micro_test_plus::type_traits</a></li>
 <li><b>requires_&lt;true&gt;</b>: as struct in namespace <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires--d4cc09ec8cf7793e85cd7a9c044686e1">micro_os_plus::micro_test_plus::type_traits</a></li>
 <li><b>requires_t</b>: as typedef in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a1cbbf299a006b4692df250ef2a6fc7c2">micro_os_plus::micro_test_plus::type_traits</a></li>
 <li><b>runner</b>: as variable in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a469c0f5fefa0b4cea12a7d267dded831">micro_os_plus::micro_test_plus</a></li>
@@ -219,7 +219,7 @@ keywords:
 
 <ul>
 <li><b>value&lt;...&gt;</b>: as struct in namespace <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-dae7771377f0087abbec46abf87b329e">micro_os_plus::micro_test_plus::type_traits</a></li>
-<li><b>value&lt;T, class&gt;</b>: as struct in namespace <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">micro_os_plus::micro_test_plus::type_traits</a></li>
+<li><b>value&lt;T, Opt&gt;</b>: as struct in namespace <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">micro_os_plus::micro_test_plus::type_traits</a></li>
 <li><b>verbose</b>: as enum value in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">micro_os_plus::micro_test_plus</a></li>
 <li><b>verbosity</b>: as enum in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914b">micro_os_plus::micro_test_plus</a></li>
 <li><b>verbosity_t</b>: as typedef in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a08e787c2c2f8365df2c9b372605535ac">micro_os_plus::micro_test_plus</a></li>
