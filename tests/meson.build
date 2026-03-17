@@ -34,7 +34,7 @@ project('micro-os-plus-micro-test-plus-tests',
 # gnu++2a, gnu++20, vc++14, vc++17, vc++latest
 
 # -----------------------------------------------------------------------------
-# Project specific definitions #
+# Project specific definitions.
 
 subdir('meson/project-definitions')
 
@@ -83,12 +83,12 @@ message('Platform name: ' + xpack_platform_name)
 
 # https://mesonbuild.com/Reference-manual.html#subdir
 subdir('meson/common-options-library')
-subdir('xpacks/@micro-os-plus/build-helper/meson/enable-all-warnings')
+subdir('meson/enable-all-warnings')
 
 subdir('platforms/'+ xpack_platform_name + '/meson/definitions')
 
 # -----------------------------------------------------------------------------
-# Dependencies #
+# Dependencies.
 
 # Set `xpack_dependencies_folders` with the platform specific dependencies.
 subdir('platforms/'+ xpack_platform_name + '/meson/dependencies-folders')
@@ -114,7 +114,7 @@ xpack_tested_library_dependency_compile_cpp_args = micro_os_plus_micro_test_plus
 subdir('meson/define-executables')
 
 # -----------------------------------------------------------------------------
-# Platform specifics #
+# Platform specifics.
 
 # Include the platform specific targets and tests.
 subdir('platforms/' + xpack_platform_name)

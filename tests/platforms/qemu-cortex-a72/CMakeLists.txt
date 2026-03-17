@@ -21,10 +21,6 @@ include ("cmake/platform-library.cmake")
 
 # -----------------------------------------------------------------------------
 
-# set(xpack_enable_create_listing true) set(xpack_enable_create_hex true)
-
-# -----------------------------------------------------------------------------
-
 if (XPACK_ENABLE_MINIMAL_TEST)
   add_cross_test_executable (minimal-test)
   target_link_cross_test_libraries (minimal-test test::minimal)

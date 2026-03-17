@@ -17,7 +17,6 @@
 
 message('Processing tests/platforms/qemu-cortex-a15...')
 
-
 # -----------------------------------------------------------------------------
 
 qemu = find_program('qemu-system-arm')
@@ -27,6 +26,7 @@ xpack_environment = environment()
 xpack_environment.set('MALLOC_PERTURB_', '0')
 
 # -----------------------------------------------------------------------------
+
 # Define the tests executables.
 
 if xpack_enable_sample_test

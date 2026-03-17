@@ -26,8 +26,8 @@ xpack_environment = environment()
 xpack_environment.set('MALLOC_PERTURB_', '0')
 
 # -----------------------------------------------------------------------------
-# Define the tests executables.
 
+# Define the tests executables.
 if xpack_enable_sample_test
 
   # https://mesonbuild.com/Reference-manual_functions.html#test

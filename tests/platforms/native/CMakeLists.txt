@@ -21,10 +21,6 @@ include ("cmake/platform-library.cmake")
 
 # -----------------------------------------------------------------------------
 
-# set(xpack_enable_create_listing true)
-
-# -----------------------------------------------------------------------------
-
 if (XPACK_ENABLE_MINIMAL_TEST)
   add_native_test_executable (minimal-test)
   target_link_native_test_libraries (minimal-test test::minimal)

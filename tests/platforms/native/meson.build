@@ -24,7 +24,6 @@ xpack_environment = environment()
 xpack_environment.set('MALLOC_PERTURB_', '0')
 
 # -----------------------------------------------------------------------------
-# Define the tests executables.
 
 if xpack_enable_minimal_test
 
@@ -121,7 +120,6 @@ if xpack_enable_sample_test
     ],
     env: xpack_environment
   )
-
 endif
 
 # -----------------------------------------------------------------------------
@@ -156,7 +154,6 @@ if xpack_enable_unit_test
     args: ['--silent'],
     env: xpack_environment
   )
-
 endif
 
 # -----------------------------------------------------------------------------

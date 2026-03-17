@@ -26,8 +26,9 @@ cmake_minimum_required(VERSION 3.20)
 
 project(micro-os-plus-micro-test-plus DESCRIPTION "µTest++")
 
-# To access the optional functions, add `@micro-os-plus/build-helper` as a
-# dependency and include the `cmake/micro-os-plus-build-helper.cmake` file.
+# To access the optional functions, include the 
+# `cmake/micro-os-plus-build-helper.cmake` file from the 
+# `@micro-os-plus/build-helper` package.
 
 if(COMMAND xpack_get_package_name_and_version)
   xpack_get_package_name_and_version("${CMAKE_CURRENT_SOURCE_DIR}/package.json")

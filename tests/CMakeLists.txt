@@ -23,7 +23,7 @@ project (micro-os-plus-micro-test-plus-tests
 )
 
 # -----------------------------------------------------------------------------
-# Project wide setup #
+# Project wide setup.
 
 # Enable the languages used in the tests.
 enable_language (C)
@@ -64,7 +64,7 @@ endif ()
 
 # The build-helper is a devDependency, available only after `xpm install`.
 list (APPEND CMAKE_MODULE_PATH
-      "${CMAKE_CURRENT_SOURCE_DIR}/xpacks/@micro-os-plus/build-helper/cmake"
+      "${CMAKE_CURRENT_SOURCE_DIR}/cmake"
 )
 include ("micro-os-plus-build-helper")
 
