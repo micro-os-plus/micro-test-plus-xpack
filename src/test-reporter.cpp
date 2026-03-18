@@ -208,7 +208,7 @@ namespace micro_os_plus::micro_test_plus
    * cases and folders.
    */
   test_reporter&
-  test_reporter_basic::operator<< (test_reporter& (*func) (test_reporter&))
+  test_reporter::operator<< (test_reporter& (*func) (test_reporter&))
   {
     // Call the endl function.
     (*func) (*this);
@@ -252,7 +252,7 @@ namespace micro_os_plus::micro_test_plus
    * folders.
    */
   test_reporter&
-  test_reporter_basic::operator<< (std::string_view sv)
+  test_reporter::operator<< (std::string_view sv)
   {
     out_.append (sv);
     return *this;
@@ -266,7 +266,7 @@ namespace micro_os_plus::micro_test_plus
    * formatting of test output across all test cases and folders.
    */
   test_reporter&
-  test_reporter_basic::operator<< (char c)
+  test_reporter::operator<< (char c)
   {
     out_.append (1, c);
     return *this;
@@ -281,7 +281,7 @@ namespace micro_os_plus::micro_test_plus
    * cases and folders.
    */
   test_reporter&
-  test_reporter_basic::operator<< (const char* s)
+  test_reporter::operator<< (const char* s)
   {
     out_.append (s);
     return *this;
@@ -296,7 +296,7 @@ namespace micro_os_plus::micro_test_plus
    * cases and folders.
    */
   test_reporter&
-  test_reporter_basic::operator<< (char* s)
+  test_reporter::operator<< (char* s)
   {
     out_.append (s);
     return *this;
@@ -311,7 +311,7 @@ namespace micro_os_plus::micro_test_plus
    * cases and folders.
    */
   test_reporter&
-  test_reporter_basic::operator<< (bool v)
+  test_reporter::operator<< (bool v)
   {
     out_.append (v ? "true" : "false");
     return *this;
@@ -325,7 +325,7 @@ namespace micro_os_plus::micro_test_plus
    * formatting of test output across all test cases and folders.
    */
   test_reporter&
-  test_reporter_basic::operator<< (std::nullptr_t)
+  test_reporter::operator<< (std::nullptr_t)
   {
     out_.append ("nullptr");
     return *this;
@@ -340,7 +340,7 @@ namespace micro_os_plus::micro_test_plus
    * and folders.
    */
   test_reporter&
-  test_reporter_basic::operator<< (signed char c)
+  test_reporter::operator<< (signed char c)
   {
     out_.append (std::to_string (c));
     out_.append ("c");
@@ -356,7 +356,7 @@ namespace micro_os_plus::micro_test_plus
    * test cases and folders.
    */
   test_reporter&
-  test_reporter_basic::operator<< (unsigned char c)
+  test_reporter::operator<< (unsigned char c)
   {
     out_.append (std::to_string (static_cast<int> (c)));
     out_.append ("uc");
@@ -372,7 +372,7 @@ namespace micro_os_plus::micro_test_plus
    * and folders.
    */
   test_reporter&
-  test_reporter_basic::operator<< (signed short v)
+  test_reporter::operator<< (signed short v)
   {
     out_.append (std::to_string (v));
     out_.append ("s");
@@ -388,7 +388,7 @@ namespace micro_os_plus::micro_test_plus
    * across all test cases and folders.
    */
   test_reporter&
-  test_reporter_basic::operator<< (unsigned short v)
+  test_reporter::operator<< (unsigned short v)
   {
     out_.append (std::to_string (static_cast<long> (v)));
     out_.append ("us");
@@ -404,7 +404,7 @@ namespace micro_os_plus::micro_test_plus
    * and folders.
    */
   test_reporter&
-  test_reporter_basic::operator<< (signed int v)
+  test_reporter::operator<< (signed int v)
   {
     out_.append (std::to_string (v));
     return *this;
@@ -419,7 +419,7 @@ namespace micro_os_plus::micro_test_plus
    * and folders.
    */
   test_reporter&
-  test_reporter_basic::operator<< (unsigned int v)
+  test_reporter::operator<< (unsigned int v)
   {
     out_.append (std::to_string (v));
     out_.append ("u");
@@ -435,7 +435,7 @@ namespace micro_os_plus::micro_test_plus
    * and folders.
    */
   test_reporter&
-  test_reporter_basic::operator<< (signed long v)
+  test_reporter::operator<< (signed long v)
   {
     out_.append (std::to_string (v));
     out_.append ("l");
@@ -451,7 +451,7 @@ namespace micro_os_plus::micro_test_plus
    * across all test cases and folders.
    */
   test_reporter&
-  test_reporter_basic::operator<< (unsigned long v)
+  test_reporter::operator<< (unsigned long v)
   {
     out_.append (std::to_string (v));
     out_.append ("ul");
@@ -467,7 +467,7 @@ namespace micro_os_plus::micro_test_plus
    * across all test cases and folders.
    */
   test_reporter&
-  test_reporter_basic::operator<< (signed long long v)
+  test_reporter::operator<< (signed long long v)
   {
     out_.append (std::to_string (v));
     out_.append ("ll");
@@ -483,7 +483,7 @@ namespace micro_os_plus::micro_test_plus
    * output across all test cases and folders.
    */
   test_reporter&
-  test_reporter_basic::operator<< (unsigned long long v)
+  test_reporter::operator<< (unsigned long long v)
   {
     out_.append (std::to_string (v));
     out_.append ("ull");
@@ -499,7 +499,7 @@ namespace micro_os_plus::micro_test_plus
    * formatting of test output across all test cases and folders.
    */
   test_reporter&
-  test_reporter_basic::operator<< (float v)
+  test_reporter::operator<< (float v)
   {
     out_.append (std::to_string (v));
     out_.append ("f");
@@ -515,7 +515,7 @@ namespace micro_os_plus::micro_test_plus
    * across all test cases and folders.
    */
   test_reporter&
-  test_reporter_basic::operator<< (double v)
+  test_reporter::operator<< (double v)
   {
     out_.append (std::to_string (v));
     return *this;
@@ -531,7 +531,7 @@ namespace micro_os_plus::micro_test_plus
    * across all test cases and folders.
    */
   test_reporter&
-  test_reporter_basic::operator<< (long double v)
+  test_reporter::operator<< (long double v)
   {
     out_.append (std::to_string (v));
     out_.append ("l");

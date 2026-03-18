@@ -221,9 +221,8 @@ namespace micro_os_plus::micro_test_plus
      * @param sv The string view to output.
      * @return Reference to the current test_reporter instance.
      */
-    virtual test_reporter&
-    operator<< (std::string_view sv)
-        = 0;
+    test_reporter&
+    operator<< (std::string_view sv);
 
     /**
      * @brief Output operator for a single character.
@@ -231,9 +230,8 @@ namespace micro_os_plus::micro_test_plus
      * @param c The character to output.
      * @return Reference to the current test_reporter instance.
      */
-    virtual test_reporter&
-    operator<< (char c)
-        = 0;
+    test_reporter&
+    operator<< (char c);
 
     /**
      * @brief Output operator for a constant character string.
@@ -241,9 +239,8 @@ namespace micro_os_plus::micro_test_plus
      * @param s The string to output.
      * @return Reference to the current test_reporter instance.
      */
-    virtual test_reporter&
-    operator<< (const char* s)
-        = 0;
+    test_reporter&
+    operator<< (const char* s);
 
     /**
      * @brief Output operator for a mutable character string.
@@ -251,9 +248,8 @@ namespace micro_os_plus::micro_test_plus
      * @param s The string to output.
      * @return Reference to the current test_reporter instance.
      */
-    virtual test_reporter&
-    operator<< (char* s)
-        = 0;
+    test_reporter&
+    operator<< (char* s);
 
     /**
      * @brief Output operator for boolean values.
@@ -261,15 +257,14 @@ namespace micro_os_plus::micro_test_plus
      * @param v The boolean value to output.
      * @return Reference to the current test_reporter instance.
      */
-    virtual test_reporter&
-    operator<< (bool v)
-        = 0;
+    test_reporter&
+    operator<< (bool v);
 
     /**
      * @brief Output operator for nullptr.
      * @return Reference to the current test_reporter instance.
      */
-    virtual test_reporter& operator<< (std::nullptr_t) = 0;
+    test_reporter& operator<< (std::nullptr_t);
 
     /**
      * @brief Output operator for signed char values.
@@ -277,9 +272,8 @@ namespace micro_os_plus::micro_test_plus
      * @param c The signed char value to output.
      * @return Reference to the current test_reporter instance.
      */
-    virtual test_reporter&
-    operator<< (signed char c)
-        = 0;
+    test_reporter&
+    operator<< (signed char c);
 
     /**
      * @brief Output operator for unsigned char values.
@@ -287,9 +281,8 @@ namespace micro_os_plus::micro_test_plus
      * @param c The unsigned char value to output.
      * @return Reference to the current test_reporter instance.
      */
-    virtual test_reporter&
-    operator<< (unsigned char c)
-        = 0;
+    test_reporter&
+    operator<< (unsigned char c);
 
     /**
      * @brief Output operator for signed short values.
@@ -297,9 +290,8 @@ namespace micro_os_plus::micro_test_plus
      * @param v The signed short value to output.
      * @return Reference to the current test_reporter instance.
      */
-    virtual test_reporter&
-    operator<< (signed short v)
-        = 0;
+    test_reporter&
+    operator<< (signed short v);
 
     /**
      * @brief Output operator for unsigned short values.
@@ -307,9 +299,8 @@ namespace micro_os_plus::micro_test_plus
      * @param v The unsigned short value to output.
      * @return Reference to the current test_reporter instance.
      */
-    virtual test_reporter&
-    operator<< (unsigned short v)
-        = 0;
+    test_reporter&
+    operator<< (unsigned short v);
 
     /**
      * @brief Output operator for signed int values.
@@ -317,9 +308,8 @@ namespace micro_os_plus::micro_test_plus
      * @param v The signed int value to output.
      * @return Reference to the current test_reporter instance.
      */
-    virtual test_reporter&
-    operator<< (signed int v)
-        = 0;
+    test_reporter&
+    operator<< (signed int v);
 
     /**
      * @brief Output operator for unsigned int values.
@@ -327,9 +317,8 @@ namespace micro_os_plus::micro_test_plus
      * @param v The unsigned int value to output.
      * @return Reference to the current test_reporter instance.
      */
-    virtual test_reporter&
-    operator<< (unsigned int v)
-        = 0;
+    test_reporter&
+    operator<< (unsigned int v);
 
     /**
      * @brief Output operator for signed long values.
@@ -337,9 +326,8 @@ namespace micro_os_plus::micro_test_plus
      * @param v The signed long value to output.
      * @return Reference to the current test_reporter instance.
      */
-    virtual test_reporter&
-    operator<< (signed long v)
-        = 0;
+    test_reporter&
+    operator<< (signed long v);
 
     /**
      * @brief Output operator for unsigned long values.
@@ -347,9 +335,8 @@ namespace micro_os_plus::micro_test_plus
      * @param v The unsigned long value to output.
      * @return Reference to the current test_reporter instance.
      */
-    virtual test_reporter&
-    operator<< (unsigned long v)
-        = 0;
+    test_reporter&
+    operator<< (unsigned long v);
 
     /**
      * @brief Output operator for signed long long values.
@@ -357,9 +344,8 @@ namespace micro_os_plus::micro_test_plus
      * @param v The signed long long value to output.
      * @return Reference to the current test_reporter instance.
      */
-    virtual test_reporter&
-    operator<< (signed long long v)
-        = 0;
+    test_reporter&
+    operator<< (signed long long v);
 
     /**
      * @brief Output operator for unsigned long long values.
@@ -367,9 +353,8 @@ namespace micro_os_plus::micro_test_plus
      * @param v The unsigned long long value to output.
      * @return Reference to the current test_reporter instance.
      */
-    virtual test_reporter&
-    operator<< (unsigned long long v)
-        = 0;
+    test_reporter&
+    operator<< (unsigned long long v);
 
     /**
      * @brief Output operator for float values.
@@ -377,9 +362,8 @@ namespace micro_os_plus::micro_test_plus
      * @param v The float value to output.
      * @return Reference to the current test_reporter instance.
      */
-    virtual test_reporter&
-    operator<< (float v)
-        = 0;
+    test_reporter&
+    operator<< (float v);
 
     /**
      * @brief Output operator for double values.
@@ -387,9 +371,8 @@ namespace micro_os_plus::micro_test_plus
      * @param v The double value to output.
      * @return Reference to the current test_reporter instance.
      */
-    virtual test_reporter&
-    operator<< (double v)
-        = 0;
+    test_reporter&
+    operator<< (double v);
 
     /**
      * @brief Output operator for long double values.
@@ -397,9 +380,8 @@ namespace micro_os_plus::micro_test_plus
      * @param v The long double value to output.
      * @return Reference to the current test_reporter instance.
      */
-    virtual test_reporter&
-    operator<< (long double v)
-        = 0;
+    test_reporter&
+    operator<< (long double v);
 
     /**
      * @brief Output operator to display any pointer.
@@ -419,9 +401,8 @@ namespace micro_os_plus::micro_test_plus
      * @param func Function pointer to the stream manipulator.
      * @return Reference to the current test_reporter instance.
      */
-    virtual test_reporter&
-    operator<< (test_reporter& (*func) (test_reporter&))
-        = 0;
+    test_reporter&
+    operator<< (test_reporter& (*func) (test_reporter&));
 
     // ------------------------------------------------------------------------
     // Specific operators.
@@ -857,47 +838,6 @@ namespace micro_os_plus::micro_test_plus
         = delete;
 
     ~test_reporter_basic () override = default;
-
-    test_reporter&
-    operator<< (std::string_view sv) override;
-    test_reporter&
-    operator<< (char c) override;
-    test_reporter&
-    operator<< (const char* s) override;
-    test_reporter&
-    operator<< (char* s) override;
-    test_reporter&
-    operator<< (bool v) override;
-    test_reporter& operator<< (std::nullptr_t) override;
-    test_reporter&
-    operator<< (signed char c) override;
-    test_reporter&
-    operator<< (unsigned char c) override;
-    test_reporter&
-    operator<< (signed short v) override;
-    test_reporter&
-    operator<< (unsigned short v) override;
-    test_reporter&
-    operator<< (signed int v) override;
-    test_reporter&
-    operator<< (unsigned int v) override;
-    test_reporter&
-    operator<< (signed long v) override;
-    test_reporter&
-    operator<< (unsigned long v) override;
-    test_reporter&
-    operator<< (signed long long v) override;
-    test_reporter&
-    operator<< (unsigned long long v) override;
-    test_reporter&
-    operator<< (float v) override;
-    test_reporter&
-    operator<< (double v) override;
-    test_reporter&
-    operator<< (long double v) override;
-
-    test_reporter&
-    operator<< (test_reporter& (*func) (test_reporter&)) override;
 
     void
     endline (void) override;
