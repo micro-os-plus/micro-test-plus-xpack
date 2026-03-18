@@ -216,17 +216,17 @@ namespace micro_os_plus::micro_test_plus
         was_successful = default_test_suite_->was_successful ();
       }
 
-    if (suites_ != nullptr)
+    if (test_suites_ != nullptr)
       {
-        for (auto suite : *suites_)
+        for (auto test_suite : *test_suites_)
           {
-            current_test_suite = suite;
+            current_test_suite = test_suite;
 
-            suite->begin_test_suite ();
-            suite->run ();
-            suite->end_test_suite ();
+            test_suite->begin_test_suite ();
+            test_suite->run ();
+            test_suite->end_test_suite ();
 
-            was_successful &= suite->was_successful ();
+            was_successful &= test_suite->was_successful ();
           }
         if (reporter->verbosity != verbosity::silent)
           {
@@ -254,11 +254,11 @@ namespace micro_os_plus::micro_test_plus
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    if (suites_ == nullptr)
+    if (test_suites_ == nullptr)
       {
-        suites_ = new std::vector<test_suite_base*> ();
+        test_suites_ = new std::vector<test_suite_base*> ();
       }
-    suites_->push_back (suite);
+    test_suites_->push_back (suite);
   }
 
   /**

@@ -220,7 +220,7 @@ namespace micro_os_plus::micro_test_plus
      * static objects in different compilation units can be automatically
      * executed.
      */
-    std::vector<test_suite_base*>* suites_;
+    std::vector<test_suite_base*>* test_suites_;
   };
 
   // --------------------------------------------------------------------------
