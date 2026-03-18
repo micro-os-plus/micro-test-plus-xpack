@@ -121,7 +121,7 @@ namespace micro_os_plus::micro_test_plus
 #endif // !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
 
     verbosity_t verbosity = verbosity::normal;
-    const char* reporter_name = "tap";
+    const char* reporter_name = "basic";
     for (int i = 0; i < argc; ++i)
       {
         if (strcmp (argv[i], "--verbose") == 0)
