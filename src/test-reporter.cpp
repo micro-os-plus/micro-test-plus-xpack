@@ -73,7 +73,7 @@ namespace micro_os_plus::micro_test_plus
   test_reporter&
   endl (test_reporter& stream)
   {
-    reporter.endline ();
+    reporter->endline ();
     return stream;
   }
 

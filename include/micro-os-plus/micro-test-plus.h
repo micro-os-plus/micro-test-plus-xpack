@@ -119,7 +119,7 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   extern test_runner runner;
-  extern test_reporter reporter;
+  extern test_reporter* reporter;
   extern test_suite_base* current_test_suite;
 
   // --------------------------------------------------------------------------
@@ -178,7 +178,7 @@ namespace micro_os_plus::micro_test_plus
    * @par SFINAE
    * Enabled only if `Expr_T` is derived from `detail::op` or
    * is convertible to `bool`.
-   * 
+   *
 
    * @param [in] expr Logical expression to evaluate.
    * @param [in] sl Optional source location, defaulting to the current line.

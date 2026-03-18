@@ -143,11 +143,11 @@ namespace micro_os_plus::micro_test_plus
     {
       if (value_)
         {
-          reporter.pass (expr_, message_);
+          reporter->pass (expr_, message_);
         }
       else
         {
-          reporter.fail (expr_, abort_, message_, location_);
+          reporter->fail (expr_, abort_, message_, location_);
         }
     }
 

@@ -145,7 +145,7 @@ compute_abc (void)
   strcat (str, "c");
 #pragma GCC diagnostic pop
 
-return str;
+  return str;
 }
 
 static void
@@ -173,7 +173,7 @@ main (int argc, char* argv[])
 {
   initialize (argc, argv);
 
-  if (reporter.verbosity > verbosity::quiet)
+  if (reporter->verbosity > verbosity::quiet)
     {
       printf ("\nµTest++ unit tests; some checks are expected to fail.\n");
     }
@@ -350,18 +350,20 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  test_case ("expect(true)", [] {
-    expect (true);
-    local_counts.successful_checks++;
+  test_case ("expect(true)",
+             []
+               {
+                 expect (true);
+                 local_counts.successful_checks++;
 
-    assume (true) << "Assumption 2";
-    local_counts.successful_checks++;
+                 assume (true) << "Assumption 2";
+                 local_counts.successful_checks++;
 
-    expect (true) << "TRUE";
-    local_counts.successful_checks++;
+                 expect (true) << "TRUE";
+                 local_counts.successful_checks++;
 
-    local_counts.test_cases++;
-  });
+                 local_counts.test_cases++;
+               });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
@@ -376,55 +378,17 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  test_case ("expect(false)", [] {
-    expect (false);
-    local_counts.failed_checks++;
+  test_case ("expect(false)",
+             []
+               {
+                 expect (false);
+                 local_counts.failed_checks++;
 
-    expect (false) << "false";
-    local_counts.failed_checks++;
+                 expect (false) << "false";
+                 local_counts.failed_checks++;
 
-    local_counts.test_cases++;
-  });
-
-  test_assert (current_test_suite->successful_checks ()
-               == local_counts.successful_checks);
-  test_assert (current_test_suite->failed_checks ()
-               == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
-
-  // --------------------------------------------------------------------------
-
-  test_case ("Integer comparisons", [] {
-    expect (eq (my_actual_integral (), 42)) << "actual == 42";
-    local_counts.successful_checks++;
-
-    expect (ne (my_actual_integral_more<int> (), 42)) << "actual+1 != 42";
-    local_counts.successful_checks++;
-
-    expect (lt (my_actual_integral_less<int> (), 42)) << "actual-1 < 42";
-    local_counts.successful_checks++;
-
-    expect (le (my_actual_integral (), 42)) << "actual <= 42";
-    local_counts.successful_checks++;
-
-    expect (gt (my_actual_integral_more<int> (), 42)) << "actual+1 > 42";
-    local_counts.successful_checks++;
-
-    expect (ge (my_actual_integral (), 42)) << "actual >= 42";
-    local_counts.successful_checks++;
-
-    {
-      using namespace literals;
-
-      expect (eq (42_i, 42_i));
-      local_counts.successful_checks++;
-
-      expect (eq (42, 42_i)) << "42 == 42_i";
-      local_counts.successful_checks++;
-    }
-
-    local_counts.test_cases++;
-  });
+                 local_counts.test_cases++;
+               });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
@@ -434,37 +398,42 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  test_case ("Failed integer comparisons", [] {
-    local_counts.test_cases++;
+  test_case ("Integer comparisons",
+             []
+               {
+                 expect (eq (my_actual_integral (), 42)) << "actual == 42";
+                 local_counts.successful_checks++;
 
-    expect (ne (my_actual_integral (), 42)) << "actual != 42";
-    local_counts.failed_checks++;
+                 expect (ne (my_actual_integral_more<int> (), 42))
+                     << "actual+1 != 42";
+                 local_counts.successful_checks++;
 
-    expect (eq (my_actual_integral_more<int> (), 42)) << "actual+1 == 42";
-    local_counts.failed_checks++;
+                 expect (lt (my_actual_integral_less<int> (), 42))
+                     << "actual-1 < 42";
+                 local_counts.successful_checks++;
 
-    expect (ge (my_actual_integral_less<int> (), 42)) << "actual-1 >= 42";
-    local_counts.failed_checks++;
+                 expect (le (my_actual_integral (), 42)) << "actual <= 42";
+                 local_counts.successful_checks++;
 
-    expect (gt (my_actual_integral (), 42)) << "actual > 42";
-    local_counts.failed_checks++;
+                 expect (gt (my_actual_integral_more<int> (), 42))
+                     << "actual+1 > 42";
+                 local_counts.successful_checks++;
 
-    expect (le (my_actual_integral_more<int> (), 42)) << "actual+1 <= 42";
-    local_counts.failed_checks++;
+                 expect (ge (my_actual_integral (), 42)) << "actual >= 42";
+                 local_counts.successful_checks++;
 
-    expect (lt (my_actual_integral (), 42)) << "actual < 42";
-    local_counts.failed_checks++;
+                 {
+                   using namespace literals;
 
-    {
-      using namespace literals;
+                   expect (eq (42_i, 42_i));
+                   local_counts.successful_checks++;
 
-      expect (ne (42_i, 42_i));
-      local_counts.failed_checks++;
+                   expect (eq (42, 42_i)) << "42 == 42_i";
+                   local_counts.successful_checks++;
+                 }
 
-      expect (ne (42, 42_i)) << "42 != 42_i";
-      local_counts.failed_checks++;
-    }
-  });
+                 local_counts.test_cases++;
+               });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
@@ -474,99 +443,42 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  test_case ("Float comparisons", [] {
-    expect (eq (my_actual_float<float> (), 42.0f)) << "actual == 42.0f";
-    local_counts.successful_checks++;
+  test_case ("Failed integer comparisons",
+             []
+               {
+                 local_counts.test_cases++;
 
-    expect (ne (my_actual_float<float> (), 43.0f)) << "actual != 43.0f";
-    local_counts.successful_checks++;
+                 expect (ne (my_actual_integral (), 42)) << "actual != 42";
+                 local_counts.failed_checks++;
 
-    expect (eq (my_actual_float<double> (), 42.0)) << "actual == 42.0";
-    local_counts.successful_checks++;
+                 expect (eq (my_actual_integral_more<int> (), 42))
+                     << "actual+1 == 42";
+                 local_counts.failed_checks++;
 
-    expect (ne (my_actual_float<double> (), 43.0)) << "actual != 43.0";
-    local_counts.successful_checks++;
+                 expect (ge (my_actual_integral_less<int> (), 42))
+                     << "actual-1 >= 42";
+                 local_counts.failed_checks++;
 
-    expect (eq (my_actual_float<float> (), 42.0)) << "actual == 42.0";
-    local_counts.successful_checks++;
+                 expect (gt (my_actual_integral (), 42)) << "actual > 42";
+                 local_counts.failed_checks++;
 
-    expect (ne (my_actual_float<double> (), 43.0)) << "actual != 43.0";
-    local_counts.successful_checks++;
+                 expect (le (my_actual_integral_more<int> (), 42))
+                     << "actual+1 <= 42";
+                 local_counts.failed_checks++;
 
-    expect (eq (my_actual_float<double> (), 42.0f)) << "actual == 42.0f";
-    local_counts.successful_checks++;
+                 expect (lt (my_actual_integral (), 42)) << "actual < 42";
+                 local_counts.failed_checks++;
 
-    expect (ne (my_actual_float<float> (), 43.0f)) << "actual != 43.0f";
-    local_counts.successful_checks++;
+                 {
+                   using namespace literals;
 
-    expect (eq (my_actual_float<float> (), 42)) << "actual == 42";
-    local_counts.successful_checks++;
+                   expect (ne (42_i, 42_i));
+                   local_counts.failed_checks++;
 
-    expect (ne (my_actual_float<float> (), 43)) << "actual != 43";
-    local_counts.successful_checks++;
-
-    {
-      using namespace literals;
-
-      expect (eq (_f (42.101f), 42.101_f)) << "42.101f == 42.101_f";
-      local_counts.successful_checks++;
-
-      expect (eq (_f (42.101f, 0.01f), 42.10_f))
-          << "42.101f epsilon 0.01f == 42.10_f";
-      local_counts.successful_checks++;
-
-      expect (ne (_f (42.101f, 0.1f), 42.1000_f))
-          << "42.101f epsilon 0.1f != 42.10_f";
-      local_counts.successful_checks++;
-
-      expect (eq (_f (42.1010001f, 0.1f), 42.1_f))
-          << "42.1010001f epsilon 0.1f == 42.1_f";
-      local_counts.successful_checks++;
-
-      expect (ne (_f (42.101f), 42.10_f)) << "42.101f != 42.10_f";
-      local_counts.successful_checks++;
-
-      expect (ne (_f (42.101f), 42.100_f)) << "42.101f != 42.100_f";
-      local_counts.successful_checks++;
-
-      expect (eq (_f (42.10f), 42.1_f)) << "42.10f == 42.1_f";
-      local_counts.successful_checks++;
-
-      expect (eq (_f (42.42f), 42.42_f)) << "42.42f == 42.42_f";
-      local_counts.successful_checks++;
-
-      expect (eq (_d (42.42), 42.420_d)) << "42.42 == 42.420_d";
-      local_counts.successful_checks++;
-
-      expect (eq (_d (42.0), 42.0_d)) << "42.0 == 42.0_d";
-      local_counts.successful_checks++;
-
-      expect (eq (_d (42.), 42._d)) << "42. == 42._d";
-      local_counts.successful_checks++;
-
-      expect (eq (_ld{ static_cast<long double> (42.42) }, 42.42_ld))
-          << "42.42 == 42.42_ld";
-      local_counts.successful_checks++;
-
-      expect (eq (1234._f, 1234.f)) << "1234._f == 1234.f";
-      local_counts.successful_checks++;
-
-      expect (eq (1234.56_f, 1234.56f)) << "1234.56_f == 1234.56f";
-      local_counts.successful_checks++;
-
-      expect (eq (12345678.9f, 12345678.9_f)) << "12345678.9f == 12345678.9_f";
-      local_counts.successful_checks++;
-
-      expect (eq (111111.42f, 111111.42_f)) << "111111.42f == 111111.42_f";
-      local_counts.successful_checks++;
-
-      expect (eq (1111111111.42, 1111111111.42_d))
-          << "1111111111.42 == 1111111111.42_d";
-      local_counts.successful_checks++;
-    }
-
-    local_counts.test_cases++;
-  });
+                   expect (ne (42, 42_i)) << "42 != 42_i";
+                   local_counts.failed_checks++;
+                 }
+               });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
@@ -574,81 +486,193 @@ main (int argc, char* argv[])
                == local_counts.failed_checks);
   test_assert (current_test_suite->test_cases () == local_counts.test_cases);
 
-  test_case ("Failed float comparisons", [] {
-    expect (ne (my_actual_float<float> (), 42.0f)) << "actual != 42.0";
-    local_counts.failed_checks++;
+  // --------------------------------------------------------------------------
 
-    expect (eq (my_actual_float<float> (), 43.0f)) << "actual == 43.0";
-    local_counts.failed_checks++;
+  test_case (
+      "Float comparisons",
+      []
+        {
+          expect (eq (my_actual_float<float> (), 42.0f)) << "actual == 42.0f";
+          local_counts.successful_checks++;
 
-    expect (ne (my_actual_float<float> (), 42)) << "actual != 42";
-    local_counts.failed_checks++;
+          expect (ne (my_actual_float<float> (), 43.0f)) << "actual != 43.0f";
+          local_counts.successful_checks++;
 
-    expect (eq (my_actual_float<float> (), 43)) << "actual == 43";
-    local_counts.failed_checks++;
+          expect (eq (my_actual_float<double> (), 42.0)) << "actual == 42.0";
+          local_counts.successful_checks++;
 
-    {
-      using namespace literals;
+          expect (ne (my_actual_float<double> (), 43.0)) << "actual != 43.0";
+          local_counts.successful_checks++;
 
-      expect (ne (_f (42.101f), 42.101_f)) << "42.101f != 42.101_f";
-      local_counts.failed_checks++;
+          expect (eq (my_actual_float<float> (), 42.0)) << "actual == 42.0";
+          local_counts.successful_checks++;
 
-      expect (ne (_f (42.101f, 0.01f), 42.10_f))
-          << "42.101f epsilon 0.01f != 42.10_f";
-      local_counts.failed_checks++;
+          expect (ne (my_actual_float<double> (), 43.0)) << "actual != 43.0";
+          local_counts.successful_checks++;
 
-      expect (eq (_f (42.101f, 0.1f), 42.1000_f))
-          << "42.101f epsilon 0.1f == 42.10_f";
-      local_counts.failed_checks++;
+          expect (eq (my_actual_float<double> (), 42.0f)) << "actual == 42.0f";
+          local_counts.successful_checks++;
 
-      expect (ne (_f (42.1010001f, 0.1f), 42.1_f))
-          << "42.1010001f epsilon 0.1f != 42.1_f";
-      local_counts.failed_checks++;
+          expect (ne (my_actual_float<float> (), 43.0f)) << "actual != 43.0f";
+          local_counts.successful_checks++;
 
-      expect (eq (_f (42.101f), 42.10_f)) << "42.101f == 42.10_f";
-      local_counts.failed_checks++;
+          expect (eq (my_actual_float<float> (), 42)) << "actual == 42";
+          local_counts.successful_checks++;
 
-      expect (eq (_f (42.101f), 42.100_f)) << "42.101f == 42.100_f";
-      local_counts.failed_checks++;
+          expect (ne (my_actual_float<float> (), 43)) << "actual != 43";
+          local_counts.successful_checks++;
 
-      expect (ne (_f (42.10f), 42.1_f)) << "42.10f == 42.1_f";
-      local_counts.failed_checks++;
+          {
+            using namespace literals;
 
-      expect (ne (_f (42.42f), 42.42_f)) << "42.42f == 42.42_f";
-      local_counts.failed_checks++;
+            expect (eq (_f (42.101f), 42.101_f)) << "42.101f == 42.101_f";
+            local_counts.successful_checks++;
 
-      expect (ne (_d (42.42), 42.420_d)) << "42.42 == 42.420_d";
-      local_counts.failed_checks++;
+            expect (eq (_f (42.101f, 0.01f), 42.10_f))
+                << "42.101f epsilon 0.01f == 42.10_f";
+            local_counts.successful_checks++;
 
-      expect (ne (_d (42.0), 42.0_d)) << "42.0 == 42.0_d";
-      local_counts.failed_checks++;
+            expect (ne (_f (42.101f, 0.1f), 42.1000_f))
+                << "42.101f epsilon 0.1f != 42.10_f";
+            local_counts.successful_checks++;
 
-      expect (ne (_d (42.), 42._d)) << "42. == 42._d";
-      local_counts.failed_checks++;
+            expect (eq (_f (42.1010001f, 0.1f), 42.1_f))
+                << "42.1010001f epsilon 0.1f == 42.1_f";
+            local_counts.successful_checks++;
 
-      expect (ne (_ld{ static_cast<long double> (42.42) }, 42.42_ld))
-          << "42.42 == 42.42_ld";
-      local_counts.failed_checks++;
+            expect (ne (_f (42.101f), 42.10_f)) << "42.101f != 42.10_f";
+            local_counts.successful_checks++;
 
-      expect (ne (1234._f, 1234.f)) << "1234._f == 1234.f";
-      local_counts.failed_checks++;
+            expect (ne (_f (42.101f), 42.100_f)) << "42.101f != 42.100_f";
+            local_counts.successful_checks++;
 
-      expect (ne (1234.56_f, 1234.56f)) << "1234.56_f == 1234.56f";
-      local_counts.failed_checks++;
+            expect (eq (_f (42.10f), 42.1_f)) << "42.10f == 42.1_f";
+            local_counts.successful_checks++;
 
-      expect (ne (12345678.9f, 12345678.9_f)) << "12345678.9f == 12345678.9_f";
-      local_counts.failed_checks++;
+            expect (eq (_f (42.42f), 42.42_f)) << "42.42f == 42.42_f";
+            local_counts.successful_checks++;
 
-      expect (ne (111111.42f, 111111.42_f)) << "111111.42f == 111111.42_f";
-      local_counts.failed_checks++;
+            expect (eq (_d (42.42), 42.420_d)) << "42.42 == 42.420_d";
+            local_counts.successful_checks++;
 
-      expect (ne (1111111111.42, 1111111111.42_d))
-          << "1111111111.42 == 1111111111.42_d";
-      local_counts.failed_checks++;
-    }
+            expect (eq (_d (42.0), 42.0_d)) << "42.0 == 42.0_d";
+            local_counts.successful_checks++;
 
-    local_counts.test_cases++;
-  });
+            expect (eq (_d (42.), 42._d)) << "42. == 42._d";
+            local_counts.successful_checks++;
+
+            expect (eq (_ld{ static_cast<long double> (42.42) }, 42.42_ld))
+                << "42.42 == 42.42_ld";
+            local_counts.successful_checks++;
+
+            expect (eq (1234._f, 1234.f)) << "1234._f == 1234.f";
+            local_counts.successful_checks++;
+
+            expect (eq (1234.56_f, 1234.56f)) << "1234.56_f == 1234.56f";
+            local_counts.successful_checks++;
+
+            expect (eq (12345678.9f, 12345678.9_f))
+                << "12345678.9f == 12345678.9_f";
+            local_counts.successful_checks++;
+
+            expect (eq (111111.42f, 111111.42_f))
+                << "111111.42f == 111111.42_f";
+            local_counts.successful_checks++;
+
+            expect (eq (1111111111.42, 1111111111.42_d))
+                << "1111111111.42 == 1111111111.42_d";
+            local_counts.successful_checks++;
+          }
+
+          local_counts.test_cases++;
+        });
+
+  test_assert (current_test_suite->successful_checks ()
+               == local_counts.successful_checks);
+  test_assert (current_test_suite->failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+
+  test_case (
+      "Failed float comparisons",
+      []
+        {
+          expect (ne (my_actual_float<float> (), 42.0f)) << "actual != 42.0";
+          local_counts.failed_checks++;
+
+          expect (eq (my_actual_float<float> (), 43.0f)) << "actual == 43.0";
+          local_counts.failed_checks++;
+
+          expect (ne (my_actual_float<float> (), 42)) << "actual != 42";
+          local_counts.failed_checks++;
+
+          expect (eq (my_actual_float<float> (), 43)) << "actual == 43";
+          local_counts.failed_checks++;
+
+          {
+            using namespace literals;
+
+            expect (ne (_f (42.101f), 42.101_f)) << "42.101f != 42.101_f";
+            local_counts.failed_checks++;
+
+            expect (ne (_f (42.101f, 0.01f), 42.10_f))
+                << "42.101f epsilon 0.01f != 42.10_f";
+            local_counts.failed_checks++;
+
+            expect (eq (_f (42.101f, 0.1f), 42.1000_f))
+                << "42.101f epsilon 0.1f == 42.10_f";
+            local_counts.failed_checks++;
+
+            expect (ne (_f (42.1010001f, 0.1f), 42.1_f))
+                << "42.1010001f epsilon 0.1f != 42.1_f";
+            local_counts.failed_checks++;
+
+            expect (eq (_f (42.101f), 42.10_f)) << "42.101f == 42.10_f";
+            local_counts.failed_checks++;
+
+            expect (eq (_f (42.101f), 42.100_f)) << "42.101f == 42.100_f";
+            local_counts.failed_checks++;
+
+            expect (ne (_f (42.10f), 42.1_f)) << "42.10f == 42.1_f";
+            local_counts.failed_checks++;
+
+            expect (ne (_f (42.42f), 42.42_f)) << "42.42f == 42.42_f";
+            local_counts.failed_checks++;
+
+            expect (ne (_d (42.42), 42.420_d)) << "42.42 == 42.420_d";
+            local_counts.failed_checks++;
+
+            expect (ne (_d (42.0), 42.0_d)) << "42.0 == 42.0_d";
+            local_counts.failed_checks++;
+
+            expect (ne (_d (42.), 42._d)) << "42. == 42._d";
+            local_counts.failed_checks++;
+
+            expect (ne (_ld{ static_cast<long double> (42.42) }, 42.42_ld))
+                << "42.42 == 42.42_ld";
+            local_counts.failed_checks++;
+
+            expect (ne (1234._f, 1234.f)) << "1234._f == 1234.f";
+            local_counts.failed_checks++;
+
+            expect (ne (1234.56_f, 1234.56f)) << "1234.56_f == 1234.56f";
+            local_counts.failed_checks++;
+
+            expect (ne (12345678.9f, 12345678.9_f))
+                << "12345678.9f == 12345678.9_f";
+            local_counts.failed_checks++;
+
+            expect (ne (111111.42f, 111111.42_f))
+                << "111111.42f == 111111.42_f";
+            local_counts.failed_checks++;
+
+            expect (ne (1111111111.42, 1111111111.42_d))
+                << "1111111111.42 == 1111111111.42_d";
+            local_counts.failed_checks++;
+          }
+
+          local_counts.test_cases++;
+        });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
@@ -658,67 +682,35 @@ main (int argc, char* argv[])
 
   // As all pointers, 'char*' are compared by address.
   // To compare by content, use string_value{}.
-  test_case ("String comparisons", [] {
-    expect (eq (std::string_view{ compute_abc () }, "abc"sv))
-        << "actual_sv == abc_sv";
-    local_counts.successful_checks++;
+  test_case ("String comparisons",
+             []
+               {
+                 expect (eq (std::string_view{ compute_abc () }, "abc"sv))
+                     << "actual_sv == abc_sv";
+                 local_counts.successful_checks++;
 
-    expect (ne (std::string_view{ compute_abc () }, "abx"sv))
-        << "actual_sv != abx_sv";
-    local_counts.successful_checks++;
+                 expect (ne (std::string_view{ compute_abc () }, "abx"sv))
+                     << "actual_sv != abx_sv";
+                 local_counts.successful_checks++;
 
-    expect (lt (std::string_view{ compute_abc () }, "abd"sv))
-        << "actual_sv < abd_sv";
-    local_counts.successful_checks++;
+                 expect (lt (std::string_view{ compute_abc () }, "abd"sv))
+                     << "actual_sv < abd_sv";
+                 local_counts.successful_checks++;
 
-    expect (le (std::string_view{ compute_abc () }, "abc"sv))
-        << "actual_sv <= abc_sv";
-    local_counts.successful_checks++;
+                 expect (le (std::string_view{ compute_abc () }, "abc"sv))
+                     << "actual_sv <= abc_sv";
+                 local_counts.successful_checks++;
 
-    expect (gt (std::string_view{ compute_abc () }, "abb"sv))
-        << "actual_sv > abb_sv";
-    local_counts.successful_checks++;
+                 expect (gt (std::string_view{ compute_abc () }, "abb"sv))
+                     << "actual_sv > abb_sv";
+                 local_counts.successful_checks++;
 
-    expect (ge (std::string_view{ compute_abc () }, "abc"sv))
-        << "actual_sv >= abc_sv";
-    local_counts.successful_checks++;
+                 expect (ge (std::string_view{ compute_abc () }, "abc"sv))
+                     << "actual_sv >= abc_sv";
+                 local_counts.successful_checks++;
 
-    local_counts.test_cases++;
-  });
-
-  test_assert (current_test_suite->successful_checks ()
-               == local_counts.successful_checks);
-  test_assert (current_test_suite->failed_checks ()
-               == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
-
-  test_case ("Failed string comparisons", [] {
-    expect (ne (std::string_view{ compute_abc () }, "abc"sv))
-        << "actual_sv != abc_sv";
-    local_counts.failed_checks++;
-
-    expect (eq (std::string_view{ compute_abc () }, "abx"sv))
-        << "actual_sv == abx_sv";
-    local_counts.failed_checks++;
-
-    expect (ge (std::string_view{ compute_abc () }, "abd"sv))
-        << "actual_sv >= abd_sv";
-    local_counts.failed_checks++;
-
-    expect (gt (std::string_view{ compute_abc () }, "abc"sv))
-        << "actual_sv > abc_sv";
-    local_counts.failed_checks++;
-
-    expect (le (std::string_view{ compute_abc () }, "abb"sv))
-        << "actual_sv <= abb_sv";
-    local_counts.failed_checks++;
-
-    expect (lt (std::string_view{ compute_abc () }, "abc"sv))
-        << "actual_sv < abc_sv";
-    local_counts.failed_checks++;
-
-    local_counts.test_cases++;
-  });
+                 local_counts.test_cases++;
+               });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
@@ -726,52 +718,35 @@ main (int argc, char* argv[])
                == local_counts.failed_checks);
   test_assert (current_test_suite->test_cases () == local_counts.test_cases);
 
-  test_case ("Pointer comparisons", [] {
-    int one = 1;
-    int* ptr1 = &one;
-    int* ptr2 = &one;
-    void* a_nullptr = nullptr;
-    void* a_non_nullptr = &a_nullptr;
-    void (*pfunc) (void) = a_func;
+  test_case ("Failed string comparisons",
+             []
+               {
+                 expect (ne (std::string_view{ compute_abc () }, "abc"sv))
+                     << "actual_sv != abc_sv";
+                 local_counts.failed_checks++;
 
-    expect (eq (ptr1, &one)) << "ptr1 == &one";
-    local_counts.successful_checks++;
+                 expect (eq (std::string_view{ compute_abc () }, "abx"sv))
+                     << "actual_sv == abx_sv";
+                 local_counts.failed_checks++;
 
-    expect (eq (ptr1, ptr2)) << "ptr1 == ptr2";
-    local_counts.successful_checks++;
+                 expect (ge (std::string_view{ compute_abc () }, "abd"sv))
+                     << "actual_sv >= abd_sv";
+                 local_counts.failed_checks++;
 
-    expect (le (ptr1, ptr2)) << "ptr1 <= ptr2";
-    local_counts.successful_checks++;
+                 expect (gt (std::string_view{ compute_abc () }, "abc"sv))
+                     << "actual_sv > abc_sv";
+                 local_counts.failed_checks++;
 
-    expect (ge (ptr1, ptr2)) << "ptr1 >= ptr2";
-    local_counts.successful_checks++;
+                 expect (le (std::string_view{ compute_abc () }, "abb"sv))
+                     << "actual_sv <= abb_sv";
+                 local_counts.failed_checks++;
 
-    expect (ne (ptr1, a_non_nullptr)) << "ptr1 != a_non_nullptr";
-    local_counts.successful_checks++;
+                 expect (lt (std::string_view{ compute_abc () }, "abc"sv))
+                     << "actual_sv < abc_sv";
+                 local_counts.failed_checks++;
 
-    expect (eq (pfunc, a_func)) << "pfunc == afunc";
-    local_counts.successful_checks++;
-
-    expect (ne (pfunc, a_non_nullptr)) << "pfunc != a_non_nullptr";
-    local_counts.successful_checks++;
-
-    struct
-    {
-      int one;
-      int two;
-    } pair;
-
-    int* pone = &pair.one;
-    int* ptwo = &pair.two;
-
-    expect (lt (pone, ptwo)) << "pone < ptwo";
-    local_counts.successful_checks++;
-
-    expect (gt (ptwo, pone)) << "ptwo > pone";
-    local_counts.successful_checks++;
-
-    local_counts.test_cases++;
-  });
+                 local_counts.test_cases++;
+               });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
@@ -779,75 +754,55 @@ main (int argc, char* argv[])
                == local_counts.failed_checks);
   test_assert (current_test_suite->test_cases () == local_counts.test_cases);
 
-  test_case ("Failed pointer comparisons", [] {
-    int one = 1;
-    int* ptr1 = &one;
-    int* ptr2 = &one;
-    void* a_nullptr = nullptr;
-    void* a_non_nullptr = &a_nullptr;
-    void (*pfunc) (void) = a_func;
+  test_case ("Pointer comparisons",
+             []
+               {
+                 int one = 1;
+                 int* ptr1 = &one;
+                 int* ptr2 = &one;
+                 void* a_nullptr = nullptr;
+                 void* a_non_nullptr = &a_nullptr;
+                 void (*pfunc) (void) = a_func;
 
-    expect (ne (ptr1, &one)) << "ptr1 != &one";
-    local_counts.failed_checks++;
+                 expect (eq (ptr1, &one)) << "ptr1 == &one";
+                 local_counts.successful_checks++;
 
-    expect (ne (ptr1, ptr2)) << "ptr1 != ptr2";
-    local_counts.failed_checks++;
+                 expect (eq (ptr1, ptr2)) << "ptr1 == ptr2";
+                 local_counts.successful_checks++;
 
-    expect (gt (ptr1, ptr2)) << "ptr1 > ptr2";
-    local_counts.failed_checks++;
+                 expect (le (ptr1, ptr2)) << "ptr1 <= ptr2";
+                 local_counts.successful_checks++;
 
-    expect (lt (ptr1, ptr2)) << "ptr1 < ptr2";
-    local_counts.failed_checks++;
+                 expect (ge (ptr1, ptr2)) << "ptr1 >= ptr2";
+                 local_counts.successful_checks++;
 
-    expect (eq (ptr1, a_non_nullptr)) << "ptr1 == a_non_nullptr";
-    local_counts.failed_checks++;
+                 expect (ne (ptr1, a_non_nullptr)) << "ptr1 != a_non_nullptr";
+                 local_counts.successful_checks++;
 
-    expect (ne (pfunc, a_func)) << "pfunc != afunc";
-    local_counts.failed_checks++;
+                 expect (eq (pfunc, a_func)) << "pfunc == afunc";
+                 local_counts.successful_checks++;
 
-    expect (eq (pfunc, a_non_nullptr)) << "pfunc == a_non_nullptr";
-    local_counts.failed_checks++;
+                 expect (ne (pfunc, a_non_nullptr))
+                     << "pfunc != a_non_nullptr";
+                 local_counts.successful_checks++;
 
-    struct
-    {
-      int one;
-      int two;
-    } pair;
+                 struct
+                 {
+                   int one;
+                   int two;
+                 } pair;
 
-    int* pone = &pair.one;
-    int* ptwo = &pair.two;
+                 int* pone = &pair.one;
+                 int* ptwo = &pair.two;
 
-    expect (ge (pone, ptwo)) << "pone >= ptwo";
-    local_counts.failed_checks++;
+                 expect (lt (pone, ptwo)) << "pone < ptwo";
+                 local_counts.successful_checks++;
 
-    expect (le (ptwo, pone)) << "ptwo <= pone";
-    local_counts.failed_checks++;
+                 expect (gt (ptwo, pone)) << "ptwo > pone";
+                 local_counts.successful_checks++;
 
-    local_counts.test_cases++;
-  });
-
-  test_assert (current_test_suite->successful_checks ()
-               == local_counts.successful_checks);
-  test_assert (current_test_suite->failed_checks ()
-               == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
-
-  test_case ("Null pointer comparisons", [] {
-    void* a_nullptr = nullptr;
-    void* a_non_nullptr = &a_nullptr;
-    void (*pfunc) (void) = nullptr;
-
-    expect (eq (a_nullptr, nullptr)) << "a_nullptr == nullptr";
-    local_counts.successful_checks++;
-
-    expect (ne (a_non_nullptr, nullptr)) << "a_non_nullptr != nullptr";
-    local_counts.successful_checks++;
-
-    expect (eq (pfunc, nullptr)) << "pfunc == nullptr";
-    local_counts.successful_checks++;
-
-    local_counts.test_cases++;
-  });
+                 local_counts.test_cases++;
+               });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
@@ -855,22 +810,107 @@ main (int argc, char* argv[])
                == local_counts.failed_checks);
   test_assert (current_test_suite->test_cases () == local_counts.test_cases);
 
-  test_case ("Failed null pointer comparisons", [] {
-    void* a_nullptr = nullptr;
-    void* a_non_nullptr = &a_nullptr;
-    void (*pfunc) (void) = nullptr;
+  test_case ("Failed pointer comparisons",
+             []
+               {
+                 int one = 1;
+                 int* ptr1 = &one;
+                 int* ptr2 = &one;
+                 void* a_nullptr = nullptr;
+                 void* a_non_nullptr = &a_nullptr;
+                 void (*pfunc) (void) = a_func;
 
-    expect (ne (a_nullptr, nullptr)) << "a_nullptr != nullptr";
-    local_counts.failed_checks++;
+                 expect (ne (ptr1, &one)) << "ptr1 != &one";
+                 local_counts.failed_checks++;
 
-    expect (eq (a_non_nullptr, nullptr)) << "a_non_nullptr == nullptr";
-    local_counts.failed_checks++;
+                 expect (ne (ptr1, ptr2)) << "ptr1 != ptr2";
+                 local_counts.failed_checks++;
 
-    expect (ne (pfunc, nullptr)) << "pfunc != nullptr";
-    local_counts.failed_checks++;
+                 expect (gt (ptr1, ptr2)) << "ptr1 > ptr2";
+                 local_counts.failed_checks++;
 
-    local_counts.test_cases++;
-  });
+                 expect (lt (ptr1, ptr2)) << "ptr1 < ptr2";
+                 local_counts.failed_checks++;
+
+                 expect (eq (ptr1, a_non_nullptr)) << "ptr1 == a_non_nullptr";
+                 local_counts.failed_checks++;
+
+                 expect (ne (pfunc, a_func)) << "pfunc != afunc";
+                 local_counts.failed_checks++;
+
+                 expect (eq (pfunc, a_non_nullptr))
+                     << "pfunc == a_non_nullptr";
+                 local_counts.failed_checks++;
+
+                 struct
+                 {
+                   int one;
+                   int two;
+                 } pair;
+
+                 int* pone = &pair.one;
+                 int* ptwo = &pair.two;
+
+                 expect (ge (pone, ptwo)) << "pone >= ptwo";
+                 local_counts.failed_checks++;
+
+                 expect (le (ptwo, pone)) << "ptwo <= pone";
+                 local_counts.failed_checks++;
+
+                 local_counts.test_cases++;
+               });
+
+  test_assert (current_test_suite->successful_checks ()
+               == local_counts.successful_checks);
+  test_assert (current_test_suite->failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+
+  test_case ("Null pointer comparisons",
+             []
+               {
+                 void* a_nullptr = nullptr;
+                 void* a_non_nullptr = &a_nullptr;
+                 void (*pfunc) (void) = nullptr;
+
+                 expect (eq (a_nullptr, nullptr)) << "a_nullptr == nullptr";
+                 local_counts.successful_checks++;
+
+                 expect (ne (a_non_nullptr, nullptr))
+                     << "a_non_nullptr != nullptr";
+                 local_counts.successful_checks++;
+
+                 expect (eq (pfunc, nullptr)) << "pfunc == nullptr";
+                 local_counts.successful_checks++;
+
+                 local_counts.test_cases++;
+               });
+
+  test_assert (current_test_suite->successful_checks ()
+               == local_counts.successful_checks);
+  test_assert (current_test_suite->failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+
+  test_case ("Failed null pointer comparisons",
+             []
+               {
+                 void* a_nullptr = nullptr;
+                 void* a_non_nullptr = &a_nullptr;
+                 void (*pfunc) (void) = nullptr;
+
+                 expect (ne (a_nullptr, nullptr)) << "a_nullptr != nullptr";
+                 local_counts.failed_checks++;
+
+                 expect (eq (a_non_nullptr, nullptr))
+                     << "a_non_nullptr == nullptr";
+                 local_counts.failed_checks++;
+
+                 expect (ne (pfunc, nullptr)) << "pfunc != nullptr";
+                 local_counts.failed_checks++;
+
+                 local_counts.test_cases++;
+               });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
@@ -880,22 +920,24 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  test_case ("reflection::type_name()", [] {
-    using namespace std::literals::string_view_literals;
+  test_case ("reflection::type_name()",
+             []
+               {
+                 using namespace std::literals::string_view_literals;
 
 #if 0
     std::string_view sv = reflection::type_name<void> ();
     printf ("|%*.s|\n", sv.length (), sv.data ());
 #endif
 
-    expect (eq (reflection::type_name<void> (), "void"sv));
-    local_counts.successful_checks++;
+                 expect (eq (reflection::type_name<void> (), "void"sv));
+                 local_counts.successful_checks++;
 
-    expect (eq (reflection::type_name<int> (), "int"sv));
-    local_counts.successful_checks++;
+                 expect (eq (reflection::type_name<int> (), "int"sv));
+                 local_counts.successful_checks++;
 
-    local_counts.test_cases++;
-  });
+                 local_counts.test_cases++;
+               });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
@@ -905,23 +947,26 @@ main (int argc, char* argv[])
 
 #if defined(__EXCEPTIONS)
 
-  test_case ("thrown exceptions", [] {
-    expect (throws ([] { exercise_throw (true); })) << "exception thrown";
-    local_counts.successful_checks++;
+  test_case ("thrown exceptions",
+             []
+               {
+                 expect (throws ([] { exercise_throw (true); }))
+                     << "exception thrown";
+                 local_counts.successful_checks++;
 
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
 #endif
-    expect (throws<std::runtime_error> ([] {
-      throw std::runtime_error{ "" };
-    })) << "std::runtime_error thrown";
+                 expect (throws<std::runtime_error> (
+                     [] { throw std::runtime_error{ "" }; }))
+                     << "std::runtime_error thrown";
 #pragma GCC diagnostic pop
 
-    local_counts.successful_checks++;
+                 local_counts.successful_checks++;
 
-    local_counts.test_cases++;
-  });
+                 local_counts.test_cases++;
+               });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
@@ -929,37 +974,26 @@ main (int argc, char* argv[])
                == local_counts.failed_checks);
   test_assert (current_test_suite->test_cases () == local_counts.test_cases);
 
-  test_case ("Failed thrown exceptions", [] {
-    expect (throws ([] { exercise_throw (false); })) << "exception thrown";
-    local_counts.failed_checks++;
+  test_case ("Failed thrown exceptions",
+             []
+               {
+                 expect (throws ([] { exercise_throw (false); }))
+                     << "exception thrown";
+                 local_counts.failed_checks++;
 
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
 #endif
-    expect (throws<std::runtime_error> ([] {
-      throw std::invalid_argument{ "" };
-    })) << "std::runtime_error thrown";
+                 expect (throws<std::runtime_error> (
+                     [] { throw std::invalid_argument{ "" }; }))
+                     << "std::runtime_error thrown";
 #pragma GCC diagnostic pop
 
-    local_counts.failed_checks++;
+                 local_counts.failed_checks++;
 
-    local_counts.test_cases++;
-  });
-
-  test_assert (current_test_suite->successful_checks ()
-               == local_counts.successful_checks);
-  test_assert (current_test_suite->failed_checks ()
-               == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
-
-  test_case ("Not thrown exceptions", [] {
-    expect (nothrow ([] { exercise_throw (false); }))
-        << "exception not thrown";
-    local_counts.successful_checks++;
-
-    local_counts.test_cases++;
-  });
+                 local_counts.test_cases++;
+               });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
@@ -967,12 +1001,31 @@ main (int argc, char* argv[])
                == local_counts.failed_checks);
   test_assert (current_test_suite->test_cases () == local_counts.test_cases);
 
-  test_case ("Failed not thrown exceptions", [] {
-    expect (nothrow ([] { exercise_throw (true); })) << "exception not thrown";
-    local_counts.failed_checks++;
+  test_case ("Not thrown exceptions",
+             []
+               {
+                 expect (nothrow ([] { exercise_throw (false); }))
+                     << "exception not thrown";
+                 local_counts.successful_checks++;
 
-    local_counts.test_cases++;
-  });
+                 local_counts.test_cases++;
+               });
+
+  test_assert (current_test_suite->successful_checks ()
+               == local_counts.successful_checks);
+  test_assert (current_test_suite->failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+
+  test_case ("Failed not thrown exceptions",
+             []
+               {
+                 expect (nothrow ([] { exercise_throw (true); }))
+                     << "exception not thrown";
+                 local_counts.failed_checks++;
+
+                 local_counts.test_cases++;
+               });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
@@ -982,63 +1035,67 @@ main (int argc, char* argv[])
 
 #endif // __EXCEPTIONS
 
-  test_case ("Logical operations", [] {
-    expect (_not (ne (my_actual_integral (), 42))) << "not (actual != 42)";
-    local_counts.successful_checks++;
+  test_case ("Logical operations",
+             []
+               {
+                 expect (_not (ne (my_actual_integral (), 42)))
+                     << "not (actual != 42)";
+                 local_counts.successful_checks++;
 
-    expect (_not (eq (my_actual_integral (), 42))) << "not (actual == 42)";
-    local_counts.failed_checks++;
+                 expect (_not (eq (my_actual_integral (), 42)))
+                     << "not (actual == 42)";
+                 local_counts.failed_checks++;
 
-    expect (_and (eq (my_actual_integral (), 42),
-                  eq (my_actual_float<float> (), 42.0)))
-        << "(actual == 42) and (actual == 42.0)";
-    local_counts.successful_checks++;
+                 expect (_and (eq (my_actual_integral (), 42),
+                               eq (my_actual_float<float> (), 42.0)))
+                     << "(actual == 42) and (actual == 42.0)";
+                 local_counts.successful_checks++;
 
-    expect (_and (eq (my_actual_integral (), 42),
-                  ne (my_actual_float<float> (), 42.0)))
-        << "(actual == 42) and (actual != 42.0)";
-    local_counts.failed_checks++;
+                 expect (_and (eq (my_actual_integral (), 42),
+                               ne (my_actual_float<float> (), 42.0)))
+                     << "(actual == 42) and (actual != 42.0)";
+                 local_counts.failed_checks++;
 
-    expect (_and (ne (my_actual_integral (), 42),
-                  eq (my_actual_float<float> (), 42.0)))
-        << "(actual != 42) and (actual == 42.0)";
-    local_counts.failed_checks++;
+                 expect (_and (ne (my_actual_integral (), 42),
+                               eq (my_actual_float<float> (), 42.0)))
+                     << "(actual != 42) and (actual == 42.0)";
+                 local_counts.failed_checks++;
 
-    expect (_and (ne (my_actual_integral (), 42),
-                  ne (my_actual_float<float> (), 42.0)))
-        << "(actual != 42) and (actual != 42.0)";
-    local_counts.failed_checks++;
+                 expect (_and (ne (my_actual_integral (), 42),
+                               ne (my_actual_float<float> (), 42.0)))
+                     << "(actual != 42) and (actual != 42.0)";
+                 local_counts.failed_checks++;
 
-    expect (_and (eq (my_actual_integral (), 42),
-                  eq (my_actual_float<float> (), 42.0)));
-    local_counts.successful_checks++;
+                 expect (_and (eq (my_actual_integral (), 42),
+                               eq (my_actual_float<float> (), 42.0)));
+                 local_counts.successful_checks++;
 
-    expect (_and (eq (my_actual_integral (), 42),
-                  ne (my_actual_float<float> (), 42.0)));
-    local_counts.failed_checks++;
+                 expect (_and (eq (my_actual_integral (), 42),
+                               ne (my_actual_float<float> (), 42.0)));
+                 local_counts.failed_checks++;
 
-    expect (_or (eq (my_actual_integral (), 42),
-                 eq (my_actual_float<float> (), 42.0)))
-        << "(actual == 42) or (actual == 42.0)";
-    local_counts.successful_checks++;
+                 expect (_or (eq (my_actual_integral (), 42),
+                              eq (my_actual_float<float> (), 42.0)))
+                     << "(actual == 42) or (actual == 42.0)";
+                 local_counts.successful_checks++;
 
-    expect (_or (eq (my_actual_integral (), 42),
-                 ne (my_actual_float<float> (), 42.0)))
-        << "(actual == 42) or (actual != 42.0)";
-    local_counts.successful_checks++;
+                 expect (_or (eq (my_actual_integral (), 42),
+                              ne (my_actual_float<float> (), 42.0)))
+                     << "(actual == 42) or (actual != 42.0)";
+                 local_counts.successful_checks++;
 
-    expect (_or (ne (my_actual_integral (), 42),
-                 eq (my_actual_float<float> (), 42.0)))
-        << "(actual != 42) or (actual == 42.0)";
-    local_counts.successful_checks++;
+                 expect (_or (ne (my_actual_integral (), 42),
+                              eq (my_actual_float<float> (), 42.0)))
+                     << "(actual != 42) or (actual == 42.0)";
+                 local_counts.successful_checks++;
 
-    expect (_or (ne (my_actual_integral (), 42),
-                 ne (my_actual_float<float> (), 42.0)))
-        << "(actual != 42) or (actual != 42.0)";
-    local_counts.failed_checks++;
+                 expect (_or (ne (my_actual_integral (), 42),
+                              ne (my_actual_float<float> (), 42.0)))
+                     << "(actual != 42) or (actual != 42.0)";
+                 local_counts.failed_checks++;
 
-    local_counts.test_cases++;
-  });
+                 local_counts.test_cases++;
+               });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
@@ -1046,96 +1103,99 @@ main (int argc, char* argv[])
                == local_counts.failed_checks);
   test_assert (current_test_suite->test_cases () == local_counts.test_cases);
 
-  test_case ("Operators", [] {
-    using namespace operators;
-    using namespace literals;
+  test_case (
+      "Operators",
+      []
+        {
+          using namespace operators;
+          using namespace literals;
 
-    expect (my_actual_integral () == 42_i) << "actual == 42";
-    local_counts.successful_checks++;
+          expect (my_actual_integral () == 42_i) << "actual == 42";
+          local_counts.successful_checks++;
 
-    expect (my_actual_integral_more<int> () == 42)
-        << "actual+1 == 42 with scalar";
-    local_counts.failed_checks++;
+          expect (my_actual_integral_more<int> () == 42)
+              << "actual+1 == 42 with scalar";
+          local_counts.failed_checks++;
 
-    expect (my_actual_integral_more<int> () == 42_i)
-        << "actual+1 == 42 with _i literal";
-    local_counts.failed_checks++;
+          expect (my_actual_integral_more<int> () == 42_i)
+              << "actual+1 == 42 with _i literal";
+          local_counts.failed_checks++;
 
-    expect (_i (my_actual_integral_more<int> ()) == 42)
-        << "actual+1 == 42 with _i()";
-    local_counts.failed_checks++;
+          expect (_i (my_actual_integral_more<int> ()) == 42)
+              << "actual+1 == 42 with _i()";
+          local_counts.failed_checks++;
 
-    expect (my_actual_integral_more<int> () != 42_i) << "actual+1 != 42";
-    local_counts.successful_checks++;
+          expect (my_actual_integral_more<int> () != 42_i) << "actual+1 != 42";
+          local_counts.successful_checks++;
 
-    expect (my_actual_integral_less<int> () < 42_i) << "actual-1 < 42";
-    local_counts.successful_checks++;
+          expect (my_actual_integral_less<int> () < 42_i) << "actual-1 < 42";
+          local_counts.successful_checks++;
 
-    expect (my_actual_integral () <= 42_i) << "actual <= 42";
-    local_counts.successful_checks++;
+          expect (my_actual_integral () <= 42_i) << "actual <= 42";
+          local_counts.successful_checks++;
 
-    expect (my_actual_integral_more<int> () > 42_i) << "actual+1 > 42";
-    local_counts.successful_checks++;
+          expect (my_actual_integral_more<int> () > 42_i) << "actual+1 > 42";
+          local_counts.successful_checks++;
 
-    expect (my_actual_integral () >= 42_i) << "actual >= 42";
-    local_counts.successful_checks++;
+          expect (my_actual_integral () >= 42_i) << "actual >= 42";
+          local_counts.successful_checks++;
 
-    expect (!(my_actual_integral () != 42_i)) << "not (actual != 42)";
-    local_counts.successful_checks++;
+          expect (!(my_actual_integral () != 42_i)) << "not (actual != 42)";
+          local_counts.successful_checks++;
 
-    expect (!(my_actual_integral () == 42_i)) << "not (actual == 42)";
-    local_counts.failed_checks++;
+          expect (!(my_actual_integral () == 42_i)) << "not (actual == 42)";
+          local_counts.failed_checks++;
 
-    expect (((my_actual_integral () == 42_i)
-             && (my_actual_float<float> () == 42.0_d)))
-        << "(actual == 42) and (actual == 42.0)";
-    local_counts.successful_checks++;
+          expect (((my_actual_integral () == 42_i)
+                   && (my_actual_float<float> () == 42.0_d)))
+              << "(actual == 42) and (actual == 42.0)";
+          local_counts.successful_checks++;
 
-    expect (((my_actual_integral () == 42_i)
-             && (my_actual_float<float> () != 42.0_d)))
-        << "(actual == 42) and (actual != 42.0)";
-    local_counts.failed_checks++;
+          expect (((my_actual_integral () == 42_i)
+                   && (my_actual_float<float> () != 42.0_d)))
+              << "(actual == 42) and (actual != 42.0)";
+          local_counts.failed_checks++;
 
-    expect (((my_actual_integral () != 42_i)
-             && (my_actual_float<float> () == 42.0_d)))
-        << "(actual != 42) and (actual == 42.0)";
-    local_counts.failed_checks++;
+          expect (((my_actual_integral () != 42_i)
+                   && (my_actual_float<float> () == 42.0_d)))
+              << "(actual != 42) and (actual == 42.0)";
+          local_counts.failed_checks++;
 
-    expect (((my_actual_integral () != 42_i)
-             && (my_actual_float<float> () != 42.0_d)))
-        << "(actual != 42) and (actual != 42.0)";
-    local_counts.failed_checks++;
+          expect (((my_actual_integral () != 42_i)
+                   && (my_actual_float<float> () != 42.0_d)))
+              << "(actual != 42) and (actual != 42.0)";
+          local_counts.failed_checks++;
 
-    expect (((my_actual_integral () == 42_i)
-             && (my_actual_float<float> () == 42.0_d)));
-    local_counts.successful_checks++;
+          expect (((my_actual_integral () == 42_i)
+                   && (my_actual_float<float> () == 42.0_d)));
+          local_counts.successful_checks++;
 
-    expect (((my_actual_integral () == 42_i)
-             && (my_actual_float<float> () != 42.0_d)));
-    local_counts.failed_checks++;
+          expect (((my_actual_integral () == 42_i)
+                   && (my_actual_float<float> () != 42.0_d)));
+          local_counts.failed_checks++;
 
-    expect (
-        ((my_actual_integral () == 42) || (my_actual_float<float> () == 42.0)))
-        << "(actual == 42) or (actual == 42.0)";
-    local_counts.successful_checks++;
+          expect (((my_actual_integral () == 42)
+                   || (my_actual_float<float> () == 42.0)))
+              << "(actual == 42) or (actual == 42.0)";
+          local_counts.successful_checks++;
 
-    expect (
-        ((my_actual_integral () == 42) || (my_actual_float<float> () != 42.0)))
-        << "(actual == 42) or (actual != 42.0)";
-    local_counts.successful_checks++;
+          expect (((my_actual_integral () == 42)
+                   || (my_actual_float<float> () != 42.0)))
+              << "(actual == 42) or (actual != 42.0)";
+          local_counts.successful_checks++;
 
-    expect (
-        ((my_actual_integral () != 42) || (my_actual_float<float> () == 42.0)))
-        << "(actual != 42) or (actual == 42.0)";
-    local_counts.successful_checks++;
+          expect (((my_actual_integral () != 42)
+                   || (my_actual_float<float> () == 42.0)))
+              << "(actual != 42) or (actual == 42.0)";
+          local_counts.successful_checks++;
 
-    expect (
-        (my_actual_integral () != 42_i || my_actual_float<float> () != 42.0_f))
-        << "(actual != 42) or (actual != 42.0)";
-    local_counts.failed_checks++;
+          expect ((my_actual_integral () != 42_i
+                   || my_actual_float<float> () != 42.0_f))
+              << "(actual != 42) or (actual != 42.0)";
+          local_counts.failed_checks++;
 
-    local_counts.test_cases++;
-  });
+          local_counts.test_cases++;
+        });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
@@ -1145,49 +1205,30 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  test_case ("Strings matches", [] {
-    expect (utility::is_match ("", "")) << "empty strings";
-    local_counts.successful_checks++;
+  test_case (
+      "Strings matches",
+      []
+        {
+          expect (utility::is_match ("", "")) << "empty strings";
+          local_counts.successful_checks++;
 
-    expect (utility::is_match ("", "*")) << "empty matches *";
-    local_counts.successful_checks++;
+          expect (utility::is_match ("", "*")) << "empty matches *";
+          local_counts.successful_checks++;
 
-    expect (utility::is_match ("abc", "abc")) << "abc matches abc";
-    local_counts.successful_checks++;
+          expect (utility::is_match ("abc", "abc")) << "abc matches abc";
+          local_counts.successful_checks++;
 
-    expect (utility::is_match ("abc", "a?c")) << "abc matches a?c";
-    local_counts.successful_checks++;
+          expect (utility::is_match ("abc", "a?c")) << "abc matches a?c";
+          local_counts.successful_checks++;
 
-    expect (utility::is_match ("abc", "a*")) << "abc matches a*";
-    local_counts.successful_checks++;
+          expect (utility::is_match ("abc", "a*")) << "abc matches a*";
+          local_counts.successful_checks++;
 
-    expect (utility::is_match ("abc", "a*c")) << "abc matches a*c";
-    local_counts.successful_checks++;
+          expect (utility::is_match ("abc", "a*c")) << "abc matches a*c";
+          local_counts.successful_checks++;
 
-    local_counts.test_cases++;
-  });
-
-  test_assert (current_test_suite->successful_checks ()
-               == local_counts.successful_checks);
-  test_assert (current_test_suite->failed_checks ()
-               == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
-
-  test_case ("Failed strings matches", [] {
-    expect (utility::is_match ("", "abc")) << "empty matches abc";
-    local_counts.failed_checks++;
-
-    expect (utility::is_match ("abc", "b??")) << "abc matches b??";
-    local_counts.failed_checks++;
-
-    expect (utility::is_match ("abc", "a*d")) << "abc matches a*d";
-    local_counts.failed_checks++;
-
-    expect (utility::is_match ("abc", "*C")) << "abc matches *C";
-    local_counts.failed_checks++;
-
-    local_counts.test_cases++;
-  });
+          local_counts.test_cases++;
+        });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
@@ -1195,29 +1236,57 @@ main (int argc, char* argv[])
                == local_counts.failed_checks);
   test_assert (current_test_suite->test_cases () == local_counts.test_cases);
 
-  test_case ("Splits", [] {
-    expect (std::vector<std::string_view>{}
-            == utility::split<std::string_view> ("", "."))
-        << "empty splits into []";
-    local_counts.successful_checks++;
+  test_case ("Failed strings matches",
+             []
+               {
+                 expect (utility::is_match ("", "abc")) << "empty matches abc";
+                 local_counts.failed_checks++;
 
-    expect (std::vector<std::string_view>{ "a" }
-            == utility::split<std::string_view> ("a.", "."))
-        << "a. splits into [a]";
-    local_counts.successful_checks++;
+                 expect (utility::is_match ("abc", "b??"))
+                     << "abc matches b??";
+                 local_counts.failed_checks++;
 
-    expect (std::vector<std::string_view>{ "a", "b" }
-            == utility::split<std::string_view> ("a.b", "."))
-        << "a.b splits into [a,b]";
-    local_counts.successful_checks++;
+                 expect (utility::is_match ("abc", "a*d"))
+                     << "abc matches a*d";
+                 local_counts.failed_checks++;
 
-    expect (std::vector<std::string_view>{ "a", "b", "cde" }
-            == utility::split<std::string_view> ("a.b.cde", "."))
-        << "a.b.cde splits into [a, b, cde]";
-    local_counts.successful_checks++;
+                 expect (utility::is_match ("abc", "*C")) << "abc matches *C";
+                 local_counts.failed_checks++;
 
-    local_counts.test_cases++;
-  });
+                 local_counts.test_cases++;
+               });
+
+  test_assert (current_test_suite->successful_checks ()
+               == local_counts.successful_checks);
+  test_assert (current_test_suite->failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+
+  test_case ("Splits",
+             []
+               {
+                 expect (std::vector<std::string_view>{}
+                         == utility::split<std::string_view> ("", "."))
+                     << "empty splits into []";
+                 local_counts.successful_checks++;
+
+                 expect (std::vector<std::string_view>{ "a" }
+                         == utility::split<std::string_view> ("a.", "."))
+                     << "a. splits into [a]";
+                 local_counts.successful_checks++;
+
+                 expect (std::vector<std::string_view>{ "a", "b" }
+                         == utility::split<std::string_view> ("a.b", "."))
+                     << "a.b splits into [a,b]";
+                 local_counts.successful_checks++;
+
+                 expect (std::vector<std::string_view>{ "a", "b", "cde" }
+                         == utility::split<std::string_view> ("a.b.cde", "."))
+                     << "a.b.cde splits into [a, b, cde]";
+                 local_counts.successful_checks++;
+
+                 local_counts.test_cases++;
+               });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
@@ -1232,7 +1301,7 @@ main (int argc, char* argv[])
   int code = exit_code ();
   test_assert (code != 0);
 
-  if (reporter.verbosity > verbosity::quiet)
+  if (reporter->verbosity > verbosity::quiet)
     {
       // On failure it aborts before reaching this point.
       printf ("Overall, the µTest++ unit tests were successful!\n\n");
@@ -1500,352 +1569,402 @@ test_case_expect_eq_floats_combinatorial (void)
 
 static test_suite ts_passed_integrals = {
   "Combinatorial integrals",
-  [] {
-    local_counts = {};
+  []
+    {
+      local_counts = {};
 
-    test_case (
-        "Combinatorial integrals with signed long long",
-        test_case_expect_passed_integrals_combinatorial<signed long long>);
+      test_case (
+          "Combinatorial integrals with signed long long",
+          test_case_expect_passed_integrals_combinatorial<signed long long>);
 
-    test_assert (current_test_suite->successful_checks ()
-                 == local_counts.successful_checks);
-    test_assert (current_test_suite->failed_checks ()
-                 == local_counts.failed_checks);
-    test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+      test_assert (current_test_suite->successful_checks ()
+                   == local_counts.successful_checks);
+      test_assert (current_test_suite->failed_checks ()
+                   == local_counts.failed_checks);
+      test_assert (current_test_suite->test_cases ()
+                   == local_counts.test_cases);
 
-    test_case (
-        "Combinatorial integrals unsigned long long",
-        test_case_expect_passed_integrals_combinatorial<unsigned long long>);
+      test_case (
+          "Combinatorial integrals unsigned long long",
+          test_case_expect_passed_integrals_combinatorial<unsigned long long>);
 
-    test_assert (current_test_suite->successful_checks ()
-                 == local_counts.successful_checks);
-    test_assert (current_test_suite->failed_checks ()
-                 == local_counts.failed_checks);
-    test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+      test_assert (current_test_suite->successful_checks ()
+                   == local_counts.successful_checks);
+      test_assert (current_test_suite->failed_checks ()
+                   == local_counts.failed_checks);
+      test_assert (current_test_suite->test_cases ()
+                   == local_counts.test_cases);
 
-    test_case ("Combinatorial integrals with signed int",
-               test_case_expect_passed_integrals_combinatorial<signed int>);
+      test_case ("Combinatorial integrals with signed int",
+                 test_case_expect_passed_integrals_combinatorial<signed int>);
 
-    test_assert (current_test_suite->successful_checks ()
-                 == local_counts.successful_checks);
-    test_assert (current_test_suite->failed_checks ()
-                 == local_counts.failed_checks);
-    test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+      test_assert (current_test_suite->successful_checks ()
+                   == local_counts.successful_checks);
+      test_assert (current_test_suite->failed_checks ()
+                   == local_counts.failed_checks);
+      test_assert (current_test_suite->test_cases ()
+                   == local_counts.test_cases);
 
-    test_case ("Combinatorial integrals with unsigned int",
-               test_case_expect_passed_integrals_combinatorial<unsigned int>);
+      test_case (
+          "Combinatorial integrals with unsigned int",
+          test_case_expect_passed_integrals_combinatorial<unsigned int>);
 
-    test_assert (current_test_suite->successful_checks ()
-                 == local_counts.successful_checks);
-    test_assert (current_test_suite->failed_checks ()
-                 == local_counts.failed_checks);
-    test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+      test_assert (current_test_suite->successful_checks ()
+                   == local_counts.successful_checks);
+      test_assert (current_test_suite->failed_checks ()
+                   == local_counts.failed_checks);
+      test_assert (current_test_suite->test_cases ()
+                   == local_counts.test_cases);
 
-    test_case ("Combinatorial integrals with signed short",
-               test_case_expect_passed_integrals_combinatorial<signed int>);
+      test_case ("Combinatorial integrals with signed short",
+                 test_case_expect_passed_integrals_combinatorial<signed int>);
 
-    test_assert (current_test_suite->successful_checks ()
-                 == local_counts.successful_checks);
-    test_assert (current_test_suite->failed_checks ()
-                 == local_counts.failed_checks);
-    test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+      test_assert (current_test_suite->successful_checks ()
+                   == local_counts.successful_checks);
+      test_assert (current_test_suite->failed_checks ()
+                   == local_counts.failed_checks);
+      test_assert (current_test_suite->test_cases ()
+                   == local_counts.test_cases);
 
-    test_case ("Combinatorial integrals with unsigned short",
-               test_case_expect_passed_integrals_combinatorial<unsigned int>);
+      test_case (
+          "Combinatorial integrals with unsigned short",
+          test_case_expect_passed_integrals_combinatorial<unsigned int>);
 
-    test_assert (current_test_suite->successful_checks ()
-                 == local_counts.successful_checks);
-    test_assert (current_test_suite->failed_checks ()
-                 == local_counts.failed_checks);
-    test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+      test_assert (current_test_suite->successful_checks ()
+                   == local_counts.successful_checks);
+      test_assert (current_test_suite->failed_checks ()
+                   == local_counts.failed_checks);
+      test_assert (current_test_suite->test_cases ()
+                   == local_counts.test_cases);
 
-    test_case ("Combinatorial integrals with signed short",
-               test_case_expect_passed_integrals_combinatorial<signed short>);
+      test_case (
+          "Combinatorial integrals with signed short",
+          test_case_expect_passed_integrals_combinatorial<signed short>);
 
-    test_assert (current_test_suite->successful_checks ()
-                 == local_counts.successful_checks);
-    test_assert (current_test_suite->failed_checks ()
-                 == local_counts.failed_checks);
-    test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+      test_assert (current_test_suite->successful_checks ()
+                   == local_counts.successful_checks);
+      test_assert (current_test_suite->failed_checks ()
+                   == local_counts.failed_checks);
+      test_assert (current_test_suite->test_cases ()
+                   == local_counts.test_cases);
 
-    test_case (
-        "Combinatorial integrals with unsigned short",
-        test_case_expect_passed_integrals_combinatorial<unsigned short>);
+      test_case (
+          "Combinatorial integrals with unsigned short",
+          test_case_expect_passed_integrals_combinatorial<unsigned short>);
 
-    test_assert (current_test_suite->successful_checks ()
-                 == local_counts.successful_checks);
-    test_assert (current_test_suite->failed_checks ()
-                 == local_counts.failed_checks);
-    test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+      test_assert (current_test_suite->successful_checks ()
+                   == local_counts.successful_checks);
+      test_assert (current_test_suite->failed_checks ()
+                   == local_counts.failed_checks);
+      test_assert (current_test_suite->test_cases ()
+                   == local_counts.test_cases);
 
-    test_case ("Combinatorial integrals with signed char",
-               test_case_expect_passed_integrals_combinatorial<signed char>);
+      test_case ("Combinatorial integrals with signed char",
+                 test_case_expect_passed_integrals_combinatorial<signed char>);
 
-    test_assert (current_test_suite->successful_checks ()
-                 == local_counts.successful_checks);
-    test_assert (current_test_suite->failed_checks ()
-                 == local_counts.failed_checks);
-    test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+      test_assert (current_test_suite->successful_checks ()
+                   == local_counts.successful_checks);
+      test_assert (current_test_suite->failed_checks ()
+                   == local_counts.failed_checks);
+      test_assert (current_test_suite->test_cases ()
+                   == local_counts.test_cases);
 
-    test_case ("Combinatorial integrals with unsigned char",
-               test_case_expect_passed_integrals_combinatorial<unsigned char>);
+      test_case (
+          "Combinatorial integrals with unsigned char",
+          test_case_expect_passed_integrals_combinatorial<unsigned char>);
 
-    test_assert (current_test_suite->successful_checks ()
-                 == local_counts.successful_checks);
-    test_assert (current_test_suite->failed_checks ()
-                 == local_counts.failed_checks);
-    test_assert (current_test_suite->test_cases () == local_counts.test_cases);
-  }
+      test_assert (current_test_suite->successful_checks ()
+                   == local_counts.successful_checks);
+      test_assert (current_test_suite->failed_checks ()
+                   == local_counts.failed_checks);
+      test_assert (current_test_suite->test_cases ()
+                   == local_counts.test_cases);
+    }
 };
 
 static test_suite ts_failed_integrals = {
   "Failed combinatorial integrals",
-  [] {
-    local_counts = {};
+  []
+    {
+      local_counts = {};
 
-    test_case (
-        "Combinatorial integrals with signed long long",
-        test_case_expect_failed_integrals_combinatorial<signed long long>);
+      test_case (
+          "Combinatorial integrals with signed long long",
+          test_case_expect_failed_integrals_combinatorial<signed long long>);
 
-    test_assert (current_test_suite->successful_checks ()
-                 == local_counts.successful_checks);
-    test_assert (current_test_suite->failed_checks ()
-                 == local_counts.failed_checks);
-    test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+      test_assert (current_test_suite->successful_checks ()
+                   == local_counts.successful_checks);
+      test_assert (current_test_suite->failed_checks ()
+                   == local_counts.failed_checks);
+      test_assert (current_test_suite->test_cases ()
+                   == local_counts.test_cases);
 
-    test_case (
-        "Combinatorial integrals unsigned long long",
-        test_case_expect_failed_integrals_combinatorial<unsigned long long>);
+      test_case (
+          "Combinatorial integrals unsigned long long",
+          test_case_expect_failed_integrals_combinatorial<unsigned long long>);
 
-    test_assert (current_test_suite->successful_checks ()
-                 == local_counts.successful_checks);
-    test_assert (current_test_suite->failed_checks ()
-                 == local_counts.failed_checks);
-    test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+      test_assert (current_test_suite->successful_checks ()
+                   == local_counts.successful_checks);
+      test_assert (current_test_suite->failed_checks ()
+                   == local_counts.failed_checks);
+      test_assert (current_test_suite->test_cases ()
+                   == local_counts.test_cases);
 
-    test_case ("Combinatorial integrals with signed int",
-               test_case_expect_failed_integrals_combinatorial<signed int>);
+      test_case ("Combinatorial integrals with signed int",
+                 test_case_expect_failed_integrals_combinatorial<signed int>);
 
-    test_assert (current_test_suite->successful_checks ()
-                 == local_counts.successful_checks);
-    test_assert (current_test_suite->failed_checks ()
-                 == local_counts.failed_checks);
-    test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+      test_assert (current_test_suite->successful_checks ()
+                   == local_counts.successful_checks);
+      test_assert (current_test_suite->failed_checks ()
+                   == local_counts.failed_checks);
+      test_assert (current_test_suite->test_cases ()
+                   == local_counts.test_cases);
 
-    test_case ("Combinatorial integrals with unsigned int",
-               test_case_expect_failed_integrals_combinatorial<unsigned int>);
+      test_case (
+          "Combinatorial integrals with unsigned int",
+          test_case_expect_failed_integrals_combinatorial<unsigned int>);
 
-    test_assert (current_test_suite->successful_checks ()
-                 == local_counts.successful_checks);
-    test_assert (current_test_suite->failed_checks ()
-                 == local_counts.failed_checks);
-    test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+      test_assert (current_test_suite->successful_checks ()
+                   == local_counts.successful_checks);
+      test_assert (current_test_suite->failed_checks ()
+                   == local_counts.failed_checks);
+      test_assert (current_test_suite->test_cases ()
+                   == local_counts.test_cases);
 
-    test_case ("Combinatorial integrals with signed short",
-               test_case_expect_failed_integrals_combinatorial<signed int>);
+      test_case ("Combinatorial integrals with signed short",
+                 test_case_expect_failed_integrals_combinatorial<signed int>);
 
-    test_assert (current_test_suite->successful_checks ()
-                 == local_counts.successful_checks);
-    test_assert (current_test_suite->failed_checks ()
-                 == local_counts.failed_checks);
-    test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+      test_assert (current_test_suite->successful_checks ()
+                   == local_counts.successful_checks);
+      test_assert (current_test_suite->failed_checks ()
+                   == local_counts.failed_checks);
+      test_assert (current_test_suite->test_cases ()
+                   == local_counts.test_cases);
 
-    test_case ("Combinatorial integrals with unsigned short",
-               test_case_expect_failed_integrals_combinatorial<unsigned int>);
+      test_case (
+          "Combinatorial integrals with unsigned short",
+          test_case_expect_failed_integrals_combinatorial<unsigned int>);
 
-    test_assert (current_test_suite->successful_checks ()
-                 == local_counts.successful_checks);
-    test_assert (current_test_suite->failed_checks ()
-                 == local_counts.failed_checks);
-    test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+      test_assert (current_test_suite->successful_checks ()
+                   == local_counts.successful_checks);
+      test_assert (current_test_suite->failed_checks ()
+                   == local_counts.failed_checks);
+      test_assert (current_test_suite->test_cases ()
+                   == local_counts.test_cases);
 
-    test_case ("Combinatorial integrals with signed short",
-               test_case_expect_failed_integrals_combinatorial<signed short>);
+      test_case (
+          "Combinatorial integrals with signed short",
+          test_case_expect_failed_integrals_combinatorial<signed short>);
 
-    test_assert (current_test_suite->successful_checks ()
-                 == local_counts.successful_checks);
-    test_assert (current_test_suite->failed_checks ()
-                 == local_counts.failed_checks);
-    test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+      test_assert (current_test_suite->successful_checks ()
+                   == local_counts.successful_checks);
+      test_assert (current_test_suite->failed_checks ()
+                   == local_counts.failed_checks);
+      test_assert (current_test_suite->test_cases ()
+                   == local_counts.test_cases);
 
-    test_case (
-        "Combinatorial integrals with unsigned short",
-        test_case_expect_failed_integrals_combinatorial<unsigned short>);
+      test_case (
+          "Combinatorial integrals with unsigned short",
+          test_case_expect_failed_integrals_combinatorial<unsigned short>);
 
-    test_assert (current_test_suite->successful_checks ()
-                 == local_counts.successful_checks);
-    test_assert (current_test_suite->failed_checks ()
-                 == local_counts.failed_checks);
-    test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+      test_assert (current_test_suite->successful_checks ()
+                   == local_counts.successful_checks);
+      test_assert (current_test_suite->failed_checks ()
+                   == local_counts.failed_checks);
+      test_assert (current_test_suite->test_cases ()
+                   == local_counts.test_cases);
 
-    test_case ("Combinatorial integrals with signed char",
-               test_case_expect_failed_integrals_combinatorial<signed char>);
+      test_case ("Combinatorial integrals with signed char",
+                 test_case_expect_failed_integrals_combinatorial<signed char>);
 
-    test_assert (current_test_suite->successful_checks ()
-                 == local_counts.successful_checks);
-    test_assert (current_test_suite->failed_checks ()
-                 == local_counts.failed_checks);
-    test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+      test_assert (current_test_suite->successful_checks ()
+                   == local_counts.successful_checks);
+      test_assert (current_test_suite->failed_checks ()
+                   == local_counts.failed_checks);
+      test_assert (current_test_suite->test_cases ()
+                   == local_counts.test_cases);
 
-    test_case ("Combinatorial integrals with unsigned char",
-               test_case_expect_failed_integrals_combinatorial<unsigned char>);
+      test_case (
+          "Combinatorial integrals with unsigned char",
+          test_case_expect_failed_integrals_combinatorial<unsigned char>);
 
-    test_assert (current_test_suite->successful_checks ()
-                 == local_counts.successful_checks);
-    test_assert (current_test_suite->failed_checks ()
-                 == local_counts.failed_checks);
-    test_assert (current_test_suite->test_cases () == local_counts.test_cases);
-  }
+      test_assert (current_test_suite->successful_checks ()
+                   == local_counts.successful_checks);
+      test_assert (current_test_suite->failed_checks ()
+                   == local_counts.failed_checks);
+      test_assert (current_test_suite->test_cases ()
+                   == local_counts.test_cases);
+    }
 };
 
 static test_suite ts_passed_floats
-    = { "Combinatorial floats", [] {
-         local_counts = {};
+    = { "Combinatorial floats", []
+          {
+            local_counts = {};
 
-         test_case ("Combinatorial floats",
-                    test_case_expect_eq_floats_combinatorial<float>);
+            test_case ("Combinatorial floats",
+                       test_case_expect_eq_floats_combinatorial<float>);
 
-         test_assert (current_test_suite->successful_checks ()
-                      == local_counts.successful_checks);
-         test_assert (current_test_suite->failed_checks ()
-                      == local_counts.failed_checks);
-         test_assert (current_test_suite->test_cases ()
-                      == local_counts.test_cases);
+            test_assert (current_test_suite->successful_checks ()
+                         == local_counts.successful_checks);
+            test_assert (current_test_suite->failed_checks ()
+                         == local_counts.failed_checks);
+            test_assert (current_test_suite->test_cases ()
+                         == local_counts.test_cases);
 
-         test_case ("Combinatorial doubles",
-                    test_case_expect_eq_floats_combinatorial<double>);
+            test_case ("Combinatorial doubles",
+                       test_case_expect_eq_floats_combinatorial<double>);
 
-         test_assert (current_test_suite->successful_checks ()
-                      == local_counts.successful_checks);
-         test_assert (current_test_suite->failed_checks ()
-                      == local_counts.failed_checks);
-         test_assert (current_test_suite->test_cases ()
-                      == local_counts.test_cases);
-       } };
+            test_assert (current_test_suite->successful_checks ()
+                         == local_counts.successful_checks);
+            test_assert (current_test_suite->failed_checks ()
+                         == local_counts.failed_checks);
+            test_assert (current_test_suite->test_cases ()
+                         == local_counts.test_cases);
+          } };
 
 static test_suite ts_misc = {
   "Miscellaneous",
-  [] {
-    local_counts = {};
+  []
+    {
+      local_counts = {};
 
-    test_case ("Arrays", [] {
-      expect (eq (std::array<int, 1>{ 42 }, std::array<int, 1>{ 42 }))
-          << "array{ 42 } == array{ 42 }";
-      local_counts.successful_checks++;
+      test_case (
+          "Arrays",
+          []
+            {
+              expect (eq (std::array<int, 1>{ 42 }, std::array<int, 1>{ 42 }))
+                  << "array{ 42 } == array{ 42 }";
+              local_counts.successful_checks++;
 
-      expect (ne (std::array<int, 1>{ 42 }, std::array<int, 1>{ 43 }))
-          << "array{ 42 } != array{ 43 }";
-      local_counts.successful_checks++;
+              expect (ne (std::array<int, 1>{ 42 }, std::array<int, 1>{ 43 }))
+                  << "array{ 42 } != array{ 43 }";
+              local_counts.successful_checks++;
 
-      expect (eq (std::array{ 1, 2 }, std::array{ 1, 2 }))
-          << "array{ 1, 2 } == array{ 1, 2 }";
-      local_counts.successful_checks++;
+              expect (eq (std::array{ 1, 2 }, std::array{ 1, 2 }))
+                  << "array{ 1, 2 } == array{ 1, 2 }";
+              local_counts.successful_checks++;
 
-      expect (ne (std::array{ 1, 2, 3 }, std::array{ 1, 2, 4 }))
-          << "array{ 1, 2, 3 } != array{ 1, 2, 4 }";
-      local_counts.successful_checks++;
+              expect (ne (std::array{ 1, 2, 3 }, std::array{ 1, 2, 4 }))
+                  << "array{ 1, 2, 3 } != array{ 1, 2, 4 }";
+              local_counts.successful_checks++;
 
-      local_counts.test_cases++;
-    });
+              local_counts.test_cases++;
+            });
 
-    test_assert (current_test_suite->successful_checks ()
-                 == local_counts.successful_checks);
-    test_assert (current_test_suite->failed_checks ()
-                 == local_counts.failed_checks);
-    test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+      test_assert (current_test_suite->successful_checks ()
+                   == local_counts.successful_checks);
+      test_assert (current_test_suite->failed_checks ()
+                   == local_counts.failed_checks);
+      test_assert (current_test_suite->test_cases ()
+                   == local_counts.test_cases);
 
-    test_case ("Arrays failed", [] {
-      expect (ne (std::array<int, 1>{ 42 }, std::array<int, 1>{ 42 }))
-          << "array{ 42 } ne array{ 42 }";
-      local_counts.failed_checks++;
+      test_case (
+          "Arrays failed",
+          []
+            {
+              expect (ne (std::array<int, 1>{ 42 }, std::array<int, 1>{ 42 }))
+                  << "array{ 42 } ne array{ 42 }";
+              local_counts.failed_checks++;
 
-      expect (eq (std::array<int, 1>{ 42 }, std::array<int, 1>{ 43 }))
-          << "array{ 42 } eq array{ 43 }";
-      local_counts.failed_checks++;
+              expect (eq (std::array<int, 1>{ 42 }, std::array<int, 1>{ 43 }))
+                  << "array{ 42 } eq array{ 43 }";
+              local_counts.failed_checks++;
 
-      expect (ne (std::array{ 1, 2 }, std::array{ 1, 2 }))
-          << "array{ 1, 2 } ne array{ 1, 2 }";
-      local_counts.failed_checks++;
+              expect (ne (std::array{ 1, 2 }, std::array{ 1, 2 }))
+                  << "array{ 1, 2 } ne array{ 1, 2 }";
+              local_counts.failed_checks++;
 
-      expect (eq (std::array{ 1, 2, 3 }, std::array{ 1, 2, 4 }))
-          << "array{ 1, 2, 3 } eq array{ 1, 2, 4 }";
-      local_counts.failed_checks++;
+              expect (eq (std::array{ 1, 2, 3 }, std::array{ 1, 2, 4 }))
+                  << "array{ 1, 2, 3 } eq array{ 1, 2, 4 }";
+              local_counts.failed_checks++;
 
-      local_counts.test_cases++;
-    });
+              local_counts.test_cases++;
+            });
 
-    test_assert (current_test_suite->successful_checks ()
-                 == local_counts.successful_checks);
-    test_assert (current_test_suite->failed_checks ()
-                 == local_counts.failed_checks);
-    test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+      test_assert (current_test_suite->successful_checks ()
+                   == local_counts.successful_checks);
+      test_assert (current_test_suite->failed_checks ()
+                   == local_counts.failed_checks);
+      test_assert (current_test_suite->test_cases ()
+                   == local_counts.test_cases);
 
-    test_case ("Vectors", [] {
-      expect (eq (std::vector<int>{}, std::vector<int>{}))
-          << "vector{ } == vector{ }";
-      local_counts.successful_checks++;
+      test_case (
+          "Vectors",
+          []
+            {
+              expect (eq (std::vector<int>{}, std::vector<int>{}))
+                  << "vector{ } == vector{ }";
+              local_counts.successful_checks++;
 
-      expect (eq (std::vector<int>{}, std::vector<int>{}));
-      local_counts.successful_checks++;
+              expect (eq (std::vector<int>{}, std::vector<int>{}));
+              local_counts.successful_checks++;
 
-      expect (eq (std::vector<int>{ 42 }, std::vector<int>{ 42 }))
-          << "vector{ 42 } == vector{ 42 }";
-      local_counts.successful_checks++;
+              expect (eq (std::vector<int>{ 42 }, std::vector<int>{ 42 }))
+                  << "vector{ 42 } == vector{ 42 }";
+              local_counts.successful_checks++;
 
-      expect (ne (std::vector<int>{ 42 }, std::vector<int>{ 43 }))
-          << "vector{ 42 } != vector{ 43 }";
-      local_counts.successful_checks++;
+              expect (ne (std::vector<int>{ 42 }, std::vector<int>{ 43 }))
+                  << "vector{ 42 } != vector{ 43 }";
+              local_counts.successful_checks++;
 
-      expect (eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
-          << "vector{ 1, 2 } == vector{ 1, 2 }";
-      local_counts.successful_checks++;
+              expect (eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
+                  << "vector{ 1, 2 } == vector{ 1, 2 }";
+              local_counts.successful_checks++;
 
-      expect (ne (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 }))
-          << "vector{ 1, 2, 3 } != vector{ 1, 2, 4 }";
-      local_counts.successful_checks++;
+              expect (ne (std::vector<int>{ 1, 2, 3 },
+                          std::vector<int>{ 1, 2, 4 }))
+                  << "vector{ 1, 2, 3 } != vector{ 1, 2, 4 }";
+              local_counts.successful_checks++;
 
-      local_counts.test_cases++;
-    });
+              local_counts.test_cases++;
+            });
 
-    test_assert (current_test_suite->successful_checks ()
-                 == local_counts.successful_checks);
-    test_assert (current_test_suite->failed_checks ()
-                 == local_counts.failed_checks);
-    test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+      test_assert (current_test_suite->successful_checks ()
+                   == local_counts.successful_checks);
+      test_assert (current_test_suite->failed_checks ()
+                   == local_counts.failed_checks);
+      test_assert (current_test_suite->test_cases ()
+                   == local_counts.test_cases);
 
-    test_case ("Vectors failed", [] {
-      expect (ne (std::vector<int>{}, std::vector<int>{}))
-          << "vector{ } != vector{ }";
-      local_counts.failed_checks++;
+      test_case (
+          "Vectors failed",
+          []
+            {
+              expect (ne (std::vector<int>{}, std::vector<int>{}))
+                  << "vector{ } != vector{ }";
+              local_counts.failed_checks++;
 
-      expect (ne (std::vector<int>{}, std::vector<int>{}));
-      local_counts.failed_checks++;
+              expect (ne (std::vector<int>{}, std::vector<int>{}));
+              local_counts.failed_checks++;
 
-      expect (ne (std::vector<int>{ 42 }, std::vector<int>{ 42 }))
-          << "vector{ 42 } != vector{ 42 }";
-      local_counts.failed_checks++;
+              expect (ne (std::vector<int>{ 42 }, std::vector<int>{ 42 }))
+                  << "vector{ 42 } != vector{ 42 }";
+              local_counts.failed_checks++;
 
-      expect (eq (std::vector<int>{ 42 }, std::vector<int>{ 43 }))
-          << "vector{ 42 } == vector{ 43 }";
-      local_counts.failed_checks++;
+              expect (eq (std::vector<int>{ 42 }, std::vector<int>{ 43 }))
+                  << "vector{ 42 } == vector{ 43 }";
+              local_counts.failed_checks++;
 
-      expect (ne (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
-          << "vector{ 1, 2 } != vector{ 1, 2 }";
-      local_counts.failed_checks++;
+              expect (ne (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
+                  << "vector{ 1, 2 } != vector{ 1, 2 }";
+              local_counts.failed_checks++;
 
-      expect (eq (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 }))
-          << "vector{ 1, 2, 3 } == vector{ 1, 2, 4 }";
-      local_counts.failed_checks++;
+              expect (eq (std::vector<int>{ 1, 2, 3 },
+                          std::vector<int>{ 1, 2, 4 }))
+                  << "vector{ 1, 2, 3 } == vector{ 1, 2, 4 }";
+              local_counts.failed_checks++;
 
-      local_counts.test_cases++;
-    });
+              local_counts.test_cases++;
+            });
 
-    test_assert (current_test_suite->successful_checks ()
-                 == local_counts.successful_checks);
-    test_assert (current_test_suite->failed_checks ()
-                 == local_counts.failed_checks);
-    test_assert (current_test_suite->test_cases () == local_counts.test_cases);
-  }
+      test_assert (current_test_suite->successful_checks ()
+                   == local_counts.successful_checks);
+      test_assert (current_test_suite->failed_checks ()
+                   == local_counts.failed_checks);
+      test_assert (current_test_suite->test_cases ()
+                   == local_counts.test_cases);
+    }
 };
 
 // ----------------------------------------------------------------------------

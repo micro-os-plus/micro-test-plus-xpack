@@ -123,7 +123,7 @@ namespace micro_os_plus::micro_test_plus
   {
     process_deferred_begin = false;
 
-    reporter.begin_test_suite (name_);
+    reporter->begin_test_suite (name_);
   }
 
   /**
@@ -142,7 +142,7 @@ namespace micro_os_plus::micro_test_plus
       {
         begin_test_suite ();
       }
-    reporter.end_test_suite (*this);
+    reporter->end_test_suite (*this);
   }
 
   /**
@@ -168,7 +168,7 @@ namespace micro_os_plus::micro_test_plus
 
     current_test_case = {};
 
-    reporter.begin_test_case (test_case_name_);
+    reporter->begin_test_case (test_case_name_);
   }
 
   /**
@@ -182,7 +182,7 @@ namespace micro_os_plus::micro_test_plus
   void
   test_suite_base::end_test_case (void)
   {
-    reporter.end_test_case (test_case_name_);
+    reporter->end_test_case (test_case_name_);
   }
 
   /**

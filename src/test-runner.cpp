@@ -136,8 +136,9 @@ namespace micro_os_plus::micro_test_plus
           }
       }
 
-    // Pass the verbosity to the reporter.
-    reporter.verbosity = verbosity;
+    // Initialize and configure the reporter.
+    reporter = new test_reporter ();
+    reporter->verbosity = verbosity;
 
     // ------------------------------------------------------------------------
 
@@ -209,7 +210,7 @@ namespace micro_os_plus::micro_test_plus
 
             was_successful &= suite->was_successful ();
           }
-        if (reporter.verbosity != verbosity::silent)
+        if (reporter->verbosity != verbosity::silent)
           {
             // printf ("\n");
           }

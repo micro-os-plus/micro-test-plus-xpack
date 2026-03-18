@@ -246,7 +246,7 @@ namespace micro_os_plus::micro_test_plus
       if (abort_ && !value_)
         {
           printf ("\n");
-          reporter.output ();
+          reporter->output ();
           abort ();
         }
     }
@@ -278,18 +278,19 @@ namespace micro_os_plus::micro_test_plus
   test_runner runner;
 
   /**
-   * @brief Global instance of `test_reporter`.
+   * @brief Global pointer to `test_reporter`.
    *
    * @details
-   * This global instance of `test_reporter` is responsible for collecting,
+   * This global pointer to `test_reporter` is responsible for collecting,
    * formatting, and outputting the results of test execution within the
    * µTest++ framework. It manages the reporting of test outcomes, including
    * successes and failures, and ensures that all relevant information is
    * presented clearly to the user. By maintaining a single shared reporter,
    * the framework provides consistent and centralised reporting across all
-   * test cases and folders.
+   * test cases and folders. The reporter is initialized in
+   * test_runner::initialize().
    */
-  test_reporter reporter;
+  test_reporter* reporter = nullptr;
 
   /**
    * @brief Global pointer references the currently active test suite.
