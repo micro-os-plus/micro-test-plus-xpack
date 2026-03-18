@@ -17,7 +17,8 @@
 
 /**
  * @file
- * @brief C++ header file with declarations for the µTest++ basic test reporter.
+ * @brief C++ header file with declarations for the µTest++ basic test
+ * reporter.
  *
  * @details
  * This header provides the declaration for `test_reporter_basic`, the default
@@ -88,7 +89,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */
-  class test_reporter_basic : public test_reporter
+  class test_reporter_basic final : public test_reporter
   {
   public:
     /**
