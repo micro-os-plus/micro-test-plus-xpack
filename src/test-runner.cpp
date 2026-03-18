@@ -259,6 +259,7 @@ namespace micro_os_plus::micro_test_plus
         test_suites_ = new std::vector<test_suite_base*> ();
       }
     test_suites_->push_back (suite);
+    suite->index = static_cast<unsigned int> (test_suites_->size () + 1);
   }
 
   /**

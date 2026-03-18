@@ -319,6 +319,11 @@ namespace micro_os_plus::micro_test_plus
 
   public:
     /**
+     * @brief The test suite index, counting from 1.
+     */
+    unsigned int index = 1;
+
+    /**
      * @brief Indicates whether to process deferred begin for test cases.
      */
     bool process_deferred_begin = true;
