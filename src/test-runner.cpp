@@ -45,6 +45,7 @@
 #include <micro-os-plus/micro-test-plus.h>
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <vector>
 
 // ----------------------------------------------------------------------------
@@ -120,6 +121,7 @@ namespace micro_os_plus::micro_test_plus
 #endif // !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
 
     verbosity_t verbosity = verbosity::normal;
+    const char* reporter_name = "tap";
     for (int i = 0; i < argc; ++i)
       {
         if (strcmp (argv[i], "--verbose") == 0)
@@ -134,10 +136,26 @@ namespace micro_os_plus::micro_test_plus
           {
             verbosity = verbosity::silent;
           }
+        else if (strncmp (argv[i], "--reporter=", 11) == 0)
+          {
+            reporter_name = argv[i] + 11;
+          }
       }
 
     // Initialize and configure the reporter.
-    reporter = new test_reporter_basic ();
+    if (strcmp (reporter_name, "basic") == 0)
+      {
+        reporter = new test_reporter_basic ();
+      }
+    else if (strcmp (reporter_name, "tap") == 0)
+      {
+        reporter = new test_reporter_tap ();
+      }
+    else
+      {
+        fprintf (stderr, "error: unknown reporter '%s'\n", reporter_name);
+        exit (1);
+      }
     reporter->verbosity = verbosity;
 
     // ------------------------------------------------------------------------
