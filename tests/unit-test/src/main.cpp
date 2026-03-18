@@ -78,7 +78,7 @@ local_test_assert (const char* failedexpr, const char* file, int line)
 
 static struct local_counts_s
 {
-  int test_cases;
+  int test_cases_count;
   int successful_checks;
   int failed_checks;
 } local_counts;
@@ -337,16 +337,18 @@ main (int argc, char* argv[])
                == local_counts.successful_checks);
   test_assert (current_test_suite->failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+  test_assert (current_test_suite->test_cases_count ()
+               == local_counts.test_cases_count);
 
   test_case ("Initial counters",
-             [] () noexcept { local_counts.test_cases++; });
+             [] () noexcept { local_counts.test_cases_count++; });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_test_suite->failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+  test_assert (current_test_suite->test_cases_count ()
+               == local_counts.test_cases_count);
 
   // --------------------------------------------------------------------------
 
@@ -362,14 +364,15 @@ main (int argc, char* argv[])
                  expect (true) << "TRUE";
                  local_counts.successful_checks++;
 
-                 local_counts.test_cases++;
+                 local_counts.test_cases_count++;
                });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_test_suite->failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+  test_assert (current_test_suite->test_cases_count ()
+               == local_counts.test_cases_count);
 
   assume (true) << "Assumption 3";
   local_counts.successful_checks++;
@@ -387,14 +390,15 @@ main (int argc, char* argv[])
                  expect (false) << "false";
                  local_counts.failed_checks++;
 
-                 local_counts.test_cases++;
+                 local_counts.test_cases_count++;
                });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_test_suite->failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+  test_assert (current_test_suite->test_cases_count ()
+               == local_counts.test_cases_count);
 
   // --------------------------------------------------------------------------
 
@@ -432,21 +436,22 @@ main (int argc, char* argv[])
                    local_counts.successful_checks++;
                  }
 
-                 local_counts.test_cases++;
+                 local_counts.test_cases_count++;
                });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_test_suite->failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+  test_assert (current_test_suite->test_cases_count ()
+               == local_counts.test_cases_count);
 
   // --------------------------------------------------------------------------
 
   test_case ("Failed integer comparisons",
              []
                {
-                 local_counts.test_cases++;
+                 local_counts.test_cases_count++;
 
                  expect (ne (my_actual_integral (), 42)) << "actual != 42";
                  local_counts.failed_checks++;
@@ -484,7 +489,8 @@ main (int argc, char* argv[])
                == local_counts.successful_checks);
   test_assert (current_test_suite->failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+  test_assert (current_test_suite->test_cases_count ()
+               == local_counts.test_cases_count);
 
   // --------------------------------------------------------------------------
 
@@ -584,14 +590,15 @@ main (int argc, char* argv[])
             local_counts.successful_checks++;
           }
 
-          local_counts.test_cases++;
+          local_counts.test_cases_count++;
         });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_test_suite->failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+  test_assert (current_test_suite->test_cases_count ()
+               == local_counts.test_cases_count);
 
   test_case (
       "Failed float comparisons",
@@ -671,14 +678,15 @@ main (int argc, char* argv[])
             local_counts.failed_checks++;
           }
 
-          local_counts.test_cases++;
+          local_counts.test_cases_count++;
         });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_test_suite->failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+  test_assert (current_test_suite->test_cases_count ()
+               == local_counts.test_cases_count);
 
   // As all pointers, 'char*' are compared by address.
   // To compare by content, use string_value{}.
@@ -709,14 +717,15 @@ main (int argc, char* argv[])
                      << "actual_sv >= abc_sv";
                  local_counts.successful_checks++;
 
-                 local_counts.test_cases++;
+                 local_counts.test_cases_count++;
                });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_test_suite->failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+  test_assert (current_test_suite->test_cases_count ()
+               == local_counts.test_cases_count);
 
   test_case ("Failed string comparisons",
              []
@@ -745,14 +754,15 @@ main (int argc, char* argv[])
                      << "actual_sv < abc_sv";
                  local_counts.failed_checks++;
 
-                 local_counts.test_cases++;
+                 local_counts.test_cases_count++;
                });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_test_suite->failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+  test_assert (current_test_suite->test_cases_count ()
+               == local_counts.test_cases_count);
 
   test_case ("Pointer comparisons",
              []
@@ -801,14 +811,15 @@ main (int argc, char* argv[])
                  expect (gt (ptwo, pone)) << "ptwo > pone";
                  local_counts.successful_checks++;
 
-                 local_counts.test_cases++;
+                 local_counts.test_cases_count++;
                });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_test_suite->failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+  test_assert (current_test_suite->test_cases_count ()
+               == local_counts.test_cases_count);
 
   test_case ("Failed pointer comparisons",
              []
@@ -857,14 +868,15 @@ main (int argc, char* argv[])
                  expect (le (ptwo, pone)) << "ptwo <= pone";
                  local_counts.failed_checks++;
 
-                 local_counts.test_cases++;
+                 local_counts.test_cases_count++;
                });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_test_suite->failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+  test_assert (current_test_suite->test_cases_count ()
+               == local_counts.test_cases_count);
 
   test_case ("Null pointer comparisons",
              []
@@ -883,14 +895,15 @@ main (int argc, char* argv[])
                  expect (eq (pfunc, nullptr)) << "pfunc == nullptr";
                  local_counts.successful_checks++;
 
-                 local_counts.test_cases++;
+                 local_counts.test_cases_count++;
                });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_test_suite->failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+  test_assert (current_test_suite->test_cases_count ()
+               == local_counts.test_cases_count);
 
   test_case ("Failed null pointer comparisons",
              []
@@ -909,14 +922,15 @@ main (int argc, char* argv[])
                  expect (ne (pfunc, nullptr)) << "pfunc != nullptr";
                  local_counts.failed_checks++;
 
-                 local_counts.test_cases++;
+                 local_counts.test_cases_count++;
                });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_test_suite->failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+  test_assert (current_test_suite->test_cases_count ()
+               == local_counts.test_cases_count);
 
   // --------------------------------------------------------------------------
 
@@ -936,14 +950,15 @@ main (int argc, char* argv[])
                  expect (eq (reflection::type_name<int> (), "int"sv));
                  local_counts.successful_checks++;
 
-                 local_counts.test_cases++;
+                 local_counts.test_cases_count++;
                });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_test_suite->failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+  test_assert (current_test_suite->test_cases_count ()
+               == local_counts.test_cases_count);
 
 #if defined(__EXCEPTIONS)
 
@@ -965,14 +980,15 @@ main (int argc, char* argv[])
 
                  local_counts.successful_checks++;
 
-                 local_counts.test_cases++;
+                 local_counts.test_cases_count++;
                });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_test_suite->failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+  test_assert (current_test_suite->test_cases_count ()
+               == local_counts.test_cases_count);
 
   test_case ("Failed thrown exceptions",
              []
@@ -992,14 +1008,15 @@ main (int argc, char* argv[])
 
                  local_counts.failed_checks++;
 
-                 local_counts.test_cases++;
+                 local_counts.test_cases_count++;
                });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_test_suite->failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+  test_assert (current_test_suite->test_cases_count ()
+               == local_counts.test_cases_count);
 
   test_case ("Not thrown exceptions",
              []
@@ -1008,14 +1025,15 @@ main (int argc, char* argv[])
                      << "exception not thrown";
                  local_counts.successful_checks++;
 
-                 local_counts.test_cases++;
+                 local_counts.test_cases_count++;
                });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_test_suite->failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+  test_assert (current_test_suite->test_cases_count ()
+               == local_counts.test_cases_count);
 
   test_case ("Failed not thrown exceptions",
              []
@@ -1024,14 +1042,15 @@ main (int argc, char* argv[])
                      << "exception not thrown";
                  local_counts.failed_checks++;
 
-                 local_counts.test_cases++;
+                 local_counts.test_cases_count++;
                });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_test_suite->failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+  test_assert (current_test_suite->test_cases_count ()
+               == local_counts.test_cases_count);
 
 #endif // __EXCEPTIONS
 
@@ -1094,14 +1113,15 @@ main (int argc, char* argv[])
                      << "(actual != 42) or (actual != 42.0)";
                  local_counts.failed_checks++;
 
-                 local_counts.test_cases++;
+                 local_counts.test_cases_count++;
                });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_test_suite->failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+  test_assert (current_test_suite->test_cases_count ()
+               == local_counts.test_cases_count);
 
   test_case (
       "Operators",
@@ -1194,14 +1214,15 @@ main (int argc, char* argv[])
               << "(actual != 42) or (actual != 42.0)";
           local_counts.failed_checks++;
 
-          local_counts.test_cases++;
+          local_counts.test_cases_count++;
         });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_test_suite->failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+  test_assert (current_test_suite->test_cases_count ()
+               == local_counts.test_cases_count);
 
   // --------------------------------------------------------------------------
 
@@ -1227,14 +1248,15 @@ main (int argc, char* argv[])
           expect (utility::is_match ("abc", "a*c")) << "abc matches a*c";
           local_counts.successful_checks++;
 
-          local_counts.test_cases++;
+          local_counts.test_cases_count++;
         });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_test_suite->failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+  test_assert (current_test_suite->test_cases_count ()
+               == local_counts.test_cases_count);
 
   test_case ("Failed strings matches",
              []
@@ -1253,14 +1275,15 @@ main (int argc, char* argv[])
                  expect (utility::is_match ("abc", "*C")) << "abc matches *C";
                  local_counts.failed_checks++;
 
-                 local_counts.test_cases++;
+                 local_counts.test_cases_count++;
                });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_test_suite->failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+  test_assert (current_test_suite->test_cases_count ()
+               == local_counts.test_cases_count);
 
   test_case ("Splits",
              []
@@ -1285,14 +1308,15 @@ main (int argc, char* argv[])
                      << "a.b.cde splits into [a, b, cde]";
                  local_counts.successful_checks++;
 
-                 local_counts.test_cases++;
+                 local_counts.test_cases_count++;
                });
 
   test_assert (current_test_suite->successful_checks ()
                == local_counts.successful_checks);
   test_assert (current_test_suite->failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_test_suite->test_cases () == local_counts.test_cases);
+  test_assert (current_test_suite->test_cases_count ()
+               == local_counts.test_cases_count);
 
   // --------------------------------------------------------------------------
   // The inner test should return failure.
@@ -1411,7 +1435,7 @@ test_case_expect_passed_integrals_combinatorial ()
       << "gt matches unsigned int";
   local_counts.successful_checks++;
 
-  local_counts.test_cases++;
+  local_counts.test_cases_count++;
 }
 
 template <typename T>
@@ -1512,7 +1536,7 @@ test_case_expect_failed_integrals_combinatorial ()
       << "le matches unsigned int";
   local_counts.failed_checks++;
 
-  local_counts.test_cases++;
+  local_counts.test_cases_count++;
 }
 
 template <typename T>
@@ -1564,7 +1588,7 @@ test_case_expect_eq_floats_combinatorial (void)
   expect (eq (42, my_expected_float<T> ())) << "42 == 42.0";
   local_counts.successful_checks++;
 
-  local_counts.test_cases++;
+  local_counts.test_cases_count++;
 }
 
 static test_suite ts_passed_integrals = {
@@ -1581,8 +1605,8 @@ static test_suite ts_passed_integrals = {
                    == local_counts.successful_checks);
       test_assert (current_test_suite->failed_checks ()
                    == local_counts.failed_checks);
-      test_assert (current_test_suite->test_cases ()
-                   == local_counts.test_cases);
+      test_assert (current_test_suite->test_cases_count ()
+                   == local_counts.test_cases_count);
 
       test_case (
           "Combinatorial integrals unsigned long long",
@@ -1592,8 +1616,8 @@ static test_suite ts_passed_integrals = {
                    == local_counts.successful_checks);
       test_assert (current_test_suite->failed_checks ()
                    == local_counts.failed_checks);
-      test_assert (current_test_suite->test_cases ()
-                   == local_counts.test_cases);
+      test_assert (current_test_suite->test_cases_count ()
+                   == local_counts.test_cases_count);
 
       test_case ("Combinatorial integrals with signed int",
                  test_case_expect_passed_integrals_combinatorial<signed int>);
@@ -1602,8 +1626,8 @@ static test_suite ts_passed_integrals = {
                    == local_counts.successful_checks);
       test_assert (current_test_suite->failed_checks ()
                    == local_counts.failed_checks);
-      test_assert (current_test_suite->test_cases ()
-                   == local_counts.test_cases);
+      test_assert (current_test_suite->test_cases_count ()
+                   == local_counts.test_cases_count);
 
       test_case (
           "Combinatorial integrals with unsigned int",
@@ -1613,8 +1637,8 @@ static test_suite ts_passed_integrals = {
                    == local_counts.successful_checks);
       test_assert (current_test_suite->failed_checks ()
                    == local_counts.failed_checks);
-      test_assert (current_test_suite->test_cases ()
-                   == local_counts.test_cases);
+      test_assert (current_test_suite->test_cases_count ()
+                   == local_counts.test_cases_count);
 
       test_case ("Combinatorial integrals with signed short",
                  test_case_expect_passed_integrals_combinatorial<signed int>);
@@ -1623,8 +1647,8 @@ static test_suite ts_passed_integrals = {
                    == local_counts.successful_checks);
       test_assert (current_test_suite->failed_checks ()
                    == local_counts.failed_checks);
-      test_assert (current_test_suite->test_cases ()
-                   == local_counts.test_cases);
+      test_assert (current_test_suite->test_cases_count ()
+                   == local_counts.test_cases_count);
 
       test_case (
           "Combinatorial integrals with unsigned short",
@@ -1634,8 +1658,8 @@ static test_suite ts_passed_integrals = {
                    == local_counts.successful_checks);
       test_assert (current_test_suite->failed_checks ()
                    == local_counts.failed_checks);
-      test_assert (current_test_suite->test_cases ()
-                   == local_counts.test_cases);
+      test_assert (current_test_suite->test_cases_count ()
+                   == local_counts.test_cases_count);
 
       test_case (
           "Combinatorial integrals with signed short",
@@ -1645,8 +1669,8 @@ static test_suite ts_passed_integrals = {
                    == local_counts.successful_checks);
       test_assert (current_test_suite->failed_checks ()
                    == local_counts.failed_checks);
-      test_assert (current_test_suite->test_cases ()
-                   == local_counts.test_cases);
+      test_assert (current_test_suite->test_cases_count ()
+                   == local_counts.test_cases_count);
 
       test_case (
           "Combinatorial integrals with unsigned short",
@@ -1656,8 +1680,8 @@ static test_suite ts_passed_integrals = {
                    == local_counts.successful_checks);
       test_assert (current_test_suite->failed_checks ()
                    == local_counts.failed_checks);
-      test_assert (current_test_suite->test_cases ()
-                   == local_counts.test_cases);
+      test_assert (current_test_suite->test_cases_count ()
+                   == local_counts.test_cases_count);
 
       test_case ("Combinatorial integrals with signed char",
                  test_case_expect_passed_integrals_combinatorial<signed char>);
@@ -1666,8 +1690,8 @@ static test_suite ts_passed_integrals = {
                    == local_counts.successful_checks);
       test_assert (current_test_suite->failed_checks ()
                    == local_counts.failed_checks);
-      test_assert (current_test_suite->test_cases ()
-                   == local_counts.test_cases);
+      test_assert (current_test_suite->test_cases_count ()
+                   == local_counts.test_cases_count);
 
       test_case (
           "Combinatorial integrals with unsigned char",
@@ -1677,8 +1701,8 @@ static test_suite ts_passed_integrals = {
                    == local_counts.successful_checks);
       test_assert (current_test_suite->failed_checks ()
                    == local_counts.failed_checks);
-      test_assert (current_test_suite->test_cases ()
-                   == local_counts.test_cases);
+      test_assert (current_test_suite->test_cases_count ()
+                   == local_counts.test_cases_count);
     }
 };
 
@@ -1696,8 +1720,8 @@ static test_suite ts_failed_integrals = {
                    == local_counts.successful_checks);
       test_assert (current_test_suite->failed_checks ()
                    == local_counts.failed_checks);
-      test_assert (current_test_suite->test_cases ()
-                   == local_counts.test_cases);
+      test_assert (current_test_suite->test_cases_count ()
+                   == local_counts.test_cases_count);
 
       test_case (
           "Combinatorial integrals unsigned long long",
@@ -1707,8 +1731,8 @@ static test_suite ts_failed_integrals = {
                    == local_counts.successful_checks);
       test_assert (current_test_suite->failed_checks ()
                    == local_counts.failed_checks);
-      test_assert (current_test_suite->test_cases ()
-                   == local_counts.test_cases);
+      test_assert (current_test_suite->test_cases_count ()
+                   == local_counts.test_cases_count);
 
       test_case ("Combinatorial integrals with signed int",
                  test_case_expect_failed_integrals_combinatorial<signed int>);
@@ -1717,8 +1741,8 @@ static test_suite ts_failed_integrals = {
                    == local_counts.successful_checks);
       test_assert (current_test_suite->failed_checks ()
                    == local_counts.failed_checks);
-      test_assert (current_test_suite->test_cases ()
-                   == local_counts.test_cases);
+      test_assert (current_test_suite->test_cases_count ()
+                   == local_counts.test_cases_count);
 
       test_case (
           "Combinatorial integrals with unsigned int",
@@ -1728,8 +1752,8 @@ static test_suite ts_failed_integrals = {
                    == local_counts.successful_checks);
       test_assert (current_test_suite->failed_checks ()
                    == local_counts.failed_checks);
-      test_assert (current_test_suite->test_cases ()
-                   == local_counts.test_cases);
+      test_assert (current_test_suite->test_cases_count ()
+                   == local_counts.test_cases_count);
 
       test_case ("Combinatorial integrals with signed short",
                  test_case_expect_failed_integrals_combinatorial<signed int>);
@@ -1738,8 +1762,8 @@ static test_suite ts_failed_integrals = {
                    == local_counts.successful_checks);
       test_assert (current_test_suite->failed_checks ()
                    == local_counts.failed_checks);
-      test_assert (current_test_suite->test_cases ()
-                   == local_counts.test_cases);
+      test_assert (current_test_suite->test_cases_count ()
+                   == local_counts.test_cases_count);
 
       test_case (
           "Combinatorial integrals with unsigned short",
@@ -1749,8 +1773,8 @@ static test_suite ts_failed_integrals = {
                    == local_counts.successful_checks);
       test_assert (current_test_suite->failed_checks ()
                    == local_counts.failed_checks);
-      test_assert (current_test_suite->test_cases ()
-                   == local_counts.test_cases);
+      test_assert (current_test_suite->test_cases_count ()
+                   == local_counts.test_cases_count);
 
       test_case (
           "Combinatorial integrals with signed short",
@@ -1760,8 +1784,8 @@ static test_suite ts_failed_integrals = {
                    == local_counts.successful_checks);
       test_assert (current_test_suite->failed_checks ()
                    == local_counts.failed_checks);
-      test_assert (current_test_suite->test_cases ()
-                   == local_counts.test_cases);
+      test_assert (current_test_suite->test_cases_count ()
+                   == local_counts.test_cases_count);
 
       test_case (
           "Combinatorial integrals with unsigned short",
@@ -1771,8 +1795,8 @@ static test_suite ts_failed_integrals = {
                    == local_counts.successful_checks);
       test_assert (current_test_suite->failed_checks ()
                    == local_counts.failed_checks);
-      test_assert (current_test_suite->test_cases ()
-                   == local_counts.test_cases);
+      test_assert (current_test_suite->test_cases_count ()
+                   == local_counts.test_cases_count);
 
       test_case ("Combinatorial integrals with signed char",
                  test_case_expect_failed_integrals_combinatorial<signed char>);
@@ -1781,8 +1805,8 @@ static test_suite ts_failed_integrals = {
                    == local_counts.successful_checks);
       test_assert (current_test_suite->failed_checks ()
                    == local_counts.failed_checks);
-      test_assert (current_test_suite->test_cases ()
-                   == local_counts.test_cases);
+      test_assert (current_test_suite->test_cases_count ()
+                   == local_counts.test_cases_count);
 
       test_case (
           "Combinatorial integrals with unsigned char",
@@ -1792,8 +1816,8 @@ static test_suite ts_failed_integrals = {
                    == local_counts.successful_checks);
       test_assert (current_test_suite->failed_checks ()
                    == local_counts.failed_checks);
-      test_assert (current_test_suite->test_cases ()
-                   == local_counts.test_cases);
+      test_assert (current_test_suite->test_cases_count ()
+                   == local_counts.test_cases_count);
     }
 };
 
@@ -1809,8 +1833,8 @@ static test_suite ts_passed_floats
                          == local_counts.successful_checks);
             test_assert (current_test_suite->failed_checks ()
                          == local_counts.failed_checks);
-            test_assert (current_test_suite->test_cases ()
-                         == local_counts.test_cases);
+            test_assert (current_test_suite->test_cases_count ()
+                         == local_counts.test_cases_count);
 
             test_case ("Combinatorial doubles",
                        test_case_expect_eq_floats_combinatorial<double>);
@@ -1819,8 +1843,8 @@ static test_suite ts_passed_floats
                          == local_counts.successful_checks);
             test_assert (current_test_suite->failed_checks ()
                          == local_counts.failed_checks);
-            test_assert (current_test_suite->test_cases ()
-                         == local_counts.test_cases);
+            test_assert (current_test_suite->test_cases_count ()
+                         == local_counts.test_cases_count);
           } };
 
 static test_suite ts_misc = {
@@ -1849,15 +1873,15 @@ static test_suite ts_misc = {
                   << "array{ 1, 2, 3 } != array{ 1, 2, 4 }";
               local_counts.successful_checks++;
 
-              local_counts.test_cases++;
+              local_counts.test_cases_count++;
             });
 
       test_assert (current_test_suite->successful_checks ()
                    == local_counts.successful_checks);
       test_assert (current_test_suite->failed_checks ()
                    == local_counts.failed_checks);
-      test_assert (current_test_suite->test_cases ()
-                   == local_counts.test_cases);
+      test_assert (current_test_suite->test_cases_count ()
+                   == local_counts.test_cases_count);
 
       test_case (
           "Arrays failed",
@@ -1879,15 +1903,15 @@ static test_suite ts_misc = {
                   << "array{ 1, 2, 3 } eq array{ 1, 2, 4 }";
               local_counts.failed_checks++;
 
-              local_counts.test_cases++;
+              local_counts.test_cases_count++;
             });
 
       test_assert (current_test_suite->successful_checks ()
                    == local_counts.successful_checks);
       test_assert (current_test_suite->failed_checks ()
                    == local_counts.failed_checks);
-      test_assert (current_test_suite->test_cases ()
-                   == local_counts.test_cases);
+      test_assert (current_test_suite->test_cases_count ()
+                   == local_counts.test_cases_count);
 
       test_case (
           "Vectors",
@@ -1917,15 +1941,15 @@ static test_suite ts_misc = {
                   << "vector{ 1, 2, 3 } != vector{ 1, 2, 4 }";
               local_counts.successful_checks++;
 
-              local_counts.test_cases++;
+              local_counts.test_cases_count++;
             });
 
       test_assert (current_test_suite->successful_checks ()
                    == local_counts.successful_checks);
       test_assert (current_test_suite->failed_checks ()
                    == local_counts.failed_checks);
-      test_assert (current_test_suite->test_cases ()
-                   == local_counts.test_cases);
+      test_assert (current_test_suite->test_cases_count ()
+                   == local_counts.test_cases_count);
 
       test_case (
           "Vectors failed",
@@ -1955,15 +1979,15 @@ static test_suite ts_misc = {
                   << "vector{ 1, 2, 3 } == vector{ 1, 2, 4 }";
               local_counts.failed_checks++;
 
-              local_counts.test_cases++;
+              local_counts.test_cases_count++;
             });
 
       test_assert (current_test_suite->successful_checks ()
                    == local_counts.successful_checks);
       test_assert (current_test_suite->failed_checks ()
                    == local_counts.failed_checks);
-      test_assert (current_test_suite->test_cases ()
-                   == local_counts.test_cases);
+      test_assert (current_test_suite->test_cases_count ()
+                   == local_counts.test_cases_count);
     }
 };
 

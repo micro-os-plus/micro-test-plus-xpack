@@ -164,7 +164,7 @@ namespace micro_os_plus::micro_test_plus
       }
 
     test_case_name_ = name;
-    ++test_cases_;
+    ++test_cases_count_;
 
     current_test_case = {};
 

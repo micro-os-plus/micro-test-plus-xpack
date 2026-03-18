@@ -377,7 +377,7 @@ namespace micro_os_plus::micro_test_plus
         return;
       }
 
-    if (suite.test_cases () > 0 && verbosity != verbosity::quiet)
+    if (suite.test_cases_count () > 0 && verbosity != verbosity::quiet)
       {
         printf ("\n");
         add_empty_line = true;
@@ -394,8 +394,8 @@ namespace micro_os_plus::micro_test_plus
                 colors_.pass, colors_.none, suite.name (),
                 suite.successful_checks (),
                 suite.successful_checks () == 1 ? "check" : "checks",
-                suite.test_cases (),
-                suite.test_cases () == 1 ? "case" : "cases");
+                suite.test_cases_count (),
+                suite.test_cases_count () == 1 ? "case" : "cases");
 #pragma GCC diagnostic pop
       }
     else
@@ -409,8 +409,8 @@ namespace micro_os_plus::micro_test_plus
                 colors_.fail, colors_.none, suite.name (), colors_.fail,
                 colors_.none, suite.successful_checks (),
                 suite.successful_checks () == 1 ? "check" : "checks",
-                suite.failed_checks (), suite.test_cases (),
-                suite.test_cases () == 1 ? "case" : "cases");
+                suite.failed_checks (), suite.test_cases_count (),
+                suite.test_cases_count () == 1 ? "case" : "cases");
 #pragma GCC diagnostic pop
       }
     flush ();

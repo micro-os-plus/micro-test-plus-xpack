@@ -236,9 +236,9 @@ namespace micro_os_plus::micro_test_plus
      * @return An integer with the number of test cases.
      */
     [[nodiscard]] constexpr int
-    test_cases (void)
+    test_cases_count (void)
     {
-      return test_cases_;
+      return test_cases_count_;
     }
 
     /**
@@ -288,7 +288,7 @@ namespace micro_os_plus::micro_test_plus
     unused (void)
     {
       return (failed_checks_ == 0 && successful_checks_ == 0
-              && test_cases_ == 0);
+              && test_cases_count_ == 0);
     }
 
   protected:
@@ -315,7 +315,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Count of test cases in the test suite.
      */
-    int test_cases_ = 0;
+    int test_cases_count_ = 0;
 
   public:
     /**
