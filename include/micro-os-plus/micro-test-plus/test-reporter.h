@@ -197,7 +197,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Default constructor for the test_reporter class.
      */
-    test_reporter () = default;
+    virtual ~test_reporter ();
 
     /**
      * @brief Selects the appropriate colour code based on a condition.
@@ -221,8 +221,9 @@ namespace micro_os_plus::micro_test_plus
      * @param sv The string view to output.
      * @return Reference to the current test_reporter instance.
      */
-    test_reporter&
-    operator<< (std::string_view sv);
+    virtual test_reporter&
+    operator<< (std::string_view sv)
+        = 0;
 
     /**
      * @brief Output operator for a single character.
@@ -230,8 +231,9 @@ namespace micro_os_plus::micro_test_plus
      * @param c The character to output.
      * @return Reference to the current test_reporter instance.
      */
-    test_reporter&
-    operator<< (char c);
+    virtual test_reporter&
+    operator<< (char c)
+        = 0;
 
     /**
      * @brief Output operator for a constant character string.
@@ -239,8 +241,9 @@ namespace micro_os_plus::micro_test_plus
      * @param s The string to output.
      * @return Reference to the current test_reporter instance.
      */
-    test_reporter&
-    operator<< (const char* s);
+    virtual test_reporter&
+    operator<< (const char* s)
+        = 0;
 
     /**
      * @brief Output operator for a mutable character string.
@@ -248,8 +251,9 @@ namespace micro_os_plus::micro_test_plus
      * @param s The string to output.
      * @return Reference to the current test_reporter instance.
      */
-    test_reporter&
-    operator<< (char* s);
+    virtual test_reporter&
+    operator<< (char* s)
+        = 0;
 
     /**
      * @brief Output operator for boolean values.
@@ -257,14 +261,15 @@ namespace micro_os_plus::micro_test_plus
      * @param v The boolean value to output.
      * @return Reference to the current test_reporter instance.
      */
-    test_reporter&
-    operator<< (bool v);
+    virtual test_reporter&
+    operator<< (bool v)
+        = 0;
 
     /**
      * @brief Output operator for nullptr.
      * @return Reference to the current test_reporter instance.
      */
-    test_reporter& operator<< (std::nullptr_t);
+    virtual test_reporter& operator<< (std::nullptr_t) = 0;
 
     /**
      * @brief Output operator for signed char values.
@@ -272,8 +277,9 @@ namespace micro_os_plus::micro_test_plus
      * @param c The signed char value to output.
      * @return Reference to the current test_reporter instance.
      */
-    test_reporter&
-    operator<< (signed char c);
+    virtual test_reporter&
+    operator<< (signed char c)
+        = 0;
 
     /**
      * @brief Output operator for unsigned char values.
@@ -281,8 +287,9 @@ namespace micro_os_plus::micro_test_plus
      * @param c The unsigned char value to output.
      * @return Reference to the current test_reporter instance.
      */
-    test_reporter&
-    operator<< (unsigned char c);
+    virtual test_reporter&
+    operator<< (unsigned char c)
+        = 0;
 
     /**
      * @brief Output operator for signed short values.
@@ -290,8 +297,9 @@ namespace micro_os_plus::micro_test_plus
      * @param v The signed short value to output.
      * @return Reference to the current test_reporter instance.
      */
-    test_reporter&
-    operator<< (signed short v);
+    virtual test_reporter&
+    operator<< (signed short v)
+        = 0;
 
     /**
      * @brief Output operator for unsigned short values.
@@ -299,8 +307,9 @@ namespace micro_os_plus::micro_test_plus
      * @param v The unsigned short value to output.
      * @return Reference to the current test_reporter instance.
      */
-    test_reporter&
-    operator<< (unsigned short v);
+    virtual test_reporter&
+    operator<< (unsigned short v)
+        = 0;
 
     /**
      * @brief Output operator for signed int values.
@@ -308,8 +317,9 @@ namespace micro_os_plus::micro_test_plus
      * @param v The signed int value to output.
      * @return Reference to the current test_reporter instance.
      */
-    test_reporter&
-    operator<< (signed int v);
+    virtual test_reporter&
+    operator<< (signed int v)
+        = 0;
 
     /**
      * @brief Output operator for unsigned int values.
@@ -317,8 +327,9 @@ namespace micro_os_plus::micro_test_plus
      * @param v The unsigned int value to output.
      * @return Reference to the current test_reporter instance.
      */
-    test_reporter&
-    operator<< (unsigned int v);
+    virtual test_reporter&
+    operator<< (unsigned int v)
+        = 0;
 
     /**
      * @brief Output operator for signed long values.
@@ -326,8 +337,9 @@ namespace micro_os_plus::micro_test_plus
      * @param v The signed long value to output.
      * @return Reference to the current test_reporter instance.
      */
-    test_reporter&
-    operator<< (signed long v);
+    virtual test_reporter&
+    operator<< (signed long v)
+        = 0;
 
     /**
      * @brief Output operator for unsigned long values.
@@ -335,8 +347,9 @@ namespace micro_os_plus::micro_test_plus
      * @param v The unsigned long value to output.
      * @return Reference to the current test_reporter instance.
      */
-    test_reporter&
-    operator<< (unsigned long v);
+    virtual test_reporter&
+    operator<< (unsigned long v)
+        = 0;
 
     /**
      * @brief Output operator for signed long long values.
@@ -344,8 +357,9 @@ namespace micro_os_plus::micro_test_plus
      * @param v The signed long long value to output.
      * @return Reference to the current test_reporter instance.
      */
-    test_reporter&
-    operator<< (signed long long v);
+    virtual test_reporter&
+    operator<< (signed long long v)
+        = 0;
 
     /**
      * @brief Output operator for unsigned long long values.
@@ -353,8 +367,9 @@ namespace micro_os_plus::micro_test_plus
      * @param v The unsigned long long value to output.
      * @return Reference to the current test_reporter instance.
      */
-    test_reporter&
-    operator<< (unsigned long long v);
+    virtual test_reporter&
+    operator<< (unsigned long long v)
+        = 0;
 
     /**
      * @brief Output operator for float values.
@@ -362,8 +377,9 @@ namespace micro_os_plus::micro_test_plus
      * @param v The float value to output.
      * @return Reference to the current test_reporter instance.
      */
-    test_reporter&
-    operator<< (float v);
+    virtual test_reporter&
+    operator<< (float v)
+        = 0;
 
     /**
      * @brief Output operator for double values.
@@ -371,8 +387,9 @@ namespace micro_os_plus::micro_test_plus
      * @param v The double value to output.
      * @return Reference to the current test_reporter instance.
      */
-    test_reporter&
-    operator<< (double v);
+    virtual test_reporter&
+    operator<< (double v)
+        = 0;
 
     /**
      * @brief Output operator for long double values.
@@ -380,8 +397,9 @@ namespace micro_os_plus::micro_test_plus
      * @param v The long double value to output.
      * @return Reference to the current test_reporter instance.
      */
-    test_reporter&
-    operator<< (long double v);
+    virtual test_reporter&
+    operator<< (long double v)
+        = 0;
 
     /**
      * @brief Output operator to display any pointer.
@@ -401,8 +419,9 @@ namespace micro_os_plus::micro_test_plus
      * @param func Function pointer to the stream manipulator.
      * @return Reference to the current test_reporter instance.
      */
-    test_reporter&
-    operator<< (test_reporter& (*func) (test_reporter&));
+    virtual test_reporter&
+    operator<< (test_reporter& (*func) (test_reporter&))
+        = 0;
 
     // ------------------------------------------------------------------------
     // Specific operators.
@@ -611,8 +630,9 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Nothing.
      */
-    void
-    endline (void);
+    virtual void
+    endline (void)
+        = 0;
 
     // ------------------------------------------------------------------------
 
@@ -654,8 +674,9 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Nothing.
      */
-    void
-    begin_test_case (const char* name);
+    virtual void
+    begin_test_case (const char* name)
+        = 0;
 
     /**
      * @brief Mark the end of a test case.
@@ -664,8 +685,9 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Nothing.
      */
-    void
-    end_test_case (const char* name);
+    virtual void
+    end_test_case (const char* name)
+        = 0;
 
     /**
      * @brief Mark the beginning of a test suite.
@@ -674,8 +696,9 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Nothing.
      */
-    void
-    begin_test_suite (const char* name);
+    virtual void
+    begin_test_suite (const char* name)
+        = 0;
 
     /**
      * @brief Mark the end of a test suite.
@@ -684,8 +707,9 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Nothing.
      */
-    void
-    end_test_suite (test_suite_base& suite);
+    virtual void
+    end_test_suite (test_suite_base& suite)
+        = 0;
 
     /**
      * @brief Flush the current buffered content.
@@ -695,8 +719,9 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Nothing.
      */
-    void
-    flush (void);
+    virtual void
+    flush (void)
+        = 0;
 
     /**
      * @brief Output the current buffered content.
@@ -706,8 +731,9 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Nothing.
      */
-    void
-    output (void);
+    virtual void
+    output (void)
+        = 0;
 
     /**
      * @brief Controls whether to add an empty line between successful test
@@ -731,8 +757,9 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Nothing.
      */
-    void
-    output_pass_prefix_ (std::string& message);
+    virtual void
+    output_pass_prefix_ (std::string& message)
+        = 0;
 
     /**
      * @brief Outputs the suffix for a passing condition.
@@ -742,8 +769,9 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Nothing.
      */
-    void
-    output_pass_suffix_ (void);
+    virtual void
+    output_pass_suffix_ (void)
+        = 0;
 
     /**
      * @brief Outputs the prefix for a failing condition.
@@ -753,9 +781,10 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Nothing.
      */
-    void
+    virtual void
     output_fail_prefix_ (std::string& message,
-                         const reflection::source_location& location);
+                         const reflection::source_location& location)
+        = 0;
 
     /**
      * @brief Outputs the suffix for a failing condition.
@@ -764,8 +793,9 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Nothing.
      */
-    void
-    output_fail_suffix_ (bool abort);
+    virtual void
+    output_fail_suffix_ (bool abort)
+        = 0;
 
     /**
      * @brief ANSI colour codes for output formatting.
@@ -781,6 +811,121 @@ namespace micro_os_plus::micro_test_plus
      * @brief Indicates whether the reporter is currently within a test case.
      */
     bool is_in_test_case_ = false;
+  };
+
+  // --------------------------------------------------------------------------
+
+  /**
+   * @brief Basic (standard output) implementation of `test_reporter`.
+   *
+   * @details
+   * `test_reporter_basic` provides the default concrete implementation of the
+   * `test_reporter` abstract interface, formatting and presenting test results
+   * using `printf`-based output. It accumulates output in an internal string
+   * buffer and writes it to the standard output stream, supporting
+   * colour-coded diagnostics and multiple verbosity levels.
+   *
+   * Users who require custom output behaviour (e.g. redirecting to a serial
+   * port on bare-metal targets) may derive a new class from `test_reporter`
+   * and supply an instance via the `reporter` global pointer before calling
+   * `initialize()`.
+   *
+   * All members and methods are defined within the
+   * `micro_os_plus::micro_test_plus` namespace, ensuring clear separation from
+   * user code and minimising the risk of naming conflicts.
+   *
+   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+   */
+  class test_reporter_basic : public test_reporter
+  {
+  public:
+    /**
+     * @brief Default constructor for the test_reporter_basic class.
+     */
+    test_reporter_basic () = default;
+
+    test_reporter_basic (const test_reporter_basic&) = delete;
+
+    test_reporter_basic (test_reporter_basic&&) = delete;
+
+    test_reporter_basic&
+    operator= (const test_reporter_basic&)
+        = delete;
+
+    test_reporter_basic&
+    operator= (test_reporter_basic&&)
+        = delete;
+
+    ~test_reporter_basic () override = default;
+
+    test_reporter&
+    operator<< (std::string_view sv) override;
+    test_reporter&
+    operator<< (char c) override;
+    test_reporter&
+    operator<< (const char* s) override;
+    test_reporter&
+    operator<< (char* s) override;
+    test_reporter&
+    operator<< (bool v) override;
+    test_reporter& operator<< (std::nullptr_t) override;
+    test_reporter&
+    operator<< (signed char c) override;
+    test_reporter&
+    operator<< (unsigned char c) override;
+    test_reporter&
+    operator<< (signed short v) override;
+    test_reporter&
+    operator<< (unsigned short v) override;
+    test_reporter&
+    operator<< (signed int v) override;
+    test_reporter&
+    operator<< (unsigned int v) override;
+    test_reporter&
+    operator<< (signed long v) override;
+    test_reporter&
+    operator<< (unsigned long v) override;
+    test_reporter&
+    operator<< (signed long long v) override;
+    test_reporter&
+    operator<< (unsigned long long v) override;
+    test_reporter&
+    operator<< (float v) override;
+    test_reporter&
+    operator<< (double v) override;
+    test_reporter&
+    operator<< (long double v) override;
+
+    test_reporter&
+    operator<< (test_reporter& (*func) (test_reporter&)) override;
+
+    void
+    endline (void) override;
+
+    void
+    begin_test_case (const char* name) override;
+    void
+    end_test_case (const char* name) override;
+    void
+    begin_test_suite (const char* name) override;
+    void
+    end_test_suite (test_suite_base& suite) override;
+
+    void
+    flush (void) override;
+    void
+    output (void) override;
+
+  protected:
+    void
+    output_pass_prefix_ (std::string& message) override;
+    void
+    output_pass_suffix_ (void) override;
+    void
+    output_fail_prefix_ (std::string& message,
+                         const reflection::source_location& location) override;
+    void
+    output_fail_suffix_ (bool abort) override;
   };
 
   // --------------------------------------------------------------------------

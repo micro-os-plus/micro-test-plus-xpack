@@ -137,7 +137,7 @@ namespace micro_os_plus::micro_test_plus
       }
 
     // Initialize and configure the reporter.
-    reporter = new test_reporter ();
+    reporter = new test_reporter_basic ();
     reporter->verbosity = verbosity;
 
     // ------------------------------------------------------------------------
