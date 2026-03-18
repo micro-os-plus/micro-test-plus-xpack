@@ -76,6 +76,7 @@
 #include "micro-test-plus/test-suite.h"
 #include "micro-test-plus/test-runner.h"
 #include "micro-test-plus/test-reporter.h"
+#include "micro-test-plus/test-reporter-basic.h"
 
 // ----------------------------------------------------------------------------
 

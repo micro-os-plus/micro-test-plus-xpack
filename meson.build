@@ -46,6 +46,7 @@ _local_sources += [
   'src/micro-test-plus.cpp',
   'src/test-runner.cpp',
   'src/test-reporter.cpp',
+  'src/test-reporter-basic.cpp',
   'src/test-suite.cpp',
 ]
 
