@@ -47,6 +47,7 @@ _local_sources += [
   'src/test-runner.cpp',
   'src/test-reporter.cpp',
   'src/test-reporter-basic.cpp',
+  'src/test-reporter-tap.cpp',
   'src/test-suite.cpp',
 ]
 
