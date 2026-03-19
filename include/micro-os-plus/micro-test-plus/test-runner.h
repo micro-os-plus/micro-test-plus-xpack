@@ -166,6 +166,12 @@ namespace micro_os_plus::micro_test_plus
     void
     register_test_suite (test_suite_base* suite);
 
+    size_t
+    test_suites_count (void)
+    {
+      return (test_suites != nullptr) ? test_suites->size () + 1 : 1;
+    }
+
     /**
      * @brief Retrieves the name of the default test suite.
      *

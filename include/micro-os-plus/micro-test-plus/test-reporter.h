@@ -693,6 +693,28 @@ namespace micro_os_plus::micro_test_plus
         = 0;
 
     /**
+     * @brief Mark the beginning of a test.
+     *
+     * @param name The name of the test.
+     * @par Returns
+     *   Nothing.
+     */
+    virtual void
+    begin_test (size_t test_suites_count)
+        = 0;
+
+    /**
+     * @brief Mark the end of a test.
+     *
+     * @param runner Reference to the test runner.
+     * @par Returns
+     *   Nothing.
+     */
+    virtual void
+    end_test (test_runner& runner)
+        = 0;
+
+    /**
      * @brief Flush the current buffered content.
      *
      * @par Parameters

@@ -173,6 +173,26 @@ namespace micro_os_plus::micro_test_plus
     end_test_suite (test_suite_base& suite) override;
 
     /**
+     * @brief Mark the beginning of a test.
+     *
+     * @param test_suites_count The number of test suites, or zero if unknown.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    begin_test (size_t test_suites_count) override;
+
+    /**
+     * @brief Mark the end of a test.
+     *
+     * @param runner Reference to the test runner.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    end_test (test_runner& runner) override;
+
+    /**
      * @brief Flush the current buffered content.
      *
      * @par Parameters

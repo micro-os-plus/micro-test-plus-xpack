@@ -233,6 +233,9 @@ namespace micro_os_plus::micro_test_plus
             // printf ("\n");
           }
       }
+
+    reporter->end_test (*this);
+
     return was_successful ? 0 : 1;
   }
 

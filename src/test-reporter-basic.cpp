@@ -416,6 +416,21 @@ namespace micro_os_plus::micro_test_plus
     flush ();
   }
 
+  void
+  test_reporter_basic::begin_test ([[maybe_unused]] size_t test_suites_count)
+  {
+    // Nothing to do.
+  }
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wshadow"
+  void
+  test_reporter_basic::end_test ([[maybe_unused]] test_runner& runner)
+  {
+    // Nothing to do.
+  }
+#pragma GCC diagnostic pop
+
   /**
    * @details
    * This method writes the contents of the internal output buffer to the

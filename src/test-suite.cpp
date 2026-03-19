@@ -140,6 +140,8 @@ namespace micro_os_plus::micro_test_plus
   {
     if (process_deferred_begin)
       {
+        reporter->begin_test (runner.test_suites_count ());
+
         begin_test_suite ();
       }
     reporter->end_test_suite (*this);
@@ -160,6 +162,8 @@ namespace micro_os_plus::micro_test_plus
   {
     if (process_deferred_begin)
       {
+        reporter->begin_test (runner.test_suites_count ());
+
         begin_test_suite ();
       }
 
