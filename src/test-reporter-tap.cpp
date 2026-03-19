@@ -167,7 +167,6 @@ namespace micro_os_plus::micro_test_plus
           << type_traits::genuine_integral_value<unsigned int>{ location
                                                                     .line () }
           << endl;
-    ;
 
     *this << "            ..." << endl;
 

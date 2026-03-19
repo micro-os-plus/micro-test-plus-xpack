@@ -703,7 +703,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Mark the beginning of a test.
      *
-     * @param name The name of the test.
+     * @param test_suites_count The number of test suites.
      * @par Returns
      *   Nothing.
      */
