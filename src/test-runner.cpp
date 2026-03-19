@@ -201,6 +201,7 @@ namespace micro_os_plus::micro_test_plus
 
     // Deferred to first test case or test suite end, to allow various
     // initialisations to display their messages.
+    // reporter->begin_test (test_suites_count ());
     // default_test_suite_->begin_test_suite ();
   }
 #pragma GCC diagnostic pop
@@ -214,11 +215,15 @@ namespace micro_os_plus::micro_test_plus
       {
         default_test_suite_->end_test_suite ();
         was_successful = default_test_suite_->was_successful ();
+
+        totals.successful_checks += default_test_suite_->successful_checks ();
+        totals.failed_checks += default_test_suite_->failed_checks ();
+        totals.test_cases_count += default_test_suite_->test_cases_count ();
       }
 
-    if (test_suites_ != nullptr)
+    if (test_suites != nullptr)
       {
-        for (auto test_suite : *test_suites_)
+        for (auto test_suite : *test_suites)
           {
             current_test_suite = test_suite;
 
@@ -227,6 +232,10 @@ namespace micro_os_plus::micro_test_plus
             test_suite->end_test_suite ();
 
             was_successful &= test_suite->was_successful ();
+
+            totals.successful_checks += test_suite->successful_checks ();
+            totals.failed_checks += test_suite->failed_checks ();
+            totals.test_cases_count += test_suite->test_cases_count ();
           }
         if (reporter->verbosity != verbosity::silent)
           {
@@ -257,12 +266,12 @@ namespace micro_os_plus::micro_test_plus
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    if (test_suites_ == nullptr)
+    if (test_suites == nullptr)
       {
-        test_suites_ = new std::vector<test_suite_base*> ();
+        test_suites = new std::vector<test_suite_base*> ();
       }
-    test_suites_->push_back (suite);
-    suite->index = static_cast<unsigned int> (test_suites_->size () + 1);
+    test_suites->push_back (suite);
+    suite->index = test_suites->size () + 1;
   }
 
   /**

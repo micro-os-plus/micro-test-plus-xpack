@@ -197,6 +197,36 @@ namespace micro_os_plus::micro_test_plus
     [[noreturn]] void
     abort (void);
 
+    // ------------------------------------------------------------------------
+  public:
+    /**
+     * @brief Pointer to the array of registered test suites.
+     *
+     * @details
+     * Statically initialised to zero as BSS, such that test suites defined as
+     * static objects in different compilation units can be automatically
+     * executed.
+     */
+    std::vector<test_suite_base*>* test_suites = nullptr;
+
+    struct
+    {
+      /**
+       * @brief Total number of successful checks in the test suite.
+       */
+      size_t successful_checks = 0;
+
+      /**
+       * @brief Total number of failed checks in the test suite.
+       */
+      size_t failed_checks = 0;
+
+      /**
+       * @brief Total number of test cases in the test suite.
+       */
+      size_t test_cases_count = 0;
+    } totals;
+
   protected:
     /**
      * @brief Stores the argument count passed to the test runner.
@@ -216,17 +246,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Pointer to the default test suite which groups the main tests.
      */
-    test_suite_base* default_test_suite_;
-
-    /**
-     * @brief Pointer to the array of registered test suites.
-     *
-     * @details
-     * Statically initialised to zero as BSS, such that test suites defined as
-     * static objects in different compilation units can be automatically
-     * executed.
-     */
-    std::vector<test_suite_base*>* test_suites_;
+    test_suite_base* default_test_suite_ = nullptr;
   };
 
   // --------------------------------------------------------------------------
