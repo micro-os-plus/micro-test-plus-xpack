@@ -55,6 +55,11 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
+  test_reporter_basic::test_reporter_basic (void)
+  {
+    colors_ = colors_red_green;
+  }
+
   /**
    * @details
    * This method outputs the prefix for a passing test result, applying the
@@ -119,7 +124,8 @@ namespace micro_os_plus::micro_test_plus
    */
   void
   test_reporter_basic::output_fail_prefix_ (
-      std::string& message, const reflection::source_location& location)
+      std::string& message, const bool hasExpression,
+      const reflection::source_location& location)
   {
     *this << colors_.fail;
     if (is_in_test_case_)
@@ -146,6 +152,10 @@ namespace micro_os_plus::micro_test_plus
                location.line ()
              };
 #pragma GCC diagnostic pop
+    if (hasExpression)
+      {
+        *this << ", ";
+      }
   }
 
   /**
@@ -158,7 +168,8 @@ namespace micro_os_plus::micro_test_plus
    * distinguishable across all test cases and folders.
    */
   void
-  test_reporter_basic::output_fail_suffix_ (bool abort)
+  test_reporter_basic::output_fail_suffix_ (
+      [[maybe_unused]] const reflection::source_location& location, bool abort)
   {
     *this << ")";
     if (abort)
@@ -259,7 +270,7 @@ namespace micro_os_plus::micro_test_plus
             printf ("  • %s - test case started\n", name);
             output ();
             printf (
-                "  %s✗%s %s - test case %sFAILED%s (%d %s passed, %d "
+                "  %s✗%s %s - test case %sFAILED%s (%zu %s passed, %zu "
                 "failed)\n",
                 colors_.fail, colors_.none, name, colors_.fail, colors_.none,
                 current_test_suite->current_test_case.successful_checks,
@@ -285,7 +296,7 @@ namespace micro_os_plus::micro_test_plus
                 printf ("  • %s - test case started\n", name);
                 output ();
                 printf (
-                    "  %s✓%s %s - test case passed (%d %s)\n", colors_.pass,
+                    "  %s✓%s %s - test case passed (%zu %s)\n", colors_.pass,
                     colors_.none, name,
                     current_test_suite->current_test_case.successful_checks,
                     current_test_suite->current_test_case.successful_checks
@@ -302,7 +313,7 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
                 printf (
-                    "  %s✓%s %s - test case passed (%d %s)\n", colors_.pass,
+                    "  %s✓%s %s - test case passed (%zu %s)\n", colors_.pass,
                     colors_.none, name,
                     current_test_suite->current_test_case.successful_checks,
                     current_test_suite->current_test_case.successful_checks
@@ -390,7 +401,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-        printf ("%s✓%s %s - test suite passed (%d %s in %d test %s)\n",
+        printf ("%s✓%s %s - test suite passed (%zu %s in %zu test %s)\n",
                 colors_.pass, colors_.none, suite.name (),
                 suite.successful_checks (),
                 suite.successful_checks () == 1 ? "check" : "checks",
@@ -404,8 +415,8 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-        printf ("%s✗%s %s - test suite %sFAILED%s (%d %s passed, %d failed, "
-                "in %d test %s)\n",
+        printf ("%s✗%s %s - test suite %sFAILED%s (%zu %s passed, %zu failed, "
+                "in %zu test %s)\n",
                 colors_.fail, colors_.none, suite.name (), colors_.fail,
                 colors_.none, suite.successful_checks (),
                 suite.successful_checks () == 1 ? "check" : "checks",

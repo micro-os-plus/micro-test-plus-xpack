@@ -93,12 +93,12 @@ namespace micro_os_plus::micro_test_plus
   {
   public:
     /**
-     * @brief Default constructor for the test_reporter_basic class.
+     * @brief Constructor for the test_reporter_basic class.
      *
      * @details
      * The rule of five is enforced to prevent accidental copying or moving.
      */
-    test_reporter_basic () = default;
+    test_reporter_basic ();
 
     /**
      * @brief Deleted copy constructor to prevent copying.
@@ -248,23 +248,27 @@ namespace micro_os_plus::micro_test_plus
      * @brief Outputs the prefix for a failing condition.
      *
      * @param message The message to display.
+     * @param hasExpression Whether the failure is associated with an
+     * expression.
      * @param location The source location of the failure.
      * @par Returns
      *   Nothing.
      */
     void
-    output_fail_prefix_ (std::string& message,
+    output_fail_prefix_ (std::string& message, const bool hasExpression,
                          const reflection::source_location& location) override;
 
     /**
      * @brief Outputs the suffix for a failing condition.
      *
+     * @param location The source location of the failure.
      * @param abort Whether to abort execution after failure.
      * @par Returns
      *   Nothing.
      */
     void
-    output_fail_suffix_ (bool abort) override;
+    output_fail_suffix_ (const reflection::source_location& location,
+                         bool abort) override;
   };
 
   // --------------------------------------------------------------------------

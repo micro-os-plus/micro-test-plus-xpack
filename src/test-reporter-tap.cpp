@@ -68,13 +68,13 @@ namespace micro_os_plus::micro_test_plus
   void
   test_reporter_tap::output_pass_prefix_ (std::string& message)
   {
-    *this << colors_.pass;
     if (is_in_test_case_)
       {
-        *this << "  ";
+        *this << "        ";
       }
-    *this << "  ✓ ";
-    *this << colors_.none;
+    *this << "ok "
+          << static_cast<int> (current_test_suite->current_test_case.index)
+          << " - ";
     if (!message.empty ())
       {
         *this << message.c_str ();
@@ -117,33 +117,28 @@ namespace micro_os_plus::micro_test_plus
    */
   void
   test_reporter_tap::output_fail_prefix_ (
-      std::string& message, const reflection::source_location& location)
+      std::string& message, [[maybe_unused]] const bool hasExpression,
+      [[maybe_unused]] const reflection::source_location& location)
   {
-    *this << colors_.fail;
     if (is_in_test_case_)
       {
-        *this << "  ";
+        *this << "        ";
       }
-    *this << "  ✗ ";
-    *this << colors_.none;
+    *this << "not ok "
+          << static_cast<int> (current_test_suite->current_test_case.index);
+
     if (!message.empty ())
       {
-        *this << message.c_str ();
+        *this << " - " << message.c_str ();
         *this << " ";
       }
-    *this << colors_.fail << "FAILED" << colors_.none;
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wsign-conversion"
-#elif defined(__GNUC__)
-#pragma GCC diagnostic ignored "-Wnarrowing"
-#pragma GCC diagnostic ignored "-Wsign-conversion"
-#endif
-    *this << " (" << reflection::short_name (location.file_name ()) << ":"
-          << type_traits::genuine_integral_value<unsigned int>{
-               location.line ()
-             };
-#pragma GCC diagnostic pop
+    *this << endl;
+
+    *this << "            ---" << endl;
+    if (hasExpression)
+      {
+        *this << "            expect: ";
+      }
   }
 
   /**
@@ -156,14 +151,25 @@ namespace micro_os_plus::micro_test_plus
    * distinguishable across all test cases and folders.
    */
   void
-  test_reporter_tap::output_fail_suffix_ (bool abort)
+  test_reporter_tap::output_fail_suffix_ (
+      const reflection::source_location& location, bool abort)
   {
-    *this << ")";
     if (abort)
       {
         *this << " aborted...";
       }
     *this << endl;
+    *this << "            at:" << endl;
+
+    *this << "              filename: "
+          << reflection::short_name (location.file_name ()) << endl;
+    *this << "              line: "
+          << type_traits::genuine_integral_value<unsigned int>{ location
+                                                                    .line () }
+          << endl;
+    ;
+
+    *this << "            ..." << endl;
 
     flush ();
   }
@@ -254,17 +260,20 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-            printf ("  • %s - test case started\n", name);
+            printf ("    # Subtest: %s - test case started\n", name);
             output ();
+            printf ("        1..%zu\n",
+                    current_test_suite->current_test_case.index);
             printf (
-                "  %s✗%s %s - test case %sFAILED%s (%d %s passed, %d "
-                "failed)\n",
-                colors_.fail, colors_.none, name, colors_.fail, colors_.none,
+                "    not ok %zu - %s # {test case FAILED, %zu %s passed, %zu "
+                "failed}\n",
+                current_test_suite->test_cases_count (), name,
                 current_test_suite->current_test_case.successful_checks,
                 current_test_suite->current_test_case.successful_checks == 1
                     ? "check"
                     : "checks",
                 current_test_suite->current_test_case.failed_checks);
+
 #pragma GCC diagnostic pop
             add_empty_line = true;
           }
@@ -280,11 +289,13 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-                printf ("  • %s - test case started\n", name);
+                printf ("    # Subtest: %s - test case\n", name);
                 output ();
+                printf ("        1..%zu\n",
+                        current_test_suite->current_test_case.index);
                 printf (
-                    "  %s✓%s %s - test case passed (%d %s)\n", colors_.pass,
-                    colors_.none, name,
+                    "    ok %zu - %s # {test case passed, %zu %s}\n",
+                    current_test_suite->test_cases_count (), name,
                     current_test_suite->current_test_case.successful_checks,
                     current_test_suite->current_test_case.successful_checks
                             == 1
@@ -300,8 +311,8 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
                 printf (
-                    "  %s✓%s %s - test case passed (%d %s)\n", colors_.pass,
-                    colors_.none, name,
+                    "    ok %zu - %s # {test case passed, %zu %s}\n",
+                    current_test_suite->test_cases_count (), name,
                     current_test_suite->current_test_case.successful_checks,
                     current_test_suite->current_test_case.successful_checks
                             == 1
@@ -349,10 +360,10 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("• %s - test suite started\n", name);
+    printf ("# Subtest: %s - test suite\n", name);
 #pragma GCC diagnostic pop
 
-    add_empty_line = true;
+    add_empty_line = false;
   }
 
   /**
@@ -375,9 +386,9 @@ namespace micro_os_plus::micro_test_plus
         return;
       }
 
-    if (suite.test_cases () > 0 && verbosity != verbosity::quiet)
+    if (suite.test_cases_count () > 0 && verbosity != verbosity::quiet)
       {
-        printf ("\n");
+        // printf ("\n");
         add_empty_line = true;
       }
 
@@ -388,12 +399,15 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-        printf ("%s✓%s %s - test suite passed (%d %s in %d test %s)\n",
-                colors_.pass, colors_.none, suite.name (),
-                suite.successful_checks (),
+        if (verbosity != verbosity::quiet)
+          {
+            printf ("    1..%zu\n", suite.test_cases_count ());
+          }
+        printf ("ok %zu - %s # {test suite passed, %zu %s in %zu test %s}\n",
+                suite.index, suite.name (), suite.successful_checks (),
                 suite.successful_checks () == 1 ? "check" : "checks",
-                suite.test_cases (),
-                suite.test_cases () == 1 ? "case" : "cases");
+                suite.test_cases_count (),
+                suite.test_cases_count () == 1 ? "case" : "cases");
 #pragma GCC diagnostic pop
       }
     else
@@ -402,17 +416,50 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-        printf ("%s✗%s %s - test suite %sFAILED%s (%d %s passed, %d failed, "
-                "in %d test %s)\n",
-                colors_.fail, colors_.none, suite.name (), colors_.fail,
-                colors_.none, suite.successful_checks (),
-                suite.successful_checks () == 1 ? "check" : "checks",
-                suite.failed_checks (), suite.test_cases (),
-                suite.test_cases () == 1 ? "case" : "cases");
+        if (verbosity != verbosity::quiet)
+          {
+            printf ("    1..%zu\n", suite.test_cases_count ());
+          }
+        printf (
+            "not ok %zu - %s # {test suite FAILED, %zu %s passed, %zu failed, "
+            "in %zu test %s}\n",
+            suite.index, suite.name (), suite.successful_checks (),
+            suite.successful_checks () == 1 ? "check" : "checks",
+            suite.failed_checks (), suite.test_cases_count (),
+            suite.test_cases_count () == 1 ? "case" : "cases");
 #pragma GCC diagnostic pop
       }
+
     flush ();
   }
+
+  void
+  test_reporter_tap::begin_test (size_t test_suites_count)
+  {
+    if (verbosity != verbosity::silent)
+      {
+        printf ("\nTAP version 14\n");
+        printf ("1..%zu\n", test_suites_count ? test_suites_count : 1);
+        flush ();
+      }
+    add_empty_line = false;
+  }
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wshadow"
+  void
+  test_reporter_tap::end_test (test_runner& runner)
+  {
+    if (verbosity != verbosity::silent)
+      {
+        printf ("\n# { total: %zu checks passed, %zu failed, in %zu test "
+                "cases, %zu test suites }\n",
+                runner.totals.successful_checks, runner.totals.failed_checks,
+                runner.totals.test_cases_count, runner.test_suites_count ());
+        flush ();
+      }
+  }
+#pragma GCC diagnostic pop
 
   /**
    * @details

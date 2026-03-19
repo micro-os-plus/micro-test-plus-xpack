@@ -418,6 +418,8 @@ namespace micro_os_plus::micro_test_plus
   void
   test_reporter::pass (Expr_T& expr, std::string& message)
   {
+    current_test_suite->current_test_case.index++;
+
     output_pass_prefix_ (message);
 
     if (message.empty ())
@@ -443,14 +445,17 @@ namespace micro_os_plus::micro_test_plus
   test_reporter::fail (Expr_T& expr, bool abort, std::string& message,
                        const reflection::source_location& location)
   {
-    output_fail_prefix_ (message, location);
+    current_test_suite->current_test_case.index++;
+
+    const bool hasExpression = type_traits::is_op_v<Expr_T>;
+    output_fail_prefix_ (message, hasExpression, location);
 
     if constexpr (type_traits::is_op_v<Expr_T>)
       {
-        *this << ", " << expr;
+        *this << expr;
       }
 
-    output_fail_suffix_ (abort);
+    output_fail_suffix_ (location, abort);
   }
 
   // --------------------------------------------------------------------------

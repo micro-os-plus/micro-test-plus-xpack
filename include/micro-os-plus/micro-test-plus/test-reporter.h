@@ -105,9 +105,15 @@ namespace micro_os_plus::micro_test_plus
    */
   struct colors
   {
-    const char* none = "\033[0m"; /**< @brief Default colour. */
-    const char* pass = "\033[32m"; /**< @brief Green colour. */
-    const char* fail = "\033[31m"; /**< @brief Red colour. */
+    const char* none = ""; /**< @brief Default colour. */
+    const char* pass = ""; /**< @brief Green colour. */
+    const char* fail = ""; /**< @brief Red colour. */
+  };
+
+  const colors colors_red_green = {
+    "\033[0m", /**< @brief Default colour. */
+    "\033[32m", /**< @brief Green colour. */
+    "\033[31m" /**< @brief Red colour. */
   };
 
   /**
@@ -161,6 +167,8 @@ namespace micro_os_plus::micro_test_plus
   endl (test_reporter& stream);
 
   // Requires events::assertion_* for  and detailed operators.
+
+  class test_runner;
 
   /**
    * @brief Reporter to display test results, including operand values and
@@ -780,24 +788,28 @@ namespace micro_os_plus::micro_test_plus
      * @brief Outputs the prefix for a failing condition.
      *
      * @param message The message to display.
+     * @param hasExpression Whether the failure is associated with an
+     * expression.
      * @param location The source location of the failure.
      * @par Returns
      *   Nothing.
      */
     virtual void
-    output_fail_prefix_ (std::string& message,
+    output_fail_prefix_ (std::string& message, const bool hasExpression,
                          const reflection::source_location& location)
         = 0;
 
     /**
      * @brief Outputs the suffix for a failing condition.
      *
+     * @param location The source location of the failure.
      * @param abort Whether to abort execution after failure.
      * @par Returns
      *   Nothing.
      */
     virtual void
-    output_fail_suffix_ (bool abort)
+    output_fail_suffix_ (const reflection::source_location& location,
+                         bool abort)
         = 0;
 
     /**
