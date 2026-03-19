@@ -27,12 +27,21 @@ if (XPACK_ENABLE_MINIMAL_TEST)
 
   message (VERBOSE "A> minimal-test")
 
-  add_test (NAME "minimal-test" COMMAND minimal-test one two)
-  add_test (NAME "minimal-test --verbose" COMMAND minimal-test one two
-                                                  --verbose
+  # basic reporter
+  add_test (NAME "minimal-test --reporter=basic" COMMAND minimal-test one two --reporter=basic)
+  add_test (NAME "minimal-test --verbose --reporter=basic" COMMAND minimal-test one two
+                                                  --verbose --reporter=basic
   )
-  add_test (NAME "minimal-test --quiet" COMMAND minimal-test one two --quiet)
-  add_test (NAME "minimal-test --silent" COMMAND minimal-test one two --silent)
+  add_test (NAME "minimal-test --quiet --reporter=basic" COMMAND minimal-test one two --quiet --reporter=basic)
+  add_test (NAME "minimal-test --silent --reporter=basic" COMMAND minimal-test one two --silent --reporter=basic)
+
+  # tap reporter
+  add_test (NAME "minimal-test --reporter=tap" COMMAND minimal-test one two --reporter=tap)
+  add_test (NAME "minimal-test --verbose --reporter=tap" COMMAND minimal-test one two
+                                                  --verbose --reporter=tap
+  )
+  add_test (NAME "minimal-test --quiet --reporter=tap" COMMAND minimal-test one two --quiet --reporter=tap)
+  add_test (NAME "minimal-test --silent --reporter=tap" COMMAND minimal-test one two --silent --reporter=tap)
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -43,10 +52,17 @@ if (XPACK_ENABLE_SAMPLE_TEST)
 
   message (VERBOSE "A> sample-test")
 
-  add_test (NAME "sample-test" COMMAND sample-test one two)
-  add_test (NAME "sample-test --verbose" COMMAND sample-test one two --verbose)
-  add_test (NAME "sample-test --quiet" COMMAND sample-test one two --quiet)
-  add_test (NAME "sample-test --silent" COMMAND sample-test one two --silent)
+  # basic reporter
+  add_test (NAME "sample-test --reporter=basic" COMMAND sample-test one two --reporter=basic)
+  add_test (NAME "sample-test --verbose --reporter=basic" COMMAND sample-test one two --verbose --reporter=basic)
+  add_test (NAME "sample-test --quiet --reporter=basic" COMMAND sample-test one two --quiet --reporter=basic)
+  add_test (NAME "sample-test --silent --reporter=basic" COMMAND sample-test one two --silent --reporter=basic)
+
+  # tap reporter
+  add_test (NAME "sample-test --reporter=tap" COMMAND sample-test one two --reporter=tap)
+  add_test (NAME "sample-test --verbose --reporter=tap" COMMAND sample-test one two --verbose --reporter=tap)
+  add_test (NAME "sample-test --quiet --reporter=tap" COMMAND sample-test one two --quiet --reporter=tap)
+  add_test (NAME "sample-test --silent --reporter=tap" COMMAND sample-test one two --silent --reporter=tap)
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -57,10 +73,17 @@ if (XPACK_ENABLE_UNIT_TEST)
 
   message (VERBOSE "A> unit-test")
 
-  add_test (NAME "unit-test" COMMAND unit-test)
-  add_test (NAME "unit-test --verbose" COMMAND unit-test --verbose)
-  add_test (NAME "unit-test --quiet" COMMAND unit-test --quiet)
-  add_test (NAME "unit-test --silent" COMMAND unit-test --silent)
+  # basic reporter
+  add_test (NAME "unit-test --reporter=basic" COMMAND unit-test --reporter=basic)
+  add_test (NAME "unit-test --verbose --reporter=basic" COMMAND unit-test --verbose --reporter=basic)
+  add_test (NAME "unit-test --quiet --reporter=basic" COMMAND unit-test --quiet --reporter=basic)
+  add_test (NAME "unit-test --silent --reporter=basic" COMMAND unit-test --silent --reporter=basic)
+
+  # tap reporter
+  add_test (NAME "unit-test --reporter=tap" COMMAND unit-test --reporter=tap)
+  add_test (NAME "unit-test --verbose --reporter=tap" COMMAND unit-test --verbose --reporter=tap)
+  add_test (NAME "unit-test --quiet --reporter=tap" COMMAND unit-test --quiet --reporter=tap)
+  add_test (NAME "unit-test --silent --reporter=tap" COMMAND unit-test --silent --reporter=tap)
 endif ()
 
 # -----------------------------------------------------------------------------
