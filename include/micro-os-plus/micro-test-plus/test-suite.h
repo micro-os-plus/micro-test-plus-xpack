@@ -209,7 +209,7 @@ namespace micro_os_plus::micro_test_plus
      *	 None.
      * @return An integer with the number of checks that passed.
      */
-    [[nodiscard]] constexpr int
+    [[nodiscard]] constexpr size_t
     successful_checks (void)
     {
       return successful_checks_;
@@ -222,7 +222,7 @@ namespace micro_os_plus::micro_test_plus
      *	None.
      * @return An integer with the number of checks that failed.
      */
-    [[nodiscard]] constexpr int
+    [[nodiscard]] constexpr size_t
     failed_checks (void)
     {
       return failed_checks_;
@@ -235,7 +235,7 @@ namespace micro_os_plus::micro_test_plus
      *	None.
      * @return An integer with the number of test cases.
      */
-    [[nodiscard]] constexpr int
+    [[nodiscard]] constexpr size_t
     test_cases_count (void)
     {
       return test_cases_count_;
@@ -305,23 +305,23 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Count of test conditions that passed.
      */
-    int successful_checks_ = 0;
+    size_t successful_checks_ = 0;
 
     /**
      * @brief Count of test conditions that failed.
      */
-    int failed_checks_ = 0;
+    size_t failed_checks_ = 0;
 
     /**
      * @brief Count of test cases in the test suite.
      */
-    int test_cases_count_ = 0;
+    size_t test_cases_count_ = 0;
 
   public:
     /**
      * @brief The test suite index, counting from 1.
      */
-    unsigned int index = 1;
+    size_t index = 1;
 
     /**
      * @brief Indicates whether to process deferred begin for test cases.
@@ -340,12 +340,14 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Number of successful checks in the current test case.
        */
-      int successful_checks;
+      size_t successful_checks = 0;
 
       /**
        * @brief Number of failed checks in the current test case.
        */
-      int failed_checks;
+      size_t failed_checks = 0;
+
+      size_t index = 0;
     } current_test_case{};
   };
 
