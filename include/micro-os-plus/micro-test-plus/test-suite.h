@@ -50,6 +50,8 @@
 
 // ----------------------------------------------------------------------------
 
+#include <time.h>
+
 #ifdef __cplusplus
 
 // ----------------------------------------------------------------------------
@@ -263,6 +265,20 @@ namespace micro_os_plus::micro_test_plus
     void
     end_test_suite (void);
 
+#if (defined(_POSIX_TIMERS) && (_POSIX_TIMERS > 0)) || defined(__APPLE__)
+    /**
+     * @brief Computes the elapsed time between `begin_time` and `end_time`.
+     *
+     * @param [out] milliseconds The elapsed time in whole milliseconds.
+     * @param [out] microseconds The sub-millisecond remainder in microseconds
+     *   (0–999).
+     * @par Returns
+     *  Nothing.
+     */
+    void
+    compute_elapsed_time (long& milliseconds, long& microseconds);
+#endif
+
     /**
      * @brief Gets the test suite result.
      *
@@ -322,6 +338,18 @@ namespace micro_os_plus::micro_test_plus
      * @brief The test suite index, counting from 1.
      */
     size_t index = 1;
+
+#if (defined(_POSIX_TIMERS) && (_POSIX_TIMERS > 0)) || defined(__APPLE__)
+    /**
+     * @brief The timestamp recorded at the beginning of the test suite.
+     */
+    struct timespec begin_time{};
+
+    /**
+     * @brief The timestamp recorded at the end of the test suite.
+     */
+    struct timespec end_time{};
+#endif
 
     /**
      * @brief Indicates whether to process deferred begin for test cases.

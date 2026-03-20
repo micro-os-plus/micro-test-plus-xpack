@@ -121,6 +121,10 @@ namespace micro_os_plus::micro_test_plus
   void
   test_suite_base::begin_test_suite (void)
   {
+#if (defined(_POSIX_TIMERS) && (_POSIX_TIMERS > 0)) || defined(__APPLE__)
+    clock_gettime (CLOCK_MONOTONIC, &begin_time);
+#endif
+
     process_deferred_begin = false;
 
     reporter->begin_test_suite (name_);
@@ -144,6 +148,10 @@ namespace micro_os_plus::micro_test_plus
 
         begin_test_suite ();
       }
+
+#if (defined(_POSIX_TIMERS) && (_POSIX_TIMERS > 0)) || defined(__APPLE__)
+    clock_gettime (CLOCK_MONOTONIC, &end_time);
+#endif
     reporter->end_test_suite (*this);
   }
 
@@ -216,6 +224,34 @@ namespace micro_os_plus::micro_test_plus
     ++failed_checks_;
     ++current_test_case.failed_checks;
   }
+
+#if (defined(_POSIX_TIMERS) && (_POSIX_TIMERS > 0)) || defined(__APPLE__)
+  /**
+   * @details
+   * Subtracts `begin_time` from `end_time` using monotonic clock arithmetic,
+   * handling the nanosecond borrow correctly, then splits the result into
+   * whole milliseconds and the sub-millisecond remainder expressed in
+   * microseconds (0–999).
+   */
+  void
+  test_suite_base::compute_elapsed_time (long& milliseconds,
+                                         long& microseconds)
+  {
+    long delta_ns = end_time.tv_nsec - begin_time.tv_nsec;
+    long delta_s = end_time.tv_sec - begin_time.tv_sec;
+    if (delta_ns < 0)
+      {
+        delta_ns += 1000000000L;
+        --delta_s;
+      }
+
+    // Round to the nearest microsecond, then split into milliseconds and
+    // microseconds.
+    const long total_us = delta_s * 1000000L + delta_ns / 1000L + 500;
+    milliseconds = total_us / 1000L;
+    microseconds = total_us % 1000L;
+  }
+#endif
 
   // ==========================================================================
 

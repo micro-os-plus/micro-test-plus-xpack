@@ -263,8 +263,8 @@ namespace micro_os_plus::micro_test_plus
             output ();
             printf ("        1..%zu\n",
                     current_test_suite->current_test_case.index);
-            printf ("    not ok %zu - %s # {test case FAILED, %zu check%s "
-                    "passed, %zu failed}\n",
+            printf ("    not ok %zu - %s # { test case FAILED, %zu check%s "
+                    "passed, %zu failed }\n",
                     current_test_suite->test_cases_count (), name,
                     current_test_suite->current_test_case.successful_checks,
                     current_test_suite->current_test_case.successful_checks
@@ -293,7 +293,7 @@ namespace micro_os_plus::micro_test_plus
                 printf ("        1..%zu\n",
                         current_test_suite->current_test_case.index);
                 printf (
-                    "    ok %zu - %s # {test case passed, %zu check%s}\n",
+                    "    ok %zu - %s # { test case passed, %zu check%s }\n",
                     current_test_suite->test_cases_count (), name,
                     current_test_suite->current_test_case.successful_checks,
                     current_test_suite->current_test_case.successful_checks
@@ -310,7 +310,7 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
                 printf (
-                    "    ok %zu - %s # {test case passed, %zu check%s}\n",
+                    "    ok %zu - %s # { test case passed, %zu check%s}\n",
                     current_test_suite->test_cases_count (), name,
                     current_test_suite->current_test_case.successful_checks,
                     current_test_suite->current_test_case.successful_checks
@@ -385,6 +385,12 @@ namespace micro_os_plus::micro_test_plus
         return;
       }
 
+#if (defined(_POSIX_TIMERS) && (_POSIX_TIMERS > 0)) || defined(__APPLE__)
+    long milliseconds = 0;
+    long microseconds = 0;
+    suite.compute_elapsed_time (milliseconds, microseconds);
+#endif
+
     if (suite.test_cases_count () > 0 && verbosity != verbosity::quiet)
       {
         // printf ("\n");
@@ -402,12 +408,19 @@ namespace micro_os_plus::micro_test_plus
           {
             printf ("    1..%zu\n", suite.test_cases_count ());
           }
-        printf ("ok %zu - %s # {test suite passed, %zu check%s in %zu test "
-                "case%s}\n",
+        printf ("ok %zu - %s # { test suite passed, %zu check%s in %zu test "
+                "case%s",
                 suite.index, suite.name (), suite.successful_checks (),
                 suite.successful_checks () == 1 ? "" : "s",
                 suite.test_cases_count (),
                 suite.test_cases_count () == 1 ? "" : "s");
+#if (defined(_POSIX_TIMERS) && (_POSIX_TIMERS > 0)) || defined(__APPLE__)
+        if (milliseconds > 0 || microseconds > 0)
+          {
+            printf (", time: %ld.%03ld ms", milliseconds, microseconds);
+          }
+#endif
+        printf (" }\n");
 #pragma GCC diagnostic pop
       }
     else
@@ -420,12 +433,19 @@ namespace micro_os_plus::micro_test_plus
           {
             printf ("    1..%zu\n", suite.test_cases_count ());
           }
-        printf ("not ok %zu - check%s # {test suite FAILED, %zu %s passed, "
-                "%zu failed, in %zu test case%s}\n",
+        printf ("not ok %zu - check%s # { test suite FAILED, %zu %s passed, "
+                "%zu failed, in %zu test case%s",
                 suite.index, suite.name (), suite.successful_checks (),
                 suite.successful_checks () == 1 ? "" : "s",
                 suite.failed_checks (), suite.test_cases_count (),
                 suite.test_cases_count () == 1 ? "" : "s");
+#if (defined(_POSIX_TIMERS) && (_POSIX_TIMERS > 0)) || defined(__APPLE__)
+        if (milliseconds > 0 || microseconds > 0)
+          {
+            printf (", time: %ld.%03ld ms", milliseconds, microseconds);
+          }
+#endif
+        printf (" }\n");
 #pragma GCC diagnostic pop
       }
 
