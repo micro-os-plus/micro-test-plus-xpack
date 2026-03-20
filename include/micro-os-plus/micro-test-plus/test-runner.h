@@ -233,12 +233,12 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief The timestamp recorded at the beginning of the test suite.
      */
-    struct timespec begin_time{};
+    timespec begin_time{};
 
     /**
      * @brief The timestamp recorded at the end of the test suite.
      */
-    struct timespec end_time{};
+    timespec end_time{};
 #endif
 
     /**

@@ -276,7 +276,7 @@ namespace micro_os_plus::micro_test_plus
      *  Nothing.
      */
     void
-    compute_elapsed_time (struct timespec& begin_time, struct timespec& end_time,
+    compute_elapsed_time (timespec& begin_time, timespec& end_time,
                           long& milliseconds, long& microseconds);
 #endif
 
@@ -344,12 +344,12 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief The timestamp recorded at the beginning of the test suite.
      */
-    struct timespec begin_time{};
+    timespec begin_time{};
 
     /**
      * @brief The timestamp recorded at the end of the test suite.
      */
-    struct timespec end_time{};
+    timespec end_time{};
 #endif
 
     /**

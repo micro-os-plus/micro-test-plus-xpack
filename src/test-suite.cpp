@@ -236,8 +236,8 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wshadow"
   void
-  test_suite_base::compute_elapsed_time (struct timespec& begin_time,
-                                         struct timespec& end_time,
+  test_suite_base::compute_elapsed_time (timespec& begin_time,
+                                         timespec& end_time,
                                          long& milliseconds,
                                          long& microseconds)
   {
