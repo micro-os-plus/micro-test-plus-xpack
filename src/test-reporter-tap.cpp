@@ -40,6 +40,8 @@
 
 #include <micro-os-plus/micro-test-plus.h>
 
+#include <time.h>
+
 // ----------------------------------------------------------------------------
 
 #pragma GCC diagnostic ignored "-Waggregate-return"
@@ -388,7 +390,8 @@ namespace micro_os_plus::micro_test_plus
 #if (defined(_POSIX_TIMERS) && (_POSIX_TIMERS > 0)) || defined(__APPLE__)
     long milliseconds = 0;
     long microseconds = 0;
-    suite.compute_elapsed_time (milliseconds, microseconds);
+    suite.compute_elapsed_time (suite.begin_time, suite.end_time, milliseconds,
+                                microseconds);
 #endif
 
     if (suite.test_cases_count () > 0 && verbosity != verbosity::quiet)
@@ -471,18 +474,33 @@ namespace micro_os_plus::micro_test_plus
   {
     if (verbosity != verbosity::silent)
       {
+#if (defined(_POSIX_TIMERS) && (_POSIX_TIMERS > 0)) || defined(__APPLE__)
+        long milliseconds = 0;
+        long microseconds = 0;
+        runner.default_test_suite->compute_elapsed_time (
+            runner.begin_time, runner.end_time, milliseconds, microseconds);
+#endif
+
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
         printf ("\n# { total: %zu check%s passed, %zu failed, in %zu test "
-                "case%s, %zu test suite%s }\n",
+                "case%s, %zu test suite%s",
                 runner.totals.successful_checks,
                 runner.totals.successful_checks == 1 ? "" : "s",
                 runner.totals.failed_checks, runner.totals.test_cases_count,
                 runner.totals.test_cases_count == 1 ? "" : "s",
                 runner.test_suites_count (),
                 runner.test_suites_count () == 1 ? "" : "s");
+
+#if (defined(_POSIX_TIMERS) && (_POSIX_TIMERS > 0)) || defined(__APPLE__)
+        if (milliseconds > 0 || microseconds > 0)
+          {
+            printf (", time: %ld.%03ld ms", milliseconds, microseconds);
+          }
+#endif
+        printf (" }\n");
 #pragma GCC diagnostic pop
         flush ();
       }

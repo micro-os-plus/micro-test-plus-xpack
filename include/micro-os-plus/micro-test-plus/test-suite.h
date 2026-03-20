@@ -276,7 +276,8 @@ namespace micro_os_plus::micro_test_plus
      *  Nothing.
      */
     void
-    compute_elapsed_time (long& milliseconds, long& microseconds);
+    compute_elapsed_time (struct timespec& begin_time, struct timespec& end_time,
+                          long& milliseconds, long& microseconds);
 #endif
 
     /**

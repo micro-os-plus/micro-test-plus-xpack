@@ -53,6 +53,8 @@
 
 #include <functional>
 
+#include <time.h>
+
 // ----------------------------------------------------------------------------
 
 #if defined(__GNUC__)
@@ -227,6 +229,17 @@ namespace micro_os_plus::micro_test_plus
       size_t test_cases_count = 0;
     } totals;
 
+#if (defined(_POSIX_TIMERS) && (_POSIX_TIMERS > 0)) || defined(__APPLE__)
+    /**
+     * @brief The timestamp recorded at the beginning of the test suite.
+     */
+    struct timespec begin_time{};
+
+    /**
+     * @brief The timestamp recorded at the end of the test suite.
+     */
+    struct timespec end_time{};
+#endif
 
     /**
      * @brief Pointer to the default test suite which groups the main tests.

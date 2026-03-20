@@ -233,8 +233,12 @@ namespace micro_os_plus::micro_test_plus
    * whole milliseconds and the sub-millisecond remainder expressed in
    * microseconds (0–999).
    */
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wshadow"
   void
-  test_suite_base::compute_elapsed_time (long& milliseconds,
+  test_suite_base::compute_elapsed_time (struct timespec& begin_time,
+                                         struct timespec& end_time,
+                                         long& milliseconds,
                                          long& microseconds)
   {
     long delta_ns = end_time.tv_nsec - begin_time.tv_nsec;
@@ -251,6 +255,8 @@ namespace micro_os_plus::micro_test_plus
     milliseconds = total_us / 1000L;
     microseconds = total_us % 1000L;
   }
+#pragma GCC diagnostic pop
+
 #endif
 
   // ==========================================================================
