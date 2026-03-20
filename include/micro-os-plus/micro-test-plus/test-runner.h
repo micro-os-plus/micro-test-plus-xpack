@@ -227,6 +227,12 @@ namespace micro_os_plus::micro_test_plus
       size_t test_cases_count = 0;
     } totals;
 
+
+    /**
+     * @brief Pointer to the default test suite which groups the main tests.
+     */
+    test_suite_base* default_test_suite = nullptr;
+
   protected:
     /**
      * @brief Stores the argument count passed to the test runner.
@@ -242,11 +248,6 @@ namespace micro_os_plus::micro_test_plus
      * @brief The name of the default test suite.
      */
     const char* default_suite_name_ = "Test";
-
-    /**
-     * @brief Pointer to the default test suite which groups the main tests.
-     */
-    test_suite_base* default_test_suite_ = nullptr;
   };
 
   // --------------------------------------------------------------------------

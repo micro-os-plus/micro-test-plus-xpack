@@ -196,8 +196,8 @@ namespace micro_os_plus::micro_test_plus
 
     // ------------------------------------------------------------------------
 
-    default_test_suite_ = new test_suite_base (default_suite_name_);
-    current_test_suite = default_test_suite_;
+    default_test_suite = new test_suite_base (default_suite_name_);
+    current_test_suite = default_test_suite;
 
     // Deferred to first test case or test suite end, to allow various
     // initialisations to display their messages.
@@ -211,14 +211,14 @@ namespace micro_os_plus::micro_test_plus
   {
     bool was_successful = true;
 
-    if (!default_test_suite_->unused ())
+    if (!default_test_suite->unused ())
       {
-        default_test_suite_->end_test_suite ();
-        was_successful = default_test_suite_->was_successful ();
+        default_test_suite->end_test_suite ();
+        was_successful = default_test_suite->was_successful ();
 
-        totals.successful_checks += default_test_suite_->successful_checks ();
-        totals.failed_checks += default_test_suite_->failed_checks ();
-        totals.test_cases_count += default_test_suite_->test_cases_count ();
+        totals.successful_checks += default_test_suite->successful_checks ();
+        totals.failed_checks += default_test_suite->failed_checks ();
+        totals.test_cases_count += default_test_suite->test_cases_count ();
       }
 
     if (test_suites != nullptr)
