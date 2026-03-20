@@ -229,7 +229,7 @@ namespace micro_os_plus::micro_test_plus
       size_t test_cases_count = 0;
     } totals;
 
-#if (defined(_POSIX_TIMERS) && (_POSIX_TIMERS > 0)) || defined(__APPLE__)
+#if defined(__linux__) || defined(__APPLE__)
     /**
      * @brief The timestamp recorded at the beginning of the test suite.
      */

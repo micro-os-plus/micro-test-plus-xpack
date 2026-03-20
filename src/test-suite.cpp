@@ -121,7 +121,7 @@ namespace micro_os_plus::micro_test_plus
   void
   test_suite_base::begin_test_suite (void)
   {
-#if (defined(_POSIX_TIMERS) && (_POSIX_TIMERS > 0)) || defined(__APPLE__)
+#if defined(__linux__) || defined(__APPLE__)
     clock_gettime (CLOCK_MONOTONIC, &begin_time);
 #endif
 
@@ -149,7 +149,7 @@ namespace micro_os_plus::micro_test_plus
         begin_test_suite ();
       }
 
-#if (defined(_POSIX_TIMERS) && (_POSIX_TIMERS > 0)) || defined(__APPLE__)
+#if defined(__linux__) || defined(__APPLE__)
     clock_gettime (CLOCK_MONOTONIC, &end_time);
 #endif
     reporter->end_test_suite (*this);
@@ -225,7 +225,7 @@ namespace micro_os_plus::micro_test_plus
     ++current_test_case.failed_checks;
   }
 
-#if (defined(_POSIX_TIMERS) && (_POSIX_TIMERS > 0)) || defined(__APPLE__)
+#if defined(__linux__) || defined(__APPLE__)
   /**
    * @details
    * Subtracts `begin_time` from `end_time` using monotonic clock arithmetic,
