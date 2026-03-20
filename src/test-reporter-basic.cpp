@@ -270,13 +270,13 @@ namespace micro_os_plus::micro_test_plus
             printf ("  • %s - test case started\n", name);
             output ();
             printf (
-                "  %s✗%s %s - test case %sFAILED%s (%zu %s passed, %zu "
+                "  %s✗%s %s - test case %sFAILED%s (%zu check%s passed, %zu "
                 "failed)\n",
                 colors_.fail, colors_.none, name, colors_.fail, colors_.none,
                 current_test_suite->current_test_case.successful_checks,
                 current_test_suite->current_test_case.successful_checks == 1
-                    ? "check"
-                    : "checks",
+                    ? ""
+                    : "s",
                 current_test_suite->current_test_case.failed_checks);
 #pragma GCC diagnostic pop
             add_empty_line = true;
@@ -296,13 +296,13 @@ namespace micro_os_plus::micro_test_plus
                 printf ("  • %s - test case started\n", name);
                 output ();
                 printf (
-                    "  %s✓%s %s - test case passed (%zu %s)\n", colors_.pass,
-                    colors_.none, name,
+                    "  %s✓%s %s - test case passed (%zu check%s)\n",
+                    colors_.pass, colors_.none, name,
                     current_test_suite->current_test_case.successful_checks,
                     current_test_suite->current_test_case.successful_checks
                             == 1
-                        ? "check"
-                        : "checks");
+                        ? ""
+                        : "s");
 #pragma GCC diagnostic pop
                 add_empty_line = true;
               }
@@ -313,13 +313,13 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
                 printf (
-                    "  %s✓%s %s - test case passed (%zu %s)\n", colors_.pass,
-                    colors_.none, name,
+                    "  %s✓%s %s - test case passed (%zu check%s)\n",
+                    colors_.pass, colors_.none, name,
                     current_test_suite->current_test_case.successful_checks,
                     current_test_suite->current_test_case.successful_checks
                             == 1
-                        ? "check"
-                        : "checks");
+                        ? ""
+                        : "s");
 #pragma GCC diagnostic pop
 
                 add_empty_line = false;
@@ -401,12 +401,13 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-        printf ("%s✓%s %s - test suite passed (%zu %s in %zu test %s)\n",
-                colors_.pass, colors_.none, suite.name (),
-                suite.successful_checks (),
-                suite.successful_checks () == 1 ? "check" : "checks",
-                suite.test_cases_count (),
-                suite.test_cases_count () == 1 ? "case" : "cases");
+        printf (
+            "%s✓%s %s - test suite passed (%zu check%s in %zu test case%s)\n",
+            colors_.pass, colors_.none, suite.name (),
+            suite.successful_checks (),
+            suite.successful_checks () == 1 ? "" : "s",
+            suite.test_cases_count (),
+            suite.test_cases_count () == 1 ? "" : "s");
 #pragma GCC diagnostic pop
       }
     else
@@ -415,13 +416,14 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-        printf ("%s✗%s %s - test suite %sFAILED%s (%zu %s passed, %zu failed, "
-                "in %zu test %s)\n",
+        printf ("%s✗%s %s - test suite %sFAILED%s (%zu check%s passed, %zu "
+                "failed, "
+                "in %zu test case%s)\n",
                 colors_.fail, colors_.none, suite.name (), colors_.fail,
                 colors_.none, suite.successful_checks (),
-                suite.successful_checks () == 1 ? "check" : "checks",
+                suite.successful_checks () == 1 ? "" : "s",
                 suite.failed_checks (), suite.test_cases_count (),
-                suite.test_cases_count () == 1 ? "case" : "cases");
+                suite.test_cases_count () == 1 ? "" : "s");
 #pragma GCC diagnostic pop
       }
     flush ();

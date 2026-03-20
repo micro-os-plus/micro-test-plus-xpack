@@ -263,15 +263,15 @@ namespace micro_os_plus::micro_test_plus
             output ();
             printf ("        1..%zu\n",
                     current_test_suite->current_test_case.index);
-            printf (
-                "    not ok %zu - %s # {test case FAILED, %zu %s passed, %zu "
-                "failed}\n",
-                current_test_suite->test_cases_count (), name,
-                current_test_suite->current_test_case.successful_checks,
-                current_test_suite->current_test_case.successful_checks == 1
-                    ? "check"
-                    : "checks",
-                current_test_suite->current_test_case.failed_checks);
+            printf ("    not ok %zu - %s # {test case FAILED, %zu check%s "
+                    "passed, %zu failed}\n",
+                    current_test_suite->test_cases_count (), name,
+                    current_test_suite->current_test_case.successful_checks,
+                    current_test_suite->current_test_case.successful_checks
+                            == 1
+                        ? ""
+                        : "s",
+                    current_test_suite->current_test_case.failed_checks);
 
 #pragma GCC diagnostic pop
             add_empty_line = true;
@@ -293,13 +293,13 @@ namespace micro_os_plus::micro_test_plus
                 printf ("        1..%zu\n",
                         current_test_suite->current_test_case.index);
                 printf (
-                    "    ok %zu - %s # {test case passed, %zu %s}\n",
+                    "    ok %zu - %s # {test case passed, %zu check%s}\n",
                     current_test_suite->test_cases_count (), name,
                     current_test_suite->current_test_case.successful_checks,
                     current_test_suite->current_test_case.successful_checks
                             == 1
-                        ? "check"
-                        : "checks");
+                        ? ""
+                        : "s");
 #pragma GCC diagnostic pop
                 add_empty_line = true;
               }
@@ -310,13 +310,13 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
                 printf (
-                    "    ok %zu - %s # {test case passed, %zu %s}\n",
+                    "    ok %zu - %s # {test case passed, %zu check%s}\n",
                     current_test_suite->test_cases_count (), name,
                     current_test_suite->current_test_case.successful_checks,
                     current_test_suite->current_test_case.successful_checks
                             == 1
-                        ? "check"
-                        : "checks");
+                        ? ""
+                        : "s");
 #pragma GCC diagnostic pop
 
                 add_empty_line = false;
@@ -402,11 +402,12 @@ namespace micro_os_plus::micro_test_plus
           {
             printf ("    1..%zu\n", suite.test_cases_count ());
           }
-        printf ("ok %zu - %s # {test suite passed, %zu %s in %zu test %s}\n",
+        printf ("ok %zu - %s # {test suite passed, %zu check%s in %zu test "
+                "case%s}\n",
                 suite.index, suite.name (), suite.successful_checks (),
-                suite.successful_checks () == 1 ? "check" : "checks",
+                suite.successful_checks () == 1 ? "" : "s",
                 suite.test_cases_count (),
-                suite.test_cases_count () == 1 ? "case" : "cases");
+                suite.test_cases_count () == 1 ? "" : "s");
 #pragma GCC diagnostic pop
       }
     else
@@ -419,13 +420,12 @@ namespace micro_os_plus::micro_test_plus
           {
             printf ("    1..%zu\n", suite.test_cases_count ());
           }
-        printf (
-            "not ok %zu - %s # {test suite FAILED, %zu %s passed, %zu failed, "
-            "in %zu test %s}\n",
-            suite.index, suite.name (), suite.successful_checks (),
-            suite.successful_checks () == 1 ? "check" : "checks",
-            suite.failed_checks (), suite.test_cases_count (),
-            suite.test_cases_count () == 1 ? "case" : "cases");
+        printf ("not ok %zu - check%s # {test suite FAILED, %zu %s passed, "
+                "%zu failed, in %zu test case%s}\n",
+                suite.index, suite.name (), suite.successful_checks (),
+                suite.successful_checks () == 1 ? "" : "s",
+                suite.failed_checks (), suite.test_cases_count (),
+                suite.test_cases_count () == 1 ? "" : "s");
 #pragma GCC diagnostic pop
       }
 
@@ -451,10 +451,19 @@ namespace micro_os_plus::micro_test_plus
   {
     if (verbosity != verbosity::silent)
       {
-        printf ("\n# { total: %zu checks passed, %zu failed, in %zu test "
-                "cases, %zu test suites }\n",
-                runner.totals.successful_checks, runner.totals.failed_checks,
-                runner.totals.test_cases_count, runner.test_suites_count ());
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
+        printf ("\n# { total: %zu check%s passed, %zu failed, in %zu test "
+                "case%s, %zu test suite%s }\n",
+                runner.totals.successful_checks,
+                runner.totals.successful_checks == 1 ? "" : "s",
+                runner.totals.failed_checks, runner.totals.test_cases_count,
+                runner.totals.test_cases_count == 1 ? "" : "s",
+                runner.test_suites_count (),
+                runner.test_suites_count () == 1 ? "" : "s");
+#pragma GCC diagnostic pop
         flush ();
       }
   }
