@@ -241,19 +241,19 @@ namespace micro_os_plus::micro_test_plus
                                          long& milliseconds,
                                          long& microseconds)
   {
-    long delta_ns = end_time.tv_nsec - begin_time.tv_nsec;
-    long delta_s = end_time.tv_sec - begin_time.tv_sec;
+    long long delta_ns = end_time.tv_nsec - begin_time.tv_nsec;
+    long long delta_s = end_time.tv_sec - begin_time.tv_sec;
     if (delta_ns < 0)
       {
-        delta_ns += 1000000000L;
+        delta_ns += 1000000000LL;
         --delta_s;
       }
 
     // Round to the nearest microsecond, then split into milliseconds and
     // microseconds.
-    const long total_us = delta_s * 1000000L + delta_ns / 1000L + 500;
-    milliseconds = total_us / 1000L;
-    microseconds = total_us % 1000L;
+    const long long total_us = delta_s * 1000000LL + delta_ns / 1000LL + 500;
+    milliseconds = static_cast<long> (total_us / 1000LL);
+    microseconds = static_cast<long> (total_us % 1000LL);
   }
 #pragma GCC diagnostic pop
 
