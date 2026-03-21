@@ -312,7 +312,7 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
                 printf (
-                    "    ok %zu - %s # { test case passed, %zu check%s}\n",
+                    "    ok %zu - %s # { test case passed, %zu check%s }\n",
                     current_test_suite->test_cases_count (), name,
                     current_test_suite->current_test_case.successful_checks,
                     current_test_suite->current_test_case.successful_checks
