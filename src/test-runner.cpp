@@ -100,7 +100,7 @@ namespace micro_os_plus::micro_test_plus
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-#if (defined(_POSIX_TIMERS) && (_POSIX_TIMERS > 0)) || defined(__APPLE__)
+#if defined(CLOCK_MONOTONIC)
     clock_gettime (CLOCK_MONOTONIC, &begin_time);
 #endif
 
@@ -247,7 +247,7 @@ namespace micro_os_plus::micro_test_plus
           }
       }
 
-#if (defined(_POSIX_TIMERS) && (_POSIX_TIMERS > 0)) || defined(__APPLE__)
+#if defined(CLOCK_MONOTONIC)
     clock_gettime (CLOCK_MONOTONIC, &end_time);
 #endif
 
