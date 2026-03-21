@@ -229,7 +229,7 @@ namespace micro_os_plus::micro_test_plus
       size_t test_cases_count = 0;
     } totals;
 
-#if defined(CLOCK_MONOTONIC)
+#if defined(TIME_UTC)
     /**
      * @brief The timestamp recorded at the beginning of the test suite.
      */
