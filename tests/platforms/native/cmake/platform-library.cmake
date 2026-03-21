@@ -156,7 +156,7 @@ target_link_options (
   #
   # On Windows configuring the path to access the compiler DLLs is tedious,
   # it is much easier to build everything static.
-  $<$<PLATFORM_ID:Windows>:-static -lwinpthread>
+  $<$<PLATFORM_ID:Windows>:-static>
   # Once -rpath is configured properly, there is no need for statics.
   # $<$<AND:$<C_COMPILER_ID:GNU>,$<PLATFORM_ID:Darwin>>:-static-libgcc>
   # $<$<AND:$<C_COMPILER_ID:GNU>,$<PLATFORM_ID:Darwin>>:-static-libstdc++>
