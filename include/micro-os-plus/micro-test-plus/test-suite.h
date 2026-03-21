@@ -265,7 +265,7 @@ namespace micro_os_plus::micro_test_plus
     void
     end_test_suite (void);
 
-#if defined(TIME_UTC)
+#if defined(_WIN32) || defined(CLOCK_MONOTONIC)
     /**
      * @brief Computes the elapsed time between `begin_time` and `end_time`.
      *
@@ -340,7 +340,7 @@ namespace micro_os_plus::micro_test_plus
      */
     size_t index = 1;
 
-#if defined(TIME_UTC)
+#if defined(_WIN32) || defined(CLOCK_MONOTONIC)
     /**
      * @brief The timestamp recorded at the beginning of the test suite.
      */

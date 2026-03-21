@@ -387,7 +387,7 @@ namespace micro_os_plus::micro_test_plus
         return;
       }
 
-#if defined(TIME_UTC)
+#if defined(_WIN32) || defined(CLOCK_MONOTONIC)
     long milliseconds = 0;
     long microseconds = 0;
     suite.compute_elapsed_time (suite.begin_time, suite.end_time, milliseconds,
@@ -417,7 +417,7 @@ namespace micro_os_plus::micro_test_plus
                 suite.successful_checks () == 1 ? "" : "s",
                 suite.test_cases_count (),
                 suite.test_cases_count () == 1 ? "" : "s");
-#if defined(TIME_UTC)
+#if defined(_WIN32) || defined(CLOCK_MONOTONIC)
         if (milliseconds > 0 || microseconds > 0)
           {
             printf (", time: %ld.%03ld ms", milliseconds, microseconds);
@@ -442,7 +442,7 @@ namespace micro_os_plus::micro_test_plus
                 suite.successful_checks () == 1 ? "" : "s",
                 suite.failed_checks (), suite.test_cases_count (),
                 suite.test_cases_count () == 1 ? "" : "s");
-#if defined(TIME_UTC)
+#if defined(_WIN32) || defined(CLOCK_MONOTONIC)
         if (milliseconds > 0 || microseconds > 0)
           {
             printf (", time: %ld.%03ld ms", milliseconds, microseconds);
@@ -474,7 +474,7 @@ namespace micro_os_plus::micro_test_plus
   {
     if (verbosity != verbosity::silent)
       {
-#if defined(TIME_UTC)
+#if defined(_WIN32) || defined(CLOCK_MONOTONIC)
         long milliseconds = 0;
         long microseconds = 0;
         runner.default_test_suite->compute_elapsed_time (
@@ -494,7 +494,7 @@ namespace micro_os_plus::micro_test_plus
                 runner.test_suites_count (),
                 runner.test_suites_count () == 1 ? "" : "s");
 
-#if defined(TIME_UTC)
+#if defined(_WIN32) || defined(CLOCK_MONOTONIC)
         if (milliseconds > 0 || microseconds > 0)
           {
             printf (", time: %ld.%03ld ms", milliseconds, microseconds);

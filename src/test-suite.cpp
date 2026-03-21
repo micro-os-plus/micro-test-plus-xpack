@@ -121,8 +121,12 @@ namespace micro_os_plus::micro_test_plus
   void
   test_suite_base::begin_test_suite (void)
   {
-#if defined(TIME_UTC)
+#if defined(_WIN32) || defined(CLOCK_MONOTONIC)
+#if defined(_WIN32)
     timespec_get (&begin_time, TIME_UTC);
+#else
+    clock_gettime (CLOCK_MONOTONIC, &begin_time);
+#endif
 #endif
 
     process_deferred_begin = false;
@@ -149,8 +153,12 @@ namespace micro_os_plus::micro_test_plus
         begin_test_suite ();
       }
 
-#if defined(TIME_UTC)
+#if defined(_WIN32) || defined(CLOCK_MONOTONIC)
+#if defined(_WIN32)
     timespec_get (&end_time, TIME_UTC);
+#else
+    clock_gettime (CLOCK_MONOTONIC, &end_time);
+#endif
 #endif
     reporter->end_test_suite (*this);
   }
@@ -225,7 +233,7 @@ namespace micro_os_plus::micro_test_plus
     ++current_test_case.failed_checks;
   }
 
-#if defined(TIME_UTC)
+#if defined(_WIN32) || defined(CLOCK_MONOTONIC)
   /**
    * @details
    * Subtracts `begin_time` from `end_time` using monotonic clock arithmetic,

@@ -100,8 +100,12 @@ namespace micro_os_plus::micro_test_plus
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-#if defined(TIME_UTC)
+#if defined(_WIN32) || defined(CLOCK_MONOTONIC)
+#if defined(_WIN32)
     timespec_get (&begin_time, TIME_UTC);
+#else
+    clock_gettime (CLOCK_MONOTONIC, &begin_time);
+#endif
 #endif
 
     argc_ = argc;
@@ -247,8 +251,12 @@ namespace micro_os_plus::micro_test_plus
           }
       }
 
-#if defined(TIME_UTC)
+#if defined(_WIN32) || defined(CLOCK_MONOTONIC)
+#if defined(_WIN32)
     timespec_get (&end_time, TIME_UTC);
+#else
+    clock_gettime (CLOCK_MONOTONIC, &end_time);
+#endif
 #endif
 
     reporter->end_test (*this);
