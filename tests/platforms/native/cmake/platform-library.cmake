@@ -36,8 +36,9 @@ endif ()
 if (CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "Darwin")
   # On non-Windows, get the actual libraries paths by asking the compiler.
   execute_process (
-    COMMAND "${CMAKE_SOURCE_DIR}/scripts/get-libraries-paths.sh"
-            ${CMAKE_CXX_COMPILER}
+    COMMAND
+      "${CMAKE_SOURCE_DIR}/scripts/get-libraries-paths.sh"
+      ${CMAKE_CXX_COMPILER}
     OUTPUT_VARIABLE cxx_library_path
     OUTPUT_STRIP_TRAILING_WHITESPACE
   )
@@ -153,8 +154,8 @@ target_link_options (
   #
   # -v
   #
-  # On Windows configuring the path to access the compiler DLLs is tedious, it
-  # is much easier to build everything static.
+  # On Windows configuring the path to access the compiler DLLs is tedious,
+  # it is much easier to build everything static.
   $<$<PLATFORM_ID:Windows>:-static>
   # Once -rpath is configured properly, there is no need for statics.
   # $<$<AND:$<C_COMPILER_ID:GNU>,$<PLATFORM_ID:Darwin>>:-static-libgcc>
