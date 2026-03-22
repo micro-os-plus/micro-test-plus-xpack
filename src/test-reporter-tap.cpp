@@ -136,9 +136,10 @@ namespace micro_os_plus::micro_test_plus
       }
     *this << endl;
 
-    *this << "            ---" << endl;
+    *this << "            ---";
     if (hasExpression)
       {
+        *this << endl;
         *this << "            expect: ";
       }
   }
