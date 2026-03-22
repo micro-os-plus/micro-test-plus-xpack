@@ -8,6 +8,7 @@ and close existing issues and pull requests.
 
 ## 2026-03-23
 
+* v3.3.0 published on npmjs.com
 * v3.3.0 prepared
 
 ## 2026-03-22
