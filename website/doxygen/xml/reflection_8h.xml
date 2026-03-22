@@ -27,6 +27,10 @@
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>reflection.h</label>
@@ -39,14 +43,22 @@
         <link refid="micro-test-plus_8cpp"/>
       </node>
       <node id="4">
+        <label>test-reporter-basic.cpp</label>
+        <link refid="test-reporter-basic_8cpp"/>
+      </node>
+      <node id="5">
+        <label>test-reporter-tap.cpp</label>
+        <link refid="test-reporter-tap_8cpp"/>
+      </node>
+      <node id="6">
         <label>test-reporter.cpp</label>
         <link refid="test-reporter_8cpp"/>
       </node>
-      <node id="5">
+      <node id="7">
         <label>test-runner.cpp</label>
         <link refid="test-runner_8cpp"/>
       </node>
-      <node id="6">
+      <node id="8">
         <label>test-suite.cpp</label>
         <link refid="test-suite_8cpp"/>
       </node>
@@ -86,7 +98,8 @@ This function extracts the short name from a given file path by locating the fin
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/micro-test-plus.cpp" line="128" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/micro-test-plus.cpp" bodystart="128" bodyend="140" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" declline="198" declcolumn="5"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ae2b0f0247a64d1d22e9db9b5f47653db" compoundref="test-reporter_8cpp" startline="145" endline="173">micro_os_plus::micro_test_plus::test_reporter::output_fail_prefix_</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1a0a464d17e99f2c1a33f43e41d2c87be5" compoundref="test-reporter-basic_8cpp" startline="126" endline="159">micro_os_plus::micro_test_plus::test_reporter_basic::output_fail_prefix_</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1aa6ea612db57165ac9a7e149e4a523cdc" compoundref="test-reporter-tap_8cpp" startline="157" endline="177">micro_os_plus::micro_test_plus::test_reporter_tap::output_fail_suffix_</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>

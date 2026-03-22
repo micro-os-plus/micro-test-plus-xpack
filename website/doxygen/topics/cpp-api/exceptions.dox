@@ -16,11 +16,8 @@ mt::expect (mt::throws ([] { exercise_throw (true); })) << "exception thrown";
 mt::expect (mt::throws<std::runtime_error> ([] { throw std::runtime_error{ "" }; }))
         << "std::runtime_error thrown";
 
-mt::expect (mt::nothrow ([] { exercise_throw (false); })) << "exception not
-thrown";
+mt::expect (mt::nothrow ([] { exercise_throw (false); })) << "exception not thrown";
 @endcode
-
-If more advanced logic is required, such as handling multiple expected exceptions, use an explicit `try` block with several `catch` statements, and report the outcomes using `expect(true)` or `expect(false)`.
 
 @code{.cpp}
 try

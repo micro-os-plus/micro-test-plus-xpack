@@ -15,8 +15,8 @@ Comparators are available for both fundamental types and standard containers. Wh
 mt::expect (mt::eq (compute_answer (), 42)) << "answer is 42";
 mt::expect (mt::ne (compute_answer (), 43)) << "answer is not 43";
 mt::expect (mt::lt (compute_answer (), 43)) << "answer is < 43";
-mt::expect (mt::le (compute_answer (), 43)) << "answer is <= 42";
-mt::expect (mt::gt (compute_answer (), 41)) << "answer is > 43";
+mt::expect (mt::le (compute_answer (), 43)) << "answer is <= 43";
+mt::expect (mt::gt (compute_answer (), 41)) << "answer is > 41";
 mt::expect (mt::ge (compute_answer (), 42)) << "answer is >= 42";
 
 mt::expect (compute_condition ()) << "condition is true";
@@ -43,7 +43,7 @@ Containers can be compared for equality or inequality using the same comparator 
 mt::expect (mt::eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
         << "vector{ 1, 2 } eq vector{ 1, 2 }";
 
-mt::expect (mt::ne (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 })
+mt::expect (mt::ne (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 }))
         << "vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }";
 @endcode
 

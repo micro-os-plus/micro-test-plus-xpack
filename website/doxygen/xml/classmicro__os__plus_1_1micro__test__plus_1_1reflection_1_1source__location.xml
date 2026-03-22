@@ -116,7 +116,8 @@ Returns a <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" line="164" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" bodystart="104" bodyend="107"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1ae648fa43322766fbeb3f9103b43bcc4b" compoundref="reflection_8h" startline="180" endline="180">file_</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ae2b0f0247a64d1d22e9db9b5f47653db" compoundref="test-reporter_8cpp" startline="145" endline="173">micro_os_plus::micro_test_plus::test_reporter::output_fail_prefix_</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1a0a464d17e99f2c1a33f43e41d2c87be5" compoundref="test-reporter-basic_8cpp" startline="126" endline="159">micro_os_plus::micro_test_plus::test_reporter_basic::output_fail_prefix_</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1aa6ea612db57165ac9a7e149e4a523cdc" compoundref="test-reporter-tap_8cpp" startline="157" endline="177">micro_os_plus::micro_test_plus::test_reporter_tap::output_fail_suffix_</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1aab9d006004611ac0526852a09f675c66" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>auto</type>
@@ -142,7 +143,8 @@ Returns a <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" line="174" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" bodystart="114" bodyend="117"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1a0e805c2ed2234f2c004fd7196b844fc5" compoundref="reflection_8h" startline="185" endline="185">line_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1af2ee3ac5db96f13680291736d58fe327" compoundref="reflection-inlines_8h" startline="91" endline="97">current</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ae2b0f0247a64d1d22e9db9b5f47653db" compoundref="test-reporter_8cpp" startline="145" endline="173">micro_os_plus::micro_test_plus::test_reporter::output_fail_prefix_</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1a0a464d17e99f2c1a33f43e41d2c87be5" compoundref="test-reporter-basic_8cpp" startline="126" endline="159">micro_os_plus::micro_test_plus::test_reporter_basic::output_fail_prefix_</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1aa6ea612db57165ac9a7e149e4a523cdc" compoundref="test-reporter-tap_8cpp" startline="157" endline="177">micro_os_plus::micro_test_plus::test_reporter_tap::output_fail_suffix_</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

@@ -3,6 +3,8 @@
   <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
     <compoundname>src</compoundname>
     <innerfile refid="micro-test-plus_8cpp">micro-test-plus.cpp</innerfile>
+    <innerfile refid="test-reporter-basic_8cpp">test-reporter-basic.cpp</innerfile>
+    <innerfile refid="test-reporter-tap_8cpp">test-reporter-tap.cpp</innerfile>
     <innerfile refid="test-reporter_8cpp">test-reporter.cpp</innerfile>
     <innerfile refid="test-runner_8cpp">test-runner.cpp</innerfile>
     <innerfile refid="test-suite_8cpp">test-suite.cpp</innerfile>

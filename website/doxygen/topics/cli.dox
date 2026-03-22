@@ -34,19 +34,19 @@ test 5
 
 By default, the µTest++ output follows the [TAP](https://en.wikipedia.org/wiki/Test_Anything_Protocol) rules.
 
-For compatibility reasons, the properietary format implemented by the initial 
-releases will also be kept, but it is not recommended for new designs.
+For compatibility reasons, the proprietary format implemented by the initial
+releases will also be retained, but it is not recommended for new projects.
 
-If needed, more reporting formats (like junit, json, etc) can be added.
+If needed, more reporting formats (like JUnit, JSON, etc.) can be added.
 
-To exlicitly ask for a specific format:
+To explicitly ask for a specific format:
 
 - `--reporter=tap` - the default reporter
 - `--reporter=basic` - the deprecated initial reporter
 
 @section cli-verbosity Verbosity
 
-By default, µTest++ displays only test case summaries for passing tests (for failed tests, all expectations are shown).
+By default, µTest++ displays a summary line for each passing test case and full expectation details for each failing one.
 
 To adjust the verbosity, the following command-line options are available:
 
@@ -58,8 +58,7 @@ These options enable developers to focus on the information most relevant to the
 
 The examples provided illustrate the output produced in each mode, demonstrating how µTest++ adapts its reporting to support professional and efficient testing workflows across all files and folders.
 
-The source code for this test is located in the `tests/src/minimal-test.cpp`
-file.
+The source code for this example is in `tests/src/minimal-test.cpp`.
 
 @subsection cli-verbosity-verbose Verbose mode
 

@@ -9,6 +9,8 @@
     <innerfile refid="math_8h">math.h</innerfile>
     <innerfile refid="operators_8h">operators.h</innerfile>
     <innerfile refid="reflection_8h">reflection.h</innerfile>
+    <innerfile refid="test-reporter-basic_8h">test-reporter-basic.h</innerfile>
+    <innerfile refid="test-reporter-tap_8h">test-reporter-tap.h</innerfile>
     <innerfile refid="test-reporter_8h">test-reporter.h</innerfile>
     <innerfile refid="test-runner_8h">test-runner.h</innerfile>
     <innerfile refid="test-suite_8h">test-suite.h</innerfile>

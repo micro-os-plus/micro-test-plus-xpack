@@ -14,11 +14,11 @@ main(int argc, char* argv[])
 {
   namespace mt = micro_os_plus::micro_test_plus;
 
-  mt::initialize(argc, argv, "Minimal");
+  mt::initialize (argc, argv, "Minimal");
 
   mt::test_case ("Check truth", [] {
     mt::expect (true);
-  })
+  });
 
   return mt::exit_code ();
 }
@@ -27,9 +27,12 @@ main(int argc, char* argv[])
 When this test is executed, the output is as follows:
 
 @code{.console}
-• Minimal - test suite started
+TAP version 14
+1..0
+# Subtest: Minimal
+    ok 1 - Check truth # { test case passed, 1 check }
+    1..1
+ok 0 - Minimal # { test suite passed, 1 check in 1 test case }
 
-  ✓ Check truth - test case passed (1 check)
-
-✓ Minimal - test suite passed (1 check in 1 test case)
+# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite }
 @endcode

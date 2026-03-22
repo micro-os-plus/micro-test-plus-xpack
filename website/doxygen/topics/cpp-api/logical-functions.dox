@@ -9,8 +9,7 @@ These function names are prefixed with an underscore because `and`, `or`, and `n
 @par Example
 
 @code{.cpp}
-mt::expect(mt::_and (mt::eq (compute_answer (), 42), mt::eq (compute_float
-(), 42.0)));
+mt::expect (mt::_and (mt::eq (compute_answer (), 42), mt::eq (compute_float (), 42.0)));
 @endcode
 
 

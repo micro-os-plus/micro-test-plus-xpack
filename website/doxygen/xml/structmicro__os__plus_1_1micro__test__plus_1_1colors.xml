@@ -10,7 +10,7 @@
         <argsstring></argsstring>
         <name>fail</name>
         <qualifiedname>micro_os_plus::micro_test_plus::colors::fail</qualifiedname>
-        <initializer>= &quot;\033[31m&quot;</initializer>
+        <initializer>= &quot;&quot;</initializer>
         <briefdescription>
 <para>Red colour. </para>
         </briefdescription>
@@ -27,7 +27,7 @@
         <argsstring></argsstring>
         <name>none</name>
         <qualifiedname>micro_os_plus::micro_test_plus::colors::none</qualifiedname>
-        <initializer>= &quot;\033[0m&quot;</initializer>
+        <initializer>= &quot;&quot;</initializer>
         <briefdescription>
 <para>Default colour. </para>
         </briefdescription>
@@ -44,7 +44,7 @@
         <argsstring></argsstring>
         <name>pass</name>
         <qualifiedname>micro_os_plus::micro_test_plus::colors::pass</qualifiedname>
-        <initializer>= &quot;\033[32m&quot;</initializer>
+        <initializer>= &quot;&quot;</initializer>
         <briefdescription>
 <para>Green colour. </para>
         </briefdescription>

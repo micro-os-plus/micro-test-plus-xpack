@@ -184,15 +184,17 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a0b4aa7bfcd35287fd9bb9370aeea2154" kind="variable"><name>colors_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a212349d52907ad1f05a89b5b4d49c0c3" kind="variable"><name>is_in_test_case_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a22084218ef1a7005a96d9919587c09e2" kind="variable"><name>out_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a2e4113dbacfc7349545ddf6e5cca5268" kind="function"><name>test_reporter</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ac6d43b057a1be46a895e11c81a9c7cfb" kind="function"><name>begin_test_case</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ad6375b4032aa02fd8258f77b7de5efdd" kind="function"><name>begin_test_suite</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ab6f0791a20dd11e38a471ac30fb2ee06" kind="function"><name>~test_reporter</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a57c9f2d8d36bcc4659df924bfadbf02f" kind="function"><name>begin_test</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1af8cc0eb3001942a6344ccdeeb6f3f298" kind="function"><name>begin_test_case</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a8fe9ac8941951b6ebc430cdc06ff0d79" kind="function"><name>begin_test_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1aeab9d025989e57ed62ad0e701efc59ee" kind="function"><name>color</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ac0f25008c95f1ef27072df20d7668082" kind="function"><name>end_test_case</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ad01d404c3fe5a44cf7f10bfcd599e0f3" kind="function"><name>end_test_suite</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a105cec33c0e4ed184d8db90df27a48d6" kind="function"><name>endline</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a39cfd386c447d792d104371601889d19" kind="function"><name>end_test</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a43601a1c35bc269e98d0cfa9eaf190bb" kind="function"><name>end_test_case</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ae53d13e6b4755cfa5d27efe98f3c4605" kind="function"><name>end_test_suite</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a15947f4695a8c27e803483746adb78c2" kind="function"><name>endline</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ab89536a4a5a82b658ca8282277c49f4b" kind="function"><name>fail</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ab48b00f46755dd9a70cb39a42bfad7f6" kind="function"><name>flush</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a9ecefb5c2b9b7d750379ec9674c45725" kind="function"><name>flush</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a092ef277e46b408cd539de029429a1aa" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1acfe54a05505f0081fcd13f31bd222fa5" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a318db1ab66a5f2f63c39d58a3c8b2656" kind="function"><name>operator&lt;&lt;</name></member>
@@ -229,19 +231,153 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a9712e8adb7ab22c433b0acac1e18fd78" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a5a300e17b0498a54fa4724bee7a5bb58" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a4ef05fd23acfc0b4bcd5d95bf25b518d" kind="function"><name>operator&lt;&lt;</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1aa37bb1803ea48be27bd42ace2c61aa13" kind="function"><name>output</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1af2553d492faa510f9c1ec38af24c32bb" kind="function"><name>output</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1aa6ff8210496100842cf12b466195dcf7" kind="function"><name>pass</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ae2b0f0247a64d1d22e9db9b5f47653db" kind="function"><name>output_fail_prefix_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1aaa1839530b6e8560711926613013312b" kind="function"><name>output_fail_suffix_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1af7b154289a09dddaa80e122100437876" kind="function"><name>output_pass_prefix_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a8df0d7843bb268c9e91fb90219aded65" kind="function"><name>output_pass_suffix_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a38f08b88bfe2a26e51831dd314ae6a67" kind="function"><name>output_fail_prefix_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a24807fc4e384a7aa42abb327656eaf31" kind="function"><name>output_fail_suffix_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a5826e4a377a1fa7247e76784fe903207" kind="function"><name>output_pass_prefix_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a042155e64659c03db5fc44aa32da69d6" kind="function"><name>output_pass_suffix_</name></member>
+  </compound>
+  <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic" kind="class"><name>micro_os_plus::micro_test_plus::test_reporter_basic</name>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1a30c30cadd642d6bd11ad734ea9b6d46d" kind="function"><name>test_reporter_basic</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1ad0fde26b21bffb338e611334144a5140" kind="function"><name>test_reporter_basic</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1aa9941023538c779211e9aef97b716931" kind="function"><name>test_reporter_basic</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1a7a7dca65eb3c935434095a4c2df1dad4" kind="function"><name>~test_reporter_basic</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1a08dbc855aefce2b54a24673f94498102" kind="function"><name>begin_test</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1aec235e9b248ce360adb76b8fe8ac20af" kind="function"><name>begin_test_case</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1a9847a63af6598a7a752fd364d1e5497a" kind="function"><name>begin_test_suite</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1aeab9d025989e57ed62ad0e701efc59ee" kind="function"><name>color</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1a37bd235b054a13f7374d1bf0b237ec0b" kind="function"><name>end_test</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1a61cf8d59c66faaaeae59f5144c393442" kind="function"><name>end_test_case</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1a595d5ec976bdd36909213fc31ab526d5" kind="function"><name>end_test_suite</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1ac7fbfe590d5b8115496990f55112590c" kind="function"><name>endline</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ab89536a4a5a82b658ca8282277c49f4b" kind="function"><name>fail</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1a4d9b7ee9f6076c5e71ba81edeaa805e6" kind="function"><name>flush</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a092ef277e46b408cd539de029429a1aa" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1acfe54a05505f0081fcd13f31bd222fa5" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a318db1ab66a5f2f63c39d58a3c8b2656" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1affa86db322653867cc9a82f2720d0b49" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a8327d747306728c83e673a9993ab933a" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ae3c6e69e58215c20d2766ae6e454e2e0" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a248e333b17ace83dbfaf3db464520993" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1abef6ddfab2ac750d9ec1a170873f6c3e" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a7e08a3a2f3b5ae49ac3b138f93951746" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a1f6ce3e6874d63ee7afe21f8301657c1" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a292fdf290a81a3321edde14c31dff1ed" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a7f8caa4fbe97ef26ece7c5a37dc4ea9c" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a15d2d453175a3ab377eb12cae6e81d2e" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a8167f599220c789c1044da084a119eb5" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ac43d666b5a7824b7e91a1306094fdb1e" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a46a7012a665e55c00e7a040588f0c83b" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1afdfeff359bdc48955dacb5448706b297" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ab6cd245bcdf58b3004430a76bc78abc8" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a8d5212b37538ff11de36a1265b6f927b" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a0cbaa9549a0929515cd1684cda27e209" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a315aa52bed70671e66a7228d11452c93" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1aa347f64332ee58823aeb25ed204a8c93" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a6fbbfdde2f05c76aab0ea8ddc44495d7" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a8c29379f197e555fb8cc6e5d7ca66c09" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a30306b9f0fb893ef89a0756a5025d0e2" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1af88660a913ae75160c1c88ffbb92830c" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a299c705a7e4ba728cdf236318222e234" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1acade140484e4bdaab40a72bda0b42adb" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a0db349234264801b1741a1502d83e286" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a0bdeb24c644813f434c7373b62280700" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a91be9116b7ca4b8596cabb8690ea2c46" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1acb9db4f1a9c23eae20e74b55b4244747" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a2df8fdfda10c3cdf9b5bdca00f377387" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a9712e8adb7ab22c433b0acac1e18fd78" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a5a300e17b0498a54fa4724bee7a5bb58" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a4ef05fd23acfc0b4bcd5d95bf25b518d" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1ab5e3265659b973b5e521e3082e94c74e" kind="function"><name>operator=</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1a8822dda667d5b82fe9db4d9b66239d7c" kind="function"><name>operator=</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1a18db3be615748e59f74e2584f1c1d148" kind="function"><name>output</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1aa6ff8210496100842cf12b466195dcf7" kind="function"><name>pass</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1a0a464d17e99f2c1a33f43e41d2c87be5" kind="function"><name>output_fail_prefix_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1adecb0de90a98d7fe9c1fb5de40468819" kind="function"><name>output_fail_suffix_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1a2fe22c30619587b4e554c9c25d780230" kind="function"><name>output_pass_prefix_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1a4697197dd57377a23b75f790172f7dec" kind="function"><name>output_pass_suffix_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1af313ab4b60fd3a19e3b1a9c2fbccbdb6" kind="variable"><name>add_empty_line</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1adc647f6da46704ba46dcb41a2ec95820" kind="variable"><name>verbosity</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a0b4aa7bfcd35287fd9bb9370aeea2154" kind="variable"><name>colors_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a212349d52907ad1f05a89b5b4d49c0c3" kind="variable"><name>is_in_test_case_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a22084218ef1a7005a96d9919587c09e2" kind="variable"><name>out_</name></member>
+  </compound>
+  <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap" kind="class"><name>micro_os_plus::micro_test_plus::test_reporter_tap</name>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1ac07ee9f7709b7d4a83fd19c53c36a7e4" kind="function"><name>test_reporter_tap</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1a69c6df4a57021fa882efddbf88dbbf4e" kind="function"><name>test_reporter_tap</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1a6a735fcce1a8bf588750ce05b10ce254" kind="function"><name>test_reporter_tap</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1ae26350972b5b0a5b86d3e16d4426c68e" kind="function"><name>~test_reporter_tap</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1a1399a94a406545fd5f1b9e156189cf1c" kind="function"><name>begin_test</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1a2fc8909e9fcfd3cb94b3644be0cd1204" kind="function"><name>begin_test_case</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1aa254fdd42e82fc0d16e5355c74d3f09b" kind="function"><name>begin_test_suite</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1aeab9d025989e57ed62ad0e701efc59ee" kind="function"><name>color</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1a994c743ec18e48d330174177b4d89bec" kind="function"><name>end_test</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1ad8dc0455bd2bd20d47e9e63709934224" kind="function"><name>end_test_case</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1a66416caaaab804b21d8a78b77622c85a" kind="function"><name>end_test_suite</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1ab1b73d64bd35b42ccb16dd079b340296" kind="function"><name>endline</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ab89536a4a5a82b658ca8282277c49f4b" kind="function"><name>fail</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1acfa27770f23cba4868a3a67218b4d698" kind="function"><name>flush</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a092ef277e46b408cd539de029429a1aa" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1acfe54a05505f0081fcd13f31bd222fa5" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a318db1ab66a5f2f63c39d58a3c8b2656" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1affa86db322653867cc9a82f2720d0b49" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a8327d747306728c83e673a9993ab933a" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ae3c6e69e58215c20d2766ae6e454e2e0" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a248e333b17ace83dbfaf3db464520993" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1abef6ddfab2ac750d9ec1a170873f6c3e" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a7e08a3a2f3b5ae49ac3b138f93951746" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a1f6ce3e6874d63ee7afe21f8301657c1" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a292fdf290a81a3321edde14c31dff1ed" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a7f8caa4fbe97ef26ece7c5a37dc4ea9c" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a15d2d453175a3ab377eb12cae6e81d2e" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a8167f599220c789c1044da084a119eb5" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ac43d666b5a7824b7e91a1306094fdb1e" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a46a7012a665e55c00e7a040588f0c83b" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1afdfeff359bdc48955dacb5448706b297" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ab6cd245bcdf58b3004430a76bc78abc8" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a8d5212b37538ff11de36a1265b6f927b" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a0cbaa9549a0929515cd1684cda27e209" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a315aa52bed70671e66a7228d11452c93" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1aa347f64332ee58823aeb25ed204a8c93" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a6fbbfdde2f05c76aab0ea8ddc44495d7" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a8c29379f197e555fb8cc6e5d7ca66c09" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a30306b9f0fb893ef89a0756a5025d0e2" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1af88660a913ae75160c1c88ffbb92830c" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a299c705a7e4ba728cdf236318222e234" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1acade140484e4bdaab40a72bda0b42adb" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a0db349234264801b1741a1502d83e286" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a0bdeb24c644813f434c7373b62280700" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a91be9116b7ca4b8596cabb8690ea2c46" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1acb9db4f1a9c23eae20e74b55b4244747" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a2df8fdfda10c3cdf9b5bdca00f377387" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a9712e8adb7ab22c433b0acac1e18fd78" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a5a300e17b0498a54fa4724bee7a5bb58" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a4ef05fd23acfc0b4bcd5d95bf25b518d" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1ab6092a851c745a46a116df4dd96d3436" kind="function"><name>operator=</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1a2f7eb98c1461f5edbad92026e3dde159" kind="function"><name>operator=</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1a5a839383da6ac31f92e7b75e1f85a61a" kind="function"><name>output</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1aa6ff8210496100842cf12b466195dcf7" kind="function"><name>pass</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1aecf7a8c2bd3bb48e7fc2094b4a8a8ae2" kind="function"><name>output_fail_prefix_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1aa6ea612db57165ac9a7e149e4a523cdc" kind="function"><name>output_fail_suffix_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1a911a16a9ba7e8093273a95beebfea070" kind="function"><name>output_pass_prefix_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1a44b64c57f4fba6c026bd2e0fccaf13f4" kind="function"><name>output_pass_suffix_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1af313ab4b60fd3a19e3b1a9c2fbccbdb6" kind="variable"><name>add_empty_line</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1adc647f6da46704ba46dcb41a2ec95820" kind="variable"><name>verbosity</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a0b4aa7bfcd35287fd9bb9370aeea2154" kind="variable"><name>colors_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a212349d52907ad1f05a89b5b4d49c0c3" kind="variable"><name>is_in_test_case_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a22084218ef1a7005a96d9919587c09e2" kind="variable"><name>out_</name></member>
   </compound>
   <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner" kind="class"><name>micro_os_plus::micro_test_plus::test_runner</name>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1abc2b7a044492b6b6e797653e0c22cce4" kind="variable"><name>default_test_suite</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a64146aa3ca2ce94e82909649e090bdec" kind="variable"><name>failed_checks</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a3983327f5faf770fcb4b87fe7654dc18" kind="variable"><name>successful_checks</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1ad1595fcbc848dbdf309a6d7506b29984" kind="variable"><name>test_cases_count</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a5785170098c755bbea376839afd91744" kind="variable"><name>test_suites</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1aabba61d146ba4782ae851f0e45f7062b" kind="variable"><name>totals</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a4caf0986c9b9fedb37ad486eabfa88fc" kind="variable"><name>argc_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a08b3a57d4f802d3aa1a1af02856c460d" kind="variable"><name>argv_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1af60fbb3e376f27b801c30ce6c7a01808" kind="variable"><name>default_suite_name_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a637b06becc3677c2180f022cc4c363e8" kind="variable"><name>default_test_suite_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a299cdb1bee2322ec60f4ebb463c1e513" kind="variable"><name>suites_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a3e2fdf09d6a1cbd52b2189fcdf12aabf" kind="function"><name>test_runner</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a84abdee67279e9a07a68fa01c523ff14" kind="function"><name>test_runner</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a307ecef3a7db19a095ea3202fc5e9d65" kind="function"><name>test_runner</name></member>
@@ -253,14 +389,15 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a287fcb294f40d116c6497efbc2c366c3" kind="function"><name>operator=</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1ab56971215ea9b94e854deb442c4c3a2e" kind="function"><name>operator=</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1aa71d653414cf5872a441d483fdf829c1" kind="function"><name>register_test_suite</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a58d4282c2440f9eb20d36b88fa645903" kind="function"><name>test_suites_count</name></member>
   </compound>
   <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite" kind="class"><name>micro_os_plus::micro_test_plus::test_suite</name>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite_1a4c9220da528e34d0b4f8d0980a30fe6a" kind="variable"><name>callable_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a01c523aaf94e26eb4cd6727c5d74ab02" kind="variable"><name>failed_checks_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1aeb7133acef29cc25c5505b6c8996fa6f" kind="variable"><name>failed_checks_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a76f1c1c39f8b2c8cc70688a47bf6eafd" kind="variable"><name>name_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ad2736cdadc2ab917099cd0ad82d3fc18" kind="variable"><name>successful_checks_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ac297672e4bcbbca90f2bf033815320a1" kind="variable"><name>successful_checks_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ae369ec539219642f84aeb93b78269df0" kind="variable"><name>test_case_name_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a1e9205117a2373caf7346064e86afa03" kind="variable"><name>test_cases_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a4c45eea47cdb765047c0d34eed67ab8f" kind="variable"><name>test_cases_count_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite_1a824b38d21a3f4d0adb99827455f159cf" kind="function"><name>test_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite_1a7c82c1d689d5b438a1ed6fd59244d8e3" kind="function"><name>test_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite_1acdbf1e957b2b5baae7d468820c8fc006" kind="function"><name>test_suite</name></member>
@@ -269,32 +406,34 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1adfc3afd1432b2d093eef73a18ca9a242" kind="function"><name>begin_test_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ab2e1a6eadc56c54b45f9d21e450b0cbc" kind="function"><name>end_test_case</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1aa53f99054051136b3484a1664b5ee59f" kind="function"><name>end_test_suite</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a4cd96949ef52b98b6c5e08bbd7900979" kind="function"><name>failed_checks</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ab820e44136159d4ff90b20ae39d83dbc" kind="function"><name>failed_checks</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a20051842d981b530746b4fb4dee00d01" kind="function"><name>increment_failed</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a81006378d0bebeadcd59266f57b4ef4b" kind="function"><name>increment_successful</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a3625fee07d796bf5c3d6b4c69a94182c" kind="function"><name>name</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite_1aafe75ac5383b6981e1ed6e3c8e96249e" kind="function"><name>operator=</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite_1a00597bc0e72007bd92d370bb8cac9ff7" kind="function"><name>operator=</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite_1ab198909a0182672be8c741d3ad7f291d" kind="function"><name>run</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1acf56ac77830e630b5485248409c3b3f1" kind="function"><name>successful_checks</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ae755b186f32e229e8d0bd5e02027b515" kind="function"><name>test_cases</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ab106833e032cf335d5d5bb70413ff0e2" kind="function"><name>successful_checks</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a1854ec145a5bb5c444f1d363487a5872" kind="function"><name>test_cases_count</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a20de3062a437e86955dd2917d7976cb3" kind="function"><name>unused</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ae60536040204e7481b50dfde7b0a6600" kind="function"><name>was_successful</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ac534b9501e09bf4f1f6ef1d118a5bcbe" kind="variable"><name>current_test_case</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a40cadb0a79f55c796b7e7aca4a847cfd" kind="variable"><name>failed_checks</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ad6a396115ec39c837b6836c27320cc7c" kind="variable"><name>failed_checks</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a10423c3f12e645476814a9f0c84d473e" kind="variable"><name>index</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ac442c68973cd937aeaef7aa7fbc27d30" kind="variable"><name>process_deferred_begin</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a4851a70fd4a0c71b787e445b9766bacc" kind="variable"><name>successful_checks</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ab1d2576df9b4850c8916dfc94c6465a9" kind="variable"><name>successful_checks</name></member>
   </compound>
   <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base" kind="class"><name>micro_os_plus::micro_test_plus::test_suite_base</name>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a01c523aaf94e26eb4cd6727c5d74ab02" kind="variable"><name>failed_checks_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1aeb7133acef29cc25c5505b6c8996fa6f" kind="variable"><name>failed_checks_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a76f1c1c39f8b2c8cc70688a47bf6eafd" kind="variable"><name>name_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ad2736cdadc2ab917099cd0ad82d3fc18" kind="variable"><name>successful_checks_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ac297672e4bcbbca90f2bf033815320a1" kind="variable"><name>successful_checks_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ae369ec539219642f84aeb93b78269df0" kind="variable"><name>test_case_name_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a1e9205117a2373caf7346064e86afa03" kind="variable"><name>test_cases_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a4c45eea47cdb765047c0d34eed67ab8f" kind="variable"><name>test_cases_count_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ac534b9501e09bf4f1f6ef1d118a5bcbe" kind="variable"><name>current_test_case</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a40cadb0a79f55c796b7e7aca4a847cfd" kind="variable"><name>failed_checks</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ad6a396115ec39c837b6836c27320cc7c" kind="variable"><name>failed_checks</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a10423c3f12e645476814a9f0c84d473e" kind="variable"><name>index</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ac442c68973cd937aeaef7aa7fbc27d30" kind="variable"><name>process_deferred_begin</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a4851a70fd4a0c71b787e445b9766bacc" kind="variable"><name>successful_checks</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ab1d2576df9b4850c8916dfc94c6465a9" kind="variable"><name>successful_checks</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a1aea53994faf3a7f7a610a6c47a8ef4a" kind="function"><name>test_suite_base</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ac3d6caf07f5c38f8dc8d75d8ae7bb20c" kind="function"><name>test_suite_base</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ac66248be55f033bef1a32fb1204ce03b" kind="function"><name>test_suite_base</name></member>
@@ -303,15 +442,15 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1adfc3afd1432b2d093eef73a18ca9a242" kind="function"><name>begin_test_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ab2e1a6eadc56c54b45f9d21e450b0cbc" kind="function"><name>end_test_case</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1aa53f99054051136b3484a1664b5ee59f" kind="function"><name>end_test_suite</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a4cd96949ef52b98b6c5e08bbd7900979" kind="function"><name>failed_checks</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ab820e44136159d4ff90b20ae39d83dbc" kind="function"><name>failed_checks</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a20051842d981b530746b4fb4dee00d01" kind="function"><name>increment_failed</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a81006378d0bebeadcd59266f57b4ef4b" kind="function"><name>increment_successful</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a3625fee07d796bf5c3d6b4c69a94182c" kind="function"><name>name</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1aba2b1e9fde84789ac9e1a78ae0a088f7" kind="function"><name>operator=</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ab80bbf61a4ff0a02f7a50ec2d305fee0" kind="function"><name>operator=</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a134b2f92347ac243ccb310d5d0324c25" kind="function"><name>run</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1acf56ac77830e630b5485248409c3b3f1" kind="function"><name>successful_checks</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ae755b186f32e229e8d0bd5e02027b515" kind="function"><name>test_cases</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ab106833e032cf335d5d5bb70413ff0e2" kind="function"><name>successful_checks</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a1854ec145a5bb5c444f1d363487a5872" kind="function"><name>test_cases_count</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a20de3062a437e86955dd2917d7976cb3" kind="function"><name>unused</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ae60536040204e7481b50dfde7b0a6600" kind="function"><name>was_successful</name></member>
   </compound>
@@ -403,8 +542,9 @@
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" kind="enumvalue"><name>normal</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" kind="enumvalue"><name>verbose</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a08e787c2c2f8365df2c9b372605535ac" kind="typedef"><name>verbosity_t</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a2c623cc1c15ec08e25c2451d9b51ad75" kind="variable"><name>colors_red_green</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a682fc3ce8c00ebe7c068d6299269655b" kind="variable"><name>current_test_suite</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1aec46bdfdb22163bedab8e6b542191834" kind="variable"><name>reporter</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a22bf4ef08cb70064bbc37770a0ad5ac4" kind="variable"><name>reporter</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a469c0f5fefa0b4cea12a7d267dded831" kind="variable"><name>runner</name></member>
     <member refid="group__micro-test-plus-logical-functions_1ga8b43b7658b43fb76daf5efbb2e03d236" kind="function"><name>_and</name></member>
     <member refid="group__micro-test-plus-logical-functions_1gad9ad936174faf965cffe4493e2b64cf0" kind="function"><name>_not</name></member>
@@ -523,7 +663,7 @@
   </compound>
   <compound refid="micro-test-plus_8h" kind="file"><name>micro-test-plus.h</name>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a682fc3ce8c00ebe7c068d6299269655b" kind="variable"><name>current_test_suite</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1aec46bdfdb22163bedab8e6b542191834" kind="variable"><name>reporter</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a22bf4ef08cb70064bbc37770a0ad5ac4" kind="variable"><name>reporter</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a469c0f5fefa0b4cea12a7d267dded831" kind="variable"><name>runner</name></member>
     <member refid="group__micro-test-plus-assumptions_1ga0f5febbef70eb641691b98583410a1ca" kind="function"><name>assume</name></member>
     <member refid="group__micro-test-plus-inits_1gaa790667969dc1a261c324e89a6ea4591" kind="function"><name>exit_code</name></member>
@@ -737,6 +877,10 @@
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1ab4fa1159ebe60ce5fe073eefbe9a2446" kind="function"><name>short_name</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" kind="function"><name>type_name</name></member>
   </compound>
+  <compound refid="test-reporter-basic_8h" kind="file"><name>test-reporter-basic.h</name>
+  </compound>
+  <compound refid="test-reporter-tap_8h" kind="file"><name>test-reporter-tap.h</name>
+  </compound>
   <compound refid="test-reporter_8h" kind="file"><name>test-reporter.h</name>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" kind="enum"><name>verbosity</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15" kind="enumvalue"><name>silent</name></member>
@@ -744,6 +888,7 @@
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" kind="enumvalue"><name>normal</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" kind="enumvalue"><name>verbose</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a08e787c2c2f8365df2c9b372605535ac" kind="typedef"><name>verbosity_t</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a2c623cc1c15ec08e25c2451d9b51ad75" kind="variable"><name>colors_red_green</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1ac49ee935c294cb18a5a0e7f58b0b9fb4" kind="function"><name>endl</name></member>
   </compound>
   <compound refid="test-runner_8h" kind="file"><name>test-runner.h</name>
@@ -773,6 +918,10 @@
     <member refid="group__micro-test-plus-inits_1gac2c60d60578f668878957ec68a37538f" kind="function"><name>initialize</name></member>
     <member refid="group__micro-test-plus-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" kind="function"><name>is_match</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1ab4fa1159ebe60ce5fe073eefbe9a2446" kind="function"><name>short_name</name></member>
+  </compound>
+  <compound refid="test-reporter-basic_8cpp" kind="file"><name>test-reporter-basic.cpp</name>
+  </compound>
+  <compound refid="test-reporter-tap_8cpp" kind="file"><name>test-reporter-tap.cpp</name>
   </compound>
   <compound refid="test-reporter_8cpp" kind="file"><name>test-reporter.cpp</name>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1ac49ee935c294cb18a5a0e7f58b0b9fb4" kind="function"><name>endl</name></member>

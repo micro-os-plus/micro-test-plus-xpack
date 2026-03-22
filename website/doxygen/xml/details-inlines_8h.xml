@@ -33,6 +33,10 @@
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>details-inlines.h</label>
@@ -45,14 +49,22 @@
         <link refid="micro-test-plus_8cpp"/>
       </node>
       <node id="4">
+        <label>test-reporter-basic.cpp</label>
+        <link refid="test-reporter-basic_8cpp"/>
+      </node>
+      <node id="5">
+        <label>test-reporter-tap.cpp</label>
+        <link refid="test-reporter-tap_8cpp"/>
+      </node>
+      <node id="6">
         <label>test-reporter.cpp</label>
         <link refid="test-reporter_8cpp"/>
       </node>
-      <node id="5">
+      <node id="7">
         <label>test-runner.cpp</label>
         <link refid="test-runner_8cpp"/>
       </node>
-      <node id="6">
+      <node id="8">
         <label>test-suite.cpp</label>
         <link refid="test-suite_8cpp"/>
       </node>
@@ -156,11 +168,11 @@
 <codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1af633053afa944173b47482786f9d9a7e" kindref="member">value_</ref>)</highlight></codeline>
 <codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1aec46bdfdb22163bedab8e6b542191834" kindref="member">reporter</ref>.pass<sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1a9535950f3f91d792f4347d08f8dd154e" kindref="member">expr_</ref>,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aa12bdce872a0994d70be146507834cf1" kindref="member">message_</ref>);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a22bf4ef08cb70064bbc37770a0ad5ac4" kindref="member">reporter</ref>-&gt;pass<sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1a9535950f3f91d792f4347d08f8dd154e" kindref="member">expr_</ref>,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aa12bdce872a0994d70be146507834cf1" kindref="member">message_</ref>);</highlight></codeline>
 <codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1aec46bdfdb22163bedab8e6b542191834" kindref="member">reporter</ref>.fail<sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1a9535950f3f91d792f4347d08f8dd154e" kindref="member">expr_</ref>,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aa36fd4c36a94b04430599303e38a48bd" kindref="member">abort_</ref>,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aa12bdce872a0994d70be146507834cf1" kindref="member">message_</ref>,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a025498d9b9376056c56042cc98ed7afd" kindref="member">location_</ref>);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a22bf4ef08cb70064bbc37770a0ad5ac4" kindref="member">reporter</ref>-&gt;fail<sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1a9535950f3f91d792f4347d08f8dd154e" kindref="member">expr_</ref>,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aa36fd4c36a94b04430599303e38a48bd" kindref="member">abort_</ref>,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aa12bdce872a0994d70be146507834cf1" kindref="member">message_</ref>,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a025498d9b9376056c56042cc98ed7afd" kindref="member">location_</ref>);</highlight></codeline>
 <codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="153"><highlight class="normal"></highlight></codeline>
