@@ -103,13 +103,9 @@ keywords:
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">mt::expect (mt::throws&lt;std::runtime_error&gt; ([] { </span><span class="doxyHighlightKeywordFlow">throw</span><span class="doxyHighlight"> std::runtime_error{ </span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"> }; }))</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">        &lt;&lt; </span><span class="doxyHighlightStringLiteral">"std::runtime_error thrown"</span><span class="doxyHighlight">;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">mt::expect (mt::nothrow ([] { exercise_throw (</span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">); })) &lt;&lt; </span><span class="doxyHighlightStringLiteral">"exception not</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightStringLiteral">thrown"</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">mt::expect (mt::nothrow ([] { exercise_throw (</span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">); })) &lt;&lt; </span><span class="doxyHighlightStringLiteral">"exception not thrown"</span><span class="doxyHighlight">;</span></span></div>
 
 </div>
-
-
-<p>If more advanced logic is required, such as handling multiple expected exceptions, use an explicit <span class="doxyComputerOutput">try</span> block with several <span class="doxyComputerOutput">catch</span> statements, and report the outcomes using <span class="doxyComputerOutput">expect(true)</span> or <span class="doxyComputerOutput">expect(false)</span>.</p>
 
 
 <div class="doxyProgramListing">

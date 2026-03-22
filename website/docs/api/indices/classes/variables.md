@@ -21,7 +21,7 @@ keywords:
 
 <ul>
 <li><b>abort_</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#aa36fd4c36a94b04430599303e38a48bd">micro_os_plus::micro_test_plus::detail::deferred_reporter_base</a></li>
-<li><b>add_empty_line</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#af313ab4b60fd3a19e3b1a9c2fbccbdb6">micro_os_plus::micro_test_plus::test_reporter</a></li>
+<li><b>add_empty_line</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#af313ab4b60fd3a19e3b1a9c2fbccbdb6">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
 <li><b>argc_</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a4caf0986c9b9fedb37ad486eabfa88fc">micro_os_plus::micro_test_plus::test_runner</a></li>
 <li><b>argv_</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a08b3a57d4f802d3aa1a1af02856c460d">micro_os_plus::micro_test_plus::test_runner</a></li>
 </ul>
@@ -31,7 +31,7 @@ keywords:
 
 <ul>
 <li><b>callable_</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a4c9220da528e34d0b4f8d0980a30fe6a">micro_os_plus::micro_test_plus::test_suite</a></li>
-<li><b>colors_</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a0b4aa7bfcd35287fd9bb9370aeea2154">micro_os_plus::micro_test_plus::test_reporter</a></li>
+<li><b>colors_</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a0b4aa7bfcd35287fd9bb9370aeea2154">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
 <li><b>current_test_case</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ac534b9501e09bf4f1f6ef1d118a5bcbe">micro_os_plus::micro_test_plus::test_suite_base</a></li>
 </ul>
 <p>3 entries</p>
@@ -40,7 +40,7 @@ keywords:
 
 <ul>
 <li><b>default_suite_name_</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#af60fbb3e376f27b801c30ce6c7a01808">micro_os_plus::micro_test_plus::test_runner</a></li>
-<li><b>default_test_suite_</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a637b06becc3677c2180f022cc4c363e8">micro_os_plus::micro_test_plus::test_runner</a></li>
+<li><b>default_test_suite</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#abc2b7a044492b6b6e797653e0c22cce4">micro_os_plus::micro_test_plus::test_runner</a></li>
 </ul>
 <p>2 entries</p>
 
@@ -58,17 +58,20 @@ keywords:
 
 <ul>
 <li><b>fail</b>: as variable in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/colors/#a755efa80182dc14ff24a7780e758ee5c">micro_os_plus::micro_test_plus::colors</a></li>
-<li><b>failed_checks</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a40cadb0a79f55c796b7e7aca4a847cfd">micro_os_plus::micro_test_plus::test_suite_base</a></li>
-<li><b>failed_checks_</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a01c523aaf94e26eb4cd6727c5d74ab02">micro_os_plus::micro_test_plus::test_suite_base</a></li>
+<li><b>failed_checks</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a64146aa3ca2ce94e82909649e090bdec">micro_os_plus::micro_test_plus::test_runner</a></li>
+<li><b>failed_checks</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ad6a396115ec39c837b6836c27320cc7c">micro_os_plus::micro_test_plus::test_suite_base</a></li>
+<li><b>failed_checks_</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#aeb7133acef29cc25c5505b6c8996fa6f">micro_os_plus::micro_test_plus::test_suite_base</a></li>
 <li><b>file_</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#ae648fa43322766fbeb3f9103b43bcc4b">micro_os_plus::micro_test_plus::reflection::source_location</a></li>
 </ul>
-<p>4 entries</p>
+<p>5 entries</p>
 
 ## - I -
 
 <ul>
-<li><b>is_in_test_case_</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a212349d52907ad1f05a89b5b4d49c0c3">micro_os_plus::micro_test_plus::test_reporter</a></li>
+<li><b>index</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a10423c3f12e645476814a9f0c84d473e">micro_os_plus::micro_test_plus::test_suite_base</a></li>
+<li><b>is_in_test_case_</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a212349d52907ad1f05a89b5b4d49c0c3">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
 </ul>
+<p>2 entries</p>
 
 ## - L -
 
@@ -104,7 +107,7 @@ keywords:
 ## - O -
 
 <ul>
-<li><b>out_</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a22084218ef1a7005a96d9919587c09e2">micro_os_plus::micro_test_plus::test_reporter</a></li>
+<li><b>out_</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a22084218ef1a7005a96d9919587c09e2">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
 </ul>
 
 ## - P -
@@ -132,9 +135,9 @@ keywords:
 ## - S -
 
 <ul>
-<li><b>successful_checks</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a4851a70fd4a0c71b787e445b9766bacc">micro_os_plus::micro_test_plus::test_suite_base</a></li>
-<li><b>successful_checks_</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ad2736cdadc2ab917099cd0ad82d3fc18">micro_os_plus::micro_test_plus::test_suite_base</a></li>
-<li><b>suites_</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a299cdb1bee2322ec60f4ebb463c1e513">micro_os_plus::micro_test_plus::test_runner</a></li>
+<li><b>successful_checks</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a3983327f5faf770fcb4b87fe7654dc18">micro_os_plus::micro_test_plus::test_runner</a></li>
+<li><b>successful_checks</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ab1d2576df9b4850c8916dfc94c6465a9">micro_os_plus::micro_test_plus::test_suite_base</a></li>
+<li><b>successful_checks_</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ac297672e4bcbbca90f2bf033815320a1">micro_os_plus::micro_test_plus::test_suite_base</a></li>
 </ul>
 <p>3 entries</p>
 
@@ -143,9 +146,12 @@ keywords:
 <ul>
 <li><b>t_</b>: as variable in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/not-/#a91b44f2fca870036021c939bb87360ad">micro_os_plus::micro_test_plus::detail::not_&lt;T&gt;</a></li>
 <li><b>test_case_name_</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ae369ec539219642f84aeb93b78269df0">micro_os_plus::micro_test_plus::test_suite_base</a></li>
-<li><b>test_cases_</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a1e9205117a2373caf7346064e86afa03">micro_os_plus::micro_test_plus::test_suite_base</a></li>
+<li><b>test_cases_count</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#ad1595fcbc848dbdf309a6d7506b29984">micro_os_plus::micro_test_plus::test_runner</a></li>
+<li><b>test_cases_count_</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a4c45eea47cdb765047c0d34eed67ab8f">micro_os_plus::micro_test_plus::test_suite_base</a></li>
+<li><b>test_suites</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a5785170098c755bbea376839afd91744">micro_os_plus::micro_test_plus::test_runner</a></li>
+<li><b>totals</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#aabba61d146ba4782ae851f0e45f7062b">micro_os_plus::micro_test_plus::test_runner</a></li>
 </ul>
-<p>3 entries</p>
+<p>6 entries</p>
 
 ## - V -
 
@@ -168,11 +174,11 @@ keywords:
 <li><b>value_</b>: as variable in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#ab4f59f518a832369368c4502bf0c4d35">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt;T&gt;</a></li>
 <li><b>value_</b>: as variable in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a1b2cf36b40e92a1249179c033894eb4d">micro_os_plus::micro_test_plus::type_traits::value&lt;T, Opt&gt;</a></li>
 <li><b>value_</b>: as variable in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-dae7771377f0087abbec46abf87b329e/#a6e339e618808050e46eb71eecb8a1d85">micro_os_plus::micro_test_plus::type_traits::value&lt;T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt;&gt;</a></li>
-<li><b>verbosity</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#adc647f6da46704ba46dcb41a2ec95820">micro_os_plus::micro_test_plus::test_reporter</a></li>
+<li><b>verbosity</b>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#adc647f6da46704ba46dcb41a2ec95820">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
 </ul>
 <p>19 entries</p>
 <br/>
-<p>Total: 68 entries.</p>
+<p>Total: 73 entries.</p>
 
 <hr/>
 

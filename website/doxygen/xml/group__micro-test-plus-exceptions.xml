@@ -168,10 +168,8 @@ The <computeroutput>throws</computeroutput> function template verifies whether i
 <codeline><highlight class="normal">mt::expect<sp/>(mt::throws&lt;std::runtime_error&gt;<sp/>([]<sp/>{<sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error{<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>};<sp/>}))</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;std::runtime_error<sp/>thrown&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">mt::expect<sp/>(mt::nothrow<sp/>([]<sp/>{<sp/>exercise_throw<sp/>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);<sp/>}))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;exception<sp/>not</highlight></codeline>
-<codeline><highlight class="stringliteral">thrown&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">mt::expect<sp/>(mt::nothrow<sp/>([]<sp/>{<sp/>exercise_throw<sp/>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);<sp/>}))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;exception<sp/>not<sp/>thrown&quot;</highlight><highlight class="normal">;</highlight></codeline>
 </programlisting></para>
-<para>If more advanced logic is required, such as handling multiple expected exceptions, use an explicit <computeroutput>try</computeroutput> block with several <computeroutput>catch</computeroutput> statements, and report the outcomes using <computeroutput>expect(true)</computeroutput> or <computeroutput>expect(false)</computeroutput>.</para>
 <para><programlisting filename=".cpp"><codeline><highlight class="keywordflow">try</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>compute_answer<sp/>();</highlight></codeline>

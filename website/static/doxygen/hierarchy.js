@@ -61,7 +61,10 @@ var hierarchy =
     [ "micro_os_plus::micro_test_plus::type_traits::requires_< Cond >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1requires__.html", null ],
     [ "micro_os_plus::micro_test_plus::type_traits::requires_< true >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1requires___3_01true_01_4.html", null ],
     [ "micro_os_plus::micro_test_plus::reflection::source_location", "classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html", null ],
-    [ "micro_os_plus::micro_test_plus::test_reporter", "classmicro__os__plus_1_1micro__test__plus_1_1test__reporter.html", null ],
+    [ "micro_os_plus::micro_test_plus::test_reporter", "classmicro__os__plus_1_1micro__test__plus_1_1test__reporter.html", [
+      [ "micro_os_plus::micro_test_plus::test_reporter_basic", "classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic.html", null ],
+      [ "micro_os_plus::micro_test_plus::test_reporter_tap", "classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap.html", null ]
+    ] ],
     [ "micro_os_plus::micro_test_plus::test_runner", "classmicro__os__plus_1_1micro__test__plus_1_1test__runner.html", null ],
     [ "micro_os_plus::micro_test_plus::test_suite_base", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base.html", [
       [ "micro_os_plus::micro_test_plus::test_suite", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html", null ]

@@ -217,7 +217,7 @@ keywords:
 </div>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ae2b0f0247a64d1d22e9db9b5f47653db">micro_os_plus::micro_test_plus::test_reporter::output_fail_prefix_</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic/#a0a464d17e99f2c1a33f43e41d2c87be5">micro_os_plus::micro_test_plus::test_reporter_basic::output_fail_prefix_</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap/#aa6ea612db57165ac9a7e149e4a523cdc">micro_os_plus::micro_test_plus::test_reporter_tap::output_fail_suffix_</a>.</p>
 
 </div>
 </div>

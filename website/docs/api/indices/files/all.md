@@ -37,9 +37,10 @@ keywords:
 
 <ul>
 <li><b>colors</b>: as struct in file <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/colors">include/micro-os-plus/micro-test-plus/test-reporter.h</a></li>
+<li><b>colors_red_green</b>: as variable in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a2c623cc1c15ec08e25c2451d9b51ad75">include/micro-os-plus/micro-test-plus/test-reporter.h</a></li>
 <li><b>current_test_suite</b>: as variable in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a682fc3ce8c00ebe7c068d6299269655b">include/micro-os-plus/micro-test-plus.h</a></li>
 </ul>
-<p>2 entries</p>
+<p>3 entries</p>
 
 ## - D -
 
@@ -177,7 +178,7 @@ keywords:
 
 <ul>
 <li><b>reflection</b>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection">src/micro-test-plus.cpp</a></li>
-<li><b>reporter</b>: as variable in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#aec46bdfdb22163bedab8e6b542191834">include/micro-os-plus/micro-test-plus.h</a></li>
+<li><b>reporter</b>: as variable in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a22bf4ef08cb70064bbc37770a0ad5ac4">include/micro-os-plus/micro-test-plus.h</a></li>
 <li><b>requires_&lt;Cond&gt;</b>: as struct in file <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires-">include/micro-os-plus/micro-test-plus/type-traits.h</a></li>
 <li><b>requires_&lt;true&gt;</b>: as struct in file <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires--d4cc09ec8cf7793e85cd7a9c044686e1">include/micro-os-plus/micro-test-plus/type-traits.h</a></li>
 <li><b>requires_t</b>: as typedef in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a1cbbf299a006b4692df250ef2a6fc7c2">include/micro-os-plus/micro-test-plus/type-traits.h</a></li>
@@ -198,6 +199,8 @@ keywords:
 
 <ul>
 <li><b>test_reporter</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">include/micro-os-plus/micro-test-plus/test-reporter.h</a></li>
+<li><b>test_reporter_basic</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic">include/micro-os-plus/micro-test-plus/test-reporter-basic.h</a></li>
+<li><b>test_reporter_tap</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap">include/micro-os-plus/micro-test-plus/test-reporter-tap.h</a></li>
 <li><b>test_runner</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">include/micro-os-plus/micro-test-plus/test-runner.h</a></li>
 <li><b>test_suite</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">include/micro-os-plus/micro-test-plus/test-suite.h</a></li>
 <li><b>test_suite_base</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">include/micro-os-plus/micro-test-plus/test-suite.h</a></li>
@@ -207,7 +210,7 @@ keywords:
 <li><b>type_name()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection/#a6580ad54ad22a1d3ab43a1d9d49d1f26">include/micro-os-plus/micro-test-plus/reflection.h</a></li>
 <li><b>type_traits</b>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">include/micro-os-plus/micro-test-plus/type-traits.h</a></li>
 </ul>
-<p>9 entries</p>
+<p>11 entries</p>
 
 ## - U -
 
@@ -226,7 +229,7 @@ keywords:
 </ul>
 <p>5 entries</p>
 <br/>
-<p>Total: 93 entries.</p>
+<p>Total: 96 entries.</p>
 
 <hr/>
 

@@ -142,7 +142,7 @@ keywords:
 <p>Folder with C++ header files with inline implementations for the µTest++ Testing Framework.</p>
 
 
-<p>The <span class="doxyComputerOutput">include/micro-os-plus/micro-test-plus/inlines</span> folder contains C++ header files providing the inline implementations for the µTest++ Testing Framework. These headers define the logic for core framework components, including function comparators, literals, mathematical utilities, reflection utilities, test reporters, test runners, and test suites.</p>
+<p>The <span class="doxyComputerOutput">include/micro-os-plus/micro-test-plus/inlines</span> folder contains C++ header files providing the inline implementations for the µTest++ testing framework. These headers define the logic for core framework components, including function comparators, literals, mathematical utilities, reflection utilities, test reporters, test runners, and test suites.</p>
 
 
 <p>By separating inline implementations from their corresponding declarations, this structure promotes modularity, clarity, and maintainability within the codebase. All inline definitions are designed to be lightweight and efficient, supporting both embedded and general C++ development.</p>

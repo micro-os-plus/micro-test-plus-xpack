@@ -396,6 +396,28 @@ Reporter to display test results, including operand values and types for failure
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic">test_reporter_basic</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Basic (standard output) implementation of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test_reporter</a></span>
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap">test_reporter_tap</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+TAP (Test Anything Protocol) implementation of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test_reporter</a></span>
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
 <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test_runner</a>

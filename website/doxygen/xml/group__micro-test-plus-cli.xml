@@ -31,9 +31,9 @@
 </programlisting></para>
 <sect1 id="group__micro-test-plus-cli_1cli-reporter">
 <title>Reporter</title><para>By default, the µTest++ output follows the <ulink url="https://en.wikipedia.org/wiki/Test_Anything_Protocol">TAP</ulink> rules.</para>
-<para>For compatibility reasons, the properietary format implemented by the initial releases will also be kept, but it is not recommended for new designs.</para>
-<para>If needed, more reporting formats (like junit, json, etc) can be added.</para>
-<para>To exlicitly ask for a specific format:</para>
+<para>For compatibility reasons, the proprietary format implemented by the initial releases will also be retained, but it is not recommended for new projects.</para>
+<para>If needed, more reporting formats (like JUnit, JSON, etc.) can be added.</para>
+<para>To explicitly ask for a specific format:</para>
 <para><itemizedlist>
 <listitem><para><computeroutput>--reporter=tap</computeroutput> - the default reporter</para>
 </listitem><listitem><para><computeroutput>--reporter=basic</computeroutput> - the deprecated initial reporter</para>
@@ -41,7 +41,7 @@
 </para>
 </sect1>
 <sect1 id="group__micro-test-plus-cli_1cli-verbosity">
-<title>Verbosity</title><para>By default, µTest++ displays only test case summaries for passing tests (for failed tests, all expectations are shown).</para>
+<title>Verbosity</title><para>By default, µTest++ displays a summary line for each passing test case and full expectation details for each failing one.</para>
 <para>To adjust the verbosity, the following command-line options are available:</para>
 <para><itemizedlist>
 <listitem><para><computeroutput>--verbose</computeroutput> – display all expectations, regardless of outcome</para>
@@ -51,7 +51,7 @@
 </para>
 <para>These options enable developers to focus on the information most relevant to their needs, whether that is comprehensive diagnostics during development or succinct summaries for automated builds.</para>
 <para>The examples provided illustrate the output produced in each mode, demonstrating how µTest++ adapts its reporting to support professional and efficient testing workflows across all files and folders.</para>
-<para>The source code for this test is located in the <computeroutput>tests/src/minimal-test.cpp</computeroutput> file.</para>
+<para>The source code for this example is in <computeroutput>tests/src/minimal-test.cpp</computeroutput>.</para>
 <sect2 id="group__micro-test-plus-cli_1cli-verbosity-verbose">
 <title>Verbose mode</title><para>In verbose mode, the µTest++ reporter provides detailed output for every expectation, irrespective of whether it passes or fails.</para>
 <para><simplesect kind="par"><title>Example</title><para></para>

@@ -123,6 +123,8 @@ keywords:
 
 <ul>
 <li><b>test_reporter</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">include/micro-os-plus/micro-test-plus/test-reporter.h</a></li>
+<li><b>test_reporter_basic</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic">include/micro-os-plus/micro-test-plus/test-reporter-basic.h</a></li>
+<li><b>test_reporter_tap</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap">include/micro-os-plus/micro-test-plus/test-reporter-tap.h</a></li>
 <li><b>test_runner</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">include/micro-os-plus/micro-test-plus/test-runner.h</a></li>
 <li><b>test_suite</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">include/micro-os-plus/micro-test-plus/test-suite.h</a></li>
 <li><b>test_suite_base</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">include/micro-os-plus/micro-test-plus/test-suite.h</a></li>
@@ -130,7 +132,7 @@ keywords:
 <li><b>throws_&lt;Callable_T, void&gt;</b>: as struct in file <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws--6ce6a9ac7588b533a253fd8d8638e6be">include/micro-os-plus/micro-test-plus/detail.h</a></li>
 <li><b>to_t&lt;T&gt;</b>: as struct in file <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/to-t">include/micro-os-plus/micro-test-plus/literals.h</a></li>
 </ul>
-<p>7 entries</p>
+<p>9 entries</p>
 
 ## - V -
 
@@ -140,7 +142,7 @@ keywords:
 </ul>
 <p>2 entries</p>
 <br/>
-<p>Total: 37 entries.</p>
+<p>Total: 39 entries.</p>
 
 <hr/>
 

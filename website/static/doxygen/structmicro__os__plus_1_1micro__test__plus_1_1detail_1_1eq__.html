@@ -184,71 +184,77 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00272">272</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  272</span>                                        {}, <span class="keyword">const</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">Rhs_T</a>&amp; <a class="code hl_function" href="#a5399e6059752043a3a5db6d35ec1a3e2">rhs</a> = {})</div>
-<div class="line"><span class="lineno">  273</span>          : <a class="code hl_variable" href="#a592e7c80b299007f379f64613165836b">lhs_</a>{ <a class="code hl_function" href="#a94c9f6919d84eba1763de39f7624c34a">lhs</a> }, <a class="code hl_variable" href="#aacd9df5dde2c550300b765a4d117965e">rhs_</a>{ <a class="code hl_function" href="#a5399e6059752043a3a5db6d35ec1a3e2">rhs</a> }, <a class="code hl_variable" href="#a8045813e9acc6f99557d018fdceb0e1c">value_</a>{ [&amp;] {</div>
-<div class="line"><span class="lineno">  274</span>              <span class="comment">// This lambda is called in the constructor to</span></div>
-<div class="line"><span class="lineno">  275</span>              <span class="comment">// evaluate the comparison.</span></div>
-<div class="line"><span class="lineno">  276</span>              <span class="keyword">using </span><a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">std::operator</a>==;</div>
-<div class="line"><span class="lineno">  277</span>              <span class="keyword">using </span><a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">std::operator</a>&lt;;</div>
-<div class="line"><span class="lineno">  278</span> </div>
-<div class="line"><span class="lineno">  279</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  280</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
-<div class="line"><span class="lineno">  281</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wfloat-equal&quot;</span></div>
-<div class="line"><span class="lineno">  282</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wconversion&quot;</span></div>
-<div class="line"><span class="lineno">  283</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wdouble-promotion&quot;</span></div>
-<div class="line"><span class="lineno">  284</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wsign-compare&quot;</span></div>
-<div class="line"><span class="lineno">  285</span><span class="preprocessor">#if defined(__clang__)</span></div>
-<div class="line"><span class="lineno">  286</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wimplicit-int-float-conversion&quot;</span></div>
-<div class="line"><span class="lineno">  287</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wpedantic&quot;</span></div>
-<div class="line"><span class="lineno">  288</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  289</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  290</span>              <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">type_traits::has_value_v&lt;Lhs_T&gt;</a></div>
-<div class="line"><span class="lineno">  291</span>                            <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">and</a> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">type_traits::has_value_v&lt;Rhs_T&gt;</a>)</div>
-<div class="line"><span class="lineno">  292</span>                {</div>
-<div class="line"><span class="lineno">  293</span>                  <span class="comment">// If both types have values (like numeric constants),</span></div>
-<div class="line"><span class="lineno">  294</span>                  <span class="comment">// compare them directly.</span></div>
-<div class="line"><span class="lineno">  295</span>                  <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">Lhs_T::value</a> == <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">Rhs_T::value</a>;</div>
-<div class="line"><span class="lineno">  296</span>                }</div>
-<div class="line"><span class="lineno">  297</span>              <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">type_traits::has_epsilon_v&lt;Lhs_T&gt;</a></div>
-<div class="line"><span class="lineno">  298</span>                                 <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">and</a> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">type_traits::has_epsilon_v&lt;Rhs_T&gt;</a>)</div>
-<div class="line"><span class="lineno">  299</span>                {</div>
-<div class="line"><span class="lineno">  300</span>                  <span class="comment">// If both values have precision, compare them using</span></div>
-<div class="line"><span class="lineno">  301</span>                  <span class="comment">// the smalles precision.</span></div>
-<div class="line"><span class="lineno">  302</span>                  <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a1dd33529640b959c531ca18c2e494c80">math::abs</a> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">get</a> (<a class="code hl_function" href="#a94c9f6919d84eba1763de39f7624c34a">lhs</a>) - <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">get</a> (<a class="code hl_function" href="#a5399e6059752043a3a5db6d35ec1a3e2">rhs</a>))</div>
-<div class="line"><span class="lineno">  303</span>                         &lt; <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#ae53dd62f6d82b8ccaa048d90a7002826">math::min_value</a> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">Lhs_T::epsilon</a>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">Rhs_T::epsilon</a>);</div>
-<div class="line"><span class="lineno">  304</span>                }</div>
-<div class="line"><span class="lineno">  305</span>              <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">type_traits::has_epsilon_v&lt;Lhs_T&gt;</a>)</div>
-<div class="line"><span class="lineno">  306</span>                {</div>
-<div class="line"><span class="lineno">  307</span>                  <span class="comment">// If only the left operand has precision, use it.</span></div>
-<div class="line"><span class="lineno">  308</span>                  <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a1dd33529640b959c531ca18c2e494c80">math::abs</a> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">get</a> (<a class="code hl_function" href="#a94c9f6919d84eba1763de39f7624c34a">lhs</a>) - <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">get</a> (<a class="code hl_function" href="#a5399e6059752043a3a5db6d35ec1a3e2">rhs</a>)) &lt; <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">Lhs_T::epsilon</a>;</div>
-<div class="line"><span class="lineno">  309</span>                }</div>
-<div class="line"><span class="lineno">  310</span>              <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">type_traits::has_epsilon_v&lt;Rhs_T&gt;</a>)</div>
-<div class="line"><span class="lineno">  311</span>                {</div>
-<div class="line"><span class="lineno">  312</span>                  <span class="comment">// If only the right operand has precision, use it.</span></div>
-<div class="line"><span class="lineno">  313</span>                  <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a1dd33529640b959c531ca18c2e494c80">math::abs</a> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">get</a> (<a class="code hl_function" href="#a94c9f6919d84eba1763de39f7624c34a">lhs</a>) - <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">get</a> (<a class="code hl_function" href="#a5399e6059752043a3a5db6d35ec1a3e2">rhs</a>)) &lt; <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">Rhs_T::epsilon</a>;</div>
-<div class="line"><span class="lineno">  314</span>                }</div>
-<div class="line"><span class="lineno">  315</span>              <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  316</span>                {</div>
-<div class="line"><span class="lineno">  317</span>                  <span class="comment">// Call the generic getters, which might</span></div>
-<div class="line"><span class="lineno">  318</span>                  <span class="comment">// either call the type get() or return the value.</span></div>
-<div class="line"><span class="lineno">  319</span>                  <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ac627271520bf2fe8a4c4774bcd9bf343">get</a> (<a class="code hl_function" href="#a94c9f6919d84eba1763de39f7624c34a">lhs</a>) == <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ac627271520bf2fe8a4c4774bcd9bf343">get</a> (<a class="code hl_function" href="#a5399e6059752043a3a5db6d35ec1a3e2">rhs</a>);</div>
-<div class="line"><span class="lineno">  320</span>                }</div>
-<div class="line"><span class="lineno">  321</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  322</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
-<div class="line"><span class="lineno">  323</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  324</span>            }() }</div>
-<div class="line"><span class="lineno">  325</span>      {</div>
-<div class="line"><span class="lineno">  326</span>      }</div>
+<div class="line"><span class="lineno">  273</span>          : <a class="code hl_variable" href="#a592e7c80b299007f379f64613165836b">lhs_</a>{ <a class="code hl_function" href="#a94c9f6919d84eba1763de39f7624c34a">lhs</a> }, <a class="code hl_variable" href="#aacd9df5dde2c550300b765a4d117965e">rhs_</a>{ <a class="code hl_function" href="#a5399e6059752043a3a5db6d35ec1a3e2">rhs</a> }, <a class="code hl_variable" href="#a8045813e9acc6f99557d018fdceb0e1c">value_</a>{</div>
+<div class="line"><span class="lineno">  274</span>              [&amp;]</div>
+<div class="line"><span class="lineno">  275</span>                {</div>
+<div class="line"><span class="lineno">  276</span>                  <span class="comment">// This lambda is called in the constructor to</span></div>
+<div class="line"><span class="lineno">  277</span>                  <span class="comment">// evaluate the comparison.</span></div>
+<div class="line"><span class="lineno">  278</span>                  <span class="keyword">using </span><a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">std::operator</a>==;</div>
+<div class="line"><span class="lineno">  279</span>                  <span class="keyword">using </span><a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">std::operator</a>&lt;;</div>
+<div class="line"><span class="lineno">  280</span> </div>
+<div class="line"><span class="lineno">  281</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  282</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
+<div class="line"><span class="lineno">  283</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wfloat-equal&quot;</span></div>
+<div class="line"><span class="lineno">  284</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wconversion&quot;</span></div>
+<div class="line"><span class="lineno">  285</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wdouble-promotion&quot;</span></div>
+<div class="line"><span class="lineno">  286</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wsign-compare&quot;</span></div>
+<div class="line"><span class="lineno">  287</span><span class="preprocessor">#if defined(__clang__)</span></div>
+<div class="line"><span class="lineno">  288</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wimplicit-int-float-conversion&quot;</span></div>
+<div class="line"><span class="lineno">  289</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wpedantic&quot;</span></div>
+<div class="line"><span class="lineno">  290</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  291</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  292</span>                  <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">type_traits::has_value_v&lt;Lhs_T&gt;</a></div>
+<div class="line"><span class="lineno">  293</span>                                <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">and</a> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">type_traits::has_value_v&lt;Rhs_T&gt;</a>)</div>
+<div class="line"><span class="lineno">  294</span>                    {</div>
+<div class="line"><span class="lineno">  295</span>                      <span class="comment">// If both types have values (like numeric constants),</span></div>
+<div class="line"><span class="lineno">  296</span>                      <span class="comment">// compare them directly.</span></div>
+<div class="line"><span class="lineno">  297</span>                      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">Lhs_T::value</a> == <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">Rhs_T::value</a>;</div>
+<div class="line"><span class="lineno">  298</span>                    }</div>
+<div class="line"><span class="lineno">  299</span>                  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">type_traits::has_epsilon_v&lt;Lhs_T&gt;</a></div>
+<div class="line"><span class="lineno">  300</span>                                     <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">and</a> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">type_traits::has_epsilon_v&lt;Rhs_T&gt;</a>)</div>
+<div class="line"><span class="lineno">  301</span>                    {</div>
+<div class="line"><span class="lineno">  302</span>                      <span class="comment">// If both values have precision, compare them using</span></div>
+<div class="line"><span class="lineno">  303</span>                      <span class="comment">// the smalles precision.</span></div>
+<div class="line"><span class="lineno">  304</span>                      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a1dd33529640b959c531ca18c2e494c80">math::abs</a> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">get</a> (<a class="code hl_function" href="#a94c9f6919d84eba1763de39f7624c34a">lhs</a>) - <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">get</a> (<a class="code hl_function" href="#a5399e6059752043a3a5db6d35ec1a3e2">rhs</a>))</div>
+<div class="line"><span class="lineno">  305</span>                             &lt; <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#ae53dd62f6d82b8ccaa048d90a7002826">math::min_value</a> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">Lhs_T::epsilon</a>,</div>
+<div class="line"><span class="lineno">  306</span>                                                <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">Rhs_T::epsilon</a>);</div>
+<div class="line"><span class="lineno">  307</span>                    }</div>
+<div class="line"><span class="lineno">  308</span>                  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">type_traits::has_epsilon_v&lt;Lhs_T&gt;</a>)</div>
+<div class="line"><span class="lineno">  309</span>                    {</div>
+<div class="line"><span class="lineno">  310</span>                      <span class="comment">// If only the left operand has precision, use it.</span></div>
+<div class="line"><span class="lineno">  311</span>                      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a1dd33529640b959c531ca18c2e494c80">math::abs</a> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">get</a> (<a class="code hl_function" href="#a94c9f6919d84eba1763de39f7624c34a">lhs</a>) - <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">get</a> (<a class="code hl_function" href="#a5399e6059752043a3a5db6d35ec1a3e2">rhs</a>))</div>
+<div class="line"><span class="lineno">  312</span>                             &lt; <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">Lhs_T::epsilon</a>;</div>
+<div class="line"><span class="lineno">  313</span>                    }</div>
+<div class="line"><span class="lineno">  314</span>                  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">type_traits::has_epsilon_v&lt;Rhs_T&gt;</a>)</div>
+<div class="line"><span class="lineno">  315</span>                    {</div>
+<div class="line"><span class="lineno">  316</span>                      <span class="comment">// If only the right operand has precision, use it.</span></div>
+<div class="line"><span class="lineno">  317</span>                      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a1dd33529640b959c531ca18c2e494c80">math::abs</a> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">get</a> (<a class="code hl_function" href="#a94c9f6919d84eba1763de39f7624c34a">lhs</a>) - <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">get</a> (<a class="code hl_function" href="#a5399e6059752043a3a5db6d35ec1a3e2">rhs</a>))</div>
+<div class="line"><span class="lineno">  318</span>                             &lt; <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">Rhs_T::epsilon</a>;</div>
+<div class="line"><span class="lineno">  319</span>                    }</div>
+<div class="line"><span class="lineno">  320</span>                  <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  321</span>                    {</div>
+<div class="line"><span class="lineno">  322</span>                      <span class="comment">// Call the generic getters, which might</span></div>
+<div class="line"><span class="lineno">  323</span>                      <span class="comment">// either call the type get() or return the value.</span></div>
+<div class="line"><span class="lineno">  324</span>                      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ac627271520bf2fe8a4c4774bcd9bf343">get</a> (<a class="code hl_function" href="#a94c9f6919d84eba1763de39f7624c34a">lhs</a>) == <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ac627271520bf2fe8a4c4774bcd9bf343">get</a> (<a class="code hl_function" href="#a5399e6059752043a3a5db6d35ec1a3e2">rhs</a>);</div>
+<div class="line"><span class="lineno">  325</span>                    }</div>
+<div class="line"><span class="lineno">  326</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  327</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
+<div class="line"><span class="lineno">  328</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  329</span>                }()</div>
+<div class="line"><span class="lineno">  330</span>            }</div>
+<div class="line"><span class="lineno">  331</span>      {</div>
+<div class="line"><span class="lineno">  332</span>      }</div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_ac627271520bf2fe8a4c4774bcd9bf343"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ac627271520bf2fe8a4c4774bcd9bf343">micro_os_plus::micro_test_plus::detail::get</a></div><div class="ttdeci">constexpr auto get(const T &amp;t)</div><div class="ttdoc">Generic getter function template for value retrieval.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00223">detail.h:223</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1math_html_a1dd33529640b959c531ca18c2e494c80"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a1dd33529640b959c531ca18c2e494c80">micro_os_plus::micro_test_plus::math::abs</a></div><div class="ttdeci">constexpr auto abs(const T t) -&gt; T</div><div class="ttdoc">Computes the absolute value of a given comparable value.</div><div class="ttdef"><b>Definition</b> <a href="math-inlines_8h_source.html#l00096">math-inlines.h:96</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1math_html_ae53dd62f6d82b8ccaa048d90a7002826"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#ae53dd62f6d82b8ccaa048d90a7002826">micro_os_plus::micro_test_plus::math::min_value</a></div><div class="ttdeci">constexpr auto min_value(const T &amp;lhs, const T &amp;rhs) -&gt; const T &amp;</div><div class="ttdoc">Computes the minimum of two comparable values.</div><div class="ttdef"><b>Definition</b> <a href="math-inlines_8h_source.html#l00117">math-inlines.h:117</a></div></div>
 <div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">micro_os_plus::micro_test_plus::detail::eq_</a></div><div class="ttdoc">Equality comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00259">detail.h:260</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq___html_a5399e6059752043a3a5db6d35ec1a3e2"><div class="ttname"><a href="#a5399e6059752043a3a5db6d35ec1a3e2">micro_os_plus::micro_test_plus::detail::eq_::rhs</a></div><div class="ttdeci">constexpr auto rhs(void) const</div><div class="ttdoc">Retrieves the right-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00376">detail.h:376</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq___html_a592e7c80b299007f379f64613165836b"><div class="ttname"><a href="#a592e7c80b299007f379f64613165836b">micro_os_plus::micro_test_plus::detail::eq_::lhs_</a></div><div class="ttdeci">const Lhs_T lhs_</div><div class="ttdoc">Stores the left-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00384">detail.h:384</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq___html_a8045813e9acc6f99557d018fdceb0e1c"><div class="ttname"><a href="#a8045813e9acc6f99557d018fdceb0e1c">micro_os_plus::micro_test_plus::detail::eq_::value_</a></div><div class="ttdeci">const bool value_</div><div class="ttdoc">Stores the result of the equality comparison.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00394">detail.h:394</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq___html_a94c9f6919d84eba1763de39f7624c34a"><div class="ttname"><a href="#a94c9f6919d84eba1763de39f7624c34a">micro_os_plus::micro_test_plus::detail::eq_::lhs</a></div><div class="ttdeci">constexpr auto lhs(void) const</div><div class="ttdoc">Retrieves the left-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00358">detail.h:358</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq___html_aacd9df5dde2c550300b765a4d117965e"><div class="ttname"><a href="#aacd9df5dde2c550300b765a4d117965e">micro_os_plus::micro_test_plus::detail::eq_::rhs_</a></div><div class="ttdeci">const Rhs_T rhs_</div><div class="ttdoc">Stores the right-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00389">detail.h:389</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq___html_a5399e6059752043a3a5db6d35ec1a3e2"><div class="ttname"><a href="#a5399e6059752043a3a5db6d35ec1a3e2">micro_os_plus::micro_test_plus::detail::eq_::rhs</a></div><div class="ttdeci">constexpr auto rhs(void) const</div><div class="ttdoc">Retrieves the right-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00382">detail.h:382</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq___html_a592e7c80b299007f379f64613165836b"><div class="ttname"><a href="#a592e7c80b299007f379f64613165836b">micro_os_plus::micro_test_plus::detail::eq_::lhs_</a></div><div class="ttdeci">const Lhs_T lhs_</div><div class="ttdoc">Stores the left-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00390">detail.h:390</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq___html_a8045813e9acc6f99557d018fdceb0e1c"><div class="ttname"><a href="#a8045813e9acc6f99557d018fdceb0e1c">micro_os_plus::micro_test_plus::detail::eq_::value_</a></div><div class="ttdeci">const bool value_</div><div class="ttdoc">Stores the result of the equality comparison.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00400">detail.h:400</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq___html_a94c9f6919d84eba1763de39f7624c34a"><div class="ttname"><a href="#a94c9f6919d84eba1763de39f7624c34a">micro_os_plus::micro_test_plus::detail::eq_::lhs</a></div><div class="ttdeci">constexpr auto lhs(void) const</div><div class="ttdoc">Retrieves the left-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00364">detail.h:364</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq___html_aacd9df5dde2c550300b765a4d117965e"><div class="ttname"><a href="#aacd9df5dde2c550300b765a4d117965e">micro_os_plus::micro_test_plus::detail::eq_::rhs_</a></div><div class="ttdeci">const Rhs_T rhs_</div><div class="ttdoc">Stores the right-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00395">detail.h:395</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l00358">lhs()</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l00364">lhs()</a>.</p>
 
 </div>
 </div>
@@ -281,12 +287,12 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The extracted left-hand operand.</dd></dl>
 <p>Returns the value of the left-hand operand, applying the generic getter to ensure correct extraction for both custom and standard types. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00358">358</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  359</span>      {</div>
-<div class="line"><span class="lineno">  360</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ac627271520bf2fe8a4c4774bcd9bf343">get</a> (<a class="code hl_variable" href="#a592e7c80b299007f379f64613165836b">lhs_</a>);</div>
-<div class="line"><span class="lineno">  361</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00364">364</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  365</span>      {</div>
+<div class="line"><span class="lineno">  366</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ac627271520bf2fe8a4c4774bcd9bf343">get</a> (<a class="code hl_variable" href="#a592e7c80b299007f379f64613165836b">lhs_</a>);</div>
+<div class="line"><span class="lineno">  367</span>      }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l00223">micro_os_plus::micro_test_plus::detail::get()</a>, and <a class="el" href="detail_8h_source.html#l00384">lhs_</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l00223">micro_os_plus::micro_test_plus::detail::get()</a>, and <a class="el" href="detail_8h_source.html#l00390">lhs_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="detail_8h_source.html#l00272">eq_()</a>, and <a class="el" href="test-reporter-inlines_8h_source.html#l00185">micro_os_plus::micro_test_plus::test_reporter::operator&lt;&lt;()</a>.</p>
 
@@ -326,12 +332,12 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 </dl>
 <p>Returns the result of the equality comparison. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00340">340</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  341</span>      {</div>
-<div class="line"><span class="lineno">  342</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="#a8045813e9acc6f99557d018fdceb0e1c">value_</a>;</div>
-<div class="line"><span class="lineno">  343</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00346">346</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  347</span>      {</div>
+<div class="line"><span class="lineno">  348</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="#a8045813e9acc6f99557d018fdceb0e1c">value_</a>;</div>
+<div class="line"><span class="lineno">  349</span>      }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l00394">value_</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l00400">value_</a>.</p>
 
 </div>
 </div>
@@ -363,12 +369,12 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The extracted right-hand operand.</dd></dl>
 <p>Returns the value of the right-hand operand, applying the generic getter to ensure correct extraction for both custom and standard types. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00376">376</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  377</span>      {</div>
-<div class="line"><span class="lineno">  378</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ac627271520bf2fe8a4c4774bcd9bf343">get</a> (<a class="code hl_variable" href="#aacd9df5dde2c550300b765a4d117965e">rhs_</a>);</div>
-<div class="line"><span class="lineno">  379</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00382">382</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  383</span>      {</div>
+<div class="line"><span class="lineno">  384</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ac627271520bf2fe8a4c4774bcd9bf343">get</a> (<a class="code hl_variable" href="#aacd9df5dde2c550300b765a4d117965e">rhs_</a>);</div>
+<div class="line"><span class="lineno">  385</span>      }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l00223">micro_os_plus::micro_test_plus::detail::get()</a>, and <a class="el" href="detail_8h_source.html#l00389">rhs_</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l00223">micro_os_plus::micro_test_plus::detail::get()</a>, and <a class="el" href="detail_8h_source.html#l00395">rhs_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="test-reporter-inlines_8h_source.html#l00185">micro_os_plus::micro_test_plus::test_reporter::operator&lt;&lt;()</a>.</p>
 
@@ -389,10 +395,10 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00384">384</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  384</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00390">390</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  390</span>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="detail_8h_source.html#l00358">lhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail_8h_source.html#l00364">lhs()</a>.</p>
 
 </div>
 </div>
@@ -410,10 +416,10 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00389">389</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  389</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00395">395</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  395</span>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="detail_8h_source.html#l00376">rhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail_8h_source.html#l00382">rhs()</a>.</p>
 
 </div>
 </div>
@@ -431,10 +437,10 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00394">394</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  394</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00400">400</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  400</span>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="detail_8h_source.html#l00340">operator bool()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail_8h_source.html#l00346">operator bool()</a>.</p>
 
 </div>
 </div>

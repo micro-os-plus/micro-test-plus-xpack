@@ -123,6 +123,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab56971215ea9b94e854deb442c4c3a2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted move assignment operator to prevent moving.  <br /></td></tr>
 <tr class="memitem:aa71d653414cf5872a441d483fdf829c1" id="r_aa71d653414cf5872a441d483fdf829c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa71d653414cf5872a441d483fdf829c1">register_test_suite</a> (<a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base.html">test_suite_base</a> *suite)</td></tr>
 <tr class="memdesc:aa71d653414cf5872a441d483fdf829c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a test suite with the runner.  <br /></td></tr>
+<tr class="memitem:a58d4282c2440f9eb20d36b88fa645903" id="r_a58d4282c2440f9eb20d36b88fa645903"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58d4282c2440f9eb20d36b88fa645903">test_suites_count</a> (void)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:abc2b7a044492b6b6e797653e0c22cce4" id="r_abc2b7a044492b6b6e797653e0c22cce4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base.html">test_suite_base</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc2b7a044492b6b6e797653e0c22cce4">default_test_suite</a> = nullptr</td></tr>
+<tr class="memdesc:abc2b7a044492b6b6e797653e0c22cce4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the default test suite which groups the main tests.  <br /></td></tr>
+<tr class="memitem:a5785170098c755bbea376839afd91744" id="r_a5785170098c755bbea376839afd91744"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base.html">test_suite_base</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5785170098c755bbea376839afd91744">test_suites</a> = nullptr</td></tr>
+<tr class="memdesc:a5785170098c755bbea376839afd91744"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the array of registered test suites.  <br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft anon">struct {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memitem:a1d402a82723d1325c3dfdf60be452f44" id="r_a1d402a82723d1325c3dfdf60be452f44"><td class="memItemLeft anon">&#160;&#160;&#160;size_t&#160;&#160;&#160;<a class="el" href="#a64146aa3ca2ce94e82909649e090bdec">failed_checks</a> = 0&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a1d402a82723d1325c3dfdf60be452f44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of failed checks in the test suite.  <a href="#a64146aa3ca2ce94e82909649e090bdec">More...</a><br /></td></tr>
+<tr class="memitem:a9fe05b48bde4b1b3e7200511114c51bd" id="r_a9fe05b48bde4b1b3e7200511114c51bd"><td class="memItemLeft anon">&#160;&#160;&#160;size_t&#160;&#160;&#160;<a class="el" href="#a3983327f5faf770fcb4b87fe7654dc18">successful_checks</a> = 0&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:a9fe05b48bde4b1b3e7200511114c51bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of successful checks in the test suite.  <a href="#a3983327f5faf770fcb4b87fe7654dc18">More...</a><br /></td></tr>
+<tr class="memitem:abdfc9ab0cd7590312efebe83469cf3a3" id="r_abdfc9ab0cd7590312efebe83469cf3a3"><td class="memItemLeft anon">&#160;&#160;&#160;size_t&#160;&#160;&#160;<a class="el" href="#ad1595fcbc848dbdf309a6d7506b29984">test_cases_count</a> = 0&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="memdesc:abdfc9ab0cd7590312efebe83469cf3a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of test cases in the test suite.  <a href="#ad1595fcbc848dbdf309a6d7506b29984">More...</a><br /></td></tr>
+<tr class="memitem:aabba61d146ba4782ae851f0e45f7062b" id="r_aabba61d146ba4782ae851f0e45f7062b"><td class="memItemLeft anonEnd" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aabba61d146ba4782ae851f0e45f7062b">totals</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -132,17 +148,13 @@ Protected Attributes</h2></td></tr>
 <tr class="memdesc:a08b3a57d4f802d3aa1a1af02856c460d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the argument vector passed to the test runner.  <br /></td></tr>
 <tr class="memitem:af60fbb3e376f27b801c30ce6c7a01808" id="r_af60fbb3e376f27b801c30ce6c7a01808"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af60fbb3e376f27b801c30ce6c7a01808">default_suite_name_</a> = &quot;Test&quot;</td></tr>
 <tr class="memdesc:af60fbb3e376f27b801c30ce6c7a01808"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the default test suite.  <br /></td></tr>
-<tr class="memitem:a637b06becc3677c2180f022cc4c363e8" id="r_a637b06becc3677c2180f022cc4c363e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base.html">test_suite_base</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a637b06becc3677c2180f022cc4c363e8">default_test_suite_</a></td></tr>
-<tr class="memdesc:a637b06becc3677c2180f022cc4c363e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the default test suite which groups the main tests.  <br /></td></tr>
-<tr class="memitem:a299cdb1bee2322ec60f4ebb463c1e513" id="r_a299cdb1bee2322ec60f4ebb463c1e513"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base.html">test_suite_base</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a299cdb1bee2322ec60f4ebb463c1e513">suites_</a></td></tr>
-<tr class="memdesc:a299cdb1bee2322ec60f4ebb463c1e513"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the array of registered test suites.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__runner.html" title="The test runner for the µTest++ framework.">test_runner</a></span> class is responsible for managing the registration and execution of test suites within the µTest++ framework. It maintains a collection of test suites, each of which registers itself automatically upon construction, enabling seamless integration and execution of tests across different components and folders of a project.</p>
 <p>The test runner provides methods for initialising the test environment, registering test suites, retrieving the runner's name, and determining the overall test result via an exit code. It also offers an abort mechanism for terminating test execution in exceptional circumstances.</p>
 <p>All members and methods are defined within the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus.html" title="Primary namespace for the µTest++ testing framework.">micro_os_plus::micro_test_plus</a></span> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-runner_8h_source.html#l00096">96</a> of file <a class="el" href="test-runner_8h_source.html">test-runner.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test-runner_8h_source.html#l00098">98</a> of file <a class="el" href="test-runner_8h_source.html">test-runner.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3e2fdf09d6a1cbd52b2189fcdf12aabf" name="a3e2fdf09d6a1cbd52b2189fcdf12aabf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3e2fdf09d6a1cbd52b2189fcdf12aabf">&#9670;&#160;</a></span>test_runner() <span class="overload">[1/3]</span></h2>
@@ -161,12 +173,12 @@ Protected Attributes</h2></td></tr>
 <p>The rule of five is enforced to prevent accidental copying or moving.</p>
 <p>The constructor initialises a new instance of the <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__runner.html" title="The test runner for the µTest++ framework.">test_runner</a></span> class, preparing the test runner for managing test suites and cases within the µTest++ framework. If tracing is enabled, it outputs the function signature for diagnostic purposes. This setup ensures the test runner is ready to coordinate the registration, execution, and reporting of tests across all test cases and folders. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-runner_8cpp_source.html#l00072">72</a> of file <a class="el" href="test-runner_8cpp_source.html">test-runner.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   73</span>  {</div>
-<div class="line"><span class="lineno">   74</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)</span></div>
-<div class="line"><span class="lineno">   75</span>    printf (<span class="stringliteral">&quot;%s\n&quot;</span>, __PRETTY_FUNCTION__);</div>
-<div class="line"><span class="lineno">   76</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS</span></div>
-<div class="line"><span class="lineno">   77</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="test-runner_8cpp_source.html#l00073">73</a> of file <a class="el" href="test-runner_8cpp_source.html">test-runner.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>  {</div>
+<div class="line"><span class="lineno">   75</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)</span></div>
+<div class="line"><span class="lineno">   76</span>    printf (<span class="stringliteral">&quot;%s\n&quot;</span>, __PRETTY_FUNCTION__);</div>
+<div class="line"><span class="lineno">   77</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS</span></div>
+<div class="line"><span class="lineno">   78</span>  }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="#a84abdee67279e9a07a68fa01c523ff14">test_runner()</a>, <a class="el" href="#a307ecef3a7db19a095ea3202fc5e9d65">test_runner()</a>, <a class="el" href="#a287fcb294f40d116c6497efbc2c366c3">operator=()</a>, and <a class="el" href="#ab56971215ea9b94e854deb442c4c3a2e">operator=()</a>.</p>
 
@@ -195,7 +207,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="test-runner_8cpp_source.html#l00072">test_runner()</a>.</p>
+<p class="reference">References <a class="el" href="test-runner_8cpp_source.html#l00073">test_runner()</a>.</p>
 
 </div>
 </div>
@@ -222,7 +234,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="test-runner_8cpp_source.html#l00072">test_runner()</a>.</p>
+<p class="reference">References <a class="el" href="test-runner_8cpp_source.html#l00073">test_runner()</a>.</p>
 
 </div>
 </div>
@@ -249,7 +261,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="test-runner_8h_source.html#l00178">name()</a>.</p>
+<p class="reference">References <a class="el" href="test-runner_8h_source.html#l00186">name()</a>.</p>
 
 </div>
 </div>
@@ -272,15 +284,15 @@ Protected Attributes</h2></td></tr>
 <dl class="section user"><dt>Returns</dt><dd>Nothing.</dd></dl>
 <p>This method immediately terminates the process by invoking the standard C library <span class="tt"><a class="el" href="#a18956cfdcc2edfb043029a06e8d9c51a" title="Aborts test execution immediately.">abort()</a></span> function. It is used to halt test execution in critical failure scenarios, ensuring that no further tests are run and that the cause of the failure can be promptly investigated. This approach provides a robust mechanism for enforcing strict test outcomes across all test cases and folders. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-runner_8cpp_source.html#l00255">255</a> of file <a class="el" href="test-runner_8cpp_source.html">test-runner.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  256</span>  {</div>
-<div class="line"><span class="lineno">  257</span>    <a class="code hl_function" href="#a18956cfdcc2edfb043029a06e8d9c51a">::abort</a> ();</div>
-<div class="line"><span class="lineno">  258</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__runner_html_a18956cfdcc2edfb043029a06e8d9c51a"><div class="ttname"><a href="#a18956cfdcc2edfb043029a06e8d9c51a">micro_os_plus::micro_test_plus::test_runner::abort</a></div><div class="ttdeci">void abort(void)</div><div class="ttdoc">Aborts test execution immediately.</div><div class="ttdef"><b>Definition</b> <a href="test-runner_8cpp_source.html#l00255">test-runner.cpp:255</a></div></div>
+<p class="definition">Definition at line <a class="el" href="test-runner_8cpp_source.html#l00303">303</a> of file <a class="el" href="test-runner_8cpp_source.html">test-runner.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  304</span>  {</div>
+<div class="line"><span class="lineno">  305</span>    <a class="code hl_function" href="#a18956cfdcc2edfb043029a06e8d9c51a">::abort</a> ();</div>
+<div class="line"><span class="lineno">  306</span>  }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__runner_html_a18956cfdcc2edfb043029a06e8d9c51a"><div class="ttname"><a href="#a18956cfdcc2edfb043029a06e8d9c51a">micro_os_plus::micro_test_plus::test_runner::abort</a></div><div class="ttdeci">void abort(void)</div><div class="ttdoc">Aborts test execution immediately.</div><div class="ttdef"><b>Definition</b> <a href="test-runner_8cpp_source.html#l00303">test-runner.cpp:303</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test-runner_8cpp_source.html#l00255">abort()</a>.</p>
+<p class="reference">References <a class="el" href="test-runner_8cpp_source.html#l00303">abort()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-runner_8cpp_source.html#l00255">abort()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-runner_8cpp_source.html#l00303">abort()</a>.</p>
 
 </div>
 </div>
@@ -301,44 +313,65 @@ Protected Attributes</h2></td></tr>
 <dl class="section user"><dt>Parameters</dt><dd>None. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Integer exit code representing the overall test result. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="test-runner_8cpp_source.html#l00190">190</a> of file <a class="el" href="test-runner_8cpp_source.html">test-runner.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  191</span>  {</div>
-<div class="line"><span class="lineno">  192</span>    <span class="keywordtype">bool</span> was_successful = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  193</span> </div>
-<div class="line"><span class="lineno">  194</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a637b06becc3677c2180f022cc4c363e8">default_test_suite_</a>-&gt;unused ())</div>
-<div class="line"><span class="lineno">  195</span>      {</div>
-<div class="line"><span class="lineno">  196</span>        <a class="code hl_variable" href="#a637b06becc3677c2180f022cc4c363e8">default_test_suite_</a>-&gt;end_test_suite ();</div>
-<div class="line"><span class="lineno">  197</span>        was_successful = <a class="code hl_variable" href="#a637b06becc3677c2180f022cc4c363e8">default_test_suite_</a>-&gt;was_successful ();</div>
-<div class="line"><span class="lineno">  198</span>      }</div>
-<div class="line"><span class="lineno">  199</span> </div>
-<div class="line"><span class="lineno">  200</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a299cdb1bee2322ec60f4ebb463c1e513">suites_</a> != <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">  201</span>      {</div>
-<div class="line"><span class="lineno">  202</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> suite : *<a class="code hl_variable" href="#a299cdb1bee2322ec60f4ebb463c1e513">suites_</a>)</div>
-<div class="line"><span class="lineno">  203</span>          {</div>
-<div class="line"><span class="lineno">  204</span>            <a class="code hl_variable" href="namespacemicro__os__plus_1_1micro__test__plus.html#a682fc3ce8c00ebe7c068d6299269655b">current_test_suite</a> = suite;</div>
-<div class="line"><span class="lineno">  205</span> </div>
-<div class="line"><span class="lineno">  206</span>            suite-&gt;<a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base.html#adfc3afd1432b2d093eef73a18ca9a242">begin_test_suite</a> ();</div>
-<div class="line"><span class="lineno">  207</span>            suite-&gt;run ();</div>
-<div class="line"><span class="lineno">  208</span>            suite-&gt;end_test_suite ();</div>
-<div class="line"><span class="lineno">  209</span> </div>
-<div class="line"><span class="lineno">  210</span>            was_successful &amp;= suite-&gt;was_successful ();</div>
-<div class="line"><span class="lineno">  211</span>          }</div>
-<div class="line"><span class="lineno">  212</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespacemicro__os__plus_1_1micro__test__plus.html#aec46bdfdb22163bedab8e6b542191834">reporter</a>.<a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter.html#adc647f6da46704ba46dcb41a2ec95820">verbosity</a> != <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">verbosity::silent</a>)</div>
-<div class="line"><span class="lineno">  213</span>          {</div>
-<div class="line"><span class="lineno">  214</span>            <span class="comment">// printf (&quot;\n&quot;);</span></div>
-<div class="line"><span class="lineno">  215</span>          }</div>
-<div class="line"><span class="lineno">  216</span>      }</div>
-<div class="line"><span class="lineno">  217</span>    <span class="keywordflow">return</span> was_successful ? 0 : 1;</div>
-<div class="line"><span class="lineno">  218</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__reporter_html_adc647f6da46704ba46dcb41a2ec95820"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter.html#adc647f6da46704ba46dcb41a2ec95820">micro_os_plus::micro_test_plus::test_reporter::verbosity</a></div><div class="ttdeci">verbosity_t verbosity</div><div class="ttdoc">The verbosity level for test reporting.</div><div class="ttdef"><b>Definition</b> <a href="test-reporter_8h_source.html#l00724">test-reporter.h:724</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__runner_html_a299cdb1bee2322ec60f4ebb463c1e513"><div class="ttname"><a href="#a299cdb1bee2322ec60f4ebb463c1e513">micro_os_plus::micro_test_plus::test_runner::suites_</a></div><div class="ttdeci">std::vector&lt; test_suite_base * &gt; * suites_</div><div class="ttdoc">Pointer to the array of registered test suites.</div><div class="ttdef"><b>Definition</b> <a href="test-runner_8h_source.html#l00223">test-runner.h:223</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__runner_html_a637b06becc3677c2180f022cc4c363e8"><div class="ttname"><a href="#a637b06becc3677c2180f022cc4c363e8">micro_os_plus::micro_test_plus::test_runner::default_test_suite_</a></div><div class="ttdeci">test_suite_base * default_test_suite_</div><div class="ttdoc">Pointer to the default test suite which groups the main tests.</div><div class="ttdef"><b>Definition</b> <a href="test-runner_8h_source.html#l00213">test-runner.h:213</a></div></div>
+<p class="definition">Definition at line <a class="el" href="test-runner_8cpp_source.html#l00218">218</a> of file <a class="el" href="test-runner_8cpp_source.html">test-runner.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  219</span>  {</div>
+<div class="line"><span class="lineno">  220</span>    <span class="keywordtype">bool</span> was_successful = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#abc2b7a044492b6b6e797653e0c22cce4">default_test_suite</a>-&gt;unused ())</div>
+<div class="line"><span class="lineno">  223</span>      {</div>
+<div class="line"><span class="lineno">  224</span>        <a class="code hl_variable" href="#abc2b7a044492b6b6e797653e0c22cce4">default_test_suite</a>-&gt;end_test_suite ();</div>
+<div class="line"><span class="lineno">  225</span>        was_successful = <a class="code hl_variable" href="#abc2b7a044492b6b6e797653e0c22cce4">default_test_suite</a>-&gt;was_successful ();</div>
+<div class="line"><span class="lineno">  226</span> </div>
+<div class="line"><span class="lineno">  227</span>        <a class="code hl_variable" href="#aabba61d146ba4782ae851f0e45f7062b">totals</a>.successful_checks += <a class="code hl_variable" href="#abc2b7a044492b6b6e797653e0c22cce4">default_test_suite</a>-&gt;successful_checks ();</div>
+<div class="line"><span class="lineno">  228</span>        <a class="code hl_variable" href="#aabba61d146ba4782ae851f0e45f7062b">totals</a>.failed_checks += <a class="code hl_variable" href="#abc2b7a044492b6b6e797653e0c22cce4">default_test_suite</a>-&gt;failed_checks ();</div>
+<div class="line"><span class="lineno">  229</span>        <a class="code hl_variable" href="#aabba61d146ba4782ae851f0e45f7062b">totals</a>.test_cases_count += <a class="code hl_variable" href="#abc2b7a044492b6b6e797653e0c22cce4">default_test_suite</a>-&gt;test_cases_count ();</div>
+<div class="line"><span class="lineno">  230</span>      }</div>
+<div class="line"><span class="lineno">  231</span> </div>
+<div class="line"><span class="lineno">  232</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a5785170098c755bbea376839afd91744">test_suites</a> != <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">  233</span>      {</div>
+<div class="line"><span class="lineno">  234</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> test_suite : *<a class="code hl_variable" href="#a5785170098c755bbea376839afd91744">test_suites</a>)</div>
+<div class="line"><span class="lineno">  235</span>          {</div>
+<div class="line"><span class="lineno">  236</span>            <a class="code hl_variable" href="namespacemicro__os__plus_1_1micro__test__plus.html#a682fc3ce8c00ebe7c068d6299269655b">current_test_suite</a> = test_suite;</div>
+<div class="line"><span class="lineno">  237</span> </div>
+<div class="line"><span class="lineno">  238</span>            test_suite-&gt;<a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base.html#adfc3afd1432b2d093eef73a18ca9a242">begin_test_suite</a> ();</div>
+<div class="line"><span class="lineno">  239</span>            test_suite-&gt;run ();</div>
+<div class="line"><span class="lineno">  240</span>            test_suite-&gt;end_test_suite ();</div>
+<div class="line"><span class="lineno">  241</span> </div>
+<div class="line"><span class="lineno">  242</span>            was_successful &amp;= test_suite-&gt;was_successful ();</div>
+<div class="line"><span class="lineno">  243</span> </div>
+<div class="line"><span class="lineno">  244</span>            <a class="code hl_variable" href="#aabba61d146ba4782ae851f0e45f7062b">totals</a>.successful_checks += test_suite-&gt;successful_checks ();</div>
+<div class="line"><span class="lineno">  245</span>            <a class="code hl_variable" href="#aabba61d146ba4782ae851f0e45f7062b">totals</a>.failed_checks += test_suite-&gt;failed_checks ();</div>
+<div class="line"><span class="lineno">  246</span>            <a class="code hl_variable" href="#aabba61d146ba4782ae851f0e45f7062b">totals</a>.test_cases_count += test_suite-&gt;test_cases_count ();</div>
+<div class="line"><span class="lineno">  247</span>          }</div>
+<div class="line"><span class="lineno">  248</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespacemicro__os__plus_1_1micro__test__plus.html#a22bf4ef08cb70064bbc37770a0ad5ac4">reporter</a>-&gt;<a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter.html#adc647f6da46704ba46dcb41a2ec95820">verbosity</a> != <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">verbosity::silent</a>)</div>
+<div class="line"><span class="lineno">  249</span>          {</div>
+<div class="line"><span class="lineno">  250</span>            <span class="comment">// printf (&quot;\n&quot;);</span></div>
+<div class="line"><span class="lineno">  251</span>          }</div>
+<div class="line"><span class="lineno">  252</span>      }</div>
+<div class="line"><span class="lineno">  253</span> </div>
+<div class="line"><span class="lineno">  254</span><span class="preprocessor">#if defined(_WIN32) || defined(CLOCK_MONOTONIC)</span></div>
+<div class="line"><span class="lineno">  255</span><span class="preprocessor">#if defined(_WIN32)</span></div>
+<div class="line"><span class="lineno">  256</span>    timespec_get (&amp;end_time, TIME_UTC);</div>
+<div class="line"><span class="lineno">  257</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  258</span>    clock_gettime (CLOCK_MONOTONIC, &amp;end_time);</div>
+<div class="line"><span class="lineno">  259</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  260</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  261</span> </div>
+<div class="line"><span class="lineno">  262</span>    <a class="code hl_variable" href="namespacemicro__os__plus_1_1micro__test__plus.html#a22bf4ef08cb70064bbc37770a0ad5ac4">reporter</a>-&gt;<a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter.html#a39cfd386c447d792d104371601889d19">end_test</a> (*<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  263</span> </div>
+<div class="line"><span class="lineno">  264</span>    <span class="keywordflow">return</span> was_successful ? 0 : 1;</div>
+<div class="line"><span class="lineno">  265</span>  }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__reporter_html_a39cfd386c447d792d104371601889d19"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter.html#a39cfd386c447d792d104371601889d19">micro_os_plus::micro_test_plus::test_reporter::end_test</a></div><div class="ttdeci">virtual void end_test(test_runner &amp;runner)=0</div><div class="ttdoc">Mark the end of a test.</div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__reporter_html_adc647f6da46704ba46dcb41a2ec95820"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter.html#adc647f6da46704ba46dcb41a2ec95820">micro_os_plus::micro_test_plus::test_reporter::verbosity</a></div><div class="ttdeci">verbosity_t verbosity</div><div class="ttdoc">The verbosity level for test reporting.</div><div class="ttdef"><b>Definition</b> <a href="test-reporter_8h_source.html#l00761">test-reporter.h:761</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__runner_html_a5785170098c755bbea376839afd91744"><div class="ttname"><a href="#a5785170098c755bbea376839afd91744">micro_os_plus::micro_test_plus::test_runner::test_suites</a></div><div class="ttdeci">std::vector&lt; test_suite_base * &gt; * test_suites</div><div class="ttdoc">Pointer to the array of registered test suites.</div><div class="ttdef"><b>Definition</b> <a href="test-runner_8h_source.html#l00212">test-runner.h:212</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__runner_html_aabba61d146ba4782ae851f0e45f7062b"><div class="ttname"><a href="#aabba61d146ba4782ae851f0e45f7062b">micro_os_plus::micro_test_plus::test_runner::totals</a></div><div class="ttdeci">struct micro_os_plus::micro_test_plus::test_runner::@203116162314165176152054201130262045267070023134 totals</div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__runner_html_abc2b7a044492b6b6e797653e0c22cce4"><div class="ttname"><a href="#abc2b7a044492b6b6e797653e0c22cce4">micro_os_plus::micro_test_plus::test_runner::default_test_suite</a></div><div class="ttdeci">test_suite_base * default_test_suite</div><div class="ttdoc">Pointer to the default test suite which groups the main tests.</div><div class="ttdef"><b>Definition</b> <a href="test-runner_8h_source.html#l00247">test-runner.h:247</a></div></div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_html_adfc3afd1432b2d093eef73a18ca9a242"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base.html#adfc3afd1432b2d093eef73a18ca9a242">micro_os_plus::micro_test_plus::test_suite_base::begin_test_suite</a></div><div class="ttdeci">void begin_test_suite(void)</div><div class="ttdoc">Begins the execution of the test suite.</div><div class="ttdef"><b>Definition</b> <a href="test-suite_8cpp_source.html#l00122">test-suite.cpp:122</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a682fc3ce8c00ebe7c068d6299269655b"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#a682fc3ce8c00ebe7c068d6299269655b">micro_os_plus::micro_test_plus::current_test_suite</a></div><div class="ttdeci">test_suite_base * current_test_suite</div><div class="ttdoc">Global pointer references the currently active test suite.</div><div class="ttdef"><b>Definition</b> <a href="micro-test-plus_8cpp_source.html#l00306">micro-test-plus.cpp:306</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">micro_os_plus::micro_test_plus::verbosity::silent</a></div><div class="ttdeci">@ silent</div><div class="ttdef"><b>Definition</b> <a href="test-reporter_8h_source.html#l00129">test-reporter.h:129</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_aec46bdfdb22163bedab8e6b542191834"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#aec46bdfdb22163bedab8e6b542191834">micro_os_plus::micro_test_plus::reporter</a></div><div class="ttdeci">test_reporter reporter</div><div class="ttdoc">Global instance of test_reporter.</div><div class="ttdef"><b>Definition</b> <a href="micro-test-plus_8cpp_source.html#l00292">micro-test-plus.cpp:292</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a22bf4ef08cb70064bbc37770a0ad5ac4"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#a22bf4ef08cb70064bbc37770a0ad5ac4">micro_os_plus::micro_test_plus::reporter</a></div><div class="ttdeci">test_reporter * reporter</div><div class="ttdoc">Global pointer to test_reporter.</div><div class="ttdef"><b>Definition</b> <a href="micro-test-plus_8cpp_source.html#l00293">micro-test-plus.cpp:293</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a682fc3ce8c00ebe7c068d6299269655b"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#a682fc3ce8c00ebe7c068d6299269655b">micro_os_plus::micro_test_plus::current_test_suite</a></div><div class="ttdeci">test_suite_base * current_test_suite</div><div class="ttdoc">Global pointer references the currently active test suite.</div><div class="ttdef"><b>Definition</b> <a href="micro-test-plus_8cpp_source.html#l00307">micro-test-plus.cpp:307</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">micro_os_plus::micro_test_plus::verbosity::silent</a></div><div class="ttdeci">@ silent</div><div class="ttdef"><b>Definition</b> <a href="test-reporter_8h_source.html#l00135">test-reporter.h:135</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="micro-test-plus_8cpp_source.html#l00306">micro_os_plus::micro_test_plus::current_test_suite</a>, <a class="el" href="test-runner_8h_source.html#l00213">default_test_suite_</a>, <a class="el" href="micro-test-plus_8cpp_source.html#l00292">micro_os_plus::micro_test_plus::reporter</a>, <a class="el" href="test-reporter_8h_source.html#l00129">micro_os_plus::micro_test_plus::silent</a>, and <a class="el" href="test-runner_8h_source.html#l00223">suites_</a>.</p>
+<p class="reference">References <a class="el" href="test-suite_8cpp_source.html#l00122">micro_os_plus::micro_test_plus::test_suite_base::begin_test_suite()</a>, <a class="el" href="micro-test-plus_8cpp_source.html#l00307">micro_os_plus::micro_test_plus::current_test_suite</a>, <a class="el" href="test-runner_8h_source.html#l00247">default_test_suite</a>, <a class="el" href="test-suite_8cpp_source.html#l00147">micro_os_plus::micro_test_plus::test_suite_base::end_test_suite()</a>, <a class="el" href="test-suite_8h_source.html#l00377">micro_os_plus::micro_test_plus::test_suite_base::failed_checks</a>, <a class="el" href="micro-test-plus_8cpp_source.html#l00293">micro_os_plus::micro_test_plus::reporter</a>, <a class="el" href="test-suite_8cpp_source.html#l00280">micro_os_plus::micro_test_plus::test_suite::run()</a>, <a class="el" href="test-reporter_8h_source.html#l00135">micro_os_plus::micro_test_plus::silent</a>, <a class="el" href="test-suite_8h_source.html#l00372">micro_os_plus::micro_test_plus::test_suite_base::successful_checks</a>, <a class="el" href="test-suite_8h_source.html#l00241">micro_os_plus::micro_test_plus::test_suite_base::test_cases_count()</a>, <a class="el" href="test-runner_8h_source.html#l00212">test_suites</a>, <a class="el" href="#aabba61d146ba4782ae851f0e45f7062b">totals</a>, and <a class="el" href="test-suite_8h_source.html#l00291">micro_os_plus::micro_test_plus::test_suite_base::was_successful()</a>.</p>
 
 </div>
 </div>
@@ -376,108 +409,135 @@ Protected Attributes</h2></td></tr>
 <dl class="section user"><dt>Returns</dt><dd>Nothing.</dd></dl>
 <p>This method initialises the test runner by capturing the command-line arguments and the default test suite name, configuring the framework for subsequent test execution. It parses the arguments to determine the desired verbosity level (normal, verbose, quiet, or silent) and applies this setting to the test reporter. The method also outputs build and environment information when appropriate, aiding diagnostics and transparency. Finally, it creates and registers the default test suite, preparing the framework to manage and execute all test cases and suites across the project’s folders. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-runner_8cpp_source.html#l00096">96</a> of file <a class="el" href="test-runner_8cpp_source.html">test-runner.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   97</span>  {</div>
-<div class="line"><span class="lineno">   98</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)</span></div>
-<div class="line"><span class="lineno">   99</span>    printf (<span class="stringliteral">&quot;%s\n&quot;</span>, __PRETTY_FUNCTION__);</div>
-<div class="line"><span class="lineno">  100</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS</span></div>
-<div class="line"><span class="lineno">  101</span> </div>
-<div class="line"><span class="lineno">  102</span>    <a class="code hl_variable" href="#a4caf0986c9b9fedb37ad486eabfa88fc">argc_</a> = argc;</div>
-<div class="line"><span class="lineno">  103</span>    <a class="code hl_variable" href="#a08b3a57d4f802d3aa1a1af02856c460d">argv_</a> = argv;</div>
-<div class="line"><span class="lineno">  104</span> </div>
-<div class="line"><span class="lineno">  105</span>    <a class="code hl_variable" href="#af60fbb3e376f27b801c30ce6c7a01808">default_suite_name_</a> = <a class="code hl_function" href="#a44ee9f03f3d9a974ba36730eee6f9d9a">name</a>;</div>
-<div class="line"><span class="lineno">  106</span> </div>
-<div class="line"><span class="lineno">  107</span><span class="preprocessor">#if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) &amp;&amp; defined(MICRO_OS_PLUS_TRACE))</span></div>
-<div class="line"><span class="lineno">  108</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_DEBUG)</span></div>
-<div class="line"><span class="lineno">  109</span>    printf (<span class="stringliteral">&quot;argv[&quot;</span>);</div>
-<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; argc; ++i)</div>
-<div class="line"><span class="lineno">  111</span>      {</div>
-<div class="line"><span class="lineno">  112</span>        <span class="keywordflow">if</span> (i &gt; 0)</div>
-<div class="line"><span class="lineno">  113</span>          {</div>
-<div class="line"><span class="lineno">  114</span>            printf (<span class="stringliteral">&quot;, &quot;</span>);</div>
-<div class="line"><span class="lineno">  115</span>          }</div>
-<div class="line"><span class="lineno">  116</span>        printf (<span class="stringliteral">&quot;&#39;%s&#39;&quot;</span>, argv[i]);</div>
-<div class="line"><span class="lineno">  117</span>      }</div>
-<div class="line"><span class="lineno">  118</span>    puts (<span class="stringliteral">&quot;]&quot;</span>);</div>
-<div class="line"><span class="lineno">  119</span><span class="preprocessor">#endif </span><span class="comment">// defined(MICRO_OS_PLUS_DEBUG)</span></div>
-<div class="line"><span class="lineno">  120</span><span class="preprocessor">#endif </span><span class="comment">// !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)</span></div>
-<div class="line"><span class="lineno">  121</span> </div>
-<div class="line"><span class="lineno">  122</span>    <a class="code hl_typedef" href="namespacemicro__os__plus_1_1micro__test__plus.html#a08e787c2c2f8365df2c9b372605535ac">verbosity_t</a> <a class="code hl_enumeration" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914b">verbosity</a> = <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">verbosity::normal</a>;</div>
-<div class="line"><span class="lineno">  123</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; argc; ++i)</div>
-<div class="line"><span class="lineno">  124</span>      {</div>
-<div class="line"><span class="lineno">  125</span>        <span class="keywordflow">if</span> (strcmp (argv[i], <span class="stringliteral">&quot;--verbose&quot;</span>) == 0)</div>
-<div class="line"><span class="lineno">  126</span>          {</div>
-<div class="line"><span class="lineno">  127</span>            <a class="code hl_enumeration" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914b">verbosity</a> = <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbosity::verbose</a>;</div>
-<div class="line"><span class="lineno">  128</span>          }</div>
-<div class="line"><span class="lineno">  129</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp (argv[i], <span class="stringliteral">&quot;--quiet&quot;</span>) == 0)</div>
-<div class="line"><span class="lineno">  130</span>          {</div>
-<div class="line"><span class="lineno">  131</span>            <a class="code hl_enumeration" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914b">verbosity</a> = <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">verbosity::quiet</a>;</div>
-<div class="line"><span class="lineno">  132</span>          }</div>
-<div class="line"><span class="lineno">  133</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp (argv[i], <span class="stringliteral">&quot;--silent&quot;</span>) == 0)</div>
-<div class="line"><span class="lineno">  134</span>          {</div>
-<div class="line"><span class="lineno">  135</span>            <a class="code hl_enumeration" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914b">verbosity</a> = <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">verbosity::silent</a>;</div>
-<div class="line"><span class="lineno">  136</span>          }</div>
-<div class="line"><span class="lineno">  137</span>      }</div>
-<div class="line"><span class="lineno">  138</span> </div>
-<div class="line"><span class="lineno">  139</span>    <span class="comment">// Pass the verbosity to the reporter.</span></div>
-<div class="line"><span class="lineno">  140</span>    <a class="code hl_variable" href="namespacemicro__os__plus_1_1micro__test__plus.html#aec46bdfdb22163bedab8e6b542191834">reporter</a>.<a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter.html#adc647f6da46704ba46dcb41a2ec95820">verbosity</a> = <a class="code hl_enumeration" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914b">verbosity</a>;</div>
-<div class="line"><span class="lineno">  141</span> </div>
-<div class="line"><span class="lineno">  142</span>    <span class="comment">// ------------------------------------------------------------------------</span></div>
-<div class="line"><span class="lineno">  143</span> </div>
-<div class="line"><span class="lineno">  144</span><span class="preprocessor">#if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) &amp;&amp; defined(MICRO_OS_PLUS_TRACE))</span></div>
-<div class="line"><span class="lineno">  145</span>    <span class="keywordflow">if</span> (<a class="code hl_enumeration" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914b">verbosity</a> == <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">verbosity::normal</a> || <a class="code hl_enumeration" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914b">verbosity</a> == <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbosity::verbose</a>)</div>
-<div class="line"><span class="lineno">  146</span>      {</div>
-<div class="line"><span class="lineno">  147</span><span class="preprocessor">#if defined(__clang__)</span></div>
-<div class="line"><span class="lineno">  148</span>        printf (<span class="stringliteral">&quot;Built with clang &quot;</span> __VERSION__);</div>
-<div class="line"><span class="lineno">  149</span><span class="preprocessor">#elif defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  150</span>        printf (<span class="stringliteral">&quot;Built with GCC &quot;</span> __VERSION__);</div>
-<div class="line"><span class="lineno">  151</span><span class="preprocessor">#elif defined(_MSC_VER)</span></div>
-<div class="line"><span class="lineno">  152</span>        <span class="comment">// https://docs.microsoft.com/en-us/cpp/preprocessor/predefined-macros?view=msvc-170</span></div>
-<div class="line"><span class="lineno">  153</span>        printf (<span class="stringliteral">&quot;Built with MSVC %d&quot;</span>, _MSC_VER);</div>
-<div class="line"><span class="lineno">  154</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">  155</span>        printf (<span class="stringliteral">&quot;Built with an unknown compiler&quot;</span>);</div>
-<div class="line"><span class="lineno">  156</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  157</span><span class="preprocessor">#if !(defined(__APPLE__) || defined(__linux__) || defined(__unix__) \</span></div>
-<div class="line"><span class="lineno">  158</span><span class="preprocessor">      || defined(WIN32))</span></div>
-<div class="line"><span class="lineno">  159</span><span class="comment">// This is relevant only on bare-metal.</span></div>
-<div class="line"><span class="lineno">  160</span><span class="preprocessor">#if defined(__ARM_PCS_VFP) || defined(__ARM_FP)</span></div>
-<div class="line"><span class="lineno">  161</span>        printf (<span class="stringliteral">&quot;, with FP&quot;</span>);</div>
-<div class="line"><span class="lineno">  162</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">  163</span>        printf (<span class="stringliteral">&quot;, no FP&quot;</span>);</div>
-<div class="line"><span class="lineno">  164</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  165</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  166</span><span class="preprocessor">#if defined(__EXCEPTIONS)</span></div>
-<div class="line"><span class="lineno">  167</span>        printf (<span class="stringliteral">&quot;, with exceptions&quot;</span>);</div>
-<div class="line"><span class="lineno">  168</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">  169</span>        printf (<span class="stringliteral">&quot;, no exceptions&quot;</span>);</div>
-<div class="line"><span class="lineno">  170</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  171</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_DEBUG)</span></div>
-<div class="line"><span class="lineno">  172</span>        printf (<span class="stringliteral">&quot;, with MICRO_OS_PLUS_DEBUG&quot;</span>);</div>
-<div class="line"><span class="lineno">  173</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  174</span>        puts (<span class="stringliteral">&quot;.&quot;</span>);</div>
-<div class="line"><span class="lineno">  175</span>      }</div>
-<div class="line"><span class="lineno">  176</span><span class="preprocessor">#endif </span><span class="comment">// !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)</span></div>
-<div class="line"><span class="lineno">  177</span> </div>
-<div class="line"><span class="lineno">  178</span>    <span class="comment">// ------------------------------------------------------------------------</span></div>
-<div class="line"><span class="lineno">  179</span> </div>
-<div class="line"><span class="lineno">  180</span>    <a class="code hl_variable" href="#a637b06becc3677c2180f022cc4c363e8">default_test_suite_</a> = <span class="keyword">new</span> test_suite_base (<a class="code hl_variable" href="#af60fbb3e376f27b801c30ce6c7a01808">default_suite_name_</a>);</div>
-<div class="line"><span class="lineno">  181</span>    <a class="code hl_variable" href="namespacemicro__os__plus_1_1micro__test__plus.html#a682fc3ce8c00ebe7c068d6299269655b">current_test_suite</a> = <a class="code hl_variable" href="#a637b06becc3677c2180f022cc4c363e8">default_test_suite_</a>;</div>
-<div class="line"><span class="lineno">  182</span> </div>
-<div class="line"><span class="lineno">  183</span>    <span class="comment">// Deferred to first test case or test suite end, to allow various</span></div>
-<div class="line"><span class="lineno">  184</span>    <span class="comment">// initialisations to display their messages.</span></div>
-<div class="line"><span class="lineno">  185</span>    <span class="comment">// default_test_suite_-&gt;begin_test_suite ();</span></div>
-<div class="line"><span class="lineno">  186</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__runner_html_a08b3a57d4f802d3aa1a1af02856c460d"><div class="ttname"><a href="#a08b3a57d4f802d3aa1a1af02856c460d">micro_os_plus::micro_test_plus::test_runner::argv_</a></div><div class="ttdeci">char ** argv_</div><div class="ttdoc">Stores the argument vector passed to the test runner.</div><div class="ttdef"><b>Definition</b> <a href="test-runner_8h_source.html#l00203">test-runner.h:203</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__runner_html_a44ee9f03f3d9a974ba36730eee6f9d9a"><div class="ttname"><a href="#a44ee9f03f3d9a974ba36730eee6f9d9a">micro_os_plus::micro_test_plus::test_runner::name</a></div><div class="ttdeci">constexpr const char * name(void)</div><div class="ttdoc">Retrieves the name of the default test suite.</div><div class="ttdef"><b>Definition</b> <a href="test-runner_8h_source.html#l00178">test-runner.h:178</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__runner_html_a4caf0986c9b9fedb37ad486eabfa88fc"><div class="ttname"><a href="#a4caf0986c9b9fedb37ad486eabfa88fc">micro_os_plus::micro_test_plus::test_runner::argc_</a></div><div class="ttdeci">int argc_</div><div class="ttdoc">Stores the argument count passed to the test runner.</div><div class="ttdef"><b>Definition</b> <a href="test-runner_8h_source.html#l00198">test-runner.h:198</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__runner_html_af60fbb3e376f27b801c30ce6c7a01808"><div class="ttname"><a href="#af60fbb3e376f27b801c30ce6c7a01808">micro_os_plus::micro_test_plus::test_runner::default_suite_name_</a></div><div class="ttdeci">const char * default_suite_name_</div><div class="ttdoc">The name of the default test suite.</div><div class="ttdef"><b>Definition</b> <a href="test-runner_8h_source.html#l00208">test-runner.h:208</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a08e787c2c2f8365df2c9b372605535ac"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#a08e787c2c2f8365df2c9b372605535ac">micro_os_plus::micro_test_plus::verbosity_t</a></div><div class="ttdeci">verbosity verbosity_t</div><div class="ttdoc">Type alias for the verbosity enumeration used in test reporting.</div><div class="ttdef"><b>Definition</b> <a href="test-reporter_8h_source.html#l00148">test-reporter.h:148</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a809871d76f29309ed9c6fbd96d5a914b"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914b">micro_os_plus::micro_test_plus::verbosity</a></div><div class="ttdeci">verbosity</div><div class="ttdoc">The verbosity levels for test reporting.</div><div class="ttdef"><b>Definition</b> <a href="test-reporter_8h_source.html#l00127">test-reporter.h:128</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">micro_os_plus::micro_test_plus::verbosity::verbose</a></div><div class="ttdeci">@ verbose</div><div class="ttdef"><b>Definition</b> <a href="test-reporter_8h_source.html#l00132">test-reporter.h:132</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">micro_os_plus::micro_test_plus::verbosity::quiet</a></div><div class="ttdeci">@ quiet</div><div class="ttdef"><b>Definition</b> <a href="test-reporter_8h_source.html#l00130">test-reporter.h:130</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">micro_os_plus::micro_test_plus::verbosity::normal</a></div><div class="ttdeci">@ normal</div><div class="ttdef"><b>Definition</b> <a href="test-reporter_8h_source.html#l00131">test-reporter.h:131</a></div></div>
+<p class="definition">Definition at line <a class="el" href="test-runner_8cpp_source.html#l00097">97</a> of file <a class="el" href="test-runner_8cpp_source.html">test-runner.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   98</span>  {</div>
+<div class="line"><span class="lineno">   99</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)</span></div>
+<div class="line"><span class="lineno">  100</span>    printf (<span class="stringliteral">&quot;%s\n&quot;</span>, __PRETTY_FUNCTION__);</div>
+<div class="line"><span class="lineno">  101</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS</span></div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span><span class="preprocessor">#if defined(_WIN32) || defined(CLOCK_MONOTONIC)</span></div>
+<div class="line"><span class="lineno">  104</span><span class="preprocessor">#if defined(_WIN32)</span></div>
+<div class="line"><span class="lineno">  105</span>    timespec_get (&amp;begin_time, TIME_UTC);</div>
+<div class="line"><span class="lineno">  106</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  107</span>    clock_gettime (CLOCK_MONOTONIC, &amp;begin_time);</div>
+<div class="line"><span class="lineno">  108</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  109</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>    <a class="code hl_variable" href="#a4caf0986c9b9fedb37ad486eabfa88fc">argc_</a> = argc;</div>
+<div class="line"><span class="lineno">  112</span>    <a class="code hl_variable" href="#a08b3a57d4f802d3aa1a1af02856c460d">argv_</a> = argv;</div>
+<div class="line"><span class="lineno">  113</span> </div>
+<div class="line"><span class="lineno">  114</span>    <a class="code hl_variable" href="#af60fbb3e376f27b801c30ce6c7a01808">default_suite_name_</a> = <a class="code hl_function" href="#a44ee9f03f3d9a974ba36730eee6f9d9a">name</a>;</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span><span class="preprocessor">#if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) &amp;&amp; defined(MICRO_OS_PLUS_TRACE))</span></div>
+<div class="line"><span class="lineno">  117</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_DEBUG)</span></div>
+<div class="line"><span class="lineno">  118</span>    printf (<span class="stringliteral">&quot;argv[&quot;</span>);</div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; argc; ++i)</div>
+<div class="line"><span class="lineno">  120</span>      {</div>
+<div class="line"><span class="lineno">  121</span>        <span class="keywordflow">if</span> (i &gt; 0)</div>
+<div class="line"><span class="lineno">  122</span>          {</div>
+<div class="line"><span class="lineno">  123</span>            printf (<span class="stringliteral">&quot;, &quot;</span>);</div>
+<div class="line"><span class="lineno">  124</span>          }</div>
+<div class="line"><span class="lineno">  125</span>        printf (<span class="stringliteral">&quot;&#39;%s&#39;&quot;</span>, argv[i]);</div>
+<div class="line"><span class="lineno">  126</span>      }</div>
+<div class="line"><span class="lineno">  127</span>    puts (<span class="stringliteral">&quot;]&quot;</span>);</div>
+<div class="line"><span class="lineno">  128</span><span class="preprocessor">#endif </span><span class="comment">// defined(MICRO_OS_PLUS_DEBUG)</span></div>
+<div class="line"><span class="lineno">  129</span><span class="preprocessor">#endif </span><span class="comment">// !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)</span></div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>    <a class="code hl_typedef" href="namespacemicro__os__plus_1_1micro__test__plus.html#a08e787c2c2f8365df2c9b372605535ac">verbosity_t</a> <a class="code hl_enumeration" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914b">verbosity</a> = <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">verbosity::normal</a>;</div>
+<div class="line"><span class="lineno">  132</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* reporter_name = <span class="stringliteral">&quot;tap&quot;</span>;</div>
+<div class="line"><span class="lineno">  133</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; argc; ++i)</div>
+<div class="line"><span class="lineno">  134</span>      {</div>
+<div class="line"><span class="lineno">  135</span>        <span class="keywordflow">if</span> (strcmp (argv[i], <span class="stringliteral">&quot;--verbose&quot;</span>) == 0)</div>
+<div class="line"><span class="lineno">  136</span>          {</div>
+<div class="line"><span class="lineno">  137</span>            <a class="code hl_enumeration" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914b">verbosity</a> = <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbosity::verbose</a>;</div>
+<div class="line"><span class="lineno">  138</span>          }</div>
+<div class="line"><span class="lineno">  139</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp (argv[i], <span class="stringliteral">&quot;--quiet&quot;</span>) == 0)</div>
+<div class="line"><span class="lineno">  140</span>          {</div>
+<div class="line"><span class="lineno">  141</span>            <a class="code hl_enumeration" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914b">verbosity</a> = <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">verbosity::quiet</a>;</div>
+<div class="line"><span class="lineno">  142</span>          }</div>
+<div class="line"><span class="lineno">  143</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp (argv[i], <span class="stringliteral">&quot;--silent&quot;</span>) == 0)</div>
+<div class="line"><span class="lineno">  144</span>          {</div>
+<div class="line"><span class="lineno">  145</span>            <a class="code hl_enumeration" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914b">verbosity</a> = <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">verbosity::silent</a>;</div>
+<div class="line"><span class="lineno">  146</span>          }</div>
+<div class="line"><span class="lineno">  147</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strncmp (argv[i], <span class="stringliteral">&quot;--reporter=&quot;</span>, 11) == 0)</div>
+<div class="line"><span class="lineno">  148</span>          {</div>
+<div class="line"><span class="lineno">  149</span>            reporter_name = argv[i] + 11;</div>
+<div class="line"><span class="lineno">  150</span>          }</div>
+<div class="line"><span class="lineno">  151</span>      }</div>
+<div class="line"><span class="lineno">  152</span> </div>
+<div class="line"><span class="lineno">  153</span>    <span class="comment">// Initialize and configure the reporter.</span></div>
+<div class="line"><span class="lineno">  154</span>    <span class="keywordflow">if</span> (strcmp (reporter_name, <span class="stringliteral">&quot;basic&quot;</span>) == 0)</div>
+<div class="line"><span class="lineno">  155</span>      {</div>
+<div class="line"><span class="lineno">  156</span>        <a class="code hl_variable" href="namespacemicro__os__plus_1_1micro__test__plus.html#a22bf4ef08cb70064bbc37770a0ad5ac4">reporter</a> = <span class="keyword">new</span> test_reporter_basic ();</div>
+<div class="line"><span class="lineno">  157</span>      }</div>
+<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp (reporter_name, <span class="stringliteral">&quot;tap&quot;</span>) == 0)</div>
+<div class="line"><span class="lineno">  159</span>      {</div>
+<div class="line"><span class="lineno">  160</span>        <a class="code hl_variable" href="namespacemicro__os__plus_1_1micro__test__plus.html#a22bf4ef08cb70064bbc37770a0ad5ac4">reporter</a> = <span class="keyword">new</span> test_reporter_tap ();</div>
+<div class="line"><span class="lineno">  161</span>      }</div>
+<div class="line"><span class="lineno">  162</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  163</span>      {</div>
+<div class="line"><span class="lineno">  164</span>        fprintf (stderr, <span class="stringliteral">&quot;error: unknown reporter &#39;%s&#39;\n&quot;</span>, reporter_name);</div>
+<div class="line"><span class="lineno">  165</span>        exit (1);</div>
+<div class="line"><span class="lineno">  166</span>      }</div>
+<div class="line"><span class="lineno">  167</span>    <a class="code hl_variable" href="namespacemicro__os__plus_1_1micro__test__plus.html#a22bf4ef08cb70064bbc37770a0ad5ac4">reporter</a>-&gt;<a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter.html#adc647f6da46704ba46dcb41a2ec95820">verbosity</a> = <a class="code hl_enumeration" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914b">verbosity</a>;</div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>    <span class="comment">// ------------------------------------------------------------------------</span></div>
+<div class="line"><span class="lineno">  170</span> </div>
+<div class="line"><span class="lineno">  171</span><span class="preprocessor">#if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) &amp;&amp; defined(MICRO_OS_PLUS_TRACE))</span></div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">if</span> (<a class="code hl_enumeration" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914b">verbosity</a> == <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">verbosity::normal</a> || <a class="code hl_enumeration" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914b">verbosity</a> == <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbosity::verbose</a>)</div>
+<div class="line"><span class="lineno">  173</span>      {</div>
+<div class="line"><span class="lineno">  174</span><span class="preprocessor">#if defined(__clang__)</span></div>
+<div class="line"><span class="lineno">  175</span>        printf (<span class="stringliteral">&quot;Built with clang &quot;</span> __VERSION__);</div>
+<div class="line"><span class="lineno">  176</span><span class="preprocessor">#elif defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  177</span>        printf (<span class="stringliteral">&quot;Built with GCC &quot;</span> __VERSION__);</div>
+<div class="line"><span class="lineno">  178</span><span class="preprocessor">#elif defined(_MSC_VER)</span></div>
+<div class="line"><span class="lineno">  179</span>        <span class="comment">// https://docs.microsoft.com/en-us/cpp/preprocessor/predefined-macros?view=msvc-170</span></div>
+<div class="line"><span class="lineno">  180</span>        printf (<span class="stringliteral">&quot;Built with MSVC %d&quot;</span>, _MSC_VER);</div>
+<div class="line"><span class="lineno">  181</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  182</span>        printf (<span class="stringliteral">&quot;Built with an unknown compiler&quot;</span>);</div>
+<div class="line"><span class="lineno">  183</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  184</span><span class="preprocessor">#if !(defined(__APPLE__) || defined(__linux__) || defined(__unix__) \</span></div>
+<div class="line"><span class="lineno">  185</span><span class="preprocessor">      || defined(WIN32))</span></div>
+<div class="line"><span class="lineno">  186</span><span class="comment">// This is relevant only on bare-metal.</span></div>
+<div class="line"><span class="lineno">  187</span><span class="preprocessor">#if defined(__ARM_PCS_VFP) || defined(__ARM_FP)</span></div>
+<div class="line"><span class="lineno">  188</span>        printf (<span class="stringliteral">&quot;, with FP&quot;</span>);</div>
+<div class="line"><span class="lineno">  189</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  190</span>        printf (<span class="stringliteral">&quot;, no FP&quot;</span>);</div>
+<div class="line"><span class="lineno">  191</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  192</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  193</span><span class="preprocessor">#if defined(__EXCEPTIONS)</span></div>
+<div class="line"><span class="lineno">  194</span>        printf (<span class="stringliteral">&quot;, with exceptions&quot;</span>);</div>
+<div class="line"><span class="lineno">  195</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  196</span>        printf (<span class="stringliteral">&quot;, no exceptions&quot;</span>);</div>
+<div class="line"><span class="lineno">  197</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  198</span><span class="preprocessor">#if defined(MICRO_OS_PLUS_DEBUG)</span></div>
+<div class="line"><span class="lineno">  199</span>        printf (<span class="stringliteral">&quot;, with MICRO_OS_PLUS_DEBUG&quot;</span>);</div>
+<div class="line"><span class="lineno">  200</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  201</span>        puts (<span class="stringliteral">&quot;.&quot;</span>);</div>
+<div class="line"><span class="lineno">  202</span>      }</div>
+<div class="line"><span class="lineno">  203</span><span class="preprocessor">#endif </span><span class="comment">// !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)</span></div>
+<div class="line"><span class="lineno">  204</span> </div>
+<div class="line"><span class="lineno">  205</span>    <span class="comment">// ------------------------------------------------------------------------</span></div>
+<div class="line"><span class="lineno">  206</span> </div>
+<div class="line"><span class="lineno">  207</span>    <a class="code hl_variable" href="#abc2b7a044492b6b6e797653e0c22cce4">default_test_suite</a> = <span class="keyword">new</span> test_suite_base (<a class="code hl_variable" href="#af60fbb3e376f27b801c30ce6c7a01808">default_suite_name_</a>);</div>
+<div class="line"><span class="lineno">  208</span>    <a class="code hl_variable" href="namespacemicro__os__plus_1_1micro__test__plus.html#a682fc3ce8c00ebe7c068d6299269655b">current_test_suite</a> = <a class="code hl_variable" href="#abc2b7a044492b6b6e797653e0c22cce4">default_test_suite</a>;</div>
+<div class="line"><span class="lineno">  209</span> </div>
+<div class="line"><span class="lineno">  210</span>    <span class="comment">// Deferred to first test case or test suite end, to allow various</span></div>
+<div class="line"><span class="lineno">  211</span>    <span class="comment">// initialisations to display their messages.</span></div>
+<div class="line"><span class="lineno">  212</span>    <span class="comment">// reporter-&gt;begin_test (test_suites_count ());</span></div>
+<div class="line"><span class="lineno">  213</span>    <span class="comment">// default_test_suite_-&gt;begin_test_suite ();</span></div>
+<div class="line"><span class="lineno">  214</span>  }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__runner_html_a08b3a57d4f802d3aa1a1af02856c460d"><div class="ttname"><a href="#a08b3a57d4f802d3aa1a1af02856c460d">micro_os_plus::micro_test_plus::test_runner::argv_</a></div><div class="ttdeci">char ** argv_</div><div class="ttdoc">Stores the argument vector passed to the test runner.</div><div class="ttdef"><b>Definition</b> <a href="test-runner_8h_source.html#l00258">test-runner.h:258</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__runner_html_a44ee9f03f3d9a974ba36730eee6f9d9a"><div class="ttname"><a href="#a44ee9f03f3d9a974ba36730eee6f9d9a">micro_os_plus::micro_test_plus::test_runner::name</a></div><div class="ttdeci">constexpr const char * name(void)</div><div class="ttdoc">Retrieves the name of the default test suite.</div><div class="ttdef"><b>Definition</b> <a href="test-runner_8h_source.html#l00186">test-runner.h:186</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__runner_html_a4caf0986c9b9fedb37ad486eabfa88fc"><div class="ttname"><a href="#a4caf0986c9b9fedb37ad486eabfa88fc">micro_os_plus::micro_test_plus::test_runner::argc_</a></div><div class="ttdeci">int argc_</div><div class="ttdoc">Stores the argument count passed to the test runner.</div><div class="ttdef"><b>Definition</b> <a href="test-runner_8h_source.html#l00253">test-runner.h:253</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__runner_html_af60fbb3e376f27b801c30ce6c7a01808"><div class="ttname"><a href="#af60fbb3e376f27b801c30ce6c7a01808">micro_os_plus::micro_test_plus::test_runner::default_suite_name_</a></div><div class="ttdeci">const char * default_suite_name_</div><div class="ttdoc">The name of the default test suite.</div><div class="ttdef"><b>Definition</b> <a href="test-runner_8h_source.html#l00263">test-runner.h:263</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a08e787c2c2f8365df2c9b372605535ac"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#a08e787c2c2f8365df2c9b372605535ac">micro_os_plus::micro_test_plus::verbosity_t</a></div><div class="ttdeci">verbosity verbosity_t</div><div class="ttdoc">Type alias for the verbosity enumeration used in test reporting.</div><div class="ttdef"><b>Definition</b> <a href="test-reporter_8h_source.html#l00154">test-reporter.h:154</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a809871d76f29309ed9c6fbd96d5a914b"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914b">micro_os_plus::micro_test_plus::verbosity</a></div><div class="ttdeci">verbosity</div><div class="ttdoc">The verbosity levels for test reporting.</div><div class="ttdef"><b>Definition</b> <a href="test-reporter_8h_source.html#l00133">test-reporter.h:134</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">micro_os_plus::micro_test_plus::verbosity::verbose</a></div><div class="ttdeci">@ verbose</div><div class="ttdef"><b>Definition</b> <a href="test-reporter_8h_source.html#l00138">test-reporter.h:138</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">micro_os_plus::micro_test_plus::verbosity::quiet</a></div><div class="ttdeci">@ quiet</div><div class="ttdef"><b>Definition</b> <a href="test-reporter_8h_source.html#l00136">test-reporter.h:136</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">micro_os_plus::micro_test_plus::verbosity::normal</a></div><div class="ttdeci">@ normal</div><div class="ttdef"><b>Definition</b> <a href="test-reporter_8h_source.html#l00137">test-reporter.h:137</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test-runner_8h_source.html#l00198">argc_</a>, <a class="el" href="test-runner_8h_source.html#l00203">argv_</a>, <a class="el" href="micro-test-plus_8cpp_source.html#l00306">micro_os_plus::micro_test_plus::current_test_suite</a>, <a class="el" href="test-runner_8h_source.html#l00208">default_suite_name_</a>, <a class="el" href="test-runner_8h_source.html#l00213">default_test_suite_</a>, <a class="el" href="test-runner_8h_source.html#l00178">name()</a>, <a class="el" href="test-reporter_8h_source.html#l00131">micro_os_plus::micro_test_plus::normal</a>, <a class="el" href="test-reporter_8h_source.html#l00130">micro_os_plus::micro_test_plus::quiet</a>, <a class="el" href="micro-test-plus_8cpp_source.html#l00292">micro_os_plus::micro_test_plus::reporter</a>, <a class="el" href="test-reporter_8h_source.html#l00129">micro_os_plus::micro_test_plus::silent</a>, and <a class="el" href="test-reporter_8h_source.html#l00132">micro_os_plus::micro_test_plus::verbose</a>.</p>
+<p class="reference">References <a class="el" href="test-runner_8h_source.html#l00253">argc_</a>, <a class="el" href="test-runner_8h_source.html#l00258">argv_</a>, <a class="el" href="micro-test-plus_8cpp_source.html#l00307">micro_os_plus::micro_test_plus::current_test_suite</a>, <a class="el" href="test-runner_8h_source.html#l00263">default_suite_name_</a>, <a class="el" href="test-runner_8h_source.html#l00247">default_test_suite</a>, <a class="el" href="test-runner_8h_source.html#l00186">name()</a>, <a class="el" href="test-reporter_8h_source.html#l00137">micro_os_plus::micro_test_plus::normal</a>, <a class="el" href="test-reporter_8h_source.html#l00136">micro_os_plus::micro_test_plus::quiet</a>, <a class="el" href="micro-test-plus_8cpp_source.html#l00293">micro_os_plus::micro_test_plus::reporter</a>, <a class="el" href="test-reporter_8h_source.html#l00135">micro_os_plus::micro_test_plus::silent</a>, and <a class="el" href="test-reporter_8h_source.html#l00138">micro_os_plus::micro_test_plus::verbose</a>.</p>
 
 </div>
 </div>
@@ -506,14 +566,14 @@ Protected Attributes</h2></td></tr>
 <dl class="section user"><dt>Parameters</dt><dd>None. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>The name of the default test suite as a constant character pointer. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="test-runner_8h_source.html#l00178">178</a> of file <a class="el" href="test-runner_8h_source.html">test-runner.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  179</span>    {</div>
-<div class="line"><span class="lineno">  180</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#af60fbb3e376f27b801c30ce6c7a01808">default_suite_name_</a>;</div>
-<div class="line"><span class="lineno">  181</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="test-runner_8h_source.html#l00186">186</a> of file <a class="el" href="test-runner_8h_source.html">test-runner.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  187</span>    {</div>
+<div class="line"><span class="lineno">  188</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#af60fbb3e376f27b801c30ce6c7a01808">default_suite_name_</a>;</div>
+<div class="line"><span class="lineno">  189</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test-runner_8h_source.html#l00208">default_suite_name_</a>.</p>
+<p class="reference">References <a class="el" href="test-runner_8h_source.html#l00263">default_suite_name_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#a4e9d9c95479a6e8eab60c69a27f4ba91">~test_runner()</a>, and <a class="el" href="test-runner_8cpp_source.html#l00096">initialize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#a4e9d9c95479a6e8eab60c69a27f4ba91">~test_runner()</a>, and <a class="el" href="test-runner_8cpp_source.html#l00097">initialize()</a>.</p>
 
 </div>
 </div>
@@ -540,7 +600,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="test-runner_8cpp_source.html#l00072">test_runner()</a>.</p>
+<p class="reference">References <a class="el" href="test-runner_8cpp_source.html#l00073">test_runner()</a>.</p>
 
 </div>
 </div>
@@ -567,7 +627,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="test-runner_8cpp_source.html#l00072">test_runner()</a>.</p>
+<p class="reference">References <a class="el" href="test-runner_8cpp_source.html#l00073">test_runner()</a>.</p>
 
 </div>
 </div>
@@ -595,20 +655,53 @@ Protected Attributes</h2></td></tr>
 <p>This method registers a new test suite with the test runner. If the internal collection of test suites has not yet been created, it is initialised at this point. The provided test suite is then added to the collection, enabling the framework to manage and execute multiple test suites across different files and folders within the project.</p>
 <p>Called by test suite constructors to register themselves with the runner, enabling automatic management and execution. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-runner_8cpp_source.html#l00232">232</a> of file <a class="el" href="test-runner_8cpp_source.html">test-runner.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  233</span>  {</div>
-<div class="line"><span class="lineno">  234</span><span class="preprocessor">#if 0 </span><span class="comment">// defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)</span></div>
-<div class="line"><span class="lineno">  235</span>    printf (<span class="stringliteral">&quot;%s\n&quot;</span>, __PRETTY_FUNCTION__);</div>
-<div class="line"><span class="lineno">  236</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS</span></div>
-<div class="line"><span class="lineno">  237</span> </div>
-<div class="line"><span class="lineno">  238</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a299cdb1bee2322ec60f4ebb463c1e513">suites_</a> == <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">  239</span>      {</div>
-<div class="line"><span class="lineno">  240</span>        <a class="code hl_variable" href="#a299cdb1bee2322ec60f4ebb463c1e513">suites_</a> = <span class="keyword">new</span> std::vector&lt;test_suite_base*&gt; ();</div>
-<div class="line"><span class="lineno">  241</span>      }</div>
-<div class="line"><span class="lineno">  242</span>    <a class="code hl_variable" href="#a299cdb1bee2322ec60f4ebb463c1e513">suites_</a>-&gt;push_back (suite);</div>
-<div class="line"><span class="lineno">  243</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="test-runner_8cpp_source.html#l00279">279</a> of file <a class="el" href="test-runner_8cpp_source.html">test-runner.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  280</span>  {</div>
+<div class="line"><span class="lineno">  281</span><span class="preprocessor">#if 0 </span><span class="comment">// defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)</span></div>
+<div class="line"><span class="lineno">  282</span>    printf (<span class="stringliteral">&quot;%s\n&quot;</span>, __PRETTY_FUNCTION__);</div>
+<div class="line"><span class="lineno">  283</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS</span></div>
+<div class="line"><span class="lineno">  284</span> </div>
+<div class="line"><span class="lineno">  285</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a5785170098c755bbea376839afd91744">test_suites</a> == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">  286</span>      {</div>
+<div class="line"><span class="lineno">  287</span>        <a class="code hl_variable" href="#a5785170098c755bbea376839afd91744">test_suites</a> = <span class="keyword">new</span> std::vector&lt;test_suite_base*&gt; ();</div>
+<div class="line"><span class="lineno">  288</span>      }</div>
+<div class="line"><span class="lineno">  289</span>    <a class="code hl_variable" href="#a5785170098c755bbea376839afd91744">test_suites</a>-&gt;push_back (suite);</div>
+<div class="line"><span class="lineno">  290</span>    suite-&gt;index = <a class="code hl_variable" href="#a5785170098c755bbea376839afd91744">test_suites</a>-&gt;size () + 1;</div>
+<div class="line"><span class="lineno">  291</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test-runner_8h_source.html#l00223">suites_</a>.</p>
+<p class="reference">References <a class="el" href="test-suite_8h_source.html#l00341">micro_os_plus::micro_test_plus::test_suite_base::index</a>, and <a class="el" href="test-runner_8h_source.html#l00212">test_suites</a>.</p>
+
+</div>
+</div>
+<a id="a58d4282c2440f9eb20d36b88fa645903" name="a58d4282c2440f9eb20d36b88fa645903"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58d4282c2440f9eb20d36b88fa645903">&#9670;&#160;</a></span>test_suites_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t micro_os_plus::micro_test_plus::test_runner::test_suites_count </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="test-runner_8h_source.html#l00172">172</a> of file <a class="el" href="test-runner_8h_source.html">test-runner.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  173</span>    {</div>
+<div class="line"><span class="lineno">  174</span>      <span class="keywordflow">return</span> (<a class="code hl_variable" href="#a5785170098c755bbea376839afd91744">test_suites</a> != <span class="keyword">nullptr</span>) ? <a class="code hl_variable" href="#a5785170098c755bbea376839afd91744">test_suites</a>-&gt;size () + 1 : 1;</div>
+<div class="line"><span class="lineno">  175</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="test-runner_8h_source.html#l00212">test_suites</a>.</p>
 
 </div>
 </div>
@@ -633,9 +726,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="test-runner_8h_source.html#l00198">198</a> of file <a class="el" href="test-runner_8h_source.html">test-runner.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test-runner_8h_source.html#l00253">253</a> of file <a class="el" href="test-runner_8h_source.html">test-runner.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-runner_8cpp_source.html#l00096">initialize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-runner_8cpp_source.html#l00097">initialize()</a>.</p>
 
 </div>
 </div>
@@ -659,9 +752,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="test-runner_8h_source.html#l00203">203</a> of file <a class="el" href="test-runner_8h_source.html">test-runner.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test-runner_8h_source.html#l00258">258</a> of file <a class="el" href="test-runner_8h_source.html">test-runner.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-runner_8cpp_source.html#l00096">initialize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-runner_8cpp_source.html#l00097">initialize()</a>.</p>
 
 </div>
 </div>
@@ -685,62 +778,110 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="test-runner_8h_source.html#l00208">208</a> of file <a class="el" href="test-runner_8h_source.html">test-runner.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test-runner_8h_source.html#l00263">263</a> of file <a class="el" href="test-runner_8h_source.html">test-runner.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-runner_8cpp_source.html#l00096">initialize()</a>, and <a class="el" href="test-runner_8h_source.html#l00178">name()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-runner_8cpp_source.html#l00097">initialize()</a>, and <a class="el" href="test-runner_8h_source.html#l00186">name()</a>.</p>
 
 </div>
 </div>
-<a id="a637b06becc3677c2180f022cc4c363e8" name="a637b06becc3677c2180f022cc4c363e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a637b06becc3677c2180f022cc4c363e8">&#9670;&#160;</a></span>default_test_suite_</h2>
+<a id="abc2b7a044492b6b6e797653e0c22cce4" name="abc2b7a044492b6b6e797653e0c22cce4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc2b7a044492b6b6e797653e0c22cce4">&#9670;&#160;</a></span>default_test_suite</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base.html">test_suite_base</a>* micro_os_plus::micro_test_plus::test_runner::default_test_suite_</td>
+          <td class="memname"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base.html">test_suite_base</a>* micro_os_plus::micro_test_plus::test_runner::default_test_suite = nullptr</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="test-runner_8h_source.html#l00213">213</a> of file <a class="el" href="test-runner_8h_source.html">test-runner.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test-runner_8h_source.html#l00247">247</a> of file <a class="el" href="test-runner_8h_source.html">test-runner.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-runner_8cpp_source.html#l00190">exit_code()</a>, and <a class="el" href="test-runner_8cpp_source.html#l00096">initialize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-runner_8cpp_source.html#l00218">exit_code()</a>, and <a class="el" href="test-runner_8cpp_source.html#l00097">initialize()</a>.</p>
 
 </div>
 </div>
-<a id="a299cdb1bee2322ec60f4ebb463c1e513" name="a299cdb1bee2322ec60f4ebb463c1e513"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a299cdb1bee2322ec60f4ebb463c1e513">&#9670;&#160;</a></span>suites_</h2>
+<a id="a64146aa3ca2ce94e82909649e090bdec" name="a64146aa3ca2ce94e82909649e090bdec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64146aa3ca2ce94e82909649e090bdec">&#9670;&#160;</a></span>failed_checks</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base.html">test_suite_base</a>*&gt;* micro_os_plus::micro_test_plus::test_runner::suites_</td>
+          <td class="memname">size_t micro_os_plus::micro_test_plus::test_runner::failed_checks = 0</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
-  </tr>
-</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="test-runner_8h_source.html#l00224">224</a> of file <a class="el" href="test-runner_8h_source.html">test-runner.h</a>.</p>
+
+</div>
+</div>
+<a id="a3983327f5faf770fcb4b87fe7654dc18" name="a3983327f5faf770fcb4b87fe7654dc18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3983327f5faf770fcb4b87fe7654dc18">&#9670;&#160;</a></span>successful_checks</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t micro_os_plus::micro_test_plus::test_runner::successful_checks = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="test-runner_8h_source.html#l00219">219</a> of file <a class="el" href="test-runner_8h_source.html">test-runner.h</a>.</p>
+
+</div>
+</div>
+<a id="ad1595fcbc848dbdf309a6d7506b29984" name="ad1595fcbc848dbdf309a6d7506b29984"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1595fcbc848dbdf309a6d7506b29984">&#9670;&#160;</a></span>test_cases_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t micro_os_plus::micro_test_plus::test_runner::test_cases_count = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="test-runner_8h_source.html#l00229">229</a> of file <a class="el" href="test-runner_8h_source.html">test-runner.h</a>.</p>
+
+</div>
+</div>
+<a id="a5785170098c755bbea376839afd91744" name="a5785170098c755bbea376839afd91744"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5785170098c755bbea376839afd91744">&#9670;&#160;</a></span>test_suites</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base.html">test_suite_base</a>*&gt;* micro_os_plus::micro_test_plus::test_runner::test_suites = nullptr</td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 <p>Statically initialised to zero as BSS, such that test suites defined as static objects in different compilation units can be automatically executed. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-runner_8h_source.html#l00223">223</a> of file <a class="el" href="test-runner_8h_source.html">test-runner.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test-runner_8h_source.html#l00212">212</a> of file <a class="el" href="test-runner_8h_source.html">test-runner.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-runner_8cpp_source.html#l00190">exit_code()</a>, and <a class="el" href="test-runner_8cpp_source.html#l00232">register_test_suite()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-runner_8cpp_source.html#l00218">exit_code()</a>, <a class="el" href="test-runner_8cpp_source.html#l00279">register_test_suite()</a>, and <a class="el" href="test-runner_8h_source.html#l00172">test_suites_count()</a>.</p>
+
+</div>
+</div>
+<a id="aabba61d146ba4782ae851f0e45f7062b" name="aabba61d146ba4782ae851f0e45f7062b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabba61d146ba4782ae851f0e45f7062b">&#9670;&#160;</a></span>[struct]</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct  { ... }  micro_os_plus::micro_test_plus::test_runner::totals</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="test-runner_8cpp_source.html#l00218">exit_code()</a>.</p>
 
 </div>
 </div>

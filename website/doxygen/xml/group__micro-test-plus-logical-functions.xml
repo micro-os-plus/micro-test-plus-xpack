@@ -197,8 +197,7 @@ The <computeroutput>_or</computeroutput> function template provides a generic lo
 <para>These function names are prefixed with an underscore because <computeroutput>and</computeroutput>, <computeroutput>or</computeroutput>, and <computeroutput>not</computeroutput> are reserved keywords in both C and C++. By using these logical functions, developers can clearly express compound conditions and improve the readability of their test cases.</para>
 <para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
-<programlisting filename=".cpp"><codeline><highlight class="normal">mt::expect(mt::_and<sp/>(mt::eq<sp/>(compute_answer<sp/>(),<sp/>42),<sp/>mt::eq<sp/>(compute_float</highlight></codeline>
-<codeline><highlight class="normal">(),<sp/>42.0)));</highlight></codeline>
+<programlisting filename=".cpp"><codeline><highlight class="normal">mt::expect<sp/>(mt::_and<sp/>(mt::eq<sp/>(compute_answer<sp/>(),<sp/>42),<sp/>mt::eq<sp/>(compute_float<sp/>(),<sp/>42.0)));</highlight></codeline>
 </programlisting></para>
 <para>When the operands are function comparators, it is recommended to use the overloaded logical operators <computeroutput>&amp;&amp;</computeroutput>, <computeroutput>||</computeroutput>, and <computeroutput>!</computeroutput> provided within the <computeroutput>micro_test_plus::operators</computeroutput> namespace for even more natural expression of logical conditions.  </para>
     </detaileddescription>

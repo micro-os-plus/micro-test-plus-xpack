@@ -50,12 +50,6 @@ keywords:
 <p>For more complex projects, multiple test suites can be defined, typically in separate source files. Test suites are implemented as classes, constructed with a name, a callable (usually a lambda that chains the execution of the test cases), and optional arguments. This design enables self-registration of test suites, ensuring they are automatically included in the test run.</p>
 
 
-<p>It is advisable to instantiate test suites as static objects. Self-registration occurs within the constructor, and test suites defined in separate compilation units may be executed in any order, as the sequence of static constructor invocation is not specified. Therefore, test suites should not have dependencies on one another.</p>
-
-
-<p>All registered test suites are executed when the <span class="doxyComputerOutput">exit_code()</span> function is called, ensuring comprehensive test coverage across the project.</p>
-
-
 <div class="doxyProgramListing">
 
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight">test_suite : </span><span class="doxyHighlightKeyword">public</span><span class="doxyHighlight"> test_suite_base</span></span></div>
@@ -79,7 +73,7 @@ keywords:
 <p>Self-registration is performed within the constructor, ensuring that each test suite is automatically included in the test run. When test suites are defined in separate compilation units, they may be executed in any order, as the sequence in which static constructors are invoked is not specified. Consequently, test suites should be designed to be independent and must not rely on the execution order of other suites.</p>
 
 
-<p>All registered test suites are executed when the <span class="doxyComputerOutput">exit_code()</span> function is called, guaranteeing that the entire test suite collection is run and reported in a consistent and reliable manner.</p>
+<p>All registered test suites are executed when the <span class="doxyComputerOutput">exit_code()</span> function is called, guaranteeing comprehensive test coverage across the project.</p>
 
 
 <dl class="doxySectionUser">

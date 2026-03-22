@@ -20,8 +20,10 @@ keywords:
 ## - C -
 
 <ul>
+<li><b>colors_red_green</b>: as variable in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a2c623cc1c15ec08e25c2451d9b51ad75">micro_os_plus::micro_test_plus</a></li>
 <li><b>current_test_suite</b>: as variable in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a682fc3ce8c00ebe7c068d6299269655b">micro_os_plus::micro_test_plus</a></li>
 </ul>
+<p>2 entries</p>
 
 ## - H -
 
@@ -48,12 +50,12 @@ keywords:
 ## - R -
 
 <ul>
-<li><b>reporter</b>: as variable in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#aec46bdfdb22163bedab8e6b542191834">micro_os_plus::micro_test_plus</a></li>
+<li><b>reporter</b>: as variable in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a22bf4ef08cb70064bbc37770a0ad5ac4">micro_os_plus::micro_test_plus</a></li>
 <li><b>runner</b>: as variable in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a469c0f5fefa0b4cea12a7d267dded831">micro_os_plus::micro_test_plus</a></li>
 </ul>
 <p>2 entries</p>
 <br/>
-<p>Total: 13 entries.</p>
+<p>Total: 14 entries.</p>
 
 <hr/>
 

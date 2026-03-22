@@ -11,6 +11,6 @@ var micro_test_plus_8h =
     [ "micro_os_plus::micro_test_plus::throws", "group__micro-test-plus-exceptions.html#gaf8f7602f40119da514be2a0bfc4b70f5", null ],
     [ "micro_os_plus::micro_test_plus::throws", "group__micro-test-plus-exceptions.html#ga8bf54756e4122c6a0bd123b4621e60e2", null ],
     [ "micro_os_plus::micro_test_plus::current_test_suite", "namespacemicro__os__plus_1_1micro__test__plus.html#a682fc3ce8c00ebe7c068d6299269655b", null ],
-    [ "micro_os_plus::micro_test_plus::reporter", "namespacemicro__os__plus_1_1micro__test__plus.html#aec46bdfdb22163bedab8e6b542191834", null ],
+    [ "micro_os_plus::micro_test_plus::reporter", "namespacemicro__os__plus_1_1micro__test__plus.html#a22bf4ef08cb70064bbc37770a0ad5ac4", null ],
     [ "micro_os_plus::micro_test_plus::runner", "namespacemicro__os__plus_1_1micro__test__plus.html#a469c0f5fefa0b4cea12a7d267dded831", null ]
 ];

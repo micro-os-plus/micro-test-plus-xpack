@@ -458,10 +458,28 @@
               "id": "api/classes/micro-os-plus-micro-test-plus-reflection-source-location"
             },
             {
-              "type": "doc",
+              "type": "category",
               "label": "test_reporter",
+              "link": {
+                "type": "doc",
+                "id": "api/classes/micro-os-plus-micro-test-plus-test-reporter"
+              },
               "className": "doxyEllipsis",
-              "id": "api/classes/micro-os-plus-micro-test-plus-test-reporter"
+              "collapsed": true,
+              "items": [
+                {
+                  "type": "doc",
+                  "label": "test_reporter_basic",
+                  "className": "doxyEllipsis",
+                  "id": "api/classes/micro-os-plus-micro-test-plus-test-reporter-basic"
+                },
+                {
+                  "type": "doc",
+                  "label": "test_reporter_tap",
+                  "className": "doxyEllipsis",
+                  "id": "api/classes/micro-os-plus-micro-test-plus-test-reporter-tap"
+                }
+              ]
             },
             {
               "type": "doc",
@@ -658,6 +676,18 @@
                         },
                         {
                           "type": "doc",
+                          "label": "test-reporter-basic.h",
+                          "className": "doxyEllipsis",
+                          "id": "api/files/include-micro-os-plus-micro-test-plus-test-reporter-basic-h"
+                        },
+                        {
+                          "type": "doc",
+                          "label": "test-reporter-tap.h",
+                          "className": "doxyEllipsis",
+                          "id": "api/files/include-micro-os-plus-micro-test-plus-test-reporter-tap-h"
+                        },
+                        {
+                          "type": "doc",
                           "label": "test-reporter.h",
                           "className": "doxyEllipsis",
                           "id": "api/files/include-micro-os-plus-micro-test-plus-test-reporter-h"
@@ -707,6 +737,18 @@
                   "label": "micro-test-plus.cpp",
                   "className": "doxyEllipsis",
                   "id": "api/files/src-micro-test-plus-cpp"
+                },
+                {
+                  "type": "doc",
+                  "label": "test-reporter-basic.cpp",
+                  "className": "doxyEllipsis",
+                  "id": "api/files/src-test-reporter-basic-cpp"
+                },
+                {
+                  "type": "doc",
+                  "label": "test-reporter-tap.cpp",
+                  "className": "doxyEllipsis",
+                  "id": "api/files/src-test-reporter-tap-cpp"
                 },
                 {
                   "type": "doc",

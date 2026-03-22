@@ -204,6 +204,26 @@ C++ header file with declarations for the µTest++ reflection utilities
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
+<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-basic-h"><span class="doxyIconFile">test-reporter-basic.h</span></a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+C++ header file with declarations for the µTest++ basic test reporter
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-tap-h"><span class="doxyIconFile">test-reporter-tap.h</span></a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+C++ header file with declarations for the µTest++ TAP test reporter
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
 <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-reporter-h"><span class="doxyIconFile">test-reporter.h</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
@@ -268,6 +288,26 @@ Folder with C/C++ source files
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++ source file with implementations for the µTest++ methods
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<a href="/micro-test-plus-xpack/docs/api/files/src/test-reporter-basic-cpp"><span class="doxyIconFile">test-reporter-basic.cpp</span></a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+C++ source file with implementations for the µTest++ basic test reporter methods
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<a href="/micro-test-plus-xpack/docs/api/files/src/test-reporter-tap-cpp"><span class="doxyIconFile">test-reporter-tap.cpp</span></a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+C++ source file with implementations for the µTest++ TAP test reporter methods
 </td>
 </tr>
 

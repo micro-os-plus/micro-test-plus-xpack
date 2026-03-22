@@ -135,7 +135,7 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt; Callable_T, Exception
 <p>The implementation is optimised for use in embedded environments and supports both compile-time and run-time evaluation.</p>
 <p>All definitions are intended for internal use within the framework and are implemented in the <span class="tt">include/micro-os-plus/micro-test-plus</span> folder to maintain a structured and modular codebase. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01511">1511</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01531">1531</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab482b144c355eb68638dc872331145e7" name="ab482b144c355eb68638dc872331145e7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab482b144c355eb68638dc872331145e7">&#9670;&#160;</a></span>throws_()</h2>
@@ -169,28 +169,29 @@ template&lt;class Callable_T, class Exception_T = void&gt; </div>
 </dl>
 <p>Invokes the provided callable and determines whether it throws an exception of the specified type. The result is stored in the <span class="tt">value_</span> member for efficient access. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01524">1524</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1525</span>          : <a class="code hl_variable" href="#ab92c281f0bbf04125e3fa9a8258dc1b9">value_</a>{ [&amp;<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html">func</a>] {</div>
-<div class="line"><span class="lineno"> 1526</span>              <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno"> 1527</span>                {</div>
-<div class="line"><span class="lineno"> 1528</span>                  <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html">func</a> ();</div>
-<div class="line"><span class="lineno"> 1529</span>                }</div>
-<div class="line"><span class="lineno"> 1530</span>              <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html">Exception_T</a>&amp;)</div>
-<div class="line"><span class="lineno"> 1531</span>                {</div>
-<div class="line"><span class="lineno"> 1532</span>                  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno"> 1533</span>                }</div>
-<div class="line"><span class="lineno"> 1534</span>              <span class="keywordflow">catch</span> (...)</div>
-<div class="line"><span class="lineno"> 1535</span>                {</div>
-<div class="line"><span class="lineno"> 1536</span>                  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno"> 1537</span>                }</div>
-<div class="line"><span class="lineno"> 1538</span>              <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno"> 1539</span>            }() }</div>
-<div class="line"><span class="lineno"> 1540</span>      {</div>
-<div class="line"><span class="lineno"> 1541</span>      }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html">micro_os_plus::micro_test_plus::detail::throws_</a></div><div class="ttdoc">Operator struct template to check if an expression throws a specific exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01511">detail.h:1512</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___html_ab92c281f0bbf04125e3fa9a8258dc1b9"><div class="ttname"><a href="#ab92c281f0bbf04125e3fa9a8258dc1b9">micro_os_plus::micro_test_plus::detail::throws_::value_</a></div><div class="ttdeci">const bool value_</div><div class="ttdoc">Stores the result of the exception check.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01564">detail.h:1564</a></div></div>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01544">1544</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1545</span>          : <a class="code hl_variable" href="#ab92c281f0bbf04125e3fa9a8258dc1b9">value_</a>{ [&amp;<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html">func</a>]</div>
+<div class="line"><span class="lineno"> 1546</span>                      {</div>
+<div class="line"><span class="lineno"> 1547</span>                        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno"> 1548</span>                          {</div>
+<div class="line"><span class="lineno"> 1549</span>                            <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html">func</a> ();</div>
+<div class="line"><span class="lineno"> 1550</span>                          }</div>
+<div class="line"><span class="lineno"> 1551</span>                        <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html">Exception_T</a>&amp;)</div>
+<div class="line"><span class="lineno"> 1552</span>                          {</div>
+<div class="line"><span class="lineno"> 1553</span>                            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno"> 1554</span>                          }</div>
+<div class="line"><span class="lineno"> 1555</span>                        <span class="keywordflow">catch</span> (...)</div>
+<div class="line"><span class="lineno"> 1556</span>                          {</div>
+<div class="line"><span class="lineno"> 1557</span>                            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno"> 1558</span>                          }</div>
+<div class="line"><span class="lineno"> 1559</span>                        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno"> 1560</span>                      }() }</div>
+<div class="line"><span class="lineno"> 1561</span>      {</div>
+<div class="line"><span class="lineno"> 1562</span>      }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html">micro_os_plus::micro_test_plus::detail::throws_</a></div><div class="ttdoc">Operator struct template to check if an expression throws a specific exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01531">detail.h:1532</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___html_ab92c281f0bbf04125e3fa9a8258dc1b9"><div class="ttname"><a href="#ab92c281f0bbf04125e3fa9a8258dc1b9">micro_os_plus::micro_test_plus::detail::throws_::value_</a></div><div class="ttdeci">const bool value_</div><div class="ttdoc">Stores the result of the exception check.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01585">detail.h:1585</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l01564">value_</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l01585">value_</a>.</p>
 
 </div>
 </div>
@@ -229,12 +230,12 @@ template&lt;class Callable_T, class Exception_T = void&gt; </div>
 </dl>
 <p>Returns the result of the exception check. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01556">1556</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1557</span>      {</div>
-<div class="line"><span class="lineno"> 1558</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="#ab92c281f0bbf04125e3fa9a8258dc1b9">value_</a>;</div>
-<div class="line"><span class="lineno"> 1559</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01577">1577</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1578</span>      {</div>
+<div class="line"><span class="lineno"> 1579</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="#ab92c281f0bbf04125e3fa9a8258dc1b9">value_</a>;</div>
+<div class="line"><span class="lineno"> 1580</span>      }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l01564">value_</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l01585">value_</a>.</p>
 
 </div>
 </div>
@@ -253,10 +254,10 @@ template&lt;class Callable_T, class Exception_T = void&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01564">1564</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1564</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01585">1585</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1585</span>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="detail_8h_source.html#l01524">throws_()</a>, and <a class="el" href="detail_8h_source.html#l01556">operator bool()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail_8h_source.html#l01544">throws_()</a>, and <a class="el" href="detail_8h_source.html#l01577">operator bool()</a>.</p>
 
 </div>
 </div>

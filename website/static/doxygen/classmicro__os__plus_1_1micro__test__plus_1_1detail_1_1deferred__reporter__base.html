@@ -136,7 +136,7 @@ Protected Attributes</h2></td></tr>
 <div class="textblock"><p>The <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base.html" title="Base class for a deferred reporter that collects messages into a string.">deferred_reporter_base</a></span> class serves as the foundational component for deferred reporting within the framework. It is responsible for collecting expectation messages, typically passed via the <span class="tt">operator&lt;&lt;()</span>, into a string for later reporting.</p>
 <p>This class maintains the result value, abort status, and the source location associated with the report. It is intended exclusively for internal use and is implemented in the <span class="tt">include/micro-os-plus/micro-test-plus</span> folder to ensure a structured and modular codebase. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01744">1744</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01767">1767</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aba23fdd1c24e8232712ba47b8e107a19" name="aba23fdd1c24e8232712ba47b8e107a19"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aba23fdd1c24e8232712ba47b8e107a19">&#9670;&#160;</a></span>deferred_reporter_base()</h2>
@@ -177,14 +177,14 @@ Protected Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  228</span>          <a class="code hl_variable" href="namespacemicro__os__plus_1_1micro__test__plus.html#a682fc3ce8c00ebe7c068d6299269655b">current_test_suite</a>-&gt;<a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base.html#a20051842d981b530746b4fb4dee00d01">increment_failed</a> ();</div>
 <div class="line"><span class="lineno">  229</span>        }</div>
 <div class="line"><span class="lineno">  230</span>    }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_html_a025498d9b9376056c56042cc98ed7afd"><div class="ttname"><a href="#a025498d9b9376056c56042cc98ed7afd">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::location_</a></div><div class="ttdeci">const reflection::source_location location_</div><div class="ttdoc">Stores the source location associated with the report.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01806">detail.h:1806</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_html_a0e4cca7c6f1d63789683f3b6a7f647ea"><div class="ttname"><a href="#a0e4cca7c6f1d63789683f3b6a7f647ea">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::value</a></div><div class="ttdeci">constexpr bool value() const</div><div class="ttdoc">Retrieves the result value.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01786">detail.h:1786</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_html_af633053afa944173b47482786f9d9a7e"><div class="ttname"><a href="#af633053afa944173b47482786f9d9a7e">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::value_</a></div><div class="ttdeci">bool value_</div><div class="ttdoc">Stores the result value of the report.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01795">detail.h:1795</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_html_a20051842d981b530746b4fb4dee00d01"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base.html#a20051842d981b530746b4fb4dee00d01">micro_os_plus::micro_test_plus::test_suite_base::increment_failed</a></div><div class="ttdeci">void increment_failed(void)</div><div class="ttdoc">Increments the count of failed test conditions.</div><div class="ttdef"><b>Definition</b> <a href="test-suite_8cpp_source.html#l00210">test-suite.cpp:210</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_html_a81006378d0bebeadcd59266f57b4ef4b"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base.html#a81006378d0bebeadcd59266f57b4ef4b">micro_os_plus::micro_test_plus::test_suite_base::increment_successful</a></div><div class="ttdeci">void increment_successful(void)</div><div class="ttdoc">Increments the count of passed test conditions.</div><div class="ttdef"><b>Definition</b> <a href="test-suite_8cpp_source.html#l00196">test-suite.cpp:196</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a682fc3ce8c00ebe7c068d6299269655b"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#a682fc3ce8c00ebe7c068d6299269655b">micro_os_plus::micro_test_plus::current_test_suite</a></div><div class="ttdeci">test_suite_base * current_test_suite</div><div class="ttdoc">Global pointer references the currently active test suite.</div><div class="ttdef"><b>Definition</b> <a href="micro-test-plus_8cpp_source.html#l00306">micro-test-plus.cpp:306</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_html_a025498d9b9376056c56042cc98ed7afd"><div class="ttname"><a href="#a025498d9b9376056c56042cc98ed7afd">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::location_</a></div><div class="ttdeci">const reflection::source_location location_</div><div class="ttdoc">Stores the source location associated with the report.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01829">detail.h:1829</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_html_a0e4cca7c6f1d63789683f3b6a7f647ea"><div class="ttname"><a href="#a0e4cca7c6f1d63789683f3b6a7f647ea">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::value</a></div><div class="ttdeci">constexpr bool value() const</div><div class="ttdoc">Retrieves the result value.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01809">detail.h:1809</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_html_af633053afa944173b47482786f9d9a7e"><div class="ttname"><a href="#af633053afa944173b47482786f9d9a7e">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::value_</a></div><div class="ttdeci">bool value_</div><div class="ttdoc">Stores the result value of the report.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01818">detail.h:1818</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_html_a20051842d981b530746b4fb4dee00d01"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base.html#a20051842d981b530746b4fb4dee00d01">micro_os_plus::micro_test_plus::test_suite_base::increment_failed</a></div><div class="ttdeci">void increment_failed(void)</div><div class="ttdoc">Increments the count of failed test conditions.</div><div class="ttdef"><b>Definition</b> <a href="test-suite_8cpp_source.html#l00230">test-suite.cpp:230</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_html_a81006378d0bebeadcd59266f57b4ef4b"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base.html#a81006378d0bebeadcd59266f57b4ef4b">micro_os_plus::micro_test_plus::test_suite_base::increment_successful</a></div><div class="ttdeci">void increment_successful(void)</div><div class="ttdoc">Increments the count of passed test conditions.</div><div class="ttdef"><b>Definition</b> <a href="test-suite_8cpp_source.html#l00216">test-suite.cpp:216</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a682fc3ce8c00ebe7c068d6299269655b"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#a682fc3ce8c00ebe7c068d6299269655b">micro_os_plus::micro_test_plus::current_test_suite</a></div><div class="ttdeci">test_suite_base * current_test_suite</div><div class="ttdoc">Global pointer references the currently active test suite.</div><div class="ttdef"><b>Definition</b> <a href="micro-test-plus_8cpp_source.html#l00307">micro-test-plus.cpp:307</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="micro-test-plus_8cpp_source.html#l00306">micro_os_plus::micro_test_plus::current_test_suite</a>, <a class="el" href="detail_8h_source.html#l01806">location_</a>, <a class="el" href="detail_8h_source.html#l01786">value()</a>, and <a class="el" href="detail_8h_source.html#l01795">value_</a>.</p>
+<p class="reference">References <a class="el" href="micro-test-plus_8cpp_source.html#l00307">micro_os_plus::micro_test_plus::current_test_suite</a>, <a class="el" href="detail_8h_source.html#l01829">location_</a>, <a class="el" href="detail_8h_source.html#l01809">value()</a>, and <a class="el" href="detail_8h_source.html#l01818">value_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="details-inlines_8h_source.html#l00117">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::deferred_reporter()</a>.</p>
 
@@ -215,15 +215,15 @@ Protected Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  246</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aa36fd4c36a94b04430599303e38a48bd">abort_</a> &amp;&amp; !<a class="code hl_variable" href="#af633053afa944173b47482786f9d9a7e">value_</a>)</div>
 <div class="line"><span class="lineno">  247</span>        {</div>
 <div class="line"><span class="lineno">  248</span>          printf (<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  249</span>          <a class="code hl_variable" href="namespacemicro__os__plus_1_1micro__test__plus.html#aec46bdfdb22163bedab8e6b542191834">reporter</a>.<a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter.html#aa37bb1803ea48be27bd42ace2c61aa13">output</a> ();</div>
+<div class="line"><span class="lineno">  249</span>          <a class="code hl_variable" href="namespacemicro__os__plus_1_1micro__test__plus.html#a22bf4ef08cb70064bbc37770a0ad5ac4">reporter</a>-&gt;<a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter.html#af2553d492faa510f9c1ec38af24c32bb">output</a> ();</div>
 <div class="line"><span class="lineno">  250</span>          abort ();</div>
 <div class="line"><span class="lineno">  251</span>        }</div>
 <div class="line"><span class="lineno">  252</span>    }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_html_aa36fd4c36a94b04430599303e38a48bd"><div class="ttname"><a href="#aa36fd4c36a94b04430599303e38a48bd">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::abort_</a></div><div class="ttdeci">bool abort_</div><div class="ttdoc">Indicates whether the reporting should abort further processing.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01801">detail.h:1801</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__reporter_html_aa37bb1803ea48be27bd42ace2c61aa13"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter.html#aa37bb1803ea48be27bd42ace2c61aa13">micro_os_plus::micro_test_plus::test_reporter::output</a></div><div class="ttdeci">void output(void)</div><div class="ttdoc">Output the current buffered content.</div><div class="ttdef"><b>Definition</b> <a href="test-reporter_8cpp_source.html#l00765">test-reporter.cpp:765</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_aec46bdfdb22163bedab8e6b542191834"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#aec46bdfdb22163bedab8e6b542191834">micro_os_plus::micro_test_plus::reporter</a></div><div class="ttdeci">test_reporter reporter</div><div class="ttdoc">Global instance of test_reporter.</div><div class="ttdef"><b>Definition</b> <a href="micro-test-plus_8cpp_source.html#l00292">micro-test-plus.cpp:292</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_html_aa36fd4c36a94b04430599303e38a48bd"><div class="ttname"><a href="#aa36fd4c36a94b04430599303e38a48bd">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::abort_</a></div><div class="ttdeci">bool abort_</div><div class="ttdoc">Indicates whether the reporting should abort further processing.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01824">detail.h:1824</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1test__reporter_html_af2553d492faa510f9c1ec38af24c32bb"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter.html#af2553d492faa510f9c1ec38af24c32bb">micro_os_plus::micro_test_plus::test_reporter::output</a></div><div class="ttdeci">virtual void output(void)=0</div><div class="ttdoc">Output the current buffered content.</div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a22bf4ef08cb70064bbc37770a0ad5ac4"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#a22bf4ef08cb70064bbc37770a0ad5ac4">micro_os_plus::micro_test_plus::reporter</a></div><div class="ttdeci">test_reporter * reporter</div><div class="ttdoc">Global pointer to test_reporter.</div><div class="ttdef"><b>Definition</b> <a href="micro-test-plus_8cpp_source.html#l00293">micro-test-plus.cpp:293</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l01801">abort_</a>, <a class="el" href="micro-test-plus_8cpp_source.html#l00292">micro_os_plus::micro_test_plus::reporter</a>, and <a class="el" href="detail_8h_source.html#l01795">value_</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l01824">abort_</a>, <a class="el" href="micro-test-plus_8cpp_source.html#l00293">micro_os_plus::micro_test_plus::reporter</a>, and <a class="el" href="detail_8h_source.html#l01818">value_</a>.</p>
 
 </div>
 </div>
@@ -272,9 +272,9 @@ template&lt;class T&gt; </div>
 <div class="line"><span class="lineno">   99</span>        }</div>
 <div class="line"><span class="lineno">  100</span>      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><span class="lineno">  101</span>    }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_html_aa12bdce872a0994d70be146507834cf1"><div class="ttname"><a href="#aa12bdce872a0994d70be146507834cf1">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::message_</a></div><div class="ttdeci">std::string message_</div><div class="ttdoc">String to collect the expectation message passed via operator&lt;&lt;().</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01812">detail.h:1812</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_html_aa12bdce872a0994d70be146507834cf1"><div class="ttname"><a href="#aa12bdce872a0994d70be146507834cf1">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::message_</a></div><div class="ttdeci">std::string message_</div><div class="ttdoc">String to collect the expectation message passed via operator&lt;&lt;().</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01835">detail.h:1835</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l01812">message_</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l01835">message_</a>.</p>
 
 </div>
 </div>
@@ -310,12 +310,12 @@ template&lt;class T&gt; </div>
 </dl>
 <p>Returns the result value associated with the report. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01786">1786</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1787</span>      {</div>
-<div class="line"><span class="lineno"> 1788</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="#af633053afa944173b47482786f9d9a7e">value_</a>;</div>
-<div class="line"><span class="lineno"> 1789</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01809">1809</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1810</span>      {</div>
+<div class="line"><span class="lineno"> 1811</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="#af633053afa944173b47482786f9d9a7e">value_</a>;</div>
+<div class="line"><span class="lineno"> 1812</span>      }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l01795">value_</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l01818">value_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="micro-test-plus_8cpp_source.html#l00218">deferred_reporter_base()</a>.</p>
 
@@ -342,7 +342,7 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01801">1801</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01824">1824</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="details-inlines_8h_source.html#l00117">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::deferred_reporter()</a>, <a class="el" href="details-inlines_8h_source.html#l00142">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::~deferred_reporter()</a>, and <a class="el" href="micro-test-plus_8cpp_source.html#l00240">~deferred_reporter_base()</a>.</p>
 
@@ -368,8 +368,8 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01806">1806</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1806</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01829">1829</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1829</span>{};</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="micro-test-plus_8cpp_source.html#l00218">deferred_reporter_base()</a>, and <a class="el" href="details-inlines_8h_source.html#l00142">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::~deferred_reporter()</a>.</p>
 
@@ -395,8 +395,8 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01812">1812</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1812</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01835">1835</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1835</span>{};</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="details-inlines_8h_source.html#l00142">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::~deferred_reporter()</a>, and <a class="el" href="details-inlines_8h_source.html#l00090">operator&lt;&lt;()</a>.</p>
 
@@ -422,10 +422,10 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01795">1795</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1795</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01818">1818</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1818</span>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="micro-test-plus_8cpp_source.html#l00218">deferred_reporter_base()</a>, <a class="el" href="details-inlines_8h_source.html#l00142">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::~deferred_reporter()</a>, <a class="el" href="micro-test-plus_8cpp_source.html#l00240">~deferred_reporter_base()</a>, and <a class="el" href="detail_8h_source.html#l01786">value()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="micro-test-plus_8cpp_source.html#l00218">deferred_reporter_base()</a>, <a class="el" href="details-inlines_8h_source.html#l00142">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::~deferred_reporter()</a>, <a class="el" href="micro-test-plus_8cpp_source.html#l00240">~deferred_reporter_base()</a>, and <a class="el" href="detail_8h_source.html#l01809">value()</a>.</p>
 
 </div>
 </div>

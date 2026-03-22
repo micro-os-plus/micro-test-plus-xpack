@@ -95,8 +95,7 @@ keywords:
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">mt::expect(mt::_and (mt::eq (compute_answer (), 42), mt::eq (compute_float</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">(), 42.0)));</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">mt::expect (mt::_and (mt::eq (compute_answer (), 42), mt::eq (compute_float (), 42.0)));</span></span></div>
 
 </div>
 

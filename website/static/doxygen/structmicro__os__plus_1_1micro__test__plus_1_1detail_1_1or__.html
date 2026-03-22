@@ -143,7 +143,7 @@ struct micro_os_plus::micro_test_plus::detail::or_&lt; Lhs_T, Rhs_T &gt;</div><d
 <p>The implementation is optimised for use in embedded environments and supports both compile-time and run-time evaluation.</p>
 <p>All definitions are intended for internal use within the framework and are implemented in the <span class="tt">include/micro-os-plus/micro-test-plus</span> folder to maintain a structured and modular codebase. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01296">1296</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01316">1316</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae023677ab7963bcd4302604292ec9871" name="ae023677ab7963bcd4302604292ec9871"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae023677ab7963bcd4302604292ec9871">&#9670;&#160;</a></span>or_()</h2>
@@ -182,20 +182,20 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01309">1309</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1309</span>                                        {}, <span class="keyword">const</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html">Rhs_T</a>&amp; <a class="code hl_function" href="#ad20450caccc16905bb9ec2b6852dbe15">rhs</a> = {})</div>
-<div class="line"><span class="lineno"> 1310</span>          : <a class="code hl_variable" href="#a6862c7a63400e57c857c33824e6123a9">lhs_</a>{ <a class="code hl_function" href="#ade57fa3ad2c060e1606858f7363a78fb">lhs</a> }, <a class="code hl_variable" href="#a94b13f2c857015255f61ca413ed55745">rhs_</a>{ <a class="code hl_function" href="#ad20450caccc16905bb9ec2b6852dbe15">rhs</a> },</div>
-<div class="line"><span class="lineno"> 1311</span>            <a class="code hl_variable" href="#af3b7e813b9a4cd44c510f16119c374eb">value_</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html">static_cast</a>&lt;<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html">bool</a>&gt; (<a class="code hl_function" href="#ade57fa3ad2c060e1606858f7363a78fb">lhs</a>) <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html">or</a> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html">static_cast</a>&lt;<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html">bool</a>&gt; (<a class="code hl_function" href="#ad20450caccc16905bb9ec2b6852dbe15">rhs</a>) }</div>
-<div class="line"><span class="lineno"> 1312</span>      {</div>
-<div class="line"><span class="lineno"> 1313</span>      }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html">micro_os_plus::micro_test_plus::detail::or_</a></div><div class="ttdoc">Logical OR comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01296">detail.h:1297</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or___html_a6862c7a63400e57c857c33824e6123a9"><div class="ttname"><a href="#a6862c7a63400e57c857c33824e6123a9">micro_os_plus::micro_test_plus::detail::or_::lhs_</a></div><div class="ttdeci">const Lhs_T lhs_</div><div class="ttdoc">Stores the left-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01371">detail.h:1371</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or___html_a94b13f2c857015255f61ca413ed55745"><div class="ttname"><a href="#a94b13f2c857015255f61ca413ed55745">micro_os_plus::micro_test_plus::detail::or_::rhs_</a></div><div class="ttdeci">const Rhs_T rhs_</div><div class="ttdoc">Stores the right-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01376">detail.h:1376</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or___html_ad20450caccc16905bb9ec2b6852dbe15"><div class="ttname"><a href="#ad20450caccc16905bb9ec2b6852dbe15">micro_os_plus::micro_test_plus::detail::or_::rhs</a></div><div class="ttdeci">constexpr auto rhs(void) const</div><div class="ttdoc">Retrieves the right-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01363">detail.h:1363</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or___html_ade57fa3ad2c060e1606858f7363a78fb"><div class="ttname"><a href="#ade57fa3ad2c060e1606858f7363a78fb">micro_os_plus::micro_test_plus::detail::or_::lhs</a></div><div class="ttdeci">constexpr auto lhs(void) const</div><div class="ttdoc">Retrieves the left-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01345">detail.h:1345</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or___html_af3b7e813b9a4cd44c510f16119c374eb"><div class="ttname"><a href="#af3b7e813b9a4cd44c510f16119c374eb">micro_os_plus::micro_test_plus::detail::or_::value_</a></div><div class="ttdeci">const bool value_</div><div class="ttdoc">Stores the result of the logical OR operation.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01381">detail.h:1381</a></div></div>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01329">1329</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1329</span>                                        {}, <span class="keyword">const</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html">Rhs_T</a>&amp; <a class="code hl_function" href="#ad20450caccc16905bb9ec2b6852dbe15">rhs</a> = {})</div>
+<div class="line"><span class="lineno"> 1330</span>          : <a class="code hl_variable" href="#a6862c7a63400e57c857c33824e6123a9">lhs_</a>{ <a class="code hl_function" href="#ade57fa3ad2c060e1606858f7363a78fb">lhs</a> }, <a class="code hl_variable" href="#a94b13f2c857015255f61ca413ed55745">rhs_</a>{ <a class="code hl_function" href="#ad20450caccc16905bb9ec2b6852dbe15">rhs</a> },</div>
+<div class="line"><span class="lineno"> 1331</span>            <a class="code hl_variable" href="#af3b7e813b9a4cd44c510f16119c374eb">value_</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html">static_cast</a>&lt;<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html">bool</a>&gt; (<a class="code hl_function" href="#ade57fa3ad2c060e1606858f7363a78fb">lhs</a>) <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html">or</a> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html">static_cast</a>&lt;<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html">bool</a>&gt; (<a class="code hl_function" href="#ad20450caccc16905bb9ec2b6852dbe15">rhs</a>) }</div>
+<div class="line"><span class="lineno"> 1332</span>      {</div>
+<div class="line"><span class="lineno"> 1333</span>      }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html">micro_os_plus::micro_test_plus::detail::or_</a></div><div class="ttdoc">Logical OR comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01316">detail.h:1317</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or___html_a6862c7a63400e57c857c33824e6123a9"><div class="ttname"><a href="#a6862c7a63400e57c857c33824e6123a9">micro_os_plus::micro_test_plus::detail::or_::lhs_</a></div><div class="ttdeci">const Lhs_T lhs_</div><div class="ttdoc">Stores the left-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01391">detail.h:1391</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or___html_a94b13f2c857015255f61ca413ed55745"><div class="ttname"><a href="#a94b13f2c857015255f61ca413ed55745">micro_os_plus::micro_test_plus::detail::or_::rhs_</a></div><div class="ttdeci">const Rhs_T rhs_</div><div class="ttdoc">Stores the right-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01396">detail.h:1396</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or___html_ad20450caccc16905bb9ec2b6852dbe15"><div class="ttname"><a href="#ad20450caccc16905bb9ec2b6852dbe15">micro_os_plus::micro_test_plus::detail::or_::rhs</a></div><div class="ttdeci">constexpr auto rhs(void) const</div><div class="ttdoc">Retrieves the right-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01383">detail.h:1383</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or___html_ade57fa3ad2c060e1606858f7363a78fb"><div class="ttname"><a href="#ade57fa3ad2c060e1606858f7363a78fb">micro_os_plus::micro_test_plus::detail::or_::lhs</a></div><div class="ttdeci">constexpr auto lhs(void) const</div><div class="ttdoc">Retrieves the left-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01365">detail.h:1365</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or___html_af3b7e813b9a4cd44c510f16119c374eb"><div class="ttname"><a href="#af3b7e813b9a4cd44c510f16119c374eb">micro_os_plus::micro_test_plus::detail::or_::value_</a></div><div class="ttdeci">const bool value_</div><div class="ttdoc">Stores the result of the logical OR operation.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01401">detail.h:1401</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l01345">lhs()</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l01365">lhs()</a>.</p>
 
 </div>
 </div>
@@ -228,15 +228,15 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The extracted left-hand operand.</dd></dl>
 <p>Returns the value of the left-hand operand, applying the generic getter to ensure correct extraction for both custom and standard types. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01345">1345</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1346</span>      {</div>
-<div class="line"><span class="lineno"> 1347</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ac627271520bf2fe8a4c4774bcd9bf343">get</a> (<a class="code hl_variable" href="#a6862c7a63400e57c857c33824e6123a9">lhs_</a>);</div>
-<div class="line"><span class="lineno"> 1348</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01365">1365</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1366</span>      {</div>
+<div class="line"><span class="lineno"> 1367</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ac627271520bf2fe8a4c4774bcd9bf343">get</a> (<a class="code hl_variable" href="#a6862c7a63400e57c857c33824e6123a9">lhs_</a>);</div>
+<div class="line"><span class="lineno"> 1368</span>      }</div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_ac627271520bf2fe8a4c4774bcd9bf343"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ac627271520bf2fe8a4c4774bcd9bf343">micro_os_plus::micro_test_plus::detail::get</a></div><div class="ttdeci">constexpr auto get(const T &amp;t)</div><div class="ttdoc">Generic getter function template for value retrieval.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00223">detail.h:223</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l00223">micro_os_plus::micro_test_plus::detail::get()</a>, and <a class="el" href="detail_8h_source.html#l01371">lhs_</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l00223">micro_os_plus::micro_test_plus::detail::get()</a>, and <a class="el" href="detail_8h_source.html#l01391">lhs_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail_8h_source.html#l01309">or_()</a>, and <a class="el" href="test-reporter-inlines_8h_source.html#l00326">micro_os_plus::micro_test_plus::test_reporter::operator&lt;&lt;()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail_8h_source.html#l01329">or_()</a>, and <a class="el" href="test-reporter-inlines_8h_source.html#l00326">micro_os_plus::micro_test_plus::test_reporter::operator&lt;&lt;()</a>.</p>
 
 </div>
 </div>
@@ -274,12 +274,12 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 </dl>
 <p>Returns the result of the logical OR operation. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01327">1327</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1328</span>      {</div>
-<div class="line"><span class="lineno"> 1329</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="#af3b7e813b9a4cd44c510f16119c374eb">value_</a>;</div>
-<div class="line"><span class="lineno"> 1330</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01347">1347</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1348</span>      {</div>
+<div class="line"><span class="lineno"> 1349</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="#af3b7e813b9a4cd44c510f16119c374eb">value_</a>;</div>
+<div class="line"><span class="lineno"> 1350</span>      }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l01381">value_</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l01401">value_</a>.</p>
 
 </div>
 </div>
@@ -311,12 +311,12 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The extracted right-hand operand.</dd></dl>
 <p>Returns the value of the right-hand operand, applying the generic getter to ensure correct extraction for both custom and standard types. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01363">1363</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1364</span>      {</div>
-<div class="line"><span class="lineno"> 1365</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ac627271520bf2fe8a4c4774bcd9bf343">get</a> (<a class="code hl_variable" href="#a94b13f2c857015255f61ca413ed55745">rhs_</a>);</div>
-<div class="line"><span class="lineno"> 1366</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01383">1383</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1384</span>      {</div>
+<div class="line"><span class="lineno"> 1385</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ac627271520bf2fe8a4c4774bcd9bf343">get</a> (<a class="code hl_variable" href="#a94b13f2c857015255f61ca413ed55745">rhs_</a>);</div>
+<div class="line"><span class="lineno"> 1386</span>      }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l00223">micro_os_plus::micro_test_plus::detail::get()</a>, and <a class="el" href="detail_8h_source.html#l01376">rhs_</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l00223">micro_os_plus::micro_test_plus::detail::get()</a>, and <a class="el" href="detail_8h_source.html#l01396">rhs_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="test-reporter-inlines_8h_source.html#l00326">micro_os_plus::micro_test_plus::test_reporter::operator&lt;&lt;()</a>.</p>
 
@@ -337,10 +337,10 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01371">1371</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1371</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01391">1391</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1391</span>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="detail_8h_source.html#l01345">lhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail_8h_source.html#l01365">lhs()</a>.</p>
 
 </div>
 </div>
@@ -358,10 +358,10 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01376">1376</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1376</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01396">1396</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1396</span>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="detail_8h_source.html#l01363">rhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail_8h_source.html#l01383">rhs()</a>.</p>
 
 </div>
 </div>
@@ -379,10 +379,10 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01381">1381</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1381</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01401">1401</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1401</span>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="detail_8h_source.html#l01327">operator bool()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail_8h_source.html#l01347">operator bool()</a>.</p>
 
 </div>
 </div>

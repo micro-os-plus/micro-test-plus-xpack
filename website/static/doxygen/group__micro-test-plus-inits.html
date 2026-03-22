@@ -114,22 +114,25 @@ Functions</h2></td></tr>
 <div class="line">{</div>
 <div class="line">  <span class="keyword">namespace </span>mt = <a class="code hl_namespace" href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a>;</div>
 <div class="line"> </div>
-<div class="line">  mt::initialize(argc, argv, <span class="stringliteral">&quot;Minimal&quot;</span>);</div>
+<div class="line">  mt::initialize (argc, argv, <span class="stringliteral">&quot;Minimal&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  mt::test_case (<span class="stringliteral">&quot;Check truth&quot;</span>, [] {</div>
 <div class="line">    mt::expect (<span class="keyword">true</span>);</div>
-<div class="line">  })</div>
+<div class="line">  });</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> mt::exit_code ();</div>
 <div class="line">}</div>
 <div class="ttc" id="amicro-test-plus_8h_html"><div class="ttname"><a href="micro-test-plus_8h.html">micro-test-plus.h</a></div><div class="ttdoc">Main C++ header with the declarations for the µTest++ Testing Framework.</div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div><div class="ttdoc">Primary namespace for the µTest++ testing framework.</div></div>
 </div><!-- fragment --><p>When this test is executed, the output is as follows:</p>
-<div class="fragment"><div class="line">• Minimal - test suite started</div>
+<div class="fragment"><div class="line">TAP version 14</div>
+<div class="line">1..0</div>
+<div class="line"># Subtest: Minimal</div>
+<div class="line">    ok 1 - Check truth # { test case passed, 1 check }</div>
+<div class="line">    1..1</div>
+<div class="line">ok 0 - Minimal # { test suite passed, 1 check in 1 test case }</div>
 <div class="line"> </div>
-<div class="line">  ✓ Check truth - test case passed (1 check)</div>
-<div class="line"> </div>
-<div class="line">✓ Minimal - test suite passed (1 check in 1 test case)</div>
+<div class="line"># { total: 1 check passed, 0 failed, in 1 test case, 1 test suite }</div>
 </div><!-- fragment -->  <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="gaa790667969dc1a261c324e89a6ea4591" name="gaa790667969dc1a261c324e89a6ea4591"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaa790667969dc1a261c324e89a6ea4591">&#9670;&#160;</a></span>exit_code()</h2>

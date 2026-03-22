@@ -28,17 +28,24 @@ keywords:
 ## - B -
 
 <ul>
-<li><b>begin_test_case()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ac6d43b057a1be46a895e11c81a9c7cfb">micro_os_plus::micro_test_plus::test_reporter</a></li>
+<li><b>begin_test_case()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic/#aec235e9b248ce360adb76b8fe8ac20af">micro_os_plus::micro_test_plus::test_reporter_basic</a></li>
+<li><b>begin_test_case()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap/#a2fc8909e9fcfd3cb94b3644be0cd1204">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>begin_test_case()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#af8cc0eb3001942a6344ccdeeb6f3f298">micro_os_plus::micro_test_plus::test_reporter</a></li>
 <li><b>begin_test_case()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a6bd8aa956f30c344c9ef79cf21c69cdc">micro_os_plus::micro_test_plus::test_suite_base</a></li>
-<li><b>begin_test_suite()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ad6375b4032aa02fd8258f77b7de5efdd">micro_os_plus::micro_test_plus::test_reporter</a></li>
+<li><b>begin_test_suite()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic/#a9847a63af6598a7a752fd364d1e5497a">micro_os_plus::micro_test_plus::test_reporter_basic</a></li>
+<li><b>begin_test_suite()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap/#aa254fdd42e82fc0d16e5355c74d3f09b">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>begin_test_suite()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a8fe9ac8941951b6ebc430cdc06ff0d79">micro_os_plus::micro_test_plus::test_reporter</a></li>
 <li><b>begin_test_suite()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#adfc3afd1432b2d093eef73a18ca9a242">micro_os_plus::micro_test_plus::test_suite_base</a></li>
+<li><b>begin_test()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic/#a08dbc855aefce2b54a24673f94498102">micro_os_plus::micro_test_plus::test_reporter_basic</a></li>
+<li><b>begin_test()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap/#a1399a94a406545fd5f1b9e156189cf1c">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>begin_test()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a57c9f2d8d36bcc4659df924bfadbf02f">micro_os_plus::micro_test_plus::test_reporter</a></li>
 </ul>
-<p>4 entries</p>
+<p>11 entries</p>
 
 ## - C -
 
 <ul>
-<li><b>color()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#aeab9d025989e57ed62ad0e701efc59ee">micro_os_plus::micro_test_plus::test_reporter</a></li>
+<li><b>color()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#aeab9d025989e57ed62ad0e701efc59ee">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
 <li><b>current()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#af2ee3ac5db96f13680291736d58fe327">micro_os_plus::micro_test_plus::reflection::source_location</a></li>
 </ul>
 <p>2 entries</p>
@@ -56,25 +63,36 @@ keywords:
 ## - E -
 
 <ul>
-<li><b>end_test_case()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ac0f25008c95f1ef27072df20d7668082">micro_os_plus::micro_test_plus::test_reporter</a></li>
+<li><b>end_test_case()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic/#a61cf8d59c66faaaeae59f5144c393442">micro_os_plus::micro_test_plus::test_reporter_basic</a></li>
+<li><b>end_test_case()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap/#ad8dc0455bd2bd20d47e9e63709934224">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>end_test_case()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a43601a1c35bc269e98d0cfa9eaf190bb">micro_os_plus::micro_test_plus::test_reporter</a></li>
 <li><b>end_test_case()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ab2e1a6eadc56c54b45f9d21e450b0cbc">micro_os_plus::micro_test_plus::test_suite_base</a></li>
-<li><b>end_test_suite()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ad01d404c3fe5a44cf7f10bfcd599e0f3">micro_os_plus::micro_test_plus::test_reporter</a></li>
+<li><b>end_test_suite()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic/#a595d5ec976bdd36909213fc31ab526d5">micro_os_plus::micro_test_plus::test_reporter_basic</a></li>
+<li><b>end_test_suite()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap/#a66416caaaab804b21d8a78b77622c85a">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>end_test_suite()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ae53d13e6b4755cfa5d27efe98f3c4605">micro_os_plus::micro_test_plus::test_reporter</a></li>
 <li><b>end_test_suite()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#aa53f99054051136b3484a1664b5ee59f">micro_os_plus::micro_test_plus::test_suite_base</a></li>
-<li><b>endline()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a105cec33c0e4ed184d8db90df27a48d6">micro_os_plus::micro_test_plus::test_reporter</a></li>
+<li><b>end_test()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic/#a37bd235b054a13f7374d1bf0b237ec0b">micro_os_plus::micro_test_plus::test_reporter_basic</a></li>
+<li><b>end_test()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap/#a994c743ec18e48d330174177b4d89bec">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>end_test()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a39cfd386c447d792d104371601889d19">micro_os_plus::micro_test_plus::test_reporter</a></li>
+<li><b>endline()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic/#ac7fbfe590d5b8115496990f55112590c">micro_os_plus::micro_test_plus::test_reporter_basic</a></li>
+<li><b>endline()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap/#ab1b73d64bd35b42ccb16dd079b340296">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>endline()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a15947f4695a8c27e803483746adb78c2">micro_os_plus::micro_test_plus::test_reporter</a></li>
 <li><b>eq_()</b>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-/#a527ae62e9ed62a3ebbc3efd243d602c3">micro_os_plus::micro_test_plus::detail::eq_&lt;Lhs_T, Rhs_T&gt;</a></li>
 <li><b>exit_code()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a86233d8241e398f9491d859b4097c851">micro_os_plus::micro_test_plus::test_runner</a></li>
 </ul>
-<p>7 entries</p>
+<p>16 entries</p>
 
 ## - F -
 
 <ul>
-<li><b>fail()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ab89536a4a5a82b658ca8282277c49f4b">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>failed_checks()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a4cd96949ef52b98b6c5e08bbd7900979">micro_os_plus::micro_test_plus::test_suite_base</a></li>
+<li><b>fail()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ab89536a4a5a82b658ca8282277c49f4b">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>failed_checks()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ab820e44136159d4ff90b20ae39d83dbc">micro_os_plus::micro_test_plus::test_suite_base</a></li>
 <li><b>file_name()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#a3df499675aacb7ab9192cfb9a5371874">micro_os_plus::micro_test_plus::reflection::source_location</a></li>
-<li><b>flush()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ab48b00f46755dd9a70cb39a42bfad7f6">micro_os_plus::micro_test_plus::test_reporter</a></li>
+<li><b>flush()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic/#a4d9b7ee9f6076c5e71ba81edeaa805e6">micro_os_plus::micro_test_plus::test_reporter_basic</a></li>
+<li><b>flush()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap/#acfa27770f23cba4868a3a67218b4d698">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>flush()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a9ecefb5c2b9b7d750379ec9674c45725">micro_os_plus::micro_test_plus::test_reporter</a></li>
 </ul>
-<p>4 entries</p>
+<p>6 entries</p>
 
 ## - G -
 
@@ -150,42 +168,46 @@ keywords:
 <li><b>operator-()</b>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#adcc1ade20fd348fa653623ec6c378d72">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt;T, N, D, Size, P&gt;</a></li>
 <li><b>operator-()</b>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant/#a7074d786704fd94b5342be3de7c86790">micro_os_plus::micro_test_plus::type_traits::integral_constant&lt;N&gt;</a></li>
 <li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base/#ae90dacdedb65168453056c0787f88567">micro_os_plus::micro_test_plus::detail::deferred_reporter_base</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a092ef277e46b408cd539de029429a1aa">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#acfe54a05505f0081fcd13f31bd222fa5">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a318db1ab66a5f2f63c39d58a3c8b2656">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#affa86db322653867cc9a82f2720d0b49">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a8327d747306728c83e673a9993ab933a">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ae3c6e69e58215c20d2766ae6e454e2e0">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a248e333b17ace83dbfaf3db464520993">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#abef6ddfab2ac750d9ec1a170873f6c3e">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a7e08a3a2f3b5ae49ac3b138f93951746">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a1f6ce3e6874d63ee7afe21f8301657c1">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a292fdf290a81a3321edde14c31dff1ed">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a7f8caa4fbe97ef26ece7c5a37dc4ea9c">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a15d2d453175a3ab377eb12cae6e81d2e">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a8167f599220c789c1044da084a119eb5">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ac43d666b5a7824b7e91a1306094fdb1e">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a46a7012a665e55c00e7a040588f0c83b">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#afdfeff359bdc48955dacb5448706b297">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ab6cd245bcdf58b3004430a76bc78abc8">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a8d5212b37538ff11de36a1265b6f927b">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a0cbaa9549a0929515cd1684cda27e209">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a315aa52bed70671e66a7228d11452c93">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#aa347f64332ee58823aeb25ed204a8c93">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a6fbbfdde2f05c76aab0ea8ddc44495d7">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a8c29379f197e555fb8cc6e5d7ca66c09">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a30306b9f0fb893ef89a0756a5025d0e2">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#af88660a913ae75160c1c88ffbb92830c">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a299c705a7e4ba728cdf236318222e234">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#acade140484e4bdaab40a72bda0b42adb">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a0db349234264801b1741a1502d83e286">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a0bdeb24c644813f434c7373b62280700">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a91be9116b7ca4b8596cabb8690ea2c46">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#acb9db4f1a9c23eae20e74b55b4244747">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a2df8fdfda10c3cdf9b5bdca00f377387">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a9712e8adb7ab22c433b0acac1e18fd78">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a5a300e17b0498a54fa4724bee7a5bb58">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a4ef05fd23acfc0b4bcd5d95bf25b518d">micro_os_plus::micro_test_plus::test_reporter</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a092ef277e46b408cd539de029429a1aa">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#acfe54a05505f0081fcd13f31bd222fa5">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a318db1ab66a5f2f63c39d58a3c8b2656">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#affa86db322653867cc9a82f2720d0b49">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a8327d747306728c83e673a9993ab933a">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ae3c6e69e58215c20d2766ae6e454e2e0">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a248e333b17ace83dbfaf3db464520993">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#abef6ddfab2ac750d9ec1a170873f6c3e">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a7e08a3a2f3b5ae49ac3b138f93951746">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a1f6ce3e6874d63ee7afe21f8301657c1">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a292fdf290a81a3321edde14c31dff1ed">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a7f8caa4fbe97ef26ece7c5a37dc4ea9c">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a15d2d453175a3ab377eb12cae6e81d2e">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a8167f599220c789c1044da084a119eb5">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ac43d666b5a7824b7e91a1306094fdb1e">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a46a7012a665e55c00e7a040588f0c83b">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#afdfeff359bdc48955dacb5448706b297">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ab6cd245bcdf58b3004430a76bc78abc8">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a8d5212b37538ff11de36a1265b6f927b">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a0cbaa9549a0929515cd1684cda27e209">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a315aa52bed70671e66a7228d11452c93">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#aa347f64332ee58823aeb25ed204a8c93">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a6fbbfdde2f05c76aab0ea8ddc44495d7">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a8c29379f197e555fb8cc6e5d7ca66c09">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a30306b9f0fb893ef89a0756a5025d0e2">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#af88660a913ae75160c1c88ffbb92830c">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a299c705a7e4ba728cdf236318222e234">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#acade140484e4bdaab40a72bda0b42adb">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a0db349234264801b1741a1502d83e286">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a0bdeb24c644813f434c7373b62280700">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a91be9116b7ca4b8596cabb8690ea2c46">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#acb9db4f1a9c23eae20e74b55b4244747">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a2df8fdfda10c3cdf9b5bdca00f377387">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a9712e8adb7ab22c433b0acac1e18fd78">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a5a300e17b0498a54fa4724bee7a5bb58">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator<<()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a4ef05fd23acfc0b4bcd5d95bf25b518d">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator=()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic/#ab5e3265659b973b5e521e3082e94c74e">micro_os_plus::micro_test_plus::test_reporter_basic</a></li>
+<li><b>operator=()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic/#a8822dda667d5b82fe9db4d9b66239d7c">micro_os_plus::micro_test_plus::test_reporter_basic</a></li>
+<li><b>operator=()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap/#ab6092a851c745a46a116df4dd96d3436">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>operator=()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap/#a2f7eb98c1461f5edbad92026e3dde159">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
 <li><b>operator=()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a287fcb294f40d116c6497efbc2c366c3">micro_os_plus::micro_test_plus::test_runner</a></li>
 <li><b>operator=()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#ab56971215ea9b94e854deb442c4c3a2e">micro_os_plus::micro_test_plus::test_runner</a></li>
 <li><b>operator=()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#aba2b1e9fde84789ac9e1a78ae0a088f7">micro_os_plus::micro_test_plus::test_suite_base</a></li>
@@ -193,18 +215,28 @@ keywords:
 <li><b>operator=()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#aafe75ac5383b6981e1ed6e3c8e96249e">micro_os_plus::micro_test_plus::test_suite</a></li>
 <li><b>operator=()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a00597bc0e72007bd92d370bb8cac9ff7">micro_os_plus::micro_test_plus::test_suite</a></li>
 <li><b>or_()</b>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/or-/#ae023677ab7963bcd4302604292ec9871">micro_os_plus::micro_test_plus::detail::or_&lt;Lhs_T, Rhs_T&gt;</a></li>
-<li><b>output_fail_prefix_()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ae2b0f0247a64d1d22e9db9b5f47653db">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>output_fail_suffix_()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#aaa1839530b6e8560711926613013312b">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>output_pass_prefix_()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#af7b154289a09dddaa80e122100437876">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>output_pass_suffix_()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a8df0d7843bb268c9e91fb90219aded65">micro_os_plus::micro_test_plus::test_reporter</a></li>
-<li><b>output()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#aa37bb1803ea48be27bd42ace2c61aa13">micro_os_plus::micro_test_plus::test_reporter</a></li>
+<li><b>output_fail_prefix_()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic/#a0a464d17e99f2c1a33f43e41d2c87be5">micro_os_plus::micro_test_plus::test_reporter_basic</a></li>
+<li><b>output_fail_prefix_()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap/#aecf7a8c2bd3bb48e7fc2094b4a8a8ae2">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>output_fail_prefix_()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a38f08b88bfe2a26e51831dd314ae6a67">micro_os_plus::micro_test_plus::test_reporter</a></li>
+<li><b>output_fail_suffix_()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic/#adecb0de90a98d7fe9c1fb5de40468819">micro_os_plus::micro_test_plus::test_reporter_basic</a></li>
+<li><b>output_fail_suffix_()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap/#aa6ea612db57165ac9a7e149e4a523cdc">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>output_fail_suffix_()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a24807fc4e384a7aa42abb327656eaf31">micro_os_plus::micro_test_plus::test_reporter</a></li>
+<li><b>output_pass_prefix_()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic/#a2fe22c30619587b4e554c9c25d780230">micro_os_plus::micro_test_plus::test_reporter_basic</a></li>
+<li><b>output_pass_prefix_()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap/#a911a16a9ba7e8093273a95beebfea070">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>output_pass_prefix_()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a5826e4a377a1fa7247e76784fe903207">micro_os_plus::micro_test_plus::test_reporter</a></li>
+<li><b>output_pass_suffix_()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic/#a4697197dd57377a23b75f790172f7dec">micro_os_plus::micro_test_plus::test_reporter_basic</a></li>
+<li><b>output_pass_suffix_()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap/#a44b64c57f4fba6c026bd2e0fccaf13f4">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>output_pass_suffix_()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a042155e64659c03db5fc44aa32da69d6">micro_os_plus::micro_test_plus::test_reporter</a></li>
+<li><b>output()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic/#a18db3be615748e59f74e2584f1c1d148">micro_os_plus::micro_test_plus::test_reporter_basic</a></li>
+<li><b>output()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap/#a5a839383da6ac31f92e7b75e1f85a61a">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>output()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#af2553d492faa510f9c1ec38af24c32bb">micro_os_plus::micro_test_plus::test_reporter</a></li>
 </ul>
-<p>68 entries</p>
+<p>82 entries</p>
 
 ## - P -
 
 <ul>
-<li><b>pass()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#aa6ff8210496100842cf12b466195dcf7">micro_os_plus::micro_test_plus::test_reporter</a></li>
+<li><b>pass()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#aa6ff8210496100842cf12b466195dcf7">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
 </ul>
 
 ## - R -
@@ -227,14 +259,22 @@ keywords:
 ## - S -
 
 <ul>
-<li><b>successful_checks()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#acf56ac77830e630b5485248409c3b3f1">micro_os_plus::micro_test_plus::test_suite_base</a></li>
+<li><b>successful_checks()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ab106833e032cf335d5d5bb70413ff0e2">micro_os_plus::micro_test_plus::test_suite_base</a></li>
 </ul>
 
 ## - T -
 
 <ul>
-<li><b>test_cases()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ae755b186f32e229e8d0bd5e02027b515">micro_os_plus::micro_test_plus::test_suite_base</a></li>
-<li><b>test_reporter()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#a2e4113dbacfc7349545ddf6e5cca5268">micro_os_plus::micro_test_plus::test_reporter</a></li>
+<li><b>test_cases_count()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#a1854ec145a5bb5c444f1d363487a5872">micro_os_plus::micro_test_plus::test_suite_base</a></li>
+<li><b>~test_reporter_basic()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic/#a7a7dca65eb3c935434095a4c2df1dad4">micro_os_plus::micro_test_plus::test_reporter_basic</a></li>
+<li><b>test_reporter_basic()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic/#a30c30cadd642d6bd11ad734ea9b6d46d">micro_os_plus::micro_test_plus::test_reporter_basic</a></li>
+<li><b>test_reporter_basic()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic/#ad0fde26b21bffb338e611334144a5140">micro_os_plus::micro_test_plus::test_reporter_basic</a></li>
+<li><b>test_reporter_basic()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic/#aa9941023538c779211e9aef97b716931">micro_os_plus::micro_test_plus::test_reporter_basic</a></li>
+<li><b>~test_reporter_tap()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap/#ae26350972b5b0a5b86d3e16d4426c68e">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>test_reporter_tap()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap/#ac07ee9f7709b7d4a83fd19c53c36a7e4">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>test_reporter_tap()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap/#a69c6df4a57021fa882efddbf88dbbf4e">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>test_reporter_tap()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap/#a6a735fcce1a8bf588750ce05b10ce254">micro_os_plus::micro_test_plus::test_reporter_tap</a></li>
+<li><b>~test_reporter()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ab6f0791a20dd11e38a471ac30fb2ee06">micro_os_plus::micro_test_plus::test_reporter</a></li>
 <li><b>~test_runner()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a4e9d9c95479a6e8eab60c69a27f4ba91">micro_os_plus::micro_test_plus::test_runner</a></li>
 <li><b>test_runner()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a3e2fdf09d6a1cbd52b2189fcdf12aabf">micro_os_plus::micro_test_plus::test_runner</a></li>
 <li><b>test_runner()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a84abdee67279e9a07a68fa01c523ff14">micro_os_plus::micro_test_plus::test_runner</a></li>
@@ -247,10 +287,11 @@ keywords:
 <li><b>test_suite()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a824b38d21a3f4d0adb99827455f159cf">micro_os_plus::micro_test_plus::test_suite</a></li>
 <li><b>test_suite()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a7c82c1d689d5b438a1ed6fd59244d8e3">micro_os_plus::micro_test_plus::test_suite</a></li>
 <li><b>test_suite()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#acdbf1e957b2b5baae7d468820c8fc006">micro_os_plus::micro_test_plus::test_suite</a></li>
+<li><b>test_suites_count()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a58d4282c2440f9eb20d36b88fa645903">micro_os_plus::micro_test_plus::test_runner</a></li>
 <li><b>throws_()</b>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-/#ab482b144c355eb68638dc872331145e7">micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, Exception_T&gt;</a></li>
 <li><b>throws_()</b>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws--6ce6a9ac7588b533a253fd8d8638e6be/#a8e97e74a695e9758034855ba462c2839">micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, void&gt;</a></li>
 </ul>
-<p>16 entries</p>
+<p>25 entries</p>
 
 ## - U -
 
@@ -275,7 +316,7 @@ keywords:
 <li><b>was_successful()</b>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base/#ae60536040204e7481b50dfde7b0a6600">micro_os_plus::micro_test_plus::test_suite_base</a></li>
 </ul>
 <br/>
-<p>Total: 154 entries.</p>
+<p>Total: 195 entries.</p>
 
 <hr/>
 

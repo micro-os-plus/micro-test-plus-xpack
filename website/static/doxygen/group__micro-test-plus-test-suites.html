@@ -105,8 +105,6 @@ Classes</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <p>Test suites in µTest++ are named groups of related test cases, allowing for structured organisation and execution of tests. By default, all test cases defined in <span class="tt">main()</span> are included in the default (main) test suite and are executed immediately.</p>
 <p>For more complex projects, multiple test suites can be defined, typically in separate source files. Test suites are implemented as classes, constructed with a name, a callable (usually a lambda that chains the execution of the test cases), and optional arguments. This design enables self-registration of test suites, ensuring they are automatically included in the test run.</p>
-<p>It is advisable to instantiate test suites as static objects. Self-registration occurs within the constructor, and test suites defined in separate compilation units may be executed in any order, as the sequence of static constructor invocation is not specified. Therefore, test suites should not have dependencies on one another.</p>
-<p>All registered test suites are executed when the <span class="tt">exit_code()</span> function is called, ensuring comprehensive test coverage across the project.</p>
 <div class="fragment"><div class="line"><span class="keyword">class </span>test_suite : <span class="keyword">public</span> test_suite_base</div>
 <div class="line">{</div>
 <div class="line"><span class="keyword">public</span>:</div>
@@ -117,7 +115,7 @@ Classes</h2></td></tr>
 <div class="line">}</div>
 </div><!-- fragment --><dl class="section important"><dt>Important</dt><dd>It is strongly recommended to instantiate test suites as static objects.</dd></dl>
 <p>Self-registration is performed within the constructor, ensuring that each test suite is automatically included in the test run. When test suites are defined in separate compilation units, they may be executed in any order, as the sequence in which static constructors are invoked is not specified. Consequently, test suites should be designed to be independent and must not rely on the execution order of other suites.</p>
-<p>All registered test suites are executed when the <span class="tt">exit_code()</span> function is called, guaranteeing that the entire test suite collection is run and reported in a consistent and reliable manner.</p>
+<p>All registered test suites are executed when the <span class="tt">exit_code()</span> function is called, guaranteeing comprehensive test coverage across the project.</p>
 <dl class="section user"><dt>Examples</dt><dd></dd></dl>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span>mt = <a class="code hl_namespace" href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a>;</div>
 <div class="line"> </div>

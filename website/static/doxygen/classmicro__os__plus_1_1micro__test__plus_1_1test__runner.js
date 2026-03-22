@@ -11,9 +11,14 @@ var classmicro__os__plus_1_1micro__test__plus_1_1test__runner =
     [ "operator=", "classmicro__os__plus_1_1micro__test__plus_1_1test__runner.html#a287fcb294f40d116c6497efbc2c366c3", null ],
     [ "operator=", "classmicro__os__plus_1_1micro__test__plus_1_1test__runner.html#ab56971215ea9b94e854deb442c4c3a2e", null ],
     [ "register_test_suite", "classmicro__os__plus_1_1micro__test__plus_1_1test__runner.html#aa71d653414cf5872a441d483fdf829c1", null ],
+    [ "test_suites_count", "classmicro__os__plus_1_1micro__test__plus_1_1test__runner.html#a58d4282c2440f9eb20d36b88fa645903", null ],
     [ "argc_", "classmicro__os__plus_1_1micro__test__plus_1_1test__runner.html#a4caf0986c9b9fedb37ad486eabfa88fc", null ],
     [ "argv_", "classmicro__os__plus_1_1micro__test__plus_1_1test__runner.html#a08b3a57d4f802d3aa1a1af02856c460d", null ],
     [ "default_suite_name_", "classmicro__os__plus_1_1micro__test__plus_1_1test__runner.html#af60fbb3e376f27b801c30ce6c7a01808", null ],
-    [ "default_test_suite_", "classmicro__os__plus_1_1micro__test__plus_1_1test__runner.html#a637b06becc3677c2180f022cc4c363e8", null ],
-    [ "suites_", "classmicro__os__plus_1_1micro__test__plus_1_1test__runner.html#a299cdb1bee2322ec60f4ebb463c1e513", null ]
+    [ "default_test_suite", "classmicro__os__plus_1_1micro__test__plus_1_1test__runner.html#abc2b7a044492b6b6e797653e0c22cce4", null ],
+    [ "failed_checks", "classmicro__os__plus_1_1micro__test__plus_1_1test__runner.html#a64146aa3ca2ce94e82909649e090bdec", null ],
+    [ "successful_checks", "classmicro__os__plus_1_1micro__test__plus_1_1test__runner.html#a3983327f5faf770fcb4b87fe7654dc18", null ],
+    [ "test_cases_count", "classmicro__os__plus_1_1micro__test__plus_1_1test__runner.html#ad1595fcbc848dbdf309a6d7506b29984", null ],
+    [ "test_suites", "classmicro__os__plus_1_1micro__test__plus_1_1test__runner.html#a5785170098c755bbea376839afd91744", null ],
+    [ "totals", "classmicro__os__plus_1_1micro__test__plus_1_1test__runner.html#aabba61d146ba4782ae851f0e45f7062b", null ]
 ];

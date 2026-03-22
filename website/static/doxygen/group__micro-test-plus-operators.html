@@ -141,8 +141,8 @@ Functions</h2></td></tr>
 <div class="line">  mt::expect (mt::to_i {compute_answer ()} == 42) &lt;&lt; <span class="stringliteral">&quot;answer is 42 (with cast)&quot;</span>;</div>
 <div class="line">  mt::expect (compute_answer () != 43_i) &lt;&lt; <span class="stringliteral">&quot;answer is not 43&quot;</span>;</div>
 <div class="line">  mt::expect (compute_answer () &lt; 43_i) &lt;&lt; <span class="stringliteral">&quot;answer is &lt; 43&quot;</span>;</div>
-<div class="line">  mt::expect (compute_answer () &lt;= 43_i) &lt;&lt; <span class="stringliteral">&quot;answer is &lt;= 42&quot;</span>;</div>
-<div class="line">  mt::expect (compute_answer () &gt; 41_i) &lt;&lt; <span class="stringliteral">&quot;answer is &gt; 43&quot;</span>;</div>
+<div class="line">  mt::expect (compute_answer () &lt;= 43_i) &lt;&lt; <span class="stringliteral">&quot;answer is &lt;= 43&quot;</span>;</div>
+<div class="line">  mt::expect (compute_answer () &gt; 41_i) &lt;&lt; <span class="stringliteral">&quot;answer is &gt; 41&quot;</span>;</div>
 <div class="line">  mt::expect (compute_answer () &gt;= 42_i) &lt;&lt; <span class="stringliteral">&quot;answer is &gt;= 42&quot;</span>;</div>
 <div class="line">});</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
@@ -200,7 +200,7 @@ template&lt;class Lhs_T, class Rhs_T, <a class="el" href="namespacemicro__os__pl
 <div class="fragment"><div class="line"><span class="lineno">  432</span>    {</div>
 <div class="line"><span class="lineno">  433</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__.html">detail::and_</a>{ lhs, rhs };</div>
 <div class="line"><span class="lineno">  434</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__.html">micro_os_plus::micro_test_plus::detail::and_</a></div><div class="ttdoc">Logical AND comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01177">detail.h:1178</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__.html">micro_os_plus::micro_test_plus::detail::and_</a></div><div class="ttdoc">Logical AND comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01197">detail.h:1198</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -247,7 +247,7 @@ template&lt;class T, <a class="el" href="namespacemicro__os__plus_1_1micro__test
 <div class="fragment"><div class="line"><span class="lineno">  492</span>    {</div>
 <div class="line"><span class="lineno">  493</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__.html">detail::not_</a>{ t };</div>
 <div class="line"><span class="lineno">  494</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__.html">micro_os_plus::micro_test_plus::detail::not_</a></div><div class="ttdoc">Logical NOT comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01414">detail.h:1415</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__.html">micro_os_plus::micro_test_plus::detail::not_</a></div><div class="ttdoc">Logical NOT comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01434">detail.h:1435</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -300,7 +300,7 @@ template&lt;class Lhs_T, class Rhs_T, <a class="el" href="namespacemicro__os__pl
 <div class="fragment"><div class="line"><span class="lineno">  464</span>    {</div>
 <div class="line"><span class="lineno">  465</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html">detail::or_</a>{ lhs, rhs };</div>
 <div class="line"><span class="lineno">  466</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html">micro_os_plus::micro_test_plus::detail::or_</a></div><div class="ttdoc">Logical OR comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01296">detail.h:1297</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html">micro_os_plus::micro_test_plus::detail::or_</a></div><div class="ttdoc">Logical OR comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01316">detail.h:1317</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -353,7 +353,7 @@ template&lt;class Lhs_T, class Rhs_T, <a class="el" href="namespacemicro__os__pl
 <div class="fragment"><div class="line"><span class="lineno">  270</span>    {</div>
 <div class="line"><span class="lineno">  271</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne__.html">detail::ne_</a>{ lhs, rhs };</div>
 <div class="line"><span class="lineno">  272</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne__.html">micro_os_plus::micro_test_plus::detail::ne_</a></div><div class="ttdoc">Non-equality comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00431">detail.h:432</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne__.html">micro_os_plus::micro_test_plus::detail::ne_</a></div><div class="ttdoc">Non-equality comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00437">detail.h:438</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -406,7 +406,7 @@ template&lt;class Lhs_T, class Rhs_T, <a class="el" href="namespacemicro__os__pl
 <div class="fragment"><div class="line"><span class="lineno">  367</span>    {</div>
 <div class="line"><span class="lineno">  368</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1lt__.html">detail::lt_</a>{ lhs, rhs };</div>
 <div class="line"><span class="lineno">  369</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1lt___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1lt__.html">micro_os_plus::micro_test_plus::detail::lt_</a></div><div class="ttdoc">Less than comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00884">detail.h:885</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1lt___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1lt__.html">micro_os_plus::micro_test_plus::detail::lt_</a></div><div class="ttdoc">Less than comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00900">detail.h:901</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -459,7 +459,7 @@ template&lt;class Lhs_T, class Rhs_T, <a class="el" href="namespacemicro__os__pl
 <div class="fragment"><div class="line"><span class="lineno">  400</span>    {</div>
 <div class="line"><span class="lineno">  401</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1le__.html">detail::le_</a>{ lhs, rhs };</div>
 <div class="line"><span class="lineno">  402</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1le___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1le__.html">micro_os_plus::micro_test_plus::detail::le_</a></div><div class="ttdoc">Less than or equal comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01030">detail.h:1031</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1le___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1le__.html">micro_os_plus::micro_test_plus::detail::le_</a></div><div class="ttdoc">Less than or equal comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01048">detail.h:1049</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -565,7 +565,7 @@ template&lt;class Lhs_T, class Rhs_T, <a class="el" href="namespacemicro__os__pl
 <div class="fragment"><div class="line"><span class="lineno">  302</span>    {</div>
 <div class="line"><span class="lineno">  303</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1gt__.html">detail::gt_</a>{ lhs, rhs };</div>
 <div class="line"><span class="lineno">  304</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1gt___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1gt__.html">micro_os_plus::micro_test_plus::detail::gt_</a></div><div class="ttdoc">Greater than comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00592">detail.h:593</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1gt___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1gt__.html">micro_os_plus::micro_test_plus::detail::gt_</a></div><div class="ttdoc">Greater than comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00604">detail.h:605</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -618,7 +618,7 @@ template&lt;class Lhs_T, class Rhs_T, <a class="el" href="namespacemicro__os__pl
 <div class="fragment"><div class="line"><span class="lineno">  335</span>    {</div>
 <div class="line"><span class="lineno">  336</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge__.html">detail::ge_</a>{ lhs, rhs };</div>
 <div class="line"><span class="lineno">  337</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge__.html">micro_os_plus::micro_test_plus::detail::ge_</a></div><div class="ttdoc">Greater than or equal comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00737">detail.h:738</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge__.html">micro_os_plus::micro_test_plus::detail::ge_</a></div><div class="ttdoc">Greater than or equal comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00751">detail.h:752</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -50,6 +50,12 @@
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/reflection_8h_source.html</loc>
   </url>
   <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/test-reporter-basic_8h_source.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/test-reporter-tap_8h_source.html</loc>
+  </url>
+  <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/test-reporter_8h_source.html</loc>
   </url>
   <url>
@@ -63,6 +69,12 @@
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/micro-test-plus_8cpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/test-reporter-basic_8cpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/test-reporter-tap_8cpp_source.html</loc>
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/test-reporter_8cpp_source.html</loc>
@@ -125,6 +137,12 @@
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/reflection_8h.html</loc>
   </url>
   <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/test-reporter-basic_8h.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/test-reporter-tap_8h.html</loc>
+  </url>
+  <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/test-reporter_8h.html</loc>
   </url>
   <url>
@@ -138,6 +156,12 @@
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/micro-test-plus_8cpp.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/test-reporter-basic_8cpp.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/test-reporter-tap_8cpp.html</loc>
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/test-reporter_8cpp.html</loc>
@@ -234,6 +258,18 @@
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/classmicro__os__plus_1_1micro__test__plus_1_1test__reporter-members.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic-members.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap-members.html</loc>
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/classmicro__os__plus_1_1micro__test__plus_1_1test__runner.html</loc>

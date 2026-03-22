@@ -59,9 +59,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "/micro-test-plus-xpack/",
-"classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base.html#a4851a70fd4a0c71b787e445b9766bacc",
-"namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ac93b3c5d42203345061f87bf2e794b07",
-"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_args___t_8_8_8_08_4.html"
+"classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic.html#a91be9116b7ca4b8596cabb8690ea2c46",
+"classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#aeb7133acef29cc25c5505b6c8996fa6f",
+"namespacemembers_vars.html",
+"structmicro__os__plus_1_1micro__test__plus_1_1to__t.html#a1b2cf36b40e92a1249179c033894eb4d"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

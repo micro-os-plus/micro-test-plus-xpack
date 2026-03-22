@@ -36,7 +36,7 @@ struct micro_os_plus::micro_test_plus::colors { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">const char *</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a755efa80182dc14ff24a7780e758ee5c">fail</a> = "\033[31m"</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a755efa80182dc14ff24a7780e758ee5c">fail</a> = ""</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -50,7 +50,7 @@ struct micro_os_plus::micro_test_plus::colors { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">const char *</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#abe9df13299b6c193e7213879fa5fd408">none</a> = "\033[0m"</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#abe9df13299b6c193e7213879fa5fd408">none</a> = ""</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -64,7 +64,7 @@ struct micro_os_plus::micro_test_plus::colors { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">const char *</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a54856b658d27bf3d3f3c23d5ed2823ca">pass</a> = "\033[32m"</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a54856b658d27bf3d3f3c23d5ed2823ca">pass</a> = ""</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -105,7 +105,7 @@ struct micro_os_plus::micro_test_plus::colors { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">const char* micro_os_plus::micro_test_plus::colors::fail = "\033[31m"</td>
+<td class="doxyMemberName">const char* micro_os_plus::micro_test_plus::colors::fail = ""</td>
 </tr>
 </table>
 </td>
@@ -125,7 +125,7 @@ struct micro_os_plus::micro_test_plus::colors { ... }
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a755efa80182dc14ff24a7780e758ee5c">110</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* <a href="#a755efa80182dc14ff24a7780e758ee5c">fail</a> = </span><span class="doxyHighlightStringLiteral">"\033[31m"</span><span class="doxyHighlight">; </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a755efa80182dc14ff24a7780e758ee5c">110</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* <a href="#a755efa80182dc14ff24a7780e758ee5c">fail</a> = </span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight">; </span></span></div>
 
 </div>
 
@@ -141,7 +141,7 @@ struct micro_os_plus::micro_test_plus::colors { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">const char* micro_os_plus::micro_test_plus::colors::none = "\033[0m"</td>
+<td class="doxyMemberName">const char* micro_os_plus::micro_test_plus::colors::none = ""</td>
 </tr>
 </table>
 </td>
@@ -161,7 +161,7 @@ struct micro_os_plus::micro_test_plus::colors { ... }
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#abe9df13299b6c193e7213879fa5fd408">108</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* <a href="#abe9df13299b6c193e7213879fa5fd408">none</a> = </span><span class="doxyHighlightStringLiteral">"\033[0m"</span><span class="doxyHighlight">; </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#abe9df13299b6c193e7213879fa5fd408">108</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* <a href="#abe9df13299b6c193e7213879fa5fd408">none</a> = </span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight">; </span></span></div>
 
 </div>
 
@@ -177,7 +177,7 @@ struct micro_os_plus::micro_test_plus::colors { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">const char* micro_os_plus::micro_test_plus::colors::pass = "\033[32m"</td>
+<td class="doxyMemberName">const char* micro_os_plus::micro_test_plus::colors::pass = ""</td>
 </tr>
 </table>
 </td>
@@ -197,7 +197,7 @@ struct micro_os_plus::micro_test_plus::colors { ... }
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a54856b658d27bf3d3f3c23d5ed2823ca">109</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* <a href="#a54856b658d27bf3d3f3c23d5ed2823ca">pass</a> = </span><span class="doxyHighlightStringLiteral">"\033[32m"</span><span class="doxyHighlight">; </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a54856b658d27bf3d3f3c23d5ed2823ca">109</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* <a href="#a54856b658d27bf3d3f3c23d5ed2823ca">pass</a> = </span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight">; </span></span></div>
 
 </div>
 

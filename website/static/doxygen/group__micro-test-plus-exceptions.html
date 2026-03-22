@@ -119,10 +119,8 @@ Functions</h2></td></tr>
 <div class="line">mt::expect (mt::throws&lt;std::runtime_error&gt; ([] { <span class="keywordflow">throw</span> std::runtime_error{ <span class="stringliteral">&quot;&quot;</span> }; }))</div>
 <div class="line">        &lt;&lt; <span class="stringliteral">&quot;std::runtime_error thrown&quot;</span>;</div>
 <div class="line"> </div>
-<div class="line">mt::expect (mt::nothrow ([] { exercise_throw (<span class="keyword">false</span>); })) &lt;&lt; <span class="stringliteral">&quot;exception not</span></div>
-<div class="line"><span class="stringliteral">thrown&quot;</span>;</div>
-</div><!-- fragment --><p>If more advanced logic is required, such as handling multiple expected exceptions, use an explicit <span class="tt">try</span> block with several <span class="tt">catch</span> statements, and report the outcomes using <span class="tt">expect(true)</span> or <span class="tt">expect(false)</span>.</p>
-<div class="fragment"><div class="line"><span class="keywordflow">try</span></div>
+<div class="line">mt::expect (mt::nothrow ([] { exercise_throw (<span class="keyword">false</span>); })) &lt;&lt; <span class="stringliteral">&quot;exception not thrown&quot;</span>;</div>
+</div><!-- fragment --><div class="fragment"><div class="line"><span class="keywordflow">try</span></div>
 <div class="line">  {</div>
 <div class="line">    compute_answer ();</div>
 <div class="line">  }</div>
@@ -183,7 +181,7 @@ template&lt;class Callable_T&gt; </div>
 <div class="fragment"><div class="line"><span class="lineno">  243</span>  {</div>
 <div class="line"><span class="lineno">  244</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__.html">detail::nothrow_&lt;Callable_T&gt;</a>{ func };</div>
 <div class="line"><span class="lineno">  245</span>  }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__.html">micro_os_plus::micro_test_plus::detail::nothrow_</a></div><div class="ttdoc">Operator struct template to check if an expression does not throw any exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01672">detail.h:1673</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__.html">micro_os_plus::micro_test_plus::detail::nothrow_</a></div><div class="ttdoc">Operator struct template to check if an expression does not throw any exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01694">detail.h:1695</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -232,7 +230,7 @@ template&lt;class Exception_T, class Callable_T&gt; </div>
 <div class="fragment"><div class="line"><span class="lineno">  208</span>  {</div>
 <div class="line"><span class="lineno">  209</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html">detail::throws_&lt;Callable_T, Exception_T&gt;</a>{ func };</div>
 <div class="line"><span class="lineno">  210</span>  }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html">micro_os_plus::micro_test_plus::detail::throws_</a></div><div class="ttdoc">Operator struct template to check if an expression throws a specific exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01511">detail.h:1512</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html">micro_os_plus::micro_test_plus::detail::throws_</a></div><div class="ttdoc">Operator struct template to check if an expression throws a specific exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01531">detail.h:1532</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

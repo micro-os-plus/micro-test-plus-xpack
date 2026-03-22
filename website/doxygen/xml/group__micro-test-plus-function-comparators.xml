@@ -833,8 +833,8 @@ The <computeroutput>ne</computeroutput> function template provides a pointer non
 <programlisting filename=".cpp"><codeline><highlight class="normal">mt::expect<sp/>(mt::eq<sp/>(compute_answer<sp/>(),<sp/>42))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal">mt::expect<sp/>(mt::ne<sp/>(compute_answer<sp/>(),<sp/>43))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>not<sp/>43&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal">mt::expect<sp/>(mt::lt<sp/>(compute_answer<sp/>(),<sp/>43))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&lt;<sp/>43&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal">mt::expect<sp/>(mt::le<sp/>(compute_answer<sp/>(),<sp/>43))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&lt;=<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal">mt::expect<sp/>(mt::gt<sp/>(compute_answer<sp/>(),<sp/>41))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&gt;<sp/>43&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">mt::expect<sp/>(mt::le<sp/>(compute_answer<sp/>(),<sp/>43))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&lt;=<sp/>43&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">mt::expect<sp/>(mt::gt<sp/>(compute_answer<sp/>(),<sp/>41))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&gt;<sp/>41&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal">mt::expect<sp/>(mt::ge<sp/>(compute_answer<sp/>(),<sp/>42))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&gt;=<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal">mt::expect<sp/>(compute_condition<sp/>())<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;condition<sp/>is<sp/>true&quot;</highlight><highlight class="normal">;</highlight></codeline>
@@ -854,7 +854,7 @@ The <computeroutput>ne</computeroutput> function template provides a pointer non
 <programlisting filename=".cpp"><codeline><highlight class="normal">mt::expect<sp/>(mt::eq<sp/>(std::vector&lt;int&gt;{<sp/>1,<sp/>2<sp/>},<sp/>std::vector&lt;int&gt;{<sp/>1,<sp/>2<sp/>}))</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;vector{<sp/>1,<sp/>2<sp/>}<sp/>eq<sp/>vector{<sp/>1,<sp/>2<sp/>}&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">mt::expect<sp/>(mt::ne<sp/>(std::vector&lt;int&gt;{<sp/>1,<sp/>2,<sp/>3<sp/>},<sp/>std::vector&lt;int&gt;{<sp/>1,<sp/>2,<sp/>4<sp/>})</highlight></codeline>
+<codeline><highlight class="normal">mt::expect<sp/>(mt::ne<sp/>(std::vector&lt;int&gt;{<sp/>1,<sp/>2,<sp/>3<sp/>},<sp/>std::vector&lt;int&gt;{<sp/>1,<sp/>2,<sp/>4<sp/>}))</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;vector{<sp/>1,<sp/>2,<sp/>3<sp/>}<sp/>ne<sp/>vector{<sp/>1,<sp/>2,<sp/>4<sp/>}&quot;</highlight><highlight class="normal">;</highlight></codeline>
 </programlisting></para>
 </sect2></sect1>

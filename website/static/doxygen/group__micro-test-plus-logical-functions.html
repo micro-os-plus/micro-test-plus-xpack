@@ -113,8 +113,7 @@ Functions</h2></td></tr>
 <p>The µTest++ framework provides logical functions for composing complex test expressions within a single statement. The functions <span class="tt">mt::_and()</span>, <span class="tt">mt::_or()</span>, and <span class="tt">mt::_not()</span> enable the combination of multiple conditions, allowing for expressive and concise test logic.</p>
 <p>These function names are prefixed with an underscore because <span class="tt">and</span>, <span class="tt">or</span>, and <span class="tt">not</span> are reserved keywords in both C and C++. By using these logical functions, developers can clearly express compound conditions and improve the readability of their test cases.</p>
 <dl class="section user"><dt>Example</dt><dd></dd></dl>
-<div class="fragment"><div class="line">mt::expect(mt::_and (mt::eq (compute_answer (), 42), mt::eq (compute_float</div>
-<div class="line">(), 42.0)));</div>
+<div class="fragment"><div class="line">mt::expect (mt::_and (mt::eq (compute_answer (), 42), mt::eq (compute_float (), 42.0)));</div>
 </div><!-- fragment --><p>When the operands are function comparators, it is recommended to use the overloaded logical operators <span class="tt">&amp;&amp;</span>, <span class="tt">||</span>, and <span class="tt">!</span> provided within the <span class="tt">micro_test_plus::operators</span> namespace for even more natural expression of logical conditions.  </p>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="ga8b43b7658b43fb76daf5efbb2e03d236" name="ga8b43b7658b43fb76daf5efbb2e03d236"></a>
@@ -167,7 +166,7 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 <div class="fragment"><div class="line"><span class="lineno">  289</span>  {</div>
 <div class="line"><span class="lineno">  290</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__.html">detail::and_&lt;Lhs_T, Rhs_T&gt;</a>{ lhs, rhs };</div>
 <div class="line"><span class="lineno">  291</span>  }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__.html">micro_os_plus::micro_test_plus::detail::and_</a></div><div class="ttdoc">Logical AND comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01177">detail.h:1178</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__.html">micro_os_plus::micro_test_plus::detail::and_</a></div><div class="ttdoc">Logical AND comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01197">detail.h:1198</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -215,7 +214,7 @@ template&lt;class Expr_T&gt; </div>
 <div class="fragment"><div class="line"><span class="lineno">  271</span>  {</div>
 <div class="line"><span class="lineno">  272</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__.html">detail::not_&lt;Expr_T&gt;</a>{ expr };</div>
 <div class="line"><span class="lineno">  273</span>  }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__.html">micro_os_plus::micro_test_plus::detail::not_</a></div><div class="ttdoc">Logical NOT comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01414">detail.h:1415</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__.html">micro_os_plus::micro_test_plus::detail::not_</a></div><div class="ttdoc">Logical NOT comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01434">detail.h:1435</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -269,7 +268,7 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 <div class="fragment"><div class="line"><span class="lineno">  307</span>  {</div>
 <div class="line"><span class="lineno">  308</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html">detail::or_&lt;Lhs_T, Rhs_T&gt;</a>{ lhs, rhs };</div>
 <div class="line"><span class="lineno">  309</span>  }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html">micro_os_plus::micro_test_plus::detail::or_</a></div><div class="ttdoc">Logical OR comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01296">detail.h:1297</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html">micro_os_plus::micro_test_plus::detail::or_</a></div><div class="ttdoc">Logical OR comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01316">detail.h:1317</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

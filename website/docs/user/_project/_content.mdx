@@ -78,12 +78,22 @@ main(int argc, char* argv[])
 When this test is executed, the output is as follows:
 
 ```console
-• Minimal - test suite started
+TAP version 14
+1..1
+# Subtest: Minimal - test suite
+    # Subtest: Check truth - test case
+        ok 1 - true
+        1..1
+    ok 1 - Check truth # { test case passed, 1 checks }
+    1..1
+ok 1 - Minimal # { test suite passed, 1 check in 1 test case, time: 0.007 ms }
 
-  ✓ Check truth - test case passed (1 check)
-
-✓ Minimal - test suite passed (1 check in 1 test case)
+# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.030 ms }
 ```
+
+:::info
+The above format is inspired by [**Test Anything Protocol (TAP)**](https://en.wikipedia.org/wiki/Test_Anything_Protocol), a classical protocol to communicate between tested logic and test harnesses.
+:::
 
 ### Testing a computed value
 
@@ -114,11 +124,17 @@ main(int argc, char* argv[])
 ```
 
 ```console
-• The Answer - test suite started
+TAP version 14
+1..1
+# Subtest: Minimal - test suite
+    # Subtest: Check answer - test case
+        ok 1 - answer is 42
+        1..1
+    ok 1 - Check various conditions # { test case passed, 1 check }
+    1..1
+ok 1 - Minimal # { test suite passed, 1 check in 1 test case, time: 0.007 ms }
 
-  ✓ Check answer - test case passed (1 check)
-
-✓ The Answer - test suite passed (1 check passed, 0 checks failed, in 1 test case)
+# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.030 ms }
 ```
 
 If the function returns an incorrect value, the test will fail; for example:
@@ -134,13 +150,23 @@ compute_answer()
 In this case, the test report will be as follows:
 
 ```console
-• The Answer - test suite started
+TAP version 14
+1..1
+# Subtest: Minimal - test suite
 
-  • Check answer - test case started
-    ✗ answer is 42 FAILED (answer.cpp:17)
-  ✗ Check answer - test case FAILED (0 checks passed, 1 check failed)
+    # Subtest: Check answer - test case started
+        not ok 1 - answer is 42 
+            ---
+            at:
+              filename: main.cpp
+              line: 17
+            ...
+        1..1
+    not ok 1 - Check answer # { test case FAILED, 0 checks passed, 1 failed }
+    1..1
+not ok 1 - Minimal # { test suite FAILED, 0 checks passed, 1 failed, in 1 test case, time: 0.039 ms }
 
-✗ The Answer - test suite FAILED (0 checks passed, 1 check failed, in 1 test case)
+# { total: 1 check passed, 1 failed, in 1 test case, 1 test suite, time: 0.077 ms }
 ```
 
 The output identifies the failed test at line 17, but does not provide further details, such as the actual incorrect value.
@@ -157,7 +183,7 @@ namespace mt = micro_os_plus::micro_test_plus;
 static int
 compute_answer()
 {
-  return 42;
+  return 42+1;
 }
 
 int
@@ -184,18 +210,42 @@ main(int argc, char* argv[])
 The output would be:
 
 ```console
-• The Answer - test suite started
+TAP version 14
+1..1
+# Subtest: Minimal - test suite
 
-  • Check answer with comparator - test case started
-    ✗ answer is 42 FAILED (answer.cpp:17, 43 == 42)
-  ✗ Check answer with comparator - test case FAILED (0 checks passed, 1 check failed)
+    # Subtest: Check answer with comparator - test case started
+        not ok 1 - answer is 42 
+            ---
+            expect: 43 == 42
+            at:
+              filename: main.cpp
+              line: 69
+            ...
+        1..1
+    not ok 1 - Check answer with comparator # { test case FAILED, 0 checks passed, 1 failed }
 
-  • Check answer with operator - test case started
-    ✗ answer is 42 FAILED (answer.cpp:24, 43 == 42)
-    ✗ answer is 42 FAILED (answer.cpp:25, 43 == 42)
-  ✗ Check answer with operator - test case FAILED (0 checks passed, 1 check failed)
+    # Subtest: Check answer with operator - test case started
+        not ok 1 - answer is 42 
+            ---
+            expect: 43 == 42
+            at:
+              filename: main.cpp
+              line: 76
+            ...
+        not ok 2 - answer is 42 
+            ---
+            expect: 43 == 42
+            at:
+              filename: main.cpp
+              line: 77
+            ...
+        1..2
+    not ok 2 - Check answer with operator # { test case FAILED, 0 checks passed, 2 failed }
+    1..2
+not ok 1 - Minimal # { test suite FAILED, 0 checks passed, 3 failed, in 2 test cases, time: 0.036 ms }
 
-✗ The Answer - test suite FAILED (0 checks passed, 3 checks failed, in 2 test cases)
+# { total: 0 checks passed, 3 failed, in 2 test cases, 1 test suite, time: 0.067 ms }
 ```
 
 In the first case, `eq()` is a function capable of comparing almost any type and can record the values of its operands. Similar functions exist for all types of comparisons.

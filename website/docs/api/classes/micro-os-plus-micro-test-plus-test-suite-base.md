@@ -213,13 +213,13 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">constexpr int</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4cd96949ef52b98b6c5e08bbd7900979">failed_checks</a> (void)</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">constexpr size_t</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab820e44136159d4ff90b20ae39d83dbc">failed_checks</a> (void)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Gets the number of test conditions that failed. <a href="#a4cd96949ef52b98b6c5e08bbd7900979">More...</a></p>
+<p>Gets the number of test conditions that failed. <a href="#ab820e44136159d4ff90b20ae39d83dbc">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -283,13 +283,13 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">constexpr int</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#acf56ac77830e630b5485248409c3b3f1">successful_checks</a> (void)</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">constexpr size_t</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab106833e032cf335d5d5bb70413ff0e2">successful_checks</a> (void)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Gets the number of conditions that passed. <a href="#acf56ac77830e630b5485248409c3b3f1">More...</a></p>
+<p>Gets the number of conditions that passed. <a href="#ab106833e032cf335d5d5bb70413ff0e2">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -297,13 +297,13 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">constexpr int</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae755b186f32e229e8d0bd5e02027b515">test_cases</a> (void)</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">constexpr size_t</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1854ec145a5bb5c444f1d363487a5872">test_cases_count</a> (void)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Gets the number of test cases. <a href="#ae755b186f32e229e8d0bd5e02027b515">More...</a></p>
+<p>Gets the number of test cases. <a href="#a1854ec145a5bb5c444f1d363487a5872">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -359,13 +359,27 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">int</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a40cadb0a79f55c796b7e7aca4a847cfd">failed_checks</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">size_t</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad6a396115ec39c837b6836c27320cc7c">failed_checks</a> = 0</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Number of failed checks in the current test case. <a href="#a40cadb0a79f55c796b7e7aca4a847cfd">More...</a></p>
+<p>Number of failed checks in the current test case. <a href="#ad6a396115ec39c837b6836c27320cc7c">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">size_t</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a10423c3f12e645476814a9f0c84d473e">index</a> = 1</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>The test suite index, counting from 1. <a href="#a10423c3f12e645476814a9f0c84d473e">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -387,13 +401,13 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">int</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4851a70fd4a0c71b787e445b9766bacc">successful_checks</a></td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">size_t</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab1d2576df9b4850c8916dfc94c6465a9">successful_checks</a> = 0</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Number of successful checks in the current test case. <a href="#a4851a70fd4a0c71b787e445b9766bacc">More...</a></p>
+<p>Number of successful checks in the current test case. <a href="#ab1d2576df9b4850c8916dfc94c6465a9">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -407,13 +421,13 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">int</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a01c523aaf94e26eb4cd6727c5d74ab02">failed_checks_</a> = 0</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">size_t</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aeb7133acef29cc25c5505b6c8996fa6f">failed_checks_</a> = 0</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Count of test conditions that failed. <a href="#a01c523aaf94e26eb4cd6727c5d74ab02">More...</a></p>
+<p>Count of test conditions that failed. <a href="#aeb7133acef29cc25c5505b6c8996fa6f">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -435,13 +449,13 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">int</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad2736cdadc2ab917099cd0ad82d3fc18">successful_checks_</a> = 0</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">size_t</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ac297672e4bcbbca90f2bf033815320a1">successful_checks_</a> = 0</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Count of test conditions that passed. <a href="#ad2736cdadc2ab917099cd0ad82d3fc18">More...</a></p>
+<p>Count of test conditions that passed. <a href="#ac297672e4bcbbca90f2bf033815320a1">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -463,13 +477,13 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">int</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a1e9205117a2373caf7346064e86afa03">test_cases_</a> = 0</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">size_t</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4c45eea47cdb765047c0d34eed67ab8f">test_cases_count_</a> = 0</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Count of test cases in the test suite. <a href="#a1e9205117a2373caf7346064e86afa03">More...</a></p>
+<p>Count of test cases in the test suite. <a href="#a4c45eea47cdb765047c0d34eed67ab8f">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -492,7 +506,7 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 <p>All members and methods are defined within the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></span> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.</p>
 
 
-<p>Definition at line 97 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
+<p>Definition at line 99 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -538,7 +552,7 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 <p>The constructor initialises a new instance of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">test_suite_base</a></span> class with the specified name. It sets up the internal state required for managing test cases within the suite. If tracing is enabled, the function signature is output for diagnostic purposes. The default test suite does not require explicit registration, ensuring seamless integration within the µTest++ framework and supporting organised test management across all files and folders.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00108">108</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp/#l00075">75</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00110">110</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp/#l00075">75</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -589,7 +603,7 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 
 <p>Deleted copy constructor to prevent copying.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00113">113</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00115">115</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
 
 
 <p>Reference <a href="#a1aea53994faf3a7f7a610a6c47a8ef4a">test_suite_base</a>.</p>
@@ -622,7 +636,7 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 
 <p>Deleted move constructor to prevent moving.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00118">118</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00120">120</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
 
 
 <p>Reference <a href="#a1aea53994faf3a7f7a610a6c47a8ef4a">test_suite_base</a>.</p>
@@ -665,7 +679,7 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 <p>The destructor releases any resources associated with the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">test_suite_base</a></span> instance. It ensures that the test suite is properly cleaned up after execution, supporting robust and reliable test management across all files and folders within the µTest++ framework.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00137">137</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp/#l00092">92</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00139">139</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp/#l00092">92</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -710,7 +724,7 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 
 <p>Deleted copy assignment operator to prevent copying.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00124">124</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00126">126</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
 
 
 <p>Reference <a href="#a1aea53994faf3a7f7a610a6c47a8ef4a">test_suite_base</a>.</p>
@@ -743,7 +757,7 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 
 <p>Deleted move assignment operator to prevent moving.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00131">131</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00133">133</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
 
 
 <p>References <a href="#a1aea53994faf3a7f7a610a6c47a8ef4a">test_suite_base</a> and <a href="#a3625fee07d796bf5c3d6b4c69a94182c">name</a>.</p>
@@ -799,30 +813,32 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 <p>This method marks the beginning of a test case within the suite. If the start of the suite was deferred, it ensures the suite is properly begun before proceeding. The method sets the current test case name, increments the total number of test cases, resets the current test case statistics, and notifies the test reporter to begin the test case. This approach guarantees that each test case is clearly identified, accurately tracked, and properly reported across all test cases and folders.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00158">158</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp/#l00159">159</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00160">160</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp/#l00177">177</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a6bd8aa956f30c344c9ef79cf21c69cdc">159</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a6bd8aa956f30c344c9ef79cf21c69cdc">test_suite_base::begin_test_case</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* <a href="#a3625fee07d796bf5c3d6b4c69a94182c">name</a>)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">160</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">161</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (<a href="#ac442c68973cd937aeaef7aa7fbc27d30">process_deferred_begin</a>)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">162</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">163</span><span class="doxyLineContent"><span class="doxyHighlight">        <a href="#adfc3afd1432b2d093eef73a18ca9a242">begin_test_suite</a> ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">164</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">165</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">166</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#ae369ec539219642f84aeb93b78269df0">test_case_name_</a> = <a href="#a3625fee07d796bf5c3d6b4c69a94182c">name</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">167</span><span class="doxyLineContent"><span class="doxyHighlight">    ++<a href="#a1e9205117a2373caf7346064e86afa03">test_cases_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">168</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">169</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#ac534b9501e09bf4f1f6ef1d118a5bcbe">current_test_case</a> = {};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">170</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">171</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#aec46bdfdb22163bedab8e6b542191834">reporter</a>.begin_test_case (<a href="#ae369ec539219642f84aeb93b78269df0">test_case_name_</a>);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">172</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a6bd8aa956f30c344c9ef79cf21c69cdc">177</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a6bd8aa956f30c344c9ef79cf21c69cdc">test_suite_base::begin_test_case</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* <a href="#a3625fee07d796bf5c3d6b4c69a94182c">name</a>)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">178</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">179</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (<a href="#ac442c68973cd937aeaef7aa7fbc27d30">process_deferred_begin</a>)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">180</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">181</span><span class="doxyLineContent"><span class="doxyHighlight">        <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a22bf4ef08cb70064bbc37770a0ad5ac4">reporter</a>-&gt;begin_test (<a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a469c0f5fefa0b4cea12a7d267dded831">runner</a>.test_suites_count ());</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">182</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">183</span><span class="doxyLineContent"><span class="doxyHighlight">        <a href="#adfc3afd1432b2d093eef73a18ca9a242">begin_test_suite</a> ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">184</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">185</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">186</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#ae369ec539219642f84aeb93b78269df0">test_case_name_</a> = <a href="#a3625fee07d796bf5c3d6b4c69a94182c">name</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">187</span><span class="doxyLineContent"><span class="doxyHighlight">    ++<a href="#a4c45eea47cdb765047c0d34eed67ab8f">test_cases_count_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">188</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">189</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#ac534b9501e09bf4f1f6ef1d118a5bcbe">current_test_case</a> = {};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">190</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">191</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a22bf4ef08cb70064bbc37770a0ad5ac4">reporter</a>-&gt;begin_test_case (<a href="#ae369ec539219642f84aeb93b78269df0">test_case_name_</a>);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">192</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>References <a href="#adfc3afd1432b2d093eef73a18ca9a242">begin_test_suite</a>, <a href="#ac534b9501e09bf4f1f6ef1d118a5bcbe">current_test_case</a>, <a href="#a3625fee07d796bf5c3d6b4c69a94182c">name</a>, <a href="#ac442c68973cd937aeaef7aa7fbc27d30">process_deferred_begin</a>, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#aec46bdfdb22163bedab8e6b542191834">micro_os_plus::micro_test_plus::reporter</a>, <a href="#ae369ec539219642f84aeb93b78269df0">test_case_name_</a> and <a href="#a1e9205117a2373caf7346064e86afa03">test_cases_</a>.</p>
+<p>References <a href="#adfc3afd1432b2d093eef73a18ca9a242">begin_test_suite</a>, <a href="#ac534b9501e09bf4f1f6ef1d118a5bcbe">current_test_case</a>, <a href="#a3625fee07d796bf5c3d6b4c69a94182c">name</a>, <a href="#ac442c68973cd937aeaef7aa7fbc27d30">process_deferred_begin</a>, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a22bf4ef08cb70064bbc37770a0ad5ac4">micro_os_plus::micro_test_plus::reporter</a>, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a469c0f5fefa0b4cea12a7d267dded831">micro_os_plus::micro_test_plus::runner</a>, <a href="#ae369ec539219642f84aeb93b78269df0">test_case_name_</a> and <a href="#a4c45eea47cdb765047c0d34eed67ab8f">test_cases_count_</a>.</p>
 
 </div>
 </div>
@@ -863,25 +879,33 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 <p>This method marks the beginning of a test suite's execution. It resets the deferred begin flag and notifies the test reporter to start the suite, passing the suite's name. This ensures that test suite output is clearly delineated and properly initialised, supporting organised and readable reporting across all test cases and folders.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00253">253</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp/#l00122">122</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00255">255</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp/#l00122">122</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
 
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#adfc3afd1432b2d093eef73a18ca9a242">122</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#adfc3afd1432b2d093eef73a18ca9a242">test_suite_base::begin_test_suite</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">123</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">124</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#ac442c68973cd937aeaef7aa7fbc27d30">process_deferred_begin</a> = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">125</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">126</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#aec46bdfdb22163bedab8e6b542191834">reporter</a>.begin_test_suite (<a href="#a76f1c1c39f8b2c8cc70688a47bf6eafd">name_</a>);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">127</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">124</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#if defined(_WIN32) || defined(CLOCK_MONOTONIC)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">125</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#if defined(_WIN32)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">126</span><span class="doxyLineContent"><span class="doxyHighlight">    timespec_get (&amp;begin_time, TIME_UTC);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">127</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#else</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">128</span><span class="doxyLineContent"><span class="doxyHighlight">    clock_gettime (CLOCK_MONOTONIC, &amp;begin_time);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">129</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">130</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">131</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">132</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#ac442c68973cd937aeaef7aa7fbc27d30">process_deferred_begin</a> = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">133</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">134</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a22bf4ef08cb70064bbc37770a0ad5ac4">reporter</a>-&gt;begin_test_suite (<a href="#a76f1c1c39f8b2c8cc70688a47bf6eafd">name_</a>);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">135</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>References <a href="#a76f1c1c39f8b2c8cc70688a47bf6eafd">name_</a>, <a href="#ac442c68973cd937aeaef7aa7fbc27d30">process_deferred_begin</a> and <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#aec46bdfdb22163bedab8e6b542191834">micro_os_plus::micro_test_plus::reporter</a>.</p>
+<p>References <a href="#a76f1c1c39f8b2c8cc70688a47bf6eafd">name_</a>, <a href="#ac442c68973cd937aeaef7aa7fbc27d30">process_deferred_begin</a> and <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a22bf4ef08cb70064bbc37770a0ad5ac4">micro_os_plus::micro_test_plus::reporter</a>.</p>
 
 
-<p>Referenced by <a href="#a6bd8aa956f30c344c9ef79cf21c69cdc">begin_test_case</a> and <a href="#aa53f99054051136b3484a1664b5ee59f">end_test_suite</a>.</p>
+<p>Referenced by <a href="#a6bd8aa956f30c344c9ef79cf21c69cdc">begin_test_case</a>, <a href="#aa53f99054051136b3484a1664b5ee59f">end_test_suite</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a86233d8241e398f9491d859b4097c851">micro_os_plus::micro_test_plus::test_runner::exit_code</a>.</p>
 
 </div>
 </div>
@@ -922,20 +946,20 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 <p>This method marks the end of a test case within the suite. It notifies the test reporter to conclude the test case, passing the current test case name. This ensures that the results of the test case are accurately finalised and clearly reported, supporting organised and reliable test management across all test cases and folders.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00168">168</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp/#l00183">183</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00170">170</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp/#l00203">203</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ab2e1a6eadc56c54b45f9d21e450b0cbc">183</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ab2e1a6eadc56c54b45f9d21e450b0cbc">test_suite_base::end_test_case</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">184</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">185</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#aec46bdfdb22163bedab8e6b542191834">reporter</a>.end_test_case (<a href="#ae369ec539219642f84aeb93b78269df0">test_case_name_</a>);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">186</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ab2e1a6eadc56c54b45f9d21e450b0cbc">203</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ab2e1a6eadc56c54b45f9d21e450b0cbc">test_suite_base::end_test_case</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">204</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">205</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a22bf4ef08cb70064bbc37770a0ad5ac4">reporter</a>-&gt;end_test_case (<a href="#ae369ec539219642f84aeb93b78269df0">test_case_name_</a>);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">206</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>References <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#aec46bdfdb22163bedab8e6b542191834">micro_os_plus::micro_test_plus::reporter</a> and <a href="#ae369ec539219642f84aeb93b78269df0">test_case_name_</a>.</p>
+<p>References <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a22bf4ef08cb70064bbc37770a0ad5ac4">micro_os_plus::micro_test_plus::reporter</a> and <a href="#ae369ec539219642f84aeb93b78269df0">test_case_name_</a>.</p>
 
 </div>
 </div>
@@ -976,29 +1000,42 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 <p>This method marks the end of a test suite's execution. If the suite's start was deferred, it ensures the suite is properly begun before finalising. The method then notifies the test reporter to conclude the suite, passing a reference to the suite instance. This guarantees that all results are accurately summarised and reported, supporting clear and organised test management across all test cases and folders.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00264">264</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp/#l00139">139</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00266">266</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp/#l00147">147</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aa53f99054051136b3484a1664b5ee59f">139</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#aa53f99054051136b3484a1664b5ee59f">test_suite_base::end_test_suite</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">140</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">141</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (<a href="#ac442c68973cd937aeaef7aa7fbc27d30">process_deferred_begin</a>)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">142</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">143</span><span class="doxyLineContent"><span class="doxyHighlight">        <a href="#adfc3afd1432b2d093eef73a18ca9a242">begin_test_suite</a> ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">144</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">145</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#aec46bdfdb22163bedab8e6b542191834">reporter</a>.end_test_suite (*</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">146</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aa53f99054051136b3484a1664b5ee59f">147</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#aa53f99054051136b3484a1664b5ee59f">test_suite_base::end_test_suite</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">148</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">149</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (<a href="#ac442c68973cd937aeaef7aa7fbc27d30">process_deferred_begin</a>)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">150</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">151</span><span class="doxyLineContent"><span class="doxyHighlight">        <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a22bf4ef08cb70064bbc37770a0ad5ac4">reporter</a>-&gt;begin_test (<a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a469c0f5fefa0b4cea12a7d267dded831">runner</a>.test_suites_count ());</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">152</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">153</span><span class="doxyLineContent"><span class="doxyHighlight">        <a href="#adfc3afd1432b2d093eef73a18ca9a242">begin_test_suite</a> ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">154</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">155</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">156</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#if defined(_WIN32) || defined(CLOCK_MONOTONIC)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">157</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#if defined(_WIN32)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">158</span><span class="doxyLineContent"><span class="doxyHighlight">    timespec_get (&amp;end_time, TIME_UTC);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">159</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#else</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">160</span><span class="doxyLineContent"><span class="doxyHighlight">    clock_gettime (CLOCK_MONOTONIC, &amp;end_time);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">161</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">162</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">163</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a22bf4ef08cb70064bbc37770a0ad5ac4">reporter</a>-&gt;end_test_suite (*</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">164</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>References <a href="#adfc3afd1432b2d093eef73a18ca9a242">begin_test_suite</a>, <a href="#ac442c68973cd937aeaef7aa7fbc27d30">process_deferred_begin</a> and <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#aec46bdfdb22163bedab8e6b542191834">micro_os_plus::micro_test_plus::reporter</a>.</p>
+<p>References <a href="#adfc3afd1432b2d093eef73a18ca9a242">begin_test_suite</a>, <a href="#ac442c68973cd937aeaef7aa7fbc27d30">process_deferred_begin</a>, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a22bf4ef08cb70064bbc37770a0ad5ac4">micro_os_plus::micro_test_plus::reporter</a> and <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a469c0f5fefa0b4cea12a7d267dded831">micro_os_plus::micro_test_plus::runner</a>.</p>
+
+
+<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a86233d8241e398f9491d859b4097c851">micro_os_plus::micro_test_plus::test_runner::exit_code</a>.</p>
 
 </div>
 </div>
 
-### failed\_checks() {#a4cd96949ef52b98b6c5e08bbd7900979}
+### failed\_checks() {#ab820e44136159d4ff90b20ae39d83dbc}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1007,7 +1044,7 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">int micro_os_plus::micro_test_plus::test_suite_base::failed_checks (void)</td>
+<td class="doxyMemberName">size_t micro_os_plus::micro_test_plus::test_suite_base::failed_checks (void)</td>
 </tr>
 </table>
 </td>
@@ -1038,20 +1075,20 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00226">226</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00228">228</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a4cd96949ef52b98b6c5e08bbd7900979">226</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a4cd96949ef52b98b6c5e08bbd7900979">failed_checks</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">227</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">228</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a01c523aaf94e26eb4cd6727c5d74ab02">failed_checks_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">229</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ab820e44136159d4ff90b20ae39d83dbc">228</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#ab820e44136159d4ff90b20ae39d83dbc">failed_checks</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">229</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">230</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#aeb7133acef29cc25c5505b6c8996fa6f">failed_checks_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">231</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="#a01c523aaf94e26eb4cd6727c5d74ab02">failed_checks_</a>.</p>
+<p>Reference <a href="#aeb7133acef29cc25c5505b6c8996fa6f">failed_checks_</a>.</p>
 
 </div>
 </div>
@@ -1092,21 +1129,21 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 <p>This method increments the count of failed checks for the test suite and the current test case. It ensures that each failing assertion is accurately recorded, supporting precise tracking and reporting of test outcomes across all test cases and folders.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00203">203</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp/#l00210">210</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00205">205</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp/#l00230">230</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a20051842d981b530746b4fb4dee00d01">210</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a20051842d981b530746b4fb4dee00d01">test_suite_base::increment_failed</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">211</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">212</span><span class="doxyLineContent"><span class="doxyHighlight">    ++<a href="#a01c523aaf94e26eb4cd6727c5d74ab02">failed_checks_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">213</span><span class="doxyLineContent"><span class="doxyHighlight">    ++<a href="#ac534b9501e09bf4f1f6ef1d118a5bcbe">current_test_case</a>.failed_checks;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">214</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a20051842d981b530746b4fb4dee00d01">230</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a20051842d981b530746b4fb4dee00d01">test_suite_base::increment_failed</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">231</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">232</span><span class="doxyLineContent"><span class="doxyHighlight">    ++<a href="#aeb7133acef29cc25c5505b6c8996fa6f">failed_checks_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">233</span><span class="doxyLineContent"><span class="doxyHighlight">    ++<a href="#ac534b9501e09bf4f1f6ef1d118a5bcbe">current_test_case</a>.failed_checks;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">234</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>References <a href="#ac534b9501e09bf4f1f6ef1d118a5bcbe">current_test_case</a> and <a href="#a01c523aaf94e26eb4cd6727c5d74ab02">failed_checks_</a>.</p>
+<p>References <a href="#ac534b9501e09bf4f1f6ef1d118a5bcbe">current_test_case</a> and <a href="#aeb7133acef29cc25c5505b6c8996fa6f">failed_checks_</a>.</p>
 
 </div>
 </div>
@@ -1147,21 +1184,21 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 <p>This method increments the count of successful checks for the test suite and the current test case. It ensures that each passing assertion is accurately recorded, supporting precise tracking and reporting of test outcomes across all test cases and folders.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00192">192</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp/#l00196">196</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00194">194</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp/#l00216">216</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a81006378d0bebeadcd59266f57b4ef4b">196</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a81006378d0bebeadcd59266f57b4ef4b">test_suite_base::increment_successful</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">197</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">198</span><span class="doxyLineContent"><span class="doxyHighlight">    ++<a href="#ad2736cdadc2ab917099cd0ad82d3fc18">successful_checks_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">199</span><span class="doxyLineContent"><span class="doxyHighlight">    ++<a href="#ac534b9501e09bf4f1f6ef1d118a5bcbe">current_test_case</a>.successful_checks;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">200</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a81006378d0bebeadcd59266f57b4ef4b">216</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a81006378d0bebeadcd59266f57b4ef4b">test_suite_base::increment_successful</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">217</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">218</span><span class="doxyLineContent"><span class="doxyHighlight">    ++<a href="#ac297672e4bcbbca90f2bf033815320a1">successful_checks_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">219</span><span class="doxyLineContent"><span class="doxyHighlight">    ++<a href="#ac534b9501e09bf4f1f6ef1d118a5bcbe">current_test_case</a>.successful_checks;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">220</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>References <a href="#ac534b9501e09bf4f1f6ef1d118a5bcbe">current_test_case</a> and <a href="#ad2736cdadc2ab917099cd0ad82d3fc18">successful_checks_</a>.</p>
+<p>References <a href="#ac534b9501e09bf4f1f6ef1d118a5bcbe">current_test_case</a> and <a href="#ac297672e4bcbbca90f2bf033815320a1">successful_checks_</a>.</p>
 
 </div>
 </div>
@@ -1206,15 +1243,15 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00178">178</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00180">180</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a3625fee07d796bf5c3d6b4c69a94182c">178</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a3625fee07d796bf5c3d6b4c69a94182c">name</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">179</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">180</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a76f1c1c39f8b2c8cc70688a47bf6eafd">name_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">181</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a3625fee07d796bf5c3d6b4c69a94182c">180</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a3625fee07d796bf5c3d6b4c69a94182c">name</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">181</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">182</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a76f1c1c39f8b2c8cc70688a47bf6eafd">name_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">183</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -1222,7 +1259,7 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 <p>Reference <a href="#a76f1c1c39f8b2c8cc70688a47bf6eafd">name_</a>.</p>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a824b38d21a3f4d0adb99827455f159cf">micro_os_plus::micro_test_plus::test_suite::test_suite</a>, <a href="#a1aea53994faf3a7f7a610a6c47a8ef4a">test_suite_base</a>, <a href="#a6bd8aa956f30c344c9ef79cf21c69cdc">begin_test_case</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ad01d404c3fe5a44cf7f10bfcd599e0f3">micro_os_plus::micro_test_plus::test_reporter::end_test_suite</a> and <a href="#ab80bbf61a4ff0a02f7a50ec2d305fee0">operator=</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite/#a824b38d21a3f4d0adb99827455f159cf">micro_os_plus::micro_test_plus::test_suite::test_suite</a>, <a href="#a1aea53994faf3a7f7a610a6c47a8ef4a">test_suite_base</a>, <a href="#a6bd8aa956f30c344c9ef79cf21c69cdc">begin_test_case</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic/#a595d5ec976bdd36909213fc31ab526d5">micro_os_plus::micro_test_plus::test_reporter_basic::end_test_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap/#a66416caaaab804b21d8a78b77622c85a">micro_os_plus::micro_test_plus::test_reporter_tap::end_test_suite</a> and <a href="#ab80bbf61a4ff0a02f7a50ec2d305fee0">operator=</a>.</p>
 
 </div>
 </div>
@@ -1268,7 +1305,7 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 <p>This method executes the test suite by invoking its associated callable object. If tracing is enabled, the function signature is output for diagnostic purposes. The method ensures that all test cases grouped within the suite are executed in an organised manner, supporting comprehensive and structured testing across all files and folders within the µTest++ framework.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00148">148</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp/#l00106">106</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00150">150</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp/#l00106">106</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-suite-cpp">test-suite.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1285,7 +1322,7 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 </div>
 </div>
 
-### successful\_checks() {#acf56ac77830e630b5485248409c3b3f1}
+### successful\_checks() {#ab106833e032cf335d5d5bb70413ff0e2}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1294,7 +1331,7 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">int micro_os_plus::micro_test_plus::test_suite_base::successful_checks (void)</td>
+<td class="doxyMemberName">size_t micro_os_plus::micro_test_plus::test_suite_base::successful_checks (void)</td>
 </tr>
 </table>
 </td>
@@ -1325,25 +1362,25 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00213">213</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00215">215</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#acf56ac77830e630b5485248409c3b3f1">213</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#acf56ac77830e630b5485248409c3b3f1">successful_checks</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">214</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">215</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#ad2736cdadc2ab917099cd0ad82d3fc18">successful_checks_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">216</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ab106833e032cf335d5d5bb70413ff0e2">215</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#ab106833e032cf335d5d5bb70413ff0e2">successful_checks</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">216</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">217</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#ac297672e4bcbbca90f2bf033815320a1">successful_checks_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">218</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="#ad2736cdadc2ab917099cd0ad82d3fc18">successful_checks_</a>.</p>
+<p>Reference <a href="#ac297672e4bcbbca90f2bf033815320a1">successful_checks_</a>.</p>
 
 </div>
 </div>
 
-### test\_cases() {#ae755b186f32e229e8d0bd5e02027b515}
+### test\_cases\_count() {#a1854ec145a5bb5c444f1d363487a5872}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1352,7 +1389,7 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">int micro_os_plus::micro_test_plus::test_suite_base::test_cases (void)</td>
+<td class="doxyMemberName">size_t micro_os_plus::micro_test_plus::test_suite_base::test_cases_count (void)</td>
 </tr>
 </table>
 </td>
@@ -1383,23 +1420,23 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00239">239</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00241">241</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ae755b186f32e229e8d0bd5e02027b515">239</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#ae755b186f32e229e8d0bd5e02027b515">test_cases</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">240</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">241</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a1e9205117a2373caf7346064e86afa03">test_cases_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">242</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a1854ec145a5bb5c444f1d363487a5872">241</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a1854ec145a5bb5c444f1d363487a5872">test_cases_count</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">242</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">243</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a4c45eea47cdb765047c0d34eed67ab8f">test_cases_count_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">244</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="#a1e9205117a2373caf7346064e86afa03">test_cases_</a>.</p>
+<p>Reference <a href="#a4c45eea47cdb765047c0d34eed67ab8f">test_cases_count_</a>.</p>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ad01d404c3fe5a44cf7f10bfcd599e0f3">micro_os_plus::micro_test_plus::test_reporter::end_test_suite</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic/#a595d5ec976bdd36909213fc31ab526d5">micro_os_plus::micro_test_plus::test_reporter_basic::end_test_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap/#a66416caaaab804b21d8a78b77622c85a">micro_os_plus::micro_test_plus::test_reporter_tap::end_test_suite</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a86233d8241e398f9491d859b4097c851">micro_os_plus::micro_test_plus::test_runner::exit_code</a>.</p>
 
 </div>
 </div>
@@ -1444,21 +1481,21 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00288">288</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00305">305</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a20de3062a437e86955dd2917d7976cb3">288</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a20de3062a437e86955dd2917d7976cb3">unused</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">289</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">290</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> (<a href="#a01c523aaf94e26eb4cd6727c5d74ab02">failed_checks_</a> == 0 &amp;&amp; <a href="#ad2736cdadc2ab917099cd0ad82d3fc18">successful_checks_</a> == 0</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">291</span><span class="doxyLineContent"><span class="doxyHighlight">              &amp;&amp; <a href="#a1e9205117a2373caf7346064e86afa03">test_cases_</a> == 0);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">292</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a20de3062a437e86955dd2917d7976cb3">305</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a20de3062a437e86955dd2917d7976cb3">unused</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">306</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">307</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> (<a href="#aeb7133acef29cc25c5505b6c8996fa6f">failed_checks_</a> == 0 &amp;&amp; <a href="#ac297672e4bcbbca90f2bf033815320a1">successful_checks_</a> == 0</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">308</span><span class="doxyLineContent"><span class="doxyHighlight">              &amp;&amp; <a href="#a4c45eea47cdb765047c0d34eed67ab8f">test_cases_count_</a> == 0);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">309</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>References <a href="#a01c523aaf94e26eb4cd6727c5d74ab02">failed_checks_</a>, <a href="#ad2736cdadc2ab917099cd0ad82d3fc18">successful_checks_</a> and <a href="#a1e9205117a2373caf7346064e86afa03">test_cases_</a>.</p>
+<p>References <a href="#aeb7133acef29cc25c5505b6c8996fa6f">failed_checks_</a>, <a href="#ac297672e4bcbbca90f2bf033815320a1">successful_checks_</a> and <a href="#a4c45eea47cdb765047c0d34eed67ab8f">test_cases_count_</a>.</p>
 
 </div>
 </div>
@@ -1503,21 +1540,24 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00274">274</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00291">291</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ae60536040204e7481b50dfde7b0a6600">274</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#ae60536040204e7481b50dfde7b0a6600">was_successful</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">275</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">276</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// Also fail if none passed.</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">277</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> (<a href="#a01c523aaf94e26eb4cd6727c5d74ab02">failed_checks_</a> == 0 &amp;&amp; <a href="#ad2736cdadc2ab917099cd0ad82d3fc18">successful_checks_</a> != 0);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">278</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ae60536040204e7481b50dfde7b0a6600">291</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#ae60536040204e7481b50dfde7b0a6600">was_successful</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">292</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">293</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// Also fail if none passed.</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">294</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> (<a href="#aeb7133acef29cc25c5505b6c8996fa6f">failed_checks_</a> == 0 &amp;&amp; <a href="#ac297672e4bcbbca90f2bf033815320a1">successful_checks_</a> != 0);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">295</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>References <a href="#a01c523aaf94e26eb4cd6727c5d74ab02">failed_checks_</a> and <a href="#ad2736cdadc2ab917099cd0ad82d3fc18">successful_checks_</a>.</p>
+<p>References <a href="#aeb7133acef29cc25c5505b6c8996fa6f">failed_checks_</a> and <a href="#ac297672e4bcbbca90f2bf033815320a1">successful_checks_</a>.</p>
+
+
+<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a86233d8241e398f9491d859b4097c851">micro_os_plus::micro_test_plus::test_runner::exit_code</a>.</p>
 
 </div>
 </div>
@@ -1552,7 +1592,7 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 <p>Tracks the number of successful and failed checks for the currently running test case.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00344">344</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00380">380</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
 
 
 <p>Referenced by <a href="#a6bd8aa956f30c344c9ef79cf21c69cdc">begin_test_case</a>, <a href="#a20051842d981b530746b4fb4dee00d01">increment_failed</a> and <a href="#a81006378d0bebeadcd59266f57b4ef4b">increment_successful</a>.</p>
@@ -1560,7 +1600,7 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 </div>
 </div>
 
-### failed\_checks {#a40cadb0a79f55c796b7e7aca4a847cfd}
+### failed\_checks {#ad6a396115ec39c837b6836c27320cc7c}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1569,7 +1609,7 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">int micro_os_plus::micro_test_plus::test_suite_base::failed_checks</td>
+<td class="doxyMemberName">size_t micro_os_plus::micro_test_plus::test_suite_base::failed_checks = 0</td>
 </tr>
 </table>
 </td>
@@ -1580,17 +1620,52 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 
 <p>Number of failed checks in the current test case.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00343">343</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00377">377</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a40cadb0a79f55c796b7e7aca4a847cfd">343</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="#a40cadb0a79f55c796b7e7aca4a847cfd">failed_checks</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ad6a396115ec39c837b6836c27320cc7c">377</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#ad6a396115ec39c837b6836c27320cc7c">failed_checks</a> = 0;</span></span></div>
 
 </div>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ad01d404c3fe5a44cf7f10bfcd599e0f3">micro_os_plus::micro_test_plus::test_reporter::end_test_suite</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic/#a595d5ec976bdd36909213fc31ab526d5">micro_os_plus::micro_test_plus::test_reporter_basic::end_test_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap/#a66416caaaab804b21d8a78b77622c85a">micro_os_plus::micro_test_plus::test_reporter_tap::end_test_suite</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a86233d8241e398f9491d859b4097c851">micro_os_plus::micro_test_plus::test_runner::exit_code</a>.</p>
+
+</div>
+</div>
+
+### index {#a10423c3f12e645476814a9f0c84d473e}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">size_t micro_os_plus::micro_test_plus::test_suite_base::index = 1</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>The test suite index, counting from 1.</p>
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00341">341</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a10423c3f12e645476814a9f0c84d473e">341</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a10423c3f12e645476814a9f0c84d473e">index</a> = 1;</span></span></div>
+
+</div>
+
+
+<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap/#a66416caaaab804b21d8a78b77622c85a">micro_os_plus::micro_test_plus::test_reporter_tap::end_test_suite</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#aa71d653414cf5872a441d483fdf829c1">micro_os_plus::micro_test_plus::test_runner::register_test_suite</a>.</p>
 
 </div>
 </div>
@@ -1615,12 +1690,12 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 
 <p>Indicates whether to process deferred begin for test cases.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00324">324</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00358">358</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ac442c68973cd937aeaef7aa7fbc27d30">324</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#ac442c68973cd937aeaef7aa7fbc27d30">process_deferred_begin</a> = </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ac442c68973cd937aeaef7aa7fbc27d30">358</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#ac442c68973cd937aeaef7aa7fbc27d30">process_deferred_begin</a> = </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">;</span></span></div>
 
 </div>
 
@@ -1630,7 +1705,7 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 </div>
 </div>
 
-### successful\_checks {#a4851a70fd4a0c71b787e445b9766bacc}
+### successful\_checks {#ab1d2576df9b4850c8916dfc94c6465a9}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1639,7 +1714,7 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">int micro_os_plus::micro_test_plus::test_suite_base::successful_checks</td>
+<td class="doxyMemberName">size_t micro_os_plus::micro_test_plus::test_suite_base::successful_checks = 0</td>
 </tr>
 </table>
 </td>
@@ -1650,17 +1725,17 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 
 <p>Number of successful checks in the current test case.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00338">338</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00372">372</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a4851a70fd4a0c71b787e445b9766bacc">338</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="#a4851a70fd4a0c71b787e445b9766bacc">successful_checks</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ab1d2576df9b4850c8916dfc94c6465a9">372</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#ab1d2576df9b4850c8916dfc94c6465a9">successful_checks</a> = 0;</span></span></div>
 
 </div>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter/#ad01d404c3fe5a44cf7f10bfcd599e0f3">micro_os_plus::micro_test_plus::test_reporter::end_test_suite</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic/#a595d5ec976bdd36909213fc31ab526d5">micro_os_plus::micro_test_plus::test_reporter_basic::end_test_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap/#a66416caaaab804b21d8a78b77622c85a">micro_os_plus::micro_test_plus::test_reporter_tap::end_test_suite</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner/#a86233d8241e398f9491d859b4097c851">micro_os_plus::micro_test_plus::test_runner::exit_code</a>.</p>
 
 </div>
 </div>
@@ -1671,7 +1746,7 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 
 ## Protected Member Attributes
 
-### failed\_checks\_ {#a01c523aaf94e26eb4cd6727c5d74ab02}
+### failed\_checks\_ {#aeb7133acef29cc25c5505b6c8996fa6f}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1680,7 +1755,7 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">int micro_os_plus::micro_test_plus::test_suite_base::failed_checks_ = 0</td>
+<td class="doxyMemberName">size_t micro_os_plus::micro_test_plus::test_suite_base::failed_checks_ = 0</td>
 </tr>
 </table>
 </td>
@@ -1696,17 +1771,17 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 
 <p>Count of test conditions that failed.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00313">313</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00330">330</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a01c523aaf94e26eb4cd6727c5d74ab02">313</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="#a01c523aaf94e26eb4cd6727c5d74ab02">failed_checks_</a> = 0;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aeb7133acef29cc25c5505b6c8996fa6f">330</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#aeb7133acef29cc25c5505b6c8996fa6f">failed_checks_</a> = 0;</span></span></div>
 
 </div>
 
 
-<p>Referenced by <a href="#a4cd96949ef52b98b6c5e08bbd7900979">failed_checks</a>, <a href="#a20051842d981b530746b4fb4dee00d01">increment_failed</a>, <a href="#a20de3062a437e86955dd2917d7976cb3">unused</a> and <a href="#ae60536040204e7481b50dfde7b0a6600">was_successful</a>.</p>
+<p>Referenced by <a href="#ab820e44136159d4ff90b20ae39d83dbc">failed_checks</a>, <a href="#a20051842d981b530746b4fb4dee00d01">increment_failed</a>, <a href="#a20de3062a437e86955dd2917d7976cb3">unused</a> and <a href="#ae60536040204e7481b50dfde7b0a6600">was_successful</a>.</p>
 
 </div>
 </div>
@@ -1736,12 +1811,12 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 
 <p>The test suite name.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00298">298</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00315">315</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a76f1c1c39f8b2c8cc70688a47bf6eafd">298</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* <a href="#a76f1c1c39f8b2c8cc70688a47bf6eafd">name_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a76f1c1c39f8b2c8cc70688a47bf6eafd">315</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* <a href="#a76f1c1c39f8b2c8cc70688a47bf6eafd">name_</a>;</span></span></div>
 
 </div>
 
@@ -1751,7 +1826,7 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 </div>
 </div>
 
-### successful\_checks\_ {#ad2736cdadc2ab917099cd0ad82d3fc18}
+### successful\_checks\_ {#ac297672e4bcbbca90f2bf033815320a1}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1760,7 +1835,7 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">int micro_os_plus::micro_test_plus::test_suite_base::successful_checks_ = 0</td>
+<td class="doxyMemberName">size_t micro_os_plus::micro_test_plus::test_suite_base::successful_checks_ = 0</td>
 </tr>
 </table>
 </td>
@@ -1776,17 +1851,17 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 
 <p>Count of test conditions that passed.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00308">308</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00325">325</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ad2736cdadc2ab917099cd0ad82d3fc18">308</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="#ad2736cdadc2ab917099cd0ad82d3fc18">successful_checks_</a> = 0;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ac297672e4bcbbca90f2bf033815320a1">325</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#ac297672e4bcbbca90f2bf033815320a1">successful_checks_</a> = 0;</span></span></div>
 
 </div>
 
 
-<p>Referenced by <a href="#a81006378d0bebeadcd59266f57b4ef4b">increment_successful</a>, <a href="#acf56ac77830e630b5485248409c3b3f1">successful_checks</a>, <a href="#a20de3062a437e86955dd2917d7976cb3">unused</a> and <a href="#ae60536040204e7481b50dfde7b0a6600">was_successful</a>.</p>
+<p>Referenced by <a href="#a81006378d0bebeadcd59266f57b4ef4b">increment_successful</a>, <a href="#ab106833e032cf335d5d5bb70413ff0e2">successful_checks</a>, <a href="#a20de3062a437e86955dd2917d7976cb3">unused</a> and <a href="#ae60536040204e7481b50dfde7b0a6600">was_successful</a>.</p>
 
 </div>
 </div>
@@ -1816,12 +1891,12 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 
 <p>The current test case name.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00303">303</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00320">320</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ae369ec539219642f84aeb93b78269df0">303</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* <a href="#ae369ec539219642f84aeb93b78269df0">test_case_name_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ae369ec539219642f84aeb93b78269df0">320</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* <a href="#ae369ec539219642f84aeb93b78269df0">test_case_name_</a>;</span></span></div>
 
 </div>
 
@@ -1831,7 +1906,7 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 </div>
 </div>
 
-### test\_cases\_ {#a1e9205117a2373caf7346064e86afa03}
+### test\_cases\_count\_ {#a4c45eea47cdb765047c0d34eed67ab8f}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1840,7 +1915,7 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">int micro_os_plus::micro_test_plus::test_suite_base::test_cases_ = 0</td>
+<td class="doxyMemberName">size_t micro_os_plus::micro_test_plus::test_suite_base::test_cases_count_ = 0</td>
 </tr>
 </table>
 </td>
@@ -1856,17 +1931,17 @@ class micro_os_plus::micro_test_plus::test_suite_base { ... }
 
 <p>Count of test cases in the test suite.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00318">318</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h/#l00335">335</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-suite-h">test-suite.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a1e9205117a2373caf7346064e86afa03">318</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="#a1e9205117a2373caf7346064e86afa03">test_cases_</a> = 0;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a4c45eea47cdb765047c0d34eed67ab8f">335</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a4c45eea47cdb765047c0d34eed67ab8f">test_cases_count_</a> = 0;</span></span></div>
 
 </div>
 
 
-<p>Referenced by <a href="#a6bd8aa956f30c344c9ef79cf21c69cdc">begin_test_case</a>, <a href="#ae755b186f32e229e8d0bd5e02027b515">test_cases</a> and <a href="#a20de3062a437e86955dd2917d7976cb3">unused</a>.</p>
+<p>Referenced by <a href="#a6bd8aa956f30c344c9ef79cf21c69cdc">begin_test_case</a>, <a href="#a1854ec145a5bb5c444f1d363487a5872">test_cases_count</a> and <a href="#a20de3062a437e86955dd2917d7976cb3">unused</a>.</p>
 
 </div>
 </div>

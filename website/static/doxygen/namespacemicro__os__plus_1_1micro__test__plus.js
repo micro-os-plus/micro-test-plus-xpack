@@ -59,6 +59,8 @@ var namespacemicro__os__plus_1_1micro__test__plus =
     [ "_t", "structmicro__os__plus_1_1micro__test__plus_1_1__t.html", "structmicro__os__plus_1_1micro__test__plus_1_1__t" ],
     [ "colors", "structmicro__os__plus_1_1micro__test__plus_1_1colors.html", "structmicro__os__plus_1_1micro__test__plus_1_1colors" ],
     [ "test_reporter", "classmicro__os__plus_1_1micro__test__plus_1_1test__reporter.html", "classmicro__os__plus_1_1micro__test__plus_1_1test__reporter" ],
+    [ "test_reporter_basic", "classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic.html", "classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic" ],
+    [ "test_reporter_tap", "classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap.html", "classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap" ],
     [ "test_runner", "classmicro__os__plus_1_1micro__test__plus_1_1test__runner.html", "classmicro__os__plus_1_1micro__test__plus_1_1test__runner" ],
     [ "test_suite", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite" ],
     [ "test_suite_base", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base.html", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base" ],
@@ -141,7 +143,8 @@ var namespacemicro__os__plus_1_1micro__test__plus =
     [ "test_case", "group__micro-test-plus-test-case.html#ga423b46709cca6072efe28a6dbf85e413", null ],
     [ "throws", "group__micro-test-plus-exceptions.html#gaf8f7602f40119da514be2a0bfc4b70f5", null ],
     [ "throws", "group__micro-test-plus-exceptions.html#ga8bf54756e4122c6a0bd123b4621e60e2", null ],
+    [ "colors_red_green", "namespacemicro__os__plus_1_1micro__test__plus.html#a2c623cc1c15ec08e25c2451d9b51ad75", null ],
     [ "current_test_suite", "namespacemicro__os__plus_1_1micro__test__plus.html#a682fc3ce8c00ebe7c068d6299269655b", null ],
-    [ "reporter", "namespacemicro__os__plus_1_1micro__test__plus.html#aec46bdfdb22163bedab8e6b542191834", null ],
+    [ "reporter", "namespacemicro__os__plus_1_1micro__test__plus.html#a22bf4ef08cb70064bbc37770a0ad5ac4", null ],
     [ "runner", "namespacemicro__os__plus_1_1micro__test__plus.html#a469c0f5fefa0b4cea12a7d267dded831", null ]
 ];
