@@ -6,10 +6,74 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2026-03-23
+
+* v3.3.0 prepared
+
+## 2026-03-22
+
+* 8d33c3e website update for tap
+* 181b428 website/doxygen rewrites
+* 14bea0a cli.dox update to tap
+* 4a4f840 #9: fix empty line
+* ae54b12 cmake cosmetics
+* 3cb5a08 #10: fix not ok messages
+* 2fda6fc #10: fix rounding
+
+## 2026-03-21
+
+* 1e2c980 empty .npmignore in tests
+* 2242fd0 test-reporter-tap.cpp cosmetics
+* a3ecec4 try timespec_get only on win32
+* 7ba0701 try timespec_get
+* 9ead310 #if defined(CLOCK_MONOTONIC)
+* 4e9478c Revert "try -lwinpthread on windows"
+* 951742a try -lwinpthread on windows
+* 5bce849 #10: fix long long warning
+
+## 2026-03-20
+
+* f9c0293 Revert "#10: use defined(__linux__)"
+* 574ff65 #10: fix duplicate struct timespec
+* cbdc8ed #10: use defined(__linux__)
+* 15a191d #10: show total time
+* 3bae621 make runner default_test_suite public
+* e25dbf3 #10: add elapsed time to suites
+* 0139c5e test-reporter-*.cpp plurals
+
+## 2026-03-19
+
+* 9258c55 cli.dox update
+* 022cbed test-reporter: fix syntax
+* cc95083 website update
+* e4c6be1 #9: default tap
+* 84b34d3 native cmake with explicit --reporter
+* e35ad6a #9: functional test-reporter-tap
+* 7aa70ac test-runner: add totals
+* f6a2bc1 add begin/end_test
+* 7d6f684 test-suite.h: size_t analytics
+* 1e7a54c detail.h: reformat
+
+## 2026-03-18
+
+* 7bae711 add suite index
+* 6619d3b default basic
+* 5465c38 rename test_suites_
+* c60d2b5 rename test_cases_count
+* 459d10c #9: process --reporter=tap or basic
+* 2c8cc51 #9: add a test-reporter-tap as a duplicate of base
+* 122c76a #11: make the test_reporter_basic class final to avoid warnings
+* d84d2b8 #11: extract test_runner_basic in separate files
+* 75b8fb1 #11: move operator implementations back to the base class
+* 096d136 #11: make the test_reporter an abstract class
+* 8f20d22 #13: access the reporter via a pointer
+
 ## 2026-03-17
 
-* v3.2.3 published on npmjs.com
-* v3.2.3 prepared
+* 42e0810 website: blog post release 3.2.3 published
+* b84b446 3.2.3
+* aeda731 CHANGELOG: publish npm v3.2.3
+* 7d877be prepare v3.2.3
 * 7943290 package.json update
 * d40573b settings.json update
 * 6eaed82 re-generate website
