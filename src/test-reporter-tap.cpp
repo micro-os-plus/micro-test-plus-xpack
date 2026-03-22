@@ -436,7 +436,7 @@ namespace micro_os_plus::micro_test_plus
           {
             printf ("    1..%zu\n", suite.test_cases_count ());
           }
-        printf ("not ok %zu - check%s # { test suite FAILED, %zu %s passed, "
+        printf ("not ok %zu - %s # { test suite FAILED, %zu check%s passed, "
                 "%zu failed, in %zu test case%s",
                 suite.index, suite.name (), suite.successful_checks (),
                 suite.successful_checks () == 1 ? "" : "s",
