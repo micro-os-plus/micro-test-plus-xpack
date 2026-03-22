@@ -257,9 +257,8 @@ namespace micro_os_plus::micro_test_plus
         --delta_s;
       }
 
-    // Round to the nearest microsecond, then split into milliseconds and
-    // microseconds.
-    const long long total_us = delta_s * 1000000LL + delta_ns / 1000LL + 500;
+    // Split into milliseconds and microseconds.
+    const long long total_us = delta_s * 1000000LL + delta_ns / 1000LL;
     milliseconds = static_cast<long> (total_us / 1000LL);
     microseconds = static_cast<long> (total_us % 1000LL);
   }
