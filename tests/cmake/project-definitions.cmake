@@ -15,6 +15,7 @@
 # Project specific definitions.
 
 set (XPACK_ENABLE_MINIMAL_TEST true)
+set (XPACK_ENABLE_SUITE_TEST true)
 set (XPACK_ENABLE_SAMPLE_TEST true)
 set (XPACK_ENABLE_UNIT_TEST true)
 
@@ -24,6 +25,12 @@ set (xpack_dependencies_project_folders)
 if (XPACK_ENABLE_MINIMAL_TEST)
   list (APPEND xpack_dependencies_project_folders
         "${CMAKE_SOURCE_DIR}/sources/minimal-test"
+  )
+endif ()
+
+if (XPACK_ENABLE_SUITE_TEST)
+  list (APPEND xpack_dependencies_project_folders
+        "${CMAKE_SOURCE_DIR}/sources/suite-test"
   )
 endif ()
 

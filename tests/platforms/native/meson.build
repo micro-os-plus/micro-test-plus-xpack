@@ -75,6 +75,56 @@ endif
 
 # -----------------------------------------------------------------------------
 
+if xpack_enable_suite_test
+
+  # https://mesonbuild.com/Reference-manual_functions.html#test
+  test(
+    'suite-test',
+    suite_test,
+    args: [
+      'one',
+      'two'
+    ],
+    env: xpack_environment
+  )
+
+  test(
+    'suite-test --verbose',
+    suite_test,
+    args: [
+      'one',
+      'two',
+      '--verbose'
+    ],
+    env: xpack_environment
+  )
+
+  test(
+    'suite-test --quiet',
+    suite_test,
+    args: [
+      'one',
+      'two',
+      '--quiet'
+    ],
+    env: xpack_environment
+  )
+
+  test(
+    'suite-test --silent',
+    suite_test,
+    args: [
+      'one',
+      'two',
+      '--silent'
+    ],
+    env: xpack_environment
+  )
+
+endif
+
+# -----------------------------------------------------------------------------
+
 if xpack_enable_sample_test
 
   # https://mesonbuild.com/Reference-manual_functions.html#test

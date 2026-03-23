@@ -46,6 +46,31 @@ endif ()
 
 # -----------------------------------------------------------------------------
 
+if (XPACK_ENABLE_SUITE_TEST)
+  add_native_test_executable (suite-test)
+  target_link_native_test_libraries (suite-test test::suite)
+
+  message (VERBOSE "A> suite-test")
+
+  # basic reporter
+  add_test (NAME "suite-test --reporter=basic" COMMAND suite-test one two --reporter=basic)
+  add_test (NAME "suite-test --verbose --reporter=basic" COMMAND suite-test one two
+                                                  --verbose --reporter=basic
+  )
+  add_test (NAME "suite-test --quiet --reporter=basic" COMMAND suite-test one two --quiet --reporter=basic)
+  add_test (NAME "suite-test --silent --reporter=basic" COMMAND suite-test one two --silent --reporter=basic)
+
+  # tap reporter
+  add_test (NAME "suite-test --reporter=tap" COMMAND suite-test one two --reporter=tap)
+  add_test (NAME "suite-test --verbose --reporter=tap" COMMAND suite-test one two
+                                                  --verbose --reporter=tap
+  )
+  add_test (NAME "suite-test --quiet --reporter=tap" COMMAND suite-test one two --quiet --reporter=tap)
+  add_test (NAME "suite-test --silent --reporter=tap" COMMAND suite-test one two --silent --reporter=tap)
+endif ()
+
+# -----------------------------------------------------------------------------
+
 if (XPACK_ENABLE_SAMPLE_TEST)
   add_native_test_executable (sample-test)
   target_link_native_test_libraries (sample-test test::sample)

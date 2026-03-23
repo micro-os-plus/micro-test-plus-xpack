@@ -33,6 +33,15 @@ if xpack_enable_minimal_test
   }
 endif
 
+if xpack_enable_suite_test
+  tests += {
+    'name': 'suite-test',
+    'dependency': test_suite_dependency,
+    'compile_c_args': test_suite_dependency_compile_c_args,
+    'compile_cpp_args': test_suite_dependency_compile_cpp_args,
+  }
+endif
+
 if xpack_enable_sample_test
   tests += {
     'name': 'sample-test',
