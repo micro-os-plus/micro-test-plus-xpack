@@ -13,7 +13,7 @@
 
 # This file is intended to be consumed with:
 #
-# `add_subdirectory("tests/sample-test")`
+# `add_subdirectory("tests/sources/sample-test")`
 #
 # The result is an interface library that can be added to the linker with:
 #
@@ -21,7 +21,7 @@
 
 # -----------------------------------------------------------------------------
 
-message(VERBOSE "Processing 'tests/sample-test'...")
+message(VERBOSE "Processing 'tests/sources/sample-test'...")
 
 # -----------------------------------------------------------------------------
 # The test library definitions.

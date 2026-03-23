@@ -13,7 +13,7 @@
 
 # This file is intended to be consumed with:
 #
-# `subdir('tests/sample-test')`
+# `subdir('tests/sources/minimal-test')`
 #
 # The result is a library and a dependency that can be referred as:
 #
@@ -24,7 +24,7 @@
 
 # -----------------------------------------------------------------------------
 
-message('Processing tests/sample-test...')
+message('Processing tests/sources/minimal-test...')
 
 # -----------------------------------------------------------------------------
 
@@ -47,7 +47,7 @@ _local_sources += [
 ]
 
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
-test_sample_dependency = declare_dependency(
+test_minimal_dependency = declare_dependency(
   include_directories: include_directories(_local_include_directories),
   compile_args: _local_compile_args,
   sources: files(_local_sources),
@@ -56,8 +56,8 @@ test_sample_dependency = declare_dependency(
   link_with: _local_link_with,
 )
 # meson dependencies cannot differentiate c/cpp args; pass them separately.
-test_sample_dependency_compile_c_args = _local_compile_c_args
-test_sample_dependency_compile_cpp_args = _local_compile_cpp_args
+test_minimal_dependency_compile_c_args = _local_compile_c_args
+test_minimal_dependency_compile_cpp_args = _local_compile_cpp_args
 
 foreach name : _local_include_directories
   message('+ -I ' + name)
@@ -65,6 +65,6 @@ endforeach
 foreach name : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args
   message('+ ' + name)
 endforeach
-message('> test_sample_dependency')
+message('> test_minimal_dependency')
 
 # -----------------------------------------------------------------------------
