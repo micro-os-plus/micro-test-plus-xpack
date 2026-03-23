@@ -76,7 +76,6 @@
         <argsstring></argsstring>
         <name>test_suites</name>
         <qualifiedname>micro_os_plus::micro_test_plus::test_runner::test_suites</qualifiedname>
-        <initializer>= nullptr</initializer>
         <briefdescription>
 <para>Pointer to the array of registered test suites. </para>
         </briefdescription>

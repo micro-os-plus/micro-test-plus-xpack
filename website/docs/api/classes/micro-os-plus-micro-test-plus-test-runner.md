@@ -283,7 +283,7 @@ class micro_os_plus::micro_test_plus::test_runner { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">std::vector&lt; <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">test_suite_base</a> * &gt; *</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a5785170098c755bbea376839afd91744">test_suites</a> = nullptr</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a5785170098c755bbea376839afd91744">test_suites</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -1264,7 +1264,7 @@ class micro_os_plus::micro_test_plus::test_runner { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">std::vector&lt;test_suite_base*&gt;* micro_os_plus::micro_test_plus::test_runner::test_suites = nullptr</td>
+<td class="doxyMemberName">std::vector&lt;test_suite_base*&gt;* micro_os_plus::micro_test_plus::test_runner::test_suites</td>
 </tr>
 </table>
 </td>
@@ -1284,7 +1284,7 @@ class micro_os_plus::micro_test_plus::test_runner { ... }
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a5785170098c755bbea376839afd91744">212</a></span><span class="doxyLineContent"><span class="doxyHighlight">    std::vector&lt;test_suite_base*&gt;* <a href="#a5785170098c755bbea376839afd91744">test_suites</a> = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a5785170098c755bbea376839afd91744">212</a></span><span class="doxyLineContent"><span class="doxyHighlight">    std::vector&lt;test_suite_base*&gt;* <a href="#a5785170098c755bbea376839afd91744">test_suites</a>; </span><span class="doxyHighlightComment">// DO NOT INITIALISE!</span></span></div>
 
 </div>
 
