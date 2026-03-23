@@ -8,6 +8,7 @@ and close existing issues and pull requests.
 
 ## 2026-03-23
 
+* v3.3.1 published on npmjs.com
 * v3.3.1 prepared
 * f1be263 tests: add suite-test
 * df22b28 #16: fix static inits
