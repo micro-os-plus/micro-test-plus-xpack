@@ -17,7 +17,7 @@
 #
 # The result is a library and a dependency that can be referred as:
 #
-# `dependencies: [micro_os_plus_micro_test_plus_dependency],`
+# `dependencies: [test_unit_dependency],`
 
 # Note: the meson configuration is provided only as a proof of concept,
 # for production it might need some refinements.
