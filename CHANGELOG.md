@@ -8,11 +8,19 @@ and close existing issues and pull requests.
 
 ## 2026-03-23
 
-* v3.3.0 published on npmjs.com
-* v3.3.0 prepared
+* v3.3.1 prepared
+* f1be263 tests: add suite-test
+* df22b28 #16: fix static inits
+* 511f8cf re-generate website commons
+* c700756 tests meson update usage
+* 759051f move tests to sources
 
 ## 2026-03-22
 
+* fd91598 website: blog post release 3.3.0 published
+* a116185 3.3.0
+* c412e55 CHANGELOG: publish npm v3.3.0
+* 394c679 prepare v3.3.0
 * 8d33c3e website update for tap
 * 181b428 website/doxygen rewrites
 * 14bea0a cli.dox update to tap
