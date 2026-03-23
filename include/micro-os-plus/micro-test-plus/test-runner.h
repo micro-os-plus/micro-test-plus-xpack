@@ -209,7 +209,7 @@ namespace micro_os_plus::micro_test_plus
      * static objects in different compilation units can be automatically
      * executed.
      */
-    std::vector<test_suite_base*>* test_suites = nullptr;
+    std::vector<test_suite_base*>* test_suites; // DO NOT INITIALISE!
 
     struct
     {
