@@ -335,7 +335,7 @@ static mt2::static_test_suite ts_separate
     // For applications known to not conflict with the test
     // framework names, it is possible to access the definitions
     // directly, by including all namespace definitions.
-    using namespace micro_os_plus::micro_test_plus;
+    using namespace micro_os_plus::micro_test_plus2;
 
     ts.test_case ("Check one",
                   [] (auto& tc) { tc.expect (true) << "Passed"; });

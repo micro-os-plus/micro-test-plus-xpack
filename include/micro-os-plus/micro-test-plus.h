@@ -33,7 +33,7 @@
  * to ensure the framework operates correctly and efficiently.
  *
  * All public API definitions reside within the
- * `micro_os_plus::micro_test_plus` namespace and its nested namespaces,
+ * `micro_os_plus::micro_test_plus2` namespace and its nested namespaces,
  * ensuring clear separation from user code and minimising the risk of naming
  * conflicts.
  *
@@ -101,7 +101,7 @@
  * @brief Primary namespace for the µTest++ testing framework.
  *
  * @details
- * The `micro_os_plus::micro_test_plus` namespace encapsulates all core
+ * The `micro_os_plus::micro_test_plus2` namespace encapsulates all core
  * components, types, and utilities of the µTest++ testing framework, providing
  * a dedicated scope for its public API.
  *
@@ -120,206 +120,6 @@
  * folder, ensuring a clear separation from user code and facilitating
  * straightforward integration with the wider µOS++ ecosystem.
  */
-namespace micro_os_plus::micro_test_plus
-{
-  // --------------------------------------------------------------------------
-
-  extern test_runner runner;
-  extern test_reporter* reporter;
-  extern test_suite_base* current_test_suite;
-
-  // --------------------------------------------------------------------------
-  // Public API.
-
-  /**
-   * @ingroup micro-test-plus-inits
-   * @brief Initialise the µTest++ framework.
-   *
-   * @param [in] argc The number of command-line arguments.
-   * @param [in] argv Array of pointers to null-terminated argument strings.
-   * @param [in] name The name of the default test suite. Defaults to `"Main"`
-   * if not specified.
-   * @par Returns
-   *  Nothing.
-   */
-  void
-  initialize (int argc, char* argv[], const char* name = "Main");
-
-  /**
-   * @ingroup micro-test-plus-inits
-   * @brief Complete the test run and return the exit code.
-   *
-   * @par Parameters
-   *	 None.
-   * @return 0 if all tests were successful, 1 if any test failed.
-   */
-  [[nodiscard]] int
-  exit_code (void);
-
-  /**
-   * @ingroup micro-test-plus-test-case
-   * @brief Define and execute a test case.
-   *
-   * @tparam Callable_T The type of the callable object to be executed as the
-   * test case.
-   * @tparam Args_T The types of the arguments to be passed to the callable.
-   * @param [in] name The test case name or description, used in test reports.
-   * @param [in] callable A generic callable object, usually a lambda, invoked
-   * to perform the test.
-   * @param [in] arguments A possibly empty list of arguments to be passed to
-   * the callable.
-   * @par Returns
-   *  Nothing.
-   */
-  template <typename Callable_T, typename... Args_T>
-  void
-  test_case (const char* name, Callable_T&& callable, Args_T&&... arguments);
-
-  /**
-   * @ingroup micro-test-plus-expectations
-   * @brief Evaluate a generic condition and report the results.
-   *
-   * @tparam Expr_T The type of the custom expression.
-   *
-   * @par SFINAE
-   * Enabled only if `Expr_T` is derived from `detail::op` or
-   * is convertible to `bool`.
-   *
-
-   * @param [in] expr Logical expression to evaluate.
-   * @param [in] sl Optional source location, defaulting to the current line.
-   * @return An output stream to write optional messages.
-   */
-  template <class Expr_T,
-            type_traits::requires_t<
-                type_traits::is_op_v<Expr_T>
-                or type_traits::is_convertible_v<Expr_T, bool>> = 0>
-  constexpr auto
-  expect (const Expr_T& expr, const reflection::source_location& sl
-                              = reflection::source_location::current ());
-
-  /**
-   * @ingroup micro-test-plus-assumptions
-   * @brief Check a condition and, if false, abort test execution.
-   *
-   * @tparam Expr_T The type of the custom expression.
-   *
-   * @par SFINAE
-   * Enabled only if `Expr_T` is derived from `detail::op` or
-   * is convertible to `bool`.
-   *
-   * @param [in] expr Logical expression to evaluate.
-   * @param [in] sl Optional source location, defaulting to the current line.
-   * @return An output stream to write optional messages.
-   */
-  template <class Expr_T,
-            type_traits::requires_t<
-                type_traits::is_op_v<Expr_T>
-                or type_traits::is_convertible_v<Expr_T, bool>> = 0>
-  constexpr auto
-  assume (const Expr_T& expr, const reflection::source_location& sl
-                              = reflection::source_location::current ());
-
-  // --------------------------------------------------------------------------
-
-#if defined(__cpp_exceptions)
-
-  /**
-   * @ingroup micro-test-plus-exceptions
-   * @brief Check if a callable throws a specific exception.
-   *
-   * @tparam Exception_T The type of the exception expected to be thrown.
-   * @tparam Callable_T The type of the callable object to be invoked.
-   * @param [in] func The callable object to check for exception throwing
-   * behaviour.
-   * @return An output stream to write optional messages.
-   */
-  template <class Exception_T, class Callable_T>
-  [[nodiscard]] constexpr auto
-  throws (const Callable_T& func);
-
-  /**
-   * @ingroup micro-test-plus-exceptions
-   * @brief Check if a callable throws an exception (any exception).
-   *
-   * @tparam Callable_T The type of the callable object to be invoked.
-   * @param [in] func The callable object to check for exception throwing
-   * behaviour.
-   * @return An output stream to write optional messages.
-   */
-  template <class Callable_T>
-  [[nodiscard]] constexpr auto
-  throws (const Callable_T& func);
-
-  /**
-   * @ingroup micro-test-plus-exceptions
-   * @brief Check if a callable does not throw an exception.
-   *
-   * @tparam Callable_T The type of the callable object to be invoked.
-   * @param [in] func The callable object to check for exception safety.
-   * @return An output stream to write optional messages.
-   */
-  template <class Callable_T>
-  [[nodiscard]] constexpr auto
-  nothrow (const Callable_T& func);
-
-#endif
-
-  // --------------------------------------------------------------------------
-
-  /**
-   * @namespace micro_os_plus::micro_test_plus::utility
-   * @brief Utility functions for the µTest++ testing framework.
-   *
-   * @details
-   * The `micro_os_plus::micro_test_plus::utility` namespace provides a suite
-   * of helper functions designed to support advanced string operations and
-   * other common tasks within the µTest++ framework.
-   *
-   * These utilities include functions for pattern matching—such as verifying
-   * whether a string matches a specified pattern—and for splitting strings
-   * into sub-strings based on delimiters. The implementations are efficient
-   * and suitable for both embedded and general C++ projects.
-   *
-   * By encapsulating these helper functions within a dedicated namespace, the
-   * framework maintains clear code organisation and minimises naming
-   * conflicts.
-   */
-  namespace utility
-  {
-    /**
-     * @ingroup micro-test-plus-utility-functions
-     * @brief Check if a string matches a pattern.
-     *
-     * @param [in] input The string view to be checked.
-     * @param [in] pattern The string view containing the pattern to match.
-     * @return `true` if the input string matches the pattern; otherwise,
-     * `false`.
-     */
-    [[nodiscard]] bool
-    is_match (std::string_view input, std::string_view pattern);
-
-    /**
-     * @ingroup micro-test-plus-utility-functions
-     * @brief Split a string into a vector of sub-strings.
-     *
-     * @tparam T Type of the input string.
-     * @tparam Delim_T Type of the delimiter.
-     *
-     * @param [in] input Input string to split.
-     * @param [in] delim Delimiter string.
-     * @return A vector containing the resulting sub-strings.
-     */
-    template <class T, class Delim_T>
-    [[nodiscard]] auto
-    split (T input, Delim_T delim) -> std::vector<T>;
-
-    // ------------------------------------------------------------------------
-  } // namespace utility
-
-  // --------------------------------------------------------------------------
-} // namespace micro_os_plus::micro_test_plus
-
 // =============================================================================
 
 namespace micro_os_plus::micro_test_plus2
@@ -476,11 +276,11 @@ namespace micro_os_plus::micro_test_plus2
   // --------------------------------------------------------------------------
 
   /**
-   * @namespace micro_os_plus::micro_test_plus::utility
+   * @namespace micro_os_plus::micro_test_plus2::utility
    * @brief Utility functions for the µTest++ testing framework.
    *
    * @details
-   * The `micro_os_plus::micro_test_plus::utility` namespace provides a suite
+   * The `micro_os_plus::micro_test_plus2::utility` namespace provides a suite
    * of helper functions designed to support advanced string operations and
    * other common tasks within the µTest++ framework.
    *

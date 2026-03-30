@@ -24,7 +24,6 @@
 
 // ----------------------------------------------------------------------------
 
-namespace mt = micro_os_plus::micro_test_plus;
 namespace mt2 = micro_os_plus::micro_test_plus2;
 using namespace std::literals;
 

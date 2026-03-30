@@ -73,7 +73,7 @@ namespace micro_os_plus::micro_test_plus2
    * test cases, and the overall result of the case.
    *
    * All members and methods are defined within the
-   * `micro_os_plus::micro_test_plus` namespace, ensuring clear separation from
+   * `micro_os_plus::micro_test_plus2` namespace, ensuring clear separation from
    * user code and minimising the risk of naming conflicts.
    *
    * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
@@ -174,7 +174,7 @@ namespace micro_os_plus::micro_test_plus2
      * **Example**
      *
      * @code{.cpp}
-     * namespace mt = micro_os_plus::micro_test_plus;
+     * namespace mt = micro_os_plus::micro_test_plus2;
      * mt::expect(compute_answer() == 42) << "answer is 42";
      * @endcode
      */
@@ -222,7 +222,7 @@ namespace micro_os_plus::micro_test_plus2
      * **Example**
      *
      * @code{.cpp}
-     * namespace mt = micro_os_plus::micro_test_plus;
+     * namespace mt = micro_os_plus::micro_test_plus2;
      * mt::assume(compute_answer() == 42) << "answer is 42";
      * @endcode
      */

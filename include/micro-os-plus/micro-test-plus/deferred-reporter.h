@@ -54,7 +54,7 @@ namespace micro_os_plus::micro_test_plus2
   // --------------------------------------------------------------------------
 
   /**
-   * @namespace micro_os_plus::micro_test_plus::detail
+   * @namespace micro_os_plus::micro_test_plus2::detail
    * @brief Internal implementation details for the µTest++ framework.
    *
    * @details
