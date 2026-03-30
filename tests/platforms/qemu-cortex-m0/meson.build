@@ -26,8 +26,28 @@ xpack_environment = environment()
 xpack_environment.set('MALLOC_PERTURB_', '0')
 
 # -----------------------------------------------------------------------------
-
 # Define the tests executables.
+
+if xpack_enable_empty_test
+
+  # https://mesonbuild.com/Reference-manual_functions.html#test
+  test(
+    'empty-test',
+    qemu,
+    args: [
+      '--machine', 'mps2-an385',
+      '--cpu', 'cortex-m3',
+      '--kernel', empty_test,
+      '--nographic',
+      '-d', 'unimp,guest_errors',
+      '--semihosting-config', 'enable=on,target=native,arg=empty-test,arg=one,arg=two',
+    ],
+    env: xpack_environment
+  )
+
+endif
+
+# -----------------------------------------------------------------------------
 
 if xpack_enable_sample_test
 

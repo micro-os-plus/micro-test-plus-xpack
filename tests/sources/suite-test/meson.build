@@ -39,7 +39,7 @@ _local_link_args = []
 _local_link_with = []
 
 _local_include_directories += [
-  # None.
+  'include'
 ]
 
 _local_sources += [

@@ -11,6 +11,7 @@
     "qemu-riscv-rv64imafdc"
   ],
   "tests": [
+    "empty",
     "minimal",
     "suite",
     "sample",

@@ -14,14 +14,19 @@
 # -----------------------------------------------------------------------------
 # Project specific definitions.
 
-xpack_enable_minimal_test = true
-xpack_enable_suite_test = true
-xpack_enable_sample_test = true
-xpack_enable_unit_test = true
+xpack_enable_empty_test = true
+xpack_enable_minimal_test = false
+xpack_enable_suite_test = false
+xpack_enable_sample_test = false
+xpack_enable_unit_test = false
 
 xpack_dependencies_project_folders = []
  
 # Each test has its own library. Add only those enabled.
+if xpack_enable_empty_test
+  xpack_dependencies_project_folders += [ 'sources/empty-test' ]
+endif
+
 if xpack_enable_minimal_test
   xpack_dependencies_project_folders += [ 'sources/minimal-test' ]
 endif

@@ -42,8 +42,8 @@
  * should not be included directly by user code.
  */
 
-#ifndef MICRO_TEST_PLUS_DETAILS_INLINES_H_
-#define MICRO_TEST_PLUS_DETAILS_INLINES_H_
+#ifndef MICRO_TEST_PLUS_DEFERRED_REPORTER_INLINES_H_
+#define MICRO_TEST_PLUS_DEFERRED_REPORTER_INLINES_H_
 
 // ----------------------------------------------------------------------------
 
@@ -53,7 +53,8 @@
 
 #include <stdio.h>
 #include <cstring>
-// #include "test-reporter.h"
+
+#include "micro-os-plus/micro-test-plus/test-case.h"
 
 // ----------------------------------------------------------------------------
 
@@ -66,7 +67,9 @@
 #endif
 #endif
 
-namespace micro_os_plus::micro_test_plus
+// ============================================================================
+
+namespace micro_os_plus::micro_test_plus2
 {
   // --------------------------------------------------------------------------
 
@@ -91,11 +94,11 @@ namespace micro_os_plus::micro_test_plus
     {
       if constexpr (std::is_arithmetic_v<T>)
         {
-          message_.append (std::to_string (msg));
+          deferred_output_.append (std::to_string (msg));
         }
       else
         {
-          message_.append (msg);
+          deferred_output_.append (msg);
         }
       return *this;
     }
@@ -116,11 +119,12 @@ namespace micro_os_plus::micro_test_plus
     template <class Expr_T>
     constexpr deferred_reporter<Expr_T>::deferred_reporter (
         const Expr_T& expr, bool abort,
-        const reflection::source_location& location)
-        : deferred_reporter_base{ static_cast<bool> (expr), location },
+        const reflection::source_location& location, test_case_base& test_case)
+        : deferred_reporter_base{ static_cast<bool> (expr), location,
+                                  test_case },
           expr_{ expr }
     {
-#if 0 // defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
       printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
       abort_ = abort;
@@ -143,11 +147,12 @@ namespace micro_os_plus::micro_test_plus
     {
       if (value_)
         {
-          reporter->pass (expr_, message_);
+          test_case_.reporter ().pass (expr_, deferred_output_, test_case_);
         }
       else
         {
-          reporter->fail (expr_, abort_, message_, location_);
+          test_case_.reporter ().fail (expr_, abort_, deferred_output_,
+                                       location_, test_case_);
         }
     }
 
@@ -155,7 +160,7 @@ namespace micro_os_plus::micro_test_plus
   } // namespace detail
 
   // --------------------------------------------------------------------------
-} // namespace micro_os_plus::micro_test_plus
+} // namespace micro_os_plus::micro_test_plus2
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
@@ -167,6 +172,6 @@ namespace micro_os_plus::micro_test_plus
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_TEST_PLUS_DETAILS_INLINES_H_
+#endif // MICRO_TEST_PLUS_DEFERRED_REPORTER_INLINES_H_
 
 // ----------------------------------------------------------------------------

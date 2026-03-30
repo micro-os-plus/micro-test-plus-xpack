@@ -114,15 +114,13 @@ namespace micro_os_plus::micro_test_plus
      * @brief Deleted copy assignment operator to prevent copying.
      */
     test_reporter_basic&
-    operator= (const test_reporter_basic&)
-        = delete;
+    operator= (const test_reporter_basic&) = delete;
 
     /**
      * @brief Deleted move assignment operator to prevent moving.
      */
     test_reporter_basic&
-    operator= (test_reporter_basic&&)
-        = delete;
+    operator= (test_reporter_basic&&) = delete;
 
     /**
      * @brief Destructor for the test_reporter_basic class.
@@ -273,6 +271,201 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
+
+// =============================================================================
+
+namespace micro_os_plus::micro_test_plus2
+{
+  // --------------------------------------------------------------------------
+
+  /**
+   * @brief Basic (standard output) implementation of `test_reporter`.
+   *
+   * @details
+   * `test_reporter_basic` provides the default concrete implementation of the
+   * `test_reporter` abstract interface, formatting and presenting test results
+   * using `printf`-based output. It accumulates output in an internal string
+   * buffer and writes it to the standard output stream, supporting
+   * colour-coded diagnostics and multiple verbosity levels.
+   *
+   * Users who require custom output behaviour (e.g. redirecting to a serial
+   * port on bare-metal targets) may derive a new class from `test_reporter`
+   * and supply an instance via the `reporter` global pointer before calling
+   * `initialize()`.
+   *
+   * All members and methods are defined within the
+   * `micro_os_plus::micro_test_plus` namespace, ensuring clear separation from
+   * user code and minimising the risk of naming conflicts.
+   *
+   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+   */
+  class test_reporter_basic final : public test_reporter
+  {
+  public:
+    /**
+     * @brief Constructor for the test_reporter_basic class.
+     *
+     * @details
+     * The rule of five is enforced to prevent accidental copying or moving.
+     */
+    test_reporter_basic ();
+
+    /**
+     * @brief Deleted copy constructor to prevent copying.
+     */
+    test_reporter_basic (const test_reporter_basic&) = delete;
+
+    /**
+     * @brief Deleted move constructor to prevent moving.
+     */
+    test_reporter_basic (test_reporter_basic&&) = delete;
+
+    /**
+     * @brief Deleted copy assignment operator to prevent copying.
+     */
+    test_reporter_basic&
+    operator= (const test_reporter_basic&) = delete;
+
+    /**
+     * @brief Deleted move assignment operator to prevent moving.
+     */
+    test_reporter_basic&
+    operator= (test_reporter_basic&&) = delete;
+
+    /**
+     * @brief Destructor for the test_reporter_basic class.
+     */
+    ~test_reporter_basic () override;
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * @brief Output operator for the `indent_t` manipulator.
+     *
+     * @param m The indentation manipulator produced by `indent(n)`.
+     * @return Reference to the current test_reporter instance.
+     */
+    test_reporter_basic&
+    operator<< (indent_t m);
+
+    // Bring base class operator<< overloads into scope to prevent name hiding.
+    using test_reporter::operator<<;
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * @brief Mark the beginning of a test.
+     *
+     * @param runner Reference to the test runner.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    begin_test (test_runner& runner) override;
+
+    /**
+     * @brief Mark the end of a test.
+     *
+     * @param runner Reference to the test runner.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    end_test (test_runner& runner) override;
+
+    /**
+     * @brief Mark the beginning of a test suite.
+     *
+     * @param suite Reference to the test suite.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    begin_test_suite (test_suite_base& suite) override;
+
+    /**
+     * @brief Mark the end of a test suite.
+     *
+     * @param suite Reference to the test suite.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    end_test_suite (test_suite_base& suite) override;
+
+    /**
+     * @brief Mark the beginning of a test case.
+     *
+     * @param test_case Reference to the test case.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    begin_test_case (test_case_base& test_case) override;
+
+    /**
+     * @brief Mark the end of a test case.
+     *
+     * @param test_case Reference to the test case.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    end_test_case (test_case_base& test_case) override;
+
+  protected:
+    /**
+     * @brief Outputs the prefix for a passing condition.
+     *
+     * @param message The message to display.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    output_pass_prefix_ (std::string& message,
+                         test_case_base& test_case) override;
+
+    /**
+     * @brief Outputs the suffix for a passing condition.
+     *
+     * @par Parameters
+     *	 None.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    output_pass_suffix_ (test_case_base& test_case) override;
+
+    /**
+     * @brief Outputs the prefix for a failing condition.
+     *
+     * @param message The message to display.
+     * @param hasExpression Whether the failure is associated with an
+     * expression.
+     * @param location The source location of the failure.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    output_fail_prefix_ (std::string& message, const bool hasExpression,
+                         const reflection::source_location& location,
+                         test_case_base& test_case) override;
+
+    /**
+     * @brief Outputs the suffix for a failing condition.
+     *
+     * @param location The source location of the failure.
+     * @param abort Whether to abort execution after failure.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    output_fail_suffix_ (const reflection::source_location& location,
+                         bool abort, test_case_base& test_case) override;
+  };
+
+  // --------------------------------------------------------------------------
+} // namespace micro_os_plus::micro_test_plus2
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop

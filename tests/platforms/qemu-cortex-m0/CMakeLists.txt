@@ -21,6 +21,23 @@ include ("cmake/platform-library.cmake")
 
 # -----------------------------------------------------------------------------
 
+if (XPACK_ENABLE_EMPTY_TEST)
+  add_cross_test_executable (empty-test)
+  target_link_cross_test_libraries (empty-test test::empty)
+
+  message (VERBOSE "A> empty-test")
+
+  add_test (
+    NAME "empty-test"
+    COMMAND
+      qemu-system-arm${extension} --machine mps2-an385 --cpu cortex-m3 --kernel
+      empty-test.elf --nographic -d unimp,guest_errors --semihosting-config
+      enable=on,target=native,arg=empty-test,arg=one,arg=two
+  )
+endif ()
+
+# -----------------------------------------------------------------------------
+
 if (XPACK_ENABLE_MINIMAL_TEST)
   add_cross_test_executable (minimal-test)
   target_link_cross_test_libraries (minimal-test test::minimal)

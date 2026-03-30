@@ -24,13 +24,25 @@ xpack_environment = environment()
 xpack_environment.set('MALLOC_PERTURB_', '0')
 
 # -----------------------------------------------------------------------------
+# Define the tests executables.
 
-if xpack_enable_minimal_test
+if xpack_enable_empty_test
 
   # https://mesonbuild.com/Reference-manual_functions.html#test
   test(
-    'minimal-test',
-    minimal_test,
+    'empty-test --verbose',
+    empty_test,
+    args: [
+      'one',
+      'two',
+      '--verbose'
+    ],
+    env: xpack_environment
+  )
+
+  test(
+    'empty-test',
+    empty_test,
     args: [
       'one',
       'two'
@@ -38,6 +50,13 @@ if xpack_enable_minimal_test
     env: xpack_environment
   )
 
+endif
+
+# -----------------------------------------------------------------------------
+
+if xpack_enable_minimal_test
+
+  # https://mesonbuild.com/Reference-manual_functions.html#test
   test(
     'minimal-test --verbose',
     minimal_test,
@@ -45,6 +64,16 @@ if xpack_enable_minimal_test
       'one',
       'two',
       '--verbose'
+    ],
+    env: xpack_environment
+  )
+
+  test(
+    'minimal-test',
+    minimal_test,
+    args: [
+      'one',
+      'two'
     ],
     env: xpack_environment
   )
@@ -79,22 +108,22 @@ if xpack_enable_suite_test
 
   # https://mesonbuild.com/Reference-manual_functions.html#test
   test(
-    'suite-test',
-    suite_test,
-    args: [
-      'one',
-      'two'
-    ],
-    env: xpack_environment
-  )
-
-  test(
     'suite-test --verbose',
     suite_test,
     args: [
       'one',
       'two',
       '--verbose'
+    ],
+    env: xpack_environment
+  )
+
+  test(
+    'suite-test',
+    suite_test,
+    args: [
+      'one',
+      'two'
     ],
     env: xpack_environment
   )
@@ -133,7 +162,8 @@ if xpack_enable_sample_test
     sample_test,
     args: [
       'one',
-      'two'
+      'two',
+      '--verbose'
     ],
     env: xpack_environment
   )
@@ -143,8 +173,7 @@ if xpack_enable_sample_test
     sample_test,
     args: [
       'one',
-      'two',
-      '--verbose'
+      'two'
     ],
     env: xpack_environment
   )
@@ -180,14 +209,14 @@ if xpack_enable_unit_test
   test(
     'unit-test',
     unit_test,
-    args: [],
+    args: ['--verbose'],
     env: xpack_environment
   )
 
   test(
     'unit-test',
     unit_test,
-    args: ['--verbose'],
+    args: [],
     env: xpack_environment
   )
 

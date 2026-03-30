@@ -23,7 +23,7 @@
 
 // ----------------------------------------------------------------------------
 
-namespace mt = micro_os_plus::micro_test_plus;
+namespace mt2 = micro_os_plus::micro_test_plus2;
 using namespace std::literals;
 
 // ----------------------------------------------------------------------------
@@ -88,130 +88,120 @@ exercise_throw (bool mustThrow)
 
 // ----------------------------------------------------------------------------
 
+static mt2::static_test_runner tr ("Sample");
+
 int
 main (int argc, char* argv[])
 {
   // There is a default test suite automatically defined in main().
-  mt::initialize (argc, argv, "Sample");
+  auto& ts = tr.initialise (argc, argv);
 
   // --------------------------------------------------------------------------
 
   // Test comparison functions.
-  mt::test_case (
-      "Check various conditions",
-      []
-        {
-          // There are functions with usual names for all comparisons.
+  ts.test_case ("Check various conditions", [] (auto& tc)
+    {
+      // There are functions with usual names for all comparisons.
 
-          mt::expect (mt::eq (compute_answer (), 42)) << "answer eq 42";
-          mt::expect (mt::ne (compute_answer (), 43)) << "answer ne 43";
-          mt::expect (mt::lt (compute_answer (), 43)) << "answer lt 43";
-          mt::expect (mt::le (compute_answer (), 43)) << "answer le 42";
-          mt::expect (mt::gt (compute_answer (), 41)) << "answer gt 43";
-          mt::expect (mt::ge (compute_answer (), 42)) << "answer ge 42";
+      tc.expect (mt2::eq (compute_answer (), 42)) << "answer eq 42";
+      tc.expect (mt2::ne (compute_answer (), 43)) << "answer ne 43";
+      tc.expect (mt2::lt (compute_answer (), 43)) << "answer lt 43";
+      tc.expect (mt2::le (compute_answer (), 43)) << "answer le 42";
+      tc.expect (mt2::gt (compute_answer (), 41)) << "answer gt 43";
+      tc.expect (mt2::ge (compute_answer (), 42)) << "answer ge 42";
 
-          // Boolean expressions can be checked directly.
-          mt::expect (compute_condition ()) << "condition is true";
-        });
+      // Boolean expressions can be checked directly.
+      tc.expect (compute_condition ()) << "condition is true";
+    });
 
-  mt::test_case ("Check various conditions with operators",
-                 []
-                   {
-                     // There are custom operators for all comparisons, but
-                     // since interferences with other operators are possible,
-                     // they are located in a separate namespace. Even so, they
-                     // require their operands to be typed, via literals (like
-                     // `1_i`) or casts (like `mt::to_i(expr)`).
+  ts.test_case ("Check various conditions with operators", [] (auto& tc)
+    {
+      // There are custom operators for all comparisons, but
+      // since interferences with other operators are possible,
+      // they are located in a separate namespace. Even so, they
+      // require their operands to be typed, via literals (like
+      // `1_i`) or casts (like `mt2::to_i(expr)`).
 
-                     using namespace mt::operators;
-                     using namespace mt::literals;
+      using namespace mt2::operators;
+      using namespace mt2::literals;
 
-                     mt::expect (compute_answer () == 42_i)
-                         << "answer == 42 (with literal)";
-                     mt::expect (mt::to_i (compute_answer ()) == 42)
-                         << "answer == 42 (with cast)";
-                     mt::expect (compute_answer () != 43_i) << "answer != 43";
-                     mt::expect (compute_answer () < 43_i) << "answer < 43";
-                     mt::expect (compute_answer () <= 43_i) << "answer <= 42";
-                     mt::expect (compute_answer () > 41_i) << "answer > 43";
-                     mt::expect (compute_answer () >= 42_i) << "answer >= 42";
+      tc.expect (compute_answer () == 42_i) << "answer == 42 (with literal)";
+      tc.expect (mt2::to_i (compute_answer ()) == 42)
+          << "answer == 42 (with cast)";
+      tc.expect (compute_answer () != 43_i) << "answer != 43";
+      tc.expect (compute_answer () < 43_i) << "answer < 43";
+      tc.expect (compute_answer () <= 43_i) << "answer <= 42";
+      tc.expect (compute_answer () > 41_i) << "answer > 43";
+      tc.expect (compute_answer () >= 42_i) << "answer >= 42";
 
-                     // Note: if the operands are not typed, the test is still
-                     // performed correctly using the standard operators, as
-                     // for any logical expression, but in case of failures the
-                     // actual values cannot be shown.
-                   });
+      // Note: if the operands are not typed, the test is still
+      // performed correctly using the standard operators, as
+      // for any logical expression, but in case of failures the
+      // actual values cannot be shown.
+    });
 
-  mt::test_case (
-      "Check strings",
-      []
-        {
-          // String can also be compared, but only as `string_view` objects,
-          // otherwise the comparison is done on
-          // the memory addresses, not on the content.
+  ts.test_case ("Check strings", [] (auto& tc)
+    {
+      // String can also be compared, but only as `string_view` objects,
+      // otherwise the comparison is done on
+      // the memory addresses, not on the content.
 
-          mt::expect (mt::eq (std::string_view{ compute_ultimate_answer () },
-                              "fortytwo"sv))
-              << "ultimate answer is 'fortytwo'";
-        });
+      tc.expect (mt2::eq (std::string_view{ compute_ultimate_answer () },
+                          "fortytwo"sv))
+          << "ultimate answer is 'fortytwo'";
+    });
 
-  mt::test_case ("Check strings with operators",
-                 []
-                   {
-                     // There are also custom == and != operators for
-                     // `string_view` comparisons.
+  ts.test_case ("Check strings with operators", [] (auto& tc)
+    {
+      // There are also custom == and != operators for
+      // `string_view` comparisons.
 
-                     using namespace mt::operators;
+      using namespace mt2::operators;
 
-                     mt::expect (std::string_view{ compute_ultimate_answer () }
-                                 == "fortytwo"sv)
-                         << "ultimate answer == 'fortytwo'";
-                   });
+      tc.expect (std::string_view{ compute_ultimate_answer () }
+                 == "fortytwo"sv)
+          << "ultimate answer == 'fortytwo'";
+    });
 
-  mt::test_case (
-      "Check compound conditions",
-      []
-        {
-          // More complex conditions can be constructed with _and(), _or(),
-          // _not() (the underscore is required to differentiate the functions
-          // from the language and/or/not operators).
+  ts.test_case ("Check compound conditions", [] (auto& tc)
+    {
+      // More complex conditions can be constructed with _and(), _or(),
+      // _not() (the underscore is required to differentiate the functions
+      // from the language and/or/not operators).
 
-          mt::expect (
-              mt::_and (mt::eq (compute_answer (), 42),
-                        mt::eq (std::string_view{ compute_ultimate_answer () },
-                                "fortytwo"sv)))
-              << "logical 'and' expression";
-        });
+      tc.expect (
+          mt2::_and (mt2::eq (compute_answer (), 42),
+                     mt2::eq (std::string_view{ compute_ultimate_answer () },
+                              "fortytwo"sv)))
+          << "logical 'and' expression";
+    });
 
-  mt::test_case ("Check compound conditions with operators",
-                 []
-                   {
-                     // There are also operators for logical expressions.
+  ts.test_case ("Check compound conditions with operators", [] (auto& tc)
+    {
+      // There are also operators for logical expressions.
 
-                     using namespace mt::operators;
-                     using namespace mt::literals;
+      using namespace mt2::operators;
+      using namespace mt2::literals;
 
-                     mt::expect (
-                         (compute_answer () == 42_i)
-                         and (std::string_view{ compute_ultimate_answer () }
-                              == "fortytwo"sv))
-                         << "logical 'and' expression with operators";
-                   });
+      tc.expect (
+          (compute_answer () == 42_i)
+          and (std::string_view{ compute_ultimate_answer () } == "fortytwo"sv))
+          << "logical 'and' expression with operators";
+    });
 
   // --------------------------------------------------------------------------
 
-  mt::test_case ("Check multiple function invocations",
-                 []
-                   {
-                     // The function does not need to be embedded in the test
-                     // case, it can be defined separately and called multiple
-                     // times.
+  ts.test_case ("Check multiple function invocations", [] (auto& tc)
+    {
+      // The function does not need to be embedded in the test
+      // case, it can be defined separately and called multiple
+      // times.
 
-                     auto add = [] (int i) { return i + 40; };
+      auto add = [] (int i) { return i + 40; };
 
-                     mt::expect (mt::eq (add (2), 42)) << "lambda returns 42";
-                     mt::expect (mt::eq (add (3), 43)) << "lambda returns 43";
-                   });
+      tc.expect (mt2::eq (add (2), 42)) << "lambda returns 42";
+      tc.expect (mt2::eq (add (3), 43)) << "lambda returns 43";
+    });
 
   // --------------------------------------------------------------------------
 
@@ -222,154 +212,152 @@ main (int argc, char* argv[])
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
 #endif
-  mt::test_case (
-      "Check args",
-      [] (int _argc, char* _argv[])
+  ts.test_case ("Check args", [] (auto& tc, int _argc, char* _argv[])
+    {
+      tc.expect (mt2::ge (_argc, 2)) << "argc >= 2";
+
+      if (_argc > 1)
         {
-          mt::expect (mt::ge (_argc, 2)) << "argc >= 2";
+          tc.expect (mt2::eq (std::string_view{ _argv[1] }, "one"sv))
+              << "argv[1] is 'one'";
+        }
 
-          if (_argc > 1)
-            {
-              mt::expect (mt::eq (std::string_view{ _argv[1] }, "one"sv))
-                  << "argv[1] is 'one'";
-            }
+      if (_argc > 2)
+        {
+          tc.expect (mt2::eq (std::string_view{ _argv[2] }, "two"sv))
+              << "argv[2] is 'two'";
+        }
+    }, argc, argv);
+  // The values passed after the body are the actual values to be passed
+  // to the lambda. An alternate solution is to capture them by value
+  // since the lambda is also a closure.
 
-          if (_argc > 2)
-            {
-              mt::expect (mt::eq (std::string_view{ _argv[2] }, "two"sv))
-                  << "argv[2] is 'two'";
-            }
-        },
-      // After the body there are the actual values to be passed
-      // to the lambda.
-      // An alternate solution is to capture them by value
-      // since the lambda is also a closure.
-      argc, argv);
 #pragma GCC diagnostic pop
 
   // --------------------------------------------------------------------------
 
-  mt::test_case ("Check complex logic",
-                 []
-                   {
-                     // Complex conditions can be tested with explicit tests,
-                     // and the results passed to the test framework.
+  ts.test_case ("Check complex logic", [] (auto& tc)
+    {
+      // Complex conditions can be tested with explicit tests,
+      // and the results passed to the test framework.
 
-                     bool xyz = true;
-                     if (xyz)
-                       {
-                         mt::expect (true) << "xyz passed";
-                       }
-                     else
-                       {
-                         mt::expect (false) << "xyz...";
-                       }
-                   });
+      bool xyz = true;
+      if (xyz)
+        {
+          tc.expect (true) << "xyz passed";
+        }
+      else
+        {
+          tc.expect (false) << "xyz...";
+        }
+    });
 
   // --------------------------------------------------------------------------
 
 #if defined(__EXCEPTIONS)
 
-  mt::test_case ("Check if exceptions are thrown",
-                 []
-                   {
-                     mt::expect (mt::throws ([] { exercise_throw (true); }))
-                         << "exception thrown";
+  ts.test_case ("Check if exceptions are thrown", [] (auto& tc)
+    {
+      tc.expect (mt2::throws ([] { exercise_throw (true); }))
+          << "exception thrown";
 
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
 #endif
-                     mt::expect (mt::throws<std::runtime_error> (
-                         [] { throw std::runtime_error{ "" }; }))
-                         << "std::runtime_error thrown";
+      tc.expect (mt2::throws<std::runtime_error> ([]
+        { throw std::runtime_error{ "" }; }))
+          << "std::runtime_error thrown";
 #pragma GCC diagnostic pop
-                   });
+    });
 
-  mt::test_case ("Check if exceptions are not thrown",
-                 []
-                   {
-                     mt::expect (mt::nothrow ([] { exercise_throw (false); }))
-                         << "exception not thrown";
-                   });
+  ts.test_case ("Check if exceptions are not thrown", [] (auto& tc)
+    {
+      tc.expect (mt2::nothrow ([] { exercise_throw (false); }))
+          << "exception not thrown";
+    });
 
 #endif // defined(__EXCEPTIONS)
 
-  mt::test_case ("Check containers",
-                 []
-                   {
-                     // Containers are iterated and each value compared with
-                     // `eq()` or `ne()`.
+  ts.test_case ("Check containers", [] (auto& tc)
+    {
+      // Containers are iterated and each value compared with
+      // `eq()` or `ne()`.
 
-                     mt::expect (mt::eq (std::vector<int>{ 1, 2 },
-                                         std::vector<int>{ 1, 2 }))
-                         << "vector{ 1, 2 } eq vector{ 1, 2 }";
+      tc.expect (mt2::eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
+          << "vector{ 1, 2 } eq vector{ 1, 2 }";
 
-                     mt::expect (mt::ne (std::vector<int>{ 1, 2, 3 },
-                                         std::vector<int>{ 1, 2, 4 }))
-                         << "vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }";
-                   });
+      tc.expect (
+          mt2::ne (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 }))
+          << "vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }";
+    });
 
-  mt::test_case (
-      "Check containers with operators",
-      []
-        {
-          // Containers are iterated and each value compared with `==` or `!=`.
+  ts.test_case ("Check containers with operators", [] (auto& tc)
+    {
+      // Containers are iterated and each value compared with `==` or `!=`.
 
-          using namespace mt::operators;
+      using namespace mt2::operators;
 
-          mt::expect (std::vector<int>{ 1, 2 } == std::vector<int>{ 1, 2 })
-              << "vector{ 1, 2 } == vector{ 1, 2 }";
+      tc.expect (std::vector<int>{ 1, 2 } == std::vector<int>{ 1, 2 })
+          << "vector{ 1, 2 } == vector{ 1, 2 }";
 
-          mt::expect (std::vector<int>{ 1, 2, 3 }
-                      != std::vector<int>{ 1, 2, 4 })
-              << "vector{ 1, 2, 3 } != vector{ 1, 2, 4 }";
-        });
+      tc.expect (std::vector<int>{ 1, 2, 3 } != std::vector<int>{ 1, 2, 4 })
+          << "vector{ 1, 2, 3 } != vector{ 1, 2, 4 }";
+    });
 
   // --------------------------------------------------------------------------
 
-  // Trigger the execution of the separate test suites and
-  // return the overall test result to the system.
-  return mt::exit_code ();
+  // Trigger the execution of the static test suites.
+  tr.run_static_test_suites ();
+
+  // Return the overall test result to the system.
+  return tr.exit_code ();
 }
 
 // ----------------------------------------------------------------------------
+
+#if 1
+// ----------------------------------------------------------------------------
 // Additional test suites. They may be located in separate source files.
 
-static mt::test_suite ts_explicit
-    = { "Explicit namespace", []
-          {
-            mt::test_case ("Check one", [] { mt::expect (true) << "Passed"; });
-            mt::test_case ("Check two", [] { mt::expect (true) << "Passed"; });
-          } };
+static mt2::static_test_suite ts_explicit
+    = { "Explicit namespace", tr, [] (auto& ts)
+  {
+    ts.test_case ("Check one",
+                  [] (auto& tc) { tc.expect (true) << "Passed"; });
+    ts.test_case ("Check two",
+                  [] (auto& tc) { tc.expect (true) << "Passed"; });
+  } };
 
-static micro_os_plus::micro_test_plus::test_suite ts_separate
-    = { "Implicit namespace", []
-          {
-            // For applications known to not conflict with the test
-            // framework names, it is possible to access the definitions
-            // directly, by including all namespace definitions.
-            using namespace micro_os_plus::micro_test_plus;
+static mt2::static_test_suite ts_separate
+    = { "Implicit namespace", tr, [] (auto& ts)
+  {
+    // For applications known to not conflict with the test
+    // framework names, it is possible to access the definitions
+    // directly, by including all namespace definitions.
+    using namespace micro_os_plus::micro_test_plus;
 
-            test_case ("Check one", [] { expect (true) << "Passed"; });
-            test_case ("Check two", [] { expect (true) << "Passed"; });
-          } };
+    ts.test_case ("Check one",
+                  [] (auto& tc) { tc.expect (true) << "Passed"; });
+    ts.test_case ("Check two",
+                  [] (auto& tc) { tc.expect (true) << "Passed"; });
+  } };
 
 // ----------------------------------------------------------------------------
 
 // Parametrized test suite, with constants, values, references and pointers.
 static void
-test_suite_args (int ic, int iv, int& ir, int* ip1, int* ip2)
+test_suite_with_args (mt2::static_test_suite& ts, int ic, int iv, int& ir,
+                      int* ip1, int* ip2)
 {
-  mt::test_case ("args",
-                 [&]
-                   {
-                     mt::expect (mt::eq (ic, 42)) << "ic is 42";
-                     mt::expect (mt::eq (iv, 43)) << "iv is 43";
-                     mt::expect (mt::eq (ir, 44)) << "ir is 44";
-                     mt::expect (mt::eq (*ip1, 45)) << "*ip1 is 45";
-                     mt::expect (mt::eq (*ip2, 46)) << "*ip2 is 46";
-                   });
+  ts.test_case ("args", [&] (auto& tc)
+    {
+      tc.expect (mt2::eq (ic, 42)) << "ic is 42";
+      tc.expect (mt2::eq (iv, 43)) << "iv is 43";
+      tc.expect (mt2::eq (ir, 44)) << "ir is 44";
+      tc.expect (mt2::eq (*ip1, 45)) << "*ip1 is 45";
+      tc.expect (mt2::eq (*ip2, 46)) << "*ip2 is 46";
+    });
 }
 
 static int in = 43;
@@ -379,7 +367,9 @@ static int in45 = 45;
 static int in46 = 46;
 static int* ip2 = &in46;
 
-static mt::test_suite ts_args
-    = { "Args", test_suite_args, 42, in, ir, &in45, ip2 };
+static mt2::static_test_suite ts_args
+    = { "Args", tr, test_suite_with_args, 42, in, ir, &in45, ip2 };
+
+#endif
 
 // ----------------------------------------------------------------------------

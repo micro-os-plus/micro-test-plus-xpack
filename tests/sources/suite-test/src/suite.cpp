@@ -15,11 +15,13 @@
 #include <micro-os-plus/config.h>
 #endif // MICRO_OS_PLUS_INCLUDE_CONFIG_H
 
+#include "suite.h"
+
 #include <micro-os-plus/micro-test-plus.h>
 
 // ----------------------------------------------------------------------------
 
-namespace mt = micro_os_plus::micro_test_plus;
+namespace mt2 = micro_os_plus::micro_test_plus2;
 using namespace std::literals;
 
 // ----------------------------------------------------------------------------
@@ -53,27 +55,22 @@ compute_condition (void)
 
 // ----------------------------------------------------------------------------
 
-void
-suite_function (void);
-
-void
-suite_function (void)
+static void
+suite_function (mt2::static_test_suite& ts)
 {
   // Test comparison functions.
-  mt::test_case ("Check various conditions",
-                 []
-                   {
-                     // There are functions with usual names for all
-                     // comparisons.
+  ts.test_case ("Check various conditions", [] (auto& tc)
+    {
+      // There are functions with usual names for all
+      // comparisons.
 
-                     mt::expect (mt::eq (compute_answer (), 42))
-                         << "answer is 42";
+      tc.expect (mt2::eq (compute_answer (), 42)) << "answer is 42";
 
-                     // Boolean expressions can be checked directly.
-                     mt::expect (compute_condition ()) << "condition is true";
-                   });
+      // Boolean expressions can be checked directly.
+      tc.expect (compute_condition ()) << "condition is true";
+    });
 }
 
-static mt::test_suite suite = { "Suite", suite_function };
+static mt2::static_test_suite suite = { "Suite", tr, suite_function };
 
 // ----------------------------------------------------------------------------

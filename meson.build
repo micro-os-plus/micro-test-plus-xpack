@@ -45,10 +45,14 @@ _local_include_directories += [
 _local_sources += [
   'src/micro-test-plus.cpp',
   'src/test-runner.cpp',
+  'src/test-runner-totals.cpp',
+  'src/deferred-reporter.cpp',
   'src/test-reporter.cpp',
   'src/test-reporter-basic.cpp',
   'src/test-reporter-tap.cpp',
   'src/test-suite.cpp',
+  'src/test-case.cpp',
+  'src/timings.cpp',
 ]
 
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency

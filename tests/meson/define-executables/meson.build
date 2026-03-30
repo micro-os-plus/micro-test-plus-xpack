@@ -24,6 +24,15 @@ message('Processing tests/meson/define-executables...')
 tests = []
 
 # Each test has its own library. Add only those enabled.
+if xpack_enable_empty_test
+  tests += {
+    'name': 'empty-test',
+    'dependency': test_empty_dependency,
+    'compile_c_args': test_empty_dependency_compile_c_args,
+    'compile_cpp_args': test_empty_dependency_compile_cpp_args,
+  }
+endif
+
 if xpack_enable_minimal_test
   tests += {
     'name': 'minimal-test',

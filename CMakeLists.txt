@@ -22,20 +22,22 @@
 # -----------------------------------------------------------------------------
 
 # https://cmake.org/cmake/help/v3.20/
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required (VERSION 3.20)
 
-project(micro-os-plus-micro-test-plus DESCRIPTION "µTest++")
+project (micro-os-plus-micro-test-plus DESCRIPTION "µTest++")
 
-# To access the optional functions, include the 
-# `cmake/micro-os-plus-build-helper.cmake` file from the 
+# To access the optional functions, include the
+# `cmake/micro-os-plus-build-helper.cmake` file from the
 # `@micro-os-plus/build-helper` package.
 
-if(COMMAND xpack_get_package_name_and_version)
-  xpack_get_package_name_and_version("${CMAKE_CURRENT_SOURCE_DIR}/package.json")
-  message(VERBOSE
-          "Processing xPack ${PACKAGE_JSON_NAME}@${PACKAGE_JSON_VERSION}..."
+if (COMMAND xpack_get_package_name_and_version)
+  xpack_get_package_name_and_version (
+    "${CMAKE_CURRENT_SOURCE_DIR}/package.json"
   )
-endif()
+  message (VERBOSE
+           "Processing xPack ${PACKAGE_JSON_NAME}@${PACKAGE_JSON_VERSION}..."
+  )
+endif ()
 
 # -----------------------------------------------------------------------------
 
@@ -44,42 +46,50 @@ endif()
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#normal-libraries
 # PRIVATE: build definitions, used internally INTERFACE: usage definitions,
 # passed up to targets linking to it PUBLIC: both
-add_library(micro-os-plus-micro-test-plus-interface INTERFACE)
+add_library (micro-os-plus-micro-test-plus-interface INTERFACE)
 
-target_include_directories(
+target_include_directories (
   micro-os-plus-micro-test-plus-interface INTERFACE "include"
 )
 
-target_sources(
+target_sources (
   micro-os-plus-micro-test-plus-interface
-  INTERFACE "src/micro-test-plus.cpp" "src/test-runner.cpp"
-            "src/test-reporter.cpp" "src/test-reporter-basic.cpp"
-            "src/test-reporter-tap.cpp" "src/test-suite.cpp"
+  INTERFACE "src/micro-test-plus.cpp"
+            "src/test-runner.cpp"
+            "src/test-runner-totals.cpp"
+            "src/deferred-reporter.cpp"
+            "src/test-reporter.cpp"
+            "src/test-reporter-basic.cpp"
+            "src/test-reporter-tap.cpp"
+            "src/test-suite.cpp"
+            "src/test-case.cpp"
+            "src/timings.cpp"
 )
 
-target_compile_definitions(
+target_compile_definitions (
   micro-os-plus-micro-test-plus-interface INTERFACE # None.
 )
 
-target_compile_options(
+target_compile_options (
   micro-os-plus-micro-test-plus-interface INTERFACE # None.
 )
 
-target_link_libraries(micro-os-plus-micro-test-plus-interface INTERFACE # None.
+target_link_libraries (
+  micro-os-plus-micro-test-plus-interface INTERFACE # None.
 )
 
-if(COMMAND xpack_display_target_lists)
-  xpack_display_target_lists(micro-os-plus-micro-test-plus-interface)
-endif()
+if (COMMAND xpack_display_target_lists)
+  xpack_display_target_lists (micro-os-plus-micro-test-plus-interface)
+endif ()
 
 # -----------------------------------------------------------------------------
 
 # Aliases.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
-add_library(
+add_library (
   micro-os-plus::micro-test-plus ALIAS micro-os-plus-micro-test-plus-interface
 )
-message(
+message (
   VERBOSE
   "> micro-os-plus::micro-test-plus -> micro-os-plus-micro-test-plus-interface"
 )

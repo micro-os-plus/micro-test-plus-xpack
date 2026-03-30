@@ -23,7 +23,7 @@
 
 // ----------------------------------------------------------------------------
 
-namespace mt = micro_os_plus::micro_test_plus;
+namespace mt2 = micro_os_plus::micro_test_plus2;
 using namespace std::literals;
 
 // ----------------------------------------------------------------------------
@@ -31,11 +31,11 @@ using namespace std::literals;
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
-#pragma clang diagnostic ignored "-Wshadow-uncaptured-local"
-#pragma clang diagnostic ignored "-Wexit-time-destructors"
-#pragma clang diagnostic ignored "-Wglobal-constructors"
-#pragma clang diagnostic ignored "-Wctad-maybe-unsupported"
-#pragma clang diagnostic ignored "-Wunknown-warning-option"
+// #pragma clang diagnostic ignored "-Wshadow-uncaptured-local"
+// #pragma clang diagnostic ignored "-Wexit-time-destructors"
+// #pragma clang diagnostic ignored "-Wglobal-constructors"
+// #pragma clang diagnostic ignored "-Wctad-maybe-unsupported"
+// #pragma clang diagnostic ignored "-Wunknown-warning-option"
 #endif
 
 // ----------------------------------------------------------------------------
@@ -60,26 +60,25 @@ compute_condition (void)
 int
 main (int argc, char* argv[])
 {
-  // There is a default test suite automatically defined in main().
-  mt::initialize (argc, argv, "Minimal");
+  // Name the default test suite.
+  mt2::test_runner tr ("Minimal");
+  auto& ts = tr.initialise (argc, argv);
 
   // --------------------------------------------------------------------------
 
   // Test comparison functions.
-  mt::test_case ("Check various conditions", [] {
+  ts.test_case ("Check various conditions", [] (auto& tc) {
     // There are functions with usual names for all comparisons.
-
-    mt::expect (mt::eq (compute_answer (), 42)) << "answer is 42";
+    tc.expect (mt2::eq (compute_answer (), 42)) << "answer is 42";
 
     // Boolean expressions can be checked directly.
-    mt::expect (compute_condition ()) << "condition is true";
+    tc.expect (compute_condition ()) << "condition is true";
   });
 
   // --------------------------------------------------------------------------
 
-  // Trigger the execution of the separate test suites and
-  // return the overall test result to the system.
-  return mt::exit_code ();
+  // Return the overall test result to the system.
+  return tr.exit_code ();
 }
 
 // ----------------------------------------------------------------------------

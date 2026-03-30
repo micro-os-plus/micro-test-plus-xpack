@@ -45,6 +45,7 @@
 #endif // MICRO_OS_PLUS_INCLUDE_CONFIG_H
 
 #include <micro-os-plus/micro-test-plus.h>
+
 #include <cstring>
 // <iostream> is too heavy for embedded, use printf().
 #include <stdio.h>
@@ -312,5 +313,154 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
+
+// ============================================================================
+
+namespace micro_os_plus::micro_test_plus2
+{
+  // --------------------------------------------------------------------------
+  // Public API.
+
+  /**
+   * @details
+   * The `initialize` function sets up the µTest++ testing framework, preparing
+   * it for test execution. It processes command-line arguments, configures the
+   * test environment, and establishes the default test suite name. This
+   * function should be called at the beginning of the test programme,
+   * typically from the `main()` function, to ensure proper initialisation of
+   * all framework components.
+   *
+   * The provided arguments may be used to configure verbosity or other
+   * run-time options for the test session.
+   */
+  //   void
+  //   initialize (int argc, char* argv[], const char* name)
+  //   {
+  // #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+  //     printf ("%s\n", __PRETTY_FUNCTION__);
+  // #endif
+  //     runner.initialize (argc, argv, name);
+  //   }
+
+  /**
+   * @details
+   * In addition to the test cases defined in `main()`, additional test suites
+   * may be declared as static objects either within the same file or in other
+   * files, and are automatically registered via the static constructors
+   * mechanism.
+   *
+   * The `exit_code` function finalises the execution of all registered test
+   * suites and test cases within the µTest++ framework, and returns an
+   * appropriate exit code to the operating system. This function should be
+   * called at the end of the test program, typically from the `main()`
+   * function, to ensure that all results are properly reported and the correct
+   * status is communicated.
+   *
+   * The returned value indicates the overall success or failure of the test
+   * run, allowing integration with build systems and continuous integration
+   * environments.
+   */
+  // int
+  // exit_code (void)
+  // {
+  //   return runner.exit_code ();
+  // }
+
+  // --------------------------------------------------------------------------
+  // Too small to deserve a separate source file.
+  namespace reflection
+  {
+
+    /**
+     * @details
+     * This function extracts the short name from a given file path by locating
+     * the final folder separator ('/'). If a separator is found, it returns a
+     * pointer to the character immediately following it, effectively providing
+     * the file or folder name. If no separator is present, the original input
+     * string is returned. This utility is useful for reporting concise file or
+     * folder names in test output.
+     */
+    const char*
+    short_name (const char* name)
+    {
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
+#endif
+      const char* p = strrchr (name, '/');
+      if (p != nullptr)
+        return p + 1;
+      else
+        return name;
+#pragma GCC diagnostic pop
+    }
+
+  } // namespace reflection
+
+  namespace utility
+  {
+#if defined(__clang__)
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdocumentation"
+#endif
+/**
+ * @details
+ * This function enables pattern-based string comparison for tests, supporting
+ * both exact matches and wildcard patterns. The pattern may include `*` to
+ * match any sequence of characters and `?` to match any single character. This
+ * allows for flexible validation of string content in test assertions,
+ * accommodating variable or partially known values.
+ *
+ * @par Examples
+ *
+ * @code{.cpp}
+ * namespace mt = micro_os_plus::micro_test_plus;
+ *
+ * mt::expect (mt::utility::is_match ("abc", "a?c")) << "abc matches a?c";
+ * mt::expect (mt::utility::is_match ("abc", "a*c")) << "abc matches a*c";
+ * @endcode
+ */
+#if defined(__clang__)
+#pragma clang diagnostic pop
+#endif
+    [[nodiscard]] bool
+    is_match (std::string_view input, std::string_view pattern)
+    {
+      if (std::empty (pattern))
+        {
+          return std::empty (input);
+        }
+
+      if (std::empty (input))
+        {
+          return pattern[0] == '*' ? is_match (input, pattern.substr (1))
+                                   : false;
+        }
+
+      if (pattern[0] != '?' and pattern[0] != '*' and pattern[0] != input[0])
+        {
+          return false;
+        }
+
+      if (pattern[0] == '*')
+        {
+          for (decltype (std::size (input)) i = 0u; i <= std::size (input);
+               ++i)
+            {
+              if (is_match (input.substr (i), pattern.substr (1)))
+                {
+                  return true;
+                }
+            }
+          return false;
+        }
+
+      return is_match (input.substr (1), pattern.substr (1));
+    }
+
+  } // namespace utility
+
+  // ==========================================================================
+} // namespace micro_os_plus::micro_test_plus2
 
 // ----------------------------------------------------------------------------

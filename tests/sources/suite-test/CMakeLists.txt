@@ -27,7 +27,7 @@ message (VERBOSE "Processing 'tests/sources/suite-test'...")
 # The test library definitions.
 add_library (test-suite-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_include_directories (test-suite-interface INTERFACE # None.
+target_include_directories (test-suite-interface INTERFACE include
 )
 
 target_sources (test-suite-interface INTERFACE src/main.cpp src/suite.cpp)

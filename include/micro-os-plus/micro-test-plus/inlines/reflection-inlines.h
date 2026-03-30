@@ -155,6 +155,94 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
 
+// ============================================================================
+
+namespace micro_os_plus::micro_test_plus2
+{
+  // --------------------------------------------------------------------------
+
+  namespace reflection
+  {
+    // ------------------------------------------------------------------------
+
+#if !defined(__cpp_lib_source_location)
+
+    /**
+     * @details
+     * Returns a `source_location` instance representing the file name and
+     * line number at the point of invocation.
+     *
+     * If supported by the compiler, uses built-in macros to capture this
+     * information; otherwise, defaults to `"unknown"` and zero.
+     */
+    [[nodiscard]] constexpr source_location
+    source_location::current (const char* file, unsigned int line) noexcept
+    {
+      source_location sl{};
+      sl.file_ = file;
+      sl.line_ = line;
+      return sl;
+    }
+
+    /**
+     * @details
+     * ... TBD
+     */
+    [[nodiscard]] constexpr auto
+    source_location::file_name (void) const noexcept
+    {
+      return file_;
+    }
+
+    /**
+     * @details
+     * ... TBD
+     */
+    [[nodiscard]] constexpr auto
+    source_location::line (void) const noexcept
+    {
+      return line_;
+    }
+
+#endif
+
+    /**
+     * @details
+     * This function template parses the compiler-specific
+     * `__PRETTY_FUNCTION__` macro to extract a concise type name for the
+     * template parameter \c T.
+     *
+     * The implementation is compiler-dependent and may require adjustment for
+     * different toolchains. It is primarily intended for internal use within
+     * the µTest++ framework to support improved diagnostics and reporting.
+     */
+    template <class T>
+    [[nodiscard]] constexpr auto
+    type_name (void) -> std::string_view
+    {
+#if defined(__clang__)
+#pragma GCC diagnostic push
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
+      // printf("|%s|%zu|\n", __PRETTY_FUNCTION__, sizeof
+      // (__PRETTY_FUNCTION__)); printf("|%s|\n", &__PRETTY_FUNCTION__[78]);
+      return { &__PRETTY_FUNCTION__[78], sizeof (__PRETTY_FUNCTION__) - 80 };
+#pragma GCC diagnostic pop
+#elif defined(__GNUC__)
+      // printf("|%s|%zu|\n", __PRETTY_FUNCTION__, sizeof
+      // (__PRETTY_FUNCTION__)); printf("|%s|\n", &__PRETTY_FUNCTION__[93]);
+      return { &__PRETTY_FUNCTION__[93], sizeof (__PRETTY_FUNCTION__) - 144 };
+#else
+#error "Unsupported compiler"
+      return "Unsupported compiler";
+#endif
+    }
+
+    // ------------------------------------------------------------------------
+  } // namespace reflection
+
+  // --------------------------------------------------------------------------
+} // namespace micro_os_plus::micro_test_plus2
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
