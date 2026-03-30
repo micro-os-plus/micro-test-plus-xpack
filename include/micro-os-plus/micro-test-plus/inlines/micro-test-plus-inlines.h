@@ -32,7 +32,7 @@
  * testing of error handling and exception safety, while utility functions such
  * as string splitting support flexible validation of string processing logic.
  *
- * All definitions reside within the `micro_os_plus::micro_test_plus2`
+ * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the risk
  * of naming conflicts.
  *
@@ -65,7 +65,7 @@
 
 // ============================================================================
 
-namespace micro_os_plus::micro_test_plus2
+namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
@@ -101,7 +101,7 @@ namespace micro_os_plus::micro_test_plus2
    * @par Example
    *
    * @code{.cpp}
-   *   namespace mt = micro_os_plus::micro_test_plus2;
+   *   namespace mt = micro_os_plus::micro_test_plus;
    *
    *   mt::test_case ("Check answer with comparator", [] {
    *     mt::expect (mt::eq (compute_answer (), 42)) << "answer is 42";
@@ -146,7 +146,7 @@ namespace micro_os_plus::micro_test_plus2
    * **Example**
    *
    * @code{.cpp}
-   * namespace mt = micro_os_plus::micro_test_plus2;
+   * namespace mt = micro_os_plus::micro_test_plus;
    * mt::expect(compute_answer() == 42) << "answer is 42";
    * @endcode
    */
@@ -180,7 +180,7 @@ namespace micro_os_plus::micro_test_plus2
    * **Example**
    *
    * @code{.cpp}
-   * namespace mt = micro_os_plus::micro_test_plus2;
+   * namespace mt = micro_os_plus::micro_test_plus;
    * mt::assume(compute_answer() == 42) << "answer is 42";
    * @endcode
    */
@@ -266,7 +266,7 @@ namespace micro_os_plus::micro_test_plus2
      * **Example**
      *
      * @code{.cpp}
-     * namespace mt = micro_os_plus::micro_test_plus2;
+     * namespace mt = micro_os_plus::micro_test_plus;
      *
      * mt::expect (std::vector<std::string_view>{ "a", "b" }
      *             == mt::utility::split<std::string_view> ("a.b", "."))
@@ -299,7 +299,7 @@ namespace micro_os_plus::micro_test_plus2
   } // namespace utility
 
   // --------------------------------------------------------------------------
-} // namespace micro_os_plus::micro_test_plus2
+} // namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop

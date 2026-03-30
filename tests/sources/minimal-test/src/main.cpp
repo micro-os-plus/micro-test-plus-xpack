@@ -23,7 +23,7 @@
 
 // ----------------------------------------------------------------------------
 
-namespace mt2 = micro_os_plus::micro_test_plus2;
+namespace mt = micro_os_plus::micro_test_plus;
 using namespace std::literals;
 
 // ----------------------------------------------------------------------------
@@ -61,19 +61,20 @@ int
 main (int argc, char* argv[])
 {
   // Name the default test suite.
-  mt2::test_runner tr ("Minimal");
+  mt::test_runner tr ("Minimal");
   auto& ts = tr.initialise (argc, argv);
 
   // --------------------------------------------------------------------------
 
   // Test comparison functions.
-  ts.test_case ("Check various conditions", [] (auto& tc) {
-    // There are functions with usual names for all comparisons.
-    tc.expect (mt2::eq (compute_answer (), 42)) << "answer is 42";
+  ts.test_case ("Check various conditions", [] (auto& tc)
+    {
+      // There are functions with usual names for all comparisons.
+      tc.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
 
-    // Boolean expressions can be checked directly.
-    tc.expect (compute_condition ()) << "condition is true";
-  });
+      // Boolean expressions can be checked directly.
+      tc.expect (compute_condition ()) << "condition is true";
+    });
 
   // --------------------------------------------------------------------------
 

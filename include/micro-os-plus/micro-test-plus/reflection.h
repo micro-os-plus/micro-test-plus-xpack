@@ -34,7 +34,7 @@
  * professionalism of diagnostic output.
  *
  * All definitions reside within the
- * `micro_os_plus::micro_test_plus2::reflection` namespace, ensuring clear
+ * `micro_os_plus::micro_test_plus::reflection` namespace, ensuring clear
  * separation from user code and minimising the risk of naming conflicts.
  *
  * The header files are organised within the
@@ -74,12 +74,12 @@
 
 // =============================================================================
 
-namespace micro_os_plus::micro_test_plus2
+namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
   /**
-   * @namespace micro_os_plus::micro_test_plus2::reflection
+   * @namespace micro_os_plus::micro_test_plus::reflection
    * @brief Reflection utilities for the µTest++ testing framework.
    *
    * @details
@@ -218,7 +218,7 @@ namespace micro_os_plus::micro_test_plus2
   } // namespace reflection
 
   // --------------------------------------------------------------------------
-} // namespace micro_os_plus::micro_test_plus2
+} // namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop

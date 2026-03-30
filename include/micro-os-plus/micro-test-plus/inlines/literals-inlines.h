@@ -35,7 +35,7 @@
  * Specialised wrappers are provided for named boolean literals, supporting
  * enhanced expressiveness and type safety in test conditions.
  *
- * All definitions reside within the `micro_os_plus::micro_test_plus2::literals`
+ * All definitions reside within the `micro_os_plus::micro_test_plus::literals`
  * namespace, ensuring clear separation from user code and minimising the risk
  * of naming conflicts.
  *
@@ -73,7 +73,7 @@
 
 // ===========================================================================
 
-namespace micro_os_plus::micro_test_plus2
+namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
@@ -589,7 +589,7 @@ namespace micro_os_plus::micro_test_plus2
   } // namespace literals
 
   // --------------------------------------------------------------------------
-} // namespace micro_os_plus::micro_test_plus2
+} // namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop

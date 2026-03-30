@@ -21,7 +21,7 @@
 
 // ----------------------------------------------------------------------------
 
-namespace mt2 = micro_os_plus::micro_test_plus2;
+namespace mt = micro_os_plus::micro_test_plus;
 using namespace std::literals;
 
 // ----------------------------------------------------------------------------
@@ -56,7 +56,7 @@ compute_condition (void)
 // ----------------------------------------------------------------------------
 
 static void
-suite_function (mt2::static_test_suite& ts)
+suite_function (mt::static_test_suite& ts)
 {
   // Test comparison functions.
   ts.test_case ("Check various conditions", [] (auto& tc)
@@ -64,13 +64,13 @@ suite_function (mt2::static_test_suite& ts)
       // There are functions with usual names for all
       // comparisons.
 
-      tc.expect (mt2::eq (compute_answer (), 42)) << "answer is 42";
+      tc.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
 
       // Boolean expressions can be checked directly.
       tc.expect (compute_condition ()) << "condition is true";
     });
 }
 
-static mt2::static_test_suite suite = { "Suite", tr, suite_function };
+static mt::static_test_suite suite = { "Suite", tr, suite_function };
 
 // ----------------------------------------------------------------------------

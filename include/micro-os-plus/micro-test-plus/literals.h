@@ -38,7 +38,7 @@
  * recommended for new code, while the older `_i`, `_u8`, etc. aliases are
  * retained for backwards compatibility.
  *
- * All definitions reside within the `micro_os_plus::micro_test_plus2::literals`
+ * All definitions reside within the `micro_os_plus::micro_test_plus::literals`
  * namespace, ensuring clear separation from user code and minimising the risk
  * of naming conflicts.
  *
@@ -76,12 +76,12 @@
 
 // =============================================================================
 
-namespace micro_os_plus::micro_test_plus2
+namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
   /**
-   * @namespace micro_os_plus::micro_test_plus2::literals
+   * @namespace micro_os_plus::micro_test_plus::literals
    * @brief User-defined literals and type wrappers for the µTest++ testing
    * framework.
    *
@@ -897,7 +897,7 @@ namespace micro_os_plus::micro_test_plus2
   };
 
   // --------------------------------------------------------------------------
-} // namespace micro_os_plus::micro_test_plus2
+} // namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop

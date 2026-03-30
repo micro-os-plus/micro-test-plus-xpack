@@ -47,7 +47,7 @@
 #endif
 #endif
 
-namespace micro_os_plus::micro_test_plus2
+namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
@@ -106,7 +106,7 @@ namespace micro_os_plus::micro_test_plus2
   }
 
   // --------------------------------------------------------------------------
-} // namespace micro_os_plus::micro_test_plus2
+} // namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop

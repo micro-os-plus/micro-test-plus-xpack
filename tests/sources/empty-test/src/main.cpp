@@ -24,7 +24,7 @@
 
 // ----------------------------------------------------------------------------
 
-namespace mt2 = micro_os_plus::micro_test_plus2;
+namespace mt = micro_os_plus::micro_test_plus;
 using namespace std::literals;
 
 // ----------------------------------------------------------------------------
@@ -74,7 +74,7 @@ main (int argc, char* argv[])
 {
 #if 1
   {
-    mt2::test_runner tr ("Empty");
+    mt::test_runner tr ("Empty");
     tr.initialise (argc, argv);
 
     int exit_code = tr.exit_code ();
@@ -85,7 +85,7 @@ main (int argc, char* argv[])
   // ---------------------------------------------------------------------------
 
   {
-    mt2::test_runner tr ("Empty with top suite");
+    mt::test_runner tr ("Empty with top suite");
     auto& ts = tr.initialise (argc, argv);
     test_assert (strcmp (ts.name (), "Empty with top suite") == 0);
     // printf ("in test suite '%s'\n", ts.name ());
@@ -108,7 +108,7 @@ main (int argc, char* argv[])
   // ---------------------------------------------------------------------------
 
   {
-    mt2::test_runner tr ("Empty with top suite and extra suite");
+    mt::test_runner tr ("Empty with top suite and extra suite");
     auto& ts = tr.initialise (argc, argv);
     // printf ("in test suite '%s'\n", ts.name ());
 
@@ -153,7 +153,7 @@ main (int argc, char* argv[])
   // ---------------------------------------------------------------------------
 
   {
-    mt2::test_runner tr ("Empty with top nested cases");
+    mt::test_runner tr ("Empty with top nested cases");
     auto& ts = tr.initialise (argc, argv);
     // printf ("in test suite '%s'\n", ts.name ());
 

@@ -34,7 +34,7 @@
  * and extensibility, enabling professional and readable test reports suitable
  * for embedded and general C++ development.
  *
- * All definitions reside within the `micro_os_plus::micro_test_plus2`
+ * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the risk
  * of naming conflicts.
  *
@@ -60,7 +60,7 @@
 
 // =============================================================================
 
-namespace micro_os_plus::micro_test_plus2
+namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
@@ -457,6 +457,6 @@ namespace micro_os_plus::micro_test_plus2
   }
 
   // --------------------------------------------------------------------------
-} // namespace micro_os_plus::micro_test_plus2
+} // namespace micro_os_plus::micro_test_plus
 
 // ----------------------------------------------------------------------------

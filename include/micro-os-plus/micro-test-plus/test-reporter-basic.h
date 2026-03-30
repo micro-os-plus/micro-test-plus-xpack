@@ -31,7 +31,7 @@
  * port on bare-metal targets) may derive a new class from `test_reporter`
  * instead of using this class.
  *
- * All definitions reside within the `micro_os_plus::micro_test_plus2`
+ * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the risk
  * of naming conflicts.
  *
@@ -66,7 +66,7 @@
 
 // =============================================================================
 
-namespace micro_os_plus::micro_test_plus2
+namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
@@ -86,7 +86,7 @@ namespace micro_os_plus::micro_test_plus2
    * `initialize()`.
    *
    * All members and methods are defined within the
-   * `micro_os_plus::micro_test_plus2` namespace, ensuring clear separation from
+   * `micro_os_plus::micro_test_plus` namespace, ensuring clear separation from
    * user code and minimising the risk of naming conflicts.
    *
    * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
@@ -257,7 +257,7 @@ namespace micro_os_plus::micro_test_plus2
   };
 
   // --------------------------------------------------------------------------
-} // namespace micro_os_plus::micro_test_plus2
+} // namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop

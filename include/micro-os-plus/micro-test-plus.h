@@ -33,7 +33,7 @@
  * to ensure the framework operates correctly and efficiently.
  *
  * All public API definitions reside within the
- * `micro_os_plus::micro_test_plus2` namespace and its nested namespaces,
+ * `micro_os_plus::micro_test_plus` namespace and its nested namespaces,
  * ensuring clear separation from user code and minimising the risk of naming
  * conflicts.
  *
@@ -101,7 +101,7 @@
  * @brief Primary namespace for the µTest++ testing framework.
  *
  * @details
- * The `micro_os_plus::micro_test_plus2` namespace encapsulates all core
+ * The `micro_os_plus::micro_test_plus` namespace encapsulates all core
  * components, types, and utilities of the µTest++ testing framework, providing
  * a dedicated scope for its public API.
  *
@@ -122,7 +122,7 @@
  */
 // =============================================================================
 
-namespace micro_os_plus::micro_test_plus2
+namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
@@ -276,11 +276,11 @@ namespace micro_os_plus::micro_test_plus2
   // --------------------------------------------------------------------------
 
   /**
-   * @namespace micro_os_plus::micro_test_plus2::utility
+   * @namespace micro_os_plus::micro_test_plus::utility
    * @brief Utility functions for the µTest++ testing framework.
    *
    * @details
-   * The `micro_os_plus::micro_test_plus2::utility` namespace provides a suite
+   * The `micro_os_plus::micro_test_plus::utility` namespace provides a suite
    * of helper functions designed to support advanced string operations and
    * other common tasks within the µTest++ framework.
    *
@@ -326,7 +326,7 @@ namespace micro_os_plus::micro_test_plus2
   } // namespace utility
 
   // --------------------------------------------------------------------------
-} // namespace micro_os_plus::micro_test_plus2
+} // namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop

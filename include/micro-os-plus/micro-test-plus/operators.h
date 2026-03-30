@@ -32,7 +32,7 @@
  * minimising the risk of conflicts with user-defined or standard operators.
  *
  * All definitions reside within the
- * `micro_os_plus::micro_test_plus2::operators` namespace, ensuring clear
+ * `micro_os_plus::micro_test_plus::operators` namespace, ensuring clear
  * separation from user code and minimising the risk of naming conflicts.
  *
  * The header files are organised within the
@@ -70,17 +70,17 @@
 
 // ===========================================================================
 
-namespace micro_os_plus::micro_test_plus2
+namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
   /**
-   * @namespace micro_os_plus::micro_test_plus2::operators
+   * @namespace micro_os_plus::micro_test_plus::operators
    * @brief Custom operator overloads for expressive and type-safe test
    * assertions.
    *
    * @details
-   * The `micro_os_plus::micro_test_plus2::operators` namespace provides a
+   * The `micro_os_plus::micro_test_plus::operators` namespace provides a
    * comprehensive set of custom operator overloads designed to enable
    * expressive, concise, and type-safe test assertions within the µTest++
    * framework.
@@ -491,7 +491,7 @@ namespace micro_os_plus::micro_test_plus2
   } // namespace operators
 
   // --------------------------------------------------------------------------
-} // namespace micro_os_plus::micro_test_plus2
+} // namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop

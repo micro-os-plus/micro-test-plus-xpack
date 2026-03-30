@@ -23,7 +23,7 @@
 
 // ----------------------------------------------------------------------------
 
-namespace mt2 = micro_os_plus::micro_test_plus2;
+namespace mt = micro_os_plus::micro_test_plus;
 using namespace std::literals;
 
 // ----------------------------------------------------------------------------
@@ -88,7 +88,7 @@ exercise_throw (bool mustThrow)
 
 // ----------------------------------------------------------------------------
 
-static mt2::static_test_runner tr ("Sample");
+static mt::static_test_runner tr ("Sample");
 
 int
 main (int argc, char* argv[])
@@ -103,12 +103,12 @@ main (int argc, char* argv[])
     {
       // There are functions with usual names for all comparisons.
 
-      tc.expect (mt2::eq (compute_answer (), 42)) << "answer eq 42";
-      tc.expect (mt2::ne (compute_answer (), 43)) << "answer ne 43";
-      tc.expect (mt2::lt (compute_answer (), 43)) << "answer lt 43";
-      tc.expect (mt2::le (compute_answer (), 43)) << "answer le 42";
-      tc.expect (mt2::gt (compute_answer (), 41)) << "answer gt 43";
-      tc.expect (mt2::ge (compute_answer (), 42)) << "answer ge 42";
+      tc.expect (mt::eq (compute_answer (), 42)) << "answer eq 42";
+      tc.expect (mt::ne (compute_answer (), 43)) << "answer ne 43";
+      tc.expect (mt::lt (compute_answer (), 43)) << "answer lt 43";
+      tc.expect (mt::le (compute_answer (), 43)) << "answer le 42";
+      tc.expect (mt::gt (compute_answer (), 41)) << "answer gt 43";
+      tc.expect (mt::ge (compute_answer (), 42)) << "answer ge 42";
 
       // Boolean expressions can be checked directly.
       tc.expect (compute_condition ()) << "condition is true";
@@ -120,13 +120,13 @@ main (int argc, char* argv[])
       // since interferences with other operators are possible,
       // they are located in a separate namespace. Even so, they
       // require their operands to be typed, via literals (like
-      // `1_i`) or casts (like `mt2::to_i(expr)`).
+      // `1_i`) or casts (like `mt::to_i(expr)`).
 
-      using namespace mt2::operators;
-      using namespace mt2::literals;
+      using namespace mt::operators;
+      using namespace mt::literals;
 
       tc.expect (compute_answer () == 42_i) << "answer == 42 (with literal)";
-      tc.expect (mt2::to_i (compute_answer ()) == 42)
+      tc.expect (mt::to_i (compute_answer ()) == 42)
           << "answer == 42 (with cast)";
       tc.expect (compute_answer () != 43_i) << "answer != 43";
       tc.expect (compute_answer () < 43_i) << "answer < 43";
@@ -146,8 +146,8 @@ main (int argc, char* argv[])
       // otherwise the comparison is done on
       // the memory addresses, not on the content.
 
-      tc.expect (mt2::eq (std::string_view{ compute_ultimate_answer () },
-                          "fortytwo"sv))
+      tc.expect (mt::eq (std::string_view{ compute_ultimate_answer () },
+                         "fortytwo"sv))
           << "ultimate answer is 'fortytwo'";
     });
 
@@ -156,7 +156,7 @@ main (int argc, char* argv[])
       // There are also custom == and != operators for
       // `string_view` comparisons.
 
-      using namespace mt2::operators;
+      using namespace mt::operators;
 
       tc.expect (std::string_view{ compute_ultimate_answer () }
                  == "fortytwo"sv)
@@ -170,9 +170,9 @@ main (int argc, char* argv[])
       // from the language and/or/not operators).
 
       tc.expect (
-          mt2::_and (mt2::eq (compute_answer (), 42),
-                     mt2::eq (std::string_view{ compute_ultimate_answer () },
-                              "fortytwo"sv)))
+          mt::_and (mt::eq (compute_answer (), 42),
+                    mt::eq (std::string_view{ compute_ultimate_answer () },
+                            "fortytwo"sv)))
           << "logical 'and' expression";
     });
 
@@ -180,8 +180,8 @@ main (int argc, char* argv[])
     {
       // There are also operators for logical expressions.
 
-      using namespace mt2::operators;
-      using namespace mt2::literals;
+      using namespace mt::operators;
+      using namespace mt::literals;
 
       tc.expect (
           (compute_answer () == 42_i)
@@ -199,8 +199,8 @@ main (int argc, char* argv[])
 
       auto add = [] (int i) { return i + 40; };
 
-      tc.expect (mt2::eq (add (2), 42)) << "lambda returns 42";
-      tc.expect (mt2::eq (add (3), 43)) << "lambda returns 43";
+      tc.expect (mt::eq (add (2), 42)) << "lambda returns 42";
+      tc.expect (mt::eq (add (3), 43)) << "lambda returns 43";
     });
 
   // --------------------------------------------------------------------------
@@ -214,17 +214,17 @@ main (int argc, char* argv[])
 #endif
   ts.test_case ("Check args", [] (auto& tc, int _argc, char* _argv[])
     {
-      tc.expect (mt2::ge (_argc, 2)) << "argc >= 2";
+      tc.expect (mt::ge (_argc, 2)) << "argc >= 2";
 
       if (_argc > 1)
         {
-          tc.expect (mt2::eq (std::string_view{ _argv[1] }, "one"sv))
+          tc.expect (mt::eq (std::string_view{ _argv[1] }, "one"sv))
               << "argv[1] is 'one'";
         }
 
       if (_argc > 2)
         {
-          tc.expect (mt2::eq (std::string_view{ _argv[2] }, "two"sv))
+          tc.expect (mt::eq (std::string_view{ _argv[2] }, "two"sv))
               << "argv[2] is 'two'";
         }
     }, argc, argv);
@@ -258,14 +258,14 @@ main (int argc, char* argv[])
 
   ts.test_case ("Check if exceptions are thrown", [] (auto& tc)
     {
-      tc.expect (mt2::throws ([] { exercise_throw (true); }))
+      tc.expect (mt::throws ([] { exercise_throw (true); }))
           << "exception thrown";
 
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
 #endif
-      tc.expect (mt2::throws<std::runtime_error> ([]
+      tc.expect (mt::throws<std::runtime_error> ([]
         { throw std::runtime_error{ "" }; }))
           << "std::runtime_error thrown";
 #pragma GCC diagnostic pop
@@ -273,7 +273,7 @@ main (int argc, char* argv[])
 
   ts.test_case ("Check if exceptions are not thrown", [] (auto& tc)
     {
-      tc.expect (mt2::nothrow ([] { exercise_throw (false); }))
+      tc.expect (mt::nothrow ([] { exercise_throw (false); }))
           << "exception not thrown";
     });
 
@@ -284,11 +284,11 @@ main (int argc, char* argv[])
       // Containers are iterated and each value compared with
       // `eq()` or `ne()`.
 
-      tc.expect (mt2::eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
+      tc.expect (mt::eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
           << "vector{ 1, 2 } eq vector{ 1, 2 }";
 
       tc.expect (
-          mt2::ne (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 }))
+          mt::ne (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 }))
           << "vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }";
     });
 
@@ -296,7 +296,7 @@ main (int argc, char* argv[])
     {
       // Containers are iterated and each value compared with `==` or `!=`.
 
-      using namespace mt2::operators;
+      using namespace mt::operators;
 
       tc.expect (std::vector<int>{ 1, 2 } == std::vector<int>{ 1, 2 })
           << "vector{ 1, 2 } == vector{ 1, 2 }";
@@ -320,7 +320,7 @@ main (int argc, char* argv[])
 // ----------------------------------------------------------------------------
 // Additional test suites. They may be located in separate source files.
 
-static mt2::static_test_suite ts_explicit
+static mt::static_test_suite ts_explicit
     = { "Explicit namespace", tr, [] (auto& ts)
   {
     ts.test_case ("Check one",
@@ -329,13 +329,13 @@ static mt2::static_test_suite ts_explicit
                   [] (auto& tc) { tc.expect (true) << "Passed"; });
   } };
 
-static mt2::static_test_suite ts_separate
+static mt::static_test_suite ts_separate
     = { "Implicit namespace", tr, [] (auto& ts)
   {
     // For applications known to not conflict with the test
     // framework names, it is possible to access the definitions
     // directly, by including all namespace definitions.
-    using namespace micro_os_plus::micro_test_plus2;
+    using namespace micro_os_plus::micro_test_plus;
 
     ts.test_case ("Check one",
                   [] (auto& tc) { tc.expect (true) << "Passed"; });
@@ -347,16 +347,16 @@ static mt2::static_test_suite ts_separate
 
 // Parametrized test suite, with constants, values, references and pointers.
 static void
-test_suite_with_args (mt2::static_test_suite& ts, int ic, int iv, int& ir,
+test_suite_with_args (mt::static_test_suite& ts, int ic, int iv, int& ir,
                       int* ip1, int* ip2)
 {
   ts.test_case ("args", [&] (auto& tc)
     {
-      tc.expect (mt2::eq (ic, 42)) << "ic is 42";
-      tc.expect (mt2::eq (iv, 43)) << "iv is 43";
-      tc.expect (mt2::eq (ir, 44)) << "ir is 44";
-      tc.expect (mt2::eq (*ip1, 45)) << "*ip1 is 45";
-      tc.expect (mt2::eq (*ip2, 46)) << "*ip2 is 46";
+      tc.expect (mt::eq (ic, 42)) << "ic is 42";
+      tc.expect (mt::eq (iv, 43)) << "iv is 43";
+      tc.expect (mt::eq (ir, 44)) << "ir is 44";
+      tc.expect (mt::eq (*ip1, 45)) << "*ip1 is 45";
+      tc.expect (mt::eq (*ip2, 46)) << "*ip2 is 46";
     });
 }
 
@@ -367,7 +367,7 @@ static int in45 = 45;
 static int in46 = 46;
 static int* ip2 = &in46;
 
-static mt2::static_test_suite ts_args
+static mt::static_test_suite ts_args
     = { "Args", tr, test_suite_with_args, 42, in, ir, &in45, ip2 };
 
 #endif

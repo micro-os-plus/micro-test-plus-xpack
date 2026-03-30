@@ -22,12 +22,12 @@
  * @details
  * This header provides the declarations for the internal components of the
  * µTest++ framework, encapsulated within the
- * `micro_os_plus::micro_test_plus2::detail` namespace. It defines the core
+ * `micro_os_plus::micro_test_plus::detail` namespace. It defines the core
  * mechanisms, helper structures, and utility templates that underpin the
  * framework's assertion handling, value retrieval, comparator logic, deferred
  * reporting, and exception checking facilities.
  *
- * All definitions reside within the `micro_os_plus::micro_test_plus2::detail`
+ * All definitions reside within the `micro_os_plus::micro_test_plus::detail`
  * namespace, ensuring clear separation from user code and minimising the risk
  * of naming conflicts.
  *
@@ -64,14 +64,14 @@
 
 // ============================================================================
 
-namespace micro_os_plus::micro_test_plus2
+namespace micro_os_plus::micro_test_plus
 {
   class test_case_base;
 
   // --------------------------------------------------------------------------
 
   /**
-   * @namespace micro_os_plus::micro_test_plus2::detail
+   * @namespace micro_os_plus::micro_test_plus::detail
    * @brief Internal implementation details for the µTest++ framework.
    *
    * @details
@@ -274,13 +274,12 @@ namespace micro_os_plus::micro_test_plus2
        * result is stored in the `value_` member for efficient access.
        */
       constexpr eq_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
-          : lhs_{ lhs }, rhs_{ rhs }, value_{
-              [&]
-                {
-                  // This lambda is called in the constructor to
-                  // evaluate the comparison.
-                  using std::operator==;
-                  using std::operator<;
+          : lhs_{ lhs }, rhs_{ rhs }, value_{ [&]
+        {
+          // This lambda is called in the constructor to
+          // evaluate the comparison.
+          using std::operator==;
+          using std::operator<;
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
@@ -293,45 +292,41 @@ namespace micro_os_plus::micro_test_plus2
 #pragma clang diagnostic ignored "-Wpedantic"
 #endif
 #endif
-                  if constexpr (type_traits::has_value_v<Lhs_T>
-                                and type_traits::has_value_v<Rhs_T>)
-                    {
-                      // If both types have values (like numeric constants),
-                      // compare them directly.
-                      return Lhs_T::value == Rhs_T::value;
-                    }
-                  else if constexpr (type_traits::has_epsilon_v<Lhs_T>
-                                     and type_traits::has_epsilon_v<Rhs_T>)
-                    {
-                      // If both values have precision, compare them using
-                      // the smalles precision.
-                      return math::abs (get (lhs) - get (rhs))
-                             < math::min_value (Lhs_T::epsilon,
-                                                Rhs_T::epsilon);
-                    }
-                  else if constexpr (type_traits::has_epsilon_v<Lhs_T>)
-                    {
-                      // If only the left operand has precision, use it.
-                      return math::abs (get (lhs) - get (rhs))
-                             < Lhs_T::epsilon;
-                    }
-                  else if constexpr (type_traits::has_epsilon_v<Rhs_T>)
-                    {
-                      // If only the right operand has precision, use it.
-                      return math::abs (get (lhs) - get (rhs))
-                             < Rhs_T::epsilon;
-                    }
-                  else
-                    {
-                      // Call the generic getters, which might
-                      // either call the type get() or return the value.
-                      return get (lhs) == get (rhs);
-                    }
+          if constexpr (type_traits::has_value_v<Lhs_T>
+                        and type_traits::has_value_v<Rhs_T>)
+            {
+              // If both types have values (like numeric constants),
+              // compare them directly.
+              return Lhs_T::value == Rhs_T::value;
+            }
+          else if constexpr (type_traits::has_epsilon_v<Lhs_T>
+                             and type_traits::has_epsilon_v<Rhs_T>)
+            {
+              // If both values have precision, compare them using
+              // the smalles precision.
+              return math::abs (get (lhs) - get (rhs))
+                     < math::min_value (Lhs_T::epsilon, Rhs_T::epsilon);
+            }
+          else if constexpr (type_traits::has_epsilon_v<Lhs_T>)
+            {
+              // If only the left operand has precision, use it.
+              return math::abs (get (lhs) - get (rhs)) < Lhs_T::epsilon;
+            }
+          else if constexpr (type_traits::has_epsilon_v<Rhs_T>)
+            {
+              // If only the right operand has precision, use it.
+              return math::abs (get (lhs) - get (rhs)) < Rhs_T::epsilon;
+            }
+          else
+            {
+              // Call the generic getters, which might
+              // either call the type get() or return the value.
+              return get (lhs) == get (rhs);
+            }
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
-                }()
-            }
+        }() }
       {
       }
 
@@ -452,12 +447,11 @@ namespace micro_os_plus::micro_test_plus2
        * result is stored in the `value_` member for efficient access.
        */
       constexpr ne_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
-          : lhs_{ lhs }, rhs_{ rhs }, value_{
-              [&]
-                {
-                  using std::operator==;
-                  using std::operator!=;
-                  using std::operator>;
+          : lhs_{ lhs }, rhs_{ rhs }, value_{ [&]
+        {
+          using std::operator==;
+          using std::operator!=;
+          using std::operator>;
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
@@ -470,37 +464,33 @@ namespace micro_os_plus::micro_test_plus2
 #pragma clang diagnostic ignored "-Wpedantic"
 #endif
 #endif
-                  if constexpr (type_traits::has_value_v<Lhs_T>
-                                and type_traits::has_value_v<Rhs_T>)
-                    {
-                      return Lhs_T::value != Rhs_T::value;
-                    }
-                  else if constexpr (type_traits::has_epsilon_v<Lhs_T>
-                                     and type_traits::has_epsilon_v<Rhs_T>)
-                    {
-                      return math::abs (get (lhs_) - get (rhs_))
-                             > math::min_value (Lhs_T::epsilon,
-                                                Rhs_T::epsilon);
-                    }
-                  else if constexpr (type_traits::has_epsilon_v<Lhs_T>)
-                    {
-                      return math::abs (get (lhs_) - get (rhs_))
-                             > Lhs_T::epsilon;
-                    }
-                  else if constexpr (type_traits::has_epsilon_v<Rhs_T>)
-                    {
-                      return math::abs (get (lhs_) - get (rhs_))
-                             > Rhs_T::epsilon;
-                    }
-                  else
-                    {
-                      return get (lhs_) != get (rhs_);
-                    }
+          if constexpr (type_traits::has_value_v<Lhs_T>
+                        and type_traits::has_value_v<Rhs_T>)
+            {
+              return Lhs_T::value != Rhs_T::value;
+            }
+          else if constexpr (type_traits::has_epsilon_v<Lhs_T>
+                             and type_traits::has_epsilon_v<Rhs_T>)
+            {
+              return math::abs (get (lhs_) - get (rhs_))
+                     > math::min_value (Lhs_T::epsilon, Rhs_T::epsilon);
+            }
+          else if constexpr (type_traits::has_epsilon_v<Lhs_T>)
+            {
+              return math::abs (get (lhs_) - get (rhs_)) > Lhs_T::epsilon;
+            }
+          else if constexpr (type_traits::has_epsilon_v<Rhs_T>)
+            {
+              return math::abs (get (lhs_) - get (rhs_)) > Rhs_T::epsilon;
+            }
+          else
+            {
+              return get (lhs_) != get (rhs_);
+            }
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
-                }()
-            }
+        }() }
       {
       }
 
@@ -619,10 +609,9 @@ namespace micro_os_plus::micro_test_plus2
        * The result is stored in the `value_` member for efficient access.
        */
       constexpr gt_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
-          : lhs_{ lhs }, rhs_{ rhs },
-            value_{ [&]
-                      {
-                        using std::operator>;
+          : lhs_{ lhs }, rhs_{ rhs }, value_{ [&]
+        {
+          using std::operator>;
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
@@ -634,19 +623,19 @@ namespace micro_os_plus::micro_test_plus2
 #pragma clang diagnostic ignored "-Wpedantic"
 #endif
 #endif
-                        if constexpr (type_traits::has_value_v<Lhs_T>
-                                      and type_traits::has_value_v<Rhs_T>)
-                          {
-                            return Lhs_T::value > Rhs_T::value;
-                          }
-                        else
-                          {
-                            return get (lhs_) > get (rhs_);
-                          }
+          if constexpr (type_traits::has_value_v<Lhs_T>
+                        and type_traits::has_value_v<Rhs_T>)
+            {
+              return Lhs_T::value > Rhs_T::value;
+            }
+          else
+            {
+              return get (lhs_) > get (rhs_);
+            }
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
-                      }() }
+        }() }
       {
       }
 
@@ -768,10 +757,9 @@ namespace micro_os_plus::micro_test_plus2
        * efficient access.
        */
       constexpr ge_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
-          : lhs_{ lhs }, rhs_{ rhs },
-            value_{ [&]
-                      {
-                        using std::operator>=;
+          : lhs_{ lhs }, rhs_{ rhs }, value_{ [&]
+        {
+          using std::operator>=;
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
@@ -783,19 +771,19 @@ namespace micro_os_plus::micro_test_plus2
 #pragma clang diagnostic ignored "-Wpedantic"
 #endif
 #endif
-                        if constexpr (type_traits::has_value_v<Lhs_T>
-                                      and type_traits::has_value_v<Rhs_T>)
-                          {
-                            return Lhs_T::value >= Rhs_T::value;
-                          }
-                        else
-                          {
-                            return get (lhs_) >= get (rhs_);
-                          }
+          if constexpr (type_traits::has_value_v<Lhs_T>
+                        and type_traits::has_value_v<Rhs_T>)
+            {
+              return Lhs_T::value >= Rhs_T::value;
+            }
+          else
+            {
+              return get (lhs_) >= get (rhs_);
+            }
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
-                      }() }
+        }() }
       {
       }
 
@@ -915,10 +903,9 @@ namespace micro_os_plus::micro_test_plus2
        * The result is stored in the `value_` member for efficient access.
        */
       constexpr lt_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
-          : lhs_{ lhs }, rhs_{ rhs },
-            value_{ [&]
-                      {
-                        using std::operator<;
+          : lhs_{ lhs }, rhs_{ rhs }, value_{ [&]
+        {
+          using std::operator<;
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
@@ -930,19 +917,19 @@ namespace micro_os_plus::micro_test_plus2
 #pragma clang diagnostic ignored "-Wpedantic"
 #endif
 #endif
-                        if constexpr (type_traits::has_value_v<Lhs_T>
-                                      and type_traits::has_value_v<Rhs_T>)
-                          {
-                            return Lhs_T::value < Rhs_T::value;
-                          }
-                        else
-                          {
-                            return get (lhs_) < get (rhs_);
-                          }
+          if constexpr (type_traits::has_value_v<Lhs_T>
+                        and type_traits::has_value_v<Rhs_T>)
+            {
+              return Lhs_T::value < Rhs_T::value;
+            }
+          else
+            {
+              return get (lhs_) < get (rhs_);
+            }
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
-                      }() }
+        }() }
       {
       }
 
@@ -1065,10 +1052,9 @@ namespace micro_os_plus::micro_test_plus2
        * efficient access.
        */
       constexpr le_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
-          : lhs_{ lhs }, rhs_{ rhs },
-            value_{ [&]
-                      {
-                        using std::operator<=;
+          : lhs_{ lhs }, rhs_{ rhs }, value_{ [&]
+        {
+          using std::operator<=;
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
@@ -1080,19 +1066,19 @@ namespace micro_os_plus::micro_test_plus2
 #pragma clang diagnostic ignored "-Wpedantic"
 #endif
 #endif
-                        if constexpr (type_traits::has_value_v<Lhs_T>
-                                      and type_traits::has_value_v<Rhs_T>)
-                          {
-                            return Lhs_T::value <= Rhs_T::value;
-                          }
-                        else
-                          {
-                            return get (lhs_) <= get (rhs_);
-                          }
+          if constexpr (type_traits::has_value_v<Lhs_T>
+                        and type_traits::has_value_v<Rhs_T>)
+            {
+              return Lhs_T::value <= Rhs_T::value;
+            }
+          else
+            {
+              return get (lhs_) <= get (rhs_);
+            }
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
-                      }() }
+        }() }
       {
       }
 
@@ -1547,21 +1533,21 @@ namespace micro_os_plus::micro_test_plus2
        */
       constexpr explicit throws_ (const Callable_T& func)
           : value_{ [&func]
-                      {
-                        try
-                          {
-                            func ();
-                          }
-                        catch (const Exception_T&)
-                          {
-                            return true;
-                          }
-                        catch (...)
-                          {
-                            return false;
-                          }
-                        return false;
-                      }() }
+        {
+          try
+            {
+              func ();
+            }
+          catch (const Exception_T&)
+            {
+              return true;
+            }
+          catch (...)
+            {
+              return false;
+            }
+          return false;
+        }() }
       {
       }
 
@@ -1631,17 +1617,17 @@ namespace micro_os_plus::micro_test_plus2
        */
       constexpr explicit throws_ (const Callable_T& func)
           : value_{ [&func]
-                      {
-                        try
-                          {
-                            func ();
-                          }
-                        catch (...)
-                          {
-                            return true;
-                          }
-                        return false;
-                      }() }
+        {
+          try
+            {
+              func ();
+            }
+          catch (...)
+            {
+              return true;
+            }
+          return false;
+        }() }
       {
       }
 
@@ -1709,17 +1695,17 @@ namespace micro_os_plus::micro_test_plus2
        */
       constexpr explicit nothrow_ (const Callable_T& func)
           : value_{ [&func]
-                      {
-                        try
-                          {
-                            func ();
-                          }
-                        catch (...)
-                          {
-                            return false;
-                          }
-                        return true;
-                      }() }
+        {
+          try
+            {
+              func ();
+            }
+          catch (...)
+            {
+              return false;
+            }
+          return true;
+        }() }
       {
       }
 
@@ -1752,7 +1738,7 @@ namespace micro_os_plus::micro_test_plus2
   } // namespace detail
 
   // --------------------------------------------------------------------------
-} // namespace micro_os_plus::micro_test_plus2
+} // namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop

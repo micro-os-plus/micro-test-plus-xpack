@@ -34,7 +34,7 @@
  * on the standard library, ensuring portability and performance across a wide
  * range of platforms.
  *
- * All definitions reside within the `micro_os_plus::micro_test_plus2::math`
+ * All definitions reside within the `micro_os_plus::micro_test_plus::math`
  * namespace, ensuring clear separation from user code and minimising the risk
  * of naming conflicts.
  *
@@ -69,12 +69,12 @@
 
 // ============================================================================
 
-namespace micro_os_plus::micro_test_plus2
+namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
   /**
-   * @namespace micro_os_plus::micro_test_plus2::math
+   * @namespace micro_os_plus::micro_test_plus::math
    * @brief Mathematical utilities for the µTest++ testing framework.
    *
    * @details
@@ -202,7 +202,7 @@ namespace micro_os_plus::micro_test_plus2
   } // namespace math
 
   // --------------------------------------------------------------------------
-} // namespace micro_os_plus::micro_test_plus2
+} // namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop

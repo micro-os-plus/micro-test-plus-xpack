@@ -34,7 +34,7 @@
  * and maintainable test code.
  *
  * All definitions reside within the
- * `micro_os_plus::micro_test_plus2::type_traits` namespace, ensuring clear
+ * `micro_os_plus::micro_test_plus::type_traits` namespace, ensuring clear
  * separation from user code and minimising the risk of naming conflicts.
  *
  * All header files are organised within the
@@ -68,12 +68,12 @@
 
 // ============================================================================
 
-namespace micro_os_plus::micro_test_plus2
+namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
   /**
-   * @namespace micro_os_plus::micro_test_plus2::type_traits
+   * @namespace micro_os_plus::micro_test_plus::type_traits
    * @brief Type trait utilities and metaprogramming support for the µTest++
    * testing framework.
    *
@@ -150,8 +150,8 @@ namespace micro_os_plus::micro_test_plus2
 
 #if defined(__DOXYGEN__)
     // error: Detected potential recursive class relation between class
-    // micro_os_plus::micro_test_plus2::type_traits::function_traits and base
-    // class micro_os_plus::micro_test_plus2::type_traits::function_traits<
+    // micro_os_plus::micro_test_plus::type_traits::function_traits and base
+    // class micro_os_plus::micro_test_plus::type_traits::function_traits<
     // decltype(&T::operator())>!
     // https://github.com/doxygen/doxygen/issues/9915
 #else
@@ -1133,7 +1133,7 @@ namespace micro_os_plus::micro_test_plus2
   } // namespace type_traits
 
   // --------------------------------------------------------------------------
-} // namespace micro_os_plus::micro_test_plus2
+} // namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop

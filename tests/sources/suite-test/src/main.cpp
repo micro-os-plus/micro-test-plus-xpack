@@ -25,7 +25,7 @@
 
 // ----------------------------------------------------------------------------
 
-namespace mt2 = micro_os_plus::micro_test_plus2;
+namespace mt = micro_os_plus::micro_test_plus;
 using namespace std::literals;
 
 // ----------------------------------------------------------------------------
@@ -42,9 +42,9 @@ using namespace std::literals;
 
 // ----------------------------------------------------------------------------
 
-extern mt2::static_test_runner tr;
+extern mt::static_test_runner tr;
 
-mt2::static_test_runner tr{ "Suite" };
+mt::static_test_runner tr{ "Suite" };
 
 int
 main (int argc, char* argv[])

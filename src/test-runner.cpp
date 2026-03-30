@@ -29,7 +29,7 @@
  * execution of test suites, flexible verbosity control, and robust mechanisms
  * for aborting test execution in critical scenarios.
  *
- * All definitions reside within the `micro_os_plus::micro_test_plus2`
+ * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the risk
  * of naming conflicts.
  *
@@ -59,7 +59,7 @@
 
 // ============================================================================
 
-namespace micro_os_plus::micro_test_plus2
+namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
@@ -399,6 +399,6 @@ namespace micro_os_plus::micro_test_plus2
   }
 
   // --------------------------------------------------------------------------
-} // namespace micro_os_plus::micro_test_plus2
+} // namespace micro_os_plus::micro_test_plus
 
 // ----------------------------------------------------------------------------

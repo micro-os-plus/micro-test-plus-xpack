@@ -27,7 +27,7 @@
  * suites, reporting results, and supporting utility operations such as file
  * name extraction and pattern-based string matching.
  *
- * All definitions are contained within the `micro_os_plus::micro_test_plus2`
+ * All definitions are contained within the `micro_os_plus::micro_test_plus`
  * namespace and its nested namespaces, ensuring clear separation from user
  * code and minimising the risk of naming conflicts.
  *
@@ -63,7 +63,7 @@
 
 // ============================================================================
 
-namespace micro_os_plus::micro_test_plus2
+namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
   // Public API.
@@ -161,7 +161,7 @@ namespace micro_os_plus::micro_test_plus2
  * @par Examples
  *
  * @code{.cpp}
- * namespace mt = micro_os_plus::micro_test_plus2;
+ * namespace mt = micro_os_plus::micro_test_plus;
  *
  * mt::expect (mt::utility::is_match ("abc", "a?c")) << "abc matches a?c";
  * mt::expect (mt::utility::is_match ("abc", "a*c")) << "abc matches a*c";
@@ -208,6 +208,6 @@ namespace micro_os_plus::micro_test_plus2
   } // namespace utility
 
   // ==========================================================================
-} // namespace micro_os_plus::micro_test_plus2
+} // namespace micro_os_plus::micro_test_plus
 
 // ----------------------------------------------------------------------------

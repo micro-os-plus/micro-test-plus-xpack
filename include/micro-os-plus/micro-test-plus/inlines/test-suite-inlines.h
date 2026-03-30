@@ -31,7 +31,7 @@
  * and execution of test suites. The use of `std::bind` allows for versatile
  * test suite initialisation with arbitrary callable types and arguments.
  *
- * All definitions reside within the `micro_os_plus::micro_test_plus2`
+ * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, maintaining a clear separation from user code and minimising the
  * risk of naming conflicts.
  *
@@ -71,7 +71,7 @@
 
 // ============================================================================
 
-namespace micro_os_plus::micro_test_plus2
+namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
@@ -233,7 +233,7 @@ namespace micro_os_plus::micro_test_plus2
   }
 
   // --------------------------------------------------------------------------
-} // namespace micro_os_plus::micro_test_plus2
+} // namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
