@@ -356,8 +356,14 @@ namespace micro_os_plus::micro_test_plus
           }
 
         std::string indent (indent_size * test_case.nesting_depth (), ' ');
+
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
         printf ("%s# Subtest: %s - test case started\n", indent.c_str (),
                 test_case.name ());
+#pragma GCC diagnostic pop
 
         add_empty_line = false;
       }
