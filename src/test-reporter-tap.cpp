@@ -92,7 +92,7 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   void
-  test_reporter_tap::begin_test ([[maybe_unused]] runner& runner)
+  test_reporter_tap::begin_session ([[maybe_unused]] runner& runner)
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
     printf ("%s\n", __PRETTY_FUNCTION__);
@@ -108,7 +108,7 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wshadow"
   void
-  test_reporter_tap::end_test (runner& runner)
+  test_reporter_tap::end_session (runner& runner)
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
     printf ("%s\n", __PRETTY_FUNCTION__);

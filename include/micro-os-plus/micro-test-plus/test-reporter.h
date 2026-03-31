@@ -718,7 +718,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     virtual void
-    begin_test (runner& runner) = 0;
+    begin_session (runner& runner) = 0;
 
     /**
      * @brief Mark the end of a test.
@@ -728,7 +728,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     virtual void
-    end_test (runner& runner) = 0;
+    end_session (runner& runner) = 0;
 
     /**
      * @brief Mark the beginning of a test suite.

@@ -206,7 +206,7 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
 
     timings.timestamp_begin ();
-    reporter_->begin_test (*this);
+    reporter_->begin_session (*this);
 
     // Begin the top suite here and end it when the first explicit suite is
     // created or at exit.
@@ -238,7 +238,7 @@ namespace micro_os_plus::micro_test_plus
     totals += top_suite_->totals;
 
     timings.timestamp_end ();
-    reporter_->end_test (*this);
+    reporter_->end_session (*this);
 
     int exit_code = totals.was_successful () ? 0 : 1;
 

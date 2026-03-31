@@ -153,7 +153,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     void
-    begin_test (runner& runner) override;
+    begin_session (runner& runner) override;
 
     /**
      * @brief Mark the end of a test.
@@ -163,7 +163,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     void
-    end_test (runner& runner) override;
+    end_session (runner& runner) override;
 
     /**
      * @brief Mark the beginning of a test suite.
