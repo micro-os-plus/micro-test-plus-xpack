@@ -93,7 +93,7 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   void
-  test_reporter_basic::begin_test ([[maybe_unused]] test_runner& runner)
+  test_reporter_basic::begin_test ([[maybe_unused]] runner& runner)
   {
     // Nothing to do.
   }
@@ -101,7 +101,7 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wshadow"
   void
-  test_reporter_basic::end_test ([[maybe_unused]] test_runner& runner)
+  test_reporter_basic::end_test ([[maybe_unused]] runner& runner)
   {
     // Nothing to do.
   }

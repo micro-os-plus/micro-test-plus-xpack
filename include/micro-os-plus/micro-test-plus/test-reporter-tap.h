@@ -145,7 +145,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     void
-    begin_test (test_runner& runner) override;
+    begin_test (runner& runner) override;
 
     /**
      * @brief Mark the end of a test.
@@ -155,7 +155,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     void
-    end_test (test_runner& runner) override;
+    end_test (runner& runner) override;
 
     /**
      * @brief Mark the beginning of a test suite.

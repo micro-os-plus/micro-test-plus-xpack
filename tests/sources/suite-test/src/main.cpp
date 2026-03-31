@@ -42,9 +42,9 @@ using namespace std::literals;
 
 // ----------------------------------------------------------------------------
 
-extern mt::static_test_runner tr;
+extern mt::static_runner tr;
 
-mt::static_test_runner tr{ "Suite" };
+mt::static_runner tr{ "Suite" };
 
 int
 main (int argc, char* argv[])

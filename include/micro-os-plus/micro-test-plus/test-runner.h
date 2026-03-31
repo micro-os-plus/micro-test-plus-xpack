@@ -81,7 +81,7 @@ namespace micro_os_plus::micro_test_plus
    * @brief The test runner for the µTest++ framework.
    *
    * @details
-   * The `test_runner` class is responsible for managing the registration and
+   * The `runner` class is responsible for managing the registration and
    * execution of test suites within the µTest++ framework. It maintains a
    * collection of test suites, each of which registers itself automatically
    * upon construction, enabling seamless integration and execution of tests
@@ -98,43 +98,43 @@ namespace micro_os_plus::micro_test_plus
    *
    * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */
-  class test_runner
+  class runner
   {
   public:
     /**
-     * @brief Default constructor for the test_runner class.
+     * @brief Default constructor for the runner class.
      *
      * @details
      * The rule of five is enforced to prevent accidental copying or moving.
      */
-    test_runner (const char* top_suite_name);
+    runner (const char* top_suite_name);
 
     /**
      * @brief Deleted copy constructor to prevent copying.
      */
-    test_runner (const test_runner&) = delete;
+    runner (const runner&) = delete;
 
     /**
      * @brief Deleted move constructor to prevent moving.
      */
-    test_runner (test_runner&&) = delete;
+    runner (runner&&) = delete;
 
     /**
      * @brief Deleted copy assignment operator to prevent copying.
      */
-    test_runner&
-    operator= (const test_runner&) = delete;
+    runner&
+    operator= (const runner&) = delete;
 
     /**
      * @brief Deleted move assignment operator to prevent moving.
      */
-    test_runner&
-    operator= (test_runner&&) = delete;
+    runner&
+    operator= (runner&&) = delete;
 
     /**
-     * @brief Destructor for the test_runner class.
+     * @brief Destructor for the runner class.
      */
-    virtual ~test_runner ();
+    virtual ~runner ();
 
     /**
      * @brief Initialises the test runner with command-line arguments and an
@@ -244,11 +244,11 @@ namespace micro_os_plus::micro_test_plus
     test_suite_top* top_suite_;
   };
 
-  class static_test_runner final : public test_runner
+  class static_runner final : public runner
   {
   public:
-    static_test_runner (const char* top_suite_name);
-    ~static_test_runner () override;
+    static_runner (const char* top_suite_name);
+    ~static_runner () override;
 
     // ------------------------------------------------------------------------
 

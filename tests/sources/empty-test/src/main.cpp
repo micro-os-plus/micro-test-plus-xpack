@@ -75,7 +75,7 @@ main (int argc, char* argv[])
 {
 #if 1
   {
-    mt::test_runner tr ("Empty");
+    mt::runner tr ("Empty");
     tr.initialise (argc, argv);
 
     int exit_code = tr.exit_code ();
@@ -86,7 +86,7 @@ main (int argc, char* argv[])
   // ---------------------------------------------------------------------------
 
   {
-    mt::test_runner tr ("Empty with top suite");
+    mt::runner tr ("Empty with top suite");
     auto& ts = tr.initialise (argc, argv);
     test_assert (strcmp (ts.name (), "Empty with top suite") == 0);
     // printf ("in test suite '%s'\n", ts.name ());
@@ -109,7 +109,7 @@ main (int argc, char* argv[])
   // ---------------------------------------------------------------------------
 
   {
-    mt::test_runner tr ("Empty with top suite and extra suite");
+    mt::runner tr ("Empty with top suite and extra suite");
     auto& ts = tr.initialise (argc, argv);
     // printf ("in test suite '%s'\n", ts.name ());
 
@@ -154,7 +154,7 @@ main (int argc, char* argv[])
   // ---------------------------------------------------------------------------
 
   {
-    mt::test_runner tr ("Empty with top nested cases");
+    mt::runner tr ("Empty with top nested cases");
     auto& ts = tr.initialise (argc, argv);
     // printf ("in test suite '%s'\n", ts.name ());
 

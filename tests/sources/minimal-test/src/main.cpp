@@ -61,7 +61,7 @@ int
 main (int argc, char* argv[])
 {
   // Name the default test suite.
-  mt::test_runner tr ("Minimal");
+  mt::runner tr ("Minimal");
   auto& ts = tr.initialise (argc, argv);
 
   // --------------------------------------------------------------------------

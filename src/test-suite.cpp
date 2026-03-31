@@ -74,7 +74,7 @@ namespace micro_os_plus::micro_test_plus
    * the µTest++ framework and supporting organised test management across all
    * files and folders.
    */
-  test_suite_base::test_suite_base (const char* name, test_runner& runner,
+  test_suite_base::test_suite_base (const char* name, class runner& runner,
                                     size_t own_index)
       : own_index_{ own_index }, runner_{ runner }
   {
@@ -116,7 +116,7 @@ namespace micro_os_plus::micro_test_plus
 
   // ==========================================================================
 
-  test_suite_top::test_suite_top (const char* name, test_runner& runner,
+  test_suite_top::test_suite_top (const char* name, class runner& runner,
                                   size_t own_index)
       : test_suite_base{ name, runner, own_index }
   {

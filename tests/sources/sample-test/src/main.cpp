@@ -88,7 +88,7 @@ exercise_throw (bool mustThrow)
 
 // ----------------------------------------------------------------------------
 
-static mt::static_test_runner tr ("Sample");
+static mt::static_runner tr ("Sample");
 
 int
 main (int argc, char* argv[])

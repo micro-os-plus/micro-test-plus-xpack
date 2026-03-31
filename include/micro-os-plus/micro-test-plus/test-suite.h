@@ -65,12 +65,12 @@
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wpadded"
-#if !defined(__clang__) // GCC only
-#pragma GCC diagnostic ignored "-Wsuggest-final-types"
-#pragma GCC diagnostic ignored "-Wsuggest-final-methods"
-#endif
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
+#else // GCC only
+#pragma GCC diagnostic ignored "-Wsuggest-final-types"
+#pragma GCC diagnostic ignored "-Wsuggest-final-methods"
+#pragma GCC diagnostic ignored "-Wredundant-tags"
 #endif
 #endif
 
@@ -78,8 +78,8 @@
 
 namespace micro_os_plus::micro_test_plus
 {
-  class test_runner;
-  class static_test_runner;
+  class runner;
+  class static_runner;
   class test_reporter;
   class test_runner_totals;
 
@@ -116,7 +116,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The rule of five is enforced to prevent accidental copying or moving.
      */
-    test_suite_base (const char* name, test_runner& runner, size_t own_index);
+    test_suite_base (const char* name, runner& runner, size_t own_index);
 
     /**
      * @brief Deleted copy constructor to prevent copying.
@@ -198,7 +198,7 @@ namespace micro_os_plus::micro_test_plus
      *	None.
      * @return A reference to the test runner.
      */
-    [[nodiscard]] constexpr test_runner&
+    [[nodiscard]] constexpr class runner&
     runner (void)
     {
       return runner_;
@@ -271,7 +271,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Reference to the test runner.
      */
-    test_runner& runner_;
+    class runner& runner_;
 
     /**
      * @brief The current test case name.
@@ -299,7 +299,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The rule of five is enforced to prevent accidental copying or moving.
      */
-    test_suite_top (const char* name, test_runner& runner, size_t own_index);
+    test_suite_top (const char* name, class runner& runner, size_t own_index);
 
     /**
      * @brief Deleted copy constructor to prevent copying.
@@ -366,7 +366,7 @@ namespace micro_os_plus::micro_test_plus
      * The rule of five is enforced to prevent accidental copying or moving.
      */
     template <typename Callable_T, typename... Args_T>
-    test_suite_callable_common (const char* name, test_runner& runner,
+    test_suite_callable_common (const char* name, class runner& runner,
                                 size_t own_index, Callable_T&& callable,
                                 Args_T&&... arguments);
 
@@ -463,7 +463,7 @@ namespace micro_os_plus::micro_test_plus
      * The rule of five is enforced to prevent accidental copying or moving.
      */
     template <typename Callable_T, typename... Args_T>
-    test_suite_callable (const char* name, test_runner& runner,
+    test_suite_callable (const char* name, class runner& runner,
                          size_t own_index, Callable_T&& callable,
                          Args_T&&... arguments);
 
@@ -520,7 +520,7 @@ namespace micro_os_plus::micro_test_plus
      * runner.
      */
     template <typename Callable_T, typename... Args_T>
-    static_test_suite (const char* name, static_test_runner& runner,
+    static_test_suite (const char* name, static_runner& runner,
                        Callable_T&& callable, Args_T&&... arguments);
 
     /**

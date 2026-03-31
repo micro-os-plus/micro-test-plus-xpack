@@ -101,7 +101,7 @@ namespace micro_os_plus::micro_test_plus
   template <typename Self_T>
   template <typename Callable_T, typename... Args_T>
   test_suite_callable_common<Self_T>::test_suite_callable_common (
-      const char* name, test_runner& runner, size_t own_index,
+      const char* name, class runner& runner, size_t own_index,
       Callable_T&& callable, Args_T&&... arguments)
       : test_suite_base{ name, runner, own_index },
         callable_{ std::bind (std::forward<Callable_T> (callable),
@@ -148,7 +148,7 @@ namespace micro_os_plus::micro_test_plus
    */
   template <typename Callable_T, typename... Args_T>
   test_suite_callable::test_suite_callable (const char* name,
-                                            test_runner& runner,
+                                            class runner& runner,
                                             size_t own_index,
                                             Callable_T&& callable,
                                             Args_T&&... arguments)
@@ -211,7 +211,7 @@ namespace micro_os_plus::micro_test_plus
    */
   template <typename Callable_T, typename... Args_T>
   static_test_suite::static_test_suite (const char* name,
-                                        static_test_runner& runner,
+                                        static_runner& runner,
                                         Callable_T&& callable,
                                         Args_T&&... arguments)
       : test_suite_callable_common<static_test_suite>{
@@ -229,7 +229,7 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    static_test_runner::register_static_test_suite (runner, *this);
+    static_runner::register_static_test_suite (runner, *this);
   }
 
   // --------------------------------------------------------------------------

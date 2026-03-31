@@ -54,8 +54,8 @@ namespace micro_os_plus::micro_test_plus
 
   template <typename Callable_T, typename... Args_T>
   void
-  test_runner::test_suite (const char* name, Callable_T&& callable,
-                           Args_T&&... arguments)
+  runner::test_suite (const char* name, Callable_T&& callable,
+                      Args_T&&... arguments)
   {
     size_t own_index = test_suites_count () + 1;
     auto* child_test_suite = new test_suite_callable (

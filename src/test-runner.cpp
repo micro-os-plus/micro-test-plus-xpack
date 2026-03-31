@@ -72,7 +72,7 @@ namespace micro_os_plus::micro_test_plus
    * ready to coordinate the registration, execution, and reporting of tests
    * across all test cases and folders.
    */
-  test_runner::test_runner (const char* top_suite_name)
+  runner::runner (const char* top_suite_name)
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
@@ -104,7 +104,7 @@ namespace micro_os_plus::micro_test_plus
    * across the project’s folders.
    */
   test_suite_top&
-  test_runner::initialise (int argc, char* argv[])
+  runner::initialise (int argc, char* argv[])
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
     printf ("%s\n", __PRETTY_FUNCTION__);
@@ -219,7 +219,7 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic pop
 
   int
-  test_runner::exit_code (void)
+  runner::exit_code (void)
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
@@ -264,7 +264,7 @@ namespace micro_os_plus::micro_test_plus
    * cases and folders.
    */
   void
-  test_runner::abort (void)
+  runner::abort (void)
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
@@ -278,18 +278,18 @@ namespace micro_os_plus::micro_test_plus
   }
 
   size_t
-  test_runner::test_suites_count (void) const
+  runner::test_suites_count (void) const
   {
     return test_suites.size () + 1;
   }
 
   size_t
-  test_runner::total_test_suites_count (void) const
+  runner::total_test_suites_count (void) const
   {
     return test_suites_count ();
   }
 
-  test_runner::~test_runner ()
+  runner::~runner ()
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
     printf ("%s\n", __PRETTY_FUNCTION__);
@@ -307,8 +307,8 @@ namespace micro_os_plus::micro_test_plus
 
   // ==========================================================================
 
-  static_test_runner::static_test_runner (const char* top_suite_name)
-      : test_runner (top_suite_name)
+  static_runner::static_runner (const char* top_suite_name)
+      : runner (top_suite_name)
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
@@ -320,7 +320,7 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
   }
 
-  static_test_runner::~static_test_runner ()
+  static_runner::~static_runner ()
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
     printf ("%s\n", __PRETTY_FUNCTION__);
@@ -335,20 +335,20 @@ namespace micro_os_plus::micro_test_plus
   }
 
   size_t
-  static_test_runner::static_test_suites_count (void) const
+  static_runner::static_test_suites_count (void) const
   {
     return static_test_suites_ != nullptr ? static_test_suites_->size () : 0;
   }
 
   size_t
-  static_test_runner::total_test_suites_count (void) const
+  static_runner::total_test_suites_count (void) const
   {
     return test_suites_count () + static_test_suites_count ();
   }
 
   void
-  static_test_runner::register_static_test_suite (
-      static_test_runner& runner, static_test_suite& test_suite)
+  static_runner::register_static_test_suite (static_runner& runner,
+                                             static_test_suite& test_suite)
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
@@ -370,7 +370,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   void
-  static_test_runner::run_static_test_suites (void)
+  static_runner::run_static_test_suites (void)
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
     printf ("%s\n", __PRETTY_FUNCTION__);

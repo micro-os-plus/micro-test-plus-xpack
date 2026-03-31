@@ -78,7 +78,7 @@
 
 namespace micro_os_plus::micro_test_plus
 {
-  class test_runner;
+  class runner;
 
   // --------------------------------------------------------------------------
 
@@ -196,7 +196,7 @@ namespace micro_os_plus::micro_test_plus
 
   // Requires events::assertion_* for  and detailed operators.
 
-  class test_runner;
+  class runner;
 
   /**
    * @brief Reporter to display test results, including operand values and
@@ -718,7 +718,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     virtual void
-    begin_test (test_runner& runner) = 0;
+    begin_test (runner& runner) = 0;
 
     /**
      * @brief Mark the end of a test.
@@ -728,7 +728,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     virtual void
-    end_test (test_runner& runner) = 0;
+    end_test (runner& runner) = 0;
 
     /**
      * @brief Mark the beginning of a test suite.
