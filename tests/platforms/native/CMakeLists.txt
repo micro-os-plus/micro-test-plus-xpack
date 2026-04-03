@@ -40,21 +40,33 @@ if (XPACK_ENABLE_MINIMAL_TEST)
 
   message (VERBOSE "A> minimal-test")
 
-  # tap reporter
-  add_test (NAME "minimal-test --verbose --reporter=tap" COMMAND minimal-test one two
-                                                  --verbose --reporter=tap
+  # TAP reporter
+  add_test (NAME "minimal-test --verbose --reporter=tap"
+            COMMAND minimal-test one two --verbose --reporter=tap
   )
-  add_test (NAME "minimal-test --reporter=tap" COMMAND minimal-test one two --reporter=tap)
-  add_test (NAME "minimal-test --quiet --reporter=tap" COMMAND minimal-test one two --quiet --reporter=tap)
-  add_test (NAME "minimal-test --silent --reporter=tap" COMMAND minimal-test one two --silent --reporter=tap)
+  add_test (NAME "minimal-test --reporter=tap" COMMAND minimal-test one two
+                                                       --reporter=tap
+  )
+  add_test (NAME "minimal-test --quiet --reporter=tap"
+            COMMAND minimal-test one two --quiet --reporter=tap
+  )
+  add_test (NAME "minimal-test --silent --reporter=tap"
+            COMMAND minimal-test one two --silent --reporter=tap
+  )
 
-  # basic reporter
-  add_test (NAME "minimal-test --verbose --reporter=basic" COMMAND minimal-test one two
-                                                  --verbose --reporter=basic
+  # Human reporter
+  add_test (NAME "minimal-test --verbose --reporter=human"
+            COMMAND minimal-test one two --verbose --reporter=human
   )
-  add_test (NAME "minimal-test --reporter=basic" COMMAND minimal-test one two --reporter=basic)
-  add_test (NAME "minimal-test --quiet --reporter=basic" COMMAND minimal-test one two --quiet --reporter=basic)
-  add_test (NAME "minimal-test --silent --reporter=basic" COMMAND minimal-test one two --silent --reporter=basic)
+  add_test (NAME "minimal-test --reporter=human" COMMAND minimal-test one two
+                                                         --reporter=human
+  )
+  add_test (NAME "minimal-test --quiet --reporter=human"
+            COMMAND minimal-test one two --quiet --reporter=human
+  )
+  add_test (NAME "minimal-test --silent --reporter=human"
+            COMMAND minimal-test one two --silent --reporter=human
+  )
 
 endif ()
 
@@ -66,21 +78,33 @@ if (XPACK_ENABLE_SUITE_TEST)
 
   message (VERBOSE "A> suite-test")
 
-  # tap reporter
-  add_test (NAME "suite-test --verbose --reporter=tap" COMMAND suite-test one two
-                                                  --verbose --reporter=tap
+  # TAP reporter
+  add_test (NAME "suite-test --verbose --reporter=tap"
+            COMMAND suite-test one two --verbose --reporter=tap
   )
-  add_test (NAME "suite-test --reporter=tap" COMMAND suite-test one two --reporter=tap)
-  add_test (NAME "suite-test --quiet --reporter=tap" COMMAND suite-test one two --quiet --reporter=tap)
-  add_test (NAME "suite-test --silent --reporter=tap" COMMAND suite-test one two --silent --reporter=tap)
+  add_test (NAME "suite-test --reporter=tap" COMMAND suite-test one two
+                                                     --reporter=tap
+  )
+  add_test (NAME "suite-test --quiet --reporter=tap"
+            COMMAND suite-test one two --quiet --reporter=tap
+  )
+  add_test (NAME "suite-test --silent --reporter=tap"
+            COMMAND suite-test one two --silent --reporter=tap
+  )
 
-  # basic reporter
-  add_test (NAME "suite-test --verbose --reporter=basic" COMMAND suite-test one two
-                                                  --verbose --reporter=basic
+  # Human reporter
+  add_test (NAME "suite-test --verbose --reporter=human"
+            COMMAND suite-test one two --verbose --reporter=human
   )
-  add_test (NAME "suite-test --reporter=basic" COMMAND suite-test one two --reporter=basic)
-  add_test (NAME "suite-test --quiet --reporter=basic" COMMAND suite-test one two --quiet --reporter=basic)
-  add_test (NAME "suite-test --silent --reporter=basic" COMMAND suite-test one two --silent --reporter=basic)
+  add_test (NAME "suite-test --reporter=human" COMMAND suite-test one two
+                                                       --reporter=human
+  )
+  add_test (NAME "suite-test --quiet --reporter=human"
+            COMMAND suite-test one two --quiet --reporter=human
+  )
+  add_test (NAME "suite-test --silent --reporter=human"
+            COMMAND suite-test one two --silent --reporter=human
+  )
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -91,17 +115,33 @@ if (XPACK_ENABLE_SAMPLE_TEST)
 
   message (VERBOSE "A> sample-test")
 
-  # tap reporter
-  add_test (NAME "sample-test --verbose --reporter=tap" COMMAND sample-test one two --verbose --reporter=tap)
-  add_test (NAME "sample-test --reporter=tap" COMMAND sample-test one two --reporter=tap)
-  add_test (NAME "sample-test --quiet --reporter=tap" COMMAND sample-test one two --quiet --reporter=tap)
-  add_test (NAME "sample-test --silent --reporter=tap" COMMAND sample-test one two --silent --reporter=tap)
+  # TAP reporter
+  add_test (NAME "sample-test --verbose --reporter=tap"
+            COMMAND sample-test one two --verbose --reporter=tap
+  )
+  add_test (NAME "sample-test --reporter=tap" COMMAND sample-test one two
+                                                      --reporter=tap
+  )
+  add_test (NAME "sample-test --quiet --reporter=tap"
+            COMMAND sample-test one two --quiet --reporter=tap
+  )
+  add_test (NAME "sample-test --silent --reporter=tap"
+            COMMAND sample-test one two --silent --reporter=tap
+  )
 
-  # basic reporter
-  add_test (NAME "sample-test --verbose --reporter=basic" COMMAND sample-test one two --verbose --reporter=basic)
-  add_test (NAME "sample-test --reporter=basic" COMMAND sample-test one two --reporter=basic)
-  add_test (NAME "sample-test --quiet --reporter=basic" COMMAND sample-test one two --quiet --reporter=basic)
-  add_test (NAME "sample-test --silent --reporter=basic" COMMAND sample-test one two --silent --reporter=basic)
+  # Human reporter
+  add_test (NAME "sample-test --verbose --reporter=human"
+            COMMAND sample-test one two --verbose --reporter=human
+  )
+  add_test (NAME "sample-test --reporter=human" COMMAND sample-test one two
+                                                        --reporter=human
+  )
+  add_test (NAME "sample-test --quiet --reporter=human"
+            COMMAND sample-test one two --quiet --reporter=human
+  )
+  add_test (NAME "sample-test --silent --reporter=human"
+            COMMAND sample-test one two --silent --reporter=human
+  )
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -112,17 +152,31 @@ if (XPACK_ENABLE_UNIT_TEST)
 
   message (VERBOSE "A> unit-test")
 
-  # tap reporter
-  add_test (NAME "unit-test --verbose --reporter=tap" COMMAND unit-test --verbose --reporter=tap)
+  # TAP reporter
+  add_test (NAME "unit-test --verbose --reporter=tap"
+            COMMAND unit-test --verbose --reporter=tap
+  )
   add_test (NAME "unit-test --reporter=tap" COMMAND unit-test --reporter=tap)
-  add_test (NAME "unit-test --quiet --reporter=tap" COMMAND unit-test --quiet --reporter=tap)
-  add_test (NAME "unit-test --silent --reporter=tap" COMMAND unit-test --silent --reporter=tap)
+  add_test (NAME "unit-test --quiet --reporter=tap" COMMAND unit-test --quiet
+                                                            --reporter=tap
+  )
+  add_test (NAME "unit-test --silent --reporter=tap" COMMAND unit-test --silent
+                                                             --reporter=tap
+  )
 
-  # basic reporter
-  add_test (NAME "unit-test --verbose --reporter=basic" COMMAND unit-test --verbose --reporter=basic)
-  add_test (NAME "unit-test --reporter=basic" COMMAND unit-test --reporter=basic)
-  add_test (NAME "unit-test --quiet --reporter=basic" COMMAND unit-test --quiet --reporter=basic)
-  add_test (NAME "unit-test --silent --reporter=basic" COMMAND unit-test --silent --reporter=basic)
+  # Human reporter
+  add_test (NAME "unit-test --verbose --reporter=human"
+            COMMAND unit-test --verbose --reporter=human
+  )
+  add_test (NAME "unit-test --reporter=human" COMMAND unit-test
+                                                      --reporter=human
+  )
+  add_test (NAME "unit-test --quiet --reporter=human" COMMAND unit-test --quiet
+                                                              --reporter=human
+  )
+  add_test (NAME "unit-test --silent --reporter=human"
+            COMMAND unit-test --silent --reporter=human
+  )
 endif ()
 
 # -----------------------------------------------------------------------------

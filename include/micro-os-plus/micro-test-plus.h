@@ -80,7 +80,7 @@
 #include "micro-test-plus/runner-totals.h"
 
 #include "micro-test-plus/reporter.h"
-#include "micro-test-plus/reporter-basic.h"
+#include "micro-test-plus/reporter-human.h"
 #include "micro-test-plus/reporter-tap.h"
 
 // ----------------------------------------------------------------------------

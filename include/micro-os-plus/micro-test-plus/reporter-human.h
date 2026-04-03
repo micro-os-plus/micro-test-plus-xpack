@@ -17,11 +17,11 @@
 
 /**
  * @file
- * @brief C++ header file with declarations for the µTest++ basic test
+ * @brief C++ header file with declarations for the µTest++ human test
  * reporter.
  *
  * @details
- * This header provides the declaration for `reporter_basic`, the default
+ * This header provides the declaration for `reporter_human`, the default
  * concrete implementation of the `reporter` abstract interface. It
  * formats and presents test results using `printf`-based standard output,
  * accumulating output in an internal string buffer and supporting
@@ -71,10 +71,10 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   /**
-   * @brief Basic (standard output) implementation of `reporter`.
+   * @brief Human (standard output) implementation of `reporter`.
    *
    * @details
-   * `reporter_basic` provides the default concrete implementation of the
+   * `reporter_human` provides the default concrete implementation of the
    * `reporter` abstract interface, formatting and presenting test results
    * using `printf`-based output. It accumulates output in an internal string
    * buffer and writes it to the standard output stream, supporting
@@ -91,43 +91,43 @@ namespace micro_os_plus::micro_test_plus
    *
    * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */
-  class reporter_basic final : public reporter
+  class reporter_human final : public reporter
   {
   public:
     /**
-     * @brief Constructor for the reporter_basic class.
+     * @brief Constructor for the reporter_human class.
      *
      * @details
      * The rule of five is enforced to prevent accidental copying or moving.
      */
-    reporter_basic ();
+    reporter_human ();
 
     /**
      * @brief Deleted copy constructor to prevent copying.
      */
-    reporter_basic (const reporter_basic&) = delete;
+    reporter_human (const reporter_human&) = delete;
 
     /**
      * @brief Deleted move constructor to prevent moving.
      */
-    reporter_basic (reporter_basic&&) = delete;
+    reporter_human (reporter_human&&) = delete;
 
     /**
      * @brief Deleted copy assignment operator to prevent copying.
      */
-    reporter_basic&
-    operator= (const reporter_basic&) = delete;
+    reporter_human&
+    operator= (const reporter_human&) = delete;
 
     /**
      * @brief Deleted move assignment operator to prevent moving.
      */
-    reporter_basic&
-    operator= (reporter_basic&&) = delete;
+    reporter_human&
+    operator= (reporter_human&&) = delete;
 
     /**
-     * @brief Destructor for the reporter_basic class.
+     * @brief Destructor for the reporter_human class.
      */
-    ~reporter_basic () override;
+    ~reporter_human () override;
 
     // ------------------------------------------------------------------------
 
@@ -137,7 +137,7 @@ namespace micro_os_plus::micro_test_plus
      * @param m The indentation manipulator produced by `indent(n)`.
      * @return Reference to the current reporter instance.
      */
-    reporter_basic&
+    reporter_human&
     operator<< (indent_t m);
 
     // Bring base class operator<< overloads into scope to prevent name hiding.

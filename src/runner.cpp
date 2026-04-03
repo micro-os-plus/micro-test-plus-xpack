@@ -162,9 +162,9 @@ namespace micro_os_plus::micro_test_plus
       }
 
     // Initialize and configure the reporter.
-    if (strcmp (reporter_name, "basic") == 0)
+    if (strcmp (reporter_name, "human") == 0)
       {
-        reporter_ = new reporter_basic ();
+        reporter_ = new reporter_human ();
       }
     else if (strcmp (reporter_name, "tap") == 0)
       {
