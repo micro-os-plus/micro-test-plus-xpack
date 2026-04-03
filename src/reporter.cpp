@@ -64,7 +64,7 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
-  test_reporter::~test_reporter ()
+  reporter::~reporter ()
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
     printf ("%s\n", __PRETTY_FUNCTION__);
@@ -73,26 +73,16 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
-  void
-  test_reporter::maybe_end_top_suite (test_suite_base& test_suite)
-  {
-    if (must_end_top_suite_)
-      {
-        // End the top suite, if not already ended.
-        end_test_suite (test_suite);
-        must_end_top_suite_ = false;
-      }
-  }
   /**
    * @details
    * The `endl` function inserts a newline character into the specified
-   * `test_reporter` stream and flushes its output buffer. This operation
+   * `reporter` stream and flushes its output buffer. This operation
    * ensures that each test output line is clearly separated and immediately
    * visible, facilitating the readability and clarity of test results across
    * all test cases and folders within the µTest++ framework.
    */
-  test_reporter&
-  endl (test_reporter& reporter)
+  reporter&
+  endl (reporter& reporter)
   {
     reporter.endline ();
     return reporter;
@@ -101,13 +91,13 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * This method appends a newline character to the internal output buffer of
-   * the `test_reporter` and immediately flushes the stream. This ensures that
+   * the `reporter` and immediately flushes the stream. This ensures that
    * each line of test output is clearly separated and promptly displayed,
    * enhancing the readability and organisation of test results across all test
    * cases and folders.
    */
   void
-  test_reporter::endline (void)
+  reporter::endline (void)
   {
     out_.append ("\n");
     flush ();
@@ -123,7 +113,7 @@ namespace micro_os_plus::micro_test_plus
    * cases and folders.
    */
   void
-  test_reporter::output (void)
+  reporter::output (void)
   {
     printf ("%s", out_.c_str ()); // No `\n` here.
     out_.clear ();
@@ -131,13 +121,13 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This method flushes the output buffer of the `test_reporter` by
+   * This method flushes the output buffer of the `reporter` by
    * synchronising it with the standard output stream. This guarantees that all
    * pending test output is immediately written and visible, ensuring prompt
    * and reliable reporting of test results across all test cases and folders.
    */
   void
-  test_reporter::flush (void)
+  reporter::flush (void)
   {
     fflush (stdout); // Sync STDOUT.
   }
@@ -147,14 +137,14 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * This operator overload enables manipulators, such as `endl`, to be used
-   * with the `test_reporter` stream in a manner similar to standard C++
+   * with the `reporter` stream in a manner similar to standard C++
    * streams. When a manipulator function is passed, it is invoked with the
-   * current `test_reporter` instance, allowing for seamless integration of
+   * current `reporter` instance, allowing for seamless integration of
    * stream operations and improved readability of test output across all test
    * cases and folders.
    */
-  test_reporter&
-  test_reporter::operator<< (test_reporter& (*func) (test_reporter&))
+  reporter&
+  reporter::operator<< (reporter& (*func) (reporter&))
   {
     // Call the endl function.
     (*func) (*this);
@@ -164,13 +154,13 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * This operator overload appends the contents of the provided
-   * `std::string_view` to the internal output buffer of the `test_reporter`.
+   * `std::string_view` to the internal output buffer of the `reporter`.
    * It enables seamless streaming of string data into the reporter, supporting
    * clear and efficient formatting of test output across all test cases and
    * folders.
    */
-  test_reporter&
-  test_reporter::operator<< (std::string_view sv)
+  reporter&
+  reporter::operator<< (std::string_view sv)
   {
     out_.append (sv);
     return *this;
@@ -179,12 +169,12 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * This operator overload appends the specified character to the internal
-   * output buffer of the `test_reporter`. It enables efficient streaming of
+   * output buffer of the `reporter`. It enables efficient streaming of
    * individual characters into the reporter, supporting precise and flexible
    * formatting of test output across all test cases and folders.
    */
-  test_reporter&
-  test_reporter::operator<< (char c)
+  reporter&
+  reporter::operator<< (char c)
   {
     out_.append (1, c);
     return *this;
@@ -193,13 +183,13 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * This operator overload appends the contents of the provided C-style string
-   * to the internal output buffer of the `test_reporter`. It enables efficient
+   * to the internal output buffer of the `reporter`. It enables efficient
    * streaming of string literals and character arrays into the reporter,
    * supporting clear and flexible formatting of test output across all test
    * cases and folders.
    */
-  test_reporter&
-  test_reporter::operator<< (const char* s)
+  reporter&
+  reporter::operator<< (const char* s)
   {
     out_.append (s);
     return *this;
@@ -208,13 +198,13 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * This operator overload appends the contents of the provided modifiable
-   * C-style string to the internal output buffer of the `test_reporter`. It
+   * C-style string to the internal output buffer of the `reporter`. It
    * enables efficient streaming of mutable string data into the reporter,
    * supporting clear and flexible formatting of test output across all test
    * cases and folders.
    */
-  test_reporter&
-  test_reporter::operator<< (char* s)
+  reporter&
+  reporter::operator<< (char* s)
   {
     out_.append (s);
     return *this;
@@ -223,13 +213,13 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * This operator overload appends the string representation of the specified
-   * boolean value to the internal output buffer of the `test_reporter`. It
+   * boolean value to the internal output buffer of the `reporter`. It
    * enables clear and direct streaming of boolean results into the reporter,
    * supporting precise and readable formatting of test output across all test
    * cases and folders.
    */
-  test_reporter&
-  test_reporter::operator<< (bool v)
+  reporter&
+  reporter::operator<< (bool v)
   {
     out_.append (v ? "true" : "false");
     return *this;
@@ -238,12 +228,12 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * This operator overload appends the string "nullptr" to the internal output
-   * buffer of the `test_reporter`. It enables clear and explicit streaming of
+   * buffer of the `reporter`. It enables clear and explicit streaming of
    * null pointer values into the reporter, supporting precise and readable
    * formatting of test output across all test cases and folders.
    */
-  test_reporter&
-  test_reporter::operator<< (std::nullptr_t)
+  reporter&
+  reporter::operator<< (std::nullptr_t)
   {
     out_.append ("nullptr");
     return *this;
@@ -252,13 +242,13 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * This operator overload appends the string representation of the specified
-   * signed character to the internal output buffer of the `test_reporter`. It
+   * signed character to the internal output buffer of the `reporter`. It
    * enables precise and readable streaming of character values into the
    * reporter, supporting clear formatting of test output across all test cases
    * and folders.
    */
-  test_reporter&
-  test_reporter::operator<< (signed char c)
+  reporter&
+  reporter::operator<< (signed char c)
   {
     out_.append (std::to_string (c));
     out_.append ("c");
@@ -268,13 +258,13 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * This operator overload appends the string representation of the specified
-   * unsigned character to the internal output buffer of the `test_reporter`.
+   * unsigned character to the internal output buffer of the `reporter`.
    * It enables precise and readable streaming of unsigned character values
    * into the reporter, supporting clear formatting of test output across all
    * test cases and folders.
    */
-  test_reporter&
-  test_reporter::operator<< (unsigned char c)
+  reporter&
+  reporter::operator<< (unsigned char c)
   {
     out_.append (std::to_string (static_cast<int> (c)));
     out_.append ("uc");
@@ -284,13 +274,13 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * This operator overload appends the string representation of the specified
-   * signed short integer to the internal output buffer of the `test_reporter`.
+   * signed short integer to the internal output buffer of the `reporter`.
    * It enables precise and readable streaming of signed short values into the
    * reporter, supporting clear formatting of test output across all test cases
    * and folders.
    */
-  test_reporter&
-  test_reporter::operator<< (signed short v)
+  reporter&
+  reporter::operator<< (signed short v)
   {
     out_.append (std::to_string (v));
     out_.append ("s");
@@ -301,12 +291,12 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * This operator overload appends the string representation of the specified
    * unsigned short integer to the internal output buffer of the
-   * `test_reporter`. It enables precise and readable streaming of unsigned
+   * `reporter`. It enables precise and readable streaming of unsigned
    * short values into the reporter, supporting clear formatting of test output
    * across all test cases and folders.
    */
-  test_reporter&
-  test_reporter::operator<< (unsigned short v)
+  reporter&
+  reporter::operator<< (unsigned short v)
   {
     out_.append (std::to_string (static_cast<long> (v)));
     out_.append ("us");
@@ -316,13 +306,13 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * This operator overload appends the string representation of the specified
-   * signed integer to the internal output buffer of the `test_reporter`. It
+   * signed integer to the internal output buffer of the `reporter`. It
    * enables precise and readable streaming of signed integer values into the
    * reporter, supporting clear formatting of test output across all test cases
    * and folders.
    */
-  test_reporter&
-  test_reporter::operator<< (signed int v)
+  reporter&
+  reporter::operator<< (signed int v)
   {
     out_.append (std::to_string (v));
     return *this;
@@ -331,13 +321,13 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * This operator overload appends the string representation of the specified
-   * unsigned integer to the internal output buffer of the `test_reporter`. It
+   * unsigned integer to the internal output buffer of the `reporter`. It
    * enables precise and readable streaming of unsigned integer values into the
    * reporter, supporting clear formatting of test output across all test cases
    * and folders.
    */
-  test_reporter&
-  test_reporter::operator<< (unsigned int v)
+  reporter&
+  reporter::operator<< (unsigned int v)
   {
     out_.append (std::to_string (v));
     out_.append ("u");
@@ -347,13 +337,13 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * This operator overload appends the string representation of the specified
-   * signed long integer to the internal output buffer of the `test_reporter`.
+   * signed long integer to the internal output buffer of the `reporter`.
    * It enables precise and readable streaming of signed long values into the
    * reporter, supporting clear formatting of test output across all test cases
    * and folders.
    */
-  test_reporter&
-  test_reporter::operator<< (signed long v)
+  reporter&
+  reporter::operator<< (signed long v)
   {
     out_.append (std::to_string (v));
     out_.append ("l");
@@ -364,12 +354,12 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * This operator overload appends the string representation of the specified
    * unsigned long integer to the internal output buffer of the
-   * `test_reporter`. It enables precise and readable streaming of unsigned
+   * `reporter`. It enables precise and readable streaming of unsigned
    * long values into the reporter, supporting clear formatting of test output
    * across all test cases and folders.
    */
-  test_reporter&
-  test_reporter::operator<< (unsigned long v)
+  reporter&
+  reporter::operator<< (unsigned long v)
   {
     out_.append (std::to_string (v));
     out_.append ("ul");
@@ -380,12 +370,12 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * This operator overload appends the string representation of the specified
    * signed long long integer to the internal output buffer of the
-   * `test_reporter`. It enables precise and readable streaming of signed long
+   * `reporter`. It enables precise and readable streaming of signed long
    * long values into the reporter, supporting clear formatting of test output
    * across all test cases and folders.
    */
-  test_reporter&
-  test_reporter::operator<< (signed long long v)
+  reporter&
+  reporter::operator<< (signed long long v)
   {
     out_.append (std::to_string (v));
     out_.append ("ll");
@@ -396,12 +386,12 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * This operator overload appends the string representation of the specified
    * unsigned long long integer to the internal output buffer of the
-   * `test_reporter`. It enables precise and readable streaming of unsigned
+   * `reporter`. It enables precise and readable streaming of unsigned
    * long long values into the reporter, supporting clear formatting of test
    * output across all test cases and folders.
    */
-  test_reporter&
-  test_reporter::operator<< (unsigned long long v)
+  reporter&
+  reporter::operator<< (unsigned long long v)
   {
     out_.append (std::to_string (v));
     out_.append ("ull");
@@ -411,13 +401,13 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * This operator overload appends the string representation of the specified
-   * floating-point value to the internal output buffer of the `test_reporter`,
+   * floating-point value to the internal output buffer of the `reporter`,
    * followed by the character 'f' to indicate a float type. It enables precise
    * and readable streaming of float values into the reporter, supporting clear
    * formatting of test output across all test cases and folders.
    */
-  test_reporter&
-  test_reporter::operator<< (float v)
+  reporter&
+  reporter::operator<< (float v)
   {
     out_.append (std::to_string (v));
     out_.append ("f");
@@ -428,12 +418,12 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * This operator overload appends the string representation of the specified
    * double-precision floating-point value to the internal output buffer of the
-   * `test_reporter`. It enables precise and readable streaming of double
+   * `reporter`. It enables precise and readable streaming of double
    * values into the reporter, supporting clear formatting of test output
    * across all test cases and folders.
    */
-  test_reporter&
-  test_reporter::operator<< (double v)
+  reporter&
+  reporter::operator<< (double v)
   {
     out_.append (std::to_string (v));
     return *this;
@@ -443,13 +433,13 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * This operator overload appends the string representation of the specified
    * long double-precision floating-point value to the internal output buffer
-   * of the `test_reporter`, followed by the character 'l' to indicate a long
+   * of the `reporter`, followed by the character 'l' to indicate a long
    * double type. It enables precise and readable streaming of long double
    * values into the reporter, supporting clear formatting of test output
    * across all test cases and folders.
    */
-  test_reporter&
-  test_reporter::operator<< (long double v)
+  reporter&
+  reporter::operator<< (long double v)
   {
     out_.append (std::to_string (v));
     out_.append ("l");

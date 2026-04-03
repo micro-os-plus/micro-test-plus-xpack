@@ -21,14 +21,14 @@
  * reporter.
  *
  * @details
- * This header provides the declaration for `test_reporter_basic`, the default
- * concrete implementation of the `test_reporter` abstract interface. It
+ * This header provides the declaration for `reporter_basic`, the default
+ * concrete implementation of the `reporter` abstract interface. It
  * formats and presents test results using `printf`-based standard output,
  * accumulating output in an internal string buffer and supporting
  * colour-coded diagnostics and multiple verbosity levels.
  *
  * Users who require custom output behaviour (e.g. redirecting to a serial
- * port on bare-metal targets) may derive a new class from `test_reporter`
+ * port on bare-metal targets) may derive a new class from `reporter`
  * instead of using this class.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
@@ -52,7 +52,7 @@
 
 // ----------------------------------------------------------------------------
 
-#include "test-reporter.h"
+#include "reporter.h"
 
 // ----------------------------------------------------------------------------
 
@@ -71,17 +71,17 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   /**
-   * @brief Basic (standard output) implementation of `test_reporter`.
+   * @brief Basic (standard output) implementation of `reporter`.
    *
    * @details
-   * `test_reporter_basic` provides the default concrete implementation of the
-   * `test_reporter` abstract interface, formatting and presenting test results
+   * `reporter_basic` provides the default concrete implementation of the
+   * `reporter` abstract interface, formatting and presenting test results
    * using `printf`-based output. It accumulates output in an internal string
    * buffer and writes it to the standard output stream, supporting
    * colour-coded diagnostics and multiple verbosity levels.
    *
    * Users who require custom output behaviour (e.g. redirecting to a serial
-   * port on bare-metal targets) may derive a new class from `test_reporter`
+   * port on bare-metal targets) may derive a new class from `reporter`
    * and supply an instance via the `reporter` global pointer before calling
    * `initialize()`.
    *
@@ -91,43 +91,43 @@ namespace micro_os_plus::micro_test_plus
    *
    * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */
-  class test_reporter_basic final : public test_reporter
+  class reporter_basic final : public reporter
   {
   public:
     /**
-     * @brief Constructor for the test_reporter_basic class.
+     * @brief Constructor for the reporter_basic class.
      *
      * @details
      * The rule of five is enforced to prevent accidental copying or moving.
      */
-    test_reporter_basic ();
+    reporter_basic ();
 
     /**
      * @brief Deleted copy constructor to prevent copying.
      */
-    test_reporter_basic (const test_reporter_basic&) = delete;
+    reporter_basic (const reporter_basic&) = delete;
 
     /**
      * @brief Deleted move constructor to prevent moving.
      */
-    test_reporter_basic (test_reporter_basic&&) = delete;
+    reporter_basic (reporter_basic&&) = delete;
 
     /**
      * @brief Deleted copy assignment operator to prevent copying.
      */
-    test_reporter_basic&
-    operator= (const test_reporter_basic&) = delete;
+    reporter_basic&
+    operator= (const reporter_basic&) = delete;
 
     /**
      * @brief Deleted move assignment operator to prevent moving.
      */
-    test_reporter_basic&
-    operator= (test_reporter_basic&&) = delete;
+    reporter_basic&
+    operator= (reporter_basic&&) = delete;
 
     /**
-     * @brief Destructor for the test_reporter_basic class.
+     * @brief Destructor for the reporter_basic class.
      */
-    ~test_reporter_basic () override;
+    ~reporter_basic () override;
 
     // ------------------------------------------------------------------------
 
@@ -135,18 +135,18 @@ namespace micro_os_plus::micro_test_plus
      * @brief Output operator for the `indent_t` manipulator.
      *
      * @param m The indentation manipulator produced by `indent(n)`.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
-    test_reporter_basic&
+    reporter_basic&
     operator<< (indent_t m);
 
     // Bring base class operator<< overloads into scope to prevent name hiding.
-    using test_reporter::operator<<;
+    using reporter::operator<<;
 
     // ------------------------------------------------------------------------
 
     /**
-     * @brief Mark the beginning of a test.
+     * @brief Mark the beginning of a test suite.
      *
      * @param runner Reference to the test runner.
      * @par Returns
@@ -156,7 +156,7 @@ namespace micro_os_plus::micro_test_plus
     begin_session (runner& runner) override;
 
     /**
-     * @brief Mark the end of a test.
+     * @brief Mark the end of a test suite.
      *
      * @param runner Reference to the test runner.
      * @par Returns
@@ -166,14 +166,14 @@ namespace micro_os_plus::micro_test_plus
     end_session (runner& runner) override;
 
     /**
-     * @brief Mark the beginning of a test suite.
+     * @brief Mark the beginning of a suite.
      *
-     * @param suite Reference to the test suite.
+     * @param suite Reference to the suite.
      * @par Returns
      *   Nothing.
      */
-    void
-    begin_test_suite (test_suite_base& suite) override;
+    virtual void
+    begin_suite (test_base& suite) override;
 
     /**
      * @brief Mark the end of a test suite.
@@ -182,28 +182,31 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Nothing.
      */
-    void
-    end_test_suite (test_suite_base& suite) override;
+    virtual void
+    end_suite (test_base& suite) override;
 
     /**
-     * @brief Mark the beginning of a test case.
+     * @brief Mark the beginning of a subtest.
      *
-     * @param test_case Reference to the test case.
+     * @param subtest Reference to the subtest.
      * @par Returns
      *   Nothing.
      */
-    void
-    begin_test_case (test_case_base& test_case) override;
+    virtual void
+    begin_subtest (test_base& subtest) override;
 
     /**
-     * @brief Mark the end of a test case.
+     * @brief Mark the end of a subtest.
      *
-     * @param test_case Reference to the test case.
+     * @param subtest Reference to the subtest.
      * @par Returns
      *   Nothing.
      */
-    void
-    end_test_case (test_case_base& test_case) override;
+    virtual void
+    end_subtest (test_base& subtest) override;
+
+    virtual void
+    output_comment_prefix (void) override;
 
   protected:
     /**
@@ -214,8 +217,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     void
-    output_pass_prefix_ (std::string& message,
-                         test_case_base& test_case) override;
+    output_pass_prefix_ (std::string& message, test_base& test) override;
 
     /**
      * @brief Outputs the suffix for a passing condition.
@@ -226,7 +228,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     void
-    output_pass_suffix_ (test_case_base& test_case) override;
+    output_pass_suffix_ (test_base& test) override;
 
     /**
      * @brief Outputs the prefix for a failing condition.
@@ -241,7 +243,7 @@ namespace micro_os_plus::micro_test_plus
     void
     output_fail_prefix_ (std::string& message, const bool hasExpression,
                          const reflection::source_location& location,
-                         test_case_base& test_case) override;
+                         test_base& test) override;
 
     /**
      * @brief Outputs the suffix for a failing condition.
@@ -253,7 +255,7 @@ namespace micro_os_plus::micro_test_plus
      */
     void
     output_fail_suffix_ (const reflection::source_location& location,
-                         bool abort, test_case_base& test_case) override;
+                         bool abort, test_base& test) override;
   };
 
   // --------------------------------------------------------------------------

@@ -75,7 +75,7 @@ namespace micro_os_plus::micro_test_plus
 #endif
   /**
    * @details
-   * The `test_case` function template registers and executes a test case
+   * The `test` function template registers and executes a test case
    * within the µTest++ framework. It accepts a descriptive name, a callable
    * object (such as a lambda or function pointer), and an optional list of
    * arguments to be passed to the callable. The test case is reported using
@@ -95,7 +95,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * A test case is characterised by a name, a function that performs the
    * checks, and optionally, arguments to be passed to that function. The
-   * implementation of `test_case` invokes the provided function with the given
+   * implementation of `test` invokes the provided function with the given
    * arguments and reports the results to the test runner.
    *
    * @par Example
@@ -103,7 +103,7 @@ namespace micro_os_plus::micro_test_plus
    * @code{.cpp}
    *   namespace mt = micro_os_plus::micro_test_plus;
    *
-   *   mt::test_case ("Check answer with comparator", [] {
+   *   mt::test ("Check answer with comparator", [] {
    *     mt::expect (mt::eq (compute_answer (), 42)) << "answer is 42";
    *   });
    * @endcode
@@ -113,7 +113,7 @@ namespace micro_os_plus::micro_test_plus
 #endif
   //   template <typename Callable_T, typename... Args_T>
   //   void
-  //   test_case (const char* name, Callable_T&& callable, Args_T&&...
+  //   test (const char* name, Callable_T&& callable, Args_T&&...
   //   arguments)
   //   {
   // #if 0 // defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)

@@ -73,15 +73,15 @@
 #include "micro-test-plus/function-comparators.h"
 #include "micro-test-plus/operators.h"
 
-#include "micro-test-plus/test-suite.h"
-#include "micro-test-plus/test-case.h"
-
-#include "micro-test-plus/test-runner.h"
-#include "micro-test-plus/test-runner-totals.h"
 #include "micro-test-plus/deferred-reporter.h"
-#include "micro-test-plus/test-reporter.h"
-#include "micro-test-plus/test-reporter-basic.h"
-#include "micro-test-plus/test-reporter-tap.h"
+#include "micro-test-plus/test.h"
+
+#include "micro-test-plus/runner.h"
+#include "micro-test-plus/runner-totals.h"
+
+#include "micro-test-plus/reporter.h"
+#include "micro-test-plus/reporter-basic.h"
+#include "micro-test-plus/reporter-tap.h"
 
 // ----------------------------------------------------------------------------
 
@@ -124,12 +124,6 @@
 
 namespace micro_os_plus::micro_test_plus
 {
-  // --------------------------------------------------------------------------
-
-  // extern test_runner runner;
-  // extern test_reporter* reporter;
-  extern test_suite_base* current_test_suite;
-
   // --------------------------------------------------------------------------
   // Public API.
 
@@ -346,12 +340,11 @@ namespace micro_os_plus::micro_test_plus
 #include "micro-test-plus/inlines/reflection-inlines.h"
 
 #include "micro-test-plus/inlines/deferred-reporter-inlines.h"
-#include "micro-test-plus/inlines/test-reporter-inlines.h"
+#include "micro-test-plus/inlines/reporter-inlines.h"
 
 #include "micro-test-plus/inlines/function-comparators-inlines.h"
-#include "micro-test-plus/inlines/test-runner-inlines.h"
-#include "micro-test-plus/inlines/test-suite-inlines.h"
-#include "micro-test-plus/inlines/test-case-inlines.h"
+#include "micro-test-plus/inlines/runner-inlines.h"
+#include "micro-test-plus/inlines/test-inlines.h"
 
 #include "micro-test-plus/inlines/micro-test-plus-inlines.h"
 

@@ -54,8 +54,6 @@
 #include <stdio.h>
 #include <cstring>
 
-#include "micro-os-plus/micro-test-plus/test-case.h"
-
 // ----------------------------------------------------------------------------
 
 #if defined(__GNUC__)
@@ -119,9 +117,8 @@ namespace micro_os_plus::micro_test_plus
     template <class Expr_T>
     constexpr deferred_reporter<Expr_T>::deferred_reporter (
         const Expr_T& expr, bool abort,
-        const reflection::source_location& location, test_case_base& test_case)
-        : deferred_reporter_base{ static_cast<bool> (expr), location,
-                                  test_case },
+        const reflection::source_location& location, test_base& test)
+        : deferred_reporter_base{ static_cast<bool> (expr), location, test },
           expr_{ expr }
     {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)

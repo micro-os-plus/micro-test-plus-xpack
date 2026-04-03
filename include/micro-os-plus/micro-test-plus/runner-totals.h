@@ -54,16 +54,16 @@ namespace micro_os_plus::micro_test_plus
    * @brief Structure to hold the totals for the test runner, test suites and
    * test cases.
    */
-  class test_runner_totals
+  class runner_totals
   {
   public:
-    test_runner_totals () = default;
-    test_runner_totals (const test_runner_totals&) = delete;
-    test_runner_totals (test_runner_totals&&) = delete;
-    test_runner_totals&
-    operator= (const test_runner_totals&) = delete;
-    test_runner_totals&
-    operator= (test_runner_totals&&) = delete;
+    runner_totals () = default;
+    runner_totals (const runner_totals&) = delete;
+    runner_totals (runner_totals&&) = delete;
+    runner_totals&
+    operator= (const runner_totals&) = delete;
+    runner_totals&
+    operator= (runner_totals&&) = delete;
 
     /**
      * @brief Accumulates the totals from another instance into this one.
@@ -71,8 +71,8 @@ namespace micro_os_plus::micro_test_plus
      * @param other The instance whose totals are to be added.
      * @return Reference to this instance.
      */
-    test_runner_totals&
-    operator+= (const test_runner_totals& other);
+    runner_totals&
+    operator+= (const runner_totals& other);
 
     constexpr void
     increment_successful_checks (size_t count = 1)
@@ -87,9 +87,9 @@ namespace micro_os_plus::micro_test_plus
     }
 
     constexpr void
-    increment_executed_test_cases (size_t count = 1)
+    increment_executed_subtests (size_t count = 1)
     {
-      executed_test_cases_ += count;
+      executed_subtests_ += count;
     }
 
     [[nodiscard]] constexpr size_t
@@ -111,9 +111,9 @@ namespace micro_os_plus::micro_test_plus
     }
 
     [[nodiscard]] constexpr size_t
-    executed_test_cases () const
+    executed_subtests () const
     {
-      return executed_test_cases_;
+      return executed_subtests_;
     }
 
     [[nodiscard]] bool
@@ -134,9 +134,9 @@ namespace micro_os_plus::micro_test_plus
     size_t failed_checks_ = 0;
 
     /**
-     * @brief Total number of test cases executed.
+     * @brief Total number of tests executed.
      */
-    size_t executed_test_cases_ = 0;
+    size_t executed_subtests_ = 0;
   };
 
   // --------------------------------------------------------------------------

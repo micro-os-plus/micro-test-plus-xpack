@@ -55,14 +55,13 @@ target_include_directories (
 target_sources (
   micro-os-plus-micro-test-plus-interface
   INTERFACE "src/micro-test-plus.cpp"
-            "src/test-runner.cpp"
-            "src/test-runner-totals.cpp"
+            "src/runner.cpp"
+            "src/runner-totals.cpp"
             "src/deferred-reporter.cpp"
-            "src/test-reporter.cpp"
-            "src/test-reporter-basic.cpp"
-            "src/test-reporter-tap.cpp"
-            "src/test-suite.cpp"
-            "src/test-case.cpp"
+            "src/reporter.cpp"
+            "src/reporter-basic.cpp"
+            "src/reporter-tap.cpp"
+            "src/test.cpp"
             "src/timings.cpp"
 )
 

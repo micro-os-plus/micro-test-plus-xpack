@@ -29,7 +29,7 @@ using namespace std::literals;
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
-// #pragma clang diagnostic ignored "-Wshadow-uncaptured-local"
+#pragma clang diagnostic ignored "-Wshadow-uncaptured-local"
 #pragma clang diagnostic ignored "-Wexit-time-destructors"
 #pragma clang diagnostic ignored "-Wglobal-constructors"
 // #pragma clang diagnostic ignored "-Wctad-maybe-unsupported"
@@ -56,21 +56,18 @@ compute_condition (void)
 // ----------------------------------------------------------------------------
 
 static void
-suite_function (mt::static_test_suite& ts)
+suite_function (mt::static_suite& t)
 {
   // Test comparison functions.
-  ts.test_case ("Check various conditions", [] (auto& tc)
+  t.test ("Check various conditions", [] (auto& t)
     {
-      // There are functions with usual names for all
-      // comparisons.
-
-      tc.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
+      t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
 
       // Boolean expressions can be checked directly.
-      tc.expect (compute_condition ()) << "condition is true";
+      t.expect (compute_condition ()) << "condition is true";
     });
 }
 
-static mt::static_test_suite suite = { "Suite", tr, suite_function };
+static mt::static_suite suite = { "Static suite", str, suite_function };
 
 // ----------------------------------------------------------------------------

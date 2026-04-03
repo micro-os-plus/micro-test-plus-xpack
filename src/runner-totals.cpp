@@ -51,20 +51,20 @@ namespace micro_os_plus::micro_test_plus
 {
   // ===========================================================================
 
-  test_runner_totals&
-  test_runner_totals::operator+= (const test_runner_totals& other)
+  runner_totals&
+  runner_totals::operator+= (const runner_totals& other)
   {
     successful_checks_ += other.successful_checks ();
     failed_checks_ += other.failed_checks ();
-    executed_test_cases_ += other.executed_test_cases ();
+    executed_subtests_ += other.executed_subtests ();
 
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s -> s%zu f%zu c%zu\n", __PRETTY_FUNCTION__, successful_checks_,
-            failed_checks_, executed_test_cases_);
+    printf ("%s -> +%zu -%zu in %zu\n", __PRETTY_FUNCTION__,
+            successful_checks_, failed_checks_, executed_subtests_);
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
@@ -72,7 +72,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   bool
-  test_runner_totals::was_successful (void) const
+  runner_totals::was_successful (void) const
   {
     // Initially it also failed if there were no checks, but it is more
     // intuitive to consider it successful if there were no checks, as it did
@@ -81,10 +81,10 @@ namespace micro_os_plus::micro_test_plus
   }
 
   [[nodiscard]] bool
-  test_runner_totals::is_unused (void) const
+  runner_totals::is_unused (void) const
   {
     return failed_checks_ == 0 && successful_checks_ == 0
-           && executed_test_cases_ == 0;
+           && executed_subtests_ == 0;
   }
 
   // --------------------------------------------------------------------------

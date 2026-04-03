@@ -77,7 +77,7 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This operator overload enables the `test_reporter` to output pointer
+   * This operator overload enables the `reporter` to output pointer
    * values in a consistent and readable hexadecimal format.
    *
    * The pointer is formatted as a string using `snprintf` with the `%p` format
@@ -90,8 +90,8 @@ namespace micro_os_plus::micro_test_plus
    * pointer-related test cases.
    */
   template <typename T>
-  test_reporter&
-  test_reporter::operator<< (T* v)
+  reporter&
+  reporter::operator<< (T* v)
   {
     char buff[20];
     snprintf (buff, sizeof (buff), "%p", reinterpret_cast<void*> (v));
@@ -103,15 +103,15 @@ namespace micro_os_plus::micro_test_plus
 #if 0
 /**
   * @details
-  * This operator overload enables the `test_reporter` to output any type that is supported by the `detail::get` mechanism, ensuring consistent formatting and extensibility.
+  * This operator overload enables the `reporter` to output any type that is supported by the `detail::get` mechanism, ensuring consistent formatting and extensibility.
   *
   * By delegating to `detail::get`, the operator allows for custom formatting and extraction of values, supporting a wide range of types including user-defined and framework-specific types. The resulting value is then forwarded to the appropriate output handler, ensuring seamless integration into test reports and diagnostics.
   *
   * This approach promotes flexibility and maintainability, allowing new types to be supported with minimal changes to the reporting infrastructure.
   */
    template <class T>
-  test_reporter&
-  test_reporter::operator<< (const T& t)
+  reporter&
+  reporter::operator<< (const T& t)
   {
     *this << detail::get (t);
     return *this;
@@ -120,7 +120,7 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This operator overload enables the `test_reporter` to output
+   * This operator overload enables the `reporter` to output
    * strongly-typed integral values in a clear and consistent decimal format.
    *
    * The value is converted to a string using `std::to_string` after being cast
@@ -133,8 +133,8 @@ namespace micro_os_plus::micro_test_plus
    * facilitating debugging.
    */
   template <class T>
-  test_reporter&
-  test_reporter::operator<< (const type_traits::genuine_integral_value<T>& v)
+  reporter&
+  reporter::operator<< (const type_traits::genuine_integral_value<T>& v)
   {
     out_.append (std::to_string (static_cast<long long> (v.get ())));
     return *this;
@@ -142,7 +142,7 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This operator overload enables the `test_reporter` to output container
+   * This operator overload enables the `reporter` to output container
    * types in a structured and readable format.
    *
    * The contents of the container are enclosed in curly braces and each
@@ -157,8 +157,8 @@ namespace micro_os_plus::micro_test_plus
   template <class T,
             type_traits::requires_t<type_traits::is_container_v<T>
                                     and not type_traits::has_npos_v<T>>>
-  test_reporter&
-  test_reporter::operator<< (T&& t)
+  reporter&
+  reporter::operator<< (T&& t)
   {
     *this << '{';
     auto first = true;
@@ -173,7 +173,7 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This operator overload enables the `test_reporter` to output equality
+   * This operator overload enables the `reporter` to output equality
    * comparison expressions in a clear and expressive format.
    *
    * The left-hand side and right-hand side values are formatted and separated
@@ -183,8 +183,8 @@ namespace micro_os_plus::micro_test_plus
    * equality assertions and facilitates efficient debugging of test failures.
    */
   template <class Lhs_T, class Rhs_T>
-  test_reporter&
-  test_reporter::operator<< (const detail::eq_<Lhs_T, Rhs_T>& op)
+  reporter&
+  reporter::operator<< (const detail::eq_<Lhs_T, Rhs_T>& op)
   {
     return (*this << color (op) << op.lhs () << " == " << op.rhs ()
                   << colors_.none);
@@ -192,7 +192,7 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This operator overload enables the `test_reporter` to output inequality
+   * This operator overload enables the `reporter` to output inequality
    * comparison expressions in a clear and expressive format.
    *
    * The left-hand side and right-hand side values are formatted and separated
@@ -203,8 +203,8 @@ namespace micro_os_plus::micro_test_plus
    * failures.
    */
   template <class Lhs_T, class Rhs_T>
-  test_reporter&
-  test_reporter::operator<< (const detail::ne_<Lhs_T, Rhs_T>& op)
+  reporter&
+  reporter::operator<< (const detail::ne_<Lhs_T, Rhs_T>& op)
   {
     return (*this << color (op) << op.lhs () << " != " << op.rhs ()
                   << colors_.none);
@@ -212,7 +212,7 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This operator overload enables the `test_reporter` to output greater-than
+   * This operator overload enables the `reporter` to output greater-than
    * comparison expressions in a clear and expressive format.
    *
    * The left-hand side and right-hand side values are formatted and separated
@@ -223,8 +223,8 @@ namespace micro_os_plus::micro_test_plus
    * failures.
    */
   template <class Lhs_T, class Rhs_T>
-  test_reporter&
-  test_reporter::operator<< (const detail::gt_<Lhs_T, Rhs_T>& op)
+  reporter&
+  reporter::operator<< (const detail::gt_<Lhs_T, Rhs_T>& op)
   {
     return (*this << color (op) << op.lhs () << " > " << op.rhs ()
                   << colors_.none);
@@ -232,7 +232,7 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This operator overload enables the `test_reporter` to output
+   * This operator overload enables the `reporter` to output
    * greater-than-or-equal-to comparison expressions in a clear and expressive
    * format.
    *
@@ -244,8 +244,8 @@ namespace micro_os_plus::micro_test_plus
    * efficient debugging of test failures.
    */
   template <class Lhs_T, class Rhs_T>
-  test_reporter&
-  test_reporter::operator<< (const detail::ge_<Lhs_T, Rhs_T>& op)
+  reporter&
+  reporter::operator<< (const detail::ge_<Lhs_T, Rhs_T>& op)
   {
     return (*this << color (op) << op.lhs () << " >= " << op.rhs ()
                   << colors_.none);
@@ -253,7 +253,7 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This operator overload enables the `test_reporter` to output less-than
+   * This operator overload enables the `reporter` to output less-than
    * comparison expressions in a clear and expressive format.
    *
    * The left-hand side and right-hand side values are formatted and separated
@@ -263,8 +263,8 @@ namespace micro_os_plus::micro_test_plus
    * less-than assertions and facilitates efficient debugging of test failures.
    */
   template <class Lhs_T, class Rhs_T>
-  test_reporter&
-  test_reporter::operator<< (const detail::lt_<Rhs_T, Lhs_T>& op)
+  reporter&
+  reporter::operator<< (const detail::lt_<Rhs_T, Lhs_T>& op)
   {
     return (*this << color (op) << op.lhs () << " < " << op.rhs ()
                   << colors_.none);
@@ -272,7 +272,7 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This operator overload enables the `test_reporter` to output
+   * This operator overload enables the `reporter` to output
    * less-than-or-equal-to comparison expressions in a clear and expressive
    * format.
    *
@@ -284,8 +284,8 @@ namespace micro_os_plus::micro_test_plus
    * efficient debugging of test failures.
    */
   template <class Lhs_T, class Rhs_T>
-  test_reporter&
-  test_reporter::operator<< (const detail::le_<Rhs_T, Lhs_T>& op)
+  reporter&
+  reporter::operator<< (const detail::le_<Rhs_T, Lhs_T>& op)
   {
     return (*this << color (op) << op.lhs () << " <= " << op.rhs ()
                   << colors_.none);
@@ -293,7 +293,7 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This operator overload enables the `test_reporter` to output logical
+   * This operator overload enables the `reporter` to output logical
    * conjunction (AND) expressions in a clear and structured format.
    *
    * The left-hand side and right-hand side expressions are enclosed in
@@ -304,8 +304,8 @@ namespace micro_os_plus::micro_test_plus
    * test failures involving compound conditions.
    */
   template <class Lhs_T, class Rhs_T>
-  test_reporter&
-  test_reporter::operator<< (const detail::and_<Lhs_T, Rhs_T>& op)
+  reporter&
+  reporter::operator<< (const detail::and_<Lhs_T, Rhs_T>& op)
   {
     return (*this << '(' << op.lhs () << color (op) << " and " << colors_.none
                   << op.rhs () << ')');
@@ -313,7 +313,7 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This operator overload enables the `test_reporter` to output logical
+   * This operator overload enables the `reporter` to output logical
    * disjunction (OR) expressions in a clear and structured format.
    *
    * The left-hand side and right-hand side expressions are enclosed in
@@ -324,8 +324,8 @@ namespace micro_os_plus::micro_test_plus
    * test failures involving compound conditions.
    */
   template <class Lhs_T, class Rhs_T>
-  test_reporter&
-  test_reporter::operator<< (const detail::or_<Lhs_T, Rhs_T>& op)
+  reporter&
+  reporter::operator<< (const detail::or_<Lhs_T, Rhs_T>& op)
   {
     return (*this << '(' << op.lhs () << color (op) << " or " << colors_.none
                   << op.rhs () << ')');
@@ -340,8 +340,8 @@ namespace micro_os_plus::micro_test_plus
    * diagnostics.
    */
   template <class T>
-  test_reporter&
-  test_reporter::operator<< (const detail::not_<T>& op)
+  reporter&
+  reporter::operator<< (const detail::not_<T>& op)
   {
     return (*this << color (op) << "not " << op.value () << colors_.none);
   }
@@ -360,8 +360,8 @@ namespace micro_os_plus::micro_test_plus
    * exception-related test cases.
    */
   template <class Expr_T, class Exception_T>
-  test_reporter&
-  test_reporter::operator<< (const detail::throws_<Expr_T, Exception_T>& op)
+  reporter&
+  reporter::operator<< (const detail::throws_<Expr_T, Exception_T>& op)
   {
     return (*this << color (op) << "throws<"
                   << reflection::type_name<Exception_T> () << ">"
@@ -379,8 +379,8 @@ namespace micro_os_plus::micro_test_plus
    * improving the readability and professionalism of the test output.
    */
   template <class Expr_T>
-  test_reporter&
-  test_reporter::operator<< (const detail::throws_<Expr_T, void>& op)
+  reporter&
+  reporter::operator<< (const detail::throws_<Expr_T, void>& op)
   {
     return (*this << color (op) << "throws" << colors_.none);
   }
@@ -396,8 +396,8 @@ namespace micro_os_plus::micro_test_plus
    * the readability and professionalism of the test output.
    */
   template <class Expr_T>
-  test_reporter&
-  test_reporter::operator<< (const detail::nothrow_<Expr_T>& op)
+  reporter&
+  reporter::operator<< (const detail::nothrow_<Expr_T>& op)
   {
     return (*this << color (op) << "nothrow" << colors_.none);
   }
@@ -418,12 +418,11 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Expr_T>
   void
-  test_reporter::pass (Expr_T& expr, std::string& message,
-                       test_case_base& test_case)
+  reporter::pass (Expr_T& expr, std::string& message, test_base& test)
   {
     //    current_test_suite->current_test_case.index++;
 
-    output_pass_prefix_ (message, test_case);
+    output_pass_prefix_ (message, test);
 
     if (message.empty ())
       {
@@ -431,7 +430,7 @@ namespace micro_os_plus::micro_test_plus
         *this << expr;
       }
 
-    output_pass_suffix_ (test_case);
+    output_pass_suffix_ (test);
   }
 
   /**
@@ -445,21 +444,20 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Expr_T>
   void
-  test_reporter::fail (Expr_T& expr, bool abort, std::string& message,
-                       const reflection::source_location& location,
-                       test_case_base& test_case)
+  reporter::fail (Expr_T& expr, bool abort, std::string& message,
+                  const reflection::source_location& location, test_base& test)
   {
     // current_test_suite->current_test_case.index++;
 
     const bool hasExpression = type_traits::is_op_v<Expr_T>;
-    output_fail_prefix_ (message, hasExpression, location, test_case);
+    output_fail_prefix_ (message, hasExpression, location, test);
 
     if constexpr (type_traits::is_op_v<Expr_T>)
       {
         *this << expr;
       }
 
-    output_fail_suffix_ (location, abort, test_case);
+    output_fail_suffix_ (location, abort, test);
   }
 
   // --------------------------------------------------------------------------

@@ -61,19 +61,19 @@ int
 main (int argc, char* argv[])
 {
   // Name the default test suite.
-  mt::runner tr ("Minimal");
-  auto& ts = tr.initialise (argc, argv);
+  mt::runner tr{ "Minimal" };
+  tr.initialise (argc, argv);
 
   // --------------------------------------------------------------------------
 
   // Test comparison functions.
-  ts.test_case ("Check various conditions", [] (auto& tc)
+  tr.test ("Check various conditions", [] (auto& t)
     {
       // There are functions with usual names for all comparisons.
-      tc.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
+      t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
 
       // Boolean expressions can be checked directly.
-      tc.expect (compute_condition ()) << "condition is true";
+      t.expect (compute_condition ()) << "condition is true";
     });
 
   // --------------------------------------------------------------------------

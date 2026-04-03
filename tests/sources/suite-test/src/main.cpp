@@ -33,7 +33,7 @@ using namespace std::literals;
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
-// #pragma clang diagnostic ignored "-Wshadow-uncaptured-local"
+#pragma clang diagnostic ignored "-Wshadow-uncaptured-local"
 #pragma clang diagnostic ignored "-Wexit-time-destructors"
 #pragma clang diagnostic ignored "-Wglobal-constructors"
 // #pragma clang diagnostic ignored "-Wctad-maybe-unsupported"
@@ -42,23 +42,100 @@ using namespace std::literals;
 
 // ----------------------------------------------------------------------------
 
-extern mt::static_runner tr;
+// Simple examples of functions to be tested.
+static int
+compute_answer (void)
+{
+  // The Answer to the Ultimate Question of Life,
+  // the Universe and Everything is...
+  return 42;
+}
 
-mt::static_runner tr{ "Suite" };
+static bool
+compute_condition (void)
+{
+  return true;
+}
+
+static void
+suite_function (mt::suite& t)
+{
+  // Test comparison functions.
+  t.test ("Check various conditions in suite", [] (auto& t)
+    {
+      t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
+
+      // Boolean expressions can be checked directly.
+      t.expect (compute_condition ()) << "condition is true";
+    });
+}
+
+// ----------------------------------------------------------------------------
+
+extern mt::static_runner str;
+
+mt::static_runner str{ "Static top suite" };
 
 int
 main (int argc, char* argv[])
 {
-  // There is a default test suite automatically defined in main().
-  tr.initialise (argc, argv);
+  int exit_code = 0;
 
   // --------------------------------------------------------------------------
 
-  // Trigger the execution of the static test suites.
-  tr.run_static_test_suites ();
+  mt::runner ltr{ "Local suite" };
+  ltr.initialise (argc, argv);
+
+  ltr.test ("Check various conditions 1.1", [] (auto& t)
+    {
+      t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
+
+      // Boolean expressions can be checked directly.
+      t.expect (compute_condition ()) << "condition is true";
+    });
+
+  // The suite will be executed when the runner terminates, at `exit_code()`.
+  ltr.suite ("Local suite 1", suite_function);
+
+  ltr.test ("Check various conditions 1.2", [] (auto& t)
+    {
+      t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
+
+      // Boolean expressions can be checked directly.
+      t.expect (compute_condition ()) << "condition is true";
+    });
+
+  exit_code = ltr.exit_code ();
+
+  // --------------------------------------------------------------------------
+
+  str.initialise (argc, argv);
+  str.test ("Check various conditions 2.1", [] (auto& t)
+    {
+      t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
+
+      // Boolean expressions can be checked directly.
+      t.expect (compute_condition ()) << "condition is true";
+    });
+
+  // The suite will be executed when the runner terminates, at `exit_code()`,
+  // before the static suites.
+  str.suite ("Local suite 2", suite_function);
+
+  str.test ("Check various conditions 2.2", [] (auto& t)
+    {
+      t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
+
+      // Boolean expressions can be checked directly.
+      t.expect (compute_condition ()) << "condition is true";
+    });
+
+  exit_code += str.exit_code ();
+
+  // --------------------------------------------------------------------------
 
   // return the overall test result to the system.
-  return tr.exit_code ();
+  return exit_code;
 }
 
 // ----------------------------------------------------------------------------

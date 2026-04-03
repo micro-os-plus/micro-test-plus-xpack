@@ -54,8 +54,7 @@
 #include <functional>
 #include <time.h>
 
-#include "test-suite.h"
-#include "test-reporter.h"
+#include "reporter.h"
 #include "timings.h"
 
 // ----------------------------------------------------------------------------
@@ -65,9 +64,10 @@
 #pragma GCC diagnostic ignored "-Wpadded"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
-#else
+#else // GCC only
 #pragma GCC diagnostic ignored "-Wsuggest-final-types"
 #pragma GCC diagnostic ignored "-Wsuggest-final-methods"
+#pragma GCC diagnostic ignored "-Wchanges-meaning"
 #endif
 #endif
 
@@ -98,7 +98,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */
-  class runner
+  class runner : public test_base
   {
   public:
     /**
@@ -134,7 +134,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Destructor for the runner class.
      */
-    virtual ~runner ();
+    virtual ~runner () override;
 
     /**
      * @brief Initialises the test runner with command-line arguments and an
@@ -146,7 +146,7 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Nothing.
      */
-    test_suite_top&
+    void
     initialise (int argc, char* argv[]);
 
     /**
@@ -161,14 +161,33 @@ namespace micro_os_plus::micro_test_plus
 
     template <typename Callable_T, typename... Args_T>
     void
-    test_suite (const char* name, Callable_T&& callable,
-                Args_T&&... arguments);
+    test (const char* name, Callable_T&& callable, Args_T&&... arguments);
 
-    [[nodiscard]] size_t
-    test_suites_count (void) const;
+    /**
+     * @brief Adds a test suite to the runner.
+     *
+     * @tparam Callable_T The type of a callable object.
+     * @tparam Args_T The types of the callable arguments.
+     *
+     * @param [in] name The test suite name or description, used in reports.
+     * @param [in] callable A generic callable object, usually a lambda,
+     * invoked to perform the test suite.
+     * @param [in] arguments A possibly empty list of arguments to be passed to
+     * the callable.
+     */
+    template <typename Callable_T, typename... Args_T>
+    void
+    suite (const char* name, Callable_T&& callable, Args_T&&... arguments);
 
-    [[nodiscard]] virtual size_t
-    total_test_suites_count (void) const;
+    /**
+     * @brief Registers a test suite with the runner.
+     *
+     * @param [in] suite The test suite to register.
+     */
+    void
+    register_suite (class suite& suite);
+
+    // ------------------------------------------------------------------------
 
     /**
      * @brief Aborts test execution immediately.
@@ -181,6 +200,42 @@ namespace micro_os_plus::micro_test_plus
     [[noreturn]] void
     abort (void);
 
+    // ------------------------------------------------------------------------
+    // Getters.
+
+    [[nodiscard]] constexpr const char*
+    name (void) const
+    {
+      return name_;
+    }
+
+    [[nodiscard]] virtual size_t
+    total_suites_count (void) const;
+
+    [[nodiscard]] constexpr top_suite&
+    top_suite (void) const
+    {
+      return *top_suite_;
+    }
+
+    [[nodiscard]] constexpr test_base&
+    current_suite (void) const
+    {
+      return *current_suite_;
+    }
+
+    [[nodiscard]] constexpr size_t
+    current_suite_index ()
+    {
+      return suite_index_;
+    }
+
+    constexpr size_t
+    increment_suite_index ()
+    {
+      return ++suite_index_;
+    }
+
     /**
      * @brief Returns a reference to the test reporter.
      *
@@ -189,44 +244,83 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Reference to the test reporter.
      */
-    [[nodiscard]] constexpr test_reporter&
+    [[nodiscard]] constexpr class reporter&
     reporter (void) const
     {
       return *reporter_;
     }
 
-    [[nodiscard]] constexpr test_suite_top&
-    top_suite (void) const
+    /**
+     * @brief Returns a pointer to the vector of child test suites.
+     *
+     * @par Parameters
+     *	 None.
+     * @return Pointer to the vector of child test suites.
+     */
+    [[nodiscard]] std::vector<class suite*>*
+    suites (void)
     {
-      return *top_suite_;
+      return children_suites_;
     }
 
-    // ------------------------------------------------------------------------
-  public:
     /**
-     * @brief Array of registered test suites.
-     */
-    std::vector<test_suite_base*> test_suites;
-
-    /**
-     * @brief Totals for the test runner.
+     * @brief Returns the count of child test suites.
      *
-     * @details
-     * This class holds the cumulative totals for all test suites. It is
-     * updated as each test suite is executed, allowing for a comprehensive
-     * summary of the test results at the end of the test run. The totals
-     * include counts for all test cases executed, including nested cases,
-     * providing a complete overview of the testing outcomes.
+     * @par Parameters
+     *	 None.
+     * @return The number of child test suites.
      */
-    test_runner_totals totals;
-
-    timestamps timings;
+    [[nodiscard]] size_t
+    suites_count (void) const;
 
   protected:
     /**
+     * @brief Runs all registered  test suites.
+     *
+     * @par Parameters
+     *	 None.
+     */
+    void
+    run_suites_ (void);
+
+    /**
+     * @brief Runs all registered static test suites.
+     *
+     * @par Parameters
+     *	 None.
+     */
+    void
+    run_static_suites_ (void);
+
+    // ------------------------------------------------------------------------
+  protected:
+    class top_suite* top_suite_{ nullptr };
+
+    class test_base* current_suite_{ nullptr };
+
+    size_t suite_index_ = 0;
+
+    std::vector<class suite*>* children_suites_{ nullptr };
+
+    /**
+     * @brief Pointer to the vector of registered static test suites.
+     *
+     * This pointer is default-initialised to nullptr by the startup code, as
+     * it resides in the BSS segment. It is populated with the addresses of
+     * registered static test suites during the static initialization phase,
+     * before main() is called.
+     *
+     * This MUST NOT be explicitly initialised, is must be default-initialised
+     * to nullptr by the startup code, as BSS.
+     */
+    std::vector<static_suite*>* static_children_suites_;
+
+    bool has_static_suites_ = false;
+
+    /**
      * @brief Pointer to the test reporter used for outputting test results.
      */
-    test_reporter* reporter_{ nullptr };
+    class reporter* reporter_{ nullptr };
 
     /**
      * @brief Stores the argument count passed to the test runner.
@@ -237,44 +331,68 @@ namespace micro_os_plus::micro_test_plus
      * @brief Stores the argument vector passed to the test runner.
      */
     char** argv_ = nullptr;
-
-    /**
-     * @brief Pointer to the top-level test suite.
-     */
-    test_suite_top* top_suite_;
   };
+
+  // ==========================================================================
 
   class static_runner final : public runner
   {
   public:
     static_runner (const char* top_suite_name);
-    ~static_runner () override;
+
+    static_runner (const static_runner&) = delete;
+    static_runner (static_runner&&) = delete;
+    static_runner&
+    operator= (const static_runner&) = delete;
+    static_runner&
+    operator= (static_runner&&) = delete;
+
+    virtual ~static_runner () override;
 
     // ------------------------------------------------------------------------
 
-    [[nodiscard]] std::vector<static_test_suite*>&
-    static_test_suites (void)
+    /**
+     * @brief Returns a pointer to the vector of registered static test suites.
+     *
+     * @par Parameters
+     *	 None.
+     * @return Pointer to the vector of registered static test suites.
+     */
+    [[nodiscard]] std::vector<static_suite*>*
+    static_suites (void)
     {
-      return *static_test_suites_;
+      return static_children_suites_;
     }
 
+    /**
+     * @brief Registers a static test suite with the runner.
+     *
+     * @param [in] runner The static runner instance.
+     * @param [in] suite The static test suite to register.
+     */
     static void
-    register_static_test_suite (static_test_runner& runner,
-                                static_test_suite& test_suite);
+    register_static_suite (static_runner& runner, static_suite& suite);
 
+    /**
+     * @brief Returns the total count of registered static test suites.
+     *
+     * @par Parameters
+     *	 None.
+     * @return The total number of registered static test suites.
+     */
     [[nodiscard]] size_t
-    static_test_suites_count (void) const;
+    static_suites_count (void) const;
 
+    /**
+     * @brief Returns the total count of all test suites, including static and
+     * dynamic.
+     *
+     * @par Parameters
+     *	 None.
+     * @return The total number of test suites.
+     */
     [[nodiscard]] virtual size_t
-    total_test_suites_count (void) const final override;
-
-    void
-    run_static_test_suites (void);
-
-  private:
-    // This MUST NOT be explicitly initialised, is must be default-initialised
-    // to nullptr by the startup code, as BSS.
-    std::vector<static_test_suite*>* static_test_suites_;
+    total_suites_count (void) const final override;
   };
 
 } // namespace micro_os_plus::micro_test_plus

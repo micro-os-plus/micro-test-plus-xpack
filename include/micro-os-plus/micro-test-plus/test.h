@@ -23,7 +23,7 @@
  * This header provides the declarations for the test suite facilities used
  * within the µTest++ framework. It defines the interfaces for constructing,
  * registering, and managing test suites and their associated test cases. The
- * core classes, `test_suite_base` and `test_suite`, offer mechanisms for
+ * core classes, `test_base` and `test_suite`, offer mechanisms for
  * tracking test case execution, managing counters for successful and failed
  * checks, and supporting automated registration and discovery of test suites.
  *
@@ -45,8 +45,8 @@
  * should not be included directly by user code.
  */
 
-#ifndef MICRO_TEST_PLUS_TEST_SUITE_H_
-#define MICRO_TEST_PLUS_TEST_SUITE_H_
+#ifndef MICRO_TEST_PLUS_TEST_H_
+#define MICRO_TEST_PLUS_TEST_H_
 
 // ----------------------------------------------------------------------------
 
@@ -54,8 +54,7 @@
 
 // ----------------------------------------------------------------------------
 
-#include "test-runner-totals.h"
-#include "test-case.h"
+#include "runner-totals.h"
 #include "timings.h"
 
 #include <functional>
@@ -71,6 +70,7 @@
 #pragma GCC diagnostic ignored "-Wsuggest-final-types"
 #pragma GCC diagnostic ignored "-Wsuggest-final-methods"
 #pragma GCC diagnostic ignored "-Wredundant-tags"
+#pragma GCC diagnostic ignored "-Wchanges-meaning"
 #endif
 #endif
 
@@ -80,8 +80,8 @@ namespace micro_os_plus::micro_test_plus
 {
   class runner;
   class static_runner;
-  class test_reporter;
-  class test_runner_totals;
+  class reporter;
+  class runner_totals;
 
   // --------------------------------------------------------------------------
 
@@ -89,7 +89,7 @@ namespace micro_os_plus::micro_test_plus
    * @brief Base class for all test suites.
    *
    * @details
-   * The `test_suite_base` class provides the foundational interface for
+   * The `test_base` class provides the foundational interface for
    * managing test suites within the µTest++ framework. It maintains counters
    * for successful and failed checks, tracks test cases, and offers methods
    * for marking the commencement and completion of test cases and suites.
@@ -105,7 +105,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */
-  class test_suite_base
+  class test_base
   {
   public:
     /**
@@ -116,67 +116,40 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The rule of five is enforced to prevent accidental copying or moving.
      */
-    test_suite_base (const char* name, runner& runner, size_t own_index);
+    test_base (const char* name, runner& runner, size_t own_index,
+               size_t nesting_depth);
 
     /**
      * @brief Deleted copy constructor to prevent copying.
      */
-    test_suite_base (const test_suite_base&) = delete;
+    test_base (const test_base&) = delete;
 
     /**
      * @brief Deleted move constructor to prevent moving.
      */
-    test_suite_base (test_suite_base&&) = delete;
+    test_base (test_base&&) = delete;
 
     /**
      * @brief Deleted copy assignment operator to prevent copying.
      */
-    test_suite_base&
-    operator= (const test_suite_base&) = delete;
+    test_base&
+    operator= (const test_base&) = delete;
 
     /**
      * @brief Deleted move assignment operator to prevent moving.
      */
-    test_suite_base&
-    operator= (test_suite_base&&) = delete;
+    test_base&
+    operator= (test_base&&) = delete;
 
     /**
-     * @brief Virtual destructor for the test_suite_base class.
+     * @brief Virtual destructor for the test_base class.
      */
-    virtual ~test_suite_base ();
-
-    /**
-     * @brief Adds a test case to the suite.
-     *
-     * @tparam Callable_T The type of a callable object.
-     * @tparam Args_T The types of the callable arguments.
-     *
-     * @param [in] name The test case name or description, used in reports.
-     * @param [in] callable A generic callable object, usually a lambda,
-     * invoked to perform the test.
-     * @param [in] arguments A possibly empty list of arguments to be passed to
-     * the callable.
-     */
-    template <typename Callable_T, typename... Args_T>
-    void
-    test_case (const char* name, Callable_T&& callable, Args_T&&... arguments);
+    virtual ~test_base ();
 
     // ------------------------------------------------------------------------
-    /**
-     * @brief Runs the sequence of test cases in the suite.
-     *
-     * @par Parameters
-     *	None.
-     * @par Returns
-     *  Nothing.
-     *
-     * @details
-     * The `run` method is a pure virtual function that must be implemented by
-     * derived test suite classes. It is responsible for executing the test
-     * suite logic, including child test cases.
-     */
+
     virtual void
-    run (void) = 0;
+    run (void);
 
     /**
      * @brief Gets the suite name.
@@ -211,8 +184,14 @@ namespace micro_os_plus::micro_test_plus
      *	None.
      * @return A reference to the test reporter.
      */
-    [[nodiscard]] test_reporter&
+    [[nodiscard]] reporter&
     reporter (void);
+
+    [[nodiscard]] constexpr size_t
+    nesting_depth ()
+    {
+      return nesting_depth_;
+    }
 
     [[nodiscard]] constexpr size_t
     own_index ()
@@ -221,33 +200,31 @@ namespace micro_os_plus::micro_test_plus
     }
 
     [[nodiscard]] constexpr size_t
-    current_child_index ()
+    current_subtest_index ()
     {
-      return child_index_;
+      return current_subtest_index_;
     }
 
     constexpr size_t
-    increment_child_index ()
+    increment_subtest_index ()
     {
-      return ++child_index_;
+      return ++current_subtest_index_;
     }
 
     [[nodiscard]] constexpr size_t
-    test_cases_count (void) const
+    children_subtests_count (void) const
     {
-      return test_cases_.size ();
+      return children_subtests_.size ();
     }
+
+    void
+    post_subtest_create (class subtest* child_test, test_base& suite);
 
   public:
     /**
-     * @brief The test suite index, counting from 1.
-     */
-    size_t own_index_;
-
-    /**
      * @brief Totals for the test suite, including nested cases.
      */
-    test_runner_totals totals;
+    runner_totals totals;
 
     timestamps timings;
 
@@ -258,79 +235,47 @@ namespace micro_os_plus::micro_test_plus
     const char* name_;
 
     /**
-     * @brief The child index, counting from 1.
+     * @brief The nesting depth of the test case within the suite.
+     */
+    size_t nesting_depth_;
+
+    /**
+     * @brief The test suite index, counting from 1.
+     */
+    size_t own_index_;
+
+    /**
+     * @brief The subtest index, counting from 1.
      *
      * @details
      * This index is used for reporting and tracking the execution order of
-     * test cases within a suite, especially when nested test cases are
-     * involved. It is incremented for each test case created, allowing for
-     * clear identification of test cases in reports and diagnostics.
+     * subtests within a suite, especially when nested subtests are
+     * involved. It is incremented for each subtest created, allowing for
+     * clear identification of subtests in reports and diagnostics.
      */
-    size_t child_index_ = 0;
+    size_t current_subtest_index_ = 0;
 
     /**
      * @brief Reference to the test runner.
      */
     class runner& runner_;
 
-    /**
-     * @brief The current test case name.
-     */
-    //    const char* test_case_name_;
-
-    std::vector<test_case_base*> test_cases_;
+    std::vector<test_base*> children_subtests_;
   };
 
-  class test_suite_top : public test_suite_base
+  // ==========================================================================
+
+  class top_suite : public test_base
   {
   public:
-    /**
-     * @brief Class template constructor for test_suite.
-     *
-     * @tparam Callable_T The type of a callable object.
-     * @tparam Args_T The types of the callable arguments.
-     *
-     * @param [in] name The test case name or description, used in reports.
-     * @param [in] callable A generic callable object, usually a lambda,
-     * invoked to perform the test.
-     * @param [in] arguments A possibly empty list of arguments to be passed to
-     * the callable.
-     *
-     * @details
-     * The rule of five is enforced to prevent accidental copying or moving.
-     */
-    test_suite_top (const char* name, class runner& runner, size_t own_index);
-
-    /**
-     * @brief Deleted copy constructor to prevent copying.
-     */
-    test_suite_top (const test_suite_top&) = delete;
-
-    /**
-     * @brief Deleted move constructor to prevent moving.
-     */
-    test_suite_top (test_suite_top&&) = delete;
-
-    /**
-     * @brief Deleted copy assignment operator to prevent copying.
-     */
-    test_suite_top&
-    operator= (const test_suite_top&) = delete;
-
-    /**
-     * @brief Deleted move assignment operator to prevent moving.
-     */
-    test_suite_top&
-    operator= (test_suite_top&&) = delete;
-
-    /**
-     * @brief Virtual destructor for the test_suite_top class.
-     */
-    virtual ~test_suite_top () override;
-
-    // ------------------------------------------------------------------------
-    virtual void
-    run (void) override;
+    top_suite (const char* name, class runner& runner);
+    top_suite (const top_suite&) = delete;
+    top_suite (top_suite&&) = delete;
+    top_suite&
+    operator= (const top_suite&) = delete;
+    top_suite&
+    operator= (top_suite&&) = delete;
+    virtual ~top_suite () override;
   };
 
   // ==========================================================================
@@ -338,7 +283,7 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @ingroup micro-test-plus-test-suites
    * @brief CRTP base class factoring out callable storage, rule-of-five, and
-   * `run()` logic shared by `test_suite_callable` and `static_test_suite`.
+   * `run()` logic shared by `test` and `static_suite`.
    *
    * @tparam Self_T The concrete derived class type (CRTP pattern). The stored
    * callable receives a `Self_T&` reference when the suite is executed.
@@ -346,7 +291,7 @@ namespace micro_os_plus::micro_test_plus
    * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */
   template <typename Self_T>
-  class test_suite_callable_common : public test_suite_base
+  class test_callable : public test_base
   {
   public:
     /**
@@ -366,36 +311,152 @@ namespace micro_os_plus::micro_test_plus
      * The rule of five is enforced to prevent accidental copying or moving.
      */
     template <typename Callable_T, typename... Args_T>
-    test_suite_callable_common (const char* name, class runner& runner,
-                                size_t own_index, Callable_T&& callable,
-                                Args_T&&... arguments);
+    test_callable (const char* name, class runner& runner, size_t own_index,
+                   size_t nesting_depth, Callable_T&& callable,
+                   Args_T&&... arguments);
 
     /**
      * @brief Deleted copy constructor to prevent copying.
      */
-    test_suite_callable_common (const test_suite_callable_common&) = delete;
+    test_callable (const test_callable&) = delete;
 
     /**
      * @brief Deleted move constructor to prevent moving.
      */
-    test_suite_callable_common (test_suite_callable_common&&) = delete;
+    test_callable (test_callable&&) = delete;
 
     /**
      * @brief Deleted copy assignment operator to prevent copying.
      */
-    test_suite_callable_common&
-    operator= (const test_suite_callable_common&) = delete;
+    test_callable&
+    operator= (const test_callable&) = delete;
 
     /**
      * @brief Deleted move assignment operator to prevent moving.
      */
-    test_suite_callable_common&
-    operator= (test_suite_callable_common&&) = delete;
+    test_callable&
+    operator= (test_callable&&) = delete;
 
     /**
      * @brief Virtual destructor.
      */
-    virtual ~test_suite_callable_common () override;
+    virtual ~test_callable () override;
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * @brief Adds a test case to the suite.
+     *
+     * @tparam Callable_T The type of a callable object.
+     * @tparam Args_T The types of the callable arguments.
+     *
+     * @param [in] name The test case name or description, used in reports.
+     * @param [in] callable A generic callable object, usually a lambda,
+     * invoked to perform the test.
+     * @param [in] arguments A possibly empty list of arguments to be passed to
+     * the callable.
+     */
+    template <typename Callable_T, typename... Args_T>
+    void
+    test (const char* name, Callable_T&& callable, Args_T&&... arguments);
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * @ingroup micro-test-plus-expectations
+     * @brief Evaluate a generic condition and report the results.
+     *
+     * @tparam Expr_T The type of the custom expression.
+     *
+     * @par SFINAE
+     * Enabled only if `Expr_T` is derived from `detail::op` or
+     * is convertible to `bool`.
+     *
+     * @param [in] expr Logical expression to evaluate.
+     * @param [in] sl Optional source location, defaulting to the current line.
+     * @return An output stream to write optional messages.
+     *
+     * @details
+     * The `expect` function template evaluates a logical condition or custom
+     * expression and reports the result within the µTest++ framework. It is
+     * designed to provide detailed diagnostics for test failures, including
+     * the actual and expected values, when using the provided comparators
+     * (`eq()`, `ne()`, `lt()`, `le()`, `gt()`, `ge()`) or custom operators.
+     *
+     * The function template can be used with any expression that evaluates to
+     * a boolean or with custom comparators/operators derived from the local
+     * `detail::op` type. For complex checks performed outside the `expect()`
+     * logical expression (such as within `if` or `try`/`catch` statements),
+     * the result can be reported by calling `expect(true)` or `expect(false)`.
+     *
+     * The function returns an output stream, allowing optional messages to be
+     * appended to the test report.
+     *
+     * **Example**
+     *
+     * @code{.cpp}
+     * namespace mt = micro_os_plus::micro_test_plus;
+     * mt::expect(compute_answer() == 42) << "answer is 42";
+     * @endcode
+     */
+    template <class Expr_T,
+              type_traits::requires_t<
+                  type_traits::is_op_v<Expr_T>
+                  or type_traits::is_convertible_v<Expr_T, bool>> = 0>
+    constexpr auto
+    expect (const Expr_T& expr, const reflection::source_location& sl
+                                = reflection::source_location::current ())
+    {
+      return detail::deferred_reporter<Expr_T>{ expr, false, sl, *this };
+    }
+
+    /**
+     * @ingroup micro-test-plus-assumptions
+     * @brief Check a condition and, if false, abort test execution.
+     *
+     * @tparam Expr_T The type of the custom expression.
+     *
+     * @par SFINAE
+     * Enabled only if `Expr_T` is derived from `detail::op` or
+     * is convertible to `bool`.
+     *
+     * @param [in] expr Logical expression to evaluate.
+     * @param [in] sl Optional source location, defaulting to the current line.
+     * @return An output stream to write optional messages.
+     *
+     * @details
+     * The `assume` function template evaluates a logical condition or custom
+     * expression and reports the result within the µTest++ framework. It is
+     * designed to provide detailed diagnostics for test failures, including
+     * the actual and expected values, when using the provided comparators
+     * (`eq()`, `ne()`, `lt()`, `le()`, `gt()`, `ge()`) or custom operators.
+     *
+     * The function template can be used with any expression that evaluates to
+     * a boolean or with custom comparators/operators derived from the local
+     * `detail::op` type. For complex checks performed outside the `expect()`
+     * logical expression (such as within `if` or `try`/`catch` statements),
+     * the result can be reported by calling `expect(true)` or `expect(false)`.
+     *
+     * The function returns an output stream, allowing optional messages to be
+     * appended to the test report.
+     *
+     * **Example**
+     *
+     * @code{.cpp}
+     * namespace mt = micro_os_plus::micro_test_plus;
+     * mt::assume(compute_answer() == 42) << "answer is 42";
+     * @endcode
+     */
+    template <class Expr_T,
+              type_traits::requires_t<
+                  type_traits::is_op_v<Expr_T>
+                  or type_traits::is_convertible_v<Expr_T, bool>> = 0>
+    constexpr auto
+    assume (const Expr_T& expr, const reflection::source_location& sl
+                                = reflection::source_location::current ())
+    {
+      return detail::deferred_reporter<Expr_T>{ expr, true, sl, *this };
+    }
 
     // ------------------------------------------------------------------------
 
@@ -425,7 +486,7 @@ namespace micro_os_plus::micro_test_plus
    * runner.
    *
    * @details
-   * The `test_suite` class extends `test_suite_base` and enables the
+   * The `test_suite` class extends `test_base` and enables the
    * registration and execution of callable objects (such as lambdas or
    * function pointers) as test suites. Upon construction, each test suite
    * automatically registers itself with the test runner, facilitating
@@ -443,12 +504,11 @@ namespace micro_os_plus::micro_test_plus
    *
    * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */
-  class test_suite_callable
-      : public test_suite_callable_common<test_suite_callable>
+  class subtest : public test_callable<subtest>
   {
   public:
     /**
-     * @brief Class template constructor for test_suite_callable.
+     * @brief Class template constructor for test.
      *
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
@@ -463,46 +523,72 @@ namespace micro_os_plus::micro_test_plus
      * The rule of five is enforced to prevent accidental copying or moving.
      */
     template <typename Callable_T, typename... Args_T>
-    test_suite_callable (const char* name, class runner& runner,
-                         size_t own_index, Callable_T&& callable,
-                         Args_T&&... arguments);
+    subtest (const char* name, class runner& runner, test_base& parent_suite,
+             size_t own_index, size_t nesting_depth, Callable_T&& callable,
+             Args_T&&... arguments);
 
     /**
      * @brief Deleted copy constructor to prevent copying.
      */
-    test_suite_callable (const test_suite_callable&) = delete;
+    subtest (const subtest&) = delete;
 
     /**
      * @brief Deleted move constructor to prevent moving.
      */
-    test_suite_callable (test_suite_callable&&) = delete;
+    subtest (subtest&&) = delete;
 
     /**
      * @brief Deleted copy assignment operator to prevent copying.
      */
-    test_suite_callable&
-    operator= (const test_suite_callable&) = delete;
+    subtest&
+    operator= (const subtest&) = delete;
 
     /**
      * @brief Deleted move assignment operator to prevent moving.
      */
-    test_suite_callable&
-    operator= (test_suite_callable&&) = delete;
+    subtest&
+    operator= (subtest&&) = delete;
 
     /**
      * @brief Virtual destructor.
      */
-    virtual ~test_suite_callable () override;
+    virtual ~subtest () override;
+
+    // ------------------------------------------------------------------------
+
+    [[nodiscard]] test_base&
+    parent_suite (void) const;
+
+  protected:
+    test_base& parent_suite_;
   };
 
   // ==========================================================================
 
-  class static_test_suite
-      : public test_suite_callable_common<static_test_suite>
+  class suite : public test_callable<suite>
+  {
+  public:
+    template <typename Callable_T, typename... Args_T>
+    suite (const char* name, class runner& runner, Callable_T&& callable,
+           Args_T&&... arguments);
+
+    suite (const suite&) = delete;
+    suite (suite&&) = delete;
+    suite&
+    operator= (const suite&) = delete;
+    suite&
+    operator= (suite&&) = delete;
+
+    virtual ~suite () override;
+  };
+
+  // ==========================================================================
+
+  class static_suite : public test_callable<static_suite>
   {
   public:
     /**
-     * @brief Class template constructor for static_test_suite.
+     * @brief Class template constructor for static_suite.
      *
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
@@ -520,78 +606,39 @@ namespace micro_os_plus::micro_test_plus
      * runner.
      */
     template <typename Callable_T, typename... Args_T>
-    static_test_suite (const char* name, static_runner& runner,
-                       Callable_T&& callable, Args_T&&... arguments);
+    static_suite (const char* name, static_runner& runner,
+                  Callable_T&& callable, Args_T&&... arguments);
 
     /**
      * @brief Deleted copy constructor to prevent copying.
      */
-    static_test_suite (const static_test_suite&) = delete;
+    static_suite (const static_suite&) = delete;
 
     /**
      * @brief Deleted move constructor to prevent moving.
      */
-    static_test_suite (static_test_suite&&) = delete;
+    static_suite (static_suite&&) = delete;
 
     /**
      * @brief Deleted copy assignment operator to prevent copying.
      */
-    static_test_suite&
-    operator= (const static_test_suite&) = delete;
+    static_suite&
+    operator= (const static_suite&) = delete;
 
     /**
      * @brief Deleted move assignment operator to prevent moving.
      */
-    static_test_suite&
-    operator= (static_test_suite&&) = delete;
+    static_suite&
+    operator= (static_suite&&) = delete;
 
     /**
      * @brief Virtual destructor.
      */
-    virtual ~static_test_suite () override;
+    virtual ~static_suite () override;
 
     void
     update_own_index (size_t offset);
   };
-
-  // class static_test_suites_registry
-  // {
-  // public:
-  //   static_test_suites_registry ();
-
-  //   static_test_suites_registry (const static_test_suites_registry&) =
-  //   delete; static_test_suites_registry (static_test_suites_registry&&) =
-  //   delete; static_test_suites_registry& operator= (const
-  //   static_test_suites_registry&) = delete; static_test_suites_registry&
-  //   operator= (static_test_suites_registry&&) = delete;
-
-  //   ~static_test_suites_registry ();
-
-  //   //
-  //   ------------------------------------------------------------------------
-
-  //   static void
-  //   static_test_suites_registry_ensure_initialised (
-  //       static_test_suites_registry& registry);
-
-  //   //
-  //   ------------------------------------------------------------------------
-
-  //   [[nodiscard]] std::vector<test_suite_base*>&
-  //   test_suites (void)
-  //   {
-  //     return *test_suites_;
-  //   }
-
-  //   void
-  //   register_test_suite (test_suite_base& test_suite);
-
-  // private:
-  //   // This MUST NOT be explicitly initialised, is must be
-  //   default-initialised
-  //   // to nullptr by the startup code, as BSS.
-  //   std::vector<test_suite_base*>* test_suites_;
-  // };
 
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
@@ -606,6 +653,6 @@ namespace micro_os_plus::micro_test_plus
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_TEST_PLUS_TEST_SUITE_H_
+#endif // MICRO_TEST_PLUS_TEST_H_
 
 // ----------------------------------------------------------------------------

@@ -66,7 +66,7 @@
 
 namespace micro_os_plus::micro_test_plus
 {
-  class test_case_base;
+  class test_base;
 
   // --------------------------------------------------------------------------
 

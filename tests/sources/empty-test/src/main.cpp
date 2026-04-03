@@ -32,12 +32,14 @@ using namespace std::literals;
 // #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
-// #pragma clang diagnostic ignored "-Wshadow-uncaptured-local"
+#pragma clang diagnostic ignored "-Wshadow-uncaptured-local"
 // #pragma clang diagnostic ignored "-Wexit-time-destructors"
 // #pragma clang diagnostic ignored "-Wglobal-constructors"
 // #pragma clang diagnostic ignored "-Wctad-maybe-unsupported"
 // #pragma clang diagnostic ignored "-Wunknown-warning-option"
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#else // GCC only
+#pragma GCC diagnostic ignored "-Wshadow"
 #endif
 
 // ----------------------------------------------------------------------------
@@ -73,9 +75,8 @@ local_test_assert (const char* failedexpr, const char* file, int line)
 int
 main (int argc, char* argv[])
 {
-#if 1
   {
-    mt::runner tr ("Empty");
+    mt::runner tr{ "Empty" };
     tr.initialise (argc, argv);
 
     int exit_code = tr.exit_code ();
@@ -86,19 +87,17 @@ main (int argc, char* argv[])
   // ---------------------------------------------------------------------------
 
   {
-    mt::runner tr ("Empty with top suite");
-    auto& ts = tr.initialise (argc, argv);
-    test_assert (strcmp (ts.name (), "Empty with top suite") == 0);
-    // printf ("in test suite '%s'\n", ts.name ());
+    mt::runner tr{ "With subtest" };
+    tr.initialise (argc, argv);
 
     int xc = 0;
-    ts.test_case ("Empty test case", [&xc] (auto& tc)
+    tr.test ("Empty subtest", [&xc] (auto& t)
       {
         // printf ("in test case '%s'\n", tc.name ());
 
         // No checks, just an empty test case.
         xc = 1;
-        test_assert (strcmp (tc.name (), "Empty test case") == 0);
+        test_assert (strcmp (t.name (), "Empty subtest") == 0);
       });
 
     int exit_code = tr.exit_code ();
@@ -106,39 +105,39 @@ main (int argc, char* argv[])
     test_assert (exit_code == 0);
     test_assert (xc == 1);
   }
+
   // ---------------------------------------------------------------------------
 
   {
-    mt::runner tr ("Empty with top suite and extra suite");
-    auto& ts = tr.initialise (argc, argv);
-    // printf ("in test suite '%s'\n", ts.name ());
+    mt::runner tr{ "With second subtest" };
+    tr.initialise (argc, argv);
 
     int xc = 0;
-    ts.test_case ("Empty test case", [&xc] (auto& tc)
+    tr.test ("First subtest", [&xc] (auto& t)
       {
-        // printf ("in test case '%s'\n", tc.name ());
+        // printf ("in test '%s'\n", t.name ());
 
         // No checks, just an empty test case.
         xc = 1;
-        test_assert (strcmp (tc.name (), "Empty test case") == 0);
+        test_assert (strcmp (t.name (), "First subtest") == 0);
       });
 
     int xs = 0;
-    tr.test_suite ("Empty extra test suite", [&xs] (auto& ts2)
+    tr.test ("Second subtest", [&xs] (auto& t)
       {
-        // printf ("in test suite '%s'\n", ts2.name ());
+        // printf ("in extra test '%s'\n", t.name ());
 
         xs = 1;
-        test_assert (strcmp (ts2.name (), "Empty extra test suite") == 0);
+        test_assert (strcmp (t.name (), "Second subtest") == 0);
 
         int y = 0;
-        ts2.test_case ("Empty test case2", [&y] (auto& tc)
+        t.test ("Inner test", [&y] (auto& t)
           {
-            // printf ("in test case '%s'\n", tc.name ());
+            // printf ("in inner test '%s'\n", t.name ());
 
             // No checks, just an empty test case.
             y = 1;
-            test_assert (strcmp (tc.name (), "Empty test case2") == 0);
+            test_assert (strcmp (t.name (), "Inner test") == 0);
           });
         test_assert (y == 1);
       });
@@ -150,30 +149,30 @@ main (int argc, char* argv[])
     test_assert (xc == 1);
     test_assert (xs == 1);
   }
-#endif
+
   // ---------------------------------------------------------------------------
 
   {
-    mt::runner tr ("Empty with top nested cases");
-    auto& ts = tr.initialise (argc, argv);
+    mt::runner tr ("Empty with top nested");
+    tr.initialise (argc, argv);
     // printf ("in test suite '%s'\n", ts.name ());
 
     int xc = 0;
-    ts.test_case ("Empty test case", [&xc] (auto& tc)
+    tr.test ("Empty test", [&xc] (auto& t)
       {
-        // printf ("in test case '%s'\n", tc.name ());
+        // printf ("in test '%s'\n", t.name ());
 
         // No checks, just an empty test case.
         xc = 1;
-        test_assert (strcmp (tc.name (), "Empty test case") == 0);
+        test_assert (strcmp (t.name (), "Empty test") == 0);
 
         int yc = 0;
-        tc.test_case ("Empty nested test case", [&yc] (auto& tc2)
+        t.test ("Empty nested test", [&yc] (auto& t)
           {
-            // printf ("in nested test case '%s'\n", tc2.name ());
+            // printf ("in nested test '%s'\n", t.name ());
 
-            // No checks, just an empty test case.
-            test_assert (strcmp (tc2.name (), "Empty nested test case") == 0);
+            // No checks, just an empty test.
+            test_assert (strcmp (t.name (), "Empty nested test") == 0);
             yc = 1;
           });
         test_assert (yc == 1);

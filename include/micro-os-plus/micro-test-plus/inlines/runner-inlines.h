@@ -18,13 +18,13 @@
 /**
  * @file
  * @brief C++ header file with inline implementations for the µTest++ test
- * case.
+ * runner.
  *
  * @details
  */
 
-#ifndef MICRO_TEST_PLUS_TEST_CASE_INLINES_H_
-#define MICRO_TEST_PLUS_TEST_CASE_INLINES_H_
+#ifndef MICRO_TEST_PLUS_TEST_RUNNER_INLINES_H_
+#define MICRO_TEST_PLUS_TEST_RUNNER_INLINES_H_
 
 // ----------------------------------------------------------------------------
 
@@ -32,9 +32,10 @@
 
 // ----------------------------------------------------------------------------
 
-#include <stdio.h>
-#include <cstring>
-// #include "test-runner.h"
+// #include <stdio.h>
+// #include <cstring>
+
+// #include "test-suite.h"
 
 // ----------------------------------------------------------------------------
 
@@ -44,6 +45,8 @@
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
+#else // GCC only
+#pragma GCC diagnostic ignored "-Wredundant-tags"
 #endif
 #endif
 
@@ -52,29 +55,8 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   template <typename Callable_T, typename... Args_T>
-  test_case_callable::test_case_callable (
-      const char* name, test_suite_base& test_suite, size_t own_index,
-      size_t nesting_depth, Callable_T&& callable, Args_T&&... arguments)
-      : test_case_base{ name, test_suite, own_index, nesting_depth },
-        callable_{ std::bind (std::forward<Callable_T> (callable),
-                              std::placeholders::_1,
-                              std::forward<Args_T> (arguments)...) }
-  {
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-    printf ("%s '%s' %zu %zu %zu\n", __PRETTY_FUNCTION__, name, own_index,
-            nesting_depth, nesting_depth_);
-#pragma GCC diagnostic pop
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
-  }
-
-  template <typename Callable_T, typename... Args_T>
   void
-  test_case_base::test_case (const char* name, Callable_T&& callable,
-                             Args_T&&... arguments)
+  runner::test (const char* name, Callable_T&& callable, Args_T&&... arguments)
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
@@ -85,24 +67,34 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    size_t own_index = increment_child_index ();
-    auto* child_test_case = new test_case_callable (
-        name, test_suite_, own_index, nesting_depth_ + 1,
-        std::forward<Callable_T> (callable),
-        std::forward<Args_T> (arguments)...);
+    size_t own_index = top_suite_->increment_subtest_index ();
+    auto* child_test
+        = new class subtest (name, *this, *top_suite_, own_index, 1,
+                             std::forward<Callable_T> (callable),
+                             std::forward<Args_T> (arguments)...);
 
-    test_cases_.push_back (child_test_case);
-    //    child_test_case->index = test_cases.size ();
+    post_subtest_create (child_test, *top_suite_);
+  }
 
-    child_test_case->run ();
+  template <typename Callable_T, typename... Args_T>
+  void
+  runner::suite (const char* name, Callable_T&& callable,
+                 Args_T&&... arguments)
+  {
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
+    printf ("%s '%s'\n", __PRETTY_FUNCTION__, name);
+#pragma GCC diagnostic pop
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    // Accumulate the totals from the child test case into the test case
-    // totals.
-    totals += child_test_case->totals;
-    totals.increment_executed_test_cases ();
+    auto* suite
+        = new class suite (name, *this, std::forward<Callable_T> (callable),
+                           std::forward<Args_T> (arguments)...);
 
-    // Does not need to return the test case reference, as it is passed to
-    // the callable and can be accessed there.
+    register_suite (*suite);
   }
 
   // --------------------------------------------------------------------------
@@ -118,6 +110,6 @@ namespace micro_os_plus::micro_test_plus
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_TEST_PLUS_TEST_CASE_INLINES_H_
+#endif // MICRO_TEST_PLUS_TEST_RUNNER_INLINES_H_
 
 // ----------------------------------------------------------------------------

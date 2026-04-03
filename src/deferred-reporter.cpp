@@ -60,12 +60,12 @@ namespace micro_os_plus::micro_test_plus
      */
     deferred_reporter_base::deferred_reporter_base (
         bool value, const reflection::source_location location,
-        test_case_base& test_case)
-        : value_{ value }, location_{ location }, test_case_{ test_case }
+        test_base& test)
+        : value_{ value }, location_{ location }, test_case_{ test }
     {
       // The index starts at 0, must be incremented before the first check is
       // reported, to ensure that the first check is reported as check #1.
-      test_case_.increment_child_index ();
+      test_case_.increment_subtest_index ();
     }
 
     /**

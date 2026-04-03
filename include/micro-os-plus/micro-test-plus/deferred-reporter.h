@@ -49,7 +49,7 @@
 
 namespace micro_os_plus::micro_test_plus
 {
-  class test_case_base;
+  class test_base;
 
   // --------------------------------------------------------------------------
 
@@ -110,7 +110,7 @@ namespace micro_os_plus::micro_test_plus
        */
       deferred_reporter_base (bool value,
                               const reflection::source_location location,
-                              test_case_base& test_case);
+                              test_base& test);
 
       /**
        * @brief Destructor for the deferred reporter base.
@@ -173,7 +173,7 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Reference to the test case invoking this report.
        */
-      test_case_base& test_case_;
+      test_base& test_case_;
     };
 
     // ------------------------------------------------------------------------
@@ -214,8 +214,7 @@ namespace micro_os_plus::micro_test_plus
        */
       constexpr explicit deferred_reporter (
           const Expr_T& expr, bool abort,
-          const reflection::source_location& location,
-          test_case_base& test_case);
+          const reflection::source_location& location, test_base& test);
 
       /**
        * @brief Destructor for the deferred reporter.

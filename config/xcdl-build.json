@@ -11,8 +11,8 @@
     ],
     "compilerSourceFiles": [
       "../src/micro-test-plus.cpp",
-      "../src/test-runner.cpp",
-      "../src/test-reporter.cpp",
+      "../src/runner.cpp",
+      "../src/reporter.cpp",
       "../src/test-suite.cpp"
     ],
     "compilerDefinitions": [],

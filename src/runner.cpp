@@ -73,18 +73,29 @@ namespace micro_os_plus::micro_test_plus
    * across all test cases and folders.
    */
   runner::runner (const char* top_suite_name)
+      : test_base{ top_suite_name, *this, 1, 0 }
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, top_suite_name);
+    printf ("%s '%s'\n", __PRETTY_FUNCTION__, name ());
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    // Create the top suite, which is special since it has no callable.
-    top_suite_ = new test_suite_top (top_suite_name, *this, 1);
+    top_suite_ = new class top_suite (name_, *this);
+    current_suite_ = top_suite_;
+  }
+
+  runner::~runner ()
+  {
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    printf ("%s\n", __PRETTY_FUNCTION__);
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+
+    delete reporter_;
+    reporter_ = nullptr;
   }
 
 #pragma GCC diagnostic push
@@ -103,7 +114,7 @@ namespace micro_os_plus::micro_test_plus
    * preparing the framework to manage and execute all test cases and suites
    * across the project’s folders.
    */
-  test_suite_top&
+  void
   runner::initialise (int argc, char* argv[])
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
@@ -153,11 +164,11 @@ namespace micro_os_plus::micro_test_plus
     // Initialize and configure the reporter.
     if (strcmp (reporter_name, "basic") == 0)
       {
-        reporter_ = new test_reporter_basic ();
+        reporter_ = new reporter_basic ();
       }
     else if (strcmp (reporter_name, "tap") == 0)
       {
-        reporter_ = new test_reporter_tap ();
+        reporter_ = new reporter_tap ();
       }
     else
       {
@@ -171,7 +182,10 @@ namespace micro_os_plus::micro_test_plus
 #if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) && defined(MICRO_OS_PLUS_TRACE))
     if (verbosity == verbosity::normal || verbosity == verbosity::verbose)
       {
-        printf ("\n# ");
+        printf ("\n");
+
+        reporter_->output_comment_prefix ();
+
 #if defined(__clang__)
         printf ("Built with clang " __VERSION__);
 #elif defined(__GNUC__)
@@ -208,34 +222,105 @@ namespace micro_os_plus::micro_test_plus
     timings.timestamp_begin ();
     reporter_->begin_session (*this);
 
-    // Begin the top suite here and end it when the first explicit suite is
-    // created or at exit.
-
     top_suite_->timings.timestamp_begin ();
-    reporter_->begin_test_suite (*top_suite_);
-
-    return *top_suite_;
+    reporter_->begin_suite (*top_suite_);
   }
 #pragma GCC diagnostic pop
 
-  int
-  runner::exit_code (void)
+  // --------------------------------------------------------------------------
+
+  void
+  runner::register_suite (class suite& suite)
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, top_suite_->name ());
+    printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
 #pragma GCC diagnostic pop
-#endif //
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    top_suite ().timings.timestamp_end ();
-    reporter_->maybe_end_top_suite (*top_suite_);
+    if (children_suites_ == nullptr)
+      {
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+        printf ("%s - new array\n", __PRETTY_FUNCTION__);
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+        children_suites_ = new std::vector<class suite*>;
+      }
+    children_suites_->push_back (&suite);
+  }
 
-    // Accumulate the top suite counters, this is a special suite that
-    // is not run explicitly, so was not accounted.
+  void
+  runner::run_suites_ (void)
+  {
+    if (children_suites_ != nullptr)
+      {
+        for (size_t i = 0; i < children_suites_->size (); ++i)
+          {
+            class suite* suite = (*children_suites_)[i];
+
+            current_suite_ = suite;
+
+            // Run the child suite immediately.
+            suite->run ();
+
+            // Accumulate the totals from the static suite into the runner
+            // totals.
+            // DO NOT increment executed_subtests here.
+            totals += suite->totals;
+          }
+      }
+  }
+
+  void
+  runner::run_static_suites_ (void)
+  {
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    printf ("%s\n", __PRETTY_FUNCTION__);
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+
+    if (has_static_suites_ && static_children_suites_ != nullptr)
+      {
+        for (size_t i = 0; i < static_children_suites_->size (); ++i)
+          {
+            static_suite* suite = (*static_children_suites_)[i];
+
+            current_suite_ = suite;
+
+            // Update the suite's own index, this is needed for the TAP
+            // reporter to report the test number correctly, as the
+            // static suites are not registered with the runner, but are
+            // run directly.
+            suite->update_own_index (suites_count ());
+
+            // Run the child suite immediately.
+            suite->run ();
+
+            // Accumulate the totals from the static suite into the runner
+            // totals.
+            // DO NOT increment executed_subtests here.
+            totals += suite->totals;
+          }
+      }
+  }
+
+  int
+  runner::exit_code (void)
+  {
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    printf ("%s\n", __PRETTY_FUNCTION__);
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+
+    top_suite_->timings.timestamp_end ();
+    reporter_->end_suite (*top_suite_);
     totals += top_suite_->totals;
+
+    run_suites_ ();
+    if (has_static_suites_)
+      {
+        run_static_suites_ ();
+      }
 
     timings.timestamp_end ();
     reporter_->end_session (*this);
@@ -267,55 +352,34 @@ namespace micro_os_plus::micro_test_plus
   runner::abort (void)
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, top_suite_->name ());
-#pragma GCC diagnostic pop
+    printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
     ::abort ();
   }
 
   size_t
-  runner::test_suites_count (void) const
+  runner::suites_count (void) const
   {
-    return test_suites.size () + 1;
+    return (children_suites_ ? children_suites_->size () : 0) + 1;
   }
 
   size_t
-  runner::total_test_suites_count (void) const
+  runner::total_suites_count (void) const
   {
-    return test_suites_count ();
-  }
-
-  runner::~runner ()
-  {
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-    printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
-
-    for (size_t i = 0; i < test_suites.size (); ++i)
-      {
-        // The suites are dynamically allocated, so we need to delete them.
-        delete test_suites[i];
-      }
-
-    delete top_suite_;
-    delete reporter_;
+    return suites_count ();
   }
 
   // ==========================================================================
 
   static_runner::static_runner (const char* top_suite_name)
-      : runner (top_suite_name)
+      : runner{ top_suite_name }
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, top_suite_name);
+    printf ("%s '%s'\n", __PRETTY_FUNCTION__, name ());
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
   }
@@ -326,76 +390,52 @@ namespace micro_os_plus::micro_test_plus
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    if (static_test_suites_ != nullptr)
+    if (has_static_suites_ && static_children_suites_ != nullptr)
       {
-        // The suites are static, so we do not delete them, but we need to
+        // The tests are static, so we do not delete them, but we need to
         // delete the array of pointers.
-        delete static_test_suites_;
+        delete static_children_suites_;
+        static_children_suites_ = nullptr;
       }
   }
 
   size_t
-  static_runner::static_test_suites_count (void) const
+  static_runner::static_suites_count (void) const
   {
-    return static_test_suites_ != nullptr ? static_test_suites_->size () : 0;
+    return has_static_suites_ && static_children_suites_ != nullptr
+               ? static_children_suites_->size ()
+               : 0;
   }
 
   size_t
-  static_runner::total_test_suites_count (void) const
+  static_runner::total_suites_count (void) const
   {
-    return test_suites_count () + static_test_suites_count ();
+    return suites_count () + static_suites_count ();
   }
 
   void
-  static_runner::register_static_test_suite (static_runner& runner,
-                                             static_test_suite& test_suite)
+  static_runner::register_static_suite (static_runner& runner,
+                                        static_suite& suite)
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, test_suite.name ());
+    printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    if (runner.static_test_suites_ == nullptr)
+    if (runner.static_children_suites_ == nullptr)
       {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
         printf ("%s - new array\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
-        runner.static_test_suites_ = new std::vector<static_test_suite*>;
+        runner.static_children_suites_ = new std::vector<static_suite*>;
       }
-    runner.static_test_suites_->push_back (&test_suite);
-  }
+    runner.static_children_suites_->push_back (&suite);
 
-  void
-  static_runner::run_static_test_suites (void)
-  {
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-    printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
-
-    if (static_test_suites_ != nullptr)
-      {
-        for (size_t i = 0; i < static_test_suites_->size (); ++i)
-          {
-            static_test_suite* test_suite = (*static_test_suites_)[i];
-
-            // Update the test suite's own index, this is needed for the TAP
-            // reporter to report the test suite number correctly, as the
-            // static test suites are not registered with the runner, but are
-            // run directly.
-            test_suite->update_own_index (test_suites_count ());
-
-            // Run the child test suite immediately.
-            test_suite->run ();
-
-            // Accumulate the totals from the static test suite into the runner
-            // totals.
-            totals += test_suite->totals;
-          }
-      }
+    runner.has_static_suites_ = true;
   }
 
   // --------------------------------------------------------------------------

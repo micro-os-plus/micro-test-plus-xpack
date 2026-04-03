@@ -59,7 +59,6 @@
 #include <string>
 
 #include "type-traits.h"
-#include "test-suite.h"
 #include "detail.h"
 
 // ----------------------------------------------------------------------------
@@ -158,23 +157,23 @@ namespace micro_os_plus::micro_test_plus
   typedef verbosity verbosity_t;
 
   // Forward definition.
-  class test_reporter;
+  class reporter;
 
   /**
    * @brief Output stream manipulator for ending a line in test reports.
    *
-   * @param stream Reference to the `test_reporter` instance.
-   * @return Reference to the same `test_reporter` instance, enabling chaining
+   * @param stream Reference to the `reporter` instance.
+   * @return Reference to the same `reporter` instance, enabling chaining
    * of output operations.
    */
-  test_reporter&
-  endl (test_reporter& stream);
+  reporter&
+  endl (reporter& stream);
 
   /**
    * @brief Parameterised stream manipulator for outputting indentation.
    *
    * @details
-   * Holds the indentation level; used with `operator<<` on `test_reporter`
+   * Holds the indentation level; used with `operator<<` on `reporter`
    * so that `*this << indent(n) << "text"` works naturally in chains.
    */
   struct indent_t
@@ -203,7 +202,7 @@ namespace micro_os_plus::micro_test_plus
    * types for failures.
    *
    * @details
-   * The `test_reporter` class is responsible for formatting and presenting
+   * The `reporter` class is responsible for formatting and presenting
    * test results within the µTest++ framework. It provides a comprehensive
    * suite of output operators for a wide range of data types, containers, and
    * comparator expressions, enabling detailed and informative reporting of
@@ -215,7 +214,7 @@ namespace micro_os_plus::micro_test_plus
    * output to distinguish between successful and failed tests, thereby
    * enhancing the clarity and professionalism of test reports.
    *
-   * The `test_reporter` also offers methods for reporting the commencement and
+   * The `reporter` also offers methods for reporting the commencement and
    * completion of test cases and suites, as well as for handling pass and fail
    * conditions. Additional features include output stream manipulators,
    * support for exception-related expressions, and configurable formatting
@@ -227,13 +226,13 @@ namespace micro_os_plus::micro_test_plus
    *
    * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */
-  class test_reporter
+  class reporter
   {
   public:
     /**
-     * @brief Default constructor for the test_reporter class.
+     * @brief Default constructor for the reporter class.
      */
-    virtual ~test_reporter ();
+    virtual ~reporter ();
 
     /**
      * @brief Selects the appropriate colour code based on a condition.
@@ -255,168 +254,168 @@ namespace micro_os_plus::micro_test_plus
      * @brief Output operator for std::string_view.
      *
      * @param sv The string view to output.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
-    test_reporter&
+    reporter&
     operator<< (std::string_view sv);
 
     /**
      * @brief Output operator for a single character.
      *
      * @param c The character to output.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
-    test_reporter&
+    reporter&
     operator<< (char c);
 
     /**
      * @brief Output operator for a constant character string.
      *
      * @param s The string to output.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
-    test_reporter&
+    reporter&
     operator<< (const char* s);
 
     /**
      * @brief Output operator for a mutable character string.
      *
      * @param s The string to output.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
-    test_reporter&
+    reporter&
     operator<< (char* s);
 
     /**
      * @brief Output operator for boolean values.
      *
      * @param v The boolean value to output.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
-    test_reporter&
+    reporter&
     operator<< (bool v);
 
     /**
      * @brief Output operator for nullptr.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
-    test_reporter& operator<< (std::nullptr_t);
+    reporter& operator<< (std::nullptr_t);
 
     /**
      * @brief Output operator for signed char values.
      *
      * @param c The signed char value to output.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
-    test_reporter&
+    reporter&
     operator<< (signed char c);
 
     /**
      * @brief Output operator for unsigned char values.
      *
      * @param c The unsigned char value to output.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
-    test_reporter&
+    reporter&
     operator<< (unsigned char c);
 
     /**
      * @brief Output operator for signed short values.
      *
      * @param v The signed short value to output.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
-    test_reporter&
+    reporter&
     operator<< (signed short v);
 
     /**
      * @brief Output operator for unsigned short values.
      *
      * @param v The unsigned short value to output.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
-    test_reporter&
+    reporter&
     operator<< (unsigned short v);
 
     /**
      * @brief Output operator for signed int values.
      *
      * @param v The signed int value to output.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
-    test_reporter&
+    reporter&
     operator<< (signed int v);
 
     /**
      * @brief Output operator for unsigned int values.
      *
      * @param v The unsigned int value to output.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
-    test_reporter&
+    reporter&
     operator<< (unsigned int v);
 
     /**
      * @brief Output operator for signed long values.
      *
      * @param v The signed long value to output.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
-    test_reporter&
+    reporter&
     operator<< (signed long v);
 
     /**
      * @brief Output operator for unsigned long values.
      *
      * @param v The unsigned long value to output.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
-    test_reporter&
+    reporter&
     operator<< (unsigned long v);
 
     /**
      * @brief Output operator for signed long long values.
      *
      * @param v The signed long long value to output.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
-    test_reporter&
+    reporter&
     operator<< (signed long long v);
 
     /**
      * @brief Output operator for unsigned long long values.
      *
      * @param v The unsigned long long value to output.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
-    test_reporter&
+    reporter&
     operator<< (unsigned long long v);
 
     /**
      * @brief Output operator for float values.
      *
      * @param v The float value to output.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
-    test_reporter&
+    reporter&
     operator<< (float v);
 
     /**
      * @brief Output operator for double values.
      *
      * @param v The double value to output.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
-    test_reporter&
+    reporter&
     operator<< (double v);
 
     /**
      * @brief Output operator for long double values.
      *
      * @param v The long double value to output.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
-    test_reporter&
+    reporter&
     operator<< (long double v);
 
     /**
@@ -425,20 +424,20 @@ namespace micro_os_plus::micro_test_plus
      * @tparam T The type of the pointer.
      *
      * @param v The pointer value to output.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
     template <typename T>
-    test_reporter&
+    reporter&
     operator<< (T* v);
 
     /**
      * @brief Output operator to display the endl.
      *
      * @param func Function pointer to the stream manipulator.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
-    test_reporter&
-    operator<< (test_reporter& (*func) (test_reporter&));
+    reporter&
+    operator<< (reporter& (*func) (reporter&));
 
     // ------------------------------------------------------------------------
     // Specific operators.
@@ -449,10 +448,10 @@ namespace micro_os_plus::micro_test_plus
      * @tparam T The type with a getter method.
      *
      * @param t The object to output.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
     template <class T>
-    test_reporter&
+    reporter&
     operator<< (const T& t);
 
     /**
@@ -462,10 +461,10 @@ namespace micro_os_plus::micro_test_plus
      * @tparam T The underlying integral type.
      *
      * @param v The strongly-typed integral value to output.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
     template <class T>
-    test_reporter&
+    reporter&
     operator<< (const type_traits::genuine_integral_value<T>& v);
 
     /**
@@ -474,12 +473,12 @@ namespace micro_os_plus::micro_test_plus
      * @tparam T The container type.
      *
      * @param t The container to output.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
     template <class T,
               type_traits::requires_t<type_traits::is_container_v<T>
                                       and not type_traits::has_npos_v<T>> = 0>
-    test_reporter&
+    reporter&
     operator<< (T&& t);
 
     /**
@@ -489,10 +488,10 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Rhs_T The right-hand side type.
      *
      * @param op The equality comparator expression.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
     template <class Lhs_T, class Rhs_T>
-    test_reporter&
+    reporter&
     operator<< (const detail::eq_<Lhs_T, Rhs_T>& op);
 
     /**
@@ -502,10 +501,10 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Rhs_T The right-hand side type.
      *
      * @param op The inequality comparator expression.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
     template <class Lhs_T, class Rhs_T>
-    test_reporter&
+    reporter&
     operator<< (const detail::ne_<Lhs_T, Rhs_T>& op);
 
     /**
@@ -515,10 +514,10 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Rhs_T The right-hand side type.
      *
      * @param op The greater-than comparator expression.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
     template <class Lhs_T, class Rhs_T>
-    test_reporter&
+    reporter&
     operator<< (const detail::gt_<Lhs_T, Rhs_T>& op);
 
     /**
@@ -528,10 +527,10 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Rhs_T The right-hand side type.
      *
      * @param op The greater-than-or-equal-to comparator expression.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
     template <class Lhs_T, class Rhs_T>
-    test_reporter&
+    reporter&
     operator<< (const detail::ge_<Lhs_T, Rhs_T>& op);
 
     /**
@@ -541,10 +540,10 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Rhs_T The right-hand side type.
      *
      * @param op The less-than comparator expression.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
     template <class Lhs_T, class Rhs_T>
-    test_reporter&
+    reporter&
     operator<< (const detail::lt_<Rhs_T, Lhs_T>& op);
 
     /**
@@ -554,10 +553,10 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Rhs_T The right-hand side type.
      *
      * @param op The less-than-or-equal-to comparator expression.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
     template <class Lhs_T, class Rhs_T>
-    test_reporter&
+    reporter&
     operator<< (const detail::le_<Rhs_T, Lhs_T>& op);
 
     /**
@@ -567,10 +566,10 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Rhs_T The right-hand side type.
      *
      * @param op The logical conjunction (AND) expression.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
     template <class Lhs_T, class Rhs_T>
-    test_reporter&
+    reporter&
     operator<< (const detail::and_<Lhs_T, Rhs_T>& op);
 
     /**
@@ -580,10 +579,10 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Rhs_T The right-hand side type.
      *
      * @param op The logical disjunction (OR) expression.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
     template <class Lhs_T, class Rhs_T>
-    test_reporter&
+    reporter&
     operator<< (const detail::or_<Lhs_T, Rhs_T>& op);
 
     /**
@@ -592,10 +591,10 @@ namespace micro_os_plus::micro_test_plus
      * @tparam T The operand type.
      *
      * @param op The logical negation expression.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
     template <class T>
-    test_reporter&
+    reporter&
     operator<< (const detail::not_<T>& op);
 
 #if defined(__cpp_exceptions)
@@ -607,10 +606,10 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Exception_T The exception type.
      *
      * @param op The throws comparator expression.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
     template <class Expr_T, class Exception_T>
-    test_reporter&
+    reporter&
     operator<< (const detail::throws_<Expr_T, Exception_T>& op);
 
     /**
@@ -619,10 +618,10 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Expr_T The expression type.
      *
      * @param op The throws comparator expression.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
     template <class Expr_T>
-    test_reporter&
+    reporter&
     operator<< (const detail::throws_<Expr_T, void>& op);
 
     /**
@@ -631,10 +630,10 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Expr_T The expression type.
      *
      * @param op The nothrow comparator expression.
-     * @return Reference to the current test_reporter instance.
+     * @return Reference to the current reporter instance.
      */
     template <class Expr_T>
-    test_reporter&
+    reporter&
     operator<< (const detail::nothrow_<Expr_T>& op);
 #endif
 
@@ -687,7 +686,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class Expr_T>
     void
-    pass (Expr_T& expr, std::string& message, test_case_base& test_case);
+    pass (Expr_T& expr, std::string& message, test_base& test);
 
     /**
      * @brief Report a failed condition.
@@ -704,16 +703,14 @@ namespace micro_os_plus::micro_test_plus
     template <class Expr_T>
     void
     fail (Expr_T& expr, bool abort, std::string& message,
-          const reflection::source_location& location,
-          test_case_base& test_case);
+          const reflection::source_location& location, test_base& test);
 
     // ------------------------------------------------------------------------
 
     /**
-     * @brief Mark the beginning of a test.
+     * @brief Mark the beginning of a test session.
      *
-     * @par Parameters
-     *	 None.
+     * @param runner Reference to the test runner.
      * @par Returns
      *   Nothing.
      */
@@ -721,7 +718,7 @@ namespace micro_os_plus::micro_test_plus
     begin_session (runner& runner) = 0;
 
     /**
-     * @brief Mark the end of a test.
+     * @brief Mark the end of a test session.
      *
      * @param runner Reference to the test runner.
      * @par Returns
@@ -733,47 +730,96 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Mark the beginning of a test suite.
      *
-     * @param name The name of the test suite.
+     * @param suite Reference to the test suite.
      * @par Returns
      *   Nothing.
      */
     virtual void
-    begin_test_suite (test_suite_base& test_suite) = 0;
+    begin_suite (test_base& suite) = 0;
 
     /**
      * @brief Mark the end of a test suite.
      *
-     * @param test_suite Reference to the test suite base.
+     * @param suite Reference to the test suite.
      * @par Returns
      *   Nothing.
      */
     virtual void
-    end_test_suite (test_suite_base& test_suite) = 0;
-
-    void
-    maybe_end_top_suite (test_suite_base& test_suite);
+    end_suite (test_base& suite) = 0;
 
     /**
-     * @brief Mark the beginning of a test case.
+     * @brief Mark the beginning of a subtest.
      *
-     * @param test_case Reference to the test case base.
+     * @param subtest Reference to the subtest.
      * @par Returns
      *   Nothing.
      */
     virtual void
-    begin_test_case (test_case_base& test_case) = 0;
+    begin_subtest (test_base& subtest) = 0;
 
     /**
-     * @brief Mark the end of a test case.
+     * @brief Mark the end of a subtest.
      *
-     * @param test_case Reference to the test case base.
+     * @param subtest Reference to the subtest.
      * @par Returns
      *   Nothing.
      */
     virtual void
-    end_test_case (test_case_base& test_case) = 0;
+    end_subtest (test_base& subtest) = 0;
+
+    virtual void
+    output_comment_prefix (void) = 0;
 
     // ------------------------------------------------------------------------
+
+  protected:
+    /**
+     * @brief Outputs the prefix for a passing condition.
+     *
+     * @param message The message to display.
+     * @par Returns
+     *   Nothing.
+     */
+    virtual void
+    output_pass_prefix_ (std::string& message, test_base& test) = 0;
+
+    /**
+     * @brief Outputs the suffix for a passing condition.
+     *
+     * @par Parameters
+     *	 None.
+     * @par Returns
+     *   Nothing.
+     */
+    virtual void
+    output_pass_suffix_ (test_base& test) = 0;
+
+    /**
+     * @brief Outputs the prefix for a failing condition.
+     *
+     * @param message The message to display.
+     * @param hasExpression Whether the failure is associated with an
+     * expression.
+     * @param location The source location of the failure.
+     * @par Returns
+     *   Nothing.
+     */
+    virtual void
+    output_fail_prefix_ (std::string& message, const bool hasExpression,
+                         const reflection::source_location& location,
+                         test_base& test) = 0;
+
+    /**
+     * @brief Outputs the suffix for a failing condition.
+     *
+     * @param location The source location of the failure.
+     * @param abort Whether to abort execution after failure.
+     * @par Returns
+     *   Nothing.
+     */
+    virtual void
+    output_fail_suffix_ (const reflection::source_location& location,
+                         bool abort, test_base& test) = 0;
 
   public:
     /**
@@ -791,54 +837,6 @@ namespace micro_os_plus::micro_test_plus
     verbosity_t verbosity{};
 
   protected:
-    /**
-     * @brief Outputs the prefix for a passing condition.
-     *
-     * @param message The message to display.
-     * @par Returns
-     *   Nothing.
-     */
-    virtual void
-    output_pass_prefix_ (std::string& message, test_case_base& test_case) = 0;
-
-    /**
-     * @brief Outputs the suffix for a passing condition.
-     *
-     * @par Parameters
-     *	 None.
-     * @par Returns
-     *   Nothing.
-     */
-    virtual void
-    output_pass_suffix_ (test_case_base& test_case) = 0;
-
-    /**
-     * @brief Outputs the prefix for a failing condition.
-     *
-     * @param message The message to display.
-     * @param hasExpression Whether the failure is associated with an
-     * expression.
-     * @param location The source location of the failure.
-     * @par Returns
-     *   Nothing.
-     */
-    virtual void
-    output_fail_prefix_ (std::string& message, const bool hasExpression,
-                         const reflection::source_location& location,
-                         test_case_base& test_case) = 0;
-
-    /**
-     * @brief Outputs the suffix for a failing condition.
-     *
-     * @param location The source location of the failure.
-     * @param abort Whether to abort execution after failure.
-     * @par Returns
-     *   Nothing.
-     */
-    virtual void
-    output_fail_suffix_ (const reflection::source_location& location,
-                         bool abort, test_case_base& test_case) = 0;
-
     /**
      * @brief ANSI colour codes for output formatting.
      */

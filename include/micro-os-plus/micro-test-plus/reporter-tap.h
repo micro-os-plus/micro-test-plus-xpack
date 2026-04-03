@@ -138,7 +138,7 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
 
     /**
-     * @brief Mark the beginning of a test.
+     * @brief Mark the beginning of a test session.
      *
      * @param runner Reference to the test runner.
      * @par Returns
@@ -148,7 +148,7 @@ namespace micro_os_plus::micro_test_plus
     begin_session (runner& runner) override;
 
     /**
-     * @brief Mark the end of a test.
+     * @brief Mark the end of a test session.
      *
      * @param runner Reference to the test runner.
      * @par Returns
@@ -158,24 +158,47 @@ namespace micro_os_plus::micro_test_plus
     end_session (runner& runner) override;
 
     /**
-     * @brief Mark the beginning of a test.
+     * @brief Mark the beginning of a test suite.
      *
-     * @param test Reference to the test.
+     * @param suite Reference to the test suite.
      * @par Returns
      *   Nothing.
      */
     virtual void
-    begin_subtest (test_base& test) override;
+    begin_suite (test_base& suite) override;
 
     /**
-     * @brief Mark the end of a test.
+     * @brief Mark the end of a test suite.
      *
-     * @param test Reference to the test.
+     * @param suite Reference to the test suite.
      * @par Returns
      *   Nothing.
      */
     virtual void
-    end_test (test_base& test) override;
+    end_suite (test_base& suite) override;
+
+    /**
+     * @brief Mark the beginning of a subtest.
+     *
+     * @param test Reference to the subtest.
+     * @par Returns
+     *   Nothing.
+     */
+    virtual void
+    begin_subtest (test_base& subtest) override;
+
+    /**
+     * @brief Mark the end of a subtest.
+     *
+     * @param subtest Reference to the subtest.
+     * @par Returns
+     *   Nothing.
+     */
+    virtual void
+    end_subtest (test_base& subtest) override;
+
+    virtual void
+    output_comment_prefix (void) override;
 
   protected:
     /**
