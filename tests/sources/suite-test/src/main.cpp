@@ -38,6 +38,8 @@ using namespace std::literals;
 #pragma clang diagnostic ignored "-Wglobal-constructors"
 // #pragma clang diagnostic ignored "-Wctad-maybe-unsupported"
 // #pragma clang diagnostic ignored "-Wunknown-warning-option"
+#else // GCC only
+#pragma GCC diagnostic ignored "-Wshadow"
 #endif
 
 // ----------------------------------------------------------------------------
