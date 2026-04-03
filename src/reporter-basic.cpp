@@ -112,7 +112,7 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wshadow"
   void
-  reporter_basic::end_session ([[maybe_unused]] runner& runner)
+  reporter_basic::end_session (runner& runner)
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
     printf ("%s\n", __PRETTY_FUNCTION__);
