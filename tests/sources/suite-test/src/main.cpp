@@ -74,9 +74,9 @@ suite_function (mt::suite& t)
 
 // ----------------------------------------------------------------------------
 
-extern mt::static_runner str;
+extern mt::static_runner sr;
 
-mt::static_runner str{ "Static top suite" };
+mt::static_runner sr{ "Static top suite" };
 
 int
 main (int argc, char* argv[])
@@ -85,10 +85,10 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  mt::runner ltr{ "Local suite" };
-  ltr.initialise (argc, argv);
+  mt::runner lr{ "Local suite" };
+  lr.initialise (argc, argv);
 
-  ltr.test ("Check various conditions 1.1", [] (auto& t)
+  lr.test ("Check various conditions 1.1", [] (auto& t)
     {
       t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
 
@@ -97,9 +97,9 @@ main (int argc, char* argv[])
     });
 
   // The suite will be executed when the runner terminates, at `exit_code()`.
-  ltr.suite ("Local suite 1", suite_function);
+  lr.suite ("Local suite 1", suite_function);
 
-  ltr.test ("Check various conditions 1.2", [] (auto& t)
+  lr.test ("Check various conditions 1.2", [] (auto& t)
     {
       t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
 
@@ -107,12 +107,12 @@ main (int argc, char* argv[])
       t.expect (compute_condition ()) << "condition is true";
     });
 
-  exit_code = ltr.exit_code ();
+  exit_code = lr.exit_code ();
 
   // --------------------------------------------------------------------------
 
-  str.initialise (argc, argv);
-  str.test ("Check various conditions 2.1", [] (auto& t)
+  sr.initialise (argc, argv);
+  sr.test ("Check various conditions 2.1", [] (auto& t)
     {
       t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
 
@@ -122,9 +122,9 @@ main (int argc, char* argv[])
 
   // The suite will be executed when the runner terminates, at `exit_code()`,
   // before the static suites.
-  str.suite ("Local suite 2", suite_function);
+  sr.suite ("Local suite 2", suite_function);
 
-  str.test ("Check various conditions 2.2", [] (auto& t)
+  sr.test ("Check various conditions 2.2", [] (auto& t)
     {
       t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
 
@@ -132,7 +132,7 @@ main (int argc, char* argv[])
       t.expect (compute_condition ()) << "condition is true";
     });
 
-  exit_code += str.exit_code ();
+  exit_code += sr.exit_code ();
 
   // --------------------------------------------------------------------------
 

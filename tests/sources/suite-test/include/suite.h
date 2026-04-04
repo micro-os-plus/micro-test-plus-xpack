@@ -20,7 +20,7 @@
 
 #include <micro-os-plus/micro-test-plus.h>
 
-extern micro_os_plus::micro_test_plus::static_runner str;
+extern micro_os_plus::micro_test_plus::static_runner sr;
 
 // ----------------------------------------------------------------------------
 

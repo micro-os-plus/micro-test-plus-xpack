@@ -70,6 +70,6 @@ suite_function (mt::static_suite& t)
     });
 }
 
-static mt::static_suite suite = { "Static suite", str, suite_function };
+static mt::static_suite suite = { "Static suite", sr, suite_function };
 
 // ----------------------------------------------------------------------------
