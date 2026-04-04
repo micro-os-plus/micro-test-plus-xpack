@@ -77,8 +77,6 @@
 
 namespace micro_os_plus::micro_test_plus
 {
-  class runner;
-
   // --------------------------------------------------------------------------
 
   /**
@@ -156,8 +154,9 @@ namespace micro_os_plus::micro_test_plus
    */
   typedef verbosity verbosity_t;
 
-  // Forward definition.
+  // Forward definitions.
   class reporter;
+  class runner;
 
   /**
    * @brief Output stream manipulator for ending a line in test reports.
@@ -192,10 +191,6 @@ namespace micro_os_plus::micro_test_plus
   {
     return { level };
   }
-
-  // Requires events::assertion_* for  and detailed operators.
-
-  class runner;
 
   /**
    * @brief Reporter to display test results, including operand values and
@@ -846,13 +841,6 @@ namespace micro_os_plus::micro_test_plus
      * @brief Internal output buffer for accumulating report content.
      */
     std::string out_{};
-
-    /**
-     * @brief Indicates whether the reporter is currently within a test case.
-     */
-    bool is_in_test_case_ = false;
-
-    bool must_end_top_suite_ = true;
   };
 
   // --------------------------------------------------------------------------

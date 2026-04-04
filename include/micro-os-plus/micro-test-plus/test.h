@@ -269,12 +269,14 @@ namespace micro_os_plus::micro_test_plus
   {
   public:
     top_suite (const char* name, class runner& runner);
+
     top_suite (const top_suite&) = delete;
     top_suite (top_suite&&) = delete;
     top_suite&
     operator= (const top_suite&) = delete;
     top_suite&
     operator= (top_suite&&) = delete;
+
     virtual ~top_suite () override;
   };
 
@@ -635,6 +637,8 @@ namespace micro_os_plus::micro_test_plus
      * @brief Virtual destructor.
      */
     virtual ~static_suite () override;
+
+    // ------------------------------------------------------------------------
 
     void
     update_own_index (size_t offset);
