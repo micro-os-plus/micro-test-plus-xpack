@@ -18,7 +18,7 @@ set (XPACK_ENABLE_EMPTY_TEST true)
 set (XPACK_ENABLE_MINIMAL_TEST true)
 set (XPACK_ENABLE_SUITE_TEST true)
 set (XPACK_ENABLE_SAMPLE_TEST true)
-# set (XPACK_ENABLE_UNIT_TEST true)
+set (XPACK_ENABLE_UNIT_TEST true)
 
 set (xpack_dependencies_project_folders)
 

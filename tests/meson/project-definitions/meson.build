@@ -15,10 +15,10 @@
 # Project specific definitions.
 
 xpack_enable_empty_test = true
-xpack_enable_minimal_test = false
-xpack_enable_suite_test = false
-xpack_enable_sample_test = false
-xpack_enable_unit_test = false
+xpack_enable_minimal_test = true
+xpack_enable_suite_test = true
+xpack_enable_sample_test = true
+xpack_enable_unit_test = true
 
 xpack_dependencies_project_folders = []
  
