@@ -117,8 +117,9 @@ namespace micro_os_plus::micro_test_plus
     template <class Expr_T>
     constexpr deferred_reporter<Expr_T>::deferred_reporter (
         const Expr_T& expr, bool abort,
-        const reflection::source_location& location, test_base& test)
-        : deferred_reporter_base{ static_cast<bool> (expr), location, test },
+        const reflection::source_location& location, subtest& subtest)
+        : deferred_reporter_base{ static_cast<bool> (expr), location,
+                                  subtest },
           expr_{ expr }
     {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
@@ -144,12 +145,12 @@ namespace micro_os_plus::micro_test_plus
     {
       if (value_)
         {
-          test_case_.reporter ().pass (expr_, deferred_output_, test_case_);
+          subtest_.reporter ().pass (expr_, deferred_output_, subtest_);
         }
       else
         {
-          test_case_.reporter ().fail (expr_, abort_, deferred_output_,
-                                       location_, test_case_);
+          subtest_.reporter ().fail (expr_, abort_, deferred_output_,
+                                     location_, subtest_);
         }
     }
 

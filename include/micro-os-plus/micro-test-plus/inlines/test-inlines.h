@@ -72,7 +72,7 @@
 
 namespace micro_os_plus::micro_test_plus
 {
-  // --------------------------------------------------------------------------
+  // ==========================================================================
 
   /**
    * @details
@@ -83,15 +83,26 @@ namespace micro_os_plus::micro_test_plus
    */
   template <typename Self_T>
   template <typename Callable_T, typename... Args_T>
-  test_callable<Self_T>::test_callable (const char* name, class runner& runner,
-                                        size_t own_index, size_t nesting_depth,
-                                        Callable_T&& callable,
-                                        Args_T&&... arguments)
-      : test_base{ name, runner, own_index, nesting_depth },
-        callable_{ std::bind (std::forward<Callable_T> (callable),
-                              std::placeholders::_1,
-                              std::forward<Args_T> (arguments)...) }
+  runnable<Self_T>::runnable (const char* name, class runner& runner,
+                              size_t own_index, Callable_T&& callable,
+                              Args_T&&... arguments)
+      : runnable_base{ name, runner, own_index }
   {
+    // When there are no extra arguments the callable already has the signature
+    // void(Self_T&), so store it directly. Only use std::bind when additional
+    // arguments must be pre-bound, to avoid triggering a GCC ARM bug in
+    // __is_nothrow_invocable<_Bind<...>, Self_T&> (GCC 15.2.1).
+    if constexpr (sizeof...(arguments) == 0)
+      {
+        callable_ = std::forward<Callable_T> (callable);
+      }
+    else
+      {
+        callable_ = std::bind (std::forward<Callable_T> (callable),
+                               std::placeholders::_1,
+                               std::forward<Args_T> (arguments)...);
+      }
+
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -104,7 +115,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   template <typename Self_T>
-  test_callable<Self_T>::~test_callable ()
+  runnable<Self_T>::~runnable ()
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
@@ -116,59 +127,22 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
   }
 
-  /**
-   * @details
-   * Invokes the stored callable with the `Self_T` instance, surrounded by
-   * reporter calls to begin and end the test suite.
-   */
-  template <typename Self_T>
-  void
-  test_callable<Self_T>::run (void)
-  {
-    class reporter& reporter = this->reporter ();
-
-    this->timings.timestamp_begin ();
-    if (nesting_depth_ > 0)
-      {
-        reporter.begin_subtest (*this);
-      }
-    else
-      {
-        reporter.begin_suite (*this);
-      }
-    // Invoke the callable, passing the derived Self_T reference.
-    callable_ (static_cast<Self_T&> (*this));
-
-    this->timings.timestamp_end ();
-    if (nesting_depth_ > 0)
-      {
-        reporter.end_subtest (*this);
-      }
-    else
-      {
-        reporter.end_suite (*this);
-      }
-  }
-
-  // --------------------------------------------------------------------------
+  // ==========================================================================
 
   /**
    * @details
-   * Delegates to `test_callable`, which binds the callable with
+   * Delegates to `runnable`, which binds the callable with
    * its arguments.
    */
   template <typename Callable_T, typename... Args_T>
   subtest::subtest (const char* name, class runner& runner,
-                    test_base& parent_suite, size_t own_index,
+                    suite& parent_suite, size_t own_index,
                     size_t nesting_depth, Callable_T&& callable,
                     Args_T&&... arguments)
-      : test_callable<subtest>{ name,
-                                runner,
-                                own_index,
-                                nesting_depth,
-                                std::forward<Callable_T> (callable),
-                                std::forward<Args_T> (arguments)... },
-        parent_suite_ (parent_suite)
+      : runnable<subtest>{ name, runner, own_index,
+                           std::forward<Callable_T> (callable),
+                           std::forward<Args_T> (arguments)... },
+        parent_suite_{ parent_suite }, nesting_depth_{ nesting_depth }
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
@@ -181,11 +155,10 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
   }
 
-  template <typename Self_T>
   template <typename Callable_T, typename... Args_T>
   void
-  test_callable<Self_T>::test (const char* name, Callable_T&& callable,
-                               Args_T&&... arguments)
+  subtest::test (const char* name, Callable_T&& callable,
+                 Args_T&&... arguments)
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
@@ -197,31 +170,28 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
     size_t own_index = increment_subtest_index ();
-    auto* child_test = new subtest (
-        name, this->runner (), runner ().current_suite (), own_index,
-        nesting_depth_ + 1, std::forward<Callable_T> (callable),
-        std::forward<Args_T> (arguments)...);
+    auto* child_test
+        = new subtest (name, runner (), parent_suite (), own_index,
+                       nesting_depth_ + 1, std::forward<Callable_T> (callable),
+                       std::forward<Args_T> (arguments)...);
 
-    post_subtest_create (child_test, runner ().current_suite ());
+    after_subtest_create (child_test, parent_suite_);
   }
 
   // ==========================================================================
 
   /**
    * @details
-   * Delegates to `test_callable`, which binds the callable with
+   * Delegates to `runnable`, which binds the callable with
    * its arguments. After construction, the suite is registered with the
    * static test runner.
    */
   template <typename Callable_T, typename... Args_T>
-  suite::suite (const char* name, class runner& runner, Callable_T&& callable,
-                Args_T&&... arguments)
-      : test_callable<suite>{ name,
-                              runner,
-                              runner.suites_count () + 1,
-                              0,
-                              std::forward<Callable_T> (callable),
-                              std::forward<Args_T> (arguments)... }
+  suite::suite (const char* name, class runner& runner, size_t own_index,
+                Callable_T&& callable, Args_T&&... arguments)
+      : runnable<suite>{ name, runner, own_index,
+                         std::forward<Callable_T> (callable),
+                         std::forward<Args_T> (arguments)... }
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
@@ -233,24 +203,52 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
   }
 
+  template <typename Callable_T, typename... Args_T>
+  void
+  suite::test (const char* name, Callable_T&& callable, Args_T&&... arguments)
+  {
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
+    printf ("%s '%s'\n", __PRETTY_FUNCTION__, name);
+#pragma GCC diagnostic pop
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+
+    size_t own_index = increment_subtest_index ();
+    auto* child_test = new subtest (name, runner (), *this, own_index, 1,
+                                    std::forward<Callable_T> (callable),
+                                    std::forward<Args_T> (arguments)...);
+
+    after_subtest_create (child_test, *this);
+  }
+
   // ==========================================================================
 
   /**
    * @details
-   * Delegates to `test_callable`, which binds the callable with
+   * Delegates to `runnable`, which binds the callable with
    * its arguments. After construction, the suite is registered with the
    * static test runner.
    */
   template <typename Callable_T, typename... Args_T>
   static_suite::static_suite (const char* name, static_runner& runner,
                               Callable_T&& callable, Args_T&&... arguments)
-      : test_callable<static_suite>{ name,
-                                     runner,
-                                     runner.static_suites_count () + 1,
-                                     0,
-                                     std::forward<Callable_T> (callable),
-                                     std::forward<Args_T> (arguments)... }
+      : suite{ name, runner, runner.static_suites_count () + 1,
+               [] (suite&) noexcept {} }
   {
+    if constexpr (sizeof...(arguments) == 0)
+      {
+        static_callable_ = std::forward<Callable_T> (callable);
+      }
+    else
+      {
+        static_callable_ = std::bind (std::forward<Callable_T> (callable),
+                                      std::placeholders::_1,
+                                      std::forward<Args_T> (arguments)...);
+      }
+
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
 #if defined(__clang__)

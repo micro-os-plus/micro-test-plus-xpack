@@ -56,28 +56,6 @@ namespace micro_os_plus::micro_test_plus
 
   template <typename Callable_T, typename... Args_T>
   void
-  runner::test (const char* name, Callable_T&& callable, Args_T&&... arguments)
-  {
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, name);
-#pragma GCC diagnostic pop
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
-
-    size_t own_index = top_suite_->increment_subtest_index ();
-    auto* child_test
-        = new class subtest (name, *this, *top_suite_, own_index, 1,
-                             std::forward<Callable_T> (callable),
-                             std::forward<Args_T> (arguments)...);
-
-    post_subtest_create (child_test, *top_suite_);
-  }
-
-  template <typename Callable_T, typename... Args_T>
-  void
   runner::suite (const char* name, Callable_T&& callable,
                  Args_T&&... arguments)
   {
@@ -90,9 +68,9 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    auto* suite
-        = new class suite (name, *this, std::forward<Callable_T> (callable),
-                           std::forward<Args_T> (arguments)...);
+    auto* suite = new class suite (name, *this, suites_count () + 1,
+                                   std::forward<Callable_T> (callable),
+                                   std::forward<Args_T> (arguments)...);
 
     register_suite (*suite);
   }

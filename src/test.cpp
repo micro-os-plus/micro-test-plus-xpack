@@ -58,17 +58,45 @@
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
 #else // GCC only
 #pragma GCC diagnostic ignored "-Wredundant-tags"
+#pragma GCC diagnostic ignored "-Wsuggest-final-types"
+#pragma GCC diagnostic ignored "-Wsuggest-final-methods"
 #endif
 
 // ==========================================================================
 
 namespace micro_os_plus::micro_test_plus
 {
-  // --------------------------------------------------------------------------
+  // ==========================================================================
+
+  test_node::test_node (const char* name) : name_{ name }
+  {
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
+    printf ("%s '%s' %zu %zu\n", __PRETTY_FUNCTION__, name);
+#pragma GCC diagnostic pop
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+  }
+
+  test_node::~test_node ()
+  {
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
+    printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
+#pragma GCC diagnostic pop
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+  }
+
+  // ==========================================================================
 
   /**
    * @details
-   * The constructor initialises a new instance of the `test_base` class
+   * The constructor initialises a new instance of the `runnable_base` class
    * with the specified name. It sets up the internal state required for
    * managing test cases within the suite. If tracing is enabled, the function
    * signature is output for diagnostic purposes. The default test suite does
@@ -76,10 +104,9 @@ namespace micro_os_plus::micro_test_plus
    * the µTest++ framework and supporting organised test management across all
    * files and folders.
    */
-  test_base::test_base (const char* name, class runner& runner,
-                        size_t own_index, size_t nesting_depth)
-      : nesting_depth_{ nesting_depth }, own_index_{ own_index },
-        runner_{ runner }
+  runnable_base::runnable_base (const char* name, class runner& runner,
+                                size_t own_index)
+      : test_node{ name }, runner_{ runner }, own_index_{ own_index }
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
@@ -97,11 +124,11 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * The destructor releases any resources associated with the
-   * `test_base` instance. It ensures that the test suite is properly
+   * `runnable_base` instance. It ensures that the test suite is properly
    * cleaned up after execution, supporting robust and reliable test management
    * across all files and folders within the µTest++ framework.
    */
-  test_base::~test_base ()
+  runnable_base::~runnable_base ()
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
@@ -120,48 +147,19 @@ namespace micro_os_plus::micro_test_plus
   }
 
   [[nodiscard]] reporter&
-  test_base::reporter (void)
+  runnable_base::reporter (void)
   {
     return runner_.reporter ();
   }
 
-  void
-  test_base::run (void)
-  {
-    abort ();
-  }
-
-  // ==========================================================================
-
-  top_suite::top_suite (const char* name, class runner& runner)
-      : test_base{ name, runner, 1, 0 }
-  {
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-    printf ("%s '%s'", __PRETTY_FUNCTION__, name);
-#pragma GCC diagnostic pop
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
-  }
-
-  top_suite::~top_suite ()
-  {
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
-#pragma GCC diagnostic pop
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
-  }
-
-  // ==========================================================================
+  // void
+  // runnable_base::run (void)
+  // {
+  //   abort ();
+  // }
 
   void
-  test_base::post_subtest_create (class subtest* child_test, test_base& suite)
+  runnable_base::after_subtest_create (class subtest* child_test, suite& suite)
   {
     // Remember test cases to delete them at the end.
     children_subtests_.push_back (child_test);
@@ -186,6 +184,107 @@ namespace micro_os_plus::micro_test_plus
    * framework.
    */
   subtest::~subtest ()
+  {
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
+    printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
+#pragma GCC diagnostic pop
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+  }
+
+  /**
+   * @details
+   * Invokes the stored callable with the `Self_T` instance, surrounded by
+   * reporter calls to begin and end the subtest.
+   */
+  void
+  subtest::run (void)
+  {
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
+    printf ("%s '%s'", __PRETTY_FUNCTION__, name);
+#pragma GCC diagnostic pop
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+
+    class reporter& reporter = this->reporter ();
+
+    this->timings.timestamp_begin ();
+    reporter.begin_subtest (*this);
+
+    // Invoke the callable, passing the self reference followed by the variadic
+    // arguments.
+    callable_ (*this);
+
+    this->timings.timestamp_end ();
+    reporter.end_subtest (*this);
+  }
+
+  // ==========================================================================
+
+  suite::~suite ()
+  {
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
+    printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
+#pragma GCC diagnostic pop
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+  }
+
+  /**
+   * @details
+   * Invokes the stored callable with the `Self_T` instance, surrounded by
+   * reporter calls to begin and end the suite.
+   */
+  void
+  suite::run (void)
+  {
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
+    printf ("%s '%s'", __PRETTY_FUNCTION__, name);
+#pragma GCC diagnostic pop
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+
+    class reporter& reporter = this->reporter ();
+
+    this->timings.timestamp_begin ();
+    reporter.begin_suite (*this);
+
+    // Invoke the callable, passing the self reference followed by the variadic
+    // arguments.
+    callable_ (*this);
+
+    this->timings.timestamp_end ();
+    reporter.end_suite (*this);
+  }
+
+  // ==========================================================================
+
+  top_suite::top_suite (const char* name, class runner& runner)
+      : suite{ name, runner, 1, [] (suite&) noexcept {} }
+  {
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
+    printf ("%s '%s'", __PRETTY_FUNCTION__, name);
+#pragma GCC diagnostic pop
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+  }
+
+  top_suite::~top_suite ()
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
@@ -226,18 +325,27 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
   }
 
-  // ==========================================================================
-
-  suite::~suite ()
+  void
+  static_suite::run (void)
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
+    printf ("%s '%s'", __PRETTY_FUNCTION__, name);
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+
+    class reporter& reporter = this->reporter ();
+
+    this->timings.timestamp_begin ();
+    reporter.begin_suite (*this);
+
+    static_callable_ (*this);
+
+    this->timings.timestamp_end ();
+    reporter.end_suite (*this);
   }
 
   // --------------------------------------------------------------------------

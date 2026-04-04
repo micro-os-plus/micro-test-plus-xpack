@@ -58,10 +58,10 @@ compute_condition (void)
 // ----------------------------------------------------------------------------
 
 static void
-suite_function (mt::static_suite& t)
+suite_function (mt::static_suite& ts)
 {
   // Test comparison functions.
-  t.test ("Check various conditions", [] (auto& t)
+  ts.test ("Check various conditions", [] (auto& t)
     {
       t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
 

@@ -85,54 +85,58 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  mt::runner lr{ "Local suite" };
-  lr.initialise (argc, argv);
+  {
+    mt::runner lr{ "Local suite" };
+    auto& ts = lr.initialise (argc, argv);
 
-  lr.test ("Check various conditions 1.1", [] (auto& t)
-    {
-      t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
+    ts.test ("Check various conditions 1.1", [] (auto& t)
+      {
+        t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
 
-      // Boolean expressions can be checked directly.
-      t.expect (compute_condition ()) << "condition is true";
-    });
+        // Boolean expressions can be checked directly.
+        t.expect (compute_condition ()) << "condition is true";
+      });
 
-  // The suite will be executed when the runner terminates, at `exit_code()`.
-  lr.suite ("Local suite 1", suite_function);
+    // The suite will be executed when the runner terminates, at `exit_code()`.
+    lr.suite ("Local suite 1", suite_function);
 
-  lr.test ("Check various conditions 1.2", [] (auto& t)
-    {
-      t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
+    ts.test ("Check various conditions 1.2", [] (auto& t)
+      {
+        t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
 
-      // Boolean expressions can be checked directly.
-      t.expect (compute_condition ()) << "condition is true";
-    });
+        // Boolean expressions can be checked directly.
+        t.expect (compute_condition ()) << "condition is true";
+      });
 
-  exit_code = lr.exit_code ();
+    exit_code = lr.exit_code ();
+  }
 
   // --------------------------------------------------------------------------
 
-  sr.initialise (argc, argv);
-  sr.test ("Check various conditions 2.1", [] (auto& t)
-    {
-      t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
+  {
+    auto& ts = sr.initialise (argc, argv);
+    ts.test ("Check various conditions 2.1", [] (auto& t)
+      {
+        t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
 
-      // Boolean expressions can be checked directly.
-      t.expect (compute_condition ()) << "condition is true";
-    });
+        // Boolean expressions can be checked directly.
+        t.expect (compute_condition ()) << "condition is true";
+      });
 
-  // The suite will be executed when the runner terminates, at `exit_code()`,
-  // before the static suites.
-  sr.suite ("Local suite 2", suite_function);
+    // The suite will be executed when the runner terminates, at `exit_code()`,
+    // before the static suites.
+    sr.suite ("Local suite 2", suite_function);
 
-  sr.test ("Check various conditions 2.2", [] (auto& t)
-    {
-      t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
+    ts.test ("Check various conditions 2.2", [] (auto& t)
+      {
+        t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
 
-      // Boolean expressions can be checked directly.
-      t.expect (compute_condition ()) << "condition is true";
-    });
+        // Boolean expressions can be checked directly.
+        t.expect (compute_condition ()) << "condition is true";
+      });
 
-  exit_code += sr.exit_code ();
+    exit_code += sr.exit_code ();
+  }
 
   // --------------------------------------------------------------------------
 

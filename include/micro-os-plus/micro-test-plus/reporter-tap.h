@@ -165,7 +165,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     virtual void
-    begin_suite (test_base& suite) override;
+    begin_suite (suite& suite) override;
 
     /**
      * @brief Mark the end of a test suite.
@@ -175,7 +175,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     virtual void
-    end_suite (test_base& suite) override;
+    end_suite (suite& suite) override;
 
     /**
      * @brief Mark the beginning of a subtest.
@@ -185,7 +185,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     virtual void
-    begin_subtest (test_base& subtest) override;
+    begin_subtest (subtest& subtest) override;
 
     /**
      * @brief Mark the end of a subtest.
@@ -195,7 +195,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     virtual void
-    end_subtest (test_base& subtest) override;
+    end_subtest (subtest& subtest) override;
 
     virtual void
     output_comment_prefix (void) override;
@@ -209,7 +209,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     void
-    output_pass_prefix_ (std::string& message, test_base& test) override;
+    output_pass_prefix_ (std::string& message, subtest& subtest) override;
 
     /**
      * @brief Outputs the suffix for a passing condition.
@@ -220,7 +220,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     void
-    output_pass_suffix_ (test_base& test) override;
+    output_pass_suffix_ (subtest& subtest) override;
 
     /**
      * @brief Outputs the prefix for a failing condition.
@@ -235,7 +235,7 @@ namespace micro_os_plus::micro_test_plus
     void
     output_fail_prefix_ (std::string& message, const bool hasExpression,
                          const reflection::source_location& location,
-                         test_base& test) override;
+                         subtest& subtest) override;
 
     /**
      * @brief Outputs the suffix for a failing condition.
@@ -247,7 +247,7 @@ namespace micro_os_plus::micro_test_plus
      */
     void
     output_fail_suffix_ (const reflection::source_location& location,
-                         bool abort, test_base& test) override;
+                         bool abort, subtest& subtest) override;
   };
 
   // --------------------------------------------------------------------------

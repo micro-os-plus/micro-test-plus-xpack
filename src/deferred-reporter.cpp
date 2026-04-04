@@ -60,12 +60,12 @@ namespace micro_os_plus::micro_test_plus
      */
     deferred_reporter_base::deferred_reporter_base (
         bool value, const reflection::source_location location,
-        test_base& test)
-        : value_{ value }, location_{ location }, test_case_{ test }
+        subtest& subtest)
+        : value_{ value }, location_{ location }, subtest_{ subtest }
     {
       // The index starts at 0, must be incremented before the first check is
       // reported, to ensure that the first check is reported as check #1.
-      test_case_.increment_subtest_index ();
+      subtest_.increment_subtest_index ();
     }
 
     /**
@@ -84,17 +84,17 @@ namespace micro_os_plus::micro_test_plus
 
       if (value_)
         {
-          test_case_.totals.increment_successful_checks ();
+          subtest_.totals.increment_successful_checks ();
         }
       else
         {
-          test_case_.totals.increment_failed_checks ();
+          subtest_.totals.increment_failed_checks ();
         }
 
       if (abort_ && !value_)
         {
           printf ("\n");
-          test_case_.reporter ().output ();
+          subtest_.reporter ().output ();
           abort ();
         }
     }

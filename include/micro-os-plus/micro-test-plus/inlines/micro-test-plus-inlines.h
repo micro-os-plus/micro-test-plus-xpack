@@ -111,20 +111,6 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic pop
 #endif
-  //   template <typename Callable_T, typename... Args_T>
-  //   void
-  //   test (const char* name, Callable_T&& callable, Args_T&&...
-  //   arguments)
-  //   {
-  // #if 0 // defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-  //     printf ("%s\n", __PRETTY_FUNCTION__);
-  // #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
-
-  //     current_test_suite->begin_test_case (name);
-  //     std::invoke (std::forward<Callable_T> (callable),
-  //                  std::forward<Args_T> (arguments)...);
-  //     current_test_suite->end_test_case ();
-  //   }
 
   /**
    * @details

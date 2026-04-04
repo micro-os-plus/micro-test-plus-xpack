@@ -96,12 +96,12 @@ int
 main (int argc, char* argv[])
 {
   // There is a default test suite automatically defined in main().
-  tr.initialise (argc, argv);
+  auto& ts = tr.initialise (argc, argv);
 
   // --------------------------------------------------------------------------
 
   // Test comparison functions.
-  tr.test ("Check various conditions", [] (auto& t)
+  ts.test ("Check various conditions", [] (auto& t)
     {
       // There are functions with usual names for all comparisons.
 
@@ -116,7 +116,7 @@ main (int argc, char* argv[])
       t.expect (compute_condition ()) << "condition is true";
     });
 
-  tr.test ("Check various conditions with operators", [] (auto& t)
+  ts.test ("Check various conditions with operators", [] (auto& t)
     {
       // There are custom operators for all comparisons, but
       // since interferences with other operators are possible,
@@ -142,7 +142,7 @@ main (int argc, char* argv[])
       // actual values cannot be shown.
     });
 
-  tr.test ("Check strings", [] (auto& tc)
+  ts.test ("Check strings", [] (auto& tc)
     {
       // String can also be compared, but only as `string_view` objects,
       // otherwise the comparison is done on
@@ -153,7 +153,7 @@ main (int argc, char* argv[])
           << "ultimate answer is 'fortytwo'";
     });
 
-  tr.test ("Check strings with operators", [] (auto& t)
+  ts.test ("Check strings with operators", [] (auto& t)
     {
       // There are also custom == and != operators for
       // `string_view` comparisons.
@@ -164,7 +164,7 @@ main (int argc, char* argv[])
           << "ultimate answer == 'fortytwo'";
     });
 
-  tr.test ("Check compound conditions", [] (auto& t)
+  ts.test ("Check compound conditions", [] (auto& t)
     {
       // More complex conditions can be constructed with _and(), _or(),
       // _not() (the underscore is required to differentiate the functions
@@ -177,7 +177,7 @@ main (int argc, char* argv[])
           << "logical 'and' expression";
     });
 
-  tr.test ("Check compound conditions with operators", [] (auto& t)
+  ts.test ("Check compound conditions with operators", [] (auto& t)
     {
       // There are also operators for logical expressions.
 
@@ -192,7 +192,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  tr.test ("Check multiple function invocations", [] (auto& t)
+  ts.test ("Check multiple function invocations", [] (auto& t)
     {
       // The function does not need to be embedded in the test
       // case, it can be defined separately and called multiple
@@ -213,7 +213,7 @@ main (int argc, char* argv[])
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
 #endif
-  tr.test ("Check args", [] (auto& t, int _argc, char* _argv[])
+  ts.test ("Check args", [] (auto& t, int _argc, char* _argv[])
     {
       t.expect (mt::ge (_argc, 2)) << "argc >= 2";
 
@@ -237,7 +237,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  tr.test ("Check complex logic", [] (auto& t)
+  ts.test ("Check complex logic", [] (auto& t)
     {
       // Complex conditions can be tested with explicit tests,
       // and the results passed to the test framework.
@@ -257,7 +257,7 @@ main (int argc, char* argv[])
 
 #if defined(__EXCEPTIONS)
 
-  tr.test ("Check if exceptions are thrown", [] (auto& t)
+  ts.test ("Check if exceptions are thrown", [] (auto& t)
     {
       t.expect (mt::throws ([] { exercise_throw (true); }))
           << "exception thrown";
@@ -272,7 +272,7 @@ main (int argc, char* argv[])
 #pragma GCC diagnostic pop
     });
 
-  tr.test ("Check if exceptions are not thrown", [] (auto& t)
+  ts.test ("Check if exceptions are not thrown", [] (auto& t)
     {
       t.expect (mt::nothrow ([] { exercise_throw (false); }))
           << "exception not thrown";
@@ -280,7 +280,7 @@ main (int argc, char* argv[])
 
 #endif // defined(__EXCEPTIONS)
 
-  tr.test ("Check containers", [] (auto& t)
+  ts.test ("Check containers", [] (auto& t)
     {
       // Containers are iterated and each value compared with
       // `eq()` or `ne()`.
@@ -293,7 +293,7 @@ main (int argc, char* argv[])
           << "vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }";
     });
 
-  tr.test ("Check containers with operators", [] (auto& t)
+  ts.test ("Check containers with operators", [] (auto& t)
     {
       // Containers are iterated and each value compared with `==` or `!=`.
 

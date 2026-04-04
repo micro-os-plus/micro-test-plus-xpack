@@ -68,6 +68,7 @@
 #pragma GCC diagnostic ignored "-Wsuggest-final-types"
 #pragma GCC diagnostic ignored "-Wsuggest-final-methods"
 #pragma GCC diagnostic ignored "-Wchanges-meaning"
+#pragma GCC diagnostic ignored "-Wredundant-tags"
 #endif
 #endif
 
@@ -98,7 +99,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */
-  class runner : public test_base
+  class runner : public test_node
   {
   public:
     /**
@@ -143,10 +144,9 @@ namespace micro_os_plus::micro_test_plus
      * @param argc The argument count from main().
      * @param argv The argument vector from main().
      * @param name The name of the default test suite.
-     * @par Returns
-     *   Nothing.
+     * @return Reference to the top-level test suite.
      */
-    void
+    suite&
     initialise (int argc, char* argv[]);
 
     /**
@@ -158,10 +158,6 @@ namespace micro_os_plus::micro_test_plus
      */
     int
     exit_code (void);
-
-    template <typename Callable_T, typename... Args_T>
-    void
-    test (const char* name, Callable_T&& callable, Args_T&&... arguments);
 
     /**
      * @brief Adds a test suite to the runner.
@@ -216,12 +212,6 @@ namespace micro_os_plus::micro_test_plus
     top_suite (void) const
     {
       return *top_suite_;
-    }
-
-    [[nodiscard]] constexpr test_base&
-    current_suite (void) const
-    {
-      return *current_suite_;
     }
 
     [[nodiscard]] constexpr size_t
@@ -295,8 +285,6 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
   protected:
     class top_suite* top_suite_{ nullptr };
-
-    class test_base* current_suite_{ nullptr };
 
     size_t suite_index_ = 0;
 

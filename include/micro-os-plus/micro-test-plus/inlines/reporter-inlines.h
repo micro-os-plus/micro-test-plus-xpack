@@ -418,11 +418,11 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Expr_T>
   void
-  reporter::pass (Expr_T& expr, std::string& message, test_base& test)
+  reporter::pass (Expr_T& expr, std::string& message, subtest& subtest)
   {
     //    current_test_suite->current_test_case.index++;
 
-    output_pass_prefix_ (message, test);
+    output_pass_prefix_ (message, subtest);
 
     if (message.empty ())
       {
@@ -430,7 +430,7 @@ namespace micro_os_plus::micro_test_plus
         *this << expr;
       }
 
-    output_pass_suffix_ (test);
+    output_pass_suffix_ (subtest);
   }
 
   /**
@@ -445,19 +445,20 @@ namespace micro_os_plus::micro_test_plus
   template <class Expr_T>
   void
   reporter::fail (Expr_T& expr, bool abort, std::string& message,
-                  const reflection::source_location& location, test_base& test)
+                  const reflection::source_location& location,
+                  subtest& subtest)
   {
     // current_test_suite->current_test_case.index++;
 
     const bool hasExpression = type_traits::is_op_v<Expr_T>;
-    output_fail_prefix_ (message, hasExpression, location, test);
+    output_fail_prefix_ (message, hasExpression, location, subtest);
 
     if constexpr (type_traits::is_op_v<Expr_T>)
       {
         *this << expr;
       }
 
-    output_fail_suffix_ (location, abort, test);
+    output_fail_suffix_ (location, abort, subtest);
   }
 
   // --------------------------------------------------------------------------

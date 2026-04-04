@@ -174,7 +174,7 @@ static static_runner tr{ "Static top suite" };
 int
 main (int argc, char* argv[])
 {
-  tr.initialise (argc, argv);
+  auto& ts = tr.initialise (argc, argv);
 
   if (tr.reporter ().verbosity > verbosity::quiet)
     {
@@ -328,9 +328,9 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  runner_totals* current_suite_totals = &(tr.current_suite ().totals);
+  runner_totals* current_suite_totals = &ts.totals;
 
-  tr.test ("assume", [] (auto& t)
+  ts.test ("assume", [] (auto& t)
     {
       t.assume (true) << "Assumption 1";
       local_counts.successful_checks++;
@@ -350,7 +350,7 @@ main (int argc, char* argv[])
   test_assert (current_suite_totals->executed_subtests ()
                == local_counts.executed_subtest);
 
-  tr.test ("Initial counters", [] ([[maybe_unused]] auto& t) noexcept
+  ts.test ("Initial counters", [] ([[maybe_unused]] auto& t) noexcept
     { local_counts.executed_subtest++; });
 
   test_assert (current_suite_totals->successful_checks ()
@@ -362,7 +362,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  tr.test ("expect(true)", [] (auto& t)
+  ts.test ("expect(true)", [] (auto& t)
     {
       t.expect (true);
       local_counts.successful_checks++;
@@ -390,7 +390,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  tr.test ("expect(false)", [] (auto& t)
+  ts.test ("expect(false)", [] (auto& t)
     {
       t.expect (false);
       local_counts.failed_checks++;
@@ -410,7 +410,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  tr.test ("Integer comparisons", [] (auto& t)
+  ts.test ("Integer comparisons", [] (auto& t)
     {
       t.expect (eq (my_actual_integral (), 42)) << "actual == 42";
       local_counts.successful_checks++;
@@ -452,7 +452,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  tr.test ("Failed integer comparisons", [] (auto& t)
+  ts.test ("Failed integer comparisons", [] (auto& t)
     {
       local_counts.executed_subtest++;
 
@@ -494,7 +494,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  tr.test ("Float comparisons", [] (auto& t)
+  ts.test ("Float comparisons", [] (auto& t)
     {
       t.expect (eq (my_actual_float<float> (), 42.0f)) << "actual == 42.0f";
       local_counts.successful_checks++;
@@ -599,7 +599,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  tr.test ("Failed float comparisons", [] (auto& t)
+  ts.test ("Failed float comparisons", [] (auto& t)
     {
       t.expect (ne (my_actual_float<float> (), 42.0f)) << "actual != 42.0";
       local_counts.failed_checks++;
@@ -688,7 +688,7 @@ main (int argc, char* argv[])
 
   // As all pointers, 'char*' are compared by address.
   // To compare by content, use string_value{}.
-  tr.test ("String comparisons", [] (auto& t)
+  ts.test ("String comparisons", [] (auto& t)
     {
       t.expect (eq (std::string_view{ compute_abc () }, "abc"sv))
           << "actual_sv == abc_sv";
@@ -726,7 +726,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  tr.test ("Failed string comparisons", [] (auto& t)
+  ts.test ("Failed string comparisons", [] (auto& t)
     {
       t.expect (ne (std::string_view{ compute_abc () }, "abc"sv))
           << "actual_sv != abc_sv";
@@ -764,7 +764,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  tr.test ("Pointer comparisons", [] (auto& t)
+  ts.test ("Pointer comparisons", [] (auto& t)
     {
       int one = 1;
       int* ptr1 = &one;
@@ -821,7 +821,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  tr.test ("Failed pointer comparisons", [] (auto& t)
+  ts.test ("Failed pointer comparisons", [] (auto& t)
     {
       int one = 1;
       int* ptr1 = &one;
@@ -878,7 +878,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  tr.test ("Null pointer comparisons", [] (auto& t)
+  ts.test ("Null pointer comparisons", [] (auto& t)
     {
       void* a_nullptr = nullptr;
       void* a_non_nullptr = &a_nullptr;
@@ -905,7 +905,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  tr.test ("Failed null pointer comparisons", [] (auto& t)
+  ts.test ("Failed null pointer comparisons", [] (auto& t)
     {
       void* a_nullptr = nullptr;
       void* a_non_nullptr = &a_nullptr;
@@ -932,7 +932,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  tr.test ("reflection::type_name()", [] (auto& t)
+  ts.test ("reflection::type_name()", [] (auto& t)
     {
       using namespace std::literals::string_view_literals;
 
@@ -961,7 +961,7 @@ main (int argc, char* argv[])
 
 #if defined(__EXCEPTIONS)
 
-  tr.test ("thrown exceptions", [] (auto& t)
+  ts.test ("thrown exceptions", [] (auto& t)
     {
       t.expect (throws ([] { exercise_throw (true); })) << "exception thrown";
       local_counts.successful_checks++;
@@ -989,7 +989,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  tr.test ("Failed thrown exceptions", [] (auto& t)
+  ts.test ("Failed thrown exceptions", [] (auto& t)
     {
       t.expect (throws ([] { exercise_throw (false); })) << "exception thrown";
       local_counts.failed_checks++;
@@ -1017,7 +1017,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  tr.test ("Not thrown exceptions", [] (auto& t)
+  ts.test ("Not thrown exceptions", [] (auto& t)
     {
       t.expect (nothrow ([] { exercise_throw (false); }))
           << "exception not thrown";
@@ -1035,7 +1035,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  tr.test ("Failed not thrown exceptions", [] (auto& t)
+  ts.test ("Failed not thrown exceptions", [] (auto& t)
     {
       t.expect (nothrow ([] { exercise_throw (true); }))
           << "exception not thrown";
@@ -1055,7 +1055,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  tr.test ("Logical operations", [] (auto& t)
+  ts.test ("Logical operations", [] (auto& t)
     {
       t.expect (_not (ne (my_actual_integral (), 42))) << "not (actual != 42)";
       local_counts.successful_checks++;
@@ -1123,7 +1123,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  tr.test ("Operators", [] (auto& t)
+  ts.test ("Operators", [] (auto& t)
     {
       using namespace operators;
       using namespace literals;
@@ -1224,7 +1224,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  tr.test ("Strings matches", [] (auto& t)
+  ts.test ("Strings matches", [] (auto& t)
     {
       t.expect (utility::is_match ("", "")) << "empty strings";
       local_counts.successful_checks++;
@@ -1256,7 +1256,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  tr.test ("Failed strings matches", [] (auto& t)
+  ts.test ("Failed strings matches", [] (auto& t)
     {
       t.expect (utility::is_match ("", "abc")) << "empty matches abc";
       local_counts.failed_checks++;
@@ -1282,7 +1282,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  tr.test ("Splits", [] (auto& t)
+  ts.test ("Splits", [] (auto& t)
     {
       t.expect (std::vector<std::string_view>{}
                 == utility::split<std::string_view> ("", "."))

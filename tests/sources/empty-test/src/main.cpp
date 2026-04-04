@@ -76,7 +76,7 @@ int
 main (int argc, char* argv[])
 {
   {
-    mt::runner tr{ "Empty" };
+    mt::runner tr{ "Empty suite" };
     tr.initialise (argc, argv);
 
     int exit_code = tr.exit_code ();
@@ -87,11 +87,11 @@ main (int argc, char* argv[])
   // ---------------------------------------------------------------------------
 
   {
-    mt::runner tr{ "With subtest" };
-    tr.initialise (argc, argv);
+    mt::runner tr{ "Suite with subtest" };
+    auto& ts = tr.initialise (argc, argv);
 
     int xc = 0;
-    tr.test ("Empty subtest", [&xc] (auto& t)
+    ts.test ("Empty subtest", [&xc] (auto& t)
       {
         // printf ("in test case '%s'\n", tc.name ());
 
@@ -109,11 +109,11 @@ main (int argc, char* argv[])
   // ---------------------------------------------------------------------------
 
   {
-    mt::runner tr{ "With second subtest" };
-    tr.initialise (argc, argv);
+    mt::runner tr{ "Suite with second subtest" };
+    auto& ts = tr.initialise (argc, argv);
 
     int xc = 0;
-    tr.test ("First subtest", [&xc] (auto& t)
+    ts.test ("First subtest", [&xc] (auto& t)
       {
         // printf ("in test '%s'\n", t.name ());
 
@@ -123,7 +123,7 @@ main (int argc, char* argv[])
       });
 
     int xs = 0;
-    tr.test ("Second subtest", [&xs] (auto& t)
+    ts.test ("Second subtest", [&xs] (auto& t)
       {
         // printf ("in extra test '%s'\n", t.name ());
 
@@ -153,18 +153,18 @@ main (int argc, char* argv[])
   // ---------------------------------------------------------------------------
 
   {
-    mt::runner tr ("Empty with top nested");
-    tr.initialise (argc, argv);
+    mt::runner tr ("Top suite with nested subtests");
+    auto& ts = tr.initialise (argc, argv);
     // printf ("in test suite '%s'\n", ts.name ());
 
     int xc = 0;
-    tr.test ("Empty test", [&xc] (auto& t)
+    ts.test ("Test with nested subtest", [&xc] (auto& t)
       {
         // printf ("in test '%s'\n", t.name ());
 
         // No checks, just an empty test case.
         xc = 1;
-        test_assert (strcmp (t.name (), "Empty test") == 0);
+        test_assert (strcmp (t.name (), "Test with nested subtest") == 0);
 
         int yc = 0;
         t.test ("Empty nested test", [&yc] (auto& t)

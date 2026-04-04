@@ -72,8 +72,7 @@ namespace micro_os_plus::micro_test_plus
    * ready to coordinate the registration, execution, and reporting of tests
    * across all test cases and folders.
    */
-  runner::runner (const char* top_suite_name)
-      : test_base{ top_suite_name, *this, 1, 0 }
+  runner::runner (const char* top_suite_name) : test_node{ "-" }
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
@@ -84,8 +83,7 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    top_suite_ = new class top_suite (name_, *this);
-    current_suite_ = top_suite_;
+    top_suite_ = new class top_suite (top_suite_name, *this);
   }
 
   runner::~runner ()
@@ -114,7 +112,7 @@ namespace micro_os_plus::micro_test_plus
    * preparing the framework to manage and execute all test cases and suites
    * across the project’s folders.
    */
-  void
+  suite&
   runner::initialise (int argc, char* argv[])
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
@@ -224,6 +222,8 @@ namespace micro_os_plus::micro_test_plus
 
     top_suite_->timings.timestamp_begin ();
     reporter_->begin_suite (*top_suite_);
+
+    return *top_suite_;
   }
 #pragma GCC diagnostic pop
 
@@ -260,8 +260,6 @@ namespace micro_os_plus::micro_test_plus
           {
             class suite* suite = (*children_suites_)[i];
 
-            current_suite_ = suite;
-
             // Run the child suite immediately.
             suite->run ();
 
@@ -285,8 +283,6 @@ namespace micro_os_plus::micro_test_plus
         for (size_t i = 0; i < static_children_suites_->size (); ++i)
           {
             static_suite* suite = (*static_children_suites_)[i];
-
-            current_suite_ = suite;
 
             // Update the suite's own index, this is needed for the TAP
             // reporter to report the test number correctly, as the
