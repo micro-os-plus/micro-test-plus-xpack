@@ -243,13 +243,13 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @brief Returns a pointer to the vector of child test suites.
+     * @brief Returns a reference to the vector of child test suites.
      *
      * @par Parameters
      *	 None.
-     * @return Pointer to the vector of child test suites.
+     * @return Reference to the vector of child test suites.
      */
-    [[nodiscard]] std::vector<class suite*>*
+    [[nodiscard]] std::vector<class suite*>&
     suites (void)
     {
       return children_suites_;
@@ -290,7 +290,7 @@ namespace micro_os_plus::micro_test_plus
 
     size_t suite_index_ = 0;
 
-    std::vector<class suite*>* children_suites_{ nullptr };
+    std::vector<class suite*> children_suites_;
 
     /**
      * @brief Pointer to the vector of registered static test suites.

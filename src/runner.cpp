@@ -239,33 +239,23 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    if (children_suites_ == nullptr)
-      {
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-        printf ("%s - new array\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
-        children_suites_ = new std::vector<class suite*>;
-      }
-    children_suites_->push_back (&suite);
+    children_suites_.push_back (&suite);
   }
 
   void
   runner::run_suites_ (void)
   {
-    if (children_suites_ != nullptr)
+    for (size_t i = 0; i < children_suites_.size (); ++i)
       {
-        for (size_t i = 0; i < children_suites_->size (); ++i)
-          {
-            class suite* suite = (*children_suites_)[i];
+        class suite* suite = children_suites_[i];
 
-            // Run the child suite immediately.
-            suite->run ();
+        // Run the child suite immediately.
+        suite->run ();
 
-            // Accumulate the totals from the static suite into the runner
-            // totals.
-            // DO NOT increment executed_subtests here.
-            totals += suite->totals;
-          }
+        // Accumulate the totals from the static suite into the runner
+        // totals.
+        // DO NOT increment executed_subtests here.
+        totals += suite->totals;
       }
   }
 
@@ -354,7 +344,7 @@ namespace micro_os_plus::micro_test_plus
   size_t
   runner::suites_count (void) const
   {
-    return (children_suites_ ? children_suites_->size () : 0) + 1;
+    return children_suites_.size () + 1;
   }
 
   size_t
