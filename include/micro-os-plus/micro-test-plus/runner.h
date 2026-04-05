@@ -236,7 +236,7 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Reference to the test reporter.
      */
-    [[nodiscard]] constexpr class reporter&
+    [[nodiscard]] class reporter&
     reporter (void) const
     {
       return *reporter_;
