@@ -35,6 +35,8 @@
 #pragma clang diagnostic ignored "-Wpre-c++17-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
+#else // GCC only
+#pragma GCC diagnostic ignored "-Waggregate-return"
 #endif
 
 namespace micro_os_plus::micro_test_plus
@@ -64,7 +66,7 @@ namespace micro_os_plus::micro_test_plus
     // Ensure it is timestamped only once.
     if (begin_time_ == nullptr)
       {
-        begin_time_ = new timestamp ();
+        begin_time_ = std::make_unique<timestamp> ();
       }
   }
 
@@ -74,7 +76,7 @@ namespace micro_os_plus::micro_test_plus
     // Ensure it is timestamped only once.
     if (end_time_ == nullptr)
       {
-        end_time_ = new timestamp ();
+        end_time_ = std::make_unique<timestamp> ();
       }
   }
 

@@ -27,6 +27,7 @@
 
 // ----------------------------------------------------------------------------
 
+#include <memory>
 #include <time.h>
 
 // ----------------------------------------------------------------------------
@@ -51,12 +52,14 @@ namespace micro_os_plus::micro_test_plus
   {
   public:
     timestamp ();
+
     timestamp (const timestamp&) = delete;
     timestamp (timestamp&&) = delete;
     timestamp&
     operator= (const timestamp&) = delete;
     timestamp&
     operator= (timestamp&&) = delete;
+
     ~timestamp () = default;
 
     bool
@@ -78,13 +81,16 @@ namespace micro_os_plus::micro_test_plus
   {
   public:
     timestamps () = default;
+
     timestamps (const timestamps&) = delete;
     timestamps (timestamps&&) = delete;
     timestamps&
     operator= (const timestamps&) = delete;
     timestamps&
     operator= (timestamps&&) = delete;
+
     ~timestamps () = default;
+    // unique_ptr members are destroyed automatically.
 
     void
     timestamp_begin (void);
@@ -102,12 +108,12 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief The timestamp recorded at the beginning of the test suite.
      */
-    timestamp* begin_time_{ nullptr };
+    std::unique_ptr<timestamp> begin_time_;
 
     /**
      * @brief The timestamp recorded at the end of the test suite.
      */
-    timestamp* end_time_{ nullptr };
+    std::unique_ptr<timestamp> end_time_;
   };
 
   // ==========================================================================
