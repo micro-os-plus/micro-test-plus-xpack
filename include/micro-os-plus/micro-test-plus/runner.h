@@ -52,6 +52,7 @@
 // ----------------------------------------------------------------------------
 
 #include <functional>
+#include <memory>
 #include <time.h>
 
 #include "reporter.h"
@@ -284,7 +285,7 @@ namespace micro_os_plus::micro_test_plus
 
     // ------------------------------------------------------------------------
   protected:
-    class top_suite* top_suite_{ nullptr };
+    std::unique_ptr<class top_suite> top_suite_;
 
     size_t suite_index_ = 0;
 

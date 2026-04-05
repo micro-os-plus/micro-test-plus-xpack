@@ -83,7 +83,7 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    top_suite_ = new class top_suite (top_suite_name, *this);
+    top_suite_ = std::make_unique<class top_suite> (top_suite_name, *this);
   }
 
   runner::~runner ()
