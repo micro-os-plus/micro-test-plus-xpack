@@ -108,8 +108,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s' %zu %zu\n", __PRETTY_FUNCTION__, name, own_index_,
-            nesting_depth_);
+    printf ("%s '%s' %zu\n", __PRETTY_FUNCTION__, name, own_index_);
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
   }
