@@ -52,6 +52,7 @@
 // ----------------------------------------------------------------------------
 
 #include <functional>
+#include <memory>
 #include <time.h>
 
 #include "reporter.h"
@@ -309,7 +310,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Pointer to the test reporter used for outputting test results.
      */
-    class reporter* reporter_{ nullptr };
+    std::unique_ptr<class reporter> reporter_;
 
     /**
      * @brief Stores the argument count passed to the test runner.

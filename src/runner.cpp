@@ -91,8 +91,7 @@ namespace micro_os_plus::micro_test_plus
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    delete reporter_;
-    reporter_ = nullptr;
+    // reporter_ is a unique_ptr; destroyed automatically.
   }
 
 #pragma GCC diagnostic push
@@ -161,11 +160,11 @@ namespace micro_os_plus::micro_test_plus
     // Initialize and configure the reporter.
     if (strcmp (reporter_name, "human") == 0)
       {
-        reporter_ = new reporter_human ();
+        reporter_ = std::make_unique<reporter_human> ();
       }
     else if (strcmp (reporter_name, "tap") == 0)
       {
-        reporter_ = new reporter_tap ();
+        reporter_ = std::make_unique<reporter_tap> ();
       }
     else
       {
