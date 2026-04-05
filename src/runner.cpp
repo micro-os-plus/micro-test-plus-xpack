@@ -72,7 +72,8 @@ namespace micro_os_plus::micro_test_plus
    * ready to coordinate the registration, execution, and reporting of tests
    * across all test cases and folders.
    */
-  runner::runner (const char* top_suite_name) : test_node{ "-" }
+  runner::runner (const char* top_suite_name)
+      : test_node{ "-" }, top_suite_{ top_suite_name, *this }
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
@@ -82,8 +83,6 @@ namespace micro_os_plus::micro_test_plus
     printf ("%s '%s'\n", __PRETTY_FUNCTION__, name ());
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
-
-    top_suite_ = std::make_unique<class top_suite> (top_suite_name, *this);
   }
 
   runner::~runner ()
@@ -220,10 +219,10 @@ namespace micro_os_plus::micro_test_plus
     timings.timestamp_begin ();
     reporter_->begin_session (*this);
 
-    top_suite_->timings.timestamp_begin ();
-    reporter_->begin_suite (*top_suite_);
+    top_suite_.timings.timestamp_begin ();
+    reporter_->begin_suite (top_suite_);
 
-    return *top_suite_;
+    return top_suite_;
   }
 #pragma GCC diagnostic pop
 
@@ -308,9 +307,9 @@ namespace micro_os_plus::micro_test_plus
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    top_suite_->timings.timestamp_end ();
-    reporter_->end_suite (*top_suite_);
-    totals += top_suite_->totals;
+    top_suite_.timings.timestamp_end ();
+    reporter_->end_suite (top_suite_);
+    totals += top_suite_.totals;
 
     run_suites_ ();
     if (has_static_suites_)

@@ -52,11 +52,11 @@
 // ----------------------------------------------------------------------------
 
 #include <functional>
-#include <memory>
 #include <time.h>
 
 #include "reporter.h"
 #include "timings.h"
+#include "test.h"
 
 // ----------------------------------------------------------------------------
 
@@ -210,9 +210,9 @@ namespace micro_os_plus::micro_test_plus
     total_suites_count (void) const;
 
     [[nodiscard]] constexpr top_suite&
-    top_suite (void) const
+    top_suite (void)
     {
-      return *top_suite_;
+      return top_suite_;
     }
 
     [[nodiscard]] constexpr size_t
@@ -285,7 +285,7 @@ namespace micro_os_plus::micro_test_plus
 
     // ------------------------------------------------------------------------
   protected:
-    std::unique_ptr<class top_suite> top_suite_;
+    class top_suite top_suite_;
 
     size_t suite_index_ = 0;
 
