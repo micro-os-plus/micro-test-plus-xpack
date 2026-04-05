@@ -68,51 +68,6 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
   // Public API.
 
-  /**
-   * @details
-   * The `initialize` function sets up the µTest++ testing framework, preparing
-   * it for test execution. It processes command-line arguments, configures the
-   * test environment, and establishes the default test suite name. This
-   * function should be called at the beginning of the test programme,
-   * typically from the `main()` function, to ensure proper initialisation of
-   * all framework components.
-   *
-   * The provided arguments may be used to configure verbosity or other
-   * run-time options for the test session.
-   */
-  //   void
-  //   initialize (int argc, char* argv[], const char* name)
-  //   {
-  // #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-  //     printf ("%s\n", __PRETTY_FUNCTION__);
-  // #endif
-  //     runner.initialize (argc, argv, name);
-  //   }
-
-  /**
-   * @details
-   * In addition to the test cases defined in `main()`, additional test suites
-   * may be declared as static objects either within the same file or in other
-   * files, and are automatically registered via the static constructors
-   * mechanism.
-   *
-   * The `exit_code` function finalises the execution of all registered test
-   * suites and test cases within the µTest++ framework, and returns an
-   * appropriate exit code to the operating system. This function should be
-   * called at the end of the test program, typically from the `main()`
-   * function, to ensure that all results are properly reported and the correct
-   * status is communicated.
-   *
-   * The returned value indicates the overall success or failure of the test
-   * run, allowing integration with build systems and continuous integration
-   * environments.
-   */
-  // int
-  // exit_code (void)
-  // {
-  //   return runner.exit_code ();
-  // }
-
   // --------------------------------------------------------------------------
   // Too small to deserve a separate source file.
   namespace reflection

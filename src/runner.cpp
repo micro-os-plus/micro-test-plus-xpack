@@ -75,21 +75,21 @@ namespace micro_os_plus::micro_test_plus
   runner::runner (const char* top_suite_name)
       : test_node{ "-" }, top_suite_{ top_suite_name, *this }
   {
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
     printf ("%s '%s'\n", __PRETTY_FUNCTION__, name ());
 #pragma GCC diagnostic pop
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
   }
 
   runner::~runner ()
   {
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
     printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
 
     // reporter_ is a unique_ptr; destroyed automatically.
   }
@@ -358,21 +358,21 @@ namespace micro_os_plus::micro_test_plus
   static_runner::static_runner (const char* top_suite_name)
       : runner{ top_suite_name }
   {
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
     printf ("%s '%s'\n", __PRETTY_FUNCTION__, name ());
 #pragma GCC diagnostic pop
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
   }
 
   static_runner::~static_runner ()
   {
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
     printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
 
     if (has_static_suites_ && static_children_suites_ != nullptr)
       {

@@ -26,7 +26,14 @@
         "valueType": "bool",
         "requires": "isEnabled('diag-trace')",
         "generatedDefinition": "MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS"
+      },
+      "trace-constructors": {
+        "display": "Enable trace for constructors and destructors in µTest++",
+        "description": "Log trace diagnostics for constructors and destructors in the µTest++ testing framework when TRACE is enabled",
+        "valueType": "bool",
+        "requires": "isEnabled('trace')",
+        "generatedDefinition": "MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS"
       }
     }
-  }
+  
 }

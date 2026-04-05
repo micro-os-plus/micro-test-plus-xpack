@@ -103,27 +103,27 @@ namespace micro_os_plus::micro_test_plus
                                std::forward<Args_T> (arguments)...);
       }
 
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
     printf ("%s '%s' %zu\n", __PRETTY_FUNCTION__, name, own_index_);
 #pragma GCC diagnostic pop
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
   }
 
   template <typename Self_T>
   runnable<Self_T>::~runnable ()
   {
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
     printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #pragma GCC diagnostic pop
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
   }
 
   // ==========================================================================
@@ -143,7 +143,7 @@ namespace micro_os_plus::micro_test_plus
                            std::forward<Args_T> (arguments)... },
         parent_suite_{ parent_suite }, nesting_depth_{ nesting_depth }
   {
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
@@ -151,7 +151,7 @@ namespace micro_os_plus::micro_test_plus
     printf ("%s '%s' %zu %zu\n", __PRETTY_FUNCTION__, name, own_index_,
             nesting_depth_);
 #pragma GCC diagnostic pop
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
   }
 
   template <typename Callable_T, typename... Args_T>
@@ -192,14 +192,14 @@ namespace micro_os_plus::micro_test_plus
                          std::forward<Callable_T> (callable),
                          std::forward<Args_T> (arguments)... }
   {
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
     printf ("%s '%s' %zu\n", __PRETTY_FUNCTION__, name, own_index_);
 #pragma GCC diagnostic pop
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
   }
 
   template <typename Callable_T, typename... Args_T>
@@ -249,14 +249,14 @@ namespace micro_os_plus::micro_test_plus
                                       std::forward<Args_T> (arguments)...);
       }
 
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
     printf ("%s '%s' %zu\n", __PRETTY_FUNCTION__, name, own_index_);
 #pragma GCC diagnostic pop
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
 
     static_runner::register_static_suite (runner, *this);
   }

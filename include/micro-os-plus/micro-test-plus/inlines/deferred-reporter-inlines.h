@@ -122,9 +122,9 @@ namespace micro_os_plus::micro_test_plus
                                   subtest },
           expr_{ expr }
     {
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
       printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
       abort_ = abort;
     }
 

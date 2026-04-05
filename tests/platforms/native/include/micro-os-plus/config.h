@@ -28,6 +28,7 @@
 
 // Propagate TRACE to the library.
 #define MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#define MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
 #endif // MICRO_OS_PLUS_TRACE
 
 // ----------------------------------------------------------------------------
