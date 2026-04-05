@@ -139,11 +139,7 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    for (size_t i = 0; i < children_subtests_.size (); ++i)
-      {
-        delete children_subtests_[i];
-        children_subtests_[i] = nullptr;
-      }
+    // children_subtests_ holds unique_ptrs; destroyed automatically.
   }
 
   [[nodiscard]] reporter&
@@ -159,17 +155,19 @@ namespace micro_os_plus::micro_test_plus
   // }
 
   void
-  runnable_base::after_subtest_create (class subtest* child_test, suite& suite)
+  runnable_base::after_subtest_create (
+      std::unique_ptr<class subtest> child_test, suite& suite)
   {
-    // Remember test cases to delete them at the end.
-    children_subtests_.push_back (child_test);
+    // Transfer ownership into the vector.
+    children_subtests_.push_back (std::move (child_test));
 
     // Run the child test case immediately.
-    child_test->run ();
+    class subtest& subtest = *children_subtests_.back ();
+    subtest.run ();
 
     // Accumulate the totals from the child test into the suite totals.
     suite.totals.increment_executed_subtests ();
-    suite.totals += child_test->totals;
+    suite.totals += subtest.totals;
   }
 
   // ==========================================================================

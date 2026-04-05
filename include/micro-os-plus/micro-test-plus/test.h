@@ -58,6 +58,7 @@
 #include "timings.h"
 
 #include <functional>
+#include <memory>
 
 // ----------------------------------------------------------------------------
 
@@ -242,7 +243,8 @@ namespace micro_os_plus::micro_test_plus
     }
 
     void
-    after_subtest_create (class subtest* child_test, suite& suite);
+    after_subtest_create (std::unique_ptr<class subtest> child_test,
+                          suite& suite);
 
   protected:
     /**
@@ -266,7 +268,7 @@ namespace micro_os_plus::micro_test_plus
      */
     size_t current_subtest_index_ = 0;
 
-    std::vector<subtest*> children_subtests_;
+    std::vector<std::unique_ptr<subtest>> children_subtests_;
   };
 
   // ==========================================================================
