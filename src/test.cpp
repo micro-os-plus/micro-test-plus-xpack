@@ -147,12 +147,6 @@ namespace micro_os_plus::micro_test_plus
     return runner_.reporter ();
   }
 
-  // void
-  // runnable_base::run (void)
-  // {
-  //   abort ();
-  // }
-
   void
   runnable_base::after_subtest_create (
       std::unique_ptr<class subtest> child_test, suite& suite)

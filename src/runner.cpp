@@ -413,7 +413,7 @@ namespace micro_os_plus::micro_test_plus
     if (runner.static_children_suites_ == nullptr)
       {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-        printf ("%s - new array\n", __PRETTY_FUNCTION__);
+        printf ("%s new static_children_suites_ array\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
         runner.static_children_suites_ = new std::vector<static_suite*>;
       }
