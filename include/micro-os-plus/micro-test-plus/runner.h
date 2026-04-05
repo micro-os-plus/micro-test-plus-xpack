@@ -177,14 +177,6 @@ namespace micro_os_plus::micro_test_plus
     void
     suite (const char* name, Callable_T&& callable, Args_T&&... arguments);
 
-    /**
-     * @brief Registers a test suite with the runner.
-     *
-     * @param [in] suite The test suite to register.
-     */
-    void
-    register_suite (class suite& suite);
-
     // ------------------------------------------------------------------------
 
     /**
@@ -249,7 +241,7 @@ namespace micro_os_plus::micro_test_plus
      *	 None.
      * @return Reference to the vector of child test suites.
      */
-    [[nodiscard]] std::vector<class suite*>&
+    [[nodiscard]] std::vector<std::unique_ptr<class suite>>&
     suites (void)
     {
       return children_suites_;
@@ -284,13 +276,21 @@ namespace micro_os_plus::micro_test_plus
     void
     run_static_suites_ (void);
 
+    /**
+     * @brief Registers a test suite with the runner.
+     *
+     * @param [in] suite Owning pointer to the test suite to register.
+     */
+    void
+    register_suite_ (std::unique_ptr<class suite> suite);
+
     // ------------------------------------------------------------------------
   protected:
     class top_suite top_suite_;
 
     size_t suite_index_ = 0;
 
-    std::vector<class suite*> children_suites_;
+    std::vector<std::unique_ptr<class suite>> children_suites_;
 
     /**
      * @brief Pointer to the vector of registered static test suites.

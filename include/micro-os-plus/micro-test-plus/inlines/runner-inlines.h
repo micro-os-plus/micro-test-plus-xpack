@@ -68,11 +68,11 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    auto* suite = new class suite (name, *this, suites_count () + 1,
-                                   std::forward<Callable_T> (callable),
-                                   std::forward<Args_T> (arguments)...);
+    auto suite = std::make_unique<class suite> (
+        name, *this, suites_count () + 1, std::forward<Callable_T> (callable),
+        std::forward<Args_T> (arguments)...);
 
-    register_suite (*suite);
+    register_suite_ (std::move (suite));
   }
 
   // --------------------------------------------------------------------------

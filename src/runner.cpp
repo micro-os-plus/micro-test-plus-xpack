@@ -228,18 +228,18 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   void
-  runner::register_suite (class suite& suite)
+  runner::register_suite_ (std::unique_ptr<class suite> suite)
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
+    printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite->name ());
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    children_suites_.push_back (&suite);
+    children_suites_.push_back (std::move (suite));
   }
 
   void
@@ -247,7 +247,7 @@ namespace micro_os_plus::micro_test_plus
   {
     for (size_t i = 0; i < children_suites_.size (); ++i)
       {
-        class suite* suite = children_suites_[i];
+        class suite* suite = children_suites_[i].get ();
 
         // Run the child suite immediately.
         suite->run ();
