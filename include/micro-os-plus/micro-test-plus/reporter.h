@@ -55,6 +55,7 @@
 // ----------------------------------------------------------------------------
 
 // #include <functional>
+#include <stdio.h>
 #include <string_view>
 #include <string>
 
@@ -818,15 +819,6 @@ namespace micro_os_plus::micro_test_plus
 
   public:
     /**
-     * @brief Controls whether to add an empty line between successful test
-     * cases.
-     *
-     * @details
-     * Used to nicely format the output.
-     */
-    bool add_empty_line{ true };
-
-    /**
      * @brief The verbosity level for test reporting.
      */
     verbosity_t verbosity{};
@@ -841,6 +833,15 @@ namespace micro_os_plus::micro_test_plus
      * @brief Internal output buffer for accumulating report content.
      */
     std::string out_{};
+
+    /**
+     * @brief Controls whether to add an empty line between successful test
+     * cases.
+     *
+     * @details
+     * Used to nicely format the output.
+     */
+    bool add_empty_line_{ true };
   };
 
   // --------------------------------------------------------------------------

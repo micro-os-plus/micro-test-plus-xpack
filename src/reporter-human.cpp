@@ -106,7 +106,7 @@ namespace micro_os_plus::micro_test_plus
 
         flush ();
       }
-    add_empty_line = true;
+    add_empty_line_ = true;
   }
 
 #pragma GCC diagnostic push
@@ -120,7 +120,7 @@ namespace micro_os_plus::micro_test_plus
 
     if (verbosity != verbosity::silent)
       {
-        if (add_empty_line)
+        if (add_empty_line_)
           {
             printf ("\n");
           }
@@ -190,7 +190,7 @@ namespace micro_os_plus::micro_test_plus
 
     if (verbosity == verbosity::normal || verbosity == verbosity::verbose)
       {
-        if (add_empty_line)
+        if (add_empty_line_)
           {
             printf ("\n");
           }
@@ -204,7 +204,7 @@ namespace micro_os_plus::micro_test_plus
 
         flush ();
 
-        add_empty_line = true;
+        add_empty_line_ = true;
       }
   }
 
@@ -238,7 +238,7 @@ namespace micro_os_plus::micro_test_plus
       {
         std::string indent (indent_size, ' ');
 
-        if (/* add_empty_line && */ suite.totals.executed_subtests () > 0)
+        if (/* add_empty_line_ && */ suite.totals.executed_subtests () > 0)
           {
             printf ("\n");
           }
@@ -301,7 +301,7 @@ namespace micro_os_plus::micro_test_plus
     // Clear residual content when less verbose.
     out_.clear ();
 
-    add_empty_line = true;
+    add_empty_line_ = true;
   }
 
   // --------------------------------------------------------------------------
@@ -339,7 +339,7 @@ namespace micro_os_plus::micro_test_plus
 
     if (verbosity == verbosity::verbose)
       {
-        if (add_empty_line)
+        if (add_empty_line_)
           {
             printf ("\n");
           }
@@ -354,7 +354,7 @@ namespace micro_os_plus::micro_test_plus
 
 #pragma GCC diagnostic pop
 
-        add_empty_line = false;
+        add_empty_line_ = false;
       }
 
     flush ();
@@ -393,7 +393,7 @@ namespace micro_os_plus::micro_test_plus
         std::string indent2 (indent_size * (subtest.nesting_depth () + 1),
                              ' ');
 
-        if (add_empty_line)
+        if (add_empty_line_)
           {
             printf ("\n");
           }
@@ -419,7 +419,7 @@ namespace micro_os_plus::micro_test_plus
                         subtest.totals.successful_checks () == 1 ? "" : "s");
 
 #pragma GCC diagnostic pop
-                add_empty_line = true;
+                add_empty_line_ = true;
               }
             else
               {
@@ -435,7 +435,7 @@ namespace micro_os_plus::micro_test_plus
 
 #pragma GCC diagnostic pop
 
-                add_empty_line = false;
+                add_empty_line_ = false;
               }
           }
         else
@@ -462,7 +462,7 @@ namespace micro_os_plus::micro_test_plus
 
 #pragma GCC diagnostic pop
 
-            add_empty_line = true;
+            add_empty_line_ = true;
           }
       }
 
