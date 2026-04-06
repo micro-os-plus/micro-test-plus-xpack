@@ -135,23 +135,10 @@ namespace micro_os_plus::micro_test_plus
 #endif // defined(MICRO_OS_PLUS_DEBUG)
 #endif // !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
 
-    verbosity_t verbosity = verbosity::normal;
     const char* reporter_name = "tap";
     for (int i = 0; i < argc; ++i)
       {
-        if (strcmp (argv[i], "--verbose") == 0)
-          {
-            verbosity = verbosity::verbose;
-          }
-        else if (strcmp (argv[i], "--quiet") == 0)
-          {
-            verbosity = verbosity::quiet;
-          }
-        else if (strcmp (argv[i], "--silent") == 0)
-          {
-            verbosity = verbosity::silent;
-          }
-        else if (strncmp (argv[i], "--reporter=", 11) == 0)
+        if (strncmp (argv[i], "--reporter=", 11) == 0)
           {
             reporter_name = argv[i] + 11;
           }
@@ -160,23 +147,23 @@ namespace micro_os_plus::micro_test_plus
     // Initialize and configure the reporter.
     if (strcmp (reporter_name, "human") == 0)
       {
-        reporter_ = std::make_unique<reporter_human> ();
+        reporter_ = std::make_unique<reporter_human> (argc, argv);
       }
     else if (strcmp (reporter_name, "tap") == 0)
       {
-        reporter_ = std::make_unique<reporter_tap> ();
+        reporter_ = std::make_unique<reporter_tap> (argc, argv);
       }
     else
       {
         fprintf (stderr, "error: unknown reporter '%s'\n", reporter_name);
         exit (1);
       }
-    reporter_->verbosity = verbosity;
 
-    // ------------------------------------------------------------------------
+      // ------------------------------------------------------------------------
 
 #if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) && defined(MICRO_OS_PLUS_TRACE))
-    if (verbosity == verbosity::normal || verbosity == verbosity::verbose)
+    if (reporter_->verbosity == verbosity::normal
+        || reporter_->verbosity == verbosity::verbose)
       {
         printf ("\n");
 

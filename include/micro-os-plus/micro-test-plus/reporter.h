@@ -226,7 +226,20 @@ namespace micro_os_plus::micro_test_plus
   {
   public:
     /**
-     * @brief Default constructor for the reporter class.
+     * @brief Constructor for the reporter class.
+     *
+     * @details
+     * Parses the command-line arguments to determine the desired verbosity
+     * level and applies it to the reporter. The `--verbose`, `--quiet`, and
+     * `--silent` options are recognised.
+     *
+     * @param argc The argument count from main().
+     * @param argv The argument vector from main().
+     */
+    reporter (int argc, char* argv[]);
+
+    /**
+     * @brief Virtual destructor for the reporter class.
      */
     virtual ~reporter ();
 

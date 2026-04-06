@@ -87,12 +87,15 @@ namespace micro_os_plus::micro_test_plus
   {
   public:
     /**
-     * @brief Default constructor for the reporter_tap class.
+     * @brief Constructor for the reporter_tap class.
      *
      * @details
      * The rule of five is enforced to prevent accidental copying or moving.
+     *
+     * @param argc The argument count from main().
+     * @param argv The argument vector from main().
      */
-    reporter_tap ();
+    reporter_tap (int argc, char* argv[]);
 
     /**
      * @brief Deleted copy constructor to prevent copying.
