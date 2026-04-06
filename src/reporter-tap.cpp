@@ -105,6 +105,11 @@ namespace micro_os_plus::micro_test_plus
 
     write_info ();
 
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
+
     const char* message = "TAP version 14\n";
     if (output_file_ != nullptr)
       {
@@ -117,6 +122,9 @@ namespace micro_os_plus::micro_test_plus
 
         flush ();
       }
+
+#pragma GCC diagnostic pop
+
     add_empty_line_ = false;
   }
 

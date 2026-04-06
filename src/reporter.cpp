@@ -76,6 +76,11 @@ namespace micro_os_plus::micro_test_plus
     argc_ = argc;
     argv_ = argv;
 
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
+#endif
+
     for (int i = 0; i < argc; ++i)
       {
         if (strcmp (argv[i], "--verbose") == 0)
@@ -109,13 +114,20 @@ namespace micro_os_plus::micro_test_plus
           }
       }
 
+#pragma GCC diagnostic pop
+
     if (output_file_path != nullptr)
       {
         output_file_ = fopen (output_file_path, "w");
         if (output_file_ == nullptr)
           {
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
             fprintf (stderr, "Error: Failed to open output file '%s'\n",
                      output_file_path);
+#pragma GCC diagnostic pop
             exit (1);
           }
       }
@@ -198,6 +210,11 @@ namespace micro_os_plus::micro_test_plus
   reporter::write_info (void)
   {
     char message[220];
+
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
+#endif
 
     if (argc_ > 0)
       {
@@ -298,6 +315,8 @@ namespace micro_os_plus::micro_test_plus
 #endif
       }
 #endif // !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
+
+#pragma GCC diagnostic pop
 
 #pragma GCC diagnostic pop
   }
