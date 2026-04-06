@@ -144,7 +144,7 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
 
-    char message_summary[20];
+    char message_summary[32];
     snprintf (message_summary, sizeof (message_summary), "1..%zu\n",
               total_suites_count);
 
