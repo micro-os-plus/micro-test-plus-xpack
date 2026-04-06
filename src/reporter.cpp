@@ -71,6 +71,11 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
 
     verbosity = verbosity::normal;
+    const char* output_file_path = nullptr;
+
+    argc_ = argc;
+    argv_ = argv;
+
     for (int i = 0; i < argc; ++i)
       {
         if (strcmp (argv[i], "--verbose") == 0)
@@ -85,6 +90,34 @@ namespace micro_os_plus::micro_test_plus
           {
             verbosity = verbosity::silent;
           }
+        else if (strncmp (argv[i], "--output-file=", 14) == 0)
+          {
+            output_file_path = argv[i] + 14;
+          }
+        else if (strcmp (argv[i], "--output-file") == 0)
+          {
+            if (i + 1 < argc)
+              {
+                output_file_path = argv[++i];
+              }
+            else
+              {
+                fprintf (stderr, "Error: --output-file option requires a "
+                                 "file path argument\n");
+                exit (1);
+              }
+          }
+      }
+
+    if (output_file_path != nullptr)
+      {
+        output_file_ = fopen (output_file_path, "w");
+        if (output_file_ == nullptr)
+          {
+            fprintf (stderr, "Error: Failed to open output file '%s'\n",
+                     output_file_path);
+            exit (1);
+          }
       }
   }
 
@@ -93,6 +126,14 @@ namespace micro_os_plus::micro_test_plus
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
+
+    if (output_file_ != nullptr)
+      {
+        fflush (output_file_);
+        fclose (output_file_);
+
+        output_file_ = nullptr;
+      }
   }
 
   // --------------------------------------------------------------------------
@@ -123,7 +164,7 @@ namespace micro_os_plus::micro_test_plus
   void
   reporter::endline (void)
   {
-    out_.append ("\n");
+    buffer_.append ("\n");
     flush ();
   }
 
@@ -137,12 +178,129 @@ namespace micro_os_plus::micro_test_plus
    * cases and folders.
    */
   void
-  reporter::output (void)
+  reporter::write_buffer_to_stdout (void)
   {
-    printf ("%s", out_.c_str ()); // No `\n` here.
-    out_.clear ();
+    // Pass only the string, do not add an `\n` here.
+    printf ("%s", buffer_.c_str ());
   }
 
+  void
+  reporter::write_buffer_to_file (void)
+  {
+    // Pass only the string, do not add an `\n` here.
+    if (output_file_ != nullptr)
+      {
+        fprintf (output_file_, "%s", buffer_.c_str ());
+      }
+  }
+
+  void
+  reporter::write_info (void)
+  {
+    char message[220];
+
+    if (argc_ > 0)
+      {
+        message[0] = '\0';
+
+        strncat (message, get_comment_prefix (),
+                 sizeof (message) - strlen (message) - 1);
+
+        strncat (message,
+                 "Running: ", sizeof (message) - strlen (message) - 1);
+
+        // Append only the file name part of argv[0].
+        const char* slash = strrchr (argv_[0], '/');
+        const char* prog = (slash != nullptr) ? slash + 1 : argv_[0];
+        strncat (message, prog, sizeof (message) - strlen (message) - 1);
+
+        for (int i = 1; i < argc_; ++i)
+          {
+            strncat (message, " ", sizeof (message) - strlen (message) - 1);
+            strncat (message, argv_[i],
+                     sizeof (message) - strlen (message) - 1);
+          }
+
+        if (output_file_ != nullptr)
+          {
+            fprintf (output_file_, "%s\n", message);
+          }
+
+#if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) && defined(MICRO_OS_PLUS_TRACE))
+        if (verbosity == verbosity::normal || verbosity == verbosity::verbose)
+          {
+            printf ("%s\n", message);
+          }
+#endif // !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
+      }
+
+    message[0] = '\0';
+    strncat (message, get_comment_prefix (),
+             sizeof (message) - strlen (message) - 1);
+
+#if defined(__clang__)
+    strncat (message, "Built with clang%s",
+             sizeof (message) - strlen (message) - 1);
+#elif defined(__GNUC__)
+    strncat (message, "Built with GCC%s",
+             sizeof (message) - strlen (message) - 1);
+#elif defined(_MSC_VER)
+    // https://docs.microsoft.com/en-us/cpp/preprocessor/predefined-macros?view=msvc-170
+    {
+      char msvc_ver[16];
+      snprintf (msvc_ver, sizeof (msvc_ver), "%d", _MSC_VER);
+      strncat (message, "Built with MSVC%s",
+               sizeof (message) - strlen (message) - 1);
+      strncat (message, msvc_ver, sizeof (message) - strlen (message) - 1);
+    }
+#else
+    strncat (message, "Built with an unknown compiler%s ",
+             sizeof (message) - strlen (message) - 1);
+#endif
+#if !(defined(__APPLE__) || defined(__linux__) || defined(__unix__) \
+      || defined(WIN32))
+// This is relevant only on bare-metal.
+#if defined(__ARM_PCS_VFP) || defined(__ARM_FP)
+    strncat (message, ", with FP", sizeof (message) - strlen (message) - 1);
+#else
+    strncat (message, ", no FP", sizeof (message) - strlen (message) - 1);
+#endif
+#endif
+#if defined(__EXCEPTIONS)
+    strncat (message, ", with exceptions",
+             sizeof (message) - strlen (message) - 1);
+#else
+    strncat (message, ", no exceptions",
+             sizeof (message) - strlen (message) - 1);
+#endif
+#if defined(MICRO_OS_PLUS_DEBUG)
+    strncat (message, ", with MICRO_OS_PLUS_DEBUG",
+             sizeof (message) - strlen (message) - 1);
+#endif
+    strncat (message, "\n", sizeof (message) - strlen (message) - 1);
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wformat-nonliteral"
+#pragma GCC diagnostic ignored "-Wformat-security"
+
+    if (output_file_ != nullptr)
+      {
+        fprintf (output_file_, message, "");
+      }
+
+#if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) && defined(MICRO_OS_PLUS_TRACE))
+    if (verbosity == verbosity::normal || verbosity == verbosity::verbose)
+      {
+#if defined(__clang__) || defined(__GNUC__)
+        printf (message, " " __VERSION__);
+#else
+        printf (message, "");
+#endif
+      }
+#endif // !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
+
+#pragma GCC diagnostic pop
+  }
   /**
    * @details
    * This method flushes the output buffer of the `reporter` by
@@ -186,7 +344,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (std::string_view sv)
   {
-    out_.append (sv);
+    buffer_.append (sv);
     return *this;
   }
 
@@ -200,7 +358,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (char c)
   {
-    out_.append (1, c);
+    buffer_.append (1, c);
     return *this;
   }
 
@@ -215,7 +373,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (const char* s)
   {
-    out_.append (s);
+    buffer_.append (s);
     return *this;
   }
 
@@ -230,7 +388,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (char* s)
   {
-    out_.append (s);
+    buffer_.append (s);
     return *this;
   }
 
@@ -245,7 +403,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (bool v)
   {
-    out_.append (v ? "true" : "false");
+    buffer_.append (v ? "true" : "false");
     return *this;
   }
 
@@ -259,7 +417,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (std::nullptr_t)
   {
-    out_.append ("nullptr");
+    buffer_.append ("nullptr");
     return *this;
   }
 
@@ -274,8 +432,8 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (signed char c)
   {
-    out_.append (std::to_string (c));
-    out_.append ("c");
+    buffer_.append (std::to_string (c));
+    buffer_.append ("c");
     return *this;
   }
 
@@ -290,8 +448,8 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (unsigned char c)
   {
-    out_.append (std::to_string (static_cast<int> (c)));
-    out_.append ("uc");
+    buffer_.append (std::to_string (static_cast<int> (c)));
+    buffer_.append ("uc");
     return *this;
   }
 
@@ -306,8 +464,8 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (signed short v)
   {
-    out_.append (std::to_string (v));
-    out_.append ("s");
+    buffer_.append (std::to_string (v));
+    buffer_.append ("s");
     return *this;
   }
 
@@ -322,8 +480,8 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (unsigned short v)
   {
-    out_.append (std::to_string (static_cast<long> (v)));
-    out_.append ("us");
+    buffer_.append (std::to_string (static_cast<long> (v)));
+    buffer_.append ("us");
     return *this;
   }
 
@@ -338,7 +496,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (signed int v)
   {
-    out_.append (std::to_string (v));
+    buffer_.append (std::to_string (v));
     return *this;
   }
 
@@ -353,8 +511,8 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (unsigned int v)
   {
-    out_.append (std::to_string (v));
-    out_.append ("u");
+    buffer_.append (std::to_string (v));
+    buffer_.append ("u");
     return *this;
   }
 
@@ -369,8 +527,8 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (signed long v)
   {
-    out_.append (std::to_string (v));
-    out_.append ("l");
+    buffer_.append (std::to_string (v));
+    buffer_.append ("l");
     return *this;
   }
 
@@ -385,8 +543,8 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (unsigned long v)
   {
-    out_.append (std::to_string (v));
-    out_.append ("ul");
+    buffer_.append (std::to_string (v));
+    buffer_.append ("ul");
     return *this;
   }
 
@@ -401,8 +559,8 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (signed long long v)
   {
-    out_.append (std::to_string (v));
-    out_.append ("ll");
+    buffer_.append (std::to_string (v));
+    buffer_.append ("ll");
     return *this;
   }
 
@@ -417,8 +575,8 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (unsigned long long v)
   {
-    out_.append (std::to_string (v));
-    out_.append ("ull");
+    buffer_.append (std::to_string (v));
+    buffer_.append ("ull");
     return *this;
   }
 
@@ -433,8 +591,8 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (float v)
   {
-    out_.append (std::to_string (v));
-    out_.append ("f");
+    buffer_.append (std::to_string (v));
+    buffer_.append ("f");
     return *this;
   }
 
@@ -449,7 +607,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (double v)
   {
-    out_.append (std::to_string (v));
+    buffer_.append (std::to_string (v));
     return *this;
   }
 
@@ -465,8 +623,8 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (long double v)
   {
-    out_.append (std::to_string (v));
-    out_.append ("l");
+    buffer_.append (std::to_string (v));
+    buffer_.append ("l");
     return *this;
   }
 

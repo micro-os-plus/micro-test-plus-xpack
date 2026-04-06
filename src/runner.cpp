@@ -117,9 +117,6 @@ namespace micro_os_plus::micro_test_plus
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    argc_ = argc;
-    argv_ = argv;
-
 #if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) && defined(MICRO_OS_PLUS_TRACE))
 #if defined(MICRO_OS_PLUS_DEBUG)
     printf ("argv[");
@@ -142,6 +139,19 @@ namespace micro_os_plus::micro_test_plus
           {
             reporter_name = argv[i] + 11;
           }
+        else if (strcmp (argv[i], "--reporter") == 0)
+          {
+            if (i + 1 < argc)
+              {
+                reporter_name = argv[++i];
+              }
+            else
+              {
+                fprintf (stderr, "Error: --reporter option requires a "
+                                 "reporter name argument\n");
+                exit (1);
+              }
+          }
       }
 
     // Initialize and configure the reporter.
@@ -158,47 +168,6 @@ namespace micro_os_plus::micro_test_plus
         fprintf (stderr, "error: unknown reporter '%s'\n", reporter_name);
         exit (1);
       }
-
-      // ------------------------------------------------------------------------
-
-#if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) && defined(MICRO_OS_PLUS_TRACE))
-    if (reporter_->verbosity == verbosity::normal
-        || reporter_->verbosity == verbosity::verbose)
-      {
-        printf ("\n");
-
-        reporter_->output_comment_prefix ();
-
-#if defined(__clang__)
-        printf ("Built with clang " __VERSION__);
-#elif defined(__GNUC__)
-        printf ("Built with GCC " __VERSION__);
-#elif defined(_MSC_VER)
-        // https://docs.microsoft.com/en-us/cpp/preprocessor/predefined-macros?view=msvc-170
-        printf ("Built with MSVC %d", _MSC_VER);
-#else
-        printf ("Built with an unknown compiler");
-#endif
-#if !(defined(__APPLE__) || defined(__linux__) || defined(__unix__) \
-      || defined(WIN32))
-// This is relevant only on bare-metal.
-#if defined(__ARM_PCS_VFP) || defined(__ARM_FP)
-        printf (", with FP");
-#else
-        printf (", no FP");
-#endif
-#endif
-#if defined(__EXCEPTIONS)
-        printf (", with exceptions");
-#else
-        printf (", no exceptions");
-#endif
-#if defined(MICRO_OS_PLUS_DEBUG)
-        printf (", with MICRO_OS_PLUS_DEBUG");
-#endif
-        puts (".");
-      }
-#endif // !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
 
     // ------------------------------------------------------------------------
 

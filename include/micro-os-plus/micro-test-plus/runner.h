@@ -311,16 +311,6 @@ namespace micro_os_plus::micro_test_plus
      * @brief Pointer to the test reporter used for outputting test results.
      */
     std::unique_ptr<class reporter> reporter_;
-
-    /**
-     * @brief Stores the argument count passed to the test runner.
-     */
-    int argc_ = 0;
-
-    /**
-     * @brief Stores the argument vector passed to the test runner.
-     */
-    char** argv_ = nullptr;
   };
 
   // ==========================================================================

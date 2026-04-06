@@ -208,8 +208,8 @@ namespace micro_os_plus::micro_test_plus
     virtual void
     end_subtest (subtest& subtest) override;
 
-    virtual void
-    output_comment_prefix (void) override;
+    virtual const char*
+    get_comment_prefix (void) override;
 
   protected:
     /**

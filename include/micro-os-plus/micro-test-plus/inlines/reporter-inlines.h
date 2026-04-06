@@ -95,7 +95,7 @@ namespace micro_os_plus::micro_test_plus
   {
     char buff[20];
     snprintf (buff, sizeof (buff), "%p", reinterpret_cast<void*> (v));
-    out_.append (buff);
+    buffer_.append (buff);
 
     return *this;
   }
@@ -136,7 +136,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (const type_traits::genuine_integral_value<T>& v)
   {
-    out_.append (std::to_string (static_cast<long long> (v.get ())));
+    buffer_.append (std::to_string (static_cast<long long> (v.get ())));
     return *this;
   }
 

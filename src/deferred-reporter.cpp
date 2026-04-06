@@ -94,7 +94,7 @@ namespace micro_os_plus::micro_test_plus
       if (abort_ && !value_)
         {
           printf ("\n");
-          subtest_.reporter ().output ();
+          subtest_.reporter ().write_buffer_to_stdout ();
           abort ();
         }
     }

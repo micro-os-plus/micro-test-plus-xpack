@@ -668,7 +668,10 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     void
-    output (void);
+    write_buffer_to_stdout (void);
+
+    void
+    write_buffer_to_file (void);
 
     /**
      * @brief Flush the current buffered content.
@@ -776,12 +779,15 @@ namespace micro_os_plus::micro_test_plus
     virtual void
     end_subtest (subtest& subtest) = 0;
 
-    virtual void
-    output_comment_prefix (void) = 0;
+    virtual const char*
+    get_comment_prefix (void) = 0;
 
     // ------------------------------------------------------------------------
 
   protected:
+    void
+    write_info (void);
+
     /**
      * @brief Outputs the prefix for a passing condition.
      *
@@ -845,7 +851,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Internal output buffer for accumulating report content.
      */
-    std::string out_{};
+    std::string buffer_{};
 
     /**
      * @brief Controls whether to add an empty line between successful test
@@ -855,6 +861,26 @@ namespace micro_os_plus::micro_test_plus
      * Used to nicely format the output.
      */
     bool add_empty_line_{ true };
+
+    /**
+     * @brief Optional output file for redirecting test report output.
+     *
+     * @details
+     * When non-null, all output is written to this file instead of
+     * standard output. The reporter does not own the file; the caller
+     * is responsible for its lifetime.
+     */
+    FILE* output_file_{ nullptr };
+
+    /**
+     * @brief Stores the argument count passed to the test runner.
+     */
+    int argc_ = 0;
+
+    /**
+     * @brief Stores the argument vector passed to the test runner.
+     */
+    char** argv_ = nullptr;
   };
 
   // --------------------------------------------------------------------------

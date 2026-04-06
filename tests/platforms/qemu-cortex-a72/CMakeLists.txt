@@ -33,7 +33,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
       qemu-system-aarch64${extension} --machine virt --cpu cortex-a72 --kernel
       empty-test.elf -smp 1 --nographic -d unimp,guest_errors
       --semihosting-config
-      enable=on,target=native,arg=empty-test,arg=one,arg=two
+      enable=on,target=native,arg=empty-test,arg=one,arg=two,arg=--output-file,arg=empty-test.tap
   )
 endif ()
 
@@ -51,7 +51,25 @@ if (XPACK_ENABLE_MINIMAL_TEST)
       qemu-system-aarch64${extension} --machine virt --cpu cortex-a72 --kernel
       minimal-test.elf -smp 1 --nographic -d unimp,guest_errors
       --semihosting-config
-      enable=on,target=native,arg=minimal-test,arg=one,arg=two
+      enable=on,target=native,arg=minimal-test,arg=one,arg=two,arg=--output-file,arg=minimal-test.tap
+  )
+endif ()
+
+# -----------------------------------------------------------------------------
+
+if (XPACK_ENABLE_SUITE_TEST)
+  add_cross_test_executable (suite-test)
+  target_link_cross_test_libraries (suite-test test::suite)
+
+  message (VERBOSE "A> suite-test")
+
+  add_test (
+    NAME "suite-test"
+    COMMAND
+      qemu-system-aarch64${extension} --machine virt --cpu cortex-a72 --kernel
+      suite-test.elf -smp 1 --nographic -d unimp,guest_errors
+      --semihosting-config
+      enable=on,target=native,arg=suite-test,arg=one,arg=two,arg=--output-file,arg=suite-test.tap
   )
 endif ()
 
@@ -69,7 +87,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
       qemu-system-aarch64${extension} --machine virt --cpu cortex-a72 --kernel
       sample-test.elf -smp 1 --nographic -d unimp,guest_errors
       --semihosting-config
-      enable=on,target=native,arg=sample-test,arg=one,arg=two
+      enable=on,target=native,arg=sample-test,arg=one,arg=two,arg=--output-file,arg=sample-test.tap
   )
 endif ()
 

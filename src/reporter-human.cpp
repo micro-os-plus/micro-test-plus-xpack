@@ -88,7 +88,7 @@ namespace micro_os_plus::micro_test_plus
   reporter_human&
   reporter_human::operator<< (indent_t m)
   {
-    out_.append (m.level * indent_size, ' ');
+    buffer_.append (m.level * indent_size, ' ');
     return *this;
   }
 
@@ -103,7 +103,17 @@ namespace micro_os_plus::micro_test_plus
 
     if (verbosity != verbosity::silent)
       {
-        printf ("\nµTest++ human report\n");
+        if (output_file_ != nullptr)
+          {
+            fprintf (output_file_, "warning: output file specified but not "
+                                   "supported by human reporter\n");
+            fclose (output_file_);
+            output_file_ = nullptr;
+          }
+
+        printf ("\n");
+        write_info ();
+        printf ("µTest++ human report\n");
 
         flush ();
       }
@@ -252,7 +262,7 @@ namespace micro_os_plus::micro_test_plus
               {
                 // With verbosity, show full TAP output accumulated in the
                 // buffer.
-                output ();
+                write_buffer_to_stdout ();
               }
 
 #pragma GCC diagnostic push
@@ -276,7 +286,7 @@ namespace micro_os_plus::micro_test_plus
 
             // Show full TAP output accumulated in the buffer for failed suite
             // cases, as it may contain useful information about the failure.
-            output ();
+            write_buffer_to_stdout ();
 
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -300,7 +310,7 @@ namespace micro_os_plus::micro_test_plus
     flush ();
 
     // Clear residual content when less verbose.
-    out_.clear ();
+    buffer_.clear ();
 
     add_empty_line_ = true;
   }
@@ -330,11 +340,11 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    if (!out_.empty ())
+    if (!buffer_.empty ())
       {
         // Each suite should start with an empty buffer.
         printf ("Buffer not empty at the beginning of a test case:\n%s\n",
-                out_.c_str ());
+                buffer_.c_str ());
         abort ();
       }
 
@@ -412,7 +422,7 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
 
-                output ();
+                write_buffer_to_stdout ();
 
                 printf ("%s%s✓%s %s - passed (%zu check%s)\n", indent.c_str (),
                         colors_.pass, colors_.none, subtest.name (),
@@ -446,7 +456,7 @@ namespace micro_os_plus::micro_test_plus
             // Show full TAP output accumulated in the buffer for failed
             // subtests, as it may contain useful information about the
             // failure.
-            output ();
+            write_buffer_to_stdout ();
 
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -470,14 +480,15 @@ namespace micro_os_plus::micro_test_plus
     flush ();
 
     // Clear residual content when less verbose.
-    out_.clear ();
+    buffer_.clear ();
   }
 
   // --------------------------------------------------------------------------
 
-  void
-  reporter_human::output_comment_prefix (void)
+  const char*
+  reporter_human::get_comment_prefix (void)
   {
+    return "";
   }
 
   /**
