@@ -124,9 +124,9 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * This function template provides a constexpr implementation for raising a
      * base value to a given exponent, supporting any types that allow
-     * multiplication and subtraction.
+     * multiplication.
      *
-     * The function recursively multiplies the base by itself exponent times.
+     * The function iteratively multiplies the base by itself exponent times.
      * If the exponent is zero, the function returns one (the multiplicative
      * identity for the type).
      *
@@ -138,8 +138,10 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] constexpr auto
     pow (const T base, const Exp_T exp) -> T
     {
-      // If the exponent is 0, return 1, otherwise recurse.
-      return exp ? T (base * pow (base, exp - Exp_T (1))) : T (1);
+      T result{ 1 };
+      for (Exp_T i{}; i < exp; ++i)
+        result *= base;
+      return result;
     }
 
     /**
