@@ -122,7 +122,6 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
-#if 1
   /**
    * @details
    * This operator overload enables the `reporter` to output any type that is
@@ -146,7 +145,6 @@ namespace micro_os_plus::micro_test_plus
     *this << detail::get (t);
     return *this;
   }
-#endif
 
   /**
    * @details
