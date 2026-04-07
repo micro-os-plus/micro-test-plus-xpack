@@ -271,15 +271,6 @@ namespace micro_os_plus::micro_test_plus
     operator<< (const char* s);
 
     /**
-     * @brief Output operator for a mutable character string.
-     *
-     * @param s The string to output.
-     * @return Reference to the current reporter instance.
-     */
-    reporter&
-    operator<< (char* s);
-
-    /**
      * @brief Output operator for boolean values.
      *
      * @param v The boolean value to output.

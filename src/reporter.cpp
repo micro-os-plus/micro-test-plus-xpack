@@ -378,21 +378,6 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This operator overload appends the contents of the provided modifiable
-   * C-style string to the internal output buffer of the `reporter`. It
-   * enables efficient streaming of mutable string data into the reporter,
-   * supporting clear and flexible formatting of test output across all test
-   * cases and folders.
-   */
-  reporter&
-  reporter::operator<< (char* s)
-  {
-    buffer_.append (s);
-    return *this;
-  }
-
-  /**
-   * @details
    * This operator overload appends the string representation of the specified
    * boolean value to the internal output buffer of the `reporter`. It
    * enables clear and direct streaming of boolean results into the reporter,
