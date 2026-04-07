@@ -192,12 +192,6 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
     // Getters.
 
-    [[nodiscard]] constexpr const char*
-    name (void) const
-    {
-      return name_;
-    }
-
     [[nodiscard]] virtual size_t
     total_suites_count (void) const;
 
