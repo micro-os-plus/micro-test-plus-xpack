@@ -116,8 +116,23 @@ namespace micro_os_plus::micro_test_plus
       return executed_subtests_;
     }
 
-    [[nodiscard]] bool
-    was_successful (void) const;
+    /**
+     * @brief Checks whether all executed checks were successful.
+     *
+     * @par Parameters
+     *	None.
+     * @retval true  No checks failed.
+     * @retval false At least one check failed.
+     *
+     * @details
+     * A runner with no checks at all is considered successful, as it
+     * did not fail any check.
+     */
+    [[nodiscard]] constexpr bool
+    was_successful (void) const noexcept
+    {
+      return failed_checks_ == 0;
+    }
 
   protected:
     /**

@@ -71,15 +71,6 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
-  bool
-  runner_totals::was_successful (void) const
-  {
-    // Initially it also failed if there were no checks, but it is more
-    // intuitive to consider it successful if there were no checks, as it did
-    // not fail any check.
-    return failed_checks_ == 0;
-  }
-
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
 
