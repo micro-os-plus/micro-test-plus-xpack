@@ -229,116 +229,87 @@ namespace micro_os_plus::micro_test_plus
   void
   reporter::write_info (void)
   {
-    char message[220];
-
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
-#endif
-
     if (argc_ > 0)
       {
-        message[0] = '\0';
-
-        strncat (message, get_comment_prefix (),
-                 sizeof (message) - strlen (message) - 1);
-
-        strncat (message,
-                 "Running: ", sizeof (message) - strlen (message) - 1);
+        std::string line;
+        line.reserve (256);
+        line.append (get_comment_prefix ());
+        line.append ("Running: ");
 
         // Append only the file name part of argv[0].
         const char* slash = strrchr (argv_[0], '/');
-        const char* prog = (slash != nullptr) ? slash + 1 : argv_[0];
-        strncat (message, prog, sizeof (message) - strlen (message) - 1);
+        line.append ((slash != nullptr) ? slash + 1 : argv_[0]);
 
         for (int i = 1; i < argc_; ++i)
           {
-            strncat (message, " ", sizeof (message) - strlen (message) - 1);
-            strncat (message, argv_[i],
-                     sizeof (message) - strlen (message) - 1);
+            line.append (" ");
+            line.append (argv_[i]);
           }
+        line.append ("\n");
 
         if (output_file_ != nullptr)
-          {
-            fprintf (output_file_, "%s\n", message);
-          }
+          fprintf (output_file_, "%s", line.c_str ());
 
 #if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) && defined(MICRO_OS_PLUS_TRACE))
         if (verbosity == verbosity::normal || verbosity == verbosity::verbose)
-          {
-            printf ("%s\n", message);
-          }
+          printf ("%s", line.c_str ());
 #endif // !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
       }
 
-    message[0] = '\0';
-    strncat (message, get_comment_prefix (),
-             sizeof (message) - strlen (message) - 1);
-
-#if defined(__clang__)
-    strncat (message, "Built with clang%s",
-             sizeof (message) - strlen (message) - 1);
-#elif defined(__GNUC__)
-    strncat (message, "Built with GCC%s",
-             sizeof (message) - strlen (message) - 1);
-#elif defined(_MSC_VER)
-    // https://docs.microsoft.com/en-us/cpp/preprocessor/predefined-macros?view=msvc-170
     {
-      char msvc_ver[16];
-      snprintf (msvc_ver, sizeof (msvc_ver), "%d", _MSC_VER);
-      strncat (message, "Built with MSVC%s",
-               sizeof (message) - strlen (message) - 1);
-      strncat (message, msvc_ver, sizeof (message) - strlen (message) - 1);
-    }
+      // Build the "Built with ..." line. For the output file the compiler
+      // version is omitted; for stdout it is appended via __VERSION__.
+      std::string line;
+      line.reserve (256);
+      line.append (get_comment_prefix ());
+      line.append ("Built with ");
+#if defined(__clang__)
+      line.append ("clang");
+#elif defined(__GNUC__)
+      line.append ("GCC");
+#elif defined(_MSC_VER)
+      {
+        char msvc_ver[16];
+        snprintf (msvc_ver, sizeof (msvc_ver), "%d", _MSC_VER);
+        line.append ("MSVC");
+        line.append (msvc_ver);
+      }
 #else
-    strncat (message, "Built with an unknown compiler%s ",
-             sizeof (message) - strlen (message) - 1);
+      line.append ("an unknown compiler");
 #endif
 #if !(defined(__APPLE__) || defined(__linux__) || defined(__unix__) \
       || defined(WIN32))
-// This is relevant only on bare-metal.
+      // This is relevant only on bare-metal.
 #if defined(__ARM_PCS_VFP) || defined(__ARM_FP)
-    strncat (message, ", with FP", sizeof (message) - strlen (message) - 1);
+      line.append (", with FP");
 #else
-    strncat (message, ", no FP", sizeof (message) - strlen (message) - 1);
+      line.append (", no FP");
 #endif
 #endif
 #if defined(__EXCEPTIONS)
-    strncat (message, ", with exceptions",
-             sizeof (message) - strlen (message) - 1);
+      line.append (", with exceptions");
 #else
-    strncat (message, ", no exceptions",
-             sizeof (message) - strlen (message) - 1);
+      line.append (", no exceptions");
 #endif
 #if defined(MICRO_OS_PLUS_DEBUG)
-    strncat (message, ", with MICRO_OS_PLUS_DEBUG",
-             sizeof (message) - strlen (message) - 1);
+      line.append (", with MICRO_OS_PLUS_DEBUG");
 #endif
-    strncat (message, "\n", sizeof (message) - strlen (message) - 1);
 
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wformat-nonliteral"
-#pragma GCC diagnostic ignored "-Wformat-security"
-
-    if (output_file_ != nullptr)
-      {
-        fprintf (output_file_, message, "");
-      }
+      if (output_file_ != nullptr)
+        fprintf (output_file_, "%s\n", line.c_str ());
 
 #if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) && defined(MICRO_OS_PLUS_TRACE))
-    if (verbosity == verbosity::normal || verbosity == verbosity::verbose)
-      {
+      if (verbosity == verbosity::normal || verbosity == verbosity::verbose)
+        {
 #if defined(__clang__) || defined(__GNUC__)
-        printf (message, " " __VERSION__);
-#else
-        printf (message, "");
+          line.append (" ");
+          line.append (__VERSION__);
 #endif
-      }
+          line.append ("\n");
+          printf ("%s", line.c_str ());
+        }
 #endif // !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
-
-#pragma GCC diagnostic pop
-
-#pragma GCC diagnostic pop
+    }
   }
   /**
    * @details
