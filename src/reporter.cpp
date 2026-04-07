@@ -49,6 +49,8 @@
 
 #include <micro-os-plus/micro-test-plus.h>
 
+#include <charconv>
+
 // ----------------------------------------------------------------------------
 
 #pragma GCC diagnostic ignored "-Waggregate-return"
@@ -57,6 +59,21 @@
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
 #endif
+
+// =============================================================================
+
+namespace
+{
+  template <class T>
+  void
+  append_number (std::string& buffer, const T v)
+  {
+    char buf[32];
+    const auto [ptr, ec] = std::to_chars (buf, buf + sizeof (buf), v);
+    if (ec == std::errc{})
+      buffer.append (buf, ptr);
+  }
+} // namespace
 
 // =============================================================================
 
@@ -132,8 +149,8 @@ namespace micro_os_plus::micro_test_plus
           }
       }
 
-      // Pre-allocate buffer to reduce dynamic allocations.
-      buffer_.reserve (128); 
+    // Pre-allocate buffer to reduce dynamic allocations.
+    buffer_.reserve (128);
   }
 
   reporter::~reporter ()
@@ -454,7 +471,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (signed char c)
   {
-    buffer_.append (std::to_string (c));
+    append_number (buffer_, c);
     buffer_.append ("c");
     return *this;
   }
@@ -470,7 +487,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (unsigned char c)
   {
-    buffer_.append (std::to_string (static_cast<int> (c)));
+    append_number (buffer_, c);
     buffer_.append ("uc");
     return *this;
   }
@@ -486,7 +503,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (signed short v)
   {
-    buffer_.append (std::to_string (v));
+    append_number (buffer_, v);
     buffer_.append ("s");
     return *this;
   }
@@ -502,7 +519,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (unsigned short v)
   {
-    buffer_.append (std::to_string (static_cast<long> (v)));
+    append_number (buffer_, v);
     buffer_.append ("us");
     return *this;
   }
@@ -518,7 +535,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (signed int v)
   {
-    buffer_.append (std::to_string (v));
+    append_number (buffer_, v);
     return *this;
   }
 
@@ -533,7 +550,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (unsigned int v)
   {
-    buffer_.append (std::to_string (v));
+    append_number (buffer_, v);
     buffer_.append ("u");
     return *this;
   }
@@ -549,7 +566,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (signed long v)
   {
-    buffer_.append (std::to_string (v));
+    append_number (buffer_, v);
     buffer_.append ("l");
     return *this;
   }
@@ -565,7 +582,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (unsigned long v)
   {
-    buffer_.append (std::to_string (v));
+    append_number (buffer_, v);
     buffer_.append ("ul");
     return *this;
   }
@@ -581,7 +598,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (signed long long v)
   {
-    buffer_.append (std::to_string (v));
+    append_number (buffer_, v);
     buffer_.append ("ll");
     return *this;
   }
@@ -597,7 +614,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (unsigned long long v)
   {
-    buffer_.append (std::to_string (v));
+    append_number (buffer_, v);
     buffer_.append ("ull");
     return *this;
   }
@@ -613,7 +630,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (float v)
   {
-    buffer_.append (std::to_string (v));
+    append_number (buffer_, v);
     buffer_.append ("f");
     return *this;
   }
@@ -629,7 +646,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (double v)
   {
-    buffer_.append (std::to_string (v));
+    append_number (buffer_, v);
     return *this;
   }
 
@@ -645,7 +662,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (long double v)
   {
-    buffer_.append (std::to_string (v));
+    append_number (buffer_, v);
     buffer_.append ("l");
     return *this;
   }
