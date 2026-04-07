@@ -335,7 +335,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam T The type to be checked.
      */
     template <class T>
-    concept has_npos = requires (T t) { t.npos; };
+    concept has_npos = requires { T::npos; };
 
     /**
      * @brief C++20 concept satisfied when `T` provides a `value` member.
