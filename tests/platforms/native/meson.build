@@ -209,28 +209,28 @@ if xpack_enable_unit_test
   test(
     'unit-test',
     unit_test,
-    args: ['--verbose'],
+    args: ['--verbose', '--reporter', 'human'],
     env: xpack_environment
   )
 
   test(
     'unit-test',
     unit_test,
-    args: [],
+    args: ['--reporter', 'human'],
     env: xpack_environment
   )
 
   test(
     'unit-test',
     unit_test,
-    args: ['--quiet'],
+    args: ['--quiet', '--reporter', 'human'],
     env: xpack_environment
   )
 
   test(
     'unit-test',
     unit_test,
-    args: ['--silent'],
+    args: ['--silent', '--reporter', 'human'],
     env: xpack_environment
   )
 endif

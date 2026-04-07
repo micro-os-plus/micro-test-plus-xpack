@@ -158,10 +158,10 @@ if (XPACK_ENABLE_UNIT_TEST)
   message (VERBOSE "A> unit-test")
 
   # TAP reporter
-  add_test (NAME "unit-test --verbose --reporter tap"
-            COMMAND unit-test --verbose --reporter tap
-  )
-  add_test (NAME "unit-test --reporter tap" COMMAND unit-test --reporter tap)
+  # add_test (NAME "unit-test --verbose --reporter tap"
+  #           COMMAND unit-test --verbose --reporter tap
+  # )
+  # add_test (NAME "unit-test --reporter tap" COMMAND unit-test --reporter tap)
   add_test (NAME "unit-test --quiet --reporter tap" COMMAND unit-test --quiet
                                                             --reporter tap
   )

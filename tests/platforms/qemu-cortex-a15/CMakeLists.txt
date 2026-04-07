@@ -104,7 +104,7 @@ if (XPACK_ENABLE_UNIT_TEST)
     COMMAND
       qemu-system-arm${extension} --machine virt --cpu cortex-a15 --kernel
       unit-test.elf --nographic -smp 1 -d unimp,guest_errors
-      --semihosting-config enable=on,target=native,arg=unit-test
+      --semihosting-config enable=on,target=native,arg=unit-test,arg=--reporter,arg=human
   )
 endif ()
 

@@ -100,7 +100,7 @@ if (XPACK_ENABLE_UNIT_TEST)
     COMMAND
       qemu-system-arm${extension} --machine mps2-an385 --cpu cortex-m3 --kernel
       unit-test.elf --nographic -d unimp,guest_errors --semihosting-config
-      enable=on,target=native,arg=unit-test
+      enable=on,target=native,arg=unit-test,arg=--reporter,arg=human
     # --semihosting-config arg=--verbose
   )
 endif ()
