@@ -64,6 +64,7 @@
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
+#pragma clang diagnostic ignored "-Wc++20-compat"
 #endif
 #endif
 
@@ -156,7 +157,7 @@ namespace micro_os_plus::micro_test_plus
      * conversion from character sequences to integral values.
      */
     template <class T, char... Cs>
-    [[nodiscard]] constexpr auto
+    [[nodiscard]] consteval auto
     num (void) -> T
     {
       // Assume all are digits or dot or apostrophe.
@@ -196,7 +197,7 @@ namespace micro_os_plus::micro_test_plus
      * values.
      */
     template <class T, char... Cs>
-    [[nodiscard]] constexpr auto
+    [[nodiscard]] consteval auto
     den (void) -> T
     {
       constexpr const std::array cs{ Cs... };
@@ -229,7 +230,7 @@ namespace micro_os_plus::micro_test_plus
      * determination of decimal precision from character sequences.
      */
     template <class T, char... Cs>
-    [[nodiscard]] constexpr auto
+    [[nodiscard]] consteval auto
     den_size (void) -> T
     {
       constexpr const std::array cs{ Cs... };

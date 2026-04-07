@@ -64,6 +64,7 @@
 #pragma GCC diagnostic ignored "-Wconversion"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
+#pragma clang diagnostic ignored "-Wc++20-compat"
 #endif
 #endif
 
@@ -150,7 +151,7 @@ namespace micro_os_plus::micro_test_plus
      * @return The parsed integral value of type \c T.
      */
     template <class T, char... Cs>
-    [[nodiscard]] constexpr auto
+    [[nodiscard]] consteval auto
     num (void) -> T;
 
     /**
@@ -165,7 +166,7 @@ namespace micro_os_plus::micro_test_plus
      * @return The parsed decimal part as an integral value of type \c T.
      */
     template <class T, char... Cs>
-    [[nodiscard]] constexpr auto
+    [[nodiscard]] consteval auto
     den (void) -> T;
 
     /**
@@ -180,7 +181,7 @@ namespace micro_os_plus::micro_test_plus
      * @return The number of decimal places as a value of type \c T.
      */
     template <class T, char... Cs>
-    [[nodiscard]] constexpr auto
+    [[nodiscard]] consteval auto
     den_size (void) -> T;
 
     /**
