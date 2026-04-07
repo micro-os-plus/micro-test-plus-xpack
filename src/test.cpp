@@ -116,8 +116,6 @@ namespace micro_os_plus::micro_test_plus
     printf ("%s '%s' %zu\n", __PRETTY_FUNCTION__, name, own_index_);
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
-
-    name_ = name;
   }
 
   /**
