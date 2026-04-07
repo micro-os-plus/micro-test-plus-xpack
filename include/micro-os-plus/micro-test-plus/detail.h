@@ -141,93 +141,26 @@ namespace micro_os_plus::micro_test_plus
      * @return The value obtained via the relevant getter implementation.
      *
      * @details
-     * The `get` function template invokes the appropriate getter
-     * implementation to retrieve the value from the provided object or type.
-     * This function ensures consistent access to values for both custom and
-     * standard types within the framework.
+     * The `get` function template retrieves the value from the provided
+     * object or type. If the type provides a `get()` member function, it
+     * is invoked; otherwise the argument itself is returned unchanged.
      *
-     * The primary implementation attempts to invoke a `get()` method if it
-     * exists, which is recommended for user-defined types to ensure consistent
-     * value access. If the type does not provide a `get()` method, the
-     * fallback variadic implementation simply returns the original argument.
-     *
-     * The `get` function template delegates to these implementations, enabling
-     * seamless support for a wide range of types in test expressions and
-     * comparators.
+     * The selection is performed at compile time using `if constexpr` and
+     * an inline `requires` expression, replacing the classic two-overload
+     * SFINAE dispatch that was used prior to C++20.
      *
      * All definitions are intended for internal use within the framework and
      * are implemented in the `include/micro-os-plus/micro-test-plus` folder to
      * maintain a structured and modular codebase.
      */
     template <class T>
-    [[nodiscard]] constexpr auto
-    get_impl (const T& t, int) -> decltype (t.get ())
-    {
-      return t.get ();
-    }
-
-    /**
-     * @brief Fallback variadic getter function template.
-     *
-     * @tparam T The type from which the value is to be retrieved.
-     *
-     * @param t The object or value to be accessed.
-     * @return The original argument `t`.
-     *
-     * @details
-     * The `get_impl` function template serves as a fallback mechanism for
-     * value retrieval when the provided type does not implement a `get()`
-     * member function. It simply returns the first argument, discarding any
-     * additional parameters.
-     *
-     * This approach ensures that both custom types (with a `get()` method) and
-     * standard types (without a `get()` method) are supported seamlessly
-     * within the framework's generic getter utilities.
-     *
-     * All definitions are intended for internal use within the framework and
-     * are implemented in the `include/micro-os-plus/micro-test-plus` folder to
-     * maintain a structured and modular codebase.
-     */
-    template <class T>
-    [[nodiscard]] constexpr auto
-    get_impl (const T& t, ...) -> decltype (auto)
-    {
-      return t;
-    }
-
-    /**
-     * @brief Generic getter function template for value retrieval.
-     *
-     * @tparam T The type from which the value is to be retrieved.
-     *
-     * @param t The object or value to be accessed.
-     * @return The value obtained via the relevant getter implementation.
-     *
-     * @details
-     * The `get` function template invokes the appropriate getter
-     * implementation to retrieve the value from the provided object or type.
-     * This function ensures consistent access to values for both custom and
-     * standard types within the framework.
-     *
-     * The primary implementation attempts to invoke a `get()` method if it
-     * exists, which is recommended for user-defined types to ensure consistent
-     * value access. If the type does not provide a `get()` method, the
-     * fallback variadic implementation simply returns the original argument.
-     *
-     * The `get` function template delegates to these implementations, enabling
-     * seamless support for a wide range of types in test expressions and
-     * comparators.
-     *
-     * All definitions are intended for internal use within the framework and
-     * are implemented in the `include/micro-os-plus/micro-test-plus` folder to
-     * maintain a structured and modular codebase.
-     */
-    template <class T>
-    [[nodiscard]] constexpr auto
+    [[nodiscard]] constexpr decltype (auto)
     get (const T& t)
     {
-      // Call the variadic function, basically to force it return `t`.
-      return get_impl<T> (t, 0);
+      if constexpr (requires { t.get (); })
+        return t.get ();
+      else
+        return t;
     }
 
     // ------------------------------------------------------------------------
