@@ -137,9 +137,9 @@ namespace micro_os_plus::micro_test_plus
    * @endcode
    */
 
-  template <class Expr_T, type_traits::requires_t<
-                              type_traits::is_op_v<Expr_T>
-                              or type_traits::is_convertible_v<Expr_T, bool>>>
+  template <class Expr_T>
+    requires (type_traits::is_op_v<Expr_T>
+              or type_traits::is_convertible_v<Expr_T, bool>)
   constexpr auto
   expect (const Expr_T& expr, const reflection::source_location& sl)
   {
@@ -170,9 +170,9 @@ namespace micro_os_plus::micro_test_plus
    * mt::assume(compute_answer() == 42) << "answer is 42";
    * @endcode
    */
-  template <class Expr_T, type_traits::requires_t<
-                              type_traits::is_op_v<Expr_T>
-                              or type_traits::is_convertible_v<Expr_T, bool>>>
+  template <class Expr_T>
+    requires (type_traits::is_op_v<Expr_T>
+              or type_traits::is_convertible_v<Expr_T, bool>)
   constexpr auto
   assume (const Expr_T& expr, const reflection::source_location& sl)
   {

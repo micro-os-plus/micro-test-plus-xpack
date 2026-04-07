@@ -154,9 +154,9 @@ namespace micro_os_plus::micro_test_plus
    * contents, making it easier to interpret test results and debug issues
    * involving collections of values.
    */
-  template <class T,
-            type_traits::requires_t<type_traits::is_container_v<T>
-                                    and not type_traits::has_npos_v<T>>>
+  template <class T>
+    requires (type_traits::is_container_v<T>
+              and not type_traits::has_npos_v<T>)
   reporter&
   reporter::operator<< (T&& t)
   {
