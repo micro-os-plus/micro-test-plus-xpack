@@ -464,7 +464,7 @@ namespace micro_os_plus::micro_test_plus
       requires (type_traits::container_like<T>
                 and not type_traits::has_npos<T>)
     reporter&
-    operator<< (T&& t);
+    operator<< (const T& t);
 
     /**
      * @brief Output operator to display eq() expressions.

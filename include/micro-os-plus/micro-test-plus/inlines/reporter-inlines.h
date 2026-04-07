@@ -185,7 +185,7 @@ namespace micro_os_plus::micro_test_plus
   template <class T>
     requires (type_traits::container_like<T> and not type_traits::has_npos<T>)
   reporter&
-  reporter::operator<< (T&& t)
+  reporter::operator<< (const T& t)
   {
     *this << '{';
     auto first = true;
