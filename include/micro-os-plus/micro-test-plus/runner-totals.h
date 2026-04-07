@@ -119,9 +119,6 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] bool
     was_successful (void) const;
 
-    [[nodiscard]] bool
-    is_unused (void) const;
-
   protected:
     /**
      * @brief Total number of successful checks.

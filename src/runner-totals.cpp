@@ -80,13 +80,6 @@ namespace micro_os_plus::micro_test_plus
     return failed_checks_ == 0;
   }
 
-  [[nodiscard]] bool
-  runner_totals::is_unused (void) const
-  {
-    return failed_checks_ == 0 && successful_checks_ == 0
-           && executed_subtests_ == 0;
-  }
-
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
 

@@ -195,24 +195,6 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] virtual size_t
     total_suites_count (void) const;
 
-    [[nodiscard]] class top_suite&
-    top_suite (void)
-    {
-      return top_suite_;
-    }
-
-    [[nodiscard]] size_t
-    current_suite_index () const
-    {
-      return suite_index_;
-    }
-
-    size_t
-    increment_suite_index ()
-    {
-      return ++suite_index_;
-    }
-
     /**
      * @brief Returns a reference to the test reporter.
      *
@@ -225,19 +207,6 @@ namespace micro_os_plus::micro_test_plus
     reporter (void) const
     {
       return *reporter_;
-    }
-
-    /**
-     * @brief Returns a reference to the vector of child test suites.
-     *
-     * @par Parameters
-     *	 None.
-     * @return Reference to the vector of child test suites.
-     */
-    [[nodiscard]] std::vector<std::unique_ptr<class suite>>&
-    suites (void)
-    {
-      return children_suites_;
     }
 
   protected:
@@ -323,19 +292,6 @@ namespace micro_os_plus::micro_test_plus
     virtual ~static_runner () override;
 
     // ------------------------------------------------------------------------
-
-    /**
-     * @brief Returns a pointer to the vector of registered static test suites.
-     *
-     * @par Parameters
-     *	 None.
-     * @return Pointer to the vector of registered static test suites.
-     */
-    [[nodiscard]] std::vector<static_suite*>*
-    static_suites (void) const
-    {
-      return static_children_suites_;
-    }
 
     /**
      * @brief Registers a static test suite with the runner.
