@@ -55,6 +55,7 @@
 // ----------------------------------------------------------------------------
 
 #include "math.h"
+#include <utility>
 
 // ----------------------------------------------------------------------------
 
@@ -317,27 +318,24 @@ namespace micro_os_plus::micro_test_plus
     };
 
     /**
-     * @brief Utility function template to simulate std::declval for type
-     * deduction.
+     * @brief Checks whether a given expression is valid for the supplied
+     * type arguments.
      *
-     * @tparam T The type for which an rvalue reference is required.
+     * @tparam Ts    The type arguments to pass to the expression.
+     * @tparam Expr_T The type of the callable expression to test.
      *
-     * @par Parameters
-     *	 None.
-     * @return An rvalue reference to type `T`.
+     * @param expr A callable that uses the type arguments in an unevaluated
+     *             context (e.g., inside `decltype`).
+     * @retval true The expression is well-formed for `Ts...`.
      *
      * @details
-     * The `declval` function template provides a mechanism for obtaining an
-     * rvalue reference to a type `T` without requiring an actual object. This
-     * is primarily used in unevaluated contexts, such as within `decltype`, to
-     * deduce types during template metaprogramming in the µTest++ framework.
+     * Uses SFINAE to test whether applying `expr` to `std::declval<Ts...>()`
+     * is a valid expression. The complementary variadic overload returns
+     * `false` when the primary overload is not selected.
      */
-    template <class T>
-    T&&
-    declval (void);
     template <class... Ts, class Expr_T>
     constexpr auto
-    is_valid (Expr_T expr) -> decltype (expr (declval<Ts...> ()), bool ())
+    is_valid (Expr_T expr) -> decltype (expr (std::declval<Ts...> ()), bool ())
     {
       return true;
     }
@@ -560,7 +558,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class From, class To>
     constexpr auto
-    is_convertible (int n) -> decltype (bool (To (declval<From> ())))
+    is_convertible (int n) -> decltype (bool (To (std::declval<From> ())))
     {
       (void)n; // Prevent the unused parameter warning.
       return true;
