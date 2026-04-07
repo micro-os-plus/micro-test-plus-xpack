@@ -64,6 +64,10 @@
 
 namespace
 {
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
+#endif
   template <class T>
   void
   append_number (std::string& buffer, const T v)
@@ -73,6 +77,7 @@ namespace
     if (ec == std::errc{})
       buffer.append (buf, ptr);
   }
+#pragma GCC diagnostic pop
 } // namespace
 
 // =============================================================================
@@ -226,6 +231,10 @@ namespace micro_os_plus::micro_test_plus
       }
   }
 
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
+#endif
   void
   reporter::write_info (void)
   {
@@ -237,8 +246,10 @@ namespace micro_os_plus::micro_test_plus
         line.append ("Running: ");
 
         // Append only the file name part of argv[0].
-        const char* slash = strrchr (argv_[0], '/');
-        line.append ((slash != nullptr) ? slash + 1 : argv_[0]);
+        const std::string_view arg0{ argv_[0] };
+        const auto sep = arg0.rfind ('/');
+        line.append ((sep != std::string_view::npos) ? arg0.substr (sep + 1)
+                                                     : arg0);
 
         for (int i = 1; i < argc_; ++i)
           {
@@ -268,12 +279,7 @@ namespace micro_os_plus::micro_test_plus
 #elif defined(__GNUC__)
       line.append ("GCC");
 #elif defined(_MSC_VER)
-      {
-        char msvc_ver[16];
-        snprintf (msvc_ver, sizeof (msvc_ver), "%d", _MSC_VER);
-        line.append ("MSVC");
-        line.append (msvc_ver);
-      }
+      line.append ("MSVC");
 #else
       line.append ("an unknown compiler");
 #endif
@@ -296,21 +302,26 @@ namespace micro_os_plus::micro_test_plus
 #endif
 
       if (output_file_ != nullptr)
-        fprintf (output_file_, "%s\n", line.c_str ());
+        {
+          fprintf (output_file_, "%s\n", line.c_str ());
+        }
 
 #if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) && defined(MICRO_OS_PLUS_TRACE))
       if (verbosity == verbosity::normal || verbosity == verbosity::verbose)
         {
 #if defined(__clang__) || defined(__GNUC__)
-          line.append (" ");
-          line.append (__VERSION__);
+          line.append (" - " __VERSION__);
+#elif defined(_MSC_VER)
+          char msvc_ver[16];
+          snprintf (msvc_ver, sizeof (msvc_ver), " - %d", _MSC_VER);
+          line.append (msvc_ver);
 #endif
-          line.append ("\n");
-          printf ("%s", line.c_str ());
+          printf ("%s\n", line.c_str ());
         }
 #endif // !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
     }
   }
+#pragma GCC diagnostic pop
   /**
    * @details
    * This method flushes the output buffer of the `reporter` by
