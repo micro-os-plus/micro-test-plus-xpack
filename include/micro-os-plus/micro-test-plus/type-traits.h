@@ -840,7 +840,7 @@ namespace micro_os_plus::micro_test_plus
      * in template metaprogramming.
      */
     template <class T>
-    inline constexpr auto is_op_v = __is_base_of (type_traits::op, T);
+    inline constexpr auto is_op_v = std::is_base_of_v<type_traits::op, T>;
 
     /**
      * @brief Struct template representing a generic value, accessible via a
