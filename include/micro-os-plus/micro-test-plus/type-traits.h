@@ -505,60 +505,6 @@ namespace micro_os_plus::micro_test_plus
     inline constexpr auto is_convertible_v = std::is_convertible_v<From, To>;
 
     /**
-     * @brief Struct template for SFINAE requirements.
-     *
-     * @details
-     * The `requires_` struct template is a utility for SFINAE (Substitution
-     * Failure Is Not An Error) in template metaprogramming. It is typically
-     * used to enable or disable template specialisations and function
-     * templates based on compile-time boolean conditions.
-     *
-     * When the boolean template parameter is `true`, the specialisation
-     * provides a nested `type` alias, which can be used in conjunction with
-     * `typename` and `requires_t` to enforce requirements in template
-     * declarations.
-     *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
-     */
-    template <bool Cond>
-    struct requires_
-    {
-    };
-
-    /**
-     * @brief Specialisation of the requirements struct template for `true`.
-     *
-     * @details
-     * When the condition is `true`, this specialisation provides a nested
-     * `type` alias, typically used for SFINAE and requirements checking in
-     * template metaprogramming.
-     *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
-     */
-    template <>
-    struct requires_<true>
-    {
-      /**
-       * @brief Alias type provided when the requirement is satisfied.
-       */
-      using type = int;
-    };
-
-    /**
-     * @brief Alias template for extracting the `type` member from `requires_`.
-     *
-     * @tparam Cond The boolean condition to be checked at compile time.
-     *
-     * @details
-     * The `requires_t` alias template simplifies the use of the `requires_`
-     * struct template by directly exposing the nested `type` member. It is
-     * commonly used to enforce compile-time requirements in template
-     * declarations.
-     */
-    template <bool Cond>
-    using requires_t = typename requires_<Cond>::type;
-
-    /**
      * @brief Empty base struct for all operator types.
      *
      * @details
@@ -943,9 +889,8 @@ namespace micro_os_plus::micro_test_plus
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class T>
-    struct value<T,
-                 type_traits::requires_t<type_traits::is_floating_point_v<T>>>
-        : type_traits::op
+      requires (type_traits::is_floating_point_v<T>)
+    struct value<T, int> : type_traits::op
     {
       /**
        * @brief The type of the encapsulated value.
