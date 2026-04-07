@@ -365,7 +365,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (const detail::not_<T>& op)
   {
-    return (*this << color (op) << "not " << op.value () << colors_.none);
+    return (*this << color (op) << "not " << op.operand () << colors_.none);
   }
 
 #if defined(__cpp_exceptions)

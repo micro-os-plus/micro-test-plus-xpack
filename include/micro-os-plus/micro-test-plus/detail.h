@@ -1456,18 +1456,20 @@ namespace micro_os_plus::micro_test_plus
       }
 
       /**
-       * @brief Retrieves the value of the operand.
+       * @brief Retrieves the wrapped operand expression.
        *
        * @par Parameters
        *	None.
        * @return The extracted operand value.
        *
        * @details
-       * Returns the value of the operand, applying the generic getter to
+       * Returns the wrapped operand, applying the generic getter to
        * ensure correct extraction for both custom and standard types.
+       * Named `operand()` to distinguish it from the boolean result
+       * stored in `value_`.
        */
       [[nodiscard]] constexpr auto
-      value () const
+      operand () const
       {
         return get (t_);
       }
