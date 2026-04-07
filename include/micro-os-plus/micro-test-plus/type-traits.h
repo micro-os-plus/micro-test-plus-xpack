@@ -810,7 +810,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
-    template <class T, class Opt = int>
+    template <class T>
     struct value : type_traits::op
     {
       /**
@@ -890,7 +890,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T>
       requires (type_traits::is_floating_point_v<T>)
-    struct value<T, int> : type_traits::op
+    struct value<T> : type_traits::op
     {
       /**
        * @brief The type of the encapsulated value.
