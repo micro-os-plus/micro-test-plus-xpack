@@ -1056,24 +1056,26 @@ namespace micro_os_plus::micro_test_plus
       using value_type = T;
 
       /**
-       * @brief The epsilon value used for floating point comparisons.
+       * @brief The epsilon value used for floating-point comparisons.
        *
        * @details
-       * This static inline member defines the precision for comparisons. It
-       * can be set explicitly via the constructor or computed as a default
-       * based on the number of decimal digits in the value.
+       * This instance member defines the precision for comparisons. It
+       * is set via the constructor, either explicitly or computed as a
+       * default based on the number of decimal digits in the value.
+       * Each instance carries its own epsilon, so two `value<T>` objects
+       * with different precisions do not interfere with each other.
        */
-      static inline auto epsilon = T{}; // Why static?
+      T epsilon = T{}; // was wrongly static inline auto
 
       /**
-       * @brief Constructs a floating point value with a specified precision.
+       * @brief Constructs a floating-point value with a specified precision.
        *
-       * @param _value The floating point value to be stored.
+       * @param _value The floating-point value to be stored.
        * @param precision The epsilon value to be used for comparisons.
        */
-      constexpr value (const T& _value, const T precision) : value_{ _value }
+      constexpr value (const T& _value, const T precision)
+          : epsilon{ precision }, value_{ _value }
       {
-        epsilon = precision;
       }
 
       /**

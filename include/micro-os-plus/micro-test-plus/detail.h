@@ -303,19 +303,19 @@ namespace micro_os_plus::micro_test_plus
                              and type_traits::has_epsilon_v<Rhs_T>)
             {
               // If both values have precision, compare them using
-              // the smalles precision.
+              // the smallest precision.
               return math::abs (get (lhs) - get (rhs))
-                     < math::min_value (Lhs_T::epsilon, Rhs_T::epsilon);
+                     < math::min_value (lhs.epsilon, rhs.epsilon);
             }
           else if constexpr (type_traits::has_epsilon_v<Lhs_T>)
             {
               // If only the left operand has precision, use it.
-              return math::abs (get (lhs) - get (rhs)) < Lhs_T::epsilon;
+              return math::abs (get (lhs) - get (rhs)) < lhs.epsilon;
             }
           else if constexpr (type_traits::has_epsilon_v<Rhs_T>)
             {
               // If only the right operand has precision, use it.
-              return math::abs (get (lhs) - get (rhs)) < Rhs_T::epsilon;
+              return math::abs (get (lhs) - get (rhs)) < rhs.epsilon;
             }
           else
             {
@@ -473,15 +473,15 @@ namespace micro_os_plus::micro_test_plus
                              and type_traits::has_epsilon_v<Rhs_T>)
             {
               return math::abs (get (lhs_) - get (rhs_))
-                     > math::min_value (Lhs_T::epsilon, Rhs_T::epsilon);
+                     > math::min_value (lhs_.epsilon, rhs_.epsilon);
             }
           else if constexpr (type_traits::has_epsilon_v<Lhs_T>)
             {
-              return math::abs (get (lhs_) - get (rhs_)) > Lhs_T::epsilon;
+              return math::abs (get (lhs_) - get (rhs_)) > lhs_.epsilon;
             }
           else if constexpr (type_traits::has_epsilon_v<Rhs_T>)
             {
-              return math::abs (get (lhs_) - get (rhs_)) > Rhs_T::epsilon;
+              return math::abs (get (lhs_) - get (rhs_)) > rhs_.epsilon;
             }
           else
             {
