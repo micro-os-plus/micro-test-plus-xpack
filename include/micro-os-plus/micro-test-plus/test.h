@@ -194,29 +194,6 @@ namespace micro_os_plus::micro_test_plus
 
     // ------------------------------------------------------------------------
 
-    /**
-     * @brief Gets the test runner associated with this test suite.
-     *
-     * @par Parameters
-     *	None.
-     * @return A reference to the test runner.
-     */
-    [[nodiscard]] class runner&
-    runner (void) const
-    {
-      return runner_;
-    }
-
-    /**
-     * @brief Gets the test reporter associated with this test suite.
-     *
-     * @par Parameters
-     *	None.
-     * @return A reference to the test reporter.
-     */
-    [[nodiscard]] class reporter&
-    reporter (void) const;
-
     [[nodiscard]] size_t
     own_index () const
     {
@@ -241,11 +218,34 @@ namespace micro_os_plus::micro_test_plus
       return children_subtests_.size ();
     }
 
+    /**
+     * @brief Gets the test reporter associated with this test suite.
+     *
+     * @par Parameters
+     *	None.
+     * @return A reference to the test reporter.
+     */
+    [[nodiscard]] class reporter&
+    reporter (void) const;
+
+  protected:
+    /**
+     * @brief Gets the test runner associated with this test suite.
+     *
+     * @par Parameters
+     *	None.
+     * @return A reference to the test runner.
+     */
+    [[nodiscard]] class runner&
+    runner (void) const
+    {
+      return runner_;
+    }
+
     void
     after_subtest_create (std::unique_ptr<class subtest> child_test,
                           suite& suite);
 
-  protected:
     /**
      * @brief Reference to the test runner.
      */
@@ -552,12 +552,6 @@ namespace micro_os_plus::micro_test_plus
     virtual void
     run (void) override;
 
-    [[nodiscard]] suite&
-    parent_suite (void) const
-    {
-      return parent_suite_;
-    }
-
     [[nodiscard]] size_t
     nesting_depth () const
     {
@@ -565,6 +559,12 @@ namespace micro_os_plus::micro_test_plus
     }
 
   protected:
+    [[nodiscard]] suite&
+    parent_suite (void) const
+    {
+      return parent_suite_;
+    }
+
     suite& parent_suite_;
 
     /**

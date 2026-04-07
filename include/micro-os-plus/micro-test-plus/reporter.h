@@ -244,22 +244,6 @@ namespace micro_os_plus::micro_test_plus
     virtual ~reporter ();
 
     /**
-     * @brief Selects the appropriate colour code based on a condition.
-     *
-     * @param cond Boolean value indicating pass (true) or fail (false).
-     * @return The corresponding ANSI colour code as a string.
-     *
-     * @details
-     * Returns the ANSI colour code for pass or fail, depending on the boolean
-     * condition provided.
-     */
-    [[nodiscard]] inline auto
-    color (const bool cond) const
-    {
-      return cond ? colors_.pass : colors_.fail;
-    }
-
-    /**
      * @brief Output operator for std::string_view.
      *
      * @param sv The string view to output.
@@ -670,20 +654,6 @@ namespace micro_os_plus::micro_test_plus
     void
     write_buffer_to_stdout (void);
 
-    void
-    write_buffer_to_file (void);
-
-    /**
-     * @brief Flush the current buffered content.
-     *
-     * @par Parameters
-     *	 None.
-     * @par Returns
-     *   Nothing.
-     */
-    void
-    flush (void);
-
     // ------------------------------------------------------------------------
 
     /**
@@ -785,6 +755,36 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
 
   protected:
+    /**
+     * @brief Selects the appropriate colour code based on a condition.
+     *
+     * @param cond Boolean value indicating pass (true) or fail (false).
+     * @return The corresponding ANSI colour code as a string.
+     *
+     * @details
+     * Returns the ANSI colour code for pass or fail, depending on the boolean
+     * condition provided.
+     */
+    [[nodiscard]] inline auto
+    color (const bool cond) const
+    {
+      return cond ? colors_.pass : colors_.fail;
+    }
+
+    void
+    write_buffer_to_file (void);
+
+    /**
+     * @brief Flush the current buffered content.
+     *
+     * @par Parameters
+     *	 None.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    flush (void);
+
     void
     write_info (void);
 
