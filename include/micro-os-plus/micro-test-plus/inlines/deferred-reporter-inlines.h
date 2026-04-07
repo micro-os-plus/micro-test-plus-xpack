@@ -82,18 +82,21 @@ namespace micro_os_plus::micro_test_plus
      * expectation messages by appending the provided value to the internal
      * message string.
      *
-     * If the argument is of an arithmetic type, it is first converted to a
-     * string using `std::to_string` before being appended. For all other
-     * types, the value is appended directly. This ensures that both numeric
-     * and string-like messages are handled appropriately and consistently.
+     * If the argument is a `char`, it is appended directly as a character.
+     * If the argument is of another arithmetic type, it is converted to a
+     * string using a fixed-size buffer and `std::to_chars` to avoid dynamic
+     * memory allocation. For all other types, the value is appended directly.
      */
     template <class T>
     auto&
     deferred_reporter_base::operator<< (const T& msg)
     {
-      if constexpr (std::is_arithmetic_v<T>)
+      if constexpr (std::is_same_v<T, char>)
         {
-          // deferred_output_.append (std::to_string (msg));
+          deferred_output_.push_back (msg);
+        }
+      else if constexpr (std::is_arithmetic_v<T>)
+        {
           // Optimise to avoid dynamic memory allocation in std::to_string by
           // using a fixed-size buffer and std::to_chars.
           char buf[64];
