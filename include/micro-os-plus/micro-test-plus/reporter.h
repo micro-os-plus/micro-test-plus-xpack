@@ -112,7 +112,7 @@ namespace micro_os_plus::micro_test_plus
     const char* fail = ""; /**< @brief Red colour. */
   };
 
-  const colors colors_red_green = {
+  inline constexpr colors colors_red_green = {
     "\033[0m", /**< @brief Default colour. */
     "\033[32m", /**< @brief Green colour. */
     "\033[31m" /**< @brief Red colour. */
