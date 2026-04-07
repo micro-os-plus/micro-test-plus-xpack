@@ -444,6 +444,7 @@ namespace micro_os_plus::micro_test_plus
      * @return Reference to the current reporter instance.
      */
     template <class T>
+      requires type_traits::is_op_v<T>
     reporter&
     operator<< (const T& t);
 

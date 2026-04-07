@@ -123,15 +123,23 @@ namespace micro_os_plus::micro_test_plus
   }
 
 #if 1
-/**
-  * @details
-  * This operator overload enables the `reporter` to output any type that is supported by the `detail::get` mechanism, ensuring consistent formatting and extensibility.
-  *
-  * By delegating to `detail::get`, the operator allows for custom formatting and extraction of values, supporting a wide range of types including user-defined and framework-specific types. The resulting value is then forwarded to the appropriate output handler, ensuring seamless integration into test reports and diagnostics.
-  *
-  * This approach promotes flexibility and maintainability, allowing new types to be supported with minimal changes to the reporting infrastructure.
-  */
-   template <class T>
+  /**
+   * @details
+   * This operator overload enables the `reporter` to output any type that is
+   * supported by the `detail::get` mechanism, ensuring consistent formatting
+   * and extensibility.
+   *
+   * By delegating to `detail::get`, the operator allows for custom formatting
+   * and extraction of values, supporting a wide range of types including
+   * user-defined and framework-specific types. The resulting value is then
+   * forwarded to the appropriate output handler, ensuring seamless integration
+   * into test reports and diagnostics.
+   *
+   * This approach promotes flexibility and maintainability, allowing new types
+   * to be supported with minimal changes to the reporting infrastructure.
+   */
+  template <class T>
+    requires type_traits::is_op_v<T>
   reporter&
   reporter::operator<< (const T& t)
   {
