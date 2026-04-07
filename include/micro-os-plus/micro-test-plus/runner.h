@@ -202,7 +202,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     [[nodiscard]] size_t
-    current_suite_index ()
+    current_suite_index () const
     {
       return suite_index_;
     }
@@ -332,7 +332,7 @@ namespace micro_os_plus::micro_test_plus
      * @return Pointer to the vector of registered static test suites.
      */
     [[nodiscard]] std::vector<static_suite*>*
-    static_suites (void)
+    static_suites (void) const
     {
       return static_children_suites_;
     }

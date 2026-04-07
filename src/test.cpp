@@ -142,7 +142,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   [[nodiscard]] reporter&
-  runnable_base::reporter (void)
+  runnable_base::reporter (void) const
   {
     return runner_.reporter ();
   }

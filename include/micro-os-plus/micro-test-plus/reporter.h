@@ -254,7 +254,7 @@ namespace micro_os_plus::micro_test_plus
      * condition provided.
      */
     [[nodiscard]] inline auto
-    color (const bool cond)
+    color (const bool cond) const
     {
       return cond ? colors_.pass : colors_.fail;
     }

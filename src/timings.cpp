@@ -88,7 +88,8 @@ namespace micro_os_plus::micro_test_plus
   }
 
   void
-  timestamps::compute_elapsed_time (long& milliseconds, long& microseconds)
+  timestamps::compute_elapsed_time (long& milliseconds,
+                                    long& microseconds) const
   {
     long long delta_ns
         = end_time_->value ().tv_nsec - begin_time_->value ().tv_nsec;

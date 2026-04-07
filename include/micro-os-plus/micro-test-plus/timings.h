@@ -102,7 +102,7 @@ namespace micro_os_plus::micro_test_plus
     has_timestamps (void) const;
 
     void
-    compute_elapsed_time (long& milliseconds, long& microseconds);
+    compute_elapsed_time (long& milliseconds, long& microseconds) const;
 
   protected:
     /**

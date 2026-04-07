@@ -202,7 +202,7 @@ namespace micro_os_plus::micro_test_plus
      * @return A reference to the test runner.
      */
     [[nodiscard]] class runner&
-    runner (void)
+    runner (void) const
     {
       return runner_;
     }
@@ -215,16 +215,16 @@ namespace micro_os_plus::micro_test_plus
      * @return A reference to the test reporter.
      */
     [[nodiscard]] class reporter&
-    reporter (void);
+    reporter (void) const;
 
     [[nodiscard]] size_t
-    own_index ()
+    own_index () const
     {
       return own_index_;
     }
 
     [[nodiscard]] size_t
-    current_subtest_index ()
+    current_subtest_index () const
     {
       return current_subtest_index_;
     }
@@ -559,7 +559,7 @@ namespace micro_os_plus::micro_test_plus
     }
 
     [[nodiscard]] size_t
-    nesting_depth ()
+    nesting_depth () const
     {
       return nesting_depth_;
     }
