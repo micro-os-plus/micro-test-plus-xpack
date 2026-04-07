@@ -75,6 +75,23 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
+#endif
+  template <class T>
+  void
+  reporter::append_number (std::string& buffer, const T v)
+  {
+    char buf[32];
+    const auto [ptr, ec] = std::to_chars (buf, buf + sizeof (buf), v);
+    if (ec == std::errc{})
+      buffer.append (buf, ptr);
+  }
+#pragma GCC diagnostic pop
+
+  // --------------------------------------------------------------------------
+
   /**
    * @details
    * This operator overload enables the `reporter` to output pointer
@@ -141,7 +158,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (const type_traits::genuine_integral_value<T>& v)
   {
-    buffer_.append (std::to_string (static_cast<long long> (v.get ())));
+    append_number (buffer_, static_cast<long long> (v.get ()));
     return *this;
   }
 

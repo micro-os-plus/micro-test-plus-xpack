@@ -881,6 +881,23 @@ namespace micro_os_plus::micro_test_plus
      * @brief Stores the argument vector passed to the test runner.
      */
     char** argv_ = nullptr;
+
+  private:
+    /**
+     * @brief Appends the string representation of a numeric value to a
+     * buffer, using `std::to_chars` for allocation-free, locale-independent
+     * formatting.
+     *
+     * @tparam T The numeric type to format.
+     *
+     * @param buffer The string to append to.
+     * @param v The value to format.
+     * @par Returns
+     *   Nothing.
+     */
+    template <class T>
+    static void
+    append_number (std::string& buffer, T v);
   };
 
   // --------------------------------------------------------------------------

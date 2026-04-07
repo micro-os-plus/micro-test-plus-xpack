@@ -49,8 +49,6 @@
 
 #include <micro-os-plus/micro-test-plus.h>
 
-#include <charconv>
-
 // ----------------------------------------------------------------------------
 
 #pragma GCC diagnostic ignored "-Waggregate-return"
@@ -59,26 +57,6 @@
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
 #endif
-
-// =============================================================================
-
-namespace
-{
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
-#endif
-  template <class T>
-  void
-  append_number (std::string& buffer, const T v)
-  {
-    char buf[32];
-    const auto [ptr, ec] = std::to_chars (buf, buf + sizeof (buf), v);
-    if (ec == std::errc{})
-      buffer.append (buf, ptr);
-  }
-#pragma GCC diagnostic pop
-} // namespace
 
 // =============================================================================
 
