@@ -51,8 +51,9 @@
 
 // ----------------------------------------------------------------------------
 
-#include <stdio.h>
+#include <charconv>
 #include <cstring>
+#include <stdio.h>
 
 // ----------------------------------------------------------------------------
 
@@ -92,7 +93,13 @@ namespace micro_os_plus::micro_test_plus
     {
       if constexpr (std::is_arithmetic_v<T>)
         {
-          deferred_output_.append (std::to_string (msg));
+          // deferred_output_.append (std::to_string (msg));
+          // Optimise to avoid dynamic memory allocation in std::to_string by
+          // using a fixed-size buffer and std::to_chars.
+          char buf[64];
+          auto [ptr, ec] = std::to_chars (buf, buf + sizeof (buf), msg);
+          if (ec == std::errc{})
+            deferred_output_.append (buf, ptr);
         }
       else
         {
