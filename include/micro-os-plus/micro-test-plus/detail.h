@@ -383,6 +383,7 @@ namespace micro_os_plus::micro_test_plus
         return get (rhs_);
       }
 
+    private:
       /**
        * @brief Stores the left-hand operand.
        */
@@ -547,6 +548,7 @@ namespace micro_os_plus::micro_test_plus
         return get (rhs_);
       }
 
+    private:
       /**
        * @brief Stores the left-hand operand.
        */
@@ -693,6 +695,7 @@ namespace micro_os_plus::micro_test_plus
         return get (rhs_);
       }
 
+    private:
       /**
        * @brief Stores the left-hand operand.
        */
@@ -841,6 +844,7 @@ namespace micro_os_plus::micro_test_plus
         return get (rhs_);
       }
 
+    private:
       /**
        * @brief Stores the left-hand operand.
        */
@@ -1137,6 +1141,7 @@ namespace micro_os_plus::micro_test_plus
         return get (rhs_);
       }
 
+    private:
       /**
        * @brief Stores the left-hand operand.
        */
@@ -1256,6 +1261,7 @@ namespace micro_os_plus::micro_test_plus
         return get (rhs_);
       }
 
+    private:
       /**
        * @brief Stores the left-hand operand.
        */
@@ -1375,6 +1381,7 @@ namespace micro_os_plus::micro_test_plus
         return get (rhs_);
       }
 
+    private:
       /**
        * @brief Stores the left-hand operand.
        */
@@ -1474,6 +1481,7 @@ namespace micro_os_plus::micro_test_plus
         return get (t_);
       }
 
+    private:
       /**
        * @brief Stores the operand.
        */
