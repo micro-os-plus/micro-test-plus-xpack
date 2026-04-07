@@ -131,6 +131,9 @@ namespace micro_os_plus::micro_test_plus
             exit (1);
           }
       }
+
+      // Pre-allocate buffer to reduce dynamic allocations.
+      buffer_.reserve (128); 
   }
 
   reporter::~reporter ()
