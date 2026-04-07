@@ -69,7 +69,6 @@
 #else // GCC only
 #pragma GCC diagnostic ignored "-Wsuggest-final-types"
 #pragma GCC diagnostic ignored "-Wsuggest-final-methods"
-#pragma GCC diagnostic ignored "-Wchanges-meaning"
 #pragma GCC diagnostic ignored "-Wredundant-tags"
 #endif
 #endif
@@ -148,7 +147,7 @@ namespace micro_os_plus::micro_test_plus
      * @param name The name of the default test suite.
      * @return Reference to the top-level test suite.
      */
-    suite&
+    class suite&
     initialise (int argc, char* argv[]);
 
     /**
@@ -202,7 +201,7 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] virtual size_t
     total_suites_count (void) const;
 
-    [[nodiscard]] constexpr top_suite&
+    [[nodiscard]] constexpr class top_suite&
     top_suite (void)
     {
       return top_suite_;

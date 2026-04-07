@@ -71,7 +71,6 @@
 #pragma GCC diagnostic ignored "-Wsuggest-final-types"
 #pragma GCC diagnostic ignored "-Wsuggest-final-methods"
 #pragma GCC diagnostic ignored "-Wredundant-tags"
-#pragma GCC diagnostic ignored "-Wchanges-meaning"
 #endif
 #endif
 
@@ -215,7 +214,7 @@ namespace micro_os_plus::micro_test_plus
      *	None.
      * @return A reference to the test reporter.
      */
-    [[nodiscard]] reporter&
+    [[nodiscard]] class reporter&
     reporter (void);
 
     [[nodiscard]] constexpr size_t
