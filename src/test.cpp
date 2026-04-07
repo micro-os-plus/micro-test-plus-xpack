@@ -203,14 +203,14 @@ namespace micro_os_plus::micro_test_plus
 
     class reporter& reporter = this->reporter ();
 
-    this->timings.timestamp_begin ();
+    // this->timings.timestamp_begin ();
     reporter.begin_subtest (*this);
 
     // Invoke the callable, passing the self reference followed by the variadic
     // arguments.
     callable_ (*this);
 
-    this->timings.timestamp_end ();
+    // this->timings.timestamp_end ();
     reporter.end_subtest (*this);
   }
 
