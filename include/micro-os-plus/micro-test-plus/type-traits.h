@@ -343,7 +343,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam T The type to be checked.
      */
     template <class T>
-    concept has_value = requires (T t) { t.value; };
+    concept has_value = requires (const T& t) { t.value; };
 
     /**
      * @brief C++20 concept satisfied when `T` provides an `epsilon` member.
@@ -351,7 +351,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam T The type to be checked.
      */
     template <class T>
-    concept has_epsilon = requires (T t) { t.epsilon; };
+    concept has_epsilon = requires (const T& t) { t.epsilon; };
 
     /**
      * @brief Variable template to determine if a type models a container.
