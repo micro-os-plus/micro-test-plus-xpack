@@ -124,29 +124,43 @@ namespace micro_os_plus::micro_test_plus
      * `__PRETTY_FUNCTION__` macro to extract a concise type name for the
      * template parameter \c T.
      *
-     * The implementation is compiler-dependent and may require adjustment for
-     * different toolchains. It is primarily intended for internal use within
-     * the µTest++ framework to support improved diagnostics and reporting.
+     * Rather than relying on fixed character offsets (which are fragile across
+     * compiler versions and namespace changes), the implementation searches
+     * for well-known marker characters in the function signature string:
+     *
+     * - Clang formats the signature as `"... [T = <typename>]"`, so the type
+     *   name lies between the last `'['` (skipping `"[T = "`) and the last
+     *   `']'`.
+     * - GCC formats the signature as `"... [with T = <typename>]"`, so the
+     *   type name lies between the last `'='` (skipping the trailing space)
+     *   and the last `']'`.
+     *
+     * This approach is resilient to namespace renaming, namespace nesting
+     * changes, and compiler format updates.
      */
     template <class T>
     [[nodiscard]] constexpr auto
     type_name (void) -> std::string_view
     {
+      const std::string_view sv = __PRETTY_FUNCTION__;
 #if defined(__clang__)
-#pragma GCC diagnostic push
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
-      // printf("|%s|%zu|\n", __PRETTY_FUNCTION__, sizeof
-      // (__PRETTY_FUNCTION__)); printf("|%s|\n", &__PRETTY_FUNCTION__[78]);
-      return { &__PRETTY_FUNCTION__[78], sizeof (__PRETTY_FUNCTION__) - 80 };
-#pragma GCC diagnostic pop
+      // Clang: "... [T = <typename>]"
+      // rfind('[') locates the opening bracket of "[T = ...]".
+      const auto start = sv.rfind ('[') + 5; // skip "[T = "
+      const auto end = sv.rfind (']');
 #elif defined(__GNUC__)
-      // printf("|%s|%zu|\n", __PRETTY_FUNCTION__, sizeof
-      // (__PRETTY_FUNCTION__)); printf("|%s|\n", &__PRETTY_FUNCTION__[93]);
-      return { &__PRETTY_FUNCTION__[93], sizeof (__PRETTY_FUNCTION__) - 144 };
+      // GCC: "... [with T = <typename>]" or, on some versions,
+      //      "... [with T = <typename>; std::string_view = ...]"
+      // Search for "T = " explicitly to avoid landing on a later '='.
+      const auto t_eq = sv.find ("T = ");
+      const auto start = t_eq + 4; // skip "T = "
+      const auto semi = sv.find (';', start);
+      const auto end
+          = (semi != std::string_view::npos) ? semi : sv.rfind (']');
 #else
 #error "Unsupported compiler"
-      return "Unsupported compiler";
 #endif
+      return sv.substr (start, end - start);
     }
 
     // ------------------------------------------------------------------------
