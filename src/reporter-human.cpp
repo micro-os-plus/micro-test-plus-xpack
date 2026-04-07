@@ -143,7 +143,7 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
 
-        if (runner.totals.was_successful ())
+        if (runner.totals.was_successful ()) [[likely]]
           {
             printf ("%s✓%s Total: %zu check%s passed, %zu failed, in %zu test "
                     "case%s, %zu test suite%s\n",
@@ -254,7 +254,7 @@ namespace micro_os_plus::micro_test_plus
             printf ("\n");
           }
 
-        if (suite.totals.was_successful ())
+        if (suite.totals.was_successful ()) [[likely]]
           {
             // Successful test suite.
 
@@ -409,7 +409,7 @@ namespace micro_os_plus::micro_test_plus
             printf ("\n");
           }
 
-        if (subtest.totals.was_successful ())
+        if (subtest.totals.was_successful ()) [[likely]]
           {
             // Successful subtest.
 

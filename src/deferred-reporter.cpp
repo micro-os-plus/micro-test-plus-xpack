@@ -82,7 +82,7 @@ namespace micro_os_plus::micro_test_plus
       printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
 
-      if (value_)
+      if (value_) [[likely]]
         {
           subtest_.totals.increment_successful_checks ();
         }
@@ -91,7 +91,7 @@ namespace micro_os_plus::micro_test_plus
           subtest_.totals.increment_failed_checks ();
         }
 
-      if (abort_ && !value_)
+      if (abort_ && !value_) [[unlikely]]
         {
           printf ("\n");
           subtest_.reporter ().write_buffer_to_stdout ();

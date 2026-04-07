@@ -150,7 +150,7 @@ namespace micro_os_plus::micro_test_plus
     template <class Expr_T>
     deferred_reporter<Expr_T>::~deferred_reporter ()
     {
-      if (value_)
+      if (value_) [[likely]]
         {
           subtest_.reporter ().pass (expr_, deferred_output_, subtest_);
         }
