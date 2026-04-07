@@ -153,7 +153,7 @@ namespace micro_os_plus::micro_test_plus
    * framework, especially when specifying or configuring verbosity levels for
    * test reporters.
    */
-  typedef verbosity verbosity_t;
+  using verbosity_t = verbosity;
 
   // Forward definitions.
   class reporter;
