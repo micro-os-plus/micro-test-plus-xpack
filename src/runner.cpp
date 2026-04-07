@@ -294,8 +294,14 @@ namespace micro_os_plus::micro_test_plus
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
-    fprintf (stdout, "\nTest execution aborted at %s:%u\n",
-             reflection::short_name (sl.file_name ()), sl.line ());
+
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
+    printf ("\nTest execution aborted at %s:%u\n",
+            reflection::short_name (sl.file_name ()), sl.line ());
+#pragma GCC diagnostic pop
 
     ::abort ();
   }
