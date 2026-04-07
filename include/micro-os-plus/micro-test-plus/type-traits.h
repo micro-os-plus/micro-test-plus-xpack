@@ -324,7 +324,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam T The type to be checked.
      */
     template <class T>
-    concept container_like = requires (T t) {
+    concept container_like = requires (const T& t) {
       t.begin ();
       t.end ();
     };
