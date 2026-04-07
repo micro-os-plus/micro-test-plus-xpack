@@ -95,9 +95,10 @@ namespace micro_os_plus::micro_test_plus
           {
             verbosity = verbosity::silent;
           }
-        else if (strncmp (argv[i], "--output-file=", 14) == 0)
+        else if (std::string_view{ argv[i] }.starts_with ("--output-file="))
           {
-            output_file_path = argv[i] + 14;
+            output_file_path
+                = argv[i] + std::string_view{ "--output-file=" }.size ();
           }
         else if (strcmp (argv[i], "--output-file") == 0)
           {

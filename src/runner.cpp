@@ -135,9 +135,10 @@ namespace micro_os_plus::micro_test_plus
     const char* reporter_name = "tap";
     for (int i = 0; i < argc; ++i)
       {
-        if (strncmp (argv[i], "--reporter=", 11) == 0)
+        if (std::string_view{ argv[i] }.starts_with ("--reporter="))
           {
-            reporter_name = argv[i] + 11;
+            reporter_name
+                = argv[i] + std::string_view{ "--reporter=" }.size ();
           }
         else if (strcmp (argv[i], "--reporter") == 0)
           {
