@@ -93,9 +93,14 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (T* v)
   {
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
     char buff[20];
     snprintf (buff, sizeof (buff), "%p", reinterpret_cast<void*> (v));
     buffer_.append (buff);
+#pragma GCC diagnostic pop
 
     return *this;
   }
