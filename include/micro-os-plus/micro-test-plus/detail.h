@@ -674,7 +674,6 @@ namespace micro_os_plus::micro_test_plus
       {
         return get (lhs_);
       }
-      [[nodiscard]] constexpr auto
 
       /**
        * @brief Retrieves the right-hand operand.
@@ -688,6 +687,7 @@ namespace micro_os_plus::micro_test_plus
        * getter to ensure correct extraction for both custom and standard
        * types.
        */
+      [[nodiscard]] constexpr auto
       rhs (void) const
       {
         return get (rhs_);
