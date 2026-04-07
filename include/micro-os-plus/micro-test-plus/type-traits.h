@@ -55,7 +55,7 @@
 // ----------------------------------------------------------------------------
 
 #include "math.h"
-#include <utility>
+#include <type_traits>
 
 // ----------------------------------------------------------------------------
 
@@ -483,7 +483,6 @@ namespace micro_os_plus::micro_test_plus
     template <>
     inline constexpr auto is_floating_point_v<long double> = true;
 
-#if defined(__clang__) or defined(_MSC_VER)
     /**
      * @brief Variable template to determine if one type is convertible to
      * another.
@@ -497,84 +496,13 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The `is_convertible_v` variable template evaluates to `true` if the type
      * `From` is implicitly convertible to the type `To`, and `false`
-     * otherwise. This trait is determined at compile time and is used
-     * throughout the µTest++ framework to enable type-safe conversions and
-     * requirements checking in template metaprogramming.
-     *
-     * On supported compilers, this trait leverages compiler intrinsics for
-     * optimal performance and accuracy.
+     * otherwise. This trait is determined at compile time using the standard
+     * `std::is_convertible_v` and is used throughout the µTest++ framework to
+     * enable type-safe conversions and requirements checking in template
+     * metaprogramming.
      */
     template <class From, class To>
-    static constexpr auto is_convertible_v = __is_convertible_to (From, To);
-#else
-    /**
-     * @brief Function template to determine if one type is convertible to
-     * another.
-     *
-     * @tparam From The source type to be checked for convertibility.
-     * @tparam To The target type to which conversion is tested.
-     *
-     * @param n Dummy parameter used for overload resolution.
-     * @retval true if `From` is convertible to `To`.
-     *
-     * @details
-     * The `is_convertible` function template checks, at compile time, whether
-     * a value of type `From` can be implicitly converted to type `To`. This is
-     * achieved using SFINAE and is primarily used as an implementation detail
-     * for the `is_convertible_v` variable template within the µTest++
-     * framework.
-     *
-     * If the conversion is valid, this overload is selected and returns
-     * `true`.
-     */
-    template <class From, class To>
-    constexpr auto
-    is_convertible (int n) -> decltype (bool (To (std::declval<From> ())))
-    {
-      (void)n; // Prevent the unused parameter warning.
-      return true;
-    }
-
-    /**
-     * @brief Fallback function template for is_convertible, returns false if
-     * the conversion is not valid.
-     *
-     * @tparam ...Unused Unused template parameters.
-     *
-     * @retval false indicating the conversion is not valid.
-     *
-     * @details
-     * This overload is selected when the primary `is_convertible` template
-     * cannot be instantiated, providing a `false` result for invalid
-     * conversions.
-     */
-    template <class...>
-    constexpr auto
-    is_convertible (...)
-    {
-      return false;
-    }
-
-    /**
-     * @brief Variable template to determine if one type is convertible to
-     * another.
-     *
-     * @tparam From The source type to be checked for convertibility.
-     * @tparam To The target type to which conversion is tested.
-     *
-     * @retval true if `From` is convertible to `To`.
-     * @retval false otherwise.
-     *
-     * @details
-     * The `is_convertible_v` variable template evaluates to `true` if the type
-     * `From` is implicitly convertible to the type `To`, and `false`
-     * otherwise. This trait is determined at compile time and is used
-     * throughout the µTest++ framework to enable type-safe conversions and
-     * requirements checking in template metaprogramming.
-     */
-    template <class From, class To>
-    constexpr auto is_convertible_v = is_convertible<From, To> (0);
-#endif
+    inline constexpr auto is_convertible_v = std::is_convertible_v<From, To>;
 
     /**
      * @brief Struct template for SFINAE requirements.
