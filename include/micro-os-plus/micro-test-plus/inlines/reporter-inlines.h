@@ -122,7 +122,7 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
-#if 0
+#if 1
 /**
   * @details
   * This operator overload enables the `reporter` to output any type that is supported by the `detail::get` mechanism, ensuring consistent formatting and extensibility.
