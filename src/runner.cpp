@@ -257,10 +257,7 @@ namespace micro_os_plus::micro_test_plus
     totals += top_suite_.totals;
 
     run_suites_ ();
-    if (has_static_suites_)
-      {
-        run_static_suites_ ();
-      }
+    run_static_suites_ ();
 
     timings.timestamp_end ();
     reporter_->end_session (*this);
