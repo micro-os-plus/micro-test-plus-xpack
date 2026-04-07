@@ -122,7 +122,7 @@ namespace micro_os_plus::micro_test_plus
      * contextual information for reporting purposes.
      */
     template <class Expr_T>
-    constexpr deferred_reporter<Expr_T>::deferred_reporter (
+    deferred_reporter<Expr_T>::deferred_reporter (
         const Expr_T& expr, bool abort,
         const reflection::source_location& location, subtest& subtest)
         : deferred_reporter_base{ static_cast<bool> (expr), location,

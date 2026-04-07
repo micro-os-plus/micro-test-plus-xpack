@@ -141,7 +141,7 @@ namespace micro_os_plus::micro_test_plus
        * @details
        * Returns the result value associated with the report.
        */
-      [[nodiscard]] constexpr bool
+      [[nodiscard]] bool
       value () const
       {
         return value_;
@@ -212,9 +212,9 @@ namespace micro_os_plus::micro_test_plus
        * Initialises the reporter with the given expression, abort status, and
        * source location.
        */
-      constexpr explicit deferred_reporter (
-          const Expr_T& expr, bool abort,
-          const reflection::source_location& location, subtest& subtest);
+      deferred_reporter (const Expr_T& expr, bool abort,
+                         const reflection::source_location& location,
+                         subtest& subtest);
 
       /**
        * @brief Destructor for the deferred reporter.

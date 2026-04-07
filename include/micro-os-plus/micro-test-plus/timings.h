@@ -65,7 +65,7 @@ namespace micro_os_plus::micro_test_plus
     bool
     has_value (void) const;
 
-    [[nodiscard]] constexpr timespec&
+    [[nodiscard]] timespec&
     value ()
     {
       return timestamp_;

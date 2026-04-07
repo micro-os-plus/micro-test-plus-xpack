@@ -74,43 +74,43 @@ namespace micro_os_plus::micro_test_plus
     runner_totals&
     operator+= (const runner_totals& other);
 
-    constexpr void
+    void
     increment_successful_checks (size_t count = 1)
     {
       successful_checks_ += count;
     }
 
-    constexpr void
+    void
     increment_failed_checks (size_t count = 1)
     {
       failed_checks_ += count;
     }
 
-    constexpr void
+    void
     increment_executed_subtests (size_t count = 1)
     {
       executed_subtests_ += count;
     }
 
-    [[nodiscard]] constexpr size_t
+    [[nodiscard]] size_t
     successful_checks () const
     {
       return successful_checks_;
     }
 
-    [[nodiscard]] constexpr size_t
+    [[nodiscard]] size_t
     failed_checks () const
     {
       return failed_checks_;
     }
 
-    [[nodiscard]] constexpr size_t
+    [[nodiscard]] size_t
     executed_checks () const
     {
       return successful_checks_ + failed_checks_;
     }
 
-    [[nodiscard]] constexpr size_t
+    [[nodiscard]] size_t
     executed_subtests () const
     {
       return executed_subtests_;
@@ -128,7 +128,7 @@ namespace micro_os_plus::micro_test_plus
      * A runner with no checks at all is considered successful, as it
      * did not fail any check.
      */
-    [[nodiscard]] constexpr bool
+    [[nodiscard]] bool
     was_successful (void) const noexcept
     {
       return failed_checks_ == 0;
