@@ -141,16 +141,16 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
 
-        if (runner_.totals.was_successful ()) [[likely]]
+        if (runner_.totals ().was_successful ()) [[likely]]
           {
             printf ("%s✓%s Total: %zu check%s passed, %zu failed, in %zu test "
                     "case%s, %zu test suite%s\n",
                     colors_.pass, colors_.none,
-                    runner_.totals.successful_checks (),
-                    runner_.totals.successful_checks () == 1 ? "" : "s",
-                    runner_.totals.failed_checks (),
-                    runner_.totals.executed_subtests (),
-                    runner_.totals.executed_subtests () == 1 ? "" : "s",
+                    runner_.totals ().successful_checks (),
+                    runner_.totals ().successful_checks () == 1 ? "" : "s",
+                    runner_.totals ().failed_checks (),
+                    runner_.totals ().executed_subtests (),
+                    runner_.totals ().executed_subtests () == 1 ? "" : "s",
                     total_suites_count, total_suites_count == 1 ? "" : "s");
           }
         else
@@ -158,11 +158,11 @@ namespace micro_os_plus::micro_test_plus
             printf ("%s✗%s Total: %zu check%s passed, %zu failed, in %zu test "
                     "case%s, %zu test suite%s\n",
                     colors_.fail, colors_.none,
-                    runner_.totals.successful_checks (),
-                    runner_.totals.successful_checks () == 1 ? "" : "s",
-                    runner_.totals.failed_checks (),
-                    runner_.totals.executed_subtests (),
-                    runner_.totals.executed_subtests () == 1 ? "" : "s",
+                    runner_.totals ().successful_checks (),
+                    runner_.totals ().successful_checks () == 1 ? "" : "s",
+                    runner_.totals ().failed_checks (),
+                    runner_.totals ().executed_subtests (),
+                    runner_.totals ().executed_subtests () == 1 ? "" : "s",
                     total_suites_count, total_suites_count == 1 ? "" : "s");
           }
 
@@ -246,12 +246,12 @@ namespace micro_os_plus::micro_test_plus
       {
         std::string indent (indent_size, ' ');
 
-        if (/* add_empty_line_ && */ suite.totals.executed_subtests () > 0)
+        if (/* add_empty_line_ && */ suite.totals ().executed_subtests () > 0)
           {
             printf ("\n");
           }
 
-        if (suite.totals.was_successful ()) [[likely]]
+        if (suite.totals ().was_successful ()) [[likely]]
           {
             // Successful test suite.
 
@@ -270,10 +270,10 @@ namespace micro_os_plus::micro_test_plus
             printf ("%s✓%s %s - passed (%zu check%s in %zu test "
                     "case%s)\n",
                     colors_.pass, colors_.none, suite.name (),
-                    suite.totals.successful_checks (),
-                    suite.totals.successful_checks () == 1 ? "" : "s",
-                    suite.totals.executed_subtests (),
-                    suite.totals.executed_subtests () == 1 ? "" : "s");
+                    suite.totals ().successful_checks (),
+                    suite.totals ().successful_checks () == 1 ? "" : "s",
+                    suite.totals ().executed_subtests (),
+                    suite.totals ().executed_subtests () == 1 ? "" : "s");
 
 #pragma GCC diagnostic pop
           }
@@ -294,11 +294,11 @@ namespace micro_os_plus::micro_test_plus
                     "failed, "
                     "in %zu test case%s)\n",
                     colors_.fail, colors_.none, suite.name (), colors_.fail,
-                    colors_.none, suite.totals.successful_checks (),
-                    suite.totals.successful_checks () == 1 ? "" : "s",
-                    suite.totals.failed_checks (),
-                    suite.totals.executed_subtests (),
-                    suite.totals.executed_subtests () == 1 ? "" : "s");
+                    colors_.none, suite.totals ().successful_checks (),
+                    suite.totals ().successful_checks () == 1 ? "" : "s",
+                    suite.totals ().failed_checks (),
+                    suite.totals ().executed_subtests (),
+                    suite.totals ().executed_subtests () == 1 ? "" : "s");
 
 #pragma GCC diagnostic pop
           }
@@ -406,7 +406,7 @@ namespace micro_os_plus::micro_test_plus
             printf ("\n");
           }
 
-        if (subtest.totals.was_successful ()) [[likely]]
+        if (subtest.totals ().was_successful ()) [[likely]]
           {
             // Successful subtest.
 
@@ -423,8 +423,9 @@ namespace micro_os_plus::micro_test_plus
 
                 printf ("%s%s✓%s %s - passed (%zu check%s)\n", indent.c_str (),
                         colors_.pass, colors_.none, subtest.name (),
-                        subtest.totals.successful_checks (),
-                        subtest.totals.successful_checks () == 1 ? "" : "s");
+                        subtest.totals ().successful_checks (),
+                        subtest.totals ().successful_checks () == 1 ? ""
+                                                                    : "s");
 
 #pragma GCC diagnostic pop
                 add_empty_line_ = true;
@@ -438,8 +439,9 @@ namespace micro_os_plus::micro_test_plus
 
                 printf ("%s%s✓%s %s - passed (%zu check%s)\n", indent.c_str (),
                         colors_.pass, colors_.none, subtest.name (),
-                        subtest.totals.successful_checks (),
-                        subtest.totals.successful_checks () == 1 ? "" : "s");
+                        subtest.totals ().successful_checks (),
+                        subtest.totals ().successful_checks () == 1 ? ""
+                                                                    : "s");
 
 #pragma GCC diagnostic pop
 
@@ -464,9 +466,9 @@ namespace micro_os_plus::micro_test_plus
                     "failed)\n",
                     indent.c_str (), colors_.fail, colors_.none,
                     subtest.name (), colors_.fail, colors_.none,
-                    subtest.totals.successful_checks (),
-                    subtest.totals.successful_checks () == 1 ? "" : "s",
-                    subtest.totals.failed_checks ());
+                    subtest.totals ().successful_checks (),
+                    subtest.totals ().successful_checks () == 1 ? "" : "s",
+                    subtest.totals ().failed_checks ());
 
 #pragma GCC diagnostic pop
 

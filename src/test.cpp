@@ -157,8 +157,8 @@ namespace micro_os_plus::micro_test_plus
     subtest.run ();
 
     // Accumulate the totals from the child test into the suite totals.
-    suite.totals.increment_executed_subtests ();
-    suite.totals += subtest.totals;
+    suite.totals ().increment_executed_subtests ();
+    suite.totals () += subtest.totals ();
   }
 
   // ==========================================================================
@@ -247,14 +247,14 @@ namespace micro_os_plus::micro_test_plus
 
     class reporter& reporter = this->reporter ();
 
-    this->timings.timestamp_begin ();
+    this->timings ().timestamp_begin ();
     reporter.begin_suite (*this);
 
     // Invoke the callable, passing the self reference followed by the variadic
     // arguments.
     callable_ (*this);
 
-    this->timings.timestamp_end ();
+    this->timings ().timestamp_end ();
     reporter.end_suite (*this);
   }
 
@@ -328,12 +328,12 @@ namespace micro_os_plus::micro_test_plus
 
     class reporter& reporter = this->reporter ();
 
-    this->timings.timestamp_begin ();
+    this->timings ().timestamp_begin ();
     reporter.begin_suite (*this);
 
     static_callable_ (*this);
 
-    this->timings.timestamp_end ();
+    this->timings ().timestamp_end ();
     reporter.end_suite (*this);
   }
 

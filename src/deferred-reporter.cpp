@@ -84,11 +84,11 @@ namespace micro_os_plus::micro_test_plus
 
       if (value_) [[likely]]
         {
-          subtest_.totals.increment_successful_checks ();
+          subtest_.totals ().increment_successful_checks ();
         }
       else
         {
-          subtest_.totals.increment_failed_checks ();
+          subtest_.totals ().increment_failed_checks ();
         }
 
       if (abort_ && !value_) [[unlikely]]

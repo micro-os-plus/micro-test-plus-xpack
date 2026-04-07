@@ -148,20 +148,20 @@ namespace micro_os_plus::micro_test_plus
 
     long milliseconds = 0;
     long microseconds = 0;
-    if (runner_.timings.has_timestamps ())
+    if (runner_.timings ().has_timestamps ())
       {
-        runner_.timings.compute_elapsed_time (milliseconds, microseconds);
+        runner_.timings ().compute_elapsed_time (milliseconds, microseconds);
       }
 
     char message_totals[160];
     snprintf (message_totals, sizeof (message_totals),
               "# { total: %zu check%s passed, %zu failed, in %zu test "
               "case%s, %zu test suite%s",
-              runner_.totals.successful_checks (),
-              runner_.totals.successful_checks () == 1 ? "" : "s",
-              runner_.totals.failed_checks (),
-              runner_.totals.executed_subtests (),
-              runner_.totals.executed_subtests () == 1 ? "" : "s",
+              runner_.totals ().successful_checks (),
+              runner_.totals ().successful_checks () == 1 ? "" : "s",
+              runner_.totals ().failed_checks (),
+              runner_.totals ().executed_subtests (),
+              runner_.totals ().executed_subtests () == 1 ? "" : "s",
               total_suites_count, total_suites_count == 1 ? "" : "s");
 
     char message_time[120] = "";
@@ -272,22 +272,22 @@ namespace micro_os_plus::micro_test_plus
 
     long milliseconds = 0;
     long microseconds = 0;
-    if (suite.timings.has_timestamps ())
+    if (suite.timings ().has_timestamps ())
       {
-        suite.timings.compute_elapsed_time (milliseconds, microseconds);
+        suite.timings ().compute_elapsed_time (milliseconds, microseconds);
       }
 
     char message_totals[120];
-    if (suite.totals.was_successful ()) [[likely]]
+    if (suite.totals ().was_successful ()) [[likely]]
       {
         snprintf (message_totals, sizeof (message_totals),
                   "ok %zu - %s # { passed, %zu check%s in %zu "
                   "test case%s",
                   suite.own_index (), suite.name (),
-                  suite.totals.successful_checks (),
-                  suite.totals.successful_checks () == 1 ? "" : "s",
-                  suite.totals.executed_subtests (),
-                  suite.totals.executed_subtests () == 1 ? "" : "s");
+                  suite.totals ().successful_checks (),
+                  suite.totals ().successful_checks () == 1 ? "" : "s",
+                  suite.totals ().executed_subtests (),
+                  suite.totals ().executed_subtests () == 1 ? "" : "s");
       }
     else
       {
@@ -295,11 +295,11 @@ namespace micro_os_plus::micro_test_plus
                   "not ok %zu - %s # { FAILED, %zu check%s "
                   "passed, %zu failed, in %zu test case%s",
                   suite.own_index (), suite.name (),
-                  suite.totals.successful_checks (),
-                  suite.totals.successful_checks () == 1 ? "" : "s",
-                  suite.totals.failed_checks (),
-                  suite.totals.executed_subtests (),
-                  suite.totals.executed_subtests () == 1 ? "" : "s");
+                  suite.totals ().successful_checks (),
+                  suite.totals ().successful_checks () == 1 ? "" : "s",
+                  suite.totals ().failed_checks (),
+                  suite.totals ().executed_subtests (),
+                  suite.totals ().executed_subtests () == 1 ? "" : "s");
       }
 
     char message_time[120] = "";
@@ -320,12 +320,12 @@ namespace micro_os_plus::micro_test_plus
     // should be displayed.
     if (verbosity == verbosity::normal || verbosity == verbosity::verbose)
       {
-        if (add_empty_line_ && suite.totals.executed_subtests () > 0)
+        if (add_empty_line_ && suite.totals ().executed_subtests () > 0)
           {
             printf ("\n");
           }
 
-        if (suite.totals.was_successful ()) [[likely]]
+        if (suite.totals ().was_successful ()) [[likely]]
           {
             // Successful test suite.
 
@@ -439,17 +439,17 @@ namespace micro_os_plus::micro_test_plus
     char message_summary[40];
     snprintf (message_summary, sizeof (message_summary), "%s1..%zu\n",
               indent2.c_str (),
-              subtest.totals.executed_checks ()
-                  + subtest.totals.executed_subtests ());
+              subtest.totals ().executed_checks ()
+                  + subtest.totals ().executed_subtests ());
 
     char message_totals[120];
-    if (subtest.totals.was_successful ()) [[likely]]
+    if (subtest.totals ().was_successful ()) [[likely]]
       {
         snprintf (message_totals, sizeof (message_totals),
                   "%sok %zu - %s # { passed, %zu check%s }\n", indent.c_str (),
                   subtest.own_index (), subtest.name (),
-                  subtest.totals.successful_checks (),
-                  subtest.totals.successful_checks () == 1 ? "" : "s");
+                  subtest.totals ().successful_checks (),
+                  subtest.totals ().successful_checks () == 1 ? "" : "s");
       }
     else
       {
@@ -457,9 +457,9 @@ namespace micro_os_plus::micro_test_plus
                   "%snot ok %zu - %s # { FAILED, %zu check%s "
                   "passed, %zu failed }\n",
                   indent.c_str (), subtest.own_index (), subtest.name (),
-                  subtest.totals.successful_checks (),
-                  subtest.totals.successful_checks () == 1 ? "" : "s",
-                  subtest.totals.failed_checks ());
+                  subtest.totals ().successful_checks (),
+                  subtest.totals ().successful_checks () == 1 ? "" : "s",
+                  subtest.totals ().failed_checks ());
       }
 
     if (output_file_ != nullptr)
@@ -478,7 +478,7 @@ namespace micro_os_plus::micro_test_plus
             printf ("\n");
           }
 
-        if (subtest.totals.was_successful ()) [[likely]]
+        if (subtest.totals ().was_successful ()) [[likely]]
           {
             // Successful subtest.
             if (verbosity == verbosity::verbose)

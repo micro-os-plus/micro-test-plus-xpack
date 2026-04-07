@@ -172,10 +172,10 @@ namespace micro_os_plus::micro_test_plus
 
     // ------------------------------------------------------------------------
 
-    timings.timestamp_begin ();
+    timings_.timestamp_begin ();
     reporter_->begin_session (*this);
 
-    top_suite_.timings.timestamp_begin ();
+    top_suite_.timings ().timestamp_begin ();
     reporter_->begin_suite (top_suite_);
 
     return top_suite_;
@@ -210,7 +210,7 @@ namespace micro_os_plus::micro_test_plus
         // Accumulate the totals from the static suite into the runner
         // totals.
         // DO NOT increment executed_subtests here.
-        totals += suite_ref->totals;
+        totals_ += suite_ref->totals ();
       }
   }
 
@@ -237,7 +237,7 @@ namespace micro_os_plus::micro_test_plus
             // Accumulate the totals from the static suite into the runner
             // totals.
             // DO NOT increment executed_subtests here.
-            totals += suite_ptr->totals;
+            totals_ += suite_ptr->totals ();
           }
       }
   }
@@ -249,17 +249,17 @@ namespace micro_os_plus::micro_test_plus
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    top_suite_.timings.timestamp_end ();
+    top_suite_.timings ().timestamp_end ();
     reporter_->end_suite (top_suite_);
-    totals += top_suite_.totals;
+    totals_ += top_suite_.totals ();
 
     run_suites_ ();
     run_static_suites_ ();
 
-    timings.timestamp_end ();
+    timings_.timestamp_end ();
     reporter_->end_session (*this);
 
-    int exit_code = totals.was_successful () ? 0 : 1;
+    int exit_code = totals_.was_successful () ? 0 : 1;
 
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push

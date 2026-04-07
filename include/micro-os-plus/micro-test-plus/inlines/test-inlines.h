@@ -170,7 +170,7 @@ namespace micro_os_plus::micro_test_plus
 
     size_t own_index = increment_subtest_index ();
     auto child_test = std::make_unique<subtest> (
-        name, runner (), parent_suite (), own_index, nesting_depth_ + 1,
+        name, runner (), parent_suite_, own_index, nesting_depth_ + 1,
         std::forward<Callable_T> (callable),
         std::forward<Args_T> (arguments)...);
 

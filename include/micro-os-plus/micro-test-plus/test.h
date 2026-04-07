@@ -163,17 +163,72 @@ namespace micro_os_plus::micro_test_plus
 
   public:
     /**
-     * @brief Totals for the test suite, including nested cases.
+     * @brief Gets the totals for the test suite.
+     *
+     * @par Parameters
+     *	None.
+     * @return A reference to the runner_totals instance.
      */
-    runner_totals totals;
+    [[nodiscard]] runner_totals&
+    totals ()
+    {
+      return totals_;
+    }
 
-    timestamps timings;
+    /**
+     * @brief Gets the totals for the test suite (const overload).
+     *
+     * @par Parameters
+     *	None.
+     * @return A const reference to the runner_totals instance.
+     */
+    [[nodiscard]] const runner_totals&
+    totals () const
+    {
+      return totals_;
+    }
+
+    /**
+     * @brief Gets the timings for the test suite.
+     *
+     * @par Parameters
+     *	None.
+     * @return A reference to the timestamps instance.
+     */
+    [[nodiscard]] timestamps&
+    timings ()
+    {
+      return timings_;
+    }
+
+    /**
+     * @brief Gets the timings for the test suite (const overload).
+     *
+     * @par Parameters
+     *	None.
+     * @return A const reference to the timestamps instance.
+     */
+    [[nodiscard]] const timestamps&
+    timings () const
+    {
+      return timings_;
+    }
 
   protected:
     /**
      * @brief The test suite name.
      */
+
     const char* name_;
+    /**
+     * @brief Totals for the test suite, including nested cases.
+     */
+    runner_totals totals_;
+
+    /**
+     * @brief Timings for the test suite.
+     */
+    timestamps timings_;
   };
 
   // ==========================================================================
@@ -246,6 +301,7 @@ namespace micro_os_plus::micro_test_plus
     after_subtest_create (std::unique_ptr<class subtest> child_test,
                           suite& suite);
 
+  protected:
     /**
      * @brief Reference to the test runner.
      */
@@ -557,12 +613,6 @@ namespace micro_os_plus::micro_test_plus
     }
 
   protected:
-    [[nodiscard]] suite&
-    parent_suite (void) const
-    {
-      return parent_suite_;
-    }
-
     suite& parent_suite_;
 
     /**

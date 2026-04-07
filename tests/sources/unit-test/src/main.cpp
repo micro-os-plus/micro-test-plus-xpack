@@ -327,7 +327,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  runner_totals* current_suite_totals = &ts.totals;
+  runner_totals& current_suite_totals = ts.totals ();
 
   ts.test ("assume", [] (auto& t)
     {
@@ -342,21 +342,21 @@ main (int argc, char* argv[])
       local_counts.executed_subtest++;
     });
 
-  test_assert (current_suite_totals->successful_checks ()
+  test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
-  test_assert (current_suite_totals->failed_checks ()
+  test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals->executed_subtests ()
+  test_assert (current_suite_totals.executed_subtests ()
                == local_counts.executed_subtest);
 
   ts.test ("Initial counters", [] ([[maybe_unused]] auto& t) noexcept
     { local_counts.executed_subtest++; });
 
-  test_assert (current_suite_totals->successful_checks ()
+  test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
-  test_assert (current_suite_totals->failed_checks ()
+  test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals->executed_subtests ()
+  test_assert (current_suite_totals.executed_subtests ()
                == local_counts.executed_subtest);
 
   // --------------------------------------------------------------------------
@@ -375,11 +375,11 @@ main (int argc, char* argv[])
       local_counts.executed_subtest++;
     });
 
-  test_assert (current_suite_totals->successful_checks ()
+  test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
-  test_assert (current_suite_totals->failed_checks ()
+  test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals->executed_subtests ()
+  test_assert (current_suite_totals.executed_subtests ()
                == local_counts.executed_subtest);
 
   // t.assume (true) << "Assumption 3";
@@ -400,11 +400,11 @@ main (int argc, char* argv[])
       local_counts.executed_subtest++;
     });
 
-  test_assert (current_suite_totals->successful_checks ()
+  test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
-  test_assert (current_suite_totals->failed_checks ()
+  test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals->executed_subtests ()
+  test_assert (current_suite_totals.executed_subtests ()
                == local_counts.executed_subtest);
 
   // --------------------------------------------------------------------------
@@ -442,11 +442,11 @@ main (int argc, char* argv[])
       local_counts.executed_subtest++;
     });
 
-  test_assert (current_suite_totals->successful_checks ()
+  test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
-  test_assert (current_suite_totals->failed_checks ()
+  test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals->executed_subtests ()
+  test_assert (current_suite_totals.executed_subtests ()
                == local_counts.executed_subtest);
 
   // --------------------------------------------------------------------------
@@ -484,11 +484,11 @@ main (int argc, char* argv[])
       }
     });
 
-  test_assert (current_suite_totals->successful_checks ()
+  test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
-  test_assert (current_suite_totals->failed_checks ()
+  test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals->executed_subtests ()
+  test_assert (current_suite_totals.executed_subtests ()
                == local_counts.executed_subtest);
 
   // --------------------------------------------------------------------------
@@ -589,11 +589,11 @@ main (int argc, char* argv[])
       local_counts.executed_subtest++;
     });
 
-  test_assert (current_suite_totals->successful_checks ()
+  test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
-  test_assert (current_suite_totals->failed_checks ()
+  test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals->executed_subtests ()
+  test_assert (current_suite_totals.executed_subtests ()
                == local_counts.executed_subtest);
 
   // --------------------------------------------------------------------------
@@ -676,11 +676,11 @@ main (int argc, char* argv[])
       local_counts.executed_subtest++;
     });
 
-  test_assert (current_suite_totals->successful_checks ()
+  test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
-  test_assert (current_suite_totals->failed_checks ()
+  test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals->executed_subtests ()
+  test_assert (current_suite_totals.executed_subtests ()
                == local_counts.executed_subtest);
 
   // --------------------------------------------------------------------------
@@ -716,11 +716,11 @@ main (int argc, char* argv[])
       local_counts.executed_subtest++;
     });
 
-  test_assert (current_suite_totals->successful_checks ()
+  test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
-  test_assert (current_suite_totals->failed_checks ()
+  test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals->executed_subtests ()
+  test_assert (current_suite_totals.executed_subtests ()
                == local_counts.executed_subtest);
 
   // --------------------------------------------------------------------------
@@ -754,11 +754,11 @@ main (int argc, char* argv[])
       local_counts.executed_subtest++;
     });
 
-  test_assert (current_suite_totals->successful_checks ()
+  test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
-  test_assert (current_suite_totals->failed_checks ()
+  test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals->executed_subtests ()
+  test_assert (current_suite_totals.executed_subtests ()
                == local_counts.executed_subtest);
 
   // --------------------------------------------------------------------------
@@ -811,11 +811,11 @@ main (int argc, char* argv[])
       local_counts.executed_subtest++;
     });
 
-  test_assert (current_suite_totals->successful_checks ()
+  test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
-  test_assert (current_suite_totals->failed_checks ()
+  test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals->executed_subtests ()
+  test_assert (current_suite_totals.executed_subtests ()
                == local_counts.executed_subtest);
 
   // --------------------------------------------------------------------------
@@ -868,11 +868,11 @@ main (int argc, char* argv[])
       local_counts.executed_subtest++;
     });
 
-  test_assert (current_suite_totals->successful_checks ()
+  test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
-  test_assert (current_suite_totals->failed_checks ()
+  test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals->executed_subtests ()
+  test_assert (current_suite_totals.executed_subtests ()
                == local_counts.executed_subtest);
 
   // --------------------------------------------------------------------------
@@ -895,11 +895,11 @@ main (int argc, char* argv[])
       local_counts.executed_subtest++;
     });
 
-  test_assert (current_suite_totals->successful_checks ()
+  test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
-  test_assert (current_suite_totals->failed_checks ()
+  test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals->executed_subtests ()
+  test_assert (current_suite_totals.executed_subtests ()
                == local_counts.executed_subtest);
 
   // --------------------------------------------------------------------------
@@ -922,11 +922,11 @@ main (int argc, char* argv[])
       local_counts.executed_subtest++;
     });
 
-  test_assert (current_suite_totals->successful_checks ()
+  test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
-  test_assert (current_suite_totals->failed_checks ()
+  test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals->executed_subtests ()
+  test_assert (current_suite_totals.executed_subtests ()
                == local_counts.executed_subtest);
 
   // --------------------------------------------------------------------------
@@ -949,11 +949,11 @@ main (int argc, char* argv[])
       local_counts.executed_subtest++;
     });
 
-  test_assert (current_suite_totals->successful_checks ()
+  test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
-  test_assert (current_suite_totals->failed_checks ()
+  test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals->executed_subtests ()
+  test_assert (current_suite_totals.executed_subtests ()
                == local_counts.executed_subtest);
 
   // --------------------------------------------------------------------------
@@ -979,11 +979,11 @@ main (int argc, char* argv[])
       local_counts.executed_subtest++;
     });
 
-  test_assert (current_suite_totals->successful_checks ()
+  test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
-  test_assert (current_suite_totals->failed_checks ()
+  test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals->executed_subtests ()
+  test_assert (current_suite_totals.executed_subtests ()
                == local_counts.executed_subtest);
 
   // --------------------------------------------------------------------------
@@ -1007,11 +1007,11 @@ main (int argc, char* argv[])
       local_counts.executed_subtest++;
     });
 
-  test_assert (current_suite_totals->successful_checks ()
+  test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
-  test_assert (current_suite_totals->failed_checks ()
+  test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals->executed_subtests ()
+  test_assert (current_suite_totals.executed_subtests ()
                == local_counts.executed_subtest);
 
   // --------------------------------------------------------------------------
@@ -1025,11 +1025,11 @@ main (int argc, char* argv[])
       local_counts.executed_subtest++;
     });
 
-  test_assert (current_suite_totals->successful_checks ()
+  test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
-  test_assert (current_suite_totals->failed_checks ()
+  test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals->executed_subtests ()
+  test_assert (current_suite_totals.executed_subtests ()
                == local_counts.executed_subtest);
 
   // --------------------------------------------------------------------------
@@ -1043,11 +1043,11 @@ main (int argc, char* argv[])
       local_counts.executed_subtest++;
     });
 
-  test_assert (current_suite_totals->successful_checks ()
+  test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
-  test_assert (current_suite_totals->failed_checks ()
+  test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals->executed_subtests ()
+  test_assert (current_suite_totals.executed_subtests ()
                == local_counts.executed_subtest);
 
 #endif // __EXCEPTIONS
@@ -1113,11 +1113,11 @@ main (int argc, char* argv[])
       local_counts.executed_subtest++;
     });
 
-  test_assert (current_suite_totals->successful_checks ()
+  test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
-  test_assert (current_suite_totals->failed_checks ()
+  test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals->executed_subtests ()
+  test_assert (current_suite_totals.executed_subtests ()
                == local_counts.executed_subtest);
 
   // --------------------------------------------------------------------------
@@ -1214,11 +1214,11 @@ main (int argc, char* argv[])
       local_counts.executed_subtest++;
     });
 
-  test_assert (current_suite_totals->successful_checks ()
+  test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
-  test_assert (current_suite_totals->failed_checks ()
+  test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals->executed_subtests ()
+  test_assert (current_suite_totals.executed_subtests ()
                == local_counts.executed_subtest);
 
   // --------------------------------------------------------------------------
@@ -1246,11 +1246,11 @@ main (int argc, char* argv[])
       local_counts.executed_subtest++;
     });
 
-  test_assert (current_suite_totals->successful_checks ()
+  test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
-  test_assert (current_suite_totals->failed_checks ()
+  test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals->executed_subtests ()
+  test_assert (current_suite_totals.executed_subtests ()
                == local_counts.executed_subtest);
 
   // --------------------------------------------------------------------------
@@ -1272,11 +1272,11 @@ main (int argc, char* argv[])
       local_counts.executed_subtest++;
     });
 
-  test_assert (current_suite_totals->successful_checks ()
+  test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
-  test_assert (current_suite_totals->failed_checks ()
+  test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals->executed_subtests ()
+  test_assert (current_suite_totals.executed_subtests ()
                == local_counts.executed_subtest);
 
   // --------------------------------------------------------------------------
@@ -1306,11 +1306,11 @@ main (int argc, char* argv[])
       local_counts.executed_subtest++;
     });
 
-  test_assert (current_suite_totals->successful_checks ()
+  test_assert (current_suite_totals.successful_checks ()
                == local_counts.successful_checks);
-  test_assert (current_suite_totals->failed_checks ()
+  test_assert (current_suite_totals.failed_checks ()
                == local_counts.failed_checks);
-  test_assert (current_suite_totals->executed_subtests ()
+  test_assert (current_suite_totals.executed_subtests ()
                == local_counts.executed_subtest);
 
   // --------------------------------------------------------------------------
@@ -1602,7 +1602,7 @@ test_case_expect_eq_floats_combinatorial (subtest& t)
 static static_suite ts_passed_integrals{ "Combinatorial integrals", tr,
                                          [] (auto& ts)
   {
-    runner_totals* current_suite_totals = &ts.totals;
+    runner_totals& current_suite_totals = ts.totals ();
 
     local_counts = {};
 
@@ -1610,109 +1610,109 @@ static static_suite ts_passed_integrals{ "Combinatorial integrals", tr,
         "Combinatorial integrals with signed long long",
         test_case_expect_passed_integrals_combinatorial<signed long long>);
 
-    test_assert (current_suite_totals->successful_checks ()
+    test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
-    test_assert (current_suite_totals->failed_checks ()
+    test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals->executed_subtests ()
+    test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
 
     ts.test (
         "Combinatorial integrals unsigned long long",
         test_case_expect_passed_integrals_combinatorial<unsigned long long>);
 
-    test_assert (current_suite_totals->successful_checks ()
+    test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
-    test_assert (current_suite_totals->failed_checks ()
+    test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals->executed_subtests ()
+    test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
 
     ts.test ("Combinatorial integrals with signed int",
              test_case_expect_passed_integrals_combinatorial<signed int>);
 
-    test_assert (current_suite_totals->successful_checks ()
+    test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
-    test_assert (current_suite_totals->failed_checks ()
+    test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals->executed_subtests ()
+    test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
 
     ts.test ("Combinatorial integrals with unsigned int",
              test_case_expect_passed_integrals_combinatorial<unsigned int>);
 
-    test_assert (current_suite_totals->successful_checks ()
+    test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
-    test_assert (current_suite_totals->failed_checks ()
+    test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals->executed_subtests ()
+    test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
 
     ts.test ("Combinatorial integrals with signed short",
              test_case_expect_passed_integrals_combinatorial<signed int>);
 
-    test_assert (current_suite_totals->successful_checks ()
+    test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
-    test_assert (current_suite_totals->failed_checks ()
+    test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals->executed_subtests ()
+    test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
 
     ts.test ("Combinatorial integrals with unsigned short",
              test_case_expect_passed_integrals_combinatorial<unsigned int>);
 
-    test_assert (current_suite_totals->successful_checks ()
+    test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
-    test_assert (current_suite_totals->failed_checks ()
+    test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals->executed_subtests ()
+    test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
 
     ts.test ("Combinatorial integrals with signed short",
              test_case_expect_passed_integrals_combinatorial<signed short>);
 
-    test_assert (current_suite_totals->successful_checks ()
+    test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
-    test_assert (current_suite_totals->failed_checks ()
+    test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals->executed_subtests ()
+    test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
 
     ts.test ("Combinatorial integrals with unsigned short",
              test_case_expect_passed_integrals_combinatorial<unsigned short>);
 
-    test_assert (current_suite_totals->successful_checks ()
+    test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
-    test_assert (current_suite_totals->failed_checks ()
+    test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals->executed_subtests ()
+    test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
 
     ts.test ("Combinatorial integrals with signed char",
              test_case_expect_passed_integrals_combinatorial<signed char>);
 
-    test_assert (current_suite_totals->successful_checks ()
+    test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
-    test_assert (current_suite_totals->failed_checks ()
+    test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals->executed_subtests ()
+    test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
 
     ts.test ("Combinatorial integrals with unsigned char",
              test_case_expect_passed_integrals_combinatorial<unsigned char>);
 
-    test_assert (current_suite_totals->successful_checks ()
+    test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
-    test_assert (current_suite_totals->failed_checks ()
+    test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals->executed_subtests ()
+    test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
   } };
 
 static static_suite ts_failed_integrals{ "Failed combinatorial integrals", tr,
                                          [] (auto& ts)
   {
-    runner_totals* current_suite_totals = &ts.totals;
+    runner_totals& current_suite_totals = ts.totals ();
 
     local_counts = {};
 
@@ -1720,135 +1720,135 @@ static static_suite ts_failed_integrals{ "Failed combinatorial integrals", tr,
         "Combinatorial integrals with signed long long",
         test_case_expect_failed_integrals_combinatorial<signed long long>);
 
-    test_assert (current_suite_totals->successful_checks ()
+    test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
-    test_assert (current_suite_totals->failed_checks ()
+    test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals->executed_subtests ()
+    test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
 
     ts.test (
         "Combinatorial integrals unsigned long long",
         test_case_expect_failed_integrals_combinatorial<unsigned long long>);
 
-    test_assert (current_suite_totals->successful_checks ()
+    test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
-    test_assert (current_suite_totals->failed_checks ()
+    test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals->executed_subtests ()
+    test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
 
     ts.test ("Combinatorial integrals with signed int",
              test_case_expect_failed_integrals_combinatorial<signed int>);
 
-    test_assert (current_suite_totals->successful_checks ()
+    test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
-    test_assert (current_suite_totals->failed_checks ()
+    test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals->executed_subtests ()
+    test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
 
     ts.test ("Combinatorial integrals with unsigned int",
              test_case_expect_failed_integrals_combinatorial<unsigned int>);
 
-    test_assert (current_suite_totals->successful_checks ()
+    test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
-    test_assert (current_suite_totals->failed_checks ()
+    test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals->executed_subtests ()
+    test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
 
     ts.test ("Combinatorial integrals with signed short",
              test_case_expect_failed_integrals_combinatorial<signed int>);
 
-    test_assert (current_suite_totals->successful_checks ()
+    test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
-    test_assert (current_suite_totals->failed_checks ()
+    test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals->executed_subtests ()
+    test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
 
     ts.test ("Combinatorial integrals with unsigned short",
              test_case_expect_failed_integrals_combinatorial<unsigned int>);
 
-    test_assert (current_suite_totals->successful_checks ()
+    test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
-    test_assert (current_suite_totals->failed_checks ()
+    test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals->executed_subtests ()
+    test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
 
     ts.test ("Combinatorial integrals with signed short",
              test_case_expect_failed_integrals_combinatorial<signed short>);
 
-    test_assert (current_suite_totals->successful_checks ()
+    test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
-    test_assert (current_suite_totals->failed_checks ()
+    test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals->executed_subtests ()
+    test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
 
     ts.test ("Combinatorial integrals with unsigned short",
              test_case_expect_failed_integrals_combinatorial<unsigned short>);
 
-    test_assert (current_suite_totals->successful_checks ()
+    test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
-    test_assert (current_suite_totals->failed_checks ()
+    test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals->executed_subtests ()
+    test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
 
     ts.test ("Combinatorial integrals with signed char",
              test_case_expect_failed_integrals_combinatorial<signed char>);
 
-    test_assert (current_suite_totals->successful_checks ()
+    test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
-    test_assert (current_suite_totals->failed_checks ()
+    test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals->executed_subtests ()
+    test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
 
     ts.test ("Combinatorial integrals with unsigned char",
              test_case_expect_failed_integrals_combinatorial<unsigned char>);
 
-    test_assert (current_suite_totals->successful_checks ()
+    test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
-    test_assert (current_suite_totals->failed_checks ()
+    test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals->executed_subtests ()
+    test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
   } };
 
 static static_suite ts_passed_floats{ "Combinatorial floats", tr, [] (auto& ts)
   {
-    runner_totals* current_suite_totals = &ts.totals;
+    runner_totals& current_suite_totals = ts.totals ();
 
     local_counts = {};
 
     ts.test ("Combinatorial floats",
              test_case_expect_eq_floats_combinatorial<float>);
 
-    test_assert (current_suite_totals->successful_checks ()
+    test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
-    test_assert (current_suite_totals->failed_checks ()
+    test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals->executed_subtests ()
+    test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
 
     ts.test ("Combinatorial doubles",
              test_case_expect_eq_floats_combinatorial<double>);
 
-    test_assert (current_suite_totals->successful_checks ()
+    test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
-    test_assert (current_suite_totals->failed_checks ()
+    test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals->executed_subtests ()
+    test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
   } };
 
 static static_suite ts_misc{ "Miscellaneous", tr, [] (auto& ts)
   {
-    runner_totals* current_suite_totals = &ts.totals;
+    runner_totals& current_suite_totals = ts.totals ();
 
     local_counts = {};
 
@@ -1873,11 +1873,11 @@ static static_suite ts_misc{ "Miscellaneous", tr, [] (auto& ts)
         local_counts.executed_subtest++;
       });
 
-    test_assert (current_suite_totals->successful_checks ()
+    test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
-    test_assert (current_suite_totals->failed_checks ()
+    test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals->executed_subtests ()
+    test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
 
     ts.test ("Arrays failed", [] (auto& t)
@@ -1901,11 +1901,11 @@ static static_suite ts_misc{ "Miscellaneous", tr, [] (auto& ts)
         local_counts.executed_subtest++;
       });
 
-    test_assert (current_suite_totals->successful_checks ()
+    test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
-    test_assert (current_suite_totals->failed_checks ()
+    test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals->executed_subtests ()
+    test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
 
     ts.test ("Vectors", [] (auto& t)
@@ -1937,11 +1937,11 @@ static static_suite ts_misc{ "Miscellaneous", tr, [] (auto& ts)
         local_counts.executed_subtest++;
       });
 
-    test_assert (current_suite_totals->successful_checks ()
+    test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
-    test_assert (current_suite_totals->failed_checks ()
+    test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals->executed_subtests ()
+    test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
 
     ts.test ("Vectors failed", [] (auto& t)
@@ -1973,11 +1973,11 @@ static static_suite ts_misc{ "Miscellaneous", tr, [] (auto& ts)
         local_counts.executed_subtest++;
       });
 
-    test_assert (current_suite_totals->successful_checks ()
+    test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
-    test_assert (current_suite_totals->failed_checks ()
+    test_assert (current_suite_totals.failed_checks ()
                  == local_counts.failed_checks);
-    test_assert (current_suite_totals->executed_subtests ()
+    test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
   } };
 
