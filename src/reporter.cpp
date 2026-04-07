@@ -64,6 +64,11 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
+#endif
+
   reporter::reporter (int argc, char* argv[])
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
@@ -75,11 +80,6 @@ namespace micro_os_plus::micro_test_plus
 
     argc_ = argc;
     argv_ = argv;
-
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
-#endif
 
     for (int i = 0; i < argc; ++i)
       {

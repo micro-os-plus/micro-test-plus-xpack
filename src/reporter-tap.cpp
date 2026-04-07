@@ -155,7 +155,7 @@ namespace micro_os_plus::micro_test_plus
         runner.timings.compute_elapsed_time (milliseconds, microseconds);
       }
 
-    char message_totals[120];
+    char message_totals[160];
     snprintf (message_totals, sizeof (message_totals),
               "# { total: %zu check%s passed, %zu failed, in %zu test "
               "case%s, %zu test suite%s",
