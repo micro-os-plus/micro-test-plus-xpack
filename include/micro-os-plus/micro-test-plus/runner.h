@@ -187,7 +187,8 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     [[noreturn]] void
-    abort (void);
+    abort (const reflection::source_location& sl
+           = reflection::source_location::current ());
 
     // ------------------------------------------------------------------------
     // Getters.

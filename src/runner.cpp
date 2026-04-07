@@ -289,11 +289,14 @@ namespace micro_os_plus::micro_test_plus
    * cases and folders.
    */
   void
-  runner::abort (void)
+  runner::abort (const reflection::source_location& sl)
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+    fprintf (stdout, "\nTest execution aborted at %s:%u\n",
+             reflection::short_name (sl.file_name ()), sl.line ());
+
     ::abort ();
   }
 
