@@ -212,11 +212,10 @@ main (int argc, char* argv[])
       {
       };
 
-      constexpr auto value = [] (auto t) -> decltype (t.value, void ()) {};
-      static_assert (type_traits::is_valid<foo> (value));
-      static_assert (not type_traits::is_valid<bar> (value));
-      static_assert (not type_traits::is_valid<int> (value));
-      static_assert (not type_traits::is_valid<void> (value));
+      static_assert (type_traits::has_value<foo>);
+      static_assert (not type_traits::has_value<bar>);
+      static_assert (not type_traits::has_value<int>);
+      static_assert (not type_traits::has_value<void>);
     }
 
     {

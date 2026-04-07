@@ -174,7 +174,7 @@ namespace micro_os_plus::micro_test_plus
      * framework's type traits.
      */
     template <class T>
-      requires type_traits::is_container_v<T>
+      requires type_traits::container_like<T>
     [[nodiscard]] constexpr auto
     operator== (T&& lhs, T&& rhs)
     {
@@ -202,7 +202,7 @@ namespace micro_os_plus::micro_test_plus
      * framework's type traits.
      */
     template <class T>
-      requires type_traits::is_container_v<T>
+      requires type_traits::container_like<T>
     [[nodiscard]] constexpr auto
     operator!= (T&& lhs, T&& rhs)
     {

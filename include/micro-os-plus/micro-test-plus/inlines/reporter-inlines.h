@@ -177,8 +177,7 @@ namespace micro_os_plus::micro_test_plus
    * involving collections of values.
    */
   template <class T>
-    requires (type_traits::is_container_v<T>
-              and not type_traits::has_npos_v<T>)
+    requires (type_traits::container_like<T> and not type_traits::has_npos<T>)
   reporter&
   reporter::operator<< (T&& t)
   {

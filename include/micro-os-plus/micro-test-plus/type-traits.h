@@ -318,47 +318,40 @@ namespace micro_os_plus::micro_test_plus
     };
 
     /**
-     * @brief Checks whether a given expression is valid for the supplied
-     * type arguments.
+     * @brief C++20 concept satisfied when `T` provides both `begin()` and
+     * `end()` member functions.
      *
-     * @tparam Ts    The type arguments to pass to the expression.
-     * @tparam Expr_T The type of the callable expression to test.
-     *
-     * @param expr A callable that uses the type arguments in an unevaluated
-     *             context (e.g., inside `decltype`).
-     * @retval true The expression is well-formed for `Ts...`.
-     *
-     * @details
-     * Uses SFINAE to test whether applying `expr` to `std::declval<Ts...>()`
-     * is a valid expression. The complementary variadic overload returns
-     * `false` when the primary overload is not selected.
+     * @tparam T The type to be checked.
      */
-    template <class... Ts, class Expr_T>
-    constexpr auto
-    is_valid (Expr_T expr) -> decltype (expr (std::declval<Ts...> ()), bool ())
-    {
-      return true;
-    }
+    template <class T>
+    concept container_like = requires (T t) {
+      t.begin ();
+      t.end ();
+    };
 
     /**
-     * @brief Fallback function template for is_valid, returns false if the
-     * expression is not valid.
+     * @brief C++20 concept satisfied when `T` provides a `npos` member.
      *
-     * @tparam Ts The argument types to be tested.
-     *
-     * @return `false` indicating the expression is not valid for the given
-     * argument types.
-     *
-     * @details
-     * This overload is selected when the primary `is_valid` template cannot be
-     * instantiated, providing a `false` result for invalid expressions.
+     * @tparam T The type to be checked.
      */
-    template <class... Ts>
-    constexpr auto
-    is_valid (...) -> bool
-    {
-      return false;
-    }
+    template <class T>
+    concept has_npos = requires (T t) { t.npos; };
+
+    /**
+     * @brief C++20 concept satisfied when `T` provides a `value` member.
+     *
+     * @tparam T The type to be checked.
+     */
+    template <class T>
+    concept has_value = requires (T t) { t.value; };
+
+    /**
+     * @brief C++20 concept satisfied when `T` provides an `epsilon` member.
+     *
+     * @tparam T The type to be checked.
+     */
+    template <class T>
+    concept has_epsilon = requires (T t) { t.epsilon; };
 
     /**
      * @brief Variable template to determine if a type models a container.
@@ -369,37 +362,25 @@ namespace micro_os_plus::micro_test_plus
      * @retval false otherwise.
      *
      * @details
-     * The `is_container_v` variable template evaluates to `true` if the given
-     * type `T` provides both `begin()` and `end()` member functions,
-     * indicating that it models a standard container concept. This trait is
-     * determined at compile time using SFINAE and is_valid, and is used
-     * throughout the µTest++ framework to enable generic handling of container
-     * types in template metaprogramming.
+     * Implemented in terms of the `container_like` concept.
      */
     template <class T>
-    static constexpr auto is_container_v = is_valid<T> (
-        [] (auto t) -> decltype (t.begin (), t.end (), void ()) {});
+    static constexpr auto is_container_v = container_like<T>;
 
     /**
-     * @brief Variable template to determine if a type provides a static `npos`
+     * @brief Variable template to determine if a type provides a `npos`
      * member.
      *
-     * @tparam T The type to be checked for the presence of a static `npos`
-     * member.
+     * @tparam T The type to be checked for the presence of a `npos` member.
      *
-     * @retval true if `T` has a static member named `npos`.
+     * @retval true if `T` has a member named `npos`.
      * @retval false otherwise.
      *
      * @details
-     * The `has_npos_v` variable template evaluates to `true` if the given type
-     * `T` defines a static member named `npos`. This trait is determined at
-     * compile time using SFINAE and the `is_valid` utility, and is used
-     * throughout the µTest++ framework to enable generic handling of types
-     * that follow the standard string or container conventions.
+     * Implemented in terms of the `has_npos` concept.
      */
     template <class T>
-    static constexpr auto has_npos_v
-        = is_valid<T> ([] (auto t) -> decltype (void (t.npos)) {});
+    static constexpr auto has_npos_v = has_npos<T>;
 
     /**
      * @brief Variable template to determine if a type provides a `value`
@@ -411,15 +392,10 @@ namespace micro_os_plus::micro_test_plus
      * @retval false otherwise.
      *
      * @details
-     * The `has_value_v` variable template evaluates to `true` if the given
-     * type `T` defines a member named `value`. This trait is determined at
-     * compile time using SFINAE and the `is_valid` utility, and is used
-     * throughout the µTest++ framework to enable generic handling of types
-     * that encapsulate a value, such as wrappers or constant types.
+     * Implemented in terms of the `has_value` concept.
      */
     template <class T>
-    static constexpr auto has_value_v
-        = is_valid<T> ([] (auto t) -> decltype (void (t.value)) {});
+    static constexpr auto has_value_v = has_value<T>;
 
     /**
      * @brief Variable template to determine if a type provides an `epsilon`
@@ -432,15 +408,10 @@ namespace micro_os_plus::micro_test_plus
      * @retval false otherwise.
      *
      * @details
-     * The `has_epsilon_v` variable template evaluates to `true` if the given
-     * type `T` defines a member named `epsilon`. This trait is determined at
-     * compile time using SFINAE and the `is_valid` utility, and is used
-     * throughout the µTest++ framework to enable generic handling of types
-     * that represent floating-point values or require precision control.
+     * Implemented in terms of the `has_epsilon` concept.
      */
     template <class T>
-    static constexpr auto has_epsilon_v
-        = is_valid<T> ([] (auto t) -> decltype (void (t.epsilon)) {});
+    static constexpr auto has_epsilon_v = has_epsilon<T>;
 
     /**
      * @brief Variable template to determine if a type is a floating point

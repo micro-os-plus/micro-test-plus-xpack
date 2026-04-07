@@ -469,8 +469,8 @@ namespace micro_os_plus::micro_test_plus
      * @return Reference to the current reporter instance.
      */
     template <class T>
-      requires (type_traits::is_container_v<T>
-                and not type_traits::has_npos_v<T>)
+      requires (type_traits::container_like<T>
+                and not type_traits::has_npos<T>)
     reporter&
     operator<< (T&& t);
 
