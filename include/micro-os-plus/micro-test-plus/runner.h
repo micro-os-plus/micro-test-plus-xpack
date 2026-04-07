@@ -195,19 +195,19 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] virtual size_t
     total_suites_count (void) const;
 
-    [[nodiscard]] constexpr class top_suite&
+    [[nodiscard]] class top_suite&
     top_suite (void)
     {
       return top_suite_;
     }
 
-    [[nodiscard]] constexpr size_t
+    [[nodiscard]] size_t
     current_suite_index ()
     {
       return suite_index_;
     }
 
-    constexpr size_t
+    size_t
     increment_suite_index ()
     {
       return ++suite_index_;

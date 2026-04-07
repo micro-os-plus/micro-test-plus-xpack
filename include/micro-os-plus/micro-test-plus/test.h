@@ -155,7 +155,7 @@ namespace micro_os_plus::micro_test_plus
      *	None.
      * @return A pointer to the null-terminated test suite name.
      */
-    [[nodiscard]] constexpr const char*
+    [[nodiscard]] const char*
     name (void) const
     {
       return name_;
@@ -201,7 +201,7 @@ namespace micro_os_plus::micro_test_plus
      *	None.
      * @return A reference to the test runner.
      */
-    [[nodiscard]] constexpr class runner&
+    [[nodiscard]] class runner&
     runner (void)
     {
       return runner_;
@@ -217,25 +217,25 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] class reporter&
     reporter (void);
 
-    [[nodiscard]] constexpr size_t
+    [[nodiscard]] size_t
     own_index ()
     {
       return own_index_;
     }
 
-    [[nodiscard]] constexpr size_t
+    [[nodiscard]] size_t
     current_subtest_index ()
     {
       return current_subtest_index_;
     }
 
-    constexpr size_t
+    size_t
     increment_subtest_index ()
     {
       return ++current_subtest_index_;
     }
 
-    [[nodiscard]] constexpr size_t
+    [[nodiscard]] size_t
     children_subtests_count (void) const
     {
       return children_subtests_.size ();
@@ -492,7 +492,7 @@ namespace micro_os_plus::micro_test_plus
               type_traits::requires_t<
                   type_traits::is_op_v<Expr_T>
                   or type_traits::is_convertible_v<Expr_T, bool>> = 0>
-    constexpr auto
+    auto
     expect (const Expr_T& expr, const reflection::source_location& sl
                                 = reflection::source_location::current ())
     {
@@ -540,7 +540,7 @@ namespace micro_os_plus::micro_test_plus
               type_traits::requires_t<
                   type_traits::is_op_v<Expr_T>
                   or type_traits::is_convertible_v<Expr_T, bool>> = 0>
-    constexpr auto
+    auto
     assume (const Expr_T& expr, const reflection::source_location& sl
                                 = reflection::source_location::current ())
     {
@@ -552,13 +552,13 @@ namespace micro_os_plus::micro_test_plus
     virtual void
     run (void) override;
 
-    [[nodiscard]] constexpr suite&
+    [[nodiscard]] suite&
     parent_suite (void) const
     {
       return parent_suite_;
     }
 
-    [[nodiscard]] constexpr size_t
+    [[nodiscard]] size_t
     nesting_depth ()
     {
       return nesting_depth_;
