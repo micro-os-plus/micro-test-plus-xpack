@@ -156,8 +156,30 @@ namespace micro_os_plus::micro_test_plus
     class subtest& subtest = *children_subtests_.back ();
     subtest.run ();
 
+    // This test executed one more subtest.
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
+    printf ("%s subtest '%s' executed one more subtest\n", __PRETTY_FUNCTION__,
+            name ());
+#pragma GCC diagnostic pop
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
+    totals ().increment_executed_subtests ();
+    // Do not accumulate the totals from the child test into the current test
+    // totals. totals () += subtest.totals ();
+
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
+    printf ("%s suite '%s' totals\n", __PRETTY_FUNCTION__, suite.name ());
+#pragma GCC diagnostic pop
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
+
     // Accumulate the totals from the child test into the suite totals.
-    suite.totals ().increment_executed_subtests ();
     suite.totals () += subtest.totals ();
   }
 

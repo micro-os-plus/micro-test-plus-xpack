@@ -257,7 +257,13 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
+    printf ("%s '%s' +%zu -%zu in xc%zu, xs%zu | cs%zu\n", __PRETTY_FUNCTION__,
+            suite.name (), suite.totals ().successful_checks (),
+            suite.totals ().failed_checks (),
+            suite.totals ().executed_checks (),
+            suite.totals ().executed_subtests (),
+            suite.children_subtests_count ());
+
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
@@ -270,7 +276,7 @@ namespace micro_os_plus::micro_test_plus
 
     char message_summary[40];
     snprintf (message_summary, sizeof (message_summary), "%s1..%zu\n",
-              indent.c_str (), suite.children_subtests_count ());
+              indent.c_str (), suite.totals ().executed_subtests ());
 
     long milliseconds = 0;
     long microseconds = 0;
@@ -425,8 +431,13 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s' %zu\n", __PRETTY_FUNCTION__, subtest.name (),
-            subtest.nesting_depth ());
+    printf ("%s '%s' i%zu +%zu -%zu in xc%zu, xs%zu | cs%zu\n",
+            __PRETTY_FUNCTION__, subtest.name (), subtest.nesting_depth (),
+            subtest.totals ().successful_checks (),
+            subtest.totals ().failed_checks (),
+            subtest.totals ().executed_checks (),
+            subtest.totals ().executed_subtests (),
+            subtest.children_subtests_count ());
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
@@ -497,7 +508,7 @@ namespace micro_os_plus::micro_test_plus
                 // and count only subtests, not checks, as the TAP output is
                 // not shown.
                 printf ("%s1..%zu\n", indent2.c_str (),
-                        subtest.children_subtests_count ());
+                        subtest.totals ().executed_subtests ());
               }
 
             printf ("%s", message_totals);
