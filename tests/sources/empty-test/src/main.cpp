@@ -153,7 +153,7 @@ main (int argc, char* argv[])
   // ---------------------------------------------------------------------------
 
   {
-    mt::runner tr ("Top suite with nested subtests");
+    mt::runner tr{ "Top suite with nested subtests" };
     auto& ts = tr.initialise (argc, argv);
     // printf ("in test suite '%s'\n", ts.name ());
 

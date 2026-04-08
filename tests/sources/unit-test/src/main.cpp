@@ -41,7 +41,7 @@ using namespace micro_os_plus::micro_test_plus;
 #pragma GCC diagnostic ignored "-Wfloat-equal"
 #pragma GCC diagnostic ignored "-Wsign-compare"
 #pragma GCC diagnostic ignored "-Wdouble-promotion"
-#pragma GCC diagnostic ignored "-Wconversion"
+// #pragma GCC diagnostic ignored "-Wconversion"
 
 // ----------------------------------------------------------------------------
 
@@ -1639,26 +1639,6 @@ static static_suite ts_passed_integrals{ "Combinatorial integrals", tr,
                  == local_counts.executed_subtest);
 
     ts.test ("Combinatorial integrals with unsigned int",
-             test_case_expect_passed_integrals_combinatorial<unsigned int>);
-
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
-    test_assert (current_suite_totals.failed_checks ()
-                 == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
-
-    ts.test ("Combinatorial integrals with signed short",
-             test_case_expect_passed_integrals_combinatorial<signed int>);
-
-    test_assert (current_suite_totals.successful_checks ()
-                 == local_counts.successful_checks);
-    test_assert (current_suite_totals.failed_checks ()
-                 == local_counts.failed_checks);
-    test_assert (current_suite_totals.executed_subtests ()
-                 == local_counts.executed_subtest);
-
-    ts.test ("Combinatorial integrals with unsigned short",
              test_case_expect_passed_integrals_combinatorial<unsigned int>);
 
     test_assert (current_suite_totals.successful_checks ()

@@ -74,8 +74,6 @@ suite_function (mt::suite& t)
 
 // ----------------------------------------------------------------------------
 
-extern mt::static_runner sr;
-
 mt::static_runner sr{ "Static top suite" };
 
 int
