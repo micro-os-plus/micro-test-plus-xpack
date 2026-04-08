@@ -108,7 +108,7 @@ namespace micro_os_plus::micro_test_plus
               }
             else
               {
-                fprintf (stderr, "Error: --output-file option requires a "
+                fprintf (stderr, "error: --output-file option requires a "
                                  "file path argument\n");
                 exit (1);
               }
@@ -126,7 +126,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-            fprintf (stderr, "Error: Failed to open output file '%s'\n",
+            fprintf (stderr, "error: Failed to open output file '%s'\n",
                      output_file_path);
 #pragma GCC diagnostic pop
             exit (1);

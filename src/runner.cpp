@@ -148,7 +148,7 @@ namespace micro_os_plus::micro_test_plus
               }
             else
               {
-                fprintf (stderr, "Error: --reporter option requires a "
+                fprintf (stderr, "error: --reporter option requires a "
                                  "reporter name argument\n");
                 exit (1);
               }
