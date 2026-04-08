@@ -1,0 +1,11 @@
+TAP version 14
+# Subtest: Minimal
+    # Subtest: Check various conditions
+        ok 1 - answer is 42
+        ok 2 - condition is true
+        1..2
+    ok 1 - Check various conditions # { passed, 2 checks }
+    1..1
+ok 1 - Minimal # { passed, 2 checks in 1 test case }
+1..1
+# { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite }
