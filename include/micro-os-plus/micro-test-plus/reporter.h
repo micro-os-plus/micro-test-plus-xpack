@@ -58,6 +58,8 @@
 #include <stdio.h>
 #include <string_view>
 #include <string>
+#include <memory>
+#include <vector>
 
 #include "type-traits.h"
 #include "detail.h"
@@ -233,10 +235,10 @@ namespace micro_os_plus::micro_test_plus
      * level and applies it to the reporter. The `--verbose`, `--quiet`, and
      * `--silent` options are recognised.
      *
-     * @param argc The argument count from main().
-     * @param argv The argument vector from main().
+     * @param argvs Owning pointer to the command-line arguments vector;
+     * the reporter takes ownership via move.
      */
-    reporter (int argc, char* argv[]);
+    reporter (std::unique_ptr<std::vector<std::string_view>> argvs);
 
     /**
      * @brief Virtual destructor for the reporter class.
@@ -865,14 +867,9 @@ namespace micro_os_plus::micro_test_plus
     FILE* output_file_{ nullptr };
 
     /**
-     * @brief Stores the argument count passed to the test runner.
+     * @brief Owns the command-line arguments passed to the test runner.
      */
-    int argc_ = 0;
-
-    /**
-     * @brief Stores the argument vector passed to the test runner.
-     */
-    char** argv_ = nullptr;
+    std::unique_ptr<std::vector<std::string_view>> argvs_{};
 
   private:
     /**

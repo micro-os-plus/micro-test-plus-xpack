@@ -100,10 +100,10 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The rule of five is enforced to prevent accidental copying or moving.
      *
-     * @param argc The argument count from main().
-     * @param argv The argument vector from main().
+     * @param argvs Owning pointer to the command-line arguments vector;
+     * the reporter takes ownership via move.
      */
-    reporter_human (int argc, char* argv[]);
+    reporter_human (std::unique_ptr<std::vector<std::string_view>> argvs);
 
     /**
      * @brief Deleted copy constructor to prevent copying.

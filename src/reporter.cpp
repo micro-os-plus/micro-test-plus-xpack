@@ -64,70 +64,71 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
-#endif
-
-  reporter::reporter (int argc, char* argv[])
+  reporter::reporter (std::unique_ptr<std::vector<std::string_view>> argvs)
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
 
     verbosity = verbosity::normal;
-    const char* output_file_path = nullptr;
+    std::string_view output_file_sv{};
 
-    argc_ = argc;
-    argv_ = argv;
+    argvs_ = std::move (argvs);
 
-    for (int i = 0; i < argc; ++i)
+    static constexpr std::string_view output_file_prefix{ "--output-file=" };
+    if (argvs_)
       {
-        if (strcmp (argv[i], "--verbose") == 0)
+        const auto& args = *argvs_;
+        for (size_t i = 0; i < args.size (); ++i)
           {
-            verbosity = verbosity::verbose;
-          }
-        else if (strcmp (argv[i], "--quiet") == 0)
-          {
-            verbosity = verbosity::quiet;
-          }
-        else if (strcmp (argv[i], "--silent") == 0)
-          {
-            verbosity = verbosity::silent;
-          }
-        else if (std::string_view{ argv[i] }.starts_with ("--output-file="))
-          {
-            output_file_path
-                = argv[i] + std::string_view{ "--output-file=" }.size ();
-          }
-        else if (strcmp (argv[i], "--output-file") == 0)
-          {
-            if (i + 1 < argc)
+            if (args[i] == "--verbose")
               {
-                output_file_path = argv[++i];
+                verbosity = verbosity::verbose;
               }
-            else
+            else if (args[i] == "--quiet")
               {
-                fprintf (stderr, "error: --output-file option requires a "
-                                 "file path argument\n");
-                exit (1);
+                verbosity = verbosity::quiet;
+              }
+            else if (args[i] == "--silent")
+              {
+                verbosity = verbosity::silent;
+              }
+            else if (args[i].starts_with (output_file_prefix))
+              {
+                output_file_sv = args[i].substr (output_file_prefix.size ());
+              }
+            else if (args[i]
+                     == output_file_prefix.substr (
+                         0, output_file_prefix.size () - 1))
+              {
+                if (i + 1 < args.size ())
+                  {
+                    output_file_sv = args[++i];
+                  }
+                else
+                  {
+                    fprintf (stderr, "error: --output-file option requires a "
+                                     "file path argument\n");
+                    exit (1);
+                  }
               }
           }
       }
 
-#pragma GCC diagnostic pop
-
-    if (output_file_path != nullptr)
+    if (!output_file_sv.empty ())
       {
-        output_file_ = fopen (output_file_path, "w");
+        // .data() is safe: all string_views are views into argv[]
+        // entries, which are null-terminated C strings.
+        output_file_ = fopen (output_file_sv.data (), "w");
         if (output_file_ == nullptr)
           {
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-            fprintf (stderr, "error: Failed to open output file '%s'\n",
-                     output_file_path);
+            fprintf (stderr, "error: Failed to open output file '%.*s'\n",
+                     static_cast<int> (output_file_sv.size ()),
+                     output_file_sv.data ());
 #pragma GCC diagnostic pop
             exit (1);
           }
@@ -210,30 +211,27 @@ namespace micro_os_plus::micro_test_plus
       }
   }
 
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
-#endif
   void
   reporter::write_info (void)
   {
-    if (argc_ > 0)
+    if (argvs_ && !argvs_->empty ())
       {
+        const auto& args = *argvs_;
         std::string line;
         line.reserve (256);
         line.append (get_comment_prefix ());
         line.append ("Running: ");
 
         // Append only the file name part of argv[0].
-        const std::string_view arg0{ argv_[0] };
+        const std::string_view arg0 = args[0];
         const auto sep = arg0.rfind ('/');
         line.append ((sep != std::string_view::npos) ? arg0.substr (sep + 1)
                                                      : arg0);
 
-        for (int i = 1; i < argc_; ++i)
+        for (size_t i = 1; i < args.size (); ++i)
           {
             line.append (" ");
-            line.append (argv_[i]);
+            line.append (args[i]);
           }
         line.append ("\n");
 
@@ -300,7 +298,7 @@ namespace micro_os_plus::micro_test_plus
 #endif // !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
     }
   }
-#pragma GCC diagnostic pop
+
   /**
    * @details
    * This method flushes the output buffer of the `reporter` by

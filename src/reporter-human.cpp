@@ -57,8 +57,9 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
-  reporter_human::reporter_human (int argc, char* argv[])
-      : reporter{ argc, argv }
+  reporter_human::reporter_human (
+      std::unique_ptr<std::vector<std::string_view>> argvs)
+      : reporter{ std::move (argvs) }
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
     printf ("%s\n", __PRETTY_FUNCTION__);

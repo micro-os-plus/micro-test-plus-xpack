@@ -132,19 +132,26 @@ namespace micro_os_plus::micro_test_plus
 #endif // defined(MICRO_OS_PLUS_DEBUG)
 #endif // !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
 
-    const char* reporter_name = "tap";
-    for (int i = 0; i < argc; ++i)
+    std::vector<std::string_view> argvs{ static_cast<size_t> (argc) };
+    for (size_t i = 0; i < static_cast<size_t> (argc); ++i)
       {
-        if (std::string_view{ argv[i] }.starts_with ("--reporter="))
+        argvs[i] = argv[i];
+      }
+
+    std::string_view reporter_name{ "tap" };
+    static constexpr std::string_view reporter_prefix{ "--reporter=" };
+    for (size_t i = 0; i < argvs.size (); ++i)
+      {
+        if (argvs[i].starts_with (reporter_prefix))
           {
-            reporter_name
-                = argv[i] + std::string_view{ "--reporter=" }.size ();
+            reporter_name = argvs[i].substr (reporter_prefix.size ());
           }
-        else if (strcmp (argv[i], "--reporter") == 0)
+        else if (argvs[i]
+                 == reporter_prefix.substr (0, reporter_prefix.size () - 1))
           {
-            if (i + 1 < argc)
+            if (i + 1 < argvs.size ())
               {
-                reporter_name = argv[++i];
+                reporter_name = argvs[++i];
               }
             else
               {
@@ -156,17 +163,23 @@ namespace micro_os_plus::micro_test_plus
       }
 
     // Initialize and configure the reporter.
-    if (strcmp (reporter_name, "human") == 0)
+    if (reporter_name == "human")
       {
-        reporter_ = std::make_unique<reporter_human> (argc, argv);
+        reporter_ = std::make_unique<reporter_human> (
+            std::make_unique<std::vector<std::string_view>> (
+                std::move (argvs)));
       }
-    else if (strcmp (reporter_name, "tap") == 0)
+    else if (reporter_name == "tap")
       {
-        reporter_ = std::make_unique<reporter_tap> (argc, argv);
+        reporter_ = std::make_unique<reporter_tap> (
+            std::make_unique<std::vector<std::string_view>> (
+                std::move (argvs)));
       }
     else
       {
-        fprintf (stderr, "error: unknown reporter '%s'\n", reporter_name);
+        fprintf (stderr, "error: unknown reporter '%.*s'\n",
+                 static_cast<int> (reporter_name.size ()),
+                 reporter_name.data ());
         exit (1);
       }
 
