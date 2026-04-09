@@ -67,6 +67,13 @@ if (XPACK_ENABLE_MINIMAL_TEST)
   add_native_test_executable (minimal-test)
   target_link_native_test_libraries (minimal-test test::minimal)
 
+  # Only for this test, always define the trace macros, to check if the tracing
+  # support compiles  correctly.
+  target_compile_definitions (
+    minimal-test PRIVATE MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
+                         MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+  )
+
   message (VERBOSE "A> minimal-test")
 
   # ---------------------------------------------------------------------------
