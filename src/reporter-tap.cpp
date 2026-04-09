@@ -40,6 +40,7 @@
 
 #include <micro-os-plus/micro-test-plus.h>
 
+#include <cinttypes>
 #include <time.h>
 
 // ----------------------------------------------------------------------------
@@ -148,8 +149,8 @@ namespace micro_os_plus::micro_test_plus
     snprintf (message_summary, sizeof (message_summary), "1..%zu\n",
               total_suites_count);
 
-    long milliseconds = 0;
-    long microseconds = 0;
+    uint32_t milliseconds = 0;
+    uint32_t microseconds = 0;
     if (runner_.timings ().has_timestamps ())
       {
         runner_.timings ().compute_elapsed_time (milliseconds, microseconds);
@@ -169,8 +170,9 @@ namespace micro_os_plus::micro_test_plus
     char message_time[120] = "";
     if (milliseconds > 0 || microseconds > 0)
       {
-        snprintf (message_time, sizeof (message_time), ", time: %ld.%03ld ms",
-                  milliseconds, microseconds);
+        snprintf (message_time, sizeof (message_time),
+                  ", time: %" PRIu32 ".%03" PRIu32 " ms", milliseconds,
+                  microseconds);
       }
 
     if (output_file_ != nullptr)
@@ -278,8 +280,8 @@ namespace micro_os_plus::micro_test_plus
     snprintf (message_summary, sizeof (message_summary), "%s1..%zu\n",
               indent.c_str (), suite.totals ().executed_subtests ());
 
-    long milliseconds = 0;
-    long microseconds = 0;
+    uint32_t milliseconds = 0;
+    uint32_t microseconds = 0;
     if (suite.timings ().has_timestamps ())
       {
         suite.timings ().compute_elapsed_time (milliseconds, microseconds);
@@ -313,8 +315,9 @@ namespace micro_os_plus::micro_test_plus
     char message_time[120] = "";
     if (milliseconds > 0 || microseconds > 0)
       {
-        snprintf (message_time, sizeof (message_time), ", time: %ld.%03ld ms",
-                  milliseconds, microseconds);
+        snprintf (message_time, sizeof (message_time),
+                  ", time: %" PRIu32 ".%03" PRIu32 " ms", milliseconds,
+                  microseconds);
       }
 
     if (output_file_ != nullptr)

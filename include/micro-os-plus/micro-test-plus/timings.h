@@ -27,14 +27,14 @@
 
 // ----------------------------------------------------------------------------
 
-#include <memory>
+#include <cstdint>
+#include <optional>
 #include <time.h>
 
 // ----------------------------------------------------------------------------
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
-// #pragma GCC diagnostic ignored "-Wpadded"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wpre-c++17-compat"
@@ -51,28 +51,37 @@ namespace micro_os_plus::micro_test_plus
   class timestamp
   {
   public:
-    timestamp ();
+    timestamp () noexcept;
 
-    timestamp (const timestamp&) = delete;
-    timestamp (timestamp&&) = delete;
+    // `timespec` is trivially copyable, so copy and move are safe to default.
+    // Defaulting these operations allows `timestamp` to be used in contexts
+    // that require copyability or movability (e.g. containers, algorithms).
+    timestamp (const timestamp&) = default;
+    timestamp (timestamp&&) = default;
     timestamp&
-    operator= (const timestamp&) = delete;
+    operator= (const timestamp&) = default;
     timestamp&
-    operator= (timestamp&&) = delete;
+    operator= (timestamp&&) = default;
 
     ~timestamp () = default;
 
     bool
-    has_value (void) const;
+    has_clock (void) const noexcept;
 
     [[nodiscard]] timespec&
-    value ()
+    value () noexcept
     {
-      return timestamp_;
+      return value_;
+    }
+
+    [[nodiscard]] const timespec&
+    value () const noexcept
+    {
+      return value_;
     }
 
   protected:
-    timespec timestamp_{};
+    timespec value_{};
   };
 
   // ==========================================================================
@@ -90,7 +99,6 @@ namespace micro_os_plus::micro_test_plus
     operator= (timestamps&&) = delete;
 
     ~timestamps () = default;
-    // unique_ptr members are destroyed automatically.
 
     void
     timestamp_begin (void);
@@ -102,18 +110,19 @@ namespace micro_os_plus::micro_test_plus
     has_timestamps (void) const;
 
     void
-    compute_elapsed_time (long& milliseconds, long& microseconds) const;
+    compute_elapsed_time (uint32_t& milliseconds,
+                          uint32_t& microseconds) const;
 
   protected:
     /**
      * @brief The timestamp recorded at the beginning of the test suite.
      */
-    std::unique_ptr<timestamp> begin_time_;
+    std::optional<timestamp> begin_time_;
 
     /**
      * @brief The timestamp recorded at the end of the test suite.
      */
-    std::unique_ptr<timestamp> end_time_;
+    std::optional<timestamp> end_time_;
   };
 
   // ==========================================================================

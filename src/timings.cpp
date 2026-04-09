@@ -43,19 +43,19 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
-  timestamp::timestamp ()
+  timestamp::timestamp () noexcept
   {
 #if defined(_WIN32)
-    timespec_get (&timestamp_, TIME_UTC);
+    timespec_get (&value_, TIME_UTC);
 #elif defined(CLOCK_MONOTONIC)
-    clock_gettime (CLOCK_MONOTONIC, &timestamp_);
+    clock_gettime (CLOCK_MONOTONIC, &value_);
 #endif
   }
 
   bool
-  timestamp::has_value (void) const
+  timestamp::has_clock (void) const noexcept
   {
-    return timestamp_.tv_sec != 0 || timestamp_.tv_nsec != 0;
+    return value_.tv_sec != 0 || value_.tv_nsec != 0;
   }
 
   // --------------------------------------------------------------------------
@@ -64,9 +64,9 @@ namespace micro_os_plus::micro_test_plus
   timestamps::timestamp_begin (void)
   {
     // Ensure it is timestamped only once.
-    if (begin_time_ == nullptr)
+    if (!begin_time_.has_value ())
       {
-        begin_time_ = std::make_unique<timestamp> ();
+        begin_time_.emplace ();
       }
   }
 
@@ -74,23 +74,25 @@ namespace micro_os_plus::micro_test_plus
   timestamps::timestamp_end (void)
   {
     // Ensure it is timestamped only once.
-    if (end_time_ == nullptr)
+    if (!end_time_.has_value ())
       {
-        end_time_ = std::make_unique<timestamp> ();
+        end_time_.emplace ();
       }
   }
 
   bool
   timestamps::has_timestamps (void) const
   {
-    return begin_time_ != nullptr && begin_time_->has_value ()
-           && end_time_ != nullptr && end_time_->has_value ();
+    return begin_time_.has_value () && begin_time_->has_clock ()
+           && end_time_.has_value () && end_time_->has_clock ();
   }
 
   void
-  timestamps::compute_elapsed_time (long& milliseconds,
-                                    long& microseconds) const
+  timestamps::compute_elapsed_time (uint32_t& milliseconds,
+                                    uint32_t& microseconds) const
   {
+    // Precondition: has_timestamps() must be true before calling this method.
+    // Invoking it with disengaged optionals is undefined behaviour.
     long long delta_ns
         = end_time_->value ().tv_nsec - begin_time_->value ().tv_nsec;
     long long delta_s
@@ -103,8 +105,8 @@ namespace micro_os_plus::micro_test_plus
 
     // Split into milliseconds and microseconds.
     const long long total_us = delta_s * 1000000LL + delta_ns / 1000LL;
-    milliseconds = static_cast<long> (total_us / 1000LL);
-    microseconds = static_cast<long> (total_us % 1000LL);
+    milliseconds = static_cast<uint32_t> (total_us / 1000LL);
+    microseconds = static_cast<uint32_t> (total_us % 1000LL);
   }
 
   // --------------------------------------------------------------------------
