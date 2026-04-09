@@ -82,7 +82,7 @@ TAP version 14
             filename: main.cpp
             line: 473
           ...
-        not ok 7
+        not ok 7 - 42_i != 42_i
           ---
           condition: 42 != 42
           at:

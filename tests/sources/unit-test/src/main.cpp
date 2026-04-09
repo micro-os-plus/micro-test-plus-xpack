@@ -476,7 +476,7 @@ main (int argc, char* argv[])
       {
         using namespace literals;
 
-        t.expect (ne (42_i, 42_i));
+        t.expect (ne (42_i, 42_i)) << "42_i != 42_i";
         local_counts.failed_checks++;
 
         t.expect (ne (42, 42_i)) << "42 != 42_i";
