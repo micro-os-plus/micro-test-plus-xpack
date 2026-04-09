@@ -285,13 +285,13 @@ namespace micro_os_plus::micro_test_plus
   }
 
   size_t
-  runner::suites_count (void) const
+  runner::suites_count (void) const noexcept
   {
     return children_suites_.size () + 1;
   }
 
   size_t
-  runner::total_suites_count (void) const
+  runner::total_suites_count (void) const noexcept
   {
     return suites_count ();
   }
@@ -327,7 +327,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   size_t
-  static_runner::static_suites_count (void) const
+  static_runner::static_suites_count (void) const noexcept
   {
     return static_children_suites_ != nullptr
                ? static_children_suites_->size ()
@@ -335,7 +335,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   size_t
-  static_runner::total_suites_count (void) const
+  static_runner::total_suites_count (void) const noexcept
   {
     return suites_count () + static_suites_count ();
   }

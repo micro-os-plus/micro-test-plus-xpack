@@ -101,13 +101,13 @@ namespace micro_os_plus::micro_test_plus
     ~timestamps () = default;
 
     void
-    timestamp_begin (void);
+    timestamp_begin (void) noexcept;
 
     void
-    timestamp_end (void);
+    timestamp_end (void) noexcept;
 
     bool
-    has_timestamps (void) const;
+    has_timestamps (void) const noexcept;
 
     void
     compute_elapsed_time (uint32_t& milliseconds,

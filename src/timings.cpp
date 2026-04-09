@@ -61,7 +61,7 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   void
-  timestamps::timestamp_begin (void)
+  timestamps::timestamp_begin (void) noexcept
   {
     // Ensure it is timestamped only once.
     if (!begin_time_.has_value ())
@@ -71,7 +71,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   void
-  timestamps::timestamp_end (void)
+  timestamps::timestamp_end (void) noexcept
   {
     // Ensure it is timestamped only once.
     if (!end_time_.has_value ())
@@ -81,7 +81,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   bool
-  timestamps::has_timestamps (void) const
+  timestamps::has_timestamps (void) const noexcept
   {
     return begin_time_.has_value () && begin_time_->has_clock ()
            && end_time_.has_value () && end_time_->has_clock ();

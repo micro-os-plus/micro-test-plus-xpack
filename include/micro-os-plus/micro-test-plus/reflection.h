@@ -197,7 +197,7 @@ namespace micro_os_plus::micro_test_plus
      * @return A pointer to the short name within the input string.
      */
     const char*
-    short_name (const char* name);
+    short_name (const char* name) noexcept;
 
     // TODO: update for the new namespaces.
 

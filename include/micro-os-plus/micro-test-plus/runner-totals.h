@@ -75,43 +75,43 @@ namespace micro_os_plus::micro_test_plus
     operator+= (const runner_totals& other);
 
     void
-    increment_successful_checks (size_t count = 1)
+    increment_successful_checks (size_t count = 1) noexcept
     {
       successful_checks_ += count;
     }
 
     void
-    increment_failed_checks (size_t count = 1)
+    increment_failed_checks (size_t count = 1) noexcept
     {
       failed_checks_ += count;
     }
 
     void
-    increment_executed_subtests (size_t count = 1)
+    increment_executed_subtests (size_t count = 1) noexcept
     {
       executed_subtests_ += count;
     }
 
     [[nodiscard]] size_t
-    successful_checks () const
+    successful_checks () const noexcept
     {
       return successful_checks_;
     }
 
     [[nodiscard]] size_t
-    failed_checks () const
+    failed_checks () const noexcept
     {
       return failed_checks_;
     }
 
     [[nodiscard]] size_t
-    executed_checks () const
+    executed_checks () const noexcept
     {
       return successful_checks_ + failed_checks_;
     }
 
     [[nodiscard]] size_t
-    executed_subtests () const
+    executed_subtests () const noexcept
     {
       return executed_subtests_;
     }

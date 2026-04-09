@@ -156,7 +156,7 @@ namespace micro_os_plus::micro_test_plus
      * @return A pointer to the null-terminated test suite name.
      */
     [[nodiscard]] const char*
-    name (void) const
+    name (void) const noexcept
     {
       return name_;
     }
@@ -170,7 +170,7 @@ namespace micro_os_plus::micro_test_plus
      * @return A reference to the runner_totals instance.
      */
     [[nodiscard]] runner_totals&
-    totals ()
+    totals () noexcept
     {
       return totals_;
     }
@@ -183,7 +183,7 @@ namespace micro_os_plus::micro_test_plus
      * @return A const reference to the runner_totals instance.
      */
     [[nodiscard]] const runner_totals&
-    totals () const
+    totals () const noexcept
     {
       return totals_;
     }
@@ -219,25 +219,25 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
 
     [[nodiscard]] size_t
-    own_index () const
+    own_index () const noexcept
     {
       return own_index_;
     }
 
     [[nodiscard]] size_t
-    current_subtest_index () const
+    current_subtest_index () const noexcept
     {
       return current_subtest_index_;
     }
 
     size_t
-    increment_subtest_index ()
+    increment_subtest_index () noexcept
     {
       return ++current_subtest_index_;
     }
 
     [[nodiscard]] size_t
-    children_subtests_count (void) const
+    children_subtests_count (void) const noexcept
     {
       return children_subtests_.size ();
     }
@@ -250,7 +250,7 @@ namespace micro_os_plus::micro_test_plus
      * @return A reference to the test reporter.
      */
     [[nodiscard]] class reporter&
-    reporter (void) const;
+    reporter (void) const noexcept;
 
   protected:
     /**
@@ -261,7 +261,7 @@ namespace micro_os_plus::micro_test_plus
      * @return A reference to the test runner.
      */
     [[nodiscard]] class runner&
-    runner (void) const
+    runner (void) const noexcept
     {
       return runner_;
     }
@@ -576,7 +576,7 @@ namespace micro_os_plus::micro_test_plus
     run (void) override;
 
     [[nodiscard]] size_t
-    nesting_depth () const
+    nesting_depth () const noexcept
     {
       return nesting_depth_;
     }
@@ -636,7 +636,7 @@ namespace micro_os_plus::micro_test_plus
      * @return A reference to the timestamps instance.
      */
     [[nodiscard]] timestamps&
-    timings ()
+    timings () noexcept
     {
       return timings_;
     }
@@ -649,7 +649,7 @@ namespace micro_os_plus::micro_test_plus
      * @return A const reference to the timestamps instance.
      */
     [[nodiscard]] const timestamps&
-    timings () const
+    timings () const noexcept
     {
       return timings_;
     }

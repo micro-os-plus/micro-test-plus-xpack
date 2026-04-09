@@ -194,7 +194,7 @@ namespace micro_os_plus::micro_test_plus
     // Getters.
 
     [[nodiscard]] virtual size_t
-    total_suites_count (void) const;
+    total_suites_count (void) const noexcept;
 
     /**
      * @brief Returns a reference to the test reporter.
@@ -205,7 +205,7 @@ namespace micro_os_plus::micro_test_plus
      *   Reference to the test reporter.
      */
     [[nodiscard]] class reporter&
-    reporter (void) const
+    reporter (void) const noexcept
     {
       return *reporter_;
     }
@@ -218,7 +218,7 @@ namespace micro_os_plus::micro_test_plus
      * @return A reference to the timestamps instance.
      */
     [[nodiscard]] timestamps&
-    timings ()
+    timings () noexcept
     {
       return timings_;
     }
@@ -231,7 +231,7 @@ namespace micro_os_plus::micro_test_plus
      * @return A const reference to the timestamps instance.
      */
     [[nodiscard]] const timestamps&
-    timings () const
+    timings () const noexcept
     {
       return timings_;
     }
@@ -245,7 +245,7 @@ namespace micro_os_plus::micro_test_plus
      * @return The number of child test suites.
      */
     [[nodiscard]] size_t
-    suites_count (void) const;
+    suites_count (void) const noexcept;
 
     /**
      * @brief Runs all registered test suites.
@@ -323,7 +323,7 @@ namespace micro_os_plus::micro_test_plus
      * @return The total number of registered static test suites.
      */
     [[nodiscard]] size_t
-    static_suites_count (void) const;
+    static_suites_count (void) const noexcept;
 
     /**
      * @brief Returns the total count of all test suites, including static and
@@ -334,7 +334,7 @@ namespace micro_os_plus::micro_test_plus
      * @return The total number of test suites.
      */
     [[nodiscard]] virtual size_t
-    total_suites_count (void) const final override;
+    total_suites_count (void) const noexcept final override;
 
   protected:
     /**

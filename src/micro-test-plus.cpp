@@ -83,7 +83,7 @@ namespace micro_os_plus::micro_test_plus
      * folder names in test output.
      */
     const char*
-    short_name (const char* name)
+    short_name (const char* name) noexcept
     {
 #pragma GCC diagnostic push
 #if defined(__clang__)
