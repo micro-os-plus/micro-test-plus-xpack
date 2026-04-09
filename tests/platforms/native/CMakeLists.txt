@@ -369,9 +369,24 @@ if (XPACK_ENABLE_UNIT_TEST)
   # ---------------------------------------------------------------------------
   # TAP reporter
 
-  # default add_test (NAME "unit-test --verbose --reporter tap" COMMAND
-  # unit-test --verbose --reporter tap ) add_test (NAME "unit-test --reporter
-  # tap" COMMAND unit-test --reporter tap)
+  # --verbose 
+
+  # add_test (NAME "unit-test --verbose --reporter tap" 
+  #           COMMAND unit-test --verbose --reporter tap --output-file unit-test-verbose.tap) 
+
+  # add_test (
+  #   NAME "unit-test compare-tap --verbose"
+  #   COMMAND
+  #     bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+  #     "unit-test-verbose.tap"
+  #     "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/unit-test.tap"
+  # )
+  # set_tests_properties (
+  #   "unit-test compare-tap --verbose"
+  #   PROPERTIES DEPENDS "unit-test --verbose --reporter tap"
+  # )
+
+  # add_test (NAME "unit-test --reporter tap" COMMAND unit-test --reporter tap)
 
   # --quiet
   add_test (NAME "unit-test --quiet --reporter tap"
