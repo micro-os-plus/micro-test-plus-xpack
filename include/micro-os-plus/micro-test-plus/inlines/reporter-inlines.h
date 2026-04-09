@@ -95,10 +95,14 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * This operator overload enables the `reporter` to output pointer
-   * values in a consistent and readable hexadecimal format.
+   * values in a consistent and readable format.
    *
-   * The pointer is formatted as a string using `snprintf` with the `%p` format
-   * specifier, ensuring portability across platforms. The resulting string is
+   * Null pointers are always rendered as the string `"nullptr"`,
+   * regardless of the platform, avoiding platform-specific behaviour
+   * such as `"0x0"` on Linux or `"(nil)"` on macOS.
+   *
+   * Non-null pointers are formatted as a hexadecimal address using
+   * `snprintf` with the `%p` format specifier. The resulting string is
    * appended to the internal output buffer, allowing pointer values to be
    * included in test reports and diagnostics.
    *
@@ -110,6 +114,13 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (T* v)
   {
+    if (v == nullptr)
+      {
+        // Explicitly render null pointers as "0x0" to avoid platform-specific
+        // pointer representations like "(nil)" on macOS.
+        buffer_.append ("0x0");
+        return *this;
+      }
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
