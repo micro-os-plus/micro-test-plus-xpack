@@ -188,47 +188,16 @@ namespace micro_os_plus::micro_test_plus
       return totals_;
     }
 
-    /**
-     * @brief Gets the timings for the test suite.
-     *
-     * @par Parameters
-     *	None.
-     * @return A reference to the timestamps instance.
-     */
-    [[nodiscard]] timestamps&
-    timings ()
-    {
-      return timings_;
-    }
-
-    /**
-     * @brief Gets the timings for the test suite (const overload).
-     *
-     * @par Parameters
-     *	None.
-     * @return A const reference to the timestamps instance.
-     */
-    [[nodiscard]] const timestamps&
-    timings () const
-    {
-      return timings_;
-    }
-
   protected:
     /**
      * @brief The test suite name.
      */
-
     const char* name_;
+
     /**
      * @brief Totals for the test suite, including nested cases.
      */
     runner_totals totals_;
-
-    /**
-     * @brief Timings for the test suite.
-     */
-    timestamps timings_;
   };
 
   // ==========================================================================
@@ -658,8 +627,41 @@ namespace micro_os_plus::micro_test_plus
     test (const char* name, Callable_T&& callable, Args_T&&... arguments);
 
     // ------------------------------------------------------------------------
+
+    /**
+     * @brief Gets the timings for this suite.
+     *
+     * @par Parameters
+     *	None.
+     * @return A reference to the timestamps instance.
+     */
+    [[nodiscard]] timestamps&
+    timings ()
+    {
+      return timings_;
+    }
+
+    /**
+     * @brief Gets the timings for this suite (const overload).
+     *
+     * @par Parameters
+     *	None.
+     * @return A const reference to the timestamps instance.
+     */
+    [[nodiscard]] const timestamps&
+    timings () const
+    {
+      return timings_;
+    }
+
     virtual void
     run (void) override;
+
+  protected:
+    /**
+     * @brief Timings for this suite.
+     */
+    timestamps timings_;
   };
 
   // ==========================================================================

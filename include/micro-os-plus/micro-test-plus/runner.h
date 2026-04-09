@@ -210,6 +210,32 @@ namespace micro_os_plus::micro_test_plus
       return *reporter_;
     }
 
+    /**
+     * @brief Gets the timings for this runner.
+     *
+     * @par Parameters
+     *	 None.
+     * @return A reference to the timestamps instance.
+     */
+    [[nodiscard]] timestamps&
+    timings ()
+    {
+      return timings_;
+    }
+
+    /**
+     * @brief Gets the timings for this runner (const overload).
+     *
+     * @par Parameters
+     *	 None.
+     * @return A const reference to the timestamps instance.
+     */
+    [[nodiscard]] const timestamps&
+    timings () const
+    {
+      return timings_;
+    }
+
   protected:
     /**
      * @brief Returns the count of child test suites.
@@ -255,6 +281,11 @@ namespace micro_os_plus::micro_test_plus
      * @brief Pointer to the test reporter used for outputting test results.
      */
     std::unique_ptr<class reporter> reporter_;
+
+    /**
+     * @brief Timings for this runner.
+     */
+    timestamps timings_;
   };
 
   // ==========================================================================
