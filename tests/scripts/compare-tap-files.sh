@@ -56,9 +56,10 @@ fi
 
 # Strip the info lines and the line numbers from both files before comparing.
 diff -u \
-  <(grep -v -e '^# Running:' -e '^# Built with' -e '  line: ' -e '  condition: 0x' "$1") \
-  <(grep -v -e '^# Running:' -e '^# Built with' -e '  line: ' -e '  condition: 0x' "$2")
+  <(grep -v -e '^# Running:' -e '^# Built with' -e '  line: ' "$1" | sed -e 's|0[xX][1-9a-fA-F][0-9a-fA-F]*|0xXXX|g') \
+  <(grep -v -e '^# Running:' -e '^# Built with' -e '  line: ' "$2" | sed -e 's|0[xX][1-9a-fA-F][0-9a-fA-F]*|0xXXX|g')
 
 echo "$(basename "$1") ok"
+exit 0
 
 # -----------------------------------------------------------------------------
