@@ -602,11 +602,22 @@ namespace micro_os_plus::micro_test_plus
    * double type. It enables precise and readable streaming of long double
    * values into the reporter, supporting clear formatting of test output
    * across all test cases and folders.
+   *
+   * `std::to_chars` does not support `long double` in GCC's libstdc++ on
+   * Linux, so `snprintf` with the `%Lg` format specifier is used instead
+   * to ensure correct formatting on all platforms.
    */
   reporter&
   reporter::operator<< (long double v)
   {
-    append_number (buffer_, v);
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
+    char buf[64];
+    snprintf (buf, sizeof (buf), "%Lg", v);
+    buffer_.append (buf);
+#pragma GCC diagnostic pop
     buffer_.append ("l");
     return *this;
   }
