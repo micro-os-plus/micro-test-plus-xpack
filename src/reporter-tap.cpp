@@ -177,7 +177,8 @@ namespace micro_os_plus::micro_test_plus
 
     if (output_file_ != nullptr)
       {
-        fprintf (output_file_, "%s%s }\n", message_summary, message_totals);
+        fprintf (output_file_, "%s%s%s }\n", message_summary, message_totals,
+                 message_time);
       }
 
     if (verbosity != verbosity::silent)
@@ -324,7 +325,8 @@ namespace micro_os_plus::micro_test_plus
       {
         write_buffer_to_file ();
 
-        fprintf (output_file_, "%s%s }\n", message_summary, message_totals);
+        fprintf (output_file_, "%s%s%s }\n", message_summary, message_totals,
+                 message_time);
       }
 
     // At this point, the buffer may contain output from the test case, which
