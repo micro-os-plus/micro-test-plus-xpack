@@ -42,6 +42,10 @@
 
 #include <micro-os-plus/micro-test-plus.h>
 
+#if defined(__APPLE__) || defined(__linux__) || defined(__unix__)
+#include <unistd.h>
+#endif
+
 // ----------------------------------------------------------------------------
 
 #pragma GCC diagnostic ignored "-Waggregate-return"
@@ -65,7 +69,12 @@ namespace micro_os_plus::micro_test_plus
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
 
-    colors_ = colors_red_green;
+#if defined(__APPLE__) || defined(__linux__) || defined(__unix__)
+    if (isatty (fileno (stdout)))
+      {
+        colors_ = colors_red_green;
+      }
+#endif
   }
 
   reporter_human::~reporter_human ()
@@ -509,9 +518,8 @@ namespace micro_os_plus::micro_test_plus
   {
     size_t level = subtest.nesting_depth ();
 
-    *this << colors_.pass;
-    *this << indent (level + 1) << "✓ ";
-    *this << colors_.none;
+    *this << indent (level + 1);
+    *this << colors_.pass << "✓" << colors_.none << " ";
     if (!message.empty ())
       {
         *this << message.c_str ();
@@ -560,9 +568,8 @@ namespace micro_os_plus::micro_test_plus
   {
     size_t level = subtest.nesting_depth ();
 
-    *this << colors_.fail;
-    *this << indent (level + 1) << "✗ ";
-    *this << colors_.none;
+    *this << indent (level + 1);
+    *this << colors_.fail << "✗" << colors_.none << " ";
     if (!message.empty ())
       {
         *this << message.c_str ();
