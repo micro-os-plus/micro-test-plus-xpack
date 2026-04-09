@@ -222,22 +222,18 @@ namespace micro_os_plus::micro_test_plus
     suites_count (void) const;
 
     /**
-     * @brief Runs all registered  test suites.
+     * @brief Runs all registered test suites.
+     *
+     * @details
+     * The base implementation runs all dynamically registered child suites.
+     * `static_runner` overrides this method to additionally run all
+     * statically registered suites.
      *
      * @par Parameters
      *	 None.
      */
-    void
+    virtual void
     run_suites_ (void);
-
-    /**
-     * @brief Runs all registered static test suites.
-     *
-     * @par Parameters
-     *	 None.
-     */
-    void
-    run_static_suites_ (void);
 
     /**
      * @brief Registers a test suite with the runner.
@@ -254,21 +250,6 @@ namespace micro_os_plus::micro_test_plus
     size_t suite_index_ = 0;
 
     std::vector<std::unique_ptr<class suite>> children_suites_;
-
-    /**
-     * @brief Pointer to the vector of registered static test suites.
-     *
-     * This pointer is default-initialised to nullptr by the startup code, as
-     * it resides in the BSS segment. It is populated with the addresses of
-     * registered static test suites during the static initialization phase,
-     * before main() is called.
-     *
-     * This MUST NOT be explicitly initialised, is must be default-initialised
-     * to nullptr by the startup code, as BSS.
-     */
-    std::vector<static_suite*>* static_children_suites_;
-
-    bool has_static_suites_ = false;
 
     /**
      * @brief Pointer to the test reporter used for outputting test results.
@@ -323,6 +304,37 @@ namespace micro_os_plus::micro_test_plus
      */
     [[nodiscard]] virtual size_t
     total_suites_count (void) const final override;
+
+  protected:
+    /**
+     * @brief Runs all child suites, including statically registered ones.
+     *
+     * @details
+     * Overrides `runner::run_suites_()` to first invoke the base
+     * implementation (dynamic suites), then iterate over all statically
+     * registered suites and run them.
+     *
+     * @par Parameters
+     *	 None.
+     */
+    void
+    run_suites_ (void) override;
+
+  protected:
+    /**
+     * @brief Pointer to the vector of registered static test suites.
+     *
+     * `static_runner` instances are always declared at namespace scope,
+     * so this pointer lives in the BSS segment and is zero-initialised
+     * before any constructor runs. This guarantees that static test suites
+     * registered before this runner's constructor executes (due to
+     * unspecified static initialisation order across translation units)
+     * are not lost. The pointer MUST NOT carry an explicit
+     * default member initialiser, as that would run during construction
+     * and could overwrite a value already set by an earlier-constructed
+     * `static_suite`.
+     */
+    std::vector<static_suite*>* static_children_suites_;
   };
 
 } // namespace micro_os_plus::micro_test_plus

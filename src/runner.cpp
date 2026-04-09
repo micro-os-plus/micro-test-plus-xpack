@@ -227,34 +227,6 @@ namespace micro_os_plus::micro_test_plus
       }
   }
 
-  void
-  runner::run_static_suites_ (void)
-  {
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-    printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
-
-    if (has_static_suites_ && static_children_suites_ != nullptr)
-      {
-        for (auto* suite_ptr : *static_children_suites_)
-          {
-            // Update the suite's own index, this is needed for the TAP
-            // reporter to report the test number correctly, as the
-            // static suites are not registered with the runner, but are
-            // run directly.
-            suite_ptr->update_own_index (suites_count ());
-
-            // Run the child suite immediately.
-            suite_ptr->run ();
-
-            // Accumulate the totals from the static suite into the runner
-            // totals.
-            // DO NOT increment executed_subtests here.
-            totals_ += suite_ptr->totals ();
-          }
-      }
-  }
-
   int
   runner::exit_code (void)
   {
@@ -267,7 +239,6 @@ namespace micro_os_plus::micro_test_plus
     totals_ += top_suite_.totals ();
 
     run_suites_ ();
-    run_static_suites_ ();
 
     timings_.timestamp_end ();
     reporter_->end_session (*this);
@@ -346,7 +317,7 @@ namespace micro_os_plus::micro_test_plus
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
 
-    if (has_static_suites_ && static_children_suites_ != nullptr)
+    if (static_children_suites_ != nullptr)
       {
         // The tests are static, so we do not delete them, but we need to
         // delete the array of pointers.
@@ -358,7 +329,7 @@ namespace micro_os_plus::micro_test_plus
   size_t
   static_runner::static_suites_count (void) const
   {
-    return has_static_suites_ && static_children_suites_ != nullptr
+    return static_children_suites_ != nullptr
                ? static_children_suites_->size ()
                : 0;
   }
@@ -367,6 +338,36 @@ namespace micro_os_plus::micro_test_plus
   static_runner::total_suites_count (void) const
   {
     return suites_count () + static_suites_count ();
+  }
+
+  void
+  static_runner::run_suites_ (void)
+  {
+#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    printf ("%s\n", __PRETTY_FUNCTION__);
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+
+    runner::run_suites_ ();
+
+    if (static_children_suites_ != nullptr)
+      {
+        for (auto* suite_ptr : *static_children_suites_)
+          {
+            // Update the suite's own index, this is needed for the TAP
+            // reporter to report the test number correctly, as the
+            // static suites are not registered with the runner, but are
+            // run directly.
+            suite_ptr->update_own_index (suites_count ());
+
+            // Run the child suite immediately.
+            suite_ptr->run ();
+
+            // Accumulate the totals from the static suite into the runner
+            // totals.
+            // DO NOT increment executed_subtests here.
+            totals_ += suite_ptr->totals ();
+          }
+      }
   }
 
   void
@@ -390,8 +391,6 @@ namespace micro_os_plus::micro_test_plus
         runner.static_children_suites_ = new std::vector<static_suite*>;
       }
     runner.static_children_suites_->push_back (&suite);
-
-    runner.has_static_suites_ = true;
   }
 
   // --------------------------------------------------------------------------
