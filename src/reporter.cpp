@@ -252,11 +252,14 @@ namespace micro_os_plus::micro_test_plus
       line.append (get_comment_prefix ());
       line.append ("Built with ");
 #if defined(__clang__)
-      line.append ("clang");
+      line.append ("clang " __VERSION__);
 #elif defined(__GNUC__)
-      line.append ("GCC");
+      line.append ("GCC " __VERSION__);
 #elif defined(_MSC_VER)
       line.append ("MSVC");
+      char msvc_ver[16];
+      snprintf (msvc_ver, sizeof (msvc_ver), " - %d", _MSC_VER);
+      line.append (msvc_ver);
 #else
       line.append ("an unknown compiler");
 #endif
@@ -286,13 +289,6 @@ namespace micro_os_plus::micro_test_plus
 #if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) && defined(MICRO_OS_PLUS_TRACE))
       if (verbosity == verbosity::normal || verbosity == verbosity::verbose)
         {
-#if defined(__clang__) || defined(__GNUC__)
-          line.append (" - " __VERSION__);
-#elif defined(_MSC_VER)
-          char msvc_ver[16];
-          snprintf (msvc_ver, sizeof (msvc_ver), " - %d", _MSC_VER);
-          line.append (msvc_ver);
-#endif
           printf ("%s\n", line.c_str ());
         }
 #endif // !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
