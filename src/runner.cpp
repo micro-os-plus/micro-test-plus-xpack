@@ -129,7 +129,7 @@ namespace micro_os_plus::micro_test_plus
           }
         trace::printf ("'%s'", argv[i]);
       }
-    puts ("]");
+    trace::puts ("]");
 #endif // defined(MICRO_OS_PLUS_DEBUG)
 #endif // !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
 
