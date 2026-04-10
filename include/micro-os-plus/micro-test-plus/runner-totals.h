@@ -72,7 +72,7 @@ namespace micro_os_plus::micro_test_plus
      * @return Reference to this instance.
      */
     runner_totals&
-    operator+= (const runner_totals& other);
+    operator+= (const runner_totals& other) noexcept;
 
     void
     increment_successful_checks (size_t count = 1) noexcept

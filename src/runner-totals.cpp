@@ -52,7 +52,7 @@ namespace micro_os_plus::micro_test_plus
   // ===========================================================================
 
   runner_totals&
-  runner_totals::operator+= (const runner_totals& other)
+  runner_totals::operator+= (const runner_totals& other) noexcept
   {
     successful_checks_ += other.successful_checks ();
     failed_checks_ += other.failed_checks ();
