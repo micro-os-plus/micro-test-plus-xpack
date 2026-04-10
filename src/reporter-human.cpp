@@ -116,8 +116,8 @@ namespace micro_os_plus::micro_test_plus
       {
         if (output_file_ != nullptr)
           {
-            fprintf (output_file_, "warning: output file specified but not "
-                                   "supported by human reporter\n");
+            fprintf (stderr, "warning: --output-file is not supported by "
+                             "the human reporter; ignoring\n");
             fclose (output_file_);
             output_file_ = nullptr;
           }
