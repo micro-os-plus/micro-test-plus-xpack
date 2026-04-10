@@ -39,51 +39,6 @@
 namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
-
-#if defined(__clang__)
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdocumentation"
-#endif
-  /**
-   * @details
-   * The `test` function template registers and executes a test case
-   * within the µTest++ framework. It accepts a descriptive name, a callable
-   * object (such as a lambda or function pointer), and an optional list of
-   * arguments to be passed to the callable. The test case is reported using
-   * the provided name, and its execution is managed by the framework's test
-   * runner.
-   *
-   * Each test case typically involves evaluating a logical expression, such as
-   * comparing a computed result to an expected value. For C++ projects, it is
-   * also possible to verify whether evaluating an expression throws
-   * exceptions. Each test either succeeds or fails, and for expectations, the
-   * test runner maintains counts of successful and failed checks.
-   *
-   * This function template enables flexible and expressive test case
-   * definitions, supporting both parameterised and non-parameterised tests. It
-   * is typically invoked at global scope or within test suite definitions to
-   * ensure automatic registration and execution.
-   *
-   * A test case is characterised by a name, a function that performs the
-   * checks, and optionally, arguments to be passed to that function. The
-   * implementation of `test` invokes the provided function with the given
-   * arguments and reports the results to the test runner.
-   *
-   * @par Example
-   *
-   * @code{.cpp}
-   *   namespace mt = micro_os_plus::micro_test_plus;
-   *
-   *   mt::test ("Check answer with comparator", [] {
-   *     mt::expect (mt::eq (compute_answer (), 42)) << "answer is 42";
-   *   });
-   * @endcode
-   */
-#if defined(__clang__)
-#pragma clang diagnostic pop
-#endif
-
-  // --------------------------------------------------------------------------
   namespace utility
   {
     /**
