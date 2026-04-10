@@ -72,7 +72,6 @@ namespace micro_os_plus::micro_test_plus
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
 
-    verbosity_ = verbosity::normal;
     std::string_view output_file_sv{};
 
     argvs_ = std::move (argvs);

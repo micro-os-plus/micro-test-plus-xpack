@@ -832,7 +832,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief The verbosity level for test reporting.
      */
-    verbosity_t verbosity_{};
+    verbosity_t verbosity_{ verbosity::normal };
 
     /**
      * @brief ANSI colour codes for output formatting.
