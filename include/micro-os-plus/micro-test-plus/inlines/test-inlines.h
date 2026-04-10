@@ -169,12 +169,12 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
     size_t own_index = increment_subtest_index ();
-    auto child_test = std::make_unique<subtest> (
+    auto child_subtest = std::make_unique<subtest> (
         name, runner (), parent_suite_, own_index, nesting_depth_ + 1,
         std::forward<Callable_T> (callable),
         std::forward<Args_T> (arguments)...);
 
-    after_subtest_create_ (std::move (child_test), parent_suite_);
+    after_subtest_create_ (std::move (child_subtest), parent_suite_);
   }
 
   // ==========================================================================
@@ -216,12 +216,12 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
     size_t own_index = increment_subtest_index ();
-    auto child_test
+    auto child_subtest
         = std::make_unique<subtest> (name, runner (), *this, own_index, 1,
                                      std::forward<Callable_T> (callable),
                                      std::forward<Args_T> (arguments)...);
 
-    after_subtest_create_ (std::move (child_test), *this);
+    after_subtest_create_ (std::move (child_subtest), *this);
   }
 
   // ==========================================================================
