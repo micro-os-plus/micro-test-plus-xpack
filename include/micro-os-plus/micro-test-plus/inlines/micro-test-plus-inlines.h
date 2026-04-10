@@ -15,35 +15,6 @@
 
 // ----------------------------------------------------------------------------
 
-/**
- * @file
- * @brief C++ header file with inline implementations for the µTest++ Testing
- * Framework.
- *
- * @details
- * This header provides the inline implementations for the principal public API
- * functions and utilities of the µTest++ framework, including test case
- * registration, expectation and assumption evaluation, exception verification,
- * and utility helpers for string processing in tests.
- *
- * It defines the logic for registering and executing test cases, evaluating
- * logical conditions and custom comparators, and reporting test results with
- * detailed diagnostics. The exception verification functions enable robust
- * testing of error handling and exception safety, while utility functions such
- * as string splitting support flexible validation of string processing logic.
- *
- * All definitions reside within the `micro_os_plus::micro_test_plus`
- * namespace, ensuring clear separation from user code and minimising the risk
- * of naming conflicts.
- *
- * The header files are organised within the
- * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
- * modular codebase.
- *
- * This file is intended solely for internal use within the framework and
- * should not be included directly by user code.
- */
-
 #ifndef MICRO_TEST_PLUS_INLINES_H_
 #define MICRO_TEST_PLUS_INLINES_H_
 
@@ -111,62 +82,6 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic pop
 #endif
-
-#if defined(__cpp_exceptions)
-
-  /**
-   * @details
-   * The `throws` function template verifies whether invoking the provided
-   * callable object results in the throwing of a specific exception type
-   * within the µTest++ framework. This is useful for testing error handling
-   * and exception safety in code under test.
-   *
-   * The function returns an output stream, allowing optional messages to be
-   * appended to the test report for diagnostic purposes.
-   */
-  template <class Exception_T, class Callable_T>
-  [[nodiscard]] constexpr auto
-  throws (const Callable_T& func)
-  {
-    return detail::throws_<Callable_T, Exception_T>{ func };
-  }
-
-  /**
-   * @details
-   * The `throws` function template verifies whether invoking the provided
-   * callable object results in the throwing of any exception within the
-   * µTest++ framework. This is useful for testing general exception safety and
-   * ensuring that code under test properly signals error conditions.
-   *
-   * The function returns an output stream, allowing optional messages to be
-   * appended to the test report for diagnostic purposes.
-   */
-  template <class Callable_T>
-  [[nodiscard]] constexpr auto
-  throws (const Callable_T& func)
-  {
-    return detail::throws_<Callable_T>{ func };
-  }
-
-  /**
-   * @details
-   * The `nothrow` function template verifies whether invoking the provided
-   * callable object does not result in the throwing of any exception within
-   * the µTest++ framework. This is useful for testing exception safety and
-   * ensuring that code under test does not unexpectedly signal error
-   * conditions.
-   *
-   * The function returns an output stream, allowing optional messages to be
-   * appended to the test report for diagnostic purposes.
-   */
-  template <class Callable_T>
-  [[nodiscard]] constexpr auto
-  nothrow (const Callable_T& func)
-  {
-    return detail::nothrow_<Callable_T>{ func };
-  }
-
-#endif // defined(__cpp_exceptions)
 
   // --------------------------------------------------------------------------
   namespace utility

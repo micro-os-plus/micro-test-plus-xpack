@@ -252,6 +252,9 @@ namespace micro_os_plus::micro_test_plus
     return detail::le_<Lhs_T*, Rhs_T*>{ lhs, rhs };
   }
 
+  // --------------------------------------------------------------------------
+  // Logical operators.
+
   /**
    * @details
    * The `_not` function template provides a generic logical negation for any
@@ -305,6 +308,68 @@ namespace micro_os_plus::micro_test_plus
   {
     return detail::or_<Lhs_T, Rhs_T>{ lhs, rhs };
   }
+
+  // --------------------------------------------------------------------------
+  // Exceptions related comparators.
+
+#if defined(__cpp_exceptions)
+
+  /**
+   * @details
+   * The `throws` function template verifies whether invoking the provided
+   * callable object results in the throwing of a specific exception type
+   * within the µTest++ framework. This is useful for testing error handling
+   * and exception safety in code under test.
+   *
+   * The function returns an output stream, allowing optional messages to be
+   * appended to the test report for diagnostic purposes.
+   */
+  template <class Exception_T, class Callable_T>
+  [[nodiscard]] constexpr auto
+  throws (const Callable_T& func)
+  {
+    return detail::throws_<Callable_T, Exception_T>{ func };
+  }
+
+  /**
+   * @details
+   * The `throws` function template verifies whether invoking the provided
+   * callable object results in the throwing of any exception within the
+   * µTest++ framework. This is useful for testing general exception safety and
+   * ensuring that code under test properly signals error conditions.
+   *
+   * The function returns an output stream, allowing optional messages to be
+   * appended to the test report for diagnostic purposes.
+   */
+  template <class Callable_T>
+  [[nodiscard]] constexpr auto
+  throws (const Callable_T& func)
+  {
+    return detail::throws_<Callable_T>{ func };
+  }
+
+  /**
+   * @details
+   * The `nothrow` function template verifies whether invoking the provided
+   * callable object does not result in the throwing of any exception within
+   * the µTest++ framework. This is useful for testing exception safety and
+   * ensuring that code under test does not unexpectedly signal error
+   * conditions.
+   *
+   * The function returns an output stream, allowing optional messages to be
+   * appended to the test report for diagnostic purposes.
+   */
+  template <class Callable_T>
+  [[nodiscard]] constexpr auto
+  nothrow (const Callable_T& func)
+  {
+    return detail::nothrow_<Callable_T>{ func };
+  }
+
+#endif // defined(__cpp_exceptions)
+
+  // --------------------------------------------------------------------------
+  // Utility functions.
 
   /**
    * @details
