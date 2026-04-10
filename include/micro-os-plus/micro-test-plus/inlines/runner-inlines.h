@@ -52,7 +52,8 @@ namespace micro_os_plus::micro_test_plus
   runner::suite (const char* name, Callable_T&& callable,
                  Args_T&&... arguments)
   {
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#if defined(MICRO_OS_PLUS_TRACE) \
+    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"

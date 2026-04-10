@@ -66,7 +66,8 @@ namespace micro_os_plus::micro_test_plus
 
   reporter::reporter (std::unique_ptr<std::vector<std::string_view>> argvs)
   {
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
+#if defined(MICRO_OS_PLUS_TRACE) \
+    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
 
@@ -140,7 +141,8 @@ namespace micro_os_plus::micro_test_plus
 
   reporter::~reporter ()
   {
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
+#if defined(MICRO_OS_PLUS_TRACE) \
+    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
 
@@ -280,6 +282,9 @@ namespace micro_os_plus::micro_test_plus
 #endif
 #if defined(MICRO_OS_PLUS_DEBUG)
       line.append (", with MICRO_OS_PLUS_DEBUG");
+#endif
+#if defined(MICRO_OS_PLUS_TRACE)
+      line.append (", with MICRO_OS_PLUS_TRACE");
 #endif
 
       if (output_file_ != nullptr)

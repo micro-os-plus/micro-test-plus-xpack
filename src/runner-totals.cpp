@@ -54,7 +54,8 @@ namespace micro_os_plus::micro_test_plus
     failed_checks_ += other.failed_checks ();
     executed_subtests_ += other.executed_subtests ();
 
-#if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#if defined(MICRO_OS_PLUS_TRACE) \
+    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
