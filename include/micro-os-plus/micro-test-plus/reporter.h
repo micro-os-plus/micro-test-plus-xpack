@@ -143,20 +143,6 @@ namespace micro_os_plus::micro_test_plus
                    detail. */
   };
 
-  /**
-   * @brief Type alias for the verbosity enumeration used in test reporting.
-   *
-   * @details
-   * The `verbosity_t` type alias provides a convenient shorthand for referring
-   * to the `verbosity` enumeration, which defines the available levels of
-   * detail for test output within the reporting system.
-   *
-   * Using this alias improves code readability and consistency throughout the
-   * framework, especially when specifying or configuring verbosity levels for
-   * test reporters.
-   */
-  using verbosity_t = verbosity;
-
   // Forward definitions.
   class reporter;
   class runner;
@@ -839,7 +825,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief The verbosity level for test reporting.
      */
-    verbosity_t verbosity{};
+    verbosity verbosity{};
 
   protected:
     /**
