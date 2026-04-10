@@ -244,18 +244,18 @@ namespace micro_os_plus::micro_test_plus
     timings_.timestamp_end ();
     reporter_->end_session (*this);
 
-    int exit_code = totals_.was_successful () ? 0 : 1;
+    const int result = totals_.was_successful () ? 0 : 1;
 
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s -> %d\n", __PRETTY_FUNCTION__, exit_code);
+    printf ("%s -> %d\n", __PRETTY_FUNCTION__, result);
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    return exit_code;
+    return result;
   }
 
   /**
