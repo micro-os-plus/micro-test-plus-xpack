@@ -1,3 +1,5 @@
+# Running: empty-test one two --output-file empty-test.tap
+# Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG, with MICRO_OS_PLUS_TRACE
 TAP version 14
 # Subtest: Top suite with nested subtests
     # Subtest: Test with nested subtest
@@ -7,6 +9,6 @@ TAP version 14
         1..1
     ok 1 - Test with nested subtest # { passed, 0 checks }
     1..2
-ok 1 - Top suite with nested subtests # { passed, 0 checks in 2 test cases }
+ok 1 - Top suite with nested subtests # { passed, 0 checks in 2 test cases, time: 0.038 ms }
 1..1
-# { total: 0 checks passed, 0 failed, in 2 test cases, 1 test suite }
+# { total: 0 checks passed, 0 failed, in 2 test cases, 1 test suite, time: 0.067 ms }

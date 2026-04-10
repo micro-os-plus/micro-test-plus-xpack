@@ -1,3 +1,5 @@
+# Running: unit-test --quiet --reporter tap --output-file unit-test-quiet.tap
+# Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG, with MICRO_OS_PLUS_TRACE
 TAP version 14
 # Subtest: Static top suite
     # Subtest: assume
@@ -347,63 +349,63 @@ TAP version 14
     # Subtest: Failed pointer comparisons
         not ok 1 - ptr1 != &one
           ---
-          condition: 0x7ff7b97bd2ec != 0x7ff7b97bd2ec
+          condition: 0x7ff7b399046c != 0x7ff7b399046c
           at:
             filename: main.cpp
             line: 832
           ...
         not ok 2 - ptr1 != ptr2
           ---
-          condition: 0x7ff7b97bd2ec != 0x7ff7b97bd2ec
+          condition: 0x7ff7b399046c != 0x7ff7b399046c
           at:
             filename: main.cpp
             line: 835
           ...
         not ok 3 - ptr1 > ptr2
           ---
-          condition: 0x7ff7b97bd2ec > 0x7ff7b97bd2ec
+          condition: 0x7ff7b399046c > 0x7ff7b399046c
           at:
             filename: main.cpp
             line: 838
           ...
         not ok 4 - ptr1 < ptr2
           ---
-          condition: 0x7ff7b97bd2ec < 0x7ff7b97bd2ec
+          condition: 0x7ff7b399046c < 0x7ff7b399046c
           at:
             filename: main.cpp
             line: 841
           ...
         not ok 5 - ptr1 == a_non_nullptr
           ---
-          condition: 0x7ff7b97bd2ec == 0x7ff7b97bd2d0
+          condition: 0x7ff7b399046c == 0x7ff7b3990450
           at:
             filename: main.cpp
             line: 844
           ...
         not ok 6 - pfunc != afunc
           ---
-          condition: 0x106767960 != 0x106767960
+          condition: 0x10c5933e0 != 0x10c5933e0
           at:
             filename: main.cpp
             line: 847
           ...
         not ok 7 - pfunc == a_non_nullptr
           ---
-          condition: 0x106767960 == 0x7ff7b97bd2d0
+          condition: 0x10c5933e0 == 0x7ff7b3990450
           at:
             filename: main.cpp
             line: 850
           ...
         not ok 8 - pone >= ptwo
           ---
-          condition: 0x7ff7b97bcfd0 >= 0x7ff7b97bcfd4
+          condition: 0x7ff7b3990150 >= 0x7ff7b3990154
           at:
             filename: main.cpp
             line: 862
           ...
         not ok 9 - ptwo <= pone
           ---
-          condition: 0x7ff7b97bcfd4 <= 0x7ff7b97bcfd0
+          condition: 0x7ff7b3990154 <= 0x7ff7b3990150
           at:
             filename: main.cpp
             line: 865
@@ -426,7 +428,7 @@ TAP version 14
           ...
         not ok 2 - a_non_nullptr == nullptr
           ---
-          condition: 0x7ff7b97bd2e8 == nullptr
+          condition: 0x7ff7b3990468 == nullptr
           at:
             filename: main.cpp
             line: 916
@@ -653,7 +655,7 @@ TAP version 14
         1..4
     ok 24 - Splits # { passed, 4 checks }
     1..24
-not ok 1 - Static top suite # { FAILED, 90 checks passed, 71 failed, in 24 test cases }
+not ok 1 - Static top suite # { FAILED, 90 checks passed, 71 failed, in 24 test cases, time: 0.828 ms }
 # Subtest: Combinatorial integrals
     # Subtest: Combinatorial integrals with signed long long
         ok 1 - eq matches signed long long
@@ -840,7 +842,7 @@ not ok 1 - Static top suite # { FAILED, 90 checks passed, 71 failed, in 24 test 
         1..20
     ok 8 - Combinatorial integrals with unsigned char # { passed, 20 checks }
     1..8
-ok 2 - Combinatorial integrals # { passed, 160 checks in 8 test cases }
+ok 2 - Combinatorial integrals # { passed, 160 checks in 8 test cases, time: 0.390 ms }
 # Subtest: Failed combinatorial integrals
     # Subtest: Combinatorial integrals with signed long long
         not ok 1 - ne matches signed long long
@@ -2273,7 +2275,7 @@ ok 2 - Combinatorial integrals # { passed, 160 checks in 8 test cases }
         1..20
     not ok 10 - Combinatorial integrals with unsigned char # { FAILED, 0 checks passed, 20 failed }
     1..10
-not ok 3 - Failed combinatorial integrals # { FAILED, 0 checks passed, 200 failed, in 10 test cases }
+not ok 3 - Failed combinatorial integrals # { FAILED, 0 checks passed, 200 failed, in 10 test cases, time: 0.745 ms }
 # Subtest: Combinatorial floats
     # Subtest: Combinatorial floats
         ok 1 - 42.0 == 42 signed long long
@@ -2304,7 +2306,7 @@ not ok 3 - Failed combinatorial integrals # { FAILED, 0 checks passed, 200 faile
         1..11
     ok 2 - Combinatorial doubles # { passed, 11 checks }
     1..2
-ok 4 - Combinatorial floats # { passed, 22 checks in 2 test cases }
+ok 4 - Combinatorial floats # { passed, 22 checks in 2 test cases, time: 0.063 ms }
 # Subtest: Miscellaneous
     # Subtest: Arrays
         ok 1 - array{ 42 } == array{ 42 }
@@ -2399,6 +2401,6 @@ ok 4 - Combinatorial floats # { passed, 22 checks in 2 test cases }
         1..6
     not ok 4 - Vectors failed # { FAILED, 0 checks passed, 6 failed }
     1..4
-not ok 5 - Miscellaneous # { FAILED, 10 checks passed, 10 failed, in 4 test cases }
+not ok 5 - Miscellaneous # { FAILED, 10 checks passed, 10 failed, in 4 test cases, time: 0.115 ms }
 1..5
-# { total: 282 checks passed, 281 failed, in 48 test cases, 5 test suites }
+# { total: 282 checks passed, 281 failed, in 48 test cases, 5 test suites, time: 2.223 ms }

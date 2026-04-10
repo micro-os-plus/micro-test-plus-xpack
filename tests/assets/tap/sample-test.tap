@@ -1,3 +1,5 @@
+# Running: sample-test one two --reporter tap --output-file sample-test.tap
+# Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG, with MICRO_OS_PLUS_TRACE
 TAP version 14
 # Subtest: Sample
     # Subtest: Check various conditions
@@ -71,7 +73,7 @@ TAP version 14
         1..2
     ok 13 - Check containers with operators # { passed, 2 checks }
     1..13
-ok 1 - Sample # { passed, 31 checks in 13 test cases }
+ok 1 - Sample # { passed, 31 checks in 13 test cases, time: 0.607 ms }
 # Subtest: Explicit namespace suite
     # Subtest: Check one
         ok 1 - Passed
@@ -82,7 +84,7 @@ ok 1 - Sample # { passed, 31 checks in 13 test cases }
         1..1
     ok 2 - Check two # { passed, 1 check }
     1..2
-ok 2 - Explicit namespace suite # { passed, 2 checks in 2 test cases }
+ok 2 - Explicit namespace suite # { passed, 2 checks in 2 test cases, time: 0.050 ms }
 # Subtest: Implicit namespace suite
     # Subtest: Check one
         ok 1 - Passed
@@ -93,7 +95,7 @@ ok 2 - Explicit namespace suite # { passed, 2 checks in 2 test cases }
         1..1
     ok 2 - Check two # { passed, 1 check }
     1..2
-ok 3 - Implicit namespace suite # { passed, 2 checks in 2 test cases }
+ok 3 - Implicit namespace suite # { passed, 2 checks in 2 test cases, time: 0.043 ms }
 # Subtest: Args suite
     # Subtest: args
         ok 1 - ic is 42
@@ -104,6 +106,6 @@ ok 3 - Implicit namespace suite # { passed, 2 checks in 2 test cases }
         1..5
     ok 1 - args # { passed, 5 checks }
     1..1
-ok 4 - Args suite # { passed, 5 checks in 1 test case }
+ok 4 - Args suite # { passed, 5 checks in 1 test case, time: 0.029 ms }
 1..4
-# { total: 40 checks passed, 0 failed, in 18 test cases, 4 test suites }
+# { total: 40 checks passed, 0 failed, in 18 test cases, 4 test suites, time: 0.822 ms }
