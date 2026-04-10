@@ -49,7 +49,7 @@
 
 #include <micro-os-plus/micro-test-plus.h>
 
-#include <stdio.h>
+// #include <stdio.h>
 
 // ----------------------------------------------------------------------------
 

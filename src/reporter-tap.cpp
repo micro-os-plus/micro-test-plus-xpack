@@ -40,8 +40,9 @@
 
 #include <micro-os-plus/micro-test-plus.h>
 
+// For the PRIu32 macro used in snprintf() formatting of uint32_t values.
 #include <cinttypes>
-#include <time.h>
+// #include <time.h>
 
 // ----------------------------------------------------------------------------
 

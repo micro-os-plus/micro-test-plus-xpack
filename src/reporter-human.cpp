@@ -43,6 +43,7 @@
 #include <micro-os-plus/micro-test-plus.h>
 
 #if defined(__APPLE__) || defined(__linux__) || defined(__unix__)
+// For isatty() to detect if stdout is a terminal, enabling colour output.
 #include <unistd.h>
 #endif
 
