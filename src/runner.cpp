@@ -163,7 +163,7 @@ namespace micro_os_plus::micro_test_plus
           }
       }
 
-    // Initialize and configure the reporter.
+    // Initialise and configure the reporter.
     if (reporter_name == "human")
       {
         reporter_ = std::make_unique<reporter_human> (
