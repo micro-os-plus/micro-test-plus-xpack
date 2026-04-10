@@ -31,6 +31,8 @@
 
 #include <micro-os-plus/micro-test-plus.h>
 
+#include <cassert>
+
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wpre-c++17-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat"
@@ -91,6 +93,8 @@ namespace micro_os_plus::micro_test_plus
   timestamps::compute_elapsed_time (uint32_t& milliseconds,
                                     uint32_t& microseconds) const
   {
+    assert (has_timestamps ());
+
     // Precondition: has_timestamps() must be true before calling this method.
     // Invoking it with disengaged optionals is undefined behaviour.
     long long delta_ns
