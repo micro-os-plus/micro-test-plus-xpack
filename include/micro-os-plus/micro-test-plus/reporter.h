@@ -640,6 +640,11 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Output the current buffered content.
      *
+     * @note Public because `deferred_reporter_base` calls this
+     *   from its destructor when aborting, after the subtest
+     *   instance is no longer accessible via the normal
+     *   reporting path.
+     *
      * @par Parameters
      *	 None.
      * @par Returns
