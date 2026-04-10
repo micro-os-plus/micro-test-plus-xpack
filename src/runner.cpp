@@ -73,7 +73,7 @@ namespace micro_os_plus::micro_test_plus
    * across all test cases and folders.
    */
   runner::runner (const char* top_suite_name)
-      : test_node{ "-" }, top_suite_{ top_suite_name, *this }
+      : test_node{ "runner" }, top_suite_{ top_suite_name, *this }
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
 #pragma GCC diagnostic push
