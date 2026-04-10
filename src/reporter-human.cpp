@@ -353,6 +353,7 @@ namespace micro_os_plus::micro_test_plus
         // Each suite should start with an empty buffer.
         printf ("Buffer not empty at the beginning of a test case:\n%s\n",
                 buffer_.c_str ());
+        flush ();
         abort ();
       }
 

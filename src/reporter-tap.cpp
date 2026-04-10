@@ -393,6 +393,7 @@ namespace micro_os_plus::micro_test_plus
       {
         // Each suite should start with an empty buffer.
         write_buffer_to_stdout ();
+        flush ();
         abort ();
       }
 
