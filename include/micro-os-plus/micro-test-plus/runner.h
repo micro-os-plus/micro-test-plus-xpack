@@ -53,7 +53,6 @@
 
 #include <functional>
 #include <memory>
-#include <ctime>
 
 #include "reporter.h"
 #include "timings.h"
