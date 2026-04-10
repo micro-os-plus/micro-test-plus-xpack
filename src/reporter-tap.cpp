@@ -267,12 +267,13 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s' +%zu -%zu in xc%zu, xs%zu | cs%zu\n", __PRETTY_FUNCTION__,
-            suite.name (), suite.totals ().successful_checks (),
-            suite.totals ().failed_checks (),
-            suite.totals ().executed_checks (),
-            suite.totals ().executed_subtests (),
-            suite.children_subtests_count ());
+    trace::printf ("%s '%s' +%zu -%zu in xc%zu, xs%zu | cs%zu\n",
+                  __PRETTY_FUNCTION__, suite.name (),
+                  suite.totals ().successful_checks (),
+                  suite.totals ().failed_checks (),
+                  suite.totals ().executed_checks (),
+                  suite.totals ().executed_subtests (),
+                  suite.children_subtests_count ());
 
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
@@ -446,13 +447,14 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s' i%zu +%zu -%zu in xc%zu, xs%zu | cs%zu\n",
-            __PRETTY_FUNCTION__, subtest.name (), subtest.nesting_depth (),
-            subtest.totals ().successful_checks (),
-            subtest.totals ().failed_checks (),
-            subtest.totals ().executed_checks (),
-            subtest.totals ().executed_subtests (),
-            subtest.children_subtests_count ());
+    trace::printf ("%s '%s' i%zu +%zu -%zu in xc%zu, xs%zu | cs%zu\n",
+                  __PRETTY_FUNCTION__, subtest.name (),
+                  subtest.nesting_depth (),
+                  subtest.totals ().successful_checks (),
+                  subtest.totals ().failed_checks (),
+                  subtest.totals ().executed_checks (),
+                  subtest.totals ().executed_subtests (),
+                  subtest.children_subtests_count ());
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
