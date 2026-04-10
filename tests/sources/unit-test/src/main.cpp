@@ -2235,7 +2235,7 @@ static static_suite ts_misc{ "Miscellaneous", tr, [] (auto& ts)
     test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
 
-    ts.test ("Arrays failed", [] (auto& t)
+    ts.test ("Arrays bad", [] (auto& t)
       {
         t.expect (ne (std::array<int, 1>{ 42 }, std::array<int, 1>{ 42 }))
             << "array{ 42 } ne array{ 42 }";
@@ -2299,7 +2299,7 @@ static static_suite ts_misc{ "Miscellaneous", tr, [] (auto& ts)
     test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
 
-    ts.test ("Vectors failed", [] (auto& t)
+    ts.test ("Vectors bad", [] (auto& t)
       {
         t.expect (ne (std::vector<int>{}, std::vector<int>{}))
             << "vector{ } != vector{ }";

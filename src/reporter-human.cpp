@@ -474,7 +474,21 @@ namespace micro_os_plus::micro_test_plus
           {
             // Failed subtest.
 
-            // Show full TAP output accumulated in the buffer for failed
+            if (verbosity_ == verbosity::normal)
+              {
+                if (!add_empty_line_)
+                  {
+                    printf ("\n");
+                  }
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
+                printf ("%s• %s\n", indent.c_str (), subtest.name ());
+#pragma GCC diagnostic pop
+              }
+
+            // Show full output accumulated in the buffer for failed
             // subtests, as it may contain useful information about the
             // failure.
             write_buffer_to_stdout ();

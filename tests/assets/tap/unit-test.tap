@@ -2675,7 +2675,7 @@ not ok 6 - Failed combinatorial floats # { FAILED, 0 checks passed, 42 failed, i
         ok 4 - array{ 1, 2, 3 } != array{ 1, 2, 4 }
         1..4
     ok 1 - Arrays # { passed, 4 checks }
-    # Subtest: Arrays failed
+    # Subtest: Arrays bad
         not ok 1 - array{ 42 } ne array{ 42 }
           ---
           condition: {42} != {42}
@@ -2705,7 +2705,7 @@ not ok 6 - Failed combinatorial floats # { FAILED, 0 checks passed, 42 failed, i
             line: 2252
           ...
         1..4
-    not ok 2 - Arrays failed # { FAILED, 0 checks passed, 4 failed }
+    not ok 2 - Arrays bad # { FAILED, 0 checks passed, 4 failed }
     # Subtest: Vectors
         ok 1 - vector{ } == vector{ }
         ok 2 - {} == {}
@@ -2715,7 +2715,7 @@ not ok 6 - Failed combinatorial floats # { FAILED, 0 checks passed, 42 failed, i
         ok 6 - vector{ 1, 2, 3 } != vector{ 1, 2, 4 }
         1..6
     ok 3 - Vectors # { passed, 6 checks }
-    # Subtest: Vectors failed
+    # Subtest: Vectors bad
         not ok 1 - vector{ } != vector{ }
           ---
           condition: {} != {}
@@ -2759,7 +2759,7 @@ not ok 6 - Failed combinatorial floats # { FAILED, 0 checks passed, 42 failed, i
             line: 2323
           ...
         1..6
-    not ok 4 - Vectors failed # { FAILED, 0 checks passed, 6 failed }
+    not ok 4 - Vectors bad # { FAILED, 0 checks passed, 6 failed }
     1..4
 not ok 7 - Miscellaneous # { FAILED, 10 checks passed, 10 failed, in 4 test cases, time: 0.645 ms }
 1..7
