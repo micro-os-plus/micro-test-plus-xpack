@@ -241,6 +241,8 @@ namespace micro_os_plus::micro_test_plus
   template <typename Callable_T, typename... Args_T>
   static_suite::static_suite (const char* name, static_runner& runner,
                               Callable_T&& callable, Args_T&&... arguments)
+      // The nullptr passed to the base constructor is an optimisation to save
+      // some space, since this callble is not used by the static runner.
       : suite{ name, runner, runner.static_suites_count () + 1, nullptr }
   {
     if constexpr (sizeof...(arguments) == 0)
