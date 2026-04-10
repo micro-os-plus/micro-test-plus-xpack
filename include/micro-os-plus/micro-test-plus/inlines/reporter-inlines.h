@@ -99,7 +99,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * Null pointers are always rendered as the string `"nullptr"`,
    * regardless of the platform, avoiding platform-specific behaviour
-   * such as `"0x0"` on Linux or `"(nil)"` on macOS.
+   * such as `"(nil)"` on Linux/glibc or `"0x0"` on macOS.
    *
    * Non-null pointers are formatted as a hexadecimal address using
    * `snprintf` with the `%p` format specifier. The resulting string is
@@ -117,7 +117,7 @@ namespace micro_os_plus::micro_test_plus
     if (v == nullptr)
       {
         // Explicitly render null pointers as "0x0" to avoid platform-specific
-        // pointer representations like "(nil)" on macOS.
+        // representations such as "(nil)" on Linux/glibc.
         buffer_.append ("0x0");
         return *this;
       }
