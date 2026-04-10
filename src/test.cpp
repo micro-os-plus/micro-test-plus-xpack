@@ -239,6 +239,7 @@ namespace micro_os_plus::micro_test_plus
 
     class reporter& reporter = this->reporter ();
 
+    // For now, subtests do not record the time.
     // this->timings.timestamp_begin ();
     reporter.begin_subtest (*this);
 
