@@ -49,8 +49,6 @@
 
 #include <micro-os-plus/micro-test-plus.h>
 
-// #include <stdio.h>
-
 // ----------------------------------------------------------------------------
 
 #if defined(__clang__)

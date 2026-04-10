@@ -44,10 +44,6 @@
 
 #include <micro-os-plus/micro-test-plus.h>
 
-// #include <stdio.h>
-// #include <stdlib.h>
-// #include <vector>
-
 // ----------------------------------------------------------------------------
 
 #pragma GCC diagnostic ignored "-Waggregate-return"

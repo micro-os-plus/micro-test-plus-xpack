@@ -54,7 +54,6 @@
 
 // ----------------------------------------------------------------------------
 
-// #include <functional>
 #include <cstdio>
 #include <string_view>
 #include <string>

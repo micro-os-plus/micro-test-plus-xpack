@@ -46,11 +46,6 @@
 
 #include <micro-os-plus/micro-test-plus.h>
 
-// #include <cstring>
-// <iostream> is too heavy for embedded, use printf().
-// #include <stdio.h>
-// #include <unistd.h>
-
 // ----------------------------------------------------------------------------
 
 // #pragma GCC diagnostic ignored "-Waggregate-return"

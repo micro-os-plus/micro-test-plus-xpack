@@ -42,7 +42,6 @@
 
 // For the PRIu32 macro used in snprintf() formatting of uint32_t values.
 #include <cinttypes>
-// #include <time.h>
 
 // ----------------------------------------------------------------------------
 

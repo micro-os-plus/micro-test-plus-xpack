@@ -32,13 +32,6 @@
 
 // ----------------------------------------------------------------------------
 
-// #include <stdio.h>
-// #include <cstring>
-
-// #include "test-suite.h"
-
-// ----------------------------------------------------------------------------
-
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Waggregate-return"
