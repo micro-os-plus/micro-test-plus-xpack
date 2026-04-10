@@ -92,7 +92,6 @@
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
-// #pragma clang diagnostic ignored "-Wctad-maybe-unsupported"
 #endif
 #endif
 

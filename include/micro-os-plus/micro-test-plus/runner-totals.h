@@ -37,10 +37,8 @@
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
-// #pragma GCC diagnostic ignored "-Wpadded"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
-// #pragma clang diagnostic ignored "-Wpre-c++17-compat"
 #endif
 #endif
 

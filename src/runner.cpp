@@ -51,7 +51,6 @@
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-c++11-c++14-compat"
-// #pragma clang diagnostic ignored "-Wunknown-warning-option"
 #endif
 
 // ============================================================================
@@ -95,7 +94,6 @@ namespace micro_os_plus::micro_test_plus
 
 #pragma GCC diagnostic push
 #if defined(__clang__)
-// #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
 #endif
   /**

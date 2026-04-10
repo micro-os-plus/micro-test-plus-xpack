@@ -51,9 +51,6 @@
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
-// #pragma clang diagnostic ignored "-Wexit-time-destructors"
-// #pragma clang diagnostic ignored "-Wglobal-constructors"
-// #pragma clang diagnostic ignored "-Wunknown-warning-option"
 #endif
 
 // ============================================================================
