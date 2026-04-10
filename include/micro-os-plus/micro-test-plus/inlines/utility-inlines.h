@@ -15,8 +15,8 @@
 
 // ----------------------------------------------------------------------------
 
-#ifndef MICRO_TEST_PLUS_INLINES_H_
-#define MICRO_TEST_PLUS_INLINES_H_
+#ifndef MICRO_TEST_PLUS_UTILITY_INLINES_H_
+#define MICRO_TEST_PLUS_UTILITY_INLINES_H_
 
 // ----------------------------------------------------------------------------
 
@@ -26,7 +26,7 @@
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Waggregate-return"
+// #pragma GCC diagnostic ignored "-Waggregate-return"
 // #pragma GCC diagnostic ignored "-Wpadded"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
@@ -100,6 +100,6 @@ namespace micro_os_plus::micro_test_plus
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_TEST_PLUS_INLINES_H_
+#endif // MICRO_TEST_PLUS_UTILITY_INLINES_H_
 
 // ----------------------------------------------------------------------------

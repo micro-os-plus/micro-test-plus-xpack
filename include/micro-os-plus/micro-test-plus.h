@@ -251,7 +251,7 @@ namespace micro_os_plus::micro_test_plus
 #include "micro-test-plus/inlines/runner-inlines.h"
 #include "micro-test-plus/inlines/test-inlines.h"
 
-#include "micro-test-plus/inlines/micro-test-plus-inlines.h"
+#include "micro-test-plus/inlines/utility-inlines.h"
 
 // ----------------------------------------------------------------------------
 
