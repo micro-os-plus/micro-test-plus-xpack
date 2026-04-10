@@ -176,7 +176,7 @@ main (int argc, char* argv[])
 {
   auto& ts = tr.initialise (argc, argv);
 
-  if (tr.reporter ().verbosity > verbosity::quiet)
+  if (tr.reporter ().verbosity () > verbosity::quiet)
     {
       printf ("\nµTest++ unit tests; some checks are expected to fail.\n");
     }
@@ -1320,7 +1320,7 @@ main (int argc, char* argv[])
   int code = tr.exit_code ();
   test_assert (code != 0);
 
-  if (tr.reporter ().verbosity > verbosity::quiet)
+  if (tr.reporter ().verbosity () > verbosity::quiet)
     {
       // On failure it aborts before reaching this point.
       printf ("Overall, the µTest++ unit tests were successful!\n\n");

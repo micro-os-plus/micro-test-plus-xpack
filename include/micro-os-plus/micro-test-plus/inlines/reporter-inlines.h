@@ -224,8 +224,8 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (const detail::eq_<Lhs_T, Rhs_T>& op)
   {
-    return (*this << color (op) << op.lhs () << " == " << op.rhs ()
-                  << colors_.none);
+    return (*this << colour_ (op) << op.lhs () << " == " << op.rhs ()
+                  << colours_.none);
   }
 
   /**
@@ -244,8 +244,8 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (const detail::ne_<Lhs_T, Rhs_T>& op)
   {
-    return (*this << color (op) << op.lhs () << " != " << op.rhs ()
-                  << colors_.none);
+    return (*this << colour_ (op) << op.lhs () << " != " << op.rhs ()
+                  << colours_.none);
   }
 
   /**
@@ -264,8 +264,8 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (const detail::gt_<Lhs_T, Rhs_T>& op)
   {
-    return (*this << color (op) << op.lhs () << " > " << op.rhs ()
-                  << colors_.none);
+    return (*this << colour_ (op) << op.lhs () << " > " << op.rhs ()
+                  << colours_.none);
   }
 
   /**
@@ -285,8 +285,8 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (const detail::ge_<Lhs_T, Rhs_T>& op)
   {
-    return (*this << color (op) << op.lhs () << " >= " << op.rhs ()
-                  << colors_.none);
+    return (*this << colour_ (op) << op.lhs () << " >= " << op.rhs ()
+                  << colours_.none);
   }
 
   /**
@@ -304,8 +304,8 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (const detail::lt_<Rhs_T, Lhs_T>& op)
   {
-    return (*this << color (op) << op.lhs () << " < " << op.rhs ()
-                  << colors_.none);
+    return (*this << colour_ (op) << op.lhs () << " < " << op.rhs ()
+                  << colours_.none);
   }
 
   /**
@@ -325,8 +325,8 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (const detail::le_<Rhs_T, Lhs_T>& op)
   {
-    return (*this << color (op) << op.lhs () << " <= " << op.rhs ()
-                  << colors_.none);
+    return (*this << colour_ (op) << op.lhs () << " <= " << op.rhs ()
+                  << colours_.none);
   }
 
   /**
@@ -345,8 +345,8 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (const detail::and_<Lhs_T, Rhs_T>& op)
   {
-    return (*this << '(' << op.lhs () << color (op) << " and " << colors_.none
-                  << op.rhs () << ')');
+    return (*this << '(' << op.lhs () << colour_ (op) << " and "
+                  << colours_.none << op.rhs () << ')');
   }
 
   /**
@@ -365,8 +365,8 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (const detail::or_<Lhs_T, Rhs_T>& op)
   {
-    return (*this << '(' << op.lhs () << color (op) << " or " << colors_.none
-                  << op.rhs () << ')');
+    return (*this << '(' << op.lhs () << colour_ (op) << " or "
+                  << colours_.none << op.rhs () << ')');
   }
 
   /**
@@ -381,7 +381,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (const detail::not_<T>& op)
   {
-    return (*this << color (op) << "not " << op.operand () << colors_.none);
+    return (*this << colour_ (op) << "not " << op.operand () << colours_.none);
   }
 
 #if defined(__cpp_exceptions)
@@ -401,9 +401,9 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (const detail::throws_<Expr_T, Exception_T>& op)
   {
-    return (*this << color (op) << "throws<"
+    return (*this << colour_ (op) << "throws<"
                   << reflection::type_name<Exception_T> () << ">"
-                  << colors_.none);
+                  << colours_.none);
   }
 
   /**
@@ -420,7 +420,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (const detail::throws_<Expr_T, void>& op)
   {
-    return (*this << color (op) << "throws" << colors_.none);
+    return (*this << colour_ (op) << "throws" << colours_.none);
   }
 
   /**
@@ -437,7 +437,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (const detail::nothrow_<Expr_T>& op)
   {
-    return (*this << color (op) << "nothrow" << colors_.none);
+    return (*this << colour_ (op) << "nothrow" << colours_.none);
   }
 #endif
 

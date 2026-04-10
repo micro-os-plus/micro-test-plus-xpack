@@ -73,7 +73,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__APPLE__) || defined(__linux__) || defined(__unix__)
     if (isatty (fileno (stdout)))
       {
-        colors_ = colors_red_green;
+        colours_ = colours_red_green;
       }
 #endif
   }
@@ -112,7 +112,7 @@ namespace micro_os_plus::micro_test_plus
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    if (verbosity != verbosity::silent)
+    if (verbosity_ != verbosity::silent)
       {
         if (output_file_ != nullptr)
           {
@@ -123,7 +123,7 @@ namespace micro_os_plus::micro_test_plus
           }
 
         printf ("\n");
-        write_info ();
+        write_info_ ();
         printf ("µTest++ human report\n");
 
         flush ();
@@ -138,7 +138,7 @@ namespace micro_os_plus::micro_test_plus
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    if (verbosity != verbosity::silent)
+    if (verbosity_ != verbosity::silent)
       {
         if (add_empty_line_)
           {
@@ -156,7 +156,7 @@ namespace micro_os_plus::micro_test_plus
           {
             printf ("%s✓%s Total: %zu check%s passed, %zu failed, in %zu test "
                     "case%s, %zu test suite%s\n",
-                    colors_.pass, colors_.none,
+                    colours_.pass, colours_.none,
                     runner_.totals ().successful_checks (),
                     runner_.totals ().successful_checks () == 1 ? "" : "s",
                     runner_.totals ().failed_checks (),
@@ -168,7 +168,7 @@ namespace micro_os_plus::micro_test_plus
           {
             printf ("%s✗%s Total: %zu check%s passed, %zu failed, in %zu test "
                     "case%s, %zu test suite%s\n",
-                    colors_.fail, colors_.none,
+                    colours_.fail, colours_.none,
                     runner_.totals ().successful_checks (),
                     runner_.totals ().successful_checks () == 1 ? "" : "s",
                     runner_.totals ().failed_checks (),
@@ -207,7 +207,7 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    if (verbosity == verbosity::normal || verbosity == verbosity::verbose)
+    if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
         if (add_empty_line_)
           {
@@ -253,7 +253,7 @@ namespace micro_os_plus::micro_test_plus
 
     // At this point, the buffer may contain output from the test case, which
     // should be displayed.
-    if (verbosity == verbosity::normal || verbosity == verbosity::verbose)
+    if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
         std::string indent (indent_size, ' ');
 
@@ -266,7 +266,7 @@ namespace micro_os_plus::micro_test_plus
           {
             // Successful test suite.
 
-            if (verbosity == verbosity::verbose)
+            if (verbosity_ == verbosity::verbose)
               {
                 // With verbosity, show full TAP output accumulated in the
                 // buffer.
@@ -280,7 +280,7 @@ namespace micro_os_plus::micro_test_plus
 
             printf ("%s✓%s %s - passed (%zu check%s in %zu test "
                     "case%s)\n",
-                    colors_.pass, colors_.none, suite.name (),
+                    colours_.pass, colours_.none, suite.name (),
                     suite.totals ().successful_checks (),
                     suite.totals ().successful_checks () == 1 ? "" : "s",
                     suite.totals ().executed_subtests (),
@@ -304,8 +304,8 @@ namespace micro_os_plus::micro_test_plus
             printf ("%s✗%s %s - %sFAILED%s (%zu check%s passed, %zu "
                     "failed, "
                     "in %zu test case%s)\n",
-                    colors_.fail, colors_.none, suite.name (), colors_.fail,
-                    colors_.none, suite.totals ().successful_checks (),
+                    colours_.fail, colours_.none, suite.name (), colours_.fail,
+                    colours_.none, suite.totals ().successful_checks (),
                     suite.totals ().successful_checks () == 1 ? "" : "s",
                     suite.totals ().failed_checks (),
                     suite.totals ().executed_subtests (),
@@ -357,7 +357,7 @@ namespace micro_os_plus::micro_test_plus
         abort ();
       }
 
-    if (verbosity == verbosity::verbose)
+    if (verbosity_ == verbosity::verbose)
       {
         if (add_empty_line_)
           {
@@ -407,7 +407,7 @@ namespace micro_os_plus::micro_test_plus
 
     // At this point, the buffer may contain output from the subtest, which
     // should be displayed.
-    if (verbosity == verbosity::normal || verbosity == verbosity::verbose)
+    if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
         std::string indent (indent_size * subtest.nesting_depth (), ' ');
         std::string indent2 (indent_size * (subtest.nesting_depth () + 1),
@@ -422,7 +422,7 @@ namespace micro_os_plus::micro_test_plus
           {
             // Successful subtest.
 
-            if (verbosity == verbosity::verbose)
+            if (verbosity_ == verbosity::verbose)
               {
                 // With verbosity, show full TAP output accumulated in the
                 // buffer.
@@ -434,7 +434,7 @@ namespace micro_os_plus::micro_test_plus
                 write_buffer_to_stdout ();
 
                 printf ("%s%s✓%s %s - passed (%zu check%s)\n", indent.c_str (),
-                        colors_.pass, colors_.none, subtest.name (),
+                        colours_.pass, colours_.none, subtest.name (),
                         subtest.totals ().successful_checks (),
                         subtest.totals ().successful_checks () == 1 ? ""
                                                                     : "s");
@@ -450,7 +450,7 @@ namespace micro_os_plus::micro_test_plus
 #endif
 
                 printf ("%s%s✓%s %s - passed (%zu check%s)\n", indent.c_str (),
-                        colors_.pass, colors_.none, subtest.name (),
+                        colours_.pass, colours_.none, subtest.name (),
                         subtest.totals ().successful_checks (),
                         subtest.totals ().successful_checks () == 1 ? ""
                                                                     : "s");
@@ -476,8 +476,8 @@ namespace micro_os_plus::micro_test_plus
 
             printf ("%s%s✗%s %s - %sFAILED%s (%zu check%s passed, %zu "
                     "failed)\n",
-                    indent.c_str (), colors_.fail, colors_.none,
-                    subtest.name (), colors_.fail, colors_.none,
+                    indent.c_str (), colours_.fail, colours_.none,
+                    subtest.name (), colours_.fail, colours_.none,
                     subtest.totals ().successful_checks (),
                     subtest.totals ().successful_checks () == 1 ? "" : "s",
                     subtest.totals ().failed_checks ());
@@ -521,7 +521,7 @@ namespace micro_os_plus::micro_test_plus
     size_t level = subtest.nesting_depth ();
 
     *this << indent (level + 1);
-    *this << colors_.pass << "✓" << colors_.none << " ";
+    *this << colours_.pass << "✓" << colours_.none << " ";
     if (!message.empty ())
       {
         *this << message.c_str ();
@@ -571,13 +571,13 @@ namespace micro_os_plus::micro_test_plus
     size_t level = subtest.nesting_depth ();
 
     *this << indent (level + 1);
-    *this << colors_.fail << "✗" << colors_.none << " ";
+    *this << colours_.fail << "✗" << colours_.none << " ";
     if (!message.empty ())
       {
         *this << message.c_str ();
         *this << " ";
       }
-    *this << colors_.fail << "FAILED" << colors_.none;
+    *this << colours_.fail << "FAILED" << colours_.none;
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wsign-conversion"

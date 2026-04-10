@@ -70,7 +70,7 @@ namespace micro_os_plus::micro_test_plus
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
 
-    verbosity = verbosity::normal;
+    verbosity_ = verbosity::normal;
     std::string_view output_file_sv{};
 
     argvs_ = std::move (argvs);
@@ -83,15 +83,15 @@ namespace micro_os_plus::micro_test_plus
           {
             if (args[i] == "--verbose")
               {
-                verbosity = verbosity::verbose;
+                verbosity_ = verbosity::verbose;
               }
             else if (args[i] == "--quiet")
               {
-                verbosity = verbosity::quiet;
+                verbosity_ = verbosity::quiet;
               }
             else if (args[i] == "--silent")
               {
-                verbosity = verbosity::silent;
+                verbosity_ = verbosity::silent;
               }
             else if (args[i].starts_with (output_file_prefix))
               {
@@ -202,7 +202,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   void
-  reporter::write_buffer_to_file (void)
+  reporter::write_buffer_to_file_ (void)
   {
     // Pass only the string, do not add an `\n` here.
     if (output_file_ != nullptr)
@@ -212,7 +212,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   void
-  reporter::write_info (void)
+  reporter::write_info_ (void)
   {
     if (argvs_ && !argvs_->empty ())
       {
@@ -239,7 +239,8 @@ namespace micro_os_plus::micro_test_plus
           fprintf (output_file_, "%s", line.c_str ());
 
 #if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) && defined(MICRO_OS_PLUS_TRACE))
-        if (verbosity == verbosity::normal || verbosity == verbosity::verbose)
+        if (verbosity_ == verbosity::normal
+            || verbosity_ == verbosity::verbose)
           printf ("%s", line.c_str ());
 #endif // !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
       }
@@ -287,7 +288,7 @@ namespace micro_os_plus::micro_test_plus
         }
 
 #if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) && defined(MICRO_OS_PLUS_TRACE))
-      if (verbosity == verbosity::normal || verbosity == verbosity::verbose)
+      if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
         {
           printf ("%s\n", line.c_str ());
         }

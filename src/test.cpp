@@ -152,7 +152,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   void
-  runnable_base::after_subtest_create (
+  runnable_base::after_subtest_create_ (
       std::unique_ptr<class subtest> child_test, suite& suite)
   {
     // Transfer ownership into the vector.

@@ -102,12 +102,12 @@ namespace micro_os_plus::micro_test_plus
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    if (verbosity != verbosity::silent)
+    if (verbosity_ != verbosity::silent)
       {
         printf ("\n");
       }
 
-    write_info ();
+    write_info_ ();
 
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -120,7 +120,7 @@ namespace micro_os_plus::micro_test_plus
         fprintf (output_file_, "%s", message);
       }
 
-    if (verbosity != verbosity::silent)
+    if (verbosity_ != verbosity::silent)
       {
         printf ("%s", message);
 
@@ -182,14 +182,14 @@ namespace micro_os_plus::micro_test_plus
                  message_time);
       }
 
-    if (verbosity != verbosity::silent)
+    if (verbosity_ != verbosity::silent)
       {
         if (add_empty_line_)
           {
             printf ("\n");
           }
 
-        if (verbosity != verbosity::quiet)
+        if (verbosity_ != verbosity::quiet)
           {
             printf ("%s", message_summary);
           }
@@ -236,7 +236,7 @@ namespace micro_os_plus::micro_test_plus
         fprintf (output_file_, "%s", message_subtest);
       }
 
-    if (verbosity == verbosity::normal || verbosity == verbosity::verbose)
+    if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
         if (add_empty_line_)
           {
@@ -324,7 +324,7 @@ namespace micro_os_plus::micro_test_plus
 
     if (output_file_ != nullptr)
       {
-        write_buffer_to_file ();
+        write_buffer_to_file_ ();
 
         fprintf (output_file_, "%s%s%s }\n", message_summary, message_totals,
                  message_time);
@@ -332,7 +332,7 @@ namespace micro_os_plus::micro_test_plus
 
     // At this point, the buffer may contain output from the test case, which
     // should be displayed.
-    if (verbosity == verbosity::normal || verbosity == verbosity::verbose)
+    if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
         if (add_empty_line_ && suite.totals ().executed_subtests () > 0)
           {
@@ -343,7 +343,7 @@ namespace micro_os_plus::micro_test_plus
           {
             // Successful test suite.
 
-            if (verbosity == verbosity::verbose)
+            if (verbosity_ == verbosity::verbose)
               {
                 // With verbosity, show full TAP output accumulated in the
                 // buffer.
@@ -413,7 +413,7 @@ namespace micro_os_plus::micro_test_plus
         fprintf (output_file_, "%s", message_subtest);
       }
 
-    if (verbosity == verbosity::normal || verbosity == verbosity::verbose)
+    if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
         if (add_empty_line_)
           {
@@ -484,14 +484,14 @@ namespace micro_os_plus::micro_test_plus
 
     if (output_file_ != nullptr)
       {
-        write_buffer_to_file ();
+        write_buffer_to_file_ ();
 
         fprintf (output_file_, "%s%s", message_summary, message_totals);
       }
 
     // At this point, the buffer may contain output from the subtest, which
     // should be displayed.
-    if (verbosity == verbosity::normal || verbosity == verbosity::verbose)
+    if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
       {
         if (add_empty_line_)
           {
@@ -501,7 +501,7 @@ namespace micro_os_plus::micro_test_plus
         if (subtest.totals ().was_successful ()) [[likely]]
           {
             // Successful subtest.
-            if (verbosity == verbosity::verbose)
+            if (verbosity_ == verbosity::verbose)
               {
                 // With verbosity, show full TAP output accumulated in the
                 // buffer.

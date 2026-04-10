@@ -263,7 +263,6 @@ namespace micro_os_plus::micro_test_plus
     abort (const reflection::source_location& sl
            = reflection::source_location::current ());
 
-  protected:
     /**
      * @brief Gets the test runner associated with this test suite.
      *
@@ -277,9 +276,10 @@ namespace micro_os_plus::micro_test_plus
       return runner_;
     }
 
+  protected:
     void
-    after_subtest_create (std::unique_ptr<class subtest> child_test,
-                          suite& suite);
+    after_subtest_create_ (std::unique_ptr<class subtest> child_test,
+                           suite& suite);
 
   protected:
     /**

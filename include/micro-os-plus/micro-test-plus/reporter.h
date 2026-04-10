@@ -83,11 +83,11 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   /**
-   * @struct colors
+   * @struct colours
    * @brief Colours used to highlight pass and fail results in test reports.
    *
    * @details
-   * The `colors` structure defines ANSI escape sequences for terminal output,
+   * The `colours` structure defines ANSI escape sequences for terminal output,
    * enabling colour-coded highlighting of test outcomes. The `pass` member
    * specifies the colour for successful results (typically green), while the
    * `fail` member specifies the colour for failed results (typically red). The
@@ -97,24 +97,24 @@ namespace micro_os_plus::micro_test_plus
    * by making it immediately apparent which tests have passed or failed,
    * thereby improving the overall user experience when reviewing test results.
    *
-   * @var colors::none
+   * @var colours::none
    * ANSI escape sequence to reset the terminal colour to default.
-   * @var colors::pass
+   * @var colours::pass
    * ANSI escape sequence to set the terminal colour for passing results
    * (green).
-   * @var colors::fail
+   * @var colours::fail
    * ANSI escape sequence to set the terminal colour for failing results (red).
    *
    * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */
-  struct colors
+  struct colours
   {
     const char* none = ""; /**< @brief Default colour. */
     const char* pass = ""; /**< @brief Green colour. */
     const char* fail = ""; /**< @brief Red colour. */
   };
 
-  inline constexpr colors colors_red_green = {
+  inline constexpr colours colours_red_green = {
     "\033[0m", /**< @brief Default colour. */
     "\033[32m", /**< @brief Green colour. */
     "\033[31m" /**< @brief Red colour. */
@@ -142,6 +142,8 @@ namespace micro_os_plus::micro_test_plus
     verbose = 3 /**< Displays all results, including passed checks, for maximum
                    detail. */
   };
+
+  using verbosity_t = verbosity;
 
   // Forward definitions.
   class reporter;
@@ -748,6 +750,12 @@ namespace micro_os_plus::micro_test_plus
     virtual const char*
     get_comment_prefix (void) = 0;
 
+    verbosity_t
+    verbosity () const
+    {
+      return verbosity_;
+    }
+
     // ------------------------------------------------------------------------
 
   protected:
@@ -762,16 +770,16 @@ namespace micro_os_plus::micro_test_plus
      * condition provided.
      */
     [[nodiscard]] inline auto
-    color (const bool cond) const
+    colour_ (const bool cond) const
     {
-      return cond ? colors_.pass : colors_.fail;
+      return cond ? colours_.pass : colours_.fail;
     }
 
     void
-    write_buffer_to_file (void);
+    write_buffer_to_file_ (void);
 
     void
-    write_info (void);
+    write_info_ (void);
 
     /**
      * @brief Outputs the prefix for a passing condition.
@@ -821,17 +829,16 @@ namespace micro_os_plus::micro_test_plus
     output_fail_suffix_ (const reflection::source_location& location,
                          bool abort, subtest& subtest) = 0;
 
-  public:
+  protected:
     /**
      * @brief The verbosity level for test reporting.
      */
-    verbosity verbosity{};
+    verbosity_t verbosity_{};
 
-  protected:
     /**
      * @brief ANSI colour codes for output formatting.
      */
-    colors colors_{};
+    colours colours_{};
 
     /**
      * @brief Internal output buffer for accumulating report content.

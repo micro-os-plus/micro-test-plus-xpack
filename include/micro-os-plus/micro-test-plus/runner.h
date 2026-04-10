@@ -236,7 +236,6 @@ namespace micro_os_plus::micro_test_plus
       return timings_;
     }
 
-  protected:
     /**
      * @brief Returns the count of child test suites.
      *
@@ -247,6 +246,7 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] size_t
     suites_count (void) const noexcept;
 
+  protected:
     /**
      * @brief Runs all registered test suites.
      *

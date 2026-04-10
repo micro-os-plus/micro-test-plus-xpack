@@ -174,7 +174,7 @@ namespace micro_os_plus::micro_test_plus
         std::forward<Callable_T> (callable),
         std::forward<Args_T> (arguments)...);
 
-    after_subtest_create (std::move (child_test), parent_suite_);
+    after_subtest_create_ (std::move (child_test), parent_suite_);
   }
 
   // ==========================================================================
@@ -221,7 +221,7 @@ namespace micro_os_plus::micro_test_plus
                                      std::forward<Callable_T> (callable),
                                      std::forward<Args_T> (arguments)...);
 
-    after_subtest_create (std::move (child_test), *this);
+    after_subtest_create_ (std::move (child_test), *this);
   }
 
   // ==========================================================================
