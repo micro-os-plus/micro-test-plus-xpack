@@ -535,7 +535,7 @@ private/protected members use a trailing underscore.
 
 ---
 
-### 23. Protected `suites_count()` method lacks trailing underscore (LOW)
+### 23. Protected `suites_count()` method lacks trailing underscore (LOW) — **WON'T FIX** (`suites_count()` is `public:`, not `protected:`; trailing underscore not required)
 
 **File:** `include/micro-os-plus/micro-test-plus/runner.h` (line 247)
 
@@ -615,3 +615,362 @@ register_suite_ (std::move (child_suite));
   deleting only the vector of pointers.
 - The `timestamp` class correctly defaults all five special member
   functions because `timespec` is trivially copyable; this is documented.
+
+---
+
+## Third Review — 10 April 2026
+
+**Scope:** Full re-read of all `src/` and `include/` files after
+second-pass fixes. Doxygen comments excluded.
+
+---
+
+### Summary of New Findings
+
+| #   | Severity | File(s)                      | Topic                                                                                                                            |
+| --- | -------- | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| 26  | LOW      | `src/runner.cpp`             | ~~`puts("]")` should use `trace::printf("]\n")` for consistency~~ **FIXED**                                                      |
+| 27  | LOW      | `src/reporter.cpp`           | `verbosity_` double-initialisation (default `silent`, then `normal`)                                                             |
+| 28  | LOW      | `src/test.cpp`               | ~~Commented-out timing and accumulation lines in `run()` and `after_subtest_create_()`~~ **FIXED**                               |
+| 29  | LOW      | `src/runner.cpp`             | American spelling "Initialize" in inline comment                                                                                 |
+| 30  | LOW      | `inlines/reporter-inlines.h` | Misleading comment about null-pointer rendering platform                                                                         |
+| 31  | LOW      | `src/runner.cpp`             | ~~`runner::suites_count()` lacks trailing underscore (finding 23, still pending)~~ **WON'T FIX** (`suites_count()` is `public:`) |
+| 32  | LOW      | `runner.h`                   | ~~`static_children_suites_` raw pointer could be `std::unique_ptr`~~ **WON'T FIX** (raw pointer is architecturally required)     |
+
+---
+
+### ~~26. `puts("]")` inconsistency in debug trace (LOW)~~ — **FIXED**
+
+**File:** `src/runner.cpp`
+
+Inside the `MICRO_OS_PLUS_DEBUG` diagnostic block in `runner::initialise()`,
+surrounding output uses `trace::printf()` but the closing bracket is printed
+with `puts("]")`:
+
+```cpp
+trace::printf ("argv[");
+for (int i = 0; i < argc; ++i)
+  {
+    ...
+    trace::printf ("'%s'", argv[i]);
+  }
+puts ("]");   // writes to stdout, not the trace stream
+```
+
+`puts` always writes to `stdout` and appends a newline. On embedded targets
+it may not route through the configured trace backend (e.g. semihosting,
+SWO). For consistency, this should be `trace::printf ("]\n")`.
+
+---
+
+### ~~27. `verbosity_` double-initialisation (LOW)~~ — **FIXED**
+
+**File:** `src/reporter.cpp`
+
+The protected data member is declared as:
+
+```cpp
+verbosity_t verbosity_{};   // zero-initialised → verbosity::silent
+```
+
+and then the very first statement of the constructor body assigns it again:
+
+```cpp
+reporter::reporter (...)
+{
+  verbosity_ = verbosity::normal;
+  ...
+}
+```
+
+This results in two initialisations: one to `verbosity::silent` (the
+in-class default) and immediately one to `verbosity::normal` (the
+constructor body). The intent is that `normal` is the real default, with
+command-line flags able to override it. The in-class default should
+reflect that:
+
+```cpp
+verbosity_t verbosity_{ verbosity::normal };
+```
+
+With this change, the redundant assignment in the constructor body can be
+removed.
+
+---
+
+### ~~28. Commented-out dead code in `test.cpp` (LOW)~~ — **FIXED**
+
+**File:** `src/test.cpp`
+
+Two locations contain commented-out lines that should be removed:
+
+1. In `subtest::run()` and `suite::run()`:
+
+```cpp
+// this->timings.timestamp_begin ();
+reporter.begin_subtest (*this);
+// ...
+// this->timings.timestamp_end ();
+reporter.end_subtest (*this);
+```
+
+2. In `runnable_base::after_subtest_create_()`:
+
+```cpp
+// Do not accumulate the totals from the child test into the current test
+// totals. totals () += subtest.totals ();
+```
+
+The explanatory comment in item 2 is valuable; only the commented-out
+code line `totals () += subtest.totals ();` should be removed, leaving
+the explanatory sentence as a plain comment.
+
+---
+
+### ~~29. American spelling in inline comment (LOW)~~ — **FIXED**
+
+**File:** `src/runner.cpp`
+
+The comment:
+
+```cpp
+// Initialize and configure the reporter.
+```
+
+uses American spelling. Per the project's British English convention, it
+should be:
+
+```cpp
+// Initialise and configure the reporter.
+```
+
+---
+
+### ~~30. Misleading platform note in null-pointer rendering (LOW)~~ — **FIXED**
+
+**File:**
+`include/micro-os-plus/micro-test-plus/inlines/reporter-inlines.h`
+
+The comment reads:
+
+```cpp
+// Explicitly render null pointers as "0x0" to avoid platform-specific
+// pointer representations like "(nil)" on macOS.
+```
+
+This is reversed: `(nil)` is the Linux/glibc rendering of a null pointer
+via `%p`; macOS already renders it as `0x0`. The comment should read:
+
+```cpp
+// Explicitly render null pointers as "0x0" to avoid platform-specific
+// representations such as "(nil)" on Linux/glibc.
+```
+
+---
+
+### 31. `runner::suites_count()` lacks trailing underscore (LOW) — **WON'T FIX** (`suites_count()` is `public:`, not `protected:`; trailing underscore not required)
+
+**File:** `include/micro-os-plus/micro-test-plus/runner.h` (line 247),
+`src/runner.cpp`
+
+This is finding #23 from the second review, which was recorded but not
+yet addressed. Re-inspection of `runner.h` confirms that `suites_count()`
+is declared in the `public:` section of the class, not `protected:`. The
+naming convention (trailing underscore) applies only to `protected:` and
+`private:` members. No rename is required.
+
+---
+
+### 32. `static_children_suites_` raw pointer (LOW) — **WON'T FIX** (raw pointer is architecturally required)
+
+**File:** `include/micro-os-plus/micro-test-plus/runner.h`
+
+The `static_runner` class manages `static_children_suites_` as a raw
+`std::vector<static_suite*>*`. It was initially suggested that a
+`std::unique_ptr` could replace the manual `delete` in the destructor.
+
+However, the raw pointer is **architecturally required** and cannot be
+replaced by `std::unique_ptr`. The reason is the static initialisation
+order problem: `static_suite` objects in other translation units may call
+`register_static_suite()` before `static_runner`'s constructor has run,
+relying on BSS zero-initialisation to guarantee the field reads as
+`nullptr`. If the field were a `std::unique_ptr`, its own default
+constructor (running when `static_runner` is constructed) would
+**overwrite** any pointer value already written by an earlier
+`register_static_suite()` call, silently discarding every suite
+registered before the runner's constructor executed.
+
+The current design — raw pointer in BSS, lazily allocated with `new`,
+deleted in the destructor — is the correct and only safe approach for
+this use case. No code change is required.
+
+---
+
+## Positive Observations (Third Review)
+
+- The `assert(has_timestamps())` precondition guard in
+  `timestamps::compute_elapsed_time()` is now in place with the correct
+  `<cassert>` include.
+- `runner::exit_code()` uses `const int result` (renamed from
+  `exit_code`) eliminating the variable-shadows-method issue.
+- All stale commented-out `#include` directives have been removed from
+  `src/` and `include/` files.
+- `auto child_suite` (formerly `auto suite`) in `runner_inlines.h`
+  cleanly eliminates the three-way name ambiguity.
+- `append_number_()` is correctly private with a trailing underscore,
+  consistent with the naming convention.
+
+---
+
+## Fourth Review — 11 April 2026
+
+**Scope:** Full re-read of all `src/` and `include/` files after
+third-pass fixes. Doxygen comments excluded.
+
+---
+
+### Summary of New Findings
+
+| #   | Severity | File(s)                               | Topic                                                                                                        |
+| --- | -------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| 33  | LOW      | `src/reporter-tap.cpp`                | ~~Trace blocks in `end_suite()` and `end_subtest()` call `printf()` instead of `trace::printf()`~~ **FIXED** |
+| 34  | LOW      | `src/reporter-human.cpp`              | ~~Dead commented-out fragment `/* add_empty_line_ && */` inside live `if` condition~~ **FIXED**              |
+| 35  | LOW      | `inlines/test-inlines.h`              | ~~`static_suite` passes `nullptr` as callable to `suite` base class~~ **FIXED**                              |
+| 36  | LOW      | `inlines/deferred-reporter-inlines.h` | ~~`#include <cstring>` is not used in that file (stale include)~~ **FIXED**                                  |
+| 37  | LOW      | `runner.h`                            | ~~`#include <ctime>` is redundant — already provided by `timings.h`~~ **FIXED**                              |
+
+---
+
+### ~~33. Trace blocks call `printf()` instead of `trace::printf()` (LOW)~~ — **FIXED**
+
+**File:** `src/reporter-tap.cpp`
+
+In `reporter_tap::end_suite()` and `reporter_tap::end_subtest()`, the
+diagnostic trace blocks guarded by
+`MICRO_OS_PLUS_TRACE && MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS` call bare
+`printf()` rather than `trace::printf()`:
+
+```cpp
+#if defined(MICRO_OS_PLUS_TRACE) \
+    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    printf ("%s '%s' +%zu -%zu ...", __PRETTY_FUNCTION__,
+            suite.name (), ...);
+#pragma GCC diagnostic pop
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+```
+
+On embedded targets, `printf` writes to `stdout`, which may bypass the
+configured trace backend (semihosting, SWO, etc.). All trace-guarded
+diagnostics elsewhere in the file use `trace::printf()` correctly. These
+two calls should be changed to `trace::printf()`.
+
+---
+
+### ~~34. Dead commented-out fragment inside live `if` condition (LOW)~~ — **FIXED**
+
+**File:** `src/reporter-human.cpp`
+
+In `reporter_human::end_suite()`, the condition reads:
+
+```cpp
+if (/* add_empty_line_ && */ suite.totals ().executed_subtests () > 0)
+```
+
+The fragment `/* add_empty_line_ && */` is a surviving remnant of a
+previous refactoring. It has no effect on behaviour but reduces
+readability and may mislead a future reader into thinking the condition
+is intentionally partial. It should be removed, leaving:
+
+```cpp
+if (suite.totals ().executed_subtests () > 0)
+```
+
+---
+
+### ~~35. `static_suite` passes `nullptr` as callable to `suite` base (LOW)~~ — **FIXED**
+
+**File:**
+`include/micro-os-plus/micro-test-plus/inlines/test-inlines.h`
+
+The `static_suite` constructor initialises the `suite` base with
+`nullptr` as the callable argument:
+
+```cpp
+static_suite::static_suite (const char* name, static_runner& runner,
+                             Callable_T&& callable)
+    : suite{ name, runner, runner.static_suites_count () + 1, nullptr }
+```
+
+This causes `runnable::callable_` (a `std::function<void(suite&)>`) to
+be left in an empty (null) state. At runtime this is safe because
+`static_suite::run()` overrides `suite::run()` and always invokes
+`static_callable_` instead, so `callable_` is never called. However, if
+`suite::run()` were ever invoked on a `static_suite` via a base-class
+pointer — for instance during refactoring — the invocation of an empty
+`std::function` would throw `std::bad_function_call` on hosted targets,
+or produce undefined behaviour on bare-metal (where exceptions are
+typically disabled).
+
+Passing a no-op lambda is no more expensive at compile time and removes
+the latent trap:
+
+```cpp
+: suite{ name, runner, runner.static_suites_count () + 1,
+         [] (suite&) noexcept {} }
+```
+
+---
+
+### ~~36. Stale `#include <cstring>` in `deferred-reporter-inlines.h` (LOW)~~ — **FIXED**
+
+**File:**
+`include/micro-os-plus/micro-test-plus/inlines/deferred-reporter-inlines.h`
+
+The file includes `<cstring>`:
+
+```cpp
+#include <charconv>
+#include <cstring>
+#include <cstdio>
+```
+
+None of the C string functions declared in `<cstring>` (`strlen`,
+`strcpy`, `memcpy`, `strrchr`, etc.) are used anywhere in that file.
+The only string processing performed is via `std::to_chars` (from
+`<charconv>`) and `std::string::append`/`push_back`. The `<cstring>`
+include is stale and should be removed.
+
+---
+
+### ~~37. Redundant `#include <ctime>` in `runner.h` (LOW)~~ — **FIXED**
+
+**File:** `include/micro-os-plus/micro-test-plus/runner.h`
+
+`runner.h` includes `<ctime>` directly:
+
+```cpp
+#include <functional>
+#include <memory>
+#include <ctime>
+```
+
+However, `runner.h` does not use any declaration from `<ctime>` in its
+own body (`time_t`, `struct tm`, `clock_t`, `mktime`, etc. are absent).
+`runner.h` already includes `timings.h`, which itself includes `<ctime>`
+for the `timespec` type used by `timestamps`. The `<ctime>` include in
+`runner.h` is therefore redundant and should be removed.
+
+---
+
+## Positive Observations (Fourth Review)
+
+- All trace blocks in the remainder of `reporter-tap.cpp` and
+  `reporter-human.cpp` correctly use `trace::printf()` — the two
+  defective calls in `end_suite()` and `end_subtest()` are isolated
+  anomalies.
+- Fixed-size `snprintf` buffers in the TAP reporter use `sizeof(buffer)`
+  correctly, preventing overflows.
+- `deferred_reporter_base::operator<<` uses `std::to_chars` with a
+  fixed-size stack buffer, correctly avoiding dynamic allocation.
+- `timings::compute_elapsed_time` is guarded by `assert(has_timestamps())`
+  as required.
