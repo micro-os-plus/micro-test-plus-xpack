@@ -252,6 +252,17 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] class reporter&
     reporter (void) const noexcept;
 
+    /**
+     * @brief Aborts test execution via the owning runner.
+     *
+     * @param sl The source location from which the abort is triggered.
+     * @par Returns
+     *   Does not return.
+     */
+    [[noreturn]] void
+    abort (const reflection::source_location& sl
+           = reflection::source_location::current ());
+
   protected:
     /**
      * @brief Gets the test runner associated with this test suite.

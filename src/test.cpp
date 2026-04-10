@@ -145,6 +145,12 @@ namespace micro_os_plus::micro_test_plus
     return runner_.reporter ();
   }
 
+  [[noreturn]] void
+  runnable_base::abort (const reflection::source_location& sl)
+  {
+    runner_.abort (sl);
+  }
+
   void
   runnable_base::after_subtest_create (
       std::unique_ptr<class subtest> child_test, suite& suite)

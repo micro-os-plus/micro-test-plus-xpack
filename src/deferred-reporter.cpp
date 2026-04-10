@@ -93,9 +93,9 @@ namespace micro_os_plus::micro_test_plus
 
       if (abort_ && !value_) [[unlikely]]
         {
-          printf ("\n");
           subtest_.reporter ().write_buffer_to_stdout ();
-          abort ();
+          subtest_.reporter ().flush ();
+          subtest_.abort (location_);
         }
     }
 
