@@ -407,15 +407,15 @@ namespace micro_os_plus::micro_test_plus
                              and type_traits::has_epsilon_v<Rhs_T>)
             {
               return math::abs (get (lhs_) - get (rhs_))
-                     > math::min_value (lhs_.epsilon, rhs_.epsilon);
+                     >= math::min_value (lhs_.epsilon, rhs_.epsilon);
             }
           else if constexpr (type_traits::has_epsilon_v<Lhs_T>)
             {
-              return math::abs (get (lhs_) - get (rhs_)) > lhs_.epsilon;
+              return math::abs (get (lhs_) - get (rhs_)) >= lhs_.epsilon;
             }
           else if constexpr (type_traits::has_epsilon_v<Rhs_T>)
             {
-              return math::abs (get (lhs_) - get (rhs_)) > rhs_.epsilon;
+              return math::abs (get (lhs_) - get (rhs_)) >= rhs_.epsilon;
             }
           else
             {
