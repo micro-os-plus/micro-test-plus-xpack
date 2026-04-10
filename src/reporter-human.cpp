@@ -132,7 +132,7 @@ namespace micro_os_plus::micro_test_plus
   }
 
   void
-  reporter_human::end_session (runner& runner_)
+  reporter_human::end_session (runner& runner)
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
     printf ("%s\n", __PRETTY_FUNCTION__);
@@ -145,23 +145,23 @@ namespace micro_os_plus::micro_test_plus
             printf ("\n");
           }
 
-        size_t total_suites_count = runner_.total_suites_count ();
+        size_t total_suites_count = runner.total_suites_count ();
 
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
 
-        if (runner_.totals ().was_successful ()) [[likely]]
+        if (runner.totals ().was_successful ()) [[likely]]
           {
             printf ("%s✓%s Total: %zu check%s passed, %zu failed, in %zu test "
                     "case%s, %zu test suite%s\n",
                     colours_.pass, colours_.none,
-                    runner_.totals ().successful_checks (),
-                    runner_.totals ().successful_checks () == 1 ? "" : "s",
-                    runner_.totals ().failed_checks (),
-                    runner_.totals ().executed_subtests (),
-                    runner_.totals ().executed_subtests () == 1 ? "" : "s",
+                    runner.totals ().successful_checks (),
+                    runner.totals ().successful_checks () == 1 ? "" : "s",
+                    runner.totals ().failed_checks (),
+                    runner.totals ().executed_subtests (),
+                    runner.totals ().executed_subtests () == 1 ? "" : "s",
                     total_suites_count, total_suites_count == 1 ? "" : "s");
           }
         else
@@ -169,11 +169,11 @@ namespace micro_os_plus::micro_test_plus
             printf ("%s✗%s Total: %zu check%s passed, %zu failed, in %zu test "
                     "case%s, %zu test suite%s\n",
                     colours_.fail, colours_.none,
-                    runner_.totals ().successful_checks (),
-                    runner_.totals ().successful_checks () == 1 ? "" : "s",
-                    runner_.totals ().failed_checks (),
-                    runner_.totals ().executed_subtests (),
-                    runner_.totals ().executed_subtests () == 1 ? "" : "s",
+                    runner.totals ().successful_checks (),
+                    runner.totals ().successful_checks () == 1 ? "" : "s",
+                    runner.totals ().failed_checks (),
+                    runner.totals ().executed_subtests (),
+                    runner.totals ().executed_subtests () == 1 ? "" : "s",
                     total_suites_count, total_suites_count == 1 ? "" : "s");
           }
 

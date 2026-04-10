@@ -133,13 +133,13 @@ namespace micro_os_plus::micro_test_plus
   }
 
   void
-  reporter_tap::end_session (runner& runner_)
+  reporter_tap::end_session (runner& runner)
   {
 #if defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
     printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    size_t total_suites_count = runner_.total_suites_count ();
+    size_t total_suites_count = runner.total_suites_count ();
 
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -152,20 +152,20 @@ namespace micro_os_plus::micro_test_plus
 
     uint32_t milliseconds = 0;
     uint32_t microseconds = 0;
-    if (runner_.timings ().has_timestamps ())
+    if (runner.timings ().has_timestamps ())
       {
-        runner_.timings ().compute_elapsed_time (milliseconds, microseconds);
+        runner.timings ().compute_elapsed_time (milliseconds, microseconds);
       }
 
     char message_totals[160];
     snprintf (message_totals, sizeof (message_totals),
               "# { total: %zu check%s passed, %zu failed, in %zu test "
               "case%s, %zu test suite%s",
-              runner_.totals ().successful_checks (),
-              runner_.totals ().successful_checks () == 1 ? "" : "s",
-              runner_.totals ().failed_checks (),
-              runner_.totals ().executed_subtests (),
-              runner_.totals ().executed_subtests () == 1 ? "" : "s",
+              runner.totals ().successful_checks (),
+              runner.totals ().successful_checks () == 1 ? "" : "s",
+              runner.totals ().failed_checks (),
+              runner.totals ().executed_subtests (),
+              runner.totals ().executed_subtests () == 1 ? "" : "s",
               total_suites_count, total_suites_count == 1 ? "" : "s");
 
     char message_time[120] = "";
