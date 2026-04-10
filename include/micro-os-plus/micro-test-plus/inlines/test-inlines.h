@@ -63,8 +63,8 @@
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
-#else
-#pragma GCC diagnostic ignored "-Wsuggest-final-methods"
+#else // GCC only
+// #pragma GCC diagnostic ignored "-Wsuggest-final-methods"
 #endif
 #endif
 

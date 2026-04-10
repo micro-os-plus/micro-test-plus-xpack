@@ -32,10 +32,10 @@ using namespace micro_os_plus::micro_test_plus;
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
+#pragma clang diagnostic ignored "-Wshadow-uncaptured-local"
 #pragma clang diagnostic ignored "-Wexit-time-destructors"
 #pragma clang diagnostic ignored "-Wglobal-constructors"
-#pragma clang diagnostic ignored "-Wctad-maybe-unsupported"
-#pragma clang diagnostic ignored "-Wshadow-uncaptured-local"
+// #pragma clang diagnostic ignored "-Wctad-maybe-unsupported"
 #endif
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #pragma GCC diagnostic ignored "-Wfloat-equal"

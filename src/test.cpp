@@ -58,8 +58,8 @@
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
 #else // GCC only
 #pragma GCC diagnostic ignored "-Wredundant-tags"
-#pragma GCC diagnostic ignored "-Wsuggest-final-types"
-#pragma GCC diagnostic ignored "-Wsuggest-final-methods"
+// #pragma GCC diagnostic ignored "-Wsuggest-final-types"
+// #pragma GCC diagnostic ignored "-Wsuggest-final-methods"
 #endif
 
 // ==========================================================================
