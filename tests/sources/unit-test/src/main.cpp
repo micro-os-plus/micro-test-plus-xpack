@@ -126,6 +126,20 @@ my_actual_float (void)
 
 template <typename T>
 T
+my_actual_float_less (void)
+{
+  return 41.0;
+}
+
+template <typename T>
+T
+my_actual_float_more (void)
+{
+  return 43.0;
+}
+
+template <typename T>
+T
 my_expected_float (void)
 {
   return 42.0;
@@ -183,6 +197,13 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
   {
+    {
+      static_assert (static_cast<int> (verbosity::silent) == 0);
+      static_assert (static_cast<int> (verbosity::quiet) == 1);
+      static_assert (static_cast<int> (verbosity::normal) == 2);
+      static_assert (static_cast<int> (verbosity::verbose) == 3);
+    }
+
     {
       static_assert (
           std::is_same_v<type_traits::list<>,
@@ -946,6 +967,12 @@ main (int argc, char* argv[])
       t.expect (eq (reflection::type_name<int> (), "int"sv));
       local_counts.successful_checks++;
 
+      t.expect (eq (reflection::type_name<unsigned int> (), "unsigned int"sv));
+      local_counts.successful_checks++;
+
+      t.expect (eq (reflection::type_name<float> (), "float"sv));
+      local_counts.successful_checks++;
+
       local_counts.executed_subtest++;
     });
 
@@ -1243,6 +1270,15 @@ main (int argc, char* argv[])
       t.expect (utility::is_match ("abc", "a*c")) << "abc matches a*c";
       local_counts.successful_checks++;
 
+      t.expect (utility::is_match ("abc", "*")) << "abc matches *";
+      local_counts.successful_checks++;
+
+      t.expect (utility::is_match ("abc", "*bc")) << "abc matches *bc";
+      local_counts.successful_checks++;
+
+      t.expect (utility::is_match ("abc", "*b*")) << "abc matches *b*";
+      local_counts.successful_checks++;
+
       local_counts.executed_subtest++;
     });
 
@@ -1314,6 +1350,64 @@ main (int argc, char* argv[])
                == local_counts.executed_subtest);
 
   // --------------------------------------------------------------------------
+
+  ts.test ("reflection::short_name()", [] (auto& t)
+    {
+      // Path with slash — returns filename component.
+      t.expect (eq (
+          std::string_view{ reflection::short_name ("/some/path/file.cpp") },
+          "file.cpp"sv));
+      local_counts.successful_checks++;
+
+      // Path without slash — returns original.
+      t.expect (eq (std::string_view{ reflection::short_name ("file.cpp") },
+                    "file.cpp"sv));
+      local_counts.successful_checks++;
+
+      local_counts.executed_subtest++;
+    });
+
+  test_assert (current_suite_totals.successful_checks ()
+               == local_counts.successful_checks);
+  test_assert (current_suite_totals.failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_suite_totals.executed_subtests ()
+               == local_counts.executed_subtest);
+
+  // --------------------------------------------------------------------------
+
+  ts.test ("Nested subtests", [] (auto& t)
+    {
+      t.test ("inner subtest", [] (auto& t2)
+        {
+          t2.expect (eq (1, 1));
+          local_counts.successful_checks++;
+          local_counts.executed_subtest++; // inner
+        });
+      local_counts.executed_subtest++; // outer
+    });
+
+  test_assert (current_suite_totals.successful_checks ()
+               == local_counts.successful_checks);
+  test_assert (current_suite_totals.failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_suite_totals.executed_subtests ()
+               == local_counts.executed_subtest);
+
+  // --------------------------------------------------------------------------
+
+  {
+    runner_totals fresh{};
+    test_assert (fresh.was_successful ());
+    test_assert (fresh.executed_checks () == 0);
+  }
+
+  // After a test case runs:
+  test_assert (current_suite_totals.executed_checks ()
+               == local_counts.successful_checks + local_counts.failed_checks);
+
+  // --------------------------------------------------------------------------
+
   // The inner test should return failure.
   // exit_code() must be always called, otherwise the test suites
   // are not executed.
@@ -1410,6 +1504,8 @@ test_case_expect_passed_integrals_combinatorial (subtest& t)
       gt (my_actual_integral_more<T> (), my_expected_integral<signed int> ()))
       << "gt matches signed int";
   local_counts.successful_checks++;
+
+  // --------------------------------------------------------------------------
 
   t.expect (
       le (my_actual_integral<T> (), my_expected_integral<unsigned int> ()))
@@ -1548,53 +1644,204 @@ test_case_expect_failed_integrals_combinatorial (subtest& t)
 
 template <typename T>
 static void
-test_case_expect_eq_floats_combinatorial (subtest& t)
+test_case_expect_passed_floats_combinatorial (subtest& t)
 {
-  t.expect (
-      eq (my_actual_float<T> (), my_expected_integral<signed long long> ()))
+  t.expect (eq (my_actual_float<T> (), my_expected_float<signed long long> ()))
       << "42.0 == 42 signed long long";
   local_counts.successful_checks++;
 
   t.expect (
-      eq (my_actual_float<T> (), my_expected_integral<unsigned long long> ()))
+      eq (my_actual_float<T> (), my_expected_float<unsigned long long> ()))
       << "42.0 == 42 unsigned long long";
   local_counts.successful_checks++;
 
-  t.expect (eq (my_actual_float<T> (), my_expected_integral<signed long> ()))
+  t.expect (eq (my_actual_float<T> (), my_expected_float<signed long> ()))
       << "42.0 == 42 signed long";
   local_counts.successful_checks++;
 
-  t.expect (eq (my_actual_float<T> (), my_expected_integral<unsigned long> ()))
+  t.expect (eq (my_actual_float<T> (), my_expected_float<unsigned long> ()))
       << "42.0 == 42 unsigned long";
   local_counts.successful_checks++;
 
-  t.expect (eq (my_actual_float<T> (), my_expected_integral<signed int> ()))
+  t.expect (eq (my_actual_float<T> (), my_expected_float<signed int> ()))
       << "42.0 == 42 signed int";
   local_counts.successful_checks++;
 
-  t.expect (eq (my_actual_float<T> (), my_expected_integral<unsigned int> ()))
+  t.expect (eq (my_actual_float<T> (), my_expected_float<unsigned int> ()))
       << "42.0 == 42 unsigned int";
   local_counts.successful_checks++;
 
-  t.expect (eq (my_actual_float<T> (), my_expected_integral<signed short> ()))
+  t.expect (eq (my_actual_float<T> (), my_expected_float<signed short> ()))
       << "42.0 == 42 signed short";
   local_counts.successful_checks++;
 
-  t.expect (
-      eq (my_actual_float<T> (), my_expected_integral<unsigned short> ()))
+  t.expect (eq (my_actual_float<T> (), my_expected_float<unsigned short> ()))
       << "42.0 == 42 unsigned short";
   local_counts.successful_checks++;
 
-  t.expect (eq (my_actual_float<T> (), my_expected_integral<signed char> ()))
+  t.expect (eq (my_actual_float<T> (), my_expected_float<signed char> ()))
       << "42.0 == 42 signed char";
   local_counts.successful_checks++;
 
-  t.expect (eq (my_actual_float<T> (), my_expected_integral<unsigned char> ()))
+  t.expect (eq (my_actual_float<T> (), my_expected_float<unsigned char> ()))
       << "42.0 == 42 unsigned char";
   local_counts.successful_checks++;
 
+  // --------------------------------------------------------------------------
+
+  t.expect (le (my_actual_float<T> (), my_expected_float<signed int> ()))
+      << "42.0 <= 42 signed int";
+  local_counts.successful_checks++;
+
+  t.expect (ge (my_actual_float<T> (), my_expected_float<signed int> ()))
+      << "42.0 >= 42 signed int";
+  local_counts.successful_checks++;
+
+  t.expect (ne (my_actual_float_more<T> (), my_expected_float<signed int> ()))
+      << "43.0 != 42 signed int";
+  local_counts.successful_checks++;
+
+  t.expect (lt (my_actual_float_less<T> (), my_expected_float<signed int> ()))
+      << "41.0 < 42 signed int";
+  local_counts.successful_checks++;
+
+  t.expect (gt (my_actual_float_more<T> (), my_expected_float<signed int> ()))
+      << "43.0 > 42 signed int";
+  local_counts.successful_checks++;
+
+  // --------------------------------------------------------------------------
+
+  t.expect (le (my_actual_float<T> (), my_expected_float<unsigned int> ()))
+      << "42.0 <= 42 unsigned int";
+  local_counts.successful_checks++;
+
+  t.expect (ge (my_actual_float<T> (), my_expected_float<unsigned int> ()))
+      << "42.0 >= 42 unsigned int";
+  local_counts.successful_checks++;
+
+  t.expect (
+      ne (my_actual_float_more<T> (), my_expected_float<unsigned int> ()))
+      << "43.0 != 42 unsigned int";
+  local_counts.successful_checks++;
+
+  t.expect (
+      lt (my_actual_float_less<T> (), my_expected_float<unsigned int> ()))
+      << "41.0 < 42 unsigned int";
+  local_counts.successful_checks++;
+
+  t.expect (
+      gt (my_actual_float_more<T> (), my_expected_float<unsigned int> ()))
+      << "43.0 > 42 unsigned int";
+  local_counts.successful_checks++;
+
+  // ---
+
   t.expect (eq (42, my_expected_float<T> ())) << "42 == 42.0";
   local_counts.successful_checks++;
+
+  // ---
+
+  local_counts.executed_subtest++;
+}
+
+template <typename T>
+static void
+test_case_expect_failed_floats_combinatorial (subtest& t)
+{
+  t.expect (ne (my_actual_float<T> (), my_expected_float<signed long long> ()))
+      << "42.0 == 42 signed long long";
+  local_counts.failed_checks++;
+
+  t.expect (
+      ne (my_actual_float<T> (), my_expected_float<unsigned long long> ()))
+      << "42.0 == 42 unsigned long long";
+  local_counts.failed_checks++;
+
+  t.expect (ne (my_actual_float<T> (), my_expected_float<signed long> ()))
+      << "42.0 == 42 signed long";
+  local_counts.failed_checks++;
+
+  t.expect (ne (my_actual_float<T> (), my_expected_float<unsigned long> ()))
+      << "42.0 == 42 unsigned long";
+  local_counts.failed_checks++;
+
+  t.expect (ne (my_actual_float<T> (), my_expected_float<signed int> ()))
+      << "42.0 == 42 signed int";
+  local_counts.failed_checks++;
+
+  t.expect (ne (my_actual_float<T> (), my_expected_float<unsigned int> ()))
+      << "42.0 == 42 unsigned int";
+  local_counts.failed_checks++;
+
+  t.expect (ne (my_actual_float<T> (), my_expected_float<signed short> ()))
+      << "42.0 == 42 signed short";
+  local_counts.failed_checks++;
+
+  t.expect (ne (my_actual_float<T> (), my_expected_float<unsigned short> ()))
+      << "42.0 == 42 unsigned short";
+  local_counts.failed_checks++;
+
+  t.expect (ne (my_actual_float<T> (), my_expected_float<signed char> ()))
+      << "42.0 == 42 signed char";
+  local_counts.failed_checks++;
+
+  t.expect (ne (my_actual_float<T> (), my_expected_float<unsigned char> ()))
+      << "42.0 == 42 unsigned char";
+  local_counts.failed_checks++;
+
+  // --------------------------------------------------------------------------
+
+  t.expect (gt (my_actual_float<T> (), my_expected_float<signed int> ()))
+      << "42.0 <= 42 signed int";
+  local_counts.failed_checks++;
+
+  t.expect (lt (my_actual_float<T> (), my_expected_float<signed int> ()))
+      << "42.0 >= 42 signed int";
+  local_counts.failed_checks++;
+
+  t.expect (eq (my_actual_float_more<T> (), my_expected_float<signed int> ()))
+      << "43.0 != 42 signed int";
+  local_counts.failed_checks++;
+
+  t.expect (ge (my_actual_float_less<T> (), my_expected_float<signed int> ()))
+      << "41.0 < 42 signed int";
+  local_counts.failed_checks++;
+
+  t.expect (le (my_actual_float_more<T> (), my_expected_float<signed int> ()))
+      << "43.0 > 42 signed int";
+  local_counts.failed_checks++;
+
+  // --------------------------------------------------------------------------
+
+  t.expect (gt (my_actual_float<T> (), my_expected_float<unsigned int> ()))
+      << "42.0 <= 42 unsigned int";
+  local_counts.failed_checks++;
+
+  t.expect (lt (my_actual_float<T> (), my_expected_float<unsigned int> ()))
+      << "42.0 >= 42 unsigned int";
+  local_counts.failed_checks++;
+
+  t.expect (
+      eq (my_actual_float_more<T> (), my_expected_float<unsigned int> ()))
+      << "43.0 != 42 unsigned int";
+  local_counts.failed_checks++;
+
+  t.expect (
+      ge (my_actual_float_less<T> (), my_expected_float<unsigned int> ()))
+      << "41.0 < 42 unsigned int";
+  local_counts.failed_checks++;
+
+  t.expect (
+      le (my_actual_float_more<T> (), my_expected_float<unsigned int> ()))
+      << "43.0 > 42 unsigned int";
+  local_counts.failed_checks++;
+
+  // ---
+
+  t.expect (ne (42, my_expected_float<T> ())) << "42 == 42.0";
+  local_counts.failed_checks++;
+
+  // ---
 
   local_counts.executed_subtest++;
 }
@@ -1806,7 +2053,7 @@ static static_suite ts_passed_floats{ "Combinatorial floats", tr, [] (auto& ts)
     local_counts = {};
 
     ts.test ("Combinatorial floats",
-             test_case_expect_eq_floats_combinatorial<float>);
+             test_case_expect_passed_floats_combinatorial<float>);
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
@@ -1816,7 +2063,35 @@ static static_suite ts_passed_floats{ "Combinatorial floats", tr, [] (auto& ts)
                  == local_counts.executed_subtest);
 
     ts.test ("Combinatorial doubles",
-             test_case_expect_eq_floats_combinatorial<double>);
+             test_case_expect_passed_floats_combinatorial<double>);
+
+    test_assert (current_suite_totals.successful_checks ()
+                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_subtests ()
+                 == local_counts.executed_subtest);
+  } };
+
+static static_suite ts_failed_floats{ "Failed combinatorial floats", tr,
+                                      [] (auto& ts)
+  {
+    runner_totals& current_suite_totals = ts.totals ();
+
+    local_counts = {};
+
+    ts.test ("Combinatorial floats",
+             test_case_expect_failed_floats_combinatorial<float>);
+
+    test_assert (current_suite_totals.successful_checks ()
+                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_subtests ()
+                 == local_counts.executed_subtest);
+
+    ts.test ("Combinatorial doubles",
+             test_case_expect_failed_floats_combinatorial<double>);
 
     test_assert (current_suite_totals.successful_checks ()
                  == local_counts.successful_checks);
