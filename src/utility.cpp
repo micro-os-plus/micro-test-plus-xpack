@@ -46,18 +46,18 @@
 
 #include <micro-os-plus/micro-test-plus.h>
 
-#include <cstring>
-// <iostream> is too heavy for embedded, use printf().
-#include <stdio.h>
-#include <unistd.h>
+// #include <cstring>
+// // <iostream> is too heavy for embedded, use printf().
+// #include <stdio.h>
+// #include <unistd.h>
 
 // ----------------------------------------------------------------------------
 
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
-#pragma clang diagnostic ignored "-Wexit-time-destructors"
-#pragma clang diagnostic ignored "-Wglobal-constructors"
+// #pragma clang diagnostic ignored "-Wexit-time-destructors"
+// #pragma clang diagnostic ignored "-Wglobal-constructors"
 // #pragma clang diagnostic ignored "-Wunknown-warning-option"
 #endif
 
@@ -66,38 +66,6 @@
 namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
-  // Public API.
-
-  // --------------------------------------------------------------------------
-  // Too small to deserve a separate source file.
-  namespace reflection
-  {
-
-    /**
-     * @details
-     * This function extracts the short name from a given file path by locating
-     * the final folder separator ('/'). If a separator is found, it returns a
-     * pointer to the character immediately following it, effectively providing
-     * the file or folder name. If no separator is present, the original input
-     * string is returned. This utility is useful for reporting concise file or
-     * folder names in test output.
-     */
-    const char*
-    short_name (const char* name) noexcept
-    {
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
-#endif
-      const char* p = strrchr (name, '/');
-      if (p != nullptr)
-        return p + 1;
-      else
-        return name;
-#pragma GCC diagnostic pop
-    }
-
-  } // namespace reflection
 
   namespace utility
   {

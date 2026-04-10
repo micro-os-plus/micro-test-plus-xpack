@@ -54,7 +54,7 @@ target_include_directories (
 
 target_sources (
   micro-os-plus-micro-test-plus-interface
-  INTERFACE "src/micro-test-plus.cpp"
+  INTERFACE 
             "src/runner.cpp"
             "src/runner-totals.cpp"
             "src/deferred-reporter.cpp"
@@ -63,6 +63,8 @@ target_sources (
             "src/reporter-tap.cpp"
             "src/test.cpp"
             "src/timings.cpp"
+            "src/reflection.cpp"
+            "src/utility.cpp"
 )
 
 target_compile_definitions (
