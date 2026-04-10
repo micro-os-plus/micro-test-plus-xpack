@@ -48,6 +48,7 @@
 #endif // MICRO_OS_PLUS_INCLUDE_CONFIG_H
 
 #include <micro-os-plus/micro-test-plus.h>
+#include <micro-os-plus/diag/trace.h>
 
 // ----------------------------------------------------------------------------
 
@@ -74,7 +75,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, name);
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name);
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
   }
@@ -87,7 +88,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
   }
@@ -114,7 +115,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s' %zu\n", __PRETTY_FUNCTION__, name, own_index_);
+    trace::printf ("%s '%s' %zu\n", __PRETTY_FUNCTION__, name, own_index_);
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
   }
@@ -134,7 +135,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
 
@@ -171,8 +172,8 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s subtest '%s' executed one more subtest\n", __PRETTY_FUNCTION__,
-            name ());
+    trace::printf ("%s subtest '%s' executed one more subtest\n",
+                   __PRETTY_FUNCTION__, name ());
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
     totals ().increment_executed_subtests ();
@@ -185,7 +186,8 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s suite '%s' totals\n", __PRETTY_FUNCTION__, suite.name ());
+    trace::printf ("%s suite '%s' totals\n", __PRETTY_FUNCTION__,
+                   suite.name ());
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
 
@@ -212,7 +214,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
   }
@@ -231,7 +233,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
@@ -258,7 +260,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
   }
@@ -277,7 +279,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
@@ -305,7 +307,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, name);
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name);
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
   }
@@ -318,7 +320,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
   }
@@ -333,7 +335,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
   }
@@ -349,7 +351,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s own index -> %zu\n", __PRETTY_FUNCTION__, own_index_);
+    trace::printf ("%s own index -> %zu\n", __PRETTY_FUNCTION__, own_index_);
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
   }
@@ -363,7 +365,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 

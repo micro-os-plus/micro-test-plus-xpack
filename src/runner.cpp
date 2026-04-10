@@ -43,6 +43,7 @@
 #endif // MICRO_OS_PLUS_INCLUDE_CONFIG_H
 
 #include <micro-os-plus/micro-test-plus.h>
+#include <micro-os-plus/diag/trace.h>
 
 // ----------------------------------------------------------------------------
 
@@ -77,7 +78,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, name ());
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name ());
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
   }
@@ -86,7 +87,7 @@ namespace micro_os_plus::micro_test_plus
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
-    printf ("%s\n", __PRETTY_FUNCTION__);
+    trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
 
     // reporter_ is a unique_ptr; destroyed automatically.
@@ -114,19 +115,19 @@ namespace micro_os_plus::micro_test_plus
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-    printf ("%s\n", __PRETTY_FUNCTION__);
+    trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
 #if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) && defined(MICRO_OS_PLUS_TRACE))
 #if defined(MICRO_OS_PLUS_DEBUG)
-    printf ("argv[");
+    trace::printf ("argv[");
     for (int i = 0; i < argc; ++i)
       {
         if (i > 0)
           {
-            printf (", ");
+            trace::printf (", ");
           }
-        printf ("'%s'", argv[i]);
+        trace::printf ("'%s'", argv[i]);
       }
     puts ("]");
 #endif // defined(MICRO_OS_PLUS_DEBUG)
@@ -206,7 +207,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite->name ());
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite->name ());
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
@@ -233,7 +234,7 @@ namespace micro_os_plus::micro_test_plus
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-    printf ("%s\n", __PRETTY_FUNCTION__);
+    trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
     top_suite_.timings ().timestamp_end ();
@@ -253,7 +254,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s -> %d\n", __PRETTY_FUNCTION__, result);
+    trace::printf ("%s -> %d\n", __PRETTY_FUNCTION__, result);
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
@@ -274,7 +275,7 @@ namespace micro_os_plus::micro_test_plus
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-    printf ("%s\n", __PRETTY_FUNCTION__);
+    trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
 #pragma GCC diagnostic push
@@ -311,7 +312,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, name ());
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name ());
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
   }
@@ -320,7 +321,7 @@ namespace micro_os_plus::micro_test_plus
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
-    printf ("%s\n", __PRETTY_FUNCTION__);
+    trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
 
     if (static_children_suites_ != nullptr)
@@ -351,7 +352,7 @@ namespace micro_os_plus::micro_test_plus
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-    printf ("%s\n", __PRETTY_FUNCTION__);
+    trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
     runner::run_suites_ ();
@@ -387,7 +388,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
@@ -395,7 +396,8 @@ namespace micro_os_plus::micro_test_plus
       {
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-        printf ("%s new static_children_suites_ array\n", __PRETTY_FUNCTION__);
+        trace::printf ("%s new static_children_suites_ array\n",
+                       __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
         runner.static_children_suites_ = new std::vector<static_suite*>;
       }

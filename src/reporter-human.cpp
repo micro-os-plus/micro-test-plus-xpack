@@ -41,6 +41,7 @@
 #endif // MICRO_OS_PLUS_INCLUDE_CONFIG_H
 
 #include <micro-os-plus/micro-test-plus.h>
+#include <micro-os-plus/diag/trace.h>
 
 #if defined(__APPLE__) || defined(__linux__) || defined(__unix__)
 // For isatty() to detect if stdout is a terminal, enabling colour output.
@@ -68,7 +69,7 @@ namespace micro_os_plus::micro_test_plus
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
-    printf ("%s\n", __PRETTY_FUNCTION__);
+    trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
 
 #if defined(__APPLE__) || defined(__linux__) || defined(__unix__)
@@ -83,7 +84,7 @@ namespace micro_os_plus::micro_test_plus
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
-    printf ("%s\n", __PRETTY_FUNCTION__);
+    trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
   }
 
@@ -112,7 +113,7 @@ namespace micro_os_plus::micro_test_plus
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-    printf ("%s\n", __PRETTY_FUNCTION__);
+    trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
     if (verbosity_ != verbosity::silent)
@@ -139,7 +140,7 @@ namespace micro_os_plus::micro_test_plus
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-    printf ("%s\n", __PRETTY_FUNCTION__);
+    trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
     if (verbosity_ != verbosity::silent)
@@ -208,7 +209,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
@@ -253,7 +254,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
@@ -351,7 +352,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s'\n", __PRETTY_FUNCTION__, subtest.name ());
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, subtest.name ());
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
@@ -408,8 +409,8 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-    printf ("%s '%s' i%zu\n", __PRETTY_FUNCTION__, subtest.name (),
-            subtest.nesting_depth ());
+    trace::printf ("%s '%s' i%zu\n", __PRETTY_FUNCTION__, subtest.name (),
+                   subtest.nesting_depth ());
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
