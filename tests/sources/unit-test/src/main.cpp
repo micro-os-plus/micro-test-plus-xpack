@@ -344,6 +344,35 @@ main (int argc, char* argv[])
       static_assert (_ull (18'446'744'073'709'551'615ull)
                      == 18'446'744'073'709'551'615_ull);
     }
+
+    {
+      using namespace literals;
+      using namespace operators;
+
+      // Modern to_* wrappers (preferred since 3.2.0).
+      static_assert (to_i{ 42 } == 42_i);
+      static_assert (to_b{ true });
+      static_assert (not to_b{ false });
+      static_assert (to_s{ 42 } == 42_s);
+      static_assert (to_c{ 42 } == 42_c);
+      static_assert (to_sc{ 42 } == 42_sc);
+      static_assert (to_l{ 42 } == 42_l);
+      static_assert (to_ll{ 42 } == 42_ll);
+      static_assert (to_u{ 42u } == 42_u);
+      static_assert (to_uc{ 42u } == 42_uc);
+      static_assert (to_us{ 42u } == 42_us);
+      static_assert (to_ul{ 42u } == 42_ul);
+      static_assert (to_ull{ 42u } == 42_ull);
+      static_assert (to_ull{ 18'446'744'073'709'551'615ull }
+                     == 18'446'744'073'709'551'615_ull);
+
+      // Generic to_t<T> wrapper (since 3.2.0).
+      static_assert (to_t<int>{ 42 }.get () == 42);
+      static_assert (to_t<bool>{ true }.get ());
+
+      // Deprecated _t<T> generic wrapper.
+      static_assert (_t<int>{ 42 }.get () == 42);
+    }
   }
 
   // --------------------------------------------------------------------------
@@ -391,6 +420,14 @@ main (int argc, char* argv[])
       local_counts.successful_checks++;
 
       t.expect (true) << "TRUE";
+      local_counts.successful_checks++;
+
+      // char branch in deferred_reporter_base::operator<<.
+      t.expect (true) << 'P';
+      local_counts.successful_checks++;
+
+      // Arithmetic (non-char) branch in deferred_reporter_base::operator<<.
+      t.expect (true) << 42;
       local_counts.successful_checks++;
 
       local_counts.executed_subtest++;
@@ -1339,6 +1376,57 @@ main (int argc, char* argv[])
           << "a.b.cde splits into [a, b, cde]";
       local_counts.successful_checks++;
 
+      t.expect (std::vector<std::string_view>{ "abc" }
+                == utility::split<std::string_view> ("abc", "."))
+          << "abc (no delimiter) splits into [abc]";
+      local_counts.successful_checks++;
+
+      t.expect (std::vector<std::string_view>{}
+                == utility::split<std::string_view> (".", "."))
+          << ". (only delimiter) splits into []";
+      local_counts.successful_checks++;
+
+      t.expect (std::vector<std::string_view>{ "a" }
+                == utility::split<std::string_view> (".a", "."))
+          << ".a (leading delimiter) splits into [a]";
+      local_counts.successful_checks++;
+
+      t.expect (std::vector<std::string_view>{ "a", "b" }
+                == utility::split<std::string_view> ("a..b", "."))
+          << "a..b (consecutive delimiters) splits into [a, b]";
+      local_counts.successful_checks++;
+
+      local_counts.executed_subtest++;
+    });
+
+  test_assert (current_suite_totals.successful_checks ()
+               == local_counts.successful_checks);
+  test_assert (current_suite_totals.failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_suite_totals.executed_subtests ()
+               == local_counts.executed_subtest);
+
+  // --------------------------------------------------------------------------
+
+  ts.test ("to_* modern wrappers", [] (auto& t)
+    {
+      // Verify runtime wrapping of floating-point values.
+      float f = 42.0f;
+      t.expect (eq (to_f{ f }, 42.0f)) << "to_f wraps float for eq";
+      local_counts.successful_checks++;
+
+      double d = 42.0;
+      t.expect (eq (to_d{ d }, 42.0)) << "to_d wraps double for eq";
+      local_counts.successful_checks++;
+
+      // Generic to_t<T> wrapper in a runtime expectation.
+      int x = 42;
+      t.expect (eq (to_t<int>{ x }, 42)) << "to_t<int> generic wrapper";
+      local_counts.successful_checks++;
+
+      t.expect (eq (_t<int>{ x }, 42)) << "_t<int> deprecated generic wrapper";
+      local_counts.successful_checks++;
+
       local_counts.executed_subtest++;
     });
 
@@ -1405,6 +1493,18 @@ main (int argc, char* argv[])
   // After a test case runs:
   test_assert (current_suite_totals.executed_checks ()
                == local_counts.successful_checks + local_counts.failed_checks);
+
+  // --------------------------------------------------------------------------
+
+  // Exercise the dynamic runner::suite() path (registers a child suite
+  // that is run lazily inside exit_code()).
+  test_assert (tr.suites_count () == 1);
+  tr.suite ("Dynamic suite", [] (auto& s)
+    {
+      s.test ("check in dynamic suite", [] (auto& t)
+        { t.expect (eq (1, 1)) << "1 == 1 in dynamic suite"; });
+    });
+  test_assert (tr.suites_count () == 2);
 
   // --------------------------------------------------------------------------
 
