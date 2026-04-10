@@ -53,7 +53,7 @@
 
 #include <charconv>
 #include <cstring>
-#include <stdio.h>
+#include <cstdio>
 
 // ----------------------------------------------------------------------------
 

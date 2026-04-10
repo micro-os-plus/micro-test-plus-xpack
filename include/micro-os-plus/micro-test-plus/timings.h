@@ -29,7 +29,7 @@
 
 #include <cstdint>
 #include <optional>
-#include <time.h>
+#include <ctime>
 
 // ----------------------------------------------------------------------------
 
