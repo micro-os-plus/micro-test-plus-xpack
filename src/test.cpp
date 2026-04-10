@@ -178,7 +178,7 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
     totals ().increment_executed_subtests ();
     // Do not accumulate the totals from the child test into the current test
-    // totals. totals () += subtest.totals ();
+    // totals, each subtest shows only its counters.
 
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
