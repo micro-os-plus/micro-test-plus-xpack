@@ -273,8 +273,6 @@ namespace micro_os_plus::micro_test_plus
   protected:
     class top_suite top_suite_;
 
-    size_t suite_index_ = 0;
-
     std::vector<std::unique_ptr<class suite>> children_suites_;
 
     /**
