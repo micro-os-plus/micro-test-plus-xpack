@@ -648,6 +648,17 @@ namespace micro_os_plus::micro_test_plus
     void
     write_buffer_to_stdout (void);
 
+    /**
+     * @brief Flush the current buffered content.
+     *
+     * @par Parameters
+     *	 None.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    flush (void);
+
     // ------------------------------------------------------------------------
 
     /**
@@ -767,17 +778,6 @@ namespace micro_os_plus::micro_test_plus
 
     void
     write_buffer_to_file (void);
-
-    /**
-     * @brief Flush the current buffered content.
-     *
-     * @par Parameters
-     *	 None.
-     * @par Returns
-     *   Nothing.
-     */
-    void
-    flush (void);
 
     void
     write_info (void);
