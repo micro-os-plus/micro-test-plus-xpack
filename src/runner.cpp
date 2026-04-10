@@ -133,7 +133,7 @@ namespace micro_os_plus::micro_test_plus
 #endif // defined(MICRO_OS_PLUS_DEBUG)
 #endif // !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
 
-    std::vector<std::string_view> argvs{ static_cast<size_t> (argc) };
+    std::vector<std::string_view> argvs (static_cast<size_t> (argc));
     for (size_t i = 0; i < static_cast<size_t> (argc); ++i)
       {
         argvs[i] = argv[i];
