@@ -81,6 +81,13 @@ namespace micro_os_plus::micro_test_plus
  * allows for flexible validation of string content in test assertions,
  * accommodating variable or partially known values.
  *
+ * @warning The `*` wildcard is handled via recursion with a linear loop,
+ *   giving $O(2^n)$ worst-case complexity in the number of `*` wildcards
+ *   (e.g. a pattern such as `"a*a*a*b"` against a long string of `'a'`
+ *   characters). For the typical short suite-name patterns used in a test
+ *   framework this is not a concern, but callers should avoid patterns with
+ *   many consecutive wildcards against long input strings.
+ *
  * @par Examples
  *
  * @code{.cpp}
