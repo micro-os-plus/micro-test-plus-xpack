@@ -113,6 +113,28 @@ namespace micro_os_plus::micro_test_plus
                               subtest& subtest);
 
       /**
+       * @brief Deleted copy constructor to prevent copying.
+       */
+      deferred_reporter_base (const deferred_reporter_base&) = delete;
+
+      /**
+       * @brief Deleted move constructor to prevent moving.
+       */
+      deferred_reporter_base (deferred_reporter_base&&) = delete;
+
+      /**
+       * @brief Deleted copy assignment operator to prevent copying.
+       */
+      deferred_reporter_base&
+      operator= (const deferred_reporter_base&) = delete;
+
+      /**
+       * @brief Deleted move assignment operator to prevent moving.
+       */
+      deferred_reporter_base&
+      operator= (deferred_reporter_base&&) = delete;
+
+      /**
        * @brief Destructor for the deferred reporter base.
        */
       ~deferred_reporter_base ();
