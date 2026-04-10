@@ -305,7 +305,11 @@ namespace micro_os_plus::micro_test_plus
   void
   reporter::flush (void)
   {
-    fflush (stdout); // Sync STDOUT.
+    fflush (stdout);
+    if (output_file_ != nullptr)
+      {
+        fflush (output_file_);
+      }
   }
 
   // --------------------------------------------------------------------------
