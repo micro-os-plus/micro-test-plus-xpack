@@ -884,7 +884,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T>
     static void
-    append_number (std::string& buffer, T v);
+    append_number_ (std::string& buffer, T v);
   };
 
   // --------------------------------------------------------------------------

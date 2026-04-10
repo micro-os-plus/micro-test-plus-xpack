@@ -81,7 +81,7 @@ namespace micro_os_plus::micro_test_plus
 #endif
   template <class T>
   void
-  reporter::append_number (std::string& buffer, const T v)
+  reporter::append_number_ (std::string& buffer, const T v)
   {
     char buf[32];
     const auto [ptr, ec] = std::to_chars (buf, buf + sizeof (buf), v);
@@ -175,7 +175,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (const type_traits::genuine_integral_value<T>& v)
   {
-    append_number (buffer_, static_cast<long long> (v.get ()));
+    append_number_ (buffer_, static_cast<long long> (v.get ()));
     return *this;
   }
 

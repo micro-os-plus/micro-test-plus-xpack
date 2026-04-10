@@ -416,7 +416,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (signed char c)
   {
-    append_number (buffer_, c);
+    append_number_ (buffer_, c);
     buffer_.append ("c");
     return *this;
   }
@@ -432,7 +432,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (unsigned char c)
   {
-    append_number (buffer_, c);
+    append_number_ (buffer_, c);
     buffer_.append ("uc");
     return *this;
   }
@@ -448,7 +448,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (signed short v)
   {
-    append_number (buffer_, v);
+    append_number_ (buffer_, v);
     buffer_.append ("s");
     return *this;
   }
@@ -464,7 +464,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (unsigned short v)
   {
-    append_number (buffer_, v);
+    append_number_ (buffer_, v);
     buffer_.append ("us");
     return *this;
   }
@@ -480,7 +480,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (signed int v)
   {
-    append_number (buffer_, v);
+    append_number_ (buffer_, v);
     return *this;
   }
 
@@ -495,7 +495,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (unsigned int v)
   {
-    append_number (buffer_, v);
+    append_number_ (buffer_, v);
     buffer_.append ("u");
     return *this;
   }
@@ -511,7 +511,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (signed long v)
   {
-    append_number (buffer_, v);
+    append_number_ (buffer_, v);
     buffer_.append ("l");
     return *this;
   }
@@ -527,7 +527,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (unsigned long v)
   {
-    append_number (buffer_, v);
+    append_number_ (buffer_, v);
     buffer_.append ("ul");
     return *this;
   }
@@ -543,7 +543,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (signed long long v)
   {
-    append_number (buffer_, v);
+    append_number_ (buffer_, v);
     buffer_.append ("ll");
     return *this;
   }
@@ -559,7 +559,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (unsigned long long v)
   {
-    append_number (buffer_, v);
+    append_number_ (buffer_, v);
     buffer_.append ("ull");
     return *this;
   }
@@ -575,7 +575,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (float v)
   {
-    append_number (buffer_, v);
+    append_number_ (buffer_, v);
     buffer_.append ("f");
     return *this;
   }
@@ -591,7 +591,7 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (double v)
   {
-    append_number (buffer_, v);
+    append_number_ (buffer_, v);
     return *this;
   }
 
