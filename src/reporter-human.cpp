@@ -264,7 +264,7 @@ namespace micro_os_plus::micro_test_plus
       {
         std::string indent (indent_size, ' ');
 
-        if (/* add_empty_line_ && */ suite.totals ().executed_subtests () > 0)
+        if (suite.totals ().executed_subtests () > 0)
           {
             printf ("\n");
           }
