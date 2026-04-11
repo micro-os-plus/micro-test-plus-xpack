@@ -76,6 +76,7 @@
         "native-meson-clang",
         "qemu-cortex-m0-cmake-gcc",
         "qemu-cortex-m7f-cmake-gcc",
+        "qemu-aarch64-a72-cmake-gcc",
         "qemu-riscv-rv32imac-cmake-gcc",
         "qemu-cortex-m0-meson-gcc"
       ],
