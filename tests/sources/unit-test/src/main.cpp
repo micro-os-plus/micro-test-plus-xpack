@@ -1744,91 +1744,96 @@ template <typename T>
 static void
 test_case_expect_passed_floats_combinatorial (subtest& t)
 {
-  t.expect (eq (my_actual_float<T> (), my_expected_float<signed long long> ()))
+  t.expect (
+      eq (my_actual_float<T> (), my_expected_integral<signed long long> ()))
       << "42.0 == 42 signed long long";
   local_counts.successful_checks++;
 
   t.expect (
-      eq (my_actual_float<T> (), my_expected_float<unsigned long long> ()))
+      eq (my_actual_float<T> (), my_expected_integral<unsigned long long> ()))
       << "42.0 == 42 unsigned long long";
   local_counts.successful_checks++;
 
-  t.expect (eq (my_actual_float<T> (), my_expected_float<signed long> ()))
+  t.expect (eq (my_actual_float<T> (), my_expected_integral<signed long> ()))
       << "42.0 == 42 signed long";
   local_counts.successful_checks++;
 
-  t.expect (eq (my_actual_float<T> (), my_expected_float<unsigned long> ()))
+  t.expect (eq (my_actual_float<T> (), my_expected_integral<unsigned long> ()))
       << "42.0 == 42 unsigned long";
   local_counts.successful_checks++;
 
-  t.expect (eq (my_actual_float<T> (), my_expected_float<signed int> ()))
+  t.expect (eq (my_actual_float<T> (), my_expected_integral<signed int> ()))
       << "42.0 == 42 signed int";
   local_counts.successful_checks++;
 
-  t.expect (eq (my_actual_float<T> (), my_expected_float<unsigned int> ()))
+  t.expect (eq (my_actual_float<T> (), my_expected_integral<unsigned int> ()))
       << "42.0 == 42 unsigned int";
   local_counts.successful_checks++;
 
-  t.expect (eq (my_actual_float<T> (), my_expected_float<signed short> ()))
+  t.expect (eq (my_actual_float<T> (), my_expected_integral<signed short> ()))
       << "42.0 == 42 signed short";
   local_counts.successful_checks++;
 
-  t.expect (eq (my_actual_float<T> (), my_expected_float<unsigned short> ()))
+  t.expect (
+      eq (my_actual_float<T> (), my_expected_integral<unsigned short> ()))
       << "42.0 == 42 unsigned short";
   local_counts.successful_checks++;
 
-  t.expect (eq (my_actual_float<T> (), my_expected_float<signed char> ()))
+  t.expect (eq (my_actual_float<T> (), my_expected_integral<signed char> ()))
       << "42.0 == 42 signed char";
   local_counts.successful_checks++;
 
-  t.expect (eq (my_actual_float<T> (), my_expected_float<unsigned char> ()))
+  t.expect (eq (my_actual_float<T> (), my_expected_integral<unsigned char> ()))
       << "42.0 == 42 unsigned char";
   local_counts.successful_checks++;
 
   // --------------------------------------------------------------------------
 
-  t.expect (le (my_actual_float<T> (), my_expected_float<signed int> ()))
+  t.expect (le (my_actual_float<T> (), my_expected_integral<signed int> ()))
       << "42.0 <= 42 signed int";
   local_counts.successful_checks++;
 
-  t.expect (ge (my_actual_float<T> (), my_expected_float<signed int> ()))
+  t.expect (ge (my_actual_float<T> (), my_expected_integral<signed int> ()))
       << "42.0 >= 42 signed int";
   local_counts.successful_checks++;
 
-  t.expect (ne (my_actual_float_more<T> (), my_expected_float<signed int> ()))
+  t.expect (
+      ne (my_actual_float_more<T> (), my_expected_integral<signed int> ()))
       << "43.0 != 42 signed int";
   local_counts.successful_checks++;
 
-  t.expect (lt (my_actual_float_less<T> (), my_expected_float<signed int> ()))
+  t.expect (
+      lt (my_actual_float_less<T> (), my_expected_integral<signed int> ()))
       << "41.0 < 42 signed int";
   local_counts.successful_checks++;
 
-  t.expect (gt (my_actual_float_more<T> (), my_expected_float<signed int> ()))
+  t.expect (
+      gt (my_actual_float_more<T> (), my_expected_integral<signed int> ()))
       << "43.0 > 42 signed int";
   local_counts.successful_checks++;
 
   // --------------------------------------------------------------------------
 
-  t.expect (le (my_actual_float<T> (), my_expected_float<unsigned int> ()))
+  t.expect (le (my_actual_float<T> (), my_expected_integral<unsigned int> ()))
       << "42.0 <= 42 unsigned int";
   local_counts.successful_checks++;
 
-  t.expect (ge (my_actual_float<T> (), my_expected_float<unsigned int> ()))
+  t.expect (ge (my_actual_float<T> (), my_expected_integral<unsigned int> ()))
       << "42.0 >= 42 unsigned int";
   local_counts.successful_checks++;
 
   t.expect (
-      ne (my_actual_float_more<T> (), my_expected_float<unsigned int> ()))
+      ne (my_actual_float_more<T> (), my_expected_integral<unsigned int> ()))
       << "43.0 != 42 unsigned int";
   local_counts.successful_checks++;
 
   t.expect (
-      lt (my_actual_float_less<T> (), my_expected_float<unsigned int> ()))
+      lt (my_actual_float_less<T> (), my_expected_integral<unsigned int> ()))
       << "41.0 < 42 unsigned int";
   local_counts.successful_checks++;
 
   t.expect (
-      gt (my_actual_float_more<T> (), my_expected_float<unsigned int> ()))
+      gt (my_actual_float_more<T> (), my_expected_integral<unsigned int> ()))
       << "43.0 > 42 unsigned int";
   local_counts.successful_checks++;
 
@@ -1846,91 +1851,96 @@ template <typename T>
 static void
 test_case_expect_failed_floats_combinatorial (subtest& t)
 {
-  t.expect (ne (my_actual_float<T> (), my_expected_float<signed long long> ()))
+  t.expect (
+      ne (my_actual_float<T> (), my_expected_integral<signed long long> ()))
       << "42.0 == 42 signed long long";
   local_counts.failed_checks++;
 
   t.expect (
-      ne (my_actual_float<T> (), my_expected_float<unsigned long long> ()))
+      ne (my_actual_float<T> (), my_expected_integral<unsigned long long> ()))
       << "42.0 == 42 unsigned long long";
   local_counts.failed_checks++;
 
-  t.expect (ne (my_actual_float<T> (), my_expected_float<signed long> ()))
+  t.expect (ne (my_actual_float<T> (), my_expected_integral<signed long> ()))
       << "42.0 == 42 signed long";
   local_counts.failed_checks++;
 
-  t.expect (ne (my_actual_float<T> (), my_expected_float<unsigned long> ()))
+  t.expect (ne (my_actual_float<T> (), my_expected_integral<unsigned long> ()))
       << "42.0 == 42 unsigned long";
   local_counts.failed_checks++;
 
-  t.expect (ne (my_actual_float<T> (), my_expected_float<signed int> ()))
+  t.expect (ne (my_actual_float<T> (), my_expected_integral<signed int> ()))
       << "42.0 == 42 signed int";
   local_counts.failed_checks++;
 
-  t.expect (ne (my_actual_float<T> (), my_expected_float<unsigned int> ()))
+  t.expect (ne (my_actual_float<T> (), my_expected_integral<unsigned int> ()))
       << "42.0 == 42 unsigned int";
   local_counts.failed_checks++;
 
-  t.expect (ne (my_actual_float<T> (), my_expected_float<signed short> ()))
+  t.expect (ne (my_actual_float<T> (), my_expected_integral<signed short> ()))
       << "42.0 == 42 signed short";
   local_counts.failed_checks++;
 
-  t.expect (ne (my_actual_float<T> (), my_expected_float<unsigned short> ()))
+  t.expect (
+      ne (my_actual_float<T> (), my_expected_integral<unsigned short> ()))
       << "42.0 == 42 unsigned short";
   local_counts.failed_checks++;
 
-  t.expect (ne (my_actual_float<T> (), my_expected_float<signed char> ()))
+  t.expect (ne (my_actual_float<T> (), my_expected_integral<signed char> ()))
       << "42.0 == 42 signed char";
   local_counts.failed_checks++;
 
-  t.expect (ne (my_actual_float<T> (), my_expected_float<unsigned char> ()))
+  t.expect (ne (my_actual_float<T> (), my_expected_integral<unsigned char> ()))
       << "42.0 == 42 unsigned char";
   local_counts.failed_checks++;
 
   // --------------------------------------------------------------------------
 
-  t.expect (gt (my_actual_float<T> (), my_expected_float<signed int> ()))
+  t.expect (gt (my_actual_float<T> (), my_expected_integral<signed int> ()))
       << "42.0 <= 42 signed int";
   local_counts.failed_checks++;
 
-  t.expect (lt (my_actual_float<T> (), my_expected_float<signed int> ()))
+  t.expect (lt (my_actual_float<T> (), my_expected_integral<signed int> ()))
       << "42.0 >= 42 signed int";
   local_counts.failed_checks++;
 
-  t.expect (eq (my_actual_float_more<T> (), my_expected_float<signed int> ()))
+  t.expect (
+      eq (my_actual_float_more<T> (), my_expected_integral<signed int> ()))
       << "43.0 != 42 signed int";
   local_counts.failed_checks++;
 
-  t.expect (ge (my_actual_float_less<T> (), my_expected_float<signed int> ()))
+  t.expect (
+      ge (my_actual_float_less<T> (), my_expected_integral<signed int> ()))
       << "41.0 < 42 signed int";
   local_counts.failed_checks++;
 
-  t.expect (le (my_actual_float_more<T> (), my_expected_float<signed int> ()))
+  t.expect (
+      le (my_actual_float_more<T> (), my_expected_integral<signed int> ()))
       << "43.0 > 42 signed int";
   local_counts.failed_checks++;
 
   // --------------------------------------------------------------------------
 
-  t.expect (gt (my_actual_float<T> (), my_expected_float<unsigned int> ()))
+  t.expect (gt (my_actual_float<T> (), my_expected_integral<unsigned int> ()))
       << "42.0 <= 42 unsigned int";
   local_counts.failed_checks++;
 
-  t.expect (lt (my_actual_float<T> (), my_expected_float<unsigned int> ()))
+  t.expect (lt (my_actual_float<T> (), my_expected_integral<unsigned int> ()))
       << "42.0 >= 42 unsigned int";
   local_counts.failed_checks++;
 
   t.expect (
-      eq (my_actual_float_more<T> (), my_expected_float<unsigned int> ()))
+      eq (my_actual_float_more<T> (), my_expected_integral<unsigned int> ()))
       << "43.0 != 42 unsigned int";
   local_counts.failed_checks++;
 
   t.expect (
-      ge (my_actual_float_less<T> (), my_expected_float<unsigned int> ()))
+      ge (my_actual_float_less<T> (), my_expected_integral<unsigned int> ()))
       << "41.0 < 42 unsigned int";
   local_counts.failed_checks++;
 
   t.expect (
-      le (my_actual_float_more<T> (), my_expected_float<unsigned int> ()))
+      le (my_actual_float_more<T> (), my_expected_integral<unsigned int> ()))
       << "43.0 > 42 unsigned int";
   local_counts.failed_checks++;
 
