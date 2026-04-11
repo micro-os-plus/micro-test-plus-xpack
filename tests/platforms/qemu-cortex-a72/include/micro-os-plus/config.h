@@ -25,9 +25,17 @@
 #define MICRO_OS_PLUS_INCLUDE_EXIT
 
 #if defined(MICRO_OS_PLUS_TRACE)
+
 // #define MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_DEBUG
 #define MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_STDOUT
 // #define MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_STDERR
+
+#define MICRO_OS_PLUS_INTEGER_TRACE_PRINTF_BUFFER_ARRAY_SIZE 512
+
+// Propagate TRACE to the library.
+// #define MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
+// #define MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+
 #endif // MICRO_OS_PLUS_TRACE
 
 // ----------------------------------------------------------------------------
