@@ -54,6 +54,7 @@
 #if defined(__clang_)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-c++11-c++14-compat"
+#pragma clang diagnostic ignored "-Wpre-c++17-compat"
 #endif
 
 // ============================================================================
