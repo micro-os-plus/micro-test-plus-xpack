@@ -22,599 +22,23 @@ TAP version 14
           ---
           at:
             filename: main.cpp
-            line: 452
+            line: 123
           ...
         not ok 2 - false
           ---
           at:
             filename: main.cpp
-            line: 455
+            line: 126
           ...
         1..2
     not ok 4 - expect(false) # { FAILED, 0 checks passed, 2 failed }
-    # Subtest: Integer comparisons
-        ok 1 - actual == 42
-        ok 2 - actual+1 != 42
-        ok 3 - actual-1 < 42
-        ok 4 - actual <= 42
-        ok 5 - actual+1 > 42
-        ok 6 - actual >= 42
-        ok 7 - 42 == 42
-        ok 8 - 42 == 42_i
-        1..8
-    ok 5 - Integer comparisons # { passed, 8 checks }
-    # Subtest: Failed integer comparisons
-        not ok 1 - actual != 42
-          ---
-          condition: 42 != 42
-          at:
-            filename: main.cpp
-            line: 516
-          ...
-        not ok 2 - actual+1 == 42
-          ---
-          condition: 43 == 42
-          at:
-            filename: main.cpp
-            line: 519
-          ...
-        not ok 3 - actual-1 >= 42
-          ---
-          condition: 41 >= 42
-          at:
-            filename: main.cpp
-            line: 522
-          ...
-        not ok 4 - actual > 42
-          ---
-          condition: 42 > 42
-          at:
-            filename: main.cpp
-            line: 525
-          ...
-        not ok 5 - actual+1 <= 42
-          ---
-          condition: 43 <= 42
-          at:
-            filename: main.cpp
-            line: 528
-          ...
-        not ok 6 - actual < 42
-          ---
-          condition: 42 < 42
-          at:
-            filename: main.cpp
-            line: 531
-          ...
-        not ok 7 - 42_i != 42_i
-          ---
-          condition: 42 != 42
-          at:
-            filename: main.cpp
-            line: 537
-          ...
-        not ok 8 - 42 != 42_i
-          ---
-          condition: 42 != 42
-          at:
-            filename: main.cpp
-            line: 540
-          ...
-        1..8
-    not ok 6 - Failed integer comparisons # { FAILED, 0 checks passed, 8 failed }
-    # Subtest: Float comparisons
-        ok 1 - actual == 42.0f
-        ok 2 - actual != 43.0f
-        ok 3 - actual == 42.0
-        ok 4 - actual != 43.0
-        ok 5 - actual == 42.0
-        ok 6 - actual != 43.0
-        ok 7 - actual == 42.0f
-        ok 8 - actual != 43.0f
-        ok 9 - actual == 42
-        ok 10 - actual != 43
-        ok 11 - 42.101f == 42.101_f
-        ok 12 - 42.101f epsilon 0.01f == 42.10_f
-        ok 13 - 42.101f epsilon 0.1f != 42.10_f
-        ok 14 - 42.1010001f epsilon 0.1f == 42.1_f
-        ok 15 - 42.101f != 42.10_f
-        ok 16 - 42.101f != 42.100_f
-        ok 17 - 42.10f == 42.1_f
-        ok 18 - 42.42f == 42.42_f
-        ok 19 - 42.42 == 42.420_d
-        ok 20 - 42.0 == 42.0_d
-        ok 21 - 42. == 42._d
-        ok 22 - 42.42 == 42.42_ld
-        ok 23 - 1234._f == 1234.f
-        ok 24 - 1234.56_f == 1234.56f
-        ok 25 - 12345678.9f == 12345678.9_f
-        ok 26 - 111111.42f == 111111.42_f
-        ok 27 - 1111111111.42 == 1111111111.42_d
-        1..27
-    ok 7 - Float comparisons # { passed, 27 checks }
-    # Subtest: Failed float comparisons
-        not ok 1 - actual != 42.0
-          ---
-          condition: 42f != 42f
-          at:
-            filename: main.cpp
-            line: 661
-          ...
-        not ok 2 - actual == 43.0
-          ---
-          condition: 42f == 43f
-          at:
-            filename: main.cpp
-            line: 664
-          ...
-        not ok 3 - actual != 42
-          ---
-          condition: 42f != 42
-          at:
-            filename: main.cpp
-            line: 667
-          ...
-        not ok 4 - actual == 43
-          ---
-          condition: 42f == 43
-          at:
-            filename: main.cpp
-            line: 670
-          ...
-        not ok 5 - 42.101f != 42.101_f
-          ---
-          condition: 42.101f != 42.101f
-          at:
-            filename: main.cpp
-            line: 676
-          ...
-        not ok 6 - 42.101f epsilon 0.01f != 42.10_f
-          ---
-          condition: 42.101f != 42.1f
-          at:
-            filename: main.cpp
-            line: 679
-          ...
-        not ok 7 - 42.101f epsilon 0.1f == 42.10_f
-          ---
-          condition: 42.101f == 42.1f
-          at:
-            filename: main.cpp
-            line: 683
-          ...
-        not ok 8 - 42.1010001f epsilon 0.1f != 42.1_f
-          ---
-          condition: 42.101f != 42.1f
-          at:
-            filename: main.cpp
-            line: 687
-          ...
-        not ok 9 - 42.101f == 42.10_f
-          ---
-          condition: 42.101f == 42.1f
-          at:
-            filename: main.cpp
-            line: 691
-          ...
-        not ok 10 - 42.101f == 42.100_f
-          ---
-          condition: 42.101f == 42.1f
-          at:
-            filename: main.cpp
-            line: 694
-          ...
-        not ok 11 - 42.10f == 42.1_f
-          ---
-          condition: 42.1f != 42.1f
-          at:
-            filename: main.cpp
-            line: 697
-          ...
-        not ok 12 - 42.42f == 42.42_f
-          ---
-          condition: 42.42f != 42.42f
-          at:
-            filename: main.cpp
-            line: 700
-          ...
-        not ok 13 - 42.42 == 42.420_d
-          ---
-          condition: 42.42 != 42.42
-          at:
-            filename: main.cpp
-            line: 703
-          ...
-        not ok 14 - 42.0 == 42.0_d
-          ---
-          condition: 42 != 42
-          at:
-            filename: main.cpp
-            line: 706
-          ...
-        not ok 15 - 42. == 42._d
-          ---
-          condition: 42 != 42
-          at:
-            filename: main.cpp
-            line: 709
-          ...
-        not ok 16 - 42.42 == 42.42_ld
-          ---
-          condition: 42.42l != 42.42l
-          at:
-            filename: main.cpp
-            line: 712
-          ...
-        not ok 17 - 1234._f == 1234.f
-          ---
-          condition: 1234f != 1234f
-          at:
-            filename: main.cpp
-            line: 716
-          ...
-        not ok 18 - 1234.56_f == 1234.56f
-          ---
-          condition: 1234.56f != 1234.56f
-          at:
-            filename: main.cpp
-            line: 719
-          ...
-        not ok 19 - 12345678.9f == 12345678.9_f
-          ---
-          condition: 12345679f != 12345679f
-          at:
-            filename: main.cpp
-            line: 722
-          ...
-        not ok 20 - 111111.42f == 111111.42_f
-          ---
-          condition: 111111.42f != 111111.42f
-          at:
-            filename: main.cpp
-            line: 726
-          ...
-        not ok 21 - 1111111111.42 == 1111111111.42_d
-          ---
-          condition: 1111111111.42 != 1111111111.42
-          at:
-            filename: main.cpp
-            line: 729
-          ...
-        1..21
-    not ok 8 - Failed float comparisons # { FAILED, 0 checks passed, 21 failed }
-    # Subtest: String comparisons
-        ok 1 - actual_sv == abc_sv
-        ok 2 - actual_sv != abx_sv
-        ok 3 - actual_sv < abd_sv
-        ok 4 - actual_sv <= abc_sv
-        ok 5 - actual_sv > abb_sv
-        ok 6 - actual_sv >= abc_sv
-        1..6
-    ok 9 - String comparisons # { passed, 6 checks }
-    # Subtest: Failed string comparisons
-        not ok 1 - actual_sv != abc_sv
-          ---
-          condition: abc != abc
-          at:
-            filename: main.cpp
-            line: 788
-          ...
-        not ok 2 - actual_sv == abx_sv
-          ---
-          condition: abc == abx
-          at:
-            filename: main.cpp
-            line: 792
-          ...
-        not ok 3 - actual_sv >= abd_sv
-          ---
-          condition: abc >= abd
-          at:
-            filename: main.cpp
-            line: 796
-          ...
-        not ok 4 - actual_sv > abc_sv
-          ---
-          condition: abc > abc
-          at:
-            filename: main.cpp
-            line: 800
-          ...
-        not ok 5 - actual_sv <= abb_sv
-          ---
-          condition: abc <= abb
-          at:
-            filename: main.cpp
-            line: 804
-          ...
-        not ok 6 - actual_sv < abc_sv
-          ---
-          condition: abc < abc
-          at:
-            filename: main.cpp
-            line: 808
-          ...
-        1..6
-    not ok 10 - Failed string comparisons # { FAILED, 0 checks passed, 6 failed }
-    # Subtest: Pointer comparisons
-        ok 1 - ptr1 == &one
-        ok 2 - ptr1 == ptr2
-        ok 3 - ptr1 <= ptr2
-        ok 4 - ptr1 >= ptr2
-        ok 5 - ptr1 != a_non_nullptr
-        ok 6 - pfunc == afunc
-        ok 7 - pfunc != a_non_nullptr
-        ok 8 - pone < ptwo
-        ok 9 - ptwo > pone
-        1..9
-    ok 11 - Pointer comparisons # { passed, 9 checks }
-    # Subtest: Failed pointer comparisons
-        not ok 1 - ptr1 != &one
-          ---
-          condition: 0x7ff7b5d802cc != 0x7ff7b5d802cc
-          at:
-            filename: main.cpp
-            line: 890
-          ...
-        not ok 2 - ptr1 != ptr2
-          ---
-          condition: 0x7ff7b5d802cc != 0x7ff7b5d802cc
-          at:
-            filename: main.cpp
-            line: 893
-          ...
-        not ok 3 - ptr1 > ptr2
-          ---
-          condition: 0x7ff7b5d802cc > 0x7ff7b5d802cc
-          at:
-            filename: main.cpp
-            line: 896
-          ...
-        not ok 4 - ptr1 < ptr2
-          ---
-          condition: 0x7ff7b5d802cc < 0x7ff7b5d802cc
-          at:
-            filename: main.cpp
-            line: 899
-          ...
-        not ok 5 - ptr1 == a_non_nullptr
-          ---
-          condition: 0x7ff7b5d802cc == 0x7ff7b5d802b0
-          at:
-            filename: main.cpp
-            line: 902
-          ...
-        not ok 6 - pfunc != afunc
-          ---
-          condition: 0x10a1a5770 != 0x10a1a5770
-          at:
-            filename: main.cpp
-            line: 905
-          ...
-        not ok 7 - pfunc == a_non_nullptr
-          ---
-          condition: 0x10a1a5770 == 0x7ff7b5d802b0
-          at:
-            filename: main.cpp
-            line: 908
-          ...
-        not ok 8 - pone >= ptwo
-          ---
-          condition: 0x7ff7b5d7ffb0 >= 0x7ff7b5d7ffb4
-          at:
-            filename: main.cpp
-            line: 920
-          ...
-        not ok 9 - ptwo <= pone
-          ---
-          condition: 0x7ff7b5d7ffb4 <= 0x7ff7b5d7ffb0
-          at:
-            filename: main.cpp
-            line: 923
-          ...
-        1..9
-    not ok 12 - Failed pointer comparisons # { FAILED, 0 checks passed, 9 failed }
-    # Subtest: Null pointer comparisons
-        ok 1 - a_nullptr == nullptr
-        ok 2 - a_non_nullptr != nullptr
-        ok 3 - pfunc == nullptr
-        1..3
-    ok 13 - Null pointer comparisons # { passed, 3 checks }
-    # Subtest: Failed null pointer comparisons
-        not ok 1 - a_nullptr != nullptr
-          ---
-          condition: 0x0 != nullptr
-          at:
-            filename: main.cpp
-            line: 971
-          ...
-        not ok 2 - a_non_nullptr == nullptr
-          ---
-          condition: 0x7ff7b5d802c8 == nullptr
-          at:
-            filename: main.cpp
-            line: 974
-          ...
-        not ok 3 - pfunc != nullptr
-          ---
-          condition: 0x0 != nullptr
-          at:
-            filename: main.cpp
-            line: 977
-          ...
-        1..3
-    not ok 14 - Failed null pointer comparisons # { FAILED, 0 checks passed, 3 failed }
     # Subtest: reflection::type_name()
         ok 1 - void == void
         ok 2 - int == int
         ok 3 - unsigned int == unsigned int
         ok 4 - float == float
         1..4
-    ok 15 - reflection::type_name() # { passed, 4 checks }
-    # Subtest: thrown exceptions
-        ok 1 - exception thrown
-        ok 2 - std::runtime_error thrown
-        1..2
-    ok 16 - thrown exceptions # { passed, 2 checks }
-    # Subtest: Failed thrown exceptions
-        not ok 1 - exception thrown
-          ---
-          condition: throws
-          at:
-            filename: main.cpp
-            line: 1057
-          ...
-        not ok 2 - std::runtime_error thrown
-          ---
-          condition: throws<std::runtime_error>
-          at:
-            filename: main.cpp
-            line: 1064
-          ...
-        1..2
-    not ok 17 - Failed thrown exceptions # { FAILED, 0 checks passed, 2 failed }
-    # Subtest: Not thrown exceptions
-        ok 1 - exception not thrown
-        1..1
-    ok 18 - Not thrown exceptions # { passed, 1 check }
-    # Subtest: Failed not thrown exceptions
-        not ok 1 - exception not thrown
-          ---
-          condition: nothrow
-          at:
-            filename: main.cpp
-            line: 1103
-          ...
-        1..1
-    not ok 19 - Failed not thrown exceptions # { FAILED, 0 checks passed, 1 failed }
-    # Subtest: Logical operations
-        ok 1 - not (actual != 42)
-        not ok 2 - not (actual == 42)
-          ---
-          condition: not 42 == 42
-          at:
-            filename: main.cpp
-            line: 1126
-          ...
-        ok 3 - (actual == 42) and (actual == 42.0)
-        not ok 4 - (actual == 42) and (actual != 42.0)
-          ---
-          condition: (42 == 42 and 42f != 42)
-          at:
-            filename: main.cpp
-            line: 1134
-          ...
-        not ok 5 - (actual != 42) and (actual == 42.0)
-          ---
-          condition: (42 != 42 and 42f == 42)
-          at:
-            filename: main.cpp
-            line: 1139
-          ...
-        not ok 6 - (actual != 42) and (actual != 42.0)
-          ---
-          condition: (42 != 42 and 42f != 42)
-          at:
-            filename: main.cpp
-            line: 1144
-          ...
-        ok 7 - (42 == 42 and 42f == 42)
-        not ok 8
-          ---
-          condition: (42 == 42 and 42f != 42)
-          at:
-            filename: main.cpp
-            line: 1153
-          ...
-        ok 9 - (actual == 42) or (actual == 42.0)
-        ok 10 - (actual == 42) or (actual != 42.0)
-        ok 11 - (actual != 42) or (actual == 42.0)
-        not ok 12 - (actual != 42) or (actual != 42.0)
-          ---
-          condition: (42 != 42 or 42f != 42)
-          at:
-            filename: main.cpp
-            line: 1172
-          ...
-        1..12
-    not ok 20 - Logical operations # { FAILED, 6 checks passed, 6 failed }
-    # Subtest: Operators
-        ok 1 - actual == 42
-        not ok 2 - actual+1 == 42 with scalar
-          ---
-          at:
-            filename: main.cpp
-            line: 1197
-          ...
-        not ok 3 - actual+1 == 42 with _i literal
-          ---
-          condition: 43 == 42
-          at:
-            filename: main.cpp
-            line: 1201
-          ...
-        not ok 4 - actual+1 == 42 with _i()
-          ---
-          condition: 43 == 42
-          at:
-            filename: main.cpp
-            line: 1205
-          ...
-        ok 5 - actual+1 != 42
-        ok 6 - actual-1 < 42
-        ok 7 - actual <= 42
-        ok 8 - actual+1 > 42
-        ok 9 - actual >= 42
-        ok 10 - not (actual != 42)
-        not ok 11 - not (actual == 42)
-          ---
-          condition: not 42 == 42
-          at:
-            filename: main.cpp
-            line: 1227
-          ...
-        ok 12 - (actual == 42) and (actual == 42.0)
-        not ok 13 - (actual == 42) and (actual != 42.0)
-          ---
-          condition: (42 == 42 and 42f != 42)
-          at:
-            filename: main.cpp
-            line: 1235
-          ...
-        not ok 14 - (actual != 42) and (actual == 42.0)
-          ---
-          condition: (42 != 42 and 42f == 42)
-          at:
-            filename: main.cpp
-            line: 1240
-          ...
-        not ok 15 - (actual != 42) and (actual != 42.0)
-          ---
-          condition: (42 != 42 and 42f != 42)
-          at:
-            filename: main.cpp
-            line: 1245
-          ...
-        ok 16 - (42 == 42 and 42f == 42)
-        not ok 17
-          ---
-          condition: (42 == 42 and 42f != 42)
-          at:
-            filename: main.cpp
-            line: 1254
-          ...
-        ok 18 - (actual == 42) or (actual == 42.0)
-        ok 19 - (actual == 42) or (actual != 42.0)
-        ok 20 - (actual != 42) or (actual == 42.0)
-        not ok 21 - (actual != 42) or (actual != 42.0)
-          ---
-          condition: (42 != 42 or 42f != 42f)
-          at:
-            filename: main.cpp
-            line: 1273
-          ...
-        1..21
-    not ok 21 - Operators # { FAILED, 12 checks passed, 9 failed }
+    ok 5 - reflection::type_name() # { passed, 4 checks }
     # Subtest: Strings matches
         ok 1 - empty strings
         ok 2 - empty matches *
@@ -626,34 +50,34 @@ TAP version 14
         ok 8 - abc matches *bc
         ok 9 - abc matches *b*
         1..9
-    ok 22 - Strings matches # { passed, 9 checks }
+    ok 6 - Strings matches # { passed, 9 checks }
     # Subtest: Failed strings matches
         not ok 1 - empty matches abc
           ---
           at:
             filename: main.cpp
-            line: 1333
+            line: 217
           ...
         not ok 2 - abc matches b??
           ---
           at:
             filename: main.cpp
-            line: 1336
+            line: 220
           ...
         not ok 3 - abc matches a*d
           ---
           at:
             filename: main.cpp
-            line: 1339
+            line: 223
           ...
         not ok 4 - abc matches *C
           ---
           at:
             filename: main.cpp
-            line: 1342
+            line: 226
           ...
         1..4
-    not ok 23 - Failed strings matches # { FAILED, 0 checks passed, 4 failed }
+    not ok 7 - Failed strings matches # { FAILED, 0 checks passed, 4 failed }
     # Subtest: Splits
         ok 1 - empty splits into []
         ok 2 - a. splits into [a]
@@ -664,36 +88,36 @@ TAP version 14
         ok 7 - .a (leading delimiter) splits into [a]
         ok 8 - a..b (consecutive delimiters) splits into [a, b]
         1..8
-    ok 24 - Splits # { passed, 8 checks }
+    ok 8 - Splits # { passed, 8 checks }
     # Subtest: to_* modern wrappers
         ok 1 - to_f wraps float for eq
         ok 2 - to_d wraps double for eq
         ok 3 - to_t<int> generic wrapper
         ok 4 - _t<int> deprecated generic wrapper
         1..4
-    ok 25 - to_* modern wrappers # { passed, 4 checks }
+    ok 9 - to_* modern wrappers # { passed, 4 checks }
     # Subtest: reflection::short_name()
         ok 1 - file.cpp == file.cpp
         ok 2 - file.cpp == file.cpp
         1..2
-    ok 26 - reflection::short_name() # { passed, 2 checks }
+    ok 10 - reflection::short_name() # { passed, 2 checks }
     # Subtest: Nested subtests
         # Subtest: inner subtest
             ok 1 - 1 == 1
             1..1
         ok 1 - inner subtest # { passed, 1 check }
         1..1
-    ok 27 - Nested subtests # { passed, 0 checks }
-    1..28
-not ok 1 - Static top suite # { FAILED, 108 checks passed, 71 failed, in 28 test cases, time: 4.936 ms }
+    ok 11 - Nested subtests # { passed, 0 checks }
+    1..12
+not ok 1 - Static top suite # { FAILED, 34 checks passed, 6 failed, in 12 test cases, time: 0.203 ms }
 # Subtest: Dynamic suite
     # Subtest: check in dynamic suite
         ok 1 - 1 == 1 in dynamic suite
         1..1
     ok 1 - check in dynamic suite # { passed, 1 check }
     1..1
-ok 2 - Dynamic suite # { passed, 1 check in 1 test case, time: 0.043 ms }
-# Subtest: Combinatorial integrals
+ok 2 - Dynamic suite # { passed, 1 check in 1 test case, time: 0.012 ms }
+# Subtest: Combinatorial integrals suite
     # Subtest: Combinatorial integrals with signed long long
         ok 1 - eq matches signed long long
         ok 2 - eq matches unsigned long long
@@ -879,148 +303,148 @@ ok 2 - Dynamic suite # { passed, 1 check in 1 test case, time: 0.043 ms }
         1..20
     ok 8 - Combinatorial integrals with unsigned char # { passed, 20 checks }
     1..8
-ok 3 - Combinatorial integrals # { passed, 160 checks in 8 test cases, time: 4.549 ms }
-# Subtest: Failed combinatorial integrals
+ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, time: 0.352 ms }
+# Subtest: Failed combinatorial integrals suite
     # Subtest: Combinatorial integrals with signed long long
         not ok 1 - ne matches signed long long
           ---
           condition: 42ll != 42ll
           at:
-            filename: main.cpp
-            line: 1643
+            filename: integral-failed-combinations.cpp
+            line: 32
           ...
         not ok 2 - ne matches unsigned long long
           ---
           condition: 42ll != 42ull
           at:
-            filename: main.cpp
-            line: 1648
+            filename: integral-failed-combinations.cpp
+            line: 37
           ...
         not ok 3 - ne matches signed long
           ---
           condition: 42ll != 42l
           at:
-            filename: main.cpp
-            line: 1653
+            filename: integral-failed-combinations.cpp
+            line: 42
           ...
         not ok 4 - ne matches unsigned long
           ---
           condition: 42ll != 42ul
           at:
-            filename: main.cpp
-            line: 1658
+            filename: integral-failed-combinations.cpp
+            line: 47
           ...
         not ok 5 - ne matches signed int
           ---
           condition: 42ll != 42
           at:
-            filename: main.cpp
-            line: 1663
+            filename: integral-failed-combinations.cpp
+            line: 52
           ...
         not ok 6 - ne matches unsigned int
           ---
           condition: 42ll != 42u
           at:
-            filename: main.cpp
-            line: 1667
+            filename: integral-failed-combinations.cpp
+            line: 56
           ...
         not ok 7 - ne matches signed short
           ---
           condition: 42ll != 42s
           at:
-            filename: main.cpp
-            line: 1672
+            filename: integral-failed-combinations.cpp
+            line: 61
           ...
         not ok 8 - ne matches unsigned short
           ---
           condition: 42ll != 42us
           at:
-            filename: main.cpp
-            line: 1677
+            filename: integral-failed-combinations.cpp
+            line: 66
           ...
         not ok 9 - ne matches signed char
           ---
           condition: 42ll != 42c
           at:
-            filename: main.cpp
-            line: 1682
+            filename: integral-failed-combinations.cpp
+            line: 71
           ...
         not ok 10 - ne matches unsigned char
           ---
           condition: 42ll != 42uc
           at:
-            filename: main.cpp
-            line: 1687
+            filename: integral-failed-combinations.cpp
+            line: 76
           ...
         not ok 11 - gt matches signed int
           ---
           condition: 42ll > 42
           at:
-            filename: main.cpp
-            line: 1694
+            filename: integral-failed-combinations.cpp
+            line: 83
           ...
         not ok 12 - lt matches signed int
           ---
           condition: 42ll < 42
           at:
-            filename: main.cpp
-            line: 1698
+            filename: integral-failed-combinations.cpp
+            line: 87
           ...
         not ok 13 - eq matches signed int
           ---
           condition: 43ll == 42
           at:
-            filename: main.cpp
-            line: 1702
+            filename: integral-failed-combinations.cpp
+            line: 91
           ...
         not ok 14 - ge matches signed int
           ---
           condition: 41ll >= 42
           at:
-            filename: main.cpp
-            line: 1707
+            filename: integral-failed-combinations.cpp
+            line: 96
           ...
         not ok 15 - le matches signed int
           ---
           condition: 43ll <= 42
           at:
-            filename: main.cpp
-            line: 1712
+            filename: integral-failed-combinations.cpp
+            line: 101
           ...
         not ok 16 - gt matches unsigned int
           ---
           condition: 42ll > 42u
           at:
-            filename: main.cpp
-            line: 1717
+            filename: integral-failed-combinations.cpp
+            line: 106
           ...
         not ok 17 - lt matches unsigned int
           ---
           condition: 42ll < 42u
           at:
-            filename: main.cpp
-            line: 1722
+            filename: integral-failed-combinations.cpp
+            line: 111
           ...
         not ok 18 - eq matches unsigned int
           ---
           condition: 43ll == 42u
           at:
-            filename: main.cpp
-            line: 1727
+            filename: integral-failed-combinations.cpp
+            line: 116
           ...
         not ok 19 - ge matches unsigned int
           ---
           condition: 41ll >= 42u
           at:
-            filename: main.cpp
-            line: 1732
+            filename: integral-failed-combinations.cpp
+            line: 121
           ...
         not ok 20 - le matches unsigned int
           ---
           condition: 43ll <= 42u
           at:
-            filename: main.cpp
-            line: 1737
+            filename: integral-failed-combinations.cpp
+            line: 126
           ...
         1..20
     not ok 1 - Combinatorial integrals with signed long long # { FAILED, 0 checks passed, 20 failed }
@@ -1029,141 +453,141 @@ ok 3 - Combinatorial integrals # { passed, 160 checks in 8 test cases, time: 4.5
           ---
           condition: 42ull != 42ll
           at:
-            filename: main.cpp
-            line: 1643
+            filename: integral-failed-combinations.cpp
+            line: 32
           ...
         not ok 2 - ne matches unsigned long long
           ---
           condition: 42ull != 42ull
           at:
-            filename: main.cpp
-            line: 1648
+            filename: integral-failed-combinations.cpp
+            line: 37
           ...
         not ok 3 - ne matches signed long
           ---
           condition: 42ull != 42l
           at:
-            filename: main.cpp
-            line: 1653
+            filename: integral-failed-combinations.cpp
+            line: 42
           ...
         not ok 4 - ne matches unsigned long
           ---
           condition: 42ull != 42ul
           at:
-            filename: main.cpp
-            line: 1658
+            filename: integral-failed-combinations.cpp
+            line: 47
           ...
         not ok 5 - ne matches signed int
           ---
           condition: 42ull != 42
           at:
-            filename: main.cpp
-            line: 1663
+            filename: integral-failed-combinations.cpp
+            line: 52
           ...
         not ok 6 - ne matches unsigned int
           ---
           condition: 42ull != 42u
           at:
-            filename: main.cpp
-            line: 1667
+            filename: integral-failed-combinations.cpp
+            line: 56
           ...
         not ok 7 - ne matches signed short
           ---
           condition: 42ull != 42s
           at:
-            filename: main.cpp
-            line: 1672
+            filename: integral-failed-combinations.cpp
+            line: 61
           ...
         not ok 8 - ne matches unsigned short
           ---
           condition: 42ull != 42us
           at:
-            filename: main.cpp
-            line: 1677
+            filename: integral-failed-combinations.cpp
+            line: 66
           ...
         not ok 9 - ne matches signed char
           ---
           condition: 42ull != 42c
           at:
-            filename: main.cpp
-            line: 1682
+            filename: integral-failed-combinations.cpp
+            line: 71
           ...
         not ok 10 - ne matches unsigned char
           ---
           condition: 42ull != 42uc
           at:
-            filename: main.cpp
-            line: 1687
+            filename: integral-failed-combinations.cpp
+            line: 76
           ...
         not ok 11 - gt matches signed int
           ---
           condition: 42ull > 42
           at:
-            filename: main.cpp
-            line: 1694
+            filename: integral-failed-combinations.cpp
+            line: 83
           ...
         not ok 12 - lt matches signed int
           ---
           condition: 42ull < 42
           at:
-            filename: main.cpp
-            line: 1698
+            filename: integral-failed-combinations.cpp
+            line: 87
           ...
         not ok 13 - eq matches signed int
           ---
           condition: 43ull == 42
           at:
-            filename: main.cpp
-            line: 1702
+            filename: integral-failed-combinations.cpp
+            line: 91
           ...
         not ok 14 - ge matches signed int
           ---
           condition: 41ull >= 42
           at:
-            filename: main.cpp
-            line: 1707
+            filename: integral-failed-combinations.cpp
+            line: 96
           ...
         not ok 15 - le matches signed int
           ---
           condition: 43ull <= 42
           at:
-            filename: main.cpp
-            line: 1712
+            filename: integral-failed-combinations.cpp
+            line: 101
           ...
         not ok 16 - gt matches unsigned int
           ---
           condition: 42ull > 42u
           at:
-            filename: main.cpp
-            line: 1717
+            filename: integral-failed-combinations.cpp
+            line: 106
           ...
         not ok 17 - lt matches unsigned int
           ---
           condition: 42ull < 42u
           at:
-            filename: main.cpp
-            line: 1722
+            filename: integral-failed-combinations.cpp
+            line: 111
           ...
         not ok 18 - eq matches unsigned int
           ---
           condition: 43ull == 42u
           at:
-            filename: main.cpp
-            line: 1727
+            filename: integral-failed-combinations.cpp
+            line: 116
           ...
         not ok 19 - ge matches unsigned int
           ---
           condition: 41ull >= 42u
           at:
-            filename: main.cpp
-            line: 1732
+            filename: integral-failed-combinations.cpp
+            line: 121
           ...
         not ok 20 - le matches unsigned int
           ---
           condition: 43ull <= 42u
           at:
-            filename: main.cpp
-            line: 1737
+            filename: integral-failed-combinations.cpp
+            line: 126
           ...
         1..20
     not ok 2 - Combinatorial integrals unsigned long long # { FAILED, 0 checks passed, 20 failed }
@@ -1172,141 +596,141 @@ ok 3 - Combinatorial integrals # { passed, 160 checks in 8 test cases, time: 4.5
           ---
           condition: 42 != 42ll
           at:
-            filename: main.cpp
-            line: 1643
+            filename: integral-failed-combinations.cpp
+            line: 32
           ...
         not ok 2 - ne matches unsigned long long
           ---
           condition: 42 != 42ull
           at:
-            filename: main.cpp
-            line: 1648
+            filename: integral-failed-combinations.cpp
+            line: 37
           ...
         not ok 3 - ne matches signed long
           ---
           condition: 42 != 42l
           at:
-            filename: main.cpp
-            line: 1653
+            filename: integral-failed-combinations.cpp
+            line: 42
           ...
         not ok 4 - ne matches unsigned long
           ---
           condition: 42 != 42ul
           at:
-            filename: main.cpp
-            line: 1658
+            filename: integral-failed-combinations.cpp
+            line: 47
           ...
         not ok 5 - ne matches signed int
           ---
           condition: 42 != 42
           at:
-            filename: main.cpp
-            line: 1663
+            filename: integral-failed-combinations.cpp
+            line: 52
           ...
         not ok 6 - ne matches unsigned int
           ---
           condition: 42 != 42u
           at:
-            filename: main.cpp
-            line: 1667
+            filename: integral-failed-combinations.cpp
+            line: 56
           ...
         not ok 7 - ne matches signed short
           ---
           condition: 42 != 42s
           at:
-            filename: main.cpp
-            line: 1672
+            filename: integral-failed-combinations.cpp
+            line: 61
           ...
         not ok 8 - ne matches unsigned short
           ---
           condition: 42 != 42us
           at:
-            filename: main.cpp
-            line: 1677
+            filename: integral-failed-combinations.cpp
+            line: 66
           ...
         not ok 9 - ne matches signed char
           ---
           condition: 42 != 42c
           at:
-            filename: main.cpp
-            line: 1682
+            filename: integral-failed-combinations.cpp
+            line: 71
           ...
         not ok 10 - ne matches unsigned char
           ---
           condition: 42 != 42uc
           at:
-            filename: main.cpp
-            line: 1687
+            filename: integral-failed-combinations.cpp
+            line: 76
           ...
         not ok 11 - gt matches signed int
           ---
           condition: 42 > 42
           at:
-            filename: main.cpp
-            line: 1694
+            filename: integral-failed-combinations.cpp
+            line: 83
           ...
         not ok 12 - lt matches signed int
           ---
           condition: 42 < 42
           at:
-            filename: main.cpp
-            line: 1698
+            filename: integral-failed-combinations.cpp
+            line: 87
           ...
         not ok 13 - eq matches signed int
           ---
           condition: 43 == 42
           at:
-            filename: main.cpp
-            line: 1702
+            filename: integral-failed-combinations.cpp
+            line: 91
           ...
         not ok 14 - ge matches signed int
           ---
           condition: 41 >= 42
           at:
-            filename: main.cpp
-            line: 1707
+            filename: integral-failed-combinations.cpp
+            line: 96
           ...
         not ok 15 - le matches signed int
           ---
           condition: 43 <= 42
           at:
-            filename: main.cpp
-            line: 1712
+            filename: integral-failed-combinations.cpp
+            line: 101
           ...
         not ok 16 - gt matches unsigned int
           ---
           condition: 42 > 42u
           at:
-            filename: main.cpp
-            line: 1717
+            filename: integral-failed-combinations.cpp
+            line: 106
           ...
         not ok 17 - lt matches unsigned int
           ---
           condition: 42 < 42u
           at:
-            filename: main.cpp
-            line: 1722
+            filename: integral-failed-combinations.cpp
+            line: 111
           ...
         not ok 18 - eq matches unsigned int
           ---
           condition: 43 == 42u
           at:
-            filename: main.cpp
-            line: 1727
+            filename: integral-failed-combinations.cpp
+            line: 116
           ...
         not ok 19 - ge matches unsigned int
           ---
           condition: 41 >= 42u
           at:
-            filename: main.cpp
-            line: 1732
+            filename: integral-failed-combinations.cpp
+            line: 121
           ...
         not ok 20 - le matches unsigned int
           ---
           condition: 43 <= 42u
           at:
-            filename: main.cpp
-            line: 1737
+            filename: integral-failed-combinations.cpp
+            line: 126
           ...
         1..20
     not ok 3 - Combinatorial integrals with signed int # { FAILED, 0 checks passed, 20 failed }
@@ -1315,141 +739,141 @@ ok 3 - Combinatorial integrals # { passed, 160 checks in 8 test cases, time: 4.5
           ---
           condition: 42u != 42ll
           at:
-            filename: main.cpp
-            line: 1643
+            filename: integral-failed-combinations.cpp
+            line: 32
           ...
         not ok 2 - ne matches unsigned long long
           ---
           condition: 42u != 42ull
           at:
-            filename: main.cpp
-            line: 1648
+            filename: integral-failed-combinations.cpp
+            line: 37
           ...
         not ok 3 - ne matches signed long
           ---
           condition: 42u != 42l
           at:
-            filename: main.cpp
-            line: 1653
+            filename: integral-failed-combinations.cpp
+            line: 42
           ...
         not ok 4 - ne matches unsigned long
           ---
           condition: 42u != 42ul
           at:
-            filename: main.cpp
-            line: 1658
+            filename: integral-failed-combinations.cpp
+            line: 47
           ...
         not ok 5 - ne matches signed int
           ---
           condition: 42u != 42
           at:
-            filename: main.cpp
-            line: 1663
+            filename: integral-failed-combinations.cpp
+            line: 52
           ...
         not ok 6 - ne matches unsigned int
           ---
           condition: 42u != 42u
           at:
-            filename: main.cpp
-            line: 1667
+            filename: integral-failed-combinations.cpp
+            line: 56
           ...
         not ok 7 - ne matches signed short
           ---
           condition: 42u != 42s
           at:
-            filename: main.cpp
-            line: 1672
+            filename: integral-failed-combinations.cpp
+            line: 61
           ...
         not ok 8 - ne matches unsigned short
           ---
           condition: 42u != 42us
           at:
-            filename: main.cpp
-            line: 1677
+            filename: integral-failed-combinations.cpp
+            line: 66
           ...
         not ok 9 - ne matches signed char
           ---
           condition: 42u != 42c
           at:
-            filename: main.cpp
-            line: 1682
+            filename: integral-failed-combinations.cpp
+            line: 71
           ...
         not ok 10 - ne matches unsigned char
           ---
           condition: 42u != 42uc
           at:
-            filename: main.cpp
-            line: 1687
+            filename: integral-failed-combinations.cpp
+            line: 76
           ...
         not ok 11 - gt matches signed int
           ---
           condition: 42u > 42
           at:
-            filename: main.cpp
-            line: 1694
+            filename: integral-failed-combinations.cpp
+            line: 83
           ...
         not ok 12 - lt matches signed int
           ---
           condition: 42u < 42
           at:
-            filename: main.cpp
-            line: 1698
+            filename: integral-failed-combinations.cpp
+            line: 87
           ...
         not ok 13 - eq matches signed int
           ---
           condition: 43u == 42
           at:
-            filename: main.cpp
-            line: 1702
+            filename: integral-failed-combinations.cpp
+            line: 91
           ...
         not ok 14 - ge matches signed int
           ---
           condition: 41u >= 42
           at:
-            filename: main.cpp
-            line: 1707
+            filename: integral-failed-combinations.cpp
+            line: 96
           ...
         not ok 15 - le matches signed int
           ---
           condition: 43u <= 42
           at:
-            filename: main.cpp
-            line: 1712
+            filename: integral-failed-combinations.cpp
+            line: 101
           ...
         not ok 16 - gt matches unsigned int
           ---
           condition: 42u > 42u
           at:
-            filename: main.cpp
-            line: 1717
+            filename: integral-failed-combinations.cpp
+            line: 106
           ...
         not ok 17 - lt matches unsigned int
           ---
           condition: 42u < 42u
           at:
-            filename: main.cpp
-            line: 1722
+            filename: integral-failed-combinations.cpp
+            line: 111
           ...
         not ok 18 - eq matches unsigned int
           ---
           condition: 43u == 42u
           at:
-            filename: main.cpp
-            line: 1727
+            filename: integral-failed-combinations.cpp
+            line: 116
           ...
         not ok 19 - ge matches unsigned int
           ---
           condition: 41u >= 42u
           at:
-            filename: main.cpp
-            line: 1732
+            filename: integral-failed-combinations.cpp
+            line: 121
           ...
         not ok 20 - le matches unsigned int
           ---
           condition: 43u <= 42u
           at:
-            filename: main.cpp
-            line: 1737
+            filename: integral-failed-combinations.cpp
+            line: 126
           ...
         1..20
     not ok 4 - Combinatorial integrals with unsigned int # { FAILED, 0 checks passed, 20 failed }
@@ -1458,141 +882,141 @@ ok 3 - Combinatorial integrals # { passed, 160 checks in 8 test cases, time: 4.5
           ---
           condition: 42 != 42ll
           at:
-            filename: main.cpp
-            line: 1643
+            filename: integral-failed-combinations.cpp
+            line: 32
           ...
         not ok 2 - ne matches unsigned long long
           ---
           condition: 42 != 42ull
           at:
-            filename: main.cpp
-            line: 1648
+            filename: integral-failed-combinations.cpp
+            line: 37
           ...
         not ok 3 - ne matches signed long
           ---
           condition: 42 != 42l
           at:
-            filename: main.cpp
-            line: 1653
+            filename: integral-failed-combinations.cpp
+            line: 42
           ...
         not ok 4 - ne matches unsigned long
           ---
           condition: 42 != 42ul
           at:
-            filename: main.cpp
-            line: 1658
+            filename: integral-failed-combinations.cpp
+            line: 47
           ...
         not ok 5 - ne matches signed int
           ---
           condition: 42 != 42
           at:
-            filename: main.cpp
-            line: 1663
+            filename: integral-failed-combinations.cpp
+            line: 52
           ...
         not ok 6 - ne matches unsigned int
           ---
           condition: 42 != 42u
           at:
-            filename: main.cpp
-            line: 1667
+            filename: integral-failed-combinations.cpp
+            line: 56
           ...
         not ok 7 - ne matches signed short
           ---
           condition: 42 != 42s
           at:
-            filename: main.cpp
-            line: 1672
+            filename: integral-failed-combinations.cpp
+            line: 61
           ...
         not ok 8 - ne matches unsigned short
           ---
           condition: 42 != 42us
           at:
-            filename: main.cpp
-            line: 1677
+            filename: integral-failed-combinations.cpp
+            line: 66
           ...
         not ok 9 - ne matches signed char
           ---
           condition: 42 != 42c
           at:
-            filename: main.cpp
-            line: 1682
+            filename: integral-failed-combinations.cpp
+            line: 71
           ...
         not ok 10 - ne matches unsigned char
           ---
           condition: 42 != 42uc
           at:
-            filename: main.cpp
-            line: 1687
+            filename: integral-failed-combinations.cpp
+            line: 76
           ...
         not ok 11 - gt matches signed int
           ---
           condition: 42 > 42
           at:
-            filename: main.cpp
-            line: 1694
+            filename: integral-failed-combinations.cpp
+            line: 83
           ...
         not ok 12 - lt matches signed int
           ---
           condition: 42 < 42
           at:
-            filename: main.cpp
-            line: 1698
+            filename: integral-failed-combinations.cpp
+            line: 87
           ...
         not ok 13 - eq matches signed int
           ---
           condition: 43 == 42
           at:
-            filename: main.cpp
-            line: 1702
+            filename: integral-failed-combinations.cpp
+            line: 91
           ...
         not ok 14 - ge matches signed int
           ---
           condition: 41 >= 42
           at:
-            filename: main.cpp
-            line: 1707
+            filename: integral-failed-combinations.cpp
+            line: 96
           ...
         not ok 15 - le matches signed int
           ---
           condition: 43 <= 42
           at:
-            filename: main.cpp
-            line: 1712
+            filename: integral-failed-combinations.cpp
+            line: 101
           ...
         not ok 16 - gt matches unsigned int
           ---
           condition: 42 > 42u
           at:
-            filename: main.cpp
-            line: 1717
+            filename: integral-failed-combinations.cpp
+            line: 106
           ...
         not ok 17 - lt matches unsigned int
           ---
           condition: 42 < 42u
           at:
-            filename: main.cpp
-            line: 1722
+            filename: integral-failed-combinations.cpp
+            line: 111
           ...
         not ok 18 - eq matches unsigned int
           ---
           condition: 43 == 42u
           at:
-            filename: main.cpp
-            line: 1727
+            filename: integral-failed-combinations.cpp
+            line: 116
           ...
         not ok 19 - ge matches unsigned int
           ---
           condition: 41 >= 42u
           at:
-            filename: main.cpp
-            line: 1732
+            filename: integral-failed-combinations.cpp
+            line: 121
           ...
         not ok 20 - le matches unsigned int
           ---
           condition: 43 <= 42u
           at:
-            filename: main.cpp
-            line: 1737
+            filename: integral-failed-combinations.cpp
+            line: 126
           ...
         1..20
     not ok 5 - Combinatorial integrals with signed short # { FAILED, 0 checks passed, 20 failed }
@@ -1601,141 +1025,141 @@ ok 3 - Combinatorial integrals # { passed, 160 checks in 8 test cases, time: 4.5
           ---
           condition: 42u != 42ll
           at:
-            filename: main.cpp
-            line: 1643
+            filename: integral-failed-combinations.cpp
+            line: 32
           ...
         not ok 2 - ne matches unsigned long long
           ---
           condition: 42u != 42ull
           at:
-            filename: main.cpp
-            line: 1648
+            filename: integral-failed-combinations.cpp
+            line: 37
           ...
         not ok 3 - ne matches signed long
           ---
           condition: 42u != 42l
           at:
-            filename: main.cpp
-            line: 1653
+            filename: integral-failed-combinations.cpp
+            line: 42
           ...
         not ok 4 - ne matches unsigned long
           ---
           condition: 42u != 42ul
           at:
-            filename: main.cpp
-            line: 1658
+            filename: integral-failed-combinations.cpp
+            line: 47
           ...
         not ok 5 - ne matches signed int
           ---
           condition: 42u != 42
           at:
-            filename: main.cpp
-            line: 1663
+            filename: integral-failed-combinations.cpp
+            line: 52
           ...
         not ok 6 - ne matches unsigned int
           ---
           condition: 42u != 42u
           at:
-            filename: main.cpp
-            line: 1667
+            filename: integral-failed-combinations.cpp
+            line: 56
           ...
         not ok 7 - ne matches signed short
           ---
           condition: 42u != 42s
           at:
-            filename: main.cpp
-            line: 1672
+            filename: integral-failed-combinations.cpp
+            line: 61
           ...
         not ok 8 - ne matches unsigned short
           ---
           condition: 42u != 42us
           at:
-            filename: main.cpp
-            line: 1677
+            filename: integral-failed-combinations.cpp
+            line: 66
           ...
         not ok 9 - ne matches signed char
           ---
           condition: 42u != 42c
           at:
-            filename: main.cpp
-            line: 1682
+            filename: integral-failed-combinations.cpp
+            line: 71
           ...
         not ok 10 - ne matches unsigned char
           ---
           condition: 42u != 42uc
           at:
-            filename: main.cpp
-            line: 1687
+            filename: integral-failed-combinations.cpp
+            line: 76
           ...
         not ok 11 - gt matches signed int
           ---
           condition: 42u > 42
           at:
-            filename: main.cpp
-            line: 1694
+            filename: integral-failed-combinations.cpp
+            line: 83
           ...
         not ok 12 - lt matches signed int
           ---
           condition: 42u < 42
           at:
-            filename: main.cpp
-            line: 1698
+            filename: integral-failed-combinations.cpp
+            line: 87
           ...
         not ok 13 - eq matches signed int
           ---
           condition: 43u == 42
           at:
-            filename: main.cpp
-            line: 1702
+            filename: integral-failed-combinations.cpp
+            line: 91
           ...
         not ok 14 - ge matches signed int
           ---
           condition: 41u >= 42
           at:
-            filename: main.cpp
-            line: 1707
+            filename: integral-failed-combinations.cpp
+            line: 96
           ...
         not ok 15 - le matches signed int
           ---
           condition: 43u <= 42
           at:
-            filename: main.cpp
-            line: 1712
+            filename: integral-failed-combinations.cpp
+            line: 101
           ...
         not ok 16 - gt matches unsigned int
           ---
           condition: 42u > 42u
           at:
-            filename: main.cpp
-            line: 1717
+            filename: integral-failed-combinations.cpp
+            line: 106
           ...
         not ok 17 - lt matches unsigned int
           ---
           condition: 42u < 42u
           at:
-            filename: main.cpp
-            line: 1722
+            filename: integral-failed-combinations.cpp
+            line: 111
           ...
         not ok 18 - eq matches unsigned int
           ---
           condition: 43u == 42u
           at:
-            filename: main.cpp
-            line: 1727
+            filename: integral-failed-combinations.cpp
+            line: 116
           ...
         not ok 19 - ge matches unsigned int
           ---
           condition: 41u >= 42u
           at:
-            filename: main.cpp
-            line: 1732
+            filename: integral-failed-combinations.cpp
+            line: 121
           ...
         not ok 20 - le matches unsigned int
           ---
           condition: 43u <= 42u
           at:
-            filename: main.cpp
-            line: 1737
+            filename: integral-failed-combinations.cpp
+            line: 126
           ...
         1..20
     not ok 6 - Combinatorial integrals with unsigned short # { FAILED, 0 checks passed, 20 failed }
@@ -1744,141 +1168,141 @@ ok 3 - Combinatorial integrals # { passed, 160 checks in 8 test cases, time: 4.5
           ---
           condition: 42s != 42ll
           at:
-            filename: main.cpp
-            line: 1643
+            filename: integral-failed-combinations.cpp
+            line: 32
           ...
         not ok 2 - ne matches unsigned long long
           ---
           condition: 42s != 42ull
           at:
-            filename: main.cpp
-            line: 1648
+            filename: integral-failed-combinations.cpp
+            line: 37
           ...
         not ok 3 - ne matches signed long
           ---
           condition: 42s != 42l
           at:
-            filename: main.cpp
-            line: 1653
+            filename: integral-failed-combinations.cpp
+            line: 42
           ...
         not ok 4 - ne matches unsigned long
           ---
           condition: 42s != 42ul
           at:
-            filename: main.cpp
-            line: 1658
+            filename: integral-failed-combinations.cpp
+            line: 47
           ...
         not ok 5 - ne matches signed int
           ---
           condition: 42s != 42
           at:
-            filename: main.cpp
-            line: 1663
+            filename: integral-failed-combinations.cpp
+            line: 52
           ...
         not ok 6 - ne matches unsigned int
           ---
           condition: 42s != 42u
           at:
-            filename: main.cpp
-            line: 1667
+            filename: integral-failed-combinations.cpp
+            line: 56
           ...
         not ok 7 - ne matches signed short
           ---
           condition: 42s != 42s
           at:
-            filename: main.cpp
-            line: 1672
+            filename: integral-failed-combinations.cpp
+            line: 61
           ...
         not ok 8 - ne matches unsigned short
           ---
           condition: 42s != 42us
           at:
-            filename: main.cpp
-            line: 1677
+            filename: integral-failed-combinations.cpp
+            line: 66
           ...
         not ok 9 - ne matches signed char
           ---
           condition: 42s != 42c
           at:
-            filename: main.cpp
-            line: 1682
+            filename: integral-failed-combinations.cpp
+            line: 71
           ...
         not ok 10 - ne matches unsigned char
           ---
           condition: 42s != 42uc
           at:
-            filename: main.cpp
-            line: 1687
+            filename: integral-failed-combinations.cpp
+            line: 76
           ...
         not ok 11 - gt matches signed int
           ---
           condition: 42s > 42
           at:
-            filename: main.cpp
-            line: 1694
+            filename: integral-failed-combinations.cpp
+            line: 83
           ...
         not ok 12 - lt matches signed int
           ---
           condition: 42s < 42
           at:
-            filename: main.cpp
-            line: 1698
+            filename: integral-failed-combinations.cpp
+            line: 87
           ...
         not ok 13 - eq matches signed int
           ---
           condition: 43s == 42
           at:
-            filename: main.cpp
-            line: 1702
+            filename: integral-failed-combinations.cpp
+            line: 91
           ...
         not ok 14 - ge matches signed int
           ---
           condition: 41s >= 42
           at:
-            filename: main.cpp
-            line: 1707
+            filename: integral-failed-combinations.cpp
+            line: 96
           ...
         not ok 15 - le matches signed int
           ---
           condition: 43s <= 42
           at:
-            filename: main.cpp
-            line: 1712
+            filename: integral-failed-combinations.cpp
+            line: 101
           ...
         not ok 16 - gt matches unsigned int
           ---
           condition: 42s > 42u
           at:
-            filename: main.cpp
-            line: 1717
+            filename: integral-failed-combinations.cpp
+            line: 106
           ...
         not ok 17 - lt matches unsigned int
           ---
           condition: 42s < 42u
           at:
-            filename: main.cpp
-            line: 1722
+            filename: integral-failed-combinations.cpp
+            line: 111
           ...
         not ok 18 - eq matches unsigned int
           ---
           condition: 43s == 42u
           at:
-            filename: main.cpp
-            line: 1727
+            filename: integral-failed-combinations.cpp
+            line: 116
           ...
         not ok 19 - ge matches unsigned int
           ---
           condition: 41s >= 42u
           at:
-            filename: main.cpp
-            line: 1732
+            filename: integral-failed-combinations.cpp
+            line: 121
           ...
         not ok 20 - le matches unsigned int
           ---
           condition: 43s <= 42u
           at:
-            filename: main.cpp
-            line: 1737
+            filename: integral-failed-combinations.cpp
+            line: 126
           ...
         1..20
     not ok 7 - Combinatorial integrals with signed short # { FAILED, 0 checks passed, 20 failed }
@@ -1887,141 +1311,141 @@ ok 3 - Combinatorial integrals # { passed, 160 checks in 8 test cases, time: 4.5
           ---
           condition: 42us != 42ll
           at:
-            filename: main.cpp
-            line: 1643
+            filename: integral-failed-combinations.cpp
+            line: 32
           ...
         not ok 2 - ne matches unsigned long long
           ---
           condition: 42us != 42ull
           at:
-            filename: main.cpp
-            line: 1648
+            filename: integral-failed-combinations.cpp
+            line: 37
           ...
         not ok 3 - ne matches signed long
           ---
           condition: 42us != 42l
           at:
-            filename: main.cpp
-            line: 1653
+            filename: integral-failed-combinations.cpp
+            line: 42
           ...
         not ok 4 - ne matches unsigned long
           ---
           condition: 42us != 42ul
           at:
-            filename: main.cpp
-            line: 1658
+            filename: integral-failed-combinations.cpp
+            line: 47
           ...
         not ok 5 - ne matches signed int
           ---
           condition: 42us != 42
           at:
-            filename: main.cpp
-            line: 1663
+            filename: integral-failed-combinations.cpp
+            line: 52
           ...
         not ok 6 - ne matches unsigned int
           ---
           condition: 42us != 42u
           at:
-            filename: main.cpp
-            line: 1667
+            filename: integral-failed-combinations.cpp
+            line: 56
           ...
         not ok 7 - ne matches signed short
           ---
           condition: 42us != 42s
           at:
-            filename: main.cpp
-            line: 1672
+            filename: integral-failed-combinations.cpp
+            line: 61
           ...
         not ok 8 - ne matches unsigned short
           ---
           condition: 42us != 42us
           at:
-            filename: main.cpp
-            line: 1677
+            filename: integral-failed-combinations.cpp
+            line: 66
           ...
         not ok 9 - ne matches signed char
           ---
           condition: 42us != 42c
           at:
-            filename: main.cpp
-            line: 1682
+            filename: integral-failed-combinations.cpp
+            line: 71
           ...
         not ok 10 - ne matches unsigned char
           ---
           condition: 42us != 42uc
           at:
-            filename: main.cpp
-            line: 1687
+            filename: integral-failed-combinations.cpp
+            line: 76
           ...
         not ok 11 - gt matches signed int
           ---
           condition: 42us > 42
           at:
-            filename: main.cpp
-            line: 1694
+            filename: integral-failed-combinations.cpp
+            line: 83
           ...
         not ok 12 - lt matches signed int
           ---
           condition: 42us < 42
           at:
-            filename: main.cpp
-            line: 1698
+            filename: integral-failed-combinations.cpp
+            line: 87
           ...
         not ok 13 - eq matches signed int
           ---
           condition: 43us == 42
           at:
-            filename: main.cpp
-            line: 1702
+            filename: integral-failed-combinations.cpp
+            line: 91
           ...
         not ok 14 - ge matches signed int
           ---
           condition: 41us >= 42
           at:
-            filename: main.cpp
-            line: 1707
+            filename: integral-failed-combinations.cpp
+            line: 96
           ...
         not ok 15 - le matches signed int
           ---
           condition: 43us <= 42
           at:
-            filename: main.cpp
-            line: 1712
+            filename: integral-failed-combinations.cpp
+            line: 101
           ...
         not ok 16 - gt matches unsigned int
           ---
           condition: 42us > 42u
           at:
-            filename: main.cpp
-            line: 1717
+            filename: integral-failed-combinations.cpp
+            line: 106
           ...
         not ok 17 - lt matches unsigned int
           ---
           condition: 42us < 42u
           at:
-            filename: main.cpp
-            line: 1722
+            filename: integral-failed-combinations.cpp
+            line: 111
           ...
         not ok 18 - eq matches unsigned int
           ---
           condition: 43us == 42u
           at:
-            filename: main.cpp
-            line: 1727
+            filename: integral-failed-combinations.cpp
+            line: 116
           ...
         not ok 19 - ge matches unsigned int
           ---
           condition: 41us >= 42u
           at:
-            filename: main.cpp
-            line: 1732
+            filename: integral-failed-combinations.cpp
+            line: 121
           ...
         not ok 20 - le matches unsigned int
           ---
           condition: 43us <= 42u
           at:
-            filename: main.cpp
-            line: 1737
+            filename: integral-failed-combinations.cpp
+            line: 126
           ...
         1..20
     not ok 8 - Combinatorial integrals with unsigned short # { FAILED, 0 checks passed, 20 failed }
@@ -2030,141 +1454,141 @@ ok 3 - Combinatorial integrals # { passed, 160 checks in 8 test cases, time: 4.5
           ---
           condition: 42c != 42ll
           at:
-            filename: main.cpp
-            line: 1643
+            filename: integral-failed-combinations.cpp
+            line: 32
           ...
         not ok 2 - ne matches unsigned long long
           ---
           condition: 42c != 42ull
           at:
-            filename: main.cpp
-            line: 1648
+            filename: integral-failed-combinations.cpp
+            line: 37
           ...
         not ok 3 - ne matches signed long
           ---
           condition: 42c != 42l
           at:
-            filename: main.cpp
-            line: 1653
+            filename: integral-failed-combinations.cpp
+            line: 42
           ...
         not ok 4 - ne matches unsigned long
           ---
           condition: 42c != 42ul
           at:
-            filename: main.cpp
-            line: 1658
+            filename: integral-failed-combinations.cpp
+            line: 47
           ...
         not ok 5 - ne matches signed int
           ---
           condition: 42c != 42
           at:
-            filename: main.cpp
-            line: 1663
+            filename: integral-failed-combinations.cpp
+            line: 52
           ...
         not ok 6 - ne matches unsigned int
           ---
           condition: 42c != 42u
           at:
-            filename: main.cpp
-            line: 1667
+            filename: integral-failed-combinations.cpp
+            line: 56
           ...
         not ok 7 - ne matches signed short
           ---
           condition: 42c != 42s
           at:
-            filename: main.cpp
-            line: 1672
+            filename: integral-failed-combinations.cpp
+            line: 61
           ...
         not ok 8 - ne matches unsigned short
           ---
           condition: 42c != 42us
           at:
-            filename: main.cpp
-            line: 1677
+            filename: integral-failed-combinations.cpp
+            line: 66
           ...
         not ok 9 - ne matches signed char
           ---
           condition: 42c != 42c
           at:
-            filename: main.cpp
-            line: 1682
+            filename: integral-failed-combinations.cpp
+            line: 71
           ...
         not ok 10 - ne matches unsigned char
           ---
           condition: 42c != 42uc
           at:
-            filename: main.cpp
-            line: 1687
+            filename: integral-failed-combinations.cpp
+            line: 76
           ...
         not ok 11 - gt matches signed int
           ---
           condition: 42c > 42
           at:
-            filename: main.cpp
-            line: 1694
+            filename: integral-failed-combinations.cpp
+            line: 83
           ...
         not ok 12 - lt matches signed int
           ---
           condition: 42c < 42
           at:
-            filename: main.cpp
-            line: 1698
+            filename: integral-failed-combinations.cpp
+            line: 87
           ...
         not ok 13 - eq matches signed int
           ---
           condition: 43c == 42
           at:
-            filename: main.cpp
-            line: 1702
+            filename: integral-failed-combinations.cpp
+            line: 91
           ...
         not ok 14 - ge matches signed int
           ---
           condition: 41c >= 42
           at:
-            filename: main.cpp
-            line: 1707
+            filename: integral-failed-combinations.cpp
+            line: 96
           ...
         not ok 15 - le matches signed int
           ---
           condition: 43c <= 42
           at:
-            filename: main.cpp
-            line: 1712
+            filename: integral-failed-combinations.cpp
+            line: 101
           ...
         not ok 16 - gt matches unsigned int
           ---
           condition: 42c > 42u
           at:
-            filename: main.cpp
-            line: 1717
+            filename: integral-failed-combinations.cpp
+            line: 106
           ...
         not ok 17 - lt matches unsigned int
           ---
           condition: 42c < 42u
           at:
-            filename: main.cpp
-            line: 1722
+            filename: integral-failed-combinations.cpp
+            line: 111
           ...
         not ok 18 - eq matches unsigned int
           ---
           condition: 43c == 42u
           at:
-            filename: main.cpp
-            line: 1727
+            filename: integral-failed-combinations.cpp
+            line: 116
           ...
         not ok 19 - ge matches unsigned int
           ---
           condition: 41c >= 42u
           at:
-            filename: main.cpp
-            line: 1732
+            filename: integral-failed-combinations.cpp
+            line: 121
           ...
         not ok 20 - le matches unsigned int
           ---
           condition: 43c <= 42u
           at:
-            filename: main.cpp
-            line: 1737
+            filename: integral-failed-combinations.cpp
+            line: 126
           ...
         1..20
     not ok 9 - Combinatorial integrals with signed char # { FAILED, 0 checks passed, 20 failed }
@@ -2173,147 +1597,147 @@ ok 3 - Combinatorial integrals # { passed, 160 checks in 8 test cases, time: 4.5
           ---
           condition: 42uc != 42ll
           at:
-            filename: main.cpp
-            line: 1643
+            filename: integral-failed-combinations.cpp
+            line: 32
           ...
         not ok 2 - ne matches unsigned long long
           ---
           condition: 42uc != 42ull
           at:
-            filename: main.cpp
-            line: 1648
+            filename: integral-failed-combinations.cpp
+            line: 37
           ...
         not ok 3 - ne matches signed long
           ---
           condition: 42uc != 42l
           at:
-            filename: main.cpp
-            line: 1653
+            filename: integral-failed-combinations.cpp
+            line: 42
           ...
         not ok 4 - ne matches unsigned long
           ---
           condition: 42uc != 42ul
           at:
-            filename: main.cpp
-            line: 1658
+            filename: integral-failed-combinations.cpp
+            line: 47
           ...
         not ok 5 - ne matches signed int
           ---
           condition: 42uc != 42
           at:
-            filename: main.cpp
-            line: 1663
+            filename: integral-failed-combinations.cpp
+            line: 52
           ...
         not ok 6 - ne matches unsigned int
           ---
           condition: 42uc != 42u
           at:
-            filename: main.cpp
-            line: 1667
+            filename: integral-failed-combinations.cpp
+            line: 56
           ...
         not ok 7 - ne matches signed short
           ---
           condition: 42uc != 42s
           at:
-            filename: main.cpp
-            line: 1672
+            filename: integral-failed-combinations.cpp
+            line: 61
           ...
         not ok 8 - ne matches unsigned short
           ---
           condition: 42uc != 42us
           at:
-            filename: main.cpp
-            line: 1677
+            filename: integral-failed-combinations.cpp
+            line: 66
           ...
         not ok 9 - ne matches signed char
           ---
           condition: 42uc != 42c
           at:
-            filename: main.cpp
-            line: 1682
+            filename: integral-failed-combinations.cpp
+            line: 71
           ...
         not ok 10 - ne matches unsigned char
           ---
           condition: 42uc != 42uc
           at:
-            filename: main.cpp
-            line: 1687
+            filename: integral-failed-combinations.cpp
+            line: 76
           ...
         not ok 11 - gt matches signed int
           ---
           condition: 42uc > 42
           at:
-            filename: main.cpp
-            line: 1694
+            filename: integral-failed-combinations.cpp
+            line: 83
           ...
         not ok 12 - lt matches signed int
           ---
           condition: 42uc < 42
           at:
-            filename: main.cpp
-            line: 1698
+            filename: integral-failed-combinations.cpp
+            line: 87
           ...
         not ok 13 - eq matches signed int
           ---
           condition: 43uc == 42
           at:
-            filename: main.cpp
-            line: 1702
+            filename: integral-failed-combinations.cpp
+            line: 91
           ...
         not ok 14 - ge matches signed int
           ---
           condition: 41uc >= 42
           at:
-            filename: main.cpp
-            line: 1707
+            filename: integral-failed-combinations.cpp
+            line: 96
           ...
         not ok 15 - le matches signed int
           ---
           condition: 43uc <= 42
           at:
-            filename: main.cpp
-            line: 1712
+            filename: integral-failed-combinations.cpp
+            line: 101
           ...
         not ok 16 - gt matches unsigned int
           ---
           condition: 42uc > 42u
           at:
-            filename: main.cpp
-            line: 1717
+            filename: integral-failed-combinations.cpp
+            line: 106
           ...
         not ok 17 - lt matches unsigned int
           ---
           condition: 42uc < 42u
           at:
-            filename: main.cpp
-            line: 1722
+            filename: integral-failed-combinations.cpp
+            line: 111
           ...
         not ok 18 - eq matches unsigned int
           ---
           condition: 43uc == 42u
           at:
-            filename: main.cpp
-            line: 1727
+            filename: integral-failed-combinations.cpp
+            line: 116
           ...
         not ok 19 - ge matches unsigned int
           ---
           condition: 41uc >= 42u
           at:
-            filename: main.cpp
-            line: 1732
+            filename: integral-failed-combinations.cpp
+            line: 121
           ...
         not ok 20 - le matches unsigned int
           ---
           condition: 43uc <= 42u
           at:
-            filename: main.cpp
-            line: 1737
+            filename: integral-failed-combinations.cpp
+            line: 126
           ...
         1..20
     not ok 10 - Combinatorial integrals with unsigned char # { FAILED, 0 checks passed, 20 failed }
     1..10
-not ok 4 - Failed combinatorial integrals # { FAILED, 0 checks passed, 200 failed, in 10 test cases, time: 1.707 ms }
-# Subtest: Combinatorial floats
+not ok 4 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200 failed, in 10 test cases, time: 0.806 ms }
+# Subtest: Combinatorial floats suite
     # Subtest: Combinatorial floats
         ok 1 - 42.0 == 42 signed long long
         ok 2 - 42.0 == 42 unsigned long long
@@ -2363,155 +1787,155 @@ not ok 4 - Failed combinatorial integrals # { FAILED, 0 checks passed, 200 faile
         1..21
     ok 2 - Combinatorial doubles # { passed, 21 checks }
     1..2
-ok 5 - Combinatorial floats # { passed, 42 checks in 2 test cases, time: 0.342 ms }
-# Subtest: Failed combinatorial floats
+ok 5 - Combinatorial floats suite # { passed, 42 checks in 2 test cases, time: 0.087 ms }
+# Subtest: Failed combinatorial floats suite
     # Subtest: Combinatorial floats
         not ok 1 - 42.0 == 42 signed long long
           ---
           condition: 42f != 42ll
           at:
-            filename: main.cpp
-            line: 1851
+            filename: float-failed-combinations.cpp
+            line: 32
           ...
         not ok 2 - 42.0 == 42 unsigned long long
           ---
           condition: 42f != 42ull
           at:
-            filename: main.cpp
-            line: 1855
+            filename: float-failed-combinations.cpp
+            line: 37
           ...
         not ok 3 - 42.0 == 42 signed long
           ---
           condition: 42f != 42l
           at:
-            filename: main.cpp
-            line: 1860
+            filename: float-failed-combinations.cpp
+            line: 42
           ...
         not ok 4 - 42.0 == 42 unsigned long
           ---
           condition: 42f != 42ul
           at:
-            filename: main.cpp
-            line: 1864
+            filename: float-failed-combinations.cpp
+            line: 46
           ...
         not ok 5 - 42.0 == 42 signed int
           ---
           condition: 42f != 42
           at:
-            filename: main.cpp
-            line: 1868
+            filename: float-failed-combinations.cpp
+            line: 50
           ...
         not ok 6 - 42.0 == 42 unsigned int
           ---
           condition: 42f != 42u
           at:
-            filename: main.cpp
-            line: 1872
+            filename: float-failed-combinations.cpp
+            line: 54
           ...
         not ok 7 - 42.0 == 42 signed short
           ---
           condition: 42f != 42s
           at:
-            filename: main.cpp
-            line: 1876
+            filename: float-failed-combinations.cpp
+            line: 58
           ...
         not ok 8 - 42.0 == 42 unsigned short
           ---
           condition: 42f != 42us
           at:
-            filename: main.cpp
-            line: 1880
+            filename: float-failed-combinations.cpp
+            line: 62
           ...
         not ok 9 - 42.0 == 42 signed char
           ---
           condition: 42f != 42c
           at:
-            filename: main.cpp
-            line: 1884
+            filename: float-failed-combinations.cpp
+            line: 67
           ...
         not ok 10 - 42.0 == 42 unsigned char
           ---
           condition: 42f != 42uc
           at:
-            filename: main.cpp
-            line: 1888
+            filename: float-failed-combinations.cpp
+            line: 71
           ...
         not ok 11 - 42.0 <= 42 signed int
           ---
           condition: 42f > 42
           at:
-            filename: main.cpp
-            line: 1894
+            filename: float-failed-combinations.cpp
+            line: 77
           ...
         not ok 12 - 42.0 >= 42 signed int
           ---
           condition: 42f < 42
           at:
-            filename: main.cpp
-            line: 1898
+            filename: float-failed-combinations.cpp
+            line: 81
           ...
         not ok 13 - 43.0 != 42 signed int
           ---
           condition: 43f == 42
           at:
-            filename: main.cpp
-            line: 1902
+            filename: float-failed-combinations.cpp
+            line: 85
           ...
         not ok 14 - 41.0 < 42 signed int
           ---
           condition: 41f >= 42
           at:
-            filename: main.cpp
-            line: 1906
+            filename: float-failed-combinations.cpp
+            line: 90
           ...
         not ok 15 - 43.0 > 42 signed int
           ---
           condition: 43f <= 42
           at:
-            filename: main.cpp
-            line: 1910
+            filename: float-failed-combinations.cpp
+            line: 95
           ...
         not ok 16 - 42.0 <= 42 unsigned int
           ---
           condition: 42f > 42u
           at:
-            filename: main.cpp
-            line: 1916
+            filename: float-failed-combinations.cpp
+            line: 102
           ...
         not ok 17 - 42.0 >= 42 unsigned int
           ---
           condition: 42f < 42u
           at:
-            filename: main.cpp
-            line: 1920
+            filename: float-failed-combinations.cpp
+            line: 106
           ...
         not ok 18 - 43.0 != 42 unsigned int
           ---
           condition: 43f == 42u
           at:
-            filename: main.cpp
-            line: 1924
+            filename: float-failed-combinations.cpp
+            line: 110
           ...
         not ok 19 - 41.0 < 42 unsigned int
           ---
           condition: 41f >= 42u
           at:
-            filename: main.cpp
-            line: 1929
+            filename: float-failed-combinations.cpp
+            line: 115
           ...
         not ok 20 - 43.0 > 42 unsigned int
           ---
           condition: 43f <= 42u
           at:
-            filename: main.cpp
-            line: 1934
+            filename: float-failed-combinations.cpp
+            line: 120
           ...
         not ok 21 - 42 == 42.0
           ---
           condition: 42 != 42f
           at:
-            filename: main.cpp
-            line: 1941
+            filename: float-failed-combinations.cpp
+            line: 127
           ...
         1..21
     not ok 1 - Combinatorial floats # { FAILED, 0 checks passed, 21 failed }
@@ -2520,154 +1944,739 @@ ok 5 - Combinatorial floats # { passed, 42 checks in 2 test cases, time: 0.342 m
           ---
           condition: 42 != 42ll
           at:
-            filename: main.cpp
-            line: 1851
+            filename: float-failed-combinations.cpp
+            line: 32
           ...
         not ok 2 - 42.0 == 42 unsigned long long
           ---
           condition: 42 != 42ull
           at:
-            filename: main.cpp
-            line: 1855
+            filename: float-failed-combinations.cpp
+            line: 37
           ...
         not ok 3 - 42.0 == 42 signed long
           ---
           condition: 42 != 42l
           at:
-            filename: main.cpp
-            line: 1860
+            filename: float-failed-combinations.cpp
+            line: 42
           ...
         not ok 4 - 42.0 == 42 unsigned long
           ---
           condition: 42 != 42ul
           at:
-            filename: main.cpp
-            line: 1864
+            filename: float-failed-combinations.cpp
+            line: 46
           ...
         not ok 5 - 42.0 == 42 signed int
           ---
           condition: 42 != 42
           at:
-            filename: main.cpp
-            line: 1868
+            filename: float-failed-combinations.cpp
+            line: 50
           ...
         not ok 6 - 42.0 == 42 unsigned int
           ---
           condition: 42 != 42u
           at:
-            filename: main.cpp
-            line: 1872
+            filename: float-failed-combinations.cpp
+            line: 54
           ...
         not ok 7 - 42.0 == 42 signed short
           ---
           condition: 42 != 42s
           at:
-            filename: main.cpp
-            line: 1876
+            filename: float-failed-combinations.cpp
+            line: 58
           ...
         not ok 8 - 42.0 == 42 unsigned short
           ---
           condition: 42 != 42us
           at:
-            filename: main.cpp
-            line: 1880
+            filename: float-failed-combinations.cpp
+            line: 62
           ...
         not ok 9 - 42.0 == 42 signed char
           ---
           condition: 42 != 42c
           at:
-            filename: main.cpp
-            line: 1884
+            filename: float-failed-combinations.cpp
+            line: 67
           ...
         not ok 10 - 42.0 == 42 unsigned char
           ---
           condition: 42 != 42uc
           at:
-            filename: main.cpp
-            line: 1888
+            filename: float-failed-combinations.cpp
+            line: 71
           ...
         not ok 11 - 42.0 <= 42 signed int
           ---
           condition: 42 > 42
           at:
-            filename: main.cpp
-            line: 1894
+            filename: float-failed-combinations.cpp
+            line: 77
           ...
         not ok 12 - 42.0 >= 42 signed int
           ---
           condition: 42 < 42
           at:
-            filename: main.cpp
-            line: 1898
+            filename: float-failed-combinations.cpp
+            line: 81
           ...
         not ok 13 - 43.0 != 42 signed int
           ---
           condition: 43 == 42
           at:
-            filename: main.cpp
-            line: 1902
+            filename: float-failed-combinations.cpp
+            line: 85
           ...
         not ok 14 - 41.0 < 42 signed int
           ---
           condition: 41 >= 42
           at:
-            filename: main.cpp
-            line: 1906
+            filename: float-failed-combinations.cpp
+            line: 90
           ...
         not ok 15 - 43.0 > 42 signed int
           ---
           condition: 43 <= 42
           at:
-            filename: main.cpp
-            line: 1910
+            filename: float-failed-combinations.cpp
+            line: 95
           ...
         not ok 16 - 42.0 <= 42 unsigned int
           ---
           condition: 42 > 42u
           at:
-            filename: main.cpp
-            line: 1916
+            filename: float-failed-combinations.cpp
+            line: 102
           ...
         not ok 17 - 42.0 >= 42 unsigned int
           ---
           condition: 42 < 42u
           at:
-            filename: main.cpp
-            line: 1920
+            filename: float-failed-combinations.cpp
+            line: 106
           ...
         not ok 18 - 43.0 != 42 unsigned int
           ---
           condition: 43 == 42u
           at:
-            filename: main.cpp
-            line: 1924
+            filename: float-failed-combinations.cpp
+            line: 110
           ...
         not ok 19 - 41.0 < 42 unsigned int
           ---
           condition: 41 >= 42u
           at:
-            filename: main.cpp
-            line: 1929
+            filename: float-failed-combinations.cpp
+            line: 115
           ...
         not ok 20 - 43.0 > 42 unsigned int
           ---
           condition: 43 <= 42u
           at:
-            filename: main.cpp
-            line: 1934
+            filename: float-failed-combinations.cpp
+            line: 120
           ...
         not ok 21 - 42 == 42.0
           ---
           condition: 42 != 42
           at:
-            filename: main.cpp
-            line: 1941
+            filename: float-failed-combinations.cpp
+            line: 127
           ...
         1..21
     not ok 2 - Combinatorial doubles # { FAILED, 0 checks passed, 21 failed }
     1..2
-not ok 6 - Failed combinatorial floats # { FAILED, 0 checks passed, 42 failed, in 2 test cases, time: 0.593 ms }
-# Subtest: Miscellaneous
+not ok 6 - Failed combinatorial floats suite # { FAILED, 0 checks passed, 42 failed, in 2 test cases, time: 0.178 ms }
+# Subtest: Comparisons suite
+    # Subtest: Integer comparisons
+        ok 1 - actual == 42
+        ok 2 - actual+1 != 42
+        ok 3 - actual-1 < 42
+        ok 4 - actual <= 42
+        ok 5 - actual+1 > 42
+        ok 6 - actual >= 42
+        ok 7 - 42 == 42
+        ok 8 - 42 == 42_i
+        1..8
+    ok 1 - Integer comparisons # { passed, 8 checks }
+    # Subtest: Failed integer comparisons
+        not ok 1 - actual != 42
+          ---
+          condition: 42 != 42
+          at:
+            filename: comparisons.cpp
+            line: 107
+          ...
+        not ok 2 - actual+1 == 42
+          ---
+          condition: 43 == 42
+          at:
+            filename: comparisons.cpp
+            line: 110
+          ...
+        not ok 3 - actual-1 >= 42
+          ---
+          condition: 41 >= 42
+          at:
+            filename: comparisons.cpp
+            line: 114
+          ...
+        not ok 4 - actual > 42
+          ---
+          condition: 42 > 42
+          at:
+            filename: comparisons.cpp
+            line: 118
+          ...
+        not ok 5 - actual+1 <= 42
+          ---
+          condition: 43 <= 42
+          at:
+            filename: comparisons.cpp
+            line: 121
+          ...
+        not ok 6 - actual < 42
+          ---
+          condition: 42 < 42
+          at:
+            filename: comparisons.cpp
+            line: 125
+          ...
+        not ok 7 - 42_i != 42_i
+          ---
+          condition: 42 != 42
+          at:
+            filename: comparisons.cpp
+            line: 131
+          ...
+        not ok 8 - 42 != 42_i
+          ---
+          condition: 42 != 42
+          at:
+            filename: comparisons.cpp
+            line: 134
+          ...
+        1..8
+    not ok 2 - Failed integer comparisons # { FAILED, 0 checks passed, 8 failed }
+    # Subtest: Float comparisons
+        ok 1 - actual == 42.0f
+        ok 2 - actual != 43.0f
+        ok 3 - actual == 42.0
+        ok 4 - actual != 43.0
+        ok 5 - actual == 42.0
+        ok 6 - actual != 43.0
+        ok 7 - actual == 42.0f
+        ok 8 - actual != 43.0f
+        ok 9 - actual == 42
+        ok 10 - actual != 43
+        ok 11 - 42.101f == 42.101_f
+        ok 12 - 42.101f epsilon 0.01f == 42.10_f
+        ok 13 - 42.101f epsilon 0.1f != 42.10_f
+        ok 14 - 42.1010001f epsilon 0.1f == 42.1_f
+        ok 15 - 42.101f != 42.10_f
+        ok 16 - 42.101f != 42.100_f
+        ok 17 - 42.10f == 42.1_f
+        ok 18 - 42.42f == 42.42_f
+        ok 19 - 42.42 == 42.420_d
+        ok 20 - 42.0 == 42.0_d
+        ok 21 - 42. == 42._d
+        ok 22 - 42.42 == 42.42_ld
+        ok 23 - 1234._f == 1234.f
+        ok 24 - 1234.56_f == 1234.56f
+        ok 25 - 12345678.9f == 12345678.9_f
+        ok 26 - 111111.42f == 111111.42_f
+        ok 27 - 1111111111.42 == 1111111111.42_d
+        1..27
+    ok 3 - Float comparisons # { passed, 27 checks }
+    # Subtest: Failed float comparisons
+        not ok 1 - actual != 42.0
+          ---
+          condition: 42f != 42f
+          at:
+            filename: comparisons.cpp
+            line: 256
+          ...
+        not ok 2 - actual == 43.0
+          ---
+          condition: 42f == 43f
+          at:
+            filename: comparisons.cpp
+            line: 259
+          ...
+        not ok 3 - actual != 42
+          ---
+          condition: 42f != 42
+          at:
+            filename: comparisons.cpp
+            line: 262
+          ...
+        not ok 4 - actual == 43
+          ---
+          condition: 42f == 43
+          at:
+            filename: comparisons.cpp
+            line: 265
+          ...
+        not ok 5 - 42.101f != 42.101_f
+          ---
+          condition: 42.101f != 42.101f
+          at:
+            filename: comparisons.cpp
+            line: 271
+          ...
+        not ok 6 - 42.101f epsilon 0.01f != 42.10_f
+          ---
+          condition: 42.101f != 42.1f
+          at:
+            filename: comparisons.cpp
+            line: 274
+          ...
+        not ok 7 - 42.101f epsilon 0.1f == 42.10_f
+          ---
+          condition: 42.101f == 42.1f
+          at:
+            filename: comparisons.cpp
+            line: 278
+          ...
+        not ok 8 - 42.1010001f epsilon 0.1f != 42.1_f
+          ---
+          condition: 42.101f != 42.1f
+          at:
+            filename: comparisons.cpp
+            line: 282
+          ...
+        not ok 9 - 42.101f == 42.10_f
+          ---
+          condition: 42.101f == 42.1f
+          at:
+            filename: comparisons.cpp
+            line: 286
+          ...
+        not ok 10 - 42.101f == 42.100_f
+          ---
+          condition: 42.101f == 42.1f
+          at:
+            filename: comparisons.cpp
+            line: 289
+          ...
+        not ok 11 - 42.10f == 42.1_f
+          ---
+          condition: 42.1f != 42.1f
+          at:
+            filename: comparisons.cpp
+            line: 292
+          ...
+        not ok 12 - 42.42f == 42.42_f
+          ---
+          condition: 42.42f != 42.42f
+          at:
+            filename: comparisons.cpp
+            line: 295
+          ...
+        not ok 13 - 42.42 == 42.420_d
+          ---
+          condition: 42.42 != 42.42
+          at:
+            filename: comparisons.cpp
+            line: 298
+          ...
+        not ok 14 - 42.0 == 42.0_d
+          ---
+          condition: 42 != 42
+          at:
+            filename: comparisons.cpp
+            line: 301
+          ...
+        not ok 15 - 42. == 42._d
+          ---
+          condition: 42 != 42
+          at:
+            filename: comparisons.cpp
+            line: 304
+          ...
+        not ok 16 - 42.42 == 42.42_ld
+          ---
+          condition: 42.42l != 42.42l
+          at:
+            filename: comparisons.cpp
+            line: 307
+          ...
+        not ok 17 - 1234._f == 1234.f
+          ---
+          condition: 1234f != 1234f
+          at:
+            filename: comparisons.cpp
+            line: 311
+          ...
+        not ok 18 - 1234.56_f == 1234.56f
+          ---
+          condition: 1234.56f != 1234.56f
+          at:
+            filename: comparisons.cpp
+            line: 314
+          ...
+        not ok 19 - 12345678.9f == 12345678.9_f
+          ---
+          condition: 12345679f != 12345679f
+          at:
+            filename: comparisons.cpp
+            line: 317
+          ...
+        not ok 20 - 111111.42f == 111111.42_f
+          ---
+          condition: 111111.42f != 111111.42f
+          at:
+            filename: comparisons.cpp
+            line: 321
+          ...
+        not ok 21 - 1111111111.42 == 1111111111.42_d
+          ---
+          condition: 1111111111.42 != 1111111111.42
+          at:
+            filename: comparisons.cpp
+            line: 325
+          ...
+        1..21
+    not ok 4 - Failed float comparisons # { FAILED, 0 checks passed, 21 failed }
+    # Subtest: String comparisons
+        ok 1 - actual_sv == abc_sv
+        ok 2 - actual_sv != abx_sv
+        ok 3 - actual_sv < abd_sv
+        ok 4 - actual_sv <= abc_sv
+        ok 5 - actual_sv > abb_sv
+        ok 6 - actual_sv >= abc_sv
+        1..6
+    ok 5 - String comparisons # { passed, 6 checks }
+    # Subtest: Failed string comparisons
+        not ok 1 - actual_sv != abc_sv
+          ---
+          condition: abc != abc
+          at:
+            filename: comparisons.cpp
+            line: 384
+          ...
+        not ok 2 - actual_sv == abx_sv
+          ---
+          condition: abc == abx
+          at:
+            filename: comparisons.cpp
+            line: 388
+          ...
+        not ok 3 - actual_sv >= abd_sv
+          ---
+          condition: abc >= abd
+          at:
+            filename: comparisons.cpp
+            line: 392
+          ...
+        not ok 4 - actual_sv > abc_sv
+          ---
+          condition: abc > abc
+          at:
+            filename: comparisons.cpp
+            line: 396
+          ...
+        not ok 5 - actual_sv <= abb_sv
+          ---
+          condition: abc <= abb
+          at:
+            filename: comparisons.cpp
+            line: 400
+          ...
+        not ok 6 - actual_sv < abc_sv
+          ---
+          condition: abc < abc
+          at:
+            filename: comparisons.cpp
+            line: 404
+          ...
+        1..6
+    not ok 6 - Failed string comparisons # { FAILED, 0 checks passed, 6 failed }
+    # Subtest: Pointer comparisons
+        ok 1 - ptr1 == &one
+        ok 2 - ptr1 == ptr2
+        ok 3 - ptr1 <= ptr2
+        ok 4 - ptr1 >= ptr2
+        ok 5 - ptr1 != a_non_nullptr
+        ok 6 - pfunc == afunc
+        ok 7 - pfunc != a_non_nullptr
+        ok 8 - pone < ptwo
+        ok 9 - ptwo > pone
+        1..9
+    ok 7 - Pointer comparisons # { passed, 9 checks }
+    # Subtest: Failed pointer comparisons
+        not ok 1 - ptr1 != &one
+          ---
+          condition: 0x7ff7bcc9b0fc != 0x7ff7bcc9b0fc
+          at:
+            filename: comparisons.cpp
+            line: 486
+          ...
+        not ok 2 - ptr1 != ptr2
+          ---
+          condition: 0x7ff7bcc9b0fc != 0x7ff7bcc9b0fc
+          at:
+            filename: comparisons.cpp
+            line: 489
+          ...
+        not ok 3 - ptr1 > ptr2
+          ---
+          condition: 0x7ff7bcc9b0fc > 0x7ff7bcc9b0fc
+          at:
+            filename: comparisons.cpp
+            line: 492
+          ...
+        not ok 4 - ptr1 < ptr2
+          ---
+          condition: 0x7ff7bcc9b0fc < 0x7ff7bcc9b0fc
+          at:
+            filename: comparisons.cpp
+            line: 495
+          ...
+        not ok 5 - ptr1 == a_non_nullptr
+          ---
+          condition: 0x7ff7bcc9b0fc == 0x7ff7bcc9b0e0
+          at:
+            filename: comparisons.cpp
+            line: 498
+          ...
+        not ok 6 - pfunc != afunc
+          ---
+          condition: 0x103309fa0 != 0x103309fa0
+          at:
+            filename: comparisons.cpp
+            line: 501
+          ...
+        not ok 7 - pfunc == a_non_nullptr
+          ---
+          condition: 0x103309fa0 == 0x7ff7bcc9b0e0
+          at:
+            filename: comparisons.cpp
+            line: 504
+          ...
+        not ok 8 - pone >= ptwo
+          ---
+          condition: 0x7ff7bcc9ade0 >= 0x7ff7bcc9ade4
+          at:
+            filename: comparisons.cpp
+            line: 516
+          ...
+        not ok 9 - ptwo <= pone
+          ---
+          condition: 0x7ff7bcc9ade4 <= 0x7ff7bcc9ade0
+          at:
+            filename: comparisons.cpp
+            line: 519
+          ...
+        1..9
+    not ok 8 - Failed pointer comparisons # { FAILED, 0 checks passed, 9 failed }
+    # Subtest: Null pointer comparisons
+        ok 1 - a_nullptr == nullptr
+        ok 2 - a_non_nullptr != nullptr
+        ok 3 - pfunc == nullptr
+        1..3
+    ok 9 - Null pointer comparisons # { passed, 3 checks }
+    # Subtest: Failed null pointer comparisons
+        not ok 1 - a_nullptr != nullptr
+          ---
+          condition: 0x0 != nullptr
+          at:
+            filename: comparisons.cpp
+            line: 567
+          ...
+        not ok 2 - a_non_nullptr == nullptr
+          ---
+          condition: 0x7ff7bcc9b0f8 == nullptr
+          at:
+            filename: comparisons.cpp
+            line: 570
+          ...
+        not ok 3 - pfunc != nullptr
+          ---
+          condition: 0x0 != nullptr
+          at:
+            filename: comparisons.cpp
+            line: 573
+          ...
+        1..3
+    not ok 10 - Failed null pointer comparisons # { FAILED, 0 checks passed, 3 failed }
+    # Subtest: Logical operations
+        ok 1 - not (actual != 42)
+        not ok 2 - not (actual == 42)
+          ---
+          condition: not 42 == 42
+          at:
+            filename: comparisons.cpp
+            line: 594
+          ...
+        ok 3 - (actual == 42) and (actual == 42.0)
+        not ok 4 - (actual == 42) and (actual != 42.0)
+          ---
+          condition: (42 == 42 and 42f != 42)
+          at:
+            filename: comparisons.cpp
+            line: 603
+          ...
+        not ok 5 - (actual != 42) and (actual == 42.0)
+          ---
+          condition: (42 != 42 and 42f == 42)
+          at:
+            filename: comparisons.cpp
+            line: 608
+          ...
+        not ok 6 - (actual != 42) and (actual != 42.0)
+          ---
+          condition: (42 != 42 and 42f != 42)
+          at:
+            filename: comparisons.cpp
+            line: 613
+          ...
+        ok 7 - (42 == 42 and 42f == 42)
+        not ok 8
+          ---
+          condition: (42 == 42 and 42f != 42)
+          at:
+            filename: comparisons.cpp
+            line: 622
+          ...
+        ok 9 - (actual == 42) or (actual == 42.0)
+        ok 10 - (actual == 42) or (actual != 42.0)
+        ok 11 - (actual != 42) or (actual == 42.0)
+        not ok 12 - (actual != 42) or (actual != 42.0)
+          ---
+          condition: (42 != 42 or 42f != 42)
+          at:
+            filename: comparisons.cpp
+            line: 641
+          ...
+        1..12
+    not ok 11 - Logical operations # { FAILED, 6 checks passed, 6 failed }
+    1..11
+not ok 7 - Comparisons suite # { FAILED, 59 checks passed, 53 failed, in 11 test cases, time: 0.407 ms }
+# Subtest: Operators suite
+    # Subtest: Operators
+        ok 1 - actual == 42
+        not ok 2 - actual+1 == 42 with scalar
+          ---
+          at:
+            filename: operators.cpp
+            line: 44
+          ...
+        not ok 3 - actual+1 == 42 with _i literal
+          ---
+          condition: 43 == 42
+          at:
+            filename: operators.cpp
+            line: 48
+          ...
+        not ok 4 - actual+1 == 42 with _i()
+          ---
+          condition: 43 == 42
+          at:
+            filename: operators.cpp
+            line: 52
+          ...
+        ok 5 - actual+1 != 42
+        ok 6 - actual-1 < 42
+        ok 7 - actual <= 42
+        ok 8 - actual+1 > 42
+        ok 9 - actual >= 42
+        ok 10 - not (actual != 42)
+        not ok 11 - not (actual == 42)
+          ---
+          condition: not 42 == 42
+          at:
+            filename: operators.cpp
+            line: 74
+          ...
+        ok 12 - (actual == 42) and (actual == 42.0)
+        not ok 13 - (actual == 42) and (actual != 42.0)
+          ---
+          condition: (42 == 42 and 42f != 42)
+          at:
+            filename: operators.cpp
+            line: 82
+          ...
+        not ok 14 - (actual != 42) and (actual == 42.0)
+          ---
+          condition: (42 != 42 and 42f == 42)
+          at:
+            filename: operators.cpp
+            line: 87
+          ...
+        not ok 15 - (actual != 42) and (actual != 42.0)
+          ---
+          condition: (42 != 42 and 42f != 42)
+          at:
+            filename: operators.cpp
+            line: 92
+          ...
+        ok 16 - (42 == 42 and 42f == 42)
+        not ok 17
+          ---
+          condition: (42 == 42 and 42f != 42)
+          at:
+            filename: operators.cpp
+            line: 101
+          ...
+        ok 18 - (actual == 42) or (actual == 42.0)
+        ok 19 - (actual == 42) or (actual != 42.0)
+        ok 20 - (actual != 42) or (actual == 42.0)
+        not ok 21 - (actual != 42) or (actual != 42.0)
+          ---
+          condition: (42 != 42 or 42f != 42f)
+          at:
+            filename: operators.cpp
+            line: 120
+          ...
+        1..21
+    not ok 1 - Operators # { FAILED, 12 checks passed, 9 failed }
+    1..1
+not ok 8 - Operators suite # { FAILED, 12 checks passed, 9 failed, in 1 test case, time: 0.059 ms }
+# Subtest: Exceptions suite
+    # Subtest: thrown exceptions
+        ok 1 - exception thrown
+        ok 2 - std::runtime_error thrown
+        1..2
+    ok 1 - thrown exceptions # { passed, 2 checks }
+    # Subtest: Failed thrown exceptions
+        not ok 1 - exception thrown
+          ---
+          condition: throws
+          at:
+            filename: exceptions.cpp
+            line: 83
+          ...
+        not ok 2 - std::runtime_error thrown
+          ---
+          condition: throws<std::runtime_error>
+          at:
+            filename: exceptions.cpp
+            line: 91
+          ...
+        1..2
+    not ok 2 - Failed thrown exceptions # { FAILED, 0 checks passed, 2 failed }
+    # Subtest: Not thrown exceptions
+        ok 1 - exception not thrown
+        1..1
+    ok 3 - Not thrown exceptions # { passed, 1 check }
+    # Subtest: Failed not thrown exceptions
+        not ok 1 - exception not thrown
+          ---
+          condition: nothrow
+          at:
+            filename: exceptions.cpp
+            line: 130
+          ...
+        1..1
+    not ok 4 - Failed not thrown exceptions # { FAILED, 0 checks passed, 1 failed }
+    1..4
+not ok 9 - Exceptions suite # { FAILED, 3 checks passed, 3 failed, in 4 test cases, time: 0.220 ms }
+# Subtest: Miscellaneous suite
     # Subtest: Arrays
         ok 1 - array{ 42 } == array{ 42 }
         ok 2 - array{ 42 } != array{ 43 }
@@ -2680,29 +2689,29 @@ not ok 6 - Failed combinatorial floats # { FAILED, 0 checks passed, 42 failed, i
           ---
           condition: {42} != {42}
           at:
-            filename: main.cpp
-            line: 2240
+            filename: miscellaneous.cpp
+            line: 64
           ...
         not ok 2 - array{ 42 } eq array{ 43 }
           ---
           condition: {42} == {43}
           at:
-            filename: main.cpp
-            line: 2244
+            filename: miscellaneous.cpp
+            line: 68
           ...
         not ok 3 - array{ 1, 2 } ne array{ 1, 2 }
           ---
           condition: {1, 2} != {1, 2}
           at:
-            filename: main.cpp
-            line: 2248
+            filename: miscellaneous.cpp
+            line: 72
           ...
         not ok 4 - array{ 1, 2, 3 } eq array{ 1, 2, 4 }
           ---
           condition: {1, 2, 3} == {1, 2, 4}
           at:
-            filename: main.cpp
-            line: 2252
+            filename: miscellaneous.cpp
+            line: 76
           ...
         1..4
     not ok 2 - Arrays bad # { FAILED, 0 checks passed, 4 failed }
@@ -2720,47 +2729,47 @@ not ok 6 - Failed combinatorial floats # { FAILED, 0 checks passed, 42 failed, i
           ---
           condition: {} != {}
           at:
-            filename: main.cpp
-            line: 2304
+            filename: miscellaneous.cpp
+            line: 128
           ...
         not ok 2
           ---
           condition: {} != {}
           at:
-            filename: main.cpp
-            line: 2308
+            filename: miscellaneous.cpp
+            line: 132
           ...
         not ok 3 - vector{ 42 } != vector{ 42 }
           ---
           condition: {42} != {42}
           at:
-            filename: main.cpp
-            line: 2311
+            filename: miscellaneous.cpp
+            line: 135
           ...
         not ok 4 - vector{ 42 } == vector{ 43 }
           ---
           condition: {42} == {43}
           at:
-            filename: main.cpp
-            line: 2315
+            filename: miscellaneous.cpp
+            line: 139
           ...
         not ok 5 - vector{ 1, 2 } != vector{ 1, 2 }
           ---
           condition: {1, 2} != {1, 2}
           at:
-            filename: main.cpp
-            line: 2319
+            filename: miscellaneous.cpp
+            line: 143
           ...
         not ok 6 - vector{ 1, 2, 3 } == vector{ 1, 2, 4 }
           ---
           condition: {1, 2, 3} == {1, 2, 4}
           at:
-            filename: main.cpp
-            line: 2323
+            filename: miscellaneous.cpp
+            line: 147
           ...
         1..6
     not ok 4 - Vectors bad # { FAILED, 0 checks passed, 6 failed }
     1..4
-not ok 7 - Miscellaneous # { FAILED, 10 checks passed, 10 failed, in 4 test cases, time: 0.645 ms }
-1..7
-# { total: 321 checks passed, 323 failed, in 55 test cases, 7 test suites, time: 13.010 ms }
+not ok 10 - Miscellaneous suite # { FAILED, 10 checks passed, 10 failed, in 4 test cases, time: 0.150 ms }
+1..10
+# { total: 321 checks passed, 323 failed, in 55 test cases, 10 test suites, time: 2.593 ms }

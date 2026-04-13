@@ -39,11 +39,21 @@ _local_link_args = []
 _local_link_with = []
 
 _local_include_directories += [
-  # None.
+  'include'
 ]
 
 _local_sources += [
-  'src/main.cpp'
+  'src/main.cpp',
+  'src/static-asserts.cpp',
+  'src/integral-passed-combinations.cpp',
+  'src/integral-failed-combinations.cpp',
+  'src/float-passed-combinations.cpp',
+  'src/float-failed-combinations.cpp',
+  'src/comparisons.cpp',
+  'src/operators.cpp',
+  'src/exceptions.cpp',
+  'src/miscellaneous.cpp',
+  'src/support.cpp'
 ]
 
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
