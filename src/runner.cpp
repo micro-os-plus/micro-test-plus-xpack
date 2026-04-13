@@ -44,6 +44,9 @@
 
 #include <micro-os-plus/micro-test-plus.h>
 #include <micro-os-plus/diag/trace.h>
+#include <algorithm>
+
+#include <algorithm>
 
 // ----------------------------------------------------------------------------
 
