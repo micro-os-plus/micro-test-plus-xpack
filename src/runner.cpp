@@ -52,6 +52,7 @@
 
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
+#pragma clang diagnostic ignored "-Waggregate-return"
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-c++11-c++14-compat"
 #endif
