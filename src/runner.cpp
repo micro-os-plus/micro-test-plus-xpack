@@ -215,6 +215,13 @@ namespace micro_os_plus::micro_test_plus
   void
   runner::run_suites_ (void)
   {
+    std::sort (children_suites_.begin (), children_suites_.end (),
+               [] (const std::unique_ptr<class suite>& a,
+                   const std::unique_ptr<class suite>& b) noexcept
+      {
+        return std::string_view{ a->name () } < std::string_view{ b->name () };
+      });
+
     for (const auto& suite_ref : children_suites_)
       {
         // Run the child suite immediately.
@@ -357,6 +364,14 @@ namespace micro_os_plus::micro_test_plus
 
     if (static_children_suites_ != nullptr)
       {
+        std::sort (static_children_suites_->begin (),
+                   static_children_suites_->end (),
+                   [] (const static_suite* a, const static_suite* b) noexcept
+          {
+            return std::string_view{ a->name () }
+                   < std::string_view{ b->name () };
+          });
+
         for (auto* suite_ptr : *static_children_suites_)
           {
             // Update the suite's own index, this is needed for the TAP
