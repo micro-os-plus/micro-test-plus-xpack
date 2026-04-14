@@ -90,19 +90,13 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] const char*
     extract_file_name (const char* path) noexcept
     {
-      const char* last_slash = std::strrchr (path, '/');
-      const char* last_backslash = std::strrchr (path, '\\');
-
-      if (last_slash == nullptr && last_backslash == nullptr)
+      const std::string_view sv{ path };
+      const auto pos = sv.find_last_of ("/\\");
+      if (pos == std::string_view::npos)
         {
           return path; // No separators found, return original string.
         }
-
-      const char* last_separator
-          = (last_slash > last_backslash) ? last_slash : last_backslash;
-
-      return last_separator
-             + 1; // Return pointer to character after separator.
+      return sv.substr (pos + 1).data ();
     }
 
 /**
