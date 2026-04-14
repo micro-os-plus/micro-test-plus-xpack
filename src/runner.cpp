@@ -231,12 +231,23 @@ namespace micro_os_plus::micro_test_plus
   void
   runner::run_suites_ (void)
   {
-    std::sort (children_suites_.begin (), children_suites_.end (),
-               [] (const std::unique_ptr<class suite>& a,
-                   const std::unique_ptr<class suite>& b) noexcept
+    // Use selection sort with unique_ptr::swap (returns void) to avoid
+    // std::sort triggering -Waggregate-return via std::move_backward,
+    // which returns a class-type iterator when operating on unique_ptr
+    // elements.
+    const size_t n = children_suites_.size ();
+    for (size_t i = 0; i < n; ++i)
       {
-        return std::string_view{ a->name () } < std::string_view{ b->name () };
-      });
+        size_t min_idx = i;
+        for (size_t j = i + 1; j < n; ++j)
+          {
+            if (std::string_view{ children_suites_[j]->name () }
+                < std::string_view{ children_suites_[min_idx]->name () })
+              min_idx = j;
+          }
+        if (min_idx != i)
+          children_suites_[i].swap (children_suites_[min_idx]);
+      }
 
     for (const auto& suite_ref : children_suites_)
       {
@@ -392,13 +403,23 @@ namespace micro_os_plus::micro_test_plus
 
     if (static_children_suites_ != nullptr)
       {
-        std::sort (static_children_suites_->begin (),
-                   static_children_suites_->end (),
-                   [] (const static_suite* a, const static_suite* b) noexcept
+        // Use selection sort with std::swap on raw pointers (returns void)
+        // to avoid std::sort triggering -Waggregate-return via
+        // std::move_backward returning a class-type iterator.
+        const size_t n = static_children_suites_->size ();
+        auto& suites = *static_children_suites_;
+        for (size_t i = 0; i < n; ++i)
           {
-            return std::string_view{ a->name () }
-                   < std::string_view{ b->name () };
-          });
+            size_t min_idx = i;
+            for (size_t j = i + 1; j < n; ++j)
+              {
+                if (std::string_view{ suites[j]->name () }
+                    < std::string_view{ suites[min_idx]->name () })
+                  min_idx = j;
+              }
+            if (min_idx != i)
+              std::swap (suites[i], suites[min_idx]);
+          }
 
         for (auto* suite_ptr : *static_children_suites_)
           {
