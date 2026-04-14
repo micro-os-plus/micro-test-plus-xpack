@@ -107,6 +107,13 @@ namespace micro_os_plus::micro_test_plus
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
+#endif
+
     if (verbosity_ != verbosity::silent)
       {
         printf ("\n");
@@ -114,27 +121,24 @@ namespace micro_os_plus::micro_test_plus
 
     write_info_ ();
 
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-
-    const char* message = "TAP version 14\n";
+    const char* message = "TAP version 14";
     if (output_file_ != nullptr)
       {
-        fprintf (output_file_, "%s", message);
+        fprintf (output_file_, "%s\n", message);
       }
 
     if (verbosity_ != verbosity::silent)
       {
-        printf ("%s", message);
+        printf ("%s\n", message);
 
         flush ();
       }
 
-#pragma GCC diagnostic pop
-
     add_empty_line_ = false;
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
   }
 
   void
@@ -145,16 +149,14 @@ namespace micro_os_plus::micro_test_plus
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
-    size_t total_suites_count = runner.total_suites_count ();
-
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
+#endif
 
-    char message_summary[32];
-    snprintf (message_summary, sizeof (message_summary), "1..%zu\n",
-              total_suites_count);
+    size_t total_suites_count = runner.total_suites_count ();
 
     uint32_t milliseconds = 0;
     uint32_t microseconds = 0;
@@ -163,9 +165,13 @@ namespace micro_os_plus::micro_test_plus
         runner.timings ().compute_elapsed_time (milliseconds, microseconds);
       }
 
+    char message_summary[32];
+    snprintf (message_summary, sizeof (message_summary), "1..%zu",
+              total_suites_count);
+
     char message_totals[160];
     snprintf (message_totals, sizeof (message_totals),
-              "# { total: %zu check%s passed, %zu failed, in %zu test "
+              "total: %zu check%s passed, %zu failed, in %zu test "
               "case%s, %zu test suite%s",
               runner.totals ().successful_checks (),
               runner.totals ().successful_checks () == 1 ? "" : "s",
@@ -184,8 +190,8 @@ namespace micro_os_plus::micro_test_plus
 
     if (output_file_ != nullptr)
       {
-        fprintf (output_file_, "%s%s%s }\n", message_summary, message_totals,
-                 message_time);
+        fprintf (output_file_, "%s\n# { %s%s }\n", message_summary,
+                 message_totals, message_time);
       }
 
     if (verbosity_ != verbosity::silent)
@@ -197,7 +203,7 @@ namespace micro_os_plus::micro_test_plus
 
         if (verbosity_ != verbosity::quiet)
           {
-            printf ("%s", message_summary);
+            printf ("%s\n", message_summary);
           }
         else
           {
@@ -206,12 +212,14 @@ namespace micro_os_plus::micro_test_plus
             printf ("1..0\n");
           }
 
-        printf ("%s%s }\n", message_totals, message_time);
-
-#pragma GCC diagnostic pop
+        printf ("# { %s%s }\n", message_totals, message_time);
 
         flush ();
       }
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
   }
 
   // --------------------------------------------------------------------------
@@ -229,18 +237,20 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
+#endif
 
     char message_subtest[120];
-    snprintf (message_subtest, sizeof (message_subtest), "# Subtest: %s\n",
+    snprintf (message_subtest, sizeof (message_subtest), "# Subtest: %s",
               suite.name ());
 
     if (output_file_ != nullptr)
       {
-        fprintf (output_file_, "%s", message_subtest);
+        fprintf (output_file_, "%s\n", message_subtest);
       }
 
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
@@ -250,14 +260,16 @@ namespace micro_os_plus::micro_test_plus
             printf ("\n");
           }
 
-        printf ("%s", message_subtest);
+        printf ("%s\n", message_subtest);
 
         flush ();
 
         add_empty_line_ = true;
       }
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
   }
 
   void
@@ -279,16 +291,12 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
-
-    std::string indent (indent_size, ' ');
-
-    char message_summary[40];
-    snprintf (message_summary, sizeof (message_summary), "%s1..%zu\n",
-              indent.c_str (), suite.totals ().executed_subtests ());
+#endif
 
     uint32_t milliseconds = 0;
     uint32_t microseconds = 0;
@@ -297,6 +305,11 @@ namespace micro_os_plus::micro_test_plus
         suite.timings ().compute_elapsed_time (milliseconds, microseconds);
       }
 
+    std::string indent (indent_size, ' ');
+
+    char message_summary[40];
+    snprintf (message_summary, sizeof (message_summary), "%s1..%zu",
+              indent.c_str (), suite.totals ().executed_subtests ());
     char message_totals[120];
     if (suite.totals ().was_successful ()) [[likely]]
       {
@@ -334,7 +347,7 @@ namespace micro_os_plus::micro_test_plus
       {
         write_buffer_to_file_ ();
 
-        fprintf (output_file_, "%s%s%s }\n", message_summary, message_totals,
+        fprintf (output_file_, "%s\n%s%s }\n", message_summary, message_totals,
                  message_time);
       }
 
@@ -358,7 +371,7 @@ namespace micro_os_plus::micro_test_plus
                 write_buffer_to_stdout ();
               }
 
-            printf ("%s%s%s }\n", message_summary, message_totals,
+            printf ("%s\n%s%s }\n", message_summary, message_totals,
                     message_time);
           }
         else
@@ -369,18 +382,20 @@ namespace micro_os_plus::micro_test_plus
             // cases, as it may contain useful information about the failure.
             write_buffer_to_stdout ();
 
-            printf ("%s%s%s }\n", message_summary, message_totals,
+            printf ("%s\n%s%s }\n", message_summary, message_totals,
                     message_time);
           }
 
         flush ();
       }
 
-#pragma GCC diagnostic pop
-
     buffer_.clear ();
 
     add_empty_line_ = true;
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
   }
 
   // --------------------------------------------------------------------------
@@ -398,6 +413,13 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
+#endif
+
     if (!buffer_.empty ())
       {
         // Each suite should start with an empty buffer.
@@ -406,20 +428,15 @@ namespace micro_os_plus::micro_test_plus
         abort ();
       }
 
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-
     std::string indent (indent_size * subtest.nesting_depth (), ' ');
 
     char message_subtest[120];
-    snprintf (message_subtest, sizeof (message_subtest), "%s# Subtest: %s\n",
+    snprintf (message_subtest, sizeof (message_subtest), "%s# Subtest: %s",
               indent.c_str (), subtest.name ());
 
     if (output_file_ != nullptr)
       {
-        fprintf (output_file_, "%s", message_subtest);
+        fprintf (output_file_, "%s\n", message_subtest);
       }
 
     if (verbosity_ == verbosity::normal || verbosity_ == verbosity::verbose)
@@ -429,14 +446,16 @@ namespace micro_os_plus::micro_test_plus
             printf ("\n");
           }
 
-        printf ("%s", message_subtest);
+        printf ("%s\n", message_subtest);
 
         flush ();
 
         add_empty_line_ = false;
       }
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
   }
 
   void
@@ -459,16 +478,18 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic pop
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
 #endif
 
     std::string indent (indent_size * subtest.nesting_depth (), ' ');
     std::string indent2 (indent_size * (subtest.nesting_depth () + 1), ' ');
 
     char message_summary[40];
-    snprintf (message_summary, sizeof (message_summary), "%s1..%zu\n",
+    snprintf (message_summary, sizeof (message_summary), "%s1..%zu",
               indent2.c_str (),
               subtest.totals ().executed_checks ()
                   + subtest.totals ().executed_subtests ());
@@ -477,7 +498,7 @@ namespace micro_os_plus::micro_test_plus
     if (subtest.totals ().was_successful ()) [[likely]]
       {
         snprintf (message_totals, sizeof (message_totals),
-                  "%sok %zu - %s # { passed, %zu check%s }\n", indent.c_str (),
+                  "%sok %zu - %s # { passed, %zu check%s }", indent.c_str (),
                   subtest.own_index (), subtest.name (),
                   subtest.totals ().successful_checks (),
                   subtest.totals ().successful_checks () == 1 ? "" : "s");
@@ -486,7 +507,7 @@ namespace micro_os_plus::micro_test_plus
       {
         snprintf (message_totals, sizeof (message_totals),
                   "%snot ok %zu - %s # { FAILED, %zu check%s "
-                  "passed, %zu failed }\n",
+                  "passed, %zu failed }",
                   indent.c_str (), subtest.own_index (), subtest.name (),
                   subtest.totals ().successful_checks (),
                   subtest.totals ().successful_checks () == 1 ? "" : "s",
@@ -497,7 +518,7 @@ namespace micro_os_plus::micro_test_plus
       {
         write_buffer_to_file_ ();
 
-        fprintf (output_file_, "%s%s", message_summary, message_totals);
+        fprintf (output_file_, "%s\n%s\n", message_summary, message_totals);
       }
 
     // At this point, the buffer may contain output from the subtest, which
@@ -518,7 +539,7 @@ namespace micro_os_plus::micro_test_plus
                 // buffer.
                 write_buffer_to_stdout ();
 
-                printf ("%s", message_summary);
+                printf ("%s\n", message_summary);
               }
             else
               {
@@ -529,7 +550,7 @@ namespace micro_os_plus::micro_test_plus
                         subtest.totals ().executed_subtests ());
               }
 
-            printf ("%s", message_totals);
+            printf ("%s\n", message_totals);
           }
         else
           {
@@ -540,17 +561,19 @@ namespace micro_os_plus::micro_test_plus
             // failure.
             write_buffer_to_stdout ();
 
-            printf ("%s%s", message_summary, message_totals);
+            printf ("%s\n%s\n", message_summary, message_totals);
           }
 
         flush ();
       }
 
-#pragma GCC diagnostic pop
-
     buffer_.clear ();
 
     add_empty_line_ = true;
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
   }
 
   // --------------------------------------------------------------------------
