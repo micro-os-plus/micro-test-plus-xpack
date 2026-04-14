@@ -75,9 +75,11 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
+#endif
 #endif
   template <class T>
   void
@@ -88,7 +90,9 @@ namespace micro_os_plus::micro_test_plus
     if (ec == std::errc{})
       buffer.append (buf, ptr);
   }
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
 
   // --------------------------------------------------------------------------
 
@@ -121,14 +125,18 @@ namespace micro_os_plus::micro_test_plus
         buffer_.append ("0x0");
         return *this;
       }
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
+#endif
     char buff[20];
     snprintf (buff, sizeof (buff), "%p", reinterpret_cast<void*> (v));
     buffer_.append (buff);
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
 
     return *this;
   }

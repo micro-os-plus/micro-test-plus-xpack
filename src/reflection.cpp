@@ -48,8 +48,10 @@
 
 // ----------------------------------------------------------------------------
 
+#if defined(__GNUC__)
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
+#endif
 #endif
 
 // ============================================================================
@@ -76,16 +78,20 @@ namespace micro_os_plus::micro_test_plus
     const char*
     short_name (const char* name) noexcept
     {
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
+#endif
 #endif
       const char* p = strrchr (name, '/');
       if (p != nullptr)
         return p + 1;
       else
         return name;
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
     }
 
   } // namespace reflection

@@ -22,10 +22,14 @@
 
 // ----------------------------------------------------------------------------
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #endif
+#endif
+
+// ----------------------------------------------------------------------------
 
 // Mock functions used to simulate code computing various
 // integer/float/strings.
@@ -51,7 +55,9 @@ my_actual_integral_more (void)
   return 43;
 }
 
-#pragma GCC diagnostic pop
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#endif
 
 template <typename T>
 T

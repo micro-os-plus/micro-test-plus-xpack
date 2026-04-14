@@ -29,12 +29,14 @@ using namespace std::literals;
 
 // ----------------------------------------------------------------------------
 
+#if defined(__GNUC__)
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wshadow-uncaptured-local"
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #else // GCC only
 #pragma GCC diagnostic ignored "-Wshadow"
+#endif
 #endif
 
 // ----------------------------------------------------------------------------
@@ -47,23 +49,29 @@ using namespace std::literals;
 #define test_assert(EX) \
   (void)((EX) || (local_test_assert (#EX, __FILE__, __LINE__), 0))
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
+#endif
+
 static void __attribute__ ((noreturn))
 local_test_assert (const char* failedexpr, const char* file, int line)
 {
-  fprintf (stdout, "\nassertion \"%s\" failed\n", failedexpr);
-  fprintf (stdout, "file: \"%s\"\n", file);
-  fprintf (stdout, "line: %d\n", line);
+  fprintf (stderr, "\nassertion \"%s\" failed\n", failedexpr);
+  fprintf (stderr, "file: \"%s\"\n", file);
+  fprintf (stderr, "line: %d\n", line);
 
-  fprintf (stdout, "\nµTest++ test failed!\n\n");
+  fprintf (stderr, "\nµTest++ empty test failed!\n\n");
 
   abort ();
   /* NOTREACHED */
 }
+
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
 
 // ----------------------------------------------------------------------------
 

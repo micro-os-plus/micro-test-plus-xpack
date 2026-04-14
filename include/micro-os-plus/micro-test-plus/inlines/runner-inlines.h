@@ -43,6 +43,8 @@
 #endif
 #endif
 
+// ============================================================================
+
 namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
@@ -54,12 +56,16 @@ namespace micro_os_plus::micro_test_plus
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
+#endif
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name);
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
     auto child_suite = std::make_unique<class suite> (

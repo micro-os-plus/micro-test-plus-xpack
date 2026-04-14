@@ -34,9 +34,11 @@
 
 // ----------------------------------------------------------------------------
 
+#if defined(__GNUC__)
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wpre-c++17-compat"
+#endif
 #endif
 
 // ============================================================================
@@ -54,13 +56,17 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
+#endif
     trace::printf ("%s -> +%zu -%zu in xs%zu\n", __PRETTY_FUNCTION__,
                    successful_checks_, failed_checks_, executed_subtests_);
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
     return *this;

@@ -52,11 +52,13 @@
 
 // ----------------------------------------------------------------------------
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunknown-warning-option"
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
+#endif
 #endif
 
 // =============================================================================
@@ -123,14 +125,18 @@ namespace micro_os_plus::micro_test_plus
         output_file_ = fopen (output_file_sv.data (), "w");
         if (output_file_ == nullptr)
           {
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
+#endif
             fprintf (stderr, "error: Failed to open output file '%.*s'\n",
                      static_cast<int> (output_file_sv.size ()),
                      output_file_sv.data ());
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
             exit (1);
           }
       }
@@ -616,14 +622,18 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   reporter::operator<< (long double v)
   {
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
+#endif
     char buf[64];
     snprintf (buf, sizeof (buf), "%Lg", v);
     buffer_.append (buf);
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
     buffer_.append ("l");
     return *this;
   }

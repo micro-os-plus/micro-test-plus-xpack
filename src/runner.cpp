@@ -46,15 +46,15 @@
 #include <micro-os-plus/diag/trace.h>
 #include <algorithm>
 
-#include <algorithm>
-
 // ----------------------------------------------------------------------------
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic ignored "-Waggregate-return"
-#if defined(__clang_)
+#if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-c++11-c++14-compat"
 #pragma clang diagnostic ignored "-Wpre-c++17-compat"
+#endif
 #endif
 
 // ============================================================================
@@ -77,12 +77,16 @@ namespace micro_os_plus::micro_test_plus
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
+#endif
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name ());
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
   }
 
@@ -96,9 +100,11 @@ namespace micro_os_plus::micro_test_plus
     // reporter_ is a unique_ptr; destroyed automatically.
   }
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
+#endif
 #endif
   /**
    * @details
@@ -196,7 +202,9 @@ namespace micro_os_plus::micro_test_plus
 
     return top_suite_;
   }
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
 
   // --------------------------------------------------------------------------
 
@@ -205,12 +213,16 @@ namespace micro_os_plus::micro_test_plus
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
+#endif
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite->name ());
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
     children_suites_.push_back (std::move (suite));
@@ -259,12 +271,16 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
+#endif
     trace::printf ("%s -> %d\n", __PRETTY_FUNCTION__, result);
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
     return result;
@@ -287,13 +303,17 @@ namespace micro_os_plus::micro_test_plus
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
+#endif
     fprintf (stderr, "\nerror: test execution aborted at %s:%u\n",
              reflection::short_name (sl.file_name ()), sl.line ());
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
 
     ::abort ();
   }
@@ -317,12 +337,16 @@ namespace micro_os_plus::micro_test_plus
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
+#endif
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name ());
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
   }
 
@@ -401,12 +425,16 @@ namespace micro_os_plus::micro_test_plus
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
+#endif
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
     if (runner.static_children_suites_ == nullptr)

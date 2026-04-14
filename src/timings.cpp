@@ -33,12 +33,18 @@
 
 #include <cassert>
 
+// ----------------------------------------------------------------------------
+
+#if defined(__GNUC__)
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wpre-c++17-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
 #endif
+#endif
+
+// ============================================================================
 
 namespace micro_os_plus::micro_test_plus
 {

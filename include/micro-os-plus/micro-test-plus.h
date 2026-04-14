@@ -95,6 +95,8 @@
 #endif
 #endif
 
+// ============================================================================
+
 /**
  * @namespace micro_os_plus::micro_test_plus
  * @brief Primary namespace for the µTest++ testing framework.
@@ -119,7 +121,6 @@
  * folder, ensuring a clear separation from user code and facilitating
  * straightforward integration with the wider µOS++ ecosystem.
  */
-// =============================================================================
 
 namespace micro_os_plus::micro_test_plus
 {

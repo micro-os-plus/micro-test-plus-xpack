@@ -15,12 +15,16 @@
 
 using namespace micro_os_plus::micro_test_plus;
 
+// ----------------------------------------------------------------------------
+
+#if defined(__GNUC__)
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #pragma GCC diagnostic ignored "-Wsign-compare"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wexit-time-destructors"
 #pragma clang diagnostic ignored "-Wglobal-constructors"
+#endif
 #endif
 
 // ----------------------------------------------------------------------------
