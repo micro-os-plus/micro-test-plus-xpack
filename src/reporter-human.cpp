@@ -121,6 +121,13 @@ namespace micro_os_plus::micro_test_plus
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
+#endif
+
     if (verbosity_ != verbosity::silent)
       {
         printf ("\n");
@@ -142,6 +149,10 @@ namespace micro_os_plus::micro_test_plus
       }
 
     add_empty_line_ = true;
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
   }
 
   void
