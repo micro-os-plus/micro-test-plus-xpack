@@ -108,7 +108,7 @@ TAP version 14
         ok 1 - inner subtest # { passed, 1 check }
         1..1
     ok 11 - Nested subtests # { passed, 0 checks }
-    1..12
+    1..11
 not ok 1 - Static top suite # { FAILED, 34 checks passed, 6 failed, in 12 test cases, time: 0.203 ms }
 # Subtest: Dynamic suite
     # Subtest: check in dynamic suite

@@ -309,7 +309,7 @@ namespace micro_os_plus::micro_test_plus
 
     char message_summary[40];
     snprintf (message_summary, sizeof (message_summary), "%s1..%zu",
-              indent.c_str (), suite.totals ().executed_subtests ());
+              indent.c_str (), suite.children_subtests_count ());
     char message_totals[120];
     if (suite.totals ().was_successful ()) [[likely]]
       {

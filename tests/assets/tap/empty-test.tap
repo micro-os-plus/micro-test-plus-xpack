@@ -8,7 +8,7 @@ TAP version 14
         ok 1 - Empty nested test # { passed, 0 checks }
         1..1
     ok 1 - Test with nested subtest # { passed, 0 checks }
-    1..2
+    1..1
 ok 1 - Top suite with nested subtests # { passed, 0 checks in 2 test cases, time: 0.038 ms }
 1..1
 # { total: 0 checks passed, 0 failed, in 2 test cases, 1 test suite, time: 0.067 ms }
