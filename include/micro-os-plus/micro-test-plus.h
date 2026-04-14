@@ -192,6 +192,9 @@ namespace micro_os_plus::micro_test_plus
    */
   namespace utility
   {
+    [[nodiscard]] const char*
+    extract_file_name (const char* path) noexcept;
+    
     /**
      * @ingroup micro-test-plus-utility-functions
      * @brief Check if a string matches a pattern.

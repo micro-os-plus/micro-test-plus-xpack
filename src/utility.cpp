@@ -69,6 +69,42 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wdocumentation"
 #endif
 #endif
+    /**
+     * @details
+     * The `extract_file_name` function extracts the file name from a given
+     * file path, handling both Unix-style (`/`) and Windows-style (`\`) path
+     * separators. It returns a pointer to the start of the file name within
+     * the input string, or the original string if no separators are found.
+     *
+     * This utility is particularly useful for test reporting, allowing for
+     * concise display of file names without full paths.
+     *
+     * @par Example
+     *
+     * @code{.cpp}
+     * const char* path = "/home/user/project/test.cpp";
+     * const char* filename = utility::extract_file_name (path);
+     * // filename now points to "test.cpp"
+     * @endcode
+     */
+    [[nodiscard]] const char*
+    extract_file_name (const char* path) noexcept
+    {
+      const char* last_slash = std::strrchr (path, '/');
+      const char* last_backslash = std::strrchr (path, '\\');
+
+      if (last_slash == nullptr && last_backslash == nullptr)
+        {
+          return path; // No separators found, return original string.
+        }
+
+      const char* last_separator
+          = (last_slash > last_backslash) ? last_slash : last_backslash;
+
+      return last_separator
+             + 1; // Return pointer to character after separator.
+    }
+
 /**
  * @details
  * This function enables pattern-based string comparison for tests, supporting
