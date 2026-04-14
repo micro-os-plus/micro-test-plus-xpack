@@ -57,13 +57,17 @@ compute_ultimate_answer (void)
   // reliable, plus that the compiler will coalesce strings and test
   // results will not be accurate.
   static char str[10];
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
+#endif
   strcpy (str, "forty");
   strcat (str, "two");
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
   return str;
 }
 
@@ -202,14 +206,16 @@ main (int argc, char* argv[])
       t.expect (mt::eq (add (3), 43)) << "lambda returns 43";
     });
 
-  // --------------------------------------------------------------------------
+// --------------------------------------------------------------------------
 
-  // Test case with arguments.
-  // The lambdas are special functions, which may be passed arguments
-  // or may automatically capture variables from their local scope.
+// Test case with arguments.
+// The lambdas are special functions, which may be passed arguments
+// or may automatically capture variables from their local scope.
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
+#endif
 #endif
   ts.test ("Check args", [] (auto& t, int _argc, char* _argv[])
     {
@@ -231,7 +237,9 @@ main (int argc, char* argv[])
   // to the lambda. An alternate solution is to capture them by value
   // since the lambda is also a closure.
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
 
   // --------------------------------------------------------------------------
 
@@ -260,14 +268,18 @@ main (int argc, char* argv[])
       t.expect (mt::throws ([] { exercise_throw (true); }))
           << "exception thrown";
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
 #endif
+#endif
       t.expect (mt::throws<std::runtime_error> ([]
         { throw std::runtime_error{ "" }; }))
           << "std::runtime_error thrown";
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
     });
 
   ts.test ("Check if exceptions are not thrown", [] (auto& t)

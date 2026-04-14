@@ -59,14 +59,18 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
             << "exception thrown";
         local_counts.successful_checks++;
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
 #endif
+#endif
         t.expect (throws<std::runtime_error> ([]
           { throw std::runtime_error{ "" }; }))
             << "std::runtime_error thrown";
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
 
         local_counts.successful_checks++;
 
@@ -88,14 +92,18 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
             << "exception thrown";
         local_counts.failed_checks++;
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
 #endif
+#endif
         t.expect (throws<std::runtime_error> ([] ()
           { throw std::invalid_argument{ "" }; }))
             << "std::runtime_error thrown";
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif
 
         local_counts.failed_checks++;
 
