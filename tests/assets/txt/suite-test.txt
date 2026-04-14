@@ -1,0 +1,26 @@
+Running: suite-test one two --reporter human --output-file suite-test.txt
+Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG, with MICRO_OS_PLUS_TRACE
+µTest++ human report
+• Static top suite
+    • Check various conditions 2.1
+        ✓ answer is 42
+        ✓ condition is true
+    ✓ Check various conditions 2.1 - passed (2 checks)
+    • Check various conditions 2.2
+        ✓ answer is 42
+        ✓ condition is true
+    ✓ Check various conditions 2.2 - passed (2 checks)
+✓ Static top suite - passed (4 checks in 2 test cases), time: 0.040 ms
+• Local suite 2
+    • Check various conditions in suite
+        ✓ answer is 42
+        ✓ condition is true
+    ✓ Check various conditions in suite - passed (2 checks)
+✓ Local suite 2 - passed (2 checks in 1 test case), time: 0.016 ms
+• Static suite
+    • Check various conditions
+        ✓ answer is 42
+        ✓ condition is true
+    ✓ Check various conditions - passed (2 checks)
+✓ Static suite - passed (2 checks in 1 test case), time: 0.016 ms
+✓ Total: 8 checks passed, 0 failed, in 4 test cases, 3 test suites, time: 0.115 ms

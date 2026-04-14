@@ -1,0 +1,10 @@
+Running: empty-test one two --reporter human --output-file empty-test.txt
+Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG, with MICRO_OS_PLUS_TRACE
+µTest++ human report
+• Top suite with nested subtests
+    • Test with nested subtest
+        • Empty nested test
+        ✓ Empty nested test - passed (0 checks)
+    ✓ Test with nested subtest - passed (0 checks)
+✓ Top suite with nested subtests - passed (0 checks in 2 test cases), time: 0.035 ms
+✓ Total: 0 checks passed, 0 failed, in 2 test cases, 1 test suite, time: 0.082 ms

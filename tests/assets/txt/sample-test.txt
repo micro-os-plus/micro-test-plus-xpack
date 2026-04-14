@@ -1,0 +1,88 @@
+Running: sample-test one two --reporter human --output-file sample-test.txt
+Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG, with MICRO_OS_PLUS_TRACE
+µTest++ human report
+• Sample
+    • Check various conditions
+        ✓ answer eq 42
+        ✓ answer ne 43
+        ✓ answer lt 43
+        ✓ answer le 42
+        ✓ answer gt 43
+        ✓ answer ge 42
+        ✓ condition is true
+    ✓ Check various conditions - passed (7 checks)
+    • Check various conditions with operators
+        ✓ answer == 42 (with literal)
+        ✓ answer == 42 (with cast)
+        ✓ answer != 43
+        ✓ answer < 43
+        ✓ answer <= 42
+        ✓ answer > 43
+        ✓ answer >= 42
+    ✓ Check various conditions with operators - passed (7 checks)
+    • Check strings
+        ✓ ultimate answer is 'fortytwo'
+    ✓ Check strings - passed (1 check)
+    • Check strings with operators
+        ✓ ultimate answer == 'fortytwo'
+    ✓ Check strings with operators - passed (1 check)
+    • Check compound conditions
+        ✓ logical 'and' expression
+    ✓ Check compound conditions - passed (1 check)
+    • Check compound conditions with operators
+        ✓ logical 'and' expression with operators
+    ✓ Check compound conditions with operators - passed (1 check)
+    • Check multiple function invocations
+        ✓ lambda returns 42
+        ✓ lambda returns 43
+    ✓ Check multiple function invocations - passed (2 checks)
+    • Check args
+        ✓ argc >= 2
+        ✓ argv[1] is 'one'
+        ✓ argv[2] is 'two'
+    ✓ Check args - passed (3 checks)
+    • Check complex logic
+        ✓ xyz passed
+    ✓ Check complex logic - passed (1 check)
+    • Check if exceptions are thrown
+        ✓ exception thrown
+        ✓ std::runtime_error thrown
+    ✓ Check if exceptions are thrown - passed (2 checks)
+    • Check if exceptions are not thrown
+        ✓ exception not thrown
+    ✓ Check if exceptions are not thrown - passed (1 check)
+    • Check containers
+        ✓ vector{ 1, 2 } eq vector{ 1, 2 }
+        ✓ vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }
+    ✓ Check containers - passed (2 checks)
+    • Check containers with operators
+        ✓ vector{ 1, 2 } == vector{ 1, 2 }
+        ✓ vector{ 1, 2, 3 } != vector{ 1, 2, 4 }
+    ✓ Check containers with operators - passed (2 checks)
+✓ Sample - passed (31 checks in 13 test cases), time: 0.398 ms
+• Args suite
+    • args
+        ✓ ic is 42
+        ✓ iv is 43
+        ✓ ir is 44
+        ✓ *ip1 is 45
+        ✓ *ip2 is 46
+    ✓ args - passed (5 checks)
+✓ Args suite - passed (5 checks in 1 test case), time: 0.020 ms
+• Explicit namespace suite
+    • Check one
+        ✓ Passed
+    ✓ Check one - passed (1 check)
+    • Check two
+        ✓ Passed
+    ✓ Check two - passed (1 check)
+✓ Explicit namespace suite - passed (2 checks in 2 test cases), time: 0.034 ms
+• Implicit namespace suite
+    • Check one
+        ✓ Passed
+    ✓ Check one - passed (1 check)
+    • Check two
+        ✓ Passed
+    ✓ Check two - passed (1 check)
+✓ Implicit namespace suite - passed (2 checks in 2 test cases), time: 0.031 ms
+✓ Total: 40 checks passed, 0 failed, in 18 test cases, 4 test suites, time: 0.546 ms

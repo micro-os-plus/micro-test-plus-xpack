@@ -27,11 +27,15 @@ if (XPACK_ENABLE_EMPTY_TEST)
 
   message (VERBOSE "A> empty-test")
 
+  # ---------------------------------------------------------------------------
+  # TAP reporter
+
   add_test (NAME "empty-test --verbose"
             COMMAND empty-test one two --verbose --output-file
                     empty-test-verbose.tap
   )
 
+  # --verbose
   add_test (
     NAME "empty-test compare-tap --verbose"
     COMMAND
@@ -44,6 +48,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
                                                   "empty-test --verbose"
   )
 
+  # default
   add_test (NAME "empty-test" COMMAND empty-test one two --output-file
                                       empty-test.tap
   )
@@ -57,6 +62,76 @@ if (XPACK_ENABLE_EMPTY_TEST)
   )
   set_tests_properties (
     "empty-test compare-tap" PROPERTIES DEPENDS "empty-test"
+  )
+
+  # --quiet
+  add_test (NAME "empty-test --quiet"
+            COMMAND empty-test one two --quiet --output-file
+                    empty-test-quiet.tap
+  )
+
+  add_test (
+    NAME "empty-test compare-tap --quiet"
+    COMMAND
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      "empty-test-quiet.tap"
+      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/empty-test.tap"
+  )
+  set_tests_properties (
+    "empty-test compare-tap --quiet" PROPERTIES DEPENDS "empty-test --quiet"
+  )
+
+  # --silent
+  add_test (NAME "empty-test --silent"
+            COMMAND empty-test one two --silent --output-file
+                    empty-test-silent.tap
+  )
+
+  add_test (
+    NAME "empty-test compare-tap --silent"
+    COMMAND
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      "empty-test-silent.tap"
+      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/empty-test.tap"
+  )
+  set_tests_properties (
+    "empty-test compare-tap --silent" PROPERTIES DEPENDS "empty-test --silent"
+  )
+
+  # ---------------------------------------------------------------------------
+  # Human reporter
+
+  # --verbose
+  add_test (NAME "empty-test --verbose --reporter human"
+            COMMAND empty-test one two --verbose --reporter human
+  )
+
+  # default
+  add_test (NAME "empty-test --reporter human"
+            COMMAND empty-test one two --reporter human --output-file
+                    empty-test.txt
+  )
+
+  add_test (
+    NAME "empty-test compare-tap --reporter human"
+    COMMAND
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      "empty-test.txt"
+      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/empty-test.txt"
+  )
+  set_tests_properties (
+    "empty-test compare-tap --reporter human"
+    PROPERTIES DEPENDS "empty-test --reporter human"
+  )
+
+  # --quiet
+  add_test (NAME "empty-test --quiet --reporter human"
+            COMMAND empty-test one two --quiet --reporter human
+  )
+
+  # --silent
+  add_test (NAME "empty-test --silent --reporter human"
+            COMMAND empty-test one two --silent --reporter human
   )
 
 endif ()
@@ -152,15 +227,36 @@ if (XPACK_ENABLE_MINIMAL_TEST)
 
   # ---------------------------------------------------------------------------
   # Human reporter
+
+  # --verbose
   add_test (NAME "minimal-test --verbose --reporter human"
             COMMAND minimal-test one two --verbose --reporter human
   )
-  add_test (NAME "minimal-test --reporter human" COMMAND minimal-test one two
-                                                         --reporter human
+
+  # default
+  add_test (NAME "minimal-test --reporter human"
+            COMMAND minimal-test one two --reporter human --output-file
+                    minimal-test.txt
   )
+
+  add_test (
+    NAME "minimal-test compare-tap --reporter human"
+    COMMAND
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      "minimal-test.txt"
+      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/minimal-test.txt"
+  )
+  set_tests_properties (
+    "minimal-test compare-tap --reporter human"
+    PROPERTIES DEPENDS "minimal-test --reporter human"
+  )
+
+  # --quiet
   add_test (NAME "minimal-test --quiet --reporter human"
             COMMAND minimal-test one two --quiet --reporter human
   )
+
+  # --silent
   add_test (NAME "minimal-test --silent --reporter human"
             COMMAND minimal-test one two --silent --reporter human
   )
@@ -252,15 +348,35 @@ if (XPACK_ENABLE_SUITE_TEST)
   # ---------------------------------------------------------------------------
   # Human reporter
 
+  # --verbose
   add_test (NAME "suite-test --verbose --reporter human"
             COMMAND suite-test one two --verbose --reporter human
   )
-  add_test (NAME "suite-test --reporter human" COMMAND suite-test one two
-                                                       --reporter human
+
+  # default
+  add_test (NAME "suite-test --reporter human"
+            COMMAND suite-test one two --reporter human --output-file
+                    suite-test.txt
   )
+
+  add_test (
+    NAME "suite-test compare-tap --reporter human"
+    COMMAND
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      "suite-test.txt"
+      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/suite-test.txt"
+  )
+  set_tests_properties (
+    "suite-test compare-tap --reporter human"
+    PROPERTIES DEPENDS "suite-test --reporter human"
+  )
+
+  # --quiet
   add_test (NAME "suite-test --quiet --reporter human"
             COMMAND suite-test one two --quiet --reporter human
   )
+
+  # --silent
   add_test (NAME "suite-test --silent --reporter human"
             COMMAND suite-test one two --silent --reporter human
   )
@@ -351,15 +467,35 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   # ---------------------------------------------------------------------------
   # Human reporter
 
+  # --verbose
   add_test (NAME "sample-test --verbose --reporter human"
             COMMAND sample-test one two --verbose --reporter human
   )
-  add_test (NAME "sample-test --reporter human" COMMAND sample-test one two
-                                                        --reporter human
+
+  # default
+  add_test (NAME "sample-test --reporter human"
+            COMMAND sample-test one two --reporter human --output-file
+                    sample-test.txt
   )
+
+  add_test (
+    NAME "sample-test compare-tap --reporter human"
+    COMMAND
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      "sample-test.txt"
+      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/sample-test.txt"
+  )
+  set_tests_properties (
+    "sample-test compare-tap --reporter human"
+    PROPERTIES DEPENDS "sample-test --reporter human"
+  )
+
+  # --quiet
   add_test (NAME "sample-test --quiet --reporter human"
             COMMAND sample-test one two --quiet --reporter human
   )
+
+  # --silent
   add_test (NAME "sample-test --silent --reporter human"
             COMMAND sample-test one two --silent --reporter human
   )
@@ -376,22 +512,17 @@ if (XPACK_ENABLE_UNIT_TEST)
   # ---------------------------------------------------------------------------
   # TAP reporter
 
-  # --verbose 
+  # --verbose
 
-  # add_test (NAME "unit-test --verbose --reporter tap" 
-  #           COMMAND unit-test --verbose --reporter tap --output-file unit-test-verbose.tap) 
+  # add_test (NAME "unit-test --verbose --reporter tap" COMMAND unit-test
+  # --verbose --reporter tap --output-file unit-test-verbose.tap)
 
-  # add_test (
-  #   NAME "unit-test compare-tap --verbose"
-  #   COMMAND
-  #     bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
-  #     "unit-test-verbose.tap"
-  #     "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/unit-test.tap"
-  # )
-  # set_tests_properties (
-  #   "unit-test compare-tap --verbose"
-  #   PROPERTIES DEPENDS "unit-test --verbose --reporter tap"
-  # )
+  # add_test ( NAME "unit-test compare-tap --verbose" COMMAND bash
+  # "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+  # "unit-test-verbose.tap"
+  # "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/unit-test.tap" )
+  # set_tests_properties ( "unit-test compare-tap --verbose" PROPERTIES DEPENDS
+  # "unit-test --verbose --reporter tap" )
 
   # add_test (NAME "unit-test --reporter tap" COMMAND unit-test --reporter tap)
 
@@ -434,15 +565,34 @@ if (XPACK_ENABLE_UNIT_TEST)
   # ---------------------------------------------------------------------------
   # Human reporter
 
+  # --verbose
   add_test (NAME "unit-test --verbose --reporter human"
             COMMAND unit-test --verbose --reporter human
   )
-  add_test (NAME "unit-test --reporter human" COMMAND unit-test --reporter
-                                                      human
+
+  # default
+  add_test (NAME "unit-test --reporter human"
+            COMMAND unit-test --reporter human --output-file unit-test.txt
   )
+
+  add_test (
+    NAME "unit-test compare-tap --reporter human"
+    COMMAND
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      "unit-test.txt"
+      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/unit-test.txt"
+  )
+  set_tests_properties (
+    "unit-test compare-tap --reporter human"
+    PROPERTIES DEPENDS "unit-test --reporter human"
+  )
+
+  # --quiet
   add_test (NAME "unit-test --quiet --reporter human" COMMAND unit-test --quiet
                                                               --reporter human
   )
+
+  # --silent
   add_test (NAME "unit-test --silent --reporter human"
             COMMAND unit-test --silent --reporter human
   )
