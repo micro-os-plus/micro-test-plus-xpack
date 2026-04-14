@@ -39,7 +39,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
   add_test (
     NAME "empty-test compare-tap --verbose"
     COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
       "empty-test-verbose.tap"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/empty-test.tap"
   )
@@ -56,7 +56,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
   add_test (
     NAME "empty-test compare-tap"
     COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
       "empty-test.tap"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/empty-test.tap"
   )
@@ -73,7 +73,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
   add_test (
     NAME "empty-test compare-tap --quiet"
     COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
       "empty-test-quiet.tap"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/empty-test.tap"
   )
@@ -90,7 +90,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
   add_test (
     NAME "empty-test compare-tap --silent"
     COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
       "empty-test-silent.tap"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/empty-test.tap"
   )
@@ -115,7 +115,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
   add_test (
     NAME "empty-test compare-tap --reporter human"
     COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
       "empty-test.txt"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/empty-test.txt"
   )
@@ -163,7 +163,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
   add_test (
     NAME "minimal-test compare-tap --verbose"
     COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
       "minimal-test-verbose.tap"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/minimal-test.tap"
   )
@@ -181,7 +181,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
   add_test (
     NAME "minimal-test compare-tap"
     COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
       "minimal-test.tap"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/minimal-test.tap"
   )
@@ -198,7 +198,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
   add_test (
     NAME "minimal-test compare-tap --quiet"
     COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
       "minimal-test-quiet.tap"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/minimal-test.tap"
   )
@@ -216,7 +216,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
   add_test (
     NAME "minimal-test compare-tap --silent"
     COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
       "minimal-test-silent.tap"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/minimal-test.tap"
   )
@@ -242,7 +242,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
   add_test (
     NAME "minimal-test compare-tap --reporter human"
     COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
       "minimal-test.txt"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/minimal-test.txt"
   )
@@ -283,7 +283,7 @@ if (XPACK_ENABLE_SUITE_TEST)
   add_test (
     NAME "suite-test compare-tap --verbose"
     COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
       "suite-test-verbose.tap"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/suite-test.tap"
   )
@@ -301,7 +301,7 @@ if (XPACK_ENABLE_SUITE_TEST)
   add_test (
     NAME "suite-test compare-tap"
     COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
       "suite-test.tap"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/suite-test.tap"
   )
@@ -318,7 +318,7 @@ if (XPACK_ENABLE_SUITE_TEST)
   add_test (
     NAME "suite-test compare-tap --quiet"
     COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
       "suite-test-quiet.tap"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/suite-test.tap"
   )
@@ -336,7 +336,7 @@ if (XPACK_ENABLE_SUITE_TEST)
   add_test (
     NAME "suite-test compare-tap --silent"
     COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
       "suite-test-silent.tap"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/suite-test.tap"
   )
@@ -362,7 +362,7 @@ if (XPACK_ENABLE_SUITE_TEST)
   add_test (
     NAME "suite-test compare-tap --reporter human"
     COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
       "suite-test.txt"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/suite-test.txt"
   )
@@ -402,7 +402,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   add_test (
     NAME "sample-test compare-tap --verbose"
     COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
       "sample-test-verbose.tap"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/sample-test.tap"
   )
@@ -420,7 +420,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   add_test (
     NAME "sample-test compare-tap"
     COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
       "sample-test.tap"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/sample-test.tap"
   )
@@ -437,7 +437,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   add_test (
     NAME "sample-test compare-tap --quiet"
     COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
       "sample-test-quiet.tap"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/sample-test.tap"
   )
@@ -455,7 +455,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   add_test (
     NAME "sample-test compare-tap --silent"
     COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
       "sample-test-silent.tap"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/sample-test.tap"
   )
@@ -481,7 +481,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   add_test (
     NAME "sample-test compare-tap --reporter human"
     COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
       "sample-test.txt"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/sample-test.txt"
   )
@@ -518,7 +518,7 @@ if (XPACK_ENABLE_UNIT_TEST)
   # --verbose --reporter tap --output-file unit-test-verbose.tap)
 
   # add_test ( NAME "unit-test compare-tap --verbose" COMMAND bash
-  # "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+  # "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
   # "unit-test-verbose.tap"
   # "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/unit-test.tap" )
   # set_tests_properties ( "unit-test compare-tap --verbose" PROPERTIES DEPENDS
@@ -535,7 +535,7 @@ if (XPACK_ENABLE_UNIT_TEST)
   add_test (
     NAME "unit-test compare-tap --quiet"
     COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
       "unit-test-quiet.tap"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/unit-test.tap"
   )
@@ -553,7 +553,7 @@ if (XPACK_ENABLE_UNIT_TEST)
   add_test (
     NAME "unit-test compare-tap --silent"
     COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
       "unit-test-silent.tap"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/unit-test.tap"
   )
@@ -578,7 +578,7 @@ if (XPACK_ENABLE_UNIT_TEST)
   add_test (
     NAME "unit-test compare-tap --reporter human"
     COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-tap-files.sh"
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
       "unit-test.txt"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/unit-test.txt"
   )

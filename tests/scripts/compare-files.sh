@@ -50,7 +50,7 @@ export script_folder_name="$(basename "${script_folder_path}")"
 
 if [ $# -lt 2 ]
 then
-  echo "Usage: compare-tap-files.sh <actual> <expected>"
+  echo "Usage: compare-files.sh <actual> <expected>"
   exit 1
 fi
 
