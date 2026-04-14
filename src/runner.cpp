@@ -249,15 +249,20 @@ namespace micro_os_plus::micro_test_plus
           children_suites_[i].swap (children_suites_[min_idx]);
       }
 
-    for (const auto& suite_ref : children_suites_)
+    for (size_t i = 0; i < n; ++i)
       {
+        auto* suite_ptr = children_suites_[i].get ();
+
+        // +1 for 1-based index, +1 for top suite
+        suite_ptr->own_index (i + 1 + 1);
+
         // Run the child suite immediately.
-        suite_ref->run ();
+        suite_ptr->run ();
 
         // Accumulate the totals from the static suite into the runner
         // totals.
         // DO NOT increment executed_subtests here.
-        totals_ += suite_ref->totals ();
+        totals_ += suite_ptr->totals ();
       }
   }
 
@@ -421,13 +426,11 @@ namespace micro_os_plus::micro_test_plus
               std::swap (suites[i], suites[min_idx]);
           }
 
-        for (auto* suite_ptr : *static_children_suites_)
+        for (size_t i = 0; i < n; ++i)
           {
-            // Update the suite's own index, this is needed for the TAP
-            // reporter to report the test number correctly, as the
-            // static suites are not registered with the runner, but are
-            // run directly.
-            suite_ptr->update_own_index (suites_count ());
+            auto* suite_ptr = suites[i];
+
+            suite_ptr->own_index (i + 1 + suites_count ());
 
             // Run the child suite immediately.
             suite_ptr->run ();

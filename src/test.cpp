@@ -342,7 +342,7 @@ namespace micro_os_plus::micro_test_plus
   // ==========================================================================
 
   top_suite::top_suite (const char* name, class runner& runner)
-      : suite{ name, runner, 1, [] (suite&) noexcept {} }
+      : suite{ name, runner, [] (suite&) noexcept {} }
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
@@ -357,6 +357,8 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic pop
 #endif
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
+
+    own_index (1);
   }
 
   top_suite::~top_suite ()
@@ -393,26 +395,6 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic pop
 #endif
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
-  }
-
-  void
-  static_suite::update_own_index (size_t offset)
-  {
-    own_index_ += offset;
-
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-#endif
-    trace::printf ("%s own index -> %zu\n", __PRETTY_FUNCTION__, own_index_);
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
   }
 
   void

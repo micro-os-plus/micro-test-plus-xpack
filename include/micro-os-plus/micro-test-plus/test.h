@@ -224,6 +224,12 @@ namespace micro_os_plus::micro_test_plus
       return own_index_;
     }
 
+    void
+    own_index (size_t index) noexcept
+    {
+      own_index_ = index;
+    }
+
     [[nodiscard]] size_t
     current_subtest_index () const noexcept
     {
@@ -607,8 +613,8 @@ namespace micro_os_plus::micro_test_plus
   {
   public:
     template <typename Callable_T, typename... Args_T>
-    suite (const char* name, class runner& runner, size_t own_index,
-           Callable_T&& callable, Args_T&&... arguments);
+    suite (const char* name, class runner& runner, Callable_T&& callable,
+           Args_T&&... arguments);
 
     suite (const suite&) = delete;
     suite (suite&&) = delete;
@@ -747,9 +753,6 @@ namespace micro_os_plus::micro_test_plus
     virtual ~static_suite () override;
 
     // ------------------------------------------------------------------------
-
-    void
-    update_own_index (size_t offset);
 
     virtual void
     run (void) override;

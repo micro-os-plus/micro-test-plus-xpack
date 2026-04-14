@@ -236,11 +236,11 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
-     * @brief Returns the count of child test suites.
+     * @brief Returns the count of test suites.
      *
      * @par Parameters
      *	 None.
-     * @return The number of child test suites.
+     * @return The number of test suites, including the top one.
      */
     [[nodiscard]] size_t
     suites_count (void) const noexcept;

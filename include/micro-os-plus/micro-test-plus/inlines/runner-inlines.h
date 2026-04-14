@@ -69,7 +69,7 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
     auto child_suite = std::make_unique<class suite> (
-        name, *this, suites_count () + 1, std::forward<Callable_T> (callable),
+        name, *this, std::forward<Callable_T> (callable),
         std::forward<Args_T> (arguments)...);
 
     register_suite_ (std::move (child_suite));
