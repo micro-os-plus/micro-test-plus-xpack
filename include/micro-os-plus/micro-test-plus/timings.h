@@ -107,6 +107,18 @@ namespace micro_os_plus::micro_test_plus
     timestamp_end (void) noexcept;
 
     bool
+    has_begin () const noexcept
+    {
+      return begin_time_.has_value ();
+    }
+
+    bool
+    has_end () const noexcept
+    {
+      return end_time_.has_value ();
+    }
+
+    bool
     has_timestamps (void) const noexcept;
 
     void
