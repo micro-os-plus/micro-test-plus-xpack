@@ -53,6 +53,8 @@ _local_sources += [
   'src/operators.cpp',
   'src/exceptions.cpp',
   'src/miscellaneous.cpp',
+  'src/utility.cpp',
+  'src/timings.cpp',
   'src/support.cpp'
 ]
 

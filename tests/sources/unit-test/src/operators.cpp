@@ -135,6 +135,36 @@ static static_suite ts_exceptions{ "Operators suite", tr, [] (auto& ts)
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_subtests ()
                  == local_counts.executed_subtest);
+
+    ts.test ("String view operators", [] (auto& t)
+      {
+        using namespace operators;
+
+        t.expect (std::string_view{ "hello" } == std::string_view{ "hello" })
+            << "equal string views with ==";
+        local_counts.successful_checks++;
+
+        t.expect (std::string_view{ "hello" } == std::string_view{ "world" })
+            << "unequal string views with ==";
+        local_counts.failed_checks++;
+
+        t.expect (std::string_view{ "hello" } != std::string_view{ "world" })
+            << "unequal string views with !=";
+        local_counts.successful_checks++;
+
+        t.expect (std::string_view{ "hello" } != std::string_view{ "hello" })
+            << "equal string views with !=";
+        local_counts.failed_checks++;
+
+        local_counts.executed_subtest++;
+      });
+
+    test_assert (current_suite_totals.successful_checks ()
+                 == local_counts.successful_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_subtests ()
+                 == local_counts.executed_subtest);
   } };
 
 // ----------------------------------------------------------------------------

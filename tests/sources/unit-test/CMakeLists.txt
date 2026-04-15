@@ -31,15 +31,18 @@ target_include_directories (test-unit-interface INTERFACE include)
 
 target_sources (
   test-unit-interface
-  INTERFACE src/main.cpp src/static-asserts.cpp
+  INTERFACE src/main.cpp
+            src/static-asserts.cpp
             src/integral-passed-combinations.cpp
-            src/integral-failed-combinations.cpp 
+            src/integral-failed-combinations.cpp
             src/float-passed-combinations.cpp
-            src/float-failed-combinations.cpp 
+            src/float-failed-combinations.cpp
             src/comparisons.cpp
             src/operators.cpp
             src/exceptions.cpp
             src/miscellaneous.cpp
+            src/utility.cpp
+            src/timings.cpp
             src/support.cpp
 )
 
