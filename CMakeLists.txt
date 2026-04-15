@@ -43,28 +43,37 @@ endif ()
 
 # The project library definitions.
 
+# The include directories shared between the INTERFACE and OBJECT library
+# targets.
+set (micro-os-plus-micro-test-plus-includes "include")
+# The source files shared between the INTERFACE and OBJECT library targets.
+set (
+  micro-os-plus-micro-test-plus-sources
+  "src/runner.cpp"
+  "src/runner-totals.cpp"
+  "src/deferred-reporter.cpp"
+  "src/reporter.cpp"
+  "src/reporter-human.cpp"
+  "src/reporter-tap.cpp"
+  "src/test.cpp"
+  "src/timings.cpp"
+  "src/reflection.cpp"
+  "src/utility.cpp"
+)
+
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#normal-libraries
 # PRIVATE: build definitions, used internally INTERFACE: usage definitions,
 # passed up to targets linking to it PUBLIC: both
 add_library (micro-os-plus-micro-test-plus-interface INTERFACE)
 
 target_include_directories (
-  micro-os-plus-micro-test-plus-interface INTERFACE "include"
+  micro-os-plus-micro-test-plus-interface
+  INTERFACE ${micro-os-plus-micro-test-plus-includes}
 )
 
 target_sources (
   micro-os-plus-micro-test-plus-interface
-  INTERFACE 
-            "src/runner.cpp"
-            "src/runner-totals.cpp"
-            "src/deferred-reporter.cpp"
-            "src/reporter.cpp"
-            "src/reporter-human.cpp"
-            "src/reporter-tap.cpp"
-            "src/test.cpp"
-            "src/timings.cpp"
-            "src/reflection.cpp"
-            "src/utility.cpp"
+  INTERFACE ${micro-os-plus-micro-test-plus-sources}
 )
 
 target_compile_definitions (
@@ -76,11 +85,38 @@ target_compile_options (
 )
 
 target_link_libraries (
-  micro-os-plus-micro-test-plus-interface INTERFACE # None.
+  micro-os-plus-micro-test-plus-interface INTERFACE micro-os-plus::diag-trace
 )
 
 if (COMMAND xpack_display_target_lists)
   xpack_display_target_lists (micro-os-plus-micro-test-plus-interface)
+endif ()
+
+# -----------------------------------------------------------------------------
+
+# Optional OBJECT library: sources are compiled once rather than per consumer.
+# Inherits include directories, compile definitions, and compiler options from
+# the interface library via PRIVATE linkage, which avoids propagating the
+# interface library's INTERFACE sources to consumers of the object library. The
+# include directories are re-exported explicitly so that consumers can find the
+# headers.
+add_library (
+  micro-os-plus-micro-test-plus-objects OBJECT
+  ${micro-os-plus-micro-test-plus-sources}
+)
+
+target_link_libraries (
+  micro-os-plus-micro-test-plus-objects
+  PRIVATE micro-os-plus-micro-test-plus-interface
+)
+
+target_include_directories (
+  micro-os-plus-micro-test-plus-objects
+  INTERFACE ${micro-os-plus-micro-test-plus-includes}
+)
+
+if (COMMAND xpack_display_target_lists)
+  xpack_display_target_lists (micro-os-plus-micro-test-plus-objects)
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -93,6 +129,15 @@ add_library (
 message (
   VERBOSE
   "> micro-os-plus::micro-test-plus -> micro-os-plus-micro-test-plus-interface"
+)
+
+add_library (
+  micro-os-plus::micro-test-plus-objects ALIAS
+  micro-os-plus-micro-test-plus-objects
+)
+message (
+  VERBOSE
+  "> micro-os-plus::micro-test-plus-objects -> micro-os-plus-micro-test-plus-objects"
 )
 
 # -----------------------------------------------------------------------------
