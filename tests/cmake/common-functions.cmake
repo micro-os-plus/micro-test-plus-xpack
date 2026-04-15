@@ -106,3 +106,20 @@ function (add_cross_test_executable name)
 endfunction ()
 
 # -----------------------------------------------------------------------------
+
+function (add_compile_coverage_options target)
+  target_compile_options (
+    ${target}
+    PRIVATE $<$<CXX_COMPILER_ID:Clang,AppleClang>:-fprofile-instr-generate
+            -fcoverage-mapping -fcoverage-mcdc>
+  )
+endfunction ()
+
+function (add_link_coverage_options target)
+  target_link_options (
+    ${target} PRIVATE
+    $<$<CXX_COMPILER_ID:Clang,AppleClang>:-fprofile-instr-generate>
+  )
+endfunction ()
+
+# -----------------------------------------------------------------------------
