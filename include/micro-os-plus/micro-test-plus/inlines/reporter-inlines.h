@@ -79,6 +79,7 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
 #endif
   template <class T>
@@ -86,9 +87,19 @@ namespace micro_os_plus::micro_test_plus
   reporter::append_number_ (std::string& buffer, const T v)
   {
     char buf[32];
-    const auto [ptr, ec] = std::to_chars (buf, buf + sizeof (buf), v);
-    if (ec == std::errc{})
-      buffer.append (buf, ptr);
+    if constexpr (std::is_same_v<T, long double>)
+      {
+        // std::to_chars for long double is unreliable on some platforms
+        // (e.g., MinGW). Use snprintf as a portable fallback.
+        snprintf (buf, sizeof (buf), "%Lg", v);
+        buffer.append (buf);
+      }
+    else
+      {
+        const auto [ptr, ec] = std::to_chars (buf, buf + sizeof (buf), v);
+        if (ec == std::errc{})
+          buffer.append (buf, ptr);
+      }
   }
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
