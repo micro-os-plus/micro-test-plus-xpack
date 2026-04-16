@@ -66,7 +66,7 @@ set (
   # -mno-save-restore
   #
   # -fno-move-loop-invariants
-  -fno-exceptions  # it fails at run-time.
+  -fno-exceptions # it fails at run-time.
   #
   # Embedded builds must be warning free.
   -Werror
@@ -88,6 +88,10 @@ set (
 target_compile_options (
   platform-qemu-riscv-rv64imafdc-interface
   INTERFACE ${xpack_platform_common_args}
+)
+
+target_compile_options (
+  micro-os-plus-micro-test-plus-objects PRIVATE ${xpack_platform_common_args}
 )
 
 # When `-flto` is used, the compile options must be passed to the linker too.

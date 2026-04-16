@@ -82,6 +82,10 @@ target_compile_options (
   platform-qemu-cortex-m4f-interface INTERFACE ${xpack_platform_common_args}
 )
 
+target_compile_options (
+  micro-os-plus-micro-test-plus-objects PRIVATE ${xpack_platform_common_args}
+)
+
 # When `-flto` is used, the compile options must be passed to the linker too.
 target_link_options (
   platform-qemu-cortex-m4f-interface
