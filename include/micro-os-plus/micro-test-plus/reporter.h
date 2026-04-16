@@ -828,6 +828,22 @@ namespace micro_os_plus::micro_test_plus
     output_fail_suffix_ (const reflection::source_location& location,
                          bool abort, subtest& subtest) = 0;
 
+    /**
+     * @brief Appends the string representation of a numeric value to a
+     * buffer, using `std::to_chars` for allocation-free, locale-independent
+     * formatting.
+     *
+     * @tparam T The numeric type to format.
+     *
+     * @param buffer The string to append to.
+     * @param v The value to format.
+     * @par Returns
+     *   Nothing.
+     */
+    template <class T>
+    static void
+    append_number_ (std::string& buffer, T v);
+
   protected:
     /**
      * @brief The verbosity level for test reporting.
@@ -853,6 +869,8 @@ namespace micro_os_plus::micro_test_plus
      */
     bool add_empty_line_{ true };
 
+    const char* output_file_path_{ nullptr };
+
     /**
      * @brief Optional output file for redirecting test report output.
      *
@@ -867,23 +885,6 @@ namespace micro_os_plus::micro_test_plus
      * @brief Owns the command-line arguments passed to the test runner.
      */
     std::unique_ptr<std::vector<std::string_view>> argvs_{};
-
-  private:
-    /**
-     * @brief Appends the string representation of a numeric value to a
-     * buffer, using `std::to_chars` for allocation-free, locale-independent
-     * formatting.
-     *
-     * @tparam T The numeric type to format.
-     *
-     * @param buffer The string to append to.
-     * @param v The value to format.
-     * @par Returns
-     *   Nothing.
-     */
-    template <class T>
-    static void
-    append_number_ (std::string& buffer, T v);
   };
 
   // --------------------------------------------------------------------------

@@ -139,6 +139,9 @@ namespace micro_os_plus::micro_test_plus
 #endif
             exit (1);
           }
+        // The original string is zero terminated, so we can safely use .data()
+        // here.
+        output_file_path_ = output_file_sv.data ();
       }
 
     // Pre-allocate buffer to reduce dynamic allocations.
@@ -157,7 +160,19 @@ namespace micro_os_plus::micro_test_plus
         fflush (output_file_);
         fclose (output_file_);
 
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
+#endif
+        printf ("Test output written to '%s'.\n", output_file_path_);
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
+
         output_file_ = nullptr;
+        output_file_path_ = nullptr;
       }
   }
 
