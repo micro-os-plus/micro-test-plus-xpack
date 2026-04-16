@@ -43,37 +43,27 @@ endif ()
 
 # The project library definitions.
 
-# The include directories shared between the INTERFACE and OBJECT library
-# targets.
-set (micro-os-plus-micro-test-plus-includes "include")
-# The source files shared between the INTERFACE and OBJECT library targets.
-set (
-  micro-os-plus-micro-test-plus-sources
-  "src/runner.cpp"
-  "src/runner-totals.cpp"
-  "src/deferred-reporter.cpp"
-  "src/reporter.cpp"
-  "src/reporter-human.cpp"
-  "src/reporter-tap.cpp"
-  "src/test.cpp"
-  "src/timings.cpp"
-  "src/reflection.cpp"
-  "src/utility.cpp"
-)
-
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#normal-libraries
 # PRIVATE: build definitions, used internally INTERFACE: usage definitions,
 # passed up to targets linking to it PUBLIC: both
 add_library (micro-os-plus-micro-test-plus-interface INTERFACE)
 
 target_include_directories (
-  micro-os-plus-micro-test-plus-interface
-  INTERFACE ${micro-os-plus-micro-test-plus-includes}
+  micro-os-plus-micro-test-plus-interface INTERFACE "include"
 )
 
 target_sources (
   micro-os-plus-micro-test-plus-interface
-  INTERFACE ${micro-os-plus-micro-test-plus-sources}
+  INTERFACE "src/runner.cpp"
+            "src/runner-totals.cpp"
+            "src/deferred-reporter.cpp"
+            "src/reporter.cpp"
+            "src/reporter-human.cpp"
+            "src/reporter-tap.cpp"
+            "src/test.cpp"
+            "src/timings.cpp"
+            "src/reflection.cpp"
+            "src/utility.cpp"
 )
 
 target_compile_definitions (
@@ -100,19 +90,29 @@ endif ()
 # interface library's INTERFACE sources to consumers of the object library. The
 # include directories are re-exported explicitly so that consumers can find the
 # headers.
-add_library (
-  micro-os-plus-micro-test-plus-objects OBJECT
-  ${micro-os-plus-micro-test-plus-sources}
+add_library (micro-os-plus-micro-test-plus-objects OBJECT)
+
+get_target_property (
+  micro-os-plus-micro-test-plus-includes
+  micro-os-plus-micro-test-plus-interface INTERFACE_INCLUDE_DIRECTORIES
+)
+target_include_directories (
+  micro-os-plus-micro-test-plus-objects
+  INTERFACE ${micro-os-plus-micro-test-plus-includes}
+)
+
+get_target_property (
+  micro-os-plus-micro-test-plus-sources micro-os-plus-micro-test-plus-interface
+  INTERFACE_SOURCES
+)
+target_sources (
+  micro-os-plus-micro-test-plus-objects
+  PRIVATE ${micro-os-plus-micro-test-plus-sources}
 )
 
 target_link_libraries (
   micro-os-plus-micro-test-plus-objects
   PRIVATE micro-os-plus-micro-test-plus-interface
-)
-
-target_include_directories (
-  micro-os-plus-micro-test-plus-objects
-  INTERFACE ${micro-os-plus-micro-test-plus-includes}
 )
 
 if (COMMAND xpack_display_target_lists)
