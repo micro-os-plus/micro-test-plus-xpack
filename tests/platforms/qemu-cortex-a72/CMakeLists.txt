@@ -21,6 +21,10 @@ include ("cmake/platform-library.cmake")
 
 # -----------------------------------------------------------------------------
 
+# NOTE: Exceptions are disabled.
+
+# -----------------------------------------------------------------------------
+
 if (XPACK_ENABLE_EMPTY_TEST)
   add_cross_test_executable (empty-test)
   target_link_cross_test_libraries (empty-test test::empty)

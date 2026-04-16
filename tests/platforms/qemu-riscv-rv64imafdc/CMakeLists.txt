@@ -21,6 +21,10 @@ include ("cmake/platform-library.cmake")
 
 # -----------------------------------------------------------------------------
 
+# NOTE: Exceptions are disabled.
+
+# -----------------------------------------------------------------------------
+
 if (XPACK_ENABLE_EMPTY_TEST)
   add_cross_test_executable (empty-test)
   target_link_cross_test_libraries (empty-test test::empty)
@@ -116,15 +120,15 @@ if (XPACK_ENABLE_SAMPLE_TEST)
       qemu-system-riscv64${extension} --machine virt --cpu rv64 --kernel
       sample-test.elf -smp 1 -bios none --nographic -d unimp,guest_errors
       --semihosting-config
-      enable=on,target=native,arg=sample-test,arg=one,arg=two,arg=--output-file,arg=sample-test.tap
+      enable=on,target=native,arg=sample-test,arg=one,arg=two,arg=--output-file,arg=sample-test-noexcept.tap
   )
 
   add_test (
     NAME "sample-test-compare"
     COMMAND
       bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
-      "sample-test.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/sample-test.tap"
+      "sample-test-noexcept.tap"
+      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/sample-test-noexcept.tap"
   )
   set_tests_properties ("sample-test-compare" PROPERTIES DEPENDS "sample-test")
 endif ()
@@ -143,15 +147,15 @@ if (XPACK_ENABLE_UNIT_TEST)
       qemu-system-riscv64${extension} --machine virt --cpu rv64 --kernel
       unit-test.elf --nographic -smp 1 -bios none -d unimp,guest_errors
       --semihosting-config
-      enable=on,target=native,arg=unit-test,arg=--quiet,arg=one,arg=two,arg=--output-file,arg=unit-test.tap
+      enable=on,target=native,arg=unit-test,arg=--quiet,arg=one,arg=two,arg=--output-file,arg=unit-test-noexcept.tap
   )
 
   add_test (
     NAME "unit-test-quiet-compare"
     COMMAND
       bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
-      "unit-test.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/unit-test.tap"
+      "unit-test-noexcept.tap"
+      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/unit-test-noexcept.tap"
   )
   set_tests_properties (
     "unit-test-quiet-compare" PROPERTIES DEPENDS "unit-test-quiet"
@@ -163,15 +167,15 @@ if (XPACK_ENABLE_UNIT_TEST)
       qemu-system-riscv64${extension} --machine virt --cpu rv64 --kernel
       unit-test.elf --nographic -smp 1 -bios none -d unimp,guest_errors
       --semihosting-config
-      enable=on,target=native,arg=unit-test,arg=--reporter,arg=human,arg=one,arg=two,arg=--output-file,arg=unit-test.txt
+      enable=on,target=native,arg=unit-test,arg=--reporter,arg=human,arg=one,arg=two,arg=--output-file,arg=unit-test-noexcept.txt
   )
 
   add_test (
     NAME "unit-test-reporter-human-compare"
     COMMAND
       bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
-      "unit-test.txt"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/unit-test.txt"
+      "unit-test-noexcept.txt"
+      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/unit-test-noexcept.txt"
   )
   set_tests_properties (
     "unit-test-reporter-human-compare" PROPERTIES DEPENDS
