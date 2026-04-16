@@ -79,8 +79,13 @@ target_compile_options (
   platform-qemu-cortex-m0-interface INTERFACE ${xpack_platform_common_args}
 )
 
+# The OBJECTS are compiled before the platform library, so they need to get the
+# same compile options.
 target_compile_options (
-  micro-os-plus-micro-test-plus-objects PRIVATE ${xpack_platform_common_args}
+  micro-os-plus-micro-test-plus-objects
+  PRIVATE
+    $<TARGET_PROPERTY:micro-os-plus-common-options-interface,INTERFACE_COMPILE_OPTIONS>
+    ${xpack_platform_common_args}
 )
 
 # When `-flto` is used, the compile options must be passed to the linker too.
