@@ -52,6 +52,9 @@ namespace micro_os_plus::micro_test_plus
   {
   public:
     timestamp () noexcept;
+    timestamp (const timespec& ts) noexcept : value_{ ts }
+    {
+    }
 
     // `timespec` is trivially copyable, so copy and move are safe to default.
     // Defaulting these operations allows `timestamp` to be used in contexts
@@ -104,7 +107,13 @@ namespace micro_os_plus::micro_test_plus
     timestamp_begin (void) noexcept;
 
     void
+    timestamp_begin (const timespec& ts) noexcept;
+
+    void
     timestamp_end (void) noexcept;
+
+    void
+    timestamp_end (const timespec& ts) noexcept;
 
     bool
     has_begin () const noexcept

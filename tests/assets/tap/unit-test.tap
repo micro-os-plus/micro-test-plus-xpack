@@ -70,14 +70,14 @@ TAP version 14
         1..1
     ok 9 - Nested subtests # { passed, 0 checks }
     1..9
-not ok 1 - Static top suite # { FAILED, 25 checks passed, 2 failed, in 10 test cases, time: 0.184 ms }
+not ok 1 - Static top suite # { FAILED, 25 checks passed, 2 failed, in 10 test cases, time: 0.194 ms }
 # Subtest: Dynamic suite
     # Subtest: check in dynamic suite
         ok 1 - 1 == 1 in dynamic suite
         1..1
     ok 1 - check in dynamic suite # { passed, 1 check }
     1..1
-ok 2 - Dynamic suite # { passed, 1 check in 1 test case, time: 0.010 ms }
+ok 2 - Dynamic suite # { passed, 1 check in 1 test case, time: 0.009 ms }
 # Subtest: Combinatorial floats suite
     # Subtest: Combinatorial floats
         ok 1 - 42.0 == 42 signed long long
@@ -128,7 +128,7 @@ ok 2 - Dynamic suite # { passed, 1 check in 1 test case, time: 0.010 ms }
         1..21
     ok 2 - Combinatorial doubles # { passed, 21 checks }
     1..2
-ok 3 - Combinatorial floats suite # { passed, 42 checks in 2 test cases, time: 0.095 ms }
+ok 3 - Combinatorial floats suite # { passed, 42 checks in 2 test cases, time: 0.090 ms }
 # Subtest: Combinatorial integrals suite
     # Subtest: Combinatorial integrals with signed long long
         ok 1 - eq matches signed long long
@@ -315,7 +315,7 @@ ok 3 - Combinatorial floats suite # { passed, 42 checks in 2 test cases, time: 0
         1..20
     ok 8 - Combinatorial integrals with unsigned char # { passed, 20 checks }
     1..8
-ok 4 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, time: 0.454 ms }
+ok 4 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, time: 0.296 ms }
 # Subtest: Comparisons suite
     # Subtest: Integer comparisons
         ok 1 - actual == 42
@@ -636,63 +636,63 @@ ok 4 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, tim
     # Subtest: Failed pointer comparisons
         not ok 1 - ptr1 != &one
           ---
-          condition: 0x7ff7b5ff906c != 0x7ff7b5ff906c
+          condition: 0x7ff7ba6660ac != 0x7ff7ba6660ac
           at:
             filename: comparisons.cpp
             line: 494
           ...
         not ok 2 - ptr1 != ptr2
           ---
-          condition: 0x7ff7b5ff906c != 0x7ff7b5ff906c
+          condition: 0x7ff7ba6660ac != 0x7ff7ba6660ac
           at:
             filename: comparisons.cpp
             line: 497
           ...
         not ok 3 - ptr1 > ptr2
           ---
-          condition: 0x7ff7b5ff906c > 0x7ff7b5ff906c
+          condition: 0x7ff7ba6660ac > 0x7ff7ba6660ac
           at:
             filename: comparisons.cpp
             line: 500
           ...
         not ok 4 - ptr1 < ptr2
           ---
-          condition: 0x7ff7b5ff906c < 0x7ff7b5ff906c
+          condition: 0x7ff7ba6660ac < 0x7ff7ba6660ac
           at:
             filename: comparisons.cpp
             line: 503
           ...
         not ok 5 - ptr1 == a_non_nullptr
           ---
-          condition: 0x7ff7b5ff906c == 0x7ff7b5ff9050
+          condition: 0x7ff7ba6660ac == 0x7ff7ba666090
           at:
             filename: comparisons.cpp
             line: 506
           ...
         not ok 6 - pfunc != afunc
           ---
-          condition: 0x109fb8910 != 0x109fb8910
+          condition: 0x1059479f0 != 0x1059479f0
           at:
             filename: comparisons.cpp
             line: 509
           ...
         not ok 7 - pfunc == a_non_nullptr
           ---
-          condition: 0x109fb8910 == 0x7ff7b5ff9050
+          condition: 0x1059479f0 == 0x7ff7ba666090
           at:
             filename: comparisons.cpp
             line: 512
           ...
         not ok 8 - pone >= ptwo
           ---
-          condition: 0x7ff7b5ff8d50 >= 0x7ff7b5ff8d54
+          condition: 0x7ff7ba665d90 >= 0x7ff7ba665d94
           at:
             filename: comparisons.cpp
             line: 524
           ...
         not ok 9 - ptwo <= pone
           ---
-          condition: 0x7ff7b5ff8d54 <= 0x7ff7b5ff8d50
+          condition: 0x7ff7ba665d94 <= 0x7ff7ba665d90
           at:
             filename: comparisons.cpp
             line: 527
@@ -715,7 +715,7 @@ ok 4 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, tim
           ...
         not ok 2 - a_non_nullptr == nullptr
           ---
-          condition: 0x7ff7b5ff9068 == nullptr
+          condition: 0x7ff7ba6660a8 == nullptr
           at:
             filename: comparisons.cpp
             line: 578
@@ -781,7 +781,7 @@ ok 4 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, tim
         1..12
     not ok 11 - Logical operations # { FAILED, 6 checks passed, 6 failed }
     1..11
-not ok 5 - Comparisons suite # { FAILED, 59 checks passed, 53 failed, in 11 test cases, time: 0.422 ms }
+not ok 5 - Comparisons suite # { FAILED, 59 checks passed, 53 failed, in 11 test cases, time: 0.357 ms }
 # Subtest: Exceptions suite
     # Subtest: thrown exceptions
         ok 1 - exception thrown
@@ -820,7 +820,7 @@ not ok 5 - Comparisons suite # { FAILED, 59 checks passed, 53 failed, in 11 test
         1..1
     not ok 4 - Failed not thrown exceptions # { FAILED, 0 checks passed, 1 failed }
     1..4
-not ok 6 - Exceptions suite # { FAILED, 3 checks passed, 3 failed, in 4 test cases, time: 0.203 ms }
+not ok 6 - Exceptions suite # { FAILED, 3 checks passed, 3 failed, in 4 test cases, time: 0.175 ms }
 # Subtest: Failed combinatorial floats suite
     # Subtest: Combinatorial floats
         not ok 1 - 42.0 == 42 signed long long
@@ -1123,7 +1123,7 @@ not ok 6 - Exceptions suite # { FAILED, 3 checks passed, 3 failed, in 4 test cas
         1..21
     not ok 2 - Combinatorial doubles # { FAILED, 0 checks passed, 21 failed }
     1..2
-not ok 7 - Failed combinatorial floats suite # { FAILED, 0 checks passed, 42 failed, in 2 test cases, time: 0.170 ms }
+not ok 7 - Failed combinatorial floats suite # { FAILED, 0 checks passed, 42 failed, in 2 test cases, time: 0.137 ms }
 # Subtest: Failed combinatorial integrals suite
     # Subtest: Combinatorial integrals with signed long long
         not ok 1 - ne matches signed long long
@@ -2556,7 +2556,7 @@ not ok 7 - Failed combinatorial floats suite # { FAILED, 0 checks passed, 42 fai
         1..20
     not ok 10 - Combinatorial integrals with unsigned char # { FAILED, 0 checks passed, 20 failed }
     1..10
-not ok 8 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200 failed, in 10 test cases, time: 0.815 ms }
+not ok 8 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200 failed, in 10 test cases, time: 0.660 ms }
 # Subtest: Miscellaneous suite
     # Subtest: Arrays
         ok 1 - array{ 42 } == array{ 42 }
@@ -2651,7 +2651,7 @@ not ok 8 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         1..6
     not ok 4 - Vectors bad # { FAILED, 0 checks passed, 6 failed }
     1..4
-not ok 9 - Miscellaneous suite # { FAILED, 10 checks passed, 10 failed, in 4 test cases, time: 0.125 ms }
+not ok 9 - Miscellaneous suite # { FAILED, 10 checks passed, 10 failed, in 4 test cases, time: 0.104 ms }
 # Subtest: Operators suite
     # Subtest: Operators
         ok 1 - actual == 42
@@ -2750,7 +2750,7 @@ not ok 9 - Miscellaneous suite # { FAILED, 10 checks passed, 10 failed, in 4 tes
         1..4
     not ok 2 - String view operators # { FAILED, 2 checks passed, 2 failed }
     1..2
-not ok 10 - Operators suite # { FAILED, 14 checks passed, 11 failed, in 2 test cases, time: 0.076 ms }
+not ok 10 - Operators suite # { FAILED, 14 checks passed, 11 failed, in 2 test cases, time: 0.069 ms }
 # Subtest: Timings suite
     # Subtest: timestamp::has_clock()
         ok 1 - default ctor -> has_clock true
@@ -2798,7 +2798,7 @@ not ok 10 - Operators suite # { FAILED, 14 checks passed, 11 failed, in 2 test c
         1..10
     ok 6 - timestamps::compute_elapsed_time() # { passed, 10 checks }
     1..6
-ok 11 - Timings suite # { passed, 27 checks in 6 test cases, time: 0.087 ms }
+ok 11 - Timings suite # { passed, 27 checks in 6 test cases, time: 0.091 ms }
 # Subtest: Utility suite
     # Subtest: utility::extract_file_name()
         ok 1 - Unix path returns filename
@@ -2856,6 +2856,6 @@ ok 11 - Timings suite # { passed, 27 checks in 6 test cases, time: 0.087 ms }
         1..5
     not ok 3 - utility::is_match() — failing # { FAILED, 0 checks passed, 5 failed }
     1..3
-not ok 12 - Utility suite # { FAILED, 16 checks passed, 5 failed, in 3 test cases, time: 0.052 ms }
+not ok 12 - Utility suite # { FAILED, 16 checks passed, 5 failed, in 3 test cases, time: 0.047 ms }
 1..12
-# { total: 357 checks passed, 326 failed, in 63 test cases, 12 test suites, time: 2.800 ms }
+# { total: 357 checks passed, 326 failed, in 63 test cases, 12 test suites, time: 2.291 ms }

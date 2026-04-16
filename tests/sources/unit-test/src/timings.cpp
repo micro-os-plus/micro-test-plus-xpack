@@ -78,8 +78,14 @@ static static_suite ts_timings{ "Timings suite", tr, [] (auto& ts)
 
     ts.test ("timestamp::has_clock()", [] (auto& t)
       {
+#if defined(_WIN32) || defined(CLOCK_MONOTONIC)
         // Default constructor captures the real clock — has_clock() is true.
         timestamp ts_real{};
+#else
+        // On platforms without a real clock, set a non-zero time to make
+        // has_clock() true.
+        timestamp ts_real{ { 1, 2 } };
+#endif
         t.expect (ts_real.has_clock ()) << "default ctor -> has_clock true";
         local_counts.successful_checks++;
 
@@ -110,7 +116,11 @@ static static_suite ts_timings{ "Timings suite", tr, [] (auto& ts)
 
     ts.test ("timestamp copy semantics", [] (auto& t)
       {
+#if defined(_WIN32) || defined(CLOCK_MONOTONIC)
         timestamp t1{};
+#else
+        timestamp t1{ { 1, 2 } };
+#endif
 
         // Copy constructor produces an identical timespec.
         timestamp t2{ t1 };
@@ -158,13 +168,13 @@ static static_suite ts_timings{ "Timings suite", tr, [] (auto& ts)
         local_counts.successful_checks++;
 
         // After timestamp_begin() only: begin is set, end is not.
-        tts.timestamp_begin ();
+        tts.timestamp_begin ({ 1, 0 });
         t.expect (!tts.has_timestamps ())
             << "after begin only: has_timestamps false";
         local_counts.successful_checks++;
 
         // After timestamp_end() too: both are set and real clock is present.
-        tts.timestamp_end ();
+        tts.timestamp_end ({ 2, 0 });
         t.expect (tts.has_timestamps ()) << "after both: has_timestamps true";
         local_counts.successful_checks++;
 

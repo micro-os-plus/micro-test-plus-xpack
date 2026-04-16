@@ -78,12 +78,32 @@ namespace micro_os_plus::micro_test_plus
   }
 
   void
+  timestamps::timestamp_begin (const timespec& ts) noexcept
+  {
+    // Ensure it is timestamped only once.
+    if (!begin_time_.has_value ())
+      {
+        begin_time_.emplace (ts);
+      }
+  }
+
+  void
   timestamps::timestamp_end (void) noexcept
   {
     // Ensure it is timestamped only once.
     if (!end_time_.has_value ())
       {
         end_time_.emplace ();
+      }
+  }
+
+  void
+  timestamps::timestamp_end (const timespec& ts) noexcept
+  {
+    // Ensure it is timestamped only once.
+    if (!end_time_.has_value ())
+      {
+        end_time_.emplace (ts);
       }
   }
 
