@@ -15,7 +15,7 @@
 
 # -----------------------------------------------------------------------------
 
-message (VERBOSE "Processing 'tests/platforms/qemu-cortex-m0'...")
+message (VERBOSE "Processing 'tests/platforms/qemu-cortex-m3'...")
 
 include ("cmake/platform-library.cmake")
 
@@ -27,6 +27,9 @@ if (XPACK_ENABLE_EMPTY_TEST)
 
   message (VERBOSE "A> empty-test")
 
+  # Currently QEMU does not support any M0 board.
+  # The mps2-an385 board has a Cortex-M3 CPU, but it is the closest to M0, 
+  # and it is used for testing the M0 code.
   add_test (
     NAME "empty-test"
     COMMAND
@@ -42,9 +45,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
       "empty-test.tap"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/empty-test.tap"
   )
-  set_tests_properties (
-    "empty-test-compare" PROPERTIES DEPENDS "empty-test"
-  )
+  set_tests_properties ("empty-test-compare" PROPERTIES DEPENDS "empty-test")
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -98,9 +99,7 @@ if (XPACK_ENABLE_SUITE_TEST)
       "suite-test.tap"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/suite-test.tap"
   )
-  set_tests_properties (
-    "suite-test-compare" PROPERTIES DEPENDS "suite-test"
-  )
+  set_tests_properties ("suite-test-compare" PROPERTIES DEPENDS "suite-test")
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -126,9 +125,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
       "sample-test.tap"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/sample-test.tap"
   )
-  set_tests_properties (
-    "sample-test-compare" PROPERTIES DEPENDS "sample-test"
-  )
+  set_tests_properties ("sample-test-compare" PROPERTIES DEPENDS "sample-test")
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -174,7 +171,8 @@ if (XPACK_ENABLE_UNIT_TEST)
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/unit-test.txt"
   )
   set_tests_properties (
-    "unit-test-reporter-human-compare" PROPERTIES DEPENDS "unit-test-reporter-human"
+    "unit-test-reporter-human-compare" PROPERTIES DEPENDS
+                                                  "unit-test-reporter-human"
   )
 endif ()
 

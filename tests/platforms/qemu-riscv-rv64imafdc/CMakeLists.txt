@@ -35,6 +35,15 @@ if (XPACK_ENABLE_EMPTY_TEST)
       --semihosting-config
       enable=on,target=native,arg=empty-test,arg=one,arg=two,arg=--output-file,arg=empty-test.tap
   )
+
+  add_test (
+    NAME "empty-test-compare"
+    COMMAND
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
+      "empty-test.tap"
+      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/empty-test.tap"
+  )
+  set_tests_properties ("empty-test-compare" PROPERTIES DEPENDS "empty-test")
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -52,6 +61,17 @@ if (XPACK_ENABLE_MINIMAL_TEST)
       minimal-test.elf -smp 1 -bios none --nographic -d unimp,guest_errors
       --semihosting-config
       enable=on,target=native,arg=minimal-test,arg=one,arg=two,arg=--output-file,arg=minimal-test.tap
+  )
+
+  add_test (
+    NAME "minimal-test-compare"
+    COMMAND
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
+      "minimal-test.tap"
+      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/minimal-test.tap"
+  )
+  set_tests_properties (
+    "minimal-test-compare" PROPERTIES DEPENDS "minimal-test"
   )
 endif ()
 
@@ -71,6 +91,15 @@ if (XPACK_ENABLE_SUITE_TEST)
       --semihosting-config
       enable=on,target=native,arg=suite-test,arg=one,arg=two,arg=--output-file,arg=suite-test.tap
   )
+
+  add_test (
+    NAME "suite-test-compare"
+    COMMAND
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
+      "suite-test.tap"
+      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/suite-test.tap"
+  )
+  set_tests_properties ("suite-test-compare" PROPERTIES DEPENDS "suite-test")
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -89,6 +118,15 @@ if (XPACK_ENABLE_SAMPLE_TEST)
       --semihosting-config
       enable=on,target=native,arg=sample-test,arg=one,arg=two,arg=--output-file,arg=sample-test.tap
   )
+
+  add_test (
+    NAME "sample-test-compare"
+    COMMAND
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
+      "sample-test.tap"
+      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/sample-test.tap"
+  )
+  set_tests_properties ("sample-test-compare" PROPERTIES DEPENDS "sample-test")
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -100,12 +138,44 @@ if (XPACK_ENABLE_UNIT_TEST)
   message (VERBOSE "A> unit-test")
 
   add_test (
-    NAME "unit-test"
+    NAME "unit-test-quiet"
     COMMAND
       qemu-system-riscv64${extension} --machine virt --cpu rv64 --kernel
       unit-test.elf --nographic -smp 1 -bios none -d unimp,guest_errors
       --semihosting-config
-      enable=on,target=native,arg=unit-test,arg=--reporter,arg=human
+      enable=on,target=native,arg=unit-test,arg=--quiet,arg=one,arg=two,arg=--output-file,arg=unit-test.tap
+  )
+
+  add_test (
+    NAME "unit-test-quiet-compare"
+    COMMAND
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
+      "unit-test.tap"
+      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/unit-test.tap"
+  )
+  set_tests_properties (
+    "unit-test-quiet-compare" PROPERTIES DEPENDS "unit-test-quiet"
+  )
+
+  add_test (
+    NAME "unit-test-reporter-human"
+    COMMAND
+      qemu-system-riscv64${extension} --machine virt --cpu rv64 --kernel
+      unit-test.elf --nographic -smp 1 -bios none -d unimp,guest_errors
+      --semihosting-config
+      enable=on,target=native,arg=unit-test,arg=--reporter,arg=human,arg=one,arg=two,arg=--output-file,arg=unit-test.txt
+  )
+
+  add_test (
+    NAME "unit-test-reporter-human-compare"
+    COMMAND
+      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
+      "unit-test.txt"
+      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/unit-test.txt"
+  )
+  set_tests_properties (
+    "unit-test-reporter-human-compare" PROPERTIES DEPENDS
+                                                  "unit-test-reporter-human"
   )
 endif ()
 
