@@ -89,28 +89,23 @@ namespace micro_os_plus::micro_test_plus
     char buf[32];
     if constexpr (std::is_same_v<T, long double>)
       {
-#if defined(__MINGW32__) || defined(__MINGW64__)
-        // On MinGW, long double is 80-bit x87 extended (sizeof == 16) but
-        // the Windows C runtime (MSVCRT/UCRT) does not handle the %Lg
-        // printf specifier correctly for it, producing garbage output.
-        // Casting to double loses no visible precision for typical values
-        // and produces correct output via std::to_chars.
-        const auto [ptr, ec]
-            = std::to_chars (buf, buf + sizeof (buf), static_cast<double> (v));
-        if (ec == std::errc{})
-          buffer.append (buf, ptr);
-#elif defined(__SIZEOF_LONG_DOUBLE__) \
-    && __SIZEOF_LONG_DOUBLE__ == __SIZEOF_DOUBLE__
-        // On platforms where long double has the same width as double
-        // (e.g., ARM, RISC-V), cast to double and use std::to_chars.
+#if defined(_WIN32) \
+    || (defined(__SIZEOF_LONG_DOUBLE__) \
+        && __SIZEOF_LONG_DOUBLE__ == __SIZEOF_DOUBLE__)
+        // On Windows (all toolchains: MinGW, Clang, MSVC), the C runtime
+        // does not handle the %Lg printf specifier correctly for 80-bit
+        // long double, producing garbage output. On platforms where long
+        // double has the same width as double (ARM, RISC-V), the cast is
+        // lossless. In both cases, cast to double and use std::to_chars.
         const auto [ptr, ec]
             = std::to_chars (buf, buf + sizeof (buf), static_cast<double> (v));
         if (ec == std::errc{})
           buffer.append (buf, ptr);
 #else
-        // On platforms with a wider long double (e.g., x86-64 Linux/macOS
-        // with 80-bit extended precision), std::to_chars for long double
-        // may be unavailable. Use snprintf as a portable fallback.
+        // On x86-64 Linux/macOS with 80-bit extended-precision long double,
+        // std::to_chars for long double may be unavailable (e.g., with lld).
+        // Use snprintf as a portable fallback; %Lg is supported correctly
+        // by glibc and libc++ on these platforms.
         snprintf (buf, sizeof (buf), "%Lg", v);
         buffer.append (buf);
 #endif
