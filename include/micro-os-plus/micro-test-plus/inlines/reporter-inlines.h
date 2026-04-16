@@ -89,10 +89,25 @@ namespace micro_os_plus::micro_test_plus
     char buf[32];
     if constexpr (std::is_same_v<T, long double>)
       {
-        // std::to_chars for long double is unreliable on some platforms
-        // (e.g., MinGW). Use snprintf as a portable fallback.
-        snprintf (buf, sizeof (buf), "%Lg", v);
-        buffer.append (buf);
+        if constexpr (sizeof (long double) == sizeof (double))
+          {
+            // On platforms where long double is the same width as double
+            // (e.g., Windows/MinGW, ARM, RISC-V), cast to double and use
+            // std::to_chars, which is fully supported. MSVCRT does not
+            // handle the %Lg printf specifier correctly in this case.
+            const auto [ptr, ec] = std::to_chars (buf, buf + sizeof (buf),
+                                                  static_cast<double> (v));
+            if (ec == std::errc{})
+              buffer.append (buf, ptr);
+          }
+        else
+          {
+            // On platforms with a wider long double (e.g., x86-64 Linux/macOS
+            // with 80-bit extended precision), std::to_chars for long double
+            // may be unavailable. Use snprintf as a portable fallback.
+            snprintf (buf, sizeof (buf), "%Lg", v);
+            buffer.append (buf);
+          }
       }
     else
       {
