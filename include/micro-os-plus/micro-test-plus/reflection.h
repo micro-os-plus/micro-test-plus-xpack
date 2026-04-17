@@ -194,11 +194,15 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param name The fully qualified name as a C-string.
      * @return A pointer to the short name within the input string.
+     *
+     * @details
+     * Searches @p name for the last `/` separator and returns a pointer to
+     * the character immediately following it, effectively stripping the
+     * folder path. If no `/` is found, the original pointer is returned
+     * unchanged.
      */
     const char*
     short_name (const char* name) noexcept;
-
-    // TODO: update for the new namespaces.
 
     /**
      * @brief Extract the type name from the `__PRETTY_FUNCTION__` macro.
@@ -208,6 +212,12 @@ namespace micro_os_plus::micro_test_plus
      * @par Parameters
      *	 None.
      * @return A `std::string_view` containing the extracted type name.
+     *
+     * @details
+     * Constructs a `std::string_view` from `__PRETTY_FUNCTION__` and
+     * parses out the portion that represents the template argument `T`,
+     * using compiler-specific prefix and suffix markers to locate the
+     * type-name substring at compile time.
      */
     template <class T>
     [[nodiscard]] constexpr auto

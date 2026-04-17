@@ -61,6 +61,12 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
+  /**
+   * @details
+   * Delegates construction to the `reporter` base class with the supplied
+   * argument vector. If tracing is enabled, the function signature is
+   * output for diagnostic purposes.
+   */
   reporter_tap::reporter_tap (
       std::unique_ptr<std::vector<std::string_view>> argvs)
       : reporter{ std::move (argvs) }
@@ -71,6 +77,12 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
   }
 
+  /**
+   * @details
+   * No resources are owned directly by `reporter_tap`; the destructor
+   * performs no explicit clean-up. If tracing is enabled, the function
+   * signature is output for diagnostic purposes.
+   */
   reporter_tap::~reporter_tap ()
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
@@ -99,6 +111,15 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
+  /**
+   * @details
+   * If verbosity is not silent, emits a blank line to `stdout` and then
+   * calls `write_info_()` to output build and environment information.
+   * The TAP version header `"TAP version 14"` is then written to both
+   * the output file (if open) and `stdout`. The `add_empty_line_` flag
+   * is cleared so that the first suite header is not separated by an
+   * extra blank line.
+   */
   void
   reporter_tap::begin_session ([[maybe_unused]] runner& runner)
   {
@@ -141,6 +162,15 @@ namespace micro_os_plus::micro_test_plus
 #endif
   }
 
+  /**
+   * @details
+   * Emits the TAP plan line (`1..N`, where N is the total number of test
+   * suites) followed by a comment line summarising successful checks,
+   * failed checks, executed test cases, elapsed time, and suite count.
+   * Both lines are written to the output file when one is open. When
+   * verbosity is set to quiet, the plan is replaced by `1..0` to
+   * produce a valid skipped-test TAP document.
+   */
   void
   reporter_tap::end_session (runner& runner)
   {
@@ -224,6 +254,14 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
+  /**
+   * @details
+   * Emits a `"# Subtest: <name>"` comment line to mark the start of a
+   * TAP subtest block for the suite. The line is written to the output
+   * file when one is open. Under normal or verbose verbosity, it is also
+   * written to `stdout`, preceded by a blank line when `add_empty_line_`
+   * is set.
+   */
   void
   reporter_tap::begin_suite (suite& suite)
   {
@@ -272,6 +310,15 @@ namespace micro_os_plus::micro_test_plus
 #endif
   }
 
+  /**
+   * @details
+   * Emits the TAP plan line for the suite's subtests followed by an
+   * `ok`/`not ok` result line that includes the suite index, name,
+   * pass/fail status, check counts, subtest count, and elapsed time.
+   * Any output accumulated in `buffer_` is flushed to the output file
+   * and, when verbosity is verbose or the suite failed, to `stdout`
+   * as well. The buffer is cleared on exit.
+   */
   void
   reporter_tap::end_suite (suite& suite)
   {
@@ -400,6 +447,14 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
+  /**
+   * @details
+   * Validates that the output buffer is empty at subtest start; if not,
+   * the buffer is written to `stdout`, the stream is flushed, and
+   * execution is aborted. A `"# Subtest: <name>"` comment line
+   * (indented according to nesting depth) is written to the output file
+   * and, under normal or verbose verbosity, to `stdout` as well.
+   */
   void
   reporter_tap::begin_subtest (subtest& subtest)
   {
@@ -458,6 +513,15 @@ namespace micro_os_plus::micro_test_plus
 #endif
   }
 
+  /**
+   * @details
+   * Emits the TAP plan line for the subtest's checks followed by an
+   * `ok`/`not ok` result line that includes the subtest index, name,
+   * pass/fail status, and check counts. Any output accumulated in
+   * `buffer_` is flushed to the output file and, when verbosity is
+   * verbose or the subtest failed, to `stdout` as well. The buffer is
+   * cleared on exit.
+   */
   void
   reporter_tap::end_subtest (subtest& subtest)
   {
@@ -578,6 +642,12 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
+  /**
+   * @details
+   * Returns `"# "`. The TAP reporter prefixes all comment lines,
+   * including the informational lines emitted by `write_info_()`, with
+   * the TAP comment marker.
+   */
   const char*
   reporter_tap::get_comment_prefix (void)
   {

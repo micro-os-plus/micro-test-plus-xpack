@@ -98,7 +98,8 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * ... TBD
+     * Returns the file name captured at the time this `source_location`
+     * instance was created.
      */
     [[nodiscard]] constexpr auto
     source_location::file_name (void) const noexcept
@@ -108,7 +109,8 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * ... TBD
+     * Returns the line number captured at the time this `source_location`
+     * instance was created.
      */
     [[nodiscard]] constexpr auto
     source_location::line (void) const noexcept

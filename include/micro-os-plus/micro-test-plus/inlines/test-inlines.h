@@ -117,6 +117,12 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
   }
 
+  /**
+   * @details
+   * No-op in production builds. When tracing is enabled via
+   * `MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS`, emits a trace
+   * message identifying the instance being destroyed.
+   */
   template <typename Self_T>
   runnable<Self_T>::~runnable ()
   {
@@ -168,6 +174,12 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
   }
 
+  /**
+   * @details
+   * Allocates a child `subtest` on the heap, incrementing the subtest index
+   * and deepening the nesting level by one relative to this subtest's depth,
+   * then transfers ownership to the framework via `after_subtest_create_()`.
+   */
   template <typename Callable_T, typename... Args_T>
   void
   subtest::test (const char* name, Callable_T&& callable,

@@ -509,9 +509,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * The returned type is a lightweight wrapper that behaves as a `bool` and
      * supports equality comparison with both other named instances and boolean
-     * values.
-     *
-     * @note This operator is intended to facilitate expressive and type-safe
+     * values. This operator is intended to facilitate expressive and type-safe
      * test conditions.
      */
     constexpr auto
@@ -523,7 +521,6 @@ namespace micro_os_plus::micro_test_plus
        * @details
        * This structure inherits from `std::string_view` and a type trait base,
        * providing a strongly-typed boolean value for use in test expressions.
-       *
        * It defines conversion to `bool` and equality operators for comparison
        * with other named instances and boolean values.
        */

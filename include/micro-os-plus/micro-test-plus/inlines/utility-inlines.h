@@ -15,6 +15,29 @@
 
 // ----------------------------------------------------------------------------
 
+/**
+ * @file
+ * @brief C++ header file with inline implementations for the µTest++ utility
+ * functions.
+ *
+ * @details
+ * This header provides the inline implementations for the utility function
+ * templates used within the µTest++ framework. It defines the logic for
+ * splitting strings into substrings using a specified delimiter, enabling
+ * convenient and type-safe string parsing in test expressions.
+ *
+ * All definitions reside within the
+ * `micro_os_plus::micro_test_plus::utility` namespace, ensuring clear
+ * separation from user code and minimising the risk of naming conflicts.
+ *
+ * The header files are organised within the
+ * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
+ * modular codebase.
+ *
+ * This file is intended solely for internal use within the framework and
+ * should not be included directly by user code.
+ */
+
 #ifndef MICRO_TEST_PLUS_UTILITY_INLINES_H_
 #define MICRO_TEST_PLUS_UTILITY_INLINES_H_
 

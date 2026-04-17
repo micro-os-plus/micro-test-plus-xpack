@@ -146,8 +146,8 @@ namespace micro_os_plus::micro_test_plus
      * is invoked; otherwise the argument itself is returned unchanged.
      *
      * The selection is performed at compile time using `if constexpr` and
-     * an inline `requires` expression, replacing the classic two-overload
-     * SFINAE dispatch that was used prior to C++20.
+     * an inline `requires` expression, superseding the classic two-overload
+     * SFINAE technique used prior to C++20.
      *
      * All definitions are intended for internal use within the framework and
      * are implemented in the `include/micro-os-plus/micro-test-plus` folder to
@@ -1580,10 +1580,10 @@ namespace micro_os_plus::micro_test_plus
        * @par Parameters
        *	None.
        * @retval true  The callable throws an exception.
+       * @retval false The callable does not throw any exception.
        *
        * @details
        * Returns the result of the exception check.
-       * @retval false The callable does not throw any exception.
        */
       [[nodiscard]] constexpr
       operator bool () const

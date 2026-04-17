@@ -79,6 +79,7 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   /**
+   * @ingroup micro-test-plus-runners
    * @brief The test runner for the µTest++ framework.
    *
    * @details
@@ -138,12 +139,10 @@ namespace micro_os_plus::micro_test_plus
     virtual ~runner () override;
 
     /**
-     * @brief Initialises the test runner with command-line arguments and an
-     * optional suite name.
+     * @brief Initialises the test runner with command-line arguments.
      *
      * @param argc The argument count from main().
      * @param argv The argument vector from main().
-     * @param name The name of the default test suite.
      * @return Reference to the top-level test suite.
      */
     class suite&
@@ -170,6 +169,8 @@ namespace micro_os_plus::micro_test_plus
      * invoked to perform the test suite.
      * @param [in] arguments A possibly empty list of arguments to be passed to
      * the callable.
+     * @par Returns
+     *   Nothing.
      */
     template <typename Callable_T, typename... Args_T>
     void
@@ -180,8 +181,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Aborts test execution immediately.
      *
-     * @par Parameters
-     *	 None.
+     * @param sl The source location from which the abort is triggered.
      * @par Returns
      *   Nothing.
      */
@@ -192,6 +192,18 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
     // Getters.
 
+    /**
+     * @brief Returns the total count of registered test suites.
+     *
+     * @details
+     * The base implementation counts only the dynamically registered child
+     * suites plus the implicit top suite. `static_runner` overrides this
+     * method to also include statically registered suites.
+     *
+     * @par Parameters
+     *	 None.
+     * @return The total number of test suites managed by this runner.
+     */
     [[nodiscard]] virtual size_t
     total_suites_count (void) const noexcept;
 
@@ -264,14 +276,27 @@ namespace micro_os_plus::micro_test_plus
      * @brief Registers a test suite with the runner.
      *
      * @param [in] suite Owning pointer to the test suite to register.
+     * @par Returns
+     *   Nothing.
      */
     void
     register_suite_ (std::unique_ptr<class suite> suite);
 
     // ------------------------------------------------------------------------
   protected:
+    /**
+     * @brief The implicit top-level suite; always present and executed first.
+     */
     class top_suite top_suite_;
 
+    /**
+     * @brief Owning collection of dynamically registered child suites.
+     *
+     * @details
+     * Each call to `runner::suite()` appends a new `suite` to this vector
+     * and runs it immediately. The vector retains ownership of all suites
+     * for the lifetime of the runner.
+     */
     std::vector<std::unique_ptr<class suite>> children_suites_;
 
     /**
@@ -287,18 +312,64 @@ namespace micro_os_plus::micro_test_plus
 
   // ==========================================================================
 
+  /**
+   * @ingroup micro-test-plus-runners
+   * @brief A `runner` variant that also manages statically-registered test
+   * suites.
+   *
+   * @details
+   * `static_runner` extends `runner` to handle `static_suite` objects that
+   * are declared at namespace scope and therefore constructed before or after
+   * the runner itself, in unspecified static-initialisation order.
+   *
+   * The key design constraint is that `static_runner` instances must
+   * themselves be declared at namespace scope (in the BSS segment), so the
+   * pointer `static_children_suites_` is zero-initialised by the C runtime
+   * before any constructor runs. This ensures that `static_suite` objects
+   * constructed before `static_runner` can safely append themselves to the
+   * vector without losing registrations.
+   *
+   * During `exit_code()`, `run_suites_()` is called, which first runs all
+   * dynamically registered suites (base class behaviour) and then iterates
+   * over the statically registered suites.
+   *
+   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+   */
   class static_runner final : public runner
   {
   public:
+    /**
+     * @brief Constructs the static runner with a top-suite name.
+     *
+     * @param top_suite_name The name of the implicit top-level suite.
+     */
     static_runner (const char* top_suite_name);
 
+    /**
+     * @brief Deleted copy constructor to prevent copying.
+     */
     static_runner (const static_runner&) = delete;
+
+    /**
+     * @brief Deleted move constructor to prevent moving.
+     */
     static_runner (static_runner&&) = delete;
+
+    /**
+     * @brief Deleted copy assignment operator to prevent copying.
+     */
     static_runner&
     operator= (const static_runner&) = delete;
+
+    /**
+     * @brief Deleted move assignment operator to prevent moving.
+     */
     static_runner&
     operator= (static_runner&&) = delete;
 
+    /**
+     * @brief Destructor for the static_runner class.
+     */
     virtual ~static_runner () override;
 
     // ------------------------------------------------------------------------

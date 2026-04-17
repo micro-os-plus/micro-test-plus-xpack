@@ -660,6 +660,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param expr The evaluated expression.
      * @param message The message to display.
+     * @param subtest The subtest that owns this check.
      * @par Returns
      *   Nothing.
      */
@@ -676,6 +677,7 @@ namespace micro_os_plus::micro_test_plus
      * @param abort Whether to abort execution after failure.
      * @param message The message to display.
      * @param location The source location of the failure.
+     * @param subtest The subtest that owns this check.
      * @par Returns
      *   Nothing.
      */
@@ -746,9 +748,27 @@ namespace micro_os_plus::micro_test_plus
     virtual void
     end_subtest (subtest& subtest) = 0;
 
+    /**
+     * @brief Returns the comment-prefix string used by this reporter format.
+     *
+     * @details
+     * Human reporters return an empty string; TAP reporters return `"# "`
+     * so that diagnostic lines conform to the TAP specification.
+     *
+     * @par Parameters
+     *	 None.
+     * @return A null-terminated prefix string.
+     */
     virtual const char*
     get_comment_prefix (void) = 0;
 
+    /**
+     * @brief Returns the current verbosity level.
+     *
+     * @par Parameters
+     *	 None.
+     * @return The active `verbosity_t` value.
+     */
     verbosity_t
     verbosity () const
     {
@@ -777,6 +797,14 @@ namespace micro_os_plus::micro_test_plus
     void
     write_buffer_to_file_ (void);
 
+    /**
+     * @brief Appends informational (non-result) text to the output buffer.
+     *
+     * @par Parameters
+     *   None.
+     * @par Returns
+     *   Nothing.
+     */
     void
     write_info_ (void);
 
@@ -784,6 +812,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Outputs the prefix for a passing condition.
      *
      * @param message The message to display.
+     * @param subtest The subtest that owns this check.
      * @par Returns
      *   Nothing.
      */
@@ -793,8 +822,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Outputs the suffix for a passing condition.
      *
-     * @par Parameters
-     *	 None.
+     * @param subtest The subtest that owns this check.
      * @par Returns
      *   Nothing.
      */
@@ -808,6 +836,7 @@ namespace micro_os_plus::micro_test_plus
      * @param hasExpression Whether the failure is associated with an
      * expression.
      * @param location The source location of the failure.
+     * @param subtest The subtest that owns this check.
      * @par Returns
      *   Nothing.
      */
@@ -821,6 +850,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param location The source location of the failure.
      * @param abort Whether to abort execution after failure.
+     * @param subtest The subtest that owns this check.
      * @par Returns
      *   Nothing.
      */
@@ -869,6 +899,13 @@ namespace micro_os_plus::micro_test_plus
      */
     bool add_empty_line_{ true };
 
+    /**
+     * @brief Optional file path for redirecting test report output.
+     *
+     * @details
+     * When non-null, `write_buffer_to_file_()` writes accumulated output
+     * to this path in addition to (or instead of) standard output.
+     */
     const char* output_file_path_{ nullptr };
 
     /**

@@ -69,6 +69,12 @@ namespace micro_os_plus::micro_test_plus
 {
   // ==========================================================================
 
+  /**
+   * @details
+   * Stores the supplied @p name pointer, which is expected to point to
+   * a string with a lifetime exceeding that of this instance. If
+   * tracing is enabled, the name is output for diagnostic purposes.
+   */
   test_node::test_node (const char* name) : name_{ name }
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
@@ -86,6 +92,12 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
   }
 
+  /**
+   * @details
+   * No resources are owned by `test_node`; the destructor performs no
+   * explicit clean-up. If tracing is enabled, the node name is output
+   * for diagnostic purposes.
+   */
   test_node::~test_node ()
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
@@ -160,18 +172,39 @@ namespace micro_os_plus::micro_test_plus
     // children_subtests_ holds unique_ptrs; destroyed automatically.
   }
 
+  /**
+   * @details
+   * Delegates immediately to `runner_.reporter()`, returning the
+   * reporter associated with the owning runner instance.
+   */
   [[nodiscard]] reporter&
   runnable_base::reporter (void) const noexcept
   {
     return runner_.reporter ();
   }
 
+  /**
+   * @details
+   * Delegates immediately to `runner_.abort()`, passing the supplied
+   * source location so that the error message identifies the call site
+   * before the process is terminated via `::abort()`.
+   */
   [[noreturn]] void
   runnable_base::abort (const reflection::source_location& sl)
   {
     runner_.abort (sl);
   }
 
+  /**
+   * @details
+   * Transfers ownership of @p child_test into `children_subtests_` and
+   * immediately invokes `subtest::run()` on the newly stored subtest.
+   * The parent's executed-subtest counter is then incremented. The
+   * child's check counters are intentionally not merged into the parent
+   * totals; each subtest reports only its own counters. The child's
+   * totals are, however, accumulated into @p suite so that the suite
+   * summary reflects all checks performed by its subtests.
+   */
   void
   runnable_base::after_subtest_create_ (
       std::unique_ptr<class subtest> child_test, suite& suite)
@@ -287,6 +320,12 @@ namespace micro_os_plus::micro_test_plus
 
   // ==========================================================================
 
+  /**
+   * @details
+   * No resources are owned directly by `suite`; the destructor performs
+   * no explicit clean-up. If tracing is enabled, the suite name is
+   * output for diagnostic purposes.
+   */
   suite::~suite ()
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
@@ -341,6 +380,13 @@ namespace micro_os_plus::micro_test_plus
 
   // ==========================================================================
 
+  /**
+   * @details
+   * Initialises the base `suite` with @p name, the given @p runner, and
+   * a no-op callable. Sets `own_index` to 1, reserving index 0 for the
+   * runner itself. If tracing is enabled, the name is output for
+   * diagnostic purposes.
+   */
   top_suite::top_suite (const char* name, class runner& runner)
       : suite{ name, runner, [] (suite&) noexcept {} }
   {
@@ -361,6 +407,12 @@ namespace micro_os_plus::micro_test_plus
     own_index (1);
   }
 
+  /**
+   * @details
+   * No resources are owned directly by `top_suite`; the destructor
+   * performs no explicit clean-up. If tracing is enabled, the suite
+   * name is output for diagnostic purposes.
+   */
   top_suite::~top_suite ()
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
@@ -380,6 +432,12 @@ namespace micro_os_plus::micro_test_plus
 
   // ==========================================================================
 
+  /**
+   * @details
+   * No resources are owned directly by `static_suite`; the destructor
+   * performs no explicit clean-up. If tracing is enabled, the suite
+   * name is output for diagnostic purposes.
+   */
   static_suite::~static_suite ()
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
@@ -397,6 +455,13 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
   }
 
+  /**
+   * @details
+   * Records the suite begin timestamp, notifies the reporter via
+   * `begin_suite()`, invokes the stored static callable with `*this`,
+   * records the suite end timestamp, and notifies the reporter via
+   * `end_suite()`.
+   */
   void
   static_suite::run (void)
   {

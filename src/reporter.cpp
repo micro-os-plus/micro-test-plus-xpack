@@ -67,6 +67,15 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
+  /**
+   * @details
+   * Moves the supplied argument vector into `argvs_` and scans it for
+   * the `--verbose`, `--quiet`, `--silent`, and `--output-file=` options,
+   * adjusting `verbosity_` and optionally opening the output file. If
+   * the output file path is specified but the file cannot be opened, the
+   * process exits with a diagnostic error message. The internal string
+   * buffer is pre-allocated to reduce dynamic allocation overhead.
+   */
   reporter::reporter (std::unique_ptr<std::vector<std::string_view>> argvs)
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
@@ -148,6 +157,13 @@ namespace micro_os_plus::micro_test_plus
     buffer_.reserve (128);
   }
 
+  /**
+   * @details
+   * If an output file was opened, it is flushed and closed, and a
+   * confirmation message naming the output file is written to `stdout`.
+   * If tracing is enabled, the function signature is output for
+   * diagnostic purposes.
+   */
   reporter::~reporter ()
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
@@ -187,10 +203,10 @@ namespace micro_os_plus::micro_test_plus
    * all test cases and folders within the µTest++ framework.
    */
   reporter&
-  endl (reporter& reporter)
+  endl (reporter& stream)
   {
-    reporter.endline ();
-    return reporter;
+    stream.endline ();
+    return stream;
   }
 
   /**
@@ -224,6 +240,12 @@ namespace micro_os_plus::micro_test_plus
     printf ("%s", buffer_.c_str ());
   }
 
+  /**
+   * @details
+   * Writes the contents of `buffer_` to `output_file_` using `fprintf`
+   * without appending a newline. If `output_file_` is null, the call is
+   * a no-op.
+   */
   void
   reporter::write_buffer_to_file_ (void)
   {
@@ -234,6 +256,16 @@ namespace micro_os_plus::micro_test_plus
       }
   }
 
+  /**
+   * @details
+   * Constructs and emits two informational lines: the first lists the
+   * programme name and any command-line arguments; the second identifies
+   * the compiler (Clang, GCC, or MSVC) together with the version string,
+   * floating-point availability on bare-metal targets, exception support,
+   * and any active debug or trace macros. Both lines are written to the
+   * output file when one is open, and to `stdout` unless verbosity is
+   * set to `silent`.
+   */
   void
   reporter::write_info_ (void)
   {

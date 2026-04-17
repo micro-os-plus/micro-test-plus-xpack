@@ -183,7 +183,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Mark the beginning of a subtest.
      *
-     * @param test Reference to the subtest.
+     * @param subtest Reference to the subtest.
      * @par Returns
      *   Nothing.
      */
@@ -200,6 +200,14 @@ namespace micro_os_plus::micro_test_plus
     virtual void
     end_subtest (subtest& subtest) override;
 
+    /**
+     * @brief Returns the TAP comment prefix string `"# "`.
+     *
+     * @par Parameters
+     *	 None.
+     * @return The string `"# "`, used to prefix comment lines in TAP
+     * output.
+     */
     virtual const char*
     get_comment_prefix (void) override;
 
@@ -208,6 +216,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Outputs the prefix for a passing condition.
      *
      * @param message The message to display.
+     * @param subtest The subtest that owns this check.
      * @par Returns
      *   Nothing.
      */
@@ -217,8 +226,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Outputs the suffix for a passing condition.
      *
-     * @par Parameters
-     *	 None.
+     * @param subtest The subtest that owns this check.
      * @par Returns
      *   Nothing.
      */
@@ -232,6 +240,7 @@ namespace micro_os_plus::micro_test_plus
      * @param hasExpression Whether the failure is associated with an
      * expression.
      * @param location The source location of the failure.
+     * @param subtest The subtest that owns this check.
      * @par Returns
      *   Nothing.
      */
@@ -245,6 +254,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param location The source location of the failure.
      * @param abort Whether to abort execution after failure.
+     * @param subtest The subtest that owns this check.
      * @par Returns
      *   Nothing.
      */

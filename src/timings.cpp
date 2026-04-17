@@ -17,10 +17,20 @@
 
 /**
  * @file
- * @brief C++ source file with implementations for the µTest++ test suite
+ * @brief C++ source file with implementations for the µTest++ timings
  * methods.
  *
  * @details
+ * This source file contains the implementations for the `timestamp` and
+ * `timestamps` classes of the µTest++ framework. It provides methods
+ * for capturing monotonic clock values, checking whether valid
+ * timestamps have been recorded, and computing the elapsed time in
+ * milliseconds and microseconds between a begin and an end timestamp.
+ *
+ * All definitions reside within the
+ * `micro_os_plus::micro_test_plus` namespace.
+ *
+ * This file must be included when building the µTest++ library.
  */
 
 // ----------------------------------------------------------------------------
@@ -50,6 +60,14 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
+  /**
+   * @details
+   * On Windows, the current time is captured via `timespec_get()` with
+   * `TIME_UTC`. On POSIX platforms with `CLOCK_MONOTONIC` defined,
+   * `clock_gettime(CLOCK_MONOTONIC)` is used to obtain a monotonic
+   * timestamp. On platforms where neither macro is defined, `value_`
+   * remains zero-initialised.
+   */
   timestamp::timestamp () noexcept
   {
 #if defined(_WIN32)
@@ -59,6 +77,12 @@ namespace micro_os_plus::micro_test_plus
 #endif
   }
 
+  /**
+   * @details
+   * Returns `true` if at least one of the `tv_sec` or `tv_nsec` fields
+   * of the underlying `timespec` is non-zero, indicating that a valid
+   * clock reading was successfully captured.
+   */
   bool
   timestamp::has_clock (void) const noexcept
   {
@@ -67,6 +91,13 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
+  /**
+   * @details
+   * If the begin timestamp has not yet been set, a `timestamp` is
+   * constructed in-place using the default constructor, which captures
+   * the current monotonic time. Subsequent calls are silently ignored,
+   * ensuring idempotent behaviour.
+   */
   void
   timestamps::timestamp_begin (void) noexcept
   {
@@ -77,6 +108,12 @@ namespace micro_os_plus::micro_test_plus
       }
   }
 
+  /**
+   * @details
+   * If the begin timestamp has not yet been set, a `timestamp` is
+   * constructed in-place from the supplied `timespec` value. Subsequent
+   * calls are silently ignored, ensuring idempotent behaviour.
+   */
   void
   timestamps::timestamp_begin (const timespec& ts) noexcept
   {
@@ -87,6 +124,13 @@ namespace micro_os_plus::micro_test_plus
       }
   }
 
+  /**
+   * @details
+   * If the end timestamp has not yet been set, a `timestamp` is
+   * constructed in-place using the default constructor, which captures
+   * the current monotonic time. Subsequent calls are silently ignored,
+   * ensuring idempotent behaviour.
+   */
   void
   timestamps::timestamp_end (void) noexcept
   {
@@ -97,6 +141,12 @@ namespace micro_os_plus::micro_test_plus
       }
   }
 
+  /**
+   * @details
+   * If the end timestamp has not yet been set, a `timestamp` is
+   * constructed in-place from the supplied `timespec` value. Subsequent
+   * calls are silently ignored, ensuring idempotent behaviour.
+   */
   void
   timestamps::timestamp_end (const timespec& ts) noexcept
   {
@@ -107,6 +157,12 @@ namespace micro_os_plus::micro_test_plus
       }
   }
 
+  /**
+   * @details
+   * Returns `true` only when both the begin and end optional timestamps
+   * are engaged and each contains a valid (non-zero) clock reading, as
+   * determined by `timestamp::has_clock()`.
+   */
   bool
   timestamps::has_timestamps (void) const noexcept
   {
@@ -114,6 +170,16 @@ namespace micro_os_plus::micro_test_plus
            && end_time_.has_value () && end_time_->has_clock ();
   }
 
+  /**
+   * @details
+   * Subtracts the begin timestamp from the end timestamp in nanoseconds.
+   * If the nanosecond difference is negative, one second is borrowed
+   * from the seconds delta to normalise the result. The total elapsed
+   * duration in microseconds is then split into whole milliseconds
+   * (written to @p milliseconds) and the remainder microseconds (written
+   * to @p microseconds). Requires `has_timestamps()` to be `true`;
+   * behaviour is undefined otherwise.
+   */
   void
   timestamps::compute_elapsed_time (uint32_t& milliseconds,
                                     uint32_t& microseconds) const

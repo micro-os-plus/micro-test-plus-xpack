@@ -17,9 +17,21 @@
 
 /**
  * @file
- * @brief C++ source file with implementations for the µTest++ methods.
+ * @brief C++ source file with implementations for the µTest++ deferred
+ * reporter methods.
  *
  * @details
+ * This source file contains the implementation of the
+ * `detail::deferred_reporter_base` class, which supports deferred
+ * reporting of test expression results. The constructor captures the
+ * result value, source location, and subtest reference; the destructor
+ * updates the subtest counters and optionally aborts execution on
+ * critical failures.
+ *
+ * All definitions reside within the
+ * `micro_os_plus::micro_test_plus::detail` namespace.
+ *
+ * This file must be included when building the µTest++ library.
  */
 
 // ----------------------------------------------------------------------------
@@ -51,9 +63,10 @@ namespace micro_os_plus::micro_test_plus
   {
     /**
      * @details
-     * This constructor .... The source location is recorded for reporting
-     * purposes, enabling precise identification of the test case within the
-     * relevant file or folder.
+     * Stores the evaluated Boolean @p value, the @p location identifying
+     * the source line of the assertion, and a reference to the owning
+     * @p subtest. The subtest's check index counter is incremented
+     * immediately so that the first check is reported as check #1.
      */
     deferred_reporter_base::deferred_reporter_base (
         bool value, const reflection::source_location location,

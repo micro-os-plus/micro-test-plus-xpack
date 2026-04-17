@@ -17,9 +17,27 @@
 
 /**
  * @file
- * @brief C++ header file with declarations for the µTest++ internals.
+ * @brief C++ header file with declarations for the µTest++ deferred reporter.
  *
  * @details
+ * This header provides the two deferred-reporter classes used by `expect()`
+ * and `assume()` to capture a test-expression result and format the outcome
+ * only when the reporter object is destroyed (i.e. at the semicolon
+ * following the expression statement).
+ *
+ * - `deferred_reporter_base` stores the boolean result, the source
+ *   location, an optional user-supplied message (accumulated via
+ *   `operator<<`), and a reference to the owning `subtest`. Its destructor
+ *   calls the reporter to emit a pass or fail line.
+ * - `deferred_reporter<Expr_T>` derives from the base and additionally
+ *   stores the original expression object so that the reporter can print
+ *   the actual and expected values on failure.
+ *
+ * Both classes live in the `detail` namespace and are not part of the
+ * public API.
+ *
+ * This file is intended solely for internal use within the framework and
+ * should not be included directly by user code.
  */
 
 #ifndef MICRO_TEST_PLUS_DEFERRED_REPORTER_H_
@@ -107,6 +125,7 @@ namespace micro_os_plus::micro_test_plus
        *
        * @param value The result value associated with the report.
        * @param location The source location relevant to the report.
+       * @param subtest The subtest that owns this deferred report.
        */
       deferred_reporter_base (bool value,
                               const reflection::source_location location,
@@ -231,6 +250,7 @@ namespace micro_os_plus::micro_test_plus
        * @param abort Indicates whether reporting should abort further
        * processing.
        * @param location The source location relevant to the report.
+       * @param subtest The subtest that owns this deferred report.
        *
        * @details
        * Initialises the reporter with the given expression, abort status, and

@@ -90,6 +90,11 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
   }
 
+  /**
+   * @details
+   * The `reporter_` unique pointer is released automatically. If tracing
+   * is enabled, the function signature is output for diagnostic purposes.
+   */
   runner::~runner ()
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
@@ -208,6 +213,13 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
+  /**
+   * @details
+   * Takes ownership of the supplied `suite` unique pointer and appends
+   * it to the internal `children_suites_` vector, deferring execution
+   * until `run_suites_()` is called. If tracing is enabled, the suite
+   * name is logged for diagnostic purposes.
+   */
   void
   runner::register_suite_ (std::unique_ptr<class suite> suite)
   {
@@ -228,6 +240,16 @@ namespace micro_os_plus::micro_test_plus
     children_suites_.push_back (std::move (suite));
   }
 
+  /**
+   * @details
+   * Sorts `children_suites_` alphabetically by suite name using a
+   * selection sort on `unique_ptr::swap`, avoiding the
+   * `-Waggregate-return` diagnostic that `std::sort` would trigger on
+   * unique-pointer iterators. Each suite is assigned a 1-based index
+   * offset by the top-suite index, executed via `suite::run()`, and its
+   * totals are accumulated into the runner totals. The executed-subtest
+   * counter is not incremented; suites are not counted as subtests.
+   */
   void
   runner::run_suites_ (void)
   {
@@ -266,6 +288,15 @@ namespace micro_os_plus::micro_test_plus
       }
   }
 
+  /**
+   * @details
+   * Finalises the top suite by recording its end timestamp and notifying
+   * the reporter, then accumulates its totals into the runner totals.
+   * Subsequently invokes `run_suites_()` to sort, execute, and
+   * accumulate all registered child suites. Finally, records the session
+   * end timestamp, notifies the reporter, and returns `0` if all checks
+   * passed or `1` otherwise.
+   */
   int
   runner::exit_code (void)
   {
@@ -334,12 +365,22 @@ namespace micro_os_plus::micro_test_plus
     ::abort ();
   }
 
+  /**
+   * @details
+   * Returns the number of registered child suites plus one, accounting
+   * for the top suite.
+   */
   size_t
   runner::suites_count (void) const noexcept
   {
     return children_suites_.size () + 1;
   }
 
+  /**
+   * @details
+   * For the base `runner`, the total suite count equals `suites_count()`,
+   * as there are no additional static suites.
+   */
   size_t
   runner::total_suites_count (void) const noexcept
   {
@@ -348,6 +389,12 @@ namespace micro_os_plus::micro_test_plus
 
   // ==========================================================================
 
+  /**
+   * @details
+   * Delegates construction to the `runner` base class with the given
+   * @p top_suite_name. If tracing is enabled, the function signature
+   * and suite name are output for diagnostic purposes.
+   */
   static_runner::static_runner (const char* top_suite_name)
       : runner{ top_suite_name }
   {
@@ -366,6 +413,14 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
   }
 
+  /**
+   * @details
+   * If `static_children_suites_` is non-null, the dynamically allocated
+   * vector of raw pointers is deleted and the pointer is reset to
+   * `nullptr`. The pointed-to `static_suite` objects are not deleted,
+   * as they are static storage-duration objects. If tracing is enabled,
+   * the function signature is output for diagnostic purposes.
+   */
   static_runner::~static_runner ()
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
@@ -382,6 +437,11 @@ namespace micro_os_plus::micro_test_plus
       }
   }
 
+  /**
+   * @details
+   * Returns the number of elements in `static_children_suites_`, or
+   * zero if the vector has not been allocated yet.
+   */
   size_t
   static_runner::static_suites_count (void) const noexcept
   {
@@ -390,12 +450,26 @@ namespace micro_os_plus::micro_test_plus
                : 0;
   }
 
+  /**
+   * @details
+   * Returns the combined count of dynamically registered suites (from
+   * the base `runner`) and statically registered suites.
+   */
   size_t
   static_runner::total_suites_count (void) const noexcept
   {
     return suites_count () + static_suites_count ();
   }
 
+  /**
+   * @details
+   * First invokes `runner::run_suites_()` to execute all dynamically
+   * registered child suites. If `static_children_suites_` is non-null,
+   * its contents are sorted alphabetically by suite name using selection
+   * sort on raw pointers, each suite is assigned a 1-based index offset
+   * by the dynamic suite count, executed via `suite::run()`, and its
+   * totals are accumulated into the runner totals.
+   */
   void
   static_runner::run_suites_ (void)
   {
@@ -443,6 +517,14 @@ namespace micro_os_plus::micro_test_plus
       }
   }
 
+  /**
+   * @details
+   * If `runner.static_children_suites_` is null, a new
+   * `std::vector<static_suite*>` is heap-allocated and assigned to it.
+   * The address of @p suite is then appended to the vector. This method
+   * is intended to be called from the constructor of `static_suite`,
+   * before test execution begins.
+   */
   void
   static_runner::register_static_suite (static_runner& runner,
                                         static_suite& suite)

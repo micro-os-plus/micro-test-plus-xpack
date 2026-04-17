@@ -86,7 +86,7 @@ namespace micro_os_plus::micro_test_plus
    * This includes templates for function traits, type lists, identity, value
    * wrappers, and compile-time checks for container types, floating point
    * types, and type convertibility. It also provides generic integral and
-   * floating point constant wrappers, as well as mechanisms for SFINAE and
+   * floating point constant wrappers, as well as C++20 concepts and
    * requirements checking.
    *
    * These utilities facilitate advanced template programming, type deduction,
@@ -135,8 +135,8 @@ namespace micro_os_plus::micro_test_plus
      * within the µTest++ framework.
      *
      * This utility is particularly useful in scenarios where type deduction or
-     * SFINAE is required, as it allows the type to be carried through template
-     * specialisations without modification.
+     * concept constraints are required, as it allows the type to be carried
+     * through template specialisations without modification.
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
@@ -793,7 +793,7 @@ namespace micro_os_plus::micro_test_plus
      * getter.
      *
      * @tparam T The type of the value to be encapsulated.
-     * @tparam Opt An optional parameter for SFINAE or specialisation,
+     * @tparam Opt An optional parameter reserved for partial specialisation,
      * defaults to `int`.
      *
      * @details

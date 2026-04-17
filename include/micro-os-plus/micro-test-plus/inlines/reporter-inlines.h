@@ -34,7 +34,7 @@
  * and extensibility, enabling professional and readable test reports suitable
  * for embedded and general C++ development.
  *
- * All definitions reside within the `micro_os_plus::micro_test_plus::detail`
+ * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the risk
  * of naming conflicts.
  *
@@ -478,16 +478,10 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This operator overload formats output for expressions that do not throw
-   * exceptions. It applies colour styling for clarity and ensures a structured
-   * representation of exception safety.
-   *
-   * When invoked, the function outputs a pass prefix, followed by either the
-   * provided message or, if the message is empty, the evaluated expression
-   * itself. It then appends a pass suffix to complete the output. This
-   * approach guarantees that successful test outcomes are presented in a clear
-   * and consistent manner, enhancing the readability and professionalism of
-   * test reports.
+   * Outputs a pass prefix, followed by either the provided message or, if
+   * the message is empty, the evaluated expression itself. A pass suffix is
+   * then appended to complete the output, ensuring that successful test
+   * outcomes are presented in a clear and consistent manner.
    */
   template <class Expr_T>
   void

@@ -202,46 +202,130 @@ namespace micro_os_plus::micro_test_plus
 
   // ==========================================================================
 
+  /**
+   * @brief Non-template base for all runnable objects (suites and subtests).
+   *
+   * @details
+   * `runnable_base` extends `test_node` with the state that is shared by
+   * every runnable object but does not depend on the CRTP self-type:
+   * - a reference to the owning `runner`,
+   * - the object's own index within its parent container,
+   * - a sequential subtest index used when creating nested subtests, and
+   * - an owning vector of child `subtest` instances.
+   *
+   * Concrete runnable classes (`suite`, `subtest`) derive from
+   * `runnable<Self_T>` which in turn derives from `runnable_base`.
+   *
+   * The class is non-copyable and non-movable to preserve unique ownership
+   * and consistent state throughout the test session.
+   *
+   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+   */
   class runnable_base : public test_node
   {
   public:
+    /**
+     * @brief Constructs a `runnable_base` with a name, runner, and index.
+     *
+     * @param name The name used in reports.
+     * @param runner The test runner managing this object.
+     * @param own_index The positional index of this object within its parent.
+     */
     runnable_base (const char* name, runner& runner, size_t own_index);
 
+    /**
+     * @brief Deleted copy constructor to prevent copying.
+     */
     runnable_base (const runnable_base&) = delete;
+
+    /**
+     * @brief Deleted move constructor to prevent moving.
+     */
     runnable_base (runnable_base&&) = delete;
+
+    /**
+     * @brief Deleted copy assignment operator to prevent copying.
+     */
     runnable_base&
     operator= (const runnable_base&) = delete;
+
+    /**
+     * @brief Deleted move assignment operator to prevent moving.
+     */
     runnable_base&
     operator= (runnable_base&&) = delete;
 
+    /**
+     * @brief Virtual destructor.
+     */
     virtual ~runnable_base () override;
 
     // ------------------------------------------------------------------------
 
+    /**
+     * @brief Returns the positional index of this object within its parent.
+     *
+     * @par Parameters
+     *   None.
+     * @return The one-based own index.
+     */
     [[nodiscard]] size_t
     own_index () const noexcept
     {
       return own_index_;
     }
 
+    /**
+     * @brief Sets the positional index of this object within its parent.
+     *
+     * @param index The new index value.
+     * @par Returns
+     *   Nothing.
+     */
     void
     own_index (size_t index) noexcept
     {
       own_index_ = index;
     }
 
+    /**
+     * @brief Returns the index of the most recently created child subtest.
+     *
+     * @par Parameters
+     *   None.
+     * @return The current child subtest sequential index.
+     */
     [[nodiscard]] size_t
     current_subtest_index () const noexcept
     {
       return current_subtest_index_;
     }
 
+    /**
+     * @brief Increments and returns the child subtest sequential index.
+     *
+     * @details
+     * Each call to `test()` invokes this method before constructing the new
+     * `subtest`, so the index values form a strictly increasing, one-based
+     * sequence.
+     *
+     * @par Parameters
+     *   None.
+     * @return The new index value after incrementing.
+     */
     size_t
     increment_subtest_index () noexcept
     {
       return ++current_subtest_index_;
     }
 
+    /**
+     * @brief Returns the number of direct child subtests owned by this node.
+     *
+     * @par Parameters
+     *   None.
+     * @return The number of child subtests.
+     */
     [[nodiscard]] size_t
     children_subtests_count (void) const noexcept
     {
@@ -283,13 +367,22 @@ namespace micro_os_plus::micro_test_plus
     }
 
   protected:
+    /**
+     * @brief Registers a newly constructed child subtest and executes it
+     * immediately.
+     *
+     * @param child_test Owning pointer to the newly created `subtest`.
+     * @param suite The parent `suite` to which execution results are reported.
+     * @par Returns
+     *   Nothing.
+     */
     void
     after_subtest_create_ (std::unique_ptr<class subtest> child_test,
                            suite& suite);
 
   protected:
     /**
-     * @brief Reference to the test runner.
+     * @brief Reference to the test runner that owns this object.
      */
     class runner& runner_;
 
@@ -309,13 +402,20 @@ namespace micro_os_plus::micro_test_plus
      */
     size_t current_subtest_index_ = 0;
 
+    /**
+     * @brief Owning collection of direct child subtests.
+     *
+     * @details
+     * Each call to `test()` appends a new `subtest` to this vector and
+     * runs it immediately. The vector retains ownership for the lifetime of
+     * the parent runnable.
+     */
     std::vector<std::unique_ptr<subtest>> children_subtests_;
   };
 
   // ==========================================================================
 
   /**
-   * @ingroup micro-test-plus-test-suites
    * @brief CRTP base class factoring out callable storage, rule-of-five, and
    * `run()` logic shared by `test` and `static_suite`.
    *
@@ -400,26 +500,23 @@ namespace micro_os_plus::micro_test_plus
   // ==========================================================================
 
   /**
-   * @ingroup micro-test-plus-test-suites
-   * @brief Represents a named group of test cases that self-register to the
-   * runner.
+   * @ingroup micro-test-plus-test-case
+   * @brief A named, runnable test case that lives inside a `suite`.
    *
    * @details
-   * The `test_suite` class extends `test_node` and enables the
-   * registration and execution of callable objects (such as lambdas or
-   * function pointers) as test suites. Upon construction, each test suite
-   * automatically registers itself with the test runner, facilitating
-   * automated test discovery and execution across different components and
-   * folders of a project.
+   * `subtest` represents a single, named test case or a nested group of
+   * checks within a parent `suite`. It is constructed by calling
+   * `suite::test()` or `subtest::test()`, both of which create the object,
+   * immediately execute its callable body via `run()`, and register the
+   * result with the parent suite.
    *
-   * This class template provides a flexible mechanism for grouping related
-   * test cases and managing their execution within the µTest++ framework. It
-   * ensures that test suites are non-copyable and non-movable, maintaining
-   * unique ownership and consistent state.
+   * The body of the subtest is supplied as a callable (typically a lambda)
+   * that receives a `subtest&` reference as its first argument. Inside the
+   * body, `expect()` and `assume()` are used to evaluate conditions and
+   * record the results. Subtests may be nested to an arbitrary depth.
    *
-   * All members and methods are defined within the
-   * `micro_os_plus::micro_test_plus` namespace, ensuring clear separation from
-   * user code and minimising the risk of naming conflicts.
+   * The class is non-copyable and non-movable to preserve unique ownership
+   * and consistent state throughout the test session.
    *
    * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */
@@ -427,16 +524,22 @@ namespace micro_os_plus::micro_test_plus
   {
   public:
     /**
-     * @brief Class template constructor for test.
+     * @brief Constructs a subtest with a name, runner, parent suite, index,
+     * nesting depth, and callable.
      *
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
      *
-     * @param [in] name The test case name or description, used in reports.
+     * @param [in] name The subtest name or description, used in reports.
+     * @param [in] runner The test runner managing this subtest.
+     * @param [in] parent_suite The suite that owns this subtest.
+     * @param [in] own_index The one-based positional index within the parent.
+     * @param [in] nesting_depth The depth of nesting; 1 for top-level
+     * subtests.
      * @param [in] callable A generic callable object, usually a lambda,
-     * invoked to perform the test.
-     * @param [in] arguments A possibly empty list of arguments to be passed to
-     * the callable.
+     * invoked when the subtest executes.
+     * @param [in] arguments A possibly empty list of arguments forwarded to
+     * the callable after the leading `subtest&` reference.
      *
      * @details
      * The rule of five is enforced to prevent accidental copying or moving.
@@ -499,9 +602,9 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam Expr_T The type of the custom expression.
      *
-     * @par SFINAE
+     * @par Constraints
      * Enabled only if `Expr_T` is derived from `detail::op` or
-     * is convertible to `bool`.
+     * is convertible to `bool` (enforced via a C++20 `requires` clause).
      *
      * @param [in] expr Logical expression to evaluate.
      * @param [in] sl Optional source location, defaulting to the current line.
@@ -546,9 +649,9 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam Expr_T The type of the custom expression.
      *
-     * @par SFINAE
+     * @par Constraints
      * Enabled only if `Expr_T` is derived from `detail::op` or
-     * is convertible to `bool`.
+     * is convertible to `bool` (enforced via a C++20 `requires` clause).
      *
      * @param [in] expr Logical expression to evaluate.
      * @param [in] sl Optional source location, defaulting to the current line.
@@ -589,9 +692,33 @@ namespace micro_os_plus::micro_test_plus
 
     // ------------------------------------------------------------------------
 
+    /**
+     * @brief Executes the subtest body by invoking the stored callable.
+     *
+     * @details
+     * Calls `begin_subtest()` on the reporter, invokes `callable_(*this)`,
+     * then calls `end_subtest()`. The results are propagated to the parent
+     * suite's totals.
+     *
+     * @par Parameters
+     *   None.
+     * @par Returns
+     *   Nothing.
+     */
     virtual void
     run (void) override;
 
+    /**
+     * @brief Returns the nesting depth of this subtest.
+     *
+     * @details
+     * Top-level subtests (direct children of a `suite`) have depth 1.
+     * Each additional level of nesting increments the depth by 1.
+     *
+     * @par Parameters
+     *   None.
+     * @return The nesting depth (1 = top-level).
+     */
     [[nodiscard]] size_t
     nesting_depth () const noexcept
     {
@@ -599,30 +726,88 @@ namespace micro_os_plus::micro_test_plus
     }
 
   protected:
+    /**
+     * @brief Reference to the parent suite that owns this subtest.
+     */
     suite& parent_suite_;
 
     /**
-     * @brief The nesting depth of the test case within the suite.
+     * @brief The nesting depth of this subtest within the suite.
      */
     size_t nesting_depth_;
   };
 
   // ==========================================================================
 
+  /**
+   * @ingroup micro-test-plus-test-suites
+   * @brief A named, runnable test suite registered with the test runner.
+   *
+   * @details
+   * `suite` represents a top-level named group of related test cases within
+   * the µTest++ framework. It is created by calling `runner::suite()`, which
+   * constructs the object, stores it in the runner's collection, and runs it
+   * immediately. Each suite records its own timing information and propagates
+   * its results to the owning `runner`.
+   *
+   * The body of a suite is supplied as a callable (typically a lambda) that
+   * receives a `suite&` reference as its first argument. Inside the body,
+   * `suite::test()` is called to create and run individual subtests.
+   *
+   * The class is non-copyable and non-movable to preserve unique ownership
+   * and consistent state throughout the test session.
+   *
+   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+   */
   class suite : public runnable<suite>
   {
   public:
+    /**
+     * @brief Constructs a suite with a name, runner, and callable body.
+     *
+     * @tparam Callable_T The type of the callable object.
+     * @tparam Args_T The types of any additional callable arguments.
+     *
+     * @param [in] name The suite name or description, used in reports.
+     * @param [in] runner The test runner managing this suite.
+     * @param [in] callable A generic callable object, usually a lambda,
+     * invoked when the suite executes. Its first parameter must be
+     * `suite&`.
+     * @param [in] arguments A possibly empty list of arguments forwarded to
+     * the callable after the leading `suite&` reference.
+     *
+     * @details
+     * The rule of five is enforced to prevent accidental copying or moving.
+     */
     template <typename Callable_T, typename... Args_T>
     suite (const char* name, class runner& runner, Callable_T&& callable,
            Args_T&&... arguments);
 
+    /**
+     * @brief Deleted copy constructor to prevent copying.
+     */
     suite (const suite&) = delete;
+
+    /**
+     * @brief Deleted move constructor to prevent moving.
+     */
     suite (suite&&) = delete;
+
+    /**
+     * @brief Deleted copy assignment operator to prevent copying.
+     */
     suite&
     operator= (const suite&) = delete;
+
+    /**
+     * @brief Deleted move assignment operator to prevent moving.
+     */
     suite&
     operator= (suite&&) = delete;
 
+    /**
+     * @brief Virtual destructor.
+     */
     virtual ~suite () override;
 
     // ------------------------------------------------------------------------
@@ -671,35 +856,116 @@ namespace micro_os_plus::micro_test_plus
       return timings_;
     }
 
+    /**
+     * @brief Executes the suite body by invoking the stored callable.
+     *
+     * @details
+     * Calls `begin_suite()` on the reporter, records timing, invokes
+     * `callable_(*this)`, records end timing, and calls `end_suite()`. The
+     * results are propagated to the owning `runner`'s totals.
+     *
+     * @par Parameters
+     *   None.
+     * @par Returns
+     *   Nothing.
+     */
     virtual void
     run (void) override;
 
   protected:
     /**
-     * @brief Timings for this suite.
+     * @brief Timing measurements for this suite's execution.
      */
     timestamps timings_;
   };
 
   // ==========================================================================
 
+  /**
+   * @brief The implicit top-level suite owned by every `runner` instance.
+   *
+   * @details
+   * `top_suite` is a thin specialisation of `suite` used as the implicit
+   * root context for the `runner`. It is created by the `runner` constructor
+   * and is available to user code via `runner::initialise()`, which returns
+   * a reference to it. Unlike regular `suite` objects, `top_suite` is not
+   * stored in the runner's child-suite vector; instead it is a direct member
+   * of `runner`.
+   *
+   * Users do not normally construct `top_suite` directly.
+   *
+   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+   */
   class top_suite : public suite
   {
   public:
+    /**
+     * @brief Constructs the top-level suite with a name and runner reference.
+     *
+     * @param name The suite name used in reports.
+     * @param runner The test runner that owns this suite.
+     */
     top_suite (const char* name, class runner& runner);
 
+    /**
+     * @brief Deleted copy constructor to prevent copying.
+     */
     top_suite (const top_suite&) = delete;
+
+    /**
+     * @brief Deleted move constructor to prevent moving.
+     */
     top_suite (top_suite&&) = delete;
+
+    /**
+     * @brief Deleted copy assignment operator to prevent copying.
+     */
     top_suite&
     operator= (const top_suite&) = delete;
+
+    /**
+     * @brief Deleted move assignment operator to prevent moving.
+     */
     top_suite&
     operator= (top_suite&&) = delete;
 
+    /**
+     * @brief Virtual destructor.
+     */
     virtual ~top_suite () override;
   };
 
   // ==========================================================================
 
+  /**
+   * @ingroup micro-test-plus-test-suites
+   * @brief A test suite designed for static (namespace-scope) registration
+   * with a `static_runner`.
+   *
+   * @details
+   * `static_suite` extends `suite` to support the pattern where test suites
+   * are declared as namespace-scope objects and therefore constructed before
+   * or after the `static_runner` instance, in unspecified
+   * static-initialisation order.
+   *
+   * Upon construction, the suite automatically registers itself with the
+   * supplied `static_runner` by calling
+   * `static_runner::register_suite_()`. The runner defers execution of all
+   * registered static suites until `static_runner::run_suites_()` is invoked,
+   * which typically happens inside the implicit `main()` provided by the
+   * framework.
+   *
+   * In addition to the standard callable body inherited from `suite`, a
+   * `static_suite` may carry a second, statically-registered callable stored
+   * in `static_callable_`. The overridden `run()` method invokes both bodies
+   * in sequence, allowing the suite to integrate both dynamic and static
+   * registration patterns.
+   *
+   * The class is non-copyable and non-movable to preserve unique ownership
+   * and consistent state throughout the test session.
+   *
+   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+   */
   class static_suite : public suite
   {
   public:
@@ -754,6 +1020,20 @@ namespace micro_os_plus::micro_test_plus
 
     // ------------------------------------------------------------------------
 
+    /**
+     * @brief Executes the static suite body using the stored static callable.
+     *
+     * @details
+     * Calls the base `suite::run()` implementation for the dynamically
+     * registered callable, then additionally invokes `static_callable_(*this)`
+     * if it is set. This allows `static_suite` objects to carry two separate
+     * bodies: a standard one and a statically-registered one.
+     *
+     * @par Parameters
+     *   None.
+     * @par Returns
+     *   Nothing.
+     */
     virtual void
     run (void) override;
 

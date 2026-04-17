@@ -68,6 +68,14 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
+  /**
+   * @details
+   * Delegates construction to the `reporter` base class with the supplied
+   * argument vector. On POSIX platforms, if `stdout` is connected to a
+   * terminal (`isatty()`), colour output is enabled by selecting the
+   * red/green colour scheme. If tracing is enabled, the function
+   * signature is output for diagnostic purposes.
+   */
   reporter_human::reporter_human (
       std::unique_ptr<std::vector<std::string_view>> argvs)
       : reporter{ std::move (argvs) }
@@ -85,6 +93,12 @@ namespace micro_os_plus::micro_test_plus
 #endif
   }
 
+  /**
+   * @details
+   * No resources are owned directly by `reporter_human`; the destructor
+   * performs no explicit clean-up. If tracing is enabled, the function
+   * signature is output for diagnostic purposes.
+   */
   reporter_human::~reporter_human ()
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
@@ -113,6 +127,14 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
+  /**
+   * @details
+   * If verbosity is not silent, a blank line is printed to `stdout`
+   * before the build-information block emitted by `write_info_()`. A
+   * fixed "µTest++ human report" heading is then written both to the
+   * output file (if open) and to `stdout`. The `add_empty_line_` flag
+   * is set so that subsequent suite output is visually separated.
+   */
   void
   reporter_human::begin_session ([[maybe_unused]] runner& runner)
   {
@@ -155,6 +177,15 @@ namespace micro_os_plus::micro_test_plus
 #endif
   }
 
+  /**
+   * @details
+   * Prints a summary line to `stdout` (and to the output file if open)
+   * showing the total number of successful checks, failed checks,
+   * executed test cases, and test suites, together with the elapsed
+   * time when timing data is available. The line is prefixed with a
+   * green `✓` tick on success or a red `✗` cross on failure, using
+   * ANSI colour codes when colour output is enabled.
+   */
   void
   reporter_human::end_session (runner& runner)
   {
@@ -643,6 +674,11 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
+  /**
+   * @details
+   * Returns an empty string. The human reporter does not prefix comment
+   * lines; the `write_info_()` output appears as plain text.
+   */
   const char*
   reporter_human::get_comment_prefix (void)
   {

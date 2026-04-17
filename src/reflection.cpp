@@ -20,20 +20,13 @@
  * @brief C++ source file with implementations for the µTest++ methods.
  *
  * @details
- * This source file contains the core implementations for the µTest++ testing
- * framework, including initialisation and shutdown routines, utility
- * functions, and the management of global framework state. It provides the
- * logic for setting up the test environment, registering and executing test
- * suites, reporting results, and supporting utility operations such as file
- * name extraction and pattern-based string matching.
+ * This source file contains the implementation of
+ * `reflection::short_name()`, which extracts the base file name from a
+ * fully qualified path by returning the portion after the last `/`
+ * separator, or the original string if no separator is present.
  *
- * All definitions are contained within the `micro_os_plus::micro_test_plus`
- * namespace and its nested namespaces, ensuring clear separation from user
- * code and minimising the risk of naming conflicts.
- *
- * The implementation is optimised for embedded environments, avoiding heavy
- * dependencies and providing lightweight, efficient mechanisms for test
- * execution and reporting.
+ * All definitions reside within the
+ * `micro_os_plus::micro_test_plus::reflection` namespace.
  *
  * This file must be included when building the µTest++ library.
  */

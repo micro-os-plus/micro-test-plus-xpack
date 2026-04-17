@@ -326,7 +326,6 @@ namespace micro_os_plus::micro_test_plus
      *
      * @return A `type_traits::integral_constant` instance holding the parsed
      * `uint8_t` value.
-     * and reporting mechanisms.
      */
     template <char... Cs>
     [[nodiscard]] constexpr auto
