@@ -113,8 +113,8 @@ namespace micro_os_plus::micro_test_plus
  * @code{.cpp}
  * namespace mt = micro_os_plus::micro_test_plus;
  *
- * mt::expect (mt::utility::is_match ("abc", "a?c")) << "abc matches a?c";
- * mt::expect (mt::utility::is_match ("abc", "a*c")) << "abc matches a*c";
+ * t.expect (mt::utility::is_match ("abc", "a?c")) << "abc matches a?c";
+ * t.expect (mt::utility::is_match ("abc", "a*c")) << "abc matches a*c";
  * @endcode
  */
 #if defined(__GNUC__)

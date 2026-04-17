@@ -676,8 +676,8 @@ namespace micro_os_plus::micro_test_plus
    *
    * @code
    * int x = 42;
-   * auto wrapped = to_i{x}; // Explicitly treat x as an int for test
-   * comparison
+   * // Explicitly treat x as an int for test comparison.
+   * auto wrapped = to_i{x};
    * @endcode
    *
    * @since 3.2.0

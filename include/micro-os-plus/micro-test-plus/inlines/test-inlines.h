@@ -273,8 +273,8 @@ namespace micro_os_plus::micro_test_plus
    * @code{.cpp}
    *   namespace mt = micro_os_plus::micro_test_plus;
    *
-   *   mt::test ("Check answer with comparator", [] {
-   *     mt::expect (mt::eq (compute_answer (), 42)) << "answer is 42";
+   *   ts.test ("Check answer with comparator", [] (auto& t) {
+   *     t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
    *   });
    * @endcode
    */
