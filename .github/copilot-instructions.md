@@ -20,7 +20,10 @@
 ## Documentation
 
 - Add comprehensive documentation comments accepted by Doxygen
-- Document all classes, methods, properties, parameters, and return types
+- Document all classes, methods, properties, parameters, and return types declared in all include files, except those in the `inlines` folder, suffixed with `-inlines.h`
+- For inline definitions in the header files, provide the @details too.
+- The header files in the `inlines` folder include template definitions. Update the @details sections for all definitions. If there are inner classes defined there, fully document them.
+- The source files in the `src` folder include the implementation of the methods declared in the header files. Update the @details sections for all methods. 
 - Document private and protected members as well
 - Keep the line length below 80 characters
 - If the code already includes documentation, review and possibly improve it
