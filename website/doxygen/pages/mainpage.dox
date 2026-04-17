@@ -1,11 +1,19 @@
 @mainpage
-The @b µTest++ project is a **modern C++** library designed to provide a **lightweight and
-efficient** testing framework, purpose-built for embedded systems development.
+The @b µTest++ project is a **lightweight**, **macro-free**, **modern C++**
+testing framework **with TAP output**, purpose-built for embedded systems
+development.
 
 With its clean and expressive C++ API, µTest++ enables developers to write,
 organise, and execute unit tests with minimal overhead. The framework
 includes advanced features such as **test suites**, **test cases**, and detailed
 reporting, all tailored to meet the specific needs of embedded environments.
+
+Test results are reported in the
+[TAP](https://en.wikipedia.org/wiki/Test_Anything_Protocol) 
+(**Test Anything Protocol**) 
+format by default, ensuring compatibility with a wide range of
+continuous integration systems and TAP-aware test harnesses. A
+human-readable reporter is also available for interactive use.
 
 Output verbosity is fully configurable via command-line options, allowing
 users to choose between concise summaries and comprehensive diagnostic

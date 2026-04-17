@@ -9,18 +9,17 @@ In addition to the generic operators, specialised equality and inequality operat
 @par Examples
 
 @code{.cpp}
-#include <string_view>
-using namespace std::literals; // For the "sv" literal.
+#include <vector>
 namespace mt = micro_os_plus::micro_test_plus;
 // ...
 
-mt::test_case ("Operators", [] {
-  using namespace micro_test_plus::operators;
+ts.test ("Check containers with operators", [] (auto& t) {
+  using namespace mt::operators;
 
-  mt::expect (std::vector<int>{ 1, 2 } == std::vector<int>{ 1, 2 })
-          << "vector{ 1, 2 } == vector{ 1, 2 }";
+  t.expect (std::vector<int>{ 1, 2 } == std::vector<int>{ 1, 2 })
+      << "vector{ 1, 2 } == vector{ 1, 2 }";
 
-  mt::expect (std::vector<int>{ 1, 2, 3 } != std::vector<int>{ 1, 2, 4 })
-          << "vector{ 1, 2, 3 } != vector{ 1, 2, 4 }";
+  t.expect (std::vector<int>{ 1, 2, 3 } != std::vector<int>{ 1, 2, 4 })
+      << "vector{ 1, 2, 3 } != vector{ 1, 2, 4 }";
 });
 @endcode

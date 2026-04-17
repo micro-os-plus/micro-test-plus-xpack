@@ -14,10 +14,10 @@ using namespace std::literals; // For the "sv" literal.
 namespace mt = micro_os_plus::micro_test_plus;
 // ...
 
-mt::test_case ("Operators", [] {
-  using namespace micro_test_plus::operators;
+ts.test ("Check strings with operators", [] (auto& t) {
+  using namespace mt::operators;
 
-  mt::expect (std::string_view{ compute_ultimate_answer () } == "forty-two"sv)
-          << "ultimate answer == 'forty-two'";
+  t.expect (std::string_view{ compute_ultimate_answer () } == "forty-two"sv)
+      << "ultimate answer == 'forty-two'";
 });
 @endcode

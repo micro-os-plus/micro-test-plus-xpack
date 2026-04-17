@@ -2,43 +2,70 @@
 @brief Test suites are named collections of test cases.
 
 @details
-Test suites in µTest++ are named groups of related test cases, allowing for structured organisation and execution of tests. By default, all test cases defined in `main()` are included in the default (main) test suite and are executed immediately.
+Test suites in µTest++ are named groups of related test cases, allowing
+for structured organisation and execution of tests. By default, all test
+cases defined in `main()` are included in the top test suite, which is
+created by `runner::initialise()`, and are executed immediately.
 
-For more complex projects, multiple test suites can be defined, typically in separate source files. Test suites are implemented as classes, constructed with a name, a callable (usually a lambda that chains the execution of the test cases), and optional arguments. This design enables self-registration of test suites, ensuring they are automatically included in the test run.
-
-@code{.cpp}
-class test_suite : public test_suite_base
-{
-public:
-  template <typename Callable_T, typename... Args_T>
-  test_suite (const char* name, Callable_T&& callable,
-              Args_T&&... arguments);
-  // ...
-}
-@endcode
+For more complex projects, additional test suites can be defined, typically
+in separate source files. Standalone test suites are implemented as
+`mt::static_suite` objects, constructed with a name, a reference to the
+runner, and a callable (usually a lambda that chains the execution of the
+test cases), along with any optional arguments. This design enables
+self-registration of test suites, ensuring they are automatically included
+in the test run.
 
 @important
-It is strongly recommended to instantiate test suites as static objects.
+It is strongly recommended to instantiate additional test suites as static
+objects so that their constructors are invoked before `main()` begins.
 
-Self-registration is performed within the constructor, ensuring that each test suite is automatically included in the test run. When test suites are defined in separate compilation units, they may be executed in any order, as the sequence in which static constructors are invoked is not specified. Consequently, test suites should be designed to be independent and must not rely on the execution order of other suites.
+Self-registration is performed within the constructor, ensuring that each
+test suite is automatically included in the test run. When test suites are
+defined in separate compilation units, they may be executed in any order,
+as the sequence in which static constructors are invoked is not specified.
+Consequently, test suites should be designed to be independent and must not
+rely on the execution order of other suites.
 
-All registered test suites are executed when the `exit_code()` function is called, guaranteeing comprehensive test coverage across the project.
+All registered test suites are executed when `runner::exit_code()` is
+called, guaranteeing comprehensive test coverage across the project.
 
 @par Examples
 
 @code{.cpp}
 namespace mt = micro_os_plus::micro_test_plus;
 
-// Test suite with generic parameters.
-static void
-test_suite_args (int ic, int iv, int& ir, int* ip1, int* ip2)
+// In main.cpp: create the runner (also the static_runner variant works).
+static mt::static_runner tr{ "Sample" };
+
+int
+main (int argc, char* argv[])
 {
-  mt::test_case ("args", [&] {
-    mt::expect (mt::eq (ic, 42)) << "ic is 42";
-    mt::expect (mt::eq (iv, 43)) << "iv is 43";
-    mt::expect (mt::eq (ir, 44)) << "ir is 44";
-    mt::expect (mt::eq (*ip1, 45)) << "*ip1 is 45";
-    mt::expect (mt::eq (*ip2, 46)) << "*ip2 is 46";
+  auto& ts = tr.initialise (argc, argv);
+
+  ts.test ("Check one", [] (auto& t) {
+    t.expect (true) << "Passed";
+  });
+
+  return tr.exit_code ();
+}
+
+// In a separate source file: a self-registering suite.
+static mt::static_suite ts_extra
+    = { "Extra suite", tr, [] (auto& t) {
+  t.test ("Check two", [] (auto& t) { t.expect (true) << "Passed"; });
+} };
+
+// Parametrised test suite accepting additional arguments.
+static void
+test_suite_with_args (mt::static_suite& t, int ic, int iv,
+                      int& ir, int* ip1, int* ip2)
+{
+  t.test ("args", [&] (auto& t) {
+    t.expect (mt::eq (ic, 42)) << "ic is 42";
+    t.expect (mt::eq (iv, 43)) << "iv is 43";
+    t.expect (mt::eq (ir, 44)) << "ir is 44";
+    t.expect (mt::eq (*ip1, 45)) << "*ip1 is 45";
+    t.expect (mt::eq (*ip2, 46)) << "*ip2 is 46";
   });
 }
 
@@ -49,6 +76,7 @@ static int in45 = 45;
 static int in46 = 46;
 static int* ip2 = &in46;
 
-static mt::test_suite ts_args
-    = { "Args", test_suite_args, 42, in, ir, &in45, ip2 };
+static mt::static_suite ts_args
+    = { "Args suite", tr, test_suite_with_args,
+        42, in, ir, &in45, ip2 };
 @endcode

@@ -2,27 +2,36 @@
 @brief Test cases are named sequences of checks.
 
 @details
-Test cases in µTest++ are named collections of checks that are executed within the same environment. Each test case is defined by providing a descriptive name and a callable object (typically a lambda), along with any optional arguments required for the test.
+Test cases in µTest++ are named collections of checks that are executed
+within the same environment. Each test case is defined by calling
+`suite::test()` with a descriptive name and a callable object (typically
+a lambda accepting a `subtest&` reference), along with any optional
+arguments required for the test.
 
-Test cases enable developers to organise related checks together, improving the clarity and maintainability of the test suite. Any number of test cases may be defined, each focusing on a specific aspect of the code under test.
+Test cases enable developers to organise related checks together, improving
+the clarity and maintainability of the test suite. Any number of test cases
+may be defined, each focusing on a specific aspect of the code under test.
 
-By grouping checks in this way, it becomes easier to identify which functionality is being verified and to interpret the results in the context of the overall software quality.
+By grouping checks in this way, it becomes easier to identify which
+functionality is being verified and to interpret the results in the context
+of the overall software quality.
 
 @par Examples
 
 @code{.cpp}
 namespace mt = micro_os_plus::micro_test_plus;
 
-mt::test_case ("Check various conditions", [] {
-  mt::expect (mt::eq (compute_answer (), 42)) << "answer eq 42";
-  mt::expect (mt::ne (compute_answer (), 43)) << "answer ne 43";
+// In main(), after tr.initialise():
+ts.test ("Check various conditions", [] (auto& t) {
+  t.expect (mt::eq (compute_answer (), 42)) << "answer eq 42";
+  t.expect (mt::ne (compute_answer (), 43)) << "answer ne 43";
 });
 
-mt::test_case ("Check various conditions with operators", [] {
+ts.test ("Check various conditions with operators", [] (auto& t) {
   using namespace mt::operators;
   using namespace mt::literals;
 
-  mt::expect (compute_answer () == 42_i) << "answer == 42";
-  mt::expect (compute_answer () != 43_i) << "answer != 43";
+  t.expect (compute_answer () == 42_i) << "answer == 42";
+  t.expect (compute_answer () != 43_i) << "answer != 43";
 });
 @endcode

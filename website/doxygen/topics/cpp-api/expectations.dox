@@ -1,5 +1,5 @@
 @defgroup micro-test-plus-expectations Expectations
-@brief Expectations are checks whose outcomes are reported.
+@brief Expectations are checks whose outcomes are accounted and reported.
 
 @details
 Expectations are conditions that are verified during test execution, with their outcomes—whether passing or failing—being explicitly reported in the test results. Unlike assumptions, a failed expectation does not cause the test to terminate; instead, execution continues, allowing multiple conditions to be checked within a single test case.

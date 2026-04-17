@@ -1,5 +1,20 @@
 @dir src
-@brief Folder with C/C++ source files.
+@brief Folder with C++ source files.
 
 @details
-The `src` folder contains the `.cpp` implementation files for the µTest++ library.
+The `src` folder contains the `.cpp` implementation files for the µTest++
+library. Each file provides the non-inline method definitions for one or
+more related components:
+
+- `runner.cpp` — `runner` and `static_runner` constructors, suite
+  registration, and `exit_code()`
+- `test.cpp` — `suite`, `top_suite`, `static_suite`, and `subtest`
+  lifecycle methods
+- `reporter.cpp` — base `reporter` class and `operator<<` overloads
+- `reporter-tap.cpp` — TAP-format reporter implementation
+- `reporter-human.cpp` — human-readable reporter implementation
+- `deferred-reporter.cpp` — deferred check-result reporting helper
+- `runner-totals.cpp` — `runner_totals` accumulation and `operator+=`
+- `timings.cpp` — `timestamp` and elapsed-time computation
+- `reflection.cpp` — `reflection::short_name()` implementation
+- `utility.cpp` — `extract_file_name()` and `is_match()` helpers

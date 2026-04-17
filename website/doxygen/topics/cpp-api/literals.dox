@@ -11,6 +11,11 @@ This approach ensures that both compile-time constants and run-time values can b
 @par Examples
 
 @code{.cpp}
-mt::expect (mt::to_i {answer} == 42_i);
-mt::expect (mt::to_f {expression} == 42_f);
+ts.test ("Check typed operands", [] (auto& t) {
+  using namespace micro_test_plus::operators;
+  using namespace micro_test_plus::literals;
+
+  t.expect (mt::to_i {answer} == 42_i);
+  t.expect (mt::to_f {expression} == 42_f);
+});
 @endcode

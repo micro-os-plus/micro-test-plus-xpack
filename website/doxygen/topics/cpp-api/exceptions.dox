@@ -11,29 +11,36 @@ For more advanced scenarios, such as handling multiple expected exceptions, deve
 @par Examples
 
 @code{.cpp}
-mt::expect (mt::throws ([] { exercise_throw (true); })) << "exception thrown";
+ts.test ("Check if exceptions are thrown", [] (auto& t) {
+  t.expect (mt::throws ([] { exercise_throw (true); }))
+      << "exception thrown";
 
-mt::expect (mt::throws<std::runtime_error> ([] { throw std::runtime_error{ "" }; }))
-        << "std::runtime_error thrown";
+  t.expect (mt::throws<std::runtime_error> ([]
+    { throw std::runtime_error{ "" }; }))
+      << "std::runtime_error thrown";
 
-mt::expect (mt::nothrow ([] { exercise_throw (false); })) << "exception not thrown";
+  t.expect (mt::nothrow ([] { exercise_throw (false); }))
+      << "exception not thrown";
+});
 @endcode
 
 @code{.cpp}
-try
-  {
-    compute_answer ();
-  }
-catch (const std::overflow_error& e)
-  {
-    mt::expect (true) << "std::overflow_error thrown";
-  }
-catch (const std::runtime_error& e)
-  {
-    mt::expect (true) << "std::runtime_error thrown";
-  }
-catch (...)
-  {
-    mt::expect (false) << "known exception thrown";
-  }
+ts.test ("Check exceptions explicitly", [] (auto& t) {
+  try
+    {
+      compute_answer ();
+    }
+  catch (const std::overflow_error& e)
+    {
+      t.expect (true) << "std::overflow_error thrown";
+    }
+  catch (const std::runtime_error& e)
+    {
+      t.expect (true) << "std::runtime_error thrown";
+    }
+  catch (...)
+    {
+      t.expect (false) << "known exception thrown";
+    }
+});
 @endcode

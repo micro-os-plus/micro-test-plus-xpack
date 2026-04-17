@@ -11,23 +11,20 @@ By default, the reporter presents detailed results only for failed test cases, w
 @par Example
 
 @code{.console}
-test 5
-      Start  5: minimal-test --reporter=tap
+$ minimal-test one two --reporter=tap
 
-5: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test "one" "two" "--reporter=tap"
-5: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
-5: Test timeout computed to be: 10000000
-5: Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions.
-5: 
-5: TAP version 14
-5: 1..1
-5: # Subtest: Minimal - test suite
-5:     ok 1 - Check various conditions # { test case passed, 2 checks }
-5:     1..1
-5: ok 1 - Minimal # { test suite passed, 2 checks in 1 test case, time: 0.005 ms }
-5: 
-5: # { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: 0.025 ms }
- 5/24 Test  #5: minimal-test --reporter=tap ...............   Passed    0.00 sec
+TAP version 14
+# Subtest: Minimal
+
+    # Subtest: Check various conditions
+        1..0
+    ok 1 - Check various conditions # { passed, 2 checks }
+
+    1..1
+ok 1 - Minimal # { passed, 2 checks in 1 test case, time: X.XXX ms }
+
+1..1
+# { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: X.XXX ms }
 @endcode
 
 @section cli-reporter Reporter
@@ -41,8 +38,8 @@ If needed, more reporting formats (like JUnit, JSON, etc.) can be added.
 
 To explicitly ask for a specific format:
 
-- `--reporter=tap` - the default reporter
-- `--reporter=basic` - the deprecated initial reporter
+- `--reporter=tap` - the default TAP reporter
+- `--reporter=human` - the human-readable reporter
 
 @section cli-verbosity Verbosity
 
@@ -58,72 +55,52 @@ These options enable developers to focus on the information most relevant to the
 
 The examples provided illustrate the output produced in each mode, demonstrating how µTest++ adapts its reporting to support professional and efficient testing workflows across all files and folders.
 
-The source code for this example is in `tests/src/minimal-test.cpp`.
+The source code for this example is in
+`tests/sources/minimal-test/src/main.cpp`.
 
 @subsection cli-verbosity-verbose Verbose mode
 
-In verbose mode, the µTest++ reporter provides detailed output for every expectation, irrespective of whether it passes or fails.
+In verbose mode, the µTest++ reporter provides detailed output for every
+expectation, irrespective of whether it passes or fails.
 
 @par Example
 
 @code{.console}
-test 6
-      Start  6: minimal-test --verbose --reporter=tap
+$ minimal-test one two --verbose --reporter=tap
 
-6: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test "one" "two" "--verbose" "--reporter=tap"
-6: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
-6: Test timeout computed to be: 10000000
-6: Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions.
-6: 
-6: TAP version 14
-6: 1..1
-6: # Subtest: Minimal - test suite
-6:     # Subtest: Check various conditions - test case
-6:         ok 1 - answer is 42
-6:         ok 2 - condition is true
-6:         1..2
-6:     ok 1 - Check various conditions # { test case passed, 2 checks }
-6:     1..1
-6: ok 1 - Minimal # { test suite passed, 2 checks in 1 test case, time: 0.005 ms }
-6: 
-6: # { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: 0.029 ms }
- 6/24 Test  #6: minimal-test --verbose --reporter=tap .....   Passed    0.00 sec
+TAP version 14
+# Subtest: Minimal
+
+    # Subtest: Check various conditions
+        ok 1 - answer is 42
+        ok 2 - condition is true
+        1..2
+    ok 1 - Check various conditions # { passed, 2 checks }
+
+    1..1
+ok 1 - Minimal # { passed, 2 checks in 1 test case, time: X.XXX ms }
+
+1..1
+# { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: X.XXX ms }
 @endcode
 
 @subsection cli-verbosity-quiet Quiet mode
 
-In quiet mode, the µTest++ reporter displays only the overall totals for the test suite.
+In quiet mode, the µTest++ reporter displays only the overall session
+totals.
 
 @par Example
 
 @code{.console}
-test 7
-      Start  7: minimal-test --quiet --reporter=tap
+$ minimal-test one two --quiet --reporter=tap
 
-7: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test "one" "two" "--quiet" "--reporter=tap"
-7: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
-7: Test timeout computed to be: 10000000
-7: 
-7: TAP version 14
-7: 1..1
-7: ok 1 - Minimal # { test suite passed, 2 checks in 1 test case, time: 0.003 ms }
-7: 
-7: # { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: 0.023 ms }
- 7/24 Test  #7: minimal-test --quiet --reporter=tap .......   Passed    0.00 sec
+TAP version 14
+
+1..0
+# { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: X.XXX ms }
 @endcode
 
 @subsection cli-verbosity-silent Silent mode
 
-In silent mode, the µTest++ reporter suppresses all output, and the framework returns only the exit code.
-
-@par Example
-
-@code{.console}
-test 8
-      Start  8: minimal-test --silent --reporter=tap
-
-8: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test "one" "two" "--silent" "--reporter=tap"
-8: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin
-8: Test timeout computed to be: 10000000
- 8/24 Test  #8: minimal-test --silent --reporter=tap ......   Passed    0.00 sec
-@endcode
+In silent mode, the µTest++ reporter suppresses all output, and the
+framework returns only the exit code.

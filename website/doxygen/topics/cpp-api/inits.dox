@@ -1,26 +1,35 @@
-@defgroup micro-test-plus-inits Initialisation & Exit
-@brief Functions for initialising the framework and returning an exit code.
+@defgroup micro-test-plus-runners Test Runners
+@brief Classes and methods for initialising the framework and returning an
+exit code.
 
 @details
-These functions are responsible for **initialising the test runner** and **returning the test result** as the process exit code. Proper initialisation ensures that the µTest++ framework is correctly configured to manage and execute test cases, while the exit code reflects the overall outcome of the tests, supporting integration with automated build and continuous integration systems.
+These classes are responsible for **initialising the test framework**,
+**running the test suites** and
+**returning the test result** as the process exit code. Proper
+initialisation ensures that the µTest++ framework is correctly configured
+to manage and execute test cases, whilst the exit code reflects the overall
+outcome of the tests, supporting integration with automated build and
+continuous integration systems.
 
-The simplest test consists of a single test case containing a single expectation; for example:
+The simplest test consists of the default test suite, a single test case 
+containing a single expectation; for example:
 
 @code{.cpp}
 #include <micro-os-plus/micro-test-plus.h>
 
+namespace mt = micro_os_plus::micro_test_plus;
+
 int
-main(int argc, char* argv[])
+main (int argc, char* argv[])
 {
-  namespace mt = micro_os_plus::micro_test_plus;
+  mt::runner tr{ "Minimal" };
+  auto& ts = tr.initialise (argc, argv);
 
-  mt::initialize (argc, argv, "Minimal");
-
-  mt::test_case ("Check truth", [] {
-    mt::expect (true);
+  ts.test ("Check truth", [] (auto& t) {
+    t.expect (true);
   });
 
-  return mt::exit_code ();
+  return tr.exit_code ();
 }
 @endcode
 
@@ -28,11 +37,13 @@ When this test is executed, the output is as follows:
 
 @code{.console}
 TAP version 14
-1..0
 # Subtest: Minimal
-    ok 1 - Check truth # { test case passed, 1 check }
+    # Subtest: Check truth
+        ok 1 - true
+        1..1
+    ok 1 - Check truth # { passed, 1 check }
     1..1
-ok 0 - Minimal # { test suite passed, 1 check in 1 test case }
-
-# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite }
+ok 1 - Minimal # { passed, 1 check in 1 test case, time: 0.065 ms }
+1..1
+# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.136 ms }
 @endcode

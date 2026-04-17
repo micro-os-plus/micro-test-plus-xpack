@@ -3,18 +3,21 @@
 @brief Topics related to the µTest++ testing framework.
 
 @details
-The @b µTest++ project is a **modern C++** library designed to provide a **lightweight and
-efficient** testing framework, purpose-built for embedded systems development.
+The @b µTest++ project is a **modern C++** library designed to provide
+a **lightweight and efficient**, **macro free**, **TAP based** testing
+framework, purpose-built for embedded systems development.
 
-With its clean and expressive C++ API, µTest++ enables developers to write,
-organise, and execute unit tests with minimal overhead. The framework
-includes advanced features such as **test suites**, **test cases**, and detailed
-reporting, all tailored to meet the specific needs of embedded environments.
+The **C++ API** is the primary interface for writing test suites and
+test cases. It is centred on the `runner` and `subtest` classes, which
+provide methods for registering tests, evaluating expectations and
+assumptions, and collecting results. Utility types such as
+strongly-typed literals, function comparators, and operator overloads
+complement the core API to enable expressive, type-safe assertions
+with no macro dependencies. The API is documented in the
+@ref micro-test-plus-cpp-api group.
 
-Output verbosity is fully configurable via command-line options, allowing
-users to choose between concise summaries and comprehensive diagnostic
-information to best suit their workflow.
-
-By adopting µTest++, you can achieve robust and maintainable code through
-systematic and automated testing, supporting professional software
-engineering practices across your entire project.
+The **command-line interface (CLI)** allows test executables to be
+configured at run time without recompilation. Arguments are passed to
+`runner::initialise()` and control aspects such as the verbosity level
+and the output reporter format. The available options are documented in
+the @ref micro-test-plus-cli group.

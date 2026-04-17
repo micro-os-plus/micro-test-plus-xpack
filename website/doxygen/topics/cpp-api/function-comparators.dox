@@ -12,14 +12,16 @@ Comparators are available for both fundamental types and standard containers. Wh
 @par Examples
 
 @code{.cpp}
-mt::expect (mt::eq (compute_answer (), 42)) << "answer is 42";
-mt::expect (mt::ne (compute_answer (), 43)) << "answer is not 43";
-mt::expect (mt::lt (compute_answer (), 43)) << "answer is < 43";
-mt::expect (mt::le (compute_answer (), 43)) << "answer is <= 43";
-mt::expect (mt::gt (compute_answer (), 41)) << "answer is > 41";
-mt::expect (mt::ge (compute_answer (), 42)) << "answer is >= 42";
+ts.test ("Check various conditions", [] (auto& t) {
+  t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
+  t.expect (mt::ne (compute_answer (), 43)) << "answer is not 43";
+  t.expect (mt::lt (compute_answer (), 43)) << "answer is < 43";
+  t.expect (mt::le (compute_answer (), 43)) << "answer is <= 43";
+  t.expect (mt::gt (compute_answer (), 41)) << "answer is > 41";
+  t.expect (mt::ge (compute_answer (), 42)) << "answer is >= 42";
 
-mt::expect (compute_condition ()) << "condition is true";
+  t.expect (compute_condition ()) << "condition is true";
+});
 @endcode
 
 If a comparator check fails, the output will clearly indicate the actual and expected values:
@@ -40,10 +42,13 @@ Containers can be compared for equality or inequality using the same comparator 
 @par Examples
 
 @code{.cpp}
-mt::expect (mt::eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
-        << "vector{ 1, 2 } eq vector{ 1, 2 }";
+ts.test ("Check containers", [] (auto& t) {
+  t.expect (mt::eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
+      << "vector{ 1, 2 } eq vector{ 1, 2 }";
 
-mt::expect (mt::ne (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 }))
-        << "vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }";
+  t.expect (mt::ne (std::vector<int>{ 1, 2, 3 },
+                    std::vector<int>{ 1, 2, 4 }))
+      << "vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }";
+});
 @endcode
 
