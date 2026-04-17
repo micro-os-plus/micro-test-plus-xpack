@@ -329,32 +329,32 @@ main (int argc, char* argv[])
 // Additional test suites. They may be located in separate source files.
 
 static mt::static_suite ts_explicit
-    = { "Explicit namespace suite", tr, [] (auto& t)
+    = { "Explicit namespace suite", tr, [] (auto& ts)
   {
-    t.test ("Check one", [] (auto& t) { t.expect (true) << "Passed"; });
-    t.test ("Check two", [] (auto& t) { t.expect (true) << "Passed"; });
+    ts.test ("Check one", [] (auto& t) { t.expect (true) << "Passed"; });
+    ts.test ("Check two", [] (auto& t) { t.expect (true) << "Passed"; });
   } };
 
 static mt::static_suite ts_separate
-    = { "Implicit namespace suite", tr, [] (auto& t)
+    = { "Implicit namespace suite", tr, [] (auto& ts)
   {
     // For applications known to not conflict with the test
     // framework names, it is possible to access the definitions
     // directly, by including all namespace definitions.
     using namespace micro_os_plus::micro_test_plus;
 
-    t.test ("Check one", [] (auto& t) { t.expect (true) << "Passed"; });
-    t.test ("Check two", [] (auto& t) { t.expect (true) << "Passed"; });
+    ts.test ("Check one", [] (auto& t) { t.expect (true) << "Passed"; });
+    ts.test ("Check two", [] (auto& t) { t.expect (true) << "Passed"; });
   } };
 
 // ----------------------------------------------------------------------------
 
 // Parametrized test suite, with constants, values, references and pointers.
 static void
-test_suite_with_args (mt::static_suite& t, int ic, int iv, int& ir, int* ip1,
+test_suite_with_args (mt::static_suite& ts, int ic, int iv, int& ir, int* ip1,
                       int* ip2)
 {
-  t.test ("args", [&] (auto& t)
+  ts.test ("args", [&] (auto& t)
     {
       t.expect (mt::eq (ic, 42)) << "ic is 42";
       t.expect (mt::eq (iv, 43)) << "iv is 43";
