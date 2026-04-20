@@ -305,6 +305,12 @@ namespace micro_os_plus::micro_test_plus
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
 
+    if (reporter_ == nullptr)
+      {
+        fprintf (stderr, "error: test runner not initialised\n");
+        return 1;
+      }
+
     top_suite_.timings ().timestamp_end ();
     reporter_->end_suite (top_suite_);
     totals_ += top_suite_.totals ();
