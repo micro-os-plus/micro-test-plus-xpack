@@ -15,39 +15,49 @@ After following the links, the result is a structure like this:
 ├── include
 │   └── micro-os-plus
 │       ├── micro-test-plus
+│       │   ├── deferred-reporter.h
 │       │   ├── detail.h
+│       │   ├── exceptions.h
 │       │   ├── function-comparators.h
 │       │   ├── inlines
-│       │   │   ├── details-inlines.h
+│       │   │   ├── deferred-reporter-inlines.h
 │       │   │   ├── function-comparators-inlines.h
 │       │   │   ├── literals-inlines.h
 │       │   │   ├── math-inlines.h
-│       │   │   ├── micro-test-plus-inlines.h
 │       │   │   ├── reflection-inlines.h
-│       │   │   ├── test-reporter-inlines.h
-│       │   │   └── test-suite-inlines.h
+│       │   │   ├── reporter-inlines.h
+│       │   │   ├── runner-inlines.h
+│       │   │   ├── test-inlines.h
+│       │   │   └── utility-inlines.h
 │       │   ├── literals.h
 │       │   ├── math.h
 │       │   ├── operators.h
 │       │   ├── reflection.h
-│       │   ├── test-reporter-basic.h
-│       │   ├── test-reporter-tap.h
-│       │   ├── test-reporter.h
-│       │   ├── test-runner.h
-│       │   ├── test-suite.h
-│       │   └── type-traits.h
+│       │   ├── reporter-human.h
+│       │   ├── reporter-tap.h
+│       │   ├── reporter.h
+│       │   ├── runner-totals.h
+│       │   ├── runner.h
+│       │   ├── test.h
+│       │   ├── timings.h
+│       │   ├── type-traits.h
+│       │   └── utility.h
 │       └── micro-test-plus.h
 ├── LICENSE
 ├── meson.build
 ├── package.json
 ├── README.md
 └── src
-    ├── micro-test-plus.cpp
-    ├── test-reporter-basic.cpp
-    ├── test-reporter-tap.cpp
-    ├── test-reporter.cpp
-    ├── test-runner.cpp
-    └── test-suite.cpp
+    ├── deferred-reporter.cpp
+    ├── reflection.cpp
+    ├── reporter-human.cpp
+    ├── reporter-tap.cpp
+    ├── reporter.cpp
+    ├── runner-totals.cpp
+    ├── runner.cpp
+    ├── test.cpp
+    ├── timings.cpp
+    └── utility.cpp
 
-7 directories, 34 files
+7 directories, 44 files
 ```

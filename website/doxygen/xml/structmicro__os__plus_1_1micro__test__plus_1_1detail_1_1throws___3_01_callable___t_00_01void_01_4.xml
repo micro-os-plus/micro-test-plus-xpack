@@ -25,9 +25,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1664" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1664" bodyend="1664"/>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4_1a8e97e74a695e9758034855ba462c2839" compoundref="detail_8h" startline="1628" endline="1642">throws_</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4_1a12c805c55b615482e942aef67e41cc05" compoundref="detail_8h" startline="1656" endline="1659">operator bool</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1597" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1597" bodyend="1597"/>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4_1a8e97e74a695e9758034855ba462c2839" compoundref="detail_8h" startline="1561" endline="1575">throws_</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4_1a12c805c55b615482e942aef67e41cc05" compoundref="detail_8h" startline="1589" endline="1592">operator bool</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -59,8 +59,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1628" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1628" bodyend="1642"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4_1ae7a98b2cb20da3c1d40e7fa0ff4a2615" compoundref="detail_8h" startline="1664" endline="1664">value_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1561" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1561" bodyend="1575"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4_1ae7a98b2cb20da3c1d40e7fa0ff4a2615" compoundref="detail_8h" startline="1597" endline="1597">value_</references>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4_1a12c805c55b615482e942aef67e41cc05" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -79,25 +79,24 @@
 <parametername>true</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The callable throws an exception.</para>
+<para>The callable throws an exception. </para>
 </parameterdescription>
 </parameteritem>
-</parameterlist>
-Returns the result of the exception check. <parameterlist kind="retval"><parameteritem>
+<parameteritem>
 <parameternamelist>
 <parametername>false</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The callable does not throw any exception. </para>
+<para>The callable does not throw any exception.</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>
+Returns the result of the exception check. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1656" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1656" bodyend="1659"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4_1ae7a98b2cb20da3c1d40e7fa0ff4a2615" compoundref="detail_8h" startline="1664" endline="1664">value_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1589" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1589" bodyend="1592"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4_1ae7a98b2cb20da3c1d40e7fa0ff4a2615" compoundref="detail_8h" startline="1597" endline="1597">value_</references>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -146,7 +145,7 @@ The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1de
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op"/>
       </node>
     </collaborationgraph>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1615" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1616" bodyend="1665"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1548" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1549" bodyend="1598"/>
     <listofallmembers>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4_1a12c805c55b615482e942aef67e41cc05" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::throws_&lt; Callable_T, void &gt;</scope><name>operator bool</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4_1a8e97e74a695e9758034855ba462c2839" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::throws_&lt; Callable_T, void &gt;</scope><name>throws_</name></member>

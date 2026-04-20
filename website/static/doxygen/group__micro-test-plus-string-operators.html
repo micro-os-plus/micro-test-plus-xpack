@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;3.3.1</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;4.0.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -113,11 +113,11 @@ Functions</h2></td></tr>
 <div class="line"><span class="keyword">namespace </span>mt = <a class="code hl_namespace" href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a>;</div>
 <div class="line"><span class="comment">// ...</span></div>
 <div class="line"> </div>
-<div class="line">mt::test_case (<span class="stringliteral">&quot;Operators&quot;</span>, [] {</div>
-<div class="line">  <span class="keyword">using namespace </span>micro_test_plus::operators;</div>
+<div class="line">ts.test (<span class="stringliteral">&quot;Check strings with operators&quot;</span>, [] (<span class="keyword">auto</span>&amp; t) {</div>
+<div class="line">  <span class="keyword">using namespace </span>mt::operators;</div>
 <div class="line"> </div>
-<div class="line">  mt::expect (std::string_view{ compute_ultimate_answer () } == <span class="stringliteral">&quot;forty-two&quot;</span>sv)</div>
-<div class="line">          &lt;&lt; <span class="stringliteral">&quot;ultimate answer == &#39;forty-two&#39;&quot;</span>;</div>
+<div class="line">  t.expect (std::string_view{ compute_ultimate_answer () } == <span class="stringliteral">&quot;forty-two&quot;</span>sv)</div>
+<div class="line">      &lt;&lt; <span class="stringliteral">&quot;ultimate answer == &#39;forty-two&#39;&quot;</span>;</div>
 <div class="line">});</div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div><div class="ttdoc">Primary namespace for the µTest++ testing framework.</div></div>
 </div><!-- fragment -->  <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
@@ -157,11 +157,11 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A comparator object that evaluates to true if the string views are not equal.</dd></dl>
 <p>This overload of the non-equality operator enables direct comparison of two <span class="tt">std::string_view</span> objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two string views are not equal. </p>
 
-<p class="definition">Definition at line <a class="el" href="operators_8h_source.html#l00149">149</a> of file <a class="el" href="operators_8h_source.html">operators.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  150</span>    {</div>
-<div class="line"><span class="lineno">  151</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne__.html">detail::ne_</a>{ lhs, rhs };</div>
-<div class="line"><span class="lineno">  152</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne__.html">micro_os_plus::micro_test_plus::detail::ne_</a></div><div class="ttdoc">Non-equality comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00437">detail.h:438</a></div></div>
+<p class="definition">Definition at line <a class="el" href="operators_8h_source.html#l00150">150</a> of file <a class="el" href="operators_8h_source.html">operators.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  151</span>    {</div>
+<div class="line"><span class="lineno">  152</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne__.html">detail::ne_</a>{ lhs, rhs };</div>
+<div class="line"><span class="lineno">  153</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne__.html">micro_os_plus::micro_test_plus::detail::ne_</a></div><div class="ttdoc">Non-equality comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00370">detail.h:371</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -201,11 +201,11 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A comparator object that evaluates to true if the string views are equal.</dd></dl>
 <p>This overload of the equality operator enables direct comparison of two <span class="tt">std::string_view</span> objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two string views are equal. </p>
 
-<p class="definition">Definition at line <a class="el" href="operators_8h_source.html#l00128">128</a> of file <a class="el" href="operators_8h_source.html">operators.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  129</span>    {</div>
-<div class="line"><span class="lineno">  130</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">detail::eq_</a>{ lhs, rhs };</div>
-<div class="line"><span class="lineno">  131</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">micro_os_plus::micro_test_plus::detail::eq_</a></div><div class="ttdoc">Equality comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00259">detail.h:260</a></div></div>
+<p class="definition">Definition at line <a class="el" href="operators_8h_source.html#l00129">129</a> of file <a class="el" href="operators_8h_source.html">operators.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  130</span>    {</div>
+<div class="line"><span class="lineno">  131</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">detail::eq_</a>{ lhs, rhs };</div>
+<div class="line"><span class="lineno">  132</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">micro_os_plus::micro_test_plus::detail::eq_</a></div><div class="ttdoc">Equality comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00196">detail.h:197</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

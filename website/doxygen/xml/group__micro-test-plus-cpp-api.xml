@@ -3,7 +3,7 @@
   <compounddef id="group__micro-test-plus-cpp-api" kind="group">
     <compoundname>micro-test-plus-cpp-api</compoundname>
     <title>C++ API</title>
-    <innergroup refid="group__micro-test-plus-inits">Initialisation &amp; Exit</innergroup>
+    <innergroup refid="group__micro-test-plus-runners">Test Runners</innergroup>
     <innergroup refid="group__micro-test-plus-test-case">Test Cases</innergroup>
     <innergroup refid="group__micro-test-plus-expectations">Expectations</innergroup>
     <innergroup refid="group__micro-test-plus-assumptions">Assumptions</innergroup>

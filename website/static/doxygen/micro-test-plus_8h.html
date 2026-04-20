@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;3.3.1</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;4.0.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -102,70 +102,33 @@ $(function(){initNavTree('micro-test-plus_8h.html','',''); });
 <code>#include &quot;<a class="el" href="math_8h_source.html">micro-test-plus/math.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="literals_8h_source.html">micro-test-plus/literals.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="function-comparators_8h_source.html">micro-test-plus/function-comparators.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="exceptions_8h_source.html">micro-test-plus/exceptions.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="operators_8h_source.html">micro-test-plus/operators.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="test-suite_8h_source.html">micro-test-plus/test-suite.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="test-runner_8h_source.html">micro-test-plus/test-runner.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="test-reporter_8h_source.html">micro-test-plus/test-reporter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="test-reporter-basic_8h_source.html">micro-test-plus/test-reporter-basic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="test-reporter-tap_8h_source.html">micro-test-plus/test-reporter-tap.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="details-inlines_8h_source.html">micro-test-plus/inlines/details-inlines.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="deferred-reporter_8h_source.html">micro-test-plus/deferred-reporter.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="test_8h_source.html">micro-test-plus/test.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="runner_8h_source.html">micro-test-plus/runner.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="runner-totals_8h_source.html">micro-test-plus/runner-totals.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="reporter_8h_source.html">micro-test-plus/reporter.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="reporter-human_8h_source.html">micro-test-plus/reporter-human.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="reporter-tap_8h_source.html">micro-test-plus/reporter-tap.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="utility_8h_source.html">micro-test-plus/utility.h</a>&quot;</code><br />
+<code>#include &lt;micro-os-plus/diag/trace.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="literals-inlines_8h_source.html">micro-test-plus/inlines/literals-inlines.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="math-inlines_8h_source.html">micro-test-plus/inlines/math-inlines.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="reflection-inlines_8h_source.html">micro-test-plus/inlines/reflection-inlines.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="test-reporter-inlines_8h_source.html">micro-test-plus/inlines/test-reporter-inlines.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="deferred-reporter-inlines_8h_source.html">micro-test-plus/inlines/deferred-reporter-inlines.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="reporter-inlines_8h_source.html">micro-test-plus/inlines/reporter-inlines.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="function-comparators-inlines_8h_source.html">micro-test-plus/inlines/function-comparators-inlines.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="test-suite-inlines_8h_source.html">micro-test-plus/inlines/test-suite-inlines.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="micro-test-plus-inlines_8h_source.html">micro-test-plus/inlines/micro-test-plus-inlines.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="runner-inlines_8h_source.html">micro-test-plus/inlines/runner-inlines.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="test-inlines_8h_source.html">micro-test-plus/inlines/test-inlines.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="utility-inlines_8h_source.html">micro-test-plus/inlines/utility-inlines.h</a>&quot;</code><br />
 </div>
 <p><a href="micro-test-plus_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:micro_5Fos_5Fplus" id="r_micro_5Fos_5Fplus"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemicro__os__plus.html">micro_os_plus</a></td></tr>
-<tr class="memdesc:namespacemicro__os__plus"><td class="mdescLeft">&#160;</td><td class="mdescRight">The primary namespace for the µOS++ framework. <br /></td></tr>
 <tr class="memitem:micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus" id="r_micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></td></tr>
 <tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primary namespace for the µTest++ testing framework. <br /></td></tr>
-<tr class="memitem:micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Autility" id="r_micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Autility"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1utility.html">micro_os_plus::micro_test_plus::utility</a></td></tr>
-<tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus_1_1utility"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility functions for the µTest++ testing framework. <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga0f5febbef70eb641691b98583410a1ca" id="r_ga0f5febbef70eb641691b98583410a1ca"><td class="memTemplParams" colspan="2">template&lt;class Expr_T, <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#a1cbbf299a006b4692df250ef2a6fc7c2">type_traits::requires_t</a>&lt; <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#a814e7f004d5404f735737aabb90fa111">type_traits::is_op_v</a>&lt; Expr_T &gt; or <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#a49a5bfe63d50b6fd1be0972586fbf590">type_traits::is_convertible_v</a>&lt; Expr_T, bool &gt; &gt; = 0&gt; </td></tr>
-<tr class="memitem:ga0f5febbef70eb641691b98583410a1ca template"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__micro-test-plus-assumptions.html#ga0f5febbef70eb641691b98583410a1ca">micro_os_plus::micro_test_plus::assume</a> (const Expr_T &amp;expr, const <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html">reflection::source_location</a> &amp;sl=<a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#af2ee3ac5db96f13680291736d58fe327">reflection::source_location::current</a>())</td></tr>
-<tr class="memdesc:ga0f5febbef70eb641691b98583410a1ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check a condition and, if false, abort test execution.  <br /></td></tr>
-<tr class="memitem:gaa790667969dc1a261c324e89a6ea4591" id="r_gaa790667969dc1a261c324e89a6ea4591"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__micro-test-plus-inits.html#gaa790667969dc1a261c324e89a6ea4591">micro_os_plus::micro_test_plus::exit_code</a> (void)</td></tr>
-<tr class="memdesc:gaa790667969dc1a261c324e89a6ea4591"><td class="mdescLeft">&#160;</td><td class="mdescRight">Complete the test run and return the exit code.  <br /></td></tr>
-<tr class="memitem:ga75c3f43663a5440d78231fe572fe4a22" id="r_ga75c3f43663a5440d78231fe572fe4a22"><td class="memTemplParams" colspan="2">template&lt;class Expr_T, <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#a1cbbf299a006b4692df250ef2a6fc7c2">type_traits::requires_t</a>&lt; <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#a814e7f004d5404f735737aabb90fa111">type_traits::is_op_v</a>&lt; Expr_T &gt; or <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#a49a5bfe63d50b6fd1be0972586fbf590">type_traits::is_convertible_v</a>&lt; Expr_T, bool &gt; &gt; = 0&gt; </td></tr>
-<tr class="memitem:ga75c3f43663a5440d78231fe572fe4a22 template"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__micro-test-plus-expectations.html#ga75c3f43663a5440d78231fe572fe4a22">micro_os_plus::micro_test_plus::expect</a> (const Expr_T &amp;expr, const <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html">reflection::source_location</a> &amp;sl=<a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#af2ee3ac5db96f13680291736d58fe327">reflection::source_location::current</a>())</td></tr>
-<tr class="memdesc:ga75c3f43663a5440d78231fe572fe4a22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate a generic condition and report the results.  <br /></td></tr>
-<tr class="memitem:gac2c60d60578f668878957ec68a37538f" id="r_gac2c60d60578f668878957ec68a37538f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__micro-test-plus-inits.html#gac2c60d60578f668878957ec68a37538f">micro_os_plus::micro_test_plus::initialize</a> (int argc, char *argv[], const char *name=&quot;Main&quot;)</td></tr>
-<tr class="memdesc:gac2c60d60578f668878957ec68a37538f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the µTest++ framework.  <br /></td></tr>
-<tr class="memitem:gaa2f0f4cff320a783ad2347c9ff3fc731" id="r_gaa2f0f4cff320a783ad2347c9ff3fc731"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__micro-test-plus-utility-functions.html#gaa2f0f4cff320a783ad2347c9ff3fc731">micro_os_plus::micro_test_plus::utility::is_match</a> (std::string_view input, std::string_view pattern)</td></tr>
-<tr class="memdesc:gaa2f0f4cff320a783ad2347c9ff3fc731"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a string matches a pattern.  <br /></td></tr>
-<tr class="memitem:ga798bd28001c3938784073e60dd904148" id="r_ga798bd28001c3938784073e60dd904148"><td class="memTemplParams" colspan="2">template&lt;class Callable_T&gt; </td></tr>
-<tr class="memitem:ga798bd28001c3938784073e60dd904148 template"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__micro-test-plus-exceptions.html#ga798bd28001c3938784073e60dd904148">micro_os_plus::micro_test_plus::nothrow</a> (const Callable_T &amp;func)</td></tr>
-<tr class="memdesc:ga798bd28001c3938784073e60dd904148"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a callable does not throw an exception.  <br /></td></tr>
-<tr class="memitem:ga1b860aa64be17658d1664de447e6e125" id="r_ga1b860aa64be17658d1664de447e6e125"><td class="memTemplParams" colspan="2">template&lt;class T, class Delim_T&gt; </td></tr>
-<tr class="memitem:ga1b860aa64be17658d1664de447e6e125 template"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__micro-test-plus-utility-functions.html#ga1b860aa64be17658d1664de447e6e125">micro_os_plus::micro_test_plus::utility::split</a> (T input, Delim_T delim) -&gt; std::vector&lt; T &gt;</td></tr>
-<tr class="memdesc:ga1b860aa64be17658d1664de447e6e125"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split a string into a vector of sub-strings.  <br /></td></tr>
-<tr class="memitem:ga423b46709cca6072efe28a6dbf85e413" id="r_ga423b46709cca6072efe28a6dbf85e413"><td class="memTemplParams" colspan="2">template&lt;typename Callable_T, typename... Args_T&gt; </td></tr>
-<tr class="memitem:ga423b46709cca6072efe28a6dbf85e413 template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__micro-test-plus-test-case.html#ga423b46709cca6072efe28a6dbf85e413">micro_os_plus::micro_test_plus::test_case</a> (const char *name, Callable_T &amp;&amp;callable, Args_T &amp;&amp;... arguments)</td></tr>
-<tr class="memdesc:ga423b46709cca6072efe28a6dbf85e413"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define and execute a test case.  <br /></td></tr>
-<tr class="memitem:gaf8f7602f40119da514be2a0bfc4b70f5" id="r_gaf8f7602f40119da514be2a0bfc4b70f5"><td class="memTemplParams" colspan="2">template&lt;class Exception_T, class Callable_T&gt; </td></tr>
-<tr class="memitem:gaf8f7602f40119da514be2a0bfc4b70f5 template"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__micro-test-plus-exceptions.html#gaf8f7602f40119da514be2a0bfc4b70f5">micro_os_plus::micro_test_plus::throws</a> (const Callable_T &amp;func)</td></tr>
-<tr class="memdesc:gaf8f7602f40119da514be2a0bfc4b70f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a callable throws a specific exception.  <br /></td></tr>
-<tr class="memitem:ga8bf54756e4122c6a0bd123b4621e60e2" id="r_ga8bf54756e4122c6a0bd123b4621e60e2"><td class="memTemplParams" colspan="2">template&lt;class Callable_T&gt; </td></tr>
-<tr class="memitem:ga8bf54756e4122c6a0bd123b4621e60e2 template"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__micro-test-plus-exceptions.html#ga8bf54756e4122c6a0bd123b4621e60e2">micro_os_plus::micro_test_plus::throws</a> (const Callable_T &amp;func)</td></tr>
-<tr class="memdesc:ga8bf54756e4122c6a0bd123b4621e60e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a callable throws an exception (any exception).  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a682fc3ce8c00ebe7c068d6299269655b" id="r_a682fc3ce8c00ebe7c068d6299269655b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base.html">test_suite_base</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus.html#a682fc3ce8c00ebe7c068d6299269655b">micro_os_plus::micro_test_plus::current_test_suite</a></td></tr>
-<tr class="memdesc:a682fc3ce8c00ebe7c068d6299269655b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global pointer references the currently active test suite.  <br /></td></tr>
-<tr class="memitem:a22bf4ef08cb70064bbc37770a0ad5ac4" id="r_a22bf4ef08cb70064bbc37770a0ad5ac4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter.html">test_reporter</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus.html#a22bf4ef08cb70064bbc37770a0ad5ac4">micro_os_plus::micro_test_plus::reporter</a> = nullptr</td></tr>
-<tr class="memdesc:a22bf4ef08cb70064bbc37770a0ad5ac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global pointer to <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter.html" title="Reporter to display test results, including operand values and types for failures.">test_reporter</a></span>.  <br /></td></tr>
-<tr class="memitem:a469c0f5fefa0b4cea12a7d267dded831" id="r_a469c0f5fefa0b4cea12a7d267dded831"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__runner.html">test_runner</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus.html#a469c0f5fefa0b4cea12a7d267dded831">micro_os_plus::micro_test_plus::runner</a></td></tr>
-<tr class="memdesc:a469c0f5fefa0b4cea12a7d267dded831"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global instance of <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__runner.html" title="The test runner for the µTest++ framework.">test_runner</a></span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This header serves as the principal entry point for the µTest++ testing framework, purpose-built for both embedded and general C++ projects.</p>

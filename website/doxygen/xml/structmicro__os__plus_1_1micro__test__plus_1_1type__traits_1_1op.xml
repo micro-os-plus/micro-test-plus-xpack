@@ -26,7 +26,7 @@
     <derivedcompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::type_traits::value&lt; float &gt;</derivedcompoundref>
     <derivedcompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::type_traits::value&lt; double &gt;</derivedcompoundref>
     <derivedcompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::type_traits::value&lt; long double &gt;</derivedcompoundref>
-    <derivedcompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;</derivedcompoundref>
+    <derivedcompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;</derivedcompoundref>
     <derivedcompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;</derivedcompoundref>
     <derivedcompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::detail::eq_&lt; Lhs_T, Rhs_T &gt;</derivedcompoundref>
     <derivedcompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge__" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::detail::ge_&lt; Lhs_T, Rhs_T &gt;</derivedcompoundref>
@@ -42,8 +42,8 @@
     <derivedcompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;</derivedcompoundref>
     <derivedcompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1genuine__integral__value" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt; T &gt;</derivedcompoundref>
     <derivedcompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::type_traits::integral_constant&lt; N &gt;</derivedcompoundref>
-    <derivedcompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::type_traits::value&lt; T, Opt &gt;</derivedcompoundref>
-    <derivedcompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;</derivedcompoundref>
+    <derivedcompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;</derivedcompoundref>
+    <derivedcompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;</derivedcompoundref>
     <includes refid="micro-test-plus_8h" local="no">micro-os-plus/micro-test-plus.h</includes>
     <briefdescription>
 <para>Empty base struct for all operator types. </para>
@@ -53,73 +53,73 @@
 <para>This struct is intended for internal use as a base for integral constants, floating point constants, and other value wrappers, supporting advanced template metaprogramming and type introspection. </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="42">
+      <node id="27">
         <label>micro_os_plus::micro_test_plus::_t&lt; T &gt;</label>
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1__t"/>
-        <childnode refid="41" relation="public-inheritance">
+        <childnode refid="26" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="27">
+      <node id="29">
         <label>micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;</label>
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="28">
+      <node id="30">
         <label>micro_os_plus::micro_test_plus::detail::eq_&lt; Lhs_T, Rhs_T &gt;</label>
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="29">
+      <node id="31">
         <label>micro_os_plus::micro_test_plus::detail::ge_&lt; Lhs_T, Rhs_T &gt;</label>
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge__"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="30">
+      <node id="32">
         <label>micro_os_plus::micro_test_plus::detail::gt_&lt; Lhs_T, Rhs_T &gt;</label>
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1gt__"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="31">
+      <node id="33">
         <label>micro_os_plus::micro_test_plus::detail::le_&lt; Lhs_T, Rhs_T &gt;</label>
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1le__"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="32">
+      <node id="34">
         <label>micro_os_plus::micro_test_plus::detail::lt_&lt; Lhs_T, Rhs_T &gt;</label>
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1lt__"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="33">
+      <node id="35">
         <label>micro_os_plus::micro_test_plus::detail::ne_&lt; Lhs_T, Rhs_T &gt;</label>
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne__"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="34">
+      <node id="36">
         <label>micro_os_plus::micro_test_plus::detail::not_&lt; T &gt;</label>
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="35">
+      <node id="37">
         <label>micro_os_plus::micro_test_plus::detail::nothrow_&lt; Callable_T &gt;</label>
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="36">
+      <node id="38">
         <label>micro_os_plus::micro_test_plus::detail::or_&lt; Lhs_T, Rhs_T &gt;</label>
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="37">
+      <node id="39">
         <label>micro_os_plus::micro_test_plus::detail::throws_&lt; Callable_T, Exception_T &gt;</label>
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__"/>
         <childnode refid="1" relation="public-inheritance">
@@ -133,25 +133,25 @@
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="43">
+      <node id="28">
         <label>micro_os_plus::micro_test_plus::to_t&lt; T &gt;</label>
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t"/>
-        <childnode refid="41" relation="public-inheritance">
+        <childnode refid="26" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="38">
+      <node id="40">
         <label>micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;</label>
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="39">
+      <node id="41">
         <label>micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt; T &gt;</label>
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1genuine__integral__value"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="40">
+      <node id="42">
         <label>micro_os_plus::micro_test_plus::type_traits::integral_constant&lt; N &gt;</label>
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant"/>
         <childnode refid="1" relation="public-inheritance">
@@ -161,15 +161,15 @@
         <label>micro_os_plus::micro_test_plus::type_traits::op</label>
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op"/>
       </node>
-      <node id="41">
-        <label>micro_os_plus::micro_test_plus::type_traits::value&lt; T, Opt &gt;</label>
+      <node id="43">
+        <label>micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;</label>
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="26">
-        <label>micro_os_plus::micro_test_plus::type_traits::value&lt; T, type_traits::requires_t&lt; type_traits::is_floating_point_v&lt; T &gt; &gt; &gt;</label>
-        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d"/>
+        <label>micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;</label>
+        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
         <childnode refid="1" relation="public-inheritance">
@@ -314,7 +314,7 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="678" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="679" bodyend="680"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="523" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="524" bodyend="525"/>
     <listofallmembers>
     </listofallmembers>
   </compounddef>

@@ -84,7 +84,7 @@
     ]
   },
   "websiteConfig": {
-    "tagline": "A C++ source code library with a lightweight testing framework for embedded systems",
+    "tagline": "A lightweight, macro-free C++ testing framework with TAP output for embedded projects",
     "hasDoxygenReference": "true",
     "skipAlgolia": "true",
     "isXpmDependency": "true",

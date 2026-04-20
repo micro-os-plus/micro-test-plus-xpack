@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;3.3.1</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;4.0.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -94,32 +94,34 @@ $(function(){initNavTree('group__micro-test-plus-expectations.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>Expectations are checks whose outcomes are reported.  
+<p>Expectations are checks whose outcomes are accounted and reported.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga75c3f43663a5440d78231fe572fe4a22" id="r_ga75c3f43663a5440d78231fe572fe4a22"><td class="memTemplParams" colspan="2">template&lt;class Expr_T, <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#a1cbbf299a006b4692df250ef2a6fc7c2">type_traits::requires_t</a>&lt; <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#a814e7f004d5404f735737aabb90fa111">type_traits::is_op_v</a>&lt; Expr_T &gt; or <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#a49a5bfe63d50b6fd1be0972586fbf590">type_traits::is_convertible_v</a>&lt; Expr_T, bool &gt; &gt; = 0&gt; </td></tr>
-<tr class="memitem:ga75c3f43663a5440d78231fe572fe4a22 template"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga75c3f43663a5440d78231fe572fe4a22">micro_os_plus::micro_test_plus::expect</a> (const Expr_T &amp;expr, const <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html">reflection::source_location</a> &amp;sl=<a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#af2ee3ac5db96f13680291736d58fe327">reflection::source_location::current</a>())</td></tr>
-<tr class="memdesc:ga75c3f43663a5440d78231fe572fe4a22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate a generic condition and report the results.  <br /></td></tr>
+<tr class="memitem:ga9baacbf1fea181ff175bcd14baa54ea1" id="r_ga9baacbf1fea181ff175bcd14baa54ea1"><td class="memTemplParams" colspan="2">template&lt;class Expr_T&gt; <br />
+requires (<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#a814e7f004d5404f735737aabb90fa111">type_traits::is_op_v</a>&lt;Expr_T&gt; or <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#a49a5bfe63d50b6fd1be0972586fbf590">type_traits::is_convertible_v</a>&lt;Expr_T, bool&gt;)</td></tr>
+<tr class="memitem:ga9baacbf1fea181ff175bcd14baa54ea1 template"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9baacbf1fea181ff175bcd14baa54ea1">micro_os_plus::micro_test_plus::subtest::expect</a> (const Expr_T &amp;expr, const <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html">reflection::source_location</a> &amp;sl=<a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#af2ee3ac5db96f13680291736d58fe327">reflection::source_location::current</a>())</td></tr>
+<tr class="memdesc:ga9baacbf1fea181ff175bcd14baa54ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate a generic condition and report the results.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <p>Expectations are conditions that are verified during test execution, with their outcomes—whether passing or failing—being explicitly reported in the test results. Unlike assumptions, a failed expectation does not cause the test to terminate; instead, execution continues, allowing multiple conditions to be checked within a single test case.</p>
 <p>This approach enables comprehensive validation of code behaviour, as all relevant expectations can be evaluated and reported in one run. By using expectations, developers gain detailed insight into which aspects of the code meet requirements and which do not, supporting thorough and efficient testing practices.  </p>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="ga75c3f43663a5440d78231fe572fe4a22" name="ga75c3f43663a5440d78231fe572fe4a22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga75c3f43663a5440d78231fe572fe4a22">&#9670;&#160;</a></span>expect()</h2>
+<a id="ga9baacbf1fea181ff175bcd14baa54ea1" name="ga9baacbf1fea181ff175bcd14baa54ea1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9baacbf1fea181ff175bcd14baa54ea1">&#9670;&#160;</a></span>expect()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Expr_T, <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#a1cbbf299a006b4692df250ef2a6fc7c2">type_traits::requires_t</a>&lt; <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#a814e7f004d5404f735737aabb90fa111">type_traits::is_op_v</a>&lt; Expr_T &gt; or <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#a49a5bfe63d50b6fd1be0972586fbf590">type_traits::is_convertible_v</a>&lt; Expr_T, bool &gt; &gt; = 0&gt; </div>
+template&lt;class Expr_T&gt; <br />
+requires (<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#a814e7f004d5404f735737aabb90fa111">type_traits::is_op_v</a>&lt;Expr_T&gt; or <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#a49a5bfe63d50b6fd1be0972586fbf590">type_traits::is_convertible_v</a>&lt;Expr_T, bool&gt;)</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto micro_os_plus::micro_test_plus::expect </td>
+          <td class="memname">auto micro_os_plus::micro_test_plus::subtest::expect </td>
           <td>(</td>
           <td class="paramtype">const Expr_T &amp;</td>          <td class="paramname"><span class="paramname"><em>expr</em></span>, </td>
         </tr>
@@ -131,7 +133,7 @@ template&lt;class Expr_T, <a class="el" href="namespacemicro__os__plus_1_1micro_
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -141,7 +143,7 @@ template&lt;class Expr_T, <a class="el" href="namespacemicro__os__plus_1_1micro_
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>SFINAE</dt><dd>Enabled only if <span class="tt">Expr_T</span> is derived from <span class="tt">detail::op</span> or is convertible to <span class="tt">bool</span>.</dd></dl>
+<dl class="section user"><dt>Constraints</dt><dd>Enabled only if <span class="tt">Expr_T</span> is derived from <span class="tt">detail::op</span> or is convertible to <span class="tt">bool</span> (enforced via a C++20 <span class="tt">requires</span> clause).</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">expr</td><td>Logical expression to evaluate. </td></tr>
@@ -151,19 +153,22 @@ template&lt;class Expr_T, <a class="el" href="namespacemicro__os__plus_1_1micro_
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An output stream to write optional messages.</dd></dl>
 <p>The <span class="tt">expect</span> function template evaluates a logical condition or custom expression and reports the result within the µTest++ framework. It is designed to provide detailed diagnostics for test failures, including the actual and expected values, when using the provided comparators (<span class="tt"><a class="el" href="group__micro-test-plus-function-comparators.html#gae9dfca849300a917cb1c231d275baaa3" title="Generic equality comparator for non-pointer types.">eq()</a></span>, <span class="tt"><a class="el" href="group__micro-test-plus-function-comparators.html#ga59e4cf59954e81bc868e62b1c5c8db1f" title="Generic non-equality comparator.">ne()</a></span>, <span class="tt"><a class="el" href="group__micro-test-plus-function-comparators.html#gac162522dcad1a6ff7c869d52d376b3ed" title="Generic less than comparator.">lt()</a></span>, <span class="tt"><a class="el" href="group__micro-test-plus-function-comparators.html#ga2b5263a5b3965855aa04971bba735a56" title="Generic less than or equal comparator.">le()</a></span>, <span class="tt"><a class="el" href="group__micro-test-plus-function-comparators.html#gae2fb681444d8256f6bf827eea6b7c29e" title="Generic greater than comparator.">gt()</a></span>, <span class="tt"><a class="el" href="group__micro-test-plus-function-comparators.html#ga34e03399670ec0b365b94b7bea788dd8" title="Generic greater than or equal comparator.">ge()</a></span>) or custom operators.</p>
-<p>The function template can be used with any expression that evaluates to a boolean or with custom comparators/operators derived from the local <span class="tt">detail::op</span> type. For complex checks performed outside the <span class="tt"><a class="el" href="#ga75c3f43663a5440d78231fe572fe4a22" title="Evaluate a generic condition and report the results.">expect()</a></span> logical expression (such as within <span class="tt">if</span> or <span class="tt">try</span>/<span class="tt">catch</span> statements), the result can be reported by calling <span class="tt">expect(true)</span> or <span class="tt">expect(false)</span>.</p>
+<p>The function template can be used with any expression that evaluates to a boolean or with custom comparators/operators derived from the local <span class="tt">detail::op</span> type. For complex checks performed outside the <span class="tt"><a class="el" href="#ga9baacbf1fea181ff175bcd14baa54ea1" title="Evaluate a generic condition and report the results.">expect()</a></span> logical expression (such as within <span class="tt">if</span> or <span class="tt">try</span>/<span class="tt">catch</span> statements), the result can be reported by calling <span class="tt">expect(true)</span> or <span class="tt">expect(false)</span>.</p>
 <p>The function returns an output stream, allowing optional messages to be appended to the test report.</p>
 <p><b>Example</b></p>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span>mt = <a class="code hl_namespace" href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a>;</div>
 <div class="line">mt::expect(compute_answer() == 42) &lt;&lt; <span class="stringliteral">&quot;answer is 42&quot;</span>;</div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div><div class="ttdoc">Primary namespace for the µTest++ testing framework.</div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="micro-test-plus-inlines_8h_source.html#l00155">155</a> of file <a class="el" href="micro-test-plus-inlines_8h_source.html">micro-test-plus-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  156</span>  {</div>
-<div class="line"><span class="lineno">  157</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter.html">detail::deferred_reporter&lt;Expr_T&gt;</a>{ expr, <span class="keyword">false</span>, sl };</div>
-<div class="line"><span class="lineno">  158</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_html"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter.html">micro_os_plus::micro_test_plus::detail::deferred_reporter</a></div><div class="ttdoc">Deferred reporter class template for a specific expression.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01859">detail.h:1860</a></div></div>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00640">640</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  642</span>    {</div>
+<div class="line"><span class="lineno">  643</span>      <span class="keywordflow">return</span> detail::deferred_reporter&lt;Expr_T&gt;{ expr, <span class="keyword">false</span>, sl, *<span class="keyword">this</span> };</div>
+<div class="line"><span class="lineno">  644</span>    }</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="reflection-inlines_8h_source.html#l00091">micro_os_plus::micro_test_plus::reflection::source_location::current()</a>, and <a class="el" href="test_8h_source.html#l00640">expect()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="test_8h_source.html#l00640">expect()</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->

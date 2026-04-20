@@ -1,19 +1,27 @@
-
 {/* ------------------------------------------------------------------------ */}
 
-## Features
+## Features & Benefits
 
 The principal attributes of the µTest++ Testing Framework, largely
 derived from [Boost UT](https://boost-ext.github.io/ut/), are as follows:
 
 - Designed to facilitate testing of **both C and C++** projects.
-- Written in modern C++20 (which consequently elevated the entire µOS++ project to require C++20).
-- **Macro-free** implementation (whilst retaining the valuable feature of reporting the file name and line number for failed tests).
+- Written in modern **C++20**, improving code readability and maintainability
+  (which consequently elevated the entire µOS++ project to require C++20).
+- **Macro-free** implementation, whilst retaining the ability to report the
+  file name and line number for failed tests.
 - Support for **expectations**, **assumptions**, and **exceptions**.
 - Provision of **test cases** and **test suites**.
-- Automatic registration of test suites.
+- **Automatic registration** of test suites: each test suite can be defined as a
+  static global object in its own source file, and registration with the test
+  runner is performed automatically via the C++ static constructors mechanism,
+  eliminating the need for any explicit registration calls.
+- Results reported in **TAP (Test Anything Protocol)** format, enabling
+  straightforward integration with standard TAP-aware tooling.
 
 Key distinctions from Boost UT include:
 
-- **Reduced memory footprint**, owing to the absence of dependencies on the standard C++ stream library.
+- **Reduced memory footprint**, owing to the absence of a dependency on the
+  C++ stream library — particularly beneficial on embedded platforms with
+  constrained memory resources.
 - A slightly **simplified API**.

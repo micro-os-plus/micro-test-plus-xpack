@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['increment_5ffailed_0',['increment_failed',['../classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base.html#a20051842d981b530746b4fb4dee00d01',1,'micro_os_plus::micro_test_plus::test_suite_base']]],
-  ['increment_5fsuccessful_1',['increment_successful',['../classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base.html#a81006378d0bebeadcd59266f57b4ef4b',1,'micro_os_plus::micro_test_plus::test_suite_base']]],
-  ['initialize_2',['initialize',['../classmicro__os__plus_1_1micro__test__plus_1_1test__runner.html#a882aa5687209359ae0313efe44f10053',1,'micro_os_plus::micro_test_plus::test_runner::initialize()'],['../group__micro-test-plus-inits.html#gac2c60d60578f668878957ec68a37538f',1,'micro_os_plus::micro_test_plus::initialize()']]],
-  ['is_5fconvertible_3',['is_convertible',['../namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#ae9b4b50700345f54b1c14c594e0637ba',1,'micro_os_plus::micro_test_plus::type_traits::is_convertible(int n) -&gt; decltype(bool(To(declval&lt; From &gt;())))'],['../namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#ab7dddbd4f0438826d71f55904594905d',1,'micro_os_plus::micro_test_plus::type_traits::is_convertible(...)']]],
-  ['is_5fmatch_4',['is_match',['../group__micro-test-plus-utility-functions.html#gaa2f0f4cff320a783ad2347c9ff3fc731',1,'micro_os_plus::micro_test_plus::utility']]],
-  ['is_5fvalid_5',['is_valid',['../namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#aa7389baefbefec0ece5df341187218e0',1,'micro_os_plus::micro_test_plus::type_traits::is_valid(Expr_T expr) -&gt; decltype(expr(declval&lt; Ts... &gt;()), bool())'],['../namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#a3ee98aeecf4e9f3b23dfcda25434c4d2',1,'micro_os_plus::micro_test_plus::type_traits::is_valid(...) -&gt; bool']]]
+  ['has_5fbegin_0',['has_begin',['../classmicro__os__plus_1_1micro__test__plus_1_1timestamps.html#a9ae2ebb733d8cc0efda57f650c94b146',1,'micro_os_plus::micro_test_plus::timestamps']]],
+  ['has_5fclock_1',['has_clock',['../classmicro__os__plus_1_1micro__test__plus_1_1timestamp.html#a9d1c21ae80e89e78e6123e49dc3aeaf2',1,'micro_os_plus::micro_test_plus::timestamp']]],
+  ['has_5fend_2',['has_end',['../classmicro__os__plus_1_1micro__test__plus_1_1timestamps.html#aeaaa14b301c095541a975e7ac4a4421c',1,'micro_os_plus::micro_test_plus::timestamps']]],
+  ['has_5ftimestamps_3',['has_timestamps',['../classmicro__os__plus_1_1micro__test__plus_1_1timestamps.html#a55cde881b55e2af53670e54d50cf2d18',1,'micro_os_plus::micro_test_plus::timestamps']]]
 ];

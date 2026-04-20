@@ -11,23 +11,20 @@
 <para>By default, the reporter presents detailed results only for failed test cases, while successful test cases are summarised in a single line, indicating the total number of passed and failed checks.</para>
 <para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
-<programlisting filename=".console"><codeline><highlight class="normal">test<sp/>5</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Start<sp/><sp/>5:<sp/>minimal-test<sp/>--reporter=tap</highlight></codeline>
+<programlisting filename=".console"><codeline><highlight class="normal">$<sp/>minimal-test<sp/>one<sp/>two<sp/>--reporter=tap</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">5:<sp/>Test<sp/>command:<sp/>/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test<sp/>&quot;one&quot;<sp/>&quot;two&quot;<sp/>&quot;--reporter=tap&quot;</highlight></codeline>
-<codeline><highlight class="normal">5:<sp/>Working<sp/>Directory:<sp/>/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin</highlight></codeline>
-<codeline><highlight class="normal">5:<sp/>Test<sp/>timeout<sp/>computed<sp/>to<sp/>be:<sp/>10000000</highlight></codeline>
-<codeline><highlight class="normal">5:<sp/>Built<sp/>with<sp/>clang<sp/>Apple<sp/>LLVM<sp/>17.0.0<sp/>(clang-1700.6.4.2),<sp/>with<sp/>exceptions.</highlight></codeline>
-<codeline><highlight class="normal">5:<sp/></highlight></codeline>
-<codeline><highlight class="normal">5:<sp/>TAP<sp/>version<sp/>14</highlight></codeline>
-<codeline><highlight class="normal">5:<sp/>1..1</highlight></codeline>
-<codeline><highlight class="normal">5:<sp/>#<sp/>Subtest:<sp/>Minimal<sp/>-<sp/>test<sp/>suite</highlight></codeline>
-<codeline><highlight class="normal">5:<sp/><sp/><sp/><sp/><sp/>ok<sp/>1<sp/>-<sp/>Check<sp/>various<sp/>conditions<sp/>#<sp/>{<sp/>test<sp/>case<sp/>passed,<sp/>2<sp/>checks<sp/>}</highlight></codeline>
-<codeline><highlight class="normal">5:<sp/><sp/><sp/><sp/><sp/>1..1</highlight></codeline>
-<codeline><highlight class="normal">5:<sp/>ok<sp/>1<sp/>-<sp/>Minimal<sp/>#<sp/>{<sp/>test<sp/>suite<sp/>passed,<sp/>2<sp/>checks<sp/>in<sp/>1<sp/>test<sp/>case,<sp/>time:<sp/>0.005<sp/>ms<sp/>}</highlight></codeline>
-<codeline><highlight class="normal">5:<sp/></highlight></codeline>
-<codeline><highlight class="normal">5:<sp/>#<sp/>{<sp/>total:<sp/>2<sp/>checks<sp/>passed,<sp/>0<sp/>failed,<sp/>in<sp/>1<sp/>test<sp/>case,<sp/>1<sp/>test<sp/>suite,<sp/>time:<sp/>0.025<sp/>ms<sp/>}</highlight></codeline>
-<codeline><highlight class="normal"><sp/>5/24<sp/>Test<sp/><sp/>#5:<sp/>minimal-test<sp/>--reporter=tap<sp/>...............<sp/><sp/><sp/>Passed<sp/><sp/><sp/><sp/>0.00<sp/>sec</highlight></codeline>
+<codeline><highlight class="normal">TAP<sp/>version<sp/>14</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Subtest:<sp/>Minimal</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>Subtest:<sp/>Check<sp/>various<sp/>conditions</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1..0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ok<sp/>1<sp/>-<sp/>Check<sp/>various<sp/>conditions<sp/>#<sp/>{<sp/>passed,<sp/>2<sp/>checks<sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>1..1</highlight></codeline>
+<codeline><highlight class="normal">ok<sp/>1<sp/>-<sp/>Minimal<sp/>#<sp/>{<sp/>passed,<sp/>2<sp/>checks<sp/>in<sp/>1<sp/>test<sp/>case,<sp/>time:<sp/>X.XXX<sp/>ms<sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1..1</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>{<sp/>total:<sp/>2<sp/>checks<sp/>passed,<sp/>0<sp/>failed,<sp/>in<sp/>1<sp/>test<sp/>case,<sp/>1<sp/>test<sp/>suite,<sp/>time:<sp/>X.XXX<sp/>ms<sp/>}</highlight></codeline>
 </programlisting></para>
 <sect1 id="group__micro-test-plus-cli_1cli-reporter">
 <title>Reporter</title><para>By default, the µTest++ output follows the <ulink url="https://en.wikipedia.org/wiki/Test_Anything_Protocol">TAP</ulink> rules.</para>
@@ -35,8 +32,8 @@
 <para>If needed, more reporting formats (like JUnit, JSON, etc.) can be added.</para>
 <para>To explicitly ask for a specific format:</para>
 <para><itemizedlist>
-<listitem><para><computeroutput>--reporter=tap</computeroutput> - the default reporter</para>
-</listitem><listitem><para><computeroutput>--reporter=basic</computeroutput> - the deprecated initial reporter</para>
+<listitem><para><computeroutput>--reporter=tap</computeroutput> - the default TAP reporter</para>
+</listitem><listitem><para><computeroutput>--reporter=human</computeroutput> - the human-readable reporter</para>
 </listitem></itemizedlist>
 </para>
 </sect1>
@@ -51,65 +48,43 @@
 </para>
 <para>These options enable developers to focus on the information most relevant to their needs, whether that is comprehensive diagnostics during development or succinct summaries for automated builds.</para>
 <para>The examples provided illustrate the output produced in each mode, demonstrating how µTest++ adapts its reporting to support professional and efficient testing workflows across all files and folders.</para>
-<para>The source code for this example is in <computeroutput>tests/src/minimal-test.cpp</computeroutput>.</para>
+<para>The source code for this example is in <computeroutput>tests/sources/minimal-test/src/main.cpp</computeroutput>.</para>
 <sect2 id="group__micro-test-plus-cli_1cli-verbosity-verbose">
 <title>Verbose mode</title><para>In verbose mode, the µTest++ reporter provides detailed output for every expectation, irrespective of whether it passes or fails.</para>
 <para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
-<programlisting filename=".console"><codeline><highlight class="normal">test<sp/>6</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Start<sp/><sp/>6:<sp/>minimal-test<sp/>--verbose<sp/>--reporter=tap</highlight></codeline>
+<programlisting filename=".console"><codeline><highlight class="normal">$<sp/>minimal-test<sp/>one<sp/>two<sp/>--verbose<sp/>--reporter=tap</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">6:<sp/>Test<sp/>command:<sp/>/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test<sp/>&quot;one&quot;<sp/>&quot;two&quot;<sp/>&quot;--verbose&quot;<sp/>&quot;--reporter=tap&quot;</highlight></codeline>
-<codeline><highlight class="normal">6:<sp/>Working<sp/>Directory:<sp/>/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin</highlight></codeline>
-<codeline><highlight class="normal">6:<sp/>Test<sp/>timeout<sp/>computed<sp/>to<sp/>be:<sp/>10000000</highlight></codeline>
-<codeline><highlight class="normal">6:<sp/>Built<sp/>with<sp/>clang<sp/>Apple<sp/>LLVM<sp/>17.0.0<sp/>(clang-1700.6.4.2),<sp/>with<sp/>exceptions.</highlight></codeline>
-<codeline><highlight class="normal">6:<sp/></highlight></codeline>
-<codeline><highlight class="normal">6:<sp/>TAP<sp/>version<sp/>14</highlight></codeline>
-<codeline><highlight class="normal">6:<sp/>1..1</highlight></codeline>
-<codeline><highlight class="normal">6:<sp/>#<sp/>Subtest:<sp/>Minimal<sp/>-<sp/>test<sp/>suite</highlight></codeline>
-<codeline><highlight class="normal">6:<sp/><sp/><sp/><sp/><sp/>#<sp/>Subtest:<sp/>Check<sp/>various<sp/>conditions<sp/>-<sp/>test<sp/>case</highlight></codeline>
-<codeline><highlight class="normal">6:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ok<sp/>1<sp/>-<sp/>answer<sp/>is<sp/>42</highlight></codeline>
-<codeline><highlight class="normal">6:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ok<sp/>2<sp/>-<sp/>condition<sp/>is<sp/>true</highlight></codeline>
-<codeline><highlight class="normal">6:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1..2</highlight></codeline>
-<codeline><highlight class="normal">6:<sp/><sp/><sp/><sp/><sp/>ok<sp/>1<sp/>-<sp/>Check<sp/>various<sp/>conditions<sp/>#<sp/>{<sp/>test<sp/>case<sp/>passed,<sp/>2<sp/>checks<sp/>}</highlight></codeline>
-<codeline><highlight class="normal">6:<sp/><sp/><sp/><sp/><sp/>1..1</highlight></codeline>
-<codeline><highlight class="normal">6:<sp/>ok<sp/>1<sp/>-<sp/>Minimal<sp/>#<sp/>{<sp/>test<sp/>suite<sp/>passed,<sp/>2<sp/>checks<sp/>in<sp/>1<sp/>test<sp/>case,<sp/>time:<sp/>0.005<sp/>ms<sp/>}</highlight></codeline>
-<codeline><highlight class="normal">6:<sp/></highlight></codeline>
-<codeline><highlight class="normal">6:<sp/>#<sp/>{<sp/>total:<sp/>2<sp/>checks<sp/>passed,<sp/>0<sp/>failed,<sp/>in<sp/>1<sp/>test<sp/>case,<sp/>1<sp/>test<sp/>suite,<sp/>time:<sp/>0.029<sp/>ms<sp/>}</highlight></codeline>
-<codeline><highlight class="normal"><sp/>6/24<sp/>Test<sp/><sp/>#6:<sp/>minimal-test<sp/>--verbose<sp/>--reporter=tap<sp/>.....<sp/><sp/><sp/>Passed<sp/><sp/><sp/><sp/>0.00<sp/>sec</highlight></codeline>
+<codeline><highlight class="normal">TAP<sp/>version<sp/>14</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Subtest:<sp/>Minimal</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#<sp/>Subtest:<sp/>Check<sp/>various<sp/>conditions</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ok<sp/>1<sp/>-<sp/>answer<sp/>is<sp/>42</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ok<sp/>2<sp/>-<sp/>condition<sp/>is<sp/>true</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1..2</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ok<sp/>1<sp/>-<sp/>Check<sp/>various<sp/>conditions<sp/>#<sp/>{<sp/>passed,<sp/>2<sp/>checks<sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>1..1</highlight></codeline>
+<codeline><highlight class="normal">ok<sp/>1<sp/>-<sp/>Minimal<sp/>#<sp/>{<sp/>passed,<sp/>2<sp/>checks<sp/>in<sp/>1<sp/>test<sp/>case,<sp/>time:<sp/>X.XXX<sp/>ms<sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1..1</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>{<sp/>total:<sp/>2<sp/>checks<sp/>passed,<sp/>0<sp/>failed,<sp/>in<sp/>1<sp/>test<sp/>case,<sp/>1<sp/>test<sp/>suite,<sp/>time:<sp/>X.XXX<sp/>ms<sp/>}</highlight></codeline>
 </programlisting></para>
 </sect2>
 <sect2 id="group__micro-test-plus-cli_1cli-verbosity-quiet">
-<title>Quiet mode</title><para>In quiet mode, the µTest++ reporter displays only the overall totals for the test suite.</para>
+<title>Quiet mode</title><para>In quiet mode, the µTest++ reporter displays only the overall session totals.</para>
 <para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
-<programlisting filename=".console"><codeline><highlight class="normal">test<sp/>7</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Start<sp/><sp/>7:<sp/>minimal-test<sp/>--quiet<sp/>--reporter=tap</highlight></codeline>
+<programlisting filename=".console"><codeline><highlight class="normal">$<sp/>minimal-test<sp/>one<sp/>two<sp/>--quiet<sp/>--reporter=tap</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">7:<sp/>Test<sp/>command:<sp/>/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test<sp/>&quot;one&quot;<sp/>&quot;two&quot;<sp/>&quot;--quiet&quot;<sp/>&quot;--reporter=tap&quot;</highlight></codeline>
-<codeline><highlight class="normal">7:<sp/>Working<sp/>Directory:<sp/>/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin</highlight></codeline>
-<codeline><highlight class="normal">7:<sp/>Test<sp/>timeout<sp/>computed<sp/>to<sp/>be:<sp/>10000000</highlight></codeline>
-<codeline><highlight class="normal">7:<sp/></highlight></codeline>
-<codeline><highlight class="normal">7:<sp/>TAP<sp/>version<sp/>14</highlight></codeline>
-<codeline><highlight class="normal">7:<sp/>1..1</highlight></codeline>
-<codeline><highlight class="normal">7:<sp/>ok<sp/>1<sp/>-<sp/>Minimal<sp/>#<sp/>{<sp/>test<sp/>suite<sp/>passed,<sp/>2<sp/>checks<sp/>in<sp/>1<sp/>test<sp/>case,<sp/>time:<sp/>0.003<sp/>ms<sp/>}</highlight></codeline>
-<codeline><highlight class="normal">7:<sp/></highlight></codeline>
-<codeline><highlight class="normal">7:<sp/>#<sp/>{<sp/>total:<sp/>2<sp/>checks<sp/>passed,<sp/>0<sp/>failed,<sp/>in<sp/>1<sp/>test<sp/>case,<sp/>1<sp/>test<sp/>suite,<sp/>time:<sp/>0.023<sp/>ms<sp/>}</highlight></codeline>
-<codeline><highlight class="normal"><sp/>7/24<sp/>Test<sp/><sp/>#7:<sp/>minimal-test<sp/>--quiet<sp/>--reporter=tap<sp/>.......<sp/><sp/><sp/>Passed<sp/><sp/><sp/><sp/>0.00<sp/>sec</highlight></codeline>
+<codeline><highlight class="normal">TAP<sp/>version<sp/>14</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1..0</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>{<sp/>total:<sp/>2<sp/>checks<sp/>passed,<sp/>0<sp/>failed,<sp/>in<sp/>1<sp/>test<sp/>case,<sp/>1<sp/>test<sp/>suite,<sp/>time:<sp/>X.XXX<sp/>ms<sp/>}</highlight></codeline>
 </programlisting></para>
 </sect2>
 <sect2 id="group__micro-test-plus-cli_1cli-verbosity-silent">
-<title>Silent mode</title><para>In silent mode, the µTest++ reporter suppresses all output, and the framework returns only the exit code.</para>
-<para><simplesect kind="par"><title>Example</title><para></para>
-</simplesect>
-<programlisting filename=".console"><codeline><highlight class="normal">test<sp/>8</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Start<sp/><sp/>8:<sp/>minimal-test<sp/>--silent<sp/>--reporter=tap</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">8:<sp/>Test<sp/>command:<sp/>/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test<sp/>&quot;one&quot;<sp/>&quot;two&quot;<sp/>&quot;--silent&quot;<sp/>&quot;--reporter=tap&quot;</highlight></codeline>
-<codeline><highlight class="normal">8:<sp/>Working<sp/>Directory:<sp/>/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin</highlight></codeline>
-<codeline><highlight class="normal">8:<sp/>Test<sp/>timeout<sp/>computed<sp/>to<sp/>be:<sp/>10000000</highlight></codeline>
-<codeline><highlight class="normal"><sp/>8/24<sp/>Test<sp/><sp/>#8:<sp/>minimal-test<sp/>--silent<sp/>--reporter=tap<sp/>......<sp/><sp/><sp/>Passed<sp/><sp/><sp/><sp/>0.00<sp/>sec</highlight></codeline>
-</programlisting>   </para>
+<title>Silent mode</title><para>In silent mode, the µTest++ reporter suppresses all output, and the framework returns only the exit code.   </para>
 </sect2>
 </sect1>
     </detaileddescription>

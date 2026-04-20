@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;3.3.1</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;4.0.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -114,28 +114,35 @@ Functions</h2></td></tr>
 <p>These utilities enable developers to assert that exceptions are correctly thrown or not thrown as expected, improving the reliability and safety of software components. The framework supports both generic exception checks and type-specific exception verification, allowing for precise and expressive test cases.</p>
 <p>For more advanced scenarios, such as handling multiple expected exceptions, developers can use explicit <span class="tt">try</span> blocks with multiple <span class="tt">catch</span> statements and report the results using <span class="tt">expect(true)</span> or <span class="tt">expect(false)</span>. This approach ensures comprehensive coverage of exception handling logic.</p>
 <dl class="section user"><dt>Examples</dt><dd></dd></dl>
-<div class="fragment"><div class="line">mt::expect (mt::throws ([] { exercise_throw (<span class="keyword">true</span>); })) &lt;&lt; <span class="stringliteral">&quot;exception thrown&quot;</span>;</div>
+<div class="fragment"><div class="line">ts.test (<span class="stringliteral">&quot;Check if exceptions are thrown&quot;</span>, [] (<span class="keyword">auto</span>&amp; t) {</div>
+<div class="line">  t.expect (mt::throws ([] { exercise_throw (<span class="keyword">true</span>); }))</div>
+<div class="line">      &lt;&lt; <span class="stringliteral">&quot;exception thrown&quot;</span>;</div>
 <div class="line"> </div>
-<div class="line">mt::expect (mt::throws&lt;std::runtime_error&gt; ([] { <span class="keywordflow">throw</span> std::runtime_error{ <span class="stringliteral">&quot;&quot;</span> }; }))</div>
-<div class="line">        &lt;&lt; <span class="stringliteral">&quot;std::runtime_error thrown&quot;</span>;</div>
+<div class="line">  t.expect (mt::throws&lt;std::runtime_error&gt; ([]</div>
+<div class="line">    { <span class="keywordflow">throw</span> std::runtime_error{ <span class="stringliteral">&quot;&quot;</span> }; }))</div>
+<div class="line">      &lt;&lt; <span class="stringliteral">&quot;std::runtime_error thrown&quot;</span>;</div>
 <div class="line"> </div>
-<div class="line">mt::expect (mt::nothrow ([] { exercise_throw (<span class="keyword">false</span>); })) &lt;&lt; <span class="stringliteral">&quot;exception not thrown&quot;</span>;</div>
-</div><!-- fragment --><div class="fragment"><div class="line"><span class="keywordflow">try</span></div>
-<div class="line">  {</div>
-<div class="line">    compute_answer ();</div>
-<div class="line">  }</div>
-<div class="line"><span class="keywordflow">catch</span> (<span class="keyword">const</span> std::overflow_error&amp; e)</div>
-<div class="line">  {</div>
-<div class="line">    mt::expect (<span class="keyword">true</span>) &lt;&lt; <span class="stringliteral">&quot;std::overflow_error thrown&quot;</span>;</div>
-<div class="line">  }</div>
-<div class="line"><span class="keywordflow">catch</span> (<span class="keyword">const</span> std::runtime_error&amp; e)</div>
-<div class="line">  {</div>
-<div class="line">    mt::expect (<span class="keyword">true</span>) &lt;&lt; <span class="stringliteral">&quot;std::runtime_error thrown&quot;</span>;</div>
-<div class="line">  }</div>
-<div class="line"><span class="keywordflow">catch</span> (...)</div>
-<div class="line">  {</div>
-<div class="line">    mt::expect (<span class="keyword">false</span>) &lt;&lt; <span class="stringliteral">&quot;known exception thrown&quot;</span>;</div>
-<div class="line">  }</div>
+<div class="line">  t.expect (mt::nothrow ([] { exercise_throw (<span class="keyword">false</span>); }))</div>
+<div class="line">      &lt;&lt; <span class="stringliteral">&quot;exception not thrown&quot;</span>;</div>
+<div class="line">});</div>
+</div><!-- fragment --><div class="fragment"><div class="line">ts.test (<span class="stringliteral">&quot;Check exceptions explicitly&quot;</span>, [] (<span class="keyword">auto</span>&amp; t) {</div>
+<div class="line">  <span class="keywordflow">try</span></div>
+<div class="line">    {</div>
+<div class="line">      compute_answer ();</div>
+<div class="line">    }</div>
+<div class="line">  <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::overflow_error&amp; e)</div>
+<div class="line">    {</div>
+<div class="line">      t.expect (<span class="keyword">true</span>) &lt;&lt; <span class="stringliteral">&quot;std::overflow_error thrown&quot;</span>;</div>
+<div class="line">    }</div>
+<div class="line">  <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::runtime_error&amp; e)</div>
+<div class="line">    {</div>
+<div class="line">      t.expect (<span class="keyword">true</span>) &lt;&lt; <span class="stringliteral">&quot;std::runtime_error thrown&quot;</span>;</div>
+<div class="line">    }</div>
+<div class="line">  <span class="keywordflow">catch</span> (...)</div>
+<div class="line">    {</div>
+<div class="line">      t.expect (<span class="keyword">false</span>) &lt;&lt; <span class="stringliteral">&quot;known exception thrown&quot;</span>;</div>
+<div class="line">    }</div>
+<div class="line">});</div>
 </div><!-- fragment -->  <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="ga798bd28001c3938784073e60dd904148" name="ga798bd28001c3938784073e60dd904148"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga798bd28001c3938784073e60dd904148">&#9670;&#160;</a></span>nothrow()</h2>
@@ -177,11 +184,11 @@ template&lt;class Callable_T&gt; </div>
 <p>The <span class="tt">nothrow</span> function template verifies whether invoking the provided callable object does not result in the throwing of any exception within the µTest++ framework. This is useful for testing exception safety and ensuring that code under test does not unexpectedly signal error conditions.</p>
 <p>The function returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes. </p>
 
-<p class="definition">Definition at line <a class="el" href="micro-test-plus-inlines_8h_source.html#l00242">242</a> of file <a class="el" href="micro-test-plus-inlines_8h_source.html">micro-test-plus-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  243</span>  {</div>
-<div class="line"><span class="lineno">  244</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__.html">detail::nothrow_&lt;Callable_T&gt;</a>{ func };</div>
-<div class="line"><span class="lineno">  245</span>  }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__.html">micro_os_plus::micro_test_plus::detail::nothrow_</a></div><div class="ttdoc">Operator struct template to check if an expression does not throw any exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01694">detail.h:1695</a></div></div>
+<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00364">364</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  365</span>  {</div>
+<div class="line"><span class="lineno">  366</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__.html">detail::nothrow_&lt;Callable_T&gt;</a>{ func };</div>
+<div class="line"><span class="lineno">  367</span>  }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__.html">micro_os_plus::micro_test_plus::detail::nothrow_</a></div><div class="ttdoc">Operator struct template to check if an expression does not throw any exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01627">detail.h:1628</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -226,11 +233,11 @@ template&lt;class Exception_T, class Callable_T&gt; </div>
 <p>The <span class="tt">throws</span> function template verifies whether invoking the provided callable object results in the throwing of a specific exception type within the µTest++ framework. This is useful for testing error handling and exception safety in code under test.</p>
 <p>The function returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes. </p>
 
-<p class="definition">Definition at line <a class="el" href="micro-test-plus-inlines_8h_source.html#l00207">207</a> of file <a class="el" href="micro-test-plus-inlines_8h_source.html">micro-test-plus-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  208</span>  {</div>
-<div class="line"><span class="lineno">  209</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html">detail::throws_&lt;Callable_T, Exception_T&gt;</a>{ func };</div>
-<div class="line"><span class="lineno">  210</span>  }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html">micro_os_plus::micro_test_plus::detail::throws_</a></div><div class="ttdoc">Operator struct template to check if an expression throws a specific exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01531">detail.h:1532</a></div></div>
+<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00329">329</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  330</span>  {</div>
+<div class="line"><span class="lineno">  331</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html">detail::throws_&lt;Callable_T, Exception_T&gt;</a>{ func };</div>
+<div class="line"><span class="lineno">  332</span>  }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html">micro_os_plus::micro_test_plus::detail::throws_</a></div><div class="ttdoc">Operator struct template to check if an expression throws a specific exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01464">detail.h:1465</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -274,10 +281,10 @@ template&lt;class Callable_T&gt; </div>
 <p>The <span class="tt">throws</span> function template verifies whether invoking the provided callable object results in the throwing of any exception within the µTest++ framework. This is useful for testing general exception safety and ensuring that code under test properly signals error conditions.</p>
 <p>The function returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes. </p>
 
-<p class="definition">Definition at line <a class="el" href="micro-test-plus-inlines_8h_source.html#l00224">224</a> of file <a class="el" href="micro-test-plus-inlines_8h_source.html">micro-test-plus-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  225</span>  {</div>
-<div class="line"><span class="lineno">  226</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html">detail::throws_&lt;Callable_T&gt;</a>{ func };</div>
-<div class="line"><span class="lineno">  227</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00346">346</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  347</span>  {</div>
+<div class="line"><span class="lineno">  348</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html">detail::throws_&lt;Callable_T&gt;</a>{ func };</div>
+<div class="line"><span class="lineno">  349</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;3.3.1</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;4.0.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -97,103 +97,33 @@ $(function(){initNavTree('group__micro-test-plus-test-case.html','',''); });
 <p>Test cases are named sequences of checks.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga423b46709cca6072efe28a6dbf85e413" id="r_ga423b46709cca6072efe28a6dbf85e413"><td class="memTemplParams" colspan="2">template&lt;typename Callable_T, typename... Args_T&gt; </td></tr>
-<tr class="memitem:ga423b46709cca6072efe28a6dbf85e413 template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga423b46709cca6072efe28a6dbf85e413">micro_os_plus::micro_test_plus::test_case</a> (const char *name, Callable_T &amp;&amp;callable, Args_T &amp;&amp;... arguments)</td></tr>
-<tr class="memdesc:ga423b46709cca6072efe28a6dbf85e413"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define and execute a test case.  <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Asubtest" id="r_micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Asubtest"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1subtest.html">micro_os_plus::micro_test_plus::subtest</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A named, runnable test case that lives inside a <span class="tt">suite</span>.  <a href="classmicro__os__plus_1_1micro__test__plus_1_1subtest.html#details">More...</a><br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<p>Test cases in µTest++ are named collections of checks that are executed within the same environment. Each test case is defined by providing a descriptive name and a callable object (typically a lambda), along with any optional arguments required for the test.</p>
+<p>Test cases in µTest++ are named collections of checks that are executed within the same environment. Each test case is defined by calling <span class="tt">suite::test()</span> with a descriptive name and a callable object (typically a lambda accepting a <span class="tt">subtest&amp;</span> reference), along with any optional arguments required for the test.</p>
 <p>Test cases enable developers to organise related checks together, improving the clarity and maintainability of the test suite. Any number of test cases may be defined, each focusing on a specific aspect of the code under test.</p>
 <p>By grouping checks in this way, it becomes easier to identify which functionality is being verified and to interpret the results in the context of the overall software quality.</p>
 <dl class="section user"><dt>Examples</dt><dd></dd></dl>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span>mt = <a class="code hl_namespace" href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a>;</div>
 <div class="line"> </div>
-<div class="line">mt::test_case (<span class="stringliteral">&quot;Check various conditions&quot;</span>, [] {</div>
-<div class="line">  mt::expect (mt::eq (compute_answer (), 42)) &lt;&lt; <span class="stringliteral">&quot;answer eq 42&quot;</span>;</div>
-<div class="line">  mt::expect (mt::ne (compute_answer (), 43)) &lt;&lt; <span class="stringliteral">&quot;answer ne 43&quot;</span>;</div>
+<div class="line"><span class="comment">// In main(), after tr.initialise():</span></div>
+<div class="line">ts.test (<span class="stringliteral">&quot;Check various conditions&quot;</span>, [] (<span class="keyword">auto</span>&amp; t) {</div>
+<div class="line">  t.expect (mt::eq (compute_answer (), 42)) &lt;&lt; <span class="stringliteral">&quot;answer eq 42&quot;</span>;</div>
+<div class="line">  t.expect (mt::ne (compute_answer (), 43)) &lt;&lt; <span class="stringliteral">&quot;answer ne 43&quot;</span>;</div>
 <div class="line">});</div>
 <div class="line"> </div>
-<div class="line">mt::test_case (<span class="stringliteral">&quot;Check various conditions with operators&quot;</span>, [] {</div>
+<div class="line">ts.test (<span class="stringliteral">&quot;Check various conditions with operators&quot;</span>, [] (<span class="keyword">auto</span>&amp; t) {</div>
 <div class="line">  <span class="keyword">using namespace </span>mt::operators;</div>
 <div class="line">  <span class="keyword">using namespace </span>mt::literals;</div>
 <div class="line"> </div>
-<div class="line">  mt::expect (compute_answer () == 42_i) &lt;&lt; <span class="stringliteral">&quot;answer == 42&quot;</span>;</div>
-<div class="line">  mt::expect (compute_answer () != 43_i) &lt;&lt; <span class="stringliteral">&quot;answer != 43&quot;</span>;</div>
+<div class="line">  t.expect (compute_answer () == 42_i) &lt;&lt; <span class="stringliteral">&quot;answer == 42&quot;</span>;</div>
+<div class="line">  t.expect (compute_answer () != 43_i) &lt;&lt; <span class="stringliteral">&quot;answer != 43&quot;</span>;</div>
 <div class="line">});</div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div><div class="ttdoc">Primary namespace for the µTest++ testing framework.</div></div>
-</div><!-- fragment -->  <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="ga423b46709cca6072efe28a6dbf85e413" name="ga423b46709cca6072efe28a6dbf85e413"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga423b46709cca6072efe28a6dbf85e413">&#9670;&#160;</a></span>test_case()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Callable_T, typename... Args_T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void micro_os_plus::micro_test_plus::test_case </td>
-          <td>(</td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Callable_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>callable</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Args_T &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>arguments</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Callable_T</td><td>The type of the callable object to be executed as the test case. </td></tr>
-    <tr><td class="paramname">Args_T</td><td>The types of the arguments to be passed to the callable. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The test case name or description, used in test reports. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">callable</td><td>A generic callable object, usually a lambda, invoked to perform the test. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">arguments</td><td>A possibly empty list of arguments to be passed to the callable. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section user"><dt>Returns</dt><dd>Nothing.</dd></dl>
-<p>The <span class="tt">test_case</span> function template registers and executes a test case within the µTest++ framework. It accepts a descriptive name, a callable object (such as a lambda or function pointer), and an optional list of arguments to be passed to the callable. The test case is reported using the provided name, and its execution is managed by the framework's test runner.</p>
-<p>Each test case typically involves evaluating a logical expression, such as comparing a computed result to an expected value. For C++ projects, it is also possible to verify whether evaluating an expression throws exceptions. Each test either succeeds or fails, and for expectations, the test runner maintains counts of successful and failed checks.</p>
-<p>This function template enables flexible and expressive test case definitions, supporting both parameterised and non-parameterised tests. It is typically invoked at global scope or within test suite definitions to ensure automatic registration and execution.</p>
-<p>A test case is characterised by a name, a function that performs the checks, and optionally, arguments to be passed to that function. The implementation of <span class="tt">test_case</span> invokes the provided function with the given arguments and reports the results to the test runner.</p>
-<dl class="section user"><dt>Example</dt><dd></dd></dl>
-<div class="fragment"><div class="line"><span class="keyword">namespace </span>mt = <a class="code hl_namespace" href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a>;</div>
-<div class="line"> </div>
-<div class="line">mt::test_case (<span class="stringliteral">&quot;Check answer with comparator&quot;</span>, [] {</div>
-<div class="line">  mt::expect (mt::eq (compute_answer (), 42)) &lt;&lt; <span class="stringliteral">&quot;answer is 42&quot;</span>;</div>
-<div class="line">});</div>
-</div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="micro-test-plus-inlines_8h_source.html#l00114">114</a> of file <a class="el" href="micro-test-plus-inlines_8h_source.html">micro-test-plus-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  115</span>  {</div>
-<div class="line"><span class="lineno">  116</span><span class="preprocessor">#if 0 </span><span class="comment">// defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)</span></div>
-<div class="line"><span class="lineno">  117</span>    printf (<span class="stringliteral">&quot;%s\n&quot;</span>, __PRETTY_FUNCTION__);</div>
-<div class="line"><span class="lineno">  118</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS</span></div>
-<div class="line"><span class="lineno">  119</span> </div>
-<div class="line"><span class="lineno">  120</span>    <a class="code hl_variable" href="namespacemicro__os__plus_1_1micro__test__plus.html#a682fc3ce8c00ebe7c068d6299269655b">current_test_suite</a>-&gt;begin_test_case (name);</div>
-<div class="line"><span class="lineno">  121</span>    std::invoke (std::forward&lt;Callable_T&gt; (callable),</div>
-<div class="line"><span class="lineno">  122</span>                 std::forward&lt;Args_T&gt; (arguments)...);</div>
-<div class="line"><span class="lineno">  123</span>    <a class="code hl_variable" href="namespacemicro__os__plus_1_1micro__test__plus.html#a682fc3ce8c00ebe7c068d6299269655b">current_test_suite</a>-&gt;end_test_case ();</div>
-<div class="line"><span class="lineno">  124</span>  }</div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a682fc3ce8c00ebe7c068d6299269655b"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#a682fc3ce8c00ebe7c068d6299269655b">micro_os_plus::micro_test_plus::current_test_suite</a></div><div class="ttdeci">test_suite_base * current_test_suite</div><div class="ttdoc">Global pointer references the currently active test suite.</div><div class="ttdef"><b>Definition</b> <a href="micro-test-plus_8cpp_source.html#l00307">micro-test-plus.cpp:307</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="micro-test-plus_8cpp_source.html#l00307">current_test_suite</a>.</p>
-
-</div>
-</div>
-</div><!-- contents -->
+</div><!-- fragment -->  </div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

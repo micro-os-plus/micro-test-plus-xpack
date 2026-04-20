@@ -1,24 +1,30 @@
-
-import CommonCmakeIntegration from '../_common/_cmake-integration.mdx';
-import CommonMesonIntegration from '../_common/_meson-integration.mdx';
+import CommonCmakeIntegration from "../_common/_cmake-integration.mdx";
+import CommonMesonIntegration from "../_common/_meson-integration.mdx";
 
 {/* ------------------------------------------------------------------------ */}
 
 ## Build & Integration Information
 
-This project is implemented in C++, and it is expected that tests will also be written in C++, although the code under test may be written in standard C.
+This project is implemented in C++. Tests are also expected to be written in
+C++, although the code under test may be written in standard C.
 
-The source code has been compiled natively using **GCC** and **LLVM/clang**, and cross-compiled for embedded **Arm** and **RISC-V** targets, ensuring that it is free from warnings.
+The source code has been compiled natively using **GCC** and **LLVM/clang**,
+and cross-compiled for embedded **Arm** and **RISC-V** targets, with no
+warnings.
 
-For execution on **embedded platforms**, the test framework requires only minimal system support, such as the ability to write to an output stream. Any environment providing this capability is suitable; however, for standalone tests, the most common approach is to employ **Arm semihosting**.
+For execution on **embedded platforms**, the test framework requires only
+minimal system support: the ability to write to an output stream. Any
+environment providing this capability is suitable; for standalone tests,
+the most common approach is **Arm semihosting**.
 
-To simplify integration into user projects, pre-configured **CMake** and **meson** build files are provided (see below).
-
-For alternative build systems, please consult the information provided below.
+Pre-configured **CMake** and **Meson** build files are provided to simplify
+integration into user projects (see below). For alternative build systems,
+refer to the sections that follow.
 
 ### Include Folders
 
-The following folder should be specified to the compiler during the build process:
+The following source folder should be passed to the compiler during the
+build process:
 
 - `include`
 
@@ -32,12 +38,15 @@ The primary header file to include in user projects is:
 
 The following source files should be incorporated into user projects:
 
-- `micro-test-plus.cpp`
-- `test-reporter-basic.cpp`
-- `test-reporter-tap.cpp`
-- `test-reporter.cpp`
-- `test-runner.cpp`
-- `test-suite.cpp`
+- `deferred-reporter.cpp`
+- `reflection.cpp`
+- `reporter-human.cpp`
+- `reporter-tap.cpp`
+- `reporter.cpp`
+- `runner-totals.cpp`
+- `runner.cpp`
+- `timings.cpp`
+- `utility.cpp`
 
 ### Preprocessor Definitions
 
@@ -45,7 +54,8 @@ The build can be configured using the following preprocessor definitions:
 
 - `MICRO_OS_PLUS_INCLUDE_CONFIG_H` – to include `<micro-os-plus/config.h>`
 - `MICRO_OS_PLUS_TRACE` – to enable trace calls
-- `MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS` – to activate specific tracing messages
+- `MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS` – to enable tracing messages specific to µTest++
+- `MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS` – to enable tracing messages for object constructors and destructors
 
 ### Compiler Options
 
@@ -55,7 +65,10 @@ The following options must be supplied to the compiler and linker:
 
 ### Dependencies
 
-This library does not have any external dependencies.
+This library has a single external dependency, used only when compiling
+in Debug mode:
+
+- [µOS++ Tracing Infrastructure](https://micro-os-plus.github.io/diag-trace-xpack/)
 
 <CommonCmakeIntegration />
 

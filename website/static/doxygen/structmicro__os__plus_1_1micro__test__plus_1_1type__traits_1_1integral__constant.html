@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;3.3.1</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;4.0.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -139,7 +139,7 @@ struct micro_os_plus::micro_test_plus::type_traits::integral_constant&lt; N &gt;
 <p>The <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html" title="Struct template representing a generic integral constant.">integral_constant</a></span> struct template provides a compile-time constant value of an integral type, with additional utility features. It inherits from <span class="tt">op</span> to enable unified handling within the µTest++ framework's type traits and metaprogramming utilities.</p>
 <p>This struct template exposes the constant value via a static member, a getter method, and explicit conversion operators. It also provides a unary minus operator to obtain the negative value as a new <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html" title="Struct template representing a generic integral constant.">integral_constant</a></span> instance. </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00701">701</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00546">546</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a30307d0cc6b010e9b42ec98753b6bec1" name="a30307d0cc6b010e9b42ec98753b6bec1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a30307d0cc6b010e9b42ec98753b6bec1">&#9670;&#160;</a></span>value_type</h2>
@@ -155,7 +155,7 @@ template&lt;auto N&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00706">706</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00551">551</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
 
 </div>
 </div>
@@ -188,11 +188,11 @@ template&lt;auto N&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The constant value.</dd></dl>
 <p>Returns the compile-time constant value. </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00755">755</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  756</span>      {</div>
-<div class="line"><span class="lineno">  757</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">N</a>;</div>
-<div class="line"><span class="lineno">  758</span>      }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">micro_os_plus::micro_test_plus::type_traits::integral_constant</a></div><div class="ttdoc">Struct template representing a generic integral constant.</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00701">type-traits.h:702</a></div></div>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00600">600</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  601</span>      {</div>
+<div class="line"><span class="lineno">  602</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">N</a>;</div>
+<div class="line"><span class="lineno">  603</span>      }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">micro_os_plus::micro_test_plus::type_traits::integral_constant</a></div><div class="ttdoc">Struct template representing a generic integral constant.</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00546">type-traits.h:547</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -224,10 +224,10 @@ template&lt;auto N&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The constant value as type <span class="tt"><a class="el" href="#a30307d0cc6b010e9b42ec98753b6bec1" title="The type of the constant value.">value_type</a></span>.</dd></dl>
 <p>Allows explicit conversion to the underlying value type. </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00739">739</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  740</span>      {</div>
-<div class="line"><span class="lineno">  741</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">N</a>;</div>
-<div class="line"><span class="lineno">  742</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00584">584</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  585</span>      {</div>
+<div class="line"><span class="lineno">  586</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">N</a>;</div>
+<div class="line"><span class="lineno">  587</span>      }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -258,10 +258,10 @@ template&lt;auto N&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>An <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html" title="Struct template representing a generic integral constant.">integral_constant</a></span> with value <span class="tt">-N</span>.</dd></dl>
 <p>Returns a new <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html" title="Struct template representing a generic integral constant.">integral_constant</a></span> instance representing the negative of the current value. </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00723">723</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  724</span>      {</div>
-<div class="line"><span class="lineno">  725</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">integral_constant</a>&lt;-<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">N</a>&gt;{};</div>
-<div class="line"><span class="lineno">  726</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00568">568</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  569</span>      {</div>
+<div class="line"><span class="lineno">  570</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">integral_constant</a>&lt;-<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">N</a>&gt;{};</div>
+<div class="line"><span class="lineno">  571</span>      }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -288,7 +288,7 @@ template&lt;auto N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00711">711</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00556">556</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
 
 </div>
 </div>

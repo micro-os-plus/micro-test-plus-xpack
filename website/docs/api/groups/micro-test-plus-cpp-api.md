@@ -25,12 +25,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">&nbsp;</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-inits">Initialisation &amp; Exit</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-runners">Test Runners</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Functions for initialising the framework and returning an exit code. <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-inits/#details">More...</a></p>
+<p>Classes and methods for initialising the framework and returning an exit code. <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-runners/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -58,7 +58,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Expectations are checks whose outcomes are reported. <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-expectations/#details">More...</a></p>
+<p>Expectations are checks whose outcomes are accounted and reported. <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-expectations/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">

@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;3.3.1</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;4.0.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -107,10 +107,9 @@ Topics</h2></td></tr>
 <tr class="memdesc:group__micro-test-plus-cli"><td class="mdescLeft">&#160;</td><td class="mdescRight">Options for controlling test output verbosity at run-time. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<p>The <b>µTest++</b> project is a <b>modern C++</b> library designed to provide a <b>lightweight and efficient</b> testing framework, purpose-built for embedded systems development.</p>
-<p>With its clean and expressive C++ API, µTest++ enables developers to write, organise, and execute unit tests with minimal overhead. The framework includes advanced features such as <b>test suites</b>, <b>test cases</b>, and detailed reporting, all tailored to meet the specific needs of embedded environments.</p>
-<p>Output verbosity is fully configurable via command-line options, allowing users to choose between concise summaries and comprehensive diagnostic information to best suit their workflow.</p>
-<p>By adopting µTest++, you can achieve robust and maintainable code through systematic and automated testing, supporting professional software engineering practices across your entire project.  </p>
+<p>The <b>µTest++</b> project is a <b>modern C++</b> library designed to provide a <b>lightweight and efficient</b>, <b>macro free</b>, <b>TAP based</b> testing framework, purpose-built for embedded systems development.</p>
+<p>The <b>C++ API</b> is the primary interface for writing test suites and test cases. It is centred on the <span class="tt">runner</span> and <span class="tt">subtest</span> classes, which provide methods for registering tests, evaluating expectations and assumptions, and collecting results. Utility types such as strongly-typed literals, function comparators, and operator overloads complement the core API to enable expressive, type-safe assertions with no macro dependencies. The API is documented in the <a class="el" href="group__micro-test-plus-cpp-api.html">C++ API</a> group.</p>
+<p>The <b>command-line interface (CLI)</b> allows test executables to be configured at run time without recompilation. Arguments are passed to <span class="tt">runner::initialise()</span> and control aspects such as the verbosity level and the output reporter format. The available options are documented in the <a class="el" href="group__micro-test-plus-cli.html">Command Line Options</a> group.  </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

@@ -2,18 +2,18 @@
 
 ## Rationale
 
-At its most basic, the simplest testing framework is, in fact, no framework at all.
+At its most basic level, the simplest testing approach requires no framework at all.
 A test for a C or C++ project can readily be written without any framework,
 perhaps utilising the standard `assert()` macro or a similar user-defined mechanism.
 
-However, failed assertions typically abort the test, and when dealing with multiple
+However, with this mechanism, failed assertions typically abort the test, and when dealing with multiple
 test cases containing numerous checks, it is **preferable to obtain a comprehensive report**.
 
 Testing frameworks address this need by providing convenient mechanisms for writing
 various checks and generating clear, structured reports.
 
 The xPack Framework already includes ready-to-use
-support for several testing frameworks:
+support for several testing frameworks
 ([Google Test](https://github.com/xpack-3rd-party/googletest-xpack),
 [Catch2](https://github.com/xpack-3rd-party/catch2-xpack),
 [Boost UT](https://github.com/xpack-3rd-party/boost-ut-xpack)).
@@ -26,9 +26,9 @@ memory footprint** was considered a valuable addition.
 ## Overview
 
 The initial version of the **µTest++ Testing Framework** drew its primary inspiration from
-[Node tap](https://node-tap.org), with a strong emphasis on simplicity.
-Version 3.x represented a complete redesign, taking significant influence from
-[Boost UT](https://boost-ext.github.io/ut/).
+[Node TAP](https://node-tap.org), with a strong emphasis on simplicity. Version 3.x was heavily influenced by [Boost UT](https://boost-ext.github.io/ut/), from which it derived its function comparators,
+while version 4.x represented a complete redesign, drawing even more inspiration from
+[Node TAP](https://node-tap.org) by passing explicit references to parent objects into test and suite callbacks.
 
 ## Concepts and features
 
@@ -42,14 +42,14 @@ Version 3.x represented a complete redesign, taking significant influence from
 - For **expectations**, the runner maintains a count of occurrences.
 - **Assumptions** are critical conditions that must be satisfied for the test to proceed.
 - Failed assumptions result in the test being aborted.
-- Test progress is displayed on STDOUT, with each test on a separate line, prefixed by either a tick (✓) or a cross (✗).
+- Test progress is displayed on STDOUT, with each test on a separate line, prefixed by an indication of whether the test passed or failed.
 - Failed tests indicate the location within the file and, where possible, the actual values used in the evaluation.
 - The primary result of the test is returned to the system as the process exit code.
+- Optionally, the detailed test results can be written to a separate file, for example in TAP format.
 
-A test suite is deemed successful if there is at least one successful expectation and no failed tests.
+A test suite is deemed successful if there are no failed tests.
 
 If all test suites are successful, the process returns an exit value of 0.
-
 
 ## Getting started
 
@@ -60,40 +60,51 @@ The most basic test comprises a single test case with a single expectation; for 
 ```cpp showLineNumbers
 #include <micro-os-plus/micro-test-plus.h>
 
+// For convenience, alias the fully qualified namespace to a shorter name.
 namespace mt = micro_os_plus::micro_test_plus;
 
 int
 main(int argc, char* argv[])
 {
-  mt::initialize(argc, argv, "Minimal");
+  // Create a local instance of the runner. Name the top suite.
+  mt::runner tr{ "Minimal" };
 
-  mt::test_case ("Check truth", [] {
-    mt::expect (true);
+  // Initialise the runner and get a reference to the top suite.
+  auto& ts = tr.initialise(argc, argv);
+
+  // Perform a simple test, with a single expectation.
+  ts.test ("Check truth", [] (auto& t) {
+    t.expect (true);
   });
 
-  return mt::exit_code ();
+  return tr.exit_code ();
 }
 ```
 
-When this test is executed, the output is as follows:
+:::info C++ Lambdas
+The second argument passed to the `test()` function is a **C++ lambda**, which is an unnamed inline function.
+
+µTest++ recommends using lambdas whenever possible, but also supports passing any C++ callable object, such as pointers to functions, functors, `std::function`, etc.
+:::
+
+### TAP output
+
+By default, when a test is executed, the output conforms to the **TAP14 (Test Anything Protocol version 14)** [specification](https://testanything.org/tap-version-14-specification.html), a well-established protocol for communication between tested logic and test harnesses.
+
+For the above test, the verbose output would look like:
 
 ```console
 TAP version 14
-1..1
-# Subtest: Minimal - test suite
-    # Subtest: Check truth - test case
+# Subtest: Minimal
+    # Subtest: Check truth
         ok 1 - true
         1..1
-    ok 1 - Check truth # { test case passed, 1 checks }
+    ok 1 - Check truth # { test case passed, 1 check }
     1..1
 ok 1 - Minimal # { test suite passed, 1 check in 1 test case, time: 0.007 ms }
-
+1..1
 # { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.030 ms }
 ```
-
-:::info
-The above format is inspired by [**Test Anything Protocol (TAP)**](https://en.wikipedia.org/wiki/Test_Anything_Protocol), a classical protocol to communicate between tested logic and test harnesses.
-:::
 
 ### Testing a computed value
 
@@ -113,27 +124,28 @@ compute_answer()
 int
 main(int argc, char* argv[])
 {
-  mt::initialize(argc, argv, "The Answer");
+  mt::runner tr{ "The Answer" };
+  auto& ts = tr.initialise(argc, argv);
 
-  mt::test_case ("Check answer", [] {
-    mt::expect (compute_answer() == 42) << "answer is 42";
+  ts.test ("Check answer", [] (auto& t) {
+    t.expect (compute_answer() == 42) << "answer is 42";
   });
 
-  return mt::exit_code ();
+  return tr.exit_code ();
 }
 ```
 
 ```console
 TAP version 14
-1..1
-# Subtest: Minimal - test suite
-    # Subtest: Check answer - test case
+
+# Subtest: The Answer
+    # Subtest: Check answer
         ok 1 - answer is 42
         1..1
-    ok 1 - Check various conditions # { test case passed, 1 check }
+    ok 1 - Check answer # { test case passed, 1 check }
     1..1
-ok 1 - Minimal # { test suite passed, 1 check in 1 test case, time: 0.007 ms }
-
+ok 1 - The Answer # { test suite passed, 1 check in 1 test case, time: 0.007 ms }
+1..1
 # { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.030 ms }
 ```
 
@@ -147,15 +159,15 @@ compute_answer()
 }
 ```
 
-In this case, the test report will be as follows:
+In this case, the test output will be as follows:
 
 ```console
 TAP version 14
-1..1
-# Subtest: Minimal - test suite
 
-    # Subtest: Check answer - test case started
-        not ok 1 - answer is 42 
+# Subtest: The Answer
+
+    # Subtest: Check answer
+        not ok 1 - answer is 42
             ---
             at:
               filename: main.cpp
@@ -164,8 +176,8 @@ TAP version 14
         1..1
     not ok 1 - Check answer # { test case FAILED, 0 checks passed, 1 failed }
     1..1
-not ok 1 - Minimal # { test suite FAILED, 0 checks passed, 1 failed, in 1 test case, time: 0.039 ms }
-
+not ok 1 - The Answer # { test suite FAILED, 0 checks passed, 1 failed, in 1 test case, time: 0.039 ms }
+1..1
 # { total: 1 check passed, 1 failed, in 1 test case, 1 test suite, time: 0.077 ms }
 ```
 
@@ -189,21 +201,22 @@ compute_answer()
 int
 main(int argc, char* argv[])
 {
-  mt::initialize(argc, argv, "The Answer");
+  mt::runner tr{ "The Answer" };
+  auto& ts = tr.initialise(argc, argv);
 
-  mt::test_case ("Check answer with comparator", [] {
-    mt::expect (mt::eq (compute_answer (), 42)) << "answer is 42";
+  ts.test ("Check answer with comparator", [] (auto& t) {
+    t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
   });
 
-  mt::test_case ("Check answer with operator", [] {
+  ts.test ("Check answer with operator", [] (auto& t) {
     using namespace mt::operators;
     using namespace mt::literals;
 
-    mt::expect (compute_answer () == 42_i) << "answer is 42";
-    mt::expect (mt::to_i {compute_answer ()} == 42) << "answer is 42";
+    t.expect (compute_answer () == 42_i) << "answer is 42";
+    t.expect (mt::to_i {compute_answer ()} == 42) << "answer is 42";
   });
 
-  return mt::exit_code ();
+  return tr.exit_code ();
 }
 ```
 
@@ -211,11 +224,11 @@ The output would be:
 
 ```console
 TAP version 14
-1..1
-# Subtest: Minimal - test suite
 
-    # Subtest: Check answer with comparator - test case started
-        not ok 1 - answer is 42 
+# Subtest: The Answer
+
+    # Subtest: Check answer with comparator
+        not ok 1 - answer is 42
             ---
             expect: 43 == 42
             at:
@@ -225,15 +238,15 @@ TAP version 14
         1..1
     not ok 1 - Check answer with comparator # { test case FAILED, 0 checks passed, 1 failed }
 
-    # Subtest: Check answer with operator - test case started
-        not ok 1 - answer is 42 
+    # Subtest: Check answer with operator
+        not ok 1 - answer is 42
             ---
             expect: 43 == 42
             at:
               filename: main.cpp
               line: 76
             ...
-        not ok 2 - answer is 42 
+        not ok 2 - answer is 42
             ---
             expect: 43 == 42
             at:
@@ -243,18 +256,18 @@ TAP version 14
         1..2
     not ok 2 - Check answer with operator # { test case FAILED, 0 checks passed, 2 failed }
     1..2
-not ok 1 - Minimal # { test suite FAILED, 0 checks passed, 3 failed, in 2 test cases, time: 0.036 ms }
-
+not ok 1 - The Answer # { test suite FAILED, 0 checks passed, 3 failed, in 2 test cases, time: 0.036 ms }
+1..1
 # { total: 0 checks passed, 3 failed, in 2 test cases, 1 test suite, time: 0.067 ms }
 ```
 
-In the first case, `eq()` is a function capable of comparing almost any type and can record the values of its operands. Similar functions exist for all types of comparisons.
+In the first case, `eq()` is a **function comparator**, a function not only capable of comparing almost any type but also of recording the values of its operands. Similar functions exist for all types of comparisons.
 
-In the second case, a custom operator is used. To avoid conflicts with other operators, this custom operator is defined in a separate namespace (which must be explicitly referenced as shown) and matches only operands of specific types.
+In the second case, a **custom operator** is used. To avoid conflicts with other operators, this custom operator is defined in a separate namespace (which must be explicitly referenced as shown) and matches only operands of specific types.
 
-To cast the integer constant `42` to such a specific type, a custom literal (`_i`) is available, also defined in the separate `micro_test_plus` namespace.
+To cast the integer constant `42` to such a specific type, a **custom literal** (`_i`) is available, also defined in the separate `micro_test_plus` namespace.
 
-In addition to literals for constants, there are also definitions to cast expressions.
+In addition to literals for constants, there are also **definitions to cast expressions**.
 
 For the custom operators to match, at least one operand must be of the specific type, usually the constant via a literal. If both are expressions, at least one must be cast.
 
@@ -262,86 +275,7 @@ For the custom operators to match, at least one operand must be of the specific 
 
 For simple scenarios, invoking multiple test cases in `main()` may suffice.
 
-For more complex applications, test cases can be grouped into test suites and invoked, potentially multiple times with different arguments.
-
-Test cases are best instantiated as static objects; they self-register automatically with the testing framework using static constructors, and are executed when the `exit_code()` function is called.
-
-```cpp
-namespace os = micro_os_plus;
-namespace mt = micro_os_plus::micro_test_plus;
-
-// Define a function template to run the tests.
-template <class T>
-void
-check_double_list_links (void)
-{
-  static T left_links;
-  static T links;
-  static T right_links;
-
-  mt::test_case ("Initial", [&] {
-    if constexpr (T::is_statically_allocated::value)
-      {
-        // Check if the node is cleared.
-        mt::expect (mt::eq (links.previous (), nullptr)) << "prev is null";
-        mt::expect (mt::eq (links.next (), nullptr)) << "next is null";
-        mt::expect (links.uninitialized ()) << "uninitialised";
-
-        left_links.initialize ();
-        links.initialize ();
-        right_links.initialize ();
-      }
-
-    mt::expect (!left_links.linked ()) << "left unlinked";
-    mt::expect (!links.linked ()) << "unlinked";
-    mt::expect (!right_links.linked ()) << "right unlinked";
-  });
-
-  mt::test_case ("Link", [&] {
-    // Link left as previous.
-    links.link_previous (&left_links);
-
-    // Link right as next.
-    links.link_next (&right_links);
-
-    // The node must now appear as linked.
-    mt::expect (links.linked ()) << "linked";
-
-    mt::expect (mt::eq (left_links.next (), &links)) << "left linked";
-    mt::expect (mt::eq (right_links.previous (), &links)) << "right linked";
-  });
-
-  mt::test_case ("Unlink", [&] {
-    // Unlink the central node.
-    links.unlink ();
-    mt::expect (!links.linked ()) << "unlinked";
-
-    // Left and right must indeed point to each other.
-    mt::expect (mt::eq (left_links.next (), &right_links)) << "left -> right";
-    mt::expect (mt::eq (right_links.previous (), &left_links)) << "right <- right";
-  });
-
-  if constexpr (!T::is_statically_allocated::value)
-    {
-      mt::test_case ("Allocated on stack", [] {
-        T stack_links;
-        mt::expect (!stack_links.linked ()) << "unlinked";
-      });
-    }
-}
-
-// Instantiate the test for statically allocated lists.
-static mt::test_suite ts_static_double_list_links
-    = {
-        "Static double list links",
-        check_double_list_links<os::utils::static_double_list_links>
-      };
-
-// Instantiate the same test for regular lists.
-static mt::test_suite ts_double_list_links
-    = { "Double list links",
-        check_double_list_links<os::utils::double_list_links> };
-```
+For more complex applications, test cases can be grouped into test suites and invoked, potentially multiple times with different arguments (see the [Test suites](#test-suites) section).
 
 ## C++ API
 
@@ -360,26 +294,51 @@ namespace for µTest++.
 The `operators` namespace provides custom operators, while the `literals`
 namespace defines user-defined literals (such as `1_i`).
 
-### Test runner initialisation and exit
+### Test runner
 
-Two functions are provided to initialise the test runner and to
-return the test result as the process exit code.
+The test framework is implemented as a runner object, which must be instantiated and initialised.
+
+#### Instantiation
+
+The runner object must be instantiated by the application:
 
 ```cpp
-void initialize (int argc, char* argv[], const char* name = "Main");
-
-int exit_code (void);
+mt::runner tr{ "Main" };
 ```
 
-Refer to the [Initialisation & Exit](/docs/api/groups/micro-test-plus-inits/) reference page.
+The string is the name of the top default suite.
+
+For simple tests, the runner can be a local stack-allocated object in `main()`.
+
+#### Initialisation
+
+After instantiation, the runner **must** be initialised, usually by passing the main arguments:
+
+```cpp
+auto& ts = tr.initialise(argc, argv);
+```
+
+The initialisation method returns the default top suite, which is required later to create test cases.
+
+#### Test result
+
+To return the test result as the process exit code, the runner provides the `exit_code()` method:
+
+```cpp
+return tr.exit_code ();
+```
+
+Refer to the [Test Runners](/docs/api/groups/micro-test-plus-runners/) reference page.
 
 ### Test cases
 
 Test cases are collections of checks to be executed within the same environment.
 
+Test case objects can be created using the `test()` method provided by the test suite object:
+
 ```cpp
 template <typename Callable_T, typename... Args_T>
-void test_case (const char* name, Callable_T&& func, Args_T&&... arguments);
+void test (const char* name, Callable_T&& func, Args_T&&... arguments);
 ```
 
 Refer to the [Test Cases](/docs/api/groups/micro-test-plus-test-case/) reference page.
@@ -388,6 +347,8 @@ Refer to the [Test Cases](/docs/api/groups/micro-test-plus-test-case/) reference
 
 Expectations and assumptions are functions that evaluate expressions
 yielding boolean values.
+
+Expectations and assumption objects can be created using the `expect()` and `assume()` methods provided by test case objects:
 
 ```cpp
 template <class Expr_T, type_traits::requires_t<....>>
@@ -400,10 +361,14 @@ bool assume(const Expr_T& expr);
 Refer to the [Expectations](/docs/api/groups/micro-test-plus-expectations/)
 and [Assumptions](/docs/api/groups/micro-test-plus-assumptions/) reference pages.
 
+### Subtests
+
+Test cases can be defined in a nested manner, i.e., a test case can include not only checks, but also other test cases, at any nesting level.
+
 ### Function comparators
 
 To facilitate clear reporting of differences between expected and
-actual values in failed conditions, several generic comparator functions
+actual values in failed conditions, several **generic comparator functions**
 are provided.
 
 ```cpp
@@ -448,8 +413,7 @@ Refer to the [Logical Functions](/docs/api/groups/micro-test-plus-logical-functi
 
 ### Checking exceptions
 
-It is also possible to check various
-exception-related conditions.
+It is also possible to check various **exception-related conditions**.
 
 ```cpp
 // Check for any exception.
@@ -469,8 +433,8 @@ Refer to the [Checking Exceptions](/docs/api/groups/micro-test-plus-exceptions/)
 
 ### Operators
 
-For convenience, it is
-also possible to overload the `==`, `!=`, `<`, `>`, `<=`, and `>=` operators:
+For convenience, it is also possible to overload the
+`==`, `!=`, `<`, `>`, `<=`, and `>=` operators:
 
 ```cpp
 template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
@@ -602,15 +566,13 @@ recognised types:
 
 Refer to the [Literals and Wrappers](/docs/api/groups/micro-test-plus-literals/) reference page.
 
-### Functions vs. Operators & Literals
+### Functions vs. Operators and Literals
 
-Should one utilise functions such as `eq()`, or the overloaded operators? This is a pertinent consideration.
+Both comparator functions (e.g. `eq()`) and overloaded operators (e.g. `==`) are fully supported; the choice is largely a matter of personal preference.
 
-Employing functions ensures that the advantageous feature of displaying the actual values when expectations fail is always available. The syntax is also more conventional, which some may find clearer and easier to interpret.
+**Comparator functions** guarantee that the actual values are always displayed when an expectation fails, and their syntax is explicit and unambiguous.
 
-Operators are generally more immediately recognisable than function calls, but require the use of type wrappers and literals to enforce the correct types; otherwise, the actual values will not be displayed when expectations fail.
-
-Both syntaxes are fully supported, and once the distinctions are understood, the choice is largely a matter of personal preference.
+**Overloaded operators** are more immediately familiar to most C++ developers, but require at least one operand to be of a specific typed wrapper or literal type (e.g. `42_i`); without this, the actual values will not be reported on failure.
 
 :::info
 The µOS++ projects favour the use of explicit comparator functions.
@@ -633,7 +595,7 @@ Refer to the [Utility Functions](/docs/api/groups/micro-test-plus-utility-functi
 
 ### Custom Types
 
-It is possible to extend the comparators using templates that match custom types; however, this is a non-trivial undertaking and requires a thorough understanding of C++.
+It is possible to extend the comparators using **templates that match custom types**; however, this is a non-trivial undertaking and requires a thorough understanding of C++.
 
 @todo Provide guidance on this process and include an example test.
 
@@ -641,15 +603,106 @@ It is possible to extend the comparators using templates that match custom types
 
 Test suites are named sequences of test cases.
 
+In the common use case, test suites are static instances of the `static_suite`
+class, which automatically register themselves with a static instance of the
+`static_runner`.
+
 ```cpp
-class test_suite : public test_suite_base
+extern micro_os_plus::micro_test_plus::static_runner sr;
+
+static void
+suite_function (mt::static_suite& ts)
 {
-public:
-  template <typename Callable_T, typename... Args_T>
-  test_suite (const char* name, Callable_T&& callable,
-              Args_T&&... arguments);
-  // ...
+  ts.test ("Check various conditions", [] (auto& t)
+    {
+      t.test ("Check truth", [] (auto& t) {
+        t.expect (true);
+      });
+    });
 }
+
+static mt::static_suite suite = { "Static suite", sr, suite_function };
+```
+
+The implementation uses the C++ static constructors that are performed before the `main()` function is called. The order of registration is not defined; to provide a certain degree of predictability, the framework runs all suites when the `exit_code()` method is called, after **ordering them by name**.
+
+An even more elaborate example from a real-world project is:
+
+```cpp
+namespace os = micro_os_plus;
+namespace mt = micro_os_plus::micro_test_plus;
+
+// Define a function template to run the tests.
+template <class T>
+void
+check_double_list_links (mt::static_suite& ts)
+{
+  static T left_links;
+  static T links;
+  static T right_links;
+
+  ts.test ("Initial", [&] (auto& t) {
+    if constexpr (T::is_statically_allocated::value)
+      {
+        // Check if the node is cleared.
+        t.expect (mt::eq (links.previous (), nullptr)) << "prev is null";
+        t.expect (mt::eq (links.next (), nullptr)) << "next is null";
+        t.expect (links.uninitialized ()) << "uninitialised";
+
+        left_links.initialize ();
+        links.initialize ();
+        right_links.initialize ();
+      }
+
+    t.expect (!left_links.linked ()) << "left unlinked";
+    t.expect (!links.linked ()) << "unlinked";
+    t.expect (!right_links.linked ()) << "right unlinked";
+  });
+
+  ts.test ("Link", [&] (auto& t) {
+    // Link left as previous.
+    links.link_previous (&left_links);
+
+    // Link right as next.
+    links.link_next (&right_links);
+
+    // The node must now appear as linked.
+    t.expect (links.linked ()) << "linked";
+
+    t.expect (mt::eq (left_links.next (), &links)) << "left linked";
+    t.expect (mt::eq (right_links.previous (), &links)) << "right linked";
+  });
+
+  ts.test ("Unlink", [&] (auto& t) {
+    // Unlink the central node.
+    links.unlink ();
+    t.expect (!links.linked ()) << "unlinked";
+
+    // Left and right must indeed point to each other.
+    t.expect (mt::eq (left_links.next (), &right_links)) << "left -> right";
+    t.expect (mt::eq (right_links.previous (), &left_links)) << "right <- left";
+  });
+
+  if constexpr (!T::is_statically_allocated::value)
+    {
+      ts.test ("Allocated on stack", [] (auto& t) {
+        T stack_links;
+        t.expect (!stack_links.linked ()) << "unlinked";
+      });
+    }
+}
+
+// Instantiate the test for statically allocated lists.
+static mt::static_suite ts_static_double_list_links
+    = {
+        "Static double list links", sr,
+        check_double_list_links<os::utils::static_double_list_links>
+      };
+
+// Instantiate the same test for regular lists.
+static mt::static_suite ts_double_list_links
+    = { "Double list links", sr,
+        check_double_list_links<os::utils::double_list_links> };
 ```
 
 Refer to the [Test Suites](/docs/api/groups/micro-test-plus-test-suites/) reference page.
@@ -660,50 +713,104 @@ In complex projects, the definitions within the
 `micro_test_plus` namespace may conflict with those of the application.
 
 :::info
-To avoid naming conflicts, it is advisable to use comparator functions with explicit namespaces, which may be aliased to shorter names if preferred.
+To avoid naming conflicts, it is advisable to use comparator functions with explicit namespaces.
 :::
 
-For those who favour brevity, it is also possible to declare the `micro_os_plus::micro_test_plus` namespace at the appropriate scope level and use all definitions directly.
+For those who favour brevity, it is also possible to declare a short alias for the `micro_os_plus::micro_test_plus` namespace at the appropriate scope and prefix all references with it.
 
 ```cpp
-{
-  using namespace micro_os_plus::micro_test_plus;
+namespace mt = micro_os_plus::micro_test_plus;
 
-  test_case ("Check answer", [] {
-    expect (eq (compute_answer (), 42)) << "answer is 42";
+{
+  // ...
+
+  ts.test ("Check answer", [] (auto& t) {
+    t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
   });
 }
 ```
 
 ### Memory Footprint
 
-The memory footprint of unit tests based on µTest++ is considerably smaller than that of traditional C++ testing frameworks, primarily because the `iostream` library is not utilised.
+The memory footprint of unit tests based on µTest++ is generally smaller than that of traditional C++ testing frameworks, primarily because the `iostream` library is not utilised.
+
+For example, the minimal test, which includes the complete functionality, requires about 110 KB:
+
+```
+   text    data     bss     dec     hex filename
+ 105452    2280    3184  110916   1b144 minimal-test.elf
+```
 
 However, the use of templates for implementing comparators and operators should be carefully considered on platforms with severely limited memory resources, as each unique pair of operand types contributes to the overall programme size.
 
-If necessary, µTest++ may be employed without custom comparators and operators—using only standard boolean expressions—while still providing the essential functionality for testing various conditions. In this configuration, the optional feature of displaying the actual values compared is not available.
+If necessary, µTest++ can be used without custom comparators and
+operators — relying solely on standard boolean expressions — while still
+providing the essential functionality for testing conditions. In this
+configuration, the actual values compared are not displayed on failure.
 
 :::info
 The memory footprint in `debug` builds (compiled with `-O0`) is significantly larger than in `release` builds. If required, the optimisation level for the `debug` build may be increased to `-Og` to conserve memory.
 :::
 
+### Timings
+
+On native platforms that support a standard way of accessing the system clock (such as the POSIX `clock_gettime()`), the µTest++ runner measures the time spent in each test suite and reports it in milliseconds alongside the results.
+
+For example:
+
+```
+ok 1 - Minimal # { test suite passed, 1 check in 1 test case, time: 0.007 ms }
+1..1
+# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.030 ms }
+```
+
+On embedded platforms using Arm semihosting, the clock resolution is in the range of tens of milliseconds — too coarse for meaningful reporting — and timings are therefore omitted from the output.
+
 ## C API
 
-Whilst µTest++ may be employed to test C code without difficulty, its implementation relies extensively on modern C++ features that cannot be replicated in C.
+Whilst µTest++ can be used to test C code, its implementation relies
+extensively on modern C++ features that cannot be replicated in C.
 
-Consequently, there are no C equivalents for the C++ definitions provided by µTest++.
+Consequently, there are no C equivalents for the C++ definitions provided
+by µTest++.
 
 ## Command line options
 
-By default, µTest++ displays only test case summaries for passing tests (for failed tests, all expectations are shown).
+### Verbosity
+
+By default, µTest++ displays only **test case summaries for passing tests** (for failed tests, all expectations are shown).
 
 To adjust the verbosity, one of the following command-line options may be specified:
 
-- `--verbose` – display all expectations, irrespective of their outcome
-- `--quiet` – display only the test suite totals
-- `--silent` – suppress all output and return solely the exit code
+- `--verbose` – display **all expectations**, irrespective of their outcome
+- `--quiet` – display only the **runner totals**
+- `--silent` – suppress all output and return **solely the exit code**
 
 Refer to the [Command Line Options](/docs/api/groups/micro-test-plus-cli/) reference page.
+
+### The _human_ reporter
+
+Starting with v4.x, the default reporter is **TAP**. For compatibility with
+previous versions, the original **human** reporter was preserved and can be
+enabled with:
+
+```
+--reporter human
+```
+
+The output is slightly more compact, for example:
+
+```
+µTest++ human report
+
+• Minimal
+
+    ✓ Check various conditions - passed (2 checks)
+
+✓ Minimal - passed (2 checks in 1 test case), time: 0.025 ms
+
+✓ Total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: 0.082 ms
+```
 
 ## Known problems
 

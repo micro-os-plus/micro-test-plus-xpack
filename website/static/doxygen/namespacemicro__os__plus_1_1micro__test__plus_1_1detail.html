@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;3.3.1</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;4.0.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -138,15 +138,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a3c134d5164d17cade8ff3f6de49c5e6b template"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c134d5164d17cade8ff3f6de49c5e6b">eq_</a> (const Lhs_T &amp;, const Rhs_T &amp;) -&gt; eq_&lt; Lhs_T, Rhs_T &gt;</td></tr>
 <tr class="memitem:aded574b3efc7cfe142d34541e0ef71a5" id="r_aded574b3efc7cfe142d34541e0ef71a5"><td class="memTemplParams" colspan="2">template&lt;typename Lhs_T, typename Rhs_T&gt; </td></tr>
 <tr class="memitem:aded574b3efc7cfe142d34541e0ef71a5 template"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aded574b3efc7cfe142d34541e0ef71a5">ge_</a> (const Lhs_T &amp;, const Rhs_T &amp;) -&gt; ge_&lt; Lhs_T, Rhs_T &gt;</td></tr>
-<tr class="memitem:ac627271520bf2fe8a4c4774bcd9bf343" id="r_ac627271520bf2fe8a4c4774bcd9bf343"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
-<tr class="memitem:ac627271520bf2fe8a4c4774bcd9bf343 template"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac627271520bf2fe8a4c4774bcd9bf343">get</a> (const T &amp;t)</td></tr>
-<tr class="memdesc:ac627271520bf2fe8a4c4774bcd9bf343"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic getter function template for value retrieval.  <br /></td></tr>
-<tr class="memitem:a2fa97961fad5cd659110b887731f94dd" id="r_a2fa97961fad5cd659110b887731f94dd"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
-<tr class="memitem:a2fa97961fad5cd659110b887731f94dd template"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2fa97961fad5cd659110b887731f94dd">get_impl</a> (const T &amp;t, int) -&gt; decltype(t.get())</td></tr>
-<tr class="memdesc:a2fa97961fad5cd659110b887731f94dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic getter function template for value retrieval.  <br /></td></tr>
-<tr class="memitem:a95670c72316d5efa02f44ad11d13f662" id="r_a95670c72316d5efa02f44ad11d13f662"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
-<tr class="memitem:a95670c72316d5efa02f44ad11d13f662 template"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95670c72316d5efa02f44ad11d13f662">get_impl</a> (const T &amp;t,...) -&gt; decltype(auto)</td></tr>
-<tr class="memdesc:a95670c72316d5efa02f44ad11d13f662"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fallback variadic getter function template.  <br /></td></tr>
+<tr class="memitem:a0c9d0a57b84d040bb1dcedd9d7130825" id="r_a0c9d0a57b84d040bb1dcedd9d7130825"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:a0c9d0a57b84d040bb1dcedd9d7130825 template"><td class="memItemLeft" align="right" valign="top">constexpr decltype(auto)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c9d0a57b84d040bb1dcedd9d7130825">get</a> (const T &amp;t)</td></tr>
+<tr class="memdesc:a0c9d0a57b84d040bb1dcedd9d7130825"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic getter function template for value retrieval.  <br /></td></tr>
 <tr class="memitem:a9b9cf4ed2f2e67ddd24b1f2771675f4f" id="r_a9b9cf4ed2f2e67ddd24b1f2771675f4f"><td class="memTemplParams" colspan="2">template&lt;typename Lhs_T, typename Rhs_T&gt; </td></tr>
 <tr class="memitem:a9b9cf4ed2f2e67ddd24b1f2771675f4f template"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b9cf4ed2f2e67ddd24b1f2771675f4f">gt_</a> (const Lhs_T &amp;, const Rhs_T &amp;) -&gt; gt_&lt; Lhs_T, Rhs_T &gt;</td></tr>
 <tr class="memitem:a1046941e8fddcb180ce30cc9efd2fb07" id="r_a1046941e8fddcb180ce30cc9efd2fb07"><td class="memTemplParams" colspan="2">template&lt;typename Lhs_T, typename Rhs_T&gt; </td></tr>
@@ -235,8 +229,8 @@ template&lt;typename Lhs_T, typename Rhs_T&gt; </div>
 
 </div>
 </div>
-<a id="ac627271520bf2fe8a4c4774bcd9bf343" name="ac627271520bf2fe8a4c4774bcd9bf343"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac627271520bf2fe8a4c4774bcd9bf343">&#9670;&#160;</a></span>get()</h2>
+<a id="a0c9d0a57b84d040bb1dcedd9d7130825" name="a0c9d0a57b84d040bb1dcedd9d7130825"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c9d0a57b84d040bb1dcedd9d7130825">&#9670;&#160;</a></span>get()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -247,7 +241,7 @@ template&lt;class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto micro_os_plus::micro_test_plus::detail::get </td>
+          <td class="memname">decltype(auto) micro_os_plus::micro_test_plus::detail::get </td>
           <td>(</td>
           <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>t</em></span></td><td>)</td>
           <td></td>
@@ -272,131 +266,22 @@ template&lt;class T&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The value obtained via the relevant getter implementation.</dd></dl>
-<p>The <span class="tt">get</span> function template invokes the appropriate getter implementation to retrieve the value from the provided object or type. This function ensures consistent access to values for both custom and standard types within the framework.</p>
-<p>The primary implementation attempts to invoke a <span class="tt"><a class="el" href="#ac627271520bf2fe8a4c4774bcd9bf343" title="Generic getter function template for value retrieval.">get()</a></span> method if it exists, which is recommended for user-defined types to ensure consistent value access. If the type does not provide a <span class="tt"><a class="el" href="#ac627271520bf2fe8a4c4774bcd9bf343" title="Generic getter function template for value retrieval.">get()</a></span> method, the fallback variadic implementation simply returns the original argument.</p>
-<p>The <span class="tt">get</span> function template delegates to these implementations, enabling seamless support for a wide range of types in test expressions and comparators.</p>
+<p>The <span class="tt">get</span> function template retrieves the value from the provided object or type. If the type provides a <span class="tt"><a class="el" href="#a0c9d0a57b84d040bb1dcedd9d7130825" title="Generic getter function template for value retrieval.">get()</a></span> member function, it is invoked; otherwise the argument itself is returned unchanged.</p>
+<p>The selection is performed at compile time using <span class="tt">if constexpr</span> and an inline <span class="tt">requires</span> expression, superseding the classic two-overload SFINAE technique used prior to C++20.</p>
 <p>All definitions are intended for internal use within the framework and are implemented in the <span class="tt">include/micro-os-plus/micro-test-plus</span> folder to maintain a structured and modular codebase. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00223">223</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  224</span>    {</div>
-<div class="line"><span class="lineno">  225</span>      <span class="comment">// Call the variadic function, basically to force it return `t`.</span></div>
-<div class="line"><span class="lineno">  226</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="#a2fa97961fad5cd659110b887731f94dd">get_impl&lt;T&gt;</a> (t, 0);</div>
-<div class="line"><span class="lineno">  227</span>    }</div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a2fa97961fad5cd659110b887731f94dd"><div class="ttname"><a href="#a2fa97961fad5cd659110b887731f94dd">micro_os_plus::micro_test_plus::detail::get_impl</a></div><div class="ttdeci">constexpr auto get_impl(const T &amp;t, int) -&gt; decltype(t.get())</div><div class="ttdoc">Generic getter function template for value retrieval.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00160">detail.h:160</a></div></div>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00158">158</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  159</span>    {</div>
+<div class="line"><span class="lineno">  160</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">requires</span> { t.get (); })</div>
+<div class="line"><span class="lineno">  161</span>        <span class="keywordflow">return</span> t.get ();</div>
+<div class="line"><span class="lineno">  162</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  163</span>        <span class="keywordflow">return</span> t;</div>
+<div class="line"><span class="lineno">  164</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l00160">get_impl()</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l00158">get()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail_8h_source.html#l01246">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::lhs()</a>, <a class="el" href="detail_8h_source.html#l00364">micro_os_plus::micro_test_plus::detail::eq_&lt; Lhs_T, Rhs_T &gt;::lhs()</a>, <a class="el" href="detail_8h_source.html#l00829">micro_os_plus::micro_test_plus::detail::ge_&lt; Lhs_T, Rhs_T &gt;::lhs()</a>, <a class="el" href="detail_8h_source.html#l00680">micro_os_plus::micro_test_plus::detail::gt_&lt; Lhs_T, Rhs_T &gt;::lhs()</a>, <a class="el" href="detail_8h_source.html#l01127">micro_os_plus::micro_test_plus::detail::le_&lt; Lhs_T, Rhs_T &gt;::lhs()</a>, <a class="el" href="detail_8h_source.html#l00976">micro_os_plus::micro_test_plus::detail::lt_&lt; Lhs_T, Rhs_T &gt;::lhs()</a>, <a class="el" href="detail_8h_source.html#l00533">micro_os_plus::micro_test_plus::detail::ne_&lt; Lhs_T, Rhs_T &gt;::lhs()</a>, <a class="el" href="detail_8h_source.html#l01365">micro_os_plus::micro_test_plus::detail::or_&lt; Lhs_T, Rhs_T &gt;::lhs()</a>, <a class="el" href="detail_8h_source.html#l01264">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::rhs()</a>, <a class="el" href="detail_8h_source.html#l00382">micro_os_plus::micro_test_plus::detail::eq_&lt; Lhs_T, Rhs_T &gt;::rhs()</a>, <a class="el" href="detail_8h_source.html#l00847">micro_os_plus::micro_test_plus::detail::ge_&lt; Lhs_T, Rhs_T &gt;::rhs()</a>, <a class="el" href="detail_8h_source.html#l00698">micro_os_plus::micro_test_plus::detail::gt_&lt; Lhs_T, Rhs_T &gt;::rhs()</a>, <a class="el" href="detail_8h_source.html#l01145">micro_os_plus::micro_test_plus::detail::le_&lt; Lhs_T, Rhs_T &gt;::rhs()</a>, <a class="el" href="detail_8h_source.html#l00994">micro_os_plus::micro_test_plus::detail::lt_&lt; Lhs_T, Rhs_T &gt;::rhs()</a>, <a class="el" href="detail_8h_source.html#l00551">micro_os_plus::micro_test_plus::detail::ne_&lt; Lhs_T, Rhs_T &gt;::rhs()</a>, <a class="el" href="detail_8h_source.html#l01383">micro_os_plus::micro_test_plus::detail::or_&lt; Lhs_T, Rhs_T &gt;::rhs()</a>, and <a class="el" href="detail_8h_source.html#l01480">micro_os_plus::micro_test_plus::detail::not_&lt; T &gt;::value()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail_8h_source.html#l00158">get()</a>, <a class="el" href="detail_8h_source.html#l01174">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::lhs()</a>, <a class="el" href="detail_8h_source.html#l00296">micro_os_plus::micro_test_plus::detail::eq_&lt; Lhs_T, Rhs_T &gt;::lhs()</a>, <a class="el" href="detail_8h_source.html#l00757">micro_os_plus::micro_test_plus::detail::ge_&lt; Lhs_T, Rhs_T &gt;::lhs()</a>, <a class="el" href="detail_8h_source.html#l00608">micro_os_plus::micro_test_plus::detail::gt_&lt; Lhs_T, Rhs_T &gt;::lhs()</a>, <a class="el" href="detail_8h_source.html#l01054">micro_os_plus::micro_test_plus::detail::le_&lt; Lhs_T, Rhs_T &gt;::lhs()</a>, <a class="el" href="detail_8h_source.html#l00904">micro_os_plus::micro_test_plus::detail::lt_&lt; Lhs_T, Rhs_T &gt;::lhs()</a>, <a class="el" href="detail_8h_source.html#l00461">micro_os_plus::micro_test_plus::detail::ne_&lt; Lhs_T, Rhs_T &gt;::lhs()</a>, <a class="el" href="detail_8h_source.html#l01294">micro_os_plus::micro_test_plus::detail::or_&lt; Lhs_T, Rhs_T &gt;::lhs()</a>, <a class="el" href="detail_8h_source.html#l01412">micro_os_plus::micro_test_plus::detail::not_&lt; T &gt;::operand()</a>, <a class="el" href="reporter-inlines_8h_source.html#l00189">micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;()</a>, <a class="el" href="detail_8h_source.html#l01192">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::rhs()</a>, <a class="el" href="detail_8h_source.html#l00314">micro_os_plus::micro_test_plus::detail::eq_&lt; Lhs_T, Rhs_T &gt;::rhs()</a>, <a class="el" href="detail_8h_source.html#l00775">micro_os_plus::micro_test_plus::detail::ge_&lt; Lhs_T, Rhs_T &gt;::rhs()</a>, <a class="el" href="detail_8h_source.html#l00626">micro_os_plus::micro_test_plus::detail::gt_&lt; Lhs_T, Rhs_T &gt;::rhs()</a>, <a class="el" href="detail_8h_source.html#l01072">micro_os_plus::micro_test_plus::detail::le_&lt; Lhs_T, Rhs_T &gt;::rhs()</a>, <a class="el" href="detail_8h_source.html#l00922">micro_os_plus::micro_test_plus::detail::lt_&lt; Lhs_T, Rhs_T &gt;::rhs()</a>, <a class="el" href="detail_8h_source.html#l00479">micro_os_plus::micro_test_plus::detail::ne_&lt; Lhs_T, Rhs_T &gt;::rhs()</a>, and <a class="el" href="detail_8h_source.html#l01312">micro_os_plus::micro_test_plus::detail::or_&lt; Lhs_T, Rhs_T &gt;::rhs()</a>.</p>
 
-</div>
-</div>
-<a id="a2fa97961fad5cd659110b887731f94dd" name="a2fa97961fad5cd659110b887731f94dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fa97961fad5cd659110b887731f94dd">&#9670;&#160;</a></span>get_impl() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto micro_os_plus::micro_test_plus::detail::get_impl </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>t</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;) -&gt; decltype (t.get ())
-    </td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type from which the value is to be retrieved.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">t</td><td>The object or value to be accessed. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The value obtained via the relevant getter implementation.</dd></dl>
-<p>The <span class="tt">get</span> function template invokes the appropriate getter implementation to retrieve the value from the provided object or type. This function ensures consistent access to values for both custom and standard types within the framework.</p>
-<p>The primary implementation attempts to invoke a <span class="tt"><a class="el" href="#ac627271520bf2fe8a4c4774bcd9bf343" title="Generic getter function template for value retrieval.">get()</a></span> method if it exists, which is recommended for user-defined types to ensure consistent value access. If the type does not provide a <span class="tt"><a class="el" href="#ac627271520bf2fe8a4c4774bcd9bf343" title="Generic getter function template for value retrieval.">get()</a></span> method, the fallback variadic implementation simply returns the original argument.</p>
-<p>The <span class="tt">get</span> function template delegates to these implementations, enabling seamless support for a wide range of types in test expressions and comparators.</p>
-<p>All definitions are intended for internal use within the framework and are implemented in the <span class="tt">include/micro-os-plus/micro-test-plus</span> folder to maintain a structured and modular codebase. </p>
-
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00160">160</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  161</span>    {</div>
-<div class="line"><span class="lineno">  162</span>      <span class="keywordflow">return</span> t.get ();</div>
-<div class="line"><span class="lineno">  163</span>    }</div>
-</div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="detail_8h_source.html#l00223">get()</a>.</p>
-
-</div>
-</div>
-<a id="a95670c72316d5efa02f44ad11d13f662" name="a95670c72316d5efa02f44ad11d13f662"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95670c72316d5efa02f44ad11d13f662">&#9670;&#160;</a></span>get_impl() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto micro_os_plus::micro_test_plus::detail::get_impl </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>t</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;) -&gt; decltype (auto)
-    </td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type from which the value is to be retrieved.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">t</td><td>The object or value to be accessed. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The original argument <span class="tt">t</span>.</dd></dl>
-<p>The <span class="tt">get_impl</span> function template serves as a fallback mechanism for value retrieval when the provided type does not implement a <span class="tt"><a class="el" href="#ac627271520bf2fe8a4c4774bcd9bf343" title="Generic getter function template for value retrieval.">get()</a></span> member function. It simply returns the first argument, discarding any additional parameters.</p>
-<p>This approach ensures that both custom types (with a <span class="tt"><a class="el" href="#ac627271520bf2fe8a4c4774bcd9bf343" title="Generic getter function template for value retrieval.">get()</a></span> method) and standard types (without a <span class="tt"><a class="el" href="#ac627271520bf2fe8a4c4774bcd9bf343" title="Generic getter function template for value retrieval.">get()</a></span> method) are supported seamlessly within the framework's generic getter utilities.</p>
-<p>All definitions are intended for internal use within the framework and are implemented in the <span class="tt">include/micro-os-plus/micro-test-plus</span> folder to maintain a structured and modular codebase. </p>
-
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00189">189</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  190</span>    {</div>
-<div class="line"><span class="lineno">  191</span>      <span class="keywordflow">return</span> t;</div>
-<div class="line"><span class="lineno">  192</span>    }</div>
-</div><!-- fragment -->
 </div>
 </div>
 <a id="a9b9cf4ed2f2e67ddd24b1f2771675f4f" name="a9b9cf4ed2f2e67ddd24b1f2771675f4f"></a>

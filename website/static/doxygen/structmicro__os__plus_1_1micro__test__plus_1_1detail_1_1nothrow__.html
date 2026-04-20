@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;3.3.1</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;4.0.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -134,7 +134,7 @@ struct micro_os_plus::micro_test_plus::detail::nothrow_&lt; Callable_T &gt;</div
 <p>The implementation is optimised for use in embedded environments and supports both compile-time and run-time evaluation.</p>
 <p>All definitions are intended for internal use within the framework and are implemented in the <span class="tt">include/micro-os-plus/micro-test-plus</span> folder to maintain a structured and modular codebase. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01694">1694</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01627">1627</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a90fe7c5c67a46a6eb7834b04b372d28f" name="a90fe7c5c67a46a6eb7834b04b372d28f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a90fe7c5c67a46a6eb7834b04b372d28f">&#9670;&#160;</a></span>nothrow_()</h2>
@@ -168,25 +168,25 @@ template&lt;class Callable_T&gt; </div>
 </dl>
 <p>Invokes the provided callable and determines whether it completes without throwing any exception. The result is stored in the <span class="tt">value_</span> member for efficient access. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01706">1706</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1707</span>          : <a class="code hl_variable" href="#adccb70ab303b01d35d3adcd5e4d981be">value_</a>{ [&amp;<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__.html">func</a>]</div>
-<div class="line"><span class="lineno"> 1708</span>                      {</div>
-<div class="line"><span class="lineno"> 1709</span>                        <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno"> 1710</span>                          {</div>
-<div class="line"><span class="lineno"> 1711</span>                            <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__.html">func</a> ();</div>
-<div class="line"><span class="lineno"> 1712</span>                          }</div>
-<div class="line"><span class="lineno"> 1713</span>                        <span class="keywordflow">catch</span> (...)</div>
-<div class="line"><span class="lineno"> 1714</span>                          {</div>
-<div class="line"><span class="lineno"> 1715</span>                            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno"> 1716</span>                          }</div>
-<div class="line"><span class="lineno"> 1717</span>                        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno"> 1718</span>                      }() }</div>
-<div class="line"><span class="lineno"> 1719</span>      {</div>
-<div class="line"><span class="lineno"> 1720</span>      }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__.html">micro_os_plus::micro_test_plus::detail::nothrow_</a></div><div class="ttdoc">Operator struct template to check if an expression does not throw any exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01694">detail.h:1695</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow___html_adccb70ab303b01d35d3adcd5e4d981be"><div class="ttname"><a href="#adccb70ab303b01d35d3adcd5e4d981be">micro_os_plus::micro_test_plus::detail::nothrow_::value_</a></div><div class="ttdeci">const bool value_</div><div class="ttdoc">Stores the result of the nothrow check.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01742">detail.h:1742</a></div></div>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01639">1639</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1640</span>          : <a class="code hl_variable" href="#adccb70ab303b01d35d3adcd5e4d981be">value_</a>{ [&amp;<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__.html">func</a>]</div>
+<div class="line"><span class="lineno"> 1641</span>        {</div>
+<div class="line"><span class="lineno"> 1642</span>          <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno"> 1643</span>            {</div>
+<div class="line"><span class="lineno"> 1644</span>              <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__.html">func</a> ();</div>
+<div class="line"><span class="lineno"> 1645</span>            }</div>
+<div class="line"><span class="lineno"> 1646</span>          <span class="keywordflow">catch</span> (...)</div>
+<div class="line"><span class="lineno"> 1647</span>            {</div>
+<div class="line"><span class="lineno"> 1648</span>              <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno"> 1649</span>            }</div>
+<div class="line"><span class="lineno"> 1650</span>          <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno"> 1651</span>        }() }</div>
+<div class="line"><span class="lineno"> 1652</span>      {</div>
+<div class="line"><span class="lineno"> 1653</span>      }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__.html">micro_os_plus::micro_test_plus::detail::nothrow_</a></div><div class="ttdoc">Operator struct template to check if an expression does not throw any exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01627">detail.h:1628</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow___html_adccb70ab303b01d35d3adcd5e4d981be"><div class="ttname"><a href="#adccb70ab303b01d35d3adcd5e4d981be">micro_os_plus::micro_test_plus::detail::nothrow_::value_</a></div><div class="ttdeci">const bool value_</div><div class="ttdoc">Stores the result of the nothrow check.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01675">detail.h:1675</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l01742">value_</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l01675">value_</a>.</p>
 
 </div>
 </div>
@@ -225,12 +225,12 @@ template&lt;class Callable_T&gt; </div>
 </dl>
 <p>Returns the result of the nothrow check. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01734">1734</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1735</span>      {</div>
-<div class="line"><span class="lineno"> 1736</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="#adccb70ab303b01d35d3adcd5e4d981be">value_</a>;</div>
-<div class="line"><span class="lineno"> 1737</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01667">1667</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1668</span>      {</div>
+<div class="line"><span class="lineno"> 1669</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="#adccb70ab303b01d35d3adcd5e4d981be">value_</a>;</div>
+<div class="line"><span class="lineno"> 1670</span>      }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l01742">value_</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l01675">value_</a>.</p>
 
 </div>
 </div>
@@ -249,10 +249,10 @@ template&lt;class Callable_T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01742">1742</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1742</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01675">1675</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1675</span>{};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="detail_8h_source.html#l01706">nothrow_()</a>, and <a class="el" href="detail_8h_source.html#l01734">operator bool()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail_8h_source.html#l01639">nothrow_()</a>, and <a class="el" href="detail_8h_source.html#l01667">operator bool()</a>.</p>
 
 </div>
 </div>

@@ -1,0 +1,276 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classmicro__os__plus_1_1micro__test__plus_1_1timestamp" kind="class" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::timestamp</compoundname>
+    <includes refid="micro-test-plus_8h" local="no">micro-os-plus/micro-test-plus.h</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1aa45da56b409a7cf625ce373b7f6a621b" prot="protected" static="no" mutable="no">
+        <type>timespec</type>
+        <definition>timespec micro_os_plus::micro_test_plus::timestamp::value_</definition>
+        <argsstring></argsstring>
+        <name>value_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::timestamp::value_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+<para>The underlying <computeroutput>timespec</computeroutput> value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" line="178" column="14" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" bodystart="178" bodyend="178"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1ace868d5dfb29fd79cfaabbfad218a31d" compoundref="timings_8cpp" startline="71" endline="78">timestamp</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1adaeff7b2b11bc05ac92cb0f71818c1b0" compoundref="timings_8h" startline="103" endline="105">timestamp</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1a9d1c21ae80e89e78e6123e49dc3aeaf2" compoundref="timings_8cpp" startline="87" endline="90">has_clock</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1a9554e837ad48b787aae15108566d089a" compoundref="timings_8h" startline="169" endline="172">value</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1a8e85da440408240b9b082a3a36de28f4" compoundref="timings_8h" startline="156" endline="159">value</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1ace868d5dfb29fd79cfaabbfad218a31d" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::micro_test_plus::timestamp::timestamp</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>timestamp</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::timestamp::timestamp</qualifiedname>
+        <briefdescription>
+<para>Default constructor. Zero-initialises the internal <computeroutput>timespec</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>On Windows, the current time is captured via <computeroutput>timespec_get()</computeroutput> with <computeroutput>TIME_UTC</computeroutput>. On POSIX platforms with <computeroutput>CLOCK_MONOTONIC</computeroutput> defined, <computeroutput>clock_gettime(CLOCK_MONOTONIC)</computeroutput> is used to obtain a monotonic timestamp. On platforms where neither macro is defined, <computeroutput>value_</computeroutput> remains zero-initialised. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" line="96" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/timings.cpp" bodystart="71" bodyend="78"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1aa45da56b409a7cf625ce373b7f6a621b" compoundref="timings_8h" startline="178" endline="178">value_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1a60c9fb27c9025cfefa8b2bf5810c16f1">timestamp</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1a2d27592ce712dc206b0cd78b354e68b3">timestamp</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1a7db661420c0b2333aa80ca9081d505ae">operator=</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1af28dcaf117fa2ed16c226d23f910ddc2">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1adaeff7b2b11bc05ac92cb0f71818c1b0" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::micro_test_plus::timestamp::timestamp</definition>
+        <argsstring>(const timespec &amp;ts) noexcept</argsstring>
+        <name>timestamp</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::timestamp::timestamp</qualifiedname>
+        <param>
+          <type>const timespec &amp;</type>
+          <declname>ts</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a timestamp from an existing <computeroutput>timespec</computeroutput> value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ts</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <computeroutput>timespec</computeroutput> value to store. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" line="103" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" bodystart="103" bodyend="105"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1aa45da56b409a7cf625ce373b7f6a621b" compoundref="timings_8h" startline="178" endline="178">value_</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1a60c9fb27c9025cfefa8b2bf5810c16f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::micro_test_plus::timestamp::timestamp</definition>
+        <argsstring>(const timestamp &amp;)=default</argsstring>
+        <name>timestamp</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::timestamp::timestamp</qualifiedname>
+        <param>
+          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp" kindref="compound">timestamp</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>Defaulted copy constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" line="113" column="5"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1ace868d5dfb29fd79cfaabbfad218a31d" compoundref="timings_8cpp" startline="71" endline="78">timestamp</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1a2d27592ce712dc206b0cd78b354e68b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::micro_test_plus::timestamp::timestamp</definition>
+        <argsstring>(timestamp &amp;&amp;)=default</argsstring>
+        <name>timestamp</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::timestamp::timestamp</qualifiedname>
+        <param>
+          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp" kindref="compound">timestamp</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+<para>Defaulted move constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" line="118" column="5"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1ace868d5dfb29fd79cfaabbfad218a31d" compoundref="timings_8cpp" startline="71" endline="78">timestamp</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1acc5b87e2f3661ac56577b385b98f81fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::micro_test_plus::timestamp::~timestamp</definition>
+        <argsstring>()=default</argsstring>
+        <name>~timestamp</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::timestamp::~timestamp</qualifiedname>
+        <briefdescription>
+<para>Defaulted destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" line="135" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1a9d1c21ae80e89e78e6123e49dc3aeaf2" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::timestamp::has_clock</definition>
+        <argsstring>(void) const noexcept</argsstring>
+        <name>has_clock</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::timestamp::has_clock</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Returns true if a monotonic clock is available on this target. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>true</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A real-time clock is available and timestamps are valid. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>false</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>No clock is available; timing data should be ignored.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Returns <computeroutput>true</computeroutput> if at least one of the <computeroutput>tv_sec</computeroutput> or <computeroutput>tv_nsec</computeroutput> fields of the underlying <computeroutput>timespec</computeroutput> is non-zero, indicating that a valid clock reading was successfully captured. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" line="146" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/timings.cpp" bodystart="87" bodyend="90"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1aa45da56b409a7cf625ce373b7f6a621b" compoundref="timings_8h" startline="178" endline="178">value_</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1a7db661420c0b2333aa80ca9081d505ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp" kindref="compound">timestamp</ref> &amp;</type>
+        <definition>timestamp &amp; micro_os_plus::micro_test_plus::timestamp::operator=</definition>
+        <argsstring>(const timestamp &amp;)=default</argsstring>
+        <name>operator=</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::timestamp::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp" kindref="compound">timestamp</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>Defaulted copy assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" line="124" column="5"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1ace868d5dfb29fd79cfaabbfad218a31d" compoundref="timings_8cpp" startline="71" endline="78">timestamp</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1af28dcaf117fa2ed16c226d23f910ddc2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp" kindref="compound">timestamp</ref> &amp;</type>
+        <definition>timestamp &amp; micro_os_plus::micro_test_plus::timestamp::operator=</definition>
+        <argsstring>(timestamp &amp;&amp;)=default</argsstring>
+        <name>operator=</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::timestamp::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp" kindref="compound">timestamp</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+<para>Defaulted move assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" line="130" column="5"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1ace868d5dfb29fd79cfaabbfad218a31d" compoundref="timings_8cpp" startline="71" endline="78">timestamp</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1a9554e837ad48b787aae15108566d089a" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>const timespec &amp;</type>
+        <definition>const timespec &amp; micro_os_plus::micro_test_plus::timestamp::value</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>value</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::timestamp::value</qualifiedname>
+        <briefdescription>
+<para>Returns a const reference to the underlying <computeroutput>timespec</computeroutput> value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>A const reference to the stored <computeroutput>timespec</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" line="169" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" bodystart="169" bodyend="172"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1aa45da56b409a7cf625ce373b7f6a621b" compoundref="timings_8h" startline="178" endline="178">value_</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1a8e85da440408240b9b082a3a36de28f4" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>timespec &amp;</type>
+        <definition>timespec &amp; micro_os_plus::micro_test_plus::timestamp::value</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>value</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::timestamp::value</qualifiedname>
+        <briefdescription>
+<para>Returns a mutable reference to the underlying <computeroutput>timespec</computeroutput> value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>A reference to the stored <computeroutput>timespec</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" line="156" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" bodystart="156" bodyend="159"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1aa45da56b409a7cf625ce373b7f6a621b" compoundref="timings_8h" startline="178" endline="178">value_</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A single point-in-time measurement, wrapping a <computeroutput>timespec</computeroutput> value. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><computeroutput>timestamp</computeroutput> stores one <computeroutput>timespec</computeroutput> sample obtained from the system clock. It is default-constructible (zero-initialises the <computeroutput>timespec</computeroutput>), copy-constructible, and move-constructible, so that it can be used efficiently in <computeroutput>std::optional&lt;timestamp&gt;</computeroutput> containers.</para>
+<para>The <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1a9d1c21ae80e89e78e6123e49dc3aeaf2" kindref="member">has_clock()</ref></computeroutput> predicate allows callers to determine whether a real-time clock is available on the target platform before relying on the stored value. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" line="90" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" bodystart="91" bodyend="179"/>
+    <listofallmembers>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1a9d1c21ae80e89e78e6123e49dc3aeaf2" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::timestamp</scope><name>has_clock</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1a7db661420c0b2333aa80ca9081d505ae" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::timestamp</scope><name>operator=</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1af28dcaf117fa2ed16c226d23f910ddc2" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::timestamp</scope><name>operator=</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1ace868d5dfb29fd79cfaabbfad218a31d" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::timestamp</scope><name>timestamp</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1adaeff7b2b11bc05ac92cb0f71818c1b0" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::timestamp</scope><name>timestamp</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1a60c9fb27c9025cfefa8b2bf5810c16f1" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::timestamp</scope><name>timestamp</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1a2d27592ce712dc206b0cd78b354e68b3" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::timestamp</scope><name>timestamp</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1a8e85da440408240b9b082a3a36de28f4" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::timestamp</scope><name>value</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1a9554e837ad48b787aae15108566d089a" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::timestamp</scope><name>value</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1aa45da56b409a7cf625ce373b7f6a621b" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::timestamp</scope><name>value_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1acc5b87e2f3661ac56577b385b98f81fa" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::timestamp</scope><name>~timestamp</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

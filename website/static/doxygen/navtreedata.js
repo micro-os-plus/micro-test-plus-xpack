@@ -38,13 +38,14 @@ var NAVTREE =
         [ "Enumerations", "namespacemembers_enum.html", null ]
       ] ]
     ] ],
+    [ "Concepts", "concepts.html", "concepts" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", null ],
+        [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
         [ "Typedefs", "functions_type.html", null ]
       ] ]
@@ -59,10 +60,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "/micro-test-plus-xpack/",
-"classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic.html#a91be9116b7ca4b8596cabb8690ea2c46",
-"classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#aeb7133acef29cc25c5505b6c8996fa6f",
-"namespacemembers_vars.html",
-"structmicro__os__plus_1_1micro__test__plus_1_1to__t.html#a1b2cf36b40e92a1249179c033894eb4d"
+"classmicro__os__plus_1_1micro__test__plus_1_1reporter__human.html#a59361608bd3bf8e6c34478c9e1a9a9cf",
+"classmicro__os__plus_1_1micro__test__plus_1_1runnable.html#a5ad9145405b7d9e7369d99f38f3f060a",
+"classmicro__os__plus_1_1micro__test__plus_1_1suite.html#a5ad9145405b7d9e7369d99f38f3f060a",
+"group__micro-test-plus-expectations.html#ga9baacbf1fea181ff175bcd14baa54ea1",
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html#a527ae62e9ed62a3ebbc3efd243d602c3",
+"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4.html#ad031508c3c4fba0528638bb61a0d908c"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

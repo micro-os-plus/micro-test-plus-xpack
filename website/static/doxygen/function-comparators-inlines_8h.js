@@ -15,5 +15,8 @@ var function_comparators_inlines_8h =
     [ "micro_os_plus::micro_test_plus::lt", "group__micro-test-plus-function-comparators.html#ga047738c301c4c6b6c7fdb535aecfe097", null ],
     [ "micro_os_plus::micro_test_plus::mut", "group__micro-test-plus-utility-functions.html#ga00ea8f3dfb7cb0ef39919065321cf62f", null ],
     [ "micro_os_plus::micro_test_plus::ne", "group__micro-test-plus-function-comparators.html#ga59e4cf59954e81bc868e62b1c5c8db1f", null ],
-    [ "micro_os_plus::micro_test_plus::ne", "group__micro-test-plus-function-comparators.html#ga172f305bbeaf8b965681f76c16a39516", null ]
+    [ "micro_os_plus::micro_test_plus::ne", "group__micro-test-plus-function-comparators.html#ga172f305bbeaf8b965681f76c16a39516", null ],
+    [ "micro_os_plus::micro_test_plus::nothrow", "group__micro-test-plus-exceptions.html#ga798bd28001c3938784073e60dd904148", null ],
+    [ "micro_os_plus::micro_test_plus::throws", "group__micro-test-plus-exceptions.html#gaf8f7602f40119da514be2a0bfc4b70f5", null ],
+    [ "micro_os_plus::micro_test_plus::throws", "group__micro-test-plus-exceptions.html#ga8bf54756e4122c6a0bd123b4621e60e2", null ]
 ];

@@ -35,7 +35,7 @@ Assertion struct template for parameter passing to the evaluator
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/colors">colors</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/colours">colours</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Colours used to highlight pass and fail results in test reports
@@ -116,6 +116,17 @@ Struct template specialisation for extracting function traits from non-const mem
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Struct template for compile-time type identity
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/indent-t">indent_t</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Parameterised stream manipulator for outputting indentation
 </td>
 </tr>
 
@@ -310,10 +321,21 @@ Operator struct template to check if an expression throws any exception
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T, Opt&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Struct template representing a generic value, accessible via a getter
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-f7399366cd6336ecbea702c3289d9432">value&lt;T&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Struct template representing a floating point value with precision control
 </td>
 </tr>
 
@@ -341,34 +363,45 @@ Generic strongly-typed wrapper for explicit type conversion
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Reporter to display test results, including operand values and types for failures
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-dae7771377f0087abbec46abf87b329e">value&lt;...&gt;</a>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human">reporter_human</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Struct template representing a floating point value with precision control
+Human (standard output) implementation of <span class="doxyComputerOutput">reporter</span>
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap">reporter_tap</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+TAP (Test Anything Protocol) implementation of <span class="doxyComputerOutput">reporter</span>
 </td>
 </tr>
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires-">requires_&lt;Cond&gt;</a>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner-totals">runner_totals</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Struct template for SFINAE requirements
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 12px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires--d4cc09ec8cf7793e85cd7a9c044686e1">requires_&lt;true&gt;</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Specialisation of the requirements struct template for <span class="doxyComputerOutput">true</span>
+Aggregated pass/fail/subtest counters for a node in the test tree
 </td>
 </tr>
 
@@ -387,51 +420,7 @@ Local implementation of source location information for diagnostics
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test_reporter</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Reporter to display test results, including operand values and types for failures
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic">test_reporter_basic</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Basic (standard output) implementation of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test_reporter</a></span>
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap">test_reporter_tap</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-TAP (Test Anything Protocol) implementation of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">test_reporter</a></span>
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 12px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">test_runner</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-The test runner for the µTest++ framework
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 12px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">test_suite_base</a>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-node">test_node</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Base class for all test suites
@@ -442,10 +431,109 @@ Base class for all test suites
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">test_suite</a>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runnable-base">runnable_base</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Represents a named group of test cases that self-register to the runner
+Non-template base for all runnable objects (suites and subtests)
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runnable">runnable&lt;Self_T&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+CRTP base class factoring out callable storage, rule-of-five, and <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runnable/#aa8fee7ab95580624f262c99827cb7efc">run()</a></span> logic shared by <span class="doxyComputerOutput">test</span> and <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-suite">static_suite</a></span>
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/subtest">subtest</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+A named, runnable test case that lives inside a <span class="doxyComputerOutput">suite</span>
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite">suite</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+A named, runnable test suite registered with the test runner
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 60px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-suite">static_suite</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+A test suite designed for static (namespace-scope) registration with a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-runner">static_runner</a></span>
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 60px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/top-suite">top_suite</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+The implicit top-level suite owned by every <span class="doxyComputerOutput">runner</span> instance
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+The test runner for the µTest++ framework
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-runner">static_runner</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+A <span class="doxyComputerOutput">runner</span> variant that also manages statically-registered test suites
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamp">timestamp</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+A single point-in-time measurement, wrapping a <span class="doxyComputerOutput">timespec</span> value
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamps">timestamps</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+A begin/end timestamp pair used to measure elapsed time
 </td>
 </tr>
 

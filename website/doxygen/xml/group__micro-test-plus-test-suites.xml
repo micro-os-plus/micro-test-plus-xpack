@@ -3,40 +3,54 @@
   <compounddef id="group__micro-test-plus-test-suites" kind="group">
     <compoundname>micro-test-plus-test-suites</compoundname>
     <title>Test Suites</title>
-    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite" prot="public">micro_os_plus::micro_test_plus::test_suite</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" prot="public">micro_os_plus::micro_test_plus::static_suite</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" prot="public">micro_os_plus::micro_test_plus::suite</innerclass>
     <briefdescription>
 <para>Test suites are named collections of test cases. </para>
     </briefdescription>
     <detaileddescription>
-<para>Test suites in µTest++ are named groups of related test cases, allowing for structured organisation and execution of tests. By default, all test cases defined in <computeroutput>main()</computeroutput> are included in the default (main) test suite and are executed immediately.</para>
-<para>For more complex projects, multiple test suites can be defined, typically in separate source files. Test suites are implemented as classes, constructed with a name, a callable (usually a lambda that chains the execution of the test cases), and optional arguments. This design enables self-registration of test suites, ensuring they are automatically included in the test run.</para>
-<para><programlisting filename=".cpp"><codeline><highlight class="keyword">class<sp/></highlight><highlight class="normal">test_suite<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>test_suite_base</highlight></codeline>
-<codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Callable_T,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal">...<sp/>Args_T&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>test_suite<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name,<sp/>Callable_T&amp;&amp;<sp/>callable,</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Args_T&amp;&amp;...<sp/>arguments);</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>...</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">}</highlight></codeline>
-</programlisting></para>
-<para><simplesect kind="important"><para>It is strongly recommended to instantiate test suites as static objects.</para>
+<para>Test suites in µTest++ are named groups of related test cases, allowing for structured organisation and execution of tests. By default, all test cases defined in <computeroutput>main()</computeroutput> are included in the top test suite, which is created by <computeroutput>runner::initialise()</computeroutput>, and are executed immediately.</para>
+<para>For more complex projects, additional test suites can be defined, typically in separate source files. Standalone test suites are implemented as <computeroutput>mt::static_suite</computeroutput> objects, constructed with a name, a reference to the runner, and a callable (usually a lambda that chains the execution of the test cases), along with any optional arguments. This design enables self-registration of test suites, ensuring they are automatically included in the test run.</para>
+<para><simplesect kind="important"><para>It is strongly recommended to instantiate additional test suites as static objects so that their constructors are invoked before <computeroutput>main()</computeroutput> begins.</para>
 </simplesect>
 Self-registration is performed within the constructor, ensuring that each test suite is automatically included in the test run. When test suites are defined in separate compilation units, they may be executed in any order, as the sequence in which static constructors are invoked is not specified. Consequently, test suites should be designed to be independent and must not rely on the execution order of other suites.</para>
-<para>All registered test suites are executed when the <computeroutput>exit_code()</computeroutput> function is called, guaranteeing comprehensive test coverage across the project.</para>
+<para>All registered test suites are executed when <computeroutput>runner::exit_code()</computeroutput> is called, guaranteeing comprehensive test coverage across the project.</para>
 <para><simplesect kind="par"><title>Examples</title><para></para>
 </simplesect>
 <programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Test<sp/>suite<sp/>with<sp/>generic<sp/>parameters.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">test_suite_args<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ic,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iv,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>ir,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ip1,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ip2)</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>In<sp/>main.cpp:<sp/>create<sp/>the<sp/>runner<sp/>(also<sp/>the<sp/>static_runner<sp/>variant<sp/>works).</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>mt::static_runner<sp/>tr{<sp/></highlight><highlight class="stringliteral">&quot;Sample&quot;</highlight><highlight class="normal"><sp/>};</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">main<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>argv[])</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>mt::test_case<sp/>(</highlight><highlight class="stringliteral">&quot;args&quot;</highlight><highlight class="normal">,<sp/>[&amp;]<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mt::expect<sp/>(mt::eq<sp/>(ic,<sp/>42))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;ic<sp/>is<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mt::expect<sp/>(mt::eq<sp/>(iv,<sp/>43))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;iv<sp/>is<sp/>43&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mt::expect<sp/>(mt::eq<sp/>(ir,<sp/>44))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;ir<sp/>is<sp/>44&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mt::expect<sp/>(mt::eq<sp/>(*ip1,<sp/>45))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;*ip1<sp/>is<sp/>45&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mt::expect<sp/>(mt::eq<sp/>(*ip2,<sp/>46))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;*ip2<sp/>is<sp/>46&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>ts<sp/>=<sp/>tr.initialise<sp/>(argc,<sp/>argv);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>one&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t.expect<sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Passed&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>});</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tr.exit_code<sp/>();</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>In<sp/>a<sp/>separate<sp/>source<sp/>file:<sp/>a<sp/>self-registering<sp/>suite.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>mt::static_suite<sp/>ts_extra</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>=<sp/>{<sp/></highlight><highlight class="stringliteral">&quot;Extra<sp/>suite&quot;</highlight><highlight class="normal">,<sp/>tr,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>t.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>two&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{<sp/>t.expect<sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Passed&quot;</highlight><highlight class="normal">;<sp/>});</highlight></codeline>
+<codeline><highlight class="normal">}<sp/>};</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Parametrised<sp/>test<sp/>suite<sp/>accepting<sp/>additional<sp/>arguments.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">test_suite_with_args<sp/>(mt::static_suite&amp;<sp/>t,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ic,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iv,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>ir,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ip1,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ip2)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>t.test<sp/>(</highlight><highlight class="stringliteral">&quot;args&quot;</highlight><highlight class="normal">,<sp/>[&amp;]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t.expect<sp/>(mt::eq<sp/>(ic,<sp/>42))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;ic<sp/>is<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t.expect<sp/>(mt::eq<sp/>(iv,<sp/>43))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;iv<sp/>is<sp/>43&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t.expect<sp/>(mt::eq<sp/>(ir,<sp/>44))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;ir<sp/>is<sp/>44&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t.expect<sp/>(mt::eq<sp/>(*ip1,<sp/>45))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;*ip1<sp/>is<sp/>45&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t.expect<sp/>(mt::eq<sp/>(*ip2,<sp/>46))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;*ip2<sp/>is<sp/>46&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>});</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
@@ -47,8 +61,9 @@ Self-registration is performed within the constructor, ensuring that each test s
 <codeline><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>in46<sp/>=<sp/>46;</highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ip2<sp/>=<sp/>&amp;in46;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>mt::test_suite<sp/>ts_args</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>=<sp/>{<sp/></highlight><highlight class="stringliteral">&quot;Args&quot;</highlight><highlight class="normal">,<sp/>test_suite_args,<sp/>42,<sp/>in,<sp/>ir,<sp/>&amp;in45,<sp/>ip2<sp/>};</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>mt::static_suite<sp/>ts_args</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>=<sp/>{<sp/></highlight><highlight class="stringliteral">&quot;Args<sp/>suite&quot;</highlight><highlight class="normal">,<sp/>tr,<sp/>test_suite_with_args,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>42,<sp/>in,<sp/>ir,<sp/>&amp;in45,<sp/>ip2<sp/>};</highlight></codeline>
 </programlisting>   </para>
     </detaileddescription>
   </compounddef>

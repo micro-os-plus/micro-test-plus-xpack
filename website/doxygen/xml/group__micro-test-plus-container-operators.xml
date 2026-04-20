@@ -4,14 +4,10 @@
     <compoundname>micro-test-plus-container-operators</compoundname>
     <title>Container Operators</title>
     <sectiondef kind="func">
-      <memberdef kind="function" id="group__micro-test-plus-container-operators_1gac48b765b41388c3ebe1a996f9a05aaf8" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-test-plus-container-operators_1ga2318671d1b956de9f34f61139a748ce8" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
-          </param>
-          <param>
-            <type>type_traits::requires_t&lt; type_traits::is_container_v&lt; T &gt; &gt;</type>
-            <defval>0</defval>
           </param>
         </templateparamlist>
         <type>auto</type>
@@ -27,6 +23,7 @@
           <type>T &amp;&amp;</type>
           <declname>rhs</declname>
         </param>
+    <requiresclause>type_traits::container_like&lt;T&gt;    </requiresclause>
         <briefdescription>
 <para>Non-equality operator for containers. </para>
         </briefdescription>
@@ -64,16 +61,12 @@ This overload of the non-equality operator enables direct comparison of two cont
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="205" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="205" bodyend="208"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="206" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="206" bodyend="209"/>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-container-operators_1gaac06b4166dbd6e2b62a744878903eee8" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-test-plus-container-operators_1ga4dcbc8e9b0ceb8b59680c53e5f17f5bf" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
-          </param>
-          <param>
-            <type>type_traits::requires_t&lt; type_traits::is_container_v&lt; T &gt; &gt;</type>
-            <defval>0</defval>
           </param>
         </templateparamlist>
         <type>auto</type>
@@ -89,6 +82,7 @@ This overload of the non-equality operator enables direct comparison of two cont
           <type>T &amp;&amp;</type>
           <declname>rhs</declname>
         </param>
+    <requiresclause>type_traits::container_like&lt;T&gt;    </requiresclause>
         <briefdescription>
 <para>Equality operator for containers. </para>
         </briefdescription>
@@ -126,7 +120,7 @@ This overload of the equality operator enables direct comparison of two containe
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="177" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="177" bodyend="180"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="178" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="178" bodyend="181"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -137,19 +131,18 @@ This overload of the equality operator enables direct comparison of two containe
 <para>In addition to the generic operators, specialised equality and inequality operators are provided for containers, ensuring accurate and efficient comparison semantics that align with modern C++ practices.</para>
 <para><simplesect kind="par"><title>Examples</title><para></para>
 </simplesect>
-<programlisting filename=".cpp"><codeline><highlight class="preprocessor">#include<sp/>&lt;string_view&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std::literals;<sp/></highlight><highlight class="comment">//<sp/>For<sp/>the<sp/>&quot;sv&quot;<sp/>literal.</highlight><highlight class="normal"></highlight></codeline>
+<programlisting filename=".cpp"><codeline><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>...</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">mt::test_case<sp/>(</highlight><highlight class="stringliteral">&quot;Operators&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">micro_test_plus::operators;</highlight></codeline>
+<codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>containers<sp/>with<sp/>operators&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">mt::operators;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>mt::expect<sp/>(std::vector&lt;int&gt;{<sp/>1,<sp/>2<sp/>}<sp/>==<sp/>std::vector&lt;int&gt;{<sp/>1,<sp/>2<sp/>})</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;vector{<sp/>1,<sp/>2<sp/>}<sp/>==<sp/>vector{<sp/>1,<sp/>2<sp/>}&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(std::vector&lt;int&gt;{<sp/>1,<sp/>2<sp/>}<sp/>==<sp/>std::vector&lt;int&gt;{<sp/>1,<sp/>2<sp/>})</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;vector{<sp/>1,<sp/>2<sp/>}<sp/>==<sp/>vector{<sp/>1,<sp/>2<sp/>}&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>mt::expect<sp/>(std::vector&lt;int&gt;{<sp/>1,<sp/>2,<sp/>3<sp/>}<sp/>!=<sp/>std::vector&lt;int&gt;{<sp/>1,<sp/>2,<sp/>4<sp/>})</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;vector{<sp/>1,<sp/>2,<sp/>3<sp/>}<sp/>!=<sp/>vector{<sp/>1,<sp/>2,<sp/>4<sp/>}&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(std::vector&lt;int&gt;{<sp/>1,<sp/>2,<sp/>3<sp/>}<sp/>!=<sp/>std::vector&lt;int&gt;{<sp/>1,<sp/>2,<sp/>4<sp/>})</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;vector{<sp/>1,<sp/>2,<sp/>3<sp/>}<sp/>!=<sp/>vector{<sp/>1,<sp/>2,<sp/>4<sp/>}&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal">});</highlight></codeline>
 </programlisting>  </para>
     </detaileddescription>

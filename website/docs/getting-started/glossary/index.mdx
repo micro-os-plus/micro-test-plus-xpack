@@ -1,7 +1,6 @@
 ---
-
 title: Glossary
-description: Selected definitions employed within the µTest++ project.
+description: Selected definitions used within the µTest++ project.
 keywords:
   - micro-os-plus
   - xpack
@@ -9,20 +8,26 @@ keywords:
   - glossary
 
 date: 2024-11-24 18:58:00 +0300
-
 ---
 
-# Terminology used throughout the **µTest++ Testing Framework** project
+# Terminology used in the **µTest++ Testing Framework**
 
 ## ISTQB Glossary
 
-The **International Software Testing Qualification Board (ISTQB)**
+The **International Software Testing Qualifications Board (ISTQB)**
 provides the following definitions relevant to testing frameworks:
 
-- **test condition**: a testable aspect of a component or system identified as a basis for testing (in µTest++ this is implemented as calls to the `expect()` or `assume()` functions);
-- **test case**: a set of preconditions, inputs, actions (where applicable), expected results, and postconditions, developed based on test conditions (in µTest++ this is implemented as calls to the `test_case()` function);
-- **test suite**: a collection of test scripts or test procedures to be executed within a specific test run (in µTest++ this is implemented as instances of the `test_suite` class).
+- **test condition**: a testable aspect of a component or system identified
+  as a basis for testing (in µTest++ this corresponds to calls to the
+  `t.expect()` or `t.assume()` methods);
+- **test case**: a set of preconditions, inputs, actions (where applicable),
+  expected results, and postconditions, developed based on test conditions
+  (in µTest++ this corresponds to instances of the `subtest` class, created
+  by calls to the `ts.test()` method);
+- **test suite**: a collection of test scripts or test procedures to be
+  executed within a specific test run (in µTest++ this corresponds to
+  instances of the `suite` class).
 
 ## Further information
 
-For additional details, refer to: [ISTQB](https://glossary.istqb.org/en_US/search?term=test_case&exact_matches_first=true).
+For additional details, refer to the [ISTQB Glossary](https://glossary.istqb.org/en_US/search?term=test_case&exact_matches_first=true).

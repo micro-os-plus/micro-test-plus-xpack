@@ -3,6 +3,7 @@
   <compounddef id="namespacemicro__os__plus_1_1micro__test__plus_1_1utility" kind="namespace" language="C++">
     <compoundname>micro_os_plus::micro_test_plus::utility</compoundname>
     <sectiondef kind="func">
+      <member refid="group__micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kind="function"><name>extract_file_name</name></member>
       <member refid="group__micro-test-plus-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" kind="function"><name>is_match</name></member>
       <member refid="group__micro-test-plus-utility-functions_1ga1b860aa64be17658d1664de447e6e125" kind="function"><name>split</name></member>
     </sectiondef>
@@ -14,6 +15,6 @@
 <para>These utilities include functions for pattern matching—such as verifying whether a string matches a specified pattern—and for splitting strings into sub-strings based on delimiters. The implementations are efficient and suitable for both embedded and general C++ projects.</para>
 <para>By encapsulating these helper functions within a dedicated namespace, the framework maintains clear code organisation and minimises naming conflicts. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" line="267" column="1"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/utility-inlines.h" line="63" column="3"/>
   </compounddef>
 </doxygen>

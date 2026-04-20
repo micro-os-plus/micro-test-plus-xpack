@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;3.3.1</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;4.0.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -99,23 +99,20 @@ $(function(){initNavTree('group__micro-test-plus-cli.html','',''); });
 <p>The µTest++ framework provides flexible command-line options to control the verbosity of test output, allowing users to tailor the level of detail to their specific requirements and workflow.</p>
 <p>By default, the reporter presents detailed results only for failed test cases, while successful test cases are summarised in a single line, indicating the total number of passed and failed checks.</p>
 <dl class="section user"><dt>Example</dt><dd></dd></dl>
-<div class="fragment"><div class="line">test 5</div>
-<div class="line">      Start  5: minimal-test --reporter=tap</div>
+<div class="fragment"><div class="line">$ minimal-test one two --reporter=tap</div>
 <div class="line"> </div>
-<div class="line">5: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test &quot;one&quot; &quot;two&quot; &quot;--reporter=tap&quot;</div>
-<div class="line">5: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin</div>
-<div class="line">5: Test timeout computed to be: 10000000</div>
-<div class="line">5: Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions.</div>
-<div class="line">5: </div>
-<div class="line">5: TAP version 14</div>
-<div class="line">5: 1..1</div>
-<div class="line">5: # Subtest: Minimal - test suite</div>
-<div class="line">5:     ok 1 - Check various conditions # { test case passed, 2 checks }</div>
-<div class="line">5:     1..1</div>
-<div class="line">5: ok 1 - Minimal # { test suite passed, 2 checks in 1 test case, time: 0.005 ms }</div>
-<div class="line">5: </div>
-<div class="line">5: # { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: 0.025 ms }</div>
-<div class="line"> 5/24 Test  #5: minimal-test --reporter=tap ...............   Passed    0.00 sec</div>
+<div class="line">TAP version 14</div>
+<div class="line"># Subtest: Minimal</div>
+<div class="line"> </div>
+<div class="line">    # Subtest: Check various conditions</div>
+<div class="line">        1..0</div>
+<div class="line">    ok 1 - Check various conditions # { passed, 2 checks }</div>
+<div class="line"> </div>
+<div class="line">    1..1</div>
+<div class="line">ok 1 - Minimal # { passed, 2 checks in 1 test case, time: X.XXX ms }</div>
+<div class="line"> </div>
+<div class="line">1..1</div>
+<div class="line"># { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: X.XXX ms }</div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="cli-reporter"></a>
 Reporter</h1>
 <p>By default, the µTest++ output follows the <a href="https://en.wikipedia.org/wiki/Test_Anything_Protocol">TAP</a> rules.</p>
@@ -123,8 +120,8 @@ Reporter</h1>
 <p>If needed, more reporting formats (like JUnit, JSON, etc.) can be added.</p>
 <p>To explicitly ask for a specific format:</p>
 <ul>
-<li><span class="tt">--reporter=tap</span> - the default reporter</li>
-<li><span class="tt">--reporter=basic</span> - the deprecated initial reporter</li>
+<li><span class="tt">--reporter=tap</span> - the default TAP reporter</li>
+<li><span class="tt">--reporter=human</span> - the human-readable reporter</li>
 </ul>
 <h1 class="doxsection"><a class="anchor" id="cli-verbosity"></a>
 Verbosity</h1>
@@ -137,61 +134,41 @@ Verbosity</h1>
 </ul>
 <p>These options enable developers to focus on the information most relevant to their needs, whether that is comprehensive diagnostics during development or succinct summaries for automated builds.</p>
 <p>The examples provided illustrate the output produced in each mode, demonstrating how µTest++ adapts its reporting to support professional and efficient testing workflows across all files and folders.</p>
-<p>The source code for this example is in <span class="tt">tests/src/minimal-test.cpp</span>.</p>
+<p>The source code for this example is in <span class="tt">tests/sources/minimal-test/src/main.cpp</span>.</p>
 <h2 class="doxsection"><a class="anchor" id="cli-verbosity-verbose"></a>
 Verbose mode</h2>
 <p>In verbose mode, the µTest++ reporter provides detailed output for every expectation, irrespective of whether it passes or fails.</p>
 <dl class="section user"><dt>Example</dt><dd></dd></dl>
-<div class="fragment"><div class="line">test 6</div>
-<div class="line">      Start  6: minimal-test --verbose --reporter=tap</div>
+<div class="fragment"><div class="line">$ minimal-test one two --verbose --reporter=tap</div>
 <div class="line"> </div>
-<div class="line">6: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test &quot;one&quot; &quot;two&quot; &quot;--verbose&quot; &quot;--reporter=tap&quot;</div>
-<div class="line">6: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin</div>
-<div class="line">6: Test timeout computed to be: 10000000</div>
-<div class="line">6: Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions.</div>
-<div class="line">6: </div>
-<div class="line">6: TAP version 14</div>
-<div class="line">6: 1..1</div>
-<div class="line">6: # Subtest: Minimal - test suite</div>
-<div class="line">6:     # Subtest: Check various conditions - test case</div>
-<div class="line">6:         ok 1 - answer is 42</div>
-<div class="line">6:         ok 2 - condition is true</div>
-<div class="line">6:         1..2</div>
-<div class="line">6:     ok 1 - Check various conditions # { test case passed, 2 checks }</div>
-<div class="line">6:     1..1</div>
-<div class="line">6: ok 1 - Minimal # { test suite passed, 2 checks in 1 test case, time: 0.005 ms }</div>
-<div class="line">6: </div>
-<div class="line">6: # { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: 0.029 ms }</div>
-<div class="line"> 6/24 Test  #6: minimal-test --verbose --reporter=tap .....   Passed    0.00 sec</div>
+<div class="line">TAP version 14</div>
+<div class="line"># Subtest: Minimal</div>
+<div class="line"> </div>
+<div class="line">    # Subtest: Check various conditions</div>
+<div class="line">        ok 1 - answer is 42</div>
+<div class="line">        ok 2 - condition is true</div>
+<div class="line">        1..2</div>
+<div class="line">    ok 1 - Check various conditions # { passed, 2 checks }</div>
+<div class="line"> </div>
+<div class="line">    1..1</div>
+<div class="line">ok 1 - Minimal # { passed, 2 checks in 1 test case, time: X.XXX ms }</div>
+<div class="line"> </div>
+<div class="line">1..1</div>
+<div class="line"># { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: X.XXX ms }</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="cli-verbosity-quiet"></a>
 Quiet mode</h2>
-<p>In quiet mode, the µTest++ reporter displays only the overall totals for the test suite.</p>
+<p>In quiet mode, the µTest++ reporter displays only the overall session totals.</p>
 <dl class="section user"><dt>Example</dt><dd></dd></dl>
-<div class="fragment"><div class="line">test 7</div>
-<div class="line">      Start  7: minimal-test --quiet --reporter=tap</div>
+<div class="fragment"><div class="line">$ minimal-test one two --quiet --reporter=tap</div>
 <div class="line"> </div>
-<div class="line">7: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test &quot;one&quot; &quot;two&quot; &quot;--quiet&quot; &quot;--reporter=tap&quot;</div>
-<div class="line">7: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin</div>
-<div class="line">7: Test timeout computed to be: 10000000</div>
-<div class="line">7: </div>
-<div class="line">7: TAP version 14</div>
-<div class="line">7: 1..1</div>
-<div class="line">7: ok 1 - Minimal # { test suite passed, 2 checks in 1 test case, time: 0.003 ms }</div>
-<div class="line">7: </div>
-<div class="line">7: # { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: 0.023 ms }</div>
-<div class="line"> 7/24 Test  #7: minimal-test --quiet --reporter=tap .......   Passed    0.00 sec</div>
+<div class="line">TAP version 14</div>
+<div class="line"> </div>
+<div class="line">1..0</div>
+<div class="line"># { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: X.XXX ms }</div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="cli-verbosity-silent"></a>
 Silent mode</h2>
-<p>In silent mode, the µTest++ reporter suppresses all output, and the framework returns only the exit code.</p>
-<dl class="section user"><dt>Example</dt><dd></dd></dl>
-<div class="fragment"><div class="line">test 8</div>
-<div class="line">      Start  8: minimal-test --silent --reporter=tap</div>
-<div class="line"> </div>
-<div class="line">8: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin/minimal-test &quot;one&quot; &quot;two&quot; &quot;--silent&quot; &quot;--reporter=tap&quot;</div>
-<div class="line">8: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/native-cmake-sys-release/platform-bin</div>
-<div class="line">8: Test timeout computed to be: 10000000</div>
-<div class="line"> 8/24 Test  #8: minimal-test --silent --reporter=tap ......   Passed    0.00 sec</div>
-</div><!-- fragment -->   </div><!-- contents -->
+<p>In silent mode, the µTest++ reporter suppresses all output, and the framework returns only the exit code.   </p>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

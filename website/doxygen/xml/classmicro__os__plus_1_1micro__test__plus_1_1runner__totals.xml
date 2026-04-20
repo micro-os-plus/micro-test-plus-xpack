@@ -1,0 +1,483 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals" kind="class" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::runner_totals</compoundname>
+    <includes refid="micro-test-plus_8h" local="no">micro-os-plus/micro-test-plus.h</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1aa2ec235fa990c0394aa8099f7467814b" prot="protected" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t micro_os_plus::micro_test_plus::runner_totals::executed_subtests_</definition>
+        <argsstring></argsstring>
+        <name>executed_subtests_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::runner_totals::executed_subtests_</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Total number of tests executed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" line="245" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" bodystart="245" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1aea770c96fa7e58165f5e13370af5461f" compoundref="runner-totals_8h" startline="208" endline="211">executed_subtests</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1af0eaf03f466cb1f6606fabecc11c78fd" compoundref="runner-totals_8h" startline="156" endline="159">increment_executed_subtests</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1abc80f3723af141da86e33dc33abae34c" compoundref="runner-totals_8cpp" startline="68" endline="90">operator+=</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a17f8c7015019ade44519fb8507b047a8" prot="protected" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t micro_os_plus::micro_test_plus::runner_totals::failed_checks_</definition>
+        <argsstring></argsstring>
+        <name>failed_checks_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::runner_totals::failed_checks_</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Total number of failed checks. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" line="240" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" bodystart="240" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1af3a32f2e70101eecce99d385698457ae" compoundref="runner-totals_8h" startline="195" endline="198">executed_checks</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1aace686e5de3293ed5d9686eda2ce4eb4" compoundref="runner-totals_8h" startline="182" endline="185">failed_checks</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a99194ce4d370f46a29069f3981335a88" compoundref="runner-totals_8h" startline="143" endline="146">increment_failed_checks</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1abc80f3723af141da86e33dc33abae34c" compoundref="runner-totals_8cpp" startline="68" endline="90">operator+=</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a6a6bdd3224b9f95b326c24911d7cda46" compoundref="runner-totals_8h" startline="226" endline="229">was_successful</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a01856cc9973614f868b48fd861cbfa88" prot="protected" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t micro_os_plus::micro_test_plus::runner_totals::successful_checks_</definition>
+        <argsstring></argsstring>
+        <name>successful_checks_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::runner_totals::successful_checks_</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Total number of successful checks. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" line="235" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" bodystart="235" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1af3a32f2e70101eecce99d385698457ae" compoundref="runner-totals_8h" startline="195" endline="198">executed_checks</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1ae27e4c6050b55a0d0e69f74de93898d2" compoundref="runner-totals_8h" startline="130" endline="133">increment_successful_checks</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1abc80f3723af141da86e33dc33abae34c" compoundref="runner-totals_8cpp" startline="68" endline="90">operator+=</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a767415a580f50ce60da6e0de0005514c" compoundref="runner-totals_8h" startline="169" endline="172">successful_checks</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a7e041270b30aeea97ef1463a3120c6ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::micro_test_plus::runner_totals::runner_totals</definition>
+        <argsstring>()=default</argsstring>
+        <name>runner_totals</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::runner_totals::runner_totals</qualifiedname>
+        <briefdescription>
+<para>Default constructor. All counters are zero-initialised. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" line="89" column="5"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a872963581be58119f64d743ca522af0d">runner_totals</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1ab764eedc569e93dc5dd4a8e62ed11c4d">runner_totals</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1abc80f3723af141da86e33dc33abae34c" compoundref="runner-totals_8cpp" startline="68" endline="90">operator+=</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a9da2678fcb9b2d60ec7c3ac1d6cffe7e">operator=</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1ae6dbd5bd8df99b2d5609f21c57f1c8c2">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a872963581be58119f64d743ca522af0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::micro_test_plus::runner_totals::runner_totals</definition>
+        <argsstring>(const runner_totals &amp;)=delete</argsstring>
+        <name>runner_totals</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::runner_totals::runner_totals</qualifiedname>
+        <param>
+          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals" kindref="compound">runner_totals</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted copy constructor to prevent copying. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" line="94" column="5"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a7e041270b30aeea97ef1463a3120c6ed">runner_totals</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1ab764eedc569e93dc5dd4a8e62ed11c4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::micro_test_plus::runner_totals::runner_totals</definition>
+        <argsstring>(runner_totals &amp;&amp;)=delete</argsstring>
+        <name>runner_totals</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::runner_totals::runner_totals</qualifiedname>
+        <param>
+          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals" kindref="compound">runner_totals</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted move constructor to prevent moving. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" line="99" column="5"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a7e041270b30aeea97ef1463a3120c6ed">runner_totals</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1af3a32f2e70101eecce99d385698457ae" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t micro_os_plus::micro_test_plus::runner_totals::executed_checks</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>executed_checks</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::runner_totals::executed_checks</qualifiedname>
+        <briefdescription>
+<para>Returns the total number of checks executed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The sum of successful and failed checks. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" line="195" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" bodystart="195" bodyend="198"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a17f8c7015019ade44519fb8507b047a8" compoundref="runner-totals_8h" startline="240">failed_checks_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a01856cc9973614f868b48fd861cbfa88" compoundref="runner-totals_8h" startline="235">successful_checks_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a79c7928d44d70b8fe5bf993775517e63" compoundref="reporter-tap_8cpp" startline="526" endline="641">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a8649b62ba8f7ff88501450c5f939ab6d" compoundref="reporter-tap_8cpp" startline="323" endline="446">micro_os_plus::micro_test_plus::reporter_tap::end_suite</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1aea770c96fa7e58165f5e13370af5461f" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t micro_os_plus::micro_test_plus::runner_totals::executed_subtests</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>executed_subtests</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::runner_totals::executed_subtests</qualifiedname>
+        <briefdescription>
+<para>Returns the number of subtests that were executed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The cumulative count of executed subtests. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" line="208" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" bodystart="208" bodyend="211"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1aa2ec235fa990c0394aa8099f7467814b" compoundref="runner-totals_8h" startline="245">executed_subtests_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a3118ff89506858505f18e8fd368baffc" compoundref="reporter-human_8cpp" startline="190" endline="269">micro_os_plus::micro_test_plus::reporter_human::end_session</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a9a224d34b068e1698c00633ae2341e7f" compoundref="reporter-tap_8cpp" startline="175" endline="253">micro_os_plus::micro_test_plus::reporter_tap::end_session</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a79c7928d44d70b8fe5bf993775517e63" compoundref="reporter-tap_8cpp" startline="526" endline="641">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="340" endline="461">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a8649b62ba8f7ff88501450c5f939ab6d" compoundref="reporter-tap_8cpp" startline="323" endline="446">micro_os_plus::micro_test_plus::reporter_tap::end_suite</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1aace686e5de3293ed5d9686eda2ce4eb4" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t micro_os_plus::micro_test_plus::runner_totals::failed_checks</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>failed_checks</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::runner_totals::failed_checks</qualifiedname>
+        <briefdescription>
+<para>Returns the number of checks that failed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The cumulative count of failed checks. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" line="182" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" bodystart="182" bodyend="185"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a17f8c7015019ade44519fb8507b047a8" compoundref="runner-totals_8h" startline="240">failed_checks_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a3118ff89506858505f18e8fd368baffc" compoundref="reporter-human_8cpp" startline="190" endline="269">micro_os_plus::micro_test_plus::reporter_human::end_session</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a9a224d34b068e1698c00633ae2341e7f" compoundref="reporter-tap_8cpp" startline="175" endline="253">micro_os_plus::micro_test_plus::reporter_tap::end_session</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="549" endline="673">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a79c7928d44d70b8fe5bf993775517e63" compoundref="reporter-tap_8cpp" startline="526" endline="641">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="340" endline="461">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a8649b62ba8f7ff88501450c5f939ab6d" compoundref="reporter-tap_8cpp" startline="323" endline="446">micro_os_plus::micro_test_plus::reporter_tap::end_suite</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1af0eaf03f466cb1f6606fabecc11c78fd" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::runner_totals::increment_executed_subtests</definition>
+        <argsstring>(size_t count=1) noexcept</argsstring>
+        <name>increment_executed_subtests</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::runner_totals::increment_executed_subtests</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>count</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>Increments the executed-subtests counter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of subtests to add (default 1). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Returns</title><para>Nothing. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" line="156" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" bodystart="156" bodyend="159"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1aa2ec235fa990c0394aa8099f7467814b" compoundref="runner-totals_8h" startline="245">executed_subtests_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base_1a4eb5910c122542031477006aec7fd649" compoundref="test_8cpp" startline="209" endline="255">micro_os_plus::micro_test_plus::runnable_base::after_subtest_create_</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a99194ce4d370f46a29069f3981335a88" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::runner_totals::increment_failed_checks</definition>
+        <argsstring>(size_t count=1) noexcept</argsstring>
+        <name>increment_failed_checks</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::runner_totals::increment_failed_checks</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>count</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>Increments the failed-checks counter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of failed checks to add (default 1). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Returns</title><para>Nothing. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" line="143" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" bodystart="143" bodyend="146"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a17f8c7015019ade44519fb8507b047a8" compoundref="runner-totals_8h" startline="240">failed_checks_</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1ae27e4c6050b55a0d0e69f74de93898d2" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::runner_totals::increment_successful_checks</definition>
+        <argsstring>(size_t count=1) noexcept</argsstring>
+        <name>increment_successful_checks</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::runner_totals::increment_successful_checks</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>count</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>Increments the successful-checks counter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of successful checks to add (default 1). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Returns</title><para>Nothing. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" line="130" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" bodystart="130" bodyend="133"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a01856cc9973614f868b48fd861cbfa88" compoundref="runner-totals_8h" startline="235">successful_checks_</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1abc80f3723af141da86e33dc33abae34c" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals" kindref="compound">runner_totals</ref> &amp;</type>
+        <definition>runner_totals &amp; micro_os_plus::micro_test_plus::runner_totals::operator+=</definition>
+        <argsstring>(const runner_totals &amp;other) noexcept</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::runner_totals::operator+=</qualifiedname>
+        <param>
+          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals" kindref="compound">runner_totals</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Accumulates the totals from another instance into this one. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The instance whose totals are to be added. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to this instance.</para>
+</simplesect>
+Adds the successful check count, failed check count, and executed subtest count of <computeroutput>other</computeroutput> to the corresponding members of this instance. Returns a reference to <computeroutput>*this</computeroutput> to support chaining. When tracing is enabled, the updated totals are output for diagnostic purposes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" line="120" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/runner-totals.cpp" bodystart="68" bodyend="90"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a7e041270b30aeea97ef1463a3120c6ed">runner_totals</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1aa2ec235fa990c0394aa8099f7467814b" compoundref="runner-totals_8h" startline="245">executed_subtests_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a17f8c7015019ade44519fb8507b047a8" compoundref="runner-totals_8h" startline="240">failed_checks_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a01856cc9973614f868b48fd861cbfa88" compoundref="runner-totals_8h" startline="235">successful_checks_</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a9da2678fcb9b2d60ec7c3ac1d6cffe7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals" kindref="compound">runner_totals</ref> &amp;</type>
+        <definition>runner_totals &amp; micro_os_plus::micro_test_plus::runner_totals::operator=</definition>
+        <argsstring>(const runner_totals &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::runner_totals::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals" kindref="compound">runner_totals</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted copy assignment operator to prevent copying. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" line="105" column="5"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a7e041270b30aeea97ef1463a3120c6ed">runner_totals</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1ae6dbd5bd8df99b2d5609f21c57f1c8c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals" kindref="compound">runner_totals</ref> &amp;</type>
+        <definition>runner_totals &amp; micro_os_plus::micro_test_plus::runner_totals::operator=</definition>
+        <argsstring>(runner_totals &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::runner_totals::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals" kindref="compound">runner_totals</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted move assignment operator to prevent moving. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" line="111" column="5"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a7e041270b30aeea97ef1463a3120c6ed">runner_totals</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a767415a580f50ce60da6e0de0005514c" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t micro_os_plus::micro_test_plus::runner_totals::successful_checks</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>successful_checks</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::runner_totals::successful_checks</qualifiedname>
+        <briefdescription>
+<para>Returns the number of checks that passed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The cumulative count of successful checks. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" line="169" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" bodystart="169" bodyend="172"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a01856cc9973614f868b48fd861cbfa88" compoundref="runner-totals_8h" startline="235">successful_checks_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a3118ff89506858505f18e8fd368baffc" compoundref="reporter-human_8cpp" startline="190" endline="269">micro_os_plus::micro_test_plus::reporter_human::end_session</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a9a224d34b068e1698c00633ae2341e7f" compoundref="reporter-tap_8cpp" startline="175" endline="253">micro_os_plus::micro_test_plus::reporter_tap::end_session</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="549" endline="673">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a79c7928d44d70b8fe5bf993775517e63" compoundref="reporter-tap_8cpp" startline="526" endline="641">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="340" endline="461">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a8649b62ba8f7ff88501450c5f939ab6d" compoundref="reporter-tap_8cpp" startline="323" endline="446">micro_os_plus::micro_test_plus::reporter_tap::end_suite</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a6a6bdd3224b9f95b326c24911d7cda46" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::runner_totals::was_successful</definition>
+        <argsstring>(void) const noexcept</argsstring>
+        <name>was_successful</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::runner_totals::was_successful</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Checks whether all executed checks were successful. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>true</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>No checks failed. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>false</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>At least one check failed.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+A runner with no checks at all is considered successful, as it did not fail any check. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" line="226" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" bodystart="226" bodyend="229"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a17f8c7015019ade44519fb8507b047a8" compoundref="runner-totals_8h" startline="240">failed_checks_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a3118ff89506858505f18e8fd368baffc" compoundref="reporter-human_8cpp" startline="190" endline="269">micro_os_plus::micro_test_plus::reporter_human::end_session</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="549" endline="673">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a79c7928d44d70b8fe5bf993775517e63" compoundref="reporter-tap_8cpp" startline="526" endline="641">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="340" endline="461">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a8649b62ba8f7ff88501450c5f939ab6d" compoundref="reporter-tap_8cpp" startline="323" endline="446">micro_os_plus::micro_test_plus::reporter_tap::end_suite</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Aggregated pass/fail/subtest counters for a node in the test tree. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals" kindref="compound">runner_totals</ref></computeroutput> records three counters that are maintained throughout a test session:<itemizedlist>
+<listitem><para>the number of checks that passed (<computeroutput>successful_checks_</computeroutput>),</para>
+</listitem><listitem><para>the number of checks that failed (<computeroutput>failed_checks_</computeroutput>), and</para>
+</listitem><listitem><para>the number of subtests that were executed (<computeroutput>executed_subtests_</computeroutput>).</para>
+</listitem></itemizedlist>
+</para>
+<para>Every <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node" kindref="compound">test_node</ref></computeroutput>-derived object (<computeroutput>runner</computeroutput>, <computeroutput>suite</computeroutput>, <computeroutput>subtest</computeroutput>) owns a <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals" kindref="compound">runner_totals</ref></computeroutput> member and accumulates its counts in place. At the end of each suite or session the operator <computeroutput>+=</computeroutput> propagates the child totals up to the parent node.</para>
+<para>The class is non-copyable and non-movable to prevent accidental duplication of live counters. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" line="83" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-totals.h" bodystart="84" bodyend="246"/>
+    <listofallmembers>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1af3a32f2e70101eecce99d385698457ae" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::runner_totals</scope><name>executed_checks</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1aea770c96fa7e58165f5e13370af5461f" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::runner_totals</scope><name>executed_subtests</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1aa2ec235fa990c0394aa8099f7467814b" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::runner_totals</scope><name>executed_subtests_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1aace686e5de3293ed5d9686eda2ce4eb4" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::runner_totals</scope><name>failed_checks</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a17f8c7015019ade44519fb8507b047a8" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::runner_totals</scope><name>failed_checks_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1af0eaf03f466cb1f6606fabecc11c78fd" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::runner_totals</scope><name>increment_executed_subtests</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a99194ce4d370f46a29069f3981335a88" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::runner_totals</scope><name>increment_failed_checks</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1ae27e4c6050b55a0d0e69f74de93898d2" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::runner_totals</scope><name>increment_successful_checks</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1abc80f3723af141da86e33dc33abae34c" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::runner_totals</scope><name>operator+=</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a9da2678fcb9b2d60ec7c3ac1d6cffe7e" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::runner_totals</scope><name>operator=</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1ae6dbd5bd8df99b2d5609f21c57f1c8c2" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::runner_totals</scope><name>operator=</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a7e041270b30aeea97ef1463a3120c6ed" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::runner_totals</scope><name>runner_totals</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a872963581be58119f64d743ca522af0d" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::runner_totals</scope><name>runner_totals</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1ab764eedc569e93dc5dd4a8e62ed11c4d" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::runner_totals</scope><name>runner_totals</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a767415a580f50ce60da6e0de0005514c" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::runner_totals</scope><name>successful_checks</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a01856cc9973614f868b48fd861cbfa88" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::runner_totals</scope><name>successful_checks_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a6a6bdd3224b9f95b326c24911d7cda46" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::runner_totals</scope><name>was_successful</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

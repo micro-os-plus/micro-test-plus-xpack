@@ -1,12 +1,12 @@
 var group__micro_test_plus_operators =
 [
-    [ "micro_os_plus::micro_test_plus::operators::operator and", "group__micro-test-plus-operators.html#ga6f792d4a05a9b4e2e5b15c21905639f4", null ],
-    [ "micro_os_plus::micro_test_plus::operators::operator not", "group__micro-test-plus-operators.html#ga76287e126ef9eaf3039d970d70f3a436", null ],
-    [ "micro_os_plus::micro_test_plus::operators::operator or", "group__micro-test-plus-operators.html#gaaad46363338988f9080425b0d327b779", null ],
-    [ "micro_os_plus::micro_test_plus::operators::operator!=", "group__micro-test-plus-operators.html#gae2090b8535bb7860e6104347b2d9f4e6", null ],
-    [ "micro_os_plus::micro_test_plus::operators::operator<", "group__micro-test-plus-operators.html#gad934faf2be89b200f4d286c26c043a29", null ],
-    [ "micro_os_plus::micro_test_plus::operators::operator<=", "group__micro-test-plus-operators.html#ga7862426cbe47cb764473e8bc9f49c0a9", null ],
-    [ "micro_os_plus::micro_test_plus::operators::operator==", "group__micro-test-plus-operators.html#ga26bc1232c48df9b79463025f66da5f1f", null ],
-    [ "micro_os_plus::micro_test_plus::operators::operator>", "group__micro-test-plus-operators.html#gabd2a0c082adee2dbdd69043ba8d34dcd", null ],
-    [ "micro_os_plus::micro_test_plus::operators::operator>=", "group__micro-test-plus-operators.html#ga676092b57233f1137778ee9c38e24a46", null ]
+    [ "micro_os_plus::micro_test_plus::operators::operator and", "group__micro-test-plus-operators.html#ga9f5b1ce8e86ae91e37952fa5395a262c", null ],
+    [ "micro_os_plus::micro_test_plus::operators::operator not", "group__micro-test-plus-operators.html#ga6efefab5a8f2fa4b8f0008255581379e", null ],
+    [ "micro_os_plus::micro_test_plus::operators::operator or", "group__micro-test-plus-operators.html#gada70a550c2c02d1d7293efd2cf10ab5c", null ],
+    [ "micro_os_plus::micro_test_plus::operators::operator!=", "group__micro-test-plus-operators.html#ga70665b9137eb7a54917ef4a7e556e5d6", null ],
+    [ "micro_os_plus::micro_test_plus::operators::operator<", "group__micro-test-plus-operators.html#gaf444d654ac945f6c47c9a8712278cb7f", null ],
+    [ "micro_os_plus::micro_test_plus::operators::operator<=", "group__micro-test-plus-operators.html#ga6fa56a234ceec4232dc9f131695dcc3b", null ],
+    [ "micro_os_plus::micro_test_plus::operators::operator==", "group__micro-test-plus-operators.html#ga15b2c12a28683bea3529436c03eff4cf", null ],
+    [ "micro_os_plus::micro_test_plus::operators::operator>", "group__micro-test-plus-operators.html#ga79d68e7d8823fce4e90efba4435ab3e9", null ],
+    [ "micro_os_plus::micro_test_plus::operators::operator>=", "group__micro-test-plus-operators.html#ga6271e69322d8ccce03e08d68cc0f8af4", null ]
 ];

@@ -1,9 +1,8 @@
-
 {/* ------------------------------------------------------------------------ */}
 
 ### February 2021
 
-In February 2021, the initial experimental version was developed, drawing inspiration from node-tap and prioritising maximum simplicity.
+In February 2021, the initial experimental version was developed, drawing inspiration from [Node TAP](https://node-tap.org) and prioritising maximum simplicity.
 
 ### March 2021
 
@@ -11,4 +10,15 @@ During March 2021, as part of a broader project restructuring, the C++ namespace
 
 ### April 2022
 
-At the beginning of 2022, a significant reworking of the library commenced, with the objective of enhancing flexibility and supporting multiple test suites. The principal source of inspiration for this revision was [UT](https://boost-ext.github.io/ut/). The v3.x release was subsequently published in April 2022.
+At the beginning of 2022, a significant reworking of the library commenced, with the objective of enhancing flexibility and supporting multiple test suites. The principal source of inspiration for this revision was [Boost UT](https://boost-ext.github.io/ut/). The v3.x release was subsequently published in April 2022.
+
+### April 2026
+
+In March 2026, following extensive experience with [Node TAP](https://node-tap.org),
+a major rework was undertaken to better align µTest++ with the Node TAP model.
+Two principal enhancements were introduced: the internal static objects were
+replaced by a hierarchy of explicit objects that pass references down the call
+chain from the runner to the individual checks; and a dedicated TAP reporter
+was added, producing output compliant with the
+[TAP14 specification](https://testanything.org/tap-version-14-specification.html).
+The v4.x release was subsequently published in April 2026.

@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;3.3.1</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;4.0.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -104,8 +104,8 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab4fa1159ebe60ce5fe073eefbe9a2446" id="r_ab4fa1159ebe60ce5fe073eefbe9a2446"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4fa1159ebe60ce5fe073eefbe9a2446">short_name</a> (const char *name)</td></tr>
-<tr class="memdesc:ab4fa1159ebe60ce5fe073eefbe9a2446"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract a short type or function name from a fully qualified name.  <br /></td></tr>
+<tr class="memitem:afc93799846770e521c4721d0de0a81cc" id="r_afc93799846770e521c4721d0de0a81cc"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc93799846770e521c4721d0de0a81cc">short_name</a> (const char *name) noexcept</td></tr>
+<tr class="memdesc:afc93799846770e521c4721d0de0a81cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract a short type or function name from a fully qualified name.  <br /></td></tr>
 <tr class="memitem:a6580ad54ad22a1d3ab43a1d9d49d1f26" id="r_a6580ad54ad22a1d3ab43a1d9d49d1f26"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:a6580ad54ad22a1d3ab43a1d9d49d1f26 template"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6580ad54ad22a1d3ab43a1d9d49d1f26">type_name</a> (void) -&gt; std::string_view</td></tr>
 <tr class="memdesc:a6580ad54ad22a1d3ab43a1d9d49d1f26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract the type name from the <span class="tt">__PRETTY_FUNCTION__</span> macro.  <br /></td></tr>
@@ -115,11 +115,14 @@ Functions</h2></td></tr>
 <p>It includes a local implementation of <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html" title="Local implementation of source location information for diagnostics.">source_location</a></span> for environments lacking C++20 standard support, as well as utilities for extracting concise type names from compiler-specific macros such as <span class="tt">__PRETTY_FUNCTION__</span>.</p>
 <p>All definitions within this namespace are intended to facilitate advanced reflection and reporting capabilities. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="ab4fa1159ebe60ce5fe073eefbe9a2446" name="ab4fa1159ebe60ce5fe073eefbe9a2446"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4fa1159ebe60ce5fe073eefbe9a2446">&#9670;&#160;</a></span>short_name()</h2>
+<a id="afc93799846770e521c4721d0de0a81cc" name="afc93799846770e521c4721d0de0a81cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc93799846770e521c4721d0de0a81cc">&#9670;&#160;</a></span>short_name()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">const char * micro_os_plus::micro_test_plus::reflection::short_name </td>
@@ -128,6 +131,11 @@ Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -136,23 +144,28 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the short name within the input string.</dd></dl>
+<p>Searches <code class="param">name</code> for the last <span class="tt">/</span> separator and returns a pointer to the character immediately following it, effectively stripping the folder path. If no <span class="tt">/</span> is found, the original pointer is returned unchanged.</p>
 <p>This function extracts the short name from a given file path by locating the final folder separator ('/'). If a separator is found, it returns a pointer to the character immediately following it, effectively providing the file or folder name. If no separator is present, the original input string is returned. This utility is useful for reporting concise file or folder names in test output. </p>
 
-<p class="definition">Definition at line <a class="el" href="micro-test-plus_8cpp_source.html#l00128">128</a> of file <a class="el" href="micro-test-plus_8cpp_source.html">micro-test-plus.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  129</span>    {</div>
-<div class="line"><span class="lineno">  130</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
-<div class="line"><span class="lineno">  131</span><span class="preprocessor">#if defined(__clang__)</span></div>
-<div class="line"><span class="lineno">  132</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wunsafe-buffer-usage&quot;</span></div>
-<div class="line"><span class="lineno">  133</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  134</span>      <span class="keyword">const</span> <span class="keywordtype">char</span>* p = strrchr (name, <span class="charliteral">&#39;/&#39;</span>);</div>
-<div class="line"><span class="lineno">  135</span>      <span class="keywordflow">if</span> (p != <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">  136</span>        <span class="keywordflow">return</span> p + 1;</div>
-<div class="line"><span class="lineno">  137</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  138</span>        <span class="keywordflow">return</span> name;</div>
-<div class="line"><span class="lineno">  139</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
-<div class="line"><span class="lineno">  140</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="reflection_8cpp_source.html#l00072">72</a> of file <a class="el" href="reflection_8cpp_source.html">reflection.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>    {</div>
+<div class="line"><span class="lineno">   74</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">   75</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
+<div class="line"><span class="lineno">   76</span><span class="preprocessor">#if defined(__clang__)</span></div>
+<div class="line"><span class="lineno">   77</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wunsafe-buffer-usage&quot;</span></div>
+<div class="line"><span class="lineno">   78</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   79</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   80</span>      <span class="keyword">const</span> <span class="keywordtype">char</span>* p = strrchr (name, <span class="charliteral">&#39;/&#39;</span>);</div>
+<div class="line"><span class="lineno">   81</span>      <span class="keywordflow">if</span> (p != <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   82</span>        <span class="keywordflow">return</span> p + 1;</div>
+<div class="line"><span class="lineno">   83</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">return</span> name;</div>
+<div class="line"><span class="lineno">   85</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">   86</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
+<div class="line"><span class="lineno">   87</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   88</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="test-reporter-basic_8cpp_source.html#l00126">micro_os_plus::micro_test_plus::test_reporter_basic::output_fail_prefix_()</a>, and <a class="el" href="test-reporter-tap_8cpp_source.html#l00157">micro_os_plus::micro_test_plus::test_reporter_tap::output_fail_suffix_()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="runner_8cpp_source.html#l00352">micro_os_plus::micro_test_plus::runner::abort()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00749">micro_os_plus::micro_test_plus::reporter_human::output_fail_prefix_()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00751">micro_os_plus::micro_test_plus::reporter_tap::output_fail_suffix_()</a>.</p>
 
 </div>
 </div>
@@ -181,7 +194,15 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 <p>This function template parses the compiler-specific <span class="tt">__PRETTY_FUNCTION__</span> macro to extract a concise type name for the template parameter <code>T</code>.</p>
-<p>The implementation is compiler-dependent and may require adjustment for different toolchains. It is primarily intended for internal use within the µTest++ framework to support improved diagnostics and reporting.</p>
+<p>Rather than relying on fixed character offsets (which are fragile across compiler versions and namespace changes), the implementation searches for well-known marker characters in the function signature string:</p>
+<ul>
+<li>Clang formats the signature as <span class="tt">"... [T = &lt;typename&gt;]"</span>, so the type name lies between the last &lsquo;&rsquo;['<span class="tt"> (skipping </span>"[T = "<span class="tt">) and the last
+  </span>']'<span class="tt">.</span></li>
+<li><span class="tt">GCC formats the signature as </span>"... [with T = &lt;typename&gt;]"<span class="tt">, so the
+  type name lies between the last </span>'='<span class="tt"> (skipping the trailing space)
+  and the last </span>']'`.</li>
+</ul>
+<p>This approach is resilient to namespace renaming, namespace nesting changes, and compiler format updates.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>The type whose name is to be extracted.</td></tr>
@@ -189,28 +210,33 @@ template&lt;class T&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Parameters</dt><dd>None. </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>A <span class="tt">std::string_view</span> containing the extracted type name. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <span class="tt">std::string_view</span> containing the extracted type name.</dd></dl>
+<p>Constructs a <span class="tt">std::string_view</span> from <span class="tt">__PRETTY_FUNCTION__</span> and parses out the portion that represents the template argument <span class="tt">T</span>, using compiler-specific prefix and suffix markers to locate the type-name substring at compile time. </p>
 
-<p class="definition">Definition at line <a class="el" href="reflection-inlines_8h_source.html#l00133">133</a> of file <a class="el" href="reflection-inlines_8h_source.html">reflection-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  134</span>    {</div>
-<div class="line"><span class="lineno">  135</span><span class="preprocessor">#if defined(__clang__)</span></div>
-<div class="line"><span class="lineno">  136</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
-<div class="line"><span class="lineno">  137</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wunsafe-buffer-usage&quot;</span></div>
-<div class="line"><span class="lineno">  138</span>      <span class="comment">// printf(&quot;|%s|%zu|\n&quot;, __PRETTY_FUNCTION__, sizeof</span></div>
-<div class="line"><span class="lineno">  139</span>      <span class="comment">// (__PRETTY_FUNCTION__)); printf(&quot;|%s|\n&quot;, &amp;__PRETTY_FUNCTION__[78]);</span></div>
-<div class="line"><span class="lineno">  140</span>      <span class="keywordflow">return</span> { &amp;__PRETTY_FUNCTION__[78], <span class="keyword">sizeof</span> (__PRETTY_FUNCTION__) - 80 };</div>
-<div class="line"><span class="lineno">  141</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
-<div class="line"><span class="lineno">  142</span><span class="preprocessor">#elif defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  143</span>      <span class="comment">// printf(&quot;|%s|%zu|\n&quot;, __PRETTY_FUNCTION__, sizeof</span></div>
-<div class="line"><span class="lineno">  144</span>      <span class="comment">// (__PRETTY_FUNCTION__)); printf(&quot;|%s|\n&quot;, &amp;__PRETTY_FUNCTION__[93]);</span></div>
-<div class="line"><span class="lineno">  145</span>      <span class="keywordflow">return</span> { &amp;__PRETTY_FUNCTION__[93], <span class="keyword">sizeof</span> (__PRETTY_FUNCTION__) - 144 };</div>
-<div class="line"><span class="lineno">  146</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">  147</span><span class="preprocessor">#error &quot;Unsupported compiler&quot;</span></div>
-<div class="line"><span class="lineno">  148</span>      <span class="keywordflow">return</span> <span class="stringliteral">&quot;Unsupported compiler&quot;</span>;</div>
-<div class="line"><span class="lineno">  149</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  150</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="reflection-inlines_8h_source.html#l00145">145</a> of file <a class="el" href="reflection-inlines_8h_source.html">reflection-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  146</span>    {</div>
+<div class="line"><span class="lineno">  147</span>      <span class="keyword">const</span> std::string_view sv = __PRETTY_FUNCTION__;</div>
+<div class="line"><span class="lineno">  148</span><span class="preprocessor">#if defined(__clang__)</span></div>
+<div class="line"><span class="lineno">  149</span>      <span class="comment">// Clang: &quot;... [T = &lt;typename&gt;]&quot;</span></div>
+<div class="line"><span class="lineno">  150</span>      <span class="comment">// rfind(&#39;[&#39;) locates the opening bracket of &quot;[T = ...]&quot;.</span></div>
+<div class="line"><span class="lineno">  151</span>      <span class="keyword">const</span> <span class="keyword">auto</span> start = sv.rfind (<span class="charliteral">&#39;[&#39;</span>) + 5; <span class="comment">// skip &quot;[T = &quot;</span></div>
+<div class="line"><span class="lineno">  152</span>      <span class="keyword">const</span> <span class="keyword">auto</span> end = sv.rfind (<span class="charliteral">&#39;]&#39;</span>);</div>
+<div class="line"><span class="lineno">  153</span><span class="preprocessor">#elif defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  154</span>      <span class="comment">// GCC: &quot;... [with T = &lt;typename&gt;]&quot; or, on some versions,</span></div>
+<div class="line"><span class="lineno">  155</span>      <span class="comment">//      &quot;... [with T = &lt;typename&gt;; std::string_view = ...]&quot;</span></div>
+<div class="line"><span class="lineno">  156</span>      <span class="comment">// Search for &quot;T = &quot; explicitly to avoid landing on a later &#39;=&#39;.</span></div>
+<div class="line"><span class="lineno">  157</span>      <span class="keyword">const</span> <span class="keyword">auto</span> t_eq = sv.find (<span class="stringliteral">&quot;T = &quot;</span>);</div>
+<div class="line"><span class="lineno">  158</span>      <span class="keyword">const</span> <span class="keyword">auto</span> start = t_eq + 4; <span class="comment">// skip &quot;T = &quot;</span></div>
+<div class="line"><span class="lineno">  159</span>      <span class="keyword">const</span> <span class="keyword">auto</span> semi = sv.find (<span class="charliteral">&#39;;&#39;</span>, start);</div>
+<div class="line"><span class="lineno">  160</span>      <span class="keyword">const</span> <span class="keyword">auto</span> end</div>
+<div class="line"><span class="lineno">  161</span>          = (semi != std::string_view::npos) ? semi : sv.rfind (<span class="stringliteral">&#39;]&#39;</span>);</div>
+<div class="line"><span class="lineno">  162</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  163</span><span class="preprocessor">#error &quot;Unsupported compiler&quot;</span></div>
+<div class="line"><span class="lineno">  164</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  165</span>      <span class="keywordflow">return</span> sv.substr (start, end - start);</div>
+<div class="line"><span class="lineno">  166</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="test-reporter-inlines_8h_source.html#l00362">micro_os_plus::micro_test_plus::test_reporter::operator&lt;&lt;()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter-inlines_8h_source.html#l00437">micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;()</a>.</p>
 
 </div>
 </div>

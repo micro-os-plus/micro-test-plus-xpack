@@ -52,10 +52,10 @@ Topics related to the µTest++ C++ API
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-inits">Initialisation &amp; Exit</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-runners">Test Runners</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Functions for initialising the framework and returning an exit code
+Classes and methods for initialising the framework and returning an exit code
 </td>
 </tr>
 
@@ -75,7 +75,7 @@ Test cases are named sequences of checks
 <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-expectations">Expectations</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Expectations are checks whose outcomes are reported
+Expectations are checks whose outcomes are accounted and reported
 </td>
 </tr>
 
@@ -205,10 +205,13 @@ Options for controlling test output verbosity at run-time
 
 
 
-<p>The <b>µTest++</b> project is a <b>modern C++</b> library designed to provide a <b>lightweight and efficient</b> testing framework, purpose-built for embedded systems development.</p>
+<p>The <b>µTest++</b> project is a <b>lightweight</b>, <b>macro-free</b>, <b>modern C++</b> testing framework <b>with TAP output</b>, purpose-built for embedded systems development.</p>
 
 
 <p>With its clean and expressive C++ API, µTest++ enables developers to write, organise, and execute unit tests with minimal overhead. The framework includes advanced features such as <b>test suites</b>, <b>test cases</b>, and detailed reporting, all tailored to meet the specific needs of embedded environments.</p>
+
+
+<p>Test results are reported in the <a href="https://en.wikipedia.org/wiki/Test_Anything_Protocol">TAP</a> (<b>Test Anything Protocol</b>) format by default, ensuring compatibility with a wide range of continuous integration systems and TAP-aware test harnesses. A human-readable reporter is also available for interactive use.</p>
 
 
 <p>Output verbosity is fully configurable via command-line options, allowing users to choose between concise summaries and comprehensive diagnostic information to best suit their workflow.</p>

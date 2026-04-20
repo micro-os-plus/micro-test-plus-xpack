@@ -33,20 +33,28 @@ var annotated_dup =
           [ "integral_constant", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant" ],
           [ "list", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1list.html", null ],
           [ "op", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html", null ],
-          [ "requires_", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1requires__.html", null ],
-          [ "requires_< true >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1requires___3_01true_01_4.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1requires___3_01true_01_4" ],
           [ "value", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" ],
-          [ "value< T, type_traits::requires_t< type_traits::is_floating_point_v< T > > >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_00_01type__traits_1_1ebf12668b90775791253c65854400b0d" ]
+          [ "value< T >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4" ]
         ] ],
         [ "_t", "structmicro__os__plus_1_1micro__test__plus_1_1__t.html", "structmicro__os__plus_1_1micro__test__plus_1_1__t" ],
-        [ "colors", "structmicro__os__plus_1_1micro__test__plus_1_1colors.html", "structmicro__os__plus_1_1micro__test__plus_1_1colors" ],
-        [ "test_reporter", "classmicro__os__plus_1_1micro__test__plus_1_1test__reporter.html", "classmicro__os__plus_1_1micro__test__plus_1_1test__reporter" ],
-        [ "test_reporter_basic", "classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic.html", "classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic" ],
-        [ "test_reporter_tap", "classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap.html", "classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap" ],
-        [ "test_runner", "classmicro__os__plus_1_1micro__test__plus_1_1test__runner.html", "classmicro__os__plus_1_1micro__test__plus_1_1test__runner" ],
-        [ "test_suite", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite" ],
-        [ "test_suite_base", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base.html", "classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base" ],
-        [ "to_t", "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html", "structmicro__os__plus_1_1micro__test__plus_1_1to__t" ]
+        [ "colours", "structmicro__os__plus_1_1micro__test__plus_1_1colours.html", "structmicro__os__plus_1_1micro__test__plus_1_1colours" ],
+        [ "indent_t", "structmicro__os__plus_1_1micro__test__plus_1_1indent__t.html", "structmicro__os__plus_1_1micro__test__plus_1_1indent__t" ],
+        [ "reporter", "classmicro__os__plus_1_1micro__test__plus_1_1reporter.html", "classmicro__os__plus_1_1micro__test__plus_1_1reporter" ],
+        [ "reporter_human", "classmicro__os__plus_1_1micro__test__plus_1_1reporter__human.html", "classmicro__os__plus_1_1micro__test__plus_1_1reporter__human" ],
+        [ "reporter_tap", "classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap.html", "classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap" ],
+        [ "runnable", "classmicro__os__plus_1_1micro__test__plus_1_1runnable.html", "classmicro__os__plus_1_1micro__test__plus_1_1runnable" ],
+        [ "runnable_base", "classmicro__os__plus_1_1micro__test__plus_1_1runnable__base.html", "classmicro__os__plus_1_1micro__test__plus_1_1runnable__base" ],
+        [ "runner", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html", "classmicro__os__plus_1_1micro__test__plus_1_1runner" ],
+        [ "runner_totals", "classmicro__os__plus_1_1micro__test__plus_1_1runner__totals.html", "classmicro__os__plus_1_1micro__test__plus_1_1runner__totals" ],
+        [ "static_runner", "classmicro__os__plus_1_1micro__test__plus_1_1static__runner.html", "classmicro__os__plus_1_1micro__test__plus_1_1static__runner" ],
+        [ "static_suite", "classmicro__os__plus_1_1micro__test__plus_1_1static__suite.html", "classmicro__os__plus_1_1micro__test__plus_1_1static__suite" ],
+        [ "subtest", "classmicro__os__plus_1_1micro__test__plus_1_1subtest.html", "classmicro__os__plus_1_1micro__test__plus_1_1subtest" ],
+        [ "suite", "classmicro__os__plus_1_1micro__test__plus_1_1suite.html", "classmicro__os__plus_1_1micro__test__plus_1_1suite" ],
+        [ "test_node", "classmicro__os__plus_1_1micro__test__plus_1_1test__node.html", "classmicro__os__plus_1_1micro__test__plus_1_1test__node" ],
+        [ "timestamp", "classmicro__os__plus_1_1micro__test__plus_1_1timestamp.html", "classmicro__os__plus_1_1micro__test__plus_1_1timestamp" ],
+        [ "timestamps", "classmicro__os__plus_1_1micro__test__plus_1_1timestamps.html", "classmicro__os__plus_1_1micro__test__plus_1_1timestamps" ],
+        [ "to_t", "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html", "structmicro__os__plus_1_1micro__test__plus_1_1to__t" ],
+        [ "top_suite", "classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html", "classmicro__os__plus_1_1micro__test__plus_1_1top__suite" ]
       ] ]
     ] ]
 ];

@@ -3,14 +3,24 @@
   <compounddef id="namespacemicro__os__plus_1_1micro__test__plus" kind="namespace" language="C++">
     <compoundname>micro_os_plus::micro_test_plus</compoundname>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1__t" prot="public">micro_os_plus::micro_test_plus::_t</innerclass>
-    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1colors" prot="public">micro_os_plus::micro_test_plus::colors</innerclass>
-    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter" prot="public">micro_os_plus::micro_test_plus::test_reporter</innerclass>
-    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic" prot="public">micro_os_plus::micro_test_plus::test_reporter_basic</innerclass>
-    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap" prot="public">micro_os_plus::micro_test_plus::test_reporter_tap</innerclass>
-    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner" prot="public">micro_os_plus::micro_test_plus::test_runner</innerclass>
-    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite" prot="public">micro_os_plus::micro_test_plus::test_suite</innerclass>
-    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base" prot="public">micro_os_plus::micro_test_plus::test_suite_base</innerclass>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1colours" prot="public">micro_os_plus::micro_test_plus::colours</innerclass>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1indent__t" prot="public">micro_os_plus::micro_test_plus::indent_t</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" prot="public">micro_os_plus::micro_test_plus::reporter</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human" prot="public">micro_os_plus::micro_test_plus::reporter_human</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap" prot="public">micro_os_plus::micro_test_plus::reporter_tap</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable" prot="public">micro_os_plus::micro_test_plus::runnable</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base" prot="public">micro_os_plus::micro_test_plus::runnable_base</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" prot="public">micro_os_plus::micro_test_plus::runner</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals" prot="public">micro_os_plus::micro_test_plus::runner_totals</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner" prot="public">micro_os_plus::micro_test_plus::static_runner</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" prot="public">micro_os_plus::micro_test_plus::static_suite</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest" prot="public">micro_os_plus::micro_test_plus::subtest</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" prot="public">micro_os_plus::micro_test_plus::suite</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node" prot="public">micro_os_plus::micro_test_plus::test_node</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp" prot="public">micro_os_plus::micro_test_plus::timestamp</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps" prot="public">micro_os_plus::micro_test_plus::timestamps</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t" prot="public">micro_os_plus::micro_test_plus::to_t</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1top__suite" prot="public">micro_os_plus::micro_test_plus::top_suite</innerclass>
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail">micro_os_plus::micro_test_plus::detail</innernamespace>
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus_1_1literals">micro_os_plus::micro_test_plus::literals</innernamespace>
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math">micro_os_plus::micro_test_plus::math</innernamespace>
@@ -59,8 +69,8 @@
 <para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
 <programlisting><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x<sp/>=<sp/>42;</highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>wrapped<sp/>=<sp/><ref refid="group__micro-test-plus-literals_1gab6ddb21470182cbdcf06436cde43718f" kindref="member">to_i</ref>{x};<sp/></highlight><highlight class="comment">//<sp/>Explicitly<sp/>treat<sp/>x<sp/>as<sp/>an<sp/>int<sp/>for<sp/>test</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">comparison</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Explicitly<sp/>treat<sp/>x<sp/>as<sp/>an<sp/>int<sp/>for<sp/>test<sp/>comparison.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>wrapped<sp/>=<sp/><ref refid="group__micro-test-plus-literals_1gab6ddb21470182cbdcf06436cde43718f" kindref="member">to_i</ref>{x};</highlight></codeline>
 </programlisting></para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
@@ -140,35 +150,32 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-reporter.h" line="133" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-reporter.h" bodystart="134" bodyend="140"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="136" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="137" bodyend="143"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="namespacemicro__os__plus_1_1micro__test__plus_1a08e787c2c2f8365df2c9b372605535ac" prot="public" static="no">
+      <memberdef kind="typedef" id="namespacemicro__os__plus_1_1micro__test__plus_1a0bbf0517c0f64f25e40b591ecb969a6e" prot="public" static="no">
         <type><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" kindref="member">verbosity</ref></type>
-        <definition>typedef verbosity micro_os_plus::micro_test_plus::verbosity_t</definition>
+        <definition>using micro_os_plus::micro_test_plus::verbosity_t =  verbosity</definition>
         <argsstring></argsstring>
         <name>verbosity_t</name>
         <qualifiedname>micro_os_plus::micro_test_plus::verbosity_t</qualifiedname>
         <briefdescription>
-<para>Type alias for the verbosity enumeration used in test reporting. </para>
         </briefdescription>
         <detaileddescription>
-<para>The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a08e787c2c2f8365df2c9b372605535ac" kindref="member">verbosity_t</ref></computeroutput> type alias provides a convenient shorthand for referring to the <computeroutput>verbosity</computeroutput> enumeration, which defines the available levels of detail for test output within the reporting system.</para>
-<para>Using this alias improves code readability and consistency throughout the framework, especially when specifying or configuring verbosity levels for test reporters. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-reporter.h" line="154" column="21" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-reporter.h" bodystart="154" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="145" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="145" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="var">
-      <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1a2c623cc1c15ec08e25c2451d9b51ad75" prot="public" static="no" mutable="no">
-        <type>const <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1colors" kindref="compound">colors</ref></type>
-        <definition>const colors micro_os_plus::micro_test_plus::colors_red_green</definition>
+      <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1abb8182f972e436f09e25dc5b0dae05fd" prot="public" static="no" constexpr="yes" mutable="no">
+        <type><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1colours" kindref="compound">colours</ref></type>
+        <definition>colours micro_os_plus::micro_test_plus::colours_red_green</definition>
         <argsstring></argsstring>
-        <name>colors_red_green</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::colors_red_green</qualifiedname>
+        <name>colours_red_green</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::colours_red_green</qualifiedname>
         <initializer>= {
     &quot;\033[0m&quot;, 
     &quot;\033[32m&quot;, 
@@ -180,101 +187,45 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-reporter.h" line="113" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-reporter.h" bodystart="113" bodyend="117"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1a30c30cadd642d6bd11ad734ea9b6d46d" compoundref="test-reporter-basic_8cpp" startline="58" endline="61">micro_os_plus::micro_test_plus::test_reporter_basic::test_reporter_basic</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="116" column="28" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="116" bodyend="120"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a391d670afb552fe8fc03011d37a517fd" compoundref="reporter-human_8cpp" startline="79" endline="94">micro_os_plus::micro_test_plus::reporter_human::reporter_human</referencedby>
       </memberdef>
-      <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1a682fc3ce8c00ebe7c068d6299269655b" prot="public" static="no" mutable="no">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base" kindref="compound">test_suite_base</ref> *</type>
-        <definition>test_suite_base * micro_os_plus::micro_test_plus::current_test_suite</definition>
+      <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1a06acf196002ba97ba19ce4054477f915" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>size_t</type>
+        <definition>size_t micro_os_plus::micro_test_plus::indent_size</definition>
         <argsstring></argsstring>
-        <name>current_test_suite</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::current_test_suite</qualifiedname>
+        <name>indent_size</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::indent_size</qualifiedname>
+        <initializer>= 4</initializer>
         <briefdescription>
-<para>Global pointer references the currently active test suite. </para>
         </briefdescription>
         <detaileddescription>
-<para>This global pointer references the currently active test suite within the µTest++ framework. It is used to track and update the state of the test suite during test execution, including recording test results and statistics. By maintaining a pointer to the current test suite, the framework ensures accurate association of test outcomes with their respective suites, supporting clear and organised reporting across all test cases and folders. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/micro-test-plus.cpp" line="307" column="19" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/micro-test-plus.cpp" bodystart="307" bodyend="-1" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" declline="125" declcolumn="26"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aba23fdd1c24e8232712ba47b8e107a19" compoundref="micro-test-plus_8cpp" startline="218" endline="230">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::deferred_reporter_base</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1a61cf8d59c66faaaeae59f5144c393442" compoundref="test-reporter-basic_8cpp" startline="256" endline="334">micro_os_plus::micro_test_plus::test_reporter_basic::end_test_case</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1ad8dc0455bd2bd20d47e9e63709934224" compoundref="test-reporter-tap_8cpp" startline="251" endline="334">micro_os_plus::micro_test_plus::test_reporter_tap::end_test_case</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a86233d8241e398f9491d859b4097c851" compoundref="test-runner_8cpp" startline="218" endline="265">micro_os_plus::micro_test_plus::test_runner::exit_code</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1ab89536a4a5a82b658ca8282277c49f4b" compoundref="test-reporter-inlines_8h" startline="445" endline="459">micro_os_plus::micro_test_plus::test_reporter::fail</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a882aa5687209359ae0313efe44f10053" compoundref="test-runner_8cpp" startline="97" endline="214">micro_os_plus::micro_test_plus::test_runner::initialize</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1aecf7a8c2bd3bb48e7fc2094b4a8a8ae2" compoundref="test-reporter-tap_8cpp" startline="121" endline="145">micro_os_plus::micro_test_plus::test_reporter_tap::output_fail_prefix_</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1a911a16a9ba7e8093273a95beebfea070" compoundref="test-reporter-tap_8cpp" startline="71" endline="84">micro_os_plus::micro_test_plus::test_reporter_tap::output_pass_prefix_</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1aa6ff8210496100842cf12b466195dcf7" compoundref="test-reporter-inlines_8h" startline="419" endline="432">micro_os_plus::micro_test_plus::test_reporter::pass</referencedby>
-        <referencedby refid="group__micro-test-plus-test-case_1ga423b46709cca6072efe28a6dbf85e413" compoundref="micro-test-plus-inlines_8h" startline="114" endline="124">test_case</referencedby>
-      </memberdef>
-      <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1a22bf4ef08cb70064bbc37770a0ad5ac4" prot="public" static="no" mutable="no">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter" kindref="compound">test_reporter</ref> *</type>
-        <definition>test_reporter * micro_os_plus::micro_test_plus::reporter</definition>
-        <argsstring></argsstring>
-        <name>reporter</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::reporter</qualifiedname>
-        <initializer>= nullptr</initializer>
-        <briefdescription>
-<para>Global pointer to <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter" kindref="compound">test_reporter</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>This global pointer to <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter" kindref="compound">test_reporter</ref></computeroutput> is responsible for collecting, formatting, and outputting the results of test execution within the µTest++ framework. It manages the reporting of test outcomes, including successes and failures, and ensures that all relevant information is presented clearly to the user. By maintaining a single shared reporter, the framework provides consistent and centralised reporting across all test cases and folders. The reporter is initialized in <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a882aa5687209359ae0313efe44f10053" kindref="member">test_runner::initialize()</ref>. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/micro-test-plus.cpp" line="293" column="17" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/micro-test-plus.cpp" bodystart="293" bodyend="-1" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" declline="124" declcolumn="24"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1aa221de23c9bed6bc5844c077fbafa46b" compoundref="details-inlines_8h" startline="142" endline="152">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::~deferred_reporter</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a3a8503e793c807cbb882033cc5ff2831" compoundref="micro-test-plus_8cpp" startline="240" endline="252">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::~deferred_reporter_base</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a6bd8aa956f30c344c9ef79cf21c69cdc" compoundref="test-suite_8cpp" startline="177" endline="192">micro_os_plus::micro_test_plus::test_suite_base::begin_test_case</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1adfc3afd1432b2d093eef73a18ca9a242" compoundref="test-suite_8cpp" startline="122" endline="135">micro_os_plus::micro_test_plus::test_suite_base::begin_test_suite</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1ab2e1a6eadc56c54b45f9d21e450b0cbc" compoundref="test-suite_8cpp" startline="203" endline="206">micro_os_plus::micro_test_plus::test_suite_base::end_test_case</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1aa53f99054051136b3484a1664b5ee59f" compoundref="test-suite_8cpp" startline="147" endline="164">micro_os_plus::micro_test_plus::test_suite_base::end_test_suite</referencedby>
-        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1ac49ee935c294cb18a5a0e7f58b0b9fb4" compoundref="test-reporter_8cpp" startline="78" endline="82">endl</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a86233d8241e398f9491d859b4097c851" compoundref="test-runner_8cpp" startline="218" endline="265">micro_os_plus::micro_test_plus::test_runner::exit_code</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner_1a882aa5687209359ae0313efe44f10053" compoundref="test-runner_8cpp" startline="97" endline="214">micro_os_plus::micro_test_plus::test_runner::initialize</referencedby>
-      </memberdef>
-      <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1a469c0f5fefa0b4cea12a7d267dded831" prot="public" static="no" mutable="no">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner" kindref="compound">test_runner</ref></type>
-        <definition>test_runner micro_os_plus::micro_test_plus::runner</definition>
-        <argsstring></argsstring>
-        <name>runner</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::runner</qualifiedname>
-        <briefdescription>
-<para>Global instance of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner" kindref="compound">test_runner</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>This global instance of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__runner" kindref="compound">test_runner</ref></computeroutput> manages the lifecycle of test suites and test cases within the µTest++ framework. It is responsible for initialising the test environment, registering test suites, executing tests, and collecting results. By maintaining a single shared runner, the framework ensures consistent test execution and reporting across all test cases and folders. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/micro-test-plus.cpp" line="278" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-suite-inlines.h" bodystart="74" bodyend="-1" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" declline="123" declcolumn="22"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite_1a824b38d21a3f4d0adb99827455f159cf" compoundref="test-suite-inlines_8h" startline="88" endline="98">micro_os_plus::micro_test_plus::test_suite::test_suite</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1a7a7dca65eb3c935434095a4c2df1dad4">micro_os_plus::micro_test_plus::test_reporter_basic::~test_reporter_basic</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1ae26350972b5b0a5b86d3e16d4426c68e">micro_os_plus::micro_test_plus::test_reporter_tap::~test_reporter_tap</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1a6bd8aa956f30c344c9ef79cf21c69cdc" compoundref="test-suite_8cpp" startline="177" endline="192">micro_os_plus::micro_test_plus::test_suite_base::begin_test_case</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter_1a39cfd386c447d792d104371601889d19">micro_os_plus::micro_test_plus::test_reporter::end_test</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1a37bd235b054a13f7374d1bf0b237ec0b" compoundref="test-reporter-basic_8cpp" startline="441" endline="444">micro_os_plus::micro_test_plus::test_reporter_basic::end_test</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1a994c743ec18e48d330174177b4d89bec" compoundref="test-reporter-tap_8cpp" startline="474" endline="508">micro_os_plus::micro_test_plus::test_reporter_tap::end_test</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base_1aa53f99054051136b3484a1664b5ee59f" compoundref="test-suite_8cpp" startline="147" endline="164">micro_os_plus::micro_test_plus::test_suite_base::end_test_suite</referencedby>
-        <referencedby refid="group__micro-test-plus-inits_1gaa790667969dc1a261c324e89a6ea4591" compoundref="micro-test-plus_8cpp" startline="108" endline="111">exit_code</referencedby>
-        <referencedby refid="group__micro-test-plus-inits_1gac2c60d60578f668878957ec68a37538f" compoundref="micro-test-plus_8cpp" startline="81" endline="87">initialize</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-human.cpp" line="112" column="20" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-human.cpp" bodystart="112" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a59da3337bb7a2d1bc89406f548131d00" compoundref="reporter-human_8cpp" startline="477" endline="534">micro_os_plus::micro_test_plus::reporter_human::begin_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a27a5c6eca6a4beb82466448bfe5c44e9" compoundref="reporter-tap_8cpp" startline="459" endline="514">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="549" endline="673">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a79c7928d44d70b8fe5bf993775517e63" compoundref="reporter-tap_8cpp" startline="526" endline="641">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="340" endline="461">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a8649b62ba8f7ff88501450c5f939ab6d" compoundref="reporter-tap_8cpp" startline="323" endline="446">micro_os_plus::micro_test_plus::reporter_tap::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1abd45edcbad304fc30aca042171b1c8c6" compoundref="reporter-human_8cpp" startline="122" endline="126">micro_os_plus::micro_test_plus::reporter_human::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a1072d571f0363f041dc62a4f4956c9be" compoundref="reporter-tap_8cpp" startline="106" endline="110">micro_os_plus::micro_test_plus::reporter_tap::operator&lt;&lt;</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
       <member refid="group__micro-test-plus-logical-functions_1ga8b43b7658b43fb76daf5efbb2e03d236" kind="function"><name>_and</name></member>
       <member refid="group__micro-test-plus-logical-functions_1gad9ad936174faf965cffe4493e2b64cf0" kind="function"><name>_not</name></member>
       <member refid="group__micro-test-plus-logical-functions_1gad32b40e4b0022b276fa3b357b98a33c5" kind="function"><name>_or</name></member>
-      <member refid="group__micro-test-plus-assumptions_1ga0f5febbef70eb641691b98583410a1ca" kind="function"><name>assume</name></member>
-      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1ac49ee935c294cb18a5a0e7f58b0b9fb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter" kindref="compound">test_reporter</ref> &amp;</type>
-        <definition>test_reporter &amp; micro_os_plus::micro_test_plus::endl</definition>
-        <argsstring>(test_reporter &amp;stream)</argsstring>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1accd8ecc7473b09af578daa31bb8780eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <definition>reporter &amp; micro_os_plus::micro_test_plus::endl</definition>
+        <argsstring>(reporter &amp;stream)</argsstring>
         <name>endl</name>
         <qualifiedname>micro_os_plus::micro_test_plus::endl</qualifiedname>
         <param>
-          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter" kindref="compound">test_reporter</ref> &amp;</type>
+          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
           <declname>stream</declname>
         </param>
         <briefdescription>
@@ -286,33 +237,72 @@
 <parametername>stream</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Reference to the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter" kindref="compound">test_reporter</ref></computeroutput> instance. </para>
+<para>Reference to the <computeroutput>reporter</computeroutput> instance. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>Reference to the same <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter" kindref="compound">test_reporter</ref></computeroutput> instance, enabling chaining of output operations.</para>
+<simplesect kind="return"><para>Reference to the same <computeroutput>reporter</computeroutput> instance, enabling chaining of output operations.</para>
 </simplesect>
-The <computeroutput>endl</computeroutput> function inserts a newline character into the specified <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter" kindref="compound">test_reporter</ref></computeroutput> stream and flushes its output buffer. This operation ensures that each test output line is clearly separated and immediately visible, facilitating the readability and clarity of test results across all test cases and folders within the µTest++ framework. </para>
+The <computeroutput>endl</computeroutput> function inserts a newline character into the specified <computeroutput>reporter</computeroutput> stream and flushes its output buffer. This operation ensures that each test output line is clearly separated and immediately visible, facilitating the readability and clarity of test results across all test cases and folders within the µTest++ framework. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/test-reporter.cpp" line="78" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/test-reporter.cpp" bodystart="78" bodyend="82" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test-reporter.h" declline="167" declcolumn="3"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a22bf4ef08cb70064bbc37770a0ad5ac4" compoundref="micro-test-plus_8cpp" startline="293">reporter</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1aecf7a8c2bd3bb48e7fc2094b4a8a8ae2" compoundref="test-reporter-tap_8cpp" startline="121" endline="145">micro_os_plus::micro_test_plus::test_reporter_tap::output_fail_prefix_</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1adecb0de90a98d7fe9c1fb5de40468819" compoundref="test-reporter-basic_8cpp" startline="171" endline="182">micro_os_plus::micro_test_plus::test_reporter_basic::output_fail_suffix_</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1aa6ea612db57165ac9a7e149e4a523cdc" compoundref="test-reporter-tap_8cpp" startline="157" endline="177">micro_os_plus::micro_test_plus::test_reporter_tap::output_fail_suffix_</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic_1a4697197dd57377a23b75f790172f7dec" compoundref="test-reporter-basic_8cpp" startline="107" endline="112">micro_os_plus::micro_test_plus::test_reporter_basic::output_pass_suffix_</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap_1a44b64c57f4fba6c026bd2e0fccaf13f4" compoundref="test-reporter-tap_8cpp" startline="102" endline="107">micro_os_plus::micro_test_plus::test_reporter_tap::output_pass_suffix_</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter.cpp" line="206" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter.cpp" bodystart="206" bodyend="210" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" declline="159" declcolumn="3"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aee6d8d387798abd0d94052b1cf8987c4" compoundref="reporter_8cpp" startline="221" endline="225">micro_os_plus::micro_test_plus::reporter::endline</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a8caeeaad1fa7b6b7c5118d43517d1cb8" compoundref="reporter-tap_8cpp" startline="716" endline="739">micro_os_plus::micro_test_plus::reporter_tap::output_fail_prefix_</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aef7c1d0436d63165f94245bf16c69f6a" compoundref="reporter-human_8cpp" startline="798" endline="810">micro_os_plus::micro_test_plus::reporter_human::output_fail_suffix_</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a951a2aa4cb5300a7706709a2336651a8" compoundref="reporter-tap_8cpp" startline="751" endline="777">micro_os_plus::micro_test_plus::reporter_tap::output_fail_suffix_</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac5713ce51eb50a6841879b1c7d00c234" compoundref="reporter-human_8cpp" startline="730" endline="735">micro_os_plus::micro_test_plus::reporter_human::output_pass_suffix_</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1ac46a89737874c4f864a98b91d8c57ecd" compoundref="reporter-tap_8cpp" startline="697" endline="702">micro_os_plus::micro_test_plus::reporter_tap::output_pass_suffix_</referencedby>
       </memberdef>
       <member refid="group__micro-test-plus-function-comparators_1gae9dfca849300a917cb1c231d275baaa3" kind="function"><name>eq</name></member>
       <member refid="group__micro-test-plus-function-comparators_1gabdb021d3d6a5759cd2a5f502b2514dea" kind="function"><name>eq</name></member>
-      <member refid="group__micro-test-plus-inits_1gaa790667969dc1a261c324e89a6ea4591" kind="function"><name>exit_code</name></member>
-      <member refid="group__micro-test-plus-expectations_1ga75c3f43663a5440d78231fe572fe4a22" kind="function"><name>expect</name></member>
       <member refid="group__micro-test-plus-function-comparators_1ga34e03399670ec0b365b94b7bea788dd8" kind="function"><name>ge</name></member>
       <member refid="group__micro-test-plus-function-comparators_1ga3957927d25a61348b639fe01aab11258" kind="function"><name>ge</name></member>
       <member refid="group__micro-test-plus-function-comparators_1gae2fb681444d8256f6bf827eea6b7c29e" kind="function"><name>gt</name></member>
       <member refid="group__micro-test-plus-function-comparators_1gae8a4dcd7ebf01cdfa7e46540cd6522fa" kind="function"><name>gt</name></member>
-      <member refid="group__micro-test-plus-inits_1gac2c60d60578f668878957ec68a37538f" kind="function"><name>initialize</name></member>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1aa887212b25aa8e44bf32b07d4a6634e9" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1indent__t" kindref="compound">indent_t</ref></type>
+        <definition>indent_t micro_os_plus::micro_test_plus::indent</definition>
+        <argsstring>(size_t level)</argsstring>
+        <name>indent</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::indent</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+<para>Factory function that creates an <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1indent__t" kindref="compound">indent_t</ref></computeroutput> manipulator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of four-space indentation levels. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1indent__t" kindref="compound">indent_t</ref></computeroutput> value for use with <computeroutput>operator&lt;&lt;</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="180" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="180" bodyend="183"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a59da3337bb7a2d1bc89406f548131d00" compoundref="reporter-human_8cpp" startline="477" endline="534">micro_os_plus::micro_test_plus::reporter_human::begin_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a27a5c6eca6a4beb82466448bfe5c44e9" compoundref="reporter-tap_8cpp" startline="459" endline="514">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="549" endline="673">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a79c7928d44d70b8fe5bf993775517e63" compoundref="reporter-tap_8cpp" startline="526" endline="641">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="340" endline="461">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a8649b62ba8f7ff88501450c5f939ab6d" compoundref="reporter-tap_8cpp" startline="323" endline="446">micro_os_plus::micro_test_plus::reporter_tap::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aa25bc978d1fcd02cb7c75aef0c1a9988" compoundref="reporter-human_8cpp" startline="749" endline="786">micro_os_plus::micro_test_plus::reporter_human::output_fail_prefix_</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a8caeeaad1fa7b6b7c5118d43517d1cb8" compoundref="reporter-tap_8cpp" startline="716" endline="739">micro_os_plus::micro_test_plus::reporter_tap::output_fail_prefix_</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a951a2aa4cb5300a7706709a2336651a8" compoundref="reporter-tap_8cpp" startline="751" endline="777">micro_os_plus::micro_test_plus::reporter_tap::output_fail_suffix_</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ae831c47658d21e0e77bf7df79b8fc58f" compoundref="reporter-human_8cpp" startline="701" endline="712">micro_os_plus::micro_test_plus::reporter_human::output_pass_prefix_</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1abb4353e534969b0452aa63cee7652a29" compoundref="reporter-tap_8cpp" startline="670" endline="679">micro_os_plus::micro_test_plus::reporter_tap::output_pass_prefix_</referencedby>
+      </memberdef>
       <member refid="group__micro-test-plus-function-comparators_1ga2b5263a5b3965855aa04971bba735a56" kind="function"><name>le</name></member>
       <member refid="group__micro-test-plus-function-comparators_1gaf8716c55446af28b090eb49acd8cf131" kind="function"><name>le</name></member>
       <member refid="group__micro-test-plus-function-comparators_1gac162522dcad1a6ff7c869d52d376b3ed" kind="function"><name>lt</name></member>
@@ -321,7 +311,6 @@ The <computeroutput>endl</computeroutput> function inserts a newline character i
       <member refid="group__micro-test-plus-function-comparators_1ga59e4cf59954e81bc868e62b1c5c8db1f" kind="function"><name>ne</name></member>
       <member refid="group__micro-test-plus-function-comparators_1ga172f305bbeaf8b965681f76c16a39516" kind="function"><name>ne</name></member>
       <member refid="group__micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" kind="function"><name>nothrow</name></member>
-      <member refid="group__micro-test-plus-test-case_1ga423b46709cca6072efe28a6dbf85e413" kind="function"><name>test_case</name></member>
       <member refid="group__micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kind="function"><name>throws</name></member>
       <member refid="group__micro-test-plus-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" kind="function"><name>throws</name></member>
     </sectiondef>
@@ -334,6 +323,6 @@ The <computeroutput>endl</computeroutput> function inserts a newline character i
 <para>By grouping all definitions within this namespace and its sub-namespaces, the framework achieves clear code organisation, minimises naming conflicts, and enhances maintainability. This modular structure supports robust, scalable, and professional test development for both embedded and general C++ projects.</para>
 <para>All public API definitions are implemented in the <computeroutput>include/micro-os-plus</computeroutput> folder, ensuring a clear separation from user code and facilitating straightforward integration with the wider µOS++ ecosystem. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" line="96" column="1"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" line="92" column="1"/>
   </compounddef>
 </doxygen>

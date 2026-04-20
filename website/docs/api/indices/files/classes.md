@@ -34,14 +34,14 @@ keywords:
 ## - C -
 
 <ul>
-<li><b>colors</b>: as struct in file <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/colors">include/micro-os-plus/micro-test-plus/test-reporter.h</a></li>
+<li><b>colours</b>: as struct in file <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/colours">include/micro-os-plus/micro-test-plus/reporter.h</a></li>
 </ul>
 
 ## - D -
 
 <ul>
-<li><b>deferred_reporter_base</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base">include/micro-os-plus/micro-test-plus/detail.h</a></li>
-<li><b>deferred_reporter&lt;Expr_T&gt;</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter">include/micro-os-plus/micro-test-plus/detail.h</a></li>
+<li><b>deferred_reporter_base</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base">include/micro-os-plus/micro-test-plus/deferred-reporter.h</a></li>
+<li><b>deferred_reporter&lt;Expr_T&gt;</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter">include/micro-os-plus/micro-test-plus/deferred-reporter.h</a></li>
 </ul>
 <p>2 entries</p>
 
@@ -75,9 +75,10 @@ keywords:
 
 <ul>
 <li><b>identity&lt;T, Extra&gt;</b>: as struct in file <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/identity">include/micro-os-plus/micro-test-plus/type-traits.h</a></li>
+<li><b>indent_t</b>: as struct in file <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/indent-t">include/micro-os-plus/micro-test-plus/reporter.h</a></li>
 <li><b>integral_constant&lt;N&gt;</b>: as struct in file <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">include/micro-os-plus/micro-test-plus/type-traits.h</a></li>
 </ul>
-<p>2 entries</p>
+<p>3 entries</p>
 
 ## - L -
 
@@ -108,41 +109,49 @@ keywords:
 ## - R -
 
 <ul>
-<li><b>requires_&lt;Cond&gt;</b>: as struct in file <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires-">include/micro-os-plus/micro-test-plus/type-traits.h</a></li>
-<li><b>requires_&lt;true&gt;</b>: as struct in file <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/requires--d4cc09ec8cf7793e85cd7a9c044686e1">include/micro-os-plus/micro-test-plus/type-traits.h</a></li>
+<li><b>reporter</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">include/micro-os-plus/micro-test-plus/reporter.h</a></li>
+<li><b>reporter_human</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human">include/micro-os-plus/micro-test-plus/reporter-human.h</a></li>
+<li><b>reporter_tap</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap">include/micro-os-plus/micro-test-plus/reporter-tap.h</a></li>
+<li><b>runnable_base</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runnable-base">include/micro-os-plus/micro-test-plus/test.h</a></li>
+<li><b>runnable&lt;Self_T&gt;</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runnable">include/micro-os-plus/micro-test-plus/test.h</a></li>
+<li><b>runner</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">include/micro-os-plus/micro-test-plus/runner.h</a></li>
+<li><b>runner_totals</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner-totals">include/micro-os-plus/micro-test-plus/runner-totals.h</a></li>
 </ul>
-<p>2 entries</p>
+<p>7 entries</p>
 
 ## - S -
 
 <ul>
 <li><b>source_location</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">include/micro-os-plus/micro-test-plus/reflection.h</a></li>
+<li><b>static_runner</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-runner">include/micro-os-plus/micro-test-plus/runner.h</a></li>
+<li><b>static_suite</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-suite">include/micro-os-plus/micro-test-plus/test.h</a></li>
+<li><b>subtest</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/subtest">include/micro-os-plus/micro-test-plus/test.h</a></li>
+<li><b>suite</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite">include/micro-os-plus/micro-test-plus/test.h</a></li>
 </ul>
+<p>5 entries</p>
 
 ## - T -
 
 <ul>
-<li><b>test_reporter</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter">include/micro-os-plus/micro-test-plus/test-reporter.h</a></li>
-<li><b>test_reporter_basic</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-basic">include/micro-os-plus/micro-test-plus/test-reporter-basic.h</a></li>
-<li><b>test_reporter_tap</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-reporter-tap">include/micro-os-plus/micro-test-plus/test-reporter-tap.h</a></li>
-<li><b>test_runner</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-runner">include/micro-os-plus/micro-test-plus/test-runner.h</a></li>
-<li><b>test_suite</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite">include/micro-os-plus/micro-test-plus/test-suite.h</a></li>
-<li><b>test_suite_base</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-suite-base">include/micro-os-plus/micro-test-plus/test-suite.h</a></li>
+<li><b>test_node</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-node">include/micro-os-plus/micro-test-plus/test.h</a></li>
 <li><b>throws_&lt;Callable_T, Exception_T&gt;</b>: as struct in file <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-">include/micro-os-plus/micro-test-plus/detail.h</a></li>
 <li><b>throws_&lt;Callable_T, void&gt;</b>: as struct in file <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws--6ce6a9ac7588b533a253fd8d8638e6be">include/micro-os-plus/micro-test-plus/detail.h</a></li>
+<li><b>timestamp</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamp">include/micro-os-plus/micro-test-plus/timings.h</a></li>
+<li><b>timestamps</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamps">include/micro-os-plus/micro-test-plus/timings.h</a></li>
 <li><b>to_t&lt;T&gt;</b>: as struct in file <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/to-t">include/micro-os-plus/micro-test-plus/literals.h</a></li>
+<li><b>top_suite</b>: as class in file <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/top-suite">include/micro-os-plus/micro-test-plus/test.h</a></li>
 </ul>
-<p>9 entries</p>
+<p>7 entries</p>
 
 ## - V -
 
 <ul>
-<li><b>value&lt;...&gt;</b>: as struct in file <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-dae7771377f0087abbec46abf87b329e">include/micro-os-plus/micro-test-plus/type-traits.h</a></li>
-<li><b>value&lt;T, Opt&gt;</b>: as struct in file <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">include/micro-os-plus/micro-test-plus/type-traits.h</a></li>
+<li><b>value&lt;T&gt;</b>: as struct in file <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">include/micro-os-plus/micro-test-plus/type-traits.h</a></li>
+<li><b>value&lt;T&gt;</b>: as struct in file <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-f7399366cd6336ecbea702c3289d9432">include/micro-os-plus/micro-test-plus/type-traits.h</a></li>
 </ul>
 <p>2 entries</p>
 <br/>
-<p>Total: 39 entries.</p>
+<p>Total: 47 entries.</p>
 
 <hr/>
 

@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;3.3.1</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;4.0.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -178,9 +178,9 @@ Typedefs</h2></td></tr>
 <p>The <span class="tt">to_*</span> forms are the preferred approach since version 3.2.0, superseding the older <span class="tt"><a class="el" href="group__micro-test-plus-literals.html#ga1613ccf081248c601bed0f3022fba652" title="Strongly-typed wrapper for int values.">_i</a></span>, <span class="tt"><a class="el" href="group__micro-test-plus-literals.html#ga2e2ad62d8c5d6e3abcfca9a897ae61de" title="Strongly-typed wrapper for std::uint8_t values.">_u8</a></span>, etc. aliases, which are now deprecated.</p>
 <dl class="section user"><dt>Example</dt><dd></dd></dl>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> x = 42;</div>
-<div class="line"><span class="keyword">auto</span> wrapped = <a class="code hl_typedef" href="group__micro-test-plus-literals.html#gab6ddb21470182cbdcf06436cde43718f">to_i</a>{x}; <span class="comment">// Explicitly treat x as an int for test</span></div>
-<div class="line">comparison</div>
-<div class="ttc" id="agroup__micro-test-plus-literals_html_gab6ddb21470182cbdcf06436cde43718f"><div class="ttname"><a href="group__micro-test-plus-literals.html#gab6ddb21470182cbdcf06436cde43718f">micro_os_plus::micro_test_plus::to_i</a></div><div class="ttdeci">type_traits::value&lt; int &gt; to_i</div><div class="ttdoc">Strongly-typed wrapper for int values.</div><div class="ttdef"><b>Definition</b> <a href="literals_8h_source.html#l00718">literals.h:718</a></div></div>
+<div class="line"><span class="comment">// Explicitly treat x as an int for test comparison.</span></div>
+<div class="line"><span class="keyword">auto</span> wrapped = <a class="code hl_typedef" href="group__micro-test-plus-literals.html#gab6ddb21470182cbdcf06436cde43718f">to_i</a>{x};</div>
+<div class="ttc" id="agroup__micro-test-plus-literals_html_gab6ddb21470182cbdcf06436cde43718f"><div class="ttname"><a href="group__micro-test-plus-literals.html#gab6ddb21470182cbdcf06436cde43718f">micro_os_plus::micro_test_plus::to_i</a></div><div class="ttdeci">type_traits::value&lt; int &gt; to_i</div><div class="ttdoc">Strongly-typed wrapper for int values.</div><div class="ttdef"><b>Definition</b> <a href="literals_8h_source.html#l00719">literals.h:719</a></div></div>
 </div><!-- fragment --><dl class="section since"><dt>Since</dt><dd>3.2.0 </dd></dl>
 </div></td></tr>
 <tr class="memitem:ga6bdfe5c187140ee99d0bcabd5bb65156" id="r_ga6bdfe5c187140ee99d0bcabd5bb65156"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__micro-test-plus-literals.html#ga6bdfe5c187140ee99d0bcabd5bb65156">micro_os_plus::micro_test_plus::to_b</a> = <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html">type_traits::value</a>&lt;bool&gt;</td></tr>

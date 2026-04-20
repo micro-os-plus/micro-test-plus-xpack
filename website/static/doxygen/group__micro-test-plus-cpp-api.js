@@ -1,6 +1,6 @@
 var group__micro_test_plus_cpp_api =
 [
-    [ "Initialisation &amp; Exit", "group__micro-test-plus-inits.html", "group__micro-test-plus-inits" ],
+    [ "Test Runners", "group__micro-test-plus-runners.html", "group__micro-test-plus-runners" ],
     [ "Test Cases", "group__micro-test-plus-test-case.html", "group__micro-test-plus-test-case" ],
     [ "Expectations", "group__micro-test-plus-expectations.html", "group__micro-test-plus-expectations" ],
     [ "Assumptions", "group__micro-test-plus-assumptions.html", "group__micro-test-plus-assumptions" ],

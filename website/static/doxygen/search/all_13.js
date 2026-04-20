@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['unused_0',['unused',['../classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base.html#a20de3062a437e86955dd2917d7976cb3',1,'micro_os_plus::micro_test_plus::test_suite_base']]],
-  ['utility_20functions_1',['Utility Functions',['../group__micro-test-plus-utility-functions.html',1,'']]]
+  ['utility_20functions_0',['Utility Functions',['../group__micro-test-plus-utility-functions.html',1,'']]],
+  ['utility_2dinlines_2eh_1',['utility-inlines.h',['../utility-inlines_8h.html',1,'']]],
+  ['utility_2ecpp_2',['utility.cpp',['../utility_8cpp.html',1,'']]],
+  ['utility_2eh_3',['utility.h',['../utility_8h.html',1,'']]]
 ];

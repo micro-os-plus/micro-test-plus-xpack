@@ -28,17 +28,16 @@ keywords:
 ## - D -
 
 <ul>
-<li><b>declval()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#ae488d06debb38c5e638355cb462a1228">include/micro-os-plus/micro-test-plus/type-traits.h</a></li>
 <li><b>den_size()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a3e243d7f77b8435e1433ccad9c603f98">include/micro-os-plus/micro-test-plus/math.h</a></li>
-<li><b>den_size()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a74757af775d3afa203b808e3f6642467">include/micro-os-plus/micro-test-plus/math.h</a></li>
-<li><b>den()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a1006429dba18038662409138f5754952">include/micro-os-plus/micro-test-plus/math.h</a></li>
+<li><b>den_size()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#af5a33355bb68f644b9949ef1faa0d079">include/micro-os-plus/micro-test-plus/math.h</a></li>
+<li><b>den()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a8a29540b951c5cf6b40485287842b782">include/micro-os-plus/micro-test-plus/math.h</a></li>
 </ul>
-<p>4 entries</p>
+<p>3 entries</p>
 
 ## - E -
 
 <ul>
-<li><b>endl()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#ac49ee935c294cb18a5a0e7f58b0b9fb4">src/test-reporter.cpp</a></li>
+<li><b>endl()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#accd8ecc7473b09af578daa31bb8780eb">src/reporter.cpp</a></li>
 <li><b>eq_()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a3c134d5164d17cade8ff3f6de49c5e6b">include/micro-os-plus/micro-test-plus/detail.h</a></li>
 </ul>
 <p>2 entries</p>
@@ -47,22 +46,16 @@ keywords:
 
 <ul>
 <li><b>ge_()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#aded574b3efc7cfe142d34541e0ef71a5">include/micro-os-plus/micro-test-plus/detail.h</a></li>
-<li><b>get_impl()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a2fa97961fad5cd659110b887731f94dd">include/micro-os-plus/micro-test-plus/detail.h</a></li>
-<li><b>get_impl()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a95670c72316d5efa02f44ad11d13f662">include/micro-os-plus/micro-test-plus/detail.h</a></li>
-<li><b>get()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">include/micro-os-plus/micro-test-plus/detail.h</a></li>
+<li><b>get()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a0c9d0a57b84d040bb1dcedd9d7130825">include/micro-os-plus/micro-test-plus/detail.h</a></li>
 <li><b>gt_()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a9b9cf4ed2f2e67ddd24b1f2771675f4f">include/micro-os-plus/micro-test-plus/detail.h</a></li>
 </ul>
-<p>5 entries</p>
+<p>3 entries</p>
 
 ## - I -
 
 <ul>
-<li><b>is_convertible()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#ab7dddbd4f0438826d71f55904594905d">include/micro-os-plus/micro-test-plus/type-traits.h</a></li>
-<li><b>is_convertible()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#ae9b4b50700345f54b1c14c594e0637ba">include/micro-os-plus/micro-test-plus/type-traits.h</a></li>
-<li><b>is_valid()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a3ee98aeecf4e9f3b23dfcda25434c4d2">include/micro-os-plus/micro-test-plus/type-traits.h</a></li>
-<li><b>is_valid()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#aa7389baefbefec0ece5df341187218e0">include/micro-os-plus/micro-test-plus/type-traits.h</a></li>
+<li><b>indent()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#aa887212b25aa8e44bf32b07d4a6634e9">include/micro-os-plus/micro-test-plus/reporter.h</a></li>
 </ul>
-<p>4 entries</p>
 
 ## - L -
 
@@ -83,7 +76,7 @@ keywords:
 <ul>
 <li><b>ne_()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a887b0a1dcb769d9b07caeda9f00a2bd1">include/micro-os-plus/micro-test-plus/detail.h</a></li>
 <li><b>not_()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ae744b884d8e43bf196c35c31929a3efc">include/micro-os-plus/micro-test-plus/detail.h</a></li>
-<li><b>num()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a98cbcae8bfc4a2d2f27487d1b2e641b7">include/micro-os-plus/micro-test-plus/math.h</a></li>
+<li><b>num()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#afeb53c0d3b6ce6d482cef71f147a2290">include/micro-os-plus/micro-test-plus/math.h</a></li>
 </ul>
 <p>3 entries</p>
 
@@ -102,7 +95,7 @@ keywords:
 ## - S -
 
 <ul>
-<li><b>short_name()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection/#ab4fa1159ebe60ce5fe073eefbe9a2446">src/micro-test-plus.cpp</a></li>
+<li><b>short_name()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection/#afc93799846770e521c4721d0de0a81cc">src/reflection.cpp</a></li>
 </ul>
 
 ## - T -
@@ -111,7 +104,7 @@ keywords:
 <li><b>type_name()</b>: as function in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection/#a6580ad54ad22a1d3ab43a1d9d49d1f26">include/micro-os-plus/micro-test-plus/reflection.h</a></li>
 </ul>
 <br/>
-<p>Total: 27 entries.</p>
+<p>Total: 21 entries.</p>
 
 <hr/>
 

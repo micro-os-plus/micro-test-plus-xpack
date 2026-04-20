@@ -20,10 +20,8 @@ keywords:
 ## - C -
 
 <ul>
-<li><b>colors_red_green</b>: as variable in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a2c623cc1c15ec08e25c2451d9b51ad75">include/micro-os-plus/micro-test-plus/test-reporter.h</a></li>
-<li><b>current_test_suite</b>: as variable in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a682fc3ce8c00ebe7c068d6299269655b">include/micro-os-plus/micro-test-plus.h</a></li>
+<li><b>colours_red_green</b>: as variable in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#abb8182f972e436f09e25dc5b0dae05fd">include/micro-os-plus/micro-test-plus/reporter.h</a></li>
 </ul>
-<p>2 entries</p>
 
 ## - H -
 
@@ -37,6 +35,7 @@ keywords:
 ## - I -
 
 <ul>
+<li><b>indent_size</b>: as variable in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a06acf196002ba97ba19ce4054477f915">src/reporter-human.cpp</a></li>
 <li><b>is_container_v</b>: as variable in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a8361ab7ff9d9c6343d97a99bdcb9feb2">include/micro-os-plus/micro-test-plus/type-traits.h</a></li>
 <li><b>is_convertible_v</b>: as variable in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a49a5bfe63d50b6fd1be0972586fbf590">include/micro-os-plus/micro-test-plus/type-traits.h</a></li>
 <li><b>is_floating_point_v</b>: as variable in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#abfe0c2413694bb3a6dcdf1da303c38db">include/micro-os-plus/micro-test-plus/type-traits.h</a></li>
@@ -45,17 +44,9 @@ keywords:
 <li><b>is_floating_point_v< long double ></b>: as variable in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a735eedc6f117908ddfb242f37e319b46">include/micro-os-plus/micro-test-plus/type-traits.h</a></li>
 <li><b>is_op_v</b>: as variable in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a814e7f004d5404f735737aabb90fa111">include/micro-os-plus/micro-test-plus/type-traits.h</a></li>
 </ul>
-<p>7 entries</p>
-
-## - R -
-
-<ul>
-<li><b>reporter</b>: as variable in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a22bf4ef08cb70064bbc37770a0ad5ac4">include/micro-os-plus/micro-test-plus.h</a></li>
-<li><b>runner</b>: as variable in file <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a469c0f5fefa0b4cea12a7d267dded831">include/micro-os-plus/micro-test-plus.h</a></li>
-</ul>
-<p>2 entries</p>
+<p>8 entries</p>
 <br/>
-<p>Total: 14 entries.</p>
+<p>Total: 12 entries.</p>
 
 <hr/>
 

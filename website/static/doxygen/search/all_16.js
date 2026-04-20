@@ -2,10 +2,18 @@ var searchData=
 [
   ['_7edeferred_5freporter_0',['~deferred_reporter',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter.html#aa221de23c9bed6bc5844c077fbafa46b',1,'micro_os_plus::micro_test_plus::detail::deferred_reporter']]],
   ['_7edeferred_5freporter_5fbase_1',['~deferred_reporter_base',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base.html#a3a8503e793c807cbb882033cc5ff2831',1,'micro_os_plus::micro_test_plus::detail::deferred_reporter_base']]],
-  ['_7etest_5freporter_2',['~test_reporter',['../classmicro__os__plus_1_1micro__test__plus_1_1test__reporter.html#ab6f0791a20dd11e38a471ac30fb2ee06',1,'micro_os_plus::micro_test_plus::test_reporter']]],
-  ['_7etest_5freporter_5fbasic_3',['~test_reporter_basic',['../classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__basic.html#a7a7dca65eb3c935434095a4c2df1dad4',1,'micro_os_plus::micro_test_plus::test_reporter_basic']]],
-  ['_7etest_5freporter_5ftap_4',['~test_reporter_tap',['../classmicro__os__plus_1_1micro__test__plus_1_1test__reporter__tap.html#ae26350972b5b0a5b86d3e16d4426c68e',1,'micro_os_plus::micro_test_plus::test_reporter_tap']]],
-  ['_7etest_5frunner_5',['~test_runner',['../classmicro__os__plus_1_1micro__test__plus_1_1test__runner.html#a4e9d9c95479a6e8eab60c69a27f4ba91',1,'micro_os_plus::micro_test_plus::test_runner']]],
-  ['_7etest_5fsuite_6',['~test_suite',['../classmicro__os__plus_1_1micro__test__plus_1_1test__suite.html#aed21554ac8fa83e61ce178f37b0cdac8',1,'micro_os_plus::micro_test_plus::test_suite']]],
-  ['_7etest_5fsuite_5fbase_7',['~test_suite_base',['../classmicro__os__plus_1_1micro__test__plus_1_1test__suite__base.html#a8684c3b31ab07eaef800280bc172d6de',1,'micro_os_plus::micro_test_plus::test_suite_base']]]
+  ['_7ereporter_2',['~reporter',['../classmicro__os__plus_1_1micro__test__plus_1_1reporter.html#a1ab2bf741196d093aada2d4f3876176b',1,'micro_os_plus::micro_test_plus::reporter']]],
+  ['_7ereporter_5fhuman_3',['~reporter_human',['../classmicro__os__plus_1_1micro__test__plus_1_1reporter__human.html#af6a73ae96768e3d853a7c6020d63c93c',1,'micro_os_plus::micro_test_plus::reporter_human']]],
+  ['_7ereporter_5ftap_4',['~reporter_tap',['../classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap.html#aea6d0d15b6fbd71486b5462c9e2b88b7',1,'micro_os_plus::micro_test_plus::reporter_tap']]],
+  ['_7erunnable_5',['~runnable',['../classmicro__os__plus_1_1micro__test__plus_1_1runnable.html#acf4a48b68222a78a141cbdfccac1613b',1,'micro_os_plus::micro_test_plus::runnable']]],
+  ['_7erunnable_5fbase_6',['~runnable_base',['../classmicro__os__plus_1_1micro__test__plus_1_1runnable__base.html#a06e1479b10a75f7d354db6e00338d6e6',1,'micro_os_plus::micro_test_plus::runnable_base']]],
+  ['_7erunner_7',['~runner',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a47a11b38ecca99760dd8078b5175041f',1,'micro_os_plus::micro_test_plus::runner']]],
+  ['_7estatic_5frunner_8',['~static_runner',['../classmicro__os__plus_1_1micro__test__plus_1_1static__runner.html#aafe7e5d0283ec7842f0563c7bafe8b2e',1,'micro_os_plus::micro_test_plus::static_runner']]],
+  ['_7estatic_5fsuite_9',['~static_suite',['../classmicro__os__plus_1_1micro__test__plus_1_1static__suite.html#a88ca9975daf7b7b1e509114944151675',1,'micro_os_plus::micro_test_plus::static_suite']]],
+  ['_7esubtest_10',['~subtest',['../classmicro__os__plus_1_1micro__test__plus_1_1subtest.html#a83b83ec1680698bb5860d3272fbfe50d',1,'micro_os_plus::micro_test_plus::subtest']]],
+  ['_7esuite_11',['~suite',['../classmicro__os__plus_1_1micro__test__plus_1_1suite.html#aa25d7d2a11b7c893d9260d562beb96fb',1,'micro_os_plus::micro_test_plus::suite']]],
+  ['_7etest_5fnode_12',['~test_node',['../classmicro__os__plus_1_1micro__test__plus_1_1test__node.html#a6f6bc8c122720fdbe60cd12b0e2adbc5',1,'micro_os_plus::micro_test_plus::test_node']]],
+  ['_7etimestamp_13',['~timestamp',['../classmicro__os__plus_1_1micro__test__plus_1_1timestamp.html#acc5b87e2f3661ac56577b385b98f81fa',1,'micro_os_plus::micro_test_plus::timestamp']]],
+  ['_7etimestamps_14',['~timestamps',['../classmicro__os__plus_1_1micro__test__plus_1_1timestamps.html#a84a33e98fb67c4368647b73f21e312ae',1,'micro_os_plus::micro_test_plus::timestamps']]],
+  ['_7etop_5fsuite_15',['~top_suite',['../classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#aae4ef52e5ceaa29d20cf7e3be848c528',1,'micro_os_plus::micro_test_plus::top_suite']]]
 ];

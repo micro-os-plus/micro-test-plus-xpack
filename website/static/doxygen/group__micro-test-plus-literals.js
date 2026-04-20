@@ -1,18 +1,20 @@
 var group__micro_test_plus_literals =
 [
     [ "micro_os_plus::micro_test_plus::_t< T >", "structmicro__os__plus_1_1micro__test__plus_1_1__t.html", [
-      [ "value_type", "structmicro__os__plus_1_1micro__test__plus_1_1__t.html#ad315e68dc7624b22a2c810c2865025da", null ],
+      [ "value_type", "structmicro__os__plus_1_1micro__test__plus_1_1__t.html#a6bf65c151c552fb88e10a4799a64f5f4", null ],
       [ "_t", "group__micro-test-plus-literals.html#ga6195961d9ece2c2c91e8946d47d84a79", null ],
-      [ "get", "structmicro__os__plus_1_1micro__test__plus_1_1__t.html#a95a80f6f273c5ab49571ceddd3b17a74", null ],
-      [ "operator T", "structmicro__os__plus_1_1micro__test__plus_1_1__t.html#ae25aa47f118b4b4a3444f197d995390c", null ],
-      [ "value_", "structmicro__os__plus_1_1micro__test__plus_1_1__t.html#a1b2cf36b40e92a1249179c033894eb4d", null ]
+      [ "get", "structmicro__os__plus_1_1micro__test__plus_1_1__t.html#af60376a1f5c8acd58ab855b81efb4345", null ],
+      [ "operator T", "structmicro__os__plus_1_1micro__test__plus_1_1__t.html#a6b25c4a476c9745d143f6c4f3d038b0e", null ],
+      [ "epsilon", "structmicro__os__plus_1_1micro__test__plus_1_1__t.html#a434b222ff19bdb4970ad56fce11d5176", null ],
+      [ "value_", "structmicro__os__plus_1_1micro__test__plus_1_1__t.html#ad031508c3c4fba0528638bb61a0d908c", null ]
     ] ],
     [ "micro_os_plus::micro_test_plus::to_t< T >", "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html", [
-      [ "value_type", "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html#ad315e68dc7624b22a2c810c2865025da", null ],
+      [ "value_type", "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html#a6bf65c151c552fb88e10a4799a64f5f4", null ],
       [ "to_t", "group__micro-test-plus-literals.html#gaad9720f2d1e443d77cdfd1eb1151e924", null ],
-      [ "get", "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html#a95a80f6f273c5ab49571ceddd3b17a74", null ],
-      [ "operator T", "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html#ae25aa47f118b4b4a3444f197d995390c", null ],
-      [ "value_", "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html#a1b2cf36b40e92a1249179c033894eb4d", null ]
+      [ "get", "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html#af60376a1f5c8acd58ab855b81efb4345", null ],
+      [ "operator T", "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html#a6b25c4a476c9745d143f6c4f3d038b0e", null ],
+      [ "epsilon", "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html#a434b222ff19bdb4970ad56fce11d5176", null ],
+      [ "value_", "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html#ad031508c3c4fba0528638bb61a0d908c", null ]
     ] ],
     [ "micro_os_plus::micro_test_plus::_b", "group__micro-test-plus-literals.html#ga74e6e2bffc2fc2dea47f979b5b55ea64", null ],
     [ "micro_os_plus::micro_test_plus::_c", "group__micro-test-plus-literals.html#gabd2f8b7401162835cb4735e4a7532c36", null ],

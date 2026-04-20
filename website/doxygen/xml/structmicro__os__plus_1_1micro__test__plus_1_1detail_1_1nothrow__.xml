@@ -24,9 +24,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1742" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1742" bodyend="1742"/>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow___1a90fe7c5c67a46a6eb7834b04b372d28f" compoundref="detail_8h" startline="1706" endline="1720">micro_os_plus::micro_test_plus::detail::nothrow_&lt; Callable_T &gt;::nothrow_</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow___1adb5deb96eff8e73d2ac69f7516d984fb" compoundref="detail_8h" startline="1734" endline="1737">micro_os_plus::micro_test_plus::detail::nothrow_&lt; Callable_T &gt;::operator bool</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1675" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1675" bodyend="1675"/>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow___1a90fe7c5c67a46a6eb7834b04b372d28f" compoundref="detail_8h" startline="1639" endline="1653">micro_os_plus::micro_test_plus::detail::nothrow_&lt; Callable_T &gt;::nothrow_</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow___1adb5deb96eff8e73d2ac69f7516d984fb" compoundref="detail_8h" startline="1667" endline="1670">micro_os_plus::micro_test_plus::detail::nothrow_&lt; Callable_T &gt;::operator bool</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -57,8 +57,8 @@ Invokes the provided callable and determines whether it completes without throwi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1706" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1706" bodyend="1720"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow___1adccb70ab303b01d35d3adcd5e4d981be" compoundref="detail_8h" startline="1742" endline="1742">micro_os_plus::micro_test_plus::detail::nothrow_&lt; Callable_T &gt;::value_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1639" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1639" bodyend="1653"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow___1adccb70ab303b01d35d3adcd5e4d981be" compoundref="detail_8h" startline="1675" endline="1675">micro_os_plus::micro_test_plus::detail::nothrow_&lt; Callable_T &gt;::value_</references>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow___1adb5deb96eff8e73d2ac69f7516d984fb" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -93,8 +93,8 @@ Returns the result of the nothrow check. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1734" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1734" bodyend="1737"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow___1adccb70ab303b01d35d3adcd5e4d981be" compoundref="detail_8h" startline="1742" endline="1742">micro_os_plus::micro_test_plus::detail::nothrow_&lt; Callable_T &gt;::value_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1667" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1667" bodyend="1670"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow___1adccb70ab303b01d35d3adcd5e4d981be" compoundref="detail_8h" startline="1675" endline="1675">micro_os_plus::micro_test_plus::detail::nothrow_&lt; Callable_T &gt;::value_</references>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -139,7 +139,7 @@ The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1de
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op"/>
       </node>
     </collaborationgraph>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1694" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1695" bodyend="1743"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1627" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1628" bodyend="1676"/>
     <listofallmembers>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow___1a90fe7c5c67a46a6eb7834b04b372d28f" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::nothrow_</scope><name>nothrow_</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow___1adb5deb96eff8e73d2ac69f7516d984fb" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::nothrow_</scope><name>operator bool</name></member>

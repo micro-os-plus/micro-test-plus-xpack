@@ -1,13 +1,23 @@
-
 {/* ------------------------------------------------------------------------ */}
+
+### v4.x (2026-04-20)
+
+Major rework introducing explicit objects for test suites and test cases
+(subtests), using a `ts.test()` and `t.expect()` mechanism inspired by
+[node-tap](https://node-tap.org). Internal static objects are no longer used.
+A TAP-compliant reporter is now the default.
 
 ### v3.x (2022-04-03)
 
-Significant revision, introducing a comprehensive set of comparators, exception handling, function templates for test cases, and class templates for test suites.
+Significant revision introducing a comprehensive set of comparators, exception
+handling, function templates for test cases, and class templates for test
+suites. Heavily influenced by [Boost UT](https://boost-ext.github.io/ut/).
 
 ### v2.3.x (2022-02-19)
 
-The `run_test_case(func, name)` function has been deprecated in favour of `run_test_case(name, func)`, in preparation for the adoption of variadic templates.
+The `run_test_case(func, name)` function was deprecated in favour of
+`run_test_case(name, func)`, in preparation for the adoption of variadic
+templates.
 
 ### v2.x (2021-03-01)
 
@@ -15,4 +25,5 @@ The C++ namespace was changed from `os` to `micro_os_plus`.
 
 ### v1.x (2021-02-04)
 
-The initial codebase, noted for its simplicity and inspired by node-tap, was extracted from the mono-repo µOS++ project.
+The initial codebase, noted for its simplicity and inspired by
+[node-tap](https://node-tap.org), was extracted from the µOS++ monorepo.
