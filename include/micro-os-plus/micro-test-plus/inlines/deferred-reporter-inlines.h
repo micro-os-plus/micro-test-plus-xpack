@@ -87,8 +87,7 @@ namespace micro_os_plus::micro_test_plus
      * memory allocation. For all other types, the value is appended directly.
      */
     template <class T>
-      requires (std::is_arithmetic_v<T>
-                or std::is_convertible_v<T, std::string_view>)
+      requires type_traits::printable<T>
     auto&
     deferred_reporter_base::operator<< (const T& msg)
     {

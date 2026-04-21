@@ -55,6 +55,7 @@
 // ----------------------------------------------------------------------------
 
 #include "math.h"
+#include <string_view>
 #include <type_traits>
 
 // ----------------------------------------------------------------------------
@@ -414,95 +415,37 @@ namespace micro_os_plus::micro_test_plus
     static constexpr auto has_epsilon_v = has_epsilon<T>;
 
     /**
+     * @brief C++20 concept satisfied when `T` is a standard floating point
+     * type.
+     *
+     * @tparam T The type to be checked.
+     *
+     * @details
+     * The `is_floating_point` concept is satisfied when `T` is one of the
+     * standard floating point types (`float`, `double`, or `long double`).
+     * It is the primary definition; `is_floating_point_v` is derived from
+     * it for use in `if constexpr` and non-concept contexts.
+     */
+    template <class T>
+    concept is_floating_point = std::is_floating_point_v<T>;
+
+    /**
      * @brief Variable template to determine if a type is a floating point
      * type.
      *
      * @tparam T The type to be checked for floating point classification.
      *
-     * @retval true if `T` is a floating point type.
+     * @retval true if `T` satisfies the `is_floating_point` concept.
      * @retval false otherwise.
      *
      * @details
-     * The `is_floating_point_v` variable template evaluates to `true` if the
-     * given type `T` is a floating point type (`float`, `double`, or `long
-     * double`). For all other types, it evaluates to `false`. This trait is
-     * used throughout the µTest++ framework to enable type-safe handling and
-     * specialisation for floating point types in template metaprogramming.
-     *
-     * Specialisations are provided for `float`, `double`, and `long double`,
-     * each evaluating to `true`.
+     * The `is_floating_point_v` variable template evaluates to `true` if
+     * the given type `T` satisfies the `is_floating_point` concept, and
+     * `false` otherwise. It is provided as a convenient boolean alias for
+     * use in `if constexpr` expressions and non-concept contexts.
      */
     template <class T>
-    inline constexpr auto is_floating_point_v = false;
-
-    /**
-     * @brief Variable template specialisation indicating that `float` is a
-     * floating point type.
-     *
-     * @details
-     * This specialisation of the `is_floating_point_v` variable template
-     * evaluates to `true` for the `float` type, confirming that it is
-     * recognised as a floating point type within the µTest++ framework. This
-     * enables type-safe handling and specialisation for floating point types
-     * in template metaprogramming.
-     *
-     * @see is_floating_point_v
-     */
-    template <>
-    inline constexpr auto is_floating_point_v<float> = true;
-
-    /**
-     * @brief Variable template specialisation indicating that `double` is a
-     * floating point type.
-     *
-     * @details
-     * This specialisation of the `is_floating_point_v` variable template
-     * evaluates to `true` for the `double` type, confirming that it is
-     * recognised as a floating point type within the µTest++ framework. This
-     * enables type-safe handling and specialisation for floating point types
-     * in template metaprogramming.
-     *
-     * @see is_floating_point_v
-     */
-    template <>
-    inline constexpr auto is_floating_point_v<double> = true;
-
-    /**
-     * @brief Variable template specialisation indicating that `long double` is
-     * a floating point type.
-     *
-     * @details
-     * This specialisation of the `is_floating_point_v` variable template
-     * evaluates to `true` for the `long double` type, confirming that it is
-     * recognised as a floating point type within the µTest++ framework. This
-     * enables type-safe handling and specialisation for floating point types
-     * in template metaprogramming.
-     *
-     * @see is_floating_point_v
-     */
-    template <>
-    inline constexpr auto is_floating_point_v<long double> = true;
-
-    /**
-     * @brief Variable template to determine if one type is convertible to
-     * another.
-     *
-     * @tparam From The source type to be checked for convertibility.
-     * @tparam To The target type to which conversion is tested.
-     *
-     * @retval true if `From` is convertible to `To`.
-     * @retval false otherwise.
-     *
-     * @details
-     * The `is_convertible_v` variable template evaluates to `true` if the type
-     * `From` is implicitly convertible to the type `To`, and `false`
-     * otherwise. This trait is determined at compile time using the standard
-     * `std::is_convertible_v` and is used throughout the µTest++ framework to
-     * enable type-safe conversions and requirements checking in template
-     * metaprogramming.
-     */
-    template <class From, class To>
-    inline constexpr auto is_convertible_v = std::is_convertible_v<From, To>;
+    inline constexpr auto is_floating_point_v = is_floating_point<T>;
 
     /**
      * @brief Empty base struct for all operator types.
@@ -834,6 +777,23 @@ namespace micro_os_plus::micro_test_plus
     concept checkable = is_op<T> or std::convertible_to<T, bool>;
 
     /**
+     * @brief C++20 concept satisfied when a type can be appended to the
+     * deferred reporter's output via `operator<<`.
+     *
+     * @tparam T The type to be checked.
+     *
+     * @details
+     * The `printable` concept is satisfied when `T` is an arithmetic
+     * type or is implicitly convertible to `std::string_view`. It
+     * constrains the `operator<<` overload of `deferred_reporter_base`,
+     * ensuring that only types that can be meaningfully appended to the
+     * output message are accepted.
+     */
+    template <class T>
+    concept printable = std::is_arithmetic_v<T>
+                        or std::is_convertible_v<T, std::string_view>;
+
+    /**
      * @brief Struct template representing a generic value, accessible via a
      * getter.
      *
@@ -934,7 +894,7 @@ namespace micro_os_plus::micro_test_plus
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class T>
-      requires (type_traits::is_floating_point_v<T>)
+      requires is_floating_point<T>
     struct value<T> : type_traits::op
     {
       /**
