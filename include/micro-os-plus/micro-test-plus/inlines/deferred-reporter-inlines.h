@@ -106,6 +106,10 @@ namespace micro_os_plus::micro_test_plus
 #endif
 #endif
           char buf[64];
+          // 64 bytes is sufficient for the longest decimal representation
+          // of any standard arithmetic type (long double ~45 chars).
+          static_assert (sizeof (buf) >= 50,
+                         "buf must be large enough for any arithmetic type");
           auto [ptr, ec] = std::to_chars (buf, buf + sizeof (buf), msg);
           if (ec == std::errc{})
             deferred_output_.append (buf, ptr);
