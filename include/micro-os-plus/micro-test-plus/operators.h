@@ -156,7 +156,10 @@ namespace micro_os_plus::micro_test_plus
      * @ingroup micro-test-plus-container-operators
      * @brief Equality operator for containers.
      *
-     * @tparam T The container type, constrained to recognised container types.
+     * @tparam Lhs_T The left-hand container type, constrained to recognised
+     * container types.
+     * @tparam Rhs_T The right-hand container type, constrained to recognised
+     * container types.
      *
      * @param [in] lhs The left hand side container operand.
      * @param [in] rhs The right hand side container operand.
@@ -172,19 +175,23 @@ namespace micro_os_plus::micro_test_plus
      * The operator is enabled only for types recognised as containers by the
      * framework's type traits.
      */
-    template <class T>
-      requires type_traits::container_like<T>
+    template <class Lhs_T, class Rhs_T>
+      requires (type_traits::container_like<Lhs_T>
+                and type_traits::container_like<Rhs_T>)
     [[nodiscard]] constexpr auto
-    operator== (T&& lhs, T&& rhs)
+    operator== (const Lhs_T& lhs, const Rhs_T& rhs)
     {
-      return detail::eq_{ static_cast<T&&> (lhs), static_cast<T&&> (rhs) };
+      return detail::eq_{ lhs, rhs };
     }
 
     /**
      * @ingroup micro-test-plus-container-operators
      * @brief Non-equality operator for containers.
      *
-     * @tparam T The container type, constrained to recognised container types.
+     * @tparam Lhs_T The left-hand container type, constrained to recognised
+     * container types.
+     * @tparam Rhs_T The right-hand container type, constrained to recognised
+     * container types.
      *
      * @param [in] lhs The left hand side container operand.
      * @param [in] rhs The right hand side container operand.
@@ -200,12 +207,13 @@ namespace micro_os_plus::micro_test_plus
      * The operator is enabled only for types recognised as containers by the
      * framework's type traits.
      */
-    template <class T>
-      requires type_traits::container_like<T>
+    template <class Lhs_T, class Rhs_T>
+      requires (type_traits::container_like<Lhs_T>
+                and type_traits::container_like<Rhs_T>)
     [[nodiscard]] constexpr auto
-    operator!= (T&& lhs, T&& rhs)
+    operator!= (const Lhs_T& lhs, const Rhs_T& rhs)
     {
-      return detail::ne_{ static_cast<T&&> (lhs), static_cast<T&&> (rhs) };
+      return detail::ne_{ lhs, rhs };
     }
 
     /**
