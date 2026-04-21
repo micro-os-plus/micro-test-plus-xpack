@@ -202,6 +202,8 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] consteval auto
     den (void) -> T
     {
+      static_assert ((... || (Cs == '.')),
+                     "den(): no decimal point in literal");
       constexpr const std::array cs{ Cs... };
       T result{};
       auto i = 0u;
@@ -235,6 +237,8 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] consteval auto
     den_size (void) -> T
     {
+      static_assert ((... || (Cs == '.')),
+                     "den_size(): no decimal point in literal");
       constexpr const std::array cs{ Cs... };
       T i{};
 #if defined(__GNUC__)
