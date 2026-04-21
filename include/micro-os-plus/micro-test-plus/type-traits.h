@@ -319,6 +319,29 @@ namespace micro_os_plus::micro_test_plus
     };
 
     /**
+     * @brief Empty base struct for all operator types.
+     *
+     * @details
+     * The `op` struct serves as a common base for all operator and value
+     * wrapper types used in the µTest++ framework's type traits and
+     * metaprogramming utilities. It provides a unified type hierarchy,
+     * enabling compile-time detection and generic handling of operator-like
+     * types within the framework.
+     *
+     * This struct is intended for internal use as a base for integral
+     * constants, floating point constants, and other value wrappers,
+     * supporting advanced template metaprogramming and type introspection.
+     *
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     */
+    struct op
+    {
+    };
+
+    // ------------------------------------------------------------------------
+    // Concepts.
+
+    /**
      * @brief C++20 concept satisfied when `T` provides both `begin()` and
      * `end()` member functions.
      *
@@ -353,6 +376,88 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T>
     concept has_epsilon = requires (const T& t) { t.epsilon; };
+
+    /**
+     * @brief C++20 concept satisfied when `T` is a standard floating point
+     * type.
+     *
+     * @tparam T The type to be checked.
+     *
+     * @details
+     * The `is_floating_point` concept is satisfied when `T` is one of the
+     * standard floating point types (`float`, `double`, or `long double`).
+     * It is the primary definition; `is_floating_point_v` is derived from
+     * it for use in `if constexpr` and non-concept contexts.
+     */
+    template <class T>
+    concept is_floating_point = std::is_floating_point_v<T>;
+
+    /**
+     * @brief C++20 concept satisfied when a type derives from `op`.
+     *
+     * @tparam T The type to be checked.
+     *
+     * @details
+     * The `is_op` concept is satisfied when `T` is derived from the
+     * `type_traits::op` base struct. It is the primary definition used
+     * throughout the framework; `is_op_v` is derived from it for use in
+     * `if constexpr` and boolean contexts.
+     */
+    template <class T>
+    concept is_op = std::is_base_of_v<type_traits::op, T>;
+
+    /**
+     * @brief C++20 concept satisfied when at least one of two types derives
+     * from `op`.
+     *
+     * @tparam Lhs_T The type of the left-hand operand.
+     * @tparam Rhs_T The type of the right-hand operand.
+     *
+     * @details
+     * The `any_op` concept is satisfied when `Lhs_T` or `Rhs_T` (or both)
+     * are derived from the `type_traits::op` base struct. It is used to
+     * constrain binary operator overloads in the `operators` namespace so
+     * that they are enabled only when at least one operand is a framework
+     * type, avoiding unintended conflicts with user-defined operators.
+     */
+    template <class Lhs_T, class Rhs_T>
+    concept any_op = is_op<Lhs_T> or is_op<Rhs_T>;
+
+    /**
+     * @brief C++20 concept satisfied when a type can be used as a test
+     * expression in `expect()` or `assume()`.
+     *
+     * @tparam T The type to be checked.
+     *
+     * @details
+     * The `checkable` concept is satisfied when `T` is either a
+     * framework operator type (derived from `op`) or is implicitly
+     * convertible to `bool`. It is used to constrain the `expect()` and
+     * `assume()` function templates, ensuring that only sensible
+     * expression types are accepted.
+     */
+    template <class T>
+    concept checkable = is_op<T> or std::convertible_to<T, bool>;
+
+    /**
+     * @brief C++20 concept satisfied when a type can be appended to the
+     * deferred reporter's output via `operator<<`.
+     *
+     * @tparam T The type to be checked.
+     *
+     * @details
+     * The `printable` concept is satisfied when `T` is an arithmetic
+     * type or is implicitly convertible to `std::string_view`. It
+     * constrains the `operator<<` overload of `deferred_reporter_base`,
+     * ensuring that only types that can be meaningfully appended to the
+     * output message are accepted.
+     */
+    template <class T>
+    concept printable = std::is_arithmetic_v<T>
+                        or std::is_convertible_v<T, std::string_view>;
+
+    // ------------------------------------------------------------------------
+    // Variable templates.
 
     /**
      * @brief Variable template to determine if a type models a container.
@@ -415,21 +520,6 @@ namespace micro_os_plus::micro_test_plus
     static constexpr auto has_epsilon_v = has_epsilon<T>;
 
     /**
-     * @brief C++20 concept satisfied when `T` is a standard floating point
-     * type.
-     *
-     * @tparam T The type to be checked.
-     *
-     * @details
-     * The `is_floating_point` concept is satisfied when `T` is one of the
-     * standard floating point types (`float`, `double`, or `long double`).
-     * It is the primary definition; `is_floating_point_v` is derived from
-     * it for use in `if constexpr` and non-concept contexts.
-     */
-    template <class T>
-    concept is_floating_point = std::is_floating_point_v<T>;
-
-    /**
      * @brief Variable template to determine if a type is a floating point
      * type.
      *
@@ -448,24 +538,23 @@ namespace micro_os_plus::micro_test_plus
     inline constexpr auto is_floating_point_v = is_floating_point<T>;
 
     /**
-     * @brief Empty base struct for all operator types.
+     * @brief Variable template to determine if a type derives from `op`.
+     *
+     * @tparam T The type to be checked for derivation from `op`.
+     *
+     * @retval true if `T` is derived from `type_traits::op`.
+     * @retval false otherwise.
      *
      * @details
-     * The `op` struct serves as a common base for all operator and value
-     * wrapper types used in the µTest++ framework's type traits and
-     * metaprogramming utilities. It provides a unified type hierarchy,
-     * enabling compile-time detection and generic handling of operator-like
-     * types within the framework.
-     *
-     * This struct is intended for internal use as a base for integral
-     * constants, floating point constants, and other value wrappers,
-     * supporting advanced template metaprogramming and type introspection.
-     *
-     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     * The `is_op_v` variable template evaluates to `true` if the given type
+     * `T` satisfies the `is_op` concept, and `false` otherwise. It is
+     * provided as a convenient boolean alias for use in `if constexpr`
+     * expressions and other non-concept contexts.
      */
-    struct op
-    {
-    };
+    template <class T>
+    inline constexpr auto is_op_v = is_op<T>;
+
+    // ------------------------------------------------------------------------
 
     /**
      * @brief Struct template representing a generic integral constant.
@@ -711,87 +800,6 @@ namespace micro_os_plus::micro_test_plus
        */
       T value_{};
     };
-
-    /**
-     * @brief C++20 concept satisfied when a type derives from `op`.
-     *
-     * @tparam T The type to be checked.
-     *
-     * @details
-     * The `is_op` concept is satisfied when `T` is derived from the
-     * `type_traits::op` base struct. It is the primary definition used
-     * throughout the framework; `is_op_v` is derived from it for use in
-     * `if constexpr` and boolean contexts.
-     */
-    template <class T>
-    concept is_op = std::is_base_of_v<type_traits::op, T>;
-
-    /**
-     * @brief Variable template to determine if a type derives from `op`.
-     *
-     * @tparam T The type to be checked for derivation from `op`.
-     *
-     * @retval true if `T` is derived from `type_traits::op`.
-     * @retval false otherwise.
-     *
-     * @details
-     * The `is_op_v` variable template evaluates to `true` if the given type
-     * `T` satisfies the `is_op` concept, and `false` otherwise. It is
-     * provided as a convenient boolean alias for use in `if constexpr`
-     * expressions and other non-concept contexts.
-     */
-    template <class T>
-    inline constexpr auto is_op_v = is_op<T>;
-
-    /**
-     * @brief C++20 concept satisfied when at least one of two types derives
-     * from `op`.
-     *
-     * @tparam Lhs_T The type of the left-hand operand.
-     * @tparam Rhs_T The type of the right-hand operand.
-     *
-     * @details
-     * The `any_op` concept is satisfied when `Lhs_T` or `Rhs_T` (or both)
-     * are derived from the `type_traits::op` base struct. It is used to
-     * constrain binary operator overloads in the `operators` namespace so
-     * that they are enabled only when at least one operand is a framework
-     * type, avoiding unintended conflicts with user-defined operators.
-     */
-    template <class Lhs_T, class Rhs_T>
-    concept any_op = is_op<Lhs_T> or is_op<Rhs_T>;
-
-    /**
-     * @brief C++20 concept satisfied when a type can be used as a test
-     * expression in `expect()` or `assume()`.
-     *
-     * @tparam T The type to be checked.
-     *
-     * @details
-     * The `checkable` concept is satisfied when `T` is either a
-     * framework operator type (derived from `op`) or is implicitly
-     * convertible to `bool`. It is used to constrain the `expect()` and
-     * `assume()` function templates, ensuring that only sensible
-     * expression types are accepted.
-     */
-    template <class T>
-    concept checkable = is_op<T> or std::convertible_to<T, bool>;
-
-    /**
-     * @brief C++20 concept satisfied when a type can be appended to the
-     * deferred reporter's output via `operator<<`.
-     *
-     * @tparam T The type to be checked.
-     *
-     * @details
-     * The `printable` concept is satisfied when `T` is an arithmetic
-     * type or is implicitly convertible to `std::string_view`. It
-     * constrains the `operator<<` overload of `deferred_reporter_base`,
-     * ensuring that only types that can be meaningfully appended to the
-     * output message are accepted.
-     */
-    template <class T>
-    concept printable = std::is_arithmetic_v<T>
-                        or std::is_convertible_v<T, std::string_view>;
 
     /**
      * @brief Struct template representing a generic value, accessible via a
