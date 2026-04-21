@@ -106,7 +106,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T>
     [[nodiscard]] constexpr auto
-    abs (const T t) -> T;
+    abs (const T t) noexcept -> T;
 
     /**
      * @brief Computes the minimum of two comparable values.
@@ -120,7 +120,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T>
     [[nodiscard]] constexpr auto
-    min_value (const T& lhs, const T& rhs) -> const T&;
+    min_value (const T& lhs, const T& rhs) noexcept -> const T&;
 
     /**
      * @brief Generic exponentiation function to compute the power of a base
@@ -137,7 +137,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T, class Exp_T>
     [[nodiscard]] constexpr auto
-    pow (const T base, const Exp_T exp) -> T;
+    pow (const T base, const Exp_T exp) noexcept -> T;
 
     /**
      * @brief Computes the integral value of a number represented as an array

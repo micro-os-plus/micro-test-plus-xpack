@@ -94,7 +94,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T>
     [[nodiscard]] constexpr auto
-    abs (const T t) -> T
+    abs (const T t) noexcept -> T
     {
       return t < T{} ? -t : t;
     }
@@ -115,7 +115,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T>
     [[nodiscard]] constexpr auto
-    min_value (const T& lhs, const T& rhs) -> const T&
+    min_value (const T& lhs, const T& rhs) noexcept -> const T&
     {
       return (rhs < lhs) ? rhs : lhs;
     }
@@ -136,7 +136,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T, class Exp_T>
     [[nodiscard]] constexpr auto
-    pow (const T base, const Exp_T exp) -> T
+    pow (const T base, const Exp_T exp) noexcept -> T
     {
       T result{ 1 };
       for (Exp_T i{}; i < exp; ++i)
