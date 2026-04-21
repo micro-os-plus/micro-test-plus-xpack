@@ -472,7 +472,7 @@ namespace micro_os_plus::micro_test_plus
      * expressive test assertions.
      */
     template <class T>
-      requires type_traits::is_op_v<T>
+      requires type_traits::is_op<T>
     [[nodiscard]] constexpr auto
     operator not(const T& t)
     {

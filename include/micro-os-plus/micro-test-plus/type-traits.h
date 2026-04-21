@@ -770,6 +770,20 @@ namespace micro_os_plus::micro_test_plus
     };
 
     /**
+     * @brief C++20 concept satisfied when a type derives from `op`.
+     *
+     * @tparam T The type to be checked.
+     *
+     * @details
+     * The `is_op` concept is satisfied when `T` is derived from the
+     * `type_traits::op` base struct. It is the primary definition used
+     * throughout the framework; `is_op_v` is derived from it for use in
+     * `if constexpr` and boolean contexts.
+     */
+    template <class T>
+    concept is_op = std::is_base_of_v<type_traits::op, T>;
+
+    /**
      * @brief Variable template to determine if a type derives from `op`.
      *
      * @tparam T The type to be checked for derivation from `op`.
@@ -779,14 +793,12 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * The `is_op_v` variable template evaluates to `true` if the given type
-     * `T` is derived from the `type_traits::op` base struct, and `false`
-     * otherwise. This trait is determined at compile time using compiler
-     * intrinsics and is used throughout the µTest++ framework to enable
-     * generic handling and detection of operator-like or value wrapper types
-     * in template metaprogramming.
+     * `T` satisfies the `is_op` concept, and `false` otherwise. It is
+     * provided as a convenient boolean alias for use in `if constexpr`
+     * expressions and other non-concept contexts.
      */
     template <class T>
-    inline constexpr auto is_op_v = std::is_base_of_v<type_traits::op, T>;
+    inline constexpr auto is_op_v = is_op<T>;
 
     /**
      * @brief C++20 concept satisfied when at least one of two types derives
@@ -803,7 +815,23 @@ namespace micro_os_plus::micro_test_plus
      * type, avoiding unintended conflicts with user-defined operators.
      */
     template <class Lhs_T, class Rhs_T>
-    concept any_op = is_op_v<Lhs_T> or is_op_v<Rhs_T>;
+    concept any_op = is_op<Lhs_T> or is_op<Rhs_T>;
+
+    /**
+     * @brief C++20 concept satisfied when a type can be used as a test
+     * expression in `expect()` or `assume()`.
+     *
+     * @tparam T The type to be checked.
+     *
+     * @details
+     * The `checkable` concept is satisfied when `T` is either a
+     * framework operator type (derived from `op`) or is implicitly
+     * convertible to `bool`. It is used to constrain the `expect()` and
+     * `assume()` function templates, ensuring that only sensible
+     * expression types are accepted.
+     */
+    template <class T>
+    concept checkable = is_op<T> or std::convertible_to<T, bool>;
 
     /**
      * @brief Struct template representing a generic value, accessible via a

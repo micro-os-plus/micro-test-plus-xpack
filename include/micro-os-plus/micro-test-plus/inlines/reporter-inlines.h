@@ -184,7 +184,7 @@ namespace micro_os_plus::micro_test_plus
    * to be supported with minimal changes to the reporting infrastructure.
    */
   template <class T>
-    requires type_traits::is_op_v<T>
+    requires type_traits::is_op<T>
   reporter&
   reporter::operator<< (const T& t)
   {

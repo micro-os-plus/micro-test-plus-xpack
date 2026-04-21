@@ -634,8 +634,7 @@ namespace micro_os_plus::micro_test_plus
      * @endcode
      */
     template <class Expr_T>
-      requires (type_traits::is_op_v<Expr_T>
-                or type_traits::is_convertible_v<Expr_T, bool>)
+      requires type_traits::checkable<Expr_T>
     auto
     expect (const Expr_T& expr, const reflection::source_location& sl
                                 = reflection::source_location::current ())
@@ -681,8 +680,7 @@ namespace micro_os_plus::micro_test_plus
      * @endcode
      */
     template <class Expr_T>
-      requires (type_traits::is_op_v<Expr_T>
-                or type_traits::is_convertible_v<Expr_T, bool>)
+      requires type_traits::checkable<Expr_T>
     auto
     assume (const Expr_T& expr, const reflection::source_location& sl
                                 = reflection::source_location::current ())
