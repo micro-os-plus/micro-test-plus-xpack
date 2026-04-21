@@ -154,7 +154,7 @@ namespace micro_os_plus::micro_test_plus
      * maintain a structured and modular codebase.
      */
     template <class T>
-    [[nodiscard]] constexpr decltype (auto)
+    [[nodiscard]] constexpr auto
     get (const T& t)
     {
       if constexpr (requires { t.get (); })
