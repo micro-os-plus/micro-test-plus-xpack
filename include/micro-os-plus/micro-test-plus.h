@@ -135,6 +135,67 @@
 
 // ----------------------------------------------------------------------------
 
+/**
+ * @defgroup micro-test-plus-config Configuration Macros
+ * @brief Preprocessor macros for controlling µTest++ behaviour.
+ *
+ * @details
+ * The following macros may be defined in the project configuration header
+ * (typically `<micro-os-plus/config.h>`) to customise the behaviour of the
+ * µTest++ framework at compile time.
+ *
+ * Trace macros have effect only when `MICRO_OS_PLUS_TRACE` is also defined.
+ */
+
+/**
+ * @def MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+ * @ingroup micro-test-plus-config
+ * @brief Enable general trace output for µTest++ framework internals.
+ *
+ * @details
+ * When this macro is defined alongside `MICRO_OS_PLUS_TRACE`, the µTest++
+ * framework emits `trace::printf()` messages for key runtime events such
+ * as test suite initialisation, argument parsing, and test execution entry
+ * and exit points.
+ *
+ * This macro is intended for framework debugging and is not required for
+ * normal test development. It should be defined in the platform-specific
+ * `<micro-os-plus/config.h>` header.
+ *
+ * Example:
+ * @code{.cpp}
+ * #if defined(MICRO_OS_PLUS_TRACE)
+ * #define MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+ * #endif
+ * @endcode
+ */
+
+/**
+ * @def MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
+ * @ingroup micro-test-plus-config
+ * @brief Enable trace output for µTest++ constructor and destructor calls.
+ *
+ * @details
+ * When this macro is defined alongside `MICRO_OS_PLUS_TRACE`, each
+ * constructor and destructor in the µTest++ framework emits a
+ * `trace::printf()` line containing the function signature
+ * (`__PRETTY_FUNCTION__`) and, where applicable, the object name or index.
+ *
+ * This macro provides fine-grained visibility into object lifetime and is
+ * primarily useful for diagnosing construction order issues in complex
+ * test hierarchies. It should be defined in the platform-specific
+ * `<micro-os-plus/config.h>` header.
+ *
+ * Example:
+ * @code{.cpp}
+ * #if defined(MICRO_OS_PLUS_TRACE)
+ * #define MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
+ * #endif
+ * @endcode
+ */
+
+// ----------------------------------------------------------------------------
+
 #endif // __cplusplus
 
 // ----------------------------------------------------------------------------
