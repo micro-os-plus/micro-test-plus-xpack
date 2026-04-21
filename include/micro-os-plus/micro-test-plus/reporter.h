@@ -769,8 +769,8 @@ namespace micro_os_plus::micro_test_plus
      *	 None.
      * @return The active `verbosity` value.
      */
-    enum verbosity
-    verbosity () const
+    auto
+    verbosity () const -> micro_test_plus::verbosity
     {
       return verbosity_;
     }
