@@ -127,7 +127,10 @@ namespace micro_os_plus::micro_test_plus
      * @brief Struct template for compile-time type identity.
      *
      * @tparam T The type to be preserved.
-     * @tparam Extra Additional template parameters, ignored.
+     * @tparam Extra Additional template parameters, ignored. The variadic
+     *   `Extra` parameter pack absorbs additional type arguments that may
+     *   arise during template argument deduction in some metaprogramming
+     *   contexts, preventing substitution failures.
      *
      * @details
      * The `identity` struct template provides a mechanism for preserving a
@@ -490,14 +493,13 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam T The type to be checked for container-like behaviour.
      *
-     * @retval true if `T` has both `begin()` and `end()` member functions.
-     * @retval false otherwise.
-     *
      * @details
-     * Implemented in terms of the `container_like` concept.
+     * Evaluates to `true` if `T` has both `begin()` and `end()` member
+     * functions; `false` otherwise. Implemented in terms of the
+     * `container_like` concept.
      */
     template <class T>
-    static constexpr auto is_container_v = container_like<T>;
+    inline constexpr auto is_container_v = container_like<T>;
 
     /**
      * @brief Variable template to determine if a type provides a `npos`
@@ -505,14 +507,12 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam T The type to be checked for the presence of a `npos` member.
      *
-     * @retval true if `T` has a member named `npos`.
-     * @retval false otherwise.
-     *
      * @details
-     * Implemented in terms of the `has_npos` concept.
+     * Evaluates to `true` if `T` has a member named `npos`; `false`
+     * otherwise. Implemented in terms of the `has_npos` concept.
      */
     template <class T>
-    static constexpr auto has_npos_v = has_npos<T>;
+    inline constexpr auto has_npos_v = has_npos<T>;
 
     /**
      * @brief Variable template to determine if a type provides a `value`
@@ -520,14 +520,12 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam T The type to be checked for the presence of a `value` member.
      *
-     * @retval true if `T` has a member named `value`.
-     * @retval false otherwise.
-     *
      * @details
-     * Implemented in terms of the `has_value` concept.
+     * Evaluates to `true` if `T` has a member named `value`; `false`
+     * otherwise. Implemented in terms of the `has_value` concept.
      */
     template <class T>
-    static constexpr auto has_value_v = has_value<T>;
+    inline constexpr auto has_value_v = has_value<T>;
 
     /**
      * @brief Variable template to determine if a type provides an `epsilon`
@@ -536,28 +534,23 @@ namespace micro_os_plus::micro_test_plus
      * @tparam T The type to be checked for the presence of an `epsilon`
      * member.
      *
-     * @retval true if `T` has a member named `epsilon`.
-     * @retval false otherwise.
-     *
      * @details
-     * Implemented in terms of the `has_epsilon` concept.
+     * Evaluates to `true` if `T` has a member named `epsilon`; `false`
+     * otherwise. Implemented in terms of the `has_epsilon` concept.
      */
     template <class T>
-    static constexpr auto has_epsilon_v = has_epsilon<T>;
+    inline constexpr auto has_epsilon_v = has_epsilon<T>;
 
     /**
      * @brief Variable template to determine if a type derives from `op`.
      *
      * @tparam T The type to be checked for derivation from `op`.
      *
-     * @retval true if `T` is derived from `type_traits::op`.
-     * @retval false otherwise.
-     *
      * @details
-     * The `is_op_v` variable template evaluates to `true` if the given type
-     * `T` satisfies the `is_op` concept, and `false` otherwise. It is
-     * provided as a convenient boolean alias for use in `if constexpr`
-     * expressions and other non-concept contexts.
+     * Evaluates to `true` if `T` satisfies the `is_op` concept (i.e., is
+     * derived from `type_traits::op`); `false` otherwise. Provided as a
+     * convenient boolean alias for use in `if constexpr` expressions and
+     * other non-concept contexts.
      */
     template <class T>
     inline constexpr auto is_op_v = is_op<T>;
@@ -594,7 +587,7 @@ namespace micro_os_plus::micro_test_plus
        *
        * @param v The value to be stored.
        */
-      constexpr explicit value_base_ (const T& v) : value_{ v }
+      constexpr explicit value_base_ (const T& v) noexcept : value_{ v }
       {
       }
 
@@ -607,7 +600,7 @@ namespace micro_os_plus::micro_test_plus
        * Allows explicit conversion to the encapsulated value.
        */
       [[nodiscard]] constexpr explicit
-      operator T () const
+      operator T () const noexcept
       {
         return value_;
       }
@@ -615,15 +608,13 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Getter for the stored value.
        *
-       * @par Parameters
-       *	 None.
        * @return The stored value.
        *
        * @details
-       * Returns the stored value.
+       * Returns the stored value by value.
        */
-      [[nodiscard]] constexpr decltype (auto)
-      get (void) const
+      [[nodiscard]] constexpr T
+      get (void) const noexcept
       {
         return value_;
       }
@@ -663,7 +654,7 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Default constructor. Initialises the base with `N`.
        */
-      constexpr integral_constant () : value_base_<decltype (N)>{ N }
+      constexpr integral_constant () noexcept : value_base_<decltype (N)>{ N }
       {
       }
 
@@ -677,7 +668,7 @@ namespace micro_os_plus::micro_test_plus
        * of the current value.
        */
       [[nodiscard]] constexpr auto
-      operator- () const
+      operator- () const noexcept
       {
         return integral_constant<-N>{};
       }
@@ -697,19 +688,31 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The `floating_point_constant` struct template provides a compile-time
      * constant value of a floating point type, supporting custom size and
-     * precision. It inherits from `value_base_<T>`, which supplies the
-     * `value_type` alias, the explicit conversion operator, and the `get()`
-     * accessor.
+     * precision. It inherits from `op` directly rather than from
+     * `value_base_<T>`, which avoids introducing a user-provided constructor
+     * into the type and keeps it trivially default-constructible. This
+     * prevents the GCC ARM PSABI note about parameter-passing ABI changes
+     * that is emitted for non-trivially-constructible types under C++17.
      *
-     * This struct retains the compile-time `epsilon` and `value` constants
-     * and provides a unary minus operator to obtain the negative value as a
-     * new `floating_point_constant` instance.
+     * The `value_type` alias, explicit conversion operator, and `get()`
+     * accessor are provided directly by this struct. The compile-time
+     * `epsilon` and `value` static constants are retained, and a unary
+     * minus operator is provided to obtain the negative value as a new
+     * `floating_point_constant` instance.
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class T, auto N, auto D, auto Size, auto P = 1>
-    struct floating_point_constant : value_base_<T>
+    struct floating_point_constant : op
     {
+      static_assert (P == 1 || P == -1,
+                     "floating_point_constant: P must be +1 or -1");
+
+      /**
+       * @brief The type of the stored value.
+       */
+      using value_type = T;
+
       /**
        * @brief The epsilon value used for floating point comparisons.
        *
@@ -728,25 +731,40 @@ namespace micro_os_plus::micro_test_plus
           = T (P) * (T (N) + (T (D) / math::pow (T (10), Size)));
 
       /**
-       * @brief Default constructor. Initialises the base with `value`.
+       * @brief Explicit conversion operator to the underlying value type.
+       *
+       * @return The compile-time constant as type `T`.
        */
-      constexpr floating_point_constant () : value_base_<T>{ value }
+      [[nodiscard]] constexpr explicit
+      operator T () const noexcept
       {
+        return value;
+      }
+
+      /**
+       * @brief Getter for the compile-time constant value.
+       *
+       * @return The compile-time constant as type `T`.
+       */
+      [[nodiscard]] constexpr T
+      get (void) const noexcept
+      {
+        return value;
       }
 
       /**
        * @brief Unary minus operator.
        *
-       * @return A `floating_point_constant` with value `-value`.
+       * @return A `floating_point_constant` with negated sign parameter.
        *
        * @details
        * Returns a new `floating_point_constant` instance representing the
-       * negative of the current value.
+       * negative of the current value by flipping the sign parameter `P`.
        */
       [[nodiscard]] constexpr auto
-      operator- () const
+      operator- () const noexcept
       {
-        return floating_point_constant<T, N, D, Size, -1>{};
+        return floating_point_constant<T, N, D, Size, -P>{};
       }
     };
 
@@ -770,7 +788,7 @@ namespace micro_os_plus::micro_test_plus
        *
        * @param _value The integral value to be stored.
        */
-      constexpr genuine_integral_value (const T& _value)
+      constexpr genuine_integral_value (const T& _value) noexcept
           : value_base_<T>{ _value }
       {
       }
@@ -797,7 +815,7 @@ namespace micro_os_plus::micro_test_plus
        *
        * @param _value The value to be stored.
        */
-      constexpr value (const T& _value) : value_base_<T>{ _value }
+      constexpr value (const T& _value) noexcept : value_base_<T>{ _value }
       {
       }
     };
@@ -838,7 +856,7 @@ namespace micro_os_plus::micro_test_plus
        * Each instance carries its own epsilon, so two `value<T>` objects
        * with different precisions do not interfere with each other.
        */
-      T epsilon = T{}; // was wrongly static inline auto
+      T epsilon = T{};
 
       /**
        * @brief Constructs a floating-point value with a specified precision.
@@ -846,7 +864,7 @@ namespace micro_os_plus::micro_test_plus
        * @param _value The floating-point value to be stored.
        * @param precision The epsilon value to be used for comparisons.
        */
-      constexpr value (const T& _value, const T precision)
+      constexpr value (const T& _value, const T precision) noexcept
           : value_base_<T>{ _value }, epsilon{ precision }
       {
       }
@@ -860,7 +878,7 @@ namespace micro_os_plus::micro_test_plus
        * The epsilon is computed as 1 divided by 10 raised to the number of
        * decimal digits in the value.
        */
-      constexpr /*explicit(false)*/ value (const T& val)
+      constexpr value (const T& val)
           : value{ val,
                    T (1)
                        / math::pow (T (10),
