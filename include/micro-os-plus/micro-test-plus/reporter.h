@@ -108,15 +108,17 @@ namespace micro_os_plus::micro_test_plus
    */
   struct colours
   {
-    const char* none = ""; /**< @brief Default colour. */
-    const char* pass = ""; /**< @brief Green colour. */
-    const char* fail = ""; /**< @brief Red colour. */
+    const char* none = ""; /**< @brief Terminal colour reset sequence. */
+    const char* pass
+        = ""; /**< @brief Terminal colour sequence for passing tests. */
+    const char* fail
+        = ""; /**< @brief Terminal colour sequence for failing tests. */
   };
 
   inline constexpr colours colours_red_green = {
-    "\033[0m", /**< @brief Default colour. */
-    "\033[32m", /**< @brief Green colour. */
-    "\033[31m" /**< @brief Red colour. */
+    "\033[0m", /**< @brief Terminal colour reset sequence. */
+    "\033[32m", /**< @brief Green colour sequence for passing tests. */
+    "\033[31m" /**< @brief Red colour sequence for failing tests. */
   };
 
   /**

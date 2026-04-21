@@ -17,6 +17,12 @@
 
 /**
  * @file
+ * @brief C++ header file with declarations for the µTest++ utility helpers.
+ *
+ * @details
+ * This header provides declarations for the utility helper functions used
+ * within the µTest++ framework. It defines interfaces for string operations
+ * including file-name extraction, pattern matching, and string splitting.
  */
 
 #ifndef MICRO_TEST_PLUS_UTILITY_H_

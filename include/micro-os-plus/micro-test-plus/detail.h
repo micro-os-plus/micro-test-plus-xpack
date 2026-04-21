@@ -347,11 +347,17 @@ namespace micro_os_plus::micro_test_plus
     private:
       /**
        * @brief Stores the left-hand operand.
+       *
+       * @note Operands are stored by value; passing a large container
+       * will copy it into this member.
        */
       const Lhs_T lhs_{};
 
       /**
        * @brief Stores the right-hand operand.
+       *
+       * @note Operands are stored by value; passing a large container
+       * will copy it into this member.
        */
       const Rhs_T rhs_{};
 

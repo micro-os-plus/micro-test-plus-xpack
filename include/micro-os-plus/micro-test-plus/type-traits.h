@@ -608,6 +608,8 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Getter for the stored value.
        *
+       * @par Parameters
+       *	 None.
        * @return The stored value.
        *
        * @details
@@ -744,6 +746,8 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Getter for the compile-time constant value.
        *
+       * @par Parameters
+       *	 None.
        * @return The compile-time constant as type `T`.
        */
       [[nodiscard]] constexpr T

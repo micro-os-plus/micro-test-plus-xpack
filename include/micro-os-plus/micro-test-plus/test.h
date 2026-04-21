@@ -191,6 +191,9 @@ namespace micro_os_plus::micro_test_plus
   protected:
     /**
      * @brief The test suite name.
+     *
+     * @note Derived classes may access this member directly in
+     * addition to the public `name()` getter.
      */
     const char* name_;
 
@@ -277,6 +280,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Sets the positional index of this object within its parent.
+     *
+     * @note This overload follows the same-name getter/setter pattern
+     * used throughout the framework: the getter is the `const` overload
+     * and the setter is the non-`const` single-argument overload.
      *
      * @param index The new index value.
      * @par Returns
