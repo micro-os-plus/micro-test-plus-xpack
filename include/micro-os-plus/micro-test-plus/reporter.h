@@ -142,8 +142,6 @@ namespace micro_os_plus::micro_test_plus
                    detail. */
   };
 
-  using verbosity_t = verbosity;
-
   // Forward definitions.
   class reporter;
   class runner;
@@ -767,9 +765,9 @@ namespace micro_os_plus::micro_test_plus
      *
      * @par Parameters
      *	 None.
-     * @return The active `verbosity_t` value.
+     * @return The active `verbosity` value.
      */
-    verbosity_t
+    enum verbosity
     verbosity () const
     {
       return verbosity_;
@@ -878,7 +876,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief The verbosity level for test reporting.
      */
-    verbosity_t verbosity_{ verbosity::normal };
+    enum verbosity verbosity_ = verbosity::normal;
 
     /**
      * @brief ANSI colour codes for output formatting.
