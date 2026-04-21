@@ -69,7 +69,7 @@ namespace micro_os_plus::micro_test_plus
      * immediately so that the first check is reported as check #1.
      */
     deferred_reporter_base::deferred_reporter_base (
-        bool value, const reflection::source_location location,
+        bool value, const reflection::source_location& location,
         subtest& subtest)
         : value_{ value }, location_{ location }, subtest_{ subtest }
     {

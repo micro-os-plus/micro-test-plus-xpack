@@ -128,7 +128,7 @@ namespace micro_os_plus::micro_test_plus
        * @param subtest The subtest that owns this deferred report.
        */
       deferred_reporter_base (bool value,
-                              const reflection::source_location location,
+                              const reflection::source_location& location,
                               subtest& subtest);
 
       /**
