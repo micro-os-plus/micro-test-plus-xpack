@@ -160,6 +160,8 @@ namespace micro_os_plus::micro_test_plus
       const auto end
           = (semi != std::string_view::npos) ? semi : sv.rfind (']');
 #else
+// Note: MSVC uses __FUNCSIG__ instead of __PRETTY_FUNCTION__.
+// MSVC is not a supported target for this framework.
 #error "Unsupported compiler"
 #endif
       return sv.substr (start, end - start);

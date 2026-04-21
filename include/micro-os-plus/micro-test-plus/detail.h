@@ -413,8 +413,11 @@ namespace micro_os_plus::micro_test_plus
       constexpr eq_ (const Lhs_T& lhs = {}, const Rhs_T& rhs = {})
           : binary_op_<Lhs_T, Rhs_T>{ lhs, rhs, [&]
         {
-          // This lambda is called in the constructor to
-          // evaluate the comparison.
+          // This lambda is called in the constructor to evaluate the
+          // comparison. Its result is implicitly converted to bool via
+          // the operator bool() of whatever type the branch returns.
+          // This is intentional: all result types (integral_constant,
+          // comparator objects, plain bool) define operator bool().
           using std::operator==;
           using std::operator<;
 
