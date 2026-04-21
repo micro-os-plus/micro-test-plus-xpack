@@ -789,6 +789,23 @@ namespace micro_os_plus::micro_test_plus
     inline constexpr auto is_op_v = std::is_base_of_v<type_traits::op, T>;
 
     /**
+     * @brief C++20 concept satisfied when at least one of two types derives
+     * from `op`.
+     *
+     * @tparam Lhs_T The type of the left-hand operand.
+     * @tparam Rhs_T The type of the right-hand operand.
+     *
+     * @details
+     * The `any_op` concept is satisfied when `Lhs_T` or `Rhs_T` (or both)
+     * are derived from the `type_traits::op` base struct. It is used to
+     * constrain binary operator overloads in the `operators` namespace so
+     * that they are enabled only when at least one operand is a framework
+     * type, avoiding unintended conflicts with user-defined operators.
+     */
+    template <class Lhs_T, class Rhs_T>
+    concept any_op = is_op_v<Lhs_T> or is_op_v<Rhs_T>;
+
+    /**
      * @brief Struct template representing a generic value, accessible via a
      * getter.
      *

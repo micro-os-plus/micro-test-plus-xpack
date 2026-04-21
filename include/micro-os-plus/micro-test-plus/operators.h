@@ -231,7 +231,7 @@ namespace micro_os_plus::micro_test_plus
      * assertions.
      */
     template <class Lhs_T, class Rhs_T>
-      requires (type_traits::is_op_v<Lhs_T> or type_traits::is_op_v<Rhs_T>)
+      requires type_traits::any_op<Lhs_T, Rhs_T>
     [[nodiscard]] constexpr auto
     operator== (const Lhs_T& lhs, const Rhs_T& rhs)
     {
@@ -261,7 +261,7 @@ namespace micro_os_plus::micro_test_plus
      * expressive test assertions.
      */
     template <class Lhs_T, class Rhs_T>
-      requires (type_traits::is_op_v<Lhs_T> or type_traits::is_op_v<Rhs_T>)
+      requires type_traits::any_op<Lhs_T, Rhs_T>
     [[nodiscard]] constexpr auto
     operator!= (const Lhs_T& lhs, const Rhs_T& rhs)
     {
@@ -291,7 +291,7 @@ namespace micro_os_plus::micro_test_plus
      * types, ensuring type-safe and expressive test assertions.
      */
     template <class Lhs_T, class Rhs_T>
-      requires (type_traits::is_op_v<Lhs_T> or type_traits::is_op_v<Rhs_T>)
+      requires type_traits::any_op<Lhs_T, Rhs_T>
     [[nodiscard]] constexpr auto
     operator> (const Lhs_T& lhs, const Rhs_T& rhs)
     {
@@ -322,7 +322,7 @@ namespace micro_os_plus::micro_test_plus
      * assertions.
      */
     template <class Lhs_T, class Rhs_T>
-      requires (type_traits::is_op_v<Lhs_T> or type_traits::is_op_v<Rhs_T>)
+      requires type_traits::any_op<Lhs_T, Rhs_T>
     [[nodiscard]] constexpr auto
     operator>= (const Lhs_T& lhs, const Rhs_T& rhs)
     {
@@ -352,7 +352,7 @@ namespace micro_os_plus::micro_test_plus
      * ensuring type-safe and expressive test assertions.
      */
     template <class Lhs_T, class Rhs_T>
-      requires (type_traits::is_op_v<Lhs_T> or type_traits::is_op_v<Rhs_T>)
+      requires type_traits::any_op<Lhs_T, Rhs_T>
     [[nodiscard]] constexpr auto
     operator< (const Lhs_T& lhs, const Rhs_T& rhs)
     {
@@ -383,7 +383,7 @@ namespace micro_os_plus::micro_test_plus
      * assertions.
      */
     template <class Lhs_T, class Rhs_T>
-      requires (type_traits::is_op_v<Lhs_T> or type_traits::is_op_v<Rhs_T>)
+      requires type_traits::any_op<Lhs_T, Rhs_T>
     [[nodiscard]] constexpr auto
     operator<= (const Lhs_T& lhs, const Rhs_T& rhs)
     {
@@ -413,7 +413,7 @@ namespace micro_os_plus::micro_test_plus
      * type-safe and expressive test assertions.
      */
     template <class Lhs_T, class Rhs_T>
-      requires (type_traits::is_op_v<Lhs_T> or type_traits::is_op_v<Rhs_T>)
+      requires type_traits::any_op<Lhs_T, Rhs_T>
     [[nodiscard]] constexpr auto
     operator and (const Lhs_T& lhs, const Rhs_T& rhs)
     {
@@ -443,7 +443,7 @@ namespace micro_os_plus::micro_test_plus
      * ensuring type-safe and expressive test assertions.
      */
     template <class Lhs_T, class Rhs_T>
-      requires (type_traits::is_op_v<Lhs_T> or type_traits::is_op_v<Rhs_T>)
+      requires type_traits::any_op<Lhs_T, Rhs_T>
     [[nodiscard]] constexpr auto
     operator or (const Lhs_T& lhs, const Rhs_T& rhs)
     {
