@@ -318,6 +318,8 @@ namespace micro_os_plus::micro_test_plus
       using args = list<Args_T...>;
     };
 
+    // ------------------------------------------------------------------------
+
     /**
      * @brief Empty base struct for all operator types.
      *
@@ -346,6 +348,12 @@ namespace micro_os_plus::micro_test_plus
      * `end()` member functions.
      *
      * @tparam T The type to be checked.
+     *
+     * @details
+     * The `container_like` concept is satisfied when `T` exposes both a
+     * `begin()` and an `end()` member function, as required by standard
+     * range-based iteration. It is used to detect container types for
+     * specialised comparison and reporting within the framework.
      */
     template <class T>
     concept container_like = requires (const T& t) {
@@ -357,6 +365,12 @@ namespace micro_os_plus::micro_test_plus
      * @brief C++20 concept satisfied when `T` provides a `npos` member.
      *
      * @tparam T The type to be checked.
+     *
+     * @details
+     * The `has_npos` concept is satisfied when `T` exposes a static `npos`
+     * member, as provided by `std::string_view` and similar types. It is
+     * used to detect string-like types for specialised comparison and
+     * reporting within the framework.
      */
     template <class T>
     concept has_npos = requires { T::npos; };
@@ -365,6 +379,12 @@ namespace micro_os_plus::micro_test_plus
      * @brief C++20 concept satisfied when `T` provides a `value` member.
      *
      * @tparam T The type to be checked.
+     *
+     * @details
+     * The `has_value` concept is satisfied when an instance of `T` exposes
+     * a `value` member. It is used to detect framework value-wrapper types
+     * such as `integral_constant`, `floating_point_constant`, and `value<T>`,
+     * enabling specialised comparison and reporting.
      */
     template <class T>
     concept has_value = requires (const T& t) { t.value; };
@@ -373,6 +393,12 @@ namespace micro_os_plus::micro_test_plus
      * @brief C++20 concept satisfied when `T` provides an `epsilon` member.
      *
      * @tparam T The type to be checked.
+     *
+     * @details
+     * The `has_epsilon` concept is satisfied when an instance of `T` exposes
+     * an `epsilon` member. It is used to detect floating point value-wrapper
+     * types such as `floating_point_constant` and the floating point
+     * specialisation of `value<T>`, enabling precision-aware comparisons.
      */
     template <class T>
     concept has_epsilon = requires (const T& t) { t.epsilon; };
@@ -520,24 +546,6 @@ namespace micro_os_plus::micro_test_plus
     static constexpr auto has_epsilon_v = has_epsilon<T>;
 
     /**
-     * @brief Variable template to determine if a type is a floating point
-     * type.
-     *
-     * @tparam T The type to be checked for floating point classification.
-     *
-     * @retval true if `T` satisfies the `is_floating_point` concept.
-     * @retval false otherwise.
-     *
-     * @details
-     * The `is_floating_point_v` variable template evaluates to `true` if
-     * the given type `T` satisfies the `is_floating_point` concept, and
-     * `false` otherwise. It is provided as a convenient boolean alias for
-     * use in `if constexpr` expressions and non-concept contexts.
-     */
-    template <class T>
-    inline constexpr auto is_floating_point_v = is_floating_point<T>;
-
-    /**
      * @brief Variable template to determine if a type derives from `op`.
      *
      * @tparam T The type to be checked for derivation from `op`.
@@ -557,6 +565,76 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
 
     /**
+     * @brief Base struct template providing common storage and accessors
+     * for runtime value-wrapper types.
+     *
+     * @tparam T The type of the stored value.
+     *
+     * @details
+     * The `value_base_` struct template provides the `T value_{}` member,
+     * an explicit `operator T()` conversion, and a `get()` accessor,
+     * shared by `genuine_integral_value`, `value<T>`, and the floating
+     * point specialisation `value<T>`.
+     *
+     * It inherits from `op` so that all derived types satisfy the `is_op`
+     * concept without each struct needing to inherit from `op` directly.
+     *
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
+     */
+    template <class T>
+    struct value_base_ : op
+    {
+      /**
+       * @brief The type of the stored value.
+       */
+      using value_type = T;
+
+      /**
+       * @brief Constructs a `value_base_` with the given value.
+       *
+       * @param v The value to be stored.
+       */
+      constexpr explicit value_base_ (const T& v) : value_{ v }
+      {
+      }
+
+      /**
+       * @brief Explicit conversion operator to the underlying value type.
+       *
+       * @return The stored value as type `T`.
+       *
+       * @details
+       * Allows explicit conversion to the encapsulated value.
+       */
+      [[nodiscard]] constexpr explicit
+      operator T () const
+      {
+        return value_;
+      }
+
+      /**
+       * @brief Getter for the stored value.
+       *
+       * @par Parameters
+       *	 None.
+       * @return The stored value.
+       *
+       * @details
+       * Returns the stored value.
+       */
+      [[nodiscard]] constexpr decltype (auto)
+      get (void) const
+      {
+        return value_;
+      }
+
+      /**
+       * @brief The stored value.
+       */
+      T value_{};
+    };
+
+    /**
      * @brief Struct template representing a generic integral constant.
      *
      * @tparam N The compile-time constant value.
@@ -564,28 +642,30 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The `integral_constant` struct template provides a compile-time constant
      * value of an integral type, with additional utility features. It inherits
-     * from `op` to enable unified handling within the µTest++ framework's type
-     * traits and metaprogramming utilities.
+     * from `value_base_<decltype(N)>`, which supplies the `value_type` alias,
+     * the `value_` runtime member, the explicit conversion operator, and the
+     * `get()` accessor.
      *
-     * This struct template exposes the constant value via a static member, a
-     * getter method, and explicit conversion operators. It also provides a
+     * This struct retains the compile-time `value` constant and provides a
      * unary minus operator to obtain the negative value as a new
      * `integral_constant` instance.
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <auto N>
-    struct integral_constant : op
+    struct integral_constant : value_base_<decltype (N)>
     {
       /**
-       * @brief The type of the constant value.
-       */
-      using value_type = decltype (N);
-
-      /**
-       * @brief The constant value.
+       * @brief The compile-time constant value.
        */
       static constexpr auto value = N;
+
+      /**
+       * @brief Default constructor. Initialises the base with `N`.
+       */
+      constexpr integral_constant () : value_base_<decltype (N)>{ N }
+      {
+      }
 
       /**
        * @brief Unary minus operator.
@@ -600,38 +680,6 @@ namespace micro_os_plus::micro_test_plus
       operator- () const
       {
         return integral_constant<-N>{};
-      }
-
-      /**
-       * @brief Explicit conversion operator to value_type.
-       *
-       * @par Parameters
-       *	 None.
-       * @return The constant value as type `value_type`.
-       *
-       * @details
-       * Allows explicit conversion to the underlying value type.
-       */
-      [[nodiscard]] constexpr explicit
-      operator value_type (void) const
-      {
-        return N;
-      }
-
-      /**
-       * @brief Getter for the constant value.
-       *
-       * @par Parameters
-       *	 None.
-       * @return The constant value.
-       *
-       * @details
-       * Returns the compile-time constant value.
-       */
-      [[nodiscard]] constexpr auto
-      get (void) const
-      {
-        return N;
       }
     };
 
@@ -649,26 +697,19 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The `floating_point_constant` struct template provides a compile-time
      * constant value of a floating point type, supporting custom size and
-     * precision. It inherits from `op` to enable unified handling within the
-     * µTest++ framework's type traits and metaprogramming utilities.
+     * precision. It inherits from `value_base_<T>`, which supplies the
+     * `value_type` alias, the explicit conversion operator, and the `get()`
+     * accessor.
      *
-     * This struct template exposes the constant value via a static member, a
-     * getter method, and explicit conversion operators. It also provides a
-     * unary minus operator to obtain the negative value as a new
-     * `floating_point_constant` instance. The `epsilon` member defines the
-     * precision used for floating point comparisons, calculated based on the
-     * specified size.
+     * This struct retains the compile-time `epsilon` and `value` constants
+     * and provides a unary minus operator to obtain the negative value as a
+     * new `floating_point_constant` instance.
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class T, auto N, auto D, auto Size, auto P = 1>
-    struct floating_point_constant : op
+    struct floating_point_constant : value_base_<T>
     {
-      /**
-       * @brief The type of the constant value.
-       */
-      using value_type = T;
-
       /**
        * @brief The epsilon value used for floating point comparisons.
        *
@@ -678,13 +719,20 @@ namespace micro_os_plus::micro_test_plus
       static constexpr auto epsilon = T (1) / math::pow (T (10), Size - 1);
 
       /**
-       * @brief The constant value.
+       * @brief The compile-time constant value.
        *
        * @details
        * Computed as `P * (N + D / 10^Size)`.
        */
       static constexpr auto value
           = T (P) * (T (N) + (T (D) / math::pow (T (10), Size)));
+
+      /**
+       * @brief Default constructor. Initialises the base with `value`.
+       */
+      constexpr floating_point_constant () : value_base_<T>{ value }
+      {
+      }
 
       /**
        * @brief Unary minus operator.
@@ -700,35 +748,6 @@ namespace micro_os_plus::micro_test_plus
       {
         return floating_point_constant<T, N, D, Size, -1>{};
       }
-
-      /**
-       * @brief Explicit conversion operator to value_type.
-       *
-       * @return The constant value as type `value_type`.
-       *
-       * @details
-       * Allows explicit conversion to the underlying floating point value
-       * type.
-       */
-      [[nodiscard]] constexpr explicit
-      operator value_type () const
-      {
-        return value;
-      }
-
-      /**
-       * @brief Getter for the constant value.
-       *
-       * @return The constant value.
-       *
-       * @details
-       * Returns the compile-time floating point constant value.
-       */
-      [[nodiscard]] constexpr auto
-      get () const
-      {
-        return value;
-      }
     };
 
     /**
@@ -738,67 +757,23 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * The `genuine_integral_value` struct template encapsulates a runtime
-     * integral value, providing a consistent interface for value access and
-     * conversion. It inherits from `op` to enable unified handling within the
-     * µTest++ framework's type traits and metaprogramming utilities.
-     *
-     * This struct template exposes the value via a member variable, a getter
-     * method, and an explicit conversion operator. It is intended for use
-     * cases where a value must be wrapped and treated generically within the
-     * framework, supporting advanced template metaprogramming and type
-     * introspection.
+     * integral value. The stored value, explicit conversion operator, and
+     * getter are provided by the `value_base_` base.
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class T>
-    struct genuine_integral_value : op
+    struct genuine_integral_value : value_base_<T>
     {
-      /**
-       * @brief The type of the encapsulated value.
-       */
-      using value_type = T;
-
       /**
        * @brief Constructs a genuine_integral_value with the specified value.
        *
        * @param _value The integral value to be stored.
        */
-      constexpr genuine_integral_value (const T& _value) : value_{ _value }
+      constexpr genuine_integral_value (const T& _value)
+          : value_base_<T>{ _value }
       {
       }
-
-      /**
-       * @brief Explicit conversion operator to the underlying value type.
-       *
-       * @return The stored value as type `T`.
-       *
-       * @details
-       * Allows explicit conversion to the encapsulated value.
-       */
-      [[nodiscard]] constexpr explicit
-      operator T () const
-      {
-        return value_;
-      }
-
-      /**
-       * @brief Getter for the encapsulated value.
-       *
-       * @return The value of type `T`.
-       *
-       * @details
-       * Returns the stored integral value.
-       */
-      [[nodiscard]] constexpr decltype (auto)
-      get () const
-      {
-        return value_;
-      }
-
-      /**
-       * @brief The encapsulated integral value.
-       */
-      T value_{};
     };
 
     /**
@@ -806,74 +781,25 @@ namespace micro_os_plus::micro_test_plus
      * getter.
      *
      * @tparam T The type of the value to be encapsulated.
-     * @tparam Opt An optional parameter reserved for partial specialisation,
-     * defaults to `int`.
      *
      * @details
-     * The `value` struct template encapsulates a value of type `T`, providing
-     * a consistent interface for value access and conversion. It inherits from
-     * `type_traits::op` to enable unified handling within the µTest++
-     * framework's type traits and metaprogramming utilities.
-     *
-     * This struct template exposes the value via a member variable, a getter
-     * method, and an explicit conversion operator. It is intended for use
-     * cases where a value must be wrapped and treated generically within the
-     * framework, supporting advanced template metaprogramming and type
-     * introspection.
+     * The `value` struct template encapsulates a value of type `T`. The
+     * stored value, explicit conversion operator, and getter are provided
+     * by the `value_base_` base.
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
     template <class T>
-    struct value : type_traits::op
+    struct value : value_base_<T>
     {
-      /**
-       * @brief The type of the encapsulated value.
-       */
-      using value_type = T;
-
       /**
        * @brief Constructs a value object with the specified value.
        *
        * @param _value The value to be stored.
        */
-      constexpr value (const T& _value) : value_{ _value }
+      constexpr value (const T& _value) : value_base_<T>{ _value }
       {
       }
-
-      /**
-       * @brief Explicit conversion operator to the underlying value type.
-       *
-       * @return The stored value as type `T`.
-       *
-       * @details
-       * Allows explicit conversion to the encapsulated value.
-       */
-      [[nodiscard]] constexpr explicit
-      operator T () const
-      {
-        return value_;
-      }
-
-      /**
-       * @brief Getter for the encapsulated value.
-       *
-       * @par Parameters
-       *	 None.
-       * @return The value of type `T`.
-       *
-       * @details
-       * Returns the stored value.
-       */
-      [[nodiscard]] constexpr decltype (auto)
-      get (void) const
-      {
-        return value_;
-      }
-
-      /**
-       * @brief The encapsulated value.
-       */
-      T value_{};
     };
 
     /**
@@ -885,15 +811,12 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The `value` struct template specialisation for floating point types
      * encapsulates a value of type `T` and provides an associated `epsilon`
-     * for precision control during comparisons. It inherits from
-     * `type_traits::op` to enable unified handling within the µTest++
-     * framework's type traits and metaprogramming utilities.
+     * for precision control during comparisons. The stored value, explicit
+     * conversion operator, and getter are provided by the `value_base_` base.
      *
-     * This struct template exposes the value via a member variable, a getter
-     * method, and an explicit conversion operator. The `epsilon` member
-     * defines the precision used for floating point comparisons and can be set
-     * explicitly or computed as a default based on the number of decimal
-     * digits in the value.
+     * The `epsilon` member defines the precision used for floating point
+     * comparisons and can be set explicitly or computed as a default based
+     * on the number of decimal digits in the value.
      *
      * This specialisation is intended for use cases where floating point
      * values require controlled precision, supporting advanced template
@@ -903,13 +826,8 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T>
       requires is_floating_point<T>
-    struct value<T> : type_traits::op
+    struct value<T> : value_base_<T>
     {
-      /**
-       * @brief The type of the encapsulated value.
-       */
-      using value_type = T;
-
       /**
        * @brief The epsilon value used for floating-point comparisons.
        *
@@ -929,7 +847,7 @@ namespace micro_os_plus::micro_test_plus
        * @param precision The epsilon value to be used for comparisons.
        */
       constexpr value (const T& _value, const T precision)
-          : epsilon{ precision }, value_{ _value }
+          : value_base_<T>{ _value }, epsilon{ precision }
       {
       }
 
@@ -949,41 +867,6 @@ namespace micro_os_plus::micro_test_plus
                                     math::den_size<unsigned long long> (val)) }
       {
       }
-
-      /**
-       * @brief Explicit conversion operator to the underlying value type.
-       *
-       * @return The stored value as type `T`.
-       *
-       * @details
-       * Allows explicit conversion to the encapsulated floating point value.
-       */
-      [[nodiscard]] constexpr explicit
-      operator T () const
-      {
-        return value_;
-      }
-
-      /**
-       * @brief Getter for the encapsulated value.
-       *
-       * @par Parameters
-       *	 None.
-       * @return The value of type `T`.
-       *
-       * @details
-       * Returns the stored floating point value.
-       */
-      [[nodiscard]] constexpr decltype (auto)
-      get (void) const
-      {
-        return value_;
-      }
-
-      /**
-       * @brief The encapsulated floating point value.
-       */
-      T value_{};
     };
 
     // ------------------------------------------------------------------------
