@@ -78,7 +78,7 @@ namespace micro_os_plus::micro_test_plus
      * @code{.cpp}
      * namespace mt = micro_os_plus::micro_test_plus;
      *
-     * mt::expect (std::vector<std::string_view>{ "a", "b" }
+     * t.expect (std::vector<std::string_view>{ "a", "b" }
      *             == mt::utility::split<std::string_view> ("a.b", "."))
      *         << "a.b splits into [a,b]";
      * @endcode
