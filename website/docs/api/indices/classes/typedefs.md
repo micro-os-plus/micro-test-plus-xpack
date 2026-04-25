@@ -20,44 +20,41 @@ keywords:
 ## - A -
 
 <ul>
-<li><b>args</b>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-c8ae4832b74f8fe701e29e20410c0d5a/#a291ffb121545e9b52c3d1542f1612074">micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(*)(Args_T...)&gt;</a></li>
-<li><b>args</b>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-567248e3f9c17aff751ce83e3c5b4d55/#ae9cdecaa62003a4c7c1b7ca36da1361a">micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(Args_T...)&gt;</a></li>
-<li><b>args</b>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-05ab90b3270445bd2304511210cefdc8/#a6a6bb2b3c72d75ae76a082278c7086da">micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(T::*)(Args_T...) const&gt;</a></li>
-<li><b>args</b>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-aa0970b0a1efa305c0cfd55ce14bb11b/#abe3052f92aa798f6a80a6e9250fc76b4">micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(T::*)(Args_T...)&gt;</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-c8ae4832b74f8fe701e29e20410c0d5a/#a291ffb121545e9b52c3d1542f1612074"><b>args</b></a>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-c8ae4832b74f8fe701e29e20410c0d5a">micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(*)(Args_T...)&gt;</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-567248e3f9c17aff751ce83e3c5b4d55/#ae9cdecaa62003a4c7c1b7ca36da1361a"><b>args</b></a>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-567248e3f9c17aff751ce83e3c5b4d55">micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(Args_T...)&gt;</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-05ab90b3270445bd2304511210cefdc8/#a6a6bb2b3c72d75ae76a082278c7086da"><b>args</b></a>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-05ab90b3270445bd2304511210cefdc8">micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(T::*)(Args_T...) const&gt;</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-aa0970b0a1efa305c0cfd55ce14bb11b/#abe3052f92aa798f6a80a6e9250fc76b4"><b>args</b></a>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-aa0970b0a1efa305c0cfd55ce14bb11b">micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(T::*)(Args_T...)&gt;</a></li>
 </ul>
 <p>4 entries</p>
 
 ## - R -
 
 <ul>
-<li><b>result_type</b>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-c8ae4832b74f8fe701e29e20410c0d5a/#a6e68b0f12d97490c730b3ee455887a75">micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(*)(Args_T...)&gt;</a></li>
-<li><b>result_type</b>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-567248e3f9c17aff751ce83e3c5b4d55/#ae2c0f559e149f7cb6d9cfa59e4d02913">micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(Args_T...)&gt;</a></li>
-<li><b>result_type</b>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-05ab90b3270445bd2304511210cefdc8/#a19bf7a6150e7a0a8615fd74fda001d97">micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(T::*)(Args_T...) const&gt;</a></li>
-<li><b>result_type</b>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-aa0970b0a1efa305c0cfd55ce14bb11b/#a1f21557f758a46166726e0c6e01ee8bc">micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(T::*)(Args_T...)&gt;</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-c8ae4832b74f8fe701e29e20410c0d5a/#a6e68b0f12d97490c730b3ee455887a75"><b>result_type</b></a>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-c8ae4832b74f8fe701e29e20410c0d5a">micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(*)(Args_T...)&gt;</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-567248e3f9c17aff751ce83e3c5b4d55/#ae2c0f559e149f7cb6d9cfa59e4d02913"><b>result_type</b></a>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-567248e3f9c17aff751ce83e3c5b4d55">micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(Args_T...)&gt;</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-05ab90b3270445bd2304511210cefdc8/#a19bf7a6150e7a0a8615fd74fda001d97"><b>result_type</b></a>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-05ab90b3270445bd2304511210cefdc8">micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(T::*)(Args_T...) const&gt;</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-aa0970b0a1efa305c0cfd55ce14bb11b/#a1f21557f758a46166726e0c6e01ee8bc"><b>result_type</b></a>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-aa0970b0a1efa305c0cfd55ce14bb11b">micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(T::*)(Args_T...)&gt;</a></li>
 </ul>
 <p>4 entries</p>
 
 ## - T -
 
 <ul>
-<li><b>type</b>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/identity/#a6399364a09c1004ebbaab36b2d5dc0c8">micro_os_plus::micro_test_plus::type_traits::identity&lt;T, Extra&gt;</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/identity/#a6399364a09c1004ebbaab36b2d5dc0c8"><b>type</b></a>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/identity">micro_os_plus::micro_test_plus::type_traits::identity&lt;T, Extra&gt;</a></li>
 </ul>
 
 ## - V -
 
 <ul>
-<li><b>value_type</b>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#a3538821b6929e9b13f6a3ea763e1627e">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt;T, N, D, Size, P&gt;</a></li>
-<li><b>value_type</b>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#a1b0fda5167fc47a474f0fad07d28fa8d">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt;T&gt;</a></li>
-<li><b>value_type</b>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant/#a30307d0cc6b010e9b42ec98753b6bec1">micro_os_plus::micro_test_plus::type_traits::integral_constant&lt;N&gt;</a></li>
-<li><b>value_type</b>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value/#a6bf65c151c552fb88e10a4799a64f5f4">micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt;</a></li>
-<li><b>value_type</b>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-f7399366cd6336ecbea702c3289d9432/#a6bf65c151c552fb88e10a4799a64f5f4">micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt;</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant/#a3538821b6929e9b13f6a3ea763e1627e"><b>value_type</b></a>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt;T, N, D, Size, P&gt;</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-/#a4a819c9151d37da6e8a76f4629c7cc4d"><b>value_type</b></a>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-">micro_os_plus::micro_test_plus::type_traits::value_base_&lt;T&gt;</a></li>
 </ul>
-<p>5 entries</p>
+<p>2 entries</p>
 <br/>
-<p>Total: 14 entries.</p>
+<p>Total: 11 entries.</p>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.0.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 
 </div>

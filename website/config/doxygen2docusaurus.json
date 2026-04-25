@@ -17,7 +17,7 @@
   "customCssFilePath": "src/css/custom-doxygen2docusaurus.css",
   "verbose": false,
   "debug": false,
-  "suggestToDoDescriptions": false,
+  "suggestToDoDescriptions": true,
   "listPagesAtTop": true,
   "renderProgramListings": true,
   "renderProgramListingInline": true,

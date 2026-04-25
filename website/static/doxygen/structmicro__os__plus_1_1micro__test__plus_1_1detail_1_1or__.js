@@ -1,10 +1,10 @@
 var structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__ =
 [
     [ "or_", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html#ae023677ab7963bcd4302604292ec9871", null ],
-    [ "lhs", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html#ade57fa3ad2c060e1606858f7363a78fb", null ],
-    [ "operator bool", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html#ae7c74522aa7a512f9ad94b6be81c93f8", null ],
-    [ "rhs", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html#ad20450caccc16905bb9ec2b6852dbe15", null ],
-    [ "lhs_", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html#a6862c7a63400e57c857c33824e6123a9", null ],
-    [ "rhs_", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html#a94b13f2c857015255f61ca413ed55745", null ],
-    [ "value_", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html#af3b7e813b9a4cd44c510f16119c374eb", null ]
+    [ "lhs", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html#a503196c2296449a52b6f7995d4a647f5", null ],
+    [ "operator bool", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html#a854f1034410a13b6d2673beec610604a", null ],
+    [ "rhs", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html#adfe5734554daf4e5793f0708f3121284", null ],
+    [ "lhs_", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html#ac3bcfee808c65ee0d6be74d564cbf58c", null ],
+    [ "rhs_", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html#ab6217372c20998ca75fe5e7a73754d7c", null ],
+    [ "value_", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html#a2dd578daf62dde786b3e9e7beeac08bc", null ]
 ];

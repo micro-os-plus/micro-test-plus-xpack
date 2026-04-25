@@ -22,7 +22,7 @@ keywords:
 ## Declaration
 
 <div class="doxyDeclaration">
-template &lt;class R, class T, class... Args_T&gt;
+template &lt;class R, class T, class... Args_T&gt;<br/>
 struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(T::*)(Args_T...) const&gt; { ... }
 </div>
 
@@ -102,7 +102,7 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(T::*)(A
 <p>The <span class="doxyComputerOutput"><a href="#a19bf7a6150e7a0a8615fd74fda001d97">result_type</a></span> member defines the return type of the const member function, while the <span class="doxyComputerOutput">args</span> member is a type list containing all argument types.</p>
 
 
-<p>Definition at line 307 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line 311 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -130,12 +130,12 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(T::*)(A
 
 <p>Type list of all argument types.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00317">317</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00321">321</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a6a6bb2b3c72d75ae76a082278c7086da">317</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a6a6bb2b3c72d75ae76a082278c7086da">args</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">list</a>&lt;Args_T...&gt;;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a6a6bb2b3c72d75ae76a082278c7086da">321</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a6a6bb2b3c72d75ae76a082278c7086da">args</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">list</a>&lt;Args_T...&gt;;</span></span></div>
 
 </div>
 
@@ -163,12 +163,12 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(T::*)(A
 
 <p>The return type of the const member function.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00312">312</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00316">316</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a19bf7a6150e7a0a8615fd74fda001d97">312</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a19bf7a6150e7a0a8615fd74fda001d97">result_type</a> = R;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a19bf7a6150e7a0a8615fd74fda001d97">316</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a19bf7a6150e7a0a8615fd74fda001d97">result_type</a> = R;</span></span></div>
 
 </div>
 
@@ -187,6 +187,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.0.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 
 </div>

@@ -19,12 +19,12 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_
 <parametername>T</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The type to be checked. </para>
+<para>The type to be checked.</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>
+The <computeroutput>has_npos</computeroutput> concept is satisfied when <computeroutput>T</computeroutput> exposes a static <computeroutput>npos</computeroutput> member, as provided by <computeroutput>std::string_view</computeroutput> and similar types. It is used to detect string-like types for specialised comparison and reporting within the framework. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="338" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="379" column="5"/>
   </compounddef>
 </doxygen>

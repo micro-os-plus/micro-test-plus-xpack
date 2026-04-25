@@ -5,6 +5,8 @@ var annotated_dup =
         [ "detail", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html", [
           [ "and_", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__" ],
           [ "assertion", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1assertion.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1assertion" ],
+          [ "binary_op_", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op__.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op__" ],
+          [ "callable_op_", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__" ],
           [ "deferred_reporter", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter.html", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter" ],
           [ "deferred_reporter_base", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base.html", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base" ],
           [ "eq_", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__" ],
@@ -17,7 +19,8 @@ var annotated_dup =
           [ "nothrow_", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__" ],
           [ "or_", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__" ],
           [ "throws_", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__" ],
-          [ "throws_< Callable_T, void >", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4" ]
+          [ "throws_< Callable_T, void >", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4" ],
+          [ "unary_op_", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op__.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op__" ]
         ] ],
         [ "reflection", "namespacemicro__os__plus_1_1micro__test__plus_1_1reflection.html", [
           [ "source_location", "classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html", "classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" ]
@@ -34,7 +37,8 @@ var annotated_dup =
           [ "list", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1list.html", null ],
           [ "op", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html", null ],
           [ "value", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" ],
-          [ "value< T >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4" ]
+          [ "value< T >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4" ],
+          [ "value_base_", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__" ]
         ] ],
         [ "_t", "structmicro__os__plus_1_1micro__test__plus_1_1__t.html", "structmicro__os__plus_1_1micro__test__plus_1_1__t" ],
         [ "colours", "structmicro__os__plus_1_1micro__test__plus_1_1colours.html", "structmicro__os__plus_1_1micro__test__plus_1_1colours" ],

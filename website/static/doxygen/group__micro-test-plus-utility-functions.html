@@ -326,7 +326,7 @@ template&lt;class T = std::string_view, class Delim_T&gt; </div>
 <p><b>Example</b></p>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span>mt = <a class="code hl_namespace" href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a>;</div>
 <div class="line"> </div>
-<div class="line">mt::expect (std::vector&lt;std::string_view&gt;{ <span class="stringliteral">&quot;a&quot;</span>, <span class="stringliteral">&quot;b&quot;</span> }</div>
+<div class="line">t.expect (std::vector&lt;std::string_view&gt;{ <span class="stringliteral">&quot;a&quot;</span>, <span class="stringliteral">&quot;b&quot;</span> }</div>
 <div class="line">            == mt::utility::split&lt;std::string_view&gt; (<span class="stringliteral">&quot;a.b&quot;</span>, <span class="stringliteral">&quot;.&quot;</span>))</div>
 <div class="line">        &lt;&lt; <span class="stringliteral">&quot;a.b splits into [a,b]&quot;</span>;</div>
 </div><!-- fragment --><dl class="tparams"><dt>Template Parameters</dt><dd>

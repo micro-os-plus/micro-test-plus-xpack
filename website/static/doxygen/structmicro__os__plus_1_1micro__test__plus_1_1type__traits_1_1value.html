@@ -105,64 +105,71 @@ $(function(){initNavTree('structmicro__os__plus_1_1micro__test__plus_1_1type__tr
  <div class="center">
   <img src="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.png" usemap="#micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Atype_5Ftraits_3A_3Avalue_3C_20T_20_3E_map" alt=""/>
   <map id="micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Atype_5Ftraits_3A_3Avalue_3C_20T_20_3E_map" name="micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Atype_5Ftraits_3A_3Avalue_3C_20T_20_3E_map">
-<area href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html" title="Empty base struct for all operator types." alt="micro_os_plus::micro_test_plus::type_traits::op" shape="rect" coords="0,0,318,24"/>
+<area href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html" title="Base struct template providing common storage and accessors for runtime value-wrapper types." alt="micro_os_plus::micro_test_plus::type_traits::value_base_&lt; T &gt;" shape="rect" coords="0,56,359,80"/>
+<area href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html" title="Empty base struct for all operator types." alt="micro_os_plus::micro_test_plus::type_traits::op" shape="rect" coords="0,0,359,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a6bf65c151c552fb88e10a4799a64f5f4" id="r_a6bf65c151c552fb88e10a4799a64f5f4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6bf65c151c552fb88e10a4799a64f5f4">value_type</a> = T</td></tr>
-<tr class="memdesc:a6bf65c151c552fb88e10a4799a64f5f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the encapsulated value.  <br /></td></tr>
+<tr class="memitem:a4a819c9151d37da6e8a76f4629c7cc4d" id="r_a4a819c9151d37da6e8a76f4629c7cc4d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html#a4a819c9151d37da6e8a76f4629c7cc4d">value_type</a> = T</td></tr>
+<tr class="memdesc:a4a819c9151d37da6e8a76f4629c7cc4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the stored value.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a358a37a8a1ba8322a276d3f9b87120eb" id="r_a358a37a8a1ba8322a276d3f9b87120eb"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a358a37a8a1ba8322a276d3f9b87120eb">value</a> (const T &amp;_value)</td></tr>
-<tr class="memdesc:a358a37a8a1ba8322a276d3f9b87120eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a value object with the specified value.  <br /></td></tr>
-<tr class="memitem:af60376a1f5c8acd58ab855b81efb4345" id="r_af60376a1f5c8acd58ab855b81efb4345"><td class="memItemLeft" align="right" valign="top">constexpr decltype(auto)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af60376a1f5c8acd58ab855b81efb4345">get</a> (void) const</td></tr>
-<tr class="memdesc:af60376a1f5c8acd58ab855b81efb4345"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the encapsulated value.  <br /></td></tr>
-<tr class="memitem:a6b25c4a476c9745d143f6c4f3d038b0e" id="r_a6b25c4a476c9745d143f6c4f3d038b0e"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b25c4a476c9745d143f6c4f3d038b0e">operator T</a> () const</td></tr>
-<tr class="memdesc:a6b25c4a476c9745d143f6c4f3d038b0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicit conversion operator to the underlying value type.  <br /></td></tr>
+<tr class="memitem:a7bec98988dcc3b8317f4dad31cbbf755" id="r_a7bec98988dcc3b8317f4dad31cbbf755"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7bec98988dcc3b8317f4dad31cbbf755">value</a> (const T &amp;_value) noexcept</td></tr>
+<tr class="memdesc:a7bec98988dcc3b8317f4dad31cbbf755"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a value object with the specified value.  <br /></td></tr>
+<tr class="memitem:aedc41334c71b7711435aee0cb8f44fb3" id="r_aedc41334c71b7711435aee0cb8f44fb3"><td class="memItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html#aedc41334c71b7711435aee0cb8f44fb3">get</a> (void) const noexcept</td></tr>
+<tr class="memdesc:aedc41334c71b7711435aee0cb8f44fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the stored value.  <br /></td></tr>
+<tr class="memitem:ab7f7f241b55abd7ac9e25234bbe64406" id="r_ab7f7f241b55abd7ac9e25234bbe64406"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html#ab7f7f241b55abd7ac9e25234bbe64406">operator T</a> () const noexcept</td></tr>
+<tr class="memdesc:ab7f7f241b55abd7ac9e25234bbe64406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicit conversion operator to the underlying value type.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ad031508c3c4fba0528638bb61a0d908c" id="r_ad031508c3c4fba0528638bb61a0d908c"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad031508c3c4fba0528638bb61a0d908c">value_</a> {}</td></tr>
-<tr class="memdesc:ad031508c3c4fba0528638bb61a0d908c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The encapsulated value.  <br /></td></tr>
+<tr class="memitem:a8f1747b0fb288001d51754dfb8c53b0e" id="r_a8f1747b0fb288001d51754dfb8c53b0e"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html#a8f1747b0fb288001d51754dfb8c53b0e">value_</a> {}</td></tr>
+<tr class="memdesc:a8f1747b0fb288001d51754dfb8c53b0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The stored value.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class T&gt;<br />
 struct micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;</div><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of the value to be encapsulated. </td></tr>
-    <tr><td class="paramname">Opt</td><td>An optional parameter reserved for partial specialisation, defaults to <span class="tt">int</span>.</td></tr>
+    <tr><td class="paramname">T</td><td>The type of the value to be encapsulated.</td></tr>
   </table>
   </dd>
 </dl>
-<p>The <span class="tt">value</span> struct template encapsulates a value of type <span class="tt">T</span>, providing a consistent interface for value access and conversion. It inherits from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html" title="Empty base struct for all operator types.">type_traits::op</a></span> to enable unified handling within the µTest++ framework's type traits and metaprogramming utilities.</p>
-<p>This struct template exposes the value via a member variable, a getter method, and an explicit conversion operator. It is intended for use cases where a value must be wrapped and treated generically within the framework, supporting advanced template metaprogramming and type introspection. </p>
+<p>The <span class="tt">value</span> struct template encapsulates a value of type <span class="tt">T</span>. The stored value, explicit conversion operator, and getter are provided by the <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html" title="Base struct template providing common storage and accessors for runtime value-wrapper types.">value_base_</a></span> base. </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00814">814</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00815">815</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
-<a id="a6bf65c151c552fb88e10a4799a64f5f4" name="a6bf65c151c552fb88e10a4799a64f5f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6bf65c151c552fb88e10a4799a64f5f4">&#9670;&#160;</a></span>value_type</h2>
+<a id="a4a819c9151d37da6e8a76f4629c7cc4d" name="a4a819c9151d37da6e8a76f4629c7cc4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a819c9151d37da6e8a76f4629c7cc4d">&#9670;&#160;</a></span>value_type</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html">micro_os_plus::micro_test_plus::type_traits::value</a>&lt; T &gt;::value_type = T</td>
+          <td class="memname">using <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html">micro_os_plus::micro_test_plus::type_traits::value_base_</a>&lt; T &gt;::value_type = T</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00819">819</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00583">583</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
 
 </div>
 </div>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a358a37a8a1ba8322a276d3f9b87120eb" name="a358a37a8a1ba8322a276d3f9b87120eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a358a37a8a1ba8322a276d3f9b87120eb">&#9670;&#160;</a></span>value()</h2>
+<a id="a7bec98988dcc3b8317f4dad31cbbf755" name="a7bec98988dcc3b8317f4dad31cbbf755"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bec98988dcc3b8317f4dad31cbbf755">&#9670;&#160;</a></span>value()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -181,7 +188,7 @@ template&lt;class T&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -192,18 +199,17 @@ template&lt;class T&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00826">826</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  826</span>                                        : <a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4.html#ad031508c3c4fba0528638bb61a0d908c">value_</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html">_value</a> }</div>
-<div class="line"><span class="lineno">  827</span>      {</div>
-<div class="line"><span class="lineno">  828</span>      }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_html_ad031508c3c4fba0528638bb61a0d908c"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4.html#ad031508c3c4fba0528638bb61a0d908c">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::value_</a></div><div class="ttdeci">T value_</div><div class="ttdoc">The encapsulated floating point value.</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00973">type-traits.h:973</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html">micro_os_plus::micro_test_plus::type_traits::value</a></div><div class="ttdoc">Struct template representing a generic value, accessible via a getter.</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00814">type-traits.h:815</a></div></div>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00822">822</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  822</span>                                                 : <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html">value_base_&lt;T&gt;</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html">_value</a> }</div>
+<div class="line"><span class="lineno">  823</span>      {</div>
+<div class="line"><span class="lineno">  824</span>      }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html">micro_os_plus::micro_test_plus::type_traits::value</a></div><div class="ttdoc">Struct template representing a generic value, accessible via a getter.</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00815">type-traits.h:816</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="af60376a1f5c8acd58ab855b81efb4345" name="af60376a1f5c8acd58ab855b81efb4345"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af60376a1f5c8acd58ab855b81efb4345">&#9670;&#160;</a></span>get()</h2>
+<a id="aedc41334c71b7711435aee0cb8f44fb3" name="aedc41334c71b7711435aee0cb8f44fb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedc41334c71b7711435aee0cb8f44fb3">&#9670;&#160;</a></span>get()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -214,7 +220,7 @@ template&lt;class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">decltype(auto) <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html">micro_os_plus::micro_test_plus::type_traits::value</a>&lt; T &gt;::get </td>
+          <td class="memname">T <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html">micro_os_plus::micro_test_plus::type_traits::value_base_</a>&lt; T &gt;::get </td>
           <td>(</td>
           <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -222,23 +228,28 @@ template&lt;class T&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span><span class="mlabel inherited">inherited</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <dl class="section user"><dt>Parameters</dt><dd>None. </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>The value of type <span class="tt">T</span>.</dd></dl>
-<p>Returns the stored value. </p>
+<dl class="section return"><dt>Returns</dt><dd>The stored value.</dd></dl>
+<p>Returns the stored value by value. </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00855">855</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  856</span>      {</div>
-<div class="line"><span class="lineno">  857</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4.html#ad031508c3c4fba0528638bb61a0d908c">value_</a>;</div>
-<div class="line"><span class="lineno">  858</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00619">619</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  620</span>      {</div>
+<div class="line"><span class="lineno">  621</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html#a8f1747b0fb288001d51754dfb8c53b0e">value_</a>;</div>
+<div class="line"><span class="lineno">  622</span>      }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___html_a8f1747b0fb288001d51754dfb8c53b0e"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html#a8f1747b0fb288001d51754dfb8c53b0e">micro_os_plus::micro_test_plus::type_traits::value_base_::value_</a></div><div class="ttdeci">T value_</div><div class="ttdoc">The stored value.</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00627">type-traits.h:627</a></div></div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="type-traits_8h_source.html#l00627">value_</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="reporter-inlines_8h_source.html#l00211">micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;()</a>.</p>
+
 </div>
 </div>
-<a id="a6b25c4a476c9745d143f6c4f3d038b0e" name="a6b25c4a476c9745d143f6c4f3d038b0e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b25c4a476c9745d143f6c4f3d038b0e">&#9670;&#160;</a></span>operator T()</h2>
+<a id="ab7f7f241b55abd7ac9e25234bbe64406" name="ab7f7f241b55abd7ac9e25234bbe64406"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7f7f241b55abd7ac9e25234bbe64406">&#9670;&#160;</a></span>operator T()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -249,7 +260,7 @@ template&lt;class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html">micro_os_plus::micro_test_plus::type_traits::value</a>&lt; T &gt;::operator T </td>
+          <td class="memname"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html">micro_os_plus::micro_test_plus::type_traits::value_base_</a>&lt; T &gt;::operator T </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -257,38 +268,48 @@ template&lt;class T&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span><span class="mlabel inherited">inherited</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The stored value as type <span class="tt">T</span>.</dd></dl>
 <p>Allows explicit conversion to the encapsulated value. </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00839">839</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  840</span>      {</div>
-<div class="line"><span class="lineno">  841</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4.html#ad031508c3c4fba0528638bb61a0d908c">value_</a>;</div>
-<div class="line"><span class="lineno">  842</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00603">603</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  604</span>      {</div>
+<div class="line"><span class="lineno">  605</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html#a8f1747b0fb288001d51754dfb8c53b0e">value_</a>;</div>
+<div class="line"><span class="lineno">  606</span>      }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
-<a id="ad031508c3c4fba0528638bb61a0d908c" name="ad031508c3c4fba0528638bb61a0d908c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad031508c3c4fba0528638bb61a0d908c">&#9670;&#160;</a></span>value_</h2>
+<a id="a8f1747b0fb288001d51754dfb8c53b0e" name="a8f1747b0fb288001d51754dfb8c53b0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f1747b0fb288001d51754dfb8c53b0e">&#9670;&#160;</a></span>value_</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html">micro_os_plus::micro_test_plus::type_traits::value</a>&lt; T &gt;::value_ {}</td>
+          <td class="memname">T <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html">micro_os_plus::micro_test_plus::type_traits::value_base_</a>&lt; T &gt;::value_ {}</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00863">863</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  863</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00627">627</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  627</span>{};</div>
 </div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="type-traits_8h_source.html#l00590">value_base_()</a>, and <a class="el" href="type-traits_8h_source.html#l00619">get()</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>

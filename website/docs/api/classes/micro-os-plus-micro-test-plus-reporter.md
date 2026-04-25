@@ -359,12 +359,12 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#aad5806b3dda95d6a6a30b9b27cc68d81">operator&lt;&lt;</a> (const T &amp;t)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a330aa7e22a4efc710fe866e1bda6fc4c">operator&lt;&lt;</a> (const T &amp;t)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Output operator for types with a getter. <a href="#aad5806b3dda95d6a6a30b9b27cc68d81">More...</a></p>
+<p>Output operator for types with a getter. <a href="#a330aa7e22a4efc710fe866e1bda6fc4c">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -813,13 +813,13 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914b">verbosity_t</a></td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7685b625fb0bcc71279c07f45c82c0ac">verbosity</a> () const</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914b">micro_test_plus::verbosity</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a24da76a8973a5aebca9ef7604740180c">verbosity</a> () const</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Returns the current verbosity level. <a href="#a7685b625fb0bcc71279c07f45c82c0ac">More...</a></p>
+<p>Returns the current verbosity level. <a href="#a24da76a8973a5aebca9ef7604740180c">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -1034,13 +1034,13 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914b">verbosity_t</a></td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a5ce1c7861221c0b662dfb5a30b8474f3">verbosity_</a> { <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">verbosity::normal</a> }</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">enum <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914b">verbosity</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aea922774c24ce8337d734fa457896595">verbosity_</a> = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">verbosity::normal</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>The verbosity level for test reporting. <a href="#a5ce1c7861221c0b662dfb5a30b8474f3">More...</a></p>
+<p>The verbosity level for test reporting. <a href="#aea922774c24ce8337d734fa457896595">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -1159,15 +1159,15 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber">95</span><span class="doxyLineContent"><span class="doxyHighlight">          {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">96</span><span class="doxyLineContent"><span class="doxyHighlight">            </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (args[i] == </span><span class="doxyHighlightStringLiteral">"--verbose"</span><span class="doxyHighlight">)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">97</span><span class="doxyLineContent"><span class="doxyHighlight">              {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">98</span><span class="doxyLineContent"><span class="doxyHighlight">                <a href="#a5ce1c7861221c0b662dfb5a30b8474f3">verbosity_</a> = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbosity::verbose</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">98</span><span class="doxyLineContent"><span class="doxyHighlight">                <a href="#aea922774c24ce8337d734fa457896595">verbosity_</a> = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbosity::verbose</a>;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">99</span><span class="doxyLineContent"><span class="doxyHighlight">              }</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">100</span><span class="doxyLineContent"><span class="doxyHighlight">            </span><span class="doxyHighlightKeywordFlow">else</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (args[i] == </span><span class="doxyHighlightStringLiteral">"--quiet"</span><span class="doxyHighlight">)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">101</span><span class="doxyLineContent"><span class="doxyHighlight">              {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">102</span><span class="doxyLineContent"><span class="doxyHighlight">                <a href="#a5ce1c7861221c0b662dfb5a30b8474f3">verbosity_</a> = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">verbosity::quiet</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">102</span><span class="doxyLineContent"><span class="doxyHighlight">                <a href="#aea922774c24ce8337d734fa457896595">verbosity_</a> = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">verbosity::quiet</a>;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">103</span><span class="doxyLineContent"><span class="doxyHighlight">              }</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">104</span><span class="doxyLineContent"><span class="doxyHighlight">            </span><span class="doxyHighlightKeywordFlow">else</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (args[i] == </span><span class="doxyHighlightStringLiteral">"--silent"</span><span class="doxyHighlight">)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">105</span><span class="doxyLineContent"><span class="doxyHighlight">              {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">106</span><span class="doxyLineContent"><span class="doxyHighlight">                <a href="#a5ce1c7861221c0b662dfb5a30b8474f3">verbosity_</a> = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">verbosity::silent</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">106</span><span class="doxyLineContent"><span class="doxyHighlight">                <a href="#aea922774c24ce8337d734fa457896595">verbosity_</a> = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">verbosity::silent</a>;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">107</span><span class="doxyLineContent"><span class="doxyHighlight">              }</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">108</span><span class="doxyLineContent"><span class="doxyHighlight">            </span><span class="doxyHighlightKeywordFlow">else</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (args[i].starts_with (output_file_prefix))</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">109</span><span class="doxyLineContent"><span class="doxyHighlight">              {</span></span></div>
@@ -1224,10 +1224,10 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </div>
 
 
-<p>References <a href="#a123948993e8c24962071a32d8274c4f6">argvs_</a>, <a href="#a6eed4eaebea91b3377b89a118eb1c323">buffer_</a>, <a href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a>, <a href="#abb92804e6eaee977fdc1e48f29c632f2">output_file_path_</a>, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">micro_os_plus::micro_test_plus::quiet</a>, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">micro_os_plus::micro_test_plus::silent</a>, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">micro_os_plus::micro_test_plus::verbose</a> and <a href="#a5ce1c7861221c0b662dfb5a30b8474f3">verbosity_</a>.</p>
+<p>References <a href="#a123948993e8c24962071a32d8274c4f6">argvs_</a>, <a href="#a6eed4eaebea91b3377b89a118eb1c323">buffer_</a>, <a href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a>, <a href="#abb92804e6eaee977fdc1e48f29c632f2">output_file_path_</a>, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">micro_os_plus::micro_test_plus::quiet</a>, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">micro_os_plus::micro_test_plus::silent</a>, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">micro_os_plus::micro_test_plus::verbose</a> and <a href="#aea922774c24ce8337d734fa457896595">verbosity_</a>.</p>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a391d670afb552fe8fc03011d37a517fd">micro_os_plus::micro_test_plus::reporter_human::reporter_human</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a9e29142142a2a667e76e3670ba065b37">micro_os_plus::micro_test_plus::reporter_tap::reporter_tap</a>, <a href="#a0a288fd4578c4879872ecdfc3349bf2d">operator&lt;&lt;</a>, <a href="#a5bc1b012e5817563a4d699b2145ec077">operator&lt;&lt;</a>, <a href="#afb205af933ef6b71f23a6943ad6bd628">operator&lt;&lt;</a>, <a href="#a50dfefe3259b5eb3baa432a11a06100d">operator&lt;&lt;</a>, <a href="#a56edd7e04a4080a56542d999368b0fd4">operator&lt;&lt;</a>, <a href="#adf525408b74186615bd6863087ac4f44">operator&lt;&lt;</a>, <a href="#a94f8eff9fcb76a192b30e1d834dceed6">operator&lt;&lt;</a>, <a href="#a1fc511dc8d94b1e89f5c5bbe1e9e9bbe">operator&lt;&lt;</a>, <a href="#a5617d861c48049189b6b33e36626763a">operator&lt;&lt;</a>, <a href="#aee38736d82b6ca9eb287796fc1296c49">operator&lt;&lt;</a>, <a href="#acb9b836bf8aebde7ce043c237ad29dac">operator&lt;&lt;</a>, <a href="#a59db110b4b64dbd3568d44b843fcdbb4">operator&lt;&lt;</a>, <a href="#acfd5afd6cd385e4994a188d248bf91f8">operator&lt;&lt;</a>, <a href="#afcadab7426f75555d3589f5c93e6e94a">operator&lt;&lt;</a>, <a href="#acfe9bdb0f3bee7cc5ab3836dc2e17d08">operator&lt;&lt;</a>, <a href="#aad5806b3dda95d6a6a30b9b27cc68d81">operator&lt;&lt;</a>, <a href="#a697a4dcb95f65634253f44946d06c81a">operator&lt;&lt;</a>, <a href="#a3a7538024d14a727640a789c6d6b8058">operator&lt;&lt;</a>, <a href="#a602622b74c12f7bf045b14fe7aac82b1">operator&lt;&lt;</a>, <a href="#ad3fe4f54681f8f58d906dd3d625dec9f">operator&lt;&lt;</a>, <a href="#a28826ad63a1c66a694c578049922d700">operator&lt;&lt;</a>, <a href="#a351c8d961df0c7d9ce438e9e292680da">operator&lt;&lt;</a>, <a href="#ae9edf407c69fc6933ceb889c105eace2">operator&lt;&lt;</a>, <a href="#a68eabfc37788745aa4804dade0bbf8f6">operator&lt;&lt;</a>, <a href="#a2cc01b37d5506dd341fa73d4a08dd2ad">operator&lt;&lt;</a>, <a href="#a0964f2a781d6f48ec65d6f3aed66a8e0">operator&lt;&lt;</a>, <a href="#a0699f03871f8c5f906a07bf32505cbd7">operator&lt;&lt;</a>, <a href="#ad7a2cc6446e65cf9034f85c93efb3945">operator&lt;&lt;</a>, <a href="#a0acf1be4a7b9738dd2d3b9748e32d872">operator&lt;&lt;</a>, <a href="#a550817349fa323d0c7b4c11a7948267e">operator&lt;&lt;</a>, <a href="#ab422a082e0107b7f98a1d2c826595cf9">operator&lt;&lt;</a>, <a href="#a54dfaed92e9a9122e0bfa1e9fb489365">operator&lt;&lt;</a>, <a href="#af403303bf0d2d0e9f729d2461fc6bb91">operator&lt;&lt;</a> and <a href="#aeb9ea0be472dff38345b1271881b6820">operator&lt;&lt;</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a391d670afb552fe8fc03011d37a517fd">micro_os_plus::micro_test_plus::reporter_human::reporter_human</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a9e29142142a2a667e76e3670ba065b37">micro_os_plus::micro_test_plus::reporter_tap::reporter_tap</a>, <a href="#a0a288fd4578c4879872ecdfc3349bf2d">operator&lt;&lt;</a>, <a href="#a5bc1b012e5817563a4d699b2145ec077">operator&lt;&lt;</a>, <a href="#afb205af933ef6b71f23a6943ad6bd628">operator&lt;&lt;</a>, <a href="#a50dfefe3259b5eb3baa432a11a06100d">operator&lt;&lt;</a>, <a href="#a56edd7e04a4080a56542d999368b0fd4">operator&lt;&lt;</a>, <a href="#adf525408b74186615bd6863087ac4f44">operator&lt;&lt;</a>, <a href="#a94f8eff9fcb76a192b30e1d834dceed6">operator&lt;&lt;</a>, <a href="#a1fc511dc8d94b1e89f5c5bbe1e9e9bbe">operator&lt;&lt;</a>, <a href="#a5617d861c48049189b6b33e36626763a">operator&lt;&lt;</a>, <a href="#aee38736d82b6ca9eb287796fc1296c49">operator&lt;&lt;</a>, <a href="#acb9b836bf8aebde7ce043c237ad29dac">operator&lt;&lt;</a>, <a href="#a59db110b4b64dbd3568d44b843fcdbb4">operator&lt;&lt;</a>, <a href="#acfd5afd6cd385e4994a188d248bf91f8">operator&lt;&lt;</a>, <a href="#afcadab7426f75555d3589f5c93e6e94a">operator&lt;&lt;</a>, <a href="#acfe9bdb0f3bee7cc5ab3836dc2e17d08">operator&lt;&lt;</a>, <a href="#a330aa7e22a4efc710fe866e1bda6fc4c">operator&lt;&lt;</a>, <a href="#a697a4dcb95f65634253f44946d06c81a">operator&lt;&lt;</a>, <a href="#a3a7538024d14a727640a789c6d6b8058">operator&lt;&lt;</a>, <a href="#a602622b74c12f7bf045b14fe7aac82b1">operator&lt;&lt;</a>, <a href="#ad3fe4f54681f8f58d906dd3d625dec9f">operator&lt;&lt;</a>, <a href="#a28826ad63a1c66a694c578049922d700">operator&lt;&lt;</a>, <a href="#a351c8d961df0c7d9ce438e9e292680da">operator&lt;&lt;</a>, <a href="#ae9edf407c69fc6933ceb889c105eace2">operator&lt;&lt;</a>, <a href="#a68eabfc37788745aa4804dade0bbf8f6">operator&lt;&lt;</a>, <a href="#a2cc01b37d5506dd341fa73d4a08dd2ad">operator&lt;&lt;</a>, <a href="#a0964f2a781d6f48ec65d6f3aed66a8e0">operator&lt;&lt;</a>, <a href="#a0699f03871f8c5f906a07bf32505cbd7">operator&lt;&lt;</a>, <a href="#ad7a2cc6446e65cf9034f85c93efb3945">operator&lt;&lt;</a>, <a href="#a0acf1be4a7b9738dd2d3b9748e32d872">operator&lt;&lt;</a>, <a href="#a550817349fa323d0c7b4c11a7948267e">operator&lt;&lt;</a>, <a href="#ab422a082e0107b7f98a1d2c826595cf9">operator&lt;&lt;</a>, <a href="#a54dfaed92e9a9122e0bfa1e9fb489365">operator&lt;&lt;</a>, <a href="#af403303bf0d2d0e9f729d2461fc6bb91">operator&lt;&lt;</a> and <a href="#aeb9ea0be472dff38345b1271881b6820">operator&lt;&lt;</a>.</p>
 
 </div>
 </div>
@@ -1566,14 +1566,14 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 
 <div class="doxyCodeLine"><span class="doxyLineNumber">381</span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ad7a2cc6446e65cf9034f85c93efb3945">reporter::operator&lt;&lt;</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/and-">detail::and_&lt;Lhs_T, Rhs_T&gt;</a>&amp; op)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">382</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">383</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> (*</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight"> &lt;&lt; </span><span class="doxyHighlightCharLiteral">'('</span><span class="doxyHighlight"> &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/and-/#aad8256dcf3cddf9a83eda4879d550695">lhs</a> () &lt;&lt; <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a> (op) &lt;&lt; </span><span class="doxyHighlightStringLiteral">" and "</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">384</span><span class="doxyLineContent"><span class="doxyHighlight">                  &lt;&lt; <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>.none &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/and-/#a1983beb930b5dd5d463833c222352422">rhs</a> () &lt;&lt; </span><span class="doxyHighlightCharLiteral">')'</span><span class="doxyHighlight">);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">383</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> (*</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight"> &lt;&lt; </span><span class="doxyHighlightCharLiteral">'('</span><span class="doxyHighlight"> &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#a503196c2296449a52b6f7995d4a647f5">lhs</a> () &lt;&lt; <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a> (op) &lt;&lt; </span><span class="doxyHighlightStringLiteral">" and "</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">384</span><span class="doxyLineContent"><span class="doxyHighlight">                  &lt;&lt; <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>.none &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#adfe5734554daf4e5793f0708f3121284">rhs</a> () &lt;&lt; </span><span class="doxyHighlightCharLiteral">')'</span><span class="doxyHighlight">);</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">385</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>References <a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a>, <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a>, <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>, <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/and-/#aad8256dcf3cddf9a83eda4879d550695">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::lhs</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/and-/#a1983beb930b5dd5d463833c222352422">micro_os_plus::micro_test_plus::detail::and_&lt; Lhs_T, Rhs_T &gt;::rhs</a>.</p>
+<p>References <a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a>, <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a>, <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>, <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#a503196c2296449a52b6f7995d4a647f5">micro_os_plus::micro_test_plus::detail::binary_op_&lt; Lhs_T, Rhs_T &gt;::lhs</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#adfe5734554daf4e5793f0708f3121284">micro_os_plus::micro_test_plus::detail::binary_op_&lt; Lhs_T, Rhs_T &gt;::rhs</a>.</p>
 
 </div>
 </div>
@@ -1647,14 +1647,14 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 
 <div class="doxyCodeLine"><span class="doxyLineNumber">260</span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ad7a2cc6446e65cf9034f85c93efb3945">reporter::operator&lt;&lt;</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-">detail::eq_&lt;Lhs_T, Rhs_T&gt;</a>&amp; op)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">261</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">262</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> (*</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight"> &lt;&lt; <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a> (op) &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-/#a94c9f6919d84eba1763de39f7624c34a">lhs</a> () &lt;&lt; </span><span class="doxyHighlightStringLiteral">" == "</span><span class="doxyHighlight"> &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-/#a5399e6059752043a3a5db6d35ec1a3e2">rhs</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">262</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> (*</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight"> &lt;&lt; <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a> (op) &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#a503196c2296449a52b6f7995d4a647f5">lhs</a> () &lt;&lt; </span><span class="doxyHighlightStringLiteral">" == "</span><span class="doxyHighlight"> &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#adfe5734554daf4e5793f0708f3121284">rhs</a> ()</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">263</span><span class="doxyLineContent"><span class="doxyHighlight">                  &lt;&lt; <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>.none);</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">264</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>References <a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a>, <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a>, <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>, <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-/#a94c9f6919d84eba1763de39f7624c34a">micro_os_plus::micro_test_plus::detail::eq_&lt; Lhs_T, Rhs_T &gt;::lhs</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-/#a5399e6059752043a3a5db6d35ec1a3e2">micro_os_plus::micro_test_plus::detail::eq_&lt; Lhs_T, Rhs_T &gt;::rhs</a>.</p>
+<p>References <a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a>, <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a>, <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>, <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#a503196c2296449a52b6f7995d4a647f5">micro_os_plus::micro_test_plus::detail::binary_op_&lt; Lhs_T, Rhs_T &gt;::lhs</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#adfe5734554daf4e5793f0708f3121284">micro_os_plus::micro_test_plus::detail::binary_op_&lt; Lhs_T, Rhs_T &gt;::rhs</a>.</p>
 
 </div>
 </div>
@@ -1728,14 +1728,14 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 
 <div class="doxyCodeLine"><span class="doxyLineNumber">321</span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ad7a2cc6446e65cf9034f85c93efb3945">reporter::operator&lt;&lt;</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ge-">detail::ge_&lt;Lhs_T, Rhs_T&gt;</a>&amp; op)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">322</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">323</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> (*</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight"> &lt;&lt; <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a> (op) &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ge-/#ae541f34511a2005eb12af8dda905e497">lhs</a> () &lt;&lt; </span><span class="doxyHighlightStringLiteral">" &gt;= "</span><span class="doxyHighlight"> &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ge-/#a4ff1ed92d8ed883866127c3fcab9c9f5">rhs</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">323</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> (*</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight"> &lt;&lt; <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a> (op) &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#a503196c2296449a52b6f7995d4a647f5">lhs</a> () &lt;&lt; </span><span class="doxyHighlightStringLiteral">" &gt;= "</span><span class="doxyHighlight"> &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#adfe5734554daf4e5793f0708f3121284">rhs</a> ()</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">324</span><span class="doxyLineContent"><span class="doxyHighlight">                  &lt;&lt; <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>.none);</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">325</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>References <a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a>, <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a>, <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>, <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ge-/#ae541f34511a2005eb12af8dda905e497">micro_os_plus::micro_test_plus::detail::ge_&lt; Lhs_T, Rhs_T &gt;::lhs</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ge-/#a4ff1ed92d8ed883866127c3fcab9c9f5">micro_os_plus::micro_test_plus::detail::ge_&lt; Lhs_T, Rhs_T &gt;::rhs</a>.</p>
+<p>References <a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a>, <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a>, <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>, <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#a503196c2296449a52b6f7995d4a647f5">micro_os_plus::micro_test_plus::detail::binary_op_&lt; Lhs_T, Rhs_T &gt;::lhs</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#adfe5734554daf4e5793f0708f3121284">micro_os_plus::micro_test_plus::detail::binary_op_&lt; Lhs_T, Rhs_T &gt;::rhs</a>.</p>
 
 </div>
 </div>
@@ -1809,14 +1809,14 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 
 <div class="doxyCodeLine"><span class="doxyLineNumber">300</span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ad7a2cc6446e65cf9034f85c93efb3945">reporter::operator&lt;&lt;</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/gt-">detail::gt_&lt;Lhs_T, Rhs_T&gt;</a>&amp; op)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">301</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">302</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> (*</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight"> &lt;&lt; <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a> (op) &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/gt-/#a47cce8ae50c6613355157d57f2f96d36">lhs</a> () &lt;&lt; </span><span class="doxyHighlightStringLiteral">" &gt; "</span><span class="doxyHighlight"> &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/gt-/#a6f7f79fc0225f471f801f27367586395">rhs</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">302</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> (*</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight"> &lt;&lt; <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a> (op) &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#a503196c2296449a52b6f7995d4a647f5">lhs</a> () &lt;&lt; </span><span class="doxyHighlightStringLiteral">" &gt; "</span><span class="doxyHighlight"> &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#adfe5734554daf4e5793f0708f3121284">rhs</a> ()</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">303</span><span class="doxyLineContent"><span class="doxyHighlight">                  &lt;&lt; <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>.none);</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">304</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>References <a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a>, <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a>, <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>, <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/gt-/#a47cce8ae50c6613355157d57f2f96d36">micro_os_plus::micro_test_plus::detail::gt_&lt; Lhs_T, Rhs_T &gt;::lhs</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/gt-/#a6f7f79fc0225f471f801f27367586395">micro_os_plus::micro_test_plus::detail::gt_&lt; Lhs_T, Rhs_T &gt;::rhs</a>.</p>
+<p>References <a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a>, <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a>, <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>, <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#a503196c2296449a52b6f7995d4a647f5">micro_os_plus::micro_test_plus::detail::binary_op_&lt; Lhs_T, Rhs_T &gt;::lhs</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#adfe5734554daf4e5793f0708f3121284">micro_os_plus::micro_test_plus::detail::binary_op_&lt; Lhs_T, Rhs_T &gt;::rhs</a>.</p>
 
 </div>
 </div>
@@ -1890,14 +1890,14 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 
 <div class="doxyCodeLine"><span class="doxyLineNumber">361</span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ad7a2cc6446e65cf9034f85c93efb3945">reporter::operator&lt;&lt;</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/le-">detail::le_&lt;Rhs_T, Lhs_T&gt;</a>&amp; op)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">362</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">363</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> (*</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight"> &lt;&lt; <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a> (op) &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/le-/#afa0ff05a441550959f86b078e457f856">lhs</a> () &lt;&lt; </span><span class="doxyHighlightStringLiteral">" &lt;= "</span><span class="doxyHighlight"> &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/le-/#a01d7b63048ab7ccab1c2d669272bf6ef">rhs</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">363</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> (*</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight"> &lt;&lt; <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a> (op) &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#a503196c2296449a52b6f7995d4a647f5">lhs</a> () &lt;&lt; </span><span class="doxyHighlightStringLiteral">" &lt;= "</span><span class="doxyHighlight"> &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#adfe5734554daf4e5793f0708f3121284">rhs</a> ()</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">364</span><span class="doxyLineContent"><span class="doxyHighlight">                  &lt;&lt; <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>.none);</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">365</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>References <a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a>, <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a>, <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>, <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/le-/#afa0ff05a441550959f86b078e457f856">micro_os_plus::micro_test_plus::detail::le_&lt; Lhs_T, Rhs_T &gt;::lhs</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/le-/#a01d7b63048ab7ccab1c2d669272bf6ef">micro_os_plus::micro_test_plus::detail::le_&lt; Lhs_T, Rhs_T &gt;::rhs</a>.</p>
+<p>References <a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a>, <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a>, <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>, <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#a503196c2296449a52b6f7995d4a647f5">micro_os_plus::micro_test_plus::detail::binary_op_&lt; Lhs_T, Rhs_T &gt;::lhs</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#adfe5734554daf4e5793f0708f3121284">micro_os_plus::micro_test_plus::detail::binary_op_&lt; Lhs_T, Rhs_T &gt;::rhs</a>.</p>
 
 </div>
 </div>
@@ -1971,14 +1971,14 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 
 <div class="doxyCodeLine"><span class="doxyLineNumber">340</span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ad7a2cc6446e65cf9034f85c93efb3945">reporter::operator&lt;&lt;</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/lt-">detail::lt_&lt;Rhs_T, Lhs_T&gt;</a>&amp; op)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">341</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">342</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> (*</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight"> &lt;&lt; <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a> (op) &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/lt-/#a86329a6da9b505f1c11108ff4155f1f2">lhs</a> () &lt;&lt; </span><span class="doxyHighlightStringLiteral">" &lt; "</span><span class="doxyHighlight"> &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/lt-/#ab2c485c148f49633dbd5ceecdc361947">rhs</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">342</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> (*</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight"> &lt;&lt; <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a> (op) &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#a503196c2296449a52b6f7995d4a647f5">lhs</a> () &lt;&lt; </span><span class="doxyHighlightStringLiteral">" &lt; "</span><span class="doxyHighlight"> &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#adfe5734554daf4e5793f0708f3121284">rhs</a> ()</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">343</span><span class="doxyLineContent"><span class="doxyHighlight">                  &lt;&lt; <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>.none);</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">344</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>References <a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a>, <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a>, <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>, <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/lt-/#a86329a6da9b505f1c11108ff4155f1f2">micro_os_plus::micro_test_plus::detail::lt_&lt; Lhs_T, Rhs_T &gt;::lhs</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/lt-/#ab2c485c148f49633dbd5ceecdc361947">micro_os_plus::micro_test_plus::detail::lt_&lt; Lhs_T, Rhs_T &gt;::rhs</a>.</p>
+<p>References <a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a>, <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a>, <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>, <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#a503196c2296449a52b6f7995d4a647f5">micro_os_plus::micro_test_plus::detail::binary_op_&lt; Lhs_T, Rhs_T &gt;::lhs</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#adfe5734554daf4e5793f0708f3121284">micro_os_plus::micro_test_plus::detail::binary_op_&lt; Lhs_T, Rhs_T &gt;::rhs</a>.</p>
 
 </div>
 </div>
@@ -2052,14 +2052,14 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 
 <div class="doxyCodeLine"><span class="doxyLineNumber">280</span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ad7a2cc6446e65cf9034f85c93efb3945">reporter::operator&lt;&lt;</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-">detail::ne_&lt;Lhs_T, Rhs_T&gt;</a>&amp; op)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">281</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">282</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> (*</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight"> &lt;&lt; <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a> (op) &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-/#aab1827128a987da4c198b7f3e359c7e3">lhs</a> () &lt;&lt; </span><span class="doxyHighlightStringLiteral">" != "</span><span class="doxyHighlight"> &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-/#a8972754d2f78a43e0f6d32f08fec9552">rhs</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">282</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> (*</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight"> &lt;&lt; <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a> (op) &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#a503196c2296449a52b6f7995d4a647f5">lhs</a> () &lt;&lt; </span><span class="doxyHighlightStringLiteral">" != "</span><span class="doxyHighlight"> &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#adfe5734554daf4e5793f0708f3121284">rhs</a> ()</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">283</span><span class="doxyLineContent"><span class="doxyHighlight">                  &lt;&lt; <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>.none);</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">284</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>References <a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a>, <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a>, <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>, <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-/#aab1827128a987da4c198b7f3e359c7e3">micro_os_plus::micro_test_plus::detail::ne_&lt; Lhs_T, Rhs_T &gt;::lhs</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-/#a8972754d2f78a43e0f6d32f08fec9552">micro_os_plus::micro_test_plus::detail::ne_&lt; Lhs_T, Rhs_T &gt;::rhs</a>.</p>
+<p>References <a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a>, <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a>, <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>, <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#a503196c2296449a52b6f7995d4a647f5">micro_os_plus::micro_test_plus::detail::binary_op_&lt; Lhs_T, Rhs_T &gt;::lhs</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#adfe5734554daf4e5793f0708f3121284">micro_os_plus::micro_test_plus::detail::binary_op_&lt; Lhs_T, Rhs_T &gt;::rhs</a>.</p>
 
 </div>
 </div>
@@ -2126,13 +2126,13 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 
 <div class="doxyCodeLine"><span class="doxyLineNumber">417</span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ad7a2cc6446e65cf9034f85c93efb3945">reporter::operator&lt;&lt;</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/not-">detail::not_&lt;T&gt;</a>&amp; op)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">418</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">419</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> (*</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight"> &lt;&lt; <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a> (op) &lt;&lt; </span><span class="doxyHighlightStringLiteral">"not "</span><span class="doxyHighlight"> &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/not-/#a2b93dccea00b189c2af9c765933788b1">operand</a> () &lt;&lt; <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>.none);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">419</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> (*</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight"> &lt;&lt; <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a> (op) &lt;&lt; </span><span class="doxyHighlightStringLiteral">"not "</span><span class="doxyHighlight"> &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a6dad81524f4cc61c26a91d28aafdd8b0">operand</a> () &lt;&lt; <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>.none);</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">420</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>References <a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a>, <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a>, <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/not-/#a2b93dccea00b189c2af9c765933788b1">micro_os_plus::micro_test_plus::detail::not_&lt; T &gt;::operand</a>.</p>
+<p>References <a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a>, <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a>, <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-/#a6dad81524f4cc61c26a91d28aafdd8b0">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::operand</a>.</p>
 
 </div>
 </div>
@@ -2282,8 +2282,8 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 
 <div class="doxyCodeLine"><span class="doxyLineNumber">401</span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ad7a2cc6446e65cf9034f85c93efb3945">reporter::operator&lt;&lt;</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/or-">detail::or_&lt;Lhs_T, Rhs_T&gt;</a>&amp; op)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">402</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a0acf1be4a7b9738dd2d3b9748e32d872">403</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> (*</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight"> &lt;&lt; </span><span class="doxyHighlightCharLiteral">'('</span><span class="doxyHighlight"> &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/or-/#ade57fa3ad2c060e1606858f7363a78fb">lhs</a> () &lt;&lt; <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a> (op) &lt;&lt; </span><span class="doxyHighlightStringLiteral">" or "</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">404</span><span class="doxyLineContent"><span class="doxyHighlight">                  &lt;&lt; <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>.none &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/or-/#ad20450caccc16905bb9ec2b6852dbe15">rhs</a> () &lt;&lt; </span><span class="doxyHighlightCharLiteral">')'</span><span class="doxyHighlight">);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a0acf1be4a7b9738dd2d3b9748e32d872">403</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> (*</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight"> &lt;&lt; </span><span class="doxyHighlightCharLiteral">'('</span><span class="doxyHighlight"> &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#a503196c2296449a52b6f7995d4a647f5">lhs</a> () &lt;&lt; <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a> (op) &lt;&lt; </span><span class="doxyHighlightStringLiteral">" or "</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">404</span><span class="doxyLineContent"><span class="doxyHighlight">                  &lt;&lt; <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>.none &lt;&lt; op.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#adfe5734554daf4e5793f0708f3121284">rhs</a> () &lt;&lt; </span><span class="doxyHighlightCharLiteral">')'</span><span class="doxyHighlight">);</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">405</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
@@ -2452,7 +2452,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </div>
 </div>
 
-### operator&lt;&lt;() {#aad5806b3dda95d6a6a30b9b27cc68d81}
+### operator&lt;&lt;() {#a330aa7e22a4efc710fe866e1bda6fc4c}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2504,10 +2504,10 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload enables the <span class="doxyComputerOutput">reporter</span> to output any type that is supported by the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a0c9d0a57b84d040bb1dcedd9d7130825">detail::get</a></span> mechanism, ensuring consistent formatting and extensibility.</p>
+<p>This operator overload enables the <span class="doxyComputerOutput">reporter</span> to output any type that is supported by the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">detail::get</a></span> mechanism, ensuring consistent formatting and extensibility.</p>
 
 
-<p>By delegating to <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a0c9d0a57b84d040bb1dcedd9d7130825">detail::get</a></span>, the operator allows for custom formatting and extraction of values, supporting a wide range of types including user-defined and framework-specific types. The resulting value is then forwarded to the appropriate output handler, ensuring seamless integration into test reports and diagnostics.</p>
+<p>By delegating to <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">detail::get</a></span>, the operator allows for custom formatting and extraction of values, supporting a wide range of types including user-defined and framework-specific types. The resulting value is then forwarded to the appropriate output handler, ensuring seamless integration into test reports and diagnostics.</p>
 
 
 <p>This approach promotes flexibility and maintainability, allowing new types to be supported with minimal changes to the reporting infrastructure.</p>
@@ -2529,14 +2529,14 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 
 <div class="doxyCodeLine"><span class="doxyLineNumber">189</span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ad7a2cc6446e65cf9034f85c93efb3945">reporter::operator&lt;&lt;</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; t)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">190</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">191</span><span class="doxyLineContent"><span class="doxyHighlight">    *</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight"> &lt;&lt; <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a0c9d0a57b84d040bb1dcedd9d7130825">detail::get</a> (t);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">191</span><span class="doxyLineContent"><span class="doxyHighlight">    *</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight"> &lt;&lt; <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">detail::get</a> (t);</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">192</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> *</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">193</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>References <a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> and <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a0c9d0a57b84d040bb1dcedd9d7130825">micro_os_plus::micro_test_plus::detail::get</a>.</p>
+<p>References <a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> and <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">micro_os_plus::micro_test_plus::detail::get</a>.</p>
 
 </div>
 </div>
@@ -2669,14 +2669,14 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 
 <div class="doxyCodeLine"><span class="doxyLineNumber">211</span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ad7a2cc6446e65cf9034f85c93efb3945">reporter::operator&lt;&lt;</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value">type_traits::genuine_integral_value&lt;T&gt;</a>&amp; v)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">212</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">213</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a4a1d9fe32165b779cf7b9f97fbb63564">append_number_</a> (<a href="#a6eed4eaebea91b3377b89a118eb1c323">buffer_</a>, </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (v.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#ab2f53c63e86a887bccbadf0b7dbb8b4b">get</a> ()));</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">213</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a4a1d9fe32165b779cf7b9f97fbb63564">append_number_</a> (<a href="#a6eed4eaebea91b3377b89a118eb1c323">buffer_</a>, </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (v.<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-/#aedc41334c71b7711435aee0cb8f44fb3">get</a> ()));</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">214</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> *</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">215</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>References <a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a>, <a href="#a4a1d9fe32165b779cf7b9f97fbb63564">append_number_</a>, <a href="#a6eed4eaebea91b3377b89a118eb1c323">buffer_</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value/#ab2f53c63e86a887bccbadf0b7dbb8b4b">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt; T &gt;::get</a>.</p>
+<p>References <a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a>, <a href="#a4a1d9fe32165b779cf7b9f97fbb63564">append_number_</a>, <a href="#a6eed4eaebea91b3377b89a118eb1c323">buffer_</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-/#aedc41334c71b7711435aee0cb8f44fb3">micro_os_plus::micro_test_plus::type_traits::value_base_&lt; T &gt;::get</a>.</p>
 
 </div>
 </div>
@@ -3898,7 +3898,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00719">719</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runnable-base/#a08921ea05d769a210cfec4326f1505a9">micro_os_plus::micro_test_plus::runnable&lt; subtest &gt;::abort</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-suite/#a4ab3277887dfc4cd8ae84bb4101eae60">micro_os_plus::micro_test_plus::static_suite::run</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-suite/#a4ab3277887dfc4cd8ae84bb4101eae60">micro_os_plus::micro_test_plus::static_suite::run</a>.</p>
 
 </div>
 </div>
@@ -4033,7 +4033,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00729">729</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
-<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runnable-base/#a08921ea05d769a210cfec4326f1505a9">micro_os_plus::micro_test_plus::runnable&lt; subtest &gt;::abort</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-suite/#a4ab3277887dfc4cd8ae84bb4101eae60">micro_os_plus::micro_test_plus::static_suite::run</a>.</p>
+<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-suite/#a4ab3277887dfc4cd8ae84bb4101eae60">micro_os_plus::micro_test_plus::static_suite::run</a>.</p>
 
 </div>
 </div>
@@ -4387,7 +4387,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </div>
 </div>
 
-### verbosity() {#a7685b625fb0bcc71279c07f45c82c0ac}
+### verbosity() {#a24da76a8973a5aebca9ef7604740180c}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -4396,7 +4396,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">verbosity_t micro_os_plus::micro_test_plus::reporter::verbosity ()</td>
+<td class="doxyMemberName">micro_test_plus::verbosity micro_os_plus::micro_test_plus::reporter::verbosity ()</td>
 </tr>
 </table>
 </td>
@@ -4421,7 +4421,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>The active <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a0bbf0517c0f64f25e40b591ecb969a6e">verbosity_t</a></span> value.</p></dd>
+<dd><p>The active <span class="doxyComputerOutput">verbosity</span> value.</p></dd>
 </dl>
 
 
@@ -4430,15 +4430,18 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a7685b625fb0bcc71279c07f45c82c0ac">773</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a7685b625fb0bcc71279c07f45c82c0ac">verbosity</a> ()</span><span class="doxyHighlightKeyword"> const</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">774</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">    </span><span class="doxyHighlight">{</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">775</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a5ce1c7861221c0b662dfb5a30b8474f3">verbosity_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a24da76a8973a5aebca9ef7604740180c">773</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a24da76a8973a5aebca9ef7604740180c">verbosity</a> () const -&gt; <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_test_plus</a>::<a href="#a24da76a8973a5aebca9ef7604740180c">verbosity</a></span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">774</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">775</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#aea922774c24ce8337d734fa457896595">verbosity_</a>;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">776</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="#a5ce1c7861221c0b662dfb5a30b8474f3">verbosity_</a>.</p>
+<p>References <a href="#a24da76a8973a5aebca9ef7604740180c">verbosity</a> and <a href="#aea922774c24ce8337d734fa457896595">verbosity_</a>.</p>
+
+
+<p>Referenced by <a href="#a24da76a8973a5aebca9ef7604740180c">verbosity</a>.</p>
 
 </div>
 </div>
@@ -4930,8 +4933,8 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber">294</span><span class="doxyLineContent"><span class="doxyHighlight">          fprintf (<a href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a>, </span><span class="doxyHighlightStringLiteral">"%s"</span><span class="doxyHighlight">, line.c_str ());</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">295</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">296</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) &amp;&amp; defined(MICRO_OS_PLUS_TRACE))</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">297</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (<a href="#a5ce1c7861221c0b662dfb5a30b8474f3">verbosity_</a> == <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">verbosity::normal</a></span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">298</span><span class="doxyLineContent"><span class="doxyHighlight">            || <a href="#a5ce1c7861221c0b662dfb5a30b8474f3">verbosity_</a> == <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbosity::verbose</a>)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">297</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (<a href="#aea922774c24ce8337d734fa457896595">verbosity_</a> == <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">verbosity::normal</a></span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">298</span><span class="doxyLineContent"><span class="doxyHighlight">            || <a href="#aea922774c24ce8337d734fa457896595">verbosity_</a> == <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbosity::verbose</a>)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">299</span><span class="doxyLineContent"><span class="doxyHighlight">          printf (</span><span class="doxyHighlightStringLiteral">"%s"</span><span class="doxyHighlight">, line.c_str ());</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">300</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a0964f2a781d6f48ec65d6f3aed66a8e0">301</a></span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
@@ -4982,7 +4985,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#af403303bf0d2d0e9f729d2461fc6bb91">346</a></span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">347</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">348</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) &amp;&amp; defined(MICRO_OS_PLUS_TRACE))</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">349</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (<a href="#a5ce1c7861221c0b662dfb5a30b8474f3">verbosity_</a> == <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">verbosity::normal</a> || <a href="#a5ce1c7861221c0b662dfb5a30b8474f3">verbosity_</a> == <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbosity::verbose</a>)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">349</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (<a href="#aea922774c24ce8337d734fa457896595">verbosity_</a> == <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">verbosity::normal</a> || <a href="#aea922774c24ce8337d734fa457896595">verbosity_</a> == <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbosity::verbose</a>)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">350</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">351</span><span class="doxyLineContent"><span class="doxyHighlight">          printf (</span><span class="doxyHighlightStringLiteral">"%s\n"</span><span class="doxyHighlight">, line.c_str ());</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">352</span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
@@ -5259,7 +5262,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </div>
 </div>
 
-### verbosity\_ {#a5ce1c7861221c0b662dfb5a30b8474f3}
+### verbosity\_ {#aea922774c24ce8337d734fa457896595}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -5268,7 +5271,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">verbosity_t micro_os_plus::micro_test_plus::reporter::verbosity_ { <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">verbosity::normal</a> }</td>
+<td class="doxyMemberName">enum verbosity micro_os_plus::micro_test_plus::reporter::verbosity_ = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">verbosity::normal</a></td>
 </tr>
 </table>
 </td>
@@ -5289,12 +5292,12 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a5ce1c7861221c0b662dfb5a30b8474f3">881</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a0bbf0517c0f64f25e40b591ecb969a6e">verbosity_t</a> <a href="#a5ce1c7861221c0b662dfb5a30b8474f3">verbosity_</a>{ <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">verbosity::normal</a> };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aea922774c24ce8337d734fa457896595">881</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">enum</span><span class="doxyHighlight"> <a href="#a24da76a8973a5aebca9ef7604740180c">verbosity</a> <a href="#aea922774c24ce8337d734fa457896595">verbosity_</a> = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">verbosity::normal</a>;</span></span></div>
 
 </div>
 
 
-<p>Referenced by <a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#aa61862bc406bf1251324b5ebdabcfca0">micro_os_plus::micro_test_plus::reporter_human::begin_session</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a05627cdee9d67cbb0f30dc3cb9fe426f">micro_os_plus::micro_test_plus::reporter_tap::begin_session</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a59da3337bb7a2d1bc89406f548131d00">micro_os_plus::micro_test_plus::reporter_human::begin_subtest</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a27a5c6eca6a4beb82466448bfe5c44e9">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a172a7a10a5aa2bd47dc6e7dde903cbbd">micro_os_plus::micro_test_plus::reporter_human::begin_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#ae118be849ab3ff75ab88ff4f54f54be0">micro_os_plus::micro_test_plus::reporter_tap::begin_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a3118ff89506858505f18e8fd368baffc">micro_os_plus::micro_test_plus::reporter_human::end_session</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a9a224d34b068e1698c00633ae2341e7f">micro_os_plus::micro_test_plus::reporter_tap::end_session</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a052138e5f517b578df99204c8d88213e">micro_os_plus::micro_test_plus::reporter_human::end_subtest</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a79c7928d44d70b8fe5bf993775517e63">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#ac0a6d2bda91a9afa71346eef59c7f35e">micro_os_plus::micro_test_plus::reporter_human::end_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a8649b62ba8f7ff88501450c5f939ab6d">micro_os_plus::micro_test_plus::reporter_tap::end_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a550817349fa323d0c7b4c11a7948267e">micro_os_plus::micro_test_plus::reporter_human::operator&lt;&lt;</a> and <a href="#a7685b625fb0bcc71279c07f45c82c0ac">verbosity</a>.</p>
+<p>Referenced by <a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#aa61862bc406bf1251324b5ebdabcfca0">micro_os_plus::micro_test_plus::reporter_human::begin_session</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a05627cdee9d67cbb0f30dc3cb9fe426f">micro_os_plus::micro_test_plus::reporter_tap::begin_session</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a59da3337bb7a2d1bc89406f548131d00">micro_os_plus::micro_test_plus::reporter_human::begin_subtest</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a27a5c6eca6a4beb82466448bfe5c44e9">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a172a7a10a5aa2bd47dc6e7dde903cbbd">micro_os_plus::micro_test_plus::reporter_human::begin_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#ae118be849ab3ff75ab88ff4f54f54be0">micro_os_plus::micro_test_plus::reporter_tap::begin_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a3118ff89506858505f18e8fd368baffc">micro_os_plus::micro_test_plus::reporter_human::end_session</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a9a224d34b068e1698c00633ae2341e7f">micro_os_plus::micro_test_plus::reporter_tap::end_session</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a052138e5f517b578df99204c8d88213e">micro_os_plus::micro_test_plus::reporter_human::end_subtest</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a79c7928d44d70b8fe5bf993775517e63">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#ac0a6d2bda91a9afa71346eef59c7f35e">micro_os_plus::micro_test_plus::reporter_human::end_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#a8649b62ba8f7ff88501450c5f939ab6d">micro_os_plus::micro_test_plus::reporter_tap::end_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a550817349fa323d0c7b4c11a7948267e">micro_os_plus::micro_test_plus::reporter_human::operator&lt;&lt;</a> and <a href="#a24da76a8973a5aebca9ef7604740180c">verbosity</a>.</p>
 
 </div>
 </div>
@@ -5428,6 +5431,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.0.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 
 </div>

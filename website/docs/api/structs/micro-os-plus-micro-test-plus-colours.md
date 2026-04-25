@@ -41,7 +41,7 @@ struct micro_os_plus::micro_test_plus::colours { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Red colour. <a href="#aa4d4feecd7e50ea77d1dbf1be952103c">More...</a></p>
+<p>Terminal colour sequence for failing tests. <a href="#aa4d4feecd7e50ea77d1dbf1be952103c">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -55,7 +55,7 @@ struct micro_os_plus::micro_test_plus::colours { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Default colour. <a href="#a41c8c508e9353cee2b9823bbe9d1fea3">More...</a></p>
+<p>Terminal colour reset sequence. <a href="#a41c8c508e9353cee2b9823bbe9d1fea3">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -69,7 +69,7 @@ struct micro_os_plus::micro_test_plus::colours { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Green colour. <a href="#af9cb49c94f9bc38794c500a7f5d1c7bc">More...</a></p>
+<p>Terminal colour sequence for passing tests. <a href="#af9cb49c94f9bc38794c500a7f5d1c7bc">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -114,18 +114,18 @@ struct micro_os_plus::micro_test_plus::colours { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>Red colour.</p>
+<p>Terminal colour sequence for failing tests.</p>
 
 
 <p>ANSI escape sequence to set the terminal colour for failing results (red).</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00113">113</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00114">114</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aa4d4feecd7e50ea77d1dbf1be952103c">113</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* <a href="#aa4d4feecd7e50ea77d1dbf1be952103c">fail</a> = </span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight">; </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">115</span><span class="doxyLineContent"><span class="doxyHighlight">        = </span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight">; </span></span></div>
 
 </div>
 
@@ -150,7 +150,7 @@ struct micro_os_plus::micro_test_plus::colours { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>Default colour.</p>
+<p>Terminal colour reset sequence.</p>
 
 
 <p>ANSI escape sequence to reset the terminal colour to default.</p>
@@ -186,7 +186,7 @@ struct micro_os_plus::micro_test_plus::colours { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>Green colour.</p>
+<p>Terminal colour sequence for passing tests.</p>
 
 
 <p>ANSI escape sequence to set the terminal colour for passing results (green).</p>
@@ -197,7 +197,7 @@ struct micro_os_plus::micro_test_plus::colours { ... }
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#af9cb49c94f9bc38794c500a7f5d1c7bc">112</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* <a href="#af9cb49c94f9bc38794c500a7f5d1c7bc">pass</a> = </span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight">; </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">113</span><span class="doxyLineContent"><span class="doxyHighlight">        = </span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight">; </span></span></div>
 
 </div>
 
@@ -216,6 +216,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.0.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 
 </div>

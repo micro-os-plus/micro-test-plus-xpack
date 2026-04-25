@@ -401,22 +401,9 @@ namespace micro_os_plus::micro_test_plus { ... }
 
 </table>
 
-## Typedefs Index
+## Concepts Index
 
 <table class="doxyMembersIndex">
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a0bbf0517c0f64f25e40b591ecb969a6e">verbosity_t</a> = <a href="#a809871d76f29309ed9c6fbd96d5a914b">verbosity</a></td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
 
 </table>
 
@@ -1504,44 +1491,6 @@ namespace micro_os_plus::micro_test_plus { ... }
 
 <div class="doxySectionDef">
 
-## Typedefs
-
-### verbosity\_t {#a0bbf0517c0f64f25e40b591ecb969a6e}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::verbosity_t =  verbosity</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00145">145</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a0bbf0517c0f64f25e40b591ecb969a6e">145</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a0bbf0517c0f64f25e40b591ecb969a6e">verbosity_t</a> = <a href="#a809871d76f29309ed9c6fbd96d5a914b">verbosity</a>;</span></span></div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-
-<div class="doxySectionDef">
-
 ## Enumerations
 
 ### verbosity {#a809871d76f29309ed9c6fbd96d5a914b}
@@ -1605,17 +1554,17 @@ namespace micro_os_plus::micro_test_plus { ... }
 <p>Selecting an appropriate verbosity level enhances the usability of test reports, whether for concise summaries or comprehensive diagnostics.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00136">136</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00138">138</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber">137</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">138</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">silent</a> = 0, </span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">139</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">quiet</a> = 1, </span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">140</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">normal</a> = 2, </span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">141</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbose</a> = 3 </span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">143</span><span class="doxyLineContent"><span class="doxyHighlight">  };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">139</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">140</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">silent</a> = 0, </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">141</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">quiet</a> = 1, </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">142</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">normal</a> = 2, </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">143</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbose</a> = 3 </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">145</span><span class="doxyLineContent"><span class="doxyHighlight">  };</span></span></div>
 
 </div>
 
@@ -1798,16 +1747,16 @@ namespace micro_os_plus::micro_test_plus { ... }
 </dd>
 </dl>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00116">116</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00118">118</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#abb8182f972e436f09e25dc5b0dae05fd">116</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/colours">colours</a> <a href="#abb8182f972e436f09e25dc5b0dae05fd">colours_red_green</a> = {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">117</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightStringLiteral">"\033[0m"</span><span class="doxyHighlight">, </span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">118</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightStringLiteral">"\033[32m"</span><span class="doxyHighlight">, </span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">119</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightStringLiteral">"\033[31m"</span><span class="doxyHighlight"> </span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">120</span><span class="doxyLineContent"><span class="doxyHighlight">  };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#abb8182f972e436f09e25dc5b0dae05fd">118</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/colours">colours</a> <a href="#abb8182f972e436f09e25dc5b0dae05fd">colours_red_green</a> = {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">119</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightStringLiteral">"\033[0m"</span><span class="doxyHighlight">, </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">120</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightStringLiteral">"\033[32m"</span><span class="doxyHighlight">, </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">121</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightStringLiteral">"\033[31m"</span><span class="doxyHighlight"> </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">122</span><span class="doxyLineContent"><span class="doxyHighlight">  };</span></span></div>
 
 </div>
 
@@ -1871,6 +1820,6 @@ The documentation for this namespace was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.0.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 
 </div>

@@ -24,9 +24,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" line="203" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" bodystart="203" bodyend="-1"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1a8c4ce843acc48abf5c1f5303ba6947d3" compoundref="deferred-reporter-inlines_8h" startline="138" endline="150">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::deferred_reporter</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1aa221de23c9bed6bc5844c077fbafa46b" compoundref="deferred-reporter-inlines_8h" startline="165" endline="176">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::~deferred_reporter</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" line="202" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" bodystart="202" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1a8c4ce843acc48abf5c1f5303ba6947d3" compoundref="deferred-reporter-inlines_8h" startline="141" endline="153">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::deferred_reporter</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1aa221de23c9bed6bc5844c077fbafa46b" compoundref="deferred-reporter-inlines_8h" startline="168" endline="179">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::~deferred_reporter</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a3a8503e793c807cbb882033cc5ff2831" compoundref="deferred-reporter_8cpp" startline="89" endline="111">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::~deferred_reporter_base</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a0d4853e08c3106a270e951e56d876840" prot="protected" static="no" mutable="no">
@@ -43,9 +43,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" line="214" column="19" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" bodystart="214" bodyend="214"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1aa221de23c9bed6bc5844c077fbafa46b" compoundref="deferred-reporter-inlines_8h" startline="165" endline="176">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::~deferred_reporter</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aa4076e7682edfc8c3a818c3f7c0fcc0e" compoundref="deferred-reporter-inlines_8h" startline="93" endline="122">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::operator&lt;&lt;</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" line="213" column="19" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" bodystart="213" bodyend="213"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1aa221de23c9bed6bc5844c077fbafa46b" compoundref="deferred-reporter-inlines_8h" startline="168" endline="179">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::~deferred_reporter</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a25895cdf53098c97033b5c476cdd7702" compoundref="deferred-reporter-inlines_8h" startline="92" endline="125">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::operator&lt;&lt;</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1a9535950f3f91d792f4347d08f8dd154e" prot="protected" static="no" mutable="no">
         <type>const Expr_T</type>
@@ -61,9 +61,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" line="272" column="20" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" bodystart="272" bodyend="272"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1a8c4ce843acc48abf5c1f5303ba6947d3" compoundref="deferred-reporter-inlines_8h" startline="138" endline="150">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::deferred_reporter</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1aa221de23c9bed6bc5844c077fbafa46b" compoundref="deferred-reporter-inlines_8h" startline="165" endline="176">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::~deferred_reporter</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" line="271" column="20" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" bodystart="271" bodyend="271"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1a8c4ce843acc48abf5c1f5303ba6947d3" compoundref="deferred-reporter-inlines_8h" startline="141" endline="153">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::deferred_reporter</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1aa221de23c9bed6bc5844c077fbafa46b" compoundref="deferred-reporter-inlines_8h" startline="168" endline="179">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::~deferred_reporter</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a025498d9b9376056c56042cc98ed7afd" prot="protected" static="no" mutable="no">
         <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" kindref="compound">reflection::source_location</ref></type>
@@ -79,9 +79,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" line="208" column="41" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" bodystart="208" bodyend="208"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a7f73620cde46e24afc8dc5788dad50d0" compoundref="deferred-reporter_8cpp" startline="71" endline="79">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::deferred_reporter_base</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1aa221de23c9bed6bc5844c077fbafa46b" compoundref="deferred-reporter-inlines_8h" startline="165" endline="176">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::~deferred_reporter</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" line="207" column="41" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" bodystart="207" bodyend="207"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1abd34896d8d956db7223829bcbf9efb04" compoundref="deferred-reporter_8cpp" startline="71" endline="79">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::deferred_reporter_base</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1aa221de23c9bed6bc5844c077fbafa46b" compoundref="deferred-reporter-inlines_8h" startline="168" endline="179">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::~deferred_reporter</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a3a8503e793c807cbb882033cc5ff2831" compoundref="deferred-reporter_8cpp" startline="89" endline="111">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::~deferred_reporter_base</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aae23103bf1232549780c69911239b781" prot="protected" static="no" mutable="no">
@@ -97,9 +97,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" line="219" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" bodystart="219" bodyend="-1"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a7f73620cde46e24afc8dc5788dad50d0" compoundref="deferred-reporter_8cpp" startline="71" endline="79">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::deferred_reporter_base</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1aa221de23c9bed6bc5844c077fbafa46b" compoundref="deferred-reporter-inlines_8h" startline="165" endline="176">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::~deferred_reporter</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" line="218" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" bodystart="218" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1abd34896d8d956db7223829bcbf9efb04" compoundref="deferred-reporter_8cpp" startline="71" endline="79">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::deferred_reporter_base</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1aa221de23c9bed6bc5844c077fbafa46b" compoundref="deferred-reporter-inlines_8h" startline="168" endline="179">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::~deferred_reporter</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a3a8503e793c807cbb882033cc5ff2831" compoundref="deferred-reporter_8cpp" startline="89" endline="111">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::~deferred_reporter_base</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1af633053afa944173b47482786f9d9a7e" prot="protected" static="no" mutable="no">
@@ -116,11 +116,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" line="197" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" bodystart="197" bodyend="197"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a7f73620cde46e24afc8dc5788dad50d0" compoundref="deferred-reporter_8cpp" startline="71" endline="79">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::deferred_reporter_base</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1aa221de23c9bed6bc5844c077fbafa46b" compoundref="deferred-reporter-inlines_8h" startline="165" endline="176">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::~deferred_reporter</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" line="196" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" bodystart="196" bodyend="196"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1abd34896d8d956db7223829bcbf9efb04" compoundref="deferred-reporter_8cpp" startline="71" endline="79">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::deferred_reporter_base</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1aa221de23c9bed6bc5844c077fbafa46b" compoundref="deferred-reporter-inlines_8h" startline="168" endline="179">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::~deferred_reporter</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a3a8503e793c807cbb882033cc5ff2831" compoundref="deferred-reporter_8cpp" startline="89" endline="111">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::~deferred_reporter_base</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a0c0b059add8cbddb96e8f2fef8cba431" compoundref="deferred-reporter_8h" startline="188" endline="191">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::value</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a0c0b059add8cbddb96e8f2fef8cba431" compoundref="deferred-reporter_8h" startline="187" endline="190">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::value</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -189,10 +189,10 @@ Initialises the reporter with the given expression, abort status, and source loc
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" line="259" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deferred-reporter-inlines.h" bodystart="138" bodyend="150"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a7f73620cde46e24afc8dc5788dad50d0" compoundref="deferred-reporter_8cpp" startline="71" endline="79">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::deferred_reporter_base</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aa36fd4c36a94b04430599303e38a48bd" compoundref="deferred-reporter_8h" startline="203">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::abort_</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1a9535950f3f91d792f4347d08f8dd154e" compoundref="deferred-reporter_8h" startline="272" endline="272">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::expr_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" line="258" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deferred-reporter-inlines.h" bodystart="141" bodyend="153"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1abd34896d8d956db7223829bcbf9efb04" compoundref="deferred-reporter_8cpp" startline="71" endline="79">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::deferred_reporter_base</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aa36fd4c36a94b04430599303e38a48bd" compoundref="deferred-reporter_8h" startline="202">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::abort_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1a9535950f3f91d792f4347d08f8dd154e" compoundref="deferred-reporter_8h" startline="271" endline="271">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::expr_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1aa221de23c9bed6bc5844c077fbafa46b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -209,15 +209,15 @@ Initialises the reporter with the given expression, abort status, and source loc
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" line="266" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deferred-reporter-inlines.h" bodystart="165" bodyend="176"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aa36fd4c36a94b04430599303e38a48bd" compoundref="deferred-reporter_8h" startline="203">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::abort_</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a0d4853e08c3106a270e951e56d876840" compoundref="deferred-reporter_8h" startline="214" endline="214">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::deferred_output_</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1a9535950f3f91d792f4347d08f8dd154e" compoundref="deferred-reporter_8h" startline="272" endline="272">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::expr_</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a025498d9b9376056c56042cc98ed7afd" compoundref="deferred-reporter_8h" startline="208" endline="208">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::location_</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aae23103bf1232549780c69911239b781" compoundref="deferred-reporter_8h" startline="219">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::subtest_</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1af633053afa944173b47482786f9d9a7e" compoundref="deferred-reporter_8h" startline="197" endline="197">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::value_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" line="265" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deferred-reporter-inlines.h" bodystart="168" bodyend="179"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aa36fd4c36a94b04430599303e38a48bd" compoundref="deferred-reporter_8h" startline="202">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::abort_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a0d4853e08c3106a270e951e56d876840" compoundref="deferred-reporter_8h" startline="213" endline="213">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::deferred_output_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1a9535950f3f91d792f4347d08f8dd154e" compoundref="deferred-reporter_8h" startline="271" endline="271">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;::expr_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a025498d9b9376056c56042cc98ed7afd" compoundref="deferred-reporter_8h" startline="207" endline="207">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::location_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aae23103bf1232549780c69911239b781" compoundref="deferred-reporter_8h" startline="218">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::subtest_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1af633053afa944173b47482786f9d9a7e" compoundref="deferred-reporter_8h" startline="196" endline="196">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::value_</references>
       </memberdef>
-      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aa4076e7682edfc8c3a818c3f7c0fcc0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a25895cdf53098c97033b5c476cdd7702" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
@@ -232,7 +232,7 @@ Initialises the reporter with the given expression, abort status, and source loc
           <type>const T &amp;</type>
           <declname>msg</declname>
         </param>
-    <requiresclause>(std::is_arithmetic_v&lt;T&gt; or std::is_convertible_v&lt;T, std::string_view&gt;)    </requiresclause>
+    <requiresclause>type_traits::printable&lt;T&gt;    </requiresclause>
         <briefdescription>
 <para>Appends a message to the reporter. </para>
         </briefdescription>
@@ -262,8 +262,8 @@ This operator overload enables the deferred reporter to accumulate expectation m
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" line="172" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deferred-reporter-inlines.h" bodystart="93" bodyend="122"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a0d4853e08c3106a270e951e56d876840" compoundref="deferred-reporter_8h" startline="214" endline="214">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::deferred_output_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" line="171" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deferred-reporter-inlines.h" bodystart="92" bodyend="125"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a0d4853e08c3106a270e951e56d876840" compoundref="deferred-reporter_8h" startline="213" endline="213">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::deferred_output_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a0c0b059add8cbddb96e8f2fef8cba431" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -298,9 +298,9 @@ Returns the result value associated with the report. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" line="188" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" bodystart="188" bodyend="191"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1af633053afa944173b47482786f9d9a7e" compoundref="deferred-reporter_8h" startline="197" endline="197">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::value_</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a7f73620cde46e24afc8dc5788dad50d0" compoundref="deferred-reporter_8cpp" startline="71" endline="79">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::deferred_reporter_base</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" line="187" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" bodystart="187" bodyend="190"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1af633053afa944173b47482786f9d9a7e" compoundref="deferred-reporter_8h" startline="196" endline="196">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::value_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1abd34896d8d956db7223829bcbf9efb04" compoundref="deferred-reporter_8cpp" startline="71" endline="79">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::deferred_reporter_base</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -425,17 +425,17 @@ The <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1det
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" line="243" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" bodystart="244" bodyend="273"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" line="242" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" bodystart="243" bodyend="272"/>
     <listofallmembers>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aa36fd4c36a94b04430599303e38a48bd" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::deferred_reporter</scope><name>abort_</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a0d4853e08c3106a270e951e56d876840" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::deferred_reporter</scope><name>deferred_output_</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1a8c4ce843acc48abf5c1f5303ba6947d3" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::deferred_reporter</scope><name>deferred_reporter</name></member>
-      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a7f73620cde46e24afc8dc5788dad50d0" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::deferred_reporter</scope><name>deferred_reporter_base</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1abd34896d8d956db7223829bcbf9efb04" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::deferred_reporter</scope><name>deferred_reporter_base</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a6d40968632c7f86a73a8faf7c989d11e" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::deferred_reporter</scope><name>deferred_reporter_base</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a114a6eeab81ca53c0428244882b5af8a" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::deferred_reporter</scope><name>deferred_reporter_base</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1a9535950f3f91d792f4347d08f8dd154e" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::deferred_reporter</scope><name>expr_</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a025498d9b9376056c56042cc98ed7afd" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::deferred_reporter</scope><name>location_</name></member>
-      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aa4076e7682edfc8c3a818c3f7c0fcc0e" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::deferred_reporter</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a25895cdf53098c97033b5c476cdd7702" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::deferred_reporter</scope><name>operator&lt;&lt;</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aef0485fd5cb77a9c6b171c04e597bdbf" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::deferred_reporter</scope><name>operator=</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a08910483a88514bd3fc05eb63a5043b6" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::deferred_reporter</scope><name>operator=</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aae23103bf1232549780c69911239b781" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::deferred_reporter</scope><name>subtest_</name></member>

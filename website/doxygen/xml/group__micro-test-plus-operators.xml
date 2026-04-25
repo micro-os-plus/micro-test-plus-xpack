@@ -4,7 +4,7 @@
     <compoundname>micro-test-plus-operators</compoundname>
     <title>Operators</title>
     <sectiondef kind="func">
-      <memberdef kind="function" id="group__micro-test-plus-operators_1ga9f5b1ce8e86ae91e37952fa5395a262c" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-test-plus-operators_1gaa188c33047f559e28dc95dbb465e19a8" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Lhs_T</type>
@@ -26,7 +26,7 @@
           <type>const Rhs_T &amp;</type>
           <declname>rhs</declname>
         </param>
-    <requiresclause>(type_traits::is_op_v&lt;Lhs_T&gt; or type_traits::is_op_v&lt;Rhs_T&gt;)    </requiresclause>
+    <requiresclause>type_traits::any_op&lt;Lhs_T, Rhs_T&gt;    </requiresclause>
         <briefdescription>
 <para>Logical <computeroutput>&amp;&amp;</computeroutput> (and) operator. Matches only if at least one operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
         </briefdescription>
@@ -71,9 +71,9 @@ This overload of the logical <computeroutput>&amp;&amp;</computeroutput> (and) o
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="418" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="418" bodyend="421"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="426" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="426" bodyend="429"/>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-operators_1ga6efefab5a8f2fa4b8f0008255581379e" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-test-plus-operators_1ga00db5f149865ed9fd8d73f2db44542b0" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
@@ -88,7 +88,7 @@ This overload of the logical <computeroutput>&amp;&amp;</computeroutput> (and) o
           <type>const T &amp;</type>
           <declname>t</declname>
         </param>
-    <requiresclause>type_traits::is_op_v&lt;T&gt;    </requiresclause>
+    <requiresclause>type_traits::is_op&lt;T&gt;    </requiresclause>
         <briefdescription>
 <para>Logical <computeroutput>!</computeroutput> (not) operator. Matches only if the operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
         </briefdescription>
@@ -117,9 +117,9 @@ This overload of the logical <computeroutput>!</computeroutput> (not) operator e
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="477" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="477" bodyend="480"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="485" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="485" bodyend="488"/>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-operators_1gada70a550c2c02d1d7293efd2cf10ab5c" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-test-plus-operators_1ga0fe9ef52ecfb0de402da9e7454d7c20b" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Lhs_T</type>
@@ -141,7 +141,7 @@ This overload of the logical <computeroutput>!</computeroutput> (not) operator e
           <type>const Rhs_T &amp;</type>
           <declname>rhs</declname>
         </param>
-    <requiresclause>(type_traits::is_op_v&lt;Lhs_T&gt; or type_traits::is_op_v&lt;Rhs_T&gt;)    </requiresclause>
+    <requiresclause>type_traits::any_op&lt;Lhs_T, Rhs_T&gt;    </requiresclause>
         <briefdescription>
 <para>Logical <computeroutput>||</computeroutput> (or) operator. Matches only if at least one operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
         </briefdescription>
@@ -186,9 +186,9 @@ This overload of the logical <computeroutput>||</computeroutput> (or) operator e
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="448" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="448" bodyend="451"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="456" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="456" bodyend="459"/>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-operators_1ga70665b9137eb7a54917ef4a7e556e5d6" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-test-plus-operators_1ga445025eccd3ef529af191aab5aad91a9" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Lhs_T</type>
@@ -210,7 +210,7 @@ This overload of the logical <computeroutput>||</computeroutput> (or) operator e
           <type>const Rhs_T &amp;</type>
           <declname>rhs</declname>
         </param>
-    <requiresclause>(type_traits::is_op_v&lt;Lhs_T&gt; or type_traits::is_op_v&lt;Rhs_T&gt;)    </requiresclause>
+    <requiresclause>type_traits::any_op&lt;Lhs_T, Rhs_T&gt;    </requiresclause>
         <briefdescription>
 <para>Non-equality operator for custom types. Matches only if at least one operand is of local type. </para>
         </briefdescription>
@@ -255,9 +255,9 @@ This overload of the non-equality operator enables comparison between two operan
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="266" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="266" bodyend="269"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="274" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="274" bodyend="277"/>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-operators_1gaf444d654ac945f6c47c9a8712278cb7f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-test-plus-operators_1ga675d31a23d8f0dfed775466ef1463a80" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Lhs_T</type>
@@ -279,7 +279,7 @@ This overload of the non-equality operator enables comparison between two operan
           <type>const Rhs_T &amp;</type>
           <declname>rhs</declname>
         </param>
-    <requiresclause>(type_traits::is_op_v&lt;Lhs_T&gt; or type_traits::is_op_v&lt;Rhs_T&gt;)    </requiresclause>
+    <requiresclause>type_traits::any_op&lt;Lhs_T, Rhs_T&gt;    </requiresclause>
         <briefdescription>
 <para>Less than operator. Matches only if at least one operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
         </briefdescription>
@@ -324,9 +324,9 @@ This overload of the less than operator enables comparison between two operands,
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="356" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="357" bodyend="360"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="364" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="365" bodyend="368"/>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-operators_1ga6fa56a234ceec4232dc9f131695dcc3b" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-test-plus-operators_1ga15235adceff30c6e3aa382696aea23cb" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Lhs_T</type>
@@ -348,7 +348,7 @@ This overload of the less than operator enables comparison between two operands,
           <type>const Rhs_T &amp;</type>
           <declname>rhs</declname>
         </param>
-    <requiresclause>(type_traits::is_op_v&lt;Lhs_T&gt; or type_traits::is_op_v&lt;Rhs_T&gt;)    </requiresclause>
+    <requiresclause>type_traits::any_op&lt;Lhs_T, Rhs_T&gt;    </requiresclause>
         <briefdescription>
 <para>Less than or equal operator. Matches only if at least one operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
         </briefdescription>
@@ -393,9 +393,9 @@ This overload of the less than or equal operator enables comparison between two 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="387" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="388" bodyend="391"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="395" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="396" bodyend="399"/>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-operators_1ga15b2c12a28683bea3529436c03eff4cf" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-test-plus-operators_1gaae177a6c59286d4d7e4f85ffa6579e56" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Lhs_T</type>
@@ -417,7 +417,7 @@ This overload of the less than or equal operator enables comparison between two 
           <type>const Rhs_T &amp;</type>
           <declname>rhs</declname>
         </param>
-    <requiresclause>(type_traits::is_op_v&lt;Lhs_T&gt; or type_traits::is_op_v&lt;Rhs_T&gt;)    </requiresclause>
+    <requiresclause>type_traits::any_op&lt;Lhs_T, Rhs_T&gt;    </requiresclause>
         <briefdescription>
 <para>Equality operator for custom types. Matches only if at least one operand is of local type. </para>
         </briefdescription>
@@ -462,9 +462,9 @@ This overload of the equality operator enables comparison between two operands, 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="236" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="236" bodyend="239"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="244" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="244" bodyend="247"/>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-operators_1ga79d68e7d8823fce4e90efba4435ab3e9" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-test-plus-operators_1gac0afc8d658f73e3b5f136a5c60d1fbd1" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Lhs_T</type>
@@ -486,7 +486,7 @@ This overload of the equality operator enables comparison between two operands, 
           <type>const Rhs_T &amp;</type>
           <declname>rhs</declname>
         </param>
-    <requiresclause>(type_traits::is_op_v&lt;Lhs_T&gt; or type_traits::is_op_v&lt;Rhs_T&gt;)    </requiresclause>
+    <requiresclause>type_traits::any_op&lt;Lhs_T, Rhs_T&gt;    </requiresclause>
         <briefdescription>
 <para>Greater than operator. Matches only if at least one operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
         </briefdescription>
@@ -531,9 +531,9 @@ This overload of the greater than operator enables comparison between two operan
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="296" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="296" bodyend="299"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="304" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="304" bodyend="307"/>
       </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-operators_1ga6271e69322d8ccce03e08d68cc0f8af4" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-test-plus-operators_1gabfc165fd00e9f53bbf7b63f71b9d5020" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Lhs_T</type>
@@ -555,7 +555,7 @@ This overload of the greater than operator enables comparison between two operan
           <type>const Rhs_T &amp;</type>
           <declname>rhs</declname>
         </param>
-    <requiresclause>(type_traits::is_op_v&lt;Lhs_T&gt; or type_traits::is_op_v&lt;Rhs_T&gt;)    </requiresclause>
+    <requiresclause>type_traits::any_op&lt;Lhs_T, Rhs_T&gt;    </requiresclause>
         <briefdescription>
 <para>Greater than or equal operator. Matches only if at least one operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
         </briefdescription>
@@ -600,7 +600,7 @@ This overload of the greater than or equal operator enables comparison between t
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="327" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="327" bodyend="330"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="335" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="335" bodyend="338"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

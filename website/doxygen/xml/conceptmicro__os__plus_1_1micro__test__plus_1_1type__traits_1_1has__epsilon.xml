@@ -19,12 +19,12 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_
 <parametername>T</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The type to be checked. </para>
+<para>The type to be checked.</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>
+The <computeroutput>has_epsilon</computeroutput> concept is satisfied when an instance of <computeroutput>T</computeroutput> exposes an <computeroutput>epsilon</computeroutput> member. It is used to detect floating point value-wrapper types such as <computeroutput>floating_point_constant</computeroutput> and the floating point specialisation of <computeroutput>value&lt;T&gt;</computeroutput>, enabling precision-aware comparisons. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="354" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="407" column="5"/>
   </compounddef>
 </doxygen>

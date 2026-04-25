@@ -196,32 +196,34 @@ $(function(){initNavTree('reflection-inlines_8h_source.html','',''); });
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>      <span class="keyword">const</span> <span class="keyword">auto</span> end</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>          = (semi != std::string_view::npos) ? semi : sv.rfind (<span class="charliteral">&#39;]&#39;</span>);</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="preprocessor">#error &quot;Unsupported compiler&quot;</span></div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>      <span class="keywordflow">return</span> sv.substr (start, end - start);</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    }</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="comment">// Note: MSVC uses __FUNCSIG__ instead of __PRETTY_FUNCTION__.</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="comment">// MSVC is not a supported target for this framework.</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="preprocessor">#error &quot;Unsupported compiler&quot;</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>      <span class="keywordflow">return</span> sv.substr (start, end - start);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    }</div>
 </div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="comment">// ------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  } <span class="comment">// namespace reflection</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="comment">// ------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  } <span class="comment">// namespace reflection</span></div>
 </div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  <span class="comment">// --------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>} <span class="comment">// namespace micro_os_plus::micro_test_plus</span></div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="comment">// ----------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  <span class="comment">// --------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>} <span class="comment">// namespace micro_os_plus::micro_test_plus</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="preprocessor">#endif </span><span class="comment">// __cplusplus</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="comment">// ----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="comment">// ----------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="preprocessor">#endif </span><span class="comment">// __cplusplus</span></div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_TEST_PLUS_REFLECTION_INLINES_H_</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="comment">// ----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="comment">// ----------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="preprocessor">#endif </span><span class="comment">// MICRO_TEST_PLUS_REFLECTION_INLINES_H_</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="comment">// ----------------------------------------------------------------------------</span></div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_html"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html">micro_os_plus::micro_test_plus::reflection::source_location</a></div><div class="ttdoc">Local implementation of source location information for diagnostics.</div><div class="ttdef"><b>Definition</b> <a href="reflection_8h_source.html#l00137">reflection.h:138</a></div></div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_html_a0e805c2ed2234f2c004fd7196b844fc5"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#a0e805c2ed2234f2c004fd7196b844fc5">micro_os_plus::micro_test_plus::reflection::source_location::line_</a></div><div class="ttdeci">unsigned int line_</div><div class="ttdoc">The line number where the source location was captured.</div><div class="ttdef"><b>Definition</b> <a href="reflection_8h_source.html#l00186">reflection.h:186</a></div></div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_html_a3df499675aacb7ab9192cfb9a5371874"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#a3df499675aacb7ab9192cfb9a5371874">micro_os_plus::micro_test_plus::reflection::source_location::file_name</a></div><div class="ttdeci">constexpr auto file_name(void) const noexcept</div><div class="ttdoc">Retrieve the file name associated with this source location.</div><div class="ttdef"><b>Definition</b> <a href="#l00105">reflection-inlines.h:105</a></div></div>

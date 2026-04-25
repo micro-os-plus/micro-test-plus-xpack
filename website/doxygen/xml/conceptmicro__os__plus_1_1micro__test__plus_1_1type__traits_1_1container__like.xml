@@ -22,12 +22,12 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_
 <parametername>T</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The type to be checked. </para>
+<para>The type to be checked.</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>
+The <computeroutput>container_like</computeroutput> concept is satisfied when <computeroutput>T</computeroutput> exposes both a <computeroutput>begin()</computeroutput> and an <computeroutput>end()</computeroutput> member function, as required by standard range-based iteration. It is used to detect container types for specialised comparison and reporting within the framework. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="327" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="362" column="5"/>
   </compounddef>
 </doxygen>

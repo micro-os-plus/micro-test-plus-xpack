@@ -105,28 +105,36 @@ $(function(){initNavTree('structmicro__os__plus_1_1micro__test__plus_1_1type__tr
  <div class="center">
   <img src="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.png" usemap="#micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Atype_5Ftraits_3A_3Aintegral_5Fconstant_3C_20N_20_3E_map" alt=""/>
   <map id="micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Atype_5Ftraits_3A_3Aintegral_5Fconstant_3C_20N_20_3E_map" name="micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Atype_5Ftraits_3A_3Aintegral_5Fconstant_3C_20N_20_3E_map">
-<area href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html" title="Empty base struct for all operator types." alt="micro_os_plus::micro_test_plus::type_traits::op" shape="rect" coords="0,0,385,24"/>
+<area href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html" alt="micro_os_plus::micro_test_plus::type_traits::value_base_&lt; decltype(N)&gt;" shape="rect" coords="0,56,412,80"/>
+<area href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html" title="Empty base struct for all operator types." alt="micro_os_plus::micro_test_plus::type_traits::op" shape="rect" coords="0,0,412,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a30307d0cc6b010e9b42ec98753b6bec1" id="r_a30307d0cc6b010e9b42ec98753b6bec1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30307d0cc6b010e9b42ec98753b6bec1">value_type</a> = decltype (N)</td></tr>
-<tr class="memdesc:a30307d0cc6b010e9b42ec98753b6bec1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the constant value.  <br /></td></tr>
+<tr class="memitem:a4a819c9151d37da6e8a76f4629c7cc4d" id="r_a4a819c9151d37da6e8a76f4629c7cc4d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html#a4a819c9151d37da6e8a76f4629c7cc4d">value_type</a></td></tr>
+<tr class="memdesc:a4a819c9151d37da6e8a76f4629c7cc4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the stored value.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acb78deb0adea412045e1305280a443f1" id="r_acb78deb0adea412045e1305280a443f1"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb78deb0adea412045e1305280a443f1">get</a> (void) const</td></tr>
-<tr class="memdesc:acb78deb0adea412045e1305280a443f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the constant value.  <br /></td></tr>
-<tr class="memitem:a7fc0c3908f315982ce70d0439ea78a06" id="r_a7fc0c3908f315982ce70d0439ea78a06"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7fc0c3908f315982ce70d0439ea78a06">operator value_type</a> (void) const</td></tr>
-<tr class="memdesc:a7fc0c3908f315982ce70d0439ea78a06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicit conversion operator to <a class="el" href="#a30307d0cc6b010e9b42ec98753b6bec1" title="The type of the constant value.">value_type</a>.  <br /></td></tr>
-<tr class="memitem:a7074d786704fd94b5342be3de7c86790" id="r_a7074d786704fd94b5342be3de7c86790"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7074d786704fd94b5342be3de7c86790">operator-</a> () const</td></tr>
-<tr class="memdesc:a7074d786704fd94b5342be3de7c86790"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unary minus operator.  <br /></td></tr>
+<tr class="memitem:aa9f1e68b760d80aea085d684b2dccc4f" id="r_aa9f1e68b760d80aea085d684b2dccc4f"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9f1e68b760d80aea085d684b2dccc4f">integral_constant</a> () noexcept</td></tr>
+<tr class="memdesc:aa9f1e68b760d80aea085d684b2dccc4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. Initialises the base with <span class="tt">N</span>.  <br /></td></tr>
+<tr class="memitem:aedc41334c71b7711435aee0cb8f44fb3" id="r_aedc41334c71b7711435aee0cb8f44fb3"><td class="memItemLeft" align="right" valign="top">constexpr decltype(N)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html#aedc41334c71b7711435aee0cb8f44fb3">get</a> (void) const noexcept</td></tr>
+<tr class="memdesc:aedc41334c71b7711435aee0cb8f44fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the stored value.  <br /></td></tr>
+<tr class="memitem:ab7f7f241b55abd7ac9e25234bbe64406" id="r_ab7f7f241b55abd7ac9e25234bbe64406"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html#ab7f7f241b55abd7ac9e25234bbe64406">operator decltype(N)</a> () const noexcept</td></tr>
+<tr class="memdesc:ab7f7f241b55abd7ac9e25234bbe64406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicit conversion operator to the underlying value type.  <br /></td></tr>
+<tr class="memitem:afe9d8229d9f706703eeafae51fc69335" id="r_afe9d8229d9f706703eeafae51fc69335"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe9d8229d9f706703eeafae51fc69335">operator-</a> () const noexcept</td></tr>
+<tr class="memdesc:afe9d8229d9f706703eeafae51fc69335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unary minus operator.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a8f1747b0fb288001d51754dfb8c53b0e" id="r_a8f1747b0fb288001d51754dfb8c53b0e"><td class="memItemLeft" align="right" valign="top">decltype(N)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html#a8f1747b0fb288001d51754dfb8c53b0e">value_</a></td></tr>
+<tr class="memdesc:a8f1747b0fb288001d51754dfb8c53b0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The stored value.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a53cb52e57c05eaf46f47352a77270993" id="r_a53cb52e57c05eaf46f47352a77270993"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53cb52e57c05eaf46f47352a77270993">value</a> = N</td></tr>
-<tr class="memdesc:a53cb52e57c05eaf46f47352a77270993"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constant value.  <br /></td></tr>
+<tr class="memdesc:a53cb52e57c05eaf46f47352a77270993"><td class="mdescLeft">&#160;</td><td class="mdescRight">The compile-time constant value.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;auto N&gt;<br />
@@ -136,43 +144,86 @@ struct micro_os_plus::micro_test_plus::type_traits::integral_constant&lt; N &gt;
   </table>
   </dd>
 </dl>
-<p>The <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html" title="Struct template representing a generic integral constant.">integral_constant</a></span> struct template provides a compile-time constant value of an integral type, with additional utility features. It inherits from <span class="tt">op</span> to enable unified handling within the µTest++ framework's type traits and metaprogramming utilities.</p>
-<p>This struct template exposes the constant value via a static member, a getter method, and explicit conversion operators. It also provides a unary minus operator to obtain the negative value as a new <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html" title="Struct template representing a generic integral constant.">integral_constant</a></span> instance. </p>
+<p>The <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html" title="Struct template representing a generic integral constant.">integral_constant</a></span> struct template provides a compile-time constant value of an integral type, with additional utility features. It inherits from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html" title="Base struct template providing common storage and accessors for runtime value-wrapper types.">value_base_</a>&lt;decltype(N)&gt;</span>, which supplies the <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html#a4a819c9151d37da6e8a76f4629c7cc4d">value_type</a></span> alias, the <span class="tt">value_</span> runtime member, the explicit conversion operator, and the <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html#aedc41334c71b7711435aee0cb8f44fb3">get()</a></span> accessor.</p>
+<p>This struct retains the compile-time <span class="tt">value</span> constant and provides a unary minus operator to obtain the negative value as a new <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html" title="Struct template representing a generic integral constant.">integral_constant</a></span> instance. </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00546">546</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00649">649</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
-<a id="a30307d0cc6b010e9b42ec98753b6bec1" name="a30307d0cc6b010e9b42ec98753b6bec1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30307d0cc6b010e9b42ec98753b6bec1">&#9670;&#160;</a></span>value_type</h2>
+<a id="a4a819c9151d37da6e8a76f4629c7cc4d" name="a4a819c9151d37da6e8a76f4629c7cc4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a819c9151d37da6e8a76f4629c7cc4d">&#9670;&#160;</a></span>value_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html">micro_os_plus::micro_test_plus::type_traits::value_base_</a>&lt; decltype(N) &gt;::value_type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00583">583</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aa9f1e68b760d80aea085d684b2dccc4f" name="aa9f1e68b760d80aea085d684b2dccc4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9f1e68b760d80aea085d684b2dccc4f">&#9670;&#160;</a></span>integral_constant()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;auto N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">micro_os_plus::micro_test_plus::type_traits::integral_constant</a>&lt; N &gt;::value_type = decltype (N)</td>
+          <td class="memname"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">micro_os_plus::micro_test_plus::type_traits::integral_constant</a>&lt; N &gt;::integral_constant </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00551">551</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00659">659</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  659</span>                                              : <a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html#ab9b0e45988e4291e63d6b016c55231f7">value_base_</a>&lt;<span class="keyword">decltype</span> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">N</a>)&gt;{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">N</a> }</div>
+<div class="line"><span class="lineno">  660</span>      {</div>
+<div class="line"><span class="lineno">  661</span>      }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">micro_os_plus::micro_test_plus::type_traits::integral_constant</a></div><div class="ttdoc">Struct template representing a generic integral constant.</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00649">type-traits.h:650</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___html_ab9b0e45988e4291e63d6b016c55231f7"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html#ab9b0e45988e4291e63d6b016c55231f7">micro_os_plus::micro_test_plus::type_traits::value_base_&lt; decltype(N)&gt;::value_base_</a></div><div class="ttdeci">constexpr value_base_(const decltype(N) &amp;v) noexcept</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00590">type-traits.h:590</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="type-traits_8h_source.html#l00590">micro_os_plus::micro_test_plus::type_traits::value_base_&lt; decltype(N)&gt;::value_base_()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="type-traits_8h_source.html#l00673">operator-()</a>.</p>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="acb78deb0adea412045e1305280a443f1" name="acb78deb0adea412045e1305280a443f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb78deb0adea412045e1305280a443f1">&#9670;&#160;</a></span>get()</h2>
+<a id="aedc41334c71b7711435aee0cb8f44fb3" name="aedc41334c71b7711435aee0cb8f44fb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedc41334c71b7711435aee0cb8f44fb3">&#9670;&#160;</a></span>get()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;auto N&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">micro_os_plus::micro_test_plus::type_traits::integral_constant</a>&lt; N &gt;::get </td>
+          <td class="memname">decltype(N) <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html">micro_os_plus::micro_test_plus::type_traits::value_base_</a>&lt; decltype(N) &gt;::get </td>
           <td>(</td>
           <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -180,59 +231,56 @@ template&lt;auto N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span><span class="mlabel inherited">inherited</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <dl class="section user"><dt>Parameters</dt><dd>None. </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>The constant value.</dd></dl>
-<p>Returns the compile-time constant value. </p>
+<dl class="section return"><dt>Returns</dt><dd>The stored value.</dd></dl>
+<p>Returns the stored value by value. </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00600">600</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  601</span>      {</div>
-<div class="line"><span class="lineno">  602</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">N</a>;</div>
-<div class="line"><span class="lineno">  603</span>      }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">micro_os_plus::micro_test_plus::type_traits::integral_constant</a></div><div class="ttdoc">Struct template representing a generic integral constant.</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00546">type-traits.h:547</a></div></div>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00619">619</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  620</span>      {</div>
+<div class="line"><span class="lineno">  621</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html">value_</a>;</div>
+<div class="line"><span class="lineno">  622</span>      }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html">micro_os_plus::micro_test_plus::type_traits::value_base_</a></div><div class="ttdoc">Base struct template providing common storage and accessors for runtime value-wrapper types.</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00578">type-traits.h:579</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a7fc0c3908f315982ce70d0439ea78a06" name="a7fc0c3908f315982ce70d0439ea78a06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7fc0c3908f315982ce70d0439ea78a06">&#9670;&#160;</a></span>operator value_type()</h2>
+<a id="ab7f7f241b55abd7ac9e25234bbe64406" name="ab7f7f241b55abd7ac9e25234bbe64406"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7f7f241b55abd7ac9e25234bbe64406">&#9670;&#160;</a></span>operator decltype(N)()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;auto N&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">micro_os_plus::micro_test_plus::type_traits::integral_constant</a>&lt; N &gt;::operator <a class="el" href="#a30307d0cc6b010e9b42ec98753b6bec1">value_type</a> </td>
+          <td class="memname"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html">micro_os_plus::micro_test_plus::type_traits::value_base_</a>&lt; decltype(N) &gt;::operator decltype(N) </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span><span class="mlabel inherited">inherited</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section user"><dt>Parameters</dt><dd>None. </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>The constant value as type <span class="tt"><a class="el" href="#a30307d0cc6b010e9b42ec98753b6bec1" title="The type of the constant value.">value_type</a></span>.</dd></dl>
-<p>Allows explicit conversion to the underlying value type. </p>
+<dl class="section return"><dt>Returns</dt><dd>The stored value as type <span class="tt">T</span>.</dd></dl>
+<p>Allows explicit conversion to the encapsulated value. </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00584">584</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  585</span>      {</div>
-<div class="line"><span class="lineno">  586</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">N</a>;</div>
-<div class="line"><span class="lineno">  587</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00603">603</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  604</span>      {</div>
+<div class="line"><span class="lineno">  605</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html">value_</a>;</div>
+<div class="line"><span class="lineno">  606</span>      }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a7074d786704fd94b5342be3de7c86790" name="a7074d786704fd94b5342be3de7c86790"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7074d786704fd94b5342be3de7c86790">&#9670;&#160;</a></span>operator-()</h2>
+<a id="afe9d8229d9f706703eeafae51fc69335" name="afe9d8229d9f706703eeafae51fc69335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe9d8229d9f706703eeafae51fc69335">&#9670;&#160;</a></span>operator-()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -251,18 +299,21 @@ template&lt;auto N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>An <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html" title="Struct template representing a generic integral constant.">integral_constant</a></span> with value <span class="tt">-N</span>.</dd></dl>
 <p>Returns a new <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html" title="Struct template representing a generic integral constant.">integral_constant</a></span> instance representing the negative of the current value. </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00568">568</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  569</span>      {</div>
-<div class="line"><span class="lineno">  570</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">integral_constant</a>&lt;-<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">N</a>&gt;{};</div>
-<div class="line"><span class="lineno">  571</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00673">673</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  674</span>      {</div>
+<div class="line"><span class="lineno">  675</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="#aa9f1e68b760d80aea085d684b2dccc4f">integral_constant</a>&lt;-<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html">N</a>&gt;{};</div>
+<div class="line"><span class="lineno">  676</span>      }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant_html_aa9f1e68b760d80aea085d684b2dccc4f"><div class="ttname"><a href="#aa9f1e68b760d80aea085d684b2dccc4f">micro_os_plus::micro_test_plus::type_traits::integral_constant::integral_constant</a></div><div class="ttdeci">constexpr integral_constant() noexcept</div><div class="ttdoc">Default constructor. Initialises the base with N.</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00659">type-traits.h:659</a></div></div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="type-traits_8h_source.html#l00659">integral_constant()</a>.</p>
+
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
@@ -288,8 +339,33 @@ template&lt;auto N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00556">556</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00654">654</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
 
+</div>
+</div>
+<a id="a8f1747b0fb288001d51754dfb8c53b0e" name="a8f1747b0fb288001d51754dfb8c53b0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f1747b0fb288001d51754dfb8c53b0e">&#9670;&#160;</a></span>value_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">decltype(N) <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html">micro_os_plus::micro_test_plus::type_traits::value_base_</a>&lt; decltype(N) &gt;::value_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00627">627</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  627</span>{};</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>

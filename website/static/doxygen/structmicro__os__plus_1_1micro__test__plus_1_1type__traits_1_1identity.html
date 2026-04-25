@@ -109,14 +109,14 @@ Public Types</h2></td></tr>
 struct micro_os_plus::micro_test_plus::type_traits::identity&lt; T, Extra &gt;</div><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>The type to be preserved. </td></tr>
-    <tr><td class="paramname">Extra</td><td>Additional template parameters, ignored.</td></tr>
+    <tr><td class="paramname">Extra</td><td>Additional template parameters, ignored. The variadic <span class="tt">Extra</span> parameter pack absorbs additional type arguments that may arise during template argument deduction in some metaprogramming contexts, preventing substitution failures.</td></tr>
   </table>
   </dd>
 </dl>
 <p>The <span class="tt">identity</span> struct template provides a mechanism for preserving a type <span class="tt">T</span> during template metaprogramming. It is commonly used to delay type evaluation or to forward types in complex template constructs within the µTest++ framework.</p>
 <p>This utility is particularly useful in scenarios where type deduction or concept constraints are required, as it allows the type to be carried through template specialisations without modification. </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00144">144</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00148">148</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a6399364a09c1004ebbaab36b2d5dc0c8" name="a6399364a09c1004ebbaab36b2d5dc0c8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6399364a09c1004ebbaab36b2d5dc0c8">&#9670;&#160;</a></span>type</h2>
@@ -132,7 +132,7 @@ template&lt;class T, class... Extra&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00149">149</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00153">153</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
 
 </div>
 </div>

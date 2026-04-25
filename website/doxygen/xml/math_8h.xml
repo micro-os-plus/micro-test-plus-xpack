@@ -143,7 +143,7 @@
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus">micro_os_plus::micro_test_plus</innernamespace>
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math">micro_os_plus::micro_test_plus::math</innernamespace>
     <sectiondef kind="func">
-      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a1dd33529640b959c531ca18c2e494c80" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1aef66ac12d33fb18753ae7440445e8d85" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
@@ -151,7 +151,7 @@
         </templateparamlist>
         <type>T</type>
         <definition>T micro_os_plus::micro_test_plus::math::abs</definition>
-        <argsstring>(const T t)</argsstring>
+        <argsstring>(const T t) noexcept</argsstring>
         <name>abs</name>
         <qualifiedname>micro_os_plus::micro_test_plus::math::abs</qualifiedname>
         <param>
@@ -242,8 +242,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="203" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="203" bodyend="217" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="170" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a5c22d85f0df63cc0504cbf4988173cd7" compoundref="math-inlines_8h" startline="139" endline="145">micro_os_plus::micro_test_plus::math::pow</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="203" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="203" bodyend="219" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="170" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a81a10f59f83a29f4ade9c710e833eced" compoundref="math-inlines_8h" startline="139" endline="145">micro_os_plus::micro_test_plus::math::pow</references>
         <referencedby refid="group__micro-test-plus-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" compoundref="literals-inlines_8h" startline="470" endline="476">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_d</referencedby>
         <referencedby refid="group__micro-test-plus-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" compoundref="literals-inlines_8h" startline="449" endline="455">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_f</referencedby>
         <referencedby refid="group__micro-test-plus-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" compoundref="literals-inlines_8h" startline="491" endline="497">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ld</referencedby>
@@ -305,7 +305,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="272" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="272" bodyend="297" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="200" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="276" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="276" bodyend="301" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="200" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1af5a33355bb68f644b9949ef1faa0d079" prot="public" static="no" nodiscard="yes" consteval="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -358,12 +358,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="236" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="236" bodyend="252" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="185" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="238" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="238" bodyend="256" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="185" declcolumn="5"/>
         <referencedby refid="group__micro-test-plus-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" compoundref="literals-inlines_8h" startline="470" endline="476">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_d</referencedby>
         <referencedby refid="group__micro-test-plus-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" compoundref="literals-inlines_8h" startline="449" endline="455">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_f</referencedby>
         <referencedby refid="group__micro-test-plus-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" compoundref="literals-inlines_8h" startline="491" endline="497">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ld</referencedby>
       </memberdef>
-      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1ae53dd62f6d82b8ccaa048d90a7002826" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a2d07ed276b3f0d461e5b856ec24afcb4" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
@@ -371,7 +371,7 @@
         </templateparamlist>
         <type>const T &amp;</type>
         <definition>const T &amp; micro_os_plus::micro_test_plus::math::min_value</definition>
-        <argsstring>(const T &amp;lhs, const T &amp;rhs)</argsstring>
+        <argsstring>(const T &amp;lhs, const T &amp;rhs) noexcept</argsstring>
         <name>min_value</name>
         <qualifiedname>micro_os_plus::micro_test_plus::math::min_value</qualifiedname>
         <param>
@@ -498,7 +498,7 @@
         <referencedby refid="group__micro-test-plus-literals_1ga01adcd3866da43c393b7fba8a5e72bb2" compoundref="literals-inlines_8h" startline="278" endline="282">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ull</referencedby>
         <referencedby refid="group__micro-test-plus-literals_1ga9017debdc1eafd64e3c53c80157ad6f5" compoundref="literals-inlines_8h" startline="240" endline="244">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_us</referencedby>
       </memberdef>
-      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a5c22d85f0df63cc0504cbf4988173cd7" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a81a10f59f83a29f4ade9c710e833eced" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
@@ -509,7 +509,7 @@
         </templateparamlist>
         <type>T</type>
         <definition>T micro_os_plus::micro_test_plus::math::pow</definition>
-        <argsstring>(const T base, const Exp_T exp)</argsstring>
+        <argsstring>(const T base, const Exp_T exp) noexcept</argsstring>
         <name>pow</name>
         <qualifiedname>micro_os_plus::micro_test_plus::math::pow</qualifiedname>
         <param>
@@ -568,7 +568,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" line="139" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/math-inlines.h" bodystart="139" bodyend="145" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/math.h" declline="140" declcolumn="5"/>
-        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a8a29540b951c5cf6b40485287842b782" compoundref="math-inlines_8h" startline="203" endline="217">micro_os_plus::micro_test_plus::math::den</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a8a29540b951c5cf6b40485287842b782" compoundref="math-inlines_8h" startline="203" endline="219">micro_os_plus::micro_test_plus::math::den</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -632,15 +632,15 @@
 <codeline lineno="97"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a1dd33529640b959c531ca18c2e494c80" kindref="member">abs</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>t)<sp/>-&gt;<sp/>T;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1aef66ac12d33fb18753ae7440445e8d85" kindref="member">abs</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>t)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>-&gt;<sp/>T;</highlight></codeline>
 <codeline lineno="110"><highlight class="normal"></highlight></codeline>
 <codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1ae53dd62f6d82b8ccaa048d90a7002826" kindref="member">min_value</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>rhs)<sp/>-&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a2d07ed276b3f0d461e5b856ec24afcb4" kindref="member">min_value</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>rhs)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>-&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;;</highlight></codeline>
 <codeline lineno="124"><highlight class="normal"></highlight></codeline>
 <codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Exp_T&gt;</highlight></codeline>
 <codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a5c22d85f0df63cc0504cbf4988173cd7" kindref="member">pow</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>base,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Exp_T<sp/>exp)<sp/>-&gt;<sp/>T;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a81a10f59f83a29f4ade9c710e833eced" kindref="member">pow</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>base,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Exp_T<sp/>exp)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>-&gt;<sp/>T;</highlight></codeline>
 <codeline lineno="141"><highlight class="normal"></highlight></codeline>
 <codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">T,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">...<sp/>Cs&gt;</highlight></codeline>
 <codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">consteval</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>

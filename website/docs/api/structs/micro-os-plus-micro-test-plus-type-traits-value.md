@@ -22,7 +22,7 @@ keywords:
 ## Declaration
 
 <div class="doxyDeclaration">
-template &lt;class T&gt;
+template &lt;class T&gt;<br/>
 struct micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt; { ... }
 </div>
 
@@ -37,12 +37,12 @@ struct micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt; { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">op</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-">value_base_&lt;T&gt;</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Empty base struct for all operator types. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op/#details">More...</a></p>
+<p>Base struct template providing common storage and accessors for runtime value-wrapper types. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -60,12 +60,12 @@ struct micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt; { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a6bf65c151c552fb88e10a4799a64f5f4">value_type</a> = T</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-/#a4a819c9151d37da6e8a76f4629c7cc4d">value_type</a> = T</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>The type of the encapsulated value. <a href="#a6bf65c151c552fb88e10a4799a64f5f4">More...</a></p>
+<p>The type of the stored value. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-/#a4a819c9151d37da6e8a76f4629c7cc4d">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -83,12 +83,12 @@ struct micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt; { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a358a37a8a1ba8322a276d3f9b87120eb">value</a> (const T &amp;_value)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a7bec98988dcc3b8317f4dad31cbbf755">value</a> (const T &amp;_value) noexcept</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Constructs a value object with the specified value. <a href="#a358a37a8a1ba8322a276d3f9b87120eb">More...</a></p>
+<p>Constructs a value object with the specified value. <a href="#a7bec98988dcc3b8317f4dad31cbbf755">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -106,12 +106,12 @@ struct micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt; { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a6b25c4a476c9745d143f6c4f3d038b0e">operator T</a> () const</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-/#ab7f7f241b55abd7ac9e25234bbe64406">operator T</a> () const noexcept</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Explicit conversion operator to the underlying value type. <a href="#a6b25c4a476c9745d143f6c4f3d038b0e">More...</a></p>
+<p>Explicit conversion operator to the underlying value type. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-/#ab7f7f241b55abd7ac9e25234bbe64406">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -128,13 +128,13 @@ struct micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt; { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto </td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#af60376a1f5c8acd58ab855b81efb4345">get</a> (void) const -&gt; decltype(auto)</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr T</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-/#aedc41334c71b7711435aee0cb8f44fb3">get</a> (void) const noexcept</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Getter for the encapsulated value. <a href="#af60376a1f5c8acd58ab855b81efb4345">More...</a></p>
+<p>Getter for the stored value. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-/#aedc41334c71b7711435aee0cb8f44fb3">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -152,12 +152,12 @@ struct micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt; { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">T</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ad031508c3c4fba0528638bb61a0d908c">value_</a> {}</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-/#a8f1747b0fb288001d51754dfb8c53b0e">value_</a> {}</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>The encapsulated value. <a href="#ad031508c3c4fba0528638bb61a0d908c">More...</a></p>
+<p>The stored value. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-/#a8f1747b0fb288001d51754dfb8c53b0e">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -179,28 +179,21 @@ struct micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt; { ... }
 <td class="doxyParamItemName">T</td>
 <td class="doxyParamItemDescription"><p>The type of the value to be encapsulated.</p></td>
 </tr>
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">Opt</td>
-<td class="doxyParamItemDescription"><p>An optional parameter reserved for partial specialisation, defaults to <span class="doxyComputerOutput">int</span>.</p></td>
-</tr>
 </table>
 </dd>
 </dl>
 
-<p>The <span class="doxyComputerOutput">value</span> struct template encapsulates a value of type <span class="doxyComputerOutput">T</span>, providing a consistent interface for value access and conversion. It inherits from <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">type_traits::op</a></span> to enable unified handling within the µTest++ framework's type traits and metaprogramming utilities.</p>
+<p>The <span class="doxyComputerOutput">value</span> struct template encapsulates a value of type <span class="doxyComputerOutput">T</span>. The stored value, explicit conversion operator, and getter are provided by the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-">value_base_</a></span> base.</p>
 
 
-<p>This struct template exposes the value via a member variable, a getter method, and an explicit conversion operator. It is intended for use cases where a value must be wrapped and treated generically within the framework, supporting advanced template metaprogramming and type introspection.</p>
-
-
-<p>Definition at line 814 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line 815 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxySectionDef">
 
 ## Public Member Typedefs
 
-### value\_type {#a6bf65c151c552fb88e10a4799a64f5f4}
+### value\_type {#a4a819c9151d37da6e8a76f4629c7cc4d}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -210,7 +203,7 @@ struct micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt; { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::value_type =  T</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::type_traits::value_base_&lt; T &gt;::value_type =  T</td>
 </tr>
 </table>
 </td>
@@ -219,14 +212,14 @@ struct micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt; { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>The type of the encapsulated value.</p>
+<p>The type of the stored value.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00819">819</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00583">583</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a6bf65c151c552fb88e10a4799a64f5f4">819</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a6bf65c151c552fb88e10a4799a64f5f4">value_type</a> = T;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-/#a4a819c9151d37da6e8a76f4629c7cc4d">583</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-/#a4a819c9151d37da6e8a76f4629c7cc4d">value_type</a> = T;</span></span></div>
 
 </div>
 
@@ -239,7 +232,7 @@ struct micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt; { ... }
 
 ## Public Constructors
 
-### value() {#a358a37a8a1ba8322a276d3f9b87120eb}
+### value() {#a7bec98988dcc3b8317f4dad31cbbf755}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -257,6 +250,7 @@ struct micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt; { ... }
 <span class="doxyMemberLabels">
 <span class="doxyMemberLabel inline">inline</span>
 <span class="doxyMemberLabel constexpr">constexpr</span>
+<span class="doxyMemberLabel noexcept">noexcept</span>
 </span>
 </td>
 </tr>
@@ -279,14 +273,14 @@ struct micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt; { ... }
 </dd>
 </dl>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00826">826</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00822">822</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a358a37a8a1ba8322a276d3f9b87120eb">826</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> <a href="#a358a37a8a1ba8322a276d3f9b87120eb">value</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; _value) : <a href="#ad031508c3c4fba0528638bb61a0d908c">value_</a>{ _value }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">827</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">828</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a7bec98988dcc3b8317f4dad31cbbf755">822</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> <a href="#a7bec98988dcc3b8317f4dad31cbbf755">value</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; _value) noexcept : <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-/#ab9b0e45988e4291e63d6b016c55231f7">value_base_&lt;T&gt;</a>{ _value }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">823</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">824</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
 
 </div>
 
@@ -299,7 +293,7 @@ struct micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt; { ... }
 
 ## Public Operators
 
-### operator T() {#a6b25c4a476c9745d143f6c4f3d038b0e}
+### operator T() {#ab7f7f241b55abd7ac9e25234bbe64406}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -309,7 +303,7 @@ struct micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt; { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::operator T ()</td>
+<td class="doxyMemberName">micro_os_plus::micro_test_plus::type_traits::value_base_&lt; T &gt;::operator T ()</td>
 </tr>
 </table>
 </td>
@@ -319,6 +313,7 @@ struct micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt; { ... }
 <span class="doxyMemberLabel explicit">explicit</span>
 <span class="doxyMemberLabel nodiscard">nodiscard</span>
 <span class="doxyMemberLabel constexpr">constexpr</span>
+<span class="doxyMemberLabel noexcept">noexcept</span>
 </span>
 </td>
 </tr>
@@ -338,15 +333,15 @@ struct micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt; { ... }
 <p>Allows explicit conversion to the encapsulated value.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00839">839</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00603">603</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a6b25c4a476c9745d143f6c4f3d038b0e">839</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlight"> T ()</span><span class="doxyHighlightKeyword"> const</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">840</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">      </span><span class="doxyHighlight">{</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">841</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#ad031508c3c4fba0528638bb61a0d908c">value_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">842</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-/#ab7f7f241b55abd7ac9e25234bbe64406">603</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlight"> T () const noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">604</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">605</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-/#a8f1747b0fb288001d51754dfb8c53b0e">value_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">606</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
 
 </div>
 
@@ -359,7 +354,7 @@ struct micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt; { ... }
 
 ## Public Member Functions
 
-### get() {#af60376a1f5c8acd58ab855b81efb4345}
+### get() {#aedc41334c71b7711435aee0cb8f44fb3}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -369,7 +364,7 @@ struct micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt; { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">decltype(auto) micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::get (void)</td>
+<td class="doxyMemberName">T micro_os_plus::micro_test_plus::type_traits::value_base_&lt; T &gt;::get (void)</td>
 </tr>
 </table>
 </td>
@@ -378,6 +373,7 @@ struct micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt; { ... }
 <span class="doxyMemberLabel inline">inline</span>
 <span class="doxyMemberLabel nodiscard">nodiscard</span>
 <span class="doxyMemberLabel constexpr">constexpr</span>
+<span class="doxyMemberLabel noexcept">noexcept</span>
 </span>
 </td>
 </tr>
@@ -385,7 +381,7 @@ struct micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt; { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>Getter for the encapsulated value.</p>
+<p>Getter for the stored value.</p>
 
 
 <dl class="doxySectionUser">
@@ -396,24 +392,30 @@ struct micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt; { ... }
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>The value of type <span class="doxyComputerOutput">T</span>.</p></dd>
+<dd><p>The stored value.</p></dd>
 </dl>
 
 
-<p>Returns the stored value.</p>
+<p>Returns the stored value by value.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00855">855</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00619">619</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#af60376a1f5c8acd58ab855b81efb4345">855</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="#af60376a1f5c8acd58ab855b81efb4345">get</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">856</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">857</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#ad031508c3c4fba0528638bb61a0d908c">value_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">858</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-/#aedc41334c71b7711435aee0cb8f44fb3">619</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-/#aedc41334c71b7711435aee0cb8f44fb3">get</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">620</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">621</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-/#a8f1747b0fb288001d51754dfb8c53b0e">value_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">622</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
 
 </div>
+
+
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-/#a8f1747b0fb288001d51754dfb8c53b0e">micro_os_plus::micro_test_plus::type_traits::value_base_&lt; T &gt;::value_</a>.</p>
+
+
+<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter/#a697a4dcb95f65634253f44946d06c81a">micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</a>.</p>
 
 </div>
 </div>
@@ -424,7 +426,7 @@ struct micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt; { ... }
 
 ## Public Member Attributes
 
-### value\_ {#ad031508c3c4fba0528638bb61a0d908c}
+### value\_ {#a8f1747b0fb288001d51754dfb8c53b0e}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -434,7 +436,7 @@ struct micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt; { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">T micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::value_ {}</td>
+<td class="doxyMemberName">T micro_os_plus::micro_test_plus::type_traits::value_base_&lt; T &gt;::value_ {}</td>
 </tr>
 </table>
 </td>
@@ -443,16 +445,19 @@ struct micro_os_plus::micro_test_plus::type_traits::value&lt;T&gt; { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>The encapsulated value.</p>
+<p>The stored value.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00863">863</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00627">627</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ad031508c3c4fba0528638bb61a0d908c">863</a></span><span class="doxyLineContent"><span class="doxyHighlight">      T <a href="#ad031508c3c4fba0528638bb61a0d908c">value_</a>{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-/#a8f1747b0fb288001d51754dfb8c53b0e">627</a></span><span class="doxyLineContent"><span class="doxyHighlight">      T <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-/#a8f1747b0fb288001d51754dfb8c53b0e">value_</a>{};</span></span></div>
 
 </div>
+
+
+<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-/#ab9b0e45988e4291e63d6b016c55231f7">micro_os_plus::micro_test_plus::type_traits::value_base_&lt; T &gt;::value_base_</a> and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-/#aedc41334c71b7711435aee0cb8f44fb3">micro_os_plus::micro_test_plus::type_traits::value_base_&lt; T &gt;::get</a>.</p>
 
 </div>
 </div>
@@ -469,6 +474,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.0.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 
 </div>

@@ -150,23 +150,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="136" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="137" bodyend="143"/>
-      </memberdef>
-    </sectiondef>
-    <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="namespacemicro__os__plus_1_1micro__test__plus_1a0bbf0517c0f64f25e40b591ecb969a6e" prot="public" static="no">
-        <type><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" kindref="member">verbosity</ref></type>
-        <definition>using micro_os_plus::micro_test_plus::verbosity_t =  verbosity</definition>
-        <argsstring></argsstring>
-        <name>verbosity_t</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::verbosity_t</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="145" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="145" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="138" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="139" bodyend="145"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="var">
@@ -187,7 +171,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="116" column="28" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="116" bodyend="120"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="118" column="28" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="118" bodyend="122"/>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a391d670afb552fe8fc03011d37a517fd" compoundref="reporter-human_8cpp" startline="79" endline="94">micro_os_plus::micro_test_plus::reporter_human::reporter_human</referencedby>
       </memberdef>
       <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1a06acf196002ba97ba19ce4054477f915" prot="public" static="no" constexpr="yes" mutable="no">

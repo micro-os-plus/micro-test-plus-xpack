@@ -2,24 +2,38 @@
 <doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.14.0" xml:lang="en-US">
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1__t" kind="struct"><name>micro_os_plus::micro_test_plus::_t</name>
     <member refid="group__micro-test-plus-literals_1ga6195961d9ece2c2c91e8946d47d84a79" kind="function"><name>_t</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1af60376a1f5c8acd58ab855b81efb4345" kind="function"><name>get</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a6b25c4a476c9745d143f6c4f3d038b0e" kind="function"><name>operator T</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a6bf65c151c552fb88e10a4799a64f5f4" kind="typedef"><name>value_type</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1aedc41334c71b7711435aee0cb8f44fb3" kind="function"><name>get</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1ab7f7f241b55abd7ac9e25234bbe64406" kind="function"><name>operator T</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a434b222ff19bdb4970ad56fce11d5176" kind="variable"><name>epsilon</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1ad031508c3c4fba0528638bb61a0d908c" kind="variable"><name>value_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a8f1747b0fb288001d51754dfb8c53b0e" kind="variable"><name>value_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a4a819c9151d37da6e8a76f4629c7cc4d" kind="typedef"><name>value_type</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__" kind="struct"><name>micro_os_plus::micro_test_plus::detail::and_</name>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___1aec1e7482f95320014e7ad8f4a59e22ba" kind="variable"><name>lhs_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___1a48cc924bcb7bc335839d92a1cc28c37a" kind="variable"><name>rhs_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___1a42a5101a98ee6466bc1078796e0d81fe" kind="variable"><name>value_</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___1acbcbff7fd569478a832ad3b18e94164f" kind="function"><name>and_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___1aad8256dcf3cddf9a83eda4879d550695" kind="function"><name>lhs</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___1a3961120202cf573b2e26307871d3f981" kind="function"><name>operator bool</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and___1a1983beb930b5dd5d463833c222352422" kind="function"><name>rhs</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a503196c2296449a52b6f7995d4a647f5" kind="function"><name>lhs</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a854f1034410a13b6d2673beec610604a" kind="function"><name>operator bool</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1adfe5734554daf4e5793f0708f3121284" kind="function"><name>rhs</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1ac3bcfee808c65ee0d6be74d564cbf58c" kind="variable"><name>lhs_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1ab6217372c20998ca75fe5e7a73754d7c" kind="variable"><name>rhs_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a2dd578daf62dde786b3e9e7beeac08bc" kind="variable"><name>value_</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1assertion" kind="struct"><name>micro_os_plus::micro_test_plus::detail::assertion</name>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1assertion_1a3bda35bdd21c44124c7828c65ac3395f" kind="variable"><name>expr</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1assertion_1acd2e0e20795f5a31ed3031ab51579dc0" kind="variable"><name>location</name></member>
+  </compound>
+  <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op__" kind="struct"><name>micro_os_plus::micro_test_plus::detail::binary_op_</name>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1ac3bcfee808c65ee0d6be74d564cbf58c" kind="variable"><name>lhs_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1ab6217372c20998ca75fe5e7a73754d7c" kind="variable"><name>rhs_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a2dd578daf62dde786b3e9e7beeac08bc" kind="variable"><name>value_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a9ba8011f48a2cb4e7ff928298594005a" kind="function"><name>binary_op_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a503196c2296449a52b6f7995d4a647f5" kind="function"><name>lhs</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a854f1034410a13b6d2673beec610604a" kind="function"><name>operator bool</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1adfe5734554daf4e5793f0708f3121284" kind="function"><name>rhs</name></member>
+  </compound>
+  <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__" kind="struct"><name>micro_os_plus::micro_test_plus::detail::callable_op_</name>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op___1a8b7760bde30950164a3c97632b468361" kind="variable"><name>value_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op___1a271baf62ae8e74f4801dc3da24b575ea" kind="function"><name>callable_op_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op___1adbbcb62f9976b0f2f5461d52a89caf57" kind="function"><name>operator bool</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1colours" kind="struct"><name>micro_os_plus::micro_test_plus::colours</name>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1colours_1aa4d4feecd7e50ea77d1dbf1be952103c" kind="variable"><name>fail</name></member>
@@ -35,7 +49,7 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1af633053afa944173b47482786f9d9a7e" kind="variable"><name>value_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1a8c4ce843acc48abf5c1f5303ba6947d3" kind="function"><name>deferred_reporter</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter_1aa221de23c9bed6bc5844c077fbafa46b" kind="function"><name>~deferred_reporter</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aa4076e7682edfc8c3a818c3f7c0fcc0e" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a25895cdf53098c97033b5c476cdd7702" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a0c0b059add8cbddb96e8f2fef8cba431" kind="function"><name>value</name></member>
   </compound>
   <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base" kind="class"><name>micro_os_plus::micro_test_plus::detail::deferred_reporter_base</name>
@@ -44,31 +58,31 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a025498d9b9376056c56042cc98ed7afd" kind="variable"><name>location_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aae23103bf1232549780c69911239b781" kind="variable"><name>subtest_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1af633053afa944173b47482786f9d9a7e" kind="variable"><name>value_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a7f73620cde46e24afc8dc5788dad50d0" kind="function"><name>deferred_reporter_base</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1abd34896d8d956db7223829bcbf9efb04" kind="function"><name>deferred_reporter_base</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a6d40968632c7f86a73a8faf7c989d11e" kind="function"><name>deferred_reporter_base</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a114a6eeab81ca53c0428244882b5af8a" kind="function"><name>deferred_reporter_base</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a3a8503e793c807cbb882033cc5ff2831" kind="function"><name>~deferred_reporter_base</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aa4076e7682edfc8c3a818c3f7c0fcc0e" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a25895cdf53098c97033b5c476cdd7702" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aef0485fd5cb77a9c6b171c04e597bdbf" kind="function"><name>operator=</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a08910483a88514bd3fc05eb63a5043b6" kind="function"><name>operator=</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a0c0b059add8cbddb96e8f2fef8cba431" kind="function"><name>value</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__" kind="struct"><name>micro_os_plus::micro_test_plus::detail::eq_</name>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq___1a592e7c80b299007f379f64613165836b" kind="variable"><name>lhs_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq___1aacd9df5dde2c550300b765a4d117965e" kind="variable"><name>rhs_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq___1a8045813e9acc6f99557d018fdceb0e1c" kind="variable"><name>value_</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq___1a527ae62e9ed62a3ebbc3efd243d602c3" kind="function"><name>eq_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq___1a94c9f6919d84eba1763de39f7624c34a" kind="function"><name>lhs</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq___1a656e4269086f54893556984200e4d7e5" kind="function"><name>operator bool</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq___1a5399e6059752043a3a5db6d35ec1a3e2" kind="function"><name>rhs</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a503196c2296449a52b6f7995d4a647f5" kind="function"><name>lhs</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a854f1034410a13b6d2673beec610604a" kind="function"><name>operator bool</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1adfe5734554daf4e5793f0708f3121284" kind="function"><name>rhs</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1ac3bcfee808c65ee0d6be74d564cbf58c" kind="variable"><name>lhs_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1ab6217372c20998ca75fe5e7a73754d7c" kind="variable"><name>rhs_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a2dd578daf62dde786b3e9e7beeac08bc" kind="variable"><name>value_</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant" kind="struct"><name>micro_os_plus::micro_test_plus::type_traits::floating_point_constant</name>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a3538821b6929e9b13f6a3ea763e1627e" kind="typedef"><name>value_type</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a5cab8e85fbee4a9314fc8a3e09e59eef" kind="variable"><name>epsilon</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1ab0e05de518c208a6a762c7377d2f2332" kind="variable"><name>value</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a3ee48433567db9886d9f99ab5e6d2864" kind="function"><name>get</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a0a877099bf7ee9fcde1446cac65511e6" kind="function"><name>operator value_type</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1adcc1ade20fd348fa653623ec6c378d72" kind="function"><name>operator-</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a9e42c82de949aa6640b3964bd67c4732" kind="function"><name>get</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a2be95ffe95532c5b3a0ab852aa2c680f" kind="function"><name>operator T</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a53595778654687cfd7fe8dd385d26bcc" kind="function"><name>operator-</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_5_08_07_args___t_8_8_8_08_4" kind="struct"><name>micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(*)(Args_T...)&gt;</name>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_5_08_07_args___t_8_8_8_08_4_1a291ffb121545e9b52c3d1542f1612074" kind="typedef"><name>args</name></member>
@@ -87,29 +101,29 @@
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_5_08_07_args___t_8_8_8_08_4_1a1f21557f758a46166726e0c6e01ee8bc" kind="typedef"><name>result_type</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge__" kind="struct"><name>micro_os_plus::micro_test_plus::detail::ge_</name>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge___1a2418635d0546033776f5468fae9edd3d" kind="variable"><name>lhs_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge___1ac42617839c81070fed0e8960b3b5f980" kind="variable"><name>rhs_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge___1afbc7c85bac94188bf478b9d88b12bb11" kind="variable"><name>value_</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge___1a75e4626f1ff8024c4d90ab3e545be62f" kind="function"><name>ge_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge___1ae541f34511a2005eb12af8dda905e497" kind="function"><name>lhs</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge___1ac44f473624560442bde250eb13dfdae6" kind="function"><name>operator bool</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge___1a4ff1ed92d8ed883866127c3fcab9c9f5" kind="function"><name>rhs</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a503196c2296449a52b6f7995d4a647f5" kind="function"><name>lhs</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a854f1034410a13b6d2673beec610604a" kind="function"><name>operator bool</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1adfe5734554daf4e5793f0708f3121284" kind="function"><name>rhs</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1ac3bcfee808c65ee0d6be74d564cbf58c" kind="variable"><name>lhs_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1ab6217372c20998ca75fe5e7a73754d7c" kind="variable"><name>rhs_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a2dd578daf62dde786b3e9e7beeac08bc" kind="variable"><name>value_</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1genuine__integral__value" kind="struct"><name>micro_os_plus::micro_test_plus::type_traits::genuine_integral_value</name>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1genuine__integral__value_1a1b0fda5167fc47a474f0fad07d28fa8d" kind="typedef"><name>value_type</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1genuine__integral__value_1ab4f59f518a832369368c4502bf0c4d35" kind="variable"><name>value_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1genuine__integral__value_1afa29aa29cbc284a0147aa07db0d4891a" kind="function"><name>genuine_integral_value</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1genuine__integral__value_1ab2f53c63e86a887bccbadf0b7dbb8b4b" kind="function"><name>get</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1genuine__integral__value_1a1474de7e4b8a14f1c97f2c1ba5d9212a" kind="function"><name>operator T</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1genuine__integral__value_1a553f32e088ecaad0fe8363f45c290d0b" kind="function"><name>genuine_integral_value</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1aedc41334c71b7711435aee0cb8f44fb3" kind="function"><name>get</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1ab7f7f241b55abd7ac9e25234bbe64406" kind="function"><name>operator T</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a4a819c9151d37da6e8a76f4629c7cc4d" kind="typedef"><name>value_type</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a8f1747b0fb288001d51754dfb8c53b0e" kind="variable"><name>value_</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1gt__" kind="struct"><name>micro_os_plus::micro_test_plus::detail::gt_</name>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1gt___1a75b1f2613c68bdcc394e36fde93207ad" kind="variable"><name>lhs_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1gt___1ad19058c6d580a954184de1bc64bf41e8" kind="variable"><name>rhs_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1gt___1a6652063a42d153ed1126fea0697809e1" kind="variable"><name>value_</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1gt___1a0d3eb79b0fd8cd986a18ac77abb98192" kind="function"><name>gt_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1gt___1a47cce8ae50c6613355157d57f2f96d36" kind="function"><name>lhs</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1gt___1aa1c43be480e4b03d95aacd2f5610f244" kind="function"><name>operator bool</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1gt___1a6f7f79fc0225f471f801f27367586395" kind="function"><name>rhs</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a503196c2296449a52b6f7995d4a647f5" kind="function"><name>lhs</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a854f1034410a13b6d2673beec610604a" kind="function"><name>operator bool</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1adfe5734554daf4e5793f0708f3121284" kind="function"><name>rhs</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1ac3bcfee808c65ee0d6be74d564cbf58c" kind="variable"><name>lhs_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1ab6217372c20998ca75fe5e7a73754d7c" kind="variable"><name>rhs_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a2dd578daf62dde786b3e9e7beeac08bc" kind="variable"><name>value_</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity" kind="struct"><name>micro_os_plus::micro_test_plus::type_traits::identity</name>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity_1a6399364a09c1004ebbaab36b2d5dc0c8" kind="typedef"><name>type</name></member>
@@ -118,63 +132,65 @@
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1indent__t_1a6932503ba88465ebcb198e717a40ed2c" kind="variable"><name>level</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant" kind="struct"><name>micro_os_plus::micro_test_plus::type_traits::integral_constant</name>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant_1a30307d0cc6b010e9b42ec98753b6bec1" kind="typedef"><name>value_type</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant_1a53cb52e57c05eaf46f47352a77270993" kind="variable"><name>value</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant_1acb78deb0adea412045e1305280a443f1" kind="function"><name>get</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant_1a7fc0c3908f315982ce70d0439ea78a06" kind="function"><name>operator value_type</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant_1a7074d786704fd94b5342be3de7c86790" kind="function"><name>operator-</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant_1aa9f1e68b760d80aea085d684b2dccc4f" kind="function"><name>integral_constant</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1aedc41334c71b7711435aee0cb8f44fb3" kind="function"><name>get</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1ab7f7f241b55abd7ac9e25234bbe64406" kind="function"><name>operator decltype(N)</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant_1afe9d8229d9f706703eeafae51fc69335" kind="function"><name>operator-</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a4a819c9151d37da6e8a76f4629c7cc4d" kind="typedef"><name>value_type</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a8f1747b0fb288001d51754dfb8c53b0e" kind="variable"><name>value_</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1le__" kind="struct"><name>micro_os_plus::micro_test_plus::detail::le_</name>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1le___1a16497ced75388202004e5eb76bf523ca" kind="variable"><name>lhs_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1le___1ac35ed6cd3e982a14c17c8665d30b0f50" kind="variable"><name>rhs_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1le___1a87337198e5871d59c6433cbbdb6dfa9e" kind="variable"><name>value_</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1le___1a960d02b3adb732c12ddec1a3203c4a12" kind="function"><name>le_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1le___1afa0ff05a441550959f86b078e457f856" kind="function"><name>lhs</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1le___1ade2fe730ec162aca9bfc30c2086cef90" kind="function"><name>operator bool</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1le___1a01d7b63048ab7ccab1c2d669272bf6ef" kind="function"><name>rhs</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a503196c2296449a52b6f7995d4a647f5" kind="function"><name>lhs</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a854f1034410a13b6d2673beec610604a" kind="function"><name>operator bool</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1adfe5734554daf4e5793f0708f3121284" kind="function"><name>rhs</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1ac3bcfee808c65ee0d6be74d564cbf58c" kind="variable"><name>lhs_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1ab6217372c20998ca75fe5e7a73754d7c" kind="variable"><name>rhs_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a2dd578daf62dde786b3e9e7beeac08bc" kind="variable"><name>value_</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1list" kind="struct"><name>micro_os_plus::micro_test_plus::type_traits::list</name>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1lt__" kind="struct"><name>micro_os_plus::micro_test_plus::detail::lt_</name>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1lt___1a29d1d001aaf59ce052428c77939c4a40" kind="variable"><name>lhs_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1lt___1ac2ad5064a5d4d4852d4ad1b1a31e6b80" kind="variable"><name>rhs_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1lt___1ac1de362392847586832805252d3efc80" kind="variable"><name>value_</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1lt___1ad710000ff9a19e330f1fb33fdb236696" kind="function"><name>lt_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1lt___1a86329a6da9b505f1c11108ff4155f1f2" kind="function"><name>lhs</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1lt___1a1029e0974959a91b44cc7f7370c711b2" kind="function"><name>operator bool</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1lt___1ab2c485c148f49633dbd5ceecdc361947" kind="function"><name>rhs</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a503196c2296449a52b6f7995d4a647f5" kind="function"><name>lhs</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a854f1034410a13b6d2673beec610604a" kind="function"><name>operator bool</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1adfe5734554daf4e5793f0708f3121284" kind="function"><name>rhs</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1ac3bcfee808c65ee0d6be74d564cbf58c" kind="variable"><name>lhs_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1ab6217372c20998ca75fe5e7a73754d7c" kind="variable"><name>rhs_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a2dd578daf62dde786b3e9e7beeac08bc" kind="variable"><name>value_</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne__" kind="struct"><name>micro_os_plus::micro_test_plus::detail::ne_</name>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne___1af16b36014bf8c36695f6acdb187cf005" kind="variable"><name>lhs_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne___1a07b4d3b130d733eba891485316c89d1f" kind="variable"><name>rhs_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne___1ae3facfdaf028c076a5a93c504745b9ae" kind="variable"><name>value_</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne___1a6119b4adca8baf81aad4e2543b8902bc" kind="function"><name>ne_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne___1aab1827128a987da4c198b7f3e359c7e3" kind="function"><name>lhs</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne___1ae4aca210912ea4f95ab410d9a0bbdcd0" kind="function"><name>operator bool</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne___1a8972754d2f78a43e0f6d32f08fec9552" kind="function"><name>rhs</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a503196c2296449a52b6f7995d4a647f5" kind="function"><name>lhs</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a854f1034410a13b6d2673beec610604a" kind="function"><name>operator bool</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1adfe5734554daf4e5793f0708f3121284" kind="function"><name>rhs</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1ac3bcfee808c65ee0d6be74d564cbf58c" kind="variable"><name>lhs_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1ab6217372c20998ca75fe5e7a73754d7c" kind="variable"><name>rhs_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a2dd578daf62dde786b3e9e7beeac08bc" kind="variable"><name>value_</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__" kind="struct"><name>micro_os_plus::micro_test_plus::detail::not_</name>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not___1a91b44f2fca870036021c939bb87360ad" kind="variable"><name>t_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not___1af63f8f3af8a2522ae0911d9970ec9444" kind="variable"><name>value_</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not___1ae04b89bc6cdf306487499875a635d301" kind="function"><name>not_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not___1a2b93dccea00b189c2af9c765933788b1" kind="function"><name>operand</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not___1a7d17fbb0ad2197265d7393c335c16018" kind="function"><name>operator bool</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1a6dad81524f4cc61c26a91d28aafdd8b0" kind="function"><name>operand</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1ad8463c48db311b2246fa3a860afb5e5d" kind="function"><name>operator bool</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1a21b7e5959bd3e3c18152549aaf4ee9d5" kind="variable"><name>t_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1ac226d3ad3c5e0ce7eddaf225803aa998" kind="variable"><name>value_</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__" kind="struct"><name>micro_os_plus::micro_test_plus::detail::nothrow_</name>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow___1adccb70ab303b01d35d3adcd5e4d981be" kind="variable"><name>value_</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow___1a90fe7c5c67a46a6eb7834b04b372d28f" kind="function"><name>nothrow_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow___1adb5deb96eff8e73d2ac69f7516d984fb" kind="function"><name>operator bool</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op___1adbbcb62f9976b0f2f5461d52a89caf57" kind="function"><name>operator bool</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op___1a8b7760bde30950164a3c97632b468361" kind="variable"><name>value_</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op" kind="struct"><name>micro_os_plus::micro_test_plus::type_traits::op</name>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__" kind="struct"><name>micro_os_plus::micro_test_plus::detail::or_</name>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or___1a6862c7a63400e57c857c33824e6123a9" kind="variable"><name>lhs_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or___1a94b13f2c857015255f61ca413ed55745" kind="variable"><name>rhs_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or___1af3b7e813b9a4cd44c510f16119c374eb" kind="variable"><name>value_</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or___1ae023677ab7963bcd4302604292ec9871" kind="function"><name>or_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or___1ade57fa3ad2c060e1606858f7363a78fb" kind="function"><name>lhs</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or___1ae7c74522aa7a512f9ad94b6be81c93f8" kind="function"><name>operator bool</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or___1ad20450caccc16905bb9ec2b6852dbe15" kind="function"><name>rhs</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a503196c2296449a52b6f7995d4a647f5" kind="function"><name>lhs</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a854f1034410a13b6d2673beec610604a" kind="function"><name>operator bool</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1adfe5734554daf4e5793f0708f3121284" kind="function"><name>rhs</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1ac3bcfee808c65ee0d6be74d564cbf58c" kind="variable"><name>lhs_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1ab6217372c20998ca75fe5e7a73754d7c" kind="variable"><name>rhs_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op___1a2dd578daf62dde786b3e9e7beeac08bc" kind="variable"><name>value_</name></member>
   </compound>
   <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kind="class"><name>micro_os_plus::micro_test_plus::reporter</name>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a3961bc77e50ecbade82b29dd5983ddec" kind="variable"><name>add_empty_line_</name></member>
@@ -183,7 +199,7 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aeb060bfc3184673b0813bca6d8057865" kind="variable"><name>colours_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a1d95688325caf323a4d77272dcf50b86" kind="variable"><name>output_file_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1abb92804e6eaee977fdc1e48f29c632f2" kind="variable"><name>output_file_path_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" kind="variable"><name>verbosity_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" kind="variable"><name>verbosity_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kind="function"><name>reporter</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a1ab2bf741196d093aada2d4f3876176b" kind="function"><name>~reporter</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ad4a31761666167469ad39585774b306e" kind="function"><name>begin_session</name></member>
@@ -211,7 +227,7 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1acfd5afd6cd385e4994a188d248bf91f8" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1afcadab7426f75555d3589f5c93e6e94a" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1acfe9bdb0f3bee7cc5ab3836dc2e17d08" kind="function"><name>operator&lt;&lt;</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aad5806b3dda95d6a6a30b9b27cc68d81" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a330aa7e22a4efc710fe866e1bda6fc4c" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ab869cb07165b28db0087fd0757114038" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a697a4dcb95f65634253f44946d06c81a" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a3a7538024d14a727640a789c6d6b8058" kind="function"><name>operator&lt;&lt;</name></member>
@@ -232,7 +248,7 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1af403303bf0d2d0e9f729d2461fc6bb91" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aeb9ea0be472dff38345b1271881b6820" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a164c7e5acc5936c882812c578b838968" kind="function"><name>pass</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a7685b625fb0bcc71279c07f45c82c0ac" kind="function"><name>verbosity</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a24da76a8973a5aebca9ef7604740180c" kind="function"><name>verbosity</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a26d99bc552ad4ed31253028647e939b1" kind="function"><name>write_buffer_to_stdout</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ab6b39c68c08e7ccfb29a693bc86d391c" kind="function"><name>colour_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aa081a10147919931f1b0a4b41a14dfe9" kind="function"><name>output_fail_prefix_</name></member>
@@ -273,7 +289,7 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1acfd5afd6cd385e4994a188d248bf91f8" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1afcadab7426f75555d3589f5c93e6e94a" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1acfe9bdb0f3bee7cc5ab3836dc2e17d08" kind="function"><name>operator&lt;&lt;</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aad5806b3dda95d6a6a30b9b27cc68d81" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a330aa7e22a4efc710fe866e1bda6fc4c" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a697a4dcb95f65634253f44946d06c81a" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a3a7538024d14a727640a789c6d6b8058" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a602622b74c12f7bf045b14fe7aac82b1" kind="function"><name>operator&lt;&lt;</name></member>
@@ -296,7 +312,7 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a59361608bd3bf8e6c34478c9e1a9a9cf" kind="function"><name>operator=</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a25e8e0a0222c7ea4c8b4c42c6c460a43" kind="function"><name>operator=</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a164c7e5acc5936c882812c578b838968" kind="function"><name>pass</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a7685b625fb0bcc71279c07f45c82c0ac" kind="function"><name>verbosity</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a24da76a8973a5aebca9ef7604740180c" kind="function"><name>verbosity</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a26d99bc552ad4ed31253028647e939b1" kind="function"><name>write_buffer_to_stdout</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ab6b39c68c08e7ccfb29a693bc86d391c" kind="function"><name>colour_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aa25bc978d1fcd02cb7c75aef0c1a9988" kind="function"><name>output_fail_prefix_</name></member>
@@ -311,7 +327,7 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aeb060bfc3184673b0813bca6d8057865" kind="variable"><name>colours_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a1d95688325caf323a4d77272dcf50b86" kind="variable"><name>output_file_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1abb92804e6eaee977fdc1e48f29c632f2" kind="variable"><name>output_file_path_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" kind="variable"><name>verbosity_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" kind="variable"><name>verbosity_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a4a1d9fe32165b779cf7b9f97fbb63564" kind="function"><name>append_number_</name></member>
   </compound>
   <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap" kind="class"><name>micro_os_plus::micro_test_plus::reporter_tap</name>
@@ -344,7 +360,7 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1acfd5afd6cd385e4994a188d248bf91f8" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1afcadab7426f75555d3589f5c93e6e94a" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1acfe9bdb0f3bee7cc5ab3836dc2e17d08" kind="function"><name>operator&lt;&lt;</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1aad5806b3dda95d6a6a30b9b27cc68d81" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a330aa7e22a4efc710fe866e1bda6fc4c" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a697a4dcb95f65634253f44946d06c81a" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a3a7538024d14a727640a789c6d6b8058" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a602622b74c12f7bf045b14fe7aac82b1" kind="function"><name>operator&lt;&lt;</name></member>
@@ -367,7 +383,7 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a6459930fc5c054d6c5ec511b74aa74ec" kind="function"><name>operator=</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a9fe6788edd80a8d3e7bb3940169dd92f" kind="function"><name>operator=</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a164c7e5acc5936c882812c578b838968" kind="function"><name>pass</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a7685b625fb0bcc71279c07f45c82c0ac" kind="function"><name>verbosity</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a24da76a8973a5aebca9ef7604740180c" kind="function"><name>verbosity</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a26d99bc552ad4ed31253028647e939b1" kind="function"><name>write_buffer_to_stdout</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ab6b39c68c08e7ccfb29a693bc86d391c" kind="function"><name>colour_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a8caeeaad1fa7b6b7c5118d43517d1cb8" kind="function"><name>output_fail_prefix_</name></member>
@@ -382,7 +398,7 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aeb060bfc3184673b0813bca6d8057865" kind="variable"><name>colours_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a1d95688325caf323a4d77272dcf50b86" kind="variable"><name>output_file_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1abb92804e6eaee977fdc1e48f29c632f2" kind="variable"><name>output_file_path_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" kind="variable"><name>verbosity_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" kind="variable"><name>verbosity_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a4a1d9fe32165b779cf7b9f97fbb63564" kind="function"><name>append_number_</name></member>
   </compound>
   <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable" kind="class"><name>micro_os_plus::micro_test_plus::runnable</name>
@@ -572,10 +588,10 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1a0ba1f75634440c8508001b13bd0f1ed3" kind="function"><name>subtest</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1a83b83ec1680698bb5860d3272fbfe50d" kind="function"><name>~subtest</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base_1a08921ea05d769a210cfec4326f1505a9" kind="function"><name>abort</name></member>
-    <member refid="group__micro-test-plus-assumptions_1ga4f8137c97c5135722ff2cda2b7fb20bf" kind="function"><name>assume</name></member>
+    <member refid="group__micro-test-plus-assumptions_1ga0346721eb94564ebce4a49ee81c020c8" kind="function"><name>assume</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base_1a39bd5f3d034eafd46372a68495599387" kind="function"><name>children_subtests_count</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base_1a7aab1b04ef7851b96ba0323d383dce91" kind="function"><name>current_subtest_index</name></member>
-    <member refid="group__micro-test-plus-expectations_1ga9baacbf1fea181ff175bcd14baa54ea1" kind="function"><name>expect</name></member>
+    <member refid="group__micro-test-plus-expectations_1gaad2aa05f39d1877f2173f6d0f6718bd2" kind="function"><name>expect</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base_1a685f7303edbe95d99cb841d88f5212ea" kind="function"><name>increment_subtest_index</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1ab32279070d5254a7b92f736f2dfb96d4" kind="function"><name>name</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1aee4c71b875afef0ff38f6bf2e4c0b234" kind="function"><name>nesting_depth</name></member>
@@ -637,14 +653,14 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1a3e2ef02064a1707582db4741d87cd801" kind="function"><name>totals</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__" kind="struct"><name>micro_os_plus::micro_test_plus::detail::throws_</name>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___1ab92c281f0bbf04125e3fa9a8258dc1b9" kind="variable"><name>value_</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___1ab482b144c355eb68638dc872331145e7" kind="function"><name>throws_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___1a84158f0b3d7719fe0929b49002c113b5" kind="function"><name>operator bool</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op___1adbbcb62f9976b0f2f5461d52a89caf57" kind="function"><name>operator bool</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op___1a8b7760bde30950164a3c97632b468361" kind="variable"><name>value_</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4" kind="struct"><name>micro_os_plus::micro_test_plus::detail::throws_&lt; Callable_T, void &gt;</name>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4_1ae7a98b2cb20da3c1d40e7fa0ff4a2615" kind="variable"><name>value_</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4_1a8e97e74a695e9758034855ba462c2839" kind="function"><name>throws_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4_1a12c805c55b615482e942aef67e41cc05" kind="function"><name>operator bool</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op___1adbbcb62f9976b0f2f5461d52a89caf57" kind="function"><name>operator bool</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op___1a8b7760bde30950164a3c97632b468361" kind="variable"><name>value_</name></member>
   </compound>
   <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp" kind="class"><name>micro_os_plus::micro_test_plus::timestamp</name>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1aa45da56b409a7cf625ce373b7f6a621b" kind="variable"><name>value_</name></member>
@@ -679,11 +695,11 @@
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t" kind="struct"><name>micro_os_plus::micro_test_plus::to_t</name>
     <member refid="group__micro-test-plus-literals_1gaad9720f2d1e443d77cdfd1eb1151e924" kind="function"><name>to_t</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1af60376a1f5c8acd58ab855b81efb4345" kind="function"><name>get</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a6b25c4a476c9745d143f6c4f3d038b0e" kind="function"><name>operator T</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a6bf65c151c552fb88e10a4799a64f5f4" kind="typedef"><name>value_type</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1aedc41334c71b7711435aee0cb8f44fb3" kind="function"><name>get</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1ab7f7f241b55abd7ac9e25234bbe64406" kind="function"><name>operator T</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a434b222ff19bdb4970ad56fce11d5176" kind="variable"><name>epsilon</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1ad031508c3c4fba0528638bb61a0d908c" kind="variable"><name>value_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a8f1747b0fb288001d51754dfb8c53b0e" kind="variable"><name>value_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a4a819c9151d37da6e8a76f4629c7cc4d" kind="typedef"><name>value_type</name></member>
   </compound>
   <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1top__suite" kind="class"><name>micro_os_plus::micro_test_plus::top_suite</name>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1top__suite_1a944643243d81c498970aa7b448a5ff56" kind="function"><name>top_suite</name></member>
@@ -717,21 +733,43 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1a8f661c9eb2c68a31c6a3e7805e99d79a" kind="variable"><name>totals_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base_1a4eb5910c122542031477006aec7fd649" kind="function"><name>after_subtest_create_</name></member>
   </compound>
+  <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op__" kind="struct"><name>micro_os_plus::micro_test_plus::detail::unary_op_</name>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1a21b7e5959bd3e3c18152549aaf4ee9d5" kind="variable"><name>t_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1ac226d3ad3c5e0ce7eddaf225803aa998" kind="variable"><name>value_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1a9458699958135918f1a616bdbd50f0ed" kind="function"><name>unary_op_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1a6dad81524f4cc61c26a91d28aafdd8b0" kind="function"><name>operand</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1ad8463c48db311b2246fa3a860afb5e5d" kind="function"><name>operator bool</name></member>
+  </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kind="struct"><name>micro_os_plus::micro_test_plus::type_traits::value</name>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a6bf65c151c552fb88e10a4799a64f5f4" kind="typedef"><name>value_type</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1ad031508c3c4fba0528638bb61a0d908c" kind="variable"><name>value_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a358a37a8a1ba8322a276d3f9b87120eb" kind="function"><name>value</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1af60376a1f5c8acd58ab855b81efb4345" kind="function"><name>get</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a6b25c4a476c9745d143f6c4f3d038b0e" kind="function"><name>operator T</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a7bec98988dcc3b8317f4dad31cbbf755" kind="function"><name>value</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1aedc41334c71b7711435aee0cb8f44fb3" kind="function"><name>get</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1ab7f7f241b55abd7ac9e25234bbe64406" kind="function"><name>operator T</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a4a819c9151d37da6e8a76f4629c7cc4d" kind="typedef"><name>value_type</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a8f1747b0fb288001d51754dfb8c53b0e" kind="variable"><name>value_</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4" kind="struct"><name>micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;</name>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a6bf65c151c552fb88e10a4799a64f5f4" kind="typedef"><name>value_type</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a434b222ff19bdb4970ad56fce11d5176" kind="variable"><name>epsilon</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1ad031508c3c4fba0528638bb61a0d908c" kind="variable"><name>value_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1aa345a4fad8db58254b2f5b7a395d8e5b" kind="function"><name>value</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a8f1747b0fb288001d51754dfb8c53b0e" kind="variable"><name>value_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a8f1747b0fb288001d51754dfb8c53b0e" kind="variable"><name>value_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a69374f408449c08c756896dd26d2d437" kind="function"><name>value</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a453e9c54cb194c672ca8739c98d3cc68" kind="function"><name>value</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1af60376a1f5c8acd58ab855b81efb4345" kind="function"><name>get</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a6b25c4a476c9745d143f6c4f3d038b0e" kind="function"><name>operator T</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1aedc41334c71b7711435aee0cb8f44fb3" kind="function"><name>get</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1aedc41334c71b7711435aee0cb8f44fb3" kind="function"><name>get</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1ab7f7f241b55abd7ac9e25234bbe64406" kind="function"><name>operator T</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1ab7f7f241b55abd7ac9e25234bbe64406" kind="function"><name>operator T</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a4a819c9151d37da6e8a76f4629c7cc4d" kind="typedef"><name>value_type</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a4a819c9151d37da6e8a76f4629c7cc4d" kind="typedef"><name>value_type</name></member>
+  </compound>
+  <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__" kind="struct"><name>micro_os_plus::micro_test_plus::type_traits::value_base_</name>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a4a819c9151d37da6e8a76f4629c7cc4d" kind="typedef"><name>value_type</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a8f1747b0fb288001d51754dfb8c53b0e" kind="variable"><name>value_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1ab9b0e45988e4291e63d6b016c55231f7" kind="function"><name>value_base_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1aedc41334c71b7711435aee0cb8f44fb3" kind="function"><name>get</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1ab7f7f241b55abd7ac9e25234bbe64406" kind="function"><name>operator T</name></member>
+  </compound>
+  <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1any__op" kind="concept"><name>micro_os_plus::micro_test_plus::type_traits::any_op</name>
+  </compound>
+  <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1checkable" kind="concept"><name>micro_os_plus::micro_test_plus::type_traits::checkable</name>
   </compound>
   <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1container__like" kind="concept"><name>micro_os_plus::micro_test_plus::type_traits::container_like</name>
   </compound>
@@ -740,6 +778,12 @@
   <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__npos" kind="concept"><name>micro_os_plus::micro_test_plus::type_traits::has_npos</name>
   </compound>
   <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__value" kind="concept"><name>micro_os_plus::micro_test_plus::type_traits::has_value</name>
+  </compound>
+  <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__floating__point" kind="concept"><name>micro_os_plus::micro_test_plus::type_traits::is_floating_point</name>
+  </compound>
+  <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__op" kind="concept"><name>micro_os_plus::micro_test_plus::type_traits::is_op</name>
+  </compound>
+  <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1printable" kind="concept"><name>micro_os_plus::micro_test_plus::type_traits::printable</name>
   </compound>
   <compound refid="namespacemicro__os__plus" kind="namespace"><name>micro_os_plus</name>
   </compound>
@@ -795,7 +839,6 @@
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d" kind="enumvalue"><name>quiet</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" kind="enumvalue"><name>normal</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" kind="enumvalue"><name>verbose</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a0bbf0517c0f64f25e40b591ecb969a6e" kind="typedef"><name>verbosity_t</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1abb8182f972e436f09e25dc5b0dae05fd" kind="variable"><name>colours_red_green</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a06acf196002ba97ba19ce4054477f915" kind="variable"><name>indent_size</name></member>
     <member refid="group__micro-test-plus-logical-functions_1ga8b43b7658b43fb76daf5efbb2e03d236" kind="function"><name>_and</name></member>
@@ -824,7 +867,7 @@
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a9c99a7907fdca67f8fc1f7b18b516ff1" kind="function"><name>and_</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3c134d5164d17cade8ff3f6de49c5e6b" kind="function"><name>eq_</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1aded574b3efc7cfe142d34541e0ef71a5" kind="function"><name>ge_</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a0c9d0a57b84d040bb1dcedd9d7130825" kind="function"><name>get</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ac627271520bf2fe8a4c4774bcd9bf343" kind="function"><name>get</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a9b9cf4ed2f2e67ddd24b1f2771675f4f" kind="function"><name>gt_</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a1046941e8fddcb180ce30cc9efd2fb07" kind="function"><name>le_</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ac93b3c5d42203345061f87bf2e794b07" kind="function"><name>lt_</name></member>
@@ -858,28 +901,28 @@
     <member refid="group__micro-test-plus-literals_1ga9017debdc1eafd64e3c53c80157ad6f5" kind="function"><name>operator&quot;&quot;_us</name></member>
   </compound>
   <compound refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math" kind="namespace"><name>micro_os_plus::micro_test_plus::math</name>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a1dd33529640b959c531ca18c2e494c80" kind="function"><name>abs</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1aef66ac12d33fb18753ae7440445e8d85" kind="function"><name>abs</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a8a29540b951c5cf6b40485287842b782" kind="function"><name>den</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a3e243d7f77b8435e1433ccad9c603f98" kind="function"><name>den_size</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1af5a33355bb68f644b9949ef1faa0d079" kind="function"><name>den_size</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1ae53dd62f6d82b8ccaa048d90a7002826" kind="function"><name>min_value</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a2d07ed276b3f0d461e5b856ec24afcb4" kind="function"><name>min_value</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" kind="function"><name>num</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a5c22d85f0df63cc0504cbf4988173cd7" kind="function"><name>pow</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a81a10f59f83a29f4ade9c710e833eced" kind="function"><name>pow</name></member>
   </compound>
   <compound refid="namespacemicro__os__plus_1_1micro__test__plus_1_1operators" kind="namespace"><name>micro_os_plus::micro_test_plus::operators</name>
-    <member refid="group__micro-test-plus-operators_1ga9f5b1ce8e86ae91e37952fa5395a262c" kind="function"><name>operator and</name></member>
-    <member refid="group__micro-test-plus-operators_1ga6efefab5a8f2fa4b8f0008255581379e" kind="function"><name>operator not</name></member>
-    <member refid="group__micro-test-plus-operators_1gada70a550c2c02d1d7293efd2cf10ab5c" kind="function"><name>operator or</name></member>
-    <member refid="group__micro-test-plus-operators_1ga70665b9137eb7a54917ef4a7e556e5d6" kind="function"><name>operator!=</name></member>
+    <member refid="group__micro-test-plus-operators_1gaa188c33047f559e28dc95dbb465e19a8" kind="function"><name>operator and</name></member>
+    <member refid="group__micro-test-plus-operators_1ga00db5f149865ed9fd8d73f2db44542b0" kind="function"><name>operator not</name></member>
+    <member refid="group__micro-test-plus-operators_1ga0fe9ef52ecfb0de402da9e7454d7c20b" kind="function"><name>operator or</name></member>
+    <member refid="group__micro-test-plus-container-operators_1gac2449b2b9f07c550b1218456ba1da2db" kind="function"><name>operator!=</name></member>
+    <member refid="group__micro-test-plus-operators_1ga445025eccd3ef529af191aab5aad91a9" kind="function"><name>operator!=</name></member>
     <member refid="group__micro-test-plus-string-operators_1ga179e971d5e37795c036ad66aa35f1654" kind="function"><name>operator!=</name></member>
-    <member refid="group__micro-test-plus-container-operators_1ga2318671d1b956de9f34f61139a748ce8" kind="function"><name>operator!=</name></member>
-    <member refid="group__micro-test-plus-operators_1gaf444d654ac945f6c47c9a8712278cb7f" kind="function"><name>operator&lt;</name></member>
-    <member refid="group__micro-test-plus-operators_1ga6fa56a234ceec4232dc9f131695dcc3b" kind="function"><name>operator&lt;=</name></member>
-    <member refid="group__micro-test-plus-operators_1ga15b2c12a28683bea3529436c03eff4cf" kind="function"><name>operator==</name></member>
+    <member refid="group__micro-test-plus-operators_1ga675d31a23d8f0dfed775466ef1463a80" kind="function"><name>operator&lt;</name></member>
+    <member refid="group__micro-test-plus-operators_1ga15235adceff30c6e3aa382696aea23cb" kind="function"><name>operator&lt;=</name></member>
+    <member refid="group__micro-test-plus-container-operators_1gab8c44f8115524296fbaf21688dd7f389" kind="function"><name>operator==</name></member>
+    <member refid="group__micro-test-plus-operators_1gaae177a6c59286d4d7e4f85ffa6579e56" kind="function"><name>operator==</name></member>
     <member refid="group__micro-test-plus-string-operators_1gaabe34a842bf38ea2913a4164d2b0a9cb" kind="function"><name>operator==</name></member>
-    <member refid="group__micro-test-plus-container-operators_1ga4dcbc8e9b0ceb8b59680c53e5f17f5bf" kind="function"><name>operator==</name></member>
-    <member refid="group__micro-test-plus-operators_1ga79d68e7d8823fce4e90efba4435ab3e9" kind="function"><name>operator&gt;</name></member>
-    <member refid="group__micro-test-plus-operators_1ga6271e69322d8ccce03e08d68cc0f8af4" kind="function"><name>operator&gt;=</name></member>
+    <member refid="group__micro-test-plus-operators_1gac0afc8d658f73e3b5f136a5c60d1fbd1" kind="function"><name>operator&gt;</name></member>
+    <member refid="group__micro-test-plus-operators_1gabfc165fd00e9f53bbf7b63f71b9d5020" kind="function"><name>operator&gt;=</name></member>
   </compound>
   <compound refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection" kind="namespace"><name>micro_os_plus::micro_test_plus::reflection</name>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1afc93799846770e521c4721d0de0a81cc" kind="function"><name>short_name</name></member>
@@ -890,11 +933,6 @@
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a0ff1a0846fe8d484f01d45df4e37dd94" kind="variable"><name>has_npos_v</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a695b45e13f3ac3cd1cef1225fa0dfa01" kind="variable"><name>has_value_v</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a8361ab7ff9d9c6343d97a99bdcb9feb2" kind="variable"><name>is_container_v</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a49a5bfe63d50b6fd1be0972586fbf590" kind="variable"><name>is_convertible_v</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1abfe0c2413694bb3a6dcdf1da303c38db" kind="variable"><name>is_floating_point_v</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a14941429632c41668220d59c1cd59541" kind="variable"><name>is_floating_point_v&lt; double &gt;</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1aed0d377e4faa067bb6add65ebeb1a482" kind="variable"><name>is_floating_point_v&lt; float &gt;</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a735eedc6f117908ddfb242f37e319b46" kind="variable"><name>is_floating_point_v&lt; long double &gt;</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a814e7f004d5404f735737aabb90fa111" kind="variable"><name>is_op_v</name></member>
   </compound>
   <compound refid="namespacemicro__os__plus_1_1micro__test__plus_1_1utility" kind="namespace"><name>micro_os_plus::micro_test_plus::utility</name>
@@ -910,7 +948,7 @@
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a9c99a7907fdca67f8fc1f7b18b516ff1" kind="function"><name>and_</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3c134d5164d17cade8ff3f6de49c5e6b" kind="function"><name>eq_</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1aded574b3efc7cfe142d34541e0ef71a5" kind="function"><name>ge_</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a0c9d0a57b84d040bb1dcedd9d7130825" kind="function"><name>get</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ac627271520bf2fe8a4c4774bcd9bf343" kind="function"><name>get</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a9b9cf4ed2f2e67ddd24b1f2771675f4f" kind="function"><name>gt_</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a1046941e8fddcb180ce30cc9efd2fb07" kind="function"><name>le_</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ac93b3c5d42203345061f87bf2e794b07" kind="function"><name>lt_</name></member>
@@ -990,13 +1028,13 @@
     <member refid="group__micro-test-plus-literals_1ga9017debdc1eafd64e3c53c80157ad6f5" kind="function"><name>operator&quot;&quot;_us</name></member>
   </compound>
   <compound refid="math-inlines_8h" kind="file"><name>math-inlines.h</name>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a1dd33529640b959c531ca18c2e494c80" kind="function"><name>abs</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1aef66ac12d33fb18753ae7440445e8d85" kind="function"><name>abs</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a8a29540b951c5cf6b40485287842b782" kind="function"><name>den</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a3e243d7f77b8435e1433ccad9c603f98" kind="function"><name>den_size</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1af5a33355bb68f644b9949ef1faa0d079" kind="function"><name>den_size</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1ae53dd62f6d82b8ccaa048d90a7002826" kind="function"><name>min_value</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a2d07ed276b3f0d461e5b856ec24afcb4" kind="function"><name>min_value</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" kind="function"><name>num</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a5c22d85f0df63cc0504cbf4988173cd7" kind="function"><name>pow</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a81a10f59f83a29f4ade9c710e833eced" kind="function"><name>pow</name></member>
   </compound>
   <compound refid="reflection-inlines_8h" kind="file"><name>reflection-inlines.h</name>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" kind="function"><name>type_name</name></member>
@@ -1082,28 +1120,28 @@
     <member refid="group__micro-test-plus-literals_1ga9017debdc1eafd64e3c53c80157ad6f5" kind="function"><name>operator&quot;&quot;_us</name></member>
   </compound>
   <compound refid="math_8h" kind="file"><name>math.h</name>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a1dd33529640b959c531ca18c2e494c80" kind="function"><name>abs</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1aef66ac12d33fb18753ae7440445e8d85" kind="function"><name>abs</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a8a29540b951c5cf6b40485287842b782" kind="function"><name>den</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a3e243d7f77b8435e1433ccad9c603f98" kind="function"><name>den_size</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1af5a33355bb68f644b9949ef1faa0d079" kind="function"><name>den_size</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1ae53dd62f6d82b8ccaa048d90a7002826" kind="function"><name>min_value</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a2d07ed276b3f0d461e5b856ec24afcb4" kind="function"><name>min_value</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" kind="function"><name>num</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a5c22d85f0df63cc0504cbf4988173cd7" kind="function"><name>pow</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a81a10f59f83a29f4ade9c710e833eced" kind="function"><name>pow</name></member>
   </compound>
   <compound refid="operators_8h" kind="file"><name>operators.h</name>
-    <member refid="group__micro-test-plus-operators_1ga9f5b1ce8e86ae91e37952fa5395a262c" kind="function"><name>operator and</name></member>
-    <member refid="group__micro-test-plus-operators_1ga6efefab5a8f2fa4b8f0008255581379e" kind="function"><name>operator not</name></member>
-    <member refid="group__micro-test-plus-operators_1gada70a550c2c02d1d7293efd2cf10ab5c" kind="function"><name>operator or</name></member>
-    <member refid="group__micro-test-plus-operators_1ga70665b9137eb7a54917ef4a7e556e5d6" kind="function"><name>operator!=</name></member>
+    <member refid="group__micro-test-plus-operators_1gaa188c33047f559e28dc95dbb465e19a8" kind="function"><name>operator and</name></member>
+    <member refid="group__micro-test-plus-operators_1ga00db5f149865ed9fd8d73f2db44542b0" kind="function"><name>operator not</name></member>
+    <member refid="group__micro-test-plus-operators_1ga0fe9ef52ecfb0de402da9e7454d7c20b" kind="function"><name>operator or</name></member>
+    <member refid="group__micro-test-plus-container-operators_1gac2449b2b9f07c550b1218456ba1da2db" kind="function"><name>operator!=</name></member>
+    <member refid="group__micro-test-plus-operators_1ga445025eccd3ef529af191aab5aad91a9" kind="function"><name>operator!=</name></member>
     <member refid="group__micro-test-plus-string-operators_1ga179e971d5e37795c036ad66aa35f1654" kind="function"><name>operator!=</name></member>
-    <member refid="group__micro-test-plus-container-operators_1ga2318671d1b956de9f34f61139a748ce8" kind="function"><name>operator!=</name></member>
-    <member refid="group__micro-test-plus-operators_1gaf444d654ac945f6c47c9a8712278cb7f" kind="function"><name>operator&lt;</name></member>
-    <member refid="group__micro-test-plus-operators_1ga6fa56a234ceec4232dc9f131695dcc3b" kind="function"><name>operator&lt;=</name></member>
-    <member refid="group__micro-test-plus-operators_1ga15b2c12a28683bea3529436c03eff4cf" kind="function"><name>operator==</name></member>
+    <member refid="group__micro-test-plus-operators_1ga675d31a23d8f0dfed775466ef1463a80" kind="function"><name>operator&lt;</name></member>
+    <member refid="group__micro-test-plus-operators_1ga15235adceff30c6e3aa382696aea23cb" kind="function"><name>operator&lt;=</name></member>
+    <member refid="group__micro-test-plus-container-operators_1gab8c44f8115524296fbaf21688dd7f389" kind="function"><name>operator==</name></member>
+    <member refid="group__micro-test-plus-operators_1gaae177a6c59286d4d7e4f85ffa6579e56" kind="function"><name>operator==</name></member>
     <member refid="group__micro-test-plus-string-operators_1gaabe34a842bf38ea2913a4164d2b0a9cb" kind="function"><name>operator==</name></member>
-    <member refid="group__micro-test-plus-container-operators_1ga4dcbc8e9b0ceb8b59680c53e5f17f5bf" kind="function"><name>operator==</name></member>
-    <member refid="group__micro-test-plus-operators_1ga79d68e7d8823fce4e90efba4435ab3e9" kind="function"><name>operator&gt;</name></member>
-    <member refid="group__micro-test-plus-operators_1ga6271e69322d8ccce03e08d68cc0f8af4" kind="function"><name>operator&gt;=</name></member>
+    <member refid="group__micro-test-plus-operators_1gac0afc8d658f73e3b5f136a5c60d1fbd1" kind="function"><name>operator&gt;</name></member>
+    <member refid="group__micro-test-plus-operators_1gabfc165fd00e9f53bbf7b63f71b9d5020" kind="function"><name>operator&gt;=</name></member>
   </compound>
   <compound refid="reflection_8h" kind="file"><name>reflection.h</name>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1afc93799846770e521c4721d0de0a81cc" kind="function"><name>short_name</name></member>
@@ -1119,7 +1157,6 @@
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d" kind="enumvalue"><name>quiet</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" kind="enumvalue"><name>normal</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" kind="enumvalue"><name>verbose</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a0bbf0517c0f64f25e40b591ecb969a6e" kind="typedef"><name>verbosity_t</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1abb8182f972e436f09e25dc5b0dae05fd" kind="variable"><name>colours_red_green</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1accd8ecc7473b09af578daa31bb8780eb" kind="function"><name>endl</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1aa887212b25aa8e44bf32b07d4a6634e9" kind="function"><name>indent</name></member>
@@ -1137,11 +1174,6 @@
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a0ff1a0846fe8d484f01d45df4e37dd94" kind="variable"><name>has_npos_v</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a695b45e13f3ac3cd1cef1225fa0dfa01" kind="variable"><name>has_value_v</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a8361ab7ff9d9c6343d97a99bdcb9feb2" kind="variable"><name>is_container_v</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a49a5bfe63d50b6fd1be0972586fbf590" kind="variable"><name>is_convertible_v</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1abfe0c2413694bb3a6dcdf1da303c38db" kind="variable"><name>is_floating_point_v</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a14941429632c41668220d59c1cd59541" kind="variable"><name>is_floating_point_v&lt; double &gt;</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1aed0d377e4faa067bb6add65ebeb1a482" kind="variable"><name>is_floating_point_v&lt; float &gt;</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a735eedc6f117908ddfb242f37e319b46" kind="variable"><name>is_floating_point_v&lt; long double &gt;</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a814e7f004d5404f735737aabb90fa111" kind="variable"><name>is_op_v</name></member>
   </compound>
   <compound refid="utility_8h" kind="file"><name>utility.h</name>
@@ -1191,10 +1223,10 @@
   <compound refid="group__micro-test-plus-test-case" kind="group"><name>micro-test-plus-test-case</name>
   </compound>
   <compound refid="group__micro-test-plus-expectations" kind="group"><name>micro-test-plus-expectations</name>
-    <member refid="group__micro-test-plus-expectations_1ga9baacbf1fea181ff175bcd14baa54ea1" kind="function"><name>expect</name></member>
+    <member refid="group__micro-test-plus-expectations_1gaad2aa05f39d1877f2173f6d0f6718bd2" kind="function"><name>expect</name></member>
   </compound>
   <compound refid="group__micro-test-plus-assumptions" kind="group"><name>micro-test-plus-assumptions</name>
-    <member refid="group__micro-test-plus-assumptions_1ga4f8137c97c5135722ff2cda2b7fb20bf" kind="function"><name>assume</name></member>
+    <member refid="group__micro-test-plus-assumptions_1ga0346721eb94564ebce4a49ee81c020c8" kind="function"><name>assume</name></member>
   </compound>
   <compound refid="group__micro-test-plus-function-comparators" kind="group"><name>micro-test-plus-function-comparators</name>
     <member refid="group__micro-test-plus-function-comparators_1gae9dfca849300a917cb1c231d275baaa3" kind="function"><name>eq</name></member>
@@ -1221,23 +1253,23 @@
     <member refid="group__micro-test-plus-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" kind="function"><name>throws</name></member>
   </compound>
   <compound refid="group__micro-test-plus-operators" kind="group"><name>micro-test-plus-operators</name>
-    <member refid="group__micro-test-plus-operators_1ga9f5b1ce8e86ae91e37952fa5395a262c" kind="function"><name>operator and</name></member>
-    <member refid="group__micro-test-plus-operators_1ga6efefab5a8f2fa4b8f0008255581379e" kind="function"><name>operator not</name></member>
-    <member refid="group__micro-test-plus-operators_1gada70a550c2c02d1d7293efd2cf10ab5c" kind="function"><name>operator or</name></member>
-    <member refid="group__micro-test-plus-operators_1ga70665b9137eb7a54917ef4a7e556e5d6" kind="function"><name>operator!=</name></member>
-    <member refid="group__micro-test-plus-operators_1gaf444d654ac945f6c47c9a8712278cb7f" kind="function"><name>operator&lt;</name></member>
-    <member refid="group__micro-test-plus-operators_1ga6fa56a234ceec4232dc9f131695dcc3b" kind="function"><name>operator&lt;=</name></member>
-    <member refid="group__micro-test-plus-operators_1ga15b2c12a28683bea3529436c03eff4cf" kind="function"><name>operator==</name></member>
-    <member refid="group__micro-test-plus-operators_1ga79d68e7d8823fce4e90efba4435ab3e9" kind="function"><name>operator&gt;</name></member>
-    <member refid="group__micro-test-plus-operators_1ga6271e69322d8ccce03e08d68cc0f8af4" kind="function"><name>operator&gt;=</name></member>
+    <member refid="group__micro-test-plus-operators_1gaa188c33047f559e28dc95dbb465e19a8" kind="function"><name>operator and</name></member>
+    <member refid="group__micro-test-plus-operators_1ga00db5f149865ed9fd8d73f2db44542b0" kind="function"><name>operator not</name></member>
+    <member refid="group__micro-test-plus-operators_1ga0fe9ef52ecfb0de402da9e7454d7c20b" kind="function"><name>operator or</name></member>
+    <member refid="group__micro-test-plus-operators_1ga445025eccd3ef529af191aab5aad91a9" kind="function"><name>operator!=</name></member>
+    <member refid="group__micro-test-plus-operators_1ga675d31a23d8f0dfed775466ef1463a80" kind="function"><name>operator&lt;</name></member>
+    <member refid="group__micro-test-plus-operators_1ga15235adceff30c6e3aa382696aea23cb" kind="function"><name>operator&lt;=</name></member>
+    <member refid="group__micro-test-plus-operators_1gaae177a6c59286d4d7e4f85ffa6579e56" kind="function"><name>operator==</name></member>
+    <member refid="group__micro-test-plus-operators_1gac0afc8d658f73e3b5f136a5c60d1fbd1" kind="function"><name>operator&gt;</name></member>
+    <member refid="group__micro-test-plus-operators_1gabfc165fd00e9f53bbf7b63f71b9d5020" kind="function"><name>operator&gt;=</name></member>
   </compound>
   <compound refid="group__micro-test-plus-string-operators" kind="group"><name>micro-test-plus-string-operators</name>
     <member refid="group__micro-test-plus-string-operators_1ga179e971d5e37795c036ad66aa35f1654" kind="function"><name>operator!=</name></member>
     <member refid="group__micro-test-plus-string-operators_1gaabe34a842bf38ea2913a4164d2b0a9cb" kind="function"><name>operator==</name></member>
   </compound>
   <compound refid="group__micro-test-plus-container-operators" kind="group"><name>micro-test-plus-container-operators</name>
-    <member refid="group__micro-test-plus-container-operators_1ga2318671d1b956de9f34f61139a748ce8" kind="function"><name>operator!=</name></member>
-    <member refid="group__micro-test-plus-container-operators_1ga4dcbc8e9b0ceb8b59680c53e5f17f5bf" kind="function"><name>operator==</name></member>
+    <member refid="group__micro-test-plus-container-operators_1gac2449b2b9f07c550b1218456ba1da2db" kind="function"><name>operator!=</name></member>
+    <member refid="group__micro-test-plus-container-operators_1gab8c44f8115524296fbaf21688dd7f389" kind="function"><name>operator==</name></member>
   </compound>
   <compound refid="group__micro-test-plus-literals" kind="group"><name>micro-test-plus-literals</name>
     <member refid="group__micro-test-plus-literals_1ga74e6e2bffc2fc2dea47f979b5b55ea64" kind="typedef"><name>_b</name></member>

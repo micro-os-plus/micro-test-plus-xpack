@@ -99,14 +99,14 @@ $(function(){initNavTree('group__micro-test-plus-container-operators.html','',''
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga2318671d1b956de9f34f61139a748ce8" id="r_ga2318671d1b956de9f34f61139a748ce8"><td class="memTemplParams" colspan="2">template&lt;class T&gt; <br />
-requires type_traits::container_like&lt;T&gt;</td></tr>
-<tr class="memitem:ga2318671d1b956de9f34f61139a748ce8 template"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2318671d1b956de9f34f61139a748ce8">micro_os_plus::micro_test_plus::operators::operator!=</a> (T &amp;&amp;lhs, T &amp;&amp;rhs)</td></tr>
-<tr class="memdesc:ga2318671d1b956de9f34f61139a748ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-equality operator for containers.  <br /></td></tr>
-<tr class="memitem:ga4dcbc8e9b0ceb8b59680c53e5f17f5bf" id="r_ga4dcbc8e9b0ceb8b59680c53e5f17f5bf"><td class="memTemplParams" colspan="2">template&lt;class T&gt; <br />
-requires type_traits::container_like&lt;T&gt;</td></tr>
-<tr class="memitem:ga4dcbc8e9b0ceb8b59680c53e5f17f5bf template"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4dcbc8e9b0ceb8b59680c53e5f17f5bf">micro_os_plus::micro_test_plus::operators::operator==</a> (T &amp;&amp;lhs, T &amp;&amp;rhs)</td></tr>
-<tr class="memdesc:ga4dcbc8e9b0ceb8b59680c53e5f17f5bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality operator for containers.  <br /></td></tr>
+<tr class="memitem:gac2449b2b9f07c550b1218456ba1da2db" id="r_gac2449b2b9f07c550b1218456ba1da2db"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
+requires (type_traits::container_like&lt;Lhs_T&gt; and type_traits::container_like&lt;Rhs_T&gt;)</td></tr>
+<tr class="memitem:gac2449b2b9f07c550b1218456ba1da2db template"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac2449b2b9f07c550b1218456ba1da2db">micro_os_plus::micro_test_plus::operators::operator!=</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td></tr>
+<tr class="memdesc:gac2449b2b9f07c550b1218456ba1da2db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-equality operator for containers.  <br /></td></tr>
+<tr class="memitem:gab8c44f8115524296fbaf21688dd7f389" id="r_gab8c44f8115524296fbaf21688dd7f389"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
+requires (type_traits::container_like&lt;Lhs_T&gt; and type_traits::container_like&lt;Rhs_T&gt;)</td></tr>
+<tr class="memitem:gab8c44f8115524296fbaf21688dd7f389 template"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab8c44f8115524296fbaf21688dd7f389">micro_os_plus::micro_test_plus::operators::operator==</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td></tr>
+<tr class="memdesc:gab8c44f8115524296fbaf21688dd7f389"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality operator for containers.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <p>The µTest++ framework provides overloaded operators to facilitate direct and expressive comparison of standard containers, such as vectors and strings, within test cases. These operators enable developers to write clear and concise assertions when verifying the equality or inequality of container contents.</p>
@@ -127,14 +127,14 @@ requires type_traits::container_like&lt;T&gt;</td></tr>
 <div class="line">});</div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div><div class="ttdoc">Primary namespace for the µTest++ testing framework.</div></div>
 </div><!-- fragment -->  <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="ga2318671d1b956de9f34f61139a748ce8" name="ga2318671d1b956de9f34f61139a748ce8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2318671d1b956de9f34f61139a748ce8">&#9670;&#160;</a></span>operator!=()</h2>
+<a id="gac2449b2b9f07c550b1218456ba1da2db" name="gac2449b2b9f07c550b1218456ba1da2db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac2449b2b9f07c550b1218456ba1da2db">&#9670;&#160;</a></span>operator!=()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; <br />
-requires type_traits::container_like&lt;T&gt;</div>
+template&lt;class Lhs_T, class Rhs_T&gt; <br />
+requires (type_traits::container_like&lt;Lhs_T&gt; and type_traits::container_like&lt;Rhs_T&gt;)</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -142,12 +142,12 @@ requires type_traits::container_like&lt;T&gt;</div>
         <tr>
           <td class="memname">auto micro_os_plus::micro_test_plus::operators::operator!= </td>
           <td>(</td>
-          <td class="paramtype">T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
+          <td class="paramtype">const Lhs_T &amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;)</td>
+          <td class="paramtype">const Rhs_T &amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -158,7 +158,8 @@ requires type_traits::container_like&lt;T&gt;</div>
 </div><div class="memdoc">
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The container type, constrained to recognised container types.</td></tr>
+    <tr><td class="paramname">Lhs_T</td><td>The left-hand container type, constrained to recognised container types. </td></tr>
+    <tr><td class="paramname">Rhs_T</td><td>The right-hand container type, constrained to recognised container types.</td></tr>
   </table>
   </dd>
 </dl>
@@ -173,22 +174,22 @@ requires type_traits::container_like&lt;T&gt;</div>
 <p>This overload of the non-equality operator enables direct comparison of two container objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two containers are not equal in content or order.</p>
 <p>The operator is enabled only for types recognised as containers by the framework's type traits. </p>
 
-<p class="definition">Definition at line <a class="el" href="operators_8h_source.html#l00206">206</a> of file <a class="el" href="operators_8h_source.html">operators.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  207</span>    {</div>
-<div class="line"><span class="lineno">  208</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne__.html">detail::ne_</a>{ <span class="keyword">static_cast&lt;</span>T&amp;&amp;<span class="keyword">&gt;</span> (lhs), <span class="keyword">static_cast&lt;</span>T&amp;&amp;<span class="keyword">&gt;</span> (rhs) };</div>
-<div class="line"><span class="lineno">  209</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne__.html">micro_os_plus::micro_test_plus::detail::ne_</a></div><div class="ttdoc">Non-equality comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00370">detail.h:371</a></div></div>
+<p class="definition">Definition at line <a class="el" href="operators_8h_source.html#l00214">214</a> of file <a class="el" href="operators_8h_source.html">operators.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  215</span>    {</div>
+<div class="line"><span class="lineno">  216</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne__.html">detail::ne_</a>{ lhs, rhs };</div>
+<div class="line"><span class="lineno">  217</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne__.html">micro_os_plus::micro_test_plus::detail::ne_</a></div><div class="ttdoc">Non-equality comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00508">detail.h:509</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ga4dcbc8e9b0ceb8b59680c53e5f17f5bf" name="ga4dcbc8e9b0ceb8b59680c53e5f17f5bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4dcbc8e9b0ceb8b59680c53e5f17f5bf">&#9670;&#160;</a></span>operator==()</h2>
+<a id="gab8c44f8115524296fbaf21688dd7f389" name="gab8c44f8115524296fbaf21688dd7f389"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab8c44f8115524296fbaf21688dd7f389">&#9670;&#160;</a></span>operator==()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; <br />
-requires type_traits::container_like&lt;T&gt;</div>
+template&lt;class Lhs_T, class Rhs_T&gt; <br />
+requires (type_traits::container_like&lt;Lhs_T&gt; and type_traits::container_like&lt;Rhs_T&gt;)</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -196,12 +197,12 @@ requires type_traits::container_like&lt;T&gt;</div>
         <tr>
           <td class="memname">auto micro_os_plus::micro_test_plus::operators::operator== </td>
           <td>(</td>
-          <td class="paramtype">T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
+          <td class="paramtype">const Lhs_T &amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;)</td>
+          <td class="paramtype">const Rhs_T &amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -212,7 +213,8 @@ requires type_traits::container_like&lt;T&gt;</div>
 </div><div class="memdoc">
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The container type, constrained to recognised container types.</td></tr>
+    <tr><td class="paramname">Lhs_T</td><td>The left-hand container type, constrained to recognised container types. </td></tr>
+    <tr><td class="paramname">Rhs_T</td><td>The right-hand container type, constrained to recognised container types.</td></tr>
   </table>
   </dd>
 </dl>
@@ -227,11 +229,11 @@ requires type_traits::container_like&lt;T&gt;</div>
 <p>This overload of the equality operator enables direct comparison of two container objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two containers are equal in content and order.</p>
 <p>The operator is enabled only for types recognised as containers by the framework's type traits. </p>
 
-<p class="definition">Definition at line <a class="el" href="operators_8h_source.html#l00178">178</a> of file <a class="el" href="operators_8h_source.html">operators.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  179</span>    {</div>
-<div class="line"><span class="lineno">  180</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">detail::eq_</a>{ <span class="keyword">static_cast&lt;</span>T&amp;&amp;<span class="keyword">&gt;</span> (lhs), <span class="keyword">static_cast&lt;</span>T&amp;&amp;<span class="keyword">&gt;</span> (rhs) };</div>
-<div class="line"><span class="lineno">  181</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">micro_os_plus::micro_test_plus::detail::eq_</a></div><div class="ttdoc">Equality comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00196">detail.h:197</a></div></div>
+<p class="definition">Definition at line <a class="el" href="operators_8h_source.html#l00182">182</a> of file <a class="el" href="operators_8h_source.html">operators.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  183</span>    {</div>
+<div class="line"><span class="lineno">  184</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">detail::eq_</a>{ lhs, rhs };</div>
+<div class="line"><span class="lineno">  185</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">micro_os_plus::micro_test_plus::detail::eq_</a></div><div class="ttdoc">Equality comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00400">detail.h:401</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1any__op" kind="concept">
+    <compoundname>micro_os_plus::micro_test_plus::type_traits::any_op</compoundname>
+    <includes refid="type-traits_8h" local="no">type-traits.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class Lhs_T</type>
+      </param>
+      <param>
+        <type>class Rhs_T</type>
+      </param>
+    </templateparamlist>
+    <initializer>template&lt;class Lhs_T, class Rhs_T&gt;
+concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1any__op" kindref="compound">micro_os_plus::micro_test_plus::type_traits::any_op</ref> =  is_op&lt;Lhs_T&gt; or is_op&lt;Rhs_T&gt;    </initializer>
+    <briefdescription>
+<para>C++20 concept satisfied when at least one of two types derives from <computeroutput>op</computeroutput>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the left-hand operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the right-hand operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+The <computeroutput>any_op</computeroutput> concept is satisfied when <computeroutput>Lhs_T</computeroutput> or <computeroutput>Rhs_T</computeroutput> (or both) are derived from the <computeroutput>type_traits::op</computeroutput> base struct. It is used to constrain binary operator overloads in the <computeroutput>operators</computeroutput> namespace so that they are enabled only when at least one operand is a framework type, avoiding unintended conflicts with user-defined operators. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="453" column="5"/>
+  </compounddef>
+</doxygen>

@@ -22,7 +22,7 @@ keywords:
 ## Declaration
 
 <div class="doxyDeclaration">
-template &lt;class Callable_T&gt;
+template &lt;class Callable_T&gt;<br/>
 struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, void&gt; { ... }
 </div>
 
@@ -37,12 +37,12 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, void&gt; {
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">struct</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">op</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op-">callable_op_</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Empty base struct for all operator types. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op/#details">More...</a></p>
+<p>Common base struct for callable-wrapping operators. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op-/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -83,12 +83,12 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, void&gt; {
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a12c805c55b615482e942aef67e41cc05">operator bool</a> () const</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op-/#adbbcb62f9976b0f2f5461d52a89caf57">operator bool</a> () const</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Conversion operator to boolean. <a href="#a12c805c55b615482e942aef67e41cc05">More...</a></p>
+<p>Conversion operator to boolean. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op-/#adbbcb62f9976b0f2f5461d52a89caf57">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -97,7 +97,7 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, void&gt; {
 
 </table>
 
-## Public Member Attributes Index
+## Private Member Attributes Index
 
 <table class="doxyMembersIndex">
 
@@ -106,12 +106,12 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, void&gt; {
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">const bool</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ae7a98b2cb20da3c1d40e7fa0ff4a2615">value_</a> {}</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op-/#a8b7760bde30950164a3c97632b468361">value_</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Stores the result of the exception check. <a href="#ae7a98b2cb20da3c1d40e7fa0ff4a2615">More...</a></p>
+<p>Stores the result of the callable invocation. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op-/#a8b7760bde30950164a3c97632b468361">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -149,7 +149,7 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, void&gt; {
 <p>All definitions are intended for internal use within the framework and are implemented in the <span class="doxyComputerOutput">include/micro-os-plus/micro-test-plus</span> folder to maintain a structured and modular codebase.</p>
 
 
-<p>Definition at line 1548 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+<p>Definition at line 1187 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -185,7 +185,7 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, void&gt; {
 <p>Constructs an exception checking operator for the given callable.</p>
 
 
-<p>Invokes the provided callable and determines whether it throws any exception. The result is stored in the <span class="doxyComputerOutput">value_</span> member for efficient access.</p>
+<p>Invokes the provided callable and determines whether it throws any exception, then passes the result to the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op-">callable_op_</a></span> base class constructor.</p>
 
 
 <dl class="doxyParamsList">
@@ -200,31 +200,31 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, void&gt; {
 </dd>
 </dl>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01561">1561</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01200">1200</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a8e97e74a695e9758034855ba462c2839">1561</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">explicit</span><span class="doxyHighlight"> <a href="#a8e97e74a695e9758034855ba462c2839">throws_</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Callable_T&amp; func)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1562</span><span class="doxyLineContent"><span class="doxyHighlight">          : <a href="#ae7a98b2cb20da3c1d40e7fa0ff4a2615">value_</a>{ [&amp;func]</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1563</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1564</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordFlow">try</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1565</span><span class="doxyLineContent"><span class="doxyHighlight">            {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1566</span><span class="doxyLineContent"><span class="doxyHighlight">              func ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1567</span><span class="doxyLineContent"><span class="doxyHighlight">            }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1568</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordFlow">catch</span><span class="doxyHighlight"> (...)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1569</span><span class="doxyLineContent"><span class="doxyHighlight">            {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1570</span><span class="doxyLineContent"><span class="doxyHighlight">              </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1571</span><span class="doxyLineContent"><span class="doxyHighlight">            }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1572</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1573</span><span class="doxyLineContent"><span class="doxyHighlight">        }() }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1574</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1575</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a8e97e74a695e9758034855ba462c2839">1200</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">explicit</span><span class="doxyHighlight"> <a href="#a8e97e74a695e9758034855ba462c2839">throws_</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Callable_T&amp; func)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1201</span><span class="doxyLineContent"><span class="doxyHighlight">          : <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op-/#a271baf62ae8e74f4801dc3da24b575ea">callable_op_</a>{ [&amp;func]</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1202</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1203</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordFlow">try</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1204</span><span class="doxyLineContent"><span class="doxyHighlight">            {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1205</span><span class="doxyLineContent"><span class="doxyHighlight">              func ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1206</span><span class="doxyLineContent"><span class="doxyHighlight">            }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1207</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordFlow">catch</span><span class="doxyHighlight"> (...)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1208</span><span class="doxyLineContent"><span class="doxyHighlight">            {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1209</span><span class="doxyLineContent"><span class="doxyHighlight">              </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1210</span><span class="doxyLineContent"><span class="doxyHighlight">            }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1211</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1212</span><span class="doxyLineContent"><span class="doxyHighlight">        }() }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1213</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1214</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="#ae7a98b2cb20da3c1d40e7fa0ff4a2615">value_</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op-/#a271baf62ae8e74f4801dc3da24b575ea">micro_os_plus::micro_test_plus::detail::callable_op_::callable_op_</a>.</p>
 
 </div>
 </div>
@@ -235,7 +235,7 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, void&gt; {
 
 ## Public Operators
 
-### operator bool() {#a12c805c55b615482e942aef67e41cc05}
+### operator bool() {#adbbcb62f9976b0f2f5461d52a89caf57}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -245,7 +245,7 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, void&gt; {
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">micro_os_plus::micro_test_plus::detail::throws_&lt; Callable_T, void &gt;::operator bool ()</td>
+<td class="doxyMemberName">micro_os_plus::micro_test_plus::detail::callable_op_::operator bool ()</td>
 </tr>
 </table>
 </td>
@@ -270,39 +270,26 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, void&gt; {
 </dl>
 
 
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Return Values</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">true</td>
-<td class="doxyParamItemDescription"><p>The callable throws an exception.</p></td>
-</tr>
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">false</td>
-<td class="doxyParamItemDescription"><p>The callable does not throw any exception.</p></td>
-</tr>
-</table>
-</dd>
+<dl class="doxySectionUser">
+<dt>Returns</dt>
+<dd><p>The result of the callable invocation.</p></dd>
 </dl>
 
-<p>Returns the result of the exception check.</p>
+
+<p>Returns the pre-computed boolean result stored by the derived operator's constructor.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01589">1589</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01085">1085</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a12c805c55b615482e942aef67e41cc05">1589</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlight"> bool ()</span><span class="doxyHighlightKeyword"> const</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1590</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">      </span><span class="doxyHighlight">{</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1591</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#ae7a98b2cb20da3c1d40e7fa0ff4a2615">value_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1592</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op-/#adbbcb62f9976b0f2f5461d52a89caf57">1085</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlight"> bool ()</span><span class="doxyHighlightKeyword"> const</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1086</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">      </span><span class="doxyHighlight">{</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1087</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op-/#a8b7760bde30950164a3c97632b468361">value_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1088</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
 
 </div>
-
-
-<p>Reference <a href="#ae7a98b2cb20da3c1d40e7fa0ff4a2615">value_</a>.</p>
 
 </div>
 </div>
@@ -311,9 +298,9 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, void&gt; {
 
 <div class="doxySectionDef">
 
-## Public Member Attributes
+## Private Member Attributes
 
-### value\_ {#ae7a98b2cb20da3c1d40e7fa0ff4a2615}
+### value\_ {#a8b7760bde30950164a3c97632b468361}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -323,7 +310,7 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, void&gt; {
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">const bool micro_os_plus::micro_test_plus::detail::throws_&lt; Callable_T, void &gt;::value_ {}</td>
+<td class="doxyMemberName">const bool micro_os_plus::micro_test_plus::detail::callable_op_::value_</td>
 </tr>
 </table>
 </td>
@@ -332,19 +319,16 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, void&gt; {
 </div>
 <div class="doxyMemberDoc">
 
-<p>Stores the result of the exception check.</p>
+<p>Stores the result of the callable invocation.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01597">1597</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01094">1094</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ae7a98b2cb20da3c1d40e7fa0ff4a2615">1597</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#ae7a98b2cb20da3c1d40e7fa0ff4a2615">value_</a>{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op-/#a8b7760bde30950164a3c97632b468361">1094</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op-/#a8b7760bde30950164a3c97632b468361">value_</a>{};</span></span></div>
 
 </div>
-
-
-<p>Referenced by <a href="#a8e97e74a695e9758034855ba462c2839">throws_</a> and <a href="#a12c805c55b615482e942aef67e41cc05">operator bool</a>.</p>
 
 </div>
 </div>
@@ -361,6 +345,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.0.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 
 </div>

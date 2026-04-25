@@ -5,6 +5,7 @@
 
 title: Files & Folders
 slug: /api/files
+description: The files and folders that contributed content to this site
 custom_edit_url: null
 keywords:
   - doxygen
@@ -317,7 +318,7 @@ C++ header file with declarations for the µTest++ type trait utilities and meta
 <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/utility-h"><span class="doxyIconFile">utility.h</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-
+C++ header file with declarations for the µTest++ utility helpers
 </td>
 </tr>
 
@@ -465,6 +466,6 @@ Project specific Doxygen topics definitions
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.0.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 
 </div>

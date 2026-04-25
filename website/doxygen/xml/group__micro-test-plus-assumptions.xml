@@ -4,7 +4,7 @@
     <compoundname>micro-test-plus-assumptions</compoundname>
     <title>Assumptions</title>
     <sectiondef kind="func">
-      <memberdef kind="function" id="group__micro-test-plus-assumptions_1ga4f8137c97c5135722ff2cda2b7fb20bf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-test-plus-assumptions_1ga0346721eb94564ebce4a49ee81c020c8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Expr_T</type>
@@ -24,7 +24,7 @@
           <declname>sl</declname>
           <defval>reflection::source_location::current()</defval>
         </param>
-    <requiresclause>(type_traits::is_op_v&lt;Expr_T&gt; or type_traits::is_convertible_v&lt;Expr_T, bool&gt;)    </requiresclause>
+    <requiresclause>type_traits::checkable&lt;Expr_T&gt;    </requiresclause>
         <briefdescription>
 <para>Check a condition and, if false, abort test execution. </para>
         </briefdescription>
@@ -60,7 +60,7 @@
 <simplesect kind="return"><para>An output stream to write optional messages.</para>
 </simplesect>
 The <computeroutput>assume</computeroutput> function template evaluates a logical condition or custom expression and reports the result within the µTest++ framework. It is designed to provide detailed diagnostics for test failures, including the actual and expected values, when using the provided comparators (<computeroutput><ref refid="group__micro-test-plus-function-comparators_1gae9dfca849300a917cb1c231d275baaa3" kindref="member">eq()</ref></computeroutput>, <computeroutput><ref refid="group__micro-test-plus-function-comparators_1ga59e4cf59954e81bc868e62b1c5c8db1f" kindref="member">ne()</ref></computeroutput>, <computeroutput><ref refid="group__micro-test-plus-function-comparators_1gac162522dcad1a6ff7c869d52d376b3ed" kindref="member">lt()</ref></computeroutput>, <computeroutput><ref refid="group__micro-test-plus-function-comparators_1ga2b5263a5b3965855aa04971bba735a56" kindref="member">le()</ref></computeroutput>, <computeroutput><ref refid="group__micro-test-plus-function-comparators_1gae2fb681444d8256f6bf827eea6b7c29e" kindref="member">gt()</ref></computeroutput>, <computeroutput><ref refid="group__micro-test-plus-function-comparators_1ga34e03399670ec0b365b94b7bea788dd8" kindref="member">ge()</ref></computeroutput>) or custom operators.</para>
-<para>The function template can be used with any expression that evaluates to a boolean or with custom comparators/operators derived from the local <computeroutput>detail::op</computeroutput> type. For complex checks performed outside the <computeroutput><ref refid="group__micro-test-plus-expectations_1ga9baacbf1fea181ff175bcd14baa54ea1" kindref="member">expect()</ref></computeroutput> logical expression (such as within <computeroutput>if</computeroutput> or <computeroutput>try</computeroutput>/<computeroutput>catch</computeroutput> statements), the result can be reported by calling <computeroutput>expect(true)</computeroutput> or <computeroutput>expect(false)</computeroutput>.</para>
+<para>The function template can be used with any expression that evaluates to a boolean or with custom comparators/operators derived from the local <computeroutput>detail::op</computeroutput> type. For complex checks performed outside the <computeroutput><ref refid="group__micro-test-plus-expectations_1gaad2aa05f39d1877f2173f6d0f6718bd2" kindref="member">expect()</ref></computeroutput> logical expression (such as within <computeroutput>if</computeroutput> or <computeroutput>try</computeroutput>/<computeroutput>catch</computeroutput> statements), the result can be reported by calling <computeroutput>expect(true)</computeroutput> or <computeroutput>expect(false)</computeroutput>.</para>
 <para>The function returns an output stream, allowing optional messages to be appended to the test report.</para>
 <para><bold>Example</bold></para>
 <para><programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/>micro_os_plus::micro_test_plus;</highlight></codeline>
@@ -69,10 +69,8 @@ The <computeroutput>assume</computeroutput> function template evaluates a logica
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="687" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" bodystart="687" bodyend="691"/>
-        <references refid="group__micro-test-plus-assumptions_1ga4f8137c97c5135722ff2cda2b7fb20bf" compoundref="test_8h" startline="687" endline="691">micro_os_plus::micro_test_plus::subtest::assume</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="693" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" bodystart="693" bodyend="697"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1af2ee3ac5db96f13680291736d58fe327" compoundref="reflection-inlines_8h" startline="91" endline="97">micro_os_plus::micro_test_plus::reflection::source_location::current</references>
-        <referencedby refid="group__micro-test-plus-assumptions_1ga4f8137c97c5135722ff2cda2b7fb20bf" compoundref="test_8h" startline="687" endline="691">micro_os_plus::micro_test_plus::subtest::assume</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

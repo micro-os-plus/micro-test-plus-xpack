@@ -99,23 +99,23 @@ $(function(){initNavTree('group__micro-test-plus-assumptions.html','',''); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga4f8137c97c5135722ff2cda2b7fb20bf" id="r_ga4f8137c97c5135722ff2cda2b7fb20bf"><td class="memTemplParams" colspan="2">template&lt;class Expr_T&gt; <br />
-requires (<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#a814e7f004d5404f735737aabb90fa111">type_traits::is_op_v</a>&lt;Expr_T&gt; or <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#a49a5bfe63d50b6fd1be0972586fbf590">type_traits::is_convertible_v</a>&lt;Expr_T, bool&gt;)</td></tr>
-<tr class="memitem:ga4f8137c97c5135722ff2cda2b7fb20bf template"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4f8137c97c5135722ff2cda2b7fb20bf">micro_os_plus::micro_test_plus::subtest::assume</a> (const Expr_T &amp;expr, const <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html">reflection::source_location</a> &amp;sl=<a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#af2ee3ac5db96f13680291736d58fe327">reflection::source_location::current</a>())</td></tr>
-<tr class="memdesc:ga4f8137c97c5135722ff2cda2b7fb20bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check a condition and, if false, abort test execution.  <br /></td></tr>
+<tr class="memitem:ga0346721eb94564ebce4a49ee81c020c8" id="r_ga0346721eb94564ebce4a49ee81c020c8"><td class="memTemplParams" colspan="2">template&lt;class Expr_T&gt; <br />
+requires type_traits::checkable&lt;Expr_T&gt;</td></tr>
+<tr class="memitem:ga0346721eb94564ebce4a49ee81c020c8 template"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0346721eb94564ebce4a49ee81c020c8">micro_os_plus::micro_test_plus::subtest::assume</a> (const Expr_T &amp;expr, const <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html">reflection::source_location</a> &amp;sl=<a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#af2ee3ac5db96f13680291736d58fe327">reflection::source_location::current</a>())</td></tr>
+<tr class="memdesc:ga0346721eb94564ebce4a49ee81c020c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check a condition and, if false, abort test execution.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <p>Assumptions represent essential preconditions that must hold true for a test case to execute meaningfully. If an assumption fails, the test is immediately terminated, as continuing would render the results invalid or misleading.</p>
 <p>By clearly specifying assumptions, developers can ensure that tests are only run in appropriate contexts, improving the reliability and accuracy of test outcomes. This mechanism is particularly valuable for guarding against invalid input, incomplete initialisation, or unsupported environments.  </p>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="ga4f8137c97c5135722ff2cda2b7fb20bf" name="ga4f8137c97c5135722ff2cda2b7fb20bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4f8137c97c5135722ff2cda2b7fb20bf">&#9670;&#160;</a></span>assume()</h2>
+<a id="ga0346721eb94564ebce4a49ee81c020c8" name="ga0346721eb94564ebce4a49ee81c020c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0346721eb94564ebce4a49ee81c020c8">&#9670;&#160;</a></span>assume()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class Expr_T&gt; <br />
-requires (<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#a814e7f004d5404f735737aabb90fa111">type_traits::is_op_v</a>&lt;Expr_T&gt; or <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#a49a5bfe63d50b6fd1be0972586fbf590">type_traits::is_convertible_v</a>&lt;Expr_T, bool&gt;)</div>
+requires type_traits::checkable&lt;Expr_T&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -153,21 +153,19 @@ requires (<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1t
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An output stream to write optional messages.</dd></dl>
 <p>The <span class="tt">assume</span> function template evaluates a logical condition or custom expression and reports the result within the µTest++ framework. It is designed to provide detailed diagnostics for test failures, including the actual and expected values, when using the provided comparators (<span class="tt"><a class="el" href="group__micro-test-plus-function-comparators.html#gae9dfca849300a917cb1c231d275baaa3" title="Generic equality comparator for non-pointer types.">eq()</a></span>, <span class="tt"><a class="el" href="group__micro-test-plus-function-comparators.html#ga59e4cf59954e81bc868e62b1c5c8db1f" title="Generic non-equality comparator.">ne()</a></span>, <span class="tt"><a class="el" href="group__micro-test-plus-function-comparators.html#gac162522dcad1a6ff7c869d52d376b3ed" title="Generic less than comparator.">lt()</a></span>, <span class="tt"><a class="el" href="group__micro-test-plus-function-comparators.html#ga2b5263a5b3965855aa04971bba735a56" title="Generic less than or equal comparator.">le()</a></span>, <span class="tt"><a class="el" href="group__micro-test-plus-function-comparators.html#gae2fb681444d8256f6bf827eea6b7c29e" title="Generic greater than comparator.">gt()</a></span>, <span class="tt"><a class="el" href="group__micro-test-plus-function-comparators.html#ga34e03399670ec0b365b94b7bea788dd8" title="Generic greater than or equal comparator.">ge()</a></span>) or custom operators.</p>
-<p>The function template can be used with any expression that evaluates to a boolean or with custom comparators/operators derived from the local <span class="tt">detail::op</span> type. For complex checks performed outside the <span class="tt"><a class="el" href="group__micro-test-plus-expectations.html#ga9baacbf1fea181ff175bcd14baa54ea1" title="Evaluate a generic condition and report the results.">expect()</a></span> logical expression (such as within <span class="tt">if</span> or <span class="tt">try</span>/<span class="tt">catch</span> statements), the result can be reported by calling <span class="tt">expect(true)</span> or <span class="tt">expect(false)</span>.</p>
+<p>The function template can be used with any expression that evaluates to a boolean or with custom comparators/operators derived from the local <span class="tt">detail::op</span> type. For complex checks performed outside the <span class="tt"><a class="el" href="group__micro-test-plus-expectations.html#gaad2aa05f39d1877f2173f6d0f6718bd2" title="Evaluate a generic condition and report the results.">expect()</a></span> logical expression (such as within <span class="tt">if</span> or <span class="tt">try</span>/<span class="tt">catch</span> statements), the result can be reported by calling <span class="tt">expect(true)</span> or <span class="tt">expect(false)</span>.</p>
 <p>The function returns an output stream, allowing optional messages to be appended to the test report.</p>
 <p><b>Example</b></p>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span>mt = <a class="code hl_namespace" href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a>;</div>
 <div class="line">mt::assume(compute_answer() == 42) &lt;&lt; <span class="stringliteral">&quot;answer is 42&quot;</span>;</div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div><div class="ttdoc">Primary namespace for the µTest++ testing framework.</div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00687">687</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  689</span>    {</div>
-<div class="line"><span class="lineno">  690</span>      <span class="keywordflow">return</span> detail::deferred_reporter&lt;Expr_T&gt;{ expr, <span class="keyword">true</span>, sl, *<span class="keyword">this</span> };</div>
-<div class="line"><span class="lineno">  691</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00693">693</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  695</span>    {</div>
+<div class="line"><span class="lineno">  696</span>      <span class="keywordflow">return</span> detail::deferred_reporter&lt;Expr_T&gt;{ expr, <span class="keyword">true</span>, sl, *<span class="keyword">this</span> };</div>
+<div class="line"><span class="lineno">  697</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test_8h_source.html#l00687">assume()</a>, and <a class="el" href="reflection-inlines_8h_source.html#l00091">micro_os_plus::micro_test_plus::reflection::source_location::current()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="test_8h_source.html#l00687">assume()</a>.</p>
+<p class="reference">References <a class="el" href="reflection-inlines_8h_source.html#l00091">micro_os_plus::micro_test_plus::reflection::source_location::current()</a>.</p>
 
 </div>
 </div>

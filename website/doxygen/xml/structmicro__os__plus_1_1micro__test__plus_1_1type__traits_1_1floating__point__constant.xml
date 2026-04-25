@@ -38,13 +38,13 @@
         <name>value_type</name>
         <qualifiedname>micro_os_plus::micro_test_plus::type_traits::floating_point_constant::value_type</qualifiedname>
         <briefdescription>
-<para>The type of the constant value. </para>
+<para>The type of the stored value. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="638" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="638" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="716" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="716" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-static-attrib">
@@ -54,7 +54,7 @@
         <argsstring></argsstring>
         <name>epsilon</name>
         <qualifiedname>micro_os_plus::micro_test_plus::type_traits::floating_point_constant::epsilon</qualifiedname>
-        <initializer>= T (1) / <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a5c22d85f0df63cc0504cbf4988173cd7" kindref="member">math::pow</ref> (T (10), Size - 1)</initializer>
+        <initializer>= T (1) / <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a81a10f59f83a29f4ade9c710e833eced" kindref="member">math::pow</ref> (T (10), Size - 1)</initializer>
         <briefdescription>
 <para>The epsilon value used for floating point comparisons. </para>
         </briefdescription>
@@ -63,7 +63,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="646" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="646" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="724" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="724" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1ab0e05de518c208a6a762c7377d2f2332" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>auto</type>
@@ -71,76 +71,81 @@
         <argsstring></argsstring>
         <name>value</name>
         <qualifiedname>micro_os_plus::micro_test_plus::type_traits::floating_point_constant::value</qualifiedname>
-        <initializer>= T (P) * (T (N) + (T (D) / <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a5c22d85f0df63cc0504cbf4988173cd7" kindref="member">math::pow</ref> (T (10), Size)))</initializer>
+        <initializer>= T (P) * (T (N) + (T (D) / <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a81a10f59f83a29f4ade9c710e833eced" kindref="member">math::pow</ref> (T (10), Size)))</initializer>
         <briefdescription>
-<para>The constant value. </para>
+<para>The compile-time constant value. </para>
         </briefdescription>
         <detaileddescription>
 <para>Computed as <computeroutput>P * (N + D / 10^Size)</computeroutput>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="654" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="655" bodyend="-1"/>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a3ee48433567db9886d9f99ab5e6d2864" compoundref="type-traits_8h" startline="696" endline="699">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;::get</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a0a877099bf7ee9fcde1446cac65511e6" compoundref="type-traits_8h" startline="682" endline="685">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;::operator value_type</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="732" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="733" bodyend="-1"/>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a9e42c82de949aa6640b3964bd67c4732" compoundref="type-traits_8h" startline="754" endline="757">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;::get</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a2be95ffe95532c5b3a0ab852aa2c680f" compoundref="type-traits_8h" startline="741" endline="744">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;::operator T</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a3ee48433567db9886d9f99ab5e6d2864" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>auto</type>
-        <definition>auto micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;::get</definition>
-        <argsstring>() const</argsstring>
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a9e42c82de949aa6640b3964bd67c4732" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;::get</definition>
+        <argsstring>(void) const noexcept</argsstring>
         <name>get</name>
         <qualifiedname>micro_os_plus::micro_test_plus::type_traits::floating_point_constant::get</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
         <briefdescription>
-<para>Getter for the constant value. </para>
+<para>Getter for the compile-time constant value. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>The constant value.</para>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
 </simplesect>
-Returns the compile-time floating point constant value. </para>
+<simplesect kind="return"><para>The compile-time constant as type <computeroutput>T</computeroutput>. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="696" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="696" bodyend="699"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1ab0e05de518c208a6a762c7377d2f2332" compoundref="type-traits_8h" startline="655">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;::value</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="754" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="754" bodyend="757"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1ab0e05de518c208a6a762c7377d2f2332" compoundref="type-traits_8h" startline="733">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;::value</references>
       </memberdef>
-      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a0a877099bf7ee9fcde1446cac65511e6" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="yes" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a2be95ffe95532c5b3a0ab852aa2c680f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr</type>
-        <definition>micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;::operator value_type</definition>
-        <argsstring>() const</argsstring>
-        <name>operator value_type</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::type_traits::floating_point_constant::operator value_type</qualifiedname>
+        <definition>micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;::operator T</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>operator T</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::type_traits::floating_point_constant::operator T</qualifiedname>
         <briefdescription>
-<para>Explicit conversion operator to <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a3538821b6929e9b13f6a3ea763e1627e" kindref="member">value_type</ref>. </para>
+<para>Explicit conversion operator to the underlying value type. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>The constant value as type <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a3538821b6929e9b13f6a3ea763e1627e" kindref="member">value_type</ref></computeroutput>.</para>
+<para><simplesect kind="return"><para>The compile-time constant as type <computeroutput>T</computeroutput>. </para>
 </simplesect>
-Allows explicit conversion to the underlying floating point value type. </para>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="682" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="682" bodyend="685"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1ab0e05de518c208a6a762c7377d2f2332" compoundref="type-traits_8h" startline="655">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;::value</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="741" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="741" bodyend="744"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1ab0e05de518c208a6a762c7377d2f2332" compoundref="type-traits_8h" startline="733">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;::value</references>
       </memberdef>
-      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1adcc1ade20fd348fa653623ec6c378d72" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a53595778654687cfd7fe8dd385d26bcc" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>auto</type>
         <definition>auto micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;::operator-</definition>
-        <argsstring>() const</argsstring>
+        <argsstring>() const noexcept</argsstring>
         <name>operator-</name>
         <qualifiedname>micro_os_plus::micro_test_plus::type_traits::floating_point_constant::operator-</qualifiedname>
         <briefdescription>
 <para>Unary minus operator. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant" kindref="compound">floating_point_constant</ref></computeroutput> with value <computeroutput>-value</computeroutput>.</para>
+<para><simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant" kindref="compound">floating_point_constant</ref></computeroutput> with negated sign parameter.</para>
 </simplesect>
-Returns a new <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant" kindref="compound">floating_point_constant</ref></computeroutput> instance representing the negative of the current value. </para>
+Returns a new <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant" kindref="compound">floating_point_constant</ref></computeroutput> instance representing the negative of the current value by flipping the sign parameter <computeroutput>P</computeroutput>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="667" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="667" bodyend="670"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="769" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="769" bodyend="772"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -188,8 +193,8 @@ Returns a new <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant" kindref="compound">floating_point_constant</ref></computeroutput> struct template provides a compile-time constant value of a floating point type, supporting custom size and precision. It inherits from <computeroutput>op</computeroutput> to enable unified handling within the µTest++ framework&apos;s type traits and metaprogramming utilities.</para>
-<para>This struct template exposes the constant value via a static member, a getter method, and explicit conversion operators. It also provides a unary minus operator to obtain the negative value as a new <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant" kindref="compound">floating_point_constant</ref></computeroutput> instance. The <computeroutput>epsilon</computeroutput> member defines the precision used for floating point comparisons, calculated based on the specified size. </para>
+The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant" kindref="compound">floating_point_constant</ref></computeroutput> struct template provides a compile-time constant value of a floating point type, supporting custom size and precision. It inherits from <computeroutput>op</computeroutput> directly rather than from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__" kindref="compound">value_base_</ref>&lt;T&gt;</computeroutput>, which avoids introducing a user-provided constructor into the type and keeps it trivially default-constructible. This prevents the GCC ARM PSABI note about parameter-passing ABI changes that is emitted for non-trivially-constructible types under C++17.</para>
+<para>The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a3538821b6929e9b13f6a3ea763e1627e" kindref="member">value_type</ref></computeroutput> alias, explicit conversion operator, and <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a9e42c82de949aa6640b3964bd67c4732" kindref="member">get()</ref></computeroutput> accessor are provided directly by this struct. The compile-time <computeroutput>epsilon</computeroutput> and <computeroutput>value</computeroutput> static constants are retained, and a unary minus operator is provided to obtain the negative value as a new <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant" kindref="compound">floating_point_constant</ref></computeroutput> instance. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="1">
@@ -215,12 +220,12 @@ The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1ty
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op"/>
       </node>
     </collaborationgraph>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="633" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="634" bodyend="700"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="708" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="709" bodyend="773"/>
     <listofallmembers>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a5cab8e85fbee4a9314fc8a3e09e59eef" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::floating_point_constant</scope><name>epsilon</name></member>
-      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a3ee48433567db9886d9f99ab5e6d2864" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::floating_point_constant</scope><name>get</name></member>
-      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a0a877099bf7ee9fcde1446cac65511e6" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::floating_point_constant</scope><name>operator value_type</name></member>
-      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1adcc1ade20fd348fa653623ec6c378d72" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::floating_point_constant</scope><name>operator-</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a9e42c82de949aa6640b3964bd67c4732" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::floating_point_constant</scope><name>get</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a2be95ffe95532c5b3a0ab852aa2c680f" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::floating_point_constant</scope><name>operator T</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a53595778654687cfd7fe8dd385d26bcc" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::floating_point_constant</scope><name>operator-</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1ab0e05de518c208a6a762c7377d2f2332" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::floating_point_constant</scope><name>value</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a3538821b6929e9b13f6a3ea763e1627e" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::floating_point_constant</scope><name>value_type</name></member>
     </listofallmembers>

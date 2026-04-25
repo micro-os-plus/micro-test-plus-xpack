@@ -865,7 +865,7 @@ Constructs an <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="651" column="24" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="651" bodyend="653"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1aa345a4fad8db58254b2f5b7a395d8e5b" compoundref="type-traits_8h" startline="918" endline="921">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::value</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a69374f408449c08c756896dd26d2d437" compoundref="type-traits_8h" startline="871" endline="874">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::value</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1gaad9720f2d1e443d77cdfd1eb1151e924" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -895,7 +895,7 @@ Constructs a <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__p
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="893" column="24" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="893" bodyend="895"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1aa345a4fad8db58254b2f5b7a395d8e5b" compoundref="type-traits_8h" startline="918" endline="921">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::value</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a69374f408449c08c756896dd26d2d437" compoundref="type-traits_8h" startline="871" endline="874">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::value</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1gaa2bfc74376f8c110053bfa6e06e40772" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>auto</type>
@@ -1030,8 +1030,8 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="470" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="470" bodyend="476" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="402" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a8a29540b951c5cf6b40485287842b782" compoundref="math-inlines_8h" startline="203" endline="217">micro_os_plus::micro_test_plus::math::den</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1af5a33355bb68f644b9949ef1faa0d079" compoundref="math-inlines_8h" startline="236" endline="252">micro_os_plus::micro_test_plus::math::den_size</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a8a29540b951c5cf6b40485287842b782" compoundref="math-inlines_8h" startline="203" endline="219">micro_os_plus::micro_test_plus::math::den</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1af5a33355bb68f644b9949ef1faa0d079" compoundref="math-inlines_8h" startline="238" endline="256">micro_os_plus::micro_test_plus::math::den_size</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" compoundref="math-inlines_8h" startline="163" endline="182">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1069,8 +1069,8 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="449" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="449" bodyend="455" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="388" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a8a29540b951c5cf6b40485287842b782" compoundref="math-inlines_8h" startline="203" endline="217">micro_os_plus::micro_test_plus::math::den</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1af5a33355bb68f644b9949ef1faa0d079" compoundref="math-inlines_8h" startline="236" endline="252">micro_os_plus::micro_test_plus::math::den_size</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a8a29540b951c5cf6b40485287842b782" compoundref="math-inlines_8h" startline="203" endline="219">micro_os_plus::micro_test_plus::math::den</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1af5a33355bb68f644b9949ef1faa0d079" compoundref="math-inlines_8h" startline="238" endline="256">micro_os_plus::micro_test_plus::math::den_size</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" compoundref="math-inlines_8h" startline="163" endline="182">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1ga366a0d47aec3241e659816067c94fcdf" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1330,8 +1330,8 @@ Returns the value of the boolean operand, allowing the named literal to be compa
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" line="491" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/literals-inlines.h" bodystart="491" bodyend="497" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" declline="416" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a8a29540b951c5cf6b40485287842b782" compoundref="math-inlines_8h" startline="203" endline="217">micro_os_plus::micro_test_plus::math::den</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1af5a33355bb68f644b9949ef1faa0d079" compoundref="math-inlines_8h" startline="236" endline="252">micro_os_plus::micro_test_plus::math::den_size</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1a8a29540b951c5cf6b40485287842b782" compoundref="math-inlines_8h" startline="203" endline="219">micro_os_plus::micro_test_plus::math::den</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1af5a33355bb68f644b9949ef1faa0d079" compoundref="math-inlines_8h" startline="238" endline="256">micro_os_plus::micro_test_plus::math::den_size</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1math_1afeb53c0d3b6ce6d482cef71f147a2290" compoundref="math-inlines_8h" startline="163" endline="182">micro_os_plus::micro_test_plus::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1gaf5ab66b00c9486ade5d49f34a83783f5" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">

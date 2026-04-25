@@ -127,6 +127,10 @@
         {
           "type": "category",
           "label": "Hierarchy",
+          "link": {
+            "type": "doc",
+            "id": "api/indices/namespaces/index"
+          },
           "collapsed": true,
           "items": [
             {
@@ -212,11 +216,6 @@
         },
         {
           "type": "doc",
-          "label": "Typedefs",
-          "id": "api/indices/namespaces/typedefs"
-        },
-        {
-          "type": "doc",
           "label": "Enums",
           "id": "api/indices/namespaces/enums"
         },
@@ -224,6 +223,159 @@
           "type": "doc",
           "label": "Enum Values",
           "id": "api/indices/namespaces/enumvalues"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Concepts",
+      "link": {
+        "type": "doc",
+        "id": "api/indices/concepts/index"
+      },
+      "collapsed": true,
+      "items": [
+        {
+          "type": "category",
+          "label": "Hierarchy",
+          "link": {
+            "type": "doc",
+            "id": "api/indices/concepts/index"
+          },
+          "collapsed": true,
+          "items": [
+            {
+              "type": "category",
+              "label": "micro_os_plus",
+              "link": {
+                "type": "doc",
+                "id": "api/namespaces/micro-os-plus"
+              },
+              "className": "doxyEllipsis",
+              "collapsed": true,
+              "items": [
+                {
+                  "type": "category",
+                  "label": "micro_test_plus",
+                  "link": {
+                    "type": "doc",
+                    "id": "api/namespaces/micro-os-plus-micro-test-plus"
+                  },
+                  "className": "doxyEllipsis",
+                  "collapsed": true,
+                  "items": [
+                    {
+                      "type": "category",
+                      "label": "type_traits",
+                      "link": {
+                        "type": "doc",
+                        "id": "api/namespaces/micro-os-plus-micro-test-plus-type-traits"
+                      },
+                      "className": "doxyEllipsis",
+                      "collapsed": true,
+                      "items": [
+                        {
+                          "type": "category",
+                          "label": "any_op",
+                          "link": {
+                            "type": "doc",
+                            "id": "api/concepts/micro-os-plus-micro-test-plus-type-traits-any-op"
+                          },
+                          "collapsed": true,
+                          "items": []
+                        },
+                        {
+                          "type": "category",
+                          "label": "checkable",
+                          "link": {
+                            "type": "doc",
+                            "id": "api/concepts/micro-os-plus-micro-test-plus-type-traits-checkable"
+                          },
+                          "collapsed": true,
+                          "items": []
+                        },
+                        {
+                          "type": "category",
+                          "label": "container_like",
+                          "link": {
+                            "type": "doc",
+                            "id": "api/concepts/micro-os-plus-micro-test-plus-type-traits-container-like"
+                          },
+                          "collapsed": true,
+                          "items": []
+                        },
+                        {
+                          "type": "category",
+                          "label": "has_epsilon",
+                          "link": {
+                            "type": "doc",
+                            "id": "api/concepts/micro-os-plus-micro-test-plus-type-traits-has-epsilon"
+                          },
+                          "collapsed": true,
+                          "items": []
+                        },
+                        {
+                          "type": "category",
+                          "label": "has_npos",
+                          "link": {
+                            "type": "doc",
+                            "id": "api/concepts/micro-os-plus-micro-test-plus-type-traits-has-npos"
+                          },
+                          "collapsed": true,
+                          "items": []
+                        },
+                        {
+                          "type": "category",
+                          "label": "has_value",
+                          "link": {
+                            "type": "doc",
+                            "id": "api/concepts/micro-os-plus-micro-test-plus-type-traits-has-value"
+                          },
+                          "collapsed": true,
+                          "items": []
+                        },
+                        {
+                          "type": "category",
+                          "label": "is_floating_point",
+                          "link": {
+                            "type": "doc",
+                            "id": "api/concepts/micro-os-plus-micro-test-plus-type-traits-is-floating-point"
+                          },
+                          "collapsed": true,
+                          "items": []
+                        },
+                        {
+                          "type": "category",
+                          "label": "is_op",
+                          "link": {
+                            "type": "doc",
+                            "id": "api/concepts/micro-os-plus-micro-test-plus-type-traits-is-op"
+                          },
+                          "collapsed": true,
+                          "items": []
+                        },
+                        {
+                          "type": "category",
+                          "label": "printable",
+                          "link": {
+                            "type": "doc",
+                            "id": "api/concepts/micro-os-plus-micro-test-plus-type-traits-printable"
+                          },
+                          "collapsed": true,
+                          "items": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "label": "All",
+          "id": "api/indices/concepts/all"
         }
       ]
     },
@@ -239,6 +391,10 @@
         {
           "type": "category",
           "label": "Hierarchy",
+          "link": {
+            "type": "doc",
+            "id": "api/indices/classes/index"
+          },
           "collapsed": true,
           "items": [
             {
@@ -324,16 +480,94 @@
               "collapsed": true,
               "items": [
                 {
-                  "type": "doc",
-                  "label": "and_<Lhs_T, Rhs_T>",
+                  "type": "category",
+                  "label": "binary_op_<Lhs_T, Rhs_T>",
+                  "link": {
+                    "type": "doc",
+                    "id": "api/structs/micro-os-plus-micro-test-plus-detail-binary-op-"
+                  },
                   "className": "doxyEllipsis",
-                  "id": "api/structs/micro-os-plus-micro-test-plus-detail-and-"
+                  "collapsed": true,
+                  "items": [
+                    {
+                      "type": "doc",
+                      "label": "and_<Lhs_T, Rhs_T>",
+                      "className": "doxyEllipsis",
+                      "id": "api/structs/micro-os-plus-micro-test-plus-detail-and-"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "eq_<Lhs_T, Rhs_T>",
+                      "className": "doxyEllipsis",
+                      "id": "api/structs/micro-os-plus-micro-test-plus-detail-eq-"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "ge_<Lhs_T, Rhs_T>",
+                      "className": "doxyEllipsis",
+                      "id": "api/structs/micro-os-plus-micro-test-plus-detail-ge-"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "gt_<Lhs_T, Rhs_T>",
+                      "className": "doxyEllipsis",
+                      "id": "api/structs/micro-os-plus-micro-test-plus-detail-gt-"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "le_<Lhs_T, Rhs_T>",
+                      "className": "doxyEllipsis",
+                      "id": "api/structs/micro-os-plus-micro-test-plus-detail-le-"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "lt_<Lhs_T, Rhs_T>",
+                      "className": "doxyEllipsis",
+                      "id": "api/structs/micro-os-plus-micro-test-plus-detail-lt-"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "ne_<Lhs_T, Rhs_T>",
+                      "className": "doxyEllipsis",
+                      "id": "api/structs/micro-os-plus-micro-test-plus-detail-ne-"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "or_<Lhs_T, Rhs_T>",
+                      "className": "doxyEllipsis",
+                      "id": "api/structs/micro-os-plus-micro-test-plus-detail-or-"
+                    }
+                  ]
                 },
                 {
-                  "type": "doc",
-                  "label": "eq_<Lhs_T, Rhs_T>",
+                  "type": "category",
+                  "label": "callable_op_",
+                  "link": {
+                    "type": "doc",
+                    "id": "api/structs/micro-os-plus-micro-test-plus-detail-callable-op-"
+                  },
                   "className": "doxyEllipsis",
-                  "id": "api/structs/micro-os-plus-micro-test-plus-detail-eq-"
+                  "collapsed": true,
+                  "items": [
+                    {
+                      "type": "doc",
+                      "label": "nothrow_<Callable_T>",
+                      "className": "doxyEllipsis",
+                      "id": "api/structs/micro-os-plus-micro-test-plus-detail-nothrow-"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "throws_<Callable_T, Exception_T>",
+                      "className": "doxyEllipsis",
+                      "id": "api/structs/micro-os-plus-micro-test-plus-detail-throws-"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "throws_<Callable_T, void>",
+                      "className": "doxyEllipsis",
+                      "id": "api/structs/micro-os-plus-micro-test-plus-detail-throws--6ce6a9ac7588b533a253fd8d8638e6be"
+                    }
+                  ]
                 },
                 {
                   "type": "doc",
@@ -342,104 +576,74 @@
                   "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-floating-point-constant"
                 },
                 {
-                  "type": "doc",
-                  "label": "ge_<Lhs_T, Rhs_T>",
-                  "className": "doxyEllipsis",
-                  "id": "api/structs/micro-os-plus-micro-test-plus-detail-ge-"
-                },
-                {
-                  "type": "doc",
-                  "label": "genuine_integral_value<T>",
-                  "className": "doxyEllipsis",
-                  "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-genuine-integral-value"
-                },
-                {
-                  "type": "doc",
-                  "label": "gt_<Lhs_T, Rhs_T>",
-                  "className": "doxyEllipsis",
-                  "id": "api/structs/micro-os-plus-micro-test-plus-detail-gt-"
-                },
-                {
-                  "type": "doc",
-                  "label": "integral_constant<N>",
-                  "className": "doxyEllipsis",
-                  "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-integral-constant"
-                },
-                {
-                  "type": "doc",
-                  "label": "le_<Lhs_T, Rhs_T>",
-                  "className": "doxyEllipsis",
-                  "id": "api/structs/micro-os-plus-micro-test-plus-detail-le-"
-                },
-                {
-                  "type": "doc",
-                  "label": "lt_<Lhs_T, Rhs_T>",
-                  "className": "doxyEllipsis",
-                  "id": "api/structs/micro-os-plus-micro-test-plus-detail-lt-"
-                },
-                {
-                  "type": "doc",
-                  "label": "ne_<Lhs_T, Rhs_T>",
-                  "className": "doxyEllipsis",
-                  "id": "api/structs/micro-os-plus-micro-test-plus-detail-ne-"
-                },
-                {
-                  "type": "doc",
-                  "label": "not_<T>",
-                  "className": "doxyEllipsis",
-                  "id": "api/structs/micro-os-plus-micro-test-plus-detail-not-"
-                },
-                {
-                  "type": "doc",
-                  "label": "nothrow_<Callable_T>",
-                  "className": "doxyEllipsis",
-                  "id": "api/structs/micro-os-plus-micro-test-plus-detail-nothrow-"
-                },
-                {
-                  "type": "doc",
-                  "label": "or_<Lhs_T, Rhs_T>",
-                  "className": "doxyEllipsis",
-                  "id": "api/structs/micro-os-plus-micro-test-plus-detail-or-"
-                },
-                {
-                  "type": "doc",
-                  "label": "throws_<Callable_T, Exception_T>",
-                  "className": "doxyEllipsis",
-                  "id": "api/structs/micro-os-plus-micro-test-plus-detail-throws-"
-                },
-                {
-                  "type": "doc",
-                  "label": "throws_<Callable_T, void>",
-                  "className": "doxyEllipsis",
-                  "id": "api/structs/micro-os-plus-micro-test-plus-detail-throws--6ce6a9ac7588b533a253fd8d8638e6be"
-                },
-                {
-                  "type": "doc",
-                  "label": "value<T>",
-                  "className": "doxyEllipsis",
-                  "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-value"
-                },
-                {
                   "type": "category",
-                  "label": "value<T>",
+                  "label": "unary_op_<T>",
                   "link": {
                     "type": "doc",
-                    "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-value-f7399366cd6336ecbea702c3289d9432"
+                    "id": "api/structs/micro-os-plus-micro-test-plus-detail-unary-op-"
                   },
                   "className": "doxyEllipsis",
                   "collapsed": true,
                   "items": [
                     {
                       "type": "doc",
-                      "label": "_t<T>",
+                      "label": "not_<T>",
                       "className": "doxyEllipsis",
-                      "id": "api/structs/micro-os-plus-micro-test-plus--t"
+                      "id": "api/structs/micro-os-plus-micro-test-plus-detail-not-"
+                    }
+                  ]
+                },
+                {
+                  "type": "category",
+                  "label": "value_base_<T>",
+                  "link": {
+                    "type": "doc",
+                    "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-value-base-"
+                  },
+                  "className": "doxyEllipsis",
+                  "collapsed": true,
+                  "items": [
+                    {
+                      "type": "doc",
+                      "label": "genuine_integral_value<T>",
+                      "className": "doxyEllipsis",
+                      "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-genuine-integral-value"
                     },
                     {
                       "type": "doc",
-                      "label": "to_t<T>",
+                      "label": "integral_constant<N>",
                       "className": "doxyEllipsis",
-                      "id": "api/structs/micro-os-plus-micro-test-plus-to-t"
+                      "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-integral-constant"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "value<T>",
+                      "className": "doxyEllipsis",
+                      "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-value"
+                    },
+                    {
+                      "type": "category",
+                      "label": "value<T>",
+                      "link": {
+                        "type": "doc",
+                        "id": "api/structs/micro-os-plus-micro-test-plus-type-traits-value-f7399366cd6336ecbea702c3289d9432"
+                      },
+                      "className": "doxyEllipsis",
+                      "collapsed": true,
+                      "items": [
+                        {
+                          "type": "doc",
+                          "label": "_t<T>",
+                          "className": "doxyEllipsis",
+                          "id": "api/structs/micro-os-plus-micro-test-plus--t"
+                        },
+                        {
+                          "type": "doc",
+                          "label": "to_t<T>",
+                          "className": "doxyEllipsis",
+                          "id": "api/structs/micro-os-plus-micro-test-plus-to-t"
+                        }
+                      ]
                     }
                   ]
                 }
@@ -618,6 +822,10 @@
         {
           "type": "category",
           "label": "Hierarchy",
+          "link": {
+            "type": "doc",
+            "id": "api/indices/files/index"
+          },
           "collapsed": true,
           "items": [
             {
@@ -940,11 +1148,6 @@
           "type": "doc",
           "label": "Variables",
           "id": "api/indices/files/variables"
-        },
-        {
-          "type": "doc",
-          "label": "Typedefs",
-          "id": "api/indices/files/typedefs"
         },
         {
           "type": "doc",

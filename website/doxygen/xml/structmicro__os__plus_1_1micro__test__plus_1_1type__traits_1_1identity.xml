@@ -27,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="149" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="149" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="153" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="153" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -47,14 +47,14 @@
 <parametername>Extra</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Additional template parameters, ignored.</para>
+<para>Additional template parameters, ignored. The variadic <computeroutput>Extra</computeroutput> parameter pack absorbs additional type arguments that may arise during template argument deduction in some metaprogramming contexts, preventing substitution failures.</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
 The <computeroutput>identity</computeroutput> struct template provides a mechanism for preserving a type <computeroutput>T</computeroutput> during template metaprogramming. It is commonly used to delay type evaluation or to forward types in complex template constructs within the µTest++ framework.</para>
 <para>This utility is particularly useful in scenarios where type deduction or concept constraints are required, as it allows the type to be carried through template specialisations without modification. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="144" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="145" bodyend="150"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="148" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="149" bodyend="154"/>
     <listofallmembers>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity_1a6399364a09c1004ebbaab36b2d5dc0c8" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::identity</scope><name>type</name></member>
     </listofallmembers>

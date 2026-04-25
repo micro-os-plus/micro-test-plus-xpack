@@ -11,7 +11,7 @@
         <link refid="micro-test-plus_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
@@ -159,15 +159,15 @@
       <node id="16">
         <label>micro-test-plus/operators.h</label>
         <link refid="operators_8h"/>
-        <childnode refid="8" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="7">
+      <node id="8">
         <label>micro-test-plus/reflection.h</label>
         <link refid="reflection_8h"/>
-        <childnode refid="8" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
       <node id="29">
@@ -187,7 +187,7 @@
         <link refid="reporter_8h"/>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
@@ -249,11 +249,13 @@
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
       </node>
       <node id="31">
         <label>micro-test-plus/utility.h</label>
         <link refid="utility_8h"/>
-        <childnode refid="8" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="28" relation="include">
         </childnode>
@@ -307,10 +309,10 @@
       <node id="11">
         <label>string</label>
       </node>
-      <node id="8">
+      <node id="6">
         <label>string_view</label>
       </node>
-      <node id="6">
+      <node id="7">
         <label>type_traits</label>
       </node>
       <node id="28">
@@ -421,7 +423,7 @@
 <codeline lineno="135"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="136"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="137"><highlight class="normal"></highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" kindref="member">verbosity_</ref><sp/>!=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15" kindref="member">verbosity::silent</ref>)</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" kindref="member">verbosity_</ref><sp/>!=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15" kindref="member">verbosity::silent</ref>)</highlight></codeline>
 <codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -434,7 +436,7 @@
 <codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf<sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a1d95688325caf323a4d77272dcf50b86" kindref="member">output_file_</ref>,<sp/></highlight><highlight class="stringliteral">&quot;%s\n&quot;</highlight><highlight class="normal">,<sp/>message);</highlight></codeline>
 <codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="150"><highlight class="normal"></highlight></codeline>
-<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" kindref="member">verbosity_</ref><sp/>!=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15" kindref="member">verbosity::silent</ref>)</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" kindref="member">verbosity_</ref><sp/>!=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15" kindref="member">verbosity::silent</ref>)</highlight></codeline>
 <codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s\n&quot;</highlight><highlight class="normal">,<sp/>message);</highlight></codeline>
 <codeline lineno="154"><highlight class="normal"></highlight></codeline>
@@ -501,14 +503,14 @@
 <codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>message_totals,<sp/>message_time);</highlight></codeline>
 <codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="226"><highlight class="normal"></highlight></codeline>
-<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" kindref="member">verbosity_</ref><sp/>!=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15" kindref="member">verbosity::silent</ref>)</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" kindref="member">verbosity_</ref><sp/>!=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15" kindref="member">verbosity::silent</ref>)</highlight></codeline>
 <codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a3961bc77e50ecbade82b29dd5983ddec" kindref="member">add_empty_line_</ref>)</highlight></codeline>
 <codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="233"><highlight class="normal"></highlight></codeline>
-<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" kindref="member">verbosity_</ref><sp/>!=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d" kindref="member">verbosity::quiet</ref>)</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" kindref="member">verbosity_</ref><sp/>!=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d" kindref="member">verbosity::quiet</ref>)</highlight></codeline>
 <codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;%s\n&quot;</highlight><highlight class="normal">,<sp/>message_summary);</highlight></codeline>
 <codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -560,7 +562,7 @@
 <codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf<sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a1d95688325caf323a4d77272dcf50b86" kindref="member">output_file_</ref>,<sp/></highlight><highlight class="stringliteral">&quot;%s\n&quot;</highlight><highlight class="normal">,<sp/>message_subtest);</highlight></codeline>
 <codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="293"><highlight class="normal"></highlight></codeline>
-<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" kindref="member">verbosity_</ref><sp/>==<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" kindref="member">verbosity::normal</ref><sp/>||<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" kindref="member">verbosity_</ref><sp/>==<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" kindref="member">verbosity::verbose</ref>)</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" kindref="member">verbosity_</ref><sp/>==<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" kindref="member">verbosity::normal</ref><sp/>||<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" kindref="member">verbosity_</ref><sp/>==<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" kindref="member">verbosity::verbose</ref>)</highlight></codeline>
 <codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a3961bc77e50ecbade82b29dd5983ddec" kindref="member">add_empty_line_</ref>)</highlight></codeline>
 <codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -660,7 +662,7 @@
 <codeline lineno="400"><highlight class="normal"></highlight></codeline>
 <codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>At<sp/>this<sp/>point,<sp/>the<sp/>buffer<sp/>may<sp/>contain<sp/>output<sp/>from<sp/>the<sp/>test<sp/>case,<sp/>which</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>should<sp/>be<sp/>displayed.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" kindref="member">verbosity_</ref><sp/>==<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" kindref="member">verbosity::normal</ref><sp/>||<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" kindref="member">verbosity_</ref><sp/>==<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" kindref="member">verbosity::verbose</ref>)</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" kindref="member">verbosity_</ref><sp/>==<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" kindref="member">verbosity::normal</ref><sp/>||<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" kindref="member">verbosity_</ref><sp/>==<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" kindref="member">verbosity::verbose</ref>)</highlight></codeline>
 <codeline lineno="404"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a3961bc77e50ecbade82b29dd5983ddec" kindref="member">add_empty_line_</ref><sp/>&amp;&amp;<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" kindref="compound">suite</ref>.<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1a3e2ef02064a1707582db4741d87cd801" kindref="member">totals</ref><sp/>().<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1aea770c96fa7e58165f5e13370af5461f" kindref="member">executed_subtests</ref><sp/>()<sp/>&gt;<sp/>0)</highlight></codeline>
 <codeline lineno="406"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -671,7 +673,7 @@
 <codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Successful<sp/>test<sp/>suite.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="413"><highlight class="normal"></highlight></codeline>
-<codeline lineno="414"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" kindref="member">verbosity_</ref><sp/>==<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" kindref="member">verbosity::verbose</ref>)</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" kindref="member">verbosity_</ref><sp/>==<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" kindref="member">verbosity::verbose</ref>)</highlight></codeline>
 <codeline lineno="415"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="416"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>With<sp/>verbosity,<sp/>show<sp/>full<sp/>TAP<sp/>output<sp/>accumulated<sp/>in<sp/>the</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="417"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>buffer.</highlight><highlight class="normal"></highlight></codeline>
@@ -746,7 +748,7 @@
 <codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf<sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a1d95688325caf323a4d77272dcf50b86" kindref="member">output_file_</ref>,<sp/></highlight><highlight class="stringliteral">&quot;%s\n&quot;</highlight><highlight class="normal">,<sp/>message_subtest);</highlight></codeline>
 <codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="496"><highlight class="normal"></highlight></codeline>
-<codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" kindref="member">verbosity_</ref><sp/>==<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" kindref="member">verbosity::normal</ref><sp/>||<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" kindref="member">verbosity_</ref><sp/>==<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" kindref="member">verbosity::verbose</ref>)</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" kindref="member">verbosity_</ref><sp/>==<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" kindref="member">verbosity::normal</ref><sp/>||<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" kindref="member">verbosity_</ref><sp/>==<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" kindref="member">verbosity::verbose</ref>)</highlight></codeline>
 <codeline lineno="498"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a3961bc77e50ecbade82b29dd5983ddec" kindref="member">add_empty_line_</ref>)</highlight></codeline>
 <codeline lineno="500"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -830,7 +832,7 @@
 <codeline lineno="587"><highlight class="normal"></highlight></codeline>
 <codeline lineno="588"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>At<sp/>this<sp/>point,<sp/>the<sp/>buffer<sp/>may<sp/>contain<sp/>output<sp/>from<sp/>the<sp/>subtest,<sp/>which</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="589"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>should<sp/>be<sp/>displayed.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" kindref="member">verbosity_</ref><sp/>==<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" kindref="member">verbosity::normal</ref><sp/>||<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" kindref="member">verbosity_</ref><sp/>==<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" kindref="member">verbosity::verbose</ref>)</highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" kindref="member">verbosity_</ref><sp/>==<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" kindref="member">verbosity::normal</ref><sp/>||<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" kindref="member">verbosity_</ref><sp/>==<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" kindref="member">verbosity::verbose</ref>)</highlight></codeline>
 <codeline lineno="591"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="592"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a3961bc77e50ecbade82b29dd5983ddec" kindref="member">add_empty_line_</ref>)</highlight></codeline>
 <codeline lineno="593"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -840,7 +842,7 @@
 <codeline lineno="597"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest" kindref="compound">subtest</ref>.<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1a3e2ef02064a1707582db4741d87cd801" kindref="member">totals</ref><sp/>().<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a6a6bdd3224b9f95b326c24911d7cda46" kindref="member">was_successful</ref><sp/>())<sp/>[[likely]]</highlight></codeline>
 <codeline lineno="598"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="599"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Successful<sp/>subtest.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="600"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" kindref="member">verbosity_</ref><sp/>==<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" kindref="member">verbosity::verbose</ref>)</highlight></codeline>
+<codeline lineno="600"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" kindref="member">verbosity_</ref><sp/>==<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" kindref="member">verbosity::verbose</ref>)</highlight></codeline>
 <codeline lineno="601"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="602"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>With<sp/>verbosity,<sp/>show<sp/>full<sp/>TAP<sp/>output<sp/>accumulated<sp/>in<sp/>the</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="603"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>buffer.</highlight><highlight class="normal"></highlight></codeline>

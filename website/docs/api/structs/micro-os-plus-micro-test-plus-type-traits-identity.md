@@ -22,7 +22,7 @@ keywords:
 ## Declaration
 
 <div class="doxyDeclaration">
-template &lt;class T, class... Extra&gt;
+template &lt;class T, class... Extra&gt;<br/>
 struct micro_os_plus::micro_test_plus::type_traits::identity&lt;T, Extra&gt; { ... }
 </div>
 
@@ -69,7 +69,7 @@ struct micro_os_plus::micro_test_plus::type_traits::identity&lt;T, Extra&gt; { .
 </tr>
 <tr class="doxyParamItem">
 <td class="doxyParamItemName">Extra</td>
-<td class="doxyParamItemDescription"><p>Additional template parameters, ignored.</p></td>
+<td class="doxyParamItemDescription"><p>Additional template parameters, ignored. The variadic <span class="doxyComputerOutput">Extra</span> parameter pack absorbs additional type arguments that may arise during template argument deduction in some metaprogramming contexts, preventing substitution failures.</p></td>
 </tr>
 </table>
 </dd>
@@ -81,7 +81,7 @@ struct micro_os_plus::micro_test_plus::type_traits::identity&lt;T, Extra&gt; { .
 <p>This utility is particularly useful in scenarios where type deduction or concept constraints are required, as it allows the type to be carried through template specialisations without modification.</p>
 
 
-<p>Definition at line 144 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line 148 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -109,12 +109,12 @@ struct micro_os_plus::micro_test_plus::type_traits::identity&lt;T, Extra&gt; { .
 
 <p>Alias for the preserved type.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00149">149</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00153">153</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a6399364a09c1004ebbaab36b2d5dc0c8">149</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a6399364a09c1004ebbaab36b2d5dc0c8">type</a> = T;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a6399364a09c1004ebbaab36b2d5dc0c8">153</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a6399364a09c1004ebbaab36b2d5dc0c8">type</a> = T;</span></span></div>
 
 </div>
 
@@ -133,6 +133,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.0.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 
 </div>

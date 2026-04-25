@@ -74,7 +74,7 @@ Delegates construction to the <computeroutput>reporter</computeroutput> base cla
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter-human.h" line="106" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-human.cpp" bodystart="79" bodyend="94"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" compoundref="reporter_8cpp" startline="79" endline="158">micro_os_plus::micro_test_plus::reporter::reporter</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aeb060bfc3184673b0813bca6d8057865" compoundref="reporter_8h" startline="886" endline="886">micro_os_plus::micro_test_plus::reporter::colours_</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1abb8182f972e436f09e25dc5b0dae05fd" compoundref="reporter_8h" startline="116" endline="120">micro_os_plus::micro_test_plus::colours_red_green</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1abb8182f972e436f09e25dc5b0dae05fd" compoundref="reporter_8h" startline="118" endline="122">micro_os_plus::micro_test_plus::colours_red_green</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a9a0bc97cfe825e84bb7109a80d4e40d6">reporter_human</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aec90391bfa7f7d8257004ad18b8fe36f">reporter_human</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1abd45edcbad304fc30aca042171b1c8c6" compoundref="reporter-human_8cpp" startline="122" endline="126">operator&lt;&lt;</referencedby>
@@ -131,8 +131,8 @@ If verbosity is not silent, a blank line is printed to <computeroutput>stdout</c
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a3961bc77e50ecbade82b29dd5983ddec" compoundref="reporter_8h" startline="900" endline="900">micro_os_plus::micro_test_plus::reporter::add_empty_line_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ae7f404f29f265c5db6038f1e03f854b2" compoundref="reporter_8cpp" startline="365" endline="372">micro_os_plus::micro_test_plus::reporter::flush</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a1d95688325caf323a4d77272dcf50b86" compoundref="reporter_8h" startline="919" endline="919">micro_os_plus::micro_test_plus::reporter::output_file_</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15" compoundref="reporter_8h" startline="138">micro_os_plus::micro_test_plus::silent</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" compoundref="reporter_8h" startline="881" endline="881">micro_os_plus::micro_test_plus::reporter::verbosity_</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15" compoundref="reporter_8h" startline="140">micro_os_plus::micro_test_plus::silent</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" compoundref="reporter_8h" startline="881">micro_os_plus::micro_test_plus::reporter::verbosity_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a7ee71ebee4a54fb4b05c1f476cc78263" compoundref="reporter_8cpp" startline="270" endline="355">micro_os_plus::micro_test_plus::reporter::write_info_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a59da3337bb7a2d1bc89406f548131d00" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
@@ -172,10 +172,10 @@ This method marks the beginning of a test case, setting the internal state to in
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1aa887212b25aa8e44bf32b07d4a6634e9" compoundref="reporter_8h" startline="180" endline="183">micro_os_plus::micro_test_plus::indent</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a06acf196002ba97ba19ce4054477f915" compoundref="reporter-human_8cpp" startline="112">micro_os_plus::micro_test_plus::indent_size</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1ab32279070d5254a7b92f736f2dfb96d4" compoundref="test_8h" startline="159" endline="162">micro_os_plus::micro_test_plus::test_node::name</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1aee4c71b875afef0ff38f6bf2e4c0b234" compoundref="test_8h" startline="723" endline="726">micro_os_plus::micro_test_plus::subtest::nesting_depth</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1aee4c71b875afef0ff38f6bf2e4c0b234" compoundref="test_8h" startline="729" endline="732">micro_os_plus::micro_test_plus::subtest::nesting_depth</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a1d95688325caf323a4d77272dcf50b86" compoundref="reporter_8h" startline="919" endline="919">micro_os_plus::micro_test_plus::reporter::output_file_</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" compoundref="reporter_8h" startline="141">micro_os_plus::micro_test_plus::verbose</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" compoundref="reporter_8h" startline="881" endline="881">micro_os_plus::micro_test_plus::reporter::verbosity_</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" compoundref="reporter_8h" startline="143">micro_os_plus::micro_test_plus::verbose</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" compoundref="reporter_8h" startline="881">micro_os_plus::micro_test_plus::reporter::verbosity_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a172a7a10a5aa2bd47dc6e7dde903cbbd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -211,10 +211,10 @@ This method marks the beginning of a test suite, ensuring that output is properl
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a3961bc77e50ecbade82b29dd5983ddec" compoundref="reporter_8h" startline="900" endline="900">micro_os_plus::micro_test_plus::reporter::add_empty_line_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ae7f404f29f265c5db6038f1e03f854b2" compoundref="reporter_8cpp" startline="365" endline="372">micro_os_plus::micro_test_plus::reporter::flush</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1ab32279070d5254a7b92f736f2dfb96d4" compoundref="test_8h" startline="159" endline="162">micro_os_plus::micro_test_plus::test_node::name</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" compoundref="reporter_8h" startline="140">micro_os_plus::micro_test_plus::normal</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" compoundref="reporter_8h" startline="142">micro_os_plus::micro_test_plus::normal</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a1d95688325caf323a4d77272dcf50b86" compoundref="reporter_8h" startline="919" endline="919">micro_os_plus::micro_test_plus::reporter::output_file_</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" compoundref="reporter_8h" startline="141">micro_os_plus::micro_test_plus::verbose</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" compoundref="reporter_8h" startline="881" endline="881">micro_os_plus::micro_test_plus::reporter::verbosity_</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" compoundref="reporter_8h" startline="143">micro_os_plus::micro_test_plus::verbose</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" compoundref="reporter_8h" startline="881">micro_os_plus::micro_test_plus::reporter::verbosity_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a3118ff89506858505f18e8fd368baffc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -255,12 +255,12 @@ Prints a summary line to <computeroutput>stdout</computeroutput> (and to the out
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ae7f404f29f265c5db6038f1e03f854b2" compoundref="reporter_8cpp" startline="365" endline="372">micro_os_plus::micro_test_plus::reporter::flush</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a55cde881b55e2af53670e54d50cf2d18" compoundref="timings_8cpp" startline="167" endline="171">micro_os_plus::micro_test_plus::timestamps::has_timestamps</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a1d95688325caf323a4d77272dcf50b86" compoundref="reporter_8h" startline="919" endline="919">micro_os_plus::micro_test_plus::reporter::output_file_</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15" compoundref="reporter_8h" startline="138">micro_os_plus::micro_test_plus::silent</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15" compoundref="reporter_8h" startline="140">micro_os_plus::micro_test_plus::silent</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a767415a580f50ce60da6e0de0005514c" compoundref="runner-totals_8h" startline="169" endline="172">micro_os_plus::micro_test_plus::runner_totals::successful_checks</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ab93ead1152b50f565c18e31a284dd884" compoundref="runner_8h" startline="232" endline="235">micro_os_plus::micro_test_plus::runner::timings</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ac29e4b993bb3fe795eb8900231cbf5c4" compoundref="runner_8cpp" startline="391" endline="394">micro_os_plus::micro_test_plus::runner::total_suites_count</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ac29e4b993bb3fe795eb8900231cbf5c4" compoundref="runner_8cpp" startline="387" endline="390">micro_os_plus::micro_test_plus::runner::total_suites_count</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1a3e2ef02064a1707582db4741d87cd801" compoundref="test_8h" startline="173" endline="176">micro_os_plus::micro_test_plus::test_node::totals</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" compoundref="reporter_8h" startline="881" endline="881">micro_os_plus::micro_test_plus::reporter::verbosity_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" compoundref="reporter_8h" startline="881">micro_os_plus::micro_test_plus::reporter::verbosity_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a6a6bdd3224b9f95b326c24911d7cda46" compoundref="runner-totals_8h" startline="226" endline="229">micro_os_plus::micro_test_plus::runner_totals::was_successful</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
@@ -302,13 +302,13 @@ This method marks the end of a test case, summarising its outcome and outputting
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1aa887212b25aa8e44bf32b07d4a6634e9" compoundref="reporter_8h" startline="180" endline="183">micro_os_plus::micro_test_plus::indent</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a06acf196002ba97ba19ce4054477f915" compoundref="reporter-human_8cpp" startline="112">micro_os_plus::micro_test_plus::indent_size</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1ab32279070d5254a7b92f736f2dfb96d4" compoundref="test_8h" startline="159" endline="162">micro_os_plus::micro_test_plus::test_node::name</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1aee4c71b875afef0ff38f6bf2e4c0b234" compoundref="test_8h" startline="723" endline="726">micro_os_plus::micro_test_plus::subtest::nesting_depth</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" compoundref="reporter_8h" startline="140">micro_os_plus::micro_test_plus::normal</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1aee4c71b875afef0ff38f6bf2e4c0b234" compoundref="test_8h" startline="729" endline="732">micro_os_plus::micro_test_plus::subtest::nesting_depth</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" compoundref="reporter_8h" startline="142">micro_os_plus::micro_test_plus::normal</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a1d95688325caf323a4d77272dcf50b86" compoundref="reporter_8h" startline="919" endline="919">micro_os_plus::micro_test_plus::reporter::output_file_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a767415a580f50ce60da6e0de0005514c" compoundref="runner-totals_8h" startline="169" endline="172">micro_os_plus::micro_test_plus::runner_totals::successful_checks</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1a3e2ef02064a1707582db4741d87cd801" compoundref="test_8h" startline="173" endline="176">micro_os_plus::micro_test_plus::test_node::totals</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" compoundref="reporter_8h" startline="141">micro_os_plus::micro_test_plus::verbose</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" compoundref="reporter_8h" startline="881" endline="881">micro_os_plus::micro_test_plus::reporter::verbosity_</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" compoundref="reporter_8h" startline="143">micro_os_plus::micro_test_plus::verbose</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" compoundref="reporter_8h" startline="881">micro_os_plus::micro_test_plus::reporter::verbosity_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a6a6bdd3224b9f95b326c24911d7cda46" compoundref="runner-totals_8h" startline="226" endline="229">micro_os_plus::micro_test_plus::runner_totals::was_successful</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ae656aff0d07d7cc634f1a0b2046137e9" compoundref="reporter_8cpp" startline="250" endline="257">micro_os_plus::micro_test_plus::reporter::write_buffer_to_file_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a26d99bc552ad4ed31253028647e939b1" compoundref="reporter_8cpp" startline="237" endline="241">micro_os_plus::micro_test_plus::reporter::write_buffer_to_stdout</references>
@@ -355,13 +355,13 @@ This method marks the end of a test suite, summarising the overall results and p
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1aa887212b25aa8e44bf32b07d4a6634e9" compoundref="reporter_8h" startline="180" endline="183">micro_os_plus::micro_test_plus::indent</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a06acf196002ba97ba19ce4054477f915" compoundref="reporter-human_8cpp" startline="112">micro_os_plus::micro_test_plus::indent_size</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1ab32279070d5254a7b92f736f2dfb96d4" compoundref="test_8h" startline="159" endline="162">micro_os_plus::micro_test_plus::test_node::name</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" compoundref="reporter_8h" startline="140">micro_os_plus::micro_test_plus::normal</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" compoundref="reporter_8h" startline="142">micro_os_plus::micro_test_plus::normal</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a1d95688325caf323a4d77272dcf50b86" compoundref="reporter_8h" startline="919" endline="919">micro_os_plus::micro_test_plus::reporter::output_file_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a767415a580f50ce60da6e0de0005514c" compoundref="runner-totals_8h" startline="169" endline="172">micro_os_plus::micro_test_plus::runner_totals::successful_checks</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a6cbb0922535872a61eb796a44ac5dbf2" compoundref="test_8h" startline="841" endline="844">micro_os_plus::micro_test_plus::suite::timings</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a6cbb0922535872a61eb796a44ac5dbf2" compoundref="test_8h" startline="847" endline="850">micro_os_plus::micro_test_plus::suite::timings</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1a3e2ef02064a1707582db4741d87cd801" compoundref="test_8h" startline="173" endline="176">micro_os_plus::micro_test_plus::test_node::totals</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" compoundref="reporter_8h" startline="141">micro_os_plus::micro_test_plus::verbose</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" compoundref="reporter_8h" startline="881" endline="881">micro_os_plus::micro_test_plus::reporter::verbosity_</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" compoundref="reporter_8h" startline="143">micro_os_plus::micro_test_plus::verbose</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" compoundref="reporter_8h" startline="881">micro_os_plus::micro_test_plus::reporter::verbosity_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals_1a6a6bdd3224b9f95b326c24911d7cda46" compoundref="runner-totals_8h" startline="226" endline="229">micro_os_plus::micro_test_plus::runner_totals::was_successful</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ae656aff0d07d7cc634f1a0b2046137e9" compoundref="reporter_8cpp" startline="250" endline="257">micro_os_plus::micro_test_plus::reporter::write_buffer_to_file_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a26d99bc552ad4ed31253028647e939b1" compoundref="reporter_8cpp" startline="237" endline="241">micro_os_plus::micro_test_plus::reporter::write_buffer_to_stdout</references>
@@ -987,7 +987,7 @@ This operator overload enables the <computeroutput>reporter</computeroutput> to 
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter-human.h" line="147" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reporter-inlines.h" bodystart="340" bodyend="344"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a814e7f004d5404f735737aabb90fa111" compoundref="type-traits_8h" startline="789">micro_os_plus::micro_test_plus::type_traits::is_op_v</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a814e7f004d5404f735737aabb90fa111" compoundref="type-traits_8h" startline="556">micro_os_plus::micro_test_plus::type_traits::is_op_v</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aee38736d82b6ca9eb287796fc1296c49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1297,7 +1297,7 @@ This operator overload formats output for expressions that may throw exceptions.
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter-human.h" line="147" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reporter-inlines.h" bodystart="456" bodyend="459"/>
       </memberdef>
-      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aad5806b3dda95d6a6a30b9b27cc68d81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a330aa7e22a4efc710fe866e1bda6fc4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
@@ -1312,7 +1312,7 @@ This operator overload formats output for expressions that may throw exceptions.
           <type>const T &amp;</type>
           <declname>t</declname>
         </param>
-    <requiresclause>type_traits::is_op_v&lt;T&gt;    </requiresclause>
+    <requiresclause>type_traits::is_op&lt;T&gt;    </requiresclause>
         <briefdescription>
 <para>Output operator for types with a getter. </para>
         </briefdescription>
@@ -1337,8 +1337,8 @@ This operator overload formats output for expressions that may throw exceptions.
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload enables the <computeroutput>reporter</computeroutput> to output any type that is supported by the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a0c9d0a57b84d040bb1dcedd9d7130825" kindref="member">detail::get</ref></computeroutput> mechanism, ensuring consistent formatting and extensibility.</para>
-<para>By delegating to <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a0c9d0a57b84d040bb1dcedd9d7130825" kindref="member">detail::get</ref></computeroutput>, the operator allows for custom formatting and extraction of values, supporting a wide range of types including user-defined and framework-specific types. The resulting value is then forwarded to the appropriate output handler, ensuring seamless integration into test reports and diagnostics.</para>
+This operator overload enables the <computeroutput>reporter</computeroutput> to output any type that is supported by the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ac627271520bf2fe8a4c4774bcd9bf343" kindref="member">detail::get</ref></computeroutput> mechanism, ensuring consistent formatting and extensibility.</para>
+<para>By delegating to <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ac627271520bf2fe8a4c4774bcd9bf343" kindref="member">detail::get</ref></computeroutput>, the operator allows for custom formatting and extraction of values, supporting a wide range of types including user-defined and framework-specific types. The resulting value is then forwarded to the appropriate output handler, ensuring seamless integration into test reports and diagnostics.</para>
 <para>This approach promotes flexibility and maintainability, allowing new types to be supported with minimal changes to the reporting infrastructure.</para>
 <para>This operator overload enables the <computeroutput>reporter</computeroutput> to output container types in a structured and readable format.</para>
 <para>The contents of the container are enclosed in curly braces and each element is separated by a comma and a space. The operator iterates over the container, formatting each element in sequence, which ensures clarity and consistency in test reports and diagnostics.</para>
@@ -1844,10 +1844,10 @@ This operator overload appends the string representation of the specified unsign
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter-human.h" line="147" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter.cpp" bodystart="491" bodyend="496"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" compoundref="reporter_8h" startline="140">micro_os_plus::micro_test_plus::normal</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" compoundref="reporter_8h" startline="142">micro_os_plus::micro_test_plus::normal</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a1d95688325caf323a4d77272dcf50b86" compoundref="reporter_8h" startline="919" endline="919">micro_os_plus::micro_test_plus::reporter::output_file_</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" compoundref="reporter_8h" startline="141">micro_os_plus::micro_test_plus::verbose</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" compoundref="reporter_8h" startline="881" endline="881">micro_os_plus::micro_test_plus::reporter::verbosity_</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" compoundref="reporter_8h" startline="143">micro_os_plus::micro_test_plus::verbose</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" compoundref="reporter_8h" startline="881">micro_os_plus::micro_test_plus::reporter::verbosity_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ab422a082e0107b7f98a1d2c826595cf9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
@@ -2081,9 +2081,9 @@ Outputs a pass prefix, followed by either the provided message or, if the messag
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="669" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reporter-inlines.h" bodystart="488" bodyend="501"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aa78041c4993a5a84f0eba4c278071c9f">micro_os_plus::micro_test_plus::reporter::output_pass_prefix_</references>
       </memberdef>
-      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a7685b625fb0bcc71279c07f45c82c0ac" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" kindref="member">verbosity_t</ref></type>
-        <definition>verbosity_t micro_os_plus::micro_test_plus::reporter::verbosity</definition>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a24da76a8973a5aebca9ef7604740180c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" kindref="member">micro_test_plus::verbosity</ref></type>
+        <definition>micro_test_plus::verbosity micro_os_plus::micro_test_plus::reporter::verbosity</definition>
         <argsstring>() const</argsstring>
         <name>verbosity</name>
         <qualifiedname>micro_os_plus::micro_test_plus::reporter::verbosity</qualifiedname>
@@ -2093,14 +2093,16 @@ Outputs a pass prefix, followed by either the provided message or, if the messag
         <detaileddescription>
 <para><simplesect kind="par"><title>Parameters</title><para>None. </para>
 </simplesect>
-<simplesect kind="return"><para>The active <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a0bbf0517c0f64f25e40b591ecb969a6e" kindref="member">verbosity_t</ref></computeroutput> value. </para>
+<simplesect kind="return"><para>The active <computeroutput>verbosity</computeroutput> value. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="773" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="773" bodyend="776"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" compoundref="reporter_8h" startline="881" endline="881">micro_os_plus::micro_test_plus::reporter::verbosity_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a24da76a8973a5aebca9ef7604740180c" compoundref="reporter_8h" startline="773" endline="776">micro_os_plus::micro_test_plus::reporter::verbosity</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" compoundref="reporter_8h" startline="881">micro_os_plus::micro_test_plus::reporter::verbosity_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a24da76a8973a5aebca9ef7604740180c" compoundref="reporter_8h" startline="773" endline="776">micro_os_plus::micro_test_plus::reporter::verbosity</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a26d99bc552ad4ed31253028647e939b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2250,7 +2252,7 @@ This method outputs the prefix for a failing test result, applying the appropria
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1a3df499675aacb7ab9192cfb9a5371874" compoundref="reflection-inlines_8h" startline="105" endline="108">micro_os_plus::micro_test_plus::reflection::source_location::file_name</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1aa887212b25aa8e44bf32b07d4a6634e9" compoundref="reporter_8h" startline="180" endline="183">micro_os_plus::micro_test_plus::indent</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1aab9d006004611ac0526852a09f675c66" compoundref="reflection-inlines_8h" startline="116" endline="119">micro_os_plus::micro_test_plus::reflection::source_location::line</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1aee4c71b875afef0ff38f6bf2e4c0b234" compoundref="test_8h" startline="723" endline="726">micro_os_plus::micro_test_plus::subtest::nesting_depth</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1aee4c71b875afef0ff38f6bf2e4c0b234" compoundref="test_8h" startline="729" endline="732">micro_os_plus::micro_test_plus::subtest::nesting_depth</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1afc93799846770e521c4721d0de0a81cc" compoundref="reflection_8cpp" startline="72" endline="88">micro_os_plus::micro_test_plus::reflection::short_name</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aef7c1d0436d63165f94245bf16c69f6a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
@@ -2357,7 +2359,7 @@ This method outputs the prefix for a passing test result, applying the appropria
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter-human.h" line="232" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-human.cpp" bodystart="701" bodyend="712"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aeb060bfc3184673b0813bca6d8057865" compoundref="reporter_8h" startline="886" endline="886">micro_os_plus::micro_test_plus::reporter::colours_</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1aa887212b25aa8e44bf32b07d4a6634e9" compoundref="reporter_8h" startline="180" endline="183">micro_os_plus::micro_test_plus::indent</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1aee4c71b875afef0ff38f6bf2e4c0b234" compoundref="test_8h" startline="723" endline="726">micro_os_plus::micro_test_plus::subtest::nesting_depth</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1aee4c71b875afef0ff38f6bf2e4c0b234" compoundref="test_8h" startline="729" endline="732">micro_os_plus::micro_test_plus::subtest::nesting_depth</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac5713ce51eb50a6841879b1c7d00c234" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -2629,13 +2631,13 @@ Constructs and emits two informational lines: the first lists the programme name
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" compoundref="reporter_8cpp" startline="79" endline="158">micro_os_plus::micro_test_plus::reporter::reporter</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a1ab2bf741196d093aada2d4f3876176b" compoundref="reporter_8cpp" startline="167" endline="193">micro_os_plus::micro_test_plus::reporter::~reporter</referencedby>
       </memberdef>
-      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" prot="protected" static="no" mutable="no">
-        <type><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" kindref="member">verbosity_t</ref></type>
-        <definition>verbosity_t micro_os_plus::micro_test_plus::reporter::verbosity_</definition>
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" prot="protected" static="no" mutable="no">
+        <type>enum <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" kindref="member">verbosity</ref></type>
+        <definition>enum verbosity micro_os_plus::micro_test_plus::reporter::verbosity_</definition>
         <argsstring></argsstring>
         <name>verbosity_</name>
         <qualifiedname>micro_os_plus::micro_test_plus::reporter::verbosity_</qualifiedname>
-        <initializer>{ <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" kindref="member">verbosity::normal</ref> }</initializer>
+        <initializer>= <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" kindref="member">verbosity::normal</ref></initializer>
         <briefdescription>
 <para>The verbosity level for test reporting. </para>
         </briefdescription>
@@ -2643,7 +2645,7 @@ Constructs and emits two informational lines: the first lists the programme name
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="881" column="17" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="881" bodyend="881"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="881" column="19" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="881" bodyend="-1"/>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" compoundref="reporter_8cpp" startline="79" endline="158">micro_os_plus::micro_test_plus::reporter::reporter</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aa61862bc406bf1251324b5ebdabcfca0" compoundref="reporter-human_8cpp" startline="139" endline="178">begin_session</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a05627cdee9d67cbb0f30dc3cb9fe426f" compoundref="reporter-tap_8cpp" startline="124" endline="163">micro_os_plus::micro_test_plus::reporter_tap::begin_session</referencedby>
@@ -2658,7 +2660,7 @@ Constructs and emits two informational lines: the first lists the programme name
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="340" endline="461">end_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a8649b62ba8f7ff88501450c5f939ab6d" compoundref="reporter-tap_8cpp" startline="323" endline="446">micro_os_plus::micro_test_plus::reporter_tap::end_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a550817349fa323d0c7b4c11a7948267e" compoundref="reporter_8cpp" startline="491" endline="496">operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a7685b625fb0bcc71279c07f45c82c0ac" compoundref="reporter_8h" startline="773" endline="776">micro_os_plus::micro_test_plus::reporter::verbosity</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a24da76a8973a5aebca9ef7604740180c" compoundref="reporter_8h" startline="773" endline="776">micro_os_plus::micro_test_plus::reporter::verbosity</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-static-func">
@@ -2812,7 +2814,7 @@ Constructs and emits two informational lines: the first lists the programme name
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ad3fe4f54681f8f58d906dd3d625dec9f" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::reporter_human</scope><name>operator&lt;&lt;</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a0acf1be4a7b9738dd2d3b9748e32d872" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::reporter_human</scope><name>operator&lt;&lt;</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a28826ad63a1c66a694c578049922d700" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::reporter_human</scope><name>operator&lt;&lt;</name></member>
-      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aad5806b3dda95d6a6a30b9b27cc68d81" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::reporter_human</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a330aa7e22a4efc710fe866e1bda6fc4c" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::reporter_human</scope><name>operator&lt;&lt;</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a697a4dcb95f65634253f44946d06c81a" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::reporter_human</scope><name>operator&lt;&lt;</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a56edd7e04a4080a56542d999368b0fd4" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::reporter_human</scope><name>operator&lt;&lt;</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aee38736d82b6ca9eb287796fc1296c49" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::reporter_human</scope><name>operator&lt;&lt;</name></member>
@@ -2839,8 +2841,8 @@ Constructs and emits two informational lines: the first lists the programme name
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a391d670afb552fe8fc03011d37a517fd" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::reporter_human</scope><name>reporter_human</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a9a0bc97cfe825e84bb7109a80d4e40d6" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::reporter_human</scope><name>reporter_human</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aec90391bfa7f7d8257004ad18b8fe36f" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::reporter_human</scope><name>reporter_human</name></member>
-      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a7685b625fb0bcc71279c07f45c82c0ac" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::reporter_human</scope><name>verbosity</name></member>
-      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::reporter_human</scope><name>verbosity_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a24da76a8973a5aebca9ef7604740180c" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::reporter_human</scope><name>verbosity</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::reporter_human</scope><name>verbosity_</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ae656aff0d07d7cc634f1a0b2046137e9" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::reporter_human</scope><name>write_buffer_to_file_</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a26d99bc552ad4ed31253028647e939b1" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::reporter_human</scope><name>write_buffer_to_stdout</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a7ee71ebee4a54fb4b05c1f476cc78263" prot="protected" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::reporter_human</scope><name>write_info_</name></member>

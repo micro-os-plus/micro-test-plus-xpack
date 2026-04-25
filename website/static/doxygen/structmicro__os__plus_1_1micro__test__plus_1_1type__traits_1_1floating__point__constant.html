@@ -112,23 +112,23 @@ $(function(){initNavTree('structmicro__os__plus_1_1micro__test__plus_1_1type__tr
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a3538821b6929e9b13f6a3ea763e1627e" id="r_a3538821b6929e9b13f6a3ea763e1627e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3538821b6929e9b13f6a3ea763e1627e">value_type</a> = T</td></tr>
-<tr class="memdesc:a3538821b6929e9b13f6a3ea763e1627e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the constant value.  <br /></td></tr>
+<tr class="memdesc:a3538821b6929e9b13f6a3ea763e1627e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the stored value.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3ee48433567db9886d9f99ab5e6d2864" id="r_a3ee48433567db9886d9f99ab5e6d2864"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ee48433567db9886d9f99ab5e6d2864">get</a> () const</td></tr>
-<tr class="memdesc:a3ee48433567db9886d9f99ab5e6d2864"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the constant value.  <br /></td></tr>
-<tr class="memitem:a0a877099bf7ee9fcde1446cac65511e6" id="r_a0a877099bf7ee9fcde1446cac65511e6"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a877099bf7ee9fcde1446cac65511e6">operator value_type</a> () const</td></tr>
-<tr class="memdesc:a0a877099bf7ee9fcde1446cac65511e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicit conversion operator to <a class="el" href="#a3538821b6929e9b13f6a3ea763e1627e" title="The type of the constant value.">value_type</a>.  <br /></td></tr>
-<tr class="memitem:adcc1ade20fd348fa653623ec6c378d72" id="r_adcc1ade20fd348fa653623ec6c378d72"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adcc1ade20fd348fa653623ec6c378d72">operator-</a> () const</td></tr>
-<tr class="memdesc:adcc1ade20fd348fa653623ec6c378d72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unary minus operator.  <br /></td></tr>
+<tr class="memitem:a9e42c82de949aa6640b3964bd67c4732" id="r_a9e42c82de949aa6640b3964bd67c4732"><td class="memItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e42c82de949aa6640b3964bd67c4732">get</a> (void) const noexcept</td></tr>
+<tr class="memdesc:a9e42c82de949aa6640b3964bd67c4732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the compile-time constant value.  <br /></td></tr>
+<tr class="memitem:a2be95ffe95532c5b3a0ab852aa2c680f" id="r_a2be95ffe95532c5b3a0ab852aa2c680f"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2be95ffe95532c5b3a0ab852aa2c680f">operator T</a> () const noexcept</td></tr>
+<tr class="memdesc:a2be95ffe95532c5b3a0ab852aa2c680f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicit conversion operator to the underlying value type.  <br /></td></tr>
+<tr class="memitem:a53595778654687cfd7fe8dd385d26bcc" id="r_a53595778654687cfd7fe8dd385d26bcc"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53595778654687cfd7fe8dd385d26bcc">operator-</a> () const noexcept</td></tr>
+<tr class="memdesc:a53595778654687cfd7fe8dd385d26bcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unary minus operator.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a5cab8e85fbee4a9314fc8a3e09e59eef" id="r_a5cab8e85fbee4a9314fc8a3e09e59eef"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5cab8e85fbee4a9314fc8a3e09e59eef">epsilon</a> = T (1) / <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a5c22d85f0df63cc0504cbf4988173cd7">math::pow</a> (T (10), Size - 1)</td></tr>
+<tr class="memitem:a5cab8e85fbee4a9314fc8a3e09e59eef" id="r_a5cab8e85fbee4a9314fc8a3e09e59eef"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5cab8e85fbee4a9314fc8a3e09e59eef">epsilon</a> = T (1) / <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a81a10f59f83a29f4ade9c710e833eced">math::pow</a> (T (10), Size - 1)</td></tr>
 <tr class="memdesc:a5cab8e85fbee4a9314fc8a3e09e59eef"><td class="mdescLeft">&#160;</td><td class="mdescRight">The epsilon value used for floating point comparisons.  <br /></td></tr>
-<tr class="memitem:ab0e05de518c208a6a762c7377d2f2332" id="r_ab0e05de518c208a6a762c7377d2f2332"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0e05de518c208a6a762c7377d2f2332">value</a> = T (P) * (T (N) + (T (D) / <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a5c22d85f0df63cc0504cbf4988173cd7">math::pow</a> (T (10), Size)))</td></tr>
-<tr class="memdesc:ab0e05de518c208a6a762c7377d2f2332"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constant value.  <br /></td></tr>
+<tr class="memitem:ab0e05de518c208a6a762c7377d2f2332" id="r_ab0e05de518c208a6a762c7377d2f2332"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0e05de518c208a6a762c7377d2f2332">value</a> = T (P) * (T (N) + (T (D) / <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a81a10f59f83a29f4ade9c710e833eced">math::pow</a> (T (10), Size)))</td></tr>
+<tr class="memdesc:ab0e05de518c208a6a762c7377d2f2332"><td class="mdescLeft">&#160;</td><td class="mdescRight">The compile-time constant value.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class T, auto N, auto D, auto Size, auto P = 1&gt;<br />
@@ -142,10 +142,10 @@ struct micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; 
   </table>
   </dd>
 </dl>
-<p>The <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html" title="Struct template representing a generic floating point constant with custom size and precision.">floating_point_constant</a></span> struct template provides a compile-time constant value of a floating point type, supporting custom size and precision. It inherits from <span class="tt">op</span> to enable unified handling within the µTest++ framework's type traits and metaprogramming utilities.</p>
-<p>This struct template exposes the constant value via a static member, a getter method, and explicit conversion operators. It also provides a unary minus operator to obtain the negative value as a new <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html" title="Struct template representing a generic floating point constant with custom size and precision.">floating_point_constant</a></span> instance. The <span class="tt">epsilon</span> member defines the precision used for floating point comparisons, calculated based on the specified size. </p>
+<p>The <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html" title="Struct template representing a generic floating point constant with custom size and precision.">floating_point_constant</a></span> struct template provides a compile-time constant value of a floating point type, supporting custom size and precision. It inherits from <span class="tt">op</span> directly rather than from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html" title="Base struct template providing common storage and accessors for runtime value-wrapper types.">value_base_</a>&lt;T&gt;</span>, which avoids introducing a user-provided constructor into the type and keeps it trivially default-constructible. This prevents the GCC ARM PSABI note about parameter-passing ABI changes that is emitted for non-trivially-constructible types under C++17.</p>
+<p>The <span class="tt"><a class="el" href="#a3538821b6929e9b13f6a3ea763e1627e" title="The type of the stored value.">value_type</a></span> alias, explicit conversion operator, and <span class="tt"><a class="el" href="#a9e42c82de949aa6640b3964bd67c4732" title="Getter for the compile-time constant value.">get()</a></span> accessor are provided directly by this struct. The compile-time <span class="tt">epsilon</span> and <span class="tt">value</span> static constants are retained, and a unary minus operator is provided to obtain the negative value as a new <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html" title="Struct template representing a generic floating point constant with custom size and precision.">floating_point_constant</a></span> instance. </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00633">633</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00708">708</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a3538821b6929e9b13f6a3ea763e1627e" name="a3538821b6929e9b13f6a3ea763e1627e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3538821b6929e9b13f6a3ea763e1627e">&#9670;&#160;</a></span>value_type</h2>
@@ -161,13 +161,13 @@ template&lt;class T, auto N, auto D, auto Size, auto P = 1&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00638">638</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00716">716</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a3ee48433567db9886d9f99ab5e6d2864" name="a3ee48433567db9886d9f99ab5e6d2864"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ee48433567db9886d9f99ab5e6d2864">&#9670;&#160;</a></span>get()</h2>
+<a id="a9e42c82de949aa6640b3964bd67c4732" name="a9e42c82de949aa6640b3964bd67c4732"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e42c82de949aa6640b3964bd67c4732">&#9670;&#160;</a></span>get()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -178,33 +178,33 @@ template&lt;class T, auto N, auto D, auto Size, auto P = 1&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">micro_os_plus::micro_test_plus::type_traits::floating_point_constant</a>&lt; T, N, D, Size, P &gt;::get </td>
+          <td class="memname">T <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">micro_os_plus::micro_test_plus::type_traits::floating_point_constant</a>&lt; T, N, D, Size, P &gt;::get </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>The constant value.</dd></dl>
-<p>Returns the compile-time floating point constant value. </p>
+<dl class="section user"><dt>Parameters</dt><dd>None. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The compile-time constant as type <span class="tt">T</span>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00696">696</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  697</span>      {</div>
-<div class="line"><span class="lineno">  698</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="#ab0e05de518c208a6a762c7377d2f2332">value</a>;</div>
-<div class="line"><span class="lineno">  699</span>      }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_html_ab0e05de518c208a6a762c7377d2f2332"><div class="ttname"><a href="#ab0e05de518c208a6a762c7377d2f2332">micro_os_plus::micro_test_plus::type_traits::floating_point_constant::value</a></div><div class="ttdeci">static constexpr auto value</div><div class="ttdoc">The constant value.</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00654">type-traits.h:655</a></div></div>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00754">754</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  755</span>      {</div>
+<div class="line"><span class="lineno">  756</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="#ab0e05de518c208a6a762c7377d2f2332">value</a>;</div>
+<div class="line"><span class="lineno">  757</span>      }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_html_ab0e05de518c208a6a762c7377d2f2332"><div class="ttname"><a href="#ab0e05de518c208a6a762c7377d2f2332">micro_os_plus::micro_test_plus::type_traits::floating_point_constant::value</a></div><div class="ttdeci">static constexpr auto value</div><div class="ttdoc">The compile-time constant value.</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00732">type-traits.h:733</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="type-traits_8h_source.html#l00655">value</a>.</p>
+<p class="reference">References <a class="el" href="type-traits_8h_source.html#l00733">value</a>.</p>
 
 </div>
 </div>
-<a id="a0a877099bf7ee9fcde1446cac65511e6" name="a0a877099bf7ee9fcde1446cac65511e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a877099bf7ee9fcde1446cac65511e6">&#9670;&#160;</a></span>operator value_type()</h2>
+<a id="a2be95ffe95532c5b3a0ab852aa2c680f" name="a2be95ffe95532c5b3a0ab852aa2c680f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2be95ffe95532c5b3a0ab852aa2c680f">&#9670;&#160;</a></span>operator T()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -215,7 +215,7 @@ template&lt;class T, auto N, auto D, auto Size, auto P = 1&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">micro_os_plus::micro_test_plus::type_traits::floating_point_constant</a>&lt; T, N, D, Size, P &gt;::operator <a class="el" href="#a3538821b6929e9b13f6a3ea763e1627e">value_type</a> </td>
+          <td class="memname"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">micro_os_plus::micro_test_plus::type_traits::floating_point_constant</a>&lt; T, N, D, Size, P &gt;::operator T </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -223,24 +223,23 @@ template&lt;class T, auto N, auto D, auto Size, auto P = 1&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>The constant value as type <span class="tt"><a class="el" href="#a3538821b6929e9b13f6a3ea763e1627e" title="The type of the constant value.">value_type</a></span>.</dd></dl>
-<p>Allows explicit conversion to the underlying floating point value type. </p>
+<dl class="section return"><dt>Returns</dt><dd>The compile-time constant as type <span class="tt">T</span>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00682">682</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  683</span>      {</div>
-<div class="line"><span class="lineno">  684</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="#ab0e05de518c208a6a762c7377d2f2332">value</a>;</div>
-<div class="line"><span class="lineno">  685</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00741">741</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  742</span>      {</div>
+<div class="line"><span class="lineno">  743</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="#ab0e05de518c208a6a762c7377d2f2332">value</a>;</div>
+<div class="line"><span class="lineno">  744</span>      }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="type-traits_8h_source.html#l00655">value</a>.</p>
+<p class="reference">References <a class="el" href="type-traits_8h_source.html#l00733">value</a>.</p>
 
 </div>
 </div>
-<a id="adcc1ade20fd348fa653623ec6c378d72" name="adcc1ade20fd348fa653623ec6c378d72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adcc1ade20fd348fa653623ec6c378d72">&#9670;&#160;</a></span>operator-()</h2>
+<a id="a53595778654687cfd7fe8dd385d26bcc" name="a53595778654687cfd7fe8dd385d26bcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53595778654687cfd7fe8dd385d26bcc">&#9670;&#160;</a></span>operator-()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -259,18 +258,18 @@ template&lt;class T, auto N, auto D, auto Size, auto P = 1&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html" title="Struct template representing a generic floating point constant with custom size and precision.">floating_point_constant</a></span> with value <span class="tt">-value</span>.</dd></dl>
-<p>Returns a new <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html" title="Struct template representing a generic floating point constant with custom size and precision.">floating_point_constant</a></span> instance representing the negative of the current value. </p>
+<dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html" title="Struct template representing a generic floating point constant with custom size and precision.">floating_point_constant</a></span> with negated sign parameter.</dd></dl>
+<p>Returns a new <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html" title="Struct template representing a generic floating point constant with custom size and precision.">floating_point_constant</a></span> instance representing the negative of the current value by flipping the sign parameter <span class="tt">P</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00667">667</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  668</span>      {</div>
-<div class="line"><span class="lineno">  669</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">floating_point_constant</a>&lt;<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">T</a>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">N</a>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">D</a>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">Size</a>, -1&gt;{};</div>
-<div class="line"><span class="lineno">  670</span>      }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">micro_os_plus::micro_test_plus::type_traits::floating_point_constant</a></div><div class="ttdoc">Struct template representing a generic floating point constant with custom size and precision.</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00633">type-traits.h:634</a></div></div>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00769">769</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  770</span>      {</div>
+<div class="line"><span class="lineno">  771</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">floating_point_constant</a>&lt;<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">T</a>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">N</a>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">D</a>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">Size</a>, -<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">P</a>&gt;{};</div>
+<div class="line"><span class="lineno">  772</span>      }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">micro_os_plus::micro_test_plus::type_traits::floating_point_constant</a></div><div class="ttdoc">Struct template representing a generic floating point constant with custom size and precision.</div><div class="ttdef"><b>Definition</b> <a href="type-traits_8h_source.html#l00708">type-traits.h:709</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -287,7 +286,7 @@ template&lt;class T, auto N, auto D, auto Size, auto P = 1&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">micro_os_plus::micro_test_plus::type_traits::floating_point_constant</a>&lt; T, N, D, Size, P &gt;::epsilon = T (1) / <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a5c22d85f0df63cc0504cbf4988173cd7">math::pow</a> (T (10), Size - 1)</td>
+          <td class="memname">auto <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">micro_os_plus::micro_test_plus::type_traits::floating_point_constant</a>&lt; T, N, D, Size, P &gt;::epsilon = T (1) / <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a81a10f59f83a29f4ade9c710e833eced">math::pow</a> (T (10), Size - 1)</td>
         </tr>
       </table>
   </td>
@@ -298,7 +297,7 @@ template&lt;class T, auto N, auto D, auto Size, auto P = 1&gt; </div>
 </div><div class="memdoc">
 <p>Calculated as 1 divided by 10 raised to the power of (Size - 1). </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00646">646</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00724">724</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
 
 </div>
 </div>
@@ -314,7 +313,7 @@ template&lt;class T, auto N, auto D, auto Size, auto P = 1&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">micro_os_plus::micro_test_plus::type_traits::floating_point_constant</a>&lt; T, N, D, Size, P &gt;::value = T (P) * (T (N) + (T (D) / <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a5c22d85f0df63cc0504cbf4988173cd7">math::pow</a> (T (10), Size)))</td>
+          <td class="memname">auto <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html">micro_os_plus::micro_test_plus::type_traits::floating_point_constant</a>&lt; T, N, D, Size, P &gt;::value = T (P) * (T (N) + (T (D) / <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a81a10f59f83a29f4ade9c710e833eced">math::pow</a> (T (10), Size)))</td>
         </tr>
       </table>
   </td>
@@ -325,9 +324,9 @@ template&lt;class T, auto N, auto D, auto Size, auto P = 1&gt; </div>
 </div><div class="memdoc">
 <p>Computed as <span class="tt">P * (N + D / 10^Size)</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00654">654</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="type-traits_8h_source.html#l00732">732</a> of file <a class="el" href="type-traits_8h_source.html">type-traits.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="type-traits_8h_source.html#l00696">get()</a>, and <a class="el" href="type-traits_8h_source.html#l00682">operator value_type()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="type-traits_8h_source.html#l00754">get()</a>, and <a class="el" href="type-traits_8h_source.html#l00741">operator T()</a>.</p>
 
 </div>
 </div>

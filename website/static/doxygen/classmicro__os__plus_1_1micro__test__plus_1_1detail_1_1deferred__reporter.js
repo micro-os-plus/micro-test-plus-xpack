@@ -2,7 +2,7 @@ var classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter =
 [
     [ "deferred_reporter", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter.html#a8c4ce843acc48abf5c1f5303ba6947d3", null ],
     [ "~deferred_reporter", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter.html#aa221de23c9bed6bc5844c077fbafa46b", null ],
-    [ "operator<<", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter.html#aa4076e7682edfc8c3a818c3f7c0fcc0e", null ],
+    [ "operator<<", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter.html#a25895cdf53098c97033b5c476cdd7702", null ],
     [ "value", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter.html#a0c0b059add8cbddb96e8f2fef8cba431", null ],
     [ "abort_", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter.html#aa36fd4c36a94b04430599303e38a48bd", null ],
     [ "deferred_output_", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter.html#a0d4853e08c3106a270e951e56d876840", null ],

@@ -30,6 +30,8 @@
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
       </node>
       <node id="5">
         <label>array</label>
@@ -38,6 +40,9 @@
         <label>cstdint</label>
       </node>
       <node id="6">
+        <label>string_view</label>
+      </node>
+      <node id="7">
         <label>type_traits</label>
       </node>
     </incdepgraph>
@@ -431,7 +436,7 @@
 <codeline lineno="639"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline lineno="640" refid="structmicro__os__plus_1_1micro__test__plus_1_1__t" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="group__micro-test-plus-literals_1ga6195961d9ece2c2c91e8946d47d84a79" kindref="member">_t</ref><sp/>:<sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">type_traits::value</ref>&lt;T&gt;</highlight></codeline>
 <codeline lineno="641"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="651" refid="group__micro-test-plus-literals_1ga6195961d9ece2c2c91e8946d47d84a79" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="group__micro-test-plus-literals_1ga6195961d9ece2c2c91e8946d47d84a79" kindref="member">_t</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>t)<sp/>:<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits" kindref="compound">type_traits</ref>::<ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1aa345a4fad8db58254b2f5b7a395d8e5b" kindref="member">value</ref>&lt;T&gt;{<sp/>t<sp/>}</highlight></codeline>
+<codeline lineno="651" refid="group__micro-test-plus-literals_1ga6195961d9ece2c2c91e8946d47d84a79" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="group__micro-test-plus-literals_1ga6195961d9ece2c2c91e8946d47d84a79" kindref="member">_t</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>t)<sp/>:<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits" kindref="compound">type_traits</ref>::<ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a69374f408449c08c756896dd26d2d437" kindref="member">value</ref>&lt;T&gt;{<sp/>t<sp/>}</highlight></codeline>
 <codeline lineno="652"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="653"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="654"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
@@ -491,7 +496,7 @@
 <codeline lineno="881"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline lineno="882" refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="group__micro-test-plus-literals_1gaad9720f2d1e443d77cdfd1eb1151e924" kindref="member">to_t</ref><sp/>:<sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">type_traits::value</ref>&lt;T&gt;</highlight></codeline>
 <codeline lineno="883"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="893" refid="group__micro-test-plus-literals_1gaad9720f2d1e443d77cdfd1eb1151e924" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="group__micro-test-plus-literals_1gaad9720f2d1e443d77cdfd1eb1151e924" kindref="member">to_t</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>t)<sp/>:<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits" kindref="compound">type_traits</ref>::<ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1aa345a4fad8db58254b2f5b7a395d8e5b" kindref="member">value</ref>&lt;T&gt;{<sp/>t<sp/>}</highlight></codeline>
+<codeline lineno="893" refid="group__micro-test-plus-literals_1gaad9720f2d1e443d77cdfd1eb1151e924" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="group__micro-test-plus-literals_1gaad9720f2d1e443d77cdfd1eb1151e924" kindref="member">to_t</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>t)<sp/>:<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits" kindref="compound">type_traits</ref>::<ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a69374f408449c08c756896dd26d2d437" kindref="member">value</ref>&lt;T&gt;{<sp/>t<sp/>}</highlight></codeline>
 <codeline lineno="894"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="895"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="896"><highlight class="normal"><sp/><sp/>};</highlight></codeline>

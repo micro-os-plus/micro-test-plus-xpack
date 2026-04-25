@@ -28,12 +28,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga4f8137c97c5135722ff2cda2b7fb20bf">assume</a> (const Expr_T &amp;expr, const reflection::source_location &amp;sl=reflection::source_location::current())</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga0346721eb94564ebce4a49ee81c020c8">assume</a> (const Expr_T &amp;expr, const reflection::source_location &amp;sl=reflection::source_location::current())</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Check a condition and, if false, abort test execution. <a href="#ga4f8137c97c5135722ff2cda2b7fb20bf">More...</a></p>
+<p>Check a condition and, if false, abort test execution. <a href="#ga0346721eb94564ebce4a49ee81c020c8">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -57,7 +57,7 @@ keywords:
 
 ## Functions
 
-### assume() {#ga4f8137c97c5135722ff2cda2b7fb20bf}
+### assume() {#ga0346721eb94564ebce4a49ee81c020c8}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -127,7 +127,7 @@ keywords:
 <p>The <span class="doxyComputerOutput">assume</span> function template evaluates a logical condition or custom expression and reports the result within the µTest++ framework. It is designed to provide detailed diagnostics for test failures, including the actual and expected values, when using the provided comparators (<span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-function-comparators/#gae9dfca849300a917cb1c231d275baaa3">eq()</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-function-comparators/#ga59e4cf59954e81bc868e62b1c5c8db1f">ne()</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-function-comparators/#gac162522dcad1a6ff7c869d52d376b3ed">lt()</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-function-comparators/#ga2b5263a5b3965855aa04971bba735a56">le()</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-function-comparators/#gae2fb681444d8256f6bf827eea6b7c29e">gt()</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-function-comparators/#ga34e03399670ec0b365b94b7bea788dd8">ge()</a></span>) or custom operators.</p>
 
 
-<p>The function template can be used with any expression that evaluates to a boolean or with custom comparators/operators derived from the local <span class="doxyComputerOutput">detail::op</span> type. For complex checks performed outside the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-expectations/#ga9baacbf1fea181ff175bcd14baa54ea1">expect()</a></span> logical expression (such as within <span class="doxyComputerOutput">if</span> or <span class="doxyComputerOutput">try</span>/<span class="doxyComputerOutput">catch</span> statements), the result can be reported by calling <span class="doxyComputerOutput">expect(true)</span> or <span class="doxyComputerOutput">expect(false)</span>.</p>
+<p>The function template can be used with any expression that evaluates to a boolean or with custom comparators/operators derived from the local <span class="doxyComputerOutput">detail::op</span> type. For complex checks performed outside the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-expectations/#gaad2aa05f39d1877f2173f6d0f6718bd2">expect()</a></span> logical expression (such as within <span class="doxyComputerOutput">if</span> or <span class="doxyComputerOutput">try</span>/<span class="doxyComputerOutput">catch</span> statements), the result can be reported by calling <span class="doxyComputerOutput">expect(true)</span> or <span class="doxyComputerOutput">expect(false)</span>.</p>
 
 
 <p>The function returns an output stream, allowing optional messages to be appended to the test report.</p>
@@ -144,24 +144,21 @@ keywords:
 </div>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00687">687</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00693">693</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga4f8137c97c5135722ff2cda2b7fb20bf">687</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#ga4f8137c97c5135722ff2cda2b7fb20bf">assume</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Expr_T&amp; expr, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a>&amp; sl</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">688</span><span class="doxyLineContent"><span class="doxyHighlight">                                = <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#af2ee3ac5db96f13680291736d58fe327">reflection::source_location::current</a> ())</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">689</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">690</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter">detail::deferred_reporter&lt;Expr_T&gt;</a>{ expr, </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">, sl, *</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight"> };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">691</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga0346721eb94564ebce4a49ee81c020c8">693</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#ga0346721eb94564ebce4a49ee81c020c8">assume</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Expr_T&amp; expr, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a>&amp; sl</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">694</span><span class="doxyLineContent"><span class="doxyHighlight">                                = <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#af2ee3ac5db96f13680291736d58fe327">reflection::source_location::current</a> ())</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">695</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">696</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter">detail::deferred_reporter&lt;Expr_T&gt;</a>{ expr, </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">, sl, *</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight"> };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">697</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 
-<p>References <a href="#ga4f8137c97c5135722ff2cda2b7fb20bf">micro_os_plus::micro_test_plus::subtest::assume</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#af2ee3ac5db96f13680291736d58fe327">micro_os_plus::micro_test_plus::reflection::source_location::current</a>.</p>
-
-
-<p>Referenced by <a href="#ga4f8137c97c5135722ff2cda2b7fb20bf">micro_os_plus::micro_test_plus::subtest::assume</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#af2ee3ac5db96f13680291736d58fe327">micro_os_plus::micro_test_plus::reflection::source_location::current</a>.</p>
 
 </div>
 </div>
@@ -170,6 +167,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.0.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 
 </div>

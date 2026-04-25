@@ -51,6 +51,8 @@
         <link refid="type-traits_8h"/>
         <childnode refid="8" relation="include">
         </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
         <childnode refid="10" relation="include">
         </childnode>
       </node>
@@ -227,23 +229,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="136" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="137" bodyend="143"/>
-      </memberdef>
-    </sectiondef>
-    <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="namespacemicro__os__plus_1_1micro__test__plus_1a0bbf0517c0f64f25e40b591ecb969a6e" prot="public" static="no">
-        <type>verbosity</type>
-        <definition>using micro_os_plus::micro_test_plus::verbosity_t =  verbosity</definition>
-        <argsstring></argsstring>
-        <name>verbosity_t</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::verbosity_t</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="145" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="145" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="138" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="139" bodyend="145"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="var">
@@ -264,7 +250,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="116" column="28" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="116" bodyend="120"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="118" column="28" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="118" bodyend="122"/>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a391d670afb552fe8fc03011d37a517fd" compoundref="reporter-human_8cpp" startline="79" endline="94">micro_os_plus::micro_test_plus::reporter_human::reporter_human</referencedby>
       </memberdef>
     </sectiondef>
@@ -417,32 +403,32 @@ The <computeroutput>endl</computeroutput> function inserts a newline character i
 <codeline lineno="109" refid="structmicro__os__plus_1_1micro__test__plus_1_1colours" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1colours" kindref="compound">colours</ref></highlight></codeline>
 <codeline lineno="110"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="111" refid="structmicro__os__plus_1_1micro__test__plus_1_1colours_1a41c8c508e9353cee2b9823bbe9d1fea3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1colours_1a41c8c508e9353cee2b9823bbe9d1fea3" kindref="member">none</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;<sp/></highlight></codeline>
-<codeline lineno="112" refid="structmicro__os__plus_1_1micro__test__plus_1_1colours_1af9cb49c94f9bc38794c500a7f5d1c7bc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1colours_1af9cb49c94f9bc38794c500a7f5d1c7bc" kindref="member">pass</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;<sp/></highlight></codeline>
-<codeline lineno="113" refid="structmicro__os__plus_1_1micro__test__plus_1_1colours_1aa4d4feecd7e50ea77d1dbf1be952103c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1colours_1aa4d4feecd7e50ea77d1dbf1be952103c" kindref="member">fail</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;<sp/></highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"></highlight></codeline>
-<codeline lineno="116" refid="namespacemicro__os__plus_1_1micro__test__plus_1abb8182f972e436f09e25dc5b0dae05fd" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1colours" kindref="compound">colours</ref><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1abb8182f972e436f09e25dc5b0dae05fd" kindref="member">colours_red_green</ref><sp/>=<sp/>{</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;\033[0m&quot;</highlight><highlight class="normal">,<sp/></highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;\033[32m&quot;</highlight><highlight class="normal">,<sp/></highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;\033[31m&quot;</highlight><highlight class="normal"><sp/></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"></highlight></codeline>
-<codeline lineno="136" refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" kindref="member">verbosity</ref></highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="138" refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15" kindref="member">silent</ref><sp/>=<sp/>0,<sp/></highlight></codeline>
-<codeline lineno="139" refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d" kindref="member">quiet</ref><sp/>=<sp/>1,<sp/></highlight></codeline>
-<codeline lineno="140" refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" kindref="member">normal</ref><sp/>=<sp/>2,<sp/></highlight></codeline>
-<codeline lineno="141" refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" kindref="member">verbose</ref><sp/>=<sp/>3<sp/></highlight></codeline>
-<codeline lineno="143"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
-<codeline lineno="144"><highlight class="normal"></highlight></codeline>
-<codeline lineno="145" refid="namespacemicro__os__plus_1_1micro__test__plus_1a0bbf0517c0f64f25e40b591ecb969a6e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a0bbf0517c0f64f25e40b591ecb969a6e" kindref="member">verbosity_t</ref><sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" kindref="member">verbosity</ref>;</highlight></codeline>
+<codeline lineno="112" refid="structmicro__os__plus_1_1micro__test__plus_1_1colours_1af9cb49c94f9bc38794c500a7f5d1c7bc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1colours_1af9cb49c94f9bc38794c500a7f5d1c7bc" kindref="member">pass</ref></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="114" refid="structmicro__os__plus_1_1micro__test__plus_1_1colours_1aa4d4feecd7e50ea77d1dbf1be952103c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1colours_1aa4d4feecd7e50ea77d1dbf1be952103c" kindref="member">fail</ref></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;<sp/></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="namespacemicro__os__plus_1_1micro__test__plus_1abb8182f972e436f09e25dc5b0dae05fd" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1colours" kindref="compound">colours</ref><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1abb8182f972e436f09e25dc5b0dae05fd" kindref="member">colours_red_green</ref><sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;\033[0m&quot;</highlight><highlight class="normal">,<sp/></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;\033[32m&quot;</highlight><highlight class="normal">,<sp/></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;\033[31m&quot;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" kindref="member">verbosity</ref></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="140" refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15" kindref="member">silent</ref><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="141" refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d" kindref="member">quiet</ref><sp/>=<sp/>1,<sp/></highlight></codeline>
+<codeline lineno="142" refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" kindref="member">normal</ref><sp/>=<sp/>2,<sp/></highlight></codeline>
+<codeline lineno="143" refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" kindref="member">verbose</ref><sp/>=<sp/>3<sp/></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
 <codeline lineno="146"><highlight class="normal"></highlight></codeline>
 <codeline lineno="147"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Forward<sp/>definitions.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="148"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref>;</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref>;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">reporter;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">runner;</highlight></codeline>
 <codeline lineno="150"><highlight class="normal"></highlight></codeline>
-<codeline lineno="158"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref>&amp;</highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1accd8ecc7473b09af578daa31bb8780eb" kindref="member">endl</ref><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref>&amp;<sp/>stream);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/>reporter&amp;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1accd8ecc7473b09af578daa31bb8780eb" kindref="member">endl</ref><sp/>(reporter&amp;<sp/>stream);</highlight></codeline>
 <codeline lineno="160"><highlight class="normal"></highlight></codeline>
 <codeline lineno="168" refid="structmicro__os__plus_1_1micro__test__plus_1_1indent__t" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1indent__t" kindref="compound">indent_t</ref></highlight></codeline>
 <codeline lineno="169"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
@@ -526,7 +512,7 @@ The <computeroutput>endl</computeroutput> function inserts a newline character i
 <codeline lineno="416"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Specific<sp/>operators.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="417"><highlight class="normal"></highlight></codeline>
 <codeline lineno="426"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="427"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a814e7f004d5404f735737aabb90fa111" kindref="member">type_traits::is_op_v&lt;T&gt;</ref></highlight></codeline>
+<codeline lineno="427"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__op" kindref="compound">type_traits::is_op&lt;T&gt;</ref></highlight></codeline>
 <codeline lineno="428"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref>&amp;</highlight></codeline>
 <codeline lineno="429"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ad7a2cc6446e65cf9034f85c93efb3945" kindref="member">operator&lt;&lt; </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>t);</highlight></codeline>
 <codeline lineno="430"><highlight class="normal"></highlight></codeline>
@@ -635,10 +621,10 @@ The <computeroutput>endl</computeroutput> function inserts a newline character i
 <codeline lineno="762"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*</highlight></codeline>
 <codeline lineno="763" refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a9cafc8992d508b5ffa0b6a64226202bd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a9cafc8992d508b5ffa0b6a64226202bd" kindref="member">get_comment_prefix</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="764"><highlight class="normal"></highlight></codeline>
-<codeline lineno="772"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a0bbf0517c0f64f25e40b591ecb969a6e" kindref="member">verbosity_t</ref></highlight></codeline>
-<codeline lineno="773" refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a7685b625fb0bcc71279c07f45c82c0ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a7685b625fb0bcc71279c07f45c82c0ac" kindref="member">verbosity</ref><sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="774"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="775"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" kindref="member">verbosity_</ref>;</highlight></codeline>
+<codeline lineno="772"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="773" refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a24da76a8973a5aebca9ef7604740180c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a24da76a8973a5aebca9ef7604740180c" kindref="member">verbosity</ref><sp/>()<sp/>const<sp/>-&gt;<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_test_plus</ref>::<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a24da76a8973a5aebca9ef7604740180c" kindref="member">verbosity</ref></highlight></codeline>
+<codeline lineno="774"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="775"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" kindref="member">verbosity_</ref>;</highlight></codeline>
 <codeline lineno="776"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="777"><highlight class="normal"></highlight></codeline>
 <codeline lineno="778"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
@@ -676,7 +662,7 @@ The <computeroutput>endl</computeroutput> function inserts a newline character i
 <codeline lineno="875"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a4a1d9fe32165b779cf7b9f97fbb63564" kindref="member">append_number_</ref><sp/>(std::string&amp;<sp/>buffer,<sp/>T<sp/>v);</highlight></codeline>
 <codeline lineno="876"><highlight class="normal"></highlight></codeline>
 <codeline lineno="877"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="881" refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a0bbf0517c0f64f25e40b591ecb969a6e" kindref="member">verbosity_t</ref><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5ce1c7861221c0b662dfb5a30b8474f3" kindref="member">verbosity_</ref>{<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" kindref="member">verbosity::normal</ref><sp/>};</highlight></codeline>
+<codeline lineno="881" refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a24da76a8973a5aebca9ef7604740180c" kindref="member">verbosity</ref><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" kindref="member">verbosity_</ref><sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" kindref="member">verbosity::normal</ref>;</highlight></codeline>
 <codeline lineno="882"><highlight class="normal"></highlight></codeline>
 <codeline lineno="886" refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aeb060bfc3184673b0813bca6d8057865" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1colours" kindref="compound">colours</ref><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aeb060bfc3184673b0813bca6d8057865" kindref="member">colours_</ref>{};</highlight></codeline>
 <codeline lineno="887"><highlight class="normal"></highlight></codeline>

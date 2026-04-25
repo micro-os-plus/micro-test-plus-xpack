@@ -6,5 +6,6 @@ var searchData=
   ['increment_5fsuccessful_5fchecks_3',['increment_successful_checks',['../classmicro__os__plus_1_1micro__test__plus_1_1runner__totals.html#ae27e4c6050b55a0d0e69f74de93898d2',1,'micro_os_plus::micro_test_plus::runner_totals']]],
   ['indent_4',['indent',['../namespacemicro__os__plus_1_1micro__test__plus.html#aa887212b25aa8e44bf32b07d4a6634e9',1,'micro_os_plus::micro_test_plus']]],
   ['initialise_5',['initialise',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#ab6420151930179564274c39ef738ea79',1,'micro_os_plus::micro_test_plus::runner']]],
-  ['is_5fmatch_6',['is_match',['../group__micro-test-plus-utility-functions.html#gaa2f0f4cff320a783ad2347c9ff3fc731',1,'micro_os_plus::micro_test_plus::utility']]]
+  ['integral_5fconstant_6',['integral_constant',['../structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html#aa9f1e68b760d80aea085d684b2dccc4f',1,'micro_os_plus::micro_test_plus::type_traits::integral_constant']]],
+  ['is_5fmatch_7',['is_match',['../group__micro-test-plus-utility-functions.html#gaa2f0f4cff320a783ad2347c9ff3fc731',1,'micro_os_plus::micro_test_plus::utility']]]
 ];

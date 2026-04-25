@@ -431,6 +431,18 @@
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1assertion-members.html</loc>
   </url>
   <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op__.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op__-members.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op__-members.html</loc>
+  </url>
+  <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter.html</loc>
   </url>
   <url>
@@ -507,6 +519,12 @@
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4-members.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op__.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op__-members.html</loc>
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/namespacemicro__os__plus_1_1micro__test__plus_1_1literals.html</loc>
@@ -596,6 +614,12 @@
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4-members.html</loc>
   </url>
   <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__-members.html</loc>
+  </url>
+  <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1container__like.html</loc>
   </url>
   <url>
@@ -606,6 +630,21 @@
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__epsilon.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__floating__point.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__op.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1any__op.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1checkable.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1printable.html</loc>
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/namespacemicro__os__plus_1_1micro__test__plus_1_1utility.html</loc>
@@ -743,9 +782,6 @@
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/namespacemembers_type.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/namespacemembers_type.html</loc>
-  </url>
-  <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/namespacemembers_enum.html</loc>
   </url>
   <url>
@@ -812,6 +848,9 @@
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/functions_t.html</loc>
   </url>
   <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/functions_u.html</loc>
+  </url>
+  <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/functions_v.html</loc>
   </url>
   <url>
@@ -870,6 +909,9 @@
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/functions_func_t.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/functions_func_u.html</loc>
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/functions_func_v.html</loc>

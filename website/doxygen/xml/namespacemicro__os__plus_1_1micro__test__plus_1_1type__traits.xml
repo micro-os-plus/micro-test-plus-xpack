@@ -14,8 +14,9 @@
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op" prot="public">micro_os_plus::micro_test_plus::type_traits::op</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" prot="public">micro_os_plus::micro_test_plus::type_traits::value</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4" prot="public">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;</innerclass>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__" prot="public">micro_os_plus::micro_test_plus::type_traits::value_base_</innerclass>
     <sectiondef kind="var">
-      <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a341b3a4a7cb9bea974449355bf7095d8" prot="public" static="yes" constexpr="yes" mutable="no">
+      <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a341b3a4a7cb9bea974449355bf7095d8" prot="public" static="no" constexpr="yes" mutable="no">
         <templateparamlist>
           <param>
             <type>class T</type>
@@ -40,30 +41,13 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<parameterlist kind="retval"><parameteritem>
-<parameternamelist>
-<parametername>true</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>if <computeroutput>T</computeroutput> has a member named <computeroutput>epsilon</computeroutput>. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>false</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>otherwise.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-Implemented in terms of the <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__epsilon" kindref="compound">has_epsilon</ref></computeroutput> concept. </para>
+Evaluates to <computeroutput>true</computeroutput> if <computeroutput>T</computeroutput> has a member named <computeroutput>epsilon</computeroutput>; <computeroutput>false</computeroutput> otherwise. Implemented in terms of the <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__epsilon" kindref="compound">has_epsilon</ref></computeroutput> concept. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="414" column="27" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="414" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="542" column="27" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="542" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a0ff1a0846fe8d484f01d45df4e37dd94" prot="public" static="yes" constexpr="yes" mutable="no">
+      <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a0ff1a0846fe8d484f01d45df4e37dd94" prot="public" static="no" constexpr="yes" mutable="no">
         <templateparamlist>
           <param>
             <type>class T</type>
@@ -88,30 +72,13 @@ Implemented in terms of the <computeroutput><ref refid="conceptmicro__os__plus_1
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<parameterlist kind="retval"><parameteritem>
-<parameternamelist>
-<parametername>true</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>if <computeroutput>T</computeroutput> has a member named <computeroutput>npos</computeroutput>. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>false</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>otherwise.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-Implemented in terms of the <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__npos" kindref="compound">has_npos</ref></computeroutput> concept. </para>
+Evaluates to <computeroutput>true</computeroutput> if <computeroutput>T</computeroutput> has a member named <computeroutput>npos</computeroutput>; <computeroutput>false</computeroutput> otherwise. Implemented in terms of the <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__npos" kindref="compound">has_npos</ref></computeroutput> concept. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="383" column="27" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="383" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="515" column="27" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="515" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a695b45e13f3ac3cd1cef1225fa0dfa01" prot="public" static="yes" constexpr="yes" mutable="no">
+      <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a695b45e13f3ac3cd1cef1225fa0dfa01" prot="public" static="no" constexpr="yes" mutable="no">
         <templateparamlist>
           <param>
             <type>class T</type>
@@ -136,30 +103,13 @@ Implemented in terms of the <computeroutput><ref refid="conceptmicro__os__plus_1
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<parameterlist kind="retval"><parameteritem>
-<parameternamelist>
-<parametername>true</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>if <computeroutput>T</computeroutput> has a member named <computeroutput>value</computeroutput>. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>false</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>otherwise.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-Implemented in terms of the <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__value" kindref="compound">has_value</ref></computeroutput> concept. </para>
+Evaluates to <computeroutput>true</computeroutput> if <computeroutput>T</computeroutput> has a member named <computeroutput>value</computeroutput>; <computeroutput>false</computeroutput> otherwise. Implemented in terms of the <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__value" kindref="compound">has_value</ref></computeroutput> concept. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="398" column="27" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="398" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="528" column="27" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="528" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a8361ab7ff9d9c6343d97a99bdcb9feb2" prot="public" static="yes" constexpr="yes" mutable="no">
+      <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a8361ab7ff9d9c6343d97a99bdcb9feb2" prot="public" static="no" constexpr="yes" mutable="no">
         <templateparamlist>
           <param>
             <type>class T</type>
@@ -184,203 +134,11 @@ Implemented in terms of the <computeroutput><ref refid="conceptmicro__os__plus_1
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<parameterlist kind="retval"><parameteritem>
-<parameternamelist>
-<parametername>true</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>if <computeroutput>T</computeroutput> has both <computeroutput>begin()</computeroutput> and <computeroutput>end()</computeroutput> member functions. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>false</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>otherwise.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-Implemented in terms of the <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1container__like" kindref="compound">container_like</ref></computeroutput> concept. </para>
+Evaluates to <computeroutput>true</computeroutput> if <computeroutput>T</computeroutput> has both <computeroutput>begin()</computeroutput> and <computeroutput>end()</computeroutput> member functions; <computeroutput>false</computeroutput> otherwise. Implemented in terms of the <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1container__like" kindref="compound">container_like</ref></computeroutput> concept. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="368" column="27" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="368" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a49a5bfe63d50b6fd1be0972586fbf590" prot="public" static="no" constexpr="yes" mutable="no">
-        <templateparamlist>
-          <param>
-            <type>class From</type>
-          </param>
-          <param>
-            <type>class To</type>
-          </param>
-        </templateparamlist>
-        <type>auto</type>
-        <definition>auto micro_os_plus::micro_test_plus::type_traits::is_convertible_v</definition>
-        <argsstring></argsstring>
-        <name>is_convertible_v</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::type_traits::is_convertible_v</qualifiedname>
-        <initializer>= std::is_convertible_v&lt;From, To&gt;</initializer>
-        <briefdescription>
-<para>Variable template to determine if one type is convertible to another. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="templateparam"><parameteritem>
-<parameternamelist>
-<parametername>From</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The source type to be checked for convertibility. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>To</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The target type to which conversion is tested.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<parameterlist kind="retval"><parameteritem>
-<parameternamelist>
-<parametername>true</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>if <computeroutput>From</computeroutput> is convertible to <computeroutput>To</computeroutput>. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>false</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>otherwise.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-The <computeroutput>is_convertible_v</computeroutput> variable template evaluates to <computeroutput>true</computeroutput> if the type <computeroutput>From</computeroutput> is implicitly convertible to the type <computeroutput>To</computeroutput>, and <computeroutput>false</computeroutput> otherwise. This trait is determined at compile time using the standard <computeroutput>std::is_convertible_v</computeroutput> and is used throughout the µTest++ framework to enable type-safe conversions and requirements checking in template metaprogramming. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="505" column="27" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="505" bodyend="-1"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1ad3eb4bb11f1c6fc4631bae8a7215a95e">micro_os_plus::micro_test_plus::subtest::operator=</referencedby>
-      </memberdef>
-      <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1abfe0c2413694bb3a6dcdf1da303c38db" prot="public" static="no" constexpr="yes" mutable="no">
-        <templateparamlist>
-          <param>
-            <type>class T</type>
-          </param>
-        </templateparamlist>
-        <type>auto</type>
-        <definition>auto micro_os_plus::micro_test_plus::type_traits::is_floating_point_v</definition>
-        <argsstring></argsstring>
-        <name>is_floating_point_v</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::type_traits::is_floating_point_v</qualifiedname>
-        <initializer>= false</initializer>
-        <briefdescription>
-<para>Variable template to determine if a type is a floating point type. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="templateparam"><parameteritem>
-<parameternamelist>
-<parametername>T</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The type to be checked for floating point classification.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<parameterlist kind="retval"><parameteritem>
-<parameternamelist>
-<parametername>true</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>if <computeroutput>T</computeroutput> is a floating point type. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>false</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>otherwise.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-The <computeroutput>is_floating_point_v</computeroutput> variable template evaluates to <computeroutput>true</computeroutput> if the given type <computeroutput>T</computeroutput> is a floating point type (<computeroutput>float</computeroutput>, <computeroutput>double</computeroutput>, or <computeroutput>long double</computeroutput>). For all other types, it evaluates to <computeroutput>false</computeroutput>. This trait is used throughout the µTest++ framework to enable type-safe handling and specialisation for floating point types in template metaprogramming.</para>
-<para>Specialisations are provided for <computeroutput>float</computeroutput>, <computeroutput>double</computeroutput>, and <computeroutput>long double</computeroutput>, each evaluating to <computeroutput>true</computeroutput>. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="436" column="27" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="436" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a14941429632c41668220d59c1cd59541" prot="public" static="no" constexpr="yes" mutable="no">
-        <templateparamlist>
-        </templateparamlist>
-        <type>auto</type>
-        <definition>auto micro_os_plus::micro_test_plus::type_traits::is_floating_point_v&lt; double &gt;</definition>
-        <argsstring></argsstring>
-        <name>is_floating_point_v&lt; double &gt;</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::type_traits::is_floating_point_v&lt; double &gt;</qualifiedname>
-        <initializer>= true</initializer>
-        <briefdescription>
-<para>Variable template specialisation indicating that <computeroutput>double</computeroutput> is a floating point type. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>This specialisation of the <computeroutput>is_floating_point_v</computeroutput> variable template evaluates to <computeroutput>true</computeroutput> for the <computeroutput>double</computeroutput> type, confirming that it is recognised as a floating point type within the µTest++ framework. This enables type-safe handling and specialisation for floating point types in template metaprogramming.</para>
-<para><simplesect kind="see"><para><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1abfe0c2413694bb3a6dcdf1da303c38db" kindref="member">is_floating_point_v</ref> </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="468" column="22" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="468" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1aed0d377e4faa067bb6add65ebeb1a482" prot="public" static="no" constexpr="yes" mutable="no">
-        <templateparamlist>
-        </templateparamlist>
-        <type>auto</type>
-        <definition>auto micro_os_plus::micro_test_plus::type_traits::is_floating_point_v&lt; float &gt;</definition>
-        <argsstring></argsstring>
-        <name>is_floating_point_v&lt; float &gt;</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::type_traits::is_floating_point_v&lt; float &gt;</qualifiedname>
-        <initializer>= true</initializer>
-        <briefdescription>
-<para>Variable template specialisation indicating that <computeroutput>float</computeroutput> is a floating point type. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>This specialisation of the <computeroutput>is_floating_point_v</computeroutput> variable template evaluates to <computeroutput>true</computeroutput> for the <computeroutput>float</computeroutput> type, confirming that it is recognised as a floating point type within the µTest++ framework. This enables type-safe handling and specialisation for floating point types in template metaprogramming.</para>
-<para><simplesect kind="see"><para><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1abfe0c2413694bb3a6dcdf1da303c38db" kindref="member">is_floating_point_v</ref> </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="452" column="22" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="452" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a735eedc6f117908ddfb242f37e319b46" prot="public" static="no" constexpr="yes" mutable="no">
-        <templateparamlist>
-        </templateparamlist>
-        <type>auto</type>
-        <definition>auto micro_os_plus::micro_test_plus::type_traits::is_floating_point_v&lt; long double &gt;</definition>
-        <argsstring></argsstring>
-        <name>is_floating_point_v&lt; long double &gt;</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::type_traits::is_floating_point_v&lt; long double &gt;</qualifiedname>
-        <initializer>= true</initializer>
-        <briefdescription>
-<para>Variable template specialisation indicating that <computeroutput>long double</computeroutput> is a floating point type. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>This specialisation of the <computeroutput>is_floating_point_v</computeroutput> variable template evaluates to <computeroutput>true</computeroutput> for the <computeroutput>long double</computeroutput> type, confirming that it is recognised as a floating point type within the µTest++ framework. This enables type-safe handling and specialisation for floating point types in template metaprogramming.</para>
-<para><simplesect kind="see"><para><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1abfe0c2413694bb3a6dcdf1da303c38db" kindref="member">is_floating_point_v</ref> </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="484" column="22" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="484" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="502" column="27" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="502" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a814e7f004d5404f735737aabb90fa111" prot="public" static="no" constexpr="yes" mutable="no">
         <templateparamlist>
@@ -393,7 +151,7 @@ The <computeroutput>is_floating_point_v</computeroutput> variable template evalu
         <argsstring></argsstring>
         <name>is_op_v</name>
         <qualifiedname>micro_os_plus::micro_test_plus::type_traits::is_op_v</qualifiedname>
-        <initializer>= std::is_base_of_v&lt;<ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op" kindref="compound">type_traits::op</ref>, T&gt;</initializer>
+        <initializer>= is_op&lt;T&gt;</initializer>
         <briefdescription>
 <para>Variable template to determine if a type derives from <computeroutput>op</computeroutput>. </para>
         </briefdescription>
@@ -407,30 +165,12 @@ The <computeroutput>is_floating_point_v</computeroutput> variable template evalu
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<parameterlist kind="retval"><parameteritem>
-<parameternamelist>
-<parametername>true</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>if <computeroutput>T</computeroutput> is derived from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op" kindref="compound">type_traits::op</ref></computeroutput>. </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>false</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>otherwise.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-The <computeroutput>is_op_v</computeroutput> variable template evaluates to <computeroutput>true</computeroutput> if the given type <computeroutput>T</computeroutput> is derived from the <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op" kindref="compound">type_traits::op</ref></computeroutput> base struct, and <computeroutput>false</computeroutput> otherwise. This trait is determined at compile time using compiler intrinsics and is used throughout the µTest++ framework to enable generic handling and detection of operator-like or value wrapper types in template metaprogramming. </para>
+Evaluates to <computeroutput>true</computeroutput> if <computeroutput>T</computeroutput> satisfies the <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__op" kindref="compound">is_op</ref></computeroutput> concept (i.e., is derived from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op" kindref="compound">type_traits::op</ref></computeroutput>); <computeroutput>false</computeroutput> otherwise. Provided as a convenient boolean alias for use in <computeroutput>if constexpr</computeroutput> expressions and other non-concept contexts. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="789" column="27" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="789" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="556" column="27" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="556" bodyend="-1"/>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a5617d861c48049189b6b33e36626763a" compoundref="reporter-inlines_8h" startline="340" endline="344">micro_os_plus::micro_test_plus::reporter_human::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1ad3eb4bb11f1c6fc4631bae8a7215a95e">micro_os_plus::micro_test_plus::subtest::operator=</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -442,6 +182,6 @@ The <computeroutput>is_op_v</computeroutput> variable template evaluates to <com
 <para>These utilities facilitate advanced template programming, type deduction, and compile-time introspection, supporting the flexible and type-safe design of the framework.</para>
 <para>All definitions within this namespace are implemented in the <computeroutput>include/micro-os-plus</computeroutput> folder to maintain a structured and modular codebase. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="77" column="1"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="78" column="1"/>
   </compounddef>
 </doxygen>

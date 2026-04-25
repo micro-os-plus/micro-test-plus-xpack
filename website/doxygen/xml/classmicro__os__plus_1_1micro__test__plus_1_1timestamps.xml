@@ -377,7 +377,6 @@ If the begin timestamp has not yet been set, a <computeroutput>timestamp</comput
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" line="250" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/timings.cpp" bodystart="102" bodyend="109"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a24ee833f4442cb06ae50c1ad39d6a1d6" compoundref="timings_8h" startline="342">begin_time_</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base_1a08921ea05d769a210cfec4326f1505a9" compoundref="test_8cpp" startline="193" endline="196">micro_os_plus::micro_test_plus::runnable&lt; subtest &gt;::abort</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a4ab3277887dfc4cd8ae84bb4101eae60" compoundref="test_8cpp" startline="466" endline="491">micro_os_plus::micro_test_plus::static_suite::run</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a95287115b751593afa5fcc4315c74b02" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
@@ -435,7 +434,6 @@ If the end timestamp has not yet been set, a <computeroutput>timestamp</computer
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" line="271" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/timings.cpp" bodystart="135" bodyend="142"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a0fa77823c527ab58229ff562979f48d4" compoundref="timings_8h" startline="347">end_time_</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base_1a08921ea05d769a210cfec4326f1505a9" compoundref="test_8cpp" startline="193" endline="196">micro_os_plus::micro_test_plus::runnable&lt; subtest &gt;::abort</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a4ab3277887dfc4cd8ae84bb4101eae60" compoundref="test_8cpp" startline="466" endline="491">micro_os_plus::micro_test_plus::static_suite::run</referencedby>
       </memberdef>
     </sectiondef>

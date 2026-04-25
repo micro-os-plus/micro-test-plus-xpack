@@ -28,12 +28,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga9f5b1ce8e86ae91e37952fa5395a262c">operator and</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#gaa188c33047f559e28dc95dbb465e19a8">operator and</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Logical <span class="doxyComputerOutput">&amp;&amp;</span> (and) operator. Matches only if at least one operand is of local type (derived from local <span class="doxyComputerOutput">op</span>). <a href="#ga9f5b1ce8e86ae91e37952fa5395a262c">More...</a></p>
+<p>Logical <span class="doxyComputerOutput">&amp;&amp;</span> (and) operator. Matches only if at least one operand is of local type (derived from local <span class="doxyComputerOutput">op</span>). <a href="#gaa188c33047f559e28dc95dbb465e19a8">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -45,12 +45,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga6efefab5a8f2fa4b8f0008255581379e">operator not</a> (const T &amp;t)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga00db5f149865ed9fd8d73f2db44542b0">operator not</a> (const T &amp;t)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Logical <span class="doxyComputerOutput">!</span> (not) operator. Matches only if the operand is of local type (derived from local <span class="doxyComputerOutput">op</span>). <a href="#ga6efefab5a8f2fa4b8f0008255581379e">More...</a></p>
+<p>Logical <span class="doxyComputerOutput">!</span> (not) operator. Matches only if the operand is of local type (derived from local <span class="doxyComputerOutput">op</span>). <a href="#ga00db5f149865ed9fd8d73f2db44542b0">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -62,12 +62,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#gada70a550c2c02d1d7293efd2cf10ab5c">operator or</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga0fe9ef52ecfb0de402da9e7454d7c20b">operator or</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Logical <span class="doxyComputerOutput">||</span> (or) operator. Matches only if at least one operand is of local type (derived from local <span class="doxyComputerOutput">op</span>). <a href="#gada70a550c2c02d1d7293efd2cf10ab5c">More...</a></p>
+<p>Logical <span class="doxyComputerOutput">||</span> (or) operator. Matches only if at least one operand is of local type (derived from local <span class="doxyComputerOutput">op</span>). <a href="#ga0fe9ef52ecfb0de402da9e7454d7c20b">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -79,12 +79,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga70665b9137eb7a54917ef4a7e556e5d6">operator!=</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga445025eccd3ef529af191aab5aad91a9">operator!=</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Non-equality operator for custom types. Matches only if at least one operand is of local type. <a href="#ga70665b9137eb7a54917ef4a7e556e5d6">More...</a></p>
+<p>Non-equality operator for custom types. Matches only if at least one operand is of local type. <a href="#ga445025eccd3ef529af191aab5aad91a9">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -96,12 +96,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#gaf444d654ac945f6c47c9a8712278cb7f">operator&lt;</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga675d31a23d8f0dfed775466ef1463a80">operator&lt;</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Less than operator. Matches only if at least one operand is of local type (derived from local <span class="doxyComputerOutput">op</span>). <a href="#gaf444d654ac945f6c47c9a8712278cb7f">More...</a></p>
+<p>Less than operator. Matches only if at least one operand is of local type (derived from local <span class="doxyComputerOutput">op</span>). <a href="#ga675d31a23d8f0dfed775466ef1463a80">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -113,12 +113,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga6fa56a234ceec4232dc9f131695dcc3b">operator&lt;=</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga15235adceff30c6e3aa382696aea23cb">operator&lt;=</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Less than or equal operator. Matches only if at least one operand is of local type (derived from local <span class="doxyComputerOutput">op</span>). <a href="#ga6fa56a234ceec4232dc9f131695dcc3b">More...</a></p>
+<p>Less than or equal operator. Matches only if at least one operand is of local type (derived from local <span class="doxyComputerOutput">op</span>). <a href="#ga15235adceff30c6e3aa382696aea23cb">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -130,12 +130,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga15b2c12a28683bea3529436c03eff4cf">operator==</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#gaae177a6c59286d4d7e4f85ffa6579e56">operator==</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Equality operator for custom types. Matches only if at least one operand is of local type. <a href="#ga15b2c12a28683bea3529436c03eff4cf">More...</a></p>
+<p>Equality operator for custom types. Matches only if at least one operand is of local type. <a href="#gaae177a6c59286d4d7e4f85ffa6579e56">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -147,12 +147,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga79d68e7d8823fce4e90efba4435ab3e9">operator&gt;</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#gac0afc8d658f73e3b5f136a5c60d1fbd1">operator&gt;</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Greater than operator. Matches only if at least one operand is of local type (derived from local <span class="doxyComputerOutput">op</span>). <a href="#ga79d68e7d8823fce4e90efba4435ab3e9">More...</a></p>
+<p>Greater than operator. Matches only if at least one operand is of local type (derived from local <span class="doxyComputerOutput">op</span>). <a href="#gac0afc8d658f73e3b5f136a5c60d1fbd1">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -164,12 +164,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga6271e69322d8ccce03e08d68cc0f8af4">operator&gt;=</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#gabfc165fd00e9f53bbf7b63f71b9d5020">operator&gt;=</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Greater than or equal operator. Matches only if at least one operand is of local type (derived from local <span class="doxyComputerOutput">op</span>). <a href="#ga6271e69322d8ccce03e08d68cc0f8af4">More...</a></p>
+<p>Greater than or equal operator. Matches only if at least one operand is of local type (derived from local <span class="doxyComputerOutput">op</span>). <a href="#gabfc165fd00e9f53bbf7b63f71b9d5020">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -248,7 +248,7 @@ keywords:
 
 ## Operators
 
-### operator and() {#ga9f5b1ce8e86ae91e37952fa5395a262c}
+### operator and() {#gaa188c33047f559e28dc95dbb465e19a8}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -317,22 +317,22 @@ keywords:
 <p>This overload of the logical <span class="doxyComputerOutput">&amp;&amp;</span> (and) operator enables conjunction between two operands, where at least one is a local type derived from the local <span class="doxyComputerOutput">op</span> base. It constructs a logical conjunction object that can be used within the µTest++ framework to assert that both operands evaluate to true. This operator is intended for use with the framework's strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00418">418</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00426">426</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga9f5b1ce8e86ae91e37952fa5395a262c">418</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlight"> and (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">419</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">420</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/and-">detail::and_</a>{ lhs, rhs };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">421</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaa188c33047f559e28dc95dbb465e19a8">426</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlight"> and (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">427</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">428</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/and-">detail::and_</a>{ lhs, rhs };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">429</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### operator not() {#ga6efefab5a8f2fa4b8f0008255581379e}
+### operator not() {#ga00db5f149865ed9fd8d73f2db44542b0}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -393,22 +393,22 @@ keywords:
 <p>This overload of the logical <span class="doxyComputerOutput">!</span> (not) operator enables logical negation of an operand, provided it is a local type derived from the local <span class="doxyComputerOutput">op</span> base. It constructs a logical negator object that can be used within the µTest++ framework to assert that a given condition is false. This operator is intended for use with the framework's strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00477">477</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00485">485</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga6efefab5a8f2fa4b8f0008255581379e">477</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlight"> not(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; t)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">478</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">479</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/not-">detail::not_</a>{ t };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">480</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga00db5f149865ed9fd8d73f2db44542b0">485</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlight"> not(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; t)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">486</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">487</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/not-">detail::not_</a>{ t };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">488</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### operator or() {#gada70a550c2c02d1d7293efd2cf10ab5c}
+### operator or() {#ga0fe9ef52ecfb0de402da9e7454d7c20b}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -477,22 +477,22 @@ keywords:
 <p>This overload of the logical <span class="doxyComputerOutput">||</span> (or) operator enables disjunction between two operands, where at least one is a local type derived from the local <span class="doxyComputerOutput">op</span> base. It constructs a logical disjunction object that can be used within the µTest++ framework to assert that at least one operand evaluates to true. This operator is intended for use with the framework's strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00448">448</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00456">456</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gada70a550c2c02d1d7293efd2cf10ab5c">448</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlight"> or (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">449</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">450</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/or-">detail::or_</a>{ lhs, rhs };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">451</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga0fe9ef52ecfb0de402da9e7454d7c20b">456</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlight"> or (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">457</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">458</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/or-">detail::or_</a>{ lhs, rhs };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">459</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### operator!=() {#ga70665b9137eb7a54917ef4a7e556e5d6}
+### operator!=() {#ga445025eccd3ef529af191aab5aad91a9}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -561,22 +561,22 @@ keywords:
 <p>This overload of the non-equality operator enables comparison between two operands, where at least one is a local type derived from the local <span class="doxyComputerOutput">op</span> base. It constructs a comparator object that can be used within the µTest++ framework to assert that the operands are not equal. This operator is intended for use with the framework's strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00266">266</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00274">274</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga70665b9137eb7a54917ef4a7e556e5d6">266</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlight">!= (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">267</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">268</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-">detail::ne_</a>{ lhs, rhs };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">269</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga445025eccd3ef529af191aab5aad91a9">274</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-string-operators/#ga179e971d5e37795c036ad66aa35f1654">operator!=</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">275</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">276</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-">detail::ne_</a>{ lhs, rhs };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">277</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### operator&lt;() {#gaf444d654ac945f6c47c9a8712278cb7f}
+### operator&lt;() {#ga675d31a23d8f0dfed775466ef1463a80}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -645,22 +645,22 @@ keywords:
 <p>This overload of the less than operator enables comparison between two operands, where at least one is a local type derived from the local <span class="doxyComputerOutput">op</span> base. It constructs a comparator object that can be used within the µTest++ framework to assert that the left hand side operand is less than the right hand side operand. This operator is intended for use with the framework's strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00356">356</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00364">364</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber">357</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlight">&lt; (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">358</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">359</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/lt-">detail::lt_</a>{ lhs, rhs };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">360</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">365</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#ga675d31a23d8f0dfed775466ef1463a80">operator&lt;</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">366</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">367</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/lt-">detail::lt_</a>{ lhs, rhs };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">368</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### operator&lt;=() {#ga6fa56a234ceec4232dc9f131695dcc3b}
+### operator&lt;=() {#ga15235adceff30c6e3aa382696aea23cb}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -729,22 +729,22 @@ keywords:
 <p>This overload of the less than or equal operator enables comparison between two operands, where at least one is a local type derived from the local <span class="doxyComputerOutput">op</span> base. It constructs a comparator object that can be used within the µTest++ framework to assert that the left hand side operand is less than or equal to the right hand side operand. This operator is intended for use with the framework's strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00387">387</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00395">395</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber">388</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlight">&lt;= (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">389</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">390</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/le-">detail::le_</a>{ lhs, rhs };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">391</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">396</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#ga15235adceff30c6e3aa382696aea23cb">operator&lt;=</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">397</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">398</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/le-">detail::le_</a>{ lhs, rhs };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">399</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### operator==() {#ga15b2c12a28683bea3529436c03eff4cf}
+### operator==() {#gaae177a6c59286d4d7e4f85ffa6579e56}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -813,22 +813,22 @@ keywords:
 <p>This overload of the equality operator enables comparison between two operands, where at least one is a local type derived from the local <span class="doxyComputerOutput">op</span> base. It constructs a comparator object that can be used within the µTest++ framework to assert that the operands are equal. This operator is intended for use with the framework's strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00236">236</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00244">244</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga15b2c12a28683bea3529436c03eff4cf">236</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlight">== (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">237</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">238</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-">detail::eq_</a>{ lhs, rhs };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">239</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaae177a6c59286d4d7e4f85ffa6579e56">244</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-string-operators/#gaabe34a842bf38ea2913a4164d2b0a9cb">operator==</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">245</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">246</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-">detail::eq_</a>{ lhs, rhs };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">247</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### operator&gt;() {#ga79d68e7d8823fce4e90efba4435ab3e9}
+### operator&gt;() {#gac0afc8d658f73e3b5f136a5c60d1fbd1}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -897,22 +897,22 @@ keywords:
 <p>This overload of the greater than operator enables comparison between two operands, where at least one is a local type derived from the local <span class="doxyComputerOutput">op</span> base. It constructs a comparator object that can be used within the µTest++ framework to assert that the left hand side operand is greater than the right hand side operand. This operator is intended for use with the framework's strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00296">296</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00304">304</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga79d68e7d8823fce4e90efba4435ab3e9">296</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlight">&gt; (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">297</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">298</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/gt-">detail::gt_</a>{ lhs, rhs };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">299</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gac0afc8d658f73e3b5f136a5c60d1fbd1">304</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#gac0afc8d658f73e3b5f136a5c60d1fbd1">operator&gt;</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">305</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">306</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/gt-">detail::gt_</a>{ lhs, rhs };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">307</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### operator&gt;=() {#ga6271e69322d8ccce03e08d68cc0f8af4}
+### operator&gt;=() {#gabfc165fd00e9f53bbf7b63f71b9d5020}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -981,15 +981,15 @@ keywords:
 <p>This overload of the greater than or equal operator enables comparison between two operands, where at least one is a local type derived from the local <span class="doxyComputerOutput">op</span> base. It constructs a comparator object that can be used within the µTest++ framework to assert that the left hand side operand is greater than or equal to the right hand side operand. This operator is intended for use with the framework's strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00327">327</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00335">335</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga6271e69322d8ccce03e08d68cc0f8af4">327</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlight">&gt;= (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">328</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">329</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ge-">detail::ge_</a>{ lhs, rhs };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">330</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gabfc165fd00e9f53bbf7b63f71b9d5020">335</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#gabfc165fd00e9f53bbf7b63f71b9d5020">operator&gt;=</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">336</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">337</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ge-">detail::ge_</a>{ lhs, rhs };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">338</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -1000,6 +1000,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.0.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 
 </div>

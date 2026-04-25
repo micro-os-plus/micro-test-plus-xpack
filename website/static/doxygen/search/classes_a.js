@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['op_0',['op',['../structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html',1,'micro_os_plus::micro_test_plus::type_traits']]],
-  ['or_5f_1',['or_',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html',1,'micro_os_plus::micro_test_plus::detail']]]
+  ['ne_5f_0',['ne_',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne__.html',1,'micro_os_plus::micro_test_plus::detail']]],
+  ['not_5f_1',['not_',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__.html',1,'micro_os_plus::micro_test_plus::detail']]],
+  ['nothrow_5f_2',['nothrow_',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__.html',1,'micro_os_plus::micro_test_plus::detail']]]
 ];

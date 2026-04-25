@@ -5,6 +5,7 @@
 
 title: Classes
 slug: /api/classes
+description: The C++ classes, structs, unions, and interfaces defined in the project
 custom_edit_url: null
 keywords:
   - doxygen
@@ -156,6 +157,17 @@ Empty base struct for all operator types
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-">binary_op_&lt;Lhs_T, Rhs_T&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Common base struct template for binary comparators
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
 <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/and-">and_&lt;Lhs_T, Rhs_T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
@@ -165,12 +177,122 @@ Logical AND comparator struct template
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
+<span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
 <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-">eq_&lt;Lhs_T, Rhs_T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Equality comparator struct template
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ge-">ge_&lt;Lhs_T, Rhs_T&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Greater than or equal comparator struct template
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/gt-">gt_&lt;Lhs_T, Rhs_T&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Greater than comparator struct template
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/le-">le_&lt;Lhs_T, Rhs_T&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Less than or equal comparator struct template
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/lt-">lt_&lt;Lhs_T, Rhs_T&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Less than comparator struct template
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-">ne_&lt;Lhs_T, Rhs_T&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Non-equality comparator struct template
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/or-">or_&lt;Lhs_T, Rhs_T&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Logical OR comparator struct template
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 24px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op-">callable_op_</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Common base struct for callable-wrapping operators
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/nothrow-">nothrow_&lt;Callable_T&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Operator struct template to check if an expression does not throw any exception
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-">throws_&lt;Callable_T, Exception_T&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Operator struct template to check if an expression throws a specific exception
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws--6ce6a9ac7588b533a253fd8d8638e6be">throws_&lt;Callable_T, void&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Operator struct template to check if an expression throws any exception
 </td>
 </tr>
 
@@ -189,82 +311,16 @@ Struct template representing a generic floating point constant with custom size 
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ge-">ge_&lt;Lhs_T, Rhs_T&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/unary-op-">unary_op_&lt;T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Greater than or equal comparator struct template
+Common base struct template for unary comparators
 </td>
 </tr>
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value">genuine_integral_value&lt;T&gt;</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Struct template representing a genuine integral value
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/gt-">gt_&lt;Lhs_T, Rhs_T&gt;</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Greater than comparator struct template
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">integral_constant&lt;N&gt;</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Struct template representing a generic integral constant
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/le-">le_&lt;Lhs_T, Rhs_T&gt;</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Less than or equal comparator struct template
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/lt-">lt_&lt;Lhs_T, Rhs_T&gt;</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Less than comparator struct template
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-">ne_&lt;Lhs_T, Rhs_T&gt;</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Non-equality comparator struct template
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
+<span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
 <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/not-">not_&lt;T&gt;</a>
 </td>
@@ -277,49 +333,38 @@ Logical NOT comparator struct template
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/nothrow-">nothrow_&lt;Callable_T&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-">value_base_&lt;T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Operator struct template to check if an expression does not throw any exception
+Base struct template providing common storage and accessors for runtime value-wrapper types
 </td>
 </tr>
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
+<span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/or-">or_&lt;Lhs_T, Rhs_T&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value">genuine_integral_value&lt;T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Logical OR comparator struct template
+Struct template representing a genuine integral value
 </td>
 </tr>
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
+<span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-">throws_&lt;Callable_T, Exception_T&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">integral_constant&lt;N&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Operator struct template to check if an expression throws a specific exception
+Struct template representing a generic integral constant
 </td>
 </tr>
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws--6ce6a9ac7588b533a253fd8d8638e6be">throws_&lt;Callable_T, void&gt;</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Operator struct template to check if an expression throws any exception
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
+<span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
 <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value&lt;T&gt;</a>
 </td>
@@ -330,7 +375,7 @@ Struct template representing a generic value, accessible via a getter
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 24px; display: inline-block;"></span>
+<span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
 <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-f7399366cd6336ecbea702c3289d9432">value&lt;T&gt;</a>
 </td>
@@ -341,7 +386,7 @@ Struct template representing a floating point value with precision control
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
+<span style="width: 48px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
 <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/-t">_t&lt;T&gt;</a>
 </td>
@@ -352,7 +397,7 @@ Deprecated generic strongly-typed wrapper for explicit type conversion
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
+<span style="width: 48px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
 <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/to-t">to_t&lt;T&gt;</a>
 </td>
@@ -541,6 +586,6 @@ A begin/end timestamp pair used to measure elapsed time
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.0.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 
 </div>

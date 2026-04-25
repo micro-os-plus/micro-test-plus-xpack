@@ -24,16 +24,16 @@ keywords:
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexTemplate">
-<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T&gt;</div></td>
+<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Lhs_T, class Rhs_T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga2318671d1b956de9f34f61139a748ce8">operator!=</a> (T &amp;&amp;lhs, T &amp;&amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#gac2449b2b9f07c550b1218456ba1da2db">operator!=</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Non-equality operator for containers. <a href="#ga2318671d1b956de9f34f61139a748ce8">More...</a></p>
+<p>Non-equality operator for containers. <a href="#gac2449b2b9f07c550b1218456ba1da2db">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -41,16 +41,16 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexTemplate">
-<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T&gt;</div></td>
+<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Lhs_T, class Rhs_T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga4dcbc8e9b0ceb8b59680c53e5f17f5bf">operator==</a> (T &amp;&amp;lhs, T &amp;&amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#gab8c44f8115524296fbaf21688dd7f389">operator==</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Equality operator for containers. <a href="#ga4dcbc8e9b0ceb8b59680c53e5f17f5bf">More...</a></p>
+<p>Equality operator for containers. <a href="#gab8c44f8115524296fbaf21688dd7f389">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -99,17 +99,17 @@ keywords:
 
 ## Operators
 
-### operator!=() {#ga2318671d1b956de9f34f61139a748ce8}
+### operator!=() {#gac2449b2b9f07c550b1218456ba1da2db}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
-<div class="doxyMemberTemplate">template &lt;class T&gt;</div>
+<div class="doxyMemberTemplate">template &lt;class Lhs_T, class Rhs_T&gt;</div>
 <table class="doxyMemberLabels">
 <tr class="doxyMemberLabels">
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::operators::operator!= (T &amp;&amp; lhs, T &amp;&amp; rhs)</td>
+<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::operators::operator!= (const Lhs_T &amp; lhs, const Rhs_T &amp; rhs)</td>
 </tr>
 </table>
 </td>
@@ -132,8 +132,12 @@ keywords:
 <dd>
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">T</td>
-<td class="doxyParamItemDescription"><p>The container type, constrained to recognised container types.</p></td>
+<td class="doxyParamItemName">Lhs_T</td>
+<td class="doxyParamItemDescription"><p>The left-hand container type, constrained to recognised container types.</p></td>
+</tr>
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">Rhs_T</td>
+<td class="doxyParamItemDescription"><p>The right-hand container type, constrained to recognised container types.</p></td>
 </tr>
 </table>
 </dd>
@@ -167,32 +171,32 @@ keywords:
 <p>The operator is enabled only for types recognised as containers by the framework's type traits.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00206">206</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00214">214</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga2318671d1b956de9f34f61139a748ce8">206</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-string-operators/#ga179e971d5e37795c036ad66aa35f1654">operator!=</a>(T&amp;&amp; lhs, T&amp;&amp; rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">207</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">208</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-">detail::ne_</a>{ </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight">T&amp;&amp;</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (lhs), </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight">T&amp;&amp;</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (rhs) };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">209</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gac2449b2b9f07c550b1218456ba1da2db">214</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlight">!= (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">215</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">216</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-">detail::ne_</a>{ lhs, rhs };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">217</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### operator==() {#ga4dcbc8e9b0ceb8b59680c53e5f17f5bf}
+### operator==() {#gab8c44f8115524296fbaf21688dd7f389}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
-<div class="doxyMemberTemplate">template &lt;class T&gt;</div>
+<div class="doxyMemberTemplate">template &lt;class Lhs_T, class Rhs_T&gt;</div>
 <table class="doxyMemberLabels">
 <tr class="doxyMemberLabels">
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::operators::operator== (T &amp;&amp; lhs, T &amp;&amp; rhs)</td>
+<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::operators::operator== (const Lhs_T &amp; lhs, const Rhs_T &amp; rhs)</td>
 </tr>
 </table>
 </td>
@@ -215,8 +219,12 @@ keywords:
 <dd>
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
-<td class="doxyParamItemName">T</td>
-<td class="doxyParamItemDescription"><p>The container type, constrained to recognised container types.</p></td>
+<td class="doxyParamItemName">Lhs_T</td>
+<td class="doxyParamItemDescription"><p>The left-hand container type, constrained to recognised container types.</p></td>
+</tr>
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">Rhs_T</td>
+<td class="doxyParamItemDescription"><p>The right-hand container type, constrained to recognised container types.</p></td>
 </tr>
 </table>
 </dd>
@@ -250,15 +258,15 @@ keywords:
 <p>The operator is enabled only for types recognised as containers by the framework's type traits.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00178">178</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00182">182</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga4dcbc8e9b0ceb8b59680c53e5f17f5bf">178</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-string-operators/#gaabe34a842bf38ea2913a4164d2b0a9cb">operator==</a>(T&amp;&amp; lhs, T&amp;&amp; rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">179</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">180</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-">detail::eq_</a>{ </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight">T&amp;&amp;</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (lhs), </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight">T&amp;&amp;</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (rhs) };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">181</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gab8c44f8115524296fbaf21688dd7f389">182</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlight">== (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Lhs_T&amp; lhs, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Rhs_T&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">183</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">184</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-">detail::eq_</a>{ lhs, rhs };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">185</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -269,6 +277,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.0.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
 
 </div>

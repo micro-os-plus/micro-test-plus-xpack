@@ -27,28 +27,28 @@ var namespacemicro__os__plus_1_1micro__test__plus =
       [ "operator\"\"_us", "group__micro-test-plus-literals.html#ga9017debdc1eafd64e3c53c80157ad6f5", null ]
     ] ],
     [ "math", "namespacemicro__os__plus_1_1micro__test__plus_1_1math.html", [
-      [ "abs", "namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a1dd33529640b959c531ca18c2e494c80", null ],
+      [ "abs", "namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#aef66ac12d33fb18753ae7440445e8d85", null ],
       [ "den", "namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a8a29540b951c5cf6b40485287842b782", null ],
       [ "den_size", "namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a3e243d7f77b8435e1433ccad9c603f98", null ],
       [ "den_size", "namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#af5a33355bb68f644b9949ef1faa0d079", null ],
-      [ "min_value", "namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#ae53dd62f6d82b8ccaa048d90a7002826", null ],
+      [ "min_value", "namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a2d07ed276b3f0d461e5b856ec24afcb4", null ],
       [ "num", "namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#afeb53c0d3b6ce6d482cef71f147a2290", null ],
-      [ "pow", "namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a5c22d85f0df63cc0504cbf4988173cd7", null ]
+      [ "pow", "namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a81a10f59f83a29f4ade9c710e833eced", null ]
     ] ],
     [ "operators", "namespacemicro__os__plus_1_1micro__test__plus_1_1operators.html", [
-      [ "operator and", "group__micro-test-plus-operators.html#ga9f5b1ce8e86ae91e37952fa5395a262c", null ],
-      [ "operator not", "group__micro-test-plus-operators.html#ga6efefab5a8f2fa4b8f0008255581379e", null ],
-      [ "operator or", "group__micro-test-plus-operators.html#gada70a550c2c02d1d7293efd2cf10ab5c", null ],
-      [ "operator!=", "group__micro-test-plus-operators.html#ga70665b9137eb7a54917ef4a7e556e5d6", null ],
+      [ "operator and", "group__micro-test-plus-operators.html#gaa188c33047f559e28dc95dbb465e19a8", null ],
+      [ "operator not", "group__micro-test-plus-operators.html#ga00db5f149865ed9fd8d73f2db44542b0", null ],
+      [ "operator or", "group__micro-test-plus-operators.html#ga0fe9ef52ecfb0de402da9e7454d7c20b", null ],
+      [ "operator!=", "group__micro-test-plus-container-operators.html#gac2449b2b9f07c550b1218456ba1da2db", null ],
+      [ "operator!=", "group__micro-test-plus-operators.html#ga445025eccd3ef529af191aab5aad91a9", null ],
       [ "operator!=", "group__micro-test-plus-string-operators.html#ga179e971d5e37795c036ad66aa35f1654", null ],
-      [ "operator!=", "group__micro-test-plus-container-operators.html#ga2318671d1b956de9f34f61139a748ce8", null ],
-      [ "operator<", "group__micro-test-plus-operators.html#gaf444d654ac945f6c47c9a8712278cb7f", null ],
-      [ "operator<=", "group__micro-test-plus-operators.html#ga6fa56a234ceec4232dc9f131695dcc3b", null ],
-      [ "operator==", "group__micro-test-plus-operators.html#ga15b2c12a28683bea3529436c03eff4cf", null ],
+      [ "operator<", "group__micro-test-plus-operators.html#ga675d31a23d8f0dfed775466ef1463a80", null ],
+      [ "operator<=", "group__micro-test-plus-operators.html#ga15235adceff30c6e3aa382696aea23cb", null ],
+      [ "operator==", "group__micro-test-plus-container-operators.html#gab8c44f8115524296fbaf21688dd7f389", null ],
+      [ "operator==", "group__micro-test-plus-operators.html#gaae177a6c59286d4d7e4f85ffa6579e56", null ],
       [ "operator==", "group__micro-test-plus-string-operators.html#gaabe34a842bf38ea2913a4164d2b0a9cb", null ],
-      [ "operator==", "group__micro-test-plus-container-operators.html#ga4dcbc8e9b0ceb8b59680c53e5f17f5bf", null ],
-      [ "operator>", "group__micro-test-plus-operators.html#ga79d68e7d8823fce4e90efba4435ab3e9", null ],
-      [ "operator>=", "group__micro-test-plus-operators.html#ga6271e69322d8ccce03e08d68cc0f8af4", null ]
+      [ "operator>", "group__micro-test-plus-operators.html#gac0afc8d658f73e3b5f136a5c60d1fbd1", null ],
+      [ "operator>=", "group__micro-test-plus-operators.html#gabfc165fd00e9f53bbf7b63f71b9d5020", null ]
     ] ],
     [ "reflection", "namespacemicro__os__plus_1_1micro__test__plus_1_1reflection.html", "namespacemicro__os__plus_1_1micro__test__plus_1_1reflection" ],
     [ "type_traits", "namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html", "namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits" ],
@@ -122,7 +122,6 @@ var namespacemicro__os__plus_1_1micro__test__plus =
     [ "to_ul", "group__micro-test-plus-literals.html#ga9f6f56950ba8bce6cc49037af83e443b", null ],
     [ "to_ull", "group__micro-test-plus-literals.html#ga595258f3c1b293284f79a88b2872d43d", null ],
     [ "to_us", "group__micro-test-plus-literals.html#gac9a34848b05859a18794ece696e37f26", null ],
-    [ "verbosity_t", "namespacemicro__os__plus_1_1micro__test__plus.html#a0bbf0517c0f64f25e40b591ecb969a6e", null ],
     [ "verbosity", "namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914b", [
       [ "silent", "namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15", null ],
       [ "quiet", "namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d", null ],
