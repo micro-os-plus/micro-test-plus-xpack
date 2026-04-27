@@ -109,6 +109,13 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
+  /**
+   * @brief Number of spaces per indentation level.
+   *
+   * @details
+   * Used by `operator<<(indent_t)` and related methods to compute
+   * the leading whitespace for each nesting depth.
+   */
   constexpr size_t indent_size = 4;
 
   /**
