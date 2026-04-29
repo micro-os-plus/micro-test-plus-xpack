@@ -432,27 +432,27 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wpedantic"
 #endif
 #endif
-          if constexpr (type_traits::has_value_v<Lhs_T>
-                        and type_traits::has_value_v<Rhs_T>)
+          if constexpr (type_traits::has_value<Lhs_T>
+                        and type_traits::has_value<Rhs_T>)
             {
               // If both types have values (like numeric constants),
               // compare them directly.
               return Lhs_T::value == Rhs_T::value;
             }
-          else if constexpr (type_traits::has_epsilon_v<Lhs_T>
-                             and type_traits::has_epsilon_v<Rhs_T>)
+          else if constexpr (type_traits::has_epsilon<Lhs_T>
+                             and type_traits::has_epsilon<Rhs_T>)
             {
               // If both values have precision, compare them using
               // the smallest precision.
               return math::abs (get (lhs) - get (rhs))
                      < math::min_value (lhs.epsilon, rhs.epsilon);
             }
-          else if constexpr (type_traits::has_epsilon_v<Lhs_T>)
+          else if constexpr (type_traits::has_epsilon<Lhs_T>)
             {
               // If only the left operand has precision, use it.
               return math::abs (get (lhs) - get (rhs)) < lhs.epsilon;
             }
-          else if constexpr (type_traits::has_epsilon_v<Rhs_T>)
+          else if constexpr (type_traits::has_epsilon<Rhs_T>)
             {
               // If only the right operand has precision, use it.
               return math::abs (get (lhs) - get (rhs)) < rhs.epsilon;
@@ -536,22 +536,22 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wpedantic"
 #endif
 #endif
-          if constexpr (type_traits::has_value_v<Lhs_T>
-                        and type_traits::has_value_v<Rhs_T>)
+          if constexpr (type_traits::has_value<Lhs_T>
+                        and type_traits::has_value<Rhs_T>)
             {
               return Lhs_T::value != Rhs_T::value;
             }
-          else if constexpr (type_traits::has_epsilon_v<Lhs_T>
-                             and type_traits::has_epsilon_v<Rhs_T>)
+          else if constexpr (type_traits::has_epsilon<Lhs_T>
+                             and type_traits::has_epsilon<Rhs_T>)
             {
               return math::abs (get (lhs) - get (rhs))
                      >= math::min_value (lhs.epsilon, rhs.epsilon);
             }
-          else if constexpr (type_traits::has_epsilon_v<Lhs_T>)
+          else if constexpr (type_traits::has_epsilon<Lhs_T>)
             {
               return math::abs (get (lhs) - get (rhs)) >= lhs.epsilon;
             }
-          else if constexpr (type_traits::has_epsilon_v<Rhs_T>)
+          else if constexpr (type_traits::has_epsilon<Rhs_T>)
             {
               return math::abs (get (lhs) - get (rhs)) >= rhs.epsilon;
             }
@@ -628,8 +628,8 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wpedantic"
 #endif
 #endif
-          if constexpr (type_traits::has_value_v<Lhs_T>
-                        and type_traits::has_value_v<Rhs_T>)
+          if constexpr (type_traits::has_value<Lhs_T>
+                        and type_traits::has_value<Rhs_T>)
             {
               return Lhs_T::value > Rhs_T::value;
             }
@@ -707,8 +707,8 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wpedantic"
 #endif
 #endif
-          if constexpr (type_traits::has_value_v<Lhs_T>
-                        and type_traits::has_value_v<Rhs_T>)
+          if constexpr (type_traits::has_value<Lhs_T>
+                        and type_traits::has_value<Rhs_T>)
             {
               return Lhs_T::value >= Rhs_T::value;
             }
@@ -785,8 +785,8 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wpedantic"
 #endif
 #endif
-          if constexpr (type_traits::has_value_v<Lhs_T>
-                        and type_traits::has_value_v<Rhs_T>)
+          if constexpr (type_traits::has_value<Lhs_T>
+                        and type_traits::has_value<Rhs_T>)
             {
               return Lhs_T::value < Rhs_T::value;
             }
@@ -864,8 +864,8 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wpedantic"
 #endif
 #endif
-          if constexpr (type_traits::has_value_v<Lhs_T>
-                        and type_traits::has_value_v<Rhs_T>)
+          if constexpr (type_traits::has_value<Lhs_T>
+                        and type_traits::has_value<Rhs_T>)
             {
               return Lhs_T::value <= Rhs_T::value;
             }

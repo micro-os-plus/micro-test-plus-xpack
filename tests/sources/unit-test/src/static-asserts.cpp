@@ -78,14 +78,14 @@ static_asserts ()
       {
       };
 
-      static_assert (type_traits::is_container_v<std::vector<int>>);
-      static_assert (type_traits::is_container_v<std::array<bool, 0>>);
-      static_assert (type_traits::is_container_v<std::string>);
-      static_assert (type_traits::is_container_v<std::string_view>);
-      // static_assert (type_traits::is_container_v<std::map<int, int>>);
-      static_assert (not type_traits::is_container_v<int>);
-      static_assert (not type_traits::is_container_v<foo>);
-      static_assert (not type_traits::is_container_v<void>);
+      static_assert (type_traits::container_like<std::vector<int>>);
+      static_assert (type_traits::container_like<std::array<bool, 0>>);
+      static_assert (type_traits::container_like<std::string>);
+      static_assert (type_traits::container_like<std::string_view>);
+      // static_assert (type_traits::container_like<std::map<int, int>>);
+      static_assert (not type_traits::container_like<int>);
+      static_assert (not type_traits::container_like<foo>);
+      static_assert (not type_traits::container_like<void>);
     }
 
     {
