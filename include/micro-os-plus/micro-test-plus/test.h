@@ -637,7 +637,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @code{.cpp}
      * namespace mt = micro_os_plus::micro_test_plus;
-     * 
+     *
      * t.expect(compute_answer() == 42) << "answer is 42";
      * @endcode
      */
