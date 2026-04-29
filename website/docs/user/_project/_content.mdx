@@ -437,32 +437,34 @@ For convenience, it is also possible to overload the
 `==`, `!=`, `<`, `>`, `<=`, and `>=` operators:
 
 ```cpp
-template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
-bool operator== (const Lhs_T& lhs, const Rhs_T& rhs);
+namespace operators {
+  template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
+  bool operator== (const Lhs_T& lhs, const Rhs_T& rhs);
 
-template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
-bool operator!= (const Lhs_T& lhs, const Rhs_T& rhs);
+  template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
+  bool operator!= (const Lhs_T& lhs, const Rhs_T& rhs);
 
-template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
-bool operator< (const Lhs_T& lhs, const Rhs_T& rhs);
+  template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
+  bool operator< (const Lhs_T& lhs, const Rhs_T& rhs);
 
-template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
-bool operator<= (const Lhs_T& lhs, const Rhs_T& rhs);
+  template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
+  bool operator<= (const Lhs_T& lhs, const Rhs_T& rhs);
 
-template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
-bool operator> (const Lhs_T& lhs, const Rhs_T& rhs);
+  template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
+  bool operator> (const Lhs_T& lhs, const Rhs_T& rhs);
 
-template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
-bool operator>= (const Lhs_T& lhs, const Rhs_T& rhs);
+  template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
+  bool operator>= (const Lhs_T& lhs, const Rhs_T& rhs);
 
-template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
-bool operator and (const Lhs_T& lhs, const Rhs_T& rhs);
+  template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
+  bool operator and (const Lhs_T& lhs, const Rhs_T& rhs);
 
-template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
-bool operator or (const Lhs_T& lhs, const Rhs_T& rhs);
+  template <class Lhs_T, class Rhs_T, type_traits::requires_t<....>>
+  bool operator or (const Lhs_T& lhs, const Rhs_T& rhs);
 
-template <class T, type_traits::requires_t<....>>
-bool operator not (const T& t);
+  template <class T, type_traits::requires_t<....>>
+  bool operator not (const T& t);
+}
 ```
 
 Refer to the [Operators](/docs/api/groups/micro-test-plus-operators/) reference page.
@@ -473,8 +475,10 @@ Equality operators are provided for `string_view`
 objects:
 
 ```cpp
-bool operator== (std::string_view lhs, std::string_view rhs);
-bool operator!= (std::string_view lhs, std::string_view rhs);
+namespace operators {
+  bool operator== (std::string_view lhs, std::string_view rhs);
+  bool operator!= (std::string_view lhs, std::string_view rhs);
+}
 ```
 
 Refer to the [String Operators](/docs/api/groups/micro-test-plus-string-operators/) reference page.
@@ -484,11 +488,13 @@ Refer to the [String Operators](/docs/api/groups/micro-test-plus-string-operator
 Equality operators are provided for iterable containers:
 
 ```cpp
-template <class T, type_traits::requires_t<type_traits::is_container_v<T>>>
-bool operator== (T&& lhs, T&& rhs);
+namespace operators {
+  template <class T, type_traits::requires_t<type_traits::is_container_v<T>>>
+  bool operator== (T&& lhs, T&& rhs);
 
-template <class T, type_traits::requires_t<type_traits::is_container_v<T>>>
-bool operator!= (T&& lhs, T&& rhs);
+  template <class T, type_traits::requires_t<type_traits::is_container_v<T>>>
+  bool operator!= (T&& lhs, T&& rhs);
+}
 ```
 
 Refer to the [Container Operators](/docs/api/groups/micro-test-plus-container-operators/) reference page.
@@ -530,35 +536,35 @@ Similarly, for dynamic values, wrappers are provided to convert them into
 recognised types:
 
 ```cpp
-  using _b = type_traits::value<bool>;
-  using _c = type_traits::value<char>;
-  using _sc = type_traits::value<signed char>;
-  using _s = type_traits::value<short>;
-  using _i = type_traits::value<int>;
-  using _l = type_traits::value<long>;
-  using _ll = type_traits::value<long long>;
-  using _u = type_traits::value<unsigned>;
-  using _uc = type_traits::value<unsigned char>;
-  using _us = type_traits::value<unsigned short>;
-  using _ul = type_traits::value<unsigned long>;
-  using _ull = type_traits::value<unsigned long long>;
-  using _i8 = type_traits::value<std::int8_t>;
-  using _i16 = type_traits::value<std::int16_t>;
-  using _i32 = type_traits::value<std::int32_t>;
-  using _i64 = type_traits::value<std::int64_t>;
-  using _u8 = type_traits::value<std::uint8_t>;
-  using _u16 = type_traits::value<std::uint16_t>;
-  using _u32 = type_traits::value<std::uint32_t>;
-  using _u64 = type_traits::value<std::uint64_t>;
-  using _f = type_traits::value<float>;
-  using _d = type_traits::value<double>;
-  using _ld = type_traits::value<long double>;
+  using to_b = type_traits::value<bool>;
+  using to_c = type_traits::value<char>;
+  using to_sc = type_traits::value<signed char>;
+  using to_s = type_traits::value<short>;
+  using to_i = type_traits::value<int>;
+  using to_l = type_traits::value<long>;
+  using to_ll = type_traits::value<long long>;
+  using to_u = type_traits::value<unsigned>;
+  using to_uc = type_traits::value<unsigned char>;
+  using to_us = type_traits::value<unsigned short>;
+  using to_ul = type_traits::value<unsigned long>;
+  using to_ull = type_traits::value<unsigned long long>;
+  using to_i8 = type_traits::value<std::int8_t>;
+  using to_i16 = type_traits::value<std::int16_t>;
+  using to_i32 = type_traits::value<std::int32_t>;
+  using to_i64 = type_traits::value<std::int64_t>;
+  using to_u8 = type_traits::value<std::uint8_t>;
+  using to_u16 = type_traits::value<std::uint16_t>;
+  using to_u32 = type_traits::value<std::uint32_t>;
+  using to_u64 = type_traits::value<std::uint64_t>;
+  using to_f = type_traits::value<float>;
+  using to_d = type_traits::value<double>;
+  using to_ld = type_traits::value<long double>;
 
   // Template for wrapping any other type.
   template <class T>
-  struct _t : type_traits::value<T>
+  struct to_t : type_traits::value<T>
   {
-    constexpr explicit _t (const T& t) : type_traits::value<T>{ t }
+    constexpr explicit to_t (const T& t) : type_traits::value<T>{ t }
     {
     }
   };
@@ -603,6 +609,8 @@ It is possible to extend the comparators using **templates that match custom typ
 
 Test suites are named sequences of test cases.
 
+#### Static test suites
+
 In the common use case, test suites are static instances of the `static_suite`
 class, which automatically register themselves with a static instance of the
 `static_runner`.
@@ -625,6 +633,41 @@ static mt::static_suite suite = { "Static suite", sr, suite_function };
 ```
 
 The implementation uses the C++ static constructors that are performed before the `main()` function is called. The order of registration is not defined; to provide a certain degree of predictability, the framework runs all suites when the `exit_code()` method is called, after **ordering them by name**.
+
+#### Non-static test suites
+
+Static test suites are just a convenience, since they automatically register themselves with the runner, and not including the source file with the test suite in the build automatically disables the tests.
+
+However they are not mandatory, test suites can be manually added to the
+runner.
+
+````cpp
+```cpp showLineNumbers
+#include <micro-os-plus/micro-test-plus.h>
+
+namespace mt = micro_os_plus::micro_test_plus;
+
+extern void
+suite_function (mt::suite& ts);
+
+int
+main(int argc, char* argv[])
+{
+  mt::runner tr{ "Minimal" };
+
+  auto& ts = tr.initialise(argc, argv);
+
+  ts.test ("Check truth", [] (auto& t) {
+    t.expect (true);
+  });
+
+  tr.suite("External suite", suite_function);
+
+  return tr.exit_code ();
+}
+````
+
+#### Example
 
 An even more elaborate example from a real-world project is:
 
@@ -734,19 +777,50 @@ namespace mt = micro_os_plus::micro_test_plus;
 
 The memory footprint of unit tests based on µTest++ is generally smaller than that of traditional C++ testing frameworks, primarily because the `iostream` library is not utilised.
 
-For example, the minimal test, which includes the complete functionality, requires about 110 KB:
+For example, for Cortex-M7F, the minimal test, which includes the complete functionality, requires less than 110 KB:
 
 ```
    text    data     bss     dec     hex filename
- 105452    2280    3184  110916   1b144 minimal-test.elf
+ 105552    2280    3184  111016   1b1a8 minimal-test.elf
 ```
 
-However, the use of templates for implementing comparators and operators should be carefully considered on platforms with severely limited memory resources, as each unique pair of operand types contributes to the overall programme size.
+<details>
+<summary>A similar test using [Boost UT](https://boost-ext.github.io/ut/) produced a binary over 400 KB in size.</summary>
 
-If necessary, µTest++ can be used without custom comparators and
-operators — relying solely on standard boolean expressions — while still
-providing the essential functionality for testing conditions. In this
-configuration, the actual values compared are not displayed on failure.
+The equivalent minimal test was:
+
+```cpp
+#include <boost/ut.hpp>
+
+int
+main(int argc, char* argv[])
+{
+  using namespace boost::ut;
+
+  "Check truth"_test = [] {
+    expect(true);
+  };
+
+  return 0;
+}
+```
+
+```text
+   text    data     bss     dec     hex filename
+ 410200    4452   10556  425208   67cf8 ut-minimal-test.elf
+```
+
+</details>
+
+However, the use of templates for implementing comparators and operators
+should be used with care on platforms with severely limited memory
+resources, as each unique pair of operand types contributes to the overall
+programme size.
+
+If necessary, µTest++ can be used without custom comparators and operators,
+relying solely on standard boolean expressions, while still providing the
+essential functionality for testing conditions. In this configuration, the
+actual values compared are not displayed on failure.
 
 :::info
 The memory footprint in `debug` builds (compiled with `-O0`) is significantly larger than in `release` builds. If required, the optimisation level for the `debug` build may be increased to `-Og` to conserve memory.

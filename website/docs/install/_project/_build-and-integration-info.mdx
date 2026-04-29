@@ -18,12 +18,12 @@ environment providing this capability is suitable; for standalone tests,
 the most common approach is **Arm semihosting**.
 
 Pre-configured **CMake** and **Meson** build files are provided to simplify
-integration into user projects (see below). For alternative build systems,
-refer to the sections that follow.
+integration into user projects, as described below. For alternative build
+systems, refer to the sections that follow.
 
 ### Include Folders
 
-The following source folder should be passed to the compiler during the
+The following folder should be passed to the compiler during the
 build process:
 
 - `include`
@@ -34,9 +34,14 @@ The primary header file to include in user projects is:
 #include <micro-os-plus/micro-test-plus.h>
 ```
 
+:::caution
+No other header file should be included explicitly by the application.
+:::
+
 ### Source Files
 
-The following source files should be incorporated into user projects:
+All source files in the `src` folder should be incorporated into user
+projects. The files are:
 
 - `deferred-reporter.cpp`
 - `reflection.cpp`
@@ -59,7 +64,7 @@ The build can be configured using the following preprocessor definitions:
 
 ### Compiler Options
 
-The following options must be supplied to the compiler and linker:
+The following options **must** be supplied to the compiler and linker:
 
 - `-std=c++20` or later for C++ source files
 

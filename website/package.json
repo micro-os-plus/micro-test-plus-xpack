@@ -97,7 +97,8 @@
     "customInstallLabel": "Integration Guide",
     "hasCustomUser": "true",
     "customUserTitle": "How to use the µTest++ Testing Framework",
-    "hasDoxygenDocusaurusApi": "true"
+    "hasDoxygenDocusaurusApi": "true",
+    "shareOnTwitter": "true"
   },
   "engines": {
     "node": ">=20.0"
