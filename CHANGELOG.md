@@ -6,10 +6,334 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2026-04-29
+
+* v4.0.0 prepared
+* 1bec407 website update
+* 4015c5b remove website/static/.gitignore
+* 4219430 #26: remove variables templates, use concepts
+
+## 2026-04-27
+
+* febd39a more doxygen comments
+
+## 2026-04-25
+
+* 5b35a79 website update
+
+## 2026-04-24
+
+* 0772248 remove code-review.md
+* a983f70 fix doxygen. remove @defgroup micro-test-plus-config
+
+## 2026-04-21
+
+* 5456f4d reporter.h: fix verbosity() return type
+* c848bad add comments with explanations
+* 5280cf8 doxygen updates
+* 5981d7c detail.h: auto get()
+* e7016eb math.h: add more noexcept
+* d7ac669 math-inlines.h: add static_asserts
+* a1584b5 operators.h: heterogenous container operators
+* b7498d4 reporter.h: remove verbosity_t
+* 47e497b deferred-reporter-inlines.h: static_assert buffer size
+* cc5e566 deferred-reporter: reference to location
+* 4d0d7f4 micro-test-plus.h: add Doxygen config section
+* 5db7865 runner.cpp: copy argvs
+* ddfe9f1 type-traits.h: more cosmetics
+* 29c2c82 type-traits.h: value_base_ used consistently
+* d34ce29 type-traits.h reorder concepts
+* 52b9c16 add type_traits::printable
+* 5189513 add is_op and checkable concepts
+* aaadf34 add type_traits::any_op
+* 1d0a231 detail.h: extract common binary_op_ & co
+
+## 2026-04-20
+
+* 3ba1539 README update
+* f1cd9c7 runner.cpp: validate reporter initialised
+* 5fafa76 website update - no concepts ref yet
+
+## 2026-04-17
+
+* 98e0f4d website/doxygen updates
+* 2edb5bb doxygen examples update
+* 7434174 split exceptions.h and utility.h
+* d3646d6 sample-test update ts
+* 9897a58 doxygen comments updated
+* f641190 copilot-instructions.md update
+
+## 2026-04-16
+
+* d1c27e2 tests: update platforms without exceptions
+* fc71cf6 cortex-a72: noexcept
+* 505edd2 compare-files.sh: reverse diff order
+* aacfa73 reporter: confirm written output file.
+* acc8fb1 platforms: add compare to qemu tests
+* 17e52a5 compare-files.sh exit if missing files
+* b41c0c1 cortex-m0: add compare test
+* 9fb3604 reporter.cpp: fix double link on mingw
+* 7e5f9b4 compare-files.sh update sed
+* 6ce71a8 reporter-inlines.h print long double on mingw
+* 95474b7 reporter-inlines.h print long double on mingw
+* 0a9376e reporter-inlines.h print long double on mingw
+* 57194e3 reporter-inlines.h print long double via snprintf
+* 0405cb6 platforms cmake objects explanations
+* 027fe7c top CMakeLists.txt re-work OBJECTS
+* 83a0dc9 cmake rename xpack_global_common_options
+* ca04d0f platforms compile options for micro-test-plus-objects
+* f79e4eb adjust timings for testing
+
+## 2026-04-15
+
+* b87ae24 add clang coverage to native
+* b646da4 unit-tests: add more tests
+* 7eaa090 CMakeLists.txt: add micro-test-plus-objects
+* 111067e project-functions.cmake: use micro-test-plus-objects
+* e40981e common-functions.cmake: add coverage functions
+* 840eba3 timings.h: add has_begin and has_end
+
+## 2026-04-14
+
+* 5c59ecb reporter-tap.cpp: fix suite summary
+* 2a705db compare-files.sh update
+* 7bbcf79 more #if defined(__GNUC__)
+* d69cffc rename compare-files.sh
+* 8f3ea5e compare-tap-files.sh updates
+* 6a01d04 #25: implement --output-file for the human reporter
+* 75074d8 reporter-tap.cpp cosmetise messages \n
+* b28b3eb #25: implement --output-file for the human reporter
+* 71215d3 fix own_index after sort
+* e768f02 utility.cpp: avoid unsafe buffer
+* 3c0efcd utility: add extract_file_name()
+* 6ffb82b runner.cpp: rework sort without aggregate return
+* 9a6e461 more #if defined(__GNUC__)
+* 205a0e4 silence warnings
+* ff4d28c reorder pragmas
+* 4858d46 sort suites
+* caef2b0 sort suites
+* 43898b5 sort suites
+
+## 2026-04-13
+
+* 3536099 split unit-test
+
+## 2026-04-12
+
+* 88c6837 fix cmake a72 syntax
+* 82a5dc9 tests-ci add a72
+* 3a4abb7 tests TRACE buffer 512
+
+## 2026-04-11
+
+* 120d6c6 use -Og for aarch64 debug
+* c1c8563 unit-test fix float tests
+* 1dbc1fb tests/pacakge.json: bump deps
+* e79e520 remove commented out pragmas
+* 1f15f59 compare-tap-files.sh: support mingw pointers without 0x
+* b615252 reporter-human.cpp: fix missing subtest begin
+* 97a9cfd utility-inlines.h silence warning
+* 6f8c883 rename utility-inlines.h
+* 58d8b60 move doxygen to test-inlines.h
+* aba22eb move  exception functions to function-comparators-inlines.h
+
+## 2026-04-10
+
+* e654cd7 add more unit tests
+* 05591ee add more unit tests
+* 7485915 code-review.md update
+* d1a6efd reporter-tap.cpp: use trace::printf
+* 2b6c39a reporter-human.cpp: cleanup
+* f5822a6 reporter-tap.cpp: use trace::printf
+* 0f895d8 runner.h: do not include ctime
+* 4ac2eed test.cpp: explain that subtests do not record the time.
+* 2f206b5 test-inlines.h: explain why nullptr passed
+* 25847e9 deferred-reporter-inlines.h: clear includes
+* 97e63b2 reporter-inlines.h: fix explnation (nil) on linux
+* 52233c8 test.cpp: clarify emplanation
+* ea345bb runner.cpp: cosmetics (british english)
+* b0cca8a reporter: simplify constructor verbosity_
+* f839318 fix trace::puts
+* c724549 timings.cpp: add precondition assert
+* aff7d92 tests/assets/tap update
+* ffe7cbd compare-tap-files.sh update sed time
+* ebce825 use stderr for warnings and errors
+* fd109c2 use trace::printf
+* 50f4d20 #if defined(MICRO_OS_PLUS_TRACE)
+* 4f70a41 test-inlines.h: rename child_subtest
+* de6a36e runner-inlines.h: rename child_suite
+* a132531 remove commented out includes
+* e531413 rename protected append_number_
+* 5f72b25 runner.h: remove useless suite_index_
+* 3112ede runner.cpp: avoid shadow exit_code
+* a603afb rename parameters suffixed with underscore
+* d8b721f remove tests code-review.md
+* 2cb079b end protected with underscore
+* ea4b203 test-inlines.h initialise unsed callable to nullptr
+* c384d80 reporters flush before abort
+* 49f5e2f utility.cpp: explain complexity
+* cc4e200 runner.cpp: name ot "runner"
+* d805891 reporter.h: remove unused verbosity_t
+* dab4c34 include c++ headers
+* 2661a41 reporter: explain why write_buffer_to_stdout is public
+* 3300421 runner-totals += noexcept
+* d0f8e85 reporter-human.cpp: write warning on stderr
+* a924f5d argvs vector constructor with cast
+* 142ef0d deferred-reporter.h apply the rule of five
+* dd97f1d flush() also the output file
+* 5942653 test abort() calls runner abort
+* dee289c reporter.h: make flush() public
+* 49c3c25 detail.h: ne_ fix >= lhs_.epsilon
+* 36ad478 comment out includes
+* 39b739b test.cpp re-enable pragmas
+* 0e86cdb split reflection.cpp and utility.cpp
+* 859f4e2 comment out more pragmas
+* a8c8629 cmake: show size for native
+
+## 2026-04-09
+
+* d23c1af enable tracing in native minimal test
+* c1d824f add noexcept where needed
+* 59a3c26 add time back to file tap reports
+* 8642897 reporter: bring version back to info
+* 670cda9 timings: rework with optional and uint32_t
+* 5a51a06 move timings to suite & runner
+* 16a35e2 compare-tap-files.sh: sed hex pointers
+* 0360ddc unit-test: add missing description
+* 0387ab1 move static_children_suites_ to static_runner
+* 0b12359 commented out cmake unit-test verbose
+* da23740 fix printing long double
+* 91d49a9 #24: reporter-human.cpp: use colour only if a tty
+* 94fa902 Null pointers should be rendered as 0x0
+
+## 2026-04-08
+
+* c43dbff #23: add test code to compare tap files
+* 971b706 tests cosmetics
+* 3ca668a more consistent totals
+* d61fdc1 #22: argvs as vector of string_view
+* fa54491 platform README update
+* 3f22c35 cosmetics "error:"
+* 3e4c10e use --reporter human for unit-tests
+
+## 2026-04-07
+
+* b973f93 make totals & timings protected
+* c7bf95c rename runner_ to avoid -Wshadow
+* 6084289 reporter operator<< forwarding reference
+* b23e68b replace strncmp with string_view.starts_with
+* a5db50b reporter-inlines.h cleanups
+* 754bc05 type-traits.h more const
+* 195f102 container_like requires const
+* a04cfa9 remove redundant reporter::operator<<(char* s)
+* 1d1196e fix reporter::operator<<(const T& t) recursion
+* a19af57 deferred-reporter-inlines.h silence warning
+* 799dc0d improve deferred_reporter_base::operator<<
+* 56a4831 detail.h replace get_impl. with concept
+* a6369fb implement iterative math::pow
+* d43e039 type-traits.himprove has_npos
+* 8c2669d re-enable operator<< (const T& t)
+* 3894fda type-traits.h cleanup value<T, Opt>
+* 0c2a67c fix deferred_reporter_b char
+* 8ec9b23 `requires_` / `requires_t` replaced with c++20 requires
+* a913784 use std::is_base_of_v
+* e6182a6 use std::is_convertible_v
+* 9516a88 use concept container_like & other
+* 7785b9a detail.h private members
+* 6a28693 rename not_.operand()
+* 7bfee0e reporter operators consistently use append_number
+* 6226989 silence warning in reporter
+* 82fbfc0 detail.h cosmetics
+* 8207330 remove more constexpr
+* 241275c replace strrchr with string_view
+* 1d510cb avoid problematic strncat in reporter
+* 5c0e7c2 fix reflection::type_name()
+* 4f720d2 use consteval in math
+* 4e618fb use std::declval
+* 321dc0d use c++ loops in runner
+* ceeb3c6 fix redundant has_static_suites_ guard
+* 5892cba inline was_successful ()
+* 722c9d4 use std::to_chars in reporter operators
+* a967e64 non static epsilon
+* 759017e add [[likely]]
+* d58e613 switch sfinae to concepts
+* 17448ba using verbosity_t
+* a6711bd buffer_.reserve(128)
+* 04f20e5 optimise to std::to_chars
+* f3c772c disable timestamps for subtests
+* 5f7f8a1 remove duplicate name_ = name;
+* 5ece91a inline constexpr colors
+* 469f7e3 #21: fix abort location
+* d8a1599 #21: add location to runner.abort()
+* af580c1 remove some unused methods
+* 9503e4d change some methods to protected
+* 137a487 add more const to methods
+* 7b48b60 micro-test-plus.h remove top expect & assume
+* 2453113 remove useless constexpr specifiers from methods
+* e41e2c8 remove redundant name() from runner
+* cf57e92 #17 fix more warnings
+* e67e3e2 #17 fix more warnings
+* 98e5c2b #17 fix more warnings
+* 609bf05 #17 fix more warnings
+* a9d34d4 #17: add --output-file
+
+## 2026-04-06
+
+* bcb18cf move verbosity processing to reporter
+* e38f299 rename add_empty_line_
+* edf3097 config.h cosmetics
+* 53f1a7e Merge branch 'xpack-development' of https://github.com/micro-os-plus/micro-test-plus-xpack into xpack-development
+* 15cc731 cosmetics
+* 33e4753 MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
+* 554c5bb update trace messages
+
+## 2026-04-05
+
+* 0df2ed3 update trace messages
+* 143e563 use smart pointers in timings
+* b6df491 store smart pointers inside children_subtests_
+* 6629734 use smart pointers inside children_suites_
+* 1d87188 runner.h: fix constexpr
+* f2db8e2 make children_suites_ an object, no pointer
+* 06909b0 make reporter_ a smart pointer
+* 3c47909 make top_suite an object, no pointer
+* 7d27fe5 make top_suite_ a unique pointer
+* 78338ca #19: re-work test objects hierarchy
+
+## 2026-04-04
+
+* 2ac0dce unit-test updated to new objects
+* e5c13ec suite-test cosmetics
+* 44425f7 cosmetics
+* c867188 #20: rename human reporter
+
+## 2026-04-03
+
+* 0c8d363 suite-test silence warning
+* 13e75fc reporter-basic.cpp cosmetics
+* 6e921f8 #19 unify suites with tests
+
+## 2026-03-31
+
+* 3fb45b3 reporter: rename begin/end_session
+* 03bfb73 rename runner & static_runner
+* 0008c25 test: silence diagnostics
+* c2d8356 disable trace in native
+* 86ed61b warnings silenced
+* cee7519 rename *2 namespace back to micro_test_plus
+* e35b654 remove the initial micro_test_plus namespace
+* 1b0e26b major re-work, separate mt2 namespace
+
+## 2026-03-24
+
+* 26317ce website re-generate commons
+* 75e93ab website: blog post release 3.3.1 published
+
 ## 2026-03-23
 
-* v3.3.1 published on npmjs.com
-* v3.3.1 prepared
+* e08c550 3.3.1
+* 3e6dadf CHANGELOG: publish npm v3.3.1
+* 5573d85 prepare v3.3.1
 * f1be263 tests: add suite-test
 * df22b28 #16: fix static inits
 * 511f8cf re-generate website commons
