@@ -8,6 +8,10 @@ and close existing issues and pull requests.
 
 ## 2026-04-29
 
+* v4.0.0 published on npmjs.com
+* 1105af3 re-format
+* ac64933 CHANGELOG update for v4.0.0
+* bdb8f37 workflow update
 * v4.0.0 prepared
 * 1bec407 website update
 * 4015c5b remove website/static/.gitignore
