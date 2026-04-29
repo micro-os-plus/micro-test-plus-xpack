@@ -47,9 +47,11 @@ project is a C++ source code library that provides a lightweight testing framewo
 The most straightforward method to incorporate the `@micro-os-plus/micro-test-plus`
 package into a project is to declare it as a dependency using **xpm**.
 
-<CodeBlock language="console"> {
-`xpm install @micro-os-plus/micro-test-plus@${frontMatter.version} -verbose
-`} </CodeBlock>
+<CodeBlock language="console">
+  {" "}
+  {`xpm install @micro-os-plus/micro-test-plus@${frontMatter.version} -verbose
+`}{" "}
+</CodeBlock>
 
 Comprehensive instructions are available in the [Install Guide](/docs/install/).
 
@@ -58,6 +60,57 @@ Comprehensive instructions are available in the [Install Guide](/docs/install/).
 - <Link to={frontMatter.release_tag_url}>
     GitHub tag v{frontMatter.version} tree
   </Link>
+
+## Major changes
+
+The major change introduced by v4.0.0 is removing reliance on static objects.
+
+Previous versions internally used static instances of the runner and reporter, with test suites and test cases directly referring to them by a fixed name.
+
+Therefore, the API was based on standalone functions:
+
+```cpp
+int
+main(int argc, char* argv[])
+{
+  mt::initialize(argc, argv, "Minimal");
+
+  mt::test_case ("Check truth", [] {
+    mt::expect (true);
+  });
+
+  return mt::exit_code ();
+}
+```
+
+The new version uses user-created runners, passing references to test suites and test cases via callable parameters.
+
+Therefore, the new API uses methods of various objects (runner, suite, subtest):
+
+```cpp
+int
+main(int argc, char* argv[])
+{
+  mt::runner tr{ "Minimal" };
+
+  auto& ts = tr.initialise(argc, argv);
+
+  ts.test ("Check truth", [] (auto& t) {
+    t.expect (true);
+  });
+
+  return tr.exit_code ();
+}
+```
+
+This approach offers several advantages over the previous static design.
+Passing the runner, suite, and test-case
+objects explicitly as references makes the data flow visible and unambiguous,
+eliminates hidden global state, and allows the compiler to enforce ownership
+and lifetime rules. It also removes the dependency on static-initialisation
+order, which is undefined across translation units in C++ and a frequent
+source of subtle bugs in embedded environments where the C++ runtime
+start-up sequence may be non-standard.
 
 ## Bug fixes
 

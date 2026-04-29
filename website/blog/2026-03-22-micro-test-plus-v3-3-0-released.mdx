@@ -47,9 +47,11 @@ project is a C++ source code library that provides a lightweight testing framewo
 The most straightforward method to incorporate the `@micro-os-plus/micro-test-plus`
 package into a project is to declare it as a dependency using **xpm**.
 
-<CodeBlock language="console"> {
-`xpm install @micro-os-plus/micro-test-plus@${frontMatter.version} -verbose
-`} </CodeBlock>
+<CodeBlock language="console">
+  {" "}
+  {`xpm install @micro-os-plus/micro-test-plus@${frontMatter.version} -verbose
+`}{" "}
+</CodeBlock>
 
 Comprehensive instructions are available in the [Install Guide](/docs/install/).
 
@@ -59,14 +61,33 @@ Comprehensive instructions are available in the [Install Guide](/docs/install/).
     GitHub tag v{frontMatter.version} tree
   </Link>
 
+## Major changes
+
+TAP stands for [Test Anything Protocol](https://testanything.org). It is a simple text-based interface between testing modules in a test harness, decoupling the reporting of errors from the presentation of the results.
+
+The output is also relatively easy to read by humans; it looks like:
+
+```tap
+TAP version 14
+# Subtest: Minimal
+    # Subtest: Check truth
+        ok 1 - true
+        1..1
+    ok 1 - Check truth # { test case passed, 1 check }
+    1..1
+ok 1 - Minimal # { test suite passed, 1 check in 1 test case, time: 0.007 ms }
+1..1
+# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.030 ms }
+```
+
 ## Bug fixes
 
 - None.
 
 ## Enhancements
 
-- [[#9](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/9)]: add a TAP reporter
-- [[#10](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/10)]: add durations to test suites
+- [[#9](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/9)]: Add a TAP reporter
+- [[#10](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/10)]: Add durations to test suites
 
 ## Known issues
 
