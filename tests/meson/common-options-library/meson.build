@@ -53,7 +53,7 @@ if c_compiler.get_id() == 'gcc' or c_compiler.get_id().contains('clang')
     # _local_compile_args += [ '-O0' ]
     if host_machine.cpu_family() == 'aarch64'
       # The µTest++ unit test fails with -O0, so use -Og instead, 
-      # which is still
+      # which is still ok for debug.
       _local_compile_args += [ '-Og' ]
     endif
   elif get_option('buildtype') == 'debugoptimized'

@@ -55,9 +55,9 @@ For debug sessions start QEMU in GDB server mode by passing both `-s -S`:
 
 ```sh
 qemu-system-arm --machine mps2-an386 --cpu cortex-m4 --nographic -d unimp,guest_errors -s -S --semihosting-config enable=on,target=native,arg=unit-test,arg=--reporter,arg=human
+```
 
 ## Links
 
 - [QEMU Arm](https://www.qemu.org/docs/master/system/target-arm.html)
 - [virt](https://www.qemu.org/docs/master/system/arm/virt.html)
-```

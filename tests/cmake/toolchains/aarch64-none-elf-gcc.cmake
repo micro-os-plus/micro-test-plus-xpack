@@ -68,7 +68,7 @@ set (CMAKE_STRIP "${triple}strip${extension}")
 set (
   CMAKE_ASM_FLAGS_DEBUG
   "-Og -g3" # "-O0 -g3"
-  CACHE STRING "Flags used by the ASM compiler during DEBUG builds. baburiba"
+  CACHE STRING "Flags used by the ASM compiler during DEBUG builds."
 )
 
 set (
