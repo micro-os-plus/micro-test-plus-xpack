@@ -133,12 +133,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-container-operators/#gac2449b2b9f07c550b1218456ba1da2db">operator!=</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-operators/#ga445025eccd3ef529af191aab5aad91a9">operator!=</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Non-equality operator for containers. <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-container-operators/#gac2449b2b9f07c550b1218456ba1da2db">More...</a></p>
+<p>Non-equality operator for custom types. Matches only if at least one operand is of local type. <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-operators/#ga445025eccd3ef529af191aab5aad91a9">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -150,12 +150,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-operators/#ga445025eccd3ef529af191aab5aad91a9">operator!=</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-container-operators/#gac2449b2b9f07c550b1218456ba1da2db">operator!=</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Non-equality operator for custom types. Matches only if at least one operand is of local type. <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-operators/#ga445025eccd3ef529af191aab5aad91a9">More...</a></p>
+<p>Non-equality operator for containers. <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-container-operators/#gac2449b2b9f07c550b1218456ba1da2db">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -215,12 +215,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-container-operators/#gab8c44f8115524296fbaf21688dd7f389">operator==</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-operators/#gaae177a6c59286d4d7e4f85ffa6579e56">operator==</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Equality operator for containers. <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-container-operators/#gab8c44f8115524296fbaf21688dd7f389">More...</a></p>
+<p>Equality operator for custom types. Matches only if at least one operand is of local type. <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-operators/#gaae177a6c59286d4d7e4f85ffa6579e56">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -232,12 +232,12 @@ keywords:
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-operators/#gaae177a6c59286d4d7e4f85ffa6579e56">operator==</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-container-operators/#gab8c44f8115524296fbaf21688dd7f389">operator==</a> (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Equality operator for custom types. Matches only if at least one operand is of local type. <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-operators/#gaae177a6c59286d4d7e4f85ffa6579e56">More...</a></p>
+<p>Equality operator for containers. <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-container-operators/#gab8c44f8115524296fbaf21688dd7f389">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -500,6 +500,6 @@ The file content with the documentation metadata removed is:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

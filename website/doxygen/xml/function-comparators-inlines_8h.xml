@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="function-comparators-inlines_8h" kind="file" language="C++">
     <compoundname>function-comparators-inlines.h</compoundname>
     <includedby refid="micro-test-plus_8h" local="yes">micro-test-plus.h</includedby>
@@ -95,8 +95,8 @@
       <member refid="group__micro-test-plus-function-comparators_1ga59e4cf59954e81bc868e62b1c5c8db1f" kind="function"><name>ne</name></member>
       <member refid="group__micro-test-plus-function-comparators_1ga172f305bbeaf8b965681f76c16a39516" kind="function"><name>ne</name></member>
       <member refid="group__micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" kind="function"><name>nothrow</name></member>
-      <member refid="group__micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kind="function"><name>throws</name></member>
       <member refid="group__micro-test-plus-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" kind="function"><name>throws</name></member>
+      <member refid="group__micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kind="function"><name>throws</name></member>
     </sectiondef>
     <briefdescription>
 <para>C++ header file with inline implementations for the µTest++ function comparators. </para>

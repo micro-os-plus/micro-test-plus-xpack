@@ -88,7 +88,7 @@ struct micro_os_plus::micro_test_plus::detail::assertion&lt;Expr_T&gt; { ... }
 </dd>
 </dl>
 
-<p>The <span class="doxyComputerOutput">assertion</span> struct template is used to encapsulate assertion parameters, including the expression under evaluation and its associated source location. This design enables precise reporting and diagnostics within the framework.</p>
+<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/assertion">assertion</a></span> struct template is used to encapsulate assertion parameters, including the expression under evaluation and its associated source location. This design enables precise reporting and diagnostics within the framework.</p>
 
 
 <p>The structure is intended exclusively for internal use and is implemented in the <span class="doxyComputerOutput">include/micro-os-plus/micro-test-plus</span> folder to maintain a structured and modular codebase.</p>
@@ -179,6 +179,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

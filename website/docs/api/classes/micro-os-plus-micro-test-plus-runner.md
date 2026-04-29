@@ -61,7 +61,7 @@ class micro_os_plus::micro_test_plus::runner { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>A <span class="doxyComputerOutput">runner</span> variant that also manages statically-registered test suites. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-runner/#details">More...</a></p>
+<p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a></span> variant that also manages statically-registered test suites. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-runner/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -143,7 +143,7 @@ class micro_os_plus::micro_test_plus::runner { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#a10788baa079e19676a8cdbaa253285dc">runner</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a549524d15dc1eb5e6b4eb4bdd2af7b6b">operator=</a> (const runner &amp;)=delete</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -157,7 +157,7 @@ class micro_os_plus::micro_test_plus::runner { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#a10788baa079e19676a8cdbaa253285dc">runner</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aa34a0418d54c633630a089eb2b5a61ee">operator=</a> (runner &amp;&amp;)=delete</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -205,7 +205,7 @@ class micro_os_plus::micro_test_plus::runner { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite">suite</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">class <a href="#a330a6a2c24a6759e4cce1269942b9c88">suite</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab6420151930179564274c39ef738ea79">initialise</a> (int argc, char *argv[])</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -233,7 +233,7 @@ class micro_os_plus::micro_test_plus::runner { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">class reporter &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a28e8cf878d98f6cba575a58189c39a56">reporter</a> (void) const noexcept</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -388,7 +388,7 @@ class micro_os_plus::micro_test_plus::runner { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">std::vector&lt; std::unique_ptr&lt; class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite">suite</a> &gt; &gt;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">std::vector&lt; std::unique_ptr&lt; class <a href="#a330a6a2c24a6759e4cce1269942b9c88">suite</a> &gt; &gt;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#abacf53ab658e289ae89051531c0cddad">children_suites_</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -416,7 +416,7 @@ class micro_os_plus::micro_test_plus::runner { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">std::unique_ptr&lt; class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &gt;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top">std::unique_ptr&lt; class <a href="#a28e8cf878d98f6cba575a58189c39a56">reporter</a> &gt;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ace4da8161152a82e4ffa9c6d50917088">reporter_</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -478,7 +478,7 @@ class micro_os_plus::micro_test_plus::runner { ... }
 <p>The test runner for the µTest++ framework.</p>
 
 
-<p>The <span class="doxyComputerOutput">runner</span> class is responsible for managing the registration and execution of test suites within the µTest++ framework. It maintains a collection of test suites, each of which registers itself automatically upon construction, enabling seamless integration and execution of tests across different components and folders of a project.</p>
+<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a></span> class is responsible for managing the registration and execution of test suites within the µTest++ framework. It maintains a collection of test suites, each of which registers itself automatically upon construction, enabling seamless integration and execution of tests across different components and folders of a project.</p>
 
 
 <p>The test runner provides methods for initialising the test environment, registering test suites, retrieving the runner's name, and determining the overall test result via an exit code. It also offers an abort mechanism for terminating test execution in exceptional circumstances.</p>
@@ -564,7 +564,7 @@ class micro_os_plus::micro_test_plus::runner { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">micro_os_plus::micro_test_plus::runner::runner (const <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a> &amp;)</td>
+<td class="doxyMemberName">micro_os_plus::micro_test_plus::runner::runner (const runner &amp;)</td>
 </tr>
 </table>
 </td>
@@ -597,7 +597,7 @@ class micro_os_plus::micro_test_plus::runner { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">micro_os_plus::micro_test_plus::runner::runner (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a> &amp;&amp;)</td>
+<td class="doxyMemberName">micro_os_plus::micro_test_plus::runner::runner (runner &amp;&amp;)</td>
 </tr>
 </table>
 </td>
@@ -653,7 +653,7 @@ class micro_os_plus::micro_test_plus::runner { ... }
 <p>Destructor for the runner class.</p>
 
 
-<p>The <span class="doxyComputerOutput">reporter_</span> unique pointer is released automatically. If tracing is enabled, the function signature is output for diagnostic purposes.</p>
+<p>The <span class="doxyComputerOutput"><a href="#ace4da8161152a82e4ffa9c6d50917088">reporter_</a></span> unique pointer is released automatically. If tracing is enabled, the function signature is output for diagnostic purposes.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-h/#l00139">139</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-h">runner.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/runner-cpp/#l00098">98</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/runner-cpp">runner.cpp</a>.</p>
@@ -691,7 +691,7 @@ class micro_os_plus::micro_test_plus::runner { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">runner &amp; micro_os_plus::micro_test_plus::runner::operator= (const <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a> &amp;)</td>
+<td class="doxyMemberName">runner &amp; micro_os_plus::micro_test_plus::runner::operator= (const <a href="#a10788baa079e19676a8cdbaa253285dc">runner</a> &amp;)</td>
 </tr>
 </table>
 </td>
@@ -724,7 +724,7 @@ class micro_os_plus::micro_test_plus::runner { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">runner &amp; micro_os_plus::micro_test_plus::runner::operator= (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a> &amp;&amp;)</td>
+<td class="doxyMemberName">runner &amp; micro_os_plus::micro_test_plus::runner::operator= (<a href="#a10788baa079e19676a8cdbaa253285dc">runner</a> &amp;&amp;)</td>
 </tr>
 </table>
 </td>
@@ -1249,7 +1249,7 @@ class micro_os_plus::micro_test_plus::runner { ... }
 </dl>
 
 
-<p>Constructs a <span class="doxyComputerOutput">suite</span> object on the heap, binding the callable and any additional arguments, then transfers ownership to the runner via <span class="doxyComputerOutput"><a href="#abc9182d5e12609158d936f312a83f53c">register_suite_()</a></span>. The suite runs immediately as part of the registration process.</p>
+<p>Constructs a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite">suite</a></span> object on the heap, binding the callable and any additional arguments, then transfers ownership to the runner via <span class="doxyComputerOutput"><a href="#abc9182d5e12609158d936f312a83f53c">register_suite_()</a></span>. The suite runs immediately as part of the registration process.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-h/#l00177">177</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-h">runner.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-inlines-h/#l00074">74</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-inlines-h">runner-inlines.h</a>.</p>
@@ -1517,7 +1517,7 @@ class micro_os_plus::micro_test_plus::runner { ... }
 </dl>
 
 
-<p>For the base <span class="doxyComputerOutput">runner</span>, the total suite count equals <span class="doxyComputerOutput"><a href="#a6ed3a02ced62ed475c75678cd9e91be1">suites_count()</a></span>, as there are no additional static suites.</p>
+<p>For the base <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a></span>, the total suite count equals <span class="doxyComputerOutput"><a href="#a6ed3a02ced62ed475c75678cd9e91be1">suites_count()</a></span>, as there are no additional static suites.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-h/#l00208">208</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-h">runner.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/runner-cpp/#l00387">387</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/runner-cpp">runner.cpp</a>.</p>
@@ -1675,7 +1675,7 @@ class micro_os_plus::micro_test_plus::runner { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void micro_os_plus::micro_test_plus::runner::register_suite_ (std::unique_ptr&lt; class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite">suite</a> &gt; suite)</td>
+<td class="doxyMemberName">void micro_os_plus::micro_test_plus::runner::register_suite_ (std::unique_ptr&lt; class <a href="#a330a6a2c24a6759e4cce1269942b9c88">suite</a> &gt; suite)</td>
 </tr>
 </table>
 </td>
@@ -1710,7 +1710,7 @@ class micro_os_plus::micro_test_plus::runner { ... }
 </dl>
 
 
-<p>Takes ownership of the supplied <span class="doxyComputerOutput">suite</span> unique pointer and appends it to the internal <span class="doxyComputerOutput">children_suites_</span> vector, deferring execution until <span class="doxyComputerOutput"><a href="#ad02a7dd243b31ec630484b6397eb506d">run_suites_()</a></span> is called. If tracing is enabled, the suite name is logged for diagnostic purposes.</p>
+<p>Takes ownership of the supplied <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite">suite</a></span> unique pointer and appends it to the internal <span class="doxyComputerOutput"><a href="#abacf53ab658e289ae89051531c0cddad">children_suites_</a></span> vector, deferring execution until <span class="doxyComputerOutput"><a href="#ad02a7dd243b31ec630484b6397eb506d">run_suites_()</a></span> is called. If tracing is enabled, the suite name is logged for diagnostic purposes.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-h/#l00283">283</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-h">runner.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/runner-cpp/#l00220">220</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/runner-cpp">runner.cpp</a>.</p>
@@ -1784,7 +1784,7 @@ class micro_os_plus::micro_test_plus::runner { ... }
 </dl>
 
 
-<p>Sorts <span class="doxyComputerOutput">children_suites_</span> alphabetically by suite name using a selection sort on <span class="doxyComputerOutput">unique_ptr::swap</span>, avoiding the <span class="doxyComputerOutput">-Waggregate-return</span> diagnostic that <span class="doxyComputerOutput">std::sort</span> would trigger on unique-pointer iterators. Each suite is assigned a 1-based index offset by the top-suite index, executed via <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite/#a432deda5a8721472e8775cbc98451722">suite::run()</a></span>, and its totals are accumulated into the runner totals. The executed-subtest counter is not incremented; suites are not counted as subtests.</p>
+<p>Sorts <span class="doxyComputerOutput"><a href="#abacf53ab658e289ae89051531c0cddad">children_suites_</a></span> alphabetically by suite name using a selection sort on <span class="doxyComputerOutput">unique_ptr::swap</span>, avoiding the <span class="doxyComputerOutput">-Waggregate-return</span> diagnostic that <span class="doxyComputerOutput">std::sort</span> would trigger on unique-pointer iterators. Each suite is assigned a 1-based index offset by the top-suite index, executed via <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite/#a432deda5a8721472e8775cbc98451722">suite::run()</a></span>, and its totals are accumulated into the runner totals. The executed-subtest counter is not incremented; suites are not counted as subtests.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-h/#l00273">273</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-h">runner.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/runner-cpp/#l00250">250</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/runner-cpp">runner.cpp</a>.</p>
@@ -1872,7 +1872,7 @@ class micro_os_plus::micro_test_plus::runner { ... }
 <p>Owning collection of dynamically registered child suites.</p>
 
 
-<p>Each call to <span class="doxyComputerOutput"><a href="#a330a6a2c24a6759e4cce1269942b9c88">runner::suite()</a></span> appends a new <span class="doxyComputerOutput">suite</span> to this vector and runs it immediately. The vector retains ownership of all suites for the lifetime of the runner.</p>
+<p>Each call to <span class="doxyComputerOutput"><a href="#a330a6a2c24a6759e4cce1269942b9c88">runner::suite()</a></span> appends a new <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite">suite</a></span> to this vector and runs it immediately. The vector retains ownership of all suites for the lifetime of the runner.</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-h/#l00300">300</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-h">runner.h</a>.</p>
@@ -2112,6 +2112,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

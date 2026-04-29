@@ -1,17 +1,17 @@
 var hierarchy =
 [
-    [ "micro_os_plus::micro_test_plus::detail::assertion< Expr_T >", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1assertion.html", null ],
+    [ "micro_os_plus::micro_test_plus::detail::assertion&lt; Expr_T &gt;", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1assertion.html", null ],
     [ "micro_os_plus::micro_test_plus::colours", "structmicro__os__plus_1_1micro__test__plus_1_1colours.html", null ],
     [ "micro_os_plus::micro_test_plus::detail::deferred_reporter_base", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base.html", [
       [ "micro_os_plus::micro_test_plus::detail::deferred_reporter< Expr_T >", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter.html", null ]
     ] ],
-    [ "micro_os_plus::micro_test_plus::type_traits::function_traits< R(*)(Args_T...)>", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_5_08_07_args___t_8_8_8_08_4.html", null ],
-    [ "micro_os_plus::micro_test_plus::type_traits::function_traits< R(Args_T...)>", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_args___t_8_8_8_08_4.html", null ],
-    [ "micro_os_plus::micro_test_plus::type_traits::function_traits< R(T::*)(Args_T...) const >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_52125631e1849775afa0689d07acdc76e.html", null ],
-    [ "micro_os_plus::micro_test_plus::type_traits::function_traits< R(T::*)(Args_T...)>", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_5_08_07_args___t_8_8_8_08_4.html", null ],
-    [ "micro_os_plus::micro_test_plus::type_traits::identity< T, Extra >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity.html", null ],
+    [ "micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(*)(Args_T...)&gt;", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_5_08_07_args___t_8_8_8_08_4.html", null ],
+    [ "micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(Args_T...)&gt;", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_args___t_8_8_8_08_4.html", null ],
+    [ "micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(T::*)(Args_T...) const &gt;", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_52125631e1849775afa0689d07acdc76e.html", null ],
+    [ "micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(T::*)(Args_T...)&gt;", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_5_08_07_args___t_8_8_8_08_4.html", null ],
+    [ "micro_os_plus::micro_test_plus::type_traits::identity&lt; T, Extra &gt;", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity.html", null ],
     [ "micro_os_plus::micro_test_plus::indent_t", "structmicro__os__plus_1_1micro__test__plus_1_1indent__t.html", null ],
-    [ "micro_os_plus::micro_test_plus::type_traits::list< Types >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1list.html", null ],
+    [ "micro_os_plus::micro_test_plus::type_traits::list&lt; Types &gt;", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1list.html", null ],
     [ "micro_os_plus::micro_test_plus::type_traits::op", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html", [
       [ "micro_os_plus::micro_test_plus::type_traits::value_base_< decltype(N)>", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html", [
         [ "micro_os_plus::micro_test_plus::type_traits::integral_constant< N >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html", null ]

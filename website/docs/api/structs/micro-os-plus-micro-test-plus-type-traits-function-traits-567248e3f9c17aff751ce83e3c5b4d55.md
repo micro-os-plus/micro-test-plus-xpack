@@ -95,7 +95,7 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(Args_T.
 <p>This specialisation of the <span class="doxyComputerOutput">function_traits</span> struct template provides compile-time introspection for plain function types (i.e., non-pointer, non-member functions). It exposes the return type and argument types of a function, enabling advanced template metaprogramming and type deduction within the µTest++ framework.</p>
 
 
-<p>The <span class="doxyComputerOutput"><a href="#ae2c0f559e149f7cb6d9cfa59e4d02913">result_type</a></span> member defines the return type of the function, while the <span class="doxyComputerOutput">args</span> member is a type list containing all argument types.</p>
+<p>The <span class="doxyComputerOutput"><a href="#ae2c0f559e149f7cb6d9cfa59e4d02913">result_type</a></span> member defines the return type of the function, while the <span class="doxyComputerOutput"><a href="#ae9cdecaa62003a4c7c1b7ca36da1361a">args</a></span> member is a type list containing all argument types.</p>
 
 
 <p>Definition at line 242 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
@@ -183,6 +183,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

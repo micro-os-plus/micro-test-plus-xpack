@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classmicro__os__plus_1_1micro__test__plus_1_1test__node" kind="class" language="C++" prot="public">
     <compoundname>micro_os_plus::micro_test_plus::test_node</compoundname>
     <derivedcompoundref refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::runnable_base</derivedcompoundref>
@@ -96,7 +96,7 @@ The rule of five is enforced to prevent accidental copying or moving.</para>
         <name>test_node</name>
         <qualifiedname>micro_os_plus::micro_test_plus::test_node::test_node</qualifiedname>
         <param>
-          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node" kindref="compound">test_node</ref> &amp;</type>
+          <type>const test_node &amp;</type>
         </param>
         <briefdescription>
 <para>Deleted copy constructor to prevent copying. </para>
@@ -115,7 +115,7 @@ The rule of five is enforced to prevent accidental copying or moving.</para>
         <name>test_node</name>
         <qualifiedname>micro_os_plus::micro_test_plus::test_node::test_node</qualifiedname>
         <param>
-          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node" kindref="compound">test_node</ref> &amp;&amp;</type>
+          <type>test_node &amp;&amp;</type>
         </param>
         <briefdescription>
 <para>Deleted move constructor to prevent moving. </para>
@@ -173,25 +173,25 @@ The rule of five is enforced to prevent accidental copying or moving.</para>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner_1a1e3c2cbe731c469a93fcad9e574e717a" compoundref="runner_8cpp" startline="400" endline="416">micro_os_plus::micro_test_plus::static_runner::static_runner</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1ada5f5bd4fe0d383c641f5943f52b4520" compoundref="test_8cpp" startline="78" endline="93">test_node</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base_1a4eb5910c122542031477006aec7fd649" compoundref="test_8cpp" startline="209" endline="255">micro_os_plus::micro_test_plus::runnable_base::after_subtest_create_</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a59da3337bb7a2d1bc89406f548131d00" compoundref="reporter-human_8cpp" startline="477" endline="534">micro_os_plus::micro_test_plus::reporter_human::begin_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a59da3337bb7a2d1bc89406f548131d00" compoundref="reporter-human_8cpp" startline="484" endline="541">micro_os_plus::micro_test_plus::reporter_human::begin_subtest</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a27a5c6eca6a4beb82466448bfe5c44e9" compoundref="reporter-tap_8cpp" startline="459" endline="514">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a172a7a10a5aa2bd47dc6e7dde903cbbd" compoundref="reporter-human_8cpp" startline="284" endline="325">micro_os_plus::micro_test_plus::reporter_human::begin_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a172a7a10a5aa2bd47dc6e7dde903cbbd" compoundref="reporter-human_8cpp" startline="291" endline="332">micro_os_plus::micro_test_plus::reporter_human::begin_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1ae118be849ab3ff75ab88ff4f54f54be0" compoundref="reporter-tap_8cpp" startline="266" endline="311">micro_os_plus::micro_test_plus::reporter_tap::begin_suite</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="549" endline="673">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="556" endline="680">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a79c7928d44d70b8fe5bf993775517e63" compoundref="reporter-tap_8cpp" startline="526" endline="641">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="340" endline="461">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="347" endline="468">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a8649b62ba8f7ff88501450c5f939ab6d" compoundref="reporter-tap_8cpp" startline="323" endline="446">micro_os_plus::micro_test_plus::reporter_tap::end_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1aa34a0418d54c633630a089eb2b5a61ee">micro_os_plus::micro_test_plus::runner::operator=</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a330a6a2c24a6759e4cce1269942b9c88" compoundref="runner-inlines_8h" startline="74" endline="96">micro_os_plus::micro_test_plus::runner::suite</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1a37de05764786edf48043882e2675c70a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node" kindref="compound">test_node</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1ada5f5bd4fe0d383c641f5943f52b4520" kindref="member">test_node</ref> &amp;</type>
         <definition>test_node &amp; micro_os_plus::micro_test_plus::test_node::operator=</definition>
         <argsstring>(const test_node &amp;)=delete</argsstring>
         <name>operator=</name>
         <qualifiedname>micro_os_plus::micro_test_plus::test_node::operator=</qualifiedname>
         <param>
-          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node" kindref="compound">test_node</ref> &amp;</type>
+          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1ada5f5bd4fe0d383c641f5943f52b4520" kindref="member">test_node</ref> &amp;</type>
         </param>
         <briefdescription>
 <para>Deleted copy assignment operator to prevent copying. </para>
@@ -204,13 +204,13 @@ The rule of five is enforced to prevent accidental copying or moving.</para>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1ada5f5bd4fe0d383c641f5943f52b4520" compoundref="test_8cpp" startline="78" endline="93">test_node</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1adbc2730656a3ee56bc860de3320fd8a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node" kindref="compound">test_node</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1ada5f5bd4fe0d383c641f5943f52b4520" kindref="member">test_node</ref> &amp;</type>
         <definition>test_node &amp; micro_os_plus::micro_test_plus::test_node::operator=</definition>
         <argsstring>(test_node &amp;&amp;)=delete</argsstring>
         <name>operator=</name>
         <qualifiedname>micro_os_plus::micro_test_plus::test_node::operator=</qualifiedname>
         <param>
-          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node" kindref="compound">test_node</ref> &amp;&amp;</type>
+          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1ada5f5bd4fe0d383c641f5943f52b4520" kindref="member">test_node</ref> &amp;&amp;</type>
         </param>
         <briefdescription>
 <para>Deleted move assignment operator to prevent moving. </para>
@@ -264,11 +264,11 @@ The rule of five is enforced to prevent accidental copying or moving.</para>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="173" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" bodystart="173" bodyend="176"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1a8f661c9eb2c68a31c6a3e7805e99d79a" compoundref="test_8h" startline="203">totals_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base_1a4eb5910c122542031477006aec7fd649" compoundref="test_8cpp" startline="209" endline="255">micro_os_plus::micro_test_plus::runnable_base::after_subtest_create_</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a3118ff89506858505f18e8fd368baffc" compoundref="reporter-human_8cpp" startline="190" endline="269">micro_os_plus::micro_test_plus::reporter_human::end_session</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a3118ff89506858505f18e8fd368baffc" compoundref="reporter-human_8cpp" startline="197" endline="276">micro_os_plus::micro_test_plus::reporter_human::end_session</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a9a224d34b068e1698c00633ae2341e7f" compoundref="reporter-tap_8cpp" startline="175" endline="253">micro_os_plus::micro_test_plus::reporter_tap::end_session</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="549" endline="673">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="556" endline="680">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a79c7928d44d70b8fe5bf993775517e63" compoundref="reporter-tap_8cpp" startline="526" endline="641">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="340" endline="461">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="347" endline="468">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a8649b62ba8f7ff88501450c5f939ab6d" compoundref="reporter-tap_8cpp" startline="323" endline="446">micro_os_plus::micro_test_plus::reporter_tap::end_suite</referencedby>
       </memberdef>
     </sectiondef>

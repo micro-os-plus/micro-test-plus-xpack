@@ -83,7 +83,7 @@ struct micro_os_plus::micro_test_plus::colours { ... }
 <p>Colours used to highlight pass and fail results in test reports.</p>
 
 
-<p>The <span class="doxyComputerOutput">colours</span> structure defines ANSI escape sequences for terminal output, enabling colour-coded highlighting of test outcomes. The <span class="doxyComputerOutput">pass</span> member specifies the colour for successful results (typically green), while the <span class="doxyComputerOutput">fail</span> member specifies the colour for failed results (typically red). The <span class="doxyComputerOutput">none</span> member resets the colour to the terminal default.</p>
+<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/colours">colours</a></span> structure defines ANSI escape sequences for terminal output, enabling colour-coded highlighting of test outcomes. The <span class="doxyComputerOutput"><a href="#af9cb49c94f9bc38794c500a7f5d1c7bc">pass</a></span> member specifies the colour for successful results (typically green), while the <span class="doxyComputerOutput"><a href="#aa4d4feecd7e50ea77d1dbf1be952103c">fail</a></span> member specifies the colour for failed results (typically red). The <span class="doxyComputerOutput"><a href="#a41c8c508e9353cee2b9823bbe9d1fea3">none</a></span> member resets the colour to the terminal default.</p>
 
 
 <p>These colour codes enhance the clarity and professionalism of test reports by making it immediately apparent which tests have passed or failed, thereby improving the overall user experience when reviewing test results.</p>
@@ -216,6 +216,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

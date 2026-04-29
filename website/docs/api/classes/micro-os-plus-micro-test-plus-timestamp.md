@@ -117,7 +117,7 @@ class micro_os_plus::micro_test_plus::timestamp { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamp">timestamp</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#ace868d5dfb29fd79cfaabbfad218a31d">timestamp</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a7db661420c0b2333aa80ca9081d505ae">operator=</a> (const timestamp &amp;)=default</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -131,7 +131,7 @@ class micro_os_plus::micro_test_plus::timestamp { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamp">timestamp</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#ace868d5dfb29fd79cfaabbfad218a31d">timestamp</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af28dcaf117fa2ed16c226d23f910ddc2">operator=</a> (timestamp &amp;&amp;)=default</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -219,7 +219,7 @@ class micro_os_plus::micro_test_plus::timestamp { ... }
 <p>A single point-in-time measurement, wrapping a <span class="doxyComputerOutput">timespec</span> value.</p>
 
 
-<p><span class="doxyComputerOutput">timestamp</span> stores one <span class="doxyComputerOutput">timespec</span> sample obtained from the system clock. It is default-constructible (zero-initialises the <span class="doxyComputerOutput">timespec</span>), copy-constructible, and move-constructible, so that it can be used efficiently in <span class="doxyComputerOutput">std::optional&lt;timestamp&gt;</span> containers.</p>
+<p><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamp">timestamp</a></span> stores one <span class="doxyComputerOutput">timespec</span> sample obtained from the system clock. It is default-constructible (zero-initialises the <span class="doxyComputerOutput">timespec</span>), copy-constructible, and move-constructible, so that it can be used efficiently in <span class="doxyComputerOutput">std::optional&lt;<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamp">timestamp</a>&gt;</span> containers.</p>
 
 
 <p>The <span class="doxyComputerOutput"><a href="#a9d1c21ae80e89e78e6123e49dc3aeaf2">has_clock()</a></span> predicate allows callers to determine whether a real-time clock is available on the target platform before relying on the stored value.</p>
@@ -258,7 +258,7 @@ class micro_os_plus::micro_test_plus::timestamp { ... }
 <p>Default constructor. Zero-initialises the internal <span class="doxyComputerOutput">timespec</span>.</p>
 
 
-<p>On Windows, the current time is captured via <span class="doxyComputerOutput">timespec_get()</span> with <span class="doxyComputerOutput">TIME_UTC</span>. On POSIX platforms with <span class="doxyComputerOutput">CLOCK_MONOTONIC</span> defined, <span class="doxyComputerOutput">clock_gettime(CLOCK_MONOTONIC)</span> is used to obtain a monotonic timestamp. On platforms where neither macro is defined, <span class="doxyComputerOutput">value_</span> remains zero-initialised.</p>
+<p>On Windows, the current time is captured via <span class="doxyComputerOutput">timespec_get()</span> with <span class="doxyComputerOutput">TIME_UTC</span>. On POSIX platforms with <span class="doxyComputerOutput">CLOCK_MONOTONIC</span> defined, <span class="doxyComputerOutput">clock_gettime(CLOCK_MONOTONIC)</span> is used to obtain a monotonic timestamp. On platforms where neither macro is defined, <span class="doxyComputerOutput"><a href="#aa45da56b409a7cf625ce373b7f6a621b">value_</a></span> remains zero-initialised.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00096">96</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp/#l00071">71</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp">timings.cpp</a>.</p>
@@ -351,7 +351,7 @@ class micro_os_plus::micro_test_plus::timestamp { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">micro_os_plus::micro_test_plus::timestamp::timestamp (const <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamp">timestamp</a> &amp;)</td>
+<td class="doxyMemberName">micro_os_plus::micro_test_plus::timestamp::timestamp (const timestamp &amp;)</td>
 </tr>
 </table>
 </td>
@@ -384,7 +384,7 @@ class micro_os_plus::micro_test_plus::timestamp { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">micro_os_plus::micro_test_plus::timestamp::timestamp (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamp">timestamp</a> &amp;&amp;)</td>
+<td class="doxyMemberName">micro_os_plus::micro_test_plus::timestamp::timestamp (timestamp &amp;&amp;)</td>
 </tr>
 </table>
 </td>
@@ -459,7 +459,7 @@ class micro_os_plus::micro_test_plus::timestamp { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">timestamp &amp; micro_os_plus::micro_test_plus::timestamp::operator= (const <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamp">timestamp</a> &amp;)</td>
+<td class="doxyMemberName">timestamp &amp; micro_os_plus::micro_test_plus::timestamp::operator= (const <a href="#ace868d5dfb29fd79cfaabbfad218a31d">timestamp</a> &amp;)</td>
 </tr>
 </table>
 </td>
@@ -492,7 +492,7 @@ class micro_os_plus::micro_test_plus::timestamp { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">timestamp &amp; micro_os_plus::micro_test_plus::timestamp::operator= (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamp">timestamp</a> &amp;&amp;)</td>
+<td class="doxyMemberName">timestamp &amp; micro_os_plus::micro_test_plus::timestamp::operator= (<a href="#ace868d5dfb29fd79cfaabbfad218a31d">timestamp</a> &amp;&amp;)</td>
 </tr>
 </table>
 </td>
@@ -766,6 +766,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

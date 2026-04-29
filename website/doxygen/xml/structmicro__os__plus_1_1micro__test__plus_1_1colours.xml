@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1colours" kind="struct" language="C++" prot="public">
     <compoundname>micro_os_plus::micro_test_plus::colours</compoundname>
     <includes refid="reporter_8h" local="no">reporter.h</includes>
@@ -60,7 +60,7 @@
 <para>Colours used to highlight pass and fail results in test reports. </para>
     </briefdescription>
     <detaileddescription>
-<para>The <computeroutput>colours</computeroutput> structure defines ANSI escape sequences for terminal output, enabling colour-coded highlighting of test outcomes. The <computeroutput>pass</computeroutput> member specifies the colour for successful results (typically green), while the <computeroutput>fail</computeroutput> member specifies the colour for failed results (typically red). The <computeroutput>none</computeroutput> member resets the colour to the terminal default.</para>
+<para>The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1colours" kindref="compound">colours</ref></computeroutput> structure defines ANSI escape sequences for terminal output, enabling colour-coded highlighting of test outcomes. The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1colours_1af9cb49c94f9bc38794c500a7f5d1c7bc" kindref="member">pass</ref></computeroutput> member specifies the colour for successful results (typically green), while the <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1colours_1aa4d4feecd7e50ea77d1dbf1be952103c" kindref="member">fail</ref></computeroutput> member specifies the colour for failed results (typically red). The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1colours_1a41c8c508e9353cee2b9823bbe9d1fea3" kindref="member">none</ref></computeroutput> member resets the colour to the terminal default.</para>
 <para>These colour codes enhance the clarity and professionalism of test reports by making it immediately apparent which tests have passed or failed, thereby improving the overall user experience when reviewing test results. </para>
     </detaileddescription>
     <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="109" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="110" bodyend="116"/>

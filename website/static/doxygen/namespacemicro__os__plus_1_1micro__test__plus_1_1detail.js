@@ -16,7 +16,7 @@ var namespacemicro__os__plus_1_1micro__test__plus_1_1detail =
     [ "nothrow_", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__" ],
     [ "or_", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__" ],
     [ "throws_", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__" ],
-    [ "throws_< Callable_T, void >", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4" ],
+    [ "throws_&lt; Callable_T, void &gt;", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4" ],
     [ "unary_op_", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op__.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op__" ],
     [ "and_", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a9c99a7907fdca67f8fc1f7b18b516ff1", null ],
     [ "eq_", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a3c134d5164d17cade8ff3f6de49c5e6b", null ],

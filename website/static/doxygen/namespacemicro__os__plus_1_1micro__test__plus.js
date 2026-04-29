@@ -39,13 +39,13 @@ var namespacemicro__os__plus_1_1micro__test__plus =
       [ "operator and", "group__micro-test-plus-operators.html#gaa188c33047f559e28dc95dbb465e19a8", null ],
       [ "operator not", "group__micro-test-plus-operators.html#ga00db5f149865ed9fd8d73f2db44542b0", null ],
       [ "operator or", "group__micro-test-plus-operators.html#ga0fe9ef52ecfb0de402da9e7454d7c20b", null ],
-      [ "operator!=", "group__micro-test-plus-container-operators.html#gac2449b2b9f07c550b1218456ba1da2db", null ],
       [ "operator!=", "group__micro-test-plus-operators.html#ga445025eccd3ef529af191aab5aad91a9", null ],
+      [ "operator!=", "group__micro-test-plus-container-operators.html#gac2449b2b9f07c550b1218456ba1da2db", null ],
       [ "operator!=", "group__micro-test-plus-string-operators.html#ga179e971d5e37795c036ad66aa35f1654", null ],
       [ "operator<", "group__micro-test-plus-operators.html#ga675d31a23d8f0dfed775466ef1463a80", null ],
       [ "operator<=", "group__micro-test-plus-operators.html#ga15235adceff30c6e3aa382696aea23cb", null ],
-      [ "operator==", "group__micro-test-plus-container-operators.html#gab8c44f8115524296fbaf21688dd7f389", null ],
       [ "operator==", "group__micro-test-plus-operators.html#gaae177a6c59286d4d7e4f85ffa6579e56", null ],
+      [ "operator==", "group__micro-test-plus-container-operators.html#gab8c44f8115524296fbaf21688dd7f389", null ],
       [ "operator==", "group__micro-test-plus-string-operators.html#gaabe34a842bf38ea2913a4164d2b0a9cb", null ],
       [ "operator>", "group__micro-test-plus-operators.html#gac0afc8d658f73e3b5f136a5c60d1fbd1", null ],
       [ "operator>=", "group__micro-test-plus-operators.html#gabfc165fd00e9f53bbf7b63f71b9d5020", null ]
@@ -147,8 +147,8 @@ var namespacemicro__os__plus_1_1micro__test__plus =
     [ "ne", "group__micro-test-plus-function-comparators.html#ga59e4cf59954e81bc868e62b1c5c8db1f", null ],
     [ "ne", "group__micro-test-plus-function-comparators.html#ga172f305bbeaf8b965681f76c16a39516", null ],
     [ "nothrow", "group__micro-test-plus-exceptions.html#ga798bd28001c3938784073e60dd904148", null ],
-    [ "throws", "group__micro-test-plus-exceptions.html#gaf8f7602f40119da514be2a0bfc4b70f5", null ],
     [ "throws", "group__micro-test-plus-exceptions.html#ga8bf54756e4122c6a0bd123b4621e60e2", null ],
+    [ "throws", "group__micro-test-plus-exceptions.html#gaf8f7602f40119da514be2a0bfc4b70f5", null ],
     [ "colours_red_green", "namespacemicro__os__plus_1_1micro__test__plus.html#abb8182f972e436f09e25dc5b0dae05fd", null ],
     [ "indent_size", "namespacemicro__os__plus_1_1micro__test__plus.html#a06acf196002ba97ba19ce4054477f915", null ]
 ];

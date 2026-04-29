@@ -377,7 +377,7 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput">eq</span> function template provides a generic equality comparator for any non-pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that two values are equal. This function is typically used in test expectations and assertions to compare the actual and expected values.</p>
+<p>The <span class="doxyComputerOutput"><a href="#gae9dfca849300a917cb1c231d275baaa3">eq</a></span> function template provides a generic equality comparator for any non-pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that two values are equal. This function is typically used in test expectations and assertions to compare the actual and expected values.</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00083">83</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
@@ -461,7 +461,7 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput">eq</span> function template provides a pointer equality comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that two pointers are equal. This function is typically used in test expectations and assertions to compare the addresses of objects or resources.</p>
+<p>The <span class="doxyComputerOutput"><a href="#gae9dfca849300a917cb1c231d275baaa3">eq</a></span> function template provides a pointer equality comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that two pointers are equal. This function is typically used in test expectations and assertions to compare the addresses of objects or resources.</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00098">98</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
@@ -545,7 +545,7 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput">ge</span> function template provides a generic greater than or equal comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is greater than or equal to another. This function is typically used in test expectations and assertions to compare the actual and expected values.</p>
+<p>The <span class="doxyComputerOutput"><a href="#ga34e03399670ec0b365b94b7bea788dd8">ge</a></span> function template provides a generic greater than or equal comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is greater than or equal to another. This function is typically used in test expectations and assertions to compare the actual and expected values.</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00173">173</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
@@ -629,7 +629,7 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput">ge</span> function template provides a pointer greater than or equal comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is greater than or equal to another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources.</p>
+<p>The <span class="doxyComputerOutput"><a href="#ga34e03399670ec0b365b94b7bea788dd8">ge</a></span> function template provides a pointer greater than or equal comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is greater than or equal to another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources.</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00189">189</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
@@ -713,7 +713,7 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput">gt</span> function template provides a generic greater than comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is greater than another. This function is typically used in test expectations and assertions to compare the actual and expected values.</p>
+<p>The <span class="doxyComputerOutput"><a href="#gae2fb681444d8256f6bf827eea6b7c29e">gt</a></span> function template provides a generic greater than comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is greater than another. This function is typically used in test expectations and assertions to compare the actual and expected values.</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00143">143</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
@@ -797,7 +797,7 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput">gt</span> function template provides a pointer greater than comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is greater than another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources.</p>
+<p>The <span class="doxyComputerOutput"><a href="#gae2fb681444d8256f6bf827eea6b7c29e">gt</a></span> function template provides a pointer greater than comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is greater than another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources.</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00158">158</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
@@ -881,7 +881,7 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput">le</span> function template provides a generic less than or equal comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is less than or equal to another. This function is typically used in test expectations and assertions to compare the actual and expected values.</p>
+<p>The <span class="doxyComputerOutput"><a href="#ga2b5263a5b3965855aa04971bba735a56">le</a></span> function template provides a generic less than or equal comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is less than or equal to another. This function is typically used in test expectations and assertions to compare the actual and expected values.</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00234">234</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
@@ -965,7 +965,7 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput">le</span> function template provides a pointer less than or equal comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is less than or equal to another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources.</p>
+<p>The <span class="doxyComputerOutput"><a href="#ga2b5263a5b3965855aa04971bba735a56">le</a></span> function template provides a pointer less than or equal comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is less than or equal to another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources.</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00250">250</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
@@ -1049,7 +1049,7 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput">lt</span> function template provides a generic less than comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is less than another. This function is typically used in test expectations and assertions to compare the actual and expected values.</p>
+<p>The <span class="doxyComputerOutput"><a href="#gac162522dcad1a6ff7c869d52d376b3ed">lt</a></span> function template provides a generic less than comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is less than another. This function is typically used in test expectations and assertions to compare the actual and expected values.</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00204">204</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
@@ -1133,7 +1133,7 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput">lt</span> function template provides a pointer less than comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is less than another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources.</p>
+<p>The <span class="doxyComputerOutput"><a href="#gac162522dcad1a6ff7c869d52d376b3ed">lt</a></span> function template provides a pointer less than comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is less than another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources.</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00219">219</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
@@ -1217,7 +1217,7 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput">ne</span> function template provides a generic non-equality comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that two values are not equal. This function is typically used in test expectations and assertions to compare the actual and expected values.</p>
+<p>The <span class="doxyComputerOutput"><a href="#ga59e4cf59954e81bc868e62b1c5c8db1f">ne</a></span> function template provides a generic non-equality comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that two values are not equal. This function is typically used in test expectations and assertions to compare the actual and expected values.</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00113">113</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
@@ -1301,7 +1301,7 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput">ne</span> function template provides a pointer non-equality comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that two pointers are not equal. This function is typically used in test expectations and assertions to compare the addresses of objects or resources.</p>
+<p>The <span class="doxyComputerOutput"><a href="#ga59e4cf59954e81bc868e62b1c5c8db1f">ne</a></span> function template provides a pointer non-equality comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that two pointers are not equal. This function is typically used in test expectations and assertions to compare the addresses of objects or resources.</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00128">128</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
@@ -1323,6 +1323,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -140,7 +140,7 @@ struct micro_os_plus::micro_test_plus::detail::throws_&lt;Callable_T, void&gt; {
 <p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-">throws_</a></span> struct template provides a type-safe mechanism for verifying whether a callable expression throws any exception during its execution within the framework.</p>
 
 
-<p>This comparator is designed to support both custom and standard callable types. The result of the exception check is stored in the <span class="doxyComputerOutput">value_</span> member for efficient access.</p>
+<p>This comparator is designed to support both custom and standard callable types. The result of the exception check is stored in the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op-/#a8b7760bde30950164a3c97632b468361">value_</a></span> member for efficient access.</p>
 
 
 <p>The implementation is optimised for use in embedded environments and supports both compile-time and run-time evaluation.</p>
@@ -345,6 +345,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

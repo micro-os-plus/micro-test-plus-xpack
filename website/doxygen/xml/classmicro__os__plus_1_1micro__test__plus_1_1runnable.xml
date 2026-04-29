@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classmicro__os__plus_1_1micro__test__plus_1_1runnable" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>micro_os_plus::micro_test_plus::runnable</compoundname>
     <basecompoundref refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::runnable_base</basecompoundref>
@@ -36,7 +36,7 @@
 <para>Owning collection of direct child subtests. </para>
         </briefdescription>
         <detaileddescription>
-<para>Each call to <computeroutput>test()</computeroutput> appends a new <computeroutput>subtest</computeroutput> to this vector and runs it immediately. The vector retains ownership for the lifetime of the parent runnable. </para>
+<para>Each call to <computeroutput>test()</computeroutput> appends a new <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest" kindref="compound">subtest</ref></computeroutput> to this vector and runs it immediately. The vector retains ownership for the lifetime of the parent runnable. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -106,7 +106,7 @@
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base_1aaec55e3b7b202f8f77e55b328ed2f62b" compoundref="test_8h" startline="293" endline="296">micro_os_plus::micro_test_plus::runnable_base::own_index</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base_1a5ad9145405b7d9e7369d99f38f3f060a" prot="protected" static="no" mutable="no">
-        <type>class <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref> &amp;</type>
+        <type>class <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base_1ad4c83336f594d8549b4ac233c184995b" kindref="member">runner</ref> &amp;</type>
         <definition>class runner&amp; micro_os_plus::micro_test_plus::runnable_base::runner_</definition>
         <argsstring></argsstring>
         <name>runner_</name>
@@ -167,7 +167,7 @@
           <declname>name</declname>
         </param>
         <param>
-          <type>class <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref> &amp;</type>
+          <type>class <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base_1ad4c83336f594d8549b4ac233c184995b" kindref="member">runner</ref> &amp;</type>
           <declname>runner</declname>
         </param>
         <param>
@@ -245,7 +245,7 @@
 </parameteritem>
 </parameterlist>
 The rule of five is enforced to prevent accidental copying or moving.</para>
-<para>Binds the callable and its arguments into the stored <computeroutput>callable_</computeroutput> function object. When <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable_1aa8fee7ab95580624f262c99827cb7efc" kindref="member">run()</ref></computeroutput> is called, the stored function is invoked with a reference to the derived <computeroutput>Self_T</computeroutput> instance as its first argument, followed by the bound arguments. </para>
+<para>Binds the callable and its arguments into the stored <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable_1aae29fd05e5a256964d9f42965ed1bf23" kindref="member">callable_</ref></computeroutput> function object. When <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable_1aa8fee7ab95580624f262c99827cb7efc" kindref="member">run()</ref></computeroutput> is called, the stored function is invoked with a reference to the derived <computeroutput>Self_T</computeroutput> instance as its first argument, followed by the bound arguments. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -268,7 +268,7 @@ The rule of five is enforced to prevent accidental copying or moving.</para>
         <name>runnable</name>
         <qualifiedname>micro_os_plus::micro_test_plus::runnable::runnable</qualifiedname>
         <param>
-          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable" kindref="compound">runnable</ref> &amp;</type>
+          <type>const runnable &amp;</type>
         </param>
         <briefdescription>
 <para>Deleted copy constructor to prevent copying. </para>
@@ -287,7 +287,7 @@ The rule of five is enforced to prevent accidental copying or moving.</para>
         <name>runnable</name>
         <qualifiedname>micro_os_plus::micro_test_plus::runnable::runnable</qualifiedname>
         <param>
-          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable" kindref="compound">runnable</ref> &amp;&amp;</type>
+          <type>runnable &amp;&amp;</type>
         </param>
         <briefdescription>
 <para>Deleted move constructor to prevent moving. </para>
@@ -342,7 +342,7 @@ The rule of five is enforced to prevent accidental copying or moving.</para>
 </parameterlist>
 <simplesect kind="par"><title>Returns</title><para>Does not return.</para>
 </simplesect>
-Delegates immediately to <computeroutput>runner_.abort()</computeroutput>, passing the supplied source location so that the error message identifies the call site before the process is terminated via <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base_1a08921ea05d769a210cfec4326f1505a9" kindref="member">abort()</ref></computeroutput>. </para>
+Delegates immediately to <computeroutput>runner_.abort()</computeroutput>, passing the supplied source location so that the error message identifies the call site before the process is terminated via <computeroutput>::abort()</computeroutput>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -408,7 +408,7 @@ Delegates immediately to <computeroutput>runner_.abort()</computeroutput>, passi
 <para>Increments and returns the child subtest sequential index. </para>
         </briefdescription>
         <detaileddescription>
-<para>Each call to <computeroutput>test()</computeroutput> invokes this method before constructing the new <computeroutput>subtest</computeroutput>, so the index values form a strictly increasing, one-based sequence.</para>
+<para>Each call to <computeroutput>test()</computeroutput> invokes this method before constructing the new <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest" kindref="compound">subtest</ref></computeroutput>, so the index values form a strictly increasing, one-based sequence.</para>
 <para><simplesect kind="par"><title>Parameters</title><para>None. </para>
 </simplesect>
 <simplesect kind="return"><para>The new index value after incrementing. </para>
@@ -449,25 +449,25 @@ Delegates immediately to <computeroutput>runner_.abort()</computeroutput>, passi
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner_1a1e3c2cbe731c469a93fcad9e574e717a" compoundref="runner_8cpp" startline="400" endline="416">micro_os_plus::micro_test_plus::static_runner::static_runner</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1ada5f5bd4fe0d383c641f5943f52b4520" compoundref="test_8cpp" startline="78" endline="93">micro_os_plus::micro_test_plus::test_node::test_node</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base_1a4eb5910c122542031477006aec7fd649" compoundref="test_8cpp" startline="209" endline="255">micro_os_plus::micro_test_plus::runnable_base::after_subtest_create_</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a59da3337bb7a2d1bc89406f548131d00" compoundref="reporter-human_8cpp" startline="477" endline="534">micro_os_plus::micro_test_plus::reporter_human::begin_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a59da3337bb7a2d1bc89406f548131d00" compoundref="reporter-human_8cpp" startline="484" endline="541">micro_os_plus::micro_test_plus::reporter_human::begin_subtest</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a27a5c6eca6a4beb82466448bfe5c44e9" compoundref="reporter-tap_8cpp" startline="459" endline="514">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a172a7a10a5aa2bd47dc6e7dde903cbbd" compoundref="reporter-human_8cpp" startline="284" endline="325">micro_os_plus::micro_test_plus::reporter_human::begin_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a172a7a10a5aa2bd47dc6e7dde903cbbd" compoundref="reporter-human_8cpp" startline="291" endline="332">micro_os_plus::micro_test_plus::reporter_human::begin_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1ae118be849ab3ff75ab88ff4f54f54be0" compoundref="reporter-tap_8cpp" startline="266" endline="311">micro_os_plus::micro_test_plus::reporter_tap::begin_suite</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="549" endline="673">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="556" endline="680">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a79c7928d44d70b8fe5bf993775517e63" compoundref="reporter-tap_8cpp" startline="526" endline="641">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="340" endline="461">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="347" endline="468">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a8649b62ba8f7ff88501450c5f939ab6d" compoundref="reporter-tap_8cpp" startline="323" endline="446">micro_os_plus::micro_test_plus::reporter_tap::end_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1aa34a0418d54c633630a089eb2b5a61ee">micro_os_plus::micro_test_plus::runner::operator=</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a330a6a2c24a6759e4cce1269942b9c88" compoundref="runner-inlines_8h" startline="74" endline="96">micro_os_plus::micro_test_plus::runner::suite</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1runnable_1a33d1cd5b24f71bc84712141755cf7f32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable" kindref="compound">runnable</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable_1a73dd7004e232436a02c58a3bbd2b2847" kindref="member">runnable</ref> &amp;</type>
         <definition>runnable &amp; micro_os_plus::micro_test_plus::runnable&lt; Self_T &gt;::operator=</definition>
         <argsstring>(const runnable &amp;)=delete</argsstring>
         <name>operator=</name>
         <qualifiedname>micro_os_plus::micro_test_plus::runnable::operator=</qualifiedname>
         <param>
-          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable" kindref="compound">runnable</ref> &amp;</type>
+          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable_1a73dd7004e232436a02c58a3bbd2b2847" kindref="member">runnable</ref> &amp;</type>
         </param>
         <briefdescription>
 <para>Deleted copy assignment operator to prevent copying. </para>
@@ -480,13 +480,13 @@ Delegates immediately to <computeroutput>runner_.abort()</computeroutput>, passi
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable_1a73dd7004e232436a02c58a3bbd2b2847" compoundref="test-inlines_8h" startline="85" endline="118">micro_os_plus::micro_test_plus::runnable&lt; Self_T &gt;::runnable</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1runnable_1a70c0342c3bdd2757545f13a1a2b823c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable" kindref="compound">runnable</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable_1a73dd7004e232436a02c58a3bbd2b2847" kindref="member">runnable</ref> &amp;</type>
         <definition>runnable &amp; micro_os_plus::micro_test_plus::runnable&lt; Self_T &gt;::operator=</definition>
         <argsstring>(runnable &amp;&amp;)=delete</argsstring>
         <name>operator=</name>
         <qualifiedname>micro_os_plus::micro_test_plus::runnable::operator=</qualifiedname>
         <param>
-          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable" kindref="compound">runnable</ref> &amp;&amp;</type>
+          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable_1a73dd7004e232436a02c58a3bbd2b2847" kindref="member">runnable</ref> &amp;&amp;</type>
         </param>
         <briefdescription>
 <para>Deleted move assignment operator to prevent moving. </para>
@@ -558,7 +558,7 @@ Delegates immediately to <computeroutput>runner_.abort()</computeroutput>, passi
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base_1a303639d91d4e3cf1bbbc7cc2ccf19981" compoundref="test_8h" startline="399">micro_os_plus::micro_test_plus::runnable_base::own_index_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base_1ab6c3fd1cbf63d1b6a680845bf4bab9d3" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type>class <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type>class reporter &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::runnable_base::reporter</definition>
         <argsstring>(void) const noexcept</argsstring>
         <name>reporter</name>
@@ -608,7 +608,7 @@ Delegates immediately to <computeroutput>runner_.reporter()</computeroutput>, re
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="497" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base_1ad4c83336f594d8549b4ac233c184995b" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type>class <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref> &amp;</type>
+        <type>class runner &amp;</type>
         <definition>class runner &amp; micro_os_plus::micro_test_plus::runnable_base::runner</definition>
         <argsstring>(void) const noexcept</argsstring>
         <name>runner</name>
@@ -675,11 +675,11 @@ Delegates immediately to <computeroutput>runner_.reporter()</computeroutput>, re
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="173" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" bodystart="173" bodyend="176"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1a8f661c9eb2c68a31c6a3e7805e99d79a" compoundref="test_8h" startline="203">micro_os_plus::micro_test_plus::test_node::totals_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base_1a4eb5910c122542031477006aec7fd649" compoundref="test_8cpp" startline="209" endline="255">micro_os_plus::micro_test_plus::runnable_base::after_subtest_create_</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a3118ff89506858505f18e8fd368baffc" compoundref="reporter-human_8cpp" startline="190" endline="269">micro_os_plus::micro_test_plus::reporter_human::end_session</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a3118ff89506858505f18e8fd368baffc" compoundref="reporter-human_8cpp" startline="197" endline="276">micro_os_plus::micro_test_plus::reporter_human::end_session</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a9a224d34b068e1698c00633ae2341e7f" compoundref="reporter-tap_8cpp" startline="175" endline="253">micro_os_plus::micro_test_plus::reporter_tap::end_session</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="549" endline="673">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="556" endline="680">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a79c7928d44d70b8fe5bf993775517e63" compoundref="reporter-tap_8cpp" startline="526" endline="641">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="340" endline="461">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="347" endline="468">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a8649b62ba8f7ff88501450c5f939ab6d" compoundref="reporter-tap_8cpp" startline="323" endline="446">micro_os_plus::micro_test_plus::reporter_tap::end_suite</referencedby>
       </memberdef>
     </sectiondef>
@@ -707,7 +707,7 @@ Delegates immediately to <computeroutput>runner_.reporter()</computeroutput>, re
 <parametername>child_test</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Owning pointer to the newly created <computeroutput>subtest</computeroutput>. </para>
+<para>Owning pointer to the newly created <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest" kindref="compound">subtest</ref></computeroutput>. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -715,13 +715,13 @@ Delegates immediately to <computeroutput>runner_.reporter()</computeroutput>, re
 <parametername>suite</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The parent <computeroutput>suite</computeroutput> to which execution results are reported. </para>
+<para>The parent <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" kindref="compound">suite</ref></computeroutput> to which execution results are reported. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
 <simplesect kind="par"><title>Returns</title><para>Nothing.</para>
 </simplesect>
-Transfers ownership of <computeroutput>child_test</computeroutput> into <computeroutput>children_subtests_</computeroutput> and immediately invokes <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1aa7bff3af9ebff14c45838991ed848c33" kindref="member">subtest::run()</ref></computeroutput> on the newly stored subtest. The parent&apos;s executed-subtest counter is then incremented. The child&apos;s check counters are intentionally not merged into the parent totals; each subtest reports only its own counters. The child&apos;s totals are, however, accumulated into <computeroutput>suite</computeroutput> so that the suite summary reflects all checks performed by its subtests. </para>
+Transfers ownership of <computeroutput>child_test</computeroutput> into <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base_1aef505faea997f1687eb23f0b2ce4f664" kindref="member">children_subtests_</ref></computeroutput> and immediately invokes <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1aa7bff3af9ebff14c45838991ed848c33" kindref="member">subtest::run()</ref></computeroutput> on the newly stored subtest. The parent&apos;s executed-subtest counter is then incremented. The child&apos;s check counters are intentionally not merged into the parent totals; each subtest reports only its own counters. The child&apos;s totals are, however, accumulated into <computeroutput>suite</computeroutput> so that the suite summary reflects all checks performed by its subtests. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>

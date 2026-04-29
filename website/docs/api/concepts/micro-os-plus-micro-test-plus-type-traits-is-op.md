@@ -23,7 +23,7 @@ keywords:
 
 <div class="doxyDefinition">
 template &lt;class T&gt;<br/>
-concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/is-op">micro_os_plus::micro_test_plus::type_traits::is_op</a> =  std::is_base_of_v&lt;type_traits::op, T&gt;    
+concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/is-op">micro_os_plus::micro_test_plus::type_traits::is_op</a> =  std::is_base_of_v&lt;<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">type_traits::op</a>, T&gt;    
 </div>
 
 ## Description {#details}
@@ -48,6 +48,6 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

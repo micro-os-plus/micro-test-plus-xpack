@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="namespacemicro__os__plus_1_1micro__test__plus_1_1literals" kind="namespace" language="C++">
     <compoundname>micro_os_plus::micro_test_plus::literals</compoundname>
     <sectiondef kind="func">
@@ -31,7 +31,7 @@
 <para>User-defined literals and type wrappers for the µTest++ testing framework. </para>
     </briefdescription>
     <detaileddescription>
-<para>The <computeroutput>literals</computeroutput> namespace provides an extensive collection of user-defined literal operators and type wrappers, enabling explicit specification of operand types for use with the µTest++ comparators and operators.</para>
+<para>The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1literals" kindref="compound">literals</ref></computeroutput> namespace provides an extensive collection of user-defined literal operators and type wrappers, enabling explicit specification of operand types for use with the µTest++ comparators and operators.</para>
 <para>These operators allow constants to be suffixed (for example, <computeroutput>1<ref refid="group__micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" kindref="member">_i</ref></computeroutput>, <computeroutput>2<ref refid="group__micro-test-plus-literals_1ga07f83438e4c0c85efdeacd78668f3543" kindref="member">_u16</ref></computeroutput>) to produce strongly-typed values, thereby enhancing type safety and ensuring that comparator functions and operators can display actual values in test reports.</para>
 <para>In addition to literals, the namespace includes wrappers for converting dynamic values and expressions to recognised types, both via deprecated aliases (such as <computeroutput><ref refid="group__micro-test-plus-literals_1ga1613ccf081248c601bed0f3022fba652" kindref="member">_i</ref></computeroutput>, <computeroutput><ref refid="group__micro-test-plus-literals_1ga2e2ad62d8c5d6e3abcfca9a897ae61de" kindref="member">_u8</ref></computeroutput>) and the preferred <computeroutput>to_*</computeroutput> forms (such as <computeroutput><ref refid="group__micro-test-plus-literals_1gab6ddb21470182cbdcf06436cde43718f" kindref="member">to_i</ref></computeroutput>, <computeroutput><ref refid="group__micro-test-plus-literals_1ga8b683d809d600f5c5210bb16546a832e" kindref="member">to_u8</ref></computeroutput>).</para>
 <para>All definitions within this namespace are intended to facilitate clear and type-safe test expressions, and are implemented in the <computeroutput>include/micro-os-plus</computeroutput> folder to maintain a structured and modular codebase. </para>

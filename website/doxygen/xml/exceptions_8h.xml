@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="exceptions_8h" kind="file" language="C++">
     <compoundname>exceptions.h</compoundname>
     <includedby refid="micro-test-plus_8h" local="yes">micro-test-plus.h</includedby>
@@ -79,8 +79,8 @@
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus">micro_os_plus::micro_test_plus</innernamespace>
     <sectiondef kind="func">
       <member refid="group__micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" kind="function"><name>nothrow</name></member>
-      <member refid="group__micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kind="function"><name>throws</name></member>
       <member refid="group__micro-test-plus-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" kind="function"><name>throws</name></member>
+      <member refid="group__micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kind="function"><name>throws</name></member>
     </sectiondef>
     <briefdescription>
 <para>C++ header with declarations for the µTest++ exception-checking functions. </para>

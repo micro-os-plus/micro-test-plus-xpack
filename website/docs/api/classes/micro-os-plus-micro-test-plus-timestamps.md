@@ -103,7 +103,7 @@ class micro_os_plus::micro_test_plus::timestamps { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamps">timestamps</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#aab36ba415d2e65828b404acce7daf5aa">timestamps</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab4ba374a72308a7cb78c86bbe58bd8c0">operator=</a> (const timestamps &amp;)=delete</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -117,7 +117,7 @@ class micro_os_plus::micro_test_plus::timestamps { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamps">timestamps</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#aab36ba415d2e65828b404acce7daf5aa">timestamps</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab7f61bdee1a183991256e3e1681c34dc">operator=</a> (timestamps &amp;&amp;)=delete</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -289,7 +289,7 @@ class micro_os_plus::micro_test_plus::timestamps { ... }
 <p>A begin/end timestamp pair used to measure elapsed time.</p>
 
 
-<p><span class="doxyComputerOutput">timestamps</span> stores an optional begin <span class="doxyComputerOutput">timestamp</span> and an optional end <span class="doxyComputerOutput">timestamp</span>. When both are available, <span class="doxyComputerOutput"><a href="#acf16eb11ffcd52d569dd7b21b1e5f61e">compute_elapsed_time()</a></span> derives the elapsed interval in milliseconds and microseconds.</p>
+<p><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamps">timestamps</a></span> stores an optional begin <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamp">timestamp</a></span> and an optional end <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamp">timestamp</a></span>. When both are available, <span class="doxyComputerOutput"><a href="#acf16eb11ffcd52d569dd7b21b1e5f61e">compute_elapsed_time()</a></span> derives the elapsed interval in milliseconds and microseconds.</p>
 
 
 <p>Typical usage in the framework:</p>
@@ -356,7 +356,7 @@ class micro_os_plus::micro_test_plus::timestamps { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">micro_os_plus::micro_test_plus::timestamps::timestamps (const <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamps">timestamps</a> &amp;)</td>
+<td class="doxyMemberName">micro_os_plus::micro_test_plus::timestamps::timestamps (const timestamps &amp;)</td>
 </tr>
 </table>
 </td>
@@ -389,7 +389,7 @@ class micro_os_plus::micro_test_plus::timestamps { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">micro_os_plus::micro_test_plus::timestamps::timestamps (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamps">timestamps</a> &amp;&amp;)</td>
+<td class="doxyMemberName">micro_os_plus::micro_test_plus::timestamps::timestamps (timestamps &amp;&amp;)</td>
 </tr>
 </table>
 </td>
@@ -464,7 +464,7 @@ class micro_os_plus::micro_test_plus::timestamps { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">timestamps &amp; micro_os_plus::micro_test_plus::timestamps::operator= (const <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamps">timestamps</a> &amp;)</td>
+<td class="doxyMemberName">timestamps &amp; micro_os_plus::micro_test_plus::timestamps::operator= (const <a href="#aab36ba415d2e65828b404acce7daf5aa">timestamps</a> &amp;)</td>
 </tr>
 </table>
 </td>
@@ -497,7 +497,7 @@ class micro_os_plus::micro_test_plus::timestamps { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">timestamps &amp; micro_os_plus::micro_test_plus::timestamps::operator= (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamps">timestamps</a> &amp;&amp;)</td>
+<td class="doxyMemberName">timestamps &amp; micro_os_plus::micro_test_plus::timestamps::operator= (<a href="#aab36ba415d2e65828b404acce7daf5aa">timestamps</a> &amp;&amp;)</td>
 </tr>
 </table>
 </td>
@@ -860,7 +860,7 @@ class micro_os_plus::micro_test_plus::timestamps { ... }
 </dl>
 
 
-<p>If the begin timestamp has not yet been set, a <span class="doxyComputerOutput">timestamp</span> is constructed in-place from the supplied <span class="doxyComputerOutput">timespec</span> value. Subsequent calls are silently ignored, ensuring idempotent behaviour.</p>
+<p>If the begin timestamp has not yet been set, a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamp">timestamp</a></span> is constructed in-place from the supplied <span class="doxyComputerOutput">timespec</span> value. Subsequent calls are silently ignored, ensuring idempotent behaviour.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00260">260</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp/#l00118">118</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp">timings.cpp</a>.</p>
@@ -923,7 +923,7 @@ class micro_os_plus::micro_test_plus::timestamps { ... }
 </dl>
 
 
-<p>If the begin timestamp has not yet been set, a <span class="doxyComputerOutput">timestamp</span> is constructed in-place using the default constructor, which captures the current monotonic time. Subsequent calls are silently ignored, ensuring idempotent behaviour.</p>
+<p>If the begin timestamp has not yet been set, a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamp">timestamp</a></span> is constructed in-place using the default constructor, which captures the current monotonic time. Subsequent calls are silently ignored, ensuring idempotent behaviour.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00250">250</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp/#l00102">102</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp">timings.cpp</a>.</p>
@@ -995,7 +995,7 @@ class micro_os_plus::micro_test_plus::timestamps { ... }
 </dl>
 
 
-<p>If the end timestamp has not yet been set, a <span class="doxyComputerOutput">timestamp</span> is constructed in-place from the supplied <span class="doxyComputerOutput">timespec</span> value. Subsequent calls are silently ignored, ensuring idempotent behaviour.</p>
+<p>If the end timestamp has not yet been set, a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamp">timestamp</a></span> is constructed in-place from the supplied <span class="doxyComputerOutput">timespec</span> value. Subsequent calls are silently ignored, ensuring idempotent behaviour.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00281">281</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp/#l00151">151</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp">timings.cpp</a>.</p>
@@ -1058,7 +1058,7 @@ class micro_os_plus::micro_test_plus::timestamps { ... }
 </dl>
 
 
-<p>If the end timestamp has not yet been set, a <span class="doxyComputerOutput">timestamp</span> is constructed in-place using the default constructor, which captures the current monotonic time. Subsequent calls are silently ignored, ensuring idempotent behaviour.</p>
+<p>If the end timestamp has not yet been set, a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamp">timestamp</a></span> is constructed in-place using the default constructor, which captures the current monotonic time. Subsequent calls are silently ignored, ensuring idempotent behaviour.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h/#l00271">271</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/timings-h">timings.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp/#l00135">135</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp">timings.cpp</a>.</p>
@@ -1185,6 +1185,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

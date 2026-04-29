@@ -567,13 +567,13 @@ struct micro_os_plus::micro_test_plus::type_traits::value_base_&lt;T&gt; { ... }
 </dd>
 </dl>
 
-<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-">value_base_</a></span> struct template provides the <span class="doxyComputerOutput">T value_{}</span> member, an explicit <span class="doxyComputerOutput">operator T()</span> conversion, and a <span class="doxyComputerOutput"><a href="#aedc41334c71b7711435aee0cb8f44fb3">get()</a></span> accessor, shared by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value">genuine_integral_value</a></span>, <span class="doxyComputerOutput">value&lt;T&gt;</span>, and the floating point specialisation <span class="doxyComputerOutput">value&lt;T&gt;</span>.</p>
+<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value-base-">value_base_</a></span> struct template provides the <span class="doxyComputerOutput">T <a href="#a8f1747b0fb288001d51754dfb8c53b0e">value_</a>{}</span> member, an explicit <span class="doxyComputerOutput">operator T()</span> conversion, and a <span class="doxyComputerOutput"><a href="#aedc41334c71b7711435aee0cb8f44fb3">get()</a></span> accessor, shared by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/genuine-integral-value">genuine_integral_value</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value</a>&lt;T&gt;</span>, and the floating point specialisation <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value</a>&lt;T&gt;</span>.</p>
 
 
-<p>It inherits from <span class="doxyComputerOutput">op</span> so that all derived types satisfy the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/is-op">is_op</a></span> concept without each struct needing to inherit from <span class="doxyComputerOutput">op</span> directly.</p>
+<p>It inherits from <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">op</a></span> so that all derived types satisfy the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/is-op">is_op</a></span> concept without each struct needing to inherit from <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">op</a></span> directly.</p>
 
 
-<p>Definition at line 578 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line 508 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -601,12 +601,12 @@ struct micro_os_plus::micro_test_plus::type_traits::value_base_&lt;T&gt; { ... }
 
 <p>The type of the stored value.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00583">583</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00513">513</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a4a819c9151d37da6e8a76f4629c7cc4d">583</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a4a819c9151d37da6e8a76f4629c7cc4d">value_type</a> = T;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a4a819c9151d37da6e8a76f4629c7cc4d">513</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a4a819c9151d37da6e8a76f4629c7cc4d">value_type</a> = T;</span></span></div>
 
 </div>
 
@@ -661,14 +661,14 @@ struct micro_os_plus::micro_test_plus::type_traits::value_base_&lt;T&gt; { ... }
 </dd>
 </dl>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00590">590</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00520">520</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ab9b0e45988e4291e63d6b016c55231f7">590</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">explicit</span><span class="doxyHighlight"> <a href="#ab9b0e45988e4291e63d6b016c55231f7">value_base_</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; v) noexcept : <a href="#a8f1747b0fb288001d51754dfb8c53b0e">value_</a>{ v }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">591</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">592</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ab9b0e45988e4291e63d6b016c55231f7">520</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">explicit</span><span class="doxyHighlight"> <a href="#ab9b0e45988e4291e63d6b016c55231f7">value_base_</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; v) noexcept : <a href="#a8f1747b0fb288001d51754dfb8c53b0e">value_</a>{ v }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">521</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">522</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
 
 </div>
 
@@ -727,15 +727,15 @@ struct micro_os_plus::micro_test_plus::type_traits::value_base_&lt;T&gt; { ... }
 <p>Allows explicit conversion to the encapsulated value.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00603">603</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00533">533</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ab7f7f241b55abd7ac9e25234bbe64406">603</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlight"> T () const noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">604</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">605</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a8f1747b0fb288001d51754dfb8c53b0e">value_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">606</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ab7f7f241b55abd7ac9e25234bbe64406">533</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlight"> T () const noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">534</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">535</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a8f1747b0fb288001d51754dfb8c53b0e">value_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">536</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
 
 </div>
 
@@ -793,15 +793,15 @@ struct micro_os_plus::micro_test_plus::type_traits::value_base_&lt;T&gt; { ... }
 <p>Returns the stored value by value.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00619">619</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00549">549</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aedc41334c71b7711435aee0cb8f44fb3">619</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="#aedc41334c71b7711435aee0cb8f44fb3">get</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">620</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">621</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a8f1747b0fb288001d51754dfb8c53b0e">value_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">622</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aedc41334c71b7711435aee0cb8f44fb3">549</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="#aedc41334c71b7711435aee0cb8f44fb3">get</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">550</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">551</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a8f1747b0fb288001d51754dfb8c53b0e">value_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">552</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
 
 </div>
 
@@ -841,12 +841,12 @@ struct micro_os_plus::micro_test_plus::type_traits::value_base_&lt;T&gt; { ... }
 
 <p>The stored value.</p>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00627">627</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h/#l00557">557</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a8f1747b0fb288001d51754dfb8c53b0e">627</a></span><span class="doxyLineContent"><span class="doxyHighlight">      T <a href="#a8f1747b0fb288001d51754dfb8c53b0e">value_</a>{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a8f1747b0fb288001d51754dfb8c53b0e">557</a></span><span class="doxyLineContent"><span class="doxyHighlight">      T <a href="#a8f1747b0fb288001d51754dfb8c53b0e">value_</a>{};</span></span></div>
 
 </div>
 
@@ -868,6 +868,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

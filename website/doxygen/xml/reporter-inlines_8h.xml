@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="reporter-inlines_8h" kind="file" language="C++">
     <compoundname>reporter-inlines.h</compoundname>
     <includes local="no">cstdio</includes>
@@ -382,10 +382,10 @@
 <codeline lineno="517"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>current_test_suite-&gt;current_test_case.index++;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="519"><highlight class="normal"></highlight></codeline>
-<codeline lineno="520" refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a5617d861c48049189b6b33e36626763a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>hasExpression<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a814e7f004d5404f735737aabb90fa111" kindref="member">type_traits::is_op_v&lt;Expr_T&gt;</ref>;</highlight></codeline>
+<codeline lineno="520" refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a5617d861c48049189b6b33e36626763a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>hasExpression<sp/>=<sp/><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__op" kindref="compound">type_traits::is_op&lt;Expr_T&gt;</ref>;</highlight></codeline>
 <codeline lineno="521"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aa081a10147919931f1b0a4b41a14dfe9" kindref="member">output_fail_prefix_</ref><sp/>(message,<sp/>hasExpression,<sp/>location,<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest" kindref="compound">subtest</ref>);</highlight></codeline>
 <codeline lineno="522"><highlight class="normal"></highlight></codeline>
-<codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>(<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a814e7f004d5404f735737aabb90fa111" kindref="member">type_traits::is_op_v&lt;Expr_T&gt;</ref>)</highlight></codeline>
+<codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>(<ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__op" kindref="compound">type_traits::is_op&lt;Expr_T&gt;</ref>)</highlight></codeline>
 <codeline lineno="524"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="525"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>expr;</highlight></codeline>
 <codeline lineno="526"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>

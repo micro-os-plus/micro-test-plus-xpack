@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail" kind="namespace" language="C++">
     <compoundname>micro_os_plus::micro_test_plus::detail</compoundname>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__" prot="public">micro_os_plus::micro_test_plus::detail::and_</innerclass>
@@ -144,7 +144,7 @@
 </parameterlist>
 <simplesect kind="return"><para>The value obtained via the relevant getter implementation.</para>
 </simplesect>
-The <computeroutput>get</computeroutput> function template retrieves the value from the provided object or type. If the type provides a <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ac627271520bf2fe8a4c4774bcd9bf343" kindref="member">get()</ref></computeroutput> member function, it is invoked; otherwise the argument itself is returned unchanged.</para>
+The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ac627271520bf2fe8a4c4774bcd9bf343" kindref="member">get</ref></computeroutput> function template retrieves the value from the provided object or type. If the type provides a <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ac627271520bf2fe8a4c4774bcd9bf343" kindref="member">get()</ref></computeroutput> member function, it is invoked; otherwise the argument itself is returned unchanged.</para>
 <para>The selection is performed at compile time using <computeroutput>if constexpr</computeroutput> and an inline <computeroutput>requires</computeroutput> expression, superseding the classic two-overload SFINAE technique used prior to C++20.</para>
 <para>All definitions are intended for internal use within the framework and are implemented in the <computeroutput>include/micro-os-plus/micro-test-plus</computeroutput> folder to maintain a structured and modular codebase. </para>
         </detaileddescription>
@@ -323,9 +323,9 @@ The <computeroutput>get</computeroutput> function template retrieves the value f
 <para>Internal implementation details for the µTest++ framework. </para>
     </briefdescription>
     <detaileddescription>
-<para>The <computeroutput>detail</computeroutput> namespace encapsulates the internal mechanisms, helper structures, and implementation utilities employed by the µTest++ testing framework. These components do not form part of the public API and may be modified without prior notice.</para>
+<para>The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail" kindref="compound">detail</ref></computeroutput> namespace encapsulates the internal mechanisms, helper structures, and implementation utilities employed by the µTest++ testing framework. These components do not form part of the public API and may be modified without prior notice.</para>
 <para>Within this namespace, one will find assertion handling, generic getter utilities, comparator structures for logical and relational operations, mechanisms for exception checking, and base classes for deferred reporting of test results.</para>
-<para>All definitions within <computeroutput>detail</computeroutput> are intended exclusively for internal use, ensuring a clear distinction between user-facing and internal components. This approach enhances maintainability, mitigates the risk of naming conflicts, and keeps the public API succinct.</para>
+<para>All definitions within <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail" kindref="compound">detail</ref></computeroutput> are intended exclusively for internal use, ensuring a clear distinction between user-facing and internal components. This approach enhances maintainability, mitigates the risk of naming conflicts, and keeps the public API succinct.</para>
 <para>The relevant header files are organised within the <computeroutput>include/micro-os-plus</computeroutput> folder to maintain a structured and modular codebase. </para>
     </detaileddescription>
     <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deferred-reporter.h" line="75" column="1"/>

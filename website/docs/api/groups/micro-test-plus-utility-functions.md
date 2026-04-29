@@ -144,7 +144,7 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput">extract_file_name</span> function extracts the file name from a given file path, handling both Unix-style (<span class="doxyComputerOutput">/</span>) and Windows-style (<span class="doxyComputerOutput">\</span>) path separators. It returns a pointer to the start of the file name within the input string, or the original string if no separators are found.</p>
+<p>The <span class="doxyComputerOutput"><a href="#ga791f22f0c85b6436c9016821907b0653">extract_file_name</a></span> function extracts the file name from a given file path, handling both Unix-style (<span class="doxyComputerOutput">/</span>) and Windows-style (<span class="doxyComputerOutput">\\endiskip</span>) path separators. It returns a pointer to the start of the file name within the input string, or the original string if no separators are found.</p>
 
 
 <p>This utility is particularly useful for test reporting, allowing for concise display of file names without full paths.</p>
@@ -239,7 +239,7 @@ keywords:
 
 
 :::warning
-<p>The <span class="doxyComputerOutput">*</span> wildcard is handled via recursion with a linear loop, giving $O(2^n)$ worst-case complexity in the number of <span class="doxyComputerOutput">*</span> wildcards (e.g. a pattern such as <span class="doxyComputerOutput">"a*a*a*b"</span> against a long string of ‘'a`` characters). For the typical short suite-name patterns used in a test framework this is not a concern, but callers should avoid patterns with many consecutive wildcards against long input strings.</p>
+<p>The <span class="doxyComputerOutput">*</span> wildcard is handled via recursion with a linear loop, giving $O(2^n)$ worst-case complexity in the number of <span class="doxyComputerOutput">*</span> wildcards (e.g. a pattern such as <span class="doxyComputerOutput">"a*a*a*b"</span> against a long string of <span class="doxyComputerOutput">'a'</span> characters). For the typical short suite-name patterns used in a test framework this is not a concern, but callers should avoid patterns with many consecutive wildcards against long input strings.</p>
 :::
 
 
@@ -368,7 +368,7 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput">mut</span> function template provides a safe and generic mechanism to remove the <span class="doxyComputerOutput">const</span> qualifier from any type. It returns a non-const reference to the input object, enabling modification of objects that were originally declared as <span class="doxyComputerOutput">const</span>. This utility is particularly useful in testing scenarios where controlled mutation of test data is required.</p>
+<p>The <span class="doxyComputerOutput"><a href="#ga00ea8f3dfb7cb0ef39919065321cf62f">mut</a></span> function template provides a safe and generic mechanism to remove the <span class="doxyComputerOutput">const</span> qualifier from any type. It returns a non-const reference to the input object, enabling modification of objects that were originally declared as <span class="doxyComputerOutput">const</span>. This utility is particularly useful in testing scenarios where controlled mutation of test data is required.</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00384">384</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
@@ -505,6 +505,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

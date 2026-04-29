@@ -140,7 +140,7 @@ class micro_os_plus::micro_test_plus::detail::deferred_reporter_base { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base">deferred_reporter_base</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#abd34896d8d956db7223829bcbf9efb04">deferred_reporter_base</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aef0485fd5cb77a9c6b171c04e597bdbf">operator=</a> (const deferred_reporter_base &amp;)=delete</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -154,7 +154,7 @@ class micro_os_plus::micro_test_plus::detail::deferred_reporter_base { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base">deferred_reporter_base</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#abd34896d8d956db7223829bcbf9efb04">deferred_reporter_base</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a08910483a88514bd3fc05eb63a5043b6">operator=</a> (deferred_reporter_base &amp;&amp;)=delete</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -362,7 +362,7 @@ class micro_os_plus::micro_test_plus::detail::deferred_reporter_base { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::deferred_reporter_base (const <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base">deferred_reporter_base</a> &amp;)</td>
+<td class="doxyMemberName">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::deferred_reporter_base (const deferred_reporter_base &amp;)</td>
 </tr>
 </table>
 </td>
@@ -395,7 +395,7 @@ class micro_os_plus::micro_test_plus::detail::deferred_reporter_base { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::deferred_reporter_base (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base">deferred_reporter_base</a> &amp;&amp;)</td>
+<td class="doxyMemberName">micro_os_plus::micro_test_plus::detail::deferred_reporter_base::deferred_reporter_base (deferred_reporter_base &amp;&amp;)</td>
 </tr>
 </table>
 </td>
@@ -607,7 +607,7 @@ class micro_os_plus::micro_test_plus::detail::deferred_reporter_base { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">deferred_reporter_base &amp; micro_os_plus::micro_test_plus::detail::deferred_reporter_base::operator= (const <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base">deferred_reporter_base</a> &amp;)</td>
+<td class="doxyMemberName">deferred_reporter_base &amp; micro_os_plus::micro_test_plus::detail::deferred_reporter_base::operator= (const <a href="#abd34896d8d956db7223829bcbf9efb04">deferred_reporter_base</a> &amp;)</td>
 </tr>
 </table>
 </td>
@@ -640,7 +640,7 @@ class micro_os_plus::micro_test_plus::detail::deferred_reporter_base { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">deferred_reporter_base &amp; micro_os_plus::micro_test_plus::detail::deferred_reporter_base::operator= (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter-base">deferred_reporter_base</a> &amp;&amp;)</td>
+<td class="doxyMemberName">deferred_reporter_base &amp; micro_os_plus::micro_test_plus::detail::deferred_reporter_base::operator= (<a href="#abd34896d8d956db7223829bcbf9efb04">deferred_reporter_base</a> &amp;&amp;)</td>
 </tr>
 </table>
 </td>
@@ -963,6 +963,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

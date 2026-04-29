@@ -1145,7 +1145,7 @@ keywords:
 <p>The µTest++ framework provides a set of literal operators and wrappers to facilitate the creation of strongly typed operands within test expressions. These features enable developers to write clear and type-safe comparisons, improving both readability and correctness in test cases.</p>
 
 
-<p>Literal operators, available in the dedicated <span class="doxyComputerOutput">literals</span> namespace, allow constants to be expressed with explicit types, such as integers and floating-point values. For dynamic values, wrappers are provided to convert them into recognised types at run-time.</p>
+<p>Literal operators, available in the dedicated <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/literals">literals</a></span> namespace, allow constants to be expressed with explicit types, such as integers and floating-point values. For dynamic values, wrappers are provided to convert them into recognised types at run-time.</p>
 
 
 <p>This approach ensures that both compile-time constants and run-time values can be compared accurately and expressively, supporting robust and maintainable test code.</p>
@@ -4885,6 +4885,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

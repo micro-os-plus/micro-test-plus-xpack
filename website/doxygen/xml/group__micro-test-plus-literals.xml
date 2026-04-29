@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="group__micro-test-plus-literals" kind="group">
     <compoundname>micro-test-plus-literals</compoundname>
     <title>Literals and Wrappers</title>
@@ -865,7 +865,7 @@ Constructs an <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="651" column="24" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="651" bodyend="653"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a69374f408449c08c756896dd26d2d437" compoundref="type-traits_8h" startline="871" endline="874">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::value</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a69374f408449c08c756896dd26d2d437" compoundref="type-traits_8h" startline="801" endline="804">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::value</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1gaad9720f2d1e443d77cdfd1eb1151e924" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -895,7 +895,7 @@ Constructs a <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__p
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" line="893" column="24" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/literals.h" bodystart="893" bodyend="895"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a69374f408449c08c756896dd26d2d437" compoundref="type-traits_8h" startline="871" endline="874">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::value</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a69374f408449c08c756896dd26d2d437" compoundref="type-traits_8h" startline="801" endline="804">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::value</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-literals_1gaa2bfc74376f8c110053bfa6e06e40772" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>auto</type>
@@ -916,7 +916,7 @@ Constructs a <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__p
         </briefdescription>
         <detaileddescription>
 <para>This user-defined literal operator enables the creation of strongly-typed boolean constants from character sequences at compile time.</para>
-<para>The operator is particularly useful in test expressions, allowing string literals to be suffixed with <computeroutput><ref refid="group__micro-test-plus-literals_1ga74e6e2bffc2fc2dea47f979b5b55ea64" kindref="member">_b</ref></computeroutput> (for example, <computeroutput>&quot;feature_enabled&quot;<ref refid="group__micro-test-plus-literals_1ga74e6e2bffc2fc2dea47f979b5b55ea64" kindref="member">_b</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
+<para>The operator is particularly useful in test expressions, allowing string literals to be suffixed with <computeroutput><ref refid="group__micro-test-plus-literals_1ga74e6e2bffc2fc2dea47f979b5b55ea64" kindref="member">_b</ref></computeroutput> (for example, <computeroutput>"feature_enabled"<ref refid="group__micro-test-plus-literals_1ga74e6e2bffc2fc2dea47f979b5b55ea64" kindref="member">_b</ref></computeroutput>) to produce a type-safe value that integrates seamlessly with the µTest++ comparators and reporting mechanisms.</para>
 <para>The returned type is a lightweight wrapper that behaves as a <computeroutput>bool</computeroutput> and supports equality comparison with both other named instances and boolean values. This operator is intended to facilitate expressive and type-safe test conditions.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -1784,7 +1784,7 @@ Returns the value of the boolean operand, allowing the named literal to be compa
     </briefdescription>
     <detaileddescription>
 <para>The µTest++ framework provides a set of literal operators and wrappers to facilitate the creation of strongly typed operands within test expressions. These features enable developers to write clear and type-safe comparisons, improving both readability and correctness in test cases.</para>
-<para>Literal operators, available in the dedicated <computeroutput>literals</computeroutput> namespace, allow constants to be expressed with explicit types, such as integers and floating-point values. For dynamic values, wrappers are provided to convert them into recognised types at run-time.</para>
+<para>Literal operators, available in the dedicated <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1literals" kindref="compound">literals</ref></computeroutput> namespace, allow constants to be expressed with explicit types, such as integers and floating-point values. For dynamic values, wrappers are provided to convert them into recognised types at run-time.</para>
 <para>This approach ensures that both compile-time constants and run-time values can be compared accurately and expressively, supporting robust and maintainable test code.</para>
 <para><simplesect kind="par"><title>Examples</title><para></para>
 </simplesect>

@@ -41,23 +41,6 @@ keywords:
 </tr>
 
 <tr class="doxyMemberIndexTemplate">
-<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Exception_T, class Callable_T&gt;</div></td>
-</tr>
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#gaf8f7602f40119da514be2a0bfc4b70f5">throws</a> (const Callable_T &amp;func)</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Check if a callable throws a specific exception. <a href="#gaf8f7602f40119da514be2a0bfc4b70f5">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexTemplate">
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Callable_T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
@@ -68,6 +51,23 @@ keywords:
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
 <p>Check if a callable throws an exception (any exception). <a href="#ga8bf54756e4122c6a0bd123b4621e60e2">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexTemplate">
+<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Exception_T, class Callable_T&gt;</div></td>
+</tr>
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#gaf8f7602f40119da514be2a0bfc4b70f5">throws</a> (const Callable_T &amp;func)</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Check if a callable throws a specific exception. <a href="#gaf8f7602f40119da514be2a0bfc4b70f5">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -199,7 +199,7 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput">nothrow</span> function template verifies whether invoking the provided callable object does not result in the throwing of any exception within the µTest++ framework. This is useful for testing exception safety and ensuring that code under test does not unexpectedly signal error conditions.</p>
+<p>The <span class="doxyComputerOutput"><a href="#ga798bd28001c3938784073e60dd904148">nothrow</a></span> function template verifies whether invoking the provided callable object does not result in the throwing of any exception within the µTest++ framework. This is useful for testing exception safety and ensuring that code under test does not unexpectedly signal error conditions.</p>
 
 
 <p>The function returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes.</p>
@@ -214,6 +214,85 @@ keywords:
 <div class="doxyCodeLine"><span class="doxyLineNumber">365</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">366</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/nothrow-">detail::nothrow_&lt;Callable_T&gt;</a>{ func };</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">367</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+
+</div>
+
+</div>
+</div>
+
+### throws() {#ga8bf54756e4122c6a0bd123b4621e60e2}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<div class="doxyMemberTemplate">template &lt;class Callable_T&gt;</div>
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::throws (const Callable_T &amp; func)</td>
+</tr>
+</table>
+</td>
+<td class="doxyMemberLabelsRight">
+<span class="doxyMemberLabels">
+<span class="doxyMemberLabel nodiscard">nodiscard</span>
+<span class="doxyMemberLabel constexpr">constexpr</span>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Check if a callable throws an exception (any exception).</p>
+
+
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Template Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">Callable_T</td>
+<td class="doxyParamItemDescription"><p>The type of the callable object to be invoked.</p></td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">[in] func</td>
+<td class="doxyParamItemDescription"><p>The callable object to check for exception throwing behaviour.</p></td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<dl class="doxySectionUser">
+<dt>Returns</dt>
+<dd><p>An output stream to write optional messages.</p></dd>
+</dl>
+
+
+<p>The <span class="doxyComputerOutput"><a href="#gaf8f7602f40119da514be2a0bfc4b70f5">throws</a></span> function template verifies whether invoking the provided callable object results in the throwing of any exception within the µTest++ framework. This is useful for testing general exception safety and ensuring that code under test properly signals error conditions.</p>
+
+
+<p>The function returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes.</p>
+
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00346">346</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga8bf54756e4122c6a0bd123b4621e60e2">346</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">throws</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Callable_T&amp; func)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">347</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">348</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-">detail::throws_&lt;Callable_T&gt;</a>{ func };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">349</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -282,7 +361,7 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput">throws</span> function template verifies whether invoking the provided callable object results in the throwing of a specific exception type within the µTest++ framework. This is useful for testing error handling and exception safety in code under test.</p>
+<p>The <span class="doxyComputerOutput"><a href="#gaf8f7602f40119da514be2a0bfc4b70f5">throws</a></span> function template verifies whether invoking the provided callable object results in the throwing of a specific exception type within the µTest++ framework. This is useful for testing error handling and exception safety in code under test.</p>
 
 
 <p>The function returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes.</p>
@@ -303,89 +382,10 @@ keywords:
 </div>
 </div>
 
-### throws() {#ga8bf54756e4122c6a0bd123b4621e60e2}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<div class="doxyMemberTemplate">template &lt;class Callable_T&gt;</div>
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">auto micro_os_plus::micro_test_plus::throws (const Callable_T &amp; func)</td>
-</tr>
-</table>
-</td>
-<td class="doxyMemberLabelsRight">
-<span class="doxyMemberLabels">
-<span class="doxyMemberLabel nodiscard">nodiscard</span>
-<span class="doxyMemberLabel constexpr">constexpr</span>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Check if a callable throws an exception (any exception).</p>
-
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Template Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">Callable_T</td>
-<td class="doxyParamItemDescription"><p>The type of the callable object to be invoked.</p></td>
-</tr>
-</table>
-</dd>
-</dl>
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">[in] func</td>
-<td class="doxyParamItemDescription"><p>The callable object to check for exception throwing behaviour.</p></td>
-</tr>
-</table>
-</dd>
-</dl>
-
-<dl class="doxySectionUser">
-<dt>Returns</dt>
-<dd><p>An output stream to write optional messages.</p></dd>
-</dl>
-
-
-<p>The <span class="doxyComputerOutput">throws</span> function template verifies whether invoking the provided callable object results in the throwing of any exception within the µTest++ framework. This is useful for testing general exception safety and ensuring that code under test properly signals error conditions.</p>
-
-
-<p>The function returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes.</p>
-
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00346">346</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga8bf54756e4122c6a0bd123b4621e60e2">346</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">throws</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Callable_T&amp; func)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">347</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">348</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-">detail::throws_&lt;Callable_T&gt;</a>{ func };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">349</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

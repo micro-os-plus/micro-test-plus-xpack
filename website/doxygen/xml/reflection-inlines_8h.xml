@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="reflection-inlines_8h" kind="file" language="C++">
     <compoundname>reflection-inlines.h</compoundname>
     <includes local="no">cstdint</includes>
@@ -112,8 +112,8 @@
 <para>This function template parses the compiler-specific <computeroutput>__PRETTY_FUNCTION__</computeroutput> macro to extract a concise type name for the template parameter <computeroutput>T</computeroutput>.</para>
 <para>Rather than relying on fixed character offsets (which are fragile across compiler versions and namespace changes), the implementation searches for well-known marker characters in the function signature string:</para>
 <para><itemizedlist>
-<listitem><para>Clang formats the signature as <computeroutput>&quot;... [T = &lt;typename&gt;]&quot;</computeroutput>, so the type name lies between the last <lsquo/><rsquo/>[&apos;<computeroutput> (skipping </computeroutput>&quot;[T = &quot;<computeroutput>) and the last </computeroutput>&apos;]&apos;<computeroutput>.</computeroutput></para>
-</listitem><listitem><para><computeroutput>GCC formats the signature as </computeroutput>&quot;... [with T = &lt;typename&gt;]&quot;<computeroutput>, so the type name lies between the last </computeroutput>&apos;=&apos;<computeroutput> (skipping the trailing space) and the last </computeroutput>&apos;]&apos;`.</para>
+<listitem><para>Clang formats the signature as <computeroutput>"... [T = &lt;typename&gt;]"</computeroutput>, so the type name lies between the last <computeroutput>&apos;[&apos;</computeroutput> (skipping <computeroutput>"[T = "</computeroutput>) and the last <computeroutput>&apos;]&apos;</computeroutput>.</para>
+</listitem><listitem><para>GCC formats the signature as <computeroutput>"... [with T = &lt;typename&gt;]"</computeroutput>, so the type name lies between the last <computeroutput>&apos;=&apos;</computeroutput> (skipping the trailing space) and the last <computeroutput>&apos;]&apos;</computeroutput>.</para>
 </listitem></itemizedlist>
 </para>
 <para>This approach is resilient to namespace renaming, namespace nesting changes, and compiler format updates.</para>

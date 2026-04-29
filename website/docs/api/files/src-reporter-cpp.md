@@ -127,7 +127,7 @@ keywords:
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
 <td class="doxyParamItemName">stream</td>
-<td class="doxyParamItemDescription"><p>Reference to the <span class="doxyComputerOutput">reporter</span> instance.</p></td>
+<td class="doxyParamItemDescription"><p>Reference to the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> instance.</p></td>
 </tr>
 </table>
 </dd>
@@ -135,11 +135,11 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>Reference to the same <span class="doxyComputerOutput">reporter</span> instance, enabling chaining of output operations.</p></dd>
+<dd><p>Reference to the same <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> instance, enabling chaining of output operations.</p></dd>
 </dl>
 
 
-<p>The <span class="doxyComputerOutput">endl</span> function inserts a newline character into the specified <span class="doxyComputerOutput">reporter</span> stream and flushes its output buffer. This operation ensures that each test output line is clearly separated and immediately visible, facilitating the readability and clarity of test results across all test cases and folders within the µTest++ framework.</p>
+<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#accd8ecc7473b09af578daa31bb8780eb">endl</a></span> function inserts a newline character into the specified <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> stream and flushes its output buffer. This operation ensures that each test output line is clearly separated and immediately visible, facilitating the readability and clarity of test results across all test cases and folders within the µTest++ framework.</p>
 
 
 <p>Definition at line <a href="#l00206">206</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
@@ -613,6 +613,6 @@ The file content with the documentation metadata removed is:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -10,9 +10,7 @@ var searchData=
   ['indent_5ft_7',['indent_t',['../structmicro__os__plus_1_1micro__test__plus_1_1indent__t.html',1,'micro_os_plus::micro_test_plus']]],
   ['initialise_8',['initialise',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#ab6420151930179564274c39ef738ea79',1,'micro_os_plus::micro_test_plus::runner']]],
   ['integral_5fconstant_9',['integral_constant',['../structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html',1,'micro_os_plus::micro_test_plus::type_traits::integral_constant&lt; N &gt;'],['../structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html#aa9f1e68b760d80aea085d684b2dccc4f',1,'micro_os_plus::micro_test_plus::type_traits::integral_constant::integral_constant()']]],
-  ['is_5fcontainer_5fv_10',['is_container_v',['../namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#a8361ab7ff9d9c6343d97a99bdcb9feb2',1,'micro_os_plus::micro_test_plus::type_traits']]],
-  ['is_5ffloating_5fpoint_11',['is_floating_point',['../conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__floating__point.html',1,'micro_os_plus::micro_test_plus::type_traits']]],
-  ['is_5fmatch_12',['is_match',['../group__micro-test-plus-utility-functions.html#gaa2f0f4cff320a783ad2347c9ff3fc731',1,'micro_os_plus::micro_test_plus::utility']]],
-  ['is_5fop_13',['is_op',['../conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__op.html',1,'micro_os_plus::micro_test_plus::type_traits']]],
-  ['is_5fop_5fv_14',['is_op_v',['../namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#a814e7f004d5404f735737aabb90fa111',1,'micro_os_plus::micro_test_plus::type_traits']]]
+  ['is_5ffloating_5fpoint_10',['is_floating_point',['../conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__floating__point.html',1,'micro_os_plus::micro_test_plus::type_traits']]],
+  ['is_5fmatch_11',['is_match',['../group__micro-test-plus-utility-functions.html#gaa2f0f4cff320a783ad2347c9ff3fc731',1,'micro_os_plus::micro_test_plus::utility']]],
+  ['is_5fop_12',['is_op',['../conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__op.html',1,'micro_os_plus::micro_test_plus::type_traits']]]
 ];

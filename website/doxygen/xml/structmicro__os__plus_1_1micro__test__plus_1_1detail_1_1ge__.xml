@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ge__" kind="struct" language="C++" prot="public">
     <compoundname>micro_os_plus::micro_test_plus::detail::ge_</compoundname>
     <basecompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op__" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::detail::binary_op_&lt; Lhs_T, Rhs_T &gt;</basecompoundref>

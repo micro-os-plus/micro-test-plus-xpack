@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="operators_8h" kind="file" language="C++">
     <compoundname>operators.h</compoundname>
     <includes local="no">string_view</includes>
@@ -111,13 +111,13 @@
       <member refid="group__micro-test-plus-operators_1gaa188c33047f559e28dc95dbb465e19a8" kind="function"><name>operator and</name></member>
       <member refid="group__micro-test-plus-operators_1ga00db5f149865ed9fd8d73f2db44542b0" kind="function"><name>operator not</name></member>
       <member refid="group__micro-test-plus-operators_1ga0fe9ef52ecfb0de402da9e7454d7c20b" kind="function"><name>operator or</name></member>
-      <member refid="group__micro-test-plus-container-operators_1gac2449b2b9f07c550b1218456ba1da2db" kind="function"><name>operator!=</name></member>
       <member refid="group__micro-test-plus-operators_1ga445025eccd3ef529af191aab5aad91a9" kind="function"><name>operator!=</name></member>
+      <member refid="group__micro-test-plus-container-operators_1gac2449b2b9f07c550b1218456ba1da2db" kind="function"><name>operator!=</name></member>
       <member refid="group__micro-test-plus-string-operators_1ga179e971d5e37795c036ad66aa35f1654" kind="function"><name>operator!=</name></member>
       <member refid="group__micro-test-plus-operators_1ga675d31a23d8f0dfed775466ef1463a80" kind="function"><name>operator&lt;</name></member>
       <member refid="group__micro-test-plus-operators_1ga15235adceff30c6e3aa382696aea23cb" kind="function"><name>operator&lt;=</name></member>
-      <member refid="group__micro-test-plus-container-operators_1gab8c44f8115524296fbaf21688dd7f389" kind="function"><name>operator==</name></member>
       <member refid="group__micro-test-plus-operators_1gaae177a6c59286d4d7e4f85ffa6579e56" kind="function"><name>operator==</name></member>
+      <member refid="group__micro-test-plus-container-operators_1gab8c44f8115524296fbaf21688dd7f389" kind="function"><name>operator==</name></member>
       <member refid="group__micro-test-plus-string-operators_1gaabe34a842bf38ea2913a4164d2b0a9cb" kind="function"><name>operator==</name></member>
       <member refid="group__micro-test-plus-operators_1gac0afc8d658f73e3b5f136a5c60d1fbd1" kind="function"><name>operator&gt;</name></member>
       <member refid="group__micro-test-plus-operators_1gabfc165fd00e9f53bbf7b63f71b9d5020" kind="function"><name>operator&gt;=</name></member>

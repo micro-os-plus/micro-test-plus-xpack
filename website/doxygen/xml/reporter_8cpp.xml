@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="reporter_8cpp" kind="file" language="C++">
     <compoundname>reporter.cpp</compoundname>
     <includes refid="micro-test-plus_8h" local="no">micro-os-plus/micro-test-plus.h</includes>
@@ -335,22 +335,22 @@
 <parametername>stream</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Reference to the <computeroutput>reporter</computeroutput> instance. </para>
+<para>Reference to the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput> instance. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>Reference to the same <computeroutput>reporter</computeroutput> instance, enabling chaining of output operations.</para>
+<simplesect kind="return"><para>Reference to the same <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput> instance, enabling chaining of output operations.</para>
 </simplesect>
-The <computeroutput>endl</computeroutput> function inserts a newline character into the specified <computeroutput>reporter</computeroutput> stream and flushes its output buffer. This operation ensures that each test output line is clearly separated and immediately visible, facilitating the readability and clarity of test results across all test cases and folders within the µTest++ framework. </para>
+The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1accd8ecc7473b09af578daa31bb8780eb" kindref="member">endl</ref></computeroutput> function inserts a newline character into the specified <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput> stream and flushes its output buffer. This operation ensures that each test output line is clearly separated and immediately visible, facilitating the readability and clarity of test results across all test cases and folders within the µTest++ framework. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter.cpp" line="206" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter.cpp" bodystart="206" bodyend="210" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" declline="159" declcolumn="3"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aee6d8d387798abd0d94052b1cf8987c4" compoundref="reporter_8cpp" startline="221" endline="225">micro_os_plus::micro_test_plus::reporter::endline</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a8caeeaad1fa7b6b7c5118d43517d1cb8" compoundref="reporter-tap_8cpp" startline="716" endline="739">micro_os_plus::micro_test_plus::reporter_tap::output_fail_prefix_</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aef7c1d0436d63165f94245bf16c69f6a" compoundref="reporter-human_8cpp" startline="798" endline="810">micro_os_plus::micro_test_plus::reporter_human::output_fail_suffix_</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aef7c1d0436d63165f94245bf16c69f6a" compoundref="reporter-human_8cpp" startline="805" endline="817">micro_os_plus::micro_test_plus::reporter_human::output_fail_suffix_</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a951a2aa4cb5300a7706709a2336651a8" compoundref="reporter-tap_8cpp" startline="751" endline="777">micro_os_plus::micro_test_plus::reporter_tap::output_fail_suffix_</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac5713ce51eb50a6841879b1c7d00c234" compoundref="reporter-human_8cpp" startline="730" endline="735">micro_os_plus::micro_test_plus::reporter_human::output_pass_suffix_</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac5713ce51eb50a6841879b1c7d00c234" compoundref="reporter-human_8cpp" startline="737" endline="742">micro_os_plus::micro_test_plus::reporter_human::output_pass_suffix_</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1ac46a89737874c4f864a98b91d8c57ecd" compoundref="reporter-tap_8cpp" startline="697" endline="702">micro_os_plus::micro_test_plus::reporter_tap::output_pass_suffix_</referencedby>
       </memberdef>
     </sectiondef>

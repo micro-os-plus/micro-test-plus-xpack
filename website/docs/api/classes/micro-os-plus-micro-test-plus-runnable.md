@@ -135,7 +135,7 @@ class micro_os_plus::micro_test_plus::runnable&lt;Self_T&gt; { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;typename Self_T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runnable">runnable</a> &amp;</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="#a73dd7004e232436a02c58a3bbd2b2847">runnable</a> &amp;</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a33d1cd5b24f71bc84712141755cf7f32">operator=</a> (const runnable &amp;)=delete</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -152,7 +152,7 @@ class micro_os_plus::micro_test_plus::runnable&lt;Self_T&gt; { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;typename Self_T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runnable">runnable</a> &amp;</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="#a73dd7004e232436a02c58a3bbd2b2847">runnable</a> &amp;</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a70c0342c3bdd2757545f13a1a2b823c9">operator=</a> (runnable &amp;&amp;)=delete</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -294,7 +294,7 @@ class micro_os_plus::micro_test_plus::runnable&lt;Self_T&gt; { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;typename Self_T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">class reporter &amp;</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runnable-base/#ab6c3fd1cbf63d1b6a680845bf4bab9d3">reporter</a> (void) const noexcept</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -328,7 +328,7 @@ class micro_os_plus::micro_test_plus::runnable&lt;Self_T&gt; { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;typename Self_T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a> &amp;</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">class runner &amp;</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runnable-base/#ad4c83336f594d8549b4ac233c184995b">runner</a> (void) const noexcept</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -559,7 +559,7 @@ class micro_os_plus::micro_test_plus::runnable&lt;Self_T&gt; { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">micro_os_plus::micro_test_plus::runnable&lt; Self_T &gt;::runnable (const char * name, class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a> &amp; runner, size_t own_index, Callable_T &amp;&amp; callable, Args_T &amp;&amp;... arguments)</td>
+<td class="doxyMemberName">micro_os_plus::micro_test_plus::runnable&lt; Self_T &gt;::runnable (const char * name, class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runnable-base/#ad4c83336f594d8549b4ac233c184995b">runner</a> &amp; runner, size_t own_index, Callable_T &amp;&amp; callable, Args_T &amp;&amp;... arguments)</td>
 </tr>
 </table>
 </td>
@@ -618,7 +618,7 @@ class micro_os_plus::micro_test_plus::runnable&lt;Self_T&gt; { ... }
 <p>The rule of five is enforced to prevent accidental copying or moving.</p>
 
 
-<p>Binds the callable and its arguments into the stored <span class="doxyComputerOutput">callable_</span> function object. When <span class="doxyComputerOutput"><a href="#aa8fee7ab95580624f262c99827cb7efc">run()</a></span> is called, the stored function is invoked with a reference to the derived <span class="doxyComputerOutput">Self_T</span> instance as its first argument, followed by the bound arguments.</p>
+<p>Binds the callable and its arguments into the stored <span class="doxyComputerOutput"><a href="#aae29fd05e5a256964d9f42965ed1bf23">callable_</a></span> function object. When <span class="doxyComputerOutput"><a href="#aa8fee7ab95580624f262c99827cb7efc">run()</a></span> is called, the stored function is invoked with a reference to the derived <span class="doxyComputerOutput">Self_T</span> instance as its first argument, followed by the bound arguments.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00455">455</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00085">85</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
@@ -682,7 +682,7 @@ class micro_os_plus::micro_test_plus::runnable&lt;Self_T&gt; { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">micro_os_plus::micro_test_plus::runnable&lt; Self_T &gt;::runnable (const <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runnable">runnable</a> &amp;)</td>
+<td class="doxyMemberName">micro_os_plus::micro_test_plus::runnable&lt; Self_T &gt;::runnable (const runnable &amp;)</td>
 </tr>
 </table>
 </td>
@@ -716,7 +716,7 @@ class micro_os_plus::micro_test_plus::runnable&lt;Self_T&gt; { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">micro_os_plus::micro_test_plus::runnable&lt; Self_T &gt;::runnable (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runnable">runnable</a> &amp;&amp;)</td>
+<td class="doxyMemberName">micro_os_plus::micro_test_plus::runnable&lt; Self_T &gt;::runnable (runnable &amp;&amp;)</td>
 </tr>
 </table>
 </td>
@@ -822,7 +822,7 @@ class micro_os_plus::micro_test_plus::runnable&lt;Self_T&gt; { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">runnable &amp; micro_os_plus::micro_test_plus::runnable&lt; Self_T &gt;::operator= (const <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runnable">runnable</a> &amp;)</td>
+<td class="doxyMemberName">runnable &amp; micro_os_plus::micro_test_plus::runnable&lt; Self_T &gt;::operator= (const <a href="#a73dd7004e232436a02c58a3bbd2b2847">runnable</a> &amp;)</td>
 </tr>
 </table>
 </td>
@@ -856,7 +856,7 @@ class micro_os_plus::micro_test_plus::runnable&lt;Self_T&gt; { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">runnable &amp; micro_os_plus::micro_test_plus::runnable&lt; Self_T &gt;::operator= (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runnable">runnable</a> &amp;&amp;)</td>
+<td class="doxyMemberName">runnable &amp; micro_os_plus::micro_test_plus::runnable&lt; Self_T &gt;::operator= (<a href="#a73dd7004e232436a02c58a3bbd2b2847">runnable</a> &amp;&amp;)</td>
 </tr>
 </table>
 </td>
@@ -926,7 +926,7 @@ class micro_os_plus::micro_test_plus::runnable&lt;Self_T&gt; { ... }
 </dl>
 
 
-<p>Delegates immediately to <span class="doxyComputerOutput">runner_.abort()</span>, passing the supplied source location so that the error message identifies the call site before the process is terminated via <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runnable-base/#a08921ea05d769a210cfec4326f1505a9">abort()</a></span>.</p>
+<p>Delegates immediately to <span class="doxyComputerOutput">runner_.abort()</span>, passing the supplied source location so that the error message identifies the call site before the process is terminated via <span class="doxyComputerOutput">::abort()</span>.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00360">360</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-cpp/#l00193">193</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-cpp">test.cpp</a>.</p>
@@ -1099,7 +1099,7 @@ class micro_os_plus::micro_test_plus::runnable&lt;Self_T&gt; { ... }
 <p>Increments and returns the child subtest sequential index.</p>
 
 
-<p>Each call to <span class="doxyComputerOutput">test()</span> invokes this method before constructing the new <span class="doxyComputerOutput">subtest</span>, so the index values form a strictly increasing, one-based sequence.</p>
+<p>Each call to <span class="doxyComputerOutput">test()</span> invokes this method before constructing the new <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/subtest">subtest</a></span>, so the index values form a strictly increasing, one-based sequence.</p>
 
 
 <dl class="doxySectionUser">
@@ -1648,11 +1648,11 @@ class micro_os_plus::micro_test_plus::runnable&lt;Self_T&gt; { ... }
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
 <td class="doxyParamItemName">child_test</td>
-<td class="doxyParamItemDescription"><p>Owning pointer to the newly created <span class="doxyComputerOutput">subtest</span>.</p></td>
+<td class="doxyParamItemDescription"><p>Owning pointer to the newly created <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/subtest">subtest</a></span>.</p></td>
 </tr>
 <tr class="doxyParamItem">
 <td class="doxyParamItemName">suite</td>
-<td class="doxyParamItemDescription"><p>The parent <span class="doxyComputerOutput">suite</span> to which execution results are reported.</p></td>
+<td class="doxyParamItemDescription"><p>The parent <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite">suite</a></span> to which execution results are reported.</p></td>
 </tr>
 </table>
 </dd>
@@ -1664,7 +1664,7 @@ class micro_os_plus::micro_test_plus::runnable&lt;Self_T&gt; { ... }
 </dl>
 
 
-<p>Transfers ownership of <span class="doxyComputerOutput">child_test</span> into <span class="doxyComputerOutput">children_subtests_</span> and immediately invokes <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/subtest/#aa7bff3af9ebff14c45838991ed848c33">subtest::run()</a></span> on the newly stored subtest. The parent's executed-subtest counter is then incremented. The child's check counters are intentionally not merged into the parent totals; each subtest reports only its own counters. The child's totals are, however, accumulated into <span class="doxyComputerOutput">suite</span> so that the suite summary reflects all checks performed by its subtests.</p>
+<p>Transfers ownership of <span class="doxyComputerOutput">child_test</span> into <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runnable-base/#aef505faea997f1687eb23f0b2ce4f664">children_subtests_</a></span> and immediately invokes <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/subtest/#aa7bff3af9ebff14c45838991ed848c33">subtest::run()</a></span> on the newly stored subtest. The parent's executed-subtest counter is then incremented. The child's check counters are intentionally not merged into the parent totals; each subtest reports only its own counters. The child's totals are, however, accumulated into <span class="doxyComputerOutput">suite</span> so that the suite summary reflects all checks performed by its subtests.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00387">387</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/test-cpp/#l00209">209</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/test-cpp">test.cpp</a>.</p>
@@ -1802,7 +1802,7 @@ class micro_os_plus::micro_test_plus::runnable&lt;Self_T&gt; { ... }
 <p>Owning collection of direct child subtests.</p>
 
 
-<p>Each call to <span class="doxyComputerOutput">test()</span> appends a new <span class="doxyComputerOutput">subtest</span> to this vector and runs it immediately. The vector retains ownership for the lifetime of the parent runnable.</p>
+<p>Each call to <span class="doxyComputerOutput">test()</span> appends a new <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/subtest">subtest</a></span> to this vector and runs it immediately. The vector retains ownership for the lifetime of the parent runnable.</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00420">420</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>.</p>
@@ -2050,6 +2050,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

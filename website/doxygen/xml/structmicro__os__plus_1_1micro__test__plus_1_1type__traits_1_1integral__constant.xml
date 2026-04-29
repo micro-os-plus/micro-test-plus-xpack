@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant" kind="struct" language="C++" prot="public">
     <compoundname>micro_os_plus::micro_test_plus::type_traits::integral_constant</compoundname>
     <basecompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::type_traits::value_base_&lt; decltype(N)&gt;</basecompoundref>
@@ -26,7 +26,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="654" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="654" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="584" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="584" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -43,9 +43,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="659" column="17" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="659" bodyend="661"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1ab9b0e45988e4291e63d6b016c55231f7" compoundref="type-traits_8h" startline="590" endline="592">micro_os_plus::micro_test_plus::type_traits::value_base_&lt; decltype(N)&gt;::value_base_</references>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant_1afe9d8229d9f706703eeafae51fc69335" compoundref="type-traits_8h" startline="673" endline="676">micro_os_plus::micro_test_plus::type_traits::integral_constant&lt; N &gt;::operator-</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="589" column="17" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="589" bodyend="591"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1ab9b0e45988e4291e63d6b016c55231f7" compoundref="type-traits_8h" startline="520" endline="522">micro_os_plus::micro_test_plus::type_traits::value_base_&lt; decltype(N)&gt;::value_base_</references>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant_1afe9d8229d9f706703eeafae51fc69335" compoundref="type-traits_8h" startline="603" endline="606">micro_os_plus::micro_test_plus::type_traits::integral_constant&lt; N &gt;::operator-</referencedby>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1aedc41334c71b7711435aee0cb8f44fb3" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>decltype(N)</type>
@@ -68,7 +68,7 @@ Returns the stored value by value. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="619" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="619" bodyend="622"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="549" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="549" bodyend="552"/>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1ab7f7f241b55abd7ac9e25234bbe64406" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -86,7 +86,7 @@ Allows explicit conversion to the encapsulated value. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="603" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="603" bodyend="606"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="533" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="533" bodyend="536"/>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant_1afe9d8229d9f706703eeafae51fc69335" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>auto</type>
@@ -104,8 +104,8 @@ Returns a new <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="673" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="673" bodyend="676"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant_1aa9f1e68b760d80aea085d684b2dccc4f" compoundref="type-traits_8h" startline="659" endline="661">micro_os_plus::micro_test_plus::type_traits::integral_constant&lt; N &gt;::integral_constant</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="603" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="603" bodyend="606"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant_1aa9f1e68b760d80aea085d684b2dccc4f" compoundref="type-traits_8h" startline="589" endline="591">micro_os_plus::micro_test_plus::type_traits::integral_constant&lt; N &gt;::integral_constant</references>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-type">
@@ -122,7 +122,7 @@ Returns a new <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="583" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="583" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="513" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="513" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-attrib">
@@ -139,7 +139,7 @@ Returns a new <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="627" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="627" bodyend="627"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="557" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="557" bodyend="557"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -155,8 +155,8 @@ Returns a new <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant" kindref="compound">integral_constant</ref></computeroutput> struct template provides a compile-time constant value of an integral type, with additional utility features. It inherits from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__" kindref="compound">value_base_</ref>&lt;decltype(N)&gt;</computeroutput>, which supplies the <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a4a819c9151d37da6e8a76f4629c7cc4d" kindref="member">value_type</ref></computeroutput> alias, the <computeroutput>value_</computeroutput> runtime member, the explicit conversion operator, and the <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1aedc41334c71b7711435aee0cb8f44fb3" kindref="member">get()</ref></computeroutput> accessor.</para>
-<para>This struct retains the compile-time <computeroutput>value</computeroutput> constant and provides a unary minus operator to obtain the negative value as a new <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant" kindref="compound">integral_constant</ref></computeroutput> instance. </para>
+The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant" kindref="compound">integral_constant</ref></computeroutput> struct template provides a compile-time constant value of an integral type, with additional utility features. It inherits from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__" kindref="compound">value_base_</ref>&lt;decltype(N)&gt;</computeroutput>, which supplies the <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a4a819c9151d37da6e8a76f4629c7cc4d" kindref="member">value_type</ref></computeroutput> alias, the <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a8f1747b0fb288001d51754dfb8c53b0e" kindref="member">value_</ref></computeroutput> runtime member, the explicit conversion operator, and the <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1aedc41334c71b7711435aee0cb8f44fb3" kindref="member">get()</ref></computeroutput> accessor.</para>
+<para>This struct retains the compile-time <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref></computeroutput> constant and provides a unary minus operator to obtain the negative value as a new <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant" kindref="compound">integral_constant</ref></computeroutput> instance. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="1">
@@ -194,7 +194,7 @@ The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1ty
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="649" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="650" bodyend="677"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="579" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="580" bodyend="607"/>
     <listofallmembers>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1aedc41334c71b7711435aee0cb8f44fb3" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::integral_constant</scope><name>get</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant_1aa9f1e68b760d80aea085d684b2dccc4f" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::integral_constant</scope><name>integral_constant</name></member>

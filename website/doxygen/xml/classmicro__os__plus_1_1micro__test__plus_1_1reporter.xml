@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>micro_os_plus::micro_test_plus::reporter</compoundname>
     <derivedcompoundref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::reporter_human</derivedcompoundref>
@@ -22,17 +22,17 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="900" column="10" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="900" bodyend="900"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aa61862bc406bf1251324b5ebdabcfca0" compoundref="reporter-human_8cpp" startline="139" endline="178">micro_os_plus::micro_test_plus::reporter_human::begin_session</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aa61862bc406bf1251324b5ebdabcfca0" compoundref="reporter-human_8cpp" startline="146" endline="185">micro_os_plus::micro_test_plus::reporter_human::begin_session</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a05627cdee9d67cbb0f30dc3cb9fe426f" compoundref="reporter-tap_8cpp" startline="124" endline="163">micro_os_plus::micro_test_plus::reporter_tap::begin_session</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a59da3337bb7a2d1bc89406f548131d00" compoundref="reporter-human_8cpp" startline="477" endline="534">micro_os_plus::micro_test_plus::reporter_human::begin_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a59da3337bb7a2d1bc89406f548131d00" compoundref="reporter-human_8cpp" startline="484" endline="541">micro_os_plus::micro_test_plus::reporter_human::begin_subtest</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a27a5c6eca6a4beb82466448bfe5c44e9" compoundref="reporter-tap_8cpp" startline="459" endline="514">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a172a7a10a5aa2bd47dc6e7dde903cbbd" compoundref="reporter-human_8cpp" startline="284" endline="325">micro_os_plus::micro_test_plus::reporter_human::begin_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a172a7a10a5aa2bd47dc6e7dde903cbbd" compoundref="reporter-human_8cpp" startline="291" endline="332">micro_os_plus::micro_test_plus::reporter_human::begin_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1ae118be849ab3ff75ab88ff4f54f54be0" compoundref="reporter-tap_8cpp" startline="266" endline="311">micro_os_plus::micro_test_plus::reporter_tap::begin_suite</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a3118ff89506858505f18e8fd368baffc" compoundref="reporter-human_8cpp" startline="190" endline="269">micro_os_plus::micro_test_plus::reporter_human::end_session</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a3118ff89506858505f18e8fd368baffc" compoundref="reporter-human_8cpp" startline="197" endline="276">micro_os_plus::micro_test_plus::reporter_human::end_session</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a9a224d34b068e1698c00633ae2341e7f" compoundref="reporter-tap_8cpp" startline="175" endline="253">micro_os_plus::micro_test_plus::reporter_tap::end_session</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="549" endline="673">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="556" endline="680">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a79c7928d44d70b8fe5bf993775517e63" compoundref="reporter-tap_8cpp" startline="526" endline="641">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="340" endline="461">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="347" endline="468">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a8649b62ba8f7ff88501450c5f939ab6d" compoundref="reporter-tap_8cpp" startline="323" endline="446">micro_os_plus::micro_test_plus::reporter_tap::end_suite</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a123948993e8c24962071a32d8274c4f6" prot="protected" static="no" mutable="no">
@@ -69,11 +69,11 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="891" column="17" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="891" bodyend="891"/>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" compoundref="reporter_8cpp" startline="79" endline="158">reporter</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a59da3337bb7a2d1bc89406f548131d00" compoundref="reporter-human_8cpp" startline="477" endline="534">micro_os_plus::micro_test_plus::reporter_human::begin_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a59da3337bb7a2d1bc89406f548131d00" compoundref="reporter-human_8cpp" startline="484" endline="541">micro_os_plus::micro_test_plus::reporter_human::begin_subtest</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a27a5c6eca6a4beb82466448bfe5c44e9" compoundref="reporter-tap_8cpp" startline="459" endline="514">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="549" endline="673">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="556" endline="680">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a79c7928d44d70b8fe5bf993775517e63" compoundref="reporter-tap_8cpp" startline="526" endline="641">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="340" endline="461">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="347" endline="468">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a8649b62ba8f7ff88501450c5f939ab6d" compoundref="reporter-tap_8cpp" startline="323" endline="446">micro_os_plus::micro_test_plus::reporter_tap::end_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aee6d8d387798abd0d94052b1cf8987c4" compoundref="reporter_8cpp" startline="221" endline="225">endline</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0a288fd4578c4879872ecdfc3349bf2d" compoundref="reporter_8cpp" startline="446" endline="450">operator&lt;&lt;</referencedby>
@@ -97,7 +97,7 @@
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1af403303bf0d2d0e9f729d2461fc6bb91" compoundref="reporter_8cpp" startline="586" endline="591">operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aeb9ea0be472dff38345b1271881b6820" compoundref="reporter_8cpp" startline="523" endline="528">operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a5bc1b012e5817563a4d699b2145ec077" compoundref="reporter_8cpp" startline="416" endline="420">micro_os_plus::micro_test_plus::reporter_human::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1abd45edcbad304fc30aca042171b1c8c6" compoundref="reporter-human_8cpp" startline="122" endline="126">micro_os_plus::micro_test_plus::reporter_human::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1abd45edcbad304fc30aca042171b1c8c6" compoundref="reporter-human_8cpp" startline="129" endline="133">micro_os_plus::micro_test_plus::reporter_human::operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a1072d571f0363f041dc62a4f4956c9be" compoundref="reporter-tap_8cpp" startline="106" endline="110">micro_os_plus::micro_test_plus::reporter_tap::operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a26d99bc552ad4ed31253028647e939b1" compoundref="reporter_8cpp" startline="237" endline="241">write_buffer_to_stdout</referencedby>
       </memberdef>
@@ -118,9 +118,9 @@
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="886" column="13" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="886" bodyend="886"/>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a391d670afb552fe8fc03011d37a517fd" compoundref="reporter-human_8cpp" startline="79" endline="94">micro_os_plus::micro_test_plus::reporter_human::reporter_human</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ab6b39c68c08e7ccfb29a693bc86d391c" compoundref="reporter_8h" startline="792" endline="795">colour_</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a3118ff89506858505f18e8fd368baffc" compoundref="reporter-human_8cpp" startline="190" endline="269">micro_os_plus::micro_test_plus::reporter_human::end_session</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="549" endline="673">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="340" endline="461">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a3118ff89506858505f18e8fd368baffc" compoundref="reporter-human_8cpp" startline="197" endline="276">micro_os_plus::micro_test_plus::reporter_human::end_session</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="556" endline="680">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="347" endline="468">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a50dfefe3259b5eb3baa432a11a06100d" compoundref="reporter-inlines_8h" startline="381" endline="385">operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a56edd7e04a4080a56542d999368b0fd4" compoundref="reporter-inlines_8h" startline="260" endline="264">operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1adf525408b74186615bd6863087ac4f44" compoundref="reporter-inlines_8h" startline="321" endline="325">operator&lt;&lt;</referencedby>
@@ -133,8 +133,8 @@
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1acfe9bdb0f3bee7cc5ab3836dc2e17d08" compoundref="reporter-inlines_8h" startline="456" endline="459">operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a697a4dcb95f65634253f44946d06c81a" compoundref="reporter-inlines_8h" startline="211" endline="215">micro_os_plus::micro_test_plus::reporter_human::operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a0acf1be4a7b9738dd2d3b9748e32d872" compoundref="reporter-inlines_8h" startline="146" endline="169">micro_os_plus::micro_test_plus::reporter_human::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aa25bc978d1fcd02cb7c75aef0c1a9988" compoundref="reporter-human_8cpp" startline="749" endline="786">micro_os_plus::micro_test_plus::reporter_human::output_fail_prefix_</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ae831c47658d21e0e77bf7df79b8fc58f" compoundref="reporter-human_8cpp" startline="701" endline="712">micro_os_plus::micro_test_plus::reporter_human::output_pass_prefix_</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aa25bc978d1fcd02cb7c75aef0c1a9988" compoundref="reporter-human_8cpp" startline="756" endline="793">micro_os_plus::micro_test_plus::reporter_human::output_fail_prefix_</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ae831c47658d21e0e77bf7df79b8fc58f" compoundref="reporter-human_8cpp" startline="708" endline="719">micro_os_plus::micro_test_plus::reporter_human::output_pass_prefix_</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a1d95688325caf323a4d77272dcf50b86" prot="protected" static="no" mutable="no">
         <type>FILE *</type>
@@ -154,17 +154,17 @@
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="919" column="10" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="919" bodyend="919"/>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" compoundref="reporter_8cpp" startline="79" endline="158">reporter</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a1ab2bf741196d093aada2d4f3876176b" compoundref="reporter_8cpp" startline="167" endline="193">~reporter</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aa61862bc406bf1251324b5ebdabcfca0" compoundref="reporter-human_8cpp" startline="139" endline="178">micro_os_plus::micro_test_plus::reporter_human::begin_session</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aa61862bc406bf1251324b5ebdabcfca0" compoundref="reporter-human_8cpp" startline="146" endline="185">micro_os_plus::micro_test_plus::reporter_human::begin_session</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a05627cdee9d67cbb0f30dc3cb9fe426f" compoundref="reporter-tap_8cpp" startline="124" endline="163">micro_os_plus::micro_test_plus::reporter_tap::begin_session</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a59da3337bb7a2d1bc89406f548131d00" compoundref="reporter-human_8cpp" startline="477" endline="534">micro_os_plus::micro_test_plus::reporter_human::begin_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a59da3337bb7a2d1bc89406f548131d00" compoundref="reporter-human_8cpp" startline="484" endline="541">micro_os_plus::micro_test_plus::reporter_human::begin_subtest</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a27a5c6eca6a4beb82466448bfe5c44e9" compoundref="reporter-tap_8cpp" startline="459" endline="514">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a172a7a10a5aa2bd47dc6e7dde903cbbd" compoundref="reporter-human_8cpp" startline="284" endline="325">micro_os_plus::micro_test_plus::reporter_human::begin_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a172a7a10a5aa2bd47dc6e7dde903cbbd" compoundref="reporter-human_8cpp" startline="291" endline="332">micro_os_plus::micro_test_plus::reporter_human::begin_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1ae118be849ab3ff75ab88ff4f54f54be0" compoundref="reporter-tap_8cpp" startline="266" endline="311">micro_os_plus::micro_test_plus::reporter_tap::begin_suite</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a3118ff89506858505f18e8fd368baffc" compoundref="reporter-human_8cpp" startline="190" endline="269">micro_os_plus::micro_test_plus::reporter_human::end_session</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a3118ff89506858505f18e8fd368baffc" compoundref="reporter-human_8cpp" startline="197" endline="276">micro_os_plus::micro_test_plus::reporter_human::end_session</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a9a224d34b068e1698c00633ae2341e7f" compoundref="reporter-tap_8cpp" startline="175" endline="253">micro_os_plus::micro_test_plus::reporter_tap::end_session</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="549" endline="673">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="556" endline="680">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a79c7928d44d70b8fe5bf993775517e63" compoundref="reporter-tap_8cpp" startline="526" endline="641">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="340" endline="461">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="347" endline="468">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a8649b62ba8f7ff88501450c5f939ab6d" compoundref="reporter-tap_8cpp" startline="323" endline="446">micro_os_plus::micro_test_plus::reporter_tap::end_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ae7f404f29f265c5db6038f1e03f854b2" compoundref="reporter_8cpp" startline="365" endline="372">flush</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a5bc1b012e5817563a4d699b2145ec077" compoundref="reporter_8cpp" startline="416" endline="420">micro_os_plus::micro_test_plus::reporter_human::operator&lt;&lt;</referencedby>
@@ -206,17 +206,17 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="881" column="19" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="881" bodyend="-1"/>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" compoundref="reporter_8cpp" startline="79" endline="158">reporter</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aa61862bc406bf1251324b5ebdabcfca0" compoundref="reporter-human_8cpp" startline="139" endline="178">micro_os_plus::micro_test_plus::reporter_human::begin_session</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aa61862bc406bf1251324b5ebdabcfca0" compoundref="reporter-human_8cpp" startline="146" endline="185">micro_os_plus::micro_test_plus::reporter_human::begin_session</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a05627cdee9d67cbb0f30dc3cb9fe426f" compoundref="reporter-tap_8cpp" startline="124" endline="163">micro_os_plus::micro_test_plus::reporter_tap::begin_session</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a59da3337bb7a2d1bc89406f548131d00" compoundref="reporter-human_8cpp" startline="477" endline="534">micro_os_plus::micro_test_plus::reporter_human::begin_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a59da3337bb7a2d1bc89406f548131d00" compoundref="reporter-human_8cpp" startline="484" endline="541">micro_os_plus::micro_test_plus::reporter_human::begin_subtest</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a27a5c6eca6a4beb82466448bfe5c44e9" compoundref="reporter-tap_8cpp" startline="459" endline="514">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a172a7a10a5aa2bd47dc6e7dde903cbbd" compoundref="reporter-human_8cpp" startline="284" endline="325">micro_os_plus::micro_test_plus::reporter_human::begin_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a172a7a10a5aa2bd47dc6e7dde903cbbd" compoundref="reporter-human_8cpp" startline="291" endline="332">micro_os_plus::micro_test_plus::reporter_human::begin_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1ae118be849ab3ff75ab88ff4f54f54be0" compoundref="reporter-tap_8cpp" startline="266" endline="311">micro_os_plus::micro_test_plus::reporter_tap::begin_suite</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a3118ff89506858505f18e8fd368baffc" compoundref="reporter-human_8cpp" startline="190" endline="269">micro_os_plus::micro_test_plus::reporter_human::end_session</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a3118ff89506858505f18e8fd368baffc" compoundref="reporter-human_8cpp" startline="197" endline="276">micro_os_plus::micro_test_plus::reporter_human::end_session</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a9a224d34b068e1698c00633ae2341e7f" compoundref="reporter-tap_8cpp" startline="175" endline="253">micro_os_plus::micro_test_plus::reporter_tap::end_session</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="549" endline="673">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="556" endline="680">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a79c7928d44d70b8fe5bf993775517e63" compoundref="reporter-tap_8cpp" startline="526" endline="641">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="340" endline="461">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="347" endline="468">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a8649b62ba8f7ff88501450c5f939ab6d" compoundref="reporter-tap_8cpp" startline="323" endline="446">micro_os_plus::micro_test_plus::reporter_tap::end_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a550817349fa323d0c7b4c11a7948267e" compoundref="reporter_8cpp" startline="491" endline="496">micro_os_plus::micro_test_plus::reporter_human::operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a24da76a8973a5aebca9ef7604740180c" compoundref="reporter_8h" startline="773" endline="776">verbosity</referencedby>
@@ -247,7 +247,7 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-Moves the supplied argument vector into <computeroutput>argvs_</computeroutput> and scans it for the <computeroutput>--verbose</computeroutput>, <computeroutput>--quiet</computeroutput>, <computeroutput>--silent</computeroutput>, and <computeroutput>--output-file=</computeroutput> options, adjusting <computeroutput>verbosity_</computeroutput> and optionally opening the output file. If the output file path is specified but the file cannot be opened, the process exits with a diagnostic error message. The internal string buffer is pre-allocated to reduce dynamic allocation overhead. </para>
+Moves the supplied argument vector into <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a123948993e8c24962071a32d8274c4f6" kindref="member">argvs_</ref></computeroutput> and scans it for the <computeroutput>--verbose</computeroutput>, <computeroutput>--quiet</computeroutput>, <computeroutput>--silent</computeroutput>, and <computeroutput>--output-file=</computeroutput> options, adjusting <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aea922774c24ce8337d734fa457896595" kindref="member">verbosity_</ref></computeroutput> and optionally opening the output file. If the output file path is specified but the file cannot be opened, the process exits with a diagnostic error message. The internal string buffer is pre-allocated to reduce dynamic allocation overhead. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -533,7 +533,7 @@ Moves the supplied argument vector into <computeroutput>argvs_</computeroutput> 
 </simplesect>
 <simplesect kind="par"><title>Returns</title><para>Nothing.</para>
 </simplesect>
-This method appends a newline character to the internal output buffer of the <computeroutput>reporter</computeroutput> and immediately flushes the stream. This ensures that each line of test output is clearly separated and promptly displayed, enhancing the readability and organisation of test results across all test cases and folders. </para>
+This method appends a newline character to the internal output buffer of the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput> and immediately flushes the stream. This ensures that each line of test output is clearly separated and promptly displayed, enhancing the readability and organisation of test results across all test cases and folders. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -652,28 +652,28 @@ This function reports a test failure and formats the output in a clear and consi
 </simplesect>
 <simplesect kind="par"><title>Returns</title><para>Nothing.</para>
 </simplesect>
-This method flushes the output buffer of the <computeroutput>reporter</computeroutput> by synchronising it with the standard output stream. This guarantees that all pending test output is immediately written and visible, ensuring prompt and reliable reporting of test results across all test cases and folders. </para>
+This method flushes the output buffer of the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput> by synchronising it with the standard output stream. This guarantees that all pending test output is immediately written and visible, ensuring prompt and reliable reporting of test results across all test cases and folders. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="652" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter.cpp" bodystart="365" bodyend="372"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a1d95688325caf323a4d77272dcf50b86" compoundref="reporter_8h" startline="919" endline="919">output_file_</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aa61862bc406bf1251324b5ebdabcfca0" compoundref="reporter-human_8cpp" startline="139" endline="178">micro_os_plus::micro_test_plus::reporter_human::begin_session</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aa61862bc406bf1251324b5ebdabcfca0" compoundref="reporter-human_8cpp" startline="146" endline="185">micro_os_plus::micro_test_plus::reporter_human::begin_session</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a05627cdee9d67cbb0f30dc3cb9fe426f" compoundref="reporter-tap_8cpp" startline="124" endline="163">micro_os_plus::micro_test_plus::reporter_tap::begin_session</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a59da3337bb7a2d1bc89406f548131d00" compoundref="reporter-human_8cpp" startline="477" endline="534">micro_os_plus::micro_test_plus::reporter_human::begin_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a59da3337bb7a2d1bc89406f548131d00" compoundref="reporter-human_8cpp" startline="484" endline="541">micro_os_plus::micro_test_plus::reporter_human::begin_subtest</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a27a5c6eca6a4beb82466448bfe5c44e9" compoundref="reporter-tap_8cpp" startline="459" endline="514">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a172a7a10a5aa2bd47dc6e7dde903cbbd" compoundref="reporter-human_8cpp" startline="284" endline="325">micro_os_plus::micro_test_plus::reporter_human::begin_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a172a7a10a5aa2bd47dc6e7dde903cbbd" compoundref="reporter-human_8cpp" startline="291" endline="332">micro_os_plus::micro_test_plus::reporter_human::begin_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1ae118be849ab3ff75ab88ff4f54f54be0" compoundref="reporter-tap_8cpp" startline="266" endline="311">micro_os_plus::micro_test_plus::reporter_tap::begin_suite</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a3118ff89506858505f18e8fd368baffc" compoundref="reporter-human_8cpp" startline="190" endline="269">micro_os_plus::micro_test_plus::reporter_human::end_session</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a3118ff89506858505f18e8fd368baffc" compoundref="reporter-human_8cpp" startline="197" endline="276">micro_os_plus::micro_test_plus::reporter_human::end_session</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a9a224d34b068e1698c00633ae2341e7f" compoundref="reporter-tap_8cpp" startline="175" endline="253">micro_os_plus::micro_test_plus::reporter_tap::end_session</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="549" endline="673">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="556" endline="680">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a79c7928d44d70b8fe5bf993775517e63" compoundref="reporter-tap_8cpp" startline="526" endline="641">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="340" endline="461">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="347" endline="468">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a8649b62ba8f7ff88501450c5f939ab6d" compoundref="reporter-tap_8cpp" startline="323" endline="446">micro_os_plus::micro_test_plus::reporter_tap::end_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aee6d8d387798abd0d94052b1cf8987c4" compoundref="reporter_8cpp" startline="221" endline="225">endline</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aef7c1d0436d63165f94245bf16c69f6a" compoundref="reporter-human_8cpp" startline="798" endline="810">micro_os_plus::micro_test_plus::reporter_human::output_fail_suffix_</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aef7c1d0436d63165f94245bf16c69f6a" compoundref="reporter-human_8cpp" startline="805" endline="817">micro_os_plus::micro_test_plus::reporter_human::output_fail_suffix_</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a951a2aa4cb5300a7706709a2336651a8" compoundref="reporter-tap_8cpp" startline="751" endline="777">micro_os_plus::micro_test_plus::reporter_tap::output_fail_suffix_</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac5713ce51eb50a6841879b1c7d00c234" compoundref="reporter-human_8cpp" startline="730" endline="735">micro_os_plus::micro_test_plus::reporter_human::output_pass_suffix_</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac5713ce51eb50a6841879b1c7d00c234" compoundref="reporter-human_8cpp" startline="737" endline="742">micro_os_plus::micro_test_plus::reporter_human::output_pass_suffix_</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1ac46a89737874c4f864a98b91d8c57ecd" compoundref="reporter-tap_8cpp" startline="697" endline="702">micro_os_plus::micro_test_plus::reporter_tap::output_pass_suffix_</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a9cafc8992d508b5ffa0b6a64226202bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
@@ -691,7 +691,7 @@ This method flushes the output buffer of the <computeroutput>reporter</computero
 <para>Returns the comment-prefix string used by this reporter format. </para>
         </briefdescription>
         <detaileddescription>
-<para>Human reporters return an empty string; TAP reporters return <computeroutput>&quot;# &quot;</computeroutput> so that diagnostic lines conform to the TAP specification.</para>
+<para>Human reporters return an empty string; TAP reporters return <computeroutput>"# "</computeroutput> so that diagnostic lines conform to the TAP specification.</para>
 <para><simplesect kind="par"><title>Parameters</title><para>None. </para>
 </simplesect>
 <simplesect kind="return"><para>A null-terminated prefix string. </para>
@@ -703,7 +703,7 @@ This method flushes the output buffer of the <computeroutput>reporter</computero
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="763" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0a288fd4578c4879872ecdfc3349bf2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(bool v)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -727,7 +727,7 @@ This method flushes the output buffer of the <computeroutput>reporter</computero
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload appends the string representation of the specified boolean value to the internal output buffer of the <computeroutput>reporter</computeroutput>. It enables clear and direct streaming of boolean results into the reporter, supporting precise and readable formatting of test output across all test cases and folders. </para>
+This operator overload appends the string representation of the specified boolean value to the internal output buffer of the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput>. It enables clear and direct streaming of boolean results into the reporter, supporting precise and readable formatting of test output across all test cases and folders. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -736,7 +736,7 @@ This operator overload appends the string representation of the specified boolea
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a6eed4eaebea91b3377b89a118eb1c323" compoundref="reporter_8h" startline="891" endline="891">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a5bc1b012e5817563a4d699b2145ec077" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(char c)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -760,7 +760,7 @@ This operator overload appends the string representation of the specified boolea
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload appends the specified character to the internal output buffer of the <computeroutput>reporter</computeroutput>. It enables efficient streaming of individual characters into the reporter, supporting precise and flexible formatting of test output across all test cases and folders. </para>
+This operator overload appends the specified character to the internal output buffer of the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput>. It enables efficient streaming of individual characters into the reporter, supporting precise and flexible formatting of test output across all test cases and folders. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -769,7 +769,7 @@ This operator overload appends the specified character to the internal output bu
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a6eed4eaebea91b3377b89a118eb1c323" compoundref="reporter_8h" startline="891" endline="891">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1afb205af933ef6b71f23a6943ad6bd628" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(const char *s)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -793,7 +793,7 @@ This operator overload appends the specified character to the internal output bu
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload appends the contents of the provided C-style string to the internal output buffer of the <computeroutput>reporter</computeroutput>. It enables efficient streaming of string literals and character arrays into the reporter, supporting clear and flexible formatting of test output across all test cases and folders. </para>
+This operator overload appends the contents of the provided C-style string to the internal output buffer of the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput>. It enables efficient streaming of string literals and character arrays into the reporter, supporting clear and flexible formatting of test output across all test cases and folders. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -810,7 +810,7 @@ This operator overload appends the contents of the provided C-style string to th
             <type>class Rhs_T</type>
           </param>
         </templateparamlist>
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(const detail::and_&lt; Lhs_T, Rhs_T &gt; &amp;op)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -851,7 +851,7 @@ This operator overload appends the contents of the provided C-style string to th
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload enables the <computeroutput>reporter</computeroutput> to output logical conjunction (AND) expressions in a clear and structured format.</para>
+This operator overload enables the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput> to output logical conjunction (AND) expressions in a clear and structured format.</para>
 <para>The left-hand side and right-hand side expressions are enclosed in parentheses and separated by the word &quot;and&quot;, with appropriate colour highlighting applied for improved readability in test reports and diagnostics. This presentation assists in quickly identifying the components of logical assertions and facilitates efficient debugging of test failures involving compound conditions. </para>
         </detaileddescription>
         <inbodydescription>
@@ -872,7 +872,7 @@ This operator overload enables the <computeroutput>reporter</computeroutput> to 
             <type>class Rhs_T</type>
           </param>
         </templateparamlist>
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(const detail::eq_&lt; Lhs_T, Rhs_T &gt; &amp;op)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -913,7 +913,7 @@ This operator overload enables the <computeroutput>reporter</computeroutput> to 
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload enables the <computeroutput>reporter</computeroutput> to output equality comparison expressions in a clear and expressive format.</para>
+This operator overload enables the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput> to output equality comparison expressions in a clear and expressive format.</para>
 <para>The left-hand side and right-hand side values are formatted and separated by the equality operator (<computeroutput>==</computeroutput>), with appropriate colour highlighting applied for improved readability in test reports and diagnostics. This structured output assists in quickly identifying the values involved in equality assertions and facilitates efficient debugging of test failures. </para>
         </detaileddescription>
         <inbodydescription>
@@ -934,7 +934,7 @@ This operator overload enables the <computeroutput>reporter</computeroutput> to 
             <type>class Rhs_T</type>
           </param>
         </templateparamlist>
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(const detail::ge_&lt; Lhs_T, Rhs_T &gt; &amp;op)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -975,7 +975,7 @@ This operator overload enables the <computeroutput>reporter</computeroutput> to 
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload enables the <computeroutput>reporter</computeroutput> to output greater-than-or-equal-to comparison expressions in a clear and expressive format.</para>
+This operator overload enables the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput> to output greater-than-or-equal-to comparison expressions in a clear and expressive format.</para>
 <para>The left-hand side and right-hand side values are formatted and separated by the greater-than-or-equal-to operator (<computeroutput>&gt;=</computeroutput>), with appropriate colour highlighting applied for improved readability in test reports and diagnostics. This structured output assists in quickly identifying the values involved in greater-than-or-equal-to assertions and facilitates efficient debugging of test failures. </para>
         </detaileddescription>
         <inbodydescription>
@@ -996,7 +996,7 @@ This operator overload enables the <computeroutput>reporter</computeroutput> to 
             <type>class Rhs_T</type>
           </param>
         </templateparamlist>
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(const detail::gt_&lt; Lhs_T, Rhs_T &gt; &amp;op)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -1037,7 +1037,7 @@ This operator overload enables the <computeroutput>reporter</computeroutput> to 
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload enables the <computeroutput>reporter</computeroutput> to output greater-than comparison expressions in a clear and expressive format.</para>
+This operator overload enables the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput> to output greater-than comparison expressions in a clear and expressive format.</para>
 <para>The left-hand side and right-hand side values are formatted and separated by the greater-than operator (<computeroutput>&gt;</computeroutput>), with appropriate colour highlighting applied for improved readability in test reports and diagnostics. This structured output assists in quickly identifying the values involved in greater-than assertions and facilitates efficient debugging of test failures. </para>
         </detaileddescription>
         <inbodydescription>
@@ -1058,7 +1058,7 @@ This operator overload enables the <computeroutput>reporter</computeroutput> to 
             <type>class Rhs_T</type>
           </param>
         </templateparamlist>
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(const detail::le_&lt; Rhs_T, Lhs_T &gt; &amp;op)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -1099,7 +1099,7 @@ This operator overload enables the <computeroutput>reporter</computeroutput> to 
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload enables the <computeroutput>reporter</computeroutput> to output less-than-or-equal-to comparison expressions in a clear and expressive format.</para>
+This operator overload enables the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput> to output less-than-or-equal-to comparison expressions in a clear and expressive format.</para>
 <para>The left-hand side and right-hand side values are formatted and separated by the less-than-or-equal-to operator (<computeroutput>&lt;=</computeroutput>), with appropriate colour highlighting applied for improved readability in test reports and diagnostics. This structured output assists in quickly identifying the values involved in less-than-or-equal-to assertions and facilitates efficient debugging of test failures. </para>
         </detaileddescription>
         <inbodydescription>
@@ -1120,7 +1120,7 @@ This operator overload enables the <computeroutput>reporter</computeroutput> to 
             <type>class Rhs_T</type>
           </param>
         </templateparamlist>
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(const detail::lt_&lt; Rhs_T, Lhs_T &gt; &amp;op)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -1161,7 +1161,7 @@ This operator overload enables the <computeroutput>reporter</computeroutput> to 
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload enables the <computeroutput>reporter</computeroutput> to output less-than comparison expressions in a clear and expressive format.</para>
+This operator overload enables the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput> to output less-than comparison expressions in a clear and expressive format.</para>
 <para>The left-hand side and right-hand side values are formatted and separated by the less-than operator (<computeroutput>&lt;</computeroutput>), with appropriate colour highlighting applied for improved readability in test reports and diagnostics. This structured output assists in quickly identifying the values involved in less-than assertions and facilitates efficient debugging of test failures. </para>
         </detaileddescription>
         <inbodydescription>
@@ -1182,7 +1182,7 @@ This operator overload enables the <computeroutput>reporter</computeroutput> to 
             <type>class Rhs_T</type>
           </param>
         </templateparamlist>
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(const detail::ne_&lt; Lhs_T, Rhs_T &gt; &amp;op)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -1223,7 +1223,7 @@ This operator overload enables the <computeroutput>reporter</computeroutput> to 
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload enables the <computeroutput>reporter</computeroutput> to output inequality comparison expressions in a clear and expressive format.</para>
+This operator overload enables the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput> to output inequality comparison expressions in a clear and expressive format.</para>
 <para>The left-hand side and right-hand side values are formatted and separated by the inequality operator (<computeroutput>!=</computeroutput>), with appropriate colour highlighting applied for improved readability in test reports and diagnostics. This structured output assists in quickly identifying the values involved in inequality assertions and facilitates efficient debugging of test failures. </para>
         </detaileddescription>
         <inbodydescription>
@@ -1241,7 +1241,7 @@ This operator overload enables the <computeroutput>reporter</computeroutput> to 
             <type>class T</type>
           </param>
         </templateparamlist>
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(const detail::not_&lt; T &gt; &amp;op)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -1290,7 +1290,7 @@ This operator overload enhances readability and clarity by formatting the output
             <type>class Expr_T</type>
           </param>
         </templateparamlist>
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(const detail::nothrow_&lt; Expr_T &gt; &amp;op)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -1324,7 +1324,7 @@ This operator overload enhances readability and clarity by formatting the output
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
 This operator overload formats output for expressions that do not throw exceptions. It applies colour styling for clarity and ensures a structured and concise representation of exception safety within test reports.</para>
-<para>The output highlights the <computeroutput>nothrow</computeroutput> qualifier, making it immediately apparent when an expression is guaranteed not to throw, thereby improving the readability and professionalism of the test output. </para>
+<para>The output highlights the <computeroutput><ref refid="group__micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" kindref="member">nothrow</ref></computeroutput> qualifier, making it immediately apparent when an expression is guaranteed not to throw, thereby improving the readability and professionalism of the test output. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -1342,7 +1342,7 @@ This operator overload formats output for expressions that do not throw exceptio
             <type>class Rhs_T</type>
           </param>
         </templateparamlist>
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(const detail::or_&lt; Lhs_T, Rhs_T &gt; &amp;op)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -1383,7 +1383,7 @@ This operator overload formats output for expressions that do not throw exceptio
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload enables the <computeroutput>reporter</computeroutput> to output logical disjunction (OR) expressions in a clear and structured format.</para>
+This operator overload enables the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput> to output logical disjunction (OR) expressions in a clear and structured format.</para>
 <para>The left-hand side and right-hand side expressions are enclosed in parentheses and separated by the word &quot;or&quot;, with appropriate colour highlighting applied for improved readability in test reports and diagnostics. This presentation assists in quickly identifying the components of logical assertions and facilitates efficient debugging of test failures involving compound conditions. </para>
         </detaileddescription>
         <inbodydescription>
@@ -1400,7 +1400,7 @@ This operator overload enables the <computeroutput>reporter</computeroutput> to 
             <type>class Exception_T</type>
           </param>
         </templateparamlist>
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(const detail::throws_&lt; Expr_T, Exception_T &gt; &amp;op)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -1442,7 +1442,7 @@ This operator overload enables the <computeroutput>reporter</computeroutput> to 
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
 This operator overload provides structured output for expressions that may throw exceptions. It applies colour styling for clarity and includes the exception type name for precise identification.</para>
-<para>When invoked, the output highlights the <computeroutput>throws</computeroutput> qualifier along with the specific exception type, making it immediately apparent which exception is expected. This enhances the readability and professionalism of test reports, and assists in the precise identification and debugging of exception-related test cases. </para>
+<para>When invoked, the output highlights the <computeroutput><ref refid="group__micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kindref="member">throws</ref></computeroutput> qualifier along with the specific exception type, making it immediately apparent which exception is expected. This enhances the readability and professionalism of test reports, and assists in the precise identification and debugging of exception-related test cases. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -1457,7 +1457,7 @@ This operator overload provides structured output for expressions that may throw
             <type>class Expr_T</type>
           </param>
         </templateparamlist>
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(const detail::throws_&lt; Expr_T, void &gt; &amp;op)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -1491,7 +1491,7 @@ This operator overload provides structured output for expressions that may throw
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
 This operator overload formats output for expressions that may throw exceptions. It applies colour styling for clarity and ensures a structured representation of the exception handling mechanism.</para>
-<para>When invoked, the output highlights the <computeroutput>throws</computeroutput> qualifier, making it immediately apparent when an expression is expected to throw, thereby improving the readability and professionalism of the test output. </para>
+<para>When invoked, the output highlights the <computeroutput><ref refid="group__micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kindref="member">throws</ref></computeroutput> qualifier, making it immediately apparent when an expression is expected to throw, thereby improving the readability and professionalism of the test output. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -1500,66 +1500,13 @@ This operator overload formats output for expressions that may throw exceptions.
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ab6b39c68c08e7ccfb29a693bc86d391c" compoundref="reporter_8h" startline="792" endline="795">colour_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aeb060bfc3184673b0813bca6d8057865" compoundref="reporter_8h" startline="886" endline="886">colours_</references>
       </memberdef>
-      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a330aa7e22a4efc710fe866e1bda6fc4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>class T</type>
-          </param>
-        </templateparamlist>
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
-        <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
-        <argsstring>(const T &amp;t)</argsstring>
-        <name>operator&lt;&lt;</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</qualifiedname>
-        <param>
-          <type>const T &amp;</type>
-          <declname>t</declname>
-        </param>
-    <requiresclause>type_traits::is_op&lt;T&gt;    </requiresclause>
-        <briefdescription>
-<para>Output operator for types with a getter. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="templateparam"><parameteritem>
-<parameternamelist>
-<parametername>T</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The type with a getter method.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>t</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The object to output. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>Reference to the current reporter instance.</para>
-</simplesect>
-This operator overload enables the <computeroutput>reporter</computeroutput> to output any type that is supported by the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ac627271520bf2fe8a4c4774bcd9bf343" kindref="member">detail::get</ref></computeroutput> mechanism, ensuring consistent formatting and extensibility.</para>
-<para>By delegating to <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ac627271520bf2fe8a4c4774bcd9bf343" kindref="member">detail::get</ref></computeroutput>, the operator allows for custom formatting and extraction of values, supporting a wide range of types including user-defined and framework-specific types. The resulting value is then forwarded to the appropriate output handler, ensuring seamless integration into test reports and diagnostics.</para>
-<para>This approach promotes flexibility and maintainability, allowing new types to be supported with minimal changes to the reporting infrastructure.</para>
-<para>This operator overload enables the <computeroutput>reporter</computeroutput> to output container types in a structured and readable format.</para>
-<para>The contents of the container are enclosed in curly braces and each element is separated by a comma and a space. The operator iterates over the container, formatting each element in sequence, which ensures clarity and consistency in test reports and diagnostics.</para>
-<para>This approach provides a clear visual representation of container contents, making it easier to interpret test results and debug issues involving collections of values. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="428" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reporter-inlines.h" bodystart="189" bodyend="193"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" compoundref="reporter_8cpp" startline="79" endline="158">reporter</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ac627271520bf2fe8a4c4774bcd9bf343" compoundref="detail_8h" startline="158" endline="164">micro_os_plus::micro_test_plus::detail::get</references>
-      </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ab869cb07165b28db0087fd0757114038" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
           </param>
         </templateparamlist>
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(const T &amp;t)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -1600,13 +1547,66 @@ This operator overload enables the <computeroutput>reporter</computeroutput> to 
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="455" column="5"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" compoundref="reporter_8cpp" startline="79" endline="158">reporter</references>
       </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a330aa7e22a4efc710fe866e1bda6fc4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
+        <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
+        <argsstring>(const T &amp;t)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>t</declname>
+        </param>
+    <requiresclause>type_traits::is_op&lt;T&gt;    </requiresclause>
+        <briefdescription>
+<para>Output operator for types with a getter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type with a getter method.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object to output. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to the current reporter instance.</para>
+</simplesect>
+This operator overload enables the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput> to output any type that is supported by the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ac627271520bf2fe8a4c4774bcd9bf343" kindref="member">detail::get</ref></computeroutput> mechanism, ensuring consistent formatting and extensibility.</para>
+<para>By delegating to <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ac627271520bf2fe8a4c4774bcd9bf343" kindref="member">detail::get</ref></computeroutput>, the operator allows for custom formatting and extraction of values, supporting a wide range of types including user-defined and framework-specific types. The resulting value is then forwarded to the appropriate output handler, ensuring seamless integration into test reports and diagnostics.</para>
+<para>This approach promotes flexibility and maintainability, allowing new types to be supported with minimal changes to the reporting infrastructure.</para>
+<para>This operator overload enables the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput> to output container types in a structured and readable format.</para>
+<para>The contents of the container are enclosed in curly braces and each element is separated by a comma and a space. The operator iterates over the container, formatting each element in sequence, which ensures clarity and consistency in test reports and diagnostics.</para>
+<para>This approach provides a clear visual representation of container contents, making it easier to interpret test results and debug issues involving collections of values. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="428" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reporter-inlines.h" bodystart="189" bodyend="193"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" compoundref="reporter_8cpp" startline="79" endline="158">reporter</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ac627271520bf2fe8a4c4774bcd9bf343" compoundref="detail_8h" startline="158" endline="164">micro_os_plus::micro_test_plus::detail::get</references>
+      </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a697a4dcb95f65634253f44946d06c81a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
           </param>
         </templateparamlist>
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(const type_traits::genuine_integral_value&lt; T &gt; &amp;v)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -1639,7 +1639,7 @@ This operator overload enables the <computeroutput>reporter</computeroutput> to 
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload enables the <computeroutput>reporter</computeroutput> to output strongly-typed integral values in a clear and consistent decimal format.</para>
+This operator overload enables the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput> to output strongly-typed integral values in a clear and consistent decimal format.</para>
 <para>The value is converted to a string using <computeroutput>std::to_string</computeroutput> after being cast to <computeroutput>long long</computeroutput>, ensuring accurate formatting and compatibility across platforms. The resulting string is appended to the internal output buffer, allowing integral values to be included in test reports and diagnostics.</para>
 <para>This approach ensures precise and unambiguous representation of integral values, which is particularly advantageous for verifying test results and facilitating debugging. </para>
         </detaileddescription>
@@ -1649,10 +1649,10 @@ This operator overload enables the <computeroutput>reporter</computeroutput> to 
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" compoundref="reporter_8cpp" startline="79" endline="158">reporter</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a4a1d9fe32165b779cf7b9f97fbb63564" compoundref="reporter-inlines_8h" startline="87" endline="119">append_number_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a6eed4eaebea91b3377b89a118eb1c323" compoundref="reporter_8h" startline="891" endline="891">buffer_</references>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1aedc41334c71b7711435aee0cb8f44fb3" compoundref="type-traits_8h" startline="619" endline="622">micro_os_plus::micro_test_plus::type_traits::value_base_&lt; T &gt;::get</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1aedc41334c71b7711435aee0cb8f44fb3" compoundref="type-traits_8h" startline="549" endline="552">micro_os_plus::micro_test_plus::type_traits::value_base_&lt; T &gt;::get</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a3a7538024d14a727640a789c6d6b8058" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(double v)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -1676,7 +1676,7 @@ This operator overload enables the <computeroutput>reporter</computeroutput> to 
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload appends the string representation of the specified double-precision floating-point value to the internal output buffer of the <computeroutput>reporter</computeroutput>. It enables precise and readable streaming of double values into the reporter, supporting clear formatting of test output across all test cases and folders. </para>
+This operator overload appends the string representation of the specified double-precision floating-point value to the internal output buffer of the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput>. It enables precise and readable streaming of double values into the reporter, supporting clear formatting of test output across all test cases and folders. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -1686,7 +1686,7 @@ This operator overload appends the string representation of the specified double
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a6eed4eaebea91b3377b89a118eb1c323" compoundref="reporter_8h" startline="891" endline="891">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a602622b74c12f7bf045b14fe7aac82b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(float v)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -1710,7 +1710,7 @@ This operator overload appends the string representation of the specified double
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload appends the string representation of the specified floating-point value to the internal output buffer of the <computeroutput>reporter</computeroutput>, followed by the character &apos;f&apos; to indicate a float type. It enables precise and readable streaming of float values into the reporter, supporting clear formatting of test output across all test cases and folders. </para>
+This operator overload appends the string representation of the specified floating-point value to the internal output buffer of the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput>, followed by the character &apos;f&apos; to indicate a float type. It enables precise and readable streaming of float values into the reporter, supporting clear formatting of test output across all test cases and folders. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -1720,7 +1720,7 @@ This operator overload appends the string representation of the specified floati
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a6eed4eaebea91b3377b89a118eb1c323" compoundref="reporter_8h" startline="891" endline="891">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ad3fe4f54681f8f58d906dd3d625dec9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(long double v)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -1744,7 +1744,7 @@ This operator overload appends the string representation of the specified floati
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload appends the string representation of the specified long double-precision floating-point value to the internal output buffer of the <computeroutput>reporter</computeroutput>, followed by the character &apos;l&apos; to indicate a long double type. It enables precise and readable streaming of long double values into the reporter, supporting clear formatting of test output across all test cases and folders. </para>
+This operator overload appends the string representation of the specified long double-precision floating-point value to the internal output buffer of the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput>, followed by the character &apos;l&apos; to indicate a long double type. It enables precise and readable streaming of long double values into the reporter, supporting clear formatting of test output across all test cases and folders. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -1754,13 +1754,13 @@ This operator overload appends the string representation of the specified long d
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a6eed4eaebea91b3377b89a118eb1c323" compoundref="reporter_8h" startline="891" endline="891">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a28826ad63a1c66a694c578049922d700" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(reporter &amp;(*func)(reporter &amp;))</argsstring>
         <name>operator&lt;&lt;</name>
         <qualifiedname>micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</qualifiedname>
         <param>
-          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;(*)(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;)</type>
+          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;(*)(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;)</type>
           <declname>func</declname>
         </param>
         <briefdescription>
@@ -1778,7 +1778,7 @@ This operator overload appends the string representation of the specified long d
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload enables manipulators, such as <computeroutput>endl</computeroutput>, to be used with the <computeroutput>reporter</computeroutput> stream in a manner similar to standard C++ streams. When a manipulator function is passed, it is invoked with the current <computeroutput>reporter</computeroutput> instance, allowing for seamless integration of stream operations and improved readability of test output across all test cases and folders. </para>
+This operator overload enables manipulators, such as <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1accd8ecc7473b09af578daa31bb8780eb" kindref="member">endl</ref></computeroutput>, to be used with the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput> stream in a manner similar to standard C++ streams. When a manipulator function is passed, it is invoked with the current <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput> instance, allowing for seamless integration of stream operations and improved readability of test output across all test cases and folders. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -1786,7 +1786,7 @@ This operator overload enables manipulators, such as <computeroutput>endl</compu
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" compoundref="reporter_8cpp" startline="79" endline="158">reporter</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a351c8d961df0c7d9ce438e9e292680da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(signed char c)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -1810,7 +1810,7 @@ This operator overload enables manipulators, such as <computeroutput>endl</compu
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload appends the string representation of the specified signed character to the internal output buffer of the <computeroutput>reporter</computeroutput>. It enables precise and readable streaming of character values into the reporter, supporting clear formatting of test output across all test cases and folders. </para>
+This operator overload appends the string representation of the specified signed character to the internal output buffer of the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput>. It enables precise and readable streaming of character values into the reporter, supporting clear formatting of test output across all test cases and folders. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -1820,7 +1820,7 @@ This operator overload appends the string representation of the specified signed
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a6eed4eaebea91b3377b89a118eb1c323" compoundref="reporter_8h" startline="891" endline="891">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ae9edf407c69fc6933ceb889c105eace2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(signed int v)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -1844,7 +1844,7 @@ This operator overload appends the string representation of the specified signed
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload appends the string representation of the specified signed integer to the internal output buffer of the <computeroutput>reporter</computeroutput>. It enables precise and readable streaming of signed integer values into the reporter, supporting clear formatting of test output across all test cases and folders. </para>
+This operator overload appends the string representation of the specified signed integer to the internal output buffer of the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput>. It enables precise and readable streaming of signed integer values into the reporter, supporting clear formatting of test output across all test cases and folders. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -1854,7 +1854,7 @@ This operator overload appends the string representation of the specified signed
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a6eed4eaebea91b3377b89a118eb1c323" compoundref="reporter_8h" startline="891" endline="891">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a68eabfc37788745aa4804dade0bbf8f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(signed long long v)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -1878,7 +1878,7 @@ This operator overload appends the string representation of the specified signed
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload appends the string representation of the specified signed long long integer to the internal output buffer of the <computeroutput>reporter</computeroutput>. It enables precise and readable streaming of signed long long values into the reporter, supporting clear formatting of test output across all test cases and folders. </para>
+This operator overload appends the string representation of the specified signed long long integer to the internal output buffer of the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput>. It enables precise and readable streaming of signed long long values into the reporter, supporting clear formatting of test output across all test cases and folders. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -1888,7 +1888,7 @@ This operator overload appends the string representation of the specified signed
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a6eed4eaebea91b3377b89a118eb1c323" compoundref="reporter_8h" startline="891" endline="891">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a2cc01b37d5506dd341fa73d4a08dd2ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(signed long v)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -1912,7 +1912,7 @@ This operator overload appends the string representation of the specified signed
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload appends the string representation of the specified signed long integer to the internal output buffer of the <computeroutput>reporter</computeroutput>. It enables precise and readable streaming of signed long values into the reporter, supporting clear formatting of test output across all test cases and folders. </para>
+This operator overload appends the string representation of the specified signed long integer to the internal output buffer of the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput>. It enables precise and readable streaming of signed long values into the reporter, supporting clear formatting of test output across all test cases and folders. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -1922,7 +1922,7 @@ This operator overload appends the string representation of the specified signed
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a6eed4eaebea91b3377b89a118eb1c323" compoundref="reporter_8h" startline="891" endline="891">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0964f2a781d6f48ec65d6f3aed66a8e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(signed short v)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -1946,7 +1946,7 @@ This operator overload appends the string representation of the specified signed
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload appends the string representation of the specified signed short integer to the internal output buffer of the <computeroutput>reporter</computeroutput>. It enables precise and readable streaming of signed short values into the reporter, supporting clear formatting of test output across all test cases and folders. </para>
+This operator overload appends the string representation of the specified signed short integer to the internal output buffer of the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput>. It enables precise and readable streaming of signed short values into the reporter, supporting clear formatting of test output across all test cases and folders. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -1956,7 +1956,7 @@ This operator overload appends the string representation of the specified signed
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a6eed4eaebea91b3377b89a118eb1c323" compoundref="reporter_8h" startline="891" endline="891">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0699f03871f8c5f906a07bf32505cbd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(std::nullptr_t)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -1970,7 +1970,7 @@ This operator overload appends the string representation of the specified signed
         <detaileddescription>
 <para><simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload appends the string &quot;nullptr&quot; to the internal output buffer of the <computeroutput>reporter</computeroutput>. It enables clear and explicit streaming of null pointer values into the reporter, supporting precise and readable formatting of test output across all test cases and folders. </para>
+This operator overload appends the string &quot;nullptr&quot; to the internal output buffer of the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput>. It enables clear and explicit streaming of null pointer values into the reporter, supporting precise and readable formatting of test output across all test cases and folders. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -1979,7 +1979,7 @@ This operator overload appends the string &quot;nullptr&quot; to the internal ou
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a6eed4eaebea91b3377b89a118eb1c323" compoundref="reporter_8h" startline="891" endline="891">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ad7a2cc6446e65cf9034f85c93efb3945" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(std::string_view sv)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -2003,7 +2003,7 @@ This operator overload appends the string &quot;nullptr&quot; to the internal ou
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload appends the contents of the provided <computeroutput>std::string_view</computeroutput> to the internal output buffer of the <computeroutput>reporter</computeroutput>. It enables seamless streaming of string data into the reporter, supporting clear and efficient formatting of test output across all test cases and folders. </para>
+This operator overload appends the contents of the provided <computeroutput>std::string_view</computeroutput> to the internal output buffer of the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput>. It enables seamless streaming of string data into the reporter, supporting clear and efficient formatting of test output across all test cases and folders. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -2017,7 +2017,7 @@ This operator overload appends the contents of the provided <computeroutput>std:
             <type>typename T</type>
           </param>
         </templateparamlist>
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(T *v)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -2050,8 +2050,8 @@ This operator overload appends the contents of the provided <computeroutput>std:
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload enables the <computeroutput>reporter</computeroutput> to output pointer values in a consistent and readable format.</para>
-<para>Null pointers are always rendered as the string <computeroutput>&quot;nullptr&quot;</computeroutput>, regardless of the platform, avoiding platform-specific behaviour such as <computeroutput>&quot;(nil)&quot;</computeroutput> on Linux/glibc or <computeroutput>&quot;0x0&quot;</computeroutput> on macOS.</para>
+This operator overload enables the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput> to output pointer values in a consistent and readable format.</para>
+<para>Null pointers are always rendered as the string <computeroutput>"nullptr"</computeroutput>, regardless of the platform, avoiding platform-specific behaviour such as <computeroutput>"(nil)"</computeroutput> on Linux/glibc or <computeroutput>"0x0"</computeroutput> on macOS.</para>
 <para>Non-null pointers are formatted as a hexadecimal address using <computeroutput>snprintf</computeroutput> with the <computeroutput>p</computeroutput> format specifier. The resulting string is appended to the internal output buffer, allowing pointer values to be included in test reports and diagnostics.</para>
 <para>This approach provides clear and unambiguous representation of pointer addresses, which is particularly useful for debugging and verifying pointer-related test cases. </para>
         </detaileddescription>
@@ -2062,7 +2062,7 @@ This operator overload enables the <computeroutput>reporter</computeroutput> to 
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a6eed4eaebea91b3377b89a118eb1c323" compoundref="reporter_8h" startline="891" endline="891">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a550817349fa323d0c7b4c11a7948267e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(unsigned char c)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -2086,7 +2086,7 @@ This operator overload enables the <computeroutput>reporter</computeroutput> to 
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload appends the string representation of the specified unsigned character to the internal output buffer of the <computeroutput>reporter</computeroutput>. It enables precise and readable streaming of unsigned character values into the reporter, supporting clear formatting of test output across all test cases and folders. </para>
+This operator overload appends the string representation of the specified unsigned character to the internal output buffer of the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput>. It enables precise and readable streaming of unsigned character values into the reporter, supporting clear formatting of test output across all test cases and folders. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -2096,7 +2096,7 @@ This operator overload appends the string representation of the specified unsign
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a6eed4eaebea91b3377b89a118eb1c323" compoundref="reporter_8h" startline="891" endline="891">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ab422a082e0107b7f98a1d2c826595cf9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(unsigned int v)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -2120,7 +2120,7 @@ This operator overload appends the string representation of the specified unsign
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload appends the string representation of the specified unsigned integer to the internal output buffer of the <computeroutput>reporter</computeroutput>. It enables precise and readable streaming of unsigned integer values into the reporter, supporting clear formatting of test output across all test cases and folders. </para>
+This operator overload appends the string representation of the specified unsigned integer to the internal output buffer of the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput>. It enables precise and readable streaming of unsigned integer values into the reporter, supporting clear formatting of test output across all test cases and folders. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -2130,7 +2130,7 @@ This operator overload appends the string representation of the specified unsign
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a6eed4eaebea91b3377b89a118eb1c323" compoundref="reporter_8h" startline="891" endline="891">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a54dfaed92e9a9122e0bfa1e9fb489365" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(unsigned long long v)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -2154,7 +2154,7 @@ This operator overload appends the string representation of the specified unsign
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload appends the string representation of the specified unsigned long long integer to the internal output buffer of the <computeroutput>reporter</computeroutput>. It enables precise and readable streaming of unsigned long long values into the reporter, supporting clear formatting of test output across all test cases and folders. </para>
+This operator overload appends the string representation of the specified unsigned long long integer to the internal output buffer of the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput>. It enables precise and readable streaming of unsigned long long values into the reporter, supporting clear formatting of test output across all test cases and folders. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -2164,7 +2164,7 @@ This operator overload appends the string representation of the specified unsign
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a6eed4eaebea91b3377b89a118eb1c323" compoundref="reporter_8h" startline="891" endline="891">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1af403303bf0d2d0e9f729d2461fc6bb91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(unsigned long v)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -2188,7 +2188,7 @@ This operator overload appends the string representation of the specified unsign
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload appends the string representation of the specified unsigned long integer to the internal output buffer of the <computeroutput>reporter</computeroutput>. It enables precise and readable streaming of unsigned long values into the reporter, supporting clear formatting of test output across all test cases and folders. </para>
+This operator overload appends the string representation of the specified unsigned long integer to the internal output buffer of the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput>. It enables precise and readable streaming of unsigned long values into the reporter, supporting clear formatting of test output across all test cases and folders. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -2198,7 +2198,7 @@ This operator overload appends the string representation of the specified unsign
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a6eed4eaebea91b3377b89a118eb1c323" compoundref="reporter_8h" startline="891" endline="891">buffer_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1aeb9ea0be472dff38345b1271881b6820" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a0643dcab9f46bc3090939c2a17f829e4" kindref="member">reporter</ref> &amp;</type>
         <definition>reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</definition>
         <argsstring>(unsigned short v)</argsstring>
         <name>operator&lt;&lt;</name>
@@ -2222,7 +2222,7 @@ This operator overload appends the string representation of the specified unsign
 </parameterlist>
 <simplesect kind="return"><para>Reference to the current reporter instance.</para>
 </simplesect>
-This operator overload appends the string representation of the specified unsigned short integer to the internal output buffer of the <computeroutput>reporter</computeroutput>. It enables precise and readable streaming of unsigned short values into the reporter, supporting clear formatting of test output across all test cases and folders. </para>
+This operator overload appends the string representation of the specified unsigned short integer to the internal output buffer of the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput>. It enables precise and readable streaming of unsigned short values into the reporter, supporting clear formatting of test output across all test cases and folders. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -2313,7 +2313,7 @@ Outputs a pass prefix, followed by either the provided message or, if the messag
         <detaileddescription>
 <para><simplesect kind="par"><title>Parameters</title><para>None. </para>
 </simplesect>
-<simplesect kind="return"><para>The active <computeroutput>verbosity</computeroutput> value. </para>
+<simplesect kind="return"><para>The active <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a24da76a8973a5aebca9ef7604740180c" kindref="member">verbosity</ref></computeroutput> value. </para>
 </simplesect>
 </para>
         </detaileddescription>
@@ -2350,9 +2350,9 @@ This method writes the contents of the internal output buffer to the standard ou
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="641" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter.cpp" bodystart="237" bodyend="241"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a6eed4eaebea91b3377b89a118eb1c323" compoundref="reporter_8h" startline="891" endline="891">buffer_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a27a5c6eca6a4beb82466448bfe5c44e9" compoundref="reporter-tap_8cpp" startline="459" endline="514">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="549" endline="673">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="556" endline="680">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a79c7928d44d70b8fe5bf993775517e63" compoundref="reporter-tap_8cpp" startline="526" endline="641">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="340" endline="461">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="347" endline="468">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a8649b62ba8f7ff88501450c5f939ab6d" compoundref="reporter-tap_8cpp" startline="323" endline="446">micro_os_plus::micro_test_plus::reporter_tap::end_suite</referencedby>
       </memberdef>
     </sectiondef>
@@ -2618,14 +2618,14 @@ Returns the ANSI colour code for pass or fail, depending on the boolean conditio
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Writes the contents of <computeroutput>buffer_</computeroutput> to <computeroutput>output_file_</computeroutput> using <computeroutput>fprintf</computeroutput> without appending a newline. If <computeroutput>output_file_</computeroutput> is null, the call is a no-op. </para>
+<para>Writes the contents of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a6eed4eaebea91b3377b89a118eb1c323" kindref="member">buffer_</ref></computeroutput> to <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a1d95688325caf323a4d77272dcf50b86" kindref="member">output_file_</ref></computeroutput> using <computeroutput>fprintf</computeroutput> without appending a newline. If <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a1d95688325caf323a4d77272dcf50b86" kindref="member">output_file_</ref></computeroutput> is null, the call is a no-op. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="798" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter.cpp" bodystart="250" bodyend="257"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="549" endline="673">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="556" endline="680">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a79c7928d44d70b8fe5bf993775517e63" compoundref="reporter-tap_8cpp" startline="526" endline="641">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="340" endline="461">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="347" endline="468">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a8649b62ba8f7ff88501450c5f939ab6d" compoundref="reporter-tap_8cpp" startline="323" endline="446">micro_os_plus::micro_test_plus::reporter_tap::end_suite</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a7ee71ebee4a54fb4b05c1f476cc78263" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -2651,7 +2651,7 @@ Constructs and emits two informational lines: the first lists the programme name
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="809" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter.cpp" bodystart="270" bodyend="355"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a123948993e8c24962071a32d8274c4f6" compoundref="reporter_8h" startline="924" endline="924">argvs_</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aa61862bc406bf1251324b5ebdabcfca0" compoundref="reporter-human_8cpp" startline="139" endline="178">micro_os_plus::micro_test_plus::reporter_human::begin_session</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aa61862bc406bf1251324b5ebdabcfca0" compoundref="reporter-human_8cpp" startline="146" endline="185">micro_os_plus::micro_test_plus::reporter_human::begin_session</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a05627cdee9d67cbb0f30dc3cb9fe426f" compoundref="reporter-tap_8cpp" startline="124" endline="163">micro_os_plus::micro_test_plus::reporter_tap::begin_session</referencedby>
       </memberdef>
     </sectiondef>
@@ -2732,9 +2732,9 @@ Constructs and emits two informational lines: the first lists the programme name
 <para>Reporter to display test results, including operand values and types for failures. </para>
     </briefdescription>
     <detaileddescription>
-<para>The <computeroutput>reporter</computeroutput> class is responsible for formatting and presenting test results within the µTest++ framework. It provides a comprehensive suite of output operators for a wide range of data types, containers, and comparator expressions, enabling detailed and informative reporting of test outcomes.</para>
+<para>The <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput> class is responsible for formatting and presenting test results within the µTest++ framework. It provides a comprehensive suite of output operators for a wide range of data types, containers, and comparator expressions, enabling detailed and informative reporting of test outcomes.</para>
 <para>For failed tests, the reporter prints the actual values of the operands along with their types, supporting precise diagnostics and efficient debugging. The class supports multiple verbosity levels and colour-coded output to distinguish between successful and failed tests, thereby enhancing the clarity and professionalism of test reports.</para>
-<para>The <computeroutput>reporter</computeroutput> also offers methods for reporting the commencement and completion of test cases and suites, as well as for handling pass and fail conditions. Additional features include output stream manipulators, support for exception-related expressions, and configurable formatting options.</para>
+<para>The <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref></computeroutput> also offers methods for reporting the commencement and completion of test cases and suites, as well as for handling pass and fail conditions. Additional features include output stream manipulators, support for exception-related expressions, and configurable formatting options.</para>
 <para>All members and methods are defined within the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref></computeroutput> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts. </para>
     </detaileddescription>
     <inheritancegraph>

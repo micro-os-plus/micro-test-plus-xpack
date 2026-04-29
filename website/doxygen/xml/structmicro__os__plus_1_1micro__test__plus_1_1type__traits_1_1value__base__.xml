@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__" kind="struct" language="C++" prot="public">
     <compoundname>micro_os_plus::micro_test_plus::type_traits::value_base_</compoundname>
     <basecompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::type_traits::op</basecompoundref>
@@ -50,7 +50,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="583" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="583" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="513" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="513" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-attrib">
@@ -68,9 +68,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="627" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="627" bodyend="627"/>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1ab9b0e45988e4291e63d6b016c55231f7" compoundref="type-traits_8h" startline="590" endline="592">micro_os_plus::micro_test_plus::type_traits::value_base_&lt; T &gt;::value_base_</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1aedc41334c71b7711435aee0cb8f44fb3" compoundref="type-traits_8h" startline="619" endline="622">micro_os_plus::micro_test_plus::type_traits::value_base_&lt; T &gt;::get</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="557" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="557" bodyend="557"/>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1ab9b0e45988e4291e63d6b016c55231f7" compoundref="type-traits_8h" startline="520" endline="522">micro_os_plus::micro_test_plus::type_traits::value_base_&lt; T &gt;::value_base_</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1aedc41334c71b7711435aee0cb8f44fb3" compoundref="type-traits_8h" startline="549" endline="552">micro_os_plus::micro_test_plus::type_traits::value_base_&lt; T &gt;::get</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -101,11 +101,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="590" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="590" bodyend="592"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a8f1747b0fb288001d51754dfb8c53b0e" compoundref="type-traits_8h" startline="627" endline="627">micro_os_plus::micro_test_plus::type_traits::value_base_&lt; T &gt;::value_</references>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1genuine__integral__value_1a553f32e088ecaad0fe8363f45c290d0b" compoundref="type-traits_8h" startline="795" endline="798">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt; T &gt;::genuine_integral_value</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a7bec98988dcc3b8317f4dad31cbbf755" compoundref="type-traits_8h" startline="822" endline="824">micro_os_plus::micro_test_plus::type_traits::value&lt; bool &gt;::value</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a69374f408449c08c756896dd26d2d437" compoundref="type-traits_8h" startline="871" endline="874">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::value</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="520" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="520" bodyend="522"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a8f1747b0fb288001d51754dfb8c53b0e" compoundref="type-traits_8h" startline="557" endline="557">micro_os_plus::micro_test_plus::type_traits::value_base_&lt; T &gt;::value_</references>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1genuine__integral__value_1a553f32e088ecaad0fe8363f45c290d0b" compoundref="type-traits_8h" startline="725" endline="728">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value&lt; T &gt;::genuine_integral_value</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_1a7bec98988dcc3b8317f4dad31cbbf755" compoundref="type-traits_8h" startline="752" endline="754">micro_os_plus::micro_test_plus::type_traits::value&lt; bool &gt;::value</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4_1a69374f408449c08c756896dd26d2d437" compoundref="type-traits_8h" startline="801" endline="804">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;::value</referencedby>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1aedc41334c71b7711435aee0cb8f44fb3" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>T</type>
@@ -128,8 +128,8 @@ Returns the stored value by value. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="619" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="619" bodyend="622"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a8f1747b0fb288001d51754dfb8c53b0e" compoundref="type-traits_8h" startline="627" endline="627">micro_os_plus::micro_test_plus::type_traits::value_base_&lt; T &gt;::value_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="549" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="549" bodyend="552"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a8f1747b0fb288001d51754dfb8c53b0e" compoundref="type-traits_8h" startline="557" endline="557">micro_os_plus::micro_test_plus::type_traits::value_base_&lt; T &gt;::value_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1a697a4dcb95f65634253f44946d06c81a" compoundref="reporter-inlines_8h" startline="211" endline="215">micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</referencedby>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1ab7f7f241b55abd7ac9e25234bbe64406" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
@@ -148,7 +148,7 @@ Allows explicit conversion to the encapsulated value. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="603" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="603" bodyend="606"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="533" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="533" bodyend="536"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -164,8 +164,8 @@ Allows explicit conversion to the encapsulated value. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__" kindref="compound">value_base_</ref></computeroutput> struct template provides the <computeroutput>T value_{}</computeroutput> member, an explicit <computeroutput>operator T()</computeroutput> conversion, and a <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1aedc41334c71b7711435aee0cb8f44fb3" kindref="member">get()</ref></computeroutput> accessor, shared by <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1genuine__integral__value" kindref="compound">genuine_integral_value</ref></computeroutput>, <computeroutput>value&lt;T&gt;</computeroutput>, and the floating point specialisation <computeroutput>value&lt;T&gt;</computeroutput>.</para>
-<para>It inherits from <computeroutput>op</computeroutput> so that all derived types satisfy the <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__op" kindref="compound">is_op</ref></computeroutput> concept without each struct needing to inherit from <computeroutput>op</computeroutput> directly. </para>
+The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__" kindref="compound">value_base_</ref></computeroutput> struct template provides the <computeroutput>T <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a8f1747b0fb288001d51754dfb8c53b0e" kindref="member">value_</ref>{}</computeroutput> member, an explicit <computeroutput>operator T()</computeroutput> conversion, and a <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1aedc41334c71b7711435aee0cb8f44fb3" kindref="member">get()</ref></computeroutput> accessor, shared by <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1genuine__integral__value" kindref="compound">genuine_integral_value</ref></computeroutput>, <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref>&lt;T&gt;</computeroutput>, and the floating point specialisation <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref>&lt;T&gt;</computeroutput>.</para>
+<para>It inherits from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op" kindref="compound">op</ref></computeroutput> so that all derived types satisfy the <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__op" kindref="compound">is_op</ref></computeroutput> concept without each struct needing to inherit from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op" kindref="compound">op</ref></computeroutput> directly. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="27">
@@ -357,7 +357,7 @@ The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1ty
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="578" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="579" bodyend="628"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="508" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="509" bodyend="558"/>
     <listofallmembers>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1aedc41334c71b7711435aee0cb8f44fb3" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::value_base_</scope><name>get</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1ab7f7f241b55abd7ac9e25234bbe64406" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::value_base_</scope><name>operator T</name></member>

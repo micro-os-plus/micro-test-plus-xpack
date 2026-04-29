@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base" kind="class" language="C++" prot="public">
     <compoundname>micro_os_plus::micro_test_plus::detail::deferred_reporter_base</compoundname>
     <derivedcompoundref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::detail::deferred_reporter&lt; Expr_T &gt;</derivedcompoundref>
@@ -170,7 +170,7 @@ Stores the evaluated Boolean <computeroutput>value</computeroutput>, the <comput
         <name>deferred_reporter_base</name>
         <qualifiedname>micro_os_plus::micro_test_plus::detail::deferred_reporter_base::deferred_reporter_base</qualifiedname>
         <param>
-          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base" kindref="compound">deferred_reporter_base</ref> &amp;</type>
+          <type>const deferred_reporter_base &amp;</type>
         </param>
         <briefdescription>
 <para>Deleted copy constructor to prevent copying. </para>
@@ -189,7 +189,7 @@ Stores the evaluated Boolean <computeroutput>value</computeroutput>, the <comput
         <name>deferred_reporter_base</name>
         <qualifiedname>micro_os_plus::micro_test_plus::detail::deferred_reporter_base::deferred_reporter_base</qualifiedname>
         <param>
-          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base" kindref="compound">deferred_reporter_base</ref> &amp;&amp;</type>
+          <type>deferred_reporter_base &amp;&amp;</type>
         </param>
         <briefdescription>
 <para>Deleted move constructor to prevent moving. </para>
@@ -270,13 +270,13 @@ This operator overload enables the deferred reporter to accumulate expectation m
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a0d4853e08c3106a270e951e56d876840" compoundref="deferred-reporter_8h" startline="213" endline="213">deferred_output_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1aef0485fd5cb77a9c6b171c04e597bdbf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base" kindref="compound">deferred_reporter_base</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1abd34896d8d956db7223829bcbf9efb04" kindref="member">deferred_reporter_base</ref> &amp;</type>
         <definition>deferred_reporter_base &amp; micro_os_plus::micro_test_plus::detail::deferred_reporter_base::operator=</definition>
         <argsstring>(const deferred_reporter_base &amp;)=delete</argsstring>
         <name>operator=</name>
         <qualifiedname>micro_os_plus::micro_test_plus::detail::deferred_reporter_base::operator=</qualifiedname>
         <param>
-          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base" kindref="compound">deferred_reporter_base</ref> &amp;</type>
+          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1abd34896d8d956db7223829bcbf9efb04" kindref="member">deferred_reporter_base</ref> &amp;</type>
         </param>
         <briefdescription>
 <para>Deleted copy assignment operator to prevent copying. </para>
@@ -289,13 +289,13 @@ This operator overload enables the deferred reporter to accumulate expectation m
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1abd34896d8d956db7223829bcbf9efb04" compoundref="deferred-reporter_8cpp" startline="71" endline="79">deferred_reporter_base</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1a08910483a88514bd3fc05eb63a5043b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base" kindref="compound">deferred_reporter_base</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1abd34896d8d956db7223829bcbf9efb04" kindref="member">deferred_reporter_base</ref> &amp;</type>
         <definition>deferred_reporter_base &amp; micro_os_plus::micro_test_plus::detail::deferred_reporter_base::operator=</definition>
         <argsstring>(deferred_reporter_base &amp;&amp;)=delete</argsstring>
         <name>operator=</name>
         <qualifiedname>micro_os_plus::micro_test_plus::detail::deferred_reporter_base::operator=</qualifiedname>
         <param>
-          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base" kindref="compound">deferred_reporter_base</ref> &amp;&amp;</type>
+          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1deferred__reporter__base_1abd34896d8d956db7223829bcbf9efb04" kindref="member">deferred_reporter_base</ref> &amp;&amp;</type>
         </param>
         <briefdescription>
 <para>Deleted move assignment operator to prevent moving. </para>

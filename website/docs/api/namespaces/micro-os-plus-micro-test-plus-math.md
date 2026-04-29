@@ -155,7 +155,7 @@ namespace micro_os_plus::micro_test_plus::math { ... }
 <p>Mathematical utilities for the µTest++ testing framework.</p>
 
 
-<p>The <span class="doxyComputerOutput">math</span> namespace offers a suite of constexpr mathematical function templates and utilities for use within the µTest++ framework.</p>
+<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math">math</a></span> namespace offers a suite of constexpr mathematical function templates and utilities for use within the µTest++ framework.</p>
 
 
 <p>These functions include generic implementations for absolute value, minimum value, exponentiation, and compile-time parsing of numeric values from character arrays. The utilities are designed to be lightweight and suitable for embedded environments, where standard library alternatives may be unavailable, less efficient, or not constexpr.</p>
@@ -281,7 +281,7 @@ namespace micro_os_plus::micro_test_plus::math { ... }
 <p>This function template performs compile-time extraction of the decimal (fractional) part from a sequence of characters, typically provided as a template parameter pack.</p>
 
 
-<p>The function expects the character sequence to represent a numeric value, where all characters are either digits, a dot (<span class="doxyComputerOutput">.</span>), or an apostrophe (‘``). Parsing begins after the first dot, accumulating the decimal digits as an integer value, each weighted by its decimal position.</p>
+<p>The function expects the character sequence to represent a numeric value, where all characters are either digits, a dot (<span class="doxyComputerOutput">.</span>), or an apostrophe (<span class="doxyComputerOutput">'</span>). Parsing begins after the first dot, accumulating the decimal digits as an integer value, each weighted by its decimal position.</p>
 
 
 <p>This utility is particularly useful for user-defined literals and other compile-time constant expressions, enabling efficient and type-safe conversion from character sequences to the decimal part of numeric values.</p>
@@ -487,7 +487,7 @@ namespace micro_os_plus::micro_test_plus::math { ... }
 <p>This function template determines, at compile time, the number of decimal (fractional) digits present in a numeric value represented by a character sequence, typically provided as a template parameter pack.</p>
 
 
-<p>The function expects the character sequence to represent a numeric value, where all characters are either digits, a dot (<span class="doxyComputerOutput">.</span>), or an apostrophe (‘``). It locates the first dot and counts the number of digits that follow, returning the count as the number of decimal places.</p>
+<p>The function expects the character sequence to represent a numeric value, where all characters are either digits, a dot (<span class="doxyComputerOutput">.</span>), or an apostrophe (<span class="doxyComputerOutput">'</span>). It locates the first dot and counts the number of digits that follow, returning the count as the number of decimal places.</p>
 
 
 <p>This utility is particularly useful for user-defined literals and other compile-time constant expressions, enabling efficient and type-safe determination of decimal precision from character sequences.</p>
@@ -671,7 +671,7 @@ namespace micro_os_plus::micro_test_plus::math { ... }
 <p>This function template performs compile-time parsing of a numeric value from a sequence of characters, typically provided as a template parameter pack.</p>
 
 
-<p>The function assumes that all characters are either digits, a dot (<span class="doxyComputerOutput">.</span>), or an apostrophe (‘``). Parsing stops at the first dot, allowing the function to extract only the integral part of the number.</p>
+<p>The function assumes that all characters are either digits, a dot (<span class="doxyComputerOutput">.</span>), or an apostrophe (<span class="doxyComputerOutput">'</span>). Parsing stops at the first dot, allowing the function to extract only the integral part of the number.</p>
 
 
 <p>This utility is particularly useful for user-defined literals and other compile-time constant expressions, enabling efficient and type-safe conversion from character sequences to integral values.</p>
@@ -848,6 +848,6 @@ The documentation for this namespace was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

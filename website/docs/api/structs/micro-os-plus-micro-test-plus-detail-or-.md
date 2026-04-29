@@ -218,7 +218,7 @@ struct micro_os_plus::micro_test_plus::detail::or_&lt;Lhs_T, Rhs_T&gt; { ... }
 <p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/or-">or_</a></span> struct template provides a type-safe mechanism for evaluating the logical disjunction (OR) of two operands within the framework.</p>
 
 
-<p>This comparator supports a wide range of operand types, applying the generic getter to ensure correct value extraction for both custom and standard types. The result of the logical OR operation is stored in the <span class="doxyComputerOutput">value_</span> member for efficient access.</p>
+<p>This comparator supports a wide range of operand types, applying the generic getter to ensure correct value extraction for both custom and standard types. The result of the logical OR operation is stored in the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op-/#a2dd578daf62dde786b3e9e7beeac08bc">value_</a></span> member for efficient access.</p>
 
 
 <p>The implementation is optimised for use in embedded environments and supports both compile-time and run-time evaluation.</p>
@@ -645,6 +645,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

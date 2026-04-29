@@ -196,7 +196,7 @@ namespace micro_os_plus::micro_test_plus { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Human (standard output) implementation of <span class="doxyComputerOutput">reporter</span>. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#details">More...</a></p>
+<p>Human (standard output) implementation of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span>. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -210,7 +210,7 @@ namespace micro_os_plus::micro_test_plus { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>TAP (Test Anything Protocol) implementation of <span class="doxyComputerOutput">reporter</span>. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#details">More...</a></p>
+<p>TAP (Test Anything Protocol) implementation of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span>. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -280,7 +280,7 @@ namespace micro_os_plus::micro_test_plus { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>A <span class="doxyComputerOutput">runner</span> variant that also manages statically-registered test suites. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-runner/#details">More...</a></p>
+<p>A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a></span> variant that also manages statically-registered test suites. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-runner/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -308,7 +308,7 @@ namespace micro_os_plus::micro_test_plus { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>A named, runnable test case that lives inside a <span class="doxyComputerOutput">suite</span>. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/subtest/#details">More...</a></p>
+<p>A named, runnable test case that lives inside a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite">suite</a></span>. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/subtest/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -392,7 +392,7 @@ namespace micro_os_plus::micro_test_plus { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>The implicit top-level suite owned by every <span class="doxyComputerOutput">runner</span> instance. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/top-suite/#details">More...</a></p>
+<p>The implicit top-level suite owned by every <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a></span> instance. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/top-suite/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -749,23 +749,6 @@ namespace micro_os_plus::micro_test_plus { ... }
 </tr>
 
 <tr class="doxyMemberIndexTemplate">
-<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Exception_T, class Callable_T&gt;</div></td>
-</tr>
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-exceptions/#gaf8f7602f40119da514be2a0bfc4b70f5">throws</a> (const Callable_T &amp;func)</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Check if a callable throws a specific exception. <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-exceptions/#gaf8f7602f40119da514be2a0bfc4b70f5">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexTemplate">
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Callable_T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
@@ -776,6 +759,23 @@ namespace micro_os_plus::micro_test_plus { ... }
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
 <p>Check if a callable throws an exception (any exception). <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-exceptions/#ga8bf54756e4122c6a0bd123b4621e60e2">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexTemplate">
+<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Exception_T, class Callable_T&gt;</div></td>
+</tr>
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr auto</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-exceptions/#gaf8f7602f40119da514be2a0bfc4b70f5">throws</a> (const Callable_T &amp;func)</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Check if a callable throws a specific exception. <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-exceptions/#gaf8f7602f40119da514be2a0bfc4b70f5">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -808,6 +808,7 @@ namespace micro_os_plus::micro_test_plus { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
+<p>Number of spaces per indentation level. <a href="#a06acf196002ba97ba19ce4054477f915">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -1548,7 +1549,7 @@ namespace micro_os_plus::micro_test_plus { ... }
 </dl>
 
 
-<p>The <span class="doxyComputerOutput">verbosity</span> enumeration defines the available levels of detail for test output produced by the reporting system. These levels control the amount and type of information displayed during test execution, allowing users to tailor the output to their specific requirements.</p>
+<p>The <span class="doxyComputerOutput"><a href="#a809871d76f29309ed9c6fbd96d5a914b">verbosity</a></span> enumeration defines the available levels of detail for test output produced by the reporting system. These levels control the amount and type of information displayed during test execution, allowing users to tailor the output to their specific requirements.</p>
 
 
 <p>Selecting an appropriate verbosity level enhances the usability of test reports, whether for concise summaries or comprehensive diagnostics.</p>
@@ -1604,7 +1605,7 @@ namespace micro_os_plus::micro_test_plus { ... }
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
 <td class="doxyParamItemName">stream</td>
-<td class="doxyParamItemDescription"><p>Reference to the <span class="doxyComputerOutput">reporter</span> instance.</p></td>
+<td class="doxyParamItemDescription"><p>Reference to the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> instance.</p></td>
 </tr>
 </table>
 </dd>
@@ -1612,11 +1613,11 @@ namespace micro_os_plus::micro_test_plus { ... }
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>Reference to the same <span class="doxyComputerOutput">reporter</span> instance, enabling chaining of output operations.</p></dd>
+<dd><p>Reference to the same <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> instance, enabling chaining of output operations.</p></dd>
 </dl>
 
 
-<p>The <span class="doxyComputerOutput">endl</span> function inserts a newline character into the specified <span class="doxyComputerOutput">reporter</span> stream and flushes its output buffer. This operation ensures that each test output line is clearly separated and immediately visible, facilitating the readability and clarity of test results across all test cases and folders within the µTest++ framework.</p>
+<p>The <span class="doxyComputerOutput"><a href="#accd8ecc7473b09af578daa31bb8780eb">endl</a></span> function inserts a newline character into the specified <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> stream and flushes its output buffer. This operation ensures that each test output line is clearly separated and immediately visible, facilitating the readability and clarity of test results across all test cases and folders within the µTest++ framework.</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00206">206</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
@@ -1789,14 +1790,18 @@ namespace micro_os_plus::micro_test_plus { ... }
 </div>
 <div class="doxyMemberDoc">
 
+<p>Number of spaces per indentation level.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00112">112</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
+<p>Used by <span class="doxyComputerOutput">operator&lt;&lt;(<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/indent-t">indent_t</a>)</span> and related methods to compute the leading whitespace for each nesting depth.</p>
+
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00119">119</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a06acf196002ba97ba19ce4054477f915">112</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a06acf196002ba97ba19ce4054477f915">indent_size</a> = 4;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a06acf196002ba97ba19ce4054477f915">119</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a06acf196002ba97ba19ce4054477f915">indent_size</a> = 4;</span></span></div>
 
 </div>
 
@@ -1820,6 +1825,6 @@ The documentation for this namespace was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

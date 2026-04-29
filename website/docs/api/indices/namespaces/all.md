@@ -29,9 +29,10 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#aef66ac12d33fb18753ae7440445e8d85"><b>abs()</b></a>: as function in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math">micro_os_plus::micro_test_plus::math</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a9c99a7907fdca67f8fc1f7b18b516ff1"><b>and_()</b></a>: as function in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">micro_os_plus::micro_test_plus::detail</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/and-"><b>and_&lt;Lhs_T, Rhs_T&gt;</b></a>: as struct in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">micro_os_plus::micro_test_plus::detail</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/any-op"><b>any_op</b></a>: as concept in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">micro_os_plus::micro_test_plus::type_traits</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/assertion"><b>assertion&lt;Expr_T&gt;</b></a>: as struct in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">micro_os_plus::micro_test_plus::detail</a></li>
 </ul>
-<p>4 entries</p>
+<p>5 entries</p>
 
 ## - B -
 
@@ -43,10 +44,12 @@ keywords:
 
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op-"><b>callable_op_</b></a>: as struct in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">micro_os_plus::micro_test_plus::detail</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/checkable"><b>checkable</b></a>: as concept in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">micro_os_plus::micro_test_plus::type_traits</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/colours"><b>colours</b></a>: as struct in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#abb8182f972e436f09e25dc5b0dae05fd"><b>colours_red_green</b></a>: as variable in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/container-like"><b>container_like</b></a>: as concept in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">micro_os_plus::micro_test_plus::type_traits</a></li>
 </ul>
-<p>3 entries</p>
+<p>5 entries</p>
 
 ## - D -
 
@@ -95,9 +98,9 @@ keywords:
 ## - H -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a341b3a4a7cb9bea974449355bf7095d8"><b>has_epsilon_v</b></a>: as variable in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">micro_os_plus::micro_test_plus::type_traits</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a0ff1a0846fe8d484f01d45df4e37dd94"><b>has_npos_v</b></a>: as variable in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">micro_os_plus::micro_test_plus::type_traits</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a695b45e13f3ac3cd1cef1225fa0dfa01"><b>has_value_v</b></a>: as variable in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">micro_os_plus::micro_test_plus::type_traits</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-epsilon"><b>has_epsilon</b></a>: as concept in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">micro_os_plus::micro_test_plus::type_traits</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-npos"><b>has_npos</b></a>: as concept in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">micro_os_plus::micro_test_plus::type_traits</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-value"><b>has_value</b></a>: as concept in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">micro_os_plus::micro_test_plus::type_traits</a></li>
 </ul>
 <p>3 entries</p>
 
@@ -109,8 +112,8 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/indent-t"><b>indent_t</b></a>: as struct in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#aa887212b25aa8e44bf32b07d4a6634e9"><b>indent()</b></a>: as function in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant"><b>integral_constant&lt;N&gt;</b></a>: as struct in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">micro_os_plus::micro_test_plus::type_traits</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a8361ab7ff9d9c6343d97a99bdcb9feb2"><b>is_container_v</b></a>: as variable in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">micro_os_plus::micro_test_plus::type_traits</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a814e7f004d5404f735737aabb90fa111"><b>is_op_v</b></a>: as variable in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">micro_os_plus::micro_test_plus::type_traits</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/is-floating-point"><b>is_floating_point</b></a>: as concept in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">micro_os_plus::micro_test_plus::type_traits</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/is-op"><b>is_op</b></a>: as concept in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">micro_os_plus::micro_test_plus::type_traits</a></li>
 </ul>
 <p>7 entries</p>
 
@@ -163,7 +166,9 @@ keywords:
 
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math/#a81a10f59f83a29f4ade9c710e833eced"><b>pow()</b></a>: as function in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/math">micro_os_plus::micro_test_plus::math</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/printable"><b>printable</b></a>: as concept in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">micro_os_plus::micro_test_plus::type_traits</a></li>
 </ul>
+<p>2 entries</p>
 
 ## - Q -
 
@@ -232,10 +237,10 @@ keywords:
 </ul>
 <p>5 entries</p>
 <br/>
-<p>Total: 93 entries.</p>
+<p>Total: 97 entries.</p>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

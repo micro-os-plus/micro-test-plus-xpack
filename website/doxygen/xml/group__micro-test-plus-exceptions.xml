@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="group__micro-test-plus-exceptions" kind="group">
     <compoundname>micro-test-plus-exceptions</compoundname>
     <title>Checking Exceptions</title>
@@ -43,12 +43,58 @@
 </parameterlist>
 <simplesect kind="return"><para>An output stream to write optional messages.</para>
 </simplesect>
-The <computeroutput>nothrow</computeroutput> function template verifies whether invoking the provided callable object does not result in the throwing of any exception within the µTest++ framework. This is useful for testing exception safety and ensuring that code under test does not unexpectedly signal error conditions.</para>
+The <computeroutput><ref refid="group__micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" kindref="member">nothrow</ref></computeroutput> function template verifies whether invoking the provided callable object does not result in the throwing of any exception within the µTest++ framework. This is useful for testing exception safety and ensuring that code under test does not unexpectedly signal error conditions.</para>
 <para>The function returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="364" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="364" bodyend="367" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="107" declcolumn="3"/>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-test-plus-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Callable_T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::throws</definition>
+        <argsstring>(const Callable_T &amp;func)</argsstring>
+        <name>throws</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::throws</qualifiedname>
+        <param>
+          <type>const Callable_T &amp;</type>
+          <declname>func</declname>
+        </param>
+        <briefdescription>
+<para>Check if a callable throws an exception (any exception). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Callable_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the callable object to be invoked. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The callable object to check for exception throwing behaviour. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An output stream to write optional messages.</para>
+</simplesect>
+The <computeroutput><ref refid="group__micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kindref="member">throws</ref></computeroutput> function template verifies whether invoking the provided callable object results in the throwing of any exception within the µTest++ framework. This is useful for testing general exception safety and ensuring that code under test properly signals error conditions.</para>
+<para>The function returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="346" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="346" bodyend="349" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="95" declcolumn="3"/>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -100,58 +146,12 @@ The <computeroutput>nothrow</computeroutput> function template verifies whether 
 </parameterlist>
 <simplesect kind="return"><para>An output stream to write optional messages.</para>
 </simplesect>
-The <computeroutput>throws</computeroutput> function template verifies whether invoking the provided callable object results in the throwing of a specific exception type within the µTest++ framework. This is useful for testing error handling and exception safety in code under test.</para>
+The <computeroutput><ref refid="group__micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kindref="member">throws</ref></computeroutput> function template verifies whether invoking the provided callable object results in the throwing of a specific exception type within the µTest++ framework. This is useful for testing error handling and exception safety in code under test.</para>
 <para>The function returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="329" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="329" bodyend="332" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="82" declcolumn="3"/>
-      </memberdef>
-      <memberdef kind="function" id="group__micro-test-plus-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>class Callable_T</type>
-          </param>
-        </templateparamlist>
-        <type>auto</type>
-        <definition>auto micro_os_plus::micro_test_plus::throws</definition>
-        <argsstring>(const Callable_T &amp;func)</argsstring>
-        <name>throws</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::throws</qualifiedname>
-        <param>
-          <type>const Callable_T &amp;</type>
-          <declname>func</declname>
-        </param>
-        <briefdescription>
-<para>Check if a callable throws an exception (any exception). </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="templateparam"><parameteritem>
-<parameternamelist>
-<parametername>Callable_T</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The type of the callable object to be invoked. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername direction="in">func</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The callable object to check for exception throwing behaviour. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>An output stream to write optional messages.</para>
-</simplesect>
-The <computeroutput>throws</computeroutput> function template verifies whether invoking the provided callable object results in the throwing of any exception within the µTest++ framework. This is useful for testing general exception safety and ensuring that code under test properly signals error conditions.</para>
-<para>The function returns an output stream, allowing optional messages to be appended to the test report for diagnostic purposes. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="346" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="346" bodyend="349" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="95" declcolumn="3"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

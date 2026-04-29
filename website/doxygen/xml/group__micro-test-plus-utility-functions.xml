@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="group__micro-test-plus-utility-functions" kind="group">
     <compoundname>micro-test-plus-utility-functions</compoundname>
     <title>Utility Functions</title>
@@ -29,7 +29,7 @@
 </parameterlist>
 <simplesect kind="return"><para>A pointer to the first character of the file name within <computeroutput>path</computeroutput>, or <computeroutput>path</computeroutput> itself if no directory separator is found.</para>
 </simplesect>
-The <computeroutput>extract_file_name</computeroutput> function extracts the file name from a given file path, handling both Unix-style (<computeroutput>/</computeroutput>) and Windows-style (<computeroutput>\</computeroutput>) path separators. It returns a pointer to the start of the file name within the input string, or the original string if no separators are found.</para>
+The <computeroutput><ref refid="group__micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kindref="member">extract_file_name</ref></computeroutput> function extracts the file name from a given file path, handling both Unix-style (<computeroutput>/</computeroutput>) and Windows-style (<computeroutput>\\endiskip</computeroutput>) path separators. It returns a pointer to the start of the file name within the input string, or the original string if no separators are found.</para>
 <para>This utility is particularly useful for test reporting, allowing for concise display of file names without full paths.</para>
 <para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
@@ -80,7 +80,7 @@ The <computeroutput>extract_file_name</computeroutput> function extracts the fil
 <simplesect kind="return"><para><computeroutput>true</computeroutput> if the input string matches the pattern; otherwise, <computeroutput>false</computeroutput>.</para>
 </simplesect>
 This function enables pattern-based string comparison for tests, supporting both exact matches and wildcard patterns. The pattern may include <computeroutput>*</computeroutput> to match any sequence of characters and <computeroutput>?</computeroutput> to match any single character. This allows for flexible validation of string content in test assertions, accommodating variable or partially known values.</para>
-<para><simplesect kind="warning"><para>The <computeroutput>*</computeroutput> wildcard is handled via recursion with a linear loop, giving $O(2^n)$ worst-case complexity in the number of <computeroutput>*</computeroutput> wildcards (e.g. a pattern such as <computeroutput>&quot;a*a*a*b&quot;</computeroutput> against a long string of <lsquo/>&apos;a<rsquo/>` characters). For the typical short suite-name patterns used in a test framework this is not a concern, but callers should avoid patterns with many consecutive wildcards against long input strings.</para>
+<para><simplesect kind="warning"><para>The <computeroutput>*</computeroutput> wildcard is handled via recursion with a linear loop, giving $O(2^n)$ worst-case complexity in the number of <computeroutput>*</computeroutput> wildcards (e.g. a pattern such as <computeroutput>"a*a*a*b"</computeroutput> against a long string of <computeroutput>&apos;a&apos;</computeroutput> characters). For the typical short suite-name patterns used in a test framework this is not a concern, but callers should avoid patterns with many consecutive wildcards against long input strings.</para>
 </simplesect>
 <simplesect kind="par"><title>Examples</title><para></para>
 </simplesect>
@@ -135,7 +135,7 @@ This function enables pattern-based string comparison for tests, supporting both
 </parameterlist>
 <simplesect kind="return"><para>A non-const reference to the input object.</para>
 </simplesect>
-The <computeroutput>mut</computeroutput> function template provides a safe and generic mechanism to remove the <computeroutput>const</computeroutput> qualifier from any type. It returns a non-const reference to the input object, enabling modification of objects that were originally declared as <computeroutput>const</computeroutput>. This utility is particularly useful in testing scenarios where controlled mutation of test data is required. </para>
+The <computeroutput><ref refid="group__micro-test-plus-utility-functions_1ga00ea8f3dfb7cb0ef39919065321cf62f" kindref="member">mut</ref></computeroutput> function template provides a safe and generic mechanism to remove the <computeroutput>const</computeroutput> qualifier from any type. It returns a non-const reference to the input object, enabling modification of objects that were originally declared as <computeroutput>const</computeroutput>. This utility is particularly useful in testing scenarios where controlled mutation of test data is required. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>

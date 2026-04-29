@@ -446,13 +446,13 @@ namespace micro_os_plus::micro_test_plus::detail { ... }
 <p>Internal implementation details for the µTest++ framework.</p>
 
 
-<p>The <span class="doxyComputerOutput">detail</span> namespace encapsulates the internal mechanisms, helper structures, and implementation utilities employed by the µTest++ testing framework. These components do not form part of the public API and may be modified without prior notice.</p>
+<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">detail</a></span> namespace encapsulates the internal mechanisms, helper structures, and implementation utilities employed by the µTest++ testing framework. These components do not form part of the public API and may be modified without prior notice.</p>
 
 
 <p>Within this namespace, one will find assertion handling, generic getter utilities, comparator structures for logical and relational operations, mechanisms for exception checking, and base classes for deferred reporting of test results.</p>
 
 
-<p>All definitions within <span class="doxyComputerOutput">detail</span> are intended exclusively for internal use, ensuring a clear distinction between user-facing and internal components. This approach enhances maintainability, mitigates the risk of naming conflicts, and keeps the public API succinct.</p>
+<p>All definitions within <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">detail</a></span> are intended exclusively for internal use, ensuring a clear distinction between user-facing and internal components. This approach enhances maintainability, mitigates the risk of naming conflicts, and keeps the public API succinct.</p>
 
 
 <p>The relevant header files are organised within the <span class="doxyComputerOutput">include/micro-os-plus</span> folder to maintain a structured and modular codebase.</p>
@@ -598,7 +598,7 @@ namespace micro_os_plus::micro_test_plus::detail { ... }
 </dl>
 
 
-<p>The <span class="doxyComputerOutput">get</span> function template retrieves the value from the provided object or type. If the type provides a <span class="doxyComputerOutput"><a href="#ac627271520bf2fe8a4c4774bcd9bf343">get()</a></span> member function, it is invoked; otherwise the argument itself is returned unchanged.</p>
+<p>The <span class="doxyComputerOutput"><a href="#ac627271520bf2fe8a4c4774bcd9bf343">get</a></span> function template retrieves the value from the provided object or type. If the type provides a <span class="doxyComputerOutput"><a href="#ac627271520bf2fe8a4c4774bcd9bf343">get()</a></span> member function, it is invoked; otherwise the argument itself is returned unchanged.</p>
 
 
 <p>The selection is performed at compile time using <span class="doxyComputerOutput">if constexpr</span> and an inline <span class="doxyComputerOutput">requires</span> expression, superseding the classic two-overload SFINAE technique used prior to C++20.</p>
@@ -796,6 +796,6 @@ The documentation for this namespace was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

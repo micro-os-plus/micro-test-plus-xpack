@@ -201,6 +201,11 @@
         },
         {
           "type": "doc",
+          "label": "Concepts",
+          "id": "api/indices/namespaces/concepts"
+        },
+        {
+          "type": "doc",
           "label": "Classes",
           "id": "api/indices/namespaces/classes"
         },
@@ -1128,6 +1133,11 @@
           "type": "doc",
           "label": "All",
           "id": "api/indices/files/all"
+        },
+        {
+          "type": "doc",
+          "label": "Concepts",
+          "id": "api/indices/files/concepts"
         },
         {
           "type": "doc",

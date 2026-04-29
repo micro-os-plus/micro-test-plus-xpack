@@ -125,7 +125,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op { ... }
 <p>Empty base struct for all operator types.</p>
 
 
-<p>The <span class="doxyComputerOutput">op</span> struct serves as a common base for all operator and value wrapper types used in the µTest++ framework's type traits and metaprogramming utilities. It provides a unified type hierarchy, enabling compile-time detection and generic handling of operator-like types within the framework.</p>
+<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">op</a></span> struct serves as a common base for all operator and value wrapper types used in the µTest++ framework's type traits and metaprogramming utilities. It provides a unified type hierarchy, enabling compile-time detection and generic handling of operator-like types within the framework.</p>
 
 
 <p>This struct is intended for internal use as a base for integral constants, floating point constants, and other value wrappers, supporting advanced template metaprogramming and type introspection.</p>
@@ -136,6 +136,6 @@ struct micro_os_plus::micro_test_plus::type_traits::op { ... }
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

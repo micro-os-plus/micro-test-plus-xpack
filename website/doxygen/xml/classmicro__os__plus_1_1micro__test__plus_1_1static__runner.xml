@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classmicro__os__plus_1_1micro__test__plus_1_1static__runner" kind="class" language="C++" prot="public" final="yes">
     <compoundname>micro_os_plus::micro_test_plus::static_runner</compoundname>
     <basecompoundref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::runner</basecompoundref>
     <includes refid="micro-test-plus_8h" local="no">micro-os-plus/micro-test-plus.h</includes>
     <sectiondef kind="protected-attrib">
       <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1runner_1abacf53ab658e289ae89051531c0cddad" prot="protected" static="no" mutable="no">
-        <type>std::vector&lt; std::unique_ptr&lt; class <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" kindref="compound">suite</ref> &gt; &gt;</type>
+        <type>std::vector&lt; std::unique_ptr&lt; class <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a330a6a2c24a6759e4cce1269942b9c88" kindref="member">suite</ref> &gt; &gt;</type>
         <definition>std::vector&lt;std::unique_ptr&lt;class suite&gt; &gt; micro_os_plus::micro_test_plus::runner::children_suites_</definition>
         <argsstring></argsstring>
         <name>children_suites_</name>
@@ -15,7 +15,7 @@
 <para>Owning collection of dynamically registered child suites. </para>
         </briefdescription>
         <detaileddescription>
-<para>Each call to <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a330a6a2c24a6759e4cce1269942b9c88" kindref="member">runner::suite()</ref></computeroutput> appends a new <computeroutput>suite</computeroutput> to this vector and runs it immediately. The vector retains ownership of all suites for the lifetime of the runner. </para>
+<para>Each call to <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a330a6a2c24a6759e4cce1269942b9c88" kindref="member">runner::suite()</ref></computeroutput> appends a new <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" kindref="compound">suite</ref></computeroutput> to this vector and runs it immediately. The vector retains ownership of all suites for the lifetime of the runner. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -48,7 +48,7 @@
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1ab32279070d5254a7b92f736f2dfb96d4" compoundref="test_8h" startline="159" endline="162">micro_os_plus::micro_test_plus::test_node::name</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ace4da8161152a82e4ffa9c6d50917088" prot="protected" static="no" mutable="no">
-        <type>std::unique_ptr&lt; class <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &gt;</type>
+        <type>std::unique_ptr&lt; class <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a28e8cf878d98f6cba575a58189c39a56" kindref="member">reporter</ref> &gt;</type>
         <definition>std::unique_ptr&lt;class reporter&gt; micro_os_plus::micro_test_plus::runner::reporter_</definition>
         <argsstring></argsstring>
         <name>reporter_</name>
@@ -166,7 +166,7 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-Delegates construction to the <computeroutput>runner</computeroutput> base class with the given <computeroutput>top_suite_name</computeroutput>. If tracing is enabled, the function signature and suite name are output for diagnostic purposes. </para>
+Delegates construction to the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref></computeroutput> base class with the given <computeroutput>top_suite_name</computeroutput>. If tracing is enabled, the function signature and suite name are output for diagnostic purposes. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -186,7 +186,7 @@ Delegates construction to the <computeroutput>runner</computeroutput> base class
         <name>static_runner</name>
         <qualifiedname>micro_os_plus::micro_test_plus::static_runner::static_runner</qualifiedname>
         <param>
-          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner" kindref="compound">static_runner</ref> &amp;</type>
+          <type>const static_runner &amp;</type>
         </param>
         <briefdescription>
 <para>Deleted copy constructor to prevent copying. </para>
@@ -205,7 +205,7 @@ Delegates construction to the <computeroutput>runner</computeroutput> base class
         <name>static_runner</name>
         <qualifiedname>micro_os_plus::micro_test_plus::static_runner::static_runner</qualifiedname>
         <param>
-          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner" kindref="compound">static_runner</ref> &amp;&amp;</type>
+          <type>static_runner &amp;&amp;</type>
         </param>
         <briefdescription>
 <para>Deleted move constructor to prevent moving. </para>
@@ -227,7 +227,7 @@ Delegates construction to the <computeroutput>runner</computeroutput> base class
 <para>Destructor for the <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner" kindref="compound">static_runner</ref> class. </para>
         </briefdescription>
         <detaileddescription>
-<para>If <computeroutput>static_children_suites_</computeroutput> is non-null, the dynamically allocated vector of raw pointers is deleted and the pointer is reset to <computeroutput>nullptr</computeroutput>. The pointed-to <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" kindref="compound">static_suite</ref></computeroutput> objects are not deleted, as they are static storage-duration objects. If tracing is enabled, the function signature is output for diagnostic purposes. </para>
+<para>If <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner_1a6d79f9b224128518048428826ad5fad4" kindref="member">static_children_suites_</ref></computeroutput> is non-null, the dynamically allocated vector of raw pointers is deleted and the pointer is reset to <computeroutput>nullptr</computeroutput>. The pointed-to <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" kindref="compound">static_suite</ref></computeroutput> objects are not deleted, as they are static storage-duration objects. If tracing is enabled, the function signature is output for diagnostic purposes. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -300,7 +300,7 @@ Finalises the top suite by recording its end timestamp and notifying the reporte
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1a8f661c9eb2c68a31c6a3e7805e99d79a" compoundref="test_8h" startline="203">micro_os_plus::micro_test_plus::test_node::totals_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ab6420151930179564274c39ef738ea79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>class <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" kindref="compound">suite</ref> &amp;</type>
+        <type>class <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a330a6a2c24a6759e4cce1269942b9c88" kindref="member">suite</ref> &amp;</type>
         <definition>suite &amp; micro_os_plus::micro_test_plus::runner::initialise</definition>
         <argsstring>(int argc, char *argv[])</argsstring>
         <name>initialise</name>
@@ -375,25 +375,25 @@ This method initialises the test runner by capturing the command-line arguments 
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner_1a1e3c2cbe731c469a93fcad9e574e717a" compoundref="runner_8cpp" startline="400" endline="416">static_runner</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1ada5f5bd4fe0d383c641f5943f52b4520" compoundref="test_8cpp" startline="78" endline="93">micro_os_plus::micro_test_plus::test_node::test_node</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base_1a4eb5910c122542031477006aec7fd649" compoundref="test_8cpp" startline="209" endline="255">micro_os_plus::micro_test_plus::runnable_base::after_subtest_create_</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a59da3337bb7a2d1bc89406f548131d00" compoundref="reporter-human_8cpp" startline="477" endline="534">micro_os_plus::micro_test_plus::reporter_human::begin_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a59da3337bb7a2d1bc89406f548131d00" compoundref="reporter-human_8cpp" startline="484" endline="541">micro_os_plus::micro_test_plus::reporter_human::begin_subtest</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a27a5c6eca6a4beb82466448bfe5c44e9" compoundref="reporter-tap_8cpp" startline="459" endline="514">micro_os_plus::micro_test_plus::reporter_tap::begin_subtest</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a172a7a10a5aa2bd47dc6e7dde903cbbd" compoundref="reporter-human_8cpp" startline="284" endline="325">micro_os_plus::micro_test_plus::reporter_human::begin_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a172a7a10a5aa2bd47dc6e7dde903cbbd" compoundref="reporter-human_8cpp" startline="291" endline="332">micro_os_plus::micro_test_plus::reporter_human::begin_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1ae118be849ab3ff75ab88ff4f54f54be0" compoundref="reporter-tap_8cpp" startline="266" endline="311">micro_os_plus::micro_test_plus::reporter_tap::begin_suite</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="549" endline="673">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="556" endline="680">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a79c7928d44d70b8fe5bf993775517e63" compoundref="reporter-tap_8cpp" startline="526" endline="641">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="340" endline="461">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="347" endline="468">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a8649b62ba8f7ff88501450c5f939ab6d" compoundref="reporter-tap_8cpp" startline="323" endline="446">micro_os_plus::micro_test_plus::reporter_tap::end_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1aa34a0418d54c633630a089eb2b5a61ee">micro_os_plus::micro_test_plus::runner::operator=</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a330a6a2c24a6759e4cce1269942b9c88" compoundref="runner-inlines_8h" startline="74" endline="96">micro_os_plus::micro_test_plus::runner::suite</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1static__runner_1ae0b72504813bd6848b74e9bd39df4f8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner" kindref="compound">static_runner</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner_1a1e3c2cbe731c469a93fcad9e574e717a" kindref="member">static_runner</ref> &amp;</type>
         <definition>static_runner &amp; micro_os_plus::micro_test_plus::static_runner::operator=</definition>
         <argsstring>(const static_runner &amp;)=delete</argsstring>
         <name>operator=</name>
         <qualifiedname>micro_os_plus::micro_test_plus::static_runner::operator=</qualifiedname>
         <param>
-          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner" kindref="compound">static_runner</ref> &amp;</type>
+          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner_1a1e3c2cbe731c469a93fcad9e574e717a" kindref="member">static_runner</ref> &amp;</type>
         </param>
         <briefdescription>
 <para>Deleted copy assignment operator to prevent copying. </para>
@@ -406,13 +406,13 @@ This method initialises the test runner by capturing the command-line arguments 
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner_1a1e3c2cbe731c469a93fcad9e574e717a" compoundref="runner_8cpp" startline="400" endline="416">static_runner</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1static__runner_1af3dfbf384a9736f9e150c25e661bcb38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner" kindref="compound">static_runner</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner_1a1e3c2cbe731c469a93fcad9e574e717a" kindref="member">static_runner</ref> &amp;</type>
         <definition>static_runner &amp; micro_os_plus::micro_test_plus::static_runner::operator=</definition>
         <argsstring>(static_runner &amp;&amp;)=delete</argsstring>
         <name>operator=</name>
         <qualifiedname>micro_os_plus::micro_test_plus::static_runner::operator=</qualifiedname>
         <param>
-          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner" kindref="compound">static_runner</ref> &amp;&amp;</type>
+          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner_1a1e3c2cbe731c469a93fcad9e574e717a" kindref="member">static_runner</ref> &amp;&amp;</type>
         </param>
         <briefdescription>
 <para>Deleted move assignment operator to prevent moving. </para>
@@ -427,7 +427,7 @@ This method initialises the test runner by capturing the command-line arguments 
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a330a6a2c24a6759e4cce1269942b9c88" compoundref="runner-inlines_8h" startline="74" endline="96">micro_os_plus::micro_test_plus::runner::suite</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a28e8cf878d98f6cba575a58189c39a56" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type>class <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
+        <type>class reporter &amp;</type>
         <definition>class reporter &amp; micro_os_plus::micro_test_plus::runner::reporter</definition>
         <argsstring>(void) const noexcept</argsstring>
         <name>reporter</name>
@@ -468,7 +468,7 @@ This method initialises the test runner by capturing the command-line arguments 
 </simplesect>
 <simplesect kind="return"><para>The total number of registered static test suites.</para>
 </simplesect>
-Returns the number of elements in <computeroutput>static_children_suites_</computeroutput>, or zero if the vector has not been allocated yet. </para>
+Returns the number of elements in <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner_1a6d79f9b224128518048428826ad5fad4" kindref="member">static_children_suites_</ref></computeroutput>, or zero if the vector has not been allocated yet. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -552,7 +552,7 @@ Returns the number of elements in <computeroutput>static_children_suites_</compu
 </parameterlist>
 <simplesect kind="par"><title>Returns</title><para>Nothing.</para>
 </simplesect>
-Constructs a <computeroutput>suite</computeroutput> object on the heap, binding the callable and any additional arguments, then transfers ownership to the runner via <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1abc9182d5e12609158d936f312a83f53c" kindref="member">register_suite_()</ref></computeroutput>. The suite runs immediately as part of the registration process. </para>
+Constructs a <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" kindref="compound">suite</ref></computeroutput> object on the heap, binding the callable and any additional arguments, then transfers ownership to the runner via <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1abc9182d5e12609158d936f312a83f53c" kindref="member">register_suite_()</ref></computeroutput>. The suite runs immediately as part of the registration process. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -632,7 +632,7 @@ Returns the number of registered child suites plus one, accounting for the top s
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner.h" line="232" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner.h" bodystart="232" bodyend="235"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ac38cfd5089c019b04a02588829288392" compoundref="runner_8h" startline="310">micro_os_plus::micro_test_plus::runner::timings_</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a3118ff89506858505f18e8fd368baffc" compoundref="reporter-human_8cpp" startline="190" endline="269">micro_os_plus::micro_test_plus::reporter_human::end_session</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a3118ff89506858505f18e8fd368baffc" compoundref="reporter-human_8cpp" startline="197" endline="276">micro_os_plus::micro_test_plus::reporter_human::end_session</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a9a224d34b068e1698c00633ae2341e7f" compoundref="reporter-tap_8cpp" startline="175" endline="253">micro_os_plus::micro_test_plus::reporter_tap::end_session</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1static__runner_1aada4bf589cf8316e3987084de0d8fbca" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" final="yes" noexcept="yes" virt="virtual">
@@ -653,7 +653,7 @@ Returns the number of registered child suites plus one, accounting for the top s
 </simplesect>
 <simplesect kind="return"><para>The total number of test suites.</para>
 </simplesect>
-Returns the combined count of dynamically registered suites (from the base <computeroutput>runner</computeroutput>) and statically registered suites. </para>
+Returns the combined count of dynamically registered suites (from the base <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref></computeroutput>) and statically registered suites. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -703,11 +703,11 @@ Returns the combined count of dynamically registered suites (from the base <comp
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="173" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" bodystart="173" bodyend="176"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1test__node_1a8f661c9eb2c68a31c6a3e7805e99d79a" compoundref="test_8h" startline="203">micro_os_plus::micro_test_plus::test_node::totals_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base_1a4eb5910c122542031477006aec7fd649" compoundref="test_8cpp" startline="209" endline="255">micro_os_plus::micro_test_plus::runnable_base::after_subtest_create_</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a3118ff89506858505f18e8fd368baffc" compoundref="reporter-human_8cpp" startline="190" endline="269">micro_os_plus::micro_test_plus::reporter_human::end_session</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a3118ff89506858505f18e8fd368baffc" compoundref="reporter-human_8cpp" startline="197" endline="276">micro_os_plus::micro_test_plus::reporter_human::end_session</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a9a224d34b068e1698c00633ae2341e7f" compoundref="reporter-tap_8cpp" startline="175" endline="253">micro_os_plus::micro_test_plus::reporter_tap::end_session</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="549" endline="673">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1a052138e5f517b578df99204c8d88213e" compoundref="reporter-human_8cpp" startline="556" endline="680">micro_os_plus::micro_test_plus::reporter_human::end_subtest</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a79c7928d44d70b8fe5bf993775517e63" compoundref="reporter-tap_8cpp" startline="526" endline="641">micro_os_plus::micro_test_plus::reporter_tap::end_subtest</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="340" endline="461">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="347" endline="468">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a8649b62ba8f7ff88501450c5f939ab6d" compoundref="reporter-tap_8cpp" startline="323" endline="446">micro_os_plus::micro_test_plus::reporter_tap::end_suite</referencedby>
       </memberdef>
     </sectiondef>
@@ -719,7 +719,7 @@ Returns the combined count of dynamically registered suites (from the base <comp
         <name>register_static_suite</name>
         <qualifiedname>micro_os_plus::micro_test_plus::static_runner::register_static_suite</qualifiedname>
         <param>
-          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner" kindref="compound">static_runner</ref> &amp;</type>
+          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner_1a1e3c2cbe731c469a93fcad9e574e717a" kindref="member">static_runner</ref> &amp;</type>
           <declname>runner</declname>
         </param>
         <param>
@@ -766,7 +766,7 @@ If <computeroutput>runner.static_children_suites_</computeroutput> is null, a ne
         <name>register_suite_</name>
         <qualifiedname>micro_os_plus::micro_test_plus::runner::register_suite_</qualifiedname>
         <param>
-          <type>std::unique_ptr&lt; class <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" kindref="compound">suite</ref> &gt;</type>
+          <type>std::unique_ptr&lt; class <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a330a6a2c24a6759e4cce1269942b9c88" kindref="member">suite</ref> &gt;</type>
           <declname>suite</declname>
         </param>
         <briefdescription>
@@ -784,7 +784,7 @@ If <computeroutput>runner.static_children_suites_</computeroutput> is null, a ne
 </parameterlist>
 <simplesect kind="par"><title>Returns</title><para>Nothing.</para>
 </simplesect>
-Takes ownership of the supplied <computeroutput>suite</computeroutput> unique pointer and appends it to the internal <computeroutput>children_suites_</computeroutput> vector, deferring execution until <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ad02a7dd243b31ec630484b6397eb506d" kindref="member">run_suites_()</ref></computeroutput> is called. If tracing is enabled, the suite name is logged for diagnostic purposes. </para>
+Takes ownership of the supplied <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" kindref="compound">suite</ref></computeroutput> unique pointer and appends it to the internal <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1abacf53ab658e289ae89051531c0cddad" kindref="member">children_suites_</ref></computeroutput> vector, deferring execution until <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ad02a7dd243b31ec630484b6397eb506d" kindref="member">run_suites_()</ref></computeroutput> is called. If tracing is enabled, the suite name is logged for diagnostic purposes. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -810,7 +810,7 @@ Takes ownership of the supplied <computeroutput>suite</computeroutput> unique po
 <para>Overrides <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ad02a7dd243b31ec630484b6397eb506d" kindref="member">runner::run_suites_()</ref></computeroutput> to first invoke the base implementation (dynamic suites), then iterate over all statically registered suites and run them.</para>
 <para><simplesect kind="par"><title>Parameters</title><para>None.</para>
 </simplesect>
-First invokes <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ad02a7dd243b31ec630484b6397eb506d" kindref="member">runner::run_suites_()</ref></computeroutput> to execute all dynamically registered child suites. If <computeroutput>static_children_suites_</computeroutput> is non-null, its contents are sorted alphabetically by suite name using selection sort on raw pointers, each suite is assigned a 1-based index offset by the dynamic suite count, executed via <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a432deda5a8721472e8775cbc98451722" kindref="member">suite::run()</ref></computeroutput>, and its totals are accumulated into the runner totals. </para>
+First invokes <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ad02a7dd243b31ec630484b6397eb506d" kindref="member">runner::run_suites_()</ref></computeroutput> to execute all dynamically registered child suites. If <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner_1a6d79f9b224128518048428826ad5fad4" kindref="member">static_children_suites_</ref></computeroutput> is non-null, its contents are sorted alphabetically by suite name using selection sort on raw pointers, each suite is assigned a 1-based index offset by the dynamic suite count, executed via <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a432deda5a8721472e8775cbc98451722" kindref="member">suite::run()</ref></computeroutput>, and its totals are accumulated into the runner totals. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -822,11 +822,11 @@ First invokes <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__p
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>A <computeroutput>runner</computeroutput> variant that also manages statically-registered test suites. </para>
+<para>A <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref></computeroutput> variant that also manages statically-registered test suites. </para>
     </briefdescription>
     <detaileddescription>
-<para><computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner" kindref="compound">static_runner</ref></computeroutput> extends <computeroutput>runner</computeroutput> to handle <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" kindref="compound">static_suite</ref></computeroutput> objects that are declared at namespace scope and therefore constructed before or after the runner itself, in unspecified static-initialisation order.</para>
-<para>The key design constraint is that <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner" kindref="compound">static_runner</ref></computeroutput> instances must themselves be declared at namespace scope (in the BSS segment), so the pointer <computeroutput>static_children_suites_</computeroutput> is zero-initialised by the C runtime before any constructor runs. This ensures that <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" kindref="compound">static_suite</ref></computeroutput> objects constructed before <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner" kindref="compound">static_runner</ref></computeroutput> can safely append themselves to the vector without losing registrations.</para>
+<para><computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner" kindref="compound">static_runner</ref></computeroutput> extends <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref></computeroutput> to handle <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" kindref="compound">static_suite</ref></computeroutput> objects that are declared at namespace scope and therefore constructed before or after the runner itself, in unspecified static-initialisation order.</para>
+<para>The key design constraint is that <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner" kindref="compound">static_runner</ref></computeroutput> instances must themselves be declared at namespace scope (in the BSS segment), so the pointer <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner_1a6d79f9b224128518048428826ad5fad4" kindref="member">static_children_suites_</ref></computeroutput> is zero-initialised by the C runtime before any constructor runs. This ensures that <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" kindref="compound">static_suite</ref></computeroutput> objects constructed before <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner" kindref="compound">static_runner</ref></computeroutput> can safely append themselves to the vector without losing registrations.</para>
 <para>During <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a7f8403f1ccc6a0e8171ef077bcd9cbd4" kindref="member">exit_code()</ref></computeroutput>, <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner_1ac17e3110a8cd7f71a39b932cc74cbcad" kindref="member">run_suites_()</ref></computeroutput> is called, which first runs all dynamically registered suites (base class behaviour) and then iterates over the statically registered suites. </para>
     </detaileddescription>
     <inheritancegraph>

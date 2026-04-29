@@ -87,7 +87,7 @@ namespace micro_os_plus::micro_test_plus::reflection { ... }
 <p>Reflection utilities for the µTest++ testing framework.</p>
 
 
-<p>The <span class="doxyComputerOutput">reflection</span> namespace provides facilities for obtaining source location information and type names at compile time, thereby supporting advanced reporting and diagnostics within the µTest++ framework.</p>
+<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection">reflection</a></span> namespace provides facilities for obtaining source location information and type names at compile time, thereby supporting advanced reporting and diagnostics within the µTest++ framework.</p>
 
 
 <p>It includes a local implementation of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">source_location</a></span> for environments lacking C++20 standard support, as well as utilities for extracting concise type names from compiler-specific macros such as <span class="doxyComputerOutput">__PRETTY_FUNCTION__</span>.</p>
@@ -216,8 +216,8 @@ namespace micro_os_plus::micro_test_plus::reflection { ... }
 
 
 <ul class="doxyList ">
-<li>Clang formats the signature as <span class="doxyComputerOutput">"... [T = &lt;typename&gt;]"</span>, so the type name lies between the last ‘`['<span class="doxyComputerOutput"> (skipping </span>"[T = "<span class="doxyComputerOutput">) and the last </span>']'<span class="doxyComputerOutput">.</span></li>
-<li><span class="doxyComputerOutput">GCC formats the signature as </span>"... [with T = &lt;typename&gt;]"<span class="doxyComputerOutput">, so the type name lies between the last </span>'='<span class="doxyComputerOutput"> (skipping the trailing space) and the last </span>']'`.</li>
+<li>Clang formats the signature as <span class="doxyComputerOutput">"... [T = &lt;typename&gt;]"</span>, so the type name lies between the last <span class="doxyComputerOutput">'['</span> (skipping <span class="doxyComputerOutput">"[T = "</span>) and the last <span class="doxyComputerOutput">']'</span>.</li>
+<li>GCC formats the signature as <span class="doxyComputerOutput">"... [with T = &lt;typename&gt;]"</span>, so the type name lies between the last <span class="doxyComputerOutput">'='</span> (skipping the trailing space) and the last <span class="doxyComputerOutput">']'</span>.</li>
 </ul>
 
 <p>This approach is resilient to namespace renaming, namespace nesting changes, and compiler format updates.</p>
@@ -301,6 +301,6 @@ The documentation for this namespace was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

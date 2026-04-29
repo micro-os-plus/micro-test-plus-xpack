@@ -424,7 +424,7 @@ namespace micro_os_plus::micro_test_plus::literals { ... }
 <p>User-defined literals and type wrappers for the µTest++ testing framework.</p>
 
 
-<p>The <span class="doxyComputerOutput">literals</span> namespace provides an extensive collection of user-defined literal operators and type wrappers, enabling explicit specification of operand types for use with the µTest++ comparators and operators.</p>
+<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/literals">literals</a></span> namespace provides an extensive collection of user-defined literal operators and type wrappers, enabling explicit specification of operand types for use with the µTest++ comparators and operators.</p>
 
 
 <p>These operators allow constants to be suffixed (for example, <span class="doxyComputerOutput">1<a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga1613ccf081248c601bed0f3022fba652">_i</a></span>, <span class="doxyComputerOutput">2<a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-literals/#ga07f83438e4c0c85efdeacd78668f3543">_u16</a></span>) to produce strongly-typed values, thereby enhancing type safety and ensuring that comparator functions and operators can display actual values in test reports.</p>
@@ -438,6 +438,6 @@ namespace micro_os_plus::micro_test_plus::literals { ... }
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

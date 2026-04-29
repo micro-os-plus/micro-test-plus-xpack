@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="group__micro-test-plus-logical-functions" kind="group">
     <compoundname>micro-test-plus-logical-functions</compoundname>
     <title>Logical Functions</title>
@@ -66,7 +66,7 @@
 </parameterlist>
 <simplesect kind="return"><para>An object that evaluates to true if both operand expressions are true.</para>
 </simplesect>
-The <computeroutput>_and</computeroutput> function template provides a generic logical conjunction for any expression types. It constructs a logical conjunction object that can be used within the µTest++ framework to assert that both given conditions are true. This function is typically used in test expectations and assertions to combine logical expressions or custom comparators.</para>
+The <computeroutput><ref refid="group__micro-test-plus-logical-functions_1ga8b43b7658b43fb76daf5efbb2e03d236" kindref="member">_and</ref></computeroutput> function template provides a generic logical conjunction for any expression types. It constructs a logical conjunction object that can be used within the µTest++ framework to assert that both given conditions are true. This function is typically used in test expectations and assertions to combine logical expressions or custom comparators.</para>
 <para>The underscore in the function name is intentional to differentiate it from the standard logical and operator. </para>
         </detaileddescription>
         <inbodydescription>
@@ -112,7 +112,7 @@ The <computeroutput>_and</computeroutput> function template provides a generic l
 </parameterlist>
 <simplesect kind="return"><para>An object that evaluates to true if the operand is false.</para>
 </simplesect>
-The <computeroutput>_not</computeroutput> function template provides a generic logical negation for any expression type. It constructs a logical negator object that can be used within the µTest++ framework to assert that a given condition is false. This function is typically used in test expectations and assertions to invert logical expressions or custom comparators.</para>
+The <computeroutput><ref refid="group__micro-test-plus-logical-functions_1gad9ad936174faf965cffe4493e2b64cf0" kindref="member">_not</ref></computeroutput> function template provides a generic logical negation for any expression type. It constructs a logical negator object that can be used within the µTest++ framework to assert that a given condition is false. This function is typically used in test expectations and assertions to invert logical expressions or custom comparators.</para>
 <para>The underscore in the function name is intentional to differentiate it from the standard logical not operator. </para>
         </detaileddescription>
         <inbodydescription>
@@ -181,7 +181,7 @@ The <computeroutput>_not</computeroutput> function template provides a generic l
 </parameterlist>
 <simplesect kind="return"><para>An object that evaluates to true if at least one of the operand expressions is true.</para>
 </simplesect>
-The <computeroutput>_or</computeroutput> function template provides a generic logical disjunction for any expression types. It constructs a logical disjunction object that can be used within the µTest++ framework to assert that at least one of the given conditions is true. This function is typically used in test expectations and assertions to combine logical expressions or custom comparators.</para>
+The <computeroutput><ref refid="group__micro-test-plus-logical-functions_1gad32b40e4b0022b276fa3b357b98a33c5" kindref="member">_or</ref></computeroutput> function template provides a generic logical disjunction for any expression types. It constructs a logical disjunction object that can be used within the µTest++ framework to assert that at least one of the given conditions is true. This function is typically used in test expectations and assertions to combine logical expressions or custom comparators.</para>
 <para>The underscore in the function name is intentional to differentiate it from the standard logical or operator. </para>
         </detaileddescription>
         <inbodydescription>

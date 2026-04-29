@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classmicro__os__plus_1_1micro__test__plus_1_1timestamp" kind="class" language="C++" prot="public">
     <compoundname>micro_os_plus::micro_test_plus::timestamp</compoundname>
     <includes refid="micro-test-plus_8h" local="no">micro-os-plus/micro-test-plus.h</includes>
@@ -37,7 +37,7 @@
 <para>Default constructor. Zero-initialises the internal <computeroutput>timespec</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>On Windows, the current time is captured via <computeroutput>timespec_get()</computeroutput> with <computeroutput>TIME_UTC</computeroutput>. On POSIX platforms with <computeroutput>CLOCK_MONOTONIC</computeroutput> defined, <computeroutput>clock_gettime(CLOCK_MONOTONIC)</computeroutput> is used to obtain a monotonic timestamp. On platforms where neither macro is defined, <computeroutput>value_</computeroutput> remains zero-initialised. </para>
+<para>On Windows, the current time is captured via <computeroutput>timespec_get()</computeroutput> with <computeroutput>TIME_UTC</computeroutput>. On POSIX platforms with <computeroutput>CLOCK_MONOTONIC</computeroutput> defined, <computeroutput>clock_gettime(CLOCK_MONOTONIC)</computeroutput> is used to obtain a monotonic timestamp. On platforms where neither macro is defined, <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1aa45da56b409a7cf625ce373b7f6a621b" kindref="member">value_</ref></computeroutput> remains zero-initialised. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -85,7 +85,7 @@
         <name>timestamp</name>
         <qualifiedname>micro_os_plus::micro_test_plus::timestamp::timestamp</qualifiedname>
         <param>
-          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp" kindref="compound">timestamp</ref> &amp;</type>
+          <type>const timestamp &amp;</type>
         </param>
         <briefdescription>
 <para>Defaulted copy constructor. </para>
@@ -104,7 +104,7 @@
         <name>timestamp</name>
         <qualifiedname>micro_os_plus::micro_test_plus::timestamp::timestamp</qualifiedname>
         <param>
-          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp" kindref="compound">timestamp</ref> &amp;&amp;</type>
+          <type>timestamp &amp;&amp;</type>
         </param>
         <briefdescription>
 <para>Defaulted move constructor. </para>
@@ -171,13 +171,13 @@ Returns <computeroutput>true</computeroutput> if at least one of the <computerou
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1aa45da56b409a7cf625ce373b7f6a621b" compoundref="timings_8h" startline="178" endline="178">value_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1a7db661420c0b2333aa80ca9081d505ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp" kindref="compound">timestamp</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1ace868d5dfb29fd79cfaabbfad218a31d" kindref="member">timestamp</ref> &amp;</type>
         <definition>timestamp &amp; micro_os_plus::micro_test_plus::timestamp::operator=</definition>
         <argsstring>(const timestamp &amp;)=default</argsstring>
         <name>operator=</name>
         <qualifiedname>micro_os_plus::micro_test_plus::timestamp::operator=</qualifiedname>
         <param>
-          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp" kindref="compound">timestamp</ref> &amp;</type>
+          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1ace868d5dfb29fd79cfaabbfad218a31d" kindref="member">timestamp</ref> &amp;</type>
         </param>
         <briefdescription>
 <para>Defaulted copy assignment operator. </para>
@@ -190,13 +190,13 @@ Returns <computeroutput>true</computeroutput> if at least one of the <computerou
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1ace868d5dfb29fd79cfaabbfad218a31d" compoundref="timings_8cpp" startline="71" endline="78">timestamp</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1af28dcaf117fa2ed16c226d23f910ddc2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp" kindref="compound">timestamp</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1ace868d5dfb29fd79cfaabbfad218a31d" kindref="member">timestamp</ref> &amp;</type>
         <definition>timestamp &amp; micro_os_plus::micro_test_plus::timestamp::operator=</definition>
         <argsstring>(timestamp &amp;&amp;)=default</argsstring>
         <name>operator=</name>
         <qualifiedname>micro_os_plus::micro_test_plus::timestamp::operator=</qualifiedname>
         <param>
-          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp" kindref="compound">timestamp</ref> &amp;&amp;</type>
+          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1ace868d5dfb29fd79cfaabbfad218a31d" kindref="member">timestamp</ref> &amp;&amp;</type>
         </param>
         <briefdescription>
 <para>Defaulted move assignment operator. </para>
@@ -255,7 +255,7 @@ Returns <computeroutput>true</computeroutput> if at least one of the <computerou
 <para>A single point-in-time measurement, wrapping a <computeroutput>timespec</computeroutput> value. </para>
     </briefdescription>
     <detaileddescription>
-<para><computeroutput>timestamp</computeroutput> stores one <computeroutput>timespec</computeroutput> sample obtained from the system clock. It is default-constructible (zero-initialises the <computeroutput>timespec</computeroutput>), copy-constructible, and move-constructible, so that it can be used efficiently in <computeroutput>std::optional&lt;timestamp&gt;</computeroutput> containers.</para>
+<para><computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp" kindref="compound">timestamp</ref></computeroutput> stores one <computeroutput>timespec</computeroutput> sample obtained from the system clock. It is default-constructible (zero-initialises the <computeroutput>timespec</computeroutput>), copy-constructible, and move-constructible, so that it can be used efficiently in <computeroutput>std::optional&lt;<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp" kindref="compound">timestamp</ref>&gt;</computeroutput> containers.</para>
 <para>The <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1a9d1c21ae80e89e78e6123e49dc3aeaf2" kindref="member">has_clock()</ref></computeroutput> predicate allows callers to determine whether a real-time clock is available on the target platform before relying on the stored value. </para>
     </detaileddescription>
     <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" line="90" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/timings.h" bodystart="91" bodyend="179"/>

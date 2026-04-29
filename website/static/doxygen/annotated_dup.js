@@ -19,7 +19,7 @@ var annotated_dup =
           [ "nothrow_", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__" ],
           [ "or_", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__" ],
           [ "throws_", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__" ],
-          [ "throws_< Callable_T, void >", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4" ],
+          [ "throws_&lt; Callable_T, void &gt;", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4" ],
           [ "unary_op_", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op__.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op__" ]
         ] ],
         [ "reflection", "namespacemicro__os__plus_1_1micro__test__plus_1_1reflection.html", [
@@ -27,17 +27,17 @@ var annotated_dup =
         ] ],
         [ "type_traits", "namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html", [
           [ "floating_point_constant", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant" ],
-          [ "function_traits< R(*)(Args_T...)>", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_5_08_07_args___t_8_8_8_08_4.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_5_08_07_args___t_8_8_8_08_4" ],
-          [ "function_traits< R(Args_T...)>", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_args___t_8_8_8_08_4.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_args___t_8_8_8_08_4" ],
-          [ "function_traits< R(T::*)(Args_T...) const >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_52125631e1849775afa0689d07acdc76e.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_52125631e1849775afa0689d07acdc76e" ],
-          [ "function_traits< R(T::*)(Args_T...)>", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_5_08_07_args___t_8_8_8_08_4.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_5_08_07_args___t_8_8_8_08_4" ],
+          [ "function_traits&lt; R(*)(Args_T...)&gt;", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_5_08_07_args___t_8_8_8_08_4.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_5_08_07_args___t_8_8_8_08_4" ],
+          [ "function_traits&lt; R(Args_T...)&gt;", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_args___t_8_8_8_08_4.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_args___t_8_8_8_08_4" ],
+          [ "function_traits&lt; R(T::*)(Args_T...) const &gt;", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_52125631e1849775afa0689d07acdc76e.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_52125631e1849775afa0689d07acdc76e" ],
+          [ "function_traits&lt; R(T::*)(Args_T...)&gt;", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_5_08_07_args___t_8_8_8_08_4.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_5_08_07_args___t_8_8_8_08_4" ],
           [ "genuine_integral_value", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1genuine__integral__value.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1genuine__integral__value" ],
           [ "identity", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity" ],
           [ "integral_constant", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant" ],
           [ "list", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1list.html", null ],
           [ "op", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html", null ],
           [ "value", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" ],
-          [ "value< T >", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4" ],
+          [ "value&lt; T &gt;", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4" ],
           [ "value_base_", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__" ]
         ] ],
         [ "_t", "structmicro__os__plus_1_1micro__test__plus_1_1__t.html", "structmicro__os__plus_1_1micro__test__plus_1_1__t" ],

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant" kind="struct" language="C++" prot="public">
     <compoundname>micro_os_plus::micro_test_plus::type_traits::floating_point_constant</compoundname>
     <basecompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::type_traits::op</basecompoundref>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="716" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="716" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="646" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="646" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-static-attrib">
@@ -63,7 +63,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="724" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="724" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="654" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="654" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1ab0e05de518c208a6a762c7377d2f2332" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>auto</type>
@@ -80,9 +80,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="732" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="733" bodyend="-1"/>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a9e42c82de949aa6640b3964bd67c4732" compoundref="type-traits_8h" startline="754" endline="757">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;::get</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a2be95ffe95532c5b3a0ab852aa2c680f" compoundref="type-traits_8h" startline="741" endline="744">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;::operator T</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="662" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="663" bodyend="-1"/>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a9e42c82de949aa6640b3964bd67c4732" compoundref="type-traits_8h" startline="684" endline="687">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;::get</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a2be95ffe95532c5b3a0ab852aa2c680f" compoundref="type-traits_8h" startline="671" endline="674">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;::operator T</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -107,8 +107,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="754" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="754" bodyend="757"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1ab0e05de518c208a6a762c7377d2f2332" compoundref="type-traits_8h" startline="733">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;::value</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="684" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="684" bodyend="687"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1ab0e05de518c208a6a762c7377d2f2332" compoundref="type-traits_8h" startline="663">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;::value</references>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a2be95ffe95532c5b3a0ab852aa2c680f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -126,8 +126,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="741" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="741" bodyend="744"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1ab0e05de518c208a6a762c7377d2f2332" compoundref="type-traits_8h" startline="733">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;::value</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="671" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="671" bodyend="674"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1ab0e05de518c208a6a762c7377d2f2332" compoundref="type-traits_8h" startline="663">micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;::value</references>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a53595778654687cfd7fe8dd385d26bcc" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>auto</type>
@@ -145,7 +145,7 @@ Returns a new <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="769" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="769" bodyend="772"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="699" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="699" bodyend="702"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -193,8 +193,8 @@ Returns a new <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant" kindref="compound">floating_point_constant</ref></computeroutput> struct template provides a compile-time constant value of a floating point type, supporting custom size and precision. It inherits from <computeroutput>op</computeroutput> directly rather than from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__" kindref="compound">value_base_</ref>&lt;T&gt;</computeroutput>, which avoids introducing a user-provided constructor into the type and keeps it trivially default-constructible. This prevents the GCC ARM PSABI note about parameter-passing ABI changes that is emitted for non-trivially-constructible types under C++17.</para>
-<para>The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a3538821b6929e9b13f6a3ea763e1627e" kindref="member">value_type</ref></computeroutput> alias, explicit conversion operator, and <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a9e42c82de949aa6640b3964bd67c4732" kindref="member">get()</ref></computeroutput> accessor are provided directly by this struct. The compile-time <computeroutput>epsilon</computeroutput> and <computeroutput>value</computeroutput> static constants are retained, and a unary minus operator is provided to obtain the negative value as a new <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant" kindref="compound">floating_point_constant</ref></computeroutput> instance. </para>
+The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant" kindref="compound">floating_point_constant</ref></computeroutput> struct template provides a compile-time constant value of a floating point type, supporting custom size and precision. It inherits from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op" kindref="compound">op</ref></computeroutput> directly rather than from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base__" kindref="compound">value_base_</ref>&lt;T&gt;</computeroutput>, which avoids introducing a user-provided constructor into the type and keeps it trivially default-constructible. This prevents the GCC ARM PSABI note about parameter-passing ABI changes that is emitted for non-trivially-constructible types under C++17.</para>
+<para>The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a3538821b6929e9b13f6a3ea763e1627e" kindref="member">value_type</ref></computeroutput> alias, explicit conversion operator, and <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a9e42c82de949aa6640b3964bd67c4732" kindref="member">get()</ref></computeroutput> accessor are provided directly by this struct. The compile-time <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a5cab8e85fbee4a9314fc8a3e09e59eef" kindref="member">epsilon</ref></computeroutput> and <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref></computeroutput> static constants are retained, and a unary minus operator is provided to obtain the negative value as a new <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant" kindref="compound">floating_point_constant</ref></computeroutput> instance. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="1">
@@ -220,7 +220,7 @@ The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1ty
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op"/>
       </node>
     </collaborationgraph>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="708" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="709" bodyend="773"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="638" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" bodystart="639" bodyend="703"/>
     <listofallmembers>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a5cab8e85fbee4a9314fc8a3e09e59eef" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::floating_point_constant</scope><name>epsilon</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a9e42c82de949aa6640b3964bd67c4732" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::floating_point_constant</scope><name>get</name></member>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection" kind="namespace" language="C++">
     <compoundname>micro_os_plus::micro_test_plus::reflection</compoundname>
     <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" prot="public">micro_os_plus::micro_test_plus::reflection::source_location</innerclass>
@@ -36,7 +36,7 @@ Searches <computeroutput>name</computeroutput> for the last <computeroutput>/</c
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reflection.cpp" line="72" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reflection.cpp" bodystart="72" bodyend="88" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" declline="205" declcolumn="5"/>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a7bc806540e65c21095ef1ea1ef970db2" compoundref="runner_8cpp" startline="348" endline="368">micro_os_plus::micro_test_plus::runner::abort</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aa25bc978d1fcd02cb7c75aef0c1a9988" compoundref="reporter-human_8cpp" startline="749" endline="786">micro_os_plus::micro_test_plus::reporter_human::output_fail_prefix_</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aa25bc978d1fcd02cb7c75aef0c1a9988" compoundref="reporter-human_8cpp" startline="756" endline="793">micro_os_plus::micro_test_plus::reporter_human::output_fail_prefix_</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a951a2aa4cb5300a7706709a2336651a8" compoundref="reporter-tap_8cpp" startline="751" endline="777">micro_os_plus::micro_test_plus::reporter_tap::output_fail_suffix_</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -60,8 +60,8 @@ Searches <computeroutput>name</computeroutput> for the last <computeroutput>/</c
 <para>This function template parses the compiler-specific <computeroutput>__PRETTY_FUNCTION__</computeroutput> macro to extract a concise type name for the template parameter <computeroutput>T</computeroutput>.</para>
 <para>Rather than relying on fixed character offsets (which are fragile across compiler versions and namespace changes), the implementation searches for well-known marker characters in the function signature string:</para>
 <para><itemizedlist>
-<listitem><para>Clang formats the signature as <computeroutput>&quot;... [T = &lt;typename&gt;]&quot;</computeroutput>, so the type name lies between the last <lsquo/><rsquo/>[&apos;<computeroutput> (skipping </computeroutput>&quot;[T = &quot;<computeroutput>) and the last </computeroutput>&apos;]&apos;<computeroutput>.</computeroutput></para>
-</listitem><listitem><para><computeroutput>GCC formats the signature as </computeroutput>&quot;... [with T = &lt;typename&gt;]&quot;<computeroutput>, so the type name lies between the last </computeroutput>&apos;=&apos;<computeroutput> (skipping the trailing space) and the last </computeroutput>&apos;]&apos;`.</para>
+<listitem><para>Clang formats the signature as <computeroutput>"... [T = &lt;typename&gt;]"</computeroutput>, so the type name lies between the last <computeroutput>&apos;[&apos;</computeroutput> (skipping <computeroutput>"[T = "</computeroutput>) and the last <computeroutput>&apos;]&apos;</computeroutput>.</para>
+</listitem><listitem><para>GCC formats the signature as <computeroutput>"... [with T = &lt;typename&gt;]"</computeroutput>, so the type name lies between the last <computeroutput>&apos;=&apos;</computeroutput> (skipping the trailing space) and the last <computeroutput>&apos;]&apos;</computeroutput>.</para>
 </listitem></itemizedlist>
 </para>
 <para>This approach is resilient to namespace renaming, namespace nesting changes, and compiler format updates.</para>
@@ -90,7 +90,7 @@ Constructs a <computeroutput>std::string_view</computeroutput> from <computerout
 <para>Reflection utilities for the µTest++ testing framework. </para>
     </briefdescription>
     <detaileddescription>
-<para>The <computeroutput>reflection</computeroutput> namespace provides facilities for obtaining source location information and type names at compile time, thereby supporting advanced reporting and diagnostics within the µTest++ framework.</para>
+<para>The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection" kindref="compound">reflection</ref></computeroutput> namespace provides facilities for obtaining source location information and type names at compile time, thereby supporting advanced reporting and diagnostics within the µTest++ framework.</para>
 <para>It includes a local implementation of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" kindref="compound">source_location</ref></computeroutput> for environments lacking C++20 standard support, as well as utilities for extracting concise type names from compiler-specific macros such as <computeroutput>__PRETTY_FUNCTION__</computeroutput>.</para>
 <para>All definitions within this namespace are intended to facilitate advanced reflection and reporting capabilities. </para>
     </detaileddescription>

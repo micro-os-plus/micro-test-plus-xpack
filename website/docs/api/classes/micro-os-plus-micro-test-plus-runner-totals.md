@@ -83,7 +83,7 @@ class micro_os_plus::micro_test_plus::runner_totals { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner-totals">runner_totals</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#a7e041270b30aeea97ef1463a3120c6ed">runner_totals</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#abc80f3723af141da86e33dc33abae34c">operator+=</a> (const runner_totals &amp;other) noexcept</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -97,7 +97,7 @@ class micro_os_plus::micro_test_plus::runner_totals { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner-totals">runner_totals</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#a7e041270b30aeea97ef1463a3120c6ed">runner_totals</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a9da2678fcb9b2d60ec7c3ac1d6cffe7e">operator=</a> (const runner_totals &amp;)=delete</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -111,7 +111,7 @@ class micro_os_plus::micro_test_plus::runner_totals { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner-totals">runner_totals</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#a7e041270b30aeea97ef1463a3120c6ed">runner_totals</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae6dbd5bd8df99b2d5609f21c57f1c8c2">operator=</a> (runner_totals &amp;&amp;)=delete</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -301,12 +301,12 @@ class micro_os_plus::micro_test_plus::runner_totals { ... }
 
 
 <ul class="doxyList ">
-<li>the number of checks that passed (<span class="doxyComputerOutput">successful_checks_</span>),</li>
-<li>the number of checks that failed (<span class="doxyComputerOutput">failed_checks_</span>), and</li>
-<li>the number of subtests that were executed (<span class="doxyComputerOutput">executed_subtests_</span>).</li>
+<li>the number of checks that passed (<span class="doxyComputerOutput"><a href="#a01856cc9973614f868b48fd861cbfa88">successful_checks_</a></span>),</li>
+<li>the number of checks that failed (<span class="doxyComputerOutput"><a href="#a17f8c7015019ade44519fb8507b047a8">failed_checks_</a></span>), and</li>
+<li>the number of subtests that were executed (<span class="doxyComputerOutput"><a href="#aa2ec235fa990c0394aa8099f7467814b">executed_subtests_</a></span>).</li>
 </ul>
 
-<p>Every <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-node">test_node</a></span>-derived object (<span class="doxyComputerOutput">runner</span>, <span class="doxyComputerOutput">suite</span>, <span class="doxyComputerOutput">subtest</span>) owns a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner-totals">runner_totals</a></span> member and accumulates its counts in place. At the end of each suite or session the operator <span class="doxyComputerOutput">+=</span> propagates the child totals up to the parent node.</p>
+<p>Every <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-node">test_node</a></span>-derived object (<span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite">suite</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/subtest">subtest</a></span>) owns a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner-totals">runner_totals</a></span> member and accumulates its counts in place. At the end of each suite or session the operator <span class="doxyComputerOutput">+=</span> propagates the child totals up to the parent node.</p>
 
 
 <p>The class is non-copyable and non-movable to prevent accidental duplication of live counters.</p>
@@ -361,7 +361,7 @@ class micro_os_plus::micro_test_plus::runner_totals { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">micro_os_plus::micro_test_plus::runner_totals::runner_totals (const <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner-totals">runner_totals</a> &amp;)</td>
+<td class="doxyMemberName">micro_os_plus::micro_test_plus::runner_totals::runner_totals (const runner_totals &amp;)</td>
 </tr>
 </table>
 </td>
@@ -394,7 +394,7 @@ class micro_os_plus::micro_test_plus::runner_totals { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">micro_os_plus::micro_test_plus::runner_totals::runner_totals (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner-totals">runner_totals</a> &amp;&amp;)</td>
+<td class="doxyMemberName">micro_os_plus::micro_test_plus::runner_totals::runner_totals (runner_totals &amp;&amp;)</td>
 </tr>
 </table>
 </td>
@@ -433,7 +433,7 @@ class micro_os_plus::micro_test_plus::runner_totals { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">runner_totals &amp; micro_os_plus::micro_test_plus::runner_totals::operator+= (const <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner-totals">runner_totals</a> &amp; other)</td>
+<td class="doxyMemberName">runner_totals &amp; micro_os_plus::micro_test_plus::runner_totals::operator+= (const <a href="#a7e041270b30aeea97ef1463a3120c6ed">runner_totals</a> &amp; other)</td>
 </tr>
 </table>
 </td>
@@ -517,7 +517,7 @@ class micro_os_plus::micro_test_plus::runner_totals { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">runner_totals &amp; micro_os_plus::micro_test_plus::runner_totals::operator= (const <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner-totals">runner_totals</a> &amp;)</td>
+<td class="doxyMemberName">runner_totals &amp; micro_os_plus::micro_test_plus::runner_totals::operator= (const <a href="#a7e041270b30aeea97ef1463a3120c6ed">runner_totals</a> &amp;)</td>
 </tr>
 </table>
 </td>
@@ -550,7 +550,7 @@ class micro_os_plus::micro_test_plus::runner_totals { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">runner_totals &amp; micro_os_plus::micro_test_plus::runner_totals::operator= (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner-totals">runner_totals</a> &amp;&amp;)</td>
+<td class="doxyMemberName">runner_totals &amp; micro_os_plus::micro_test_plus::runner_totals::operator= (<a href="#a7e041270b30aeea97ef1463a3120c6ed">runner_totals</a> &amp;&amp;)</td>
 </tr>
 </table>
 </td>
@@ -1229,6 +1229,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

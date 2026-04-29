@@ -41,7 +41,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Human (standard output) implementation of <span class="doxyComputerOutput">reporter</span>. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#details">More...</a></p>
+<p>Human (standard output) implementation of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span>. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -55,7 +55,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>TAP (Test Anything Protocol) implementation of <span class="doxyComputerOutput">reporter</span>. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#details">More...</a></p>
+<p>TAP (Test Anything Protocol) implementation of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span>. <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -109,7 +109,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a0a288fd4578c4879872ecdfc3349bf2d">operator&lt;&lt;</a> (bool v)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -123,7 +123,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a5bc1b012e5817563a4d699b2145ec077">operator&lt;&lt;</a> (char c)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -137,7 +137,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#afb205af933ef6b71f23a6943ad6bd628">operator&lt;&lt;</a> (const char *s)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -154,7 +154,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Lhs_T, class Rhs_T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a50dfefe3259b5eb3baa432a11a06100d">operator&lt;&lt;</a> (const detail::and_&lt; Lhs_T, Rhs_T &gt; &amp;op)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -171,7 +171,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Lhs_T, class Rhs_T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a56edd7e04a4080a56542d999368b0fd4">operator&lt;&lt;</a> (const detail::eq_&lt; Lhs_T, Rhs_T &gt; &amp;op)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -188,7 +188,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Lhs_T, class Rhs_T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#adf525408b74186615bd6863087ac4f44">operator&lt;&lt;</a> (const detail::ge_&lt; Lhs_T, Rhs_T &gt; &amp;op)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -205,7 +205,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Lhs_T, class Rhs_T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a94f8eff9fcb76a192b30e1d834dceed6">operator&lt;&lt;</a> (const detail::gt_&lt; Lhs_T, Rhs_T &gt; &amp;op)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -222,7 +222,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Lhs_T, class Rhs_T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a1fc511dc8d94b1e89f5c5bbe1e9e9bbe">operator&lt;&lt;</a> (const detail::le_&lt; Rhs_T, Lhs_T &gt; &amp;op)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -239,7 +239,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Lhs_T, class Rhs_T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a5617d861c48049189b6b33e36626763a">operator&lt;&lt;</a> (const detail::lt_&lt; Rhs_T, Lhs_T &gt; &amp;op)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -256,7 +256,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Lhs_T, class Rhs_T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#aee38736d82b6ca9eb287796fc1296c49">operator&lt;&lt;</a> (const detail::ne_&lt; Lhs_T, Rhs_T &gt; &amp;op)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -273,7 +273,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#acb9b836bf8aebde7ce043c237ad29dac">operator&lt;&lt;</a> (const detail::not_&lt; T &gt; &amp;op)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -290,7 +290,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Expr_T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a59db110b4b64dbd3568d44b843fcdbb4">operator&lt;&lt;</a> (const detail::nothrow_&lt; Expr_T &gt; &amp;op)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -307,7 +307,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Lhs_T, class Rhs_T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#acfd5afd6cd385e4994a188d248bf91f8">operator&lt;&lt;</a> (const detail::or_&lt; Lhs_T, Rhs_T &gt; &amp;op)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -324,7 +324,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Expr_T, class Exception_T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#afcadab7426f75555d3589f5c93e6e94a">operator&lt;&lt;</a> (const detail::throws_&lt; Expr_T, Exception_T &gt; &amp;op)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -341,7 +341,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Expr_T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#acfe9bdb0f3bee7cc5ab3836dc2e17d08">operator&lt;&lt;</a> (const detail::throws_&lt; Expr_T, void &gt; &amp;op)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -358,24 +358,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a330aa7e22a4efc710fe866e1bda6fc4c">operator&lt;&lt;</a> (const T &amp;t)</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Output operator for types with a getter. <a href="#a330aa7e22a4efc710fe866e1bda6fc4c">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexTemplate">
-<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T&gt;</div></td>
-</tr>
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ab869cb07165b28db0087fd0757114038">operator&lt;&lt;</a> (const T &amp;t)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -392,7 +375,24 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a330aa7e22a4efc710fe866e1bda6fc4c">operator&lt;&lt;</a> (const T &amp;t)</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Output operator for types with a getter. <a href="#a330aa7e22a4efc710fe866e1bda6fc4c">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexTemplate">
+<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T&gt;</div></td>
+</tr>
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a697a4dcb95f65634253f44946d06c81a">operator&lt;&lt;</a> (const type_traits::genuine_integral_value&lt; T &gt; &amp;v)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -406,7 +406,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a3a7538024d14a727640a789c6d6b8058">operator&lt;&lt;</a> (double v)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -420,7 +420,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a602622b74c12f7bf045b14fe7aac82b1">operator&lt;&lt;</a> (float v)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -434,7 +434,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad3fe4f54681f8f58d906dd3d625dec9f">operator&lt;&lt;</a> (long double v)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -448,7 +448,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a28826ad63a1c66a694c578049922d700">operator&lt;&lt;</a> (reporter &amp;(*func)(reporter &amp;))</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -462,7 +462,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a351c8d961df0c7d9ce438e9e292680da">operator&lt;&lt;</a> (signed char c)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -476,7 +476,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae9edf407c69fc6933ceb889c105eace2">operator&lt;&lt;</a> (signed int v)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -490,7 +490,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a68eabfc37788745aa4804dade0bbf8f6">operator&lt;&lt;</a> (signed long long v)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -504,7 +504,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a2cc01b37d5506dd341fa73d4a08dd2ad">operator&lt;&lt;</a> (signed long v)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -518,7 +518,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a0964f2a781d6f48ec65d6f3aed66a8e0">operator&lt;&lt;</a> (signed short v)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -532,7 +532,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a0699f03871f8c5f906a07bf32505cbd7">operator&lt;&lt;</a> (std::nullptr_t)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -546,7 +546,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ad7a2cc6446e65cf9034f85c93efb3945">operator&lt;&lt;</a> (std::string_view sv)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -563,7 +563,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;typename T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a0acf1be4a7b9738dd2d3b9748e32d872">operator&lt;&lt;</a> (T *v)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -577,7 +577,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a550817349fa323d0c7b4c11a7948267e">operator&lt;&lt;</a> (unsigned char c)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -591,7 +591,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ab422a082e0107b7f98a1d2c826595cf9">operator&lt;&lt;</a> (unsigned int v)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -605,7 +605,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a54dfaed92e9a9122e0bfa1e9fb489365">operator&lt;&lt;</a> (unsigned long long v)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -619,7 +619,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#af403303bf0d2d0e9f729d2461fc6bb91">operator&lt;&lt;</a> (unsigned long v)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -633,7 +633,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#aeb9ea0be472dff38345b1271881b6820">operator&lt;&lt;</a> (unsigned short v)</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -1077,13 +1077,13 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <p>Reporter to display test results, including operand values and types for failures.</p>
 
 
-<p>The <span class="doxyComputerOutput">reporter</span> class is responsible for formatting and presenting test results within the µTest++ framework. It provides a comprehensive suite of output operators for a wide range of data types, containers, and comparator expressions, enabling detailed and informative reporting of test outcomes.</p>
+<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> class is responsible for formatting and presenting test results within the µTest++ framework. It provides a comprehensive suite of output operators for a wide range of data types, containers, and comparator expressions, enabling detailed and informative reporting of test outcomes.</p>
 
 
 <p>For failed tests, the reporter prints the actual values of the operands along with their types, supporting precise diagnostics and efficient debugging. The class supports multiple verbosity levels and colour-coded output to distinguish between successful and failed tests, thereby enhancing the clarity and professionalism of test reports.</p>
 
 
-<p>The <span class="doxyComputerOutput">reporter</span> also offers methods for reporting the commencement and completion of test cases and suites, as well as for handling pass and fail conditions. Additional features include output stream manipulators, support for exception-related expressions, and configurable formatting options.</p>
+<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> also offers methods for reporting the commencement and completion of test cases and suites, as well as for handling pass and fail conditions. Additional features include output stream manipulators, support for exception-related expressions, and configurable formatting options.</p>
 
 
 <p>All members and methods are defined within the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></span> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.</p>
@@ -1132,7 +1132,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dd>
 </dl>
 
-<p>Moves the supplied argument vector into <span class="doxyComputerOutput">argvs_</span> and scans it for the <span class="doxyComputerOutput">--verbose</span>, <span class="doxyComputerOutput">--quiet</span>, <span class="doxyComputerOutput">--silent</span>, and <span class="doxyComputerOutput">--output-file=</span> options, adjusting <span class="doxyComputerOutput">verbosity_</span> and optionally opening the output file. If the output file path is specified but the file cannot be opened, the process exits with a diagnostic error message. The internal string buffer is pre-allocated to reduce dynamic allocation overhead.</p>
+<p>Moves the supplied argument vector into <span class="doxyComputerOutput"><a href="#a123948993e8c24962071a32d8274c4f6">argvs_</a></span> and scans it for the <span class="doxyComputerOutput">--verbose</span>, <span class="doxyComputerOutput">--quiet</span>, <span class="doxyComputerOutput">--silent</span>, and <span class="doxyComputerOutput">--output-file=</span> options, adjusting <span class="doxyComputerOutput"><a href="#aea922774c24ce8337d734fa457896595">verbosity_</a></span> and optionally opening the output file. If the output file path is specified but the file cannot be opened, the process exits with a diagnostic error message. The internal string buffer is pre-allocated to reduce dynamic allocation overhead.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00228">228</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00079">79</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
@@ -1353,7 +1353,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload appends the string representation of the specified boolean value to the internal output buffer of the <span class="doxyComputerOutput">reporter</span>. It enables clear and direct streaming of boolean results into the reporter, supporting precise and readable formatting of test output across all test cases and folders.</p>
+<p>This operator overload appends the string representation of the specified boolean value to the internal output buffer of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span>. It enables clear and direct streaming of boolean results into the reporter, supporting precise and readable formatting of test output across all test cases and folders.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00268">268</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00446">446</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
@@ -1414,7 +1414,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload appends the specified character to the internal output buffer of the <span class="doxyComputerOutput">reporter</span>. It enables efficient streaming of individual characters into the reporter, supporting precise and flexible formatting of test output across all test cases and folders.</p>
+<p>This operator overload appends the specified character to the internal output buffer of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span>. It enables efficient streaming of individual characters into the reporter, supporting precise and flexible formatting of test output across all test cases and folders.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00250">250</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00416">416</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
@@ -1475,7 +1475,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload appends the contents of the provided C-style string to the internal output buffer of the <span class="doxyComputerOutput">reporter</span>. It enables efficient streaming of string literals and character arrays into the reporter, supporting clear and flexible formatting of test output across all test cases and folders.</p>
+<p>This operator overload appends the contents of the provided C-style string to the internal output buffer of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span>. It enables efficient streaming of string literals and character arrays into the reporter, supporting clear and flexible formatting of test output across all test cases and folders.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00259">259</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00431">431</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
@@ -1553,7 +1553,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload enables the <span class="doxyComputerOutput">reporter</span> to output logical conjunction (AND) expressions in a clear and structured format.</p>
+<p>This operator overload enables the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> to output logical conjunction (AND) expressions in a clear and structured format.</p>
 
 
 <p>The left-hand side and right-hand side expressions are enclosed in parentheses and separated by the word "and", with appropriate colour highlighting applied for improved readability in test reports and diagnostics. This presentation assists in quickly identifying the components of logical assertions and facilitates efficient debugging of test failures involving compound conditions.</p>
@@ -1634,7 +1634,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload enables the <span class="doxyComputerOutput">reporter</span> to output equality comparison expressions in a clear and expressive format.</p>
+<p>This operator overload enables the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> to output equality comparison expressions in a clear and expressive format.</p>
 
 
 <p>The left-hand side and right-hand side values are formatted and separated by the equality operator (<span class="doxyComputerOutput">==</span>), with appropriate colour highlighting applied for improved readability in test reports and diagnostics. This structured output assists in quickly identifying the values involved in equality assertions and facilitates efficient debugging of test failures.</p>
@@ -1715,7 +1715,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload enables the <span class="doxyComputerOutput">reporter</span> to output greater-than-or-equal-to comparison expressions in a clear and expressive format.</p>
+<p>This operator overload enables the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> to output greater-than-or-equal-to comparison expressions in a clear and expressive format.</p>
 
 
 <p>The left-hand side and right-hand side values are formatted and separated by the greater-than-or-equal-to operator (<span class="doxyComputerOutput">&gt;=</span>), with appropriate colour highlighting applied for improved readability in test reports and diagnostics. This structured output assists in quickly identifying the values involved in greater-than-or-equal-to assertions and facilitates efficient debugging of test failures.</p>
@@ -1796,7 +1796,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload enables the <span class="doxyComputerOutput">reporter</span> to output greater-than comparison expressions in a clear and expressive format.</p>
+<p>This operator overload enables the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> to output greater-than comparison expressions in a clear and expressive format.</p>
 
 
 <p>The left-hand side and right-hand side values are formatted and separated by the greater-than operator (<span class="doxyComputerOutput">&gt;</span>), with appropriate colour highlighting applied for improved readability in test reports and diagnostics. This structured output assists in quickly identifying the values involved in greater-than assertions and facilitates efficient debugging of test failures.</p>
@@ -1877,7 +1877,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload enables the <span class="doxyComputerOutput">reporter</span> to output less-than-or-equal-to comparison expressions in a clear and expressive format.</p>
+<p>This operator overload enables the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> to output less-than-or-equal-to comparison expressions in a clear and expressive format.</p>
 
 
 <p>The left-hand side and right-hand side values are formatted and separated by the less-than-or-equal-to operator (<span class="doxyComputerOutput">&lt;=</span>), with appropriate colour highlighting applied for improved readability in test reports and diagnostics. This structured output assists in quickly identifying the values involved in less-than-or-equal-to assertions and facilitates efficient debugging of test failures.</p>
@@ -1958,7 +1958,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload enables the <span class="doxyComputerOutput">reporter</span> to output less-than comparison expressions in a clear and expressive format.</p>
+<p>This operator overload enables the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> to output less-than comparison expressions in a clear and expressive format.</p>
 
 
 <p>The left-hand side and right-hand side values are formatted and separated by the less-than operator (<span class="doxyComputerOutput">&lt;</span>), with appropriate colour highlighting applied for improved readability in test reports and diagnostics. This structured output assists in quickly identifying the values involved in less-than assertions and facilitates efficient debugging of test failures.</p>
@@ -2039,7 +2039,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload enables the <span class="doxyComputerOutput">reporter</span> to output inequality comparison expressions in a clear and expressive format.</p>
+<p>This operator overload enables the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> to output inequality comparison expressions in a clear and expressive format.</p>
 
 
 <p>The left-hand side and right-hand side values are formatted and separated by the inequality operator (<span class="doxyComputerOutput">!=</span>), with appropriate colour highlighting applied for improved readability in test reports and diagnostics. This structured output assists in quickly identifying the values involved in inequality assertions and facilitates efficient debugging of test failures.</p>
@@ -2192,7 +2192,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <p>This operator overload formats output for expressions that do not throw exceptions. It applies colour styling for clarity and ensures a structured and concise representation of exception safety within test reports.</p>
 
 
-<p>The output highlights the <span class="doxyComputerOutput">nothrow</span> qualifier, making it immediately apparent when an expression is guaranteed not to throw, thereby improving the readability and professionalism of the test output.</p>
+<p>The output highlights the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-exceptions/#ga798bd28001c3938784073e60dd904148">nothrow</a></span> qualifier, making it immediately apparent when an expression is guaranteed not to throw, thereby improving the readability and professionalism of the test output.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00610">610</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reporter-inlines-h/#l00473">473</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reporter-inlines-h">reporter-inlines.h</a>.</p>
@@ -2269,7 +2269,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload enables the <span class="doxyComputerOutput">reporter</span> to output logical disjunction (OR) expressions in a clear and structured format.</p>
+<p>This operator overload enables the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> to output logical disjunction (OR) expressions in a clear and structured format.</p>
 
 
 <p>The left-hand side and right-hand side expressions are enclosed in parentheses and separated by the word "or", with appropriate colour highlighting applied for improved readability in test reports and diagnostics. This presentation assists in quickly identifying the components of logical assertions and facilitates efficient debugging of test failures involving compound conditions.</p>
@@ -2353,7 +2353,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <p>This operator overload provides structured output for expressions that may throw exceptions. It applies colour styling for clarity and includes the exception type name for precise identification.</p>
 
 
-<p>When invoked, the output highlights the <span class="doxyComputerOutput">throws</span> qualifier along with the specific exception type, making it immediately apparent which exception is expected. This enhances the readability and professionalism of test reports, and assists in the precise identification and debugging of exception-related test cases.</p>
+<p>When invoked, the output highlights the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-exceptions/#gaf8f7602f40119da514be2a0bfc4b70f5">throws</a></span> qualifier along with the specific exception type, making it immediately apparent which exception is expected. This enhances the readability and professionalism of test reports, and assists in the precise identification and debugging of exception-related test cases.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00586">586</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reporter-inlines-h/#l00437">437</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reporter-inlines-h">reporter-inlines.h</a>.</p>
@@ -2431,7 +2431,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <p>This operator overload formats output for expressions that may throw exceptions. It applies colour styling for clarity and ensures a structured representation of the exception handling mechanism.</p>
 
 
-<p>When invoked, the output highlights the <span class="doxyComputerOutput">throws</span> qualifier, making it immediately apparent when an expression is expected to throw, thereby improving the readability and professionalism of the test output.</p>
+<p>When invoked, the output highlights the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-exceptions/#gaf8f7602f40119da514be2a0bfc4b70f5">throws</a></span> qualifier, making it immediately apparent when an expression is expected to throw, thereby improving the readability and professionalism of the test output.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00598">598</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reporter-inlines-h/#l00456">456</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reporter-inlines-h">reporter-inlines.h</a>.</p>
@@ -2448,95 +2448,6 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 
 
 <p>References <a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a>, <a href="#ab6b39c68c08e7ccfb29a693bc86d391c">colour_</a> and <a href="#aeb060bfc3184673b0813bca6d8057865">colours_</a>.</p>
-
-</div>
-</div>
-
-### operator&lt;&lt;() {#a330aa7e22a4efc710fe866e1bda6fc4c}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<div class="doxyMemberTemplate">template &lt;class T&gt;</div>
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt; (const T &amp; t)</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Output operator for types with a getter.</p>
-
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Template Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">T</td>
-<td class="doxyParamItemDescription"><p>The type with a getter method.</p></td>
-</tr>
-</table>
-</dd>
-</dl>
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">t</td>
-<td class="doxyParamItemDescription"><p>The object to output.</p></td>
-</tr>
-</table>
-</dd>
-</dl>
-
-<dl class="doxySectionUser">
-<dt>Returns</dt>
-<dd><p>Reference to the current reporter instance.</p></dd>
-</dl>
-
-
-<p>This operator overload enables the <span class="doxyComputerOutput">reporter</span> to output any type that is supported by the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">detail::get</a></span> mechanism, ensuring consistent formatting and extensibility.</p>
-
-
-<p>By delegating to <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">detail::get</a></span>, the operator allows for custom formatting and extraction of values, supporting a wide range of types including user-defined and framework-specific types. The resulting value is then forwarded to the appropriate output handler, ensuring seamless integration into test reports and diagnostics.</p>
-
-
-<p>This approach promotes flexibility and maintainability, allowing new types to be supported with minimal changes to the reporting infrastructure.</p>
-
-
-<p>This operator overload enables the <span class="doxyComputerOutput">reporter</span> to output container types in a structured and readable format.</p>
-
-
-<p>The contents of the container are enclosed in curly braces and each element is separated by a comma and a space. The operator iterates over the container, formatting each element in sequence, which ensures clarity and consistency in test reports and diagnostics.</p>
-
-
-<p>This approach provides a clear visual representation of container contents, making it easier to interpret test results and debug issues involving collections of values.</p>
-
-
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00428">428</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reporter-inlines-h/#l00189">189</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reporter-inlines-h">reporter-inlines.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber">189</span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ad7a2cc6446e65cf9034f85c93efb3945">reporter::operator&lt;&lt;</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; t)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">190</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">191</span><span class="doxyLineContent"><span class="doxyHighlight">    *</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight"> &lt;&lt; <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">detail::get</a> (t);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">192</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> *</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">193</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
-
-</div>
-
-
-<p>References <a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> and <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">micro_os_plus::micro_test_plus::detail::get</a>.</p>
 
 </div>
 </div>
@@ -2601,6 +2512,95 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </div>
 </div>
 
+### operator&lt;&lt;() {#a330aa7e22a4efc710fe866e1bda6fc4c}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<div class="doxyMemberTemplate">template &lt;class T&gt;</div>
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt; (const T &amp; t)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Output operator for types with a getter.</p>
+
+
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Template Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">T</td>
+<td class="doxyParamItemDescription"><p>The type with a getter method.</p></td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">t</td>
+<td class="doxyParamItemDescription"><p>The object to output.</p></td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<dl class="doxySectionUser">
+<dt>Returns</dt>
+<dd><p>Reference to the current reporter instance.</p></dd>
+</dl>
+
+
+<p>This operator overload enables the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> to output any type that is supported by the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">detail::get</a></span> mechanism, ensuring consistent formatting and extensibility.</p>
+
+
+<p>By delegating to <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">detail::get</a></span>, the operator allows for custom formatting and extraction of values, supporting a wide range of types including user-defined and framework-specific types. The resulting value is then forwarded to the appropriate output handler, ensuring seamless integration into test reports and diagnostics.</p>
+
+
+<p>This approach promotes flexibility and maintainability, allowing new types to be supported with minimal changes to the reporting infrastructure.</p>
+
+
+<p>This operator overload enables the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> to output container types in a structured and readable format.</p>
+
+
+<p>The contents of the container are enclosed in curly braces and each element is separated by a comma and a space. The operator iterates over the container, formatting each element in sequence, which ensures clarity and consistency in test reports and diagnostics.</p>
+
+
+<p>This approach provides a clear visual representation of container contents, making it easier to interpret test results and debug issues involving collections of values.</p>
+
+
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00428">428</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reporter-inlines-h/#l00189">189</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/reporter-inlines-h">reporter-inlines.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber">189</span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ad7a2cc6446e65cf9034f85c93efb3945">reporter::operator&lt;&lt;</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; t)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">190</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">191</span><span class="doxyLineContent"><span class="doxyHighlight">    *</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight"> &lt;&lt; <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">detail::get</a> (t);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">192</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> *</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">193</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+
+</div>
+
+
+<p>References <a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> and <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ac627271520bf2fe8a4c4774bcd9bf343">micro_os_plus::micro_test_plus::detail::get</a>.</p>
+
+</div>
+</div>
+
 ### operator&lt;&lt;() {#a697a4dcb95f65634253f44946d06c81a}
 
 <div class="doxyMemberItem">
@@ -2653,7 +2653,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload enables the <span class="doxyComputerOutput">reporter</span> to output strongly-typed integral values in a clear and consistent decimal format.</p>
+<p>This operator overload enables the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> to output strongly-typed integral values in a clear and consistent decimal format.</p>
 
 
 <p>The value is converted to a string using <span class="doxyComputerOutput">std::to_string</span> after being cast to <span class="doxyComputerOutput">long long</span>, ensuring accurate formatting and compatibility across platforms. The resulting string is appended to the internal output buffer, allowing integral values to be included in test reports and diagnostics.</p>
@@ -2720,7 +2720,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload appends the string representation of the specified double-precision floating-point value to the internal output buffer of the <span class="doxyComputerOutput">reporter</span>. It enables precise and readable streaming of double values into the reporter, supporting clear formatting of test output across all test cases and folders.</p>
+<p>This operator overload appends the string representation of the specified double-precision floating-point value to the internal output buffer of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span>. It enables precise and readable streaming of double values into the reporter, supporting clear formatting of test output across all test cases and folders.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00382">382</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00650">650</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
@@ -2781,7 +2781,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload appends the string representation of the specified floating-point value to the internal output buffer of the <span class="doxyComputerOutput">reporter</span>, followed by the character 'f' to indicate a float type. It enables precise and readable streaming of float values into the reporter, supporting clear formatting of test output across all test cases and folders.</p>
+<p>This operator overload appends the string representation of the specified floating-point value to the internal output buffer of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span>, followed by the character 'f' to indicate a float type. It enables precise and readable streaming of float values into the reporter, supporting clear formatting of test output across all test cases and folders.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00373">373</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00634">634</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
@@ -2843,7 +2843,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload appends the string representation of the specified long double-precision floating-point value to the internal output buffer of the <span class="doxyComputerOutput">reporter</span>, followed by the character 'l' to indicate a long double type. It enables precise and readable streaming of long double values into the reporter, supporting clear formatting of test output across all test cases and folders.</p>
+<p>This operator overload appends the string representation of the specified long double-precision floating-point value to the internal output buffer of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span>, followed by the character 'l' to indicate a long double type. It enables precise and readable streaming of long double values into the reporter, supporting clear formatting of test output across all test cases and folders.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00391">391</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00666">666</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
@@ -2875,7 +2875,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt; (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;(*)(<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a> &amp;) func)</td>
+<td class="doxyMemberName">reporter &amp; micro_os_plus::micro_test_plus::reporter::operator&lt;&lt; (<a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;(*)(<a href="#a0643dcab9f46bc3090939c2a17f829e4">reporter</a> &amp;) func)</td>
 </tr>
 </table>
 </td>
@@ -2905,7 +2905,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload enables manipulators, such as <span class="doxyComputerOutput">endl</span>, to be used with the <span class="doxyComputerOutput">reporter</span> stream in a manner similar to standard C++ streams. When a manipulator function is passed, it is invoked with the current <span class="doxyComputerOutput">reporter</span> instance, allowing for seamless integration of stream operations and improved readability of test output across all test cases and folders.</p>
+<p>This operator overload enables manipulators, such as <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#accd8ecc7473b09af578daa31bb8780eb">endl</a></span>, to be used with the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> stream in a manner similar to standard C++ streams. When a manipulator function is passed, it is invoked with the current <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> instance, allowing for seamless integration of stream operations and improved readability of test output across all test cases and folders.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00412">412</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00386">386</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
@@ -2967,7 +2967,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload appends the string representation of the specified signed character to the internal output buffer of the <span class="doxyComputerOutput">reporter</span>. It enables precise and readable streaming of character values into the reporter, supporting clear formatting of test output across all test cases and folders.</p>
+<p>This operator overload appends the string representation of the specified signed character to the internal output buffer of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span>. It enables precise and readable streaming of character values into the reporter, supporting clear formatting of test output across all test cases and folders.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00283">283</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00475">475</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
@@ -3029,7 +3029,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload appends the string representation of the specified signed integer to the internal output buffer of the <span class="doxyComputerOutput">reporter</span>. It enables precise and readable streaming of signed integer values into the reporter, supporting clear formatting of test output across all test cases and folders.</p>
+<p>This operator overload appends the string representation of the specified signed integer to the internal output buffer of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span>. It enables precise and readable streaming of signed integer values into the reporter, supporting clear formatting of test output across all test cases and folders.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00319">319</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00539">539</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
@@ -3090,7 +3090,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload appends the string representation of the specified signed long long integer to the internal output buffer of the <span class="doxyComputerOutput">reporter</span>. It enables precise and readable streaming of signed long long values into the reporter, supporting clear formatting of test output across all test cases and folders.</p>
+<p>This operator overload appends the string representation of the specified signed long long integer to the internal output buffer of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span>. It enables precise and readable streaming of signed long long values into the reporter, supporting clear formatting of test output across all test cases and folders.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00355">355</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00602">602</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
@@ -3152,7 +3152,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload appends the string representation of the specified signed long integer to the internal output buffer of the <span class="doxyComputerOutput">reporter</span>. It enables precise and readable streaming of signed long values into the reporter, supporting clear formatting of test output across all test cases and folders.</p>
+<p>This operator overload appends the string representation of the specified signed long integer to the internal output buffer of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span>. It enables precise and readable streaming of signed long values into the reporter, supporting clear formatting of test output across all test cases and folders.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00337">337</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00570">570</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
@@ -3214,7 +3214,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload appends the string representation of the specified signed short integer to the internal output buffer of the <span class="doxyComputerOutput">reporter</span>. It enables precise and readable streaming of signed short values into the reporter, supporting clear formatting of test output across all test cases and folders.</p>
+<p>This operator overload appends the string representation of the specified signed short integer to the internal output buffer of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span>. It enables precise and readable streaming of signed short values into the reporter, supporting clear formatting of test output across all test cases and folders.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00301">301</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00507">507</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
@@ -3264,7 +3264,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload appends the string "nullptr" to the internal output buffer of the <span class="doxyComputerOutput">reporter</span>. It enables clear and explicit streaming of null pointer values into the reporter, supporting precise and readable formatting of test output across all test cases and folders.</p>
+<p>This operator overload appends the string "nullptr" to the internal output buffer of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span>. It enables clear and explicit streaming of null pointer values into the reporter, supporting precise and readable formatting of test output across all test cases and folders.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00275">275</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00460">460</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
@@ -3325,7 +3325,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload appends the contents of the provided <span class="doxyComputerOutput">std::string_view</span> to the internal output buffer of the <span class="doxyComputerOutput">reporter</span>. It enables seamless streaming of string data into the reporter, supporting clear and efficient formatting of test output across all test cases and folders.</p>
+<p>This operator overload appends the contents of the provided <span class="doxyComputerOutput">std::string_view</span> to the internal output buffer of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span>. It enables seamless streaming of string data into the reporter, supporting clear and efficient formatting of test output across all test cases and folders.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00241">241</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00402">402</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
@@ -3399,7 +3399,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload enables the <span class="doxyComputerOutput">reporter</span> to output pointer values in a consistent and readable format.</p>
+<p>This operator overload enables the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> to output pointer values in a consistent and readable format.</p>
 
 
 <p>Null pointers are always rendered as the string <span class="doxyComputerOutput">"nullptr"</span>, regardless of the platform, avoiding platform-specific behaviour such as <span class="doxyComputerOutput">"(nil)"</span> on Linux/glibc or <span class="doxyComputerOutput">"0x0"</span> on macOS.</p>
@@ -3488,7 +3488,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload appends the string representation of the specified unsigned character to the internal output buffer of the <span class="doxyComputerOutput">reporter</span>. It enables precise and readable streaming of unsigned character values into the reporter, supporting clear formatting of test output across all test cases and folders.</p>
+<p>This operator overload appends the string representation of the specified unsigned character to the internal output buffer of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span>. It enables precise and readable streaming of unsigned character values into the reporter, supporting clear formatting of test output across all test cases and folders.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00292">292</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00491">491</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
@@ -3550,7 +3550,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload appends the string representation of the specified unsigned integer to the internal output buffer of the <span class="doxyComputerOutput">reporter</span>. It enables precise and readable streaming of unsigned integer values into the reporter, supporting clear formatting of test output across all test cases and folders.</p>
+<p>This operator overload appends the string representation of the specified unsigned integer to the internal output buffer of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span>. It enables precise and readable streaming of unsigned integer values into the reporter, supporting clear formatting of test output across all test cases and folders.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00328">328</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00554">554</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
@@ -3612,7 +3612,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload appends the string representation of the specified unsigned long long integer to the internal output buffer of the <span class="doxyComputerOutput">reporter</span>. It enables precise and readable streaming of unsigned long long values into the reporter, supporting clear formatting of test output across all test cases and folders.</p>
+<p>This operator overload appends the string representation of the specified unsigned long long integer to the internal output buffer of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span>. It enables precise and readable streaming of unsigned long long values into the reporter, supporting clear formatting of test output across all test cases and folders.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00364">364</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00618">618</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
@@ -3674,7 +3674,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload appends the string representation of the specified unsigned long integer to the internal output buffer of the <span class="doxyComputerOutput">reporter</span>. It enables precise and readable streaming of unsigned long values into the reporter, supporting clear formatting of test output across all test cases and folders.</p>
+<p>This operator overload appends the string representation of the specified unsigned long integer to the internal output buffer of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span>. It enables precise and readable streaming of unsigned long values into the reporter, supporting clear formatting of test output across all test cases and folders.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00346">346</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00586">586</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
@@ -3736,7 +3736,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This operator overload appends the string representation of the specified unsigned short integer to the internal output buffer of the <span class="doxyComputerOutput">reporter</span>. It enables precise and readable streaming of unsigned short values into the reporter, supporting clear formatting of test output across all test cases and folders.</p>
+<p>This operator overload appends the string representation of the specified unsigned short integer to the internal output buffer of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span>. It enables precise and readable streaming of unsigned short values into the reporter, supporting clear formatting of test output across all test cases and folders.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00310">310</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00523">523</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
@@ -4071,7 +4071,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This method appends a newline character to the internal output buffer of the <span class="doxyComputerOutput">reporter</span> and immediately flushes the stream. This ensures that each line of test output is clearly separated and promptly displayed, enhancing the readability and organisation of test results across all test cases and folders.</p>
+<p>This method appends a newline character to the internal output buffer of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> and immediately flushes the stream. This ensures that each line of test output is clearly separated and promptly displayed, enhancing the readability and organisation of test results across all test cases and folders.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00625">625</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00221">221</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
@@ -4178,10 +4178,10 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber">517</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">518</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// current_test_suite-&gt;current_test_case.index++;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">519</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a5617d861c48049189b6b33e36626763a">520</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> hasExpression = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a814e7f004d5404f735737aabb90fa111">type_traits::is_op_v&lt;Expr_T&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human/#a5617d861c48049189b6b33e36626763a">520</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> hasExpression = <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/is-op">type_traits::is_op&lt;Expr_T&gt;</a>;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">521</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#aa081a10147919931f1b0a4b41a14dfe9">output_fail_prefix_</a> (message, hasExpression, location, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/subtest">subtest</a>);</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">522</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">523</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> (<a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits/#a814e7f004d5404f735737aabb90fa111">type_traits::is_op_v&lt;Expr_T&gt;</a>)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">523</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> (<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/is-op">type_traits::is_op&lt;Expr_T&gt;</a>)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">524</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">525</span><span class="doxyLineContent"><span class="doxyHighlight">        *</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight"> &lt;&lt; expr;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">526</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
@@ -4227,7 +4227,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 </dl>
 
 
-<p>This method flushes the output buffer of the <span class="doxyComputerOutput">reporter</span> by synchronising it with the standard output stream. This guarantees that all pending test output is immediately written and visible, ensuring prompt and reliable reporting of test results across all test cases and folders.</p>
+<p>This method flushes the output buffer of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span> by synchronising it with the standard output stream. This guarantees that all pending test output is immediately written and visible, ensuring prompt and reliable reporting of test results across all test cases and folders.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00652">652</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00365">365</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
@@ -4421,7 +4421,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>The active <span class="doxyComputerOutput">verbosity</span> value.</p></dd>
+<dd><p>The active <span class="doxyComputerOutput"><a href="#a24da76a8973a5aebca9ef7604740180c">verbosity</a></span> value.</p></dd>
 </dl>
 
 
@@ -4835,7 +4835,7 @@ class micro_os_plus::micro_test_plus::reporter { ... }
 
 
 
-<p>Writes the contents of <span class="doxyComputerOutput">buffer_</span> to <span class="doxyComputerOutput">output_file_</span> using <span class="doxyComputerOutput">fprintf</span> without appending a newline. If <span class="doxyComputerOutput">output_file_</span> is null, the call is a no-op.</p>
+<p>Writes the contents of <span class="doxyComputerOutput"><a href="#a6eed4eaebea91b3377b89a118eb1c323">buffer_</a></span> to <span class="doxyComputerOutput"><a href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a></span> using <span class="doxyComputerOutput">fprintf</span> without appending a newline. If <span class="doxyComputerOutput"><a href="#a1d95688325caf323a4d77272dcf50b86">output_file_</a></span> is null, the call is a no-op.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l00798">798</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00250">250</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
@@ -5431,6 +5431,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

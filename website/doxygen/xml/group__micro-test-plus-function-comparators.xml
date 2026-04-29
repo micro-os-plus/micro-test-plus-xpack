@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="group__micro-test-plus-function-comparators" kind="group">
     <compoundname>micro-test-plus-function-comparators</compoundname>
     <title>Function Comparators</title>
@@ -66,7 +66,7 @@
 </parameterlist>
 <simplesect kind="return"><para>A comparator object that evaluates to true if the operands are equal.</para>
 </simplesect>
-The <computeroutput>eq</computeroutput> function template provides a generic equality comparator for any non-pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that two values are equal. This function is typically used in test expectations and assertions to compare the actual and expected values. </para>
+The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1gae9dfca849300a917cb1c231d275baaa3" kindref="member">eq</ref></computeroutput> function template provides a generic equality comparator for any non-pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that two values are equal. This function is typically used in test expectations and assertions to compare the actual and expected values. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -134,7 +134,7 @@ The <computeroutput>eq</computeroutput> function template provides a generic equ
 </parameterlist>
 <simplesect kind="return"><para>A comparator object that evaluates to true if the pointers are equal.</para>
 </simplesect>
-The <computeroutput>eq</computeroutput> function template provides a pointer equality comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that two pointers are equal. This function is typically used in test expectations and assertions to compare the addresses of objects or resources. </para>
+The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1gae9dfca849300a917cb1c231d275baaa3" kindref="member">eq</ref></computeroutput> function template provides a pointer equality comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that two pointers are equal. This function is typically used in test expectations and assertions to compare the addresses of objects or resources. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -202,7 +202,7 @@ The <computeroutput>eq</computeroutput> function template provides a pointer equ
 </parameterlist>
 <simplesect kind="return"><para>A comparator object that evaluates to true if <computeroutput>lhs</computeroutput> is greater than or equal to <computeroutput>rhs</computeroutput>.</para>
 </simplesect>
-The <computeroutput>ge</computeroutput> function template provides a generic greater than or equal comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is greater than or equal to another. This function is typically used in test expectations and assertions to compare the actual and expected values. </para>
+The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1ga34e03399670ec0b365b94b7bea788dd8" kindref="member">ge</ref></computeroutput> function template provides a generic greater than or equal comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is greater than or equal to another. This function is typically used in test expectations and assertions to compare the actual and expected values. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -270,7 +270,7 @@ The <computeroutput>ge</computeroutput> function template provides a generic gre
 </parameterlist>
 <simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side pointer is greater than or equal to the right hand side pointer.</para>
 </simplesect>
-The <computeroutput>ge</computeroutput> function template provides a pointer greater than or equal comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is greater than or equal to another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources. </para>
+The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1ga34e03399670ec0b365b94b7bea788dd8" kindref="member">ge</ref></computeroutput> function template provides a pointer greater than or equal comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is greater than or equal to another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -338,7 +338,7 @@ The <computeroutput>ge</computeroutput> function template provides a pointer gre
 </parameterlist>
 <simplesect kind="return"><para>A comparator object that evaluates to true if <computeroutput>lhs</computeroutput> is greater than <computeroutput>rhs</computeroutput>.</para>
 </simplesect>
-The <computeroutput>gt</computeroutput> function template provides a generic greater than comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is greater than another. This function is typically used in test expectations and assertions to compare the actual and expected values. </para>
+The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1gae2fb681444d8256f6bf827eea6b7c29e" kindref="member">gt</ref></computeroutput> function template provides a generic greater than comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is greater than another. This function is typically used in test expectations and assertions to compare the actual and expected values. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -406,7 +406,7 @@ The <computeroutput>gt</computeroutput> function template provides a generic gre
 </parameterlist>
 <simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side pointer is greater than the right hand side pointer.</para>
 </simplesect>
-The <computeroutput>gt</computeroutput> function template provides a pointer greater than comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is greater than another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources. </para>
+The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1gae2fb681444d8256f6bf827eea6b7c29e" kindref="member">gt</ref></computeroutput> function template provides a pointer greater than comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is greater than another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -474,7 +474,7 @@ The <computeroutput>gt</computeroutput> function template provides a pointer gre
 </parameterlist>
 <simplesect kind="return"><para>A comparator object that evaluates to true if <computeroutput>lhs</computeroutput> is less than or equal to <computeroutput>rhs</computeroutput>.</para>
 </simplesect>
-The <computeroutput>le</computeroutput> function template provides a generic less than or equal comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is less than or equal to another. This function is typically used in test expectations and assertions to compare the actual and expected values. </para>
+The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1ga2b5263a5b3965855aa04971bba735a56" kindref="member">le</ref></computeroutput> function template provides a generic less than or equal comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is less than or equal to another. This function is typically used in test expectations and assertions to compare the actual and expected values. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -542,7 +542,7 @@ The <computeroutput>le</computeroutput> function template provides a generic les
 </parameterlist>
 <simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side pointer is less than or equal to the right hand side pointer.</para>
 </simplesect>
-The <computeroutput>le</computeroutput> function template provides a pointer less than or equal comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is less than or equal to another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources. </para>
+The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1ga2b5263a5b3965855aa04971bba735a56" kindref="member">le</ref></computeroutput> function template provides a pointer less than or equal comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is less than or equal to another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -610,7 +610,7 @@ The <computeroutput>le</computeroutput> function template provides a pointer les
 </parameterlist>
 <simplesect kind="return"><para>A comparator object that evaluates to true if <computeroutput>lhs</computeroutput> is less than <computeroutput>rhs</computeroutput>.</para>
 </simplesect>
-The <computeroutput>lt</computeroutput> function template provides a generic less than comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is less than another. This function is typically used in test expectations and assertions to compare the actual and expected values. </para>
+The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1gac162522dcad1a6ff7c869d52d376b3ed" kindref="member">lt</ref></computeroutput> function template provides a generic less than comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that one value is less than another. This function is typically used in test expectations and assertions to compare the actual and expected values. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -678,7 +678,7 @@ The <computeroutput>lt</computeroutput> function template provides a generic les
 </parameterlist>
 <simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side pointer is less than the right hand side pointer.</para>
 </simplesect>
-The <computeroutput>lt</computeroutput> function template provides a pointer less than comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is less than another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources. </para>
+The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1gac162522dcad1a6ff7c869d52d376b3ed" kindref="member">lt</ref></computeroutput> function template provides a pointer less than comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that one pointer is less than another. This function is typically used in test expectations and assertions to compare the addresses of objects or resources. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -746,7 +746,7 @@ The <computeroutput>lt</computeroutput> function template provides a pointer les
 </parameterlist>
 <simplesect kind="return"><para>A comparator object that evaluates to true if the operands are not equal.</para>
 </simplesect>
-The <computeroutput>ne</computeroutput> function template provides a generic non-equality comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that two values are not equal. This function is typically used in test expectations and assertions to compare the actual and expected values. </para>
+The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1ga59e4cf59954e81bc868e62b1c5c8db1f" kindref="member">ne</ref></computeroutput> function template provides a generic non-equality comparator for any types. It constructs a comparator object that can be used within the µTest++ framework to assert that two values are not equal. This function is typically used in test expectations and assertions to compare the actual and expected values. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -814,7 +814,7 @@ The <computeroutput>ne</computeroutput> function template provides a generic non
 </parameterlist>
 <simplesect kind="return"><para>A comparator object that evaluates to true if the pointers are not equal.</para>
 </simplesect>
-The <computeroutput>ne</computeroutput> function template provides a pointer non-equality comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that two pointers are not equal. This function is typically used in test expectations and assertions to compare the addresses of objects or resources. </para>
+The <computeroutput><ref refid="group__micro-test-plus-function-comparators_1ga59e4cf59954e81bc868e62b1c5c8db1f" kindref="member">ne</ref></computeroutput> function template provides a pointer non-equality comparator for any pointer types. It constructs a comparator object that can be used within the µTest++ framework to assert that two pointers are not equal. This function is typically used in test expectations and assertions to compare the addresses of objects or resources. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>

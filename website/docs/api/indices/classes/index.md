@@ -424,7 +424,7 @@ Reporter to display test results, including operand values and types for failure
 <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-human">reporter_human</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Human (standard output) implementation of <span class="doxyComputerOutput">reporter</span>
+Human (standard output) implementation of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span>
 </td>
 </tr>
 
@@ -435,7 +435,7 @@ Human (standard output) implementation of <span class="doxyComputerOutput">repor
 <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter-tap">reporter_tap</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-TAP (Test Anything Protocol) implementation of <span class="doxyComputerOutput">reporter</span>
+TAP (Test Anything Protocol) implementation of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reporter">reporter</a></span>
 </td>
 </tr>
 
@@ -501,7 +501,7 @@ CRTP base class factoring out callable storage, rule-of-five, and <span class="d
 <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/subtest">subtest</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-A named, runnable test case that lives inside a <span class="doxyComputerOutput">suite</span>
+A named, runnable test case that lives inside a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite">suite</a></span>
 </td>
 </tr>
 
@@ -534,7 +534,7 @@ A test suite designed for static (namespace-scope) registration with a <span cla
 <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/top-suite">top_suite</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-The implicit top-level suite owned by every <span class="doxyComputerOutput">runner</span> instance
+The implicit top-level suite owned by every <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a></span> instance
 </td>
 </tr>
 
@@ -556,7 +556,7 @@ The test runner for the µTest++ framework
 <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-runner">static_runner</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-A <span class="doxyComputerOutput">runner</span> variant that also manages statically-registered test suites
+A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a></span> variant that also manages statically-registered test suites
 </td>
 </tr>
 
@@ -586,6 +586,6 @@ A begin/end timestamp pair used to measure elapsed time
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -64,8 +64,8 @@ var NAVTREEINDEX =
 "classmicro__os__plus_1_1micro__test__plus_1_1runnable.html#a5ad9145405b7d9e7369d99f38f3f060a",
 "classmicro__os__plus_1_1micro__test__plus_1_1suite.html#a5ad9145405b7d9e7369d99f38f3f060a",
 "group__micro-test-plus-assumptions.html#ga0346721eb94564ebce4a49ee81c020c8",
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1assertion.html#a3bda35bdd21c44124c7828c65ac3395f",
-"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity.html#a6399364a09c1004ebbaab36b2d5dc0c8"
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op__.html#a2dd578daf62dde786b3e9e7beeac08bc",
+"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html#a53cb52e57c05eaf46f47352a77270993"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

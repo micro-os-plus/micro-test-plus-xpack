@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__" kind="struct" language="C++" prot="public">
     <compoundname>micro_os_plus::micro_test_plus::detail::not_</compoundname>
     <basecompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op__" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;</basecompoundref>
@@ -54,7 +54,7 @@ Evaluates the logical negation of the provided operand and passes the result to 
 </simplesect>
 <simplesect kind="return"><para>The extracted operand value.</para>
 </simplesect>
-Returns the wrapped operand, applying the generic getter to ensure correct extraction for both custom and standard types. Named <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1a6dad81524f4cc61c26a91d28aafdd8b0" kindref="member">operand()</ref></computeroutput> to distinguish it from the boolean result stored in <computeroutput>value_</computeroutput>. </para>
+Returns the wrapped operand, applying the generic getter to ensure correct extraction for both custom and standard types. Named <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1a6dad81524f4cc61c26a91d28aafdd8b0" kindref="member">operand()</ref></computeroutput> to distinguish it from the boolean result stored in <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1ac226d3ad3c5e0ce7eddaf225803aa998" kindref="member">value_</ref></computeroutput>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -137,7 +137,7 @@ Returns the pre-computed boolean result stored by the derived comparator&apos;s 
 </parameteritem>
 </parameterlist>
 The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__" kindref="compound">not_</ref></computeroutput> struct template provides a type-safe mechanism for evaluating the logical negation (NOT) of an operand within the framework.</para>
-<para>This comparator supports a wide range of operand types, applying the generic getter to ensure correct value extraction for both custom and standard types. The result of the logical NOT operation is stored in the <computeroutput>value_</computeroutput> member for efficient access.</para>
+<para>This comparator supports a wide range of operand types, applying the generic getter to ensure correct value extraction for both custom and standard types. The result of the logical NOT operation is stored in the <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1ac226d3ad3c5e0ce7eddaf225803aa998" kindref="member">value_</ref></computeroutput> member for efficient access.</para>
 <para>The implementation is optimised for use in embedded environments and supports both compile-time and run-time evaluation.</para>
 <para>All definitions are intended for internal use within the framework and are implemented in the <computeroutput>include/micro-os-plus/micro-test-plus</computeroutput> folder to maintain a structured and modular codebase. </para>
     </detaileddescription>

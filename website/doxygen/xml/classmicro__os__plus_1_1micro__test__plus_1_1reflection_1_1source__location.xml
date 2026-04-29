@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" kind="class" language="C++" prot="public">
     <compoundname>micro_os_plus::micro_test_plus::reflection::source_location</compoundname>
     <includes refid="micro-test-plus_8h" local="no">micro-os-plus/micro-test-plus.h</includes>
@@ -82,7 +82,7 @@
 <simplesect kind="return"><para>A <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" kindref="compound">source_location</ref></computeroutput> instance with the captured information.</para>
 </simplesect>
 Returns a <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" kindref="compound">source_location</ref></computeroutput> instance representing the file name and line number at the point of invocation.</para>
-<para>If supported by the compiler, uses built-in macros to capture this information; otherwise, defaults to <computeroutput>&quot;unknown&quot;</computeroutput> and zero. </para>
+<para>If supported by the compiler, uses built-in macros to capture this information; otherwise, defaults to <computeroutput>"unknown"</computeroutput> and zero. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -120,7 +120,7 @@ Returns the file name captured at the time this <computeroutput><ref refid="clas
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" line="165" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" bodystart="105" bodyend="108"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1ae648fa43322766fbeb3f9103b43bcc4b" compoundref="reflection_8h" startline="181" endline="181">file_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a7bc806540e65c21095ef1ea1ef970db2" compoundref="runner_8cpp" startline="348" endline="368">micro_os_plus::micro_test_plus::runner::abort</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aa25bc978d1fcd02cb7c75aef0c1a9988" compoundref="reporter-human_8cpp" startline="749" endline="786">micro_os_plus::micro_test_plus::reporter_human::output_fail_prefix_</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aa25bc978d1fcd02cb7c75aef0c1a9988" compoundref="reporter-human_8cpp" startline="756" endline="793">micro_os_plus::micro_test_plus::reporter_human::output_fail_prefix_</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a951a2aa4cb5300a7706709a2336651a8" compoundref="reporter-tap_8cpp" startline="751" endline="777">micro_os_plus::micro_test_plus::reporter_tap::output_fail_suffix_</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1aab9d006004611ac0526852a09f675c66" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
@@ -148,7 +148,7 @@ Returns the line number captured at the time this <computeroutput><ref refid="cl
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1a0e805c2ed2234f2c004fd7196b844fc5" compoundref="reflection_8h" startline="186" endline="186">line_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a7bc806540e65c21095ef1ea1ef970db2" compoundref="runner_8cpp" startline="348" endline="368">micro_os_plus::micro_test_plus::runner::abort</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1af2ee3ac5db96f13680291736d58fe327" compoundref="reflection-inlines_8h" startline="91" endline="97">current</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aa25bc978d1fcd02cb7c75aef0c1a9988" compoundref="reporter-human_8cpp" startline="749" endline="786">micro_os_plus::micro_test_plus::reporter_human::output_fail_prefix_</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1aa25bc978d1fcd02cb7c75aef0c1a9988" compoundref="reporter-human_8cpp" startline="756" endline="793">micro_os_plus::micro_test_plus::reporter_human::output_fail_prefix_</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a951a2aa4cb5300a7706709a2336651a8" compoundref="reporter-tap_8cpp" startline="751" endline="777">micro_os_plus::micro_test_plus::reporter_tap::output_fail_suffix_</referencedby>
       </memberdef>
     </sectiondef>
@@ -158,7 +158,7 @@ Returns the line number captured at the time this <computeroutput><ref refid="cl
     <detaileddescription>
 <para>This class provides a lightweight, constexpr-compatible alternative to <computeroutput>std::source_location</computeroutput> for environments lacking C++20 standard support.</para>
 <para>It enables retrieval of the file name and line number at the point of invocation, supporting enhanced diagnostics and reporting within the µTest++ framework.</para>
-<para>The static <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1af2ee3ac5db96f13680291736d58fe327" kindref="member">current()</ref></computeroutput> method captures the current source location, using compiler built-ins where available, or defaulting to <computeroutput>&quot;unknown&quot;</computeroutput> and zero otherwise.</para>
+<para>The static <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1af2ee3ac5db96f13680291736d58fe327" kindref="member">current()</ref></computeroutput> method captures the current source location, using compiler built-ins where available, or defaulting to <computeroutput>"unknown"</computeroutput> and zero otherwise.</para>
 <para><simplesect kind="since"><para>3.0.0 </para>
 </simplesect>
 </para>

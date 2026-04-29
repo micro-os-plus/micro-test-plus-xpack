@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" kind="class" language="C++" prot="public">
     <compoundname>micro_os_plus::micro_test_plus::static_suite</compoundname>
     <basecompoundref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::suite</basecompoundref>
     <includes refid="micro-test-plus_8h" local="no">micro-os-plus/micro-test-plus.h</includes>
     <sectiondef kind="protected-attrib">
       <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1runnable_1aae29fd05e5a256964d9f42965ed1bf23" prot="protected" static="no" mutable="no">
-        <type>std::function&lt; void(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" kindref="compound">suite</ref> &amp;)&gt;</type>
+        <type>std::function&lt; void(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a4040488588c8aa900b6d8f82fc72c1d4" kindref="member">suite</ref> &amp;)&gt;</type>
         <definition>std::function&lt;void (suite&amp;)&gt; micro_os_plus::micro_test_plus::runnable&lt; suite &gt;::callable_</definition>
         <argsstring></argsstring>
         <name>callable_</name>
@@ -30,7 +30,7 @@
 <para>Owning collection of direct child subtests. </para>
         </briefdescription>
         <detaileddescription>
-<para>Each call to <computeroutput>test()</computeroutput> appends a new <computeroutput>subtest</computeroutput> to this vector and runs it immediately. The vector retains ownership for the lifetime of the parent runnable. </para>
+<para>Each call to <computeroutput>test()</computeroutput> appends a new <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest" kindref="compound">subtest</ref></computeroutput> to this vector and runs it immediately. The vector retains ownership for the lifetime of the parent runnable. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -106,7 +106,7 @@
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="394" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" bodystart="394" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a1341277c6af9353b1555711817523983" prot="protected" static="no" mutable="no">
-        <type>std::function&lt; void(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" kindref="compound">static_suite</ref> &amp;)&gt;</type>
+        <type>std::function&lt; void(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a922ff2c4834e60f806c4950307709a36" kindref="member">static_suite</ref> &amp;)&gt;</type>
         <definition>std::function&lt;void (static_suite&amp;)&gt; micro_os_plus::micro_test_plus::static_suite::static_callable_</definition>
         <argsstring></argsstring>
         <name>static_callable_</name>
@@ -243,7 +243,7 @@
 </parameteritem>
 </parameterlist>
 The rule of five is enforced to prevent accidental copying or moving. Upon construction, the suite is automatically registered with the runner.</para>
-<para>Delegates to <computeroutput>runnable</computeroutput>, which binds the callable with its arguments. After construction, the suite is registered with the static test runner. </para>
+<para>Delegates to <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable" kindref="compound">runnable</ref></computeroutput>, which binds the callable with its arguments. After construction, the suite is registered with the static test runner. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -265,7 +265,7 @@ The rule of five is enforced to prevent accidental copying or moving. Upon const
         <name>static_suite</name>
         <qualifiedname>micro_os_plus::micro_test_plus::static_suite::static_suite</qualifiedname>
         <param>
-          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" kindref="compound">static_suite</ref> &amp;</type>
+          <type>const static_suite &amp;</type>
         </param>
         <briefdescription>
 <para>Deleted copy constructor to prevent copying. </para>
@@ -284,7 +284,7 @@ The rule of five is enforced to prevent accidental copying or moving. Upon const
         <name>static_suite</name>
         <qualifiedname>micro_os_plus::micro_test_plus::static_suite::static_suite</qualifiedname>
         <param>
-          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" kindref="compound">static_suite</ref> &amp;&amp;</type>
+          <type>static_suite &amp;&amp;</type>
         </param>
         <briefdescription>
 <para>Deleted move constructor to prevent moving. </para>
@@ -339,7 +339,7 @@ The rule of five is enforced to prevent accidental copying or moving. Upon const
 </parameterlist>
 <simplesect kind="par"><title>Returns</title><para>Does not return.</para>
 </simplesect>
-Delegates immediately to <computeroutput>runner_.abort()</computeroutput>, passing the supplied source location so that the error message identifies the call site before the process is terminated via <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base_1a08921ea05d769a210cfec4326f1505a9" kindref="member">abort()</ref></computeroutput>. </para>
+Delegates immediately to <computeroutput>runner_.abort()</computeroutput>, passing the supplied source location so that the error message identifies the call site before the process is terminated via <computeroutput>::abort()</computeroutput>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -398,7 +398,7 @@ Delegates immediately to <computeroutput>runner_.abort()</computeroutput>, passi
 <para>Increments and returns the child subtest sequential index. </para>
         </briefdescription>
         <detaileddescription>
-<para>Each call to <computeroutput>test()</computeroutput> invokes this method before constructing the new <computeroutput>subtest</computeroutput>, so the index values form a strictly increasing, one-based sequence.</para>
+<para>Each call to <computeroutput>test()</computeroutput> invokes this method before constructing the new <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest" kindref="compound">subtest</ref></computeroutput>, so the index values form a strictly increasing, one-based sequence.</para>
 <para><simplesect kind="par"><title>Parameters</title><para>None. </para>
 </simplesect>
 <simplesect kind="return"><para>The new index value after incrementing. </para>
@@ -439,13 +439,13 @@ Delegates immediately to <computeroutput>runner_.abort()</computeroutput>, passi
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1ac6bfa52d8ca017f42318bcbfbb425474" compoundref="test-inlines_8h" startline="286" endline="309">micro_os_plus::micro_test_plus::suite::test</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1ae050e143c88fb99eddf2060d37ad4340" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" kindref="compound">static_suite</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a922ff2c4834e60f806c4950307709a36" kindref="member">static_suite</ref> &amp;</type>
         <definition>static_suite &amp; micro_os_plus::micro_test_plus::static_suite::operator=</definition>
         <argsstring>(const static_suite &amp;)=delete</argsstring>
         <name>operator=</name>
         <qualifiedname>micro_os_plus::micro_test_plus::static_suite::operator=</qualifiedname>
         <param>
-          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" kindref="compound">static_suite</ref> &amp;</type>
+          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a922ff2c4834e60f806c4950307709a36" kindref="member">static_suite</ref> &amp;</type>
         </param>
         <briefdescription>
 <para>Deleted copy assignment operator to prevent copying. </para>
@@ -458,13 +458,13 @@ Delegates immediately to <computeroutput>runner_.abort()</computeroutput>, passi
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a922ff2c4834e60f806c4950307709a36" compoundref="test-inlines_8h" startline="320" endline="352">static_suite</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a9715939a3717861be374ce1a884fd7fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" kindref="compound">static_suite</ref> &amp;</type>
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a922ff2c4834e60f806c4950307709a36" kindref="member">static_suite</ref> &amp;</type>
         <definition>static_suite &amp; micro_os_plus::micro_test_plus::static_suite::operator=</definition>
         <argsstring>(static_suite &amp;&amp;)=delete</argsstring>
         <name>operator=</name>
         <qualifiedname>micro_os_plus::micro_test_plus::static_suite::operator=</qualifiedname>
         <param>
-          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" kindref="compound">static_suite</ref> &amp;&amp;</type>
+          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a922ff2c4834e60f806c4950307709a36" kindref="member">static_suite</ref> &amp;&amp;</type>
         </param>
         <briefdescription>
 <para>Deleted move assignment operator to prevent moving. </para>
@@ -687,10 +687,10 @@ Records the suite begin timestamp, notifies the reporter via <computeroutput>beg
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-The <computeroutput>test</computeroutput> function template registers and executes a test case within the µTest++ framework. It accepts a descriptive name, a callable object (such as a lambda or function pointer), and an optional list of arguments to be passed to the callable. The test case is reported using the provided name, and its execution is managed by the framework&apos;s test runner.</para>
+The <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1ac6bfa52d8ca017f42318bcbfbb425474" kindref="member">test</ref></computeroutput> function template registers and executes a test case within the µTest++ framework. It accepts a descriptive name, a callable object (such as a lambda or function pointer), and an optional list of arguments to be passed to the callable. The test case is reported using the provided name, and its execution is managed by the framework&apos;s test runner.</para>
 <para>Each test case typically involves evaluating a logical expression, such as comparing a computed result to an expected value. For C++ projects, it is also possible to verify whether evaluating an expression throws exceptions. Each test either succeeds or fails, and for expectations, the test runner maintains counts of successful and failed checks.</para>
 <para>This function template enables flexible and expressive test case definitions, supporting both parameterised and non-parameterised tests. It is typically invoked at global scope or within test suite definitions to ensure automatic registration and execution.</para>
-<para>A test case is characterised by a name, a function that performs the checks, and optionally, arguments to be passed to that function. The implementation of <computeroutput>test</computeroutput> invokes the provided function with the given arguments and reports the results to the test runner.</para>
+<para>A test case is characterised by a name, a function that performs the checks, and optionally, arguments to be passed to that function. The implementation of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1ac6bfa52d8ca017f42318bcbfbb425474" kindref="member">test</ref></computeroutput> invokes the provided function with the given arguments and reports the results to the test runner.</para>
 <para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
 <programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/>micro_os_plus::micro_test_plus;</highlight></codeline>
@@ -750,7 +750,7 @@ The <computeroutput>test</computeroutput> function template registers and execut
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="847" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" bodystart="847" bodyend="850"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1ada404b347b4e1cbefdbfce95b6eec671" compoundref="test_8h" startline="885">micro_os_plus::micro_test_plus::suite::timings_</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="340" endline="461">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__human_1ac0a6d2bda91a9afa71346eef59c7f35e" compoundref="reporter-human_8cpp" startline="347" endline="468">micro_os_plus::micro_test_plus::reporter_human::end_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter__tap_1a8649b62ba8f7ff88501450c5f939ab6d" compoundref="reporter-tap_8cpp" startline="323" endline="446">micro_os_plus::micro_test_plus::reporter_tap::end_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a4ab3277887dfc4cd8ae84bb4101eae60" compoundref="test_8cpp" startline="466" endline="491">run</referencedby>
       </memberdef>
@@ -807,7 +807,7 @@ The <computeroutput>test</computeroutput> function template registers and execut
           <declname>child_test</declname>
         </param>
         <param>
-          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" kindref="compound">suite</ref> &amp;</type>
+          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a4040488588c8aa900b6d8f82fc72c1d4" kindref="member">suite</ref> &amp;</type>
           <declname>suite</declname>
         </param>
         <briefdescription>
@@ -819,7 +819,7 @@ The <computeroutput>test</computeroutput> function template registers and execut
 <parametername>child_test</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Owning pointer to the newly created <computeroutput>subtest</computeroutput>. </para>
+<para>Owning pointer to the newly created <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest" kindref="compound">subtest</ref></computeroutput>. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -827,13 +827,13 @@ The <computeroutput>test</computeroutput> function template registers and execut
 <parametername>suite</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The parent <computeroutput>suite</computeroutput> to which execution results are reported. </para>
+<para>The parent <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" kindref="compound">suite</ref></computeroutput> to which execution results are reported. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
 <simplesect kind="par"><title>Returns</title><para>Nothing.</para>
 </simplesect>
-Transfers ownership of <computeroutput>child_test</computeroutput> into <computeroutput>children_subtests_</computeroutput> and immediately invokes <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1aa7bff3af9ebff14c45838991ed848c33" kindref="member">subtest::run()</ref></computeroutput> on the newly stored subtest. The parent&apos;s executed-subtest counter is then incremented. The child&apos;s check counters are intentionally not merged into the parent totals; each subtest reports only its own counters. The child&apos;s totals are, however, accumulated into <computeroutput>suite</computeroutput> so that the suite summary reflects all checks performed by its subtests. </para>
+Transfers ownership of <computeroutput>child_test</computeroutput> into <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runnable__base_1aef505faea997f1687eb23f0b2ce4f664" kindref="member">children_subtests_</ref></computeroutput> and immediately invokes <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1aa7bff3af9ebff14c45838991ed848c33" kindref="member">subtest::run()</ref></computeroutput> on the newly stored subtest. The parent&apos;s executed-subtest counter is then incremented. The child&apos;s check counters are intentionally not merged into the parent totals; each subtest reports only its own counters. The child&apos;s totals are, however, accumulated into <computeroutput>suite</computeroutput> so that the suite summary reflects all checks performed by its subtests. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -845,9 +845,9 @@ Transfers ownership of <computeroutput>child_test</computeroutput> into <compute
 <para>A test suite designed for static (namespace-scope) registration with a <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner" kindref="compound">static_runner</ref></computeroutput>. </para>
     </briefdescription>
     <detaileddescription>
-<para><computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" kindref="compound">static_suite</ref></computeroutput> extends <computeroutput>suite</computeroutput> to support the pattern where test suites are declared as namespace-scope objects and therefore constructed before or after the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner" kindref="compound">static_runner</ref></computeroutput> instance, in unspecified static-initialisation order.</para>
+<para><computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" kindref="compound">static_suite</ref></computeroutput> extends <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" kindref="compound">suite</ref></computeroutput> to support the pattern where test suites are declared as namespace-scope objects and therefore constructed before or after the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner" kindref="compound">static_runner</ref></computeroutput> instance, in unspecified static-initialisation order.</para>
 <para>Upon construction, the suite automatically registers itself with the supplied <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner" kindref="compound">static_runner</ref></computeroutput> by calling <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1abc9182d5e12609158d936f312a83f53c" kindref="member">static_runner::register_suite_()</ref></computeroutput>. The runner defers execution of all registered static suites until <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner_1ac17e3110a8cd7f71a39b932cc74cbcad" kindref="member">static_runner::run_suites_()</ref></computeroutput> is invoked, which typically happens inside the implicit <computeroutput>main()</computeroutput> provided by the framework.</para>
-<para>In addition to the standard callable body inherited from <computeroutput>suite</computeroutput>, a <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" kindref="compound">static_suite</ref></computeroutput> may carry a second, statically-registered callable stored in <computeroutput>static_callable_</computeroutput>. The overridden <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a4ab3277887dfc4cd8ae84bb4101eae60" kindref="member">run()</ref></computeroutput> method invokes both bodies in sequence, allowing the suite to integrate both dynamic and static registration patterns.</para>
+<para>In addition to the standard callable body inherited from <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" kindref="compound">suite</ref></computeroutput>, a <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" kindref="compound">static_suite</ref></computeroutput> may carry a second, statically-registered callable stored in <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a1341277c6af9353b1555711817523983" kindref="member">static_callable_</ref></computeroutput>. The overridden <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a4ab3277887dfc4cd8ae84bb4101eae60" kindref="member">run()</ref></computeroutput> method invokes both bodies in sequence, allowing the suite to integrate both dynamic and static registration patterns.</para>
 <para>The class is non-copyable and non-movable to preserve unique ownership and consistent state throughout the test session. </para>
     </detaileddescription>
     <inheritancegraph>

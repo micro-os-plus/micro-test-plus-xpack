@@ -269,8 +269,8 @@ keywords:
 
 
 <ul class="doxyList ">
-<li>Clang formats the signature as <span class="doxyComputerOutput">"... [T = &lt;typename&gt;]"</span>, so the type name lies between the last ‘`['<span class="doxyComputerOutput"> (skipping </span>"[T = "<span class="doxyComputerOutput">) and the last </span>']'<span class="doxyComputerOutput">.</span></li>
-<li><span class="doxyComputerOutput">GCC formats the signature as </span>"... [with T = &lt;typename&gt;]"<span class="doxyComputerOutput">, so the type name lies between the last </span>'='<span class="doxyComputerOutput"> (skipping the trailing space) and the last </span>']'`.</li>
+<li>Clang formats the signature as <span class="doxyComputerOutput">"... [T = &lt;typename&gt;]"</span>, so the type name lies between the last <span class="doxyComputerOutput">'['</span> (skipping <span class="doxyComputerOutput">"[T = "</span>) and the last <span class="doxyComputerOutput">']'</span>.</li>
+<li>GCC formats the signature as <span class="doxyComputerOutput">"... [with T = &lt;typename&gt;]"</span>, so the type name lies between the last <span class="doxyComputerOutput">'='</span> (skipping the trailing space) and the last <span class="doxyComputerOutput">']'</span>.</li>
 </ul>
 
 <p>This approach is resilient to namespace renaming, namespace nesting changes, and compiler format updates.</p>
@@ -465,6 +465,6 @@ The file content with the documentation metadata removed is:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

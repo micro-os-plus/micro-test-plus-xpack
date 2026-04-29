@@ -137,7 +137,7 @@ class micro_os_plus::micro_test_plus::test_node { ... }
 <table class="doxyMembersIndex">
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-node">test_node</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#ada5f5bd4fe0d383c641f5943f52b4520">test_node</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a37de05764786edf48043882e2675c70a">operator=</a> (const test_node &amp;)=delete</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -151,7 +151,7 @@ class micro_os_plus::micro_test_plus::test_node { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-node">test_node</a> &amp;</td>
+<td class="doxyMemberIndexItemType" align="left" valign="top"><a href="#ada5f5bd4fe0d383c641f5943f52b4520">test_node</a> &amp;</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#adbc2730656a3ee56bc860de3320fd8a5">operator=</a> (test_node &amp;&amp;)=delete</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -350,7 +350,7 @@ class micro_os_plus::micro_test_plus::test_node { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">micro_os_plus::micro_test_plus::test_node::test_node (const <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-node">test_node</a> &amp;)</td>
+<td class="doxyMemberName">micro_os_plus::micro_test_plus::test_node::test_node (const test_node &amp;)</td>
 </tr>
 </table>
 </td>
@@ -383,7 +383,7 @@ class micro_os_plus::micro_test_plus::test_node { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">micro_os_plus::micro_test_plus::test_node::test_node (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-node">test_node</a> &amp;&amp;)</td>
+<td class="doxyMemberName">micro_os_plus::micro_test_plus::test_node::test_node (test_node &amp;&amp;)</td>
 </tr>
 </table>
 </td>
@@ -487,7 +487,7 @@ class micro_os_plus::micro_test_plus::test_node { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">test_node &amp; micro_os_plus::micro_test_plus::test_node::operator= (const <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-node">test_node</a> &amp;)</td>
+<td class="doxyMemberName">test_node &amp; micro_os_plus::micro_test_plus::test_node::operator= (const <a href="#ada5f5bd4fe0d383c641f5943f52b4520">test_node</a> &amp;)</td>
 </tr>
 </table>
 </td>
@@ -520,7 +520,7 @@ class micro_os_plus::micro_test_plus::test_node { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">test_node &amp; micro_os_plus::micro_test_plus::test_node::operator= (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-node">test_node</a> &amp;&amp;)</td>
+<td class="doxyMemberName">test_node &amp; micro_os_plus::micro_test_plus::test_node::operator= (<a href="#ada5f5bd4fe0d383c641f5943f52b4520">test_node</a> &amp;&amp;)</td>
 </tr>
 </table>
 </td>
@@ -836,6 +836,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

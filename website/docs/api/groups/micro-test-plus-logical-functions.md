@@ -176,7 +176,7 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput">_and</span> function template provides a generic logical conjunction for any expression types. It constructs a logical conjunction object that can be used within the µTest++ framework to assert that both given conditions are true. This function is typically used in test expectations and assertions to combine logical expressions or custom comparators.</p>
+<p>The <span class="doxyComputerOutput"><a href="#ga8b43b7658b43fb76daf5efbb2e03d236">_and</a></span> function template provides a generic logical conjunction for any expression types. It constructs a logical conjunction object that can be used within the µTest++ framework to assert that both given conditions are true. This function is typically used in test expectations and assertions to combine logical expressions or custom comparators.</p>
 
 
 <p>The underscore in the function name is intentional to differentiate it from the standard logical and operator.</p>
@@ -255,7 +255,7 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput">_not</span> function template provides a generic logical negation for any expression type. It constructs a logical negator object that can be used within the µTest++ framework to assert that a given condition is false. This function is typically used in test expectations and assertions to invert logical expressions or custom comparators.</p>
+<p>The <span class="doxyComputerOutput"><a href="#gad9ad936174faf965cffe4493e2b64cf0">_not</a></span> function template provides a generic logical negation for any expression type. It constructs a logical negator object that can be used within the µTest++ framework to assert that a given condition is false. This function is typically used in test expectations and assertions to invert logical expressions or custom comparators.</p>
 
 
 <p>The underscore in the function name is intentional to differentiate it from the standard logical not operator.</p>
@@ -342,7 +342,7 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput">_or</span> function template provides a generic logical disjunction for any expression types. It constructs a logical disjunction object that can be used within the µTest++ framework to assert that at least one of the given conditions is true. This function is typically used in test expectations and assertions to combine logical expressions or custom comparators.</p>
+<p>The <span class="doxyComputerOutput"><a href="#gad32b40e4b0022b276fa3b357b98a33c5">_or</a></span> function template provides a generic logical disjunction for any expression types. It constructs a logical disjunction object that can be used within the µTest++ framework to assert that at least one of the given conditions is true. This function is typically used in test expectations and assertions to combine logical expressions or custom comparators.</p>
 
 
 <p>The underscore in the function name is intentional to differentiate it from the standard logical or operator.</p>
@@ -367,6 +367,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0-pre by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>
