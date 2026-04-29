@@ -1,8 +1,7 @@
 ---
-
 title: µTest++ Testing Framework v2.1.1 released
 seo_title: Version 2.1.1 released
-description: Version v2.1.1 is a maintenance release
+description: Version 2.1.1 is a maintenance release
 keywords:
   - micro-os-plus
   - xpack
@@ -22,16 +21,15 @@ tags:
 version: "2.1.1"
 
 release_tag_url: "https://github.com/micro-os-plus/micro-test-plus-xpack/tree/v2.1.1"
-
 ---
 
-import {PageMetadata} from '@docusaurus/theme-common';
-import Image from '@theme/IdealImage';
-import CodeBlock from '@theme/CodeBlock';
-import Link from '@docusaurus/Link';
+import { PageMetadata } from "@docusaurus/theme-common";
+import Image from "@theme/IdealImage";
+import CodeBlock from "@theme/CodeBlock";
+import Link from "@docusaurus/Link";
 
-import CommonPrerequisites from './_common/_prerequisites.mdx';
-import CommonDownloadAnalytics from './_common/_download-analytics.mdx';
+import CommonPrerequisites from "./_common/_prerequisites.mdx";
+import CommonDownloadAnalytics from "./_common/_download-analytics.mdx";
 
 Version **2.1.1** is a maintenance release.
 
@@ -42,22 +40,26 @@ Version **2.1.1** is a maintenance release.
 The [µTest++ Testing Framework](https://micro-os-plus.github.io/micro-test-plus-xpack/)
 project is a C++ source code library with a lightweight testing framework for embedded systems.
 
-<CommonPrerequisites nodeVersion="18.0.0"/>
+<CommonPrerequisites nodeVersion="18.0.0" />
 
 ## Install
 
 The most convenient way to integrate the `@micro-os-plus/micro-test-plus`
 package into a project is to add it as a dependency via **xpm**.
 
-<CodeBlock language="console"> {
-`xpm install @micro-os-plus/micro-test-plus@${frontMatter.version} -verbose
-`} </CodeBlock>
+<CodeBlock language="console">
+  {" "}
+  {`xpm install @micro-os-plus/micro-test-plus@${frontMatter.version} -verbose
+`}{" "}
+</CodeBlock>
 
 Comprehensive instructions can be found in the [Install Guide](/docs/install/).
 
 ## Source code
 
-- <Link to={frontMatter.release_tag_url}>GitHub tag v{frontMatter.version} tree</Link>
+- <Link to={frontMatter.release_tag_url}>
+    GitHub tag v{frontMatter.version} tree
+  </Link>
 
 ## Bug fixes
 
@@ -77,4 +79,3 @@ Before publishing, a set of tests were performed .
 The results are available from:
 
 - [GitHub Actions](https://github.com/micro-os-plus/micro-test-plus-xpack/actions)
-
