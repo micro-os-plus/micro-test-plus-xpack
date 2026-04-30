@@ -143,6 +143,12 @@ target_compile_options (
   platform-native-interface INTERFACE ${xpack_platform_common_args}
 )
 
+# https://libcxx.llvm.org/UsingLibcxx.html
+target_compile_options (
+  platform-native-interface INTERFACE
+  $<$<COMPILE_LANGUAGE:CXX>:-stdlib=libc++>
+)
+
 # The OBJECTS are compiled before the platform library, so they need to get the
 # same compile options.
 target_compile_options (
