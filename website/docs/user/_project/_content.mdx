@@ -615,8 +615,34 @@ In the common use case, test suites are static instances of the `static_suite`
 class, which automatically register themselves with a static instance of the
 `static_runner`.
 
+The main program looks like this:
+
 ```cpp
-extern micro_os_plus::micro_test_plus::static_runner sr;
+#include <micro-os-plus/micro-test-plus.h>
+
+namespace mt = micro_os_plus::micro_test_plus;
+
+mt::static_runner sr{ "Top suite" };
+
+int
+main (int argc, char* argv[])
+{
+  auto& ts = sr.initialise (argc, argv);
+
+  // ... possible top suite tests ...
+
+  return sr.exit_code ();
+}
+```
+
+Each test suite resides in a separate source file, for example:
+
+```cpp
+#include <micro-os-plus/micro-test-plus.h>
+
+namespace mt = micro_os_plus::micro_test_plus;
+
+extern mt::static_runner sr;
 
 static void
 suite_function (mt::static_suite& ts)
