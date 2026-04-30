@@ -41,7 +41,10 @@
 #endif // MICRO_OS_PLUS_INCLUDE_CONFIG_H
 
 #include <micro-os-plus/micro-test-plus.h>
+
+#if defined(MICRO_OS_PLUS_TRACE)
 #include <micro-os-plus/diag/trace.h>
+#endif // MICRO_OS_PLUS_TRACE
 
 // For the PRIu32 macro used in snprintf() formatting of uint32_t values.
 #include <cinttypes>

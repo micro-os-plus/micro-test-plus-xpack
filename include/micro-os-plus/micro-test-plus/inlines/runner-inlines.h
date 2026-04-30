@@ -45,6 +45,12 @@
 
 // ----------------------------------------------------------------------------
 
+#if defined(MICRO_OS_PLUS_TRACE)
+#include <micro-os-plus/diag/trace.h>
+#endif // MICRO_OS_PLUS_TRACE
+
+// ----------------------------------------------------------------------------
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Waggregate-return"

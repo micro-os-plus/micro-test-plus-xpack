@@ -116,8 +116,6 @@
 // ============================================================================
 // Templates & constexpr implementations.
 
-#include <micro-os-plus/diag/trace.h>
-
 // All inlines are included **after** all declarations.
 #include "micro-test-plus/inlines/literals-inlines.h"
 #include "micro-test-plus/inlines/math-inlines.h"
