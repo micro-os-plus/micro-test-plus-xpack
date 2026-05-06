@@ -21,7 +21,7 @@ include ("cmake/platform-library.cmake")
 
 # The OBJECTS are compiled before the platform library, so they need to get the
 # same compile options.
-add_common_options_to_objects_library (micro-os-plus-micro-test-plus-objects)
+add_compile_common_private_options (micro-os-plus-micro-test-plus-objects)
 
 # -----------------------------------------------------------------------------
 
@@ -47,9 +47,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
       "empty-test.tap"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/empty-test.tap"
   )
-  set_tests_properties (
-    "empty-test-compare" PROPERTIES DEPENDS "empty-test"
-  )
+  set_tests_properties ("empty-test-compare" PROPERTIES DEPENDS "empty-test")
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -105,9 +103,7 @@ if (XPACK_ENABLE_SUITE_TEST)
       "suite-test.tap"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/suite-test.tap"
   )
-  set_tests_properties (
-    "suite-test-compare" PROPERTIES DEPENDS "suite-test"
-  )
+  set_tests_properties ("suite-test-compare" PROPERTIES DEPENDS "suite-test")
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -134,9 +130,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
       "sample-test.tap"
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/sample-test.tap"
   )
-  set_tests_properties (
-    "sample-test-compare" PROPERTIES DEPENDS "sample-test"
-  )
+  set_tests_properties ("sample-test-compare" PROPERTIES DEPENDS "sample-test")
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -151,7 +145,8 @@ if (XPACK_ENABLE_UNIT_TEST)
     NAME "unit-test-quiet"
     COMMAND
       qemu-system-arm${extension} --machine virt --cpu cortex-a15 --kernel
-      unit-test.elf --nographic -smp 1 -d unimp,guest_errors --semihosting-config
+      unit-test.elf --nographic -smp 1 -d unimp,guest_errors
+      --semihosting-config
       enable=on,target=native,arg=unit-test,arg=--quiet,arg=one,arg=two,arg=--output-file,arg=unit-test.tap
   )
 
@@ -171,7 +166,8 @@ if (XPACK_ENABLE_UNIT_TEST)
     COMMAND
       qemu-system-arm${extension} --machine virt --cpu cortex-a15 --kernel
       unit-test.elf --nographic -smp 1 -d unimp,guest_errors
-      --semihosting-config enable=on,target=native,arg=unit-test,arg=--reporter,arg=human,arg=one,arg=two,arg=--output-file,arg=unit-test.txt
+      --semihosting-config
+      enable=on,target=native,arg=unit-test,arg=--reporter,arg=human,arg=one,arg=two,arg=--output-file,arg=unit-test.txt
   )
 
   add_test (
@@ -182,7 +178,8 @@ if (XPACK_ENABLE_UNIT_TEST)
       "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/unit-test.txt"
   )
   set_tests_properties (
-    "unit-test-reporter-human-compare" PROPERTIES DEPENDS "unit-test-reporter-human"
+    "unit-test-reporter-human-compare" PROPERTIES DEPENDS
+                                                  "unit-test-reporter-human"
   )
 endif ()
 

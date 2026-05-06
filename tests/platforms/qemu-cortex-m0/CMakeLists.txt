@@ -21,7 +21,7 @@ include ("cmake/platform-library.cmake")
 
 # The OBJECTS are compiled before the platform library, so they need to get the
 # same compile options.
-add_common_options_to_objects_library (micro-os-plus-micro-test-plus-objects)
+add_compile_common_private_options (micro-os-plus-micro-test-plus-objects)
 
 # -----------------------------------------------------------------------------
 
@@ -31,9 +31,9 @@ if (XPACK_ENABLE_EMPTY_TEST)
 
   message (VERBOSE "A> empty-test")
 
-  # Currently QEMU does not support any M0 board.
-  # The mps2-an385 board has a Cortex-M3 CPU, but it is the closest to M0, 
-  # and it is used for testing the M0 code.
+  # Currently QEMU does not support any M0 board. The mps2-an385 board has a
+  # Cortex-M3 CPU, but it is the closest to M0, and it is used for testing the
+  # M0 code.
   add_test (
     NAME "empty-test"
     COMMAND
