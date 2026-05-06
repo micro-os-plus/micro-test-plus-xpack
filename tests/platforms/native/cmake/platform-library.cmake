@@ -143,15 +143,6 @@ target_compile_options (
   platform-native-interface INTERFACE ${xpack_platform_common_args}
 )
 
-# The OBJECTS are compiled before the platform library, so they need to get the
-# same compile options.
-target_compile_options (
-  micro-os-plus-micro-test-plus-objects
-  PRIVATE
-    $<TARGET_PROPERTY:micro-os-plus-common-options-interface,INTERFACE_COMPILE_OPTIONS>
-    ${xpack_platform_common_args}
-)
-
 # On macOS, GCC 11 gets confused. dyld[72401]: Symbol not found:
 # (__ZNKSt3_V214error_category10_M_messageB5cxx11Ei)
 target_link_options (

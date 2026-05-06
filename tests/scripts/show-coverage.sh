@@ -54,14 +54,24 @@ then
   exit 1
 fi
 
-set -x
+# set -x
 
-xcrun llvm-profdata merge -sparse  "$2".profraw -o "$2".profdata
+function run_verbose()
+{
+  local app_path="$1"
+  shift
+
+  echo
+  echo "[${app_path} $@]"
+  "${app_path}" "$@" 2>&1
+}
+
+run_verbose xcrun llvm-profdata merge -sparse  "$2".profraw -o "$2".profdata
 
 sources=${3:-""}
 
-xcrun llvm-cov show "$1" -instr-profile="$2".profdata \
-  --ignore-filename-regex=xpacks \
+run_verbose xcrun llvm-cov show "$1" -instr-profile="$2".profdata \
+  --ignore-filename-regex=xpacks --ignore-filename-regex=tests \
   --show-line-counts-or-regions --show-region-summary \
   --show-branches=count --show-branch-summary \
   --show-instantiations --show-instantiation-summary \
@@ -73,8 +83,8 @@ xcrun llvm-cov show "$1" -instr-profile="$2".profdata \
   -e '^\s*------+\s*$' \
   -e '^\s*\|\s*Branch \([0-9]+:[0-9]+\):\s*\[True:\s*[1-9][0-9]*,\s*False:\s*[1-9][0-9]*\]' \
 
-xcrun llvm-cov report "$1" --instr-profile="$2".profdata \
-  --ignore-filename-regex=xpacks \
+run_verbose xcrun llvm-cov report "$1" --instr-profile="$2".profdata \
+  --ignore-filename-regex=xpacks --ignore-filename-regex=tests \
   --show-branch-summary --show-instantiation-summary \
   --show-mcdc-summary --show-region-summary \
   --sources ${sources} 

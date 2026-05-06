@@ -19,6 +19,10 @@ message (VERBOSE "Processing 'tests/platforms/qemu-cortex-m7f'...")
 
 include ("cmake/platform-library.cmake")
 
+# The OBJECTS are compiled before the platform library, so they need to get the
+# same compile options.
+add_common_options_to_objects_library (micro-os-plus-micro-test-plus-objects)
+
 # -----------------------------------------------------------------------------
 
 if (XPACK_ENABLE_EMPTY_TEST)
