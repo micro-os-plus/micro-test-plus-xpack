@@ -589,6 +589,28 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
   } // namespace literals
 
+  // ==========================================================================
+
+  /**
+   * @details
+   * Constructs an `_t` instance by forwarding the provided value to the base
+   * `type_traits::value<T>` wrapper.
+   */
+  template <class T>
+  constexpr _t<T>::_t (const T& t) : type_traits::value<T>{ t }
+  {
+  }
+
+  /**
+   * @details
+   * Constructs a `to_t` instance by forwarding the provided value to the
+   * base `type_traits::value<T>` wrapper.
+   */
+  template <class T>
+  constexpr to_t<T>::to_t (const T& t) : type_traits::value<T>{ t }
+  {
+  }
+
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
 

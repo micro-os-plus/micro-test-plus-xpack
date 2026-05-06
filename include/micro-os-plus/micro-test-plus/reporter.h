@@ -223,11 +223,6 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Constructor for the reporter class.
      *
-     * @details
-     * Parses the command-line arguments to determine the desired verbosity
-     * level and applies it to the reporter. The `--verbose`, `--quiet`, and
-     * `--silent` options are recognised.
-     *
      * @param argvs Owning pointer to the command-line arguments vector;
      * the reporter takes ownership via move.
      */
@@ -757,10 +752,6 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Returns the comment-prefix string used by this reporter format.
      *
-     * @details
-     * Human reporters return an empty string; TAP reporters return `"# "`
-     * so that diagnostic lines conform to the TAP specification.
-     *
      * @par Parameters
      *	 None.
      * @return A null-terminated prefix string.
@@ -776,10 +767,7 @@ namespace micro_os_plus::micro_test_plus
      * @return The active `verbosity` value.
      */
     auto
-    verbosity () const -> micro_test_plus::verbosity
-    {
-      return verbosity_;
-    }
+    verbosity () const -> micro_test_plus::verbosity;
 
     // ------------------------------------------------------------------------
 
@@ -789,16 +777,9 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param cond Boolean value indicating pass (true) or fail (false).
      * @return The corresponding ANSI colour code as a string.
-     *
-     * @details
-     * Returns the ANSI colour code for pass or fail, depending on the boolean
-     * condition provided.
      */
     [[nodiscard]] inline auto
-    colour_ (const bool cond) const
-    {
-      return cond ? colours_.pass : colours_.fail;
-    }
+    colour_ (const bool cond) const;
 
     void
     write_buffer_to_file_ (void);

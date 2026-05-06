@@ -133,10 +133,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     void
-    increment_successful_checks (size_t count = 1) noexcept
-    {
-      successful_checks_ += count;
-    }
+    increment_successful_checks (size_t count = 1) noexcept;
 
     /**
      * @brief Increments the failed-checks counter.
@@ -146,10 +143,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     void
-    increment_failed_checks (size_t count = 1) noexcept
-    {
-      failed_checks_ += count;
-    }
+    increment_failed_checks (size_t count = 1) noexcept;
 
     /**
      * @brief Increments the executed-subtests counter.
@@ -159,10 +153,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     void
-    increment_executed_subtests (size_t count = 1) noexcept
-    {
-      executed_subtests_ += count;
-    }
+    increment_executed_subtests (size_t count = 1) noexcept;
 
     /**
      * @brief Returns the number of checks that passed.
@@ -172,10 +163,7 @@ namespace micro_os_plus::micro_test_plus
      * @return The cumulative count of successful checks.
      */
     [[nodiscard]] size_t
-    successful_checks () const noexcept
-    {
-      return successful_checks_;
-    }
+    successful_checks () const noexcept;
 
     /**
      * @brief Returns the number of checks that failed.
@@ -185,10 +173,7 @@ namespace micro_os_plus::micro_test_plus
      * @return The cumulative count of failed checks.
      */
     [[nodiscard]] size_t
-    failed_checks () const noexcept
-    {
-      return failed_checks_;
-    }
+    failed_checks () const noexcept;
 
     /**
      * @brief Returns the total number of checks executed.
@@ -198,10 +183,7 @@ namespace micro_os_plus::micro_test_plus
      * @return The sum of successful and failed checks.
      */
     [[nodiscard]] size_t
-    executed_checks () const noexcept
-    {
-      return successful_checks_ + failed_checks_;
-    }
+    executed_checks () const noexcept;
 
     /**
      * @brief Returns the number of subtests that were executed.
@@ -211,10 +193,7 @@ namespace micro_os_plus::micro_test_plus
      * @return The cumulative count of executed subtests.
      */
     [[nodiscard]] size_t
-    executed_subtests () const noexcept
-    {
-      return executed_subtests_;
-    }
+    executed_subtests () const noexcept;
 
     /**
      * @brief Checks whether all executed checks were successful.
@@ -223,16 +202,9 @@ namespace micro_os_plus::micro_test_plus
      *	None.
      * @retval true  No checks failed.
      * @retval false At least one check failed.
-     *
-     * @details
-     * A runner with no checks at all is considered successful, as it
-     * did not fail any check.
      */
     [[nodiscard]] bool
-    was_successful (void) const noexcept
-    {
-      return failed_checks_ == 0;
-    }
+    was_successful (void) const noexcept;
 
   protected:
     /**

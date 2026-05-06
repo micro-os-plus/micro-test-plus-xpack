@@ -79,6 +79,29 @@
 
 namespace micro_os_plus::micro_test_plus
 {
+  // ==========================================================================
+
+  /**
+   * @details
+   * Returns the verbosity level stored in `verbosity_`.
+   */
+  inline auto
+  reporter::verbosity () const -> micro_test_plus::verbosity
+  {
+    return verbosity_;
+  }
+
+  /**
+   * @details
+   * Returns the ANSI colour code for pass or fail, depending on the boolean
+   * condition provided.
+   */
+  [[nodiscard]] inline auto
+  reporter::colour_ (const bool cond) const
+  {
+    return cond ? colours_.pass : colours_.fail;
+  }
+
   // --------------------------------------------------------------------------
 
 #if defined(__GNUC__)

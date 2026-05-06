@@ -112,8 +112,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Default constructor for the runner class.
      *
-     * @details
-     * The rule of five is enforced to prevent accidental copying or moving.
+     * @param [in] top_suite_name The name given to the implicit top suite.
      */
     runner (const char* top_suite_name);
 
@@ -201,11 +200,6 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Returns the total count of registered test suites.
      *
-     * @details
-     * The base implementation counts only the dynamically registered child
-     * suites plus the implicit top suite. `static_runner` overrides this
-     * method to also include statically registered suites.
-     *
      * @par Parameters
      *	 None.
      * @return The total number of test suites managed by this runner.
@@ -218,14 +212,10 @@ namespace micro_os_plus::micro_test_plus
      *
      * @par Parameters
      *	 None.
-     * @par Returns
-     *   Reference to the test reporter.
+     * @return Reference to the test reporter.
      */
     [[nodiscard]] class reporter&
-    reporter (void) const noexcept
-    {
-      return *reporter_;
-    }
+    reporter (void) const noexcept;
 
     /**
      * @brief Gets the timings for this runner.
@@ -235,10 +225,7 @@ namespace micro_os_plus::micro_test_plus
      * @return A reference to the timestamps instance.
      */
     [[nodiscard]] timestamps&
-    timings () noexcept
-    {
-      return timings_;
-    }
+    timings () noexcept;
 
     /**
      * @brief Gets the timings for this runner (const overload).
@@ -248,10 +235,7 @@ namespace micro_os_plus::micro_test_plus
      * @return A const reference to the timestamps instance.
      */
     [[nodiscard]] const timestamps&
-    timings () const noexcept
-    {
-      return timings_;
-    }
+    timings () const noexcept;
 
     /**
      * @brief Returns the count of test suites.
@@ -266,11 +250,6 @@ namespace micro_os_plus::micro_test_plus
   protected:
     /**
      * @brief Runs all registered test suites.
-     *
-     * @details
-     * The base implementation runs all dynamically registered child suites.
-     * `static_runner` overrides this method to additionally run all
-     * statically registered suites.
      *
      * @par Parameters
      *	 None.
@@ -413,11 +392,6 @@ namespace micro_os_plus::micro_test_plus
   protected:
     /**
      * @brief Runs all child suites, including statically registered ones.
-     *
-     * @details
-     * Overrides `runner::run_suites_()` to first invoke the base
-     * implementation (dynamic suites), then iterate over all statically
-     * registered suites and run them.
      *
      * @par Parameters
      *	 None.

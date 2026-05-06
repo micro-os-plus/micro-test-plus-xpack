@@ -119,9 +119,6 @@ namespace micro_os_plus::micro_test_plus
      * @brief Constructs a test suite.
      *
      * @param [in] name The test suite name.
-     *
-     * @details
-     * The rule of five is enforced to prevent accidental copying or moving.
      */
     test_node (const char* name);
 
@@ -162,10 +159,7 @@ namespace micro_os_plus::micro_test_plus
      * @return A pointer to the null-terminated test suite name.
      */
     [[nodiscard]] const char*
-    name (void) const noexcept
-    {
-      return name_;
-    }
+    name (void) const noexcept;
 
   public:
     /**
@@ -176,10 +170,7 @@ namespace micro_os_plus::micro_test_plus
      * @return A reference to the runner_totals instance.
      */
     [[nodiscard]] runner_totals&
-    totals () noexcept
-    {
-      return totals_;
-    }
+    totals () noexcept;
 
     /**
      * @brief Gets the totals for the test suite (const overload).
@@ -189,10 +180,7 @@ namespace micro_os_plus::micro_test_plus
      * @return A const reference to the runner_totals instance.
      */
     [[nodiscard]] const runner_totals&
-    totals () const noexcept
-    {
-      return totals_;
-    }
+    totals () const noexcept;
 
   protected:
     /**
@@ -279,10 +267,7 @@ namespace micro_os_plus::micro_test_plus
      * @return The one-based own index.
      */
     [[nodiscard]] size_t
-    own_index () const noexcept
-    {
-      return own_index_;
-    }
+    own_index () const noexcept;
 
     /**
      * @brief Sets the positional index of this object within its parent.
@@ -296,10 +281,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     void
-    own_index (size_t index) noexcept
-    {
-      own_index_ = index;
-    }
+    own_index (size_t index) noexcept;
 
     /**
      * @brief Returns the index of the most recently created child subtest.
@@ -309,28 +291,17 @@ namespace micro_os_plus::micro_test_plus
      * @return The current child subtest sequential index.
      */
     [[nodiscard]] size_t
-    current_subtest_index () const noexcept
-    {
-      return current_subtest_index_;
-    }
+    current_subtest_index () const noexcept;
 
     /**
      * @brief Increments and returns the child subtest sequential index.
-     *
-     * @details
-     * Each call to `test()` invokes this method before constructing the new
-     * `subtest`, so the index values form a strictly increasing, one-based
-     * sequence.
      *
      * @par Parameters
      *   None.
      * @return The new index value after incrementing.
      */
     size_t
-    increment_subtest_index () noexcept
-    {
-      return ++current_subtest_index_;
-    }
+    increment_subtest_index () noexcept;
 
     /**
      * @brief Returns the number of direct child subtests owned by this node.
@@ -340,10 +311,7 @@ namespace micro_os_plus::micro_test_plus
      * @return The number of child subtests.
      */
     [[nodiscard]] size_t
-    children_subtests_count (void) const noexcept
-    {
-      return children_subtests_.size ();
-    }
+    children_subtests_count (void) const noexcept;
 
     /**
      * @brief Gets the test reporter associated with this test suite.
@@ -374,10 +342,7 @@ namespace micro_os_plus::micro_test_plus
      * @return A reference to the test runner.
      */
     [[nodiscard]] class runner&
-    runner (void) const noexcept
-    {
-      return runner_;
-    }
+    runner (void) const noexcept;
 
   protected:
     /**
@@ -453,9 +418,6 @@ namespace micro_os_plus::micro_test_plus
      * @param [in] callable The callable invoked when the suite runs.
      * @param [in] arguments Additional arguments forwarded to the callable
      * after the leading `Self_T&` reference.
-     *
-     * @details
-     * The rule of five is enforced to prevent accidental copying or moving.
      */
     template <typename Callable_T, typename... Args_T>
     runnable (const char* name, class runner& runner, size_t own_index,
@@ -553,9 +515,6 @@ namespace micro_os_plus::micro_test_plus
      * invoked when the subtest executes.
      * @param [in] arguments A possibly empty list of arguments forwarded to
      * the callable after the leading `subtest&` reference.
-     *
-     * @details
-     * The rule of five is enforced to prevent accidental copying or moving.
      */
     template <typename Callable_T, typename... Args_T>
     subtest (const char* name, class runner& runner, suite& parent_suite,
@@ -622,39 +581,12 @@ namespace micro_os_plus::micro_test_plus
      * @param [in] expr Logical expression to evaluate.
      * @param [in] sl Optional source location, defaulting to the current line.
      * @return An output stream to write optional messages.
-     *
-     * @details
-     * The `expect` function template evaluates a logical condition or custom
-     * expression and reports the result within the µTest++ framework. It is
-     * designed to provide detailed diagnostics for test failures, including
-     * the actual and expected values, when using the provided comparators
-     * (`eq()`, `ne()`, `lt()`, `le()`, `gt()`, `ge()`) or custom operators.
-     *
-     * The function template can be used with any expression that evaluates to
-     * a boolean or with custom comparators/operators derived from the local
-     * `detail::op` type. For complex checks performed outside the `expect()`
-     * logical expression (such as within `if` or `try`/`catch` statements),
-     * the result can be reported by calling `expect(true)` or `expect(false)`.
-     *
-     * The function returns an output stream, allowing optional messages to be
-     * appended to the test report.
-     *
-     * **Example**
-     *
-     * @code{.cpp}
-     * namespace mt = micro_os_plus::micro_test_plus;
-     *
-     * t.expect(compute_answer() == 42) << "answer is 42";
-     * @endcode
      */
     template <class Expr_T>
       requires type_traits::checkable<Expr_T>
     auto
     expect (const Expr_T& expr, const reflection::source_location& sl
-                                = reflection::source_location::current ())
-    {
-      return detail::deferred_reporter<Expr_T>{ expr, false, sl, *this };
-    }
+                                = reflection::source_location::current ());
 
     /**
      * @ingroup micro-test-plus-assumptions
@@ -669,48 +601,17 @@ namespace micro_os_plus::micro_test_plus
      * @param [in] expr Logical expression to evaluate.
      * @param [in] sl Optional source location, defaulting to the current line.
      * @return An output stream to write optional messages.
-     *
-     * @details
-     * The `assume` function template evaluates a logical condition or custom
-     * expression and reports the result within the µTest++ framework. It is
-     * designed to provide detailed diagnostics for test failures, including
-     * the actual and expected values, when using the provided comparators
-     * (`eq()`, `ne()`, `lt()`, `le()`, `gt()`, `ge()`) or custom operators.
-     *
-     * The function template can be used with any expression that evaluates to
-     * a boolean or with custom comparators/operators derived from the local
-     * `detail::op` type. For complex checks performed outside the `expect()`
-     * logical expression (such as within `if` or `try`/`catch` statements),
-     * the result can be reported by calling `expect(true)` or `expect(false)`.
-     *
-     * The function returns an output stream, allowing optional messages to be
-     * appended to the test report.
-     *
-     * **Example**
-     *
-     * @code{.cpp}
-     * namespace mt = micro_os_plus::micro_test_plus;
-     * mt::assume(compute_answer() == 42) << "answer is 42";
-     * @endcode
      */
     template <class Expr_T>
       requires type_traits::checkable<Expr_T>
     auto
     assume (const Expr_T& expr, const reflection::source_location& sl
-                                = reflection::source_location::current ())
-    {
-      return detail::deferred_reporter<Expr_T>{ expr, true, sl, *this };
-    }
+                                = reflection::source_location::current ());
 
     // ------------------------------------------------------------------------
 
     /**
      * @brief Executes the subtest body by invoking the stored callable.
-     *
-     * @details
-     * Calls `begin_subtest()` on the reporter, invokes `callable_(*this)`,
-     * then calls `end_subtest()`. The results are propagated to the parent
-     * suite's totals.
      *
      * @par Parameters
      *   None.
@@ -723,19 +624,12 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Returns the nesting depth of this subtest.
      *
-     * @details
-     * Top-level subtests (direct children of a `suite`) have depth 1.
-     * Each additional level of nesting increments the depth by 1.
-     *
      * @par Parameters
      *   None.
      * @return The nesting depth (1 = top-level).
      */
     [[nodiscard]] size_t
-    nesting_depth () const noexcept
-    {
-      return nesting_depth_;
-    }
+    nesting_depth () const noexcept;
 
   protected:
     /**
@@ -787,9 +681,6 @@ namespace micro_os_plus::micro_test_plus
      * `suite&`.
      * @param [in] arguments A possibly empty list of arguments forwarded to
      * the callable after the leading `suite&` reference.
-     *
-     * @details
-     * The rule of five is enforced to prevent accidental copying or moving.
      */
     template <typename Callable_T, typename... Args_T>
     suite (const char* name, class runner& runner, Callable_T&& callable,
@@ -850,10 +741,7 @@ namespace micro_os_plus::micro_test_plus
      * @return A reference to the timestamps instance.
      */
     [[nodiscard]] timestamps&
-    timings () noexcept
-    {
-      return timings_;
-    }
+    timings () noexcept;
 
     /**
      * @brief Gets the timings for this suite (const overload).
@@ -863,18 +751,10 @@ namespace micro_os_plus::micro_test_plus
      * @return A const reference to the timestamps instance.
      */
     [[nodiscard]] const timestamps&
-    timings () const noexcept
-    {
-      return timings_;
-    }
+    timings () const noexcept;
 
     /**
      * @brief Executes the suite body by invoking the stored callable.
-     *
-     * @details
-     * Calls `begin_suite()` on the reporter, records timing, invokes
-     * `callable_(*this)`, records end timing, and calls `end_suite()`. The
-     * results are propagated to the owning `runner`'s totals.
      *
      * @par Parameters
      *   None.
@@ -993,11 +873,6 @@ namespace micro_os_plus::micro_test_plus
      * function, invoked to perform the test suite.
      * @param [in] arguments A possibly empty list of arguments to be passed to
      * the callable.
-     *
-     * @details
-     * The rule of five is enforced to prevent accidental copying or moving.
-     * Upon construction, the suite is automatically registered with the
-     * runner.
      */
     template <typename Callable_T, typename... Args_T>
     static_suite (const char* name, static_runner& runner,
@@ -1034,12 +909,6 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Executes the static suite body using the stored static callable.
-     *
-     * @details
-     * Calls the base `suite::run()` implementation for the dynamically
-     * registered callable, then additionally invokes `static_callable_(*this)`
-     * if it is set. This allows `static_suite` objects to carry two separate
-     * bodies: a standard one and a statically-registered one.
      *
      * @par Parameters
      *   None.

@@ -180,20 +180,13 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Retrieves the result value.
        *
-       *
        * @par Parameters
        *	None.
        * @retval true  The reported condition was met.
        * @retval false The reported condition was not met.
-       *
-       * @details
-       * Returns the result value associated with the report.
        */
       [[nodiscard]] bool
-      value () const
-      {
-        return value_;
-      }
+      value () const;
 
     protected:
       /**
@@ -256,10 +249,6 @@ namespace micro_os_plus::micro_test_plus
        * processing.
        * @param location The source location relevant to the report.
        * @param subtest The subtest that owns this deferred report.
-       *
-       * @details
-       * Initialises the reporter with the given expression, abort status, and
-       * source location.
        */
       deferred_reporter (const Expr_T& expr, bool abort,
                          const reflection::source_location& location,

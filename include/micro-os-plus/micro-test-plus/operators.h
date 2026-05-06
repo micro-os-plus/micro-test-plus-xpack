@@ -113,9 +113,6 @@ namespace micro_os_plus::micro_test_plus
    */
   namespace operators
   {
-    // In order to simplify things and use the return type `auto`,
-    // the definition must be included before any use.
-
     /**
      * @ingroup micro-test-plus-string-operators
      * @brief Equality operator for `string_view` objects.
@@ -124,18 +121,9 @@ namespace micro_os_plus::micro_test_plus
      * @param [in] rhs The right hand side `std::string_view` operand.
      * @return A comparator object that evaluates to true if the string views
      * are equal.
-     *
-     * @details
-     * This overload of the equality operator enables direct comparison of two
-     * `std::string_view` objects within the µTest++ framework. It constructs a
-     * comparator object that can be used in test expectations and assertions
-     * to verify that two string views are equal.
      */
     [[nodiscard]] constexpr auto
-    operator== (std::string_view lhs, std::string_view rhs)
-    {
-      return detail::eq_{ lhs, rhs };
-    }
+    operator== (std::string_view lhs, std::string_view rhs);
 
     /**
      * @ingroup micro-test-plus-string-operators
@@ -145,18 +133,9 @@ namespace micro_os_plus::micro_test_plus
      * @param [in] rhs The right hand side `std::string_view` operand.
      * @return A comparator object that evaluates to true if the string views
      * are not equal.
-     *
-     * @details
-     * This overload of the non-equality operator enables direct comparison of
-     * two `std::string_view` objects within the µTest++ framework. It
-     * constructs a comparator object that can be used in test expectations and
-     * assertions to verify that two string views are not equal.
      */
     [[nodiscard]] constexpr auto
-    operator!= (std::string_view lhs, std::string_view rhs)
-    {
-      return detail::ne_{ lhs, rhs };
-    }
+    operator!= (std::string_view lhs, std::string_view rhs);
 
     /**
      * @ingroup micro-test-plus-container-operators
@@ -171,24 +150,12 @@ namespace micro_os_plus::micro_test_plus
      * @param [in] rhs The right hand side container operand.
      * @return A comparator object that evaluates to true if the containers are
      * equal.
-     *
-     * @details
-     * This overload of the equality operator enables direct comparison of two
-     * container objects within the µTest++ framework. It constructs a
-     * comparator object that can be used in test expectations and assertions
-     * to verify that two containers are equal in content and order.
-     *
-     * The operator is enabled only for types recognised as containers by the
-     * framework's type traits.
      */
     template <class Lhs_T, class Rhs_T>
       requires (type_traits::container_like<Lhs_T>
                 and type_traits::container_like<Rhs_T>)
     [[nodiscard]] constexpr auto
-    operator== (const Lhs_T& lhs, const Rhs_T& rhs)
-    {
-      return detail::eq_{ lhs, rhs };
-    }
+    operator== (const Lhs_T& lhs, const Rhs_T& rhs);
 
     /**
      * @ingroup micro-test-plus-container-operators
@@ -203,24 +170,12 @@ namespace micro_os_plus::micro_test_plus
      * @param [in] rhs The right hand side container operand.
      * @return A comparator object that evaluates to true if the containers are
      * not equal.
-     *
-     * @details
-     * This overload of the non-equality operator enables direct comparison of
-     * two container objects within the µTest++ framework. It constructs a
-     * comparator object that can be used in test expectations and assertions
-     * to verify that two containers are not equal in content or order.
-     *
-     * The operator is enabled only for types recognised as containers by the
-     * framework's type traits.
      */
     template <class Lhs_T, class Rhs_T>
       requires (type_traits::container_like<Lhs_T>
                 and type_traits::container_like<Rhs_T>)
     [[nodiscard]] constexpr auto
-    operator!= (const Lhs_T& lhs, const Rhs_T& rhs)
-    {
-      return detail::ne_{ lhs, rhs };
-    }
+    operator!= (const Lhs_T& lhs, const Rhs_T& rhs);
 
     /**
      * @ingroup micro-test-plus-operators
@@ -234,23 +189,11 @@ namespace micro_os_plus::micro_test_plus
      * @param [in] rhs Right hand side operand.
      * @return A comparator object that evaluates to true if the operands are
      * equal.
-     *
-     * @details
-     * This overload of the equality operator enables comparison between two
-     * operands, where at least one is a local type derived from the local `op`
-     * base. It constructs a comparator object that can be used within the
-     * µTest++ framework to assert that the operands are equal. This operator
-     * is intended for use with the framework's strongly-typed constants,
-     * wrappers, or other custom types, ensuring type-safe and expressive test
-     * assertions.
      */
     template <class Lhs_T, class Rhs_T>
       requires type_traits::any_op<Lhs_T, Rhs_T>
     [[nodiscard]] constexpr auto
-    operator== (const Lhs_T& lhs, const Rhs_T& rhs)
-    {
-      return detail::eq_{ lhs, rhs };
-    }
+    operator== (const Lhs_T& lhs, const Rhs_T& rhs);
 
     /**
      * @ingroup micro-test-plus-operators
@@ -264,23 +207,11 @@ namespace micro_os_plus::micro_test_plus
      * @param [in] rhs Right hand side operand.
      * @return A comparator object that evaluates to true if the operands are
      * not equal.
-     *
-     * @details
-     * This overload of the non-equality operator enables comparison between
-     * two operands, where at least one is a local type derived from the local
-     * `op` base. It constructs a comparator object that can be used within the
-     * µTest++ framework to assert that the operands are not equal. This
-     * operator is intended for use with the framework's strongly-typed
-     * constants, wrappers, or other custom types, ensuring type-safe and
-     * expressive test assertions.
      */
     template <class Lhs_T, class Rhs_T>
       requires type_traits::any_op<Lhs_T, Rhs_T>
     [[nodiscard]] constexpr auto
-    operator!= (const Lhs_T& lhs, const Rhs_T& rhs)
-    {
-      return detail::ne_{ lhs, rhs };
-    }
+    operator!= (const Lhs_T& lhs, const Rhs_T& rhs);
 
     /**
      * @ingroup micro-test-plus-operators
@@ -294,23 +225,11 @@ namespace micro_os_plus::micro_test_plus
      * @param [in] rhs Right hand side operand.
      * @return A comparator object that evaluates to true if the left hand side
      * operand is greater than the right hand side operand.
-     *
-     * @details
-     * This overload of the greater than operator enables comparison between
-     * two operands, where at least one is a local type derived from the local
-     * `op` base. It constructs a comparator object that can be used within the
-     * µTest++ framework to assert that the left hand side operand is greater
-     * than the right hand side operand. This operator is intended for use with
-     * the framework's strongly-typed constants, wrappers, or other custom
-     * types, ensuring type-safe and expressive test assertions.
      */
     template <class Lhs_T, class Rhs_T>
       requires type_traits::any_op<Lhs_T, Rhs_T>
     [[nodiscard]] constexpr auto
-    operator> (const Lhs_T& lhs, const Rhs_T& rhs)
-    {
-      return detail::gt_{ lhs, rhs };
-    }
+    operator> (const Lhs_T& lhs, const Rhs_T& rhs);
 
     /**
      * @ingroup micro-test-plus-operators
@@ -324,24 +243,11 @@ namespace micro_os_plus::micro_test_plus
      * @param [in] rhs Right hand side operand.
      * @return A comparator object that evaluates to true if the left hand side
      * operand is greater than or equal to the right hand side operand.
-     *
-     * @details
-     * This overload of the greater than or equal operator enables comparison
-     * between two operands, where at least one is a local type derived from
-     * the local `op` base. It constructs a comparator object that can be used
-     * within the µTest++ framework to assert that the left hand side operand
-     * is greater than or equal to the right hand side operand. This operator
-     * is intended for use with the framework's strongly-typed constants,
-     * wrappers, or other custom types, ensuring type-safe and expressive test
-     * assertions.
      */
     template <class Lhs_T, class Rhs_T>
       requires type_traits::any_op<Lhs_T, Rhs_T>
     [[nodiscard]] constexpr auto
-    operator>= (const Lhs_T& lhs, const Rhs_T& rhs)
-    {
-      return detail::ge_{ lhs, rhs };
-    }
+    operator>= (const Lhs_T& lhs, const Rhs_T& rhs);
 
     /**
      * @ingroup micro-test-plus-operators
@@ -355,23 +261,11 @@ namespace micro_os_plus::micro_test_plus
      * @param [in] rhs Right hand side operand.
      * @return A comparator object that evaluates to true if the left hand side
      * operand is less than the right hand side operand.
-     *
-     * @details
-     * This overload of the less than operator enables comparison between two
-     * operands, where at least one is a local type derived from the local `op`
-     * base. It constructs a comparator object that can be used within the
-     * µTest++ framework to assert that the left hand side operand is less than
-     * the right hand side operand. This operator is intended for use with the
-     * framework's strongly-typed constants, wrappers, or other custom types,
-     * ensuring type-safe and expressive test assertions.
      */
     template <class Lhs_T, class Rhs_T>
       requires type_traits::any_op<Lhs_T, Rhs_T>
     [[nodiscard]] constexpr auto
-    operator< (const Lhs_T& lhs, const Rhs_T& rhs)
-    {
-      return detail::lt_{ lhs, rhs };
-    }
+    operator< (const Lhs_T& lhs, const Rhs_T& rhs);
 
     /**
      * @ingroup micro-test-plus-operators
@@ -385,24 +279,11 @@ namespace micro_os_plus::micro_test_plus
      * @param [in] rhs Right hand side operand.
      * @return A comparator object that evaluates to true if the left hand side
      * operand is less than or equal to the right hand side operand.
-     *
-     * @details
-     * This overload of the less than or equal operator enables comparison
-     * between two operands, where at least one is a local type derived from
-     * the local `op` base. It constructs a comparator object that can be used
-     * within the µTest++ framework to assert that the left hand side operand
-     * is less than or equal to the right hand side operand. This operator is
-     * intended for use with the framework's strongly-typed constants,
-     * wrappers, or other custom types, ensuring type-safe and expressive test
-     * assertions.
      */
     template <class Lhs_T, class Rhs_T>
       requires type_traits::any_op<Lhs_T, Rhs_T>
     [[nodiscard]] constexpr auto
-    operator<= (const Lhs_T& lhs, const Rhs_T& rhs)
-    {
-      return detail::le_{ lhs, rhs };
-    }
+    operator<= (const Lhs_T& lhs, const Rhs_T& rhs);
 
     /**
      * @ingroup micro-test-plus-operators
@@ -416,23 +297,11 @@ namespace micro_os_plus::micro_test_plus
      * @param [in] rhs Right hand side operand.
      * @return A logical conjunction object that evaluates to true if both
      * operands are true.
-     *
-     * @details
-     * This overload of the logical `&&` (and) operator enables conjunction
-     * between two operands, where at least one is a local type derived from
-     * the local `op` base. It constructs a logical conjunction object that can
-     * be used within the µTest++ framework to assert that both operands
-     * evaluate to true. This operator is intended for use with the framework's
-     * strongly-typed constants, wrappers, or other custom types, ensuring
-     * type-safe and expressive test assertions.
      */
     template <class Lhs_T, class Rhs_T>
       requires type_traits::any_op<Lhs_T, Rhs_T>
     [[nodiscard]] constexpr auto
-    operator and (const Lhs_T& lhs, const Rhs_T& rhs)
-    {
-      return detail::and_{ lhs, rhs };
-    }
+    operator and (const Lhs_T& lhs, const Rhs_T& rhs);
 
     /**
      * @ingroup micro-test-plus-operators
@@ -446,23 +315,11 @@ namespace micro_os_plus::micro_test_plus
      * @param [in] rhs Right hand side operand.
      * @return A logical disjunction object that evaluates to true if at least
      * one operand is true.
-     *
-     * @details
-     * This overload of the logical `||` (or) operator enables disjunction
-     * between two operands, where at least one is a local type derived from
-     * the local `op` base. It constructs a logical disjunction object that can
-     * be used within the µTest++ framework to assert that at least one operand
-     * evaluates to true. This operator is intended for use with the
-     * framework's strongly-typed constants, wrappers, or other custom types,
-     * ensuring type-safe and expressive test assertions.
      */
     template <class Lhs_T, class Rhs_T>
       requires type_traits::any_op<Lhs_T, Rhs_T>
     [[nodiscard]] constexpr auto
-    operator or (const Lhs_T& lhs, const Rhs_T& rhs)
-    {
-      return detail::or_{ lhs, rhs };
-    }
+    operator or (const Lhs_T& lhs, const Rhs_T& rhs);
 
     /**
      * @ingroup micro-test-plus-operators
@@ -475,23 +332,11 @@ namespace micro_os_plus::micro_test_plus
      * @param [in] t Operand to be logically negated.
      * @return A logical negator object that evaluates to true if the operand
      * is false.
-     *
-     * @details
-     * This overload of the logical `!` (not) operator enables logical negation
-     * of an operand, provided it is a local type derived from the local `op`
-     * base. It constructs a logical negator object that can be used within the
-     * µTest++ framework to assert that a given condition is false. This
-     * operator is intended for use with the framework's strongly-typed
-     * constants, wrappers, or other custom types, ensuring type-safe and
-     * expressive test assertions.
      */
     template <class T>
       requires type_traits::is_op<T>
     [[nodiscard]] constexpr auto
-    operator not(const T& t)
-    {
-      return detail::not_{ t };
-    }
+    operator not(const T& t);
 
     // ------------------------------------------------------------------------
   } // namespace operators

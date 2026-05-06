@@ -119,13 +119,19 @@
 // All inlines are included **after** all declarations.
 #include "micro-test-plus/inlines/literals-inlines.h"
 #include "micro-test-plus/inlines/math-inlines.h"
+#include "micro-test-plus/inlines/type-traits-inlines.h"
 
 #include "micro-test-plus/inlines/reflection-inlines.h"
+
+#include "micro-test-plus/inlines/detail-inlines.h"
+#include "micro-test-plus/inlines/operators-inlines.h"
 
 #include "micro-test-plus/inlines/deferred-reporter-inlines.h"
 #include "micro-test-plus/inlines/reporter-inlines.h"
 
 #include "micro-test-plus/inlines/function-comparators-inlines.h"
+#include "micro-test-plus/inlines/timings-inlines.h"
+#include "micro-test-plus/inlines/runner-totals-inlines.h"
 #include "micro-test-plus/inlines/runner-inlines.h"
 #include "micro-test-plus/inlines/test-inlines.h"
 

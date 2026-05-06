@@ -106,9 +106,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param ts The `timespec` value to store.
      */
-    timestamp (const timespec& ts) noexcept : value_{ ts }
-    {
-    }
+    timestamp (const timespec& ts) noexcept;
 
     // `timespec` is trivially copyable, so copy and move are safe to default.
     // Defaulting these operations allows `timestamp` to be used in contexts
@@ -159,10 +157,7 @@ namespace micro_os_plus::micro_test_plus
      * @return A reference to the stored `timespec`.
      */
     [[nodiscard]] timespec&
-    value () noexcept
-    {
-      return value_;
-    }
+    value () noexcept;
 
     /**
      * @brief Returns a const reference to the underlying `timespec` value.
@@ -172,10 +167,7 @@ namespace micro_os_plus::micro_test_plus
      * @return A const reference to the stored `timespec`.
      */
     [[nodiscard]] const timespec&
-    value () const noexcept
-    {
-      return value_;
-    }
+    value () const noexcept;
 
   protected:
     /**
@@ -295,10 +287,7 @@ namespace micro_os_plus::micro_test_plus
      * @retval false `timestamp_begin()` has not been called.
      */
     bool
-    has_begin () const noexcept
-    {
-      return begin_time_.has_value ();
-    }
+    has_begin () const noexcept;
 
     /**
      * @brief Returns true if the end timestamp has been recorded.
@@ -309,10 +298,7 @@ namespace micro_os_plus::micro_test_plus
      * @retval false `timestamp_end()` has not been called.
      */
     bool
-    has_end () const noexcept
-    {
-      return end_time_.has_value ();
-    }
+    has_end () const noexcept;
 
     /**
      * @brief Returns true if both begin and end timestamps are available.
@@ -332,10 +318,6 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param[out] milliseconds The elapsed time in whole milliseconds.
      * @param[out] microseconds The sub-millisecond remainder in microseconds.
-     *
-     * @details
-     * Both output parameters are only valid when `has_timestamps()` returns
-     * `true`. The caller is responsible for checking this precondition.
      */
     void
     compute_elapsed_time (uint32_t& milliseconds,

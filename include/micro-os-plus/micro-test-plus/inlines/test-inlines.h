@@ -85,6 +85,165 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
+   * Returns a pointer to the null-terminated name stored in `name_`.
+   */
+  [[nodiscard]] inline const char*
+  test_node::name (void) const noexcept
+  {
+    return name_;
+  }
+
+  /**
+   * @details
+   * Returns a reference to the `runner_totals` member.
+   */
+  [[nodiscard]] inline runner_totals&
+  test_node::totals () noexcept
+  {
+    return totals_;
+  }
+
+  /**
+   * @details
+   * Returns a const reference to the `runner_totals` member.
+   */
+  [[nodiscard]] inline const runner_totals&
+  test_node::totals () const noexcept
+  {
+    return totals_;
+  }
+
+  // ==========================================================================
+
+  /**
+   * @details
+   * Returns the one-based positional index of this object within its parent.
+   */
+  [[nodiscard]] inline size_t
+  runnable_base::own_index () const noexcept
+  {
+    return own_index_;
+  }
+
+  /**
+   * @details
+   * Sets the positional index of this object within its parent.
+   */
+  inline void
+  runnable_base::own_index (size_t index) noexcept
+  {
+    own_index_ = index;
+  }
+
+  /**
+   * @details
+   * Returns the sequential index of the most recently created child subtest.
+   */
+  [[nodiscard]] inline size_t
+  runnable_base::current_subtest_index () const noexcept
+  {
+    return current_subtest_index_;
+  }
+
+  /**
+   * @details
+   * Each call to `test()` invokes this method before constructing the new
+   * `subtest`, so the index values form a strictly increasing, one-based
+   * sequence.
+   */
+  inline size_t
+  runnable_base::increment_subtest_index () noexcept
+  {
+    return ++current_subtest_index_;
+  }
+
+  /**
+   * @details
+   * Returns the number of child subtests owned by this node.
+   */
+  [[nodiscard]] inline size_t
+  runnable_base::children_subtests_count (void) const noexcept
+  {
+    return children_subtests_.size ();
+  }
+
+  /**
+   * @details
+   * Returns a reference to the owning test runner.
+   */
+  [[nodiscard]] inline class runner&
+  runnable_base::runner (void) const noexcept
+  {
+    return runner_;
+  }
+
+  // ==========================================================================
+
+  /**
+   * @details
+   * Constructs and returns a `deferred_reporter<Expr_T>` with `abort = false`.
+   * The reporter evaluates the condition and records a pass or fail when
+   * it is destroyed at the end of the expression statement.
+   */
+  template <class Expr_T>
+    requires type_traits::checkable<Expr_T>
+  auto
+  subtest::expect (const Expr_T& expr, const reflection::source_location& sl)
+  {
+    return detail::deferred_reporter<Expr_T>{ expr, false, sl, *this };
+  }
+
+  /**
+   * @details
+   * Constructs and returns a `deferred_reporter<Expr_T>` with `abort = true`.
+   * The reporter evaluates the condition, records a pass or fail when it is
+   * destroyed, and aborts execution if the condition is false.
+   */
+  template <class Expr_T>
+    requires type_traits::checkable<Expr_T>
+  auto
+  subtest::assume (const Expr_T& expr, const reflection::source_location& sl)
+  {
+    return detail::deferred_reporter<Expr_T>{ expr, true, sl, *this };
+  }
+
+  /**
+   * @details
+   * Top-level subtests (direct children of a `suite`) have depth 1.
+   * Each additional level of nesting increments the depth by 1.
+   */
+  [[nodiscard]] inline size_t
+  subtest::nesting_depth () const noexcept
+  {
+    return nesting_depth_;
+  }
+
+  // ==========================================================================
+
+  /**
+   * @details
+   * Returns a reference to the `timestamps` member.
+   */
+  [[nodiscard]] inline timestamps&
+  suite::timings () noexcept
+  {
+    return timings_;
+  }
+
+  /**
+   * @details
+   * Returns a const reference to the `timestamps` member.
+   */
+  [[nodiscard]] inline const timestamps&
+  suite::timings () const noexcept
+  {
+    return timings_;
+  }
+
+  // ==========================================================================
+
+  /**
+   * @details
    * Binds the callable and its arguments into the stored `callable_` function
    * object. When `run()` is called, the stored function is invoked with a
    * reference to the derived `Self_T` instance as its first argument,

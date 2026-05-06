@@ -83,6 +83,18 @@ namespace micro_os_plus::micro_test_plus
 
   namespace detail
   {
+    // ========================================================================
+
+    /**
+     * @details
+     * Returns the result value stored in `value_`.
+     */
+    [[nodiscard]] inline bool
+    deferred_reporter_base::value () const
+    {
+      return value_;
+    }
+
     // ------------------------------------------------------------------------
 
     /**

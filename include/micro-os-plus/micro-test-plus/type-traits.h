@@ -523,23 +523,15 @@ namespace micro_os_plus::micro_test_plus
        *
        * @param v The value to be stored.
        */
-      constexpr explicit value_base_ (const T& v) noexcept : value_{ v }
-      {
-      }
+      constexpr explicit value_base_ (const T& v) noexcept;
 
       /**
        * @brief Explicit conversion operator to the underlying value type.
        *
        * @return The stored value as type `T`.
-       *
-       * @details
-       * Allows explicit conversion to the encapsulated value.
        */
       [[nodiscard]] constexpr explicit
-      operator T () const noexcept
-      {
-        return value_;
-      }
+      operator T () const noexcept;
 
       /**
        * @brief Getter for the stored value.
@@ -547,15 +539,9 @@ namespace micro_os_plus::micro_test_plus
        * @par Parameters
        *	 None.
        * @return The stored value.
-       *
-       * @details
-       * Returns the stored value by value.
        */
       [[nodiscard]] constexpr T
-      get (void) const noexcept
-      {
-        return value_;
-      }
+      get (void) const noexcept;
 
       /**
        * @brief The stored value.
@@ -592,24 +578,15 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Default constructor. Initialises the base with `N`.
        */
-      constexpr integral_constant () noexcept : value_base_<decltype (N)>{ N }
-      {
-      }
+      constexpr integral_constant () noexcept;
 
       /**
        * @brief Unary minus operator.
        *
        * @return An `integral_constant` with value `-N`.
-       *
-       * @details
-       * Returns a new `integral_constant` instance representing the negative
-       * of the current value.
        */
       [[nodiscard]] constexpr auto
-      operator- () const noexcept
-      {
-        return integral_constant<-N>{};
-      }
+      operator- () const noexcept;
     };
 
     /**
@@ -674,10 +651,7 @@ namespace micro_os_plus::micro_test_plus
        * @return The compile-time constant as type `T`.
        */
       [[nodiscard]] constexpr explicit
-      operator T () const noexcept
-      {
-        return value;
-      }
+      operator T () const noexcept;
 
       /**
        * @brief Getter for the compile-time constant value.
@@ -687,25 +661,15 @@ namespace micro_os_plus::micro_test_plus
        * @return The compile-time constant as type `T`.
        */
       [[nodiscard]] constexpr T
-      get (void) const noexcept
-      {
-        return value;
-      }
+      get (void) const noexcept;
 
       /**
        * @brief Unary minus operator.
        *
        * @return A `floating_point_constant` with negated sign parameter.
-       *
-       * @details
-       * Returns a new `floating_point_constant` instance representing the
-       * negative of the current value by flipping the sign parameter `P`.
        */
       [[nodiscard]] constexpr auto
-      operator- () const noexcept
-      {
-        return floating_point_constant<T, N, D, Size, -P>{};
-      }
+      operator- () const noexcept;
     };
 
     /**
@@ -728,10 +692,7 @@ namespace micro_os_plus::micro_test_plus
        *
        * @param _value The integral value to be stored.
        */
-      constexpr genuine_integral_value (const T& _value) noexcept
-          : value_base_<T>{ _value }
-      {
-      }
+      constexpr genuine_integral_value (const T& _value) noexcept;
     };
 
     /**
@@ -755,9 +716,7 @@ namespace micro_os_plus::micro_test_plus
        *
        * @param _value The value to be stored.
        */
-      constexpr value (const T& _value) noexcept : value_base_<T>{ _value }
-      {
-      }
+      constexpr value (const T& _value) noexcept;
     };
 
     /**
@@ -804,27 +763,14 @@ namespace micro_os_plus::micro_test_plus
        * @param _value The floating-point value to be stored.
        * @param precision The epsilon value to be used for comparisons.
        */
-      constexpr value (const T& _value, const T precision) noexcept
-          : value_base_<T>{ _value }, epsilon{ precision }
-      {
-      }
+      constexpr value (const T& _value, const T precision) noexcept;
 
       /**
        * @brief Constructs a floating point value with default precision.
        *
        * @param val The floating point value to be stored.
-       *
-       * @details
-       * The epsilon is computed as 1 divided by 10 raised to the number of
-       * decimal digits in the value.
        */
-      constexpr value (const T& val)
-          : value{ val,
-                   T (1)
-                       / math::pow (T (10),
-                                    math::den_size<unsigned long long> (val)) }
-      {
-      }
+      constexpr value (const T& val);
     };
 
     // ------------------------------------------------------------------------

@@ -649,14 +649,8 @@ namespace micro_os_plus::micro_test_plus
      * @brief Constructor for the deprecated strongly-typed wrapper.
      *
      * @param t The value to be wrapped and explicitly converted.
-     *
-     * @details
-     * Constructs an `_t` instance by forwarding the provided value to the base
-     * `type_traits::value<T>` wrapper.
      */
-    constexpr explicit _t (const T& t) : type_traits::value<T>{ t }
-    {
-    }
+    constexpr explicit _t (const T& t);
   };
 
 #if defined(__GNUC__)
@@ -891,14 +885,8 @@ namespace micro_os_plus::micro_test_plus
      * @brief Constructor for the strongly-typed wrapper.
      *
      * @param t The value to be wrapped and explicitly converted.
-     *
-     * @details
-     * Constructs a `to_t` instance by forwarding the provided value to the
-     * base `type_traits::value<T>` wrapper.
      */
-    constexpr explicit to_t (const T& t) : type_traits::value<T>{ t }
-    {
-    }
+    constexpr explicit to_t (const T& t);
   };
 
   // --------------------------------------------------------------------------

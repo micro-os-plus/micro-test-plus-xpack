@@ -72,6 +72,38 @@
 
 namespace micro_os_plus::micro_test_plus
 {
+  // ==========================================================================
+
+  /**
+   * @details
+   * Returns a reference to the reporter object stored in the unique pointer.
+   */
+  [[nodiscard]] inline class reporter&
+  runner::reporter (void) const noexcept
+  {
+    return *reporter_;
+  }
+
+  /**
+   * @details
+   * Returns a reference to the `timestamps` member.
+   */
+  [[nodiscard]] inline timestamps&
+  runner::timings () noexcept
+  {
+    return timings_;
+  }
+
+  /**
+   * @details
+   * Returns a const reference to the `timestamps` member.
+   */
+  [[nodiscard]] inline const timestamps&
+  runner::timings () const noexcept
+  {
+    return timings_;
+  }
+
   // --------------------------------------------------------------------------
 
   /**

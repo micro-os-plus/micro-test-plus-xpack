@@ -103,9 +103,6 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Constructor for the reporter_human class.
      *
-     * @details
-     * The rule of five is enforced to prevent accidental copying or moving.
-     *
      * @param argvs Owning pointer to the command-line arguments vector;
      * the reporter takes ownership via move.
      */
