@@ -15,7 +15,8 @@ For information on how to install and use this project, please refer to the
 ## Project source
 
 The source code of the current release is available on
-[GitHub tag v4.0.0 tree](https://github.com/micro-os-plus/micro-test-plus-xpack/tree/v4.0.0).
+GitHub as [micro-os-plus/micro-test-plus-xpack](https://github.com/micro-os-plus/micro-test-plus-xpack),
+the [v4.0.0](https://github.com/micro-os-plus/micro-test-plus-xpack/tree/v4.0.0) tree.
 
 ## License
 
@@ -25,4 +26,4 @@ with all rights reserved to
 [Liviu Ionescu](https://github.com/ilg-ul).
 
 The code from Boost UT is released under the terms of the
-[Boost Version 1.0 Software License](https://www.boost.org/LICENSE_1_0.txt).
+[Boost Software License, Version 1.0](https://www.boost.org/LICENSE_1_0.txt).
