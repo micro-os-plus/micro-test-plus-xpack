@@ -74,6 +74,7 @@
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
 #else // GCC only
+#pragma GCC diagnostic ignored "-Wredundant-tags"
 #endif
 #endif
 
