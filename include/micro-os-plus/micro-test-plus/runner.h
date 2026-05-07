@@ -84,6 +84,8 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
+  class suite;
+
   /**
    * @ingroup micro-test-plus-runners
    * @brief The test runner for the µTest++ framework.
@@ -425,6 +427,11 @@ namespace micro_os_plus::micro_test_plus
 // ----------------------------------------------------------------------------
 
 #endif // __cplusplus
+
+// ============================================================================
+// Templates & constexpr implementations.
+
+#include "inlines/runner-inlines.h"
 
 // ----------------------------------------------------------------------------
 

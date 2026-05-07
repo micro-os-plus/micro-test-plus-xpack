@@ -74,10 +74,14 @@
 #include "micro-test-plus/exceptions.h"
 #include "micro-test-plus/operators.h"
 
-#include "micro-test-plus/deferred-reporter.h"
 #include "micro-test-plus/test.h"
-
+// Requires test.h to be included first, as it defines the `subtest` class used
+// by the deferred reporter.
+#include "micro-test-plus/deferred-reporter.h"
+// Requires test.h to be included before runner.h, as it defines the
+// `top_suite` class used by the static runner.
 #include "micro-test-plus/runner.h"
+
 #include "micro-test-plus/runner-totals.h"
 
 #include "micro-test-plus/reporter.h"
@@ -117,25 +121,10 @@
 // Templates & constexpr implementations.
 
 // All inlines are included **after** all declarations.
-#include "micro-test-plus/inlines/literals-inlines.h"
-#include "micro-test-plus/inlines/math-inlines.h"
-#include "micro-test-plus/inlines/type-traits-inlines.h"
-
-#include "micro-test-plus/inlines/reflection-inlines.h"
-
-#include "micro-test-plus/inlines/detail-inlines.h"
-#include "micro-test-plus/inlines/operators-inlines.h"
 
 #include "micro-test-plus/inlines/deferred-reporter-inlines.h"
-#include "micro-test-plus/inlines/reporter-inlines.h"
 
-#include "micro-test-plus/inlines/function-comparators-inlines.h"
-#include "micro-test-plus/inlines/timings-inlines.h"
-#include "micro-test-plus/inlines/runner-totals-inlines.h"
-#include "micro-test-plus/inlines/runner-inlines.h"
 #include "micro-test-plus/inlines/test-inlines.h"
-
-#include "micro-test-plus/inlines/utility-inlines.h"
 
 // ----------------------------------------------------------------------------
 

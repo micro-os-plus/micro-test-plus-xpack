@@ -347,6 +347,11 @@ namespace micro_os_plus::micro_test_plus
 
 #endif // __cplusplus
 
+// ============================================================================
+// Templates & constexpr implementations.
+
+#include "inlines/timings-inlines.h"
+
 // ----------------------------------------------------------------------------
 
 #endif // MICRO_TEST_PLUS_TIMINGS_H_

@@ -787,6 +787,11 @@ namespace micro_os_plus::micro_test_plus
 
 #endif // __cplusplus
 
+// ============================================================================
+// Templates & constexpr implementations.
+
+#include "inlines/type-traits-inlines.h"
+
 // ----------------------------------------------------------------------------
 
 #endif // MICRO_TEST_PLUS_TYPE_TRAITS_H_

@@ -352,6 +352,11 @@ namespace micro_os_plus::micro_test_plus
 
 #endif // __cplusplus
 
+// ============================================================================
+// Templates & constexpr implementations.
+
+#include "inlines/operators-inlines.h"
+
 // ----------------------------------------------------------------------------
 
 #endif // MICRO_TEST_PLUS_OPERATORS_H_

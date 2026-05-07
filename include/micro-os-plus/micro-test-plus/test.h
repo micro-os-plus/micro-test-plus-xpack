@@ -93,18 +93,18 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   /**
-   * @brief Base class for all test suites.
+   * @brief Base class for runners and runable tests.
    *
    * @details
    * The `test_node` class provides the foundational interface for
-   * managing test suites within the µTest++ framework. It maintains counters
+   * managing test within the µTest++ framework. It maintains counters
    * for successful and failed checks, tracks test cases, and offers methods
    * for marking the commencement and completion of test cases and suites.
    *
    * This class ensures consistent state management and reporting for all
-   * derived test suites. It also provides utility methods for querying the
-   * suite's name, the number of successful and failed checks, the number of
-   * test cases, and the overall result of the suite.
+   * derived classes. It also provides utility methods for querying the
+   * node's name, the number of successful and failed checks, the number of
+   * test cases, and the overall result of the node.
    *
    * All members and methods are defined within the
    * `micro_os_plus::micro_test_plus` namespace, ensuring clear separation from
@@ -116,9 +116,9 @@ namespace micro_os_plus::micro_test_plus
   {
   public:
     /**
-     * @brief Constructs a test suite.
+     * @brief Constructs a test node.
      *
-     * @param [in] name The test suite name.
+     * @param [in] name The test node name.
      */
     test_node (const char* name);
 
@@ -152,18 +152,18 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
 
     /**
-     * @brief Gets the suite name.
+     * @brief Gets the node name.
      *
      * @par Parameters
      *	None.
-     * @return A pointer to the null-terminated test suite name.
+     * @return A pointer to the null-terminated test node name.
      */
     [[nodiscard]] const char*
     name (void) const noexcept;
 
   public:
     /**
-     * @brief Gets the totals for the test suite.
+     * @brief Gets the totals for the test.
      *
      * @par Parameters
      *	None.
@@ -173,7 +173,7 @@ namespace micro_os_plus::micro_test_plus
     totals () noexcept;
 
     /**
-     * @brief Gets the totals for the test suite (const overload).
+     * @brief Gets the totals for the test (const overload).
      *
      * @par Parameters
      *	None.
@@ -184,7 +184,7 @@ namespace micro_os_plus::micro_test_plus
 
   protected:
     /**
-     * @brief The test suite name.
+     * @brief The test node name.
      *
      * @note Derived classes may access this member directly in
      * addition to the public `name()` getter.
@@ -192,7 +192,7 @@ namespace micro_os_plus::micro_test_plus
     const char* name_;
 
     /**
-     * @brief Totals for the test suite, including nested cases.
+     * @brief Totals for the test node, including nested cases.
      */
     runner_totals totals_;
   };
@@ -314,7 +314,7 @@ namespace micro_os_plus::micro_test_plus
     children_subtests_count (void) const noexcept;
 
     /**
-     * @brief Gets the test reporter associated with this test suite.
+     * @brief Gets the test reporter associated with this test runnable.
      *
      * @par Parameters
      *	None.
@@ -335,7 +335,7 @@ namespace micro_os_plus::micro_test_plus
            = reflection::source_location::current ());
 
     /**
-     * @brief Gets the test runner associated with this test suite.
+     * @brief Gets the test runner associated with this test runnable.
      *
      * @par Parameters
      *	None.
@@ -365,7 +365,7 @@ namespace micro_os_plus::micro_test_plus
     class runner& runner_;
 
     /**
-     * @brief The test suite index, counting from 1.
+     * @brief The test index, counting from 1.
      */
     size_t own_index_;
 
@@ -395,10 +395,10 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @brief CRTP base class factoring out callable storage, rule-of-five, and
-   * `run()` logic shared by `test` and `static_suite`.
+   * `run()` logic shared by `subtest` and `suite`.
    *
    * @tparam Self_T The concrete derived class type (CRTP pattern). The stored
-   * callable receives a `Self_T&` reference when the suite is executed.
+   * callable receives a `Self_T&` reference when the test is executed.
    *
    * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */
@@ -412,10 +412,10 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Callable_T The callable type.
      * @tparam Args_T The additional argument types.
      *
-     * @param [in] name The test suite name, used in reports.
-     * @param [in] runner The test runner managing this suite.
-     * @param [in] own_index The suite index within the runner.
-     * @param [in] callable The callable invoked when the suite runs.
+     * @param [in] name The test name, used in reports.
+     * @param [in] runner The test runner managing this test.
+     * @param [in] own_index The test index within the runner.
+     * @param [in] callable The callable invoked when the test runs.
      * @param [in] arguments Additional arguments forwarded to the callable
      * after the leading `Self_T&` reference.
      */
@@ -466,7 +466,7 @@ namespace micro_os_plus::micro_test_plus
 
   protected:
     /**
-     * @brief Callable storing the test suite body and any bound arguments.
+     * @brief Callable storing the test body and any bound arguments.
      * Invoked with a reference to the derived `Self_T` instance.
      */
     std::function<void (Self_T&)> callable_;
@@ -480,10 +480,10 @@ namespace micro_os_plus::micro_test_plus
    *
    * @details
    * `subtest` represents a single, named test case or a nested group of
-   * checks within a parent `suite`. It is constructed by calling
+   * checks within a parent `suite` or `subtest. It is constructed by calling
    * `suite::test()` or `subtest::test()`, both of which create the object,
    * immediately execute its callable body via `run()`, and register the
-   * result with the parent suite.
+   * result with the parent node.
    *
    * The body of the subtest is supplied as a callable (typically a lambda)
    * that receives a `subtest&` reference as its first argument. Inside the

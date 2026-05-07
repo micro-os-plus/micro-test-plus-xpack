@@ -65,6 +65,7 @@
 #include <string>
 #include <memory>
 #include <vector>
+#include <charconv>
 
 #include "type-traits.h"
 #include "detail.h"
@@ -153,6 +154,8 @@ namespace micro_os_plus::micro_test_plus
   // Forward definitions.
   class reporter;
   class runner;
+  class suite;
+  class subtest;
 
   /**
    * @brief Output stream manipulator for ending a line in test reports.
@@ -921,6 +924,11 @@ namespace micro_os_plus::micro_test_plus
 // ----------------------------------------------------------------------------
 
 #endif // __cplusplus
+
+// ============================================================================
+// Templates & constexpr implementations.
+
+#include "inlines/reporter-inlines.h"
 
 // ----------------------------------------------------------------------------
 
