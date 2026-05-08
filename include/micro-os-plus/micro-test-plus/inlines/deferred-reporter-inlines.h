@@ -162,7 +162,8 @@ namespace micro_os_plus::micro_test_plus
     template <class Expr_T>
     deferred_reporter::deferred_reporter (
         const Expr_T& expr, bool abort,
-        const reflection::source_location& location, subtest& subtest)
+        const reflection::source_location& location, subtest& subtest,
+        expression_formatter& expression)
         : deferred_reporter_base{ static_cast<bool> (expr), location, subtest }
 
     {
@@ -173,7 +174,6 @@ namespace micro_os_plus::micro_test_plus
       abort_ = abort;
       has_expression_ = type_traits::is_op<Expr_T>;
 
-      auto& expression = subtest.reporter ().expression ();
       expression.clear ();
 
       expression << expr;

@@ -74,17 +74,19 @@
 #include "micro-test-plus/exceptions.h"
 #include "micro-test-plus/operators.h"
 
-#include "micro-test-plus/test.h"
-// Requires test.h to be included first, as it defines the `subtest` class used
-// by the deferred reporter.
+#include "micro-test-plus/expression-formatter.h"
+
+#include "micro-test-plus/reporter.h"
+
 #include "micro-test-plus/deferred-reporter.h"
-// Requires test.h to be included before runner.h, as it defines the
-// `top_suite` class used by the static runner.
+
+// Requires deferred_reporter.
+#include "micro-test-plus/test.h"
+
 #include "micro-test-plus/runner.h"
 
 #include "micro-test-plus/runner-totals.h"
 
-#include "micro-test-plus/reporter.h"
 #include "micro-test-plus/reporter-human.h"
 #include "micro-test-plus/reporter-tap.h"
 
@@ -93,10 +95,6 @@
 // ============================================================================
 // Templates & constexpr implementations.
 
-// Requires test.h, deferred-reporter.h, runner.h, and reporter.h to all be
-// included first, as it defines inline template implementations that depend
-// on all of them.
-#include "micro-test-plus/inlines/deferred-reporter-inlines.h"
 #include "micro-test-plus/inlines/test-inlines.h"
 
 // ----------------------------------------------------------------------------

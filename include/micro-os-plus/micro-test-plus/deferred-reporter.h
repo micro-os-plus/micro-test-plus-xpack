@@ -231,7 +231,7 @@ namespace micro_os_plus::micro_test_plus
       template <class Expr_T>
       deferred_reporter (const Expr_T& expr, bool abort,
                          const reflection::source_location& location,
-                         subtest& subtest);
+                         subtest& subtest, expression_formatter& expression);
 
       /**
        * @brief Destructor for the deferred reporter.
@@ -252,6 +252,11 @@ namespace micro_os_plus::micro_test_plus
 // ----------------------------------------------------------------------------
 
 #endif // __cplusplus
+
+// ============================================================================
+// Templates & constexpr implementations.
+
+#include "inlines/deferred-reporter-inlines.h"
 
 // ----------------------------------------------------------------------------
 
