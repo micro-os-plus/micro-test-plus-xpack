@@ -60,11 +60,11 @@
 
 // ----------------------------------------------------------------------------
 
-#include "runner-totals.h"
-#include "timings.h"
-
 #include <functional>
 #include <memory>
+
+#include "runner-totals.h"
+#include "timings.h"
 
 // ----------------------------------------------------------------------------
 

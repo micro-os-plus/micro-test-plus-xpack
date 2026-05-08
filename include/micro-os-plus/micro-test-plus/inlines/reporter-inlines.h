@@ -104,54 +104,6 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
-#if defined(__GNUC__)
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
-#endif
-  template <class T>
-  void
-  reporter::append_number_ (std::string& buffer, const T v)
-  {
-    char buf[32];
-    if constexpr (std::is_same_v<T, long double>)
-      {
-#if defined(_WIN32) \
-    || (defined(__SIZEOF_LONG_DOUBLE__) \
-        && __SIZEOF_LONG_DOUBLE__ == __SIZEOF_DOUBLE__)
-        // On Windows (all toolchains: MinGW, Clang, MSVC), the C runtime
-        // does not handle the %Lg printf specifier correctly for 80-bit
-        // long double, producing garbage output. On platforms where long
-        // double has the same width as double (ARM, RISC-V), the cast is
-        // lossless. In both cases, cast to double and use std::to_chars.
-        const auto [ptr, ec]
-            = std::to_chars (buf, buf + sizeof (buf), static_cast<double> (v));
-        if (ec == std::errc{})
-          buffer.append (buf, ptr);
-#else
-        // On x86-64 Linux/macOS with 80-bit extended-precision long double,
-        // std::to_chars for long double may be unavailable (e.g., with lld).
-        // Use snprintf as a portable fallback; %Lg is supported correctly
-        // by glibc and libc++ on these platforms.
-        snprintf (buf, sizeof (buf), "%Lg", v);
-        buffer.append (buf);
-#endif
-      }
-    else
-      {
-        const auto [ptr, ec] = std::to_chars (buf, buf + sizeof (buf), v);
-        if (ec == std::errc{})
-          buffer.append (buf, ptr);
-      }
-  }
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif
-
-  // --------------------------------------------------------------------------
-
   /**
    * @details
    * This operator overload enables the `reporter` to output pointer
@@ -199,311 +151,24 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This operator overload enables the `reporter` to output any type that is
-   * supported by the `detail::get` mechanism, ensuring consistent formatting
-   * and extensibility.
-   *
-   * By delegating to `detail::get`, the operator allows for custom formatting
-   * and extraction of values, supporting a wide range of types including
-   * user-defined and framework-specific types. The resulting value is then
-   * forwarded to the appropriate output handler, ensuring seamless integration
-   * into test reports and diagnostics.
-   *
-   * This approach promotes flexibility and maintainability, allowing new types
-   * to be supported with minimal changes to the reporting infrastructure.
+   * This template operator overload allows the `reporter` to output values of
+   * any arithmetic type (integral or floating-point) in a consistent and
+   * readable format. The value is formatted using the `append_number_` helper
+   * function, which handles the conversion to a string representation with
+   * appropriate type suffixes where applicable (e.g., "f" for float, "l" for
+   * long double). This enables numeric values to be included in test reports
+   * and diagnostics in a clear and unambiguous manner, supporting the
+   * verification of test cases that involve arithmetic expressions and
+   * comparisons.
    */
   template <class T>
-    requires type_traits::is_op<T>
+    requires std::is_arithmetic_v<T>
   reporter&
-  reporter::operator<< (const T& t)
+  reporter::operator<< (T v)
   {
-    *this << detail::get (t);
+    detail::append_number_ (buffer_, v);
     return *this;
   }
-
-  /**
-   * @details
-   * This operator overload enables the `reporter` to output
-   * strongly-typed integral values in a clear and consistent decimal format.
-   *
-   * The value is converted to a string using `std::to_string` after being cast
-   * to `long long`, ensuring accurate formatting and compatibility across
-   * platforms. The resulting string is appended to the internal output buffer,
-   * allowing integral values to be included in test reports and diagnostics.
-   *
-   * This approach ensures precise and unambiguous representation of integral
-   * values, which is particularly advantageous for verifying test results and
-   * facilitating debugging.
-   */
-  template <class T>
-  reporter&
-  reporter::operator<< (const type_traits::genuine_integral_value<T>& v)
-  {
-    append_number_ (buffer_, static_cast<long long> (v.get ()));
-    return *this;
-  }
-
-  /**
-   * @details
-   * This operator overload enables the `reporter` to output container
-   * types in a structured and readable format.
-   *
-   * The contents of the container are enclosed in curly braces and each
-   * element is separated by a comma and a space. The operator iterates over
-   * the container, formatting each element in sequence, which ensures clarity
-   * and consistency in test reports and diagnostics.
-   *
-   * This approach provides a clear visual representation of container
-   * contents, making it easier to interpret test results and debug issues
-   * involving collections of values.
-   */
-  template <class T>
-    requires (type_traits::container_like<T> and not type_traits::has_npos<T>)
-  reporter&
-  reporter::operator<< (const T& t)
-  {
-    *this << '{';
-    auto first = true;
-    for (const auto& arg : t)
-      {
-        *this << (first ? "" : ", ") << arg;
-        first = false;
-      }
-    *this << '}';
-    return *this;
-  }
-
-  /**
-   * @details
-   * This operator overload enables the `reporter` to output equality
-   * comparison expressions in a clear and expressive format.
-   *
-   * The left-hand side and right-hand side values are formatted and separated
-   * by the equality operator (`==`), with appropriate colour highlighting
-   * applied for improved readability in test reports and diagnostics. This
-   * structured output assists in quickly identifying the values involved in
-   * equality assertions and facilitates efficient debugging of test failures.
-   */
-  template <class Lhs_T, class Rhs_T>
-  reporter&
-  reporter::operator<< (const detail::eq_<Lhs_T, Rhs_T>& op)
-  {
-    return (*this << colour_ (op) << op.lhs () << " == " << op.rhs ()
-                  << colours_.none);
-  }
-
-  /**
-   * @details
-   * This operator overload enables the `reporter` to output inequality
-   * comparison expressions in a clear and expressive format.
-   *
-   * The left-hand side and right-hand side values are formatted and separated
-   * by the inequality operator (`!=`), with appropriate colour highlighting
-   * applied for improved readability in test reports and diagnostics. This
-   * structured output assists in quickly identifying the values involved in
-   * inequality assertions and facilitates efficient debugging of test
-   * failures.
-   */
-  template <class Lhs_T, class Rhs_T>
-  reporter&
-  reporter::operator<< (const detail::ne_<Lhs_T, Rhs_T>& op)
-  {
-    return (*this << colour_ (op) << op.lhs () << " != " << op.rhs ()
-                  << colours_.none);
-  }
-
-  /**
-   * @details
-   * This operator overload enables the `reporter` to output greater-than
-   * comparison expressions in a clear and expressive format.
-   *
-   * The left-hand side and right-hand side values are formatted and separated
-   * by the greater-than operator (`>`), with appropriate colour highlighting
-   * applied for improved readability in test reports and diagnostics. This
-   * structured output assists in quickly identifying the values involved in
-   * greater-than assertions and facilitates efficient debugging of test
-   * failures.
-   */
-  template <class Lhs_T, class Rhs_T>
-  reporter&
-  reporter::operator<< (const detail::gt_<Lhs_T, Rhs_T>& op)
-  {
-    return (*this << colour_ (op) << op.lhs () << " > " << op.rhs ()
-                  << colours_.none);
-  }
-
-  /**
-   * @details
-   * This operator overload enables the `reporter` to output
-   * greater-than-or-equal-to comparison expressions in a clear and expressive
-   * format.
-   *
-   * The left-hand side and right-hand side values are formatted and separated
-   * by the greater-than-or-equal-to operator (`>=`), with appropriate colour
-   * highlighting applied for improved readability in test reports and
-   * diagnostics. This structured output assists in quickly identifying the
-   * values involved in greater-than-or-equal-to assertions and facilitates
-   * efficient debugging of test failures.
-   */
-  template <class Lhs_T, class Rhs_T>
-  reporter&
-  reporter::operator<< (const detail::ge_<Lhs_T, Rhs_T>& op)
-  {
-    return (*this << colour_ (op) << op.lhs () << " >= " << op.rhs ()
-                  << colours_.none);
-  }
-
-  /**
-   * @details
-   * This operator overload enables the `reporter` to output less-than
-   * comparison expressions in a clear and expressive format.
-   *
-   * The left-hand side and right-hand side values are formatted and separated
-   * by the less-than operator (`<`), with appropriate colour highlighting
-   * applied for improved readability in test reports and diagnostics. This
-   * structured output assists in quickly identifying the values involved in
-   * less-than assertions and facilitates efficient debugging of test failures.
-   */
-  template <class Lhs_T, class Rhs_T>
-  reporter&
-  reporter::operator<< (const detail::lt_<Rhs_T, Lhs_T>& op)
-  {
-    return (*this << colour_ (op) << op.lhs () << " < " << op.rhs ()
-                  << colours_.none);
-  }
-
-  /**
-   * @details
-   * This operator overload enables the `reporter` to output
-   * less-than-or-equal-to comparison expressions in a clear and expressive
-   * format.
-   *
-   * The left-hand side and right-hand side values are formatted and separated
-   * by the less-than-or-equal-to operator (`<=`), with appropriate colour
-   * highlighting applied for improved readability in test reports and
-   * diagnostics. This structured output assists in quickly identifying the
-   * values involved in less-than-or-equal-to assertions and facilitates
-   * efficient debugging of test failures.
-   */
-  template <class Lhs_T, class Rhs_T>
-  reporter&
-  reporter::operator<< (const detail::le_<Rhs_T, Lhs_T>& op)
-  {
-    return (*this << colour_ (op) << op.lhs () << " <= " << op.rhs ()
-                  << colours_.none);
-  }
-
-  /**
-   * @details
-   * This operator overload enables the `reporter` to output logical
-   * conjunction (AND) expressions in a clear and structured format.
-   *
-   * The left-hand side and right-hand side expressions are enclosed in
-   * parentheses and separated by the word "and", with appropriate colour
-   * highlighting applied for improved readability in test reports and
-   * diagnostics. This presentation assists in quickly identifying the
-   * components of logical assertions and facilitates efficient debugging of
-   * test failures involving compound conditions.
-   */
-  template <class Lhs_T, class Rhs_T>
-  reporter&
-  reporter::operator<< (const detail::and_<Lhs_T, Rhs_T>& op)
-  {
-    return (*this << '(' << op.lhs () << colour_ (op) << " and "
-                  << colours_.none << op.rhs () << ')');
-  }
-
-  /**
-   * @details
-   * This operator overload enables the `reporter` to output logical
-   * disjunction (OR) expressions in a clear and structured format.
-   *
-   * The left-hand side and right-hand side expressions are enclosed in
-   * parentheses and separated by the word "or", with appropriate colour
-   * highlighting applied for improved readability in test reports and
-   * diagnostics. This presentation assists in quickly identifying the
-   * components of logical assertions and facilitates efficient debugging of
-   * test failures involving compound conditions.
-   */
-  template <class Lhs_T, class Rhs_T>
-  reporter&
-  reporter::operator<< (const detail::or_<Lhs_T, Rhs_T>& op)
-  {
-    return (*this << '(' << op.lhs () << colour_ (op) << " or "
-                  << colours_.none << op.rhs () << ')');
-  }
-
-  /**
-   * @details
-   * This operator overload enhances readability and clarity by formatting the
-   * output when handling negated expressions. It applies colour styling for
-   * improved distinction and appends the negated value accordingly, ensuring
-   * that logical negations are clearly represented in test reports and
-   * diagnostics.
-   */
-  template <class T>
-  reporter&
-  reporter::operator<< (const detail::not_<T>& op)
-  {
-    return (*this << colour_ (op) << "not " << op.operand () << colours_.none);
-  }
-
-#if defined(__cpp_exceptions)
-  /**
-   * @details
-   * This operator overload provides structured output for expressions that may
-   * throw exceptions. It applies colour styling for clarity and includes the
-   * exception type name for precise identification.
-   *
-   * When invoked, the output highlights the `throws` qualifier along with the
-   * specific exception type, making it immediately apparent which exception is
-   * expected. This enhances the readability and professionalism of test
-   * reports, and assists in the precise identification and debugging of
-   * exception-related test cases.
-   */
-  template <class Expr_T, class Exception_T>
-  reporter&
-  reporter::operator<< (const detail::throws_<Expr_T, Exception_T>& op)
-  {
-    return (*this << colour_ (op) << "throws<"
-                  << reflection::type_name<Exception_T> () << ">"
-                  << colours_.none);
-  }
-
-  /**
-   * @details
-   * This operator overload formats output for expressions that may throw
-   * exceptions. It applies colour styling for clarity and ensures a structured
-   * representation of the exception handling mechanism.
-   *
-   * When invoked, the output highlights the `throws` qualifier, making it
-   * immediately apparent when an expression is expected to throw, thereby
-   * improving the readability and professionalism of the test output.
-   */
-  template <class Expr_T>
-  reporter&
-  reporter::operator<< (const detail::throws_<Expr_T, void>& op)
-  {
-    return (*this << colour_ (op) << "throws" << colours_.none);
-  }
-
-  /**
-   * @details
-   * This operator overload formats output for expressions that do not throw
-   * exceptions. It applies colour styling for clarity and ensures a structured
-   * and concise representation of exception safety within test reports.
-   *
-   * The output highlights the `nothrow` qualifier, making it immediately
-   * apparent when an expression is guaranteed not to throw, thereby improving
-   * the readability and professionalism of the test output.
-   */
-  template <class Expr_T>
-  reporter&
-  reporter::operator<< (const detail::nothrow_<Expr_T>& op)
-  {
-    return (*this << colour_ (op) << "nothrow" << colours_.none);
-  }
-#endif
 
   /**
    * @details
@@ -523,7 +188,9 @@ namespace micro_os_plus::micro_test_plus
     if (message.empty ())
       {
         // If there is no message, display the evaluated expression.
-        *this << expr;
+        formatter_.clear ();
+        formatter_ << expr;
+        *this << formatter_.str ();
       }
 
     output_pass_suffix_ (subtest);
@@ -551,7 +218,9 @@ namespace micro_os_plus::micro_test_plus
 
     if constexpr (type_traits::is_op<Expr_T>)
       {
-        *this << expr;
+        formatter_.clear ();
+        formatter_ << expr;
+        *this << formatter_.str ();
       }
 
     output_fail_suffix_ (location, abort, subtest);

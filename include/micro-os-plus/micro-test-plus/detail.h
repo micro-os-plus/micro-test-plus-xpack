@@ -606,6 +606,24 @@ namespace micro_os_plus::micro_test_plus
 #endif
 
     // ------------------------------------------------------------------------
+
+    /**
+     * @brief Appends the string representation of a numeric value to a
+     * buffer, using `std::to_chars` for allocation-free,
+     * locale-independent formatting.
+     *
+     * @tparam T The numeric type to format.
+     * @param buffer The string to append to.
+     * @param v The value to format.
+     * @par Returns
+     *   Nothing.
+     */
+    template <class T>
+      requires std::is_arithmetic_v<T>
+    void
+    append_number_ (std::string& buffer, T v);
+
+    // ------------------------------------------------------------------------
   } // namespace detail
 
   // --------------------------------------------------------------------------

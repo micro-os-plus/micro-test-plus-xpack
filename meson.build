@@ -46,6 +46,7 @@ _local_sources += [
   'src/runner.cpp',
   'src/runner-totals.cpp',
   'src/deferred-reporter.cpp',
+  'src/expression-formatter.cpp',
   'src/reporter.cpp',
   'src/reporter-human.cpp',
   'src/reporter-tap.cpp',

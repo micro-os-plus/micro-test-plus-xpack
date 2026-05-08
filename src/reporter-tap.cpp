@@ -769,10 +769,7 @@ namespace micro_os_plus::micro_test_plus
     *this << indent (level + 1)
           << "    filename: " << reflection::short_name (location.file_name ())
           << endl;
-    *this << indent (level + 1) << "    line: "
-          << type_traits::genuine_integral_value<unsigned int>{ location
-                                                                    .line () }
-          << endl;
+    *this << indent (level + 1) << "    line: " << location.line () << endl;
 
     *this << indent (level + 1) << "  ..." << endl;
 

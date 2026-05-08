@@ -782,9 +782,7 @@ namespace micro_os_plus::micro_test_plus
       }
     *this << colours_.fail << "FAILED" << colours_.none;
     *this << " (" << reflection::short_name (location.file_name ()) << ":"
-          << type_traits::genuine_integral_value<unsigned int>{
-               location.line ()
-             };
+          << location.line ();
     if (hasExpression)
       {
         *this << ", ";
