@@ -66,165 +66,172 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
-  /**
-   * @brief Aggregated pass/fail/subtest counters for a node in the test tree.
-   *
-   * @details
-   * `runner_totals` records three counters that are maintained throughout a
-   * test session:
-   * - the number of checks that passed (`successful_checks_`),
-   * - the number of checks that failed (`failed_checks_`), and
-   * - the number of subtests that were executed (`executed_subtests_`).
-   *
-   * Every `test_node`-derived object (`runner`, `suite`, `subtest`) owns a
-   * `runner_totals` member and accumulates its counts in place. At the end
-   * of each suite or session the operator `+=` propagates the child totals
-   * up to the parent node.
-   *
-   * The class is non-copyable and non-movable to prevent accidental
-   * duplication of live counters.
-   *
-   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
-   */
-  class runner_totals
+  namespace detail
   {
-  public:
-    /**
-     * @brief Default constructor. All counters are zero-initialised.
-     */
-    runner_totals () = default;
+    // ========================================================================
 
     /**
-     * @brief Deleted copy constructor to prevent copying.
-     */
-    runner_totals (const runner_totals&) = delete;
-
-    /**
-     * @brief Deleted move constructor to prevent moving.
-     */
-    runner_totals (runner_totals&&) = delete;
-
-    /**
-     * @brief Deleted copy assignment operator to prevent copying.
-     */
-    runner_totals&
-    operator= (const runner_totals&) = delete;
-
-    /**
-     * @brief Deleted move assignment operator to prevent moving.
-     */
-    runner_totals&
-    operator= (runner_totals&&) = delete;
-
-    /**
-     * @brief Accumulates the totals from another instance into this one.
+     * @brief Aggregated pass/fail/subtest counters for a node in the test
+     * tree.
      *
-     * @param other The instance whose totals are to be added.
-     * @return Reference to this instance.
-     */
-    runner_totals&
-    operator+= (const runner_totals& other) noexcept;
-
-    /**
-     * @brief Increments the successful-checks counter.
+     * @details
+     * `runner_totals` records three counters that are maintained throughout a
+     * test session:
+     * - the number of checks that passed (`successful_checks_`),
+     * - the number of checks that failed (`failed_checks_`), and
+     * - the number of subtests that were executed (`executed_subtests_`).
      *
-     * @param count The number of successful checks to add (default 1).
-     * @par Returns
-     *   Nothing.
-     */
-    void
-    increment_successful_checks (size_t count = 1) noexcept;
-
-    /**
-     * @brief Increments the failed-checks counter.
+     * Every `test_node`-derived object (`runner`, `suite`, `subtest`) owns a
+     * `runner_totals` member and accumulates its counts in place. At the end
+     * of each suite or session the operator `+=` propagates the child totals
+     * up to the parent node.
      *
-     * @param count The number of failed checks to add (default 1).
-     * @par Returns
-     *   Nothing.
-     */
-    void
-    increment_failed_checks (size_t count = 1) noexcept;
-
-    /**
-     * @brief Increments the executed-subtests counter.
+     * The class is non-copyable and non-movable to prevent accidental
+     * duplication of live counters.
      *
-     * @param count The number of subtests to add (default 1).
-     * @par Returns
-     *   Nothing.
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
-    void
-    increment_executed_subtests (size_t count = 1) noexcept;
+    class runner_totals
+    {
+    public:
+      /**
+       * @brief Default constructor. All counters are zero-initialised.
+       */
+      runner_totals () = default;
 
-    /**
-     * @brief Returns the number of checks that passed.
-     *
-     * @par Parameters
-     *   None.
-     * @return The cumulative count of successful checks.
-     */
-    [[nodiscard]] size_t
-    successful_checks () const noexcept;
+      /**
+       * @brief Deleted copy constructor to prevent copying.
+       */
+      runner_totals (const runner_totals&) = delete;
 
-    /**
-     * @brief Returns the number of checks that failed.
-     *
-     * @par Parameters
-     *   None.
-     * @return The cumulative count of failed checks.
-     */
-    [[nodiscard]] size_t
-    failed_checks () const noexcept;
+      /**
+       * @brief Deleted move constructor to prevent moving.
+       */
+      runner_totals (runner_totals&&) = delete;
 
-    /**
-     * @brief Returns the total number of checks executed.
-     *
-     * @par Parameters
-     *   None.
-     * @return The sum of successful and failed checks.
-     */
-    [[nodiscard]] size_t
-    executed_checks () const noexcept;
+      /**
+       * @brief Deleted copy assignment operator to prevent copying.
+       */
+      runner_totals&
+      operator= (const runner_totals&) = delete;
 
-    /**
-     * @brief Returns the number of subtests that were executed.
-     *
-     * @par Parameters
-     *   None.
-     * @return The cumulative count of executed subtests.
-     */
-    [[nodiscard]] size_t
-    executed_subtests () const noexcept;
+      /**
+       * @brief Deleted move assignment operator to prevent moving.
+       */
+      runner_totals&
+      operator= (runner_totals&&) = delete;
 
-    /**
-     * @brief Checks whether all executed checks were successful.
-     *
-     * @par Parameters
-     *	None.
-     * @retval true  No checks failed.
-     * @retval false At least one check failed.
-     */
-    [[nodiscard]] bool
-    was_successful (void) const noexcept;
+      /**
+       * @brief Accumulates the totals from another instance into this one.
+       *
+       * @param other The instance whose totals are to be added.
+       * @return Reference to this instance.
+       */
+      runner_totals&
+      operator+= (const runner_totals& other) noexcept;
 
-  protected:
-    /**
-     * @brief Total number of successful checks.
-     */
-    size_t successful_checks_ = 0;
+      /**
+       * @brief Increments the successful-checks counter.
+       *
+       * @param count The number of successful checks to add (default 1).
+       * @par Returns
+       *   Nothing.
+       */
+      void
+      increment_successful_checks (size_t count = 1) noexcept;
 
-    /**
-     * @brief Total number of failed checks.
-     */
-    size_t failed_checks_ = 0;
+      /**
+       * @brief Increments the failed-checks counter.
+       *
+       * @param count The number of failed checks to add (default 1).
+       * @par Returns
+       *   Nothing.
+       */
+      void
+      increment_failed_checks (size_t count = 1) noexcept;
 
-    /**
-     * @brief Total number of tests executed.
-     */
-    size_t executed_subtests_ = 0;
-  };
+      /**
+       * @brief Increments the executed-subtests counter.
+       *
+       * @param count The number of subtests to add (default 1).
+       * @par Returns
+       *   Nothing.
+       */
+      void
+      increment_executed_subtests (size_t count = 1) noexcept;
+
+      /**
+       * @brief Returns the number of checks that passed.
+       *
+       * @par Parameters
+       *   None.
+       * @return The cumulative count of successful checks.
+       */
+      [[nodiscard]] size_t
+      successful_checks () const noexcept;
+
+      /**
+       * @brief Returns the number of checks that failed.
+       *
+       * @par Parameters
+       *   None.
+       * @return The cumulative count of failed checks.
+       */
+      [[nodiscard]] size_t
+      failed_checks () const noexcept;
+
+      /**
+       * @brief Returns the total number of checks executed.
+       *
+       * @par Parameters
+       *   None.
+       * @return The sum of successful and failed checks.
+       */
+      [[nodiscard]] size_t
+      executed_checks () const noexcept;
+
+      /**
+       * @brief Returns the number of subtests that were executed.
+       *
+       * @par Parameters
+       *   None.
+       * @return The cumulative count of executed subtests.
+       */
+      [[nodiscard]] size_t
+      executed_subtests () const noexcept;
+
+      /**
+       * @brief Checks whether all executed checks were successful.
+       *
+       * @par Parameters
+       *	None.
+       * @retval true  No checks failed.
+       * @retval false At least one check failed.
+       */
+      [[nodiscard]] bool
+      was_successful (void) const noexcept;
+
+    protected:
+      /**
+       * @brief Total number of successful checks.
+       */
+      size_t successful_checks_ = 0;
+
+      /**
+       * @brief Total number of failed checks.
+       */
+      size_t failed_checks_ = 0;
+
+      /**
+       * @brief Total number of tests executed.
+       */
+      size_t executed_subtests_ = 0;
+    };
+
+    // ------------------------------------------------------------------------
+  } // namespace detail
 
   // --------------------------------------------------------------------------
-
 } // namespace micro_os_plus::micro_test_plus
 
 #if defined(__GNUC__)

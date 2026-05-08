@@ -77,33 +77,9 @@ namespace micro_os_plus::micro_test_plus
 
   // --------------------------------------------------------------------------
 
-  /**
-   * @namespace micro_os_plus::micro_test_plus::detail
-   * @brief Internal implementation details for the µTest++ framework.
-   *
-   * @details
-   * The `detail` namespace encapsulates the internal mechanisms, helper
-   * structures, and implementation utilities employed by the µTest++ testing
-   * framework. These components do not form part of the public API and may be
-   * modified without prior notice.
-   *
-   * Within this namespace, one will find assertion handling, generic getter
-   * utilities, comparator structures for logical and relational operations,
-   * mechanisms for exception checking, and base classes for deferred reporting
-   * of test results.
-   *
-   * All definitions within `detail` are intended exclusively for internal use,
-   * ensuring a clear distinction between user-facing and internal components.
-   * This approach enhances maintainability, mitigates the risk of naming
-   * conflicts, and keeps the public API succinct.
-   *
-   * The relevant header files are organised within the `include/micro-os-plus`
-   * folder to maintain a structured and modular codebase.
-   */
   namespace detail
   {
-
-    // ------------------------------------------------------------------------
+    // ========================================================================
 
     /**
      * @brief Base class for a deferred reporter that collects messages into a
@@ -222,7 +198,7 @@ namespace micro_os_plus::micro_test_plus
       subtest& subtest_;
     };
 
-    // ------------------------------------------------------------------------
+    // ========================================================================
 
     /**
      * @brief Deferred reporter class for a specific expression.

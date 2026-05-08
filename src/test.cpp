@@ -66,20 +66,22 @@
 #endif
 #endif
 
-// ==========================================================================
+// ============================================================================
 
 namespace micro_os_plus::micro_test_plus
 {
-  // ==========================================================================
-
-  /**
-   * @details
-   * Stores the supplied @p name pointer, which is expected to point to
-   * a string with a lifetime exceeding that of this instance. If
-   * tracing is enabled, the name is output for diagnostic purposes.
-   */
-  test_node::test_node (const char* name) : name_{ name }
+  namespace detail
   {
+    // ========================================================================
+
+    /**
+     * @details
+     * Stores the supplied @p name pointer, which is expected to point to
+     * a string with a lifetime exceeding that of this instance. If
+     * tracing is enabled, the name is output for diagnostic purposes.
+     */
+    test_node::test_node (const char* name) : name_{ name }
+    {
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
 #if defined(__GNUC__)
@@ -88,21 +90,21 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
 #endif
-    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name);
+      trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name);
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
-  }
+    }
 
-  /**
-   * @details
-   * No resources are owned by `test_node`; the destructor performs no
-   * explicit clean-up. If tracing is enabled, the node name is output
-   * for diagnostic purposes.
-   */
-  test_node::~test_node ()
-  {
+    /**
+     * @details
+     * No resources are owned by `test_node`; the destructor performs no
+     * explicit clean-up. If tracing is enabled, the node name is output
+     * for diagnostic purposes.
+     */
+    test_node::~test_node ()
+    {
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
 #if defined(__GNUC__)
@@ -111,29 +113,29 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
 #endif
-    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
+      trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
-  }
+    }
 
-  // ==========================================================================
+    // ========================================================================
 
-  /**
-   * @details
-   * The constructor initialises a new instance of the `runnable_base` class
-   * with the specified name. It sets up the internal state required for
-   * managing test cases within the suite. If tracing is enabled, the function
-   * signature is output for diagnostic purposes. The default test suite does
-   * not require explicit registration, ensuring seamless integration within
-   * the µTest++ framework and supporting organised test management across all
-   * files and folders.
-   */
-  runnable_base::runnable_base (const char* name, class runner& runner,
-                                size_t own_index)
-      : test_node{ name }, runner_{ runner }, own_index_{ own_index }
-  {
+    /**
+     * @details
+     * The constructor initialises a new instance of the `runnable_base` class
+     * with the specified name. It sets up the internal state required for
+     * managing test cases within the suite. If tracing is enabled, the
+     * function signature is output for diagnostic purposes. The default test
+     * suite does not require explicit registration, ensuring seamless
+     * integration within the µTest++ framework and supporting organised test
+     * management across all files and folders.
+     */
+    runnable_base::runnable_base (const char* name, class runner& runner,
+                                  size_t own_index)
+        : test_node{ name }, runner_{ runner }, own_index_{ own_index }
+    {
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
 #if defined(__GNUC__)
@@ -142,22 +144,22 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
 #endif
-    trace::printf ("%s '%s' %zu\n", __PRETTY_FUNCTION__, name, own_index_);
+      trace::printf ("%s '%s' %zu\n", __PRETTY_FUNCTION__, name, own_index_);
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
-  }
+    }
 
-  /**
-   * @details
-   * The destructor releases any resources associated with the
-   * `runnable_base` instance. It ensures that the test suite is properly
-   * cleaned up after execution, supporting robust and reliable test management
-   * across all files and folders within the µTest++ framework.
-   */
-  runnable_base::~runnable_base ()
-  {
+    /**
+     * @details
+     * The destructor releases any resources associated with the
+     * `runnable_base` instance. It ensures that the test suite is properly
+     * cleaned up after execution, supporting robust and reliable test
+     * management across all files and folders within the µTest++ framework.
+     */
+    runnable_base::~runnable_base ()
+    {
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
 #if defined(__GNUC__)
@@ -166,60 +168,60 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
 #endif
-    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
+      trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
 
-    // children_subtests_ holds unique_ptrs; destroyed automatically.
-  }
+      // children_subtests_ holds unique_ptrs; destroyed automatically.
+    }
 
-  /**
-   * @details
-   * Delegates immediately to `runner_.reporter()`, returning the
-   * reporter associated with the owning runner instance.
-   */
-  [[nodiscard]] reporter&
-  runnable_base::reporter (void) const noexcept
-  {
-    return runner_.reporter ();
-  }
+    /**
+     * @details
+     * Delegates immediately to `runner_.reporter()`, returning the
+     * reporter associated with the owning runner instance.
+     */
+    [[nodiscard]] reporter&
+    runnable_base::reporter (void) const noexcept
+    {
+      return runner_.reporter ();
+    }
 
-  /**
-   * @details
-   * Delegates immediately to `runner_.abort()`, passing the supplied
-   * source location so that the error message identifies the call site
-   * before the process is terminated via `::abort()`.
-   */
-  [[noreturn]] void
-  runnable_base::abort (const reflection::source_location& sl)
-  {
-    runner_.abort (sl);
-  }
+    /**
+     * @details
+     * Delegates immediately to `runner_.abort()`, passing the supplied
+     * source location so that the error message identifies the call site
+     * before the process is terminated via `::abort()`.
+     */
+    [[noreturn]] void
+    runnable_base::abort (const reflection::source_location& sl)
+    {
+      runner_.abort (sl);
+    }
 
-  /**
-   * @details
-   * Transfers ownership of @p child_test into `children_subtests_` and
-   * immediately invokes `subtest::run()` on the newly stored subtest.
-   * The parent's executed-subtest counter is then incremented. The
-   * child's check counters are intentionally not merged into the parent
-   * totals; each subtest reports only its own counters. The child's
-   * totals are, however, accumulated into @p suite so that the suite
-   * summary reflects all checks performed by its subtests.
-   */
-  void
-  runnable_base::after_subtest_create_ (
-      std::unique_ptr<class subtest> child_test, suite& suite)
-  {
-    // Transfer ownership into the vector.
-    children_subtests_.push_back (std::move (child_test));
+    /**
+     * @details
+     * Transfers ownership of @p child_test into `children_subtests_` and
+     * immediately invokes `subtest::run()` on the newly stored subtest.
+     * The parent's executed-subtest counter is then incremented. The
+     * child's check counters are intentionally not merged into the parent
+     * totals; each subtest reports only its own counters. The child's
+     * totals are, however, accumulated into @p suite so that the suite
+     * summary reflects all checks performed by its subtests.
+     */
+    void
+    runnable_base::after_subtest_create_ (
+        std::unique_ptr<class subtest> child_test, suite& suite)
+    {
+      // Transfer ownership into the vector.
+      children_subtests_.push_back (std::move (child_test));
 
-    // Run the child test case immediately.
-    class subtest& subtest = *children_subtests_.back ();
-    subtest.run ();
+      // Run the child test case immediately.
+      class subtest& subtest = *children_subtests_.back ();
+      subtest.run ();
 
-    // This test executed one more subtest.
+      // This test executed one more subtest.
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
 #if defined(__GNUC__)
@@ -228,15 +230,15 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
 #endif
-    trace::printf ("%s subtest '%s' executed one more subtest\n",
-                   __PRETTY_FUNCTION__, name ());
+      trace::printf ("%s subtest '%s' executed one more subtest\n",
+                     __PRETTY_FUNCTION__, name ());
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
-    totals ().increment_executed_subtests ();
-    // Do not accumulate the totals from the child test into the current test
-    // totals, each subtest shows only its counters.
+      totals ().increment_executed_subtests ();
+      // Do not accumulate the totals from the child test into the current test
+      // totals, each subtest shows only its counters.
 
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
@@ -246,16 +248,17 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
 #endif
-    trace::printf ("%s suite '%s' totals\n", __PRETTY_FUNCTION__,
-                   suite.name ());
+      trace::printf ("%s suite '%s' totals\n", __PRETTY_FUNCTION__,
+                     suite.name ());
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
 
-    // Accumulate the totals from the child test into the suite totals.
-    suite.totals () += subtest.totals ();
-  }
+      // Accumulate the totals from the child test into the suite totals.
+      suite.totals () += subtest.totals ();
+    }
+  } // namespace detail
 
   // ==========================================================================
 

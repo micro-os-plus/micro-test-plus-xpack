@@ -141,7 +141,7 @@ test_case_expect_floats_passed_combinatorial (subtest& t)
 static static_suite ts_passed_floats{ "Combinatorial floats suite", tr,
                                       [] (auto& ts)
   {
-    runner_totals& current_suite_totals = ts.totals ();
+    detail::runner_totals& current_suite_totals = ts.totals ();
 
     local_counts = {};
 

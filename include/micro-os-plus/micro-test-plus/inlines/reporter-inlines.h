@@ -79,6 +79,15 @@
 
 namespace micro_os_plus::micro_test_plus
 {
+
+  // --------------------------------------------------------------------------
+
+  inline indent_t
+  indent (size_t level)
+  {
+    return { level };
+  }
+
   // ==========================================================================
 
   /**
@@ -100,7 +109,7 @@ namespace micro_os_plus::micro_test_plus
    * convert various types of values and expressions into their string
    * representations for output in test reports.
    */
-  inline expression_formatter&
+  inline detail::expression_formatter&
   reporter::expression ()
   {
     return expression_;

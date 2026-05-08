@@ -52,7 +52,7 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  runner_totals& current_suite_totals = ts.totals ();
+  detail::runner_totals& current_suite_totals = ts.totals ();
 
   ts.test ("assume", [] (auto& t)
     {
@@ -306,7 +306,7 @@ main (int argc, char* argv[])
   // --------------------------------------------------------------------------
 
   {
-    runner_totals fresh{};
+    detail::runner_totals fresh{};
     test_assert (fresh.was_successful ());
     test_assert (fresh.executed_checks () == 0);
   }

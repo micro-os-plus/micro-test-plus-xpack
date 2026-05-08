@@ -88,7 +88,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Returns a reference to the `timestamps` member.
    */
-  inline timestamps&
+  inline detail::timestamps&
   runner::timings () noexcept
   {
     return timings_;
@@ -98,7 +98,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Returns a const reference to the `timestamps` member.
    */
-  inline const timestamps&
+  inline const detail::timestamps&
   runner::timings () const noexcept
   {
     return timings_;

@@ -61,7 +61,7 @@ compute_abc (void)
 
 static static_suite ts_exceptions{ "Comparisons suite", tr, [] (auto& ts)
   {
-    runner_totals& current_suite_totals = ts.totals ();
+    detail::runner_totals& current_suite_totals = ts.totals ();
 
     local_counts = {};
 

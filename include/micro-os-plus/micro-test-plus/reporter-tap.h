@@ -67,7 +67,7 @@
 
 namespace micro_os_plus::micro_test_plus
 {
-  // --------------------------------------------------------------------------
+  // ==========================================================================
 
   /**
    * @brief TAP (Test Anything Protocol) implementation of `reporter`.

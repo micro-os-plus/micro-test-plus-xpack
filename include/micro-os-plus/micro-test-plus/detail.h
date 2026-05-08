@@ -101,6 +101,8 @@ namespace micro_os_plus::micro_test_plus
    */
   namespace detail
   {
+    // ========================================================================
+
     /**
      * @brief Assertion struct template for parameter passing to the evaluator.
      *
@@ -122,7 +124,7 @@ namespace micro_os_plus::micro_test_plus
       reflection::source_location location{};
     };
 
-    // ------------------------------------------------------------------------
+    // ========================================================================
 
     /**
      * @brief Generic getter function template for value retrieval.
@@ -136,7 +138,7 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] constexpr auto
     get (const T& t);
 
-    // ------------------------------------------------------------------------
+    // ========================================================================
 
     /**
      * @brief Common base struct template for unary comparators.
@@ -189,7 +191,7 @@ namespace micro_os_plus::micro_test_plus
       const bool value_{};
     };
 
-    // ------------------------------------------------------------------------
+    // ========================================================================
 
     /**
      * @brief Common base struct template for binary comparators.
@@ -265,7 +267,7 @@ namespace micro_os_plus::micro_test_plus
       const bool value_{};
     };
 
-    // ------------------------------------------------------------------------
+    // ========================================================================
 
     /**
      * @brief Equality comparator struct template.
@@ -291,7 +293,7 @@ namespace micro_os_plus::micro_test_plus
     template <typename Lhs_T, typename Rhs_T>
     eq_ (const Lhs_T&, const Rhs_T&) -> eq_<Lhs_T, Rhs_T>;
 
-    // ------------------------------------------------------------------------
+    // ========================================================================
 
     /**
      * @brief Non-equality comparator struct template.
@@ -317,7 +319,7 @@ namespace micro_os_plus::micro_test_plus
     template <typename Lhs_T, typename Rhs_T>
     ne_ (const Lhs_T&, const Rhs_T&) -> ne_<Lhs_T, Rhs_T>;
 
-    // ------------------------------------------------------------------------
+    // ========================================================================
 
     /**
      * @brief Greater than comparator struct template.
@@ -343,7 +345,7 @@ namespace micro_os_plus::micro_test_plus
     template <typename Lhs_T, typename Rhs_T>
     gt_ (const Lhs_T&, const Rhs_T&) -> gt_<Lhs_T, Rhs_T>;
 
-    // ------------------------------------------------------------------------
+    // ========================================================================
 
     /**
      * @brief Greater than or equal comparator struct template.
@@ -370,7 +372,7 @@ namespace micro_os_plus::micro_test_plus
     template <typename Lhs_T, typename Rhs_T>
     ge_ (const Lhs_T&, const Rhs_T&) -> ge_<Lhs_T, Rhs_T>;
 
-    // ------------------------------------------------------------------------
+    // ========================================================================
 
     /**
      * @brief Less than comparator struct template.
@@ -396,7 +398,7 @@ namespace micro_os_plus::micro_test_plus
     template <typename Lhs_T, typename Rhs_T>
     lt_ (const Lhs_T&, const Rhs_T&) -> lt_<Lhs_T, Rhs_T>;
 
-    // ------------------------------------------------------------------------
+    // ========================================================================
 
     /**
      * @brief Less than or equal comparator struct template.
@@ -423,7 +425,7 @@ namespace micro_os_plus::micro_test_plus
     template <typename Lhs_T, typename Rhs_T>
     le_ (const Lhs_T&, const Rhs_T&) -> le_<Lhs_T, Rhs_T>;
 
-    // ------------------------------------------------------------------------
+    // ========================================================================
 
     /**
      * @brief Logical AND comparator struct template.
@@ -449,7 +451,7 @@ namespace micro_os_plus::micro_test_plus
     template <typename Lhs_T, typename Rhs_T>
     and_ (const Lhs_T&, const Rhs_T&) -> and_<Lhs_T, Rhs_T>;
 
-    // ------------------------------------------------------------------------
+    // ========================================================================
 
     /**
      * @brief Logical OR comparator struct template.
@@ -475,7 +477,7 @@ namespace micro_os_plus::micro_test_plus
     template <typename Lhs_T, typename Rhs_T>
     or_ (const Lhs_T&, const Rhs_T&) -> or_<Lhs_T, Rhs_T>;
 
-    // ------------------------------------------------------------------------
+    // ========================================================================
 
     /**
      * @brief Logical NOT comparator struct template.
@@ -499,7 +501,7 @@ namespace micro_os_plus::micro_test_plus
     template <typename T>
     not_ (const T&) -> not_<T>;
 
-    // ------------------------------------------------------------------------
+    // ========================================================================
 
 #if defined(__cpp_exceptions)
 
@@ -535,7 +537,7 @@ namespace micro_os_plus::micro_test_plus
       const bool value_{};
     };
 
-    // ------------------------------------------------------------------------
+    // ========================================================================
 
     /**
      * @brief Operator struct template to check if an expression throws a
@@ -559,7 +561,7 @@ namespace micro_os_plus::micro_test_plus
       constexpr explicit throws_ (const Callable_T& func);
     };
 
-    // ------------------------------------------------------------------------
+    // ========================================================================
 
     /**
      * @brief Operator struct template to check if an expression throws any
@@ -581,7 +583,7 @@ namespace micro_os_plus::micro_test_plus
       constexpr explicit throws_ (const Callable_T& func);
     };
 
-    // ------------------------------------------------------------------------
+    // ========================================================================
 
     /**
      * @brief Operator struct template to check if an expression does not throw
@@ -605,7 +607,7 @@ namespace micro_os_plus::micro_test_plus
 
 #endif
 
-    // ------------------------------------------------------------------------
+    // ========================================================================
 
     /**
      * @brief Appends the string representation of a numeric value to a

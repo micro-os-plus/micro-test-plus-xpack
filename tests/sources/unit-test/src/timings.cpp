@@ -33,7 +33,7 @@ using namespace micro_os_plus::micro_test_plus;
 // Helper subclass of timestamp that allows zeroing the stored value, enabling
 // deterministic testing of has_clock() without relying on the system clock.
 
-class test_timestamp : public timestamp
+class test_timestamp : public detail::timestamp
 {
 public:
   void
@@ -53,7 +53,7 @@ public:
 // Helper subclass of timestamps that allows injecting known timespec values
 // and inspecting internal state for deterministic unit testing.
 
-class test_timestamps : public timestamps
+class test_timestamps : public detail::timestamps
 {
 public:
   void
@@ -70,7 +70,7 @@ public:
 
 static static_suite ts_timings{ "Timings suite", tr, [] (auto& ts)
   {
-    runner_totals& current_suite_totals = ts.totals ();
+    detail::runner_totals& current_suite_totals = ts.totals ();
 
     local_counts = {};
 
@@ -80,11 +80,11 @@ static static_suite ts_timings{ "Timings suite", tr, [] (auto& ts)
       {
 #if defined(_WIN32) || defined(CLOCK_MONOTONIC)
         // Default constructor captures the real clock — has_clock() is true.
-        timestamp ts_real{};
+        detail::timestamp ts_real{};
 #else
         // On platforms without a real clock, set a non-zero time to make
         // has_clock() true.
-        timestamp ts_real{ { 1, 2 } };
+        detail::timestamp ts_real{ { 1, 2 } };
 #endif
         t.expect (ts_real.has_clock ()) << "default ctor -> has_clock true";
         local_counts.successful_checks++;
@@ -117,13 +117,13 @@ static static_suite ts_timings{ "Timings suite", tr, [] (auto& ts)
     ts.test ("timestamp copy semantics", [] (auto& t)
       {
 #if defined(_WIN32) || defined(CLOCK_MONOTONIC)
-        timestamp t1{};
+        detail::timestamp t1{};
 #else
-        timestamp t1{ { 1, 2 } };
+        detail::timestamp t1{ { 1, 2 } };
 #endif
 
         // Copy constructor produces an identical timespec.
-        timestamp t2{ t1 };
+        detail::timestamp t2{ t1 };
         t.expect (eq (t2.value ().tv_sec, t1.value ().tv_sec))
             << "copy ctor: tv_sec matches";
         local_counts.successful_checks++;
@@ -132,7 +132,7 @@ static static_suite ts_timings{ "Timings suite", tr, [] (auto& ts)
         local_counts.successful_checks++;
 
         // Copy assignment produces an identical timespec.
-        timestamp t3{};
+        detail::timestamp t3{};
         t3 = t1;
         t.expect (eq (t3.value ().tv_sec, t1.value ().tv_sec))
             << "copy assign: tv_sec matches";
@@ -142,7 +142,7 @@ static static_suite ts_timings{ "Timings suite", tr, [] (auto& ts)
         local_counts.successful_checks++;
 
         // const value() accessor is accessible.
-        const timestamp& ct = t1;
+        const detail::timestamp& ct = t1;
         t.expect (eq (ct.value ().tv_sec, t1.value ().tv_sec))
             << "const value() accessor";
         local_counts.successful_checks++;

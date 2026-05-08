@@ -82,195 +82,135 @@
 
 namespace micro_os_plus::micro_test_plus
 {
-  // ==========================================================================
-
-  /**
-   * @details
-   * Returns a pointer to the null-terminated name stored in `name_`.
-   */
-  inline const char*
-  test_node::name (void) const noexcept
+  namespace detail
   {
-    return name_;
-  }
+    // ========================================================================
 
-  /**
-   * @details
-   * Returns a reference to the `runner_totals` member.
-   */
-  inline runner_totals&
-  test_node::totals () noexcept
-  {
-    return totals_;
-  }
+    /**
+     * @details
+     * Returns a pointer to the null-terminated name stored in `name_`.
+     */
+    inline const char*
+    test_node::name (void) const noexcept
+    {
+      return name_;
+    }
 
-  /**
-   * @details
-   * Returns a const reference to the `runner_totals` member.
-   */
-  inline const runner_totals&
-  test_node::totals () const noexcept
-  {
-    return totals_;
-  }
+    /**
+     * @details
+     * Returns a reference to the `runner_totals` member.
+     */
+    inline runner_totals&
+    test_node::totals () noexcept
+    {
+      return totals_;
+    }
 
-  // ==========================================================================
+    /**
+     * @details
+     * Returns a const reference to the `runner_totals` member.
+     */
+    inline const runner_totals&
+    test_node::totals () const noexcept
+    {
+      return totals_;
+    }
 
-  /**
-   * @details
-   * Returns the one-based positional index of this object within its parent.
-   */
-  inline size_t
-  runnable_base::own_index () const noexcept
-  {
-    return own_index_;
-  }
+    // ========================================================================
 
-  /**
-   * @details
-   * Sets the positional index of this object within its parent.
-   */
-  inline void
-  runnable_base::own_index (size_t index) noexcept
-  {
-    own_index_ = index;
-  }
+    /**
+     * @details
+     * Returns the one-based positional index of this object within its parent.
+     */
+    inline size_t
+    runnable_base::own_index () const noexcept
+    {
+      return own_index_;
+    }
 
-  /**
-   * @details
-   * Returns the sequential index of the most recently created child subtest.
-   */
-  inline size_t
-  runnable_base::current_subtest_index () const noexcept
-  {
-    return current_subtest_index_;
-  }
+    /**
+     * @details
+     * Sets the positional index of this object within its parent.
+     */
+    inline void
+    runnable_base::own_index (size_t index) noexcept
+    {
+      own_index_ = index;
+    }
 
-  /**
-   * @details
-   * Each call to `test()` invokes this method before constructing the new
-   * `subtest`, so the index values form a strictly increasing, one-based
-   * sequence.
-   */
-  inline size_t
-  runnable_base::increment_subtest_index () noexcept
-  {
-    return ++current_subtest_index_;
-  }
+    /**
+     * @details
+     * Returns the sequential index of the most recently created child subtest.
+     */
+    inline size_t
+    runnable_base::current_subtest_index () const noexcept
+    {
+      return current_subtest_index_;
+    }
 
-  /**
-   * @details
-   * Returns the number of child subtests owned by this node.
-   */
-  inline size_t
-  runnable_base::children_subtests_count (void) const noexcept
-  {
-    return children_subtests_.size ();
-  }
+    /**
+     * @details
+     * Each call to `test()` invokes this method before constructing the new
+     * `subtest`, so the index values form a strictly increasing, one-based
+     * sequence.
+     */
+    inline size_t
+    runnable_base::increment_subtest_index () noexcept
+    {
+      return ++current_subtest_index_;
+    }
 
-  /**
-   * @details
-   * Returns a reference to the owning test runner.
-   */
-  inline class runner&
-  runnable_base::runner (void) const noexcept
-  {
-    return runner_;
-  }
+    /**
+     * @details
+     * Returns the number of child subtests owned by this node.
+     */
+    inline size_t
+    runnable_base::children_subtests_count (void) const noexcept
+    {
+      return children_subtests_.size ();
+    }
 
-  // ==========================================================================
+    /**
+     * @details
+     * Returns a reference to the owning test runner.
+     */
+    inline class runner&
+    runnable_base::runner (void) const noexcept
+    {
+      return runner_;
+    }
 
-  /**
-   * @details
-   * Constructs and returns a `deferred_reporter<Expr_T>` with `abort = false`.
-   * The reporter evaluates the condition and records a pass or fail when
-   * it is destroyed at the end of the expression statement.
-   */
-  template <class Expr_T>
-    requires type_traits::checkable<Expr_T>
-  auto
-  subtest::expect (const Expr_T& expr, const reflection::source_location& sl)
-  {
-    return detail::deferred_reporter{ expr, false, sl, *this };
-  }
+    // ========================================================================
 
-  /**
-   * @details
-   * Constructs and returns a `deferred_reporter<Expr_T>` with `abort = true`.
-   * The reporter evaluates the condition, records a pass or fail when it is
-   * destroyed, and aborts execution if the condition is false.
-   */
-  template <class Expr_T>
-    requires type_traits::checkable<Expr_T>
-  auto
-  subtest::assume (const Expr_T& expr, const reflection::source_location& sl)
-  {
-    return detail::deferred_reporter{ expr, true, sl, *this };
-  }
-
-  /**
-   * @details
-   * Top-level subtests (direct children of a `suite`) have depth 1.
-   * Each additional level of nesting increments the depth by 1.
-   */
-  inline size_t
-  subtest::nesting_depth () const noexcept
-  {
-    return nesting_depth_;
-  }
-
-  // ==========================================================================
-
-  /**
-   * @details
-   * Returns a reference to the `timestamps` member.
-   */
-  inline timestamps&
-  suite::timings () noexcept
-  {
-    return timings_;
-  }
-
-  /**
-   * @details
-   * Returns a const reference to the `timestamps` member.
-   */
-  inline const timestamps&
-  suite::timings () const noexcept
-  {
-    return timings_;
-  }
-
-  // ==========================================================================
-
-  /**
-   * @details
-   * Binds the callable and its arguments into the stored `callable_` function
-   * object. When `run()` is called, the stored function is invoked with a
-   * reference to the derived `Self_T` instance as its first argument,
-   * followed by the bound arguments.
-   */
-  template <typename Self_T>
-  template <typename Callable_T, typename... Args_T>
-  runnable<Self_T>::runnable (const char* name, class runner& runner,
-                              size_t own_index, Callable_T&& callable,
-                              Args_T&&... arguments)
-      : runnable_base{ name, runner, own_index }
-  {
-    // When there are no extra arguments the callable already has the signature
-    // void(Self_T&), so store it directly. Only use std::bind when additional
-    // arguments must be pre-bound, to avoid triggering a GCC ARM bug in
-    // __is_nothrow_invocable<_Bind<...>, Self_T&> (GCC 15.2.1).
-    if constexpr (sizeof...(arguments) == 0)
-      {
-        callable_ = std::forward<Callable_T> (callable);
-      }
-    else
-      {
-        callable_ = std::bind (std::forward<Callable_T> (callable),
-                               std::placeholders::_1,
-                               std::forward<Args_T> (arguments)...);
-      }
+    /**
+     * @details
+     * Binds the callable and its arguments into the stored `callable_`
+     * function object. When `run()` is called, the stored function is invoked
+     * with a reference to the derived `Self_T` instance as its first argument,
+     * followed by the bound arguments.
+     */
+    template <typename Self_T>
+    template <typename Callable_T, typename... Args_T>
+    runnable<Self_T>::runnable (const char* name, class runner& runner,
+                                size_t own_index, Callable_T&& callable,
+                                Args_T&&... arguments)
+        : runnable_base{ name, runner, own_index }
+    {
+      // When there are no extra arguments the callable already has the
+      // signature void(Self_T&), so store it directly. Only use std::bind when
+      // additional arguments must be pre-bound, to avoid triggering a GCC ARM
+      // bug in
+      // __is_nothrow_invocable<_Bind<...>, Self_T&> (GCC 15.2.1).
+      if constexpr (sizeof...(arguments) == 0)
+        {
+          callable_ = std::forward<Callable_T> (callable);
+        }
+      else
+        {
+          callable_ = std::bind (std::forward<Callable_T> (callable),
+                                 std::placeholders::_1,
+                                 std::forward<Args_T> (arguments)...);
+        }
 
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
@@ -280,22 +220,22 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
 #endif
-    trace::printf ("%s '%s' %zu\n", __PRETTY_FUNCTION__, name, own_index_);
+      trace::printf ("%s '%s' %zu\n", __PRETTY_FUNCTION__, name, own_index_);
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
-  }
+    }
 
-  /**
-   * @details
-   * No-op in production builds. When tracing is enabled via
-   * `MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS`, emits a trace
-   * message identifying the instance being destroyed.
-   */
-  template <typename Self_T>
-  runnable<Self_T>::~runnable ()
-  {
+    /**
+     * @details
+     * No-op in production builds. When tracing is enabled via
+     * `MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS`, emits a trace
+     * message identifying the instance being destroyed.
+     */
+    template <typename Self_T>
+    runnable<Self_T>::~runnable ()
+    {
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
 #if defined(__GNUC__)
@@ -304,12 +244,15 @@ namespace micro_os_plus::micro_test_plus
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
 #endif
-    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
+      trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
-  }
+    }
+
+    // ------------------------------------------------------------------------
+  } // namespace detail
 
   // ==========================================================================
 
@@ -376,6 +319,45 @@ namespace micro_os_plus::micro_test_plus
         std::forward<Args_T> (arguments)...);
 
     after_subtest_create_ (std::move (child_subtest), parent_suite_);
+  }
+
+  /**
+   * @details
+   * Constructs and returns a `deferred_reporter<Expr_T>` with `abort = false`.
+   * The reporter evaluates the condition and records a pass or fail when
+   * it is destroyed at the end of the expression statement.
+   */
+  template <class Expr_T>
+    requires type_traits::checkable<Expr_T>
+  auto
+  subtest::expect (const Expr_T& expr, const reflection::source_location& sl)
+  {
+    return detail::deferred_reporter{ expr, false, sl, *this };
+  }
+
+  /**
+   * @details
+   * Constructs and returns a `deferred_reporter<Expr_T>` with `abort = true`.
+   * The reporter evaluates the condition, records a pass or fail when it is
+   * destroyed, and aborts execution if the condition is false.
+   */
+  template <class Expr_T>
+    requires type_traits::checkable<Expr_T>
+  auto
+  subtest::assume (const Expr_T& expr, const reflection::source_location& sl)
+  {
+    return detail::deferred_reporter{ expr, true, sl, *this };
+  }
+
+  /**
+   * @details
+   * Top-level subtests (direct children of a `suite`) have depth 1.
+   * Each additional level of nesting increments the depth by 1.
+   */
+  inline size_t
+  subtest::nesting_depth () const noexcept
+  {
+    return nesting_depth_;
   }
 
   // ==========================================================================
@@ -476,6 +458,26 @@ namespace micro_os_plus::micro_test_plus
                                      std::forward<Args_T> (arguments)...);
 
     after_subtest_create_ (std::move (child_subtest), *this);
+  }
+
+  /**
+   * @details
+   * Returns a reference to the `timestamps` member.
+   */
+  inline detail::timestamps&
+  suite::timings () noexcept
+  {
+    return timings_;
+  }
+
+  /**
+   * @details
+   * Returns a const reference to the `timestamps` member.
+   */
+  inline const detail::timestamps&
+  suite::timings () const noexcept
+  {
+    return timings_;
   }
 
   // ==========================================================================

@@ -47,7 +47,7 @@ exercise_throw (bool mustThrow)
 static static_suite ts_exceptions{ "Exceptions suite", tr,
                                    [] (auto& ts) noexcept
   {
-    runner_totals& current_suite_totals = ts.totals ();
+    detail::runner_totals& current_suite_totals = ts.totals ();
 
     local_counts = {};
 

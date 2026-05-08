@@ -84,393 +84,404 @@
 
 namespace micro_os_plus::micro_test_plus
 {
+  // --------------------------------------------------------------------------
+
   class runner;
   class static_runner;
   class reporter;
   class runner_totals;
+  class subtest;
   class suite;
 
-  // --------------------------------------------------------------------------
-
-  /**
-   * @brief Base class for runners and runable tests.
-   *
-   * @details
-   * The `test_node` class provides the foundational interface for
-   * managing test within the µTest++ framework. It maintains counters
-   * for successful and failed checks, tracks test cases, and offers methods
-   * for marking the commencement and completion of test cases and suites.
-   *
-   * This class ensures consistent state management and reporting for all
-   * derived classes. It also provides utility methods for querying the
-   * node's name, the number of successful and failed checks, the number of
-   * test cases, and the overall result of the node.
-   *
-   * All members and methods are defined within the
-   * `micro_os_plus::micro_test_plus` namespace, ensuring clear separation from
-   * user code and minimising the risk of naming conflicts.
-   *
-   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
-   */
-  class test_node
+  namespace detail
   {
-  public:
-    /**
-     * @brief Constructs a test node.
-     *
-     * @param [in] name The test node name.
-     */
-    test_node (const char* name);
+    // ========================================================================
 
     /**
-     * @brief Deleted copy constructor to prevent copying.
-     */
-    test_node (const test_node&) = delete;
-
-    /**
-     * @brief Deleted move constructor to prevent moving.
-     */
-    test_node (test_node&&) = delete;
-
-    /**
-     * @brief Deleted copy assignment operator to prevent copying.
-     */
-    test_node&
-    operator= (const test_node&) = delete;
-
-    /**
-     * @brief Deleted move assignment operator to prevent moving.
-     */
-    test_node&
-    operator= (test_node&&) = delete;
-
-    /**
-     * @brief Virtual destructor for the test_node class.
-     */
-    virtual ~test_node ();
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * @brief Gets the node name.
-     *
-     * @par Parameters
-     *	None.
-     * @return A pointer to the null-terminated test node name.
-     */
-    [[nodiscard]] const char*
-    name (void) const noexcept;
-
-  public:
-    /**
-     * @brief Gets the totals for the test.
-     *
-     * @par Parameters
-     *	None.
-     * @return A reference to the runner_totals instance.
-     */
-    [[nodiscard]] runner_totals&
-    totals () noexcept;
-
-    /**
-     * @brief Gets the totals for the test (const overload).
-     *
-     * @par Parameters
-     *	None.
-     * @return A const reference to the runner_totals instance.
-     */
-    [[nodiscard]] const runner_totals&
-    totals () const noexcept;
-
-  protected:
-    /**
-     * @brief The test node name.
-     *
-     * @note Derived classes may access this member directly in
-     * addition to the public `name()` getter.
-     */
-    const char* name_;
-
-    /**
-     * @brief Totals for the test node, including nested cases.
-     */
-    runner_totals totals_;
-  };
-
-  // ==========================================================================
-
-  /**
-   * @brief Non-template base for all runnable objects (suites and subtests).
-   *
-   * @details
-   * `runnable_base` extends `test_node` with the state that is shared by
-   * every runnable object but does not depend on the CRTP self-type:
-   * - a reference to the owning `runner`,
-   * - the object's own index within its parent container,
-   * - a sequential subtest index used when creating nested subtests, and
-   * - an owning vector of child `subtest` instances.
-   *
-   * Concrete runnable classes (`suite`, `subtest`) derive from
-   * `runnable<Self_T>` which in turn derives from `runnable_base`.
-   *
-   * The class is non-copyable and non-movable to preserve unique ownership
-   * and consistent state throughout the test session.
-   *
-   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
-   */
-  class runnable_base : public test_node
-  {
-  public:
-    /**
-     * @brief Constructs a `runnable_base` with a name, runner, and index.
-     *
-     * @param name The name used in reports.
-     * @param runner The test runner managing this object.
-     * @param own_index The positional index of this object within its parent.
-     */
-    runnable_base (const char* name, runner& runner, size_t own_index);
-
-    /**
-     * @brief Deleted copy constructor to prevent copying.
-     */
-    runnable_base (const runnable_base&) = delete;
-
-    /**
-     * @brief Deleted move constructor to prevent moving.
-     */
-    runnable_base (runnable_base&&) = delete;
-
-    /**
-     * @brief Deleted copy assignment operator to prevent copying.
-     */
-    runnable_base&
-    operator= (const runnable_base&) = delete;
-
-    /**
-     * @brief Deleted move assignment operator to prevent moving.
-     */
-    runnable_base&
-    operator= (runnable_base&&) = delete;
-
-    /**
-     * @brief Virtual destructor.
-     */
-    virtual ~runnable_base () override;
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * @brief Returns the positional index of this object within its parent.
-     *
-     * @par Parameters
-     *   None.
-     * @return The one-based own index.
-     */
-    [[nodiscard]] size_t
-    own_index () const noexcept;
-
-    /**
-     * @brief Sets the positional index of this object within its parent.
-     *
-     * @note This overload follows the same-name getter/setter pattern
-     * used throughout the framework: the getter is the `const` overload
-     * and the setter is the non-`const` single-argument overload.
-     *
-     * @param index The new index value.
-     * @par Returns
-     *   Nothing.
-     */
-    void
-    own_index (size_t index) noexcept;
-
-    /**
-     * @brief Returns the index of the most recently created child subtest.
-     *
-     * @par Parameters
-     *   None.
-     * @return The current child subtest sequential index.
-     */
-    [[nodiscard]] size_t
-    current_subtest_index () const noexcept;
-
-    /**
-     * @brief Increments and returns the child subtest sequential index.
-     *
-     * @par Parameters
-     *   None.
-     * @return The new index value after incrementing.
-     */
-    size_t
-    increment_subtest_index () noexcept;
-
-    /**
-     * @brief Returns the number of direct child subtests owned by this node.
-     *
-     * @par Parameters
-     *   None.
-     * @return The number of child subtests.
-     */
-    [[nodiscard]] size_t
-    children_subtests_count (void) const noexcept;
-
-    /**
-     * @brief Gets the test reporter associated with this test runnable.
-     *
-     * @par Parameters
-     *	None.
-     * @return A reference to the test reporter.
-     */
-    [[nodiscard]] class reporter&
-    reporter (void) const noexcept;
-
-    /**
-     * @brief Aborts test execution via the owning runner.
-     *
-     * @param sl The source location from which the abort is triggered.
-     * @par Returns
-     *   Does not return.
-     */
-    [[noreturn]] void
-    abort (const reflection::source_location& sl
-           = reflection::source_location::current ());
-
-    /**
-     * @brief Gets the test runner associated with this test runnable.
-     *
-     * @par Parameters
-     *	None.
-     * @return A reference to the test runner.
-     */
-    [[nodiscard]] class runner&
-    runner (void) const noexcept;
-
-  protected:
-    /**
-     * @brief Registers a newly constructed child subtest and executes it
-     * immediately.
-     *
-     * @param child_test Owning pointer to the newly created `subtest`.
-     * @param suite The parent `suite` to which execution results are reported.
-     * @par Returns
-     *   Nothing.
-     */
-    void
-    after_subtest_create_ (std::unique_ptr<class subtest> child_test,
-                           suite& suite);
-
-  protected:
-    /**
-     * @brief Reference to the test runner that owns this object.
-     */
-    class runner& runner_;
-
-    /**
-     * @brief The test index, counting from 1.
-     */
-    size_t own_index_;
-
-    /**
-     * @brief The subtest index, counting from 1.
+     * @brief Base class for runners and runable tests.
      *
      * @details
-     * This index is used for reporting and tracking the execution order of
-     * subtests within a suite, especially when nested subtests are
-     * involved. It is incremented for each subtest created, allowing for
-     * clear identification of subtests in reports and diagnostics.
+     * The `test_node` class provides the foundational interface for
+     * managing test within the µTest++ framework. It maintains counters
+     * for successful and failed checks, tracks test cases, and offers methods
+     * for marking the commencement and completion of test cases and suites.
+     *
+     * This class ensures consistent state management and reporting for all
+     * derived classes. It also provides utility methods for querying the
+     * node's name, the number of successful and failed checks, the number of
+     * test cases, and the overall result of the node.
+     *
+     * All members and methods are defined within the
+     * `micro_os_plus::micro_test_plus` namespace, ensuring clear separation
+     * from user code and minimising the risk of naming conflicts.
+     *
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
-    size_t current_subtest_index_ = 0;
+    class test_node
+    {
+    public:
+      /**
+       * @brief Constructs a test node.
+       *
+       * @param [in] name The test node name.
+       */
+      test_node (const char* name);
+
+      /**
+       * @brief Deleted copy constructor to prevent copying.
+       */
+      test_node (const test_node&) = delete;
+
+      /**
+       * @brief Deleted move constructor to prevent moving.
+       */
+      test_node (test_node&&) = delete;
+
+      /**
+       * @brief Deleted copy assignment operator to prevent copying.
+       */
+      test_node&
+      operator= (const test_node&) = delete;
+
+      /**
+       * @brief Deleted move assignment operator to prevent moving.
+       */
+      test_node&
+      operator= (test_node&&) = delete;
+
+      /**
+       * @brief Virtual destructor for the test_node class.
+       */
+      virtual ~test_node ();
+
+      // ----------------------------------------------------------------------
+
+      /**
+       * @brief Gets the node name.
+       *
+       * @par Parameters
+       *	None.
+       * @return A pointer to the null-terminated test node name.
+       */
+      [[nodiscard]] const char*
+      name (void) const noexcept;
+
+    public:
+      /**
+       * @brief Gets the totals for the test.
+       *
+       * @par Parameters
+       *	None.
+       * @return A reference to the runner_totals instance.
+       */
+      [[nodiscard]] runner_totals&
+      totals () noexcept;
+
+      /**
+       * @brief Gets the totals for the test (const overload).
+       *
+       * @par Parameters
+       *	None.
+       * @return A const reference to the runner_totals instance.
+       */
+      [[nodiscard]] const runner_totals&
+      totals () const noexcept;
+
+    protected:
+      /**
+       * @brief The test node name.
+       *
+       * @note Derived classes may access this member directly in
+       * addition to the public `name()` getter.
+       */
+      const char* name_;
+
+      /**
+       * @brief Totals for the test node, including nested cases.
+       */
+      runner_totals totals_;
+    };
+
+    // ========================================================================
 
     /**
-     * @brief Owning collection of direct child subtests.
+     * @brief Non-template base for all runnable objects (suites and subtests).
      *
      * @details
-     * Each call to `test()` appends a new `subtest` to this vector and
-     * runs it immediately. The vector retains ownership for the lifetime of
-     * the parent runnable.
-     */
-    std::vector<std::unique_ptr<subtest>> children_subtests_;
-  };
-
-  // ==========================================================================
-
-  /**
-   * @brief CRTP base class factoring out callable storage, rule-of-five, and
-   * `run()` logic shared by `subtest` and `suite`.
-   *
-   * @tparam Self_T The concrete derived class type (CRTP pattern). The stored
-   * callable receives a `Self_T&` reference when the test is executed.
-   *
-   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
-   */
-  template <typename Self_T>
-  class runnable : public runnable_base
-  {
-  public:
-    /**
-     * @brief Class template constructor.
+     * `runnable_base` extends `test_node` with the state that is shared by
+     * every runnable object but does not depend on the CRTP self-type:
+     * - a reference to the owning `runner`,
+     * - the object's own index within its parent container,
+     * - a sequential subtest index used when creating nested subtests, and
+     * - an owning vector of child `subtest` instances.
      *
-     * @tparam Callable_T The callable type.
-     * @tparam Args_T The additional argument types.
+     * Concrete runnable classes (`suite`, `subtest`) derive from
+     * `runnable<Self_T>` which in turn derives from `runnable_base`.
      *
-     * @param [in] name The test name, used in reports.
-     * @param [in] runner The test runner managing this test.
-     * @param [in] own_index The test index within the runner.
-     * @param [in] callable The callable invoked when the test runs.
-     * @param [in] arguments Additional arguments forwarded to the callable
-     * after the leading `Self_T&` reference.
+     * The class is non-copyable and non-movable to preserve unique ownership
+     * and consistent state throughout the test session.
+     *
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
-    template <typename Callable_T, typename... Args_T>
-    runnable (const char* name, class runner& runner, size_t own_index,
-              Callable_T&& callable, Args_T&&... arguments);
+    class runnable_base : public test_node
+    {
+    public:
+      /**
+       * @brief Constructs a `runnable_base` with a name, runner, and index.
+       *
+       * @param name The name used in reports.
+       * @param runner The test runner managing this object.
+       * @param own_index The positional index of this object within its
+       * parent.
+       */
+      runnable_base (const char* name, runner& runner, size_t own_index);
+
+      /**
+       * @brief Deleted copy constructor to prevent copying.
+       */
+      runnable_base (const runnable_base&) = delete;
+
+      /**
+       * @brief Deleted move constructor to prevent moving.
+       */
+      runnable_base (runnable_base&&) = delete;
+
+      /**
+       * @brief Deleted copy assignment operator to prevent copying.
+       */
+      runnable_base&
+      operator= (const runnable_base&) = delete;
+
+      /**
+       * @brief Deleted move assignment operator to prevent moving.
+       */
+      runnable_base&
+      operator= (runnable_base&&) = delete;
+
+      /**
+       * @brief Virtual destructor.
+       */
+      virtual ~runnable_base () override;
+
+      // ----------------------------------------------------------------------
+
+      /**
+       * @brief Returns the positional index of this object within its parent.
+       *
+       * @par Parameters
+       *   None.
+       * @return The one-based own index.
+       */
+      [[nodiscard]] size_t
+      own_index () const noexcept;
+
+      /**
+       * @brief Sets the positional index of this object within its parent.
+       *
+       * @note This overload follows the same-name getter/setter pattern
+       * used throughout the framework: the getter is the `const` overload
+       * and the setter is the non-`const` single-argument overload.
+       *
+       * @param index The new index value.
+       * @par Returns
+       *   Nothing.
+       */
+      void
+      own_index (size_t index) noexcept;
+
+      /**
+       * @brief Returns the index of the most recently created child subtest.
+       *
+       * @par Parameters
+       *   None.
+       * @return The current child subtest sequential index.
+       */
+      [[nodiscard]] size_t
+      current_subtest_index () const noexcept;
+
+      /**
+       * @brief Increments and returns the child subtest sequential index.
+       *
+       * @par Parameters
+       *   None.
+       * @return The new index value after incrementing.
+       */
+      size_t
+      increment_subtest_index () noexcept;
+
+      /**
+       * @brief Returns the number of direct child subtests owned by this node.
+       *
+       * @par Parameters
+       *   None.
+       * @return The number of child subtests.
+       */
+      [[nodiscard]] size_t
+      children_subtests_count (void) const noexcept;
+
+      /**
+       * @brief Gets the test reporter associated with this test runnable.
+       *
+       * @par Parameters
+       *	None.
+       * @return A reference to the test reporter.
+       */
+      [[nodiscard]] class reporter&
+      reporter (void) const noexcept;
+
+      /**
+       * @brief Aborts test execution via the owning runner.
+       *
+       * @param sl The source location from which the abort is triggered.
+       * @par Returns
+       *   Does not return.
+       */
+      [[noreturn]] void
+      abort (const reflection::source_location& sl
+             = reflection::source_location::current ());
+
+      /**
+       * @brief Gets the test runner associated with this test runnable.
+       *
+       * @par Parameters
+       *	None.
+       * @return A reference to the test runner.
+       */
+      [[nodiscard]] class runner&
+      runner (void) const noexcept;
+
+    protected:
+      /**
+       * @brief Registers a newly constructed child subtest and executes it
+       * immediately.
+       *
+       * @param child_test Owning pointer to the newly created `subtest`.
+       * @param suite The parent `suite` to which execution results are
+       * reported.
+       * @par Returns
+       *   Nothing.
+       */
+      void
+      after_subtest_create_ (std::unique_ptr<subtest> child_test,
+                             suite& suite);
+
+    protected:
+      /**
+       * @brief Reference to the test runner that owns this object.
+       */
+      class runner& runner_;
+
+      /**
+       * @brief The test index, counting from 1.
+       */
+      size_t own_index_;
+
+      /**
+       * @brief The subtest index, counting from 1.
+       *
+       * @details
+       * This index is used for reporting and tracking the execution order of
+       * subtests within a suite, especially when nested subtests are
+       * involved. It is incremented for each subtest created, allowing for
+       * clear identification of subtests in reports and diagnostics.
+       */
+      size_t current_subtest_index_ = 0;
+
+      /**
+       * @brief Owning collection of direct child subtests.
+       *
+       * @details
+       * Each call to `test()` appends a new `subtest` to this vector and
+       * runs it immediately. The vector retains ownership for the lifetime of
+       * the parent runnable.
+       */
+      std::vector<std::unique_ptr<subtest>> children_subtests_;
+    };
+
+    // ========================================================================
 
     /**
-     * @brief Deleted copy constructor to prevent copying.
+     * @brief CRTP base class factoring out callable storage, rule-of-five, and
+     * `run()` logic shared by `subtest` and `suite`.
+     *
+     * @tparam Self_T The concrete derived class type (CRTP pattern). The
+     * stored callable receives a `Self_T&` reference when the test is
+     * executed.
+     *
+     * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
-    runnable (const runnable&) = delete;
+    template <typename Self_T>
+    class runnable : public detail::runnable_base
+    {
+    public:
+      /**
+       * @brief Class template constructor.
+       *
+       * @tparam Callable_T The callable type.
+       * @tparam Args_T The additional argument types.
+       *
+       * @param [in] name The test name, used in reports.
+       * @param [in] runner The test runner managing this test.
+       * @param [in] own_index The test index within the runner.
+       * @param [in] callable The callable invoked when the test runs.
+       * @param [in] arguments Additional arguments forwarded to the callable
+       * after the leading `Self_T&` reference.
+       */
+      template <typename Callable_T, typename... Args_T>
+      runnable (const char* name, class runner& runner, size_t own_index,
+                Callable_T&& callable, Args_T&&... arguments);
 
-    /**
-     * @brief Deleted move constructor to prevent moving.
-     */
-    runnable (runnable&&) = delete;
+      /**
+       * @brief Deleted copy constructor to prevent copying.
+       */
+      runnable (const runnable&) = delete;
 
-    /**
-     * @brief Deleted copy assignment operator to prevent copying.
-     */
-    runnable&
-    operator= (const runnable&) = delete;
+      /**
+       * @brief Deleted move constructor to prevent moving.
+       */
+      runnable (runnable&&) = delete;
 
-    /**
-     * @brief Deleted move assignment operator to prevent moving.
-     */
-    runnable&
-    operator= (runnable&&) = delete;
+      /**
+       * @brief Deleted copy assignment operator to prevent copying.
+       */
+      runnable&
+      operator= (const runnable&) = delete;
 
-    /**
-     * @brief Virtual destructor.
-     */
-    virtual ~runnable () override;
+      /**
+       * @brief Deleted move assignment operator to prevent moving.
+       */
+      runnable&
+      operator= (runnable&&) = delete;
+
+      /**
+       * @brief Virtual destructor.
+       */
+      virtual ~runnable () override;
+
+      // ----------------------------------------------------------------------
+
+      /**
+       * @brief Runs the test function by invoking the stored callable with the
+       * derived self instance.
+       *
+       * @par Parameters
+       *   None.
+       * @par Returns
+       *   Nothing.
+       */
+      virtual void
+      run (void) = 0;
+
+    protected:
+      /**
+       * @brief Callable storing the test body and any bound arguments.
+       * Invoked with a reference to the derived `Self_T` instance.
+       */
+      std::function<void (Self_T&)> callable_;
+    };
 
     // ------------------------------------------------------------------------
-
-    /**
-     * @brief Runs the test function by invoking the stored callable with the
-     * derived self instance.
-     *
-     * @par Parameters
-     *   None.
-     * @par Returns
-     *   Nothing.
-     */
-    virtual void
-    run (void) = 0;
-
-  protected:
-    /**
-     * @brief Callable storing the test body and any bound arguments.
-     * Invoked with a reference to the derived `Self_T` instance.
-     */
-    std::function<void (Self_T&)> callable_;
-  };
+  } // namespace detail
 
   // ==========================================================================
 
@@ -495,7 +506,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */
-  class subtest : public runnable<subtest>
+  class subtest : public detail::runnable<subtest>
   {
   public:
     /**
@@ -665,7 +676,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */
-  class suite : public runnable<suite>
+  class suite : public detail::runnable<suite>
   {
   public:
     /**
@@ -740,7 +751,7 @@ namespace micro_os_plus::micro_test_plus
      *	None.
      * @return A reference to the timestamps instance.
      */
-    [[nodiscard]] timestamps&
+    [[nodiscard]] detail::timestamps&
     timings () noexcept;
 
     /**
@@ -750,7 +761,7 @@ namespace micro_os_plus::micro_test_plus
      *	None.
      * @return A const reference to the timestamps instance.
      */
-    [[nodiscard]] const timestamps&
+    [[nodiscard]] const detail::timestamps&
     timings () const noexcept;
 
     /**
@@ -768,7 +779,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Timing measurements for this suite's execution.
      */
-    timestamps timings_;
+    detail::timestamps timings_;
   };
 
   // ==========================================================================

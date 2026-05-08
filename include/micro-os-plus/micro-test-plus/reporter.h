@@ -88,6 +88,7 @@
 namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
+
   /**
    * @brief The verbosity levels for test reporting.
    *
@@ -145,11 +146,10 @@ namespace micro_os_plus::micro_test_plus
    * @param level The number of four-space indentation levels.
    * @return An `indent_t` value for use with `operator<<`.
    */
-  [[nodiscard]] inline indent_t
-  indent (size_t level)
-  {
-    return { level };
-  }
+  [[nodiscard]] indent_t
+  indent (size_t level);
+
+  // ==========================================================================
 
   /**
    * @brief Reporter to display test results, including operand values and
@@ -438,7 +438,7 @@ namespace micro_os_plus::micro_test_plus
      * @return Reference to the `expression_formatter` instance used by this
      * reporter.
      */
-    expression_formatter&
+    detail::expression_formatter&
     expression ();
 
     // ------------------------------------------------------------------------
@@ -526,7 +526,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief ANSI colour codes for output formatting.
      */
-    colours colours_{};
+    detail::colours colours_{};
 
     /**
      * @brief Output accumulation buffer.
@@ -547,7 +547,7 @@ namespace micro_os_plus::micro_test_plus
      * `detail::deferred_reporter` to pre-format expressions at
      * construction time.
      */
-    expression_formatter expression_{ colours_ };
+    detail::expression_formatter expression_{ colours_ };
 
     /**
      * @brief Controls whether to add an empty line between successful test

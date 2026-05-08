@@ -86,6 +86,8 @@ namespace micro_os_plus::micro_test_plus
 
   class suite;
 
+  // ==========================================================================
+
   /**
    * @ingroup micro-test-plus-runners
    * @brief The test runner for the µTest++ framework.
@@ -108,7 +110,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
    */
-  class runner : public test_node
+  class runner : public detail::test_node
   {
   public:
     /**
@@ -226,7 +228,7 @@ namespace micro_os_plus::micro_test_plus
      *	 None.
      * @return A reference to the timestamps instance.
      */
-    [[nodiscard]] timestamps&
+    [[nodiscard]] detail::timestamps&
     timings () noexcept;
 
     /**
@@ -236,7 +238,7 @@ namespace micro_os_plus::micro_test_plus
      *	 None.
      * @return A const reference to the timestamps instance.
      */
-    [[nodiscard]] const timestamps&
+    [[nodiscard]] const detail::timestamps&
     timings () const noexcept;
 
     /**
@@ -294,7 +296,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Timings for this runner.
      */
-    timestamps timings_;
+    detail::timestamps timings_;
   };
 
   // ==========================================================================

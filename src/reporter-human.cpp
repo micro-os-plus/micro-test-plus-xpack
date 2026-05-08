@@ -91,7 +91,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__APPLE__) || defined(__linux__) || defined(__unix__)
     if (isatty (fileno (stdout)))
       {
-        colours_ = colours_red_green;
+        colours_ = detail::colours_red_green;
       }
 #endif
   }
