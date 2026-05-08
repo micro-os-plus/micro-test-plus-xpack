@@ -64,6 +64,7 @@
 #include <memory>
 
 #include "runner-totals.h"
+#include "type-traits.h"
 #include "timings.h"
 
 // ----------------------------------------------------------------------------
@@ -947,6 +948,11 @@ namespace micro_os_plus::micro_test_plus
 // ----------------------------------------------------------------------------
 
 #endif // __cplusplus
+
+// ============================================================================
+// Templates & constexpr implementations.
+
+// #include "inlines/test-inlines.h"
 
 // ----------------------------------------------------------------------------
 

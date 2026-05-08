@@ -60,7 +60,7 @@
 
 #include <string_view>
 
-#include "detail.h"
+#include "type-traits.h"
 
 // ----------------------------------------------------------------------------
 

@@ -57,6 +57,8 @@
 #include <cstdio>
 #include <string>
 
+#include "type-traits.h"
+
 // ----------------------------------------------------------------------------
 
 #if defined(__GNUC__)

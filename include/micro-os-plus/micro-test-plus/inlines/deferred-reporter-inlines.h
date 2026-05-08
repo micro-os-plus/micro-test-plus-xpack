@@ -64,6 +64,8 @@
 #include <charconv>
 #include <cstdio>
 
+#include "micro-os-plus/micro-test-plus/expression-formatter.h"
+
 // ----------------------------------------------------------------------------
 
 #if defined(__GNUC__)

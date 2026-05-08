@@ -63,39 +63,64 @@
 #include <micro-os-plus/config.h>
 #endif // MICRO_OS_PLUS_INCLUDE_CONFIG_H
 
+// No deps.
+#include "micro-test-plus/math.h"
+
+// Requires math.h.
 #include "micro-test-plus/type-traits.h"
+
+// No deps.
 #include "micro-test-plus/reflection.h"
 
+// Requires type-traits.h.
 #include "micro-test-plus/detail.h"
 
-#include "micro-test-plus/math.h"
+// Requires type-traits.h, math.h.
 #include "micro-test-plus/literals.h"
+
+// No deps.
 #include "micro-test-plus/function-comparators.h"
+
+// No deps.
 #include "micro-test-plus/exceptions.h"
+
+// Requires type-traits.h + detail.h, 
 #include "micro-test-plus/operators.h"
 
+// Requires type-traits.h, detail.h.
 #include "micro-test-plus/expression-formatter.h"
 
+// Requires type-traits.h, detail.h, expression-formatter.h.
 #include "micro-test-plus/reporter.h"
 
+// Requires type-traits.h + expression-formatter.h.
 #include "micro-test-plus/deferred-reporter.h"
 
-// Requires deferred_reporter.
-#include "micro-test-plus/test.h"
-
-#include "micro-test-plus/runner.h"
-
+// No deps.
 #include "micro-test-plus/runner-totals.h"
 
+// Requires reporter.h.
 #include "micro-test-plus/reporter-human.h"
+
+// Requires reporter.h.
 #include "micro-test-plus/reporter-tap.h"
 
+// No deps.
 #include "micro-test-plus/utility.h"
 
-// ============================================================================
-// Templates & constexpr implementations.
+// ----------------------------------------------------------------------------
+// Warning: circular dependencies!
 
+// Requires runner-totals.h, type-traits.h and timings.h
+#include "micro-test-plus/test.h"
+
+// Requires timings.h, test.h (detail::test_node, top_suite).
+#include "micro-test-plus/runner.h"
+
+// TODO: find out why it cannot be included in test.h.
+// Requires deferred-reporter.h, type-traits.h, reporter.h
 #include "micro-test-plus/inlines/test-inlines.h"
+
 
 // ----------------------------------------------------------------------------
 

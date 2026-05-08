@@ -52,6 +52,10 @@
 
 // ----------------------------------------------------------------------------
 
+#include "micro-os-plus/micro-test-plus/detail.h"
+
+// ----------------------------------------------------------------------------
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Waggregate-return"

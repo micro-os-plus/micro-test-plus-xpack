@@ -60,7 +60,6 @@
 #include <functional>
 #include <memory>
 
-#include "reporter.h"
 #include "timings.h"
 #include "test.h"
 
@@ -85,6 +84,8 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   class suite;
+  class top_suite;
+  class reporter;
 
   // ==========================================================================
 
