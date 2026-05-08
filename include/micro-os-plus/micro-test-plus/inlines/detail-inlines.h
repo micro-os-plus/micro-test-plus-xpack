@@ -54,6 +54,10 @@
 
 // ----------------------------------------------------------------------------
 
+#include <charconv>
+
+// ----------------------------------------------------------------------------
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Waggregate-return"
@@ -624,6 +628,71 @@ namespace micro_os_plus::micro_test_plus
     }
 
 #endif // defined(__cpp_exceptions)
+
+    // ------------------------------------------------------------------------
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
+#endif
+
+    /**
+     * @details
+     * For `long double`, a platform-specific path is chosen:
+     * - On Windows and on platforms where `long double` has the same
+     *   storage width as `double` (e.g., ARM, RISC-V), the value is cast
+     *   to `double` and formatted with `std::to_chars`.
+     * - On x86-64 Linux/macOS with 80-bit extended precision, `snprintf`
+     *   with `%Lg` is used as a portable fallback because
+     *   `std::to_chars` for `long double` may be unavailable when linking
+     *   with `lld`.
+     *
+     * For all other numeric types, `std::to_chars` is called directly,
+     * providing locale-independent, allocation-free formatting.
+     */
+    template <class T>
+      requires std::is_arithmetic_v<T>
+    void
+    append_number_ (std::string& buffer, const T v)
+    {
+      char buf[32];
+      if constexpr (std::is_same_v<T, long double>)
+        {
+#if defined(_WIN32) \
+    || (defined(__SIZEOF_LONG_DOUBLE__) \
+        && __SIZEOF_LONG_DOUBLE__ == __SIZEOF_DOUBLE__)
+          // On Windows (all toolchains: MinGW, Clang, MSVC), the C runtime
+          // does not handle the %Lg printf specifier correctly for 80-bit
+          // long double, producing garbage output. On platforms where long
+          // double has the same width as double (ARM, RISC-V), the cast is
+          // lossless. In both cases, cast to double and use std::to_chars.
+          const auto [ptr, ec] = std::to_chars (buf, buf + sizeof (buf),
+                                                static_cast<double> (v));
+          if (ec == std::errc{})
+            buffer.append (buf, ptr);
+#else
+          // On x86-64 Linux/macOS with 80-bit extended-precision long double,
+          // std::to_chars for long double may be unavailable (e.g., with lld).
+          // Use snprintf as a portable fallback; %Lg is supported correctly
+          // by glibc and libc++ on these platforms.
+          snprintf (buf, sizeof (buf), "%Lg", v);
+          buffer.append (buf);
+#endif
+        }
+      else
+        {
+          const auto [ptr, ec] = std::to_chars (buf, buf + sizeof (buf), v);
+          if (ec == std::errc{})
+            buffer.append (buf, ptr);
+        }
+    }
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
 
     // ------------------------------------------------------------------------
 

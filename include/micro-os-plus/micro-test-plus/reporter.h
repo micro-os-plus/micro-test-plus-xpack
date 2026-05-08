@@ -69,6 +69,7 @@
 
 #include "type-traits.h"
 #include "detail.h"
+#include "expression-formatter.h"
 
 // ----------------------------------------------------------------------------
 
@@ -87,47 +88,6 @@
 namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
-
-  /**
-   * @struct colours
-   * @brief Colours used to highlight pass and fail results in test reports.
-   *
-   * @details
-   * The `colours` structure defines ANSI escape sequences for terminal output,
-   * enabling colour-coded highlighting of test outcomes. The `pass` member
-   * specifies the colour for successful results (typically green), while the
-   * `fail` member specifies the colour for failed results (typically red). The
-   * `none` member resets the colour to the terminal default.
-   *
-   * These colour codes enhance the clarity and professionalism of test reports
-   * by making it immediately apparent which tests have passed or failed,
-   * thereby improving the overall user experience when reviewing test results.
-   *
-   * @var colours::none
-   * ANSI escape sequence to reset the terminal colour to default.
-   * @var colours::pass
-   * ANSI escape sequence to set the terminal colour for passing results
-   * (green).
-   * @var colours::fail
-   * ANSI escape sequence to set the terminal colour for failing results (red).
-   *
-   * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
-   */
-  struct colours
-  {
-    const char* none = ""; /**< @brief Terminal colour reset sequence. */
-    const char* pass
-        = ""; /**< @brief Terminal colour sequence for passing tests. */
-    const char* fail
-        = ""; /**< @brief Terminal colour sequence for failing tests. */
-  };
-
-  inline constexpr colours colours_red_green = {
-    "\033[0m", /**< @brief Terminal colour reset sequence. */
-    "\033[32m", /**< @brief Green colour sequence for passing tests. */
-    "\033[31m" /**< @brief Red colour sequence for failing tests. */
-  };
-
   /**
    * @brief The verbosity levels for test reporting.
    *
@@ -279,121 +239,17 @@ namespace micro_os_plus::micro_test_plus
     reporter& operator<< (std::nullptr_t);
 
     /**
-     * @brief Output operator for signed char values.
+     * @brief Output operator for arithmetic types, with type suffixes.
      *
-     * @param c The signed char value to output.
+     * @tparam T The arithmetic type.
+     *
+     * @param v The value to output.
      * @return Reference to the current reporter instance.
      */
+    template <class T>
+      requires std::is_arithmetic_v<T>
     reporter&
-    operator<< (signed char c);
-
-    /**
-     * @brief Output operator for unsigned char values.
-     *
-     * @param c The unsigned char value to output.
-     * @return Reference to the current reporter instance.
-     */
-    reporter&
-    operator<< (unsigned char c);
-
-    /**
-     * @brief Output operator for signed short values.
-     *
-     * @param v The signed short value to output.
-     * @return Reference to the current reporter instance.
-     */
-    reporter&
-    operator<< (signed short v);
-
-    /**
-     * @brief Output operator for unsigned short values.
-     *
-     * @param v The unsigned short value to output.
-     * @return Reference to the current reporter instance.
-     */
-    reporter&
-    operator<< (unsigned short v);
-
-    /**
-     * @brief Output operator for signed int values.
-     *
-     * @param v The signed int value to output.
-     * @return Reference to the current reporter instance.
-     */
-    reporter&
-    operator<< (signed int v);
-
-    /**
-     * @brief Output operator for unsigned int values.
-     *
-     * @param v The unsigned int value to output.
-     * @return Reference to the current reporter instance.
-     */
-    reporter&
-    operator<< (unsigned int v);
-
-    /**
-     * @brief Output operator for signed long values.
-     *
-     * @param v The signed long value to output.
-     * @return Reference to the current reporter instance.
-     */
-    reporter&
-    operator<< (signed long v);
-
-    /**
-     * @brief Output operator for unsigned long values.
-     *
-     * @param v The unsigned long value to output.
-     * @return Reference to the current reporter instance.
-     */
-    reporter&
-    operator<< (unsigned long v);
-
-    /**
-     * @brief Output operator for signed long long values.
-     *
-     * @param v The signed long long value to output.
-     * @return Reference to the current reporter instance.
-     */
-    reporter&
-    operator<< (signed long long v);
-
-    /**
-     * @brief Output operator for unsigned long long values.
-     *
-     * @param v The unsigned long long value to output.
-     * @return Reference to the current reporter instance.
-     */
-    reporter&
-    operator<< (unsigned long long v);
-
-    /**
-     * @brief Output operator for float values.
-     *
-     * @param v The float value to output.
-     * @return Reference to the current reporter instance.
-     */
-    reporter&
-    operator<< (float v);
-
-    /**
-     * @brief Output operator for double values.
-     *
-     * @param v The double value to output.
-     * @return Reference to the current reporter instance.
-     */
-    reporter&
-    operator<< (double v);
-
-    /**
-     * @brief Output operator for long double values.
-     *
-     * @param v The long double value to output.
-     * @return Reference to the current reporter instance.
-     */
-    reporter&
-    operator<< (long double v);
+    operator<< (T v);
 
     /**
      * @brief Output operator to display any pointer.
@@ -418,202 +274,6 @@ namespace micro_os_plus::micro_test_plus
 
     // ------------------------------------------------------------------------
     // Specific operators.
-
-    /**
-     * @brief Output operator for types with a getter.
-     *
-     * @tparam T The type with a getter method.
-     *
-     * @param t The object to output.
-     * @return Reference to the current reporter instance.
-     */
-    template <class T>
-      requires type_traits::is_op<T>
-    reporter&
-    operator<< (const T& t);
-
-    /**
-     * @brief Output operator to display genuine integers, without the type
-     * suffix.
-     *
-     * @tparam T The underlying integral type.
-     *
-     * @param v The strongly-typed integral value to output.
-     * @return Reference to the current reporter instance.
-     */
-    template <class T>
-    reporter&
-    operator<< (const type_traits::genuine_integral_value<T>& v);
-
-    /**
-     * @brief Output operator to display containers. Iterates all members.
-     *
-     * @tparam T The container type.
-     *
-     * @param t The container to output.
-     * @return Reference to the current reporter instance.
-     */
-    template <class T>
-      requires (type_traits::container_like<T>
-                and not type_traits::has_npos<T>)
-    reporter&
-    operator<< (const T& t);
-
-    /**
-     * @brief Output operator to display eq() expressions.
-     *
-     * @tparam Lhs_T The left-hand side type.
-     * @tparam Rhs_T The right-hand side type.
-     *
-     * @param op The equality comparator expression.
-     * @return Reference to the current reporter instance.
-     */
-    template <class Lhs_T, class Rhs_T>
-    reporter&
-    operator<< (const detail::eq_<Lhs_T, Rhs_T>& op);
-
-    /**
-     * @brief Output operator to display ne() expressions.
-     *
-     * @tparam Lhs_T The left-hand side type.
-     * @tparam Rhs_T The right-hand side type.
-     *
-     * @param op The inequality comparator expression.
-     * @return Reference to the current reporter instance.
-     */
-    template <class Lhs_T, class Rhs_T>
-    reporter&
-    operator<< (const detail::ne_<Lhs_T, Rhs_T>& op);
-
-    /**
-     * @brief Output operator to display gt() expressions.
-     *
-     * @tparam Lhs_T The left-hand side type.
-     * @tparam Rhs_T The right-hand side type.
-     *
-     * @param op The greater-than comparator expression.
-     * @return Reference to the current reporter instance.
-     */
-    template <class Lhs_T, class Rhs_T>
-    reporter&
-    operator<< (const detail::gt_<Lhs_T, Rhs_T>& op);
-
-    /**
-     * @brief Output operator to display ge() expressions.
-     *
-     * @tparam Lhs_T The left-hand side type.
-     * @tparam Rhs_T The right-hand side type.
-     *
-     * @param op The greater-than-or-equal-to comparator expression.
-     * @return Reference to the current reporter instance.
-     */
-    template <class Lhs_T, class Rhs_T>
-    reporter&
-    operator<< (const detail::ge_<Lhs_T, Rhs_T>& op);
-
-    /**
-     * @brief Output operator to display lt() expressions.
-     *
-     * @tparam Lhs_T The left-hand side type.
-     * @tparam Rhs_T The right-hand side type.
-     *
-     * @param op The less-than comparator expression.
-     * @return Reference to the current reporter instance.
-     */
-    template <class Lhs_T, class Rhs_T>
-    reporter&
-    operator<< (const detail::lt_<Rhs_T, Lhs_T>& op);
-
-    /**
-     * @brief Output operator to display le() expressions.
-     *
-     * @tparam Lhs_T The left-hand side type.
-     * @tparam Rhs_T The right-hand side type.
-     *
-     * @param op The less-than-or-equal-to comparator expression.
-     * @return Reference to the current reporter instance.
-     */
-    template <class Lhs_T, class Rhs_T>
-    reporter&
-    operator<< (const detail::le_<Rhs_T, Lhs_T>& op);
-
-    /**
-     * @brief Output operator to display and() expressions.
-     *
-     * @tparam Lhs_T The left-hand side type.
-     * @tparam Rhs_T The right-hand side type.
-     *
-     * @param op The logical conjunction (AND) expression.
-     * @return Reference to the current reporter instance.
-     */
-    template <class Lhs_T, class Rhs_T>
-    reporter&
-    operator<< (const detail::and_<Lhs_T, Rhs_T>& op);
-
-    /**
-     * @brief Output operator to display or() expressions.
-     *
-     * @tparam Lhs_T The left-hand side type.
-     * @tparam Rhs_T The right-hand side type.
-     *
-     * @param op The logical disjunction (OR) expression.
-     * @return Reference to the current reporter instance.
-     */
-    template <class Lhs_T, class Rhs_T>
-    reporter&
-    operator<< (const detail::or_<Lhs_T, Rhs_T>& op);
-
-    /**
-     * @brief Output operator to display not() expressions.
-     *
-     * @tparam T The operand type.
-     *
-     * @param op The logical negation expression.
-     * @return Reference to the current reporter instance.
-     */
-    template <class T>
-    reporter&
-    operator<< (const detail::not_<T>& op);
-
-#if defined(__cpp_exceptions)
-    /**
-     * @brief Output operator to display throws expressions for a specific
-     * exception type.
-     *
-     * @tparam Expr_T The expression type.
-     * @tparam Exception_T The exception type.
-     *
-     * @param op The throws comparator expression.
-     * @return Reference to the current reporter instance.
-     */
-    template <class Expr_T, class Exception_T>
-    reporter&
-    operator<< (const detail::throws_<Expr_T, Exception_T>& op);
-
-    /**
-     * @brief Output operator to display throws expressions for any exception.
-     *
-     * @tparam Expr_T The expression type.
-     *
-     * @param op The throws comparator expression.
-     * @return Reference to the current reporter instance.
-     */
-    template <class Expr_T>
-    reporter&
-    operator<< (const detail::throws_<Expr_T, void>& op);
-
-    /**
-     * @brief Output operator to display nothrow expressions.
-     *
-     * @tparam Expr_T The expression type.
-     *
-     * @param op The nothrow comparator expression.
-     * @return Reference to the current reporter instance.
-     */
-    template <class Expr_T>
-    reporter&
-    operator<< (const detail::nothrow_<Expr_T>& op);
-#endif
 
     // ------------------------------------------------------------------------
 
@@ -848,22 +508,6 @@ namespace micro_os_plus::micro_test_plus
     output_fail_suffix_ (const reflection::source_location& location,
                          bool abort, subtest& subtest) = 0;
 
-    /**
-     * @brief Appends the string representation of a numeric value to a
-     * buffer, using `std::to_chars` for allocation-free, locale-independent
-     * formatting.
-     *
-     * @tparam T The numeric type to format.
-     *
-     * @param buffer The string to append to.
-     * @param v The value to format.
-     * @par Returns
-     *   Nothing.
-     */
-    template <class T>
-    static void
-    append_number_ (std::string& buffer, T v);
-
   protected:
     /**
      * @brief The verbosity level for test reporting.
@@ -876,9 +520,25 @@ namespace micro_os_plus::micro_test_plus
     colours colours_{};
 
     /**
-     * @brief Internal output buffer for accumulating report content.
+     * @brief Output accumulation buffer.
+     *
+     * @details
+     * Accumulates all reporter output until it is written to standard
+     * output or the output file via `write_buffer_to_stdout()` or
+     * `write_buffer_to_file_()`.
      */
     std::string buffer_{};
+
+    /**
+     * @brief Expression formatter for pass and fail reporting.
+     *
+     * @details
+     * Used in `pass()` and `fail()` to format expression values before
+     * appending the result to `buffer_`. Will also be used by
+     * `detail::deferred_reporter` to pre-format expressions at
+     * construction time.
+     */
+    expression_formatter formatter_{ colours_ };
 
     /**
      * @brief Controls whether to add an empty line between successful test

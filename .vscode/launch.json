@@ -26,12 +26,12 @@
       "name": "(lldb) native-cmake-debug unit-test",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/native-cmake-debug/platform-bin/unit-test",
+      "program": "${workspaceFolder}/tests/build/native-cmake-sys-debug/platform-bin/unit-test",
       "args": [
         "--verbose"
       ],
       "stopAtEntry": true,
-      "cwd": "${workspaceFolder}/build/native-cmake-debug/platform-bin/",
+      "cwd": "${workspaceFolder}/tests/build/native-cmake-sys-debug/platform-bin/",
       "environment": [],
       "externalConsole": false,
       "MIMode": "lldb"
