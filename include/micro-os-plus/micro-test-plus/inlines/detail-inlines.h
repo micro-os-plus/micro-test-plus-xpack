@@ -83,7 +83,7 @@ namespace micro_os_plus::micro_test_plus
      * `if constexpr` with an inline `requires` expression.
      */
     template <class T>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     get (const T& t)
     {
       if constexpr (requires { t.get (); })

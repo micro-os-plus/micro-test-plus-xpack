@@ -92,7 +92,7 @@ namespace micro_os_plus::micro_test_plus
    * Returns the ANSI colour code for pass or fail, depending on the boolean
    * condition provided.
    */
-  [[nodiscard]] inline auto
+  inline auto
   expression_formatter::colour_ (const bool cond) const
   {
     return cond ? colours_.pass : colours_.fail;
@@ -104,7 +104,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Returns a const reference to the internal `buffer_` string.
    */
-  [[nodiscard]] inline const std::string&
+  inline const std::string&
   expression_formatter::str () const noexcept
   {
     return buffer_;
@@ -115,7 +115,7 @@ namespace micro_os_plus::micro_test_plus
    * Returns `buffer_.c_str()`, providing a pointer to the
    * null-terminated contents of the internal buffer.
    */
-  [[nodiscard]] inline const char*
+  inline const char*
   expression_formatter::c_str () const noexcept
   {
     return buffer_.c_str ();
@@ -137,7 +137,7 @@ namespace micro_os_plus::micro_test_plus
    * Returns `buffer_.empty()`, indicating whether the accumulated
    * string has zero length.
    */
-  [[nodiscard]] inline bool
+  inline bool
   expression_formatter::empty () const noexcept
   {
     return buffer_.empty ();
@@ -453,7 +453,7 @@ namespace micro_os_plus::micro_test_plus
   template <class Callable_T, class Exception_T>
   expression_formatter&
   expression_formatter::operator<< (
-      const detail::throws_<Callable_T, Exception_T>& op [[maybe_unused]])
+      const detail::throws_<Callable_T, Exception_T>& op)
   {
     return (*this << colour_ (op) << "throws<"
                   << reflection::type_name<Exception_T> () << ">"
@@ -472,8 +472,8 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Callable_T>
   expression_formatter&
-  expression_formatter::operator<< (const detail::throws_<Callable_T, void>& op
-                                    [[maybe_unused]])
+  expression_formatter::operator<< (
+      const detail::throws_<Callable_T, void>& op)
   {
     return (*this << colour_ (op) << "throws" << colours_.none);
   }
@@ -490,8 +490,7 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Callable_T>
   expression_formatter&
-  expression_formatter::operator<< (const detail::nothrow_<Callable_T>& op
-                                    [[maybe_unused]])
+  expression_formatter::operator<< (const detail::nothrow_<Callable_T>& op)
   {
     return (*this << colour_ (op) << "nothrow" << colours_.none);
   }

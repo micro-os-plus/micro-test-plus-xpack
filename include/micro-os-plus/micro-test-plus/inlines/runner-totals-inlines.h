@@ -93,7 +93,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Returns the value of the `successful_checks_` counter.
    */
-  [[nodiscard]] inline size_t
+  inline size_t
   runner_totals::successful_checks () const noexcept
   {
     return successful_checks_;
@@ -103,7 +103,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Returns the value of the `failed_checks_` counter.
    */
-  [[nodiscard]] inline size_t
+  inline size_t
   runner_totals::failed_checks () const noexcept
   {
     return failed_checks_;
@@ -113,7 +113,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Returns the sum of `successful_checks_` and `failed_checks_`.
    */
-  [[nodiscard]] inline size_t
+  inline size_t
   runner_totals::executed_checks () const noexcept
   {
     return successful_checks_ + failed_checks_;
@@ -123,7 +123,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Returns the value of the `executed_subtests_` counter.
    */
-  [[nodiscard]] inline size_t
+  inline size_t
   runner_totals::executed_subtests () const noexcept
   {
     return executed_subtests_;
@@ -134,7 +134,7 @@ namespace micro_os_plus::micro_test_plus
    * A runner with no checks at all is considered successful, as it
    * did not fail any check.
    */
-  [[nodiscard]] inline bool
+  inline bool
   runner_totals::was_successful (void) const noexcept
   {
     return failed_checks_ == 0;

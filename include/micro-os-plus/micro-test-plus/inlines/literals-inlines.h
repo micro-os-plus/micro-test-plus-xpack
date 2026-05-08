@@ -96,7 +96,7 @@ namespace micro_os_plus::micro_test_plus
      * and reporting mechanisms.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator""_i ()
     {
       return type_traits::integral_constant<math::num<int, Cs...> ()>{};
@@ -114,7 +114,7 @@ namespace micro_os_plus::micro_test_plus
      * and reporting mechanisms.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator""_s ()
     {
       return type_traits::integral_constant<math::num<short, Cs...> ()>{};
@@ -132,7 +132,7 @@ namespace micro_os_plus::micro_test_plus
      * comparators and reporting mechanisms.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator""_c ()
     {
       return type_traits::integral_constant<math::num<char, Cs...> ()>{};
@@ -150,7 +150,7 @@ namespace micro_os_plus::micro_test_plus
      * and reporting mechanisms.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator""_sc ()
     {
       return type_traits::integral_constant<
@@ -169,7 +169,7 @@ namespace micro_os_plus::micro_test_plus
      * and reporting mechanisms.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator""_l ()
     {
       return type_traits::integral_constant<math::num<long, Cs...> ()>{};
@@ -187,7 +187,7 @@ namespace micro_os_plus::micro_test_plus
      * and reporting mechanisms.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator""_ll ()
     {
       return type_traits::integral_constant<math::num<long long, Cs...> ()>{};
@@ -205,7 +205,7 @@ namespace micro_os_plus::micro_test_plus
      * and reporting mechanisms.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator""_u ()
     {
       return type_traits::integral_constant<math::num<unsigned, Cs...> ()>{};
@@ -223,7 +223,7 @@ namespace micro_os_plus::micro_test_plus
      * and reporting mechanisms.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator""_uc ()
     {
       return type_traits::integral_constant<
@@ -242,7 +242,7 @@ namespace micro_os_plus::micro_test_plus
      * and reporting mechanisms.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator""_us ()
     {
       return type_traits::integral_constant<
@@ -261,7 +261,7 @@ namespace micro_os_plus::micro_test_plus
      * and reporting mechanisms.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator""_ul ()
     {
       return type_traits::integral_constant<
@@ -280,7 +280,7 @@ namespace micro_os_plus::micro_test_plus
      * comparators and reporting mechanisms.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator""_ull ()
     {
       return type_traits::integral_constant<
@@ -299,7 +299,7 @@ namespace micro_os_plus::micro_test_plus
      * and reporting mechanisms.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator""_i8 ()
     {
       return type_traits::integral_constant<
@@ -318,7 +318,7 @@ namespace micro_os_plus::micro_test_plus
      * comparators and reporting mechanisms.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator""_i16 ()
     {
       return type_traits::integral_constant<
@@ -337,7 +337,7 @@ namespace micro_os_plus::micro_test_plus
      * comparators and reporting mechanisms.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator""_i32 ()
     {
       return type_traits::integral_constant<
@@ -356,7 +356,7 @@ namespace micro_os_plus::micro_test_plus
      * seamlessly with the µTest++ comparators and reporting mechanisms.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator""_i64 ()
     {
       return type_traits::integral_constant<
@@ -375,7 +375,7 @@ namespace micro_os_plus::micro_test_plus
      * and reporting mechanisms.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator""_u8 ()
     {
       return type_traits::integral_constant<
@@ -394,7 +394,7 @@ namespace micro_os_plus::micro_test_plus
      * comparators and reporting mechanisms.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator""_u16 ()
     {
       return type_traits::integral_constant<
@@ -413,7 +413,7 @@ namespace micro_os_plus::micro_test_plus
      * comparators and reporting mechanisms.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator""_u32 ()
     {
       return type_traits::integral_constant<
@@ -432,7 +432,7 @@ namespace micro_os_plus::micro_test_plus
      * seamlessly with the µTest++ comparators and reporting mechanisms.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator""_u64 ()
     {
       return type_traits::integral_constant<
@@ -451,7 +451,7 @@ namespace micro_os_plus::micro_test_plus
      * and reporting mechanisms.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator""_f ()
     {
       return type_traits::floating_point_constant<
@@ -472,7 +472,7 @@ namespace micro_os_plus::micro_test_plus
      * and reporting mechanisms.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator""_d ()
     {
       return type_traits::floating_point_constant<
@@ -493,7 +493,7 @@ namespace micro_os_plus::micro_test_plus
      * comparators and reporting mechanisms.
      */
     template <char... Cs>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator""_ld ()
     {
       return type_traits::floating_point_constant<
@@ -546,7 +546,7 @@ namespace micro_os_plus::micro_test_plus
          * Always returns `true`, representing the presence of the named
          * literal in a test context.
          */
-        [[nodiscard]] constexpr
+        constexpr
         operator value_type () const
         {
           return true;
@@ -561,7 +561,7 @@ namespace micro_os_plus::micro_test_plus
          * Always returns `true`, indicating that any two named literals are
          * considered equal in this context.
          */
-        [[nodiscard]] constexpr auto
+        constexpr auto
         operator== (const named&) const
         {
           return true;
@@ -576,7 +576,7 @@ namespace micro_os_plus::micro_test_plus
          * Returns the value of the boolean operand, allowing the named literal
          * to be compared directly with a boolean.
          */
-        [[nodiscard]] constexpr auto
+        constexpr auto
         operator== (const bool other) const
         {
           return other;

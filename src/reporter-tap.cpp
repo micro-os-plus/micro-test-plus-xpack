@@ -717,7 +717,7 @@ namespace micro_os_plus::micro_test_plus
    */
   void
   reporter_tap::output_fail_prefix_ (
-      std::string& message, [[maybe_unused]] const bool hasExpression,
+      std::string& message, const bool has_expression,
       [[maybe_unused]] const reflection::source_location& location,
       subtest& subtest)
   {
@@ -734,7 +734,7 @@ namespace micro_os_plus::micro_test_plus
     // https://testanything.org/tap-version-14-specification.html
     // 2-space indentation for YAML diagnostics.
     *this << indent (level + 1) << "  ---";
-    if (hasExpression)
+    if (has_expression)
       {
         *this << endl;
         *this << indent (level + 1) << "  condition: ";
@@ -753,7 +753,7 @@ namespace micro_os_plus::micro_test_plus
   void
   reporter_tap::output_fail_suffix_ (
       const reflection::source_location& location, bool abort,
-      [[maybe_unused]] subtest& subtest)
+      subtest& subtest)
   {
     size_t level = subtest.nesting_depth ();
     if (abort)

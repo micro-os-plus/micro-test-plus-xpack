@@ -85,7 +85,7 @@ namespace micro_os_plus::micro_test_plus
      * Allows explicit conversion to the encapsulated value.
      */
     template <class T>
-    [[nodiscard]] constexpr value_base_<T>::
+    constexpr value_base_<T>::
     operator T () const noexcept
     {
       return value_;
@@ -96,7 +96,7 @@ namespace micro_os_plus::micro_test_plus
      * Returns the stored value by value.
      */
     template <class T>
-    [[nodiscard]] constexpr T
+    constexpr T
     value_base_<T>::get (void) const noexcept
     {
       return value_;
@@ -120,7 +120,7 @@ namespace micro_os_plus::micro_test_plus
      * of the current value.
      */
     template <auto N>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     integral_constant<N>::operator- () const noexcept
     {
       return integral_constant<-N>{};
@@ -133,7 +133,7 @@ namespace micro_os_plus::micro_test_plus
      * Returns the compile-time constant value as type `T`.
      */
     template <class T, auto N, auto D, auto Size, auto P>
-    [[nodiscard]] constexpr floating_point_constant<T, N, D, Size, P>::
+    constexpr floating_point_constant<T, N, D, Size, P>::
     operator T () const noexcept
     {
       return value;
@@ -144,7 +144,7 @@ namespace micro_os_plus::micro_test_plus
      * Returns the compile-time constant value as type `T`.
      */
     template <class T, auto N, auto D, auto Size, auto P>
-    [[nodiscard]] constexpr T
+    constexpr T
     floating_point_constant<T, N, D, Size, P>::get (void) const noexcept
     {
       return value;
@@ -156,7 +156,7 @@ namespace micro_os_plus::micro_test_plus
      * negative of the current value by flipping the sign parameter `P`.
      */
     template <class T, auto N, auto D, auto Size, auto P>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     floating_point_constant<T, N, D, Size, P>::operator- () const noexcept
     {
       return floating_point_constant<T, N, D, Size, -P>{};

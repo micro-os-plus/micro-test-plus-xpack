@@ -68,7 +68,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Returns a mutable reference to the `value_` member.
    */
-  [[nodiscard]] inline timespec&
+  inline timespec&
   timestamp::value () noexcept
   {
     return value_;
@@ -78,7 +78,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Returns a const reference to the `value_` member.
    */
-  [[nodiscard]] inline const timespec&
+  inline const timespec&
   timestamp::value () const noexcept
   {
     return value_;

@@ -240,7 +240,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Outputs the prefix for a failing condition.
      *
      * @param message The message to display.
-     * @param hasExpression Whether the failure is associated with an
+     * @param has_expression Whether the failure is associated with an
      * expression.
      * @param location The source location of the failure.
      * @param subtest The subtest that owns this check.
@@ -248,7 +248,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     void
-    output_fail_prefix_ (std::string& message, const bool hasExpression,
+    output_fail_prefix_ (std::string& message, const bool has_expression,
                          const reflection::source_location& location,
                          subtest& subtest) override;
 

@@ -74,7 +74,7 @@ namespace micro_os_plus::micro_test_plus
      * operands and returns it. The comparator evaluates to `true` if the
      * string views are equal.
      */
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator== (std::string_view lhs, std::string_view rhs)
     {
       return detail::eq_{ lhs, rhs };
@@ -86,7 +86,7 @@ namespace micro_os_plus::micro_test_plus
      * operands and returns it. The comparator evaluates to `true` if the
      * string views are not equal.
      */
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator!= (std::string_view lhs, std::string_view rhs)
     {
       return detail::ne_{ lhs, rhs };
@@ -104,7 +104,7 @@ namespace micro_os_plus::micro_test_plus
     template <class Lhs_T, class Rhs_T>
       requires (type_traits::container_like<Lhs_T>
                 and type_traits::container_like<Rhs_T>)
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator== (const Lhs_T& lhs, const Rhs_T& rhs)
     {
       return detail::eq_{ lhs, rhs };
@@ -122,7 +122,7 @@ namespace micro_os_plus::micro_test_plus
     template <class Lhs_T, class Rhs_T>
       requires (type_traits::container_like<Lhs_T>
                 and type_traits::container_like<Rhs_T>)
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator!= (const Lhs_T& lhs, const Rhs_T& rhs)
     {
       return detail::ne_{ lhs, rhs };
@@ -136,7 +136,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class Lhs_T, class Rhs_T>
       requires type_traits::any_op<Lhs_T, Rhs_T>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator== (const Lhs_T& lhs, const Rhs_T& rhs)
     {
       return detail::eq_{ lhs, rhs };
@@ -150,7 +150,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class Lhs_T, class Rhs_T>
       requires type_traits::any_op<Lhs_T, Rhs_T>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator!= (const Lhs_T& lhs, const Rhs_T& rhs)
     {
       return detail::ne_{ lhs, rhs };
@@ -164,7 +164,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class Lhs_T, class Rhs_T>
       requires type_traits::any_op<Lhs_T, Rhs_T>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator> (const Lhs_T& lhs, const Rhs_T& rhs)
     {
       return detail::gt_{ lhs, rhs };
@@ -179,7 +179,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class Lhs_T, class Rhs_T>
       requires type_traits::any_op<Lhs_T, Rhs_T>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator>= (const Lhs_T& lhs, const Rhs_T& rhs)
     {
       return detail::ge_{ lhs, rhs };
@@ -193,7 +193,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class Lhs_T, class Rhs_T>
       requires type_traits::any_op<Lhs_T, Rhs_T>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator< (const Lhs_T& lhs, const Rhs_T& rhs)
     {
       return detail::lt_{ lhs, rhs };
@@ -208,7 +208,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class Lhs_T, class Rhs_T>
       requires type_traits::any_op<Lhs_T, Rhs_T>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator<= (const Lhs_T& lhs, const Rhs_T& rhs)
     {
       return detail::le_{ lhs, rhs };
@@ -222,7 +222,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class Lhs_T, class Rhs_T>
       requires type_traits::any_op<Lhs_T, Rhs_T>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator and (const Lhs_T& lhs, const Rhs_T& rhs)
     {
       return detail::and_{ lhs, rhs };
@@ -236,7 +236,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class Lhs_T, class Rhs_T>
       requires type_traits::any_op<Lhs_T, Rhs_T>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator or (const Lhs_T& lhs, const Rhs_T& rhs)
     {
       return detail::or_{ lhs, rhs };
@@ -250,7 +250,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T>
       requires type_traits::is_op<T>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     operator not(const T& t)
     {
       return detail::not_{ t };

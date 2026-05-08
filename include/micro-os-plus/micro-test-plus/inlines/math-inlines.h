@@ -99,7 +99,7 @@ namespace micro_os_plus::micro_test_plus
      * less efficient, or not constexpr.
      */
     template <class T>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     abs (const T t) noexcept -> T
     {
       return t < T{} ? -t : t;
@@ -120,7 +120,7 @@ namespace micro_os_plus::micro_test_plus
      * less efficient, or not constexpr.
      */
     template <class T>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     min_value (const T& lhs, const T& rhs) noexcept -> const T&
     {
       return (rhs < lhs) ? rhs : lhs;
@@ -141,7 +141,7 @@ namespace micro_os_plus::micro_test_plus
      * less efficient, or not constexpr.
      */
     template <class T, class Exp_T>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     pow (const T base, const Exp_T exp) noexcept -> T
     {
       T result{ 1 };
@@ -165,7 +165,7 @@ namespace micro_os_plus::micro_test_plus
      * conversion from character sequences to integral values.
      */
     template <class T, char... Cs>
-    [[nodiscard]] consteval auto
+    consteval auto
     num (void) -> T
     {
       // Assume all are digits or dot or apostrophe.
@@ -205,7 +205,7 @@ namespace micro_os_plus::micro_test_plus
      * values.
      */
     template <class T, char... Cs>
-    [[nodiscard]] consteval auto
+    consteval auto
     den (void) -> T
     {
       static_assert ((... || (Cs == '.')),
@@ -240,7 +240,7 @@ namespace micro_os_plus::micro_test_plus
      * determination of decimal precision from character sequences.
      */
     template <class T, char... Cs>
-    [[nodiscard]] consteval auto
+    consteval auto
     den_size (void) -> T
     {
       static_assert ((... || (Cs == '.')),
@@ -278,7 +278,7 @@ namespace micro_os_plus::micro_test_plus
      * determination of decimal precision from floating-point values.
      */
     template <class T, class Value_T>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     den_size (Value_T value) -> T
     {
       constexpr auto precision = Value_T (1e-7);

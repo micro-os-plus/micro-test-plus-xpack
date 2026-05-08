@@ -85,7 +85,7 @@ namespace micro_os_plus::micro_test_plus
    * the actual and expected values.
    */
   template <class Lhs_T, class Rhs_T>
-  [[nodiscard]] constexpr auto
+  constexpr auto
   eq (const Lhs_T& lhs, const Rhs_T& rhs)
   {
     return detail::eq_<Lhs_T, Rhs_T>{ lhs, rhs };
@@ -100,7 +100,7 @@ namespace micro_os_plus::micro_test_plus
    * addresses of objects or resources.
    */
   template <class Lhs_T, class Rhs_T>
-  [[nodiscard]] constexpr auto
+  constexpr auto
   eq (Lhs_T* lhs, Rhs_T* rhs)
   {
     return detail::eq_<Lhs_T*, Rhs_T*>{ lhs, rhs };
@@ -115,7 +115,7 @@ namespace micro_os_plus::micro_test_plus
    * actual and expected values.
    */
   template <class Lhs_T, class Rhs_T>
-  [[nodiscard]] constexpr auto
+  constexpr auto
   ne (const Lhs_T& lhs, const Rhs_T& rhs)
   {
     return detail::ne_<Lhs_T, Rhs_T>{ lhs, rhs };
@@ -130,7 +130,7 @@ namespace micro_os_plus::micro_test_plus
    * compare the addresses of objects or resources.
    */
   template <class Lhs_T, class Rhs_T>
-  [[nodiscard]] constexpr auto
+  constexpr auto
   ne (Lhs_T* lhs, Rhs_T* rhs)
   {
     return detail::ne_<Lhs_T*, Rhs_T*>{ lhs, rhs };
@@ -145,7 +145,7 @@ namespace micro_os_plus::micro_test_plus
    * the actual and expected values.
    */
   template <class Lhs_T, class Rhs_T>
-  [[nodiscard]] constexpr auto
+  constexpr auto
   gt (const Lhs_T& lhs, const Rhs_T& rhs)
   {
     return detail::gt_<Lhs_T, Rhs_T>{ lhs, rhs };
@@ -160,7 +160,7 @@ namespace micro_os_plus::micro_test_plus
    * assertions to compare the addresses of objects or resources.
    */
   template <class Lhs_T, class Rhs_T>
-  [[nodiscard]] constexpr auto
+  constexpr auto
   gt (Lhs_T* lhs, Rhs_T* rhs)
   {
     return detail::gt_<Lhs_T*, Rhs_T*>{ lhs, rhs };
@@ -175,7 +175,7 @@ namespace micro_os_plus::micro_test_plus
    * and assertions to compare the actual and expected values.
    */
   template <class Lhs_T, class Rhs_T>
-  [[nodiscard]] constexpr auto
+  constexpr auto
   ge (const Lhs_T& lhs, const Rhs_T& rhs)
   {
     return detail::ge_<Lhs_T, Rhs_T>{ lhs, rhs };
@@ -191,7 +191,7 @@ namespace micro_os_plus::micro_test_plus
    * resources.
    */
   template <class Lhs_T, class Rhs_T>
-  [[nodiscard]] constexpr auto
+  constexpr auto
   ge (Lhs_T* lhs, Rhs_T* rhs)
   {
     return detail::ge_<Lhs_T*, Rhs_T*>{ lhs, rhs };
@@ -206,7 +206,7 @@ namespace micro_os_plus::micro_test_plus
    * the actual and expected values.
    */
   template <class Lhs_T, class Rhs_T>
-  [[nodiscard]] constexpr auto
+  constexpr auto
   lt (const Lhs_T& lhs, const Rhs_T& rhs)
   {
     return detail::lt_<Lhs_T, Rhs_T>{ lhs, rhs };
@@ -221,7 +221,7 @@ namespace micro_os_plus::micro_test_plus
    * compare the addresses of objects or resources.
    */
   template <class Lhs_T, class Rhs_T>
-  [[nodiscard]] constexpr auto
+  constexpr auto
   lt (Lhs_T* lhs, Rhs_T* rhs)
   {
     return detail::lt_<Lhs_T*, Rhs_T*>{ lhs, rhs };
@@ -236,7 +236,7 @@ namespace micro_os_plus::micro_test_plus
    * assertions to compare the actual and expected values.
    */
   template <class Lhs_T, class Rhs_T>
-  [[nodiscard]] constexpr auto
+  constexpr auto
   le (const Lhs_T& lhs, const Rhs_T& rhs)
   {
     return detail::le_<Lhs_T, Rhs_T>{ lhs, rhs };
@@ -252,7 +252,7 @@ namespace micro_os_plus::micro_test_plus
    * resources.
    */
   template <class Lhs_T, class Rhs_T>
-  [[nodiscard]] constexpr auto
+  constexpr auto
   le (Lhs_T* lhs, Rhs_T* rhs)
   {
     return detail::le_<Lhs_T*, Rhs_T*>{ lhs, rhs };
@@ -273,7 +273,7 @@ namespace micro_os_plus::micro_test_plus
    * from the standard logical not operator.
    */
   template <class Expr_T>
-  [[nodiscard]] constexpr auto
+  constexpr auto
   _not (const Expr_T& expr)
   {
     return detail::not_<Expr_T>{ expr };
@@ -291,7 +291,7 @@ namespace micro_os_plus::micro_test_plus
    * from the standard logical and operator.
    */
   template <class Lhs_T, class Rhs_T>
-  [[nodiscard]] constexpr auto
+  constexpr auto
   _and (const Lhs_T& lhs, const Rhs_T& rhs)
   {
     return detail::and_<Lhs_T, Rhs_T>{ lhs, rhs };
@@ -309,7 +309,7 @@ namespace micro_os_plus::micro_test_plus
    * from the standard logical or operator.
    */
   template <class Lhs_T, class Rhs_T>
-  [[nodiscard]] constexpr auto
+  constexpr auto
   _or (const Lhs_T& lhs, const Rhs_T& rhs)
   {
     return detail::or_<Lhs_T, Rhs_T>{ lhs, rhs };
@@ -331,7 +331,7 @@ namespace micro_os_plus::micro_test_plus
    * appended to the test report for diagnostic purposes.
    */
   template <class Exception_T, class Callable_T>
-  [[nodiscard]] constexpr auto
+  constexpr auto
   throws (const Callable_T& func)
   {
     return detail::throws_<Callable_T, Exception_T>{ func };
@@ -348,7 +348,7 @@ namespace micro_os_plus::micro_test_plus
    * appended to the test report for diagnostic purposes.
    */
   template <class Callable_T>
-  [[nodiscard]] constexpr auto
+  constexpr auto
   throws (const Callable_T& func)
   {
     return detail::throws_<Callable_T>{ func };
@@ -366,7 +366,7 @@ namespace micro_os_plus::micro_test_plus
    * appended to the test report for diagnostic purposes.
    */
   template <class Callable_T>
-  [[nodiscard]] constexpr auto
+  constexpr auto
   nothrow (const Callable_T& func)
   {
     return detail::nothrow_<Callable_T>{ func };
@@ -386,7 +386,7 @@ namespace micro_os_plus::micro_test_plus
    * testing scenarios where controlled mutation of test data is required.
    */
   template <class T>
-  [[nodiscard]] constexpr auto
+  constexpr auto
   mut (const T& t) noexcept -> T&
   {
     return const_cast<T&> (t);

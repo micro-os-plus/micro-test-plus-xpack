@@ -88,7 +88,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Returns a pointer to the null-terminated name stored in `name_`.
    */
-  [[nodiscard]] inline const char*
+  inline const char*
   test_node::name (void) const noexcept
   {
     return name_;
@@ -98,7 +98,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Returns a reference to the `runner_totals` member.
    */
-  [[nodiscard]] inline runner_totals&
+  inline runner_totals&
   test_node::totals () noexcept
   {
     return totals_;
@@ -108,7 +108,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Returns a const reference to the `runner_totals` member.
    */
-  [[nodiscard]] inline const runner_totals&
+  inline const runner_totals&
   test_node::totals () const noexcept
   {
     return totals_;
@@ -120,7 +120,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Returns the one-based positional index of this object within its parent.
    */
-  [[nodiscard]] inline size_t
+  inline size_t
   runnable_base::own_index () const noexcept
   {
     return own_index_;
@@ -140,7 +140,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Returns the sequential index of the most recently created child subtest.
    */
-  [[nodiscard]] inline size_t
+  inline size_t
   runnable_base::current_subtest_index () const noexcept
   {
     return current_subtest_index_;
@@ -162,7 +162,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Returns the number of child subtests owned by this node.
    */
-  [[nodiscard]] inline size_t
+  inline size_t
   runnable_base::children_subtests_count (void) const noexcept
   {
     return children_subtests_.size ();
@@ -172,7 +172,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Returns a reference to the owning test runner.
    */
-  [[nodiscard]] inline class runner&
+  inline class runner&
   runnable_base::runner (void) const noexcept
   {
     return runner_;
@@ -213,7 +213,7 @@ namespace micro_os_plus::micro_test_plus
    * Top-level subtests (direct children of a `suite`) have depth 1.
    * Each additional level of nesting increments the depth by 1.
    */
-  [[nodiscard]] inline size_t
+  inline size_t
   subtest::nesting_depth () const noexcept
   {
     return nesting_depth_;
@@ -225,7 +225,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Returns a reference to the `timestamps` member.
    */
-  [[nodiscard]] inline timestamps&
+  inline timestamps&
   suite::timings () noexcept
   {
     return timings_;
@@ -235,7 +235,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Returns a const reference to the `timestamps` member.
    */
-  [[nodiscard]] inline const timestamps&
+  inline const timestamps&
   suite::timings () const noexcept
   {
     return timings_;

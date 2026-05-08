@@ -89,7 +89,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Returns the result value stored in `value_`.
      */
-    [[nodiscard]] inline bool
+    inline bool
     deferred_reporter_base::value () const
     {
       return value_;

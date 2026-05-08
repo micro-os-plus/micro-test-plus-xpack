@@ -93,7 +93,7 @@ namespace micro_os_plus::micro_test_plus
      * If supported by the compiler, uses built-in macros to capture this
      * information; otherwise, defaults to `"unknown"` and zero.
      */
-    [[nodiscard]] constexpr source_location
+    constexpr source_location
     source_location::current (const char* file, unsigned int line) noexcept
     {
       source_location sl{};
@@ -107,7 +107,7 @@ namespace micro_os_plus::micro_test_plus
      * Returns the file name captured at the time this `source_location`
      * instance was created.
      */
-    [[nodiscard]] constexpr auto
+    constexpr auto
     source_location::file_name (void) const noexcept
     {
       return file_;
@@ -118,7 +118,7 @@ namespace micro_os_plus::micro_test_plus
      * Returns the line number captured at the time this `source_location`
      * instance was created.
      */
-    [[nodiscard]] constexpr auto
+    constexpr auto
     source_location::line (void) const noexcept
     {
       return line_;
@@ -147,7 +147,7 @@ namespace micro_os_plus::micro_test_plus
      * changes, and compiler format updates.
      */
     template <class T>
-    [[nodiscard]] constexpr auto
+    constexpr auto
     type_name (void) -> std::string_view
     {
       const std::string_view sv = __PRETTY_FUNCTION__;
