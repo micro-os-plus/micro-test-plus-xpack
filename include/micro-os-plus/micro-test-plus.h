@@ -90,6 +90,15 @@
 
 #include "micro-test-plus/utility.h"
 
+// ============================================================================
+// Templates & constexpr implementations.
+
+// Requires test.h, deferred-reporter.h, runner.h, and reporter.h to all be
+// included first, as it defines inline template implementations that depend
+// on all of them.
+#include "micro-test-plus/inlines/deferred-reporter-inlines.h"
+#include "micro-test-plus/inlines/test-inlines.h"
+
 // ----------------------------------------------------------------------------
 
 /**
@@ -116,15 +125,6 @@
  * folder, ensuring a clear separation from user code and facilitating
  * straightforward integration with the wider µOS++ ecosystem.
  */
-
-// ============================================================================
-// Templates & constexpr implementations.
-
-// All inlines are included **after** all declarations.
-
-#include "micro-test-plus/inlines/deferred-reporter-inlines.h"
-
-#include "micro-test-plus/inlines/test-inlines.h"
 
 // ----------------------------------------------------------------------------
 

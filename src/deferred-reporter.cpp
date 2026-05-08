@@ -83,6 +83,16 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
+     * The destructor finalises the deferred reporting process for a test
+     * expression. If the evaluated expression is true, the reporter records a
+     * successful outcome along with any accumulated message. If the expression
+     * is false, the reporter records a failure, including the abort status,
+     * message, and source location for comprehensive reporting.
+     *
+     * This mechanism ensures that all relevant information about the test
+     * outcome is captured and reported accurately when the deferred reporter
+     * goes out of scope.
+     *
      * The destructor ensures that if an abort condition is set and the test
      * expression has failed, the test output is flushed and the process is
      * terminated. This mechanism guarantees immediate feedback and halts
@@ -96,12 +106,18 @@ namespace micro_os_plus::micro_test_plus
       trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
 
+      auto& expression_str = subtest_.reporter ().expression ().str ();
+
       if (value_) [[likely]]
         {
+          subtest_.reporter ().pass (deferred_output_, expression_str,
+                                     subtest_);
           subtest_.totals ().increment_successful_checks ();
         }
       else
         {
+          subtest_.reporter ().fail (abort_, deferred_output_, expression_str,
+                                     has_expression_, location_, subtest_);
           subtest_.totals ().increment_failed_checks ();
         }
 
@@ -112,7 +128,6 @@ namespace micro_os_plus::micro_test_plus
           subtest_.abort (location_);
         }
     }
-
   } // namespace detail
 
   // ==========================================================================

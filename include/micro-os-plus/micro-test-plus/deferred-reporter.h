@@ -201,6 +201,11 @@ namespace micro_os_plus::micro_test_plus
       bool abort_ = false;
 
       /**
+       * @brief Indicates whether the reporter has an associated expression.
+       */
+      bool has_expression_ = false;
+
+      /**
        * @brief Stores the source location associated with the report.
        */
       const reflection::source_location location_{};
@@ -220,16 +225,14 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
 
     /**
-     * @brief Deferred reporter class template for a specific expression.
-     *
-     * @tparam Expr_T The type of the expression being reported.
+     * @brief Deferred reporter class for a specific expression.
      *
      * @details
-     * The `deferred_reporter` class template extends `deferred_reporter_base`
+     * The `deferred_reporter` class extends `deferred_reporter_base`
      * to provide deferred reporting functionality for a specific test
      * expression within the framework.
      *
-     * This class template is responsible for capturing the expression under
+     * This class is responsible for capturing the expression under
      * evaluation, the abort status, and the source location. It is intended
      * exclusively for internal use and is implemented in the
      * `include/micro-os-plus/micro-test-plus` folder to ensure a structured
@@ -237,7 +240,6 @@ namespace micro_os_plus::micro_test_plus
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
-    template <class Expr_T>
     class deferred_reporter : public deferred_reporter_base
     {
     public:
@@ -250,6 +252,7 @@ namespace micro_os_plus::micro_test_plus
        * @param location The source location relevant to the report.
        * @param subtest The subtest that owns this deferred report.
        */
+      template <class Expr_T>
       deferred_reporter (const Expr_T& expr, bool abort,
                          const reflection::source_location& location,
                          subtest& subtest);
@@ -257,13 +260,7 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Destructor for the deferred reporter.
        */
-      ~deferred_reporter ();
-
-    protected:
-      /**
-       * @brief Stores the expression under evaluation.
-       */
-      const Expr_T expr_{};
+      ~deferred_reporter () = default;
     };
 
     // ------------------------------------------------------------------------

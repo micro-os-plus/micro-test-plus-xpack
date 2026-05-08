@@ -191,7 +191,7 @@ namespace micro_os_plus::micro_test_plus
   auto
   subtest::expect (const Expr_T& expr, const reflection::source_location& sl)
   {
-    return detail::deferred_reporter<Expr_T>{ expr, false, sl, *this };
+    return detail::deferred_reporter{ expr, false, sl, *this };
   }
 
   /**
@@ -205,7 +205,7 @@ namespace micro_os_plus::micro_test_plus
   auto
   subtest::assume (const Expr_T& expr, const reflection::source_location& sl)
   {
-    return detail::deferred_reporter<Expr_T>{ expr, true, sl, *this };
+    return detail::deferred_reporter{ expr, true, sl, *this };
   }
 
   /**

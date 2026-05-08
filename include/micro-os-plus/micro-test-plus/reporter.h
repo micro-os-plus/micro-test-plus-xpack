@@ -320,35 +320,33 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Report a passed condition.
      *
-     * @tparam Expr_T The expression type.
-     *
-     * @param expr The evaluated expression.
      * @param message The message to display.
+     * @param expression The string representation of the expression.
      * @param subtest The subtest that owns this check.
      * @par Returns
      *   Nothing.
      */
-    template <class Expr_T>
     void
-    pass (Expr_T& expr, std::string& message, subtest& subtest);
+    pass (std::string& message, const std::string& expression,
+          subtest& subtest);
 
     /**
      * @brief Report a failed condition.
      *
-     * @tparam Expr_T The expression type.
-     *
-     * @param expr The evaluated expression.
      * @param abort Whether to abort execution after failure.
      * @param message The message to display.
+     * @param expression The string representation of the expression.
+     * @param has_expression Whether the expression is a compound op to
+     * display.
      * @param location The source location of the failure.
      * @param subtest The subtest that owns this check.
      * @par Returns
      *   Nothing.
      */
-    template <class Expr_T>
     void
-    fail (Expr_T& expr, bool abort, std::string& message,
-          const reflection::source_location& location, subtest& subtest);
+    fail (bool abort, std::string& message, const std::string& expression,
+          bool has_expression, const reflection::source_location& location,
+          subtest& subtest);
 
     // ------------------------------------------------------------------------
 
@@ -431,6 +429,17 @@ namespace micro_os_plus::micro_test_plus
      */
     auto
     verbosity () const -> micro_test_plus::verbosity;
+
+    /**
+     * @brief Provides access to the expression formatter for this reporter.
+     *
+     * @par Parameters
+     *	 None.
+     * @return Reference to the `expression_formatter` instance used by this
+     * reporter.
+     */
+    expression_formatter&
+    expression ();
 
     // ------------------------------------------------------------------------
 
@@ -538,7 +547,7 @@ namespace micro_os_plus::micro_test_plus
      * `detail::deferred_reporter` to pre-format expressions at
      * construction time.
      */
-    expression_formatter formatter_{ colours_ };
+    expression_formatter expression_{ colours_ };
 
     /**
      * @brief Controls whether to add an empty line between successful test

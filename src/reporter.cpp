@@ -437,6 +437,47 @@ namespace micro_os_plus::micro_test_plus
     return *this;
   }
 
+  /**
+   * @details
+   * Outputs a pass prefix, followed by either the provided message or, if
+   * the message is empty, the evaluated expression string itself. A pass
+   * suffix is then appended to complete the output.
+   */
+  void
+  reporter::pass (std::string& message, const std::string& expression,
+                  subtest& subtest)
+  {
+    output_pass_prefix_ (message, subtest);
+
+    if (message.empty ())
+      {
+        *this << expression;
+      }
+
+    output_pass_suffix_ (subtest);
+  }
+
+  /**
+   * @details
+   * Reports a test failure, formatting the output with source location and,
+   * when `has_expression` is true, the pre-formatted expression string.
+   */
+  void
+  reporter::fail (bool abort, std::string& message,
+                  const std::string& expression, bool has_expression,
+                  const reflection::source_location& location,
+                  subtest& subtest)
+  {
+    output_fail_prefix_ (message, has_expression, location, subtest);
+
+    if (has_expression)
+      {
+        *this << expression;
+      }
+
+    output_fail_suffix_ (location, abort, subtest);
+  }
+
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::micro_test_plus
 

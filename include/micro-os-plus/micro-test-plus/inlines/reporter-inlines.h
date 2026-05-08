@@ -93,10 +93,25 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
+   * Returns a reference to the `expression_formatter` instance used by the
+   * reporter for formatting expressions in test reports. This allows the
+   * reporter to delegate the formatting of complex expressions to the
+   * `expression_formatter`, which provides a consistent and extensible way to
+   * convert various types of values and expressions into their string
+   * representations for output in test reports.
+   */
+  inline expression_formatter&
+  reporter::expression ()
+  {
+    return expression_;
+  }
+
+  /**
+   * @details
    * Returns the ANSI colour code for pass or fail, depending on the boolean
    * condition provided.
    */
-  [[nodiscard]] inline auto
+  inline auto
   reporter::colour_ (const bool cond) const
   {
     return cond ? colours_.pass : colours_.fail;
@@ -168,62 +183,6 @@ namespace micro_os_plus::micro_test_plus
   {
     detail::append_number_ (buffer_, v);
     return *this;
-  }
-
-  /**
-   * @details
-   * Outputs a pass prefix, followed by either the provided message or, if
-   * the message is empty, the evaluated expression itself. A pass suffix is
-   * then appended to complete the output, ensuring that successful test
-   * outcomes are presented in a clear and consistent manner.
-   */
-  template <class Expr_T>
-  void
-  reporter::pass (Expr_T& expr, std::string& message, subtest& subtest)
-  {
-    //    current_test_suite->current_test_case.index++;
-
-    output_pass_prefix_ (message, subtest);
-
-    if (message.empty ())
-      {
-        // If there is no message, display the evaluated expression.
-        formatter_.clear ();
-        formatter_ << expr;
-        *this << formatter_.str ();
-      }
-
-    output_pass_suffix_ (subtest);
-  }
-
-  /**
-   * @details
-   * This function reports a test failure and formats the output in a clear and
-   * consistent manner. It provides contextual information, including the
-   * precise source location, and appends the evaluated expression when
-   * applicable. The failure handling process ensures uniformity in the
-   * presentation of unsuccessful test cases, aiding in the rapid
-   * identification and diagnosis of issues within test reports.
-   */
-  template <class Expr_T>
-  void
-  reporter::fail (Expr_T& expr, bool abort, std::string& message,
-                  const reflection::source_location& location,
-                  subtest& subtest)
-  {
-    // current_test_suite->current_test_case.index++;
-
-    const bool hasExpression = type_traits::is_op<Expr_T>;
-    output_fail_prefix_ (message, hasExpression, location, subtest);
-
-    if constexpr (type_traits::is_op<Expr_T>)
-      {
-        formatter_.clear ();
-        formatter_ << expr;
-        *this << formatter_.str ();
-      }
-
-    output_fail_suffix_ (location, abort, subtest);
   }
 
   // --------------------------------------------------------------------------

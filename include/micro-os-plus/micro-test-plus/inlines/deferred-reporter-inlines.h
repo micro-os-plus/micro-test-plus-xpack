@@ -160,44 +160,23 @@ namespace micro_os_plus::micro_test_plus
      * contextual information for reporting purposes.
      */
     template <class Expr_T>
-    deferred_reporter<Expr_T>::deferred_reporter (
+    deferred_reporter::deferred_reporter (
         const Expr_T& expr, bool abort,
         const reflection::source_location& location, subtest& subtest)
-        : deferred_reporter_base{ static_cast<bool> (expr), location,
-                                  subtest },
-          expr_{ expr }
+        : deferred_reporter_base{ static_cast<bool> (expr), location, subtest }
+
     {
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
       trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
       abort_ = abort;
-    }
+      has_expression_ = type_traits::is_op<Expr_T>;
 
-    /**
-     * @details
-     * The destructor finalises the deferred reporting process for a test
-     * expression. If the evaluated expression is true, the reporter records a
-     * successful outcome along with any accumulated message. If the expression
-     * is false, the reporter records a failure, including the abort status,
-     * message, and source location for comprehensive reporting.
-     *
-     * This mechanism ensures that all relevant information about the test
-     * outcome is captured and reported accurately when the deferred reporter
-     * goes out of scope.
-     */
-    template <class Expr_T>
-    deferred_reporter<Expr_T>::~deferred_reporter ()
-    {
-      if (value_) [[likely]]
-        {
-          subtest_.reporter ().pass (expr_, deferred_output_, subtest_);
-        }
-      else
-        {
-          subtest_.reporter ().fail (expr_, abort_, deferred_output_,
-                                     location_, subtest_);
-        }
+      auto& expression = subtest.reporter ().expression ();
+      expression.clear ();
+
+      expression << expr;
     }
 
     // ------------------------------------------------------------------------
