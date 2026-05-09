@@ -25,9 +25,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="244" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="244" bodyend="244"/>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1a9458699958135918f1a616bdbd50f0ed" compoundref="detail_8h" startline="200" endline="202">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::unary_op_</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1a6dad81524f4cc61c26a91d28aafdd8b0" compoundref="detail_8h" startline="235" endline="238">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::operand</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="183" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="183" bodyend="183"/>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1a9458699958135918f1a616bdbd50f0ed" compoundref="detail-inlines_8h" startline="97" endline="100">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::unary_op_</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1a6dad81524f4cc61c26a91d28aafdd8b0" compoundref="detail-inlines_8h" startline="121" endline="124">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::operand</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1ac226d3ad3c5e0ce7eddaf225803aa998" prot="private" static="no" mutable="no">
         <type>const bool</type>
@@ -43,13 +43,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="249" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="249" bodyend="249"/>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1a9458699958135918f1a616bdbd50f0ed" compoundref="detail_8h" startline="200" endline="202">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::unary_op_</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1ad8463c48db311b2246fa3a860afb5e5d" compoundref="detail_8h" startline="216" endline="219">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::operator bool</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="188" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="188" bodyend="188"/>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1a9458699958135918f1a616bdbd50f0ed" compoundref="detail-inlines_8h" startline="97" endline="100">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::unary_op_</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1ad8463c48db311b2246fa3a860afb5e5d" compoundref="detail-inlines_8h" startline="109" endline="112">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::operator bool</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1a9458699958135918f1a616bdbd50f0ed" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1a9458699958135918f1a616bdbd50f0ed" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr</type>
         <definition>micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::unary_op_</definition>
         <argsstring>(const T &amp;t, bool value)</argsstring>
@@ -80,19 +80,21 @@
 <parametername>value</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The pre-computed boolean result of the operation. </para>
+<para>The pre-computed boolean result of the operation.</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-</para>
+Stores the operand and the pre-computed boolean result of the operation in the corresponding private members. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="200" column="17" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="200" bodyend="202"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1a21b7e5959bd3e3c18152549aaf4ee9d5" compoundref="detail_8h" startline="244" endline="244">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::t_</references>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1ac226d3ad3c5e0ce7eddaf225803aa998" compoundref="detail_8h" startline="249" endline="249">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::value_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="157" column="17" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="97" bodyend="100"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1a21b7e5959bd3e3c18152549aaf4ee9d5" compoundref="detail_8h" startline="183" endline="183">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::t_</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1ac226d3ad3c5e0ce7eddaf225803aa998" compoundref="detail_8h" startline="188" endline="188">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::value_</references>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not___1ae04b89bc6cdf306487499875a635d301" compoundref="detail-inlines_8h" startline="511" endline="514">micro_os_plus::micro_test_plus::detail::not_&lt; T &gt;::not_</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1ad8463c48db311b2246fa3a860afb5e5d" compoundref="detail-inlines_8h" startline="109" endline="112">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::operator bool</referencedby>
       </memberdef>
-      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1a6dad81524f4cc61c26a91d28aafdd8b0" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1a6dad81524f4cc61c26a91d28aafdd8b0" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>auto</type>
         <definition>auto micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::operand</definition>
         <argsstring>() const</argsstring>
@@ -106,16 +108,16 @@
 </simplesect>
 <simplesect kind="return"><para>The extracted operand value.</para>
 </simplesect>
-Returns the wrapped operand, applying the generic getter to ensure correct extraction for both custom and standard types. Named <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1a6dad81524f4cc61c26a91d28aafdd8b0" kindref="member">operand()</ref></computeroutput> to distinguish it from the boolean result stored in <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1ac226d3ad3c5e0ce7eddaf225803aa998" kindref="member">value_</ref></computeroutput>. </para>
+Returns the wrapped operand, applying the generic getter to ensure correct extraction for both custom and standard types. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="235" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="235" bodyend="238"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ac627271520bf2fe8a4c4774bcd9bf343" compoundref="detail_8h" startline="158" endline="164">micro_os_plus::micro_test_plus::detail::get</references>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1a21b7e5959bd3e3c18152549aaf4ee9d5" compoundref="detail_8h" startline="244" endline="244">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::t_</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1acb9b836bf8aebde7ce043c237ad29dac" compoundref="reporter-inlines_8h" startline="417" endline="420">micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="177" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="121" bodyend="124"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ac627271520bf2fe8a4c4774bcd9bf343" compoundref="detail-inlines_8h" startline="81" endline="87">micro_os_plus::micro_test_plus::detail::get</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1a21b7e5959bd3e3c18152549aaf4ee9d5" compoundref="detail_8h" startline="183" endline="183">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::t_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a18779725af09a98f96a5e392688123b5" compoundref="expression-formatter-inlines_8h" startline="431" endline="434">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
       </memberdef>
-      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1ad8463c48db311b2246fa3a860afb5e5d" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1ad8463c48db311b2246fa3a860afb5e5d" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr</type>
         <definition>micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::operator bool</definition>
         <argsstring>() const</argsstring>
@@ -133,8 +135,9 @@ Returns the pre-computed boolean result stored by the derived comparator&apos;s 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="216" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="216" bodyend="219"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1ac226d3ad3c5e0ce7eddaf225803aa998" compoundref="detail_8h" startline="249" endline="249">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::value_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="167" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="109" bodyend="112"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1a9458699958135918f1a616bdbd50f0ed" compoundref="detail-inlines_8h" startline="97" endline="100">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::unary_op_</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1ac226d3ad3c5e0ce7eddaf225803aa998" compoundref="detail_8h" startline="188" endline="188">micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;::value_</references>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -146,13 +149,11 @@ Returns the pre-computed boolean result stored by the derived comparator&apos;s 
 <parametername>T</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The type of the operand.</para>
+<para>The type of the operand. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op__" kindref="compound">unary_op_</ref></computeroutput> struct template provides the shared state and interface for unary comparator types within the framework. It stores the single operand and the boolean result of the operation, and exposes a conversion operator and an operand accessor common to all unary comparators.</para>
-<para>Derived comparator structs (e.g. <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__" kindref="compound">not_</ref></computeroutput>) inherit from this base and supply the operation-specific logic via their constructors.</para>
-<para>All definitions are intended for internal use within the framework and are implemented in the <computeroutput>include/micro-os-plus/micro-test-plus</computeroutput> folder to maintain a structured and modular codebase. </para>
+</para>
     </detaileddescription>
     <inheritancegraph>
       <node id="3">
@@ -184,7 +185,7 @@ The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1de
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op"/>
       </node>
     </collaborationgraph>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="191" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="192" bodyend="250"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="148" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="149" bodyend="189"/>
     <listofallmembers>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1a6dad81524f4cc61c26a91d28aafdd8b0" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::unary_op_</scope><name>operand</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op___1ad8463c48db311b2246fa3a860afb5e5d" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::unary_op_</scope><name>operator bool</name></member>

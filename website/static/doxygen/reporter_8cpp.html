@@ -96,8 +96,7 @@ $(function(){initNavTree('reporter_8cpp.html','',''); });
 
 <p>C++ source file with implementations for the µTest++ test reporter methods.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;<a class="el" href="micro-test-plus_8h_source.html">micro-os-plus/micro-test-plus.h</a>&gt;</code><br />
-<code>#include &lt;micro-os-plus/diag/trace.h&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="reporter_8h_source.html">micro-os-plus/micro-test-plus/reporter.h</a>&quot;</code><br />
 </div>
 <p><a href="reporter_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -114,8 +113,8 @@ Functions</h2></td></tr>
 <tr class="memdesc:accd8ecc7473b09af578daa31bb8780eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output stream manipulator for ending a line in test reports.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This source file contains the core implementations for the test reporting facilities of the µTest++ framework. It provides the logic for formatting and outputting test results, including operator overloads for a wide range of value types, containers, and comparison expressions, as well as structured output for logical and exception-related assertions.</p>
-<p>The test reporter is responsible for presenting test outcomes in a clear, consistent, and expressive manner, supporting both value and pointer semantics, and providing detailed diagnostics for both successful and failed test cases. Special attention is given to formatting, colour highlighting, and extensibility, enabling professional and readable test reports suitable for embedded and general C++ development.</p>
+<div class="textblock"><p>This source file contains the core implementations for the test reporting facilities of the µTest++ framework. It provides lifecycle and utility behaviour for reporters, including command-line option parsing, output-file handling, informational banner emission, buffering helpers, stream operators, and pass/fail dispatch to reporter-specific prefix/ suffix hooks.</p>
+<p>Concrete formatting behaviour is implemented by derived reporters (<span class="tt">reporter_human</span> and <span class="tt">reporter_tap</span>).</p>
 <p>All definitions reside within the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus.html" title="Primary namespace for the µTest++ testing framework.">micro_os_plus::micro_test_plus</a></span> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.</p>
 <p>This file must be included when building the µTest++ library. </p>
 

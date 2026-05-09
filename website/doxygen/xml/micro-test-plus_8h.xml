@@ -2,409 +2,415 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="micro-test-plus_8h" kind="file" language="C++">
     <compoundname>micro-test-plus.h</compoundname>
+    <includes refid="math_8h" local="yes">micro-test-plus/math.h</includes>
     <includes refid="type-traits_8h" local="yes">micro-test-plus/type-traits.h</includes>
     <includes refid="reflection_8h" local="yes">micro-test-plus/reflection.h</includes>
     <includes refid="detail_8h" local="yes">micro-test-plus/detail.h</includes>
-    <includes refid="math_8h" local="yes">micro-test-plus/math.h</includes>
     <includes refid="literals_8h" local="yes">micro-test-plus/literals.h</includes>
     <includes refid="function-comparators_8h" local="yes">micro-test-plus/function-comparators.h</includes>
     <includes refid="exceptions_8h" local="yes">micro-test-plus/exceptions.h</includes>
     <includes refid="operators_8h" local="yes">micro-test-plus/operators.h</includes>
-    <includes refid="deferred-reporter_8h" local="yes">micro-test-plus/deferred-reporter.h</includes>
-    <includes refid="test_8h" local="yes">micro-test-plus/test.h</includes>
-    <includes refid="runner_8h" local="yes">micro-test-plus/runner.h</includes>
-    <includes refid="runner-totals_8h" local="yes">micro-test-plus/runner-totals.h</includes>
+    <includes refid="expression-formatter_8h" local="yes">micro-test-plus/expression-formatter.h</includes>
     <includes refid="reporter_8h" local="yes">micro-test-plus/reporter.h</includes>
+    <includes refid="deferred-reporter_8h" local="yes">micro-test-plus/deferred-reporter.h</includes>
+    <includes refid="runner-totals_8h" local="yes">micro-test-plus/runner-totals.h</includes>
     <includes refid="reporter-human_8h" local="yes">micro-test-plus/reporter-human.h</includes>
     <includes refid="reporter-tap_8h" local="yes">micro-test-plus/reporter-tap.h</includes>
     <includes refid="utility_8h" local="yes">micro-test-plus/utility.h</includes>
-    <includes local="no">micro-os-plus/diag/trace.h</includes>
-    <includes refid="literals-inlines_8h" local="yes">micro-test-plus/inlines/literals-inlines.h</includes>
-    <includes refid="math-inlines_8h" local="yes">micro-test-plus/inlines/math-inlines.h</includes>
-    <includes refid="reflection-inlines_8h" local="yes">micro-test-plus/inlines/reflection-inlines.h</includes>
-    <includes refid="deferred-reporter-inlines_8h" local="yes">micro-test-plus/inlines/deferred-reporter-inlines.h</includes>
-    <includes refid="reporter-inlines_8h" local="yes">micro-test-plus/inlines/reporter-inlines.h</includes>
-    <includes refid="function-comparators-inlines_8h" local="yes">micro-test-plus/inlines/function-comparators-inlines.h</includes>
-    <includes refid="runner-inlines_8h" local="yes">micro-test-plus/inlines/runner-inlines.h</includes>
-    <includes refid="test-inlines_8h" local="yes">micro-test-plus/inlines/test-inlines.h</includes>
-    <includes refid="utility-inlines_8h" local="yes">micro-test-plus/inlines/utility-inlines.h</includes>
-    <includedby refid="deferred-reporter_8cpp" local="no">deferred-reporter.cpp</includedby>
-    <includedby refid="reflection_8cpp" local="no">reflection.cpp</includedby>
-    <includedby refid="reporter-human_8cpp" local="no">reporter-human.cpp</includedby>
-    <includedby refid="reporter-tap_8cpp" local="no">reporter-tap.cpp</includedby>
-    <includedby refid="reporter_8cpp" local="no">reporter.cpp</includedby>
-    <includedby refid="runner-totals_8cpp" local="no">runner-totals.cpp</includedby>
-    <includedby refid="runner_8cpp" local="no">runner.cpp</includedby>
-    <includedby refid="test_8cpp" local="no">test.cpp</includedby>
-    <includedby refid="timings_8cpp" local="no">timings.cpp</includedby>
-    <includedby refid="utility_8cpp" local="no">utility.cpp</includedby>
+    <includes refid="test_8h" local="yes">micro-test-plus/test.h</includes>
+    <includes refid="runner_8h" local="yes">micro-test-plus/runner.h</includes>
     <incdepgraph>
       <node id="1">
         <label>micro-test-plus.h</label>
         <link refid="micro-test-plus_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="3" relation="include">
+        <childnode refid="12" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>micro-test-plus/deferred-reporter.h</label>
+        <link refid="deferred-reporter_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>micro-test-plus/detail.h</label>
+        <link refid="detail_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>micro-test-plus/exceptions.h</label>
+        <link refid="exceptions_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>micro-test-plus/expression-formatter.h</label>
+        <link refid="expression-formatter_8h"/>
+        <childnode refid="16" relation="include">
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
         <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="25" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
+        <childnode refid="12" relation="include">
         </childnode>
         <childnode refid="26" relation="include">
         </childnode>
-        <childnode refid="28" relation="include">
+      </node>
+      <node id="19">
+        <label>micro-test-plus/function-comparators.h</label>
+        <link refid="function-comparators_8h"/>
+        <childnode refid="20" relation="include">
         </childnode>
-        <childnode refid="29" relation="include">
+      </node>
+      <node id="33">
+        <label>inlines/deferred-reporter-inlines.h</label>
+        <link refid="deferred-reporter-inlines_8h"/>
+        <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="30" relation="include">
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>inlines/detail-inlines.h</label>
+        <link refid="detail-inlines_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>inlines/exceptions-inline.h</label>
+        <link refid="exceptions-inline_8h"/>
+      </node>
+      <node id="26">
+        <label>inlines/expression-formatter-inlines.h</label>
+        <link refid="expression-formatter-inlines_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>inlines/function-comparators-inlines.h</label>
+        <link refid="function-comparators-inlines_8h"/>
+      </node>
+      <node id="18">
+        <label>inlines/literals-inlines.h</label>
+        <link refid="literals-inlines_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>inlines/math-inlines.h</label>
+        <link refid="math-inlines_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>inlines/operators-inlines.h</label>
+        <link refid="operators-inlines_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>inlines/reflection-inlines.h</label>
+        <link refid="reflection-inlines_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>inlines/reporter-inlines.h</label>
+        <link refid="reporter-inlines_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>inlines/runner-inlines.h</label>
+        <link refid="runner-inlines_8h"/>
+      </node>
+      <node id="36">
+        <label>inlines/runner-totals-inlines.h</label>
+        <link refid="runner-totals-inlines_8h"/>
+      </node>
+      <node id="47">
+        <label>inlines/test-inlines.h</label>
+        <link refid="test-inlines_8h"/>
+        <childnode refid="13" relation="include">
         </childnode>
         <childnode refid="31" relation="include">
         </childnode>
         <childnode refid="32" relation="include">
         </childnode>
-        <childnode refid="33" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
-        <childnode refid="34" relation="include">
+      </node>
+      <node id="46">
+        <label>inlines/timings-inlines.h</label>
+        <link refid="timings-inlines_8h"/>
+      </node>
+      <node id="9">
+        <label>inlines/type-traits-inlines.h</label>
+        <link refid="type-traits-inlines_8h"/>
+      </node>
+      <node id="40">
+        <label>inlines/utility-inlines.h</label>
+        <link refid="utility-inlines_8h"/>
+      </node>
+      <node id="17">
+        <label>micro-test-plus/literals.h</label>
+        <link refid="literals_8h"/>
+        <childnode refid="5" relation="include">
         </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>micro-test-plus/math.h</label>
+        <link refid="math_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>micro-test-plus/operators.h</label>
+        <link refid="operators_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>micro-test-plus/reflection.h</label>
+        <link refid="reflection_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>micro-test-plus/reporter-human.h</label>
+        <link refid="reporter-human_8h"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>micro-test-plus/reporter-tap.h</label>
+        <link refid="reporter-tap_8h"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>micro-test-plus/reporter.h</label>
+        <link refid="reporter_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>micro-test-plus/runner-totals.h</label>
+        <link refid="runner-totals_8h"/>
         <childnode refid="35" relation="include">
         </childnode>
-        <childnode refid="37" relation="include">
+        <childnode refid="36" relation="include">
         </childnode>
-        <childnode refid="39" relation="include">
+      </node>
+      <node id="48">
+        <label>micro-test-plus/runner.h</label>
+        <link refid="runner_8h"/>
+        <childnode refid="42" relation="include">
         </childnode>
-        <childnode refid="40" relation="include">
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
         </childnode>
         <childnode refid="41" relation="include">
         </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>micro-test-plus/test.h</label>
+        <link refid="test_8h"/>
         <childnode refid="42" relation="include">
         </childnode>
-      </node>
-      <node id="16">
-        <label>micro-test-plus/deferred-reporter.h</label>
-        <link refid="deferred-reporter_8h"/>
-        <childnode refid="9" relation="include">
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-      </node>
-      <node id="8">
-        <label>micro-test-plus/detail.h</label>
-        <link refid="detail_8h"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
+        <childnode refid="47" relation="include">
         </childnode>
       </node>
-      <node id="14">
-        <label>micro-test-plus/exceptions.h</label>
-        <link refid="exceptions_8h"/>
+      <node id="43">
+        <label>timings.h</label>
+        <link refid="timings_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
       </node>
-      <node id="13">
-        <label>micro-test-plus/function-comparators.h</label>
-        <link refid="function-comparators_8h"/>
-      </node>
-      <node id="35">
-        <label>micro-test-plus/inlines/deferred-reporter-inlines.h</label>
-        <link refid="deferred-reporter-inlines_8h"/>
-        <childnode refid="36" relation="include">
+      <node id="6">
+        <label>micro-test-plus/type-traits.h</label>
+        <link refid="type-traits_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
       </node>
       <node id="39">
-        <label>micro-test-plus/inlines/function-comparators-inlines.h</label>
-        <link refid="function-comparators-inlines_8h"/>
-      </node>
-      <node id="32">
-        <label>micro-test-plus/inlines/literals-inlines.h</label>
-        <link refid="literals-inlines_8h"/>
-        <childnode refid="12" relation="include">
+        <label>micro-test-plus/utility.h</label>
+        <link refid="utility_8h"/>
+        <childnode refid="7" relation="include">
         </childnode>
-      </node>
-      <node id="33">
-        <label>micro-test-plus/inlines/math-inlines.h</label>
-        <link refid="math-inlines_8h"/>
-        <childnode refid="12" relation="include">
+        <childnode refid="29" relation="include">
         </childnode>
-      </node>
-      <node id="34">
-        <label>micro-test-plus/inlines/reflection-inlines.h</label>
-        <link refid="reflection-inlines_8h"/>
-        <childnode refid="12" relation="include">
-        </childnode>
-      </node>
-      <node id="37">
-        <label>micro-test-plus/inlines/reporter-inlines.h</label>
-        <link refid="reporter-inlines_8h"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="38" relation="include">
-        </childnode>
-      </node>
-      <node id="40">
-        <label>micro-test-plus/inlines/runner-inlines.h</label>
-        <link refid="runner-inlines_8h"/>
-      </node>
-      <node id="41">
-        <label>micro-test-plus/inlines/test-inlines.h</label>
-        <link refid="test-inlines_8h"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="38" relation="include">
-        </childnode>
-      </node>
-      <node id="42">
-        <label>micro-test-plus/inlines/utility-inlines.h</label>
-        <link refid="utility-inlines_8h"/>
-      </node>
-      <node id="11">
-        <label>micro-test-plus/literals.h</label>
-        <link refid="literals_8h"/>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
+        <childnode refid="40" relation="include">
         </childnode>
       </node>
       <node id="3">
-        <label>math.h</label>
-        <link refid="math_8h"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="15">
-        <label>micro-test-plus/operators.h</label>
-        <link refid="operators_8h"/>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>micro-test-plus/reflection.h</label>
-        <link refid="reflection_8h"/>
-        <childnode refid="5" relation="include">
-        </childnode>
-      </node>
-      <node id="28">
-        <label>micro-test-plus/reporter-human.h</label>
-        <link refid="reporter-human_8h"/>
-        <childnode refid="26" relation="include">
-        </childnode>
-      </node>
-      <node id="29">
-        <label>micro-test-plus/reporter-tap.h</label>
-        <link refid="reporter-tap_8h"/>
-        <childnode refid="26" relation="include">
-        </childnode>
-      </node>
-      <node id="26">
-        <label>reporter.h</label>
-        <link refid="reporter_8h"/>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-      </node>
-      <node id="18">
-        <label>runner-totals.h</label>
-        <link refid="runner-totals_8h"/>
-        <childnode refid="19" relation="include">
-        </childnode>
-      </node>
-      <node id="25">
-        <label>micro-test-plus/runner.h</label>
-        <link refid="runner_8h"/>
-        <childnode refid="23" relation="include">
-        </childnode>
-        <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="26" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-      </node>
-      <node id="17">
-        <label>micro-test-plus/test.h</label>
-        <link refid="test_8h"/>
-        <childnode refid="18" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
-        <childnode refid="24" relation="include">
-        </childnode>
-      </node>
-      <node id="20">
-        <label>timings.h</label>
-        <link refid="timings_8h"/>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>micro-test-plus/type-traits.h</label>
-        <link refid="type-traits_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-      </node>
-      <node id="30">
-        <label>micro-test-plus/utility.h</label>
-        <link refid="utility_8h"/>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
-      </node>
-      <node id="4">
         <label>array</label>
       </node>
-      <node id="36">
+      <node id="16">
         <label>charconv</label>
       </node>
-      <node id="19">
+      <node id="35">
         <label>cstddef</label>
       </node>
-      <node id="12">
+      <node id="5">
         <label>cstdint</label>
       </node>
-      <node id="9">
+      <node id="13">
         <label>cstdio</label>
       </node>
-      <node id="38">
+      <node id="31">
         <label>cstring</label>
       </node>
-      <node id="22">
+      <node id="45">
         <label>ctime</label>
       </node>
-      <node id="23">
+      <node id="42">
         <label>functional</label>
       </node>
-      <node id="24">
+      <node id="28">
         <label>memory</label>
       </node>
-      <node id="31">
-        <label>micro-os-plus/diag/trace.h</label>
-      </node>
-      <node id="21">
+      <node id="44">
         <label>optional</label>
       </node>
-      <node id="10">
+      <node id="14">
         <label>string</label>
       </node>
-      <node id="5">
+      <node id="7">
         <label>string_view</label>
       </node>
-      <node id="6">
+      <node id="8">
         <label>type_traits</label>
       </node>
-      <node id="27">
+      <node id="29">
         <label>vector</label>
       </node>
     </incdepgraph>
-    <invincdepgraph>
-      <node id="1">
-        <label>micro-test-plus.h</label>
-        <link refid="micro-test-plus_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>deferred-reporter.cpp</label>
-        <link refid="deferred-reporter_8cpp"/>
-      </node>
-      <node id="3">
-        <label>reflection.cpp</label>
-        <link refid="reflection_8cpp"/>
-      </node>
-      <node id="4">
-        <label>reporter-human.cpp</label>
-        <link refid="reporter-human_8cpp"/>
-      </node>
-      <node id="5">
-        <label>reporter-tap.cpp</label>
-        <link refid="reporter-tap_8cpp"/>
-      </node>
-      <node id="6">
-        <label>reporter.cpp</label>
-        <link refid="reporter_8cpp"/>
-      </node>
-      <node id="7">
-        <label>runner-totals.cpp</label>
-        <link refid="runner-totals_8cpp"/>
-      </node>
-      <node id="8">
-        <label>runner.cpp</label>
-        <link refid="runner_8cpp"/>
-      </node>
-      <node id="9">
-        <label>test.cpp</label>
-        <link refid="test_8cpp"/>
-      </node>
-      <node id="10">
-        <label>timings.cpp</label>
-        <link refid="timings_8cpp"/>
-      </node>
-      <node id="11">
-        <label>utility.cpp</label>
-        <link refid="utility_8cpp"/>
-      </node>
-    </invincdepgraph>
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus">micro_os_plus::micro_test_plus</innernamespace>
     <briefdescription>
 <para>Main C++ header with the declarations for the µTest++ Testing Framework. </para>
@@ -450,61 +456,70 @@
 <codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;micro-os-plus/config.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_INCLUDE_CONFIG_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="65"><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="type-traits_8h" kindref="compound">micro-test-plus/type-traits.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="reflection_8h" kindref="compound">micro-test-plus/reflection.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment">//<sp/>No<sp/>deps.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="math_8h" kindref="compound">micro-test-plus/math.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="68"><highlight class="normal"></highlight></codeline>
-<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="detail_8h" kindref="compound">micro-test-plus/detail.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="70"><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="math_8h" kindref="compound">micro-test-plus/math.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="literals_8h" kindref="compound">micro-test-plus/literals.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="function-comparators_8h" kindref="compound">micro-test-plus/function-comparators.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="exceptions_8h" kindref="compound">micro-test-plus/exceptions.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="operators_8h" kindref="compound">micro-test-plus/operators.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="76"><highlight class="normal"></highlight></codeline>
-<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="deferred-reporter_8h" kindref="compound">micro-test-plus/deferred-reporter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="test_8h" kindref="compound">micro-test-plus/test.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="runner_8h" kindref="compound">micro-test-plus/runner.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="runner-totals_8h" kindref="compound">micro-test-plus/runner-totals.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="82"><highlight class="normal"></highlight></codeline>
-<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="reporter_8h" kindref="compound">micro-test-plus/reporter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="reporter-human_8h" kindref="compound">micro-test-plus/reporter-human.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="reporter-tap_8h" kindref="compound">micro-test-plus/reporter-tap.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Requires<sp/>math.h.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="type-traits_8h" kindref="compound">micro-test-plus/type-traits.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="comment">//<sp/>No<sp/>deps.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="reflection_8h" kindref="compound">micro-test-plus/reflection.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Requires<sp/>type-traits.h,<sp/>reflection.h.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="detail_8h" kindref="compound">micro-test-plus/detail.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Requires<sp/>type-traits.h,<sp/>math.h.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="literals_8h" kindref="compound">micro-test-plus/literals.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment">//<sp/>No<sp/>deps.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="function-comparators_8h" kindref="compound">micro-test-plus/function-comparators.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment">//<sp/>No<sp/>deps.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="exceptions_8h" kindref="compound">micro-test-plus/exceptions.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="86"><highlight class="normal"></highlight></codeline>
-<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="utility_8h" kindref="compound">micro-test-plus/utility.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"></highlight></codeline>
-<codeline lineno="115"><highlight class="normal"></highlight></codeline>
-<codeline lineno="116"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="117"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Templates<sp/>&amp;<sp/>constexpr<sp/>implementations.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="118"><highlight class="normal"></highlight></codeline>
-<codeline lineno="119"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;micro-os-plus/diag/trace.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal"></highlight><highlight class="comment">//<sp/>All<sp/>inlines<sp/>are<sp/>included<sp/>**after**<sp/>all<sp/>declarations.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="122"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="literals-inlines_8h" kindref="compound">micro-test-plus/inlines/literals-inlines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="123"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="math-inlines_8h" kindref="compound">micro-test-plus/inlines/math-inlines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="124"><highlight class="normal"></highlight></codeline>
-<codeline lineno="125"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="reflection-inlines_8h" kindref="compound">micro-test-plus/inlines/reflection-inlines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="126"><highlight class="normal"></highlight></codeline>
-<codeline lineno="127"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="deferred-reporter-inlines_8h" kindref="compound">micro-test-plus/inlines/deferred-reporter-inlines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="128"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="reporter-inlines_8h" kindref="compound">micro-test-plus/inlines/reporter-inlines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="129"><highlight class="normal"></highlight></codeline>
-<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="function-comparators-inlines_8h" kindref="compound">micro-test-plus/inlines/function-comparators-inlines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="131"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="runner-inlines_8h" kindref="compound">micro-test-plus/inlines/runner-inlines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="test-inlines_8h" kindref="compound">micro-test-plus/inlines/test-inlines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="133"><highlight class="normal"></highlight></codeline>
-<codeline lineno="134"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="utility-inlines_8h" kindref="compound">micro-test-plus/inlines/utility-inlines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="135"><highlight class="normal"></highlight></codeline>
-<codeline lineno="136"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="137"><highlight class="normal"></highlight></codeline>
-<codeline lineno="138"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="139"><highlight class="normal"></highlight></codeline>
-<codeline lineno="140"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="141"><highlight class="normal"></highlight></codeline>
-<codeline lineno="142"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_TEST_PLUS_MICRO_TEST_PLUS_H_</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="143"><highlight class="normal"></highlight></codeline>
-<codeline lineno="144"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Requires<sp/>type-traits.h<sp/>+<sp/>detail.h,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="operators_8h" kindref="compound">micro-test-plus/operators.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Requires<sp/>type-traits.h,<sp/>detail.h<sp/>+<sp/>reflection.h.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="expression-formatter_8h" kindref="compound">micro-test-plus/expression-formatter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Requires<sp/>type-traits.h,<sp/>detail.h,<sp/>expression-formatter.h,<sp/>reflection.h.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="reporter_8h" kindref="compound">micro-test-plus/reporter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Requires<sp/>type-traits.h,<sp/>reflection.h,<sp/>expression-formatter.h.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="deferred-reporter_8h" kindref="compound">micro-test-plus/deferred-reporter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="comment">//<sp/>No<sp/>deps.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="runner-totals_8h" kindref="compound">micro-test-plus/runner-totals.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Requires<sp/>reporter.h,<sp/>reflection.h.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="reporter-human_8h" kindref="compound">micro-test-plus/reporter-human.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Requires<sp/>reporter.h,<sp/>reflection.h.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="reporter-tap_8h" kindref="compound">micro-test-plus/reporter-tap.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="comment">//<sp/>No<sp/>deps.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="utility_8h" kindref="compound">micro-test-plus/utility.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Requires<sp/>reporter.h,<sp/>runner-totals.h,<sp/>reflection.h,<sp/>type-traits.h<sp/>and</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="comment">//<sp/>timings.h<sp/>+<sp/>deferred-reporter.h,<sp/>reporter.h.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="test_8h" kindref="compound">micro-test-plus/test.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Requires<sp/>timings.h,<sp/>test.h<sp/>(detail::test_node,<sp/>top_suite),<sp/>reflection.h.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="runner_8h" kindref="compound">micro-test-plus/runner.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_TEST_PLUS_MICRO_TEST_PLUS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h"/>
   </compounddef>

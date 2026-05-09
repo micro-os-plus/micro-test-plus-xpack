@@ -412,7 +412,7 @@
               "type": "doc",
               "label": "colours",
               "className": "doxyEllipsis",
-              "id": "api/structs/micro-os-plus-micro-test-plus-colours"
+              "id": "api/structs/micro-os-plus-micro-test-plus-detail-colours"
             },
             {
               "type": "category",
@@ -426,11 +426,17 @@
               "items": [
                 {
                   "type": "doc",
-                  "label": "deferred_reporter<Expr_T>",
+                  "label": "deferred_reporter",
                   "className": "doxyEllipsis",
                   "id": "api/classes/micro-os-plus-micro-test-plus-detail-deferred-reporter"
                 }
               ]
+            },
+            {
+              "type": "doc",
+              "label": "expression_formatter",
+              "className": "doxyEllipsis",
+              "id": "api/classes/micro-os-plus-micro-test-plus-detail-expression-formatter"
             },
             {
               "type": "doc",
@@ -466,7 +472,7 @@
               "type": "doc",
               "label": "indent_t",
               "className": "doxyEllipsis",
-              "id": "api/structs/micro-os-plus-micro-test-plus-indent-t"
+              "id": "api/structs/micro-os-plus-micro-test-plus-detail-indent-t"
             },
             {
               "type": "doc",
@@ -682,7 +688,7 @@
               "type": "doc",
               "label": "runner_totals",
               "className": "doxyEllipsis",
-              "id": "api/classes/micro-os-plus-micro-test-plus-runner-totals"
+              "id": "api/classes/micro-os-plus-micro-test-plus-detail-runner-totals"
             },
             {
               "type": "doc",
@@ -695,7 +701,7 @@
               "label": "test_node",
               "link": {
                 "type": "doc",
-                "id": "api/classes/micro-os-plus-micro-test-plus-test-node"
+                "id": "api/classes/micro-os-plus-micro-test-plus-detail-test-node"
               },
               "className": "doxyEllipsis",
               "collapsed": true,
@@ -705,7 +711,7 @@
                   "label": "runnable_base",
                   "link": {
                     "type": "doc",
-                    "id": "api/classes/micro-os-plus-micro-test-plus-runnable-base"
+                    "id": "api/classes/micro-os-plus-micro-test-plus-detail-runnable-base"
                   },
                   "className": "doxyEllipsis",
                   "collapsed": true,
@@ -715,7 +721,7 @@
                       "label": "runnable<Self_T>",
                       "link": {
                         "type": "doc",
-                        "id": "api/classes/micro-os-plus-micro-test-plus-runnable"
+                        "id": "api/classes/micro-os-plus-micro-test-plus-detail-runnable"
                       },
                       "className": "doxyEllipsis",
                       "collapsed": true,
@@ -778,13 +784,13 @@
               "type": "doc",
               "label": "timestamp",
               "className": "doxyEllipsis",
-              "id": "api/classes/micro-os-plus-micro-test-plus-timestamp"
+              "id": "api/classes/micro-os-plus-micro-test-plus-detail-timestamp"
             },
             {
               "type": "doc",
               "label": "timestamps",
               "className": "doxyEllipsis",
-              "id": "api/classes/micro-os-plus-micro-test-plus-timestamps"
+              "id": "api/classes/micro-os-plus-micro-test-plus-detail-timestamps"
             }
           ]
         },
@@ -881,6 +887,24 @@
                             },
                             {
                               "type": "doc",
+                              "label": "detail-inlines.h",
+                              "className": "doxyEllipsis",
+                              "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-detail-inlines-h"
+                            },
+                            {
+                              "type": "doc",
+                              "label": "exceptions-inline.h",
+                              "className": "doxyEllipsis",
+                              "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-exceptions-inline-h"
+                            },
+                            {
+                              "type": "doc",
+                              "label": "expression-formatter-inlines.h",
+                              "className": "doxyEllipsis",
+                              "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-expression-formatter-inlines-h"
+                            },
+                            {
+                              "type": "doc",
                               "label": "function-comparators-inlines.h",
                               "className": "doxyEllipsis",
                               "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-function-comparators-inlines-h"
@@ -896,6 +920,12 @@
                               "label": "math-inlines.h",
                               "className": "doxyEllipsis",
                               "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-math-inlines-h"
+                            },
+                            {
+                              "type": "doc",
+                              "label": "operators-inlines.h",
+                              "className": "doxyEllipsis",
+                              "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-operators-inlines-h"
                             },
                             {
                               "type": "doc",
@@ -917,9 +947,27 @@
                             },
                             {
                               "type": "doc",
+                              "label": "runner-totals-inlines.h",
+                              "className": "doxyEllipsis",
+                              "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-runner-totals-inlines-h"
+                            },
+                            {
+                              "type": "doc",
                               "label": "test-inlines.h",
                               "className": "doxyEllipsis",
                               "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-test-inlines-h"
+                            },
+                            {
+                              "type": "doc",
+                              "label": "timings-inlines.h",
+                              "className": "doxyEllipsis",
+                              "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-timings-inlines-h"
+                            },
+                            {
+                              "type": "doc",
+                              "label": "type-traits-inlines.h",
+                              "className": "doxyEllipsis",
+                              "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-type-traits-inlines-h"
                             },
                             {
                               "type": "doc",
@@ -946,6 +994,12 @@
                           "label": "exceptions.h",
                           "className": "doxyEllipsis",
                           "id": "api/files/include-micro-os-plus-micro-test-plus-exceptions-h"
+                        },
+                        {
+                          "type": "doc",
+                          "label": "expression-formatter.h",
+                          "className": "doxyEllipsis",
+                          "id": "api/files/include-micro-os-plus-micro-test-plus-expression-formatter-h"
                         },
                         {
                           "type": "doc",
@@ -1061,6 +1115,12 @@
                 },
                 {
                   "type": "doc",
+                  "label": "expression-formatter.cpp",
+                  "className": "doxyEllipsis",
+                  "id": "api/files/src-expression-formatter-cpp"
+                },
+                {
+                  "type": "doc",
                   "label": "reflection.cpp",
                   "className": "doxyEllipsis",
                   "id": "api/files/src-reflection-cpp"
@@ -1114,6 +1174,12 @@
                   "id": "api/files/src-utility-cpp"
                 }
               ]
+            },
+            {
+              "type": "doc",
+              "label": "README.md",
+              "className": "doxyEllipsis",
+              "id": "api/files/readme-md"
             },
             {
               "type": "doc",
@@ -1174,6 +1240,10 @@
     {
       "type": "category",
       "label": "Pages",
+      "link": {
+        "type": "doc",
+        "id": "api/indices/pages/index"
+      },
       "collapsed": true,
       "items": [
         {

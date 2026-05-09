@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['reporter_0',['Reporter',['../group__micro-test-plus-cli.html#cli-reporter',1,'']]]
+  ['quiet_20mode_0',['Quiet mode',['../group__micro-test-plus-cli.html#cli-verbosity-quiet',1,'']]]
 ];

@@ -281,7 +281,7 @@ keywords:
 
 
 
-### Comparing containers {#autotoc_md1}
+### Comparing containers {#autotoc_md2}
 
 
 <p>Containers can be compared for equality or inequality using the same comparator functions. The comparison is performed by iterating through each element and evaluating them individually.</p>

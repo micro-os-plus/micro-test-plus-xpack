@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['list_0',['Deprecated List',['../deprecated.html',1,'']]],
-  ['logical_20operators_1',['Logical operators',['../group__micro-test-plus-operators.html#autotoc_md2',1,'']]]
+  ['headers_0',['Project Headers',['../dir_922d917039c368cf04e89b5c73a4608c.html#autotoc_md0',1,'']]]
 ];

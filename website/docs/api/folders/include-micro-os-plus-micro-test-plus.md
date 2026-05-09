@@ -87,6 +87,20 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">file</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/expression-formatter-h">expression-formatter.h</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>C++ header file with declarations for the µTest++ expression formatter. <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/expression-formatter-h/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">file</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">function-comparators.h</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -286,6 +300,15 @@ keywords:
 ## Description {#details}
 
 <p>Folder with C++ header files for the µTest++ Testing Framework.</p>
+
+
+## Project Headers {#autotoc_md0}
+
+
+<p>The files in this folder are intended for internal use only. Do not include them directly in your projects.</p>
+
+
+<p>Instead, include the public header <span class="doxyComputerOutput">&lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;</span>.</p>
 
 
 <p>The <span class="doxyComputerOutput">include/micro-os-plus/micro-test-plus</span> folder contains the primary public header files that define the core functionality of the µTest++ testing framework.</p>

@@ -156,6 +156,8 @@ requires (type_traits::container_like&lt;Lhs_T&gt; and type_traits::container_li
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Constructs an <span class="tt">ne_</span> comparator object from the two container operands and returns it. The comparator evaluates to <span class="tt">true</span> if the containers are not equal in content or order.</p>
+<p>The operator is enabled only for types recognised as containers by the framework's type traits.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Lhs_T</td><td>The left-hand container type, constrained to recognised container types. </td></tr>
@@ -170,15 +172,13 @@ requires (type_traits::container_like&lt;Lhs_T&gt; and type_traits::container_li
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A comparator object that evaluates to true if the containers are not equal.</dd></dl>
-<p>This overload of the non-equality operator enables direct comparison of two container objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two containers are not equal in content or order.</p>
-<p>The operator is enabled only for types recognised as containers by the framework's type traits. </p>
+<dl class="section return"><dt>Returns</dt><dd>A comparator object that evaluates to true if the containers are not equal. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="operators_8h_source.html#l00214">214</a> of file <a class="el" href="operators_8h_source.html">operators.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  215</span>    {</div>
-<div class="line"><span class="lineno">  216</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne__.html">detail::ne_</a>{ lhs, rhs };</div>
-<div class="line"><span class="lineno">  217</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne__.html">micro_os_plus::micro_test_plus::detail::ne_</a></div><div class="ttdoc">Non-equality comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00508">detail.h:509</a></div></div>
+<p class="definition">Definition at line <a class="el" href="operators-inlines_8h_source.html#l00124">124</a> of file <a class="el" href="operators-inlines_8h_source.html">operators-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  125</span>    {</div>
+<div class="line"><span class="lineno">  126</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne__.html">detail::ne_</a>{ lhs, rhs };</div>
+<div class="line"><span class="lineno">  127</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne__.html">micro_os_plus::micro_test_plus::detail::ne_</a></div><div class="ttdoc">Non-equality comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00304">detail.h:305</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -211,6 +211,8 @@ requires (type_traits::container_like&lt;Lhs_T&gt; and type_traits::container_li
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Constructs an <span class="tt">eq_</span> comparator object from the two container operands and returns it. The comparator evaluates to <span class="tt">true</span> if the containers are equal in content and order.</p>
+<p>The operator is enabled only for types recognised as containers by the framework's type traits.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Lhs_T</td><td>The left-hand container type, constrained to recognised container types. </td></tr>
@@ -225,15 +227,13 @@ requires (type_traits::container_like&lt;Lhs_T&gt; and type_traits::container_li
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A comparator object that evaluates to true if the containers are equal.</dd></dl>
-<p>This overload of the equality operator enables direct comparison of two container objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two containers are equal in content and order.</p>
-<p>The operator is enabled only for types recognised as containers by the framework's type traits. </p>
+<dl class="section return"><dt>Returns</dt><dd>A comparator object that evaluates to true if the containers are equal. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="operators_8h_source.html#l00182">182</a> of file <a class="el" href="operators_8h_source.html">operators.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  183</span>    {</div>
-<div class="line"><span class="lineno">  184</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">detail::eq_</a>{ lhs, rhs };</div>
-<div class="line"><span class="lineno">  185</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">micro_os_plus::micro_test_plus::detail::eq_</a></div><div class="ttdoc">Equality comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00400">detail.h:401</a></div></div>
+<p class="definition">Definition at line <a class="el" href="operators-inlines_8h_source.html#l00106">106</a> of file <a class="el" href="operators-inlines_8h_source.html">operators-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  107</span>    {</div>
+<div class="line"><span class="lineno">  108</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">detail::eq_</a>{ lhs, rhs };</div>
+<div class="line"><span class="lineno">  109</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq___html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html">micro_os_plus::micro_test_plus::detail::eq_</a></div><div class="ttdoc">Equality comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00278">detail.h:279</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

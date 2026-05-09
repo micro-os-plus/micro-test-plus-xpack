@@ -17,6 +17,7 @@ var detail_8h =
     [ "micro_os_plus::micro_test_plus::detail::throws_&lt; Callable_T, void &gt;", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws___3_01_callable___t_00_01void_01_4" ],
     [ "micro_os_plus::micro_test_plus::detail::unary_op_&lt; T &gt;", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op__.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op__" ],
     [ "micro_os_plus::micro_test_plus::detail::and_", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a9c99a7907fdca67f8fc1f7b18b516ff1", null ],
+    [ "micro_os_plus::micro_test_plus::detail::append_number_", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#aa3885b7b361bc6af9e7a52fa6dcc78a1", null ],
     [ "micro_os_plus::micro_test_plus::detail::eq_", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a3c134d5164d17cade8ff3f6de49c5e6b", null ],
     [ "micro_os_plus::micro_test_plus::detail::ge_", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#aded574b3efc7cfe142d34541e0ef71a5", null ],
     [ "micro_os_plus::micro_test_plus::detail::get", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ac627271520bf2fe8a4c4774bcd9bf343", null ],

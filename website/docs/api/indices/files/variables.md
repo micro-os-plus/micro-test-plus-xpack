@@ -20,7 +20,7 @@ keywords:
 ## - C -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#abb8182f972e436f09e25dc5b0dae05fd"><b>colours_red_green</b></a>: as variable in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">include/micro-os-plus/micro-test-plus/reporter.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ad59e204218aa41581652a072be0e8a8a"><b>colours_red_green</b></a>: as variable in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/expression-formatter-h">include/micro-os-plus/micro-test-plus/expression-formatter.h</a></li>
 </ul>
 
 ## - I -

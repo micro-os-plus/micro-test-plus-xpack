@@ -144,28 +144,27 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the short name within the input string.</dd></dl>
-<p>Searches <code class="param">name</code> for the last <span class="tt">/</span> separator and returns a pointer to the character immediately following it, effectively stripping the folder path. If no <span class="tt">/</span> is found, the original pointer is returned unchanged.</p>
 <p>This function extracts the short name from a given file path by locating the final folder separator ('/'). If a separator is found, it returns a pointer to the character immediately following it, effectively providing the file or folder name. If no separator is present, the original input string is returned. This utility is useful for reporting concise file or folder names in test output. </p>
 
-<p class="definition">Definition at line <a class="el" href="reflection_8cpp_source.html#l00072">72</a> of file <a class="el" href="reflection_8cpp_source.html">reflection.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   73</span>    {</div>
-<div class="line"><span class="lineno">   74</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">   75</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
-<div class="line"><span class="lineno">   76</span><span class="preprocessor">#if defined(__clang__)</span></div>
-<div class="line"><span class="lineno">   77</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wunsafe-buffer-usage&quot;</span></div>
-<div class="line"><span class="lineno">   78</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">   79</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">   80</span>      <span class="keyword">const</span> <span class="keywordtype">char</span>* p = strrchr (name, <span class="charliteral">&#39;/&#39;</span>);</div>
-<div class="line"><span class="lineno">   81</span>      <span class="keywordflow">if</span> (p != <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   82</span>        <span class="keywordflow">return</span> p + 1;</div>
-<div class="line"><span class="lineno">   83</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">return</span> name;</div>
-<div class="line"><span class="lineno">   85</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">   86</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
-<div class="line"><span class="lineno">   87</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">   88</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="reflection_8cpp_source.html#l00074">74</a> of file <a class="el" href="reflection_8cpp_source.html">reflection.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>    {</div>
+<div class="line"><span class="lineno">   76</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">   77</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
+<div class="line"><span class="lineno">   78</span><span class="preprocessor">#if defined(__clang__)</span></div>
+<div class="line"><span class="lineno">   79</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wunsafe-buffer-usage&quot;</span></div>
+<div class="line"><span class="lineno">   80</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   81</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   82</span>      <span class="keyword">const</span> <span class="keywordtype">char</span>* p = strrchr (name, <span class="charliteral">&#39;/&#39;</span>);</div>
+<div class="line"><span class="lineno">   83</span>      <span class="keywordflow">if</span> (p != <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">return</span> p + 1;</div>
+<div class="line"><span class="lineno">   85</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   86</span>        <span class="keywordflow">return</span> name;</div>
+<div class="line"><span class="lineno">   87</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">   88</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
+<div class="line"><span class="lineno">   89</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   90</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="runner_8cpp_source.html#l00348">micro_os_plus::micro_test_plus::runner::abort()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00756">micro_os_plus::micro_test_plus::reporter_human::output_fail_prefix_()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00751">micro_os_plus::micro_test_plus::reporter_tap::output_fail_suffix_()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="runner_8cpp_source.html#l00368">micro_os_plus::micro_test_plus::runner::abort()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00753">micro_os_plus::micro_test_plus::reporter_human::output_fail_prefix_()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00744">micro_os_plus::micro_test_plus::reporter_tap::output_fail_suffix_()</a>.</p>
 
 </div>
 </div>
@@ -207,8 +206,7 @@ template&lt;class T&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Parameters</dt><dd>None. </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>A <span class="tt">std::string_view</span> containing the extracted type name.</dd></dl>
-<p>Constructs a <span class="tt">std::string_view</span> from <span class="tt">__PRETTY_FUNCTION__</span> and parses out the portion that represents the template argument <span class="tt">T</span>, using compiler-specific prefix and suffix markers to locate the type-name substring at compile time. </p>
+<dl class="section return"><dt>Returns</dt><dd>A <span class="tt">std::string_view</span> containing the extracted type name. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="reflection-inlines_8h_source.html#l00145">145</a> of file <a class="el" href="reflection-inlines_8h_source.html">reflection-inlines.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  146</span>    {</div>
@@ -235,7 +233,7 @@ template&lt;class T&gt; </div>
 <div class="line"><span class="lineno">  167</span>      <span class="keywordflow">return</span> sv.substr (start, end - start);</div>
 <div class="line"><span class="lineno">  168</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="reporter-inlines_8h_source.html#l00437">micro_os_plus::micro_test_plus::reporter::operator&lt;&lt;()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="expression-formatter-inlines_8h_source.html#l00451">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>.</p>
 
 </div>
 </div>

@@ -286,10 +286,10 @@ template&lt;class T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>A non-const reference to the input object.</dd></dl>
 <p>The <span class="tt"><a class="el" href="#ga00ea8f3dfb7cb0ef39919065321cf62f" title="Generic mutator to remove const qualification from any type.">mut</a></span> function template provides a safe and generic mechanism to remove the <span class="tt">const</span> qualifier from any type. It returns a non-const reference to the input object, enabling modification of objects that were originally declared as <span class="tt">const</span>. This utility is particularly useful in testing scenarios where controlled mutation of test data is required. </p>
 
-<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00384">384</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  385</span>  {</div>
-<div class="line"><span class="lineno">  386</span>    <span class="keywordflow">return</span> <span class="keyword">const_cast&lt;</span>T&amp;<span class="keyword">&gt;</span> (t);</div>
-<div class="line"><span class="lineno">  387</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00325">325</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  326</span>  {</div>
+<div class="line"><span class="lineno">  327</span>    <span class="keywordflow">return</span> <span class="keyword">const_cast&lt;</span>T&amp;<span class="keyword">&gt;</span> (t);</div>
+<div class="line"><span class="lineno">  328</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>

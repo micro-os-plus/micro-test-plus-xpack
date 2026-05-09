@@ -116,9 +116,6 @@ requires type_traits::checkable&lt;Expr_T&gt;</td></tr>
 <div class="memtemplate">
 template&lt;class Expr_T&gt; <br />
 requires type_traits::checkable&lt;Expr_T&gt;</div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto micro_os_plus::micro_test_plus::subtest::assume </td>
@@ -131,11 +128,6 @@ requires type_traits::checkable&lt;Expr_T&gt;</div>
           <td class="paramtype">const <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html">reflection::source_location</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>sl</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#af2ee3ac5db96f13680291736d58fe327">reflection::source_location::current</a>&#160;()</span>&#160;)</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -152,20 +144,19 @@ requires type_traits::checkable&lt;Expr_T&gt;</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An output stream to write optional messages.</dd></dl>
-<p>The <span class="tt"><a class="el" href="#ga0346721eb94564ebce4a49ee81c020c8" title="Check a condition and, if false, abort test execution.">assume</a></span> function template evaluates a logical condition or custom expression and reports the result within the µTest++ framework. It is designed to provide detailed diagnostics for test failures, including the actual and expected values, when using the provided comparators (<span class="tt"><a class="el" href="group__micro-test-plus-function-comparators.html#gae9dfca849300a917cb1c231d275baaa3" title="Generic equality comparator for non-pointer types.">eq()</a></span>, <span class="tt"><a class="el" href="group__micro-test-plus-function-comparators.html#ga59e4cf59954e81bc868e62b1c5c8db1f" title="Generic non-equality comparator.">ne()</a></span>, <span class="tt"><a class="el" href="group__micro-test-plus-function-comparators.html#gac162522dcad1a6ff7c869d52d376b3ed" title="Generic less than comparator.">lt()</a></span>, <span class="tt"><a class="el" href="group__micro-test-plus-function-comparators.html#ga2b5263a5b3965855aa04971bba735a56" title="Generic less than or equal comparator.">le()</a></span>, <span class="tt"><a class="el" href="group__micro-test-plus-function-comparators.html#gae2fb681444d8256f6bf827eea6b7c29e" title="Generic greater than comparator.">gt()</a></span>, <span class="tt"><a class="el" href="group__micro-test-plus-function-comparators.html#ga34e03399670ec0b365b94b7bea788dd8" title="Generic greater than or equal comparator.">ge()</a></span>) or custom operators.</p>
-<p>The function template can be used with any expression that evaluates to a boolean or with custom comparators/operators derived from the local <span class="tt">detail::op</span> type. For complex checks performed outside the <span class="tt"><a class="el" href="group__micro-test-plus-expectations.html#gaad2aa05f39d1877f2173f6d0f6718bd2" title="Evaluate a generic condition and report the results.">expect()</a></span> logical expression (such as within <span class="tt">if</span> or <span class="tt">try</span>/<span class="tt">catch</span> statements), the result can be reported by calling <span class="tt">expect(true)</span> or <span class="tt">expect(false)</span>.</p>
-<p>The function returns an output stream, allowing optional messages to be appended to the test report.</p>
-<p><b>Example</b></p>
-<div class="fragment"><div class="line"><span class="keyword">namespace </span>mt = <a class="code hl_namespace" href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a>;</div>
-<div class="line">mt::assume(compute_answer() == 42) &lt;&lt; <span class="stringliteral">&quot;answer is 42&quot;</span>;</div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div><div class="ttdoc">Primary namespace for the µTest++ testing framework.</div></div>
-</div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00693">693</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  695</span>    {</div>
-<div class="line"><span class="lineno">  696</span>      <span class="keywordflow">return</span> detail::deferred_reporter&lt;Expr_T&gt;{ expr, <span class="keyword">true</span>, sl, *<span class="keyword">this</span> };</div>
-<div class="line"><span class="lineno">  697</span>    }</div>
+<p>Constructs and returns a <span class="tt">deferred_reporter&lt;Expr_T&gt;</span> with <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#ad8302d2dc629b643d34b3cfeafe44b3b">abort</a> = true</span>. The reporter evaluates the condition, records a pass or fail when it is destroyed, and aborts execution if the condition is false. </p>
+
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00345">345</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  346</span>  {</div>
+<div class="line"><span class="lineno">  347</span>    <span class="keywordflow">return</span> detail::deferred_reporter{ expr, <span class="keyword">true</span>, sl, *<span class="keyword">this</span>,</div>
+<div class="line"><span class="lineno">  348</span>                                      <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aad120bac9a056a4684d866d974a09b6b">reporter</a> ().<a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1reporter.html#ad2169093aee09bc28ae7f70467569a23">expression</a> () };</div>
+<div class="line"><span class="lineno">  349</span>  }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_aad120bac9a056a4684d866d974a09b6b"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#aad120bac9a056a4684d866d974a09b6b">micro_os_plus::micro_test_plus::detail::runnable&lt; subtest &gt;::reporter</a></div><div class="ttdeci">class reporter &amp; reporter(void) const noexcept</div><div class="ttdef"><b>Definition</b> <a href="test_8cpp_source.html#l00355">test.cpp:187</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1reporter_html_ad2169093aee09bc28ae7f70467569a23"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1reporter.html#ad2169093aee09bc28ae7f70467569a23">micro_os_plus::micro_test_plus::reporter::expression</a></div><div class="ttdeci">detail::expression_formatter &amp; expression()</div><div class="ttdoc">Provides access to the expression formatter for this reporter.</div><div class="ttdef"><b>Definition</b> <a href="reporter-inlines_8h_source.html#l00106">reporter-inlines.h:106</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reflection-inlines_8h_source.html#l00091">micro_os_plus::micro_test_plus::reflection::source_location::current()</a>.</p>
+<p class="reference">References <a class="el" href="reporter-inlines_8h_source.html#l00106">micro_os_plus::micro_test_plus::reporter::expression()</a>, and <a class="el" href="test_8cpp_source.html#l00187">micro_os_plus::micro_test_plus::detail::runnable&lt; subtest &gt;::reporter()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1subtest.html#ad3eb4bb11f1c6fc4631bae8a7215a95e">operator=()</a>.</p>
 
 </div>
 </div>

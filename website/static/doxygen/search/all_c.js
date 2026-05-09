@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['name_0',['name',['../classmicro__os__plus_1_1micro__test__plus_1_1test__node.html#ab32279070d5254a7b92f736f2dfb96d4',1,'micro_os_plus::micro_test_plus::test_node']]],
-  ['name_5f_1',['name_',['../classmicro__os__plus_1_1micro__test__plus_1_1test__node.html#a2a42b9e3552406a258d3ae571cf5831e',1,'micro_os_plus::micro_test_plus::test_node']]],
+  ['name_0',['name',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node.html#a1565ede2ab1141b2e3db2ea5513002a1',1,'micro_os_plus::micro_test_plus::detail::test_node']]],
+  ['name_5f_1',['name_',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node.html#a61ac0275108c9f9b2348c1c5fc8af104',1,'micro_os_plus::micro_test_plus::detail::test_node']]],
   ['ne_2',['ne',['../group__micro-test-plus-function-comparators.html#ga59e4cf59954e81bc868e62b1c5c8db1f',1,'micro_os_plus::micro_test_plus::ne(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)'],['../group__micro-test-plus-function-comparators.html#ga172f305bbeaf8b965681f76c16a39516',1,'micro_os_plus::micro_test_plus::ne(Lhs_T *lhs, Rhs_T *rhs)']]],
   ['ne_5f_3',['ne_',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne__.html',1,'micro_os_plus::micro_test_plus::detail::ne_&lt; Lhs_T, Rhs_T &gt;'],['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ne__.html#a6119b4adca8baf81aad4e2543b8902bc',1,'micro_os_plus::micro_test_plus::detail::ne_::ne_()'],['../namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a887b0a1dcb769d9b07caeda9f00a2bd1',1,'micro_os_plus::micro_test_plus::detail::ne_()']]],
   ['nesting_5fdepth_4',['nesting_depth',['../classmicro__os__plus_1_1micro__test__plus_1_1subtest.html#aee4c71b875afef0ff38f6bf2e4c0b234',1,'micro_os_plus::micro_test_plus::subtest']]],
   ['nesting_5fdepth_5f_5',['nesting_depth_',['../classmicro__os__plus_1_1micro__test__plus_1_1subtest.html#adf9c9b16ed98e79d713b191ae6fd25ba',1,'micro_os_plus::micro_test_plus::subtest']]],
-  ['none_6',['none',['../structmicro__os__plus_1_1micro__test__plus_1_1colours.html#a41c8c508e9353cee2b9823bbe9d1fea3',1,'micro_os_plus::micro_test_plus::colours']]],
+  ['none_6',['none',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1colours.html#a42937839aa8c23e1c5482582eaf2aeb7',1,'micro_os_plus::micro_test_plus::detail::colours']]],
   ['normal_7',['normal',['../namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555',1,'micro_os_plus::micro_test_plus']]],
   ['not_5f_8',['not_',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__.html',1,'micro_os_plus::micro_test_plus::detail::not_&lt; T &gt;'],['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__.html#ae04b89bc6cdf306487499875a635d301',1,'micro_os_plus::micro_test_plus::detail::not_::not_()'],['../namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ae744b884d8e43bf196c35c31929a3efc',1,'micro_os_plus::micro_test_plus::detail::not_()']]],
   ['nothrow_9',['nothrow',['../group__micro-test-plus-exceptions.html#ga798bd28001c3938784073e60dd904148',1,'micro_os_plus::micro_test_plus']]],

@@ -31,6 +31,8 @@
 <para>Non-equality operator for containers. </para>
         </briefdescription>
         <detaileddescription>
+<para>Constructs an <computeroutput>ne_</computeroutput> comparator object from the two container operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if the containers are not equal in content or order.</para>
+<para>The operator is enabled only for types recognised as containers by the framework&apos;s type traits.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -65,14 +67,13 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A comparator object that evaluates to true if the containers are not equal.</para>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the containers are not equal. </para>
 </simplesect>
-This overload of the non-equality operator enables direct comparison of two container objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two containers are not equal in content or order.</para>
-<para>The operator is enabled only for types recognised as containers by the framework&apos;s type traits. </para>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="214" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="214" bodyend="217"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="124" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="124" bodyend="127" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="172" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-container-operators_1gab8c44f8115524296fbaf21688dd7f389" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -101,6 +102,8 @@ This overload of the non-equality operator enables direct comparison of two cont
 <para>Equality operator for containers. </para>
         </briefdescription>
         <detaileddescription>
+<para>Constructs an <computeroutput>eq_</computeroutput> comparator object from the two container operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if the containers are equal in content and order.</para>
+<para>The operator is enabled only for types recognised as containers by the framework&apos;s type traits.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -135,14 +138,13 @@ This overload of the non-equality operator enables direct comparison of two cont
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A comparator object that evaluates to true if the containers are equal.</para>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the containers are equal. </para>
 </simplesect>
-This overload of the equality operator enables direct comparison of two container objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two containers are equal in content and order.</para>
-<para>The operator is enabled only for types recognised as containers by the framework&apos;s type traits. </para>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="182" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="182" bodyend="185"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="106" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="106" bodyend="109" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="152" declcolumn="5"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

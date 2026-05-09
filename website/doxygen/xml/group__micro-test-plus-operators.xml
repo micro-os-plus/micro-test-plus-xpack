@@ -31,6 +31,7 @@
 <para>Logical <computeroutput>&amp;&amp;</computeroutput> (and) operator. Matches only if at least one operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
         </briefdescription>
         <detaileddescription>
+<para>Constructs an <computeroutput>and_</computeroutput> logical conjunction object from the two operands and returns it. The object evaluates to <computeroutput>true</computeroutput> if both operands are true. At least one operand must derive from the local <computeroutput>op</computeroutput> base.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -65,13 +66,13 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A logical conjunction object that evaluates to true if both operands are true.</para>
+<simplesect kind="return"><para>A logical conjunction object that evaluates to true if both operands are true. </para>
 </simplesect>
-This overload of the logical <computeroutput>&amp;&amp;</computeroutput> (and) operator enables conjunction between two operands, where at least one is a local type derived from the local <computeroutput>op</computeroutput> base. It constructs a logical conjunction object that can be used within the µTest++ framework to assert that both operands evaluate to true. This operator is intended for use with the framework&apos;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions. </para>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="426" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="426" bodyend="429"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="224" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="224" bodyend="227" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="298" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-operators_1ga00db5f149865ed9fd8d73f2db44542b0" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -93,6 +94,7 @@ This overload of the logical <computeroutput>&amp;&amp;</computeroutput> (and) o
 <para>Logical <computeroutput>!</computeroutput> (not) operator. Matches only if the operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
         </briefdescription>
         <detaileddescription>
+<para>Constructs a <computeroutput>not_</computeroutput> logical negator object from the operand and returns it. The object evaluates to <computeroutput>true</computeroutput> if the operand is false. The operand must derive from the local <computeroutput>op</computeroutput> base.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>T</parametername>
@@ -111,13 +113,13 @@ This overload of the logical <computeroutput>&amp;&amp;</computeroutput> (and) o
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A logical negator object that evaluates to true if the operand is false.</para>
+<simplesect kind="return"><para>A logical negator object that evaluates to true if the operand is false. </para>
 </simplesect>
-This overload of the logical <computeroutput>!</computeroutput> (not) operator enables logical negation of an operand, provided it is a local type derived from the local <computeroutput>op</computeroutput> base. It constructs a logical negator object that can be used within the µTest++ framework to assert that a given condition is false. This operator is intended for use with the framework&apos;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions. </para>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="485" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="485" bodyend="488"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="252" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="252" bodyend="255" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="333" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-operators_1ga0fe9ef52ecfb0de402da9e7454d7c20b" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -146,6 +148,7 @@ This overload of the logical <computeroutput>!</computeroutput> (not) operator e
 <para>Logical <computeroutput>||</computeroutput> (or) operator. Matches only if at least one operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
         </briefdescription>
         <detaileddescription>
+<para>Constructs an <computeroutput>or_</computeroutput> logical disjunction object from the two operands and returns it. The object evaluates to <computeroutput>true</computeroutput> if at least one operand is true. At least one operand must derive from the local <computeroutput>op</computeroutput> base.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -180,13 +183,13 @@ This overload of the logical <computeroutput>!</computeroutput> (not) operator e
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A logical disjunction object that evaluates to true if at least one operand is true.</para>
+<simplesect kind="return"><para>A logical disjunction object that evaluates to true if at least one operand is true. </para>
 </simplesect>
-This overload of the logical <computeroutput>||</computeroutput> (or) operator enables disjunction between two operands, where at least one is a local type derived from the local <computeroutput>op</computeroutput> base. It constructs a logical disjunction object that can be used within the µTest++ framework to assert that at least one operand evaluates to true. This operator is intended for use with the framework&apos;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions. </para>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="456" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="456" bodyend="459"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="238" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="238" bodyend="241" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="316" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-operators_1ga445025eccd3ef529af191aab5aad91a9" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -215,6 +218,7 @@ This overload of the logical <computeroutput>||</computeroutput> (or) operator e
 <para>Non-equality operator for custom types. Matches only if at least one operand is of local type. </para>
         </briefdescription>
         <detaileddescription>
+<para>Constructs an <computeroutput>ne_</computeroutput> comparator object from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if the operands are not equal. At least one operand must derive from the local <computeroutput>op</computeroutput> base.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -249,13 +253,13 @@ This overload of the logical <computeroutput>||</computeroutput> (or) operator e
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A comparator object that evaluates to true if the operands are not equal.</para>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the operands are not equal. </para>
 </simplesect>
-This overload of the non-equality operator enables comparison between two operands, where at least one is a local type derived from the local <computeroutput>op</computeroutput> base. It constructs a comparator object that can be used within the µTest++ framework to assert that the operands are not equal. This operator is intended for use with the framework&apos;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions. </para>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="274" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="274" bodyend="277"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="152" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="152" bodyend="155" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="208" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-operators_1ga675d31a23d8f0dfed775466ef1463a80" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -284,6 +288,7 @@ This overload of the non-equality operator enables comparison between two operan
 <para>Less than operator. Matches only if at least one operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
         </briefdescription>
         <detaileddescription>
+<para>Constructs an <computeroutput>lt_</computeroutput> comparator object from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if <computeroutput>lhs</computeroutput> is less than <computeroutput>rhs</computeroutput>. At least one operand must derive from the local <computeroutput>op</computeroutput> base.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -318,13 +323,13 @@ This overload of the non-equality operator enables comparison between two operan
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side operand is less than the right hand side operand.</para>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side operand is less than the right hand side operand. </para>
 </simplesect>
-This overload of the less than operator enables comparison between two operands, where at least one is a local type derived from the local <computeroutput>op</computeroutput> base. It constructs a comparator object that can be used within the µTest++ framework to assert that the left hand side operand is less than the right hand side operand. This operator is intended for use with the framework&apos;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions. </para>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="364" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="365" bodyend="368"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="194" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="195" bodyend="198" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="261" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-operators_1ga15235adceff30c6e3aa382696aea23cb" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -353,6 +358,7 @@ This overload of the less than operator enables comparison between two operands,
 <para>Less than or equal operator. Matches only if at least one operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
         </briefdescription>
         <detaileddescription>
+<para>Constructs an <computeroutput>le_</computeroutput> comparator object from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if <computeroutput>lhs</computeroutput> is less than or equal to <computeroutput>rhs</computeroutput>. At least one operand must derive from the local <computeroutput>op</computeroutput> base.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -387,13 +393,13 @@ This overload of the less than operator enables comparison between two operands,
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side operand is less than or equal to the right hand side operand.</para>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side operand is less than or equal to the right hand side operand. </para>
 </simplesect>
-This overload of the less than or equal operator enables comparison between two operands, where at least one is a local type derived from the local <computeroutput>op</computeroutput> base. It constructs a comparator object that can be used within the µTest++ framework to assert that the left hand side operand is less than or equal to the right hand side operand. This operator is intended for use with the framework&apos;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions. </para>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="395" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="396" bodyend="399"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="209" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="210" bodyend="213" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="279" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-operators_1gaae177a6c59286d4d7e4f85ffa6579e56" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -422,6 +428,7 @@ This overload of the less than or equal operator enables comparison between two 
 <para>Equality operator for custom types. Matches only if at least one operand is of local type. </para>
         </briefdescription>
         <detaileddescription>
+<para>Constructs an <computeroutput>eq_</computeroutput> comparator object from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if the operands are equal. At least one operand must derive from the local <computeroutput>op</computeroutput> base.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -456,13 +463,13 @@ This overload of the less than or equal operator enables comparison between two 
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A comparator object that evaluates to true if the operands are equal.</para>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the operands are equal. </para>
 </simplesect>
-This overload of the equality operator enables comparison between two operands, where at least one is a local type derived from the local <computeroutput>op</computeroutput> base. It constructs a comparator object that can be used within the µTest++ framework to assert that the operands are equal. This operator is intended for use with the framework&apos;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions. </para>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="244" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="244" bodyend="247"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="138" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="138" bodyend="141" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="190" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-operators_1gac0afc8d658f73e3b5f136a5c60d1fbd1" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -491,6 +498,7 @@ This overload of the equality operator enables comparison between two operands, 
 <para>Greater than operator. Matches only if at least one operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
         </briefdescription>
         <detaileddescription>
+<para>Constructs a <computeroutput>gt_</computeroutput> comparator object from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if <computeroutput>lhs</computeroutput> is greater than <computeroutput>rhs</computeroutput>. At least one operand must derive from the local <computeroutput>op</computeroutput> base.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -525,13 +533,13 @@ This overload of the equality operator enables comparison between two operands, 
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side operand is greater than the right hand side operand.</para>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side operand is greater than the right hand side operand. </para>
 </simplesect>
-This overload of the greater than operator enables comparison between two operands, where at least one is a local type derived from the local <computeroutput>op</computeroutput> base. It constructs a comparator object that can be used within the µTest++ framework to assert that the left hand side operand is greater than the right hand side operand. This operator is intended for use with the framework&apos;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions. </para>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="304" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="304" bodyend="307"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="166" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="166" bodyend="169" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="226" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-operators_1gabfc165fd00e9f53bbf7b63f71b9d5020" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -560,6 +568,7 @@ This overload of the greater than operator enables comparison between two operan
 <para>Greater than or equal operator. Matches only if at least one operand is of local type (derived from local <computeroutput>op</computeroutput>). </para>
         </briefdescription>
         <detaileddescription>
+<para>Constructs a <computeroutput>ge_</computeroutput> comparator object from the two operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if <computeroutput>lhs</computeroutput> is greater than or equal to <computeroutput>rhs</computeroutput>. At least one operand must derive from the local <computeroutput>op</computeroutput> base.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -594,13 +603,13 @@ This overload of the greater than operator enables comparison between two operan
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side operand is greater than or equal to the right hand side operand.</para>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the left hand side operand is greater than or equal to the right hand side operand. </para>
 </simplesect>
-This overload of the greater than or equal operator enables comparison between two operands, where at least one is a local type derived from the local <computeroutput>op</computeroutput> base. It constructs a comparator object that can be used within the µTest++ framework to assert that the left hand side operand is greater than or equal to the right hand side operand. This operator is intended for use with the framework&apos;s strongly-typed constants, wrappers, or other custom types, ensuring type-safe and expressive test assertions. </para>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="335" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="335" bodyend="338"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="181" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="181" bodyend="184" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="244" declcolumn="5"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -626,7 +635,7 @@ This overload of the greater than or equal operator enables comparison between t
 <codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(compute_answer<sp/>()<sp/>&gt;=<sp/>42_i)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&gt;=<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal">});</highlight></codeline>
 </programlisting></para>
-<sect1 id="group__micro-test-plus-operators_1autotoc_md2_1s1"><sect2 id="group__micro-test-plus-operators_1autotoc_md2">
+<sect1 id="group__micro-test-plus-operators_1autotoc_md3_1s1"><sect2 id="group__micro-test-plus-operators_1autotoc_md3">
 <title>Logical operators</title><para>Logical operators may be used in the same way as standard operators, with enhanced reporting available when used with typed operands.</para>
 <para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>

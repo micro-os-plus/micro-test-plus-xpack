@@ -1,7 +1,6 @@
 var reporter_8h =
 [
-    [ "micro_os_plus::micro_test_plus::colours", "structmicro__os__plus_1_1micro__test__plus_1_1colours.html", "structmicro__os__plus_1_1micro__test__plus_1_1colours" ],
-    [ "micro_os_plus::micro_test_plus::indent_t", "structmicro__os__plus_1_1micro__test__plus_1_1indent__t.html", "structmicro__os__plus_1_1micro__test__plus_1_1indent__t" ],
+    [ "micro_os_plus::micro_test_plus::detail::indent_t", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1indent__t.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1indent__t" ],
     [ "micro_os_plus::micro_test_plus::reporter", "classmicro__os__plus_1_1micro__test__plus_1_1reporter.html", "classmicro__os__plus_1_1micro__test__plus_1_1reporter" ],
     [ "micro_os_plus::micro_test_plus::verbosity", "namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914b", [
       [ "micro_os_plus::micro_test_plus::verbosity::silent", "namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15", null ],
@@ -10,6 +9,5 @@ var reporter_8h =
       [ "micro_os_plus::micro_test_plus::verbosity::verbose", "namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0", null ]
     ] ],
     [ "micro_os_plus::micro_test_plus::endl", "namespacemicro__os__plus_1_1micro__test__plus.html#accd8ecc7473b09af578daa31bb8780eb", null ],
-    [ "micro_os_plus::micro_test_plus::indent", "namespacemicro__os__plus_1_1micro__test__plus.html#aa887212b25aa8e44bf32b07d4a6634e9", null ],
-    [ "micro_os_plus::micro_test_plus::colours_red_green", "namespacemicro__os__plus_1_1micro__test__plus.html#abb8182f972e436f09e25dc5b0dae05fd", null ]
+    [ "micro_os_plus::micro_test_plus::indent", "namespacemicro__os__plus_1_1micro__test__plus.html#a7d5ad50c71915516060558e8f7f22bf9", null ]
 ];

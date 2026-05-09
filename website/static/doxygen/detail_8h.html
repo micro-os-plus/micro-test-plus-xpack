@@ -98,6 +98,9 @@ $(function(){initNavTree('detail_8h.html','',''); });
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;cstdio&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
+<code>#include &quot;<a class="el" href="type-traits_8h_source.html">type-traits.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="reflection_8h_source.html">reflection.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="detail-inlines_8h_source.html">inlines/detail-inlines.h</a>&quot;</code><br />
 </div>
 <p><a href="detail_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -149,6 +152,10 @@ Namespaces</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a9c99a7907fdca67f8fc1f7b18b516ff1" id="r_a9c99a7907fdca67f8fc1f7b18b516ff1"><td class="memTemplParams" colspan="2">template&lt;typename Lhs_T, typename Rhs_T&gt; </td></tr>
 <tr class="memitem:a9c99a7907fdca67f8fc1f7b18b516ff1 template"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a9c99a7907fdca67f8fc1f7b18b516ff1">micro_os_plus::micro_test_plus::detail::and_</a> (const Lhs_T &amp;, const Rhs_T &amp;) -&gt; and_&lt; Lhs_T, Rhs_T &gt;</td></tr>
+<tr class="memitem:aa3885b7b361bc6af9e7a52fa6dcc78a1" id="r_aa3885b7b361bc6af9e7a52fa6dcc78a1"><td class="memTemplParams" colspan="2">template&lt;class T&gt; <br />
+requires std::is_arithmetic_v&lt;T&gt;</td></tr>
+<tr class="memitem:aa3885b7b361bc6af9e7a52fa6dcc78a1 template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#aa3885b7b361bc6af9e7a52fa6dcc78a1">micro_os_plus::micro_test_plus::detail::append_number_</a> (std::string &amp;buffer, T v)</td></tr>
+<tr class="memdesc:aa3885b7b361bc6af9e7a52fa6dcc78a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends the string representation of a numeric value to a buffer, using <span class="tt">std::to_chars</span> for allocation-free, locale-independent formatting.  <br /></td></tr>
 <tr class="memitem:a3c134d5164d17cade8ff3f6de49c5e6b" id="r_a3c134d5164d17cade8ff3f6de49c5e6b"><td class="memTemplParams" colspan="2">template&lt;typename Lhs_T, typename Rhs_T&gt; </td></tr>
 <tr class="memitem:a3c134d5164d17cade8ff3f6de49c5e6b template"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a3c134d5164d17cade8ff3f6de49c5e6b">micro_os_plus::micro_test_plus::detail::eq_</a> (const Lhs_T &amp;, const Rhs_T &amp;) -&gt; eq_&lt; Lhs_T, Rhs_T &gt;</td></tr>
 <tr class="memitem:aded574b3efc7cfe142d34541e0ef71a5" id="r_aded574b3efc7cfe142d34541e0ef71a5"><td class="memTemplParams" colspan="2">template&lt;typename Lhs_T, typename Rhs_T&gt; </td></tr>

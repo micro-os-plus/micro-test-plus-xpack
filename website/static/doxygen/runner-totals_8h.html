@@ -97,13 +97,14 @@ $(function(){initNavTree('runner-totals_8h.html','',''); });
 <p>C++ header file with declarations for the µTest++ runner totals.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;cstddef&gt;</code><br />
+<code>#include &quot;<a class="el" href="runner-totals-inlines_8h_source.html">inlines/runner-totals-inlines.h</a>&quot;</code><br />
 </div>
 <p><a href="runner-totals_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Arunner_5Ftotals" id="r_micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Arunner_5Ftotals"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals.html">micro_os_plus::micro_test_plus::runner_totals</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggregated pass/fail/subtest counters for a node in the test tree.  <a href="classmicro__os__plus_1_1micro__test__plus_1_1runner__totals.html#details">More...</a><br /></td></tr>
+<tr class="memitem:micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail_3A_3Arunner_5Ftotals" id="r_micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail_3A_3Arunner_5Ftotals"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runner__totals.html">micro_os_plus::micro_test_plus::detail::runner_totals</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggregated pass/fail/subtest counters for a node in the test tree.  <a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runner__totals.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -111,6 +112,8 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespacemicro__os__plus"><td class="mdescLeft">&#160;</td><td class="mdescRight">The primary namespace for the µOS++ framework. <br /></td></tr>
 <tr class="memitem:micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus" id="r_micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></td></tr>
 <tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primary namespace for the µTest++ testing framework. <br /></td></tr>
+<tr class="memitem:micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail" id="r_micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html">micro_os_plus::micro_test_plus::detail</a></td></tr>
+<tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus_1_1detail"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal implementation details for the µTest++ framework. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This header provides the <span class="tt">runner_totals</span> class, which aggregates the counts of successful checks, failed checks, and executed subtests for a test runner, test suite, or subtest. Instances of this class are embedded inside every <span class="tt">test_node</span>-derived object and updated in place as the test session progresses.</p>

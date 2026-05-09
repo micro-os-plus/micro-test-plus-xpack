@@ -60,12 +60,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "/micro-test-plus-xpack/",
-"classmicro__os__plus_1_1micro__test__plus_1_1reporter__human.html#a5617d861c48049189b6b33e36626763a",
-"classmicro__os__plus_1_1micro__test__plus_1_1runnable.html#a5ad9145405b7d9e7369d99f38f3f060a",
-"classmicro__os__plus_1_1micro__test__plus_1_1suite.html#a5ad9145405b7d9e7369d99f38f3f060a",
-"group__micro-test-plus-assumptions.html#ga0346721eb94564ebce4a49ee81c020c8",
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op__.html#a2dd578daf62dde786b3e9e7beeac08bc",
-"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1integral__constant.html#a53cb52e57c05eaf46f47352a77270993"
+"classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#ac9f933b7e072bfdd7732783c12c98298",
+"classmicro__os__plus_1_1micro__test__plus_1_1reporter__human.html#a3118ff89506858505f18e8fd368baffc",
+"classmicro__os__plus_1_1micro__test__plus_1_1subtest.html#a69687627342981d42471b17f1d83311f",
+"group__micro-test-plus-literals.html#ga3bf9f9c946f16b5e02f9f2c45739df42",
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html#a527ae62e9ed62a3ebbc3efd243d602c3",
+"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4.html#a434b222ff19bdb4970ad56fce11d5176"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

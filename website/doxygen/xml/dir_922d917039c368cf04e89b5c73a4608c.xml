@@ -6,6 +6,7 @@
     <innerfile refid="deferred-reporter_8h">deferred-reporter.h</innerfile>
     <innerfile refid="detail_8h">detail.h</innerfile>
     <innerfile refid="exceptions_8h">exceptions.h</innerfile>
+    <innerfile refid="expression-formatter_8h">expression-formatter.h</innerfile>
     <innerfile refid="function-comparators_8h">function-comparators.h</innerfile>
     <innerfile refid="literals_8h">literals.h</innerfile>
     <innerfile refid="math_8h">math.h</innerfile>
@@ -24,10 +25,14 @@
 <para>Folder with C++ header files for the µTest++ Testing Framework. </para>
     </briefdescription>
     <detaileddescription>
+<sect1 id="dir_922d917039c368cf04e89b5c73a4608c_1autotoc_md0">
+<title>Project Headers</title><para>The files in this folder are intended for internal use only. Do not include them directly in your projects.</para>
+<para>Instead, include the public header <computeroutput>&lt;<ref refid="micro-test-plus_8h" kindref="compound">micro-os-plus/micro-test-plus.h</ref>&gt;</computeroutput>.</para>
 <para>The <computeroutput>include/micro-os-plus/micro-test-plus</computeroutput> folder contains the primary public header files that define the core functionality of the µTest++ testing framework.</para>
 <para>This folder provides declarations for all essential framework components, including test suite and test case management, the test runner and reporter classes, function comparators, overloaded operators, user-defined literals, mathematical utilities, type traits, reflection utilities, and supporting internal mechanisms.</para>
 <para>By consolidating all public API definitions within this folder, the project maintains a clear separation from implementation details (located in the <computeroutput>src</computeroutput> folder), thereby promoting modularity, maintainability, and straightforward integration.</para>
 <para>To access the full capabilities of the µTest++ framework, users should include the relevant headers from this folder in their projects.  </para>
+</sect1>
     </detaileddescription>
     <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/"/>
   </compounddef>

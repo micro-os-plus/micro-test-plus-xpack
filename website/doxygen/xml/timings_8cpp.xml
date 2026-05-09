@@ -2,261 +2,23 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="timings_8cpp" kind="file" language="C++">
     <compoundname>timings.cpp</compoundname>
-    <includes refid="micro-test-plus_8h" local="no">micro-os-plus/micro-test-plus.h</includes>
     <includes local="no">cassert</includes>
+    <includes refid="timings_8h" local="yes">micro-os-plus/micro-test-plus/timings.h</includes>
     <incdepgraph>
-      <node id="2">
-        <label>micro-os-plus/micro-test-plus.h</label>
-        <link refid="micro-test-plus_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-        <childnode refid="26" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
-        <childnode refid="30" relation="include">
-        </childnode>
-        <childnode refid="31" relation="include">
-        </childnode>
-        <childnode refid="32" relation="include">
-        </childnode>
-        <childnode refid="33" relation="include">
-        </childnode>
-        <childnode refid="34" relation="include">
-        </childnode>
-        <childnode refid="35" relation="include">
-        </childnode>
-        <childnode refid="36" relation="include">
-        </childnode>
-        <childnode refid="38" relation="include">
-        </childnode>
-        <childnode refid="40" relation="include">
-        </childnode>
-        <childnode refid="41" relation="include">
-        </childnode>
-        <childnode refid="42" relation="include">
-        </childnode>
-        <childnode refid="43" relation="include">
-        </childnode>
-      </node>
-      <node id="17">
-        <label>micro-test-plus/deferred-reporter.h</label>
-        <link refid="deferred-reporter_8h"/>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-      </node>
-      <node id="9">
-        <label>micro-test-plus/detail.h</label>
-        <link refid="detail_8h"/>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-      </node>
-      <node id="15">
-        <label>micro-test-plus/exceptions.h</label>
-        <link refid="exceptions_8h"/>
-      </node>
-      <node id="14">
-        <label>micro-test-plus/function-comparators.h</label>
-        <link refid="function-comparators_8h"/>
-      </node>
-      <node id="36">
-        <label>micro-test-plus/inlines/deferred-reporter-inlines.h</label>
-        <link refid="deferred-reporter-inlines_8h"/>
-        <childnode refid="37" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-      </node>
-      <node id="40">
-        <label>micro-test-plus/inlines/function-comparators-inlines.h</label>
-        <link refid="function-comparators-inlines_8h"/>
-      </node>
-      <node id="33">
-        <label>micro-test-plus/inlines/literals-inlines.h</label>
-        <link refid="literals-inlines_8h"/>
-        <childnode refid="13" relation="include">
-        </childnode>
-      </node>
-      <node id="34">
-        <label>micro-test-plus/inlines/math-inlines.h</label>
-        <link refid="math-inlines_8h"/>
-        <childnode refid="13" relation="include">
-        </childnode>
-      </node>
-      <node id="35">
-        <label>micro-test-plus/inlines/reflection-inlines.h</label>
-        <link refid="reflection-inlines_8h"/>
-        <childnode refid="13" relation="include">
-        </childnode>
-      </node>
-      <node id="38">
-        <label>micro-test-plus/inlines/reporter-inlines.h</label>
-        <link refid="reporter-inlines_8h"/>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="39" relation="include">
-        </childnode>
-      </node>
-      <node id="41">
-        <label>micro-test-plus/inlines/runner-inlines.h</label>
-        <link refid="runner-inlines_8h"/>
-      </node>
-      <node id="42">
-        <label>micro-test-plus/inlines/test-inlines.h</label>
-        <link refid="test-inlines_8h"/>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="39" relation="include">
-        </childnode>
-      </node>
-      <node id="43">
-        <label>micro-test-plus/inlines/utility-inlines.h</label>
-        <link refid="utility-inlines_8h"/>
-      </node>
-      <node id="12">
-        <label>micro-test-plus/literals.h</label>
-        <link refid="literals_8h"/>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>math.h</label>
-        <link refid="math_8h"/>
-        <childnode refid="5" relation="include">
-        </childnode>
-      </node>
-      <node id="16">
-        <label>micro-test-plus/operators.h</label>
-        <link refid="operators_8h"/>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-      </node>
-      <node id="8">
-        <label>micro-test-plus/reflection.h</label>
-        <link refid="reflection_8h"/>
-        <childnode refid="6" relation="include">
-        </childnode>
-      </node>
-      <node id="29">
-        <label>micro-test-plus/reporter-human.h</label>
-        <link refid="reporter-human_8h"/>
-        <childnode refid="27" relation="include">
-        </childnode>
-      </node>
-      <node id="30">
-        <label>micro-test-plus/reporter-tap.h</label>
-        <link refid="reporter-tap_8h"/>
-        <childnode refid="27" relation="include">
-        </childnode>
-      </node>
-      <node id="27">
-        <label>reporter.h</label>
-        <link refid="reporter_8h"/>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="25" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-      </node>
-      <node id="19">
-        <label>runner-totals.h</label>
-        <link refid="runner-totals_8h"/>
-        <childnode refid="20" relation="include">
-        </childnode>
-      </node>
-      <node id="26">
-        <label>micro-test-plus/runner.h</label>
-        <link refid="runner_8h"/>
-        <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="25" relation="include">
-        </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-      </node>
-      <node id="18">
-        <label>micro-test-plus/test.h</label>
-        <link refid="test_8h"/>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="25" relation="include">
-        </childnode>
-      </node>
-      <node id="21">
-        <label>timings.h</label>
-        <link refid="timings_8h"/>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
+      <node id="7">
+        <label>inlines/timings-inlines.h</label>
+        <link refid="timings-inlines_8h"/>
       </node>
       <node id="3">
-        <label>micro-test-plus/type-traits.h</label>
-        <link refid="type-traits_8h"/>
+        <label>micro-os-plus/micro-test-plus/timings.h</label>
+        <link refid="timings_8h"/>
         <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="31">
-        <label>micro-test-plus/utility.h</label>
-        <link refid="utility_8h"/>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -264,60 +26,25 @@
         <link refid="timings_8cpp"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="44" relation="include">
+        <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="5">
-        <label>array</label>
-      </node>
-      <node id="44">
+      <node id="2">
         <label>cassert</label>
       </node>
-      <node id="37">
-        <label>charconv</label>
-      </node>
-      <node id="20">
-        <label>cstddef</label>
-      </node>
-      <node id="13">
+      <node id="4">
         <label>cstdint</label>
       </node>
-      <node id="10">
-        <label>cstdio</label>
-      </node>
-      <node id="39">
-        <label>cstring</label>
-      </node>
-      <node id="23">
+      <node id="6">
         <label>ctime</label>
       </node>
-      <node id="24">
-        <label>functional</label>
-      </node>
-      <node id="25">
-        <label>memory</label>
-      </node>
-      <node id="32">
-        <label>micro-os-plus/diag/trace.h</label>
-      </node>
-      <node id="22">
+      <node id="5">
         <label>optional</label>
-      </node>
-      <node id="11">
-        <label>string</label>
-      </node>
-      <node id="6">
-        <label>string_view</label>
-      </node>
-      <node id="7">
-        <label>type_traits</label>
-      </node>
-      <node id="28">
-        <label>vector</label>
       </node>
     </incdepgraph>
     <innernamespace refid="namespacemicro__os__plus">micro_os_plus</innernamespace>
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus">micro_os_plus::micro_test_plus</innernamespace>
+    <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail">micro_os_plus::micro_test_plus::detail</innernamespace>
     <briefdescription>
 <para>C++ source file with implementations for the µTest++ timings methods. </para>
     </briefdescription>
@@ -347,13 +74,13 @@
 <codeline lineno="35"><highlight class="normal"></highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_INCLUDE_CONFIG_H)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;micro-os-plus/config.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_INCLUDE_CONFIG_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="micro-test-plus_8h" kindref="compound">micro-os-plus/micro-test-plus.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cassert&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MICRO_OS_PLUS_INCLUDE_CONFIG_H)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;micro-os-plus/config.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_INCLUDE_CONFIG_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cassert&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="timings_8h" kindref="compound">micro-os-plus/micro-test-plus/timings.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="45"><highlight class="normal"></highlight></codeline>
 <codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="47"><highlight class="normal"></highlight></codeline>
@@ -368,86 +95,86 @@
 <codeline lineno="56"><highlight class="normal"></highlight></codeline>
 <codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="58"><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail" kindref="compound">micro_os_plus::micro_test_plus::detail</ref></highlight></codeline>
 <codeline lineno="60"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="71" refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1ace868d5dfb29fd79cfaabbfad218a31d" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1ace868d5dfb29fd79cfaabbfad218a31d" kindref="member">timestamp::timestamp</ref><sp/>()<sp/>noexcept</highlight></codeline>
+<codeline lineno="71" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a3021a3477870bda369e22bdf085bf7a7" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a3021a3477870bda369e22bdf085bf7a7" kindref="member">timestamp::timestamp</ref><sp/>()<sp/>noexcept</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_WIN32)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>timespec_get<sp/>(&amp;<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1aa45da56b409a7cf625ce373b7f6a621b" kindref="member">value_</ref>,<sp/>TIME_UTC);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>timespec_get<sp/>(&amp;<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a62c9539975cee7a03be62eb0a903bbf3" kindref="member">value_</ref>,<sp/>TIME_UTC);</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(CLOCK_MONOTONIC)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>clock_gettime<sp/>(CLOCK_MONOTONIC,<sp/>&amp;<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1aa45da56b409a7cf625ce373b7f6a621b" kindref="member">value_</ref>);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>clock_gettime<sp/>(CLOCK_MONOTONIC,<sp/>&amp;<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a62c9539975cee7a03be62eb0a903bbf3" kindref="member">value_</ref>);</highlight></codeline>
 <codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="78"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="79"><highlight class="normal"></highlight></codeline>
 <codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="87" refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1a9d1c21ae80e89e78e6123e49dc3aeaf2" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1a9d1c21ae80e89e78e6123e49dc3aeaf2" kindref="member">timestamp::has_clock</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1ae5494fb57bcc3b577c914a0cc95ff667" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1ae5494fb57bcc3b577c914a0cc95ff667" kindref="member">timestamp::has_clock</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1aa45da56b409a7cf625ce373b7f6a621b" kindref="member">value_</ref>.tv_sec<sp/>!=<sp/>0<sp/>||<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamp_1aa45da56b409a7cf625ce373b7f6a621b" kindref="member">value_</ref>.tv_nsec<sp/>!=<sp/>0;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a62c9539975cee7a03be62eb0a903bbf3" kindref="member">value_</ref>.tv_sec<sp/>!=<sp/>0<sp/>||<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a62c9539975cee7a03be62eb0a903bbf3" kindref="member">value_</ref>.tv_nsec<sp/>!=<sp/>0;</highlight></codeline>
 <codeline lineno="90"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="91"><highlight class="normal"></highlight></codeline>
 <codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="93"><highlight class="normal"></highlight></codeline>
 <codeline lineno="101"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="102" refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a5a8d60d257144576fa7a3712483a2a71" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a5a8d60d257144576fa7a3712483a2a71" kindref="member">timestamps::timestamp_begin</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1a1b2077718469ade9fda2e257a0d06293" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1a1b2077718469ade9fda2e257a0d06293" kindref="member">timestamps::timestamp_begin</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="103"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Ensure<sp/>it<sp/>is<sp/>timestamped<sp/>only<sp/>once.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a24ee833f4442cb06ae50c1ad39d6a1d6" kindref="member">begin_time_</ref>.has_value<sp/>())</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1ac621973713cc6e574f7aa70566a4e960" kindref="member">begin_time_</ref>.has_value<sp/>())</highlight></codeline>
 <codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a24ee833f4442cb06ae50c1ad39d6a1d6" kindref="member">begin_time_</ref>.emplace<sp/>();</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1ac621973713cc6e574f7aa70566a4e960" kindref="member">begin_time_</ref>.emplace<sp/>();</highlight></codeline>
 <codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="109"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="110"><highlight class="normal"></highlight></codeline>
 <codeline lineno="117"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="118" refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a7221435b2bc10a0cdc0d2c9cf873138c" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a5a8d60d257144576fa7a3712483a2a71" kindref="member">timestamps::timestamp_begin</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>timespec&amp;<sp/>ts)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1a44ccea73af94c2c106be7aa04c85841b" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1a1b2077718469ade9fda2e257a0d06293" kindref="member">timestamps::timestamp_begin</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>timespec&amp;<sp/>ts)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="119"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Ensure<sp/>it<sp/>is<sp/>timestamped<sp/>only<sp/>once.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a24ee833f4442cb06ae50c1ad39d6a1d6" kindref="member">begin_time_</ref>.has_value<sp/>())</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1ac621973713cc6e574f7aa70566a4e960" kindref="member">begin_time_</ref>.has_value<sp/>())</highlight></codeline>
 <codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a24ee833f4442cb06ae50c1ad39d6a1d6" kindref="member">begin_time_</ref>.emplace<sp/>(ts);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1ac621973713cc6e574f7aa70566a4e960" kindref="member">begin_time_</ref>.emplace<sp/>(ts);</highlight></codeline>
 <codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="125"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="126"><highlight class="normal"></highlight></codeline>
 <codeline lineno="134"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="135" refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a7b9747eb85f18c341641399f65783086" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a7b9747eb85f18c341641399f65783086" kindref="member">timestamps::timestamp_end</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1aeb4873587b5be066c69c0ef26d64640b" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1aeb4873587b5be066c69c0ef26d64640b" kindref="member">timestamps::timestamp_end</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="136"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Ensure<sp/>it<sp/>is<sp/>timestamped<sp/>only<sp/>once.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a0fa77823c527ab58229ff562979f48d4" kindref="member">end_time_</ref>.has_value<sp/>())</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1a85749791b2161ff48e9a1de82c532017" kindref="member">end_time_</ref>.has_value<sp/>())</highlight></codeline>
 <codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a0fa77823c527ab58229ff562979f48d4" kindref="member">end_time_</ref>.emplace<sp/>();</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1a85749791b2161ff48e9a1de82c532017" kindref="member">end_time_</ref>.emplace<sp/>();</highlight></codeline>
 <codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="142"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="143"><highlight class="normal"></highlight></codeline>
 <codeline lineno="150"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="151" refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a95287115b751593afa5fcc4315c74b02" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a7b9747eb85f18c341641399f65783086" kindref="member">timestamps::timestamp_end</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>timespec&amp;<sp/>ts)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1a465347769933c044abe2448a428d7281" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1aeb4873587b5be066c69c0ef26d64640b" kindref="member">timestamps::timestamp_end</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>timespec&amp;<sp/>ts)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="152"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Ensure<sp/>it<sp/>is<sp/>timestamped<sp/>only<sp/>once.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a0fa77823c527ab58229ff562979f48d4" kindref="member">end_time_</ref>.has_value<sp/>())</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1a85749791b2161ff48e9a1de82c532017" kindref="member">end_time_</ref>.has_value<sp/>())</highlight></codeline>
 <codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a0fa77823c527ab58229ff562979f48d4" kindref="member">end_time_</ref>.emplace<sp/>(ts);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1a85749791b2161ff48e9a1de82c532017" kindref="member">end_time_</ref>.emplace<sp/>(ts);</highlight></codeline>
 <codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="158"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="159"><highlight class="normal"></highlight></codeline>
 <codeline lineno="166"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="167" refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a55cde881b55e2af53670e54d50cf2d18" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a55cde881b55e2af53670e54d50cf2d18" kindref="member">timestamps::has_timestamps</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1a125c87d852257c18749074be3b698ed1" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1a125c87d852257c18749074be3b698ed1" kindref="member">timestamps::has_timestamps</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="168"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a24ee833f4442cb06ae50c1ad39d6a1d6" kindref="member">begin_time_</ref>.has_value<sp/>()<sp/>&amp;&amp;<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a24ee833f4442cb06ae50c1ad39d6a1d6" kindref="member">begin_time_</ref>-&gt;has_clock<sp/>()</highlight></codeline>
-<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a0fa77823c527ab58229ff562979f48d4" kindref="member">end_time_</ref>.has_value<sp/>()<sp/>&amp;&amp;<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a0fa77823c527ab58229ff562979f48d4" kindref="member">end_time_</ref>-&gt;has_clock<sp/>();</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1ac621973713cc6e574f7aa70566a4e960" kindref="member">begin_time_</ref>.has_value<sp/>()<sp/>&amp;&amp;<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1ac621973713cc6e574f7aa70566a4e960" kindref="member">begin_time_</ref>-&gt;has_clock<sp/>()</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1a85749791b2161ff48e9a1de82c532017" kindref="member">end_time_</ref>.has_value<sp/>()<sp/>&amp;&amp;<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1a85749791b2161ff48e9a1de82c532017" kindref="member">end_time_</ref>-&gt;has_clock<sp/>();</highlight></codeline>
 <codeline lineno="171"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="172"><highlight class="normal"></highlight></codeline>
 <codeline lineno="183"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="184" refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1acf16eb11ffcd52d569dd7b21b1e5f61e" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1acf16eb11ffcd52d569dd7b21b1e5f61e" kindref="member">timestamps::compute_elapsed_time</ref><sp/>(uint32_t&amp;<sp/>milliseconds,</highlight></codeline>
+<codeline lineno="184" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1a7e7ade6bb02af23d65e5ceaa958052dd" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1a7e7ade6bb02af23d65e5ceaa958052dd" kindref="member">timestamps::compute_elapsed_time</ref><sp/>(uint32_t&amp;<sp/>milliseconds,</highlight></codeline>
 <codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t&amp;<sp/>microseconds)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="186"><highlight class="keyword"><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>assert<sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a55cde881b55e2af53670e54d50cf2d18" kindref="member">has_timestamps</ref><sp/>());</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>assert<sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1a125c87d852257c18749074be3b698ed1" kindref="member">has_timestamps</ref><sp/>());</highlight></codeline>
 <codeline lineno="188"><highlight class="normal"></highlight></codeline>
 <codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Precondition:<sp/>has_timestamps()<sp/>must<sp/>be<sp/>true<sp/>before<sp/>calling<sp/>this<sp/>method.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Invoking<sp/>it<sp/>with<sp/>disengaged<sp/>optionals<sp/>is<sp/>undefined<sp/>behaviour.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>delta_ns</highlight></codeline>
-<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a0fa77823c527ab58229ff562979f48d4" kindref="member">end_time_</ref>-&gt;value<sp/>().tv_nsec<sp/>-<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a24ee833f4442cb06ae50c1ad39d6a1d6" kindref="member">begin_time_</ref>-&gt;value<sp/>().tv_nsec;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1a85749791b2161ff48e9a1de82c532017" kindref="member">end_time_</ref>-&gt;value<sp/>().tv_nsec<sp/>-<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1ac621973713cc6e574f7aa70566a4e960" kindref="member">begin_time_</ref>-&gt;value<sp/>().tv_nsec;</highlight></codeline>
 <codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>delta_s</highlight></codeline>
-<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a0fa77823c527ab58229ff562979f48d4" kindref="member">end_time_</ref>-&gt;value<sp/>().tv_sec<sp/>-<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1timestamps_1a24ee833f4442cb06ae50c1ad39d6a1d6" kindref="member">begin_time_</ref>-&gt;value<sp/>().tv_sec;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1a85749791b2161ff48e9a1de82c532017" kindref="member">end_time_</ref>-&gt;value<sp/>().tv_sec<sp/>-<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamps_1ac621973713cc6e574f7aa70566a4e960" kindref="member">begin_time_</ref>-&gt;value<sp/>().tv_sec;</highlight></codeline>
 <codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(delta_ns<sp/>&lt;<sp/>0)</highlight></codeline>
 <codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>delta_ns<sp/>+=<sp/>1000000000LL;</highlight></codeline>
@@ -461,8 +188,9 @@
 <codeline lineno="205"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="206"><highlight class="normal"></highlight></codeline>
 <codeline lineno="207"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="208"><highlight class="normal"></highlight></codeline>
-<codeline lineno="209"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>micro_os_plus::micro_test_plus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>micro_os_plus::micro_test_plus::detail</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/timings.cpp"/>
   </compounddef>

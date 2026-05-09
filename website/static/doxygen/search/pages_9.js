@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['test_20plus_0',['micro-test-plus',['../index.html',1,'']]]
+  ['silent_20mode_0',['Silent mode',['../group__micro-test-plus-cli.html#cli-verbosity-silent',1,'']]]
 ];

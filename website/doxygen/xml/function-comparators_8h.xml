@@ -2,77 +2,30 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="function-comparators_8h" kind="file" language="C++">
     <compoundname>function-comparators.h</compoundname>
+    <includes refid="function-comparators-inlines_8h" local="yes">inlines/function-comparators-inlines.h</includes>
     <includedby refid="micro-test-plus_8h" local="yes">micro-test-plus.h</includedby>
-    <invincdepgraph>
-      <node id="2">
-        <label>micro-test-plus.h</label>
-        <link refid="micro-test-plus_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-      </node>
+    <incdepgraph>
       <node id="1">
         <label>function-comparators.h</label>
         <link refid="function-comparators_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="3">
-        <label>deferred-reporter.cpp</label>
-        <link refid="deferred-reporter_8cpp"/>
+      <node id="2">
+        <label>inlines/function-comparators-inlines.h</label>
+        <link refid="function-comparators-inlines_8h"/>
       </node>
-      <node id="4">
-        <label>reflection.cpp</label>
-        <link refid="reflection_8cpp"/>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>micro-test-plus.h</label>
+        <link refid="micro-test-plus_8h"/>
       </node>
-      <node id="5">
-        <label>reporter-human.cpp</label>
-        <link refid="reporter-human_8cpp"/>
-      </node>
-      <node id="6">
-        <label>reporter-tap.cpp</label>
-        <link refid="reporter-tap_8cpp"/>
-      </node>
-      <node id="7">
-        <label>reporter.cpp</label>
-        <link refid="reporter_8cpp"/>
-      </node>
-      <node id="8">
-        <label>runner-totals.cpp</label>
-        <link refid="runner-totals_8cpp"/>
-      </node>
-      <node id="9">
-        <label>runner.cpp</label>
-        <link refid="runner_8cpp"/>
-      </node>
-      <node id="10">
-        <label>test.cpp</label>
-        <link refid="test_8cpp"/>
-      </node>
-      <node id="11">
-        <label>timings.cpp</label>
-        <link refid="timings_8cpp"/>
-      </node>
-      <node id="12">
-        <label>utility.cpp</label>
-        <link refid="utility_8cpp"/>
+      <node id="1">
+        <label>function-comparators.h</label>
+        <link refid="function-comparators_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
       </node>
     </invincdepgraph>
     <innernamespace refid="namespacemicro__os__plus">micro_os_plus</innernamespace>
@@ -225,11 +178,16 @@
 <codeline lineno="329"><highlight class="normal"></highlight></codeline>
 <codeline lineno="330"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="331"><highlight class="normal"></highlight></codeline>
-<codeline lineno="332"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="333"><highlight class="normal"></highlight></codeline>
-<codeline lineno="334"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_TEST_PLUS_FUNCTION_COMPARATORS_H_</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="335"><highlight class="normal"></highlight></codeline>
-<codeline lineno="336"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Templates<sp/>&amp;<sp/>constexpr<sp/>implementations.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="function-comparators-inlines_8h" kindref="compound">inlines/function-comparators-inlines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_TEST_PLUS_FUNCTION_COMPARATORS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h"/>
   </compounddef>

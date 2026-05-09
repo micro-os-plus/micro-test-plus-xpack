@@ -75,6 +75,36 @@ C++ header file with inline implementations for the µTest++ internals
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
+<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h"><span class="doxyIconFile">detail-inlines.h</span></a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+C++ header file with inline implementations for the µTest++ internal detail namespace
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/exceptions-inline-h"><span class="doxyIconFile">exceptions-inline.h</span></a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+C++ header file with inline implementations for the µTest++ exceptions comparators
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/expression-formatter-inlines-h"><span class="doxyIconFile">expression-formatter-inlines.h</span></a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+C++ header file with inline implementations for the µTest++ expression formatter
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
 <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h"><span class="doxyIconFile">function-comparators-inlines.h</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
@@ -99,6 +129,16 @@ C++ header file with inline implementations for the µTest++ literals and type w
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++ header file with inline implementations for the µTest++ mathematical utilities
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h"><span class="doxyIconFile">operators-inlines.h</span></a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+C++ header file with inline implementations for the µTest++ operator overloads
 </td>
 </tr>
 
@@ -135,10 +175,40 @@ C++ header file with inline implementations for the µTest++ test runner
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
+<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-totals-inlines-h"><span class="doxyIconFile">runner-totals-inlines.h</span></a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+C++ header file with inline implementations for the µTest++ runner totals
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
 <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h"><span class="doxyIconFile">test-inlines.h</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++ header file with inline implementations for the µTest++ test suite
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/timings-inlines-h"><span class="doxyIconFile">timings-inlines.h</span></a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+C++ header file with inline implementations for the µTest++ timing utilities
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/type-traits-inlines-h"><span class="doxyIconFile">type-traits-inlines.h</span></a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+C++ header file with inline implementations for the µTest++ type trait utilities
 </td>
 </tr>
 
@@ -179,6 +249,16 @@ C++ header file with declarations for the µTest++ internals
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++ header with declarations for the µTest++ exception-checking functions
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/expression-formatter-h"><span class="doxyIconFile">expression-formatter.h</span></a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+C++ header file with declarations for the µTest++ expression formatter
 </td>
 </tr>
 
@@ -355,6 +435,16 @@ C++ source file with implementations for the µTest++ deferred reporter methods
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
+<a href="/micro-test-plus-xpack/docs/api/files/src/expression-formatter-cpp"><span class="doxyIconFile">expression-formatter.cpp</span></a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+C++ source file with non-template implementations for the µTest++ expression formatter
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
 <a href="/micro-test-plus-xpack/docs/api/files/src/reflection-cpp"><span class="doxyIconFile">reflection.cpp</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
@@ -439,6 +529,16 @@ C++ source file with implementations for the µTest++ timings methods
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++ source file with implementations for the µTest++ methods
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 0px; display: inline-block;"></span>
+<a href="/micro-test-plus-xpack/docs/api/files/readme-md"><span class="doxyIconFile">README.md</span></a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
 </td>
 </tr>
 

@@ -118,6 +118,9 @@ keywords:
 <p>Non-equality operator for <span class="doxyComputerOutput">string_view</span> objects.</p>
 
 
+<p>Constructs an <span class="doxyComputerOutput">ne_</span> comparator object from the two <span class="doxyComputerOutput">string_view</span> operands and returns it. The comparator evaluates to <span class="doxyComputerOutput">true</span> if the string views are not equal.</p>
+
+
 <dl class="doxyParamsList">
 <dt class="doxyParamsTableTitle">Parameters</dt>
 <dd>
@@ -140,18 +143,15 @@ keywords:
 </dl>
 
 
-<p>This overload of the non-equality operator enables direct comparison of two <span class="doxyComputerOutput">std::string_view</span> objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two string views are not equal.</p>
-
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00150">150</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h/#l00088">88</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h">operators-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga179e971d5e37795c036ad66aa35f1654">150</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#ga179e971d5e37795c036ad66aa35f1654">operator!=</a>(std::string_view lhs, std::string_view rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">151</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">152</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-">detail::ne_</a>{ lhs, rhs };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">153</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga179e971d5e37795c036ad66aa35f1654">88</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#ga179e971d5e37795c036ad66aa35f1654">operator!=</a>(std::string_view lhs, std::string_view rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">89</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">90</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/ne-">detail::ne_</a>{ lhs, rhs };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">91</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -185,6 +185,9 @@ keywords:
 <p>Equality operator for <span class="doxyComputerOutput">string_view</span> objects.</p>
 
 
+<p>Constructs an <span class="doxyComputerOutput">eq_</span> comparator object from the two <span class="doxyComputerOutput">string_view</span> operands and returns it. The comparator evaluates to <span class="doxyComputerOutput">true</span> if the string views are equal.</p>
+
+
 <dl class="doxyParamsList">
 <dt class="doxyParamsTableTitle">Parameters</dt>
 <dd>
@@ -207,18 +210,15 @@ keywords:
 </dl>
 
 
-<p>This overload of the equality operator enables direct comparison of two <span class="doxyComputerOutput">std::string_view</span> objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two string views are equal.</p>
-
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h/#l00129">129</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/operators-h">operators.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h/#l00076">76</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/operators-inlines-h">operators-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaabe34a842bf38ea2913a4164d2b0a9cb">129</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#gaabe34a842bf38ea2913a4164d2b0a9cb">operator==</a>(std::string_view lhs, std::string_view rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">130</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">131</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-">detail::eq_</a>{ lhs, rhs };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">132</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaabe34a842bf38ea2913a4164d2b0a9cb">76</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#gaabe34a842bf38ea2913a4164d2b0a9cb">operator==</a>(std::string_view lhs, std::string_view rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">77</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">78</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/eq-">detail::eq_</a>{ lhs, rhs };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">79</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 

@@ -20,7 +20,7 @@ keywords:
 ## - D -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail"><b>detail</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/src/deferred-reporter-cpp">src/deferred-reporter.cpp</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail"><b>detail</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/src/timings-cpp">src/timings.cpp</a></li>
 </ul>
 
 ## - L -

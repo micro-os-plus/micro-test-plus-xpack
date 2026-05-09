@@ -3,6 +3,7 @@
   <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
     <compoundname>src</compoundname>
     <innerfile refid="deferred-reporter_8cpp">deferred-reporter.cpp</innerfile>
+    <innerfile refid="expression-formatter_8cpp">expression-formatter.cpp</innerfile>
     <innerfile refid="reflection_8cpp">reflection.cpp</innerfile>
     <innerfile refid="reporter-human_8cpp">reporter-human.cpp</innerfile>
     <innerfile refid="reporter-tap_8cpp">reporter-tap.cpp</innerfile>

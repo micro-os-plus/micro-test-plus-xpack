@@ -36,6 +36,6 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_
 </parameterlist>
 The <computeroutput>any_op</computeroutput> concept is satisfied when <computeroutput>Lhs_T</computeroutput> or <computeroutput>Rhs_T</computeroutput> (or both) are derived from the <computeroutput>type_traits::op</computeroutput> base struct. It is used to constrain binary operator overloads in the <computeroutput>operators</computeroutput> namespace so that they are enabled only when at least one operand is a framework type, avoiding unintended conflicts with user-defined operators. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="453" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="454" column="5"/>
   </compounddef>
 </doxygen>

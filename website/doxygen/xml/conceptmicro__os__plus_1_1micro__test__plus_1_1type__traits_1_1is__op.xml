@@ -25,6 +25,6 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_
 </parameterlist>
 The <computeroutput>is_op</computeroutput> concept is satisfied when <computeroutput>T</computeroutput> is derived from the <computeroutput>type_traits::op</computeroutput> base struct. It is the primary definition used throughout the framework; <computeroutput>is_op_v</computeroutput> is derived from it for use in <computeroutput>if constexpr</computeroutput> and boolean contexts. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="436" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="437" column="5"/>
   </compounddef>
 </doxygen>

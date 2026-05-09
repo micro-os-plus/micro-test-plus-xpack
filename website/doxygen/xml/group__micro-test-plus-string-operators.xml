@@ -22,6 +22,7 @@
 <para>Non-equality operator for <computeroutput>string_view</computeroutput> objects. </para>
         </briefdescription>
         <detaileddescription>
+<para>Constructs an <computeroutput>ne_</computeroutput> comparator object from the two <computeroutput>string_view</computeroutput> operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if the string views are not equal.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">lhs</parametername>
@@ -39,13 +40,13 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A comparator object that evaluates to true if the string views are not equal.</para>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the string views are not equal. </para>
 </simplesect>
-This overload of the non-equality operator enables direct comparison of two <computeroutput>std::string_view</computeroutput> objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two string views are not equal. </para>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="150" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="150" bodyend="153"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="88" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="88" bodyend="91" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="132" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="group__micro-test-plus-string-operators_1gaabe34a842bf38ea2913a4164d2b0a9cb" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>auto</type>
@@ -65,6 +66,7 @@ This overload of the non-equality operator enables direct comparison of two <com
 <para>Equality operator for <computeroutput>string_view</computeroutput> objects. </para>
         </briefdescription>
         <detaileddescription>
+<para>Constructs an <computeroutput>eq_</computeroutput> comparator object from the two <computeroutput>string_view</computeroutput> operands and returns it. The comparator evaluates to <computeroutput>true</computeroutput> if the string views are equal.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="in">lhs</parametername>
@@ -82,13 +84,13 @@ This overload of the non-equality operator enables direct comparison of two <com
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A comparator object that evaluates to true if the string views are equal.</para>
+<simplesect kind="return"><para>A comparator object that evaluates to true if the string views are equal. </para>
 </simplesect>
-This overload of the equality operator enables direct comparison of two <computeroutput>std::string_view</computeroutput> objects within the µTest++ framework. It constructs a comparator object that can be used in test expectations and assertions to verify that two string views are equal. </para>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" line="129" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" bodystart="129" bodyend="132"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" line="76" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/operators-inlines.h" bodystart="76" bodyend="79" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/operators.h" declline="120" declcolumn="5"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

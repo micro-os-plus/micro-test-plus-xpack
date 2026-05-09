@@ -1,6 +1,7 @@
 var dir_68267d1309a1af8e8297ef4c3efbcdba =
 [
     [ "deferred-reporter.cpp", "deferred-reporter_8cpp.html", null ],
+    [ "expression-formatter.cpp", "expression-formatter_8cpp.html", null ],
     [ "reflection.cpp", "reflection_8cpp.html", "reflection_8cpp" ],
     [ "reporter-human.cpp", "reporter-human_8cpp.html", "reporter-human_8cpp" ],
     [ "reporter-tap.cpp", "reporter-tap_8cpp.html", null ],

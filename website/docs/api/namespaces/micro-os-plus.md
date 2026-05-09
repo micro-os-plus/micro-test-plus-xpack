@@ -45,12 +45,6 @@ namespace micro_os_plus { ... }
 
 </table>
 
-## Concepts Index
-
-<table class="doxyMembersIndex">
-
-</table>
-
 ## Description {#details}
 
 <p>The primary namespace for the µOS++ framework.</p>

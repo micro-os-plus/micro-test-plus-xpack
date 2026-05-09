@@ -25,6 +25,6 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_
 </parameterlist>
 The <computeroutput>has_value</computeroutput> concept is satisfied when an instance of <computeroutput>T</computeroutput> exposes a <computeroutput>value</computeroutput> member. It is used to detect framework value-wrapper types such as <computeroutput>integral_constant</computeroutput>, <computeroutput>floating_point_constant</computeroutput>, and <computeroutput>value&lt;T&gt;</computeroutput>, enabling specialised comparison and reporting. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="393" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="394" column="5"/>
   </compounddef>
 </doxygen>

@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['fail_0',['fail',['../structmicro__os__plus_1_1micro__test__plus_1_1colours.html#aa4d4feecd7e50ea77d1dbf1be952103c',1,'micro_os_plus::micro_test_plus::colours::fail'],['../classmicro__os__plus_1_1micro__test__plus_1_1reporter.html#a9c97d3bd1d4336472c6a6c1b6e4ebb7b',1,'micro_os_plus::micro_test_plus::reporter::fail()']]],
-  ['failed_5fchecks_1',['failed_checks',['../classmicro__os__plus_1_1micro__test__plus_1_1runner__totals.html#aace686e5de3293ed5d9686eda2ce4eb4',1,'micro_os_plus::micro_test_plus::runner_totals']]],
-  ['failed_5fchecks_5f_2',['failed_checks_',['../classmicro__os__plus_1_1micro__test__plus_1_1runner__totals.html#a17f8c7015019ade44519fb8507b047a8',1,'micro_os_plus::micro_test_plus::runner_totals']]],
+  ['fail_0',['fail',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1colours.html#a7cd442bbb5af0f5d53632101d5c2eb0b',1,'micro_os_plus::micro_test_plus::detail::colours::fail'],['../classmicro__os__plus_1_1micro__test__plus_1_1reporter.html#a0107c95e02de7196e660969b0e684173',1,'micro_os_plus::micro_test_plus::reporter::fail()']]],
+  ['failed_5fchecks_1',['failed_checks',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runner__totals.html#ad1301b9a6a0e67131c9a98bb8f07e4e4',1,'micro_os_plus::micro_test_plus::detail::runner_totals']]],
+  ['failed_5fchecks_5f_2',['failed_checks_',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runner__totals.html#aab1ec6d23bf91782122a60bc3ed95eba',1,'micro_os_plus::micro_test_plus::detail::runner_totals']]],
   ['file_5f_3',['file_',['../classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#ae648fa43322766fbeb3f9103b43bcc4b',1,'micro_os_plus::micro_test_plus::reflection::source_location']]],
   ['file_5fname_4',['file_name',['../classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#a3df499675aacb7ab9192cfb9a5371874',1,'micro_os_plus::micro_test_plus::reflection::source_location']]],
   ['floating_5fpoint_5fconstant_5',['floating_point_constant',['../structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html',1,'micro_os_plus::micro_test_plus::type_traits']]],

@@ -25,6 +25,6 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_
 </parameterlist>
 The <computeroutput>is_floating_point</computeroutput> concept is satisfied when <computeroutput>T</computeroutput> is one of the standard floating point types (<computeroutput>float</computeroutput>, <computeroutput>double</computeroutput>, or <computeroutput>long double</computeroutput>). It is the primary definition; <computeroutput>is_floating_point_v</computeroutput> is derived from it for use in <computeroutput>if constexpr</computeroutput> and non-concept contexts. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="422" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/type-traits.h" line="423" column="5"/>
   </compounddef>
 </doxygen>

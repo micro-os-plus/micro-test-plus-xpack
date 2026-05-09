@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Project<sp/>Headers</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>files<sp/>in<sp/>this<sp/>folder<sp/>are<sp/>intended<sp/>for<sp/>internal<sp/>use<sp/>only.<sp/>Do<sp/>not<sp/>include</highlight></codeline>
+<codeline><highlight class="normal">them<sp/>directly<sp/>in<sp/>your<sp/>projects.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Instead,<sp/>include<sp/>the<sp/>public<sp/>header<sp/>`&lt;micro-os-plus/micro-test-plus.h&gt;`.</highlight></codeline>
+    </programlisting>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/README.md"/>
+  </compounddef>
+</doxygen>

@@ -131,7 +131,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op { ... }
 <p>This struct is intended for internal use as a base for integral constants, floating point constants, and other value wrappers, supporting advanced template metaprogramming and type introspection.</p>
 
 
-<p>Definition at line 342 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+<p>Definition at line 343 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
 
 
 <hr/>

@@ -36,7 +36,7 @@ Assertion struct template for parameter passing to the evaluator
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/colours">colours</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/colours">colours</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Colours used to highlight pass and fail results in test reports
@@ -58,10 +58,21 @@ Base class for a deferred reporter that collects messages into a string
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter">deferred_reporter&lt;Expr_T&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/deferred-reporter">deferred_reporter</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Deferred reporter class template for a specific expression
+Deferred reporter class for a specific expression
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter">expression_formatter</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Formats values and expressions into an owned string buffer
 </td>
 </tr>
 
@@ -124,7 +135,7 @@ Struct template for compile-time type identity
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/indent-t">indent_t</a>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/indent-t">indent_t</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Parameterised stream manipulator for outputting indentation
@@ -443,7 +454,7 @@ TAP (Test Anything Protocol) implementation of <span class="doxyComputerOutput">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner-totals">runner_totals</a>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runner-totals">runner_totals</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Aggregated pass/fail/subtest counters for a node in the test tree
@@ -465,10 +476,10 @@ Local implementation of source location information for diagnostics
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-node">test_node</a>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/test-node">test_node</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Base class for all test suites
+Base class for runners and runable tests
 </td>
 </tr>
 
@@ -476,7 +487,7 @@ Base class for all test suites
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runnable-base">runnable_base</a>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runnable-base">runnable_base</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Non-template base for all runnable objects (suites and subtests)
@@ -487,10 +498,10 @@ Non-template base for all runnable objects (suites and subtests)
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runnable">runnable&lt;Self_T&gt;</a>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runnable">runnable&lt;Self_T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-CRTP base class factoring out callable storage, rule-of-five, and <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runnable/#aa8fee7ab95580624f262c99827cb7efc">run()</a></span> logic shared by <span class="doxyComputerOutput">test</span> and <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-suite">static_suite</a></span>
+CRTP base class factoring out callable storage, rule-of-five, and <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runnable/#aa460dbde9c1f1fca6136acb080ad76b6">run()</a></span> logic shared by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/subtest">subtest</a></span> and <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite">suite</a></span>
 </td>
 </tr>
 
@@ -564,7 +575,7 @@ A <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/clas
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamp">timestamp</a>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamp">timestamp</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 A single point-in-time measurement, wrapping a <span class="doxyComputerOutput">timespec</span> value
@@ -575,7 +586,7 @@ A single point-in-time measurement, wrapping a <span class="doxyComputerOutput">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/timestamps">timestamps</a>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/timestamps">timestamps</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 A begin/end timestamp pair used to measure elapsed time

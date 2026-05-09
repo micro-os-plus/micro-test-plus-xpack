@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['plus_0',['micro-test-plus',['../index.html',1,'']]]
+  ['operators_0',['Logical operators',['../group__micro-test-plus-operators.html#autotoc_md3',1,'']]]
 ];

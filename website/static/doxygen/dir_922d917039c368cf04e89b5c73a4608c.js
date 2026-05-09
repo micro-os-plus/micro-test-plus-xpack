@@ -4,6 +4,7 @@ var dir_922d917039c368cf04e89b5c73a4608c =
     [ "deferred-reporter.h", "deferred-reporter_8h.html", "deferred-reporter_8h" ],
     [ "detail.h", "detail_8h.html", "detail_8h" ],
     [ "exceptions.h", "exceptions_8h.html", "exceptions_8h" ],
+    [ "expression-formatter.h", "expression-formatter_8h.html", "expression-formatter_8h" ],
     [ "function-comparators.h", "function-comparators_8h.html", "function-comparators_8h" ],
     [ "literals.h", "literals_8h.html", "literals_8h" ],
     [ "math.h", "math_8h.html", "math_8h" ],
