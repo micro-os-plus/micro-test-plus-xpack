@@ -225,6 +225,8 @@ namespace micro_os_plus::micro_test_plus
        * processing.
        * @param location The source location relevant to the report.
        * @param subtest The subtest that owns this deferred report.
+       * @param expression The expression formatter to format the expression
+       * text.
        */
       template <class Expr_T>
       deferred_reporter (const Expr_T& expr, bool abort,

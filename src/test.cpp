@@ -266,7 +266,7 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * The destructor releases any resources associated with the
-   * `test` instance. If tracing is enabled, it outputs the
+    * `subtest` instance. If tracing is enabled, it outputs the
    * function signature for diagnostic purposes. This ensures that the test
    * suite is properly cleaned up after execution, supporting robust and
    * reliable test management across all files and folders within the µTest++

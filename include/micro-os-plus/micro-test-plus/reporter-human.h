@@ -153,7 +153,7 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
 
     /**
-     * @brief Mark the beginning of a test suite.
+     * @brief Mark the beginning of a test session.
      *
      * @param runner Reference to the test runner.
      * @par Returns
@@ -163,7 +163,7 @@ namespace micro_os_plus::micro_test_plus
     begin_session (runner& runner) override;
 
     /**
-     * @brief Mark the end of a test suite.
+     * @brief Mark the end of a test session.
      *
      * @param runner Reference to the test runner.
      * @par Returns

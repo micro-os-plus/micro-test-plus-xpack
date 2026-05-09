@@ -98,12 +98,9 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * The constructor initialises a new instance of the `test_runner` class,
-   * preparing the test runner for managing test suites and cases within the
-   * µTest++ framework. If tracing is enabled, it outputs the function
-   * signature for diagnostic purposes. This setup ensures the test runner is
-   * ready to coordinate the registration, execution, and reporting of tests
-   * across all test cases and folders.
+   * The constructor initialises a new `runner` instance together with
+   * its top suite (`top_suite_`). If tracing is enabled, it outputs the
+   * function signature for diagnostic purposes.
    */
   runner::runner (const char* top_suite_name)
       : test_node{ "runner" }, top_suite_{ top_suite_name, *this }
@@ -146,15 +143,9 @@ namespace micro_os_plus::micro_test_plus
 #endif
   /**
    * @details
-   * This method initialises the test runner by capturing the command-line
-   * arguments and the default test suite name, configuring the framework for
-   * subsequent test execution. It parses the arguments to determine the
-   * desired verbosity level (normal, verbose, quiet, or silent) and applies
-   * this setting to the test reporter. The method also outputs build and
-   * environment information when appropriate, aiding diagnostics and
-   * transparency. Finally, it creates and registers the default test suite,
-   * preparing the framework to manage and execute all test cases and suites
-   * across the project’s folders.
+   * Captures command-line arguments, selects the reporter implementation
+   * (`human` or `tap`), starts session timing, and emits the initial
+   * reporter notifications for the session and top suite.
    */
   suite&
   runner::initialise (int argc, char* argv[])
@@ -310,7 +301,7 @@ namespace micro_os_plus::micro_test_plus
         // Run the child suite immediately.
         suite_ptr->run ();
 
-        // Accumulate the totals from the static suite into the runner
+        // Accumulate the totals from the child suite into the runner
         // totals.
         // DO NOT increment executed_subtests here.
         totals_ += suite_ptr->totals ();
@@ -370,12 +361,8 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * This method immediately terminates the process by invoking the standard C
-   * library `abort()` function. It is used to halt test execution in critical
-   * failure scenarios, ensuring that no further tests are run and that the
-   * cause of the failure can be promptly investigated. This approach provides
-   * a robust mechanism for enforcing strict test outcomes across all test
-   * cases and folders.
+   * Prints the source location of the fatal error to `stderr` and then
+   * terminates the process via `::abort()`.
    */
   void
   runner::abort (const reflection::source_location& sl)

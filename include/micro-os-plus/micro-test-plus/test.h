@@ -516,7 +516,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @details
    * `subtest` represents a single, named test case or a nested group of
-   * checks within a parent `suite` or `subtest. It is constructed by calling
+   * checks within a parent `suite` or `subtest`. It is constructed by calling
    * `suite::test()` or `subtest::test()`, both of which create the object,
    * immediately execute its callable body via `run()`, and register the
    * result with the parent node.

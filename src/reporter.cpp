@@ -22,17 +22,14 @@
  *
  * @details
  * This source file contains the core implementations for the test reporting
- * facilities of the µTest++ framework. It provides the logic for formatting
- * and outputting test results, including operator overloads for a wide range
- * of value types, containers, and comparison expressions, as well as
- * structured output for logical and exception-related assertions.
+ * facilities of the µTest++ framework. It provides lifecycle and utility
+ * behaviour for reporters, including command-line option parsing,
+ * output-file handling, informational banner emission, buffering helpers,
+ * stream operators, and pass/fail dispatch to reporter-specific prefix/
+ * suffix hooks.
  *
- * The test reporter is responsible for presenting test outcomes in a clear,
- * consistent, and expressive manner, supporting both value and pointer
- * semantics, and providing detailed diagnostics for both successful and failed
- * test cases. Special attention is given to formatting, colour highlighting,
- * and extensibility, enabling professional and readable test reports suitable
- * for embedded and general C++ development.
+ * Concrete formatting behaviour is implemented by derived reporters
+ * (`reporter_human` and `reporter_tap`).
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace, ensuring clear separation from user code and minimising the risk
