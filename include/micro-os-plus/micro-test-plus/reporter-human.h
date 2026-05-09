@@ -145,7 +145,7 @@ namespace micro_os_plus::micro_test_plus
      * @return Reference to the current reporter instance.
      */
     reporter_human&
-    operator<< (indent_t m);
+    operator<< (detail::indent_t m);
 
     // Bring base class operator<< overloads into scope to prevent name hiding.
     using reporter::operator<<;

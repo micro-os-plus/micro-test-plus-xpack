@@ -73,10 +73,9 @@
 
 namespace micro_os_plus::micro_test_plus
 {
-
   // --------------------------------------------------------------------------
 
-  inline indent_t
+  inline detail::indent_t
   indent (size_t level)
   {
     return { level };

@@ -108,7 +108,7 @@ namespace micro_os_plus::micro_test_plus
    * folders by allowing `*this << indent(n) << "text"` chaining.
    */
   reporter_tap&
-  reporter_tap::operator<< (indent_t m)
+  reporter_tap::operator<< (detail::indent_t m)
   {
     buffer_.append (m.level * indent_size, ' ');
     return *this;

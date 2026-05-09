@@ -123,17 +123,24 @@ namespace micro_os_plus::micro_test_plus
   reporter&
   endl (reporter& stream);
 
-  /**
-   * @brief Parameterised stream manipulator for outputting indentation.
-   *
-   * @details
-   * Holds the indentation level; used with `operator<<` on `reporter`
-   * so that `*this << indent(n) << "text"` works naturally in chains.
-   */
-  struct indent_t
+  namespace detail
   {
-    size_t level; /**< @brief Number of four-space indentation levels. */
-  };
+    // ------------------------------------------------------------------------
+
+    /**
+     * @brief Parameterised stream manipulator for outputting indentation.
+     *
+     * @details
+     * Holds the indentation level; used with `operator<<` on `reporter`
+     * so that `*this << indent(n) << "text"` works naturally in chains.
+     */
+    struct indent_t
+    {
+      size_t level; /**< @brief Number of four-space indentation levels. */
+    };
+
+    // ------------------------------------------------------------------------
+  } // namespace detail
 
   /**
    * @brief Factory function that creates an `indent_t` manipulator.
@@ -141,7 +148,7 @@ namespace micro_os_plus::micro_test_plus
    * @param level The number of four-space indentation levels.
    * @return An `indent_t` value for use with `operator<<`.
    */
-  [[nodiscard]] indent_t
+  [[nodiscard]] detail::indent_t
   indent (size_t level);
 
   // ==========================================================================
