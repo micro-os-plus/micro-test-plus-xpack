@@ -36,16 +36,6 @@
 
 // ----------------------------------------------------------------------------
 
-#if defined(MICRO_OS_PLUS_INCLUDE_CONFIG_H)
-#include <micro-os-plus/config.h>
-#endif // MICRO_OS_PLUS_INCLUDE_CONFIG_H
-
-#include <micro-os-plus/micro-test-plus.h>
-
-#if defined(MICRO_OS_PLUS_TRACE)
-#include <micro-os-plus/diag/trace.h>
-#endif // MICRO_OS_PLUS_TRACE
-
 // For the PRIu32 macro used in snprintf() formatting of uint32_t values.
 #include <cinttypes>
 
@@ -53,6 +43,18 @@
 // For isatty() to detect if stdout is a terminal, enabling colour output.
 #include <unistd.h>
 #endif
+
+#if defined(MICRO_OS_PLUS_INCLUDE_CONFIG_H)
+#include <micro-os-plus/config.h>
+#endif // MICRO_OS_PLUS_INCLUDE_CONFIG_H
+
+#if defined(MICRO_OS_PLUS_TRACE)
+#include <micro-os-plus/diag/trace.h>
+#endif // MICRO_OS_PLUS_TRACE
+
+#include "micro-os-plus/micro-test-plus/reporter-human.h"
+#include "micro-os-plus/micro-test-plus/runner.h"
+#include "micro-os-plus/micro-test-plus/test.h"
 
 // ----------------------------------------------------------------------------
 

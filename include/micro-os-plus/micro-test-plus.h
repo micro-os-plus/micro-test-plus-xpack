@@ -72,7 +72,7 @@
 // No deps.
 #include "micro-test-plus/reflection.h"
 
-// Requires type-traits.h.
+// Requires type-traits.h, reflection.h.
 #include "micro-test-plus/detail.h"
 
 // Requires type-traits.h, math.h.
@@ -87,32 +87,32 @@
 // Requires type-traits.h + detail.h,
 #include "micro-test-plus/operators.h"
 
-// Requires type-traits.h, detail.h.
+// Requires type-traits.h, detail.h + reflection.h.
 #include "micro-test-plus/expression-formatter.h"
 
-// Requires type-traits.h, detail.h, expression-formatter.h.
+// Requires type-traits.h, detail.h, expression-formatter.h, reflection.h.
 #include "micro-test-plus/reporter.h"
 
-// Requires type-traits.h + expression-formatter.h.
+// Requires type-traits.h, reflection.h, expression-formatter.h.
 #include "micro-test-plus/deferred-reporter.h"
 
 // No deps.
 #include "micro-test-plus/runner-totals.h"
 
-// Requires reporter.h.
+// Requires reporter.h, reflection.h.
 #include "micro-test-plus/reporter-human.h"
 
-// Requires reporter.h.
+// Requires reporter.h, reflection.h.
 #include "micro-test-plus/reporter-tap.h"
 
 // No deps.
 #include "micro-test-plus/utility.h"
 
-// Requires runner-totals.h, type-traits.h and timings.h + deferred-reporter.h,
-// reporter.h.
+// Requires reporter.h, runner-totals.h, reflection.h, type-traits.h and
+// timings.h + deferred-reporter.h, reporter.h.
 #include "micro-test-plus/test.h"
 
-// Requires timings.h, test.h (detail::test_node, top_suite).
+// Requires timings.h, test.h (detail::test_node, top_suite), reflection.h.
 #include "micro-test-plus/runner.h"
 
 // ----------------------------------------------------------------------------

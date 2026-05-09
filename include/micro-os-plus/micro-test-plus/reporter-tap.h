@@ -15,12 +15,6 @@
 
 // ----------------------------------------------------------------------------
 
-#if !defined(MICRO_TEST_PLUS_MICRO_TEST_PLUS_H_)
-// clang-format off
-#error "Do not include this file directly; use <micro-os-plus/micro-test-plus.h>."
-// clang-format on
-#endif // MICRO_TEST_PLUS_MICRO_TEST_PLUS_H_
-
 /**
  * @file
  * @brief C++ header file with declarations for the µTest++ TAP test reporter.
@@ -52,6 +46,7 @@
 // ----------------------------------------------------------------------------
 
 #include "reporter.h"
+#include "reflection.h"
 
 // ----------------------------------------------------------------------------
 
@@ -72,7 +67,7 @@ namespace micro_os_plus::micro_test_plus
   class runner;
   class suite;
   class subtest;
-  
+
   // ==========================================================================
 
   /**

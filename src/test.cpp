@@ -47,11 +47,12 @@
 #include <micro-os-plus/config.h>
 #endif // MICRO_OS_PLUS_INCLUDE_CONFIG_H
 
-#include <micro-os-plus/micro-test-plus.h>
-
 #if defined(MICRO_OS_PLUS_TRACE)
 #include <micro-os-plus/diag/trace.h>
 #endif // MICRO_OS_PLUS_TRACE
+
+#include "micro-os-plus/micro-test-plus/test.h"
+#include "micro-os-plus/micro-test-plus/runner.h"
 
 // ----------------------------------------------------------------------------
 

@@ -15,12 +15,6 @@
 
 // ----------------------------------------------------------------------------
 
-#if !defined(MICRO_TEST_PLUS_MICRO_TEST_PLUS_H_)
-// clang-format off
-#error "Do not include this file directly; use <micro-os-plus/micro-test-plus.h>."
-// clang-format on
-#endif // MICRO_TEST_PLUS_MICRO_TEST_PLUS_H_
-
 /**
  * @file
  * @brief C++ header file with inline implementations for the µTest++
@@ -57,14 +51,12 @@
 
 // ----------------------------------------------------------------------------
 
-#if defined(MICRO_OS_PLUS_TRACE)
-#include <micro-os-plus/diag/trace.h>
-#endif // MICRO_OS_PLUS_TRACE
-
 #include <charconv>
 #include <cstdio>
 
-#include "micro-os-plus/micro-test-plus/expression-formatter.h"
+#if defined(MICRO_OS_PLUS_TRACE)
+#include <micro-os-plus/diag/trace.h>
+#endif // MICRO_OS_PLUS_TRACE
 
 // ----------------------------------------------------------------------------
 
