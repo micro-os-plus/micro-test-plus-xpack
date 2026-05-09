@@ -84,7 +84,7 @@
 // No deps.
 #include "micro-test-plus/exceptions.h"
 
-// Requires type-traits.h + detail.h, 
+// Requires type-traits.h + detail.h,
 #include "micro-test-plus/operators.h"
 
 // Requires type-traits.h, detail.h.
@@ -108,19 +108,12 @@
 // No deps.
 #include "micro-test-plus/utility.h"
 
-// ----------------------------------------------------------------------------
-// Warning: circular dependencies!
-
-// Requires runner-totals.h, type-traits.h and timings.h
+// Requires runner-totals.h, type-traits.h and timings.h + deferred-reporter.h,
+// reporter.h.
 #include "micro-test-plus/test.h"
 
 // Requires timings.h, test.h (detail::test_node, top_suite).
 #include "micro-test-plus/runner.h"
-
-// TODO: find out why it cannot be included in test.h.
-// Requires deferred-reporter.h, type-traits.h, reporter.h
-#include "micro-test-plus/inlines/test-inlines.h"
-
 
 // ----------------------------------------------------------------------------
 

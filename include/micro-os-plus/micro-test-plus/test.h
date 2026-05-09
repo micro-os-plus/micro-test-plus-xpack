@@ -93,10 +93,39 @@ namespace micro_os_plus::micro_test_plus
   class runner_totals;
   class subtest;
   class suite;
+  class static_suite;
 
   namespace detail
   {
     // ========================================================================
+
+    /**
+     * @brief Converts a `static_runner` reference to a `runner` reference.
+     *
+     * @details
+     * This declaration breaks the include-order cycle between `test` and
+     * `runner` headers. The definition is provided in a translation unit where
+     * both types are complete, so the conversion remains type-safe.
+     *
+     * @param static_runner_ref The source `static_runner` reference.
+     * @return The same object viewed as its `runner` base.
+     */
+    runner&
+    to_runner (static_runner& static_runner_ref) noexcept;
+
+    /**
+     * @brief Registers a static suite with a static runner.
+     *
+     * @details
+     * This declaration allows `test-inlines.h` to request registration
+     * without requiring the complete `static_runner` type in that header.
+     *
+     * @param static_runner_ref The destination static runner.
+     * @param static_suite_ref The static suite to register.
+     */
+    void
+    register_static_suite (static_runner& static_runner_ref,
+                           static_suite& static_suite_ref);
 
     /**
      * @brief Base class for runners and runable tests.
@@ -952,7 +981,7 @@ namespace micro_os_plus::micro_test_plus
 // ============================================================================
 // Templates & constexpr implementations.
 
-// #include "inlines/test-inlines.h"
+#include "inlines/test-inlines.h"
 
 // ----------------------------------------------------------------------------
 

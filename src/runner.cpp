@@ -65,6 +65,33 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
+   * Performs the `static_runner` to `runner` upcast where both types are
+   * complete, allowing headers with only forward declarations to request this
+   * conversion safely.
+   */
+  runner&
+  detail::to_runner (static_runner& static_runner_ref) noexcept
+  {
+    return static_cast<runner&> (static_runner_ref);
+  }
+
+  /**
+   * @details
+   * Performs static-suite registration where `static_runner` is complete,
+   * allowing header-only template code to avoid direct dependence on
+   * `runner.h` include order.
+   */
+  void
+  detail::register_static_suite (static_runner& static_runner_ref,
+                                 static_suite& static_suite_ref)
+  {
+    static_runner::register_static_suite (static_runner_ref, static_suite_ref);
+  }
+
+  // --------------------------------------------------------------------------
+
+  /**
+   * @details
    * The constructor initialises a new instance of the `test_runner` class,
    * preparing the test runner for managing test suites and cases within the
    * µTest++ framework. If tracing is enabled, it outputs the function
