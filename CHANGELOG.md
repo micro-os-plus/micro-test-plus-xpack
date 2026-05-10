@@ -6,8 +6,85 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2026-05-11
+
+* v4.1.0 prepared
+* 496bf98 re-generate website commons
+* 4f3a2b9 use local cmake-format & reformat
+
+## 2026-05-10
+
+* fe8d5ac use local clang-format & reformat
+* 9239eca #31: move the top default suite name to initialise()
+* 478a667 website/package*.json update
+* d69a6be re-generate website commons
+* 7e0d3f9 config.doxyfile: add EXCLUDE_PATTERNS
+* 86596a2 update .dox files to remove repetitions
+* dded41a copilot-instructions.md update
+* fbe0cd9 detail.h: add @details
+
+## 2026-05-09
+
+* 597515f website update
+* 88dd73c detail::indent_t
+* a835441 doxygen update
+* a903306 cleanups for includes
+* 8a6ab9f cmake: disable coverage
+* d4216c5 #28: fix circular dependency
+* 8004f37 #28: more includes reworks
+
+## 2026-05-08
+
+* 5b55e3f #28: more inlines fixed, only test-inlines.h remaining
+* 9dd8012 fix illegal character
+* 26675c5 #30: Move internal classes to details namespace
+* cbf8e4c extract exceptions-inline.h
+* fbca56c remove nodiscard from definitions
+* 4ed019a #29: Extract expression formatting code from reporter
+* 9b1369d Merge branch 'xpack-development' of https://github.com/micro-os-plus/micro-test-plus-xpack into xpack-development
+* 4ef8a04 #29: Extract expression formatting code from reporter
+* c9bf9b1 #29: Extract expression formatting code from reporter
+
+## 2026-05-07
+
+* d25e887 #28: Re-organise inlines
+
+## 2026-05-06
+
+* 5c2c832 tests: use add_compile_common_private_options
+* 404fdd2 test-inlines.h: silence warning
+* ee30572 re-generate commons
+* ab9c415 re-generate top commons
+* e8f23ee #27: Split definitions from declarations
+* f6aaa8a tests: use add_compile_common_private_options
+
+## 2026-05-04
+
+* 536e327 website update
+
+## 2026-04-30
+
+* aca5767 platforms/native: remove -stdlib=libc++ from non clang
+* 0cef14e more guards & guard cosmetics
+* e15b6d7 guard include diag/trace.h
+* 0ad8f72 tests: include platform.h
+* 8775c7f website user update
+* 953cc21 includes: add guard to prevent direct includes
+
 ## 2026-04-29
 
+* 8f330f5 re-generate tests commons
+* 7c3b63d fix again blog autoformat
+* e2ddd82 website updates
+* f9a1b1a website: update last blog posts
+* 730a42c website: add link to TAP
+* 08aeb97 website: fix blog posts code block
+* 88273bf .vscode/settings.json: do not reformat mdx
+* 88107e3 re-generate website commons
+* 14309a9 website: blog post release 4.0.0 published
+* 07f01d3 blog posts cosmetics
+* 6e72885 4.0.0
+* cfd4b34 CHANGELOG: publish npm v4.0.0
 * v4.0.0 published on npmjs.com
 * 1105af3 re-format
 * ac64933 CHANGELOG update for v4.0.0
