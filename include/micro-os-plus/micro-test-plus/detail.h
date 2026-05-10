@@ -103,6 +103,12 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Assertion struct template for parameter passing to the evaluator.
      *
+     * @details
+     * This structure encapsulates both the expression being tested and its
+     * associated source location. Used internally by the framework to pass
+     * assertion data through the evaluation pipeline, enabling accurate
+     * reporting of where assertions occur in test code.
+     *
      * @tparam Expr_T The type of the expression being asserted.
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
@@ -139,6 +145,13 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Common base struct template for unary comparators.
+     *
+     * @details
+     * This base struct stores a single operand and the pre-computed boolean
+     * result of a unary operation. Derived structs such as `not_` inherit
+     * from this to provide logical negation. The result is computed at
+     * construction time, enabling consistent handling and reporting of
+     * operations throughout the assertion framework.
      *
      * @tparam T The type of the operand.
      *
@@ -192,6 +205,14 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Common base struct template for binary comparators.
+     *
+     * @details
+     * This base struct stores two operands (left-hand and right-hand) along
+     * with the pre-computed boolean result of a binary comparison. Derived
+     * structs such as `eq_`, `lt_`, and others inherit from this to provide
+     * relational and logical operations. The comparison result is computed at
+     * construction time and cached, enabling efficient reporting and
+     * composition of complex assertions without repeated computation.
      *
      * @tparam Lhs_T The type of the left-hand operand.
      * @tparam Rhs_T The type of the right-hand operand.
@@ -269,6 +290,12 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Equality comparator struct template.
      *
+     * @details
+     * Derived from `binary_op_`, this struct checks whether the left-hand
+     * operand is equal to the right-hand operand. It is used within test
+     * expressions to provide human-readable equality assertions with
+     * enhanced reporting of the actual and expected values upon failure.
+     *
      * @tparam Lhs_T The type of the left-hand operand.
      * @tparam Rhs_T The type of the right-hand operand.
      *
@@ -294,6 +321,12 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Non-equality comparator struct template.
+     *
+     * @details
+     * Derived from `binary_op_`, this struct checks whether the left-hand
+     * operand is not equal to the right-hand operand. It is used within test
+     * expressions to provide human-readable inequality assertions with
+     * enhanced reporting of the actual and expected values upon failure.
      *
      * @tparam Lhs_T The type of the left-hand operand.
      * @tparam Rhs_T The type of the right-hand operand.
@@ -321,6 +354,12 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Greater than comparator struct template.
      *
+     * @details
+     * Derived from `binary_op_`, this struct checks whether the left-hand
+     * operand is greater than the right-hand operand. It is used within test
+     * expressions to provide human-readable relational assertions with
+     * enhanced reporting of the actual and expected values upon failure.
+     *
      * @tparam Lhs_T The type of the left-hand operand.
      * @tparam Rhs_T The type of the right-hand operand.
      *
@@ -346,6 +385,13 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Greater than or equal comparator struct template.
+     *
+     * @details
+     * Derived from `binary_op_`, this struct checks whether the left-hand
+     * operand is greater than or equal to the right-hand operand. It is used
+     * within test expressions to provide human-readable relational
+     * assertions with enhanced reporting of the actual and expected values
+     * upon failure.
      *
      * @tparam Lhs_T The type of the left-hand operand.
      * @tparam Rhs_T The type of the right-hand operand.
@@ -374,6 +420,12 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Less than comparator struct template.
      *
+     * @details
+     * Derived from `binary_op_`, this struct checks whether the left-hand
+     * operand is less than the right-hand operand. It is used within test
+     * expressions to provide human-readable relational assertions with
+     * enhanced reporting of the actual and expected values upon failure.
+     *
      * @tparam Lhs_T The type of the left-hand operand.
      * @tparam Rhs_T The type of the right-hand operand.
      *
@@ -399,6 +451,13 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Less than or equal comparator struct template.
+     *
+     * @details
+     * Derived from `binary_op_`, this struct checks whether the left-hand
+     * operand is less than or equal to the right-hand operand. It is used
+     * within test expressions to provide human-readable relational
+     * assertions with enhanced reporting of the actual and expected values
+     * upon failure.
      *
      * @tparam Lhs_T The type of the left-hand operand.
      * @tparam Rhs_T The type of the right-hand operand.
@@ -427,6 +486,13 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Logical AND comparator struct template.
      *
+     * @details
+     * Derived from `binary_op_`, this struct combines two sub-expressions
+     * with a logical AND operation. It enables composition of complex
+     * assertions by combining multiple conditions into a single logical
+     * whole, with reporting that shows the combined result and individual
+     * operand outcomes.
+     *
      * @tparam Lhs_T The type of the left-hand operand.
      * @tparam Rhs_T The type of the right-hand operand.
      *
@@ -452,6 +518,13 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Logical OR comparator struct template.
+     *
+     * @details
+     * Derived from `binary_op_`, this struct combines two sub-expressions
+     * with a logical OR operation. It enables composition of complex
+     * assertions by combining multiple conditions into a single logical
+     * whole, with reporting that shows the combined result and individual
+     * operand outcomes.
      *
      * @tparam Lhs_T The type of the left-hand operand.
      * @tparam Rhs_T The type of the right-hand operand.
@@ -479,6 +552,12 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Logical NOT comparator struct template.
      *
+     * @details
+     * Derived from `unary_op_`, this struct negates a single sub-expression,
+     * enabling test writers to assert that a condition does not hold. The
+     * negation result is computed at construction time, ensuring consistent
+     * reporting throughout the assertion framework.
+     *
      * @tparam T The type of the operand.
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
@@ -504,6 +583,14 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Common base struct for callable-wrapping operators.
+     *
+     * @details
+     * This base struct provides common functionality for operators that wrap
+     * callable invocations, particularly for exception-checking operations.
+     * Derived structs (such as `throws_` and `nothrow_`) use this base to
+     * store and manage the pre-computed boolean result of a callable
+     * invocation, enabling consistent reporting and composition of
+     * exception-checking assertions.
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
      */
@@ -540,6 +627,13 @@ namespace micro_os_plus::micro_test_plus
      * @brief Operator struct template to check if an expression throws a
      * specific exception.
      *
+     * @details
+     * This specialisation checks whether invoking the given callable throws
+     * an exception of the specified type. The check is performed at
+     * construction time, with the result cached for reporting and
+     * composition. Use this when a test must verify that an operation raises
+     * an expected exception of a particular type.
+     *
      * @tparam Callable_T The type of the callable object to be invoked.
      * @tparam Exception_T The type of the exception to check for (defaults to
      * `void` for any exception).
@@ -564,6 +658,13 @@ namespace micro_os_plus::micro_test_plus
      * @brief Operator struct template to check if an expression throws any
      * exception.
      *
+     * @details
+     * This partial specialisation checks whether invoking the given callable
+     * throws any exception, regardless of type. The check is performed at
+     * construction time, with the result cached for reporting and
+     * composition. Use this when a test must verify that an operation raises
+     * an exception without caring about the specific exception type.
+     *
      * @tparam Callable_T The type of the callable object to be invoked.
      *
      * @headerfile micro-test-plus.h <micro-os-plus/micro-test-plus.h>
@@ -585,6 +686,12 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Operator struct template to check if an expression does not throw
      * any exception.
+     *
+     * @details
+     * This struct checks whether invoking the given callable completes
+     * without throwing an exception. The check is performed at construction
+     * time, with the result cached for reporting and composition. Use this
+     * when a test must verify that an operation is exception-safe.
      *
      * @tparam Callable_T The type of the callable object to be invoked.
      *
