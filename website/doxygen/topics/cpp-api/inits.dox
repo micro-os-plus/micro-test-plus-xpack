@@ -1,18 +1,15 @@
 @defgroup micro-test-plus-runners Test Runners
-@brief Classes and methods for initialising the framework and returning an
+@brief Classes for initialising the framework and returning an
 exit code.
 
 @details
-These classes are responsible for **initialising the test framework**,
-**running the test suites** and
-**returning the test result** as the process exit code. Proper
-initialisation ensures that the µTest++ framework is correctly configured
+Proper initialisation ensures that µTest++ is correctly configured
 to manage and execute test cases, whilst the exit code reflects the overall
-outcome of the tests, supporting integration with automated build and
-continuous integration systems.
+test outcome and supports integration with automated build and continuous
+integration systems.
 
-The simplest test consists of the default test suite, a single test case 
-containing a single expectation; for example:
+The simplest test consists of the default test suite and a single test case
+with one expectation; for example:
 
 @code{.cpp}
 #include <micro-os-plus/micro-test-plus.h>

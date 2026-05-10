@@ -2,6 +2,12 @@
 @brief Assumptions are conditions that must be satisfied for a test to proceed.
 
 @details
-Assumptions represent essential preconditions that must hold true for a test case to execute meaningfully. If an assumption fails, the test is immediately terminated, as continuing would render the results invalid or misleading.
+When a required precondition does not hold, the test cannot execute
+meaningfully. If an assumption fails, the test is terminated immediately,
+as continuing would render the results invalid or
+misleading.
 
-By clearly specifying assumptions, developers can ensure that tests are only run in appropriate contexts, improving the reliability and accuracy of test outcomes. This mechanism is particularly valuable for guarding against invalid input, incomplete initialisation, or unsupported environments.
+By explicitly defining assumptions, developers ensure that tests run only in
+appropriate contexts, improving the reliability and accuracy of outcomes.
+This mechanism is particularly valuable for guarding against invalid input,
+incomplete initialisation, and unsupported environments.

@@ -2,14 +2,24 @@
 @brief Overloaded operators for expressive test comparisons.
 
 @details
+These overloads enable expressive, type-safe test assertions. Operators
+such as `==`, `!=`, `<`, `>`, `<=`, and `>=` are defined in the dedicated
+`micro_test_plus::operators` namespace to avoid conflicts with
+application-defined operators.
 
-The µTest++ framework provides overloaded comparison and logical operators to enable expressive and type-safe test assertions. These operators—such as `==`, `!=`, `<`, `>`, `<=`, and `>=`—are defined within the dedicated `micro_test_plus::operators` namespace to avoid conflicts with application-defined operators.
+For standard values, the default operators are used, ensuring correct
+comparisons. However, when specialised µTest++ operators are used with
+typed operands, failed checks display both actual and expected values,
+greatly improving report clarity.
 
-For standard values, the default operators are used, ensuring correct comparisons. However, when using the specialised µTest++ operators with typed operands, failed checks will display both the actual and expected values, greatly improving the clarity of test reports.
+These operators are restricted to operands derived from the local
+`detail::op` type. For constant values, this is achieved with provided
+literals (for example, `1_i`), whilst dynamic values can be wrapped with
+converters such as `mt::to_i{expression}`.
 
-These operators are restricted to operands derived from the local `detail::op` type. For constant values, this is achieved using provided literals (e.g., `1_i`), while dynamic values can be wrapped using casts such as `mt::to_i{expression}`.
-
-Logical operators (`&&`, `||`, `!`) are also supported and provide enhanced functionality when used with typed operands, allowing for the composition of complex test conditions in a natural and readable manner.
+Logical operators (`&&`, `||`, `!`) are also supported and provide enhanced
+functionality when used with typed operands, allowing complex test
+conditions to be composed naturally and readably.
 
 @par Examples
 
@@ -28,10 +38,10 @@ ts.test ("Operators", [] (auto& t) {
 });
 @endcode
 
-## Logical operators
+@par Logical Operators
 
-Logical operators may be used in the same way as standard operators, with
-enhanced reporting available when used with typed operands.
+Logical operators provide enhanced reporting when used with typed operands,
+allowing complex test conditions to be composed naturally and readably.
 
 @par Example
 

@@ -1,19 +1,17 @@
 @defgroup micro-test-plus-test-suites Test Suites
-@brief Test suites are named collections of test cases.
+@brief Test suites are named groups of related test cases.
 
 @details
-Test suites in µTest++ are named groups of related test cases, allowing
-for structured organisation and execution of tests. By default, all test
-cases defined in `main()` are included in the top test suite, which is
-created by `runner::initialise()`, and are executed immediately.
+By default, all test cases defined in `main()` are included in the
+top-level test suite, which is created by `runner::initialise()` and
+executed immediately. For more complex projects, additional test suites can
+be defined, typically in separate source files.
 
-For more complex projects, additional test suites can be defined, typically
-in separate source files. Standalone test suites are implemented as
-`mt::static_suite` objects, constructed with a name, a reference to the
-runner, and a callable (usually a lambda that chains the execution of the
-test cases), along with any optional arguments. This design enables
-self-registration of test suites, ensuring they are automatically included
-in the test run.
+Stand-alone test suites are implemented as `mt::static_suite` objects,
+constructed with a name, a reference to the runner, and a callable (usually
+a lambda that chains execution of test cases), along with any optional
+arguments. This design enables self-registration of test suites, ensuring
+they are automatically included in the test run.
 
 @important
 It is strongly recommended to instantiate additional test suites as static
@@ -21,7 +19,7 @@ objects so that their constructors are invoked before `main()` begins.
 
 Self-registration is performed within the constructor, ensuring that each
 test suite is automatically included in the test run. When test suites are
-defined in separate compilation units, they may be executed in any order,
+defined in separate compilation units, they can be executed in any order,
 as the sequence in which static constructors are invoked is not specified.
 Consequently, test suites should be designed to be independent and must not
 rely on the execution order of other suites.
@@ -34,7 +32,7 @@ called, guaranteeing comprehensive test coverage across the project.
 @code{.cpp}
 namespace mt = micro_os_plus::micro_test_plus;
 
-// In main.cpp: create the runner (also the static_runner variant works).
+// In main.cpp: create the runner (the static_runner variant also works).
 static mt::static_runner tr{ "Sample" };
 
 int

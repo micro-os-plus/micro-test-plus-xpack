@@ -2,9 +2,14 @@
 @brief Overloaded operators for container comparison.
 
 @details
-The µTest++ framework provides overloaded operators to facilitate direct and expressive comparison of standard containers, such as vectors and strings, within test cases. These operators enable developers to write clear and concise assertions when verifying the equality or inequality of container contents.
+Within test cases, overloaded operators support direct and expressive
+comparison of standard containers, such as vectors and strings. These
+operators enable clear, concise assertions when verifying equality or
+inequality of container contents.
 
-In addition to the generic operators, specialised equality and inequality operators are provided for containers, ensuring accurate and efficient comparison semantics that align with modern C++ practices.
+In addition to generic operators, specialised equality and inequality
+operators are available for container types where dedicated handling
+improves correctness or efficiency, while preserving modern C++ semantics.
 
 @par Examples
 

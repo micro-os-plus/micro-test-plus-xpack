@@ -2,4 +2,8 @@
 @brief Utility functions for advanced string handling in tests.
 
 @details
-The µTest++ framework includes a collection of utility functions designed to simplify advanced string operations commonly required during test development. These functions support tasks such as partial string matching, splitting long strings for improved readability, and other manipulations that enhance the clarity and effectiveness of test code.
+These utilities simplify advanced string operations commonly required
+during test development. They support tasks such as partial string
+matching, splitting long
+strings for improved readability, and related manipulations that enhance
+the clarity and effectiveness of test code.

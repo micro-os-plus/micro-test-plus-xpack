@@ -2,11 +2,19 @@
 @brief Literal operators and wrappers for typed operands.
 
 @details
-The µTest++ framework provides a set of literal operators and wrappers to facilitate the creation of strongly typed operands within test expressions. These features enable developers to write clear and type-safe comparisons, improving both readability and correctness in test cases.
+Within test expressions, literals such as `1_i` and `42_f` create strongly
+typed operands, whilst wrappers like `mt::to_i{expression}` convert dynamic
+values. These mechanisms enable clear, type-safe comparisons, improving
+readability and correctness in test cases.
 
-Literal operators, available in the dedicated `literals` namespace, allow constants to be expressed with explicit types, such as integers and floating-point values. For dynamic values, wrappers are provided to convert them into recognised types at run-time.
+Literal operators, available in the dedicated `literals` namespace, allow
+constants to be expressed with explicit types, such as integers and
+floating-point values. For dynamic values, wrappers convert operands into
+recognised comparison types at run-time.
 
-This approach ensures that both compile-time constants and run-time values can be compared accurately and expressively, supporting robust and maintainable test code.
+This approach ensures that both compile-time constants and run-time values
+can be compared accurately and expressively, supporting robust,
+maintainable test code.
 
 @par Examples
 

@@ -2,9 +2,15 @@
 @brief Overloaded operators for string comparison.
 
 @details
-The µTest++ framework provides overloaded operators specifically for comparing string types, such as `std::string_view`. These operators enable clear and expressive assertions when verifying string values within test cases, supporting both equality and inequality checks.
+Operators are provided specifically for comparing string types, such as
+`std::string_view`. These operators enable clear, expressive assertions
+when verifying string values in test cases, supporting both equality and
+inequality checks.
 
-By using these dedicated string operators, developers can write concise and readable tests that accurately reflect the intended logic. The framework ensures that string comparisons are performed correctly and that any failed checks are reported with both the actual and expected values for straightforward diagnostics.
+Using these dedicated operators ensures concise, readable tests that
+accurately reflect intended logic. The framework ensures correct string
+comparisons and reports failed checks with both actual and expected values
+for clear diagnostics.
 
 @par Examples
 

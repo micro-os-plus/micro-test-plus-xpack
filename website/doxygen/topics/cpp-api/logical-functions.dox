@@ -2,9 +2,13 @@
 @brief Functions used to compose logical expressions in tests.
 
 @details
-The µTest++ framework provides logical functions for composing complex test expressions within a single statement. The functions `mt::_and()`, `mt::_or()`, and `mt::_not()` enable the combination of multiple conditions, allowing for expressive and concise test logic.
+The functions `mt::_and()`, `mt::_or()`, and `mt::_not()` combine multiple
+conditions, allowing expressive and concise test logic.
 
-These function names are prefixed with an underscore because `and`, `or`, and `not` are reserved keywords in both C and C++. By using these logical functions, developers can clearly express compound conditions and improve the readability of their test cases.
+These function names are prefixed with an underscore to avoid clashes with
+language alternative tokens or related macros named `and`, `or`, and
+`not`. Using these logical functions allows developers to express compound
+conditions clearly and improve readability.
 
 @par Example
 
@@ -15,5 +19,6 @@ ts.test ("Check compound conditions", [] (auto& t) {
 });
 @endcode
 
-
-When the operands are function comparators, it is recommended to use the overloaded logical operators `&&`, `||`, and `!` provided within the `micro_test_plus::operators` namespace for even more natural expression of logical conditions.
+When operands are function comparators, use the overloaded logical
+operators `&&`, `||`, and `!` provided in the `micro_test_plus::operators`
+namespace for more natural logical expressions.

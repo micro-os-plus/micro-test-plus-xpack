@@ -2,12 +2,17 @@
 @brief Functions for comparing actual and expected values in tests.
 
 @details
+While any boolean expression can be used in expectations and assumptions,
+dedicated comparator functions such as `eq`, `ne`, `lt`, `le`, `gt`, and
+`ge` provide enhanced reporting by explicitly showing the compared values
+when a check fails.
 
-Function comparators in µTest++ provide a clear and expressive way to compare actual and expected values within test cases. While any expression yielding a boolean value may be used in expectations and assumptions, dedicated comparator functions such as `eq`, `ne`, `lt`, `le`, `gt`, and `ge` offer enhanced reporting by explicitly showing the values involved when a check fails.
+Using these comparators ensures that failed checks report both actual and
+expected values, making issues easier to diagnose.
 
-Using these comparators ensures that, in the event of a failed check, the test output will include both the actual and expected values, making it easier to diagnose issues and understand the cause of the failure.
-
-Comparators are available for both fundamental types and standard containers. When comparing containers, each element is assessed individually, and the results are reported in detail.
+Comparators are available for both fundamental types and standard
+containers. When comparing containers, each element is assessed
+individually, and the results are reported in detail.
 
 @par Examples
 
@@ -24,7 +29,8 @@ ts.test ("Check various conditions", [] (auto& t) {
 });
 @endcode
 
-If a comparator check fails, the output will clearly indicate the actual and expected values:
+If a comparator check fails, the output clearly indicates the actual and
+expected values:
 
 @code{.console}
   Check failed comparisons
@@ -35,9 +41,11 @@ If a comparator check fails, the output will clearly indicate the actual and exp
 and 42.000000 != 42.000000))
 @endcode
 
-## Comparing containers
+@par Comparing Containers
 
-Containers can be compared for equality or inequality using the same comparator functions. The comparison is performed by iterating through each element and evaluating them individually.
+Containers can be compared for equality or inequality using the same
+comparator functions. Comparison is performed by iterating through each
+element and evaluating it individually.
 
 @par Examples
 
