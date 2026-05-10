@@ -17,7 +17,7 @@ keywords:
 
 # Test Runners
 
-<p>Classes and methods for initialising the framework and returning an exit code. <a href="#details">More...</a></p>
+<p>Classes for initialising the framework and returning an exit code. <a href="#details">More...</a></p>
 
 ## Classes Index
 
@@ -55,13 +55,13 @@ keywords:
 
 ## Description {#details}
 
-<p>Classes and methods for initialising the framework and returning an exit code.</p>
+<p>Classes for initialising the framework and returning an exit code.</p>
 
 
-<p>These classes are responsible for <b>initialising the test framework</b>, <b>running the test suites</b> and <b>returning the test result</b> as the process exit code. Proper initialisation ensures that the µTest++ framework is correctly configured to manage and execute test cases, whilst the exit code reflects the overall outcome of the tests, supporting integration with automated build and continuous integration systems.</p>
+<p>Proper initialisation ensures that µTest++ is correctly configured to manage and execute test cases, whilst the exit code reflects the overall test outcome and supports integration with automated build and continuous integration systems.</p>
 
 
-<p>The simplest test consists of the default test suite, a single test case containing a single expectation; for example:</p>
+<p>The simplest test consists of the default test suite and a single test case with one expectation; for example:</p>
 
 
 <div class="doxyProgramListing">
@@ -73,8 +73,8 @@ keywords:
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeywordType">int</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">main (</span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> argc, </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* argv[])</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">{</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  mt::runner tr{ </span><span class="doxyHighlightStringLiteral">"Minimal"</span><span class="doxyHighlight"> };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight">&amp; ts = tr.initialise (argc, argv);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  mt::runner tr;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight">&amp; ts = tr.initialise (argc, argv, </span><span class="doxyHighlightStringLiteral">"Minimal"</span><span class="doxyHighlight">);</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  ts.test (</span><span class="doxyHighlightStringLiteral">"Check truth"</span><span class="doxyHighlight">, [] (</span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight">&amp; t) {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    t.expect (</span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">);</span></span></div>
@@ -105,8 +105,11 @@ keywords:
 </div>
 
 
+<p>The name passed to the initialiser is optional; if missing, it will attempt to extract a name from argv[0], which is commonly the executable name. If that fails, a default name is used.</p>
+
+
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

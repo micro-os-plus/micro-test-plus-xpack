@@ -62,12 +62,12 @@ var NAVTREEINDEX =
 "/micro-test-plus-xpack/",
 "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#ac9f933b7e072bfdd7732783c12c98298",
 "classmicro__os__plus_1_1micro__test__plus_1_1reporter__human.html#a3118ff89506858505f18e8fd368baffc",
-"classmicro__os__plus_1_1micro__test__plus_1_1subtest.html#a69687627342981d42471b17f1d83311f",
-"group__micro-test-plus-literals.html#ga3bf9f9c946f16b5e02f9f2c45739df42",
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html#a527ae62e9ed62a3ebbc3efd243d602c3",
-"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4.html#a434b222ff19bdb4970ad56fce11d5176"
+"classmicro__os__plus_1_1micro__test__plus_1_1subtest.html#a1e053f72527192d324e4d0130b7017d3",
+"group__micro-test-plus-literals.html#ga240591501696d181e105529c1f52b56c",
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html",
+"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html#aedc41334c71b7711435aee0cb8f44fb3"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronization';
-var SYNCOFFMSG = 'click to enable panel synchronization';
-var LISTOFALLMEMBERS = 'List of all members';
+const SYNCONMSG = 'click to disable panel synchronization';
+const SYNCOFFMSG = 'click to enable panel synchronization';
+const LISTOFALLMEMBERS = 'List of all members';

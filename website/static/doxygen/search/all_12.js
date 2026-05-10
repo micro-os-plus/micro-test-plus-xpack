@@ -50,13 +50,14 @@ var searchData=
   ['top_2dcommon_2eh_47',['top-common.h',['../top-common_8h.html',1,'']]],
   ['top_5fsuite_48',['top_suite',['../classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html',1,'micro_os_plus::micro_test_plus::top_suite'],['../classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#a944643243d81c498970aa7b448a5ff56',1,'micro_os_plus::micro_test_plus::top_suite::top_suite(const char *name, class runner &amp;runner)'],['../classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#ae653f09197ac9342cbb52efc386e96df',1,'micro_os_plus::micro_test_plus::top_suite::top_suite(const top_suite &amp;)=delete'],['../classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#a04740b417d9571048cbee2125275acce',1,'micro_os_plus::micro_test_plus::top_suite::top_suite(top_suite &amp;&amp;)=delete']]],
   ['top_5fsuite_5f_49',['top_suite_',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a93a3afb222db1fcaa87cd1ba7fa15bc0',1,'micro_os_plus::micro_test_plus::runner']]],
-  ['topics_50',['µOS++ Topics',['../group__micro-os-plus.html',1,'']]],
-  ['topics_2eh_51',['topics.h',['../topics_8h.html',1,'']]],
-  ['total_5fsuites_5fcount_52',['total_suites_count',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#ac29e4b993bb3fe795eb8900231cbf5c4',1,'micro_os_plus::micro_test_plus::runner::total_suites_count()'],['../classmicro__os__plus_1_1micro__test__plus_1_1static__runner.html#aada4bf589cf8316e3987084de0d8fbca',1,'micro_os_plus::micro_test_plus::static_runner::total_suites_count()']]],
-  ['totals_53',['totals',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node.html#a1e053f72527192d324e4d0130b7017d3',1,'micro_os_plus::micro_test_plus::detail::test_node::totals() noexcept'],['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node.html#a722406c83eaec234b23b1b9a97a97010',1,'micro_os_plus::micro_test_plus::detail::test_node::totals() const noexcept']]],
-  ['totals_5f_54',['totals_',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node.html#a1af301da2bcb0659c40a472589edc194',1,'micro_os_plus::micro_test_plus::detail::test_node']]],
-  ['type_55',['type',['../structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity.html#a6399364a09c1004ebbaab36b2d5dc0c8',1,'micro_os_plus::micro_test_plus::type_traits::identity']]],
-  ['type_2dtraits_2dinlines_2eh_56',['type-traits-inlines.h',['../type-traits-inlines_8h.html',1,'']]],
-  ['type_2dtraits_2eh_57',['type-traits.h',['../type-traits_8h.html',1,'']]],
-  ['type_5fname_58',['type_name',['../namespacemicro__os__plus_1_1micro__test__plus_1_1reflection.html#a6580ad54ad22a1d3ab43a1d9d49d1f26',1,'micro_os_plus::micro_test_plus::reflection']]]
+  ['top_5fsuite_5fname_5f_50',['top_suite_name_',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a401e4e098f0ceba7f21a3a5bf1ea89e3',1,'micro_os_plus::micro_test_plus::runner']]],
+  ['topics_51',['µOS++ Topics',['../group__micro-os-plus.html',1,'']]],
+  ['topics_2eh_52',['topics.h',['../topics_8h.html',1,'']]],
+  ['total_5fsuites_5fcount_53',['total_suites_count',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#ac29e4b993bb3fe795eb8900231cbf5c4',1,'micro_os_plus::micro_test_plus::runner::total_suites_count()'],['../classmicro__os__plus_1_1micro__test__plus_1_1static__runner.html#aada4bf589cf8316e3987084de0d8fbca',1,'micro_os_plus::micro_test_plus::static_runner::total_suites_count()']]],
+  ['totals_54',['totals',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node.html#a1e053f72527192d324e4d0130b7017d3',1,'micro_os_plus::micro_test_plus::detail::test_node::totals() noexcept'],['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node.html#a722406c83eaec234b23b1b9a97a97010',1,'micro_os_plus::micro_test_plus::detail::test_node::totals() const noexcept']]],
+  ['totals_5f_55',['totals_',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__node.html#a1af301da2bcb0659c40a472589edc194',1,'micro_os_plus::micro_test_plus::detail::test_node']]],
+  ['type_56',['type',['../structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity.html#a6399364a09c1004ebbaab36b2d5dc0c8',1,'micro_os_plus::micro_test_plus::type_traits::identity']]],
+  ['type_2dtraits_2dinlines_2eh_57',['type-traits-inlines.h',['../type-traits-inlines_8h.html',1,'']]],
+  ['type_2dtraits_2eh_58',['type-traits.h',['../type-traits_8h.html',1,'']]],
+  ['type_5fname_59',['type_name',['../namespacemicro__os__plus_1_1micro__test__plus_1_1reflection.html#a6580ad54ad22a1d3ab43a1d9d49d1f26',1,'micro_os_plus::micro_test_plus::reflection']]]
 ];

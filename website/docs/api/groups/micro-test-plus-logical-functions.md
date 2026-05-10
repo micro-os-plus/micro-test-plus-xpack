@@ -81,10 +81,10 @@ keywords:
 <p>Functions used to compose logical expressions in tests.</p>
 
 
-<p>The µTest++ framework provides logical functions for composing complex test expressions within a single statement. The functions <span class="doxyComputerOutput">mt::_and()</span>, <span class="doxyComputerOutput">mt::_or()</span>, and <span class="doxyComputerOutput">mt::_not()</span> enable the combination of multiple conditions, allowing for expressive and concise test logic.</p>
+<p>The functions <span class="doxyComputerOutput">mt::_and()</span>, <span class="doxyComputerOutput">mt::_or()</span>, and <span class="doxyComputerOutput">mt::_not()</span> combine multiple conditions, allowing expressive and concise test logic.</p>
 
 
-<p>These function names are prefixed with an underscore because <span class="doxyComputerOutput">and</span>, <span class="doxyComputerOutput">or</span>, and <span class="doxyComputerOutput">not</span> are reserved keywords in both C and C++. By using these logical functions, developers can clearly express compound conditions and improve the readability of their test cases.</p>
+<p>These function names are prefixed with an underscore to avoid clashes with language alternative tokens or related macros named <span class="doxyComputerOutput">and</span>, <span class="doxyComputerOutput">or</span>, and <span class="doxyComputerOutput">not</span>. Using these logical functions allows developers to express compound conditions clearly and improve readability.</p>
 
 
 <dl class="doxySectionUser">
@@ -103,7 +103,7 @@ keywords:
 </div>
 
 
-<p>When the operands are function comparators, it is recommended to use the overloaded logical operators <span class="doxyComputerOutput">&amp;&amp;</span>, <span class="doxyComputerOutput">||</span>, and <span class="doxyComputerOutput">!</span> provided within the <span class="doxyComputerOutput">micro_test_plus::operators</span> namespace for even more natural expression of logical conditions.</p>
+<p>When operands are function comparators, use the overloaded logical operators <span class="doxyComputerOutput">&amp;&amp;</span>, <span class="doxyComputerOutput">||</span>, and <span class="doxyComputerOutput">!</span> provided in the <span class="doxyComputerOutput">micro_test_plus::operators</span> namespace for more natural logical expressions.</p>
 
 
 <div class="doxySectionDef">
@@ -367,6 +367,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

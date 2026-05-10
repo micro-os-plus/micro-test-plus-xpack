@@ -17,7 +17,7 @@ keywords:
 
 # `inlines` Folder
 
-<p>Folder with C++ header files with inline implementations for the µTest++ Testing Framework. <a href="#details">More...</a></p>
+<p>Folder with C++ header files containing inline µTest++ implementations. <a href="#details">More...</a></p>
 
 ## Files Index
 
@@ -251,10 +251,10 @@ keywords:
 
 ## Description {#details}
 
-<p>Folder with C++ header files with inline implementations for the µTest++ Testing Framework.</p>
+<p>Folder with C++ header files containing inline µTest++ implementations.</p>
 
 
-<p>The <span class="doxyComputerOutput">include/micro-os-plus/micro-test-plus/inlines</span> folder contains C++ header files providing the inline implementations for the µTest++ testing framework. These headers define the logic for core framework components, including the deferred reporter, function comparators, literals, mathematical utilities, reflection utilities, test reporters, test runners, test suites, and utility functions.</p>
+<p>This folder gathers the inline implementation headers used by µTest++. These headers define logic for core framework components, including the deferred reporter, function comparators, literals, mathematical utilities, reflection utilities, test reporters, test runners, test suites, and utility functions.</p>
 
 
 <p>By separating inline implementations from their corresponding declarations, this structure promotes modularity, clarity, and maintainability within the codebase. All inline definitions are designed to be lightweight and efficient, supporting both embedded and general C++ development.</p>
@@ -265,6 +265,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

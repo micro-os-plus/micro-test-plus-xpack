@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="group__micro-test-plus-assumptions" kind="group">
     <compoundname>micro-test-plus-assumptions</compoundname>
     <title>Assumptions</title>
@@ -63,7 +63,7 @@ Constructs and returns a <computeroutput>deferred_reporter&lt;Expr_T&gt;</comput
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="644" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="345" bodyend="349"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="653" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="345" bodyend="349"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ad2169093aee09bc28ae7f70467569a23" compoundref="reporter-inlines_8h" startline="106" endline="109">micro_os_plus::micro_test_plus::reporter::expression</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" compoundref="test_8cpp" startline="187" endline="190">micro_os_plus::micro_test_plus::detail::runnable&lt; subtest &gt;::reporter</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1ad3eb4bb11f1c6fc4631bae8a7215a95e">micro_os_plus::micro_test_plus::subtest::operator=</referencedby>
@@ -73,8 +73,8 @@ Constructs and returns a <computeroutput>deferred_reporter&lt;Expr_T&gt;</comput
 <para>Assumptions are conditions that must be satisfied for a test to proceed. </para>
     </briefdescription>
     <detaileddescription>
-<para>Assumptions represent essential preconditions that must hold true for a test case to execute meaningfully. If an assumption fails, the test is immediately terminated, as continuing would render the results invalid or misleading.</para>
-<para>By clearly specifying assumptions, developers can ensure that tests are only run in appropriate contexts, improving the reliability and accuracy of test outcomes. This mechanism is particularly valuable for guarding against invalid input, incomplete initialisation, or unsupported environments.  </para>
+<para>When a required precondition does not hold, the test cannot execute meaningfully. If an assumption fails, the test is terminated immediately, as continuing would render the results invalid or misleading.</para>
+<para>By explicitly defining assumptions, developers ensure that tests run only in appropriate contexts, improving the reliability and accuracy of outcomes. This mechanism is particularly valuable for guarding against invalid input, incomplete initialisation, and unsupported environments.  </para>
     </detaileddescription>
   </compounddef>
 </doxygen>

@@ -92,7 +92,7 @@ keywords:
 <p>Utility functions for advanced string handling in tests.</p>
 
 
-<p>The µTest++ framework includes a collection of utility functions designed to simplify advanced string operations commonly required during test development. These functions support tasks such as partial string matching, splitting long strings for improved readability, and other manipulations that enhance the clarity and effectiveness of test code.</p>
+<p>These utilities simplify advanced string operations commonly required during test development. They support tasks such as partial string matching, splitting long strings for improved readability, and related manipulations that enhance the clarity and effectiveness of test code.</p>
 
 
 <div class="doxySectionDef">
@@ -182,6 +182,9 @@ keywords:
 <div class="doxyCodeLine"><span class="doxyLineNumber">94</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
+
+
+<p>Referenced by <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#acfabd0e10d233ad305b6f4fc125a97f2">micro_os_plus::micro_test_plus::runner::initialise</a>.</p>
 
 </div>
 </div>
@@ -505,6 +508,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

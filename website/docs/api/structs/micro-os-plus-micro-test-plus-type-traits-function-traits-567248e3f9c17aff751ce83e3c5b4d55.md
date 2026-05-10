@@ -115,7 +115,7 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(Args_T.
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(Args_T...)&gt;::args =  list&lt;Args_T...&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(Args_T...)&gt;::args = list&lt;Args_T...&gt;</td>
 </tr>
 </table>
 </td>
@@ -148,7 +148,7 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(Args_T.
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(Args_T...)&gt;::result_type =  R</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(Args_T...)&gt;::result_type = R</td>
 </tr>
 </table>
 </td>
@@ -183,6 +183,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

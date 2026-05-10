@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="group__micro-test-plus-logical-functions" kind="group">
     <compoundname>micro-test-plus-logical-functions</compoundname>
     <title>Logical Functions</title>
@@ -193,8 +193,8 @@ The <computeroutput><ref refid="group__micro-test-plus-logical-functions_1gad32b
 <para>Functions used to compose logical expressions in tests. </para>
     </briefdescription>
     <detaileddescription>
-<para>The µTest++ framework provides logical functions for composing complex test expressions within a single statement. The functions <computeroutput>mt::_and()</computeroutput>, <computeroutput>mt::_or()</computeroutput>, and <computeroutput>mt::_not()</computeroutput> enable the combination of multiple conditions, allowing for expressive and concise test logic.</para>
-<para>These function names are prefixed with an underscore because <computeroutput>and</computeroutput>, <computeroutput>or</computeroutput>, and <computeroutput>not</computeroutput> are reserved keywords in both C and C++. By using these logical functions, developers can clearly express compound conditions and improve the readability of their test cases.</para>
+<para>The functions <computeroutput>mt::_and()</computeroutput>, <computeroutput>mt::_or()</computeroutput>, and <computeroutput>mt::_not()</computeroutput> combine multiple conditions, allowing expressive and concise test logic.</para>
+<para>These function names are prefixed with an underscore to avoid clashes with language alternative tokens or related macros named <computeroutput>and</computeroutput>, <computeroutput>or</computeroutput>, and <computeroutput>not</computeroutput>. Using these logical functions allows developers to express compound conditions clearly and improve readability.</para>
 <para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
 <programlisting filename=".cpp"><codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>compound<sp/>conditions&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
@@ -202,7 +202,7 @@ The <computeroutput><ref refid="group__micro-test-plus-logical-functions_1gad32b
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mt::eq<sp/>(compute_float<sp/>(),<sp/>42.0)));</highlight></codeline>
 <codeline><highlight class="normal">});</highlight></codeline>
 </programlisting></para>
-<para>When the operands are function comparators, it is recommended to use the overloaded logical operators <computeroutput>&amp;&amp;</computeroutput>, <computeroutput>||</computeroutput>, and <computeroutput>!</computeroutput> provided within the <computeroutput>micro_test_plus::operators</computeroutput> namespace for even more natural expression of logical conditions.  </para>
+<para>When operands are function comparators, use the overloaded logical operators <computeroutput>&amp;&amp;</computeroutput>, <computeroutput>||</computeroutput>, and <computeroutput>!</computeroutput> provided in the <computeroutput>micro_test_plus::operators</computeroutput> namespace for more natural logical expressions.  </para>
     </detaileddescription>
   </compounddef>
 </doxygen>

@@ -143,9 +143,10 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a7cdc57b32f1d1989fde8a119905a0bc7"><b>timings_</b></a>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-runner">micro_os_plus::micro_test_plus::static_runner</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite/#a612351c224424238f8966dc7f89348b7"><b>timings_</b></a>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/top-suite">micro_os_plus::micro_test_plus::top_suite</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a93a3afb222db1fcaa87cd1ba7fa15bc0"><b>top_suite_</b></a>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-runner">micro_os_plus::micro_test_plus::static_runner</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a401e4e098f0ceba7f21a3a5bf1ea89e3"><b>top_suite_name_</b></a>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/static-runner">micro_os_plus::micro_test_plus::static_runner</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/test-node/#a1af301da2bcb0659c40a472589edc194"><b>totals_</b></a>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/top-suite">micro_os_plus::micro_test_plus::top_suite</a></li>
 </ul>
-<p>5 entries</p>
+<p>6 entries</p>
 
 ## - V -
 
@@ -162,10 +163,10 @@ keywords:
 </ul>
 <p>9 entries</p>
 <br/>
-<p>Total: 57 entries.</p>
+<p>Total: 58 entries.</p>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

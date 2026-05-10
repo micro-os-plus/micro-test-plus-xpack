@@ -1,5 +1,11 @@
 var NAVTREEINDEX4 =
 {
+"group__micro-test-plus-literals.html#ga240591501696d181e105529c1f52b56c":[2,0,0,0,10,32],
+"group__micro-test-plus-literals.html#ga2e2ad62d8c5d6e3abcfca9a897ae61de":[2,0,0,0,10,20],
+"group__micro-test-plus-literals.html#ga3171e605b5c2e1d9a0e55ae34e904674":[2,0,0,0,10,66],
+"group__micro-test-plus-literals.html#ga33a096960b5dddee322e36c689ecbf47":[2,0,0,0,10,35],
+"group__micro-test-plus-literals.html#ga366a0d47aec3241e659816067c94fcdf":[2,0,0,0,10,54],
+"group__micro-test-plus-literals.html#ga3b9d6825aa201bf1fdf9cbe8c0ad4bff":[2,0,0,0,10,27],
 "group__micro-test-plus-literals.html#ga3bf9f9c946f16b5e02f9f2c45739df42":[2,0,0,0,10,41],
 "group__micro-test-plus-literals.html#ga3c89dfb65d916dfc34dfdfcb10334b5c":[2,0,0,0,10,28],
 "group__micro-test-plus-literals.html#ga3cb44c2b09802fbee17f324cbdf3f31e":[2,0,0,0,10,10],
@@ -243,11 +249,5 @@ var NAVTREEINDEX4 =
 "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1colours.html#a7cd442bbb5af0f5d53632101d5c2eb0b":[5,0,0,0,0,4,0],
 "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1colours.html#ac3953ba58fbf322bd310c857844d17fe":[3,0,0,0,0,4,2],
 "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1colours.html#ac3953ba58fbf322bd310c857844d17fe":[5,0,0,0,0,4,2],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html":[3,0,0,0,0,7],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html":[5,0,0,0,0,7],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html#a2dd578daf62dde786b3e9e7beeac08bc":[3,0,0,0,0,7,6],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html#a2dd578daf62dde786b3e9e7beeac08bc":[5,0,0,0,0,7,6],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html#a503196c2296449a52b6f7995d4a647f5":[3,0,0,0,0,7,1],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html#a503196c2296449a52b6f7995d4a647f5":[5,0,0,0,0,7,1],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html#a527ae62e9ed62a3ebbc3efd243d602c3":[3,0,0,0,0,7,0]
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1eq__.html":[3,0,0,0,0,7]
 };

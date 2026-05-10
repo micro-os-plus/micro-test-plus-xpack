@@ -58,10 +58,10 @@ keywords:
 <p>Overloaded operators for string comparison.</p>
 
 
-<p>The µTest++ framework provides overloaded operators specifically for comparing string types, such as <span class="doxyComputerOutput">std::string_view</span>. These operators enable clear and expressive assertions when verifying string values within test cases, supporting both equality and inequality checks.</p>
+<p>Operators are provided specifically for comparing string types, such as <span class="doxyComputerOutput">std::string_view</span>. These operators enable clear, expressive assertions when verifying string values in test cases, supporting both equality and inequality checks.</p>
 
 
-<p>By using these dedicated string operators, developers can write concise and readable tests that accurately reflect the intended logic. The framework ensures that string comparisons are performed correctly and that any failed checks are reported with both the actual and expected values for straightforward diagnostics.</p>
+<p>Using these dedicated operators ensures concise, readable tests that accurately reflect intended logic. The framework ensures correct string comparisons and reports failed checks with both actual and expected values for clear diagnostics.</p>
 
 
 <dl class="doxySectionUser">
@@ -229,6 +229,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

@@ -183,16 +183,16 @@ keywords:
 <p>Overloaded operators for expressive test comparisons.</p>
 
 
-<p>The µTest++ framework provides overloaded comparison and logical operators to enable expressive and type-safe test assertions. These operators—such as <span class="doxyComputerOutput">==</span>, <span class="doxyComputerOutput">!=</span>, <span class="doxyComputerOutput">&lt;</span>, <span class="doxyComputerOutput">&gt;</span>, <span class="doxyComputerOutput">&lt;=</span>, and <span class="doxyComputerOutput">&gt;=</span>—are defined within the dedicated <span class="doxyComputerOutput">micro_test_plus::operators</span> namespace to avoid conflicts with application-defined operators.</p>
+<p>These overloads enable expressive, type-safe test assertions. Operators such as <span class="doxyComputerOutput">==</span>, <span class="doxyComputerOutput">!=</span>, <span class="doxyComputerOutput">&lt;</span>, <span class="doxyComputerOutput">&gt;</span>, <span class="doxyComputerOutput">&lt;=</span>, and <span class="doxyComputerOutput">&gt;=</span> are defined in the dedicated <span class="doxyComputerOutput">micro_test_plus::operators</span> namespace to avoid conflicts with application-defined operators.</p>
 
 
-<p>For standard values, the default operators are used, ensuring correct comparisons. However, when using the specialised µTest++ operators with typed operands, failed checks will display both the actual and expected values, greatly improving the clarity of test reports.</p>
+<p>For standard values, the default operators are used, ensuring correct comparisons. However, when specialised µTest++ operators are used with typed operands, failed checks display both actual and expected values, greatly improving report clarity.</p>
 
 
-<p>These operators are restricted to operands derived from the local <span class="doxyComputerOutput">detail::op</span> type. For constant values, this is achieved using provided literals (e.g., <span class="doxyComputerOutput">1_i</span>), while dynamic values can be wrapped using casts such as <span class="doxyComputerOutput">mt::to_i{expression}</span>.</p>
+<p>These operators are restricted to operands derived from the local <span class="doxyComputerOutput">detail::op</span> type. For constant values, this is achieved with provided literals (for example, <span class="doxyComputerOutput">1_i</span>), whilst dynamic values can be wrapped with converters such as <span class="doxyComputerOutput">mt::to_i{expression}</span>.</p>
 
 
-<p>Logical operators (<span class="doxyComputerOutput">&amp;&amp;</span>, <span class="doxyComputerOutput">||</span>, <span class="doxyComputerOutput">!</span>) are also supported and provide enhanced functionality when used with typed operands, allowing for the composition of complex test conditions in a natural and readable manner.</p>
+<p>Logical operators (<span class="doxyComputerOutput">&amp;&amp;</span>, <span class="doxyComputerOutput">||</span>, <span class="doxyComputerOutput">!</span>) are also supported and provide enhanced functionality when used with typed operands, allowing complex test conditions to be composed naturally and readably.</p>
 
 
 <dl class="doxySectionUser">
@@ -219,11 +219,13 @@ keywords:
 </div>
 
 
+<dl class="doxySectionUser">
+<dt>Logical Operators</dt>
+<dd></dd>
+</dl>
 
-### Logical operators {#autotoc_md3}
 
-
-<p>Logical operators may be used in the same way as standard operators, with enhanced reporting available when used with typed operands.</p>
+<p>Logical operators provide enhanced reporting when used with typed operands, allowing complex test conditions to be composed naturally and readably.</p>
 
 
 <dl class="doxySectionUser">
@@ -1000,6 +1002,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

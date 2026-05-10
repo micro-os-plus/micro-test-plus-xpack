@@ -1142,13 +1142,13 @@ keywords:
 <p>Literal operators and wrappers for typed operands.</p>
 
 
-<p>The µTest++ framework provides a set of literal operators and wrappers to facilitate the creation of strongly typed operands within test expressions. These features enable developers to write clear and type-safe comparisons, improving both readability and correctness in test cases.</p>
+<p>Within test expressions, literals such as <span class="doxyComputerOutput">1<a href="#ga1613ccf081248c601bed0f3022fba652">_i</a></span> and <span class="doxyComputerOutput">42<a href="#gadcff4454bf86ea03c0c3d1be42b04e12">_f</a></span> create strongly typed operands, whilst wrappers like <span class="doxyComputerOutput">mt::to_i{expression}</span> convert dynamic values. These mechanisms enable clear, type-safe comparisons, improving readability and correctness in test cases.</p>
 
 
-<p>Literal operators, available in the dedicated <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/literals">literals</a></span> namespace, allow constants to be expressed with explicit types, such as integers and floating-point values. For dynamic values, wrappers are provided to convert them into recognised types at run-time.</p>
+<p>Literal operators, available in the dedicated <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/literals">literals</a></span> namespace, allow constants to be expressed with explicit types, such as integers and floating-point values. For dynamic values, wrappers convert operands into recognised comparison types at run-time.</p>
 
 
-<p>This approach ensures that both compile-time constants and run-time values can be compared accurately and expressively, supporting robust and maintainable test code.</p>
+<p>This approach ensures that both compile-time constants and run-time values can be compared accurately and expressively, supporting robust, maintainable test code.</p>
 
 
 <dl class="doxySectionUser">
@@ -2987,7 +2987,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_b =  type_traits::value&lt;bool&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_b = type_traits::value&lt;bool&gt;</td>
 </tr>
 </table>
 </td>
@@ -3029,7 +3029,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_c =  type_traits::value&lt;char&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_c = type_traits::value&lt;char&gt;</td>
 </tr>
 </table>
 </td>
@@ -3071,7 +3071,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_d =  type_traits::value&lt;double&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_d = type_traits::value&lt;double&gt;</td>
 </tr>
 </table>
 </td>
@@ -3113,7 +3113,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_f =  type_traits::value&lt;float&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_f = type_traits::value&lt;float&gt;</td>
 </tr>
 </table>
 </td>
@@ -3155,7 +3155,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i =  type_traits::value&lt;int&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i = type_traits::value&lt;int&gt;</td>
 </tr>
 </table>
 </td>
@@ -3197,7 +3197,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i16 =  type_traits::value&lt;std::int16_t&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i16 = type_traits::value&lt;std::int16_t&gt;</td>
 </tr>
 </table>
 </td>
@@ -3239,7 +3239,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i32 =  type_traits::value&lt;std::int32_t&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i32 = type_traits::value&lt;std::int32_t&gt;</td>
 </tr>
 </table>
 </td>
@@ -3281,7 +3281,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i64 =  type_traits::value&lt;std::int64_t&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i64 = type_traits::value&lt;std::int64_t&gt;</td>
 </tr>
 </table>
 </td>
@@ -3323,7 +3323,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i8 =  type_traits::value&lt;std::int8_t&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_i8 = type_traits::value&lt;std::int8_t&gt;</td>
 </tr>
 </table>
 </td>
@@ -3365,7 +3365,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_l =  type_traits::value&lt;long&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_l = type_traits::value&lt;long&gt;</td>
 </tr>
 </table>
 </td>
@@ -3407,7 +3407,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_ld =  type_traits::value&lt;long double&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_ld = type_traits::value&lt;long double&gt;</td>
 </tr>
 </table>
 </td>
@@ -3449,7 +3449,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_ll =  type_traits::value&lt;long long&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_ll = type_traits::value&lt;long long&gt;</td>
 </tr>
 </table>
 </td>
@@ -3491,7 +3491,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_s =  type_traits::value&lt;short&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_s = type_traits::value&lt;short&gt;</td>
 </tr>
 </table>
 </td>
@@ -3533,7 +3533,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_sc =  type_traits::value&lt;signed char&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_sc = type_traits::value&lt;signed char&gt;</td>
 </tr>
 </table>
 </td>
@@ -3575,7 +3575,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u =  type_traits::value&lt;unsigned&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u = type_traits::value&lt;unsigned&gt;</td>
 </tr>
 </table>
 </td>
@@ -3617,7 +3617,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u16 =  type_traits::value&lt;std::uint16_t&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u16 = type_traits::value&lt;std::uint16_t&gt;</td>
 </tr>
 </table>
 </td>
@@ -3659,7 +3659,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u32 =  type_traits::value&lt;std::uint32_t&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u32 = type_traits::value&lt;std::uint32_t&gt;</td>
 </tr>
 </table>
 </td>
@@ -3701,7 +3701,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u64 =  type_traits::value&lt;std::uint64_t&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u64 = type_traits::value&lt;std::uint64_t&gt;</td>
 </tr>
 </table>
 </td>
@@ -3743,7 +3743,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u8 =  type_traits::value&lt;std::uint8_t&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_u8 = type_traits::value&lt;std::uint8_t&gt;</td>
 </tr>
 </table>
 </td>
@@ -3785,7 +3785,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_uc =  type_traits::value&lt;unsigned char&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_uc = type_traits::value&lt;unsigned char&gt;</td>
 </tr>
 </table>
 </td>
@@ -3827,7 +3827,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_ul =  type_traits::value&lt;unsigned long&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_ul = type_traits::value&lt;unsigned long&gt;</td>
 </tr>
 </table>
 </td>
@@ -3869,7 +3869,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_ull =  type_traits::value&lt;unsigned long long&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_ull = type_traits::value&lt;unsigned long long&gt;</td>
 </tr>
 </table>
 </td>
@@ -3911,7 +3911,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_us =  type_traits::value&lt;unsigned short&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::_us = type_traits::value&lt;unsigned short&gt;</td>
 </tr>
 </table>
 </td>
@@ -3991,7 +3991,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_b =  type_traits::value&lt;bool&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_b = type_traits::value&lt;bool&gt;</td>
 </tr>
 </table>
 </td>
@@ -4030,7 +4030,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_c =  type_traits::value&lt;char&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_c = type_traits::value&lt;char&gt;</td>
 </tr>
 </table>
 </td>
@@ -4069,7 +4069,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_d =  type_traits::value&lt;double&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_d = type_traits::value&lt;double&gt;</td>
 </tr>
 </table>
 </td>
@@ -4108,7 +4108,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_f =  type_traits::value&lt;float&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_f = type_traits::value&lt;float&gt;</td>
 </tr>
 </table>
 </td>
@@ -4147,7 +4147,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_i =  type_traits::value&lt;int&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_i = type_traits::value&lt;int&gt;</td>
 </tr>
 </table>
 </td>
@@ -4186,7 +4186,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_i16 =  type_traits::value&lt;std::int16_t&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_i16 = type_traits::value&lt;std::int16_t&gt;</td>
 </tr>
 </table>
 </td>
@@ -4225,7 +4225,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_i32 =  type_traits::value&lt;std::int32_t&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_i32 = type_traits::value&lt;std::int32_t&gt;</td>
 </tr>
 </table>
 </td>
@@ -4264,7 +4264,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_i64 =  type_traits::value&lt;std::int64_t&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_i64 = type_traits::value&lt;std::int64_t&gt;</td>
 </tr>
 </table>
 </td>
@@ -4303,7 +4303,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_i8 =  type_traits::value&lt;std::int8_t&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_i8 = type_traits::value&lt;std::int8_t&gt;</td>
 </tr>
 </table>
 </td>
@@ -4342,7 +4342,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_l =  type_traits::value&lt;long&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_l = type_traits::value&lt;long&gt;</td>
 </tr>
 </table>
 </td>
@@ -4381,7 +4381,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_ld =  type_traits::value&lt;long double&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_ld = type_traits::value&lt;long double&gt;</td>
 </tr>
 </table>
 </td>
@@ -4420,7 +4420,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_ll =  type_traits::value&lt;long long&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_ll = type_traits::value&lt;long long&gt;</td>
 </tr>
 </table>
 </td>
@@ -4459,7 +4459,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_s =  type_traits::value&lt;short&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_s = type_traits::value&lt;short&gt;</td>
 </tr>
 </table>
 </td>
@@ -4498,7 +4498,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_sc =  type_traits::value&lt;signed char&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_sc = type_traits::value&lt;signed char&gt;</td>
 </tr>
 </table>
 </td>
@@ -4537,7 +4537,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_u =  type_traits::value&lt;unsigned&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_u = type_traits::value&lt;unsigned&gt;</td>
 </tr>
 </table>
 </td>
@@ -4576,7 +4576,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_u16 =  type_traits::value&lt;std::uint16_t&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_u16 = type_traits::value&lt;std::uint16_t&gt;</td>
 </tr>
 </table>
 </td>
@@ -4615,7 +4615,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_u32 =  type_traits::value&lt;std::uint32_t&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_u32 = type_traits::value&lt;std::uint32_t&gt;</td>
 </tr>
 </table>
 </td>
@@ -4654,7 +4654,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_u64 =  type_traits::value&lt;std::uint64_t&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_u64 = type_traits::value&lt;std::uint64_t&gt;</td>
 </tr>
 </table>
 </td>
@@ -4693,7 +4693,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_u8 =  type_traits::value&lt;std::uint8_t&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_u8 = type_traits::value&lt;std::uint8_t&gt;</td>
 </tr>
 </table>
 </td>
@@ -4732,7 +4732,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_uc =  type_traits::value&lt;unsigned char&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_uc = type_traits::value&lt;unsigned char&gt;</td>
 </tr>
 </table>
 </td>
@@ -4771,7 +4771,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_ul =  type_traits::value&lt;unsigned long&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_ul = type_traits::value&lt;unsigned long&gt;</td>
 </tr>
 </table>
 </td>
@@ -4810,7 +4810,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_ull =  type_traits::value&lt;unsigned long long&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_ull = type_traits::value&lt;unsigned long long&gt;</td>
 </tr>
 </table>
 </td>
@@ -4849,7 +4849,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_us =  type_traits::value&lt;unsigned short&gt;</td>
+<td class="doxyMemberName">using micro_os_plus::micro_test_plus::to_us = type_traits::value&lt;unsigned short&gt;</td>
 </tr>
 </table>
 </td>
@@ -4883,6 +4883,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

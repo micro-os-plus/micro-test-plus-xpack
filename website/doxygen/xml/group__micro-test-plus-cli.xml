@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="group__micro-test-plus-cli" kind="group">
     <compoundname>micro-test-plus-cli</compoundname>
     <title>Command Line Options</title>
@@ -7,7 +7,7 @@
 <para>Options for controlling test output verbosity at run-time. </para>
     </briefdescription>
     <detaileddescription>
-<para>The µTest++ framework provides flexible command-line options to control the verbosity of test output, allowing users to tailor the level of detail to their specific requirements and workflow.</para>
+<para>The µTest++ framework offers flexible control over test-output verbosity, allowing users to tailor the level of detail to their specific requirements and workflow.</para>
 <para>By default, the reporter presents detailed results only for failed test cases, while successful test cases are summarised in a single line, indicating the total number of passed and failed checks.</para>
 <para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>

@@ -9,6 +9,7 @@ var classmicro__os__plus_1_1micro__test__plus_1_1top__suite =
     [ "children_subtests_count", "classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#aaf838b03cddfb039d1295611be8a5e32", null ],
     [ "current_subtest_index", "classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#a0c634fb75a3f9c34b9c605dea8b3c7b4", null ],
     [ "increment_subtest_index", "classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#adcf7611a537e6d6759659aaf8d6a9952", null ],
+    [ "name", "classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#a8fb619cf9fa2cddb1cf6fd4d749ae173", null ],
     [ "name", "classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#a1565ede2ab1141b2e3db2ea5513002a1", null ],
     [ "operator=", "classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#a7601ca8102a7b4b3d7e7f8b33a0728a3", null ],
     [ "operator=", "classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#a809ba320392c0ced46977d0b7d371543", null ],

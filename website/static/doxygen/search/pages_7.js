@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quiet_20mode_0',['Quiet mode',['../group__micro-test-plus-cli.html#cli-verbosity-quiet',1,'']]]
+  ['test_20plus_0',['micro-test-plus',['../index.html',1,'']]]
 ];

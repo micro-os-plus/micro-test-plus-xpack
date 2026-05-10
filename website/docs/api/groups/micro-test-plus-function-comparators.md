@@ -234,10 +234,10 @@ keywords:
 <p>Functions for comparing actual and expected values in tests.</p>
 
 
-<p>Function comparators in µTest++ provide a clear and expressive way to compare actual and expected values within test cases. While any expression yielding a boolean value may be used in expectations and assumptions, dedicated comparator functions such as <span class="doxyComputerOutput">eq</span>, <span class="doxyComputerOutput">ne</span>, <span class="doxyComputerOutput">lt</span>, <span class="doxyComputerOutput">le</span>, <span class="doxyComputerOutput">gt</span>, and <span class="doxyComputerOutput">ge</span> offer enhanced reporting by explicitly showing the values involved when a check fails.</p>
+<p>While any boolean expression can be used in expectations and assumptions, dedicated comparator functions such as <span class="doxyComputerOutput">eq</span>, <span class="doxyComputerOutput">ne</span>, <span class="doxyComputerOutput">lt</span>, <span class="doxyComputerOutput">le</span>, <span class="doxyComputerOutput">gt</span>, and <span class="doxyComputerOutput">ge</span> provide enhanced reporting by explicitly showing the compared values when a check fails.</p>
 
 
-<p>Using these comparators ensures that, in the event of a failed check, the test output will include both the actual and expected values, making it easier to diagnose issues and understand the cause of the failure.</p>
+<p>Using these comparators ensures that failed checks report both actual and expected values, making issues easier to diagnose.</p>
 
 
 <p>Comparators are available for both fundamental types and standard containers. When comparing containers, each element is assessed individually, and the results are reported in detail.</p>
@@ -265,7 +265,7 @@ keywords:
 </div>
 
 
-<p>If a comparator check fails, the output will clearly indicate the actual and expected values:</p>
+<p>If a comparator check fails, the output clearly indicates the actual and expected values:</p>
 
 
 <div class="doxyProgramListing">
@@ -280,11 +280,13 @@ keywords:
 </div>
 
 
+<dl class="doxySectionUser">
+<dt>Comparing Containers</dt>
+<dd></dd>
+</dl>
 
-### Comparing containers {#autotoc_md2}
 
-
-<p>Containers can be compared for equality or inequality using the same comparator functions. The comparison is performed by iterating through each element and evaluating them individually.</p>
+<p>Containers can be compared for equality or inequality using the same comparator functions. Comparison is performed by iterating through each element and evaluating it individually.</p>
 
 
 <dl class="doxySectionUser">
@@ -1323,6 +1325,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

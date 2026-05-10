@@ -30,7 +30,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Classes and methods for initialising the framework and returning an exit code. <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-runners/#details">More...</a></p>
+<p>Classes for initialising the framework and returning an exit code. <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-runners/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -58,7 +58,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Expectations are checks whose outcomes are accounted and reported. <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-expectations/#details">More...</a></p>
+<p>Expectations are checks whose outcomes are counted and reported. <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-expectations/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -198,7 +198,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Test suites are named collections of test cases. <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-test-suites/#details">More...</a></p>
+<p>Test suites are named groups of related test cases. <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-test-suites/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -220,6 +220,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

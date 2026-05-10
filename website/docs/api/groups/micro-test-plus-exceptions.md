@@ -81,13 +81,13 @@ keywords:
 <p>Functions for verifying exceptions in test cases.</p>
 
 
-<p>The µTest++ framework provides dedicated functions for verifying whether specific expressions or function calls throw exceptions, supporting robust testing of error handling and exceptional conditions in C++ code.</p>
+<p>Dedicated exception-check utilities verify whether expressions or function calls throw. These utilities support robust testing of error handling and exceptional conditions in C++ code.</p>
 
 
-<p>These utilities enable developers to assert that exceptions are correctly thrown or not thrown as expected, improving the reliability and safety of software components. The framework supports both generic exception checks and type-specific exception verification, allowing for precise and expressive test cases.</p>
+<p>Developers can assert that exceptions are thrown, or not thrown, as expected, improving the reliability and safety of software components. The framework supports both generic checks and type-specific verification, allowing precise and expressive test cases.</p>
 
 
-<p>For more advanced scenarios, such as handling multiple expected exceptions, developers can use explicit <span class="doxyComputerOutput">try</span> blocks with multiple <span class="doxyComputerOutput">catch</span> statements and report the results using <span class="doxyComputerOutput">expect(true)</span> or <span class="doxyComputerOutput">expect(false)</span>. This approach ensures comprehensive coverage of exception handling logic.</p>
+<p>For advanced scenarios, such as handling multiple expected exception types, use explicit <span class="doxyComputerOutput">try</span> blocks with multiple <span class="doxyComputerOutput">catch</span> statements and report results with <span class="doxyComputerOutput">expect(true)</span> or <span class="doxyComputerOutput">expect(false)</span>. This approach enables comprehensive coverage of exception-handling logic.</p>
 
 
 <dl class="doxySectionUser">
@@ -130,7 +130,7 @@ keywords:
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">catch</span><span class="doxyHighlight"> (...)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">      t.expect (</span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">) &lt;&lt; </span><span class="doxyHighlightStringLiteral">"known exception thrown"</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">      t.expect (</span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">) &lt;&lt; </span><span class="doxyHighlightStringLiteral">"unknown exception thrown"</span><span class="doxyHighlight">;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">});</span></span></div>
 
@@ -386,6 +386,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

@@ -58,7 +58,7 @@ Folder with C++ header files for the µTest++ Testing Framework
 <a href="/micro-test-plus-xpack/docs/api/folders/include/micro-os-plus/micro-test-plus/inlines"><span class="doxyIconFolder">inlines</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Folder with C++ header files with inline implementations for the µTest++ Testing Framework
+Folder with C++ header files containing inline µTest++ implementations
 </td>
 </tr>
 
@@ -535,16 +535,6 @@ C++ source file with implementations for the µTest++ methods
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 0px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/files/readme-md"><span class="doxyIconFile">README.md</span></a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 0px; display: inline-block;"></span>
 <a href="/micro-test-plus-xpack/docs/api/files/top-common-h"><span class="doxyIconFile">top-common.h</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
@@ -566,6 +556,6 @@ Project specific Doxygen topics definitions
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

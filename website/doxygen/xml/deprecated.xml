@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="deprecated" kind="page">
     <compoundname>deprecated</compoundname>
     <title>Deprecated List</title>
@@ -77,7 +77,13 @@
 <listitem><para><anchor id="deprecated_1_deprecated000012"/>Use <computeroutput><ref refid="group__micro-test-plus-literals_1ga595258f3c1b293284f79a88b2872d43d" kindref="member">to_ull</ref></computeroutput> (since 3.2.0).  </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-test-plus-literals_1ga67992fcc21a60e3dd1fb4c9c5ebc814a" kindref="member">micro_os_plus::micro_test_plus::_us</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000010"/>Use <computeroutput><ref refid="group__micro-test-plus-literals_1gac9a34848b05859a18794ece696e37f26" kindref="member">to_us</ref></computeroutput> (since 3.2.0). </para>
+<listitem><para><anchor id="deprecated_1_deprecated000010"/>Use <computeroutput><ref refid="group__micro-test-plus-literals_1gac9a34848b05859a18794ece696e37f26" kindref="member">to_us</ref></computeroutput> (since 3.2.0).  </para>
+</listitem>
+<varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a10788baa079e19676a8cdbaa253285dc" kindref="member">micro_os_plus::micro_test_plus::runner::runner</ref>  (const char *top_suite_name)</term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000025"/>Use the anonymous constructor.  </para>
+</listitem>
+<varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__runner_1a1e3c2cbe731c469a93fcad9e574e717a" kindref="member">micro_os_plus::micro_test_plus::static_runner::static_runner</ref>  (const char *top_suite_name)</term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000026"/>Use the anonymous constructor. </para>
 </listitem>
 </variablelist>
 </para>

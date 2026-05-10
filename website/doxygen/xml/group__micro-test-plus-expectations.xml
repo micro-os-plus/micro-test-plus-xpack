@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="group__micro-test-plus-expectations" kind="group">
     <compoundname>micro-test-plus-expectations</compoundname>
     <title>Expectations</title>
@@ -63,18 +63,18 @@ Constructs and returns a <computeroutput>deferred_reporter&lt;Expr_T&gt;</comput
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="624" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="330" bodyend="334"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="633" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="330" bodyend="334"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1reporter_1ad2169093aee09bc28ae7f70467569a23" compoundref="reporter-inlines_8h" startline="106" endline="109">micro_os_plus::micro_test_plus::reporter::expression</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad120bac9a056a4684d866d974a09b6b" compoundref="test_8cpp" startline="187" endline="190">micro_os_plus::micro_test_plus::detail::runnable&lt; subtest &gt;::reporter</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1subtest_1ad3eb4bb11f1c6fc4631bae8a7215a95e">micro_os_plus::micro_test_plus::subtest::operator=</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>Expectations are checks whose outcomes are accounted and reported. </para>
+<para>Expectations are checks whose outcomes are counted and reported. </para>
     </briefdescription>
     <detaileddescription>
-<para>Expectations are conditions that are verified during test execution, with their outcomes—whether passing or failing—being explicitly reported in the test results. Unlike assumptions, a failed expectation does not cause the test to terminate; instead, execution continues, allowing multiple conditions to be checked within a single test case.</para>
-<para>This approach enables comprehensive validation of code behaviour, as all relevant expectations can be evaluated and reported in one run. By using expectations, developers gain detailed insight into which aspects of the code meet requirements and which do not, supporting thorough and efficient testing practices.  </para>
+<para>During test execution, each condition outcome, whether passing or failing, is explicitly reported in test results. Unlike assumptions, a failed expectation does not terminate the test; execution continues, allowing multiple conditions to be checked within a single test case.</para>
+<para>This approach enables comprehensive validation of code behaviour, because all relevant expectations can be evaluated and reported in one run. Using expectations provides detailed insight into which aspects of the code meet requirements and which do not, supporting thorough and efficient testing.  </para>
     </detaileddescription>
   </compounddef>
 </doxygen>

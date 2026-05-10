@@ -17,7 +17,7 @@ keywords:
 
 # Test Suites
 
-<p>Test suites are named collections of test cases. <a href="#details">More...</a></p>
+<p>Test suites are named groups of related test cases. <a href="#details">More...</a></p>
 
 ## Classes Index
 
@@ -55,13 +55,13 @@ keywords:
 
 ## Description {#details}
 
-<p>Test suites are named collections of test cases.</p>
+<p>Test suites are named groups of related test cases.</p>
 
 
-<p>Test suites in µTest++ are named groups of related test cases, allowing for structured organisation and execution of tests. By default, all test cases defined in <span class="doxyComputerOutput">main()</span> are included in the top test suite, which is created by <span class="doxyComputerOutput">runner::initialise()</span>, and are executed immediately.</p>
+<p>By default, all test cases defined in <span class="doxyComputerOutput">main()</span> are included in the top-level test suite, which is created by <span class="doxyComputerOutput">runner::initialise()</span> and executed immediately. For more complex projects, additional test suites can be defined, typically in separate source files.</p>
 
 
-<p>For more complex projects, additional test suites can be defined, typically in separate source files. Standalone test suites are implemented as <span class="doxyComputerOutput">mt::static_suite</span> objects, constructed with a name, a reference to the runner, and a callable (usually a lambda that chains the execution of the test cases), along with any optional arguments. This design enables self-registration of test suites, ensuring they are automatically included in the test run.</p>
+<p>Stand-alone test suites are implemented as <span class="doxyComputerOutput">mt::static_suite</span> objects, constructed with a name, a reference to the runner, and a callable (usually a lambda that chains execution of test cases), along with any optional arguments. This design enables self-registration of test suites, ensuring they are automatically included in the test run.</p>
 
 
 
@@ -70,7 +70,7 @@ keywords:
 :::
 
 
-<p>Self-registration is performed within the constructor, ensuring that each test suite is automatically included in the test run. When test suites are defined in separate compilation units, they may be executed in any order, as the sequence in which static constructors are invoked is not specified. Consequently, test suites should be designed to be independent and must not rely on the execution order of other suites.</p>
+<p>Self-registration is performed within the constructor, ensuring that each test suite is automatically included in the test run. When test suites are defined in separate compilation units, they can be executed in any order, as the sequence in which static constructors are invoked is not specified. Consequently, test suites should be designed to be independent and must not rely on the execution order of other suites.</p>
 
 
 <p>All registered test suites are executed when <span class="doxyComputerOutput">runner::exit_code()</span> is called, guaranteeing comprehensive test coverage across the project.</p>
@@ -86,7 +86,7 @@ keywords:
 
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight">mt = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a>;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightComment">// In main.cpp: create the runner (also the static_runner variant works).</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightComment">// In main.cpp: create the runner (the static_runner variant also works).</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> mt::static_runner tr{ </span><span class="doxyHighlightStringLiteral">"Sample"</span><span class="doxyHighlight"> };</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeywordType">int</span></span></div>
@@ -137,6 +137,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

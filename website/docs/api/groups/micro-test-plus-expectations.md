@@ -17,7 +17,7 @@ keywords:
 
 # Expectations
 
-<p>Expectations are checks whose outcomes are accounted and reported. <a href="#details">More...</a></p>
+<p>Expectations are checks whose outcomes are counted and reported. <a href="#details">More...</a></p>
 
 ## Functions Index
 
@@ -44,13 +44,13 @@ keywords:
 
 ## Description {#details}
 
-<p>Expectations are checks whose outcomes are accounted and reported.</p>
+<p>Expectations are checks whose outcomes are counted and reported.</p>
 
 
-<p>Expectations are conditions that are verified during test execution, with their outcomes—whether passing or failing—being explicitly reported in the test results. Unlike assumptions, a failed expectation does not cause the test to terminate; instead, execution continues, allowing multiple conditions to be checked within a single test case.</p>
+<p>During test execution, each condition outcome, whether passing or failing, is explicitly reported in test results. Unlike assumptions, a failed expectation does not terminate the test; execution continues, allowing multiple conditions to be checked within a single test case.</p>
 
 
-<p>This approach enables comprehensive validation of code behaviour, as all relevant expectations can be evaluated and reported in one run. By using expectations, developers gain detailed insight into which aspects of the code meet requirements and which do not, supporting thorough and efficient testing practices.</p>
+<p>This approach enables comprehensive validation of code behaviour, because all relevant expectations can be evaluated and reported in one run. Using expectations provides detailed insight into which aspects of the code meet requirements and which do not, supporting thorough and efficient testing.</p>
 
 
 <div class="doxySectionDef">
@@ -122,7 +122,7 @@ keywords:
 <p>Constructs and returns a <span class="doxyComputerOutput">deferred_reporter&lt;Expr_T&gt;</span> with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runnable-base/#ad8302d2dc629b643d34b3cfeafe44b3b">abort</a> = false</span>. The reporter evaluates the condition and records a pass or fail when it is destroyed at the end of the expression statement.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00624">624</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00330">330</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00633">633</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00330">330</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -148,6 +148,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

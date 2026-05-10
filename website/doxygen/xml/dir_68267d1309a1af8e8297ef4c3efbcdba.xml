@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
     <compoundname>src</compoundname>
     <innerfile refid="deferred-reporter_8cpp">deferred-reporter.cpp</innerfile>
@@ -19,15 +19,16 @@
     <detaileddescription>
 <para>The <computeroutput>src</computeroutput> folder contains the <computeroutput>.cpp</computeroutput> implementation files for the µTest++ library. Each file provides the non-inline method definitions for one or more related components:</para>
 <para><itemizedlist>
-<listitem><para><computeroutput><ref refid="runner_8cpp" kindref="compound">runner.cpp</ref></computeroutput> — <computeroutput>runner</computeroutput> and <computeroutput>static_runner</computeroutput> constructors, suite registration, and <computeroutput>exit_code()</computeroutput></para>
-</listitem><listitem><para><computeroutput><ref refid="test_8cpp" kindref="compound">test.cpp</ref></computeroutput> — <computeroutput>suite</computeroutput>, <computeroutput>top_suite</computeroutput>, <computeroutput>static_suite</computeroutput>, and <computeroutput>subtest</computeroutput> lifecycle methods</para>
-</listitem><listitem><para><computeroutput><ref refid="reporter_8cpp" kindref="compound">reporter.cpp</ref></computeroutput> — base <computeroutput>reporter</computeroutput> class and <computeroutput>operator&lt;&lt;</computeroutput> overloads</para>
-</listitem><listitem><para><computeroutput><ref refid="reporter-tap_8cpp" kindref="compound">reporter-tap.cpp</ref></computeroutput> — TAP-format reporter implementation</para>
-</listitem><listitem><para><computeroutput><ref refid="reporter-human_8cpp" kindref="compound">reporter-human.cpp</ref></computeroutput> — human-readable reporter implementation</para>
-</listitem><listitem><para><computeroutput><ref refid="deferred-reporter_8cpp" kindref="compound">deferred-reporter.cpp</ref></computeroutput> — deferred check-result reporting helper</para>
-</listitem><listitem><para><computeroutput><ref refid="runner-totals_8cpp" kindref="compound">runner-totals.cpp</ref></computeroutput> — <computeroutput>runner_totals</computeroutput> accumulation and <computeroutput>operator+=</computeroutput></para>
-</listitem><listitem><para><computeroutput><ref refid="timings_8cpp" kindref="compound">timings.cpp</ref></computeroutput> — <computeroutput>timestamp</computeroutput> and elapsed-time computation</para>
+<listitem><para><computeroutput><ref refid="deferred-reporter_8cpp" kindref="compound">deferred-reporter.cpp</ref></computeroutput> — deferred check-result reporting helper</para>
+</listitem><listitem><para><computeroutput><ref refid="expression-formatter_8cpp" kindref="compound">expression-formatter.cpp</ref></computeroutput> - stream implementation for expressions</para>
 </listitem><listitem><para><computeroutput><ref refid="reflection_8cpp" kindref="compound">reflection.cpp</ref></computeroutput> — <computeroutput>reflection::short_name()</computeroutput> implementation</para>
+</listitem><listitem><para><computeroutput><ref refid="reporter-human_8cpp" kindref="compound">reporter-human.cpp</ref></computeroutput> — human-readable reporter implementation</para>
+</listitem><listitem><para><computeroutput><ref refid="reporter-tap_8cpp" kindref="compound">reporter-tap.cpp</ref></computeroutput> — TAP-format reporter implementation</para>
+</listitem><listitem><para><computeroutput><ref refid="reporter_8cpp" kindref="compound">reporter.cpp</ref></computeroutput> — base <computeroutput>reporter</computeroutput> class and <computeroutput>operator&lt;&lt;</computeroutput> overloads</para>
+</listitem><listitem><para><computeroutput><ref refid="runner-totals_8cpp" kindref="compound">runner-totals.cpp</ref></computeroutput> — <computeroutput>runner_totals</computeroutput> accumulation and <computeroutput>operator+=</computeroutput></para>
+</listitem><listitem><para><computeroutput><ref refid="runner_8cpp" kindref="compound">runner.cpp</ref></computeroutput> — <computeroutput>runner</computeroutput> and <computeroutput>static_runner</computeroutput> constructors, suite registration, and <computeroutput>exit_code()</computeroutput></para>
+</listitem><listitem><para><computeroutput><ref refid="test_8cpp" kindref="compound">test.cpp</ref></computeroutput> — <computeroutput>suite</computeroutput>, <computeroutput>top_suite</computeroutput>, <computeroutput>static_suite</computeroutput>, and <computeroutput>subtest</computeroutput> lifecycle methods</para>
+</listitem><listitem><para><computeroutput><ref refid="timings_8cpp" kindref="compound">timings.cpp</ref></computeroutput> — <computeroutput>timestamp</computeroutput> and elapsed-time computation</para>
 </listitem><listitem><para><computeroutput><ref refid="utility_8cpp" kindref="compound">utility.cpp</ref></computeroutput> — <computeroutput>extract_file_name()</computeroutput> and <computeroutput>is_match()</computeroutput> helpers  </para>
 </listitem></itemizedlist>
 </para>

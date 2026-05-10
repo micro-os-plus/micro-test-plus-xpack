@@ -23,7 +23,7 @@ keywords:
 
 <div class="doxyDefinition">
 template &lt;class T&gt;<br/>
-concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/is-floating-point">micro_os_plus::micro_test_plus::type_traits::is_floating_point</a> =  std::is_floating_point_v&lt;T&gt;    
+concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/is-floating-point">micro_os_plus::micro_test_plus::type_traits::is_floating_point</a> =  std::is_floating_point_v&lt;T&gt;
 </div>
 
 ## Description {#details}
@@ -46,8 +46,19 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>The <span class="doxyComputerOutput">is_floating_point</span> concept is satisfied when <span class="doxyComputerOutput">T</span> is one of the standard floating point types (<span class="doxyComputerOutput">float</span>, <span class="doxyComputerOutput">double</span>, or <span class="doxyComputerOutput">long double</span>). It is the primary definition; <span class="doxyComputerOutput">is_floating_point_v</span> is derived from it for use in <span class="doxyComputerOutput">if constexpr</span> and non-concept contexts.</p>
 
 
+<p>Definition at line 423 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/type-traits-h">type-traits.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight">&lt;</span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight"> T&gt;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">concept </span><span class="doxyHighlight">is_floating_point = std::is_floating_point_v&lt;T&gt;</span></span></div>
+
+</div>
+
+
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

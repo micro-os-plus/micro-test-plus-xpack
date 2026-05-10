@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1to__t" kind="struct" language="C++" prot="public">
     <compoundname>micro_os_plus::micro_test_plus::to_t</compoundname>
     <basecompoundref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value_3_01_t_01_4" prot="public" virt="non-virtual">micro_os_plus::micro_test_plus::type_traits::value&lt; T &gt;</basecompoundref>
@@ -98,7 +98,7 @@ Allows explicit conversion to the encapsulated value. </para>
     <sectiondef kind="public-type">
       <memberdef kind="typedef" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value__base___1a4a819c9151d37da6e8a76f4629c7cc4d" prot="public" static="no">
         <type>T</type>
-        <definition>using micro_os_plus::micro_test_plus::type_traits::value_base_&lt; T &gt;::value_type =  T</definition>
+        <definition>using micro_os_plus::micro_test_plus::type_traits::value_base_&lt; T &gt;::value_type = T</definition>
         <argsstring></argsstring>
         <name>value_type</name>
         <qualifiedname>micro_os_plus::micro_test_plus::type_traits::value_base_::value_type</qualifiedname>

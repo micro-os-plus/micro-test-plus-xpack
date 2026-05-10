@@ -30,7 +30,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Folder with C++ header files with inline implementations for the µTest++ Testing Framework. <a href="/micro-test-plus-xpack/docs/api/folders/include/micro-os-plus/micro-test-plus/inlines/#details">More...</a></p>
+<p>Folder with C++ header files containing inline µTest++ implementations. <a href="/micro-test-plus-xpack/docs/api/folders/include/micro-os-plus/micro-test-plus/inlines/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -302,29 +302,20 @@ keywords:
 <p>Folder with C++ header files for the µTest++ Testing Framework.</p>
 
 
-## Project Headers {#autotoc_md0}
+<p>This folder provides the primary public headers that define the core functionality of the µTest++ Testing Framework.</p>
 
 
-<p>The files in this folder are intended for internal use only. Do not include them directly in your projects.</p>
+<p>It includes declarations for essential framework components, including test suite and test case management, test runner and reporter classes, function comparators, overloaded operators, user-defined literals, mathematical utilities, type traits, reflection utilities, and supporting internal mechanisms.</p>
 
 
-<p>Instead, include the public header <span class="doxyComputerOutput">&lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;</span>.</p>
+<p>By consolidating public API definitions in this folder, the project maintains a clear separation from implementation details (located in the <span class="doxyComputerOutput">src</span> folder), thereby promoting modularity, maintainability, and straightforward integration.</p>
 
 
-<p>The <span class="doxyComputerOutput">include/micro-os-plus/micro-test-plus</span> folder contains the primary public header files that define the core functionality of the µTest++ testing framework.</p>
-
-
-<p>This folder provides declarations for all essential framework components, including test suite and test case management, the test runner and reporter classes, function comparators, overloaded operators, user-defined literals, mathematical utilities, type traits, reflection utilities, and supporting internal mechanisms.</p>
-
-
-<p>By consolidating all public API definitions within this folder, the project maintains a clear separation from implementation details (located in the <span class="doxyComputerOutput">src</span> folder), thereby promoting modularity, maintainability, and straightforward integration.</p>
-
-
-<p>To access the full capabilities of the µTest++ framework, users should include the relevant headers from this folder in their projects.</p>
+<p>To access the full capabilities of the µTest++ framework, include the relevant headers from this folder in user projects.</p>
 
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

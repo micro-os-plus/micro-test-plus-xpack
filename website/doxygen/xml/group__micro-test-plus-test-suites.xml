@@ -1,25 +1,25 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="group__micro-test-plus-test-suites" kind="group">
     <compoundname>micro-test-plus-test-suites</compoundname>
     <title>Test Suites</title>
     <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" prot="public">micro_os_plus::micro_test_plus::static_suite</innerclass>
     <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" prot="public">micro_os_plus::micro_test_plus::suite</innerclass>
     <briefdescription>
-<para>Test suites are named collections of test cases. </para>
+<para>Test suites are named groups of related test cases. </para>
     </briefdescription>
     <detaileddescription>
-<para>Test suites in µTest++ are named groups of related test cases, allowing for structured organisation and execution of tests. By default, all test cases defined in <computeroutput>main()</computeroutput> are included in the top test suite, which is created by <computeroutput>runner::initialise()</computeroutput>, and are executed immediately.</para>
-<para>For more complex projects, additional test suites can be defined, typically in separate source files. Standalone test suites are implemented as <computeroutput>mt::static_suite</computeroutput> objects, constructed with a name, a reference to the runner, and a callable (usually a lambda that chains the execution of the test cases), along with any optional arguments. This design enables self-registration of test suites, ensuring they are automatically included in the test run.</para>
+<para>By default, all test cases defined in <computeroutput>main()</computeroutput> are included in the top-level test suite, which is created by <computeroutput>runner::initialise()</computeroutput> and executed immediately. For more complex projects, additional test suites can be defined, typically in separate source files.</para>
+<para>Stand-alone test suites are implemented as <computeroutput>mt::static_suite</computeroutput> objects, constructed with a name, a reference to the runner, and a callable (usually a lambda that chains execution of test cases), along with any optional arguments. This design enables self-registration of test suites, ensuring they are automatically included in the test run.</para>
 <para><simplesect kind="important"><para>It is strongly recommended to instantiate additional test suites as static objects so that their constructors are invoked before <computeroutput>main()</computeroutput> begins.</para>
 </simplesect>
-Self-registration is performed within the constructor, ensuring that each test suite is automatically included in the test run. When test suites are defined in separate compilation units, they may be executed in any order, as the sequence in which static constructors are invoked is not specified. Consequently, test suites should be designed to be independent and must not rely on the execution order of other suites.</para>
+Self-registration is performed within the constructor, ensuring that each test suite is automatically included in the test run. When test suites are defined in separate compilation units, they can be executed in any order, as the sequence in which static constructors are invoked is not specified. Consequently, test suites should be designed to be independent and must not rely on the execution order of other suites.</para>
 <para>All registered test suites are executed when <computeroutput>runner::exit_code()</computeroutput> is called, guaranteeing comprehensive test coverage across the project.</para>
 <para><simplesect kind="par"><title>Examples</title><para></para>
 </simplesect>
 <programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>In<sp/>main.cpp:<sp/>create<sp/>the<sp/>runner<sp/>(also<sp/>the<sp/>static_runner<sp/>variant<sp/>works).</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>In<sp/>main.cpp:<sp/>create<sp/>the<sp/>runner<sp/>(the<sp/>static_runner<sp/>variant<sp/>also<sp/>works).</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>mt::static_runner<sp/>tr{<sp/></highlight><highlight class="stringliteral">&quot;Sample&quot;</highlight><highlight class="normal"><sp/>};</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>

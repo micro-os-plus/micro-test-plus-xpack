@@ -56,7 +56,7 @@ Topics related to the µTest++ C++ API
 <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-runners">Test Runners</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Classes and methods for initialising the framework and returning an exit code
+Classes for initialising the framework and returning an exit code
 </td>
 </tr>
 
@@ -76,7 +76,7 @@ Test cases are named sequences of checks
 <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-expectations">Expectations</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Expectations are checks whose outcomes are accounted and reported
+Expectations are checks whose outcomes are counted and reported
 </td>
 </tr>
 
@@ -176,7 +176,7 @@ Utility functions for advanced string handling in tests
 <a href="/micro-test-plus-xpack/docs/api/groups/micro-test-plus-test-suites">Test Suites</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Test suites are named collections of test cases
+Test suites are named groups of related test cases
 </td>
 </tr>
 
@@ -227,6 +227,6 @@ For comparison, the original Doxygen html pages continue to be available via the
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

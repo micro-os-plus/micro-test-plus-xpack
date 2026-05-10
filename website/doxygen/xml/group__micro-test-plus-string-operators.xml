@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="group__micro-test-plus-string-operators" kind="group">
     <compoundname>micro-test-plus-string-operators</compoundname>
     <title>String Operators</title>
@@ -97,8 +97,8 @@
 <para>Overloaded operators for string comparison. </para>
     </briefdescription>
     <detaileddescription>
-<para>The µTest++ framework provides overloaded operators specifically for comparing string types, such as <computeroutput>std::string_view</computeroutput>. These operators enable clear and expressive assertions when verifying string values within test cases, supporting both equality and inequality checks.</para>
-<para>By using these dedicated string operators, developers can write concise and readable tests that accurately reflect the intended logic. The framework ensures that string comparisons are performed correctly and that any failed checks are reported with both the actual and expected values for straightforward diagnostics.</para>
+<para>Operators are provided specifically for comparing string types, such as <computeroutput>std::string_view</computeroutput>. These operators enable clear, expressive assertions when verifying string values in test cases, supporting both equality and inequality checks.</para>
+<para>Using these dedicated operators ensures concise, readable tests that accurately reflect intended logic. The framework ensures correct string comparisons and reports failed checks with both actual and expected values for clear diagnostics.</para>
 <para><simplesect kind="par"><title>Examples</title><para></para>
 </simplesect>
 <programlisting filename=".cpp"><codeline><highlight class="preprocessor">#include<sp/>&lt;string_view&gt;</highlight><highlight class="normal"></highlight></codeline>

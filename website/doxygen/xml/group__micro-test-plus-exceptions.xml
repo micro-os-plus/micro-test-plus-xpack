@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="group__micro-test-plus-exceptions" kind="group">
     <compoundname>micro-test-plus-exceptions</compoundname>
     <title>Checking Exceptions</title>
@@ -158,9 +158,9 @@ The <computeroutput><ref refid="group__micro-test-plus-exceptions_1gaf8f7602f401
 <para>Functions for verifying exceptions in test cases. </para>
     </briefdescription>
     <detaileddescription>
-<para>The µTest++ framework provides dedicated functions for verifying whether specific expressions or function calls throw exceptions, supporting robust testing of error handling and exceptional conditions in C++ code.</para>
-<para>These utilities enable developers to assert that exceptions are correctly thrown or not thrown as expected, improving the reliability and safety of software components. The framework supports both generic exception checks and type-specific exception verification, allowing for precise and expressive test cases.</para>
-<para>For more advanced scenarios, such as handling multiple expected exceptions, developers can use explicit <computeroutput>try</computeroutput> blocks with multiple <computeroutput>catch</computeroutput> statements and report the results using <computeroutput>expect(true)</computeroutput> or <computeroutput>expect(false)</computeroutput>. This approach ensures comprehensive coverage of exception handling logic.</para>
+<para>Dedicated exception-check utilities verify whether expressions or function calls throw. These utilities support robust testing of error handling and exceptional conditions in C++ code.</para>
+<para>Developers can assert that exceptions are thrown, or not thrown, as expected, improving the reliability and safety of software components. The framework supports both generic checks and type-specific verification, allowing precise and expressive test cases.</para>
+<para>For advanced scenarios, such as handling multiple expected exception types, use explicit <computeroutput>try</computeroutput> blocks with multiple <computeroutput>catch</computeroutput> statements and report results with <computeroutput>expect(true)</computeroutput> or <computeroutput>expect(false)</computeroutput>. This approach enables comprehensive coverage of exception-handling logic.</para>
 <para><simplesect kind="par"><title>Examples</title><para></para>
 </simplesect>
 <programlisting filename=".cpp"><codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>if<sp/>exceptions<sp/>are<sp/>thrown&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
@@ -190,7 +190,7 @@ The <computeroutput><ref refid="group__micro-test-plus-exceptions_1gaf8f7602f401
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(...)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>t.expect<sp/>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;known<sp/>exception<sp/>thrown&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>t.expect<sp/>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;unknown<sp/>exception<sp/>thrown&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal">});</highlight></codeline>
 </programlisting>  </para>

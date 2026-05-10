@@ -1,12 +1,13 @@
 var classmicro__os__plus_1_1micro__test__plus_1_1runner =
 [
+    [ "runner", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a5e2001730fd3659e9045fcc5cc668f07", null ],
     [ "runner", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a10788baa079e19676a8cdbaa253285dc", null ],
     [ "runner", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#adbe02fed3c414adf001d856ab390e000", null ],
     [ "runner", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a09acf1e03953d8017e56c8b5e38b879a", null ],
     [ "~runner", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a47a11b38ecca99760dd8078b5175041f", null ],
     [ "abort", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a7bc806540e65c21095ef1ea1ef970db2", null ],
     [ "exit_code", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a7f8403f1ccc6a0e8171ef077bcd9cbd4", null ],
-    [ "initialise", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#ab6420151930179564274c39ef738ea79", null ],
+    [ "initialise", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#acfabd0e10d233ad305b6f4fc125a97f2", null ],
     [ "name", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a1565ede2ab1141b2e3db2ea5513002a1", null ],
     [ "operator=", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a549524d15dc1eb5e6b4eb4bdd2af7b6b", null ],
     [ "operator=", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#aa34a0418d54c633630a089eb2b5a61ee", null ],
@@ -25,5 +26,6 @@ var classmicro__os__plus_1_1micro__test__plus_1_1runner =
     [ "reporter_", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#ace4da8161152a82e4ffa9c6d50917088", null ],
     [ "timings_", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a7cdc57b32f1d1989fde8a119905a0bc7", null ],
     [ "top_suite_", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a93a3afb222db1fcaa87cd1ba7fa15bc0", null ],
+    [ "top_suite_name_", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a401e4e098f0ceba7f21a3a5bf1ea89e3", null ],
     [ "totals_", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a1af301da2bcb0659c40a472589edc194", null ]
 ];

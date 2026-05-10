@@ -64,10 +64,10 @@ keywords:
 <p>Overloaded operators for container comparison.</p>
 
 
-<p>The µTest++ framework provides overloaded operators to facilitate direct and expressive comparison of standard containers, such as vectors and strings, within test cases. These operators enable developers to write clear and concise assertions when verifying the equality or inequality of container contents.</p>
+<p>Within test cases, overloaded operators support direct and expressive comparison of standard containers, such as vectors and strings. These operators enable clear, concise assertions when verifying equality or inequality of container contents.</p>
 
 
-<p>In addition to the generic operators, specialised equality and inequality operators are provided for containers, ensuring accurate and efficient comparison semantics that align with modern C++ practices.</p>
+<p>In addition to generic operators, specialised equality and inequality operators are available for container types where dedicated handling improves correctness or efficiency, while preserving modern C++ semantics.</p>
 
 
 <dl class="doxySectionUser">
@@ -277,6 +277,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

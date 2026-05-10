@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1any__op" kind="concept">
     <compoundname>micro_os_plus::micro_test_plus::type_traits::any_op</compoundname>
     <includes refid="type-traits_8h" local="no">type-traits.h</includes>
@@ -12,7 +12,14 @@
       </param>
     </templateparamlist>
     <initializer>template&lt;class Lhs_T, class Rhs_T&gt;
-concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1any__op" kindref="compound">micro_os_plus::micro_test_plus::type_traits::any_op</ref> =  is_op&lt;Lhs_T&gt; or is_op&lt;Rhs_T&gt;    </initializer>
+concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1any__op" kindref="compound">micro_os_plus::micro_test_plus::type_traits::any_op</ref> =  is_op&lt;Lhs_T&gt; or is_op&lt;Rhs_T&gt;</initializer>
+    <conceptparts>
+      <codepart line="454">    <programlisting>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">any_op<sp/>=<sp/>is_op&lt;Lhs_T&gt;<sp/>or<sp/>is_op&lt;Rhs_T&gt;</highlight></codeline>
+    </programlisting>
+</codepart>
+    </conceptparts>
     <briefdescription>
 <para>C++20 concept satisfied when at least one of two types derives from <computeroutput>op</computeroutput>. </para>
     </briefdescription>

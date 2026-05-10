@@ -44,13 +44,13 @@ keywords:
 <p>Test cases are named sequences of checks.</p>
 
 
-<p>Test cases in µTest++ are named collections of checks that are executed within the same environment. Each test case is defined by calling <span class="doxyComputerOutput">suite::test()</span> with a descriptive name and a callable object (typically a lambda accepting a <span class="doxyComputerOutput">subtest&amp;</span> reference), along with any optional arguments required for the test.</p>
+<p>Each test case is defined by calling <span class="doxyComputerOutput">suite::test()</span> with a descriptive name and a callable object (typically a lambda accepting a <span class="doxyComputerOutput">subtest&amp;</span> reference), along with any optional arguments required for the test.</p>
 
 
-<p>Test cases enable developers to organise related checks together, improving the clarity and maintainability of the test suite. Any number of test cases may be defined, each focusing on a specific aspect of the code under test.</p>
+<p>Test cases allow related checks to be organised together within the same environment, improving clarity and maintainability. Any number of test cases may be defined, each focusing on a specific aspect of the code under test.</p>
 
 
-<p>By grouping checks in this way, it becomes easier to identify which functionality is being verified and to interpret the results in the context of the overall software quality.</p>
+<p>By grouping checks in this way, developers can identify which functionality is being verified and interpret results in the context of overall software quality.</p>
 
 
 <dl class="doxySectionUser">
@@ -82,6 +82,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

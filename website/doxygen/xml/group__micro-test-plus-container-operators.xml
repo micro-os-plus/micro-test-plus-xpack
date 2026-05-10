@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="group__micro-test-plus-container-operators" kind="group">
     <compoundname>micro-test-plus-container-operators</compoundname>
     <title>Container Operators</title>
@@ -151,8 +151,8 @@
 <para>Overloaded operators for container comparison. </para>
     </briefdescription>
     <detaileddescription>
-<para>The µTest++ framework provides overloaded operators to facilitate direct and expressive comparison of standard containers, such as vectors and strings, within test cases. These operators enable developers to write clear and concise assertions when verifying the equality or inequality of container contents.</para>
-<para>In addition to the generic operators, specialised equality and inequality operators are provided for containers, ensuring accurate and efficient comparison semantics that align with modern C++ practices.</para>
+<para>Within test cases, overloaded operators support direct and expressive comparison of standard containers, such as vectors and strings. These operators enable clear, concise assertions when verifying equality or inequality of container contents.</para>
+<para>In addition to generic operators, specialised equality and inequality operators are available for container types where dedicated handling improves correctness or efficiency, while preserving modern C++ semantics.</para>
 <para><simplesect kind="par"><title>Examples</title><para></para>
 </simplesect>
 <programlisting filename=".cpp"><codeline><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>

@@ -9,7 +9,7 @@ var searchData=
   ['den_6',['den',['../namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a8a29540b951c5cf6b40485287842b782',1,'micro_os_plus::micro_test_plus::math']]],
   ['den_5fsize_7',['den_size',['../namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#af5a33355bb68f644b9949ef1faa0d079',1,'micro_os_plus::micro_test_plus::math::den_size(void) -&gt; T'],['../namespacemicro__os__plus_1_1micro__test__plus_1_1math.html#a3e243d7f77b8435e1433ccad9c603f98',1,'micro_os_plus::micro_test_plus::math::den_size(Value_T value) -&gt; T']]],
   ['deprecated_20list_8',['Deprecated List',['../deprecated.html',1,'']]],
-  ['description_9',['Description',['../group__micro-os-plus.html#autotoc_md1',1,'']]],
+  ['description_9',['Description',['../group__micro-os-plus.html#autotoc_md0',1,'']]],
   ['detail_2dinlines_2eh_10',['detail-inlines.h',['../detail-inlines_8h.html',1,'']]],
   ['detail_2eh_11',['detail.h',['../detail_8h.html',1,'']]]
 ];
