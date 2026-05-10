@@ -1177,12 +1177,6 @@
             },
             {
               "type": "doc",
-              "label": "README.md",
-              "className": "doxyEllipsis",
-              "id": "api/files/readme-md"
-            },
-            {
-              "type": "doc",
               "label": "top-common.h",
               "className": "doxyEllipsis",
               "id": "api/files/top-common-h"
