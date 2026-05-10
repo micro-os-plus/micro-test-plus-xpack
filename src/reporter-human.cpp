@@ -699,9 +699,9 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-    * This method outputs the prefix for a passing check result, applying the
+   * This method outputs the prefix for a passing check result, applying the
    * appropriate colour formatting and symbols to clearly indicate success. If
-    * the output occurs within a subtest, additional indentation is applied
+   * the output occurs within a subtest, additional indentation is applied
    * for readability. The prefix includes a tick symbol (`✓`) and, if provided,
    * an associated message. Colour formatting is reset after the prefix to
    * maintain consistent output style across all test cases and folders.
@@ -740,9 +740,9 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-    * This method outputs the prefix for a failing check result, applying the
+   * This method outputs the prefix for a failing check result, applying the
    * appropriate colour formatting and symbols to clearly indicate failure. If
-    * the output occurs within a subtest, additional indentation is applied
+   * the output occurs within a subtest, additional indentation is applied
    * for readability. The prefix includes a cross symbol (`✗`), an optional
    * message, and the label "FAILED". The source location is appended in
    * parentheses, showing the file or folder name and line number where the
@@ -788,9 +788,9 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-    * This method outputs the suffix for a failing check result by closing the
-    * location information, appending an "aborted..." message if the check was
-    * aborted, and then adding a newline to the output. The output stream
+   * This method outputs the suffix for a failing check result by closing the
+   * location information, appending an "aborted..." message if the check was
+   * aborted, and then adding a newline to the output. The output stream
    * is flushed to ensure immediate visibility. This approach guarantees that
    * failure results are clearly separated, promptly reported, and easily
    * distinguishable across all test cases and folders.

@@ -172,13 +172,15 @@ namespace micro_os_plus::micro_test_plus
        * @brief Deleted copy assignment operator to prevent copying.
        */
       expression_formatter&
-      operator= (const expression_formatter&) = delete;
+      operator= (const expression_formatter&)
+          = delete;
 
       /**
        * @brief Deleted move assignment operator to prevent moving.
        */
       expression_formatter&
-      operator= (expression_formatter&&) = delete;
+      operator= (expression_formatter&&)
+          = delete;
 
       /**
        * @brief Default destructor.

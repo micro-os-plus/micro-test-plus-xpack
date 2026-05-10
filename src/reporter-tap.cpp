@@ -661,9 +661,9 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-    * This method outputs the prefix for a passing check result, applying the
+   * This method outputs the prefix for a passing check result, applying the
    * appropriate colour formatting and symbols to clearly indicate success. If
-    * the output occurs within a subtest, additional indentation is applied
+   * the output occurs within a subtest, additional indentation is applied
    * for readability. The prefix includes a tick symbol (`✓`) and, if provided,
    * an associated message. Colour formatting is reset after the prefix to
    * maintain consistent output style across all test cases and folders.
@@ -701,12 +701,12 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-    * This method outputs the prefix for a failing check result, applying the
+   * This method outputs the prefix for a failing check result, applying the
    * appropriate colour formatting and symbols to clearly indicate failure. If
-    * the output occurs within a subtest, additional indentation is applied
+   * the output occurs within a subtest, additional indentation is applied
    * for readability. The prefix includes a cross symbol (`✗`), an optional
-    * message, and YAML diagnostics preamble. Colour formatting and line
-    * structure are arranged to conform to TAP14 diagnostics output.
+   * message, and YAML diagnostics preamble. Colour formatting and line
+   * structure are arranged to conform to TAP14 diagnostics output.
    */
   void
   reporter_tap::output_fail_prefix_ (
@@ -736,9 +736,9 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-    * Completes TAP14 YAML diagnostics for a failing check, optionally appends
-    * an "aborted..." marker, emits source filename/line fields, closes the
-    * YAML block, and flushes the stream.
+   * Completes TAP14 YAML diagnostics for a failing check, optionally appends
+   * an "aborted..." marker, emits source filename/line fields, closes the
+   * YAML block, and flushes the stream.
    */
   void
   reporter_tap::output_fail_suffix_ (

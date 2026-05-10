@@ -115,13 +115,15 @@ namespace micro_os_plus::micro_test_plus
      * @brief Deleted copy assignment operator to prevent copying.
      */
     reporter_tap&
-    operator= (const reporter_tap&) = delete;
+    operator= (const reporter_tap&)
+        = delete;
 
     /**
      * @brief Deleted move assignment operator to prevent moving.
      */
     reporter_tap&
-    operator= (reporter_tap&&) = delete;
+    operator= (reporter_tap&&)
+        = delete;
 
     /**
      * @brief Destructor for the reporter_tap class.

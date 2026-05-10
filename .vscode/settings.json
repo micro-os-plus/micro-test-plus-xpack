@@ -30,5 +30,8 @@
   },
   "makefile.configureOnOpen": false,
   "editor.wordWrap": "on",
-  "mesonbuild.configureOnOpen": false
+  "mesonbuild.configureOnOpen": false,
+  "C_Cpp.clang_format_style": "file:${workspaceFolder}/config/.clang-format",
+  "C_Cpp.formatting": "clangFormat",
+  "C_Cpp.clang_format_path": "${workspaceFolder}/xpacks/.bin/clang-format"
 }

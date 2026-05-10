@@ -50,7 +50,13 @@
     "postversion": "git push origin --all && git push origin --tags"
   },
   "xpack": {
-    "minimumXpmRequired": "0.20.8"
+    "minimumXpmRequired": "0.20.8",
+    "devDependencies": {
+      "@xpack-dev-tools/clang": "21.1.8-1.1"
+    },
+    "actions": {
+      "clang-format": "clang-format --style=file:config/.clang-format -i --verbose src/*.cpp include/micro-os-plus/*.h include/micro-os-plus/micro-test-plus/*.h include/micro-os-plus/micro-test-plus/inlines/*.h"
+    }
   },
   "topConfig": {
     "descriptiveName": "µTest++ Testing Framework",

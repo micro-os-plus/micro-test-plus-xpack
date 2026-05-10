@@ -360,7 +360,8 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     virtual void
-    begin_session (runner& runner) = 0;
+    begin_session (runner& runner)
+        = 0;
 
     /**
      * @brief Mark the end of a test session.
@@ -370,7 +371,8 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     virtual void
-    end_session (runner& runner) = 0;
+    end_session (runner& runner)
+        = 0;
 
     /**
      * @brief Mark the beginning of a test suite.
@@ -380,7 +382,8 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     virtual void
-    begin_suite (suite& suite) = 0;
+    begin_suite (suite& suite)
+        = 0;
 
     /**
      * @brief Mark the end of a test suite.
@@ -390,7 +393,8 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     virtual void
-    end_suite (suite& suite) = 0;
+    end_suite (suite& suite)
+        = 0;
 
     /**
      * @brief Mark the beginning of a subtest.
@@ -400,7 +404,8 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     virtual void
-    begin_subtest (subtest& subtest) = 0;
+    begin_subtest (subtest& subtest)
+        = 0;
 
     /**
      * @brief Mark the end of a subtest.
@@ -410,7 +415,8 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     virtual void
-    end_subtest (subtest& subtest) = 0;
+    end_subtest (subtest& subtest)
+        = 0;
 
     /**
      * @brief Returns the comment-prefix string used by this reporter format.
@@ -420,7 +426,8 @@ namespace micro_os_plus::micro_test_plus
      * @return A null-terminated prefix string.
      */
     virtual const char*
-    get_comment_prefix (void) = 0;
+    get_comment_prefix (void)
+        = 0;
 
     /**
      * @brief Returns the current verbosity level.
@@ -478,7 +485,8 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     virtual void
-    output_pass_prefix_ (std::string& message, subtest& subtest) = 0;
+    output_pass_prefix_ (std::string& message, subtest& subtest)
+        = 0;
 
     /**
      * @brief Outputs the suffix for a passing condition.
@@ -488,7 +496,8 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     virtual void
-    output_pass_suffix_ (subtest& subtest) = 0;
+    output_pass_suffix_ (subtest& subtest)
+        = 0;
 
     /**
      * @brief Outputs the prefix for a failing condition.
@@ -504,7 +513,8 @@ namespace micro_os_plus::micro_test_plus
     virtual void
     output_fail_prefix_ (std::string& message, const bool has_expression,
                          const reflection::source_location& location,
-                         subtest& subtest) = 0;
+                         subtest& subtest)
+        = 0;
 
     /**
      * @brief Outputs the suffix for a failing condition.
@@ -517,7 +527,8 @@ namespace micro_os_plus::micro_test_plus
      */
     virtual void
     output_fail_suffix_ (const reflection::source_location& location,
-                         bool abort, subtest& subtest) = 0;
+                         bool abort, subtest& subtest)
+        = 0;
 
   protected:
     /**

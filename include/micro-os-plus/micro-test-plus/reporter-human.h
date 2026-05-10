@@ -123,13 +123,15 @@ namespace micro_os_plus::micro_test_plus
      * @brief Deleted copy assignment operator to prevent copying.
      */
     reporter_human&
-    operator= (const reporter_human&) = delete;
+    operator= (const reporter_human&)
+        = delete;
 
     /**
      * @brief Deleted move assignment operator to prevent moving.
      */
     reporter_human&
-    operator= (reporter_human&&) = delete;
+    operator= (reporter_human&&)
+        = delete;
 
     /**
      * @brief Destructor for the reporter_human class.

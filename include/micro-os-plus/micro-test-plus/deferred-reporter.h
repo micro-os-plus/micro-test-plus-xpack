@@ -125,13 +125,15 @@ namespace micro_os_plus::micro_test_plus
        * @brief Deleted copy assignment operator to prevent copying.
        */
       deferred_reporter_base&
-      operator= (const deferred_reporter_base&) = delete;
+      operator= (const deferred_reporter_base&)
+          = delete;
 
       /**
        * @brief Deleted move assignment operator to prevent moving.
        */
       deferred_reporter_base&
-      operator= (deferred_reporter_base&&) = delete;
+      operator= (deferred_reporter_base&&)
+          = delete;
 
       /**
        * @brief Destructor for the deferred reporter base.

@@ -123,13 +123,15 @@ namespace micro_os_plus::micro_test_plus
        * @brief Defaulted copy assignment operator.
        */
       timestamp&
-      operator= (const timestamp&) = default;
+      operator= (const timestamp&)
+          = default;
 
       /**
        * @brief Defaulted move assignment operator.
        */
       timestamp&
-      operator= (timestamp&&) = default;
+      operator= (timestamp&&)
+          = default;
 
       /**
        * @brief Defaulted destructor.
@@ -221,13 +223,15 @@ namespace micro_os_plus::micro_test_plus
        * @brief Deleted copy assignment operator to prevent copying.
        */
       timestamps&
-      operator= (const timestamps&) = delete;
+      operator= (const timestamps&)
+          = delete;
 
       /**
        * @brief Deleted move assignment operator to prevent moving.
        */
       timestamps&
-      operator= (timestamps&&) = delete;
+      operator= (timestamps&&)
+          = delete;
 
       /**
        * @brief Defaulted destructor.

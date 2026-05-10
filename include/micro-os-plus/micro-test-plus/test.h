@@ -166,13 +166,15 @@ namespace micro_os_plus::micro_test_plus
        * @brief Deleted copy assignment operator to prevent copying.
        */
       test_node&
-      operator= (const test_node&) = delete;
+      operator= (const test_node&)
+          = delete;
 
       /**
        * @brief Deleted move assignment operator to prevent moving.
        */
       test_node&
-      operator= (test_node&&) = delete;
+      operator= (test_node&&)
+          = delete;
 
       /**
        * @brief Virtual destructor for the test_node class.
@@ -275,13 +277,15 @@ namespace micro_os_plus::micro_test_plus
        * @brief Deleted copy assignment operator to prevent copying.
        */
       runnable_base&
-      operator= (const runnable_base&) = delete;
+      operator= (const runnable_base&)
+          = delete;
 
       /**
        * @brief Deleted move assignment operator to prevent moving.
        */
       runnable_base&
-      operator= (runnable_base&&) = delete;
+      operator= (runnable_base&&)
+          = delete;
 
       /**
        * @brief Virtual destructor.
@@ -470,13 +474,15 @@ namespace micro_os_plus::micro_test_plus
        * @brief Deleted copy assignment operator to prevent copying.
        */
       runnable&
-      operator= (const runnable&) = delete;
+      operator= (const runnable&)
+          = delete;
 
       /**
        * @brief Deleted move assignment operator to prevent moving.
        */
       runnable&
-      operator= (runnable&&) = delete;
+      operator= (runnable&&)
+          = delete;
 
       /**
        * @brief Virtual destructor.
@@ -495,7 +501,8 @@ namespace micro_os_plus::micro_test_plus
        *   Nothing.
        */
       virtual void
-      run (void) = 0;
+      run (void)
+          = 0;
 
     protected:
       /**
@@ -571,13 +578,15 @@ namespace micro_os_plus::micro_test_plus
      * @brief Deleted copy assignment operator to prevent copying.
      */
     subtest&
-    operator= (const subtest&) = delete;
+    operator= (const subtest&)
+        = delete;
 
     /**
      * @brief Deleted move assignment operator to prevent moving.
      */
     subtest&
-    operator= (subtest&&) = delete;
+    operator= (subtest&&)
+        = delete;
 
     /**
      * @brief Virtual destructor.
@@ -736,13 +745,15 @@ namespace micro_os_plus::micro_test_plus
      * @brief Deleted copy assignment operator to prevent copying.
      */
     suite&
-    operator= (const suite&) = delete;
+    operator= (const suite&)
+        = delete;
 
     /**
      * @brief Deleted move assignment operator to prevent moving.
      */
     suite&
-    operator= (suite&&) = delete;
+    operator= (suite&&)
+        = delete;
 
     /**
      * @brief Virtual destructor.
@@ -854,13 +865,15 @@ namespace micro_os_plus::micro_test_plus
      * @brief Deleted copy assignment operator to prevent copying.
      */
     top_suite&
-    operator= (const top_suite&) = delete;
+    operator= (const top_suite&)
+        = delete;
 
     /**
      * @brief Deleted move assignment operator to prevent moving.
      */
     top_suite&
-    operator= (top_suite&&) = delete;
+    operator= (top_suite&&)
+        = delete;
 
     /**
      * @brief Virtual destructor.
@@ -941,13 +954,15 @@ namespace micro_os_plus::micro_test_plus
      * @brief Deleted copy assignment operator to prevent copying.
      */
     static_suite&
-    operator= (const static_suite&) = delete;
+    operator= (const static_suite&)
+        = delete;
 
     /**
      * @brief Deleted move assignment operator to prevent moving.
      */
     static_suite&
-    operator= (static_suite&&) = delete;
+    operator= (static_suite&&)
+        = delete;
 
     /**
      * @brief Virtual destructor.

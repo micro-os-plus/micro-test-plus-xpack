@@ -107,13 +107,15 @@ namespace micro_os_plus::micro_test_plus
        * @brief Deleted copy assignment operator to prevent copying.
        */
       runner_totals&
-      operator= (const runner_totals&) = delete;
+      operator= (const runner_totals&)
+          = delete;
 
       /**
        * @brief Deleted move assignment operator to prevent moving.
        */
       runner_totals&
-      operator= (runner_totals&&) = delete;
+      operator= (runner_totals&&)
+          = delete;
 
       /**
        * @brief Accumulates the totals from another instance into this one.

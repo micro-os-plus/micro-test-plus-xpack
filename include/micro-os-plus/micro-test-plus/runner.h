@@ -142,13 +142,15 @@ namespace micro_os_plus::micro_test_plus
      * @brief Deleted copy assignment operator to prevent copying.
      */
     runner&
-    operator= (const runner&) = delete;
+    operator= (const runner&)
+        = delete;
 
     /**
      * @brief Deleted move assignment operator to prevent moving.
      */
     runner&
-    operator= (runner&&) = delete;
+    operator= (runner&&)
+        = delete;
 
     /**
      * @brief Destructor for the runner class.
@@ -374,13 +376,15 @@ namespace micro_os_plus::micro_test_plus
      * @brief Deleted copy assignment operator to prevent copying.
      */
     static_runner&
-    operator= (const static_runner&) = delete;
+    operator= (const static_runner&)
+        = delete;
 
     /**
      * @brief Deleted move assignment operator to prevent moving.
      */
     static_runner&
-    operator= (static_runner&&) = delete;
+    operator= (static_runner&&)
+        = delete;
 
     /**
      * @brief Destructor for the static_runner class.
