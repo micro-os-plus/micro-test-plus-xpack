@@ -20,9 +20,7 @@
     "editor.defaultFormatter": "cheshirekow.cmake-format"
   },
   "cmakeFormat.args": [
-    "--dangle-parens",
-    "--separate-ctrl-name-with-space",
-    "--separate-fn-name-with-space"
+    "--config-file=${workspaceFolder}/config/.cmake-format.yaml"
   ],
   "[mdx]": {
     "editor.formatOnSave": false,

@@ -21,38 +21,33 @@
 
 # -----------------------------------------------------------------------------
 
-message(VERBOSE "Processing 'tests/sources/minimal-test'...")
+message (VERBOSE "Processing 'tests/sources/minimal-test'...")
 
 # -----------------------------------------------------------------------------
 # The test library definitions.
-add_library(test-minimal-interface INTERFACE EXCLUDE_FROM_ALL)
+add_library (test-minimal-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_include_directories(test-minimal-interface INTERFACE # None.
-)
+target_include_directories (test-minimal-interface INTERFACE)
 
-target_sources(test-minimal-interface INTERFACE src/main.cpp)
+target_sources (test-minimal-interface INTERFACE src/main.cpp)
 
-target_compile_definitions(test-minimal-interface INTERFACE # None.
-)
+target_compile_definitions (test-minimal-interface INTERFACE)
 
-target_compile_options(test-minimal-interface INTERFACE # None.
-)
+target_compile_options (test-minimal-interface INTERFACE)
 
-target_link_options(test-minimal-interface INTERFACE # None.
-)
+target_link_options (test-minimal-interface INTERFACE)
 
-target_link_libraries(test-minimal-interface INTERFACE # None.
-)
+target_link_libraries (test-minimal-interface INTERFACE)
 
-if(COMMAND xpack_display_target_lists)
-  xpack_display_target_lists(test-minimal-interface)
-endif()
+if (COMMAND xpack_display_target_lists)
+  xpack_display_target_lists (test-minimal-interface)
+endif ()
 
 # -----------------------------------------------------------------------------
 # Aliases.
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
-add_library(test::minimal ALIAS test-minimal-interface)
-message(VERBOSE "> test::minimal -> test-minimal-interface")
+add_library (test::minimal ALIAS test-minimal-interface)
+message (VERBOSE "> test::minimal -> test-minimal-interface")
 
 # -----------------------------------------------------------------------------

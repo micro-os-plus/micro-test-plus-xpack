@@ -46,17 +46,13 @@ target_sources (
             src/support.cpp
 )
 
-target_compile_definitions (test-unit-interface INTERFACE # None.
-)
+target_compile_definitions (test-unit-interface INTERFACE)
 
-target_compile_options (test-unit-interface INTERFACE # None.
-)
+target_compile_options (test-unit-interface INTERFACE)
 
-target_link_options (test-unit-interface INTERFACE # None.
-)
+target_link_options (test-unit-interface INTERFACE)
 
-target_link_libraries (test-unit-interface INTERFACE # None.
-)
+target_link_libraries (test-unit-interface INTERFACE)
 
 if (COMMAND xpack_display_target_lists)
   xpack_display_target_lists (test-unit-interface)

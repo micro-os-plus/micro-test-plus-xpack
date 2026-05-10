@@ -67,13 +67,9 @@ target_sources (
             "src/utility.cpp"
 )
 
-target_compile_definitions (
-  micro-os-plus-micro-test-plus-interface INTERFACE # None.
-)
+target_compile_definitions (micro-os-plus-micro-test-plus-interface INTERFACE)
 
-target_compile_options (
-  micro-os-plus-micro-test-plus-interface INTERFACE # None.
-)
+target_compile_options (micro-os-plus-micro-test-plus-interface INTERFACE)
 
 target_link_libraries (
   micro-os-plus-micro-test-plus-interface INTERFACE micro-os-plus::diag-trace

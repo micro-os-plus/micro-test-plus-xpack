@@ -21,38 +21,33 @@
 
 # -----------------------------------------------------------------------------
 
-message(VERBOSE "Processing 'tests/sources/empty-test'...")
+message (VERBOSE "Processing 'tests/sources/empty-test'...")
 
 # -----------------------------------------------------------------------------
 # The test library definitions.
-add_library(test-empty-interface INTERFACE EXCLUDE_FROM_ALL)
+add_library (test-empty-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_include_directories(test-empty-interface INTERFACE # None.
-)
+target_include_directories (test-empty-interface INTERFACE)
 
-target_sources(test-empty-interface INTERFACE src/main.cpp)
+target_sources (test-empty-interface INTERFACE src/main.cpp)
 
-target_compile_definitions(test-empty-interface INTERFACE # None.
-)
+target_compile_definitions (test-empty-interface INTERFACE)
 
-target_compile_options(test-empty-interface INTERFACE # None.
-)
+target_compile_options (test-empty-interface INTERFACE)
 
-target_link_options(test-empty-interface INTERFACE # None.
-)
+target_link_options (test-empty-interface INTERFACE)
 
-target_link_libraries(test-empty-interface INTERFACE # None.
-)
+target_link_libraries (test-empty-interface INTERFACE)
 
-if(COMMAND xpack_display_target_lists)
-  xpack_display_target_lists(test-empty-interface)
-endif()
+if (COMMAND xpack_display_target_lists)
+  xpack_display_target_lists (test-empty-interface)
+endif ()
 
 # -----------------------------------------------------------------------------
 # Aliases.
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
-add_library(test::empty ALIAS test-empty-interface)
-message(VERBOSE "> test::empty -> test-empty-interface")
+add_library (test::empty ALIAS test-empty-interface)
+message (VERBOSE "> test::empty -> test-empty-interface")
 
 # -----------------------------------------------------------------------------
