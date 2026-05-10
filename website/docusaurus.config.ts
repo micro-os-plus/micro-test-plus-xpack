@@ -30,7 +30,7 @@ const actualBaseUrl = process.env.DOCUSAURUS_BASEURL ??
 const config: Config = {
   title: 'µTest++ Testing Framework' +
     ((process.env.DOCUSAURUS_IS_PREVIEW === 'true') ? ' (preview)' : ''),
-  tagline: 'A lightweight, macro-free C++ testing framework with TAP output for embedded projects',
+  tagline: 'A lightweight, macro-free C++ testing framework for embedded projects, with TAP output',
 
   // Explicitly set in headTags.
   // favicon: '/img/favicon.ico',
