@@ -53,6 +53,7 @@
 
 #include <functional>
 #include <memory>
+#include <string>
 
 #include "timings.h"
 #include "test.h"
@@ -110,9 +111,20 @@ namespace micro_os_plus::micro_test_plus
   {
   public:
     /**
-     * @brief Default constructor for the runner class.
+     * @brief Constructor for the runner class.
+     *
+     * @par Parameters
+     *   None.
+     */
+    runner (void);
+
+    /**
+     * @brief Deprecated constructor for the runner class.
      *
      * @param [in] top_suite_name The name given to the implicit top suite.
+     * Defaults to an empty string.
+     *
+     * @deprecated Use the anonymous constructor.
      */
     runner (const char* top_suite_name);
 
@@ -148,10 +160,12 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param argc The argument count from main().
      * @param argv The argument vector from main().
+     * @param top_suite_name The name given to the implicit top suite. Defaults
+     * to an empty string.
      * @return Reference to the top-level test suite.
      */
     class suite&
-    initialise (int argc, char* argv[]);
+    initialise (int argc, char* argv[], const char* top_suite_name = "");
 
     /**
      * @brief Returns 0 if all tests were successful, 1 otherwise.
@@ -293,6 +307,11 @@ namespace micro_os_plus::micro_test_plus
      * @brief Timings for this runner.
      */
     detail::timestamps timings_;
+
+    /**
+     * @brief Owned storage for the implicit top-suite name.
+     */
+    std::string top_suite_name_;
   };
 
   // ==========================================================================
@@ -324,9 +343,20 @@ namespace micro_os_plus::micro_test_plus
   {
   public:
     /**
+     * @brief Constructor for the runner class.
+     *
+     * @par Parameters
+     *   None.
+     */
+    static_runner (void);
+
+    /**
      * @brief Constructs the static runner with a top-suite name.
      *
      * @param top_suite_name The name of the implicit top-level suite.
+     * Defaults to an empty string.
+     *
+     * @deprecated Use the anonymous constructor.
      */
     static_runner (const char* top_suite_name);
 

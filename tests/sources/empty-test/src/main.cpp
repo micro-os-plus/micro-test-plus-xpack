@@ -80,8 +80,8 @@ int
 main (int argc, char* argv[])
 {
   {
-    mt::runner tr{ "Empty suite" };
-    tr.initialise (argc, argv);
+    mt::runner tr;
+    tr.initialise (argc, argv, "Empty suite");
 
     int exit_code = tr.exit_code ();
 

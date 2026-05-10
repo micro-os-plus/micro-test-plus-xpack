@@ -36,14 +36,14 @@ using namespace micro_os_plus::micro_test_plus;
 
 // ----------------------------------------------------------------------------
 
-static_runner tr{ "Static top suite" };
+static_runner tr;
 
 local_counts_t local_counts;
 
 int
 main (int argc, char* argv[])
 {
-  auto& ts = tr.initialise (argc, argv);
+  auto& ts = tr.initialise (argc, argv, "Static top suite");
 
   if (tr.reporter ().verbosity () > verbosity::quiet)
     {

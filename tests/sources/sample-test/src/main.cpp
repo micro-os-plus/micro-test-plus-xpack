@@ -93,6 +93,7 @@ exercise_throw (bool mustThrow)
 
 // ----------------------------------------------------------------------------
 
+// Test the deprecated constructor.
 static mt::static_runner tr{ "Sample" };
 
 int

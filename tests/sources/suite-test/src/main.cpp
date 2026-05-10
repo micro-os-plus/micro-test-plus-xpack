@@ -62,7 +62,8 @@ suite_function (mt::suite& t)
 
 // ----------------------------------------------------------------------------
 
-mt::static_runner sr{ "Static top suite" };
+// Test if initialise() overrides this.
+mt::static_runner sr{ "Overriden" };
 
 int
 main (int argc, char* argv[])
@@ -72,8 +73,8 @@ main (int argc, char* argv[])
   // --------------------------------------------------------------------------
 
   {
-    mt::runner lr{ "Local suite" };
-    auto& ts = lr.initialise (argc, argv);
+    mt::runner lr;
+    auto& ts = lr.initialise (argc, argv, "Local suite");
 
     ts.test ("Check various conditions 1.1", [] (auto& t)
       {
@@ -100,7 +101,8 @@ main (int argc, char* argv[])
   // --------------------------------------------------------------------------
 
   {
-    auto& ts = sr.initialise (argc, argv);
+    // Should override the name given in the runner constructor.
+    auto& ts = sr.initialise (argc, argv, "Static top suite");
     ts.test ("Check various conditions 2.1", [] (auto& t)
       {
         t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";

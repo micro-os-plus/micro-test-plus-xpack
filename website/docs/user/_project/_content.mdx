@@ -67,10 +67,10 @@ int
 main(int argc, char* argv[])
 {
   // Create a local instance of the runner. Name the top suite.
-  mt::runner tr{ "Minimal" };
+  mt::runner tr;
 
   // Initialise the runner and get a reference to the top suite.
-  auto& ts = tr.initialise(argc, argv);
+  auto& ts = tr.initialise(argc, argv, "Minimal");
 
   // Perform a simple test, with a single expectation.
   ts.test ("Check truth", [] (auto& t) {
@@ -124,8 +124,8 @@ compute_answer()
 int
 main(int argc, char* argv[])
 {
-  mt::runner tr{ "The Answer" };
-  auto& ts = tr.initialise(argc, argv);
+  mt::runner tr;
+  auto& ts = tr.initialise(argc, argv, "The Answer");
 
   ts.test ("Check answer", [] (auto& t) {
     t.expect (compute_answer() == 42) << "answer is 42";
@@ -201,8 +201,8 @@ compute_answer()
 int
 main(int argc, char* argv[])
 {
-  mt::runner tr{ "The Answer" };
-  auto& ts = tr.initialise(argc, argv);
+  mt::runner tr;
+  auto& ts = tr.initialise(argc, argv, "The Answer");
 
   ts.test ("Check answer with comparator", [] (auto& t) {
     t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
@@ -303,19 +303,17 @@ The test framework is implemented as a runner object, which must be instantiated
 The runner object must be instantiated by the application:
 
 ```cpp
-mt::runner tr{ "Main" };
+mt::runner tr;
 ```
-
-The string is the name of the top default suite.
 
 For simple tests, the runner can be a local stack-allocated object in `main()`.
 
 #### Initialisation
 
-After instantiation, the runner **must** be initialised, usually by passing the main arguments:
+After instantiation, the runner **must** be initialised, usually by passing the main arguments and the name of the top default suite:
 
 ```cpp
-auto& ts = tr.initialise(argc, argv);
+auto& ts = tr.initialise(argc, argv, "Main");
 ```
 
 The initialisation method returns the default top suite, which is required later to create test cases.
@@ -622,12 +620,12 @@ The main program looks like this:
 
 namespace mt = micro_os_plus::micro_test_plus;
 
-mt::static_runner sr{ "Top suite" };
+mt::static_runner sr;
 
 int
 main (int argc, char* argv[])
 {
-  auto& ts = sr.initialise (argc, argv);
+  auto& ts = sr.initialise (argc, argv, "Top suite");
 
   // ... possible top suite tests ...
 
@@ -678,9 +676,9 @@ suite_function (mt::suite& ts);
 int
 main(int argc, char* argv[])
 {
-  mt::runner tr{ "Minimal" };
+  mt::runner tr;
 
-  auto& ts = tr.initialise(argc, argv);
+  auto& ts = tr.initialise(argc, argv, "Minimal");
 
   ts.test ("Check truth", [] (auto& t) {
     t.expect (true);

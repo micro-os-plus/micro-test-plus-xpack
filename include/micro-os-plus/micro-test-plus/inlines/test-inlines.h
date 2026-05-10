@@ -483,6 +483,21 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
+   * Sets the name of the top-level suite.
+   *
+   * Used internally by the runner to set the name of the top suite after
+   * initialisation.
+   */
+  inline void
+  top_suite::name (const char* new_name) noexcept
+  {
+    name_ = new_name;
+  }
+
+  // ==========================================================================
+
+  /**
+   * @details
    * Delegates to `runnable`, which binds the callable with
    * its arguments. After construction, the suite is registered with the
    * static test runner.

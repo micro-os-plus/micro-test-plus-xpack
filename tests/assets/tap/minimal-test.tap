@@ -1,13 +1,13 @@
 # Running: minimal-test one two --reporter tap --output-file minimal-test.tap
 # Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG, with MICRO_OS_PLUS_TRACE
 TAP version 14
-# Subtest: Minimal
+# Subtest: minimal-test
     # Subtest: Check various conditions
         ok 1 - answer is 42
         ok 2 - condition is true
         1..2
     ok 1 - Check various conditions # { passed, 2 checks }
     1..1
-ok 1 - Minimal # { passed, 2 checks in 1 test case, time: 0.069 ms }
+ok 1 - minimal-test # { passed, 2 checks in 1 test case, time: 0.069 ms }
 1..1
 # { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: 0.147 ms }

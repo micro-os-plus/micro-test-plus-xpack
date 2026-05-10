@@ -1,10 +1,10 @@
 Running: minimal-test one two --reporter human --output-file minimal-test.txt
 Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG, with MICRO_OS_PLUS_TRACE
 µTest++ human report
-• Minimal
+• minimal-test
     • Check various conditions
         ✓ answer is 42
         ✓ condition is true
     ✓ Check various conditions - passed (2 checks)
-✓ Minimal - passed (2 checks in 1 test case), time: 0.045 ms
+✓ minimal-test - passed (2 checks in 1 test case), time: 0.045 ms
 ✓ Total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: 0.095 ms

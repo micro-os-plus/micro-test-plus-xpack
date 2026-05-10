@@ -39,6 +39,7 @@
 // ----------------------------------------------------------------------------
 
 #include <algorithm>
+#include <string>
 
 #if defined(MICRO_OS_PLUS_INCLUDE_CONFIG_H)
 #include <micro-os-plus/config.h>
@@ -49,6 +50,7 @@
 #endif // MICRO_OS_PLUS_TRACE
 
 #include "micro-os-plus/micro-test-plus/runner.h"
+#include "micro-os-plus/micro-test-plus/utility.h"
 #include "micro-os-plus/micro-test-plus/reporter-tap.h"
 #include "micro-os-plus/micro-test-plus/reporter-human.h"
 
@@ -102,6 +104,29 @@ namespace micro_os_plus::micro_test_plus
    * its top suite (`top_suite_`). If tracing is enabled, it outputs the
    * function signature for diagnostic purposes.
    */
+  runner::runner (void) : test_node{ "runner" }, top_suite_{ "", *this }
+  {
+#if defined(MICRO_OS_PLUS_TRACE) \
+    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
+#endif
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name ());
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
+  }
+
+  /**
+   * @details
+   * The constructor initialises a new `runner` instance together with
+   * its top suite (`top_suite_`). If tracing is enabled, it outputs the
+   * function signature for diagnostic purposes.
+   */
   runner::runner (const char* top_suite_name)
       : test_node{ "runner" }, top_suite_{ top_suite_name, *this }
   {
@@ -146,9 +171,15 @@ namespace micro_os_plus::micro_test_plus
    * Captures command-line arguments, selects the reporter implementation
    * (`human` or `tap`), starts session timing, and emits the initial
    * reporter notifications for the session and top suite.
+   *
+   * If the top suite name is not provided, it attempts to derive a name from
+   * `argv[0]` or defaults to "default suite".
+   *
+   * If tracing is enabled, the command-line arguments are
+   * also logged for diagnostic purposes.
    */
   suite&
-  runner::initialise (int argc, char* argv[])
+  runner::initialise (int argc, char* argv[], const char* top_suite_name)
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
     && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
@@ -169,6 +200,38 @@ namespace micro_os_plus::micro_test_plus
     trace::puts ("]");
 #endif // defined(MICRO_OS_PLUS_DEBUG)
 #endif // !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
+
+    if (strlen (top_suite_name) > 0)
+      {
+        // If provided by this call, use it, possibly override the
+        // deprecated constructor.
+        top_suite_name_ = top_suite_name;
+        top_suite_.name (top_suite_name_.c_str ());
+      }
+    else if (strlen (top_suite_.name ()) == 0)
+      {
+        // If not provided by the constructor or by this call, try to extract a
+        // name from argv[0], which is commonly the executable name. If that
+        // fails, use a default name.
+        if (argc > 0 && argv != nullptr && argv[0] != nullptr)
+          {
+            std::string_view top_suite_name_view{ utility::extract_file_name (
+                argv[0]) };
+
+            const auto dot_pos = top_suite_name_view.rfind ('.');
+            if (dot_pos != std::string_view::npos)
+              {
+                top_suite_name_view = top_suite_name_view.substr (0, dot_pos);
+              }
+
+            top_suite_name_ = top_suite_name_view;
+          }
+        else
+          {
+            top_suite_name_ = "default suite";
+          }
+        top_suite_.name (top_suite_name_.c_str ());
+      }
 
     std::vector<std::string_view> argvs (argv, argv + argc);
 
@@ -410,6 +473,29 @@ namespace micro_os_plus::micro_test_plus
   }
 
   // ==========================================================================
+
+  /**
+   * @details
+   * Delegates construction to the `runner` base class.
+   * If tracing is enabled, the function signature
+   * and suite name are output for diagnostic purposes.
+   */
+  static_runner::static_runner (void) : runner{}
+  {
+#if defined(MICRO_OS_PLUS_TRACE) \
+    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
+#endif
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name ());
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
+#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
+  }
 
   /**
    * @details

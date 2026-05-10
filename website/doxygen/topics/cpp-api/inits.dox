@@ -19,8 +19,8 @@ namespace mt = micro_os_plus::micro_test_plus;
 int
 main (int argc, char* argv[])
 {
-  mt::runner tr{ "Minimal" };
-  auto& ts = tr.initialise (argc, argv);
+  mt::runner tr;
+  auto& ts = tr.initialise (argc, argv, "Minimal");
 
   ts.test ("Check truth", [] (auto& t) {
     t.expect (true);
@@ -44,3 +44,7 @@ ok 1 - Minimal # { passed, 1 check in 1 test case, time: 0.065 ms }
 1..1
 # { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.136 ms }
 @endcode
+
+The name passed to the initialiser is optional; if missing, it will attempt to
+extract a name from argv[0], which is commonly the executable name. If that
+fails, a default name is used.

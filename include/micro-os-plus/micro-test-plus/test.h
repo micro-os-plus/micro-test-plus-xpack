@@ -827,6 +827,11 @@ namespace micro_os_plus::micro_test_plus
   class top_suite : public suite
   {
   public:
+    // Expose the accessor for the suite name from the base test_node class,
+    // since the top_suite may need to change its name after construction, and
+    // the base class provides the necessary interface for that purpose.
+    using detail::test_node::name;
+
     /**
      * @brief Constructs the top-level suite with a name and runner reference.
      *
@@ -861,6 +866,14 @@ namespace micro_os_plus::micro_test_plus
      * @brief Virtual destructor.
      */
     virtual ~top_suite () override;
+
+    /**
+     * @brief Sets the name of the top-level suite.
+     *
+     * @param [in] new_name The new name for the top-level suite.
+     */
+    void
+    name (const char* new_name) noexcept;
   };
 
   // ==========================================================================
