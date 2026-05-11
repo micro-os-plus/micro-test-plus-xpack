@@ -24,7 +24,11 @@
 # https://cmake.org/cmake/help/v3.20/
 cmake_minimum_required (VERSION 3.20)
 
-project (micro-os-plus-micro-test-plus DESCRIPTION "µTest++")
+project (
+  micro-os-plus-micro-test-plus
+  DESCRIPTION "µTest++"
+  LANGUAGES CXX
+)
 
 # To access the optional functions, include the
 # `cmake/micro-os-plus-build-helper.cmake` file from the
@@ -41,7 +45,10 @@ endif ()
 
 # -----------------------------------------------------------------------------
 
-# The project library definitions.
+# The interface library is the main target of this package, which consumers
+# (like embedded applications) link against. It defines the public API and
+# properties of the library, and compiles the sources that are part of the
+# public API.
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#normal-libraries
 # Visibility keywords: PRIVATE applies to the target itself; INTERFACE passes
