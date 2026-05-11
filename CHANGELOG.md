@@ -8,6 +8,7 @@ and close existing issues and pull requests.
 
 ## 2026-05-12
 
+* v4.1.1 published on npmjs.com
 * v4.1.1 prepared
 * 2442265 Revert "fix clang16 linux build"
 * dac3a9e fix clang16 linux build
