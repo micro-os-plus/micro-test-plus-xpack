@@ -1,6 +1,6 @@
 {
   "name": "@micro-os-plus/micro-test-plus",
-  "version": "4.1.0-pre",
+  "version": "4.1.0",
   "description": "A source code library with µTest++, a lightweight testing framework for embedded platforms",
   "repository": {
     "type": "git",
