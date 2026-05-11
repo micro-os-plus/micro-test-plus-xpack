@@ -16,7 +16,7 @@ For information on how to install and use this project, please refer to the
 
 The source code of the current release is available on
 GitHub as [micro-os-plus/micro-test-plus-xpack](https://github.com/micro-os-plus/micro-test-plus-xpack),
-the [v4.1.0](https://github.com/micro-os-plus/micro-test-plus-xpack/tree/v4.1.0) tree.
+the [v4.1.1](https://github.com/micro-os-plus/micro-test-plus-xpack/tree/v4.1.1) tree.
 
 ## License
 

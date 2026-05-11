@@ -6,8 +6,20 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2026-05-12
+
+* v4.1.1 prepared
+* 2442265 Revert "fix clang16 linux build"
+* dac3a9e fix clang16 linux build
+
 ## 2026-05-11
 
+* d070711 fix clang16 linux build
+* 1817181 website update
+* 3c10916 website posts fixes
+* bb42b96 website: blog post release 4.1.0 published
+* a836b29 4.1.0
+* 45b61e6 CHANGELOG: publish npm v4.1.0
 * v4.1.0 published on npmjs.com
 * 353d2a1 CmakeLists.txt add CXX
 * 68c840b CMake cosmetics in comments
