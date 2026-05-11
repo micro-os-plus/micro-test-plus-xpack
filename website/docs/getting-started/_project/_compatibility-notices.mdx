@@ -1,6 +1,12 @@
 {/* ------------------------------------------------------------------------ */}
 
-### v4.x (2026-04-20)
+### v4.1 (2026-05-11)
+
+Passing the top suite name via the runner constructor is deprecated in
+favour of passing it via the `initialise()` function. The name is
+optional; the default is the program name, derived from `argv[0]`.
+
+### v4.0 (2026-04-20)
 
 Major rework introducing explicit objects for test suites and test cases
 (subtests), using a `ts.test()` and `t.expect()` mechanism inspired by
@@ -9,26 +15,26 @@ The TAP reporter is now the default.
 
 ### v3.3 (2026-03-22)
 
-Support for multiple reporters was added, including a new TAP-compliant 
+Support for multiple reporters was added, including a new TAP-compliant
 reporter.
 
-### v3.x (2022-04-03)
+### v3.0 (2022-04-03)
 
 Significant revision introducing a comprehensive set of comparators, exception
 handling, function templates for test cases, and class templates for test
 suites. Heavily influenced by [Boost UT](https://boost-ext.github.io/ut/).
 
-### v2.3.x (2022-02-19)
+### v2.3.0 (2022-02-19)
 
 The `run_test_case(func, name)` function was deprecated in favour of
 `run_test_case(name, func)`, in preparation for the adoption of variadic
 templates.
 
-### v2.x (2021-03-01)
+### v2.0 (2021-03-01)
 
 The C++ namespace was changed from `os` to `micro_os_plus`.
 
-### v1.x (2021-02-04)
+### v1.0 (2021-02-04)
 
 The initial codebase, noted for its simplicity and inspired by
 [node-tap](https://node-tap.org), was extracted from the µOS++ monorepo.

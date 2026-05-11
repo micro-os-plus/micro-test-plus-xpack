@@ -1,14 +1,14 @@
 ---
-title: µTest++ Testing Framework v3.3.0 released
-seo_title: Version 3.3.0 released
-description: Version 3.3.0 is a new release; it adds a TAP reporter
+title: µTest++ Testing Framework v4.1.0 released
+seo_title: Version 4.1.0 released
+description: Version 4.1.0 is a new minor release
 keywords:
   - micro-os-plus
   - xpack
   - micro-test-plus
   - release
 
-date: 2026-03-22 22:50:18 +0200
+date: 2026-05-11 21:31:12 +0300
 
 authors: ilg-ul
 
@@ -18,9 +18,9 @@ tags:
 
 # ----- Custom properties -----------------------------------------------------
 
-version: "3.3.0"
+version: "4.1.0"
 
-release_tag_url: "https://github.com/micro-os-plus/micro-test-plus-xpack/tree/v3.3.0"
+release_tag_url: "https://github.com/micro-os-plus/micro-test-plus-xpack/tree/v4.1.0"
 ---
 
 import { PageMetadata } from "@docusaurus/theme-common";
@@ -31,7 +31,7 @@ import Link from "@docusaurus/Link";
 import CommonPrerequisites from "./_common/_prerequisites.mdx";
 import CommonDownloadAnalytics from "./_common/_download-analytics.mdx";
 
-Version **3.3.0** is a new release, adding a TAP reporter.
+Version **4.1.0** is a new minor release, introducing a cleaner initialisation and several internal improvements.
 
 <!-- truncate -->
 
@@ -61,22 +61,7 @@ Comprehensive instructions are available in the [Install Guide](/docs/install/).
 
 ## Major changes
 
-TAP stands for [Test Anything Protocol](https://testanything.org). It is a simple text-based interface between testing modules in a test harness, decoupling the reporting of errors from the presentation of the results.
-
-The output is also relatively easy to read by humans; it looks like:
-
-```tap
-TAP version 14
-# Subtest: Minimal
-    # Subtest: Check truth
-        ok 1 - true
-        1..1
-    ok 1 - Check truth # { test case passed, 1 check }
-    1..1
-ok 1 - Minimal # { test suite passed, 1 check in 1 test case, time: 0.007 ms }
-1..1
-# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.030 ms }
-```
+- None.
 
 ## Bug fixes
 
@@ -84,8 +69,17 @@ ok 1 - Minimal # { test suite passed, 1 check in 1 test case, time: 0.007 ms }
 
 ## Enhancements
 
-- [[#9](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/9)]: Add a TAP reporter
-- [[#10](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/10)]: Add durations to test suites
+- [[#31](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/31)]:
+  Move the top default suite name from the runner constructor to the
+  `initialise()` functions, and also accept as default the program name.
+- [[#27](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/27)]:
+  Split definitions from declarations.
+- [[#28](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/28)]:
+  Reorganise inlines.
+- [[#29](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/29)]:
+  Extract expression formatting code from reporter.
+- [[#30](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/30)]:
+  Move internal classes to the `details` namespace.
 
 ## Known issues
 
