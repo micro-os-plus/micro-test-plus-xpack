@@ -8,7 +8,12 @@ and close existing issues and pull requests.
 
 ## 2026-05-11
 
-* v4.1.0 prepared
+* v4.1.0 published on npmjs.com
+* 353d2a1 CmakeLists.txt add CXX
+* 68c840b CMake cosmetics in comments
+* 6ba1ac4 CMakeLists.txt duplicate fix
+* 4ea4a84 website doxygen update
+* 5810287 prepare v4.1.0
 * 496bf98 re-generate website commons
 * 4f3a2b9 use local cmake-format & reformat
 
