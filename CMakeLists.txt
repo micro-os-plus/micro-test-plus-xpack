@@ -82,35 +82,80 @@ endif ()
 # -----------------------------------------------------------------------------
 
 # Optional OBJECT library: sources are compiled once rather than per consumer.
-# Inherits include directories, compile definitions, and compiler options from
-# the interface library via PRIVATE linkage, which avoids propagating the
-# interface library's INTERFACE sources to consumers of the object library. The
-# include directories are re-exported explicitly so that consumers can find the
-# headers.
+# Include directories are managed explicitly instead of using PRIVATE linkage to
+# the interface library. PRIVATE linkage would cause diag-trace's
+# INTERFACE_SOURCES (trace.cpp) to be compiled into this OBJECT library via
+# transitive propagation, which conflicts with the separate diag-trace
+# compilation in each test executable. Consumers of this OBJECT library are
+# expected to link separately to micro-os-plus::diag-trace and to the
+# platform-specific trace backend.
 add_library (micro-os-plus-micro-test-plus-objects OBJECT)
 
-get_target_property (
+get_property (
   micro-os-plus-micro-test-plus-includes
-  micro-os-plus-micro-test-plus-interface INTERFACE_INCLUDE_DIRECTORIES
+  TARGET micro-os-plus-micro-test-plus-interface
+  PROPERTY INTERFACE_INCLUDE_DIRECTORIES
 )
+# Use PUBLIC so that the include directories are available both for the OBJECT
+# library's own sources and for consumers of the library.
 target_include_directories (
   micro-os-plus-micro-test-plus-objects
-  INTERFACE ${micro-os-plus-micro-test-plus-includes}
+  PUBLIC ${micro-os-plus-micro-test-plus-includes}
 )
 
-get_target_property (
-  micro-os-plus-micro-test-plus-sources micro-os-plus-micro-test-plus-interface
-  INTERFACE_SOURCES
+get_property (
+  micro-os-plus-micro-test-plus-sources
+  TARGET micro-os-plus-micro-test-plus-interface
+  PROPERTY INTERFACE_SOURCES
 )
+# Use PRIVATE to avoid propagating the sources to consumers of the OBJECT
+# library, which would cause duplicate symbol errors at link time.
 target_sources (
   micro-os-plus-micro-test-plus-objects
   PRIVATE ${micro-os-plus-micro-test-plus-sources}
 )
 
-target_link_libraries (
-  micro-os-plus-micro-test-plus-objects
-  PRIVATE micro-os-plus-micro-test-plus-interface
+# The compile options and definitions are propagated from the interface library
+# via get_property, to avoid the OBJECT library inheriting diag-trace's
+# INTERFACE_SOURCES (which would cause duplicate symbol errors at link time when
+# consumers also compile diag-trace).
+get_property (
+  micro-os-plus-micro-test-plus-compile-definitions
+  TARGET micro-os-plus-micro-test-plus-interface
+  PROPERTY INTERFACE_COMPILE_DEFINITIONS
 )
+target_compile_definitions (
+  micro-os-plus-micro-test-plus-objects
+  PRIVATE ${micro-os-plus-micro-test-plus-compile-definitions}
+)
+
+get_property (
+  micro-os-plus-micro-test-plus-compile-options
+  TARGET micro-os-plus-micro-test-plus-interface
+  PROPERTY INTERFACE_COMPILE_OPTIONS
+)
+# Use PRIVATE to avoid propagating the compile options to consumers of the
+# OBJECT library, which may cause conflicts with consumer-specific compile
+# options.
+target_compile_options (
+  micro-os-plus-micro-test-plus-objects
+  PRIVATE ${micro-os-plus-micro-test-plus-compile-options}
+)
+
+# Add the diag-trace include path in Debug without linking the diag-trace
+# target: linking it would add trace.cpp as an INTERFACE_SOURCE and compile it
+# into the OBJECT library, causing duplicate symbols at link time.
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+  get_property (
+    micro-os-plus-diag-trace-includes
+    TARGET micro-os-plus::diag-trace
+    PROPERTY INTERFACE_INCLUDE_DIRECTORIES
+  )
+  target_include_directories (
+    micro-os-plus-micro-test-plus-objects
+    PRIVATE ${micro-os-plus-diag-trace-includes}
+  )
+endif ()
 
 if (COMMAND xpack_display_target_lists)
   xpack_display_target_lists (micro-os-plus-micro-test-plus-objects)
