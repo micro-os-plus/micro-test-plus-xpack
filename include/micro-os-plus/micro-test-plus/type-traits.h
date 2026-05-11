@@ -752,20 +752,46 @@ namespace micro_os_plus::micro_test_plus
        */
       T epsilon = T{};
 
+      // Note: These constructor bodies are defined inline rather than
+      // out-of-line in type-traits-inlines.h. Clang 16 has a deficiency
+      // where it fails to match out-of-line constructor definitions to a
+      // `requires`-constrained partial specialisation: it either rejects
+      // the `requires` clause on the definition as differing from the
+      // declaration, or — when the clause is omitted — incorrectly matches
+      // the definition against the primary template instead of this
+      // specialisation. Keeping the bodies here avoids both failure modes.
+
       /**
        * @brief Constructs a floating-point value with a specified precision.
        *
        * @param _value The floating-point value to be stored.
        * @param precision The epsilon value to be used for comparisons.
+       *
+       * @details
+       * Delegates to `value_base_<T>{ _value }` and stores the supplied
+       * precision in `epsilon`.
        */
-      constexpr value (const T& _value, const T precision) noexcept;
+      constexpr value (const T& _value, const T precision) noexcept
+          : value_base_<T>{ _value }, epsilon{ precision }
+      {
+      }
 
       /**
        * @brief Constructs a floating point value with default precision.
        *
        * @param val The floating point value to be stored.
+       *
+       * @details
+       * The epsilon is computed as 1 divided by 10 raised to the number of
+       * decimal digits in the value.
        */
-      constexpr value (const T& val);
+      constexpr value (const T& val)
+          : value{ val,
+                   T (1)
+                       / math::pow (T (10),
+                                    math::den_size<unsigned long long> (val)) }
+      {
+      }
     };
 
     // ------------------------------------------------------------------------

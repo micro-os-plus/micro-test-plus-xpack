@@ -182,35 +182,6 @@ namespace micro_os_plus::micro_test_plus
     }
 
     // ------------------------------------------------------------------------
-
-    /**
-     * @details
-     * Delegates to `value_base_<T>{ _value }` and stores the supplied
-     * precision in `epsilon`.
-     */
-    template <class T>
-      requires is_floating_point<T>
-    constexpr value<T>::value (const T& _value, const T precision) noexcept
-        : value_base_<T>{ _value }, epsilon{ precision }
-    {
-    }
-
-    /**
-     * @details
-     * The epsilon is computed as 1 divided by 10 raised to the number of
-     * decimal digits in the value.
-     */
-    template <class T>
-      requires is_floating_point<T>
-    constexpr value<T>::value (const T& val)
-        : value{ val,
-                 T (1)
-                     / math::pow (T (10),
-                                  math::den_size<unsigned long long> (val)) }
-    {
-    }
-
-    // ------------------------------------------------------------------------
   } // namespace type_traits
 
   // --------------------------------------------------------------------------
