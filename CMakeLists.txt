@@ -44,8 +44,8 @@ endif ()
 # The project library definitions.
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#normal-libraries
-# PRIVATE: build definitions, used internally INTERFACE: usage definitions,
-# passed up to targets linking to it PUBLIC: both
+# Visibility keywords: PRIVATE applies to the target itself; INTERFACE passes
+# properties up to targets that link against it; PUBLIC does both.
 add_library (micro-os-plus-micro-test-plus-interface INTERFACE)
 
 target_include_directories (
@@ -81,7 +81,10 @@ endif ()
 
 # -----------------------------------------------------------------------------
 
-# Optional OBJECT library: sources are compiled once rather than per consumer.
+# Optional OBJECT library: compiles the library sources once and shares the
+# resulting object files across all test executables, rather than recompiling
+# them per consumer.
+#
 # Include directories are managed explicitly instead of using PRIVATE linkage to
 # the interface library. PRIVATE linkage would cause diag-trace's
 # INTERFACE_SOURCES (trace.cpp) to be compiled into this OBJECT library via
@@ -115,15 +118,13 @@ target_sources (
   PRIVATE ${micro-os-plus-micro-test-plus-sources}
 )
 
-# The compile options and definitions are propagated from the interface library
-# via get_property, to avoid the OBJECT library inheriting diag-trace's
-# INTERFACE_SOURCES (which would cause duplicate symbol errors at link time when
-# consumers also compile diag-trace).
 get_property (
   micro-os-plus-micro-test-plus-compile-definitions
   TARGET micro-os-plus-micro-test-plus-interface
   PROPERTY INTERFACE_COMPILE_DEFINITIONS
 )
+# Use PRIVATE to avoid propagating compile definitions to consumers of the
+# OBJECT library.
 target_compile_definitions (
   micro-os-plus-micro-test-plus-objects
   PRIVATE ${micro-os-plus-micro-test-plus-compile-definitions}
