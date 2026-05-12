@@ -20,6 +20,7 @@ cmake_minimum_required (VERSION 3.20)
 
 project (micro-os-plus-micro-test-plus-tests
          DESCRIPTION "µTest++ Testing Framework tests"
+         LANGUAGES CXX
 )
 
 # -----------------------------------------------------------------------------

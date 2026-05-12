@@ -832,6 +832,7 @@
       },
       "native-cmake-sys-debug": {
         "inherits": [
+          "short-win-paths-properties",
           "cmake-actions",
           "native-actions",
           "native-dependencies"
@@ -841,7 +842,8 @@
           "platformName": "native"
         },
         "actions": {
-          "prepare": "{{ properties.commandCMakePrepare }}"
+          "prepare": "{{ properties.commandCMakePrepare }}",
+          "shortConfigurationName": "ncsd"
         }
       },
       "native-cmake-sys-release": {
@@ -849,11 +851,13 @@
           "native-cmake-sys-debug"
         ],
         "properties": {
-          "buildType": "Release"
+          "buildType": "Release",
+          "shortConfigurationName": "ncsr"
         }
       },
       "native-meson-sys-debug": {
         "inherits": [
+          "short-win-paths-properties",
           "meson-native-actions",
           "native-actions",
           "native-dependencies"
@@ -863,7 +867,8 @@
           "platformName": "native"
         },
         "actions": {
-          "prepare": "{{ properties.commandMesonPrepare }}"
+          "prepare": "{{ properties.commandMesonPrepare }}",
+          "shortConfigurationName": "nmsd"
         }
       },
       "native-meson-sys-release": {
@@ -871,12 +876,14 @@
           "native-meson-sys-debug"
         ],
         "properties": {
-          "buildType": "release"
+          "buildType": "release",
+          "shortConfigurationName": "nmsr"
         }
       },
       "native-cmake-gcc": {
         "hidden": true,
         "inherits": [
+          "short-win-paths-properties",
           "cmake-actions",
           "native-actions",
           "native-dependencies"
@@ -890,6 +897,7 @@
       "native-meson-gcc": {
         "hidden": true,
         "inherits": [
+          "short-win-paths-properties",
           "meson-native-actions",
           "native-actions",
           "native-dependencies"
@@ -914,7 +922,10 @@
           "inherits": [
             "native-{{ matrix.builder }}-gcc",
             "native-gcc{{ matrix.native-gcc-version }}-dependencies"
-          ]
+          ],
+          "properties": {
+            "shortConfigurationName": "n{{ matrix.builder | slice:0 | downcase }}g{{ matrix.native-gcc-version | slice:0 | downcase }}d"
+          }
         }
       },
       "native-{{ matrix.builder }}-gcc{{ matrix.native-gcc-version }}-release": {
@@ -932,13 +943,15 @@
             "native-{{ matrix.builder }}-gcc{{ matrix.native-gcc-version }}-debug"
           ],
           "properties": {
-            "buildType": "{% case matrix.builder %}{% when 'cmake' %}Release{% when 'meson' %}release{% else %}unknown{% endcase %}"
+            "buildType": "{% case matrix.builder %}{% when 'cmake' %}Release{% when 'meson' %}release{% else %}unknown{% endcase %}",
+            "shortConfigurationName": "n{{ matrix.builder | slice:0 | downcase }}g{{ matrix.native-gcc-version | slice:0 | downcase }}r"
           }
         }
       },
       "native-cmake-clang": {
         "hidden": true,
         "inherits": [
+          "short-win-paths-properties",
           "cmake-actions",
           "native-actions",
           "native-dependencies"
@@ -952,6 +965,7 @@
       "native-meson-clang": {
         "hidden": true,
         "inherits": [
+          "short-win-paths-properties",
           "meson-native-actions",
           "native-actions",
           "native-dependencies"
@@ -976,7 +990,10 @@
           "inherits": [
             "native-{{ matrix.builder }}-clang",
             "native-clang{{ matrix.native-clang-version }}-dependencies"
-          ]
+          ],
+          "properties": {
+            "shortConfigurationName": "n{{ matrix.builder | slice:0 | downcase }}c{{ matrix.native-clang-version | slice:0 | downcase }}d"
+          }
         }
       },
       "native-{{ matrix.builder }}-clang{{ matrix.native-clang-version }}-release": {
@@ -994,7 +1011,8 @@
             "native-{{ matrix.builder }}-clang{{ matrix.native-clang-version }}-debug"
           ],
           "properties": {
-            "buildType": "{% case matrix.builder %}{% when 'cmake' %}Release{% when 'meson' %}release{% else %}unknown{% endcase %}"
+            "buildType": "{% case matrix.builder %}{% when 'cmake' %}Release{% when 'meson' %}release{% else %}unknown{% endcase %}",
+            "shortConfigurationName": "n{{ matrix.builder | slice:0 | downcase }}c{{ matrix.native-clang-version | slice:0 | downcase }}r"
           }
         }
       },
@@ -1062,7 +1080,7 @@
             "cross-arm-none-eabi-gcc-dependencies"
           ],
           "properties": {
-            "shortConfigurationName": "m{{ matrix.qemu-cortexm-variant }}c{{ matrix.arm-none-eabi-gcc-version }}d"
+            "shortConfigurationName": "q{{ matrix.qemu-cortexm-variant }}cg{{ matrix.arm-none-eabi-gcc-version }}d"
           }
         }
       },
@@ -1082,7 +1100,7 @@
           ],
           "properties": {
             "buildType": "MinSizeRel",
-            "shortConfigurationName": "m{{ matrix.qemu-cortexm-variant }}c{{ matrix.arm-none-eabi-gcc-version }}r"
+            "shortConfigurationName": "q{{ matrix.qemu-cortexm-variant }}cg{{ matrix.arm-none-eabi-gcc-version }}r"
           }
         }
       },
@@ -1102,7 +1120,7 @@
             "cross-arm-none-eabi-gcc-dependencies"
           ],
           "properties": {
-            "shortConfigurationName": "m{{ matrix.qemu-cortexm-variant }}m{{ matrix.arm-none-eabi-gcc-version }}d"
+            "shortConfigurationName": "q{{ matrix.qemu-cortexm-variant }}mg{{ matrix.arm-none-eabi-gcc-version }}d"
           }
         }
       },
@@ -1122,7 +1140,7 @@
           ],
           "properties": {
             "buildType": "minsize",
-            "shortConfigurationName": "m{{ matrix.qemu-cortexm-variant }}m{{ matrix.arm-none-eabi-gcc-version }}r"
+            "shortConfigurationName": "q{{ matrix.qemu-cortexm-variant }}mg{{ matrix.arm-none-eabi-gcc-version }}r"
           }
         }
       },
@@ -1188,7 +1206,7 @@
             "cross-arm-none-eabi-gcc-dependencies"
           ],
           "properties": {
-            "shortConfigurationName": "a{{ matrix.qemu-aarch32-variant }}c{{ matrix.arm-none-eabi-gcc-version }}d"
+            "shortConfigurationName": "q{{ matrix.qemu-aarch32-variant }}cg{{ matrix.arm-none-eabi-gcc-version }}d"
           }
         }
       },
@@ -1208,7 +1226,7 @@
           ],
           "properties": {
             "buildType": "MinSizeRel",
-            "shortConfigurationName": "a{{ matrix.qemu-aarch32-variant }}c{{ matrix.arm-none-eabi-gcc-version }}r"
+            "shortConfigurationName": "q{{ matrix.qemu-aarch32-variant }}cg{{ matrix.arm-none-eabi-gcc-version }}r"
           }
         }
       },
@@ -1228,7 +1246,7 @@
             "cross-arm-none-eabi-gcc-dependencies"
           ],
           "properties": {
-            "shortConfigurationName": "a{{ matrix.qemu-aarch32-variant }}m{{ matrix.arm-none-eabi-gcc-version }}d"
+            "shortConfigurationName": "q{{ matrix.qemu-aarch32-variant }}mg{{ matrix.arm-none-eabi-gcc-version }}d"
           }
         }
       },
@@ -1248,7 +1266,7 @@
           ],
           "properties": {
             "buildType": "minsize",
-            "shortConfigurationName": "a{{ matrix.qemu-aarch32-variant }}m{{ matrix.arm-none-eabi-gcc-version }}r"
+            "shortConfigurationName": "q{{ matrix.qemu-aarch32-variant }}mg{{ matrix.arm-none-eabi-gcc-version }}r"
           }
         }
       },
@@ -1314,7 +1332,7 @@
             "cross-aarch64-none-elf-gcc-dependencies"
           ],
           "properties": {
-            "shortConfigurationName": "b{{ matrix.qemu-aarch64-variant }}c{{ matrix.aarch64-none-elf-gcc-version }}d"
+            "shortConfigurationName": "q{{ matrix.qemu-aarch64-variant }}cg{{ matrix.aarch64-none-elf-gcc-version }}d"
           }
         }
       },
@@ -1334,7 +1352,7 @@
           ],
           "properties": {
             "buildType": "MinSizeRel",
-            "shortConfigurationName": "b{{ matrix.qemu-aarch64-variant }}c{{ matrix.aarch64-none-elf-gcc-version }}r"
+            "shortConfigurationName": "q{{ matrix.qemu-aarch64-variant }}cg{{ matrix.aarch64-none-elf-gcc-version }}r"
           }
         }
       },
@@ -1354,7 +1372,7 @@
             "cross-aarch64-none-elf-gcc-dependencies"
           ],
           "properties": {
-            "shortConfigurationName": "b{{ matrix.qemu-aarch64-variant }}m{{ matrix.aarch64-none-elf-gcc-version }}d"
+            "shortConfigurationName": "q{{ matrix.qemu-aarch64-variant }}mg{{ matrix.aarch64-none-elf-gcc-version }}d"
           }
         }
       },
@@ -1374,7 +1392,7 @@
           ],
           "properties": {
             "buildType": "minsize",
-            "shortConfigurationName": "b{{ matrix.qemu-aarch64-variant }}m{{ matrix.aarch64-none-elf-gcc-version }}r"
+            "shortConfigurationName": "q{{ matrix.qemu-aarch64-variant }}mg{{ matrix.aarch64-none-elf-gcc-version }}r"
           }
         }
       },
@@ -1440,7 +1458,7 @@
             "cross-riscv-none-elf-gcc-dependencies"
           ],
           "properties": {
-            "shortConfigurationName": "r{{ matrix.qemu-riscv-variant }}c{{ matrix.riscv-none-elf-gcc-version }}d"
+            "shortConfigurationName": "q{{ matrix.qemu-riscv-variant | slice: 0, 4 }}cg{{ matrix.riscv-none-elf-gcc-version }}d"
           }
         }
       },
@@ -1460,7 +1478,7 @@
           ],
           "properties": {
             "buildType": "MinSizeRel",
-            "shortConfigurationName": "r{{ matrix.qemu-riscv-variant }}c{{ matrix.riscv-none-elf-gcc-version }}r"
+            "shortConfigurationName": "q{{ matrix.qemu-riscv-variant | slice: 0, 4 }}cg{{ matrix.riscv-none-elf-gcc-version }}r"
           }
         }
       },
@@ -1480,7 +1498,7 @@
             "cross-riscv-none-elf-gcc-dependencies"
           ],
           "properties": {
-            "shortConfigurationName": "r{{ matrix.qemu-riscv-variant }}m{{ matrix.riscv-none-elf-gcc-version }}d"
+            "shortConfigurationName": "q{{ matrix.qemu-riscv-variant | slice: 0, 4 }}mg{{ matrix.riscv-none-elf-gcc-version }}d"
           }
         }
       },
@@ -1500,7 +1518,7 @@
           ],
           "properties": {
             "buildType": "minsize",
-            "shortConfigurationName": "r{{ matrix.qemu-riscv-variant }}m{{ matrix.riscv-none-elf-gcc-version }}r"
+            "shortConfigurationName": "q{{ matrix.qemu-riscv-variant | slice: 0, 4 }}mg{{ matrix.riscv-none-elf-gcc-version }}r"
           }
         }
       }
