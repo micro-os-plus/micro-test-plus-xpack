@@ -1,0 +1,12 @@
+{
+  "customInstallLabel": "Integration Guide",
+  "customUserTitle": "How to use the µTest++ Testing Framework",
+  "tagline": "A lightweight, macro-free C++ testing framework for embedded projects, with TAP output",
+  "hasCustomGettingStartedSidebar": true,
+  "hasCustomUser": true,
+  "hasDoxygenDocusaurusApi": true,
+  "hasDoxygenReference": true,
+  "isXpmDependency": true,
+  "shareOnTwitter": true,
+  "skipAlgolia": true
+}

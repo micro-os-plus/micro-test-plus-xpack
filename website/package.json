@@ -88,7 +88,7 @@
       "last 5 safari version"
     ]
   },
-  "websiteConfig": {
+  "_websiteConfig": {
     "tagline": "A lightweight, macro-free C++ testing framework for embedded projects, with TAP output",
     "hasDoxygenReference": "true",
     "skipAlgolia": "true",
