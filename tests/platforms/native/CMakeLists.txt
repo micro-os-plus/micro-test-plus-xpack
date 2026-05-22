@@ -51,15 +51,11 @@ if (XPACK_ENABLE_EMPTY_TEST)
                     empty-test-verbose.tap
   )
 
-  add_test (
+  add_compare_files_test (
     NAME "empty-test-verbose-compare"
-    COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
-      "empty-test-verbose.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/empty-test.tap"
-  )
-  set_tests_properties (
-    "empty-test-verbose-compare" PROPERTIES DEPENDS "empty-test-verbose"
+    DEPENDS "empty-test-verbose"
+    FILES "empty-test-verbose.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/empty-test.tap"
   )
 
   # default
@@ -72,15 +68,11 @@ if (XPACK_ENABLE_EMPTY_TEST)
                                             --output-file empty-test-quiet.tap
   )
 
-  add_test (
+  add_compare_files_test (
     NAME "empty-test-quiet-compare"
-    COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
-      "empty-test-quiet.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/empty-test.tap"
-  )
-  set_tests_properties (
-    "empty-test-quiet-compare" PROPERTIES DEPENDS "empty-test-quiet"
+    DEPENDS "empty-test-quiet"
+    FILES "empty-test-quiet.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/empty-test.tap"
   )
 
   # --silent
@@ -89,15 +81,11 @@ if (XPACK_ENABLE_EMPTY_TEST)
                     empty-test-silent.tap
   )
 
-  add_test (
+  add_compare_files_test (
     NAME "empty-test-silent-compare"
-    COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
-      "empty-test-silent.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/empty-test.tap"
-  )
-  set_tests_properties (
-    "empty-test-silent-compare" PROPERTIES DEPENDS "empty-test-silent"
+    DEPENDS "empty-test-silent"
+    FILES "empty-test-silent.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/empty-test.tap"
   )
 
   # ---------------------------------------------------------------------------
@@ -114,16 +102,11 @@ if (XPACK_ENABLE_EMPTY_TEST)
                     empty-test.txt
   )
 
-  add_test (
+  add_compare_files_test (
     NAME "empty-test-reporter-human-compare"
-    COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
-      "empty-test.txt"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/empty-test.txt"
-  )
-  set_tests_properties (
-    "empty-test-reporter-human-compare" PROPERTIES DEPENDS
-                                                   "empty-test-reporter-human"
+    DEPENDS "empty-test-reporter-human"
+    FILES "empty-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/empty-test.txt"
   )
 
   # --quiet
@@ -162,16 +145,11 @@ if (XPACK_ENABLE_MINIMAL_TEST)
                     minimal-test-verbose.tap
   )
 
-  add_test (
+  add_compare_files_test (
     NAME "minimal-test-reporter-tap-verbose-compare"
-    COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
-      "minimal-test-verbose.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/minimal-test.tap"
-  )
-  set_tests_properties (
-    "minimal-test-reporter-tap-verbose-compare"
-    PROPERTIES DEPENDS "minimal-test-reporter-tap-verbose"
+    DEPENDS "minimal-test-reporter-tap-verbose"
+    FILES "minimal-test-verbose.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/minimal-test.tap"
   )
 
   # default
@@ -180,16 +158,11 @@ if (XPACK_ENABLE_MINIMAL_TEST)
                     minimal-test.tap
   )
 
-  add_test (
+  add_compare_files_test (
     NAME "minimal-test-reporter-tap-compare"
-    COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
-      "minimal-test.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/minimal-test.tap"
-  )
-  set_tests_properties (
-    "minimal-test-reporter-tap-compare" PROPERTIES DEPENDS
-                                                   "minimal-test-reporter-tap"
+    DEPENDS "minimal-test-reporter-tap"
+    FILES "minimal-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/minimal-test.tap"
   )
 
   # --quiet
@@ -198,16 +171,11 @@ if (XPACK_ENABLE_MINIMAL_TEST)
                     minimal-test-quiet.tap
   )
 
-  add_test (
+  add_compare_files_test (
     NAME "minimal-test-reporter-tap-quiet-compare"
-    COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
-      "minimal-test-quiet.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/minimal-test.tap"
-  )
-  set_tests_properties (
-    "minimal-test-reporter-tap-quiet-compare"
-    PROPERTIES DEPENDS "minimal-test-reporter-tap-quiet"
+    DEPENDS "minimal-test-reporter-tap-quiet"
+    FILES "minimal-test-quiet.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/minimal-test.tap"
   )
 
   # --silent
@@ -216,16 +184,11 @@ if (XPACK_ENABLE_MINIMAL_TEST)
                     minimal-test-silent.tap
   )
 
-  add_test (
+  add_compare_files_test (
     NAME "minimal-test-reporter-tap-silent-compare"
-    COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
-      "minimal-test-silent.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/minimal-test.tap"
-  )
-  set_tests_properties (
-    "minimal-test-reporter-tap-silent-compare"
-    PROPERTIES DEPENDS "minimal-test-reporter-tap-silent"
+    DEPENDS "minimal-test-reporter-tap-silent"
+    FILES "minimal-test-silent.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/minimal-test.tap"
   )
 
   # ---------------------------------------------------------------------------
@@ -242,16 +205,11 @@ if (XPACK_ENABLE_MINIMAL_TEST)
                     minimal-test.txt
   )
 
-  add_test (
+  add_compare_files_test (
     NAME "minimal-test-reporter-human-compare"
-    COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
-      "minimal-test.txt"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/minimal-test.txt"
-  )
-  set_tests_properties (
-    "minimal-test-reporter-human-compare"
-    PROPERTIES DEPENDS "minimal-test-reporter-human"
+    DEPENDS "minimal-test-reporter-human"
+    FILES "minimal-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/minimal-test.txt"
   )
 
   # --quiet
@@ -283,16 +241,11 @@ if (XPACK_ENABLE_SUITE_TEST)
                     suite-test-verbose.tap
   )
 
-  add_test (
+  add_compare_files_test (
     NAME "suite-test-reporter-tap-verbose-compare"
-    COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
-      "suite-test-verbose.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/suite-test.tap"
-  )
-  set_tests_properties (
-    "suite-test-reporter-tap-verbose-compare"
-    PROPERTIES DEPENDS "suite-test-reporter-tap-verbose"
+    DEPENDS "suite-test-reporter-tap-verbose"
+    FILES "suite-test-verbose.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/suite-test.tap"
   )
 
   # default
@@ -301,16 +254,11 @@ if (XPACK_ENABLE_SUITE_TEST)
                     suite-test.tap
   )
 
-  add_test (
+  add_compare_files_test (
     NAME "suite-test-reporter-tap-compare"
-    COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
-      "suite-test.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/suite-test.tap"
-  )
-  set_tests_properties (
-    "suite-test-reporter-tap-compare" PROPERTIES DEPENDS
-                                                 "suite-test-reporter-tap"
+    DEPENDS "suite-test-reporter-tap"
+    FILES "suite-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/suite-test.tap"
   )
 
   # --quiet
@@ -319,16 +267,11 @@ if (XPACK_ENABLE_SUITE_TEST)
                     suite-test-quiet.tap
   )
 
-  add_test (
+  add_compare_files_test (
     NAME "suite-test-reporter-tap-quiet-compare"
-    COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
-      "suite-test-quiet.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/suite-test.tap"
-  )
-  set_tests_properties (
-    "suite-test-reporter-tap-quiet-compare"
-    PROPERTIES DEPENDS "suite-test-reporter-tap-quiet"
+    DEPENDS "suite-test-reporter-tap-quiet"
+    FILES "suite-test-quiet.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/suite-test.tap"
   )
 
   # --silent
@@ -337,16 +280,11 @@ if (XPACK_ENABLE_SUITE_TEST)
                     suite-test-silent.tap
   )
 
-  add_test (
+  add_compare_files_test (
     NAME "suite-test-reporter-tap-silent-compare"
-    COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
-      "suite-test-silent.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/suite-test.tap"
-  )
-  set_tests_properties (
-    "suite-test-reporter-tap-silent-compare"
-    PROPERTIES DEPENDS "suite-test-reporter-tap-silent"
+    DEPENDS "suite-test-reporter-tap-silent"
+    FILES "suite-test-silent.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/suite-test.tap"
   )
 
   # ---------------------------------------------------------------------------
@@ -363,16 +301,11 @@ if (XPACK_ENABLE_SUITE_TEST)
                     suite-test.txt
   )
 
-  add_test (
+  add_compare_files_test (
     NAME "suite-test-reporter-human-compare"
-    COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
-      "suite-test.txt"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/suite-test.txt"
-  )
-  set_tests_properties (
-    "suite-test-reporter-human-compare" PROPERTIES DEPENDS
-                                                   "suite-test-reporter-human"
+    DEPENDS "suite-test-reporter-human"
+    FILES "suite-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/suite-test.txt"
   )
 
   # --quiet
@@ -403,16 +336,11 @@ if (XPACK_ENABLE_SAMPLE_TEST)
                     sample-test-verbose.tap
   )
 
-  add_test (
+  add_compare_files_test (
     NAME "sample-test-reporter-tap-verbose-compare"
-    COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
-      "sample-test-verbose.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/sample-test.tap"
-  )
-  set_tests_properties (
-    "sample-test-reporter-tap-verbose-compare"
-    PROPERTIES DEPENDS "sample-test-reporter-tap-verbose"
+    DEPENDS "sample-test-reporter-tap-verbose"
+    FILES "sample-test-verbose.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/sample-test.tap"
   )
 
   # default
@@ -421,16 +349,11 @@ if (XPACK_ENABLE_SAMPLE_TEST)
                     sample-test.tap
   )
 
-  add_test (
+  add_compare_files_test (
     NAME "sample-test-reporter-tap-compare"
-    COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
-      "sample-test.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/sample-test.tap"
-  )
-  set_tests_properties (
-    "sample-test-reporter-tap-compare" PROPERTIES DEPENDS
-                                                  "sample-test-reporter-tap"
+    DEPENDS "sample-test-reporter-tap"
+    FILES "sample-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/sample-test.tap"
   )
 
   # --quiet
@@ -439,16 +362,11 @@ if (XPACK_ENABLE_SAMPLE_TEST)
                     sample-test-quiet.tap
   )
 
-  add_test (
+  add_compare_files_test (
     NAME "sample-test-reporter-tap-quiet-compare"
-    COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
-      "sample-test-quiet.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/sample-test.tap"
-  )
-  set_tests_properties (
-    "sample-test-reporter-tap-quiet-compare"
-    PROPERTIES DEPENDS "sample-test-reporter-tap-quiet"
+    DEPENDS "sample-test-reporter-tap-quiet"
+    FILES "sample-test-quiet.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/sample-test.tap"
   )
 
   # --silent
@@ -457,16 +375,11 @@ if (XPACK_ENABLE_SAMPLE_TEST)
                     sample-test-silent.tap
   )
 
-  add_test (
+  add_compare_files_test (
     NAME "sample-test-reporter-tap-silent-compare"
-    COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
-      "sample-test-silent.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/sample-test.tap"
-  )
-  set_tests_properties (
-    "sample-test-reporter-tap-silent-compare"
-    PROPERTIES DEPENDS "sample-test-reporter-tap-silent"
+    DEPENDS "sample-test-reporter-tap-silent"
+    FILES "sample-test-silent.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/sample-test.tap"
   )
 
   # ---------------------------------------------------------------------------
@@ -483,16 +396,11 @@ if (XPACK_ENABLE_SAMPLE_TEST)
                     sample-test.txt
   )
 
-  add_test (
+  add_compare_files_test (
     NAME "sample-test-reporter-human-compare"
-    COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
-      "sample-test.txt"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/sample-test.txt"
-  )
-  set_tests_properties (
-    "sample-test-reporter-human-compare"
-    PROPERTIES DEPENDS "sample-test-reporter-human"
+    DEPENDS "sample-test-reporter-human"
+    FILES "sample-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/sample-test.txt"
   )
 
   # --quiet
@@ -547,16 +455,11 @@ if (XPACK_ENABLE_UNIT_TEST)
     )
   endif ()
 
-  add_test (
+  add_compare_files_test (
     NAME "unit-test-reporter-tap-verbose-compare"
-    COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
-      "unit-test-verbose.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/unit-test.tap"
-  )
-  set_tests_properties (
-    "unit-test-reporter-tap-verbose-compare"
-    PROPERTIES DEPENDS "unit-test-reporter-tap-verbose"
+    DEPENDS "unit-test-reporter-tap-verbose"
+    FILES "unit-test-verbose.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/unit-test.tap"
   )
 
   # default
@@ -568,16 +471,11 @@ if (XPACK_ENABLE_UNIT_TEST)
                     unit-test-quiet.tap
   )
 
-  add_test (
+  add_compare_files_test (
     NAME "unit-test-reporter-tap-quiet-compare"
-    COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
-      "unit-test-quiet.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/unit-test.tap"
-  )
-  set_tests_properties (
-    "unit-test-reporter-tap-quiet-compare"
-    PROPERTIES DEPENDS "unit-test-reporter-tap-quiet"
+    DEPENDS "unit-test-reporter-tap-quiet"
+    FILES "unit-test-quiet.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/unit-test.tap"
   )
 
   # --silent
@@ -586,16 +484,11 @@ if (XPACK_ENABLE_UNIT_TEST)
                     unit-test-silent.tap
   )
 
-  add_test (
+  add_compare_files_test (
     NAME "unit-test-reporter-tap-silent-compare"
-    COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
-      "unit-test-silent.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/unit-test.tap"
-  )
-  set_tests_properties (
-    "unit-test-reporter-tap-silent-compare"
-    PROPERTIES DEPENDS "unit-test-reporter-tap-silent"
+    DEPENDS "unit-test-reporter-tap-silent"
+    FILES "unit-test-silent.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/tap/unit-test.tap"
   )
 
   # ---------------------------------------------------------------------------
@@ -611,16 +504,11 @@ if (XPACK_ENABLE_UNIT_TEST)
                                                     --output-file unit-test.txt
   )
 
-  add_test (
+  add_compare_files_test (
     NAME "unit-test-reporter-human-compare"
-    COMMAND
-      bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/compare-files.sh"
-      "unit-test.txt"
-      "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/unit-test.txt"
-  )
-  set_tests_properties (
-    "unit-test-reporter-human-compare" PROPERTIES DEPENDS
-                                                  "unit-test-reporter-human"
+    DEPENDS "unit-test-reporter-human"
+    FILES "unit-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/txt/unit-test.txt"
   )
 
   # --quiet
