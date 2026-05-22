@@ -88,6 +88,43 @@ endif ()
 
 # -----------------------------------------------------------------------------
 
+# Extract the properties of the interface library to reuse them in the OBJECT
+# and STATIC libraries, which are compiled before the platform library and need
+# to get the same compile options.
+get_property (
+  micro-os-plus-micro-test-plus-includes
+  TARGET micro-os-plus-micro-test-plus-interface
+  PROPERTY INTERFACE_INCLUDE_DIRECTORIES
+)
+
+get_property (
+  micro-os-plus-micro-test-plus-sources
+  TARGET micro-os-plus-micro-test-plus-interface
+  PROPERTY INTERFACE_SOURCES
+)
+
+get_property (
+  micro-os-plus-micro-test-plus-compile-definitions
+  TARGET micro-os-plus-micro-test-plus-interface
+  PROPERTY INTERFACE_COMPILE_DEFINITIONS
+)
+
+get_property (
+  micro-os-plus-micro-test-plus-compile-options
+  TARGET micro-os-plus-micro-test-plus-interface
+  PROPERTY INTERFACE_COMPILE_OPTIONS
+)
+
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+  get_property (
+    micro-os-plus-diag-trace-includes
+    TARGET micro-os-plus::diag-trace
+    PROPERTY INTERFACE_INCLUDE_DIRECTORIES
+  )
+endif ()
+
+# -----------------------------------------------------------------------------
+
 # Optional OBJECT library: compiles the library sources once and shares the
 # resulting object files across all test executables, rather than recompiling
 # them per consumer.
@@ -101,11 +138,6 @@ endif ()
 # platform-specific trace backend.
 add_library (micro-os-plus-micro-test-plus-objects OBJECT)
 
-get_property (
-  micro-os-plus-micro-test-plus-includes
-  TARGET micro-os-plus-micro-test-plus-interface
-  PROPERTY INTERFACE_INCLUDE_DIRECTORIES
-)
 # Use PUBLIC so that the include directories are available both for the OBJECT
 # library's own sources and for consumers of the library.
 target_include_directories (
@@ -113,11 +145,6 @@ target_include_directories (
   PUBLIC ${micro-os-plus-micro-test-plus-includes}
 )
 
-get_property (
-  micro-os-plus-micro-test-plus-sources
-  TARGET micro-os-plus-micro-test-plus-interface
-  PROPERTY INTERFACE_SOURCES
-)
 # Use PRIVATE to avoid propagating the sources to consumers of the OBJECT
 # library, which would cause duplicate symbol errors at link time.
 target_sources (
@@ -125,11 +152,6 @@ target_sources (
   PRIVATE ${micro-os-plus-micro-test-plus-sources}
 )
 
-get_property (
-  micro-os-plus-micro-test-plus-compile-definitions
-  TARGET micro-os-plus-micro-test-plus-interface
-  PROPERTY INTERFACE_COMPILE_DEFINITIONS
-)
 # Use PRIVATE to avoid propagating compile definitions to consumers of the
 # OBJECT library.
 target_compile_definitions (
@@ -137,11 +159,6 @@ target_compile_definitions (
   PRIVATE ${micro-os-plus-micro-test-plus-compile-definitions}
 )
 
-get_property (
-  micro-os-plus-micro-test-plus-compile-options
-  TARGET micro-os-plus-micro-test-plus-interface
-  PROPERTY INTERFACE_COMPILE_OPTIONS
-)
 # Use PRIVATE to avoid propagating the compile options to consumers of the
 # OBJECT library, which may cause conflicts with consumer-specific compile
 # options.
@@ -154,11 +171,6 @@ target_compile_options (
 # target: linking it would add trace.cpp as an INTERFACE_SOURCE and compile it
 # into the OBJECT library, causing duplicate symbols at link time.
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
-  get_property (
-    micro-os-plus-diag-trace-includes
-    TARGET micro-os-plus::diag-trace
-    PROPERTY INTERFACE_INCLUDE_DIRECTORIES
-  )
   target_include_directories (
     micro-os-plus-micro-test-plus-objects
     PRIVATE ${micro-os-plus-diag-trace-includes}
@@ -173,10 +185,44 @@ endif ()
 
 add_library (micro-os-plus-micro-test-plus-static STATIC)
 
-target_link_libraries (
+# Use PUBLIC so that the include directories are available both for the STATIC
+# library's own sources and for consumers of the library.
+target_include_directories (
   micro-os-plus-micro-test-plus-static
-  PUBLIC micro-os-plus-micro-test-plus-objects
+  PUBLIC ${micro-os-plus-micro-test-plus-includes}
 )
+
+# Use PRIVATE to avoid propagating the sources to consumers of the STATIC
+# library, which would cause duplicate symbol errors at link time.
+target_sources (
+  micro-os-plus-micro-test-plus-static
+  PRIVATE ${micro-os-plus-micro-test-plus-sources}
+)
+
+# Use PRIVATE to avoid propagating compile definitions to consumers of the
+# STATIC library.
+target_compile_definitions (
+  micro-os-plus-micro-test-plus-static
+  PRIVATE ${micro-os-plus-micro-test-plus-compile-definitions}
+)
+
+# Use PRIVATE to avoid propagating the compile options to consumers of the
+# STATIC library, which may cause conflicts with consumer-specific compile
+# options.
+target_compile_options (
+  micro-os-plus-micro-test-plus-static
+  PRIVATE ${micro-os-plus-micro-test-plus-compile-options}
+)
+
+# Add the diag-trace include path in Debug without linking the diag-trace
+# target: linking it would add trace.cpp as an INTERFACE_SOURCE and compile it
+# into the STATIC library, causing duplicate symbols at link time.
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+  target_include_directories (
+    micro-os-plus-micro-test-plus-static
+    PRIVATE ${micro-os-plus-diag-trace-includes}
+  )
+endif ()
 
 if (COMMAND xpack_display_target_lists)
   xpack_display_target_lists (micro-os-plus-micro-test-plus-static)
