@@ -59,7 +59,7 @@
   "cmake.ignoreCMakeListsMissing": true,
   "cmake.configureOnOpen": false,
   "cmakeFormat.args": [
-    "--config-file=${workspaceFolder}/config/.cmake-format.yaml"
+    "--config-file=${workspaceFolder}/config/.cmake-format.py"
   ],
   //
   "mesonbuild.configureOnOpen": false,
