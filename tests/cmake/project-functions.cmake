@@ -27,7 +27,7 @@ function (target_link_native_test_libraries name test_library_name)
             # Library with the current test.
             ${test_library_name}
             # Tested library.
-            micro-os-plus::micro-test-plus-objects
+            micro-os-plus::micro-test-plus-static
             # Portable dependencies.
             micro-os-plus::diag-trace
             # Platform specific dependencies and common compile/link options.
@@ -45,7 +45,7 @@ function (target_link_cross_test_libraries name test_library_name)
             # Library with the current test.
             ${test_library_name}
             # Tested library.
-            micro-os-plus::micro-test-plus-objects
+            micro-os-plus::micro-test-plus-static
             # Portable dependencies.
             micro-os-plus::diag-trace
             # Platform specific dependencies.

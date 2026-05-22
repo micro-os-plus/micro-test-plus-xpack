@@ -171,6 +171,19 @@ endif ()
 
 # -----------------------------------------------------------------------------
 
+add_library (micro-os-plus-micro-test-plus-static STATIC)
+
+target_link_libraries (
+  micro-os-plus-micro-test-plus-static
+  PUBLIC micro-os-plus-micro-test-plus-objects
+)
+
+if (COMMAND xpack_display_target_lists)
+  xpack_display_target_lists (micro-os-plus-micro-test-plus-static)
+endif ()
+
+# -----------------------------------------------------------------------------
+
 # Aliases.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library (
@@ -188,6 +201,15 @@ add_library (
 message (
   VERBOSE
   "> micro-os-plus::micro-test-plus-objects -> micro-os-plus-micro-test-plus-objects"
+)
+
+add_library (
+  micro-os-plus::micro-test-plus-static ALIAS
+  micro-os-plus-micro-test-plus-static
+)
+message (
+  VERBOSE
+  "> micro-os-plus::micro-test-plus-static -> micro-os-plus-micro-test-plus-static"
 )
 
 # -----------------------------------------------------------------------------
