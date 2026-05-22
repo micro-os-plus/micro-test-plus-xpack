@@ -59,12 +59,6 @@
       "cmake-format": "bash scripts/cmake-format.sh"
     }
   },
-  "_topConfig": {
-    "descriptiveName": "µTest++ Testing Framework",
-    "permalinkName": "micro-test-plus",
-    "useDoxygen": "true",
-    "hasObjectLibrary": "true"
-  },
   "engines": {
     "node": ">=20.0"
   }

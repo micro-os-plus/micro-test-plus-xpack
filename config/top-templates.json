@@ -2,6 +2,20 @@
   "descriptiveName": "µTest++ Testing Framework",
   "permalinkName": "micro-test-plus",
   "preferredName": "µTest++ Testing Framework",
+  "githubActionsNodeVersions": [
+    "24"
+  ],
+  "githubActionsOses": [
+    "ubuntu-24.04",
+    "ubuntu-24.04-arm",
+    "macos-15-intel",
+    "macos-15",
+    "windows-2025"
+  ],
+  "githubActionsXpmVersions": [
+    "0.23.2"
+  ],
   "hasObjectLibrary": true,
-  "useDoxygen": true
+  "useDoxygen": true,
+  "useSelfHostedRunners": false
 }
