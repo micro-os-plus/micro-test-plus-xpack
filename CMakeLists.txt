@@ -1,4 +1,5 @@
 # -----------------------------------------------------------------------------
+# DO NOT EDIT! Automatically generated from config/xcdl-library.json.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
@@ -26,7 +27,7 @@ cmake_minimum_required (VERSION 3.20)
 
 project (
   micro-os-plus-micro-test-plus
-  DESCRIPTION "µTest++"
+  DESCRIPTION "µTest++ Testing Framework"
   LANGUAGES CXX
 )
 
