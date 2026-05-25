@@ -10,10 +10,17 @@
       "../include"
     ],
     "compilerSourceFiles": [
-      "../src/micro-test-plus.cpp",
       "../src/runner.cpp",
+      "../src/runner-totals.cpp",
+      "../src/deferred-reporter.cpp",
+      "../src/expression-formatter.cpp",
       "../src/reporter.cpp",
-      "../src/test-suite.cpp"
+      "../src/reporter-human.cpp",
+      "../src/reporter-tap.cpp",
+      "../src/test.cpp",
+      "../src/timings.cpp",
+      "../src/reflection.cpp",
+      "../src/utility.cpp"    
     ],
     "compilerDefinitions": [],
     "compilerOptions": [],
@@ -35,5 +42,5 @@
         "generatedDefinition": "MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS"
       }
     }
-  
+  }
 }
