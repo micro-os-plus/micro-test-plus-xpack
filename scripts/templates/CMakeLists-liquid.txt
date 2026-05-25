@@ -1,0 +1,255 @@
+# -----------------------------------------------------------------------------
+# DO NOT EDIT! Automatically generated from {{xcdlFilePath}}.
+#
+# This file is part of the µOS++ project (https://{{packageScope}}.github.io/).
+# Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
+#
+# Permission to use, copy, modify, and/or distribute this software for any
+# purpose is hereby granted, under the terms of the MIT license.
+#
+# If a copy of the license was not distributed with this file, it can be
+# obtained from https://opensource.org/licenses/mit.
+#
+# -----------------------------------------------------------------------------
+
+# This file is intended to be consumed by applications with:
+#
+# `add_subdirectory("xpacks/@{{packageScope}}/{{packageName}}")`
+#
+# The result is an interface library that can be added to the linker with:
+#
+# `target_link_libraries(your-target PUBLIC {{packageScope}}::{{packageName}})`
+
+# -----------------------------------------------------------------------------
+
+# https://cmake.org/cmake/help/v3.20/
+cmake_minimum_required (VERSION 3.20)
+
+project (
+  {{packageScope}}-{{packageName}}
+  DESCRIPTION "{{descriptiveName}}"
+  LANGUAGES CXX
+)
+
+# To access the optional functions, include the
+# `cmake/{{packageScope}}-build-helper.cmake` file from the
+# `@{{packageScope}}/build-helper` package.
+
+if (COMMAND xpack_get_package_name_and_version)
+  xpack_get_package_name_and_version (
+    "${CMAKE_CURRENT_SOURCE_DIR}/package.json"
+  )
+  message (VERBOSE
+           "Processing xPack ${PACKAGE_JSON_NAME}@${PACKAGE_JSON_VERSION}..."
+  )
+endif ()
+
+# -----------------------------------------------------------------------------
+
+# The interface library is the main target of this package, which consumers
+# (like embedded applications) link against. It defines the public API and
+# properties of the library, and compiles the sources that are part of the
+# public API.
+
+# https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#normal-libraries
+# Visibility keywords: PRIVATE applies to the target itself; INTERFACE passes
+# properties up to targets that link against it; PUBLIC does both.
+add_library ({{packageScope}}-{{packageName}}-interface INTERFACE)
+
+target_include_directories (
+  {{packageScope}}-{{packageName}}-interface 
+  INTERFACE{% for path in compilerIncludeFolders %}{% if forloop.first %} {% else %}
+            {% endif %}"{{path | slice: 3, 999}}"{% endfor %}
+)
+
+target_sources (
+  {{packageScope}}-{{packageName}}-interface
+  INTERFACE{% for path in compilerSourceFiles %}{% if forloop.first %} {% else %}
+            {% endif %}"{{path | slice: 3, 999}}"{% endfor %}
+)
+
+target_compile_definitions ({{packageScope}}-{{packageName}}-interface INTERFACE)
+
+target_compile_options ({{packageScope}}-{{packageName}}-interface INTERFACE)
+
+target_link_libraries (
+  {{packageScope}}-{{packageName}}-interface INTERFACE {{packageScope}}::diag-trace
+)
+
+if (COMMAND xpack_display_target_lists)
+  xpack_display_target_lists ({{packageScope}}-{{packageName}}-interface)
+endif ()
+
+# -----------------------------------------------------------------------------
+
+# Extract the properties of the interface library to reuse them in the OBJECT
+# and STATIC libraries, which are compiled before the platform library and need
+# to get the same compile options.
+get_property (
+  {{packageScope}}-{{packageName}}-includes
+  TARGET {{packageScope}}-{{packageName}}-interface
+  PROPERTY INTERFACE_INCLUDE_DIRECTORIES
+)
+
+get_property (
+  {{packageScope}}-{{packageName}}-sources
+  TARGET {{packageScope}}-{{packageName}}-interface
+  PROPERTY INTERFACE_SOURCES
+)
+
+get_property (
+  {{packageScope}}-{{packageName}}-compile-definitions
+  TARGET {{packageScope}}-{{packageName}}-interface
+  PROPERTY INTERFACE_COMPILE_DEFINITIONS
+)
+
+get_property (
+  {{packageScope}}-{{packageName}}-compile-options
+  TARGET {{packageScope}}-{{packageName}}-interface
+  PROPERTY INTERFACE_COMPILE_OPTIONS
+)
+
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+  get_property (
+    {{packageScope}}-diag-trace-includes
+    TARGET {{packageScope}}::diag-trace
+    PROPERTY INTERFACE_INCLUDE_DIRECTORIES
+  )
+endif ()
+
+# -----------------------------------------------------------------------------
+
+# Optional OBJECT library: compiles the library sources once and shares the
+# resulting object files across all test executables, rather than recompiling
+# them per consumer.
+#
+# Include directories are managed explicitly instead of using PRIVATE linkage to
+# the interface library. PRIVATE linkage would cause diag-trace's
+# INTERFACE_SOURCES (trace.cpp) to be compiled into this OBJECT library via
+# transitive propagation, which conflicts with the separate diag-trace
+# compilation in each test executable. Consumers of this OBJECT library are
+# expected to link separately to {{packageScope}}::diag-trace and to the
+# platform-specific trace backend.
+add_library ({{packageScope}}-{{packageName}}-objects OBJECT)
+
+# Use PUBLIC so that the include directories are available both for the OBJECT
+# library's own sources and for consumers of the library.
+target_include_directories (
+  {{packageScope}}-{{packageName}}-objects
+  PUBLIC {% raw %}${{% endraw %}{{packageScope}}-{{packageName}}-includes}
+)
+
+# Use PRIVATE to avoid propagating the sources to consumers of the OBJECT
+# library, which would cause duplicate symbol errors at link time.
+target_sources (
+  {{packageScope}}-{{packageName}}-objects
+  PRIVATE {% raw %}${{% endraw %}{{packageScope}}-{{packageName}}-sources}
+)
+
+# Use PRIVATE to avoid propagating compile definitions to consumers of the
+# OBJECT library.
+target_compile_definitions (
+  {{packageScope}}-{{packageName}}-objects
+  PRIVATE {% raw %}${{% endraw %}{{packageScope}}-{{packageName}}-compile-definitions}
+)
+
+# Use PRIVATE to avoid propagating the compile options to consumers of the
+# OBJECT library, which may cause conflicts with consumer-specific compile
+# options.
+target_compile_options (
+  {{packageScope}}-{{packageName}}-objects
+  PRIVATE {% raw %}${{% endraw %}{{packageScope}}-{{packageName}}-compile-options}
+)
+
+# Add the diag-trace include path in Debug without linking the diag-trace
+# target: linking it would add trace.cpp as an INTERFACE_SOURCE and compile it
+# into the OBJECT library, causing duplicate symbols at link time.
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+  target_include_directories (
+    {{packageScope}}-{{packageName}}-objects
+    PRIVATE {% raw %}${{% endraw %}{{packageScope}}-diag-trace-includes}
+  )
+endif ()
+
+if (COMMAND xpack_display_target_lists)
+  xpack_display_target_lists ({{packageScope}}-{{packageName}}-objects)
+endif ()
+
+# -----------------------------------------------------------------------------
+
+add_library ({{packageScope}}-{{packageName}}-static STATIC)
+
+# Use PUBLIC so that the include directories are available both for the STATIC
+# library's own sources and for consumers of the library.
+target_include_directories (
+  {{packageScope}}-{{packageName}}-static
+  PUBLIC {% raw %}${{% endraw %}{{packageScope}}-{{packageName}}-includes}
+)
+
+# Use PRIVATE to avoid propagating the sources to consumers of the STATIC
+# library, which would cause duplicate symbol errors at link time.
+target_sources (
+  {{packageScope}}-{{packageName}}-static
+  PRIVATE {% raw %}${{% endraw %}{{packageScope}}-{{packageName}}-sources}
+)
+
+# Use PRIVATE to avoid propagating compile definitions to consumers of the
+# STATIC library.
+target_compile_definitions (
+  {{packageScope}}-{{packageName}}-static
+  PRIVATE {% raw %}${{% endraw %}{{packageScope}}-{{packageName}}-compile-definitions}
+)
+
+# Use PRIVATE to avoid propagating the compile options to consumers of the
+# STATIC library, which may cause conflicts with consumer-specific compile
+# options.
+target_compile_options (
+  {{packageScope}}-{{packageName}}-static
+  PRIVATE {% raw %}${{% endraw %}{{packageScope}}-{{packageName}}-compile-options}
+)
+
+# Add the diag-trace include path in Debug without linking the diag-trace
+# target: linking it would add trace.cpp as an INTERFACE_SOURCE and compile it
+# into the STATIC library, causing duplicate symbols at link time.
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+  target_include_directories (
+    {{packageScope}}-{{packageName}}-static
+    PRIVATE {% raw %}${{% endraw %}{{packageScope}}-diag-trace-includes}
+  )
+endif ()
+
+if (COMMAND xpack_display_target_lists)
+  xpack_display_target_lists ({{packageScope}}-{{packageName}}-static)
+endif ()
+
+# -----------------------------------------------------------------------------
+
+# Aliases.
+# https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
+add_library (
+  {{packageScope}}::{{packageName}} ALIAS {{packageScope}}-{{packageName}}-interface
+)
+message (
+  VERBOSE
+  "> {{packageScope}}::{{packageName}} -> {{packageScope}}-{{packageName}}-interface"
+)
+
+add_library (
+  {{packageScope}}::{{packageName}}-objects ALIAS
+  {{packageScope}}-{{packageName}}-objects
+)
+message (
+  VERBOSE
+  "> {{packageScope}}::{{packageName}}-objects -> {{packageScope}}-{{packageName}}-objects"
+)
+
+add_library (
+  {{packageScope}}::{{packageName}}-static ALIAS
+  {{packageScope}}-{{packageName}}-static
+)
+message (
+  VERBOSE
+  "> {{packageScope}}::{{packageName}}-static -> {{packageScope}}-{{packageName}}-static"
+)
+
+# -----------------------------------------------------------------------------
