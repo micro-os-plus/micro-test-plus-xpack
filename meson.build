@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------
 # DO NOT EDIT!
-# Automatically generated from config/xcdl-library.json.
+# Automatically generated from xcdl-library.json.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -21,7 +21,7 @@
 #
 # `dependencies: [micro_os_plus_micro_test_plus_dependency],`
 
-# Note: the meson configuration is provided only as a proof of concept,
+# Note: the Meson configuration is provided only as a proof of concept;
 # for production it might need some refinements.
 
 # -----------------------------------------------------------------------------
@@ -30,9 +30,14 @@ message('Processing xPack @micro-os-plus/micro-test-plus...')
 
 # -----------------------------------------------------------------------------
 
+# Meson's DSL does not provide introspection methods on dependency objects
+# to retrieve their properties after creation. The `_local_*` variables
+# therefore serve a dual purpose: populating the dependency object and
+# iterating over its components for the `message()` calls at the end.
+
 _local_compile_args = [] # Common C/C++ args.
-_local_compile_c_args = []
-_local_compile_cpp_args = []
+_local_compile_c_args = [] # C only args.
+_local_compile_cpp_args = [] # C++ only args.
 _local_include_directories = []
 _local_sources = []
 _local_compile_definitions = []
@@ -67,7 +72,9 @@ micro_os_plus_micro_test_plus_dependency = declare_dependency(
   link_args: _local_link_args,
   link_with: _local_link_with,
 )
-# meson dependencies cannot differentiate c/cpp args; pass them separately.
+
+# Meson dependencies cannot differentiate between C and C++ compile args;
+# they are therefore exposed as separate variables alongside the dependency.
 micro_os_plus_micro_test_plus_dependency_compile_c_args = _local_compile_c_args
 micro_os_plus_micro_test_plus_dependency_compile_cpp_args = _local_compile_cpp_args
 
