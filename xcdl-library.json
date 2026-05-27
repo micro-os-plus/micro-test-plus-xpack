@@ -7,24 +7,26 @@
     "description": "µTest++, a lightweight testing framework for embedded platforms",
     "parent": "micro-os-plus",
     "compilerIncludeFolders": [
-      "../include"
+      "include"
     ],
     "compilerSourceFiles": [
-      "../src/runner.cpp",
-      "../src/runner-totals.cpp",
-      "../src/deferred-reporter.cpp",
-      "../src/expression-formatter.cpp",
-      "../src/reporter.cpp",
-      "../src/reporter-human.cpp",
-      "../src/reporter-tap.cpp",
-      "../src/test.cpp",
-      "../src/timings.cpp",
-      "../src/reflection.cpp",
-      "../src/utility.cpp"    
+      "src/runner.cpp",
+      "src/runner-totals.cpp",
+      "src/deferred-reporter.cpp",
+      "src/expression-formatter.cpp",
+      "src/reporter.cpp",
+      "src/reporter-human.cpp",
+      "src/reporter-tap.cpp",
+      "src/test.cpp",
+      "src/timings.cpp",
+      "src/reflection.cpp",
+      "src/utility.cpp"
     ],
     "compilerDefinitions": [],
     "compilerOptions": [],
-    "dependencies": [],
+    "dependencies": [
+      "diag-trace"
+    ],
     "generatedDefinition": "MICRO_OS_PLUS_HAS_MICRO_TEST_PLUS",
     "cdlOptions": {
       "trace": {
