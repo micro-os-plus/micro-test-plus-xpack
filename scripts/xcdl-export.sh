@@ -113,7 +113,7 @@ fi
 
 xcdl_context="{}"
 
-serialise_string_property_to "xcdl_context" "xcdlFilePath" \
+serialise_string_property_to "xcdl_context" "libraryFilePath" \
       "${xcdl_library_json_path}" "xcdl_"
 
 # Read in top package.json.
@@ -149,11 +149,29 @@ serialise_string_property_to "xcdl_context" "descriptiveName" \
 # Read in xcdl-library.json.
 xcdl_library_json="$(json -f "${xcdl_library_json_path}" -o json-0)"
 
+serialise_string_property_to "xcdl_context" "name" \
+  "$(echo "${xcdl_library_json}" | json cdlPackage.name)" "xcdl_"
+
+serialise_string_property_to "xcdl_context" "description" \
+  "$(echo "${xcdl_library_json}" | json cdlPackage.description)" "xcdl_"
+
+serialise_string_property_to "xcdl_context" "parent" \
+  "$(echo "${xcdl_library_json}" | json cdlPackage.parent)" "xcdl_"
+
 serialise_array_property_to "xcdl_context" "compilerIncludeFolders" \
-  "$(echo "${xcdl_library_json}" | json "cdlPackage.compilerIncludeFolders" -o json-0)" "xcdl_"
+  "$(folders=$(echo "${xcdl_library_json}" | json "cdlPackage.compilerIncludeFolders" -o json-0); echo "${folders:-[]}")" "xcdl_"
 
 serialise_array_property_to "xcdl_context" "compilerSourceFiles" \
-  "$(echo "${xcdl_library_json}" | json "cdlPackage.compilerSourceFiles" -o json-0)" "xcdl_"
+  "$(files=$(echo "${xcdl_library_json}" | json "cdlPackage.compilerSourceFiles" -o json-0); echo "${files:-[]}")" "xcdl_"
+
+serialise_array_property_to "xcdl_context" "compilerDefinitions" \
+  "$(defs=$(echo "${xcdl_library_json}" | json "cdlPackage.compilerDefinitions" -o json-0); echo "${defs:-[]}")" "xcdl_"
+
+serialise_array_property_to "xcdl_context" "compilerOptions" \
+  "$(opts=$(echo "${xcdl_library_json}" | json "cdlPackage.compilerOptions" -o json-0); echo "${opts:-[]}")" "xcdl_"
+
+serialise_array_property_to "xcdl_context" "dependencies" \
+  "$(deps=$(echo "${xcdl_library_json}" | json "cdlPackage.dependencies" -o json-0); echo "${deps:-[]}")" "xcdl_"
 
 echo
 echo -n '"xcdl_context": '
