@@ -37,9 +37,9 @@
 // For the PRIu32 macro used in snprintf() formatting of uint32_t values.
 #include <cinttypes>
 
-#if defined(MICRO_OS_PLUS_INCLUDE_CONFIG_H)
+#if __has_include(<micro-os-plus/config.h>)
 #include <micro-os-plus/config.h>
-#endif // MICRO_OS_PLUS_INCLUDE_CONFIG_H
+#endif // __has_include(<micro-os-plus/config.h>)
 
 #if defined(MICRO_OS_PLUS_TRACE)
 #include <micro-os-plus/diag/trace.h>
