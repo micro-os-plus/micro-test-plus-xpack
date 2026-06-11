@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# DO NOT EDIT! Automatically generated from xcdl-library.json.
+# DO NOT EDIT! Automatically generated from xcdl-package.jsonc.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
@@ -55,7 +55,7 @@ endif ()
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
 # Visibility keywords: PRIVATE applies to the target itself; INTERFACE passes
 # properties up to targets that link against it; PUBLIC does both.
-add_library (micro-os-plus-micro-test-plus-interface INTERFACE)
+add_library (micro-os-plus-micro-test-plus-interface INTERFACE EXCLUDE_FROM_ALL)
 
 target_include_directories (
   micro-os-plus-micro-test-plus-interface 
@@ -89,7 +89,7 @@ target_compile_options (
 
 target_link_libraries (
   micro-os-plus-micro-test-plus-interface 
-  INTERFACE "micro-os-plus::diag-trace"
+  INTERFACE "micro-os-plus-diag-trace-interface"
 )
 
 if (COMMAND xpack_display_target_lists)
@@ -137,7 +137,7 @@ get_property (
 
 get_property (
   micro-os-plus-diag-trace-includes
-  TARGET micro-os-plus::diag-trace
+  TARGET micro-os-plus-diag-trace-interface
   PROPERTY INTERFACE_INCLUDE_DIRECTORIES
 )
 
@@ -148,12 +148,12 @@ get_property (
 # resulting object files across all test executables, rather than recompiling
 # them per consumer.
 #
-# Include directories are managed explicitly instead of using PRIVATE linkage
-# to the interface library. PRIVATE linkage would cause dependency sources to
-# be compiled into this OBJECT library via transitive propagation, which
-# conflicts with the separate dependency compilation in each executable.
-# Consumers of this OBJECT library are expected to link separately to all
-# dependencies and to the platform-specific library.
+# Include directories are managed explicitly instead of using PRIVATE linkage to
+# the interface library. PRIVATE linkage would cause dependency sources to be
+# compiled into this OBJECT library via transitive propagation, which conflicts
+# with the separate dependency compilation in each executable. Consumers of this
+# OBJECT library are expected to link separately to all dependencies and to the
+# platform-specific library.
 add_library (micro-os-plus-micro-test-plus-objects OBJECT)
 
 # Use PUBLIC so that the include directories are available both for the OBJECT
@@ -212,15 +212,15 @@ message (
 # -----------------------------------------------------------------------------
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#normal-libraries
-# Optional STATIC library: compiles the library sources into an archive that
-# is linked into each consumer executable, rather than sharing object files.
+# Optional STATIC library: compiles the library sources into an archive that is
+# linked into each consumer executable, rather than sharing object files.
 #
-# Include directories are managed explicitly instead of using PRIVATE linkage
-# to the interface library. PRIVATE linkage would cause dependency sources to
-# be compiled into this STATIC library via transitive propagation, which
-# conflicts with the separate dependency compilation in each executable.
-# Consumers of this STATIC library are expected to link separately to all
-# dependencies and to the platform-specific library.
+# Include directories are managed explicitly instead of using PRIVATE linkage to
+# the interface library. PRIVATE linkage would cause dependency sources to be
+# compiled into this STATIC library via transitive propagation, which conflicts
+# with the separate dependency compilation in each executable. Consumers of this
+# STATIC library are expected to link separately to all dependencies and to the
+# platform-specific library.
 add_library (micro-os-plus-micro-test-plus-static STATIC)
 
 # Use PUBLIC so that the include directories are available both for the STATIC
@@ -253,8 +253,8 @@ target_compile_options (
 )
 
 # Add the dependency include paths without linking the dependency target:
-# linking it would add dependency sources as INTERFACE_SOURCES and compile
-# them into the STATIC library, causing duplicate symbols at link time.
+# linking it would add dependency sources as INTERFACE_SOURCES and compile them
+# into the STATIC library, causing duplicate symbols at link time.
 
 target_include_directories (
   micro-os-plus-micro-test-plus-static

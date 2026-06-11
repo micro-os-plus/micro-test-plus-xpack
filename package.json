@@ -34,7 +34,10 @@
     "@xpack/npm-packages-helper": "github:xpack/npm-packages-helper",
     "del-cli": "^7.0.0",
     "json": "^11.0.0",
-    "liquidjs": "^10.25.0"
+    "liquidjs": "^10.25.0",
+    "glob": "^13.0.6",
+    "json5": "^2.2.3",
+    "jsonc-parser": "^3.3.1"
   },
   "scripts": {
     "generate-top-commons": "bash node_modules/@xpack/npm-packages-helper/maintenance-scripts/generate-top-commons.sh --micro-os-plus",
@@ -46,7 +49,7 @@
     "npm-link": "npm link",
     "git-log": "git log --pretty='%cd * %h %s' --date=short",
     "git-pull-helper": "git -C ${HOME}/Work/micro-os-plus/build-helper-xpack.git pull",
-    "xcdl-export": "bash scripts/xcdl-export.sh xcdl-library.json",
+    "xcdl-export": "bash scripts/xcdl-export.sh xcdl-package.jsonc",
     "deep-clean": "del-cli node_modules package-lock.json *.tgz",
     "postversion": "git push origin --all && git push origin --tags"
   },
@@ -57,7 +60,8 @@
     },
     "actions": {
       "clang-format": "bash scripts/clang-format.sh",
-      "cmake-format": "bash scripts/cmake-format.sh"
+      "cmake-format": "bash scripts/cmake-format.sh",
+      "xcdl-export": "bash scripts/xcdl-export.sh xcdl-package.jsonc"
     }
   },
   "engines": {
