@@ -39,7 +39,7 @@
           {
             "name": "trace",
             "display": "Enable trace in µTest++",
-            "description": "Log trace messages in the µTest++ testing framework when TRACE is enabled",
+            "description": "Display trace messages in the µTest++ testing framework when TRACE is enabled",
             "requires": "isEnabled('micro-os-plus.diag.trace')",
             "defaultValue": false
             // "$customDefine": "MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED"
@@ -47,7 +47,7 @@
           {
             "name": "trace-constructors",
             "display": "Enable trace in constructors and destructors in µTest++",
-            "description": "Log trace messages in constructors and destructors in the µTest++ testing framework when TRACE is enabled",
+            "description": "Display trace messages in constructors and destructors in the µTest++ testing framework when TRACE is enabled",
             "requires": "isEnabled('trace')"
             // "$customDefine": "MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED"
           }
