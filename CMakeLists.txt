@@ -58,7 +58,8 @@ endif ()
 add_library (micro-os-plus-micro-test-plus-interface INTERFACE EXCLUDE_FROM_ALL)
 
 target_include_directories (
-  micro-os-plus-micro-test-plus-interface INTERFACE "include"
+  micro-os-plus-micro-test-plus-interface 
+  INTERFACE "include"
 )
 
 target_sources (
@@ -76,12 +77,18 @@ target_sources (
             "src/utility.cpp"
 )
 
-target_compile_definitions (micro-os-plus-micro-test-plus-interface INTERFACE)
+target_compile_definitions (
+  micro-os-plus-micro-test-plus-interface 
+  INTERFACE
+)
 
-target_compile_options (micro-os-plus-micro-test-plus-interface INTERFACE)
+target_compile_options (
+  micro-os-plus-micro-test-plus-interface 
+  INTERFACE
+)
 
 target_link_libraries (
-  micro-os-plus-micro-test-plus-interface
+  micro-os-plus-micro-test-plus-interface 
   INTERFACE "micro-os-plus-diag-trace-interface"
 )
 
