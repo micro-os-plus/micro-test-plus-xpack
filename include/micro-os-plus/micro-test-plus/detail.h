@@ -48,11 +48,11 @@
 
 // ----------------------------------------------------------------------------
 
-#include <cstdio>
-#include <string>
-
 #include "type-traits.h"
 #include "reflection.h"
+
+#include <cstdio>
+#include <string>
 
 // ----------------------------------------------------------------------------
 

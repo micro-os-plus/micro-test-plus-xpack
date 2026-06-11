@@ -49,12 +49,12 @@
 
 // ----------------------------------------------------------------------------
 
-#include <cstdio>
-#include <string>
-
 #include "type-traits.h"
 #include "reflection.h"
 #include "expression-formatter.h"
+
+#include <cstdio>
+#include <string>
 
 // ----------------------------------------------------------------------------
 

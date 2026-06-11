@@ -53,13 +53,13 @@
 
 // ----------------------------------------------------------------------------
 
+#include "type-traits.h"
+#include "detail.h"
+
 #include <charconv>
 #include <cstdio>
 #include <string>
 #include <string_view>
-
-#include "type-traits.h"
-#include "detail.h"
 
 // ----------------------------------------------------------------------------
 

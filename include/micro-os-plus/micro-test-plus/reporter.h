@@ -54,17 +54,17 @@
 
 // ----------------------------------------------------------------------------
 
+#include "type-traits.h"
+#include "detail.h"
+#include "expression-formatter.h"
+#include "reflection.h"
+
 #include <cstdio>
 #include <string_view>
 #include <string>
 #include <memory>
 #include <vector>
 #include <charconv>
-
-#include "type-traits.h"
-#include "detail.h"
-#include "expression-formatter.h"
-#include "reflection.h"
 
 // ----------------------------------------------------------------------------
 

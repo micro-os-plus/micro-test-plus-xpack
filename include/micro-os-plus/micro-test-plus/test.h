@@ -54,13 +54,13 @@
 
 // ----------------------------------------------------------------------------
 
-#include <functional>
-#include <memory>
-
 #include "runner-totals.h"
 #include "type-traits.h"
 #include "timings.h"
 #include "reflection.h"
+
+#include <functional>
+#include <memory>
 
 // ----------------------------------------------------------------------------
 

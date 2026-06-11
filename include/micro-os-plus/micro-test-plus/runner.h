@@ -51,13 +51,13 @@
 
 // ----------------------------------------------------------------------------
 
-#include <functional>
-#include <memory>
-#include <string>
-
 #include "timings.h"
 #include "test.h"
 #include "reflection.h"
+
+#include <functional>
+#include <memory>
+#include <string>
 
 // ----------------------------------------------------------------------------
 
