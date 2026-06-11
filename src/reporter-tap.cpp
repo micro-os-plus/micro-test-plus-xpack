@@ -85,9 +85,9 @@ namespace micro_os_plus::micro_test_plus
       : reporter{ std::move (argvs) }
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
   }
 
   /**
@@ -99,9 +99,9 @@ namespace micro_os_plus::micro_test_plus
   reporter_tap::~reporter_tap ()
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
   }
 
   // --------------------------------------------------------------------------
@@ -137,9 +137,9 @@ namespace micro_os_plus::micro_test_plus
   reporter_tap::begin_session ([[maybe_unused]] runner& runner)
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
@@ -188,9 +188,9 @@ namespace micro_os_plus::micro_test_plus
   reporter_tap::end_session (runner& runner)
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
@@ -279,14 +279,14 @@ namespace micro_os_plus::micro_test_plus
   reporter_tap::begin_suite (suite& suite)
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
 #pragma GCC diagnostic pop
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
@@ -336,7 +336,7 @@ namespace micro_os_plus::micro_test_plus
   reporter_tap::end_suite (suite& suite)
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
@@ -349,7 +349,7 @@ namespace micro_os_plus::micro_test_plus
         suite.children_subtests_count ());
 
 #pragma GCC diagnostic pop
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
@@ -472,14 +472,14 @@ namespace micro_os_plus::micro_test_plus
   reporter_tap::begin_subtest (subtest& subtest)
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, subtest.name ());
 #pragma GCC diagnostic pop
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
@@ -539,7 +539,7 @@ namespace micro_os_plus::micro_test_plus
   reporter_tap::end_subtest (subtest& subtest)
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
@@ -553,7 +553,7 @@ namespace micro_os_plus::micro_test_plus
                    subtest.totals ().executed_subtests (),
                    subtest.children_subtests_count ());
 #pragma GCC diagnostic pop
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push

@@ -32,10 +32,6 @@
 
 #define MICRO_OS_PLUS_INTEGER_TRACE_PRINTF_BUFFER_ARRAY_SIZE 512
 
-// Propagate TRACE to the library.
-// #define MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
-// #define MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
-
 #endif // MICRO_OS_PLUS_TRACE
 
 // ----------------------------------------------------------------------------

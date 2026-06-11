@@ -162,9 +162,9 @@ namespace micro_os_plus::micro_test_plus
 
     {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
       trace::printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
       abort_ = abort;
       has_expression_ = type_traits::is_op<Expr_T>;
 

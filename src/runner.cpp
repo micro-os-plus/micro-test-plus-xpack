@@ -115,7 +115,7 @@ namespace micro_os_plus::micro_test_plus
   runner::runner (void) : test_node{ "runner" }, top_suite_{ "", *this }
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -126,7 +126,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
   }
 
   /**
@@ -139,7 +139,7 @@ namespace micro_os_plus::micro_test_plus
       : test_node{ "runner" }, top_suite_{ top_suite_name, *this }
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -150,7 +150,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
   }
 
   /**
@@ -161,9 +161,9 @@ namespace micro_os_plus::micro_test_plus
   runner::~runner ()
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
 
     // reporter_ is a unique_ptr; destroyed automatically.
   }
@@ -190,9 +190,9 @@ namespace micro_os_plus::micro_test_plus
   runner::initialise (int argc, char* argv[], const char* top_suite_name)
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
 #if !(defined(MICRO_OS_PLUS_INCLUDE_STARTUP) && defined(MICRO_OS_PLUS_TRACE))
 #if defined(MICRO_OS_PLUS_DEBUG)
@@ -315,7 +315,7 @@ namespace micro_os_plus::micro_test_plus
   runner::register_suite_ (std::unique_ptr<class suite> suite)
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -326,7 +326,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     children_suites_.push_back (std::move (suite));
   }
@@ -392,9 +392,9 @@ namespace micro_os_plus::micro_test_plus
   runner::exit_code (void)
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     if (reporter_ == nullptr)
       {
@@ -414,7 +414,7 @@ namespace micro_os_plus::micro_test_plus
     const int result = totals_.was_successful () ? 0 : 1;
 
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -425,7 +425,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     return result;
   }
@@ -439,9 +439,9 @@ namespace micro_os_plus::micro_test_plus
   runner::abort (const reflection::source_location& sl)
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
@@ -491,7 +491,7 @@ namespace micro_os_plus::micro_test_plus
   static_runner::static_runner (void) : runner{}
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -502,7 +502,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
   }
 
   /**
@@ -515,7 +515,7 @@ namespace micro_os_plus::micro_test_plus
       : runner{ top_suite_name }
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -526,7 +526,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
   }
 
   /**
@@ -540,9 +540,9 @@ namespace micro_os_plus::micro_test_plus
   static_runner::~static_runner ()
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
 
     if (static_children_suites_ != nullptr)
       {
@@ -590,9 +590,9 @@ namespace micro_os_plus::micro_test_plus
   static_runner::run_suites_ (void)
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     runner::run_suites_ ();
 
@@ -646,7 +646,7 @@ namespace micro_os_plus::micro_test_plus
                                         static_suite& suite)
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -657,15 +657,15 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     if (runner.static_children_suites_ == nullptr)
       {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
         trace::printf ("%s new static_children_suites_ array\n",
                        __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
         runner.static_children_suites_ = new std::vector<static_suite*>;
       }
     runner.static_children_suites_->push_back (&suite);

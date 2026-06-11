@@ -94,9 +94,9 @@ namespace micro_os_plus::micro_test_plus
       : reporter{ std::move (argvs) }
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
 
 #if defined(__APPLE__) || defined(__linux__) || defined(__unix__)
     if (isatty (fileno (stdout)))
@@ -115,9 +115,9 @@ namespace micro_os_plus::micro_test_plus
   reporter_human::~reporter_human ()
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
   }
 
   // --------------------------------------------------------------------------
@@ -159,9 +159,9 @@ namespace micro_os_plus::micro_test_plus
   reporter_human::begin_session ([[maybe_unused]] runner& runner)
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
@@ -210,9 +210,9 @@ namespace micro_os_plus::micro_test_plus
   reporter_human::end_session (runner& runner)
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
@@ -304,14 +304,14 @@ namespace micro_os_plus::micro_test_plus
   reporter_human::begin_suite (suite& suite)
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
 #pragma GCC diagnostic pop
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
@@ -360,7 +360,7 @@ namespace micro_os_plus::micro_test_plus
   reporter_human::end_suite (suite& suite)
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -371,7 +371,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
@@ -497,7 +497,7 @@ namespace micro_os_plus::micro_test_plus
   reporter_human::begin_subtest (subtest& subtest)
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -508,7 +508,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
@@ -569,7 +569,7 @@ namespace micro_os_plus::micro_test_plus
   reporter_human::end_subtest (subtest& subtest)
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -581,7 +581,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push

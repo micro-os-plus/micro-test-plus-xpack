@@ -113,7 +113,7 @@ namespace micro_os_plus::micro_test_plus
                  Args_T&&... arguments)
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS)
+    && defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 #if defined(__clang__)
@@ -124,7 +124,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
-#endif // MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     auto child_suite = std::make_unique<class suite> (
         name, *this, std::forward<Callable_T> (callable),

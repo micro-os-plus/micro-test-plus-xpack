@@ -130,8 +130,9 @@ if (XPACK_ENABLE_MINIMAL_TEST)
   # Only for this test, always define the trace macros, to check if the tracing
   # support compiles  correctly.
   target_compile_definitions (
-    minimal-test PRIVATE MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS_CONSTRUCTORS
-                         MICRO_OS_PLUS_TRACE_MICRO_TEST_PLUS
+    minimal-test
+    PRIVATE MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
+            MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
   )
 
   message (VERBOSE "A> minimal-test")
