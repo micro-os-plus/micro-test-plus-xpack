@@ -1,0 +1,79 @@
+{
+  "$schema": "https://xpack.github.io/xcdl/schemas/xcdl-2.0.0.json",
+  "minimumXcdlRequired": "2.0.0",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.",
+  "cdlPackage": {
+    "display": "µTest++ Testing Framework",
+    "description": "A source code library with µTest++, a lightweight testing framework for embedded platforms",
+    "cdlComponents": [
+      {
+        "name": "micro-os-plus.micro-test-plus",
+        "display": "µTest++ Testing Framework",
+        "description": "µTest++, a lightweight testing framework for embedded platforms",
+        "publicIncludeFolders": [
+          "include"
+        ],
+        "sourceFiles": [
+          "src/runner.cpp",
+          "src/runner-totals.cpp",
+          "src/deferred-reporter.cpp",
+          "src/expression-formatter.cpp",
+          "src/reporter.cpp",
+          "src/reporter-human.cpp",
+          "src/reporter-tap.cpp",
+          "src/test.cpp",
+          "src/timings.cpp",
+          "src/reflection.cpp",
+          "src/utility.cpp"
+        ],
+        "dependencies": [
+          "micro-os-plus.diag.trace"
+        ],
+        "generatedFile": {
+          "type": "header",
+          "filePath": "{{buildFolderPath}}/generated/include/micro-os-plus/micro-test-plus-defines.h"
+        },
+        // "$customDefine": "MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED",
+        "cdlOptions": [
+          {
+            "name": "trace",
+            "display": "Enable trace in µTest++",
+            "description": "Log trace messages in the µTest++ testing framework when TRACE is enabled",
+            "requires": "isEnabled('micro-os-plus.diag.trace')",
+            "defaultValue": false
+            // "$customDefine": "MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED"
+          },
+          {
+            "name": "trace-constructors",
+            "display": "Enable trace in constructors and destructors in µTest++",
+            "description": "Log trace messages in constructors and destructors in the µTest++ testing framework when TRACE is enabled",
+            "requires": "isEnabled('trace')"
+            // "$customDefine": "MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED"
+          }
+        ],
+        "cdlArtefacts": [
+          {
+            "name": "static",
+            "display": "Static Library",
+            "description": "Static library with the µTest++ testing framework",
+            "type": "staticLibrary",
+            "fileName": "micro-test-plus.a",
+            "dependencies": [
+              "micro-os-plus.micro-test-plus"
+            ]
+          },
+          {
+            "name": "objects",
+            "display": "Object Files",
+            "description": "Object files with the µTest++ testing framework",
+            "type": "objectFiles",
+            "dependencies": [
+              "micro-os-plus.micro-test-plus"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
