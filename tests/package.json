@@ -285,7 +285,7 @@
     "actions": {
       "xcdl-export": [
         "bash scripts/xcdl-export.sh sources/*/xcdl-package.jsonc"
-      ],      
+      ],
       "install": [
         "xpm install",
         "xpm install --config {% if os.platform == 'win32' %}native-cmake-gcc-debug{% else %}native-cmake-sys-debug{% endif %}",

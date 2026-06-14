@@ -1,5 +1,6 @@
 # -----------------------------------------------------------------------------
-# DO NOT EDIT! Automatically generated from sources/minimal-test/xcdl-package.jsonc.
+# DO NOT EDIT! Automatically generated from
+# sources/minimal-test/xcdl-package.jsonc.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
@@ -31,14 +32,10 @@ message (VERBOSE "Processing 'sources/minimal-test'...")
 # against it.
 add_library (tests-minimal-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_sources (
-  tests-minimal-interface
-  INTERFACE "src/main.cpp"
-)
+target_sources (tests-minimal-interface INTERFACE "src/main.cpp")
 
 target_link_libraries (
-  tests-minimal-interface 
-  INTERFACE "micro-os-plus::micro-test-plus-static"
+  tests-minimal-interface INTERFACE "micro-os-plus::micro-test-plus-static"
 )
 
 if (COMMAND xpack_display_target_lists)

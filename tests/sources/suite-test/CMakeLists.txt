@@ -1,5 +1,6 @@
 # -----------------------------------------------------------------------------
-# DO NOT EDIT! Automatically generated from sources/suite-test/xcdl-package.jsonc.
+# DO NOT EDIT! Automatically generated from
+# sources/suite-test/xcdl-package.jsonc.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
@@ -31,20 +32,12 @@ message (VERBOSE "Processing 'sources/suite-test'...")
 # against it.
 add_library (tests-suite-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_include_directories (
-  tests-suite-interface 
-  INTERFACE "include"
-)
+target_include_directories (tests-suite-interface INTERFACE "include")
 
-target_sources (
-  tests-suite-interface
-  INTERFACE "src/main.cpp"
-            "src/suite.cpp"
-)
+target_sources (tests-suite-interface INTERFACE "src/main.cpp" "src/suite.cpp")
 
 target_link_libraries (
-  tests-suite-interface 
-  INTERFACE "micro-os-plus::micro-test-plus-static"
+  tests-suite-interface INTERFACE "micro-os-plus::micro-test-plus-static"
 )
 
 if (COMMAND xpack_display_target_lists)
