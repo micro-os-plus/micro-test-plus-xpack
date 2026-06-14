@@ -26,6 +26,7 @@
 
 # -----------------------------------------------------------------------------
 
+# A source code library with µTest++, a lightweight testing framework for embedded platforms.
 message('Processing xPack @micro-os-plus/micro-test-plus...')
 
 # -----------------------------------------------------------------------------
@@ -61,6 +62,10 @@ _local_sources += [
   'src/timings.cpp',
   'src/reflection.cpp',
   'src/utility.cpp',
+]
+
+_local_dependencies += [
+  micro_os_plus_diag_trace_dependency,
 ]
 
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency

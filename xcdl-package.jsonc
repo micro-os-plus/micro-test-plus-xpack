@@ -58,7 +58,7 @@
             "display": "Static Library",
             "description": "Static library with the µTest++ testing framework",
             "type": "staticLibrary",
-            "fileName": "micro-test-plus.a",
+            "fileName": "micro-test-plus",
             "dependencies": [
               "micro-os-plus.micro-test-plus"
             ]
