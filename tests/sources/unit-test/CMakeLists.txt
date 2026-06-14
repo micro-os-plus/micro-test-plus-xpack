@@ -1,6 +1,5 @@
 # -----------------------------------------------------------------------------
-# DO NOT EDIT! Automatically generated from
-# sources/unit-test/xcdl-package.jsonc.
+# DO NOT EDIT! Automatically generated from sources/unit-test/xcdl-package.jsonc.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
@@ -32,7 +31,10 @@ message (VERBOSE "Processing 'sources/unit-test'...")
 # against it.
 add_library (tests-unit-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_include_directories (tests-unit-interface INTERFACE "include")
+target_include_directories (
+  tests-unit-interface 
+  INTERFACE "include"
+)
 
 target_sources (
   tests-unit-interface
@@ -52,7 +54,8 @@ target_sources (
 )
 
 target_link_libraries (
-  tests-unit-interface INTERFACE "micro-os-plus::micro-test-plus-static"
+  tests-unit-interface 
+  INTERFACE "micro-os-plus::micro-test-plus-static"
 )
 
 if (COMMAND xpack_display_target_lists)
