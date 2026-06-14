@@ -1,0 +1,37 @@
+{
+  "$schema": "https://xpack.github.io/xcdl/schemas/xcdl-2.0.0.json",
+  "minimumXcdlRequired": "2.0.0",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Liviu Ionescu. All rights reserved.",
+  "cdlPackage": {
+    "display": "Unit Test",
+    "cdlComponents": [
+      {
+        "name": "tests.unit",
+        "display": "Unit Test",
+        "description": "The source code for a unit test to exercise the whole test framework",
+        "publicIncludeFolders": [
+          "include"
+        ],
+        "sourceFiles": [
+          "src/main.cpp",
+          "src/comparisons.cpp",
+          "src/exceptions.cpp",
+          "src/float-failed-combinations.cpp",
+          "src/float-passed-combinations.cpp",
+          "src/integral-failed-combinations.cpp",
+          "src/integral-passed-combinations.cpp",
+          "src/miscellaneous.cpp",
+          "src/operators.cpp",
+          "src/static-asserts.cpp",
+          "src/support.cpp",
+          "src/timings.cpp",
+          "src/utility.cpp"
+        ],
+        "dependencies": [
+          "micro-os-plus.micro-test-plus.static"
+        ]
+      }
+    ]
+  }
+}

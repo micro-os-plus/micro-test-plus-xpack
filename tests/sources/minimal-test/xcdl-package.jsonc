@@ -1,0 +1,24 @@
+{
+  "$schema": "https://xpack.github.io/xcdl/schemas/xcdl-2.0.0.json",
+  "minimumXcdlRequired": "2.0.0",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Liviu Ionescu. All rights reserved.",
+  "cdlPackage": {
+    "display": "Minimal Test",
+    "cdlComponents": [
+      {
+        "name": "tests.minimal",
+        "display": "Minimal Test",
+        "description": "The source code for a minimal test",
+        "publicIncludeFolders": [
+        ],
+        "sourceFiles": [
+          "src/main.cpp"
+        ],
+        "dependencies": [
+          "micro-os-plus.micro-test-plus.static"
+        ]
+      }
+    ]
+  }
+}

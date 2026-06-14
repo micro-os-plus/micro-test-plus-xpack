@@ -1,4 +1,5 @@
 # -----------------------------------------------------------------------------
+# DO NOT EDIT! Automatically generated from sources/minimal-test/xcdl-package.jsonc.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
@@ -13,41 +14,42 @@
 
 # This file is intended to be consumed with:
 #
-# `add_subdirectory("tests/sources/minimal-test")`
+# `add_subdirectory("sources/minimal-test")`
 #
 # The result is an interface library that can be added to the linker with:
 #
-# `target_link_libraries(your-target PUBLIC test::minimal)`
+# `target_link_libraries(your-target PUBLIC tests-minimal)`
 
 # -----------------------------------------------------------------------------
 
-message (VERBOSE "Processing 'tests/sources/minimal-test'...")
+message (VERBOSE "Processing 'sources/minimal-test'...")
 
 # -----------------------------------------------------------------------------
-# The test library definitions.
-add_library (test-minimal-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_include_directories (test-minimal-interface INTERFACE)
+# https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
+# Visibility keywords: INTERFACE passes properties up to targets that link
+# against it.
+add_library (tests-minimal-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_sources (test-minimal-interface INTERFACE src/main.cpp)
+target_sources (
+  tests-minimal-interface
+  INTERFACE "src/main.cpp"
+)
 
-target_compile_definitions (test-minimal-interface INTERFACE)
-
-target_compile_options (test-minimal-interface INTERFACE)
-
-target_link_options (test-minimal-interface INTERFACE)
-
-target_link_libraries (test-minimal-interface INTERFACE)
+target_link_libraries (
+  tests-minimal-interface 
+  INTERFACE "micro-os-plus::micro-test-plus-static"
+)
 
 if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists (test-minimal-interface)
+  xpack_display_target_lists (tests-minimal-interface)
 endif ()
 
 # -----------------------------------------------------------------------------
 # Aliases.
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
-add_library (test::minimal ALIAS test-minimal-interface)
-message (VERBOSE "> test::minimal -> test-minimal-interface")
+add_library (tests::minimal ALIAS tests-minimal-interface)
+message (VERBOSE "> tests::minimal -> tests-minimal-interface")
 
 # -----------------------------------------------------------------------------

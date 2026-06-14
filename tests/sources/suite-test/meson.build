@@ -1,4 +1,6 @@
 # -----------------------------------------------------------------------------
+# DO NOT EDIT!
+# Automatically generated from sources/suite-test/xcdl-package.jsonc.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -13,24 +15,29 @@
 
 # This file is intended to be consumed with:
 #
-# `subdir('tests/sources/suite-test')`
+# `subdir('sources/suite-test')`
 #
-# The result is a library and a dependency that can be referred as:
+# The result is a dependency that can be referred as:
 #
-# `dependencies: [test_suite_dependency],`
+# `dependencies: [tests_suite_dependency],`
 
-# Note: the meson configuration is provided only as a proof of concept,
+# Note: the Meson configuration is provided only as a proof of concept;
 # for production it might need some refinements.
 
 # -----------------------------------------------------------------------------
 
-message('Processing tests/sources/suite-test...')
+message('Processing sources/suite-test...')
 
 # -----------------------------------------------------------------------------
 
+# Meson's DSL does not provide introspection methods on dependency objects
+# to retrieve their properties after creation. The `_local_*` variables
+# therefore serve a dual purpose: populating the dependency object and
+# iterating over its components for the `message()` calls at the end.
+
 _local_compile_args = [] # Common C/C++ args.
-_local_compile_c_args = []
-_local_compile_cpp_args = []
+_local_compile_c_args = [] # C only args.
+_local_compile_cpp_args = [] # C++ only args.
 _local_include_directories = []
 _local_sources = []
 _local_compile_definitions = []
@@ -39,7 +46,7 @@ _local_link_args = []
 _local_link_with = []
 
 _local_include_directories += [
-  'include'
+  'include',
 ]
 
 _local_sources += [
@@ -47,8 +54,12 @@ _local_sources += [
   'src/suite.cpp',
 ]
 
+_local_dependencies += [
+  micro_os_plus_micro_test_plus_dependency,
+]
+
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
-test_suite_dependency = declare_dependency(
+tests_suite_dependency = declare_dependency(
   include_directories: include_directories(_local_include_directories),
   compile_args: _local_compile_args,
   sources: files(_local_sources),
@@ -56,9 +67,11 @@ test_suite_dependency = declare_dependency(
   link_args: _local_link_args,
   link_with: _local_link_with,
 )
-# meson dependencies cannot differentiate c/cpp args; pass them separately.
-test_suite_dependency_compile_c_args = _local_compile_c_args
-test_suite_dependency_compile_cpp_args = _local_compile_cpp_args
+
+# Meson dependencies cannot differentiate between C and C++ compile args;
+# they are therefore exposed as separate variables alongside the dependency.
+tests_suite_dependency_compile_c_args = _local_compile_c_args
+tests_suite_dependency_compile_cpp_args = _local_compile_cpp_args
 
 foreach name : _local_include_directories
   message('+ -I ' + name)
@@ -66,6 +79,6 @@ endforeach
 foreach name : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args
   message('+ ' + name)
 endforeach
-message('> test_suite_dependency')
+message('> tests_suite_dependency')
 
 # -----------------------------------------------------------------------------

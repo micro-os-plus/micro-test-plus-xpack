@@ -27,45 +27,45 @@ tests = []
 if xpack_enable_empty_test
   tests += {
     'name': 'empty-test',
-    'dependency': test_empty_dependency,
-    'compile_c_args': test_empty_dependency_compile_c_args,
-    'compile_cpp_args': test_empty_dependency_compile_cpp_args,
+    'dependency': tests_empty_dependency,
+    'compile_c_args': tests_empty_dependency_compile_c_args,
+    'compile_cpp_args': tests_empty_dependency_compile_cpp_args,
   }
 endif
 
 if xpack_enable_minimal_test
   tests += {
     'name': 'minimal-test',
-    'dependency': test_minimal_dependency,
-    'compile_c_args': test_minimal_dependency_compile_c_args,
-    'compile_cpp_args': test_minimal_dependency_compile_cpp_args,
+    'dependency': tests_minimal_dependency,
+    'compile_c_args': tests_minimal_dependency_compile_c_args,
+    'compile_cpp_args': tests_minimal_dependency_compile_cpp_args,
   }
 endif
 
 if xpack_enable_suite_test
   tests += {
     'name': 'suite-test',
-    'dependency': test_suite_dependency,
-    'compile_c_args': test_suite_dependency_compile_c_args,
-    'compile_cpp_args': test_suite_dependency_compile_cpp_args,
+    'dependency': tests_suite_dependency,
+    'compile_c_args': tests_suite_dependency_compile_c_args,
+    'compile_cpp_args': tests_suite_dependency_compile_cpp_args,
   }
 endif
 
 if xpack_enable_sample_test
   tests += {
     'name': 'sample-test',
-    'dependency': test_sample_dependency,
-    'compile_c_args': test_sample_dependency_compile_c_args,
-    'compile_cpp_args': test_sample_dependency_compile_cpp_args,
+    'dependency': tests_sample_dependency,
+    'compile_c_args': tests_sample_dependency_compile_c_args,
+    'compile_cpp_args': tests_sample_dependency_compile_cpp_args,
   }
 endif
 
 if xpack_enable_unit_test
   tests += {
     'name': 'unit-test',
-    'dependency': test_unit_dependency,
-    'compile_c_args': test_unit_dependency_compile_c_args,
-    'compile_cpp_args': test_unit_dependency_compile_cpp_args,
+    'dependency': tests_unit_dependency,
+    'compile_c_args': tests_unit_dependency_compile_c_args,
+    'compile_cpp_args': tests_unit_dependency_compile_cpp_args,
   }
 endif
 
@@ -123,11 +123,11 @@ foreach test : tests
   _local_dependencies += [ test_dependency ] # <--- 
 
   # Tested library.
-  _local_dependencies += [ xpack_tested_library_dependency ]
+  # _local_dependencies += [ xpack_tested_library_dependency ]
   
   # Portable dependencies.
   if xpack_project_name != 'micro-test-plus'
-    _local_dependencies += [  micro_os_plus_micro_test_plus_dependency ]
+    # _local_dependencies += [  micro_os_plus_micro_test_plus_dependency ]
   endif
 
   _local_dependencies += [ micro_os_plus_diag_trace_dependency ]

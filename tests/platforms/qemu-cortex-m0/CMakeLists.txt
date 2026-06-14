@@ -33,7 +33,7 @@ set (XPACK_QEMU_EXTRA_ARGS --nographic -d unimp,guest_errors)
 
 if (XPACK_ENABLE_EMPTY_TEST)
   add_cross_test_executable (empty-test)
-  target_link_cross_test_libraries (empty-test test::empty)
+  target_link_cross_test_libraries (empty-test tests::empty)
 
   message (VERBOSE "A> empty-test")
 
@@ -55,7 +55,7 @@ endif ()
 
 if (XPACK_ENABLE_MINIMAL_TEST)
   add_cross_test_executable (minimal-test)
-  target_link_cross_test_libraries (minimal-test test::minimal)
+  target_link_cross_test_libraries (minimal-test tests::minimal)
 
   message (VERBOSE "A> minimal-test")
 
@@ -75,7 +75,7 @@ endif ()
 
 if (XPACK_ENABLE_SUITE_TEST)
   add_cross_test_executable (suite-test)
-  target_link_cross_test_libraries (suite-test test::suite)
+  target_link_cross_test_libraries (suite-test tests::suite)
 
   message (VERBOSE "A> suite-test")
 
@@ -94,7 +94,7 @@ endif ()
 
 if (XPACK_ENABLE_SAMPLE_TEST)
   add_cross_test_executable (sample-test)
-  target_link_cross_test_libraries (sample-test test::sample)
+  target_link_cross_test_libraries (sample-test tests::sample)
 
   message (VERBOSE "A> sample-test")
 
@@ -114,7 +114,7 @@ endif ()
 
 if (XPACK_ENABLE_UNIT_TEST)
   add_cross_test_executable (unit-test)
-  target_link_cross_test_libraries (unit-test test::unit)
+  target_link_cross_test_libraries (unit-test tests::unit)
 
   message (VERBOSE "A> unit-test")
 

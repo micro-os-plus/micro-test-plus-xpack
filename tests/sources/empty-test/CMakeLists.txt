@@ -1,4 +1,5 @@
 # -----------------------------------------------------------------------------
+# DO NOT EDIT! Automatically generated from sources/empty-test/xcdl-package.jsonc.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
@@ -13,41 +14,42 @@
 
 # This file is intended to be consumed with:
 #
-# `add_subdirectory("tests/sources/empty-test")`
+# `add_subdirectory("sources/empty-test")`
 #
 # The result is an interface library that can be added to the linker with:
 #
-# `target_link_libraries(your-target PUBLIC test::empty)`
+# `target_link_libraries(your-target PUBLIC tests-empty)`
 
 # -----------------------------------------------------------------------------
 
-message (VERBOSE "Processing 'tests/sources/empty-test'...")
+message (VERBOSE "Processing 'sources/empty-test'...")
 
 # -----------------------------------------------------------------------------
-# The test library definitions.
-add_library (test-empty-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_include_directories (test-empty-interface INTERFACE)
+# https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
+# Visibility keywords: INTERFACE passes properties up to targets that link
+# against it.
+add_library (tests-empty-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_sources (test-empty-interface INTERFACE src/main.cpp)
+target_sources (
+  tests-empty-interface
+  INTERFACE "src/main.cpp"
+)
 
-target_compile_definitions (test-empty-interface INTERFACE)
-
-target_compile_options (test-empty-interface INTERFACE)
-
-target_link_options (test-empty-interface INTERFACE)
-
-target_link_libraries (test-empty-interface INTERFACE)
+target_link_libraries (
+  tests-empty-interface 
+  INTERFACE "micro-os-plus::micro-test-plus-static"
+)
 
 if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists (test-empty-interface)
+  xpack_display_target_lists (tests-empty-interface)
 endif ()
 
 # -----------------------------------------------------------------------------
 # Aliases.
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
-add_library (test::empty ALIAS test-empty-interface)
-message (VERBOSE "> test::empty -> test-empty-interface")
+add_library (tests::empty ALIAS tests-empty-interface)
+message (VERBOSE "> tests::empty -> tests-empty-interface")
 
 # -----------------------------------------------------------------------------

@@ -1,4 +1,5 @@
 # -----------------------------------------------------------------------------
+# DO NOT EDIT! Automatically generated from sources/sample-test/xcdl-package.jsonc.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
@@ -13,41 +14,42 @@
 
 # This file is intended to be consumed with:
 #
-# `add_subdirectory("tests/sources/sample-test")`
+# `add_subdirectory("sources/sample-test")`
 #
 # The result is an interface library that can be added to the linker with:
 #
-# `target_link_libraries(your-target PUBLIC test::sample)`
+# `target_link_libraries(your-target PUBLIC tests-sample)`
 
 # -----------------------------------------------------------------------------
 
-message (VERBOSE "Processing 'tests/sources/sample-test'...")
+message (VERBOSE "Processing 'sources/sample-test'...")
 
 # -----------------------------------------------------------------------------
-# The test library definitions.
-add_library (test-sample-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_include_directories (test-sample-interface INTERFACE)
+# https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
+# Visibility keywords: INTERFACE passes properties up to targets that link
+# against it.
+add_library (tests-sample-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_sources (test-sample-interface INTERFACE src/main.cpp)
+target_sources (
+  tests-sample-interface
+  INTERFACE "src/main.cpp"
+)
 
-target_compile_definitions (test-sample-interface INTERFACE)
-
-target_compile_options (test-sample-interface INTERFACE)
-
-target_link_options (test-sample-interface INTERFACE)
-
-target_link_libraries (test-sample-interface INTERFACE)
+target_link_libraries (
+  tests-sample-interface 
+  INTERFACE "micro-os-plus::micro-test-plus-static"
+)
 
 if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists (test-sample-interface)
+  xpack_display_target_lists (tests-sample-interface)
 endif ()
 
 # -----------------------------------------------------------------------------
 # Aliases.
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
-add_library (test::sample ALIAS test-sample-interface)
-message (VERBOSE "> test::sample -> test-sample-interface")
+add_library (tests::sample ALIAS tests-sample-interface)
+message (VERBOSE "> tests::sample -> tests-sample-interface")
 
 # -----------------------------------------------------------------------------
