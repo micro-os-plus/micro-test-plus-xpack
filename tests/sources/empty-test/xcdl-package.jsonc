@@ -10,8 +10,7 @@
         "name": "tests.empty",
         "display": "Empty Test",
         "description": "The source code for a test to exercise empty suites",
-        "publicIncludeFolders": [
-        ],
+        "publicIncludeFolders": [],
         "sourceFiles": [
           "src/main.cpp"
         ],

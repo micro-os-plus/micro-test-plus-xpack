@@ -10,8 +10,7 @@
         "name": "tests.minimal",
         "display": "Minimal Test",
         "description": "The source code for a minimal test",
-        "publicIncludeFolders": [
-        ],
+        "publicIncludeFolders": [],
         "sourceFiles": [
           "src/main.cpp"
         ],

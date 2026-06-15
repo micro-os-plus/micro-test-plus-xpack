@@ -10,8 +10,7 @@
         "name": "tests.sample",
         "display": "Sample Test",
         "description": "The source code for a sample test",
-        "publicIncludeFolders": [
-        ],
+        "publicIncludeFolders": [],
         "sourceFiles": [
           "src/main.cpp"
         ],
