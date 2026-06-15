@@ -128,17 +128,27 @@ target_include_directories (
 # library, which would cause duplicate symbol errors at link time.
 target_sources (
   micro-os-plus-micro-test-plus-objects
-  PUBLIC "src/runner.cpp"
-         "src/runner-totals.cpp"
-         "src/deferred-reporter.cpp"
-         "src/expression-formatter.cpp"
-         "src/reporter.cpp"
-         "src/reporter-human.cpp"
-         "src/reporter-tap.cpp"
-         "src/test.cpp"
-         "src/timings.cpp"
-         "src/reflection.cpp"
-         "src/utility.cpp"
+  PRIVATE "src/runner.cpp"
+          "src/runner-totals.cpp"
+          "src/deferred-reporter.cpp"
+          "src/expression-formatter.cpp"
+          "src/reporter.cpp"
+          "src/reporter-human.cpp"
+          "src/reporter-tap.cpp"
+          "src/test.cpp"
+          "src/timings.cpp"
+          "src/reflection.cpp"
+          "src/utility.cpp"
+)
+
+# Propagate the compiled object files to consumers via INTERFACE_SOURCES so that
+# CMake includes them in the final link even when this OBJECT library is
+# referenced only transitively through an INTERFACE library chain. Without this,
+# CMake does not automatically inject $<TARGET_OBJECTS:...> for indirect OBJECT
+# library dependencies reached via INTERFACE libraries.
+target_sources (
+  micro-os-plus-micro-test-plus-objects
+  INTERFACE "$<TARGET_OBJECTS:micro-os-plus-micro-test-plus-objects>"
 )
 
 # Add the dependency include paths without linking the code; linking it would
@@ -149,8 +159,12 @@ target_include_directories (
   PRIVATE ${micro-os-plus-diag-trace-includes}
 )
 
+# Use INTERFACE (not PUBLIC) to propagate the dependency to consumers without
+# pulling its INTERFACE_SOURCES into the OBJECT library compilation; the include
+# paths above already provide the headers needed to compile this library's own
+# sources.
 target_link_libraries (
-  micro-os-plus-micro-test-plus-objects PUBLIC "micro-os-plus::diag-trace"
+  micro-os-plus-micro-test-plus-objects INTERFACE "micro-os-plus::diag-trace"
 )
 
 if (COMMAND xpack_display_target_lists)
@@ -217,8 +231,12 @@ target_include_directories (
   PRIVATE ${micro-os-plus-diag-trace-includes}
 )
 
+# Use INTERFACE (not PUBLIC) to propagate the dependency to consumers without
+# pulling its INTERFACE_SOURCES into the STATIC library compilation; the include
+# paths above already provide the headers needed to compile this library's own
+# sources.
 target_link_libraries (
-  micro-os-plus-micro-test-plus-static PUBLIC "micro-os-plus::diag-trace"
+  micro-os-plus-micro-test-plus-static INTERFACE "micro-os-plus::diag-trace"
 )
 
 if (COMMAND xpack_display_target_lists)
