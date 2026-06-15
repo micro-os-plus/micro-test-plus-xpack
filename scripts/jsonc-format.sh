@@ -35,29 +35,17 @@ IFS=$'\n\t'
 # -----------------------------------------------------------------------------
 # Identify the script location, to reach, for example, the helper scripts.
 
-script_path="$0"
-if [[ "${script_path}" != /* ]]
+build_script_path="$0"
+if [[ "${build_script_path}" != /* ]]
 then
   # Make relative path absolute.
-  script_path="$(pwd)/$0"
+  build_script_path="$(pwd)/$0"
 fi
 
-export script_path
-export script_name="$(basename "${script_path}")"
-
-export script_folder_path="$(dirname "${script_path}")"
-export script_folder_name="$(basename "${script_folder_path}")"
+script_folder_path="$(dirname "${build_script_path}")"
+script_folder_name="$(basename "${script_folder_path}")"
 
 # =============================================================================
-
-argv="$@"
-
-# pip3 install --user cmakelang pyyaml
-
-# set -x
-PYPATH="$(python3 -m site --user-base)"
-echo cmake-format "$(${PYPATH}/bin/cmake-format --version)"
-# "${PYPATH}/bin/cmake-format" --no-default --dump-config yaml --config-file "config/.cmake-format.yaml"
 
 function run_verbose()
 {
@@ -70,14 +58,4 @@ function run_verbose()
   "${_app_path}" "$@" 2>&1
 }
 
-run_verbose "${PYPATH}/bin/cmake-format" --config-file "config/.cmake-format.py" --in-place \
-  $(find . \( \( -type d -name "build" \) -o \( -type d -name "xpacks" \) -o \( -type d -name "node_modules" \) \) -prune -o \
-  -type f \( -name "CMakeLists.txt" -o -name "*.cmake" \) -print)
-
-echo
-echo "'${script_name} ${argv}' done"
-
-# Completed successfully.
-exit 0
-
-# -----------------------------------------------------------------------------
+run_verbose node "${script_folder_path}/jsonc-format.mjs"
