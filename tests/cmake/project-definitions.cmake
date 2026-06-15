@@ -20,35 +20,35 @@ set (XPACK_ENABLE_SUITE_TEST true)
 set (XPACK_ENABLE_SAMPLE_TEST true)
 set (XPACK_ENABLE_UNIT_TEST true)
 
-set (xpack_dependencies_project_folders)
+set (xpack_dependencies_tests_folders)
 
 # Each test has its own library. Add only those enabled.
 if (XPACK_ENABLE_EMPTY_TEST)
-  list (APPEND xpack_dependencies_project_folders
+  list (APPEND xpack_dependencies_tests_folders
         "${CMAKE_SOURCE_DIR}/sources/empty-test"
   )
 endif ()
 
 if (XPACK_ENABLE_MINIMAL_TEST)
-  list (APPEND xpack_dependencies_project_folders
+  list (APPEND xpack_dependencies_tests_folders
         "${CMAKE_SOURCE_DIR}/sources/minimal-test"
   )
 endif ()
 
 if (XPACK_ENABLE_SUITE_TEST)
-  list (APPEND xpack_dependencies_project_folders
+  list (APPEND xpack_dependencies_tests_folders
         "${CMAKE_SOURCE_DIR}/sources/suite-test"
   )
 endif ()
 
 if (XPACK_ENABLE_SAMPLE_TEST)
-  list (APPEND xpack_dependencies_project_folders
+  list (APPEND xpack_dependencies_tests_folders
         "${CMAKE_SOURCE_DIR}/sources/sample-test"
   )
 endif ()
 
 if (XPACK_ENABLE_UNIT_TEST)
-  list (APPEND xpack_dependencies_project_folders
+  list (APPEND xpack_dependencies_tests_folders
         "${CMAKE_SOURCE_DIR}/sources/unit-test"
   )
 endif ()

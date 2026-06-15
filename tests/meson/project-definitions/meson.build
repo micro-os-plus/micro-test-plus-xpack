@@ -20,27 +20,27 @@ xpack_enable_suite_test = true
 xpack_enable_sample_test = true
 xpack_enable_unit_test = true
 
-xpack_dependencies_project_folders = []
+xpack_dependencies_tests_folders = []
  
 # Each test has its own library. Add only those enabled.
 if xpack_enable_empty_test
-  xpack_dependencies_project_folders += [ 'sources/empty-test' ]
+  xpack_dependencies_tests_folders += [ 'sources/empty-test' ]
 endif
 
 if xpack_enable_minimal_test
-  xpack_dependencies_project_folders += [ 'sources/minimal-test' ]
+  xpack_dependencies_tests_folders += [ 'sources/minimal-test' ]
 endif
 
 if xpack_enable_suite_test
-  xpack_dependencies_project_folders += [ 'sources/suite-test' ]
+  xpack_dependencies_tests_folders += [ 'sources/suite-test' ]
 endif
 
 if xpack_enable_sample_test
-  xpack_dependencies_project_folders += [ 'sources/sample-test' ]
+  xpack_dependencies_tests_folders += [ 'sources/sample-test' ]
 endif
 
 if xpack_enable_unit_test
-  xpack_dependencies_project_folders += [ 'sources/unit-test' ]
+  xpack_dependencies_tests_folders += [ 'sources/unit-test' ]
 endif
 
 # -----------------------------------------------------------------------------
