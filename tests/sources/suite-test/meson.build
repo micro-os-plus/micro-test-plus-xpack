@@ -13,11 +13,11 @@
 #
 # -----------------------------------------------------------------------------
 
-# This file is intended to be consumed with:
+# This file is intended to be used by applications via:
 #
 # `subdir('sources/suite-test')`
 #
-# The result is a dependency that can be referred as:
+# This creates a dependency that can be linked to a target with:
 #
 # `dependencies: [tests_suite_dependency],`
 
@@ -26,6 +26,7 @@
 
 # -----------------------------------------------------------------------------
 
+# The source code for a test to exercise separate suites.
 message('Processing sources/suite-test...')
 
 # -----------------------------------------------------------------------------

@@ -13,11 +13,11 @@
 #
 # -----------------------------------------------------------------------------
 
-# This file is intended to be consumed by applications with:
+# This file is intended to be used by applications via:
 #
 # `subdir('xpacks/@micro-os-plus/micro-test-plus')`
 #
-# The result is a dependency that can be referred as:
+# This creates a dependency that can be linked to a target with:
 #
 # `dependencies: [micro_os_plus_micro_test_plus_dependency],`
 
@@ -26,7 +26,7 @@
 
 # -----------------------------------------------------------------------------
 
-# A source code library with µTest++, a lightweight testing framework for embedded platforms.
+# µTest++, a lightweight testing framework for embedded platforms.
 message('Processing xPack @micro-os-plus/micro-test-plus...')
 
 # -----------------------------------------------------------------------------

@@ -19,7 +19,9 @@ message (VERBOSE "Processing 'tests/platforms/qemu-riscv-rv32imac'...")
 
 # The libraries are compiled before the platform library, so they need to get
 # the same compile options.
-add_compile_common_private_options (micro-os-plus-micro-test-plus-static)
+add_compile_common_private_options (
+  micro-os-plus-micro-test-plus-static-library
+)
 
 # -----------------------------------------------------------------------------
 

@@ -3,24 +3,21 @@
   "minimumXcdlRequired": "2.0.0",
   "license": "MIT",
   "copyright": "Copyright (c) 2026 Liviu Ionescu. All rights reserved.",
-  "cdlPackage": {
-    "display": "Suite Test",
-    "cdlComponents": [
-      {
-        "name": "tests.suite",
-        "display": "Suite Test",
-        "description": "The source code for a test to exercise separate suites",
-        "publicIncludeFolders": [
-          "include"
-        ],
-        "sourceFiles": [
-          "src/main.cpp",
-          "src/suite.cpp"
-        ],
-        "dependencies": [
-          "micro-os-plus.micro-test-plus.static"
-        ]
-      }
-    ]
-  }
+  "cdlComponents": [
+    {
+      "id": "tests.suite",
+      "display": "Suite Test",
+      "description": "The source code for a test to exercise separate suites",
+      "publicIncludeFolders": [
+        "include"
+      ],
+      "sourceFiles": [
+        "src/main.cpp",
+        "src/suite.cpp"
+      ],
+      "dependencies": [
+        "micro-os-plus.micro-test-plus.static"
+      ]
+    }
+  ]
 }

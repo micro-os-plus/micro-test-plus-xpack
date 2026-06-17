@@ -13,11 +13,11 @@
 #
 # -----------------------------------------------------------------------------
 
-# This file is intended to be consumed with:
+# This file is intended to be used by applications via:
 #
 # `subdir('sources/minimal-test')`
 #
-# The result is a dependency that can be referred as:
+# This creates a dependency that can be linked to a target with:
 #
 # `dependencies: [tests_minimal_dependency],`
 
@@ -26,6 +26,7 @@
 
 # -----------------------------------------------------------------------------
 
+# The source code for a minimal test.
 message('Processing sources/minimal-test...')
 
 # -----------------------------------------------------------------------------

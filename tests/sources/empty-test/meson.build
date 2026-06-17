@@ -13,11 +13,11 @@
 #
 # -----------------------------------------------------------------------------
 
-# This file is intended to be consumed with:
+# This file is intended to be used by applications via:
 #
 # `subdir('sources/empty-test')`
 #
-# The result is a dependency that can be referred as:
+# This creates a dependency that can be linked to a target with:
 #
 # `dependencies: [tests_empty_dependency],`
 
@@ -26,6 +26,7 @@
 
 # -----------------------------------------------------------------------------
 
+# The source code for a test to exercise empty suites.
 message('Processing sources/empty-test...')
 
 # -----------------------------------------------------------------------------

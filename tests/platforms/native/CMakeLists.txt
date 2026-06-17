@@ -26,10 +26,14 @@ endif ()
 
 # The libraries are compiled before the platform library, so they need to get
 # the same compile options.
-add_compile_common_private_options (micro-os-plus-micro-test-plus-static)
+add_compile_common_private_options (
+  micro-os-plus-micro-test-plus-static-library
+)
 
 if (XPACK_ENABLE_COVERAGE)
-  add_compile_coverage_private_options (micro-os-plus-micro-test-plus-static)
+  add_compile_coverage_private_options (
+    micro-os-plus-micro-test-plus-static-library
+  )
 endif ()
 
 # -----------------------------------------------------------------------------

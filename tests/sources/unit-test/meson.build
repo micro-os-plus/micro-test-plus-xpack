@@ -13,11 +13,11 @@
 #
 # -----------------------------------------------------------------------------
 
-# This file is intended to be consumed with:
+# This file is intended to be used by applications via:
 #
 # `subdir('sources/unit-test')`
 #
-# The result is a dependency that can be referred as:
+# This creates a dependency that can be linked to a target with:
 #
 # `dependencies: [tests_unit_dependency],`
 
@@ -26,6 +26,7 @@
 
 # -----------------------------------------------------------------------------
 
+# The source code for a unit test to exercise the whole test framework.
 message('Processing sources/unit-test...')
 
 # -----------------------------------------------------------------------------

@@ -12,21 +12,29 @@
 #
 # -----------------------------------------------------------------------------
 
-# This file is intended to be consumed by applications with:
+# This file is intended to be used by applications via:
 #
 # `add_subdirectory("xpacks/@micro-os-plus/micro-test-plus")`
 #
-# The result is an interface library that can be added to the linker with:
+# This creates several libraries that can be linked to a target with one of:
 #
-# `target_link_libraries(your-target PUBLIC micro-os-plus::micro-test-plus)`
+# ~~~
+# target_link_libraries(your-target PUBLIC micro-os-plus::micro-test-plus)
+#
+# target_link_libraries(your-target PUBLIC micro-os-plus::micro-test-plus-static-library)
+#
+# target_link_libraries(your-target PUBLIC micro-os-plus::micro-test-plus-objects-library)
+# ~~~
+# Weak symbols in static libraries are not always resolved reliably by the
+# linker. Object libraries are provided as a safer alternative, although they
+# have their own quirks.
 
 # -----------------------------------------------------------------------------
 
 # https://cmake.org/cmake/help/v3.20/
 cmake_minimum_required (VERSION 3.20)
 
-# A source code library with µTest++, a lightweight testing framework for
-# embedded platforms.
+# µTest++, a lightweight testing framework for embedded platforms.
 project (
   micro-os-plus-micro-test-plus
   DESCRIPTION "µTest++ Testing Framework"
@@ -85,7 +93,17 @@ if (COMMAND xpack_display_target_lists)
   xpack_display_target_lists (micro-os-plus-micro-test-plus-interface)
 endif ()
 
+# -----------------------------------------------------------------------------
 # Alias.
+
+# Export an alias target using namespaced syntax (Project::Target). This is the
+# canonical pattern for consumption via target_link_libraries(), whether the
+# dependency is added via add_subdirectory(), FetchContent, or an installed
+# package via find_package(). Using "::" lets CMake detect an invalid or
+# misspelled target name at configure time, rather than silently passing it
+# through to the linker as a plain string or flag. Note: alias targets are
+# read-only; properties must be set on the underlying target, not on the alias
+# itself.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library (
   micro-os-plus::micro-test-plus ALIAS micro-os-plus-micro-test-plus-interface
@@ -116,18 +134,18 @@ get_property (
 # with the separate dependency compilation in each executable. Consumers of this
 # OBJECT library are expected to link separately to all dependencies and to the
 # platform-specific library.
-add_library (micro-os-plus-micro-test-plus-objects OBJECT)
+add_library (micro-os-plus-micro-test-plus-objects-library OBJECT)
 
 # Use PUBLIC so that the include directories are available both for the OBJECT
 # library's own sources and for consumers of the library.
 target_include_directories (
-  micro-os-plus-micro-test-plus-objects PUBLIC "include"
+  micro-os-plus-micro-test-plus-objects-library PUBLIC "include"
 )
 
 # Use PRIVATE to avoid propagating the sources to consumers of the OBJECT
 # library, which would cause duplicate symbol errors at link time.
 target_sources (
-  micro-os-plus-micro-test-plus-objects
+  micro-os-plus-micro-test-plus-objects-library
   PRIVATE "src/runner.cpp"
           "src/runner-totals.cpp"
           "src/deferred-reporter.cpp"
@@ -147,15 +165,15 @@ target_sources (
 # CMake does not automatically inject $<TARGET_OBJECTS:...> for indirect OBJECT
 # library dependencies reached via INTERFACE libraries.
 target_sources (
-  micro-os-plus-micro-test-plus-objects
-  INTERFACE "$<TARGET_OBJECTS:micro-os-plus-micro-test-plus-objects>"
+  micro-os-plus-micro-test-plus-objects-library
+  INTERFACE "$<TARGET_OBJECTS:micro-os-plus-micro-test-plus-objects-library>"
 )
 
 # Add the dependency include paths without linking the code; linking it would
 # add dependency sources as INTERFACE_SOURCES and compile them into the OBJECT
 # library, causing duplicate symbols at link time.
 target_include_directories (
-  micro-os-plus-micro-test-plus-objects
+  micro-os-plus-micro-test-plus-objects-library
   PRIVATE ${micro-os-plus-diag-trace-includes}
 )
 
@@ -164,22 +182,28 @@ target_include_directories (
 # paths above already provide the headers needed to compile this library's own
 # sources.
 target_link_libraries (
-  micro-os-plus-micro-test-plus-objects INTERFACE "micro-os-plus::diag-trace"
+  micro-os-plus-micro-test-plus-objects-library
+  INTERFACE "micro-os-plus::diag-trace"
 )
 
 if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists (micro-os-plus-micro-test-plus-objects)
+  xpack_display_target_lists (micro-os-plus-micro-test-plus-objects-library)
 endif ()
 
+# -----------------------------------------------------------------------------
 # Alias.
+
+# Namespaced alias for downstream consumption (find_package- and
+# add_subdirectory-compatible). "::" ensures CMake validates the target name at
+# configure time. Aliases are read-only.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library (
-  micro-os-plus::micro-test-plus-objects ALIAS
-  micro-os-plus-micro-test-plus-objects
+  micro-os-plus::micro-test-plus-objects-library ALIAS
+  micro-os-plus-micro-test-plus-objects-library
 )
 message (
   VERBOSE
-  "> micro-os-plus::micro-test-plus-objects -> micro-os-plus-micro-test-plus-objects"
+  "> micro-os-plus::micro-test-plus-objects-library -> micro-os-plus-micro-test-plus-objects-library"
 )
 
 # -----------------------------------------------------------------------------
@@ -194,22 +218,23 @@ message (
 # with the separate dependency compilation in each executable. Consumers of this
 # STATIC library are expected to link separately to all dependencies and to the
 # platform-specific library.
-add_library (micro-os-plus-micro-test-plus-static STATIC)
+add_library (micro-os-plus-micro-test-plus-static-library STATIC)
 
 set_target_properties (
-  micro-os-plus-micro-test-plus-static PROPERTIES OUTPUT_NAME micro-test-plus
+  micro-os-plus-micro-test-plus-static-library PROPERTIES OUTPUT_NAME
+                                                          micro-test-plus
 )
 
 # Use PUBLIC so that the include directories are available both for the STATIC
 # library's own sources and for consumers of the library.
 target_include_directories (
-  micro-os-plus-micro-test-plus-static PUBLIC "include"
+  micro-os-plus-micro-test-plus-static-library PUBLIC "include"
 )
 
 # Use PRIVATE to avoid propagating the sources to consumers of the STATIC
 # library, which would cause duplicate symbol errors at link time.
 target_sources (
-  micro-os-plus-micro-test-plus-static
+  micro-os-plus-micro-test-plus-static-library
   PRIVATE "src/runner.cpp"
           "src/runner-totals.cpp"
           "src/deferred-reporter.cpp"
@@ -227,7 +252,7 @@ target_sources (
 # linking it would add dependency sources as INTERFACE_SOURCES and compile them
 # into the STATIC library, causing duplicate symbols at link time.
 target_include_directories (
-  micro-os-plus-micro-test-plus-static
+  micro-os-plus-micro-test-plus-static-library
   PRIVATE ${micro-os-plus-diag-trace-includes}
 )
 
@@ -236,22 +261,28 @@ target_include_directories (
 # paths above already provide the headers needed to compile this library's own
 # sources.
 target_link_libraries (
-  micro-os-plus-micro-test-plus-static INTERFACE "micro-os-plus::diag-trace"
+  micro-os-plus-micro-test-plus-static-library
+  INTERFACE "micro-os-plus::diag-trace"
 )
 
 if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists (micro-os-plus-micro-test-plus-static)
+  xpack_display_target_lists (micro-os-plus-micro-test-plus-static-library)
 endif ()
 
+# -----------------------------------------------------------------------------
 # Alias.
+
+# Namespaced alias for downstream consumption (find_package- and
+# add_subdirectory-compatible). "::" ensures CMake validates the target name at
+# configure time. Aliases are read-only.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library (
-  micro-os-plus::micro-test-plus-static ALIAS
-  micro-os-plus-micro-test-plus-static
+  micro-os-plus::micro-test-plus-static-library ALIAS
+  micro-os-plus-micro-test-plus-static-library
 )
 message (
   VERBOSE
-  "> micro-os-plus::micro-test-plus-static -> micro-os-plus-micro-test-plus-static"
+  "> micro-os-plus::micro-test-plus-static-library -> micro-os-plus-micro-test-plus-static-library"
 )
 
 # -----------------------------------------------------------------------------
