@@ -27,7 +27,7 @@
         "src/utility.cpp"
       ],
       "dependencies": [
-        "micro-os-plus.micro-test-plus.static"
+        "micro-os-plus.micro-test-plus.static-library"
       ]
     }
   ]
