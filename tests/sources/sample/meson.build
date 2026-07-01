@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------
 # DO NOT EDIT!
-# Automatically generated from sources/minimal-test/xcdl-package.jsonc.
+# Automatically generated from sources/sample/xcdl-test.jsonc.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -15,19 +15,19 @@
 
 # This file is intended to be used by applications via:
 #
-# `subdir('sources/minimal-test')`
+# `subdir('sources/sample')`
 #
 # This creates a dependency that can be linked to a target with:
 #
-# `dependencies: [tests_minimal_dependency],`
+# `dependencies: [tests_sample_dependency],`
 
 # Note: the Meson configuration is provided only as a proof of concept;
 # for production it might need some refinements.
 
 # -----------------------------------------------------------------------------
 
-# The source code for a minimal test.
-message('Processing sources/minimal-test...')
+# The source code for a sample test.
+message('Processing sources/sample...')
 
 # -----------------------------------------------------------------------------
 
@@ -55,7 +55,7 @@ _local_dependencies += [
 ]
 
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
-tests_minimal_dependency = declare_dependency(
+tests_sample_dependency = declare_dependency(
   include_directories: include_directories(_local_include_directories),
   compile_args: _local_compile_args,
   sources: files(_local_sources),
@@ -66,8 +66,8 @@ tests_minimal_dependency = declare_dependency(
 
 # Meson dependencies cannot differentiate between C and C++ compile args;
 # they are therefore exposed as separate variables alongside the dependency.
-tests_minimal_dependency_compile_c_args = _local_compile_c_args
-tests_minimal_dependency_compile_cpp_args = _local_compile_cpp_args
+tests_sample_dependency_compile_c_args = _local_compile_c_args
+tests_sample_dependency_compile_cpp_args = _local_compile_cpp_args
 
 foreach name : _local_include_directories
   message('+ -I ' + name)
@@ -75,6 +75,6 @@ endforeach
 foreach name : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args
   message('+ ' + name)
 endforeach
-message('> tests_minimal_dependency')
+message('> tests_sample_dependency')
 
 # -----------------------------------------------------------------------------

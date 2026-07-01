@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# DO NOT EDIT! Automatically generated from sources/suite-test/xcdl-package.jsonc.
+# DO NOT EDIT! Automatically generated from sources/unit/xcdl-test.jsonc.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
@@ -14,42 +14,53 @@
 
 # This file is intended to be used by applications via:
 #
-# `add_subdirectory("sources/suite-test")`
+# `add_subdirectory("sources/unit")`
 #
 # This creates an interface library that can be linked to a target with:
 #
-# `target_link_libraries(your-target PUBLIC tests-suite)`
+# `target_link_libraries(your-target PUBLIC tests-unit)`
 
 # -----------------------------------------------------------------------------
 
-# The source code for a test to exercise separate suites.
-message (VERBOSE "Processing 'sources/suite-test'...")
+# The source code for a unit test to exercise the whole test framework.
+message (VERBOSE "Processing 'sources/unit'...")
 
 # -----------------------------------------------------------------------------
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
 # Visibility keywords: INTERFACE passes properties up to targets that link
 # against it.
-add_library (tests-suite-interface INTERFACE EXCLUDE_FROM_ALL)
+add_library (tests-unit-interface INTERFACE EXCLUDE_FROM_ALL)
 
 target_include_directories (
-  tests-suite-interface 
+  tests-unit-interface 
   INTERFACE "include"
 )
 
 target_sources (
-  tests-suite-interface
+  tests-unit-interface
   INTERFACE "src/main.cpp"
-            "src/suite.cpp"
+            "src/comparisons.cpp"
+            "src/exceptions.cpp"
+            "src/float-failed-combinations.cpp"
+            "src/float-passed-combinations.cpp"
+            "src/integral-failed-combinations.cpp"
+            "src/integral-passed-combinations.cpp"
+            "src/miscellaneous.cpp"
+            "src/operators.cpp"
+            "src/static-asserts.cpp"
+            "src/support.cpp"
+            "src/timings.cpp"
+            "src/utility.cpp"
 )
 
 target_link_libraries (
-  tests-suite-interface 
+  tests-unit-interface 
   INTERFACE "micro-os-plus::micro-test-plus-static-library"
 )
 
 if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists (tests-suite-interface)
+  xpack_display_target_lists (tests-unit-interface)
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -64,7 +75,7 @@ endif ()
 # read-only; properties must be set on the underlying target, not on the alias
 # itself.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
-add_library (tests::suite ALIAS tests-suite-interface)
-message (VERBOSE "> tests::suite -> tests-suite-interface")
+add_library (tests::unit ALIAS tests-unit-interface)
+message (VERBOSE "> tests::unit -> tests-unit-interface")
 
 # -----------------------------------------------------------------------------

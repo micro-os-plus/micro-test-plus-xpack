@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# DO NOT EDIT! Automatically generated from sources/sample-test/xcdl-package.jsonc.
+# DO NOT EDIT! Automatically generated from sources/suite/xcdl-test.jsonc.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
@@ -14,36 +14,42 @@
 
 # This file is intended to be used by applications via:
 #
-# `add_subdirectory("sources/sample-test")`
+# `add_subdirectory("sources/suite")`
 #
 # This creates an interface library that can be linked to a target with:
 #
-# `target_link_libraries(your-target PUBLIC tests-sample)`
+# `target_link_libraries(your-target PUBLIC tests-suite)`
 
 # -----------------------------------------------------------------------------
 
-# The source code for a sample test.
-message (VERBOSE "Processing 'sources/sample-test'...")
+# The source code for a test to exercise separate suites.
+message (VERBOSE "Processing 'sources/suite'...")
 
 # -----------------------------------------------------------------------------
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
 # Visibility keywords: INTERFACE passes properties up to targets that link
 # against it.
-add_library (tests-sample-interface INTERFACE EXCLUDE_FROM_ALL)
+add_library (tests-suite-interface INTERFACE EXCLUDE_FROM_ALL)
+
+target_include_directories (
+  tests-suite-interface 
+  INTERFACE "include"
+)
 
 target_sources (
-  tests-sample-interface
+  tests-suite-interface
   INTERFACE "src/main.cpp"
+            "src/suite.cpp"
 )
 
 target_link_libraries (
-  tests-sample-interface 
+  tests-suite-interface 
   INTERFACE "micro-os-plus::micro-test-plus-static-library"
 )
 
 if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists (tests-sample-interface)
+  xpack_display_target_lists (tests-suite-interface)
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -58,7 +64,7 @@ endif ()
 # read-only; properties must be set on the underlying target, not on the alias
 # itself.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
-add_library (tests::sample ALIAS tests-sample-interface)
-message (VERBOSE "> tests::sample -> tests-sample-interface")
+add_library (tests::suite ALIAS tests-suite-interface)
+message (VERBOSE "> tests::suite -> tests-suite-interface")
 
 # -----------------------------------------------------------------------------

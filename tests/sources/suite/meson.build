@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------
 # DO NOT EDIT!
-# Automatically generated from sources/unit-test/xcdl-package.jsonc.
+# Automatically generated from sources/suite/xcdl-test.jsonc.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -15,19 +15,19 @@
 
 # This file is intended to be used by applications via:
 #
-# `subdir('sources/unit-test')`
+# `subdir('sources/suite')`
 #
 # This creates a dependency that can be linked to a target with:
 #
-# `dependencies: [tests_unit_dependency],`
+# `dependencies: [tests_suite_dependency],`
 
 # Note: the Meson configuration is provided only as a proof of concept;
 # for production it might need some refinements.
 
 # -----------------------------------------------------------------------------
 
-# The source code for a unit test to exercise the whole test framework.
-message('Processing sources/unit-test...')
+# The source code for a test to exercise separate suites.
+message('Processing sources/suite...')
 
 # -----------------------------------------------------------------------------
 
@@ -52,18 +52,7 @@ _local_include_directories += [
 
 _local_sources += [
   'src/main.cpp',
-  'src/comparisons.cpp',
-  'src/exceptions.cpp',
-  'src/float-failed-combinations.cpp',
-  'src/float-passed-combinations.cpp',
-  'src/integral-failed-combinations.cpp',
-  'src/integral-passed-combinations.cpp',
-  'src/miscellaneous.cpp',
-  'src/operators.cpp',
-  'src/static-asserts.cpp',
-  'src/support.cpp',
-  'src/timings.cpp',
-  'src/utility.cpp',
+  'src/suite.cpp',
 ]
 
 _local_dependencies += [
@@ -71,7 +60,7 @@ _local_dependencies += [
 ]
 
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
-tests_unit_dependency = declare_dependency(
+tests_suite_dependency = declare_dependency(
   include_directories: include_directories(_local_include_directories),
   compile_args: _local_compile_args,
   sources: files(_local_sources),
@@ -82,8 +71,8 @@ tests_unit_dependency = declare_dependency(
 
 # Meson dependencies cannot differentiate between C and C++ compile args;
 # they are therefore exposed as separate variables alongside the dependency.
-tests_unit_dependency_compile_c_args = _local_compile_c_args
-tests_unit_dependency_compile_cpp_args = _local_compile_cpp_args
+tests_suite_dependency_compile_c_args = _local_compile_c_args
+tests_suite_dependency_compile_cpp_args = _local_compile_cpp_args
 
 foreach name : _local_include_directories
   message('+ -I ' + name)
@@ -91,6 +80,6 @@ endforeach
 foreach name : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args
   message('+ ' + name)
 endforeach
-message('> tests_unit_dependency')
+message('> tests_suite_dependency')
 
 # -----------------------------------------------------------------------------

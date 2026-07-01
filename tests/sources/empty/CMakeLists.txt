@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# DO NOT EDIT! Automatically generated from sources/empty-test/xcdl-package.jsonc.
+# DO NOT EDIT! Automatically generated from sources/empty/xcdl-test.jsonc.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
@@ -14,7 +14,7 @@
 
 # This file is intended to be used by applications via:
 #
-# `add_subdirectory("sources/empty-test")`
+# `add_subdirectory("sources/empty")`
 #
 # This creates an interface library that can be linked to a target with:
 #
@@ -23,7 +23,7 @@
 # -----------------------------------------------------------------------------
 
 # The source code for a test to exercise empty suites.
-message (VERBOSE "Processing 'sources/empty-test'...")
+message (VERBOSE "Processing 'sources/empty'...")
 
 # -----------------------------------------------------------------------------
 
