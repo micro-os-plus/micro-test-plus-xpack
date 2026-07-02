@@ -55,6 +55,7 @@
     "properties": {
       "buildFolderRelativePath": "{{ 'build' | path_join: configuration.name | to_filename | downcase }}",
       "buildFolderRelativePathPosix": "{{ 'build' | path_posix_join: configuration.name | downcase }}",
+      "commandClearBuildFolder": "node scripts/clear-build-folder.mjs {{ properties.buildFolderRelativePathPosix }}",
       "commandCMakeGenerateNative": "{{ properties.commandCMakeRefresh }} --log-level=VERBOSE",
       "commandCMakeGenerateNativeWithToolchain": "{{ properties.commandCMakeGenerateNative }} -D CMAKE_TOOLCHAIN_FILE=cmake/toolchains/{{ properties.toolchainFileName }}",
       "commandCMakeGenerateCross": "{{ properties.commandCMakeRefresh }} --log-level=VERBOSE -D CMAKE_TOOLCHAIN_FILE=cmake/toolchains/{{ properties.toolchainFileName }}",
@@ -278,11 +279,11 @@
       "compute-all-configs": "{% assign configs = '' | split: '' %}{% for builder in properties.builders %}{{ properties.add-all-configs-for-builder }}{% endfor %}",
       "actions-install-for-configs": "{% for config in configs %}{% for build-type in properties.build-types %}xpm install --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}",
       "actions-link-dependencies-for-configs": "{% for config in configs %}{% for build-type in properties.build-types %}xpm run link-dependencies --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}",
+      "actions-setup-build-test-for-configs": "{% for config in configs %}{{ properties.actions-setup-build-test-for-config }}{% endfor %}",
+      "actions-setup-build-test-for-config": "{% for build-type in properties.build-types %}{% for test-action in properties.test-actions %}xpm run {{ test-action }} --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}",
       "actions-test-for-configs": "{% for config in configs %}{{ properties.action-test-for-config }}{{ os.EOL }}{% endfor %}",
       "action-test-for-config": "xpm run test-{{ config }}",
-      "actions-clean-for-configs": "{% for config in configs %}{% for build-type in properties.build-types %}xpm run clean --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}",
-      "actions-setup-build-test-for-configs": "{% for config in configs %}{{ properties.actions-setup-build-test-for-config }}{% endfor %}",
-      "actions-setup-build-test-for-config": "{% for build-type in properties.build-types %}{% for test-action in properties.test-actions %}xpm run {{ test-action }} --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}"
+      "actions-clean-for-configs": "{% for config in configs %}{% for build-type in properties.build-types %}xpm run clean --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}"
     },
     "actions": {
       "xcdl-export": [
@@ -387,8 +388,8 @@
         },
         "template": [
           "xpm run test-native-{{ matrix.builder }}-sys{% if os.platform != 'darwin' %} --ignore-errors{% endif %}",
-          "{% assign native-gcc-versions = properties.native-gcc-versions | split_lines %}{% for version in native-gcc-versions %}{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-{{ matrix.builder }}-gcc{{ version }}{{os.EOL}}{% endfor %}",
-          "{% assign native-clang-versions = properties.native-clang-versions | split_lines %}{% for version in native-clang-versions %}xpm run test-native-{{ matrix.builder }}-clang{{ version }}{{os.EOL}}{% endfor %}"
+          "{% assign native-gcc-versions = properties.native-gcc-versions | split_lines %}{% for version in native-gcc-versions %}{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-{{ matrix.builder }}-gcc{{ version }}{{ os.EOL }}{% endfor %}",
+          "{% assign native-clang-versions = properties.native-clang-versions | split_lines %}{% for version in native-clang-versions %}xpm run test-native-{{ matrix.builder }}-clang{{ version }}{{ os.EOL }}{% endfor %}"
         ]
       },
       "test-native-{{ matrix.builder }}-sys": {
@@ -401,6 +402,9 @@
           "{% assign config = 'native-' | append: matrix.builder | append: '-sys' %}{{ properties.actions-setup-build-test-for-config }}"
         ]
       },
+      "test-native-xcdl-sys": [
+        "{% assign config = 'native-xcdl-sys' %}{{ properties.actions-setup-build-test-for-config }}"
+      ],
       "test-native-{{ matrix.builder }}-gcc{{ matrix.native-gcc-version }}": {
         "matrix": {
           "builder": [
@@ -593,10 +597,7 @@
           "{% assign config = 'qemu-riscv-' | append: matrix.qemu-riscv-variant | append: '-' | append: matrix.builder | append: '-gcc' | append: matrix.riscv-none-elf-gcc-version %}{{ properties.actions-setup-build-test-for-config }}"
         ]
       },
-      "trigger-workflow-test-all": "bash scripts/trigger-workflow-test-all.sh",
-      "test-native-xcdl-sys": [
-        "{% assign config = 'native-xcdl-sys' %}{{ properties.actions-setup-build-test-for-config }}"
-      ]
+      "trigger-workflow-test-all": "bash scripts/trigger-workflow-test-all.sh"
     },
     "buildConfigurations": {
       "short-win-paths-properties": {
@@ -606,7 +607,7 @@
           "buildFolderRelativePathPosix": "{% if os.platform != 'win32' %}{{ 'build' | path_posix_join: configuration.name | downcase }}{% else %}{{ 'build' | path_posix_join: properties.shortConfigurationName | downcase }}{% endif %}"
         }
       },
-      "cmake-actions": {
+      "cmake-native-actions": {
         "hidden": true,
         "actions": {
           "setup": "{{ properties.commandCMakeGenerateNativeWithToolchain }}",
@@ -616,6 +617,16 @@
           ],
           "test": "{{ properties.commandCMakePerformTests }}",
           "clean": "{{ properties.commandCMakeClean }}"
+        }
+      },
+      "cmake-cross-actions": {
+        "hidden": true,
+        "inherits": [
+          "cmake-native-actions"
+        ],
+        "actions": {
+          "setup": "{{ properties.commandCMakeGenerateCross }}",
+          "clear": "{{ properties.commandClearBuildFolder }}"
         }
       },
       "meson-native-actions": {
@@ -628,7 +639,8 @@
             "{{ properties.commandMesonBuild }}"
           ],
           "test": "{{ properties.commandMesonPerformTests }}",
-          "clean": "{{ properties.commandMesonClean }}"
+          "clean": "{{ properties.commandMesonClean }}",
+          "clear": "{{ properties.commandClearBuildFolder }}"
         }
       },
       "meson-cross-actions": {
@@ -650,7 +662,8 @@
             "{{ properties.commandXcdlBuild }}"
           ],
           "test": "{{ properties.commandXcdlPerformTests }}",
-          "clean": "{{ properties.commandXcdlClean }}"
+          "clean": "{{ properties.commandXcdlClean }}",
+          "clear": "{{ properties.commandClearBuildFolder }}"
         }
       },
       "xcdl-cross-actions": {
@@ -668,6 +681,7 @@
           "install": [
             "xpm install --config {{ configuration.name }}"
           ],
+          "clear": "{{ properties.commandClearBuildFolder }}",
           "link-dependencies": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-synthetic-posix"
           ]
@@ -1609,27 +1623,6 @@
             "buildType": "minsize",
             "shortConfigurationName": "q{{ matrix.qemu-riscv-variant | slice: 0, 4 }}mg{{ matrix.riscv-none-elf-gcc-version }}r"
           }
-        }
-      },
-      "cmake-native-actions": {
-        "hidden": true,
-        "actions": {
-          "setup": "{{ properties.commandCMakeGenerateNativeWithToolchain }}",
-          "build": [
-            "{{ properties.commandCMakeRefresh }}",
-            "{{ properties.commandCMakeBuild }}"
-          ],
-          "test": "{{ properties.commandCMakePerformTests }}",
-          "clean": "{{ properties.commandCMakeClean }}"
-        }
-      },
-      "cmake-cross-actions": {
-        "hidden": true,
-        "inherits": [
-          "cmake-native-actions"
-        ],
-        "actions": {
-          "setup": "{{ properties.commandCMakeGenerateCross }}"
         }
       }
     }
