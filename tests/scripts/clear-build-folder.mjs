@@ -1,6 +1,6 @@
 /*
  * DO NOT EDIT!
- * Automatically generated from npm-packages-helper/templates/*.
+ * Automatically generated from build-helper/templates/*.
  *
  * This file is part of the µOS++ project (https://micro-os-plus.github.io/).
  * Copyright (c) 2026 Liviu Ionescu. All rights reserved.
@@ -23,6 +23,11 @@ const keepDirs = ['xpacks']
 if (!buildFolderPath) {
   console.error('Error: build folder argument is required.')
   console.error('Usage: node clear-build.mjs <build folder>')
+  process.exit(1)
+}
+
+if (!fs.statSync(buildFolderPath).isDirectory()) {
+  console.error(`Error: '${buildFolderPath}' is not a folder.`)
   process.exit(1)
 }
 
