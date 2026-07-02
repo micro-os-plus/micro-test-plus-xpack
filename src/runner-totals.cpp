@@ -56,6 +56,7 @@
 
 #if defined(__GNUC__)
 #if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunknown-warning-option"
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wpre-c++17-compat"
 #endif
