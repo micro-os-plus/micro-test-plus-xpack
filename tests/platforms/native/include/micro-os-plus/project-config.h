@@ -9,8 +9,8 @@
  * obtained from https://opensource.org/licenses/mit.
  */
 
-#ifndef MICRO_OS_PLUS_CONFIG_H_
-#define MICRO_OS_PLUS_CONFIG_H_
+#ifndef MICRO_OS_PLUS_PROJECT_CONFIG_H_
+#define MICRO_OS_PLUS_PROJECT_CONFIG_H_
 
 // ----------------------------------------------------------------------------
 // Platform configuration definitions.
@@ -22,12 +22,10 @@
 #define MICRO_OS_PLUS_USE_TRACE_POSIX_STDOUT
 // #define MICRO_OS_PLUS_USE_TRACE_POSIX_STDERR
 
-#define MICRO_OS_PLUS_INTEGER_TRACE_PRINTF_BUFFER_ARRAY_SIZE 512
-
 #endif // MICRO_OS_PLUS_TRACE
 
 // ----------------------------------------------------------------------------
 
-#endif /* MICRO_OS_PLUS_CONFIG_H_ */
+#endif /* MICRO_OS_PLUS_PROJECT_CONFIG_H_ */
 
 // ----------------------------------------------------------------------------
