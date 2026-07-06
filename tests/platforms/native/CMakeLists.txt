@@ -17,11 +17,11 @@
 
 message (VERBOSE "Processing 'tests/platforms/native'...")
 
-if (CMAKE_BUILD_TYPE STREQUAL "Debug" AND CMAKE_HOST_SYSTEM_NAME STREQUAL
-                                          "Darwin"
+if (CMAKE_BUILD_TYPE STREQUAL "Debug" AND CMAKE_CXX_COMPILER_ID STREQUAL
+                                          "AppleClang"
 )
   # Enable it temporarily to check the coverage on macOS.
-  set (XPACK_ENABLE_COVERAGE false)
+  set (XPACK_ENABLE_COVERAGE true)
 endif ()
 
 # The libraries are compiled before the platform library, so they need to get
@@ -42,6 +42,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
   add_native_test_executable (empty-test)
   target_link_native_test_libraries (empty-test tests::empty)
 
+  xpack_display_target_lists (empty-test)
   message (VERBOSE "A> empty-test")
 
   # ---------------------------------------------------------------------------
@@ -137,6 +138,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
             MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
   )
 
+  xpack_display_target_lists (minimal-test)
   message (VERBOSE "A> minimal-test")
 
   # ---------------------------------------------------------------------------
@@ -233,6 +235,7 @@ if (XPACK_ENABLE_SUITE_TEST)
   add_native_test_executable (suite-test)
   target_link_native_test_libraries (suite-test tests::suite)
 
+  xpack_display_target_lists (suite-test)
   message (VERBOSE "A> suite-test")
 
   # ---------------------------------------------------------------------------
@@ -328,6 +331,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   add_native_test_executable (sample-test)
   target_link_native_test_libraries (sample-test tests::sample)
 
+  xpack_display_target_lists (sample-test)
   message (VERBOSE "A> sample-test")
 
   # ---------------------------------------------------------------------------
@@ -428,6 +432,7 @@ if (XPACK_ENABLE_UNIT_TEST)
     add_link_coverage_private_options (unit-test)
   endif ()
 
+  xpack_display_target_lists (unit-test)
   message (VERBOSE "A> unit-test")
 
   # ---------------------------------------------------------------------------
