@@ -8,7 +8,7 @@
     </briefdescription>
     <detaileddescription>
 <para>The <computeroutput>include</computeroutput> folder contains all public header files for the µOS++ libraries.</para>
-<para>To provide isolation with other projects, the header files for the µOS++ libraries are located in the <computeroutput>micro-os-plus</computeroutput> folder. </para>
+<para>To provide isolation with other projects, the header files for the µOS++ libraries are located in the <computeroutput>micro-os-plus</computeroutput> sub-folder. </para>
     </detaileddescription>
     <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/"/>
   </compounddef>

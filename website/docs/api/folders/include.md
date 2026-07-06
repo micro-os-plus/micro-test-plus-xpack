@@ -47,7 +47,7 @@ keywords:
 <p>The <span class="doxyComputerOutput">include</span> folder contains all public header files for the µOS++ libraries.</p>
 
 
-<p>To provide isolation with other projects, the header files for the µOS++ libraries are located in the <span class="doxyComputerOutput">micro-os-plus</span> folder.</p>
+<p>To provide isolation with other projects, the header files for the µOS++ libraries are located in the <span class="doxyComputerOutput">micro-os-plus</span> sub-folder.</p>
 
 
 <hr/>

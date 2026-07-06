@@ -56,7 +56,7 @@
     "deep-clean": "del-cli .docusaurus build node_modules package-lock.json",
     "doxygen": "del-cli static/doxygen doxygen/xml; (cd doxygen; doxygen config.doxyfile)",
     "browse-doxygen": "open-cli static/doxygen/index.html",
-    "convert-doxygen": "doxygen2docusaurus",
+    "convert-doxygen": "doxygen2docusaurus --id website",
     "generate-website-doxygen": "npm run doxygen && npm run convert-doxygen",
     "check-urls": "blc https://micro-os-plus.github.io/micro-test-plus-xpack/ --recursive --ordered --filter-level 2 --exclude 'https://twitter.com*'",
     "docusaurus": "docusaurus",
