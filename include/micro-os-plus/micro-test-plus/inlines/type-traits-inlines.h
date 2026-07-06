@@ -171,10 +171,6 @@ namespace micro_os_plus::micro_test_plus
 
     // ------------------------------------------------------------------------
 
-    /**
-     * @details
-     * Delegates to `value_base_<T>{ _value }` to initialise the base.
-     */
     template <class T>
     constexpr value<T>::value (const T& _value) noexcept
         : value_base_<T>{ _value }
