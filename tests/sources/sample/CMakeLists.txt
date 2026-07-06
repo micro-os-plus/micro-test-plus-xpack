@@ -32,13 +32,10 @@ message (VERBOSE "Processing 'sources/sample'...")
 # against it.
 add_library (tests-sample-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_sources (
-  tests-sample-interface
-  INTERFACE "src/main.cpp"
-)
+target_sources (tests-sample-interface INTERFACE "src/main.cpp")
 
 target_link_libraries (
-  tests-sample-interface 
+  tests-sample-interface
   INTERFACE "micro-os-plus::micro-test-plus-static-library"
 )
 
