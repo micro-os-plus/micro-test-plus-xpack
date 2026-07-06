@@ -36,7 +36,7 @@
         {
           "id": "trace",
           "display": "Enable trace in µTest++",
-          "description": "Display trace messages in the µTest++ testing framework when TRACE is enabled",
+          "description": "Display trace messages in the µTest++ Testing Framework when TRACE is enabled",
           "requires": "isEnabled('micro-os-plus.diag.trace')",
           "defaultValue": false
           // "$customDefine": "MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED"
@@ -44,7 +44,7 @@
         {
           "id": "trace-constructors",
           "display": "Enable trace in constructors and destructors in µTest++",
-          "description": "Display trace messages in constructors and destructors in the µTest++ testing framework when TRACE is enabled",
+          "description": "Display trace messages in constructors and destructors in the µTest++ Testing Framework when TRACE is enabled",
           "requires": "isEnabled('trace')"
           // "$customDefine": "MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED"
         }
@@ -53,7 +53,7 @@
         {
           "id": "static-library",
           "display": "Static Library",
-          "description": "Static library with the µTest++ testing framework",
+          "description": "Static library with the µTest++ Testing Framework",
           "type": "staticLibrary",
           "fileName": "micro-test-plus",
           "dependencies": [
@@ -63,7 +63,7 @@
         {
           "id": "objects-library",
           "display": "Object Files",
-          "description": "Object files with the µTest++ testing framework",
+          "description": "Object files with the µTest++ Testing Framework",
           "type": "objectFiles",
           "folderName": "micro-test-plus",
           "dependencies": [
