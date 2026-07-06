@@ -58,6 +58,8 @@
     "browse-doxygen": "open-cli static/doxygen/index.html",
     "convert-doxygen": "doxygen2docusaurus --id website",
     "generate-website-doxygen": "npm run doxygen && npm run convert-doxygen",
+    "convert-webpreview-doxygen": "doxygen2docusaurus --id webpreview",
+    "generate-webpreview-doxygen": "npm run doxygen && npm run convert-webpreview-doxygen",
     "check-urls": "blc https://micro-os-plus.github.io/micro-test-plus-xpack/ --recursive --ordered --filter-level 2 --exclude 'https://twitter.com*'",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",

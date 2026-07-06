@@ -26,7 +26,7 @@
     "doxygenXmlInputFolderPath": "doxygen/xml",
     "docsFolderPath": "docs",
     "apiFolderPath": "api",
-    "baseUrl": "/micro-test-plus-xpack--webpreview/",
+    "baseUrl": "/micro-test-plus-xpack-webpreview/",
     "docsBaseUrl": "docs",
     "apiBaseUrl": "api",
     "imagesFolderPath": "assets/images/doxygen",
